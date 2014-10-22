@@ -13,7 +13,7 @@ in an example of an app you might develop if you want to retrieve blogs from a
 Liferay instance. Note that the following code snippets are written in the 
 *Objective C* programming language. Let the invoking begin! 
 
-## Step 1: Create a Session 
+## Step 1: Create a Session [](id=step-1-create-a-session)
 
 The session is a conversion state between the client and server, that consists 
 of multiple requests and responses between the two. You need a session to pass 
@@ -50,7 +50,7 @@ $$$
 <!-- We should provide this information here, customized for Apple people.
 They're a sensitive lot. :-) -Rich -->
 
-## Step 2: Import the Liferay Services for Your App to Use 
+## Step 2: Import the Liferay Services for Your App to Use [](id=step-2-import-the-liferay-services-for-your-app-to-use)
 
 For this sample app, import the [`BlogsEntryService`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/service/BlogsEntryService.html). 
 
@@ -66,7 +66,7 @@ Your portal's JSON web services page (e.g.,
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws))
 lists all available portal and plugin services. 
 
-## Step 3: Create a Service Object and Call its Services 
+## Step 3: Create a Service Object and Call its Services [](id=step-3-create-a-service-object-and-call-its-services)
 
 This sample app creates an `LRBlogsEntryService_v62` object and makes a service 
 call that fetches all blog entries from the *Guest* site. In this example, the 
@@ -94,7 +94,7 @@ class to get a site group.
 
 $$$
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 

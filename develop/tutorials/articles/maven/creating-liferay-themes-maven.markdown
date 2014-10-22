@@ -19,7 +19,7 @@ users.  This tutorial shows you how to develop your own theme plugin (i.e.,
 your "scenery") using Maven so your portal has a lasting impression on anyone
 who visits. 
 
-## Creating a Theme Plugin
+## Creating a Theme Plugin [](id=creating-a-theme-plugin)
 
 Theme plugin creation with Maven is similar to portlet plugin creation with
 Maven. If you don't already have a parent Maven project, please refer to the
@@ -45,7 +45,7 @@ $$$
 Since it's helpful to familiarize yourself with the Liferay theme plugin
 project's anatomy, that topic is covered next. 
 
-## Anatomy
+## Anatomy [](id=anatomy)
 
 A theme project created from the
 `com.liferay.maven.archetypes:liferay-theme-archetype` has the following
@@ -136,7 +136,7 @@ $$$
 You now know how to create a theme plugin using Maven. You're familiar with
 its file structure and POM, and you know how to deploy the theme. Way to go!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 

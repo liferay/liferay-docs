@@ -9,7 +9,7 @@ learn how to do all these things.
 
 First, it's best to learn how to add configurable settings to a theme. 
 
-## Adding Configurable Settings to a Theme
+## Adding Configurable Settings to a Theme [](id=adding-configurable-settings-to-a-theme)
 
 Settings must be defined in the theme plugin's `liferay-look-and-feel.xml` file found in the
 `docroot/WEB-INF` folder. The
@@ -102,7 +102,7 @@ $$$
 Now that you know how to add settings, you can move on to learning how to add
 logic to enable different templates for a theme. 
 
-## Enabling Different Templates for a Theme
+## Enabling Different Templates for a Theme [](id=enabling-different-templates-for-a-theme)
 
 Say you want to be able to choose from two different page headers (perhaps
 one includes more details, while the other is smaller). Instead of creating two

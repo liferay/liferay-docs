@@ -21,7 +21,7 @@ directory structure used by the Plugins SDK. If you need to, check out the
 $$$
 -->
 
-## Importing a Single Project
+## Importing a Single Project [](id=importing-a-single-project)
 
 For these steps, it's assumed that you haven't yet configured your Plugins SDK
 in Liferay IDE: 
@@ -62,7 +62,7 @@ in the tutorial *Verifying Successful Project Import*.
 
 <!-- To do: Add link to Verifying Successful Project Import tutorial -->
 
-## Importing Multiple Projects
+## Importing Multiple Projects [](id=importing-multiple-projects)
 
 Next, you'll learn how to import multiple projects from a Liferay Plugins SDK
 you've already set up in Liferay IDE. Follow these steps: 
@@ -100,7 +100,7 @@ $$$
 
 Congratulations on importing *multiple* Liferay projects into your workspace! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/6-2/verifying-successful-project-import)
 

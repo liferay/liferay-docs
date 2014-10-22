@@ -12,7 +12,7 @@ This tutorial shows you how to make asynchronous requests from your iOS app. The
 code used is an example of an app you might develop if you want to retrieve 
 blogs from a Liferay instance. Let the requesting begin! 
 
-## Implementing Asynchronous Service Requests 
+## Implementing Asynchronous Service Requests [](id=implementing-asynchronous-service-requests)
 
 To configure asynchronous requests, first create a class that conforms to the 
 `LRCallback` protocol.
@@ -66,7 +66,7 @@ signature. In this example, the `getGroupEntriesWithGroupId` method returns an
 Super! Now you know how to implement asynchronous service requests in your iOS 
 apps. 
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 

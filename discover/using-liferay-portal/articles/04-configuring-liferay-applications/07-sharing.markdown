@@ -24,14 +24,14 @@ from the portlet's title bar and select the *Sharing* tab. There are five
 sub-tabs under sharing: Any Web Site, Facebook, OpenSocial Gadget, Netvibes, and
 Friends.
 
-## Any Web Site 
+## Any Web Site [](id=any-web-site)
 
 Copy and paste the provided snippet of JavaScript code into the web site to
 which you want to add the portlet as a widget. That's all you need to do. When
 a user loads the page on the other web site, the code will pull the relevant
 portlet from your site and display it.
 
-## Facebook 
+## Facebook [](id=facebook)
 
 You can add any Liferay portlet as an application on Facebook. To do this, you
 must first get a developer key. A link for doing this is provided to you in the
@@ -46,7 +46,7 @@ Incidentally, this makes Liferay a fantastic platform upon which to build
 applications for Facebook. See the *Liferay Developer's Guide* or [*Liferay in
 Action*](http://manning.com/sezov) for more details. 
 
-## OpenSocial Gadget 
+## OpenSocial Gadget [](id=opensocial-gadget)
 
 OpenSocial comprises a container and a set of APIs for social networking and
 other web applications. iGoogle is a service provided by Google that lets users
@@ -67,7 +67,7 @@ portal at a glance, using asset publishers or custom RSS feeds. You could also
 use Liferay's API to build your own portlet and provide the URL for users to
 place on their iGoogle pages.
 
-### Netvibes 
+### Netvibes [](id=netvibes)
 
 Netvibes offers a similar service to iGoogle--users can log in, create their
 own personal portal, called a *dashboard*, and add customizable widgets to the
@@ -76,7 +76,7 @@ portlet, check the *Allow users to add [portlet-name] to Netvibes pages* box.
 You can then use the provided URL to create a custom Netvibes widget based on
 the instance of the portlet that you're using.
 
-### Friends 
+### Friends [](id=friends)
 
 The final sub-tab of the *Sharing* tab is called *Friends*. This tab has a
 single check box that allows you to give your friends permission to add the

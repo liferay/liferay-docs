@@ -13,7 +13,7 @@ This tutorial shows how the
 [Liferay Mobile SDK Sample Android App](https://github.com/brunofarache/liferay-android-sdk-sample)
 demonstrates these steps.
 
-## Tutorial: Invoking Liferay Services in Android
+## Tutorial: Invoking Liferay Services in Android [](id=tutorial-invoking-liferay-services-in-android)
 
 In particular, this tutorial outlines the steps that the sample app's
 [`UsersAsyncTask`](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/task/UsersAsyncTask.java)
@@ -24,7 +24,7 @@ then you can find the `UsersAsyncTask` class in the
 `src/com/liferay/mobile/sample/task` folder of your sample project. Now go ahead 
 and get started learning how to invoke Liferay services in your Android app!
 
-### Step 1: Create a session 
+### Step 1: Create a session [](id=step-1-create-a-session)
 
 The session is a conversion state between the client and server, that consists 
 of multiple requests and responses between the two. You need a session to pass 
@@ -66,7 +66,7 @@ Liferay instance.
 
 $$$
 
-### Step 2: Import the Liferay Services for Your App To Use 
+### Step 2: Import the Liferay Services for Your App To Use [](id=step-2-import-the-liferay-services-for-your-app-to-use)
 
 Being a contacts app, the sample app imports the Mobile SDK's `UserService`
 class to connect to Liferay Portal's
@@ -85,7 +85,7 @@ Your portal's JSON web services page (e.g.,
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws))
 lists all available portal services and portlet services. 
 
-### Step 3: Create a Service Object and Call its Service Methods 
+### Step 3: Create a Service Object and Call its Service Methods [](id=step-3-create-a-service-object-and-call-its-service-methods)
 
 The sample app creates a `UserService` object and calls its
 `getGroupUsers(...)` method to fetch all of the `Guest` site's users:
@@ -131,7 +131,7 @@ and `Double`.
 Great! Now you're familiar with the basic process of accessing Liferay services 
 through the Mobile SDK! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 

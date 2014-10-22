@@ -11,7 +11,7 @@ Android app. If you don't, see the tutorial
 [Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-android).
 Read on to learn how to setup your batch of service calls. 
 
-## Implementing Batch Processing 
+## Implementing Batch Processing [](id=implementing-batch-processing)
 
 Here's a code snippet from an app that deletes blog entries synchronously as a
 batch: 
@@ -59,7 +59,7 @@ This is similar to the procedure for making asynchronous calls described in the
 tutorial [Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-services-asynchronously-android). 
 It's just that easy to make efficient service calls in batch! 
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 

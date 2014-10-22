@@ -6,7 +6,7 @@ Liferay projects.
 
 This tutorial shows the steps required to accomplish this. 
 
-## Converting Your Eclipse Project
+## Converting Your Eclipse Project [](id=converting-your-eclipse-project)
 
 1.  Move the project into a Liferay Plugins SDK, if it is not already in one. 
     To import the project, select *File* &rarr; *Import...* and then follow the 
@@ -41,7 +41,7 @@ $$$
 Great! Now that you've imported and converted your project, you can work with it 
 just as you would any other Liferay project.
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/faceting-a-plugin-project-for-liferay-ide)
 

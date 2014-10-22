@@ -1,19 +1,86 @@
-# Resolving Maven Lifecycle Mapping Errors
+# Setting Up Existing Liferay Maven Plugin Projects in Liferay IDE
 
-The `m2e-liferay` plugin for Liferay IDE automatically contributes the lifecycle 
-mappings required for using Maven with your Liferay projects. If you're getting 
-lifecycle mapping errors, then it's likely that you don't have the `m2e-liferay` 
-plugin installed. Installation instructions and a more thorough discussion of 
-this plugin are contained in the tutorial [Using Maven from Liferay IDE](/tutorials/-/knowledge_base/using-maven-from-liferay-ide). 
+Liferay Maven plugin projects created with Liferay IDE 2.0 Milestone 1 (and
+newer) are Liferay IDE projects that have all the required Liferay facets,
+including the new m2e-liferay plugin. The m2e-liferay plugin provides a project
+lifecycle mapping for properly building and deploying your Liferay project. If
+your Liferay Maven plugin project was created outside of Liferay IDE or created
+in a Liferay IDE earlier than version 2.0 Milestone 1, you'll want to update it
+with the latest required facets, including the m2e-liferay plugin.
 
-Since Liferay IDE won't let you create Liferay Maven projects without the 
-`m2e-liferay` plugin, the most common scenario that results in lifecycle mapping 
-errors is importing Liferay Maven projects without the plugin installed. 
-Fortunately, Liferay IDE lets you import a Liferay Maven project *and* install 
-the `m2e-liferay` plugin at the same time. This tutorial begins by showing you 
-how to verify that your Maven lifecycle mapping is correct. You're then shown 
-how to import a Liferay Maven project in Liferay IDE and install the 
-`m2e-liferay` plugin. Now go ahead and get started! 
+This tutorial explains the Liferay facets necessary for Liferay Maven plugin
+projects and takes you step by step through importing a Maven project created
+outside of Liferay IDE and updating an existing Liferay IDE Maven plugin project
+to the new standard. You'll also learn how to determine whether your project is
+missing any required facets, in case you're unsure.
+
+If you're interested in learning about each of the facets that makeup a complete
+Liferay Maven plugin project, then you'll enjoy the next section. You can
+otherwise skip ahead to the section after it that teaches how to set up your 
+project to use the Liferay Maven plugin project facets. 
+
+## Facets for Liferay Maven Plugin Projects
+
+Beginning with version 2.0 Milestone 1, Liferay IDE contains support for Liferay 
+Maven projects that use the m2e-liferay Eclipse plugin. Specifically, Liferay 
+IDE contains a Maven project configurator that supports configuring projects 
+with Liferay facets. Projects with Liferay facets are recognized as full Liferay 
+IDE projects.
+
+While it's possible to use a variety of Maven-related mojo plugins to build 
+Liferay projects, the supported way uses liferay-maven-plugin. The archetypes 
+available in Maven Central for Liferay plugin types add liferay-maven-plugin to 
+the build section of the project's `pom.xml`. Most of the Liferay plugins are 
+just WAR packages with the liferay-maven-plugin added to their configuration 
+sections.
+<!-- I'm not sure what this last sentence means, or how it relates to the rest 
+of the content in this paragraph. -Nick -->
+<!-- Are m2e-liferay and liferay-maven-plugins the same thing? -Nick -->
+
+To support these projects in Liferay IDE, you first need a mechanism to 
+recognize them as Liferay IDE projects. Liferay IDE projects are recognized in 
+Eclipse as *faceted web projects* that include the appropriate Liferay plugin 
+facet. All Liferay IDE projects are therefore also Eclipse web projects, which 
+are simply faceted projects with the web facet installed. To get Liferay Maven 
+projects recognized by Eclipse and working with the rest of its JEE tooling, the 
+projects must be flexible web projects with Liferay facets installed. To meet 
+these requirements, the m2e-liferay plugin requires the following Eclipse 
+plugins to also be installed:
+<!-- Is a "flexible web project" the same thing as a "faceted web project"? 
+-Nick -->
+
+- m2e-core: Maven integration for Eclipse
+- m2e-wtp: Maven integration for WTP
+
+The m2e-core plugin contains the standard Maven tooling support for Eclipse. The 
+main benefits m2e-core provides are dependency resolution classpath management 
+and abstract project configuration framework for adopters. The second Eclipse 
+plugin required for the m2e-liferay plugin to work properly is m2e-wtp. For 
+projects to be recognized as flexible web projects, the m2e-wtp plugin must be 
+used. This plugin provides the project configuration mapping between the WAR 
+package type POMs in the Maven model to the flexible web project support in 
+Eclipse.
+<!-- What is "...abstract project configuration framework for adopters"? Is 
+"adopters" supposed to be "adapters", or does it just refer to people using 
+m2e-core? -Nick -->
+
+With these Eclipse plugins in place, there's just one piece remaining to make 
+Liferay Maven projects first-class citizens in Eclipse. You need to make sure 
+that the m2e-core plugin can recognize the extra lifecycle metadata mappings 
+that are required for supporting the custom Liferay Maven goals in the 
+liferay-maven-plugin mojos. This includes the liferay-maven-plugin that 
+contributes Liferay Maven goals to the standard build lifecycle. Also, the 
+m2e-core plugin requires that it be explicitly told how to do this via a 
+liferay-metadata-execution mapping. Normally, m2e-core users have to manually 
+specify such mappings themselves. However, the m2e-liferay plugin automatically 
+provides this mapping. The m2e-liferay plugin also provides m2e-core with 
+additional build participation to make sure that Liferay Maven projects are 
+handled properly in the Eclipse build lifecycle. For example, m2e-liferay makes 
+sure that the Liferay Maven goal liferay:build-css is called when Eclipse 
+deploys a Liferay theme plugin. Other Liferay Maven goals are similarly enabled 
+by m2e-liferay. 
+<!-- What are "liferay-maven-plugin mojos", and why are they being discussed 
+here? -Nick -->
 
 ## Verifying Maven Lifecycle Mapping
 

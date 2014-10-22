@@ -16,7 +16,7 @@ to:
 Still not sold on the need to use Liferay's Plugin Security Manager? The 
 scenarios in the following section might change your mind.
 
-## Understanding the Need for Plugin Security
+## Understanding the Need for Plugin Security [](id=understanding-the-need-for-plugin-security)
 
 Consider the following scenarios:
 
@@ -37,7 +37,7 @@ These are just a few situations that may ring true for you. When you're
 responsible for keeping your system running well 24x7, you can't be too cautious
 in protecting your portal, system, and network.
 
-## Controlling Portal Access
+## Controlling Portal Access [](id=controlling-portal-access)
 
 When the Plugin Security Manager is enabled for your plugin, it checks your
 plugin's *Portal Access Control List (PACL)*. This list describes what APIs the
@@ -58,7 +58,7 @@ Before you dive into the intricacies of these properties, you should first
 consider a plugin development approach that involves designing an app for the 
 security manager from the ground up. 
 
-## Developing Plugins with Security in Mind 
+## Developing Plugins with Security in Mind [](id=developing-plugins-with-security-in-mind)
 
 When you start developing your plugin, you may not have a clear picture of all 
 the aspects of the portal you need to access, and that's fine. In fact, it's 
@@ -84,7 +84,7 @@ Here is the suggested process for developing secure plugins:
 A key step in this process is turning on the Security Manager. This is described 
 next.
 
-## Enabling the Security Manager 
+## Enabling the Security Manager [](id=enabling-the-security-manager)
 
 If you want to distribute plugins, either on the Liferay Marketplace or through
 your web site, you have to assume that users will insist the Security Manager is 
@@ -98,7 +98,7 @@ property to true in your plugin's `liferay-plugin-package.properties` file.
 
 Great! Now you know the basics of how Liferay plugin security works.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Setting Permissions](/develop/learning-paths/-/knowledge_base/6-2/setting-permissions)
 

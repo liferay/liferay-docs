@@ -18,7 +18,7 @@ or the tutorial
 Creating a hook using Liferay IDE is easiest to learn first. So go ahead and
 jump right in by creating your hook project with Liferay IDE. 
 
-## Creating a Hook Project from Liferay IDE
+## Creating a Hook Project from Liferay IDE [](id=creating-a-hook-project-from-liferay-ide)
 
 Follow these steps to create a hook in IDE in no time:
 
@@ -45,7 +45,7 @@ or create a hook in an existing plugin project. Use *File* &rarr; *New* &rarr;
 *New* &rarr; *Liferay Hook Configuration* to create a hook in an existing plugin 
 project.
 
-## Creating a Hook Project from the Command Line
+## Creating a Hook Project from the Command Line [](id=creating-a-hook-project-from-the-command-line)
 
 From your command line terminal, navigate to your Plugins SDK's `hooks` folder.
 To create a hook project, you must execute the *create* script. Here's the format

@@ -18,7 +18,7 @@ There are two ways of creating Liferay plugins with Maven: using Liferay
 IDE and using the command line. This tutorial demonstrates using Liferay IDE to
 create them. 
 
-## Creating Liferay Maven Plugins Using Liferay IDE
+## Creating Liferay Maven Plugins Using Liferay IDE [](id=creating-liferay-maven-plugins-using-liferay-ide)
 
 In the following steps, you'll learn how to use Maven archetypes to generate a
 Liferay plugin project using Liferay IDE:
@@ -96,7 +96,7 @@ specification.
 Great! You've successfully created a Liferay portlet project using Maven in
 Liferay IDE! 
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 

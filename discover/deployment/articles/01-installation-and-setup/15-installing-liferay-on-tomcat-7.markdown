@@ -18,7 +18,7 @@ the dependencies file should be called
 
 Next, let's get started by addressing Liferay's library dependencies.
 
-## Dependency Jars
+## Dependency Jars [](id=dependency-jars)
 
 Liferay Portal depends on several `JAR` files found in the Liferay
 Dependencies Archive. In addition to these, you need the proper driver for your
@@ -77,7 +77,7 @@ Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
 Now that you have the necessary libraries in place, we'll move on to
 configuring your domain.
 
-## Tomcat Configuration
+## Tomcat Configuration [](id=tomcat-configuration)
 
 There are several configuration steps you need to complete before Tomcat can
 run Liferay. Let's get started.
@@ -170,7 +170,7 @@ your database and mail session (and we recommend you do), you can skip the next
 sections and move to the section titled *Enabling PACL*. Next we'll look at
 configuring your database with Tomcat.
 
-## Database Configuration
+## Database Configuration [](id=database-configuration)
 
 If you want Tomcat to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -209,7 +209,7 @@ $$$
 Your Tomcat managed data source is now configured. Let's move on to your mail
 session.
 
-## Mail Configuration
+## Mail Configuration [](id=mail-configuration)
 
 If you want to manage your mail session with Tomcat, use the following
 instructions. If you want to use the built-in Liferay mail session, you can
@@ -243,7 +243,7 @@ replace the example mail session values with your own.
 Your mail session is configured. Next, we'll make sure Liferay will be able to
 access your mail session and database.
 
-## Configuring your database and mail session
+## Configuring your database and mail session [](id=configuring-your-database-and-mail-session)
 
 In this section we'll specify appropriate properties for Liferay to use in
 connecting to your database and mail session.
@@ -272,7 +272,7 @@ It's just that easy! Before we deploy Liferay Portal on your Tomcat server,
 let's look at configuring Portal Access Control Language (PACL) with Liferay on
 Tomcat. 
 
-## Enabling PACL
+## Enabling PACL [](id=enabling-pacl)
 
 To enable PACL for use with your Liferay Portal when running on Tomcat, you
 need to enable the security manager and add some required permissions to the
@@ -302,7 +302,7 @@ Tomcat reports the message `Using Security Manager` to your terminal.
 
 Now you have PACL enabled and configured for your portal. Let's deploy Liferay!
 
-## Deploy Liferay
+## Deploy Liferay [](id=deploy-liferay)
 
 It's time to deploy Liferay as an exploded web archive within your
 `$TOMCAT_HOME/webapps` folder, configure our setup wizard behavior, and start

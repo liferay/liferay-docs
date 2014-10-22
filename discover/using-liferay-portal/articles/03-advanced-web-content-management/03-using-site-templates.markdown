@@ -82,7 +82,7 @@ By default, the following site templates are provided:
 Now that you know the basics for creating and managing your site templates,
 let's put your knowledge to the test by completing an example.
 
-## Site Templates Example 
+## Site Templates Example [](id=site-templates-example)
 
 Suppose we need to create the following three sites for the Lunar Resort's
 internal use: Engineering, Marketing, and Legal. These should be private sites
@@ -144,7 +144,7 @@ users add and share content within the sites. Also, site administrators can add
 new pages, portlets, and content to their sites, further differentiating each
 department's site from the others.
 
-## Propagating Changes from Site Templates to Sites 
+## Propagating Changes from Site Templates to Sites [](id=propagating-changes-from-site-templates-to-sites)
 
 It's possible for site template administrators to add, update, or delete site
 template pages. Changes made to a site template can be propagated to sites whose

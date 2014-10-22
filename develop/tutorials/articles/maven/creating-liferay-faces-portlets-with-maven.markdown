@@ -14,7 +14,7 @@ created. -Cody -->
 
 You'll begin creating a Liferay Faces portlet plugin next. 
 
-## Creating a Liferay Faces Portlet Plugin
+## Creating a Liferay Faces Portlet Plugin [](id=creating-a-liferay-faces-portlet-plugin)
 
 To create your Liferay Faces portlet plugin project, follow the 
 [Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
@@ -45,7 +45,7 @@ $$$
 It's helpful to familiarize yourself with a Liferay Faces portlet plugin
 project's directory structure. You can explore its anatomy next. 
 
-## Anatomy
+## Anatomy [](id=anatomy)
 
 A portlet project created from the
 `com.liferay.maven.archetypes:liferay-portlet-jsf-archetype` has the following
@@ -93,7 +93,7 @@ Web source  | `src/main/webapp` | `docroot`             |
 Congratulations! You now know how to create Liferay Faces portlets that can
 leverage one of several powerful JSF frameworks. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 
