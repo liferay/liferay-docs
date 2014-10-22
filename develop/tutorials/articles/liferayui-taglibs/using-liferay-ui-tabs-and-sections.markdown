@@ -12,7 +12,7 @@ This tutorial shows you how to use the `liferay-ui:tabs` tag and
 `liferay-ui:section` tag to implement a tabbed interface in your portlet. When
 you're done you'll be able to ["keep tabs on"](http://idioms.thefreedictionary.com/keep+tabs+on) anything!
 
-## Setting Up the liferay-ui:tabs Tag
+## Setting Up the liferay-ui:tabs Tag [](id=setting-up-the-liferay-uitabs-tag)
 
 The `liferay-ui:tabs` tag is easy to use. The examples below show how to add and
 use the `liferay-ui:tabs` tag with the `liferay-ui:section` tag in your
@@ -25,7 +25,7 @@ portlet's view. There are three basic steps to accomplish this:
 Follow these steps and you'll have a well-organized UI for your portlet in no 
 time. Now, onward to building a tabbed interface!
 
-### Step 1: Reference the Liferay UI Taglib
+### Step 1: Reference the Liferay UI Taglib [](id=step-1-reference-the-liferay-ui-taglib)
 
 1. Open one of your portlet's view JSPs. Create one if it doesn't already exist.
 
@@ -37,7 +37,7 @@ library:
 With the first step out of the way, you can now use `liferay-ui` tags in your
 portlet. Next up, you'll add tabs! 
 
-### Step 2: Insert and Configure the Liferay UI Tabs Tag in Your View JSP
+### Step 2: Insert and Configure the Liferay UI Tabs Tag in Your View JSP [](id=step-2-insert-and-configure-the-liferay-ui-tabs-tag-in-your-view-jsp)
 
 Specify a `<liferay-ui:tabs>` tag and add a `names` attribute to it, with the
 names of the tabs you want to create. You can specify as many tabs as you like.
@@ -94,7 +94,7 @@ portlet is on. By default, the first tab is active.
 Now that you know what attributes are available, you can use them to spice up
 your tabs! 
 
-### Step 3: Insert and Configure the Liferay UI Section Tags in Your View JSP
+### Step 3: Insert and Configure the Liferay UI Section Tags in Your View JSP [](id=step-3-insert-and-configure-the-liferay-ui-section-tags-in-your-view-jsp)
 
 Before you start adding attributes, you should create a *section* for each of
 your tabs. The sections allow you to associate content with each tab. Inside 
@@ -182,7 +182,7 @@ portlet would look like the screenshot in the figure below.
 Great! In this tutorial you learned how to implement a tabbed interface for your 
 portlet. Now you can "keep tabs on" all kinds of portlets!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
 

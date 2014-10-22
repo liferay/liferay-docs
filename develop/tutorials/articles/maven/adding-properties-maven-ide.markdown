@@ -16,7 +16,7 @@ project, so that your project can access the Maven properties it needs. This
 tutorial shows you how to address missing Maven properties using the Quick Fix
 tool. Read on to find out how! 
 
-## Launching the Quick Fix Tool
+## Launching the Quick Fix Tool [](id=launching-the-quick-fix-tool)
 
 The first thing you need to do is launch the Quick Fix tool. To do this, open
 the *Maven Configuration Problem* section of the *Markers* view in Liferay IDE.
@@ -40,7 +40,7 @@ available in your environment. The remainder of this tutorial explains how to
 use these options. The next section walks you through creating a new Maven
 profile using the Quick Fix tool. 
 
-## Creating a New Maven Profile with the Quick Fix Tool
+## Creating a New Maven Profile with the Quick Fix Tool [](id=creating-a-new-maven-profile-with-the-quick-fix-tool)
 
 If you want to select an existing Maven profile for your project, you can skip
 this section. Otherwise, read on! To create a new Maven profile, select that
@@ -60,7 +60,7 @@ project's `pom.xml` is selected. Alternatively, you can select your local
 `settings.xml` file. That's it! Now just click *OK*, and the missing properties
 error is gone! 
 
-## Selecting an Existing Maven Profile with the Quick Fix Tool
+## Selecting an Existing Maven Profile with the Quick Fix Tool [](id=selecting-an-existing-maven-profile-with-the-quick-fix-tool)
 
 To resolve missing Maven properties, the Quick Fix tool also lets you select
 existing Maven profiles to use with your project. To do this, select that option
@@ -80,7 +80,7 @@ there is to it! Once you've selected the profiles you want to use, just click
 As you can see, the Quick Fix tool is aptly named. With just a few steps, it
 helps you create or find properties for your Maven project. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
 
