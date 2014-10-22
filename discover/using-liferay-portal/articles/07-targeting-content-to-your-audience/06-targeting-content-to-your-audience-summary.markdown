@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary-ct)
 
 In this chapter, we learned how to use Liferay' audience targeting app. This app
 allows you to define custom user segments, target specific content to different
