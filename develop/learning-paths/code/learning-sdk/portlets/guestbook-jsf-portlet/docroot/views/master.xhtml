@@ -5,14 +5,6 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 	<h:form>
-	
-		<h:messages globalOnly="true" layout="table" />
-		<h:panelGroup rendered="#{guestbookBacking.hasPermissions}">
-			<h:outputLink styleClass="btn btn-default" value="#{guestbookBacking.permissionsUrl}">
-				<h:outputText value=" #{i18n['permissions']} " />
-			</h:outputLink><br />
-		</h:panelGroup>
-		<br />
 		
 		<span class="guestbook_tab">
 			<h:outputText value=" " />

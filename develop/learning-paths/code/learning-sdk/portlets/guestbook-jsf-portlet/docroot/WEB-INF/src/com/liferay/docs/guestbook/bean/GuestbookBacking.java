@@ -312,22 +312,6 @@ public class GuestbookBacking extends AbstractBacking {
 		this.hasAddPermission = hasAddPermission;
 	}
 
-	public Boolean getHasPermissions() {
-
-		if (hasPermissions == null) {
-			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
-			long scopeGroupId = liferayFacesContext.getScopeGroupId();
-			hasPermissions = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
-					MODEL, scopeGroupId, ActionKeys.PERMISSIONS);
-		}
-
-		return hasPermissions;
-	}
-
-	public void setHasPermissions(Boolean hasPermissions) {
-		this.hasPermissions = hasPermissions;
-	}
-
 	public boolean isEditingGuestbook() {
 		return editingGuestbook;
 	}
@@ -338,55 +322,6 @@ public class GuestbookBacking extends AbstractBacking {
 
 	public void setOriginalGuestbook(Guestbook originalGuestbook) {
 		this.originalGuestbook = originalGuestbook;
-	}
-
-	public String getPermissionsUrl() {
-
-		if (permissionsUrl == null) {
-
-			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
-			ExternalContext externalContext = liferayFacesContext.getExternalContext();
-			long scopeGroupId = liferayFacesContext.getScopeGroupId();
-
-			// Get the underlying HttpServletRequest and HttpServletResponse
-			PortletRequest portletRequest = (PortletRequest) externalContext.getRequest();
-			HttpServletRequest httpServletRequest = PortalUtil.getHttpServletRequest(portletRequest);
-			PortletResponse portletResponse = (PortletResponse) externalContext.getResponse();
-			HttpServletResponse httpServletResponse = PortalUtil.getHttpServletResponse(portletResponse);
-			ELContext elContext = liferayFacesContext.getELContext();
-			StringJspWriter stringJspWriter = new StringJspWriter();
-			PageContextAdapter pageContextAdapter = new PageContextAdapter(httpServletRequest, httpServletResponse,
-					elContext, stringJspWriter);
-
-			// Invoke the Liferay Tag class directly (rather than using the tag from a JSP).
-			PermissionsURLTag permissionsURLTag = new PermissionsURLTag();
-
-			permissionsURLTag.setPageContext(pageContextAdapter);
-			permissionsURLTag.setModelResource(MODEL);
-			permissionsURLTag.setModelResourceDescription("Guestbook portlet");
-			permissionsURLTag.setRedirect("false");
-			permissionsURLTag.setResourceGroupId(scopeGroupId);
-			permissionsURLTag.setResourcePrimKey(String.valueOf(scopeGroupId));
-
-			// permissionsURLTag.setRoleTypes(permissionsURL.getRoleTypes());
-			// set var to null if you want the tag to write out the url
-			permissionsURLTag.setVar(null);
-			// permissionsURLTag.setWindowState(permissionsURL.getWindowState());
-
-			try {
-				permissionsURLTag.doStartTag();
-				permissionsURLTag.doEndTag();
-
-				permissionsUrl = stringJspWriter.toString();
-				logger.info("getPermissionsUrl 0: " + permissionsUrl);
-			}
-			catch (Exception e) {
-				logger.error(e);
-			}
-
-		}
-
-		return permissionsUrl;
 	}
 
 	public Entry getSelectedEntry() {
