@@ -108,12 +108,14 @@ entity. This is handled by the `portlet:renderURL` and `liferay-ui:header` tags:
 You also want to show the entity in the JSP when a user clicks on it. To do 
 this, use `ParamUtil` to get the id of the entity from the `renderRequest`. Then 
 create an object using your `*LocalServiceUtil`. Here, this is done to create an 
-`Insult` object:
+`Insult` object, which is then used to get the `AssetEntry` object of the 
+insult:
 
     ```
     <%
     long insultId = ParamUtil.getLong(renderRequest, "insultId");
     Insult ins = InsultLocalServiceUtil.getInsult(insultId);
+    AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(Insult.class.getName(), ins.getInsultId());
     ```
     %>
     ```
@@ -167,5 +169,27 @@ the value of `href` in the Insults portlet is `"<%=rowURL %>"`:
 
 Now just redeploy your portlet and refresh the page so that the `view.jsp` of 
 your plugin reloads. Each entity in the portlet should now be a link. Click on 
-one to view the new JSP that you made in the first step of this tutorial. The 
-ratings should appear at the bottom of the page.
+one to view the new JSP that you made in the previous step of this tutorial. 
+Related assets, if you've created any yet, should be visible near the bottom of 
+the page.
+
+Awesome! Now your users can view the related assets of custom entities in your 
+portlet. There's just one final detail to take care of before you're finished.
+
+## Obscuring the Package Path of Your Custom Entity
+
+Now that you've implemented related assets in your portlet, you may have noticed 
+that the full package path is shown for your entity's type in the Related Assets 
+menu. For example, this is what is shown for the Insult entity type of the 
+Insults portlet:
+
+![Figure x: The full package path of the custom entity type is shown in the Related Assets menu.](../../images/asset-fw-related-path-01.png)
+
+Fortunately, this can be fixed with a very small language hook. For instructions 
+on creating a language hook, see the tutorial 
+[Overriding Language Properties Using a Hook](/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook#creating-language-files). 
+In the `Language.properties` file of your hook, simply assign the package path 
+to the text you want to override it with. For example, the following overrides 
+the full package path of the Insults portlet with simply "Insult":
+
+    model.resource.com.liferay.docs.insult.model.Insult=Insult
