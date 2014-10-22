@@ -690,11 +690,13 @@ the generated phrase and then sets the styles for it.
     class added, you can write the styles for it next.
 
 2.  Open your `main.css` file and add the following styles:
+
         .phrase
                 {
                     font-size:200%;
                     line-height:120%;
-                }    
+                }
+                
 Now if you generate a silly phrase, you should see your new styles added!
 
 Compare your `view.jsp` with the finished code [here](../../code/alloy/silly-phrase-generator/end/silly-phrase-generator-portlet/docroot/view.jsp)
