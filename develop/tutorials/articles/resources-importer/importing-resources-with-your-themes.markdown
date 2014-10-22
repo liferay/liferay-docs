@@ -1,4 +1,4 @@
-# Importing Resources with Your Themes [](id=importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en)
+# Importing Resources with Your Themes [](id=importing-resources-with-your-themes)
 
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
