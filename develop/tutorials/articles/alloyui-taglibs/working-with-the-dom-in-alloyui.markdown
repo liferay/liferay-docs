@@ -5,7 +5,7 @@ elements in the DOM (Document Object Model). You'll explore this subject through
 a fun application: a silly phrase generator. If you wish to follow along with
 the example, you can get the code [here](../../code/alloy/silly-phrase-generator/begin/silly-phrase-generator-portlet).
 
-Follow this tutorial and you'll be a master of AlloyUI DOM traversal in no time.
+Follow this tutorial and you'll be a DOM master with AlloyUI in no time.
 
 ## Grabbing Element Nodes
 
@@ -152,9 +152,8 @@ node next.
 ## Subscribing to Events of Node Objects
 
 Now that you have referenced your element nodes you can subscribe to events for 
-them. Subscribing to events of your element nodes is a quick and easy process.
-Before you can subscribe to events, you have to configure your `<aui:script>`'s 
-*use* attribute to use events.
+them. Subscribing to events of your element nodes is a quick and easy process,
+but you must first configure your `<aui:script>`'s *use* attribute to use events.
 
 Update your `<aui:script>` to look like the following code:
 
@@ -237,8 +236,8 @@ values. If the `val()` method is passed an argument, it sets the value attribute
 otherwise it gets the value attribute. The `attr()` method takes two arguments: 
 the first argument defines the attribute; the second argument defines the value 
 of the attribute. If a second argument is not given, the `attr()` method gets 
-the attribute, otherwise it sets the attribute. The list below defines these
-methods:
+the attribute, otherwise it sets the attribute. Below are the methods described
+above with a couple examples that illustrate how to properly use the methods.
 
 **attr(attribute):** sets or gets the value of a specific attribute. For
 example `A.one('#container').attr('name')` would get the value of the
@@ -398,8 +397,8 @@ the nodes next.
 ## Hiding and Showing Node Objects
 
 Are you tired of staring at the same elements on your page? Do you wish you 
-could move them out of the way? Lucky for you, AlloyUI has a method for that. 
-The `hide()` and `show()` methods are used to hide and show node objects.
+could move them out of the way? Lucky for you, AlloyUI has a couple methods for 
+that. The `hide()` and `show()` methods are used to hide and show node objects.
 
 **hide('nodeObject'):** hides a node object. For example `node1.hide()`
 would hide the node object set to the variable *node1*.
@@ -436,8 +435,8 @@ you to hide and show the title.
         
         });
         
-    With the `click` event subscribed to your button node, you can add
-    the conditions for your `hide()` and `show()` methods.
+    With the function subscribed to the `click` event of your button node, you 
+    can add the conditions for your `hide()` and `show()` methods next.
     
 4.  Add the following code to the function you created in the previous step:
 
@@ -540,13 +539,14 @@ the phrase variable.
 AlloyUI provides the `html()` method to set and get the HTML of a node object.
 To get the HTML of a node object simply pass no arguments in the method. To set
 the HTML of a node object, pass in the HTML you wish to set for the node object
-as the argument for the `html()` method.
+as the argument for the `html()` method. Below are a couple examples to help
+illustrate the `html()` method:
 
-**html():** gets the html of a node. For example `node1.html()` would get the 
-html of the node set to the variable *node1*.
+**html():** gets the HTML of a node. For example `node1.html()` would get the 
+HTML of the node set to the variable *node1*.
 
-**html('html'):** sets the html of a node. For example `node1.html('rosebud')` 
-would set the html of the node set to the variable *node1*.
+**html('html'):** sets the HTML of a node. For example `node1.html('rosebud')` 
+would set the HTML of the node set to the variable *node1*.
 
 The example below sets the HTML for the phrase node.
 
@@ -700,9 +700,9 @@ Now if you generate a silly phrase, you should see your new styles added!
 Compare your `view.jsp` with the finished code [here](../../code/alloy/silly-phrase-generator/end/silly-phrase-generator-portlet/docroot/view.jsp)
 
 Congrats! Your silly phrase generator is complete, and now you have a basic 
-understanding of how to traverse the DOM using AlloyUI. You can view all the 
-methods covered in this tutorial, along with many others in the 
- [AlloyUI Rosetta Stone](http://alloyui.com/rosetta-stone).
+understanding of how to traverse and manipulate the DOM using AlloyUI. You can 
+view all the methods covered in this tutorial, along with several other useful 
+methods in the [AlloyUI Rosetta Stone](http://alloyui.com/rosetta-stone).
 
 ## Related Topics
 
