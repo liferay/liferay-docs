@@ -20,7 +20,7 @@
         <aui:button-row>
 
 			<aui:button type="submit"></aui:button>
-			<aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
+			<aui:button type="cancel" onClick="<%= viewURL.toString() %>"></aui:button>
 
         </aui:button-row>
 </aui:form>
