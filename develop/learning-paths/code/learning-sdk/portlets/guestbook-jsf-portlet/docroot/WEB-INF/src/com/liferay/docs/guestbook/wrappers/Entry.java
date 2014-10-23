@@ -40,13 +40,13 @@ public class Entry extends EntryWrapper {
 	private static final long serialVersionUID = -420986486105631030L;
 
 	private static final Logger logger = LoggerFactory.getLogger(Entry.class);
+	private static final String MODEL = "com.liferay.docs.guestbook.model.Entry";
 
 	// private members
 	private Boolean deleteable;
 	private Boolean permissible;
 	private String permissionsUrl;
 	private Boolean updateable;
-	private Boolean viewable;
 
 	public Entry(com.liferay.docs.guestbook.model.Entry entry) {
 		super(entry);
@@ -58,7 +58,7 @@ public class Entry extends EntryWrapper {
 			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
 			long scopeGroupId = liferayFacesContext.getScopeGroupId();
 			deleteable = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
-					"com.liferay.docs.guestbook.model.Entry", getEntryId(), ActionKeys.DELETE);
+					MODEL, getEntryId(), ActionKeys.DELETE);
 		}
 
 		return deleteable;
@@ -70,7 +70,7 @@ public class Entry extends EntryWrapper {
 			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
 			long scopeGroupId = liferayFacesContext.getScopeGroupId();
 			permissible = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
-					"com.liferay.docs.guestbook.model.Entry", getEntryId(), ActionKeys.PERMISSIONS);
+					MODEL, getEntryId(), ActionKeys.PERMISSIONS);
 		}
 
 		return permissible;
@@ -98,16 +98,14 @@ public class Entry extends EntryWrapper {
 			PermissionsURLTag permissionsURLTag = new PermissionsURLTag();
 
 			permissionsURLTag.setPageContext(pageContextAdapter);
-			permissionsURLTag.setModelResource("com.liferay.docs.guestbook.model.Entry");
+			permissionsURLTag.setModelResource(MODEL);
 			permissionsURLTag.setModelResourceDescription(getName());
 			permissionsURLTag.setRedirect("false");
 			permissionsURLTag.setResourceGroupId(scopeGroupId);
 			permissionsURLTag.setResourcePrimKey(String.valueOf(getEntryId()));
 
-			// permissionsURLTag.setRoleTypes(permissionsURL.getRoleTypes());
-			// set var to null if you want the tag to write out the url
+			// Set var to null if you want the tag to write out the url
 			permissionsURLTag.setVar(null);
-			// permissionsURLTag.setWindowState(permissionsURL.getWindowState());
 
 			try {
 				permissionsURLTag.doStartTag();
@@ -129,22 +127,10 @@ public class Entry extends EntryWrapper {
 			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
 			long scopeGroupId = liferayFacesContext.getScopeGroupId();
 			updateable = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
-					"com.liferay.docs.guestbook.model.Entry", getEntryId(), ActionKeys.UPDATE);
+					MODEL, getEntryId(), ActionKeys.UPDATE);
 		}
 
 		return updateable;
-	}
-	
-	public Boolean getViewable() {
-
-		if (viewable == null) {
-			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
-			long scopeGroupId = liferayFacesContext.getScopeGroupId();
-			viewable = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
-					"com.liferay.docs.guestbook.model.Entry", getEntryId(), ActionKeys.VIEW);
-		}
-
-		return viewable;
 	}
 
 }

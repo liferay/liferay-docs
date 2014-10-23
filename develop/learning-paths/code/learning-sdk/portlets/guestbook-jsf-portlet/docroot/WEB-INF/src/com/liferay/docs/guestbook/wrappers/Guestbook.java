@@ -27,10 +27,8 @@ import com.liferay.faces.util.jsp.PageContextAdapter;
 import com.liferay.faces.util.jsp.StringJspWriter;
 import com.liferay.faces.util.logging.Logger;
 import com.liferay.faces.util.logging.LoggerFactory;
-
 import com.liferay.portal.security.permission.ActionKeys;
 import com.liferay.portal.util.PortalUtil;
-
 import com.liferay.taglib.security.PermissionsURLTag;
 
 
@@ -43,6 +41,7 @@ public class Guestbook extends GuestbookWrapper {
 	private static final long serialVersionUID = -420986486105631030L;
 
 	private static final Logger logger = LoggerFactory.getLogger(Guestbook.class);
+	private static final String MODEL = "com.liferay.docs.guestbook.model.Guestbook";
 
 	// private members
 	private Boolean deleteable;
@@ -61,7 +60,7 @@ public class Guestbook extends GuestbookWrapper {
 			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
 			long scopeGroupId = liferayFacesContext.getScopeGroupId();
 			deleteable = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
-					"com.liferay.docs.guestbook.model.Guestbook", getGuestbookId(), ActionKeys.DELETE);
+					MODEL, getGuestbookId(), ActionKeys.DELETE);
 		}
 
 		return deleteable;
@@ -73,7 +72,7 @@ public class Guestbook extends GuestbookWrapper {
 			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
 			long scopeGroupId = liferayFacesContext.getScopeGroupId();
 			permissible = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
-					"com.liferay.docs.guestbook.model.Guestbook", getGuestbookId(), ActionKeys.PERMISSIONS);
+					MODEL, getGuestbookId(), ActionKeys.PERMISSIONS);
 		}
 
 		return permissible;
@@ -101,16 +100,14 @@ public class Guestbook extends GuestbookWrapper {
 			PermissionsURLTag permissionsURLTag = new PermissionsURLTag();
 
 			permissionsURLTag.setPageContext(pageContextAdapter);
-			permissionsURLTag.setModelResource("com.liferay.docs.guestbook.model.Guestbook");
+			permissionsURLTag.setModelResource(MODEL);
 			permissionsURLTag.setModelResourceDescription(getName());
 			permissionsURLTag.setRedirect("false");
 			permissionsURLTag.setResourceGroupId(scopeGroupId);
 			permissionsURLTag.setResourcePrimKey(String.valueOf(getGuestbookId()));
 
-			// permissionsURLTag.setRoleTypes(permissionsURL.getRoleTypes());
-			// set var to null if you want the tag to write out the url
+			// Set var to null if you want the tag to write out the url
 			permissionsURLTag.setVar(null);
-			// permissionsURLTag.setWindowState(permissionsURL.getWindowState());
 
 			try {
 				permissionsURLTag.doStartTag();
@@ -132,7 +129,7 @@ public class Guestbook extends GuestbookWrapper {
 			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
 			long scopeGroupId = liferayFacesContext.getScopeGroupId();
 			updateable = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
-					"com.liferay.docs.guestbook.model.Guestbook", getGuestbookId(), ActionKeys.UPDATE);
+					MODEL, getGuestbookId(), ActionKeys.UPDATE);
 		}
 
 		return updateable;
@@ -144,7 +141,7 @@ public class Guestbook extends GuestbookWrapper {
 			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
 			long scopeGroupId = liferayFacesContext.getScopeGroupId();
 			viewable = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
-					"com.liferay.docs.guestbook.model.Guestbook", getGuestbookId(), ActionKeys.VIEW);
+					MODEL, getGuestbookId(), ActionKeys.VIEW);
 		}
 
 		return viewable;
