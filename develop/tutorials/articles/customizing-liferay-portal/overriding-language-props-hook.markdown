@@ -22,7 +22,7 @@ First, you'll learn how to find the language key properties that specify
 Liferay's default text values. It's time to get started and locate the default
 language files. 
 
-## Locating the Default Language Keys
+## Locating the Default Language Keys [](id=locating-the-default-language-keys)
 
 Liferay's default language files are in the
 `WEB-INF/lib/portal-impl.jar/content` folder of the Liferay Portal deployment on
@@ -45,7 +45,7 @@ customize, you can create new language properties files to specify the text
 values that you prefer. You'll create these properties files in a Liferay hook
 plugin. 
 
-## Creating Language Files
+## Creating Language Files [](id=creating-language-files)
 
 The steps in this section show you how to use Liferay IDE to create a language
 property hook plugin for overriding Liferay's default text values with your own
@@ -101,7 +101,7 @@ If you created your language files manually, however, the next section shows you
 how to manually reference your language files in your hook plugin's
 `liferay-hook.xml` file.
 
-## Referencing Custom Language Files in the liferay-hook.xml File
+## Referencing Custom Language Files in the liferay-hook.xml File [](id=referencing-custom-language-files-in-the-liferay-hook-xml-file)
 
 Each reference to a language file in `liferay-hook.xml` is defined in a
 `language-properties` tag. For example, you could reference custom language
@@ -151,7 +151,7 @@ $$$
 Now that you've customized the Liferay language key values, you can enjoy seeing
 your new titles, labels, and message strings in your portal. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 
