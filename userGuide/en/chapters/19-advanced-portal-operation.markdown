@@ -758,11 +758,11 @@ Liferay instance.
 
 +$$$
 
-**Note**: Due to a change in Liferay 6.2's API, the Global repository that was
-used to store Web Content and Documents and Media is now its own site and
-therefore the friendly URL "/global" is now a reserved friendly URL. If you are
-planning to upgrade to Liferay 6.2, please be aware of this change and verify
-that there is no current friendly URL that violates the restriction. 
+**Note**: In Liferay 6.2, the Global repository that was used to store Web
+Content and Documents and Media is now its own site with the reserved friendly
+URL `/global`; upgrading to Liferay 6.2 will fail if any sites are using the
+same URL. Before upgrading to Liferay 6.2, make sure no current friendly URL
+violates the restriction. 
 
 $$$
 
