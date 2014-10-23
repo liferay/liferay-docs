@@ -57,8 +57,19 @@ The flowchart illustrates the procedure described above. Use it to determine
 your course of action for the upgrade. Each step is described fully below so
 that you can perform your upgrade as efficiently as possible. Be sure to test
 the upgrade in a non-production environment before upgrading your production
-Liferay instance. Let's look at the preparatory tasks you should perform one by
-one. 
+Liferay instance. 
+
++$$$
+
+**Note**: In Liferay 6.2, the Global repository that was used to store Web
+Content and Documents and Media is now its own site with the reserved friendly
+URL `/global`; upgrading to Liferay 6.2 will fail if any sites are using the
+same URL. Before upgrading to Liferay 6.2, make sure no current friendly URL
+violates the restriction. 
+
+$$$
+
+Let's look at the preparatory tasks you should perform one by one. 
 
 ## Migrate to Algorithm 6 [](id=migrate-to-algorithm-6)
 
