@@ -9,7 +9,7 @@ of other content on the site or portal. For example, when a Blog entry is
 related to other assets, those assets appear with that entry in the Blogs 
 portlet.
 
-![Insert screenshot]()
+![Figure 1: Related assets in the Blogs portlet.](../../images/asset-fw-related-blog-insults.png)
 
 This tutorial shows you how to leverage Liferay's asset framework to relate the 
 assets in your asset-enabled custom portlets with those originating in other 
@@ -25,7 +25,7 @@ is make some modifications to its service layer. Put the following below any
 finder methods you have in `service.xml` and then re-run service builder:
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
-    
+
 Next, you need to modify the `add*`, `delete*`, and `udpate*` methods in your 
 `*LocalServiceImpl` to also persist the asset relationships. This is done with 
 the  `updateLinks` and `deleteLinks` methods of `assetLinkLocalService`. For 
@@ -71,10 +71,13 @@ is shown here:
     </liferay-ui:panel>
     ```
 
+![Figure 2: Your portlet's entity is now shown in the Related Assets menu.](../../images/asset-fw-related-path-01.png)
+
 Awesome! Now content creators and editors can relate the assets of your portlet. 
-The next thing you need to do is reveal any such related assets to your 
-portlet's users. After all, you don't want to give everyone edit access just to 
-view related assets!
+For now, don't worry that the full package path of your entity is exposed in the 
+Related Assets menu--you'll address this later. The next thing you need to do is 
+reveal any such related assets to your portlet's users. After all, you don't 
+want to give everyone edit access just so they can view related assets!
 
 ## Exposing Related Assets to Your Users
 
@@ -173,23 +176,43 @@ one to view the new JSP that you made in the previous step of this tutorial.
 Related assets, if you've created any yet, should be visible near the bottom of 
 the page.
 
+![Figure 3: Any related assets now show in the new JSP you created.](../../images/asset-fw-related-insult.png)
+
 Awesome! Now your users can view the related assets of custom entities in your 
 portlet. There's just one final detail to take care of before you're finished.
 
 ## Obscuring the Package Path of Your Custom Entity
 
-Now that you've implemented related assets in your portlet, you may have noticed 
-that the full package path is shown for your entity's type in the Related Assets 
-menu. For example, this is what is shown for the Insult entity type of the 
-Insults portlet:
-
-![Figure x: The full package path of the custom entity type is shown in the Related Assets menu.](../../images/asset-fw-related-path-01.png)
-
+Even though related assets are working properly in your portlet, the full 
+package path of your entity is still being shown in the Related Assets menu. 
 Fortunately, this can be fixed with a very small language hook. For instructions 
 on creating a language hook, see the tutorial 
 [Overriding Language Properties Using a Hook](/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook#creating-language-files). 
 In the `Language.properties` file of your hook, simply assign the package path 
 to the text you want to override it with. For example, the following overrides 
-the full package path of the Insults portlet with simply "Insult":
+the full package path of the Insults portlet with `Insult`:
 
     model.resource.com.liferay.docs.insult.model.Insult=Insult
+
+Upon redeploying your portlet, the assignment in your `Language.properties` file 
+shows in the Related Assets menu instead of the full package path of your 
+entity:
+
+![Figure 4: After deploying a language hook, your entity appears as desired in the Related Assets menu.](../../images/asset-fw-related-select.png)
+
+Most excellent! Now you know how to implement related assets in your portlets. 
+Another thing you might want to do is investigate permissioning in the UI. For 
+example, the Insults portlet only allows assets to be related by those with 
+`ADD_INSULT` or `UPDATE` permission. These permissions are respectively checked 
+in the `view.jsp` and `insult_actions.jsp`. For more information on this, see 
+the learning path [Checking Permissions in the UI](/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+
+## Related Topics
+
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
