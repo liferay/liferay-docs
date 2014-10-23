@@ -11,8 +11,9 @@ assets related to a Blog entry appear alongside that entry in the Blogs portlet:
 This tutorial shows you how to enable Liferay's asset framework in your 
 portlets. A custom Insults portlet is used as an example. After all, your users 
 definitely want to be able to relate their insults to other content! You can 
-find the beginning Insults portlet here on Github. Likewise, the ending Insults 
-portlet is on Github, here. Now go ahead and get started relating your assets!
+find the beginning Insults portlet [here](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin/insults-portlet) 
+on Github. Likewise, the ending Insults portlet is on Github, [here](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/relating-assets/end/insults-portlet). 
+Now go ahead and get started relating your assets!
 
 ## Modifying the Service Layer of Your Portlet
 
