@@ -22,8 +22,8 @@ URL for the new JSP in your existing `view.jsp`. This tutorial shows you these
 steps using a custom Insults portlet. Coming up with great insults is a natural 
 part of comedy, but sometimes things can go too far. It's for these situations 
 that flagging inappropriate content is useful. You can find the beginning 
-Insults portlet [here on Github](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
-Likewise, the ending Insults portlet is on Github, [here](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/flags/end).
+Insults portlet [here on Github](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
+Likewise, the ending Insults portlet is on Github, [here](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/flags/end).
 
 Now it's time to get on with the flagging!
 
@@ -46,7 +46,7 @@ after clicking on an entity. This is handled by the `portlet:renderURL` and
 
     ```
     <portlet:renderURL windowState="normal" var="backURL">
-        <portlet:param name="mvcPath" value="/html/insults/view.jsp"></portlet:param>
+        <portlet:param name="mvcPath" value="/html/insult/view.jsp"></portlet:param>
     </portlet:renderURL>
 
     <liferay-ui:header backURL="<%=backURL%>" title="insult" />
@@ -91,13 +91,13 @@ it looks like this:
 
     ```
     <liferay-ui:search-container-row
-        className="com.sample.portlet.insults.model.Insult"
+        className="com.liferay.docs.insult.model.Insult"
         keyProperty="insultId"
         modelVar="insult" escapedModel="<%= true %>"
     >
     
         <portlet:renderURL windowState="maximized" var="rowURL">
-            <portlet:param name="mvcPath" value="/html/insults/view_insult.jsp" />
+            <portlet:param name="mvcPath" value="/html/insult/view_insult.jsp" />
             <portlet:param name="insultId" value="<%= String.valueOf(insult.getInsultId()) %>" />
         </portlet:renderURL>
     ```
@@ -128,8 +128,18 @@ enabled portlets. Remember, you just follow two simple steps--make a new JSP for
 implementing flagging, and then create a URL to that JSP so that your users can 
 get to it.
 
+Another thing you might want to do is perform permissions checks to control 
+access to the JSP your flags are in. For example, the Add Insult and Permissions 
+buttons of the Insults portlet are wrapped in a permissions check in the 
+`view.jsp`. For more information on this, see the learning path 
+[Checking Permissions in the UI](/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+
 ## Related Topics
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
