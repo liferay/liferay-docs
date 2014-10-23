@@ -24,10 +24,19 @@ the example below does just that (since it's Liferay's best practice), so the
 example code here doesn't even match what we just stated. We need to fix this.
 -Rich--> 
 
+## Preparing Your Project for the Asset Framework
+
 Before proceeding, make sure that you've implemented an indexer for your plugin. 
 Liferay's asset framework uses the indexer to manage assets. For instructions on 
 creating an indexer, see the learning path [Enabling Search and Indexing](/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing). 
-Now go ahead and get started by learning about adding and updating assets!
+
+You also need to make a small addition to your project's `service.xml` file. Put 
+the following line of code below any finder methods and then run Service 
+Builder:
+
+    <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+
+Now you're ready to learn about adding and updating assets!
 
 ## Adding and Updating Assets 
 

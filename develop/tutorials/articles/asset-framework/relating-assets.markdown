@@ -19,8 +19,8 @@ Now go ahead and get started relating your assets!
 
 To implement related assets in your portlet, the first thing you need to do 
 is make some modifications to your portlet's service layer. This is required 
-because the asset relationships themselves are persisted in the database. In 
-your portlet's `service.xml`, put the following line of code below any finder 
+because the asset relationships themselves are persisted. In your portlet's 
+`service.xml`, put the following line of code below any finder 
 methods and then run Service Builder:
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
