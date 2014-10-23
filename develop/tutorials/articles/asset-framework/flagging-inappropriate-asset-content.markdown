@@ -38,7 +38,7 @@ sense--it reduces confusion between the two activities. You also probably don't
 want users to be able to edit content that someone else produced.
 
 Create this JSP in the same directory as your portlet's `view.jsp`. For example, 
-in the Insults portlet this JSP is `docroot/html/insults/view_insult.jsp`. The 
+in the Insults portlet this JSP is `docroot/html/insult/view_insult.jsp`. The 
 rest of this section uses `view_insult.jsp` as an example. The first thing you 
 want to do is make sure that your users have a way of getting back to `view.jsp` 
 after clicking on an entity. This is handled by the `portlet:renderURL` and 

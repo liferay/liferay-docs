@@ -24,6 +24,9 @@ the example below does just that (since it's Liferay's best practice), so the
 example code here doesn't even match what we just stated. We need to fix this.
 -Rich--> 
 
+Before proceeding, make sure that you've implemented an indexer for your plugin. 
+Liferay's asset framework uses the indexer to manage assets. For instructions on 
+creating an indexer, see the learning path [Enabling Search and Indexing](/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing). 
 Now go ahead and get started by learning about adding and updating assets!
 
 ## Adding and Updating Assets 
@@ -86,6 +89,16 @@ Here's a quick summary of the most important parameters of this method:
 Otherwise, it looks like we're holding back information for no apparent reason.
 -Rich -->
 
+Another thing you need to do when adding or updating assets is call the indexer. 
+For example, the calls to the indexer that the Blogs portlet makes when adding 
+or updating assets are shown here:
+
+    ```
+    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(BlogsEntry.class);
+    ```
+    indexer.reindex(entry);
+    ```
+
 ## Deleting Assets 
 
 When one of your custom content entries is deleted, you should once again let
@@ -99,11 +112,25 @@ Here's an example invocation extracted from the blogs portlet:
 
     assetEntryLocalService.deleteEntry(
         BlogsEntry.class.getName(), entry.getEntryId());
+        
+As with adding and updating assets, you also need to call the indexer when 
+deleting assets. The calls to the indexer that the Blogs portlet makes when 
+deleting assets are shown here:
+
+    ```
+    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(BlogsEntry.class);
+    
+    indexer.delete(entry);
+    ```
 
 Great! Now you know how to add, update, and delete assets in your portlets!
 
 ## Related Topics
 
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+
 [Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)

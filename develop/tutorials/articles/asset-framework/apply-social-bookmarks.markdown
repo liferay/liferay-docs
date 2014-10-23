@@ -15,8 +15,8 @@ just two steps to enable social bookmarks in your portlet--add a JSP for the
 social bookmarks and then create a URL for the new JSP in your existing 
 `view.jsp`. This tutorial shows you these steps using a custom Insults portlet. 
 Users naturally want to share the greatest of insults with the world! You can 
-find the beginning Insults portlet [here on Github](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
-Likewise, the Insults portlet with social bookmarks enabled is on Github, [here](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/social-bookmarks/end).
+find the beginning Insults portlet [here on Github](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
+Likewise, the Insults portlet with social bookmarks enabled is on Github, [here](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/social-bookmarks/end).
 
 Now go ahead and get started with social bookmarks!
 
@@ -97,7 +97,7 @@ Insults portlet it looks like this:
 
     ```
     <liferay-ui:search-container-row
-        className="com.sample.portlet.insults.model.Insult"
+        className="com.liferay.docs.insult.model.Insult"
         keyProperty="insultId"
         modelVar="insult" escapedModel="<%= true %>"
     >
@@ -142,6 +142,10 @@ the `view.jsp`. For more information on this, see the learning path
 
 ## Related Topics
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)

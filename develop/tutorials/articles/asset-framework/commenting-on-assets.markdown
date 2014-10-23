@@ -11,8 +11,8 @@ create a URL for the new JSP in your existing `view.jsp`. That's it.
 This tutorial shows you how to enable commenting on content posted in an asset 
 enabled portlet. A custom Insults portlet is used as an example--a community 
 discussion will definitely help to bring about insults of the highest quality! 
-You can find the beginning Insults portlet [here on Github](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
-Likewise, the ending Insults portlet is on Github, [here](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/comments/end).
+You can find the beginning Insults portlet [here on Github](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
+Likewise, the ending Insults portlet is on Github, [here](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/comments/end).
 
 Without any further ado, go ahead and get started enabling comments in your 
 portlet!
@@ -36,7 +36,7 @@ after clicking on an entity. This is handled by the `portlet:renderURL` and
 
     ```
     <portlet:renderURL windowState="normal" var="backURL">
-        <portlet:param name="mvcPath" value="/html/insults/view.jsp"></portlet:param>
+        <portlet:param name="mvcPath" value="/html/insult/view.jsp"></portlet:param>
     </portlet:renderURL>
 
     <liferay-ui:header backURL="<%=backURL%>" title="insult" />
@@ -106,7 +106,7 @@ portlet it looks like this:
 
     ```
     <liferay-ui:search-container-row
-        className="com.sample.portlet.insults.model.Insult"
+        className="com.liferay.docs.insult.model.Insult"
         keyProperty="insultId"
         modelVar="insult" escapedModel="<%= true %>"
     >
@@ -158,6 +158,10 @@ more information, see the learning path [Checking Permissions in the UI](/learni
 
 ## Related Topics
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)

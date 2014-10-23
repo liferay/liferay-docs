@@ -12,8 +12,8 @@ enabled, implementing ratings is a snap.
 This tutorial shows you how to add ratings to an asset enabled portlet by using 
 code from a custom Insults portlet as an example. After all, a truly 
 distinguished writer of insults needs to know how good his or her insults really 
-are. You can find the beginning Insults portlet [here on Github](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
-Likewise, the ending Insults portlet is on Github, [here](https://github.com/ngaskill/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/ratings/end).
+are. You can find the beginning Insults portlet [here on Github](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
+Likewise, the ending Insults portlet is on Github, [here](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/ratings/end).
 
 Now go ahead and get started learning how to add ratings to your portlets!
 
@@ -28,7 +28,7 @@ between the two activities. Also, you probably don't want users to be able to
 edit content that someone else produced.
 
 Create this JSP in the same directory as your portlet's `view.jsp`. For example, 
-in the Insults portlet this JSP is `docroot/html/insults/view_insult.jsp`. The 
+in the Insults portlet this JSP is `docroot/html/insult/view_insult.jsp`. The 
 rest of this section uses `view_insult.jsp` as an example. The first thing you 
 want to do is make sure that your users have a way of getting back to `view.jsp` 
 after clicking on an entity. This is handled by the `portlet:renderURL` and 
@@ -36,7 +36,7 @@ after clicking on an entity. This is handled by the `portlet:renderURL` and
 
     ```
     <portlet:renderURL windowState="normal" var="backURL">
-        <portlet:param name="mvcPath" value="/html/insults/view.jsp"></portlet:param>
+        <portlet:param name="mvcPath" value="/html/insult/view.jsp"></portlet:param>
     </portlet:renderURL>
 
     <liferay-ui:header backURL="<%=backURL%>" title="insult" />
@@ -79,13 +79,13 @@ it looks like this:
 
     ```
     <liferay-ui:search-container-row
-        className="com.sample.portlet.insults.model.Insult"
+        className="com.liferay.docs.insult.model.Insult"
         keyProperty="insultId"
         modelVar="insult" escapedModel="<%= true %>"
     >
     
         <portlet:renderURL windowState="maximized" var="rowURL">
-            <portlet:param name="mvcPath" value="/html/insults/view_insult.jsp" />
+            <portlet:param name="mvcPath" value="/html/insult/view_insult.jsp" />
             <portlet:param name="insultId" value="<%= String.valueOf(insult.getInsultId()) %>" />
         </portlet:renderURL>
     ```
@@ -123,6 +123,10 @@ the `view.jsp`. For more information on this, see the learning path
 
 ## Related Topics
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/customizing-liferay-portal)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
