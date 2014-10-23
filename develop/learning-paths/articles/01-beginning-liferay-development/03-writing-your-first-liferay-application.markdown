@@ -634,48 +634,51 @@ Liferay's development framework makes it easy to loop through data and display
 it nicely to the end user. You'll use a component called the *Search Container*
 to make this happen. 
 
-1.  Open the `docroot/html/guestbook/view.jsp` file. Below the
+1.  Open the Snippets tab on the right side of Liferay IDE and expand the
+    *Taglib Imports* category.
+
+2.  Drag the snippet labeled *Liferay UI Taglib Import* from the snippet area to
+    the line beneath the existing taglib import in `view.jsp`. The following code gets
+    added to `view.jsp`:
+
+	<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+    This declares that you want to use Liferay’s UI tags. 
+
+3.  Open the `docroot/html/guestbook/view.jsp` file. Below the
 `<portlet:defineObjects />` tag, add the following tag: 
 
         <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
 
     This makes your list of `Entry` objects available to the page. 
 
-2.  From the *Liferay UI Search Container* snippet category, drag the *Model
+4.  From the *Liferay UI Search Container* snippet category, drag the *Model
 Search Container* snippet and drop it at the bottom of your page. 
 
-3.  In the dialog that pops up, click the *Browse* button and then type *Entry*
+5.  In the dialog that pops up, click the *Browse* button and then type *Entry*
 into the search dialog. Liferay IDE shows every instance of an `Entry` class on
 your classpath. Choose the one you created in the
 `com.liferay.docs.guestbook.model` package and click *Ok*. 
 
-4.  Your model class is parsed automatically, and now you can choose the property
+6.  Your model class is parsed automatically, and now you can choose the property
 columns you wish to display to the user. Check off the *message* and *name*
 columns. 
 
-5.  The generated variable is `aEntry`. If you want something more grammatically
+7.  The generated variable is `aEntry`. If you want something more grammatically
 correct, change it to `entry`, and then click *Finish*. 
 
     The tag snippet assumes that you're using Liferay's persistence framework,
     Service Builder. Because you're not using that, you'll have to fix one of
     the tags. 
 
-6.  Modify the `<liferay-ui:search-container-results>` tag so that it uses your
+8.  Modify the `<liferay-ui:search-container-results>` tag so that it uses your
 `entries` list: 
 
         <liferay-ui:search-container-results
             results="<%= entries %>"
         />
 
-7.   Open the Snippets tab on the right side of Liferay IDE, and expand the Taglib Imports category.
-
-8.   Drag the snippet labeled Liferay UI Taglib Import from the snippet area to the line beneath the existing taglib import in view.jsp. The following code gets added to view.jsp:
-
-	<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
-
-	This declares that we want to use Liferay’s UI tags and will correct the hghlighted missing taglib warnings that you 		are seeing on the page.
-
-You're done! it should look like this:
+You're done! Your `view.jsp` should look like this:
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
     <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
@@ -705,7 +708,6 @@ You're done! it should look like this:
 	
 	<aui:button onClick="<%= addEntryURL.toString() %>" value="Add Entry"></aui:button>
     </aui:button-row>
-
 
 Save your work, deploy your application, and try adding some
 guestbook entries. 
