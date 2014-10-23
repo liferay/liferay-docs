@@ -426,5 +426,77 @@ You've successfully migrated your backing beans from using the model entity to a
 wrapper entity! Now each instance of your guestbook and entry entities will be
 wrapped with any permissions configured in your new wrapper classes. To take
 advantage of your new wrapper classes, you'll add permissions methods to them
-relating to each entity. This can be done by following the next learning path on
-creating entity actions. 
+relating to each entity. In the next section, you'll test out the extended
+permissions scheme by adding a permission to your wrapper classes. 
+
+### Updating the Portlet's UI with Extended Permissions Scheme
+
+Now that you have your permissions scheme configured to handle individual
+entities, it's time to add a permissions method that can be called from your
+`master` view. You'll create a method that checks a user's permissions for the
+`VIEW` action key, or the authorization to view an entity. You'll begin with
+implementing this permission check in the guestbook. 
+
+1. In the `com.liferay.docs.guestbook.wrappers.Guestbook` class, add the
+   following variable and property: 
+
+        private static final String MODEL = "com.liferay.docs.guestbook.model.Guestbook";
+
+        private Boolean viewable;
+
+    The `MODEL` variable represents the model resource and its permissions
+    properties you set in the `resource-actions/default.xml` file for
+    `Guestbook`. The `viewable` property will be used in your permissions
+    method, and called in the `master` view. 
+
+2. Add the following permissions method directly below your constructor method: 
+
+        public Boolean getViewable() {
+
+            if (viewable == null) {
+                LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+                long scopeGroupId = liferayFacesContext.getScopeGroupId();
+                viewable = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
+                    MODEL, getGuestbookId(), ActionKeys.VIEW);
+            }
+
+            return viewable;
+        }
+
+    This method's returned `viewable` property corresponds to the `VIEW`
+    permission that can be granted to users. The `getViewable()` method checks
+    if the current user has the appropriate permissions to view the guestbook
+    entity.
+    
+    The method uses the
+    [`LiferayFacesContext`](https://github.com/liferay/liferay-faces/blob/master/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
+    to grab the
+    [`ThemeDisplay`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/theme/ThemeDisplay.java),
+    and then checks if the user has the appropriate permissions to view the
+    guestbook by calling Liferay's
+    [`PermissionChecker`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/security/permission/PermissionChecker.java).
+    The `PermissionChecker` scans the guestbook's model resource to see if the
+    current user holds the `VIEW` action key. If the user's role supports the
+    action key, the guestbook is visible; if not, the guestbook is invisible to
+    the user. 
+
+3. Now you'll need to check for the `viewable` permission in your `master` view.
+   Open the `master.xhtml` file and, directly after the opening `<ui:repeat>`
+   tag, insert `<h:panelGroup rendered="#{guestbook.viewable}">`. Then after the
+   next closest closing `</span>` tag insert a closing `</h:panelGroup>` tag. 
+
+    Each user that attempts to view a guestbook is now checked for the `VIEW`
+    permission. Checking for the new `viewable` property and the
+    `hasViewPermission` you added in the previous learning path for all
+    guestbook tabs is excessive. Now that you're able to check for each
+    guestbook's viewability, you no longer need to check for the outdated
+    `hasViewPermission`, which makes one check for all the guestbook entities. 
+
+4. Remove the `rendered="#{guestbookBacking.hasViewPermission}"` attribute from
+   the opening `<ui:repeat>` tag. 
+
+Fantastic! You've taken advantage of your extended permission scheme by checking
+the `VIEW` permission for each guestbook entity. 
+
+In the next learning path, you'll continue working with the JSF Guestbook
+portlet by adding action buttons for each entity. 

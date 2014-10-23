@@ -13,9 +13,8 @@ The functionality of the persistence framework for a JSF portlet works exactly
 the same as an MVC portlet, meaning you can create the persistence layer the
 exact same way you would with an MVC portlet using Service Builder. 
 
-For your JSF portlet, you can complete the [Using Service Builder to Generate a
-Persistence
-Framework](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr)
+For your JSF portlet, you can complete the
+[Using Service Builder to Generate a Persistence Framework](/develop/learning-paths/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr)
 learning path to successfully generate your persistence framework. Once you've
 finished generating your persistence layer, return back to this point and
 continue on to the next section to learn how to integrate the persistence
