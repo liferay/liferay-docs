@@ -99,7 +99,7 @@ public class GuestbookBacking extends AbstractBacking {
 		}
 	}
 
-	public void delete(com.liferay.docs.guestbook.wrappers.Guestbook guestbook) {
+	public void delete(Guestbook guestbook) {
 
 		if (guestbook.getDeleteable()) {
 
@@ -122,11 +122,11 @@ public class GuestbookBacking extends AbstractBacking {
 			// We just deleted the selected Guestbook so ...
 			this.selectedGuestbook = null;
 
-			// force Guestbooks and entries to reload
+			// Force Guestbooks and entries to reload
 			setGuestbooks(null);
 			setEntries(null);
 
-			// go back to the master view
+			// Go back to the master view
 			select(null);
 		}
 	}

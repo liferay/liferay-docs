@@ -44,6 +44,11 @@ Your Application*. Once you've completed the section, navigate back to this spot
 in the document to continue configuring your permissions scheme for your JSF
 guestbook portlet. 
 
+One thing that will be slightly different in this tutorial will be the
+permissions for the `com.liferay.docs.guestbook.model.Guestbook` model. In the
+`default.xml` file, remove any `ADD_ENTRY` action keys from the Guestbook model
+resource. 
+
 Now that your `default.xml` file is created, it's time to begin using the
 permission definitions you configured. 
 
