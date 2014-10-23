@@ -24,9 +24,9 @@ things, it's easy to add Liferay IDE to your existing Eclipse installation.
 
 1. Select *Help* &rarr; *Install New Software*. 
 
-2. In your browser, go to the [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide) page. Copy
-   the URL to the update site you're interested in (stable or milestone). 
-    milestone). 
+2. In your browser, go to the [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide) 
+page. Copy the URL to the update site you're interested in (stable or
+milestone). 
 
     ![Figure 1: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../images/liferay-ide-download.png)
 
@@ -101,11 +101,12 @@ downloaded and installed. Click *Next*.
 
 4. Browse to the Tomcat folder inside the runtime and click *Finish*. 
 
-Now it's time to start it. Select the runtime and click the green *Play* (This may say Run or Start the server when moused over) button.
+Now it's time to start it. Select the runtime and click the green *Play* button.
 Liferay starts up inside your IDE. By the way, you could've clicked the *Bug*
 button, and that would have started Liferay in debug mode. 
 
-Once Liferay starts, your console window should read the log output: "INFO: Server startup in xxx ms" go to your browser and visit
+When Liferay starts, your console window should show `INFO: Server startup in
+xxx ms`. Go to your browser and visit
 [http://localhost:8080](http://localhost:8080). On a new installation, this
 shows Liferay Portal's setup wizard. If you want to connect Liferay to a
 separate database such as MySQL, PostgreSQL, or similar, you can configure it
