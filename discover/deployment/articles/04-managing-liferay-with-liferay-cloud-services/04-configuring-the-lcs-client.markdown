@@ -1,10 +1,10 @@
 # Configuring the LCS Client [](id=configuring-the-lcs-client)
 
 Once you deploy the LCS client portlet, you can use it to register your server 
-with your LCS account. Access the portlet by clicking on *Cloud Services* under 
+with your LCS account. Access the portlet by clicking on *Liferay Cloud Services* under 
 the *Apps* section of the *Control Panel*.
 
-![Figure 6.3: LCS appears in your Control Panel as Cloud Services, in the Apps section.](../../images/lcs-post-install-01.png)
+![Figure 6.3: LCS appears in your Control Panel as Liferay Cloud Services, in the Apps section.](../../images/lcs-post-install-01.png)
 
 After clicking *Authorize Access* on the screen that appears, you are then taken 
 to the LCS website. Log in with your credentials and then click *Grant Access*.
