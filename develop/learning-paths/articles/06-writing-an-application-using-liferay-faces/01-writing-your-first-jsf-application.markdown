@@ -39,12 +39,12 @@ to creating a JSF application. Applications in Liferay Portal are called
    (liferay-plugins-sdk)* option for your build type, and the appropriate
    Plugins SDK and Liferay runtime. You also have the option of choosing the
    *Maven* build type, which is also popular with JSF portlets. You can visit
-   the [Maven
-   tutorials](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/maven)
-   to learn how to build plugins using Maven. 
+   the [Maven tutorials](/develop/tutorials/-/knowledge_base/6-2/maven) to learn
+   how to build plugins using Maven. 
 
     If you'd like to use Maven to build your guestbook portlet and continue
-    following along in this learning path, visit the [Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-faces-portlets-with-maven)
+    following along in this learning path, visit the
+    [Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-faces-portlets-with-maven)
     tutorial to update yourself on the key differences between using the Plugins
     SDK and using Maven. 
 
@@ -108,21 +108,19 @@ Throughout this learning path, debug mode will be kept on.
 $$$
 
 You can now view the bare bones JSF guestbook by clicking the *Add* button (plus
-sign) and choosing *Applications*. Then, from the Sample category drag the JSF
-Guestbook onto the page. The portlet only has a default message, which comes
-by default when creating a Liferay portlet through IDE/Developer Studio. 
+sign) and choosing *Applications*. Then from the Sample category, drag the JSF
+Guestbook onto the page. The portlet display a simple message, which comes by
+default when creating a Liferay portlet through IDE/Developer Studio. 
 
 ![Figure 5: The JSF Guestbook only displays a default message--for now.](../../images/jsf-guestbook-bare.png)
-
 
 +$$$
 
 **Note:** Liferay Faces has a specific versioning scheme it follows to keep
 releases concise and separate from other releases. A concise versioning scheme
 also makes it easier to differentiate between a Liferay Faces version's
-compatibility with other platforms. To learn more, visit the [Understanding the
-Liferay Faces Version
-Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
+compatibility with other platforms. To learn more, visit the
+[Understanding the Liferay Faces Version Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
 tutorial. 
 
 $$$

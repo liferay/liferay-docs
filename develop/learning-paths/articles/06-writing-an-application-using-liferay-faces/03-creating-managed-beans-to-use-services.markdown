@@ -10,8 +10,9 @@ portlet.
 Managed beans are Java beans that are managed by the JSF framework. There are
 two types of managed beans you'll use in this learning path: *View Scoped* and
 *Request Scoped*. Managed beans annotated with `@ViewScoped` store stateful data
-and remain on the server as long as the user interacts with the current view. EL
-expressions are used to bind declarative XHTML to bean properties.
+and remain on the server as long as the user interacts with the current view.
+[EL expressions](http://en.wikipedia.org/wiki/Unified_Expression_Language) are
+used to bind declarative XHTML to bean properties. 
 
 Managed beans annotated with `@RequestScoped` are usually responsible for
 handling actions and listeners. JSF *manages* these beans by creating and
@@ -21,7 +22,7 @@ and types later on.
 In this learning path, you'll create three managed beans. Two of the managed
 beans will represent the *Guestbook* and *Entry* entities. These beans will
 facilitate adding guestbooks and guestbook entries to your Guestbook portlet,
-respectively. The third managed bean will represent an abstract bean, or a bean
+respectively. The third bean will represent an abstract bean, or a bean
 specifying administrative type information that both Guestbook and Entry related
 beans will use. 
 
@@ -122,7 +123,7 @@ Likewise, the entry bean will be request scoped, which is set by adding the
 `@RequestScoped` tag. This means that the entry bean's instance is only created
 when a request is made. The request to create an instance of the entry bean is
 submitted from XHTML files, or *views*. You'll create the views later on in the
-learning path. 
+JSF learning paths. 
 
 JSF creates the request scoped bean, uses it as requested, and then removes it
 and makes it available for garbage collection.
@@ -377,6 +378,8 @@ methods to the guestbook bean.
     These action methods are similar to the guestbook's action methods, but they
     perform actions on the guestbook entries. 
 
+6. Press *Ctrl-Shift-O* to add the necessary imports for both managed beans. 
+
 Awesome! You've successfully added action methods to your managed beans!
 
 To understand how an action method will function in your Guestbook portlet,
@@ -415,8 +418,8 @@ the portlet can reference it when another request is made.
 Since the guestbook bean is view scoped, and is kept on the server, you'll add
 the getter/setter methods there. 
 
-1. Add the following getter/setter methods for the guestbook entry entity below
-   the `select(Guestbook)` method: 
+1. Open the `GuestbookBacking` bean and add the following getter/setter methods
+   for the guestbook entry entity below the `select(Guestbook)` method: 
 
         public List<Entry> getEntries() {
 
@@ -561,7 +564,7 @@ the getter/setter methods there.
     Similar to the getter/setter methods for the selected guestbook, these
     methods encapsulate the selected entry you're currently viewing/editing. 
 
-You've successfully created methods to encapsulate all your Guestbook's
+You've successfully created methods to encapsulate all your Guestbook portlet's
 properties on the view scoped bean. The last thing you'll need to add are
 methods to facilitate portlet navigation with your view (XHTML) files. 
 
@@ -574,7 +577,7 @@ It's great that your managed beans can perform these important tasks, but how is
 portlet navigation facilitated? That is, when will the portlet know when to call
 the action methods you created? 
 
-The portlet views you've read about throughout this learning path will be the
+The portlet *views* you've read about throughout this learning path will be the
 main driving force for facilitating navigation, but you'll need to create
 methods in your managed beans that instruct which views should be displayed in
 certain scenarios. 
@@ -598,15 +601,16 @@ next.
     These methods use the boolean properties you specified in the guestbook bean
     to distinguish which view to display. When the `add()` method is called for
     either entity, the `edit*()` method relating to the chosen entity is called
-    from the XHTML. The boolean properties set within the method navigate the
-    portlet to the correct view to display. 
+    from an XHTML file. The boolean properties set within the method navigate
+    the portlet to the correct view to display. 
     
     You'll learn more about the navigation of the portlets in the next learning
     path about JSF views. You haven't created your views yet, but you'll have
     four of them: `view` (navigation), `entry`, `guestbook`, and `master`
     (default page). 
 
-2. Add the following setter methods below the `select(Guestbook)` method: 
+2. Add the following setter methods below the `select(Guestbook)` method in your
+   `GuestbookBacking` bean: 
 
         public void setEditingEntry(boolean editingEntry) {
             this.editingEntry = editingEntry;
@@ -633,6 +637,9 @@ next.
 
     These methods return the boolean properties set by the setter methods in the
     previous step. 
+
+4. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. Your
+   managed beans should have no error markings. 
 
 Fantastic! You've created all the methods necessary for establishing the bridge
 of communication between your managed beans and portlet views. The properties

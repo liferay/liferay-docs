@@ -50,8 +50,8 @@ instead of solely relying on its `GroupId`. You'll use this finder in the next
 section. 
 
 The next thing you'll need to do is implement a service layer for your
-*Guestbook* entity; after that, you'll implement a service layer for your Entry
-entity. 
+*Guestbook* entity; after that, you'll implement a service layer for your
+*Entry* entity. 
 
 ### Writing a Service API for Guestbooks
 
@@ -118,6 +118,8 @@ following two methods to `GuestbookLocalServiceImpl`:
             return guestbook;
         }
 
+6. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
+
 Awesome! You’ve successfully created a service API to retrieve and add
 `Guestbook`s. To enable it, you must run Service Builder again. When you do,
 it’ll generate the methods you just created in your service layer’s Interface
@@ -161,6 +163,8 @@ thing for your guestbook entries.
         public int getEntriesCount(long groupId, long guestbookId) throws SystemException {
             return entryPersistence.countByG_G(groupId, guestbookId);
         }
+
+5. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
 
 Once again, you'll need to run Service Builder to generate the methods you just
 created in your `EntryLocalServiceImpl` class, for your service layer's

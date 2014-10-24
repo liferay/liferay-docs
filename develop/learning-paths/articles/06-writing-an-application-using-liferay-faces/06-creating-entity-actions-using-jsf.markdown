@@ -23,7 +23,7 @@ need to modify your service layer. Your current Guestbook portlet is only
 allowed to add guestbooks and their resources, but you have no way of deleting
 them. To be able to create an action method to delete entities, you'll need to
 provide a delete method in your service layer. You'll do this next by editing
-your `*LocalServiceImpl` classes. 
+your `-LocalServiceImpl` classes. 
 
 1. Open your `EntryLocalServiceImpl` class and add the following method: 
 
@@ -54,7 +54,9 @@ your `*LocalServiceImpl` classes.
     Similar to the `deleteEntry(Entry) method, this method deletes guestbooks
     and their resources. 
 
-3. Build your Guestbook portlet's services by right-clicking the project and
+3. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
+
+4. Build your Guestbook portlet's services by right-clicking the project and
    selecting *Liferay* &rarr; *Build Services*. 
 
 Now that your service layer has all the required methods for adding entity
@@ -108,12 +110,7 @@ guestbook entity related methods.
     This method uses the `deleteGuestbook(...)` method you created in your
     service layer to delete the selected guestbook. The method also ensures that
     the Guestbook portlet always has a guestbook displaying by recreating the
-    *Main* guestbook if there are no guestbooks available to display. 
-
-    You probably noticed there are a couple error markings. The
-    `getDeleteable()` method will be created in your `Guestbook` wrapper class
-    to check for `DELETE` permissions, and the `deleteGuestbookEntries()` method
-    you'll create in the next step. 
+    *Main* guestbook if there are no guestbooks available to display.  
 
 2. Add the following method to your guestbook bean: 
 
@@ -194,8 +191,7 @@ classes. You'll do that next.
     here. The `permissionsUrl` property will be used in your new method, and
     called in the `master` view. 
 
-2. Add the `getPermissionsUrl()` method to the class, above the `getViewable()`
-   method. 
+2. Add the `getPermissionsUrl()` method to the class: 
 
         public String getPermissionsUrl() {
 
@@ -264,8 +260,7 @@ classes. You'll do that next.
    
         private String permissionsUrl;
 
-4. Add the `getPermissionsUrl()` method to the class, just below the constructor
-   method. 
+4. Add the `getPermissionsUrl()` method to the class: 
 
         public String getPermissionsUrl() {
 
@@ -317,13 +312,14 @@ the `master` view to display the buttons in the Guestbook portlet's UI.
 
 ## Creating Action Buttons Using JSF
 
-Now that you have the power to edit and delete entities, it's time to expose
-that capability to your users through your JSF views. This will be a similar
-process to when you created the Add Guestbook and Add Entry buttons. All of your
-action buttons will display in the `master` view, so you'll only edit that
-particular view. You'll begin with adding the guestbook action views. 
+Now that you have the power to edit and delete entities, and also control their
+permissions, it's time to expose those capabilities to your users through your
+JSF views. This will be a similar process to when you created the Add Guestbook
+and Add Entry buttons. All of your action buttons will display in the `master`
+view, so you'll only edit that particular view. You'll begin with adding the
+guestbook's action buttons. 
 
-1. Open the `master.xhtml` file. Directly below the `<br />` tag under the
+1. Open the `master.xhtml` file. Directly below the first `<br />` tag under the
    command buttons for adding a guestbook and entry, add the following code to
    create your guestbook's action buttons: 
 
@@ -360,7 +356,9 @@ particular view. You'll begin with adding the guestbook action views.
 
         <h:column>
             <f:facet name="header"><h:outputText value="#{i18n['name']}" /></f:facet>
-            <h:outputText value="#{entry.name}" />
+            <h:panelGroup rendered="#{entry.viewable}">
+                <h:outputText value="#{entry.name}" />
+            </h:panelGroup>
         </h:column>
 
     Add the entry entity's action buttons directly below the above
@@ -387,7 +385,7 @@ particular view. You'll begin with adding the guestbook action views.
 Your buttons are now ready for use! Redeploy your Guestbook portlet and give
 them a shot! The Edit and Delete buttons should function as expected. The
 Permissions button for your entities should display the Permissions menu, but
-none of the permissions should work yet. 
+none of the permissions work yet. 
 
 You'll fix this by adding the remainder of the permissions methods to your
 wrapper classes. 
@@ -402,7 +400,7 @@ classes.
 
 At the moment, you have bare wrapper classes with no permissions methods. You'll
 change this predicament by adding three properties and corresponding methods
-that can be called from your XHTML files that check if the user has the
+that can be called from your `master` view that check if the user has the
 appropriate permissions to access each of your action buttons. You'll also
 provide an additional property and method that generates the permissions URL for
 managing an entity's permissions. It's time to expand your Guestbook portlet's
@@ -456,7 +454,7 @@ permissioning!
             return updateable;
         }
 
-    These three methods' returned properties correspond to three permissions
+    These three methods' returned properties correspond to the three permissions
     that can be granted to users. For example, the `getDeleteable()` method
     checks if the current user has the appropriate permissions to use the Delete
     action button for the guestbook entity. The method uses the

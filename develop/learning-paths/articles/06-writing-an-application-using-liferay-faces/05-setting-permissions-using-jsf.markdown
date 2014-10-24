@@ -38,7 +38,8 @@ Conveniently, the process of creating your application's `default.xml` file is
 identical to the MVC portlet's process. Therefore, you can refer to the learning
 path for the MVC portlet to successfully create you configuration file. 
 
-Navigate to the [Configuring Your Permissions Scheme](/develop/learning-paths/-/knowledge_base/6-2/configuring-your-permissions-scheme)
+Navigate to the
+[Configuring Your Permissions Scheme](/develop/learning-paths/-/knowledge_base/6-2/configuring-your-permissions-scheme)
 learning path and follow the instructions beneath the *Defining Permissions For
 Your Application*. Once you've completed the section, navigate back to this spot
 in the document to continue configuring your permissions scheme for your JSF
@@ -78,7 +79,7 @@ get started!
     This property will be used to check if a user has permissions to add an
     entry. 
 
-2. Insert the following two methods directly after the `save()` method: 
+2. Insert the following two methods into your entry bean: 
 
         public Boolean getHasAddPermission() {
 
@@ -105,8 +106,8 @@ get started!
     members are allowed to add an entry. 
 
 3. Now it's time to configure permissioning in regards to Guestbook interaction.
-   Open the `GuestbookBacking` bean and create the following two properties at
-   the top of the class: 
+   Open the `GuestbookBacking` bean and create the following variable and two
+   properties at the top of the class: 
 
         public static final String MODEL = "com.liferay.docs.guestbook.model";
    
@@ -115,7 +116,7 @@ get started!
 
     The first property assigns the model resource path to a variable. The last
     two properties will be used to check if a user has permission to add a
-    guestbook and view Guestbook tabs, respectively. 
+    guestbook and view guestbook tabs, respectively. 
 
 4. Insert the following four methods into the `GuestbookBacking` bean: 
 
@@ -213,7 +214,7 @@ portlets data is protected from unwanted viewers.
 
     This permission check calls the `hasViewPermission` property from the
     guestbook bean. The Guestbook tabs are only rendered if the user has the
-    `VIEW` permission. 
+    `VIEW` permission for the Guestbook model resource. 
 
 Great! You've implemented all the permission checks in your application. You can
 test the permissions by logging in as different users. Remember, administrative
@@ -287,7 +288,7 @@ method call, and adding resources to your service layer.
 
 +$$$
 
-**Note:** Your `*LocalServiceImpl` classes now have errors showing. To take care
+**Note:** Your `-LocalServiceImpl` classes now have errors showing. To take care
 of these errors, and propogate these changes to your service layer, re-build
 your services by right-clicking your project and selecting *Liferay* &rarr;
 *Build Services*. 
@@ -310,10 +311,10 @@ Similarly, open the `EntryBacking` bean and, in the `save()` method, replace the
 
     EntryLocalServiceUtil.addEntry(entry, liferayFacesContext.getUserId());
 
-If you decide to check permissions for your portlet's created entities, you'll
-now be able to do so. In the next learning path for creating action buttons,
-accessing permissions for an individual entity relies on adding resources in
-your portlet's service layer. 
+If you decide to check permissions for each of your portlet's created entities,
+you'll now be able to do so. In the next learning path for creating action
+buttons, accessing permissions for an individual entity relies on adding
+resources in your portlet's service layer. 
 
 Next, you'll learn how to extend your permissions scheme to wrapper classes. 
 
@@ -328,8 +329,9 @@ beans that the `com.liferay.docs.guestbook.model.Guestbook` and
 `com.liferay.docs.guestbook.model.Entry` objects were used to create and manage
 your guestbook and entry entities. The wrapper classes you create in this
 section will replace those classes, making permissions resources available in
-your managed beans. Before updating our managed beans, you'll need to create the
-wrapper classes first. You'll start with creating the `Guestbook` class. 
+your managed beans. Before updating your managed beans, you'll need to create
+the wrapper classes first. You'll start with creating the `Guestbook` wrapper
+class. 
 
 1. In the Guestbook portlet's `docroot/WEB-INF/src` directory, add a new package
    named `com.liferay.docs.guestbook.wrappers`. 
@@ -371,16 +373,16 @@ com.liferay.docs.guestbook.model.Guestbook;` statement with `import
 com.liferay.docs.guestbook.wrappers.Guestbook;`. 
 
     You'll notice error markings appear throughout the class. Some error
-    markings in your class are related to using a `*Util` class. These code
+    markings in your class are related to using a `-Util` class. These code
     statements need to be adjusted to work with your new wrapper class, which
     you'll do next. 
 
-2. Wrap each error marked `*Util` call with `new Guestbook(...)`. For example,
+2. Wrap each error marked `-Util` call with `new Guestbook(...)`. For example,
    `GuestbookUtil.create(0L);` should look like `new
    Guestbook(GuestbookUtil.create(0L));`. 
    
-    There are still a few error markings left; you'll need to do a similar
-    process to fix the rest of the errors. 
+    Once you finish doing this to all the `-Util` calls, you'll have two
+    remaining errors markings, which will require similar changes. 
 
 3. In the `getGuestbooks()` method, replace `guestbooks.add(guestbook);` with 
    `guestbooks.add(new Guestbook(guestbook));`. 
@@ -424,8 +426,8 @@ things as the `Guestbook` wrapper class, but for entries.
 
         Entry entry = new Entry(EntryUtil.create(0L));
 
-6. In the `getEntries()` method, replace `entries.add(entry);` with
-   `entries.add(new Entry(entry));`. 
+6. In the `getEntries()` method of the `GuestbookBacking` bean, replace
+   `entries.add(entry);` with `entries.add(new Entry(entry));`. 
 
 You've successfully migrated your backing beans from using the model entity to a
 wrapper entity! Now each instance of your guestbook and entry entities will be
@@ -454,7 +456,7 @@ implementing this permission check in the guestbook.
     `Guestbook`. The `viewable` property will be used in your permissions
     method, and called in the `master` view. 
 
-2. Add the following permissions method directly below your constructor method: 
+2. Add the following permissions method that checks for the `VIEW` permission: 
 
         public Boolean getViewable() {
 
@@ -511,7 +513,7 @@ capability for each guestbook entry.
 
         private Boolean viewable;
 
-2. Add the following permissions method directly below your constructor method: 
+2. Add the following permissions method: 
 
         public Boolean getViewable() {
 
@@ -553,6 +555,3 @@ scheme to check for user `VIEW` permissions. This permissions scheme becomes
 even more powerful when you can take advantage of checking the permissions for
 each entity by accessing each entity's permissions menu. You'll configure this
 in the next learning path. 
-
-To continue working with the JSF Guestbook portlet, continue on to the next
-learning path to learn about adding action buttons for each entity. 

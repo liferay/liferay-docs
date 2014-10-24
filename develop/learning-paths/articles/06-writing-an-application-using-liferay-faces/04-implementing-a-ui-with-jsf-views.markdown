@@ -6,7 +6,7 @@ users to interact with using JSF views.
 
 You've briefly read about the views you'll need to incorporate. When you first
 created your JSF guestbook portlet, a `view.xhtml` file was automatically
-created with some default code. For the guestbook, you'll edit this file and
+created with some default code. For your guestbook, you'll edit this file and
 create the `guestbook`, `entry`, and `master` XHTML files. You'll learn about
 each view's purpose, and then add the appropriate code to get your guestbook up
 and running. 
@@ -47,10 +47,10 @@ Replace the code between the `<f:view>...</f:view>` tags with the following:
     <h:head />
     <h:body>
         <c:choose>
-            <c:when test="#{viewBean.editingGuestbook}">
+            <c:when test="#{guestbookBacking.editingGuestbook}">
                 <ui:include src="/views/guestbook.xhtml" />
             </c:when>
-            <c:when test="#{viewBean.editingEntry}">
+            <c:when test="#{guestbookBacking.editingEntry}">
                 <ui:include src="/views/entry.xhtml" />
             </c:when>
             <c:otherwise>
@@ -61,11 +61,11 @@ Replace the code between the `<f:view>...</f:view>` tags with the following:
 
 If you look back at your `GuestbookBacking` class, you'll recall that you had
 boolean variables `editingGuestbook` and `editingEntry`. The `view.xhtml` calls
-those variables in the view bean to check if they're `true`. For instance, if
-the `editingGuestbook` variable is `true`, the `view.xhtml` renders the
-`guestbook` view. A similar process is completed for the `editingEntry` variable
-and `entry` view, if the `editingGuestbook` variable was `false`. If both are
-`false`, the `view.xhtml` renders the `master` view. 
+those variables to check their value. For instance, if the `editingGuestbook`
+variable is `true`, the `view.xhtml` renders the `guestbook` view. A similar
+process is completed for the `editingEntry` variable and `entry` view, if the
+`editingGuestbook` variable was `false`. If both are `false`, the `view.xhtml`
+renders the `master` view. 
 
 Awesome! Your default navigation view is complete. It's almost time to create
 the views to navigate to, but first, you'll create your language keys. 
@@ -103,7 +103,12 @@ language keys.
    practice to provide these in a separate resource bundle. Right-click the
    `docroot/WEB-INF/src` directory and select *New* &rarr; *File*. 
 
-4. Give the new file the name `i18nFaces.properties` and click *Finish*. 
+4. Give the new file the name `i18nFaces.properties` and click *Finish*. If your
+curious, *i18n* stands for
+[Internationalization](http://en.wikipedia.org/wiki/Internationalization_and_localization),
+which is used for adapting to multiple languages. As was stated earlier, you'll
+focus on English in the learning path, but it's a best practice to provide this
+file in JSF portlets. 
 
 5. Add the following JSF-specific validation messages into the
    `i18nFaces.properties` file: 
@@ -131,8 +136,8 @@ to create the actual pages your portlet's users will see.
 As was mentioned earlier, when the boolean variables `editingGuestbook` and
 `editingEntry` in your guestbook bean are `false`, the `master` view is
 rendered. When these two variables are false, it means that the user has not yet
-selected to edit the guestbook or a guestbook entry, so the master page should
-be displayed. Therefore, the `master` view must offer a way for the user to
+selected to edit a guestbook or guestbook entry, so the master page should be
+displayed. Therefore, the `master` view must offer a way for the user to
 navigate to your `guestbook` and `entry` views. It should also display your
 created guestbooks and their entries. 
 
@@ -262,8 +267,8 @@ style the portlet. You'll need to add some styling to the guestbook tabs, as
 they are not very good looking, by default. 
 
 When you first created the guestbook portlet, a blank `docroot/css/main.css`
-file was created, by default. Add the following code to improve your guestbook
-tabs visually in your UI: 
+file was created, by default. Add the following code to `main.css` file to
+improve your guestbook tabs visually in your UI: 
 
     .guestbook_tab,.guestbook_tab_active {
         line-height: 20px;
@@ -297,7 +302,7 @@ entries.
 
 The `guestbook` view will serve as the view that is displayed when a user clicks
 the *Add Guestbook* button. The final `guestbook` view will appear in your
-guestbook portlet like the figure below: 
+Guestbook portlet like the figure below: 
 
 ![Figure 3: The `guestbook` view displays a Name field, a button to save the guestbook, and a button to cancel out of the view.](../../images/jsf-guestbook-view.png)
 
@@ -336,10 +341,11 @@ guestbook portlet like the figure below:
     guestbook view, right after selecting the *Add Guestbook* button. 
     
     Otherwise, if the selected guestbook has a name, the `editing` language key
-    displays, which means you've given the new guestbook a name and you're
-    viewing the transition page between clicking *Save* and your guestbook
-    appearing on the main default page. You'll add the necessary fields and
-    buttons in the next step. 
+    displays, which means you've already created the selected entry and are now
+    editing it. This scenario is not possible at the moment, but will be
+    developed in a later JSF learning path on creating action buttons.
+
+    You'll add the necessary fields and buttons in the next step. 
 
 4. Now you'll need to create the fields and buttons that should be displayed for
    this view. Add the code snippet right after the `</c:choose>` tag. 
@@ -371,8 +377,8 @@ guestbook portlet like the figure below:
     `cancel()` methods. 
 
     Lastly, notice that the AUI field and both buttons use AJAX. As we discussed
-    earlier, this provides much quicker response time for these portlet actions
-    because of asynchronous communication with the server. 
+    earlier, this provides a much quicker response time for these portlet
+    actions because of asynchronous communication with the server. 
 
 Terrific! Your `guestbook` view is complete! 
 
@@ -415,16 +421,20 @@ to create guestbook entries. The `entry` view will display when clicking on the
                 </c:otherwise>
             </c:choose>
 
-    This choose when statement is very similar to the one used previously in
+    This choose-when statement is very similar to the one used previously in
     `guestbook.xhtml`. When the selected entry stored on the guestbook bean is
     empty, the `new-entry` language key is displayed on the page. If the
     selected entry is empty, this means you've clicked the *Add Entry* button
     and have just arrived at the `entry` view. 
     
-    If the selected entry is not empty, you've submitted the entry--meaning the
-    `editing` language key is displayed. 
+    If the selected entry is not empty, you've already created the selected
+    entry and are now editing it. If this is the case, the `editing` language
+    key is displayed. This is not possible at the moment since you haven't
+    created a way to edit an entry yet. You'll create a way to do this when
+    creating action buttons for your Guestbook portlet. 
 
-4. Create your `entry` view's text fields by adding the following code right after the `<c:choose>` tag: 
+4. Create your `entry` view's text fields by adding the following code right
+   after the `</c:choose>` tag: 
 
         <aui:fieldset>
             <aui:field id="entryNameField" label="#{i18n['name']}">
@@ -469,7 +479,8 @@ to create guestbook entries. The `entry` view will display when clicking on the
 
     ![Figure 5: With the insertion of an angle bracket, rather than a period, the guestbook portlet immediately displays an error message.](../../images/email-validation-jsf.png)
 
-5. Create your `entry` view's buttons by adding the following code: 
+5. Create your `entry` view's buttons by adding the following code below the
+   `</aui:fieldset>` tag: 
 
             <h:commandButton action="#{entryBacking.save}" styleClass="btn btn-default" value="#{i18n['save']}">
                 <f:ajax execute="@form" render="@all" />
@@ -481,7 +492,7 @@ to create guestbook entries. The `entry` view will display when clicking on the
 
     These buttons are almost identical to your `guestbook` view's Save and
     Cancel button. The only differences are, of course, you're calling the
-    `save()` and `cancel()` methods from the `EntryBackingBean`.  
+    `save()` and `cancel()` methods from the `EntryBacking` bean. 
 
 Your `entry` view is now complete! 
 

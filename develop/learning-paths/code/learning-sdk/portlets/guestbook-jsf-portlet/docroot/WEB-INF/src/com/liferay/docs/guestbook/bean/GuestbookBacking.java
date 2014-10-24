@@ -101,34 +101,31 @@ public class GuestbookBacking extends AbstractBacking {
 
 	public void delete(Guestbook guestbook) {
 
-		if (guestbook.getDeleteable()) {
+		deleteGuestbookEntries();
 
-			deleteGuestbookEntries();
-
-			try {
-				GuestbookLocalServiceUtil.deleteGuestbook(guestbook);
-				addGlobalSuccessInfoMessage();
-			}
-			catch (Exception e) {
-				addGlobalUnexpectedErrorMessage();
-				logger.error(e);
-			}
-
-			// Re-create the Main Guestbook if we just delete the Main Guestbook ...
-			if (DEFAULT_GUESTBOOK_NAME.equals(guestbook.getName())) {
-				createMainGuestbook();
-			}
-
-			// We just deleted the selected Guestbook so ...
-			this.selectedGuestbook = null;
-
-			// Force Guestbooks and entries to reload
-			setGuestbooks(null);
-			setEntries(null);
-
-			// Go back to the master view
-			select(null);
+		try {
+			GuestbookLocalServiceUtil.deleteGuestbook(guestbook);
+			addGlobalSuccessInfoMessage();
 		}
+		catch (Exception e) {
+			addGlobalUnexpectedErrorMessage();
+			logger.error(e);
+		}
+
+		// Re-create the Main Guestbook if we just delete the Main Guestbook ...
+		if (DEFAULT_GUESTBOOK_NAME.equals(guestbook.getName())) {
+			createMainGuestbook();
+		}
+
+		// We just deleted the selected Guestbook so ...
+		this.selectedGuestbook = null;
+
+		// Force Guestbooks and entries to reload
+		setGuestbooks(null);
+		setEntries(null);
+
+		// Go back to the master view
+		select(null);
 	}
 
 	public void deleteGuestbookEntries() {
