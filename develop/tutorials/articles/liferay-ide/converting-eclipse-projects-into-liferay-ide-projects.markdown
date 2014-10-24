@@ -6,7 +6,7 @@ Liferay projects.
 
 This tutorial shows the steps required to accomplish this. 
 
-## Converting Your Eclipse Project
+## Converting Your Eclipse Project [](id=converting-your-eclipse-project)
 
 1.  Move the project into a Liferay Plugins SDK, if it is not already in one. 
     To import the project, select *File* &rarr; *Import...* and then follow the 
@@ -15,18 +15,18 @@ This tutorial shows the steps required to accomplish this.
 2.  In Eclipse's Project Explorer, right-click on the project and select
     *Liferay* &rarr; *Convert to Liferay plugin project*. 
 
-    ---
++$$$
 
-    ![Note](../../images/tip-pen-paper.png) **Note:** If no convert action is
+**Note:** If no convert action is
     available, either the project is already a Liferay IDE project or it is not
     faceted (i.e., Java and Dynamic Web project facets are not yet configured
     for it). For instructions on resolving these issues, see the
-    [Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide)
+    [Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/faceting-a-plugin-project-for-liferay-ide)
     tutorial and the 
-    [Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/verifying-successful-project-import)
+    [Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/6-2/verifying-successful-project-import)
     tutorial. 
 
-    ---
+$$$
 
 3.  In the *Convert Project* wizard, your project is selected and the SDK
     location and SDK version of your project are displayed.
@@ -41,9 +41,9 @@ This tutorial shows the steps required to accomplish this.
 Great! Now that you've imported and converted your project, you can work with it 
 just as you would any other Liferay project.
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
-[Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/faceting-a-plugin-project-for-liferay-ide)
+[Faceting a Plugin Project for Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/faceting-a-plugin-project-for-liferay-ide)
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 

@@ -8,7 +8,7 @@ By learning the SDK's directory structure, you'll know where to initiate
 creating the different project types, know its build files, and know where
 plugins archives are held for distribution. The Plugins SDK tour is up next. 
 
-## Understanding the SDK's Structure
+## Understanding the SDK's Structure [](id=understanding-the-sdks-structure)
 
 Each folder in the Plugins SDK contains scripts for creating new plugins of that
 type. Here is the directory structure of the Plugins SDK: 
@@ -66,7 +66,7 @@ plugins:
 Next, you'll learn how to create a plugin using Liferay SDK from a terminal
 environment. 
 
-## Creating Plugins with Liferay SDK
+## Creating Plugins with Liferay SDK [](id=creating-plugins-with-liferay-sdk)
 
 Liferay IDE makes it easy to create and deploy Liferay plugin projects since it
 includes a bundled Liferay SDK. If you don't want to use Eclipse, you can still
@@ -99,15 +99,15 @@ you specified doesn't end in "-portlet".
 
 ![Figure 1: The Plugins SDK's Ant targets enable you to create a new plugin project with a single command.](../../images/plugins-sdk-create-project.png)
 
----
++$$$
 
-![Tip](../../images/tip-pen-paper.png) **Tip**: If you are using a source
+**Tip**: If you are using a source
 control system such as Subversion, CVS, Mercurial, Git, etc., this would be a
 good moment to do an initial check-in of your changes. After building the plugin
 for deployment, several additional files will be generated that should *not* be
 managed by a source control system. 
 
----
+$$$
 
 Lastly, consider some common practices used in developing plugins with the SDK.
 The Plugins SDK can house all of your plugin projects enterprise-wide, or you
@@ -131,9 +131,9 @@ some organizations have for their Java projects.
 Now you know how to create all types of Liferay plugin projects using Liferay's
 foundational development tool: the Plugins SDK.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Deploying Plugins to a Local Portal Instance](/develop/tutorials/-/knowledge_base/deploying-plugins-to-a-local-portal-instance)
+[Deploying Plugins to a Local Portal Instance](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins-to-a-local-portal-instance)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/maven)
+[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
 

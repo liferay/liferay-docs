@@ -4,9 +4,11 @@
 *.iml
 *.swp
 *-tmp.html
+.METADATA
 .project
 .classpath
 .settings
+git-modified-list.txt
 nbbuild.xml
 properties/
 
@@ -15,13 +17,11 @@ properties/
 /*.patch
 /build.*.properties
 
-**/build/**
-**/classes/**
-**/dist/**
+build/
+classes/
+dist/
 **nbproject**
-**/.ivy/*
-**/.sass-cache/**
-**/.DS_Store/*
+.ivy/
+.sass-cache/
+.DS_Store/
 *#
-/bin
-/classes/

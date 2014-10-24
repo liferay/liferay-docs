@@ -59,7 +59,7 @@ working answer. You can even track known issues from the *Issue Tracker* page.
 
 Here are some related topics:
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/developing-jsp-portlets-using-liferay-mvc)
+[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 

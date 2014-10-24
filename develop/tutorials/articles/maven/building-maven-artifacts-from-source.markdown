@@ -60,13 +60,13 @@ latest Liferay CE Maven artifacts from source, follow these steps:
     `gpg --gen-key` and following the instructions. Once you've generated a GPG
     key, you can find your GPG keyname by running `gpg --list-keys`.
     
-    ---
++$$$
 
-    ![note](../../images/tip-pen-paper.png) **Note**: If you only plan to
+**Note**: If you only plan to
     install the Liferay artifacts locally and not deploy them, the
     `releases.[user name].properties` is not required 
 
-    ---
+$$$
 
 5.  Open a command prompt, navigate to your Liferay home directory, and build
     the Liferay Portal WAR file by running 
@@ -89,9 +89,9 @@ latest Liferay CE Maven artifacts from source, follow these steps:
     built to your local .m2 repository (e.g., to your `[USER_HOME]/.m2/`
     directory). 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Warning:** During the process of
+**Warning:** During the process of
  packaging up the `javadoc.jar` files for your Liferay artifacts, your machine
  may experience sluggish performance or an insufficient amount of Java heap
  space. There are two solutions to this problem:
@@ -105,13 +105,13 @@ latest Liferay CE Maven artifacts from source, follow these steps:
 
 		<!-- <antcall target="jar-javadoc" /> -->
 		
----
+$$$
 
 Great! You now know how to build Liferay CE artifacts from your local portal
 source code. 
 
 Here are some related topics:
 
-[Installing and Managing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/managing-liferay-maven-artifacts)
+[Installing and Managing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/6-2/managing-liferay-maven-artifacts)
 
-[Using Maven from Liferay IDE](/develop/tutorials/-/knowledge_base/using-maven-from-liferay-ide)
+[Using Maven from Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/using-maven-from-liferay-ide)

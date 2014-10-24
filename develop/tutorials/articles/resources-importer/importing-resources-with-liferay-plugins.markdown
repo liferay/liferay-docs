@@ -1,4 +1,4 @@
-# Creating Plugins to Share Structures, Templates, and More [](id=creating-a-plugin-to-share-templates-str-liferay-portal-6-2-dev-guide-03-en)
+# Creating Plugins to Share Structures, Templates, and More [](id=creating-plugins-to-share-structures-templates-and-more)
 
 Have you ever wanted to share page templates with other users? Are colleagues
 and clients banging at your door to get hold of the structures and templates you
@@ -6,7 +6,7 @@ use for your web content articles and wikis? If so, you can bundle these up in a
 Liferay plugin to distribute to them. You can even put them in a Marketplace app
 for them to purchase. When they install your plugin, its templates and
 structures are automatically imported into their portal's global site. How is
-this possible? The Templates Importer feature of the Resources Importer app
+this possible? The Templates Importer feature of the [resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) app
 makes it happen! The Resources Importer is available from
 [Liferay Marketplace](https://www.liferay.com/marketplace).
 
@@ -25,7 +25,7 @@ plugin, they're especially useful for Liferay themes. When developers
 upload themes to [Liferay Marketplace](https://www.liferay.com/marketplace),
 it's very convenient for them to be able to bundle sample content with the theme
 so that the theme can be viewed in an appropriate context. Please refer to the
-[Importing Resources with Your Themes](www.liferay.com) tutorial for
+[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en) tutorial for
 instructions on using the Resources Importer with theme plugins. Behind themes,
 portlet plugins are the most common type of plugin used for importing templates.
 Let's build a portlet plugin that imports some web content structures and
@@ -234,16 +234,16 @@ portlet to display other portlets: the Search and Currency Converter portlets.
 Lastly, you can also specify portlet preferences for each portlet using the
 `portletPreferences` field. 
 
----
++$$$
 
- ![tip](../../images/tip.png) **Tip**: You can also import resources, such as
+**Tip**: You can also import resources, such as
  web content articles, using the Resources Importer. For example, it's very
  useful to import web content articles along with a page template that
  references the articles, in a nested Web Content Display portlet. For more
  information on importing resources, see
- [Importing Resources with Your Themes](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en).
+ [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
 
----
+$$$
 
 The figure below, shows a page created using the Page 3 template.
 

@@ -12,7 +12,7 @@ the original JSP in the new JSP.
 In this tutorial, you'll learn how to extend an original Liferay JSP using a
 hook. 
 
-## Extending a Liferay JSP
+## Extending a Liferay JSP [](id=extending-a-liferay-jsp)
 
 In this demonstration, you'll customize a hook project to extend a Liferay JSP,
 while leaving the original JSP untouched. Let's get started! 
@@ -103,7 +103,7 @@ your Liferay Portal. In Liferay Portal, The hook you created extends the
 original JSP's content with the version of the content you created. You now know
 how to extend an original Liferay JSP using a hook! 
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 

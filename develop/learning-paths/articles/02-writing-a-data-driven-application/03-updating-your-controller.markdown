@@ -87,6 +87,8 @@ service-enabled version:
         } catch (Exception e) {
             SessionErrors.add(request, e.getClass().getName());
 
+            PortalUtil.copyRequestParameters(request, response);
+
             response.setRenderParameter("mvcPath",
                     "/html/guestbook/edit_entry.jsp");
         }

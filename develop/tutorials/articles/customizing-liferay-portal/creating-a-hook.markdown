@@ -11,14 +11,14 @@ creating hooks in a Plugins SDK project from Liferay IDE and from the command
 line. 
 
 To learn how to create Liferay Maven projects, see the tutorial
-[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide) 
+[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide) 
 or the tutorial
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin). 
+[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin). 
 
 Creating a hook using Liferay IDE is easiest to learn first. So go ahead and
 jump right in by creating your hook project with Liferay IDE. 
 
-## Creating a Hook Project from Liferay IDE
+## Creating a Hook Project from Liferay IDE [](id=creating-a-hook-project-from-liferay-ide)
 
 Follow these steps to create a hook in IDE in no time:
 
@@ -45,7 +45,7 @@ or create a hook in an existing plugin project. Use *File* &rarr; *New* &rarr;
 *New* &rarr; *Liferay Hook Configuration* to create a hook in an existing plugin 
 project.
 
-## Creating a Hook Project from the Command Line
+## Creating a Hook Project from the Command Line [](id=creating-a-hook-project-from-the-command-line)
 
 From your command line terminal, navigate to your Plugins SDK's `hooks` folder.
 To create a hook project, you must execute the *create* script. Here's the format
@@ -86,9 +86,9 @@ this:
 The particular files you'll work on depend on the Liferay features you're
 overriding with your hook.
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** If the Liferay server
+**Note:** If the Liferay server
  prints the following message to your console, the *Marketplace Portlet* and 
  *Portal Compatibility Hook* must not already be deployed on your server.
 
@@ -104,17 +104,17 @@ overriding with your hook.
 - *Portal Compatibility Hook* (`portal-compat-hook`) - is available at 
 `liferay-plugins/hooks/portal-compat-hook`.
 
----
+$$$
 
 
----
++$$$
 
-![Note](../../images/tip.png) **Note:** When you created portlets and themes,
+**Note:** When you created portlets and themes,
 they were fully functional upon deployment. Hooks aren't like that because
 they're Liferay customizations. The default customization is the original
 implementation! 
 
----
+$$$
 
 Now that you know how to create a hook using Liferay IDE and Ant, it's time to 
 get out there and create your customizations!

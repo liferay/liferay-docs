@@ -1,16 +1,16 @@
 # Writing Your First Liferay Application [](id=writing-your-first-liferay-application)
 
 Getting started with your first Liferay application takes only minutes. We'll
-guide you through the process of creating your project and deploying your
-application step-by-step. Before you know it, you'll have Liferay serving your
-application next to the rest of the applications that come with Liferay. 
+guide you through the step-by-step process of creating your project and
+deploying your application to Liferay. Before you know it, you'll have your
+application deployed alongside of the applications that come with Liferay. 
 
-Your first application is simple: you'll build a guest book application that
+Your first application is simple: you'll build a guestbook application that
 looks like this: 
 
 ![Figure 1: You'll create this simple application.](../../images/my-first-app.png)
 
-By default, it shows guestbook messages that various users leave on your
+By default, it shows guestbook messages that various users have left on your
 website. To add a message, you click the *Add Entry* button to show a form you
 can use to enter and save a message. 
 
@@ -36,15 +36,15 @@ appears.
 
 5. When done, click *Finish*. 
 
----
++$$$
 
-![note](../../images/01-tip.png) **Note:** The first time you create a project,
+**Note:** The first time you create a project,
 make sure you're online. In the background, Liferay's Plugins SDK downloads
-several `.jar` files that it needs in order to operate. This keeps the initial
-download small, but makes it take a long time to create your first project
-(about four minutes). After the initial download, it won't happen again. 
+several JAR files that it needs in order to operate. This keeps the initial
+Plugins SDK download small but means that it may take several minutes to create
+your first project. Subsequent projects are created almost instantly.
 
----
+$$$
 
 Your project now appears in the Package Explorer on the left. What you've just
 done is create a blank Liferay project. Projects can have any number of
@@ -140,7 +140,7 @@ simple example should explain.
 
 Say you've written a Calendar application that a user has placed on the same
 page as a Blog application. The Calendar allows the user to add and delete
-events.  The Blog allows the user to add and delete blog entries. To implement
+events. The Blog allows the user to add and delete blog entries. To implement
 the functionality for deleting, both application developers elected to append
 the *del* parameter to the URL, and give it a primary key value so the
 application can go look up the calendar event or the blog entry and delete it. 
@@ -321,7 +321,7 @@ attribute, enter *submit*. Click *Insert*.
 
 10. Beneath the Submit button you just created, drag another *button* snippet.
 For the `type` attribute, enter *cancel*. For the `onClick` attribute, enter
-`<%= viewURL %>`. This supplies the render URL you created that goes back to the
+`<%= viewURL.toString() %>`. This supplies the render URL you created that goes back to the
 `view.jsp` page.
 
 Your form is done! Save your JSP; it should look like this:
@@ -348,7 +348,7 @@ Your form is done! Save your JSP; it should look like this:
             <aui:button-row>
 
                 <aui:button type="submit"></aui:button>
-                <aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
+                <aui:button type="cancel" onClick="<%= viewURL.toString() %>"></aui:button>
 
             </aui:button-row>
     </aui:form>
@@ -404,14 +404,14 @@ name ends and the guestbook entry begins. The caret symbol (^) makes a good
 delimiter because users are highly unlikely to use that symbol in a guestbook
 entry. 
 
----
++$$$
 
-![tip](../../images/01-tip.png) **Note:** Clearly, portlet preferences and string
+**Note:** Clearly, portlet preferences and string
 delimiters are not the best way to implement this. To learn about a proper
 implementation for saving data, follow the *Writing a Data-Driven Application*
 learning path. 
 
----
+$$$
 
 The following method implements adding a guestbook entry to a portlet preference
 called `guestbook-entries`: 
@@ -634,40 +634,82 @@ Liferay's development framework makes it easy to loop through data and display
 it nicely to the end user. You'll use a component called the *Search Container*
 to make this happen. 
 
-1.  Open the `docroot/html/guestbook/view.jsp` file. Below the
+1.  Open the Snippets tab on the right side of Liferay IDE and expand the
+    *Taglib Imports* category.
+
+2.  Drag the snippet labeled *Liferay UI Taglib Import* from the snippet area to
+    the line beneath the existing taglib import in `view.jsp`. The following code gets
+    added to `view.jsp`:
+
+	<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+    This declares that you want to use Liferay’s UI tags. 
+
+3.  Open the `docroot/html/guestbook/view.jsp` file. Below the
 `<portlet:defineObjects />` tag, add the following tag: 
 
         <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
 
     This makes your list of `Entry` objects available to the page. 
 
-2.  From the *Liferay UI Search Container* snippet category, drag the *Model
+4.  From the *Liferay UI Search Container* snippet category, drag the *Model
 Search Container* snippet and drop it at the bottom of your page. 
 
-3.  In the dialog that pops up, click the *Browse* button and then type *Entry*
+5.  In the dialog that pops up, click the *Browse* button and then type *Entry*
 into the search dialog. Liferay IDE shows every instance of an `Entry` class on
 your classpath. Choose the one you created in the
 `com.liferay.docs.guestbook.model` package and click *Ok*. 
 
-4.  Your model class is parsed automatically, and now you can choose the property
+6.  Your model class is parsed automatically, and now you can choose the property
 columns you wish to display to the user. Check off the *message* and *name*
 columns. 
 
-5.  The generated variable is `aEntry`. If you want something more grammatically
+7.  The generated variable is `aEntry`. If you want something more grammatically
 correct, change it to `entry`, and then click *Finish*. 
 
     The tag snippet assumes that you're using Liferay's persistence framework,
     Service Builder. Because you're not using that, you'll have to fix one of
     the tags. 
 
-6.  Modify the `<liferay-ui:search-container-results>` tag so that it uses your
+8.  Modify the `<liferay-ui:search-container-results>` tag so that it uses your
 `entries` list: 
 
         <liferay-ui:search-container-results
             results="<%= entries %>"
         />
 
-You're done! Save your work, deploy your application, and try adding some
+You're done! Your `view.jsp` should look like this:
+
+    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+    <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
+    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+    <portlet:defineObjects />
+    <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
+
+    <liferay-ui:search-container>
+    	<liferay-ui:search-container-results
+		results="<%= entries %>"
+	/>
+	
+	<liferay-ui:search-container-row
+		className="com.liferay.docs.guestbook.model.Entry"
+		modelVar="entry"
+	>
+	
+	</liferay-ui:search-container-row>
+
+	<liferay-ui:search-iterator />
+    </liferay-ui:search-container>
+    
+    <aui:button-row cssClass="guestbook-buttons">
+	<portlet:renderURL var="addEntryURL">
+		<portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp"></portlet:param>
+	</portlet:renderURL>
+	
+	<aui:button onClick="<%= addEntryURL.toString() %>" value="Add Entry"></aui:button>
+    </aui:button-row>
+
+Save your work, deploy your application, and try adding some
 guestbook entries. 
 
 ## Next Steps 
@@ -677,9 +719,9 @@ interest you.
 
 Here are more tutorials that you may find interesting:
 
-[Developing Plugins with the Plugins SDK](/develop/tutorials/knowledge_base/plugins-sdk)
+[Developing Plugins with the Plugins SDK](/develop/tutorials/knowledge_base/6-2/plugins-sdk)
 
-[Developing Plugins with Maven](/develop/tutorials/-/knowledge_base/maven)
+[Developing Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
 
 <!--
 [Create web forms with Alloy UI tag libs](http://www.liferay.com)

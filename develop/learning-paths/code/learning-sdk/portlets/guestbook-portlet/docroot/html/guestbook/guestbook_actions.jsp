@@ -59,6 +59,8 @@ Entry entry = (Entry)row.getObject();
 		<portlet:actionURL name="deleteEntry" var="deleteURL">
 			<portlet:param name="entryId"
 				value="<%= String.valueOf(entry.getEntryId()) %>" />
+			<portlet:param name="guestbookId"
+				value="<%= String.valueOf(entry.getGuestbookId()) %>" />
 		</portlet:actionURL>
 
 		<liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />

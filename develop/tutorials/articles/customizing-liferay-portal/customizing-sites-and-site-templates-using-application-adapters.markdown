@@ -16,7 +16,7 @@ you'll create your own Application Adapter hook.
 
 Here's how to do it: 
 
-1. [Create a hook plugin](/develop/tutorials/-/knowledge_base/creating-a-hook-project-in-the-plugins-sdk). 
+1. [Create a hook plugin](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk). 
 
 2. Modify your hook's `liferay-hook.xml` to specify the location of your custom
    JSP and set the global custom JSP setting to `false`: 

@@ -14,20 +14,26 @@
 
 package com.liferay.docs.guestbook.service.impl;
 
+import java.util.Date;
+import java.util.List;
+
 import com.liferay.docs.guestbook.EntryEmailException;
 import com.liferay.docs.guestbook.EntryMessageException;
 import com.liferay.docs.guestbook.EntryNameException;
 import com.liferay.docs.guestbook.model.Entry;
+import com.liferay.docs.guestbook.model.Guestbook;
 import com.liferay.docs.guestbook.service.base.EntryLocalServiceBaseImpl;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.Indexer;
+import com.liferay.portal.kernel.search.IndexerRegistryUtil;
+import com.liferay.portal.kernel.util.ContentTypes;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ResourceConstants;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
-
-import java.util.Date;
-import java.util.List;
+import com.liferay.portlet.asset.model.AssetEntry;
+import com.liferay.portlet.asset.model.AssetLinkConstants;
 
 /**
  * The implementation of the entry local service.
@@ -80,10 +86,21 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 				Entry.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
 				entryId);
 		
+		AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
+				Entry.class.getName(), entryId);
+		
+		assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
+
+		assetEntryLocalService.deleteEntry(assetEntry);
+		
+		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
+				Entry.class);
+
+		indexer.delete(entry);
+		
 		entry = deleteEntry(entryId);
 
 		return entry;
-
 	}
 
 	public Entry addEntry(long userId, long guestbookId, String name,
@@ -101,6 +118,7 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		Entry entry = entryPersistence.create(entryId);
 		
 		entry.setUuid(serviceContext.getUuid());
+		entry.setUserId(userId);
 		entry.setGroupId(groupId);
 		entry.setCompanyId(user.getCompanyId());
 		entry.setUserName(user.getFullName());
@@ -117,8 +135,24 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 		resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
 				Entry.class.getName(), entryId, false, true, true);
 		
-		return entry;
+		AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
+				groupId, entry.getCreateDate(), entry.getModifiedDate(),
+				Entry.class.getName(), entryId, entry.getUuid(), 0,
+				serviceContext.getAssetCategoryIds(),
+				serviceContext.getAssetTagNames(), true, null, null, null,
+				ContentTypes.TEXT_HTML, entry.getMessage(), null, null, null,
+				null, 0, 0, null, false);
 		
+		assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
+				serviceContext.getAssetLinkEntryIds(),
+				AssetLinkConstants.TYPE_RELATED);
+		
+		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
+				Entry.class);
+
+		indexer.reindex(entry);
+		
+		return entry;
 	}
 	
 	public Entry updateEntry(long userId, long guestbookId, long entryId,
@@ -149,9 +183,25 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 				Entry.class.getName(), entryId,
 				serviceContext.getGroupPermissions(),
 				serviceContext.getGuestPermissions());
+		
+		AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
+				groupId, entry.getCreateDate(), entry.getModifiedDate(),
+				Entry.class.getName(), entryId, entry.getUuid(), 0,
+				serviceContext.getAssetCategoryIds(),
+				serviceContext.getAssetTagNames(), true, null, null, null,
+				ContentTypes.TEXT_HTML, entry.getMessage(), null, null, null,
+				null, 0, 0, null, false);
+		
+		assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
+				serviceContext.getAssetLinkEntryIds(),
+				AssetLinkConstants.TYPE_RELATED);
+		
+		Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(
+				Entry.class);
+
+		indexer.reindex(entry);
 
 		return entry;
-
 	}
 	
 	protected void validate (String name, String email, String entry) throws PortalException {
