@@ -1,20 +1,25 @@
 # Using AlloyUI Form Validation
 
 In a previous learning path, you created a form for users to submit when adding
-an entry to a guestbook. You implemented a token form of back-end validation
-(checking the entry name, email address, and message for `null` values) in the
-service layer, but did not provide front-end validation in the form itself.
-Before users submit your form, you should make sure that they have filled out
-all of the required fields. Your front-end form validation should indicate which
-fields are required and should highlight the required fields if the user tries
-to submit the form with one or more of the required fields left blank. For email
-addresses, your form validation should check that the user entered a valid
-address. Your form validation should also allow you to restrict the number of
-characters that can be entered into a field. The number of remaining characters
-for the field should be displayed to the user. With AlloyUI, it's easy to
-implement all of these form validation features. Once you've implemented form
-validation, users' attempts to submit invalid forms will be caught by the
-browser, before a request is sent to your Liferay server.
+an entry to a guestbook. You implemented back-end validation (checking the entry
+name, email address, and message for `null` values) in the service layer, but
+did not provide front-end validation in the form itself. From a security
+perspective, it is necessary to implement both forms of validation to prevent
+nefarious users from turning off JavaScript in their browsers and submitting bad
+data. For this reason, you need not worry: you haven't done extra work. Now it's
+time to implement validation on the front end. 
+
+Front-end validation makes sure that when users submit your form, they have
+filled out all the required fields. Your front-end form validation should
+indicate which fields are required and should highlight the required fields if
+the user tries to submit the form with one or more of the required fields left
+blank. For email addresses, your form validation should check that the user
+entered a valid address. Your form validation should also allow you to restrict
+the number of characters that can be entered into a field. The number of
+remaining characters for the field should be displayed to the user. With
+AlloyUI, it's easy to implement all of these form validation features. Once
+you've implemented form validation, users' attempts to submit invalid forms are
+caught by the browser before a request is sent to your Liferay server.
 
 You'll implement form validation with AlloyUI in two steps. First, you'll use
 the AlloyUI validator tag to specify required fields and fields that require a
@@ -51,24 +56,24 @@ To keep things simple, replace the contents between the `<aui:fieldset>` and
 
 Save this update and redeploy your app.
 
-You've added `<aui:validator>` tags inside of the `<aui:input>` tags
-corresponding to the name, email, and message fields. The `<aui:validator>` tag
-allows you to quickly and easily validate your fields. First, note that you must
-add an `<aui:validator/>` tag inside of the `<aui:input>` tag for each field you
-wish to validate. Next, note that you have to specify a value for the `name`
+You've added `<aui:validator>` tags inside the `<aui:input>` tags corresponding
+to the name, email, and message fields. The `<aui:validator>` tag is a fast and
+easy way to validate your fields. First, note that you must add an
+`<aui:validator/>` tag inside the `<aui:input>` tag for each field you wish
+to validate. Next, note that you have to specify a value for the `name`
 attribute. The value of the `name` attribute determines the type of validation
 to apply to the field. You added an `aui:validator name="required" />` tag to
-all of the non-hidden form fields. This prevents blank empty fields from being
+all the non-hidden form fields. This prevents blank empty fields from being
 submitted. For the email field, you've added an `aui:validator name="required"
 />` tag. This ensures that only valid email addresses can be submitted. 
 
 In the code above, you also changed the message field from a text input field to
 a textarea input field. This provides more space for users to enter guestbook
-messages. It allows allows them to resize the field. Note the `errorMessage`
-attributes of the `<aui:validator>` tags of the name and message fields. These
-attributes specify messages that replace the default error message. You're
-replacing the default error message (*This field is required*) field with custom
-messages: *Please enter a name.* and *Please enter a message.*
+messages. It also allows them to resize the field. Note the `<aui:validator>`'s
+`errorMessage` attributes for the name and message fields. These attributes
+specify messages that replace the default error message. You're replacing the
+default error message (*This field is required*) field with custom messages:
+*Please enter a name.* and *Please enter a message.*
 
 Now click on *Add Entry* in the Guestbook portlet to view the form that you
 updated. Notice that all the input fields are now marked as *Required*, thanks
@@ -89,20 +94,19 @@ AUI modules are small, powerful building blocks of UI functionality. Each module
 provides a unique set of functionality that's designed to solve a particular
 problem. In your case, you want to limit the number of characters that users can
 enter into the message field of the Add Entry form. If you used the AUI
-validator tag to limit the number of characters, users would have to know how
-the character limit. They'd also have to remember how many characters they've
-already entered. A much better solution is to use the AUI Character Counter
+validator tag to limit the number of characters, users would have to keep track
+of the character limit. A much better solution is to use the AUI Character Counter
 module. You can use this module not only to specify a limit on the number of
 characters that can be entered, but also to display the number of remaining
 characters.
 
-Open the `edit_entry.jsp` file and add find the following section:
+Open the `edit_entry.jsp` file and find the following code:
 
     <aui:input id="message" type="textarea" name="message">
         <aui:validator name="required" errorMessage="Please enter a message." />
     </aui:input>
 
-Add the following line just below this section:
+Add the following line just below it:
 
     <div id="counterContainer"><p><span id="counter"></span> character(s) remaining</p></div>
 
@@ -124,10 +128,10 @@ Add the following code to the bottom the page:
         );
       }
     );
-    </aui:script>   
+    </aui:script> 
 
 Here, you're specifying that the `<span id="counter"></span>` element should
-be used for the counter, that the characters entered inside of the text area
+be used for the counter, that the characters entered inside the text area
 created by the `<aui:input id="message" type="textarea" name="message">`
 element should be counted, and that the maximum number of characters that
 can be entered is `140`. Please refer to the
@@ -151,8 +155,8 @@ The following code loads the `aui-char-counter` module:
       }
     );
 
-Adding the code below inside of the `function(A)` brackets creates an
-instance of the character counter:
+Adding the code below inside the `function(A)` brackets creates an instance of
+the character counter:
 
     new A.CharCounter(
       {
@@ -177,18 +181,18 @@ create the text area, the CSS ID of the text area is not actually `message`,
 it's `_guestbook_WAR_guestbookportlet_message`. You don't have to remember the
 prefix: just use the `<portlet:namespace />` tag to retrieve it.
 
-Remember that when designing a portlet, you make to make sure that it will work
+Remember that when designing a portlet, you need to make sure that it works
 regardless of other portlets that may have been added to the page. There's no
-guarantee that another portlet won't use CSS classnames or IDs that you assumed
-would be unique. Using the prefix supplied by the `<portlet:namespace />` tag
-ensures that there won't be naming conflicts with other elements on the page.
-Finally, by specifying `maxLength: 140`, you limit the number of characters that
-can be entered into the input field to `140`.
+guarantee that another portlet doesn't use CSS class names or IDs that you
+assumed would be unique. Using the prefix supplied by the `<portlet:namespace
+/>` tag ensures that there won't be naming conflicts with other elements on the
+page. Finally, by specifying `maxLength: 140`, you limit the number of
+characters that can be entered into the input field to `140`.
 
-Now click on the Guestbook portlet's *Add Entry* button to test out the
-guestbook entry form. Complete the form and check that your fancy new character
-counter displays the number of remaining characters for your message. Your form
-should look like the one below:
+Save your work, re-load the page, and click on the Guestbook portlet's *Add
+Entry* button to test out the guestbook entry form. Complete the form and check
+that your fancy new character counter displays the number of remaining
+characters for your message. Your form should look like the one below:
  
 ![Figure 2: With your new character counter, your form should look like this one.](../../images/guestbook-char-counter.png)
 

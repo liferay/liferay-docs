@@ -7,10 +7,11 @@ extra JavaScript code that you need to add to your application. This, in turn,
 minimizes the impact your application has on page load time. AlloyUI is an
 easy-to-use framework with a uniform API that's based on YUI. Since Liferay is
 already using AlloyUI, choosing AlloyUI for your application allows your
-application's look and feel to closely match Liferay's. For more information
-about AlloyUI, please visit [http://alloyui.com](http://alloyui.com).
+application's look and feel to closely match Liferay's styling mechanisms. For
+more information about AlloyUI, please visit
+[http://alloyui.com](http://alloyui.com).
 
-In an earlier learning path, you created a Guestbook application, used Service
+In earlier learning paths, you created a Guestbook application, used Service
 Builder to generate a data model along with service and persistence layers,
 integrated your application with Liferay's permission system, implemented
 portlet actions, and a created a user interface for your application. You also
