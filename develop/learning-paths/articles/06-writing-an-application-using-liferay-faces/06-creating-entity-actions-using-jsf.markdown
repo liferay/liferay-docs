@@ -51,7 +51,7 @@ your `-LocalServiceImpl` classes.
             return super.deleteGuestbook(guestbook);
         }
 
-    Similar to the `deleteEntry(Entry) method, this method deletes guestbooks
+    Similar to the `deleteEntry(Entry)` method, this method deletes guestbooks
     and their resources. 
 
 3. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
@@ -187,7 +187,7 @@ classes. You'll do that next.
         private String permissionsUrl;
 
     The `logger` variable may look familiar to you. This was used in the managed
-    beans to log error messagees if an exception occured. It's used the same way
+    beans to log error messages if an exception occurred. It's used the same way
     here. The `permissionsUrl` property will be used in your new method, and
     called in the `master` view. 
 

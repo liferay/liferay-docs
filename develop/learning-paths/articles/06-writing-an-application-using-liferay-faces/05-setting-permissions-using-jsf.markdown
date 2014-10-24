@@ -200,7 +200,7 @@ portlets data is protected from unwanted viewers.
                 <f:ajax render="@all" />
         </h:commandButton>
 
-    Adding this new `rendered` attibute does the exact same permission check as
+    Adding this new `rendered` attribute does the exact same permission check as
     before, except it calls the boolean property for adding an entry. 
 
 4. The last permission check you'll need to implement is for the Guestbook tabs.
@@ -289,7 +289,7 @@ method call, and adding resources to your service layer.
 +$$$
 
 **Note:** Your `-LocalServiceImpl` classes now have errors showing. To take care
-of these errors, and propogate these changes to your service layer, re-build
+of these errors, and propagate these changes to your service layer, re-build
 your services by right-clicking your project and selecting *Liferay* &rarr;
 *Build Services*. 
 
