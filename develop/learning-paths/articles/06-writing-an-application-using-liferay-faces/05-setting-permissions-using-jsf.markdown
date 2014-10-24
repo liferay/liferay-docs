@@ -501,7 +501,58 @@ implementing this permission check in the guestbook.
    the opening `<ui:repeat>` tag. 
 
 Fantastic! You've taken advantage of your extended permission scheme by checking
-the `VIEW` permission for each guestbook entity. 
+the `VIEW` permission for each guestbook entity. Now you'll provide the same
+capability for each guestbook entry. 
 
-In the next learning path, you'll continue working with the JSF Guestbook
-portlet by adding action buttons for each entity. 
+1. In the `com.liferay.docs.guestbook.wrappers.Entry` class, add the
+   following variable and property: 
+
+        private static final String MODEL = "com.liferay.docs.guestbook.model.Entry";
+
+        private Boolean viewable;
+
+2. Add the following permissions method directly below your constructor method: 
+
+        public Boolean getViewable() {
+
+            if (viewable == null) {
+                LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+                long scopeGroupId = liferayFacesContext.getScopeGroupId();
+                viewable = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
+                    MODEL, getEntryId(), ActionKeys.VIEW);
+            }
+
+            return viewable;
+        }
+
+3. Now you'll need to check your `master` view for the `viewable` property. Open
+   the `master.xhtml` file. Inside the `<h:dataTable>...</h:dataTable>` tags,
+   find both `<h:outputText />` tags and surround both of them with
+   `<h:panelGroup>...</h:panelGroup>` tags. For each `<h:panelGroup>` tag,
+   add the `rendered="#{entry.viewable}"` attribute. Your data table should now
+   look like the following: 
+
+        <h:dataTable styleClass="table table-bordered table-hover table-striped" rowClasses="table-cell "
+            value="#{guestbookBacking.entries}" var="entry">
+            <h:column>
+                <f:facet name="header"><h:outputText value="#{i18n['message']}" /></f:facet>
+                <h:panelGroup rendered="#{entry.viewable}">
+                    <h:outputText value="#{entry.message}" />
+                </h:panelGroup>
+            </h:column>
+            <h:column>
+                <f:facet name="header"><h:outputText value="#{i18n['name']}" /></f:facet>
+                <h:panelGroup rendered="#{entry.viewable}">
+                    <h:outputText value="#{entry.name}" />
+                </h:panelGroup>
+            </h:column>
+        </h:dataTable>
+
+Congratulations! Both your entities are now using the new extended permissions
+scheme to check for user `VIEW` permissions. This permissions scheme becomes
+even more powerful when you can take advantage of checking the permissions for
+each entity by accessing each entity's permissions menu. You'll configure this
+in the next learning path. 
+
+To continue working with the JSF Guestbook portlet, continue on to the next
+learning path to learn about adding action buttons for each entity. 

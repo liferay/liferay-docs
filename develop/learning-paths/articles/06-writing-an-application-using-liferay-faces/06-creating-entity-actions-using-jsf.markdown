@@ -475,25 +475,101 @@ permissioning!
     method checks for the Permissions button's permissions, and the
     `getUpdateable()` method checks for the Edit button's permissions. 
 
+3. Repeat step 1 for the `com.liferay.docs.guestbook.wrappers.Entry` class. The
+   properties are identical for both wrapper classes. 
 
-        
+4. In the `Entry` wrapper class, add the following permissions methods directly
+   below your constructor method: 
 
+        public Boolean getDeleteable() {
 
+            if (deleteable == null) {
+                LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+                long scopeGroupId = liferayFacesContext.getScopeGroupId();
+                deleteable = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
+                    MODEL, getEntryId(), ActionKeys.DELETE);
+            }
 
+            return deleteable;
+        }
 
+        public Boolean getPermissible() {
 
+            if (permissible == null) {
+                LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+                long scopeGroupId = liferayFacesContext.getScopeGroupId();
+                permissible = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
+                    MODEL, getEntryId(), ActionKeys.PERMISSIONS);
+            }
 
+            return permissible;
+        }
 
+        public Boolean getUpdateable() {
 
+            if (updateable == null) {
+                LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+                long scopeGroupId = liferayFacesContext.getScopeGroupId();
+                updateable = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
+                    MODEL, getEntryId(), ActionKeys.UPDATE);
+            }
 
+            return updateable;
+        }
 
+4. Now that your wrapper classes hold the necessary permission check methods and
+   properties, you'll check for them in your `master` view. First, for each of
+   your guestbook buttons you just created, surround each individual
+   `<h:commandButton>...</h:commandButton>` tag with the
+   `<h:panelGroup>...</h:panelGroup>` tag. Each panel group tag should contain
+   the `rendered` element, specifying the appropriate permission to check for
+   each action button. Below is how you guestbook buttons should look after
+   you're finished: 
 
+        <div id="guestbook_buttons" style="display: inline-block">
+            <h:panelGroup rendered="#{guestbookBacking.selectedGuestbook.updateable}">
+                <h:commandButton action="#{guestbookBacking.edit(guestbookBacking.selectedGuestbook)}" styleClass="btn btn-default" value=" #{i18n['edit']} ">
+                    <f:ajax render="@all" />
+                </h:commandButton>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{guestbookBacking.selectedGuestbook.deleteable}">
+                <h:commandButton action="#{guestbookBacking.delete(guestbookBacking.selectedGuestbook)}" styleClass="btn btn-default" value=" #{i18n['delete']} "
+                    onclick="if (! confirm('#{i18n['are-you-sure-you-want-to-delete-this']}')) {return false;}" >
+                    <f:ajax render="@all" />
+                </h:commandButton>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{guestbookBacking.selectedGuestbook.permissible}">
+                <h:outputLink styleClass="btn btn-default" value="#{guestbookBacking.selectedGuestbook.permissionsUrl}">
+                    <h:outputText value=" #{i18n['permissions']} " />
+                </h:outputLink>
+            </h:panelGroup>
+        </div>
 
+5. Complete the same process for the entry action buttons. The entries are
+   displayed slightly differently than the guestbooks, so you won't need to
+   check permissions for the *selected* entry, but rather, just `entry`. Your
+   updated entry action buttons code should appear like the code snippet below: 
 
+        <h:column>
+            <f:facet name="header"><h:outputText value=" " /></f:facet>
+            <h:panelGroup rendered="#{entry.updateable}">
+                <h:commandButton action="#{entryBacking.edit(entry)}" styleClass="btn btn-default" value=" #{i18n['edit']} ">
+                    <f:ajax render="@all" />
+                </h:commandButton>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{entry.deleteable}">
+                <h:commandButton action="#{entryBacking.delete(entry)}" styleClass="btn btn-default" value=" #{i18n['delete']} "
+                    onclick="if (! confirm('#{i18n['are-you-sure-you-want-to-delete-this']}')) {return false;}" >
+                    <f:ajax render="@all" />
+                </h:commandButton>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{entry.permissible}">
+                <h:outputLink styleClass="btn btn-default" value="#{entry.permissionsUrl}">
+                    <h:outputText value=" #{i18n['permissions']} " />
+                </h:outputLink>
+            </h:panelGroup>
+        </h:column>
 
-
-
-
-
-
-
+Congratulations! You've implemented custom actions for your entities. Users can
+now manage an entity's full life cycle: adding, editing, modifying the
+permissions of, and deleting an entity. 
