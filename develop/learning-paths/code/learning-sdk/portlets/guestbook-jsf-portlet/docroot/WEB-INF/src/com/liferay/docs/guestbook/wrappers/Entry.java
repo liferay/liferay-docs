@@ -47,6 +47,7 @@ public class Entry extends EntryWrapper {
 	private Boolean permissible;
 	private String permissionsUrl;
 	private Boolean updateable;
+	private Boolean viewable;
 
 	public Entry(com.liferay.docs.guestbook.model.Entry entry) {
 		super(entry);
@@ -131,6 +132,18 @@ public class Entry extends EntryWrapper {
 		}
 
 		return updateable;
+	}
+	
+	public Boolean getViewable() {
+
+		if (viewable == null) {
+			LiferayFacesContext liferayFacesContext = LiferayFacesContext.getInstance();
+			long scopeGroupId = liferayFacesContext.getScopeGroupId();
+			viewable = liferayFacesContext.getThemeDisplay().getPermissionChecker().hasPermission(scopeGroupId,
+					MODEL, getEntryId(), ActionKeys.VIEW);
+		}
+
+		return viewable;
 	}
 
 }

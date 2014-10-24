@@ -62,11 +62,15 @@
 					value="#{guestbookBacking.entries}" var="entry">
 					<h:column>
 						<f:facet name="header"><h:outputText value="#{i18n['message']}" /></f:facet>
-						<h:outputText value="#{entry.message}" />
+						<h:panelGroup rendered="#{entry.viewable}">
+							<h:outputText value="#{entry.message}" />
+						</h:panelGroup>
 					</h:column>
 					<h:column>
 						<f:facet name="header"><h:outputText value="#{i18n['name']}" /></f:facet>
-						<h:outputText value="#{entry.name}" />
+						<h:panelGroup rendered="#{entry.viewable}">
+							<h:outputText value="#{entry.name}" />
+						</h:panelGroup>
 					</h:column>
 					<h:column>
 						<f:facet name="header"><h:outputText value=" " /></f:facet>
