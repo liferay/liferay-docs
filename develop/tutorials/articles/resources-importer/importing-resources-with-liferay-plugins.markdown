@@ -1,4 +1,4 @@
-# Creating Plugins to Share Structures, Templates, and More [](id=creating-a-plugin-to-share-templates-str-liferay-portal-6-2-dev-guide-03-en)
+# Creating Plugins to Share Structures, Templates, and More [](id=creating-plugins-to-share-structures-templates-and-more)
 
 Have you ever wanted to share page templates with other users? Are colleagues
 and clients banging at your door to get hold of the structures and templates you
@@ -241,7 +241,7 @@ Lastly, you can also specify portlet preferences for each portlet using the
  useful to import web content articles along with a page template that
  references the articles, in a nested Web Content Display portlet. For more
  information on importing resources, see
- [Importing Resources with Your Themes](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en).
+ [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
 
 $$$
 

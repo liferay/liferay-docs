@@ -321,7 +321,7 @@ attribute, enter *submit*. Click *Insert*.
 
 10. Beneath the Submit button you just created, drag another *button* snippet.
 For the `type` attribute, enter *cancel*. For the `onClick` attribute, enter
-`<%= viewURL %>`. This supplies the render URL you created that goes back to the
+`<%= viewURL.toString() %>`. This supplies the render URL you created that goes back to the
 `view.jsp` page.
 
 Your form is done! Save your JSP; it should look like this:
@@ -348,7 +348,7 @@ Your form is done! Save your JSP; it should look like this:
             <aui:button-row>
 
                 <aui:button type="submit"></aui:button>
-                <aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
+                <aui:button type="cancel" onClick="<%= viewURL.toString() %>"></aui:button>
 
             </aui:button-row>
     </aui:form>
@@ -634,40 +634,82 @@ Liferay's development framework makes it easy to loop through data and display
 it nicely to the end user. You'll use a component called the *Search Container*
 to make this happen. 
 
-1.  Open the `docroot/html/guestbook/view.jsp` file. Below the
+1.  Open the Snippets tab on the right side of Liferay IDE and expand the
+    *Taglib Imports* category.
+
+2.  Drag the snippet labeled *Liferay UI Taglib Import* from the snippet area to
+    the line beneath the existing taglib import in `view.jsp`. The following code gets
+    added to `view.jsp`:
+
+	<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+    This declares that you want to use Liferay’s UI tags. 
+
+3.  Open the `docroot/html/guestbook/view.jsp` file. Below the
 `<portlet:defineObjects />` tag, add the following tag: 
 
         <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
 
     This makes your list of `Entry` objects available to the page. 
 
-2.  From the *Liferay UI Search Container* snippet category, drag the *Model
+4.  From the *Liferay UI Search Container* snippet category, drag the *Model
 Search Container* snippet and drop it at the bottom of your page. 
 
-3.  In the dialog that pops up, click the *Browse* button and then type *Entry*
+5.  In the dialog that pops up, click the *Browse* button and then type *Entry*
 into the search dialog. Liferay IDE shows every instance of an `Entry` class on
 your classpath. Choose the one you created in the
 `com.liferay.docs.guestbook.model` package and click *Ok*. 
 
-4.  Your model class is parsed automatically, and now you can choose the property
+6.  Your model class is parsed automatically, and now you can choose the property
 columns you wish to display to the user. Check off the *message* and *name*
 columns. 
 
-5.  The generated variable is `aEntry`. If you want something more grammatically
+7.  The generated variable is `aEntry`. If you want something more grammatically
 correct, change it to `entry`, and then click *Finish*. 
 
     The tag snippet assumes that you're using Liferay's persistence framework,
     Service Builder. Because you're not using that, you'll have to fix one of
     the tags. 
 
-6.  Modify the `<liferay-ui:search-container-results>` tag so that it uses your
+8.  Modify the `<liferay-ui:search-container-results>` tag so that it uses your
 `entries` list: 
 
         <liferay-ui:search-container-results
             results="<%= entries %>"
         />
 
-You're done! Save your work, deploy your application, and try adding some
+You're done! Your `view.jsp` should look like this:
+
+    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+    <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
+    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+    <portlet:defineObjects />
+    <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
+
+    <liferay-ui:search-container>
+    	<liferay-ui:search-container-results
+		results="<%= entries %>"
+	/>
+	
+	<liferay-ui:search-container-row
+		className="com.liferay.docs.guestbook.model.Entry"
+		modelVar="entry"
+	>
+	
+	</liferay-ui:search-container-row>
+
+	<liferay-ui:search-iterator />
+    </liferay-ui:search-container>
+    
+    <aui:button-row cssClass="guestbook-buttons">
+	<portlet:renderURL var="addEntryURL">
+		<portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp"></portlet:param>
+	</portlet:renderURL>
+	
+	<aui:button onClick="<%= addEntryURL.toString() %>" value="Add Entry"></aui:button>
+    </aui:button-row>
+
+Save your work, deploy your application, and try adding some
 guestbook entries. 
 
 ## Next Steps 
