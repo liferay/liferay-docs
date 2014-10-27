@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="learning-paths Conversion" basedir=".">
+<project name="MVC Learning Path Conversion" basedir=".">
 
 <property name="project.dir" value="../../.." />
 <property name="base.filepath" value="${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/learning-paths/${doc.dir}" />
