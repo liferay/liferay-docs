@@ -3,34 +3,48 @@
 In the last section, you used AlloyUI to implement form validation on several
 fields. In this section, you'll learn how to use AlloyUI to manipulate HTML
 elements in the DOM (Document Object Model). You'll add several buttons to the
-Add Entry form, that, when clicked, add or remove elements from the DOM or
+Add Entry form that, when clicked, add or remove elements from the DOM or
 automatically populate some of the form fields. First, you'll create buttons
-that autopopulate the name and email fields of the Add Entry form with the full
+that populate the name and email fields of the Add Entry form with the full
 name and email address of the current user. Then you'll create a button that
 generates sample guestbook entry messages. The user can select a message and
-the message field will be autopopulated with the selected message. To achieve
-these goals, you'll use the AlloyUI node module for DOM manipulation and the
-AlloyUI event module to create event listeners.
+the message field is populated with the selected message. To achieve
+these goals, you'll use the AlloyUI Node module for DOM manipulation and the
+AlloyUI Event module to create event listeners.
 
-## Creating Autopopulate Buttons for the Name and Email Fields
+## Creating Populate Buttons for the Name and Email Fields
 
 To keep the Add Entry form as clean as possible, you'll create a collapsible
-panel within which to add the buttons for autopopulating the form fields. Add
-the following lines to your project's `docroot/html/guestbook/edit_entry.jsp`
-file:
+panel where you'll add the buttons for populating the form fields. Add the
+following lines to your project's `docroot/html/guestbook/edit_entry.jsp` file:
 
-    <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="autopopulatePanel" persistState="<%= true %>" title="autopopulate">
+    <liferay-ui:panel 
+        defaultState="closed" 
+        extended="<%= false %>" 
+        id="populatePanel" 
+        persistState="<%= true %>" 
+        title="populate">
+
             <c:if test="<%= themeDisplay.isSignedIn() %>">
                     <aui:button-row>
-                            <aui:button id="useNameButton" value="Use My Full Name"></aui:button>
+                            <aui:button 
+                                id="useNameButton" 
+                                value="Use My Full Name">
+                            </aui:button>
                     </aui:button-row>
             </c:if>
             
             <c:if test="<%= themeDisplay.isSignedIn() %>">
+
                     <aui:button-row>
-                            <aui:button id="useEmailButton" value="Use My Email Address"></aui:button>
+                            <aui:button 
+                                id="useEmailButton" 
+                                value="Use My Email Address">
+                            </aui:button>
                     </aui:button-row>
+
             </c:if>
+
     </liferay-ui:panel>
 
 The `<liferay-ui:panel>` tag creates a collapsible panel. The following
@@ -41,67 +55,67 @@ attributes are useful here:
 - `id="autopopulatePanel"`: specifies a CSS ID for the panel
 - `persistState="<%= true %>"`: sets the panel to "remember" the state
   (collapsed or expanded) chosen by the user
-- `title="autopopulate"`: sets the title of the panel to *autopopulate*
+- `title="populate"`: sets the title of the panel to *populate*
 
 It's a best practice to use language keys for titles so that they can be
 localized. Open your project's `docroot/WEB-INF/src/content/Language.properties`
 file and add the following line:
 
-    autopopulate=Autopopulate
+    populate=Populate
 
 Note the `c:if test="<%= themeDisplay.isSignedIn() %>">` tags surrounding the
 buttons in the panel that you added. The *Use My Full Name* and *Use My Email
 Address* buttons should only appear for signed-in (non-guest) users. The portal
-doesn't know the full names or email addresses of guest users so the buttons
+doesn't know the full names or email addresses of guest users, so the buttons
 could never work for guests! The `themeDisplay` object is made available by the
-`<theme:defineObjects />` tag which you're importing from `init.jsp`. Using the
+`<theme:defineObjects />` tag which is called in `init.jsp`. Using the
 `<aui:button-row>` and `<aui:button>` tags lets you take advantage of AlloyUI
 button styling.
 
 Test your update by clicking on the Add Entry form of the Guestbook portlet.
-Confirm that the panel appears, that its title is *Autopopulate*, and that the
+Confirm that the panel appears, that its title is *Populate*, and that the
 *Use My Full Name* and *Use My Email Address* buttons appear when you're signed
 in.
 
-![Figure 1: This is how the Add Entry form should appear with the Autopopulate panel expanded.](../../images/guestbook-autopopulate-use-buttons.png)
+![Figure 1: This is how the Add Entry form should appear with the Populate panel expanded.](../../images/guestbook-autopopulate-use-buttons.png)
 
 Now it's time to make the buttons work. Add the following lines near the bottom
 of `edit_entry.jsp`, just above the `aui:script use="aui-char-counter">` tag:
 
     <c:if test="<%= themeDisplay.isSignedIn() %>">
-    <%
-    String fullName = user.getFullName();
+        <%
+        String fullName = user.getFullName();
 
-    String emailAddress = user.getEmailAddress();
-    %>
+        String emailAddress = user.getEmailAddress();
+        %>
 
-    <aui:script use="node, event">
-    var fullName = '<%= fullName %>';
+        <aui:script use="node, event">
+        var fullName = '<%= fullName %>';
 
-    var useNameButton = A.one('#useNameButton');
+        var useNameButton = A.one('#useNameButton');
 
-    useNameButton.on('click', function(event) {
-            var name = A.one('#<portlet:namespace/>name');
-            
-            name.val(fullName);
-    });
+        useNameButton.on('click', function(event) {
+                var name = A.one('#<portlet:namespace/>name');
+                
+                name.val(fullName);
+        });
 
-    var emailAddress = '<%= emailAddress %>';
+        var emailAddress = '<%= emailAddress %>';
 
-    var useEmailButton = A.one('#useEmailButton');
+        var useEmailButton = A.one('#useEmailButton');
 
-    useEmailButton.on('click', function(event) {
-            var email = A.one('#<portlet:namespace/>email');
-            
-            email.val(emailAddress);
-    });
-    </aui:script>
+        useEmailButton.on('click', function(event) {
+                var email = A.one('#<portlet:namespace/>email');
+                
+                email.val(emailAddress);
+        });
+        </aui:script>
     </c:if>
 
 As with the buttons themselves, this script is only useful if the user is signed
-in. So you surround it with the `<c:if test="<%= themeDisplay.isSignedIn() %>">`
-tag. Next, you retrieve the user's full name and email address. The `user`
-object is made available by the `<theme:defineObjects />` tag, just like the
+in, so it's surrounded by `<c:if test="<%= themeDisplay.isSignedIn() %>">` tag.
+Next, you retrieve the user's full name and email address. The `user` object is
+made available by the `<theme:defineObjects />` tag, just like the
 `themeDisplay` object.
 
 Next comes the script itself. Note that in your `<aui:script use="node, event">`
@@ -119,7 +133,7 @@ refer to YUI's documentation to learn more about the global object:
 (Just replace `YUI` with `AUI` and `Y` with `A` when you're reading these docs
 with AlloyUI in mind.)
 
-Inside of the script tag, you capture the string value of the Java `fullName`
+Inside the script tag, you capture the string value of the Java `fullName`
 variable in a JavaScript `fullName` variable. Then you capture the *Use My Full
 Name* node via the following AUI function call: `A.one('#useNameButton')`. The
 `A.one(...)` function returns the first node that matches the selector argument.
@@ -158,30 +172,29 @@ populate it with `name.val(fullName)`. For more information on YUI and AUI
 events and event listeners, please refer to
 [http://yuilibrary.com/yui/docs/event](http://yuilibrary.com/yui/docs/event).
 
-The process of creating an event listener to populate the email input field when
-the *Use My Email Address* button is clicked is virtually identical to the one
-for the *Use My Full Name* button.
+Creating an event listener for the *Use My Email Address* button that populates
+the email input field is virtually identical to the *Use My Full
+Name* button you already created.
 
 Next, you'll develop a more complex example that uses AUI to add and remove DOM
 nodes.
 
 ## Creating Autopopulate Buttons for the Message Field
 
-So far, users of the Guestbook portlet can click on *Add Entry* to access the
-Add Entry form which allows them to enter and save a guestbook entry. A
-guestbook entry consists of a name, email address, and message. In the last
-section, you implemented *Use My Full Name* and *Use My Email Address* buttons
-that autopopulate the name and email fields of the Add Entry form. Now it's time
-to implement a *Generate Sample Messages* button. Here are your requirements for
-the *Generate Sample Messages* button:
+So far, Guestbook portlet users can click on *Add Entry* to enter and save a
+guestbook entry. A guestbook entry consists of a name, email address, and
+message. In the last section, you implemented *Use My Full Name* and *Use My
+Email Address* buttons that populate the name and email fields of the Add
+Entry form. Now it's time to implement a *Generate Sample Messages* button. Here
+are your requirements for the *Generate Sample Messages* button:
 
 - Clicking on the *Generate Sample Messages* button should randomly display
   three sample messages from a pool of ten possible messages.
 - A *Use Message* button should appear next to each of the sample messages that
   are displayed.
-- Clicking on the *Use Message* button should autopopulate the message field of
-  the Add Entry form with the corresponding sample message.
-- Repeatedly clicking on the *Generate Sample Messages* button should replace
+- Clicking on the *Use Message* button should populate the message field with
+  the corresponding sample message.
+- Repeatedly clicking the *Generate Sample Messages* button should replace
   the three currently displayed sample messages with three new random selections
   from the pool of ten.
 - Whenever sample messages are displayed (i.e., whenever the *Generate Sample
@@ -192,7 +205,7 @@ the *Generate Sample Messages* button:
   *Generate Sample Messages* button was first clicked.
 
 AlloyUI makes it easy to implement a *Generate Sample Messages* button that
-fulfils these requirements. In fact, you already used the required AUI modules
+fulfills these requirements. In fact, you already used the required AUI modules
 in the previous section: node and event. In the last section, you learned how to
 use `A.one(...)` to retrieve specific nodes. You also learned how to use
 `[node].on(...)` to create event listeners. In this section, you'll learn how to
@@ -203,11 +216,14 @@ node API and you'll use the YUI/AUI node list API:
 - [http://yuilibrary.com/yui/docs/api/classes/Node.html](http://yuilibrary.com/yui/docs/api/classes/NodeList.html)
 
 Your first task is to create the *Generate Sample Messages* button. Add the
-following lines inside of the Autopopulate panel that you added, just above the
+following lines inside the Populate panel that you added, just above the
 `</liferay-ui:panel>` tag:
 
     <aui:button-row>
-            <aui:button id="generateMessagesButton" value="Generate Sample Messages"></aui:button>
+            <aui:button 
+                id="generateMessagesButton" 
+                value="Generate Sample Messages">
+            </aui:button>
     </aui:button-row>
 
     <div id="messages">
@@ -230,9 +246,9 @@ Here, you create the *Generate Sample Messages* button using the
 `<aui:button-row>` and `<aui:button>` tags for styling. You also create an empty
 container `<div>` for the sample messages. Inside of this `<div>`, you use the
 `<aui:layout>` and `<aui:column>` tags to create three columns, each of which
-contains a `<div>` for one of the sample messages. Basically, `<aui:layout>`
+contains a `<div>` for one of the sample messages: `<aui:layout>`
 creates a row and `<aui:column>` creates a column. It's possible to specify a
-percentage value for the `columnWidth` attribute for each `<aui:column>` but
+percentage value for the `columnWidth` attribute for each `<aui:column>`, but
 it's not necessary. The default works fine for your case.
 
 Note that the `<div>` for sample messages is empty by default. You could have
@@ -331,7 +347,7 @@ button.
 You begin by defining `entryMessages`, the array of the ten possible sample
 messages. Then you check if the `<div>` for the first sample message has any
 child nodes. If it does, this means that the *Generate Sample Messages* button
-has already been clicked and the `<div>` for the first sample message need to be
+has already been clicked and the `<div>` for the first sample message should be
 removed so that it can be replaced:
 
     if (message1Div.hasChildNodes()) {
@@ -349,7 +365,7 @@ for the second or third sample message:
     message1Div.append('<p class="message" id="message1">' + entryMessages[rand1] + '</p><p id="use-message1"><input class="btn" onclick="useMessage1();" type="button" value="Use Message" /></p>');
     entryMessages.splice(rand1, 1);
 
-Notice the `onclick="useMessage1();" attribute. `useMessage1`, `useMessage2`,
+Notice the `onclick="useMessage1();"` attribute. `useMessage1`, `useMessage2`,
 and `useMessage3` are functions that you define below the *Generate Sample
 Messages* button event handler:
 
@@ -367,13 +383,13 @@ Messages* button event handler:
             message.val(A.one('#message3-div').one('#message3').html());
     };
 
-Each of these functions autopopulates the message field of the Add Entry form
-with one of the displayed sample messages. The handling of the `<div>`s for the
-second and third sample messages works the same way as for the first sample
-message. Each `<div>` populated with a random sample message, just like the
-first sample message `<div>` was.
+Each of these functions populates the Add Entry form's message field with one of
+the displayed sample messages. The handling of the `<div>`s for the second and
+third sample messages works the same way as for the first sample message. Each
+`<div>` is populated with a random sample message, just like the first sample
+message `<div>` was.
 
-Now you just need to implement the *Hide Sample Messages* button. You need to
+Now you should implement the *Hide Sample Messages* button. You need to
 add this button dynamically because it shouldn't exist on the page by default.
 If the *Generate Sample Messages* button has not yet been clicked, then it will
 have no siblings, i.e., its parent node will only have one child node. You use
@@ -386,10 +402,10 @@ been added to the page:
             parentNode.append('<button class="btn" id="hideMessagesButton" type="button">Hide Sample Messages</button>');
     }
 
-This adds the *Hide Sample Messages* button inside of the same button row as the
+This adds the Hide Sample Messages button inside the same button row as the
 *Generate Sample Messages* button. Specifying `class="btn"` styles the button
-the same way as the *Generate Sample Messages* button. Once the *Hide Sample
-Messages* button has been added (or you've confirmed that it has already been
+the same way as the Generate Sample Messages button. Once the Hide Sample
+Messages button has been added (or you've confirmed that it has already been
 added), you need to define an event handler for it:
 
     var hideMessagesButton = A.one('#hideMessagesButton');
@@ -405,22 +421,24 @@ added), you need to define an event handler for it:
     });
 
 Here, you use AUI to grab the *Hide Sample Message* button and define an event
-hander. The event handler should remove all of the sample messages. You use
-`[node].get('children')` to get node lists representing all of the child nodes
-of each of the sample message `<div>`s and you remove them all. The event
-handler for the *Hide Sample Messages* button should also remove the *Hide
-Sample Messages* button itself. It wouldn't make sense for this button to appear when there weren't any sample messages to hide! To remove the *Hide Sample Messages* button, you use `parentNode.removeChild(hideMessagesButton)`.
+hander. The event handler should remove all the sample messages. You use
+`[node].get('children')` to get node lists representing all the sample message
+`<div>`s' child nodes, and you remove them all. The event handler for the Hide
+Sample Messages button should also remove the Hide Sample Messages button
+itself. It wouldn't make sense for this button to appear when there weren't any
+sample messages to hide! To remove the Hide Sample Messages button, you use
+`parentNode.removeChild(hideMessagesButton)`.
 
 Check out the new functionality of the Guestbook portlet's Add Entry form. Click
 on the *Generate Sample Messages* button. Click on it multiple times. Click on
-some of the *Use Message* buttons. Test the *Hide Sample Messages* button.
+some of the *Use Message* buttons. Test the Hide Sample Messages button.
 
 ![The Add Entry form should look like this after you've clicked on the *Generate Sample Messages* button and have clicked on *Use My Full Name*, *Use My Email Address*, and *Use Message*.](../../images/guestbook-autopopulate-all-buttons.png)
 
-Great job! You've added a handy Autopopulate panel with useful buttons for
-autopopulating the fields of the Add Entry form. You've used AUI's node and
-event modules and node and node list APIs to dynamically manipulate the DOM when
-the various buttons are clicked.
+Great job! You've added a handy Populate panel with useful buttons for
+populating the Add Entry form's fields. You've used AUI's node and event modules
+and node and node list APIs to dynamically manipulate the DOM when the various
+buttons are clicked.
 
 For reference, this is how your `edit_entry.jsp` should appear after you've
 completed this section:
