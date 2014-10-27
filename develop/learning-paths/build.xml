@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<project name="learning-paths Conversion" basedir=".">
+
+	<import file="../build.xml" />
+
+</project>

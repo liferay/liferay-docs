@@ -21,6 +21,7 @@
 	<property file="../../build.${env.HOSTNAME}.properties" />
 	<property file="../../build.properties" />
 
+	<property name="base.filepath" value="${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${doc.dir}" />
 	<property name="build.dir" value="./build"/>
 	<property name="dist.dir" value="./dist"/>
 	<property name="metadata.filename" value=".METADATA"/>
@@ -128,7 +129,7 @@
 	<target name="create-metadata-file" description="Builds a metadata file.">
 		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${doc.dir}/${metadata.filename}"/>
 		<delete file="${metadata.file}" failonerror="false"/>
-		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${doc.dir}</concat>
+		<concat destfile="${metadata.file}">base.source.url=https://github.com/${base.filepath}</concat>
 	</target>
 
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
