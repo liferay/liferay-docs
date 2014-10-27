@@ -732,10 +732,18 @@ procedure for upgrading to Liferay 6.2.
 
 ### Preparing for an Upgrade [](id=preparing-for-an-upgrade-liferay-portal-6-2-user-guide-18-en)
 
-The first thing you need to do is size up your situation. You can do this by
-asking yourself a few questions from the chart below. First: What version of
-Liferay was the first version you installed? If it was 6.0 or 6.1, there are
-fewer steps, because you won't have to worry about migrating your permission
+Before you begin upgrading Liferay to a new version, consider your current
+Liferay installation. If you're running Liferay EE, is it patched to the most
+recent Service Pack level? If not, refer to the section on Patching Liferay
+before you upgrade; the upgrade process is designed to occur on a fully patched
+Liferay. If you're running Liferay CE, make sure you have the latest GA
+release.
+
+Now that Liferay is updated to the latest release of its current version, the
+first upgrade task is to size up your situation. Do this by asking
+yourself a few questions from the chart below. First: What version of Liferay
+was the first version you installed? If it was 6.0 or 6.1, there are fewer
+steps, because you won't have to worry about migrating your permission
 algorithm. If, however, you never upgraded to permissions algorithm 6 or you're
 still running a 5.x Liferay, you need to migrate to algorithm 6 before
 attempting to upgrade to Liferay 6.2. 
