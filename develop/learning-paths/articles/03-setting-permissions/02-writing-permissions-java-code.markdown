@@ -13,7 +13,7 @@ the amount of code in your JSPs.
 
 Your next task is to modify your service layer to account for permissions. 
 
-## Adding Permissions Resources to your Service Layer
+## Adding Permissions Resources to your Service Layer [](id=adding-permissions-resources-to-your-service-layer)
 
 In the back end, permissions are called *resources*. Liferay already provides a
 complete API for managing resources, and it's very easy to use. If you're using
@@ -63,7 +63,7 @@ permissions-enabled.
 Your next task is to create permissions helper classes to make it easier to
 check permissions.
 
-## Creating Permissions Helper Classes
+## Creating Permissions Helper Classes [](id=creating-permissions-helper-classes)
 
 Permission checking in Liferay is a straightforward process. You have a
 permission, such as `ADD_ENTRY`, and a resource, such as a `Guestbook`.

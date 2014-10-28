@@ -11,7 +11,7 @@ Marketplace. You can mitigate this somewhat by using the standard JSTL tags with
 Liferay. We'll show you both the scriptlet method and the JSTL method, and that
 way you can decide which style you prefer. 
 
-## Enabling JSTL in Your Application
+## Enabling JSTL in Your Application [](id=enabling-jstl-in-your-application)
 
 The usual way of enabling a feature in a web application is to copy its `.jar` to
 your `lib` folder, and if it's a tag library, declare it. You can do it this
@@ -75,7 +75,7 @@ add some more imports that you'll need later:
 Recognize those? They're the permissions helper classes you just created. Now
 it's time to implement your permission checks. 
 
-## Checking Permissions in the UI
+## Checking Permissions in the UI [](id=checking-permissions-in-the-ui)
 
 Now that it comes to implementing permissions, you'll want to review exactly
 what it is you want to protect. In the first part, you identified three areas: 
@@ -144,7 +144,7 @@ button, and guests see no buttons at all (but can navigate).
 
 Ready to move on? The next Learning Path covers action buttons. 
 
-## Next Steps
+## Next Steps [](id=next-steps)
 
 [Creating Entity Actions](/develop/learning-paths/-/knowledge_base/6-2/creating-entity-actions)
 

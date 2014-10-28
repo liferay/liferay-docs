@@ -10,7 +10,7 @@ configuration files. It also determines the names and locations of other
 required files such as the portlet class and the location of the portlet's JSP
 files.
 
-## Using the New Liferay Portlet Wizard
+## Using the New Liferay Portlet Wizard [](id=using-the-new-liferay-portlet-wizard)
 
 To create the Guestbook Admin portlet, follow these steps:
 

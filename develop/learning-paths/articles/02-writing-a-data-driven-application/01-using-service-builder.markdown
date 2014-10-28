@@ -23,7 +23,7 @@ For more information about how Service Builder works, see the
 on its design. For now, you'll jump right in and start 
 creating your application's service and persistence layers. 
 
-## Creating a service.xml file 
+## Creating a service.xml file [](id=creating-a-service-xml-file)
 
 This learning path starts with the development environment and application you 
 created in the first learning path. If you haven't followed that path, you'll 
@@ -113,7 +113,7 @@ classes for your entities.
 Great! The next thing you have to do is define some queries for your app. For
 that, you'll need to understand some Liferay-specific concepts. 
 
-### Understanding Liferay Portal Concepts 
+### Understanding Liferay Portal Concepts [](id=understanding-liferay-portal-concepts)
 
 When you write a Liferay application, you can make it fit into Liferay's overall
 framework by providing a context for it. All of Liferay's built in applications
@@ -145,7 +145,7 @@ user name, and some metadata, such as the create and modify dates.
 The next thing you have to do is make sure your application's queries filter by
 the Group ID. Generating queries, or *finders*, is what you'll do next. 
 
-### Finding Previously Stored Data
+### Finding Previously Stored Data [](id=finding-previously-stored-data)
 
 Assuming users add guestbook entries to your application, how should they be
 found? To determine that, you'll need to look at your data design. 
@@ -208,7 +208,7 @@ You've now defined the finders you'll need for your application. Note that you
 haven't written a single line of SQL, Java, or even XML code. Next, you'll
 generate all of that. 
 
-## Generating Model, Service, and Persistence Layers
+## Generating Model, Service, and Persistence Layers [](id=generating-model-service-and-persistence-layers)
 
 Once you've created your `service.xml` file, you're ready to generate everything
 else you need to access your database. Note, however, that at the bottom of the

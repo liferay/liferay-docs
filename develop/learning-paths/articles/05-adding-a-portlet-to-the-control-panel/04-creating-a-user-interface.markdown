@@ -11,7 +11,7 @@ Each guestbook's name should displayed along with an Actions button. The Actions
 button should display options for editing the guestbook, configuring its
 permissions, or deleting it.
 
-## Creating JSPs for the Guestbook Admin Portlet's User Interface
+## Creating JSPs for the Guestbook Admin Portlet's User Interface [](id=creating-jsps-for-the-guestbook-admin-portlets-user-interface)
 
 You'll use three JSPs to construct the Guestbook Admin portlet's user interface:
 one for the default view, one for the Actions button, and one for the form for
@@ -301,6 +301,6 @@ Excellent! You've now finished creating the Guestbook Admin portlet. Test it
 out! Try adding new guestbooks, editing guestbooks, configuring guestbook
 permissions, and deleting guestbooks.
 
-## Next Steps
+## Next Steps [](id=next-steps)
 
 [Enabling Search and Indexing](/develop/learning-paths/-/knowledge_base/6-2/creating-entity-indexers)

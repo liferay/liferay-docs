@@ -1,4 +1,4 @@
-# Using AlloyUI Form Validation
+# Using AlloyUI Form Validation [](id=using-alloyui-form-validation)
 
 In a previous learning path, you created a form for users to submit when adding
 an entry to a guestbook. You implemented back-end validation (checking the entry
@@ -27,7 +27,7 @@ special format (e.g., the email address field). Then you'll use the AlloyUI
 Character Counter module to limit the number of characters that comprise a
 guestbook entry message.
 
-## Using the AUI Validator Tag
+## Using the AUI Validator Tag [](id=using-the-aui-validator-tag)
 
 Validating AUI input fields is very easy. You just have to add an
 `<aui:validator>` tag and specify the appropriate attributes.
@@ -88,7 +88,7 @@ displayed. Your Add Entry form should look like this:
 Good! You've implemented form validation using AUI's validator tag. Next, you'll
 learn how to limit the length of guestbook entry messages.
 
-## Using the AUI Character Counter Module
+## Using the AUI Character Counter Module [](id=using-the-aui-character-counter-module)
 
 AUI modules are small, powerful building blocks of UI functionality. Each module
 provides a unique set of functionality that's designed to solve a particular

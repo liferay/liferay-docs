@@ -26,7 +26,7 @@ Add the following imports to your guestbook-portlet project's
 It's simpler to add these imports now (rather than as you go) so that you don't
 run into errors as you're working through this section.
 
-## Creating JSPs for Displaying Custom Assets in the Asset Publisher
+## Creating JSPs for Displaying Custom Assets in the Asset Publisher [](id=creating-jsps-for-displaying-custom-assets-in-the-asset-publisher)
 
 Before you proceed, you need to tie up one loose end from the previous section.
 Remember that you implemented `render` methods in your `GuestbookAssetRenderer`
@@ -106,7 +106,7 @@ displays additional links for Twitter, Facebook, and Google Plus. These links
 allow you to publicize your asset on social media. The *Back* icon and the *View
 in Context* link return you to the Asset Publisher's default view.
 
-## Enabling Tags, Categories, and Related Assets for Guestbooks
+## Enabling Tags, Categories, and Related Assets for Guestbooks [](id=enabling-tags-categories-and-related-assets-for-guestbooks)
 
 Since you've already asset-enabled guestbooks at the service layer, your
 guestbook entities are all set to take advantage of Liferay's back-end support
@@ -246,7 +246,7 @@ Asset links represent a reciprocal relationship. If one asset is a related asset
 of a second, the second is a related asset of the first. Check this for the
 assets that you linked together.
 
-## Enabling Comments and Ratings for Guestbooks
+## Enabling Comments and Ratings for Guestbooks [](id=enabling-comments-and-ratings-for-guestbooks)
 
 Liferay's asset framework allows users to comment on and rate assets. As with
 tags, categories, and related assets, since you already asset-enabled guestbooks
@@ -409,7 +409,7 @@ you created and adding an `href` attribute that points to this URL. Test this
 link by clicking on an existing guestbook. Then test that comments and ratings
 work as expected.
 
-## Enabling Tags, Categories, and Related Assets for Guestbook Entries
+## Enabling Tags, Categories, and Related Assets for Guestbook Entries [](id=enabling-tags-categories-and-related-assets-for-guestbook-entries)
 
 Enabling tags, categories, and related assets for guestbook entries is very
 similar to enabling them for guestbooks. As with guestbooks, you'll separate the
@@ -479,7 +479,7 @@ Test your JSP by using the Guestbook portlet to add and update Guestbook
 entries. Try add and removing tags, categories, and related assets. All these
 operations should work.
 
-## Enabling Comments and Ratings for Guestbook Entries
+## Enabling Comments and Ratings for Guestbook Entries [](id=enabling-comments-and-ratings-for-guestbook-entries)
 
 Create a new file called `view_entry.jsp` in your guestbook-portlet project's
 `docroot/WEB-INF/html/guestbook` folder. Add the following contents to it:
@@ -572,6 +572,6 @@ that you can add comments and ratings to guestbook entries. Excellent! You've
 asset-enabled your guestbook and guestbook entry entities! And you've enabled
 tags, categories, related assets, comments, and ratings for both entities.
 
-## Next Steps
+## Next Steps [](id=next-steps)
 
 [Enhancing Your User Interface with AlloyUI](/develop/learning-paths/-/knowledge_base/6-2/enhancing-your-user-interface-with-alloyui)

@@ -11,7 +11,7 @@ when you're implementing your user interface since you'll use a Liferay tag
 library construct called Search Container. Your search container needs to know
 how many guestbooks to display.
 
-## Adding Guestbook Service Methods
+## Adding Guestbook Service Methods [](id=adding-guestbook-service-methods)
 
 Remember that when working with Service Builder, the `*Impl` classes are your
 extension points. After you add or remove a method from an `*Impl` class or
