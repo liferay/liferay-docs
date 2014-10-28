@@ -58,14 +58,14 @@ custom values.
 *Liferay Hook Configuration*. In the window that appears, select the *Language
 properties* check box and click *Next*. 
 
-    ![Figure 3: In the Liferay Hook Configuration wizard, you can select the *Language properties* check box to create a language properties hook.](../../images/new-hook-configuration-language.png)
+    ![Figure 2: In the Liferay Hook Configuration wizard, you can select the *Language properties* check box to create a language properties hook.](../../images/new-hook-configuration-language.png)
 
 3.  Accept the default path `docroot/WEB-INF/src/content` for the content
     folder. Click on the *Add...* button and add the names of any language
     properties files that contain text values that you want to customize. Then
     click *Finish*. 
 
-    ![Figure 4: The Liferay Hook Configuration wizard lets you specify any language properties files to customize.](../../images/new-hook-configuration-language-files.png)
+    ![Figure 3: The Liferay Hook Configuration wizard lets you specify any language properties files to customize.](../../images/new-hook-configuration-language-files.png)
 
 4.  In the properties files, specify each of the properties that you are
     customizing and assign your custom values to them. 
@@ -89,7 +89,7 @@ properties* check box and click *Next*.
     Language portlet and click on Spain's flag. To switch back to an English
     translation, click on the U.S. flag or Great Britain's flag.
 
-    ![Figure 5: Here's a Spanish translation of the Sign In portlet's title.](../../images/override-sign-in-es.png)
+    ![Figure 4: Here's a Spanish translation of the Sign In portlet's title.](../../images/override-sign-in-es.png)
 
 If you created the language properties hook using Liferay IDE, you're finished
 and can skip the next section. The Liferay Hook Configuration wizard in Liferay
@@ -135,7 +135,7 @@ language files.
     enter `content/Language_en.properties`. You can repeat this step for as many 
     language files as you want to reference.
 
-![Figure 6: Liferay IDE's Overview mode for editing `liferay-hook.xml` facilitates specifying custom language files.](../../images/overview-mode-language-props.png)
+![Figure 5: Liferay IDE's Overview mode for editing `liferay-hook.xml` facilitates specifying custom language files.](../../images/overview-mode-language-props.png)
  
 If you want to view the XML references that Liferay IDE generated for you, click
 on the *Source* tab of `liferay-hook.xml` editor.

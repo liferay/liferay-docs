@@ -727,7 +727,7 @@ For additional documentation on the Drools rules language, please see the
 official Drools documentation at
 [http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/](http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/). 
 
-## Summary [](id=summary-liferay-portal-6-2-user-guide-07-en)
+## Summary [](id=summary-liferay-portal-6-2-user-guide-08-en-0)
 
 In this chapter, we discussed personal sites for portal users. We showed how to
 enable or disable them, how to set whether or not pages should be automatically

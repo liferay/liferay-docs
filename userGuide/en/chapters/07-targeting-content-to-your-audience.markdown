@@ -628,7 +628,7 @@ range.
 
 Notice that the reference time is that of the server.
 
-## Summary
+## Summary [](id=summary-liferay-portal-6-2-user-guide-07-en)
 
 In this chapter, we learned how to use Liferay' audience targeting app. This app
 allows you to define custom user segments, target specific content to different
