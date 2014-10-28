@@ -2,12 +2,10 @@
 
 <project name="MVC Learning Path Conversion" basedir=".">
 
-<property name="project.dir" value="../../.." />
-<property name="base.filepath" value="${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/learning-paths/${doc.dir}" />
+	<property name="doc.dir" value="mvc"/>
 
 	<import file="../build.xml" />
 
-	<property name="doc.dir" value="mvc"/>
 	<property name="doc.type" value="learnpath"/>
 
 </project>
