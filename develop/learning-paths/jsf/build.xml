@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="MVC Learning Path Conversion" basedir=".">
+<project name="JSF Learning Path Conversion" basedir=".">
 
 	<property name="doc.dir" value="jsf"/>
 
