@@ -1,4 +1,4 @@
-# Creating Entity Actions Using JSF
+# Creating Entity Actions
 
 To this point, you've created a JSF guestbook application that uses a database
 to store its entries. Also, the application is integrated with Liferay's

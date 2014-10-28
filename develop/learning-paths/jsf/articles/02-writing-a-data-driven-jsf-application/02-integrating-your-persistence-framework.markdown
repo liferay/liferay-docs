@@ -1,4 +1,4 @@
-# Integrating Your Persistence Framework into Your JSF Portlet
+# Integrating Your Persistence Framework
 
 Now that you've generated your persistence framework, its time to integrate it
 into your JSF guestbook so you can use it. On the persistence side of things,

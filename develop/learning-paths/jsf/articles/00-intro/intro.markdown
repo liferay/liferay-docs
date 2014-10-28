@@ -1,4 +1,4 @@
-# Writing an Application Using Liferay Faces (JSF)
+# Writing a JSF Application Using Liferay Faces
 
 If you're just getting started with Liferay Faces development, you've come to
 the right place. This learning path starts with creating a JSF portlet and

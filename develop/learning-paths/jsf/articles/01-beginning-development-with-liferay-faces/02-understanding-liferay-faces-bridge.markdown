@@ -60,7 +60,7 @@ perfomed in the portlet's lifecycle. The JSF portlet bridge then initiates the
 an HTTP POST is executed on a portlet and the portlet enters the `ACTION_PHASE`,
 then the full JSF lifecycle is initiated by the bridge. 
 
-![Figure 6: The different phases of the JSF Lifecycle are executed depending on which phase of the Portlet lifecycle is being executed.](../../images/lifecycle-bridge.png)
+![Figure 1: The different phases of the JSF Lifecycle are executed depending on which phase of the Portlet lifecycle is being executed.](../../images/lifecycle-bridge.png)
  
 Besides ensuring that the two lifecycles connect correctly, the JSF portlet
 bridge also acts as a mediator between the portal URL generator and JSF
@@ -89,7 +89,7 @@ So where is the bridge in our new guestbook portlet?
 In your Package Explorer, navigate to the *Ivy* library and you'll discover
 there are a list of JARs that are related to JSF, including the bridge JARs. 
 
-![Figure 7: Ivy downloads the required JARs for your JSF portlet, depending on the JSF UI Component Suite you selected.](../../images/jsf-jars-package-explorer.png)
+![Figure 2: Ivy downloads the required JARs for your JSF portlet, depending on the JSF UI Component Suite you selected.](../../images/jsf-jars-package-explorer.png)
 
 When using a Plugins SDK to build a Liferay portlet,
 [Ivy](http://ant.apache.org/ivy/index.html) is used to download dependencies
