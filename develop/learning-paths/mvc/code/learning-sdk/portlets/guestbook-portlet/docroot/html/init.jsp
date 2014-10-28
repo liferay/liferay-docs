@@ -40,7 +40,9 @@
 <%@ page import="com.liferay.portal.kernel.language.LanguageUtil" %>
 <%@ page import="com.liferay.portal.kernel.exception.PortalException" %>
 <%@ page import="com.liferay.portal.kernel.exception.SystemException" %>
+<%@ page import="com.liferay.portal.model.User" %>
 <%@ page import="com.liferay.portal.security.permission.ActionKeys" %>
+<%@ page import="com.liferay.portal.theme.ThemeDisplay" %>
 <%@ page import="com.liferay.portal.util.PortalUtil" %>
 
 <%@ page import="java.util.ArrayList" %>
