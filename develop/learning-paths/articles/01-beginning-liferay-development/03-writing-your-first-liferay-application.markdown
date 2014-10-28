@@ -159,7 +159,7 @@ space you just made inside the `<aui:button-row>` tag. A dialog box pops up
 asking you to enter values for various tag attributes. 
 
 3. The only attribute you need at the moment is the `var` attribute. For this
-attribute, enter the value *addEntryURL*. You're creating a variable to hold the
+attribute, enter the value *viewURL*. You're creating a variable to hold the
 generated URL. 
 
 4. Make space inside the `<portlet:renderURL>` tag so that you can add another
@@ -189,7 +189,7 @@ for the other tags.
 drag and drop the *button* snippet from the *Liferay AUI Taglib* category. A
 dialog box pops up asking you to enter values for various tag attributes. 
 
-2. For the `onClick` attribute, enter the text `<%= addEntryURL.toString() %>`.
+2. For the `onClick` attribute, enter the text `<%= viewURL.toString() %>`.
 This code supplies the `String` value of the URL object you created with the
 `<portlet:renderURL` tag. See how we used the `var` attribute in that tag so we
 would have a variable for the URL? This is so you could refer to it here. 
@@ -205,11 +205,11 @@ At this point, you should have code that looks like this:
 
     <aui:button-row cssClass="guestbook-buttons">
 
-        <portlet:renderURL var="addEntryURL">
+        <portlet:renderURL var="viewURL">
             <portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp"></portlet:param>
         </portlet:renderURL>
         
-        <aui:button onClick="<%= addEntryURL.toString() %>" value="Add Entry"></aui:button>
+        <aui:button onClick="<%= viewURL.toString() %>" value="Add Entry"></aui:button>
         
     </aui:button-row>
 
