@@ -52,7 +52,7 @@ attributes are useful here:
 
 - `defaultState="closed"`: sets the panel to be closed (collapsed) by default
 - `extended="<%= false %>"`: sets the panel not to extend horizontally
-- `id="autopopulatePanel"`: specifies a CSS ID for the panel
+- `id="populatePanel"`: specifies a CSS ID for the panel
 - `persistState="<%= true %>"`: sets the panel to "remember" the state
   (collapsed or expanded) chosen by the user
 - `title="populate"`: sets the title of the panel to *populate*
@@ -77,7 +77,7 @@ Confirm that the panel appears, that its title is *Populate*, and that the
 *Use My Full Name* and *Use My Email Address* buttons appear when you're signed
 in.
 
-![Figure 1: This is how the Add Entry form should appear with the Populate panel expanded.](../../images/guestbook-autopopulate-use-buttons.png)
+![Figure 1: This is how the Add Entry form should appear with the Populate panel expanded.](../../images/guestbook-populate-use-buttons.png)
 
 Now it's time to make the buttons work. Add the following lines near the bottom
 of `edit_entry.jsp`, just above the `aui:script use="aui-char-counter">` tag:
@@ -179,7 +179,7 @@ Name* button you already created.
 Next, you'll develop a more complex example that uses AUI to add and remove DOM
 nodes.
 
-## Creating Autopopulate Buttons for the Message Field [](id=creating-autopopulate-buttons-for-the-message-field)
+## Creating Populate Buttons for the Message Field [](id=creating-autopopulate-buttons-for-the-message-field)
 
 So far, Guestbook portlet users can click on *Add Entry* to enter and save a
 guestbook entry. A guestbook entry consists of a name, email address, and
@@ -433,7 +433,7 @@ Check out the new functionality of the Guestbook portlet's Add Entry form. Click
 on the *Generate Sample Messages* button. Click on it multiple times. Click on
 some of the *Use Message* buttons. Test the Hide Sample Messages button.
 
-![The Add Entry form should look like this after you've clicked on the *Generate Sample Messages* button and have clicked on *Use My Full Name*, *Use My Email Address*, and *Use Message*.](../../images/guestbook-autopopulate-all-buttons.png)
+![The Add Entry form should look like this after you've clicked on the *Generate Sample Messages* button and have clicked on *Use My Full Name*, *Use My Email Address*, and *Use Message*.](../../images/guestbook-populate-all-buttons.png)
 
 Great job! You've added a handy Populate panel with useful buttons for
 populating the Add Entry form's fields. You've used AUI's node and event modules
@@ -483,7 +483,7 @@ completed this section:
                 <aui:input name="entryId" type="hidden" />
             </aui:fieldset>
 
-            <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="autopopulatePanel" persistState="<%= true %>" title="autopopulate">
+            <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="populatePanel" persistState="<%= true %>" title="populate">
                     <c:if test="<%= themeDisplay.isSignedIn() %>">
                             <aui:button-row>
                                     <aui:button id="useNameButton" value="Use My Full Name"></aui:button>
