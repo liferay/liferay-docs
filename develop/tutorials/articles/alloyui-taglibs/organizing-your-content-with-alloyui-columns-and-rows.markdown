@@ -57,19 +57,21 @@ there's just one last step to go!
 
 Adding columns is similar to adding rows. You simply place the `aui:col` tags 
 inside of the `aui:row` tags. You can also define the width of each column in a 
-row by using the `width` or `span` attributes. There are a few things to note 
-about how these attributes work. First, each `span` value is represented as a 
-fraction of 12 when determining the width of the column in its containing row. 
-For example, `<aui:col span="4">` specifies a column width of 4/12, or 1/3, of 
-the total width of the containing row. When using the `width` attribute, its 
-value must be expressed a percentage of 100. The `width` value is then 
-automatically converted to a `span` value before it is rendered. This conversion 
-is done by dividing the `width` value by 100, multiplying by 12, and then 
-rounding the result to the nearest whole number. For example, the `width` value 
-of `<aui:col width="33">` is converted to 3.96, which is rounded up to a `span` 
-value of 4 before the column width is rendered. Thus, the `span` value of 4 
-and the `width` value of 33 are functionally equivalent. The example below uses 
-these values with some sample content to demonstrate the width of the columns:
+row by using the `width` or `span` attributes. While you can use both of these 
+attributes together on a single column, the value of `width` overrides that of 
+`span`. There are a few other things to note about how these attributes work. 
+First, each `span` value is represented as a fraction of 12 when determining the 
+width of the column in its containing row. For example, `<aui:col span="4">` 
+specifies a column width of 4/12, or 1/3, of the total width of the containing 
+row. When using the `width` attribute, its value must be expressed a percentage 
+of 100. The `width` value is then automatically converted to a `span` value 
+before it is rendered. This conversion is done by dividing the `width` value by 
+100, multiplying by 12, and then rounding the result to the nearest whole 
+number. For example, the `width` value of `<aui:col width="33">` is converted to 
+3.96, which is rounded up to a `span` value of 4 before the column width is 
+rendered. Thus, the `span` value of 4 and the `width` value of 33 are 
+functionally equivalent. The example below shows these values with some sample 
+content to demonstrate the width of the columns:
 
         <aui:row>
             <aui:col span="4">
