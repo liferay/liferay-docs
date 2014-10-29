@@ -58,9 +58,9 @@ following two methods to `GuestbookLocalServiceImpl`:
         }
 
     Notice that the work of actually going to the database and finding your
-    `Guestbook` entities has already been done for you: all you’re doing is
-    calling the generated methods. In a sense, you’re creating your own API for
-    your application’s data. The first method gets all the entities that match a
+    `Guestbook` entities has already been done for you: all you're doing is
+    calling the generated methods. In a sense, you're creating your own API for
+    your application's data. The first method gets all the entities that match a
     given `groupId`, and the second method does the same thing, but includes
     start and end markers to paginate the data. 
 
@@ -98,9 +98,9 @@ following two methods to `GuestbookLocalServiceImpl`:
 
 6. Press *Ctrl-Shift-O* to add and organize the class' necessary imports. 
 
-Awesome! You’ve successfully created a service API to retrieve and add
+Awesome! You've successfully created a service API to retrieve and add
 `Guestbook`s. To enable it, you must run Service Builder again. When you do,
-it’ll generate the methods you just created in your service layer’s Interface
+it'll generate the methods you just created in your service layer's Interface
 classes. 
 
 Next, you'll create similar methods to add guestbook entries. 
