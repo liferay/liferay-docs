@@ -211,14 +211,14 @@ possible, *before* your site has many pages and lots of content. Your site's
 update history won't be saved until you enable page versioning. Page versioning
 requires staging (either Local Live or Remote Live) to be enabled.
 
-Now we're ready to activate staging for this site. Go to *Admin* &rarr; *Site
-Administration* &rarr; *Configuration* *Site Settings* and select *Staging* from
-under the *Advanced* heading. We'll assume we don't have a separate staging
-server so we'll select the *Local Live* staging type. If you do have a separate
-server to use for staging, follow the instructions in the previous section for
-configuring it and your local server for remote staging. Either way, once you
-make a selection (either *Local Live* or *Remote Live*), more options become
-available for page versioning and staged portlets.
+Now you're ready to activate staging for this site. Go to *Admin* &rarr; *Site
+Administration* &rarr; *Configuration* &rarr; *Site Settings* and select 
+*Staging* from under the *Advanced* heading. We'll assume you don't have a 
+separate staging server, so select the *Local Live* staging type. If you do have
+a separate server to use for staging, follow the instructions in the previous
+section for configuring it and your local server for remote staging. Either
+way, once you make a selection (either *Local Live* or *Remote Live*), more
+options become available for page versioning and staged portlets.
 
 ## Enabling Page Versioning and Staged Portlets [](id=enabling-page-versioning-and-staged-portlets)
 
@@ -307,6 +307,26 @@ past publications along with their authors and create/completion dates. The
 *Scheduled* tab lets you view what publication processes are scheduled for
 publishing.
 
+**Pages** gives you the option to choose which pages to include when you
+publish. You can see the default settings in the gray text below the header.
+Click the *Change* button to configure these options to suite your needs.
+
+**Application Configuration** allows you to select which applications you want
+to publish. Select the *Choose Applications* radio button to configure
+the applications and settings to be published.
+
+**Content** allows you to configure the content to be published. Clicking the 
+*select* option under All Content allows you to delete the portlet metadata
+before publishing.
+
+**Permissions** allows you to include permissions for the pages and portlets
+when the changes are published.
+
+Furthermore, you're given the Current and Previous and Scheduled tabs. 
+The Current and Previous tab lets you view past publications along with their 
+authors and create/completion dates. The Scheduled tab lets you view what 
+publication processes are scheduled for publishing.
+
 Click on *Mark as Ready for Publication*, then click *Publish to Live* &rarr;
 *Now*, and select *Publish* to publish your Bookmarks portlet to the live site.
 
@@ -338,10 +358,10 @@ instance.
 Liferay 6.2 also added a portal property,
 `journal.publish.version.history.by.default`, that sets the default behavior. By
 default, this property is set to `true` so site administrators have to manually
-manually uncheck the *Version History* box mentioned above if they only want to
-publish the latest approved version of web content articles. If you'd like to
-change the default behavior, add the following line to your
-`portal-ext.properties` file:
+uncheck the *Version History* box mentioned above if they only want to publish 
+the latest approved version of web content articles. If you'd like to change the 
+default behavior, add the following line to your `portal-ext.properties` file:
+
 `journal.publish.version.history.by.default=false`.
 
 One of the most powerful features of staging is page variations. Let's see how
