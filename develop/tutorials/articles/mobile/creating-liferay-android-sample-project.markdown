@@ -58,7 +58,7 @@ libraries, open the sample app's `MainActivity` class from the
 `src/com/liferay/mobile/sample/activity` directory. In Eclipse, scroll your
 mouse over the `Session` object instance within the `onListItemClick()` method. 
 
-![Figure 3: The `Session` interface is referenced from the sample app's Liferay Mobile SDK libraries.](../../images/sample-mobile-sdk-object.png)
+![Figure 2: The `Session` interface is referenced from the sample app's Liferay Mobile SDK libraries.](../../images/sample-mobile-sdk-object.png)
 
 The `Session` interface is referenced from the
 `com.liferay.mobile.android.service` package. This app uses the Liferay Mobile
@@ -87,7 +87,7 @@ Now that you have an AVD set up, you can run the app!
 The *Liferay Contacts* app lists your site's users. You can select users' 
 names to see their information. 
 
-![Figure 4: The sample project lets you view your local Liferay instance's user information.](../../images/liferay-android-contacts.png)
+![Figure 3: The sample project lets you view your local Liferay instance's user information.](../../images/liferay-android-contacts.png)
 
 Congratulations on creating a mobile app that uses Liferay! 
 

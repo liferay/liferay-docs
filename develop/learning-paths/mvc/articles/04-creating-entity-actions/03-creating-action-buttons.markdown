@@ -14,7 +14,7 @@ create the buttons themselves.
 
 Ready to get started? 
 
-## Using A Separate JSP for Actions
+## Using A Separate JSP for Actions [](id=using-a-separate-jsp-for-actions)
 
 The first thing you'll do is update `init.jsp` to contain the imports and
 declarations you'll need. During regular development, you'd have this file open
@@ -152,7 +152,7 @@ You might think you're finished, but you actually have one more JSP to modify:
 the `edit_entry.jsp` file. You need to retro-fit this JSP so it can handle
 editing entries as well as adding them. 
 
-## Using the Same JSP for Editing and Adding
+## Using the Same JSP for Editing and Adding [](id=using-the-same-jsp-for-editing-and-adding)
 
 Because Liferay's tag libraries are so robust, there are only a few changes you
 need to make to `edit_entry.jsp` to make it handle editing entries. 
@@ -220,6 +220,6 @@ pages. Or you might want to add tags, categories, or even comments to guestbook
 entries. To make any of these features work, you must asset-enable your
 application. The next learning path covers that. 
 
-## Next Steps
+## Next Steps [](id=next-steps)
 
 [Adding a Portlet to the Control Panel](/develop/learning-paths/-/knowledge_base/6-2/adding-a-portlet-to-the-control-panel)

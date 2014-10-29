@@ -10,7 +10,7 @@ this functionality.
 It's time to jump back into your service layer to enable deleting and updating
 guestbook entries. 
 
-## Adding Methods to the Service Layer
+## Adding Methods to the Service Layer [](id=adding-methods-to-the-service-layer)
 
 Remember: with Service Builder, you work in reverse. Instead of modifying the
 interface and then implementing it, all you need to do is add the method you

@@ -11,7 +11,7 @@ tables of the entities themselves (e.g., they are not columns in the
 `GB_Guestbook` table in the case of your guestbook entities). Rather, they are
 are stored in the `AssetEntry` table.
 
-## Implementing a Guestbook Asset Renderer
+## Implementing a Guestbook Asset Renderer [](id=implementing-a-guestbook-asset-renderer)
 
 Create a new package called `com.liferay.docs.guestbook.asset` in your
 guestbook-portlet project's `docroot/WEB-INF/src` folder. In this package,
@@ -245,7 +245,7 @@ This entry should go just below the `<control-panel-entry-weight>` element and
 just above the `<header-portlet-css>` element. Good! Now your asset renderer
 factory will be registered the next time you re-deploy your plugin.
 
-## Implementing an Entry Asset Renderer
+## Implementing an Entry Asset Renderer [](id=implementing-an-entry-asset-renderer)
 
 Next, you need to implement an asset renderer and an asset renderer factory for
 guestbook entries. In the `com.liferay.docs.guestbook.asset` package, create an
@@ -459,12 +459,12 @@ entries. Edit a few of them too. Then check the Asset Publisher portlet. By
 default, the Asset Publisher is configured to dynamically display assets of any
 kind from the current site.
 
-![Figure x: After you've implemented and registered your asset renderers for your custom entities, the Asset Publisher can display your entities.](../../images/custom-entities-asset-publisher.png)
+![Figure 1: After you've implemented and registered your asset renderers for your custom entities, the Asset Publisher can display your entities.](../../images/custom-entities-asset-publisher.png)
 
 Confirm that the Asset Publisher is displaying the guestbooks and guestbook
 entries that you added.
 
-## Adding Custom Icons to Portlets and Asset Renderers
+## Adding Custom Icons to Portlets and Asset Renderers [](id=adding-custom-icons-to-portlets-and-asset-renderers)
 
 You can configure custom icons for your Guestbook and Guestbook Admin portlets.
 To do so, just open your project's `liferay-portlet.xml`, and update the paths
@@ -482,13 +482,13 @@ Here is a sample icon for the Guestbook portlet that's intended to represent a
 guestbook entry. Download this icon and add it to your guestbook-portlet
 project's `docroot` folder.
 
-![Figure x: This is the icon for the Guestbook portlet that represents a guestbook entry.](../../images/entry.png)
+![Figure 2: This is the icon for the Guestbook portlet that represents a guestbook entry.](../../images/entry.png)
 
 Here is a sample icon for the Guestbook Admin portlet that's intended to
 represent a guestbook. Download this icon and add it to your guestbook-portlet
 project's `docroot` folder.
 
-![Figure x: This is the icon for the Guestbook Admin portlet that represents a guestbook.](../../images/guestbook.png)
+![Figure 3: This is the icon for the Guestbook Admin portlet that represents a guestbook.](../../images/guestbook.png)
 
 The default contents of each `<icon>` element is `/icon.png`. Change this path
 to `/entry.png` for the Guestbook portlet's `<icon>` element and to
@@ -521,7 +521,7 @@ of the class, just above the `_log` variable declaration:
 Confirm that the Asset Publisher now uses the correct icons when displaying
 guestbook and guestbook entry assets.
 
-![Figure x: After you've implemented the `getIconPath` method in your `*AssetRenderer` classes, your custom icons are displayed with your custom assets in the Asset Publisher.](../../images/custom-icons-custom-entities-asset-publisher.png)
+![Figure 4: After you've implemented the `getIconPath` method in your `*AssetRenderer` classes, your custom icons are displayed with your custom assets in the Asset Publisher.](../../images/custom-icons-custom-entities-asset-publisher.png)
 
 Great! In the next section, you'll update your portlets' user interfaces to use
 several features of Liferay's asset framework: comments, ratings, tags,

@@ -27,7 +27,7 @@ checks to them, as the UI is no longer a factor. But we'll get to that later.
 
 The next step is to define your permissions. 
 
-## Defining Permissions for Your Application
+## Defining Permissions for Your Application [](id=defining-permissions-for-your-application)
 
 The first thing you need to do to begin defining your permissions is point your
 application at the configuration file you'll use to define those permissions. 

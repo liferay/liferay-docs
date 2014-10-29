@@ -15,7 +15,7 @@ not communicate directly with the database or the persistence layer. Instead,
 they should call services. Services can call the persistence layer to
 invoke database transactions.
 
-## Adding Three Basic Portlet Actions
+## Adding Three Basic Portlet Actions [](id=adding-three-basic-portlet-actions)
 
 Your requirements for the Guestbook Admin portlet specify that the portlet must
 allow administrators to add guestbooks, update guestbooks, and delete

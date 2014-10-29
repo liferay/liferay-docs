@@ -8,7 +8,7 @@ controller. Sometimes it's more convenient to have one action method that can
 perform two functions. In this step of the learning path, you'll implement just
 that. 
 
-## One Action to Rule Them All
+## One Action to Rule Them All [](id=one-action-to-rule-them-all)
 
 When you created your form in the view layer, did you wonder why you named the
 file `edit_entry.jsp`? You named it that way because we knew where we were going

@@ -856,13 +856,26 @@ missing, depending on the version of your Plugins SDK:
 The first entry, `required-deployment-contexts=resources-importer-web`, declares
 your theme's dependency on the resources importer plugin. If you're not going to
 use the resources importer with your theme and don't want to deploy the
-resources importer, you can remove or comment out this entry. The second entry,
-`resources-importer-developer-mode-enabled=true`, is a convenience feature for
-theme developers. With this setting enabled, if the resources are to be imported
-to a site template that already exists, the site template is recreated and
-reapplied to sites using the site template. Otherwise, you have to manually
-delete the sites built using the resource importer's site template each time you
-change anything in your theme's `docroot/WEB-INF/src/resources-importer` folder.
+resources importer, you can remove or comment out this entry.
+
+The second entry, `resources-importer-developer-mode-enabled=true`, is a
+convenience feature for theme developers. With this setting enabled, importing
+resources to a site or site template that already exists, recreates the site or
+site template. Importing resources into a site template reapplies the site
+template and its resources to the sites that are based on the site template.
+Without `resources-importer-developer-mode-enabled=true`, you have to manually
+delete the sites or site templates built by the resources importer, each time
+you want to apply changes from your theme's
+`docroot/WEB-INF/src/resources-importer` folder. 
+
+---
+
+![warning](../../images/tip-pen-paper.png) **Warning:** the
+`resources-importer-developer-mode-enabled=true` setting can be dangerous since
+it involves *deleting* (and re-creating) the affected site or site template.
+It's only intended to be used during development. Never use it in production. 
+
+---
 
 If you'd like to import your theme's resources directly into a site, instead of
 into a site template, you can specify the following in your
@@ -870,16 +883,26 @@ into a site template, you can specify the following in your
 
     resources-importer-target-class-name=com.liferay.portal.model.Group
 
-    resources-importer-target-value=<site-name>
+    resources-importer-target-value=[site-name]
 
 ---
 
-![warning](../../images/tip-pen-paper.png) **Warning:** If you're developing
-themes for Liferay Marketplace, don't configure your theme to import resources
-directly into a site. Instead, use the default: import the resources into a
-site template. Do this by commenting out the
-`resources-importer-target-class-name` property. This way, it'll be much safer
-to deploy your theme to a production Liferay instance.
+If you're using the `resources-importer-target-value=[site-name]` property,
+double check the site name that you're specifying. If you specify the wrong
+value, you could end up deleting (and re-creating) the wrong site!
+
+![warning](../../images/tip-pen-paper.png) **Warning:** It's safer to import
+theme resources into a site template than into an actual site. The
+`resources-importer-target-class-name=com.liferay.portal.model.Group` setting
+can be handy for development and testing but should be used cautiously. Don't
+use this setting in a theme that will be deployed to a production Liferay
+instance or a theme that will be submitted to Liferay Marketplace. To prepare a
+theme for deployment to a production Liferay instance, use the default setting
+so that the resources are imported into a site template. You can do this
+explicitly by setting
+`resources-importer-target-class-name=com.liferay.portal.model.LayoutSetPrototype`
+or implicitly by commenting out or removing the
+`resources-importer-target-class-name` property.
 
 ---
 

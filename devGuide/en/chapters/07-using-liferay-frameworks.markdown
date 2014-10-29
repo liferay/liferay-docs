@@ -893,7 +893,7 @@ You're now equipped to implement security in your custom Liferay portlets!
 
 Next, let's learn how to create and use portal and portlet URLs. 
 
-## Creating Portlet URLs in JavaScript
+## Creating Portlet URLs in JavaScript [](id=creating-portlet-urls-in-javascript-liferay-portal-6-2-dev-guide-07-en)
 
 The `Liferay.PortletURL` JavaScript module allows developers to generate
 portlet URLs from their JavaScript code. This module has been updated since the

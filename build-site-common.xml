@@ -60,6 +60,17 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="numberimgssite" classname="com.liferay.documentation.util.NumberImagesTaskDevSite">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<!-- targets -->
 
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
@@ -169,6 +180,11 @@
 		</java>
 	</target>
 
+	<target name="number-images-site" description="numbers the images in a markdown chapter file">
+		<numberimgssite docdir="${doc.dir}">
+		</numberimgssite>
+	</target>
+
 	<target name="prepare" description="Creates build directory.">
 		<!-- Use base.filepath property to distinguish between tutorials and learning-paths directories. The build.xml file
 		in the learning-paths directory overwrites this value with "learning-paths/${doc.dir}" -->
@@ -183,7 +199,7 @@
 		</copy>
 	</target>
 
-	<target name="prepare-dist" depends="check-images-site, check-intros, clean-dist, number-headers, check-headers, create-metadata-file" description="Prepares the document for distribution.">
+	<target name="prepare-dist" depends="check-images-site, check-intros, clean-dist, number-headers, number-images-site, check-headers, create-metadata-file" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>
