@@ -1,79 +1,75 @@
 # Organizing Your Content with AlloyUI Columns and Rows 
 
-Organizing the content in your portlets can be a large task to take on. Luckily,
-AlloyUI has a built in, easy to use, solution in their tag library. The AlloyUI
-Col and Row tags transform the daunting organization process into a simple 
-task.
-
-This tutorial will cover how to use the aui:col and aui:row tags in your 
-portlet. 
+Organizing the content in your portlet's UI doesn't have to be a large, 
+complicated task. AlloyUI gives you a built in, easy to use solution for 
+constructing portlet UIs. Say goodbye to those sleepless nights spent tossing, 
+turning, and worrying about your portlet's UI! The AlloyUI `aui:col` and 
+`aui:row` tags transform the potentially daunting process of organizing your 
+portlet's UI into a simple task. This tutorial covers how to use these tags in 
+your portlet. 
 
 +$$$
 
-**Note:** The aui:column and aui:layout tags that were previously used to create 
-columns and layouts has since been deprecated. The aui:col tag is now the
-preferred method.
+**Note:** The `aui:column` and `aui:layout` tags previously used to create 
+columns and layouts have been deprecated.
 
 $$$
 
-No longer will you experience those sleepless nights, tossing and turning, 
-worrying about how you'll organize the content in your portlets.
+## Setting Up the AlloyUI aui:col and aui:row Tags
 
-## Setting Up the AlloyUI Col and Row Tags
-
-You can configure columns and rows pretty quickly using AlloyUI . The example 
-below shows how to add and use the `aui:col` and `aui:row` tags in the 
-`view.jsp` of a portlet:
+Adding columns and rows to your portlet's UI can be done quickly by using 
+AlloyUI. The example in this tutorial uses the following steps to show how to 
+add and use the `aui:col` and `aui:row` tags in the `view.jsp` of a portlet:
 
 - **Step 1:** Reference the AUI Taglib.
 - **Step 2:** Insert and Configure the AUI Row Tags.
 - **Step 3:** Insert and Configure the AUI Col Tags inside of the Row Tags.
- 	
-Go through each of these steps and you'll be building columns and rows in no
-time flat!
+
+Once you finish these steps you'll be building columns and rows in no time 
+flat!
 
 ### Step 1: Reference the AUI Taglib
 
-1.  Open the `view.jsp` of your portlet. Create one if it does not already 
-exist.
+1.  Open the `view.jsp` of your portlet. Create it if it doesn't already exist.
 
 2.  Add a directive to reference the `aui` taglib:
 
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
 
-Just like that you are ready to use the AUI tags in your portlet. Onward to step
-2!
+Now you're ready to use AUI tags in your portlet. Onwards to the second step!
 
-### Step 2: Insert and Configure the AUI Row Tags
+### Step 2: Insert and Configure the aui:row Tags
 
-In this step you'll configure the rows in which to put your columns.
+In this step you'll add the rows to put your columns in. Still inside the 
+`view.jsp`, add the `aui:row` tags. For example, the code here creates two rows:
 
-Still inside the `view.jsp` add the `aui:row` tags:
-
-        	<aui:row>
+        <aui:row>
         	
-        	</aui:row>
-        	<aui:row>
+        </aui:row>
+        <aui:row>
         	
-        	</aui:row>
+        </aui:row>
 
-Repeat the step above to create as many rows as you need for your portlet. One
-last step to go!
+Repeat this step to create as many rows as you need for your portlet. Now 
+there's just one last step to go!
 
-### Step 3: Insert and Configure the AUI Col Tags inside of the Row Tags
+### Step 3: Insert and Configure the aui:col Tags Inside of the aui:row Tags
 
-The process to configure your columns is pretty similar to the process you went
-through to configure your rows. In addition to the general configuration, you
-can define the width of each column. The width is set using either the `width`
-or the `span` attribute. The value for the `width` must be a percentage of 100. 
-The width then gets rendered as the span value expressed as 
-(width/100)x12(rounded to the nearest whole number). It's important to note that 
-the `width` attribute overrides the `span` attribute. The value for the `span` 
-attribute must be a fraction out of 12. For example, a span value of 3 would 
-divide the column into 3/12 or 1/4 of the total width. The example below has 
-some sample content to demonstrate the borders of the columns.
-
-Nest the `aui:col` tags inside of your `aui:row` tags:
+Adding columns is similar to adding rows. You simply place the `aui:col` tags 
+inside of the `aui:row` tags. You can also define the width of each column in a 
+row by using the `width` or `span` attributes. There are a few things to note 
+about how these attributes work. First, each `span` value is represented as a 
+fraction of 12 when determining the width of the column in its containing row. 
+For example, `<aui:col span="4">` specifies a column width of 4/12, or 1/3, of 
+the total width of the containing row. When using the `width` attribute, its 
+value must be expressed a percentage of 100. The `width` value is then 
+automatically converted to a `span` value before it is rendered. This conversion 
+is done by dividing the `width` value by 100, multiplying by 12, and then 
+rounding the result to the nearest whole number. For example, the `width` value 
+of `<aui:col width="33">` is converted to 3.96, which is rounded up to a `span` 
+value of 4 before the column width is rendered. Thus, the `span` value of 4 
+and the `width` value of 33 are functionally equivalent. The example below uses 
+these values with some sample content to demonstrate the width of the columns:
 
         <aui:row>
             <aui:col span="4">
@@ -164,16 +160,21 @@ Nest the `aui:col` tags inside of your `aui:row` tags:
             </aui:col>
         </aui:row>
 
-The layout above has been designed to have two rows. The first row has three
-columns divided evenly into a third of the space each. The second row has two 
-columns broken up into 4/12 and 8/12 respectively. With the configuration above, 
-your portlet should look like the figure below:
+The first row in this layout has three columns evenly divided into a third of 
+the space of the row. The second row has two columns broken up into 1/3 and 2/3 
+of the space of the row, respectively. A portlet with this configuration should 
+look like the figure here:
 
-![Figure 1: Here's what the columns above look like.](../../images/columns-01.png)
+![Figure 1: The two rows in this portlet contain columns of different widths.](../../images/columns-01.png)
 
-There you have it. Making columns and rows with AlloyUI is a piece of cake, and
-now you know how!
+There you have it! Now you know how to make columns and rows with AlloyUI.
 
 ## Related Topics
 
- [Using Liferay UI Tabs and Sections](/tutorials/-/6-2/knowledge_base/using-liferay-ui-tabs-and-sections)
+[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+
+[Themes and Layout Templates](/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+
+[Application Display Templates](/tutorials/-/knowledge_base/6-2/application-display-templates)
+
+[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
