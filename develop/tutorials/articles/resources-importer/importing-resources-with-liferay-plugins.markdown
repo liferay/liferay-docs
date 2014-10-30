@@ -163,7 +163,7 @@ content, please take the following steps:
 
 The figure below shows some of the ADTs that were imported.
 
-![Figure x: The Templates Importer allows users to import all kinds of structures and templates, such as these application display templates.](../../images/templates-importer-adts.png)
+![Figure 1: The Templates Importer allows users to import all kinds of structures and templates, such as these application display templates.](../../images/templates-importer-adts.png)
 
 As you take a look around the folders and files within the plugin's
 `templates-importer` folder, notice the different kinds of templates and
@@ -247,7 +247,7 @@ $$$
 
 The figure below, shows a page created using the Page 3 template.
 
-![Figure x: Users can create pages, like this one, prepopulated with portlets and content that you've specified in your plugins, that leverage the Templates Importer.](../../images/templates-importer-page-3-template.png)
+![Figure 2: Users can create pages, like this one, prepopulated with portlets and content that you've specified in your plugins, that leverage the Templates Importer.](../../images/templates-importer-page-3-template.png)
 
 Now that you've learned about the directory structure for your templates and the
 JSON file for the page templates, it's time to learn how to put template and

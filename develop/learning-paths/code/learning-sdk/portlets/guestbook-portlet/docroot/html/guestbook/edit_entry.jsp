@@ -38,7 +38,7 @@ if (entryId > 0) {
 	    <aui:input name="entryId" type="hidden" />
 	</aui:fieldset>
 
-	<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="autopopulatePanel" persistState="<%= true %>" title="autopopulate">
+	<liferay-ui:panel defaultState="closed" extended="<%= false %>" id="populatePanel" persistState="<%= true %>" title="populate">
 		<c:if test="<%= themeDisplay.isSignedIn() %>">
 			<aui:button-row>
 				<aui:button id="useNameButton" value="Use My Full Name"></aui:button>

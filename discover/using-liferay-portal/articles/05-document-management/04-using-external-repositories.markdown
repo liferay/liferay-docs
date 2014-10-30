@@ -245,6 +245,4 @@ Remember that connecting to an external SharePoint server and adding it as a
 Documents and Media repository is a great way to give users flexibility for
 sharing and collaborating on Microsoft Office documents.
 
-To further enhance your use of Microsoft Office documents with Documents and
-Media, Liferay provides integration directly with Microsoft Office. Let's look
-at that next.
+Now let's look at configuring the Documents and Media portlet.
