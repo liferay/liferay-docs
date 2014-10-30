@@ -449,18 +449,22 @@ Now you're ready to deploy Liferay Portal.
     This allows OSGi plugins like Audience Targeting to work properly by
     exposing the Portal API through the OSGi container. 
 
-4. To trigger deployment of `ROOT.war`, create an empty file named
+4. In the same `jboss-deployment-structure.xml` file, find the
+   `<jboss-deployment-structure>` tag and update the `1.0` number within the
+   `xmlns` attribute to `1.1`. 
+
+5. To trigger deployment of `ROOT.war`, create an empty file named
    `ROOT.war.dodeploy` in  your `$JBOSS_HOME/standalone/deployments/` folder.
    On startup, JBoss detects the presence of this file and deploys it as a web
    application.
 
-5. Remove `eclipselink.jar` from
+6. Remove `eclipselink.jar` from
    `$JBOSS_HOME/standalone/deployments/ROOT.war/WEB-INF/lib` to assure the
    Hibernate persistence provider is used instead of the one provided in the
    `eclipselink.jar`.
 
     Now it's time to start Liferay Portal on JBoss!
 
-6.  Start the JBoss application server.
+7.  Start the JBoss application server.
  
 Now you are truly *the boss* when it comes to deploying Liferay Portal on JBoss!
