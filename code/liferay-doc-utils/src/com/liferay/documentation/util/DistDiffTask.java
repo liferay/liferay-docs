@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -133,6 +134,9 @@ public class DistDiffTask extends Task {
 			File markdownFile = new File(file);
 			markdownFiles.add(markdownFile);				
 		}
+		
+		// Find and add all modified/new MD files' intro file
+		findIntroFiles(markdownFiles, markdownArticlesFinal);
 
 		// Scan each MD file for remainder of images to include in ZIP file. When
 		// re-importing a new MD file, all of its images must also be re-imported.
@@ -205,6 +209,33 @@ public class DistDiffTask extends Task {
 
 		zipOutputStream.closeEntry();
 		fileInputStream.close();
+	}
+	
+	private static void findIntroFiles(Set<File> markdownFiles, Set<String> markdownArticlesFinal) {
+		
+		Set<File> introFiles = new HashSet<File>();
+
+		for (File file : markdownFiles) {
+			if (!file.toString().contains("intro.markdown") ||
+					!file.toString().contains("introduction.markdown")) {
+
+				File parentDir = file.getParentFile();
+				File[] dirIntroFiles = parentDir.listFiles(new FilenameFilter() {
+					public boolean accept(File dir, String name) {
+						return name.equals("intro.markdown") ||
+								name.equals("introduction.markdown");
+					}
+				});
+
+				for (File introFile : dirIntroFiles) {
+					introFiles.add(introFile);
+				}
+			}
+		}
+
+		for (File intro : introFiles) {
+			markdownArticlesFinal.add(intro.toString().replace("\\", "/"));
+		}
 	}
 
 	private static void findMarkdownFiles(File dir, Set<File> chFiles) {
