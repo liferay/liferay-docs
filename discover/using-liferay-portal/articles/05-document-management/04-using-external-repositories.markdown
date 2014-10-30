@@ -187,9 +187,10 @@ repository.
 
 Here are the steps specific to configuring Liferay to use SharePoint:
 
-1. Download and install the SharePoint hook from Marketplace. See the
-*Downloading and Installing Apps* section of the *Leveraging the Liferay
-Marketplace* chapter of this document for more information.
+1. Download and install the [SharePoint Connector EE](https://www.liferay.com/marketplace/-/mp/application/15188537)
+hook from Marketplace. See the [Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps)
+section of the *Leveraging the Liferay Marketplace* chapter of this document for
+more information.
 
 2. Add the Documents and Media portlet to a page, if you haven't done so
 already.
