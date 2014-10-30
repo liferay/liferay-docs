@@ -1,4 +1,4 @@
-# Integrating Your Persistence Framework
+# Integrating Your Persistence Framework [](id=integrating-your-persistence-framework)
 
 Now that you've generated your persistence framework, its time to integrate it
 into your JSF guestbook so you can use it. On the persistence side of things,
@@ -31,7 +31,7 @@ The next thing you'll need to do is implement a service layer for your
 *Guestbook* entity; after that, you'll implement a service layer for your
 *Entry* entity. 
 
-## Writing a Service API for Guestbooks
+## Writing a Service API for Guestbooks [](id=writing-a-service-api-for-guestbooks)
 
 1. Open the `com.liferay.docs.guestbook.service.impl` package. Here, Service
 Builder has generated several stub classes for each entity. The
@@ -105,7 +105,7 @@ classes.
 
 Next, you'll create similar methods to add guestbook entries. 
 
-## Writing a Service API for Guestbook Entries
+## Writing a Service API for Guestbook Entries [](id=writing-a-service-api-for-guestbook-entries)
 
 Now that you've written a service API for guestbooks, you'll need to do the same
 thing for your guestbook entries. 

@@ -1,4 +1,4 @@
-# Creating a JSF Portlet
+# Creating a JSF Portlet [](id=creating-a-jsf-portlet)
 
 Since you're configured with Liferay IDE/Developer Studio, you can jump right in
 to creating a JSF application. Applications in Liferay Portal are called

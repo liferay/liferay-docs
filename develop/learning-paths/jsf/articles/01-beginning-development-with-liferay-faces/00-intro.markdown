@@ -1,4 +1,4 @@
-# Beginning Development with Liferay Faces
+# Beginning Development with Liferay Faces [](id=beginning-development-with-liferay-faces)
 
 Getting started with a JSF application for Liferay is very easy. This learning
 path guides you step-by-step through creating and developing a JSF application.

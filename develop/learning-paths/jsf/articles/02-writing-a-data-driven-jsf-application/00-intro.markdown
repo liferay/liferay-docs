@@ -1,4 +1,4 @@
-# Writing a Data-Driven JSF Application
+# Writing a Data-Driven JSF Application [](id=writing-a-data-driven-jsf-application)
 
 A common way to store data in an application is to use a database. In this
 learning path, you'll learn how to turn the Guestbook into a database-driven

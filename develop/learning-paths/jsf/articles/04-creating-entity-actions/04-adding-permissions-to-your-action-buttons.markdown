@@ -1,4 +1,4 @@
-# Adding Permissions to Your Action Buttons
+# Adding Permissions to Your Action Buttons [](id=adding-permissions-to-your-action-buttons)
 
 Recall from the previous learning path when you created wrapper classes to hold
 permissions methods. You also updated your managed beans to call those wrapped

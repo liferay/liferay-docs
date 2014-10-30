@@ -1,4 +1,4 @@
-# Adding Actions to Your Managed Beans
+# Adding Actions to Your Managed Beans [](id=adding-actions-to-your-managed-beans)
 
 Just as you added action methods in the
 [Creating Managed Beans to Use Services](/learning-paths/-/knowledge_base/6-2/creating-managed-beans-to-use-services)

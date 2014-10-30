@@ -1,4 +1,4 @@
-# Understanding Liferay Faces Portal
+# Understanding Liferay Faces Portal [](id=understanding-liferay-faces-portal)
 
 Similar to Liferay Faces Bridge, *Liferay Faces Portal* is included in a JSF
 portlet project when created using Liferay IDE/Developer Studio. Recall Figure 7

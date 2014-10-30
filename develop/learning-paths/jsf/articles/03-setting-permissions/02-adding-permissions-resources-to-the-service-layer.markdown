@@ -1,4 +1,4 @@
-# Adding Permissions Resources to the Service Layer
+# Adding Permissions Resources to the Service Layer [](id=adding-permissions-resources-to-the-service-layer)
 
 Up to this point, you've successfully configured permissions checking for your
 Guestbook portlet. However, you're portlet is not currently able to store
@@ -84,7 +84,7 @@ Next, you'll learn how to extend your permissions scheme to wrapper classes.
 
 
 
-## Updating the Portlet's UI with Extended Permissions Scheme
+## Updating the Portlet's UI with Extended Permissions Scheme [](id=updating-the-portlets-ui-with-extended-permissions-scheme)
 
 Now that you have your permissions scheme configured to handle individual
 entities, it's time to add a permissions method that can be called from your

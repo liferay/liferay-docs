@@ -1,4 +1,4 @@
-# Updating the UI with Extended Permissions Scheme
+# Updating the UI with Extended Permissions Scheme [](id=updating-the-ui-with-extended-permissions-scheme)
 
 Now that you have your permissions scheme configured to handle individual
 entities, it's time to add a permissions method that can be called from your

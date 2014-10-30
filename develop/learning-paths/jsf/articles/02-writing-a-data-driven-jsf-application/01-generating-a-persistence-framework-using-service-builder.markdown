@@ -1,4 +1,4 @@
-# Generating a Persistence Framework Using Service Builder
+# Generating a Persistence Framework Using Service Builder [](id=generating-a-persistence-framework-using-service-builder)
 
 If you've read the MVC learning path, it goes specifically through creating a
 persistence framework for the MVC version of the guestbook portlet; but could

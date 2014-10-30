@@ -1,4 +1,4 @@
-# Understanding Liferay Faces Alloy
+# Understanding Liferay Faces Alloy [](id=understanding-liferay-faces-alloy)
 
 If you rewind back to selecting the JSF guestbook portlet's JSF Component Suite
 in Liferay IDE/Developer Studio, you may recall the option of choosing between
