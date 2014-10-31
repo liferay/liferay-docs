@@ -137,9 +137,13 @@
 	</target>
 
 	<target name="create-metadata-file" description="Builds a metadata file.">
-		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${doc.dir}/${metadata.filename}"/>
+		<!-- Use base.filepath property to distinguish between tutorials and learning-paths directories. The build.xml file
+		in the learning-paths directory overwrites this value with "learning-paths/${doc.dir}" -->
+		<property name="base.filepath" value="${doc.dir}" />
+		
+		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${base.filepath}/${metadata.filename}"/>
 		<delete file="${metadata.file}" failonerror="false"/>
-		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${doc.dir}</concat>
+		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
 	</target>
 
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
@@ -182,9 +186,13 @@
 	</target>
 
 	<target name="prepare" description="Creates build directory.">
+		<!-- Use base.filepath property to distinguish between tutorials and learning-paths directories. The build.xml file
+		in the learning-paths directory overwrites this value with "learning-paths/${doc.dir}" -->
+		<property name="base.filepath" value="${doc.dir}" />
+		
 		<echo message="... creating build directory"/>
-		<mkdir dir="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}"/>
-		<touch file="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html" mkdirs="true"/>
+		<mkdir dir="${project.dir}/${purpose.dir}/${base.filepath}/${build.dir}"/>
+		<touch file="${project.dir}/${purpose.dir}/${base.filepath}/${build.dir}/${article}.html" mkdirs="true"/>
 		<mkdir dir="${build.dir}/images"/>
 		<copy todir="${build.dir}/images" overwrite="true">
 			<fileset dir="./images"/>

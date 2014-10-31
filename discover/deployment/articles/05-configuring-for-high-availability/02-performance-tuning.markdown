@@ -160,11 +160,6 @@ to Liferay's properties to help increase performance.
 There are also some changes you can make to your `portal-ext.properties` file
 once you are in a production environment.
 
-Set the following to false to disable checking the last modified date on server
-side CSS and JavaScript.
-
-    last.modified.check=false
-
 Set this property to true to load the theme's merged CSS files for faster
 loading for production. By default it is set to false for easier debugging for
 development. You can also disable fast loading by setting the URL parameter
