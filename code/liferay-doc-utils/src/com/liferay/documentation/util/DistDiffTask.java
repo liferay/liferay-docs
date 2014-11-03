@@ -40,7 +40,17 @@ public class DistDiffTask extends Task {
 			e.printStackTrace();
 		}
 
-		String txtPath = _purposedir + "/" + _docdir + "/";	
+		String txtPath;
+		
+		if (System.getProperty("user.dir").contains(_purposedir + "\\learning-paths") ||
+				System.getProperty("user.dir").contains(_purposedir + "/learning-paths")) {
+			txtPath = _purposedir + "/learning-paths/" + _docdir + "/";
+		}
+
+		else {
+			txtPath = _purposedir + "/" + _docdir + "/";
+		}
+
 		Set<String> files = new HashSet<String>();
 		Iterator<String> it = diffs.iterator();
 

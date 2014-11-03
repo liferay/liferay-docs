@@ -40,11 +40,21 @@ public class GitCompare {
 		System.out.println("Comparing your " + importBranch + " branch to your older branch "+ olderBranch);
 
 		boolean newDiff = false;
+		String baseFilePath;
+		
+		if (System.getProperty("user.dir").contains(purposedir + "\\learning-paths") ||
+				System.getProperty("user.dir").contains(purposedir + "/learning-paths")) {
+			baseFilePath = purposedir + "/learning-paths/" + docdir;
+		}
+		
+		else {
+			baseFilePath = purposedir + "/" + docdir;
+		}
 
 		for (DiffEntry entry : diff) {
 			String stringEntry = entry.toString();
 
-			if (stringEntry.contains(purposedir + "/" + docdir)) {
+			if (stringEntry.contains(baseFilePath)) {
 				writer.println(stringEntry);
 				System.out.println(stringEntry);
 				newDiff = true;
@@ -52,7 +62,7 @@ public class GitCompare {
 		}
 		
 		if (!newDiff) {
-			System.out.println("There are no additions/modifications in ../" + purposedir + "/" + docdir);
+			System.out.println("There are no additions/modifications in ../" + baseFilePath);
 			writer.println("There are no new additions/modifications to report");
 		}
 
