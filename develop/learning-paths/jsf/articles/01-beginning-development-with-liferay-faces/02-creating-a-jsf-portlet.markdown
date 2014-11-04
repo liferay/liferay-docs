@@ -134,6 +134,5 @@ tutorial.
 
 $$$
 
-Remember reading briefly about how the Liferay Faces Bridge is used to keep JSF
-portlets compatible with Liferay Portal? You'll dive into the bridge and its
-usage next. 
+You've successfully created a simple JSF Guestbook. In the next learning path,
+you'll transform this simple application into a data-driven JSF application. 
