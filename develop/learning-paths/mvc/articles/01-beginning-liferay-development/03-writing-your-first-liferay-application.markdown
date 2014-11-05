@@ -128,6 +128,8 @@ that says *Add Entry*.
  `cssClass` attribute. Type `guestbook-buttons` for this value, hit Enter, and
  click *Insert*. 
 
+![Figure 4: Inserting snippets is easy using the dialog, or you can do it in the code manually.](../../images/lds-insert-snippet.png)
+
 You're almost ready to add the button inside the button row, but as hinted above,
 we should talk about system generated URLs, because you need a URL to map to
 your button. 
@@ -162,7 +164,7 @@ asking you to enter values for various tag attributes.
 
 3. The only attribute you need at the moment is the `var` attribute. For this
 attribute, enter the value *addEntryURL*. You're creating a variable to hold the
-generated URL. 
+generated URL. Click *Insert*. 
 
 4. Make space inside the `<portlet:renderURL>` tag so that you can add another
 tag inside it. 
@@ -215,9 +217,10 @@ At this point, you should have code that looks like this:
         
     </aui:button-row>
 
-Now is a good time to check your work to see if everything you've done so far is
-working properly. As the image below describes, drag your project from the
-Package Explorer and drop it on your server runtime. 
+Save your work using the button in the toolbar or by hitting *Ctrl-S*. Now is a
+good time to check your work to see if everything you've done so far is working
+properly. As the image below describes, drag your project from the Package
+Explorer and drop it on your server runtime. 
 
 ![Figure 4: Deploying projects is a drag and drop process.](../../images/lds-deploy-portlet.png)
 
