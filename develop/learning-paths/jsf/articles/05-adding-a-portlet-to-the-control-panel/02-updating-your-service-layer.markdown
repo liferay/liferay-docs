@@ -8,7 +8,7 @@ resources from the database. By creating this method, you'll be able to create
 the Delete button, which will be used to delete guestbook entities from your
 Guestbook Admin portlet. 
 
-## Adding the Delete Service Method for Your Guestbooks
+## Adding the Delete Service Method for Your Guestbook Entities
 
 Remember from previous learning paths that when editing your `-LocalServiceImpl`
 classes, you must run Service Builder to update the affected interfaces and
