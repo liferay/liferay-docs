@@ -106,6 +106,17 @@ that can be added to a portal page. This is appropriate for the Guestbook Admin
 portlet because you only want it accessible from the Control Panel for
 administrators. 
 
+Lastly, the `i18n.properties` file was created for your Guestbook Admin's
+language keys. For you new portlet, you will need to edit this file slightly. 
+
+Open the `docroot/WEB-INF/src/i18n.properties` file and replace any existing
+language keys with the following: 
+
+    no-guestbooks-yet=No guestbooks yet ...
+
+This new language key will be used by the Guestbook Admin when no guestbooks
+have been created yet. 
+
 Now that your Guestbook Admin portlet is created, you'll need to add some
 custom services to your `GuestbookLocalServiceImpl` to allow for editing and
 deleting guestbooks. You'll do this next. 
