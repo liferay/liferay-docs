@@ -51,6 +51,8 @@ done is create a blank Liferay project. Projects can have any number of
 applications (called *portlets*) in them. Your next step is to create the
 portlet, which the New Portlet Wizard helps you to do. 
 
+![Figure 3: The New Portlet wizard can be used at any time to create portlets in projects.](../../images/lds-new-portlet-wizard.png)
+
 1. For the Portlet class, enter the name `GuestbookPortlet`. 
 
 2. All classes in Java should be properly namespaced to avoid conflicts with
