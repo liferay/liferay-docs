@@ -45,6 +45,7 @@
 			<portlet:param name="guestbookId"
 				value="<%=String.valueOf(curGuestbook
 									.getGuestbookId())%>" />
+			<portlet:param name="name" value="<%= curGuestbook.getName() %>" />
 		</portlet:renderURL>
 
 		<aui:nav-item cssClass="<%=cssClass%>" href="<%=viewPageURL%>"
