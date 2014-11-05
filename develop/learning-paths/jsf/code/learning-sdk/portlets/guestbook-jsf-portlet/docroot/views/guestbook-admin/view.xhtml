@@ -10,6 +10,13 @@
 >
 	<h:head />
 	<h:body>
-		<h:outputText value="#{i18n['guestbook-admin-hello-world']}" /> in view mode.
+		<c:choose>
+        <c:when test="#{guestbookBacking.editingGuestbook}">
+            <ui:include src="/views/guestbook.xhtml" />
+        </c:when>
+        <c:otherwise>
+            <ui:include src="/views/guestbook-admin/guestbook_actions.xhtml" />
+        </c:otherwise>
+    </c:choose>
 	</h:body>
 </f:view>
