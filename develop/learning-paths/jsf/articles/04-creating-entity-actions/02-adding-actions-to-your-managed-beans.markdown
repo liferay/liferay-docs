@@ -1,7 +1,7 @@
 # Adding Actions to Your Managed Beans [](id=adding-actions-to-your-managed-beans)
 
 Just as you added action methods in the
-[Creating Managed Beans to Use Services](/learning-paths/-/knowledge_base/6-2/creating-managed-beans-to-use-services)
+[Creating Managed Beans to Use Services](/learning-paths/jsf/-/knowledge_base/6-2/creating-managed-beans-to-use-services)
 learning path, you'll do the same for creating action methods for your action
 buttons. You'll need to add methods that edit and delete entries. The
 Permissions button will be configured slightly different, and won't require an
