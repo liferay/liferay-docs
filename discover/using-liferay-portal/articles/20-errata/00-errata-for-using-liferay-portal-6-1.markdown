@@ -15,6 +15,12 @@ downloaded from
 This `JAR` provides classes that extend some Tomcat-specific classes in order to
 support Liferay's runtime.
 
+## Page 508: Installing Liferay on Tomcat 7
+
+The note explaining that Tomcat 6 users should not copy the `ccpp.jar` is no
+longer applicable to this section. The runtime error caused by this `JAR` was
+resolved in the release of Liferay 6.0.
+
 ## Page 665: Configuring Liferay for High Availability
 
 In the *Properties File Changes* subsection of the chapter *19.2 Performance 
