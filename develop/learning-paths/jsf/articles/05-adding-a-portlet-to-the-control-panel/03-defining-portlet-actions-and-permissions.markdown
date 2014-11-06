@@ -1,18 +1,20 @@
 # Defining Portlet Actions and Permissions [](id=defining-portlet-actions-and-permissions)
 
 Now that your Guestbook Admin portlet has the appropriate service methods,
-you'll now add portlet actions to your portlet. These action methods will be
-used by each of your action buttons in the Guestbook Admin portlet. The action
-methods you create will be similar to those you created in previous learning
-paths for guestbook entries. The only difference is, you'll use these action
-methods in your new Guestbook Admin portlet. 
+you'll now add portlet actions and permissions to your portlet. The action
+methods will be used by each of your action buttons in the Guestbook Admin
+portlet. The action methods you create will be similar to those you created in
+previous learning paths for guestbook entries. The only difference is, you'll
+use these action methods in your new Guestbook Admin portlet. The same goes for
+your new portlet's permissions. Time to begin adding action and permissions
+methods for your guestbook entities! 
 
 ## Adding Action Methods for Guestbook Entities
 
 Your Guestbook Admin portlet should allow administrators to add, modify, delete,
 and control permissions of guestbooks. You've already created the add
 functionality, which is currently being displayed in the original Guestbook
-portlet. This will be migrated to our new portlet later, but first, you'll
+portlet. This will be migrated to your new portlet later, but first, you'll
 create the three action methods necessary for the action buttons: Edit, Delete,
 and Permissions. You'll add your methods to the existing `GuestbookBacking` bean
 and `Guestbook` wrapper class. 
@@ -45,7 +47,7 @@ and `Guestbook` wrapper class.
                 setGuestbooks(null);
                 setEntries(null);
 
-                // Go back to the master view
+                // Go back to the guestbook_actions view
                 select(null);
         }
 
@@ -82,9 +84,9 @@ and `Guestbook` wrapper class.
             editGuestbook();
         }
 
-    This method sets the selected guestbook to the one you're viewing and calls
-    the `editGuestbook()` method, which redirects the portlet to the `guestbook`
-    view to edit the guestbook. 
+    This method sets the selected guestbook and calls the `editGuestbook()`
+    method, which redirects the portlet to the `guestbook` view to edit the
+    guestbook. 
 
 Terrific! You've created the necessary action methods necessary for the
 Guestbook entity's Edit and Delete action buttons. Next, you'll create the
@@ -95,14 +97,14 @@ functionality.
 
 The permissions action methods will be set up slightly differently than your
 edit and delete action methods. As you did with your Entry entity's permissions,
-you'll define the `permissionsURL` property in the `Guestbook` wrapper class.
+you'll define the `permissionsUrl` property in the `Guestbook` wrapper class.
 Also, you'll define permission checker methods that check if a user has
 permissions for the Add Guestbook, Edit, Delete, and Permissions buttons, as
 well as viewing the guestbook entity. Since these methods will reside in the
 `Guestbook` wrapper class, each `Guestbook` entity defined in your
 `GuestbookBacking` bean will be wrapped with these permissions. Once your
 `Guestbook` wrapper has the permissions methods, you can call them from a
-Guestbook Admin `view` file, which you'll create in the next section. 
+Guestbook Admin's `view.xhtml` file, which you'll create in the next section. 
 
 1. Open the `com.liferay.docs.guestbook.wrappers.Guestbook` class and add the
    following variable and property: 
@@ -166,9 +168,9 @@ Guestbook Admin `view` file, which you'll create in the next section.
     This method generates the permissions URL used when clicking the guestbook
     entity's Permissions button. 
 
-    Like the `Entry` wrapper class' `permissionsURL` method, this method grabs
-    the underlying `HttpServletRequest`, `HttpServletResponse`, and `ELContext`
-    to create a
+    Like the `Entry` wrapper class' `getPermissionsUrl` method, this method
+    grabs the underlying `HttpServletRequest`, `HttpServletResponse`, and
+    `ELContext` to create a
     [`PageContextAdapter`](https://github.com/liferay/liferay-faces/blob/master/util/src/main/java/com/liferay/faces/util/jsp/PageContextAdapter.java),
     invokes the Liferay
     [`PermissionsURLTag`](https://github.com/liferay/liferay-portal/blob/master/util-taglib/src/com/liferay/taglib/security/PermissionsURLTag.java)
