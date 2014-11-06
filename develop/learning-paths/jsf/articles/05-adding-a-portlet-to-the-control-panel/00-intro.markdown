@@ -17,4 +17,4 @@ permissions of guestbooks that are displayed in your JSF Guestbook portlet.
 
 After this learning path, adding, editing, deleting, and controlling permissions
 of guestbook entities will all be available exclusively from the new Guestbook
-Control Panel portlet. 
+Admin portlet in the Control Panel. 

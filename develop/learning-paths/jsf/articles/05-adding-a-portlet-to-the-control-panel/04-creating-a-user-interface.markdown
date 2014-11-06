@@ -14,10 +14,10 @@ each button's permissions.
 ## Creating JSF Views for the User Interface
 
 The first thing you'll do is configure the existing
-`docroot/views/guestbook-admin/view.xhtml` file to facilite the UI's navigation.
-Similar to the original `views/view.xhtml`, this view will serve as the
-navigation view, checking boolean properties in the `GuestbookBacking` bean, and
-displaying the appropriate view according to those properties' value. 
+`docroot/views/guestbook-admin/view.xhtml` file to facilitate the UI's
+navigation. Similar to the original `views/view.xhtml`, this view will serve as
+the navigation view, checking boolean properties in the `GuestbookBacking` bean,
+and displaying the appropriate view according to those property values. 
 
 1. Open the `views/guestbook-admin/view.xhtml` file and replace the contents
    within the `<h:body>...</h:body>` tags with the following: 
@@ -34,9 +34,9 @@ displaying the appropriate view according to those properties' value.
     This `view` checks the `GuestbookBacking` bean for the `editingGuestbook`
     property. If the property is `true`, the `guestbook` view is displayed. If
     it's `false`, the `guestbook_actions` view is displayed. Recall, the
-    `editingGuestbook` property is set to true when the Edit button is clicked,
-    meaning the the `guestbook_actions` view is always displayed, unless the
-    Edit button has been clicked. Also notice you didn't have to create a
+    `editingGuestbook` property is set to `true` when the Edit button is
+    clicked, meaning the `guestbook_actions` view is always displayed, unless
+    the Edit button has been clicked. Also notice you didn't have to create a
     separate `guestbook` view for your new Guestbook Admin portlet. This is a
     nice convenience when using JSF views. 
 
@@ -150,14 +150,15 @@ permissions property.
 For instance, the Delete button will need to call the `deleteable` property from
 the `Guestbook` wrapper class. The `deleteable` property is `true` if the user
 has the appropriate permissions to access the button. If the property is `false`
-the button is invisible. The property is set using the `getDeleteable` method.
-To add permissioning to your action buttons, open the `guestbook_actions` view
-and find the action buttons you created previously in the data table. 
+the button is invisible. The property is set using the `getDeleteable` method
+from the `Guestbook` wrapper class, which checks for the user's permissions. To
+add permissioning to your action buttons, open the `guestbook_actions` view and
+find the action buttons you created previously in the data table. 
 
 For each of your entry buttons, surround each individual
 `<h:commandButton>...</h:commandButton>` or `<h:outputLink>...</h:outputLink>`
 tag with the `<h:panelGroup>...</h:panelGroup>` tag. Each panel group tag should
-contain the `rendered` element, specifying the appropriate permission to check
+contain the `rendered` element specifying the appropriate permission to check
 for each action button. Below is how your entry buttons should look after you're
 finished: 
 
@@ -186,6 +187,6 @@ finished:
     ...
 
 Your action buttons are now configured with permissions, which are controllable
-from your Permissions button. Awesome, your Guestbook Admin portlet is fully
+from your Permissions button. Awesome! Your Guestbook Admin portlet is fully
 functional and allows administrators to control your Guestbook portlet's
 guestbooks. 

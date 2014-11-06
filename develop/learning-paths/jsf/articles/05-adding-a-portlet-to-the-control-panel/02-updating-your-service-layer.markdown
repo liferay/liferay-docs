@@ -1,6 +1,6 @@
 # Updating Your Service Layer [](id=updating-your-service-layer)
 
-Just as you did in the previous learning path on
+Just as you did in a previous JSF learning path on
 [Adding Permissions Resources to the Service Layer](/develop/learning-paths/jsf/-/knowledge_base/jsf/adding-permissions-resources-to-the-service-layer),
 you'll need to add a service method in your `GuestbookLocalServiceImpl` class.
 The new service method you'll create needs to delete a guestbook and its
@@ -51,10 +51,10 @@ Once you've finished editing and click the *Save* button, your `entry` view
 calls the `EntryBacking` bean's `save()` method, which updates the entry. This
 process will be followed similarly with guestbook entities. 
 
-For permissions, you'll also follow the Entry entity's process of creating
-the `permissionsURL` property and calling that URL when the Permissions button
-is selected. 
+For permissions, you'll also create a process similar to the Entry entity's
+process of creating the `permissionsURL` property and calling that URL when the
+Permissions button is selected. 
 
 You now have the appropriate service method for deleting guestbooks, and a
 general idea of how the other buttons will be implemented. Next, you'll begin
-working on the Guestbook Admin portlet's portlet actions. 
+working on the Guestbook Admin's portlet actions and permissions. 

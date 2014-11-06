@@ -95,7 +95,7 @@ portlet is located in the Site Administration menu's list of portlets.
 
 Another configuration file that was edited when you created the Guestbook Admin
 portlet is the `liferay-display.xml` file. The following `<category>` element
-was specified: 
+was added: 
 
     <category name="category.hidden">
         <portlet id="guestbook-admin"></portlet>
@@ -106,16 +106,17 @@ that can be added to a portal page. This is appropriate for the Guestbook Admin
 portlet because you only want it accessible from the Control Panel for
 administrators. 
 
-Lastly, the `i18n.properties` file was created for your Guestbook Admin's
-language keys. For you new portlet, you will need to edit this file slightly. 
+Lastly, the wizard created the `i18n.properties` file to house your Guestbook
+Admin's language keys. For your new portlet, you will need to edit this file
+to define a custom language key for your Guestbook Admin portlet. 
 
 Open the `docroot/WEB-INF/src/i18n.properties` file and replace any existing
 language keys with the following: 
 
     no-guestbooks-yet=No guestbooks yet ...
 
-This new language key will be used by the Guestbook Admin when no guestbooks
-have been created yet. 
+This new language key will be displayed by the Guestbook Admin portlet when no
+guestbooks have been created yet. 
 
 Now that your Guestbook Admin portlet is created, you'll need to add some
 custom services to your `GuestbookLocalServiceImpl` to allow for editing and
