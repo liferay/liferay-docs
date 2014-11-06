@@ -240,11 +240,11 @@ use Liferay's faceted search.
 
 Liferay provides several applications that allow users and administrators to
 search for content. First, there's the Search portlet. The Search portlet can be
-placed a page to allow users to search for assets of any type. We'll learn how
-to use the Search portlet when we discuss Liferay's faceted search feature in
-the next section. There's also a Web Content Search portlet. This portlet can be
-placed on a page to allow users to search for web content instances. Users can't
-use the Web Content Search portlet to search for other kinds of content.
+placed on a page to allow users to search for assets of any type. We'll learn
+how to use the Search portlet when we discuss Liferay's faceted search feature
+in the next section. There's also a Web Content Search portlet. This portlet can
+be placed on a page to allow users to search for web content instances. Users
+can't use the Web Content Search portlet to search for other kinds of content.
 However, the Blogs, Wiki, Message Boards, Documents and Media, and Web Content
 portlets all provide search bars that allow users to search among the specific
 types of assets with which these portlets allow users to interact. Note that all
@@ -252,6 +252,15 @@ of these portlets are accessible from the Control Panel. They can also, except
 for the Web Content portlet, be placed on portal pages for end-users to use. The
 Web Content portlet is not designed for end users; it's intended for
 administrative use only.
+
+---
+
+ ![Note](../../images/01-tip.png) **Note:** The Web Content Search portlet is
+ deprecated in Liferay 6.2 and will be removed in Liferay 7.0. The Web Content
+ Search portlet will be migrated to the Search portlet, which will be configured
+ to only search for web content. 
+
+---
 
 In order for content to be searchable, it must first be indexed. Liferay uses
 Lucene for indexing and searching for content. Please refer to the Lucene
