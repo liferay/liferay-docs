@@ -9,7 +9,7 @@ use these action methods in your new Guestbook Admin portlet. The same goes for
 your new portlet's permissions. Time to begin adding action and permissions
 methods for your guestbook entities! 
 
-## Adding Action Methods for Guestbook Entities
+## Adding Action Methods for Guestbook Entities [](id=adding-action-methods-for-guestbook-entities)
 
 Your Guestbook Admin portlet should allow administrators to add, modify, delete,
 and control permissions of guestbooks. You've already created the add
@@ -93,7 +93,7 @@ Guestbook entity's Edit and Delete action buttons. Next, you'll create the
 necessary permissions methods to allow for the Permissions button's
 functionality. 
 
-## Adding Permissions Methods for Guestbook Entities
+## Adding Permissions Methods for Guestbook Entities [](id=adding-permissions-methods-for-guestbook-entities)
 
 The permissions action methods will be set up slightly differently than your
 edit and delete action methods. As you did with your Entry entity's permissions,
