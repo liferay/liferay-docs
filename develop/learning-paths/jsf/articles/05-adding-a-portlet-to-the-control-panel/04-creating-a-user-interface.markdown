@@ -11,7 +11,7 @@ Each guestbook should also be accompanied with the action buttons Edit, Delete,
 and Permissions. You'll begin by creating the buttons, then you'll check for
 each button's permissions. 
 
-## Creating JSF Views for the User Interface
+## Creating JSF Views for the User Interface [](id=creating-jsf-views-for-the-user-interface)
 
 The first thing you'll do is configure the existing
 `docroot/views/guestbook-admin/view.xhtml` file to facilitate the UI's
@@ -140,7 +140,7 @@ Guestbook button should no longer be present in your Guestbook portlet.
 Your buttons are all available, but you have not configured the buttons'
 permissions. In the next section, you'll configure the permissions. 
 
-## Checking for Permissions in JSF Views
+## Checking for Permissions in JSF Views [](id=checking-for-permissions-in-jsf-views)
 
 The last thing you'll need to do to have fully functional action buttons for
 your guestbook entities is to utilize your `Guestbook` wrapper class'
