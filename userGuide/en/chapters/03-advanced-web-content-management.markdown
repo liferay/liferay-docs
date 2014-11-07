@@ -527,6 +527,14 @@ administrators can also use the Web Content administration portlet to manage
 their site's RSS feeds. Click *Manage* &rarr; *Feeds* if you'd like to add,
 edit, or delete RSS feeds.
 
+---
+
+ ![Note](../../images/01-tip.png) **Note:** The Web Content Feeds portlet is
+ deprecated for Liferay 6.2 and will be removed in Liferay 7.0. The portlet will
+ be migrated to the Asset Publisher portlet. 
+
+---
+
 ![Figure 3.7: Clicking *Manage* &rarr; *Feeds* from the Control Panel's Web Content administration portlet opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../images/web-content-manage-feeds.png)
 
 Click the *Add Feed* button to add a new feed. You need to enter a name and

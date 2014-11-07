@@ -839,12 +839,15 @@ For details about Liferay's social collaboration suite, see chapter 10.
 
 +$$$
 
-**Note:** The *Web Content List* and *Recent
- Content* plugins were deprecated in Liferay 6.2 and are disabled by default. To
- activate a disabled plugin, navigate to the Control Panel &rarr; *Plugins
- Configuration* and scroll through the list of portlets until you find the
- plugin. Select the plugins name and click the *Active* checkbox. Then click
- *Save*.
+**Note:** The *Web Content List* and *Recent Content* plugins were deprecated in
+Liferay 6.2 and are disabled by default. To activate a disabled plugin, navigate
+to the Control Panel &rarr; *Plugins Configuration* and scroll through the list
+of portlets until you find the plugin. Select the plugins name and click the
+*Active* checkbox. Then click *Save*. Both plugins will be removed in Liferay
+7.0.
+
+The Web Content List portlet will be migrated to the Asset Publisher for 7.0,
+and configured to only display web content with the category matching the type. 
 
 $$$
 
