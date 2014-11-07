@@ -2,7 +2,9 @@ package com.liferay.documentation.util;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -27,7 +29,30 @@ public class ConcatMarkdown extends Task {
 			for (File file : files) {
 				
 				if (!file.isDirectory()) {
-					book = book + FileUtils.readFileToString(file);
+					LineNumberReader in =
+							new LineNumberReader(new FileReader(file));
+					
+					String line;
+					int count=1;
+							;
+					while ((line = in.readLine()) != null) {
+
+						if (line.startsWith("#")) {
+							
+							if (!file.getName().startsWith("00")) {
+								
+								line = "#" + line;
+							}
+								
+						}
+						
+						book = book + line + "\n";
+						count = count + 1;
+					}
+					
+					in.close();
+					
+					//book = book + FileUtils.readFileToString(file);
 					book = book + "\n";
 				}
 				
@@ -56,6 +81,7 @@ public class ConcatMarkdown extends Task {
 			String fileName = file.getCanonicalPath();
 			if (!fileName.contains(".svn")) {
 				results.add(file);
+				System.out.println(file.getName());
 			}
 		}
 		return results;
