@@ -1,36 +1,21 @@
 # Adding Entry Titles to the URL
 
-You're probably feeling good about the Guestbook Portlet now. The UI is looking
-snazzy, it has front- and back-end validation, and you've implemented several
-other features that a modern app should have. But before you jump off the
-learning paths and begin trailblazing Liferay development on your own, click on
-one of your Guestbook app's buttons, like *Add Guestbook*. Check out the URL
-that the portal so generously generated:
+After the last section on Friendly URLs, you have a good understanding of
+Liferay's Frinedly URL pattern, from declaring your intentions in
+`liferay-portlet.xml` to writing some quick routes in the
+`guestbook-friendly-url-routes.xml`. If you noticed, however, the URLs are
+still not entirely friendly. Look at the URL we now get when we click on one of
+our Guestbook Entries:
 
-    http://localhost:8080/web/guest/home?p_p_id=guestbook_WAR_guestbookportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=3&_guestbook_WAR_guestbookportlet_mvcPath=%2Fhtml%2Fguestbook%2Fedit_guestbook.jsp
+    http://localhost:8080/web/guest/home/-/guestbook/10473/view_entry
 
-Tell me how you feel about that URL. Since you developed the app, maybe you
-like to see all those parameters as much as Liferay likes to generate them for
-you. In that case, tell me how the app's users will feel when they see the URL.
-Let's make it a little more friendly, and meaningful, for them. Your app's
-users aren't the only reason to create Friendly URLs. Search Engine
-Optimization requires that your URLs be *concise*. That's one word you wouldn't
-use to describe the generated URL above.
+It's quite a bit more concise and human-readable than before we started, but
+we've included the Primary Key of the `Guestbook`, its `guestbookId`, in the
+URL. This doesn't mean anything to the user. It would be more clear to see the
+name of the Guestbook. That's what you'll be doing in this section on Frinedly
+URLs.
 
-When you're done with this section, clicking *Add Guestbook* will generate the
-following UR:
-
-    http://localhost:8080/web/guest/home/-/guestbook/add_guestbook
-
-That looks a lot more user friendly, right?
-
-In short, you can greatly improve the readability of the portlet's URLs, and
-you can do it in two easy steps:
-
-    1. Add three lines to liferay-portlet.xml
-    2. Create an XML file defining the Friendly URL routes
-
-## Declaring Friendly URL Mapping to Liferay
+## Creating a Finder
 
 First, modify Liferay's descriptor, `docroot/WEB-INF/liferay-portlet.xml`, adding these lines right after the :
 
@@ -49,7 +34,14 @@ routes to Liferay URLs. The second tag we're declaring, `friendly-url-mapping`,
 is just a name used to identify the routes. It will appear in the URL right
 before the routes we declare.
 
-## Defining Friendly URL Routes
+## Something about using the finder to get Entries by the GuestbookName
+
+## Adding the parameter to the URL in view.jsp
+
+## Adding the routes to guestbook-friendly-url-routes.xml
+
+
+
 
 Your Friendly URL is now ready to emerge from the beastly URL above. But while you're here, clean up the URLs for the other links as well. Follow these steps:
 
