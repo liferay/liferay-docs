@@ -27,7 +27,7 @@ creating your application's service and persistence layers.
 
 This learning path starts with the development environment and application you 
 created in the first learning path. If you haven't followed that path, you'll 
-need to create that application first, or download it from [here](https://github.com/liferay/liferay-docs/tree/master/develop/learning-paths/code/01-beginning-liferay-development/begin-sdk). 
+need to create that application first, or download it from [here](https://github.com/liferay/liferay-docs/tree/master/develop/learning-paths/jsf/code/learning-sdk). 
 From here on, we'll assume you have Liferay IDE and your application all set up 
 and ready to go. 
 
