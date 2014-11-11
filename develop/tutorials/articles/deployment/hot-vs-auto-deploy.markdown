@@ -1,4 +1,4 @@
-# Hot Deploy Versus Auto Deploy [](id=deploying-your-plugins-hot-deploy-vs-auto-deploy-lp-6-2-develop-tutorial)
+# Hot Deploy Versus Auto Deploy [](id=deploying-your-plugins-hot-deploy-vs-auto-deploy)
 
 As you develop plugins you'll want to deploy them to your test servers and as
 you finish developing plugins you'll want to deploy them to your production
@@ -11,7 +11,7 @@ How, you say? We're glad you asked! This tutorial gives you a brief synopsis of
 each deployment method. Go ahead and get started by learning about the hot 
 deployment method.
 
-## Using Hot Deployment 
+## Using Hot Deployment [](id=using-hot-deployment)
 
 The first deployment method you'll explore is *hot* deployment. You may be
 familiar with hot deployment in the context of Java EE application servers. In
@@ -79,7 +79,7 @@ overrides not being loaded by your application server.
 Hopefully this whets your appetite for doing hot deployments. Stay hungry, as
 it's time to explore auto deployment next. 
 
-## Using Auto Deployment 
+## Using Auto Deployment [](id=using-auto-deployment)
 
 The Liferay *auto* deployment feature is a mostly optional feature that works in
 conjunction with the hot deployment capabilities of your application server.
@@ -120,14 +120,13 @@ simply need to call the following Ant task:
 The `direct-deploy` Ant task creates an exploded WAR from which you can easily
 create a WAR file. The location of the exploded WAR depends on the deployment
 directory of the application server you've configured in your Plugins SDK
-environment. See the *Plugins SDK Configuration* section of [Leveraging the
-Plugins
-SDK](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/leveraging-the-plugins-sdk-liferay-portal-6-2-dev-guide-02-en)
-for instructions on configuring the Plugins SDK for your app server. The Plugins
-SDK's `build.properties` provides a default deployment directory value for each
-supported app server. But you can override the default value by specifying your
-desired value for the `app.server.[type].deploy.dir` (replace `[type]` with your
-app server type) in your `build.[username].properties` file. 
+environment. See the
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+tutorials for instructions on configuring the Plugins SDK for your app server.
+The Plugins SDK's `build.properties` provides a default deployment directory
+value for each supported app server. But you can override the default value by
+specifying your desired value for the `app.server.[type].deploy.dir` (replace
+`[type]` with your app server type) in your `build.[username].properties` file. 
 
 If you choose not to use the Liferay Plugins SDK to do direct deployment, you
 can examine the `build-common.xml` file in the Plugins SDK to see how Liferay
@@ -138,8 +137,8 @@ Understanding what's going on during the deployment of your plugins is crucial
 for troubleshooting anything that goes wrong, and can help you simplify your
 deployment process and make it more efficient.
 
-# Related Topics [](id=related-topics-lp-6-2-develop-tutorial)
+## Related Topics [](id=related-topics)
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 
-[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
+[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ides-remote-server-adapter)

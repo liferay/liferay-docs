@@ -1,4 +1,4 @@
-# Modularization with OSGi Plugins [](id=developing-osgi-plugins-for-liferay-lp-6-2-develop-tutorial)
+# Modularization with OSGi Plugins [](id=developing-osgi-plugins-for-liferay)
 
 OSGi (Open Services Gateway initiative) is a framework for developing modular
 Java applications. OSGi implements a complete and dynamic component model. OSGi
@@ -14,15 +14,15 @@ services are available to Liferay's OSGi runtime and can be invoked from Liferay
 OSGi plugins. In this tutorial, we explain how to create, package, and deploy
 custom OSGi plugins for Liferay. 
 
----
++$$$
 
-![Tip](../../images/tip-pen-paper.png) **Note:** Liferay 6.2's OSGi runtime is
+**Note:** Liferay 6.2's OSGi runtime is
 experimental and unsupported. It should be considered a technology preview at
 this time. 
 
----
+$$$
 
-## Creating Liferay OSGi Plugins
+## Creating Liferay OSGi Plugins [](id=creating-liferay-osgi-plugins)
 
 OSGi web application bundles are usually distributed as JAR files. They're
 architecturally similar to standard web application archives. OSGi web
@@ -68,7 +68,7 @@ Your `bnd.bnd` and `build.xml` files constitute all the OSGi-specific
 configuration that's required! With these files in place, you're ready to write
 the rest of your plugin.
 
-## Packaging Liferay OSGi Plugins
+## Packaging Liferay OSGi Plugins [](id=packaging-liferay-osgi-plugins)
 
 When you're ready to package your OSGi bundle, just run `ant jar` from your
 plugin project's root folder (the one with the `bnd.bnd` and `build.mxl` files
@@ -77,7 +77,7 @@ your `bnd.bnd` file and creates all the files required by OSGi, including the
 `META-INF/MANIFEST.MF`. Your plugin is packaged as a JAR file which is created
 in the Plugins SDK's `dist` folder.
 
-## Deploying Liferay OSGi Plugins
+## Deploying Liferay OSGi Plugins [](id=deploying-liferay-osgi-plugins)
 
 When you're ready to deploy your OSGi bundle, make sure that you have the
 following properties set in your `build.[username].properties` file in your
@@ -109,6 +109,6 @@ etc. Remember not to make customizations to the `portal.properties` file itself
 but to instead add customized properties to a `portal-ext.properties` file in
 your Liferay Home directory. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Plugin Management](/use/-/knowledge_base/plugin-management-lp-6-2-use-useportal)
+[Plugin Management](/discover/portal/-/knowledge_base/6-2/plugin-management)

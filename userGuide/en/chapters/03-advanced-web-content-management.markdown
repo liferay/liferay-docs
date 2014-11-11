@@ -527,6 +527,14 @@ administrators can also use the Web Content administration portlet to manage
 their site's RSS feeds. Click *Manage* &rarr; *Feeds* if you'd like to add,
 edit, or delete RSS feeds.
 
+---
+
+ ![Note](../../images/01-tip.png) **Note:** The Web Content Feeds portlet is
+ deprecated for Liferay 6.2 and will be removed in Liferay 7.0. The portlet will
+ be migrated to the Asset Publisher portlet. 
+
+---
+
 ![Figure 3.7: Clicking *Manage* &rarr; *Feeds* from the Control Panel's Web Content administration portlet opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../images/web-content-manage-feeds.png)
 
 Click the *Add Feed* button to add a new feed. You need to enter a name and
@@ -1277,6 +1285,29 @@ from your local (staging) Liferay server to your remote (live) Liferay server.
 Liferay's Virtual LDAP Server application (EE-only), available on Liferay
 Marketplace, makes this easy.
 
+Next, you'll learn how to configure your portal to use IPv6 addresses and use
+them for Remote Live Staging. 
+
+#### Validating IPv6 Addresses [](id=validating-ipv6-addresses-liferay-portal-6-2-user-guide-03-en)
+
+If your portal is set up to validate IPv6 addresses, you'll need to configure
+your Remote Live Connection Settings. Restart your Liferay instance and navigate
+back to the Staging page. Select the *Remote Live* radio selector and specify
+the fields for your remote site. The *Remote Host/IP* field should match the
+host you specified as your `tunnel.servlet.hosts.allowed` property in the
+`portal-ext.properties` file (e.g., *[0:0:0:0:0:0:0:1]*). Make sure to include
+the brackets. Fill in the rest of the information relevant to your site and
+click *Save*. 
+
+To check if the remote site is running on an IPv6 address, add a new portlet to
+the staged site, and then select *Staging* &rarr; *Publish to Remote Live* from
+the Dockbar. The changes are published to your remote staged site. 
+
+Your portal instance now validates the IPv6 address you specified for your
+remote live site. Great job! 
+
+Next, you'll learn how to enable local live staging.
+
 ### Example: Enabling Local Live Staging [](id=example-enabling-local-live-staging-liferay-portal-6-2-user-guide-03-en)
 
 Let's create a Local Live staging environment for the Lunar Resort home page. Before
@@ -1285,7 +1316,7 @@ in the default site and name the new page *News and Events*. Next, click *News
 and Events* to view the page. Then add the Alerts and Announcements portlets to
 the News and Events page.
 
-When you activate staging Local Live staging, Liferay creates a clone of your
+When you activate Local Live staging, Liferay creates a clone of your
 site. This clone became the staging environment. Because of this, we recommend
 only activating staging on new, clean sites. Having a few pages and some
 portlets (like those of the example site we've created) is no big deal. However,
@@ -1296,14 +1327,14 @@ possible, *before* your site has many pages and lots of content. Your site's
 update history won't be saved until you enable page versioning. Page versioning
 requires staging (either Local Live or Remote Live) to be enabled.
 
-Now we're ready to activate staging for this site. Go to *Admin* &rarr; *Site
-Administration* &rarr; *Configuration* *Site Settings* and select *Staging* from
-under the *Advanced* heading. We'll assume we don't have a separate staging
-server so we'll select the *Local Live* staging type. If you do have a separate
-server to use for staging, follow the instructions in the previous section for
-configuring it and your local server for remote staging. Either way, once you
-make a selection (either *Local Live* or *Remote Live*), more options become
-available for page versioning and staged portlets.
+Now you're ready to activate staging for this site. Go to *Admin* &rarr; *Site
+Administration* &rarr; *Configuration* &rarr; *Site Settings* and select 
+*Staging* from under the *Advanced* heading. We'll assume we don't have a 
+separate staging server so select the *Local Live* staging type. If you do 
+have a separate server to use for staging, follow the instructions in the 
+previous section for configuring it and your local server for remote staging. 
+Either way, once you make a selection (either *Local Live* or *Remote Live*), 
+more options become available for page versioning and staged portlets.
 
 ### Enabling Page Versioning and Staged Portlets [](id=enabling-page-versioning-and-staged-por-liferay-portal-6-2-user-guide-03-en)
 
@@ -1386,11 +1417,27 @@ publishing. You could use this, for example, to publish all changes made during
 the week every Monday morning without any further intervention.
 
 The *Publish to Live* button also gives you options to select pages,
-applications, content, and permissions. Furthermore, you're given the *Current
-and Previous* and *Scheduled* tabs. The *Current and Previous* tab lets you view
-past publications along with their authors and create/completion dates. The
-*Scheduled* tab lets you view what publication processes are scheduled for
-publishing.
+applications, content, and permissions.
+
+**Pages** gives you the option to choose which pages to include when you
+publish. You can see the default settings in the gray text below the header.
+Click the *Change* button to configure these options to suite your needs.
+
+**Application Configuration** allows you to select which applications you want
+to publish. Select the *Choose Applications* radio button to configure
+the applications and settings to be published.
+
+**Content** allows you to configure the content to be published. Clicking the 
+*select* option under All Content allows you to delete the portlet metadata
+before publishing.
+
+**Permissions** allows you to include permissions for the pages and portlets
+when the changes are published.
+
+Furthermore, you're given the Current and Previous and Scheduled tabs. 
+The Current and Previous tab lets you view past publications along with their 
+authors and create/completion dates. The Scheduled tab lets you view what 
+publication processes are scheduled for publishing.
 
 Click on *Mark as Ready for Publication*, then click *Publish to Live* &rarr;
 *Now*, and select *Publish* to publish your Bookmarks portlet to the live site.
@@ -1423,10 +1470,9 @@ instance.
 Liferay 6.2 also added a portal property,
 `journal.publish.version.history.by.default`, that sets the default behavior. By
 default, this property is set to `true` so site administrators have to manually
-manually uncheck the *Version History* box mentioned above if they only want to
-publish the latest approved version of web content articles. If you'd like to
-change the default behavior, add the following line to your
-`portal-ext.properties` file:
+uncheck the *Version History* box mentioned above if they only want to publish 
+the latest approved version of web content articles. If you'd like to change the 
+default behavior, add the following line to your `portal-ext.properties` file:
 `journal.publish.version.history.by.default=false`.
 
 One of the most powerful features of staging is page variations. Let's see how

@@ -1,4 +1,4 @@
-# Deploying Plugins to a Local Portal Instance [](id=deploying-plugins-to-a-local-portal-instance-lp-6-2-develop-tutorial)
+# Deploying Plugins to a Local Portal Instance [](id=deploying-plugins-to-a-local-portal-instance)
 
 Liferay IDE provides multiple options for deploying plugins: you can drag and
 drop your project onto the server or right click the server and select *Add and
@@ -22,9 +22,9 @@ of the page and select the *Applications* tab. Select your portlet's category
 (*Sample* is the default category), and then click *Add* next to *[portlet
 title]*. Your portlet appears in the page.
 
-Here are some related topics:
+## Related Topics [](id=related-topics)
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 
-[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/using-liferay-ides-remote-server-adapter-lp-6-2-develop-tutorial)
+[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ides-remote-server-adapter)
 

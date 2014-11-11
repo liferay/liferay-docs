@@ -12,9 +12,18 @@
 		<path refid="lib.classpath" />
 	</path>
 
+	<property environment="env" />
+
+	<property file="../../build.${USERNAME}.properties" />
+	<property file="../../build.${user.name}.properties" />
+	<property file="../../build.${env.COMPUTERNAME}.properties" />
+	<property file="../../build.${env.HOST}.properties" />
+	<property file="../../build.${env.HOSTNAME}.properties" />
+	<property file="../../build.properties" />
+
 	<property name="build.dir" value="./build"/>
-	<property name="pandoc.app" location="/home/${user.name}/.cabal/bin/pandoc"/>
 	<property name="dist.dir" value="./dist"/>
+	<property name="metadata.filename" value=".METADATA"/>
 
 	<!-- taskdefs -->
 
@@ -40,6 +49,37 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="distdiff" classname="com.liferay.documentation.util.DistDiffTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="numberimgssite" classname="com.liferay.documentation.util.NumberImagesTaskDevSite">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+	
+	<taskdef name="concatmarkdown" classname="com.liferay.documentation.util.ConcatMarkdown">
+	  <classpath>
+	    <fileset dir="${project.dir}/lib" includes="*.jar" />
+	    
+	    <fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+	  </classpath>
+	</taskdef>
+
+
 	<!-- targets -->
 
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
@@ -47,11 +87,28 @@
 		<java
 			classname="com.liferay.documentation.util.MarkdownToHtmlMain"
 			classpathref="project.classpath"
+			failonerror="true"
 			fork="true"
 		>
 			<arg value="${article}"/>
 			<arg value="${build.dir}/${article}.html"/>
 		</java>
+	</target>
+
+	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
+		<java
+			classname="com.liferay.documentation.util.CheckHeadersTask"
+			classpathref="project.classpath"
+			fork="true"
+			failonerror="true"
+		>
+			<arg value="${doc.dir}"/>
+		</java>
+	</target>
+	
+	<target name="concat-markdown" description="Concatenates the Markdown files in a specific folder for preparation to convert to other formats.">
+	  <concatmarkdown docdir="${doc.dir}">
+	  </concatmarkdown>
 	</target>
 
 	<target name="check-images-site" description="Verifies all images referenced in a single Markdown article or a document's Markdown articles.">
@@ -69,12 +126,59 @@
         <delete dir="${dist.dir}"/>
     </target>
 
+    <target name="clean-images" description="Deletes images from ${doc.dir}/images that are not referenced in any of the markdown files in any subdirectory of ${doc.dir}/articles">
+			<java
+				classname="com.liferay.documentation.util.CleanImagesSiteMain"
+				classpathref="project.classpath"
+				failonerror="true"
+				fork="true"
+			>
+				<arg value="${doc.dir}"/>
+			</java>
+	</target>
+
+	<target name="compare-with-older-branch" description="Compares your current branch with an older branch, specified by -Dolder.branch=someOlderBranch.">
+		<java
+			classname="com.liferay.documentation.util.GitCompare"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="${purpose.dir}"/>
+			<arg value="${older.branch}"/>
+		</java>
+	</target>
+
+	<target name="create-metadata-file" description="Builds a metadata file.">
+		<!-- Use base.filepath property to distinguish between tutorials and learning-paths directories. The build.xml file
+		in the learning-paths directory overwrites this value with "learning-paths/${doc.dir}" -->
+		<property name="base.filepath" value="${doc.dir}" />
+		
+		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${base.filepath}/${metadata.filename}"/>
+		<delete file="${metadata.file}" failonerror="false"/>
+		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
+	</target>
+
 	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
 		<property file="${project.dir}/release-site.properties" />
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="./" includes="articles/" />
 			<fileset dir="./" includes="images/" />
 			<fileset dir="./" includes="home.markdown" />
+			<fileset dir="./" includes="${metadata.filename}" />
+		</zip>
+	</target>
+
+	<target name="dist-diffs" depends="prepare-dist" description="Zips up the document's articles and images that are new or modified, as specified in the git-modified-list.txt file.">
+		<mkdir dir="${dist.dir}"/>
+		<distdiff docdir="${doc.dir}" purposedir="${purpose.dir}">
+		</distdiff>
+
+        <!-- Until the Markdown converter no longer requires intro files that need to be added manually to the diffs.zip, include ALL images in the ZIP. -->
+		<zip destfile="${dist.dir}/diffs.zip" update="true">
+			<fileset dir="./" includes="images/" />
+			<fileset dir="./" includes="${metadata.filename}" />
 		</zip>
 	</target>
 
@@ -83,23 +187,33 @@
 		<java
 			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
 			classpathref="project.classpath"
+			failonerror="true"
 			fork="true"
 		>
 			<arg value="${doc.dir}"/>
 		</java>
 	</target>
 
+	<target name="number-images-site" description="numbers the images in a markdown chapter file">
+		<numberimgssite docdir="${doc.dir}">
+		</numberimgssite>
+	</target>
+
 	<target name="prepare" description="Creates build directory.">
+		<!-- Use base.filepath property to distinguish between tutorials and learning-paths directories. The build.xml file
+		in the learning-paths directory overwrites this value with "learning-paths/${doc.dir}" -->
+		<property name="base.filepath" value="${doc.dir}" />
+		
 		<echo message="... creating build directory"/>
-		<mkdir dir="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}"/>
-		<touch file="${project.dir}/${purpose.dir}/${doc.dir}/${build.dir}/${article}.html" mkdirs="true"/>
+		<mkdir dir="${project.dir}/${purpose.dir}/${base.filepath}/${build.dir}"/>
+		<touch file="${project.dir}/${purpose.dir}/${base.filepath}/${build.dir}/${article}.html" mkdirs="true"/>
 		<mkdir dir="${build.dir}/images"/>
 		<copy todir="${build.dir}/images" overwrite="true">
 			<fileset dir="./images"/>
 		</copy>
 	</target>
 
-	<target name="prepare-dist" depends="check-images-site, check-intros, clean-dist, number-headers" description="Prepares the document for distribution.">
+	<target name="prepare-dist" depends="check-images-site, check-intros, clean-dist, number-headers, number-images-site, check-headers, create-metadata-file" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>

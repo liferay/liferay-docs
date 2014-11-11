@@ -891,15 +891,161 @@ check permissions wherever you need to in your application.
 
 You're now equipped to implement security in your custom Liferay portlets! 
 
+Next, let's learn how to create and use portal and portlet URLs. 
+
+## Creating Portlet URLs in JavaScript [](id=creating-portlet-urls-in-javascript-liferay-portal-6-2-dev-guide-07-en)
+
+The `Liferay.PortletURL` JavaScript module allows developers to generate
+portlet URLs from their JavaScript code. This module has been updated since the
+first released version of Liferay 6.2. In Liferay 6.2.0 M5 (a 
+[Milestone](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/understanding-liferays-releases-liferay-portal-6-2-user-guide-15-en)
+release) and prior versions, developers could call this module to generate URLs
+from their JavaScript in the following ways: 
+
+- `Liferay.PortletURL.createActionURL()`
+- `Liferay.PortletURL.createRenderURL()`
+- `Liferay.PortletURL.createResourceURL()`
+- Invoking the URL `/c/portal/[portlet URL]`
+
+Each of these methods returned server generated URLs that included
+authentication tokens (the `p_auth` or `p_p_auth` URL parameters), whenever
+necessary. That behavior, however, posed a security risk. Please see
+[LPS-34098](https://issues.liferay.com/browse/LPS-34098) for details. In all
+Liferay EE 6.2 GA and CE 6.2 GA releases, and Milestone releases after Liferay
+6.2.0 M5, these methods are updated so that they still work (i.e., they still
+return appropriate URLs) but they no longer include the authentication tokens in
+the returned URLs. This update has been distributed to EE customers as a fix
+pack. 
+
+If you experience problems using the above methods to generate URLs in Liferay
+6.2.0 M6 or later versions, you might need to update your plugins. If you're an
+EE customer and have applied all available fix packs, you might also need to
+update your plugins. If you'd like to determine whether or not you need to
+update your plugins, use the following verification steps:
+
+1. Search for `Liferay.PortletURL` or `/c/portal/portlet_url` in your code,
+   portal content text, and templates.
+
+2. If you don't find any occurrences, you don't need to update your plugins. In this
+   case, you can safely set `portlet.url.generate.by.path.enabled=false` in your
+   `portal-ext.properties` file. Setting this property to `false` prevents
+   portlet URLs from being generated using `/c/portal/portlet_url`. This
+   property is included in Liferay 6.2.0 M6 and later versions.
+
+If you do find `Liferay.PortletURL` or `/c/portal/portlet_url` when you search,
+you will need to update your plugins. There are several ways to do it:
+
+1. Refactor your code to call the JavaScript method
+   `Liferay.PortletURL.createURL`, passing the `baseURL` as a parameter, instead
+   of using one of the updated methods. You can generate the `baseURL`, from a
+   JSP for example, using the Java method `PortletURLFactoryUtil.create`.
+
+    This method is used, for example, in Liferay's
+    `select_add_file_entry_type.jsp` JSP:
+
+        var portletURL = Liferay.PortletURL.createURL('<%= PortletURLFactoryUtil.create(request, portletId, themeDisplay.getPlid(), PortletRequest.RENDER_PHASE) %>');
+
+    Visit
+    [https://github.com/liferay/liferay-portal/blob/6.2.0-ga1/portal-web/docroot/html/portlet/document_library_display/select_add_file_entry_type.jsp#L56](https://github.com/liferay/liferay-portal/blob/6.2.0-ga1/portal-web/docroot/html/portlet/document_library_display/select_add_file_entry_type.jsp#L56)
+    to view the complete JSP.
+
+2. Refactor your code to remove dependencies on the `Liferay.PortletURL` object
+   and on `/c/portal/portlet_url` calls. When you're finished, set
+   `portlet.url.generate.by.path.enabled=false`. Let's examine two examples:
+
+    Example 1 (before refactoring):
+
+        function(event) {
+            var portletURL = Liferay.PortletURL.createRenderURL();
+            portletURL.setParameter('groupId', '<%= scopeGroupId %>');
+            portletURL.setParameter('struts_action', '/journal/select_document_library');
+            portletURL.setPlid('<%= controlPanelPlid %>');
+            portletURL.setPortletId('15');
+            portletURL.setWindowState('pop_up');
+            Liferay.Util.openWindow(
+                {
+                    id: '<portlet:namespace />selectDocumentLibrary',
+                    uri: portletURL.toString()
+                }
+            );
+        }
+
+    Example 1 (after refactoring):
+
+        <%
+        LiferayPortletURL selectDocumentURL = portletURLFactory.create(request, "15", controlPanelPlid, "RENDER_PHASE");
+        selectDocumentURL.setWindowState("pop_up");
+        selectDocumentURL.setParameter("groupId", "scopeGroupId");
+        selectDocumentURL.setParameter("struts_action", "/journal/select_document_library");
+        %>
+        function(event) {
+            Liferay.Util.openWindow(
+                {
+                    id: '<portlet:namespace />selectDocumentLibrary',
+                    uri:'<%= selectDocumentURL %>'
+                }
+            );
+        }
+
+    In example 1, the code uses the `portletURLFactory` to create a
+    `LiferayPortletURL` object, instead of using the `Liferay.PortletURL` object
+    to create it. 
+
+    Example 2 (before refactoring):
+
+        var <portlet:namespace />createContactURL = function(contact) {
+            var portletURL = new Liferay.PortletURL.createRenderURL();
+            portletURL.setParameter('mvcPath', '/contacts_center/edit_entry.jsp');
+            portletURL.setParameter('redirect', contact.redirect);
+            portletURL.setParameter('entryId', contact.entryId);
+            portletURL.setPortletId('1_WAR_contactsportlet');
+            portletURL.setWindowState('EXCLUSIVE');
+            return portletURL.toString();
+        }
+
+    Example 2 (after refactoring):
+
+        <liferay-portlet:renderURL portletName="1_WAR_contactsportlet" var="displayHelpURL" windowState="exclusive">
+            <portlet:param name="mvcPath" value="/contacts_center/edit_entry.jsp" />
+        </liferay-portlet:renderURL>
+
+        var <portlet:namespace />createContactURL = function(contact) {
+            var portletURL = '<%= displayHelpURL %>';
+            }
+            var namespace = Liferay.Util.getPortletNamespace('1_WAR_contactsportlet');
+            AUI().Object.each(
+                {
+                    redirect: contact.redirect,
+                    entryId: contact.entryId
+                },
+                function(item, index, collection) {
+                    if (item) {
+                        portletURL = portletURL + '&' + namespace + encodeURIComponent(index) + '=' + encodeURIComponent(item);
+                    }
+                }
+            );
+            return portletURL;
+        }
+
+    In example 2, the code uses the `<liferay-portlet:renderURL />` tag to avoid
+    using the `Liferay.PortletURL` object. Note that in example 2, the
+    `namespace` for every parameter was added manually. 
+
+3. Set the property `portlet.url.struts.action.enabled` to `false`. This ensures
+   that everything works as in Liferay 6.2.0 M5 and previous versions of
+   Liferay, but it presents the security risk described in
+   [LPS-34098](https://issues.liferay.com/browse/LPS-34098). Avoid using this
+   method, if possible. 
+
 Next, let's learn how to use Liferay's asset framework. 
 
 ## Asset Framework [](id=asset-framework-liferay-portal-6-2-dev-guide-06-en)
 
-Liferay's asset framework is a system that allow you to add common functionality
-to your application. For example, you might build an event management
-application that shows a list of upcoming events. It might be nice to be able to
-tag or categorize those events to provide users with metadata describing more
-about them. Or you might want to let users comment on events. 
+Liferay's asset framework is a system that allows you to add common
+functionality to your application. For example, you might build an event
+management application that shows a list of upcoming events. It might be nice to
+be able to tag or categorize those events to provide users with metadata
+describing more about them. Or you might want to let users comment on events. 
 
 This common functionality is what Liferay's asset framework gives you. Using the
 power of Liferay's built-in message boards, tags, and categories, Liferay lets
@@ -2594,10 +2740,11 @@ conceivablly salvage it by making it into a purchase request application:
 Departments have to enter purchase requests, and the message bus automatically
 emails certain departments when a purchase request is entered. -Rich -->
 
-Jungle Gyms R-Us could use Liferay's Workflow with Kaleo to resolve the
-communication breakdown, but we'll resolve the Jungle Gym's communication woes
-using Message Bus, to show you how it works. Here are the inter-department
-message exchanges we'll accommodate:
+Jungle Gyms R-Us could use Liferay's [Workflow with
+Kaleo](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/kaleo-forms-defining-business-processes-liferay-portal-6-2-user-guide-12-en)
+to resolve the communication breakdown, but we'll resolve the Jungle Gym's
+communication woes using Message Bus, to show you how it works. Here are the
+inter-department message exchanges we'll accommodate:
 
  Message | Sender | Listener | Response | Response Listeners |
 -------- | ------ | -------- | -------- | ------------------ |
@@ -3296,9 +3443,6 @@ API. Check back regularly to find more detailed descriptions of current
 frameworks. You might also discover brand new frameworks that'll knock your
 socks off, or at least simplify your custom portlet development. 
 
-<!-- Reinstate transition into Workflow chapter when Kaleo is ready for EE 6.2.
-- Jim
-
 Not only does Liferay Portal boast of fabulous frameworks but also of its
 unwavering support of workflow development. Naturally, privileged portal users
 can create workflows right in portal. But as workflows incorporate API calls and
@@ -3311,4 +3455,3 @@ you also get access to an optimal development environment to work with Java APIs
 and FreeMarker templates. You're going to love building your workflows in Kaleo
 Designer for Java. Get ready to drop in and make waves with your workflows.
 Cowabunga! 
--->

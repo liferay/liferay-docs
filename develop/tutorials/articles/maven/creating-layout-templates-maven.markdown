@@ -1,4 +1,4 @@
-# Developing Liferay Layout Template Plugins with Maven [](id=developing-liferay-layout-template-plugins-with-mav-lp-6-2-develop-tutorial)
+# Developing Liferay Layout Template Plugins with Maven [](id=developing-liferay-layout-template-plugins-with-mav)
 
 You can create layout templates to customize the display of portlets on your
 page and to embed commonly used portlets. The introduction to the themes
@@ -19,27 +19,27 @@ the angels named Lenore II--"
 In memory of the late, now crispy Lenore II, it's time to create a layout
 template plugin with Maven.
 
-## Creating a Layout Template Plugin
+## Creating a Layout Template Plugin [](id=creating-a-layout-template-plugin)
 
 To create a Liferay layout template plugin project, follow the
-[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial)
+[Creating Liferay Maven Plugins from Liferay IDE](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial or the 
-[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial)
+[Creating Liferay Maven Plugins from the Command Line](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Layout Template* as the plugin type. 
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Tip**: If you're using Maven's
+**Tip**: If you're using Maven's
 Archetype command line tool to generate your layout template project, you can
 filter on group ID `liferay`, or even group ID / artifact ID combination
 `liferay:layout`, to find the Liferay layout template archetypes.
 
----
+$$$
 
 Since it's helpful to familiarize yourself with the Liferay layout template
 plugin project's anatomy, that topic is covered next. 
 
-## Anatomy
+## Anatomy [](id=anatomy)
 
 A layout template project created from the
 `com.liferay.maven.archetypes:liferay-layouttpl-archetype` has the following
@@ -66,12 +66,13 @@ following table illustrates this difference:
 Location   | Maven project     | Plugins SDK project |
 ---------- | ----------------- | ------------------- |
 Web source | `src/main/webapp` | `docroot` |
+---
 
 You've passed your trial by fire (your new cat, Lenore III, thanks you),
 developing yet another plugin type with Maven. Way to go!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/deploying-liferay-plugins-with-maven-lp-6-2-develop-tutorial)
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 
 <!-- Add link to Layout Templates tutorial. Jim -->

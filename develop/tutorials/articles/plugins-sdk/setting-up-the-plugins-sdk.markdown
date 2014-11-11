@@ -1,19 +1,19 @@
-# Setting Up the Plugins SDK [](id=setting-up-the-plugins-sdk-lp-6-2-develop-tutorial)
+# Setting Up the Plugins SDK [](id=setting-up-the-plugins-sdk)
 
 This tutorial explains how to install and configure the Liferay Plugins SDK and
 its dependencies. 
 
 The Plugins SDK requires Liferay Portal. If you haven't already installed a
 Liferay bundle, follow the instructions in the
-[Installation and Setup](/use/-/knowledge_base/installation-and-setup-lp-6-2-use-useportal)
-chapter of *Using Liferay Portal 6.2*. Many people use the Tomcat bundle for
+[Installation and Setup](/discover/deployment/-/knowledge_base/6-2/installation-and-setup)
+chapter of the *Deployment* guide. Many people use the Tomcat bundle for
 development, as it's small, fast, and takes up fewer resources than most other
 servlet containers. Although you can use any application server supported by
 Liferay Portal for development, our examples use the Tomcat bundle. 
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** In Liferay Developer Studio,
+**Note:** In Liferay Developer Studio,
 the SDK is already installed and ready to use. Liferay Portal Enterprise
 Edition (EE) comes with Liferay Developer Studio and much more (see
 [CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)).
@@ -21,7 +21,7 @@ Download a
 [free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
 of Liferay Portal EE today. 
 
----
+$$$
 
 To install the Plugins SDK, follow these steps:
 
@@ -48,9 +48,9 @@ To install the Plugins SDK, follow these steps:
     your `C:\` drive in order for Service Builder to be able to run
     successfully. 
 
----
++$$$
 
-![Tip](../../images/tip-pen-paper.png) **Tip**: By default, Liferay Portal
+**Tip**: By default, Liferay Portal
 Community Edition comes bundled with many plugins. It's common to remove them to
 optimize the server's startup time. Just navigate to the
 `liferay-portal-[version]/tomcat-[tomcat-version]/webapps` directory and remove
@@ -59,7 +59,7 @@ application itself. Also, don't delete `marketplace-portlet` since you can use
 the Marketplace portlet to download any plugins that you decide to use in the
 future. 
 
----
+$$$
 
 Building projects in the Plugins SDK requires that you install Ant (version 1.7
 or higher) on your machine. Download the latest version of Ant from
