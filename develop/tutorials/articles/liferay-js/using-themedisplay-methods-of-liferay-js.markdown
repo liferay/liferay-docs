@@ -10,7 +10,7 @@ you through the liferay.js object, and how you can apply them to your app.
 
 ## Retrieving Ids
 
-Using the ThemeDisplay methods below, you can quickly get the object you need: 
+Using the ThemeDisplay methods below, you can quickly get the id object you need: 
 
 **getCompanyId:** Returns the company id of the user, written as
 `Liferay.ThemeDisplay.getCompanyId()`.
@@ -28,7 +28,7 @@ Using the ThemeDisplay methods below, you can quickly get the object you need:
 `Liferay.ThemeDisplay.getUserName()`.
 
 Now that you know how to retrieve id objects using JavaScript, you can learn how
-to get relative file paths next.
+to get file paths next.
 
 ## Retrieving File Paths
 
@@ -75,5 +75,10 @@ tutorial:
     }
     
 The example above alerts the user with a personalized greeting if they're signed 
-in, otherwise it defaults to a guest greeting. Although this example is very 
-basic, it gives you an idea of how powerful the ThemeDisplay module is.
+in, otherwise it defaults to a guest greeting. Although this example is a basic 
+one, it shows how you can easily define unique user experiences with the
+liferay.js ThemeDisplay module.
+
+## Related Topics
+
+[Using the Browser Methods of the Liferay JS Object](/develop/tutorials/-/knowledge_base/6-2/using-browser-methods-of-liferay-js)
