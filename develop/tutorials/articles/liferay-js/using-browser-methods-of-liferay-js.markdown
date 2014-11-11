@@ -14,8 +14,8 @@ user is on next.
 
 ## Determining the Browser and Version
 
-The following methods return boolean values that determine what browser the user 
-has:
+The following methods return boolean values that determine which browser the 
+user is currently on:
 
 **isChrome:** Returns `true` if the browser is Chrome, written as
 `Liferay.Browser.isChrome()`.
@@ -86,3 +86,7 @@ via the click event of a button:
 
 As you can see, using a combination of the methods above, you can easily cater 
 your app to the user's browser and platform.
+
+## Related Topics
+
+[Using the ThemeDisplay methods of the Liferay JS Object](/develop/tutorials/-/knowledge_base/6-2/using-themedisplay-methods-of-liferay-js)
