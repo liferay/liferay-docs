@@ -46,6 +46,16 @@ public class ConcatMarkdown extends Task {
 								
 						}
 						
+						if (line.contains("+$")) {
+							
+							line = "+sidebar";
+						}
+						
+						if (line.contains("$$")) {
+							
+							line = "-sidebar";
+						}
+						
 						book = book + line + "\n";
 						count = count + 1;
 					}
