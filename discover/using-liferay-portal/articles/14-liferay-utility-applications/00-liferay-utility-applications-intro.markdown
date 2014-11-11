@@ -14,6 +14,7 @@ customers. In this chapter we'll discuss following applications:
 - Knowledge Base
 - Akismet
 - Weather
+- OAuth
 
 Liferay's Bookmarks application is a simple way for users to keep track of URLs
 in the portal that can also be used by an administrator to publish relevant
