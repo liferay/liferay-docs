@@ -32,12 +32,6 @@ Liferay plugin archetype available in Maven Central adds the
 liferay-maven-plugin to the the build plugin configuration section of the
 project's `pom.xml`. Note that most of the Liferay Maven plugins are just `.war`
 packages with the liferay-maven-plugin added to their configuration sections. 
-<!-- I'm not sure what this last sentence means, or how it relates to the rest 
-of the content in this paragraph. -Nick -->
-<!-- It seems to just be an aside. But let's keep it as the WAR packaging is mentioned later. Jim-->
-
-<!-- Are m2e-liferay and liferay-maven-plugins the same thing? -Nick -->
-<!-- I think m2e-liferay includes liferay-maven-plugins. - Jim -->
 
 To support these projects in Liferay IDE, a mechanism is needed for the IDE to
 recognize them as Liferay IDE projects. Non-Maven Liferay IDE projects are
@@ -47,9 +41,6 @@ simply faceted projects with the web facet installed. To get *Liferay Maven*
 plugin projects recognized by Eclipse and working with the rest of its JEE
 tooling, the projects must be faceted as flexible web projects. The m2e-liferay
 plugin in concert with the following Eclipse plugins meet these requirements. 
-<!-- Is a "flexible web project" the same thing as a "faceted web project"? 
--Nick -->
-<!-- They seem different. It seems that a flexible web project is a Maven web project. Jim -->
 
 - m2e-core: Maven integration for Eclipse
 - m2e-wtp: Maven integration for WTP
@@ -61,10 +52,6 @@ m2e-wtp plugin enables projects to be recognized as flexible web projects. This
 m2e-wtp plugin provides project configuration mapping between the `.war` package
 type the POMs in the Maven model and the flexible web project support in
 Eclipse. 
-<!-- What is "...abstract project configuration framework for adopters"? Is 
-"adopters" supposed to be "adapters", or does it just refer to people using 
-m2e-core? -Nick -->
-<!-- I think it supposed to be "adapters". - Jim -->
 
 With these Eclipse plugins in place, there's just one piece remaining to make
 Liferay Maven projects first-class citizens in Eclipse. The m2e-core plugin
@@ -78,8 +65,6 @@ integration to make sure that Liferay Maven projects are handled properly in the
 Eclipse build lifecycle. For example, m2e-liferay makes sure that the Liferay
 Maven goal *liferay:build-css* is called when Eclipse deploys a Liferay theme
 plugin. Other Liferay Maven goals are similarly enabled by m2e-liferay. 
-<!-- What are "liferay-maven-plugin mojos", and why are they being discussed 
-here? -Nick -->
 
 Now that you know the details of what the m2e-liferay plugin provides, you can
 appreciate how it facilitates developing Liferay Maven plugin projects in
