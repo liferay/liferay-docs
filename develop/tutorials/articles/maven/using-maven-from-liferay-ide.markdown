@@ -72,8 +72,8 @@ Now that your Liferay IDE is Maven-ready, you can examine the anatomy of a
 Liferay Maven project. Note, you don't need to have an existing Liferay Maven
 project to continue. However, if you'd like to create a new Liferay Maven
 portlet project in the IDE before proceeding, you can do so by following
-instructions in the the tutorial [Creating Liferay Portlets with
-Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-liferay-portlets-with-maven).
+instructions in the the tutorial
+[Developing Liferay Portlets with Maven](/tutorials/-/knowledge_base/6-2/creating-liferay-portlets-with-maven).
 Alternatively, you can import an existing Maven project by navigating to *File*
 &rarr; *Import* &rarr; *Maven* and selecting the location of Maven project's
 source code. 
@@ -163,8 +163,8 @@ parent `pom.xml` overrides the user `settings.xml` file, and the user
 
 Note that if a *profile* is active from your user `settings.xml`, its values 
 override your properties in a POM. If you'd like to specify the properties in a
-POM, see the [Using Maven Parent Plugin
-Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/using-maven-parent-plugin-projects)
+POM, see the
+[Using Liferay Maven Parent Plugin Projects](/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects)
 tutorial for more details. 
 
 Here's an example of what a Maven profile looks like inside the `settings.xml`
