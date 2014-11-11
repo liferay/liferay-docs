@@ -1527,24 +1527,24 @@ between Celsius and Fahrenheit.
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
-Liferay's OAuth app authorizes third-party applications to interact with a
+Liferay's OAuth utility authorizes third-party applications to interact with a
 user's resources. It's available as an app from Liferay Marketplace. Let's say
 you're hosting Liferay Portal and have users and customers coming to your web
 site. You want them to have access to a third party resource, like Twitter, and
 be able to access their accounts from your site. In the past, they would have to
 provide their Twitter user names and passwords, but not if you use OAuth.
-Therefore, a popular characterization for the OAuth client is the "valet key for
+For this reason, a popular characterization for the OAuth client is the "valet key for
 your web services."
 
-OAuth is a "handshake mechanism" where, instead of requiring personal
+OAuth is a handshake mechanism where, instead of asking for personal
 information, Liferay redirects users to a service provider like Twitter, where
 they can tell Twitter to allow Liferay limited access to their accounts. This
 example is similar to our earlier "valet key" characterization. You wouldn't
 want a valet driver opening your glove box, storage spaces, hood, and other
-personal compartments within your vehicle. You would only want him or her to
-access things he or she needs to park your car. OAuth is based on this same
-idea: it allows a site just enough information to do what it needs and nothing
-more. This assures the user that their personal information is safe but gives
+personal compartments in your vehicle. You would only want the valet to
+access what is necessary to park your car. OAuth is based on this same
+idea: it gives a site just enough information to do what it needs and nothing
+more. This assures users that their personal information is safe, but gives
 them freedom to take advantage of valuable resources they typically use from the
 service provider's site.
 
@@ -1560,10 +1560,10 @@ options:
 
 **Description:** the short description that is attached to your application
 
-**Website URL:** the URL your application is associated with
+**Website URL:** your application's URL
 
-**Callback URI:** the URI where the login provider must redirect after
-authentication is complete
+**Callback URI:** the URI where users are redirected after authentication is
+complete
 
 **Access Level:** select the *Read* or *Write* access level. For the *Read*
 access level, the user can only view the application's contents, but not modify
@@ -1580,19 +1580,17 @@ value the application uses to establish ownership of the consumer key.
 
 Take note of your application credentials; you'll need them when configuring
 your application with OAuth. To learn how to configure an application with
-OAuth, visit the [Liferay Developer's
-Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
-Once you have your application configured with OAuth, visit the next section to
+OAuth, visit the [Liferay Developer's Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
+Once you have your application configured to use OAuth, visit the next section to
 begin authorizing requests via OAuth. 
 
 <!-- Add link to Dev Guide OAuth section when available -->
 
 ### Authorizing Requests via OAuth
 
-Once you have your application configured with OAuth, you can place your
-application on a page and test out the process. Before we show a brief example
-of authorizing a request via OAuth, let's give a basic synopsis of what's going
-on during the authorization process.
+Once you have your application configured to use OAuth, you can place your
+application on a page and test out the process. Here is a basic synopsis of
+what's happening during the authorization process.
 
 The app you registered in the previous section and configured with the consumer
 key and secret in the Developer's Guide is characterized as a service provider.
