@@ -1,4 +1,4 @@
-# Setting Up Existing Liferay Maven Plugin Projects in Liferay IDE
+# Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects in Liferay IDE [](id=setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects-i)
 
 Liferay Maven plugin projects created with Liferay IDE (2.0 Milestone 1 and
 newer) are Liferay IDE projects that have all of the required Liferay facets,
@@ -18,7 +18,7 @@ then you'll enjoy the next section. You can otherwise skip ahead to the section
 after it to learn how to set up your older Liferay Maven projects to use the
 Liferay Maven facets. 
 
-## Understanding Facets for Liferay Maven Plugin Projects
+## Understanding Facets for Liferay Maven Plugin Projects [](id=understanding-facets-for-liferay-maven-plugin-projects)
 
 Beginning with version 2.0 Milestone 1, Liferay IDE supports Liferay Maven
 projects that use the m2e-liferay Eclipse plugin. Specifically, Liferay IDE
@@ -84,64 +84,72 @@ here? -Nick -->
 Now that you know the details of what the m2e-liferay plugin provides, you can
 appreciate how it facilitates developing Liferay Maven plugin projects in
 Liferay IDE. In the next section, you'll learn how to set up your existing
-Liferay Maven plugin projects to use the m2e-liferay plugin.
+Liferay Maven plugin projects to use the m2e-liferay plugin for Maven lifecycle
+mapping. 
 
-## Verifying Maven Lifecycle Mapping
+## Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects [](id=setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)
 
-Making sure that your project has the correct Maven lifecycle mapping is simple. 
-Just right-click your project and select *Properties*. In the window that 
-appears, open the *Maven* section on the left and then click 
+Making sure that your project has the correct facets and Liferay Maven lifecycle
+mapping is simple. Just right-click your project and select *Properties*. In the
+window that appears, open the *Maven* section on the left and then click
 *Lifecycle Mapping*. 
 
 ![Figure 1: The lifecycle mapping for this Liferay Maven project is correct.](../../images/maven-lifecycle-mapping-correct.png)
 
-If the lifecycle mapping is correct, the liferay:build-css item should have a 
-green checkmark next to it. The Mapping and Source fields for liferay:build-css 
-should also contain configurator and extension, respectively. If the lifecycle 
-mapping isn't correct, then install the `m2e-liferay` plugin using the 
-instructions contained in the tutorial [Using Maven from Liferay IDE](/tutorials/-/knowledge_base/using-maven-from-liferay-ide). 
-Next, you'll learn how to install the `m2e-liferay` plugin when importing a 
-Maven project that has Liferay properties. 
+If the lifecycle mapping is correct, the liferay:build-css item has a green
+checkmark next to it. The Mapping and Source fields for liferay:build-css should
+also contain configurator and extension, respectively. If the lifecycle mapping
+isn't correct, then you can install the `m2e-liferay` plugin following the
+instructions contained in the tutorial
+[Using Maven from Liferay IDE](/tutorials/-/knowledge_base/using-maven-from-liferay-ide). 
+If you have an existing Liferay Maven plugin project that you'd like to import
+into Liferay IDE, the next section explains how to install the `m2e-liferay`
+plugin during the import process. 
 
-## Importing a Liferay Maven Project that has Liferay Properties
+### Installing the m2e-liferay Plugin on Importing a Liferay Maven Plugin Project [](id=installing-the-m2e-liferay-plugin-on-importing-a-liferay-maven-plugin-proje)
 
-Importing and installing the `m2e-liferay` plugin is very straightforward when 
-importing a Liferay Maven project that contains Liferay properties. The plugin 
-installer launches immediately after you specify the project to import, 
-effectively combining these two processes. To begin, select 
-*File* &rarr; *Import* in Liferay IDE. Then open the *Maven* section in the 
-window that appears, select *Existing Maven Projects*, and click *Next*. 
+Importing and installing the `m2e-liferay` plugin is straightforward when
+importing a Liferay Maven project that contains all of the required Liferay
+Maven properties. The plugin installer launches immediately after you specify
+the project to import, effectively combining these two processes. To begin,
+select *File* &rarr; *Import* in Liferay IDE. Then open the *Maven* section in
+the window that appears, select *Existing Maven Projects*, and click *Next*. 
 
 ![Figure 2: The first step in importing an existing Liferay Maven project.](../../images/maven-ide-import-01.png)
 
-The next step is to specify the project to import. First, select the location of 
-the project in the *Root Directory* field. Once you select a project its 
-`pom.xml` appears in the Projects field. Make sure that the checkbox next to the 
-`pom.xml` is checked. Note that the example here imports the project 
-`maven-test`. Since the Liferay properties of this project are contained in a 
-profile in the `pom.xml`, the profile must be specified in the Profiles field of 
-the Advanced section. You don't need to specify a profile here if the Liferay 
-properties are contained elsewhere in the project. For example, if the Liferay 
-properties are specified for the whole project in a `<properties>` tag in the 
-`pom.xml`, then you don't need to put anything in the Advanced section. Click 
+The next step is to specify the project to import. First, select the location of
+the project in the *Root Directory* field. Once you select a project its
+`pom.xml` appears in the Projects field. Make sure that the checkbox next to the
+`pom.xml` is checked. Note that the example here imports the project
+`maven-test`. Since the Liferay properties of this project are contained in a
+profile in the `pom.xml`, the profile must be specified in the Profiles field of
+the Advanced section. You don't need to specify a profile here if the Liferay
+properties are contained elsewhere in the project. For example, if the Liferay
+properties are specified for the whole project in a `<properties>` tag in the
+`pom.xml`, then you don't need to put anything in the Advanced section. Click
 *Finish* when you're done here. 
 
 ![Figure 3: Specify the Liferay Maven project that you want to import and click *Finish*.](../../images/maven-ide-import-02.png)
 
 Now comes the magical part! Liferay IDE detects that you don't have the correct 
 lifecycle mappings for the project you're importing and suggests an action; 
-install Maven integration for Liferay IDE (the `m2e-liferay` plugin). Click 
-*Finish* to move to the next step. 
+install Maven integration for Liferay IDE (the `m2e-liferay` plugin).
+
+If at this point, the Setup Maven plugin connectors dialog displays a green
+check mark before each of the Maven build goals listed in the table, you can
+proceed to setup the Maven plugin connectors by clicking *Finish* and continuing
+to the next step. If a red check mark precedes any of the Maven build goals
+however, then you can resolve them by continuing to the next section. 
 
 ![Figure 4: Click *Finish* to launch the installer for Maven integration in Liferay IDE.](../../images/maven-ide-import-03.png)
 
-The next set of steps takes you through the installation process for the 
-`m2e-liferay` plugin. First, make sure that the checkbox for the `m2e-liferay` 
-plugin is checked and then click *Next*. This takes you to the window that lets 
-you review the items you've marked for installation. Verify that the 
-`m2e-liferay` plugin is listed and click *Next*. The final window presents you 
-with the license agreements. Select the radio button to accept the license 
-agreements and click *Finish*. The following sequence of screenshots shows these 
+The next set of steps takes you through the installation process for the
+`m2e-liferay` plugin. First, make sure that the checkbox for the `m2e-liferay`
+plugin is checked and then click *Next*. This takes you to the window that lets
+you review the items you've marked for installation. Verify that the
+`m2e-liferay` plugin is listed and click *Next*. The final window presents you
+with the license agreements. Select the radio button to accept the license
+agreements and click *Finish*. The following sequence of screenshots shows these
 steps: 
 
 ![Figure 5: The first step of the installer lets you select the `m2e-liferay` plugin for installation.](../../images/maven-ide-m2e-install-01.png)
@@ -152,11 +160,14 @@ steps:
 
 Upon clicking Finish, the `m2e-liferay` plugin downloads and installs. Note that 
 this may take a few minutes to complete. When the installation is complete, 
-you're prompted to restart Eclipse. Restart Eclipse and you're all set! Next, 
-you'll learn how to import a Liferay Maven project that doesn't have Liferay 
-properties. 
+you're prompted to restart Eclipse. Restart Eclipse and you're all set! 
 
-## Importing a Liferay Maven Project that is Missing Liferay Properties
+As mentioned during the Maven plugin connector installation part of this
+section, if the wizard detected missing Liferay properties, you can follow the
+instructions in the next section to resolve those missing properties on
+importing your Liferay Maven project. 
+
+### Importing a Liferay Maven Project that is Missing Liferay Properties [](id=importing-a-liferay-maven-project-that-is-missing-liferay-properties)
 
 What if the project that you want to import doesn't contain Liferay properties? 
 No sweat! Liferay IDE still has you covered. The initial import steps are the 
@@ -170,20 +181,20 @@ resolve this in the following steps. Click *OK* to move on.
 
 ![Figure 8: The error occurs because Liferay IDE can't find the correct plugin connectors.](../../images/maven-ide-no-props-01.png)
 
-As indicated in the previous dialog box, the project imports but it contains 
-errors. To resolve this you need to download and install the `m2e-liferay` 
-plugin. First, open the Liferay IDE preferences by selecting 
-*Window* &rarr; *Preferences*. Then open the *Maven* section on the left, select 
-*Discovery*, and click the *Open Catalog* button. This opens the catalog of 
-plugins that can be installed for Maven. 
+As indicated in the previous dialog box, the project imports but it contains
+errors. To resolve this you need to download and install the `m2e-liferay`
+plugin. First, open the Liferay IDE preferences by selecting *Window* &rarr;
+*Preferences*. Then open the *Maven* section on the left, select *Discovery*,
+and click the *Open Catalog* button. This opens the catalog of plugins that can
+be installed for Maven. 
 
 ![Figure 9: In Preferences, open the plugin catalog for Maven.](../../images/maven-ide-no-props-02.png)
 
-Now just scroll down in the catalog, check the checkbox for 
-*m2e connector for liferay-maven-plugin*, and click *Finish*. This launches the 
-installer for the `m2e-liferay` plugin. The steps in the installer are identical 
-to those in the previous section. Once the installation completes and Liferay 
-IDE restarts, the error in your imported project is gone! 
+Now just scroll down in the catalog, check the checkbox for *m2e connector for
+liferay-maven-plugin*, and click *Finish*. This launches the installer for the
+`m2e-liferay` plugin. The steps in the installer are identical to those in the
+previous section. Once the installation completes and Liferay IDE restarts, the
+error in your imported project is gone!
 
 ![Figure 10: Select the `m2e-liferay` plugin for installation and click *Finish* to launch the installer.](../../images/maven-ide-no-props-03.png)
 
@@ -191,7 +202,7 @@ Great! Now you know how to resolve lifecycle mapping errors for Liferay Maven
 projects in Liferay IDE. Just remember that it's the `m2e-liferay` plugin that 
 takes care of the Maven lifecycle mapping. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Developing Plugins with Liferay IDE](/tutorials/-/knowledge_base/liferay-ide)
 
