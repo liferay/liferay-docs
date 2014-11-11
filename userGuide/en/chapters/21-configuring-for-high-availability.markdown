@@ -1527,8 +1527,8 @@ consider five different scenarios.
 
 - Scenario 4: The portal administrator overrides the default cache configuration
   files and sets `cluster.link.enabled=true` and
-  `ehcache.cluster.link.replication=true`. In this case, Liferay uses Cluster
-  Link based replication for any caches configured with the
+  `ehcache.cluster.link.replication.enabled=true`. In this case, Liferay uses
+  Cluster Link based replication for any caches configured with the
   LiferayCacheEventListenerFactory classs. If the portal administrator
   configured a different CacheEventListener class for a specific cache (e.g.,
   JGroups), then Liferay uses that listener class. This a basically a hybrid
@@ -1814,11 +1814,6 @@ to Liferay's properties to help increase performance.
 There are also some changes you can make to your `portal-ext.properties` file
 once you are in a production environment.
 
-Set the following to false to disable checking the last modified date on server
-side CSS and JavaScript.
-
-    last.modified.check=false
-
 Set this property to true to load the theme's merged CSS files for faster
 loading for production. By default it is set to false for easier debugging for
 development. You can also disable fast loading by setting the URL parameter
@@ -1964,7 +1959,7 @@ second. We've seen some tips for tuning Liferay Portal, and we have to keep in
 mind the adage about tuning: load test and profile, tune, repeat.
 
 Configuring a Content Delivery Network is also advantageous when you want to 
-increase your portal's performace. By accessing static resources from a local 
+increase your portal's performance. By accessing static resources from a local 
 server, latency time and your application server's load are drastically reduced. 
 
 In all, Liferay Portal gives you all the options you need to build a

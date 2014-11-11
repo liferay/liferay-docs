@@ -1662,19 +1662,36 @@ Now you're ready to deploy Liferay Portal.
 
 2. Unzip the Liferay `.war` file into the `ROOT.war` folder.
 
-3. To trigger deployment of `ROOT.war`, create an empty file named
+3. In the `ROOT.war` file, open the `WEB-INF/jboss-deployment-structure.xml`
+   file. In this file, replace the `<module name="com.liferay.portal" />`
+   dependency with the following: 
+
+        <module meta-inf="export" name="com.liferay.portal">
+            <imports>
+                <include path="META-INF" />
+            </imports>
+        </module>
+
+    This allows OSGi plugins like Audience Targeting to work properly by
+    exposing the Portal API through the OSGi container. 
+
+4. In the same `jboss-deployment-structure.xml` file, find the
+   `<jboss-deployment-structure>` tag and update the `1.0` number within the
+   `xmlns` attribute to `1.1`. 
+
+5. To trigger deployment of `ROOT.war`, create an empty file named
    `ROOT.war.dodeploy` in  your `$JBOSS_HOME/standalone/deployments/` folder.
    On startup, JBoss detects the presence of this file and deploys it as a web
    application.
 
-4. Remove `eclipselink.jar` from
+6. Remove `eclipselink.jar` from
    `$JBOSS_HOME/standalone/deployments/ROOT.war/WEB-INF/lib` to assure the
    Hibernate persistence provider is used instead of the one provided in the
    `eclipselink.jar`.
 
     Now it's time to start Liferay Portal on JBoss!
 
-5.  Start the JBoss application server.
+7.  Start the JBoss application server.
  
 Now you are truly *the boss* when it comes to deploying Liferay Portal on JBoss!
 
@@ -1711,7 +1728,13 @@ database. You can get the necessary dependencies by following these steps:
 `liferay-portal-dependencies-6.2` directory after you extract them, copy them
 into `$TOMCAT_HOME/lib/ext` and delete the empty folder.
 
-3. Next, you need a few third party `.jar` files which are included as part of the
+3. Download the `support-tomcat.jar` file from
+   [http://search.maven.org/#artifactdetails|com.liferay.portal|support-tomcat|6.2.1|jar](http://search.maven.org/#artifactdetails|com.liferay.portal|support-tomcat|6.2.1|jar)
+   and copy it into your `$TOMCAT_HOME/lib/ext` directory. This `JAR` provides
+   classes that extend some Tomcat-specific classes in order to support
+   Liferay's runtime.
+
+4. Next, you need a few third party `.jar` files which are included as part of the
    Liferay source distribution, but are not automatically included with Tomcat.
    You'll have to download them yourself, so let's get started. Place these
    `.jar` files into `$TOMCAT_HOME/lib/ext`:
@@ -1724,13 +1747,13 @@ into `$TOMCAT_HOME/lib/ext` and delete the empty folder.
       to download it from
             [http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
 
-4. Make sure the JDBC driver for your database is accessible by Tomcat. In the
+5. Make sure the JDBC driver for your database is accessible by Tomcat. In the
 case of MySQL, use `mysql-connector-java-{$version}-bin.jar`. You can download
 the latest MySQL JDBC driver from
 [http://dev.mysql.com/downloads/connector/j/](http://dev.mysql.com/downloads/connector/j/).
 Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
 
-5. There are a few other JARs that come with a typical Liferay bundle that you
+6. There are a few other JARs that come with a typical Liferay bundle that you
    might want to download and place in your `$TOMCAT_HOME/lib/ext` folder. They
    include the following:
 
@@ -1745,8 +1768,8 @@ Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
     - `junit.jar`: You can get this `.jar` from 
         [http://sourceforge.net/projects/junit/](http://sourceforge.net/projects/junit/)
 
-    You can download each third partry `.jar` listed above from the provided
-    websites, then place them into your `%TOMCAT_HOME/lib/ext` directory.  However,
+    You can download each third party `.jar` listed above from the provided
+    websites, then place them into your `%TOMCAT_HOME/lib/ext` directory. However,
     they're also available in the Liferay source code, so if you have access to the
     Liferay source or would like to download it for this purpose, feel free to copy
     the `.jar` files from there. If we refer to your local Liferay source

@@ -1,4 +1,4 @@
-# Creating Plugins to Share Structures, Templates, and More [](id=creating-a-plugin-to-share-templates-str-liferay-portal-6-2-dev-guide-03-en)
+# Creating Plugins to Share Structures, Templates, and More [](id=creating-plugins-to-share-structures-templates-and-more)
 
 Have you ever wanted to share page templates with other users? Are colleagues
 and clients banging at your door to get hold of the structures and templates you
@@ -163,7 +163,7 @@ content, please take the following steps:
 
 The figure below shows some of the ADTs that were imported.
 
-![Figure x: The Templates Importer allows users to import all kinds of structures and templates, such as these application display templates.](../../images/templates-importer-adts.png)
+![Figure 1: The Templates Importer allows users to import all kinds of structures and templates, such as these application display templates.](../../images/templates-importer-adts.png)
 
 As you take a look around the folders and files within the plugin's
 `templates-importer` folder, notice the different kinds of templates and
@@ -241,13 +241,13 @@ Lastly, you can also specify portlet preferences for each portlet using the
  useful to import web content articles along with a page template that
  references the articles, in a nested Web Content Display portlet. For more
  information on importing resources, see
- [Importing Resources with Your Themes](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en).
+ [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
 
 $$$
 
 The figure below, shows a page created using the Page 3 template.
 
-![Figure x: Users can create pages, like this one, prepopulated with portlets and content that you've specified in your plugins, that leverage the Templates Importer.](../../images/templates-importer-page-3-template.png)
+![Figure 2: Users can create pages, like this one, prepopulated with portlets and content that you've specified in your plugins, that leverage the Templates Importer.](../../images/templates-importer-page-3-template.png)
 
 Now that you've learned about the directory structure for your templates and the
 JSON file for the page templates, it's time to learn how to put template and

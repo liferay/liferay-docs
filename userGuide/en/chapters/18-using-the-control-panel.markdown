@@ -154,7 +154,7 @@ interfaces for setting up user authentication using the following services:
 - LDAP
 - CAS
 - Facebook
-- NTML
+- NTLM
 - OpenId
 - Open SSO
 - SiteMinder

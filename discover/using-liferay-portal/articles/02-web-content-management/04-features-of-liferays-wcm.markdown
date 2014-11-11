@@ -169,6 +169,14 @@ can also create tags to make the content easier to find in a search. Note that
 these categories are defined by a property in the properties file; see the
 `journal.article.types` property in chapter 20 for further information. 
 
++$$$
+
+**Note:** The Web Content Type portlet, located within the Categorization menu,
+is deprecated for Liferay 6.2 and will be removed in Liferay 7.0. The portlet
+will be migrated to a vocabulary with categories. 
+
+$$$
+
 **Schedule:** customizes the date and time your content publishes and/or
 expires.
 
