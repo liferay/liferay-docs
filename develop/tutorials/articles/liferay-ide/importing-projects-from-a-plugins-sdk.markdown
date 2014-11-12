@@ -104,5 +104,7 @@ Congratulations on importing *multiple* Liferay projects into your workspace!
 
 [Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/6-2/verifying-successful-project-import)
 
+[Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)
+
 [Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 

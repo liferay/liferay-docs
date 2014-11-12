@@ -232,3 +232,11 @@ The figure below, shows the `pom.xml` file editor and its modes.
 
 By taking advantage of these interactive modes, modifying and organizing your
 POM and its dependencies has never been easier!
+
+## Related Topics [](id=related-topics)
+
+[Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
+
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
+
+[Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)
