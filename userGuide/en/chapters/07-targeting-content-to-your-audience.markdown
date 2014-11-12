@@ -43,6 +43,33 @@ of the Site Administration area of the Control Panel to manage user segments and
 campaigns. Then we'll explain how to use each of Audience Targeting
 applications and the Audience Targeting Simulator.
 
+## Installation and Uninstallation
+
+The easiest way to install the Audience Targeting app is via [Liferay Marketplace](http://www.liferay.com/marketplace).
+Make sure to install the correct version of the app. Choose
+[CE](https://www.liferay.com/marketplace/-/mp/application/43707761) if you're
+running Liferay CE and
+[EE](https://www.liferay.com/marketplace/-/mp/application/43707691) if you're
+running Liferay EE.
+
+If you're running Liferay on JBoss, make sure to have your
+`jboss-deployment-structure.xml` file configured correctly. See the [Installing Liferay on JBoss](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-jboss-7-1)
+instructions for details.
+
+If you're running Liferay on Weblogic, note that the Audience Targeting app is
+only supported on Liferay 6.2 EE SP10 and above.
+
+If you can't uninstall the Audience Targeting app via Marketplace or you want to
+manually uninstall it, follow these steps:
+
+1. Delete your `[Liferay Home]/data/osgi` folder.
+
+2. Delete your app server's `work` and `temp` directories. E.g.., if you're
+   running Liferay on Tomcat, delete your `[Liferay Home]/tomcat-[version]/work`
+   and `[Liferay Home]/tomcat-[version]/temp` folders.
+
+3. Restart your app server.
+
 ## Managing User Segments [](id=managing-user-segments-liferay-portal-6-2-user-guide-07-en)
 
 The *Audience Targeting* section of the Configuration section of the Site

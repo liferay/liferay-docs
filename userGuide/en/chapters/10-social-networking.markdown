@@ -670,48 +670,18 @@ their private credentials to access these applications. Fortunately, Liferay
 allows you to use *OAuth* to protect your credentials while you access resources
 on these sites.
 
-Keep these concepts in mind when going through the OAuth sections:
-
-**Service Provider:** a web application that uses OAuth for access
-
-**Protected Resources:** data controlled by the service provider, which can be
-accessed by the gadget through authentication
-
-**Consumer Key:** a value used by the gadget to identify itself to the service
-provider
-
-**Consumer Secret:** a secret the gadget uses to establish ownership of the
-consumer key
-
-**Request Token:** a value the gadget uses to obtain user authorization, which
-is exchanged for an access token
-
-**Access Token:** a value the gadget uses to gain access to the protected
-resources on behalf of the user, instead of using the user's service provider
-credentials
-
 OAuth is an open standard that authorizes third-party applications to interact
 with a user's resources. Users can share their private resources from one site
 with another site without supplying typical credentials, such as their user name
 and password. OAuth uses request and access tokens as well as a token secret to
-authenticate the users of your gadget.
+authenticate the users of your gadget. For more information on OAuth and how it
+can be incorporated into your portal, visit the
+[OAuth](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-utility-applications-liferay-portal-6-2-user-guide-13-en)
+section of this guide.
 
-A popular characterization for the OAuth client is the "valet key for your web
-services." Let's say you're hosting Liferay Portal and have users and customers
-coming to your web site. You want them to have access to a third party resource,
-like Twitter, and be able to access their accounts from your site. In the past,
-they would have to provide their Twitter user names and passwords, but not if
-you use OAuth. OAuth is a "handshake mechanism" where, instead of requiring
-personal information, Liferay redirects users to Twitter, where they can tell
-Twitter to allow Liferay limited access to their accounts. This example is
-similar to our earlier "valet key" characterization. You wouldn't want a valet
-driver opening your glove box, storage spaces, hood, and other personal
-compartments within your vehicle. You would only want him or her to access
-things he or she needs to park your car. OAuth is based on this same idea: it
-allows a site just enough information to do what it needs and nothing more. This
-assures the user that his personal information is safe but gives him freedom to
-take advantage of valuable resources he typically uses from the service
-provider's site.
+<!-- Insert exact link when OAuth section is available on liferay.com -->
+
+Let's see how to implement OAuth in a custom OpenSocial gadget!
 
 #### OAuth Admin Configuration [](id=oauth-admin-configuration-liferay-portal-6-2-user-guide-09-en)
 
