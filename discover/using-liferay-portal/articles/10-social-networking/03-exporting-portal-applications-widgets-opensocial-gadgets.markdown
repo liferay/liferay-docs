@@ -184,10 +184,8 @@ with another site without supplying typical credentials, such as their user name
 and password. OAuth uses request and access tokens as well as a token secret to
 authenticate the users of your gadget. For more information on OAuth and how it
 can be incorporated into your portal, visit the
-[OAuth](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-utility-applications-liferay-portal-6-2-user-guide-13-en)
+[OAuth](/discover/portal/-/knowledge_base/6-2/oauth)
 section of this guide.
-
-<!-- Insert exact link when OAuth section is available on liferay.com -->
 
 Let's see how to implement OAuth in a custom OpenSocial gadget!
 
