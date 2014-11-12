@@ -1,4 +1,4 @@
-# Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects in Liferay IDE [](id=setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects-i)
+# Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects [](id=setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)
 
 Liferay Maven plugin projects created with Liferay IDE (2.0 Milestone 1 and
 newer) are Liferay IDE projects that have all of the required Liferay facets,
@@ -72,7 +72,7 @@ Liferay IDE. In the next section, you'll learn how to set up your existing
 Liferay Maven plugin projects to use the m2e-liferay plugin for Maven lifecycle
 mapping. 
 
-## Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects [](id=setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)
+## Setting Up Liferay Maven Facets in Existing Projects [](id=setting-up-liferay-maven-facets-in-existing-projects)
 
 Making sure that your project has the correct facets and Liferay Maven lifecycle
 mapping is simple. Just right-click your project and select *Properties*. In the
