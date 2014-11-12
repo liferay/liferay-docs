@@ -1523,7 +1523,7 @@ like weather information to be displayed. Alternatively, you can use zip codes.
 Enter one city or zip code per line. For the temperature format, you can choose
 between Celsius and Fahrenheit.
 
-## OAuth
+## OAuth [](id=oauth-liferay-portal-6-2-user-guide-14-en)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -1548,7 +1548,7 @@ more. This assures users that their personal information is safe, but gives
 them freedom to take advantage of valuable resources they typically use from the
 service provider's site.
 
-### Registering OAuth Applications
+### Registering OAuth Applications [](id=registering-oauth-applications-liferay-portal-6-2-user-guide-14-en)
 
 The first thing you'll need to do is register an application for OAuth's
 services. To access the OAuth Admin page, navigate to the Control Panel and,
@@ -1586,7 +1586,7 @@ begin authorizing requests via OAuth.
 
 <!-- Add link to Dev Guide OAuth section when available -->
 
-### Authorizing Requests via OAuth
+### Authorizing Requests via OAuth [](id=authorizing-requests-via-oauth-liferay-portal-6-2-user-guide-14-en)
 
 Once you have your application configured to use OAuth, you can place your
 application on a page and test out the process. Here is a basic synopsis of
