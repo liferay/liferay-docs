@@ -10,8 +10,8 @@ properties inside the WAR file of the LCS client portlet.
 2. At the end of the file, add the following properties and set them to the 
    appropriate values for your proxy.
    
-    proxy.host.name=
-    proxy.host.port=
+        proxy.host.name=
+        proxy.host.port=
 
 3. Update LCS client WAR with the modified `portlet-ext.properties` file.
     
