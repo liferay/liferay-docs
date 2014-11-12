@@ -10,18 +10,21 @@ import org.apache.commons.io.FilenameUtils;
 
 public class NumberImages {
 
+	public static void numberImages (String markdownFilePath) throws IOException {
+		File markdownfile = new File(markdownFilePath); // example: "/home/$USER/workspace/01-example-chapter.markdown"
+		String markdownfilename = FilenameUtils.getName(markdownfile.getPath());
+		String chapternum = markdownfilename.substring(0,2);
+		numberImages (markdownFilePath, Integer.parseInt(chapternum));
+	}
+	
 	/**
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void numberImages(String markdownFilePath) throws IOException {
+	public static void numberImages(String markdownFilePath, int chnum) throws IOException {
 		
 		File markdownfile = new File(markdownFilePath); // example: "/home/$USER/workspace/01-example-chapter.markdown"
 		String markdownfilename = FilenameUtils.getName(markdownfile.getPath());
-		String chapternum = markdownfilename.substring(0,2);
-		System.out.println("chapternum: " + chapternum);
-		int chnum = Integer.parseInt(chapternum);
-		System.out.println("chnum: " + chnum);
 		
 		String source = FileUtils.readFileToString(markdownfile);
 		String find = "\\!\\[Figure " + chnum + ".x:";

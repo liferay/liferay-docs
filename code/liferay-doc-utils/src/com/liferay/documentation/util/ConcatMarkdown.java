@@ -21,6 +21,7 @@ public class ConcatMarkdown extends Task {
 		File docDir = new File("../" + _docdir + "/articles");
 		
 		String book = ""; 
+		int chapter = 0;
 		
 		try {
 			
@@ -28,7 +29,13 @@ public class ConcatMarkdown extends Task {
 			
 			for (File file : files) {
 				
-				if (!file.isDirectory()) {
+				if (file.isDirectory()) {
+					
+					// save the chapter number
+					chapter = Integer.parseInt(file.getName().substring(0,2));
+					System.out.println("Chapter " + chapter);
+					
+				} else {
 					LineNumberReader in =
 							new LineNumberReader(new FileReader(file));
 					
@@ -56,11 +63,18 @@ public class ConcatMarkdown extends Task {
 							line = "-sidebar";
 						}
 						
+						if (line.startsWith("![Figure")) {
+							
+							line = numberImage(line, chapter, count);
+							count = count + 1;
+						}
+						
 						book = book + line + "\n";
-						count = count + 1;
+						
 					}
 					
 					in.close();
+					count = 1;
 					
 					//book = book + FileUtils.readFileToString(file);
 					book = book + "\n";
@@ -79,6 +93,22 @@ public class ConcatMarkdown extends Task {
 		}
 		
 		
+	}
+	
+	private String numberImage (String line, int chapter, int imageNum) {
+		
+		//find the colon
+		int colon = line.indexOf(":");
+		//find the e
+		int e = line.indexOf("e");
+		
+		String prefix = line.substring(0, e+1);
+		System.out.println(prefix);
+		String suffix = line.substring(colon, line.length());
+		System.out.println(suffix);
+		line = prefix + " " + chapter + "." + imageNum + suffix;
+	
+		return line;
 	}
 	
 	public List collectFiles(File dir) throws FileNotFoundException, IOException {
