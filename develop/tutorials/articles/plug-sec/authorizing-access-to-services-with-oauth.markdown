@@ -1,4 +1,4 @@
-# Authorizing Access to Services with OAuth
+# Authorizing Access to Services with OAuth [](id=authorizing-access-to-services-with-oauth)
 
 Suppose you wanted users to authenticate to your Liferay Portal plugin from a
 provider, like Twitter. You might think that you'd need to store the user's
@@ -26,17 +26,14 @@ administrators specify well-defined service authorizations. Once authorized,
 the users can invoke the services via OAuth clients, such as the OAuth-enabled
 plugin that you'll learn about in this section. 
 
----
++$$$
 
- ![Note](../../images/tip-pen-paper.png) **Note:** To learn more about the OAuth
- framework, Liferay OAuth app, registering your OAuth app, or activating it from
- a portal page, visit the
- [OAuth](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-utility-applications-liferay-portal-6-2-user-guide-13-en)
- section of *Using Liferay Portal*. 
+ **Note:** To learn more about the OAuth framework, Liferay OAuth app,
+ registering your OAuth app, or activating it from a portal page, visit the
+ [OAuth](/discover/portal/-/knowledge_base/6-2/oauth) section of *Using Liferay
+ Portal*. 
 
----
-
-<!-- Update link to User Guide when available. -->
+$$$
 
 To access portal services using OAuth, you'll need to create a client that uses
 an OAuth cycle implementation, along with a user interface to lead your users
@@ -44,7 +41,7 @@ through the cycle. In this section, you'll see  an example of a portlet accessin
 JSON Web Services from a remote portal. Let's get started by first selecting and
 implementing services of an OAuth Client library. 
 
-## Selecting an OAuth Client Library
+## Selecting an OAuth Client Library [](id=selecting-an-oauth-client-library)
 
 In order for your portlet to use OAuth, it must have a reference to OAuth
 standards for authorization. You can offer your portlet an OAuth client library
@@ -60,7 +57,7 @@ portal dependency jar:
 That's all you have to do! Your portlet now has access to Scribe's OAuth
 library. Next, you'll implement Scribe's OAuth service interface.
 
-## Configuring OAuth's Service Implementation
+## Configuring OAuth's Service Implementation [](id=configuring-oauths-service-implementation)
 
 Now that your portlet can access an OAuth client library, you need to
 implement the OAuth services in your portlet. The following code demonstrates
@@ -212,7 +209,7 @@ specified. Your portlet can now take part in the OAuth authorization process!
 You'll just need to set up a simple user interface to start the OAuth cycle.
 Let's do this next!
 
-## Creating a User Interface for Authentication
+## Creating a User Interface for Authentication [](id=creating-a-user-interface-for-authentication)
 
 Your portlet's user interface must initiate the OAuth cycle the first time it
 accesses the OAuth platform for each specific user. Your portlet must
@@ -257,7 +254,7 @@ a snippet of the portlet action method:
 
 The figure below shows the OAuth authorization user interface.
 
-![Figure 5.2: When your portlet is granted access to the service provider, it acquires the access token and access secret.](../../images/oauth-application-authorize.png)
+![Figure 1: When your portlet is granted access to the service provider, it acquires the access token and access secret.](../../images/oauth-application-authorize.png)
 
 On completing initial OAuth authorization via the UI and on the user revisiting
 the portlet instance thereafter, the portlet should render its normal UI. 
