@@ -16,7 +16,6 @@
 
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
-<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 <portlet:defineObjects />
 <aui:script use="event, node">
           var btnSubmit = A.one("#submit");
@@ -25,7 +24,7 @@
           var mam = A.one("#<portlet:namespace />ani"); 
           var adv = A.one("#<portlet:namespace />adv");
           var loc = A.one("#<portlet:namespace />loc");
-          var container = A.all("#container");
+          var container = A.one("#container");
           
           btnSubmit.on('click', function(event){
 				ver = verb.val();
@@ -65,7 +64,7 @@
 </aui:script>
 
 <p id="phraseTitle">Silly Phrase Generator</p>
-<div id="container" title="crow"></div>
+<div id="container"></div>
      <aui:form>
      <aui:fieldset>
 		<aui:input name="adjective" id="adj" type="text">
