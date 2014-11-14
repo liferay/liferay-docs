@@ -109,7 +109,7 @@ public class GuestbookPortlet extends MVCPortlet {
 		ServiceContext serviceContext = ServiceContextFactory.getInstance(
 				Guestbook.class.getName(), request);
 
-		String name = ParamUtil.getString(request, "name");
+		String name = ParamUtil.getString(request, "guestbookName");
 
 		try {
 			GuestbookLocalServiceUtil.addGuestbook(serviceContext.getUserId(),
@@ -135,6 +135,9 @@ public class GuestbookPortlet extends MVCPortlet {
 			
 			ServiceContext serviceContext = ServiceContextFactory.getInstance(
 					Guestbook.class.getName(), renderRequest);
+			
+			String guestbookName = ParamUtil.getString(renderRequest, "guestbookName");
+			System.out.println(guestbookName);
 
 			long groupId = serviceContext.getScopeGroupId();
 
@@ -170,7 +173,7 @@ public class GuestbookPortlet extends MVCPortlet {
 		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
 		OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
 		
-		String guestbookName = ParamUtil.getString(request, "name");
+		String guestbookName = ParamUtil.getString(request, "guestbookName");
 		
 		try {
 			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);

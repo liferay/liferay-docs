@@ -8,16 +8,16 @@
 
 <%
 String entryName = ParamUtil.getString(renderRequest, "name");
-String guestbookName = ParamUtil.getString(renderRequest, "guestbookName");
+
 System.out.println(entryName);
 OrderByComparatorFactory entryOrderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
 OrderByComparator entryOrderByComparator = entryOrderByComparatorFactory.create("Entry", "name", true);
 OrderByComparatorFactory guestbookOrderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
 OrderByComparator guestbookOrderByComparator = guestbookOrderByComparatorFactory.create("Guestbook", "guestbookName", true);
 
-Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, guestbookOrderByComparator);
+Guestbook guestbook = (Guestbook) renderRequest.getAttribute("guestbook");
 
-
+String guestbookName = guestbook.getName();
 
 Entry entry = null;
 
@@ -46,7 +46,7 @@ System.out.println(entryId);
 		</aui:input>
 		<div id="counterContainer"><p>Message: <span id="counter"></span> character(s) remaining</p></div>
 
-	    <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
+	    <aui:input name='guestbookId' type='hidden' value='<%= String.valueOf(guestbook.getGuestbookId()) %>'/>
 
 	    <aui:input name="entryId" type="hidden" />
 	</aui:fieldset>

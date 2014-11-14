@@ -41,7 +41,7 @@
 	%>
 
 		<portlet:actionURL name= "switchTabs" var="switchTabsURL">
-			<portlet:param name="name" value="<%=curGuestbook.getName() %>"/>
+			<portlet:param name="guestbookName" value="<%=curGuestbook.getName() %>"/>
 		</portlet:actionURL>
 
 		<aui:nav-item cssClass="<%=cssClass%>" href="<%=switchTabsURL%>"
@@ -68,8 +68,7 @@
 <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbook.getGuestbookId(), "ADD_ENTRY") %>'>
 	<portlet:renderURL var="addEntryURL">
 		<portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp" />
-		<portlet:param name="guestbookName"
-			value="<%=guestbook.getName()%>" />
+		<portlet:param name="guestbookName" value="<%=guestbook.getName()%>" />
 	</portlet:renderURL>
 
 	<aui:button onClick="<%=addEntryURL.toString()%>" value="Add Entry"></aui:button>
