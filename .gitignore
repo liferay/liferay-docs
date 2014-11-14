@@ -15,7 +15,7 @@ properties/
 /*.ipr
 /*.iws
 /*.patch
-/build.*.properties
+build.*.properties
 
 build/
 classes/
