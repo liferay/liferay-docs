@@ -231,6 +231,23 @@ Great! Now you're all set to deploy and configure the LCS client portlet.
 
 ### Configuring the LCS Client
 
+You're now ready to configure the LCS client for use in your portal. If your 
+server accesses the web through a proxy, then you need to set a couple of 
+properties inside the WAR file of the LCS client portlet.
+
+1. In the WAR file of the LCS client portlet, open the 
+   `WEB-INF/classes/portlet-ext.properties` file.
+   
+2. At the end of the file, add the following properties and set them to the 
+   appropriate values for your proxy.
+   
+        proxy.host.name=
+        proxy.host.port=
+
+3. Update LCS client WAR with the modified `portlet-ext.properties` file.
+    
+4. Deploy the LCS client WAR, or redeploy it if it's already deployed.
+
 Once you deploy the LCS client portlet, you can use it to register your server 
 with your LCS account. Access the portlet by clicking on 
 *Liferay Cloud Services* under the *Server* section of the *Control Panel*.
