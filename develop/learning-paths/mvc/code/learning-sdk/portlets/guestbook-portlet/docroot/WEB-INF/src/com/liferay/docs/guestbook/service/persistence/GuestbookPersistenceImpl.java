@@ -2302,6 +2302,539 @@ public class GuestbookPersistenceImpl extends BasePersistenceImpl<Guestbook>
 	}
 
 	private static final String _FINDER_COLUMN_GROUPID_GROUPID_2 = "guestbook.groupId = ?";
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_GUESTBOOKNAME =
+		new FinderPath(GuestbookModelImpl.ENTITY_CACHE_ENABLED,
+			GuestbookModelImpl.FINDER_CACHE_ENABLED, GuestbookImpl.class,
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByGuestbookName",
+			new String[] {
+				String.class.getName(),
+				
+			Integer.class.getName(), Integer.class.getName(),
+				OrderByComparator.class.getName()
+			});
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GUESTBOOKNAME =
+		new FinderPath(GuestbookModelImpl.ENTITY_CACHE_ENABLED,
+			GuestbookModelImpl.FINDER_CACHE_ENABLED, GuestbookImpl.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByGuestbookName",
+			new String[] { String.class.getName() },
+			GuestbookModelImpl.NAME_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_GUESTBOOKNAME = new FinderPath(GuestbookModelImpl.ENTITY_CACHE_ENABLED,
+			GuestbookModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByGuestbookName",
+			new String[] { String.class.getName() });
+
+	/**
+	 * Returns all the guestbooks where name = &#63;.
+	 *
+	 * @param name the name
+	 * @return the matching guestbooks
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Guestbook> findByGuestbookName(String name)
+		throws SystemException {
+		return findByGuestbookName(name, QueryUtil.ALL_POS, QueryUtil.ALL_POS,
+			null);
+	}
+
+	/**
+	 * Returns a range of all the guestbooks where name = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.docs.guestbook.model.impl.GuestbookModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param name the name
+	 * @param start the lower bound of the range of guestbooks
+	 * @param end the upper bound of the range of guestbooks (not inclusive)
+	 * @return the range of matching guestbooks
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Guestbook> findByGuestbookName(String name, int start, int end)
+		throws SystemException {
+		return findByGuestbookName(name, start, end, null);
+	}
+
+	/**
+	 * Returns an ordered range of all the guestbooks where name = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.docs.guestbook.model.impl.GuestbookModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param name the name
+	 * @param start the lower bound of the range of guestbooks
+	 * @param end the upper bound of the range of guestbooks (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching guestbooks
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Guestbook> findByGuestbookName(String name, int start, int end,
+		OrderByComparator orderByComparator) throws SystemException {
+		boolean pagination = true;
+		FinderPath finderPath = null;
+		Object[] finderArgs = null;
+
+		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
+				(orderByComparator == null)) {
+			pagination = false;
+			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GUESTBOOKNAME;
+			finderArgs = new Object[] { name };
+		}
+		else {
+			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_GUESTBOOKNAME;
+			finderArgs = new Object[] { name, start, end, orderByComparator };
+		}
+
+		List<Guestbook> list = (List<Guestbook>)FinderCacheUtil.getResult(finderPath,
+				finderArgs, this);
+
+		if ((list != null) && !list.isEmpty()) {
+			for (Guestbook guestbook : list) {
+				if (!Validator.equals(name, guestbook.getName())) {
+					list = null;
+
+					break;
+				}
+			}
+		}
+
+		if (list == null) {
+			StringBundler query = null;
+
+			if (orderByComparator != null) {
+				query = new StringBundler(3 +
+						(orderByComparator.getOrderByFields().length * 3));
+			}
+			else {
+				query = new StringBundler(3);
+			}
+
+			query.append(_SQL_SELECT_GUESTBOOK_WHERE);
+
+			boolean bindName = false;
+
+			if (name == null) {
+				query.append(_FINDER_COLUMN_GUESTBOOKNAME_NAME_1);
+			}
+			else if (name.equals(StringPool.BLANK)) {
+				query.append(_FINDER_COLUMN_GUESTBOOKNAME_NAME_3);
+			}
+			else {
+				bindName = true;
+
+				query.append(_FINDER_COLUMN_GUESTBOOKNAME_NAME_2);
+			}
+
+			if (orderByComparator != null) {
+				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
+					orderByComparator);
+			}
+			else
+			 if (pagination) {
+				query.append(GuestbookModelImpl.ORDER_BY_JPQL);
+			}
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				if (bindName) {
+					qPos.add(name);
+				}
+
+				if (!pagination) {
+					list = (List<Guestbook>)QueryUtil.list(q, getDialect(),
+							start, end, false);
+
+					Collections.sort(list);
+
+					list = new UnmodifiableList<Guestbook>(list);
+				}
+				else {
+					list = (List<Guestbook>)QueryUtil.list(q, getDialect(),
+							start, end);
+				}
+
+				cacheResult(list);
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, list);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return list;
+	}
+
+	/**
+	 * Returns the first guestbook in the ordered set where name = &#63;.
+	 *
+	 * @param name the name
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching guestbook
+	 * @throws com.liferay.docs.guestbook.NoSuchGuestbookException if a matching guestbook could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Guestbook findByGuestbookName_First(String name,
+		OrderByComparator orderByComparator)
+		throws NoSuchGuestbookException, SystemException {
+		Guestbook guestbook = fetchByGuestbookName_First(name, orderByComparator);
+
+		if (guestbook != null) {
+			return guestbook;
+		}
+
+		StringBundler msg = new StringBundler(4);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("name=");
+		msg.append(name);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchGuestbookException(msg.toString());
+	}
+
+	/**
+	 * Returns the first guestbook in the ordered set where name = &#63;.
+	 *
+	 * @param name the name
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Guestbook fetchByGuestbookName_First(String name,
+		OrderByComparator orderByComparator) throws SystemException {
+		List<Guestbook> list = findByGuestbookName(name, 0, 1, orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the last guestbook in the ordered set where name = &#63;.
+	 *
+	 * @param name the name
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching guestbook
+	 * @throws com.liferay.docs.guestbook.NoSuchGuestbookException if a matching guestbook could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Guestbook findByGuestbookName_Last(String name,
+		OrderByComparator orderByComparator)
+		throws NoSuchGuestbookException, SystemException {
+		Guestbook guestbook = fetchByGuestbookName_Last(name, orderByComparator);
+
+		if (guestbook != null) {
+			return guestbook;
+		}
+
+		StringBundler msg = new StringBundler(4);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("name=");
+		msg.append(name);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchGuestbookException(msg.toString());
+	}
+
+	/**
+	 * Returns the last guestbook in the ordered set where name = &#63;.
+	 *
+	 * @param name the name
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching guestbook, or <code>null</code> if a matching guestbook could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Guestbook fetchByGuestbookName_Last(String name,
+		OrderByComparator orderByComparator) throws SystemException {
+		int count = countByGuestbookName(name);
+
+		if (count == 0) {
+			return null;
+		}
+
+		List<Guestbook> list = findByGuestbookName(name, count - 1, count,
+				orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the guestbooks before and after the current guestbook in the ordered set where name = &#63;.
+	 *
+	 * @param guestbookId the primary key of the current guestbook
+	 * @param name the name
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next guestbook
+	 * @throws com.liferay.docs.guestbook.NoSuchGuestbookException if a guestbook with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Guestbook[] findByGuestbookName_PrevAndNext(long guestbookId,
+		String name, OrderByComparator orderByComparator)
+		throws NoSuchGuestbookException, SystemException {
+		Guestbook guestbook = findByPrimaryKey(guestbookId);
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			Guestbook[] array = new GuestbookImpl[3];
+
+			array[0] = getByGuestbookName_PrevAndNext(session, guestbook, name,
+					orderByComparator, true);
+
+			array[1] = guestbook;
+
+			array[2] = getByGuestbookName_PrevAndNext(session, guestbook, name,
+					orderByComparator, false);
+
+			return array;
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	protected Guestbook getByGuestbookName_PrevAndNext(Session session,
+		Guestbook guestbook, String name, OrderByComparator orderByComparator,
+		boolean previous) {
+		StringBundler query = null;
+
+		if (orderByComparator != null) {
+			query = new StringBundler(6 +
+					(orderByComparator.getOrderByFields().length * 6));
+		}
+		else {
+			query = new StringBundler(3);
+		}
+
+		query.append(_SQL_SELECT_GUESTBOOK_WHERE);
+
+		boolean bindName = false;
+
+		if (name == null) {
+			query.append(_FINDER_COLUMN_GUESTBOOKNAME_NAME_1);
+		}
+		else if (name.equals(StringPool.BLANK)) {
+			query.append(_FINDER_COLUMN_GUESTBOOKNAME_NAME_3);
+		}
+		else {
+			bindName = true;
+
+			query.append(_FINDER_COLUMN_GUESTBOOKNAME_NAME_2);
+		}
+
+		if (orderByComparator != null) {
+			String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
+
+			if (orderByConditionFields.length > 0) {
+				query.append(WHERE_AND);
+			}
+
+			for (int i = 0; i < orderByConditionFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByConditionFields[i]);
+
+				if ((i + 1) < orderByConditionFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN_HAS_NEXT);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN);
+					}
+				}
+			}
+
+			query.append(ORDER_BY_CLAUSE);
+
+			String[] orderByFields = orderByComparator.getOrderByFields();
+
+			for (int i = 0; i < orderByFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByFields[i]);
+
+				if ((i + 1) < orderByFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC_HAS_NEXT);
+					}
+					else {
+						query.append(ORDER_BY_DESC_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC);
+					}
+					else {
+						query.append(ORDER_BY_DESC);
+					}
+				}
+			}
+		}
+		else {
+			query.append(GuestbookModelImpl.ORDER_BY_JPQL);
+		}
+
+		String sql = query.toString();
+
+		Query q = session.createQuery(sql);
+
+		q.setFirstResult(0);
+		q.setMaxResults(2);
+
+		QueryPos qPos = QueryPos.getInstance(q);
+
+		if (bindName) {
+			qPos.add(name);
+		}
+
+		if (orderByComparator != null) {
+			Object[] values = orderByComparator.getOrderByConditionValues(guestbook);
+
+			for (Object value : values) {
+				qPos.add(value);
+			}
+		}
+
+		List<Guestbook> list = q.list();
+
+		if (list.size() == 2) {
+			return list.get(1);
+		}
+		else {
+			return null;
+		}
+	}
+
+	/**
+	 * Removes all the guestbooks where name = &#63; from the database.
+	 *
+	 * @param name the name
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public void removeByGuestbookName(String name) throws SystemException {
+		for (Guestbook guestbook : findByGuestbookName(name, QueryUtil.ALL_POS,
+				QueryUtil.ALL_POS, null)) {
+			remove(guestbook);
+		}
+	}
+
+	/**
+	 * Returns the number of guestbooks where name = &#63;.
+	 *
+	 * @param name the name
+	 * @return the number of matching guestbooks
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public int countByGuestbookName(String name) throws SystemException {
+		FinderPath finderPath = FINDER_PATH_COUNT_BY_GUESTBOOKNAME;
+
+		Object[] finderArgs = new Object[] { name };
+
+		Long count = (Long)FinderCacheUtil.getResult(finderPath, finderArgs,
+				this);
+
+		if (count == null) {
+			StringBundler query = new StringBundler(2);
+
+			query.append(_SQL_COUNT_GUESTBOOK_WHERE);
+
+			boolean bindName = false;
+
+			if (name == null) {
+				query.append(_FINDER_COLUMN_GUESTBOOKNAME_NAME_1);
+			}
+			else if (name.equals(StringPool.BLANK)) {
+				query.append(_FINDER_COLUMN_GUESTBOOKNAME_NAME_3);
+			}
+			else {
+				bindName = true;
+
+				query.append(_FINDER_COLUMN_GUESTBOOKNAME_NAME_2);
+			}
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				if (bindName) {
+					qPos.add(name);
+				}
+
+				count = (Long)q.uniqueResult();
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, count);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	private static final String _FINDER_COLUMN_GUESTBOOKNAME_NAME_1 = "guestbook.name IS NULL";
+	private static final String _FINDER_COLUMN_GUESTBOOKNAME_NAME_2 = "guestbook.name = ?";
+	private static final String _FINDER_COLUMN_GUESTBOOKNAME_NAME_3 = "(guestbook.name IS NULL OR guestbook.name = '')";
 
 	public GuestbookPersistenceImpl() {
 		setModelClass(Guestbook.class);
@@ -2646,6 +3179,25 @@ public class GuestbookPersistenceImpl extends BasePersistenceImpl<Guestbook>
 
 				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_GROUPID, args);
 				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GROUPID,
+					args);
+			}
+
+			if ((guestbookModelImpl.getColumnBitmask() &
+					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GUESTBOOKNAME.getColumnBitmask()) != 0) {
+				Object[] args = new Object[] {
+						guestbookModelImpl.getOriginalName()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_GUESTBOOKNAME,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GUESTBOOKNAME,
+					args);
+
+				args = new Object[] { guestbookModelImpl.getName() };
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_GUESTBOOKNAME,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GUESTBOOKNAME,
 					args);
 			}
 		}

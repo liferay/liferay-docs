@@ -9,17 +9,18 @@
         <implicit-parameter name="mvcPath">/html/guestbook/edit_guestbook.jsp</implicit-parameter>
     </route>
     <route>
-        <pattern>/{guestbookId}/add_entry</pattern>
+        <pattern>/{guestbookName}/add_entry</pattern>
         <implicit-parameter name="mvcPath">/html/guestbook/edit_entry.jsp</implicit-parameter>
+        
     </route>
     <route>
-        <pattern>/{entryId}/view_entry</pattern>
+        <pattern>/{guestbookName}/{name}/view_entry</pattern>
         <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
         <implicit-parameter name="mvcPath">/html/guestbook/view_entry.jsp</implicit-parameter>
     </route>
     <route>
-        <pattern>/{guestbookId}/{name}/view</pattern>
-        <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
-        <implicit-parameter name="mvcPath">/html/guestbook/view.jsp</implicit-parameter>
+        <pattern>/{name}/view</pattern>
+        <implicit-parameter name="p_p_lifecycle">1</implicit-parameter>
+        <implicit-parameter name="javax.portlet.action">switchTabs</implicit-parameter>
     </route>
 </routes>

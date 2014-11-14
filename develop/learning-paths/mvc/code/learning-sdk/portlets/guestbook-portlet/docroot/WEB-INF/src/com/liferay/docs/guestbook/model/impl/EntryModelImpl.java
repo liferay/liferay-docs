@@ -98,8 +98,9 @@ public class EntryModelImpl extends BaseModelImpl<Entry> implements EntryModel {
 	public static long COMPANYID_COLUMN_BITMASK = 1L;
 	public static long GROUPID_COLUMN_BITMASK = 2L;
 	public static long GUESTBOOKID_COLUMN_BITMASK = 4L;
-	public static long UUID_COLUMN_BITMASK = 8L;
-	public static long ENTRYID_COLUMN_BITMASK = 16L;
+	public static long NAME_COLUMN_BITMASK = 8L;
+	public static long UUID_COLUMN_BITMASK = 16L;
+	public static long ENTRYID_COLUMN_BITMASK = 32L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -434,7 +435,17 @@ public class EntryModelImpl extends BaseModelImpl<Entry> implements EntryModel {
 
 	@Override
 	public void setName(String name) {
+		_columnBitmask |= NAME_COLUMN_BITMASK;
+
+		if (_originalName == null) {
+			_originalName = _name;
+		}
+
 		_name = name;
+	}
+
+	public String getOriginalName() {
+		return GetterUtil.getString(_originalName);
 	}
 
 	@JSON
@@ -602,6 +613,8 @@ public class EntryModelImpl extends BaseModelImpl<Entry> implements EntryModel {
 		entryModelImpl._originalCompanyId = entryModelImpl._companyId;
 
 		entryModelImpl._setOriginalCompanyId = false;
+
+		entryModelImpl._originalName = entryModelImpl._name;
 
 		entryModelImpl._originalGuestbookId = entryModelImpl._guestbookId;
 
@@ -797,6 +810,7 @@ public class EntryModelImpl extends BaseModelImpl<Entry> implements EntryModel {
 	private Date _createDate;
 	private Date _modifiedDate;
 	private String _name;
+	private String _originalName;
 	private String _email;
 	private String _message;
 	private long _guestbookId;

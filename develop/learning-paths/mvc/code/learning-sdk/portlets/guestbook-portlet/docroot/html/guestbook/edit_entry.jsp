@@ -7,13 +7,26 @@
 <portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
 
 <%
-long entryId = ParamUtil.getLong(renderRequest, "entryId");
+String entryName = ParamUtil.getString(renderRequest, "name");
+String guestbookName = ParamUtil.getString(renderRequest, "guestbookName");
+System.out.println(entryName);
+OrderByComparatorFactory entryOrderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+OrderByComparator entryOrderByComparator = entryOrderByComparatorFactory.create("Entry", "name", true);
+OrderByComparatorFactory guestbookOrderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+OrderByComparator guestbookOrderByComparator = guestbookOrderByComparatorFactory.create("Guestbook", "guestbookName", true);
+
+Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, guestbookOrderByComparator);
+
+
 
 Entry entry = null;
 
-if (entryId > 0) {
-	entry = EntryLocalServiceUtil.getEntry(entryId);
+if (entryName.length() > 0) {
+	entry = EntryLocalServiceUtil.getEntryByName(entryName, entryOrderByComparator);
 }
+long entryId = entry.getEntryId();
+System.out.println(entryId);
+
 %>
 
 <aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
