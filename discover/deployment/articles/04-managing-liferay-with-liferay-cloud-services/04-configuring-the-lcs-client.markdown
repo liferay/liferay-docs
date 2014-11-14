@@ -1,8 +1,25 @@
 # Configuring the LCS Client [](id=configuring-the-lcs-client)
 
+You're now ready to configure the LCS client for use in your portal. If your 
+server accesses the web through a proxy, then you need to set a couple of 
+properties inside the WAR file of the LCS client portlet.
+
+1. In the WAR file of the LCS client portlet, open the 
+   `WEB-INF/classes/portlet-ext.properties` file.
+   
+2. At the end of the file, add the following properties and set them to the 
+   appropriate values for your proxy.
+   
+        proxy.host.name=
+        proxy.host.port=
+
+3. Update LCS client WAR with the modified `portlet-ext.properties` file.
+    
+4. Deploy the LCS client WAR, or redeploy it if it's already deployed.
+
 Once you deploy the LCS client portlet, you can use it to register your server 
-with your LCS account. Access the portlet by clicking on *Liferay Cloud Services* under 
-the *Apps* section of the *Control Panel*.
+with your LCS account. Access the portlet by clicking on *Liferay Cloud Services* 
+under the *Apps* section of the *Control Panel*.
 
 ![Figure 6.3: LCS appears in your Control Panel as Liferay Cloud Services, in the Apps section.](../../images/lcs-post-install-01.png)
 
@@ -18,9 +35,9 @@ fields:
 
 2. Environment: Select an environment from the menu or create a new one by
    clicking the *Add New Environment* button. An environment should be a logical
-   group of servers. A group of development servers or a cluster are good examples
-   of environments. If you elect to create a new environment, a popup asks you to
-   enter its *Name*, *Location*, and *Description*.
+   group of servers. A group of development servers or a cluster are good 
+   examples of environments. If you elect to create a new environment, a popup 
+   asks you to enter its *Name*, *Location*, and *Description*.
    
     ![Figure 6.5: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
 
