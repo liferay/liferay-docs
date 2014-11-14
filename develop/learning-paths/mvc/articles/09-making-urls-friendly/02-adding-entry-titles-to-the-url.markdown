@@ -12,19 +12,17 @@ our Guestbook Entries:
 It's quite a bit more concise and human-readable than before we started, but
 we've included the Primary Key of the `Guestbook`, its `guestbookId`, in the
 URL. This doesn't mean anything to the user. It would be more clear to see the
-name of the Guestbook. That's what you'll be doing in this section on Frinedly
+name of the Guestbook. That's what you'll be doing in this section on Friendly
 URLs.
 
 ## Creating a Finder
 
-First, modify Liferay's descriptor, `docroot/WEB-INF/liferay-portlet.xml`, adding these lines right after the :
+First, modify the Guestbook App's `docroot/WEB-INF/service.xml` file, adding
+the following XML below the current `<finder>` in the Guestbook entity:
 
-        <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper</friendly-url-mapper-class>
-		<friendly-url-mapping>guestbook</friendly-url-mapping>
-		<friendly-url-routes>com/liferay/docs/guestbook/guestbook-friendly-url-routes.xml</friendly-url-routes>
-
-        Bad thing about adding it first is tht you get errors in the log
-        because questbook-friendly-url-routes.xml has not yet been created.
+    <finder name="GuestbookName" return-type="Collection">
+        <finder-column name="name"></finder-column>
+    </finder>
 
 The `friendly-url-routes` tag lets us declare an XML file that contains, you
 guessed it, URL routes that iwll relate to the Liferay URLs. In almost all
@@ -34,9 +32,37 @@ routes to Liferay URLs. The second tag we're declaring, `friendly-url-mapping`,
 is just a name used to identify the routes. It will appear in the URL right
 before the routes we declare.
 
+## Something about using a Finder to 
+
 ## Something about using the finder to get Entries by the GuestbookName
 
 ## Adding the parameter to the URL in view.jsp
+
+Since you don't want the `guestbookId` in the URL, change the scriptlet that
+gets all the Guestbook entites from the database, then loops through them and
+checks to see if the current guestbook in the loop is the same one the user
+selected. Instead of comparing their `guestbookId`, compare their `name`. The
+scriptlet will look like this when you're done:
+
+    <%
+		 List<Guestbook> guestbooks = GuestbookLocalServiceUtil
+					.getGuestbooks(scopeGroupId);
+			for (int i = 0; i < guestbooks.size(); i++) {
+				Guestbook curGuestbook = (Guestbook) guestbooks.get(i);
+
+				String cssClass = StringPool.BLANK;
+
+				if (curGuestbook.getName() == guestbookName) {
+					cssClass = "active";
+				}
+				
+				if (GuestbookPermission.contains(
+						permissionChecker, curGuestbook.getGuestbookId(), "VIEW")) {
+					
+	%>
+
+
+
 
 ## Adding the routes to guestbook-friendly-url-routes.xml
 
