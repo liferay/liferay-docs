@@ -4,6 +4,7 @@
 *.iml
 *.swp
 *-tmp.html
+*.zip
 .METADATA
 .project
 .classpath
