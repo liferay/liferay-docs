@@ -2277,14 +2277,17 @@ access to resources.
 Next you'll learn how to configure your WebLogic application server for JSF
 applications. 
 
-## JSF Configuration
+## JSF Configuration [](id=jsf-configuration-liferay-portal-6-2-user-guide-16-en)
 
 If you'd like to deploy JSF applications on your WebLogic application server,
 you'll need to complete a few extra steps in your configuration process. If you
 do not plan on using JSF applications in your application server, you can skip
-this section. This section assumes you're using JSF 2.1 portlets. Follow the
-steps below to ensure JSF applications can be deployed successfully to your
-WebLogic application server. 
+this section. This section assumes you're using JSF 2.1 portlets. 
+
+Complete the first section to ensure JSF applications deploy successfully to
+your WebLogic application server. 
+
+### Configuration for Deploying JSF Portlets [](id=configuration-for-deploying-jsf-portlet-liferay-portal-6-2-user-guide-16-en)
 
 1. To avoid a `ViewExpiredException` with Ajax, disable the Liferay Portal
 `ETagFilter` by adding the following property in the `portal-ext.properties`
@@ -2310,39 +2313,17 @@ file:
         export MW_HOME=$HOME/Oracle/Middleware
         export USER_MEM_ARGS="-Xms1024m -Xmx2048m -XX:CompileThreshold=8000 -XX:PermSize=256m -XX:MaxPermSize=512m"
 
-3. Liferay Faces requires JSF 2.1.21. However, the version of Mojarra that comes
-   with WebLogic 12c is version 2.1.20. Therefore, it is necessary to upgrade
-   Mojarra in WebLogic by creating a new Shared Library WAR with the updated
-   dependencies. 
-
-    3.1. Make sure your `MW_HOME` environment variable is defined (completed in
-    step 2).
-    
-    3.2. Build the patched version of Mojarra:
-
-        cd liferay-faces/support
-        mvn -P weblogic clean install
-
-    3.3. Copy the patched version of Mojarra over the version that was shipped
-    out-of-the-box: 
-
-        cp $HOME/.m2/repository/com/oracle/weblogic/glassfish.jsf_1.0.0.0_2-1-21/12.1.2-0-0/glassfish.jsf_1.0.0.0_2-1-21-12.1.2-0-0.jar $MW_HOME/wlserver/modules/glassfish.jsf_1.0.0.0_2-1-20.jar
-
-    Since the Mojarra API and Implementation JARs are present in the global
-    classpath, `jsf-api.jar` and `jsf-impl.jar` must not be included in
-    `WEB-INF/lib`. 
-
-4. If you're running the JSR 329 Portlet Bridge TCK, you'll need to include the
+3. If you're running the JSR 329 Portlet Bridge TCK, you'll need to include the
    `trinidad-api.jar` dependency in the global classpath (within the `lib`
    folder). 
 
-5. In order for JSF 2.1 portlets to deploy correctly in WebLogic, the
+4. In order for JSF 2.1 portlets to deploy correctly in WebLogic, the
    `WEB-INF/weblogic.xml` descriptor must be configured to fine-tune how class
    loading takes place. For a working example, please refer to the
    [weblogic.xml](https://github.com/liferay/liferay-faces/blob/3.2.x/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/weblogic.xml)
    descriptor from a demo JSF portlet. 
 
-6. Due to a deficiency in the XML parser that ships with WebLogic, it is
+5. Due to a deficiency in the XML parser that ships with WebLogic, it is
    necessary to include a custom [Apache Xerces](http://xerces.apache.org/)
    parser as a dependency. In order to include it in the proper position within
    the WebLogic classpath, the Xerces JARs are included in the Mojarra Shared
@@ -2357,10 +2338,36 @@ file:
             </dependency>
         </dependencies>
 
-7. If using ICEfaces, PrimeFaces, or RichFaces, all JARs related to these
+6. If using ICEfaces, PrimeFaces, or RichFaces, all JARs related to these
    projects my exist in `WEB-INF/lib`. 
 
-Now its the moment you've been waiting for: Liferay deployment!
+Next, you'll need to upgrade Mojarra for your WebLogic application server. 
+   
+### Upgrading Mojarra [](id=upgrading-mojarra-liferay-portal-6-2-user-guide-16-en)
+
+Liferay Faces requires JSF 2.1.21. However, the version of Mojarra that comes
+with WebLogic 12c is version 2.1.20. Therefore, it is necessary to upgrade
+Mojarra in WebLogic by creating a new Shared Library WAR with the updated
+dependencies. 
+
+1. Make sure your `MW_HOME` environment variable is defined (completed in step 2
+   of the previous section).
+    
+2. Build the patched version of Mojarra:
+
+        cd liferay-faces/support
+        mvn -P weblogic clean install
+
+3. Copy the patched version of Mojarra over the version that was shipped
+   out-of-the-box: 
+
+        cp $HOME/.m2/repository/com/oracle/weblogic/glassfish.jsf_1.0.0.0_2-1-21/12.1.2-0-0/glassfish.jsf_1.0.0.0_2-1-21-12.1.2-0-0.jar $MW_HOME/wlserver/modules/glassfish.jsf_1.0.0.0_2-1-20.jar
+
+    Since the Mojarra API and Implementation JARs are present in the global
+    classpath, `jsf-api.jar` and `jsf-impl.jar` must not be included in
+    `WEB-INF/lib`. 
+
+Now its the moment you've been waiting for: Liferay deployment! 
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-4)
 
