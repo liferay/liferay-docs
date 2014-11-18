@@ -271,17 +271,39 @@ file:
         export MW_HOME=$HOME/Oracle/Middleware
         export USER_MEM_ARGS="-Xms1024m -Xmx2048m -XX:CompileThreshold=8000 -XX:PermSize=256m -XX:MaxPermSize=512m"
 
-3. If you're running the JSR 329 Portlet Bridge TCK, you'll need to include the
+3. Liferay Faces requires JSF 2.1.21. However, the version of Mojarra that comes
+   with WebLogic 12c is version 2.1.20. Therefore, it is necessary to upgrade
+   Mojarra in WebLogic by creating a new Shared Library WAR with the updated
+   dependencies. 
+
+    3.1. Make sure your `MW_HOME` environment variable is defined (completed in
+    step 2).
+    
+    3.2. Build the patched version of Mojarra:
+
+        cd liferay-faces/support
+        mvn -P weblogic clean install
+
+    3.3. Copy the patched version of Mojarra over the version that was shipped
+    out-of-the-box: 
+
+        cp $HOME/.m2/repository/com/oracle/weblogic/glassfish.jsf_1.0.0.0_2-1-21/12.1.2-0-0/glassfish.jsf_1.0.0.0_2-1-21-12.1.2-0-0.jar $MW_HOME/wlserver/modules/glassfish.jsf_1.0.0.0_2-1-20.jar
+
+    Since the Mojarra API and Implementation JARs are present in the global
+    classpath, `jsf-api.jar` and `jsf-impl.jar` must not be included in
+    `WEB-INF/lib`. 
+
+4. If you're running the JSR 329 Portlet Bridge TCK, you'll need to include the
    `trinidad-api.jar` dependency in the global classpath (within the `lib`
    folder). 
 
-4. In order for JSF 2.1 portlets to deploy correctly in WebLogic, the
+5. In order for JSF 2.1 portlets to deploy correctly in WebLogic, the
    `WEB-INF/weblogic.xml` descriptor must be configured to fine-tune how class
    loading takes place. For a working example, please refer to the
    [weblogic.xml](https://github.com/liferay/liferay-faces/blob/3.2.x/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/weblogic.xml)
    descriptor from a demo JSF portlet. 
 
-5. Due to a deficiency in the XML parser that ships with WebLogic, it is
+6. Due to a deficiency in the XML parser that ships with WebLogic, it is
    necessary to include a custom [Apache Xerces](http://xerces.apache.org/)
    parser as a dependency. In order to include it in the proper position within
    the WebLogic classpath, the Xerces JARs are included in the Mojarra Shared
@@ -296,7 +318,7 @@ file:
             </dependency>
         </dependencies>
 
-6. If using ICEfaces, PrimeFaces, or RichFaces, all JARs related to these
+7. If using ICEfaces, PrimeFaces, or RichFaces, all JARs related to these
    projects my exist in `WEB-INF/lib`. 
 
 Now its the moment you've been waiting for: Liferay deployment!
