@@ -175,40 +175,25 @@ Now let's make sure Liferay can access this mail session.
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
 
-1.  Create a `portal-ext.properties` file in your Liferay Home folder.
+Create a `portal-ext.properties` file in your Liferay Home folder.
 
-    If you are using *WebLogic* to manage your data source, add the following to
-    your `portal-ext.properties` file to refer to your data source:
+If you are using *WebLogic* to manage your data source, add the following to
+your `portal-ext.properties` file to refer to your data source:
 
-        jdbc.default.jndi.name=jdbc/LiferayPool
+    jdbc.default.jndi.name=jdbc/LiferayPool
 
-    If you are using *Liferay Portal* to manage your data source, follow the
-    instructions in the *Deploy Liferay* section for using the setup wizard.
+If you are using *Liferay Portal* to manage your data source, follow the
+instructions in the *Deploy Liferay* section for using the setup wizard.
 
-    If want to use *Liferay Portal* to manage your mail session, you can
-    configure the mail session in the Control Panel. After starting your portal
-    as described in the *Deploy Liferay* section, go to *Control Panel &rarr;
-    Server Administration &rarr; Mail* and enter the settings for your mail
-    session.
+If want to use *Liferay Portal* to manage your mail session, you can configure
+the mail session in the Control Panel. After starting your portal as described
+in the *Deploy Liferay* section, go to *Control Panel &rarr; Server
+Administration &rarr; Mail* and enter the settings for your mail session.
 
-    If you are using *WebLogic* to manage your mail session, add the following
-    to your `portal-ext.properties` file to reference that mail session:
+If you are using *WebLogic* to manage your mail session, add the following to
+your `portal-ext.properties` file to reference that mail session:
 
-        mail.session.jndi.name=mail/MailSession
-
-2.  Lastly, you must provide WebLogic a reference to a version of Java Server
-    Faces (JSF)--either version 1.2 or 2.0--to use that library. Open the
-    `WEB-INF/weblogic.xml` found in your Liferay Portal `.war` file. Insert the
-    following deployment descriptor after the `<context-root>` element within
-    the `<weblogic-web-app>` element. Make sure to specify the applicable JSF
-    version:
-
-        <library-ref>
-            <library-name>jsf</library-name>
-            <specification-version>1.2</specification-version>
-            <implementation-version>1.2</implementation-version>
-            <exact-match>false</exact-match>
-        </library-ref>
+    mail.session.jndi.name=mail/MailSession
 
 Before we deploy Liferay, we'll teach you how to enable and configure Java
 Security so that you can start using Liferay's plugin security manager with
@@ -261,21 +246,15 @@ Now, let's deploy Liferay Portal.
 
 1.  Start your WebLogic server if it's not already started.
 
-2.  Select *Deployments* and click the  *Install* button. Upload the desired JSF
-    `.war` file--`jsf-1.2.war` or `jsf-2.0.war`--from WebLogic's common
-    deployable libraries folder and select *Install this deployment as a
-    library* to your domain's server that will be running Liferay. 
+2. Go to *Deployments* and select the Liferay `.war` file from the file system,
+   or click the *Upload Your File(s)* link to upload it and then click *Next*.
 
-3.  After installing the JSF libraries, go back to deployments and select the
-    Liferay `.war` file from the file system or click the *Upload Your File(s)*
-    link to upload it and then click *Next*.
+3.  Select *Install this deployment as an application* and click *Next*.
 
-4.  Select *Install this deployment as an application* and click *Next*.
-
-5.  If the default name is appropriate for your installation, keep it. Otherwise,
+4.  If the default name is appropriate for your installation, keep it. Otherwise,
     give it a name of your choosing and click *Next*.
 
-6.  Click *Finish*. After the deployment finishes, click *Save*.
+5.  Click *Finish*. After the deployment finishes, click *Save*.
     Liferay precompiles all the JSPs and Liferay launches.
 
 Congratulations! You are now running Liferay on Oracle WebLogic 12c.
