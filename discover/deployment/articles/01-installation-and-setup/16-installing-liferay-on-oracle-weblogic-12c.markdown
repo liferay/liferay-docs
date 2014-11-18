@@ -235,6 +235,70 @@ Management*](https://www.liferay.com/documentation/liferay-portal/6.2/developmen
 in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
 access to resources. 
 
+Next you'll learn how to configure your WebLogic application server for JSF
+applications. 
+
+## JSF Configuration
+
+If you'd like to deploy JSF applications on your WebLogic application server,
+you'll need to complete a few extra steps in your configuration process. If you
+do not plan on using JSF applications in your application server, you can skip
+this section. This section assumes you're using JSF 2.1 portlets. Follow the
+steps below to ensure JSF applications can be deployed successfully to your
+WebLogic application server. 
+
+1. To avoid a `ViewExpiredException` with Ajax, disable the Liferay Portal
+`ETagFilter` by adding the following property in the `portal-ext.properties`
+file: 
+
+        com.liferay.portal.servlet.filters.etag.ETagFilter=false
+
+    For more information on this exception, refer to
+    [FACES-1591](https://issues.liferay.com/browse/FACES-1591).
+
+2. You'll need to adjust your memory settings for your environment variables.
+   For your memory settings to be permanently set, they need to be hard-coded in
+   the `startWebLogic.sh` script. Just above the definition of your home domain,
+   add the following lines:
+
+        export MW_HOME=$HOME/Oracle/Middleware
+        export USER_MEM_ARGS="-Xms512m -Xmx1024m -XX:CompileThreshold=8000 -XX:PermSize=128m -XX:MaxPermSize=256m"
+
+    Note that if you have many portlet WAR modules, you may need to increase
+    memory. For example, the following lines reserves double the amount of
+    memory: 
+
+        export MW_HOME=$HOME/Oracle/Middleware
+        export USER_MEM_ARGS="-Xms1024m -Xmx2048m -XX:CompileThreshold=8000 -XX:PermSize=256m -XX:MaxPermSize=512m"
+
+3. If you're running the JSR 329 Portlet Bridge TCK, you'll need to include the
+   `trinidad-api.jar` dependency in the global classpath (within the `lib`
+   folder). 
+
+4. In order for JSF 2.1 portlets to deploy correctly in WebLogic, the
+   `WEB-INF/weblogic.xml` descriptor must be configured to fine-tune how class
+   loading takes place. For a working example, please refer to the
+   [weblogic.xml](https://github.com/liferay/liferay-faces/blob/3.2.x/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/weblogic.xml)
+   descriptor from a demo JSF portlet. 
+
+5. Due to a deficiency in the XML parser that ships with WebLogic, it is
+   necessary to include a custom [Apache Xerces](http://xerces.apache.org/)
+   parser as a dependency. In order to include it in the proper position within
+   the WebLogic classpath, the Xerces JARs are included in the Mojarra Shared
+   Library. Therefore, it is necessary to add Xerces as a dependency in the
+   portlet's WEB-INF/lib folder. For example: 
+
+        <dependencies>
+            <dependency>
+                <groupId>xerces</groupId>
+                <artifactId>xercesImpl</artifactId>
+                <version>2.11.0</version>
+            </dependency>
+        </dependencies>
+
+6. If using ICEfaces, PrimeFaces, or RichFaces, all JARs related to these
+   projects my exist in `WEB-INF/lib`. 
+
 Now its the moment you've been waiting for: Liferay deployment!
 
 ## Deploy Liferay [](id=deploy-liferay)
