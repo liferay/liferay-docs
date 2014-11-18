@@ -135,21 +135,22 @@ automatically the first time the user enters their LCS account. The actions that
 can be performed by each of the LCS roles are detailed in the below permissions 
 matrix. 
 
-** LCS Permissions Matrix **
+**LCS Permissions Matrix**
 
 Action | &nbsp;LCS Administrator | &nbsp;LCS Environment Manager | &nbsp;LCS Environment Viewer |
 ------ | ----------------------- | ----------------------------- | ---------------------------- |
 Access LCS | true | true | true |
 Access Any Environment | true | false | false |
 Access a Particular Environment | true | true | true |
-Manage Users in any Environment | true | false | false |
+Manage Users in Any Environment | true | false | false |
 Manage Users in a Particular Environment | true | true | false |
 Invite Users to LCS | true | false | false |
 Create and Delete Environments | true | false | false |
-Edit any Environment | true | false | false |
+Edit Any Environment | true | false | false |
 Edit a Particular Environment | true | true | false |
-Server Registration | true | false | false |
-Install Fix Packs in any Environment | true | false | false |
+Server Registration in Any Environment | true | false | false |
+Server Registration in a Particular Environment | true | true | false |
+Install Fix Packs in Any Environment | true | false | false |
 Install Fix Packs in a Particular Environment | true | true | false |
 
 Now that your LCS account has been set up and you have an understanding of the 
