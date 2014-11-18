@@ -51,6 +51,7 @@ Let's proceed with configuring WebLogic.
 
 Let's make the following adjustments in your configuration to support using
 Liferay:
+
 - Set WebLogic Server's memory arguments.
 - Set the maximum size for Java's permanent generation space.
 - Set the file encoding.
