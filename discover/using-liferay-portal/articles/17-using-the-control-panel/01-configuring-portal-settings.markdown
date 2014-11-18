@@ -45,11 +45,23 @@ you can set the name of the company or organization that's responsible for
 running the portal. This name also defines the name of your portal's default
 site. Its default name is `liferay.com` so you will definitely want to change
 this to reflect the name of your company or organization. You can also set the
-mail domain, virtual host and content delivery network address here. Under the
-Navigation heading, you can set a home page for your portal here as well as
-default landing and logout pages. Under the Additional Information heading, you
-can specify a Legal name, ID, company type, SIC code, ticker symbol, industry
-and industry type.
+mail domain, virtual host and content delivery network address here.
+
+Under the Navigation heading, you can set a home page for your portal here as 
+well as default landing and logout pages. For setting these pages, just use the 
+part of the page's address that follows your domain. For example, if you want 
+the default landing page to be `http://localhost:8080/web/guest/login`, use 
+`/web/guest/login`. You can also use the variables `${liferay:screenName}` and 
+`${liferay:userId}` as part of the address. This comes in handy if you want to 
+redirect users to their personal pages upon login. Alternatively, you can set 
+the default login or logout page in a `portal-ext.properties` file with the 
+properties `default.landing.page.path` and `default.logout.page.path`, 
+respectively. For more information, see the `portal.properties` documentation 
+entries for the [Default Landing Page](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Default%20Landing%20Page) 
+and [Default Logout Page](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Default Logout Page). 
+
+Under the Additional Information heading, you can specify a Legal name, ID, 
+company type, SIC code, ticker symbol, industry and industry type.
 
 ## Authentication [](id=authentication)
 
