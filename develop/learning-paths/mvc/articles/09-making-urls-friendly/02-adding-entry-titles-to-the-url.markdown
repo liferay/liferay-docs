@@ -1,7 +1,7 @@
 # Adding Entry Titles to the URL
 
 After the last section on Friendly URLs, you have a good understanding of
-Liferay's Frinedly URL pattern, from declaring your intentions in
+Liferay's Friendly URL pattern, from declaring your intentions in
 `liferay-portlet.xml` to writing some quick routes in the
 `guestbook-friendly-url-routes.xml`. If you noticed, however, the URLs are
 still not entirely friendly. Look at the URL we now get when we click on one of
@@ -10,19 +10,32 @@ our Guestbook Entries:
     http://localhost:8080/web/guest/home/-/guestbook/10473/view_entry
 
 It's quite a bit more concise and human-readable than before we started, but
-we've included the Primary Key of the `Guestbook`, its `guestbookId`, in the
-URL. This doesn't mean anything to the user. It would be more clear to see the
-name of the Guestbook. That's what you'll be doing in this section on Friendly
-URLs.
+we've included the Primary Key of the `Guestbook`, its `guestbookId` field, in
+the URL. This doesn't mean anything to the user. It would be more clear to see
+the name of the Guestbook. That's what you'll be doing in this section on
+Friendly URLs.
 
-## Creating a Finder
+## Finding Entities by Name
 
-First, modify the Guestbook App's `docroot/WEB-INF/service.xml` file, adding
-the following XML below the current `<finder>` in the Guestbook entity:
+In the `render` method of `GuestbookPortlet.java`, you can see this code:
+
+    long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+
+
+`Guestbook` entities are found
+using their `guestbookId`. If you want to avoid exposing the primary key, the
+first step is to create a way to find `Guestbook`s in the database by another
+field. The `name` field is a convenient choice Add the following `<finder>` tag
+to the Guestbook App's `docroot/WEB-INF/service.xml` file, below the current
+`<finder>` in the `Guestbook` entity:
 
     <finder name="GuestbookName" return-type="Collection">
         <finder-column name="name"></finder-column>
     </finder>
+
+Run Service Builder after adding the finder tag, and you'll now have acces to a
+findByGuestbookName() method
+
 
 The `friendly-url-routes` tag lets us declare an XML file that contains, you
 guessed it, URL routes that iwll relate to the Liferay URLs. In almost all
@@ -37,32 +50,6 @@ before the routes we declare.
 ## Something about using the finder to get Entries by the GuestbookName
 
 ## Adding the parameter to the URL in view.jsp
-
-Since you don't want the `guestbookId` in the URL, change the scriptlet that
-gets all the Guestbook entites from the database, then loops through them and
-checks to see if the current guestbook in the loop is the same one the user
-selected. Instead of comparing their `guestbookId`, compare their `name`. The
-scriptlet will look like this when you're done:
-
-    <%
-		 List<Guestbook> guestbooks = GuestbookLocalServiceUtil
-					.getGuestbooks(scopeGroupId);
-			for (int i = 0; i < guestbooks.size(); i++) {
-				Guestbook curGuestbook = (Guestbook) guestbooks.get(i);
-
-				String cssClass = StringPool.BLANK;
-
-				if (curGuestbook.getName() == guestbookName) {
-					cssClass = "active";
-				}
-				
-				if (GuestbookPermission.contains(
-						permissionChecker, curGuestbook.getGuestbookId(), "VIEW")) {
-					
-	%>
-
-
-
 
 ## Adding the routes to guestbook-friendly-url-routes.xml
 
