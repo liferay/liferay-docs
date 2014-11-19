@@ -306,6 +306,8 @@ with the following command:
 
 Tomcat reports the message `Using Security Manager` to your terminal. 
 
+Now you have PACL enabled and configured for your portal. 
+
 ## Adding Mojarra [](id=adding-mojarra)
 
 If you'd like to use JSF applications in your Tomcat application server, you'll

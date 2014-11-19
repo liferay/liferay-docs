@@ -513,7 +513,7 @@ and copy it to the following location:
 
         <resource-root path="weld-core-1.1.10.Final.jar"/>
 
-Now you're ready to deploy Liferay Portal.
+Now you're ready to deploy Liferay Portal. 
 
 ## Deploy Liferay [](id=deploy-liferay)
 

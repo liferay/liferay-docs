@@ -1652,7 +1652,94 @@ Management*](https://www.liferay.com/documentation/liferay-portal/6.2/developmen
 in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
 access to resources.
 
-Now you're ready to deploy Liferay Portal.
+## JSF Configuration [](id=jsf-configuration-liferay-portal-6-2-user-guide-16-en)
+
+If you plan on using JSF applications in your application server, follow the
+instructions below. In this section, you'll learn how to upgrade Mojarra and
+Weld so your app server's versions are identical to the versions used by Liferay
+Faces. 
+
+### Upgrading Mojarra [](id=upgrading-mojarra-liferay-portal-6-2-user-guide-16-en)
+
+Some versions of JBoss 7.1.x are not bundled with the correct Mojarra version
+necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Mojarra
+2.1.7 in the global classpath. Since Liferay Faces uses Mojarra 2.1.21, you'll
+need to download a newer version of the `jsf-api.jar` and `jsf-impl.jar`
+artifacts. 
+
+1. Download
+[`jsf-api-2.1.21.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-api%7C2.1.21%7Cjar)
+and copy it to the following location: 
+
+        $JBOSS_HOME/modules/javax/faces/api/main/jsf-api-2.1.21.jar
+
+2. Open the `$JBOSS_HOME/modules/javax/faces/api/main/module.xml` file and
+   comment out the reference to the version of the JAR that comes with the
+   server. For example: 
+
+        <!-- <resource-root path="jboss-jsf-api_2.1_spec-2.0.1.Final.jar"/> -->
+
+3. Add a reference to the new JAR in the same `module.xml` file: 
+
+        <resource-root path="jsf-api-2.1.21.jar"/>
+
+4. Add the following module to the `<dependencies>` section: 
+
+        <dependencies>
+            ...
+            <module name="com.sun.jsf-impl"/>
+        </dependencies>
+
+5. Download
+[`jsf-impl-2.1.21.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-impl%7C2.1.21%7Cjar)
+and copy it to the following location: 
+
+        $JBOSS_HOME/modules/com/sun/jsf-impl/main/jsf-impl-2.1.21.jar
+
+6. Open the `$JBOSS_HOME/modules/com/sun/jsf-impl/main/module.xml` file and
+   comment out the reference to the version of the JAR that comes with the
+   server. For example: 
+
+        <!-- <resource-root path="jsf-impl-2.1.7-jbossorg-2.jar"/> -->
+
+7. Add a reference to the new JAR in the same `module.xml` file: 
+
+        <resource-root path="jsf-impl-2.1.21.jar"/>
+
+Congratulations! You've officially upgraded your Mojarra version! If you'd like
+to verify that you're using the correct version of Mojarra at runtime, download
+the following [demo portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
+and add it to a portal page. You should see a bulleted list of version info at
+the bottom of the portlet.
+
+![Figure 15.x: Make sure the Mojarra version displayed is the one you configured during the upgrade: Mojarra 2.1.21.](../../images/jboss-mojarra-upgrade.png)
+
+Next you'll learn how to upgrade Weld. 
+
+### Upgrading Weld [](id=upgrading-weld-liferay-portal-6-2-user-guide-16-en)
+
+Some versions of JBoss 7.1.x are not bundled with the correct Weld version
+necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Weld
+1.1.5 in the global classpath. Since Liferay Faces uses Weld 1.1.10, you'll
+need to download a newer version of the `weld-core.jar` artifact. 
+
+1. Download
+[`weld-core-1.1.10.Final.jar`](http://search.maven.org/#artifactdetails%7Corg.jboss.weld%7Cweld-core%7C1.1.10.Final%7Cjar)
+and copy it to the following location: 
+
+        $JBOSS_HOME/modules/org/jboss/weld/core/main/weld-core-1.1.10.Final.jar
+
+2. Open the `$JBOSS_HOME/modules/org/jboss/weld/core/main/module.xml` file and
+   comment out the reference to the version of the JAR that comes with the
+   server. For example: 
+
+        <!-- <resource-root path="weld-core-1.1.5.AS71.Final.jar"/> -->
+
+3. Add a reference to the new JAR in the same `module.xml` file: 
+
+        <resource-root path="weld-core-1.1.10.Final.jar"/>
+
+Now you're ready to deploy Liferay Portal. 
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-1)
 
@@ -2003,7 +2090,137 @@ with the following command:
 
 Tomcat reports the message `Using Security Manager` to your terminal. 
 
-Now you have PACL enabled and configured for your portal. Let's deploy Liferay!
+Now you have PACL enabled and configured for your portal. 
+
+## Adding Mojarra [](id=adding-mojarra-liferay-portal-6-2-user-guide-16-en)
+
+If you'd like to use JSF applications in your Tomcat application server, you'll
+need to add Mojarra. If you do not plan on using JSF applications in your
+application server, you can skip this section. 
+
+The typical binary ZIP version of Tomcat does not contain any JSF runtime JARs
+like Mojarra or MyFaces. This is because Tomcat is not a Java EE Application
+Server like Oracle GlassFish, Oracle WebLogic, JBoss AS, or IBM WebSphere. Also,
+Tomcat is not a Java EE Web Profile Server like Apache TomEE or Caucho Resin. 
+
+There are two ways to approach using Mojarra with Tomcat: upgrading Tomcat's
+context classpath or upgrading Tomcat's global classpath. Both methods require
+adding/editing two JARs, which can be downloaded below: 
+
+- [`jsf-api`](https://maven.java.net/content/repositories/releases/com/sun/faces/jsf-api/2.1.21/)
+- [`jsf-impl`](https://maven.java.net/content/repositories/releases/com/sun/faces/jsf-impl/2.1.21/)
+
+The typical approach for using Mojarra with Tomcat is to simply include
+`jsf-api.jar` and `jsf-impl.jar` in the `WEB-INF/lib` folder in each JSF
+project. You can do this by specifying the `jsf-api` and `jsf-impl` artifacts
+without a scope, or with the scope set as `compile` (the default) in each JSF
+project: 
+
+    <dependency>
+        <groupId>com.sun.faces</groupId>
+        <artifactId>jsf-api</artifactId>
+        <version>2.1.21</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.sun.faces</groupId>
+        <artifactId>jsf-impl</artifactId>
+        <version>2.1.21</version>
+        <scope>compile</scope>
+    </dependency>
+
+Although it is possible to install Mojarra in the Tomcat global classpath, it
+will not work properly without some small modifications to the `jsf-impl.jar`
+dependency. The problem stems from the fact that the Mojarra
+[`ConfigureListener`](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/src/main/java/com/sun/faces/config/ConfigureListener.java)
+class is automatically registered for all contexts under `tomcat/webapps`
+because it is specified as a `<listener>` in the
+[META-INF/jsf-jsf_core.tld](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/conf/share/jsf_core.tld)
+descriptor inside the `jsf-impl.jar` dependency.
+Additionally, the
+[META-INF/services/javax.faces.ServletContainerInitializer](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/conf/share/javax.servlet.ServletContainerInitializer)
+will cause the
+[FacesInitializer](https://svn.java.net/svn/mojarra~svn/tags/2.1.21/jsf-ri/src/main/java/com/sun/faces/config/FacesInitializer.java)
+class to auto-register the `ConfigureListener` as well. Consequently, every
+request issued in all contexts will invoke the Mojarra `ConfigureListener`. This
+can be a potential performance problem in a webapp environment, and causes
+incompatibilities with a portlet environment. Therefore, it is necessary to
+disable automatic registration of the Mojarra `ConfigureListener` by modifying
+the contents of the `jsf-impl.jar` dependency. 
+
+To upgrade Tomcat's global classpath, follow the steps below: 
+
+1. Copy `jsf-api.jar` and `jsf-impl.jar` to the `tomcat/lib` folder. 
+
+2. Open a terminal window and navigate to the `tomcat/lib` folder: 
+
+        cd tomcat/lib
+
+3. Create a temporary folder named `jsf-impl` and navigate into it: 
+
+        mkdir jsf-impl
+        cd jsf-impl
+
+4. Extract the Mojarra `jsf-impl.jar` dependency into the temporary folder: 
+
+        jar xf ../jsf-impl-2.1.21.jar
+
+5. Open the `META-INF/jsf_core.tld` file and remove the following lines: 
+
+        <listener>
+            <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+        </listener>
+
+6. Remove the Mojarra servlet container initializer: 
+
+        rm META-INF/services/javax.servlet.ServletContainerInitializer
+
+7. Overwrite the Mojarra `jsf-impl.jar` dependency by creating a new archive: 
+
+        jar cf ../jsf-impl-2.1.21.jar META-INF/ com/
+
+8. Remove the temporary folder: 
+
+        cd ../
+        rm -rf jsf-impl/
+
+9. Follow only *one* of the following sub-steps below, depending on preference. 
+
+    9.1 Specify the `liferay-faces-init.jar` dependency in each JSF project in
+    order for the Mojarra `ConfigureListener` to be automatically started by
+    Tomcat:
+
+        <dependency>
+            <groupId>com.liferay.faces</groupId>
+            <artifactId>liferay-faces-init</artifactId>
+            <version>3.1.3-ga4</version>
+        </dependency>
+
+    9.2 Specify the Mojarra `ConfigureListener` as a listener in the
+    `WEB-INF/web.xml` descriptor in each JSF project: 
+
+        <listener>
+            <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+        </listener>
+
+10. Specify the `jsf-api` and `jsf-impl` dependencies as provided in each JSF
+   project: 
+
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-api</artifactId>
+            <version>2.1.21</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-impl</artifactId>
+            <version>2.1.21</version>
+            <scope>provided</scope>
+        </dependency>
+
+You've officially added Mojarra to your application server. Let's deploy Liferay
+next! 
 
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-3)
 
