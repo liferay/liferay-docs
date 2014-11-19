@@ -115,11 +115,11 @@ from an exploded `.war` file on the file system.
 
 +$$$
 
-**Note:** This does not prevent Liferay from
-running in a clustered environment on multiple JBoss servers. You can set up a
-cluster of Liferay instances running on JBoss 7.1 servers running in standalone
-mode. Please refer to the chapter of this guide on [Configuring Liferay for High
-Availability](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-for-high-availabili-liferay-portal-6-2-user-guide-20-en)
+**Note:** This does not prevent Liferay from running in a clustered environment
+on multiple JBoss servers. You can set up a cluster of Liferay instances running
+on JBoss 7.1 servers running in standalone mode. Please refer to the chapter of
+this guide on
+[Configuring Liferay for High Availability](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-for-high-availabili-liferay-portal-6-2-user-guide-20-en)
 for information on setting up a Liferay cluster.
 
 $$$
@@ -425,6 +425,64 @@ Also, see section [*Understanding Plugin Security
 Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
 in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
 access to resources.
+
+## Upgrading Mojarra
+
+If you plan on using JSF applications in your application server, follow the
+instructions below.
+
+Some versions of JBoss 7.1.x are not bundled with the correct Mojarra version
+necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Mojarra
+2.1.7 in the global classpath. Since Liferay Faces used Mojarra 2.1.21, you'll
+need to download a newer version of the `jsf-api.jar` and `jsf-impl.jar`
+artifacts. 
+
+1. Download
+[`jsf-api-2.1.21.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-api%7C2.1.21%7Cjar)
+and copy it to the following location: 
+
+        $JBOSS_HOME/modules/javax/faces/api/main/jsf-api-2.1.21.jar
+
+2. Open the `$JBOSS_HOME/modules/javax/faces/api/main/module.xml` file and
+   comment out the reference to the version of the JAR that comes with the
+   server. For example: 
+
+        <!-- <resource-root path="jboss-jsf-api_2.1_spec-2.0.1.Final.jar"/> -->
+
+3. Add a reference to the new JAR in the same `module.xml` file: 
+
+        <resource-root path="jsf-api-2.1.21.jar"/>
+
+4. Add the following module to the `<dependencies>` section: 
+
+        <dependencies>
+            ...
+            <module name="com.sun.jsf-impl"/>
+        </dependencies>
+
+5. Download
+[`jsf-impl-2.1.21.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-impl%7C2.1.21%7Cjar)
+and copy it to the following location: 
+
+        $JBOSS_HOME/modules/com/sun/jsf-impl/main/jsf-impl-2.1.21.jar
+
+6. Open the `$JBOSS_HOME/modules/com/sun/jsf-impl/main/module.xml` file and
+   comment out the reference to the version of the JAR that comes with the
+   server. For example: 
+
+        <!-- <resource-root path="jsf-impl-2.1.7-jbossorg-2.jar"/> -->
+
+7. Add a reference to the new JAR in the same `module.xml` file: 
+
+        <resource-root path="jsf-impl-2.1.21.jar"/>
+
+Congratulations! You've officially upgraded your Mojarra version! If you'd like
+to verify that you're using the correct version of Mojarra at runtime, download
+the following [demo portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
+and add it to a portal page. You should see a bulleted list of version info at
+the bottom of the portlet.
+
+![Figure 1: Make sure the Mojarra version displayed is the one you configured during the upgrade: Mojarra 2.1.21.](../../images/jboss-mojarra-upgrade.png)
 
 Now you're ready to deploy Liferay Portal.
 
