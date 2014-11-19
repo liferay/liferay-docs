@@ -426,14 +426,18 @@ Management*](https://www.liferay.com/documentation/liferay-portal/6.2/developmen
 in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
 access to resources.
 
-## Upgrading Mojarra
+## JSF Configuration
 
 If you plan on using JSF applications in your application server, follow the
-instructions below.
+instructions below. In this section, you'll learn how to upgrade Mojarra and
+Weld so your app server's versions are identical to the versions used by Liferay
+Faces. 
+
+### Upgrading Mojarra
 
 Some versions of JBoss 7.1.x are not bundled with the correct Mojarra version
 necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Mojarra
-2.1.7 in the global classpath. Since Liferay Faces used Mojarra 2.1.21, you'll
+2.1.7 in the global classpath. Since Liferay Faces uses Mojarra 2.1.21, you'll
 need to download a newer version of the `jsf-api.jar` and `jsf-impl.jar`
 artifacts. 
 
@@ -483,6 +487,31 @@ and add it to a portal page. You should see a bulleted list of version info at
 the bottom of the portlet.
 
 ![Figure 1: Make sure the Mojarra version displayed is the one you configured during the upgrade: Mojarra 2.1.21.](../../images/jboss-mojarra-upgrade.png)
+
+Next you'll learn how to upgrade Weld. 
+
+### Upgrading Weld
+
+Some versions of JBoss 7.1.x are not bundled with the correct Weld version
+necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Weld
+1.1.5 in the global classpath. Since Liferay Faces uses Weld 1.1.10, you'll
+need to download a newer version of the `weld-core.jar` artifact. 
+
+1. Download
+[`weld-core-1.1.10.Final.jar`](http://search.maven.org/#artifactdetails%7Corg.jboss.weld%7Cweld-core%7C1.1.10.Final%7Cjar)
+and copy it to the following location: 
+
+        $JBOSS_HOME/modules/org/jboss/weld/core/main/weld-core-1.1.10.Final.jar
+
+2. Open the `$JBOSS_HOME/modules/org/jboss/weld/core/main/module.xml` file and
+   comment out the reference to the version of the JAR that comes with the
+   server. For example: 
+
+        <!-- <resource-root path="weld-core-1.1.5.AS71.Final.jar"/> -->
+
+3. Add a reference to the new JAR in the same `module.xml` file: 
+
+        <resource-root path="weld-core-1.1.10.Final.jar"/>
 
 Now you're ready to deploy Liferay Portal.
 
