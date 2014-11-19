@@ -43,7 +43,11 @@ public class GuestbookPortlet extends MVCPortlet {
 		String message = ParamUtil.getString(request, "message");
 		String guestbookName = ParamUtil.getString(request, "guestbookName");
 		long entryId = ParamUtil.getLong(request, "entryId");
-		Guestbook guestbook = (Guestbook) request.getAttribute("guestbook");
+		
+		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+		OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
+		
+		Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
 
 		if (entryId > 0) {
 			try {
@@ -53,8 +57,8 @@ public class GuestbookPortlet extends MVCPortlet {
 
 				SessionMessages.add(request, "entryAdded");
 
-				response.setRenderParameter("guestbookId",
-						Long.toString(guestbook.getGuestbookId()));
+				response.setRenderParameter("guestbookName",
+						guestbook.getName());
 			} catch (Exception e) {
 				SessionErrors.add(request, e.getClass().getName());
 				
@@ -71,8 +75,8 @@ public class GuestbookPortlet extends MVCPortlet {
 
 				SessionMessages.add(request, "entryAdded");
 
-				response.setRenderParameter("guestbookId",
-						Long.toString(guestbook.getGuestbookId()));
+				response.setRenderParameter("guestbookName",
+						guestbook.getName());
 			} catch (Exception e) {
 				SessionErrors.add(request, e.getClass().getName());
 				
@@ -137,7 +141,6 @@ public class GuestbookPortlet extends MVCPortlet {
 					Guestbook.class.getName(), renderRequest);
 			
 			String guestbookName = ParamUtil.getString(renderRequest, "guestbookName");
-			System.out.println(guestbookName);
 
 			long groupId = serviceContext.getScopeGroupId();
 
@@ -154,8 +157,16 @@ public class GuestbookPortlet extends MVCPortlet {
 				if (!(renderRequest.getAttribute("guestbook") == null)) {
 					guestbook = (Guestbook) renderRequest.getAttribute("guestbook");
 				}
-				else{
+				
+				else if (renderRequest.getAttribute("guestbook") == null && guestbookName.length() == 0) {
 					guestbook = guestbooks.get(0);
+				}
+				
+				else if (guestbookName.length() > 0) {
+					OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+					OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
+					
+					guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
 				}	
 			}
 			renderRequest.setAttribute("guestbook", guestbook);

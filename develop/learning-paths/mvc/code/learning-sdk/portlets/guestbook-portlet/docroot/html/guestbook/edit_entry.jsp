@@ -1,15 +1,8 @@
 <%@include file = "/html/init.jsp" %>
 
-<portlet:renderURL var="viewURL">
-	<portlet:param name="mvcPath" value="/html/guestbook/view.jsp"></portlet:param>
-</portlet:renderURL>
-
-<portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
-
 <%
 String entryName = ParamUtil.getString(renderRequest, "name");
 
-System.out.println(entryName);
 OrderByComparatorFactory entryOrderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
 OrderByComparator entryOrderByComparator = entryOrderByComparatorFactory.create("Entry", "name", true);
 OrderByComparatorFactory guestbookOrderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
@@ -17,17 +10,26 @@ OrderByComparator guestbookOrderByComparator = guestbookOrderByComparatorFactory
 
 Guestbook guestbook = (Guestbook) renderRequest.getAttribute("guestbook");
 
-String guestbookName = guestbook.getName();
+String guestbookName = ParamUtil.getString(renderRequest, "guestbookName");
 
+long entryId = ParamUtil.getLong(renderRequest, "entryId");
 Entry entry = null;
 
-if (entryName.length() > 0) {
-	entry = EntryLocalServiceUtil.getEntryByName(entryName, entryOrderByComparator);
-}
-long entryId = entry.getEntryId();
-System.out.println(entryId);
+	if (entryId > 0) {
+		entry = EntryLocalServiceUtil.getEntry(entryId);
+	}
+
 
 %>
+
+<portlet:renderURL var="viewURL">
+	<portlet:param name="mvcPath" value="/html/guestbook/view.jsp"></portlet:param>
+	<portlet:param name="guestbookName" value="<%= guestbookName %>"/>
+</portlet:renderURL>
+
+<portlet:actionURL name="addEntry" var="addEntryURL">
+	<portlet:param name="guestbookName" value="<%= guestbook.getName() %>"/>
+</portlet:actionURL>
 
 <aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
 	<aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />

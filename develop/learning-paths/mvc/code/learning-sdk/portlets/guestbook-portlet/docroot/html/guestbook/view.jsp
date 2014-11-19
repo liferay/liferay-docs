@@ -59,6 +59,7 @@
 	<portlet:renderURL var="addGuestbookURL">
 		<portlet:param name="mvcPath"
 			value="/html/guestbook/edit_guestbook.jsp" />
+		<portlet:param name="guestbookName" value="<%=guestbook.getName()%>" />
 	</portlet:renderURL>
 
 	<aui:button onClick="<%=addGuestbookURL.toString()%>"
