@@ -426,14 +426,14 @@ Management*](https://www.liferay.com/documentation/liferay-portal/6.2/developmen
 in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
 access to resources.
 
-## JSF Configuration
+## JSF Configuration [](id=jsf-configuration)
 
 If you plan on using JSF applications in your application server, follow the
 instructions below. In this section, you'll learn how to upgrade Mojarra and
 Weld so your app server's versions are identical to the versions used by Liferay
 Faces. 
 
-### Upgrading Mojarra
+### Upgrading Mojarra [](id=upgrading-mojarra)
 
 Some versions of JBoss 7.1.x are not bundled with the correct Mojarra version
 necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Mojarra
@@ -490,7 +490,7 @@ the bottom of the portlet.
 
 Next you'll learn how to upgrade Weld. 
 
-### Upgrading Weld
+### Upgrading Weld [](id=upgrading-weld)
 
 Some versions of JBoss 7.1.x are not bundled with the correct Weld version
 necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Weld

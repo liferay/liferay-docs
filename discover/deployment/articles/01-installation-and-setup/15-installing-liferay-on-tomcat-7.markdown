@@ -306,7 +306,7 @@ with the following command:
 
 Tomcat reports the message `Using Security Manager` to your terminal. 
 
-## Adding Mojarra
+## Adding Mojarra [](id=adding-mojarra)
 
 If you'd like to use JSF applications in your Tomcat application server, you'll
 need to add Mojarra. If you do not plan on using JSF applications in your
