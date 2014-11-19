@@ -120,7 +120,7 @@ your data source, you can skip this section.
 3. Under *Common Tasks*, navigate to *Resources* &rarr; *JDBC* &rarr; *JDBC
    Connection Pools*
 
-    ![Figure 1.5: In the GlassFish administration console, navigate to JDBC Connection Pools.](../../images/11-glassfish31-connection-pools.png)
+    ![Figure 1.x: In the GlassFish administration console, navigate to JDBC Connection Pools.](../../images/11-glassfish31-connection-pools.png)
 
 4. Click *New...*.
 
@@ -129,7 +129,7 @@ your data source, you can skip this section.
    type, and select your database driver vendor (e.g. `MySQL`). See the
    following figure:
 
-    ![Figure 1.6: It's easy to configure a new Glassfish JDBC Connection Pool. Just enter a pool name, select a resource type, and specify a database driver vendor.](../../images/11-glassfish-31-jdbc-connection-pool.png)
+    ![Figure 1.x: It's easy to configure a new Glassfish JDBC Connection Pool. Just enter a pool name, select a resource type, and specify a database driver vendor.](../../images/11-glassfish-31-jdbc-connection-pool.png)
 
 6. Click *Next* to advance to the next step in creating your JDBC connection
    pool.
@@ -137,7 +137,7 @@ your data source, you can skip this section.
 7. From the top of this screen (Step 2 of 2), scroll down to the *Additional
    Properties* section.
 
-    ![Figure 1.7: GlassFish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
+    ![Figure 1.x: GlassFish JDBC Connection Pool Properties](../../images/11-glassfish-31-jdbc-connection-pool-props.png)  
 
 8. Replace or add the following properties ...
 
@@ -264,7 +264,7 @@ Now let's go ahead and deploy Liferay.
 
 7. Click *OK*.
 
-![Figure 1.8: GlassFish provides an administrative console which you can use to deploy Liferay.](../../images/11-deploying-liferay-in-glassfish-4.0.png)
+![Figure 1.x: GlassFish provides an administrative console which you can use to deploy Liferay.](../../images/11-deploying-liferay-in-glassfish-4.0.png)
 
 Once you have deployed Liferay via GlassFish's administrative console, restart
 GlassFish.

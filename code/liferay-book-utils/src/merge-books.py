@@ -36,14 +36,13 @@ for i in args.files:
         for j in content:
             
             whiteLength = len(j) - len(j.lstrip())
-            if whiteLength > 0:
-                print (str(whiteLength) + " white space characters found")
-                
             whiteSpace=""
-            for k in range(whiteLength):
-                whiteSpace = whiteSpace + " "
-                
-            j = j.lstrip()
+            if whiteLength > 0:                
+                for k in range(whiteLength):
+                    whiteSpace = whiteSpace + " "
+                    
+                j = j.lstrip()
+                print (str(whiteLength) + " white space characters found; " + str(len(whiteSpace)) + " characters added.")
 
             if j.startswith("![Figure"):
                 colon = j.find(":")

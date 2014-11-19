@@ -26,7 +26,7 @@ place higher up in the hierarchy and select the package name instead of an
 individual class name. If you do this, messages for every class lower in the
 hierarchy will be displayed in your application server's log file.
 
-![Figure 4.7: Log levels can be dynamically changed at runtime whenever you need to debug an issue. ](../../images/maintaining-log-levels.png) 
+![Figure 2.x: Log levels can be dynamically changed at runtime whenever you need to debug an issue. ](../../images/maintaining-log-levels.png) 
 
 Be careful when you do this. If you set the log level to DEBUG somewhere near
 the top of the hierarchy (such as `com.liferay`, for example), you may wind up
@@ -58,7 +58,7 @@ for the various logging levels:
 To enable your logging messages to appear in your server's log file via the
 control panel, click the *Add Category* tab on the same *Log Levels* page.
 
-![Figure 4.8: Adding your own logging classes is easy. To add a logging class, just specify it in this field.](../../images/maintaining-add-log-category.png) 
+![Figure 2.x: Adding your own logging classes is easy. To add a logging class, just specify it in this field.](../../images/maintaining-add-log-category.png) 
 
 You'll see you can add a logging category. Put in the fully qualified name of
 your class or of the package that contains the classes whose log messages you

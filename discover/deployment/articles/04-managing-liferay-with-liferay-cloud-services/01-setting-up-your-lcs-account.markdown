@@ -6,7 +6,7 @@ terms of service, setting your password, and setting your password reminder.
 You're then taken to the *Projects* screen where you can join an existing 
 project or create a new one.
 
-![Figure 6.1: When creating your LCS account, you can join an existing project or create a new one.](../../images/lcs-projects.png)
+![Figure 4.x: When creating your LCS account, you can join an existing project or create a new one.](../../images/lcs-projects.png)
 
 The list of existing projects, if present, is the list of projects associated 
 with the domain of your email address. This is typically the company your email 
@@ -28,7 +28,7 @@ Projects screen. The section then expands to let you name the project and choose
 to go to directly to the project's *Dashboard* (more on the Dashboard later). 
 Give your project a name and then click *Save*. 
 
-![Figure 6.2: You can also create a new project from the Projects screen.](../../images/lcs-new-project.png)
+![Figure 4.x: You can also create a new project from the Projects screen.](../../images/lcs-new-project.png)
 
 So what exactly can an LCS Administrator do? Fantastic question! As LCS 
 Administrator, you can assign roles to the rest of the users in your project. 

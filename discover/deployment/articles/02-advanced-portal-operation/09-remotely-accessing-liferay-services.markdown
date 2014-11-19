@@ -9,7 +9,7 @@ also for web services and JavaScript. This means that the method calls for
 storing and retrieving portal objects are all the same, and are generated in the
 same step.
 
-![Figure 4.26: Liferay SOA's first layer of security is its properties files.](../../images/liferay-soa-first-layer.png)
+![Figure 2.x: Liferay SOA's first layer of security is its properties files.](../../images/liferay-soa-first-layer.png)
 
 Because the actual method calls for retrieving data are the same regardless of
 how one gets access to those methods (i.e., locally or through web services),
@@ -59,7 +59,7 @@ If the machine on which the batch job is running has the IP address
 Liferay's web services and pass in user credentials to be used to upload the
 documents.
 
-![Figure 4.27: Liferay SOA's second layer of security is its permissions system.](../../images/liferay-soa-second-layer.png)
+![Figure 2.x: Liferay SOA's second layer of security is its permissions system.](../../images/liferay-soa-second-layer.png)
 
 The second layer of security is Liferay's security model that it uses for every
 object in the portal. The user account that accesses the services remotely must

@@ -90,7 +90,7 @@ to Tcat server installation and management, see [Mulesoft's Tcat Documentation](
 
 - Specify URI encoding
 
-![Figure 1.2: You can log in to the Tcat Administration Console to manage your Tcat servers.](../../images/15-tcat-sign-in.png)
+![Figure 1.x: You can log in to the Tcat Administration Console to manage your Tcat servers.](../../images/15-tcat-sign-in.png)
 
 Next, you'll configure your managed Tcat instance. 
 
@@ -167,7 +167,7 @@ This allows Catalina to access the dependency jars you extracted to
 
     <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
 
-![Figure 1.3: You can edit your Tcat configuration files in the Administration Console.](../../images/15-tcat-server-files.png)
+![Figure 1.x: You can edit your Tcat configuration files in the Administration Console.](../../images/15-tcat-server-files.png)
 
 Excellent work! Now it's time to configure your database.
 
@@ -308,7 +308,7 @@ running; then follow these steps to deploy and start Liferay.
    Liferay, and under the *Name* field, type `/` to put the extracted Liferay into
    `[TCAT_HOME]/webapps/ROOT`.
 
-   ![Figure 1.4: Upload your Liferay Portal WAR file using the Deployments tab of the Tcat Administration Console.](../../images/15-tcat-upload-webapp.png)
+   ![Figure 1.x: Upload your Liferay Portal WAR file using the Deployments tab of the Tcat Administration Console.](../../images/15-tcat-upload-webapp.png)
 
 3. Once you've entered all the deployment details, you can select *Deploy*.
    Once you see a *Successful* message in the Tcat Administration Console,
