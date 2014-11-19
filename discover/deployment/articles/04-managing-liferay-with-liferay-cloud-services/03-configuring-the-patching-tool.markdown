@@ -15,13 +15,9 @@ each command that has it.
 2. Make sure that you have version 10 or higher of the patching tool. To 
    display the version of your patching tool, run `patching-tool.sh info`.
 
-3. Delete `default.properties` from the `patching-tool` directory.
+3. Configure the patching tool by running `patching-tool.sh setup`.
 
-4. Enable the patching tool by running `patching-tool.sh auto-discovery`.
-
-5. Configure the patching tool by running `patching-tool.sh setup`.
-
-6. Patches downloaded through LCS are installed by the patching tool agent on 
+4. Patches downloaded through LCS are installed by the patching tool agent on 
    server startup. For the agent to start with your server, you need to set the 
    `javaagent` property in the JVM options. Make sure that you specify the 
    correct file path to the `patching-tool-agent.jar`. Here's an example of 
@@ -34,6 +30,6 @@ folder, you must specify the path of the `patching-tool` folder as a JVM
 argument for the app server. This is done with the `patching.tool.home` 
 property. For example:
 
-        -Dpatching.tool.home=/home/bzz/workspace/fixpacks/test-agent/liferay-portal-6.1.20-ee-ga2/patching-tool/
+        -Dpatching.tool.home=/opt/liferay-portal-6.1.20-ee-ga2/patching-tool/
 
 Great! Now you're all set to deploy and configure the LCS client portlet.
