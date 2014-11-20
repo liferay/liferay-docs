@@ -104,6 +104,50 @@ the bottom of the portlet.
 
 Congratulations! You've officially upgraded your Mojarra version!
 
+### Upgrading Weld
+
+Some versions of GlassFish 3 are not bundled with the correct Weld version
+necessary to use Liferay Faces. For example, GlassFish 3.1.2 comes with Weld
+1.1.4.Final in the global classpath. Since Liferay Faces uses Weld 1.1.10,
+you'll need to download a newer version of GlassFish. In order to upgrade Weld
+in GlassFish, you'll need to upgrade to the OSGI bundle version of Weld.
+
+Download version 1.1.10.Final of the
+[`weld-osgi-bundle.jar`](http://search.maven.org/#artifactdetails%7Corg.jboss.weld%7Cweld-osgi-bundle%7C1.1.10.Final%7Cjar)
+file and copy it into the following directory:
+
+    $GLASSFISH_HOME/modules/weld-osgi-bundle.jar
+
++$$$
+
+**Note:** Sometimes it is necessary to update the timestamp of the file in the
+file system in order for GlassFish to recognize that the file has been updated.
+If the upgrade doesn't work at first, then run the Unix *touch* command to
+update the timestamp of the file. After restarting GlassFish, the upgraded
+version will be recognized.
+
+$$$
+
+Additionally, you will need to upgrade to newer versions of the following jars:
+
+- `weld-integration.jar`
+- `weld-integration-fragment.jar`
+
+You can find newer versions of these JARs in the ZIP file of [GlassFish 3.1.2.2](http://download.java.net/glassfish/3.1.2.2/release/glassfish-3.1.2.2.zip)
+(81 MB) in the `glassfish/modules` folder.
+
+If you'd like to verify that you're using the correct version of Weld at
+runtime, download the following
+[jsf2-cdi demo portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-cdi-portlet)
+and add it to a portal page. You should see a bulleted list of version info at
+the bottom of the portlet.
+
+![Figure 2: Make sure the Weld version displayed is the one you configured during the upgrade: Weld OSGi Bundle 1.1.10.Final.](../../images/jsf2-cdi-portlet-weld-version.png)
+
+You've upgraded the Weld version in your GlassFish application server. You're
+now set to use JSF applications in your Liferay Portal instance running on
+GlassFish 3!
+
 ## Page 665: Configuring Liferay for High Availability
 
 In the *Properties File Changes* subsection of the chapter *19.2 Performance 
