@@ -11,7 +11,7 @@
 
         <aui:fieldset>
 
-            <aui:input name="name" />
+            <aui:input name="guestbookName" />
 
         </aui:fieldset>
 
