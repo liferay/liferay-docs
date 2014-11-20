@@ -209,6 +209,32 @@ the bottom of the portlet.
 
 Congratulations! You've officially upgraded your Mojarra version!
 
+### Upgrading Weld in JBoss 7
+
+Some versions of JBoss 7.1.x are not bundled with the correct Weld version
+necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Weld
+1.1.5 in the global classpath. Since Liferay Faces uses Weld 1.1.10, you'll
+need to download a newer version of the `weld-core.jar` artifact. 
+
+1. Download
+[`weld-core-1.1.10.Final.jar`](http://search.maven.org/#artifactdetails%7Corg.jboss.weld%7Cweld-core%7C1.1.10.Final%7Cjar)
+and copy it to the following location: 
+
+        $JBOSS_HOME/modules/org/jboss/weld/core/main/weld-core-1.1.10.Final.jar
+
+2. Open the `$JBOSS_HOME/modules/org/jboss/weld/core/main/module.xml` file and
+   comment out the reference to the version of the JAR that comes with the
+   server. For example: 
+
+        <!-- <resource-root path="weld-core-1.1.5.AS71.Final.jar"/> -->
+
+3. Add a reference to the new JAR in the same `module.xml` file: 
+
+        <resource-root path="weld-core-1.1.10.Final.jar"/>
+
+You're now set to use JSF applications in your Liferay Portal instance running
+on JBoss 7!
+
 ## Page 665: Configuring Liferay for High Availability
 
 In the *Properties File Changes* subsection of the chapter *19.2 Performance 
