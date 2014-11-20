@@ -1,14 +1,7 @@
 # Development Reference [](id=development-reference)
 
-As you invoke Liferay services, leverage tag libraries, configure portals, style
-sites, and package apps for Liferay Marketplace, Liferay's API and deployment
-descriptor documentation should be at your fingertips. The Reference page gives
-you shortcuts to this documentation. From here, you can easily peruse Liferay
-Java packages to leverage their capabilities or shop for JavaScript tags and JSF
-tags to give your app users the power they need. And, you can check Liferay
-definitions and configuration defaults as you build your deployment descriptors
-and customize your portal.
-
+Here you'll find Liferay's reference documentation for Java, JavaScript
+(including AlloyUI), tag libraries, deployment descriptors, and Liferay Faces. 
 <h3><span style="font-size: 22px;">Java APIs</span></h3>
 
 <p style="margin-left: 40px;">
@@ -34,11 +27,9 @@ Internal API <span class="opens-new-window-accessible">(Opens New Window)</span>
 </p>
 
 <p style="margin-left: 40px;">
-Do not use this API unless you really really know what you are doing and assume
-the risks. It includes all the classes in the Liferay core, and is primarily
-intended for understanding Liferay or contributing to the Liferay core. Many of
-the classes referenced in this documentation should not be referenced directly
-from Liferay plugins.
+These docs are for those hacking on Liferay's core. Many of the classes
+referenced in this documentation should not be referenced directly from Liferay
+plugins.
 </p>
 
 <p style="margin-left: 40px;">&nbsp;</p>
@@ -139,9 +130,9 @@ liferay-plugin-package_6_1_0.properties<span class="opens-new-window-accessible"
 </p>
 
 <p style="margin-left: 40px;">
-Defines properties used for configuring deployment of Liferay plugins. It's
-properties describe the general characteristics of the Liferay plugin, declare
-its resources, and specify its security related parameters.
+Defines properties used for Liferay plugins. These properties describe the
+the Liferay plugin, declare its resources, and specify its security related
+parameters.
 </p>
 
 
