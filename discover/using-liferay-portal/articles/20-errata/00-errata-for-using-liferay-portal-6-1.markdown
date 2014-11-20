@@ -11,7 +11,7 @@ Office.
 The following sections are related to configuring Liferay Faces to function
 properly, allowing JSF applications to successfully work in GlassFish 3.
 
-### Clustering JSF Portlets
+### Clustering JSF Portlets in GlassFish 3
 
 To successfully cluster JSF portlets on your GlassFish application server,
 follow the instructions below:
@@ -71,7 +71,7 @@ follow the instructions below:
 By following these steps, you're able to cluster JSF portlets using the
 GlassFish application server.
 
-### Upgrading Mojarra
+### Upgrading Mojarra in GlassFish 3
 
 Some versions of GlassFish 3 are not bundled with the correct Mojarra version
 necessary to use Liferay Faces. For example, GlassFish 3.1.2 comes with Mojarra
@@ -104,7 +104,7 @@ the bottom of the portlet.
 
 Congratulations! You've officially upgraded your Mojarra version!
 
-### Upgrading Weld
+### Upgrading Weld in GlassFish 3
 
 Some versions of GlassFish 3 are not bundled with the correct Weld version
 necessary to use Liferay Faces. For example, GlassFish 3.1.2 comes with Weld
@@ -144,9 +144,70 @@ the bottom of the portlet.
 
 ![Figure 2: Make sure the Weld version displayed is the one you configured during the upgrade: Weld OSGi Bundle 1.1.10.Final.](../../images/jsf2-cdi-portlet-weld-version.png)
 
-You've upgraded the Weld version in your GlassFish application server. You're
-now set to use JSF applications in your Liferay Portal instance running on
-GlassFish 3!
+You're now set to use JSF applications in your Liferay Portal instance running
+on GlassFish 3!
+
+## Page 492: Installing Liferay on JBoss 7
+
+The following sections are related to configuring Liferay Faces to function
+properly, allowing JSF applications to successfully work in JBoss 7.
+
+### Upgrading Mojarra in JBoss 7
+
+Some versions of JBoss 7.1.x are not bundled with the correct Mojarra version
+necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Mojarra
+2.1.7 in the global classpath. Since Liferay Faces uses Mojarra 2.1.21, you'll
+need to download a newer version of the `jsf-api.jar` and `jsf-impl.jar`
+artifacts. 
+
+1. Download
+[`jsf-api-2.1.21.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-api%7C2.1.21%7Cjar)
+and copy it to the following location: 
+
+        $JBOSS_HOME/modules/javax/faces/api/main/jsf-api-2.1.21.jar
+
+2. Open the `$JBOSS_HOME/modules/javax/faces/api/main/module.xml` file and
+   comment out the reference to the version of the JAR that comes with the
+   server. For example: 
+
+        <!-- <resource-root path="jboss-jsf-api_2.1_spec-2.0.1.Final.jar"/> -->
+
+3. Add a reference to the new JAR in the same `module.xml` file: 
+
+        <resource-root path="jsf-api-2.1.21.jar"/>
+
+4. Add the following module to the `<dependencies>` section: 
+
+        <dependencies>
+            ...
+            <module name="com.sun.jsf-impl"/>
+        </dependencies>
+
+5. Download
+[`jsf-impl-2.1.21.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-impl%7C2.1.21%7Cjar)
+and copy it to the following location: 
+
+        $JBOSS_HOME/modules/com/sun/jsf-impl/main/jsf-impl-2.1.21.jar
+
+6. Open the `$JBOSS_HOME/modules/com/sun/jsf-impl/main/module.xml` file and
+   comment out the reference to the version of the JAR that comes with the
+   server. For example: 
+
+        <!-- <resource-root path="jsf-impl-2.1.7-jbossorg-2.jar"/> -->
+
+7. Add a reference to the new JAR in the same `module.xml` file: 
+
+        <resource-root path="jsf-impl-2.1.21.jar"/>
+
+Congratulations! You've officially upgraded your Mojarra version! If you'd like
+to verify that you're using the correct version of Mojarra at runtime, download
+the following [demo portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
+and add it to a portal page. You should see a bulleted list of version info at
+the bottom of the portlet.
+
+![Figure 1: Make sure the Mojarra version displayed is the one you configured during the upgrade: Mojarra 2.1.21.](../../images/jboss-mojarra-upgrade.png)
+
+Congratulations! You've officially upgraded your Mojarra version!
 
 ## Page 665: Configuring Liferay for High Availability
 
