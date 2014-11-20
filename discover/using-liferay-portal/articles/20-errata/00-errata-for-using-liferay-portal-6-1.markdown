@@ -71,6 +71,39 @@ follow the instructions below:
 By following these steps, you're able to cluster JSF portlets using the
 GlassFish application server.
 
+### Upgrading Mojarra
+
+Some versions of GlassFish 3 are not bundled with the correct Mojarra version
+necessary to use Liferay Faces. For example, GlassFish 3.1.2 comes with Mojarra
+2.1.6 in the global classpath. Since Liferay Faces used Mojarra 2.1.21, you'll
+need to download a newer all-in-one version that has the `jsf-api` and
+`jsf-impl` combined into a single artifact named `javax.faces.jar`.
+
+Download version 2.1.21 of the [`javax.faces.jar`](http://search.maven.org/#artifactdetails%7Corg.glassfish%7Cjavax.faces%7C2.1.21%7Cjar)
+file and copy it into the following folder:
+
+    $GLASSFISH_HOME/modules/javax.faces.jar
+
++$$$
+
+**Note:** Sometimes it is necessary to update the timestamp of the file in the
+file system in order for GlassFish to recognize that the file has been updated.
+If the upgrade doesn't work at first, then run the Unix *touch* command to
+update the timestamp of the file. After restarting GlassFish, the upgraded
+version will be recognized.
+
+$$$
+
+If you'd like to verify that you're using the correct version of Mojarra at
+runtime, download the following
+[demo portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
+and add it to a portal page. You should see a bulleted list of version info at
+the bottom of the portlet.
+
+![Figure 1: Make sure the Mojarra version displayed is the one you configured during the upgrade: Mojarra 2.1.21.](../../images/mojarra-version-verification.png)
+
+Congratulations! You've officially upgraded your Mojarra version!
+
 ## Page 665: Configuring Liferay for High Availability
 
 In the *Properties File Changes* subsection of the chapter *19.2 Performance 
