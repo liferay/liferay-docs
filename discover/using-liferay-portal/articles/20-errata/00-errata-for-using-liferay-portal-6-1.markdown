@@ -235,6 +235,32 @@ and copy it to the following location:
 You're now set to use JSF applications in your Liferay Portal instance running
 on JBoss 7!
 
+## Page 504: Installing Liferay on Resin 4
+
+The following section is related to configuring Liferay Faces to function
+properly, allowing JSF applications to successfully work in Resin 4.
+
+### Upgrading Mojarra in Resin 4
+
+Some versions of Resin 4 are not bundled with the correct Mojarra version
+necessary to use Liferay Faces. For example, Resin 4.0.33 comes with Mojarra
+2.1.15 in the global classpath. Since Liferay Faces uses Mojarra 2.1.21, you'll
+need to download a newer version of the `jsf-api.jar` and `jsf-impl.jar`
+artifacts. 
+
+1. Delete the Mojarra all-in-one JAR located in the following directory:
+
+    $RESIN_HOME/lib/javax.faces-2.1.15.jar
+
+2. Download the following two JARs and copy them into the `$RESIN_HOME/lib`
+   directory.
+
+    - [`jsf-api-2.1.21.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-api%7C2.1.21%7Cjar)
+    - [`jsf-impl-2.1.21.jar`](http://search.maven.org/#artifactdetails%7Ccom.sun.faces%7Cjsf-impl%7C2.1.21%7Cjar)
+
+You're now set to use JSF applications in your Liferay Portal instance running
+on Resin 4!
+
 ## Page 665: Configuring Liferay for High Availability
 
 In the *Properties File Changes* subsection of the chapter *19.2 Performance 
