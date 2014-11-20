@@ -1217,7 +1217,7 @@ You can go back to any of the beginning steps in this outline to make
 refinements. It's just that easy to develop a theme with resources intact!
 
 To see a simple working example of the resources importer in action, visit
-[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/test-resources-importer-theme-6.1.1.1.war](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/test-resources-importer-theme-6.1.1.1.war).
+[https://github.com/liferay/liferay-docs/blob/master/devGuide/code/test-resources-importer-theme-6.2.0.1.war](https://github.com/liferay/liferay-docs/blob/master/devGuide/code/test-resources-importer-theme-6.2.0.1.war).
 This is just the classic Liferay theme with some sample resources added. If
 you're interested in extending the functionality of the resources-importer
 application, you can use the test-resources-importer-portlet to check that you

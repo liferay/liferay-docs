@@ -1,4 +1,4 @@
-# Installation and Uninstallation
+# Installation and Uninstallation [](id=installation-and-uninstallation)
 
 The easiest way to install the Audience Targeting app is via [Liferay Marketplace](http://www.liferay.com/marketplace).
 Make sure to install the correct version of the app. Choose
