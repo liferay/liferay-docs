@@ -1,20 +1,17 @@
 # Installing Liferay on Oracle WebLogic 12c (12.1.2 and higher) [](id=installing-liferay-on-oracle-weblogic-12c-12-1-2-and-h)
 
 In this section, you'll learn how to install Liferay on Oracle WebLogic 12c.
-Since you're using Oracle WebLogic, you may be curious of Liferay's support of
-XA transactions. Liferay doesn't require XA transactions, but it supports XA.
-Let's get acquainted with how Liferay fits in with your current WebLogic
-domain. 
+Since you're using Oracle WebLogic, you may wonder if Liferay supports XA
+transactions. Liferay doesn't require XA transactions, but it supports XA.
+Let's get acquainted with how Liferay fits in with your current WebLogic domain. 
 
-For demonstration purposes, we'll assume *Liferay Home* is one folder above the
-domain to which you will be installing Liferay.
+Liferay by default defines *Liferay Home* as one folder above the
+domain to which you will be installing Liferay. For example, if your domain
+location is `/Oracle/Middleware/user_projects/domains/base_domain`, then your
+Liferay Home is `/Oracle/Middleware/user_projects/domains`.
 
-For example, if your domain location is
-`/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home
-is `/Oracle/Middleware/user_projects/domains`.
-
-For this section, we will use `$WEBLOGIC_HOME` to refer to your WebLogic
-server's installation `/Oracle/Middleware`. 
+For this section, the variable `$WEBLOGIC_HOME` refers to your WebLogic server's
+installation `/Oracle/Middleware`. 
 
 Before you begin, make sure you have downloaded the latest Liferay `.war` file
 and Liferay Portal dependencies from
@@ -31,14 +28,14 @@ Let's get started by installing the `.jar` files Liferay needs.
 
 ## Dependency Jars [](id=dependency-jars)
 
-Liferay needs the `.jar` files contained in the Liferay Dependencies Archive and
-the driver `.jar` file applicable for your database. We'll put them on your
-domain's global classpath. 
+Liferay needs the driver `.jar` file applicable for your database, as well as
+the `.jar` files contained in the Liferay Dependencies Archive. They should be 
+on your domain's global classpath. 
 
-1.  Navigate to the folder that corresponds to the domain to which you will be
-    installing Liferay. Inside this folder is a `lib` folder. Unzip the Liferay
-    Dependencies Archive to this folder so the dependency `.jar` files reside in
-    the `lib` folder.
+1.  Navigate to the folder that corresponds to the domain where you'll 
+    install Liferay. Inside this folder is a `lib` folder. Unzip the Liferay
+    Dependencies Archive and copy the dependency `.jar` files to the `lib`
+    folder.
 
 2.  If WebLogic does not already have access to the JDBC driver for your
     database, copy the driver to your domain's `lib` folder as well.
@@ -49,7 +46,7 @@ Let's proceed with configuring WebLogic.
 
 ## Configuring WebLogic [](id=configuring-weblogic)
 
-Let's make the following adjustments in your configuration to support using
+You need to make the following adjustments in your configuration to support
 Liferay:
 
 - Set WebLogic Server's memory arguments.
@@ -60,15 +57,15 @@ Liferay:
 
 You can set WebLogic Server's memory arguments in your `setDomainEnv.[cmd|sh]`
 environment script file found in your domain's `bin` folder. For the Sun JVM,
-we'll set the WLS memory arguments for 64 bit and 32 bit architectures to
-`-Xms256m -Xmx1024m` at a minimum. For all other JVMs, we'll set the 64 bit and
+set the WLS memory arguments for 64 bit and 32 bit architectures to
+`-Xms256m -Xmx1024m` at a minimum. For all other JVMs, set the 64 bit and
 32 bit WLS memory arguments to `-Xms512m -Xmx512m` respectively. 
 
-We'll set the permanent generation space for 64 bit and 32 bit architectures
+Set the permanent generation space for 64 bit and 32 bit architectures
 to `-XX:PermSize=256m`.
 
-Lastly, we'll make sure to specify UTF-8 for Java's file encoding, by
-including `-Dfile.encoding=UTF8` as a Java property.
+Lastly, make sure to specify UTF-8 for Java's file encoding, by including
+`-Dfile.encoding=UTF8` as a Java property.
 
 If you're on Windows, for example, you'd edit your `setDomainEnv.cmd` file and
 find the call to the `commEnv.cmd` script. After this call, you'd update your
@@ -93,15 +90,14 @@ list of Java property values, as done in the following line of code:
 
     set JAVA_PROPERTIES=-Dfile.encoding=utf8 %JAVA_PROPERTIES% %CLUSTER_PROPERTIES%
 
-Next, we'll need to specify some local environment settings to support Liferay's
-memory requirements, its use of the [Apache
-Lucene](http://en.wikipedia.org/wiki/Lucene) search engine library, and its use
-of Aspect Oriented Programming (AOP) with
+Next, you need to specify some local environment settings to support Liferay's
+memory requirements, its use of the [Apache Lucene](http://en.wikipedia.org/wiki/Lucene) 
+search engine library, and its use of Aspect Oriented Programming (AOP) with
 [AspectJ](http://en.wikipedia.org/wiki/AspectJ).
 
-Open the `startWebLogic.[cmd|sh]` file from within your domain's folder--NOT
-your server's `bin` folder. If you're on Windows, you'd add directives similar
-to those listed below, after the `SETLOCAL` command:
+Open the `startWebLogic.[cmd|sh]` file from within your domain's folder--NOT the
+one in your server's `bin` folder. If you're on Windows, you'd add directives
+similar to those listed below, after the `SETLOCAL` command:
 
     set "USER_MEM_ARGS=-Xmx1024m -XX:PermSize=512m"
     
@@ -131,15 +127,14 @@ you want to use Liferay's built-in data source, you can skip this section.
 
 4.  Click *Next* three times. You should be on the *Connection Properties*
     screen. Enter the database name, the host name, the port, the database user
-    name and the password. WebLogic uses this information to construct the
+    name, and the password. WebLogic uses this information to construct the
     appropriate JDBC URL to connect to your database. Click *Next*.
 
 5.  WebLogic prompts you to confirm the information you've specified for your
     data source. 
 
     Depending on the database you are using, you may need to specify additional
-    parameters. For example, you may need to modify your JDBC URL to include
-    additional parameters. If you need to access previous wizard pages to modify
+    parameters. If you need to access previous wizard pages to modify
     information, click *Back* to revisit those pages. 
 
     When you're done specifying your configuration, click *Next*. 
@@ -153,7 +148,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 8.  Click the *Targets* tab and check off the server instance(s) to which you
     wish to deploy your data source. Then click *Save*.
 
-Next, let's configure a mail session in WebLogic.
+Next, you'll configure a mail session in WebLogic.
 
 ## Mail Configuration [](id=mail-configuration)
 
@@ -168,17 +163,17 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 3.  Choose your server and then click *Finish*.
 
-Now let's make sure Liferay can access this mail session.
+Now make sure Liferay can access this mail session.
 
 ## Domain Configuration - Continued [](id=domain-configuration-continued)
 
-Let's revisit domain configuration to make sure we'll be able to access your
+Let's revisit domain configuration to make sure the app server can access your
 data source and mail session from Liferay Portal.
 
 Create a `portal-ext.properties` file in your Liferay Home folder.
 
-If you are using *WebLogic* to manage your data source, add the following to
-your `portal-ext.properties` file to refer to your data source:
+If you are using *WebLogic* to manage your data source, add the following
+configuration to your `portal-ext.properties` file to refer to your data source:
 
     jdbc.default.jndi.name=jdbc/LiferayPool
 
@@ -190,23 +185,24 @@ the mail session in the Control Panel. After starting your portal as described
 in the *Deploy Liferay* section, go to *Control Panel &rarr; Server
 Administration &rarr; Mail* and enter the settings for your mail session.
 
-If you are using *WebLogic* to manage your mail session, add the following to
-your `portal-ext.properties` file to reference that mail session:
+If you are using *WebLogic* to manage your mail session, add the following
+configuration to your `portal-ext.properties` file to reference that mail
+session:
 
     mail.session.jndi.name=mail/MailSession
 
-Before we deploy Liferay, we'll teach you how to enable and configure Java
-Security so that you can start using Liferay's plugin security manager with
-the Liferay apps you download and install. 
+Before we deploy Liferay, you should enable and configure Java Security so that
+you can use Liferay's plugin security manager with the Liferay apps you
+download and install. 
 
 ## Security Configuration [](id=security-configuration)
 
-When you are ready to start using other people's apps from Marketplace, you'll
-want to protect your portal and your WebLogic server from security threats. To
-do so, you can enable Java Security on your WebLogic server and specify a
-security policy to grant your Liferay Portal access to your server. 
+When you are ready to start using apps from Marketplace, you'll want to protect
+your portal and your WebLogic server from security threats. To do so, you must
+enable Java Security on your WebLogic server and specify a security policy to
+grant Liferay Portal access to your server. 
 
-First, let's grant Liferay access to your server. For now, we'll open up all
+First, you'll grant Liferay access to your server. This configuration opens all
 permissions--you can fine-tune your policy's permissions later. Create a policy
 file named `weblogic.policy` in your `$WEBLOGIC_HOME/wlserver/server/lib` folder
 and add the following contents:
@@ -219,7 +215,7 @@ To enable security on your WebLogic server and direct the server to your policy
 file, open the `setDomainEnv.[cmd|sh]` file in your domain's folder. Then set
 the `-Djava.security.manager` Java option and set the property
 `-Djava.security.policy==` to the location of your `weblogic.policy` file. You
-can specify both settings on the same line like this:  
+can specify both settings on the same line like this: 
 
     -Djava.security.manager -Djava.security.policy==$WEBLOGIC_HOME/wlserver/ser\
     ver/lib
@@ -230,9 +226,8 @@ any existing security policies.
 For extensive information on Java SE Security Architecture see its specification
 documents at
 [http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
-Also, see section [*Understanding Plugin Security
-Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
-in Chapter 12 of the Developer's Guide to learn how to configure Liferay plugin
+Also, see section [*Understanding Plugin Security Management*](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/understanding-plugin-security-management-liferay-portal-6-2-dev-guide-11-en)
+in the Developer's Guide to learn how to configure Liferay plugin
 access to resources. 
 
 Next you'll learn how to configure your WebLogic application server for JSF
@@ -275,8 +270,7 @@ file:
         export USER_MEM_ARGS="-Xms1024m -Xmx2048m -XX:CompileThreshold=8000 -XX:PermSize=256m -XX:MaxPermSize=512m"
 
 3. If you're running the JSR 329 Portlet Bridge TCK, you'll need to include the
-   `trinidad-api.jar` dependency in the global classpath (within the `lib`
-   folder). 
+   `trinidad-api.jar` dependency in the global classpath (in the `lib` folder). 
 
 4. In order for JSF 2.1 portlets to deploy correctly in WebLogic, the
    `WEB-INF/weblogic.xml` descriptor must be configured to fine-tune how class
@@ -286,7 +280,7 @@ file:
 
 5. Due to a deficiency in the XML parser that ships with WebLogic, it is
    necessary to include a custom [Apache Xerces](http://xerces.apache.org/)
-   parser as a dependency. In order to include it in the proper position within
+   parser as a dependency. In order to include it in the proper position in
    the WebLogic classpath, the Xerces JARs are included in the Mojarra Shared
    Library. Therefore, it is necessary to add Xerces as a dependency in the
    portlet's WEB-INF/lib folder. For example: 
@@ -300,10 +294,10 @@ file:
         </dependencies>
 
 6. If using ICEfaces, PrimeFaces, or RichFaces, all JARs related to these
-   projects my exist in `WEB-INF/lib`. 
+   projects must exist in `WEB-INF/lib`. 
 
 Next, you'll need to upgrade Mojarra for your WebLogic application server. 
-   
+ 
 ### Upgrading Mojarra [](id=upgrading-mojarra)
 
 Liferay Faces requires JSF 2.1.21. However, the version of Mojarra that comes
@@ -313,7 +307,7 @@ dependencies.
 
 1. Make sure your `MW_HOME` environment variable is defined (completed in step 2
    of the previous section).
-    
+ 
 2. Build the patched version of Mojarra:
 
         cd liferay-faces/support
@@ -328,19 +322,14 @@ dependencies.
     classpath, `jsf-api.jar` and `jsf-impl.jar` must not be included in
     `WEB-INF/lib`. 
 
-Now its the moment you've been waiting for: Liferay deployment! 
+Now it's the moment you've been waiting for: Liferay deployment! 
 
 ## Deploy Liferay [](id=deploy-liferay)
 
-This section provides instructions for deploying Liferay to your application
-server domain.
-
-Now, let's deploy Liferay Portal.
-
 1.  Start your WebLogic server if it's not already started.
 
-2. Go to *Deployments* and select the Liferay `.war` file from the file system,
-   or click the *Upload Your File(s)* link to upload it and then click *Next*.
+2.  Go to *Deployments* and select the Liferay `.war` file from the file system,
+    or click the *Upload Your File(s)* link to upload it and then click *Next*.
 
 3.  Select *Install this deployment as an application* and click *Next*.
 
@@ -348,6 +337,6 @@ Now, let's deploy Liferay Portal.
     give it a name of your choosing and click *Next*.
 
 5.  Click *Finish*. After the deployment finishes, click *Save*.
-    Liferay precompiles all the JSPs and Liferay launches.
+    Liferay precompiles all the JSPs, and Liferay launches.
 
 Congratulations! You are now running Liferay on Oracle WebLogic 12c.
