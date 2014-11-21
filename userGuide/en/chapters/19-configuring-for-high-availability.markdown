@@ -128,10 +128,10 @@ available:
 - LCS Environment Viewer: Has read-only access in the scope of an environment.
 
 You should note that each of these LCS roles assume that the user already has 
-the LCS User role in their Liferay.com account. The LCS User role is granted 
-automatically the first time the user enters their LCS account. The actions that 
-can be performed by each of the LCS roles are detailed in the below permissions 
-matrix. 
+the LCS User role in his or her Liferay.com account. The LCS User role is
+granted automatically the first time the user enters their LCS account. The
+actions that can be performed by each of the LCS roles are detailed in the below
+permissions matrix. 
 
 **LCS Permissions Matrix**
 
