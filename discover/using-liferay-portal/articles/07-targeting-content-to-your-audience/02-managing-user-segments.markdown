@@ -4,7 +4,7 @@ The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Control Panel allows you to manage user segments and
 campaigns.
 
-![Figure 6.x: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* to manage user segments and campaigns for a site.](../../images/07-audience-targeting-admin.png)
+![Figure 7.1: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* to manage user segments and campaigns for a site.](../../images/07-audience-targeting-admin.png)
 
 A user segment represents a subset of the total group of portal users (logged in
 or not). A user segment is defined by one or more rules that users have to match
@@ -21,7 +21,7 @@ the Gender rule and selecting *Female* and applying the Age rule and setting the
 user segment, entered a name and, optionally, a description, click *Save* to
 actually create the user segment.
 
-![Figure 6.x: Drag a rule to the right to create a user segment.](../../images/07-audience-targeting-rules.png)
+![Figure 7.2: Drag a rule to the right to create a user segment.](../../images/07-audience-targeting-rules.png)
 
 To configure permissions for creating, editing, and deleting user segments,
 visit the Roles section of the Control Panel and search for *Audience Targeting
@@ -98,7 +98,7 @@ content. This categorization has mainly two purposes:
 - Assigning points to users using the Score Points rule
 - Showing dynamic lists of content in the User Segment Content List application
 
-![Figure 6.x: Pages and content can be categorized for user segments.](../../images/07-audience-targeting-categorization.png)
+![Figure 7.3: Pages and content can be categorized for user segments.](../../images/07-audience-targeting-categorization.png)
 
 You don't have to create categories for each of your user segments. User
 segments are distinct from regular vocabularies. The Categorization section of
@@ -114,7 +114,7 @@ Report* to generate a new report. Reports display a summary of interesting
 information related to each user segment. For example, the Content Views report
 shows the asset that's been most viewed by users that belong to the user segment.
 
-![Figure 6.x: the Content Views report shows the asset that's been most viewed by users that belong to a user segment.](../../images/07-audience-targeting-user-segment-report.png)
+![Figure 7.4: the Content Views report shows the asset that's been most viewed by users that belong to a user segment.](../../images/07-audience-targeting-user-segment-report.png)
 
 Additional reports can be created by developers and deployed as OSGI plugins.
 See the [Creating Custom Audience Targeting Reports](http://www.liferay.com)

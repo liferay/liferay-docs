@@ -14,7 +14,7 @@ Twitter field. Alternatively, from the Dockbar select *User* &rarr; *My Account*
 &rarr; *Social Network* and then enter your Twitter username in the Twitter 
 field.
 
-![Figure 9.x: Register your Twitter account.](../../images/social-network-accounts.png)
+![Figure 10.29: Register your Twitter account.](../../images/social-network-accounts.png)
 
 It's important to note that your tweets are displayed *only* in an Activities 
 portlet. If you want your tweets to show up on a page, there must be an 
@@ -26,4 +26,4 @@ then your tweets might be pushed off the Activities feed by more recent
 activity. You can change the number of items shown in the Activities feed in the 
 portlet's Configuration.
 
-![Figure 9.x: Your tweets are displayed in an Activities portlet.](../../images/activities-feed-tweets.png)
+![Figure 10.30: Your tweets are displayed in an Activities portlet.](../../images/activities-feed-tweets.png)

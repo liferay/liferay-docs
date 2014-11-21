@@ -26,7 +26,7 @@ available for your portlets. These sample templates differ from the default
 templates already configured in the portlets. If you choose a site to host your
 template, you must create a custom template for that site's portlets.
 
-![Figure 7.5: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
+![Figure 8.5: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
 
 If you'd like to add an ADT, select the portlet you'd like to customize. The
 list below specifies the portlets that can be customized using ADTs. It also
@@ -64,7 +64,7 @@ kinds of ADTs, there are also different variables for each ADT. Thus, each
 template has a different set of variables only applicable for that specific
 template. 
 
-![Figure 7.6: Liferay offers a versatile script editor to customize your ADT.](../../images/adt-script-editor.png)
+![Figure 8.6: Liferay offers a versatile script editor to customize your ADT.](../../images/adt-script-editor.png)
 
 You can also use the autocomplete feature to add variables to your template. It
 can be invoked by typing *${* which opens a drop-down menu of available
@@ -112,7 +112,7 @@ Template* drop-down menu. A window will display with a list of your configured
 templates only available for your site with options to add new templates or edit
 existing templates.
 
-![Figure 7.7: In the *Configuration* menu of a portlet, you can edit and manage available ADTs.](../../images/adt-configuration.png)
+![Figure 8.7: In the *Configuration* menu of a portlet, you can edit and manage available ADTs.](../../images/adt-configuration.png)
 
 Now that you know the general functions of ADTs, let's create our own. This
 brief demonstration will show you just how easy, yet powerful, ADTs can be for
@@ -137,7 +137,7 @@ your portal.
 6. From the *Display Template* drop-down menu, select *Carousel*. Then click
    *Save*.
 
-	![Figure 7.8: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../images/adt-carousel.png)
+	![Figure 8.8: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../images/adt-carousel.png)
 
 	The Media Gallery portlet is transformed into a carousel slideshow. At this
 	time, it's perfectly natural to be experiencing "I can conquer the world"

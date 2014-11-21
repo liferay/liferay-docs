@@ -20,7 +20,7 @@ defined network. This variation is a huge advantage when trying to communicate
 important information to a large group of people. This difference in
 communication settings is illustrated below:
 
-![Figure 9.1: The graphic above demonstrates Standard Apps vs. Social Apps.](../../images/15-opensocial-5.png)
+![Figure 10.1: The graphic above demonstrates Standard Apps vs. Social Apps.](../../images/15-opensocial-5.png)
 
 Liferay has a constantly improving set of social features which enable you to
 encourage social interactions on your own portal and to leverage the power and

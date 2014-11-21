@@ -35,7 +35,7 @@ of the Control Panel. To manage the dynamic data lists of your site, click
 *Admin* from the Dockbar and select *Content*. Then click on *Dynamic Data
 Lists*.
 
-![Figure 10.1: You can manage dynamic data lists from the Content section of the Site Administration area of the Control Panel.](../../images/05-ddl-control-panel.png)
+![Figure 11.1: You can manage dynamic data lists from the Content section of the Site Administration area of the Control Panel.](../../images/05-ddl-control-panel.png)
 
 From the Dynamic Data Lists portlet in the Control Panel, you can either click
 *Add* to create a new dynamic data list from an existing data type or you can
@@ -92,7 +92,7 @@ box. Can be configured to allow multiple selections, unlike *Radio*.
 
 **Text Box:** a large text box for long text input.
 
-![Figure 10.2: You can combine many different kinds of fields to form a list definition and you can configure various settings and properties for each field.](../../images/05-data-definition-screen.png)
+![Figure 11.2: You can combine many different kinds of fields to form a list definition and you can configure various settings and properties for each field.](../../images/05-data-definition-screen.png)
 
 Using that reference as a nice cheat-sheet, you can now create the data type you
 need for "Volunteer Work Sign-Up." Use a *Text* type for the name. For all the
@@ -151,7 +151,7 @@ This defaults to no (only available for Select).
 remove options as well as edit each individual option's display name and VALUE
 (ONLY AVAILABLE FOR RADIO AND SELECT).
 
-![Figure 10.3: You can edit the properties of data fields. This allows you to, for example, add and edit selectable options for the *Task* drop-down menu on the Spring Move-In Sign Up form.](../../images/05-data-definition-field-properties.png)
+![Figure 11.3: You can edit the properties of data fields. This allows you to, for example, add and edit selectable options for the *Task* drop-down menu on the Spring Move-In Sign Up form.](../../images/05-data-definition-field-properties.png)
 
 In addition to dragging the fields around to create your desired forms, you can
 stack inputs within inputs by dragging a field within another field. You can

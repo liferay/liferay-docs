@@ -39,7 +39,7 @@ This method is a quick way to add a gadget to a single page. To do this, go to
 the *Add* &rarr; *More* menu and add *OpenSocial Gadget* to the page. The
 portlet displays a link to pick a gadget for display:
 
-![Figure 9.12: Configure a gadget to display in your portlet.](../../images/15-opensocial-1.png)
+![Figure 10.12: Configure a gadget to display in your portlet.](../../images/15-opensocial-1.png)
 
 Click the configure link and a configuration window opens. Next, you need to
 insert a URL to an OpenSocial gadget. We'll insert the URL for a colorful
@@ -50,7 +50,7 @@ calculator which is:
 After pasting the URL into the text field, click *Save* and your new gadget is
 visible on your page.
 
-![Figure 9.13: The calculator gadget displays seemlessly on your page.](../../images/15-opensocial-2.png)
+![Figure 10.13: The calculator gadget displays seemlessly on your page.](../../images/15-opensocial-2.png)
 
 This particular gadget allows you to change its "skins" to fit your needs.
 Likewise, there are many other user-friendly interactive gadgets that give you
@@ -76,11 +76,11 @@ portal-wide use.
 
 5. Click *Save*
 
-![Figure 9.14: Configure new gadgets with ease.](../../images/15-opensocial-38.png)
+![Figure 10.14: Configure new gadgets with ease.](../../images/15-opensocial-38.png)
 
 Your *OpenSocial Gadget Publisher* should now look like this:
 
-![Figure 9.15: Publish gadgets for portal-wide use via the OpenSocial Gadget Publisher.](../../images/15-opensocial-3.png)
+![Figure 10.15: Publish gadgets for portal-wide use via the OpenSocial Gadget Publisher.](../../images/15-opensocial-3.png)
 
 Clicking *Actions* next to the gadget enables you to edit, refresh, change
 permissions on, or delete the gadget. Here is a brief listing of what these four
@@ -99,7 +99,7 @@ options for each role on your site.
 If you navigate to *Add* &rarr; *Applications* &rarr; *Gadgets*, you should see the
 *To-Do List* gadget.
 
-![Figure 9.16: You can conveniently list your gadgets within the *Gadgets* category.](../../images/15-opensocial-4.png)
+![Figure 10.16: You can conveniently list your gadgets within the *Gadgets* category.](../../images/15-opensocial-4.png)
 
 In the next section, we'll demonstrate how to share OpenSocial gadgets with
 other sites.
@@ -146,7 +146,7 @@ For our example, we'll share Liferay's *Loan Calculator* on iGoogle.
 4. Check the box labeled *Allow users to add Loan Calculator to iGoogle*. Also,
    replace "localhost:8080" with the name of your public domain and port.
 
-    ![Figure 9.17: Allow users to add your portlet as an OpenSocial Gadget in iGoogle.](../../images/15-opensocial-7.png)
+    ![Figure 10.17: Allow users to add your portlet as an OpenSocial Gadget in iGoogle.](../../images/15-opensocial-7.png)
 
 5. Click Save
 
@@ -154,7 +154,7 @@ For our example, we'll share Liferay's *Loan Calculator* on iGoogle.
    corner of your portlet. There is a new option named *Add to iGoogle*
    available. Click on this button to add your portlet to your iGoogle page.
 
-    ![Figure 9.18: Users simply click the *Add to iGoogle* button to add your portlet to their iGoogle page.](../../images/15-opensocial-8.png)
+    ![Figure 10.18: Users simply click the *Add to iGoogle* button to add your portlet to their iGoogle page.](../../images/15-opensocial-8.png)
 
 Your portlet is now available on your iGoogle page!
 
@@ -213,12 +213,12 @@ key and secret given by the service provider.
    your gadget. You must also register your gadget with Twitter to access the
    Consumer Key and Consumer Secret.
 
-    ![Figure 9.19: Twitter allows you to manage OAuth for your Twitter gadget.](../../images/15-opensocial-9.png)
+    ![Figure 10.19: Twitter allows you to manage OAuth for your Twitter gadget.](../../images/15-opensocial-9.png)
 
 4. Go to [https://dev.twitter.com](https://dev.twitter.com) and click *Get
    started with the platform* to begin registering your gadget.
 
-    ![Figure 9.20: Select *Get started with the platform* from within the *Developers* page.](../../images/15-opensocial-11.png)
+    ![Figure 10.20: Select *Get started with the platform* from within the *Developers* page.](../../images/15-opensocial-11.png)
 
 5. Navigate to the *REST API* heading and click *Manage & create your
 applications*. Then click *Create New App*.    
@@ -233,12 +233,12 @@ applications*. Then click *Create New App*.
     b. Finally, select the *Create your Twitter application* tab at the bottom
     of the page.
 
-    ![Figure 9.21: Fill in *Application Details* to setup connectivity between your Twitter gadget and your portal.](../../images/15-opensocial-12.png)
+    ![Figure 10.21: Fill in *Application Details* to setup connectivity between your Twitter gadget and your portal.](../../images/15-opensocial-12.png)
 
 7. You are given the OAuth setting that you need to configure your gadget on
    Liferay. Copy the Consumer Key and Consumer Secret to your clipboard.
 
-    ![Figure 9.22: Here are the *Consumer Key* and *Consumer Secret* (value is blacked out for security reasons).](../../images/15-opensocial-13.png)
+    ![Figure 10.22: Here are the *Consumer Key* and *Consumer Secret* (value is blacked out for security reasons).](../../images/15-opensocial-13.png)
 
 8. Enter your Consumer Key and Consumer Secret under the *Manage OAuth* that you
    navigated to earlier. Also, select `HMAC_SYMMETRIC` for the *Key Type* and
@@ -253,7 +253,7 @@ applications*. Then click *Create New App*.
    Twitter* checkbox. Then click *Update this Twitter application's settings* at
    the bottom of the page.
 
-    ![Figure 9.23: Select the *Read and Write* option to enable two way communication.](../../images/15-opensocial-19.png)
+    ![Figure 10.23: Select the *Read and Write* option to enable two way communication.](../../images/15-opensocial-19.png)
 
 10. Navigate back to the *Details* tab and, at the bottom of the page, click
     *Create my access token*.
@@ -274,18 +274,18 @@ OAuth-configured gadget to your page.
    *Twitter Gadget*. If your gadget is configured correctly, it should appear
    like this:
 
-    ![Figure 9.24: Your OAuth configured Twitter gadget awaits personalization with your Twitter account.](../../images/15-opensocial-14.png)
+    ![Figure 10.24: Your OAuth configured Twitter gadget awaits personalization with your Twitter account.](../../images/15-opensocial-14.png)
 
 2. Click on *Personalize this gadget* to be redirected to the service provider.
 
 3. Fill in your Twitter user name and password and select *Authorize app*
 
-    ![Figure 9.25: Authorizing your OpenSocial application to use your account is straightforward.](../../images/15-opensocial-15.png)
+    ![Figure 10.25: Authorizing your OpenSocial application to use your account is straightforward.](../../images/15-opensocial-15.png)
 
 4. Your Twitter Gadget should now show your last 20 tweets from your timeline.
    Your gadget should look similar to the snapshot below:
 
-    ![Figure 9.26: Check out your Twitter gadget timeline!](../../images/15-opensocial-16.png)
+    ![Figure 10.26: Check out your Twitter gadget timeline!](../../images/15-opensocial-16.png)
 
 5. Using this gadget, you can tweet your current status and have it display on
    your Liferay site and Twitter page. To change the amount of tweets displayed,
@@ -293,12 +293,12 @@ OAuth-configured gadget to your page.
    *Configuration*.  Under the *Setup* tab, you can type the number of tweets to
    display.
 
-    ![Figure 9.27: Configure the number of Tweets to display.](../../images/15-opensocial-17.png)
+    ![Figure 10.27: Configure the number of Tweets to display.](../../images/15-opensocial-17.png)
 
 6. Lastly, you can tweet and view your Twitter timeline. The snapshot below
    displays what the Twitter Gadget looks like when tweeting.
 
-    ![Figure 9.28: Here is your Twitter gadget just the way you like it!](../../images/15-opensocial-20.png)
+    ![Figure 10.28: Here is your Twitter gadget just the way you like it!](../../images/15-opensocial-20.png)
 
 As you can see, OAuth is easy to configure and offers users the freedom to
 securely add valuable data from third-party sites.

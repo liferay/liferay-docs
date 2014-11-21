@@ -7,7 +7,7 @@ information. Some of this information is good and helpful and some of it can be
 rather unhelpful. Using Liferay's Social Activity feature will help show which
 users are making real, valuable contributions.
 
-![Figure 9.9: The Social Activity page of the Control Panel allows you to enable social activity for assets and specify points for participation and contributions.](../../images/05-social-equity.png)
+![Figure 10.9: The Social Activity page of the Control Panel allows you to enable social activity for assets and specify points for participation and contributions.](../../images/05-social-equity.png)
 
 To activate Social Activity, you'll first need to determine which collaboration
 applications you want to use Social Activity. There are currently three types of
@@ -36,7 +36,7 @@ on a Blog* is set to have 1 *Participation* point and 5 *Contribution* points
 receive 1 participation point, the user who created the asset will receive 5
 contribution points, and the asset will receive 5 popularity points. 
 
-![Figure 9.10: You can set limits for your site's social activity.](../../images/social-equity-limits.png)
+![Figure 10.10: You can set limits for your site's social activity.](../../images/social-equity-limits.png)
 
 It's easy to assign points--you can arbitrarily assign points for just about
 anything--the challenge is making the points significant in some way. As
@@ -69,7 +69,7 @@ points, you can click the *plus* button to add one and the *minus* button to
 remove one. You can have as many data points displayed as you want, but
 displaying too many might make your portlet a little unwieldy.
 
-![Figure 9.11: The User Statistics portlet gives rankings to promote user contributions and participation.](../../images/user-statistics-portlet.png)
+![Figure 10.11: The User Statistics portlet gives rankings to promote user contributions and participation.](../../images/user-statistics-portlet.png)
 
 The *Group Statistics* portlet provides some more advanced data analytics. If
 you add it to a page, and click on the configuration icon, you can select the

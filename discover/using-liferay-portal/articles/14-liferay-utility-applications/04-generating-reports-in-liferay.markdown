@@ -24,7 +24,7 @@ your portal as an administrator and navigate to *Site Administration*. If your
 applications have been successfully deployed, you'll find a *Reports Admin*
 entry in the *Configuration* section on the left menu.
 
-![Figure 13.22: To check that the Reports EE and Jasper Reports EE applications have been successfully deployed to your Liferay server, look for the *Reports Admin* entry in the Configuration section of your Site Administration page.](../../images/reports-admin-site-admin.png)
+![Figure 14.22: To check that the Reports EE and Jasper Reports EE applications have been successfully deployed to your Liferay server, look for the *Reports Admin* entry in the Configuration section of your Site Administration page.](../../images/reports-admin-site-admin.png)
 
 The Reports Admin portlet has three tabs:
 
@@ -42,7 +42,7 @@ set up as a default data source called *Portal*. The *Portal* data source does
 not appear on the Sources tab but is selectable on the form for adding/editing a
 report definition.
 
-![Figure 13.23: Use the *Sources* tab of the Reports Admin portlet to define data sources for report definitions. Use the *Definitions* tab to define report definitions, generate reports, and schedule reports for generation. Use the *Reports* tab to browse through and download generated reports.](../../images/reports-admin-portlet.png)
+![Figure 14.23: Use the *Sources* tab of the Reports Admin portlet to define data sources for report definitions. Use the *Definitions* tab to define report definitions, generate reports, and schedule reports for generation. Use the *Reports* tab to browse through and download generated reports.](../../images/reports-admin-portlet.png)
 
 In order to generate a report, you need to a have one or more report definitions
 configured. To create a report definition, you need a data source and a report
@@ -181,7 +181,7 @@ Reports tab of the Reports Admin portlet. The Reports Display portlet allows
 users to download or deliver reports but not to add, edit, or delete report
 definitions or data sources.
 
-![Figure 13.24: Here, the Reports Display portlet shows only a single report.](../../images/reports-display-portlet.png)
+![Figure 14.24: Here, the Reports Display portlet shows only a single report.](../../images/reports-display-portlet.png)
 
 The Reports Display portlet is intended to be placed within a site's private
 pages to allow site members to access site-scoped reports. It can also be placed
@@ -355,7 +355,7 @@ we'll use a simple Jasper template that was created using iReport Designer.
 This report should list all of your portal's users, displaying the userId,
 screenName, emailAddress, createDate, and modifiedDate of each user.
 
-![Figure 13.25: This reports lists all portal users by userId, screenName, emailAddress, createDate, and modifiedDate.](../../images/sample-report-users.png)
+![Figure 14.25: This reports lists all portal users by userId, screenName, emailAddress, createDate, and modifiedDate.](../../images/sample-report-users.png)
 
 Now that we understand how to generate Jasper reports in Liferay, let's see what
 the Knowledge base application has to offer.

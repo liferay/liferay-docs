@@ -31,7 +31,7 @@ required field: Name. It's usually best to enter a description as well. Click
 *Save* and you will be redirected back to the *User Groups* page of the Control
 Panel.
 
-![Figure 2.5: When creating a new user group, you can select a site template for the public or private pages of the user group site. If you don't select a site template at creation time, you can edit the user group later to add one.](../../images/server-configuration-new-user-group.png)
+![Figure 16.5: When creating a new user group, you can select a site template for the public or private pages of the user group site. If you don't select a site template at creation time, you can edit the user group later to add one.](../../images/server-configuration-new-user-group.png)
 
 Note in the figure above that a user group can have a site, with public and
 private pages. A user group site is a special type of site that determines the
@@ -45,7 +45,7 @@ certain areas as customizable, just like they can for regular sites. This allows
 users to decide which applications they want to place in certain areas of each
 page, as well as customize the configurations of the applications.
 
-![Figure 2.6: To edit the pages of a user group site, click *Actions* &rarr; *Manage Site Pages* next to the user group you'd like to edit.](../../images/01-editing-a-user-group.png)
+![Figure 16.6: To edit the pages of a user group site, click *Actions* &rarr; *Manage Site Pages* next to the user group you'd like to edit.](../../images/01-editing-a-user-group.png)
 
 As with the other resources in the portal, you can click the *Actions* button
 next to a user group to perform various operations on that group.
@@ -102,7 +102,7 @@ Then navigate to the User Groups page of the Control Panel and click *Actions*
 &rarr; *Assign Members* next to the Bloggers group. Click the *Available* tab to
 see a list of users that can be assigned to the group.
 
-![Figure 2.7: When assigning members to a user group, click on the *Available* tab to see a list of users able to be added to the user group.](../../images/01-adding-members-to-user-group.png)
+![Figure 16.7: When assigning members to a user group, click on the *Available* tab to see a list of users able to be added to the user group.](../../images/01-adding-members-to-user-group.png)
 
 From this list, one or more users can be assigned as members of the user group.
 After the user group has been created and several users have been added to it,
@@ -205,7 +205,7 @@ drop down menu for the user group's public pages and click *Save*. After the
 page reloads you can click to see the pages and make any changes desired, add
 additional pages, etc.
 
-![Figure 2.8: You can select a site template to apply to a user group's public or private pages if the public or private page set is empty. If pages have already been added to the page set, you'll have to remove them before you can apply a site template the page.](../../images/server-configuration-new-user-group.png)
+![Figure 16.8: You can select a site template to apply to a user group's public or private pages if the public or private page set is empty. If pages have already been added to the page set, you'll have to remove them before you can apply a site template the page.](../../images/server-configuration-new-user-group.png)
 
 Also, try visiting the public site of one of the users who belongs to the user
 group. You'll see that all of the pages in the user group appear as part of the

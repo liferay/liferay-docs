@@ -41,7 +41,7 @@ described as follows:
 
 For more information about teams, please refer to chapter 3.
 
-![Figure 2.9: To examine all the roles defined for your portal, navigate to the Control Panel and click on *Roles*.](../../images/01-roles-and-role-actions.png)
+![Figure 16.9: To examine all the roles defined for your portal, navigate to the Control Panel and click on *Roles*.](../../images/01-roles-and-role-actions.png)
 
 After you save, Liferay redirects you to the list of roles. To see what
 functions you can perform on your new role, click the *Actions* button.
@@ -135,7 +135,7 @@ the user receives all the permissions defined by the role. So, to use a role,
 you need to assign members to it and define the permissions you want to grant to
 members of the role.
 
-![Figure 2.10: When defining permissions on a role, the Summary view provides a list of permissions that have already been defined for the role. The area on the left side of the screen lets you drill down through various categories of portal permissions.](../../images/01-defining-permissions-on-a-role.png)
+![Figure 16.10: When defining permissions on a role, the Summary view provides a list of permissions that have already been defined for the role. The area on the left side of the screen lets you drill down through various categories of portal permissions.](../../images/01-defining-permissions-on-a-role.png)
 
 When you click on the *Actions* button for a portal-scoped role and select
 *Define Permissions*, you'll see a list of all the permissions that have been
@@ -237,7 +237,7 @@ depending on their permissions. Some Control Panel portlets have a Configuration
 button and you can define who gets to see that. You can also fine-tune who gets
 to see various applications in the Control Panel.
 
-![Figure 2.11: You can fine-tune which actions are defined for a role within a specific application like the Message Boards.](../../images/01-message-board-content-permissions.png)
+![Figure 16.11: You can fine-tune which actions are defined for a role within a specific application like the Message Boards.](../../images/01-message-board-content-permissions.png)
 
 Each possible action to which permissions can be granted is listed. To grant a
 permission, flag the checkbox next to it. If you want to change the scope of a
@@ -274,7 +274,7 @@ do this, you can take the following steps:
    permissions under the *Resource Permissions* &rarr; *User Group* heading.
 7. Click *Save*.
 
-![Figure 2.12: Make sure to test the permissions you grant to custom roles.](../../images/user-group-manager-role.png)
+![Figure 16.12: Make sure to test the permissions you grant to custom roles.](../../images/user-group-manager-role.png)
 
 You might expect that these permissions would be enough to allow users assigned
 to the User Group Manager role to add or remove any users to or from any user
@@ -287,7 +287,7 @@ user groups, they don't have permission to view users at the portal level. This
 means that if they click *Assign Members* for a user group and click on the
 *Available* tab, they'll see an empty list.
 
-![Figure 2.13: Users assigned to the User Group Manager role can't find any users to add!](../../images/no-users-found.png)
+![Figure 16.13: Users assigned to the User Group Manager role can't find any users to add!](../../images/no-users-found.png)
 
 To fix this, log in as an administrator and click *Admin* &rarr; *Control Panel*
 from the Dockbar. Then click on *Roles* and then on *Actions* &rarr; *Define

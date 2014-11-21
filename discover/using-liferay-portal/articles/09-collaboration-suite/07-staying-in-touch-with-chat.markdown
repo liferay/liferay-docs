@@ -5,7 +5,7 @@ other instant messages when they are logged into your web site. It appears as a
 bar at the bottom of every page, showing who is logged on, their statuses, and
 any chats the logged-in user has open.
 
-![Figure 8.33: Liferay's Chat Portlet offers ways to update your status and notifications through the *Settings* menu.](../../images/05-liferay-chat-portlet.png)
+![Figure 9.33: Liferay's Chat Portlet offers ways to update your status and notifications through the *Settings* menu.](../../images/05-liferay-chat-portlet.png)
 
 The Chat portlet is distributed with the Liferay bundles, but is not included
 as part of the `.war` distribution, as it is a separate plugin. If you
@@ -146,7 +146,7 @@ using Openfire, you can find the Host Name by using the Openfire administration
 web tool. If you did not set up administrative credentials when you started
 Openfire, the default credentials are username: admin, password: admin.
 
-![Figure 8.34: View your server information using the Openfire Administration Web Tool.](../../images/jabber-service-name.png)
+![Figure 9.34: View your server information using the Openfire Administration Web Tool.](../../images/jabber-service-name.png)
 
 Additionally, make sure that you set `jabber.enabled` to `true` and have added
 the correct values to `jabber.host` and `jabber.port`. If you installed your

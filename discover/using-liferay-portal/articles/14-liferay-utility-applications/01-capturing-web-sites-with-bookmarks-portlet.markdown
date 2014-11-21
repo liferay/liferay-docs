@@ -16,7 +16,7 @@ sites can be bookmarked.
 Navigate to your portal and add the Bookmarks application to your page by
 selecting *Add* &rarr; *Applications*. The portlet looks like this by default:
 
-![Figure 13.1: Initially, no bookmarks are listed in this form until they're created.](../../images/bookmarks-add-portlet.png)
+![Figure 14.1: Initially, no bookmarks are listed in this form until they're created.](../../images/bookmarks-add-portlet.png)
 
 Across the top of the portlet are links labeled Home, Recent, and Mine. There is
 also a Search field and button.
@@ -42,7 +42,7 @@ permissions for various Roles to the folder. Click *Save* when you are finished.
 To create a bookmark, click the *Add Bookmark* button. This form is similar to
 the New Folder form but has a few more options.
 
-![Figure 13.2: When you use the Add Bookmark form, you must enter a valid URL in the required field.](../../images/bookmarks-add-new-form.png)
+![Figure 14.2: When you use the Add Bookmark form, you must enter a valid URL in the required field.](../../images/bookmarks-add-new-form.png)
 
 Click *Select* to choose the folder for the new bookmark. Click *Remove* to
 delete a bookmark from the selected folder. As stated above, a removed link goes
@@ -67,7 +67,7 @@ folders can have any number of subfolders.
 Here's an example of what one bookmarks portlet might look like. Bookmark
 Folders are displayed above individual bookmarks. 
 
-![Figure 13.3: Individual bookmarks, not associated with a folder, are listed separately.](../../images/bookmarks-folder-view-wide.png)
+![Figure 14.3: Individual bookmarks, not associated with a folder, are listed separately.](../../images/bookmarks-folder-view-wide.png)
 
 In this example, there are six bookmark folders, three of which have
 subfolders. The columns showing the number of folders and the number of entries
@@ -98,7 +98,7 @@ the *Select* button and a new window appears, like the one below. Clicking the
 *Remove* button here doesn't affect the link. It is used solely for moving links
 out of folders and subfolders back into the main Bookmarks view.
 
-![Figure 13.4: Select the Choose button next to the desired folder.](../../images/bookmarks-choosing-subfolder.png)
+![Figure 14.4: Select the Choose button next to the desired folder.](../../images/bookmarks-choosing-subfolder.png)
 
 Now choose the *Sports & Games* folder. When you do this, notice how the link's
 Folder section changes to reflect the new location of the link. When you choose
@@ -107,7 +107,7 @@ longer under the Bookmarks section. Select *Sports & Games* to reveal its
 contents. In the example below, you can see the Liferay link is now in the
 bookmarks section of the Sports & Games folder.
 
-![Figure 13.5: When you move a link to a folder, it remains in the bookmarks section until it's moved into a subfolder.](../../images/bookmarks-link-move.png)
+![Figure 14.5: When you move a link to a folder, it remains in the bookmarks section until it's moved into a subfolder.](../../images/bookmarks-link-move.png)
 
 Select *Edit* from the Actions button next to the Liferay link, then click
 *Select*. Navigate to the *# of Folders* number next to the Sports & Games
@@ -123,7 +123,7 @@ appropriate folder from the breadcrumbs at the top. In this example, we selected
 *Sports & Games* for consistency. This opens a new window, like the one below,
 showing the other folder options.
 
-![Figure 13.6: In this view, you can move the link into several different locations.](../../images/bookmarks-link-move3.png)
+![Figure 14.6: In this view, you can move the link into several different locations.](../../images/bookmarks-link-move3.png)
 
 You can choose one of the other subfolders from the list, or you can choose
 *Home* from the breadcrumbs at the top. When you verify that the desired folder

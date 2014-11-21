@@ -10,7 +10,7 @@ reminder to all the members of a certain site to submit an answer to this week's
 poll question. Liferay provides two portlets that meet this need: the Alerts
 portlet and the Announcements portlet.
 
-![Figure 8.31: The Alerts portlet provides administrators with an easy way to communicate important information to appropriate groups of users.](../../images/alerts-portlet.png)
+![Figure 9.31: The Alerts portlet provides administrators with an easy way to communicate important information to appropriate groups of users.](../../images/alerts-portlet.png)
 
 The Alerts and Announcements portlets let you broadcast important information to
 different groups of users. Each alert or announcement can be created in a
@@ -42,7 +42,7 @@ simple Announcements role that can add an entry to the Announcements portlet and
 add general announcements to your site! Of course, you can add additional
 permissions to give the Announcements role more access, if you prefer.
 
-![Figure 8.32: The Annoucements portlet displays a list of annoucements to regular users. It also provides administrators with an interface for managing and adding entries.](../../images/announcements-portlet.png)
+![Figure 9.32: The Annoucements portlet displays a list of annoucements to regular users. It also provides administrators with an interface for managing and adding entries.](../../images/announcements-portlet.png)
 
 Let's look at how to create announcements in the Announcements portlet. When you
 view the Announcements portlet as an administrator, you'll see two tabs: Entries

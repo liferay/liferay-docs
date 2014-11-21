@@ -87,20 +87,20 @@ Now that you're capturing audit events, it's easy to use them to view activities
 in your portal. Navigate to the Control Panel and you'll find a new entry in the
 Configuration section called *Audit Reports* (see the figure below). 
 
-![Figure 4.1: Once the Audit EE app has been installed, an Audit Reports entry appears in the Control Panel.](../../images/control-panel-audit-reports.png)
+![Figure 16.14: Once the Audit EE app has been installed, an Audit Reports entry appears in the Control Panel.](../../images/control-panel-audit-reports.png)
 
 Clicking on *Audit Reports* shows you a list of the events Liferay has already
 captured (see the figure beblow), along with an interface for searching for
 events. You can browse the list but you'll likely need to use the search to find
 what you're looking for.
 
-![Figure 4.2: Liferay captures and stores events as soon as the Audit EE app has been installed.](../../images/audit-list-events.png)
+![Figure 16.15: Liferay captures and stores events as soon as the Audit EE app has been installed.](../../images/audit-list-events.png)
 
 The figure above shows that Joe Bloggs logged in and performed some actions on
 the site. To view details about any of these events, all you need to do is click
 on an entry. You'll then see something like the figure below. 
 
-![Figure 4.3: Clicking an event in the list shows the details of that event. This event shows that Joe Bloggs updated his user account. Specifically, it shows that he updated his `prefixId` from `0` to `11015`. The `prefixId` value represents a prefix for a real name like "Dr.", "Mr.", "Mrs.", or "Ms."](../../images/audit-detail.png)
+![Figure 16.16: Clicking an event in the list shows the details of that event. This event shows that Joe Bloggs updated his user account. Specifically, it shows that he updated his `prefixId` from `0` to `11015`. The `prefixId` value represents a prefix for a real name like "Dr.", "Mr.", "Mrs.", or "Ms."](../../images/audit-detail.png)
 
 As you can see, depending on how many users you have in your portal, this list
 can get populated very quickly. For this reason, it's a good idea to keep the
@@ -170,14 +170,14 @@ might look something like the figure below.
 <!-- Need to wait for UI of the Audit Portlet EE to be updated for 6.2 before
 the screenshot below can be updated. -->
 
-![Figure 4.4: Searching for audit events is easy with the advanced search form provided by the audit portlet. You can specify various search criteria to find the types of events you're looking for.](../../images/audit-unassign-search.png)
+![Figure 16.17: Searching for audit events is easy with the advanced search form provided by the audit portlet. You can specify various search criteria to find the types of events you're looking for.](../../images/audit-unassign-search.png)
 
 Once you have the results of your search, you can click on any of the records
 returned to see the detail page for that record. The figure below shows, in this
 case, that the default administrative user removed the Power User role from Joe
 Bloggs.
 
-![Figure 4.5: If you've delegated portal administration to multiple users, you can use the audit plugins to determine who made what change. And, of course, you'll never leave the default administrative user enabled on a production system, right?](../../images/audit-unassign-detail.png)
+![Figure 16.18: If you've delegated portal administration to multiple users, you can use the audit plugins to determine who made what change. And, of course, you'll never leave the default administrative user enabled on a production system, right?](../../images/audit-unassign-detail.png)
 
 As you can see, Liferay's audit portlets give you a lot of power to see what's
 happening in your portal. You can use this information to troubleshoot problems,

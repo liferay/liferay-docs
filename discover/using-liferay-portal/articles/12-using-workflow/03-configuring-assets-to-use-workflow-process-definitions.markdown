@@ -4,7 +4,7 @@ All your global workflow configuration can be done via the control panel.
 Everything you need to do in the portal can be done through simple GUI
 controls.
 
-![Figure 11.3: Adding a Workflow Definition](../../images/11-workflow-upload-definition.png)
+![Figure 12.3: Adding a Workflow Definition](../../images/11-workflow-upload-definition.png)
 
 You can find the Workflow section under the Configuration heading in the
 control panel. There are three tabs under Workflow which are used to configure
@@ -49,7 +49,7 @@ After you have uploaded workflow definitions and set the default workflow
 behavior you can go up to *Default Configuration* and enable workflow for
 specified actions in your portal. 
 
-![Figure 11.4: The Workflow Configuration Page](../../images/11-workflow-default-config.png)
+![Figure 12.4: The Workflow Configuration Page](../../images/11-workflow-default-config.png)
 
 By setting default workflow configuration behavior from the Control Panel, your
 specified settings are implemented at the global portal scope. If you need to
@@ -67,7 +67,7 @@ in the user's My Account section. Here you'll find specific tasks which were
 assigned to you or assigned to a role of which you are a member. You can also
 view your completed tasks by opening the Completed tab.
 
-![Figure 11.5: My Workflow Tasks Page](../../images/11-my-workflow-tasks.png)
+![Figure 12.5: My Workflow Tasks Page](../../images/11-my-workflow-tasks.png)
 
 Workflow administrative users review and approve content from their My Worfklow
 Tasks section. By clicking the link to the asset, you can view it, and the
@@ -83,7 +83,7 @@ this screen you can view any assets you have submitted for review. Those
 currently under review are listed under the *Pending* tab and those that have
 been reviewed are listed under the *Completed* tab.
 
-![Figure 11.6: The My Submissions Page](../../images/11-workflow-my-submissions.png)
+![Figure 12.6: The My Submissions Page](../../images/11-workflow-my-submissions.png)
 
 Besides viewing your work, you can also withdraw a submission from the review
 process by clicking on *Withdraw Submission* from the *Pending* tab.
@@ -94,7 +94,7 @@ Before workflow can be used, you must define which types of assets on the portal
 are workflow-enabled. If you have created additional definitions, you must also
 choose the workflow definition to use for each asset that is workflow-enabled.
 
-![Figure 11.7: You can select which site to work on by using the drop-down menu in the Site Administration section of the portal.](../../images/11-workflow-site-configuration.png)
+![Figure 12.7: You can select which site to work on by using the drop-down menu in the Site Administration section of the portal.](../../images/11-workflow-site-configuration.png)
 
 To demonstrate how this works, we'll create a press release. Press releases
 should be posted in the *Newsroom* section of the web site, so before setting
@@ -110,7 +110,7 @@ Creator logs in and creates a new press release for the Lunar Resort and clicks
 Content Reviewer. When the Content Reviewer logs in, he or she can assign the
 workflow task to him- or herself and approve the content.
 
-![Figure 11.8: Before a Content Reviewer can approve content, he must assign it to himself or have an administrator assign it to him.](../../images/11-workflow-assign-to-me.png)
+![Figure 12.8: Before a Content Reviewer can approve content, he must assign it to himself or have an administrator assign it to him.](../../images/11-workflow-assign-to-me.png)
 
 Once the content is approved, it can be posted on the Press Releases page in a
 Web Content Display portlet. 

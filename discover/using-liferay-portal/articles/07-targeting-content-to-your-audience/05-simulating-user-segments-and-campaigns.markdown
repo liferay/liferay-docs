@@ -31,7 +31,7 @@ the selected user segments. The simulation continues until you click the *Stop
 Simulation* button. This allows site administrators to navigate around their
 site as if they were a user that matched the selected user segments.
 
-![Figure 6.x: Audience Targeting Simulator](../../images/07-audience-targeting-simulator.png)
+![Figure 7.11: Audience Targeting Simulator](../../images/07-audience-targeting-simulator.png)
 
 The Campaigns tab of the Content Targeting Simulator displays all matched
 campaigns and all unmatched campaigns. It does not offer a *Simulate* option

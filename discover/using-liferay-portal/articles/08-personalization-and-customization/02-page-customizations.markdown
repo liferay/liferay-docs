@@ -14,7 +14,7 @@ you'd like to let site members modify. Then click on the *Edit* button at the
 left side of the page, expand the *Customization Settings* area, and click on
 the *Show Customizable Sections* button. 
 
-![Figure 7.1: To enable page customizations, click on the *Edit* button at the left side of the page, expand the *Customization Settings* area, and click on the *Show Customizable Sections* button.](../../images/page-customizations.png)
+![Figure 8.1: To enable page customizations, click on the *Edit* button at the left side of the page, expand the *Customization Settings* area, and click on the *Show Customizable Sections* button.](../../images/page-customizations.png)
 
 Once you've clicked the *Show Customizable Sections* button, you'll see one or
 more red regions, depending on the layout template of your page. Check one or
@@ -22,7 +22,7 @@ more of the *Customizable* boxes to allow site members to customize certain
 sections of the page. Regions that you've designated as customizable are colored
 green.
 
-![Figure 7.2: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../images/customizable-regions.png)
+![Figure 8.2: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../images/customizable-regions.png)
 
 When site members visit your customizable page, they'll see a notification
 saying, "You can customize this page." Site members can toggle between viewing
@@ -40,7 +40,7 @@ to the sections of the page that they're allowed to customize. If they click
 *View Default Page*, the Add menu will disappear from the Dockbar since they're
 not allowed to modify the default page.
 
-![Figure 7.3: Non-administrator site members can customize their own versions of customizable pages but can't modify the default page.](../../images/default-customizable-page.png)
+![Figure 8.3: Non-administrator site members can customize their own versions of customizable pages but can't modify the default page.](../../images/default-customizable-page.png)
 
 Administrators of customizable pages have the same two views as site members:
 the *default page* view and the *customized page* view. Changes made to the
@@ -83,7 +83,7 @@ their language in the Language portlet to view a translation of the portal into
 their native language. After closing the Configuration dialog box of the
 Language portlet, the customized Welcome page looks like this:
 
-![Figure 7.4: In this example, the user removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../images/customized-portal-homepage.png)
+![Figure 8.4: In this example, the user removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../images/customized-portal-homepage.png)
 
 <!-- This section needs updating for 6.2. The following two paragraphs'
 statements about the required permissions and roles seem to be obsolete. -->

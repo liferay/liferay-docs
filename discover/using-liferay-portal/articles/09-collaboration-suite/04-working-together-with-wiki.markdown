@@ -38,7 +38,7 @@ the application with websites, Facebook, Google Gadgets, etc. You will also
 notice that the communication tab has some additional options not seen in the
 other portlets.
 
-![Figure 8.23: For each of the public parameters in this portlet, it is possible to ignore the values coming from other portlets or to read the value from another parameter.](../../images/05-wiki-configuration.png)
+![Figure 9.23: For each of the public parameters in this portlet, it is possible to ignore the values coming from other portlets or to read the value from another parameter.](../../images/05-wiki-configuration.png)
 
 The communication tab of the configuration window allows you to configure
 communication across portlets, using predefined public render parameters. From
@@ -141,7 +141,7 @@ By default, there is one page added to your wiki, called *FrontPage*. To get
 started adding data to your wiki, click the *Edit* link. You will be brought to
 a blank editing page.
 
-![Figure 8.24: By clicking *Edit*, you can create/modify your wiki content.](../../images/05-editing-wiki-page.png)
+![Figure 9.24: By clicking *Edit*, you can create/modify your wiki content.](../../images/05-editing-wiki-page.png)
 
 You can now begin to add content to the page. Notice that there is a very
 convenient *Show Syntax Help* link which can help with the wiki syntax. You can
@@ -168,7 +168,7 @@ sections that have already been added.
 
 This would produce the following wiki page:
 
-![Figure 8.25: By using the syntax help guide, you can format your wiki headings and text.](../../images/05-wiki-front-page.png)
+![Figure 9.25: By using the syntax help guide, you can format your wiki headings and text.](../../images/05-wiki-front-page.png)
 
 This adds a simple heading, a paragraph of text, and several links to the page.
 Since the pages behind these links have not been created yet, clicking one of

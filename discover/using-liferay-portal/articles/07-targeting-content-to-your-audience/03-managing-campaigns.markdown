@@ -20,7 +20,7 @@ useful to deactivate a campaign if a problem is found with the way content is
 being displayed. Once the problem has been corrected, the campaign can be
 reactivated.
 
-![Figure 6.x: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* &rarr; *Campaigns* to manage campaigns for a site.](../../images/07-audience-targeting-user-campaigns.png)
+![Figure 7.5: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* &rarr; *Campaigns* to manage campaigns for a site.](../../images/07-audience-targeting-user-campaigns.png)
 
 For example, suppose you wanted the ability to display certain content (for
 example, advertisements about your new Android app) to female baseball fans
@@ -81,7 +81,7 @@ something not working as your team expected:
  - Number of users who started to fill out the Register form
  - Number of users who completed the registration
 
-![Figure 6.x: Drag and drop tracking actions to the right to configure a campaign.](../../images/07-audience-targeting-tracking-actions.png)
+![Figure 7.6: Drag and drop tracking actions to the right to configure a campaign.](../../images/07-audience-targeting-tracking-actions.png)
  
 You could drag and drop *tracking actions* from the palette to track all the
 actions mentioned above. More types of tracking actions can be created by

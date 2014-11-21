@@ -81,7 +81,7 @@ infrastructure that Liferay provides.
 
 ## Themes [](id=themes)
 
-![Figure 14.15: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
+![Figure 15.15: Envision Theme from Liferay's Theme Repository](../../images/marketplace-envision-theme.png)
 
 Themes are hot deployable plugins which can completely transform the look and
 feel of the portal. Most organizations have their own look and feel standards
@@ -96,7 +96,7 @@ than starting a theme from scratch. You can learn more about theme development
 in [*Liferay in Action*](http://manning.com/sezov) or the [Liferay Development
 Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
 
-![Figure 14.16: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
+![Figure 15.16: Murali Theme from Liferay's Theme Repository](../../images/marketplace-murali-theme.png)
 
 ## Layout Templates [](id=layout-templates)
 
@@ -210,7 +210,7 @@ templates: if a theme or layout template has been installed, then it's available
 for use. The Theme and Layout Template Plugins tabs of the Plugins Configuration
 section directly display which portal roles can access them.
 
-![Figure 14.17: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
+![Figure 15.17: Plugins Installation Portlet Tab Default View](../../images/marketplace-plugins-installation-portlet-tab.png)
 
 It's easy to browse through the lists of installed plugins since the plugins are
 listed alphabetically. You can also change the number of items per page and
@@ -256,7 +256,7 @@ plugin to your Liferay Portal. Use the *File Upload* option to browse to and
 install from a local `.lpkg` or `.war` file. Use the *URL* option to install
 from a remote `.lpkg` or `.war` file.
 
-![Figure 14.18: Installing a Plugin Manually](../../images/marketplace-plugin-installer-upload-file.png)
+![Figure 15.18: Installing a Plugin Manually](../../images/marketplace-plugin-installer-upload-file.png)
 
 That's all the information the App Manager needs in order to deploy your
 portlet, theme, layout template, hook, or web plugin. Click the *Install* button

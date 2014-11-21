@@ -45,7 +45,7 @@ at how you'd create a workflow using a single approver.
 Below is a diagram of a single approver workflow definition. It has only two
 tasks (Update and Review) and two states (Initial State and Approved). 
 
-![Figure 11.1: The default single approver workflow. Arrows represent transitions and boxes represent states and tasks.](../../images/kaleo-workflow-single-approver.png)
+![Figure 12.1: The default single approver workflow. Arrows represent transitions and boxes represent states and tasks.](../../images/kaleo-workflow-single-approver.png)
 
 First you should define the schema. For Liferay workflows using Kaleo,
 `liferay-worklow-definition-6_2_0.xsd` should be your schema. You can find this
@@ -355,7 +355,7 @@ notification to the other manager. The below illustration shows how a workflow
 with a fork and a join might be designed. 
 
 <!-- | TODO - I deleted the original one... --> 
-![Figure 11.2: Parallel Approval Design](../../images/kaleo-workflow-parallel-approval.png)
+![Figure 12.2: Parallel Approval Design](../../images/kaleo-workflow-parallel-approval.png)
 
 You can transition to a fork from a task or state. From the fork, you can
 transition to multiple tasks or states which occur in parallel. In the previous

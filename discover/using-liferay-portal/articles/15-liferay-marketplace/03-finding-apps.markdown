@@ -8,13 +8,13 @@ There are several ways to search for and find apps you are interested in.
    category, as well as a canonical listing of all apps. Also, on the right, are
    lists of the Most Viewed apps within that category.
 
-    ![Figure 14.8: When searching for apps for your portal, you can browse through the complete list of Marketplace apps or browse by category.](../../images/marketplace-browsing-categories.png)
+    ![Figure 15.8: When searching for apps for your portal, you can browse through the complete list of Marketplace apps or browse by category.](../../images/marketplace-browsing-categories.png)
 
 2. Searching: To search for an app, type in search criteria in the search box
    under the navigation menu on the left and click *Search*. Apps matching the
    specified search criteria are displayed.
 
-    ![Figure 14.9: You can search for apps using the search box in the navigation menu. Results are returned if your search terms match an app's title or description.](../../images/marketplace-search-box.png)
+    ![Figure 15.9: You can search for apps using the search box in the navigation menu. Results are returned if your search terms match an app's title or description.](../../images/marketplace-search-box.png)
 
 Next, let's talk about app versioning.
 
@@ -41,7 +41,7 @@ available also describes the range of Liferay Platform versions the app is
 compatible with. Make sure to choose a version of the app that is compatible
 with your Liferay Platform release.
 
-![Figure 14.10: Look at an app's supported framework versions to check if it's compatible with your version of Liferay.](../../images/marketplace-app-version-history.png)
+![Figure 15.10: Look at an app's supported framework versions to check if it's compatible with your version of Liferay.](../../images/marketplace-app-version-history.png)
 
 To check if an app is compatible with your version of Liferay, click on the App
 and then click on the *Version History* tab. The Version History tab displays

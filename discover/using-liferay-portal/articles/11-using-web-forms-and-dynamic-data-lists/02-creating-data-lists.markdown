@@ -33,7 +33,7 @@ you know to sign up. But what would it look like for them to add an entry to
 this list? The data definition you've previously created (or selected) defines
 the layout as well, which means the form looks just the way you laid it out. 
 
-![Figure 10.4: You can enter a new data record by clicking on *Admin* &rarr; *Content* from the Dockbar, clicking on *Dynamic Data Lists*, clicking on an existing list, and then clicking on the *Add* button next to the list's name. Alternatively, you can install the Dynamic Data List Form portlet, add it to a page, and configure it to allow users to submit new data records for a lists.](../../images/05-ddl-add-record.png)
+![Figure 11.4: You can enter a new data record by clicking on *Admin* &rarr; *Content* from the Dockbar, clicking on *Dynamic Data Lists*, clicking on an existing list, and then clicking on the *Add* button next to the list's name. Alternatively, you can install the Dynamic Data List Form portlet, add it to a page, and configure it to allow users to submit new data records for a lists.](../../images/05-ddl-add-record.png)
 
 But how will this data appear? How will my awesome, new Volunteer Sign-Up sheet
 or that boring Jobs Listing look? The answers to these pressing, burning
@@ -86,7 +86,7 @@ in your portal. Read on to find out more about that.
 Lists are published in the portal through the Dynamic Data List Display portlet.
 If Listies don't customize the display, their lists look something like this:
 
-![Figure 10.5: The default data list display in the Control Panel shows the list's records and allows record to added, edited, or removed.](../../images/05-ddl-list-display.png)
+![Figure 11.5: The default data list display in the Control Panel shows the list's records and allows record to added, edited, or removed.](../../images/05-ddl-list-display.png)
 
 This isn't all that exciting, but it allows users to see the list's contents,
 and if they have permission, to add and/or edit list items. Within a site like
@@ -119,7 +119,7 @@ permission.
 allows users with permission to interact with the list in the same way as in a
 standard spreadsheet program.
 
-![Figure 10.6: The Dynamic Data List Display portlet allows users to view the records belong to a list in either a standard or a spreadsheet view. This figure shows the spreadsheet view.](../../images/05-ddl-spreadsheet-view.png)
+![Figure 11.6: The Dynamic Data List Display portlet allows users to view the records belong to a list in either a standard or a spreadsheet view. This figure shows the spreadsheet view.](../../images/05-ddl-spreadsheet-view.png)
 
 Now, as useful as this default display is, and it's certainly useful for my to
 do list and my memo notes, it can be an awkward way to ask my volunteers to sign

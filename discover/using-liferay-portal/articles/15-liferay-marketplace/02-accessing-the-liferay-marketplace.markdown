@@ -18,7 +18,7 @@ browser. Navigate to
 [http://liferay.com/marketplace](http://liferay.com/marketplace) to access the
 Marketplace home page.
 
-![Figure 14.1: You can access and browse the Marketplace home page without a `liferay.com` account but you need an account in order to purchase and download apps.](../../images/marketplace-homepage.png) 
+![Figure 15.1: You can access and browse the Marketplace home page without a `liferay.com` account but you need an account in order to purchase and download apps.](../../images/marketplace-homepage.png) 
  
 In the center of the page, you will see a number of icons. Each icon represents
 an individual app, and apps are organized by category:
@@ -36,7 +36,7 @@ agreement for the app, a link to report abuse, and a Purchase button. You'll
 also be able to view version history, read reviews left by other users, or write
 your own review. 
 
-![Figure 14.2: Click on a Marketplace app to view details, ratings, and reviews of the app.](../../images/marketplace-app-details.png) 
+![Figure 15.2: Click on a Marketplace app to view details, ratings, and reviews of the app.](../../images/marketplace-app-details.png) 
 
 If you click on the Purchase button, you'll be prompted to choose a purchase
 type. You can purchase an app for your personal account or for your company. If
@@ -52,7 +52,7 @@ apps available from Marketplace. Clicking on the individual categories allows
 you to browse the apps in that category. To view all the apps on Marketplace at
 once, click the *Apps* link and then the *See All* link in the Apps portlet.
 
-![Figure 14.3: Click on the *Apps* link in the menu on the left side of the Liferay Marketplace homepage and then on the *See All* link in the Apps portlet to browse all the Marketplace apps at once.](../../images/marketplace-browsing-apps.png) 
+![Figure 15.3: Click on the *Apps* link in the menu on the left side of the Liferay Marketplace homepage and then on the *See All* link in the Apps portlet to browse all the Marketplace apps at once.](../../images/marketplace-browsing-apps.png) 
 
 Below the navigation menu is the search bar. This search checks the titles and
 descriptions of apps against your search terms.
@@ -71,7 +71,7 @@ register as a developer in Marketplace. Just go to
 [http://liferay.com/marketplace](http://liferay.com/marketplace) and click
 *Become a Developer* from the *Marketplace* menu.
  
-![Figure 14.4: Click on the *Become a Developer* link in the menu on the left side of the Liferay Marketplace homepage to register a developer's account, either as an individual or a company.](../../images/marketplace-registration.png) 
+![Figure 15.4: Click on the *Become a Developer* link in the menu on the left side of the Liferay Marketplace homepage to register a developer's account, either as an individual or a company.](../../images/marketplace-registration.png) 
 
 Once you register as a developer, your *liferay.com* homepage will
 have links for adding your apps to Marketplace, and managing them after they're
@@ -111,7 +111,7 @@ copy or have re-installed Liferay and wish to re-deploy the app).  This option
 is also useful for downloading apps and deploying them to offline instances of
 Liferay that do not have direct access to `liferay.com`.
 
-![Figure 14.5: On your `liferay.com` home page, the *Apps* link in the left navigation menu lets you view and download your purchased apps.](../../images/marketplace-purchased-apps.png)
+![Figure 15.5: On your `liferay.com` home page, the *Apps* link in the left navigation menu lets you view and download your purchased apps.](../../images/marketplace-purchased-apps.png)
 
 If possible, it's best to log into your portal instance and install purchased
 applications through the *Store* link in the Control Panel's *Apps* section.
@@ -127,7 +127,7 @@ price and other relevant information. Please see the
 [Marketplace chapter of the Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) 
 for details on this topic.
  
-![Figure 14.6: This is part of the form you need to submit when submitting an app to Liferay Marketplace.](../../images/marketplace-upload-app.png)
+![Figure 15.6: This is part of the form you need to submit when submitting an app to Liferay Marketplace.](../../images/marketplace-upload-app.png)
  
 Clicking on *Add an App* allows you to upload a new app and make it available in
 the marketplace. Please see the [Marketplace chapter of the Developer Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/liferay-marketplace-liferay-portal-6-2-dev-guide-11-en) 
@@ -148,7 +148,7 @@ company's Marketplace account). Your company's Marketplace admin will then be
 able to add you to the company. If the company name you'd like to use is
 available, click the *Register Your Company* button to move on to the next step. 
 
-![Figure 14.7: You can upload apps as an individual or on behalf of your company.](../../images/marketplace-creating-new-company.png)
+![Figure 15.7: You can upload apps as an individual or on behalf of your company.](../../images/marketplace-creating-new-company.png)
 
 Your second step is to fill out your company's information. The public
 information you must provide includes a company logo, the company name, a

@@ -5,7 +5,7 @@ involving user management. There, you'll find an interface for the creation and
 maintenance of the following portal entities: users, organizations, user groups,
 and roles. 
 
-![Figure 2.1: The Users section of the Control Panel allows portal administrators to manage users, organizations, user groups, and roles. It also allows administrators to monitor users' live portal sessions if monitoring has been enabled for the portal.](../../images/users-section-control-panel.png)
+![Figure 16.1: The Users section of the Control Panel allows portal administrators to manage users, organizations, user groups, and roles. It also allows administrators to monitor users' live portal sessions if monitoring has been enabled for the portal.](../../images/users-section-control-panel.png)
 
 Since we explained how to manage sites, teams, site templates, and page
 templates in chapters 2 and 3, we won't discuss them in detail here.
@@ -30,7 +30,7 @@ Panel*. Then click on *Users and Organizations*. Click the *Add* button and
 select *User*. Fill out the Add User form using your name and email address.
 When you are finished, click *Save*.
 
-![Figure 2.2: You need to at least enter a screen name, email address, and first name in order to create a new user account.](../../images/01-add-user-screen.png)
+![Figure 16.2: You need to at least enter a screen name, email address, and first name in order to create a new user account.](../../images/01-add-user-screen.png)
 
 After you submit the form, the page reloads with a success message. An expanded
 form appears that allows you to fill out a lot more information about the user.
@@ -41,7 +41,7 @@ message with the user's new password was sent to the user's email address. This,
 of course, requires that Liferay can properly communicate with your SMTP mail
 server.
 
-![Figure 2.3: Once you've completed the basic form for creating a new user account, you'll see a much more detailed form for editing the user and adding additional information.](../../images/01-user-account-editor.png)
+![Figure 16.3: Once you've completed the basic form for creating a new user account, you'll see a much more detailed form for editing the user and adding additional information.](../../images/01-user-account-editor.png)
 
 If you haven't yet set up your mail server, you'll need to use this page to
 change the default password for your user account to something you can remember.
@@ -221,7 +221,7 @@ right and check the *Create Site* box. If you don't know right now if your
 organization needs a site, that's fine. You can always add one later if the need
 arises. 
 
-![Figure 2.4: Adding a new organization is easy. Once you've clicked *Save* to create the organization, you can specify additional details about the organization.](../../images/01-add-organization-screen.png)
+![Figure 16.4: Adding a new organization is easy. Once you've clicked *Save* to create the organization, you can specify additional details about the organization.](../../images/01-add-organization-screen.png)
 
 **Name:** Enter a name for the organization.
 

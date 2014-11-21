@@ -24,7 +24,7 @@ space. It's best, therefore, to dedicate an entire page to the application. The
 Shopping portlet is available from the *Add* &rarr; *Applications* menu on the
 left side panel under Shopping.
 
-![Figure 13.11: Start setting up the store by entering items and categories in the shopping portlet.](../../images/shopping-add-portlet.png)
+![Figure 14.11: Start setting up the store by entering items and categories in the shopping portlet.](../../images/shopping-add-portlet.png)
 
 The shopping portlet has four tabs across the top:
 
@@ -56,14 +56,14 @@ It's not difficult to create categories. Simply click the *Add Category* button
 to display the Category form. In this form enter the *Name*, *Description*, and
 set the *Permissions* for the category. That's all there is to it.
 
-![Figure 13.12: In this figure there are three subcategories for the `Aromatherapy` category. The first subcategory has three items, the second has two, and the third is empty.](../../images/shopping-categories.png)
+![Figure 14.12: In this figure there are three subcategories for the `Aromatherapy` category. The first subcategory has three items, the second has two, and the third is empty.](../../images/shopping-categories.png)
 
 When you click *Save*, your new category is listed in the portlet, along with
 the number of subcategories and the number of items that are in the category.
 You can edit the category, set permissions for it or delete it using the
 *Actions* button.
 
-![Figure 13.13: Breadcrumbs are an important navigational tool in the shopping portlet.](../../images/shopping-category-breadcrumbs.png)
+![Figure 14.13: Breadcrumbs are an important navigational tool in the shopping portlet.](../../images/shopping-category-breadcrumbs.png)
 
 Each category can have unlimited subcategories and you can add subcategories to
 any category. Notice as you add categories and subcategories, navigational
@@ -91,7 +91,7 @@ photo or upload the file locally. Choose from three sizes of images. You must
 select the appropriate check box for the image you want to display. When you're
 finished creating a new item, click *Save*.
 
-![Figure 13.14: The image in this figure is the medium sized option.](../../images/shopping-item-image2.png)
+![Figure 14.14: The image in this figure is the medium sized option.](../../images/shopping-item-image2.png)
 
 As products are added, they are listed in the Items section of the portlet. If
 the item you just created needs to go into one of your new categories or
@@ -163,7 +163,7 @@ that the total order amount falls under.
 This form sets the addresses for customer email notifications. Use the list of
 term definitions below to customize the correspondence with your customers.
 
-![Figure 13.15: Shopping emails can be configured in a myriad of ways to suit your needs.](../../images/shopping-confirmation-email-form.png)
+![Figure 14.15: Shopping emails can be configured in a myriad of ways to suit your needs.](../../images/shopping-confirmation-email-form.png)
 
 **Emails From:** sets the email address from which order and shipping
 notifications are sent.  
@@ -192,7 +192,7 @@ When buyers select an item, they see the item's description displaying all of
 its relevant information. The figure below is typical of what an item's
 description might look like.
 
-![Figure 13.16: Your product's SKU number is listed above the image.](../../images/shopping-item.png)
+![Figure 14.16: Your product's SKU number is listed above the image.](../../images/shopping-item.png)
 
 Below the product description is the Availability field indicating whether the
 item is in stock. There are also two buttons for managing the shopping
@@ -227,7 +227,7 @@ shopping again or to stop shopping.
 address, and the credit card information. You can also add comments about the
 order if necessary.
 
-![Figure 13.17: The shopping cart gives a preview of the items you'd like to buy.](../../images/shopping-cart-order.png)
+![Figure 14.17: The shopping cart gives a preview of the items you'd like to buy.](../../images/shopping-cart-order.png)
 
 When you're ready to checkout, click the *Checkout* button at the bottom of the
 screen. When all the data has been entered correctly, click *Continue* to see
@@ -284,7 +284,7 @@ special sale events or other discounts. You can determine the type of discount
 to apply and whether it is currently active. You can search for coupons and
 create new coupons from this form.
 
-![Figure 13.18: Create a coupon code automatically when you select the Autogenerate Code box.](../../images/shopping-coupon.png)
+![Figure 14.18: Create a coupon code automatically when you select the Autogenerate Code box.](../../images/shopping-coupon.png)
 
 To add a coupon, enter the coupon code in the Code field. If no code is
 specified, you can create one automatically by selecting the *Autogenerate Code*
@@ -292,7 +292,7 @@ checkbox. After entering the coupon's name and description, you can set the
 coupon's start and expiration dates. Additional options let you activate the
 coupon and set it to never expire.
 
-![Figure 13.19: Customize your coupon parameters under Discounts and Limits.](../../images/shopping-coupon-discount-limits.png)
+![Figure 14.19: Customize your coupon parameters under Discounts and Limits.](../../images/shopping-coupon-discount-limits.png)
 
 Under the Discount section, you can set the minimum order amount required for
 the discount, the discount amount, and the discount type. Types can be based on
@@ -360,13 +360,13 @@ upper right corner. Go to the *Setup* tab and enter the International Standard
 Book Numbers (ISBNs) in the textbox, separated by spaces. The portlet accepts
 10-digit ISBNs rejecting ISBNs that letters.
 
-![Figure 13.20: Separate ISBNs with single spaces.](../../images/shopping-amazon-rankings-config.png)
+![Figure 14.20: Separate ISBNs with single spaces.](../../images/shopping-amazon-rankings-config.png)
 
 When you are finished setting up the rankings, books appear in the portlet
 similar to the example below. Clicking on the book's cover image opens the
 book's Amazon page.
 
-![Figure 13.21: Using the Amazon Rankings application can be a nice addition to your store.](../../images/shopping-and-amazon-rankings.png)
+![Figure 14.21: Using the Amazon Rankings application can be a nice addition to your store.](../../images/shopping-and-amazon-rankings.png)
 
 Now that you have a good grasp on Liferay's Shopping and Amazon Rankings
 applications, let's learn how to generate reports in Liferay.

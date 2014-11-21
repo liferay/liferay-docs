@@ -33,7 +33,7 @@ display content in one site from other sites they administer. You can also
 configure rules for whether subsites should be able to display content from
 their parent sites.
 
-![Figure 3.1: After clicking on *Portal Settings* in Liferay's Control Panel, you can configure any of the areas shown in this figure.](../../images/server-configuration-portal-settings-pages.png)
+![Figure 17.1: After clicking on *Portal Settings* in Liferay's Control Panel, you can configure any of the areas shown in this figure.](../../images/server-configuration-portal-settings-pages.png)
 
 Let's discuss these settings in more detail.
 

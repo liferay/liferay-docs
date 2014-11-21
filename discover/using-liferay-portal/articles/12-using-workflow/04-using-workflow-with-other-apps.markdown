@@ -16,7 +16,7 @@ Documents*, and click *Save*. Mouse over your new My Documents folder, click on
 the black arrow that appears at the top right corner of the folder, and select
 *Edit*.
 
-![Figure 11.9: Workflow for Documents and Media must be enabled at the folder level. Edit a folder to select a workflow.](../../images/11-workflow-edit-folder.png)
+![Figure 12.9: Workflow for Documents and Media must be enabled at the folder level. Edit a folder to select a workflow.](../../images/11-workflow-edit-folder.png)
 
 By default, the *Use document type restrictions and workflow of the parent
 folder* button is selected. To enable workflow for this folder, select the
@@ -27,7 +27,7 @@ Types* drop-down menu appears. By default, you can select *No workflow* or
 drop-down menu. You can add custom workflows through the Workflow page in the
 Portal section of the Control Panel.
 
-![Figure 11.10: You can use the document type restrictions and workflow of the parent folder or you can define specific document type restrictions and workflow for this folder.](../../images/11-folder-workflow.png)
+![Figure 12.10: You can use the document type restrictions and workflow of the parent folder or you can define specific document type restrictions and workflow for this folder.](../../images/11-folder-workflow.png)
 
 After you've selected the *Single Approver* workflow and clicked *Save*,
 workflow takes effect for the My Documents folder. Try adding a new document to

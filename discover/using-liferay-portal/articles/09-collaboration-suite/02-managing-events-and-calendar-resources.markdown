@@ -23,7 +23,7 @@ dialog box by clicking on the gear icon in the portlet's title bar and
 selecting *Configuration*. The Setup tab provides two sub-tabs of configurable
 settings: *User Settings* and *RSS*.
 
-![Figure 8.8: The Setup &rarr; User Settings tab provides several new configuration options that weren't available from the old Calendar portlet.](../../images/new-calendar-configuration.png)
+![Figure 9.8: The Setup &rarr; User Settings tab provides several new configuration options that weren't available from the old Calendar portlet.](../../images/new-calendar-configuration.png)
 
 **User Settings:** On this screen, you can customize your calendar's default
 view and settings. You can set the *Time Format* to *AM/PM* or to *24 Hour*.
@@ -79,7 +79,7 @@ corresponding to the calendars. When you click on a colored box, its color
 disappears and the events of that calendar are no longer displayed. Click on an
 uncolored box to view the events of the corresponding calendar.
 
-![Figure 8.9: You have options to add or manage calendars. Also, you can toggle the colored boxes beside your calendars to show/hide your planned events.](../../images/new-calendar-manage-calendars.png)
+![Figure 9.9: You have options to add or manage calendars. Also, you can toggle the colored boxes beside your calendars to show/hide your planned events.](../../images/new-calendar-manage-calendars.png)
 
 When adding a calendar, you can also specify whether or not to enable comments
 and ratings for your calendar's events. Comments and ratings can be
@@ -99,14 +99,14 @@ calendar and you'll see an event creation popup appear. If you've selected the
 *Day* or *Month* view, you can click on the specific time when your event
 begins.
 
-![Figure 8.10: When you click anywhere on the calendar, you'll see the event creation popup appear. Click *Edit* to specify details for your event.](../../images/new-calendar-event-popup.png)
+![Figure 9.10: When you click anywhere on the calendar, you'll see the event creation popup appear. Click *Edit* to specify details for your event.](../../images/new-calendar-event-popup.png)
 
 In the new event popup, you can select the calendar in which you'd like to
 create the new event. This is useful since sites and users can have multiple
 calendars. You can click *Save* to create the event right away or you can click
 *Edit* to specify more event information.
 
-![Figure 8.11: You can specify event details such as the event title, start date, end date, description, location, and more.](../../images/new-calendar-event-details.png)
+![Figure 9.11: You can specify event details such as the event title, start date, end date, description, location, and more.](../../images/new-calendar-event-details.png)
 
 The *Title* you enter determines the name of the event as it's displayed on the
 calendar. The *Start Date* and *End Date* times determine when your event takes
@@ -119,7 +119,7 @@ to specify whatever start times and end times you like, such as 11:37am and
 the *Repeat* box if your event takes place over multiple days. Checking this box
 opens another popup.
 
-![Figure 8.12: The *Repeat* box allows you to specify whether an events repeats daily, weekly, monthly, or yearly, how often it repeats, and when (or if) it ends.](../../images/new-calendar-event-repeat.png)
+![Figure 9.12: The *Repeat* box allows you to specify whether an events repeats daily, weekly, monthly, or yearly, how often it repeats, and when (or if) it ends.](../../images/new-calendar-event-repeat.png)
 
 In the Details collapsible section, you can specify four pieces of information.
 Under *Calendar*, you can select the calendar to which you'd like to add your
@@ -157,7 +157,7 @@ resource, its schedule is displayed in this calendar view. If you like to
 overview the availability of all the invited entities, just click on *Resources
 Availability*.
 
-![Figure 8.13: You can invite users, organizations, or other calendar resources to your event and can check their availability in a calendar view.](../../images/new-calendar-event-invitations.png)
+![Figure 9.13: You can invite users, organizations, or other calendar resources to your event and can check their availability in a calendar view.](../../images/new-calendar-event-invitations.png)
 
 The Reminders collapsible section lets you specify up to two
 times when event reminder notifications will be sent via email. For example, you
@@ -206,7 +206,7 @@ email template. For example, `[$EVENT_LOCATION$]` represents the event location,
 `[$EVENT_START_DATE$]` represents the event start date, and `[$EVENT_TITLE$]`
 specifies the event title.
 
-![Figure 8.14: The *Calendar Settings* &rarr; *Notification Templates* tab lets you customize the email templates for emails that are automatically sent out to remind users of upcoming events or invite users to new events.](../../images/new-calendar-configuration2.png)
+![Figure 9.14: The *Calendar Settings* &rarr; *Notification Templates* tab lets you customize the email templates for emails that are automatically sent out to remind users of upcoming events or invite users to new events.](../../images/new-calendar-configuration2.png)
 
 To respond to an event invitation, you can click *Accept*, *Maybe*, or *Decline*
 when viewing the event in the Calendar portlet. The default event invitation
@@ -229,7 +229,7 @@ have noticed that the new Calendar portlet has two tabs in the main portlet
 window: Calendar and Resources. Click on the *Resources* tab of the portlet to
 view, edit, add, or delete resources.
 
-![Figure 8.15: Click on the *Resources* tab of the portlet to view, edit, add, or delete resources.](../../images/new-calendar-resources.png)
+![Figure 9.15: Click on the *Resources* tab of the portlet to view, edit, add, or delete resources.](../../images/new-calendar-resources.png)
 
 Click on the *Add Resource* button to add a new calendar resource. You'll be
 able to enter a name and description for your resource, specify whether or not
@@ -242,7 +242,7 @@ resources, like sites and users, can have more than one calendar associated with
 them. Click *Actions* &rarr; *View Calendars* and then click on *Add Calendar*
 to add a new calendar in which the selected calendar resource appears.
 
-![Figure 8.16: Click on *Add Calendar* to add a new calendar in which the selected calendar resource appears.](../../images/new-calendar-resource-calendars2.png)
+![Figure 9.16: Click on *Add Calendar* to add a new calendar in which the selected calendar resource appears.](../../images/new-calendar-resource-calendars2.png)
 
 Liferay's new Calendar portlet provides an easy-to-use scheduling tool. Sites
 and users can have multiple calendars, calendar events can include calendar

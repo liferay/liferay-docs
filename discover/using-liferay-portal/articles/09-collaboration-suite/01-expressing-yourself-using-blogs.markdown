@@ -19,7 +19,7 @@ that they would not otherwise have, and the ubiquity and wide reach of the
 Internet ensures that if you have something important and interesting to say,
 somebody will read it.
 
-![Figure 8.1: Slashdot was one of the first blogs on the Internet.](../../images/05-slashdot.jpg)
+![Figure 9.1: Slashdot was one of the first blogs on the Internet.](../../images/05-slashdot.jpg)
 
 Liferay Portal has a Blogs portlet which allows you to provide a blogging
 service to users of your web site. In fact, Liferay extensively uses the Blogs
@@ -44,7 +44,7 @@ user's personal site creates a blog just for that user. The Blogs portlet works
 the same way in both cases. And of course, you can change the Blog portlet's
 scope to have different blogs on different pages in the same site.
 
-![Figure 8.2: The initial view of the Blogs portlet.](../../images/05-initial-view-blogs-portlet.png)
+![Figure 9.2: The initial view of the Blogs portlet.](../../images/05-initial-view-blogs-portlet.png)
 
 By default, the Blogs portlet displays the latest entry in its entirety. When
 you first add the portlet to a page, it has no entries, so the portlet is
@@ -97,7 +97,7 @@ your blog posts.
 - *Social Bookmarks:* choose social bookmarks to enable for blog posts, which
 includes Twitter, Facebook, and plusone (Google Plus).
 
-![Figure 8.3: The Blogs portlet's *Configuration* menu offers a plethora of display settings.](../../images/05-blogs-configuration.png)
+![Figure 9.3: The Blogs portlet's *Configuration* menu offers a plethora of display settings.](../../images/05-blogs-configuration.png)
 
 **Email From:** defines the *From* field in the email messages that users
 receive from the Blogs portlet.
@@ -148,7 +148,7 @@ Now that everyone's able to post, let's look at how posts work.
 Now you're ready to begin adding blog entries. Click the *Add Blog Entry*
 button. The following data entry screen appears: 
 
-![Figure 8.4: After clicking *Add Blog Entry*, a new window appears with configuration options for your new blog entry.](../../images/05-new-blog-entry.png)
+![Figure 9.4: After clicking *Add Blog Entry*, a new window appears with configuration options for your new blog entry.](../../images/05-new-blog-entry.png)
 
 There isn't much difference between this screen and any other data entry screen
 within Liferay Portal. You get a title, a way of scheduling when the entry is
@@ -202,7 +202,7 @@ list of entries, and now your entry is displayed. Here is what it looks like
 when the display template is set to *Full Content* and the maximum items to
 display is set to ten:
 
-![Figure 8.5: This sample blog entry gives you an idea of what new content and features are displayed on your page.](../../images/05-first-blog-entry-added.png)
+![Figure 9.5: This sample blog entry gives you an idea of what new content and features are displayed on your page.](../../images/05-first-blog-entry-added.png)
 
 You can see that in the summary view, you don't see the trackback/pingback
 link, and you only see the number of comments that have been added. If you were
@@ -235,7 +235,7 @@ If you click *Configuration* from the options button in the title bar of the
 portlet, the Blogs Aggregator's configuration page appears. From here, you can
 set several configuration options.
 
-![Figure 8.6: You can navigate to the Blogs Aggregator Configuration menu by selecting the *Options* gear from the portlet's title bar and selecting *Configuration*.](../../images/05-blogs-aggregator-configuration.png)
+![Figure 9.6: You can navigate to the Blogs Aggregator Configuration menu by selecting the *Options* gear from the portlet's title bar and selecting *Configuration*.](../../images/05-blogs-aggregator-configuration.png)
 
 **Selection Method:** select Users or Scope here. If you select Users, the
 Blogs Aggregator aggregates the entries of every blogger on your system. If you
@@ -277,7 +277,7 @@ Most of the time, the Blogs portlet is the only tool you'll need to manage your
 blog entries. If, however, you need to massively delete blog entries, the blogs
 administrator portlet is the perfect tool for you. 
 
-![Figure 8.7: The Blogs Administrator portlet lets you delete large sets of blog entries.](../../images/04-blogs-administrator.png)
+![Figure 9.7: The Blogs Administrator portlet lets you delete large sets of blog entries.](../../images/04-blogs-administrator.png)
 
 Note that it's only for batch processing of blog entries; for the full set of
 tools for managing blog entries, your best bet is to use the Blogs portlet.

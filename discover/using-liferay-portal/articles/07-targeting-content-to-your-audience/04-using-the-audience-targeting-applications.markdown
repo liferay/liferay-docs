@@ -30,7 +30,7 @@ the last *if* clause so that the application knows what to display if the user
 doesn't match any user segments. *Don't display anything* is an option for the
 *otherwise* clause.
 
-![Figure 6.x: You can configure the User Segment Content Display application to display content according to rules that you define in the application's configuration window.](../../images/user-segment-content-display-config.png)
+![Figure 7.7: You can configure the User Segment Content Display application to display content according to rules that you define in the application's configuration window.](../../images/user-segment-content-display-config.png)
 
 For example, you can add a User Segment Content Display application to a page and
 configure the following rules for it:
@@ -48,7 +48,7 @@ configured this way, users (even guest users) will see a different image based
 on the user segment to which they belong. The application won't even be visible
 to a user if the user doesn't belong to any of the configured user segments.
 
-![Figure 6.x: In the User Segment Content Display application, site administrators can preview the various assets that have been configured to be displayed to different user segments.](../../images/07-audience-targeting-uscd.png)
+![Figure 7.8: In the User Segment Content Display application, site administrators can preview the various assets that have been configured to be displayed to different user segments.](../../images/07-audience-targeting-uscd.png)
 
 The User Segment Content Display application allows site administrators to
 preview the various assets that have been configured to be displayed to
@@ -66,7 +66,7 @@ for the Tennis fans user segment. If the user belongs to multiple user segments,
 then a list of articles that have been categorized for any of the matching user
 segments will be shown.
 
-![Figure 6.x: The User Segment Content List application displays content that matches the user segments which fit the current user. You can configure the User Segment Content List application to display assets of any kind or only specific kinds of assets.](../../images/user-segment-content-list.png)
+![Figure 7.9: The User Segment Content List application displays content that matches the user segments which fit the current user. You can configure the User Segment Content List application to display assets of any kind or only specific kinds of assets.](../../images/user-segment-content-list.png)
 
 By default, the User Segment Content List application is configured to display
 assets of any type that have been categorized for any user segment that matches
@@ -96,7 +96,7 @@ campaigns. These rules cannot be ordered manually as they can with the User
 Segment Content Display application. The order of the rules is based on the
 priority of the campaigns.
 
-![Figure 6.x: The rules for configuring the Campaign Content Display application to display content are similar to the rules of the User Segment Content Display application, but simpler.](../../images/campaign-content-display-config.png)
+![Figure 7.10: The rules for configuring the Campaign Content Display application to display content are similar to the rules of the User Segment Content Display application, but simpler.](../../images/campaign-content-display-config.png)
 
 For example, suppose that you've created two campaigns called *World Cup* and
 *Stanley Cup*, designed to target users who are interested in the World Cup of

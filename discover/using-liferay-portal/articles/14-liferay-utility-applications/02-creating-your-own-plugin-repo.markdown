@@ -55,7 +55,7 @@ $$$
 You can add the Software Catalog portlet to your page by navigating to *Add*
 &rarr; *Applications* and selecting it from the *Tools* category.
 
-![Figure 13.7: The Software Catalog portlet can be added to any of your site pages.](../../images/marketplace-software-catalog.png)
+![Figure 14.7: The Software Catalog portlet can be added to any of your site pages.](../../images/marketplace-software-catalog.png)
 
 Each site in your portal can have an instance of the Software Catalog. The
 Software Catalog can be managed from your site's Site Administration page. This
@@ -66,7 +66,7 @@ repository and go to the Site Administration page. You can change the site that
 you're on by navigating to the Dockbar's *My Sites* drop-down menu and selecting
 your desired site.
 
-![Figure 13.8: This is an example of a populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
+![Figure 14.8: This is an example of a populated Software Catalog from liferay.com](../../images/marketplace-populated-software-catalog.png)
 
 The Software Catalog has several tabs. The first tab is labeled Products. The
 default view of the portlet, when populated with software, displays what plugins
@@ -113,7 +113,7 @@ To create the product record in the Software Catalog portlet, click the
 *Products* tab, then click the *Add Product* button. Fill out the form with
 information about your product.
 
-![Figure 13.9: The *New Product* screen provides a recommended licenses setting for your product.](../../images/marketplace-adding-product-to-software-catalog.png)
+![Figure 14.9: The *New Product* screen provides a recommended licenses setting for your product.](../../images/marketplace-adding-product-to-software-catalog.png)
 
 **Name:** The name of your software product.
 
@@ -200,7 +200,7 @@ Now go back to the *Products* tab and click on your product. You will notice a
 message is displayed stating the product does not have any released versions.
 Click the *Add Product Version* button.
 
-![Figure 13.10: Versions usually increment by *.1* for every new release.](../../images/marketplace-adding-product-version-software-catalog.png)
+![Figure 14.10: Versions usually increment by *.1* for every new release.](../../images/marketplace-adding-product-version-software-catalog.png)
 
 **Version Name:** Enter the version of your product.
 

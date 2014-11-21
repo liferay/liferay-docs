@@ -34,7 +34,7 @@ On your site's Site Administration page, navigate to the *Polls* link under
 Content. Click the *Add Question* button. A form appears that allows you to fill
 out all the information for your poll.
 
-![Figure 8.26: Besides the Title and the Polls Question, you must enter data for each of the Choices fields when creating a new poll.](../../images/polls-add-new-question.png)
+![Figure 9.26: Besides the Title and the Polls Question, you must enter data for each of the Choices fields when creating a new poll.](../../images/polls-add-new-question.png)
 
 **Title:** Enter the name of the poll question. 
 
@@ -82,7 +82,7 @@ poll, they must be able to access it. Click on the link labeled *Please
 configure this portlet to make it visible to all users, and a dialog box like
 the one below appears.
 
-![Figure 8.27: In the initial configuration of the Polls Display portlet, the Question field will remain blank until you select the appropriate poll question. ](../../images/polls-display-config.png)
+![Figure 9.27: In the initial configuration of the Polls Display portlet, the Question field will remain blank until you select the appropriate poll question. ](../../images/polls-display-config.png)
 
 Under the Setup tab is a menu option labeled *Question*. Selecting this option
 displays the name of the poll you created. Choose it, click *Save*, and it is
@@ -100,7 +100,7 @@ perform other tasks by using the icons in the lower left corner of the portlet.
 Besides adding questions, you can also edit the currently selected question or
 select existing questions.
 
-![Figure 8.28: These three buttons, highlighted in red, allow you to manage the configuration of the poll. Notice this poll has expired.](../../images/polls-config-buttons.png)
+![Figure 9.28: These three buttons, highlighted in red, allow you to manage the configuration of the poll. Notice this poll has expired.](../../images/polls-config-buttons.png)
 
 **Edit Question:** Displays a similar dialog box to the one used to create the
 poll. 
@@ -122,13 +122,13 @@ here. If you select it, the name and the question, as well as a breakdown of the
 poll results appears, including percentages and total number of votes per answer
 and the total number of votes cast.
 
-![Figure 8.29: Selecting a poll in the Polls portlet allows you to see all the information related to the poll results.](../../images/polls-results.png)
+![Figure 9.29: Selecting a poll in the Polls portlet allows you to see all the information related to the poll results.](../../images/polls-results.png)
 
 Below this is an item called *Charts*. This option shows the poll results
 represented in various graphs. The graphs are *Area*, *Horizontal Bar*, *Line*,
 *Pie*, and *Vertical Bar*.
 
-![Figure 8.30: This is what the vertical bar graph for the Lunar Resort poll results looks like.](../../images/polls-results-vertical-bar.png)
+![Figure 9.30: This is what the vertical bar graph for the Lunar Resort poll results looks like.](../../images/polls-results-vertical-bar.png)
 
 There is also a listing of the users who voted in your poll, how they voted,
 and a time/date stamp of when their votes were cast. Registered users are

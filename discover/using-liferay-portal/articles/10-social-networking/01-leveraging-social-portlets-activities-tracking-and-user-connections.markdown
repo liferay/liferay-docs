@@ -39,7 +39,7 @@ been up to or it could be used on the public or private pages of a user's
 personal site. When added to a personal site, the Activities portlet just shows
 the activities of a single user.
 
-![Figure 9.2: The Activities portlet displays information about asset-related user activity in the current site. It only displays information about web content if the current user is a site administrator.](../../images/activities-portlet.png)
+![Figure 10.2: The Activities portlet displays information about asset-related user activity in the current site. It only displays information about web content if the current user is a site administrator.](../../images/activities-portlet.png)
 
 Note that the Activities portlet provides links to the assets described in its
 activities feed. However, the links to the assets won't work unless there's a
@@ -122,14 +122,14 @@ pages. The goal of these is to use social connections to help a group work
 together more closely. These include the **Members**, **Meetups**, **Summary**,
 and **Activities** portlets.
 
-![Figure 9.3: The *Members* portlet displays all the members of a particular site.](../../images/XX-social-networking-members-portlet.png)
+![Figure 10.3: The *Members* portlet displays all the members of a particular site.](../../images/XX-social-networking-members-portlet.png)
 
 The Members portlet is a simple list of all the current site's members. The only
 configuration options you have are permissions, which are the same for every
 portlet. For example, you might change the permissions so only members of the
 current site can view the portlet. 
 
-![Figure 9.4: Meetups are organized in the two tabs *All Meetups* and *My Meetups*.](../../images/XX-social-networking-meetups.png)
+![Figure 10.4: Meetups are organized in the two tabs *All Meetups* and *My Meetups*.](../../images/XX-social-networking-meetups.png)
 
 The Meetups portlet is a tool for creating casual meetings for users of your
 portal. Anyone can create a "meetup" and give it a title, description,
@@ -142,7 +142,7 @@ a calendar event and the Meetups portlet shares some functionality with the
 Calendar. For more information on the Calendar portlet and configuring events,
 see chapter 8.
 
-![Figure 9.5: All of your site members' activities are listed with brief descriptions and time stamps.](../../images/XX-social-networking-activities.png)
+![Figure 10.5: All of your site members' activities are listed with brief descriptions and time stamps.](../../images/XX-social-networking-activities.png)
 
 The Activities portlet comes in two varieties: the standard Activities portlet
 and the Members' Activities portlet. The basic function of the portlets are the
@@ -155,7 +155,7 @@ Activities portlet, you can use the *Maximum Activities to Display* dropdown
 menu to set a limit on how many activities can be displayed at once in the
 portlet window.
 
-![Figure 9.6: The Map portlet can be placed on a single user's page to display one location or on the main site page to display all users' location.](../../images/map-portlet.png)
+![Figure 10.6: The Map portlet can be placed on a single user's page to display one location or on the main site page to display all users' location.](../../images/map-portlet.png)
 
 The Map portlet allows you to view the locations of site members, both locally
 and internationally. Only members of the site to which the Map portlet has been
@@ -215,7 +215,7 @@ can only be used on personal pages. These include the Summary, Wall, Friends,
 and Friends' Activities portlets. These portlets can be used to create profile
 pages similar to Facebook's or Google+'s. 
 
-![Figure 9.7: You can get creative with Social Networking portlets and make a custom designed profile page.](../../images/XX-social-networking-personal-portlets.png)
+![Figure 10.7: You can get creative with Social Networking portlets and make a custom designed profile page.](../../images/XX-social-networking-personal-portlets.png)
 
 The Summary portlet provides a quick overview of a user's profile. When posted
 in a user's personal site, it displays the user's name, profile picture and job
@@ -284,7 +284,7 @@ the layouts. As an administrator, go to the Control Panel and select *Site
 Templates* from under the *Sites* section. Click *Add* and fill out the form.
 We'll call our new site template *Social Layout*. Click *Save*.
 
-![Figure 9.8: You can give your site template a custom name and description and also specify several configuration settings..](../../images/social-networking-site-template.png)
+![Figure 10.8: You can give your site template a custom name and description and also specify several configuration settings..](../../images/social-networking-site-template.png)
 
 +$$$
 
