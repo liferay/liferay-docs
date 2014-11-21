@@ -395,6 +395,140 @@ To upgrade Tomcat's global classpath, follow the steps below:
 
 You've officially added Mojarra to your application server.
 
+## Page 525: Installing Liferay on Oracle WebLogic 10.3
+
+The following sections are related to configuring Liferay Faces to function
+properly, allowing JSF applications to successfully work in Oracle WebLogic
+10.3 (11g).
+
+### Configuration for Deploying JSF Portlets on WebLogic 10.3
+
+Complete the following instructions to ensure JSF applications deploy
+successfully using your WebLogic application server.
+
+1. To avoid a `ViewExpiredException` with Ajax, disable the Liferay Portal
+`ETagFilter` by adding the following property in the `portal-ext.properties`
+file: 
+
+        com.liferay.portal.servlet.filters.etag.ETagFilter=false
+
+    For more information on this exception, refer to
+    [FACES-1591](https://issues.liferay.com/browse/FACES-1591).
+
+2. You'll need to adjust your memory settings for your environment variables.
+   For your memory settings to be permanently set, they need to be hard-coded in
+   the `startWebLogic.sh` script. Just above the definition of your home domain,
+   add the following lines:
+
+        export MW_HOME=$HOME/Oracle/Middleware
+        export USER_MEM_ARGS="-Xms512m -Xmx1024m -XX:CompileThreshold=8000 -XX:PermSize=128m -XX:MaxPermSize=256m"
+
+    Note that if you have many portlet WAR modules, you may need to increase
+    memory. For example, the following lines reserves double the amount of
+    memory: 
+
+        export MW_HOME=$HOME/Oracle/Middleware
+        export USER_MEM_ARGS="-Xms1024m -Xmx2048m -XX:CompileThreshold=8000 -XX:PermSize=256m -XX:MaxPermSize=512m"
+
+3. Due to a deficiency in the XML parser that ships with WebLogic, it is
+   necessary to include a custom [Apache Xerces](http://xerces.apache.org/)
+   parser as a dependency. In order to include it in the proper position within
+   the WebLogic classpath, the Xerces JARs are included in the Mojarra Shared
+   Library. Therefore, it is not necessary to add Xerces as a dependency in the
+   portlet's `WEB-INF/lib` folder.
+
+    In order to ensure that WebLogic will always invoke the Xerces SAXParser
+    implementation before others, add the following to the top of the
+    `startWebLogic.sh` script:
+
+        export JAVA_OPTIONS="$JAVA_OPTIONS -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl"
+
+    For more information, visit
+    [FACES-1598](https://issues.liferay.com/browse/FACES-1598).
+
+4. If you're running the JSR 329 Portlet Bridge TCK, you'll need to include the
+   `trinidad-api.jar` and `trinidad-impl.jar` dependencies in the global
+   classpath (within the `lib` folder). For more information, see
+   [FACES-1599](https://issues.liferay.com/browse/FACES-1599).
+
+5. In order for JSF 2.1 portlets to deploy correctly in WebLogic, the
+   `WEB-INF/weblogic.xml` descriptor must be configured to fine-tune how class
+   loading takes place. For a working example, please refer to the
+   [weblogic.xml](https://github.com/liferay/liferay-faces/blob/3.2.x/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/weblogic.xml)
+   descriptor from a demo JSF portlet. 
+
+    In order to have a portlet WAR utilize the Mojarra Shared Library
+    (configured in the next section), it must include the following in the
+    `WEB-INF/weblogic.xml` file:
+
+        <wls:library-ref>
+            <wls:library-name>jsf</wls:library-name>
+        </wls:library-ref>
+
+6. If you're using RichFaces, the following JARs must be present in the global
+   classpath in order for it to work properly:
+
+    - `guava.jar`
+    - `richfaces-components-api.jar`
+    - `richfaces-core-api.jar`
+
+    These can either be copied to `weblogic/lib`, or deployed as a Shared
+    Library, such as `richfaces-shared-library` that can be built from the
+    Liferay Faces source. You'll learn how to build from Liferay Faces Source
+    later on.
+
+7. Aside from the RichFaces JARs that must live in the global classpath, all
+   other RichFaces dependencies may exist in `WEB-INF/lib`.
+
+    In order to have a portlet WAR utilize the RichFaces Shared Library, it must
+    include the following in `WEB-INF/weblogic.xml`:
+
+        <wls:library-ref>
+            <wls:library-name>richfaces</wls:library-name>
+        </wls:library-ref>
+
+8. If using ICEfaces or PrimeFaces, the `icefaces.jar` and `primefaces.jar`
+   dependencies may exist in the `WEB-INF/lib` directory.
+
+As mentioned before, the next thing you'll need to do to ensure successful
+deployment of JSF applications is build the necessary Shared Libraries from the
+Liferay Faces source. To complete this, follow the instructions below:
+
+1. It is necessary to build the Shared Libraries from the Liferay Faces source.
+   However, the source will not build properly until the WebLogic Injection
+   Provider for Mojarra is manually installed into your local
+   `$HOME/.m2/repository` folder. Locate the out-of-the-box `jsf-2.0.war`
+   artifact, typically located in the
+   `Oracle/Middleware/wlserver/common/deployable-libraries` directory.
+
+2. Extract the jsf-2.0.war artifact into a temporary folder:
+
+        cd $MW_HOME/Oracle/Middleware/wlserver/common/deployable-libraries
+        mkdir temp
+        cd temp
+        jar xvf ../jsf-2.0.war
+
+3. Manually install the WebLogic Injection Provider for Mojarra
+   (`wls.jsf.di.jar`) into your local `$HOME/.m2/repository` folder.
+   For example, if using Oracle WebLogic version 10.3.6.0, type:
+
+        mvn install:install-file -Dfile=WEB-INF/lib/wls.jsf.di.jar -DgroupId=com.oracle.weblogic -DartifactId=wls.jsf.di -Dpackaging=jar -DgeneratePom=true -Dversion=10.3.6.0
+
+4. Build the Shared Libraries from the Liferay Faces source:
+
+        cd liferay-faces/support
+        mvn -P weblogic clean package
+
+5. Verify that the Shared Libraries have been built by Maven. For example, the
+   following WAR artifacts should exist:
+
+    - `servers/weblogic/jsf-shared-library/target/jsf-shared-library-3.2.4-ga5.war`
+    - `servers/weblogic/jstl-shared-library/target/jstl-shared-library-3.2.4-ga5.war`
+    - `servers/weblogic/richfaces-shared-library/target/richfaces-shared-library-3.2.4-ga5.war`
+
+Excellent! You've configured your WebLogic application server to successfully
+deploy and run JSF applications on Liferay Portal.
+
 ## Page 665: Configuring Liferay for High Availability
 
 In the *Properties File Changes* subsection of the chapter *19.2 Performance 
