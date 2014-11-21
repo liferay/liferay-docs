@@ -72,6 +72,10 @@ just installed Social Office, you can check the *Apply to Existing Users* box to
 grant the Social Office User role to previously created users. These users will 
 receive the role the next time they log in to the portal.
 
+You may also want to change the landing page that users see upon login. For 
+instructions on doing this, see the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
+section of the Liferay User Guide.
+
 ## The Social Office User Bar
 
 When a user who has been assigned to the Social Office User role logs in, the 
