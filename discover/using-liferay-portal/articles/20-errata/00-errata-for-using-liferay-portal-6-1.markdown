@@ -457,14 +457,6 @@ file:
    [weblogic.xml](https://github.com/liferay/liferay-faces/blob/3.2.x/demos/bridge/jsf2-portlet/src/main/webapp/WEB-INF/weblogic.xml)
    descriptor from a demo JSF portlet. 
 
-    In order to have a portlet WAR utilize the Mojarra Shared Library
-    (configured in the next section), it must include the following in the
-    `WEB-INF/weblogic.xml` file:
-
-        <wls:library-ref>
-            <wls:library-name>jsf</wls:library-name>
-        </wls:library-ref>
-
 6. If you're using RichFaces, the following JARs must be present in the global
    classpath in order for it to work properly:
 
@@ -528,6 +520,93 @@ Liferay Faces source. To complete this, follow the instructions below:
 
 Excellent! You've configured your WebLogic application server to successfully
 deploy and run JSF applications on Liferay Portal.
+
+### Upgrading Mojarra on Oracle WebLogic 10.3 (Webapps)
+
+If you're upgrading Mojarra while running in a *webapp* environment, follow the
+instructions below. If you're running in a portlet environment, follow the next
+section's set of instructions.
+
+Oracle WebLogic 10.3 is a Java EE 5 (Servlet 2.5) application server, which
+means that it must include the JSF API and an implementation of JSF. Other
+servers in like GlassFish and JBoss ship with Mojarra in the global classpath,
+but this is not the case with WebLogic 10.3.x. Instead, Mojarra must be
+installed as a Shared Library WAR via the WebLogic Console. The version of
+Mojarra that comes with, for example, WebLogic 10.3.6.0 is version 2.0.4,. New
+applications will require JSF 2.1/2.2 which will make it necessary to upgrade
+Mojarra.
+
+To upgrade Mojarra, follow the instructions below:
+
+1. Locate the out-of-the-box `jsf-2.0.war` artifact, typically located in the
+`Oracle/Middleware/wlserver/common/deployable-libraries` directory.
+
+2. Extract the `jsf-2.0.war` artifact into a folder named `jsf-2.1`.
+
+        cd $MW_HOME/Oracle/Middleware/wlserver/common/deployable-libraries
+        mkdir jsf-2.1
+        cd jsf-2.1
+        jar xvf ../jsf-2.0.war
+
+3. Remove the old version of the JSF API and the Mojarra Implementation. For
+   example:
+
+        rm WEB-INF/lib/javax.jsf_1.0.0.0_2-0.jar
+        rm WEB-INF/lib/glassfish.jsf_1.0.0.0_2-0-4.jar
+
+4. Remove the old version of the JSTL from the `WEB-INF/lib` directory, since
+   it's not required for Facelets.
+
+5. Download the following Mojarra 2.1.21 dependencies and place them in the
+   `WEB-INF/lib` folder:
+
+    - [`jsf-api-2.1.21.jar`](http://search.maven.org/remotecontent?filepath=com/sun/faces/jsf-api/2.1.21/jsf-api-2.1.21.jar)
+    - [`jsf-impl-2.1.21.jar`](http://search.maven.org/remotecontent?filepath=com/sun/faces/jsf-impl/2.1.21/jsf-impl-2.1.21.jar)
+
+6. Create a new `META-INF/MANIFEST.MF` file with the following contents:
+
+        Manifest-Version: 1.0
+        Extension-Name: jsf
+        Specification-Title: JavaServer Faces
+        Specification-Version: 2.1
+        Implementation-Title: Mojarra
+        Implementation-Vendor: Oracle Corporation
+        Implementation-Version: 2.1.21
+
+    The following diagram shows the folder hierarchy of your JSF implementation,
+    including the WebLogic Injection Provider you included in the *Configuration
+    for Deploying JSF Portlets on WebLogic 10.3* section.
+
+    ![Figure 3: Make sure your folder structure appears at the figure suggests.](../../images/jsf-2.1-folder-hierarchy.png)
+
+7. Create a new WAR archive using the *jar* command with *M* command-line option,
+   which retains the` META-INF/MANIFEST.MF` file from Step 6 (rather than
+   generating a new one).
+
+        jar cMf ../jsf-2.1.war META-INF/ WEB-INF/
+
+8. Login to the WebLogic Console application and, in the *Domain Structure*
+   menu, select *Deployments*. Then click *Install*.
+
+9. In the *Path* textbox, enter the full path to the new `jsf-2.1.war` archive
+   that was created in Step 7 and click the *Next* button.
+
+10. Select *Install this deployment as a library* and click the *Next* button.
+
+11. Verify that the Specification Version is *2.1* and that the Implementation
+   Version is *2.1.21* and click the *Next* button.
+
+12. Click *Finish* and then click *Save*.
+
+13. In order to have a portlet WAR utilize the Mojarra Shared Library, insert
+   the following in the `WEB-INF/weblogic.xml` file:
+
+        <wls:library-ref>
+            <wls:library-name>jsf</wls:library-name>
+        </wls:library-ref>
+
+Your WebLogic application server's Mojarra instance is now upgraded in your
+webapp environment.
 
 ## Page 665: Configuring Liferay for High Availability
 
