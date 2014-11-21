@@ -4,7 +4,7 @@ Liferay bundles contain the same directory structure regardless of application
 server. The top-level folder is named for the release of Liferay. This folder is
 called *Liferay Home*, and we refer to it thoughout this documentation. 
 
-![Figure 1.x: Bundle directory structure](../../images/02-bundle-directory-structure.png) 
+![Figure 1.1: Bundle directory structure](../../images/02-bundle-directory-structure.png) 
 
 Inside this folder, there are folders for various purposes:
 

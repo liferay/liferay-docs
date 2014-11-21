@@ -64,7 +64,7 @@ But what about using LCS to install fix packs across a cluster? Just follow the
 same procedure! LCS downloads and installs fix packs simultaneously across all 
 nodes--you don't have to handle each one individually. 
 
-![Figure 4.x: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
+![Figure 4.9: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
 
 In addition to displaying fix pack messages, the Alerts table also displays 
 many other kinds of messages. For example, an alert appears whenever a 
@@ -101,7 +101,7 @@ button lets you edit or delete the environment. To the left of the fix packs is
 the list of servers in the environment. Clicking on one of the servers takes you 
 to the server view for that server.
 
-![Figure 4.x: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
+![Figure 4.10: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
 ## Using the Server View [](id=using-the-server-view)
 
@@ -116,7 +116,7 @@ available for installation and those that are already installed. You can access
 these through the *Available* and *Installed* tabs at the top of the fix packs
 table. 
 
-![Figure 4.x: The LCS server view shows an overview of a server registered with LCS.](../../images/lcs-server-view.png)
+![Figure 4.11: The LCS server view shows an overview of a server registered with LCS.](../../images/lcs-server-view.png)
 
 To view metrics and statistics of your server's performance, click the *Metrics* 
 button near the top of the page. The metrics are broken down into three main 
@@ -130,7 +130,7 @@ but for specific portlets in your server. The Cache category lists Liferay
 Single VM metrics and Hibernate metrics. In the following screenshot, the 
 statistics in the Portlet category are shown.
 
-![Figure 4.x: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
+![Figure 4.12: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
 on your server. This includes data on the garbage collector and memory. The 
@@ -139,7 +139,7 @@ collector item. The memory metrics are presented in a bar chart that shows the
 usage of the Code Cache, PS Eden Space, PS Old Gen, PS Perm Gen, and PS Survivor 
 Space.
 
-![Figure 4.x: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
+![Figure 4.13: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
 
 Server is the third category in the Application category. The Server category
 shows additional information about how your server is running. For example, a
@@ -147,7 +147,7 @@ horizontal bar graph shows the number of current threads that are running on
 your server. Similarly, horizontal bar graphs are used to represent the JDBC
 connection pools.
 
-![Figure 4.x: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
+![Figure 4.14: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
 You can also view the settings for a server by clicking on the *Server Details* 
 button, which is to the right of the Metrics button. The first tab under the 
@@ -158,7 +158,7 @@ provides general information about your Liferay instance and hardware. This
 information is useful to the Liferay support team in the event that you need 
 their assistance.
 
-![Figure 4.x: You can view and edit the details of your server registered with LCS.](../../images/lcs-server-details-settings.png)
+![Figure 4.15: You can view and edit the details of your server registered with LCS.](../../images/lcs-server-details-settings.png)
 
 As you can see, the LCS Dashboard is a powerful tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 
@@ -175,7 +175,7 @@ presented with a table of the users on your project. To the right of each is the
 Manage button. Clicking *Manage* lets you assign or revoke LCS roles for that 
 user.
 
-![Figure 4.x: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
+![Figure 4.16: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
 
 To invite external users to your project, click on the *Invite* button. The
 *Invite External Users* pop up lets you invite anyone with a valid email address.
@@ -183,7 +183,7 @@ You can also search for users of Liferay.com to invite. Once you've chosen who
 to invite, the *Role* selection box lets you preassign LCS roles for when they
 accept your invitation.
 
-![Figure 4.x: You can invite external users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
+![Figure 4.17: You can invite external users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
 your Liferay servers. You can apply fix packs with just a single click and a 
