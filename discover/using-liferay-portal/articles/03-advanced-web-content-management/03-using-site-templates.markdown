@@ -221,9 +221,22 @@ the site's portlets. The preferences of the site's portlets are updated with the
 IDs of the copied data. For example, if a site is created from a site template
 that has a Wiki portlet with lots of wiki articles, the wiki articles are copied
 from the site template's scope to the site's scope and site's Wiki portlet is
-updated with the IDs of the copied wiki articles. Portlet data is only copied
-from a site template to a site when the site is first created; data is not
-copied during a site reset.
+updated with the IDs of the copied wiki articles.
+
+**Important:** Portlet data, related resources, and permissions on resources
+are only copied from a site template to a site when that site is *first* created
+based on the template. No changes made in a a template's portlet data, related
+resources, or permissions are propagated to the site after the site is
+created. Neither are such changes propagated to a site by *Reset* or *Reset and
+Propagate* features. 
+
+For example, consider a site template administrator who includes a Message Boards
+portlet as part of a site template. She even creates Message Board categories
+and configures permissions over the actions of the categories. The first time a
+site is created based on the site template, the categories (portlet data) and
+related permissions are copied to the site. If the site template administrator
+adds, removes, or deletes some categories, however, such changes *aren't*
+propagated to the site. 
 
 Now that we've learned how site templates work, let's discuss how to use page
 templates. 
