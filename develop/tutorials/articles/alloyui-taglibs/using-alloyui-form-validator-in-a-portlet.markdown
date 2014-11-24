@@ -23,33 +23,30 @@ example here creates a form with the `firstname`, `email`, and `age` input
 fields. It's important to note that each input field must be nested within the 
 `<div>` elements and given the classes seen here: 
 
-    ```
     <form id="myForm">
-      <div class="control-group">
-        <label class="control-label" for="firstname">First Name:</label>
-        <div class="controls">
-          <input name="firstname" id="firstname" type="text">
+        <div class="control-group">
+            <label class="control-label" for="firstname">First Name:</label>
+            <div class="controls">
+                <input name="firstname" id="firstname" type="text">
+            </div>
         </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="email">E-mail:</label>
-        <div class="controls">
-          <input name="email" id="email" type="text">
+        <div class="control-group">
+            <label class="control-label" for="email">E-mail:</label>
+            <div class="controls">
+                <input name="email" id="email" type="text">
+            </div>
         </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="age">Age:</label>
-        <div class="controls">
-          <input name="age" id="age" type="text">
+        <div class="control-group">
+            <label class="control-label" for="age">Age:</label>
+            <div class="controls">
+                <input name="age" id="age" type="text">
+            </div>
         </div>
-      </div>
-    
-      <input class="btn btn-info" type="submit" value="Submit">
-      <input class="btn btn-primary" type="reset" value="Reset">
-    
+
+        <input class="btn btn-info" type="submit" value="Submit">
+        <input class="btn btn-primary" type="reset" value="Reset">
+
     </form>
-        
-    ```
 
 The `name` attributes of the `<input>` tags are key to making the form validator 
 work. The value of the `name` attribute tells the validator what rule to use for 
@@ -57,7 +54,7 @@ validation. You'll learn more about this in a moment.
 
 ### Step 2: Add a Form Validator to Your View JSP
 
-Now that you have a form you're ready to add a form [validator](http://alloyui.com/api/classes/A.FormValidator.html). 
+Now that you have a form you're ready to add a [form validator](http://alloyui.com/api/classes/A.FormValidator.html). 
 The steps here implement the validator inside your `view.jsp`.
 
 1.  Add the following taglib just below the `portlet` taglib at the top of the 
@@ -72,25 +69,22 @@ The steps here implement the validator inside your `view.jsp`.
     `"myForm"`, is passed as the value for the validator's `boundingBox` 
     element:
 
-        ```
         <aui:script>
         AUI().use(
-          'aui-form-validator',
-          function(Y) {
-           new Y.FormValidator(
-             {
-               boundingBox: '#myForm',
-               rules: {
-                 
-                }
-             }
-           )
-         }
+            'aui-form-validator',
+            function(Y) {
+                new Y.FormValidator(
+                    {
+                        boundingBox: '#myForm',
+                        rules: {
+
+                        }
+                    }
+                )
+            }
         );
         </aui:script>
 
-        ```
-         
 3.  Save the `view.jsp` file.
 
 If you deploy the portlet at this point, your fields are not being validated. 
@@ -160,15 +154,13 @@ in your form. Then add the rule and give it a proper value. The following
 example uses the `required`, `rangeLength`, and `alpha` rules with the 
 `firstname` field:
 
-        ```
-        rules: {
-          firstname: { /*field name taken from input tag's name value*/
+    rules: {
+        firstname: { /*field name taken from input tag's name value*/
             required: true, /*this field is required*/
             rangeLength: [2,20], /*this field can contain 2 to 20 characters*/
             alpha: true /*this field can only contain alpha characters*/
-          }
         }
-        ```
+    }
 
 Upon breaking one of your validation rules, a message is displayed next to the 
 field. Only one message is displayed by default. However, in some cases you may 
@@ -176,25 +168,23 @@ want to display more than one message. To do this, you can add the
 `showAllMessages` attribute to the form validator. Here, `showAllMessages` is 
 set to `true` so that more than one validation message can be displayed:
 
-		```
-        new Y.FormValidator(
-             {
-               boundingBox: '#myForm',
-               showAllMessages: true,
-               rules: {
-        ```
+    new Y.FormValidator(
+        {
+            boundingBox: '#myForm',
+            showAllMessages: true,
+            rules: {
 
 If you want to customize validation messages, use the `fieldStrings` attribute. 
 The `fieldStrings` attribute is essentially a modification of the `rules` 
 attribute. For example, if you want to replace the default messages for the 
 `required` and `rangeLength` rules, you could use the following code:
 
-        fieldStrings: {
-          firstname: {
+    fieldStrings: {
+        firstname: {
             required: "The Force is strong with you, but we still need a name.",
-            rangeLength: "2 to 20 characters Padawan."    
-          }
+            rangeLength: "2 to 20 characters Padawan."  
         }
+    }
 
 Now it's time to enjoy the fruits of your labor! Redeploy your portlet and break 
 the `required` and `rangeLength` rules to see your custom messages. The rule to 
