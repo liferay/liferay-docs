@@ -6,7 +6,6 @@ The Microsoft Office integration features are supported only on Windows XP with
 32-bit versions of Microsoft Internet Explorer and 32-bit versions of Microsoft
 Office.
 
-<<<<<<< HEAD
 ## Page 473: Installing Liferay on GlassFish 3
 
 The following sections are related to configuring Liferay Faces to function
