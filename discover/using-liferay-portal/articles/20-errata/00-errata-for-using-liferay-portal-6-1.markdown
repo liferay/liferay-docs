@@ -521,7 +521,7 @@ Liferay Faces source. To complete this, follow the instructions below:
 Excellent! You've configured your WebLogic application server to successfully
 deploy and run JSF applications on Liferay Portal.
 
-### Upgrading Mojarra on Oracle WebLogic 10.3 (Webapps)
+### Upgrading Mojarra on Oracle WebLogic 10.3 in Webapps Environment
 
 If you're upgrading Mojarra while running in a *webapp* environment, follow the
 instructions below. If you're running in a portlet environment, follow the next
@@ -598,15 +598,96 @@ To upgrade Mojarra, follow the instructions below:
 
 12. Click *Finish* and then click *Save*.
 
-13. In order to have a portlet WAR utilize the Mojarra Shared Library, insert
-   the following in the `WEB-INF/weblogic.xml` file:
+13. Verify that your `WEB-INF/weblogic.xml` file contains the following
+   `<wls:library-ref>` element:
 
         <wls:library-ref>
             <wls:library-name>jsf</wls:library-name>
         </wls:library-ref>
 
+    Make sure to add this code if your `weblogic.xml` file does not contain the
+    above code. In order to have a portlet WAR utilize the Mojarra Shared
+    Library, this element must be present.
+
 Your WebLogic application server's Mojarra instance is now upgraded in your
 webapp environment.
+
+### Upgrading Mojarra on Oracle WebLogic 10.3 in Portlet Environment
+
+If you're upgrading Mojarra while running in a *portlet* environment, follow the
+instructions below. If you're running in a webapp environment, follow the 
+section above this set of instructions.
+
+Oracle WebLogic 10.3. is a Java EE 5 (Servlet 2.5) application server, which
+means that it must include the JSF API and an implementation of JSF. Other
+servers like GlassFish and JBoss AS ship with Mojarra in the global classpath,
+but this is not the case with WebLogic 10.3.x. Instead, Mojarra must be
+installed as a Shared Library WAR via the WebLogic Console. The version of
+Mojarra that comes with, for example, WebLogic 10.3.6.0 is version 2.0.4,
+whereas Liferay Faces requires Mojarra 2.1. Therefore it is necessary to upgrade
+Mojarra in WebLogic by creating a new Shared Library WAR with the updated
+dependencies.
+
+The source code of the Liferay Faces project contains some sub-projects that produce Shared Libraries for supporting WebLogic:
+
+- `jsf-shared-library.war`
+- `jstl-shared-library.war`
+- `richfaces-shared-library.war`
+
+However, the WAR artifacts for these Shared Libraries are not distributed to
+Maven Central when a release of Liferay Faces is performed. Instead, they must
+be built manually from the command-line. 
+
+1. Locate the out-of-the-box `jsf-2.0.war` artifact, typically located in the
+`Oracle/Middleware/wlserver/common/deployable-libraries` directory.
+
+2. Extract the `wls.jsf.di.jar` (WebLogic Inject Provider) from the
+   `jsf-2.0.war` artifact:
+
+        export MW_HOME=$HOME/Oracle/Middleware
+        cd $MW_HOME/wlserver/common/deployable-libraries
+        jar xf jsf-2.0.war WEB-INF/lib/wls.jsf.di.jar
+
+3. Install the `wls.jsf.di.jar` dependency in your local Maven repository. For
+   example:
+
+        mvn install:install-file -Dfile=WEB-INF/lib/wls.jsf.di.jar -DgroupId=com.oracle.weblogic -DartifactId=wls.jsf.di -Dpackaging=jar -DgeneratePom=true -Dversion=10.3.6.0
+
+4. Make sure you've built the Shared Libraries, which were completed in the
+   second set of instructions in the *Configuration for Deploying JSF Portlets
+   on WebLogic 10.3* section.
+
+5. Login to the WebLogic Console application and, in the *Domain Structure*
+   menu, select *Deployments*. Then click *Install*.
+
+6. In the *Path* textbox, enter the full path to the new
+   `jsf-shared-library.war` archive that was created in Step 1 and click the
+   *Next* button.
+
+7. Select *Install this deployment as a library* and click the *Next* button.
+
+8. Verify that the Specification Version and Implementation Version are correct
+   and click the *Next* button.
+
+9. Click *Finish* and then click *Save*.
+
+10. In order to avoid the ViewExpiredException documented in
+   [FACES-1591](https://issues.liferay.com/browse/FACES-1591), copy the Mojarra
+   `jsf-api.jar` dependency to the `weblogic/lib` folder.
+
+11. Verify that your `WEB-INF/weblogic.xml` file contains the following
+   `<wls:library-ref>` element:
+
+        <wls:library-ref>
+            <wls:library-name>jsf</wls:library-name>
+        </wls:library-ref>
+
+    Make sure to add this code if your `weblogic.xml` file does not contain the
+    above code. In order to have a portlet WAR utilize the Mojarra Shared
+    Library, this element must be present.
+
+Your WebLogic application server's Mojarra instance is now upgraded in your
+portlet environment.
 
 ## Page 665: Configuring Liferay for High Availability
 
