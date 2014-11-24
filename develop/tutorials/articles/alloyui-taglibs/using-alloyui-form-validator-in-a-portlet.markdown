@@ -72,8 +72,8 @@ The steps here implement the validator inside your `view.jsp`.
         <aui:script>
         AUI().use(
             'aui-form-validator',
-            function(Y) {
-                new Y.FormValidator(
+            function(A) {
+                new A.FormValidator(
                     {
                         boundingBox: '#myForm',
                         rules: {
@@ -168,7 +168,7 @@ want to display more than one message. To do this, you can add the
 `showAllMessages` attribute to the form validator. Here, `showAllMessages` is 
 set to `true` so that more than one validation message can be displayed:
 
-    new Y.FormValidator(
+    new A.FormValidator(
         {
             boundingBox: '#myForm',
             showAllMessages: true,
