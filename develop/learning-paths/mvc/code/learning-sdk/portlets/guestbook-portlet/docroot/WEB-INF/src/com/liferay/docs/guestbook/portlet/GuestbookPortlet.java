@@ -58,7 +58,7 @@ public class GuestbookPortlet extends MVCPortlet {
 				SessionMessages.add(request, "entryAdded");
 
 				response.setRenderParameter("guestbookName",
-						guestbook.getName());
+						guestbookName);
 			} catch (Exception e) {
 				SessionErrors.add(request, e.getClass().getName());
 				
@@ -76,7 +76,7 @@ public class GuestbookPortlet extends MVCPortlet {
 				SessionMessages.add(request, "entryAdded");
 
 				response.setRenderParameter("guestbookName",
-						guestbook.getName());
+						guestbookName);
 			} catch (Exception e) {
 				SessionErrors.add(request, e.getClass().getName());
 				

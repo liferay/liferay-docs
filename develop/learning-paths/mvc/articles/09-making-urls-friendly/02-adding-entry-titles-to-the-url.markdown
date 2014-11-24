@@ -3,7 +3,7 @@
 After the last section on Friendly URLs, you have a good understanding of
 Liferay's Friendly URL pattern, from declaring your intentions in
 `liferay-portlet.xml` to writing some quick routes in the
-`guestbook-friendly-url-routes.xml`. If you noticed, however, the URLs are
+`guestbook-friendly-url-routes.xml`. Despite this excellent work, the URLs are
 still not entirely friendly. Look at the URL we now get when we click on one of
 our Guestbook Entries:
 
@@ -138,9 +138,139 @@ you recall, we've organized our guestbooks in the UI with tabs.  The
 appropriate Guestbook available in the request.
 
 First, you're creating the necessary OrderByComparator, then you're getting the
-`guestbookName` from the request Object. The actionURL doesn't exist yet, but
-you'll get to that soon enough,
+`guestbookName` from the request. The actionURL doesn't exist yet, but you'll
+get to that soon enough. The `try` block uses the `guestbookName` from the
+request to get the Guestbook from the database, and sets it as an attribute in
+the request.
 
+Last, you simply call `setRenderParameter`, adding the path to `view.jsp` as the
+`mvcPath` parameter of the request.
+
+Since you won't be passing the `guestbookId` into the URL any longer, there are
+some changes that need to be made to the existing methods. Find the addEntry
+method and replace the `long guestbookId...` line with a `guestbookName`
+declaration:
+
+    String guestbookName = ParamUtil.getString(request, "guestbookName");
+
+Now, you need to get the `Guestbook` by its `guestbookName`, so add these lines
+before the `if` statement:
+
+
+    OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+    OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
+		
+    Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
+
+In the calls to `updateEntry` and `addEntry`, change the `guestbookId` parameter to
+`guestbook.getGuestbookId()`.
+
+Also change the `setRenderParameter` calls in both the `try` blocks to
+
+    response.setRenderParameter("guestbookName",
+                guestbookName);
+
+Leave the `deleteEntry` method alone. You can make similar changes to the URLs
+for deleting entries if you like, but for now, limit your work to the URLs that
+most users will interact with, including viewing guestbooks, viewing full
+entries, adding guestbooks, and adding guestbook entries.
+
+Find the `addGuestbook` method next. In the creation of the `name`
+variable, change the second parameter in the call to `getString` to
+`guestbookName`. 
+
+Now find the `render` method. At the top of the first `try` block, initialize a
+Guestbook object, but set it as null:
+
+    Guestbook guestbook = null;
+
+Delete the `guestbookId` variably declaration, and replace it with
+
+    String guestbookName = ParamUtil.getString(renderRequest, "guestbookName");
+
+Now you need to change the logic used in the `if` and `else` blocks.  All this
+logic does is decide which `Guestbook` needs to be set as an attribute of the
+`renderRequest`.
+
+First, since `guestbook` is already declared as a `Guestbook` object, remove the
+`Guestbook` from the declaration in the first `if` statement. If no this is the
+first time the portlet is added to a page, a new `Guestbook` named *Main* will be
+created.
+
+Here are the other scenarios the `render` method should handle:
+- If the render request contains a `Guestbook` attribute (e.g., if the
+  `swtichTabs` action is triggered), get it.
+- If the request contains no `Guestbook` object or `guestbookName`, just get the
+  first `Guestbook` in the list. 
+- If the request contains a `guestbookName` parameter, use it to get the
+  `Guestbook` by its name. This will be the case when the user clicks the
+viewwEntryURL and the adEntryURL.
+
+Here's what that looks like:
+
+    
+    if (guestbooks.size() == 0) {
+				guestbook = GuestbookLocalServiceUtil.addGuestbook(
+						serviceContext.getUserId(), "Main", serviceContext);
+			}
+
+			else {
+				
+				if (!(renderRequest.getAttribute("guestbook") == null)) {
+					guestbook = (Guestbook) renderRequest.getAttribute("guestbook");
+				}
+				
+				else if (renderRequest.getAttribute("guestbook") == null && guestbookName.length() == 0) {
+					guestbook = guestbooks.get(0);
+				}
+				
+				else if (guestbookName.length() > 0) {
+					OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+					OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
+					
+					guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
+				}	
+			}
+			renderRequest.setAttribute("guestbook", guestbook);
+
+Next, organize the imports.
+
+    import com.liferay.docs.guestbook.NoSuchGuestbookException;
+    import com.liferay.portal.kernel.util.OrderByComparator;
+    import com.liferay.portal.kernel.util.OrderByComparatorFactory;
+    import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
+
+## Updating the View LAyer
+
+Many of the portlet URLs defined in the JSPs you've written currently include
+the `guestbookId` as a parameter, and some of the scriptlets included in the
+view layer also use the parameter. You need to change these instead to provide
+and use a `guestbookName` parameter. You'll also be making use of your new
+action method, `switchTabs`.
+
+Open `view.jsp`. At the top of the file, immediately after the `<%@include...`
+statement, is a scriptlet that get the `guestbookId` from the `renderRequest`
+and find the `<aui:nav...` tag. Replace it with the following:
+
+    <%
+        Guestbook guestbook = (Guestbook) renderRequest
+                .getAttribute("guestbook");
+    %>
+
+
+
+The scriptlet `renderURL` called `viewPageURL`.
+Replace this URL with an actionURL that triggers our new `swtichTabs` action: 
+
+    <portlet:actionURL name= "switchTabs" var="switchTabsURL">
+        <portlet:param name="guestbookName" value="<%=curGuestbook.getName() %>"/>
+    </portlet:actionURL>
+
+Directly below this URL, the UI component that triggers the action is defined.
+Change it to use `switchTabsURL`, the new actionURL you just defined:
+
+    <aui:nav-item cssClass="<%=cssClass%>" href="<%=switchTabsURL%>"
+        label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
 
 
 ## Something about using a Finder to 
@@ -205,71 +335,6 @@ Why did you just add the `guestbookName` parameter to a URL that didn't have the
 entities that retrieves records from the database by `name` and `guestbookId`.
 We'll use the `guestbookName` to get the `Guestbook` (using the finder you
 created for guestbooks), and then we can get its `guestbookId`.
-
-## Adding the routes to guestbook-friendly-url-routes.xml
-
-
-
-
-Your Friendly URL is now ready to emerge from the beastly URL above. But while you're here, clean up the URLs for the other links as well. Follow these steps:
-
-    1. Create
-    `com/liferay/docs/guestbook/portlet/guestbook-friendly-routes.xml`. It's
-    standard practice to create this file in the same package as the Portlet class.
-
-    2. Add this code to the file:
-
-        <?xml version="1.0"?>
-        <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.2.0//EN"
-        "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_2_0.dtd">
-
-        <routes>
-            <route>
-                <pattern>/add_guestbook</pattern>
-                <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
-                <implicit-parameter name="mvcPath">/html/guestbook/edit_guestbook.jsp</implicit-parameter>
-            </route>
-            <route>
-                <pattern>/{guestbookId}/add_entry</pattern>
-                <implicit-parameter name="mvcPath">/html/guestbook/edit_entry.jsp</implicit-parameter>
-            </route>
-            <route>
-                <pattern>/{entryId}/view_entry</pattern>
-                <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
-                <implicit-parameter name="mvcPath">/html/guestbook/view_entry.jsp</implicit-parameter>
-            </route>
-            <route>
-                <pattern>/{guestbookId}/view</pattern>
-                <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
-                <implicit-parameter name="mvcPath">/html/guestbook/view.jsp</implicit-parameter>
-            </route>
-        </routes>
-
-There are two tags from the XML to pay attention to. 
-
-- The `pattern` tag is used to define placeholder values for the various fields
-  that normally appear in the generated URL; in short, it's the disguise you're
-putting on the beastly URL from the intro to make it more Friendly. When users
-add a Guestbook, they shouldn't see every parameter generated by the portal in
-the URL; you'drather they simply see `add_guestbook`. Similarly, when they add
-a Guestbook Entry, you want them to see `add_entry`. But, we added another
-interesting bit here: `{guestbookId}` Using this format, you can populate URLs
-with data that we retrieve from the database. In this case, `guestbookId` is
-available to use in our Friendly URL because it's already in the `addEntryURL`
-in `docroot/html/view.jsp`:
-
-    <portlet:param name="guestbookId"
-			value="<%=String.valueOf(guestbookId)%>" />
-
--The `implicit-parameter` tag defines parameters that don't need to be
-generated because they'll always be the same for this URL. All our URLs for
-adding entities and viewing Guestbooks or Guestbook Entries are renderURLs, so
-the portal doesn't need to generate the `p_p_lifecycle parameter`.  It can
-automatically be assumed to be zero. If you remove this parameter from the the
-route, the resulting Friendly URL won't look any different; you specified in
-the pattern tag what should be displayed in place of the generated URL. But
-it's nice to specify it here so the portal doesn't need to bother generating it
-on the fly.
 
 ## Next Steps
 
