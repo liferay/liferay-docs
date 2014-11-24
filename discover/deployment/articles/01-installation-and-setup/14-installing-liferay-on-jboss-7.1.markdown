@@ -192,7 +192,7 @@ uploading problems on a Liferay Portal instance running on JBoss 7.1.x.
 The prescribed script modifications are now complete for your Liferay
 installation on JBoss. Next you'll configure mail and the database. 
 
-## Using the IBM JDK with JBoss
+## Using the IBM JDK with JBoss [](id=using-the-ibm-jdk-with-jboss)
 
 If you plan on using the IBM JDK with your JBoss application server, follow the
 instructions in this section. If you plan on using another type of JDK, you can
