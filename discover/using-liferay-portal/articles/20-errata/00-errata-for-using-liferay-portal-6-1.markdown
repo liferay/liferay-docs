@@ -689,6 +689,85 @@ be built manually from the command-line.
 Your WebLogic application server's Mojarra instance is now upgraded in your
 portlet environment.
 
+## Page 536: Installing Liferay on WebSphere 8.0
+
+The following sections are related to configuring Liferay Faces to function
+properly, allowing JSF applications to successfully work in WebSphere 8.0.
+
+### Configuration for Deploying JSF Portlets on WebSphere 8.0
+
+With servlet containers like Tomcat/Resin/Jetty and application servers like
+JBoss/GlassFish, deploying a portlet is as simple as copying the WAR artifact to
+the Liferay home's `deploy` folder. However, Liferay's integration with
+WebSphere requires a slightly different setup. If you don't have one already,
+create a `portal-ext.properties` file in the Liferay home folder, and add the
+following property:
+
+    auto.deploy.dest.dir=${resource.repositories.root}/websphere-deploy
+
+Then, when you deploy a portlet WAR artifact to the `deploy` folder, Liferay
+Portal will extract the WAR and modify descriptors like `WEB-INF/web.xml` before
+it re-zips the WAR and copies it to the `websphere-deploy` folder. Liferay
+Portal will then detect the modified WAR and auto-register the portlets with
+WebSphere. JSF portlets require some additional steps before the WAR context
+will startup properly.
+
+1. In the WebSphere Admin Console, click *Applications* &rarr; *Application
+   Types* &rarr; *WebSphere Enterprise Applications*.
+
+2. Click on the hyperlink for the JSF portlet you'd like to deploy.
+
+3. Click on the *Class loading and update detection* link located within the
+   Detail Properties heading.
+
+    ![Figure 1: In general, this page helps you configure enterprise applications.](../../images/websphere-class-loading.png)
+
+4. Select the *Classes loaded with local class loader first (parent last)* and
+   *Class loader for each WAR file in application* radio selections. Then click
+   *OK*.
+
+    ![Figure 2: These two radio options are listed under the *Class loader order* and *WAR class loader policy* headings, respectively.](../../images/class-loading-properties-was.png)
+
+5. If prompted, click on the *Save Directly* link in order to save the master
+   configuration.
+
+6. When the Enterprise Applications page appears, click on the hyperlink for
+   your JSF portlet again.
+
+7. Click the *JSP and JSF Options* link located beneath the Web Module
+   Properties heading.
+
+    ![Figure 3: By clicking this option, you'll be presented with JSF options for your WebSphere application server.](../../images/wab-shared-lib-refs.png)
+
+8. Select *SunRI1.2* and click *OK*.
+
+9. If prompted, click on the *Save Directly* link in order to save the master
+   configuration.
+
+10. Now click on the *Shared library references* link.
+
+    ![Figure 4: The *Shared library references* link is located beneath the References header.](../../images/wab-shared-library-references.png)
+
+11. Click on the first checkbox for your portlet, and then click *Reference
+   shared libraries*.
+
+    ![Figure 5: The *References shared libraries* button will take you to a screen that allows you to configure your portlet's shared library mapping.](../../images/wab-shared-library-references.png)
+
+12. Select *Mojarra 2.1* from the list on the left and then click the
+   right-arrow button to have it selected for your configuration.
+
+13. Verfiy that *Mojarra 2.1* is specified as a Shared Library in your JSF
+   portlet. Then click *OK*.
+
+    ![Figure 6: You can verify your Mojarra specification on the far right of the table, beneath the Shared Libraries heading.](../../images/wab-shared-lib-refs-verification.png)
+
+14. Once you're back on the Enterprise Applications page, click on the checkbox
+   corresponding to your JSF portlet and click *Start*. You should now be able
+   to add the portlet to a Liferay Portal page.
+
+Awesome! By following these instructions, you've configured your WebSphere
+application server to deploy your JSF portlet.
+
 ## Page 665: Configuring Liferay for High Availability
 
 In the *Properties File Changes* subsection of the chapter *19.2 Performance 
