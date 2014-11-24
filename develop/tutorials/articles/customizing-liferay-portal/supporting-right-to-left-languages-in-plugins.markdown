@@ -2,7 +2,8 @@
 
 Middle Eastern languages, such as Hebrew and Arabic, are written right-to-left
 (RTL). However, many sites are multilingual, requiring both RTL and
-left-to-right (LTR) content. Conveniently, browsers use [language and direction](http://www.w3.org/TR/html401/struct/dirlang.html) 
+left-to-right (LTR) content. Conveniently, browsers use
+[language and direction](http://www.w3.org/TR/html401/struct/dirlang.html) 
 HTML attributes to adapt and align page content automatically. Sites, however, 
 may consist of elements that are absolutely positioned on the page by a style
 sheet; these elements aren't automatically aligned by the browser. Instead, you
@@ -14,8 +15,9 @@ Thankfully, Liferay's *Right to Left Language Support* app automatically adapts
 Liferay Portal styles for RTL languages. When you deploy it, it mirrors
 your site's content for RTL languages. The app is available on the Liferay
 [Marketplace](http://www.liferay.com/marketplace). You can purchase, install,
-and deploy the app as described in the [Leveraging the Liferay Marketplace](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/leveraging-the-liferay-marketplace-liferay-portal-6-2-user-guide-14-en)
-chapter of [Using Liferay Portal](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/). 
+and deploy the app as described in the
+[Leveraging the Liferay Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace)
+chapter of [Using Liferay Portal](/discover/portal). 
 
 As a before-and-after example, the figure below shows a page displayed in
 English, an LTR language. 
@@ -127,13 +129,12 @@ You now know how to use the Right to Left Language Support app in your custom
 plugins. Now it's time to learn how you can extend the Right to Left Language
 Support app's style with your own custom CSS for RTL languages. 
 
---- 
++$$$ 
 
- ![Note](../../images/tip-pen-paper.png) **Note:** You may need to run 
- `ant deploy` from the command line for the `css/.sass-cache` folder and 
- `*_rtl.css` files to be generated. 
+**Note:** You may need to run `ant deploy` from the command line for the
+`css/.sass-cache` folder and `*_rtl.css` files to be generated. 
 
---- 
+$$$
 
 ## Defining Custom CSS for RTL Languages [](id=defining-custom-css-for-rtl-languages-liferay-portal-6-2-dev-guide-11-en)
 
@@ -163,21 +164,21 @@ custom CSS code at the end.
 Add the Language portlet to a page and change the current language to an RTL 
 language (e.g., Hebrew) to see your custom RTL styles applied to it.
 
-## Summary
+In this tutorial, you've learned how to adapt your plugin styles for RTL
+languages, and how to define custom styles for RTL languages. Whether you want
+to adapt the portal and/or your custom plugins to RTL languages, the RTL Support
+app makes it easy to offer your users the ideal viewing experience. 
 
-You've learned how to adapt your plugin styles for RTL languages, and how to 
-define custom styles for RTL languages.
-
-Whether you want to adapt the portal and/or your custom plugins to RTL 
-languages, the RTL Support app makes it easy to offer your users the ideal
-viewing experience. 
-
-## Next Steps
+## Related Topics
 
 As you can see hooks are a useful way of modifying aspects and features of your 
 portal. Here are some other tutorials you can explore to learn more about hooks:
 
-[Overriding Web Resources](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/overriding-web-resources-lp-6-2-develop-tutorial)
-<!--URL needs updated with proper ID ending-->
-<!--[Customizing JSPs](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/customizing-jsps-by-extending-the-original)-->
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+
+[Overriding Web Resources](/develop/tutorials/-/knowledge_base/6-2/overriding-web-resources)
+
+[Customizing JSPs by Extending the Original](/develop/tutorials/-/knowledge_base/6-2/customizing-jsps-by-extending-the-original)
 
