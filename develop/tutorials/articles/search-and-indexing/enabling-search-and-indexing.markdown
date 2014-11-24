@@ -1,7 +1,7 @@
 # Enabling Search and Indexing
 
-To implement search and indexing functionality for a custom entity, you need to
-follow these three steps:
+To implement search and indexing functionality for a custom entity in a
+data-driven application, you need to follow these three steps:
 
 1. Create an `*Indexer` class and register this class in your project's
    `liferay-portlet.xml` file.
@@ -51,3 +51,13 @@ refer to the [DTD](http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd) to
 figure out where the indexer class entry should be added.
 
 ## Implementing Indexing at the Service Layer
+
+If you're creating a data-driven application, you've presumably written code for
+adding, updating, and deleting your custom entities. If you want the documents
+corresponding to your custom entities in Liferay's Lucene index to accurately
+reflect the entities themselves, you need to make sure that you're instructing
+your indexer to reindex any newly added or updated entities. When an entity is
+deleted, you need to remove the corresponding document from the index. To obtain
+an instance of your indexer class, use Liferay's `IndexerRegistryUtil` class.
+This class includes a `getIndexer(...)` method as well as a `nullSafeGetIndexer`
+method.
