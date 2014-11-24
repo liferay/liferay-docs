@@ -40,8 +40,9 @@ Now go ahead and get started by setting up your LCS account.
 
 ## Setting up Your LCS Account [](id=setting-up-your-lcs-account)
 
-To use LCS, you first need to set up an account at [lcs.liferay.com](https://lcs.liferay.com). 
-When creating an account, you're taken through the steps of accepting the 
+To use LCS, you first need to have an account at [Liferay.com](http://www.liferay.com/). 
+You then need to set up an LCS account at [lcs.liferay.com](https://lcs.liferay.com). 
+When creating an LCS account, you're taken through the steps of accepting the 
 terms of service, setting your password, and setting your password reminder. 
 You're then taken to the *Projects* screen where you can join an existing 
 project or create a new one.
@@ -80,6 +81,30 @@ available:
 - LCS Environment Manager: All LCS functionality is available in the scope of 
   an environment, with the exception of managing other users.
 - LCS Environment Viewer: Has read-only access in the scope of an environment.
+
+You should note that each of these LCS roles assume that the user already has 
+the LCS User role in his or her Liferay.com account. The LCS User role is
+granted automatically the first time the user enters their LCS account. The
+actions that can be performed by each of the LCS roles are detailed in the below
+permissions matrix. 
+
+**LCS Permissions Matrix**
+
+Action | &nbsp;LCS Administrator | &nbsp;LCS Environment Manager | &nbsp;LCS Environment Viewer |
+------ | ----------------------- | ----------------------------- | ---------------------------- |
+Access LCS | true | true | true |
+Access Any Environment | true | false | false |
+Access a Particular Environment | true | true | true |
+Manage Users in Any Environment | true | false | false |
+Manage Users in a Particular Environment | true | true | false |
+Invite Users to LCS | true | false | false |
+Create and Delete Environments | true | false | false |
+Edit Any Environment | true | false | false |
+Edit a Particular Environment | true | true | false |
+Server Registration in Any Environment | true | false | false |
+Server Registration in a Particular Environment | true | true | false |
+Install Fix Packs in Any Environment | true | false | false |
+Install Fix Packs in a Particular Environment | true | true | false |
 
 Now that your LCS account has been set up and you have an understanding of the 
 LCS roles, you can get your portal ready for LCS.
@@ -185,6 +210,23 @@ property. For example:
 Great! Now you're all set to deploy and configure the LCS client portlet.
 
 ## Configuring the LCS Client [](id=configuring-the-lcs-client)
+
+You're now ready to configure the LCS client for use in your portal. If your 
+server accesses the web through a proxy, then you need to set a couple of 
+properties inside the WAR file of the LCS client portlet.
+
+1. In the WAR file of the LCS client portlet, open the 
+   `WEB-INF/classes/portlet-ext.properties` file.
+   
+2. At the end of the file, add the following properties and set them to the 
+   appropriate values for your proxy.
+   
+        proxy.host.name=
+        proxy.host.port=
+
+3. Update LCS client WAR with the modified `portlet-ext.properties` file.
+    
+4. Deploy the LCS client WAR, or redeploy it if it's already deployed.
 
 Once you deploy the LCS client portlet, you can use it to register your server 
 with your LCS account. Access the portlet by clicking on 
