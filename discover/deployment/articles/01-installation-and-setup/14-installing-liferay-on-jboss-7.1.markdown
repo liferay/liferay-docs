@@ -175,7 +175,19 @@ below:
 
 Make sure you replace the `$JBOSS_HOME` references with the appropriate
 directory. You'll notice some Java security options. You'll finish configuring
-the Java security options in the *Security Configuration* section.
+the Java security options in the *Security Configuration* section. 
+
+Lastly, navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and
+insert the following path names inside the `<paths>...</paths>` element: 
+
+        <path name="com/sun/crypto" />
+        <path name="com/sun/crypto/provider" />
+        <path name="com/sun/image/codec/jpeg" />
+        <path name="com/sun/org/apache/xml/internal/resolver" />
+        <path name="com/sun/org/apache/xml/internal/resolver/tools" />
+
+The added paths resolve issues with portal deployment exceptions and image
+uploading problems on a Liferay Portal instance running on JBoss 7.1.x. 
 
 The prescribed script modifications are now complete for your Liferay
 installation on JBoss. Next you'll configure mail and the database. 
@@ -262,15 +274,6 @@ called `module.xml` in that folder.
                 </system>
             </dependencies>
         </module>
-
-3. Navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and insert
-the following path names inside the `<paths>...</paths>` element: 
-
-        <path name="com/sun/crypto" />
-        <path name="com/sun/crypto/provider" />
-        <path name="com/sun/image/codec/jpeg" />
-        <path name="com/sun/org/apache/xml/internal/resolver" />
-        <path name="com/sun/org/apache/xml/internal/resolver/tools" />
 
 Your JBoss application server is now configured to use the IBM JDK. Next, you'll
 learn about managing a data source with JBoss. 
