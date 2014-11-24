@@ -768,6 +768,57 @@ will startup properly.
 Awesome! By following these instructions, you've configured your WebSphere
 application server to deploy your JSF portlet.
 
+### Upgrading Mojarra on WebSphere 8.0
+
+WebSphere 8.0 ships with
+[MyFaces Core 2.0](http://wiki.apache.org/myfaces/Websphere_Installation) as the
+default implementation of JSF 2.0. It also ships with Mojarra 1.2 as the default
+implementation of JSF 1.2. Since Liferay Faces 3.x requires Mojarra 2.1, it is
+necessary to manually install it as a Shared Library. Follow the instruction
+below to correctly upgrade your version of Mojarra on WebSphere 8.0.
+
+1. Using your File Explorer, navigate to the `IBM/WebSphere/AppServer` folder.
+   Inside this folder, create a new folder named `mojarra-2.1` and copy the
+   following files into it:
+
+    - [jsf-api-2.1.21.jar](http://search.maven.org/#artifactdetails|com.sun.faces|jsf-api|2.1.21|jar)
+    - [jsf-impl-2.1.21.jar](http://search.maven.org/#artifactdetails|com.sun.faces|jsf-impl|2.1.21|jar)
+    - [liferay-faces-init-3.1.3-ga4.jar](http://search.maven.org/#artifactdetails|com.liferay.faces|liferay-faces-init|3.1.3-ga4|jar)
+
+    The `liferay-faces-init.jar` dependency is required for automatic startup of
+    the Mojarra `ConfigureListener`.
+
+    +$$$
+
+    **Notes:** If running WebSphere on Windows, make sure to download 2.1.20 (or
+    newer) due to
+    [JAVASERVERFACES-2765](https://java.net/jira/browse/JAVASERVERFACES-2765).
+
+    $$$
+
+2. In your WebSphere Admin Console, click *Environment* &rarr; *Shared
+   libraries*.
+
+    ![Figure 6: This option allows you to add and delete shared libraries.](../../images/wab-environment-shared-libs.png)
+
+3. Click on the *New...* button to create a new shared library.
+
+4. Enter *Mojarra 2.1* in the *Name* field.
+
+5. Enter the full path to the `mojarra-2.1` folder you created in Step 1. For
+   example:
+
+    C:\Program Files\IBM\WebSphere\AppServer\mojarra-2.1
+
+6. Click the *Use an isolated class loader for this shared library* checkbox,
+   and then click *OK*.
+
+7. If prompted, click on the *Save Directly* link in order to save the master
+   configuration.
+
+Congratulations! You've upgraded your WebSphere application server's Mojarra
+version to 2.1.
+
 ## Page 665: Configuring Liferay for High Availability
 
 In the *Properties File Changes* subsection of the chapter *19.2 Performance 
