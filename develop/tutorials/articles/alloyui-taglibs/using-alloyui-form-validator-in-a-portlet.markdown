@@ -1,27 +1,48 @@
 # Using the AlloyUI Form Validator in a Portlet
 
-If you want to validate a form before submitting it, you typically have to 
-write a complicated function that makes sure you have all your i's dotted 
-and t's crossed. AlloyUI removes this step from your workflow. Keep reading to 
-find out how! 
+<!-- Test code is at develop/tutorials/code/alloy/form-validator/end -->
 
-## Adding a Form Validator to a Portlet
+Do you like to provide instant feedback to users when they forget to fill in
+required fields or when they try to submit invalid entries to a form? Do you
+like to use strongly-typed fields and show clear consistent messages to users
+when they enter the wrong type of data? AlloyUI's `FormValidator` class answers
+the call! 
 
-There are just a few steps you need to follow to enable form validation in your 
-portlet:
+Typically you'd have to write tedious complicated validation functions, making
+sure to dot all your i's and cross all your t's in order to get the functions to
+work properly. Thankfully AlloyUI simplifies form validation with its
+`FormValidator` class that is easy to configure and use. The form validator
+accepts powerful predefined properties that have helpful default validation
+messages. And the form validator gives you flexibility to override the default
+messages with your own custom messages.
 
-- **Step 1:** Create Your Form in Your View JSP.
-- **Step 2:** Add a Form Validator to Your View JSP.
-- **Step 3:** Configure the Rules and FieldStrings Attributes.
+![Figure 1: AlloyUI's `FormValidator` shows applicable default messages for all kinds user input violations.](../../images/alloyui-form-validator-reporting-violations.png)
 
-Follow these steps and you'll be the master of form validation in no time! 
+You're probably chomping at the bit to start using `FormValidator`. This
+tutorial shows you how to use it well. It's time to implement form validation in
+your portlet with AlloyUI's `FormValidator`. 
 
-### Step 1: Create Your Form in Your View JSP
+## Adding Form Validation to Your Portlet
 
-First you need to create your form in the `view.jsp` of your portlet. The 
-example here creates a form with the `firstname`, `email`, and `age` input 
-fields. It's important to note that each input field must be nested within the 
-`<div>` elements and given the classes seen here: 
+Here are the steps to follow to implement form validation in your portlet:
+
+- **Step 1:** Create a Form with Named Input Fields
+- **Step 2:** Add a FormValidator
+- **Step 3:** Specify Rules for the Input Fields
+- **Step 4:** Specify Custom Violation Messages (optional)
+
+You'll start by creating your form.  
+
+### Step 1: Create a Form with Named Input Fields
+
+If you haven't done so already, create an HTML `<form>`. Assign an ID to the
+form, to facilitate selecting it from the AlloyUI script that you're going to
+write. Lastly, name each of the form's `<input>` fields that you want to
+validate. 
+
+Here's a form, for example, that has input fields `firstname`, `email`, and
+`age`. Note that the form has an `id` attribute and each of the form's input
+fields has a `name` attribute. 
 
     <form id="myForm">
         <div class="control-group">
@@ -44,58 +65,62 @@ fields. It's important to note that each input field must be nested within the
         </div>
 
         <input class="btn btn-info" type="submit" value="Submit">
-        <input class="btn btn-primary" type="reset" value="Reset">
 
     </form>
 
-The `name` attributes of the `<input>` tags are key to making the form validator 
-work. The value of the `name` attribute tells the validator what rule to use for 
-validation. You'll learn more about this in a moment. 
+The `name` attributes of the `<input>` tags are required for form validation.
+The validator applies rules to each input field based on its name. You'll learn
+more about applying rules shortly. 
 
-### Step 2: Add a Form Validator to Your View JSP
+### Step 2: Add a FormValidator
 
-Now that you have a form you're ready to add a [form validator](http://alloyui.com/api/classes/A.FormValidator.html). 
-The steps here implement the validator inside your `view.jsp`.
+Now that you have a form, you can add an instance of the
+[FormValidator](http://alloyui.com/api/classes/A.FormValidator.html) class. 
 
-1.  Add the following taglib just below the `portlet` taglib at the top of the 
-    file:
+Follow these steps to add one to your view JSP.
+
+1.  Add the AlloyUI taglib `aui` to the beginning portion of your JSP, if it's
+not specified in your JSP already.
 
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
 
-2.  Add `<aui:script>...</aui:script>` tags to the bottom of your JSP. Within 
-    those tags you'll instantiate the form validator. In the example here, the 
-    `AUI` object uses the `aui-form-validator` to create the form validator 
-    component. A reference to the form created in the previous section, 
-    `"myForm"`, is passed as the value for the validator's `boundingBox` 
-    element:
+2.  Add `<aui:script>...</aui:script>` tags to the bottom of your JSP, unless
+you already have such tags. 
 
-        <aui:script>
+3.  Within the `<aui:script>...</aui:script>` tags, instantiate a form
+validator that follows this format, replacing `formId` with your form's ID
+value. 
+
         AUI().use(
             'aui-form-validator',
             function(A) {
                 new A.FormValidator(
                     {
-                        boundingBox: '#myForm',
+                        boundingBox: '#formId',
                         rules: {
 
                         }
                     }
                 )
             }
-        );
-        </aui:script>
+        ); 
 
-3.  Save the `view.jsp` file.
+    The `AUI` object uses the `aui-form-validator` module to create a new
+    `FormValidator` component instance. The validator selects the form
+    as the bounding box for the validator. The validator can apply rules, that
+    you'll add to the rules parameter in the next step. 
 
-If you deploy the portlet at this point, your fields are not being validated. 
-This is because no rules have been created for your form. You'll add these rules 
-in the next step.
+3.  Save the changes to the JSP file.
 
-### Step 3: Configure the Rules and FieldStrings Attributes
+If you deploy the portlet at this point, your fields won't get validated. This
+is because the form has no specified rules. You'll add rules next. 
+
+### Step 3: Specify Rules for Input Fields
 
 This step is where validation really comes into play. The validation rules you 
-implement here control what your users can enter into your form. Here's a list 
-of the available rules: 
+implement here control what users can submit in the form.
+
+Here's a list of form validation rules available for AlloyUI's `FormValidator`: 
 
 **acceptFiles:** List of accepted file types. (Default:empty)
 
@@ -118,13 +143,13 @@ email address. (Default:false)
 **equalTo:** Determines if a field's contents are equal to the specified value.
 (Default:empty)
 
-**iri:** A boolean value that determines if a field should contain only an IRI. 
-(Default:false) 
+**iri:** A boolean value that determines if a field should contain only an
+International Rough Index (IRI). (Default:false) 
 
 **max:** Determines if the integer value is greater than the specified value. 
 (Default:none)
 
-**maxLength:** Determines if the length of a field's contents are greater than 
+**maxLength:** Determines if the length of the field's contents are greater than 
 the number of characters specified. (Default:empty)
 
 **min:** Determines if the integer value is less than the specified value. 
@@ -133,69 +158,125 @@ the number of characters specified. (Default:empty)
 **minLength:** Determines if the length of a field's contents are less than the 
 number of characters specified. (Default:empty)
 
-**number:** A Boolean value that specifies a field contain only numeric values. 
-(Default:false)
+**number:** A Boolean value that specifies a field should contain only numeric
+values. (Default:false)
 
-**range:** Determines if the integer value in the field lies within the 
+**range:** Determines if the integer value in the field is within the 
 specified range. (Default:none)
 
-**rangeLength:** Determines if the length of a field's contents lies within the 
+**rangeLength:** Determines if the length of a field's contents is within the 
 specified range. (Default:empty)
 
-**required:** Determines if the field is required before submission. 
+**required:** Determines if the field is required for submission. 
 (Default:false)
 
 **url:** A boolean value that determines if a field's contents are a URL. 
 (Default:false)
 
-To use a rule with a field, first add the field in the `rules` attribute of your 
-JSP. The field's name is taken from the `name` attribute of the `<input>` tags 
-in your form. Then add the rule and give it a proper value. The following 
-example uses the `required`, `rangeLength`, and `alpha` rules with the 
-`firstname` field:
+To apply a rule to an input field, add the field's name in the `rules` attribute of your JSP
+and assign the field one or more of the rule values listed above. 
+
+For example, the following code applies `required`, `rangeLength`, and `alpha`
+rules to an input field named `firstname`:
 
     rules: {
-        firstname: { /*field name taken from input tag's name value*/
+        firstname: { /*field name selected from input tag's name value*/
             required: true, /*this field is required*/
             rangeLength: [2,20], /*this field can contain 2 to 20 characters*/
             alpha: true /*this field can only contain alpha characters*/
         }
     }
 
-Upon breaking one of your validation rules, a message is displayed next to the 
-field. Only one message is displayed by default. However, in some cases you may 
-want to display more than one message. To do this, you can add the 
-`showAllMessages` attribute to the form validator. Here, `showAllMessages` is 
-set to `true` so that more than one validation message can be displayed:
+Upon a user breaking any one of the validation rules, a message is shown next to
+the field. Only one message is displayed, by default. 
+
+If you want to show multiple messages that apply to a field's invalid input, you
+can specify `showAllMessages: true` when creating the `FormValidator`. 
+
+As in the example code snippet below, you can add the `showAllMessages` property
+set to `true` to show more than one validation message per input field. 
 
     new A.FormValidator(
         {
             boundingBox: '#myForm',
-            showAllMessages: true,
-            rules: {
+            rules: ...
+            showAllMessages: true
+		}
 
-If you want to customize validation messages, use the `fieldStrings` attribute. 
-The `fieldStrings` attribute is essentially a modification of the `rules` 
-attribute. For example, if you want to replace the default messages for the 
-`required` and `rangeLength` rules, you could use the following code:
+In addition to using the static default messages, you can customize validation
+messages by using the `fieldStrings` attribute. 
 
-    fieldStrings: {
-        firstname: {
-            required: "The Force is strong with you, but we still need a name.",
-            rangeLength: "2 to 20 characters Padawan."  
-        }
-    }
+### Step 4: Specify Custom Violation Messages - Optional
 
-Now it's time to enjoy the fruits of your labor! Redeploy your portlet and break 
-the `required` and `rangeLength` rules to see your custom messages. The rule to 
-remember, no pun intended, is that you can use `fieldStrings` to write a custom 
-message for any rule in the `rules` attribute. Here is what the `firstname` 
-field of this example portlet should look like once you break the rules:
+The `fieldStrings` attribute lets you specify your own message text for a rule,
+instead of using the rule's default message text. 
 
-![Figure 1: Here, the AUI form validator is used to display custom validation messages.](../../images/alloyui-form-validator-in-a-portlet.png)
+For example, the following code populates a variable named `fieldStrings` that
+can be used to appliy custom messages for the `required` and `rangeLength`
+rules, for a form's `firstname` input field:  
 
-As you can see, using the AlloyUI form validator is a no-brainer when it comes 
-time for form validation!
+	var fieldStrings = {
+		firstname: {
+			required: "The Force is strong with you, but we still need a name.",
+			rangeLength: "2 to 20 characters Padawan."  
+		}
+	}
+
+You can create variables for your rules and field strings, and then pass those
+variables as arguments to `FormValidator`'s constructor.
+
+In the example AUI script code below, the variable `rules` holds rule
+specifications for inputs named `firstname`, `email`, and `age`. The variable
+`fieldStrings` holds custom messages for the `firstname` input. If the user
+doesn't specify a value for the input or if the user enters a string less than 2
+characters or greater than 20 characters long, the respective custom message is
+shown.
+
+	var rules = {
+		firstname: {
+			required: true,
+			rangeLength: [2,20],
+			alpha: true
+		},
+		email: {
+			required: true
+		},
+		age: {
+			number: true
+		}
+	}
+
+	var fieldStrings = {
+		firstname: {
+			required: "The Force is strong with you, but we still need a name.",
+			rangeLength: "2 to 20 characters Padawan."  
+		}
+	}
+
+	AUI().use(
+		'aui-form-validator',
+		function(A) {
+			new A.FormValidator(
+				{
+					boundingBox: myForm,
+					fieldStrings: fieldStrings,
+					rules: rules,
+					showAllMessages: true
+				}
+			)
+		}
+	);
+
+As you see from the previous example code, declaring variables for rules and
+field strings helps to organize your code and makes it easier to understand. 
+
+Now that you've had a chance to implement a `FormValidator`, it's time to deploy
+your portlet and test its form validation. 
+
+![Figure 2: Here, the AUI form validator is used to display multiple custom validation messages for an input field.](../../images/alloyui-form-validator-in-a-portlet.png)
+
+As you can see, using the AlloyUI form validator is a no-brainer for
+implementing form validation! 
 
 ## Related Topics
 
