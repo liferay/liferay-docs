@@ -1780,7 +1780,7 @@ the dependencies file should be called
 
 Next, let's get started by addressing Liferay's library dependencies.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-16-en)
 
 Liferay Portal depends on several `JAR` files found in the Liferay
 Dependencies Archive. In addition to these, you need the proper driver for your
@@ -1932,7 +1932,7 @@ your database and mail session (and we recommend you do), you can skip the next
 sections and move to the section titled *Enabling PACL*. Next we'll look at
 configuring your database with Tomcat.
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-16-en)
 
 If you want Tomcat to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -1970,7 +1970,7 @@ $$$
 Your Tomcat managed data source is now configured. Next is your mail
 session.
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-16-en)
 
 If you want to manage your mail session with Tomcat, use the following
 instructions. If you want to use the built-in Liferay mail session, you can
@@ -2191,7 +2191,7 @@ You've officially added Mojarra to your application server. Now you can deploy
 Liferay. 
  
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-16-en)
 
 It's time to deploy Liferay as an exploded web archive within your
 `$TOMCAT_HOME/webapps` folder. 
