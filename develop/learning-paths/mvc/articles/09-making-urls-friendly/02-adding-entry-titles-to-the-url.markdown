@@ -19,11 +19,11 @@ Since you'll be making changes to several files, here's the overview of what
 you'll need to do:
 
 - Add an action method to the controller class, `GuestbookPortlet.java`. 
-    This will allow you set an entire `Guestbook` object as a render attribute.
-This is necessary because...
+    This will allow you set a `Guestbook` object as a render attribute, rather
+than a `guestbookId` or a `guestbookName`.
 - Add finder tags to `docroot/WEB-INF/service.xml`, which Service Builder will
   use to generate methods that will find `Guestbook` and `Entry` entities by
-their name (and `guesbtookId`, for `Entry`).
+their name.
     You'll use these methods to add custom methods to the service
 implementation, so that entities can be retrieved from the database without
 using the primary key.
@@ -31,6 +31,8 @@ using the primary key.
   longer necessary as a URL parameter.
     This involves changing the URL parameters and some scriptlets in multiple
 JSPs.
+- Modify the routes in `guestbook-friendly-url-routes.xml` to make
+  even-more-Friendly URLs for the Guestbook Portlet.
 
 ## Finding Entities
 
@@ -57,7 +59,7 @@ you are looking for. However, the name filed in our portlet is the name of the
 person creating the entry. Multiple people with the same name can easily create
 entries, right? What if Penelope creates an entry, and then a day later, another
 Penelope also creares an entry. If we rely solely on nbame to find the entries,
-which one should we retrieve form the database in the case that two records have
+which one should we retrieve from the database in the case that two records have
 matching fields? You can easily see the problem, and the convention is to
 retrieve the first entity. However, we can reduce the likelihood of finding
 multiple entries if our finder also uses `guestbookId`. So as long as both
@@ -240,7 +242,7 @@ Next, organize the imports.
     import com.liferay.portal.kernel.util.OrderByComparatorFactory;
     import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
 
-## Updating the View LAyer
+## Updating the View Layer
 
 Many of the portlet URLs defined in the JSPs you've written currently include
 the `guestbookId` as a parameter, and some of the scriptlets included in the
@@ -257,21 +259,53 @@ and find the `<aui:nav...` tag. Replace it with the following:
                 .getAttribute("guestbook");
     %>
 
+In the next scriptlet, change the `if` statement to get the `guestbookId` from
+the `Guestbook` retrieved from the render request: 
+    
+    if (curGuestbook.getGuestbookId() == guestbook.getGuestbookId()) {
+        cssClass = "active";
 
+There are a few more instances in this file that use the `guestbookId`
+parameter, that now need to be replace with the `guestbook.getGuestbookId()`
+call.
 
-The scriptlet `renderURL` called `viewPageURL`.
-Replace this URL with an actionURL that triggers our new `swtichTabs` action: 
+    - There's one in the permission check for the `addEntryURL`.
+    - There are two in the `<liferay-ui:search-container-results...` tag.
+ 
+
+Now, find the `viewPageURL`, inside the `<aui:nav...` tag. It's a `renderURL`,
+but you should replace it with an `actionURL` that triggers our new `swtichTabs`
+action: 
 
     <portlet:actionURL name= "switchTabs" var="switchTabsURL">
         <portlet:param name="guestbookName" value="<%=curGuestbook.getName() %>"/>
     </portlet:actionURL>
 
 Directly below this URL, the UI component that triggers the action is defined.
-Change it to use `switchTabsURL`, the new actionURL you just defined:
+Change it to use `switchTabsURL`:
 
     <aui:nav-item cssClass="<%=cssClass%>" href="<%=switchTabsURL%>"
         label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
 
+
+In the addEntryURL, change the `guestbookId` parameter to a `guestbookName`
+parameter, using the name of the `Guestbook` from the request:
+
+    <portlet:param name="guestbookName" value="<%=guestbook.getName()%>"
+
+In the `viewEntryURL`, replace the `guestbookId` parameter with
+`guestbookName`as well:
+
+    <portlet:param name="guestbookName" value="<%=guestbook.getName() %>"
+
+That's it for the view.jsp file. You've removed the `guestbookId` parameter from
+some URLs. We still need to change some other JSP files, though, since we
+haven't yet dealt with the `addGuestbookURL`.
+
+edit_guestbook.jsp
+init.jsp
+edit_entry.jsp
+view_entry.jsp
 
 ## Something about using a Finder to 
 
