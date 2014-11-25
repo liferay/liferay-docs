@@ -38,7 +38,7 @@ fields:
    group of servers. A group of development servers or a cluster are good 
    examples of environments. If you elect to create a new environment, a popup 
    asks you to enter its *Name*, *Location*, and *Description*.
-   
+
     ![Figure 4.5: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
 
 3. Server Name: Give your server a name that you can use to distinguish it in 

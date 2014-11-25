@@ -4,7 +4,7 @@
 
 	<import file="../build.xml" />
 
-	<property name="doc.dir" value="using-liferay-portal"/>
+	<property name="doc.dir" value="portal"/>
 	<property name="doc.type" value="useportal"/>
 
 	<taskdef name="numberimgsdiscover" classname="com.liferay.documentation.util.NumberImagesTaskDiscover">

@@ -111,12 +111,12 @@ public class ConcatMarkdown extends Task {
 		return line;
 	}
 	
-	public List collectFiles(File dir) throws FileNotFoundException, IOException {
+	public List<File> collectFiles(File dir) throws FileNotFoundException, IOException {
 		validateDirectory(dir);
 		List<File> result = getFileListingNoSort(dir);
 		Collections.sort(result);
 
-		ArrayList<File> results = new ArrayList();
+		ArrayList<File> results = new ArrayList<File>();
 		for (File file : result) {
 			String fileName = file.getCanonicalPath();
 			if (!fileName.contains(".svn")) {
