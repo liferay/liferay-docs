@@ -178,12 +178,20 @@ user.
 ![Figure 4.16: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
 
 To invite external users to your project, click on the *Invite* button. The
-*Invite External Users* pop up lets you invite anyone with a valid email address.
-You can also search for users of Liferay.com to invite. Once you've chosen who
-to invite, the *Role* selection box lets you preassign LCS roles for when they
+*Invite User* pop up lets you invite anyone with a valid email address. You can 
+also search for users of Liferay.com to invite. Once you've chosen who to 
+invite, the *Role* selection box lets you preassign LCS roles for when they 
 accept your invitation.
 
-![Figure 4.17: You can invite external users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
+![Figure 4.17: You can invite users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
+
+To view any sent invitations, just click the *Invitations* tab. The invitations 
+are shown in a table that lists the email address of the person invited, as well 
+as who invited them and the date that the invitation was sent. The preassigned 
+LCS role and environment is also listed. You can also cancel an invitation by 
+clicking the red *Cancel* button in the *Action* column of the invitation.
+
+![Figure 4.18: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
 your Liferay servers. You can apply fix packs with just a single click and a 
