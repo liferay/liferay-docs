@@ -119,9 +119,6 @@ in your `portal-ext.properties` file. This is a workaround for a bug in Liferay
 causes the metrics service in LCS to not be initialized. To fix this, add the 
 following configuration to your `portal-ext.properties` file:
 
-<!-- From the configuration below, it's not clear what has been added. Can you
-describe what exactly you're asking the user to do here? -Rich -->
-
     spring.configs=\
         META-INF/base-spring.xml,\
         \
@@ -332,11 +329,6 @@ exception of the following non-sensitive properties:
     portal.jaas.strict.password
     login.create.account.allow.custom.password
 
-<!-- Sensitive data being database URLs, user names, and passwords? What about
-Documents & Media repository information? I think we should spell out exactly
-what sensitive data is *not* stored in order to give people peace of mind. -Rich
---> 
-
 Now that you know what information is stored on the LCS servers, it's time to 
 get to the heart of LCS--the *Dashboard*.
 
@@ -363,13 +355,6 @@ tells you the download is finished and to restart your server. Restarting your
 server installs any downloaded fix packs. Note that you must start your server
 with the privileges required to write to the disk location where patches are 
 stored and processed (the `patching-tool` folder). 
-
-<!-- This is unclear. Administrative access to what? In fact, what is
-administrative access, as mentioned here? I assume you're talking about
-permissions at the operating system level, but beyond that, I'm not sure what
-permissions are needed exactly. Most people won't run their servers as root, as
-that's a bad practice, so they'll want to know exactly what permissions are
-necessary. -Rich -->
 
 But what about using LCS to install fix packs across a cluster? Just follow the 
 same procedure! LCS downloads and installs fix packs simultaneously across all 
@@ -476,33 +461,6 @@ the update process and also gives you extensive information on how your servers
 are running. Next you'll take a look at how to manage the users in your LCS 
 project.
 
-<!-- You had "the LCS Dashboard is a formidable tool...." That struck me as
-possibly close to what you wanted, but having a negative connotation, and indeed
-the dictionary definition has four definitions: 
-
-1.  causing fear, apprehension, or dread:
-a formidable opponent.
-2.  of discouraging or awesome strength, size, difficulty, etc.; intimidating:
-a formidable problem.
-3.  arousing feelings of awe or admiration because of grandeur, strength, etc.
-4.  of great strength; forceful; powerful:
-formidable opposition to the proposal.
-
-Synonyms
-1. dreadful, appalling, threatening, menacing, fearful, frightful, horrible.
-Antonyms
-1. pleasant.
-
-I'm sure you meant definition three, but I'm guessing many readers will assume
-the negative connotations of definitions one and two, as they're the more common
-definitions (which the synonyms list makes clear). For that reason, I changed
-"formidable" to "powerful." 
-
-Just 'splaining. :-)
-
--Rich
---> 
-
 ### Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
 
 The Users section of LCS is where you manage the LCS users that are part of your 
@@ -516,12 +474,20 @@ user.
 ![Figure 19.15: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
 
 To invite external users to your project, click on the *Invite* button. The
-*Invite External Users* pop up lets you invite anyone with a valid email address.
-You can also search for users of Liferay.com to invite. Once you've chosen who
-to invite, the *Role* selection box lets you preassign LCS roles for when they
+*Invite User* pop up lets you invite anyone with a valid email address. You can 
+also search for users of Liferay.com to invite. Once you've chosen who to 
+invite, the *Role* selection box lets you preassign LCS roles for when they 
 accept your invitation.
 
-![Figure 19.16: You can invite external users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
+![Figure 19.16: You can invite users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
+
+To view any sent invitations, just click the *Invitations* tab. The invitations 
+are shown in a table that lists the email address of the person invited, as well 
+as who invited them and the date that the invitation was sent. The preassigned 
+LCS role and environment is also listed. You can also cancel an invitation by 
+clicking the red *Cancel* button in the *Action* column of the invitation.
+
+![Figure 19.17: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
 your Liferay servers. You can apply fix packs with just a single click and a 

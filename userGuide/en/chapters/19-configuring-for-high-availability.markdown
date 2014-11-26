@@ -377,11 +377,6 @@ exception of the following non-sensitive properties:
     portal.jaas.strict.password
     login.create.account.allow.custom.password
 
-<!-- Sensitive data being database URLs, user names, and passwords? What about
-Documents & Media repository information? I think we should spell out exactly
-what sensitive data is *not* stored in order to give people peace of mind. -Rich
---> 
-
 Now that you know what information is stored on the LCS servers, it's time to 
 get to the heart of LCS--the *Dashboard*.
 
@@ -408,13 +403,6 @@ tells you the download is finished and to restart your server. Restarting your
 server installs any downloaded fix packs. Note that you must start your server
 with the privileges required to write to the disk location where patches are 
 stored and processed (the `patching-tool` folder). 
-
-<!-- This is unclear. Administrative access to what? In fact, what is
-administrative access, as mentioned here? I assume you're talking about
-permissions at the operating system level, but beyond that, I'm not sure what
-permissions are needed exactly. Most people won't run their servers as root, as
-that's a bad practice, so they'll want to know exactly what permissions are
-necessary. -Rich -->
 
 But what about using LCS to install fix packs across a cluster? Just follow the 
 same procedure! LCS downloads and installs fix packs simultaneously across all 
@@ -521,33 +509,6 @@ the update process and also gives you extensive information on how your servers
 are running. Next you'll take a look at how to manage the users in your LCS 
 project.
 
-<!-- You had "the LCS Dashboard is a formidable tool...." That struck me as
-possibly close to what you wanted, but having a negative connotation, and indeed
-the dictionary definition has four definitions: 
-
-1.  causing fear, apprehension, or dread:
-a formidable opponent.
-2.  of discouraging or awesome strength, size, difficulty, etc.; intimidating:
-a formidable problem.
-3.  arousing feelings of awe or admiration because of grandeur, strength, etc.
-4.  of great strength; forceful; powerful:
-formidable opposition to the proposal.
-
-Synonyms
-1. dreadful, appalling, threatening, menacing, fearful, frightful, horrible.
-Antonyms
-1. pleasant.
-
-I'm sure you meant definition three, but I'm guessing many readers will assume
-the negative connotations of definitions one and two, as they're the more common
-definitions (which the synonyms list makes clear). For that reason, I changed
-"formidable" to "powerful." 
-
-Just 'splaining. :-)
-
--Rich
---> 
-
 #### Managing LCS Users in Your Project
 
 The Users section of LCS is where you manage the LCS users that are part of your 
@@ -561,12 +522,20 @@ user.
 ![Figure 19.15: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
 
 To invite external users to your project, click on the *Invite* button. The
-*Invite External Users* pop up lets you invite anyone with a valid email address.
-You can also search for users of Liferay.com to invite. Once you've chosen who
-to invite, the *Role* selection box lets you preassign LCS roles for when they
+*Invite User* pop up lets you invite anyone with a valid email address. You can 
+also search for users of Liferay.com to invite. Once you've chosen who to 
+invite, the *Role* selection box lets you preassign LCS roles for when they 
 accept your invitation.
 
-![Figure 19.16: You can invite external users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
+![Figure 19.16: You can invite users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
+
+To view any sent invitations, just click the *Invitations* tab. The invitations 
+are shown in a table that lists the email address of the person invited, as well 
+as who invited them and the date that the invitation was sent. The preassigned 
+LCS role and environment is also listed. You can also cancel an invitation by 
+clicking the red *Cancel* button in the *Action* column of the invitation.
+
+![Figure 19.17: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
 your Liferay servers. You can apply fix packs with just a single click and a 
@@ -586,7 +555,7 @@ web sites. Out of the box, it's configured optimally for a single server
 environment. If one server isn't sufficient to serve the high traffic needs of
 your site, Liferay scales to the size you need. 
 
-![Figure 19.17: Liferay is designed to scale to as large an installation as you
+![Figure 19.18: Liferay is designed to scale to as large an installation as you
 need.](../../images/enterprise-configuration.png) 
 
 Liferay works well in clusters of multiple machines (horizontal cluster) or in
@@ -767,7 +736,7 @@ If you're using the RoundRobinShardSelector class, Liferay automatically enters
 data into each instance one by one. If you're using the `ManualShardSelector`
 class, you'll have to specify a shard for each instance using the UI.
 
-![Figure 19.18: When creating a shard using the manual shard selector, specify
+![Figure 19.19: When creating a shard using the manual shard selector, specify
 the shard you want to use for that
 instance.](../../images/enterprise-sharding-portal-instance.png)
 
@@ -865,7 +834,7 @@ database. If, for example, you upload a presentation with the file name
 `workflow.odp` into a folder called *stuff*, the file system store creates a
 folder structure which looks like figure 19.3. 
 
-![Figure 19.19: Liferay's file system store creates a folder structure based on
+![Figure 19.20: Liferay's file system store creates a folder structure based on
 primary keys in Liferay's database.
 ](../../images/enterprise-file-system-store.png)
 
@@ -891,7 +860,7 @@ store. Like that store, it saves files to the local file system--which, of
 course, could be a remote file system mount. It uses a slightly different folder
 structure to store files, which is pictured below. 
 
-![Figure 19.20: The advanced file system store creates a more nested folder
+![Figure 19.21: The advanced file system store creates a more nested folder
 structure than the file system store.
 ](../../images/enterprise-adv-file-system-store.png)
 
@@ -1286,7 +1255,7 @@ threads. Threads are expensive, because they take resources (memory and CPU
 power). Most of the time, these threads are sleeping, because they only need to
 work when a cached entity has to talk to remote peers. 
 
-![Figure 19.21: The default algorithm requires each node to create massive
+![Figure 19.22: The default algorithm requires each node to create massive
 amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
 
 Putting heap memory aside (because the amount of memory on the heap depends on
@@ -1302,7 +1271,7 @@ algorithm for handling cache replication that can can fix both the `1` to `N -
 1` network communication bottleneck, as well as the massive threads bottleneck.
 The default implementation uses JGroups' UDP multicast to communicate. 
 
-![Figure 19.22: Liferay's algorithm uses a single UDP multicast channel, so that
+![Figure 19.23: Liferay's algorithm uses a single UDP multicast channel, so that
 nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
 
 To reduce the number of replication threads, we provide a small pool of
@@ -1696,7 +1665,7 @@ will need to use a profiler to monitor garbage collection during a load test to
 tune the numbers properly for your server hardware, operating system, and
 application server.
 
-![Figure 19.23: Java Memory](../../images/portal-admin-ch7_html_518957a7.png)
+![Figure 19.24: Java Memory](../../images/portal-admin-ch7_html_518957a7.png)
 
 The Java heap is divided into sections for the young generation, the old
 generation, and the permanent generation. The young generation is further
