@@ -33,15 +33,15 @@ package. Name it `ScriptUtil`.
 
 Next, add two methods to the interface. 
 
-	package com.liferay.sample;
+    package com.liferay.sample;
 
-	public interface ScriptUtil {
+    public interface ScriptUtil {
 
-		public String operationOne(); 
-	
-		public String operationTwo(String name); 
+        public String operationOne(); 
+    
+        public String operationTwo(String name); 
 
-	}
+    }
 
 Next, create the implementation class. Right-click on the `docroot/WEB-INF/src`
 folder and select *New* &rarr; *Class*. Create the class in the
@@ -76,7 +76,7 @@ Next, add implementations for the two methods.
         private static Log _log = LogFactoryUtil.getLog(ScriptUtilImpl.class); 
 
     }
-	
+
 Liferay makes extensive use of the Spring Framework and you'll be using it here
 to inject your implementation class into the application. Spring needs a bean
 definition which you'll declare in an XML file named `hook-spring.xml`. Create
@@ -102,7 +102,7 @@ plugin. The `BeanLocator` reads the bean definitions you provided. Create a
                     <param-value>/WEB-INF/classes/META-INF/hook-spring.xml</param-value>
             </context-param>
     </web-app>
-	
+
 If your project already contains a `docroot/WEB-INF/web.xml` file, you can
 simply add the contents of the `<context-param>` element inside of the
 `<web-app>` element. Save all of the changes you've made and deploy the hook.
@@ -113,12 +113,12 @@ To see the `ScriptUtil` code in action, navigate back to the *Control Panel*
 &rarr; *Server Administration* &rarr; *Script*. Change the script type to Groovy
 and enter the following script: 
 
-	myUtil = com.liferay.portal.kernel.bean.PortletBeanLocatorUtil.locate(
+    myUtil = com.liferay.portal.kernel.bean.PortletBeanLocatorUtil.locate(
         "script-utils-hook", "com.liferay.sample.ScriptUtil")
 
-	println(myUtil.operationOne())
+    println(myUtil.operationOne())
 
-	println(myUtil.operationTwo("Joe Bloggs"))
-	
+    println(myUtil.operationTwo("Joe Bloggs"))
+
 Click *Execute* and you should see the results of your script displayed right
 under the script console.

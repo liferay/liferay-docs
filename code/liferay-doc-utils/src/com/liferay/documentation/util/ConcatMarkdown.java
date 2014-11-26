@@ -22,6 +22,7 @@ public class ConcatMarkdown extends Task {
 		
 		String book = ""; 
 		int chapter = 0;
+		int count=1;
 		
 		try {
 			
@@ -40,7 +41,7 @@ public class ConcatMarkdown extends Task {
 							new LineNumberReader(new FileReader(file));
 					
 					String line;
-					int count=1;
+					
 							;
 					while ((line = in.readLine()) != null) {
 
@@ -98,15 +99,17 @@ public class ConcatMarkdown extends Task {
 	private String numberImage (String line, int chapter, int imageNum) {
 		
 		//find the colon
-		int colon = line.indexOf(":");
+		//int colon = line.indexOf(":");
 		//find the e
 		int e = line.indexOf("e");
+		//find the period
+		int period = line.indexOf(".");
 		
 		String prefix = line.substring(0, e+1);
 		System.out.println(prefix);
-		String suffix = line.substring(colon, line.length());
+		String suffix = line.substring(period, line.length());
 		System.out.println(suffix);
-		line = prefix + " " + chapter + "." + imageNum + suffix;
+		line = prefix + " " + chapter + suffix;
 	
 		return line;
 	}

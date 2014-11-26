@@ -11,11 +11,11 @@ script that makes content available for use. As you can see in the snippet
 below, it uses JavaScript to access the Java class associated with the workflow
 to set the status of the content to *approved*.
 
-	<script>
-	<![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus
-		(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"),workflowContext);]]>
-	</script>
-	<script-language>javascript</script-language>
+    <script>
+    <![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus
+        (Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"),workflowContext);]]>
+    </script>
+    <script-language>javascript</script-language>
 
 At virtually any point in a workflow, you can use Liferay's scripting engine to
 access workflow APIs or other APIs outside of workflow. There are a lot of
@@ -33,15 +33,15 @@ can be used in any XML type that can contain an *actions* tag: those types are
 `<state>`, `<task>`, `<fork>` and `<join>`. Inside of one of those types, format
 your script like this:
 
-	<actions>
-		<action>
-			<script>
-				<![CDATA[*the contents of your script*]]>
-			</script>
-			<script-language>*your scripting language of choice*</script-language>
-		</action>
-		...
-	</actions>
+    <actions>
+        <action>
+            <script>
+                <![CDATA[*the contents of your script*]]>
+            </script>
+            <script-language>*your scripting language of choice*</script-language>
+        </action>
+        ...
+    </actions>
 
 Here's an example of a workflow script created in Groovy. This one is designed
 to be used with a `Condition` statement in Kaleo. It accesses Liferay's asset
