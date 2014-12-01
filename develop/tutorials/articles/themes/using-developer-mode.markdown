@@ -17,7 +17,7 @@ override settings that trigger them:
 - The server does not launch a browser when starting (`browser.launcher.url=`).
 - FreeMarker Templates for themes and web content are not cached, so changes
   are applied immediately
-  (`freemarker.engine.modification.check.interval=0`). 
+  (`freemarker.engine.resource.modification.check.interval=0`). 
 - Minification of CSS and JavaScript resources is disabled
   (`minifier.enabled=false`).
 

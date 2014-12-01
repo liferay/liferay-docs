@@ -6,7 +6,7 @@ properties inside the WAR file of the LCS client portlet.
 
 1. In the WAR file of the LCS client portlet, open the 
    `WEB-INF/classes/portlet-ext.properties` file.
-   
+ 
 2. At the end of the file, add the following properties and set them to the 
    appropriate values for your proxy.
    
@@ -14,19 +14,19 @@ properties inside the WAR file of the LCS client portlet.
         proxy.host.port=
 
 3. Update LCS client WAR with the modified `portlet-ext.properties` file.
-    
+ 
 4. Deploy the LCS client WAR, or redeploy it if it's already deployed.
 
 Once you deploy the LCS client portlet, you can use it to register your server 
 with your LCS account. Access the portlet by clicking on *Liferay Cloud Services* 
 under the *Apps* section of the *Control Panel*.
 
-![Figure 6.3: LCS appears in your Control Panel as Liferay Cloud Services, in the Apps section.](../../images/lcs-post-install-01.png)
+![Figure 4.3: LCS appears in your Control Panel as Liferay Cloud Services, in the Apps section.](../../images/lcs-post-install-01.png)
 
 After clicking *Authorize Access* on the screen that appears, you are then taken 
 to the LCS website. Log in with your credentials and then click *Grant Access*.
 
-![Figure 6.4: The LCS client portlet requires access to your LCS account.](../../images/lcs-auth-access.png)
+![Figure 4.4: The LCS client portlet requires access to your LCS account.](../../images/lcs-auth-access.png)
 
 Next, you need to register your server with LCS by filling out the following 
 fields:
@@ -38,8 +38,8 @@ fields:
    group of servers. A group of development servers or a cluster are good 
    examples of environments. If you elect to create a new environment, a popup 
    asks you to enter its *Name*, *Location*, and *Description*.
-   
-    ![Figure 6.5: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
+
+    ![Figure 4.5: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
 
 3. Server Name: Give your server a name that you can use to distinguish it in 
    your LCS account.
@@ -51,7 +51,7 @@ fields:
    server. You can use this field to help differentiate the servers you are 
    managing using LCS.
 
-![Figure 6.6: The server registration screen.](../../images/lcs-register-server.png)
+![Figure 4.6: The server registration screen.](../../images/lcs-register-server.png)
 
 Upon clicking *Register*, your LCS client portlet shows your connection status. 
 Note that it can take up to 10 or 20 seconds to perform the initial handshake 
@@ -60,7 +60,7 @@ any change in status after 20 seconds, try refreshing the page. If you see a
 red symbol indicating no data is being transmitted, please contact the Liferay 
 team for support.
 
-![Figure 6.7: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
+![Figure 4.7: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
 
 Once a successful connection is established, some statistics and links are
 displayed. Here's a description of what's displayed:
@@ -81,7 +81,7 @@ displayed. Here's a description of what's displayed:
   portal instance. This is because OAuth, which uses tokens, is used for 
   authentication.
  
-![Figure 6.8: The server is connected to LCS.](../../images/lcs-server-connected.png)
+![Figure 4.8: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
 Great! Now that you've registered your server with your LCS account, you can dig 
 in to the features of LCS.

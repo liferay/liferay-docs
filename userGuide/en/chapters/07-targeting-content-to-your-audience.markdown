@@ -43,7 +43,7 @@ of the Site Administration area of the Control Panel to manage user segments and
 campaigns. Then we'll explain how to use each of Audience Targeting
 applications and the Audience Targeting Simulator.
 
-## Installation and Uninstallation
+## Installation and Uninstallation [](id=installation-and-uninstallation-liferay-portal-6-2-user-guide-07-en)
 
 The easiest way to install the Audience Targeting app is via [Liferay Marketplace](http://www.liferay.com/marketplace).
 Make sure to install the correct version of the app. Choose
