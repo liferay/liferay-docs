@@ -102,20 +102,20 @@ because it's already in the `addEntryURL` in `docroot/html/view.jsp`:
     <portlet:param name="guestbookId"
 			value="<%=String.valueOf(guestbookId)%>" />
 
--The `implicit-parameter` tag defines parameters that don't need to be
-generated because they'll always be the same for this URL. All our URLs for
-adding entities and viewing Guestbooks or Guestbook Entries are renderURLs, so
-the portal doesn't need to generate the `p_p_lifecycle parameter`.  It can
-automatically be assumed to be zero. If you remove this parameter from the the
+- The `implicit-parameter` tag defines parameters that don't need to be
+  generated because they'll always be the same for this URL. All our URLs for
+adding entities and viewing Guestbooks or Guestbook Entries are `renderURL`s,
+so the portal doesn't need to generate the `p_p_lifecycle parameter`. It can
+automatically be assumed to be `0`. If you remove this parameter from the the
 route, the resulting Friendly URL won't look any different; you specified in
 the pattern tag what should be displayed in place of the generated URL. But
 it's nice to specify it here so the portal doesn't need to bother generating it
 on the fly.
 
-Now you know how to implement Frinedly URLs in a custom portlet. We could leave
-it at that, but providing the `guestbookId` and `entryId` in the URL really
-isn't helpful. The next step is to replace those IDs with the title of the
-Guestbook or Guestbook Entry.
+Now you know how to quickly implement Friendly URLs in a custom portlet. We
+could leave it at that, but providing the `guestbookId` and `entryId` in the
+URL really isn't helpful. The next step is to replace those IDs with the title
+of the Guestbook or Guestbook Entry.
 
 ## Next Steps
 
