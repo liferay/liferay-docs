@@ -582,13 +582,14 @@ Open or extract the plugin. Inside the plugin, you'll find a file called
 text editor and you will see the entry which defines where the Solr server can
 be found by Liferay:
 
-	<bean class="com.liferay.portal.spring.context.PortletBeanFactoryPostProcessor" />
+    <bean class="com.liferay.portal.spring.context.PortletBeanFactoryPostProcessor" />
 
-	<!-- Solr search engine -->
+    <!-- Solr search engine -->
 
-	<bean id="com.liferay.portal.search.solr.server.BasicAuthSolrServer" class="com.liferay.portal.search.solr.server.BasicAuthSolrServer">
-		<constructor-arg type="java.lang.String" value="http://localhost:8080/solr" />
-	</bean>
+    <bean id="com.liferay.portal.search.solr.server.BasicAuthSolrServer" class="com.liferay.portal.search.solr.server.BasicAuthSolrServer">
+        <constructor-arg type="java.lang.String" value="http://localhost:8080/solr" />
+        
+    </bean>
 	
 Modify this value so it points to the server where Solr is running. Then save
 the file and put it back into the plugin archive in the same place it was
@@ -650,11 +651,11 @@ You can enable Cluster Link by setting the following property in your
 `portal-ext.properties` file:
 
     cluster.link.enabled=true
-    
+ 
 To cluster your search indexes, you also need to set the following property:
 
     lucene.replicate.write=true
-    
+ 
 If you have `cluster.link.enabled=true` but `lucene.replicate.write=false`,
 you'll enable cache replication but not index replication.
 
@@ -753,7 +754,7 @@ enable the enhanced algorithm is to install a plugin from the Liferay
 Marketplace and set the following property in the `portal-ext.properties` files
 of each of your nodes:
 
-	ehcache.cluster.link.replication.enabled=true
+    ehcache.cluster.link.replication.enabled=true
 
 Search Liferay Marketplace for the *Ehcache Cluster EE* plugin, which is free to
 all EE customers, and install it on each of your nodes. The new algorithm is

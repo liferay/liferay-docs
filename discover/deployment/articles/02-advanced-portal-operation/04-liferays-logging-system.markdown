@@ -43,17 +43,17 @@ You will first need to import interfaces and implement logging in your
 class, with statements such as these (taken from Liferay's `S3Store`
 class):
 
-	import com.liferay.portal.kernel.log.Log;
-	import com.liferay.portal.kernel.log.LogFactoryUtil;
-	
-	...
+    import com.liferay.portal.kernel.log.Log;
+    import com.liferay.portal.kernel.log.LogFactoryUtil;
+    
+    ...
 
-	private static Log _log = LogFactory.getLog(S3Store.class);
+    private static Log _log = LogFactory.getLog(S3Store.class);
 
 You would then use this `_log` variable to create log messages in your code
 for the various logging levels:
 
-	_log.error(s3se.getMessage());
+    _log.error(s3se.getMessage());
 
 To enable your logging messages to appear in your server's log file via the
 control panel, click the *Add Category* tab on the same *Log Levels* page.

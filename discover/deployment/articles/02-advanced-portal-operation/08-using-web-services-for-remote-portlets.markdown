@@ -129,14 +129,14 @@ To enable your custom portlet for WSRP, you'll need to add the
 `<remoteable>true</remoteable>` tag in your portlet's
 `docroot/WEB-INF/liferay-portlet.xml` file:
 
-	<liferay-portlet-app>
-		<portlet>
-			<portlet-name>RemoteSamplePortlet</portlet-name>
-			<remoteable>true</remoteable>
-	...
-		</portlet>
-	...
-	</liferay-portlet-app>
+    <liferay-portlet-app>
+        <portlet>
+            <portlet-name>RemoteSamplePortlet</portlet-name>
+            <remoteable>true</remoteable>
+    ...
+        </portlet>
+    ...
+    </liferay-portlet-app>
 
 After editing your portlet's `liferay-portlet.xml` file, your custom portlet
 will appear in the list of portlets available when creating a WSRP producer.

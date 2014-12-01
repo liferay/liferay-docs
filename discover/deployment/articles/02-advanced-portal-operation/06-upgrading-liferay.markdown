@@ -111,7 +111,7 @@ skip the rest of this paragraph. If not, shut down your server, edit your
 `portal-ext.properties` file, and modify/add the following property so that it
 reads like this: 
 
-	permissions.user.check.algorithm=5
+    permissions.user.check.algorithm=5
 
 Restart your server. As Liferay starts, it upgrades your permissions algorithm
 to algorithm 5. Review your system to make sure that your permissions
@@ -137,7 +137,7 @@ Click *Execute* to convert all existing users and roles to algorithm 6. When the
 process completes, shut down your server. Edit your `portal-ext.properties` file
 and modify the algorithm property to show that you're now using algorithm 6: 
 
-	permissions.user.check.algorithm=6
+    permissions.user.check.algorithm=6
 
 Restart your server. Congratulations! You've successfully migrated your
 installation to use the latest, highest performing permissions algorithm. Next,
@@ -339,10 +339,10 @@ latest version of your runtime bundle, as it will be supported the longest.
       bundle. 
 
    3. Review your `portal-ext.properties` file as described above. Make sure
-	  you're using permissions algorithm 6. If you were using the Image Gallery,
+      you're using permissions algorithm 6. If you were using the Image Gallery,
       make the necessary modifications so your files are migrated to Documents and
       Media. Review the new defaults and decide whether you want to use them. Review
-      any other modifications you've made. 	
+      any other modifications you've made. 
 
    4. Start your application server. Watch the console as Liferay starts: it
       upgrades the database automatically.
@@ -351,18 +351,18 @@ latest version of your runtime bundle, as it will be supported the longest.
       version of Liferay. Make sure you use the versions of those plugins that
       are designed for Liferay 6.2. If you have your own plugins, your
       development team will need to migrate the code in these ahead of time and
-      provide .war files for you.  
+      provide .war files for you. 
 
    6. Browse around in your new installation and verify everything is working.
       Have your QA team test everything. If all looks good, you can delete the
       old application server with the old release of Liferay in it from the
       bundle directory. You have a backup of it anyway, right? 
-   
+ 
 As you can see, upgrading a bundle is generally pretty simple. But not everybody
 can use bundles: sometimes, specific application servers or application server
 versions are mandated by the environment you're in or by management. For this
 reason, Liferay also ships as an installable .war file that can be used on any
-supported application server.    
+supported application server. 
 
 ### Upgrading Manually [](id=upgrading-manually)
 
@@ -378,7 +378,7 @@ Running a manual upgrade is almost as easy as upgrading a bundle:
    2. Obtain the Liferay Portal .war file and the dependency .jars archive. 
 
    3. Copy your customized `portal-ext.properties` file to a safe place and
-      review it as described above, making all the appropriate changes.  
+      review it as described above, making all the appropriate changes. 
 
    4. Undeploy the old version of Liferay and shut down your application server.
 

@@ -24,15 +24,15 @@ We'll again use Groovy, so ensure that the script type is set to Groovy and
 execute the following code to check the status of the `agreedToTermsOfUse`
 user attribute:
 
-	import com.liferay.portal.service.UserLocalServiceUtil
+    import com.liferay.portal.service.UserLocalServiceUtil
 
-	userCount = UserLocalServiceUtil.getUsersCount()
-	users = UserLocalServiceUtil.getUsers(0, userCount)
+    userCount = UserLocalServiceUtil.getUsersCount()
+    users = UserLocalServiceUtil.getUsers(0, userCount)
 
-	for (user in users) {
-		println("User Name: " + user.getFullName() + " -- " + user.getAgreedToTermsOfUse())
-	}
-	
+    for (user in users) {
+        println("User Name: " + user.getFullName() + " -- " + user.getAgreedToTermsOfUse())
+    }
+ 
 The code above just prints the value of the `agreedToTermsOfUse` attribute for
 each user. Next, we'll actually update each user in the system to set his or her
 `agreedToTermsOfUse` attribute to `false`. We'll be sure to skip the default
@@ -40,24 +40,24 @@ user as the default user is not required to agree to the Terms of Use. We'll
 also skip the admin user that's currently logged in and running the script. If
 you're logged in as someone other than test@liferay.com, be sure to update the
 following script before running it. 
-	
+    
         import com.liferay.portal.service.UserLocalServiceUtil
 
-	userCount = UserLocalServiceUtil.getUsersCount()
-	users = UserLocalServiceUtil.getUsers(0, userCount)
+    userCount = UserLocalServiceUtil.getUsersCount()
+    users = UserLocalServiceUtil.getUsers(0, userCount)
 
-	for (user in users){
-	
-		if(!user.isDefaultUser() && 
-			!user.getEmailAddress().equalsIgnoreCase("test@liferay.com")) {
-			
-				user.setAgreedToTermsOfUse(false)
-				UserLocalServiceUtil.updateUser(user)
-		
-		}
-		
-	}
-	
+    for (user in users){
+    
+        if(!user.isDefaultUser() && 
+            !user.getEmailAddress().equalsIgnoreCase("test@liferay.com")) {
+            
+                user.setAgreedToTermsOfUse(false)
+                UserLocalServiceUtil.updateUser(user)
+        
+        }
+        
+    }
+ 
 To verify the script has updated the records, run the first script again and you
 should see that all users (except the default user and your user) have been
 updated. 

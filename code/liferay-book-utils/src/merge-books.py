@@ -37,7 +37,7 @@ for i in args.files:
             
             whiteLength = len(j) - len(j.lstrip())
             whiteSpace=""
-            if whiteLength > 0:                
+            if (whiteLength > 0) and (j != "\n"):                
                 for k in range(whiteLength):
                     whiteSpace = whiteSpace + " "
                     
@@ -57,14 +57,16 @@ for i in args.files:
                 if chapter < chapterCount:
                     chapter = chapter + chapterCount
                     
-                imageLocation = suffix.index("(../../")
-                imageDir = suffix.index("/images/")
-                newLocation = "(../../../deployment"
-                beginSuffix = suffix[:imageLocation]
-                endSuffix = suffix[imageDir:]
-                suffix = beginSuffix + newLocation + endSuffix
+                #imageLocation = suffix.index("(../../")
+                #imageDir = suffix.index("/images/")
+                #newLocation = "(../../../deployment"
+                #beginSuffix = suffix[:imageLocation]
+                #endSuffix = suffix[imageDir:]
+                #suffix = beginSuffix + newLocation + endSuffix
 
-                j = whiteSpace + prefix + " " + str(chapter) + "." + figNum + suffix
+                j = prefix + " " + str(chapter) + "." + figNum + suffix
+                
+            j = whiteSpace + j
 
             outfile.write(j)
 
