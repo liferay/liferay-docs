@@ -8,9 +8,6 @@
 
 <%
 	
-
-//	long guestbookId = Long.valueOf((Long) renderRequest
-//		.getAttribute("guestbookId"));
 	String name = ParamUtil.getString(renderRequest, "name");
 	
 	String guestbookName=ParamUtil.getString(renderRequest, "guestbookName");

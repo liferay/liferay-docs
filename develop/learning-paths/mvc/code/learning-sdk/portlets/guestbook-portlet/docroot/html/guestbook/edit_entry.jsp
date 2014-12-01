@@ -1,16 +1,7 @@
 <%@include file = "/html/init.jsp" %>
 
 <%
-String entryName = ParamUtil.getString(renderRequest, "name");
-
-OrderByComparatorFactory entryOrderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
-OrderByComparator entryOrderByComparator = entryOrderByComparatorFactory.create("Entry", "name", true);
-OrderByComparatorFactory guestbookOrderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
-OrderByComparator guestbookOrderByComparator = guestbookOrderByComparatorFactory.create("Guestbook", "guestbookName", true);
-
 Guestbook guestbook = (Guestbook) renderRequest.getAttribute("guestbook");
-
-String guestbookName = ParamUtil.getString(renderRequest, "guestbookName");
 
 long entryId = ParamUtil.getLong(renderRequest, "entryId");
 Entry entry = null;
@@ -24,7 +15,7 @@ Entry entry = null;
 
 <portlet:renderURL var="viewURL">
 	<portlet:param name="mvcPath" value="/html/guestbook/view.jsp"></portlet:param>
-	<portlet:param name="guestbookName" value="<%= guestbookName %>"/>
+	<portlet:param name="guestbookName" value="<%= guestbook.getName() %>"/>
 </portlet:renderURL>
 
 <portlet:actionURL name="addEntry" var="addEntryURL">

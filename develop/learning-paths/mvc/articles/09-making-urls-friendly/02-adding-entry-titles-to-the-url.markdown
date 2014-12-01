@@ -244,10 +244,11 @@ Next, organize the imports.
 
 ## Updating the View Layer
 
-Many of the portlet URLs defined in the JSPs you've written currently include
-the `guestbookId` as a parameter, and some of the scriptlets included in the
-view layer also use the parameter. You need to change these instead to provide
-and use a `guestbookName` parameter. You'll also be making use of your new
+Many of the portlet URLs and scriptlets defined in the JSPs you've written
+currently include the `guestbookId` or `entryId` as a parameter. You need to
+change these instead to provide and use a `guestbookName` or `entryName`
+parameter, and use your new service layer *getter* methods in the place of the
+current ones, if they use the Primary Key. You'll also be making use of your new
 action method, `switchTabs`.
 
 Open `view.jsp`. At the top of the file, immediately after the `<%@include...`
@@ -302,10 +303,101 @@ That's it for the view.jsp file. You've removed the `guestbookId` parameter from
 some URLs. We still need to change some other JSP files, though, since we
 haven't yet dealt with the `addGuestbookURL`.
 
-edit_guestbook.jsp
-init.jsp
-edit_entry.jsp
-view_entry.jsp
+Open `docroot/html/init.jsp`. This is where we organize the imports
+necessary for our JSP files. Add the following to the file:
+
+    <%@ page import="com.liferay.portal.kernel.util.OrderByComparator" %>
+    <%@ page import="com.liferay.portal.kernel.util.OrderByComparatorFactory" %>
+    <%@ page import="com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil" %>
+
+Now open `docroot/html/guestbook/edit_entry.jsp`. 
+
+The JSP files for viewing entries, editing entries, and editing guestbooks, need
+a couple modifications to fully support our changes.
+
+Open `edit_entry.jsp`. Add  the `guestbookName` parameter to the URL at the top
+of the file:
+
+    <portlet:param name="guestbookName" value="<%= guestbookName %>"/>
+
+Change the scriptlet at the top of the file by adding the following above the
+line defining the `entryId` variable:
+
+    Guestbook guestbook = (Guestbook) renderRequest.getAttribute("guestbook");
+
+In the same file, change the `viewURL` and the `addEntryURL` by adding the
+following parameter to each one:
+
+    <portlet:param name="guestbookName" value="<%= guestbook.getName() %>"/>
+
+The only other modification you need here is in the `<aui:input...` tag for the
+hidden `guestbookId` field. Instead of getting the `guestbookId` from the
+request, get it from the `Guestbook` taken from the request:
+
+    String.valueOf(guestbook.getGuestbookId())
+
+Now open `view_entry.jsp`. All of the work you have to do here is in the first
+scriptlet. Your aim is to get the entry selected by the user by its
+`name` and the `guestbookId` of the `Guestbook` it's in. To get the correct
+`guestbookId`, you'll need to get the `Guestbook` by its name. Delete the lines
+defining the `entryId` and `entry` variables. Since you'll be working with the
+entry `name`, you'll get that from the request instead of the `entryId`, and use
+it to get the correct entry from the database.  Additionally, you need to get
+the `guestbookName`, so that you can get the `Guestbook`, so that you can get
+the `Entry` by both its own `name` and the `guestbookId` of its associated
+`Guestbook`.
+
+Add these lines to the top of the scriptlet:
+
+	String name = ParamUtil.getString(renderRequest, "name");
+	
+	String guestbookName=ParamUtil.getString(renderRequest, "guestbookName");
+	
+	OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+	OrderByComparator orderByComparator = orderByComparatorFactory.create("Entry", "name", true);
+	Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
+	Entry entry = EntryLocalServiceUtil.getEntryByGuestbookIdAndName(guestbook.getGuestbookId(), name, orderByComparator);
+
+You're finally on the last file. Open `edit_guestbook.jsp`. For clarity, we've
+been calling the `name` field of the `Guestbook` `guestbookName`, so it is not
+condufsed with the `name` field of the `Entry`. Find the `<aui:input
+name="name"` line and change *"name"* to *"guestbookName"*. 
+
+
+## Modifying the URL Routes
+
+All the modifications you made to the JSPs were basically doing the following:
+
+- Removing mention of `guestbookId` and `entryId`
+- Adding `guestbookName` and `name` parameters, where applicable
+- Swapping methods that get database entities by their Primary Key for methods
+  that use a different database column
+
+Now that you've made those changes, you're ready to modify the URL routes you
+defined in the last section of this learning path.
+
+Open `guestbook-friendly-url-routes.xml`.
+
+The first route, for `add_guestbook`, does not need modification. 
+
+In the second route, for `add_entry`, edit the `<pattern>` tag to replace
+`{guestbookId}` with `{guestbookName}`
+
+The `view_entry` route's `<pattern>` can include both the `guestbookName` and
+`name` (of the `Entry`):
+
+    <pattern>/{guestbookName}/{name}/view_entry</pattern>
+
+The `view` route can include the `guestbookName`, but you should also change the
+`<implicit-parameter...` tags, as follows:
+
+    <route>
+        <pattern>/{guestbookName}/view</pattern>
+        <implicit-parameter name="p_p_lifecycle">1</implicit-parameter>
+        <implicit-parameter name="javax.portlet.action">switchTabs</implicit-parameter>
+    </route>
+
+`mvcPath` t and `p_p_lifecycle` implicit parameter,
 
 ## Something about using a Finder to 
 
