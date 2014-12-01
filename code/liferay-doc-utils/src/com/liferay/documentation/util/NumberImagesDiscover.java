@@ -6,25 +6,27 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.tools.ant.BuildException;
 
 public class NumberImagesDiscover {
 
 	public static int numberImages(String markdownFilePath, int figNum)
 			throws IOException {
-
-		String[] markdownFilePathArray = markdownFilePath.split("/");
-
-		int markdownFilePathArrayLength = markdownFilePathArray.length;
+		File markdownfile = new File(markdownFilePath); // example: "/home/$USER/workspace/01-example-chapter.markdown"
+		File parentFolder = markdownfile.getParentFile();
 
 		String parentFolderName = "";
 
-		if (markdownFilePathArrayLength < 2) {
-			System.out
-					.println("No chapter number could be extracted from the"
-							+ "Markdown file path since the parent folder of the Markdown file"
-							+ "could not be found.");
+		if (parentFolder == null) {
+			StringBuilder sb = new StringBuilder();
+			sb.append(
+				"No chapter number could be derived for Markdown file ");
+			sb.append(markdownFilePath);
+			sb.append(", since it has no parent folder.");
+
+			throw new BuildException(sb.toString());
 		} else {
-			parentFolderName = markdownFilePathArray[markdownFilePathArrayLength - 2];
+			parentFolderName = parentFolder.getName();
 		}
 
 		String chapternum = parentFolderName.substring(0, 2);

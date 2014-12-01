@@ -6,25 +6,30 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.tools.ant.BuildException;
 
 public class ResetImagesDiscover {
 
 	public static void resetImages(String markdownFilePath) throws IOException {
-		File markdownfile = new File(markdownFilePath); // example: "/home/$USER/workspace/01-example-chapter.markdown"
-		
-		String[] markdownFilePathArray = markdownFilePath.split("/");
-		
-		int markdownFilePathArrayLength = markdownFilePathArray.length;
+
+		// Linux example: "/home/$USER/workspace/01-example-chapter.markdown"
+		// Windows example: "E:\liferay-docs\discover\portal\articles\01-what-is-liferay\00-what-is-liferay-intro.markdown"
+		File markdownfile = new File(markdownFilePath);
+
+		File parentFolder = markdownfile.getParentFile();
 		
 		String parentFolderName = "";
 		
-		if (markdownFilePathArrayLength < 2) {
-			System.out.println("No chapter number could be extracted from the"
-			+ "Markdown file path since the parent folder of the Markdown file"
-			+ "could not be found.");
+		if (parentFolder == null) {
+			StringBuilder sb = new StringBuilder();
+			sb.append("No chapter number could be derived for Markdown file ");
+			sb.append(markdownFilePath);
+			sb.append(", since it has no parent folder.");
+
+			throw new BuildException(sb.toString());
 		}
 		else {
-			parentFolderName = markdownFilePathArray[markdownFilePathArrayLength - 2];
+			parentFolderName = parentFolder.getName();
 		}
 		
 		String chapternum = parentFolderName.substring(0,2);
