@@ -9,30 +9,29 @@ that the portal so generously generated:
 
     http://localhost:8080/web/guest/home?p_p_id=guestbook_WAR_guestbookportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=3&_guestbook_WAR_guestbookportlet_mvcPath=%2Fhtml%2Fguestbook%2Fedit_guestbook.jsp
 
-Tell me how you feel about that URL. Since you developed the app, maybe you
-like to see all those parameters as much as Liferay likes to generate them for
-you. In that case, tell me how the app's users will feel when they see the URL.
-Let's make it a little more friendly, and meaningful, for them. Your app's
-users aren't the only reason to create Friendly URLs. Search Engine
-Optimization requires that your URLs be *concise*. That's one word you wouldn't
-use to describe the generated URL above.
+As the developer of the app, maybe you like to see all those parameters as much
+as Liferay likes to generate them for you. How do you think the app's
+users will feel when they see the URL? Let's make it a little more friendly,
+and meaningful, for them. Your app's users aren't the only reason to create
+Friendly URLs. Search Engine Optimization requires that your URLs be *concise*.
+That's one word you wouldn't use to describe the generated URL above.
 
 When you're done with this section, clicking *Add Guestbook* will generate the
-following UR:
+following URL:
 
     http://localhost:8080/web/guest/home/-/guestbook/add_guestbook
 
-That looks a lot more user friendly, right?
+Isn't that a lot more user friendly? You can greatly improve
+the readability of any portlet URLs, and you can do it in two easy steps:
 
-In short, you can greatly improve the readability of the portlet's URLs, and
-you can do it in two easy steps:
-
-    1. Add three lines to liferay-portlet.xml
-    2. Create an XML file defining the Friendly URL routes
+1. Add three lines to liferay-portlet.xml
+2. Create an XML file defining Friendly URL routes
 
 ## Declaring Friendly URL Mapping to Liferay
 
-First, modify Liferay's descriptor, `docroot/WEB-INF/liferay-portlet.xml`, adding these lines right after the :
+First, modify Liferay portlet descriptor,
+`docroot/WEB-INF/liferay-portlet.xml`, adding these lines right after the
+`<indexer-class...>` declaration:
 
         <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper</friendly-url-mapper-class>
 		<friendly-url-mapping>guestbook</friendly-url-mapping>

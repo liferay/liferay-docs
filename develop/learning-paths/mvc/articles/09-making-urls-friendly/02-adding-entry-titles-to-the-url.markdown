@@ -15,8 +15,8 @@ URL. This doesn't mean anything to the user. It would be more clear to see the
 `name` of the guestbook; likewise for viewing `Entry` entities. That's what
 you'll be doing in this section on Friendly URLs.
 
-Since you'll be making changes to several files, here's the overview of what
-you'll need to do:
+Since you'll be making changes to several files, here's an overview of the
+work:
 
 - Add an action method to the controller class, `GuestbookPortlet.java`. 
     This will allow you set a `Guestbook` object as a render attribute, rather
