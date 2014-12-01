@@ -70,6 +70,16 @@
 			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
 		</classpath>
 	</taskdef>
+	
+	<taskdef name="concatmarkdown" classname="com.liferay.documentation.util.ConcatMarkdown">
+	  <classpath>
+	    <fileset dir="${project.dir}/lib" includes="*.jar" />
+	    
+	    <fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+	  </classpath>
+	  
+	</taskdef>
+
 
 	<!-- targets -->
 
@@ -95,6 +105,15 @@
 		>
 			<arg value="${doc.dir}"/>
 		</java>
+	</target>
+	
+	<target name="concat-markdown" description="Concatenates the Markdown files in a specific folder for preparation to convert to other formats.">
+	  <concatmarkdown docdir="${doc.dir}">
+	  </concatmarkdown>
+	  <move file="./book.markdown" tofile="${dist.dir}/book/text/${doc.dir}.markdown" />
+	  <copy todir="${dist.dir}/images">
+            <fileset dir="images" includes="*.*"/>
+        </copy>
 	</target>
 
 	<target name="check-images-site" description="Verifies all images referenced in a single Markdown article or a document's Markdown articles.">

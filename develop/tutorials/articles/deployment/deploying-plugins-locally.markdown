@@ -22,7 +22,7 @@ of the page and select the *Applications* tab. Select your portlet's category
 (*Sample* is the default category), and then click *Add* next to *[portlet
 title]*. Your portlet appears in the page.
 
-Here are some related topics:
+## Related Topics [](id=related-topics)
 
 [Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
 

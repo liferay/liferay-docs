@@ -51,6 +51,8 @@ done is create a blank Liferay project. Projects can have any number of
 applications (called *portlets*) in them. Your next step is to create the
 portlet, which the New Portlet Wizard helps you to do. 
 
+![Figure 3: The New Portlet wizard can be used at any time to create portlets in projects.](../../images/lds-new-portlet-wizard.png)
+
 1. For the Portlet class, enter the name `GuestbookPortlet`. 
 
 2. All classes in Java should be properly namespaced to avoid conflicts with
@@ -74,7 +76,7 @@ of data into an application that calculates whether you owe or are due a refund.
 These applications run on a *platform* that provides application developers the
 building blocks they need to make applications. 
 
-![Figure 3: Many Liferay applications can run at the same time on the same page.](../../images/portlet-applications.png)
+![Figure 4: Many Liferay applications can run at the same time on the same page.](../../images/portlet-applications.png)
 
 Liferay Portal is a platform, and its applications are called *portlets*. One
 difference between a Liferay application and an application built on another
@@ -126,6 +128,8 @@ that says *Add Entry*.
  `cssClass` attribute. Type `guestbook-buttons` for this value, hit Enter, and
  click *Insert*. 
 
+![Figure 5: Inserting snippets is easy using the dialog, or you can do it in the code manually.](../../images/lds-insert-snippet.png)
+
 You're almost ready to add the button inside the button row, but as hinted above,
 we should talk about system generated URLs, because you need a URL to map to
 your button. 
@@ -160,7 +164,7 @@ asking you to enter values for various tag attributes.
 
 3. The only attribute you need at the moment is the `var` attribute. For this
 attribute, enter the value *addEntryURL*. You're creating a variable to hold the
-generated URL. 
+generated URL. Click *Insert*. 
 
 4. Make space inside the `<portlet:renderURL>` tag so that you can add another
 tag inside it. 
@@ -213,18 +217,19 @@ At this point, you should have code that looks like this:
         
     </aui:button-row>
 
-Now is a good time to check your work to see if everything you've done so far is
-working properly. As the image below describes, drag your project from the
-Package Explorer and drop it on your server runtime. 
+Save your work using the button in the toolbar or by hitting *Ctrl-S*. Now is a
+good time to check your work to see if everything you've done so far is working
+properly. As the image below describes, drag your project from the Package
+Explorer and drop it on your server runtime. 
 
-![Figure 4: Deploying projects is a drag and drop process.](../../images/lds-deploy-portlet.png)
+![Figure 6: Deploying projects is a drag and drop process.](../../images/lds-deploy-portlet.png)
 
 Once your application deploys, go to a Liferay page and click the *Add* button
 (it looks like a plus sign). Choose *Applications* and from the Sample category,
 drag your Guestbook application onto the page and drop it there. Your portlet is
 pretty sparse at this point, but here's what you have so far: 
 
-![Figure 5: Your button doesn't go anywhere--yet.](../../images/guestbook-portlet-add-entry-button.png)
+![Figure 7: Your button doesn't go anywhere--yet.](../../images/guestbook-portlet-add-entry-button.png)
 
 Don't click the button: remember that you haven't created the page the
 button points to yet. All you'll get is an error if you do. Of course, reverse

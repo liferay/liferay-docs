@@ -971,7 +971,10 @@ For details about Liferay's social collaboration suite, see chapter 10.
  activate a disabled plugin, navigate to the Control Panel &rarr; *Plugins
  Configuration* and scroll through the list of portlets until you find the
  plugin. Select the plugins name and click the *Active* checkbox. Then click
- *Save*.
+ *Save*. Both plugins will be removed in Liferay 7.0.
+
+ The Web Content List portlet will be migrated to the Asset Publisher for 7.0,
+ and configured to only display web content with the category matching the type. 
 
 ---
 
@@ -1274,6 +1277,15 @@ also pair the text with a small image.
 can also create tags to make the content easier to find in a search. Note that
 these categories are defined by a property in the properties file; see the
 `journal.article.types` property in chapter 20 for further information. 
+
+---
+
+ ![Note](../../images/01-tip.png) **Note:** The Web Content Type portlet,
+ located within the Categorization menu, is deprecated for Liferay 6.2 and will
+ be removed in Liferay 7.0. The portlet will be migrated to a vocabulary with
+ categories. 
+
+---
 
 **Schedule:** customizes the date and time your content publishes and/or
 expires.

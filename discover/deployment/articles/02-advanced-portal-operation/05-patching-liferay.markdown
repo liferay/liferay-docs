@@ -52,12 +52,12 @@ After the patching tool is installed, you need to let it auto-discover your
 Liferay installation. Then it will determine what your release level is and what
 your application server environment is. This is a simple command to run on LUM:
 
-	./patching-tool.sh auto-discovery
-	
+    ./patching-tool.sh auto-discovery
+ 
 or on Windows: 
 
-	patching-tool auto-discovery
-	
+    patching-tool auto-discovery
+ 
 From here on, for brevity we'll use the LUM version of the command. Why? Because
 Liferay is open source; there's no open source variant of Windows (ReactOS is
 still in alpha, so it doesn't count); and therefore my (RS) unscientific
@@ -70,8 +70,8 @@ give this command another parameter to point it to your Liferay installation.
 For example, if you've installed a Liferay/Tomcat bundle in `/opt/Liferay`,
 you'd issue this command: 
 
-	./patching-tool.sh auto-discovery /opt/Liferay/tomcat-7.0.21
-	
+    ./patching-tool.sh auto-discovery /opt/Liferay/tomcat-7.0.21
+ 
 In all, this is pretty simple. Now let's see how to use the patching tool to get
 your patches installed. 
 
@@ -91,7 +91,7 @@ downloading a fix pack from the customer portal, you'll need to place it in the
 done that, it's a simple matter to install it. First, execute
 
     ./patching-tool.sh info
-	
+ 
 This shows you a list of patches you've already installed, along with a list of
 patches that *can* be installed, from what's in the `patches` folder. To install
 the available patches, issue the following command: 
@@ -185,8 +185,8 @@ auto-discover other runtimes, or you can manually create new profiles yourself.
 To have the patching tool auto-discover other runtimes, you'll need to use a few
 more command line parameters: 
 
-	./patching-tool.sh [name of profile] auto-discovery [path/to/runtime]
-	
+    ./patching-tool.sh [name of profile] auto-discovery [path/to/runtime]
+ 
 This will run the same discovery process, but on a path you choose, and the
 profile information will go into a `[your profile name].properties` file. 
 

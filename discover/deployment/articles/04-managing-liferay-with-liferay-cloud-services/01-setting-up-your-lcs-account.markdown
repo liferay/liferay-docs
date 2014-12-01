@@ -1,12 +1,13 @@
 # Setting up Your LCS Account [](id=setting-up-your-lcs-account)
 
-To use LCS, you first need to set up an account at [lcs.liferay.com](https://lcs.liferay.com). 
-When creating an account, you're taken through the steps of accepting the 
+To use LCS, you first need to have an account at [Liferay.com](http://www.liferay.com/). 
+You then need to set up an LCS account at [lcs.liferay.com](https://lcs.liferay.com). 
+When creating an LCS account, you're taken through the steps of accepting the 
 terms of service, setting your password, and setting your password reminder. 
 You're then taken to the *Projects* screen where you can join an existing 
 project or create a new one.
 
-![Figure 6.1: When creating your LCS account, you can join an existing project or create a new one.](../../images/lcs-projects.png)
+![Figure 4.1: When creating your LCS account, you can join an existing project or create a new one.](../../images/lcs-projects.png)
 
 The list of existing projects, if present, is the list of projects associated 
 with the domain of your email address. This is typically the company your email 
@@ -28,7 +29,7 @@ Projects screen. The section then expands to let you name the project and choose
 to go to directly to the project's *Dashboard* (more on the Dashboard later). 
 Give your project a name and then click *Save*. 
 
-![Figure 6.2: You can also create a new project from the Projects screen.](../../images/lcs-new-project.png)
+![Figure 4.2: You can also create a new project from the Projects screen.](../../images/lcs-new-project.png)
 
 So what exactly can an LCS Administrator do? Fantastic question! As LCS 
 Administrator, you can assign roles to the rest of the users in your project. 
@@ -40,6 +41,30 @@ available:
 - LCS Environment Manager: All LCS functionality is available in the scope of 
   an environment, with the exception of managing other users.
 - LCS Environment Viewer: Has read-only access in the scope of an environment.
+
+You should note that each of these LCS roles assume that the user already has 
+the LCS User role in his or her Liferay.com account. The LCS User role is
+granted automatically the first time the user enters their LCS account. The
+actions that can be performed by each of the LCS roles are detailed in the below
+permissions matrix. 
+
+**LCS Permissions Matrix**
+
+Action | &nbsp;LCS Administrator | &nbsp;LCS Environment Manager | &nbsp;LCS Environment Viewer |
+------ | ----------------------- | ----------------------------- | ---------------------------- |
+Access LCS | true | true | true |
+Access Any Environment | true | false | false |
+Access a Particular Environment | true | true | true |
+Manage Users in Any Environment | true | false | false |
+Manage Users in a Particular Environment | true | true | false |
+Invite Users to LCS | true | false | false |
+Create and Delete Environments | true | false | false |
+Edit Any Environment | true | false | false |
+Edit a Particular Environment | true | true | false |
+Server Registration in Any Environment | true | false | false |
+Server Registration in a Particular Environment | true | true | false |
+Install Fix Packs in Any Environment | true | false | false |
+Install Fix Packs in a Particular Environment | true | true | false |
 
 Now that your LCS account has been set up and you have an understanding of the 
 LCS roles, you can get your portal ready for LCS.
