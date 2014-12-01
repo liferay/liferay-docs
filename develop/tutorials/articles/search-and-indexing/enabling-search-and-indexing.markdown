@@ -145,3 +145,101 @@ Of course, in both of the above snippets, replace `[Entity]` with the actual
 name of your entity.
 
 ## Providing a Search Mechanism
+
+Now that your indexer has been registered and the index is updated whenever an
+entity is added, updated, or deleted, it's time to create a search mechanism.
+The easiest way to allow users to search for your custom entities is via
+Liferay's Search portlet. By default, Liferay's Search portlet only allows
+searching for out-of-the-box Liferay assets:
+
+- Users
+- Bookmarks
+- Bookmark folders
+- Blog posts
+- Documents and Media files
+- Documents and Media folders
+- Web Content files
+- Web Content folders
+- Message Board Messages
+- Wiki pages
+
+It's easy to configure the Search portlet to search for additional or custom
+asset types. To do so, add the Search portlet to a page and open the
+Configuration window. On the Setup tab, click on *Advanced* to reveal the Search
+Configuration text area. Search through the JSON configuration for the following
+block of code:
+
+    "values": [
+        "com.liferay.portal.model.User",
+        "com.liferay.portlet.bookmarks.model.BookmarksEntry",
+        "com.liferay.portlet.bookmarks.model.BookmarksFolder",
+        "com.liferay.portlet.blogs.model.BlogsEntry",
+        "com.liferay.portlet.documentlibrary.model.DLFileEntry",
+        "com.liferay.portlet.documentlibrary.model.DLFolder",
+        "com.liferay.portlet.journal.model.JournalArticle",
+        "com.liferay.portlet.journal.model.JournalFolder",
+        "com.liferay.portlet.messageboards.model.MBMessage",
+        "com.liferay.portlet.wiki.model.WikiPage"
+    ],
+
+Append your entity to this list so that it looks like this:
+
+    "values": [
+        "com.liferay.portal.model.User",
+        "com.liferay.portlet.bookmarks.model.BookmarksEntry",
+        "com.liferay.portlet.bookmarks.model.BookmarksFolder",
+        "com.liferay.portlet.blogs.model.BlogsEntry",
+        "com.liferay.portlet.documentlibrary.model.DLFileEntry",
+        "com.liferay.portlet.documentlibrary.model.DLFolder",
+        "com.liferay.portlet.journal.model.JournalArticle",
+        "com.liferay.portlet.journal.model.JournalFolder",
+        "com.liferay.portlet.messageboards.model.MBMessage",
+        "com.liferay.portlet.wiki.model.WikiPage",
+        "your.package.path.YourCustomEntity"
+    ],
+
+Of course, replace the package path and entity name with your
+package path and entity name. Then click *Save*. You can add any number of
+custom entities to the Search portlet's configuration this way. For more
+information on the JSON configuration of the Search portlet, please refer to the
+tutorial on
+[Faceted Search and Customized Search Filtering](https://dev.liferay.com/develop/tutorials).
+
+However, you don't have to use Liferay's Search portlet. In this tutorial,
+you'll learn how to use Liferay's API to create a custom search mechanism in
+your own portlet. You'll create one JSP for entering a search query and another
+JSP for displaying the search results. When implementing search and indexing in
+a custom portlet, the following Liferay classes are important:
+
+- `com.liferay.portal.kernel.search.SearchContext`
+- `com.liferay.portal.kernel.search.SearchContextFactory`
+- `com.liferay.portal.kernel.search.Indexer`
+- `com.liferay.portal.kernel.search.IndexerRegistryUtil`
+- `com.liferay.portal.kernel.search.BaseIndexer`
+- `com.liferay.portal.kernel.search.SearchEngineUtil`
+- `com.liferay.portal.kernel.search.Hits`
+- `com.liferay.portal.kernel.search.Document`
+
+To execute a search query in Liferay, you need a `SearchContext` object. The
+search context provides such details as the company instance to search, the user
+invoking the search, the locale, the timezone, etc. Since this class has a wide
+variety of context properties to deal with, the most effective way to get an
+instance of it is to call the `getInstance(HttpServletRequest request)` method
+of the `searchContextFactory` class like this:
+
+    SearchContext searchContext = SearchContextFactory.getInstance(request);
+
+Once you have a `SearchContext` object, you can populate various values such as
+the keywords to search for, the pagination type, the start and end values, etc.
+
+    searchContext.setKeywords(keywords);
+    searchContext.setAttribute("paginationType", "more");
+    searchContext.setStart(0);
+    searchContext.setEnd(10);
+
+The keywords value is the most important search context attribute since it
+represents the term or phrase for which you're searching. To find additional
+`SearchContext` attributes, please refer to the
+[Javadocs](http://docs.liferay.com/portal/6.2/javadocs).
+
+Earlier, you saw 
