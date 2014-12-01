@@ -53,12 +53,14 @@ after you've added the `<indexer-class>` element to `liferay-portlet.xml` so
 that Liferay registers your indexer with your portlet.
 
 If you'd like to review the contents of your portal's indexer registry, you can
-execute the follow Grovvy script from Liferay's Script console. To access the
-Script console, go to *Admin* &rarr; *Control Panel*, then click on *Server
-Administration*, then *Script*. Select *Groovy* for the language, then enter the
-following script. Caution! Before executing any script on a production Liferay
-instance, make sure to test it first locally. Review the script, then click
-*Execute*.
+execute the follow Grovvy script from Liferay's Script console. This script uses
+Liferay's `IndexerRegistryUtil` class to retrieve a list of registered indexers.
+Then it prints the associated portlet ID and classnames for each indexer. To
+access the Script console, go to *Admin* &rarr; *Control Panel*, then click on
+*Server Administration*, then *Script*. Select *Groovy* for the language, then
+enter the following script. Caution! Before executing any script on a production
+Liferay instance, make sure to test it first locally. Review the script, then
+click *Execute*.
 
     import com.liferay.portal.kernel.search.IndexerRegistryUtil;
     import com.liferay.portal.kernel.search.Indexer;
@@ -92,5 +94,54 @@ reflect the entities themselves, you need to make sure that you're instructing
 your indexer to reindex any newly added or updated entities. When an entity is
 deleted, you need to remove the corresponding document from the index. To obtain
 an instance of your indexer class, use Liferay's `IndexerRegistryUtil` class.
-This class includes a `getIndexer(...)` method as well as a `nullSafeGetIndexer`
-method.
+This class includes a `getIndexer(...)` method as well as a
+`nullSafeGetIndexer(...)` method. Both of these methods can take either a class
+argument (e.g. `MyEntity.class`) or a string representing the class name (e.g.
+`MyEntity`). If you use `getIndexer` and no indexer in the registry matches the
+argument, `null` is returned. However, if you use `nullSafeGetIndexer` and no
+indexer matches the argument, a dummy indexer is returned. Returning a dummy
+indexer is safer than returning `null` since returning `null` might throw
+exceptions that could render your portlet unusable.
+
+Once you've obtained the indexer that corresponds to your entity, you need to
+invoke the appropriate indexing operation. Whenever a new entity is added, a
+corresponding document should be added to the index. Whenever an existing entity
+is updated, the corresponding document should be updated. Both of these tasks,
+indexing and reindexing, can be accomplished by invoking the `reindex` method of
+your indexer. This method is overloaded. You can simply provide an object
+argument consisting of the entity which needs to be indexed or reindexed. Or you
+can provide the entity's class name and primary key. When an entity is deleted,
+its corresponding document should be removed from the index. This task can be
+accomplished by invoking the `delete` method of your indexer.  Like `reindex`,
+`delete` is an overloaded method which can take either an object argument or the
+entity's class name and primary key.
+
+If you're using Service Builder for your portlet project's service layer, you
+know that custom business logic should be added to your entity's
+`[Entity]LocalServiceImpl` class. If you've integrated your application with
+Liferay's permissions system, you probably have `add[Entity]`, `update[Entity]`,
+and `delete[Entity]` methods which invoke various methods of
+`resourceLocalService` to add, update, and delete entity resources. If you're
+going to asset-enable your entity, you'll have to invoke various methods of
+`assetEntryLocalService` and `assetLinkLocalService` to add, update, and delete
+the asset entries that correspond to your entity and any associated asset links
+(related assets). Just as you add, update, and delete permissions resources and
+asset entries in the `add[Entity]`, `update[Entity]`, and `delete[Entity]`
+methods of `[Entity]LocalServiceImpl`, you should also add, update, and delete
+your entity's Lucene documents in `[Entity]LocalServiceImpl`. To do so, add the
+following lines inside of your `add[Entity]` and `update{Entity]` methods:
+
+    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer([Entity].class);
+
+    indexer.reindex(entry);
+
+And add the following lines inside of your `delete[Entity]` method:
+
+    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer([Entity].class);
+
+    indexer.delete(entry);
+
+Of course, in both of the above snippets, replace `[Entity]` with the actual
+name of your entity.
+
+## Providing a Search Mechanism
