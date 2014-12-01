@@ -425,19 +425,8 @@ response object from `externalContext.getResponse()` is cast to the
         }
     }
  
-The code listing above uses the singleton class `LiferayFacesContext`, which has
-methods `getPortletRequest()` and `getPortletResponse()`. You can leverage the
-`LiferayFacesContext` class in your JSF portlets on Liferay to get easy access
-to the portlet requests and responses. This class comes with Liferay Faces
-Portal, which we'll cover in detail in later sections. 
-
-<!-- I think more explanation here is necessary. There's no indication in the
-code that LiferayFacesContext is the implementation that's returned, and there's
-no explanation as to why you didn't use the getPortletRequest() and
-getPortletResponse() methods. I can assume from reading it that you didn't use
-them because you were going for a more generic, portlet container-friendly
-implementation in this first example, but I (and the reader) am not sure of
-that. -Rich -->
+Notice that you're able to retrieve the `ExternalContext` from the current
+`FacesContext` instance. 
 
 In the next section, we'll explain how to internationalize your JSF portlets. 
 
