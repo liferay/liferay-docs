@@ -165,3 +165,7 @@ Administration page, created resource bundles specifically for each portlet,
 built your portlets' language translation files, and have verified your
 portlets' translated titles and descriptions! 
 
+Related Topics:
+
+[Overriding Language Properties Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
+

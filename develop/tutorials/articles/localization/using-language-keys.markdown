@@ -93,3 +93,7 @@ That's all you need to do to leverage Liferay's core localization keys. In this
 tutorial, you learned about Liferay core language keys, and how to implement in
 a Liferay portlet. 
 
+Related Topics:
+
+[Overriding Language Properties Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
+
