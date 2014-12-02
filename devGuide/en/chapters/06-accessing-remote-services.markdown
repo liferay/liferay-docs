@@ -1586,8 +1586,9 @@ service method entry in your `portal-ext.properties` file.
     jsonws.web.service.public.methods=getSkinny*
 
 For Liferay 6.2 and later, the Skinny JSON Provider app is preconfigured to
-allow anonymous access by default. Note that this preconfiguration cannot be
-changed. 
+allow anonymous access by default, using the `@AccessControlled` annotation.
+Note that this preconfiguration cannot be changed without recompiling the plugin
+from its source code.
 
 Even without the need for authentication, all of Liferay's JSON web services
 require the use of the `p_auth` token for CSRF protection for environments that
@@ -1607,14 +1608,18 @@ setting:
 
 For Liferay 6.2 and later, a better approach is to disable it only for those
 services that you believe don't need checking. To disable CSRF protection for
-the Skinny JSON Provider, you can add the value
-`com.liferay.portal.jsonwebservice.JSONWebServiceServiceAction:/skinny/` to the
+the Skinny JSON Provider, you can add the following two values to the
 list of `auth.token.ignore.origins` values in your `portal-ext.properties`:
 
     auth.token.ignore.origins=\
+        com.liferay.portal.jsonwebservice.JSONWebServiceServiceAction:/skinny-web.skinny/,\
         com.liferay.portal.jsonwebservice.JSONWebServiceServiceAction:/skinny/
 
-Now that you've configured appropriate access for your Skinn JSON Provider app,
+Two entries are needed here because there are two different ways to access
+web services (one uses the plugin's context name, the other does not, as
+discussed in the *Mapping and Naming Conventions* section).
+
+Now that you've configured appropriate access for your Skinny JSON Provider app,
 let's call its services!
 
 ### Retrieving Skinny Web Content Articles
