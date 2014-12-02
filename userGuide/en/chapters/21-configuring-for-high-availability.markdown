@@ -524,17 +524,17 @@ user.
 
 To invite external users to your project, click on the *Invite* button. The
 *Invite User* pop up lets you invite anyone with a valid email address. You can 
-also search for users of Liferay.com to invite. Once you've chosen who to 
-invite, the *Role* selection box lets you preassign LCS roles for when they 
-accept your invitation.
+also search for Liferay.com users to invite. Once you've chosen some users, the
+*Role* selection box lets you preassign LCS roles for when they accept your
+invitation.
 
 ![Figure 20.17: You can invite users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
 
-To view any sent invitations, just click the *Invitations* tab. The invitations 
-are shown in a table that lists the email address of the person invited, as well 
-as who invited them and the date that the invitation was sent. The preassigned 
-LCS role and environment is also listed. You can also cancel an invitation by 
-clicking the red *Cancel* button in the *Action* column of the invitation.
+To view sent invitations, click the *Invitations* tab. A table displays
+invitations, listing invited users' email addresses along with who invited them
+and the date that the invitation was sent. The table also shoes the preassigned
+LCS role and environment. You can cancel an invitation by clicking the red
+*Cancel* button in the *Action* column of the invitation.
 
 ![Figure 20.18: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
 
