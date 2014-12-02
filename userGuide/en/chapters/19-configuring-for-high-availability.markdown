@@ -43,7 +43,7 @@ your project without recommending one product over another.
 
 With all of that said, let's get started configuring Liferay for the enterprise.
 
-## Managing Liferay with Liferay Cloud Services
+## Managing Liferay with Liferay Cloud Services [](id=managing-liferay-with-liferay-cloud-ser-liferay-portal-6-1-user-guide-19-en)
 
 Liferay Cloud Services (LCS) is a set of tools and services that lets you manage 
 and monitor your Liferay installations. While Liferay's patching tool lets you 
@@ -83,7 +83,7 @@ As you go through this guide, you'll cover the following sections on LCS:
 
 Now go ahead and get started by setting up your LCS account.
 
-### Setting up Your LCS Account
+### Setting up Your LCS Account [](id=setting-up-your-lcs-account-liferay-portal-6-1-user-guide-19-en)
 
 To use LCS, you first need to have an account at [Liferay.com](http://www.liferay.com/). 
 You then need to set up an LCS account at [lcs.liferay.com](https://lcs.liferay.com). 
@@ -154,7 +154,7 @@ Install Fix Packs in a Particular Environment | true | true | false |
 Now that your LCS account has been set up and you have an understanding of the 
 LCS roles, you can get your portal ready for LCS.
 
-### Preconfiguring Your Portal for LCS
+### Preconfiguring Your Portal for LCS [](id=preconfiguring-your-portal-for-lcs-liferay-portal-6-1-user-guide-19-en)
 
 If you're running Liferay 6.2, then you can skip this step. If, however, you are 
 running Liferay 6.1 GA3, then there's a small pre-configuration step that you 
@@ -214,7 +214,7 @@ describe what exactly you're asking the user to do here? -Rich -->
 A server restart is required after updating `portal-ext.properties`. Next, you 
 need to configure the patching tool.
 
-### Configuring the Patching Tool 
+### Configuring the Patching Tool [](id=configuring-the-patching-tool-liferay-portal-6-1-user-guide-19-en)
 
 Liferay EE's patching tool is leveraged by LCS to apply its updates. If you're 
 running a Liferay EE bundle, then you already have the patching tool installed. 
@@ -254,7 +254,7 @@ property. For example:
 
 Great! Now you're all set to deploy and configure the LCS client portlet.
 
-### Configuring the LCS Client
+### Configuring the LCS Client [](id=configuring-the-lcs-client-liferay-portal-6-1-user-guide-19-en)
 
 You're now ready to configure the LCS client for use in your portal. If your 
 server accesses the web through a proxy, then you need to set a couple of 
@@ -340,7 +340,7 @@ displayed. Here's a description of what's displayed:
 Great! Now that you've registered your server with your LCS account, you can dig 
 in to the features of LCS.
 
-### Using LCS
+### Using LCS [](id=using-lcs-liferay-portal-6-1-user-guide-19-en)
 
 Once your LCS client is registered with your LCS account, you can get down to 
 the business that LCS was designed for--managing and monitoring your Liferay 
@@ -380,7 +380,7 @@ exception of the following non-sensitive properties:
 Now that you know what information is stored on the LCS servers, it's time to 
 get to the heart of LCS--the *Dashboard*.
 
-#### Using the Dashboard
+#### Using the Dashboard [](id=using-the-dashboard-liferay-portal-6-1-user-guide-19-en)
 
 The LCS Dashboard lets you view and manage your project, environments, and 
 servers. If you're not already at the Dashboard, click it near the upper 
@@ -389,7 +389,7 @@ project view. From there, you can get to the environment view and the
 server view. Each of these views gives you a different look into certain 
 aspects of your LCS project. You'll start with the project view.
 
-##### Using the Project View
+##### Using the Project View [](id=using-the-project-view-liferay-portal-6-1-user-guide-19-en)
 
 You can get to the project view at any time by clicking the Dashboard tab 
 near the upper left-hand corner of your LCS site. The project view provides you 
@@ -432,7 +432,7 @@ environment:
 You can get more information about a specific environment by clicking it. This 
 takes you to the environment view.
 
-##### Using the Environment View
+##### Using the Environment View [](id=using-the-environment-view-liferay-portal-6-1-user-guide-19-en)
 
 Clicking an environment on the left-hand side of the project view takes you to 
 the environment view. The environment view, as its name implies, gives you more 
@@ -447,7 +447,7 @@ to the server view for that server.
 
 ![Figure 19.9: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
-##### Using the Server View
+##### Using the Server View [](id=using-the-server-view-liferay-portal-6-1-user-guide-19-en)
 
 The server view provides you with detailed information about a server, including 
 statistics and performance metrics. You can get to the server view by clicking a
@@ -509,7 +509,7 @@ the update process and also gives you extensive information on how your servers
 are running. Next you'll take a look at how to manage the users in your LCS 
 project.
 
-#### Managing LCS Users in Your Project
+#### Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project-liferay-portal-6-1-user-guide-19-en)
 
 The Users section of LCS is where you manage the LCS users that are part of your 
 project. It's here that you can grant or revoke LCS roles or invite others that 

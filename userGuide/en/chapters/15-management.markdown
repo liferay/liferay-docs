@@ -1,5 +1,5 @@
 
-# Management [](id=administering-liferay-portal) 
+# Management [](id=administering-liferay-portal)
 
 You know how all these retailers advertise themselves as a "one stop shop" for
 anything you want? The idea is they have so much stuff that chances are whatever
@@ -49,7 +49,7 @@ only users with the administrator role, which is a portal scoped role, have
 permission to view this section of the control panel. You can, of course, grant
 permissions to one or more sections to custom roles.
 
-## Adding users [](id=lp-6-1-ugen12-adding-users-0) 
+## Adding users [](id=lp-6-1-ugen12-adding-users-0)
 
 Let's add a user account for yourself and configure this account so it has the
 same administrative access as the default administrator account. Go up to the
@@ -119,7 +119,7 @@ of the above functions because you have administrative access.
 
 Let's look next at how to manage organizations. 
 
-### Organizations [](id=lp-6-1-ugen15-organizations-0) 
+### Organizations [](id=lp-6-1-ugen15-organizations-0)
 
 Organizations are used to represent hierarchical structures of users such as
 those of companies, businesses, non-profit organizations, churches, schools, and
@@ -309,7 +309,7 @@ can be assigned to organizations when they fit into a hierarchical structure.
 Users groups provide a more ad hoc way to group users than sites and
 organizations. Let's look at them next.
 
-## User groups [](id=lp-6-1-ugen12-user-groups-0) 
+## User groups [](id=lp-6-1-ugen12-user-groups-0)
 
 User Groups are designed to allow portal administrators to create groups of
 users that traverse the organizations hierarchy. They can be used to create
