@@ -35,6 +35,12 @@ for i in content:
         suffix = i[eff:]
         i = prefix + "\\" + "\\" + suffix
     
+    if i.startswith("+sidebar"):
+        i = "\\begin{roundedframe}\n\\begin{wrapfigure}{l}{0.12\\textwidth}\n\\includegraphics{../../images/01-tip.png}\n\end{wrapfigure}\n"
+        
+    if i.startswith("-sidebar"):
+        i = "\end{roundedframe}"
+        
     #if i.startswith("\href"):
     #    print (i)
     #    print("Found href; ignoring.")
