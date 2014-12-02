@@ -1,7 +1,9 @@
 # Enabling Search and Indexing
 
-To implement search and indexing functionality for a custom entity in a
-data-driven application, you need to follow these three steps:
+Liferay's search and indexing functionality is provided by Apache Lucene, a
+Java-based search library. To implement search and indexing functionality for a
+custom entity in a data-driven application, you need to follow these three
+steps:
 
 1. Create an `*Indexer` class in your portlet project and register this class in
    your project's `liferay-portlet.xml` file.
@@ -53,14 +55,21 @@ after you've added the `<indexer-class>` element to `liferay-portlet.xml` so
 that Liferay registers your indexer with your portlet.
 
 If you'd like to review the contents of your portal's indexer registry, you can
-execute the follow Grovvy script from Liferay's Script console. This script uses
+execute the follow Groovy script from Liferay's Script console. This script uses
 Liferay's `IndexerRegistryUtil` class to retrieve a list of registered indexers.
 Then it prints the associated portlet ID and classnames for each indexer. To
 access the Script console, go to *Admin* &rarr; *Control Panel*, then click on
 *Server Administration*, then *Script*. Select *Groovy* for the language, then
-enter the following script. Caution! Before executing any script on a production
-Liferay instance, make sure to test it first locally. Review the script, then
-click *Execute*.
+enter the following script.
+
++$$$
+
+**Caution:** Before executing any script on a production Liferay instance, make
+sure to test it locally first.
+
+$$$
+
+Review the script, then click *Execute*.
 
     import com.liferay.portal.kernel.search.IndexerRegistryUtil;
     import com.liferay.portal.kernel.search.Indexer;
@@ -142,7 +151,52 @@ And add the following lines inside of your `delete[Entity]` method:
     indexer.delete(entry);
 
 Of course, in both of the above snippets, replace `[Entity]` with the actual
-name of your entity.
+name of your entity. Save your `[Entity]LocalServiceImpl.java` file and redeploy
+your portlet project.
+
+Use your portlet to add and update some custom entities to test your indexer. If
+it's working correctly, your indexer should add documents to Liferay's index for
+each entity that's added or updated. By default, Liferay's index data is stored
+in the `[Liferay Home]/data/lucene` folder. This folder contains sub-folders
+corresponding to each of your portal instances. For instance, if your default
+portal instance has a company ID of `10154`, then there should be a folder
+called `10154` in your `[Liferay Home]/data/lucene`. The contents of the `10154`
+are in binary format; they're not human-readable. However, you can use a
+third-party tool, such as Luke, to browse the Lucene indexes.
+
+Luke is a development tool which allows you to browse and modify existing Lucene
+indexes. It is provided as free and open-source software. You can obtain it from
+Google Code here:
+[https://code.google.com/p/luke](https://code.google.com/p/luke). Download the
+the `.jar` file. To start Luke, open a command line or terminal, navigate to the
+directory which contains the `.jar` file and run the following command:
+
+    java -jar lukeall-3.5.0.jar
+
+If you have a newer version of Luke, replace the version above with your
+version. Once Luke is running, you want to check Liferay's Lucene indexes to
+make sure that your custom entities have been indexed. Click *File* &rarr; *Open
+Lucene Index* and enter the path to the folder of the portal instance whose
+index you want to open. E.g., if your portal instance's company is `10154`,
+enter the following path:
+
+    [Liferay Home]/data/lucene/10154
+
+Check the following boxes to make sure that you can open the indexes and that
+you won't accidentally modify the indexes as you're browsing:
+
+- Open in Read-Only mode
+- Force unlock, if locked
+
+Then click *OK*. If you click on Luke's Documents tab, you can browse all of the
+indexed documents by document number. If you click on Luke's Search tab, you can
+enter a search query. Click on *Search* and Luke will display a list of all
+matching documents. Use Luke to check that the custom entities you added via
+your portlet appear in Liferay's Lucene index. If you need to learn Lucene's
+search query syntax, please refer to Lucene's
+[documentation](http://lucene.apache.org/core/documentation.html) or
+[tutorial](http://lucene.apache.org/core/quickstart.html). Note: Liferay 6.2
+uses Lucene 3.5.0. There are also other helpful references, such as [http://www.lucenetutorial.com/lucene-query-syntax.html](http://www.lucenetutorial.com/lucene-query-syntax.html).
 
 ## Providing a Search Mechanism
 
@@ -205,11 +259,11 @@ information on the JSON configuration of the Search portlet, please refer to the
 tutorial on
 [Faceted Search and Customized Search Filtering](https://dev.liferay.com/develop/tutorials).
 
-However, you don't have to use Liferay's Search portlet. In this tutorial,
-you'll learn how to use Liferay's API to create a custom search mechanism in
-your own portlet. You'll create one JSP for entering a search query and another
-JSP for displaying the search results. When implementing search and indexing in
-a custom portlet, the following Liferay classes are important:
+However, you don't have to use Liferay's Search portlet. In this section, you'll
+learn how to use Liferay's API to create a custom search mechanism in your own
+portlet. You can create one JSP for entering a search query and another JSP for
+displaying the search results. When implementing search and indexing in a custom
+portlet, the following Liferay classes are important:
 
 - `com.liferay.portal.kernel.search.SearchContext`
 - `com.liferay.portal.kernel.search.SearchContextFactory`
@@ -225,12 +279,13 @@ search context provides such details as the company instance to search, the user
 invoking the search, the locale, the timezone, etc. Since this class has a wide
 variety of context properties to deal with, the most effective way to get an
 instance of it is to call the `getInstance(HttpServletRequest request)` method
-of the `searchContextFactory` class like this:
+of `SearchContextFactory` like this:
 
     SearchContext searchContext = SearchContextFactory.getInstance(request);
 
 Once you have a `SearchContext` object, you can populate various values such as
 the keywords to search for, the pagination type, the start and end values, etc.
+For example, you could use the following:
 
     searchContext.setKeywords(keywords);
     searchContext.setAttribute("paginationType", "more");
@@ -242,4 +297,54 @@ represents the term or phrase for which you're searching. To find additional
 `SearchContext` attributes, please refer to the
 [Javadocs](http://docs.liferay.com/portal/6.2/javadocs).
 
-Earlier, you saw 
+Earlier, you saw how to use `IndexerRegistryUtil` to obtain an instance of your
+indexer. You can use any of the following four methods:
+
+- `getIndexer(Class<?> clazz)`
+- `getIndexer(String className)`
+- `nullSafeGetIndexer(Class<?> clazz)`
+- `nullSafeGetIndexer(String className)`
+
+Remember that when you deployed your plugin project, Liferay registered your
+indexer. When you invoke one of the above methods, Liferay returns an instance
+of the indexer class that corresponds to the class or class name argument that
+you supplied. Also, remember that your indexer class should extend
+`com.liferay.portal.kernel.search.BaseIndexer` or at least implement
+`com.liferay.portal.kernel.search.Indexer`. The `Indexer` interface defines a
+`search(SearchContext searchContext)` method that returns a `Hits` object. The
+`BaseIndexer` abstract class provides an implementation of this method that
+invokes `SearchEngineUtil.search(...)`.
+
+While it's possible to use a specific indexer to perform a search, it's also
+possible to perform a search using `SearchEngineUtil.search(...)` directly.
+`SearchEngineUtil` handles all the intricacies of the search engine
+implementation. All traffic to and from the search engine implementation passes
+through this class. If you're debugging a problem with your application's search
+and indexing functionality, can be beneficial to enable debug level logging on
+this class.
+
+The result of invoking either an indexer's `search(SearchContext searchContext)`
+method or of invoking `SearchEngineUtil.search(...)` directly is a `Hits`
+object. A `Hits` object contains the Lucene documents that match the search
+query. The Lucene documents, which are `Document` objects, can be retrieved from
+the `Hits` object in either array or list form. For example, suppose you have an
+indexer for an entity called `MyEntity`. Suppose further that you have a search
+context object called `searchContext` that contains the `keywords` string
+containing that phrase for which you want to search. You could invoke a search
+to obtain a `Hits` object like this:
+
+    Indexer indexer = IndexerRegistryUtil.getIndexer("MyEntity");
+
+    Hits hits = indexer.search(searchContext);
+
+You can retrieve the documents from the hits object in array form like this:
+
+    Document[] docs = hits.getDocs();
+
+Or you can retrieve the documents in list form:
+
+    List<Document> docs = hits.toList();
+
+To display the search results, you typically have to iterate over the array or
+list of documents. Each document is essentially a hash map of the indexed fields
+and their values.
