@@ -1,4 +1,4 @@
-# Documentation Errata
+# Documentation Errata [](id=documentation-errata)
 
 For Liferay 6.1 and backward, the documentation's primary format was books. We
 created two books: *Using Liferay Portal* and *Liferay Portal Developers Guide*.
