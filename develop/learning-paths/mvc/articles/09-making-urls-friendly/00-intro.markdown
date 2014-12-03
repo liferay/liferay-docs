@@ -23,4 +23,6 @@ If you've inspected the Guestbook App's URLs closely, did you notice that the
 Primary Key of `Guestbook` and `Entry` entities are frequently used as URL
 parameters? In the second part of this learning path, you'll remedy that by
 substituting the `name` field of each entity for the Primary Key. Then your
-portlet URLs will be really friendly. 
+portlet URLs will be even friendlier, wich means they'll be more human
+readable, more concise, and more likely to buy you dinner. Okay, one of those
+claims isn't true, but the point remains; the resulting URLs will be Friendly.
