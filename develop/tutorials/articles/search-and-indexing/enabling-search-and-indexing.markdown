@@ -194,9 +194,9 @@ enter a search query. Click on *Search* and Luke will display a list of all
 matching documents. Use Luke to check that the custom entities you added via
 your portlet appear in Liferay's Lucene index. If you need to learn Lucene's
 search query syntax, please refer to Lucene's
-[documentation](http://lucene.apache.org/core/documentation.html) or
-[tutorial](http://lucene.apache.org/core/quickstart.html). Note: Liferay 6.2
-uses Lucene 3.5.0. There are also other helpful references, such as [http://www.lucenetutorial.com/lucene-query-syntax.html](http://www.lucenetutorial.com/lucene-query-syntax.html).
+[documentation](http://lucene.apache.org/core/3_5_0/queryparsersyntax.html).
+Note: Liferay 6.2 uses Lucene 3.5.0. Another helpful reference is
+[http://www.lucenetutorial.com/lucene-query-syntax.html](http://www.lucenetutorial.com/lucene-query-syntax.html).
 
 ## Providing a Search Mechanism
 
