@@ -256,8 +256,8 @@ Of course, replace the package path and entity name with your
 package path and entity name. Then click *Save*. You can add any number of
 custom entities to the Search portlet's configuration this way. For more
 information on the JSON configuration of the Search portlet, please refer to the
-tutorial on
-[Faceted Search and Customized Search Filtering](https://dev.liferay.com/develop/tutorials).
+Search portlet's documentation:
+[Searching for Content in Liferay](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/searching-for-content-in-liferay).
 
 However, you don't have to use Liferay's Search portlet. In this section, you'll
 learn how to use Liferay's API to create a custom search mechanism in your own
