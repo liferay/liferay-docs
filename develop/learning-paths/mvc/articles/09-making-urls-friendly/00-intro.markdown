@@ -1,4 +1,3 @@
-
 # Making URLs Friendly
 
 You're probably feeling good about the Guestbook Portlet now. The UI is looking

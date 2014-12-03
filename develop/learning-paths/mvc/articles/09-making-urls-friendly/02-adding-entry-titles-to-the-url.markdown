@@ -1,4 +1,4 @@
-# Removing Primary Keys from Portlet URLs
+# Removing the Primary Key from Portlet URLs
 
 After the last section on Making URLs Friendly, you have a good understanding of
 Liferay's Friendly URL pattern, from declaring your intentions in

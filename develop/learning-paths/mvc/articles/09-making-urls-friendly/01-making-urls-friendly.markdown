@@ -1,6 +1,7 @@
-# Making URLs Friendly
+# Creating URL Routes
 
-Click on one of the Guestbook app's buttons, like *Add Guestbook*. Here's what the URL looks like currently:
+Click on one of the Guestbook app's buttons, like *Add Guestbook*. Here's what
+the URL looks like currently:
 
     http://localhost:8080/web/guest/home?p_p_id=guestbook_WAR_guestbookportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=3&_guestbook_WAR_guestbookportlet_mvcPath=%2Fhtml%2Fguestbook%2Fedit_guestbook.jsp
 
@@ -10,7 +11,7 @@ following URL:
     http://localhost:8080/web/guest/home/-/guestbook/add_guestbook
 
 Isn't that a lot more user friendly? You can greatly improve
-the readability of any portlet URLs, and you can do it in two easy steps:
+the readability of any portlet URL, and you can do it in two easy steps:
 
 1. Add three lines to `liferay-portlet.xml`
 2. Create an XML file defining Friendly URL routes
@@ -107,5 +108,5 @@ of the Guestbook or Guestbook Entry.
 
 ## Next Steps
 
-[Removing Primay Keys from Portlet URLs](/develop/learning-paths/-/knowledge_base/removing-primary-keys-from-the-url)
+[Removing the Primay Key from Portlet URLs](/develop/learning-paths/-/knowledge_base/removing-primary-keys-from-the-url)
 
