@@ -15,6 +15,7 @@ Here are the topics we'll cover in this chapter:
 - Service Security Layers 
 - SOAP Web Services 
 - JSON Web Services 
+- Skinny JSON Provider
 - Authorizing Access to Services with OAuth
 
 ## Finding Services [](id=finding-services-liferay-portal-6-2-dev-guide-05-en)
@@ -1833,6 +1834,282 @@ That's it! You've implemented an OAuth client library, created a service
 implementation, and developed a user interface to present the OAuth cycle. Of
 course, this example and its code snippets are not compatible for all use cases,
 but they demonstrate configuring an OAuth-ready application for Liferay Portal. 
+
+## Skinny JSON Provider [](id=skinny-json-provider-liferay-portal-6-2-dev-guide-05-en)
+
+Out of the box, Liferay's built-in JSON web services provide access to Web
+Content articles and Dynamic Data Lists (DDLs), but return them in a verbose
+XML-based representation. The Skinny JSON Provider app offers web services for
+retrieving Web Content articles and Dynamic Data Lists (DDLs), returning them in
+a simplified, "skinny" JSON fashion. As a convenience, the Skinny JSON provider
+does additional parsing and processing to return the bare essentials of each
+article and DDL. The returned values are easier to read and light-weight, making
+them ideal for use in browsers and mobile applications. Each web content article
+representation is comprised of its associated web content structure fields. Each
+DDL representation is comprised of its data definition fields. 
+
+The Skinny JSON Provider app is available through the Liferay Marketplace.
+You'll find it categorized as a Utility app. You can read the section on
+[Downloading and Installing Apps](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/downloading-and-installing-apps-liferay-portal-6-2-user-guide-14-en)
+for details on how to install it.
+
+The Skinny JSON Provider app adds two new web service APIs that can be
+configured just like any other web service in Liferay. Here are the 
+context and class name that you'll need to specify for accessing these web
+services:
+
+- *Plugin Context Name:* `skinny-web`
+- *Service Class Name:* `skinny`
+
+To retrieve web content articles, use the `get-skinny-journal-articles` service.
+To retrieve Dynamic Data Lists, use the `get-skinny-ddl-records` service. Note,
+that both services include "skinny" in their name. The previous section on
+[JSON Web Services](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/json-web-services-liferay-portal-6-2-dev-guide-05-en)
+provides details on how JSON web services work in Liferay.
+
+![Figure 6.x: You can access Skinny JSON web services from JavaScript, cURL, URLs in your browser, and from Liferay's trusty JSONWS API browser interface.](../../images/jsonws-api-services-01.png)
+
+You can keep these service names in mind, as you'll see the services in action
+later in this section. But before invoking them, you'll want to understand how
+to use the Skinny JSON Provider anonymously and in a CSRF protected environment.
+
+### Accessing the Services Anonymously and in CSRF Protected Environments
+
+A typical use case for Skinny JSON Provider is to enable a mobile app to
+retrieve data through an anonymous request, without requiring authentication.
+Fortunately, you can configure Liferay to allow anonymous access to the Skinny
+JSON Provider. The configuration varies depending on the version of Liferay you
+are using. 
+
+For Liferay 6.1, you must add the value `getSkinny*` as a public JSON web
+service method entry in your `portal-ext.properties` file.
+
+    jsonws.web.service.public.methods=getSkinny*
+
+For Liferay 6.2 and later, the Skinny JSON Provider app is preconfigured to
+allow anonymous access by default, using the `@AccessControlled` annotation.
+Note that this preconfiguration cannot be changed without recompiling the plugin
+from its source code.
+
+Even without the need for authentication, all of Liferay's JSON web services
+require the use of the `p_auth` token for CSRF protection for environments that
+pass sensitive per-user data, like browser cookies. If your application is
+running in such an environment (e.g., JavaScript in a browser) and you're
+calling Liferay's JSON web services, you should never disable CSRF checking.
+However, if your app is running in a simpler environment, like that of a custom
+mobile app, and you understand the risks involved of disabling CSRF projection,
+you can disable it. The mechanism for disabling CSRF protection varies depending
+on the version of Liferay you are using.
+
+For Liferay 6.1, the only way to disable CSRF checking and the `p_auth` token
+requirement is to disable them globally, via this `portal-ext.properties` 
+setting:
+
+    json.service.auth.token.enabled=false
+
+For Liferay 6.2 and later, a better approach is to disable it only for those
+services that you believe don't need checking. To disable CSRF protection for
+the Skinny JSON Provider, you can add the following two values to the
+list of `auth.token.ignore.origins` values in your `portal-ext.properties`:
+
+    auth.token.ignore.origins=\
+        com.liferay.portal.jsonwebservice.JSONWebServiceServiceAction:/skinny-web.skinny/,\
+        com.liferay.portal.jsonwebservice.JSONWebServiceServiceAction:/skinny/
+
+Two entries are needed here because there are two different ways to access
+web services (one uses the plugin's context name, the other does not, as
+discussed in the *Mapping and Naming Conventions* section).
+
+Now that you've configured appropriate access for your Skinny JSON Provider app,
+let's call its services!
+
+### Retrieving Skinny Web Content Articles
+
+Invoking this service is done using the same mechanism as described earlier for
+JSON web services. The service is designed to retrieve all web content articles
+that are based on a given web content structure, in a given site or
+organization. Therefore, to retrieve skinny web content articles, you must pass
+in values for the following arguments:
+
+- `companyId` - The ID of the company in which the articles exist.
+- `groupName` - The human-readable name of the group (site or organization) in
+  which the articles exist.
+- `ddmStructureId` - The dynamic data mapping structure ID of the web content
+  structure upon which the desired articles are based.
+- `locale` (optional) - The name of the locale for which you want localized
+  articles (e.g., `en_US`, `es_ES`, `fr`, etc.). If you omit this argument, the
+  default locale of the server is used. If a locale is specified, and no such
+  localization exists for a given article, the article's default language is
+  used.
+
+To demonstrate using the web service, imagine a simple web content structure
+with the following fields:
+
+- `title` - A Text field with a title
+- `image` - A Documents and Media Library field for referencing an image file
+- `date` - A Date field (Date fields for Web Content Structures are supported in
+  Liferay Portal 6.2 and later)
+- `toggle` - a Boolean field
+
+Now, imagine you have three articles based on this structure, and you wish to
+retrieve them through this service. Here is an example JavaScript invocation to
+retrieve the articles:
+
+    Liferay.Service(
+      '/skinny-web.skinny/get-skinny-journal-articles',
+      {
+        companyId: 10157,
+        groupName: 'Guest',
+        ddmStructureId: '15521',
+        locale: 'en_US'
+      },
+      function(obj) {
+        console.log(obj);
+      }
+    );
+
+And here is an example URL you can specify to retrieve the articles:
+
+    http://localhost:8080/api/jsonws/skinny-web.skinny/get-skinny-journal-articles/company-id/10157/group-name/Guest/ddm-structure-id/15521/locale/en_US
+
+The URL specifies the DDM record ID parameter named `ddm-structure-id`, which
+which uses a different naming convention than the JavaScript parameter named
+`ddmStructureId`. Note that you must URL-encode any parameters that contain
+special characters. See the previous section *Encoding Parameters* for more
+information on proper encoding techniques. 
+
+On adding or editing a web content article, you can select a structure for your
+article. The structure selection screen displays a listing of web content
+Structures to choose from. Each web content structure has an ID that you can
+note for supplying to the Skinny Provider web service as a DDM structure ID
+value.
+
+![Figure 6.x: On adding or configuring a structure for web content, the structure's ID is displayed. You can specify this ID as the value for the DDM structure ID in querying for the articles associated with the structure.](../../images/web-content-structure-listing.png)
+
+For our skinny provider app's invocation, the return value is a `JSONArray`
+object containing zero or more articles. The following example value shows a
+`JSONArray` that includes 3 Web Content Articles:
+
+    [
+        {
+            "dynamicElements": {
+                "title": "Liferay Portal Welcome",
+                "toggle": "true",
+                "image": "/documents/10184/0/welcome_tools/9921a6ff-2a83-414e-b629-d174ea7f2a0c?t=1385161659939",
+                "date": "1393909200000"
+            }
+        },
+        {
+            "dynamicElements": {
+                "title": "It's Super",
+                "toggle": "",
+                "image": "/documents/10184/0/welcome_cube/f9e23e2c-122d-4b7e-bf67-29d33abc1ec1?t=1385161661151",
+                "date": "1394596800000"
+            }
+        },
+        {
+            "dynamicElements": {
+                "title": "And Amazing",
+                "toggle": "true",
+                "image": "/documents/10184/0/welcome_community/ef976219-16c8-481b-a482-e3dac3291dcf?t=1385161662900",
+                "date": "1395374400000"
+            }
+        }
+    ]
+
+Note, you get an empty array (`[]`) if there are no articles to return.
+
+### Retrieving Skinny Dynamic Data Lists
+
+Like the above service, this service is designed to retrieve all records in a
+specific Dynamic Data List. Each Dynamic Data List is globally recognized by its
+unique ID--they don't require additional criteria, like a company ID or group
+name. Further, Dynamic Data Lists do not support localization, so there is no
+need for a locale argument.
+
+Therefore, to retrieve Dynamic Data List records through this service, you must
+simply specify the DDL record set ID of the list you wish to retrieve.
+
+Imagine a simple Dynamic Data List based on the following Data Definition:
+
+- `title` - A Text field with a title.
+- `image` - A Documents and Media Library field for referencing images.
+- `date` - A Date field.
+- `toggle` - a Boolean field.
+
+Now imagine you have three records in the list, and wish to retrieve them through
+this service. You might retrieve the records by implementing a JavaScript
+invocation like this one:
+
+    Liferay.Service(
+      '/skinny-web.skinny/get-skinny-ddl-records',
+      {
+        ddlRecordSetId: 15002
+      },
+      function(obj) {
+        console.log(obj);
+      }
+    );
+
+Note that parameter `ddlRecordSetId` is used for passing in the DDL record set
+ID.
+
+If you want to retrieve records using a URL, you could specify a URL
+like this one:
+
+    http://localhost:8081/api/jsonws/skinny-web.skinny/get-skinny-ddl-records/ddl-record-set-id/15002
+
+Note that the DDL record set ID is specified for the parameter
+`ddl-record-set-id`. From the Dynamic Data Lists app, each list that you
+configure is assigned an ID that you can supply to the Skinny Provider web
+service as a the DDL record set ID value. 
+
+![Figure 6.x: On adding or configuring a list in the Dynamic Data List app, the list's ID is displayed. You can specify this ID as the value for the DDL record set ID in querying the list from the Skinny web service.](../../images/ddl-data-definition-listing.png)
+
+For this example, the returned value is a `JSONArray` containing all of the
+records of the specified dynamic data list. The `JSONArray` might look similar
+to this one:
+
+    [
+        {
+            "dynamicElements": {
+                "title": "Amazing Liferay",
+                "toggle": "true",
+                "image": "{\"groupId\":\"10184\",\"uuid\":\"012c2d55-b99f-4c85-92c9-7381c3693044\",\"version\":\"1.0\"}",
+                "date": "2014-03-14"
+            }
+        },
+        {
+            "dynamicElements": {
+                "title": "Can Do Much",
+                "toggle": "false",
+                "image": "{\"groupId\":\"10184\",\"uuid\":\"f9e23e2c-122d-4b7e-bf67-29d33abc1ec1\",\"version\":\"1.0\"}",
+                "date": "2011-03-04"
+            }
+        },
+        {
+            "dynamicElements": {
+                "title": "For You!",
+                "toggle": "true",
+                "image": "{\"groupId\":\"10184\",\"uuid\":\"ef976219-16c8-481b-a482-e3dac3291dcf\",\"version\":\"1.0\"}",
+                "date": "2013-03-04"
+            }
+        }
+    ]
+
+If the DDL has no records, an empty array (`[]`) is returned.
+
+Consider the Documents and Media Library values returned in this example. Each
+value itself is a JSON object that you can parse (e.g., by invoking JavaScript's
+`JSON.parse()` method on it). Each object includes the group ID and UUID of the
+target image. You can use the group ID and UUID to construct a URL, like the one
+below, to access the image.
+
+    http://localhost:8081/documents/[groupId]/[uuid]
+
+As a recap, the Skinny JSON Provider app can help you retrieve lightweight
+"skinny" representations of dynamic data list records and web content articles.
+What a great way to access these core Liferay entities! 
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-05-en)
 
