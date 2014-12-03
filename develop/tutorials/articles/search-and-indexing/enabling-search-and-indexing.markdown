@@ -347,4 +347,30 @@ Or you can retrieve the documents in list form:
 
 To display the search results, you typically have to iterate over the array or
 list of documents. Each document is essentially a hash map of the indexed fields
-and their values.
+and their values. Please refer to the
+[Search and Indexing Learning Path](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing)
+for an explanation of how to create a portlet user interface that facilitates
+searching and viewing search results. In the learning path example, a search bar
+is added to the JSP that renders the main portlet view. When a search query is
+submitted, the phrase entered by the user is submitted as a `keywords` string to
+the JSP that renders the search results. The JSP that renders the search results
+contains the code that creates and populates a search context, obtains an
+indexer, uses the indexer to search, and retrieves the entities that correspond
+to the hits resulting from the search. However, this code does not have to live
+in the JSP. You could pull all of this logic out of the JSP and into a portlet
+action method or into a portlet service method that's invoked by a portlet
+action method.
+
+In this tutorial, you've learned how to create an register an indexer for a
+custom entity in your portlet project. You've learned how to update your service
+layer so that your indexer is invoked whenever an add, update, or delete
+operation is performed on a custom entity. And you've seen how to use Liferay's
+search API to create a search context and how to actually perform a search and
+obtain a list of search results. To explore more features of Liferay's search
+API, please see the tutorial on Faceted Search and Customized Search Filtering.
+
+<!--
+## Related Topics
+
+Add link to Faceted Search and Customized Search Filtering tutorial here.
+-->
