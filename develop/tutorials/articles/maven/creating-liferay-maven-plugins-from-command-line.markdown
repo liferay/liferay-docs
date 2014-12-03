@@ -23,21 +23,20 @@ Maven](/develop/tutorials/-/knowledge_base/6-2/setting-up-maven) tutorial to
 configure Maven to access the Liferay Repository for Liferay CE and EE
 artifacts. -Cody -->
 
-1.  Open the command prompt or terminal and navigate to the parent directory in
-    which you want to create the plugin project. Archetype create a
-    sub-directory for each plugin project you create.
+1. Open the command prompt or terminal and navigate to the parent directory in
+   which you want to create the plugin project. Archetype create a sub-directory
+   for each plugin project you create.
 
-+$$$
+    +$$$
 
-**Note:** If you haven't already
-    created a parent project, you may want to consider creating one to share
-    common project information. See the
+    **Note:** If you haven't already created a parent project, you may want to
+    consider creating one to share common project information. See the
     [Using Liferay Maven Parent Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects)
     tutorial for details.
 
-$$$
+    $$$
 
-2.  Execute the following command: 
+2. Execute the following command: 
 
         mvn archetype:generate
 
@@ -60,10 +59,10 @@ $$$
         Choose a number or apply filter (format: [groupId:]artifactId,
         case sensitive contains):
 
-3.  To find the right Liferay archetype for your project, you can either scroll
-    up to find it or apply filters to narrow the set of results. Filtering on
-    *liferay* as your group ID, and a plugin type (*portlet*, *hook*, *theme*,
-    etc.) can help you focus on more applicable Liferay archetypes. 
+3. To find the right Liferay archetype for your project, you can either scroll
+   up to find it or apply filters to narrow the set of results. Filtering on
+   *liferay* as your group ID, and a plugin type (*portlet*, *hook*, *theme*,
+   etc.) can help you focus on more applicable Liferay archetypes. 
 
     Entering `liferay:portlet` as a filter gives a listing of Liferay portlet
     archetypes: 
@@ -89,13 +88,13 @@ $$$
         number or apply filter (format: [groupId:]artifactId, case sensitive co
         ntains): :
 
-4.  Choose an archetype by entering its number. 
+4. Choose an archetype by entering its number. 
 
-5.  You're prompted to choose the archetype version. Enter the number
-    corresponding to the Liferay version for the archetype. However, you're not
-    required to select the archetype version that corresponds with your Liferay
-    instance; older archetype versions are compatible with updated Liferay
-    bundles. 
+5. You're prompted to choose the archetype version. Enter the number
+   corresponding to the Liferay version for the archetype. However, you're not
+   required to select the archetype version that corresponds with your Liferay
+   instance; older archetype versions are compatible with updated Liferay
+   bundles. 
 
         Choose com.liferay.maven.archetypes:liferay-portlet-archetype version:
         1: 6.0.2
@@ -122,8 +121,8 @@ $$$
         31: 7.0.0-m2
         Choose a number: 31:
 
-6.  Enter values for the *groupId*, *artifactId*, *version*, and *package*
-    coordinates (properties) of your project. Here are some examples: 
+6. Enter values for the *groupId*, *artifactId*, *version*, and *package*
+   coordinates (properties) of your project. Here are some examples: 
 
         groupId: com.liferay.sample
         artifactId: sample-portlet
@@ -137,7 +136,7 @@ $$$
     For more information on defining Maven coordinates, see
     [http://maven.apache.org/pom.html#Maven_Coordinates](http://maven.apache.org/pom.html#Maven_Coordinates).
 
-7.  Enter the letter *Y* to confirm your coordinates.
+7. Enter the letter *Y* to confirm your coordinates.
 
     Maven's Archetype tool creates a Liferay plugin project directory with a new
     `pom.xml` file and source code. 
