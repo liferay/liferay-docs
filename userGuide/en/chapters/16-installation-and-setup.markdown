@@ -2208,7 +2208,7 @@ You've officially added Mojarra to your application server. Now you can deploy
 Liferay. 
  
 
-## Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-16-en)
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-16-en)
 
 It's time to deploy Liferay as an exploded web archive within your
 `$TOMCAT_HOME/webapps` folder. 
