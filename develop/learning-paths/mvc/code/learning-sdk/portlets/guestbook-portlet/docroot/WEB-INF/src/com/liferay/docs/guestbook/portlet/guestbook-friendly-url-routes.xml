@@ -24,3 +24,4 @@
         <implicit-parameter name="javax.portlet.action">switchTabs</implicit-parameter>
     </route>
 </routes>
+
