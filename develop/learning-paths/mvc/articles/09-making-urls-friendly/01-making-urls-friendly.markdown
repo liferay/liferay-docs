@@ -1,20 +1,8 @@
 # Making URLs Friendly
 
-You're probably feeling good about the Guestbook Portlet now. The UI is looking
-snazzy, it has front- and back-end validation, and you've implemented several
-other features that a modern app should have. But before you jump off the
-learning paths and begin trailblazing Liferay development on your own, click on
-one of your Guestbook app's buttons, like *Add Guestbook*. Check out the URL
-that the portal so generously generated:
+Click on one of the Guestbook app's buttons, like *Add Guestbook*. Here's what the URL looks like currently:
 
     http://localhost:8080/web/guest/home?p_p_id=guestbook_WAR_guestbookportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=3&_guestbook_WAR_guestbookportlet_mvcPath=%2Fhtml%2Fguestbook%2Fedit_guestbook.jsp
-
-As the developer of the app, maybe you like to see all those parameters as much
-as Liferay likes to generate them for you. How do you think the app's
-users will feel when they see the URL? Let's make it a little more friendly,
-and meaningful, for them. Your app's users aren't the only reason to create
-Friendly URLs. Search Engine Optimization requires that your URLs be *concise*.
-That's one word you wouldn't use to describe the generated URL above.
 
 When you're done with this section, clicking *Add Guestbook* will generate the
 following URL:
@@ -24,7 +12,7 @@ following URL:
 Isn't that a lot more user friendly? You can greatly improve
 the readability of any portlet URLs, and you can do it in two easy steps:
 
-1. Add three lines to liferay-portlet.xml
+1. Add three lines to `liferay-portlet.xml`
 2. Create an XML file defining Friendly URL routes
 
 ## Declaring Friendly URL Mapping to Liferay
@@ -119,5 +107,5 @@ of the Guestbook or Guestbook Entry.
 
 ## Next Steps
 
-[Creating Remote Services](/develop/learning-paths/-/knowledge_base/creating-remote-services)
+[Removing Primay Keys from Portlet URLs](/develop/learning-paths/-/knowledge_base/removing-primary-keys-from-the-url)
 
