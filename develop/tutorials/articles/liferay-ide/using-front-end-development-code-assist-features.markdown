@@ -103,9 +103,9 @@ You can also add the import from the snippets under *Taglib Imports*&rarr;
 1.  Add an `<aui:script>` tag inside your JSP and configure it to look like the
     following code:
     
-    <aui:script>
-        aui
-    </aui:script>
+        <aui:script>
+            aui
+        </aui:script>
 
 2. Press *ctrl+space*, with your cursor placed next to `aui`, to bring up code 
 inference.
