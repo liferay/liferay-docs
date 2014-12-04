@@ -35,8 +35,8 @@ available to all of its child sites.
 ## User Segment Rules [](id=user-segment-rules)
 
 Custom rules can be created by developers and deployed as OSGi plugins. See the
-[Creating Custom Audience Targeting Rules](https://www.liferay.com) tutorial for
-details.
+[Extending the Audience Targeting Application](/develop/tutorials/-/knowledge_base/6-2/extending-the-audience-targeting-application)
+tutorial for details.
  
 These are some of the rules that are included with the app by default:
 
@@ -117,7 +117,7 @@ shows the asset that's been most viewed by users that belong to the user segment
 ![Figure 7.4: the Content Views report shows the asset that's been most viewed by users that belong to a user segment.](../../images/07-audience-targeting-user-segment-report.png)
 
 Additional reports can be created by developers and deployed as OSGI plugins.
-See the [Creating Custom Audience Targeting Reports](http://www.liferay.com)
+See the [Extending the Audience Targeting Application](/develop/tutorials/-/knowledge_base/6-2/extending-the-audience-targeting-application)
 tutorial for details. Reports are generated daily by default. However, you can
 generate a report at any time. To generate a new report when currently viewing a
 report, click on the *Update Report* button in the top right corner.
