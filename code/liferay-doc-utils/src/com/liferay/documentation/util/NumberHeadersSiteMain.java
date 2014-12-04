@@ -257,26 +257,35 @@ public class NumberHeadersSiteMain extends Task {
 					lineNum + " is missing header text.");
 			}
 
-			Map idMap = IDS;
-			if (line.startsWith("##")) {
-				idMap = secondaryIds;
-			}
-
 			int idCount = -1;
 			String newHeading = null;
 			while (true) {
 
 				newHeading = assembleId(heading, idCount);
 
-				if (idMap.get(newHeading) == null) {
+				if (line.startsWith("##")) {
+					if (secondaryIds.get(newHeading) == null) {
 
-					// Heading is unique
+						// Heading is unique for the article
 
-					// Add the ID
+						// Map the ID to the line number
 
-					idMap.put(newHeading, filename);
+						secondaryIds.put(newHeading, lineNum);
 
-					break;
+						break;
+					}
+				}
+				else {
+					if (IDS.get(newHeading) == null) {
+
+						// Heading is unique for the document set
+
+						// Map the ID to the filename
+
+						IDS.put(newHeading, filename);
+
+						break;
+					}
 				}
 
 				idCount++;
