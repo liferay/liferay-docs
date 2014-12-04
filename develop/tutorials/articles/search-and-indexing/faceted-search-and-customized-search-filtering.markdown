@@ -147,3 +147,85 @@ facet configurations. *Drilling down* means manually selecting filters to apply
 to a search.
 
 ![Figure 1: Here, the user has *drilled down* (filtered the search results) by manually selecting the *Liferay* site and the *Document* asset type.](../../images/drilling-down.png)
+
+If you need to implement specific filters that are not suited to being
+implemented as facets, you can still use Liferay's search API. Instead of
+adding facets to a search context, you can set boolean clauses on the search
+context. That is, instead of using `searchContext.addFacet(Facet facet)`, you
+would use `searchContext.setBooleanClauses(BooleanClause[] booleanClauses)`.
+This method allows you to pass any number of filter criteria to the search
+context as an array of boolean clauses. Filtering implemented this way is
+several times for efficient than anything done via the facet API. Another
+advantage of the boolean clause API is that it supports features like exclusions
+(e.g., `(-field:not_this_value)`) which are not supported by facets.
+
+Consider again the case where you need to search both web content articles and
+only PDF files from the Documents and Media library. You could develop a custom
+search portlet to satisfy this use case but it's easier to customize the Search
+portlet. The following steps explain how to create a JSP hook to customize the
+Search portlet to satisfy this use case.
+
+1. Create a new Liferay hook project. To create a new Liferay hook project using
+   Liferay IDE, select *File* &rarr; *New Liferay Plugin Project*, select the
+   *Hook* plugin type, then click *Finish*.
+
+2. If you're using Liferay IDE, right-click on your project in the Package
+   Explorer and select *New Liferay Hook Configuration*. Check the *Custom JSPs*
+   box and click *Next*. Leave the Custom JSP folder set to `/custom_jsps` and
+   click *Add from Liferay...* next to JSP files to override. Select
+   `html/portlet/search/init.jsp` and `html/portlet/search/main_search.jsp`,
+   then click *Finish*.
+
+    If you're not using Liferay IDE, create a `liferay-hook.xml` file in your
+    project's `docroot/WEB-INF` folder and add the following contents to it:
+
+        <?xml version="1.0"?>
+        <!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
+
+        <hook>
+                <custom-jsp-dir>/custom_jsps</custom-jsp-dir>
+        </hook>
+
+    Then create a `custom_jsps` directory in your project's `docroot` folder and
+    add copy the `html/portlet/search/init.jsp` and
+    `html/portlet/search/main_search.jsp` files into this folder from Liferay's
+    source.
+
+3. Edit your `docroot/custom_jsps/html/portlet/search/main_search.jsp` file and
+   find the following line:
+
+        searchContext.setStart(mainSearchSearchContainer.getStart());
+
+    Add the following lines just below the line above:
+
+        Query stringQuery = StringQueryFactoryUtil.create("entryClassName:com.liferay.portlet.journal.model.JournalArticle (+entryClassName:com.liferay.portlet.documentlibrary.model.DLFileEntry +extension:pdf)");
+
+        BooleanClause clause = BooleanClauseFactoryUtil.create(searchContext, stringQuery, BooleanClauseOccur.MUST.getName());
+
+        searchContext.setBooleanClauses(new BooleanClause[] {clause});
+
+    In the query that you construct above, you're specifying that you're
+    searching for indexed documents with either an `entryClassName` equal to
+    `JournalArticle` or both an `entryClassName` equal to `DLFileEntry` and an
+    `extension` equal to `pdf`. For more information on Lucene query syntax,
+    please refer to Lucene's [documentation](http://lucene.apache.org/core/3_5_0/queryparsersyntax.html).
+
+4. Then edit your `docroot/custom_jsps/html/portlet/search/main_search.jsp` file
+   to add the required imports.
+
+    Find the following line:
+
+        <%@ page import="java.util.LinkedList" %>
+
+    Add the following lines just below the line above:
+
+        <%@ page import="com.liferay.portal.kernel.search.SearchContext" %>
+        <%@ page import="com.liferay.portal.kernel.search.BooleanClause" %>
+        <%@ page import="com.liferay.portal.kernel.search.BooleanClauseFactoryUtil" %>
+        <%@ page import="com.liferay.portal.kernel.search.BooleanClauseOccur" %>
+        <%@ page import="com.liferay.portal.kernel.search.StringQueryFactoryUtil" %>
+        <%@ page import="com.liferay.portal.kernel.search.Query" %>
+
+When you're finished following the above steps, deploy your hook plugin and test
+the Search portlet. Check that it only returns web content articles or documents
+and media files with the `.pdf` file extension as search results.
