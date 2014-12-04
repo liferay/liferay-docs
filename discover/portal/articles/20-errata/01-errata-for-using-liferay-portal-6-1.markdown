@@ -27,12 +27,12 @@ The Microsoft Office integration features are supported only on Windows XP with
 32-bit versions of Microsoft Internet Explorer and 32-bit versions of Microsoft
 Office.
 
-## Page 473: Installing Liferay on GlassFish 3
+## Page 473: Installing Liferay on GlassFish 3 [](id=page-473-installing-liferay-on-glassfish-3)
 
 The following sections are related to configuring Liferay Faces to function
 properly, allowing JSF applications to successfully work in GlassFish 3.
 
-### Clustering JSF Portlets in GlassFish 3
+### Clustering JSF Portlets in GlassFish 3 [](id=clustering-jsf-portlets-in-glassfish-3)
 
 To successfully cluster JSF portlets on your GlassFish application server,
 follow the instructions below:
@@ -92,7 +92,7 @@ follow the instructions below:
 By following these steps, you're able to cluster JSF portlets using the
 GlassFish application server.
 
-### Upgrading Mojarra in GlassFish 3
+### Upgrading Mojarra in GlassFish 3 [](id=upgrading-mojarra-in-glassfish-3)
 
 Some versions of GlassFish 3 are not bundled with the correct Mojarra version
 necessary to use Liferay Faces. For example, GlassFish 3.1.2 comes with Mojarra
@@ -125,7 +125,7 @@ the bottom of the portlet.
 
 Congratulations! You've officially upgraded your Mojarra version!
 
-### Upgrading Weld in GlassFish 3
+### Upgrading Weld in GlassFish 3 [](id=upgrading-weld-in-glassfish-3)
 
 Some versions of GlassFish 3 are not bundled with the correct Weld version
 necessary to use Liferay Faces. For example, GlassFish 3.1.2 comes with Weld
@@ -168,12 +168,12 @@ the bottom of the portlet.
 You're now set to use JSF applications in your Liferay Portal instance running
 on GlassFish 3!
 
-## Page 492: Installing Liferay on JBoss 7
+## Page 492: Installing Liferay on JBoss 7 [](id=page-492-installing-liferay-on-jboss-7)
 
 The following sections are related to configuring Liferay Faces to function
 properly, allowing JSF applications to successfully work in JBoss 7.
 
-### Upgrading Mojarra in JBoss 7
+### Upgrading Mojarra in JBoss 7 [](id=upgrading-mojarra-in-jboss-7)
 
 Some versions of JBoss 7.1.x are not bundled with the correct Mojarra version
 necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Mojarra
@@ -230,7 +230,7 @@ the bottom of the portlet.
 
 Congratulations! You've officially upgraded your Mojarra version!
 
-### Upgrading Weld in JBoss 7
+### Upgrading Weld in JBoss 7 [](id=upgrading-weld-in-jboss-7)
 
 Some versions of JBoss 7.1.x are not bundled with the correct Weld version
 necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Weld
@@ -256,12 +256,12 @@ and copy it to the following location:
 You're now set to use JSF applications in your Liferay Portal instance running
 on JBoss 7!
 
-## Page 504: Installing Liferay on Resin 4
+## Page 504: Installing Liferay on Resin 4 [](id=page-504-installing-liferay-on-resin-4)
 
 The following section is related to configuring Liferay Faces to function
 properly, allowing JSF applications to successfully work in Resin 4.
 
-### Upgrading Mojarra in Resin 4
+### Upgrading Mojarra in Resin 4 [](id=upgrading-mojarra-in-resin-4)
 
 Some versions of Resin 4 are not bundled with the correct Mojarra version
 necessary to use Liferay Faces. For example, Resin 4.0.33 comes with Mojarra
@@ -282,7 +282,7 @@ artifacts.
 You're now set to use JSF applications in your Liferay Portal instance running
 on Resin 4!
 
-## Page 507: Installing Liferay on Tomcat 7
+## Page 507: Installing Liferay on Tomcat 7 [](id=page-507-installing-liferay-on-tomcat-7)
 
 It is recommended to also add the `support-tomcat.jar` file to the
 `$TOMCAT_HOME/lib/ext` folder of your Tomcat installation. The file can be
@@ -297,12 +297,12 @@ The note explaining that Tomcat 6 users should not copy the `ccpp.jar` is no
 longer applicable to this section. The runtime error caused by this `JAR` was
 resolved in the release of Liferay 6.0.
 
-## Page 512: Installing Liferay on Tomcat 7
+## Page 512: Installing Liferay on Tomcat 7 [](id=page-512-installing-liferay-on-tomcat-7)
 
 The following section is related to configuring Liferay Faces to function
 properly, allowing JSF applications to successfully work in Tomcat 7.
 
-### Adding Mojarra to Tomcat 7
+### Adding Mojarra to Tomcat 7 [](id=adding-mojarra-to-tomcat-7)
 
 If you'd like to use JSF applications in your Tomcat application server, you'll
 need to add Mojarra. If you do not plan on using JSF applications in your
@@ -431,13 +431,13 @@ To upgrade Tomcat's global classpath, follow the steps below:
 
 You've officially added Mojarra to your application server.
 
-## Page 525: Installing Liferay on Oracle WebLogic 10.3
+## Page 525: Installing Liferay on Oracle WebLogic 10.3 [](id=page-525-installing-liferay-on-oracle-weblogic-10-3)
 
 The following sections are related to configuring Liferay Faces to function
 properly, allowing JSF applications to successfully work in Oracle WebLogic
 10.3 (11g).
 
-### Configuration for Deploying JSF Portlets on WebLogic 10.3
+### Configuration for Deploying JSF Portlets on WebLogic 10.3 [](id=configuration-for-deploying-jsf-portlets-on-weblogic-10-3)
 
 Complete the following instructions to ensure JSF applications deploy
 successfully using your WebLogic application server.
@@ -557,7 +557,7 @@ Liferay Faces source. To complete this, follow the instructions below:
 Excellent! You've configured your WebLogic application server to successfully
 deploy and run JSF applications on Liferay Portal.
 
-### Upgrading Mojarra on Oracle WebLogic 10.3 in Webapps Environment
+### Upgrading Mojarra on Oracle WebLogic 10.3 in Webapps Environment [](id=upgrading-mojarra-on-oracle-weblogic-10-3-in-webapps-environment)
 
 If you're upgrading Mojarra while running in a *webapp* environment, follow the
 instructions below. If you're running in a portlet environment, follow the next
@@ -648,7 +648,7 @@ To upgrade Mojarra, follow the instructions below:
 Your WebLogic application server's Mojarra instance is now upgraded in your
 webapp environment.
 
-### Upgrading Mojarra on Oracle WebLogic 10.3 in Portlet Environment
+### Upgrading Mojarra on Oracle WebLogic 10.3 in Portlet Environment [](id=upgrading-mojarra-on-oracle-weblogic-10-3-in-portlet-environment)
 
 If you're upgrading Mojarra while running in a *portlet* environment, follow the
 instructions below. If you're running in a webapp environment, follow the 
@@ -725,12 +725,12 @@ be built manually from the command-line.
 Your WebLogic application server's Mojarra instance is now upgraded in your
 portlet environment.
 
-## Page 536: Installing Liferay on WebSphere 8.0
+## Page 536: Installing Liferay on WebSphere 8.0 [](id=page-536-installing-liferay-on-websphere-8-0)
 
 The following sections are related to configuring Liferay Faces to function
 properly, allowing JSF applications to successfully work in WebSphere 8.0.
 
-### Configuration for Deploying JSF Portlets on WebSphere 8.0
+### Configuration for Deploying JSF Portlets on WebSphere 8.0 [](id=configuration-for-deploying-jsf-portlets-on-websphere-8-0)
 
 With servlet containers like Tomcat/Resin/Jetty and application servers like
 JBoss/GlassFish, deploying a portlet is as simple as copying the WAR artifact to
@@ -804,7 +804,7 @@ will startup properly.
 Awesome! By following these instructions, you've configured your WebSphere
 application server to deploy your JSF portlet.
 
-### Upgrading Mojarra on WebSphere 8.0
+### Upgrading Mojarra on WebSphere 8.0 [](id=upgrading-mojarra-on-websphere-8-0)
 
 WebSphere 8.0 ships with
 [MyFaces Core 2.0](http://wiki.apache.org/myfaces/Websphere_Installation) as the
