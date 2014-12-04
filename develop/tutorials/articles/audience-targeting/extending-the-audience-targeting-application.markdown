@@ -1,4 +1,4 @@
-# Extending the Audience Targeting Application
+# Extending the Audience Targeting Application [](id=extending-the-audience-targeting-application-0)
 
 The Audience Targeting application is designed as a framework to be extended by
 other developers easily.
@@ -13,7 +13,7 @@ These extension points include:
 * Reports
 * Tracking Actions
 
-## Creating New Rule Types
+## Creating New Rule Types [](id=creating-new-rule-types)
 
 In the Audience Targeting application, a User Segment is defined as a group
 of users that matches a set of rules. Out of the box, Liferay provides several
@@ -74,7 +74,7 @@ that specific user segment.
 
 <!-- ## Customize the Rules Engine -->
 
-## Creating New Reports
+## Creating New Reports [](id=creating-new-reports)
 
 In the Audience Targeting application, a report is a tool that allow
 administrators to analyze the behavior of users belonging to specific user
@@ -127,7 +127,7 @@ be listed when you select the Reports action in the  action menu of an specific
 campaign in the Audience Targeting application. Click the Update Report button
 to force your report to obtain and display the latest information.
 
-## Creating New Tracking Actions
+## Creating New Tracking Actions [](id=creating-new-tracking-actions)
 
 In the Audience Targeting application, a Campaign defines a set of content
 targeted to specific user segments in a time period. Tracking Actions allow
@@ -189,9 +189,9 @@ Campaign admin selects it, the piece of GUI defined by the developer
 (eg. the forums and categories selector) is added to the add/edit Campaign form
 so that the admin can set a value for that specific campaign.
 
-## Troubleshooting
+## Troubleshooting [](id=troubleshooting)
 
-### If Changes Are Not Visible After Deploy
+### If Changes Are Not Visible After Deploy [](id=if-changes-are-not-visible-after-deploy)
 
 If the plugin has been successfully deployed but the changes are not visible,
 check that the generated .jar in the /dist folder of the plugins SDK actually
@@ -202,7 +202,7 @@ template instead of the cache:
 
     freemarker.engine.resource.modification.check.interval=0
 
-## More information
+## More information [](id=more-information)
 
 In the [liferay-plugins](https://github.com/liferay/liferay-plugins)
 repository, plugins are laid out in a software development kit (SDK) -- the
