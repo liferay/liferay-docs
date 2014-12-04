@@ -9,7 +9,7 @@ plugins that can be hot deployed into your Liferay installation.
 These extension points include:
 
 * Rule Types
-* Rules Engine
+<!-- * Rules Engine -->
 * Reports
 * Tracking Actions
 
