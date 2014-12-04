@@ -1,4 +1,4 @@
-# Extending the Audience Targeting application
+# Extending the Audience Targeting Application
 
 The Audience Targeting application is designed as a framework to be extended by
 other developers easily.
@@ -13,7 +13,7 @@ These extension points include:
 * Reports
 * Tracking Actions
 
-## Creating new Rule Types
+## Creating New Rule Types
 
 In the Audience Targeting application, a User Segment is defined as a group
 of users that matches a set of rules. Out of the box, Liferay provides several
@@ -33,10 +33,10 @@ For example, let's see how to create a very simple rule called `Time Zone`.
 
 1. In the root of the Audience Targeting project, run the create_rule command
 (depending on your OS):
-	```
-	./create_rule.sh time-zone "Time Zone"
-	create_rule.bat time-zone "Time Zone"
-	```
+	
+        ./create_rule.sh time-zone "Time Zone"
+        create_rule.bat time-zone "Time Zone"
+	
 2. Move to the newly generated folder `rule-time-zone`. Notice that all the
 necessary files have been added by the create_rule command. If you now run the
 `ant deploy` command in the root of the `rule-time-zone` folder, you'll find
@@ -72,9 +72,9 @@ it, the piece of GUI defined by the developer (eg. the time zone selector) is
 added to the add/edit User Segment form so that the admin can set a value for
 that specific user segment.
 
-## Customize the Rules Engine
+<!-- ## Customize the Rules Engine -->
 
-## Creating new Reports
+## Creating New Reports
 
 In the Audience Targeting application, a report is a tool that allow
 administrators to analyze the behavior of users belonging to specific user
@@ -95,10 +95,10 @@ let's see how to create a very simple report for campaigns called
 
 1. In the root of the Audience Targeting project, run the create_report command
 (depending on your OS):
-	```
-	./create_report.sh hits-by-country "Hits by Country"
-	create_report.bat hits-by-country "Hits by Country"
-	```
+
+        ./create_report.sh hits-by-country "Hits by Country"
+        create_report.bat hits-by-country "Hits by Country"
+
 2. Move to the newly generated folder `report-hits-by-country`. Notice that all
 the necessary files have been added by the create_report command. If you now run
 the `ant deploy` command in the root of the `report-hits-by-country` folder,
@@ -127,7 +127,7 @@ be listed when you select the Reports action in the  action menu of an specific
 campaign in the Audience Targeting application. Click the Update Report button
 to force your report to obtain and display the latest information.
 
-## Creating new Tracking Actions
+## Creating New Tracking Actions
 
 In the Audience Targeting application, a Campaign defines a set of content
 targeted to specific user segments in a time period. Tracking Actions allow
@@ -149,10 +149,10 @@ For example, let's see how to create a very simple tracking action called
 
 1. In the root of the Audience Targeting project, run the create_tracking_action
 command (depending on your OS):
-	```
-	./create_tracking_action.sh forum-subscription "Forum Subscription"
-	create_tracking_action.bat forum-subscription "Forum Subscription"
-	```
+
+        ./create_tracking_action.sh forum-subscription "Forum Subscription"
+        create_tracking_action.bat forum-subscription "Forum Subscription"
+
 2. Move to the newly generated folder `tracking-action-forum-subscription`.
 Notice that all the necessary files have been added by the
 create_tracking_action command. If you now run the `ant deploy` command in the
@@ -191,16 +191,16 @@ so that the admin can set a value for that specific campaign.
 
 ## Troubleshooting
 
-### Changes are not visible after deploy
+### If Changes Are Not Visible After Deploy
+
 If the plugin has been successfully deployed but the changes are not visible,
 check that the generated .jar in the /dist folder of the plugins SDK actually
 contains the latest modifications.
 
-Also se this property to 0 to always retrieve the freemarker code from the
+Also set this property to `0` to always retrieve the Freemarker code from the
 template instead of the cache:
-```
-freemarker.engine.resource.modification.check.interval=0
-```
+
+    freemarker.engine.resource.modification.check.interval=0
 
 ## More information
 
