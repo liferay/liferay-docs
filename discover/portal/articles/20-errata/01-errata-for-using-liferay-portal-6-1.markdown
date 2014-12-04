@@ -855,13 +855,6 @@ below to correctly upgrade your version of Mojarra on WebSphere 8.0.
 Congratulations! You've upgraded your WebSphere application server's Mojarra
 version to 2.1.
 
-## Page 665: Configuring Liferay for High Availability
-
-In the *Properties File Changes* subsection of the chapter *19.2 Performance 
-Tuning* section, text for the `last.modified.check` property has been removed
-because the property is obsolete.
-
-
 ## Page 665: Configuring Liferay for High Availability [](id=page-665-configuring-liferay-for-high-availability)
 
 In the *Properties File Changes* subsection of the chapter *19.2 Performance 
