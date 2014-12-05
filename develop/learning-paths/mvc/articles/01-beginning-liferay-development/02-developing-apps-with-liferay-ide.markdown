@@ -13,7 +13,7 @@ environment, or Liferay provides a bundled version.
 you'll need it to run everything else. Because you'll be developing apps for
 Liferay Portal in Liferay IDE, the Java Development Kit (JDK) is required. It is
 an enhanced version of the Java Environment, used for developing new Java
-technology. You can download the JDK from Java's
+technology. You can download the Java SE JDK from the Java
 [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 page. 
 
