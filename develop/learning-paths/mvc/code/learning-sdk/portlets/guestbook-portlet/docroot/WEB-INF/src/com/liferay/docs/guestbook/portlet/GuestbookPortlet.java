@@ -190,12 +190,18 @@ public class GuestbookPortlet extends MVCPortlet {
 		String guestbookName = ParamUtil.getString(request, "guestbookName");
 
 		try {
+			
 			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(
 					guestbookName, orderByComparator);
+			
 			request.setAttribute("guestbook", guestbook);
+			
 		} catch (NoSuchGuestbookException e) {
+			
 			throw new NoSuchGuestbookException(e);
+			
 		} catch (SystemException e) {
+			
 			throw new SystemException(e);
 		}
 		response.setRenderParameter("mvcPath", "/html/guestbook/view.jsp");
