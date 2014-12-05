@@ -40,7 +40,6 @@ Let's work with the dependency jar files first.
                 <resource-root path="portlet.jar" />
             </resources>
             <dependencies>
-                <module name="ibm.jdk" />
                 <module name="javax.api" />
                 <module name="javax.mail.api" />
                 <module name="javax.servlet.api" />
@@ -52,40 +51,6 @@ Let's work with the dependency jar files first.
     Make sure to replace `[version]` with the correct version of the MySQL JDBC
     driver. If you are using a different database, replace the MySQL jar with 
     the driver jar for your database. 
-
-4.  Next, you'll need to include a patch from Liferay's source code for one of
-    JBoss' default `.jar` files. Once you've downloaded the Liferay source, unzip
-    the source into a temporary folder. We'll refer to the location of the Liferay
-    source as `$LIFERAY_SOURCE`.
-
-5.  Currently, there are bugs in the
-    `$JBOSS_HOME/modules/org/jboss/as/server/main/jboss-as-<$JBOSS_VERSION>.Final.jar`
-    file regarding the IBM JVM
-    ([LPS-39705](http://issues.liferay.com/browse/LPS-39705) and
-    [JBPAPP-9353](http://issues.jboss.org/browse/JBPAPP-9353)) which requires
-    additional steps to ensure a successful deployment with Liferay. In summary,
-    you'll need to update the `ServerDependenciesProcessor.class` file in the
-    `jboss-as-[$JBOSS_VERSION].Final.jar` file to specify the IBM JDK. The steps to
-    insert the patch can be referenced below.
-
-        1. Copy the `jboss-as-[$JBOSS_VERSION].Final.jar` file from
-        `$JBOSS_HOME/modules/org/jboss/as/server/main` to the
-        `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` folder.
- 
-        2. Navigate to the
-        `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` directory
-        in a command prompt and enter the following statement:
-    
-            jar uf jboss-as-server-[$JBOSS_VERSION].Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
-
-        This command inserts the `ServerDependenciesProcessor.class` file into
-        the `jboss-as-[$JBOSS_VERSION].Final.jar` file's
-        `org/jboss/as/server/deployment/module` folder. You can reference the
-        official documentation for updating a JAR file at
-        [http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
-
-        3. Copy the `jboss-as-[$JBOSS_VERSION].Final.jar` file back to its
-        original `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
 
 Great! You have your `.jar` files ready. 
 
@@ -210,19 +175,79 @@ below:
 
 Make sure you replace the `$JBOSS_HOME` references with the appropriate
 directory. You'll notice some Java security options. You'll finish configuring
-the Java security options in the *Security Configuration* section.
+the Java security options in the *Security Configuration* section. 
+
+Lastly, navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and
+insert the following path names inside the `<paths>...</paths>` element: 
+
+        <path name="com/sun/crypto" />
+        <path name="com/sun/crypto/provider" />
+        <path name="com/sun/image/codec/jpeg" />
+        <path name="com/sun/org/apache/xml/internal/resolver" />
+        <path name="com/sun/org/apache/xml/internal/resolver/tools" />
+
+The added paths resolve issues with portal deployment exceptions and image
+uploading problems on a Liferay Portal instance running on JBoss 7.1.x. 
 
 The prescribed script modifications are now complete for your Liferay
-installation on JBoss.
+installation on JBoss. Next you'll configure mail and the database. 
 
-Lastly, let's make the necessary changes in your `$JBOSS_HOME/modules`
-directory.
+## Using the IBM JDK with JBoss [](id=using-the-ibm-jdk-with-jboss)
+
+If you plan on using the IBM JDK with your JBoss application server, follow the
+instructions in this section. If you plan on using another type of JDK, you can
+skip this section. 
+
+Currently, there are bugs in the
+`$JBOSS_HOME/modules/org/jboss/as/server/main/jboss-as-<$JBOSS_VERSION>.Final.jar`
+file regarding the IBM JVM
+([LPS-39705](http://issues.liferay.com/browse/LPS-39705) and
+[JBPAPP-9353](http://issues.jboss.org/browse/JBPAPP-9353)), which requires
+additional steps to ensure a successful deployment with Liferay. 
+
+Open the `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file and
+insert the following dependency within the `<dependencies>` element: 
+
+    <module name="ibm.jdk" />
+
+Next, you'll need to include a patch from Liferay's source code for one of
+JBoss' default `.jar` files. This can be done by downloading the
+`liferay-portal` repository's ZIP file by clicking *Download ZIP* on the
+repository's [GitHub page](https://github.com/liferay/liferay-portal). Once
+you've downloaded the Liferay source, unzip the source into a temporary folder.
+This location will be referred to as `$LIFERAY_SOURCE`. 
+
+In summary, you'll need to update the `ServerDependenciesProcessor.class` file
+in the `jboss-as-[$JBOSS_VERSION].Final.jar` file to specify the IBM JDK. The
+steps to insert the patch can be referenced below. 
+
+1. Copy the `jboss-as-[$JBOSS_VERSION].Final.jar` file from
+   `$JBOSS_HOME/modules/org/jboss/as/server/main` to the
+   `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` folder. 
+ 
+2. Navigate to the
+   `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` directory
+   in a command prompt and enter the following statement: 
+    
+        jar uf jboss-as-server-[$JBOSS_VERSION].Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
+
+    This command inserts the `ServerDependenciesProcessor.class` file into the
+    `jboss-as-[$JBOSS_VERSION].Final.jar` file's
+    `org/jboss/as/server/deployment/module` folder. You can reference the
+    official documentation for updating a JAR file at
+    [http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html). 
+
+3. Copy the `jboss-as-[$JBOSS_VERSION].Final.jar` file back to its original
+   `$JBOSS_HOME/modules/org/jboss/as/server/main` folder. 
+
+Lastly, you'll need to make a few changes in your `$JBOSS_HOME/modules`
+directory. 
 
 1. Create the folder `$JBOSS_HOME/modules/ibm/jdk/main`. Create a new file
 called `module.xml` in that folder.
 
 2. Insert the following contents into the
-`$JBOSS_HOME/modules/ibm/jdk/main/module.xml` file:
+`$JBOSS_HOME/modules/ibm/jdk/main/module.xml` file: 
 
         <?xml version="1.0"?>
 
@@ -250,16 +275,8 @@ called `module.xml` in that folder.
             </dependencies>
         </module>
 
-3. Navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and insert
-the following path names inside the &lt;paths&gt;...<\/paths> element:
-
-        <path name="com/sun/crypto" />
-        <path name="com/sun/crypto/provider" />
-        <path name="com/sun/image/codec/jpeg" />
-        <path name="com/sun/org/apache/xml/internal/resolver" />
-        <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-
-Next you'll configure mail and the database. 
+Your JBoss application server is now configured to use the IBM JDK. Next, you'll
+learn about managing a data source with JBoss. 
 
 ## Database Configuration [](id=database-configuration)
 

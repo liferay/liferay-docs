@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="using-liferay-portal Conversion" basedir=".">
+<project name="portal Conversion" basedir=".">
 
 	<import file="../build.xml" />
 

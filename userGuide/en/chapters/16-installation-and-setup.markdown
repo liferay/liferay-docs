@@ -1000,7 +1000,7 @@ should also have installed your database driver.
 Terrific, you have your JAR files just where you need them. Next, we'll
 configure your domain.
 
-##### Domain Configuration [](id=domain-configuration-liferay-portal-6-2-user-guide-15-en)
+#### Domain Configuration [](id=domain-configuration-liferay-portal-6-2-user-guide-15-en)
 
 There are a couple of modifications you need to make in your domain to use
 Liferay Portal.
@@ -1224,7 +1224,7 @@ GlassFish.
 
 Your installation of Liferay Portal on GlassFish is complete!
 
-# Installing Liferay on JBoss 7.1 [](id=installing-liferay-on-jboss-7-1)
+## Installing Liferay on JBoss 7.1 [](id=installing-liferay-on-jboss-7-1)
 
 **Liferay Home** is one folder above JBoss's install location.
 
@@ -1238,7 +1238,7 @@ Your installation of Liferay Portal on GlassFish is complete!
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on JBoss.
 
-## Dependency Jars [](id=dependency-jars)
+### Dependency Jars [](id=dependency-jars)
 
 Let's work with the dependency jar files first.
 
@@ -1266,7 +1266,6 @@ Let's work with the dependency jar files first.
                 <resource-root path="portlet.jar" />
             </resources>
             <dependencies>
-                <module name="ibm.jdk" />
                 <module name="javax.api" />
                 <module name="javax.mail.api" />
                 <module name="javax.servlet.api" />
@@ -1279,43 +1278,9 @@ Let's work with the dependency jar files first.
     driver. If you are using a different database, replace the MySQL jar with 
     the driver jar for your database. 
 
-4.  Next, you'll need to include a patch from Liferay's source code for one of
-    JBoss' default `.jar` files. Once you've downloaded the Liferay source, unzip
-    the source into a temporary folder. We'll refer to the location of the Liferay
-    source as `$LIFERAY_SOURCE`.
-
-5.  Currently, there are bugs in the
-    `$JBOSS_HOME/modules/org/jboss/as/server/main/jboss-as-<$JBOSS_VERSION>.Final.jar`
-    file regarding the IBM JVM
-    ([LPS-39705](http://issues.liferay.com/browse/LPS-39705) and
-    [JBPAPP-9353](http://issues.jboss.org/browse/JBPAPP-9353)) which requires
-    additional steps to ensure a successful deployment with Liferay. In summary,
-    you'll need to update the `ServerDependenciesProcessor.class` file in the
-    `jboss-as-[$JBOSS_VERSION].Final.jar` file to specify the IBM JDK. The steps to
-    insert the patch can be referenced below.
-
-        1. Copy the `jboss-as-[$JBOSS_VERSION].Final.jar` file from
-        `$JBOSS_HOME/modules/org/jboss/as/server/main` to the
-        `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` folder.
- 
-        2. Navigate to the
-        `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` directory
-        in a command prompt and enter the following statement:
-    
-            jar uf jboss-as-server-[$JBOSS_VERSION].Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
-
-        This command inserts the `ServerDependenciesProcessor.class` file into
-        the `jboss-as-[$JBOSS_VERSION].Final.jar` file's
-        `org/jboss/as/server/deployment/module` folder. You can reference the
-        official documentation for updating a JAR file at
-        [http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html).
-
-        3. Copy the `jboss-as-[$JBOSS_VERSION].Final.jar` file back to its
-        original `$JBOSS_HOME/modules/org/jboss/as/server/main` folder.
-
 Great! You have your `.jar` files ready. 
 
-## Running Liferay on JBoss 7.1 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-jboss-7-1-in-standalone-mode-vs-domain-mode)
+### Running Liferay on JBoss 7.1 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-jboss-7-1-in-standalone-mode-vs-domain-mode)
 
 JBoss 7.1 can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
@@ -1348,7 +1313,7 @@ for information on setting up a Liferay cluster.
 
 $$$
 
-## Configuring JBoss [](id=configuring-jboss)
+### Configuring JBoss [](id=configuring-jboss)
 
 Let's make some adjustments in your configuration to support using Liferay.
 
@@ -1436,19 +1401,79 @@ below:
 
 Make sure you replace the `$JBOSS_HOME` references with the appropriate
 directory. You'll notice some Java security options. You'll finish configuring
-the Java security options in the *Security Configuration* section.
+the Java security options in the *Security Configuration* section. 
+
+Lastly, navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and
+insert the following path names inside the `<paths>...</paths>` element: 
+
+        <path name="com/sun/crypto" />
+        <path name="com/sun/crypto/provider" />
+        <path name="com/sun/image/codec/jpeg" />
+        <path name="com/sun/org/apache/xml/internal/resolver" />
+        <path name="com/sun/org/apache/xml/internal/resolver/tools" />
+
+The added paths resolve issues with portal deployment exceptions and image
+uploading problems on a Liferay Portal instance running on JBoss 7.1.x. 
 
 The prescribed script modifications are now complete for your Liferay
-installation on JBoss.
+installation on JBoss. Next you'll configure mail and the database. 
 
-Lastly, let's make the necessary changes in your `$JBOSS_HOME/modules`
-directory.
+### Using the IBM JDK with JBoss [](id=using-the-ibm-jdk-with-jboss-liferay-portal-6-2-user-guide-16-en)
+
+If you plan on using the IBM JDK with your JBoss application server, follow the
+instructions in this section. If you plan on using another type of JDK, you can
+skip this section. 
+
+Currently, there are bugs in the
+`$JBOSS_HOME/modules/org/jboss/as/server/main/jboss-as-<$JBOSS_VERSION>.Final.jar`
+file regarding the IBM JVM
+([LPS-39705](http://issues.liferay.com/browse/LPS-39705) and
+[JBPAPP-9353](http://issues.jboss.org/browse/JBPAPP-9353)), which requires
+additional steps to ensure a successful deployment with Liferay. 
+
+Open the `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file and
+insert the following dependency within the `<dependencies>` element: 
+
+    <module name="ibm.jdk" />
+
+Next, you'll need to include a patch from Liferay's source code for one of
+JBoss' default `.jar` files. This can be done by downloading the
+`liferay-portal` repository's ZIP file by clicking *Download ZIP* on the
+repository's [GitHub page](https://github.com/liferay/liferay-portal). Once
+you've downloaded the Liferay source, unzip the source into a temporary folder.
+This location will be referred to as `$LIFERAY_SOURCE`. 
+
+In summary, you'll need to update the `ServerDependenciesProcessor.class` file
+in the `jboss-as-[$JBOSS_VERSION].Final.jar` file to specify the IBM JDK. The
+steps to insert the patch can be referenced below. 
+
+1. Copy the `jboss-as-[$JBOSS_VERSION].Final.jar` file from
+   `$JBOSS_HOME/modules/org/jboss/as/server/main` to the
+   `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` folder. 
+ 
+2. Navigate to the
+   `$LIFERAY_SOURCE/tools/servers/jboss/patches/JBPAPP-9353/classes` directory
+   in a command prompt and enter the following statement: 
+    
+        jar uf jboss-as-server-[$JBOSS_VERSION].Final.jar org/jboss/as/server/deployment/module/ServerDependenciesProcessor.class
+
+    This command inserts the `ServerDependenciesProcessor.class` file into the
+    `jboss-as-[$JBOSS_VERSION].Final.jar` file's
+    `org/jboss/as/server/deployment/module` folder. You can reference the
+    official documentation for updating a JAR file at
+    [http://docs.oracle.com/javase/tutorial/deployment/jar/update.html](http://docs.oracle.com/javase/tutorial/deployment/jar/update.html). 
+
+3. Copy the `jboss-as-[$JBOSS_VERSION].Final.jar` file back to its original
+   `$JBOSS_HOME/modules/org/jboss/as/server/main` folder. 
+
+Lastly, you'll need to make a few changes in your `$JBOSS_HOME/modules`
+directory. 
 
 1. Create the folder `$JBOSS_HOME/modules/ibm/jdk/main`. Create a new file
 called `module.xml` in that folder.
 
 2. Insert the following contents into the
-`$JBOSS_HOME/modules/ibm/jdk/main/module.xml` file:
+`$JBOSS_HOME/modules/ibm/jdk/main/module.xml` file: 
 
         <?xml version="1.0"?>
 
@@ -1476,18 +1501,10 @@ called `module.xml` in that folder.
             </dependencies>
         </module>
 
-3. Navigate to the `$JBOSS_HOME/modules/sun/jdk/main/module.xml` file and insert
-the following path names inside the &lt;paths&gt;...<\/paths> element:
+Your JBoss application server is now configured to use the IBM JDK. Next, you'll
+learn about managing a data source with JBoss. 
 
-        <path name="com/sun/crypto" />
-        <path name="com/sun/crypto/provider" />
-        <path name="com/sun/image/codec/jpeg" />
-        <path name="com/sun/org/apache/xml/internal/resolver" />
-        <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-
-Next you'll configure mail and the database. 
-
-## Database Configuration [](id=database-configuration)
+### Database Configuration [](id=database-configuration)
 
 If you want JBoss to manage your data source, follow the instructions in this
 section. If you want to use the built-in Liferay data source, you can skip this
@@ -1537,7 +1554,7 @@ Your final data sources subsystem should look like this:
 
 Now that you've configured your data source, the mail session is next. 
 
-## Mail Configuration [](id=mail-configuration)
+### Mail Configuration [](id=mail-configuration)
 
 If you want JBoss to manage your mail session, use the following instructions.
 If you want to use the built-in Liferay mail session, you can skip this section.
@@ -1568,7 +1585,7 @@ Specify your mail subsystem in `standalone.xml` as in the following example:
 You've got mail! Next, you'll make sure Liferay can connect using your new mail
 session and database.
 
-## Configuring data sources and mail sessions [](id=configuring-data-sources-and-mail-sessions)
+### Configuring data sources and mail sessions [](id=configuring-data-sources-and-mail-sessions)
 
 Now that your data source and mail session are set up, you need to ensure
 Liferay Portal can access them.
@@ -1601,7 +1618,7 @@ Before you deploy Liferay Portal on your JBoss app server, you should enable and
 configure Java security so you can use Liferay's plugin security manager
 with your downloaded Liferay applications.
 
-## Security Configuration [](id=security-configuration)
+### Security Configuration [](id=security-configuration)
 
 When you're ready to begin using other people's apps from Marketplace, you'll
 want to protect your portal and your JBoss server from security threats. To do
@@ -1630,14 +1647,14 @@ Also, see section [*Understanding Plugin Security Management*](https://www.lifer
 in the Developer's Guide to learn how to configure Liferay plugin
 access to resources.
 
-## JSF Configuration [](id=jsf-configuration)
+### JSF Configuration [](id=jsf-configuration)
 
 If you plan on using JSF applications in your application server, follow the
 instructions below. In this section, you'll learn how to upgrade Mojarra and
 Weld so your app server's versions are identical to the versions used by Liferay
 Faces. 
 
-### Upgrading Mojarra [](id=upgrading-mojarra)
+#### Upgrading Mojarra [](id=upgrading-mojarra)
 
 Some versions of JBoss 7.1.x are not bundled with the correct Mojarra version
 necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Mojarra
@@ -1694,7 +1711,7 @@ the bottom of the portlet.
 
 Next you'll learn how to upgrade Weld. 
 
-### Upgrading Weld [](id=upgrading-weld)
+#### Upgrading Weld [](id=upgrading-weld)
 
 Some versions of JBoss 7.1.x are not bundled with the correct Weld version
 necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Weld
@@ -1719,7 +1736,7 @@ and copy it to the following location:
 
 Now you're ready to deploy Liferay Portal. 
 
-## Deploy Liferay [](id=deploy-liferay)
+### Deploy Liferay [](id=deploy-liferay)
 
 1. If the folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists in
    your JBoss installation, delete all of its subfolders and files. Otherwise,
@@ -1760,7 +1777,7 @@ Now you're ready to deploy Liferay Portal.
  
 Now you are truly *the boss* when it comes to deploying Liferay Portal on JBoss!
 
-# Installing Liferay on Tomcat 7 [](id=installing-liferay-on-tomcat-7)
+## Installing Liferay on Tomcat 7 [](id=installing-liferay-on-tomcat-7)
 
 *Liferay Home* is one folder above Tomcat's install location.
 
@@ -1780,7 +1797,7 @@ the dependencies file should be called
 
 Next, let's get started by addressing Liferay's library dependencies.
 
-## Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-16-en)
+### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-16-en)
 
 Liferay Portal depends on several `JAR` files found in the Liferay
 Dependencies Archive. In addition to these, you need the proper driver for your
@@ -1842,7 +1859,7 @@ Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
 Now that you have the necessary libraries in place, we'll move on to
 configuring your domain.
 
-## Tomcat Configuration [](id=tomcat-configuration)
+### Tomcat Configuration [](id=tomcat-configuration)
 
 There are several configuration steps you need to complete before Tomcat can
 run Liferay. Let's get started.
@@ -1932,7 +1949,7 @@ your database and mail session (and we recommend you do), you can skip the next
 sections and move to the section titled *Enabling PACL*. Next we'll look at
 configuring your database with Tomcat.
 
-## Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-16-en)
+### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-16-en)
 
 If you want Tomcat to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -1970,7 +1987,7 @@ $$$
 Your Tomcat managed data source is now configured. Next is your mail
 session.
 
-## Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-16-en)
+### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-16-en)
 
 If you want to manage your mail session with Tomcat, use the following
 instructions. If you want to use the built-in Liferay mail session, you can
@@ -2004,7 +2021,7 @@ replace the example mail session values with your own.
 Your mail session is configured. Next, you'll make sure Liferay can 
 access your mail session and database.
 
-## Configuring your database and mail session [](id=configuring-your-database-and-mail-session)
+### Configuring your database and mail session [](id=configuring-your-database-and-mail-session)
 
 In this section you'll specify appropriate properties for connecting to your
 database and mail session.
@@ -2033,7 +2050,7 @@ database and mail session.
 It's just that easy! Before you deploy Liferay Portal, you should configure
 Portal Access Control Language (PACL) with Liferay on Tomcat. 
 
-## Enabling PACL [](id=enabling-pacl)
+### Enabling PACL [](id=enabling-pacl)
 
 To enable PACL, you need to enable the security manager and add some required
 permissions to the server policy configuration file. This entails editing
@@ -2061,7 +2078,7 @@ Tomcat reports the message `Using Security Manager` to your terminal.
 
 Now you have PACL enabled and configured for your portal. 
 
-## Adding Mojarra [](id=adding-mojarra)
+### Adding Mojarra [](id=adding-mojarra)
 
 If you'd like to use JSF applications in your Tomcat application server, you'll
 need to add Mojarra. If you do not plan on using JSF applications in your
@@ -2191,7 +2208,7 @@ You've officially added Mojarra to your application server. Now you can deploy
 Liferay. 
  
 
-## Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-16-en)
+### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-16-en)
 
 It's time to deploy Liferay as an exploded web archive within your
 `$TOMCAT_HOME/webapps` folder. 
