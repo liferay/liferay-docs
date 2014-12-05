@@ -1,7 +1,7 @@
 # Creating URL Routes
 
-Click on one of the Guestbook app's buttons, like *Add Guestbook*. Here's what
-the URL looks like currently:
+If you have the Guestbook Portlet deployed and added to a page, click on the
+*Add Guestbook* bytton. Here's what the generated URL looks like:
 
     http://localhost:8080/web/guest/home?p_p_id=guestbook_WAR_guestbookportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=3&_guestbook_WAR_guestbookportlet_mvcPath=%2Fhtml%2Fguestbook%2Fedit_guestbook.jsp
 
@@ -43,37 +43,37 @@ Your Friendly URL is now ready to emerge from the beastly URL above. While
 you're here,  you can clean up the URLs for some of the other links as well.
 Follow these steps:
 
-1. Create `com/liferay/docs/guestbook/portlet/guestbook-friendly-routes.xml`.
+1. Create `com/liferay/docs/guestbook/portlet/guestbook-friendly-url-routes.xml`.
 It's standard practice to create this file in the same package as the Portlet
 class.
 
 2. Add this code to the file:
 
-    <?xml version="1.0"?>
-    <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.2.0//EN"
-    "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_2_0.dtd">
+        <?xml version="1.0"?>
+        <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_2_0.dtd">
 
-    <routes>
-        <route>
-            <pattern>/add_guestbook</pattern>
-            <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
-            <implicit-parameter name="mvcPath">/html/guestbook/edit_guestbook.jsp</implicit-parameter>
-        </route>
-        <route>
-            <pattern>/{guestbookId}/add_entry</pattern>
-            <implicit-parameter name="mvcPath">/html/guestbook/edit_entry.jsp</implicit-parameter>
-        </route>
-        <route>
-            <pattern>/{entryId}/view_entry</pattern>
-            <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
-            <implicit-parameter name="mvcPath">/html/guestbook/view_entry.jsp</implicit-parameter>
-        </route>
-        <route>
-            <pattern>/{guestbookId}/view</pattern>
-            <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
-            <implicit-parameter name="mvcPath">/html/guestbook/view.jsp</implicit-parameter>
-        </route>
-    </routes>
+        <routes>
+            <route>
+                <pattern>/add_guestbook</pattern>
+                <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+                <implicit-parameter name="mvcPath">/html/guestbook/edit_guestbook.jsp</implicit-parameter>
+            </route>
+            <route>
+                <pattern>/{guestbookId}/add_entry</pattern>
+                <implicit-parameter name="mvcPath">/html/guestbook/edit_entry.jsp</implicit-parameter>
+            </route>
+            <route>
+                <pattern>/{entryId}/view_entry</pattern>
+                <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+                <implicit-parameter name="mvcPath">/html/guestbook/view_entry.jsp</implicit-parameter>
+            </route>
+            <route>
+                <pattern>/{guestbookId}/view</pattern>
+                <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+                <implicit-parameter name="mvcPath">/html/guestbook/view.jsp</implicit-parameter>
+            </route>
+        </routes>
 
 There are two tags from the XML to focus on: 
 
@@ -100,6 +100,12 @@ route, the resulting Friendly URL won't look any different; you specified in
 the pattern tag what should be displayed in place of the generated URL. But
 it's nice to specify it here so the portal doesn't need to bother generating it
 on the fly.
+
+Here's what your friendly portlet URLs look like:
+- Add Guestbook: `http://localhost:8080/web/guest/home/-/guestbook/add_guestbook`
+- Add Entry: `http://localhost:8080/web/guest/home/-/guestbook/10616/add_entry`
+- View Entry: `http://localhost:8080/web/guest/home/-/guestbook/10622/view_entry`
+- View Guestbook: `http://localhost:8080/web/guest/home/-/guestbook/10619/view`
 
 Now you know how to quickly implement Friendly URLs in a custom portlet. We
 could leave it at that, but providing the `guestbookId` and `entryId` in the

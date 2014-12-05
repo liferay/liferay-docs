@@ -4,8 +4,8 @@ After the last section on Making URLs Friendly, you have a good understanding of
 Liferay's Friendly URL pattern, from declaring your intentions in
 `liferay-portlet.xml` to writing some quick routes in the
 `guestbook-friendly-url-routes.xml`. Despite this excellent work, the URLs are
-still not entirely friendly. Look at the URL you now get when you click on one
-of our Guestbook Entries:
+still not entirely friendly. Look at the URL you now get when you click on a
+Guestbook Entry:
 
     http://localhost:8080/web/guest/home/-/guestbook/10473/view_entry
 
@@ -101,7 +101,7 @@ Run Service Builder.
 Note the use of the finder methods appended by `_first` (e.g.,
 `findByGuestbookName_first`), and the need for the `OrderByComparator` as an
 argument. This is simply to protect against cases like the one described above,
-in which two Penelope's create guestbook entries in the same guestbook, with the
+in which two Penelopes create guestbook entries in the same guestbook, with the
 same `name` value. This code ensures that only the first one is retrieved.
 
 The Portlet's Controller class needs to add a `Guestbook` object to the
@@ -132,6 +132,12 @@ Open `GuestbookPortlet` and add the following method to the bottom of the class:
 		
 	}
 	
+Organize Imports.
+
+    import com.liferay.portal.kernel.util.OrderByComparator;
+	import com.liferay.portal.kernel.util.OrderByComparatorFactory;
+	import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
+
 The `switchTabs` method will be called by an Action URL that replaces one of the
 Render URLs in the view layer of our portlet; its purpose is to take the
 `guestbookName` from the request and get a `Guestbook` using our new method from
@@ -278,6 +284,7 @@ the `Guestbook` retrieved from the render request:
     
     if (curGuestbook.getGuestbookId() == guestbook.getGuestbookId()) {
         cssClass = "active";
+    }
 
 There are two more instances in this file that use the `guestbookId`
 parameter; replace them with the `guestbook.getGuestbookId()`
@@ -301,15 +308,21 @@ Change it to use `switchTabsURL`:
         label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
 
 In the `addEntryURL`, change the `guestbookId` parameter to a `guestbookName`
-parameter, using the name of the `Guestbook` retrieved from the request
-attribute:
+parameter, using the name of the `Guestbook` attribute retrieved from the
+request:
 
-    <portlet:param name="guestbookName" value="<%=guestbook.getName()%>"
+    <portlet:param name="guestbookName" value="<%=guestbook.getName()%>" />
 
-In the `viewEntryURL`, replace the `guestbookId` parameter with
-`guestbookName` as well:
+In the `viewEntryURL`, replace the `entryId` parameter with
+a `name` parameter, and add a `guestbookName` parameter as well:
 
-    <portlet:param name="guestbookName" value="<%=guestbook.getName() %>"
+    <portlet:param name="name" value="<%=entry.getName() %>" />
+    <portlet:param name="guestbookName" value="<%=guestbook.getName() %>" />
+
+Why do you need the `Entry` and `Guestbook` names in the URL? It makes sense to
+show the name of the guestbook, and the name of the entry, in the Friendly URL
+for viewing entries.  Additionally, the `guestbookName` is needed by our
+`render` method, so that the correct `Guestbook` is set as a request attribute.
 
 That's it for the `view.jsp` file. 
 
@@ -320,16 +333,15 @@ necessary for our JSP files. Add the following to the file:
     <%@ page import="com.liferay.portal.kernel.util.OrderByComparatorFactory" %>
     <%@ page import="com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil" %>
 
-The *getter* methods created earlier in the `-LocalServiceImpl` classes will
-be used in the `view_entry.jsp`; now the imports are all squared away.
+The *getter* methods created earlier in the `-LocalServiceImpl` classes will be
+used in the `view_entry.jsp`; an `OrderByComparator` is a necessary parameter
+in those methods.
 
 The JSP files for viewing entries, editing entries, and editing guestbooks, need
 a couple modifications to fully support our changes.
 
-Open `docroot/html/guestbook/edit_entry.jsp`. Add  the `guestbookName` parameter
-to the URL at the top of the file:
-
-    <portlet:param name="guestbookName" value="<%= guestbookName %>"/>
+First, there's a `renderURL` and an `actionURL` at the top of the file. Move
+them to follow the first scriptlet. 
 
 Change the scriptlet at the top of the file by adding the following above the
 line defining the `entryId` variable:
@@ -357,8 +369,7 @@ and the `guestbookId` of the `Guestbook` it's in.
 - To get the correct `guestbookId`, you'll need to get the `Guestbook` by its
   name. First get the `guestbookName`, so that you can get the `Guestbook` (and
 its `guestbookId`).Then you can get the `Entry` by both its own `name` and the
-`guestbookId` of its associated `Guestbook`. That was a mouthful, so check out
-the code as we go along, and it'll all become quite clear.
+`guestbookId` of its associated `Guestbook`. 
 
 Add these lines to the top of the scriptlet:
 
@@ -371,8 +382,8 @@ Add these lines to the top of the scriptlet:
 	Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
 	Entry entry = EntryLocalServiceUtil.getEntryByGuestbookIdAndName(guestbook.getGuestbookId(), name, orderByComparator);
 
-Lastly, open `edit_guestbook.jsp`. For clarity, you've been calling the `name`
-field of the `Guestbook` `guestbookName`, so it is not confused with the `name`
+Lastly, open `edit_guestbook.jsp`. For clarity, you've been referring to the `name`
+field of the `Guestbook` as `guestbookName`, so it is not confused with the `name`
 field of the `Entry`. Find the `<aui:input name="name"` line and change *"name"*
 to *"guestbookName"*. 
 
