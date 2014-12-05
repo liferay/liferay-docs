@@ -20,9 +20,9 @@ specific values in specific fields. Without an index, you'd have to retrieve all
 of the custom entities from the database and check the specific fields of each
 entity for the specific values. With an index, you just have to search the
 indexed documents' specific fields for the specific values. Once you have the
-matching documents in the index, you can retrieve the values of any of the
-fields of the matching documents. If you need to, you can run a database query
-to retrieve the entities that correspond to the indexed documents. This database
+matching documents in the index, you can retrieve the values of any other fields
+of the matching documents. If you need to, you can run a database query to
+retrieve the entities that correspond to the indexed documents. This database
 query should be much less expensive than a query that has to retrieve all of the
 custom entities. In this section of tutorials, you'll explore Liferay's search
 and indexing APIs and learn how to use them in your applications.
