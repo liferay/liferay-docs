@@ -19,14 +19,15 @@ steps:
 You'll explore each of these steps in the following sections. Before proceeding,
 make sure you're familiar with the following search and indexing terminology.
 
-- Liferay's search index contains a collection of *documents*. These documents
-  are not documents in the ordinary English sense of the word. Rather, they are
-  Java objects that correspond to entities that have been saved to the database.
+- A search index contains a collection of *documents*. These documents are not
+  documents in the ordinary English sense of the word. Rather, they are Java
+  objects that represent entities that have been saved to the database.
 
 - A document contains a collection of *fields* and their values. A document's
   fields represent the metadata about each document. Some typical fields are
   *title*, *content*, *description*, *create date*, *modified date*, *tags*,
-  etc.
+  etc. A document's fields do not necessarily have to correspond to the
+  associated entity's attributes.
 
 - A field can either *single-valued* or *multi-valued*. A single-valued field
   can have only one term. A multi-valued field can have multiple terms. A *term*
@@ -41,20 +42,21 @@ make sure you're familiar with the following search and indexing terminology.
 
 ## Creating and Registering an Indexer Class
 
-The indexer class that you need to create is responsible for creating the Lucene
-documents that represent your custom entities. When creating an indexer class,
-you need to decide which fields your documents should contain and how they
-should be populated. It's recommended that your indexer class extend
+Indexer classes are responsible for creating the Lucene documents that represent
+your custom entities. When creating an indexer class, you need to decide which
+fields your documents should contain and how they should be populated. It's
+recommended that your indexer class extend
 `com.liferay.portal.kernel.search.BaseIndexer` or at least implement
 `com.liferay.portal.kernel.search.Indexer`. This makes it possible to aggregate
 your custom entities with native portal entities (assets) and allows your custom
 entities to use existing portal frameworks such as faceted search. If you want
 to asset-enable your custom entities, creating an indexer for them is a
-necessary step. When creating an indexer class, you can refer to the indexer
-classes that correspond to native Liferay assets. These include `BlogsIndexer`,
-`JournalArticleIndexer`, `WikiPageIndexer`, etc. For another example, you can
-refer to the [Search and Indexing](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing-for-guestbook-entries)
-learning path.
+necessary step. When creating an indexer class, you can use the indexer
+classes that correspond to native Liferay assets as examples. These include
+`BlogsIndexer`, `JournalArticleIndexer`, `WikiPageIndexer`, etc. You can refer
+to the
+[Search and Indexing](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing-for-guestbook-entries)
+learning path for another example.
 
 If your indexer class extends `com.liferay.portal.kernel.search.BaseIndexer` (as
 recommended), which implements `com.liferay.portal.kernel.search.Indexer`,
@@ -149,14 +151,14 @@ reflect the entities themselves, you need to make sure that you're instructing
 your indexer to reindex any newly added or updated entities. When an entity is
 deleted, you need to remove the corresponding document from the index. To obtain
 an instance of your indexer class, use Liferay's `IndexerRegistryUtil` class.
-This class includes a `getIndexer(...)` method as well as a
-`nullSafeGetIndexer(...)` method. Both of these methods can take either a class
-argument (e.g. `MyEntity.class`) or a string representing the class name (e.g.
-`MyEntity`). If you use `getIndexer` and no indexer in the registry matches the
-argument, `null` is returned. However, if you use `nullSafeGetIndexer` and no
-indexer matches the argument, a dummy indexer is returned. Returning a dummy
-indexer is safer than returning `null` since returning `null` might throw
-exceptions that could render your portlet unusable.
+This class includes a `getIndexer` method as well as a `nullSafeGetIndexer`
+method. Both of these methods can take either a class argument (e.g.
+`MyEntity.class`) or a string representing the class name (e.g.  `MyEntity`). If
+you use `getIndexer` and no indexer in the registry matches the argument, `null`
+is returned. However, if you use `nullSafeGetIndexer` and no indexer matches the
+argument, a dummy indexer is returned. Returning a dummy indexer is safer than
+returning `null` since returning `null` might throw exceptions that could render
+your portlet unusable.
 
 Once you've obtained the indexer that corresponds to your entity, you need to
 invoke the appropriate indexing operation. Whenever a new entity is added, a
@@ -167,7 +169,7 @@ your indexer. This method is overloaded. You can simply provide an object
 argument consisting of the entity which needs to be indexed or reindexed. Or you
 can provide the entity's class name and primary key. When an entity is deleted,
 its corresponding document should be removed from the index. This task can be
-accomplished by invoking the `delete` method of your indexer.  Like `reindex`,
+accomplished by invoking the `delete` method of your indexer. Like `reindex`,
 `delete` is an overloaded method which can take either an object argument or the
 entity's class name and primary key.
 
@@ -205,8 +207,8 @@ it's working correctly, your indexer should add documents to Liferay's index for
 each entity that's added or updated. By default, Liferay's index data is stored
 in the `[Liferay Home]/data/lucene` folder. This folder contains sub-folders
 corresponding to each of your portal instances. For instance, if your default
-portal instance has a company ID of `10154`, then there should be a folder
-called `10154` in your `[Liferay Home]/data/lucene`. The contents of the `10154`
+portal instance has a company ID of `10154`, there should be a folder called
+`10154` in your `[Liferay Home]/data/lucene`. The contents of the `10154` folder
 are in binary format; they're not human-readable. However, you can use a
 third-party tool, such as Luke, to browse the Lucene indexes.
 
@@ -241,8 +243,7 @@ matching documents. Use Luke to check that the custom entities you added via
 your portlet appear in Liferay's Lucene index. If you need to learn Lucene's
 search query syntax, please refer to Lucene's
 [documentation](http://lucene.apache.org/core/3_5_0/queryparsersyntax.html).
-Note: Liferay 6.2 uses Lucene 3.5.0. Another helpful reference is
-[http://www.lucenetutorial.com/lucene-query-syntax.html](http://www.lucenetutorial.com/lucene-query-syntax.html).
+Note: Liferay 6.2 uses Lucene 3.5.0.
 
 ## Providing a Search Mechanism
 
@@ -359,10 +360,10 @@ you supplied. Also, remember that your indexer class should extend
 `com.liferay.portal.kernel.search.Indexer`. The `Indexer` interface defines a
 `search(SearchContext searchContext)` method that returns a `Hits` object. The
 `BaseIndexer` abstract class provides an implementation of this method that
-invokes `SearchEngineUtil.search(...)`.
+invokes `SearchEngineUtil.search`.
 
 While it's possible to use a specific indexer to perform a search, it's also
-possible to perform a search using `SearchEngineUtil.search(...)` directly.
+possible to perform a search using `SearchEngineUtil.search` directly.
 `SearchEngineUtil` handles all the intricacies of the search engine
 implementation. All traffic to and from the search engine implementation passes
 through this class. If you're debugging a problem with your application's search
@@ -370,7 +371,7 @@ and indexing functionality, can be beneficial to enable debug level logging on
 this class.
 
 The result of invoking either an indexer's `search(SearchContext searchContext)`
-method or of invoking `SearchEngineUtil.search(...)` directly is a `Hits`
+method or of invoking `SearchEngineUtil.search` directly is a `Hits`
 object. A `Hits` object contains the Lucene documents that match the search
 query. The Lucene documents, which are `Document` objects, can be retrieved from
 the `Hits` object in either array or list form. For example, suppose you have an
@@ -388,19 +389,19 @@ to obtain a `Hits` object like this:
         // handle search exception
     }
 
-If you want to use `SearchEngineUtil.search(...)` directly (instead of using an
+If you want to use `SearchEngineUtil.search` directly (instead of using an
 indexer to search), you need to create your own search query and make sure that
 your search context is configured appropriately. Indexers in Liferay are
 associated with specific entities. When use use an indexer to search, only the
 specified entities are searched. If you want to use
-`SearchEngineUtil.search(...)` to search directly, you can explicitly specify
+`SearchEngineUtil.search` to search directly, you can explicitly specify
 the entities whose documents you want to search by invoking the
 `searchContext.setEntryClassNames` method of your search context. You can also
 specify the portal instance and site or sites within which you want to search by
 invoking the `searchContext.setCompanyId` and `searchContext.setGroupIds`
 methods of your search context.
 
-`SearchEngineUtil.search(...)` is an overloaded method. The easiest form of
+`SearchEngineUtil.search` is an overloaded method. The easiest form of
 this method to use is `SearchEngineUtil.search(SearchContext searchContext,
 Query query)`. To use this method, you need to construct your own query. Liferay
 provides the base `Query` interface as well as several others which extend it,
@@ -410,7 +411,7 @@ including the following:
 - `TermRangeQuery`
 - `TermQuery`
 
-Liferay also provides several query implementation and factory classes. Use
+Liferay also provides several query implementations and factory classes. Use
 Liferay's query factory classes to instantiate query implementation classes. For
 example, suppose you want to use Liferay's search engine to search for indexed
 documents containing the term *liferay* in the *title* field. To do so, you
@@ -447,14 +448,14 @@ the *description* field and that were modified on December 4, 2014. To construct
 such a query, you could use the following code:
 
     TermQuery termQuery1 = TermQueryFactoryUtil.create(searchContext, "title", "liferay");
-    TermRangeQuery termRangeQuery = TermRangeQueryFactoryUtil.create(searchContext, "modified", "201412040000000", "201412050000000", true, false);
     TermQuery termQuery2 = TermQueryFactoryUtil.create(searchContext, "description", "lucene");
+    TermRangeQuery termRangeQuery = TermRangeQueryFactoryUtil.create(searchContext, "modified", "201412040000000", "201412050000000", true, false);
 
     BooleanQuery booleanQuery = BooleanQueryFactoryUtil.create(searchContext);
 
     booleanQuery.add(termQuery1, BooleanClauseOccur.MUST);
-    booleanQuery.add(termRangeQuery, BooleanClauseOccur.MUST);
     booleanQuery.add(termQuery2, BooleanClauseOccur.MUST_NOT);
+    booleanQuery.add(termRangeQuery, BooleanClauseOccur.MUST);
 
     try {
         Hits hits = SearchEngineUtil.search(searchContext, booleanQuery);
@@ -468,8 +469,9 @@ provides a `StringQuery` implementation class. This kind of query implmentation
 allows you to construct custom queries using Lucene's query syntax. Please refer
 to the
 [Faceted Search and Customized Search Filtering](/develop/tutorials/-/knowledge_base/6-2/faceted-search-and-customized-search-filtering)
-tutorial for an example. Once you've performed a search and have obtained a hits
-object, you can retrieve the corresponding documents in array form like this:
+tutorial for an example that uses a `StringQuery`. Once you've performed a
+search and have obtained a hits object, you can retrieve the corresponding
+documents in array form like this:
 
     Document[] docs = hits.getDocs();
 
@@ -482,24 +484,24 @@ list of documents. Each document is essentially a hash map of the indexed fields
 and their values. Please refer to the
 [Search and Indexing Learning Path](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing)
 for an explanation of how to create a portlet user interface that facilitates
-searching and viewing search results. In the learning path example, a search bar
-is added to the JSP that renders the main portlet view. When a search query is
-submitted, the phrase entered by the user is submitted as a `keywords` string to
-the JSP that renders the search results. The JSP that renders the search results
-contains the code that creates and populates a search context, obtains an
-indexer, uses the indexer to search, and retrieves the entities that correspond
-to the hits resulting from the search. However, this code does not have to live
-in the JSP. You could pull all of this logic out of the JSP and into a portlet
-action method or into a portlet service method that's invoked by a portlet
-action method.
+searching and viewing search results. In that learning path's example, a search
+bar is added to the JSP that renders the main portlet view. When a search query
+is submitted, the phrase entered by the user is submitted as a `keywords` string
+to the JSP that renders the search results. The JSP that renders the search
+results contains the code that creates and populates a search context, obtains
+an indexer, uses the indexer to search, and retrieves the entities that
+correspond to the hits resulting from the search. However, this code does not
+have to live in the JSP. You could pull all of this logic out of the JSP and
+into a portlet action method or into a portlet service method that's invoked by
+a portlet action method.
 
-In this tutorial, you've learned how to create an register an indexer for a
+In this tutorial, you've learned how to create and register an indexer for a
 custom entity in your portlet project. You've learned how to update your service
 layer so that your indexer is invoked whenever an add, update, or delete
-operation is performed on a custom entity. And you've seen how to use Liferay's
-search API to create a search context and how to actually perform a search and
-obtain a list of search results. To explore more features of Liferay's search
-API, please see the tutorial on Faceted Search and Customized Search Filtering.
+operation is performed on a custom entity. You've also seen how to use Liferay's
+search API to configure a search context, perform a search, and obtain a list of
+search results. To explore more features of Liferay's search API, please see the
+tutorial on Faceted Search and Customized Search Filtering.
 
 ## Related Topics
 
