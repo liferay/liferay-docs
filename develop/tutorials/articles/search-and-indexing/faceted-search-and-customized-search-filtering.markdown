@@ -11,9 +11,49 @@ results from any site, by default. In the Search portlet, you can click on the
 name of a specific site to filter the search to display only results from the
 selected site. In addition to using faceted search in the Search portlet,
 Liferay transparently uses faceted search in other places throughout the portal.
+
 In this tutorial, you'll learn how to create custom facets and configure them in
 Liferay's Search portlet. You'll also learn how to use Liferay's search API to
 create custom search filters that aren't suited to being implemented as facets.
+Before proceeding, make sure you're familiar with the following terminology:
+
+- A *facet* is a combination of information about a specific indexed field: its
+  terms and their frequency. Facets are typically named after the field in
+  question.
+
+- The number of times a given term appears within a set of documents is called
+  the term's *frequency*.
+
+- A list of facet information, i.e., a list of terms and their frequencies for a
+  specific field, is called a *term result list*.
+
+- Some facets have a property called *frequency threshold*. This value indicates
+  the minimum frequency required for terms to appear in the term result list.
+  E.g., if the frequency threshold of of a facet is set to `3`, a term appearing
+  only twice will not appear in the term result list.
+
+- Some facets have a property called *max terms*. This value indicates the
+  maximum number of terms that will be included in the term result list
+  regardless of how many actual matching terms are found for the facet. Using a
+  max terms property can keep the search results displayed by the user interface
+  under control so that users are not overwhelmed by too much information.
+
+- The *order* property determines the default ordering used for the term result
+  list. There are two possible modes: *Order Hits Descending*, or *Order Value
+  Ascending*. The first, Order Hits Descending, means that results will be
+  ordered by frequency in a descending order. The second, Order Value Ascending,
+  means that the results will be ordered by value (i.e. "term") in ascending
+  order. Both modes will fall back to the other mode as a secondary sort order
+  when there are duplicates. This means that many terms with the same frequency
+  will always be sorted by "value".
+
+- A *range* defines an interval within which all the matching terms' frequencies
+  are summed. This means that if a facet defines a term range for the *create
+  date* field between the years 2008 to 2010, and another for 2011 to 2012, all
+  matching documents having a creation time within one of these specified ranges
+  will be returned as a sum for that range. Thus you may find 7 documents in the
+  first range, and 18 documents in the second range. Ranges cannot be used with
+  multi-value fields.
 
 ## Configuring Custom Facets
 
@@ -229,3 +269,7 @@ Search portlet to satisfy this use case.
 When you're finished following the above steps, deploy your hook plugin and test
 the Search portlet. Check that it only returns web content articles or documents
 and media files with the `.pdf` file extension as search results.
+
+## Related Topics
+
+[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)

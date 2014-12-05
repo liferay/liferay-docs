@@ -16,7 +16,28 @@ steps:
    another JSP for displaying the search results. Or you could simply configure
    Liferay's Search portlet to search for your custom entities.
 
-You'll explore each of these steps in the following sections.
+You'll explore each of these steps in the following sections. Before proceeding,
+make sure you're familiar with the following search and indexing terminology.
+
+- Liferay's search index contains a collection of *documents*. These documents
+  are not documents in the ordinary English sense of the word. Rather, they are
+  Java objects that correspond to entities that have been saved to the database.
+
+- A document contains a collection of *fields* and their values. A document's
+  fields represent the metadata about each document. Some typical fields are
+  *title*, *content*, *description*, *create date*, *modified date*, *tags*,
+  etc.
+
+- A field can either *single-valued* or *multi-valued*. A single-valued field
+  can have only one term. A multi-valued field can have multiple terms. A *term*
+  is a single value that can be searched which does not contain any whitespace
+  characters.
+
+- A *phrase* is a series of terms separated by spaces. The only way to use a
+  phrase as a term in a search is to surround it with double quotes ("). 
+
+- The results of a search are called *hits*. Hits are pointers to documents that
+  match the search query.
 
 ## Creating and Registering an Indexer Class
 
@@ -34,6 +55,31 @@ classes that correspond to native Liferay assets. These include `BlogsIndexer`,
 `JournalArticleIndexer`, `WikiPageIndexer`, etc. For another example, you can
 refer to the [Search and Indexing](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing-for-guestbook-entries)
 learning path.
+
+If your indexer class extends `com.liferay.portal.kernel.search.BaseIndexer` (as
+recommended), which implements `com.liferay.portal.kernel.search.Indexer`,
+you need to override or provide implementations for the following methods:
+
+- `public String[] getClassNames()`
+- `public String getPortletId()`
+- `protected void doDelete(Object obj)`
+- `protected Document doGetDocument(Object obj)`
+- `protected Summary doGetSummary(Document document, Locale locale,
+        String snippet, PortletURL portletURL)`
+- `protected void doReindex(Object obj)`
+- `protected void doReindex(String className, long classPK) `
+- `protected void doReindex(String[] ids)`
+- `protected String getPortletId(SearchContext searchContext)`
+
+It's also recommended to define a `public static final String[] CLASS_NAMES`
+constant and a `public static final String PORTLET_ID` constant. These constants
+should contain the names of the entity classes and the name of the portlet with
+which your indexer should be associated. Liferay's `*Indexer` classes follow
+this convention. Using these constants in your plugin ensures that you are
+consistently using the correct class names and portlet ID throughout your
+indexing code. The search and indexing learning path referenced above explains
+how to override implement the required methods. Liferay's `*Indexer` classes
+also provide good examples.
 
 Once you've written an indexer class for your entity, you need to register this
 class with Liferay. To do so, open your portlet project's
@@ -335,9 +381,95 @@ to obtain a `Hits` object like this:
 
     Indexer indexer = IndexerRegistryUtil.getIndexer("MyEntity");
 
-    Hits hits = indexer.search(searchContext);
+    try {
+        Hits hits = indexer.search(searchContext);
+    }
+    catch (SearchException se) {
+        // handle search exception
+    }
 
-You can retrieve the documents from the hits object in array form like this:
+If you want to use `SearchEngineUtil.search(...)` directly (instead of using an
+indexer to search), you need to create your own search query and make sure that
+your search context is configured appropriately. Indexers in Liferay are
+associated with specific entities. When use use an indexer to search, only the
+specified entities are searched. If you want to use
+`SearchEngineUtil.search(...)` to search directly, you can explicitly specify
+the entities whose documents you want to search by invoking the
+`searchContext.setEntryClassNames` method of your search context. You can also
+specify the portal instance and site or sites within which you want to search by
+invoking the `searchContext.setCompanyId` and `searchContext.setGroupIds`
+methods of your search context.
+
+`SearchEngineUtil.search(...)` is an overloaded method. The easiest form of
+this method to use is `SearchEngineUtil.search(SearchContext searchContext,
+Query query)`. To use this method, you need to construct your own query. Liferay
+provides the base `Query` interface as well as several others which extend it,
+including the following:
+
+- `BooleanQuery`
+- `TermRangeQuery`
+- `TermQuery`
+
+Liferay also provides several query implementation and factory classes. Use
+Liferay's query factory classes to instantiate query implementation classes. For
+example, suppose you want to use Liferay's search engine to search for indexed
+documents containing the term *liferay* in the *title* field. To do so, you
+could use the following code:
+
+    TermQuery termQuery = TermQueryFactoryUtil.create(searchContext, "title", "liferay");
+
+    try {
+        Hits hits = SearchEngineUtil.search(searchContext, termQuery);
+    }
+    catch (SearchException se) {
+        // handle search exception
+    }
+
+If you want to search for indexed documents with field values within a certain
+range, you can use term range queries. For example, suppose you wanted to
+construct a query that searches for indexed documents that were modified on a
+certain day, such as December 4, 2014. To construct such a query, you could use
+the following code:
+
+    TermRangeQuery termRangeQuery = TermRangeQueryFactoryUtil.create(searchContext, "modified", "201412040000000", "201412050000000", true, true);
+
+    try {
+        Hits hits = SearchEngineUtil.search(searchContext, termRangeQuery);
+    }
+    catch (SearchException se) {
+        // handle search exception
+    }
+
+To programatically construct more complex queries, you can use boolean queries.
+For example, suppose you wanted construct a query that searches for indexed
+documents containing the term *liferay* in the *title* field but not *lucene* in
+the *description* field and that were modified on December 4, 2014. To construct
+such a query, you could use the following code:
+
+    TermQuery termQuery1 = TermQueryFactoryUtil.create(searchContext, "title", "liferay");
+    TermRangeQuery termRangeQuery = TermRangeQueryFactoryUtil.create(searchContext, "modified", "201412040000000", "201412050000000", true, false);
+    TermQuery termQuery2 = TermQueryFactoryUtil.create(searchContext, "description", "lucene");
+
+    BooleanQuery booleanQuery = BooleanQueryFactoryUtil.create(searchContext);
+
+    booleanQuery.add(termQuery1, BooleanClauseOccur.MUST);
+    booleanQuery.add(termRangeQuery, BooleanClauseOccur.MUST);
+    booleanQuery.add(termQuery2, BooleanClauseOccur.MUST_NOT);
+
+    try {
+        Hits hits = SearchEngineUtil.search(searchContext, booleanQuery);
+    }
+    catch (SearchException se) {
+        // handle search exception
+    }
+
+In addition to `BooleanQuery`, `TermRangeQuery`, and `TermQuery`, Liferay
+provides a `StringQuery` implementation class. This kind of query implmentation
+allows you to construct custom queries using Lucene's query syntax. Please refer
+to the
+[Faceted Search and Customized Search Filtering](/develop/tutorials/-/knowledge_base/6-2/faceted-search-and-customized-search-filtering)
+tutorial for an example. Once you've performed a search and have obtained a hits
+object, you can retrieve the corresponding documents in array form like this:
 
     Document[] docs = hits.getDocs();
 
@@ -369,8 +501,6 @@ search API to create a search context and how to actually perform a search and
 obtain a list of search results. To explore more features of Liferay's search
 API, please see the tutorial on Faceted Search and Customized Search Filtering.
 
-<!--
 ## Related Topics
 
-Add link to Faceted Search and Customized Search Filtering tutorial here.
--->
+[Faceted Search and Customized Search Filtering](/develop/tutorials/-/knowledge_base/6-2/faceted-search-and-customized-search-filtering)
