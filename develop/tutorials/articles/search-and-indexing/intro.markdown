@@ -11,15 +11,18 @@ documents are not documents in the ordinary English sense of the word. Rather,
 they are custom objects that correspond to searchable entities. When a Lucene
 index is searched, a hits object is returned that contains pointers to the
 documents that match the search query. Searching for guestbook entries via an
-index is faster than searching for entities in the database.
+index is faster than searching for entities in the database. If an indexed
+document contains the data you're interested in, you can avoid having to make a
+database query altogether.
 
-For example, suppose that you want to retrieve custom entities that have 
+Suppose, for example, that you want to retrieve custom entities that have
 specific values in specific fields. Without an index, you'd have to retrieve all
 of the custom entities from the database and check the specific fields of each
 entity for the specific values. With an index, you just have to search the
 indexed documents' specific fields for the specific values. Once you have the
-matching documents in the index, you can run a database query to retrieve the
-entities that correspond to the indexed documents. This database query should be
-much less expensive than a query that has to retrieve all of the custom
-entities. In this section of tutorials, you'll explore Liferay's search and
-indexing APIs and learn how to use them in your applications.
+matching documents in the index, you can retrieve the values of any of the
+fields of the matching documents. If you need to, you can run a database query
+to retrieve the entities that correspond to the indexed documents. This database
+query should be much less expensive than a query that has to retrieve all of the
+custom entities. In this section of tutorials, you'll explore Liferay's search
+and indexing APIs and learn how to use them in your applications.
