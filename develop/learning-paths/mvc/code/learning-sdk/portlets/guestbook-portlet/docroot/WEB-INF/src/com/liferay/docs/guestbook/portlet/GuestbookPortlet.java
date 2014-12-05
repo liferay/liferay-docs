@@ -179,25 +179,26 @@ public class GuestbookPortlet extends MVCPortlet {
 		super.render(renderRequest, renderResponse);
 	}
 
-	public void switchTabs (ActionRequest request, ActionResponse response) {
-		
-		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
-		OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
-		
+	public void switchTabs(ActionRequest request, ActionResponse response)
+			throws NoSuchGuestbookException, SystemException {
+
+		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil
+				.getOrderByComparatorFactory();
+		OrderByComparator orderByComparator = orderByComparatorFactory.create(
+				"guestbook", "name", true);
+
 		String guestbookName = ParamUtil.getString(request, "guestbookName");
-		
+
 		try {
-			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
+			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(
+					guestbookName, orderByComparator);
 			request.setAttribute("guestbook", guestbook);
 		} catch (NoSuchGuestbookException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new NoSuchGuestbookException(e);
 		} catch (SystemException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new SystemException(e);
 		}
-		response.setRenderParameter("mvcPath","/html/guestbook/view.jsp");
-		
+		response.setRenderParameter("mvcPath", "/html/guestbook/view.jsp");
 	}
-	
+
 }
