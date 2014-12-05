@@ -18,7 +18,7 @@ the readability of any portlet URL, and you can do it in two easy steps:
 
 ## Declaring Friendly URL Mapping to Liferay
 
-First, modify Liferay portlet descriptor,
+First, modify the Liferay portlet descriptor,
 `docroot/WEB-INF/liferay-portlet.xml`, adding these lines right after the
 `<indexer-class...>` declaration:
 
