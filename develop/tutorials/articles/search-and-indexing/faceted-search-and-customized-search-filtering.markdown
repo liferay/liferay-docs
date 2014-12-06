@@ -42,18 +42,18 @@ Before proceeding, make sure you're familiar with the following terminology:
   list. There are two possible modes: *Order Hits Descending*, or *Order Value
   Ascending*. The first, Order Hits Descending, means that results will be
   ordered by frequency in a descending order. The second, Order Value Ascending,
-  means that the results will be ordered by value (i.e. "term") in ascending
+  means that the results will be ordered by value (i.e., by term) in ascending
   order. Both modes will fall back to the other mode as a secondary sort order
   when there are duplicates. This means that many terms with the same frequency
-  will always be sorted by "value".
+  will always be sorted by value.
 
 - A *range* defines an interval within which all the matching terms' frequencies
-  are summed. This means that if a facet defines a term range for the *create
-  date* field between the years 2008 to 2010, and another for 2011 to 2012, all
-  matching documents having a creation time within one of these specified ranges
-  will be returned as a sum for that range. Thus you may find 7 documents in the
-  first range, and 18 documents in the second range. Ranges cannot be used with
-  multi-value fields.
+  are summed. This means that if a facet defines a term range for the
+  *createDate* field between the years 2008 to 2010, and another for 2012 to
+  2014, all matching documents having a creation time within one of these
+  specified ranges will be returned as a sum for that range. Thus you may find 7
+  documents in the first range, and 18 documents in the second range. Ranges
+  cannot be used with multi-value fields.
 
 ## Configuring Custom Facets
 
@@ -143,8 +143,7 @@ another specific indexed field: `modifiedDate`.
 
 Suppose, for example, that you're developing a custom search portlet that should
 only search for a specific types of assets in specific sites. The following
-example shows how you can add the appropriate facets to your search context and
-configure your search context to achieve this:
+example shows how you can configure your search context to achieve this:
 
     Facet assetEntriesFacet = new AssetEntriesFacet(searchContext);
     assetEntriesFacet.setStatic(true);            
@@ -167,9 +166,9 @@ that static facets are not rendered in the UI. Static facets use pre-set values
 rather than inputs dynamically applied by users. When programatically
 configuring facets that won't be configurable by users, you should declare the
 facets to be static. Since static facets aren't configurable by users, you need
-to specify the types of assets and group IDs that can be searched. To do this,
-you populate the `entryClassNames` and `groupIds` arrays and add them to the
-search context via `searchContext.setEntryClassNames(...)` and
+to specify the types of assets and group IDs that should be searched. To do
+this, you populate the `entryClassNames` and `groupIds` arrays and add them to
+the search context via `searchContext.setEntryClassNames(...)` and
 `searchContext.setGroupIds(...)` method calls. Any indexed document whose asset
 type name does not belong to the `entryClassName` array is filtered out of the
 search results. Likewise, any indexed document whose `groupId` does not belong
@@ -226,10 +225,12 @@ Search portlet to satisfy this use case.
                 <custom-jsp-dir>/custom_jsps</custom-jsp-dir>
         </hook>
 
-    Then create a `custom_jsps` directory in your project's `docroot` folder and
-    add copy the `html/portlet/search/init.jsp` and
+    Then create a `html/portlet/search/custom_jsps` directory in your project's
+    `docroot` folder and copy the
+    `portal-web/docroot/html/portlet/search/init.jsp` and
+    `portal-web/docroot/html/portlet/search/main_search.jsp`
     `html/portlet/search/main_search.jsp` files into this folder from Liferay's
-    source.
+    source code.
 
 3. Edit your `docroot/custom_jsps/html/portlet/search/main_search.jsp` file and
    find the following line:
@@ -268,7 +269,11 @@ Search portlet to satisfy this use case.
 
 When you're finished following the above steps, deploy your hook plugin and test
 the Search portlet. Check that it only returns web content articles or documents
-and media files with the `.pdf` file extension as search results.
+and media files with the `.pdf` file extension as search results. Note: If you
+only want your Search portlet customizations to apply to a single site, use an
+application adapter hook. See the
+[Application Adapters](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters)
+tutorial for details.
 
 ## Related Topics
 
