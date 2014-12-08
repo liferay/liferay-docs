@@ -1,4 +1,4 @@
-# Working Smarter with Liferay Social Office
+# Working Smarter with Liferay Social Office [](id=working-smarter-with-liferay-social-office)
 
 Liferay Social Office is Liferay's social collaboration product for the
 enterprise. Previously released as a separate product that was based on Liferay

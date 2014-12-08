@@ -1,10 +1,10 @@
-# Upgrading Social Office
+# Upgrading Social Office [](id=upgrading-social-office)
 
 There are a few steps and procedures that you need to follow if you're upgrading 
 to a newer version of Social Office. The sections below describe how to upgrade 
 from Social Office 2.x to 3.x, and from Social Office 3.0.0 to 3.0.1.
 
-## Upgrading From Social Office 2.x to 3.x
+## Upgrading From Social Office 2.x to 3.x [](id=upgrading-from-social-office-2-x-to-3-x)
 
 Social Office 3.x only runs on Liferay Portal 6.2.x. If you'd like to upgrade
 from Social Office 2.x to to 3.x, you first need to upgrade your portal from
@@ -31,7 +31,7 @@ to grant the Social Office User role to users. The Social Office User provides
 access to the Dashboard home page, the public Profile page, and all of their
 applications. You're now ready to use Social Office!
 
-## Upgrading from Social Office 3.0.0 to 3.0.1
+## Upgrading from Social Office 3.0.0 to 3.0.1 [](id=upgrading-from-social-office-3-0-0-to-3-0-1)
 
 Before upgrading from Social Office 3.0.0 to 3.0.1, make sure to set
 `hot.undeploy.on.redeploy=true` in your `portal-ext.properties` file. This

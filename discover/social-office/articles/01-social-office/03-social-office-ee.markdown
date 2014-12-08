@@ -1,4 +1,4 @@
-# Social Office EE
+# Social Office EE [](id=social-office-ee)
 
 Social Office EE can only be installed on a Liferay EE instance; it's not
 possible to install Social Office EE on Liferay CE. Social Office EE provides
@@ -12,7 +12,7 @@ These additional features include the following:
 - Bug fixes and usability improvements since Social Office 2.0 CE GA2
 - Access to Liferay Support
 
-## Installing Social Office EE
+## Installing Social Office EE [](id=installing-social-office-ee)
 
 To find Social Office EE on Liferay Marketplace, click on the *EE Marketplace*
 link and look for the Social Office EE app. Once you've found it, click on it to
@@ -55,7 +55,7 @@ should indicate whether or each plugin has been successfully deployed.
 - documentum-hook
 - sharepoint-hook
 
-## Social Office EE Features
+## Social Office EE Features [](id=social-office-ee-features)
 
 The Documentum and Sharepoint plugins that are included in Social Office EE are
 the same plugins as those provided by the [Documentum Connector EE](https://www.liferay.com/marketplace/-/mp/application/15098914) and

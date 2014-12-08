@@ -1,4 +1,4 @@
-# Installing Social Office
+# Installing Social Office [](id=installing-social-office)
 
 Social Office 3.0 is available as an application that can be installed on
 Liferay Portal CE 6.2 GA1 or EE 6.2 GA1. Prior to version 2.0, Social Office was
@@ -18,7 +18,7 @@ additional details for specific configurations and use cases.
 - Validating Your Installation
 - Uninstalling Social Office
 
-## Social Office Quick Install
+## Social Office Quick Install [](id=social-office-quick-install)
 
 There are two ways to install Social Office: you can download and
 install Social Office directly from your Liferay instance's Control Panel
@@ -37,7 +37,7 @@ To install Social Office manually, you need to download the Social Office
 Once you have it, you just need to deploy the Social Office `.lpkg` file to your
 Liferay instance's deploy folder.
 
-## Pre-installation Configuration
+## Pre-installation Configuration [](id=pre-installation-configuration)
 
 Out of the box, Social Office works with Liferay's default portal properties.
 However, if certain properties have been modified by a portal administrator
@@ -71,7 +71,7 @@ these blank if you intend to use Social Office:
     default.user.private.layouts.lar
     default.user.public.layouts.lar
 
-## Post-installation Configuration
+## Post-installation Configuration [](id=post-installation-configuration)
 
 After deploying Social Office, check your server's console log. There should not
 be any console errors during installation. If you encounter any console errors,
@@ -111,7 +111,7 @@ be greyed out with a message stating that they've been undeployed.
 
 $$$
 
-### Installation Peculiarities of Specific App Servers
+### Installation Peculiarities of Specific App Servers [](id=installation-peculiarities-of-specific-app-servers)
 
 After installing Social Office on Glassfish, you need to restart the server
 before Social Office will be fully deployed. If you don't restart, Glassfish
@@ -126,7 +126,7 @@ Public/My Private Pages* menu. To fix this issue, simply restart your server.
 Next, let's discuss how to validate that Social Office has been successfully
 installed or uninstalled.
 
-## Validating a Social Office Installation
+## Validating a Social Office Installation [](id=validating-a-social-office-installation)
 
 The Social Office 3.0 `.lpkg` file is hot-deployable and includes the following
 Liferay plugins. After installing (or uninstalling) Social Office, you should
@@ -195,7 +195,7 @@ grant the Social Office User role to one or more users. Please refer to the
 *Using Social Office* section for more details about the Social Office User role 
 and the features provided by Social Office.
 
-### What to do if Your Installation is Unsuccessful
+### What to do if Your Installation is Unsuccessful [](id=what-to-do-if-your-installation-is-unsuccessful)
 
 If your Social Office Installation was unsuccessful, please make sure that you
 haven't made one of the following installation mistakes:
@@ -222,7 +222,7 @@ haven't made one of the following installation mistakes:
 If the tips above do not solve your installation problem, you can seek further
 assistance through the [Social Office Forum](http://www.liferay.com/community/forums/-/message_boards/category/1670998) or from [Liferay Support](http://www.liferay.com/group/customer/home).
 
-## Uninstalling Social Office
+## Uninstalling Social Office [](id=uninstalling-social-office)
 
 If you'd like to completely uninstall Social Office, you can navigate to the
 *Marketplace* &rarr; *Purchased* page of the Control Panel and click on
