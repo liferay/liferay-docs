@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:aui="http://liferay.com/faces/aui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:form>
+		<c:choose>
+			<c:when test="#{empty guestbookBacking.selectedEntry.name}">
+				<h3>#{i18n['new-entry']}</h3>
+			</c:when>
+			<c:otherwise>
+				<h3>#{i18n['editing']} #{guestbookBacking.selectedEntry.name}</h3>
+			</c:otherwise>
+		</c:choose>
+		<aui:fieldset>
+			<aui:field id="entryNameField" label="#{i18n['name']}">
+				<h:message for="entryName" />
+				<h:inputText id="entryName" required="true" value="#{guestbookBacking.selectedEntry.name}">
+					<f:ajax render="entryNameField" />
+				</h:inputText>
+			</aui:field>
+			<aui:field id="entryEmailField" label="#{i18n['email']}">
+				<h:message for="entryEmail" />
+				<h:inputText id="entryEmail" required="true" validatorMessage="#{i18n['please-enter-a-valid-email-address']}"
+					value="#{guestbookBacking.selectedEntry.email}">
+					<f:validateRegex pattern=".+[@].+[.].+" />
+					<f:ajax render="entryEmailField" />
+				</h:inputText>
+			</aui:field>
+			<aui:field id="entryMessageField" label="#{i18n['message']}">
+				<h:message for="entryMessage" />
+				<h:inputTextarea id="entryMessage" required="true" value="#{guestbookBacking.selectedEntry.message}">
+					<f:ajax render="entryMessageField" />
+				</h:inputTextarea>
+			</aui:field>
+		</aui:fieldset>
+		<h:commandButton action="#{entryBacking.save}" styleClass="btn btn-default" value="#{i18n['save']}">
+			<f:ajax execute="@form" render="@all" />
+		</h:commandButton>
+		<h:commandButton action="#{entryBacking.cancel}" immediate="true" styleClass="btn btn-default" value="#{i18n['cancel']}">
+			<f:ajax render="@all" />
+		</h:commandButton>
+	</h:form>
+</f:view>

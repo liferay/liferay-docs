@@ -893,7 +893,7 @@ You're now equipped to implement security in your custom Liferay portlets!
 
 Next, let's learn how to create and use portal and portlet URLs. 
 
-## Creating Portlet URLs in JavaScript
+## Creating Portlet URLs in JavaScript [](id=creating-portlet-urls-in-javascript-liferay-portal-6-2-dev-guide-07-en)
 
 The `Liferay.PortletURL` JavaScript module allows developers to generate
 portlet URLs from their JavaScript code. This module has been updated since the
@@ -924,7 +924,7 @@ update your plugins. If you'd like to determine whether or not you need to
 update your plugins, use the following verification steps:
 
 1. Search for `Liferay.PortletURL` or `/c/portal/portlet_url` in your code,
-   portal content text and templates.
+   portal content text, and templates.
 
 2. If you don't find any occurrences, you don't need to update your plugins. In this
    case, you can safely set `portlet.url.generate.by.path.enabled=false` in your
@@ -932,7 +932,8 @@ update your plugins, use the following verification steps:
    portlet URLs from being generated using `/c/portal/portlet_url`. This
    property is included in Liferay 6.2.0 M6 and later versions.
 
-If you need to update your plugins, there are several ways to do it:
+If you do find `Liferay.PortletURL` or `/c/portal/portlet_url` when you search,
+you will need to update your plugins. There are several ways to do it:
 
 1. Refactor your code to call the JavaScript method
    `Liferay.PortletURL.createURL`, passing the `baseURL` as a parameter, instead
@@ -986,7 +987,7 @@ If you need to update your plugins, there are several ways to do it:
             );
         }
 
-    In example 1, the code is uses the `portletULRFactory` to create a
+    In example 1, the code uses the `portletURLFactory` to create a
     `LiferayPortletURL` object, instead of using the `Liferay.PortletURL` object
     to create it. 
 

@@ -8,7 +8,7 @@ configurator does, how to install it, and how to install its dependencies. As
 you read through it, you'll examine the structure of Liferay Maven projects and
 explore some configuration options.
 
-## Installing Maven Plugins for Liferay IDE
+## Installing Maven Plugins for Liferay IDE [](id=installing-maven-plugins-for-liferay-ide)
 
 In order to properly support Maven projects in the IDE, you first need a
 mechanism to recognize Maven projects as Liferay IDE projects. IDE projects are
@@ -66,26 +66,26 @@ uncheck the *Group items by category* checkbox.
 Awesome! The required Maven plugins are installed and your IDE instance is ready
 to be mavenized! Next, you'll learn how to configure an existing Maven project.
 
-## Configuring Your Liferay Maven Project
+## Configuring Your Liferay Maven Project [](id=configuring-your-liferay-maven-project)
 
 Now that your Liferay IDE is Maven-ready, you can examine the anatomy of a
 Liferay Maven project. Note, you don't need to have an existing Liferay Maven
 project to continue. However, if you'd like to create a new Liferay Maven
 portlet project in the IDE before proceeding, you can do so by following
-instructions in the the tutorial [Creating Liferay Portlets with
-Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-liferay-portlets-with-maven).
+instructions in the the tutorial
+[Developing Liferay Portlets with Maven](/tutorials/-/knowledge_base/6-2/creating-liferay-portlets-with-maven).
 Alternatively, you can import an existing Maven project by navigating to *File*
 &rarr; *Import* &rarr; *Maven* and selecting the location of Maven project's
 source code. 
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Due to the lifecycle mapping
+**Note:** Due to the lifecycle mapping
 of Eclipse and Maven, it is unsafe to manually insert or overwrite the
 `.classpath` file, `.project` file, and `.settings` folder. IDE automatically
 generates these files when a project is imported and updates them appropriately.
 
----
+$$$
 
 The `m2e-core` plugin delegates your Liferay Maven plugin's project
 configuration to the `m2e-liferay` project configurator. The `m2e-wtp` project
@@ -98,14 +98,50 @@ validates your project's configuration, checking it's POM, parent POM, and the
 project's properties. The configurator detects invalid properties and reports
 them as errors in the IDE's POM editor. There are a list of key properties that
 your project must specify in order for it to become a valid Liferay IDE project.
-The [Using Maven Parent Plugin
-Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects)
+The
+[Using Maven Parent Plugin Projects](/tutorials/-/knowledge_base/6-2/using-maven-parent-plugin-projects)
 tutorial identifies these properties and explains how they are used. 
 
-You can specify these properties in either the Maven profile of the global
-`settings.xml` file (recommended), in the user `settings.xml` file, in the
-parent `pom.xml`, or in the project `pom.xml` directly. Each file is described
-below:
+Liferay IDE's Quick Fix features provide two options for resolving missing
+Liferay Maven properties in a Liferay Maven plugin project. To access the Quick
+Fix dialog, right-click the error and select *Quick Fix*. The following two
+options are presented:
+
+- **Quick Fix Option 1:** Create a new maven profile based on a Liferay runtime
+and attach it to the project. 
+- **Quick Fix Option 2:** Select existing maven profiles to attach the current
+project. 
+
+**Quick Fix Option 1: Creating a new Maven profile based on a Liferay runtime**
+
+1. After you select this fix and click *Finish*. The Create New Maven Profile
+dialog appears with a profile that was generated automatically based on your
+runtime. 
+
+2. The profile location is set to the project `pom.xml` by default. You can
+alternatively select your local `settings.xml` file.  
+
+3. Click *OK* to finish quick fix. 
+
+![Figure 3: Liferay IDE's Quick Fix feature lets you create a new Maven profile based on a Liferay runtime environment.](../../images/QuickFix_create.png)
+
+**Quick Fix  Option 2: Selecting an existing Maven profile**
+
+1. After you select this fix, the Select Active profile dialog appears. The
+profiles in Profile Id column on the left are read from your local
+`settings.xml` file. 
+
+2. Add one or more active profiles to the *Profile Id* column on the right and
+then click *OK*. 
+
+3. Click *Finish* to apply the profiles. 
+
+![Figure 4: Liferay IDE's Quick Fix feature also lets you select any existing active Maven profile to attach to your project.](../../images/QuickFix_select.png)
+
+You can also manually specify required Liferay properties in either the Maven
+profile of the global `settings.xml` file (recommended), in the user
+`settings.xml` file, in the parent `pom.xml`, or in the project `pom.xml`
+directly. Each file is described below:
 
 - **Global `settings.xml`:** provides configuration for all plugins belonging to
   all users on a machine. This file resides in the
@@ -127,8 +163,8 @@ parent `pom.xml` overrides the user `settings.xml` file, and the user
 
 Note that if a *profile* is active from your user `settings.xml`, its values 
 override your properties in a POM. If you'd like to specify the properties in a
-POM, see the [Using Maven Parent Plugin
-Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/using-maven-parent-plugin-projects)
+POM, see the
+[Using Liferay Maven Parent Plugin Projects](/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects)
 tutorial for more details. 
 
 Here's an example of what a Maven profile looks like inside the `settings.xml`
@@ -192,7 +228,15 @@ different modes. Each mode is described in the following listing:
 
 The figure below, shows the `pom.xml` file editor and its modes. 
 
-![Figure 3: Liferay IDE provides five interactive modes to help you edit and organize your POM.](../../images/pom-editor-features.png)
+![Figure 5: Liferay IDE provides five interactive modes to help you edit and organize your POM.](../../images/pom-editor-features.png)
 
 By taking advantage of these interactive modes, modifying and organizing your
 POM and its dependencies has never been easier!
+
+## Related Topics [](id=related-topics)
+
+[Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
+
+[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
+
+[Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)

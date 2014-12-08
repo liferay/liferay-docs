@@ -21,7 +21,7 @@ course, you can use any development environment you like for building JSF
 portlets, but Liferay IDE is hard to beat. Next, you'll use Liferay IDE to
 create your JSF portlet project.
 
-## Creating a JSF Portlet Project
+## Creating a JSF Portlet Project [](id=creating-a-jsf-portlet-project)
 
 In this tutorial, you'll create a JSF portlet project using Liferay
 IDE/Developer Studio, so you can see just how easy it is. If you don't have it
@@ -87,7 +87,7 @@ See how easy that was? Now that you've created a generic or modified JSF
 portlet, it's time to deploy your JSF portlet to the portal and see what it
 looks like. 
 
-## Deploying JSF Portlets
+## Deploying JSF Portlets [](id=deploying-jsf-portlets)
 
 Liferay provides a mechanism called auto-deploy that makes deploying JSF
 portlets (and any other plugin types) a breeze. All you need to do is drop the

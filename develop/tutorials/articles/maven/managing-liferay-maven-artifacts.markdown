@@ -26,7 +26,7 @@ published artifacts:
 First, consider the manual process of downloading and installing Liferay
 artifacts from a zip file. 
 
-## Installing Artifacts from a Zip File
+## Installing Artifacts from a Zip File [](id=installing-artifacts-from-a-zip-file)
 
 Whether you're building plugins for Liferay EE or CE, you can get the Liferay
 artifacts by manually installing them from a zip file. The zip files provide a
@@ -79,14 +79,14 @@ If you're using Liferay CE and you want the latest pre-release artifacts from
 the Liferay CE source repository, you can get them--but you'll have to build
 them yourself. Don't worry, it's easy. If you're interesting in building the
 artifacts from Liferay's source code, please see the [Building Maven Artifacts
-from Source](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/building-maven-artifacts-from-source)
+from Source](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/building-maven-artifacts-from-source)
 tutorial. 
 
 Once you've downloaded Liferay release artifacts as a zip file or built them
 from source, you'll need to install them to your Maven repository. You'll learn
 how to do that next. 
 
-## Installing Artifacts to a Repository
+## Installing Artifacts to a Repository [](id=installing-artifacts-to-a-repository)
 
 Follow these steps to install the Liferay release artifacts to your local Maven
 repository: 
@@ -112,7 +112,7 @@ Liferay plugins. Wasn't that easy?
 If you want to share your Liferay artifacts with teammates, you'll have to
 deploy them to a release repository server. 
 
-## Deploying Artifacts to a Repository
+## Deploying Artifacts to a Repository [](id=deploying-artifacts-to-a-repository)
 
 You may find it worthwhile to share your Liferay artifacts with teammates.
 
@@ -120,13 +120,13 @@ Here's how you do it:
 
 1.  Make sure you've created a repository server to hold the Liferay Maven
     artifacts. If you haven't, see the *Managing Maven Repositories* section of
-    the [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven)
+    the [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/setting-up-maven)
     tutorial for instructions. 
 
 2.  Make sure the repository that will hold your Liferay artifacts is specified
     as a server in Maven's `settings.xml` file. If it isn't, see the
     *Configuring Local Maven Settings* section of the 
-    [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven)
+    [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/setting-up-maven)
     tutorial for instructions on adding an entry for the server. 
 
     Here's an example setting for a repository server named *liferay-releases*: 
@@ -160,7 +160,7 @@ Here's how you do it:
 
     Note: If you created a repository in Nexus, as demonstrated in the *Managing
     Maven Repositories* section of the
-    [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/setting-up-maven) tutorial, you can specify
+    [Setting Up Maven](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/setting-up-maven) tutorial, you can specify
     that repository's ID and URL. 
 
 5.  To deploy to your release repository server, execute the following command: 
@@ -183,7 +183,7 @@ sharing with teammates.
 Did you know that Liferay has its own Maven repository for artifacts? Let's
 learn how to install artifacts from Liferay's repository next.
 
-## Installing Artifacts from the Liferay Repository
+## Installing Artifacts from the Liferay Repository [](id=installing-artifacts-from-the-liferay-repository)
 
 <!-- If/when the Liferay repository becomes an EE-only artifact repository,
 include "EE" in front of "Artifacts in the above heading. In addition, remove
@@ -224,13 +224,13 @@ First, specify the Liferay Repository's credentials in your project's parent
         </pluginRepository>
     </pluginRepositories>
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Important:** Do not leave the Liferay
+**Important:** Do not leave the Liferay
 repository configured when publishing artifacts to Maven Central. You must
 comment out the Liferay Repository credentials when publishing your artifacts.
 
---- 
+$$$
 
 Next, when interacting with the Liferay Repository, you'll need to use
 specialized commands to access it. Use the following command to access the CE
@@ -248,17 +248,17 @@ with using Liferay's Maven repository, the Maven's Central Repository enables
 you to automatically download and install Liferay Maven artifacts. Let's see
 how. 
 
-## Installing Artifacts from the Central Repository
+## Installing Artifacts from the Central Repository [](id=installing-artifacts-from-the-central-repository)
 
----
++$$$
 
-![note](../../images/tip-pen-paper.png) **Note:** Sometimes, the Liferay Maven
+**Note:** Sometimes, the Liferay Maven
 artifacts for a release are not immediately available on Maven's Central
 Repository. The Central Repository might still be synced to a previous release
 of Liferay. If this occurs, just download the Liferay Maven artifacts from
 Liferay's repository. (See the previous section for details.)
 
----
+$$$
 
 Liferay offers an option for automatic download and installation of Liferay
 Maven artifacts publicly available on the *Central Repository*, located at
@@ -271,7 +271,7 @@ your local repository if they're not found in your local repository or any of
 your configured repository servers. You'll see it happen when you package your
 Liferay plugins. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Building Liferay Maven Artifacts](https://dev.liferay.com/tutorials/-/knowledge_base/building-maven-artifacts-from-source) 
+[Building Liferay Maven Artifacts](https://dev.liferay.com/tutorials/-/knowledge_base/6-2/building-maven-artifacts-from-source) 
 

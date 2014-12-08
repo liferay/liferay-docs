@@ -1,4 +1,4 @@
-# Using Developer Mode with Themes [](id=using-developer-mode-with-themes-lp-6-2-develop-tutorial)
+# Using Developer Mode with Themes [](id=using-developer-mode-with-themes)
 
 Do you want to develop Liferay resources without having to redeploy to see your
 portal modifications? Use Liferay Developer Mode! In Developer Mode, all caches
@@ -17,7 +17,7 @@ override settings that trigger them:
 - The server does not launch a browser when starting (`browser.launcher.url=`).
 - FreeMarker Templates for themes and web content are not cached, so changes
   are applied immediately
-  (`freemarker.engine.modification.check.interval=0`). 
+  (`freemarker.engine.resource.modification.check.interval=0`). 
 - Minification of CSS and JavaScript resources is disabled
   (`minifier.enabled=false`).
 
@@ -29,7 +29,7 @@ As you're developing your theme plugin, you can use Developer Mode regardless of
 whether you're developing it in Liferay IDE. First, you can explore how it's
 done in IDE. 
 
-## Setting Developer Mode for Your Server in Liferay IDE 
+## Setting Developer Mode for Your Server in Liferay IDE [](id=setting-developer-mode-for-your-server-in-liferay-ide)
 
 For Liferay Portal servers of version 6.2 or greater, the *Liferay settings*
 section of the server runtime environment creation wizard lets you select either
@@ -41,15 +41,15 @@ this runtime environment, it starts in Development Mode.
 
 ![Figure 1: You can set Developer Mode in the *Liferay settings* section of your runtime environment in Liferay IDE](../../images/set-develop-mode.png)
 
----
++$$$
 
-![tip](../../images/tip-pen-paper.png) **Warning:** Only change the Server Mode
+**Warning:** Only change the Server Mode
 from the runtime environment's Liferay settings section. On server
 startup, if Standard mode is set in Liferay IDE, the
 `portal-developer.properties` file is not included for overriding portal
 properties. 
 
----
+$$$
 
 For Liferay Portal servers below version 6.2 (e.g., Liferay v6.1 CE
 Server, Liferay v6.0 CE Server), Liferay IDE enables Developer Mode by
@@ -59,7 +59,7 @@ file has the property setting:
 `include-and-override=portal-developer.properties`, which enables Developer
 Mode. Next you can take a look at how you can set Developer Mode outside of IDE.
 
-## Setting Developer Mode for Your Server Using portal-developer.properties
+## Setting Developer Mode for Your Server Using portal-developer.properties [](id=setting-developer-mode-for-your-server-using-portal-developer-properties)
 
 If you're not using Liferay IDE, you must add the `portal-developer.properties`
 file to your application server's configuration file in order to enable
@@ -73,14 +73,14 @@ you'd add `-Dexternal-properties=portal-developer.properties` to the list of
 options for your `CATALINA_OPTS` variable, in your `setenv.sh` file
 (`setenv.bat` in Windows). 
 
----
++$$$
 
-![tip](../../images/tip.png) **Tip:** If you're already using the system
+**Tip:** If you're already using the system
 property `external-properties` to load other properties files, add
 `portal-developer.properties` to the list and use a comma to separate it from
 other entries. 
 
----
+$$$
 
 Great! You've set up your Liferay server for Developer Mode. Now, when you
 modify your theme's `custom.css` file directly in your Liferay bundle, you can

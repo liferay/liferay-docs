@@ -167,7 +167,7 @@ portlet action execution and you've added an error message for notifying when
 something's gone wrong; you can implement these messages in your portlets too.
 Your portlet users will be glad to get helpful feedback from your portlets. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/alloyui)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
 

@@ -19,7 +19,7 @@ Before you embed portlets in a template, you need to know some portlet
 characteristics that the layout template requires. You'll learn what they are
 next. 
 
-## Specifying Attributes of the Embedded Portlet
+## Specifying Attributes of the Embedded Portlet [](id=specifying-attributes-of-the-embedded-portlet)
 
 First, you'll need to specify some attributes of the embedded portlet:
 
@@ -53,7 +53,7 @@ Here's a description of the portlets to be embedded in the example layout:
 Now that the embedded portlet's characteristics have been acquired, you can
 plug them into a layout template to embed the portlets. 
 
-## Adding Portlets to the Layout Template Columns
+## Adding Portlets to the Layout Template Columns [](id=adding-portlets-to-the-layout-template-columns)
 
 To embed a portlet, you must specify the following things: 
 
@@ -125,10 +125,10 @@ Congrats, you now know how to embed portlets in your templates, but be careful.
 If your Feng Shui skills become widely known, your friends may ask you to 
 re-arrange their living room furniture!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/application-display-templates-lp-6-2-develop-tutorial)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 
-[Performing a Custom Action Using a Hook](/develop/tutorials/-/knowledge_base/performing-a-custom-action-using-a-hook-lp-6-2-develop-tutorial)
+[Performing a Custom Action Using a Hook](/develop/tutorials/-/knowledge_base/6-2/performing-a-custom-action-using-a-hook)
 
 

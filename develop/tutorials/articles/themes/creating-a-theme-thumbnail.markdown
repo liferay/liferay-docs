@@ -1,4 +1,4 @@
-# Creating a Theme Thumbnail [](id=creating-a-theme-thumbnail-lp-6-2-develop-tutorial)
+# Creating a Theme Thumbnail [](id=creating-a-theme-thumbnail)
 
 Have you associated a thumbnail image with your theme? In the *Look and Feel*
 settings of your site pages in the Site Administration screen, notice that each

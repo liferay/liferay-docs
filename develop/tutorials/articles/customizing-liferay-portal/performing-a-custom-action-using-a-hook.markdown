@@ -46,14 +46,14 @@ defined in `portal.properties`. It's time to get started!
             }
         }
 
-    ---
++$$$
 
-    ![Important](../../images/tip-pen-paper.png) **Important:** If your action
+**Important:** If your action
     access the `HttpServletRequest` object, extend
     `com.liferay.portal.kernel.events.Action`; otherwise, extend 
     `com.liferay.portal.struts.SimpleAction`. 
 
-    ---
+$$$
 
 2.  Create a properties file, `portal.properties`, inside your hook project's
     `docroot/WEB-INF/src` folder. Then add the name of the portal event property
@@ -66,9 +66,9 @@ defined in `portal.properties`. It's time to get started!
 
         login.events.pre=com.liferay.sample.hook.LoginAction
 
-    ---
++$$$
 
-    ![Important](../../images/tip-pen-paper.png) **Important:** Since portal
+**Important:** Since portal
     properties like `login.events.pre` accept *multiple* values, you must
     append your values to the existing values. You can repeatedly modify 
     the properties from additional hooks. 
@@ -77,7 +77,7 @@ defined in `portal.properties`. It's time to get started!
     hook plugin. If you modify a property's value from multiple plugins, Liferay
     won't know which value to use. 
 
-    ---
+$$$
 
 3.  Edit your `docroot/WEB-INF/liferay-hook.xml` file and add your hook's portal
     properties file name as the value for the

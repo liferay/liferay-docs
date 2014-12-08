@@ -20,15 +20,15 @@ To use Liferay's Dynamic Query API, you need to create a finder implementation
 for your model entity. You can define model entities in `service.xml` and run
 Service Builder to generate model, persistence, and service layers for your
 application.  See the
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
 learning path for more information on using Service Builder. Once you've used
 Service Builder to generate model, persistence, and service layers for your
 application, you can create custom finders using Liferay's Dynamic Query API by
 following these steps:
 
-1. Create a custom `-FinderImpl` class and a define a `findBy-` finder method in
-   this class. Run Service Builder to generate the required interfaces and utility
-   classes.
+1. Create a custom `-FinderImpl` class and define a `findBy-` finder method in
+   this class. Run Service Builder to generate the required interfaces and
+   utility classes.
 
 2. Implement your finder method using Liferay's Dynamic Query API.
 
@@ -40,7 +40,7 @@ Once you've taken these steps, you can access your custom finder as a service
 method. Note: You can create multiple or overloaded `findBy-` finder methods in
 your `-FinderImpl` class. Next, let's examine these steps in more detail.
 
-### Step 1: Defining a Custom Finder Method
+### Step 1: Defining a Custom Finder Method [](id=step-1-defining-a-custom-finder-method)
 
 To define any custom query, either by specifying custom SQL or by defining a
 dynamic query, you need a finder class. Create a `[Entity]FinderImpl` class in
@@ -50,7 +50,7 @@ this class. Make sure to add any required arguments to your finder method's
 method signature.
 
 For example, consider the Guestbook application that we discussed in the
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/writing-a-data-driven-application).
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application).
 learning path. In that application, there are
 two entities: guestbooks and entries. Each entry belongs to a guestbook so the
 entry entity has a guestbookId field as a foreign key. Suppose you need to
@@ -81,7 +81,7 @@ this:
 Your next step is to actually define your query in your custom finder method
 using the Dynamic Query API.
 
-### Step 2: Implementing Your Custom Finder Method Using Dynamic Query
+### Step 2: Implementing Your Custom Finder Method Using Dynamic Query [](id=step-2-implementing-your-custom-finder-method-using-dynamic-query)
 
 Your first step in implementing your custom finder method in your `-FinderImpl`
 class is to open a new Hibernate session. Since your `-FinderImpl` class extends
@@ -312,7 +312,7 @@ just choose the appropriate methods for running the dynamic queries:
 Great! You've now created a custom finder method using Liferay's Dynamic Query
 API. Your last step is to add a service method that calls your finder.
 
-### Step 3: Accessing Your Custom Finder Method from the Service Layer
+### Step 3: Accessing Your Custom Finder Method from the Service Layer [](id=step-3-accessing-your-custom-finder-method-from-the-service-layer)
 
 So far, you've created a `-FinderImpl` class and generated a `-FinderUtil`
 utility class. Your portlet class, however, should not use the finder utility

@@ -10,6 +10,7 @@ import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
@@ -79,6 +80,8 @@ public class NumberHeadersSiteMain extends Task {
 			File outFile = new File(filename);
 			String outFileTmp = outFile + ".tmp";
 
+			Map<String, Integer> secondaryIds = new HashMap<String, Integer>();
+
 			try {
 				LineNumberReader in =
 					new LineNumberReader(new FileReader(inFile));
@@ -88,12 +91,12 @@ public class NumberHeadersSiteMain extends Task {
 				String line;
 				while ((line = in.readLine()) != null) {
 
-					if (line.startsWith("# ")) {
+					if (line.startsWith("#")) {
 						
 						line = line.trim();
 
 						String newHeadingLine = handleHeaderLine(line,
-								filename, in.getLineNumber());
+								filename, in.getLineNumber(), secondaryIds);
 						if (newHeadingLine != null) {
 							line = newHeadingLine;
 						}
@@ -154,7 +157,7 @@ public class NumberHeadersSiteMain extends Task {
 	}
 
 	private static String handleHeaderLine(String line, String filename,
-		int lineNum) throws Exception {
+		int lineNum,  Map<String, Integer> secondaryIds) throws Exception {
 
 		String newHeadingLine = null;
 
@@ -185,28 +188,54 @@ public class NumberHeadersSiteMain extends Task {
 			
 			// Check if the ID is already in use
 
-			String filename2 = IDS.get(id);
-			if (filename2 != null) {
+			if (line.startsWith("##")) {
 
-				//print error
-				
-				System.out.println("Dup id:" + id + " file:" +
-					filename + " line:" + lineNum + " (already used by file:" +
-					filename2 + ")");
-				return newHeadingLine;
+				// Handle secondary ID, checking if already used in this file.
+
+				Integer lineNum2 = secondaryIds.get(id);
+				if (lineNum2 != null) {
+
+					//print error
+
+					System.out.println("Dup id:" + id + " file:" +
+						filename + " line:" + lineNum + " (already used at line:" +
+						lineNum2 + ")");
+					return newHeadingLine;
+				}
+				else {
+
+					// Add the ID
+
+					secondaryIds.put(id, new Integer(lineNum));
+					newHeadingLine = line;
+				}
 			}
 			else {
 
-				// Add the ID
+				// Handle primary ID, checking if already used in this file or other files.
 
-				IDS.put(id, filename);
-				newHeadingLine = line;
+				String filename2 = IDS.get(id);
+				if (filename2 != null) {
+
+					//print error
+
+					System.out.println("Dup id:" + id + " file:" +
+						filename + " line:" + lineNum + " (already used by file:" +
+						filename2 + ")");
+					return newHeadingLine;
+				}
+				else {
+
+					// Add the ID
+
+					IDS.put(id, filename);
+					newHeadingLine = line;
+				}
 			}
 		}
 		else {
 
-			// Generate an ID based on the header text, file chapter
-			// number, and counter
+			// Generate an ID based on the header text and counter
 
 			// Find the start of the header text
 
@@ -234,15 +263,29 @@ public class NumberHeadersSiteMain extends Task {
 
 				newHeading = assembleId(heading, idCount);
 
-				if (IDS.get(newHeading) == null) {
+				if (line.startsWith("##")) {
+					if (secondaryIds.get(newHeading) == null) {
 
-					// Heading is unique
+						// Heading is unique for the article
 
-					// Add the ID
+						// Map the ID to the line number
 
-					IDS.put(newHeading, filename);
+						secondaryIds.put(newHeading, lineNum);
 
-					break;
+						break;
+					}
+				}
+				else {
+					if (IDS.get(newHeading) == null) {
+
+						// Heading is unique for the document set
+
+						// Map the ID to the filename
+
+						IDS.put(newHeading, filename);
+
+						break;
+					}
 				}
 
 				idCount++;

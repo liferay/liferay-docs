@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<project name="JSF Learning Path Conversion" basedir=".">
+
+	<property name="doc.dir" value="jsf"/>
+
+	<import file="../build.xml" />
+
+	<property name="doc.type" value="learnpath"/>
+
+</project>

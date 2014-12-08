@@ -86,7 +86,7 @@ English markdown, html, odt, and epub documents.
 		</classpath>
 	</taskdef>
 
-    <taskdef name="stripheaderids" classname="com.liferay.documentation.util.StripHeaderIdsTask">
+	<taskdef name="stripheaderids" classname="com.liferay.documentation.util.StripHeaderIdsTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -95,6 +95,14 @@ English markdown, html, odt, and epub documents.
 
 			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
 		</classpath>
+	</taskdef>
+	
+	<taskdef name="concatmarkdown" classname="com.liferay.documentation.util.ConcatMarkdown">
+	  <classpath>
+	    <fileset dir="${project.dir}/lib" includes="*.jar" />
+	    
+	    <fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+	  </classpath>
 	</taskdef>
 
 	<!-- targets -->
@@ -450,7 +458,7 @@ English markdown, html, odt, and epub documents.
 	<java jar="../lib/liferay-doc-utils.jar" fork="true">
 	    <arg value="ResetImages"/>
             <arg value="./${lang}/chapters/${chapter}.markdown"/>
-            <!-- This is useful if you want to save the output to a new file without overwritting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
+            <!-- This is useful if you want to save the output to a new file without overwriting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
         </java>
     </target>
 
@@ -461,7 +469,7 @@ English markdown, html, odt, and epub documents.
             <!-- <arg value="${build.dir}/${chapter}.markdown"/> -->
 	    <arg value="NumberImages"/>
             <arg value="./${lang}/chapters/${chapter}.markdown" />
-            <!-- This is useful if you want to save the output to a new file without overwritting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
+            <!-- This is useful if you want to save the output to a new file without overwriting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
         </java>
     </target>
 

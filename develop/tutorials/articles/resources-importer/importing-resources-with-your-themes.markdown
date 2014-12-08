@@ -1,10 +1,10 @@
-# Importing Resources with Your Themes [](id=importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en)
+# Importing Resources with Your Themes [](id=importing-resources-with-your-themes)
 
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
 However, staging the house with some furniture and decorations helps prospective
 buyers imagine what the house might look like with their belongings. Liferay's
-resources importer application is a tool that allows a theme developer to have
+[resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) application is a tool that allows a theme developer to have
 files and web content automatically imported into the portal when a theme is
 deployed. Usually, the resources are imported into a site template but they can
 also be imported directly into a site. Portal administrators can use the site or
@@ -17,16 +17,16 @@ install it on their portal, go to Sites or Site Templates in the Control Panel
 and immediately see their new theme in action. In this tutorial, we explain how
 to include resources with your theme.
 
----
++$$$
 
-![Note](../../images/tip-pen-paper.png) **Note:** The resources importer can be
+**Note:** The [resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) can be
 used in any type of plugin project to import resources. Importing resources
 within a theme plugin is just one of the more common use cases. To learn how to
 use the resources importer in other types of plugins, please see the
 [Creating Plugins to Share Structures, Templates, and More](www.liferay.com)
 tutorial.
 
----
+$$$
 
 Liferay's welcome theme includes resources that the resources importer
 automatically deploys to the default site. (Note: The welcome theme is only
@@ -43,9 +43,9 @@ download the latest version. Install and deploy the resources importer to your
 Liferay instance the same way you would deploy any other Liferay plugin or
 Marketplace app.
 
----
++$$$
 
-![Tip](../../images/tip-pen-paper.png) **Tip:** If you deploy a theme to your
+**Tip:** If you deploy a theme to your
 Liferay Portal instance and don't have the resources importer already deployed,
 you might see a message like this:
  
@@ -57,7 +57,7 @@ can deploy the resources importer application to satisfy the dependency or you
 can remove or comment out the dependency declaration if you're not going to use
 the resources importer with your theme (see below).
 
----
+$$$
 
 When you create a new theme project using the Liferay Plugins SDK, check your
 theme's `docroot/WEB-INF/liferay-plugin-package.properties` file for two entries
@@ -72,14 +72,26 @@ missing, depending on the version of your Plugins SDK:
 The first entry, `required-deployment-contexts=resources-importer-web`, declares
 your theme's dependency on the resources importer plugin. If you're not going to
 use the resources importer with your theme and don't want to deploy the
-resources importer, you can remove or comment out this entry. The second entry,
-`resources-importer-developer-mode-enabled=true`, is a convenience feature for
-theme developers. With this setting enabled, if the resources are to be imported
-to a site template that already exists, the site template is recreated and
-reapplied to sites that are based on the site template. Otherwise, you have to
-manually delete the sites built using the resource importer's site template each
-time you change anything in your theme's
-`docroot/WEB-INF/src/resources-importer` folder.
+resources importer, you can remove or comment out this entry.
+
+The second entry, `resources-importer-developer-mode-enabled=true`, is a
+convenience feature for theme developers. With this setting enabled, importing
+resources to a site or site template that already exists, recreates the site or
+site template. Importing resources into a site template reapplies the site
+template and its resources to the sites that are based on the site template.
+Without `resources-importer-developer-mode-enabled=true`, you have to manually
+delete the sites or site templates built by the resources importer, each time
+you want to apply changes from your theme's
+`docroot/WEB-INF/src/resources-importer` folder. 
+
++$$$
+
+**Warning:** the `resources-importer-developer-mode-enabled=true` setting can be
+dangerous since it involves *deleting* (and re-creating) the affected site or
+site template. It's only intended to be used during development. Never use it in
+production. 
+
+$$$
 
 If you'd like to import your theme's resources directly into a site, instead of
 into a site template, you can specify the following in your
@@ -89,16 +101,26 @@ into a site template, you can specify the following in your
 
     resources-importer-target-value=[site-name]
 
----
+If you're using the `resources-importer-target-value=[site-name]` property,
+double check the site name that you're specifying. If you specify the wrong
+value, you could end up deleting (and re-creating) the wrong site!
 
-![warning](../../images/tip-pen-paper.png) **Warning:** If you're developing
-themes for Liferay Marketplace, don't configure your theme to import resources
-directly into a site. Instead, use the default: import the resources into a
-site template. Do this by commenting out the
-`resources-importer-target-class-name` property. This way, it'll be much safer
-to deploy your theme to a production Liferay instance.
++$$$
 
----
+**Warning:** It's safer to import theme resources into a site template than into
+an actual site. The
+`resources-importer-target-class-name=com.liferay.portal.model.Group` setting
+can be handy for development and testing but should be used cautiously. Don't
+use this setting in a theme that will be deployed to a production Liferay
+instance or a theme that will be submitted to Liferay Marketplace. To prepare a
+theme for deployment to a production Liferay instance, use the default setting
+so that the resources are imported into a site template. You can do this
+explicitly by setting
+`resources-importer-target-class-name=com.liferay.portal.model.LayoutSetPrototype`
+or implicitly by commenting out or removing the
+`resources-importer-target-class-name` property.
+
+$$$
 
 All of the resources a theme uses with the resources importer go in the
 `[theme-name]/docroot/WEB-INF/src/resources-importer` folder. The assets to be
@@ -411,7 +433,7 @@ You can go back to any of the beginning steps in this outline to make
 refinements. It's just that easy to develop a theme with resources intact!
 
 To see a simple working example of the resources importer in action, visit
-[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/test-resources-importer-theme-6.2.0.1.war](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/test-resources-importer-theme-6.2.0.1.war).
+[https://github.com/liferay/liferay-docs/blob/master/devGuide/code/test-resources-importer-theme-6.2.0.1.war](https://github.com/liferay/liferay-docs/blob/master/devGuide/code/test-resources-importer-theme-6.2.0.1.war).
 This is just the classic Liferay theme with some sample resources added. If
 you're interested in extending the functionality of the resources-importer
 application, you can use the test-resources-importer-portlet to check that you

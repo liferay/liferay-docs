@@ -36,7 +36,9 @@ Here's how you verify that your project imported correctly as a Liferay project:
 
 Congratulations on verifying that your project imported properly! 
 
-Here is a related topic. 
+Here are some related topics:
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/deploying-plugins)
+[Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)
+
+[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
 

@@ -97,10 +97,10 @@ explained in this section.
 Installing Liferay IDE and Eclipse from the same bundle is convenient and easy
 to do.  
 
-1.  Download a Liferay IDE Eclipse bundle from
-    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0
-    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/)
-    for your operating system.
+1.  Go to the
+    [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide) page.
+    Under *Other Downloads*, select the Eclipse bundle for your operating system
+    and click *Download*.
 
 2.  Install Eclipse bundled with Liferay IDE by extracting its contents to a
     local folder. 
@@ -130,23 +130,27 @@ To install Liferay IDE and specify an Eclipse update URL, follow these steps:
 
 2.  When Eclipse opens, go to *Help* &rarr; *Install New Software...*. 
 
-3.  In the *Work with* field, enter the Liferay IDE update site URL
-    `http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0 GA1/updatesite/`
-    and press *Enter*. 
+3.  In your browser, go to the
+    [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
+    downloads page. Copy the URL of the update site you're interested in (stable
+    or milestone). 
 
-4.  Make sure the Liferay IDE features are selected, then click *Next*. 
+4.  In the *Work with* field, paste in the Liferay IDE update site URL and
+    press *Enter*. 
 
-5.  After calculating dependencies, click *Next*, accept the license agreement,
+5.  Make sure the Liferay IDE features are selected, then click *Next*. 
+
+6.  After calculating dependencies, click *Next*, accept the license agreement,
     and click *Finish* to complete the installation.
 
-6.  Restart Eclipse to verify that Liferay IDE is properly installed.
+7.  Restart Eclipse to verify that Liferay IDE is properly installed.
 
-7.  After restarting Eclipse, go to *Help* &rarr; *About Eclipse*; if you see a
+8.  After restarting Eclipse, go to *Help* &rarr; *About Eclipse*; if you see a
     Liferay IDE icon badge as in the screenshot below, it's properly installed. 
 
-![Figure 2.1: Once you've installed Liferay IDE, you can find the Liferay IDE logo in Eclipse by clicking *Help* &rarr; *About Eclipse*.](../../images/ide-about-eclipse-liferay.png)
+    ![Figure 2.1: Once you've installed Liferay IDE, you can find the Liferay IDE logo in Eclipse by clicking *Help* &rarr; *About Eclipse*.](../../images/ide-about-eclipse-liferay.png)
 
-8.  Select *Window* &rarr; *Open Perspective* &rarr; *Other ...* &rarr;
+9.  Select *Window* &rarr; *Open Perspective* &rarr; *Other ...* &rarr;
     *Liferay* to use Liferay IDE. 
 
 Alternatively, you can install Liferay IDE from a downloaded archive file. 
@@ -155,10 +159,10 @@ Alternatively, you can install Liferay IDE from a downloaded archive file.
 
 To install Liferay IDE from an archive file, follow these steps: 
 
-1.  Download the IDE 2.1 archive file from
-    [http://sourceforge.net/projects/lportal/files/Liferay IDE/2.1.0
-    GA1/](http://sourceforge.net/projects/lportal/files/Liferay%20IDE/2.1.0%20GA1/)
-    for your operating system. 
+1.  Go to the
+    [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
+    downloads page. Under *Other Downloads*, select the *Liferay IDE [version]
+    Archived Update-site* option and click *Download*.
 
 2.  Start Eclipse.
 
@@ -1126,7 +1130,7 @@ developing your plugins.
 
 #### Ant Configuration [](id=ant-configuration-liferay-portal-6-2-dev-guide-02-en)
 
-Building projects in the Plugins SDK requires that you install Ant (version 1.7
+Building projects in the Plugins SDK requires that you install Ant (version 1.8
 or higher) on your machine. Download the latest version of Ant from
 [http://ant.apache.org/](http://ant.apache.org/). Extract the archive's contents
 into a folder of your choosing. 

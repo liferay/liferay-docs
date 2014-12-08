@@ -329,6 +329,11 @@ public class EventLocalServiceUtil {
 			eventDescription, locationName, begin, end);
 	}
 
+	public static java.util.List<com.nosester.portlet.eventlisting.model.Event> findByUserId(
+		long userId) throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByUserId(userId);
+	}
+
 	public static java.util.List<com.nosester.portlet.eventlisting.model.Event> getEventsByGroupId(
 		long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
