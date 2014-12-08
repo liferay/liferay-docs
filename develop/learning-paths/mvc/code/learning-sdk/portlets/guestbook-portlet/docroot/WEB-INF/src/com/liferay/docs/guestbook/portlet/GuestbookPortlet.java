@@ -196,13 +196,10 @@ public class GuestbookPortlet extends MVCPortlet {
 			
 			request.setAttribute("guestbook", guestbook);
 			
-		} catch (NoSuchGuestbookException e) {
+		} catch (Exception e) {
 			
-			throw new NoSuchGuestbookException(e);
+			SessionErrors.add(request, "guestbook-cannot-be-displayed");
 			
-		} catch (SystemException e) {
-			
-			throw new SystemException(e);
 		}
 		response.setRenderParameter("mvcPath", "/html/guestbook/view.jsp");
 	}
