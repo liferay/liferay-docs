@@ -111,25 +111,29 @@ attribute for our modifications to work.
 
 Open `GuestbookPortlet` and add the following method to the bottom of the class:
 
-    public void switchTabs (ActionRequest request, ActionResponse response) {
-		
-		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
-		OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
-		
+    public void switchTabs(ActionRequest request, ActionResponse response)
+			throws NoSuchGuestbookException, SystemException {
+
+		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil
+				.getOrderByComparatorFactory();
+		OrderByComparator orderByComparator = orderByComparatorFactory.create(
+				"guestbook", "name", true);
+
 		String guestbookName = ParamUtil.getString(request, "guestbookName");
-		
+
 		try {
-			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
+			
+			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(
+					guestbookName, orderByComparator);
+			
 			request.setAttribute("guestbook", guestbook);
-		} catch (NoSuchGuestbookException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SystemException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+		} catch (Exception e) {
+			
+			SessionErrors.add(request, "guestbook-cannot-be-displayed");
+			
 		}
-		response.setRenderParameter("mvcPath","/html/guestbook/view.jsp");
-		
+		response.setRenderParameter("mvcPath", "/html/guestbook/view.jsp");
 	}
 	
 Organize Imports.
@@ -155,10 +159,18 @@ sets it as an attribute in the request.
 Last, you simply call `setRenderParameter`, adding the path to `view.jsp` as the
 `mvcPath` parameter of the request.
 
-Since you won't be passing the `guestbookId` into most URLs any longer, there are
-some changes that need to be made to the existing methods. Find the `addEntry`
-method and replace the `long guestbookId...` line with a `guestbookName`
-declaration:
+In the `catch` block, you're adding an error message to the `SessionErrors`
+object. Before moving on, open the `Language.properties` file in
+`docroot/WEB-INF/src/content` and provide a message for the key
+`guestbook-cannot-be-displayed`. Copy the following into the file, then build
+languages:
+
+    guestbook-cannot-be-displayed=The selected guestbook cannot be displayed.
+
+Since you won't be passing the `guestbookId` into most URLs any longer, there
+are some changes that need to be made to the existing methods in the
+controller. Find the `addEntry` method and replace the `long guestbookId...`
+line with a `guestbookName` declaration:
 
     String guestbookName = ParamUtil.getString(request, "guestbookName");
 
@@ -270,14 +282,19 @@ the Primary Key of any entities. You'll also be making use of your new action
 method, `switchTabs`.
 
 Open `docroot/html/guestbook/view.jsp`. At the top of the file, immediately
-after the `<%@include...` statement, is a scriptlet that get the `guestbookId`
+after the `<%@include...` statement, is a scriptlet that gets the `guestbookId`
 from the `renderRequest` and find the `<aui:nav...` tag. Replace it with the
 following:
+
+    <liferay-ui:error key="guestbook-cannot-be-displayed" message="guestbook-cannot-be-displayed" />
 
     <%
         Guestbook guestbook = (Guestbook) renderRequest
                 .getAttribute("guestbook");
     %>
+
+The `liferay-ui:error` tag is for displaying the error message you added to the
+`SessionErrors` object in the `switchTabs` method.
 
 In the next scriptlet, change the `if` statement to get the `guestbookId` from
 the `Guestbook` retrieved from the render request: 

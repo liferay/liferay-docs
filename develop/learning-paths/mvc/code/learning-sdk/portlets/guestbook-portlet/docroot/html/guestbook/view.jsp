@@ -1,5 +1,7 @@
 <%@include file="/html/init.jsp"%>
 
+<liferay-ui:error key="guestbook-cannot-be-displayed" message="guestbook-cannot-be-displayed" />
+
 <%
 	Guestbook guestbook = (Guestbook) renderRequest
 			.getAttribute("guestbook");
@@ -39,6 +41,8 @@
 						permissionChecker, curGuestbook.getGuestbookId(), "VIEW")) {
 					
 	%>
+	
+	
 
 		<portlet:actionURL name= "switchTabs" var="switchTabsURL">
 			<portlet:param name="guestbookName" value="<%=curGuestbook.getName() %>"/>
