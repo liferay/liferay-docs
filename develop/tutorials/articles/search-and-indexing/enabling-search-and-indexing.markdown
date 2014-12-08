@@ -465,9 +465,8 @@ such a query, you could use the following code:
     }
 
 In addition to `BooleanQuery`, `TermRangeQuery`, and `TermQuery`, Liferay
-provides a `StringQuery` implementation class. This kind of query implmentation
-allows you to construct custom queries using Lucene's query syntax. Please refer
-to the
+provides a `StringQuery` implementation class. This query implementation allows
+you to construct custom queries using Lucene's query syntax. Please refer to the
 [Faceted Search and Customized Search Filtering](/develop/tutorials/-/knowledge_base/6-2/faceted-search-and-customized-search-filtering)
 tutorial for an example that uses a `StringQuery`. Once you've performed a
 search and have obtained a hits object, you can retrieve the corresponding
