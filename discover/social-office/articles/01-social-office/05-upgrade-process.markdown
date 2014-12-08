@@ -1,4 +1,4 @@
-# Upgrade Process 
+# Upgrade Process [](id=upgrade-process)
 
 Social Office 1.5b runs on Liferay Portal 5.2.7. If you're running Social Office
 1.5b and you'd like to upgrade to 2.0, you first need to upgrade your portal to

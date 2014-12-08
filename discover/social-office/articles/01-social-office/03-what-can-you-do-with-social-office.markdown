@@ -1,4 +1,4 @@
-# What can you do with Social Office? 
+# What can you do with Social Office? [](id=what-can-you-do-with-social-office)
 
 Social Office gives you the social collaboration features you need to do virtual
 teamwork. You can coordinate calendars and schedules, write shared blog entries,

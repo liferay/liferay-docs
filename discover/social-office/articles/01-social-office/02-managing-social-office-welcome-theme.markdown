@@ -1,4 +1,4 @@
-# Managing the Social Office Welcome Theme 
+# Managing the Social Office Welcome Theme [](id=managing-the-social-office-welcome-theme)
 
 The Social Office welcome theme is a CE-only feature. The welcome theme and
 resource importer are included in the CE Social Office 2.0 package available

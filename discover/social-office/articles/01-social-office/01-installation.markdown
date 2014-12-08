@@ -1,4 +1,4 @@
-# Installation 
+# Installation [](id=installation)
 
 Unlike previous versions of Social Office, Social Office 2.0 is available as an
 application that can be installed on Liferay Portal 6.1. Liferay applications,
@@ -144,7 +144,7 @@ be greyed out with a message stating that they've been undeployed.
 
 $$$
 
-## Installation Peculiarities for Specific Apps Servers 
+## Installation Peculiarities for Specific Apps Servers [](id=installation-peculiarities-for-specific-apps-servers)
 
 After installing Social Office on Glassfish, you need to restart the server
 before Social Office will be fully deployed. If you don't restart, Glassfish
@@ -156,7 +156,7 @@ you don't restart the server, the Dashboard link won't appear although you can
 find other content added by Social Office if you use the *Go To* &rarr; *My
 Public/My Private Pages* menu. To fix this issue, simply restart your server.
 
-## Uninstalling Social Office 
+## Uninstalling Social Office [](id=uninstalling-social-office)
 
 If you'd like to uninstall Social Office, you can do so from the *Purchased*
 page of the control panel, under the Marketplace heading. However, after you've

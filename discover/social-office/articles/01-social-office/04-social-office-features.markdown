@@ -1,4 +1,4 @@
-# Social Office Features 
+# Social Office Features [](id=social-office-features)
 
 Liferay Portal is a full featured web portal, containing an industry-leading
 suite of built-in applications and tools. It's highly customizable and
@@ -35,7 +35,7 @@ to fit the size of your browser window. You can click the button again to return
 the portlets to their default size. In addition to the standard Social Office
 theme, there's another theme for Social Office's Welcome page.
 
-## Using the Social Office User Role and Personal Sites 
+## Using the Social Office User Role and Personal Sites [](id=using-the-social-office-user-role-and-personal-sites)
 
 The Social Office plugin adds a special role to Liferay Portal: Social Office
 User. Assigning users to the Social Office User role provides them with personal
@@ -69,7 +69,7 @@ right-most item of the Dockbar becomes a drop-down list containing a link to
 your public *Profile* page as well as a link your *My Account* page of the
 control panel and the *Sign Out* link.
 
-### Using the Dashboard and Other Private Pages 
+### Using the Dashboard and Other Private Pages [](id=using-the-dashboard-and-other-private-pages)
 
 The private page sets of Social Office users serve as personal workspaces. Each
 private page displays a navigation menu and the Sites portlet in the left column
@@ -238,7 +238,7 @@ that you've created.](../../images/tasks-portlet.png)
 The *Permissions* button at the top left of the Tasks portlet lets you choose
 which roles grant permission to add new tasks or edit existing ones.
 
-### Using the Profile Page and Other Public Pages 
+### Using the Profile Page and Other Public Pages [](id=using-the-profile-page-and-other-public-pages)
 
 You can access your public Profile page from the Dashboard by clicking on your
 name, which appears above the page navigation menu in the left column. Your
@@ -294,7 +294,7 @@ These function the same way as the ones in a user's private site except that
 other users can only view, not edit them. However, the Timeline tab of the
 Microblogs portlet allows users to comment on entries.
 
-## Using Social Office Sites for Collaboration 
+## Using Social Office Sites for Collaboration [](id=using-social-office-sites-for-collaboration)
 
 Social Office not only provides custom pages and applications for users'
 personal sites but also for general sites that can have many members. A portal
@@ -387,7 +387,7 @@ Additionally, he can easily access those pages to catch up on what he missed.
 This works because Social Office automatically keeps everyone up to date on the
 activities of the teams they work with every day.
 
-## Social Office EE Features 
+## Social Office EE Features [](id=social-office-ee-features)
 
 Social Office EE can only be installed on a Liferay EE instance; it's not
 possible to install Social Office EE on Liferay CE. Social Office EE provides
