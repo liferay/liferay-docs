@@ -194,8 +194,14 @@ JavaScript files, CSS files, or images.
  - ***JSPF:*** Changes won't take effect unless you modify the JSP that
    includes it. 
  - ***CSS:*** When modifying a CSS file imported by another CSS file, the
- changes won't take effect unless you modify the parent CSS file (usually
- `main.css`). 
+   changes won't take effect unless you modify the parent CSS file (usually
+   `main.css`). Also, the modifications to `main.css` only take effect if 
+   `theme.css.fast.load=false` is set in `portal-ext.properties`. This is 
+   because Liferay uses the `sass-cache` to load CSS. The CSS modified in a hook 
+   isn't reparsed into the `sass-cache` unless `theme.css.fast.load` is 
+   set to `false`. If you're using Liferay IDE or Developer Studio, you should 
+   also note that you can't create CSS hooks from the New Liferay Hook 
+   Configuration wizard.
 
 ---
 
