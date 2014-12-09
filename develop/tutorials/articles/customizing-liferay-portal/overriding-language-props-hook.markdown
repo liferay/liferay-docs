@@ -52,7 +52,7 @@ property hook plugin for overriding Liferay's default text values with your own
 custom values. 
 
 1.  If you don't yet have a hook project, create one following the steps in the 
-    [Creating a Hook](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-lp-6-2-develop-tutorial) tutorial.
+    [Creating a Hook](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk) tutorial.
 
 2.  In Liferay IDE, right click your hook project and select *New* &rarr;
 *Liferay Hook Configuration*. In the window that appears, select the *Language
@@ -63,7 +63,19 @@ properties* check box and click *Next*.
 3.  Accept the default path `docroot/WEB-INF/src/content` for the content
     folder. Click on the *Add...* button and add the names of any language
     properties files that contain text values that you want to customize. Then
-    click *Finish*. 
+    click *Finish*.
+    
+    +$$$
+    
+    **What Happened Behind the Scenes?**
+    The Liferay Hook Configuration Wizard added a blank copy of the custom language properties files specified to the
+    `/WEB-INF/classes/content` and `/WEB-INF/src/content/` directories of your hook project.
+    
+    **Note:** If you are creating the hook via the Plugins SDK, you must first create a directory
+    `docroot/WEB-INF/src/content` in your plugin. Then, you must create your custom language properties files in that
+    folder and [reference the custom language files in liferay-hook.xml](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook#referencing-custom-language-files-in-the-liferay)
+    
+    $$$
 
     ![Figure 3: The Liferay Hook Configuration wizard lets you specify any language properties files to customize.](../../images/new-hook-configuration-language-files.png)
 
