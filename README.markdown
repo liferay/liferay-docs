@@ -1,6 +1,6 @@
 # LIFERAY-DOCS
 
-<!-- Icon here -->
+ ![Liferay Docs Icon](guidelines/images/liferayDeveloperNetworkSmallerEdit7.jpg)
 
 Welcome to Liferay's official documentation repository, home to
 [Liferay Developer Network](https://dev.liferay.com) articles. You can
@@ -12,6 +12,12 @@ locally, you can execute a [`convert`](bin/) script. You have style guidelines
 for [writing](guidelines/writers-guidelines.markdown) and following
 [Markdown conventions](guidelines/writers-guidelines.markdown), to
 produce documentation that is comprehensive and consistent. 
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Structure](#structure)
+- [FAQ](#faq)
 
 ## Getting Started
 
