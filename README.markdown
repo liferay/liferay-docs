@@ -27,16 +27,15 @@ Developer Network (LDN)](https://dev.liferay.com/). For example, if your article
 should reside in the Develop section of LDN, then paste your article into the
 `new-articles` folder residing in the `liferay-docs/develop` directory. For more
 information on where to place new articles and the guidelines on writing them,
-visit the following [How do I write and submit my own
-article?](#how-do-i-write-and-submit-my-own-article) FAQ.
+visit the following [How do I write and submit my own article?](#how-do-i-write-and-submit-my-own-article)
+FAQ.
 
 Your new article should be written in Markdown, which is a text format designed
 so it can be converted to HTML. Sometimes converting the Markdown to HTML is the
 easiest way to ensure you’ve correctly formatted your text. You can convert your
 Markdown to HTML by using *convert* scripts that this repository provides. Visit
-the [How do I convert my Markdown using the provided convert
-scripts?](#how-do-i-convert-my-markdown-using-the-provided-convert-scripts) FAQ
-for details on how to use them.
+the [How do I convert my Markdown using the provided convert scripts?](#how-do-i-convert-my-markdown-using-the-provided-convert-scripts)
+FAQ for details on how to use them.
 
 If you’d like to edit an existing article, you can open it in its current
 location and make the necessary updates. There is no need to reproduce the
@@ -110,7 +109,7 @@ Then just go through the following tutorials on GitHub:
     
 * [Set up Git](https://help.github.com/articles/set-up-git/)
 * [Fork a Repo](https://help.github.com/articles/fork-a-repo/)
-* [Making Changes](https://help.github.com/articles/making-changes/)
+* [Committing Your Changes](http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Committing-Your-Changes)
 * [Using Pull Requests](https://help.github.com/articles/using-pull-requests/)
 * [Be Social](https://help.github.com/articles/be-social/)
 
