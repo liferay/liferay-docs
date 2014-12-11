@@ -12,7 +12,7 @@ them easy to write and easy to read. Approved articles are uploaded to the
 Liferay Developer Network (LDN) and converted automatically to HTML. In this
 project, you can contribute new articles, improve existing articles, or fix
 documentation bugs. To produce documentation that is comprehensive and
-stylistically consistent, the `liferay-docs` project provides
+stylistically consistent, the liferay-docs project provides
 [writing guidelines](guidelines/writers-guidelines.markdown),
 [Markdown guidelines](guidelines/writers-guidelines.markdown), and a
 [tutorial template](develop/tutorial-template.markdown).
@@ -28,7 +28,7 @@ contribute, by following the [Getting Started](#getting-started) section.
 
 ## Getting Started
 
-If you’re new to the `liferay-docs` repository and you want to add/edit material
+If you’re new to the liferay-docs repository and you want to add/edit material
 locally, you first must clone the project. For information on how to work with
 Git projects, see
 [How do I use Git and GitHub?](#how-do-i-use-git-and-github).
@@ -57,13 +57,13 @@ changes and submit pull requests, see
 [How do I use Git and GitHub?](#how-do-i-use-git-and-github). 
 
 After you've submitted a pull request, Liferay’s documentation team reviews
-your contribution. Approved changes are merged into the `liferay-docs` repo and
+your contribution. Approved changes are merged into the liferay-docs repo and
 published to the [Liferay Developer Network](https://dev.liferay.com).
 
 ## Structure
 
 All [Liferay Developer Network](https://dev.liferay.com) articles reside in
-`liferay-docs` repository folders. The folders are laid out in a similar manner
+liferay-docs repository folders. The folders are laid out in a similar manner
 to LDN's pages and articles. Each repository folder under `discover`, `develop`,
 and `distribute` represents a section of LDN's articles. For example, the
 `discover/portal` folder contains Markdown files and images that are the source
@@ -166,14 +166,14 @@ If you're writing an LDN developer tutorial, you should structure it according t
 the [tutorial template](develop/tutorial-template.markdown). If you're writing
 an LDN user article, you should structure it similarly to the 
 [articles in the Discover section of LDN](discover/portal/articles/01-what-is-liferay/01-building-site-with-liferay-web-content.markdown). 
-To submit an article, you must first fork the `liferay-docs` repository on 
+To submit an article, you must first fork the liferay-docs repository on 
 GitHub. Then create a new branch for your article on your forked repository. 
 If your article is a tutorial, place it in the
 [develop/new-articles](develop/new-articles) folder. If your article is a user
 article, place it in the
 [discover/new-articles](discover/new-articles) folder. You should also place any 
 images your article uses in those folders along with it. Once you commit and 
-push your changes to your forked `liferay-docs` repository, submit a pull
+push your changes to your forked liferay-docs repository, submit a pull
 request to the default user `liferay`. Alternatively, you can write and submit
 your article using the web interface on GitHub. Just navigate to the appropriate
 `new-articles` folder for your article type and then click the plus icon in the
