@@ -134,3 +134,7 @@ translations before the translations are deployed to a production environment.
 In this tutorial you learned to leverage the Plugins SDK to generate 
 translations for your portlets using the Bing Translator.
 
+## Related Topics [](id=related-topics)
+
+[Overriding Language Properties Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
+

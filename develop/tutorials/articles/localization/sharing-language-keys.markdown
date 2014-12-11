@@ -129,6 +129,8 @@ your plugin project's portlets.
 
 Related topics: 
 
+[Overriding Language Properties Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
+
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
 [Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
