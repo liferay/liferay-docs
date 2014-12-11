@@ -12,7 +12,7 @@ them easy to write and easy to read. Approved articles are uploaded to the
 Liferay Developer Network (LDN) and converted automatically to HTML. In this
 project, you can contribute new articles, improve existing articles, or fix
 documentation bugs. To produce documentation that is comprehensive and
-stylistically consistent, the liferay-docs project provides
+stylistically consistent, the `liferay-docs` project provides
 [writing guidelines](guidelines/writers-guidelines.markdown),
 [Markdown guidelines](guidelines/writers-guidelines.markdown), and a
 [tutorial template](develop/tutorial-template.markdown).
@@ -28,15 +28,15 @@ contribute, by following the [Getting Started](#getting-started) section.
 
 ## Getting Started
 
-If you’re new to the liferay-docs repository and you want to add/edit material
+If you’re new to the `liferay-docs` repository and you want to add/edit material
 locally, you first must clone the project. For information on how to work with
 Git projects, see
 [How do I use Git and GitHub?](#how-do-i-use-git-and-github).
 
 To contribute a new article, add it in an appropriate `new-articles` folder
 found in either the `discover`, `develop`, or `distribute` folder. The
-repository folders follow a [structure](#structure) similar to the Liferay’s
-Developer Network's layout of pages and articles. To add an article to the LDN's
+repository folders follow a [structure](#structure) similar to the Liferay
+Developer Network's layout of pages and articles. To add an article to LDN's
 [Develop](https://dev.liferay.com/develop) section, for example, create your
 article and its images in the `liferay-docs/develop/new-articles` folder. For
 more information on where to place new articles and for guidelines on writing
@@ -47,7 +47,7 @@ All articles should be written in Markdown. Converting your article to HTML
 locally helps you ensure you’ve correctly formatted your Markdown text. You can
 convert your Markdown to HTML by using one of the `convert.[bat|sh]` scripts
 found in the [`bin`](bin/) folder. See
-[How do I convert my Markdown using the provided convert scripts?](#how-do-i-convert-my-markdown-using-the-provided-convert-scripts)
+[How do I convert my local Markdown to HTML using the provided convert scripts?](#how-do-i-convert-my-local-markdown-to-html-using-the-provided-convert-scripts)
 for details on using the script.
 
 If you’d like to modify an existing article, you can edit it in its current
@@ -63,8 +63,8 @@ published to the [Liferay Developer Network](https://dev.liferay.com).
 ## Structure
 
 All [Liferay Developer Network](https://dev.liferay.com) articles reside in
-liferay-docs repository folders. The folders are laid out in a similar manner to
-LDN's pages and articles. Each repository folder under `discover`, `develop`,
+`liferay-docs` repository folders. The folders are laid out in a similar manner
+to LDN's pages and articles. Each repository folder under `discover`, `develop`,
 and `distribute` represents a section of LDN's articles. For example, the
 `discover/portal` folder contains Markdown files and images that are the source
 for LDN's
@@ -189,14 +189,14 @@ new file and compose your article. When you're done, enter a description in the
 ### How do I convert my local Markdown to HTML using the provided convert scripts?
 
 There's a Batch and Shell convert script provided so you can use this tool on 
-any operating system. These files are located in the `liferay-docs/bin` 
+any operating system. These files are located in the [`liferay-docs/bin`](bin/)
 folder. To run the convert script, use the following command:
     
     convert.bat|sh [Markdown file to convert] [HTML file to be written]
     
 First specify the path for either the `convert.bat` or `convert.sh` script. The
 script's first parameter must be the Markdown file path. The second
-parameter (optional), lets you specify the path of an HTML file to generate.
+parameter (optional) lets you specify the path of an HTML file to generate.
 As a working example, the following command would convert an article found in
 the `discover/new-articles` folder:
 
