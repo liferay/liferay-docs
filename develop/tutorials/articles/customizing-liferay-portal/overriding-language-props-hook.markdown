@@ -115,7 +115,7 @@ The Liferay Hook Configuration wizard is the easiest way to create and configure
 custom language properties files. If you didn't use Liferay IDE's Liferay Hook
 Configuration wizard or you created your hook project using the Plugins SDK from
 the
-[command line](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk#creating-a-hook-project-from-the-command-line),
+[command line](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk#creating-a-hook-project-from-the-command-line),
 however, the next section shows you how to manually create and configure custom
 language properties files. 
 
