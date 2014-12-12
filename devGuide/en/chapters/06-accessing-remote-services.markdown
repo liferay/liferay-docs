@@ -1538,7 +1538,7 @@ Content articles and Dynamic Data List records. Liferay's new Skinny JSON
 Provider app gives you access to them and returns them in an easy-to-use
 fashion. 
 
-## Invoking Services Using Skinny JSON Provider
+## Invoking Services Using Skinny JSON Provider [](id=invoking-services-using-skinny-json-prov-liferay-portal-6-2-dev-guide-06-en)
 
 Out of the box, Liferay's built-in JSON web services provide access to Web
 Content articles and Dynamic Data Lists (DDLs), but return them in a verbose
@@ -1574,7 +1574,7 @@ Before invoking the `get-skinny-journal-articles` and `get-skinny-ddl-records`
 services, you should understand how to anonymously use the Skinny JSON Provider 
 and how to use it in a CSRF protected environment. 
 
-### Accessing the Services Anonymously and in CSRF Protected Environments
+### Accessing the Services Anonymously and in CSRF Protected Environments [](id=accessing-the-services-anonymously-and-i-liferay-portal-6-2-dev-guide-06-en)
 
 Retrieving data through an anonymous request to a web service is a typical use
 case for Skinny JSON Provider. You can configure Liferay to allow anonymous
@@ -1637,7 +1637,7 @@ by specifying the following setting in your `portal-ext.properties`:
 Now that you've configured appropriate access for your Skinny JSON Provider app,
 you can call its services!
 
-### Retrieving Skinny Web Content Articles
+### Retrieving Skinny Web Content Articles [](id=retrieving-skinny-web-content-articles-liferay-portal-6-2-dev-guide-06-en)
 
 The `get-skinny-journal-articles` service is designed to retrieve all web
 content articles that are based on a given web content structure, in a given
@@ -1773,7 +1773,7 @@ matching articles are found.
 If you think getting web content articles through Skinny Provider is easy,
 you'll find it a snap to get Dynamic Data List records. 
 
-### Retrieving Skinny Dynamic Data Lists
+### Retrieving Skinny Dynamic Data Lists [](id=retrieving-skinny-dynamic-data-lists-liferay-portal-6-2-dev-guide-06-en)
 
 The `get-skinny-ddl-records` service retrieves all records found in a specified
 Dynamic Data List (DDL). Each DDL is globally recognized by its unique ID--no
@@ -1871,7 +1871,7 @@ By learning to leverage JSON web services in Liferay, you've added some powerful
 tools to your toolbox. Good job! Next, let's learn how to implement OAuth so
 you can access third-party services. 
 
-## Authorizing Access to Services with OAuth
+## Authorizing Access to Services with OAuth [](id=authorizing-access-to-services-with-oaut-liferay-portal-6-2-dev-guide-06-en)
 
 Suppose you wanted users to authenticate to your Liferay Portal plugin from a
 provider, like Twitter. You might think that you'd need to store the user's
@@ -1917,7 +1917,7 @@ through the cycle. In this section, you'll see  an example of a portlet accessin
 JSON Web Services from a remote portal. Let's get started by first selecting and
 implementing services of an OAuth Client library. 
 
-### Selecting an OAuth Client Library
+### Selecting an OAuth Client Library [](id=selecting-an-oauth-client-library-liferay-portal-6-2-dev-guide-06-en)
 
 In order for your portlet to use OAuth, it must have a reference to OAuth
 standards for authorization. You can offer your portlet an OAuth client library
@@ -1933,7 +1933,7 @@ portal dependency jar:
 That's all you have to do! Your portlet now has access to Scribe's OAuth
 library. Next, you'll implement Scribe's OAuth service interface.
 
-### Configuring OAuth's Service Implementation
+### Configuring OAuth's Service Implementation [](id=configuring-oauths-service-implementatio-liferay-portal-6-2-dev-guide-06-en)
 
 Now that your portlet can access an OAuth client library, you need to
 implement the OAuth services in your portlet. The following code demonstrates
@@ -2085,7 +2085,7 @@ specified. Your portlet can now take part in the OAuth authorization process!
 You'll just need to set up a simple user interface to start the OAuth cycle.
 Let's do this next!
 
-### Creating a User Interface for Authentication
+### Creating a User Interface for Authentication [](id=creating-a-user-interface-for-authentica-liferay-portal-6-2-dev-guide-06-en)
 
 Your portlet's user interface must initiate the OAuth cycle the first time it
 accesses the OAuth platform for each specific user. Your portlet must
