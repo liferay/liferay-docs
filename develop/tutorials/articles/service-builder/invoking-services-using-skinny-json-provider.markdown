@@ -1,20 +1,46 @@
 # Invoking Services Using Skinny JSON Provider
 
-Out of the box, Liferay's built-in JSON web services provide access to Web
-Content articles and Dynamic Data Lists (DDLs), but return them in a verbose
-XML-based representation. The Skinny JSON Provider app also offers web services
-for retrieving web content articles and DDLs, but returns them in a simplified,
-"skinny" JSON fashion. As a convenience, the Skinny JSON provider performs
-additional parsing and processing, to return the bare essentials of each article
-and DDL. Each web content article representation is comprised of its associated
-web content structure fields. Each DDL record representation is comprised of its
-data definition fields. The returned values are easier to read and light-weight,
+It's the classic story of a superhero trying to maintain his secret
+identity as a mild-mannered reporter. He's trying to make a living while
+maintaining a low profile. Enter the overbearing boss, with furled brow and a
+cigar clenched in his teeth. 
+
+"Hey you!" barks the boss, "I want coverage on the hoopla going on in the
+lower-east side." 
+
+"Uh, yes sir. Right away sir," says the hero as he fuddles around for his pen
+and notepad. 
+
+"And you better shoot straight this time. No nonsense. I want the skinny on
+this one!" exclaims the boss. 
+
+The hero grabs his coat and clumsily knocks into the corner of his desk as he
+makes for the office door. Before walking out, he pauses in the doorway to
+look at his boss, "Sir; I won't let you down."  
+
+"Well?! What are you waiting for? Get moving!" hollers the boss. 
+
+The hero cowers away quickly in a hurried mess. 
+
+Maybe you've been asked to get "the skinny" on Liferay Portal data. Your gruff
+boss demands it or you're personally anxious to get the data to use in a slick
+mobile app you're developing. Either way, you want information from the portal
+and you want it now. The Skinny JSON Provider app is your ticket to getting
+skinny data. 
+
+The Skinny JSON Provider app offers web services for retrieving web content
+articles and DDLs, but returns them in a simplified, "skinny" JSON fashion. As a
+convenience, the Skinny JSON provider performs additional parsing and
+processing, to return the bare essentials of each article and DDL. Each web
+content article representation is comprised of its associated web content
+structure fields. Each DDL record representation is comprised of its data
+definition fields. The returned values are easier to read and light-weight,
 making them ideal to use in browsers and mobile applications. 
 
 The Skinny JSON Provider app is available through the Liferay Marketplace.
-You'll find it categorized as a Utility app. You can read the section on
-[Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps)
-for details on how to install it.
+You'll find it categorized as a Utility app. To learn how to install it, you can
+read the section
+[Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps).
 
 The Skinny JSON Provider app adds two new web service APIs that you can
 configure like other Liferay web services. Here are the context and class name
@@ -97,7 +123,18 @@ by specifying the following setting in your `portal-ext.properties`:
 Now that you've configured appropriate access for your Skinny JSON Provider app,
 you can call its services!
 
-## Retrieving Skinny Web Content Articles
+## Retrieving Skinny Entities
+
+It's the moment you've been waiting for--getting skinny streamlined
+representations of web content articles and and dynamic data lists. In the
+following sections, you'll learn how to invoke services to get them and learn
+how to find values to populate the service parameters. And you'll see what the
+returned JSON objects look like. If you're itching to access DDLs, then you
+might want to skip ahead to the section
+[Retrieving Skinny Dynamic Data Lists](#retrieving-skinny-dynamic-data-lists).
+The next section shows you how to access skinny web content articles. 
+
+### Retrieving Skinny Web Content Articles
 
 The `get-skinny-journal-articles` service is designed to retrieve all web
 content articles that are based on a given web content structure, in a given
@@ -233,7 +270,7 @@ matching articles are found.
 If you think getting web content articles through Skinny Provider is easy,
 you'll find it a snap to get Dynamic Data List records. 
 
-## Retrieving Skinny Dynamic Data Lists
+### Retrieving Skinny Dynamic Data Lists
 
 The `get-skinny-ddl-records` service retrieves all records found in a specified
 Dynamic Data List (DDL). Each DDL is globally recognized by its unique ID--no
@@ -327,8 +364,10 @@ As a recap, the Skinny JSON Provider app helps you retrieve lightweight "skinny"
 representations of dynamic data list records and web content articles. What a
 great way to access these core Liferay entities! 
 
-<!-- ## Related Articles -->
+## Related Articles
 
-<!-- mobile -->
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-<!-- creating services -->
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
