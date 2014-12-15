@@ -733,12 +733,12 @@ the Service Provider tab of the SAML Admin Control Panel portlet.
 
 +$$$
 
-**Note:** The previous two sections explained how
- to use the SAML portlet's Control Panel interface to configure Liferay as an
- Identity Provider and as a Service Provider. It's possible to configure Liferay
- as an Identity Provider or as a Service Provider entirely through the
- `portal-ext.properties` file. However, we recommend using the Control Panel
- SAML interface because it specifies required fields and validates some fields.
+**Note:** The previous two sections explained how to use the SAML portlet's
+Control Panel interface to configure Liferay as an Identity Provider and as a
+Service Provider. It's possible to configure Liferay as an Identity Provider or
+as a Service Provider entirely through the `portal-ext.properties` file.
+However, we recommend using the Control Panel SAML interface because it
+specifies required fields and validates some fields.
 
 $$$
 

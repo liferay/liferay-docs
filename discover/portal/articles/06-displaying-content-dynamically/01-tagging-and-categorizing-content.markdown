@@ -120,7 +120,7 @@ that you have selected.
 After you have created a hierarchy of categories, your content creators will have
 them available to apply to content that they create. Click on *Web Content* in
 the Content section of the Site Administration area the Control Panel and click
-*Add* &rrar; *Basic Web Content*. Click on *Categorization* from the right-side
+*Add* &rarr; *Basic Web Content*. Click on *Categorization* from the right-side
 menu and click *Select* on the vocabulary you'd like to apply. A dialog box
 appears with your categories. Select any relevant categories by checking the box
 next to them, and they'll be applied to the content.

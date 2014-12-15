@@ -350,7 +350,7 @@ we'll use a simple Jasper template that was created using iReport Designer.
 8. Navigate to the Reports Admin portlet's Reports tab and click on the report
    you generated.
 
-9. Click *Actions* &rrar; *Download* next to the `sample-report.pdf` file.
+9. Click *Actions* &rarr; *Download* next to the `sample-report.pdf` file.
 
 This report should list all of your portal's users, displaying the userId,
 screenName, emailAddress, createDate, and modifiedDate of each user.
