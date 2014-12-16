@@ -30,7 +30,7 @@ You can start learning how to contribute by following the
 If you’re new to the liferay-docs repository and you want to add/edit material
 locally, you first must clone the project. For information on how to work with
 Git projects, see
-[How do I use Git and GitHub?](#how-do-i-use-git-and-github).
+[How do I use Git and GitHub?](guidelines/faq.markdown#how-do-i-use-git-and-github).
 
 To contribute a new article, add it in an appropriate `new-articles` folder
 found in either the `discover`, `develop`, or `distribute` folder. The
@@ -40,20 +40,20 @@ Developer Network's layout of pages and articles. To add an article to LDN's
 article and its images in the `liferay-docs/develop/new-articles` folder. For
 more information on where to place new articles and for guidelines on writing
 them, see
-[How do I write and submit my own article?](#how-do-i-write-and-submit-my-own-article).
+[How do I write and submit my own article?](guidelines/faq.markdown#how-do-i-write-and-submit-my-own-article).
 
 All articles should be written in Markdown. Converting your article to HTML
 locally helps you ensure you’ve correctly formatted your Markdown text. You can
 convert your Markdown to HTML by using one of the `convert.[bat|sh]` scripts
 found in the [`bin`](bin/) folder. See
-[How do I convert my local Markdown to HTML using the provided convert scripts?](#how-do-i-convert-my-local-markdown-to-html-using-the-provided-convert-scripts)
+[How do I convert my local Markdown to HTML using the provided convert scripts?](guidelines/faq.markdown#how-do-i-convert-my-local-markdown-to-html-using-the-provided-convert-scripts)
 for details on using the script.
 
 If you’d like to modify an existing article, you can edit it in its current
 repository location. After you’ve made your changes, commit them and submit a
 GitHub pull request to the default user `liferay`. To learn how to commit
 changes and submit pull requests, see
-[How do I use Git and GitHub?](#how-do-i-use-git-and-github). 
+[How do I use Git and GitHub?](guidelines/faq.markdown#how-do-i-use-git-and-github). 
 
 After you've submitted a pull request, Liferay’s documentation team reviews
 your contribution. Approved changes are merged into the liferay-docs repo and
