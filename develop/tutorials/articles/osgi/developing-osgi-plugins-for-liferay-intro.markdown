@@ -46,8 +46,8 @@ files:
 - `build.xml`
 
 Bnd is a tool that makes it easy to create OSGi bundles. See
-[www.aquite.biz/Bnd/Bnd](http://www.aqute.biz/Bnd/Bnd) for details about what you can
-specify in your `bnd.bnd` file. Basically, your `bnd.bnd` file contains
+[www.aquite.biz/Bnd/Bnd](http://www.aqute.biz/Bnd/Bnd) for details about what
+you can specify in your `bnd.bnd` file. Basically, your `bnd.bnd` file contains
 instructions about dependency management and how to create your OSGi bundle's
 JAR file.
 
