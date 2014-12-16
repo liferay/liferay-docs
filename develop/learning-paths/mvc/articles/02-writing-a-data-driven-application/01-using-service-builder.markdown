@@ -31,7 +31,8 @@ need to create that application first, or download it from [here](https://github
 From here on, we'll assume you have Liferay IDE and your application all set up 
 and ready to go. 
 
-1. Right-click on your project and select *New* &rarr; *Liferay Service Builder*. 
+1. Right-click on your project and select *New* &rarr; *Liferay Service
+   Builder*. 
 
 2. For the package path, use the package `com.liferay.docs.guestbook`. 
 
@@ -50,9 +51,9 @@ and ready to go.
    *Columns* attribute. 
 
 8. Click the *Add Default Columns* link at the bottom. This adds the primary key
-   for this table/entity and some other columns that Liferay uses by default, such
-   as the ID of the user who created this entity, the create date, the modified
-   date, and more. 
+   for this table/entity and some other columns that Liferay uses by default,
+   such as the ID of the user who created this entity, the create date, the
+   modified date, and more. 
 
 9. Click the *+* button to the right of the list of columns. This lets you add a
    new column. 
@@ -163,16 +164,16 @@ Guestbook table, first.
 1. In the Guestbook entity, click the *Finders* link. 
 
 2. On the right side of the screen, click the *+* button to create a new Finder.
-Call it *GroupId*. For a return type, use *Collection*. In case you're
-wondering, yes, this is a Java Collection. 
+   Call it *GroupId*. For a return type, use *Collection*. In case you're
+   wondering, yes, this is a Java Collection. 
 
 3. Notice that a new GroupId node has now been created under Finders on the
-left. Expand it to reveal the nodes beneath it. 
+   left. Expand it to reveal the nodes beneath it. 
 
 4. Click the *Finder Columns* node. 
 
 5. On the right side of the screen, click the *+* button to create a column.
-Call it *groupId*. 
+   Call it *groupId*. 
 
 6. Save your Service Builder configuration by typing Ctrl-S. 
 
@@ -185,20 +186,20 @@ learning path.
 1. In the Entry entity, click the *Finders* link. 
 
 2. On the right side of the screen, click the *+* button to create a new Finder.
-Call it *G_G* and specify its return type as *Collection*. Why in the world
-would you want to call it G_G? It's a Liferay convention. If you're creating a
-finder that uses two (or more) columns, it's named for the first letter of each
-column separated by underscore characters. This way, you can easily tell which
-fields the finder works on, and the method name Service Builder generates stays
-small. 
+   Call it *G_G* and specify its return type as *Collection*. Why in the world
+   would you want to call it G_G? It's a Liferay convention. If you're creating
+   a finder that uses two (or more) columns, it's named for the first letter of
+   each column separated by underscore characters. This way, you can easily tell
+   which fields the finder works on, and the method name Service Builder
+   generates stays small. 
 
 3. Notice that a new G_G node has now been created under Finders on the left.
-Expand it to reveal the nodes beneath it. 
+   Expand it to reveal the nodes beneath it. 
 
 4. Click the *Finder Columns* node. 
 
 5. On the right side of the screen, click the *+* button to create a column.
-Call it *groupId*. 
+   Call it *groupId*. 
 
 6. Click the *+* button to create another column. Call it *guestbookId*. 
 
