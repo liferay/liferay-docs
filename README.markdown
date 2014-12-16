@@ -32,10 +32,12 @@ locally, you first must clone the project. For information on how to work with
 Git projects, see
 [How do I use Git and GitHub?](guidelines/faq.markdown#how-do-i-use-git-and-github).
 
-To contribute a new article, add it in an appropriate `new-articles` folder
-found in either the `discover`, `develop`, or `distribute` folder. The
-repository folders follow a [structure](#structure) similar to the Liferay
-Developer Network's layout of pages and articles. To add an article to LDN's
+To contribute a new article, add it in an appropriate
+[`new-articles`](new-articles) folder found in either the
+[`discover`](discover), [`develop`](develop), or [`distribute`](distribute)
+folder. The repository folders follow a [structure](#structure) similar to the
+Liferay Developer Network's layout of pages and articles. To add an article to
+LDN's
 [Develop](https://dev.liferay.com/develop) section, for example, create your
 article and its images in the `liferay-docs/develop/new-articles` folder. For
 more information on where to place new articles and for guidelines on writing
@@ -62,26 +64,26 @@ published to the [Liferay Developer Network](https://dev.liferay.com).
 ## Structure
 
 All [Liferay Developer Network](https://dev.liferay.com) articles reside in
-liferay-docs repository folders. The folders are laid out in a similar manner
-to LDN's pages and articles. Each repository folder under `discover`, `develop`,
-and `distribute` represents a section of LDN's articles. For example, the
-`discover/portal` folder contains Markdown files and images that are the source
-for LDN's
+liferay-docs repository folders. The folders are laid out in a similar manner to
+LDN's pages and articles. Each repository folder under [`discover`](discover),
+[`develop`](develop), and [`distribute`](distribute) represents a section of
+LDN's articles. For example, the [`discover/portal`](discover/portal) folder
+contains Markdown files and images that are the source for LDN's
 [Discover&rarr;Portal](https://dev.liferay.com/discover/portal) articles. 
 
 To contribute new articles and images or modifications to LDN's 
 [Discover](https://dev.liferay.com/discover),
 [Develop](https://dev.liferay.com/develop), or
 [Distribute](https://dev.liferay.com/distribute) sections, commit them to the
-respective `new-articles` folder. 
+respective [`new-articles`](new-articles) folder. 
 
 **Article Folders and Mappings to LDN Pages:**
 
  ![Discover](guidelines/images/discover.png)                                             | ![Develop](guidelines/images/develop.png)                                              | ![Distribute](guidelines/images/distribute.png) 
  :-------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------- | :--------------------------------------------
   &nbsp;[**discover/**](https://dev.liferay.com/discover)                                | &nbsp;[**develop/**](https://dev.liferay.com/develop)                                  | [**distribute/**](https://dev.liferay.com/distribute) 
-  &nbsp;&#8226;&nbsp;[`deployment/`](https://dev.liferay.com/discover/deployment)        | &nbsp;&#8226;&nbsp;[`learning-paths/`](https://dev.liferay.com/develop/learning-paths) | &nbsp;&#8226;&nbsp;`new-articles/` 
-  &nbsp;&#8226;&nbsp;`new-articles/`                                                     | &nbsp;&#8226;&nbsp;`new-articles/`                                                     |
+  &nbsp;&#8226;&nbsp;[`deployment/`](https://dev.liferay.com/discover/deployment)        | &nbsp;&#8226;&nbsp;[`learning-paths/`](https://dev.liferay.com/develop/learning-paths) | &nbsp;&#8226;&nbsp;[`new-articles/`](new-articles)
+  &nbsp;&#8226;&nbsp;[`new-articles/`](new-articles)                                     | &nbsp;&#8226;&nbsp;[`new-articles/`](new-articles)                                     |
   &nbsp;&#8226;&nbsp;[`portal/`](https://dev.liferay.com/discover/portal)                | &nbsp;&#8226;&nbsp;[`reference/`](https://dev.liferay.com/develop/reference)           |
   &nbsp;&#8226;&nbsp;[`reference/`](https://dev.liferay.com/discover/reference)          | &nbsp;&#8226;&nbsp;[`tutorials/`](https://dev.liferay.com/develop/tutorials)           |
   &nbsp;&#8226;&nbsp;[`social-office/`](https://dev.liferay.com/discover/social-office)  |                                                                                        |
