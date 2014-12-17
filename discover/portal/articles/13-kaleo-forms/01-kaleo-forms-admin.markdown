@@ -29,8 +29,8 @@ of the Single Approver edit screen.
 
 This graphical view is where Kaleo Forms Admin can help you build a workflow 
 without having to write any XML. There are eight types of nodes you can add to a 
-definition. The node types are **Condition**, **End**, **Fork**, **Join**, 
-**Join XOR**, **Start**, **State** and **Task**. Notice that Start and End 
+definition. The node types are *Condition*, *End*, *Fork*, *Join*, 
+*Join XOR*, *Start*, *State*, and *Task*. Notice that Start and End 
 aren't node types we've previously discussed; that's because they're actually 
 just State nodes, with certain fields pre-filled to help streamline the creation 
 process. Since every workflow has a start and end state, you'd have to do this 
@@ -58,9 +58,9 @@ First add two tasks, then use the edit icon to name them *Review* and *Update*.
 ![Figure 13.5: Edit a node by clicking on its node icon and modifying its settings.](../../images/kaleo-rename-node.png)
 
 Next, connect the nodes so Review has four nodes, as follows: one receiving the
-transition from **StartNode**, one sending a transition to **Update**, one
-receiving a transition from **Update**, and one sending a transition to
-**EndNode**. 
+transition from *StartNode*, one sending a transition to *Update*, one
+receiving a transition from *Update*, and one sending a transition to
+*EndNode*. 
 
 ![Figure 13.6: Your workflow should look something like this.](../../images/kaleo-designer-basic-workflow.png)
 

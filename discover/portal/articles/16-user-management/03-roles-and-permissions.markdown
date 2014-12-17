@@ -353,14 +353,14 @@ permissions for the role.
 
 +$$$
 
-Note: Prior to Liferay version 6.0, Power Users
- and Users did *not* have the same default permissions. So if are using Liferay
- 5.2 or a previous version, it's dangerous to remove the Power Users role from
- the default user associations: this could remove certain permissions you expect
- to apply to all users. If you decide to remove the Power Users role from the
- default user associations anyway, you will probably want to modify the
- permissions on certain portlets to make them accessible to all users. To do
- this, see the section on Plugins Configuration below.
+**Note:** Prior to Liferay version 6.0, Power Users and Users did *not* have the
+same default permissions. So if are using Liferay 5.2 or a previous version,
+it's dangerous to remove the Power Users role from the default user
+associations: this could remove certain permissions you expect to apply to all
+users. If you decide to remove the Power Users role from the default user
+associations anyway, you will probably want to modify the permissions on certain
+portlets to make them accessible to all users. To do this, see the section on
+Plugins Configuration below.
 
 $$$
 

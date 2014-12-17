@@ -167,8 +167,8 @@ confusion, the event time in notification emails is shown in the user's
 time zone, and the time zone is also displayed. Of course, Liferay can only
 calculate this properly if both the portal's and the user's time zones are set
 correctly. Users should set this for themselves when they create accounts. To
-set the portal's time zone, see the section *Configuring Additional Portal
-Settings* in chapter 17. 
+set the portal's time zone, see the section
+[Configuring Additional Portal Settings](/discover/portal/-/knowledge_base/6-2/configuring-additional-portal-settings). 
 
 The Categorization and Related Assets collapsible sections let you tag the event
 and select related assets, respectively. By tagging your event, it will come up
@@ -313,8 +313,7 @@ In Liferay 6.1 and previous versions, an older version of the Calendar portlet
 was included as one of the core portlets. If you're upgrading from Liferay 6.1
 or a previous version to Liferay 6.2 or a later version, all the calendar events
 that existed prior to 6.2 will still be available after your upgrade. After
-following
-[these](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/upgrading-liferay-liferay-portal-6-2-user-guide-18-en)
+following [these](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
 steps for upgrading Liferay, all you need to do to access previously added
 events is deploy the new Calendar portlet. You can browse through the new
 Calendar to confirm that the upgrade succeeded: you should be able to view and

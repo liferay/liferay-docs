@@ -218,7 +218,7 @@ You can also add your own mappings if you wish.
   click the *Test LDAP Users* button and Liferay will attempt to pull LDAP users
   and match them with their mappings as a preview.
 
-![Figure 17.1: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
+![Figure 17.2: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay
 user groups.
@@ -261,7 +261,7 @@ user groups.
   classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and
   view the Object Class attributes stored in LDAP for that group.
 
-![Figure 17.2: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
+![Figure 17.3: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you've set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
@@ -529,7 +529,7 @@ needs to do is accept the header attribute from Shibboleth and log the user in.
 The Shibboleth plugin adds a Shibboleth tab to the Authentication page of the
 Portal Settings section of the Control Panel.
 
-![Figure 17.3: You can enable/disable Shibboleth authentication for Liferay by navigating to the *Control Panel* &rarr; *Portal Settings* &rarr; *Authentication* &rarr; *Shibboleth*.](../../images/shibboleth.png)
+![Figure 17.4: You can enable/disable Shibboleth authentication for Liferay by navigating to the *Control Panel* &rarr; *Portal Settings* &rarr; *Authentication* &rarr; *Shibboleth*.](../../images/shibboleth.png)
 
 There are four configuration options:
 
@@ -637,7 +637,7 @@ steps:
     your certificate and private key information, you can view information about
     your certificate or download your certificate.
 
-![Figure 17.4: After saving your certificate and private key information, you can view information about your certificate or download your certificate.](../../images/saml-admin-certificate-saved.png)
+![Figure 17.5: After saving your certificate and private key information, you can view information about your certificate or download your certificate.](../../images/saml-admin-certificate-saved.png)
 
 5. Finally, after you've saved your certificate and private key information,
    check the *Enabled* box at the top of the General tab and click *Save*.
