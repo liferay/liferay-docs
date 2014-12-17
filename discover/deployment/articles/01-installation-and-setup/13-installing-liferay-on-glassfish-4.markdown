@@ -2,6 +2,8 @@
 
 *Liferay Home* is three folders above your GlassFish domain folder.
 
+This is great, but it needs pictures of jellyfish.
+
 For example, if your domain location is
 `/glassfish-4.0-web/glassfish4/glassfish/domains/domain1`, Liferay Home is
 `/glassfish-4.0-web/glassfish4/`.
