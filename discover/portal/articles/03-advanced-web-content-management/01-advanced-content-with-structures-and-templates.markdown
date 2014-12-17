@@ -125,7 +125,7 @@ action, visit the *Document Management* chapter's *WebDAV access* chapter.
  WebDAV file locking but Web Content structures and templates do not. However,
  on operating systems which require WebDAV servers to be class level 2, it's
  possible to avoid the restriction by using third-party WebDAV clients (e.g.,
- [Cyberduck](http://cyberduck.ch).
+ [Cyberduck](http://cyberduck.ch)).
 
 $$$
 

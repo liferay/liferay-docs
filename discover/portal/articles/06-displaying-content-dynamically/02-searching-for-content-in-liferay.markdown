@@ -428,10 +428,14 @@ which the facet operates.
 For example, `"fieldName": "entryClassName"` indicates that the specified facet
 implementation operates on the `entryClassName` indexed field.
 
++$$$
+
 **Note:** You can identify available indexed fields by enabling the Search
 portlet's *Display Results in Document Form* configuration setting and then
 expanding individual results by clicking the *+* symbol to the left of their
 titles. 
+
+$$$
 
 **"label":** This field takes a string value and represents the language key that
 is used for localizing the title of the facet when it's rendered.

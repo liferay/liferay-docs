@@ -228,9 +228,8 @@ new repository.
 +$$$
 
 **Tip:** In the site path example below, notice how the
-repository path has a folder `Shared Documents` consisting of two words.
-
-		http://liferay-20jf4ic/CMIS/Shared Documents/Forms/AllItems.aspx
+repository path has a folder `Shared Documents` consisting of two words:
+`http://liferay-20jf4ic/CMIS/Shared Documents/Forms/AllItems.aspx`
 
 The space between the words in the repository name must be accounted for when
 setting the site path in Liferay. Replace the empty space with the string *%20*

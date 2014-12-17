@@ -362,7 +362,7 @@ uncheck the *Version History* box mentioned above if they only want to publish
 the latest approved version of web content articles. If you'd like to change the 
 default behavior, add the following line to your `portal-ext.properties` file:
 
-`journal.publish.version.history.by.default=false`.
+    journal.publish.version.history.by.default=false
 
 One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
