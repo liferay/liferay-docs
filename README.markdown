@@ -36,7 +36,7 @@ GitHub.
 
     - <a href="discover/new-articles" target="_blank">`discover/new-articles`</a>
 
-    - <a href="distriute/new-articles" target="_blank">`distribute/new-articles`</a>
+    - <a href="distribute/new-articles" target="_blank">`distribute/new-articles`</a>
 
 3.  Click the **plus** sign after **new-articles/:**
     ![new articles folder](guidelines/images/new-articles-folder.png)
@@ -93,9 +93,7 @@ guidelines on writing them, see
 **To modify an article**, you can edit it locally in its repository location.
 After you’ve made your changes, commit them and submit a
 [pull request](https://help.github.com/articles/using-pull-requests/) to the
-default user `liferay`. To learn how to commit changes and submit pull requests,
-see
-[*How do I use Git and GitHub?*](guidelines/faq.markdown#how-do-i-use-git-and-github) 
+default user `liferay`. 
 
 **To preview an article,** invoke one of the `convert.[bat|sh]` scripts
 on your Markdown file. The scripts are in the [`bin`](bin/) folder. See
