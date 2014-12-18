@@ -427,7 +427,6 @@ To upgrade Tomcat's global classpath, follow the steps below:
 
 You've officially added Mojarra to your application server. Now you can deploy
 Liferay. 
- 
 
 ## Deploy Liferay [](id=deploy-liferay)
 
@@ -439,9 +438,9 @@ It's time to deploy Liferay as an exploded web archive within your
    Tomcat home page. Extract the Liferay `.war` file to
    `$TOMCAT_HOME/webapps/ROOT`.
 
-   Now its time to launch Liferay Portal on Tomcat!
+    Now its time to launch Liferay Portal on Tomcat!
 
-3. Start Tomcat by executing `$TOMCAT_HOME/bin/startup.bat` or
+2. Start Tomcat by executing `$TOMCAT_HOME/bin/startup.bat` or
    `$TOMCAT_HOME/bin/startup.sh`.
 
 Congratulations on successfully installing and deploying Liferay on Tomcat!
