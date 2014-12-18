@@ -23,7 +23,7 @@ to include resources with your theme.
 used in any type of plugin project to import resources. Importing resources
 within a theme plugin is just one of the more common use cases. To learn how to
 use the resources importer in other types of plugins, please see the
-[Creating Plugins to Share Structures, Templates, and More](www.liferay.com)
+[Creating Plugins to Share Structures, Templates, and More](/develop/tutorials/-/knowledge_base/6-2/creating-plugins-to-share-structures-templates-and-more)
 tutorial.
 
 $$$
@@ -45,11 +45,11 @@ Marketplace app.
 
 +$$$
 
-**Tip:** If you deploy a theme to your
-Liferay Portal instance and don't have the resources importer already deployed,
-you might see a message like this:
+**Tip:** If you deploy a theme to your Liferay Portal instance and don't have
+the resources importer already deployed, you might see a message like this:
  
-    19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queuing test-theme for deploy because it is missing resources-importer-web
+`19:21:12,224 INFO  [pool-2-thread-2][HotDeployImpl:233] Queuing test-theme for
+deploy because it is missing resources-importer-web`
 
 Such a message appears if the resources importer is declared as a dependency in
 your theme's `liferay-plugin-package.properties` file but is not deployed. You

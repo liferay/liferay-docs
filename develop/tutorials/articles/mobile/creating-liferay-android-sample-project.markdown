@@ -28,14 +28,13 @@ Go ahead and get started!
 
 +$$$
 
-**Note:** If you get a console error 
-  that says `Unable to resolve target android-18`, or some other number, then 
-  you need to set your Android project's build target. Right click your project 
-  and select *Properties*. Next, click *Android* in the left side of the window 
-  that appears. Then check the box for your version of the Android SDK under 
-  *Project Build Target*. 
+**Note:** If you get a console error that says `Unable to resolve target
+android-18`, or some other number, then you need to set your Android project's
+build target. Right click your project and select *Properties*. Next, click
+*Android* in the left side of the window that appears. Then check the box for
+your version of the Android SDK under *Project Build Target*. 
 
-+$$$
+$$$
 
 The sample Android app has the standard Liferay Mobile SDK JARs as well as
 sample classes that characterize how the app integrates with your portal
