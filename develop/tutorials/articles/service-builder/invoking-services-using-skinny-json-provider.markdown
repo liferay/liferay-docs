@@ -1,4 +1,4 @@
-# Invoking Services Using Skinny JSON Provider
+# Invoking Services Using Skinny JSON Provider [](id=invoking-services-using-skinny-json-provider)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -62,7 +62,7 @@ Before invoking the `get-skinny-journal-articles` and `get-skinny-ddl-records`
 services, you should understand how to anonymously use the Skinny JSON Provider 
 and how to use it in a CSRF protected environment. 
 
-## Accessing the Services Anonymously and in CSRF Protected Environments
+## Accessing the Services Anonymously and in CSRF Protected Environments [](id=accessing-the-services-anonymously-and-in-csrf-protected-environments)
 
 Retrieving data through an anonymous request to a web service is a typical use
 case for Skinny JSON Provider. You can configure Liferay to allow anonymous
@@ -124,7 +124,7 @@ by specifying the following setting in your `portal-ext.properties`:
 Now that you've configured appropriate access for your Skinny JSON Provider app,
 you can call its services!
 
-## Retrieving Skinny Entities
+## Retrieving Skinny Entities [](id=retrieving-skinny-entities)
 
 It's the moment you've been waiting for--getting skinny streamlined
 representations of web content articles and and dynamic data lists. In the
@@ -135,7 +135,7 @@ might want to skip ahead to the section
 [Retrieving Skinny Dynamic Data Lists](#retrieving-skinny-dynamic-data-lists).
 The next section shows you how to access skinny web content articles. 
 
-### Retrieving Skinny Web Content Articles
+### Retrieving Skinny Web Content Articles [](id=retrieving-skinny-web-content-articles)
 
 The `get-skinny-journal-articles` service is designed to retrieve all web
 content articles that are based on a given web content structure, in a given
@@ -271,7 +271,7 @@ matching articles are found.
 If you think getting web content articles through Skinny Provider is easy,
 you'll find it a snap to get Dynamic Data List records. 
 
-### Retrieving Skinny Dynamic Data Lists
+### Retrieving Skinny Dynamic Data Lists [](id=retrieving-skinny-dynamic-data-lists)
 
 The `get-skinny-ddl-records` service retrieves all records found in a specified
 Dynamic Data List (DDL). Each DDL is globally recognized by its unique ID--no
@@ -365,7 +365,7 @@ As a recap, the Skinny JSON Provider EE app helps you retrieve lightweight
 "skinny" representations of dynamic data list records and web content articles.
 What a great way to access these core Liferay entities! 
 
-## Related Articles
+## Related Articles [](id=related-articles)
 
 [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
