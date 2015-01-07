@@ -15,7 +15,7 @@ Here are the topics we'll cover in this chapter:
 - Service Security Layers 
 - SOAP Web Services 
 - JSON Web Services 
-- Skinny JSON Provider
+- Skinny JSON Provider EE
 - Authorizing Access to Services with OAuth
 
 ## Finding Services [](id=finding-services-liferay-portal-6-2-dev-guide-05-en)
@@ -1540,23 +1540,25 @@ fashion.
 
 ## Invoking Services Using Skinny JSON Provider [](id=invoking-services-using-skinny-json-prov-liferay-portal-6-2-dev-guide-06-en)
 
+![EE Only Feature](../../images/ee-feature-web.png)
+
 Out of the box, Liferay's built-in JSON web services provide access to Web
 Content articles and Dynamic Data Lists (DDLs), but return them in a verbose
-XML-based representation. The Skinny JSON Provider app also offers web services
-for retrieving web content articles and DDLs, but returns them in a simplified,
-"skinny" JSON fashion. As a convenience, the Skinny JSON provider performs
-additional parsing and processing, to return the bare essentials of each article
-and DDL. Each web content article representation is comprised of its associated
-web content structure fields. Each DDL record representation is comprised of its
+XML-based representation. The *Skinny JSON Provider EE* app also offers web
+services for retrieving web content articles and DDLs, but returns them in a
+simplified, "skinny" JSON fashion. As a convenience, the app performs additional
+parsing and processing, to return the bare essentials of each article and DDL.
+Each web content article representation is comprised of its associated web
+content structure fields. Each DDL record representation is comprised of its
 data definition fields. The returned values are easier to read and light-weight,
 making them ideal to use in browsers and mobile applications. 
 
-The Skinny JSON Provider app is available through the Liferay Marketplace.
+The Skinny JSON Provider EE app is available through the Liferay Marketplace.
 You'll find it categorized as a Utility app. You can read the section on
 [Downloading and Installing Apps](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/downloading-and-installing-apps-liferay-portal-6-2-user-guide-14-en)
 for details on how to install it.
 
-The Skinny JSON Provider app adds two new web service APIs that you can
+The Skinny JSON Provider EE app adds two new web service APIs that you can
 configure like other Liferay web services. Here are the context and class name
 that you must specify to access them:
 
@@ -1581,7 +1583,7 @@ case for Skinny JSON Provider. You can configure Liferay to allow anonymous
 access to the Skinny JSON Provider. The configuration varies depending on the
 version of Liferay you are using. 
 
-For Liferay 6.2 and later, the Skinny JSON Provider app is preconfigured to
+For Liferay 6.2 and later, the Skinny JSON Provider EE app is preconfigured to
 allow anonymous access by default. The underlying implementation uses the
 `@AccessControlled` annotation to accomplish this. Note that this
 preconfiguration can only be changed by modifying the plugin's source code and
@@ -1634,8 +1636,8 @@ by specifying the following setting in your `portal-ext.properties`:
 
     json.service.auth.token.enabled=false
 
-Now that you've configured appropriate access for your Skinny JSON Provider app,
-you can call its services!
+Now that you've configured appropriate access for your Skinny JSON Provider EE
+app, you can call its services!
 
 ### Retrieving Skinny Web Content Articles [](id=retrieving-skinny-web-content-articles-liferay-portal-6-2-dev-guide-06-en)
 
@@ -1863,9 +1865,9 @@ construct a URL, of the format below, to access the image.
 
     http://localhost:8081/documents/[groupId]/[uuid]
 
-As a recap, the Skinny JSON Provider app helps you retrieve lightweight "skinny"
-representations of dynamic data list records and web content articles. What a
-great way to access these core Liferay entities! 
+As a recap, the Skinny JSON Provider EE app helps you retrieve lightweight
+"skinny" representations of dynamic data list records and web content articles.
+What a great way to access these core Liferay entities!
 
 By learning to leverage JSON web services in Liferay, you've added some powerful
 tools to your toolbox. Good job! Next, let's learn how to implement OAuth so

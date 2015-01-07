@@ -1,5 +1,7 @@
 # Invoking Services Using Skinny JSON Provider
 
+![EE Only Feature](../../images/ee-feature-web.png)
+
 It's the classic story of a superhero trying to maintain his secret
 identity as a mild-mannered reporter. He's trying to make a living while
 maintaining a low profile. Enter the overbearing boss, with furled brow and a
@@ -25,10 +27,10 @@ The hero cowers away quickly in a hurried mess.
 Maybe you've been asked to get "the skinny" on Liferay Portal data. Your gruff
 boss demands it or you're personally anxious to get the data to use in a slick
 mobile app you're developing. Either way, you want information from the portal
-and you want it now. The Skinny JSON Provider app is your ticket to getting
+and you want it now. The *Skinny JSON Provider EE* app is your ticket to getting
 skinny data. 
 
-The Skinny JSON Provider app offers web services for retrieving web content
+The Skinny JSON Provider offers web services for retrieving web content
 articles and DDLs, but returns them in a simplified, "skinny" JSON fashion. As a
 convenience, the Skinny JSON provider performs additional parsing and
 processing, to return the bare essentials of each article and DDL. Each web
@@ -37,14 +39,14 @@ structure fields. Each DDL record representation is comprised of its data
 definition fields. The returned values are easier to read and light-weight,
 making them ideal to use in browsers and mobile applications. 
 
-The Skinny JSON Provider app is available through the Liferay Marketplace.
+The Skinny JSON Provider EE app is available through the Liferay Marketplace.
 You'll find it categorized as a Utility app. To learn how to install it, you can
 read the section
 [Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps).
 
-The Skinny JSON Provider app adds two new web service APIs that you can
-configure like other Liferay web services. Here are the context and class name
-that you must specify to access them:
+The app adds two new web service APIs that you can configure like other Liferay
+web services. Here are the context and class name that you must specify to
+access them:
 
 - *Plugin Context Name:* `skinny-web`
 - *Service Class Name:* `skinny`
@@ -67,11 +69,10 @@ case for Skinny JSON Provider. You can configure Liferay to allow anonymous
 access to the Skinny JSON Provider. The configuration varies depending on the
 version of Liferay you are using. 
 
-For Liferay 6.2 and later, the Skinny JSON Provider app is preconfigured to
-allow anonymous access by default. The underlying implementation uses the
-`@AccessControlled` annotation to accomplish this. Note that this
-preconfiguration can only be changed by modifying the plugin's source code and
-recompiling the plugin. 
+For Liferay 6.2 and later, the app is preconfigured to allow anonymous access by
+default. The underlying implementation uses the `@AccessControlled` annotation
+to accomplish this. Note that this preconfiguration can only be changed by
+modifying the plugin's source code and recompiling the plugin. 
 
 For Liferay 6.1, you must add the value `getSkinny*` as a public JSON web
 service method entry in your `portal-ext.properties` file, in order to alloy
@@ -360,9 +361,9 @@ construct a URL, of the format below, to access the image.
 
     http://localhost:8081/documents/[groupId]/[uuid]
 
-As a recap, the Skinny JSON Provider app helps you retrieve lightweight "skinny"
-representations of dynamic data list records and web content articles. What a
-great way to access these core Liferay entities! 
+As a recap, the Skinny JSON Provider EE app helps you retrieve lightweight
+"skinny" representations of dynamic data list records and web content articles.
+What a great way to access these core Liferay entities! 
 
 ## Related Articles
 
