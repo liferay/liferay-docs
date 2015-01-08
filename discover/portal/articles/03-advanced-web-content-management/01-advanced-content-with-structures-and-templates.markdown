@@ -74,9 +74,9 @@ as that of the original. Once you've copied a web content structure, you should
 enter a new name for it to avoid confusing it with the original. When you copy a
 web content structure, you'll be prompted to choose whether to copy any detail
 templates or list templates associated with the structure. For information on
-detail templates and list templates, please refer to chapter 10 on [Using Web
-Forms and Dynamic Data
-Lists](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-web-forms-and-dynamic-data-lists-liferay-portal-6-2-user-guide-10-en).
+detail templates and list templates, please refer to the
+[Using Web Forms and Dynamic Data Lists](/discover/portal/-/knowledge_base/6-2/using-web-forms-and-dynamic-data-lists)
+section.
 
 ![Figure 3.1: You can access the Manage Structures interface by clicking *Manage* &rarr; *Structures* from the Web Content page.](../../images/manage-structures.png)
 

@@ -149,13 +149,16 @@ searched. Under the hood, this means that these entities use Liferay's Asset API
 and have an Indexer class defined. 
 
 Developers can create custom searchable assets within the portal. This is
-described in the [Asset
-Framework](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/asset-framework-liferay-portal-6-2-dev-guide-06-en).
+described in the
+[Asset Framework](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/asset-framework-liferay-portal-6-2-dev-guide-06--1).
 section of the Developer's Guide. For this reason, you can have additional asset
 types defined in your portal beyond the ones that Liferay ships with by default.
 If this is the case, you might want to tweak the `frequencyThreshold` and the
 `maxTerms` settings to increase the number of asset types displayed past the
 default of 10. This is covered in the section below on search options.
+
+<!-- Change Asset Framework link above to LDN's Asset Framework link, when
+available. Can follow at LRDOCS-1115. -Cody -->
 
 ### Asset Tags [](id=asset-tags)
 
