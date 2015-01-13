@@ -728,14 +728,14 @@ you've already set up one Liferay instance as a SAML Identity Provider, use a
 4. After you've clicked *Save*, check that you can view information about your
    certificate or download your certificate. If you can, you've successfully
    created a keystore. After you've created a keystore, additional options
-   appear in the SAML Admin Control Panel portlet:
+   appear in the SAML Admin Control Panel portlet. There are three tabs:
 
     - General
     - Service Provider (*not Identity Provider!*)
     - Identity Provider Connection (*not Service Provider Connections!*)
 
     Note that these options are different than if you were setting up Liferay as
-    an Identity Provider. There are three tabs:
+    an Identity Provider.
 
 5. Next, you need to configure an Identity Provider connection. Click on the
    *Identity Provider Connection* tab. Enter a name for the Identity Provider,
