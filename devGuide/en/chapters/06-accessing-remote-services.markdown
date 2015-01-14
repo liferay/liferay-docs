@@ -1542,6 +1542,12 @@ fashion.
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
+**Important:** This is a "Labs" application. Any app designated as " Labs" is
+experimental in features and is not supported by Liferay. This status may change
+without notice. Labs apps allow us to accelerate the availability of useful and
+cutting-edge features, but these apps are not yet hardened like standard Liferay
+EE apps. Please download and use Labs apps at your own discretion. 
+
 Out of the box, Liferay's built-in JSON web services provide access to Web
 Content articles and Dynamic Data Lists (DDLs), but return them in a verbose
 XML-based representation. The *Skinny JSON Provider EE* app also offers web
