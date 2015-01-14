@@ -3331,8 +3331,7 @@ The Device Detection API detects the capabilities of any device making a request
 to your portal. It can also determine what mobile device or operating system was
 used to make a request, and then follows rules to make Liferay render pages
 based on the device. To use this feature, you first need to install the *Device
-Recognition Provider EE* app from Liferay Marketplace. You can find more
-information on Device Recognition Provider EE at
+Recognition Provider EE* app from the
 [Liferay Marketplace](http://www.liferay.com/marketplace). 
 
 The Device Recognition plugin comes bundled inside the Device Recognition
