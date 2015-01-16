@@ -19,6 +19,9 @@ import java.util.List;
 import com.liferay.docs.guestbook.model.Guestbook;
 import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
 import com.liferay.docs.guestbook.service.base.GuestbookServiceBaseImpl;
+import com.liferay.docs.guestbook.service.permission.GuestbookModelPermission;
+import com.liferay.docs.guestbook.service.permission.GuestbookPermission;
+import com.liferay.docs.guestbook.util.ActionKeys;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
@@ -48,6 +51,9 @@ public class GuestbookServiceImpl extends GuestbookServiceBaseImpl {
 			ServiceContext serviceContext) throws SystemException,
 			PortalException {
 
+		GuestbookModelPermission.check(getPermissionChecker(),
+				serviceContext.getScopeGroupId(), ActionKeys.ADD_GUESTBOOK);
+
 		return GuestbookLocalServiceUtil.addGuestbook(userId, name,
 				serviceContext);
 	}
@@ -55,6 +61,9 @@ public class GuestbookServiceImpl extends GuestbookServiceBaseImpl {
 	public Guestbook deleteGuestbook(long guestbookId,
 			ServiceContext serviceContext) throws PortalException,
 			SystemException {
+		
+		GuestbookPermission.check(getPermissionChecker(),
+				serviceContext.getScopeGroupId(), ActionKeys.DELETE);
 
 		return GuestbookLocalServiceUtil.deleteGuestbook(guestbookId);
 	}
@@ -75,6 +84,9 @@ public class GuestbookServiceImpl extends GuestbookServiceBaseImpl {
 	public Guestbook updateGuestbook(long userId, long guestbookId,
 			String name, ServiceContext serviceContext) throws PortalException,
 			SystemException {
+		
+		GuestbookPermission.check(getPermissionChecker(),
+				serviceContext.getScopeGroupId(), ActionKeys.UPDATE);
 
 		return GuestbookLocalServiceUtil.updateGuestbook(userId, guestbookId,
 				name, serviceContext);

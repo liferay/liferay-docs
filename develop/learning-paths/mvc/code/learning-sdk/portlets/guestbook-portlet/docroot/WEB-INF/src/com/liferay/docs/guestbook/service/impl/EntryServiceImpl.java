@@ -19,6 +19,9 @@ import java.util.List;
 import com.liferay.docs.guestbook.model.Entry;
 import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
 import com.liferay.docs.guestbook.service.base.EntryServiceBaseImpl;
+import com.liferay.docs.guestbook.service.permission.EntryPermission;
+import com.liferay.docs.guestbook.service.permission.GuestbookModelPermission;
+import com.liferay.docs.guestbook.util.ActionKeys;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
@@ -48,12 +51,18 @@ public class EntryServiceImpl extends EntryServiceBaseImpl {
 			String email, String message, ServiceContext serviceContext)
 			throws PortalException, SystemException {
 
+		GuestbookModelPermission.check(getPermissionChecker(),
+				serviceContext.getScopeGroupId(), ActionKeys.ADD_ENTRY);
+
 		return EntryLocalServiceUtil.addEntry(userId, guestbookId, name, email,
 				message, serviceContext);
 	}
 
 	public Entry deleteEntry(long entryId, ServiceContext serviceContext)
 			throws PortalException, SystemException {
+
+		EntryPermission.check(getPermissionChecker(),
+				serviceContext.getScopeGroupId(), ActionKeys.DELETE);
 
 		return EntryLocalServiceUtil.deleteEntry(entryId, serviceContext);
 	}
@@ -81,6 +90,9 @@ public class EntryServiceImpl extends EntryServiceBaseImpl {
 			String name, String email, String message,
 			ServiceContext serviceContext) throws PortalException,
 			SystemException {
+
+		EntryPermission.check(getPermissionChecker(),
+				serviceContext.getScopeGroupId(), ActionKeys.UPDATE);
 
 		return EntryLocalServiceUtil.updateEntry(userId, guestbookId, entryId,
 				name, email, message, serviceContext);
