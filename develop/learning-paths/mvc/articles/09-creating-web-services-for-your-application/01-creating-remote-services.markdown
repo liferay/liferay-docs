@@ -201,9 +201,8 @@ console. Enter the following command into the JavaScript console:
 
     Liferay.ThemeDisplay.getScopeGroupId();
 
-Look for the scope group ID (the ID of the currently selected site) to be logged
-to the JavaScript console. Copy the scope group ID that was printed to the
-JavaScript console. Next, navigate to [http://\[host name\]:\[port name\]/api/jsonws?contextPath=/guestbook-portlet](http://\[host name\]:\[port name\]/api/jsonws?contextPath=/guestbook-portlet) and click on the `get-guestbooks-count` method.
+Look for the scope group ID (the ID of the currently selected site) to appear in the JavaScript console. Copy it to your system clipboard. Next, navigate to
+[http://\[host name\]:\[port name\]/api/jsonws?contextPath=/guestbook-portlet](http://\[host name\]:\[port name\]/api/jsonws?contextPath=/guestbook-portlet) and click on the `get-guestbooks-count` method.
 
 ![Figure x: After you've added remote service methods to your project's `*ServiceImpl` classes, run Service Builder and redeploy your project. Then check that your remote services are accessible.](../../images/jsonws-guestbook-invoke.png) 
 
