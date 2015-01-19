@@ -1,4 +1,4 @@
-# Supporting Right-to-Left Languages in Plugins [](id=displaying-rtl-content-with-rtl-hook-liferay-portal-6-2-dev-guide-11-en)
+# Supporting Right-to-Left Languages in Plugins [](id=supporting-right-to-left-languages-in-plugins)
 
 Middle Eastern languages, such as Hebrew and Arabic, are written right-to-left
 (RTL). However, many sites are multilingual, requiring both RTL and
@@ -36,14 +36,14 @@ Now that you've seen Liferay Portal and its apps rendered using RTL Support,
 have you wondered how you might leverage RTL Support in your custom plugins?
 You'll learn how to use RTL Support with your plugins next.
 
-## Applying the RTL Support to Custom Plugins [](id=applying-the-rtl-hook-to-custom-plugins-liferay-portal-6-2-dev-guide-11-en)
+## Applying the RTL Support to Custom Plugins [](id=applying-the-rtl-support-to-custom-plugins)
 
 You can use RTL Support with any plugin type, though theme plugins are the most
 common. The following steps focus on using RTL Support in a custom theme, but
 they also mention what's needed to make similar changes to support using RTL
 Support in the other plugin types. 
 
-### Step 1. Deploy the Right to Left Language Support app to your application server
+### Step 1. Deploy the Right to Left Language Support app to your application server [](id=step-1-deploy-the-right-to-left-language-support-app-to-your-application-s)
 	
 If upon initial deployment you don't notice any changes when switching to an
 RTL language, reload the page to force a clean cache. 
@@ -59,13 +59,13 @@ is commonly done while debugging for development.
 Now that you have deployed the RTL language support app, restart your
 application server.
 
-### Step 2. Extract the contents of the Liferay RTL Hook web application
+### Step 2. Extract the contents of the Liferay RTL Hook web application [](id=step-2-extract-the-contents-of-the-liferay-rtl-hook-web-application)
 
 Copy the `rtl-hook.jar` and its dependencies, `ant.jar`, `jodd.jar`, `jruby.jar` 
 and `rhino.jar`, from your RTL hook web app's `WEB-INF/lib` folder to the 
 `docroot/WEB-INF/lib` folder of your plugin project. 
 
-### Step 3. Modify Your web.xml and build.xml for RTL Language Support
+### Step 3. Modify Your web.xml and build.xml for RTL Language Support [](id=step-3-modify-your-web-xml-and-build-xml-for-rtl-language-support)
 
 You'll have to add some code to your `web.xml` and `build.xml` in order for the 
 RTL Language Support app to work. Here are some filtering elements that need to 
@@ -118,7 +118,7 @@ appropriately for your plugin type:
 
 *Web App:* `build-common-web.build-css` 
 
-### Step 4. Deploy your plugin to the portal 
+### Step 4. Deploy your plugin to the portal [](id=step-4-deploy-your-plugin-to-the-portal)
 
 After you've deployed your plugin, you'll notice that ant echoes 
 *Generated RTL cache for ...* messages that mention the cache that the RTL hook 
@@ -136,7 +136,7 @@ Support app's style with your own custom CSS for RTL languages.
 
 $$$
 
-## Defining Custom CSS for RTL Languages [](id=defining-custom-css-for-rtl-languages-liferay-portal-6-2-dev-guide-11-en)
+## Defining Custom CSS for RTL Languages [](id=defining-custom-css-for-rtl-languages)
 
 As you learned in the previous section, the Right to Left Language Support (RTL
 Support) app automatically generates RTL versions of your CSS files by applying
@@ -144,7 +144,7 @@ rules, such as changing `margin-left` to `margin-right`. You may, however, want
 to extend the generated CSS by defining your own custom styles for RTL
 languages. You can achieve this by following the steps below.
 
-### Step 1. Create a CSS File to Extend the Original and Make Your Edits
+### Step 1. Create a CSS File to Extend the Original and Make Your Edits [](id=step-1-create-a-css-file-to-extend-the-original-and-make-your-edits)
 
 You'll need to create a CSS file with the suffix `_rtl` in the same location as 
 a CSS file that you want to extend. For example, create a file `main_rtl.css`
@@ -154,7 +154,7 @@ Once you have made the `_rtl` version of the CSS you want to extend, edit the
 `_rtl` file, adding *only* the lines that define your custom styles for RTL 
 languages.
 
-### Step 2. Deploy your Plugin and Test It
+### Step 2. Deploy your Plugin and Test It [](id=step-2-deploy-your-plugin-and-test-it)
 
 After you have deployed your plugin, check it's `css/.sass-cache` folder to see 
 that the generated `_rtl.css` file in this folder not only contains the 
@@ -169,7 +169,7 @@ languages, and how to define custom styles for RTL languages. Whether you want
 to adapt the portal and/or your custom plugins to RTL languages, the RTL Support
 app makes it easy to offer your users the ideal viewing experience. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 As you can see hooks are a useful way of modifying aspects and features of your 
 portal. Here are some other tutorials you can explore to learn more about hooks:
