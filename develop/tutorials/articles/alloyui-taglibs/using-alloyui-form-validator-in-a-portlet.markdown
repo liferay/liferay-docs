@@ -280,8 +280,8 @@ implementing form validation!
 
 ## Related Topics
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/liferay-ui-taglibs)
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[Themes and Layout Templates](/tutorials/-/knowledge_base/themes-and-layout-templates)
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
 
-[Application Display Templates](/tutorials/-/knowledge_base/application-display-templates)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
