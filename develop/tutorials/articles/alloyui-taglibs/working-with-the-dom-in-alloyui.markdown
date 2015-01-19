@@ -2,9 +2,9 @@
 
 In this tutorial, you'll learn how to manipulate HTML elements in the DOM
 (Document Object Model) using AlloyUI. You'll also learn how to handle events on
-elements, to create dynamic user experiences. And if you're playful at heart or
-you simply want to see DOM manipulation and events come to life, you can explore
-the Silly Phrase Generator example portlet, found at the end of the tutorial.
+elements. And if you're playful at heart or you simply want to see DOM
+manipulation and events come to life, you can explore the Silly Phrase Generator
+example portlet at the end of the tutorial.
 
 Throughout the exercises in this tutorial, you'll use the AlloyUI taglib `aui`.
 To access it in your view JSP, add this directive to it:
@@ -13,8 +13,8 @@ To access it in your view JSP, add this directive to it:
 
 You must also add an `<aui:script>` element into which you'll put AlloyUI-based
 JavaScript for manipulating he DOM. You'll configure the `<aui:script>`
-element's `use` attribute to leverage AlloyUI's DOM-related packages. In order
-to reference HTML element node objects, you must specify that your script uses
+element's `use` attribute to specify AlloyUI's DOM-related packages.  To
+reference HTML element node objects, you must specify that your script uses
 AlloyUI's `node` package. Here's what that looks like: 
 
     <aui:script use="node">
@@ -25,7 +25,7 @@ You can use as many AlloyUI packages as you like by declaring them in a
 comma-separated list of values assigned to the script's `use` attribute. 
 
 The exercises in this tutorial show you various ways to manipulate DOM nodes in
-JSPs; so feel free to write similar code in your JSPs. Following this tutorial
+JSPs, so feel free to write similar code in your JSPs. After this tutorial, 
 you'll master the DOM with AlloyUI in no time! 
 
 ## Manipulating Nodes [](id=manipulating-nodes)
@@ -44,7 +44,7 @@ example, `node1.html('rosebud')` sets the HTML value of `node1` to `rosebud`.
 
 You must grab, or *select*, nodes in order to get and set their HTML values. The
 `A.one(selector)` method returns the *first* node that matches its selector
-parameter and the `A.all(selector)` method returns *all* of the elements that
+parameter and the `A.all(selector)` method returns *all* the elements that
 match its selector parameter. Note that AlloyUI uses the same selectors as CSS.
 
 The list below describes a few of AlloyUI's selectors that you can use:
@@ -66,7 +66,7 @@ an attribute setting `title='section'`.
 +$$$
 
 **Note:** [AlloyUI Rosetta Stone](http://alloyui.com/rosetta-stone/#selectors)
-lists all of the selectors that AlloyUI supports. 
+lists all the selectors that AlloyUI supports. 
 
 $$$
 
@@ -126,14 +126,14 @@ the `attr()` method two arguments, the first argument specifies the attribute to
 be modified and the second argument specifies the new value of that attribute.
 If a second argument is not given, the `attr()` method gets the value of the
 specified attribute. Below are concise descriptions of both methods and a code
-example that demonstrates how to properly use the methods. 
+example that demonstrates how properly to use the methods. 
 
 **attr(attribute):** Sets or gets the value of a node's specific attribute. For
 example, `A.one('#container').attr('name')` gets the value of the *name*
 attribute of the first node that has the attribute setting `id="container"`. 
 
 **val('value'):** Sets the value of a node's *value* attribute. If no value
-parameter is specified it returns the value of the node's *value* attribute. For
+parameter is specified, it returns the value of the node's *value* attribute. For
 example, `A.one('#input1').val()` returns the value of the *value* attribute for
 the first node that has the attribute setting `id="input1"`.
 
@@ -202,7 +202,7 @@ appends one element's HTML to another element.
 The figure below shows the results of appending the new element. Notice how
 `node2`'s paragraph is appended to `node1`'s paragraph. In this example, the
 first node is followed by a horizontal rule, to show where the first node ends
-and to visually separate it from the second node. 
+and to separate it visually from the second node. 
 
 ![Figure 4: Appending new or existing elements to a node is easy with AlloyUI.](../../images/alloyui-append-new-element.png)
 
@@ -227,17 +227,17 @@ property.
 At this point, you know how to manipulate nodes that are on your page. It's time
 to dynamically work with user input. The next section shows you how to handle
 such input using node object events. 
-    
+ 
 ## Handling Node Object Events [](id=handling-node-object-events)
 
-Some HTML nodes can generate events. You can handle these events, to process
+Some HTML nodes can generate events. You can handle these events to process
 their information and to provide content based on interaction with the user.
 In this section, you'll learn how to subscribe to node events and handle them. 
 
-First in your JSP, you must declare the `portlet` and `aui` taglibs to access
-their tags. You must also specify the `<portlet:defineObjects />` tag to access
-portlet objects in your JSP. So make sure to add the following declarations in
-the beginning of your JSP:
+First, you must declare the `portlet` and `aui` taglibs to access their tags.
+You must also specify the `<portlet:defineObjects />` tag to access portlet
+objects in your JSP. Add the following declarations in the beginning of your
+JSP:
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
     <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
@@ -266,8 +266,8 @@ $$$
 
 The example below subscribes to the `click` event of a button that's a part of a
 simple form. The form has a single input field that has the attribute setting
-`id="verb"`. When a user clicks the button, the JSP code below handles the value
-of the input field and prints its value. 
+`id="verb"`. When a user clicks the button, the JSP code below handles the event
+by printing the value of the input field. 
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
     <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
@@ -312,9 +312,8 @@ of the input field is printed above the *verb* input field.
 
 ![Figure 5: AlloyUI lets you handle events on all kinds of elements, like the event triggered by this `<aui:button>`.](../../images/alloyui-event-from-button.png)
 
-A couple of methods that may be useful to you with regards to events are the
-`hide()` and `show()` methods. They let you hide and show elements as you like
-for your users. 
+Some other methods of interest are the `hide()` and `show()` methods. They let
+you hide and show elements in the DOM. 
 
 **hide('nodeObject'):** hides a node object. For example, `node1.hide()`
 hides the node object *node1*.
@@ -325,20 +324,18 @@ shows the node object *node1*.
 With the hide and show methods you can hide and show DOM nodes appropriately for
 the flow of your user experience. 
 
-In this tutorial you've learned the fundamentals of getting node objects,
+In this tutorial, you've learned the fundamentals of getting node objects,
 setting their values, and reacting to events on them. As an added bonus, the
 next section shows you an example portlet that demonstrates all of the AlloyUI
 features that you've learned in this tutorial. The portlet is called the
 *Silly Phrase Generator*. If you want to have fun trying it out and
-familiarizing yourself with its code, continue with the next section. Otherwise,
-you can consider the next tutorial and other related tutorials listed after this
-article. 
+familiarizing yourself with its code, continue with the next section. 
 
 ## Bonus: Silly Phrase Generator [](id=bonus-silly-phrase-generator)
 
 The Silly Phrase Generator portlet relies heavily on AlloyUI's DOM manipulation
 and event handling features. You can add the following code into a portlet JSP
-or you can just take a look at the portlet's code. 
+or you can just look at the portlet's code. 
 
 The portlet's code resides on GitHub
 [here](../../code/alloy/silly-phrase-generator/end/silly-phrase-generator-portlet/docroot/view.jsp),
@@ -420,8 +417,8 @@ but it's also shown here for your convenience.
         </aui:fieldset>
       </aui:form>
 
-The portlet gets the value of each of the input fields found in the `<aui:form>`
-element, at the end of the code. In the `<aui:script>`, it assigns the input
+The portlet gets the value of each of the input fields in the `<aui:form>`
+element at the end of the code. In the `<aui:script>`, it assigns the input
 values to unique variables. Note that in selecting each input field, the input
 field's ID value is preceded by the `<portlet:namespace/>` tag. This avoids
 namespacing issues between portlets.
@@ -429,44 +426,43 @@ namespacing issues between portlets.
 In addition to the input field and button variables, the code declares a
 variable named `phrase`, in which to display the silly phrase. It grabs the
 `<div>` element created earlier in the code. Then it adds an element to display
-the silly phrase, by appending a `<p>` element to the container `<div>` and
+the silly phrase by appending a `<p>` element to the container `<div>` and
 giving it a unique ID to grab.
 
-To make sure that none of the HTML is rendered for the phrase if any fields are
-blank, conditional logic wraps the call to the method that sets the HTML for the
-phrase. The portlet also includes a button in the silly phrase generator form
-that lets you hide or show the title. 
+To make sure that the HTML is not rendered if any fields are blank, conditional
+logic wraps the call to the method that sets the HTML for the phrase. The
+portlet also includes a button that lets you hide or show the title. 
 
-There you have it! Once you've either copied the code into your portlet's view
-JSP or you've downloaded the portlet from GitHub into a Liferay Plugin SDK, you
-can deploy and test the Silly Phrase Generator code. With the form filled out
-like the one below, your silly phrase displays this phrase: 
+There you have it! Once you've either copied the code into your portlet's JSP or
+you've downloaded the portlet from GitHub into a Liferay Plugin SDK, you can
+deploy and test the Silly Phrase Generator code. With the form filled out like
+the one below, your silly phrase displays this phrase: 
 
 *Walk your left-footed platypus gingerly in the warehouse."*
 
 ![Figure 6: You can experiment with DOM manipulation by generating silly phrases with the Silly Phrase Generator example portlet.](../../images/silly-phrase.png)
 
 If you've copied the Silly Phrase Generator JSP code, then you may also want to
-consider making a couple style changes to it. The silly phrase generator does
-functions well, but the silly phrase that is generates looks small compared to
-the title. You can enlarge the silly phrase text. 
+consider making some style changes to it. The silly phrase generator functions
+well, but the silly phrase that is generates looks small compared to the title.
+You can enlarge the silly phrase text. 
 
 In case you didn't notice, the JSP adds a class to the phrase node.
 
     phrase.addClass('phrase');
 
-This class was added inside of the `btnSubmit` function so that when the user
+This class was added inside the `btnSubmit` function so that when the user
 clicks the button to generate the silly phrase, any styling for the class is
 added to the silly phrase before it is displayed. You can write styles for this
 phrase node by opening your portlet's `main.css` file and adding styles like
-these styles: 
+these: 
 
     .phrase
     {
         font-size:200%;
         line-height:120%;
     }
-      
+ 
 When you generate a silly phrase, you'll see your new styles applied to the
 phrase! 
 
