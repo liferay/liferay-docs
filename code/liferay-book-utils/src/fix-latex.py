@@ -45,6 +45,9 @@ for i in content:
     #    print (i)
     #    print("Found href; ignoring.")
     #    i = "}"
+    
+    if i.startswith("\index"):
+        i=""
 
     outfile.write(i)     
         
