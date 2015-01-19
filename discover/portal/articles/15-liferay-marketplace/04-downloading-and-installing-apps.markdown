@@ -82,7 +82,7 @@ can connect to the `liferay.com` Marketplace.
 
 ![Figure 15.13: Before you can access Marketplace via the Control Panel you need to link your `liferay.com` credentials with your Liferay instance's administrator account.](../../images/marketplace-login.png)
 
-$$$
++$$$
  
 Tip: Any local user with administrative
  privileges can use the Marketplace to browse and install apps from the

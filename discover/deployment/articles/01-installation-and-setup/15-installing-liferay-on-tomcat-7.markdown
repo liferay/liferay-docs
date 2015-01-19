@@ -196,7 +196,7 @@ Liferay.
                 maxWait="10000"
             />
         </Context>
- 
+
 +$$$
 
 **Note:** The above resource definition assumes your database name is *lportal*
