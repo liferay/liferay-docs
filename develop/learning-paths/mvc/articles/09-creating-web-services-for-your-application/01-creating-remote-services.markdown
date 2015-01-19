@@ -186,6 +186,30 @@ following steps:
 
 Now, navigate to Liferay's JSONWS page
 ([http://\[host name\]:\[port number\]/api/jsonws](http://[host name]:[port number]/api/jsonws))
-and click on the Context Path selector. Notice that `/guestbook-portlet` is now
-an option.  Select the `/guestbook-portlet` context path and confirm that your
-remote service methods appear in the list.
+and click on the Context Path selector. Notice that `/guestbook-portlet` now
+appears as an option. Select the `/guestbook-portlet` context path and confirm
+that your remote service methods appear in the list.
+
+![Figure x: After you've added remote service methods to your project's `*ServiceImpl` classes, run Service Builder and redeploy your project. Then check that your remote services are accessible.](../../images/jsonws-guestbook.png) 
+
+To test that your remote services are working, choose a simple method to invoke.
+Pick a simple method that does not require a Service Context parameter, like
+`getGuestbooksCount(long groupId)`. One easy way to find the group ID of the
+site to which you've added the Guestbook portlet is to use your browser's
+developer tools. Open your browser's developer tools and open the JavaScript
+console. Enter the following command into the JavaScript console:
+
+    Liferay.ThemeDisplay.getScopeGroupId();
+
+Look for the scope group ID (the ID of the currently selected site) to be logged
+to the JavaScript console. Copy the scope group ID that was printed to the
+JavaScript console. Next, navigate to [http://\[host name\]:\[port name\]/api/jsonws?contextPath=/guestbook-portlet](http://\[host name\]:\[port name\]/api/jsonws?contextPath=/guestbook-portlet) and click on the `get-guestbooks-count` method.
+
+![Figure x: After you've added remote service methods to your project's `*ServiceImpl` classes, run Service Builder and redeploy your project. Then check that your remote services are accessible.](../../images/jsonws-guestbook-invoke.png) 
+
+Paste the scope group ID that you copied into the group ID field and click
+*Invoke*. Confirm that the correct number of guestbooks is returned. Great! Now
+that you've confirmed that your remote web services are working, it's time to
+learn how to secure them. Unless you secure your web services by implementing
+permission checks, any user can add, update, or delete guestbooks or guestbook
+entries.
