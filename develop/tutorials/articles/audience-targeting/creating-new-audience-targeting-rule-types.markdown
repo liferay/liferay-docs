@@ -13,6 +13,55 @@ dependencies and providing new services that other OSGi plugins can consume.
 In the case of a rule OSGi plugin, it will be consumed by the Audience
 Targeting application.
 
+Before you begin creating a custom rule type, you'll learn how/where to install
+the Audience Targeting project for usage, and a couple tips along the way.
+
+## Installing the Audience Targeting Project
+
+Before you can take advantage of the Audience Targeting project's scripts for
+creating rules, reports, and tracking actions, you must first install the
+project itself. First, you'll need to make sure you have a Liferay Plugins SDK.
+
+All Liferay plugin types, including portlets, themes, layout templates, hooks,
+and EXT plugins, can be created and maintained in the SDK.
+[The Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+section of tutorials explains how to create, build, and deploy your plugins.
+
+So why is the plugins SDK useful for Audience Targeting? By placing the Audience
+Targeting project inside Liferay's plugins SDK, you can take full advantage of
+the development environment it presents to developers.
+
+First, download the `liferay-apps-content-targeting` (Audience Targeting)
+project from the following
+[Github page](https://github.com/liferay/liferay-apps-content-targeting) as a
+ZIP file, or, if familiar with Git,
+[fork and clone](https://help.github.com/articles/fork-a-repo/) the project to
+your local machine.
+
+Once you've completed this, simply copy the project into the SDK's `portlets`
+directory. The SDK now treats the Audience Targeting project like its a plugin,
+and you can take full advantage of the SDK's developer environment. This
+tutorial relies on the SDK's developer tools, so make sure you've configured
+your project correctly before beginning the tutorial.
+
++$$$
+
+**Tip:** When a plugin has been successfully deployed but the changes are not
+visible, check that the generated `.jar` in the `/dist` folder of the plugins
+SDK actually contains the latest modifications.
+
+Also set the following property to `0` to always retrieve the FreeMarker code
+from the template instead of the cache:
+
+    freemarker.engine.resource.modification.check.interval=0
+
+$$$
+
+Next, you'll learn how to create a custom rule type using the Audience Targeting
+project you just installed.
+
+## Creating a Custom Rule Type
+
 Adding a new type of rule to the Audience Targeting application is easy.
 For example, let's see how to create a very simple rule called `Time Zone`.
 
@@ -58,45 +107,3 @@ added to the add/edit User Segment form so that the admin can set a value for
 that specific user segment.
 
 <!-- ## Customize the Rules Engine -->
-
-## Troubleshooting [](id=troubleshooting)
-
-### If Changes Are Not Visible After Deploy [](id=if-changes-are-not-visible-after-deploy)
-
-If the plugin has been successfully deployed but the changes are not visible,
-check that the generated .jar in the /dist folder of the plugins SDK actually
-contains the latest modifications.
-
-Also set this property to `0` to always retrieve the Freemarker code from the
-template instead of the cache:
-
-    freemarker.engine.resource.modification.check.interval=0
-
-## More information [](id=more-information)
-
-In the [liferay-plugins](https://github.com/liferay/liferay-plugins)
-repository, plugins are laid out in a software development kit (SDK) -- the
-Liferay Plugins SDK. All Liferay plugin types, including portlets, themes,
-layout templates, hooks, and EXT plugins, can be created and maintained in the
-SDK. [The Plugins SDK]
-(http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/leveraging-the-plugins-sdk-liferay-portal-6-2-dev-guide-02-en)
-chapter of Liferay's [Development Guide]
-(http://www.liferay.com/documentation/liferay-portal/6.2/development)
-explains how to create, build, and deploy your plugins.
-
-There are many other options for developing new Liferay plugins using the
-Plugins SDK. Consult the [Liferay Development
-Guide](http://www.liferay.com/documentation/liferay-portal/6.2/development) for
-indispensable explanations, examples, and reference material on the Liferay
-Plugins SDK and surrounding technologies.
-
-Also, check out Liferay IDE. The [Liferay IDE
-project](http://www.liferay.com/community/liferay-projects/liferay-ide) provides
-an Eclipse-based Liferay development environment to help you build and maintain
-Liferay projects easily.
-
-Finally, consider using Maven to build Liferay Plugins. For excellent overviews
-of Maven support for Liferay, check out [Mika Koivisto's
-presentation](http://www.slideshare.net/koivimik/developing-liferay-plugins-with-maven)
-and [Getting Started with Liferay Maven
-SDK](http://www.liferay.com/web/mika.koivisto/blog/-/blogs/12322618).
