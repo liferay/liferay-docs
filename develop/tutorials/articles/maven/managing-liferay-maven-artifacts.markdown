@@ -273,5 +273,5 @@ Liferay plugins.
 
 ## Related Topics [](id=related-topics)
 
-[Building Liferay Maven Artifacts](https://dev.liferay.com/tutorials/-/knowledge_base/6-2/building-maven-artifacts-from-source) 
+[Building Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/6-2/building-maven-artifacts-from-source)
 
