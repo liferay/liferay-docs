@@ -15,7 +15,7 @@ Be of good cheer! That's precisely what
 [Application Display Templates](/discover/portal/-/knowledge_base/6-2/using-application-display-templates)
 (ADTs) provide--the ability to add custom display settings to your portlets from
 the portal. This isn't actually a new concept in Liferay. In some portlets
-(e.g., *Web Content*, *Documents and Media*, and *Dynamic Data Lists*), you can
+(e.g., *Web Content*, *Media Gallery*, and *Dynamic Data Lists*), you can
 already add as many display options (or templates) as you want. Now you can add
 them to your custom portlets, too. 
 
