@@ -52,7 +52,8 @@ property hook plugin for overriding Liferay's default text values with your own
 custom values. 
 
 1.  If you don't yet have a hook project, create one following the steps in the 
-    [Creating a Hook](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-lp-6-2-develop-tutorial) tutorial.
+    [Creating a Hook](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk)
+    tutorial.
 
 2.  In Liferay IDE, right click your hook project and select *New* &rarr;
 *Liferay Hook Configuration*. In the window that appears, select the *Language
