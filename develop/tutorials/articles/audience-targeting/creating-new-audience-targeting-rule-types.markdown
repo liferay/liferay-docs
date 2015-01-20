@@ -16,7 +16,7 @@ Targeting application.
 Before you begin creating a custom rule type, you'll learn how/where to install
 the Audience Targeting project for usage, and a couple tips along the way.
 
-## Installing the Audience Targeting Project
+## Installing the Audience Targeting Project [](id=installing-the-audience-targeting-project)
 
 Before you can take advantage of the Audience Targeting project's scripts for
 creating rules, reports, and tracking actions, you must first install the
@@ -60,7 +60,7 @@ $$$
 Next, you'll learn how to create a custom rule type using the Audience Targeting
 project you just installed.
 
-## Creating a Custom Rule Type
+## Creating a Custom Rule Type [](id=creating-a-custom-rule-type)
 
 Adding a new type of rule to the Audience Targeting application is easy. In this
 tutorial, you'll learn how to create a rule and deploy it to your Liferay
