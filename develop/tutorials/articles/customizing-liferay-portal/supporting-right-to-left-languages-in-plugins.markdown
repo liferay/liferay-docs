@@ -1,15 +1,15 @@
 # Supporting Right-to-Left Languages in Plugins [](id=supporting-right-to-left-languages-in-plugins)
 
-Middle Eastern languages, such as Hebrew and Arabic, are written right-to-left
-(RTL). However, many sites are multilingual, requiring both RTL and
-left-to-right (LTR) content. Conveniently, browsers use
-[language and direction](http://www.w3.org/TR/html401/struct/dirlang.html) 
-HTML attributes to adapt and align page content automatically. Sites, however, 
-may consist of elements that are absolutely positioned on the page by a style
-sheet; these elements aren't automatically aligned by the browser. Instead, you
-must adapt your style sheets to handle such elements. Since style sheets are
-usually designed for LTR languages, the typical challenge is creating
-alternative versions of the CSS for RTL languages. This can be an arduous task. 
+Middle Eastern languages such as Hebrew and Arabic are written right-to-left
+(RTL). Many sites that use RTL languages are multilingual, requiring both RTL
+and left-to-right (LTR) content. Modern browsers support [language and
+direction](http://www.w3.org/TR/html401/struct/dirlang.html) HTML attributes to
+adapt and align page content automatically. Sites, however, may consist of
+elements that are absolutely positioned on the page by a style sheet: these
+elements aren't automatically aligned by the browser. Instead, you must adapt
+your style sheets to handle such elements. Since style sheets are usually
+designed for LTR languages, the typical challenge is to create alternative
+versions of the CSS for RTL languages. This can be an arduous task. 
 
 Thankfully, Liferay's *Right to Left Language Support* app automatically adapts
 Liferay Portal styles for RTL languages. When you deploy it, it mirrors
@@ -43,12 +43,12 @@ common. The following steps focus on using RTL Support in a custom theme, but
 they also mention what's needed to make similar changes to support using RTL
 Support in the other plugin types. 
 
-### Step 1. Deploy the Right to Left Language Support app to your application server [](id=step-1-deploy-the-right-to-left-language-support-app-to-your-application-s)
+**Step 1: Deploy the Right to Left Language Support app to your application server.** 
 	
 If upon initial deployment you don't notice any changes when switching to an
 RTL language, reload the page to force a clean cache. 
 
-Note, since dynamic generation of CSS from SASS is not yet supported in the
+Note: since dynamic generation of CSS from SASS is not yet supported in the
 context of the RTL Support app, the hook loads the current theme's merged
 CSS files, disregarding whether
 [theme CSS fast loading](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Theme)
@@ -59,33 +59,37 @@ is commonly done while debugging for development.
 Now that you have deployed the RTL language support app, restart your
 application server.
 
-### Step 2. Extract the contents of the Liferay RTL Hook web application [](id=step-2-extract-the-contents-of-the-liferay-rtl-hook-web-application)
+**Step 2: Extract the contents of the Liferay RTL Hook web application.** 
 
 Copy the `rtl-hook.jar` and its dependencies, `ant.jar`, `jodd.jar`, `jruby.jar` 
 and `rhino.jar`, from your RTL hook web app's `WEB-INF/lib` folder to the 
 `docroot/WEB-INF/lib` folder of your plugin project. 
 
-### Step 3. Modify Your web.xml and build.xml for RTL Language Support [](id=step-3-modify-your-web-xml-and-build-xml-for-rtl-language-support)
+**Step 3: Modify Your web.xml and build.xml for RTL Language Support.** 
 
 You'll have to add some code to your `web.xml` and `build.xml` in order for the 
-RTL Language Support app to work. Here are some filtering elements that need to 
+RTL Language Support app to work. Here are some filtering elements that must 
 be added to your `web.xml` before the closing `</web-app>` tag in your project's 
 `docroot/WEB-INF/web.xml` file:
 
         <filter>
             <filter-name>Dynamic CSS Filter</filter-name>
-            <filter-class>com.liferay.rtl.hook.filter.dynamiccss.DynamicCSSFilter</filter-class>
+            <filter-class>
+                com.liferay.rtl.hook.filter.dynamiccss.DynamicCSSFilter
+            </filter-class>
         </filter>
         <filter-mapping>
             <filter-name>Dynamic CSS Filter</filter-name>
             <url-pattern>*.css</url-pattern>
         </filter-mapping>
 
-Some targets have to be added to your `build.xml` so the RTL CSS files can be 
-built and cleaned. The following is example code of what the targets would look
-like for a theme plugin project's `build.xml`:
+Some targets must be added to your `build.xml` so the RTL CSS files can be built
+and cleaned. The following snippet is example code showing targets for a theme
+plugin project's `build.xml`:
 
-        <target name="build-css" depends="clean-rtl-css, build-common-theme.build-css, build-rtl-css" />
+        <target name="build-css" 
+                depends="clean-rtl-css, build-common-theme.build-css, build-rtl-css" 
+        />
 
         <target name="build-rtl-css">
             <java
@@ -118,7 +122,7 @@ appropriately for your plugin type:
 
 *Web App:* `build-common-web.build-css` 
 
-### Step 4. Deploy your plugin to the portal [](id=step-4-deploy-your-plugin-to-the-portal)
+**Step 4: Deploy your plugin to the portal.** 
 
 After you've deployed your plugin, you'll notice that ant echoes 
 *Generated RTL cache for ...* messages that mention the cache that the RTL hook 
@@ -144,25 +148,23 @@ rules, such as changing `margin-left` to `margin-right`. You may, however, want
 to extend the generated CSS by defining your own custom styles for RTL
 languages. You can achieve this by following the steps below.
 
-### Step 1. Create a CSS File to Extend the Original and Make Your Edits [](id=step-1-create-a-css-file-to-extend-the-original-and-make-your-edits)
+**Step 1: Create a CSS File to Extend the Original and Make Your Edits.**
 
 You'll need to create a CSS file with the suffix `_rtl` in the same location as 
 a CSS file that you want to extend. For example, create a file `main_rtl.css`
 to extend a file named `main.css`. 
 
 Once you have made the `_rtl` version of the CSS you want to extend, edit the 
-`_rtl` file, adding *only* the lines that define your custom styles for RTL 
-languages.
+`_rtl` file, adding *only* your custom styles for RTL languages.
 
-### Step 2. Deploy your Plugin and Test It [](id=step-2-deploy-your-plugin-and-test-it)
+**Step 2: Deploy your Plugin and Test It.**
 
-After you have deployed your plugin, check it's `css/.sass-cache` folder to see 
-that the generated `_rtl.css` file in this folder not only contains the 
-automatically generated CSS from the original file, but also contains your 
-custom CSS code at the end. 
+After you have deployed your plugin, check its `css/.sass-cache` folder to see 
+that the generated `_rtl.css` file not only contains the CSS from the original
+file, but also contains your custom CSS code at the end. 
 
 Add the Language portlet to a page and change the current language to an RTL 
-language (e.g., Hebrew) to see your custom RTL styles applied to it.
+language (e.g., Hebrew) to see your custom RTL styles.
 
 In this tutorial, you've learned how to adapt your plugin styles for RTL
 languages, and how to define custom styles for RTL languages. Whether you want
@@ -171,8 +173,8 @@ app makes it easy to offer your users the ideal viewing experience.
 
 ## Related Topics [](id=related-topics)
 
-As you can see hooks are a useful way of modifying aspects and features of your 
-portal. Here are some other tutorials you can explore to learn more about hooks:
+As you can see, hooks are a useful way of modifying your portal. Here are some
+other tutorials about hooks:
 
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
 
