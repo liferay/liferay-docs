@@ -1,4 +1,4 @@
-# Using the AlloyUI Form Validator in a Portlet
+# Using the AlloyUI Form Validator in a Portlet [](id=using-the-alloyui-form-validator-in-a-portlet)
 
 <!-- Test code is at develop/tutorials/code/alloy/form-validator/end -->
 
@@ -21,7 +21,7 @@ You're probably chomping at the bit to start using `FormValidator`. This
 tutorial shows you how to use it well. It's time to implement form validation in
 your portlet with AlloyUI's `FormValidator`. 
 
-## Adding Form Validation to Your Portlet
+## Adding Form Validation to Your Portlet [](id=adding-form-validation-to-your-portlet)
 
 Here are the steps to follow to implement form validation in your portlet:
 
@@ -32,7 +32,7 @@ Here are the steps to follow to implement form validation in your portlet:
 
 You'll start by creating your form. 
 
-### Step 1: Create a Form with Named Input Fields
+### Step 1: Create a Form with Named Input Fields [](id=step-1-create-a-form-with-named-input-fields)
 
 If you haven't done so already, create an HTML `<form>`. Assign an ID to the
 form to facilitate selecting it from the AlloyUI script that you'll write.
@@ -70,7 +70,7 @@ The `name` attributes of the `<input>` tags are required for form validation.
 The validator applies rules to each input field based on its name. You'll learn
 more about applying rules shortly. 
 
-### Step 2: Add a `FormValidator`
+### Step 2: Add a `FormValidator` [](id=step-2-add-a-formvalidator)
 
 Now that you have a form, you can add an instance of the
 [`FormValidator`](http://alloyui.com/api/classes/A.FormValidator.html) class. 
@@ -112,7 +112,7 @@ Follow these steps to add a `FormValidator` to your JSP.
 If you deploy the portlet at this point, your fields won't get validated. This
 is because the form has no specified rules. You'll add rules next. 
 
-### Step 3: Specify Rules for Input Fields
+### Step 3: Specify Rules for Input Fields [](id=step-3-specify-rules-for-input-fields)
 
 This step is where validation really comes into play. The validation rules you 
 implement here control what users can submit in the form.
@@ -199,7 +199,7 @@ messages, you can specify `showAllMessages: true` when creating the
 In addition to using the static default messages, you can customize validation
 messages by using the `fieldStrings` attribute. 
 
-### Step 4: Specify Custom Violation Messages - Optional
+### Step 4: Specify Custom Violation Messages - Optional [](id=step-4-specify-custom-violation-messages-optional)
 
 The `fieldStrings` attribute lets you specify your own message text for a rule,
 instead of using the rule's default message text. 
@@ -271,7 +271,7 @@ your portlet and test its form validation.
 As you can see, using the AlloyUI form validator is a no-brainer for
 implementing form validation! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
