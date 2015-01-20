@@ -61,8 +61,8 @@ public class EntryServiceImpl extends EntryServiceBaseImpl {
 	public Entry deleteEntry(long entryId, ServiceContext serviceContext)
 			throws PortalException, SystemException {
 
-		EntryPermission.check(getPermissionChecker(),
-				serviceContext.getScopeGroupId(), ActionKeys.DELETE);
+		EntryPermission.check(getPermissionChecker(), entryId,
+				ActionKeys.DELETE);
 
 		return EntryLocalServiceUtil.deleteEntry(entryId, serviceContext);
 	}
@@ -91,8 +91,8 @@ public class EntryServiceImpl extends EntryServiceBaseImpl {
 			ServiceContext serviceContext) throws PortalException,
 			SystemException {
 
-		EntryPermission.check(getPermissionChecker(),
-				serviceContext.getScopeGroupId(), ActionKeys.UPDATE);
+		EntryPermission.check(getPermissionChecker(), entryId,
+				ActionKeys.UPDATE);
 
 		return EntryLocalServiceUtil.updateEntry(userId, guestbookId, entryId,
 				name, email, message, serviceContext);

@@ -62,10 +62,11 @@ public class GuestbookServiceImpl extends GuestbookServiceBaseImpl {
 			ServiceContext serviceContext) throws PortalException,
 			SystemException {
 		
-		GuestbookPermission.check(getPermissionChecker(),
-				serviceContext.getScopeGroupId(), ActionKeys.DELETE);
+		GuestbookPermission.check(getPermissionChecker(), guestbookId,
+				ActionKeys.DELETE);
 
-		return GuestbookLocalServiceUtil.deleteGuestbook(guestbookId);
+		return GuestbookLocalServiceUtil.deleteGuestbook(guestbookId,
+				serviceContext);
 	}
 
 	public List<Guestbook> getGuestbooks(long groupId) throws SystemException {
@@ -85,8 +86,8 @@ public class GuestbookServiceImpl extends GuestbookServiceBaseImpl {
 			String name, ServiceContext serviceContext) throws PortalException,
 			SystemException {
 		
-		GuestbookPermission.check(getPermissionChecker(),
-				serviceContext.getScopeGroupId(), ActionKeys.UPDATE);
+		GuestbookPermission.check(getPermissionChecker(), guestbookId,
+				ActionKeys.UPDATE);
 
 		return GuestbookLocalServiceUtil.updateGuestbook(userId, guestbookId,
 				name, serviceContext);
