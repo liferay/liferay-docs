@@ -24,7 +24,7 @@ configure Maven to access the Liferay Repository for Liferay CE and EE
 artifacts. -Cody -->
 
 1. Open the command prompt or terminal and navigate to the parent directory in
-   which you want to create the plugin project. Archetype create a sub-directory
+   which you want to create the plugin project. Create a sub-directory
    for each plugin project you create.
 
     +$$$
@@ -91,8 +91,8 @@ artifacts. -Cody -->
 4. Choose an archetype by entering its number. 
 
 5. You're prompted to choose the archetype version. Enter the number
-   corresponding to the Liferay version for the archetype. However, you're not
-   required to select the archetype version that corresponds with your Liferay
+   corresponding to the Liferay version for the archetype. You're not required,
+   however, to select the archetype version that corresponds with your Liferay
    instance; older archetype versions are compatible with updated Liferay
    bundles. 
 
