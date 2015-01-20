@@ -38,11 +38,12 @@ ZIP file, or, if familiar with Git,
 [fork and clone](https://help.github.com/articles/fork-a-repo/) the project to
 your local machine.
 
-Once you've completed this, simply copy the project into the SDK's `portlets`
-directory. The SDK now treats the Audience Targeting project like a plugin, and
-you can take full advantage of the SDK's developer environment. This tutorial
-relies on the SDK's developer tools, so make sure you've configured your project
-correctly before beginning the tutorial.
+Once you've completed this, create the `apps` folder in the SDK's root
+directory. Then, simply copy the project into the new `apps` directory. The SDK
+now treats the Audience Targeting project like a plugin, and you can take full
+advantage of the SDK's developer environment. This tutorial relies on the SDK's
+developer tools, so make sure you've configured your project correctly before
+beginning the tutorial.
 
 +$$$
 
@@ -67,7 +68,7 @@ tutorial, you'll learn how to create a rule and deploy it to your Liferay
 server.
 
 1. In the root of the Audience Targeting project, run the `create_rule` command
-   (depending on your OS). For example, the commands below show creating a
+   (depending on your OS). For example, the command below shows creating a
    `time-zone` rule named *Time Zone*:
 
         create_rule.[bat|sh] time-zone "Time Zone"
@@ -76,7 +77,7 @@ server.
    `rule-` (e.g., `rule-time-zone`). Notice that all the necessary files have
    been added by the `create_rule` command. If you now run the `ant deploy`
    command in the root of the newly generated folder, you'll find this new rule
-   listed when creating or editing a User Segment in the Audience Targeting
+   listed when creating or editing a user segment in the Audience Targeting
    application.
 
 3. Of course, you still need to make some changes to define how your rule works.
@@ -86,7 +87,7 @@ server.
     * `processRule`: handles the information provided by the administrator when
     configuring this rule through the Rule GUI. For example, to store the
     selected time zone in the `typeSettings` field in the database from a
-    select.
+    *select*.
 
     * `evaluate`: determines whether a given user matches the rule with the
     information that has been stored. For example, it checks the time zone in
@@ -103,7 +104,7 @@ server.
     the name of a FontAwesome icon. For example: *icon-coffee* or *icon-globe*
     (See [Font Awesome documentation](http://fortawesome.github.io/Font-Awesome/3.2.1/))
 
-    * `getName`: the name of your Rule (it can be localized).
+    * `getName`: the name of your rule (it can be localized).
 
     * `getSummary`: the description of the Rule once it is configured. This is
     used to help administrators. For example, if the Time Zone Rule has been
