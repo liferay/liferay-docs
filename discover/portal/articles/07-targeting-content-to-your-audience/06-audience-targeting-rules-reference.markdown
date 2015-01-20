@@ -38,7 +38,7 @@ These rules allow you to classify users based on their profiles in social networ
 
 These rules will not work properly if login through the specific social network
 (Single Sign On) is not enabled and properly configured. Follow these steps to
-enable Facebook Sigle Sign on in Liferay:
+enable Facebook Single Sign on in Liferay:
 
 1. Sign in to the [Facebook Developers site](https://developers.facebook.com)
 and add a new App. For more information, read the [Facebook app developer guide]
@@ -46,18 +46,18 @@ and add a new App. For more information, read the [Facebook app developer guide]
 the steps, you will finally have a new App with an Application ID and an
 Application Secret.
 
-2. Log in as a Portal administrator in your Liferay Portal and go to
-Control Panel &rarr; Portal Settings &rarr; Authentication &rarr; Facebook. Check Enable and
-copy your Application ID and Application Secret to their respective fields.
-Finally click Save.
+2. Log in as a Portal administrator in your Liferay Portal and go to the Control
+Panel &rarr; *Portal Settings* &rarr; *Authentication* &rarr; *Facebook*. Check
+*Enable* and copy your Application ID and Application Secret to their respective
+fields. Finally click *Save*.
 
 3. To verify that the Facebook Single Sign On works properly, sign out and then
 click the Facebook option in the Sign In box. Enter your Facebook username and
-password in the prompted pop-up and click Login. You should be automatically
+password in the prompted pop-up and click *Login*. You should be automatically
 signed in to your Liferay Portal with your Facebook user.
 
-Read the [Liferay User Guide]
-(https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/integrating-existing-users-into-liferay-liferay-portal-6-2-user-guide-17-en)
+Read the [Liferay User's Guide]
+(/discover/portal/-/knowledge_base/6-2/integrating-existing-users-into-liferay)
 for more information.
 
 ### Facebook Age [](id=facebook-age)
@@ -90,10 +90,10 @@ Evaluates if the user likes the configured Facebook page.
 
 ## User Attributes Rules [](id=user-attributes-rules)
 
-These rules allow to classify users based on the attributes.
+These rules allow you to classify users based on the attributes.
 
 These rules will not work properly if the corresponding attributes are not
-available. Follow the given instructions for each rules in such cases.
+available. Follow the given instructions for each rule in such cases.
 
 ### Age [](id=age)
 
@@ -109,7 +109,7 @@ Evaluates if the user has the selected regular role assigned.
 
 ### Site Member [](id=site-member)
 
-Evaluates if the user is member of the selected site.
+Evaluates if the user is a member of the selected site.
 
 ### Site Role [](id=site-role)
 
@@ -130,12 +130,12 @@ Evaluates if the user is member of the selected user group.
 
 ### User Signed In [](id=user-signed-in)
 
-Evaluates if the user is signed in in the portal.
+Evaluates if the user is signed in to the portal.
 
 ## Session Attributes Rules [](id=session-attributes-rules)
 
-These rules allow to classify users based on their session attributes. Session
-attributes usually refer to the context in which the user accesses.
+These rules allow you to classify users based on their session attributes.
+Session attributes usually refer to the context in which the user accesses.
 
 These rules will not work properly if the corresponding session attributes
 are retrieved through any tools that are not currently available or properly
@@ -149,8 +149,9 @@ Evaluates if the user is accessing with the selected browser.
 
 Evaluates if the user is accessing with the selected device.
 
-This rule is based on the existing Device Families. To manage Device Families go
-to Site Administration &rarr; Configuration &rarr; Mobile Device Families.
+This rule is based on the existing Device Families. To manage Device Families,
+go to *Site Administration* &rarr; *Configuration* &rarr; *Mobile Device
+Families*.
 
 ### Location [](id=location)
 
