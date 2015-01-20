@@ -37,9 +37,10 @@ choose *Active*, and then click *Save*. To actually present content to the users
 belonging to the *Female Baseball Fans* user segment, you need to use the
 Campaign Content Display application.
 
-To configure permissions for creating, editing, and deleting campaigns, visit
-the Roles section of the Control Panel and search for *Audience Targeting
-Resources*.
+To configure permissions for creating, editing, and deleting user segments,
+visit the Roles section of the Control Panel. Then click on the *Actions* &rarr;
+*Define Permissions* button corresponding to the role you'd like to configure
+permissions for, and search for *Audience Targeting Resources*.
 
 ## Managing Campaign Priorities [](id=managing-campaign-priorities)
 

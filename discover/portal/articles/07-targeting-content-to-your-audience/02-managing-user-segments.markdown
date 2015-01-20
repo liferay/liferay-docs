@@ -24,8 +24,9 @@ the new user segment, entered a name and, optionally, a description, click
 ![Figure 7.2: Drag a rule to the right to create a user segment.](../../images/07-audience-targeting-rules.png)
 
 To configure permissions for creating, editing, and deleting user segments,
-visit the Roles section of the Control Panel and search for *Audience Targeting
-Resources*.
+visit the Roles section of the Control Panel. Then click on the *Actions* &rarr;
+*Define Permissions* button corresponding to the role you'd like to configure
+permissions for, and search for *Audience Targeting Resources*.
 
 Both user segments and campaigns are inherited in your site hierarchy.
 Therefore, user segments and campaigns defined in the Global scope will be
