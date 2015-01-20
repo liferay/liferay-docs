@@ -2,17 +2,16 @@
 
 <!-- Test code is at develop/tutorials/code/alloy/form-validator/end -->
 
-Do you like to provide instant feedback to users when they forget to fill in
-required fields or when they try to submit invalid entries to a form? Do you
-like to use strongly-typed fields and show clear consistent messages to users
-when they enter the wrong type of data? AlloyUI's `FormValidator` class answers
-the call! 
+Would you like to provide instant feedback to users when they fill out a form
+incorrectly? Do you like to use strongly-typed fields and show clear consistent
+messages to users when they enter the wrong type of data? AlloyUI's
+`FormValidator` class answers the call! 
 
 Typically you'd have to write tedious complicated validation functions, making
 sure to dot all your i's and cross all your t's in order to get the functions to
 work properly. Thankfully AlloyUI simplifies form validation with its
 `FormValidator` class that is easy to configure and use. The form validator
-accepts powerful predefined properties that have helpful default validation
+accepts predefined properties that have helpful default validation
 messages. And the form validator gives you flexibility to override the default
 messages with your own custom messages.
 
@@ -27,18 +26,17 @@ your portlet with AlloyUI's `FormValidator`.
 Here are the steps to follow to implement form validation in your portlet:
 
 - **Step 1:** Create a Form with Named Input Fields
-- **Step 2:** Add a FormValidator
+- **Step 2:** Add a `FormValidator`
 - **Step 3:** Specify Rules for the Input Fields
 - **Step 4:** Specify Custom Violation Messages (optional)
 
-You'll start by creating your form.  
+You'll start by creating your form. 
 
 ### Step 1: Create a Form with Named Input Fields
 
 If you haven't done so already, create an HTML `<form>`. Assign an ID to the
-form, to facilitate selecting it from the AlloyUI script that you're going to
-write. Lastly, name each of the form's `<input>` fields that you want to
-validate. 
+form to facilitate selecting it from the AlloyUI script that you'll write.
+Lastly, name each of the form's `<input>` fields that you want to validate. 
 
 Here's a form, for example, that has input fields `firstname`, `email`, and
 `age`. Note that the form has an `id` attribute and each of the form's input
@@ -72,24 +70,23 @@ The `name` attributes of the `<input>` tags are required for form validation.
 The validator applies rules to each input field based on its name. You'll learn
 more about applying rules shortly. 
 
-### Step 2: Add a FormValidator
+### Step 2: Add a `FormValidator`
 
 Now that you have a form, you can add an instance of the
-[FormValidator](http://alloyui.com/api/classes/A.FormValidator.html) class. 
+[`FormValidator`](http://alloyui.com/api/classes/A.FormValidator.html) class. 
 
-Follow these steps to add one to your view JSP.
+Follow these steps to add a `FormValidator` to your JSP.
 
 1.  Add the AlloyUI taglib `aui` to the beginning portion of your JSP, if it's
-not specified in your JSP already.
+    not specified in your JSP already.
 
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
 
 2.  Add `<aui:script>...</aui:script>` tags to the bottom of your JSP, unless
-you already have such tags. 
+    you already have such tags. 
 
-3.  Within the `<aui:script>...</aui:script>` tags, instantiate a form
-validator that follows this format, replacing `formId` with your form's ID
-value. 
+3.  Inside the `<aui:script>...</aui:script>` tags, instantiate a form validator
+    that follows this format, replacing `formId` with your form's ID value: 
 
         AUI().use(
             'aui-form-validator',
@@ -122,55 +119,55 @@ implement here control what users can submit in the form.
 
 Here's a list of form validation rules available for AlloyUI's `FormValidator`: 
 
-**acceptFiles:** List of accepted file types. (Default:empty)
+**acceptFiles:** A List of accepted file types (Default:empty)
 
 **alpha:** A boolean value that determines if a field should contain only 
-alphabetic characters. (Default:none) 
+alphabetic characters (Default:none) 
 
 **alphanum:** A boolean value that determines if a field should contain only 
-alphanumeric characters.
+alphanumeric characters
 (Default:false) 
 
-**date:** A boolean value that determines if a field should contain only a date. 
+**date:** A boolean value that determines if a field should contain only a date
 (Default:false)
 
 **digits:** A boolean value that determines if a field should contain only 
-digits. (Default:false)
+digits (Default:false)
 
 **email:** A boolean value that determines if a field should contain only an 
-email address. (Default:false)
+email address (Default:false)
 
 **equalTo:** Determines if a field's contents are equal to the specified value.
 (Default:empty)
 
 **iri:** A boolean value that determines if a field should contain only an
-International Rough Index (IRI). (Default:false) 
+International Rough Index (IRI) (Default:false) 
 
 **max:** Determines if the integer value is greater than the specified value. 
 (Default:none)
 
 **maxLength:** Determines if the length of the field's contents are greater than 
-the number of characters specified. (Default:empty)
+the number of characters specified (Default:empty)
 
-**min:** Determines if the integer value is less than the specified value. 
+**min:** Determines if the integer value is less than the specified value 
 (Default:none)
 
 **minLength:** Determines if the length of a field's contents are less than the 
-number of characters specified. (Default:empty)
+number of characters specified (Default:empty)
 
 **number:** A Boolean value that specifies a field should contain only numeric
-values. (Default:false)
+values (Default:false)
 
 **range:** Determines if the integer value in the field is within the 
-specified range. (Default:none)
+specified range (Default:none)
 
 **rangeLength:** Determines if the length of a field's contents is within the 
-specified range. (Default:empty)
+specified range (Default:empty)
 
-**required:** Determines if the field is required for submission. 
+**required:** Determines if the field is required for submission 
 (Default:false)
 
-**url:** A boolean value that determines if a field's contents are a URL. 
+**url:** A boolean value that determines if a field's contents are a URL 
 (Default:false)
 
 To apply a rule to an input field, add the field's name in the `rules` attribute of your JSP
@@ -187,14 +184,10 @@ rules to an input field named `firstname`:
         }
     }
 
-Upon a user breaking any one of the validation rules, a message is shown next to
-the field. Only one message is displayed, by default. 
-
-If you want to show multiple messages that apply to a field's invalid input, you
-can specify `showAllMessages: true` when creating the `FormValidator`. 
-
-As in the example code snippet below, you can add the `showAllMessages` property
-set to `true` to show more than one validation message per input field. 
+If a user breaks any of the validation rules, a message is shown next to the
+field. Only one message is displayed by default. If you want to show multiple
+messages, you can specify `showAllMessages: true` when creating the
+`FormValidator`, as in the example code snippet below: 
 
     new A.FormValidator(
         {
@@ -212,13 +205,13 @@ The `fieldStrings` attribute lets you specify your own message text for a rule,
 instead of using the rule's default message text. 
 
 For example, the following code populates a variable named `fieldStrings` that
-can be used to appliy custom messages for the `required` and `rangeLength`
-rules, for a form's `firstname` input field:  
+can be used to apply custom messages for the `required` and `rangeLength`
+rules, for a form's `firstname` input field: 
 
 	var fieldStrings = {
 		firstname: {
 			required: "The Force is strong with you, but we still need a name.",
-			rangeLength: "2 to 20 characters Padawan."  
+			rangeLength: "2 to 20 characters, Padawan."  
 		}
 	}
 
@@ -267,8 +260,8 @@ shown.
 		}
 	);
 
-As you see from the previous example code, declaring variables for rules and
-field strings helps to organize your code and makes it easier to understand. 
+As you see from the previous code, declaring variables for rules and field
+strings helps to organize your code and makes it easier to understand. 
 
 Now that you've had a chance to implement a `FormValidator`, it's time to deploy
 your portlet and test its form validation. 
