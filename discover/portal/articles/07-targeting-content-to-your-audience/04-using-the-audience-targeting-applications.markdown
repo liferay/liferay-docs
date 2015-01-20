@@ -117,6 +117,16 @@ will see the default image. Of course, once a campaign has ended, no users will
 match that campaign. Once all campaigns have ended, all users will see the
 default image.
 
++$$$
+
+**Note:** When Audience Targeting is enabled with a large number of rules,
+tracking actions, and reports, you may need to adjust some JVM parameters of
+your server for optimal performance. Visit the
+[Performance Tuning](/discover/deployment/-/knowledge_base/6-2/performance-tuning)
+section for details.
+
+$$$
+
 The Campaign Content Display application, like the User Segment Content Display
 application, allows site administrators to preview the different assets that
 will be displayed for different campaigns.
