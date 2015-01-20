@@ -39,18 +39,19 @@ services, use the following steps:
                         ServiceContext serviceContext) throws PortalException,
                         SystemException {
                 
-                GuestbookPermission.check(getPermissionChecker(),
-                                serviceContext.getScopeGroupId(), ActionKeys.DELETE);
+                GuestbookPermission.check(getPermissionChecker(), guestbookId,
+                                ActionKeys.DELETE);
 
-                return GuestbookLocalServiceUtil.deleteGuestbook(guestbookId);
+                return GuestbookLocalServiceUtil.deleteGuestbook(guestbookId,
+                                serviceContext);
         }
 
         public Guestbook updateGuestbook(long userId, long guestbookId,
                         String name, ServiceContext serviceContext) throws PortalException,
                         SystemException {
                 
-                GuestbookPermission.check(getPermissionChecker(),
-                                serviceContext.getScopeGroupId(), ActionKeys.UPDATE);
+                GuestbookPermission.check(getPermissionChecker(), guestbookId,
+                                ActionKeys.UPDATE);
 
                 return GuestbookLocalServiceUtil.updateGuestbook(userId, guestbookId,
                                 name, serviceContext);
@@ -58,11 +59,19 @@ services, use the following steps:
 
     Here, you've added permission checks to the remote service methods by
     calling the `check` helper methods of `GuestbookModelPermission` and
-    `GuestbookPermission`. The `check` methods take three parameters:
+    `GuestbookPermission`. The `GuestbookModelPermission.check` method takes
+    the following three parameters:
 
     - a `PermissionChecker` object
     - a `groupId`
     - an `actionId` string 
+
+    The `GuestbookModelPermission.check` and `EntryModelPermission.check`
+    methods take the following three parameters:
+
+    - a `PermissionChecker` object
+    - an entity ID (either `guestbookId` or `entryId`)
+    - an `actionId` string
 
     `BaseServiceImpl` contains a `getPermissionChecker` method which you can
     invoke to get a `PermissionChecker` object. This is possible since
@@ -138,10 +147,10 @@ new guestbook entry:
         guestbookId, userName, email, message, serviceContext);
 
 Your application's local services do not and should not contain permission
-checks. Your remote services now contain permission checks. If the permission
-check of a remote service is satisfied, then the remote service calls the local
-service. Thus, to secure service calls at the portlet layer, all you have to do
-is replace the local service calls with remote service calls.
+checks. Your remote services now do contain permission checks. If the permission
+check of one of your remote services is satisfied, then the remote service calls
+the local service. Thus, to secure service calls at the portlet layer, all you
+have to do is replace the local service calls with remote service calls.
 
 +$$$
 
@@ -163,11 +172,276 @@ $$$
 Use the following steps to secure the service calls in your portlet action
 methods:
 
-1. Open your `GuestbookPortlet` class and 
+1. Open your `GuestbookPortlet` class and replace each local service method call
+   with the corresponding remote service method call.
+
+2. Reorganize your imports, replacing `import
+   com.liferay.docs.guestbook.service.EntryLocalServiceUtil;` with `import
+   com.liferay.docs.guestbook.service.EntryServiceUtil;` and `import
+   com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;` with `import
+   com.liferay.docs.guestbook.service.GuestbookServiceUtil;`.
+
+3. Open your `GuestbookAdminPortlet` class and replace each local service method
+   call with the corresponding remote service method call.
+
+4. Reorganize your imports, replacing `import
+   com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;` with `import
+   com.liferay.docs.guestbook.service.GuestbookServiceUtil;`.
+
+To check that you haven't made a mistake in your `GuestbookPortlet` class,
+please refer to the following complete `GuestbookPortlet` class:
+
+    package com.liferay.docs.guestbook.portlet;
+
+    import java.io.IOException;
+    import java.util.List;
+
+    import javax.portlet.ActionRequest;
+    import javax.portlet.ActionResponse;
+    import javax.portlet.PortletException;
+    import javax.portlet.RenderRequest;
+    import javax.portlet.RenderResponse;
+
+    import com.liferay.docs.guestbook.model.Entry;
+    import com.liferay.docs.guestbook.model.Guestbook;
+    import com.liferay.docs.guestbook.service.EntryServiceUtil;
+    import com.liferay.docs.guestbook.service.GuestbookServiceUtil;
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.kernel.servlet.SessionErrors;
+    import com.liferay.portal.kernel.servlet.SessionMessages;
+    import com.liferay.portal.kernel.util.ParamUtil;
+    import com.liferay.portal.service.ServiceContext;
+    import com.liferay.portal.service.ServiceContextFactory;
+    import com.liferay.portal.util.PortalUtil;
+    import com.liferay.util.bridges.mvc.MVCPortlet;
+
+    /**
+     * Portlet implementation class GuestbookPortlet
+     */
+    public class GuestbookPortlet extends MVCPortlet {
+
+            public void addEntry(ActionRequest request, ActionResponse response)
+                            throws PortalException, SystemException {
+
+                    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                                    Entry.class.getName(), request);
+
+                    String userName = ParamUtil.getString(request, "name");
+                    String email = ParamUtil.getString(request, "email");
+                    String message = ParamUtil.getString(request, "message");
+                    long guestbookId = ParamUtil.getLong(request, "guestbookId");
+                    long entryId = ParamUtil.getLong(request, "entryId");
+
+                    if (entryId > 0) {
+                            try {
+                                    EntryServiceUtil.updateEntry(serviceContext.getUserId(),
+                                                    guestbookId, entryId, userName, email, message,
+                                                    serviceContext);
+
+                                    SessionMessages.add(request, "entryAdded");
+
+                                    response.setRenderParameter("guestbookId",
+                                                    Long.toString(guestbookId));
+                            } catch (Exception e) {
+                                    SessionErrors.add(request, e.getClass().getName());
+                                    
+                                    PortalUtil.copyRequestParameters(request, response);
+
+                                    response.setRenderParameter("mvcPath",
+                                                    "/html/guestbook/edit_entry.jsp");
+                            }
+                    }
+                    else {
+                            try {
+                                    EntryServiceUtil.addEntry(serviceContext.getUserId(),
+                                                    guestbookId, userName, email, message, serviceContext);
+
+                                    SessionMessages.add(request, "entryAdded");
+
+                                    response.setRenderParameter("guestbookId",
+                                                    Long.toString(guestbookId));
+                            } catch (Exception e) {
+                                    SessionErrors.add(request, e.getClass().getName());
+                                    
+                                    PortalUtil.copyRequestParameters(request, response);
+
+                                    response.setRenderParameter("mvcPath",
+                                                    "/html/guestbook/edit_entry.jsp");
+                            }
+                    }
+            }
+            
+            public void deleteEntry(ActionRequest request, ActionResponse response) {
+                    
+                    long entryId = ParamUtil.getLong(request, "entryId");
+                    long guestbookId = ParamUtil.getLong(request, "guestbookId");
+                    
+                    try {
+                            ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                                    Entry.class.getName(), request);
+                            
+                            response.setRenderParameter("guestbookId",
+                                            Long.toString(guestbookId));
+
+                            EntryServiceUtil.deleteEntry(entryId, serviceContext);
+                    } catch (Exception e) {
+                            
+                            SessionErrors.add(request, e.getClass().getName());
+                    }
+            }
+
+            public void addGuestbook(ActionRequest request, ActionResponse response)
+                            throws PortalException, SystemException {
+
+                    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                                    Guestbook.class.getName(), request);
+
+                    String name = ParamUtil.getString(request, "name");
+
+                    try {
+                            GuestbookServiceUtil.addGuestbook(serviceContext.getUserId(),
+                                            name, serviceContext);
+
+                            SessionMessages.add(request, "guestbookAdded");
+
+                    } catch (Exception e) {
+                            SessionErrors.add(request, e.getClass().getName());
+
+                            response.setRenderParameter("mvcPath",
+                                            "/html/guestbook/edit_guestbook.jsp");
+                    }
+            }
+
+            @Override
+            public void render(RenderRequest renderRequest,
+                            RenderResponse renderResponse) throws PortletException, IOException {
+
+                    try {
+                            ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                                            Guestbook.class.getName(), renderRequest);
+
+                            long groupId = serviceContext.getScopeGroupId();
+
+                            long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+
+                            List<Guestbook> guestbooks = GuestbookServiceUtil
+                                            .getGuestbooks(groupId);
+
+                            if (guestbooks.size() == 0) {
+                                    Guestbook guestbook = GuestbookServiceUtil.addGuestbook(
+                                                    serviceContext.getUserId(), "Main", serviceContext);
+
+                                    guestbookId = guestbook.getGuestbookId();
+
+                            }
+
+                            if (!(guestbookId > 0)) {
+                                    guestbookId = guestbooks.get(0).getGuestbookId();
+                            }
+
+                            renderRequest.setAttribute("guestbookId", guestbookId);
+
+                    } catch (Exception e) {
+
+                            throw new PortletException(e);
+                    }
+
+                    super.render(renderRequest, renderResponse);
+            }
+
+    }
+
+To check that you haven't made a mistake in your `GuestbookAdminPortlet` class,
+please refer to the following complete `GuestbookAdminPortlet` class:
+
+    package com.liferay.docs.guestbook.portlet;
+
+    import javax.portlet.ActionRequest;
+    import javax.portlet.ActionResponse;
+
+    import com.liferay.docs.guestbook.model.Guestbook;
+    import com.liferay.docs.guestbook.service.GuestbookServiceUtil;
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.kernel.servlet.SessionErrors;
+    import com.liferay.portal.kernel.servlet.SessionMessages;
+    import com.liferay.portal.kernel.util.ParamUtil;
+    import com.liferay.portal.service.ServiceContext;
+    import com.liferay.portal.service.ServiceContextFactory;
+    import com.liferay.util.bridges.mvc.MVCPortlet;
+
+    /**
+     * Portlet implementation class GuestbookAdminPortlet
+     */
+    public class GuestbookAdminPortlet extends MVCPortlet {
+
+            public void addGuestbook(ActionRequest request, ActionResponse response)
+                            throws PortalException, SystemException {
+
+                    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                                    Guestbook.class.getName(), request);
+
+                    String name = ParamUtil.getString(request, "name");
+
+                    try {
+                            GuestbookServiceUtil.addGuestbook(serviceContext.getUserId(),
+                                            name, serviceContext);
+                            
+                            SessionMessages.add(request, "guestbookAdded");
+                    } catch (PortalException e) {
+                            SessionErrors.add(request, e.getClass().getName());
+
+                            response.setRenderParameter("mvcPath",
+                                            "/html/guestbookadmin/edit_guestbook.jsp");
+                    }
+            }
+
+            public void updateGuestbook(ActionRequest request, ActionResponse response)
+                            throws PortalException, SystemException {
+
+                    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                                    Guestbook.class.getName(), request);
+
+                    String name = ParamUtil.getString(request, "name");
+                    long guestbookId = ParamUtil.getLong(request, "guestbookId");
+
+                    try {
+                            GuestbookServiceUtil.updateGuestbook(serviceContext.getUserId(), guestbookId,
+                                            name, serviceContext);
+                            
+                            SessionMessages.add(request, "guestbookUpdated");
+                    } catch (PortalException pe) {
+                            SessionErrors.add(request, pe.getClass().getName());
+
+                            response.setRenderParameter("mvcPath",
+                                            "/html/guestbookadmin/edit_guestbook.jsp");
+                    }
+            }
+
+            public void deleteGuestbook(ActionRequest request, ActionResponse response)
+                            throws PortalException, SystemException {
+
+                    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                                    Guestbook.class.getName(), request);
+
+                    long guestbookId = ParamUtil.getLong(request, "guestbookId");
+                    
+                    try {
+                            GuestbookServiceUtil.deleteGuestbook(guestbookId, serviceContext);
+                            
+                            SessionMessages.add(request, "guestbookDeleted");
+                    } catch (PortalException pe) {
+                            SessionErrors.add(request, pe.getClass().getName());
+                    }
+            }
+
+    }
 
 Now that you've implemented permission checks at the portlet layer, users
 without the proper permissions cannot add, update, or delete a guestbook or a
 guestbook entry entity. Even if such a user manually entered a URL pointing to
 one of your portlet action methods, the portlet action now calls a remote
 service. The permission check in the remote service would fail and the user's
-request would be aborted.
+request would be aborted. Excellent work on securing your application's
+services!
