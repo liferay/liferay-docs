@@ -20,30 +20,18 @@ the Audience Targeting project for usage, and a couple tips along the way.
 
 Before you can take advantage of the Audience Targeting project's scripts for
 creating rules, reports, and tracking actions, you must first install the
-project itself. First, you'll need to make sure you have a Liferay Plugins SDK.
+project itself. To do this, you'll need to install the Audience Targeting SDK.
 
-All Liferay plugin types, including portlets, themes, layout templates, hooks,
-and EXT plugins, can be created and maintained in the SDK.
-[The Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
-section of tutorials explains how to create, build, and deploy your plugins.
+So why is this plugins SDK useful for Audience Targeting? By using the Audience
+Targeting SDK, you can take full advantage of the development environment it
+presents to developers.
 
-So why is the plugins SDK useful for Audience Targeting? By placing the Audience
-Targeting project inside Liferay's plugins SDK, you can take full advantage of
-the development environment it presents to developers.
+You can download the Audience Targeting SDK from the following
+[wiki](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Audience+Targeting).
 
-First, download the `liferay-apps-content-targeting` (Audience Targeting)
-project from the following
-[Github page](https://github.com/liferay/liferay-apps-content-targeting) as a
-ZIP file, or, if familiar with Git,
-[fork and clone](https://help.github.com/articles/fork-a-repo/) the project to
-your local machine.
-
-Once you've completed this, create the `apps` folder in the SDK's root
-directory. Then, simply copy the project into the new `apps` directory. The SDK
-now treats the Audience Targeting project like a plugin, and you can take full
-advantage of the SDK's developer environment. This tutorial relies on the SDK's
-developer tools, so make sure you've configured your project correctly before
-beginning the tutorial.
+Once you've completed this, the root directory you'll need to work from in the
+SDK for the Audience Targeting tutorials is the `apps/content-targeting`
+directory.
 
 +$$$
 
