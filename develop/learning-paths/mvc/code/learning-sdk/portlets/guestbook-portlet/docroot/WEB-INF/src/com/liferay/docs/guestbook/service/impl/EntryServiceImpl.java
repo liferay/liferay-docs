@@ -70,20 +70,20 @@ public class EntryServiceImpl extends EntryServiceBaseImpl {
 	public List<Entry> getEntries(long groupId, long guestbookId)
 			throws SystemException {
 
-		return EntryLocalServiceUtil.getEntries(groupId, guestbookId);
+		return entryPersistence.filterFindByG_G(groupId, guestbookId);
 	}
 
 	public List<Entry> getEntries(long groupId, long guestbookId, int start,
 			int end) throws SystemException {
 
-		return EntryLocalServiceUtil.getEntries(groupId, guestbookId, start,
+		return entryPersistence.filterFindByG_G(groupId, guestbookId, start,
 				end);
 	}
 
 	public int getEntriesCount(long groupId, long guestbookId)
 			throws SystemException {
 
-		return EntryLocalServiceUtil.getEntriesCount(groupId, guestbookId);
+		return entryPersistence.filterCountByG_G(groupId, guestbookId);
 	}
 
 	public Entry updateEntry(long userId, long guestbookId, long entryId,

@@ -70,16 +70,17 @@ public class GuestbookServiceImpl extends GuestbookServiceBaseImpl {
 	}
 
 	public List<Guestbook> getGuestbooks(long groupId) throws SystemException {
-		return GuestbookLocalServiceUtil.getGuestbooks(groupId);
+		return guestbookPersistence.filterFindByGroupId(groupId);
 	}
 
 	public List<Guestbook> getGuestbooks(long groupId, int start, int end)
 			throws SystemException {
-		return GuestbookLocalServiceUtil.getGuestbooks(groupId, start, end);
+
+		return guestbookPersistence.filterFindByGroupId(groupId, start, end);
 	}
 
 	public int getGuestbooksCount(long groupId) throws SystemException {
-		return GuestbookLocalServiceUtil.getGuestbooksCount();
+		return guestbookPersistence.filterCountByGroupId(groupId);
 	}
 
 	public Guestbook updateGuestbook(long userId, long guestbookId,
