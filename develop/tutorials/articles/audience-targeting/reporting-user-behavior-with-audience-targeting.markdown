@@ -56,7 +56,8 @@ server.
     flag and the number of hits for each country.
 
     * `getIcon`: configures the icon displayed in the Report GUI. You should use
-    the name of a FontAwesome icon. For example: *icon-coffee* or *icon-globe*
+    the name of a FontAwesome icon. For example: *"icon-coffee"* or
+    *"icon-globe"*
     (See [Font Awesome documentation](http://fortawesome.github.io/Font-Awesome/3.2.1/)).
 
     * `getName`: the name of your report (it can be localized).

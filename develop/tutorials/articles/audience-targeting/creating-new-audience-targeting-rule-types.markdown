@@ -95,7 +95,8 @@ server.
     selector with the available time zones.
 
     * `getIcon`: configures the icon displayed in the Rule GUI. You should use
-    the name of a FontAwesome icon. For example: *icon-coffee* or *icon-globe*
+    the name of a FontAwesome icon. For example: *"icon-coffee"* or
+    *"icon-globe"*
     (See [Font Awesome documentation](http://fortawesome.github.io/Font-Awesome/3.2.1/))
 
     * `getName`: the name of your rule (it can be localized).
