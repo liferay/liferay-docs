@@ -59,9 +59,8 @@ longer than the maximum age (default is 60).
 Also, as we mentioned earlier, there is a property to enable the Recycle bin
 portal-wide.
 
-`trash.enabled=true`: set this property to true to enable the Recycle Bin for
-all sites in the portal while allowing site administrators to disable it per
-site.
+`trash.enabled=true`: set this property to *false* to disable the Recycle Bin for
+all sites in the portal (default is *true*).
 
 <!-- Visit the `portal.properties` file at <link> to view all of the
 configurable properties for the Recycle Bin. -->
