@@ -22,16 +22,22 @@ Before you can take advantage of the Audience Targeting project's scripts for
 creating rules, reports, and tracking actions, you must first install the
 project itself. To do this, you'll need to install the Audience Targeting SDK.
 
-So why is this plugins SDK useful for Audience Targeting? By using the Audience
-Targeting SDK, you can take full advantage of the development environment it
-presents to developers.
+So why is this SDK useful for Audience Targeting? The Audience Targeting project
+is included in the SDK, meaning you can run useful development scripts from the
+project that automatically create rule, report, and tracking action plugins that
+can be customized. It essentially provides an entire Audience Targeting
+development environment for developers.
 
 You can download the Audience Targeting SDK from the following
 [wiki](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Audience+Targeting).
 
+<!-- There's not an the official downloads page because the WCM team is working
+on a new SDK based on gradle and they want that one to replace this one. Once
+that one is available (~end Feb 2015), an official downloads page link will be
+available. -Cody -->
+
 Once you've completed this, the root directory you'll need to work from in the
-SDK for the Audience Targeting tutorials is the `apps/content-targeting`
-directory.
+SDK for this tutorial is the `apps/content-targeting` directory.
 
 +$$$
 
