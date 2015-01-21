@@ -47,8 +47,7 @@ server.
 
     * `updateReport`: called by the report UI to generate or update the report.
     Therefore, it should process the available information (e.g., from the
-    Analytics service) and persist it. <!-- Add more to description of this
-    method after asking Eduardo for further info on this method. -Cody -->
+    Analytics service) and persist it so it can be displayed as a table/chart.
 
     * `getHtml`: returns the HTML displayed to administrators when accessing
     this report from a campaign. The `BaseReport` class already implements this
