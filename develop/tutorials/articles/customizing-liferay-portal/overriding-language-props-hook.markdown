@@ -114,28 +114,27 @@ files, simply run the wizard again.
 
 The Liferay Hook Configuration wizard is the easiest way to create and configure
 custom language properties files. If you didn't use Liferay IDE's Liferay Hook
-Configuration wizard or you created your hook project using the Plugins SDK from
-the
-[command line](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk#creating-a-hook-project-from-the-command-line),
-however, the next section shows you how to manually create and configure custom
-language properties files. 
+Configuration wizard or you created your hook project using the 
+[Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk#creating-a-hook-project-from-the-command-line),
+the next section shows you how to create and configure custom
+language properties files manually. 
 
 ## Manually Creating and Referencing Custom Language Files [](id=manually-creating-and-referencing-custom-language-files)
 
-In order to override any one of Portal's language properties files with a custom
-language properties file, you must put the custom file in your hook plugin's 
+In order to override any one of Portal's language properties files, you must put
+the custom language properties file in your hook plugin's
 `docroot/WEB-INF/src/content` folder. On deploying the hook plugin, the portal
 applies the properties of each of these language properties files.
 
 Each custom language property file must match the name of the file it's
 overriding. If you wanted to override Portal's `Language_en_GB.properties` file,
 for example, then you'd create an empty `Language_en_GB.properties` file in the
-hook plugin's `docroot/WEB-INF/src/content` folder and add custom property
-values to that file. 
+hook plugin's `docroot/WEB-INF/src/content` folder and add custom properties
+to that file. 
 
-In order for Liferay Portal to pick up on your new language properties files,
-you must specify them in the plugin's `liferay-hook.xml` file. Each reference to
-a language file in `liferay-hook.xml` is defined in a `language-properties` tag.
+In order for Liferay Portal to use your new language properties files, you must
+specify them in the plugin's `liferay-hook.xml` file. Each reference to a
+language file in `liferay-hook.xml` is defined in a `language-properties` tag.
 For example, you could reference custom language files for English, Spanish, and
 the default language properties file by specifying them in the
 `liferay-hook.xml` file like this:
@@ -172,9 +171,9 @@ language files.
     language files as you want to reference.
 
 **Important:** Unless you're adding language properties files using the Liferay
-Hook Configuration wizard, no language properties files are created for you in
+Hook Configuration wizard, language properties files are not created for you in
 your plugin project's `docroot/WEB-INF/src/content` folder. You must manually
-create each custom properties file .  
+create each custom properties file . 
 
 ![Figure 5: Liferay IDE's Overview mode for editing `liferay-hook.xml` facilitates specifying custom language files.](../../images/overview-mode-language-props.png)
  
