@@ -85,13 +85,13 @@ member of the portal can access it.
 
 +$$$
 
-**Tip:** Prior to Liferay 6.1, there were two
- ways of creating sites: organizations and communities. This has been simplified
- to provide more ease of use and allow for more flexibility. The main role of
- organizations is still to organize the users of the portal in a hierarchy but
- they can also have associated sites. Communities can still be created through
- independent sites but the new name reflects the fact that sites can be used for
- many different purposes besides communities.
+**Tip:** Prior to Liferay 6.1, there were two ways of creating sites:
+organizations and communities. This has been simplified to provide more ease of
+use and allow for more flexibility. The main role of organizations is still to
+organize the users of the portal in a hierarchy but they can also have
+associated sites. Communities can still be created through independent sites but
+the new name reflects the fact that sites can be used for many different
+purposes besides communities.
 
 $$$
 
@@ -122,14 +122,14 @@ chapters 14, 16, and 17 of this guide.
 
 +$$$
 
-**Tip:** Prior to Liferay 6.2, the Control Panel
- included interfaces both for site administration and for portal administration.
- In Liferay 6.2, these interfaces have been separated. If you're signed in as an
- administrator, you can access the Liferay 6.2 Control Panel by clicking *Admin*
- &rarr; *Control Panel*. To manage a single site, navigate to the site by
- clicking on *My Sites* and clicking on the site's name. Then click on *Admin*
- &rarr; *Site Administration*. The Site Administration interface allows to
- configure site settings and manage the pages, content, and users of the site.
+**Tip:** Prior to Liferay 6.2, the Control Panel included interfaces both for
+site administration and for portal administration. In Liferay 6.2, these
+interfaces have been separated. If you're signed in as an administrator, you can
+access the Liferay 6.2 Control Panel by clicking *Admin* &rarr; *Control Panel*.
+To manage a single site, navigate to the site by clicking on *My Sites* and
+clicking on the site's name. Then click on *Admin* &rarr; *Site Administration*.
+The Site Administration interface allows to configure site settings and manage
+the pages, content, and users of the site.
 
 $$$
 
@@ -176,16 +176,15 @@ organization site by navigating to its *Site Settings* menu.
 
 +$$$
 
-It's possible for site memberships to be
- handled automatically by a membership policy. The membership policy can check
- various pieces of information from each user, such as their first names, last
- names, birthdays, job titles, organizations, and user groups. Using this
- information, the site membership policy can automatically assign members to the
- site. If your site will implement a membership policy, your site administrators
- can disallow manual membership management for their site. When the Allow Manual
- Membership Management option is disabled, the *Users* section of *Site
- Administration* (Site Memberships and Site Teams) is hidden, even from
- administrators.
+**Note:** It's possible for site memberships to be handled automatically by a
+membership policy. The membership policy can check various pieces of information
+from each user, such as their first names, last names, birthdays, job titles,
+organizations, and user groups. Using this information, the site membership
+policy can automatically assign members to the site. If your site will implement
+a membership policy, your site administrators can disallow manual membership
+management for their site. When the Allow Manual Membership Management option is
+disabled, the *Users* section of *Site Administration* (Site Memberships and
+Site Teams) is hidden, even from administrators.
 
 $$$
 
@@ -377,11 +376,11 @@ category name collision, Liferay renames the imported categories.
 
 +$$$
 
-**Note:** LAR files are version dependent. You
- can't import a LAR file that was exported from one version of Liferay into
- a Liferay server that's running a different version of Liferay. Also,
- note that periodically exporting LARs is *not* a complete backup solution;
- please refer to chapter 18 of this guide for information on backing up Liferay.
+**Note:** LAR files are version dependent. You can't import a LAR file that was
+exported from one version of Liferay into a Liferay server that's running a
+different version of Liferay. Also, note that periodically exporting LARs is
+*not* a complete backup solution; please refer to chapter 18 of this guide for
+information on backing up Liferay.
 
 $$$
 
@@ -440,7 +439,7 @@ can now only be accomplished using Mobile Device Rules, which can be found in
 the right menu. You can learn more about using Mobile Device Rules in the
 *Advanced Content Management* chapter. You can enable the WAP functionality for
 your portal's Look and Feel section by opening/creating your
-`portal-ext.properties` file in your ${LIFERAY_HOME} directory and setting
+`portal-ext.properties` file in your `${LIFERAY_HOME}` directory and setting
 `mobile.device.styling.wap.enabled=true`. WAP functionality will be completely
 removed from Liferay in the next release.
 
@@ -550,17 +549,16 @@ tabs of the Manage Site Settings dialog box (see below).
 
 +$$$
 
-In previous versions of Liferay, it was
- possible that a single page could be indexed multiple times. In Liferay 6.1,
- all URLs that direct to the same page will only create one entry in the index.
- Previously, the simple URL
- *http://www.lunar-resort.com/web/guest/blog/-/blogs/themoon* and different
- versions of the URL which provided additional information about the referring
- page had different entries in the index. As of Liferay 6.1, each asset (web
- content article, blog entry, etc.) has a unique URL. From the search engine's
- point of view, this will make your pages rank higher since any references to
- variations of a specific URL will all be considered references to the same
- page.] 
+**Note:** In previous versions of Liferay, it was possible that a single page
+could be indexed multiple times. In Liferay 6.1, all URLs that direct to the
+same page will only create one entry in the index. Previously, the simple URL
+*http\://www.lunar-resort.com/web/guest/blog/-/blogs/themoon* and different
+versions of the URL which provided additional information about the referring
+page had different entries in the index. As of Liferay 6.1, each asset (web
+content article, blog entry, etc.) has a unique URL. From the search engine's
+point of view, this will make your pages rank higher since any references to
+variations of a specific URL will all be considered references to the same
+page.] 
 
 $$$
 
@@ -601,12 +599,11 @@ page.
 
 +$$$
 
-Usually, you don't want the web content display
- portlet that you're using to embed a portlet to be visible. To make the web
- content display portlet invisible, click on the gear icon of the web content
- display portlet, select *Look and Feel*, set *Show Borders* to *No*, and click
- *Save*. Once you've refreshed the page, only the embedded portlet will be
- visible.
+**Note:** Usually, you don't want the web content display portlet that you're
+using to embed a portlet to be visible. To make the web content display portlet
+invisible, click on the gear icon of the web content display portlet, select
+*Look and Feel*, set *Show Borders* to *No*, and click *Save*. Once you've
+refreshed the page, only the embedded portlet will be visible.
 
 $$$
 
@@ -923,8 +920,8 @@ portlet and Blogs Aggregator portlet to the Community page.
 It's easy to make your pages look exactly the way you want them to. If the
 default layout options provided aren't enough, you can even develop your own.
 To find more information about developing custom layout templates, please refer
-to the Liferay Developer's guide:
-[https://www.liferay.com/documentation/liferay-portal/6.2/development](https://www.liferay.com/documentation/liferay-portal/6.2/development).
+to the [Creating a Layout Template Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-layout-template-project-in-the-plugins-sdk)
+tutorial. 
 
 ### Page Permissions [](id=page-permissions)
 

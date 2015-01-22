@@ -19,8 +19,9 @@ manually uninstall it, follow these steps:
 
 1. Delete your `[Liferay Home]/data/osgi` folder.
 
-2. Delete your app server's `work` and `temp` directories. E.g.., if you're
-   running Liferay on Tomcat, delete your `[Liferay Home]/tomcat-[version]/work`
-   and `[Liferay Home]/tomcat-[version]/temp` folders.
+2. Delete your app server's `work` and `temp` directories. For example, if
+   you're running Liferay on Tomcat, delete your `[Liferay
+   Home]/tomcat-[version]/work` and `[Liferay Home]/tomcat-[version]/temp`
+   folders.
 
 3. Restart your app server.

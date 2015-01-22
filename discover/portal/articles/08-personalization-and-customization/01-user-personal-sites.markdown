@@ -19,9 +19,8 @@ properties to your `portal-ext.properties` file:
     
 +$$$
 
-Note that the public and private page sets of
- personal sites are handled separately. You can leave one page set enabled while
- disabling the other.
+**Note:** The public and private page sets of personal sites are handled
+separately. You can leave one page set enabled while disabling the other.
 
 $$$
 
@@ -53,12 +52,12 @@ this file here: [http://docs.liferay.com/portal/6.2/propertiesdoc/portal.propert
 
 +$$$
 
-Prior to Liferay 6.1, administrators could
- disallow users from being able to modify the pages and portlets of their
- personal sites by setting the following properties:
+**Note:** Prior to Liferay 6.1, administrators could disallow users from being
+able to modify the pages and portlets of their personal sites by setting the
+following properties:
 
-    layout.user.public.layouts.modifiable=true
-    layout.user.private.layouts.modifiable=true
+`layout.user.public.layouts.modifiable=true`
+`layout.user.private.layouts.modifiable=true`
     
 As of Liferay 6.1, this property is obsolete. However, you can customize the
 modifiable portions of personal sites through Liferay's permissions system by

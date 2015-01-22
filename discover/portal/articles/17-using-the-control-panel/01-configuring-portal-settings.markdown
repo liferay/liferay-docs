@@ -58,7 +58,7 @@ the default login or logout page in a `portal-ext.properties` file with the
 properties `default.landing.page.path` and `default.logout.page.path`, 
 respectively. For more information, see the `portal.properties` documentation 
 entries for the [Default Landing Page](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Default%20Landing%20Page) 
-and [Default Logout Page](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Default Logout Page). 
+and [Default Logout Page](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Default%20Logout%20Page). 
 
 Under the Additional Information heading, you can specify a Legal name, ID, 
 company type, SIC code, ticker symbol, industry and industry type.

@@ -84,13 +84,12 @@ can connect to the `liferay.com` Marketplace.
 
 +$$$
  
-Tip: Any local user with administrative
- privileges can use the Marketplace to browse and install apps from the
- Marketplace, by entering their `liferay.com` credentials in the above login
- screen. This allows multiple administrators to manage the apps installed on the
- local Liferay instance. Once a link is established between a local
- administrator account and a `liferay.com` account, there is no way to undo
- this, short of re-installing Liferay.
+**Tip:** Any local user with administrative privileges can use the Marketplace
+to browse and install apps from the Marketplace, by entering their `liferay.com`
+credentials in the above login screen. This allows multiple administrators to
+manage the apps installed on the local Liferay instance. Once a link is
+established between a local administrator account and a `liferay.com` account,
+there is no way to undo this, short of re-installing Liferay.
 
 $$$
  

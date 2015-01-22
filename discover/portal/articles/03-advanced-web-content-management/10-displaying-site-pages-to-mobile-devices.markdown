@@ -43,6 +43,8 @@ acquired the plugin, you need to download and install it. To do so, navigate to
 the Purchased section of the Control Panel, find your Device Recognition
 Provider plugin, and click on *Download* and then *Install*.
 
++$$$
+
 **Installation Note:** If your server doesn't have access to the outside
 Internet, an error appears in your log: `SLF4J: Failed to load class
 "org.slf4j.impl.StaticLoggerBinder`. This occurs because WURFL by default
@@ -54,6 +56,8 @@ unzipping the resulting file, copying `slf4j-log4j12-<version>.jar` to
 instance. On some application servers, you'll need to add this .jar file to the
 `wurfl-web.war` file first (in the directory noted above) before deploying the
 file to your server. 
+
+$$$
 
 You can access the Mobile Device Families administrative page from the
 Configuration section of Site Administration. Make sure you're on the

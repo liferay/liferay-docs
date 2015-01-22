@@ -140,11 +140,10 @@ and Media repositories of all the other sites you belong to.
 
 +$$$
 
-Note for administrators: If you don't have a
-Documents and Media portlet anywhere on a site that's been selected for syncing,
-you'll have to add the portlet. Otherwise, users will get a *The requested
-resource was not found* error when they try to use the *Open Website* link from
-their Sync menus.
+**Note for administrators:** If you don't have a Documents and Media portlet
+anywhere on a site that's been selected for syncing, you'll have to add the
+portlet. Otherwise, users will get a *The requested resource was not found*
+error when they try to use the *Open Website* link from their Sync menus.
 
 $$$
 
@@ -237,7 +236,7 @@ of Liferay Sync permissions by performing the following steps. First, create a
 new file on your desktop called *secret.txt*. Enter the text *classified
 information* into this file. Then use your browser to log into Liferay and
 create a new user called *secretagent* with the email address
-*secretagent@liferay.com* and the password *test*. Also, create a new private
+*secretagent\@liferay.com* and the password *test*. Also, create a new private
 site called *Secret Site*. Then assign the *secretagent* user to the *Secret
 Site* and grant the *Site Administrator* role to this user. There will be no
 other members of this site unless they are assigned by an administrator. Log in
@@ -249,7 +248,7 @@ Next, we'll configure our Liferay Sync client to log in with the *secretagent*
 user's credentials and access the *Secret Site*. Open the Liferay Sync menu from
 the taskbar and select *Properties*. Click on the *Edit Settings* button, choose
 a new Sync folder, enter your server's URL, and enter the secret agent's
-credentials: *secretagent@liferay.com* and *test*. Lastly, uncheck all Liferay
+credentials: *secretagent\@liferay.com* and *test*. Lastly, uncheck all Liferay
 sites except the *Secret Site*, and click *OK*. Confirm that the *secret.txt*
 file that you uploaded to the *Secret Site*, is downloaded to your new Sync
 folder. Open it and check that it says *classified information*. If you
@@ -280,7 +279,7 @@ Enter your Liferay server credentials by filling in your *Login*, *Password*,
 and *Server* information. Your *Login* is either your user account's email
 address or screen name. Use the same credentials you use to log in to the portal
 in a browser. In the *Server* field, enter your portal's URL. In this example,
-the server URL is *http://www.liferay.com*. Click the key icon on the top right
+the server URL is http\://www.liferay.com. Click the key icon on the top right
 to test your connection and check if everything is correct.
 
 Note for Gingerbread users: If you can't see some of the features described
@@ -378,8 +377,8 @@ Click on *Settings* in the toolbar and enter your Liferay server credentials by
 filling in your *Login*, *Password*, and *Server* information. Your *Login*
 is either your user account's email address or screen name, whichever you use
 to log in to the portal in a browser. In the *Server* field, enter your
-portal's URL. In this example, the server URL is *http://www.liferay.com*. Click
-on *Test Connection* to check if your configuration is correct.
+portal's URL. In this example, the server URL is *http\://www.liferay.com*.
+Click on *Test Connection* to check if your configuration is correct.
 
 After you have successfully tested your connection, tap on the *Documents*
 toolbar section and you'll see a list of Liferay sites you have access to. You

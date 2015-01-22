@@ -41,13 +41,13 @@ we now leverage the styling by wrapping the Bootstrap code (see
 For migrating such classes as `.aui-fieldset` to AlloyUI 2.0, simply remove
 the "aui-" prefix but append the `.aui` parent class name.
 
-For example, you'd replace this ...
+For example, you'd replace this:
 
     .aui-fieldset {
         // Styling
     }
 
-... with this ...
+with this:
 
     .aui .fieldset {
         // Styling
@@ -125,7 +125,7 @@ deprecated modules here:
 	aui-tpl-snippets-textarea-deprecate
 
 Note, some of these modules have new implementations with the same name,
-excluding the suffix "-deprecated". Liferay's AlloyUI Upgrade Tool tacks the
+excluding the suffix *-deprecated*. Liferay's AlloyUI Upgrade Tool tacks the
 "-deprecated" suffix onto module references it finds. It's up to you to migrate
 to the new AlloyUI 2.0 modules. 
 

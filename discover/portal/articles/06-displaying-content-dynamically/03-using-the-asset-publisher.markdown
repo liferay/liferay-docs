@@ -265,8 +265,8 @@ content to one of several formats:
 - SXW
 - TXT
 
-    Please refer to the User Guide's section on [Liferay Server
-    Administration](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/server-administration-liferay-portal-6-2-user-guide-17-en)
+    Please refer to the section on
+    [Liferay Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
     for information on setting up Liferay's OpenOffice/LibreOffice document
     conversion functionality.
 

@@ -1,11 +1,11 @@
 # Expressing Yourself Using Blogs [](id=expressing-yourself-using-blogs)
 
 The word *Blog* is an apostrophe-less contraction of the two words *web* and
-*log*. Blogs were first popularized by web sites such as Slashdot
-([http://slashdot.org](http://slashdot.org)) which have the format of a running
-list of entries to which users could attach comments. Over time, more and more
-sites such as Digg, del.icio.us, and Newsvine adopted the format, empowering
-users to share their opinions and generating lively discussions.
+*log*. Blogs were first popularized by web sites such as
+[Slashdot](http://slashdot.org), which have the format of a running list of
+entries to which users could attach comments. Over time, more and more sites
+such as Digg, del.icio.us, and Newsvine adopted the format, empowering users to
+share their opinions and generating lively discussions.
 
 Over the course of time, blogging sites and applications began to appear, such
 as blogger.com, blogspot.com. TypePad, WordPress, and Web Roller. These

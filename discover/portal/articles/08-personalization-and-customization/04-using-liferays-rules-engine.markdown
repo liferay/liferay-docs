@@ -120,19 +120,18 @@ domain specific language (DSL) can be created for your specific problem domain.
 business users to create and maintain your applications rules but does require
 some additional work up front. For additional information on creating a DSL for
 your problem domain please refer to the Domain Specific Languages section of the
-official Drools Documentation at
-[http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html#d0e6217](http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html#d0e6217). 
+official [Drools Documentation](http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/ch05.html#d0e6217). 
 
 To see examples of a rules definition file, access the following directory in
 the Sample Drools portlet
-`sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies`. To
+[`sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies`](https://github.com/liferay/liferay-plugins/tree/master/portlets/sample-drools-portlet/docroot/WEB-INF/src/com/liferay/sampledrools/dependencies). To
 see how rules work in action, we'll look at the rule defined in
 `rules_user_address_content.drl`. 
 
 At first glance, this `.drl` file looks a lot like a Java class file.  This
 example starts with a comment describing the rule. Single line comments can
-begin with either a `*#*` or `*//*` and multi-line comments begin with `_/*_`
-and end with `_*/_`. 
+begin with either a `#` or `//` and multi-line comments begin with `/*`
+and end with `*/`. 
 
     ##
     ## Rules
@@ -363,5 +362,4 @@ inserted into the working memory to determine what type of content should be
 displayed to the end user. 
 
 For additional documentation on the Drools rules language, please see the
-official Drools documentation at
-[http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/](http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/). 
+official [Drools documentation](http://docs.jboss.org/drools/release/5.2.0.Final/drools-expert-docs/html/). 
