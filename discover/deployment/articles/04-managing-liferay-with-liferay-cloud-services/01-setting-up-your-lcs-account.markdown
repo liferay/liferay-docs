@@ -1,11 +1,9 @@
 # Setting up Your LCS Account [](id=setting-up-your-lcs-account)
 
-To use LCS, you first need to have an account at [Liferay.com](http://www.liferay.com/). 
-You then need to set up an LCS account at [lcs.liferay.com](https://lcs.liferay.com). 
-When creating an LCS account, you're taken through the steps of accepting the 
-terms of service, setting your password, and setting your password reminder. 
-You're then taken to the *Projects* screen where you can join an existing 
-project or create a new one.
+To use LCS, you must have an account at
+[Liferay.com](http://www.liferay.com/). Once you've logged in with your Liferay
+user credentials, you're taken to the *Projects* screen where you can join an
+existing project or create a new one. 
 
 ![Figure 4.1: When creating your LCS account, you can join an existing project or create a new one.](../../images/lcs-projects.png)
 
