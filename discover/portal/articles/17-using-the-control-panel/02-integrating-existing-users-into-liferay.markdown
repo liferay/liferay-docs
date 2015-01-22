@@ -589,8 +589,8 @@ Provider.
 
 ### Setting up Liferay as a SAML Identity Provider [](id=setting-up-liferay-as-a-saml-identity-provider)
 
-In order to set Liferay up to act as a SAML Identity Provider, please use the
-following steps:
+In order to set Liferay up to act as a SAML Identity Provider, follow these
+steps:
 
 1. Install the SAML 2.0 Provider EE app, either via the Control Panel's
    Marketplace interface or manually. To confirm that the plugin was
@@ -601,20 +601,20 @@ following steps:
     To access the SAML Admin interface, click on *Admin* &rarr; *Control Panel*
     and then on *SAML Admin*. 
 
-2. To begin configuring the Liferay to use SAML, you need to select a SAML role
+2. To begin configuring Liferay to use SAML, you need to select a SAML role
    for Liferay and you need to choose an entity ID.
    
     ![Figure x: Select a SAML role for Liferay and enter an entity ID.](../../images/saml-initial-config.png)
-   
-    The SAML role can be set to either Identity Provider or Service Provider.
+ 
+    The SAML role can be set to Identity Provider or Service Provider.
     Select the *Identity Provider* SAML role. A single Liferay instance can
-    serve either as an identity provider or as a service provider, but not both.
+    serve as an identity provider or as a service provider, but not both.
     Enter *liferaysamlidp* if you're setting up an example Liferay instance.
     Alternatively, choose your own entity ID. Then click *Save* and look for a
-    new section entitled Certificate and Private Key to appear.
+    new section to appear, entitled Certificate and Private Key.
 
-3. The Certificate and Private Key section allows you to enter information that
-   will be used to create a keystore for SAML. Enter the following information:
+3. The Certificate and Private Key section allows you to enter information to
+   create a keystore for SAML. Enter the following information:
     
     - Your common name (your first and last name)
     - The name of your organization
@@ -638,7 +638,7 @@ following steps:
 
     This portlet property means that the keystore will be created in the
     filesystem.  The default location is the `[Liferay Home]/data` directory.
-    However, this portlet property can be changed to the following:
+    However, this portlet property can be changed: 
 
         saml.keystore.manager.impl=com.liferay.saml.credential.DLKeystoreManagerImpl
 
@@ -670,9 +670,9 @@ following steps:
     - Service Provider Connections
 
 5. After you've saved your certificate and private key information, check the
-   *Enabled* box at the top of the General tab and click *Save*.  Great! You've
+   *Enabled* box at the top of the General tab and click *Save*. Great! You've
    successfully set Liferay up as a SAML Identity Provider!
-   
+ 
 To configure Liferay's SAML Identity Provider Settings, navigate to the Identity
 Provider tab of the SAML Admin Control Panel portlet. Of course, setting up
 Liferay as a SAML Identity Provider is only useful if you can connect to one or
@@ -702,7 +702,7 @@ you've already set up one Liferay instance as a SAML Identity Provider, use a
 
 2. To begin configuring the Liferay to use SAML, you need to select a SAML role
    for Liferay and you need to choose an entity ID. The SAML role can be set to
-   either Identity Provider or Service Provider. Select the *Service Provider*
+   Identity Provider or Service Provider. Select the *Service Provider*
    SAML role. Enter *liferaysamlsp* if you're setting up an example Liferay
    instance. Alternatively, choose your own entity ID. Then click *Save* and a
    new section entitled Certificate and Private Key appears.
@@ -740,8 +740,8 @@ you've already set up one Liferay instance as a SAML Identity Provider, use a
 5. Next, you need to configure an Identity Provider connection. Click on the
    *Identity Provider Connection* tab. Enter a name for the Identity Provider,
    enter its entity ID, and enter its metadata URL. If you have already
-   configured a separate Liferay instance as an Identify provider by following
-   the previous instructions, you'd enter the following information:
+   followed the previous instructions and configured a separate Liferay instance
+   as an Identify provider, you'd enter the following information:
 
     - Name: *Liferay IdP*
     - Entity ID: *liferaysamlidp*
@@ -762,7 +762,7 @@ the Service Provider tab of the SAML Admin Control Panel portlet.
 Control Panel interface to configure Liferay as an Identity Provider and as a
 Service Provider. It's possible to configure Liferay as an Identity Provider or
 as a Service Provider entirely through the `portal-ext.properties` file.
-However, we recommend using the Control Panel SAML interface because it
+We recommend, however, using the Control Panel SAML interface because it
 specifies required fields and validates some fields.
 
 $$$
