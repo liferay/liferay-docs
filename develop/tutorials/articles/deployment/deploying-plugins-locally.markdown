@@ -12,7 +12,7 @@ A BUILD SUCCESSFUL message indicates that Ant built your portlet's WAR file and
 that it's now being deployed. If you switch to the terminal window running
 Liferay, within a few seconds you should see a message, like the following message, indicating that your plugin is available to use in the portal:
 
-`1 portlet for [portlet name] is available for use`
+    1 portlet for [portlet name] is available for use
 
 If you don't see such a message, double-check your plugin's configuration. 
 

@@ -56,9 +56,9 @@ click the Facebook option in the Sign In box. Enter your Facebook username and
 password in the prompted pop-up and click *Login*. You should be automatically
 signed in to your Liferay Portal with your Facebook user.
 
-Read the [Liferay User's Guide]
-(/discover/portal/-/knowledge_base/6-2/integrating-existing-users-into-liferay)
-for more information.
+Read the
+[Integrating Existing Users Into Liferay] (/discover/portal/-/knowledge_base/6-2/integrating-existing-users-into-liferay)
+section for more information.
 
 ### Facebook Age [](id=facebook-age)
 

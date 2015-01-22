@@ -23,7 +23,7 @@ sections, such as the Users section, to custom roles.
 ## Adding and Editing Users [](id=adding-and-editing-users)
 
 Are you using Liferay's default administrative user, Test Test
-(test@liferay.com)? If so, let's add a user account for yourself and configure
+(*test\@liferay.com*)? If so, let's add a user account for yourself and configure
 your new account so it has the same administrative access as the default
 administrator account. From the Dockbar, click *Admin* and select *Control
 Panel*. Then click on *Users and Organizations*. Click the *Add* button and

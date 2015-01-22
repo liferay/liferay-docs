@@ -7,12 +7,16 @@ log in via Facebook or OpenId accounts. Liferay's Control Panel provides
 interfaces for setting up user authentication using the following services:
 
 - LDAP
+- SSO
 - CAS
 - Facebook
 - NTLM
 - OpenId
+- Crowd
 - Open SSO
 - SiteMinder
+- Shibboleth
+- SAML
 
 Let's start by learning how to connect Liferay to an LDAP server.
 
@@ -434,12 +438,10 @@ OpenID is a new single sign-on standard which is implemented by multiple
 vendors. The idea is multiple vendors can implement the standard and then users
 can register for an ID with the vendor they trust. The credential issued by that
 vendor can be used by all the web sites that support OpenID. Some high profile
-OpenID vendors are AOL
-[http://openid.aol.com/screenname](http://openid.aol.com/screenname), LiveDoor
-[http://profile.livedoor.com/username](http://profile.livedoor.com/username) and
-LiveJournal [http://username.livejournal.com](http://username.livejournal.com/).
-Please see the OpenID site [http://www.openid.net](http://www.openid.net/) for a
-more complete list.
+OpenID vendors are [AOL](http://openid.aol.com/screenname),
+[LiveDoor](http://profile.livedoor.com/username), and
+[LiveJournal](http://username.livejournal.com/). Please see the
+[OpenID site](http://www.openid.net/) for a more complete list.
 
 A main benefit of OpenID for the user is he or she no longer has to register for
 a new account on every site in which he or she wants to participate. Users can
@@ -454,9 +456,7 @@ it much easier to manage this information and keep it up to date.
 
 Liferay Portal can act as an OpenID consumer, allowing users to automatically
 register and sign in with their OpenID accounts. Internally, the product uses
-OpenID4Java
-[http://code.google.com/p/openid4java/](http://code.google.com/p/openid4java/)
-to implement the feature.
+[OpenID4Java](http://code.google.com/p/openid4java/) to implement the feature.
 
 OpenID is enabled by default in Liferay but can be disabled here.
 
@@ -479,21 +479,20 @@ contains a multitude of different authentication schemes against different
 repositories of identities.
 
 You can set up OpenSSO on the same server as Liferay or a different box. Follow
-the instructions at the OpenSSO site
-[http://opensso.dev.java.net](http://opensso.dev.java.net/) to install OpenSSO.
-Once you have it installed, create the Liferay administrative user in it. Users
-are mapped back and forth by screen names. By default, the Liferay
+the instructions at the [OpenSSO site](http://opensso.dev.java.net/) to install
+OpenSSO. Once you have it installed, create the Liferay administrative user in
+it. Users are mapped back and forth by screen names. By default, the Liferay
 administrative user has a screen name of *test*, so in OpenSSO, you would
 register the user with the ID of *test* and an email address of
-*test@liferay.com*. Once you have the user set up, log in to Open SSO using this
+*test\@liferay.com*. Once you have the user set up, log in to Open SSO using this
 user.
 
 In the same browser window, go to the URL for your server running Liferay and
-log in as the same user, using the email address *test@liferay.com*. Go to the
+log in as the same user, using the email address *test\@liferay.com*. Go to the
 Control Panel and click *Settings &rarr; Authentication &rarr; OpenSSO*. Modify
-the three URL fields (Login URL, Logout URL and Service URL) so they point to
+the three URL fields (Login URL, Logout URL, and Service URL) so they point to
 your OpenSSO server (i.e., only modify the host name portion of the URLs), click
-the *Enabled* check box and then click *Save*. Liferay will then redirect users
+the *Enabled* check box, and then click *Save*. Liferay then redirects users
 to OpenSSO when they click the *Sign In* link.
 
 ## Authentication: SiteMinder [](id=authentication-siteminder)
@@ -530,7 +529,7 @@ needs to do is accept the header attribute from Shibboleth and log the user in.
 The Shibboleth plugin adds a Shibboleth tab to the Authentication page of the
 Portal Settings section of the Control Panel.
 
-![Figure 17.4: You can enable/disable Shibboleth authentication for Liferay by navigating to the *Control Panel* &rarr; *Portal Settings* &rrar; *Authentication* &rarr; *Shibboleth*.](../../images/shibboleth.png)
+![Figure 17.4: You can enable/disable Shibboleth authentication for Liferay by navigating to the *Control Panel* &rarr; *Portal Settings* &rarr; *Authentication* &rarr; *Shibboleth*.](../../images/shibboleth.png)
 
 There are four configuration options:
 
@@ -638,7 +637,7 @@ steps:
     your certificate and private key information, you can view information about
     your certificate or download your certificate.
 
-<!-- The below figure is missing.    After saving your certificate and private key information, you can view information about your certificate or download your certificate.](../../images/saml-admin.png) -->
+![Figure 17.5: After saving your certificate and private key information, you can view information about your certificate or download your certificate.](../../images/saml-admin-certificate-saved.png)
 
 5. Finally, after you've saved your certificate and private key information,
    check the *Enabled* box at the top of the General tab and click *Save*.
@@ -654,7 +653,7 @@ next, we'll learn how to set Liferay up as a SAML Service Provider.
 
 After you've set up another Liferay instance as a Service Provider, you can come
 back to this Liferay instance's Control Panel and add the Service Provider:
-*Control Panel* &rarr; *SAML Admin* &rrar; *Service Provider Connections* &rarr;
+*Control Panel* &rarr; *SAML Admin* &rarr; *Service Provider Connections* &rarr;
 *Add Service Provider*.
 
 ### Setting up Liferay as a SAML Service Provider [](id=setting-up-liferay-as-a-saml-service-provider)
@@ -721,8 +720,8 @@ already set up one Liferay instance as a SAML Identity Provider, use a
 
     - Name: *Liferay IdP*
     - Entity ID: *liferaysamlidp*
-    - Metadata URL: *http://localhost:8080/c/portal/saml/metadata* (test this
-      URL first)
+    - Metadata URL: http://localhost:8080/c/portal/saml/metadata (test this URL
+      first)
 
 6. Finally, after you've saved your certificate and private key information and
    configured an Identity Provider connection, check the *Enabled* box at the
@@ -734,12 +733,12 @@ the Service Provider tab of the SAML Admin Control Panel portlet.
 
 +$$$
 
-**Note:** The previous two sections explained how
- to use the SAML portlet's Control Panel interface to configure Liferay as an
- Identity Provider and as a Service Provider. It's possible to configure Liferay
- as an Identity Provider or as a Service Provider entirely through the
- `portal-ext.properties` file. However, we recommend using the Control Panel
- SAML interface because it specifies required fields and validates some fields.
+**Note:** The previous two sections explained how to use the SAML portlet's
+Control Panel interface to configure Liferay as an Identity Provider and as a
+Service Provider. It's possible to configure Liferay as an Identity Provider or
+as a Service Provider entirely through the `portal-ext.properties` file.
+However, we recommend using the Control Panel SAML interface because it
+specifies required fields and validates some fields.
 
 $$$
 

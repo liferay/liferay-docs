@@ -87,6 +87,8 @@ public class ConcatMarkdown extends Task {
 			
 			FileUtils.writeStringToFile(fullBook, book);
 			
+			StripHeaderIds.stripHeaderIds(fullBook.getAbsolutePath());
+			
 		
 		} catch (IOException e) {
 		

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<project name="Use" basedir=".">
+
+	<import file="../build-site-common.xml" />
+
+	<property name="purpose.dir" value="book"/>
+
+</project>

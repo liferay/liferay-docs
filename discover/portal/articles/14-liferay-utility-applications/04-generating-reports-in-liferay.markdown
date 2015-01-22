@@ -61,7 +61,7 @@ For example, to connect to a MySQL database called *data_source* installed on
 the Liferay server, you could use the following credentials:
 
 - Driver Class Name: *com.mysql.jdbc.Driver*
-- URL: *jdbc:mysql://localhost/data_source?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false*
+- URL: *jdbc\:mysql\://localhost/data_source?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false*
 - User Name: *[MySQL User Name]*
 - Password: *[MySQL Password]*
 
@@ -164,7 +164,7 @@ portlet, and select *Configuration*. There are three tabs:
 The Email From tab allows you to customize the name and email address of the
 account that sends report notifications within your portal. For example, you
 could set the name to *Reports Admin* and the email address to
-*reports@liferay.com*. The Delivery Email tab allows you to customize the email
+*reports\@liferay.com*. The Delivery Email tab allows you to customize the email
 message that's sent when a report is delivered to a portal user. When a report
 is delivered to a portal user, it's included as an attachment to this email
 message. Finally, the Notifications Email tab allows you to customize the
@@ -350,7 +350,7 @@ we'll use a simple Jasper template that was created using iReport Designer.
 8. Navigate to the Reports Admin portlet's Reports tab and click on the report
    you generated.
 
-9. Click *Actions* &rrar; *Download* next to the `sample-report.pdf` file.
+9. Click *Actions* &rarr; *Download* next to the `sample-report.pdf` file.
 
 This report should list all of your portal's users, displaying the userId,
 screenName, emailAddress, createDate, and modifiedDate of each user.

@@ -185,7 +185,7 @@ be able to use the conversion functionality to download documents in a variety
 of formats. Please see chapter 4 on Documents and Media for more information.
 
 LibreOffice is available here: [LibreOffice](http://www.libreoffice.org),
-ImageMagick is available here: [ImageMagick](http://www.imagemagick.org) and
+ImageMagick is available here: [ImageMagick](http://www.imagemagick.org), and
 Xuggler is available here: [Xuggler](http://xuggle.com/xuggler/). Make sure to
 choose the correct versions of these applications for your operating system. We
 recommend that you install the latest stable versions. LibreOffice 3.6,
@@ -195,10 +195,9 @@ Server Administration Control Panel interface.
 
 +$$$
 
-**Tip:** If you're running Liferay on a Linux
- server and experience a problem enabling Xuggler, check your server's glibc
- version. You might have to update glibc to version 2.6 or later in order for
- Xuggler to work.
+**Tip:** If you're running Liferay on a Linux server and experience a problem
+enabling Xuggler, check your server's glibc version. You might have to update
+glibc to version 2.6 or later in order for Xuggler to work.
 
 $$$
 
@@ -283,7 +282,7 @@ Liferay. If this is the case, update to the latest version (ImageMagick 6.7.9-6
 2012-09-25 Q16 or later). To check for the latest ImageMagick versions, visit
 [http://www.imagemagick.org/script/binary-releases.php](http://www.imagemagick.org/script/binary-releases.php).
 See
-[http://issues.liferay.com/browse/LPS-30291](http://issues.liferay.com/browse/LPS-30291)
+[LPS-30291](http://issues.liferay.com/browse/LPS-30291)
 for information on efforts to identify incompatible application versions with
 Liferay.
 
@@ -301,7 +300,7 @@ systems:
 
 Once your environment variables are set up correctly, you can configure Liferay
 to use Xuggler either in your `portal-properties` file or from the Control
-Panel. If you'd like to use your portal-ext.properties file, just add the
+Panel. If you'd like to use your `portal-ext.properties` file, just add the
 following line:
 
     xuggler.enabled=true
@@ -318,10 +317,9 @@ or management code instantly. Several scripting languages are supported,
 including JavaScript, Groovy, Python, Ruby and Beanshell. This guide contains a
 [chapter](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-scripting-for-advanced-flexibilit-liferay-portal-6-2-user-guide-19-en)
 that explains how to use Liferay's scripting console and provides some examples.
-For further information about Liferay's APIs, please refer to the [Liferay
-Development
-Gudie](https://www.liferay.com/documentation/liferay-portal/6.2/development),
-[*Liferay in Action*](http://manning.com/sezov), or Liferay's
+For further information about Liferay's APIs, please refer to LDN's
+[Reference](https://www.liferay.com/documentation/liferay-portal/6.2/development)
+guide, [*Liferay in Action*](http://manning.com/sezov), or Liferay's
 [Javadocs](http://docs.liferay.com/portal/6.2/javadocs).
 
 ## Shutdown [](id=shutdown)

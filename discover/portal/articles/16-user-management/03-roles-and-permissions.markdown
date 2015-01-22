@@ -220,7 +220,7 @@ Administration category. And portal administrators can access the entire Control
 Panel. For custom roles, you can mix and match permissions from as many
 categories as you like.
 
-The permissions in the Site Administration &rrar; Applications categories govern
+The permissions in the Site Administration &rarr; Applications categories govern
 the content that can be created by core portlets such as the Wiki and Message
 Boards. If you pick one of the portlets from this list, you'll get options for
 defining permissions on its content. For example, if you pick Message Boards,
@@ -293,7 +293,7 @@ To fix this, log in as an administrator and click *Admin* &rarr; *Control Panel*
 from the Dockbar. Then click on *Roles* and then on *Actions* &rarr; *Define
 Permissions* next to the *User Group Manager* role. Then, drill down to the
 *Control Panel* &rarr; *Users* &rarr; *Users and Organizations* category and
-flag the *View* permission under the *Resource Permissions* &rrar; *User*
+flag the *View* permission under the *Resource Permissions* &rarr; *User*
 heading.  *View*.  Click *Save*. Once you've saved your permissions
 configuration, users who've been assigned to the User Group Manager role will be
 able to browse the portal's entire list of users when assigning users to a user
@@ -353,14 +353,14 @@ permissions for the role.
 
 +$$$
 
-Note: Prior to Liferay version 6.0, Power Users
- and Users did *not* have the same default permissions. So if are using Liferay
- 5.2 or a previous version, it's dangerous to remove the Power Users role from
- the default user associations: this could remove certain permissions you expect
- to apply to all users. If you decide to remove the Power Users role from the
- default user associations anyway, you will probably want to modify the
- permissions on certain portlets to make them accessible to all users. To do
- this, see the section on Plugins Configuration below.
+**Note:** Prior to Liferay version 6.0, Power Users and Users did *not* have the
+same default permissions. So if are using Liferay 5.2 or a previous version,
+it's dangerous to remove the Power Users role from the default user
+associations: this could remove certain permissions you expect to apply to all
+users. If you decide to remove the Power Users role from the default user
+associations anyway, you will probably want to modify the permissions on certain
+portlets to make them accessible to all users. To do this, see the section on
+Plugins Configuration below.
 
 $$$
 

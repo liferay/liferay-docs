@@ -77,13 +77,15 @@ similar Wiki ADT. Instead of starting from scratch, you can import the existing
 Wiki ADT into your new one and build off of it. In other words, you can utilize
 ADTs as generic templates which allow for reusable code to be imported by
 Velocity or FreeMarker templates in the system. For more information on how to
-create a custom template, visit the [Liferay Developer's Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
+create a custom template, visit the
+[Implementing Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/implementing-application-display-templates)
+tutorial.
 
 Another cool feature is the *Export/Import* functionality. You can take
 advantage of this feature by clicking the gear icon at the top right of the
 screen and selecting *Export/Import*. For more information on using this
 feature, visit the
-[Export/Import](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/export-import-liferay-portal-6-2-user-guide-04-en)
+[Export/Import](/discover/portal/-/knowledge_base/6-2/export-import)
 section of this guide.
 
 After you've completed the initial set up and saved your ADT, you can manage

@@ -32,7 +32,7 @@ The Android app development tutorials include the following topics:
 
 A great way to start is by setting up the Mobile SDK in Eclipse.
 
-Related Topics: 
+## Related Topics [](id=related-topics)
 
 [Setting Up the Mobile SDK in Eclipse](/develop/tutorials/-/knowledge_base/6-2/setting-up-the-mobile-sdk-in-eclipse)
 

@@ -63,12 +63,16 @@ while leaving the original JSP untouched. Let's get started!
     in the Liferay Hook Configuration's Custom JSPs section in the
     `liferay-hook.xml` editor. 
 
+    +$$$
+
     **Important:** Add `.portal` to the JSP file's name, before the `.jsp`
     suffix. For example, if the original JSP's name is `search.jsp`, specify
     `search.portal.jsp`. When Liferay deploys your hook, the original JSP is
     renamed to `[file name].portal.jsp`, and your JSP takes its place. If,
     therefore, you want to reference the original, you have to reference its new
-    name. 
+    name.
+
+    $$$
 
     Add more content before and/or after the original JSP's content via the
     buffer variable. For example, you can import Liferay's

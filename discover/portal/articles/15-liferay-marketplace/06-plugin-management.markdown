@@ -19,11 +19,11 @@ functionality of your portal application must reside in its portlets.
 
 +$$$
 
-**Tip:** Liferay 4.4.2 and below support the
- Portlet 1.0 standard: JSR-168. Liferay 5.0 and above support the Portlet 2.0
- standard: JSR-286. You cannot run Portlet 2.0 portlets in Liferay 4.4.2, but
- because the Portlet 2.0 standard is backwards-compatible, portlets written to
- the 1.0 standard still run in Liferay 5.x and above.
+**Tip:** Liferay 4.4.2 and below support the Portlet 1.0 standard: JSR-168.
+Liferay 5.0 and above support the Portlet 2.0 standard: JSR-286. You cannot run
+Portlet 2.0 portlets in Liferay 4.4.2, but because the Portlet 2.0 standard is
+backwards-compatible, portlets written to the 1.0 standard still run in Liferay
+5.x and above.
 
 $$$
 
@@ -270,10 +270,9 @@ them at the operating system level. The first time Liferay starts, it creates a
 folder. This folder generally resides one directory up from where your
 application server is installed, though it may be elsewhere depending on which
 application server you are running. To find out where the Liferay Home folder is
-for your application server, please see the section on your server in this
-guide's [Installation and
-Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
-chapter. The first time Liferay is launched, it creates a folder structure in
+for your application server, please see the article on your server in this
+guide's [Installation and Setup](/discover/deployment/-/knowledge_base/6-2/installation-and-setup)
+section. The first time Liferay is launched, it creates a folder structure in
 Liferay Home to house various configuration and administrative data. One of the
 folders it creates is called *deploy*. If you copy a portlet or theme plugin
 into this folder, Liferay hot deploys it and makes it available for use just as
@@ -362,11 +361,11 @@ Let's take a look at each of these factors.
 
 +$$$
 
-**Tip:** This applies to Liferay versions prior to
- version 4.3.5. Liferay versions above 4.3.5 are able to auto detect the type of
- server it is running on, which makes things a lot easier. If you are running a
- newer version of Liferay, you can skip this section. If you are upgrading from
- one of these versions, continue reading.
+**Tip:** This applies to Liferay versions prior to version 4.3.5. Liferay
+versions above 4.3.5 are able to auto detect the type of server it is running
+on, which makes things a lot easier. If you are running a newer version of
+Liferay, you can skip this section. If you are upgrading from one of these
+versions, continue reading.
 
 $$$
 
@@ -482,16 +481,16 @@ configured. You may then deploy them from here to your application server.
 3.  Make sure the `web.xml` file inside the plugin you want to install has the
     following context parameter in it:
 
-	<context-param\>
+        <context-param\>
 	
-	<param-name\>com.ibm.websphere.portletcontainer.PortletDeploymentEnabled</param-name\>
+        <param-name\>com.ibm.websphere.portletcontainer.PortletDeploymentEnabled</param-name\>
 	
-	<param-value\>false</param-value\>
+        <param-value\>false</param-value\>
 	
-	</context-param\>
+        </context-param\>
 
-Liferay versions 5.2.2 and higher will automatically inject this into the
-`web.xml` file on WebSphere containers.
+    Liferay versions 5.2.2 and higher will automatically inject this into the
+    `web.xml` file on WebSphere containers.
 
 4.  The WebSphere deploy occurs in two steps. You will first use Liferay's tools
     to "pre-deploy" the file and then use WebSphere's tools to do the actual

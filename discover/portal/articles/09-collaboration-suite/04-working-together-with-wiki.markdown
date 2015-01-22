@@ -148,23 +148,22 @@ convenient *Show Syntax Help* link which can help with the wiki syntax. You can
 use this syntax to format your wiki pages. Consider, for example, the following
 wiki document:
 
-== Welcome to Our Wiki! ==
+    == Welcome to Our Wiki! ==
 
-This is our new wiki, which should allow us to collaborate on documentation.
-Feel free to add pages showing people how to do stuff.  Below are links to some
-sections that have already been added.
+    This is our new wiki, which should allow us to collaborate on documentation. Feel free to add pages showing people
+    how to do stuff. Below are links to some sections that have already been added.
 
-[[Introduction]]
+    [[Introduction]]
 
-[[Getting Started]]
+    [[Getting Started]]
 
-[[Configuration]]
+    [[Configuration]]
 
-[[Development]]
+    [[Development]]
 
-[[Support]]
+    [[Support]]
 
-[[Community]]
+    [[Community]]
 
 This would produce the following wiki page:
 

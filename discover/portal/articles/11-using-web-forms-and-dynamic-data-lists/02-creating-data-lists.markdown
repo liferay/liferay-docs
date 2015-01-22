@@ -13,7 +13,7 @@ definition and robust data entry and delivery.
 
 To create a new volunteer list with the "Volunteer Sign-Up" definition:
 
-1. From the Dockbar, click on *Admin* &rrar; *Content* and then on *Dynamic Data
+1. From the Dockbar, click on *Admin* &rarr; *Content* and then on *Dynamic Data
    Lists*.
 
 2. Click on *Add* to create a new list based on a data definition, which in our

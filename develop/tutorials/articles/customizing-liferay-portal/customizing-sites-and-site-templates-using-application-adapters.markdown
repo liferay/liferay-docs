@@ -64,11 +64,15 @@ Here's how to do it:
     original JSP you're extending and set the `useCustomPage` attribute to
     `false`. 
 
+    +$$$
+
     **Note:** When extending an original JSP in a global hook, you must end the
     JSP file's name with the suffix `.portal.jsp` within the
     `<liferay-util:include>` tag. However, when using an application adapter
     hook, you specify the the JSP normally and set the `useCustomPage` attribute
     to `false`. 
+
+    $$$
 
 4. Deploy your application adapter hook plugin. Liferay installs the application
    adapter under the name of the hook. 
