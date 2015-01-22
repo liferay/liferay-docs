@@ -374,7 +374,7 @@ As a recap, the Skinny JSON Provider EE app helps you retrieve lightweight
 "skinny" representations of dynamic data list records and web content articles.
 What a great way to access these core Liferay entities! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
