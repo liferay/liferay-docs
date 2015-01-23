@@ -188,17 +188,20 @@ action whose path value is completely contained inside another Struts action's
 path (e.g., `/document_library/edit_file_entry`) causes the new, custom action
 to be triggered not only when the intended path is invoked, but also when one of
 the larger, containing paths (e.g.,
-`document_library/edit_file_entry_discussion`) is invoked! So, not only would
+`document_library/edit_file_entry_discussion`) is invoked! Not only would
 you be overriding the intended Struts action, but any whose paths completely
 contain the path of the Struts action you want to override.
 
 You can work around this bug with the following steps:
 1. Find any Struts actions with paths that contain the path of the Struts
 action you want to override.
+
 2. If any offending paths are found, create a `<struts-action>` for them in
 your `liferay-hook.xml`.
+
 3. In the class you create for each Struts action, override only the
 `processAction`, `render`, and `serveResource` methods.
+
 4. In each overridden method, simply call the original Struts action's method
 (e.g., `originalStrutsPortletAction.processAction`).
 
