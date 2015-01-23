@@ -54,14 +54,14 @@ By default, these are `Joe Bloggs` and `test@liferay.com`. You can change them
 to whatever you want. This name and email address will appear in the From field
 in all email messages sent by the portal.
 
-![Figure 17.6: You can customize the email template for the email messages sent to users who have just created their accounts.](../../images/server-configuration-account-created-notification.png)
+![Figure 17.3: You can customize the email template for the email messages sent to users who have just created their accounts.](../../images/server-configuration-account-created-notification.png)
 
 The other four tabs are Account Created Notification, Email Verification
 Notification, Password Changed Notification and Password Reset Notification.
 These tabs allow you to customize the email messages that are sent to users each
 time any of those four events occur.
 
-![Figure 17.7: You can refer to this list of variables that's available for use in email templates.](../../images/server-configuration-definition-of-terms.png)
+![Figure 17.4: You can refer to this list of variables that's available for use in email templates.](../../images/server-configuration-definition-of-terms.png)
 
 A list of tokens, entitled "Definition of Terms," is provided so you can insert
 certain values (such as the portal URL or the user ID) when you are setting up
@@ -103,7 +103,7 @@ This section allows you to set the default portal language and the time zone.
 You can also set up a portal-wide logo which appears in the top left corners of
 portal pages. 
 
-![Figure 17.8: You can specify various display settings for your portal including options for the default language, other available language, time zone, portal logo, and default themes for the portal and Control Panel.](../../images/server-configuration-miscellaneous-display-settings.png)
+![Figure 17.5: You can specify various display settings for your portal including options for the default language, other available language, time zone, portal logo, and default themes for the portal and Control Panel.](../../images/server-configuration-miscellaneous-display-settings.png)
 
 Liferay's default theme is configured to display the portal logo. For custom
 themes, you can choose whether or not to display the logo. Be careful to choose
