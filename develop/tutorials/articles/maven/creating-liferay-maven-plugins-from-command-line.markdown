@@ -48,16 +48,17 @@ Follow these steps to create a Liferay plugin from the command line:
 
     +$$$
     
-    **Important:** Sometimes, after a new Liferay release, Liferay's Maven
-    artifacts might only be available from
-    [repository.liferay.com](https://repository.liferay.com). In this case, you
-    must use the `-DarchetypeCatalog` option to access the Liferay Repository
-    when generating Maven archetypes. For example:
+    **Important:** Sometimes, after a new Liferay release, Liferay's most
+    up-to-date Maven artifacts may not be available from the default *Maven
+    Central* repository. In this case, you must use the artifacts stored at
+    [repository.liferay.com](https://repository.liferay.com). To do this, use
+    the `-DarchetypeCatalog` option to point to the Liferay Repository when
+    generating Maven archetypes. For example:
 
         mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
 
     You'll also need to configure a couple other files to ensure the generation
-    command completes successfully. Please refer to the
+    command completes successfully. You can refer to the
     [Installing Artifacts from the Liferay Repository](/develop/tutorials/-/knowledge_base/6-2/managing-liferay-maven-artifacts#installing-artifacts-from-the-liferay-repository)
     section of the *Managing Liferay Maven Artifacts* tutorial to configure
     Maven to access the Liferay Repository for Liferay Maven artifacts.
