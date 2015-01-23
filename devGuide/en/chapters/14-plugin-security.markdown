@@ -219,7 +219,7 @@ Security and Liferay's Plugin Security Management, the easier it will be for you
 to write security-aware plugins. Keeping this in mind, you can proceed
 confidently creating your plugin.
 
-### Develop your plugin [](id=lp-6-1-dgen11-develop-your-plugin-0) 
+### Develop your plugin [](id=lp-6-1-dgen11-develop-your-plugin-0)
 
 Start creating your plugin the way you normally would. Design your application,
 write code, unit test your code, have users beta test your code. In essence, do
