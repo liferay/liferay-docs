@@ -6,11 +6,12 @@ End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/
 -->
 
 Liferay specifies a host of language keys in its core `Language.properties` file
-found in the `content` folder of your portal instance's `portal-impl.jar` (located in the `tomcat-<version>/webapps/ROOT/WEB-INF/lib` directory of Liferay Portal bundled with Tomcat) or
-`portal-impl/src/content` of your Liferay Portal source tree. Leveraging
-Portal's core language keys saves you time, since these keys always have up to
-date translations for multiple languages. Additionally, your portlet blends
-better into Liferay's UI conventions. 
+found in the `content` folder of your portal instance's `portal-impl.jar`
+(located in the `tomcat-<version>/webapps/ROOT/WEB-INF/lib` directory of Liferay
+Portal bundled with Tomcat) or `portal-impl/src/content` of your Liferay Portal
+source tree. Leveraging Portal's core language keys saves you time, since these
+keys always have up to date translations for multiple languages. Additionally,
+your portlet blends better into Liferay's UI conventions. 
 
 For this tutorial, you'll implement a custom greeting for a portal user. When
 you're finished with this tutorial, a user can view the following greeting in
