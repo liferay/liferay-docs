@@ -190,7 +190,7 @@ to be triggered when the intended path is invoked, but also when one of the
 larger, containing paths (e.g., `document_library/edit_file_entry_discussion`)
 is invoked! So, not only would you be overriding the intended Struts action,
 but any whose paths completely contain the path of the Struts action you want
-to override! This is not optimal, to say the least.
+to override!
 
 You can work around this bug with the following steps:
 1. Find any Struts actions with paths that contain the path of the Struts
