@@ -2384,6 +2384,8 @@ Next we'll show you the Device Detection API and its capabilities.
 
 ## Device Detection [](id=device-detection)
 
+![EE Only Feature](../../images/ee-feature-web.png)
+
 As you know, Internet traffic has risen exponentially over the past decade and
 shows no sign of stopping. With the latest and greatest devices, mobile Internet
 access has become the norm and is predicted to pass PC based Internet access
@@ -2396,11 +2398,8 @@ The Device Detection API detects the capabilities of any device making a
 request to your portal. It can also determine what mobile device or operating
 system was used to make a request, and then follows rules to make Liferay render
 pages based on the device. To use this feature, you first need to install the
-*Device Recognition Provider* app from Liferay Marketplace. Find more
-information on the app by following one of these links, depending on whether you
-use Liferay CE or EE: [Device Recognition
-CE](http://www.liferay.com/marketplace/-/mp/application/15193341) or [Device
-Recognition EE](http://www.liferay.com/marketplace/-/mp/application/15186132). 
+*Device Recognition Provider* app from
+[Liferay Marketplace](http://www.liferay.com/marketplace). 
 
 The Device Recognition plugin comes bundled inside the Device Recognition
 Provider app; it uses a device database called *WURFL* to determine the
