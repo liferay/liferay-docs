@@ -164,6 +164,46 @@ of `BaseStrutsAction`, but not the `execute(StrutsAction, HttpServletRequest,
 HttpServletResponse)` method. The original Struts action's `execute()` method
 is ignored. That's fine for our example.
 
++$$$
+
+**Warning:** Some Struts actions have overlapping path values, where the path
+value of one Struts action is completely contained within the path of another
+Struts action. See the following example from `struts-config.xml`, where the
+second two of the Struts action paths contain the complete path of the first
+one:
+
+    <action path="/document_library/edit_file_entry"...
+    </action>
+
+    <action path="/document_library/edit_file_entry_discussion"...
+    </action>
+
+    <action path="/document_library/edit_file_entry_type"...
+    </action>
+
+
+Due to a known portal bug
+[LPS-52754](https://issues.liferay.com/browse/LPS-52754), overriding a Struts
+action whose path value is completely contained inside another Struts action's
+path (e.g., `/document_library/edit_file_entry`) causes the new, custom action
+to be triggered when the intended path is invoked, but also when one of the
+larger, containing paths (e.g., `document_library/edit_file_entry_discussion`)
+is invoked! So, not only would you be overriding the intended Struts action,
+but any whose paths completely contain the path of the Struts action you want
+to override! This is not optimal, to say the least.
+
+You can work around this bug with the following steps:
+1. Find any Struts actions with paths that contain the path of the Struts
+action you want to override.
+2. If any offending paths are found, create a `<struts-action>` for them in
+your `liferay-hook.xml`.
+3. In the class you create for each Struts action, overide only the
+`processAction`, `render`, and `serveResource` methods.
+4. In each overridden method, simply call the original Struts action's methods
+(e.g., `originalStrutsPortletAction.processAction`).
+
+$$$
+
 **Best Practice**
 
 When overriding an existing Struts action, it's usually best to override the
