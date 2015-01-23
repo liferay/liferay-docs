@@ -14,7 +14,7 @@ aui, and liferay tern plugins*).
 
 - The aui.js plugin for tern provides many AUI specific tern completions. Here
 we see there is a type level AUI method available and the documentation from the
-alloyui framework’s own api documentation is displayed.
+alloyui framework's own api documentation is displayed.
 
 ![aui_js](images/aui_js.png)
 
@@ -24,15 +24,15 @@ the method *js* doc.
 ![aui_js](images/aui_js_2.png)
 
 - In this code snippet the callback method has a single parameter called
-‘`A`’. This ‘type’ information for this is supplied by the aui.js tern
+'`A`'. This 'type' information for this is supplied by the aui.js tern
 plugin, and you can see in this screenshot that is provides code assist for all
 of the methods that are on the A object.
 
 ![aui_js](images/aui_js_3.png)
 
-- The methods that are proposed on the ‘`A`’ type are specifically the ones
-available for the ‘`aui-button`’ module. If another module was selected,
-say, ‘`aui-datatable`’ then those methods are made available instead.
+- The methods that are proposed on the '`A`' type are specifically the ones
+available for the '`aui-button`' module. If another module was selected,
+say, '`aui-datatable`' then those methods are made available instead.
 
 ![aui_js](images/aui_js_4.png)
 
@@ -67,7 +67,7 @@ available.
 ## aui:script tag
 
 Tern also works on embedded scripts inside *html/jsp* pages, that was working by
-default. However, for eclipse or tern didn’t know anything about
+default. However, for eclipse or tern didn't know anything about
 `<aui:script>` and the fact that it should be treated just like `<script>` tags.
 So we had to modify the eclipse jsp editor to allow the javascript tooling treat
 `<aui:script>` tags as normal html `<script>` tags.
@@ -85,7 +85,7 @@ inference and API information.
 Many new code templates have been added for both working with alloyui in the
 javascript and jsp editors.
 
-- In this release we’ve added lots of new aui templates for speeding up
+- In this release we've added lots of new aui templates for speeding up
 development when using alloyui.
 - (*first screenshot*) aui javascript templates are added to the javascript
 editor (*also works in script, `aui-script` tags in html/jsp editor*).
@@ -105,8 +105,8 @@ info, and hyperlinks.
 ![css](images/css_1.png)
 
 - In *screenshot#1* you can see that completion is available for any css Ids
-that is finds in any CSS file in the user’s project. As you can see the
-`interviewid-` completions are in the file, main.css in the user’s project.
+that is finds in any CSS file in the user's project. As you can see the
+`interviewid-` completions are in the file, main.css in the user's project.
 - These types of completions work for `<style>` elements that are defined in the
 same html or jsp file as well. (*screenshot #2*).
 
