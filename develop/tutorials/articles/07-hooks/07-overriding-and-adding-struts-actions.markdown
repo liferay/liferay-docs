@@ -166,33 +166,29 @@ is ignored. That's fine for our example.
 
 +$$$
 
-**Warning:** Some Struts actions have overlapping path values, where the path
-value of one Struts action is completely contained within the path of another
-Struts action. See the following example from `struts-config.xml`, where the
-second two of the Struts action paths contain the complete path of the first
-one:
+**Warning:** Due to a known bug
+[LPS-52754](https://issues.liferay.com/browse/LPS-52754), a problem can occur
+when overriding Struts actions with overlapping paths. Struts action paths
+overlap when one path is a substring of another path. The following example from
+Liferay's `struts-config.xml` file shows three Struts action paths. Notice that
+the first Struts action path is a substring of each of the last two.
 
-    <action path="/document_library/edit_file_entry"...
+    <action path="/document_library/edit_file_entry" ...
     </action>
 
-    <action path="/document_library/edit_file_entry_discussion"...
+    <action path="/document_library/edit_file_entry_discussion" ...
     </action>
 
-    <action path="/document_library/edit_file_entry_type"...
+    <action path="/document_library/edit_file_entry_type" ...
     </action>
 
+Suppose you create a hook plugin to override the
+`/document_library/edit_file_entry` path. Due to the bug mentioned above, your
+hook's new, custom action is triggered not only when the intended path is
+invoked, but also when one of the larger, containing paths (e.g.,
+`document_library/edit_file_entry_discussion`) is invoked!
 
-Due to a known portal bug
-[LPS-52754](https://issues.liferay.com/browse/LPS-52754), overriding a Struts
-action whose path value is completely contained inside another Struts action's
-path (e.g., `/document_library/edit_file_entry`) causes the new, custom action
-to be triggered not only when the intended path is invoked, but also when one of
-the larger, containing paths (e.g.,
-`document_library/edit_file_entry_discussion`) is invoked! Not only would
-you be overriding the intended Struts action, but any whose paths completely
-contain the path of the Struts action you want to override.
-
-You can work around this bug with the following steps:
+To work around this issue, please use the following steps:
 
 1. Find any Struts actions with paths that contain the path of the Struts
 action you want to override.
@@ -208,16 +204,14 @@ your `liferay-hook.xml`.
 
 $$$
 
-**Best Practice**
-
-When overriding an existing Struts action, it's usually best to override the
-method that takes the original Struts action handle as a parameter and execute
-that original Struts action. Think of the original action as a servlet filter
-or aspect. If you override the method that *takes* the original action handle
-as a parameter and don't explicitly execute it, the original action won't be 
-executed. If you override the `execute` method that *does not take* the original
-action as a parameter, you are ignoring the original action and it won't be
-executed.
+**Best Practice:** When overriding an existing Struts action, it's usually best
+to override the method that takes the original Struts action handle as a
+parameter and execute that original Struts action. Think of the original action
+as a servlet filter or aspect. If you override the method that *takes* the
+original action handle as a parameter and don't explicitly execute it, the
+original action won't be executed. If you override the `execute` method that
+*does not take* the original action as a parameter, you are ignoring the
+original action and it won't be executed.
 
 +$$$
 
