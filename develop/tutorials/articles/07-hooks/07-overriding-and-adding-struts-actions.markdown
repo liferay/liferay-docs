@@ -193,6 +193,7 @@ you be overriding the intended Struts action, but any whose paths completely
 contain the path of the Struts action you want to override.
 
 You can work around this bug with the following steps:
+
 1. Find any Struts actions with paths that contain the path of the Struts
 action you want to override.
 
