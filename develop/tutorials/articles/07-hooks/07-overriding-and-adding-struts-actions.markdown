@@ -167,7 +167,7 @@ is ignored. That's fine for our example.
 +$$$
 
 **Warning:** Due to a known bug
-[LPS-52754](https://issues.liferay.com/browse/LPS-52754), a problem can occur
+([LPS-52754](https://issues.liferay.com/browse/LPS-52754)), a problem can occur
 when overriding Struts actions with overlapping paths. Struts action paths
 overlap when one path is a substring of another path. The following example from
 Liferay's `struts-config.xml` file shows three Struts action paths. Notice that
@@ -191,7 +191,7 @@ invoked, but also when one of the larger, containing paths (e.g.,
 To work around this issue, please use the following steps:
 
 1. Find any Struts actions with paths that contain the path of the Struts
-action you want to override.
+action that you are overriding.
 
 2. If any offending paths are found, create a `<struts-action>` for them in
 your `liferay-hook.xml`.
