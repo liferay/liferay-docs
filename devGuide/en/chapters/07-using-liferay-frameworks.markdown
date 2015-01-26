@@ -909,32 +909,28 @@ from their JavaScript in the following ways:
 
 Each of these methods returned server generated URLs that included
 authentication tokens (the `p_auth` or `p_p_auth` URL parameters), whenever
-necessary. That behavior, however, posed a security risk. Please see
-[LPS-34098](https://issues.liferay.com/browse/LPS-34098) for details. In all
-Liferay EE 6.2 GA and CE 6.2 GA releases, and Milestone releases after Liferay
-6.2.0 M5, these methods have been updated so that they still work (i.e., they
-still return appropriate portlet URLs) but they no longer include the
-authentication tokens in the returned URLs. Also, although it's still possible
-to generate portlet URLs via JavaScript, the generated URLs will not be
-friendly. See the note below for an explanation. The fix for
-[LPS-34098](https://issues.liferay.com/browse/LPS-34098) has been applied to
-all GA releases of Liferay 6.2 CE and has been supplied to Liferay 6.1 EE
-customers as a fix pack for LSV-2.
+necessary. That behavior, however, posed a security risk. In all Liferay EE 6.2
+GA and CE 6.2 GA releases, and Milestone releases after Liferay 6.2.0 M5, these
+methods have been updated so that they still work (i.e., they still return
+appropriate portlet URLs) but they no longer include the authentication tokens
+in the returned URLs. Also, although it's still possible to generate portlet
+URLs via JavaScript, the generated URLs will not be friendly. See the note below
+for an explanation. The fix for the security issue has been applied to all GA
+releases of Liferay 6.2 CE and has been supplied to Liferay 6.1 EE customers as
+a fix pack for LSV-2.
 
-Note: Before the fix for
-[LPS-34098](https://issues.liferay.com/browse/LPS-34098), the
+Note: Before the fix for the security issue, the
 `Liferay.PortletURL.createActionURL()`, `Liferay.PortletURL.createRenderURL()`,
 and `Liferay.PortletURL.createResourceURL()` functions could generate friendly
 portlet URLs. This was possible since, before the fix, the `toString()` function
 responsible for creating the final string representation of a portlet URL
 (defined in `portlet_url.js`) used an AJAX request to the portal's
-`/c/portal/[portlet URL]` Struts path which invoked `PortletURLAction`. The extra
-server-side processing that resulted from this AJAX request included some
-processing to make the URL friendly. After the fix for
-[LPS-34098](https://issues.liferay.com/browse/LPS-34098), generating friendly
-portlet URLs via JavaScript is no longer possible. Since the `PortletURLAction`
-class has been deprecated, the AJAX request in the `toString()` function in
-`portlet_url.js` has been removed.
+`/c/portal/[portlet URL]` Struts path which invoked `PortletURLAction`. The
+extra server-side processing that resulted from this AJAX request included some
+processing to make the URL friendly. After the fix for the security issue,
+generating friendly portlet URLs via JavaScript is no longer possible. Since the
+`PortletURLAction` class has been deprecated, the AJAX request in the
+`toString()` function in `portlet_url.js` has been removed.
 
 If you experience problems using the above methods to generate URLs in Liferay
 6.2.0 M6 or later versions, you might need to update your plugins. If you're an
@@ -1050,11 +1046,10 @@ you will need to update your plugins. There are several ways to do it:
     using the `Liferay.PortletURL` object. Note that in example 2, the
     `namespace` for every parameter was added manually. 
 
-3. Set the property `portlet.url.struts.action.enabled` to `false`. This ensures
-   that everything works as in Liferay 6.2.0 M5 and previous versions of
-   Liferay, but it presents the security risk described in
-   [LPS-34098](https://issues.liferay.com/browse/LPS-34098). Avoid using this
-   method, if possible. 
+3. Set the property `portlet.url.generate.by.path.enabled` to `true`. This
+   ensures that everything works as in Liferay 6.2.0 M5 and previous versions of
+   Liferay, but it presents a security risk. Avoid setting
+   `portlet.url.generate.by.path.enabled` to `true`, if possible. 
 
 Next, let's learn how to use Liferay's asset framework. 
 
