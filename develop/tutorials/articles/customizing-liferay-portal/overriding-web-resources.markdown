@@ -2,16 +2,18 @@
 
 Hooks are commonly used to override web resources, found in the `portal-web`
 directory of Liferay's source. You can use a hook to override JSP files, JSPF
-files, JavaScript files, CSS files, and images. This tutorial shows how to
-override a Liferay Portal JSP.  
+files, JavaScript files, and images. 
+
++$$$
 
 **Important:** Some resources have additional requisites:
 
 - ***JSPF:*** Changes won't take effect unless you modify the JSP that
   includes it. 
-- ***CSS:*** When modifying a CSS file imported by another CSS file, the
-  changes won't take effect unless you modify the parent CSS file (usually
-  `main.css`). 
+- ***CSS:*** Hooks can't be used to override CSS files. Use a theme plugin if 
+  you need to customize styles.
+
+$$$
 
 Replacing a portal JSP is a simple task with hooks. 
 

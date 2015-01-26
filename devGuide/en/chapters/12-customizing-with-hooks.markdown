@@ -184,7 +184,7 @@ plugin customizations: a customization of Liferay's web resources.
 
 Hooks are commonly used to override web resources, found in `portal-web` in
 Liferay's source. You can use a hook to override JSP files, JSPF files,
-JavaScript files, CSS files, or images. 
+JavaScript files, or images. 
 
 ---
 
@@ -193,9 +193,8 @@ JavaScript files, CSS files, or images.
 
  - ***JSPF:*** Changes won't take effect unless you modify the JSP that
    includes it. 
- - ***CSS:*** When modifying a CSS file imported by another CSS file, the
- changes won't take effect unless you modify the parent CSS file (usually
- `main.css`). 
+ - ***CSS:*** Hooks can't be used to override CSS files. Use a theme plugin if 
+  you need to customize styles.
 
 ---
 
