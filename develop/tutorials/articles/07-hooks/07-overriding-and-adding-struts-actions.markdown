@@ -188,7 +188,7 @@ hook's new, custom action is triggered not only when the intended path is
 invoked, but also when one of the larger, containing paths (e.g.,
 `document_library/edit_file_entry_discussion`) is invoked!
 
-To work around this issue, please use the following steps:
+To work around this issue, use the following steps:
 
 1. Find any Struts actions with paths that contain the path of the Struts
 action that you are overriding.
