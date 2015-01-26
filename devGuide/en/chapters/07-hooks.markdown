@@ -153,7 +153,7 @@ override the most; web resources are a good place to start.
 
 Hooks are commonly used to override web resources, found in `portal-web` in the
 Liferay source. You can use a hook to override JSP files, JSPF files, JavaScript
-files, CSS files, or images. 
+files, or images. 
 
 ---
 
@@ -162,9 +162,8 @@ files, CSS files, or images.
 
  - ***JSPF:*** Changes won't take effect unless you modify the JSP that
    includes it. 
- - ***CSS:*** When modifying a CSS file imported by another CSS file, the
- changes won't take effect unless you modify the parent CSS file (usually
- `main.css`). 
+ - ***CSS:*** Hooks can't be used to override CSS files. Use a theme plugin if 
+   you need to customize styles. 
 
 ---
 
