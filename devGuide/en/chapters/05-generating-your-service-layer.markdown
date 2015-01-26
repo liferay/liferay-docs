@@ -180,14 +180,14 @@ Next, let's roll up our sleeves and learn how to use Service Builder.
 
 In order to demonstrate how to use Service Builder, let's continue using the
 event-listing-portlet project that we created in [Developing Apps with Liferay
-IDE](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en). It's an example
-portlet project that Nose-ster, a fictitious organization, can use to schedule
-social events. We're using the event-listing-portlet project to manage and list
-these events. We need to add some entities, or model types, to represent
-Nose-ster's events and the locations where they hold their events. We'll define
-two entities: *events* and *locations*. The event entity represents a social
-event that can be scheduled for Nose-ster, while the location entity represents
-a location at which a social event can take place. Since an event must have a
+IDE](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-apps-with-liferay-ide-liferay-portal-6-2-dev-guide-02-en).
+It's an example portlet project that an organization can use to schedule social
+events. We're using the event-listing-portlet project to manage and list these
+events. We need to add some entities, or model types, to represent an
+organization's events and the locations where the events take place. We'll
+define two entities: *events* and *locations*. The event entity represents a
+social event that can be scheduled, while the location entity represents a
+location at which a social event can take place. Since an event must have a
 location, the event entity will reference a location entity as one of its
 attributes. 
 
@@ -789,9 +789,9 @@ to `EventServiceImpl` and learn how to call those, too.
 
 The heart of your service is its `-LocalServiceImpl` class, where you put core
 business logic for working with your model. Throughout this chapter, you've been
-constructing services for the Nose-ster Event Listing example portlet project.
-Start with your services by examining the initial service classes Service
-Builder generated for it. 
+constructing services for the Event Listing example portlet project. Start with
+your services by examining the initial service classes Service Builder generated
+for it. 
 
 Note that Service Builder created an `EventLocalService` class which is the
 interface for the local service. It contains the signatures of every method in
@@ -2307,9 +2307,9 @@ so you can easily leverage information from multiple entity types.
 Service Builder can also make your project's web services available via SOAP
 using Apache Axis. After you've built your portlet project's WSDDs and deployed
 the project as a plugin, its services are available on the portal server. It's
-easy to list your Nose-ster Event Listing plugin's SOAP web services. You have
-two options: you can access them in Liferay IDE or you can open your browser to
-the URL for its web services.
+easy to list your Event Listing plugin's SOAP web services. You have two
+options: you can access them in Liferay IDE or you can open your browser to the
+URL for its web services.
 
 To access your SOAP web services in Liferay IDE, right-select your portlet from
 under it's Liferay server in the *Servers* view. Then select *Test Liferay Web
