@@ -524,5 +524,6 @@ Remember that you can view the complete Event Listing portlet project on Github
 here: [https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet).
 
 Now that you've specified the service for the Event Listing example project,
-let's *build* the service by running Service Builder. Then we'll look at the
-code Service Builder generates.
+you're ready to *build* the service by running Service Builder. To learn how to
+run Service Builder and to learn about the code that Service Builder generates,
+please refer to the next tutorial.
