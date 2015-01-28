@@ -5,7 +5,7 @@ specific task in the site. They allow site administrators to create various
 sets of users and permissions for site-specific functions. Teams are the
 preferred method for collecting permissions within a single site. Some common
 uses for Site Teams include:
-- Moderating site Wiki content, Message Boards messages, etc.
+- Moderating site Wiki content, Message Boards threads, etc.
 - Creating a group of bloggers
 - Editing a specific page in the site
 
@@ -41,6 +41,12 @@ Permission management for teams is configured by navigating to *Actions* &rarr;
 *Permissions* for your individual site. Setting permissions for the team assigns
 every member of the team with equal permissions. Only administrators with the
 ability to edit/manage the team have the ability to manage team permissions.
+
+If your team's task is to moderate the Message Boards portlet, you'll want to
+give the team any permissions they should have for the Message Boards. Navigate
+to *Site Administration* &rarr; *Content* &rarr; *Message Boards* &rarr;
+*Permissions*, find your team in the Role column, and select the appropriate
+permissions. 
 
 ![Figure 3.27: The Troll-busters Site Team has unlimited permissions on the Message Boards portlet.](../../images/site-team-permissions-message-boards.png)
 
