@@ -1,4 +1,4 @@
-## Defining an Object-Relational Map with Service Builder
+# Defining an Object-Relational Map with Service Builder
 
 In this tutorial, you'll learn how to define an object relational map for your
 application so that your application can persist data. The example code in this
@@ -53,7 +53,7 @@ folder. In Service Builder terminology, your model classes (events and
 locations) are called entities. The requirements for the event and location
 entities are fairly simple. Events should have the following attributes: 
 
-**Event Attributes**
+**Event Attributes** (Example)
 
 Attribute | Attribute Type | Attribute Description
 :------------: | :------------: | :-------------------
@@ -64,7 +64,7 @@ Attribute | Attribute Type | Attribute Description
 
 Locations should have the following attributes: 
 
-**Location Attributes**
+**Location Attributes** (Example)
 
 Attribute | Attribute Type | Attribute Description
 :------------: | :------------: | :-------------------
@@ -100,7 +100,7 @@ Liferay IDE makes it very easy to define entities in your application's
 Let's examine these steps in detail, starting with creating a `service.xml`
 file.
 
-### Creating the `service.xml` File
+## Creating the `service.xml` File
 
 To define a service for your portlet project, you must create a `service.xml`
 file. The DTD (Document Type Declaration) file
@@ -130,7 +130,7 @@ in the editor. You can switch between these modes as you wish.
 
 Next, you can start filling out the global information for your service. 
 
-### Defining Global Service Information
+## Defining Global Service Information
 
 A service's global information applies to all of its entities, so it's a good
 place to start. In Liferay IDE, select the *Service Builder* node in the upper
@@ -180,7 +180,7 @@ with the specified name to all of the generated Java classes and interfaces.
 Save your `service.xml` file to preserve the information you added. Next, you'll
 add entities for your service's events and locations. 
 
-### Defining Service Entities
+## Defining Service Entities
 
 Entities are the heart and soul of a service. Entities represent the map between
 the model objects in Java and the fields and tables in your database. Once your
@@ -246,7 +246,7 @@ $$$
 Now that you've seen how to create the Event and Location entities, you'll learn
 how to describe their attributes using entity *columns*. 
 
-### Defining the Columns (Attributes) for Each Service Entity
+## Defining the Columns (Attributes) for Each Service Entity
 
 Each entity is described by its columns, which represent an entity's attributes.
 These attributes map on the one side to fields in a table and on the other side
@@ -345,7 +345,7 @@ Great! Your entities are set with the columns that not only represent their
 attributes, but also support multi-tenancy and entity auditing. Next, you'll
 specify the relationship between the Event entity and the Location entity. 
 
-### Defining Relationships Between Service Entities
+## Defining Relationships Between Service Entities
 
 Often you'll want to reference one type of entity in the context of another
 entity. That is, you'll want to *relate* the entities. We'll show you how to do
@@ -377,7 +377,7 @@ Location entity instance reference:
 Now that your entity columns are in place, you can specify the default order in
 which the entity instances are retrieved from the database. 
 
-### Defining Ordering of Service Entity Instances
+## Defining Ordering of Service Entity Instances
 
 Often, you want to retrieve multiple instances of a given entity and list them
 in a particular order. Liferay lets you specify the default order of the
@@ -400,7 +400,7 @@ entity instances, follow similar steps but specify *name* as the column and
 The last thing to do is to define the finder methods for retrieving entity
 instances from the database. 
 
-### Defining Service Entity Finder Methods
+## Defining Service Entity Finder Methods
 
 Finder methods retrieve entity objects from the database based on specified
 parameters. You'll probably want to create at least one finder method for each
