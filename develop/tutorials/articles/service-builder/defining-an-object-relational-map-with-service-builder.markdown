@@ -153,8 +153,8 @@ generated in a package of that name under the `docroot/WEB-INF/src` folder. The
 complete file paths for the service and persistence classes are 
 `docroot/WEB-INF/service/com/nosester/portlet/eventlisting` and
 `docroot/WEB-INF/src/com/nosester/portlet/eventlisting`, respectively. Please
-refer to next section, *Generating the Services*, for a description of the
-contents of these packages. 
+refer to the [Running Service Builder and Understanding the Generated Code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+tutorial for a description of the contents of these packages. 
 
 Service Builder uses the service *namespace* in naming the database tables it
 generates for the service. Enter *Event* as the namespace for your example
@@ -188,19 +188,19 @@ entities are defined, Service Builder handles the mapping automatically, giving
 you a facility for taking Java objects and persisting them. For this example,
 you'll create two entities--one for events and one for locations. 
 
-Here's a summary of the information you'll enter for the Event entity:
+Here's a summary of the information that was used for the Event entity:
 
 - **Name:** *Event*
 - **Local service:** *yes*
 - **Remote service:** *yes* 
 
-And here's what you'll enter for the Location entity:
+And here's what was used for the Location entity:
 
 - **Name:** *Location*
 - **Local service:** *yes*
 - **Remote service:** *yes* 
 
-To create these entities using Liferay IDE, select the *Entities* node under the
+To create your entities using Liferay IDE, select the *Entities* node under the
 Service Builder node in the outline on the left side of the `service.xml` editor
 in Overview mode. In the main part of the view, notice that the Entities table
 is empty. Create an entity by clicking on the *Add Entity* icon (a green plus
@@ -228,8 +228,8 @@ generate remote interfaces for the service. The default value for remote service
 is `true`. You could build a fully-functional event listing application without
 generating remote services. In that case, you could set local service to `true`
 and remote service to `false` for both of your entities. If, however, you want
-to enable (secure) remote access to your application's services, you should set
-both local service and remote service to `true`.
+to enable remote access to your application's services, you should set both
+local service and remote service to `true`.
 
 +$$$
 
@@ -274,9 +274,10 @@ key for an entity. In this case, the combination of columns makes up a compound
 primary key for the entity.
 
 Similar to the way you used the form table for adding entities, add attribute
-columns for the entities as follows:
+columns for each of your entities. Here are the attributes used for the event
+and location example entities:
 
-**Event attribute columns**
+**Event attribute columns** (Example)
 
   Name        | Type   | Primary
 :-----------: | :----: | :------:
@@ -285,7 +286,7 @@ columns for the entities as follows:
 `description` | String | no
 `date`        | Date   | no
 
-**Location attribute columns**
+**Location attribute columns** (Example)
 
   Name            | Type   | Primary
 :---------------: | :----: | :------:
@@ -348,20 +349,19 @@ specify the relationship between the Event entity and the Location entity.
 ## Defining Relationships Between Service Entities
 
 Often you'll want to reference one type of entity in the context of another
-entity. That is, you'll want to *relate* the entities. We'll show you how to do
-this in the Event Listing project example. 
+entity. That is, you'll want to *relate* the entities. The Event Listing project
+demonstrates entity relationships.
 
 As mentioned earlier, each event must have a location. Therefore, each Event
-entity must relate to a Location entity. The good news is that Liferay IDE's
-Diagram mode for `service.xml` makes relating entities easy. First, select
-Diagram mode for the `service.xml` file. Then select the *Relationship* option
-under *Connections* in the palette on the right side of the view. This
-relationship tool helps you draw relationships between entities in the diagram.
-Click the *Event* entity and move your cursor over the Location entity. Liferay
-IDE draws a dashed line from the Event entity to the cursor. Click the
-*Location* entity to complete drawing the relationship. Liferay IDE turns the
-dashed line into a solid line, with an arrow pointing to the Location entity.
-Save the `service.xml` file. 
+entity must relate to a Location entity. Liferay IDE's Diagram mode for
+`service.xml` makes relating entities easy. First, select Diagram mode for the
+`service.xml` file. Then select the *Relationship* option under *Connections* in
+the palette on the right side of the view. This relationship tool helps you draw
+relationships between entities in the diagram. Click the *Event* entity and move
+your cursor over the Location entity. Liferay IDE draws a dashed line from the
+Event entity to the cursor. Click the *Location* entity to complete drawing the
+relationship. Liferay IDE turns the dashed line into a solid line, with an arrow
+pointing to the Location entity. Save the `service.xml` file. 
 
 Congratulations! You've related the entities. Their relationship should show
 in Diagram mode and look similar to that of the figure below. 
@@ -408,7 +408,7 @@ entity you create in your services. Service Builder generates several methods
 based on each finder you create for an entity. It creates methods to fetch,
 find, remove, and count entity instances based on the finder's parameters. 
 
-For the Event Listing example, it's important to be able to find Event and
+For the Event Listing project, it's important to be able to find Event and
 Location entities per site. You can specify these finders using Liferay IDE's
 Overview mode of `service.xml`. Select the *Finders* node under the Event entity
 node in the outline on the left side of the screen. The IDE displays an empty
@@ -417,33 +417,36 @@ the *add icon* (a green plus sign) to the right of the table. Name the finder
 *GroupId* and enter *Collection* as its return type. Use the Java camel-case
 naming convention when naming finders since the finder's name is used to name
 the methods that Service Builder creates. The IDE creates a new *GroupId* node
-under the *Finders* node in the outline. Next, you'll specify the finder column
-for this group ID node. 
+under the *Finders* node in the outline. Next, you'll learn how to specify the
+finder column for this group ID node. 
 
 Under the new *GroupId* node, the IDE created a *Finder Columns* node. Select
 the *Finder Columns* node to specify the columns for your finder's parameters.
 Create a new finder column by clicking the *add icon* (a green plus sign) and
 specifying *groupId* as the column's name. Keep in mind that you can specify
-multiple parameters (columns) for a finder; this first example is kept simple.
-Follow similar steps to create a finder to retrieve Location entities by
-`groupId`. Save the `service.xml` file to preserve the finders you defined. 
+multiple parameters (columns) for a finder.
+
+If you're creating site-scoped entities (entities whose data should be unique to
+each site), you should follow the steps described above to create finders by
+`groupId` for retrieving your entities. Remember to save your `service.xml` file
+after editing it to preserve the finders you define. 
 
 When you run Service Builder, it generates finder-related methods
 (`fetchByGroupId`, `findByGroupId`, `removeByGroupId`, `countByGroupId`) for the
-Event and Location entities in `-Persistence` and `-PersistenceImpl` classes.
+your entities in the `*Persistence` and `*PersistenceImpl` classes.
 The first of these classes is the interface; the second is its implementation.
 The Event and Location entity's finder methods are generated in the
-`-Persistence` classes found in your
+`-Persistence` classes in the
 `/docroot/WEB-INF/service/com/nosester/portlet/eventlisting/service/persistence`
-folder and the `-PersistenceImpl` classes found in your
+folder and the `-PersistenceImpl` classes in the
 `/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/persistence`
 folder.
 
-Terrific! You've created the example service and its Event and Location entities
-for the Event Listing example project. For your convenience, you can view the
-complete `service.xml` content here. We've added some comments to highlight the
-service's various elements. Other than that, your `service.xml` file's contents
-should look similar to this: 
+Now you know to configure Service Builder to create finder methods for your
+entity. Terrific! For your convenience, you can view the complete `service.xml`
+content of the Event Listing project below. We've added some comments to
+highlight the service's various elements. You can refer to the Event Listing
+project's `service.xml` file's when you're creating your own: 
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
@@ -535,4 +538,6 @@ here: [https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/cod
 Now that you've specified the service for the Event Listing example project,
 you're ready to *build* the service by running Service Builder. To learn how to
 run Service Builder and to learn about the code that Service Builder generates,
-please refer to the next tutorial.
+please refer to the
+[https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet)
+tutorial. 
