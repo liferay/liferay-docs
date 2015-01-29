@@ -288,27 +288,26 @@ Liferay.
 
 ### Xuggler configuration [](id=xuggler-configuration)
 
-Once you've installed the correct version of
-[*Xuggler*](http://www.xuggle.com/xuggler) for your operating system, you need
-to configure your environment variables. Depending on where you installed
-Xuggler, a configuration similar to the following should work on Unix-like
-systems:
+Since Liferay 6.1.1+, you can install Xuggler completely from the Control Panel.
+Navigate to the *Server Administration* &rarr; *External Services* page. From
+the dropdown, select the Xuggler `.jar` file that matches your operating system.
+Then click on *Install*. 
 
-    export XUGGLE_HOME=/usr/local/xuggler
-    export LD_LIBRARY_PATH=$XUGGLE_HOME/lib:$LD_LIBRARY_PATH
-    export PATH=$XUGGLE_HOME/bin:$PATH
+In order to use Xuggler, you must restart your application server and enable
+Xuggler for your portal. You can enable Xuggler either from the Control Panel or
+by specifying the portal property that enables Xuggler. 
 
-Once your environment variables are set up correctly, you can configure Liferay
-to use Xuggler either in your `portal-properties` file or from the Control
-Panel. If you'd like to use your `portal-ext.properties` file, just add the
-following line:
+To enable Xuggler from portal properties, add the following line to your
+`portal-ext.properties` file and restart your application server. 
 
     xuggler.enabled=true
 
-To configure Liferay to use Xuggler in the Control Panel, navigate to the
-*Server Administration* &rarr; *External Services* page and check *Enabled*.
-That's it! You've successfully configured the Documents and Media library to use
-Xuggler for audio and video files.
+To enable Xuggler from the Control Panel, navigate to the *Server
+Administration* &rarr; *External Services* page, check *Enabled*, and click
+on *Save*.
+
+That's it! You've successfully configured Documents and Media to use Xuggler for
+audio and video files. 
 
 ## Script [](id=script)
 
