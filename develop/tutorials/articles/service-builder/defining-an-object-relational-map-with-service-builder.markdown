@@ -1,20 +1,29 @@
 ## Defining an Object-Relational Map with Service Builder
 
 In this tutorial, you'll learn how to define an object relational map for your
-application so that your application can persist data. The examples in this
-section come from the Event Listing project, which you can find on Github here:
+application so that your application can persist data. The example code in this
+tutorial, as well as the example code in the other Service Builder and Services
+tutorials, comes from the Event Listing project, which you can find on Github
+here:
 [https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet).
-This project is an example portlet project that an organization can use to
-schedule social events. The event-listing-portlet project allows administrators
-to manage and list these events. The project defines two entities, or model
-types, to represent an organization's events and the locations where the events
-can take place. These entities are called *events* and *locations*. The event
-entity represents a social event that can be scheduled, while the location
-entity represents a location at which a social event can take place. Since an
-event must have a location, the event entity references a location entity as one
-of its attributes. 
+The Event Listing project is an example portlet project that an organization can
+use to schedule social events. The event-listing-portlet project allows
+administrators to manage and list these events. The project defines two
+entities, or model types, to represent an organization's events and the
+locations at which the events can take place. These entities are called *events*
+and *locations*. The event entity represents a social event that can be
+scheduled, while the location entity represents a location at which a social
+event can take place. Since an event must have a location, the event entity
+references a location entity as one of its attributes. 
 
-![Figure 1: The Event Listing Portlet lets you add and modify social events. The portlet relies on its event and location entities and the service infrastructure that Liferay Service Builder builds around them.](../../images/service-builder-view-events.png)
+If you want to display entity data in a Liferay application, you're free to
+create any kind of user interface that you can imagine. The following image
+shows a simple example. To learn how to create simple user interfaces for
+Liferay Service Builder applications, please see the
+[Implementing a UI with Liferay Taglibs](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
+learning path.
+
+![Figure 1: The Event Listing and Location Listing portlets let you add and modify social events and locations. The portlets rely on the event and location entities and the service infrastructure that Liferay Service Builder builds around them.](../../images/service-builder-view-events.png)
 
 +$$$
 
