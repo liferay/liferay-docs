@@ -9,8 +9,8 @@ Developers are able to extend the set of available tracking actions by creating
 and deploying their own OSGi plugins, which contain a class implementing the
 [Tracking Action Interface](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/TrackingAction.java).
 
-OSGi plugins can be quickly hot deployed and undeployed, managing their own
-dependencies and providing new services that other OSGi plugins can consume. In
+OSGi plugins can be quickly hot deployed and undeployed, manage their own
+dependencies, and provide new services that other OSGi plugins can consume. In
 the case of a tracking action OSGi plugin, it is consumed by the Audience
 Targeting application.
 
@@ -29,7 +29,11 @@ your Liferay server.
    command below shows creating a `forum-subscription` tracking action named
    *Forum Subscription*:
 
-        create_tracking_action.[bat|sh] forum-subscription "Forum Subscription"
+        create_tracking_action.bat forum-subscription "Forum Subscription"
+
+    or
+
+        ./create_tracking_action.sh forum-subscription "Forum Subscription"
 
 2. Move to the newly generated folder that has your tracking action's name
    prefixed with `tracking-action-` (e.g.,

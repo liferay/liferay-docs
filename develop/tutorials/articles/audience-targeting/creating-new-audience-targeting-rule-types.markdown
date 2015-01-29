@@ -4,14 +4,14 @@ In the Audience Targeting application, a User Segment is defined as a group
 of users that matches a set of rules. Out of the box, Liferay provides several
 types of rules such as age range, gender, location, etc.
 
-Developers will be able to extend the set of available types of rules by
-creating and deploying their own OSGi plugins which contain a class implementing
-the [Rule Interface](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/Rule.java).
+Developers are able to extend the set of available types of rules by creating
+and deploying their own OSGi plugins which contain a class implementing the
+[Rule Interface](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/Rule.java).
 
-OSGi plugins can be quickly hot deployed and undeployed, managing their own
-dependencies and providing new services that other OSGi plugins can consume.
-In the case of a rule OSGi plugin, it will be consumed by the Audience
-Targeting application.
+OSGi plugins can be quickly hot deployed and undeployed, manage their own
+dependencies, and provide new services that other OSGi plugins can consume. In
+the case of a rule OSGi plugin, it is consumed by the Audience Targeting
+application.
 
 Before you begin creating a custom rule type, you'll learn how/where to install
 the Audience Targeting project for usage, and a couple tips along the way.
@@ -65,7 +65,11 @@ server.
    (depending on your OS). For example, the command below shows creating a
    `time-zone` rule named *Time Zone*:
 
-        create_rule.[bat|sh] time-zone "Time Zone"
+        create_rule.bat time-zone "Time Zone"
+
+    or
+
+        ./create_rule.sh time-zone "Time Zone"
 
 2. Move to the newly generated folder that has your rule's name prefixed with
    `rule-` (e.g., `rule-time-zone`). Notice that all the necessary files have

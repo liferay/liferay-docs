@@ -2,16 +2,16 @@
 
 In the Audience Targeting application, a report is a tool that allows
 administrators to analyze the behavior of users belonging to specific user
-segments or in the context of a campaign.
+segments, or in the context of a campaign.
 
-Developers will be able to extend the set of available reports by creating and
+Developers are able to extend the set of available reports by creating and
 deploying their own OSGi plugins which contain a class implementing the
 [Report Interface](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/Report.java).
 
-OSGi plugins can be quickly hot deployed and undeployed, managing their own
-dependencies and providing new services that other OSGi plugins can consume.
-In the case of a report OSGi plugin, it is consumed by the Audience
-Targeting application.
+OSGi plugins can be quickly hot deployed and undeployed, manage their own
+dependencies, and provide new services that other OSGi plugins can consume. In
+the case of a report OSGi plugin, it is consumed by the Audience Targeting
+application.
 
 To follow this tutorial, you must first have the Audience Targeting
 [project](https://github.com/liferay/liferay-apps-content-targeting) and
@@ -27,7 +27,11 @@ server.
    command (depending on your OS). For example, the command below shows creating
    a `hits-by-country` report named *Hits by Country*.
 
-        create_report.[bat|sh] hits-by-country "Hits by Country"
+        create_report.bat hits-by-country "Hits by Country"
+
+    or
+
+        ./create_report.sh hits-by-country "Hits by Country"
 
 2. Move to the newly generated folder that has your report's name prefixed with
    `report-` (e.g., `report-hits-by-country`). Notice that all the necessary
