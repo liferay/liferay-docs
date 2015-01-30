@@ -7,8 +7,15 @@
 <liferay-ui:header backURL="<%= viewURL %>" title="entry" />
 
 <%
-	long entryId = ParamUtil.getLong(renderRequest, "entryId");
-	Entry entry = EntryLocalServiceUtil.getEntry(entryId);
+	
+	String name = ParamUtil.getString(renderRequest, "name");
+	
+	String guestbookName=ParamUtil.getString(renderRequest, "guestbookName");
+	
+	OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+	OrderByComparator orderByComparator = orderByComparatorFactory.create("Entry", "name", true);
+	Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
+	Entry entry = EntryLocalServiceUtil.getEntryByGuestbookIdAndName(guestbook.getGuestbookId(), name, orderByComparator);
 	entry = entry.toEscapedModel();
 	
 	AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(

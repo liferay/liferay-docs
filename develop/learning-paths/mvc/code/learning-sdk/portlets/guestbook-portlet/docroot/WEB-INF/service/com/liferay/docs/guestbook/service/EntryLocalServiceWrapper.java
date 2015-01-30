@@ -345,6 +345,25 @@ public class EntryLocalServiceWrapper implements EntryLocalService,
 	}
 
 	@Override
+	public com.liferay.docs.guestbook.model.Entry getEntryByName(
+		java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchEntryException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.getEntryByName(name, orderByComparator);
+	}
+
+	@Override
+	public com.liferay.docs.guestbook.model.Entry getEntryByGuestbookIdAndName(
+		long guestbookId, java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchEntryException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _entryLocalService.getEntryByGuestbookIdAndName(guestbookId,
+			name, orderByComparator);
+	}
+
+	@Override
 	public java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
 		long groupId, long guestbookId)
 		throws com.liferay.portal.kernel.exception.SystemException {

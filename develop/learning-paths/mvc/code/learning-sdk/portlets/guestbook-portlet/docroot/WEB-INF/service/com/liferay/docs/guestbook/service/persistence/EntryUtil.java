@@ -784,6 +784,341 @@ public class EntryUtil {
 	}
 
 	/**
+	* Returns all the entries where name = &#63;.
+	*
+	* @param name the name
+	* @return the matching entries
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Entry> findByEntryName(
+		java.lang.String name)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByEntryName(name);
+	}
+
+	/**
+	* Returns a range of all the entries where name = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.docs.guestbook.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param name the name
+	* @param start the lower bound of the range of entries
+	* @param end the upper bound of the range of entries (not inclusive)
+	* @return the range of matching entries
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Entry> findByEntryName(
+		java.lang.String name, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByEntryName(name, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the entries where name = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.docs.guestbook.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param name the name
+	* @param start the lower bound of the range of entries
+	* @param end the upper bound of the range of entries (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching entries
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Entry> findByEntryName(
+		java.lang.String name, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByEntryName(name, start, end, orderByComparator);
+	}
+
+	/**
+	* Returns the first entry in the ordered set where name = &#63;.
+	*
+	* @param name the name
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching entry
+	* @throws com.liferay.docs.guestbook.NoSuchEntryException if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Entry findByEntryName_First(
+		java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchEntryException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByEntryName_First(name, orderByComparator);
+	}
+
+	/**
+	* Returns the first entry in the ordered set where name = &#63;.
+	*
+	* @param name the name
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching entry, or <code>null</code> if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Entry fetchByEntryName_First(
+		java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().fetchByEntryName_First(name, orderByComparator);
+	}
+
+	/**
+	* Returns the last entry in the ordered set where name = &#63;.
+	*
+	* @param name the name
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching entry
+	* @throws com.liferay.docs.guestbook.NoSuchEntryException if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Entry findByEntryName_Last(
+		java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchEntryException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByEntryName_Last(name, orderByComparator);
+	}
+
+	/**
+	* Returns the last entry in the ordered set where name = &#63;.
+	*
+	* @param name the name
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching entry, or <code>null</code> if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Entry fetchByEntryName_Last(
+		java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().fetchByEntryName_Last(name, orderByComparator);
+	}
+
+	/**
+	* Returns the entries before and after the current entry in the ordered set where name = &#63;.
+	*
+	* @param entryId the primary key of the current entry
+	* @param name the name
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next entry
+	* @throws com.liferay.docs.guestbook.NoSuchEntryException if a entry with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Entry[] findByEntryName_PrevAndNext(
+		long entryId, java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchEntryException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByEntryName_PrevAndNext(entryId, name, orderByComparator);
+	}
+
+	/**
+	* Removes all the entries where name = &#63; from the database.
+	*
+	* @param name the name
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByEntryName(java.lang.String name)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByEntryName(name);
+	}
+
+	/**
+	* Returns the number of entries where name = &#63;.
+	*
+	* @param name the name
+	* @return the number of matching entries
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByEntryName(java.lang.String name)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByEntryName(name);
+	}
+
+	/**
+	* Returns all the entries where guestbookId = &#63; and name = &#63;.
+	*
+	* @param guestbookId the guestbook ID
+	* @param name the name
+	* @return the matching entries
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Entry> findByG_N(
+		long guestbookId, java.lang.String name)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByG_N(guestbookId, name);
+	}
+
+	/**
+	* Returns a range of all the entries where guestbookId = &#63; and name = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.docs.guestbook.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param guestbookId the guestbook ID
+	* @param name the name
+	* @param start the lower bound of the range of entries
+	* @param end the upper bound of the range of entries (not inclusive)
+	* @return the range of matching entries
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Entry> findByG_N(
+		long guestbookId, java.lang.String name, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByG_N(guestbookId, name, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the entries where guestbookId = &#63; and name = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.liferay.docs.guestbook.model.impl.EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param guestbookId the guestbook ID
+	* @param name the name
+	* @param start the lower bound of the range of entries
+	* @param end the upper bound of the range of entries (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching entries
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.liferay.docs.guestbook.model.Entry> findByG_N(
+		long guestbookId, java.lang.String name, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByG_N(guestbookId, name, start, end, orderByComparator);
+	}
+
+	/**
+	* Returns the first entry in the ordered set where guestbookId = &#63; and name = &#63;.
+	*
+	* @param guestbookId the guestbook ID
+	* @param name the name
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching entry
+	* @throws com.liferay.docs.guestbook.NoSuchEntryException if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Entry findByG_N_First(
+		long guestbookId, java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchEntryException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByG_N_First(guestbookId, name, orderByComparator);
+	}
+
+	/**
+	* Returns the first entry in the ordered set where guestbookId = &#63; and name = &#63;.
+	*
+	* @param guestbookId the guestbook ID
+	* @param name the name
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching entry, or <code>null</code> if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Entry fetchByG_N_First(
+		long guestbookId, java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByG_N_First(guestbookId, name, orderByComparator);
+	}
+
+	/**
+	* Returns the last entry in the ordered set where guestbookId = &#63; and name = &#63;.
+	*
+	* @param guestbookId the guestbook ID
+	* @param name the name
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching entry
+	* @throws com.liferay.docs.guestbook.NoSuchEntryException if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Entry findByG_N_Last(
+		long guestbookId, java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchEntryException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByG_N_Last(guestbookId, name, orderByComparator);
+	}
+
+	/**
+	* Returns the last entry in the ordered set where guestbookId = &#63; and name = &#63;.
+	*
+	* @param guestbookId the guestbook ID
+	* @param name the name
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching entry, or <code>null</code> if a matching entry could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Entry fetchByG_N_Last(
+		long guestbookId, java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByG_N_Last(guestbookId, name, orderByComparator);
+	}
+
+	/**
+	* Returns the entries before and after the current entry in the ordered set where guestbookId = &#63; and name = &#63;.
+	*
+	* @param entryId the primary key of the current entry
+	* @param guestbookId the guestbook ID
+	* @param name the name
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next entry
+	* @throws com.liferay.docs.guestbook.NoSuchEntryException if a entry with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.liferay.docs.guestbook.model.Entry[] findByG_N_PrevAndNext(
+		long entryId, long guestbookId, java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchEntryException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByG_N_PrevAndNext(entryId, guestbookId, name,
+			orderByComparator);
+	}
+
+	/**
+	* Removes all the entries where guestbookId = &#63; and name = &#63; from the database.
+	*
+	* @param guestbookId the guestbook ID
+	* @param name the name
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByG_N(long guestbookId, java.lang.String name)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByG_N(guestbookId, name);
+	}
+
+	/**
+	* Returns the number of entries where guestbookId = &#63; and name = &#63;.
+	*
+	* @param guestbookId the guestbook ID
+	* @param name the name
+	* @return the number of matching entries
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByG_N(long guestbookId, java.lang.String name)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByG_N(guestbookId, name);
+	}
+
+	/**
 	* Caches the entry in the entity cache if it is enabled.
 	*
 	* @param entry the entry
