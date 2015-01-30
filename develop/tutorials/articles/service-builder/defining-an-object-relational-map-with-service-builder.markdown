@@ -32,8 +32,8 @@ manage events, please use Liferay's Calendar portlet instead. The example
 described in this section is only intended to demonstrate how to use Service
 Builder. The Calendar portlet provides many more features than the simple
 example application described here. For information about the Calendar portlet,
-please refer to the chapter on Liferay's collaboration suite here:
-[https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/managing-events-and-calendar-resources-with-liferays-c](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/managing-events-and-calendar-resources-with-liferays-c).
+please refer to the
+[Managing Events and Calendar Resources with Liferay's Calendar Portlet](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/managing-events-and-calendar-resources-with-liferays-c) section.
 
 $$$
 
@@ -540,5 +540,5 @@ Now that you've specified the service for the Event Listing example project,
 you're ready to *build* the service by running Service Builder. To learn how to
 run Service Builder and to learn about the code that Service Builder generates,
 please refer to the
-[https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 tutorial. 
