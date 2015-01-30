@@ -185,8 +185,9 @@ add entities for your service's events and locations.
 Entities are the heart and soul of a service. Entities represent the map between
 the model objects in Java and the fields and tables in your database. Once your
 entities are defined, Service Builder handles the mapping automatically, giving
-you a facility for taking Java objects and persisting them. For this example,
-you'll create two entities--one for events and one for locations. 
+you a facility for taking Java objects and persisting them. For the Event
+Listing example, two entities were created--one for events and one for
+locations. 
 
 Here's a summary of the information that was used for the Event entity:
 
@@ -363,8 +364,8 @@ Event entity to the cursor. Click the *Location* entity to complete drawing the
 relationship. Liferay IDE turns the dashed line into a solid line, with an arrow
 pointing to the Location entity. Save the `service.xml` file. 
 
-Congratulations! You've related the entities. Their relationship should show
-in Diagram mode and look similar to that of the figure below. 
+Congratulations! You've related two entities. Their relationship should show in
+Diagram mode and look similar to that of the figure below. 
 
 ![Figure 3: Relating entities is a snap in Liferay IDE's *Diagram* mode for `service.xml`.](../../images/service-builder-relate-entities.png)
 
@@ -539,5 +540,5 @@ Now that you've specified the service for the Event Listing example project,
 you're ready to *build* the service by running Service Builder. To learn how to
 run Service Builder and to learn about the code that Service Builder generates,
 please refer to the
-[https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet)
+[https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 tutorial. 
