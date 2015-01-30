@@ -9,10 +9,10 @@ tutorial.
 ## Running Service Builder
 
 To build a service from a `service.xml` file, you can use *Liferay IDE*,
-*Liferay Developer Studio*, or use a terminal window. Here, you'll find an
-explanation of how to run Service Builder for the Event Listing example project
-that's referenced throughout the Liferay Service Builder tutorials. You can find
-the Event Listing example project on Github here:
+*Liferay Developer Studio*, or use a terminal window. In this tutorial, we refer
+to the Event Listing example project that's referenced throughout the Liferay
+Service Builder tutorials. You can find the Event Listing example project on
+Github here:
 [https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet).
 If you'd like to experiment with this project, just copy it to the `portlets`
 folder of your Plugins SDK. 
