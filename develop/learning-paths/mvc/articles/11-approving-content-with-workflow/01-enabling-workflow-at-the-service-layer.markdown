@@ -17,7 +17,9 @@ Now the `GB_Entry` database table contains the proper fields, but when you add
 a Guestbook Entry, you'll see that the new fields are not populated. You need
 to modify your service layer to set these fields. 
 
-Open `EntryLocalServiceImpl` and add the following line in the `addGuestbookEntry` method, immediately following the current setter methods (e.g., `entry.setMessage(message)`):
+Open `EntryLocalServiceImpl` and add the following line in the
+`addGuestbookEntry` method, immediately following the current setter methods
+(e.g., `entry.setMessage(message)`):
 
     entry.setStatus(WorkflowConstants.STATUS_DRAFT);
 
