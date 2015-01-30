@@ -330,10 +330,10 @@ add a column called `userId` of type `long`.
 :------: | :----: | :------:
 `userId` | long   | no
 
-Lastly, add columns to help audit both of the Event and Location entities. Add
-a column named `createDate` of type `Date` to note the date an entity instance
-was created. And add a column named `modifiedDate` of type `Date` to track the
-last time an entity instance was modified.
+Lastly, add columns to help audit your entities. Add a column named `createDate`
+of type `Date` to note the date an entity instance was created. And add a column
+named `modifiedDate` of type `Date` to track the last time an entity instance
+was modified.
 
 **Audit columns**
 
