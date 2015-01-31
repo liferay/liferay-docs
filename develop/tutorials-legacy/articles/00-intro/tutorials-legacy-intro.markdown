@@ -1,4 +1,4 @@
-# Legacy Developer Documentation
+# Legacy Developer Documentation [](id=legacy-developer-documentation)
 
 The Legacy Developer Documentation page provides links to developer 
 documentation for earlier versions of Liferay.

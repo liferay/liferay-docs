@@ -1,4 +1,4 @@
-# Portal Legacy Documentation
+# Portal Legacy Documentation [](id=portal-legacy-documentation)
 
 The Portal Legacy Documentation page gives you links to download user and 
 administrator documentation for previous versions of Liferay Portal. 
