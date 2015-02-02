@@ -385,7 +385,34 @@ facelet, yet in this example we map EDIT mode to the /edit.xhtml facelet. This
 seems confusing. - Jim -->
 
 Now that we've considered how to implement portal preferences, let's learn how
-to access the Portlet API. 
+to give feedback to users with validation messages. 
+
+### Giving Feedback to Users with Validation Messages [](id=liferay-faces-portal-validation-messages-liferay-portal-6-2-dev-guide-en)
+
+Liferay Faces Bridge automatically applies JSR 286 standard CSS class names
+`portlet-msg-error`, `portlet-msg-info`, and `portlet-msg-warn` to the 
+[`h:message`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/message.html)
+ and 
+[`h:messages`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/messages.html)
+tags. 
+
+---
+
+ ![Note](../../images/tip.png) **Note:** When running as a portlet, the ICEfaces
+ [`ice:messages`](http://www.icefaces.org/docs/latest/tld/ice/messages.html) and
+ [`ice:message`](http://www.icefaces.org/docs/latest/tld/ice/message.html)
+ component tags automatically apply the JSR 286 standard class names too.
+ Additionally, the 
+ [`ice:dataTable`](http://www.icefaces.org/docs/latest/tld/ice/dataTable.html)
+ component tag applies the following JSR 286 standard class names for
+ alternating table rows: 
+
+ - `portlet-section-alternate`
+ - `portlet-section-body`
+
+---
+
+Next, you'll learn how to access the Portlet API. 
 
 ### Accessing the Portlet API with ExternalContext [](id=access-portlet-api-with-externalcontext-liferay-portal-6-2-dev-guide-en)
 
@@ -1801,45 +1828,6 @@ qualified URL to an icon image in the current Liferay theme. Additionally,
 Liferay Faces Portal provides the `liferay.themeImagesURL` and
 `liferay.themeImageURL` Facelet composite component tags for gaining access to
 theme image icons. 
-
-### Giving Feedback to Users with Validation Messages [](id=liferay-faces-portal-validation-messages-liferay-portal-6-2-dev-guide-en)
-
-Most of the standard JSF HTML component tags render themselves as HTML markup
-such as `<label />`, `<input />`, `<span />`, etc. and assume the current
-Liferay theme thanks to the power of CSS. However, the
-[`h:messages`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/messages.html)
-and
-[`h:message`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/message.html)
-tag will not assume the current Liferay theme unless the following JSR 286
-standard CSS class names `portlet-msg-error`, `portlet-msg-info`, and
-`portlet-msg-warn` are applied: 
-
-        <h:messages errorClass="portlet-msg-error" fatalClass="portlet-msg-error" infoClass="portlet-msg-info" warnClass="portlet-msg-warn" /> 
-
-<!-- Demonstrate using the liferay-ui:message tag for these message types.  - Jim -->
-
-As a convenience, Liferay Faces Portal provides the
-[`liferay-ui:message`](http://docs.liferay.com/faces/3.2/vdldoc/liferay-ui/message.html)
-Facelet composite component tag that encapsulates the
-[`h:message`](http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/h/message.html)
-tag. The `liferay-ui:message` tag automatically applies the JSR 286 standard
-class names, as shown above. 
-
----
-
- ![Note](../../images/tip.png) **Note:** When running as a portlet, the ICEfaces
- [`ice:messages`](http://www.icefaces.org/docs/latest/tld/ice/messages.html) and
- [`ice:message`](http://www.icefaces.org/docs/latest/tld/ice/message.html)
- component tags automatically apply the JSR 286 standard class names too.
- Additionally, the 
- [`ice:dataTable`](http://www.icefaces.org/docs/latest/tld/ice/dataTable.html)
- component tag applies the following JSR 286 standard class names for
- alternating table rows: 
-
- - `portlet-section-alternate`
- - `portlet-section-body`
-
----
 
 Next, we'll look at using Liferay Faces Portal's language capabilities
 with JSF Portlets. 
