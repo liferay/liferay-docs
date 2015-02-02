@@ -1,38 +1,38 @@
 # Writing Local Service Classes
 
 The heart of your service is its `*LocalServiceImpl` class. This class is your
-entity's local service extension point. Local services can be invoked by other
-Liferay applications running on the same Liferay instance as your application.
-Don't confuse local services with remote services. Remote services can be
-invoked from any application that can access your Liferay instance (e.g., over
-the internet) and has permission to do so. All of your application's core
-business logic for working with your entity model (or models) should be added as
-methods of your `*LocalServiceImpl` class. However, before adding any custom
-service methods, you should review the initial service classes that Service
-Builder generated during its initial run. 
+entity's local service extension point. Local services can be invoked within
+your application or by other Liferay applications running on the same Liferay
+instance as your application. Remote services differ from local services in that
+remote services can be invoked from any application that can access your Liferay
+instance (e.g., over the internet) and has permission to do so. All of your
+application's core business logic for working with your entity model (or models)
+should be added as methods of your `*LocalServiceImpl` class. However, before
+adding any custom service methods, you should review the initial service classes
+that Service Builder generated during its initial run. 
 
-**Best Practice:** If your application needs both local and remote services, add
-whatever local service methods you need to implement your business logic for
-working with your entity model to `*LocalServiceImpl`. Then create corresponding
-remote services methods to `*ServiceImpl`. Add permission checks to the remote
-services methods and make them call the local service methods. The remote
-service methods can have the same names as the local service methods that they
-call.
+**Best Practice:** If your application needs both local and remote services,
+determine the service methods that your application needs for working with your
+entity model. Add these service methods to `*LocalServiceImpl`. Then create
+corresponding remote services methods to `*ServiceImpl`. Add permission checks
+to the remote services methods and make them call the local service methods. The
+remote service methods can have the same names as the local service methods that
+they call. Within your application, only call the remote services. This ensures
+that your services methods are secured and you don't have to duplicate
+permissions code.
 
-Note that Service Builder created an `EventLocalService` class which is the
-interface for the local service. It contains the signatures of every method in
-`EventLocalServiceBaseImpl` and `EventLocalServiceImpl`.
-`EventLocalServiceBaseImpl` contains a few automatically generated methods
-providing common functionality. Since the `EventLocalService` class is
-generated, you should never modify it. If you do, your changes will be
-overwritten the next time you run Service Builder. Instead, all custom code
-should be placed in `EventLocalServiceImpl`.
+Note that Service Builder creates a `*LocalService` class which is the interface
+for the local service. It contains the signatures of every method in
+`*LocalServiceBaseImpl` and `*LocalServiceImpl`. `*LocalServiceBaseImpl`
+contains a few automatically generated methods providing common functionality.
+Since the `*LocalService` class is generated, you should never modify it. If you
+do, your changes will be overwritten the next time you run Service Builder. All
+custom code should be placed in `EventLocalServiceImpl`, where it will not be
+overwritten.
 
-Open the `EventLocalServiceImpl.java` file in your
-`/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/impl/` folder.
-
-Add the following database interaction methods to the `EventLocalServiceImpl`
-class:
+The Event Listing project's `EventLocalServiceImpl` class demonstrates the kinds
+of service methods that applications commonly need for working with an entity
+model. This class includes the following local service methods:
 
     public Event addEvent(
             long userId, long groupId, String name, String description,
@@ -141,8 +141,8 @@ class:
         return event;
     }	
 
-Remember to import the required classes. For your convenience, you can copy the
-following imports into your class: 
+Remember to import the required classes. `EventLocalServiceImpl` uses the
+following imports:
 
     import java.util.Calendar;
     import java.util.Date;
@@ -162,7 +162,7 @@ provides a counter service which you call to obtain a unique ID for each new
 Event entity. It's possible to use the `increment` method of Liferay's
 `CounterLocalServiceUtil` class but Service Builder already makes a
 `CounterLocalService` instance available to `EventLocalServiceBaseImpl` via
-Spring by dependency injection. Since your `EventLocalServiceImpl` class extends
+Spring dependency injection. Since your `EventLocalServiceImpl` class extends
 `EventLocalServiceBaseImpl`, you can access this `CounterLocalService` instance.
 See `EventLocalServiceBaseImpl` for a list of all the beans that Spring makes
 available for use. These include the following beans:
@@ -184,31 +184,35 @@ Liferay's `CounterLocalService`'s `increment` method directly.
 
     long eventId = counterLocalService.increment(Event.class.getName());
 
-We use the generated `eventId` as the ID for the new Event:
+The Event Listing project uses the generated `eventId` as the ID for the new
+Event:
 
     Event event = eventPersistence.create(eventId);
 
 `eventPersistence` is one of the Spring beans injected into
 `EventLocalServiceBaseImpl` by Service Builder. 
 
-Next, we set the attribute fields that we specified for the Event. First, we set
-the name and description of the Event. Then we use the date and time values to
-construct the Event's date. Lastly, we associate a location with the Event. 
+Next, the Event Listing project sets the attribute fields that were specified
+for the Event entity. First, the name and description of the Event need to be
+specified. Then the Event's date needs to be specified. Lastly, a Location must
+be associated to the Event. 
 
-Then we assign values to the audit fields. First, we set the group, or scope, of
-the entity. In this case the group is the site. Then we set the company and
-user. The company represents the portal instance. We set the `createDate` and
-`modifiedDate` of our Event to the current time. After that, we call the
-generated `addEvent` method of `EventLocalServiceBaseImpl` with our Event.
-Lastly, we add the Event as a resource so that we can apply permissions to it
-later. We'll cover the details of adding resources in the [Asset
-Framework](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/asset-framework-liferay-portal-6-2-dev-guide-06-en)
-section. 
+It's also important to assign values to the audit fields. In the Event Listing
+project, the group of the entity is set first. An entity's group determines its
+scope. In the example, the group is the site. The company and user are specified
+after the group is set. The company represents the portal instance and the user
+is the user who created the event. The Event Listing project sets the
+`createDate` and `modifiedDate` of the Event to the current time. After that,
+the generated `addEvent` method of `EventLocalServiceBaseImpl` is called to add
+the Event to the database. Lastly, the Event is added as a resource so that
+permissions can be applied to it later. For more information about adding
+resources, please see the
+[Asset Enabling Custom Entities](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+learning path. 
 
-Since events require event locations, let's implement the local services for the
-Location entity, too. Open your `LocationLocalServiceImpl.java` file in your
-`/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/impl/` folder
-and add the following methods:  
+The Event Listing project creates local services for Location entities as well
+as for Event entities. Here are the custom service methods that were added to
+the `LocationLocalServiceImpl` class in the Event Listing project:
 
     public Location addLocation(
             long userId, long groupId, String name, String description,
@@ -300,7 +304,7 @@ and add the following methods:
         return location;
     }
 
-Make sure to add the following imports:
+`LocationLocalServiceImpl` uses the following imports:
 
     import java.util.Date;
     import java.util.List;
@@ -313,30 +317,40 @@ Make sure to add the following imports:
     import com.nosester.portlet.eventlisting.model.Location;
     import com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl;
 
-Your local service implementations for events and locations are ready
-for action. 
+Before you can use any custom methods that you added to your `*LocalServiceImpl`
+class, you must run Service Builder again. Running Service Builder again adds
+the method signatures of your custom service methods to your `*LocalService`
+interface and updates your `*LocalServiceUtil` class.
 
-Before you can use any custom methods that you added to the
-`EventLocalServiceImpl` and `LocationLocalServiceImpl` classes, you must add
-their signatures to the `EventLocalService` and `LocationLocalService`
-interfaces by running Service Builder again.
+***Using Developer Studio:*** To run Service Builder from Liferay IDE or
+Developer Studio, open your `service.xml` file and make sure you are in the
+*Overview* mode. Then, select *Build Services*.
 
-***Using Developer Studio:*** As we did before, open your `service.xml` file and
-make sure you are in the *Overview* mode. Then, select *Build Services*.
+Alternatively, right-click on your project in the Package Explorer and then
+select *Liferay* &rarr; *Build Services* (or, equivalently, *Liferay* &rarr;
+*SDK* &rarr; *build-service*).
 
-***Using the terminal:*** Navigate to the root directory of your portlet in the
-terminal and run:
+***Using the terminal:*** Navigate to your portlet's directory in your Plugins
+SDK, and run the following command:
 
     ant build-service
 
-Service Builder looks through `EventLocalServiceImpl` and automatically copies
-the signatures of each method into the interface. You can now add a new Event to
-the database by making the following call:
+Service Builder looks through your `*LocalServiceImpl` class and automatically
+copies the signatures of each method into the corresponding `*LocalService`
+interface. After running Service Builder, you can test that your services are
+working as intended by invoking one the methods that Service Builder added to
+your `*LocalServiceUtil` class. For example, if you were developing the Event
+Listing project, you could make the following service invocation to make sure
+that your service was working as intended:
 
     EventLocalServiceUtil.addEvent(event);
 
-Service Builder generates the `addEvent` method in the `EventLocalServiceUtil`
-utility class. In addition to all the Java classes, Service Builder also
-generates a `service.properties` file which we'll discuss later. Next, let's
-call our newly implemented local service. 
-
+Service Builder generates methods in your `*LocalServiceUtil` class that
+correspond to the methods you implemented in your `*LocalServiceImpl` class. The
+utility service methods invoke the implementation service methods that you
+wrote. In addition to all of the Java classes and interfaces, Service Builder
+also generates a `service.properties` file. To learn about the
+`service.properties` file and how to configure it, please refer to the [Configuring `service.properties`](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/configuring-service.properties)
+tutorial. To learn how to invoke local services, please refer to the
+[Invoking Local Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+tutorial. 
