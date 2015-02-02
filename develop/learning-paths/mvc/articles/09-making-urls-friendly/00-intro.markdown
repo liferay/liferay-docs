@@ -11,10 +11,10 @@ that the portal so generously generated:
 
 As the developer of the app, maybe you like to see all those parameters as much
 as Liferay likes to generate them for you. How do you think the app's
-users will feel when they see the URL? Let's make it a little more friendly,
-and meaningful, for them. Your app's users aren't the only reason to create
-Friendly URLs. Search Engine Optimization requires that your URLs be *concise*.
-That's one word you wouldn't use to describe the generated URL above.
+users will feel when they see the URL? Let's make it a little more friendly--
+and meaningful--for them. Your app's users aren't the only reason to create
+Friendly URLs. Search engine optimization requires that your URLs be *concise*.
+That's a word you wouldn't use to describe the generated URL above.
 
 You can greatly improve the readability of any portlet URLs in Liferay, and the
 first part of this learning path will show you how.
@@ -23,6 +23,6 @@ If you've inspected the Guestbook App's URLs closely, did you notice that the
 Primary Key of `Guestbook` and `Entry` entities are frequently used as URL
 parameters? In the second part of this learning path, you'll remedy that by
 substituting the `name` field of each entity for the Primary Key. Then your
-portlet URLs will be even friendlier, wich means they'll be more human
-readable, more concise, and more likely to buy you dinner. Okay, one of those
-claims isn't true, but the point remains; the resulting URLs will be Friendly.
+portlet URLs will be even friendlier, which means they'll be more human
+readable, more concise, and more likely to buy you dinner. Okay, that last one
+is pushing it a bit, but the point remains: the resulting URLs will be Friendly.
