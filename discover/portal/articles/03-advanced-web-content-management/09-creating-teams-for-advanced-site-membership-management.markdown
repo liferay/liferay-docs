@@ -18,11 +18,12 @@ Message Boards portlet, and assign the desired users (who must be site members)
 to the Site Team.
 
 If you create a team for one site, the permissions defined for it are not
-available to any other sites. In contrast, if you assigned a custom role to a
-user group, the role would be available portal-wide even though the specific
-permissions defined by it would only apply within the scope of a designated
-site. Furthermore, team members, unlike user group members, are guaranteed to be
-members of the desired site.
+available to any other sites. If you want to define permissions for groups of
+users and use those groups across multiple sites or organizations in your
+portal, consider assigning a custom role to a 
+[user group](discover/portal/-/knowledge_base/6-2/user-groups). Team members,
+unlike user group members, are guaranteed to be members of the desired
+site.
 
 To create a team within a site, first navigate to the Site Administration page
 of your site and select *Users* &rarr; *Site Teams*. It's important to note that
