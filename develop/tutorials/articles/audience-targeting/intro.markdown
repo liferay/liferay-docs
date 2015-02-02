@@ -1,4 +1,4 @@
-# Extending the Audience Targeting application [](id=extending-the-audience-targeting-application)
+# Audience Targeting [](id=audience-targeting)
 
 The Audience Targeting application is designed as a framework to be extended by
 other developers easily.
