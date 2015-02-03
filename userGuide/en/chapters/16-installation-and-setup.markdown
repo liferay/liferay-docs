@@ -2228,55 +2228,55 @@ Congratulations on successfully installing and deploying Liferay on Tomcat!
 ## Installing Liferay on Oracle WebLogic 12c (12.1.2 and higher) [](id=install-liferay-on-weblogic-12c-liferay-portal-6-2-user-guide-15-en)
 
 In this section, you'll learn how to install Liferay on Oracle WebLogic 12c.
-Since you're using Oracle WebLogic, you may be curious of Liferay's support of
-XA transactions. Liferay doesn't require XA transactions, but it supports XA.
+Since you're using Oracle WebLogic, you may wonder if Liferay supports XA
+transactions. Liferay doesn't require XA transactions, but it supports XA.
 Let's get acquainted with how Liferay fits in with your current WebLogic domain. 
 
-For demonstration purposes, we'll assume *Liferay Home* is one folder above the
-domain to which you will be installing Liferay.
-
-For example, if your domain location is
+Liferay by default defines *Liferay Home* as one folder above the domain in
+which you'll be installing Liferay. For example, if your domain location is
 `/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain`, then your
 Liferay Home is `/Oracle/Middleware/Oracle_Home/user_projects/domains`.
 
-For this section, we will use `$WL_HOME` to refer to your WebLogic
-server's installation `/Oracle/Middleware/Oracle_Home/wlserver`. 
+For this section, the variable `$WL_HOME` refers to the location of your
+WebLogic server installation (e.g., `/Oracle/Middleware/Oracle_Home/wlserver`). 
 
-Before you begin, make sure you have downloaded the latest Liferay `.war` file
-and Liferay Portal dependencies from
+Before you begin, make sure to download the latest Liferay `.war` file and
+Liferay Portal dependencies from
 [http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
 The Liferay `.war` file is called `liferay-portal-[version].war` and
 the dependencies file is called `liferay-portal-dependencies-[version].zip`.
 
-These instructions assume you have already configured a domain and server and
-that you have access to the WebLogic console.
+These instructions assume you've already configured a domain and server and that
+you have access to the WebLogic console.
 
-If you still have the `mainWebApp` module installed, remove it first.
+If you still have the `mainWebApp` module installed in your WebLogic server
+installation, remove it before proceeding with the instructions in this section.
 
 Let's get started by installing the `.jar` files Liferay needs.
 
 ### Dependency Jars [](id=dependency-jars-liferay-portal-6-2-user-guide-15-en-4)
 
-Liferay needs the `.jar` files contained in the Liferay Dependencies Archive and
-the driver `.jar` file applicable for your database. We'll put them on your
-domain's global classpath. 
+Liferay needs the driver `.jar` file applicable for the database you plan to use
+for Liferay. Liferay also needs the `.jar` files contained in the Liferay
+Dependencies Archive. All of these `.jar` files must go into your domain's
+global classpath. 
 
-1.  Navigate to the folder that corresponds to the domain to which you will be
-    installing Liferay. Inside this folder is a `lib` folder. Unzip the Liferay
-    Dependencies Archive to this folder so the dependency `.jar` files reside in
-    the `lib` folder.
+1.  Navigate to your domain's `lib` folder. Extract the dependency `.jar` files
+    from the Liferay Dependencies Archive to your domain's `lib` folder.
 
 2.  If WebLogic does not already have access to the JDBC driver for your
     database, copy the driver to your domain's `lib` folder as well.
 
-So far so good. Your `.jar` files are in place and ready for Liferay.
+So far so good. The `.jar` files on which your Liferay Portal will depend are in
+place. 
 
 Let's proceed with configuring WebLogic.
 
 ### Configuring WebLogic [](id=configuring-weblogic-liferay-portal-6-2-user-guide-15-en)
 
-Let's make the following adjustments in your configuration to support using
+You need to make the following adjustments in your configuration to support
 Liferay:
+
 - Set WebLogic Server's memory arguments.
 - Set the maximum size for Java's permanent generation space.
 - Set the file encoding.
@@ -2285,20 +2285,20 @@ Liferay:
 
 You can set WebLogic Server's memory arguments in your `setDomainEnv.[cmd|sh]`
 environment script file found in your domain's `bin` folder. For the Sun JVM,
-we'll set the WLS memory arguments for 64 bit and 32 bit architectures to
-`-Xms256m -Xmx1024m` at a minimum. For all other JVMs, we'll set the 64 bit and
-32 bit WLS memory arguments to `-Xms512m -Xmx512m` respectively. 
+set the WLS memory arguments for 64 bit and 32 bit architectures to at least
+`-Xms256m -Xmx1024m`. For all other JVMs, set the 64 bit and 32 bit WLS memory
+arguments to `-Xms512m -Xmx512m` respectively. 
 
-We'll set the permanent generation space for 64 bit and 32 bit architectures
+Set the permanent generation space for 64 bit and 32 bit architectures
 to `-XX:PermSize=256m`.
 
-Lastly, we'll make sure to specify UTF-8 for Java's file encoding, by
-including `-Dfile.encoding=UTF8` as a Java property.
+Lastly, make sure to specify UTF-8 for Java's file encoding, by including Java
+property `-Dfile.encoding=UTF8`.
 
-If you're on Windows, for example, you'd edit your `setDomainEnv.cmd` file and
-find the call to the `commEnv.cmd` script. After this call, you'd update your
-memory arguments and permanent generation space settings to be like the
-following code: 
+To specify all of these settings on Windows, for example, you'd edit your
+`setDomainEnv.cmd` file and find the call to the `commEnv.cmd` script. After
+this call, you'd update your memory arguments and permanent generation space
+settings to be like the following code: 
 
     ...
     if "%JAVA_VENDOR"=="Sun" (
@@ -2314,25 +2314,24 @@ following code:
 
 Later in the `setDomainEnv.cmd` file's clustering support section, you'd set
 the UTF-8 file encoding by appending `-Dfile.encoding=UTF8` to the front of the
-list of Java property values, as done in the following line of code: 
+list of Java property values. Here's what that setting could look like: 
 
     set JAVA_PROPERTIES=-Dfile.encoding=utf8 %JAVA_PROPERTIES% %CLUSTER_PROPERTIES%
 
-Next, we'll need to specify some local environment settings to support Liferay's
-memory requirements, its use of the [Apache
-Lucene](http://en.wikipedia.org/wiki/Lucene) search engine library, and its use
-of Aspect Oriented Programming (AOP) with
+Next, you need to specify local environment settings to support Liferay's
+memory requirements, its use of the [Apache Lucene](http://en.wikipedia.org/wiki/Lucene) 
+search engine library, and its use of Aspect Oriented Programming (AOP) with
 [AspectJ](http://en.wikipedia.org/wiki/AspectJ).
 
-From within domain, open the script file that starts the server that will host
-the Liferay application. To deploy Liferay to a managed server (recommended)
-you'll want to edit the `startManagedWebLogic.[cmd|sh]` file. If you're on
-Windows, you'd add directives similar to those listed below, after the
+From within the domain, open the script file that starts the server that will
+host the Liferay application. To deploy Liferay to a managed server
+(recommended) you'd edit the `startManagedWebLogic.[cmd|sh]` script file. If
+you're on Windows, you'd add directives similar to those listed below, after the
 `SETLOCAL` command:
 
     set "USER_MEM_ARGS=-Xmx1024m -XX:PermSize=512m"
     
-    set "MW_HOME=D:\Oracle\Middleware\Oracle_Home\wlserver"
+    set "MW_HOME=D:\Oracle\Middleware\wlserver"
     
     set "JAVA_OPTIONS=%JAVA_OPTIONS% -da:org.apache.lucene... -da:org.aspectj..."
 
@@ -2340,16 +2339,20 @@ Make sure to set your `MW_HOME` value to your WebLogic server's location. On
 Linux, you'd make similar changes replacing `%JAVA_OPTIONS%` with
 `$JAVA_OPTIONS`. 
 
-If you want to use Liferay to manage your database and mail session
-(recommend), you can skip the next sections and go to the section
-*Security Configuration* below. But if you want to configure your database
-and/or mail session within WebLogic, start your WebLogic server and follow the
-instructions in the next section. 
+Now that your WebLogic environment is configured for Liferay, you should
+consider how you want to manage the database and mail session for Liferay. We
+recommend that you use Liferay to manage your database and mail session. If you
+want to use Liferay to manage them, you can skip the next sections and go to the
+section that follows titled *Security Configuration*. But if for some reason
+you'd rather configure your database and/or mail session within WebLogic, you
+can start your WebLogic server and follow the instructions in the next
+section(s) that apply. 
 
 ### Database Configuration [](id=database-configuration-liferay-portal-6-2-user-guide-15-en-4)
 
-If you want WebLogic to manage your data source, use the following procedure. If
-you want to use Liferay's built-in data source, you can skip this section.
+If you want WebLogic to manage your database for Liferay, use the following
+procedure. If you want to use Liferay's built-in data source (recommended), you
+can skip this section.
 
 1.  Select *Services &rarr; Data Sources.* Click *New &rarr; Generic Data
     Source*.
@@ -2361,15 +2364,14 @@ you want to use Liferay's built-in data source, you can skip this section.
 
 4.  Click *Next* three times. You should be on the *Connection Properties*
     screen. Enter the database name, the host name, the port, the database user
-    name and the password. WebLogic uses this information to construct the
+    name, and the password. WebLogic uses this information to construct the
     appropriate JDBC URL to connect to your database. Click *Next*.
 
 5.  WebLogic prompts you to confirm the information you've specified for your
     data source. 
 
-    Depending on the database you are using, you may need to specify additional
-    parameters. For example, you may need to modify your JDBC URL to include
-    additional parameters. If you need to access previous wizard pages to modify
+    Depending on the database you're using, you may need to specify additional
+    parameters. If you need to access previous wizard pages to modify
     information, click *Back* to revisit those pages. 
 
     When you're done specifying your configuration, click *Next*. 
@@ -2377,63 +2379,61 @@ you want to use Liferay's built-in data source, you can skip this section.
 6.  Click *Test Configuration* to make sure WebLogic can connect to your
     database successfully. When it does, click *Finish*.
 
-7.  You will be back to the list of data sources. Notice your new data source
+7.  WebLogic shows the listing of data sources. Notice that your new data source
     has no value in the *Target* column. Click on your data source to edit it.
 
 8.  Click the *Targets* tab and check off the server instance(s) to which you
     wish to deploy your data source. Then click *Save*.
 
+9.  To configure additional portal properties for the WebLogic data source, you
+    must shutdown the server(s) that you're targeting for the Liferay
+    deployment. 
+
+10. Create a `portal-ext.properties` file in your Liferay Home folder. 
+
+11. Add the following property setting to your `portal-ext.properties` file.
+
+        jdbc.default.jndi.name=jdbc/LiferayPool
+
 Your data source is set up in WebLogic Server. You'll need to configure a mail
-session too. If you want to use Liferay to manage your portal's mail, then you
-can skip the next section. Otherwise, you can follow the instructions in the
-next section to configure a mail session to manage in WebLogic. 
+session too. We recommend that you use Liferay to manage your portal's mail
+session. If you want to use Liferay to manage your portal's mail session
+(recommended), skip the next section. If for some reason you want to use
+WebLogic to manage your mail session, you can follow the instructions in the
+next section. 
 
 ### Mail Configuration [](id=mail-configuration-liferay-portal-6-2-user-guide-15-en-4)
 
-If you want WebLogic to manage your mail sessions, use the following procedure.
-If you want to use Liferay's built-in mail sessions, you can skip this section.
+If you want WebLogic to manage your mail session, use the following procedure.
+If you want to use Liferay's built-in mail session (recommended), you can skip
+this section. 
 
-1.  Select *Mail Sessions* and create a new mail session which points to your
+1.  Start your WebLogic server(s). 
+
+2.  Select *Mail Sessions* and create a new mail session which points to your
     mail server.
 
-2.  Give it the name *Liferay Mail* and give it the JNDI name of
+3.  Give it the name *Liferay Mail* and give it the JNDI name of
     `mail/MailSession` and click *Next*.
 
-3.  Choose your server and then click *Finish*.
+4.  Choose your server and then click *Finish*.
 
-Now let's make sure Liferay can access this mail session.
+9.  To configure additional portal properties for the WebLogic mail session,
+    you must shutdown the server(s) that you're targeting for the Liferay
+    deployment. 
 
-### Domain Configuration - Continued [](id=domain-configuration-continued-liferay-portal-6-2-user-guide-15-en-0)
+10. Create a `portal-ext.properties` file in your Liferay Home folder, if you
+    haven't already created it. 
 
-At this point, you've prepared your WebLogic server environment for installing
-Liferay as an application.
+11. Add the following property setting to your `portal-ext.properties` file.
 
-If you want to use Liferay to manage your mail session (recommended), you
-can configure the mail session in the Control Panel. After starting your portal
-as described in the
-[Deploy Liferay](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-oracle-weblogic-12c-12-1-2-and-h#deploy-liferay)
-section, you can go to *Control Panel &rarr; Server
-Administration &rarr; Mail* and enter the settings for your mail session.
+        mail.session.jndi.name=mail/MailSession
 
-If however you've configured WebLogic to manage your your mail session, you must
-configure additional portal properties. Similarly, if you've configured WebLogic
-to manage your database, you must configure additional portal properties. To
-configure Liferay to use a WebLogic data source or WebLogic mail session, create
-a `portal-ext.properties` file in your Liferay Home folder.
-
-If you're using WebLogic to manage your mail session, add the following
-configuration to your `portal-ext.properties` file to reference that mail
-session:
-
-    mail.session.jndi.name=mail/MailSession
-
-If you're using WebLogic to manage your data source, add the following property
-setting to your `portal-ext.properties` file:
-
-    jdbc.default.jndi.name=jdbc/LiferayPool
+Liferay Portal will reference your WebLogic mail session via this portal
+property setting. 
 
 Before you deploy Liferay, regardless of whether you're using Liferay or
-WebLogic to manage your database or mail session, you should enable and
+WebLogic to manage your database and/or mail session, you should enable and
 configure Java Security. This will enable your portal to use Liferay's plugin
 security manager with the Liferay apps that you download and install from
 Liferay Marketplace. 
@@ -2571,15 +2571,15 @@ Now its the moment you've been waiting for: Liferay deployment!
 ### Deploy Liferay [](id=deploy-liferay-liferay-portal-6-2-user-guide-15-en-4)
 
 Although you can deploy Liferay on a WebLogic Admin Server, we recommend
-deploying Liferay to a managed server. That way, if Liferay needs to be rolled
-back to a particular state, the Admin Server can do that. In a managed server,
-you'll also be able to startup / shutdown Liferay quicker and you'll more easily
-be able to extend Liferay into a cluster configuration. 
+deploying Liferay to a managed server. As a best practice, you should dedicate
+the Admin Server to managing other servers that run your apps. By deploying to a
+managed server, you'll be able to startup/shutdown Liferay more quickly and
+you'll more easily be able to extend Liferay into a cluster configuration. 
 
-Regardlesss of which server you target to host Liferay in your WebLogic server
-domain, here are steps for deploying Liferay: 
+Regardlesss of which server(s) you target to host Liferay in your WebLogic
+server domain, here are steps for deploying Liferay: 
 
-1.  Start your WebLogic server if it's not already started.
+1.  Start your WebLogic server, if it's not already started.
 
 2.  Go to *Deployments* and select the Liferay `.war` file from the file system,
     or click the *Upload Your File(s)* link to upload it and then click *Next*.
@@ -2593,6 +2593,15 @@ domain, here are steps for deploying Liferay:
 
 6.  Click *Finish*. After the deployment finishes, click *Save*.
     Liferay precompiles all the JSPs, and Liferay launches.
+
+If you're using Liferay to manage your database, you can use
+Liferay's Setup Wizard that Liferay Portal shows the first time that you go to
+the portal. 
+
+If you're using Liferay to manage your mail session (recommended), you
+can configure the mail session in the Control Panel. You go to *Control Panel
+&rarr; Server Administration &rarr; Mail* and enter the settings for your mail
+session. 
 
 Congratulations! You are now running Liferay on Oracle WebLogic 12c.
 
