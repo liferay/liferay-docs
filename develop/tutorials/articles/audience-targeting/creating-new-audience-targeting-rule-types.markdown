@@ -30,6 +30,8 @@ environment.
 
 You can download the Audience Targeting SDK from the following
 [wiki](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Audience+Targeting).
+To learn more about how to install and use a plugins SDK, visit the
+[Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk) tutorials.
 
 <!-- There's not an official downloads page because the WCM team is working
 on a new SDK based on Gradle and they want that one to replace this one. Once
@@ -62,59 +64,66 @@ tutorial, you'll learn how to create a rule and deploy it to your Liferay
 server.
 
 1. In the root of the Audience Targeting project, run the `create_rule` command
-   (depending on your OS). For example, the command below shows creating a
-   `time-zone` rule named *Time Zone*:
+   (depending on your OS) from a command prompt. For example, the command below
+   shows creating a `weather` rule named *Weather*:
 
-        create_rule.bat time-zone "Time Zone"
+        create_rule.bat weather "Weather"
 
     or
 
-        ./create_rule.sh time-zone "Time Zone"
+        ./create_rule.sh weather "Weather"
 
 2. Move to the newly generated folder that has your rule's name prefixed with
-   `rule-` (e.g., `rule-time-zone`). Notice that all the necessary files have
-   been added by the `create_rule` command. If you now run the `ant deploy`
-   command in the root of the newly generated folder, you'll find this new rule
-   listed when creating or editing a user segment in the Audience Targeting
-   application.
+   `rule-` (e.g., `rule-weather`). Open the folder and study what has been
+   generated for you automatically.
+   
+    The `create_rule command automatically created default files that allow the
+    plugin to be deployable right away. Before jumping in and learning about the
+    important files you'll need to focus on editing, you can deploy the project
+    to see how it currently looks in Portal.
 
-3. Of course, you still need to make some changes to define how your rule works.
-   Open the Java class file that was created (e.g., `TimeZoneRule.java`). Here
-   are some of the methods that you can implement to modify your rule behavior:
+3. Run the `ant deploy` command in the root of the newly generated folder.
+   You'll find this new rule listed when creating or editing a user segment in
+   the Audience Targeting application.
 
-    * `processRule`: handles the information provided by the administrator when
-    configuring this rule through the Rule GUI (for example, to store the
-    selected time zone in the `typeSettings` field in the database from a
-    *select*).
+4. To view your new Weather rule, navigate to your portal's *Admin* &rarr; *Site
+   Administration* &rarr; *Configuration* &rarr; *Audience Targeting* menu.
+   Click *Add User Segment* and scroll down to the Rules form and you'll notice
+   a Sample drop-down menu with the Weather rule you just deployed.
 
-    * `evaluate`: determines whether a given user matches the rule with the
-    information that has been stored. For example, it checks the time zone in
-    the user profile and compares it with the one stored in the database by the
-    `processRule` method. If they match, it returns `true`.
+    ![Figure 1: Although your new Weather rule is very bare bones, it is deployable to your Portal straight out-of-the-box.](../../images/default-sample-rule.png)
 
-    * `getFormHtml`: returns the HTML displayed to administrators when
-    configuring a Rule through the Rule GUI. The `BaseRule` class already
-    implements this method, including a FreeMarker template placed in
-    `templates/ct_fields.ftl`. For example, for the Time Zone Rule, you may add a
-    selector with the available time zones.
+    The default rule is not configured to evaluate anything yet, but you're able
+    to drag and drop the rule onto the form, as shown above.
 
-    * `getIcon`: configures the icon displayed in the Rule GUI. You should use
-    the name of a FontAwesome icon. For example: *"icon-coffee"* or
-    *"icon-globe"*
-    (See [Font Awesome documentation](http://fortawesome.github.io/Font-Awesome/3.2.1/))
+Awesome! You've deployed your rule plugin. Next, you'll need to learn about the
+components that were generated for you and how to edit them to create a
+functional Audience Targeting rule.
 
-    * `getName`: the name of your rule (it can be localized).
+There are three components you can specify for your rule:
 
-    * `getSummary`: the description of the Rule once it is configured. This is
-    used to help administrators. For example, if the Time Zone Rule has been
-    configured to GMT Zone, then the summary may be *Users who are in Timezone
-    GMT*.
+- *Rule Behavior*
+- *UI for Configuration (optional)*
+- *Language Keys (optional)*
 
-4. Finally, deploy the rule plugin in the Liferay server. The new rule will be
-   available in the Add/Edit User Segment form. When the User Segment admin
-   selects it, the GUI defined by the developer (e.g., the time zone selector)
-   is added to the Add/Edit User Segment form so that the admin can set a value
-   for that specific user segment.
+The behavior of your rule is controlled from a generated Java class file located
+in your rule's `src/com/liferay/content/targeting/rule/<RULE_NAME>` directory.
+The rule's UI and language keys can be configured in the
+`templates/ct_fields.ftl` and `content/Language.properties` files, respectively.
+You'll learn more about the latter two components later on.
+
+You'll begin creating your rule's functionality by specifying its behavior via
+the Java class (e.g., `WeatherRule.java`). This class already implements the
+`Rule` interface (required), and extends the `BaseRule` class. Furthermore,
+multiple methods are present in the Java class by default, but will require
+modifications before you have a working rule.
+
+If you navigate back to your Weather rule inside of your portal, you'll notice
+your new rule is listed under its own Sample category and has a puzzle piece
+icon. You'll change these next by modifying a couple generated default methods.
+
+
+
 
 Excellent! You now know how to create a custom rule type for your Audience
 Targeting application. For working examples of the default rules included in the
