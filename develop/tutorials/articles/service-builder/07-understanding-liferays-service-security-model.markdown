@@ -1,4 +1,4 @@
-## Service Security Layers
+# Service Security Layers
 
 Liferay's remote services are secured by default. They sit behind a layer of
 security that allows only local connections. If you want to invoke Liferay
