@@ -77,21 +77,21 @@ server.
    `rule-` (e.g., `rule-weather`). Open the folder and study what has been
    generated for you automatically.
    
-    The `create_rule command automatically created default files that allow the
+    The `create_rule` command automatically created default files that allow the
     plugin to be deployable right away. Before jumping in and learning about the
-    important files you'll need to focus on editing, you can deploy the project
-    to see how it currently looks in Portal.
+    important files you'll need to modify, you can deploy the project to see how
+    it currently looks in Portal.
 
 3. Run the `ant deploy` command in the root of the newly generated folder.
    You'll find this new rule listed when creating or editing a user segment in
    the Audience Targeting application.
 
-4. To view your new Weather rule, navigate to your portal's *Admin* &rarr; *Site
+4. To view your new rule, navigate to your portal's *Admin* &rarr; *Site
    Administration* &rarr; *Configuration* &rarr; *Audience Targeting* menu.
    Click *Add User Segment* and scroll down to the Rules form and you'll notice
-   a Sample drop-down menu with the Weather rule you just deployed.
+   a Sample drop-down menu with the rule you just deployed.
 
-    ![Figure 1: Although your new Weather rule is very bare bones, it is deployable to your Portal straight out-of-the-box.](../../images/default-sample-rule.png)
+    ![Figure 1: Although your new rule is very bare bones, it is deployable to your Portal straight out-of-the-box.](../../images/default-sample-rule.png)
 
     The default rule is not configured to evaluate anything yet, but you're able
     to drag and drop the rule onto the form, as shown above.
@@ -106,11 +106,11 @@ There are three components you can specify for your rule:
 - *UI for Configuration (optional)*
 - *Language Keys (optional)*
 
-The behavior of your rule is controlled from a generated Java class file located
-in your rule's `src/com/liferay/content/targeting/rule/<RULE_NAME>` directory.
-The rule's UI and language keys can be configured in the
-`templates/ct_fields.ftl` and `content/Language.properties` files, respectively.
-You'll learn more about the latter two components later on.
+The behavior of your rule is controlled from a Java class file located in your
+rule's `src/com/liferay/content/targeting/rule/<RULE_NAME>` directory. The
+rule's UI and language keys can be configured in the `templates/ct_fields.ftl`
+and `content/Language.properties` files, respectively. You'll learn more about
+the latter two components later on.
 
 You'll begin creating your rule's functionality by specifying its behavior via
 the Java class (e.g., `WeatherRule.java`). This class already implements the
@@ -118,20 +118,20 @@ the Java class (e.g., `WeatherRule.java`). This class already implements the
 multiple methods are present in the Java class by default, but will require
 modifications before you have a working rule.
 
-If you navigate back to your Weather rule inside of your portal, you'll notice
-your new rule is listed under its own Sample category and has a puzzle piece
-icon. You'll change these next by modifying a couple generated default methods.
+If you navigate back to your rule inside of your portal, you'll notice it's
+listed under its own Sample category and has a puzzle piece icon. You'll change
+these next by modifying a couple generated default methods.
 
-1. Open your rule's generated Java class file and find the `getIcon()` method.
-   This method configures the icon displayed in the Rule GUI. Replace the
-   *"icon-puzzle"* return value with the name of a FontAwesome icon (e.g.,
-   *"icon-coffee"* or *"icon-globe"*) that appropriately fits your rule. Visit
-   the [Font Awesome documentation](http://fortawesome.github.io/Font-Awesome/3.2.1/)
-   for a complete list of values.
+1. Open your rule's Java class file and find the `getIcon` method. This method
+   configures the icon displayed in the Rule GUI. Replace the *"icon-puzzle"*
+   return value with the name of a FontAwesome icon (e.g., *"icon-coffee"* or
+   *"icon-globe"*) that appropriately fits your rule. Visit the [Font Awesome
+   documentation](http://fortawesome.github.io/Font-Awesome/3.2.1/) for a
+   complete list of values.
 
-2. Locate the `getRuleCategoryKey()` method and replace its return value with
-   the category key you'd like your rule to reside in. For example, to
-   categorize your rule in the *Session Attributes* category, replace the
+2. Locate the `getRuleCategoryKey` method and replace its return value with the
+   category key you'd like your rule to reside in. For example, to categorize
+   your rule in the *Session Attributes* category, replace the
    `SampleRuleCategory.KEY` return value with the
    `SessionAttributesRuleCategory.KEY` return value.
 
@@ -148,18 +148,20 @@ Since your rule is extending `BaseRule`, the FreeMarker language is already
 supported.
 
 If you're interested in another technology besides FreeMarker, create the
-`getFormHTML(...)` method in your Java class. This method is configured for
-FreeMarker templates in the `BaseRule` class. Therefore, if you plan on using an
-alternative to FreeMarker, you'll need override this method by creating and
-modifying it in the `<RULE_NAME>Rule.java` class. This method is used to
-retrieve the HTML created by the technology you choose, and return it as a
-string that is viewable from your rule's form. For further details on this
-method, visit the
+`getFormHTML(...)` method in your `<RULE_NAME>Rule.java` class. For further
+details on this method, visit the
 [BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)
 class.
 
+The `getFormHTML` method is configured for FreeMarker templates in the
+`BaseRule` class. Therefore, if you plan on using an alternative to FreeMarker,
+you'll need override this method by creating and modifying it in the
+`<RULE_NAME>Rule.java` class. This method is used to retrieve the HTML created
+by the technology you choose, and return it as a string that is viewable from
+your rule's form.
+
 For an example to illustrate what a drop-down menu would look like in a
-FreeMarker template (i.e. `ct_fields.ftl`), study the code snippet below:
+FreeMarker template (e.g., `ct_fields.ftl`), study the code snippet below:
 
     <@aui["fieldset"]>
         <@aui["select"] name="weather">
@@ -182,6 +184,15 @@ For other working examples of FreeMarker templates used for rule configuration,
 visit the Audience Targeting
 [project](https://github.com/liferay/liferay-apps-content-targeting/tree/samples2015)
 on Github.
+
++$$$
+
+**Note:** Recall the last component of Audience Targeting rules: Language Keys.
+To learn more about language keys and how to create, use, and generate them,
+visit the
+[Localization](/develop/tutorials/-/knowledge_base/6-2/localization) tutorials.
+
+$$$
 
 Now you'll jump back into modifying your rule's behavior via the
 `<RULE_NAME>Rule.java` class.
