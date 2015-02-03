@@ -1,0 +1,56 @@
+# Invoking Liferay Services from Your Application
+
+You can find Liferay's services by searching for them in the Javadocs:
+[http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/).
+Below, we'll show you how to search for portal services and portlet services.
+
+Let's start by finding a portal service. 
+
+## Finding Liferay Portal Services
+
+Liferay's Javadocs are easy to browse and well-organized. Here's how to find the
+*Organization* services: 
+
+1. In your browser, open up the Javadocs:
+   [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/) 
+
+2. Under *Portal Services*, click on the link for the
+   `com.liferay.portal.service` package, since the services for the Organization
+   entity belong to the *Portal* scope. 
+
+3. Find and click on the `*ServiceUtil` class (in this case,
+   `OrganizationLocalServiceUtil`) in the *Class Summary* table or the
+   *Classes* list at the bottom of the page. 
+
+That was easy! What if you want to find portlet services? 
+
+## Finding Liferay Portlet Services
+
+Searching for one of Liferay's built-in portlet services is also easy. Instead
+of clicking the link for the service package of the *portal*, click the link for
+the service package of the *portlet*. The portlet service packages use the
+naming convention `com.liferay.portlet.[portlet-name].service`, where
+`[portlet-name]` is replaced with the actual name of the portlet. 
+
+Here's how you find services for a user's blogs statistics:
+
+1. In your browser, open the Javadocs:
+   [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/)
+
+2. Under *Portlet Services*, click on the link for the
+   `com.liferay.portlet.blogs.service` package in the *Packages* frame, since
+   the services are a part of the Blogs portlet. 
+
+3. Find and click on the `*ServiceUtil` class (in this case
+   `BlogsStatsUserLocalServiceUtil`) in the *Class Summary* table or the
+   *Classes* list. 
+
+Now you're ready to invoke Liferay services.
+
+<!--
+Add examples of invoking Liferay Portal and Liferay portlet services
+
+## Invoking Liferay Portal Services
+
+## Invoking Liferay Portlet Services
+-->
