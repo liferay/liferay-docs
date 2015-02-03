@@ -262,7 +262,7 @@ named `showLocationAddress`:
     %>
 
 You can view a sample
-[`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/plat-fws/prefs/end/event-listing-portlet/docroot/html/locationlisting/view.jsp)
+[`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/liferay-mvc/prefs/end/event-listing-portlet/docroot/html/locationlisting/view.jsp)
 file to see an example of handling portlet preference inside a view JSP. The JSP
 retrieves the value of a portlet preference named `showLocationAddress` and if
 the preference's value is true, *all* of the location's fields are displayed. If
