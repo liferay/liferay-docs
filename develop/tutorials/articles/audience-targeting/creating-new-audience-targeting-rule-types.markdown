@@ -122,6 +122,66 @@ If you navigate back to your Weather rule inside of your portal, you'll notice
 your new rule is listed under its own Sample category and has a puzzle piece
 icon. You'll change these next by modifying a couple generated default methods.
 
+1. Open your rule's generated Java class file and find the `getIcon()` method.
+   This method configures the icon displayed in the Rule GUI. Replace the
+   *"icon-puzzle"* return value with the name of a FontAwesome icon (e.g.,
+   *"icon-coffee"* or *"icon-globe"*) that appropriately fits your rule. Visit
+   the [Font Awesome documentation](http://fortawesome.github.io/Font-Awesome/3.2.1/)
+   for a complete list of values.
+
+2. Locate the `getRuleCategoryKey()` method and replace its return value with
+   the category key you'd like your rule to reside in. For example, to
+   categorize your rule in the *Session Attributes* category, replace the
+   `SampleRuleCategory.KEY` return value with the
+   `SessionAttributesRuleCategory.KEY` return value.
+
+3. Deploy your rule again by running `ant deploy` from the command prompt. Your
+   updated rule should now have its customized icon and reside in the category
+   you specified.
+
+    ![Figure 2: For a Weather rule, the sun icon is chosen, and the Sesssion Attributes category is configured for the rule's residing place.](../../images/icon-category-rule.png)
+
+Now that you've modified some basic features in your Java class, you'll need to
+develop the UI for your rule's configuration. As you read earlier, your rule
+project already has an FTL template, which is used to show the rule's form.
+Since your rule is extending `BaseRule`, the FreeMarker language is already
+supported.
+
+If you're interested in another technology besides FreeMarker, create the
+`getFormHTML(...)` method in your Java class. This method is configured for
+FreeMarker templates in the `BaseRule` class. Therefore, if you plan on using an
+alternative to FreeMarker, you'll need override this method by creating and
+modifying it in the `<RULE_NAME>Rule.java` class. This method is used to
+retrieve the HTML created by the technology you choose, and return it as a
+string that is viewable from your rule's form. For further details on this
+method, visit the
+[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)
+class.
+
+For an example to illustrate what a drop-down menu would look like in a
+FreeMarker template (i.e. `ct_fields.ftl`), study the code snippet below:
+
+    <@aui["fieldset"]>
+        <@aui["select"] name="weather">
+            <@aui["option"] label="sunny" selected=(weather == "sunny") value="sunny" />
+            <@aui["option"] label="clouds" selected=(weather == "clouds") value="clouds" />
+            <@aui["option"] label="mist" selected=(weather == "mist") value="mist" />
+            <@aui["option"] label="snow" selected=(weather == "snow") value="snow" />
+            ...
+        </@>
+    </@>
+
+This FreeMarker code creates a *select* drop-down box with the name *weather*.
+Then there are several options to choose from that describe the type of weather.
+You would change the name and labels to match the *select* drop-down box/values
+you prefer.
+
+![Figure 3: This example rule uses the *select* drop-down box.](../../images/select-box-rule.png)
+
+For other working examples of FreeMarker templates used for rule configuration,
+visit the Audience Targeting
+[project](https://github.com/liferay/liferay-apps-content-targeting/tree/samples2015)
+on Github.
 
 
 
