@@ -1,55 +1,63 @@
 # Creating Teams for Advanced Site Membership Management [](id=creating-teams-for-advanced-site-membership-management)
 
-Site Teams are ad hoc groups of a site's users, assigned to a team to perform a
-specific task in the site. They allow site administrators to create various
-sets of users and permissions for site-specific functions. Teams are the
-preferred method for collecting permissions within a single site. Some common
-uses for Site Teams include:
+Site Teams are ad hoc groups of a site's users, that perform the same set of
+tasks in the site. Site administrators can assign these teams permissions for
+various site-specific functions. Site Teams are the preferred method for
+collecting permissions within a single site. Some common functions to assign
+a Site Team include:
+
 - Moderating site Wiki content, Message Boards threads, etc.
-- Creating a group of bloggers
+- Writing blogs
 - Editing a specific page in the site
 
-For instance, If your site uses a Message Boards portlet, allowing users to
-post threads, you might want to enable a subset of the site's members to
-moderate the categories and threads of the Message Boards, and perhaps even
-allow team members to ban abusive or offensive posters. To do this you could
-simply create a team *Web Moderators*, define the team's permissions on the
-Message Boards portlet, and assign the desired users (who must be site members)
-to the Site Team.
+For instance, if your site has Message Boards, you might want to enable a subset
+of the site's members to moderate the categories and threads, and perhaps to ban
+abusive/offensive posters. To do this, you could create a Site Team named *Web
+Moderators*, define the team's permissions on the Message Boards portlet, and
+assign the desired site members to the team. 
 
-If you create a team for one site, the permissions defined for it are not
-available to any other sites. If you want to define permissions for groups of
-users and use those groups across multiple sites or organizations in your
-portal, consider assigning a custom role to a 
-[user group](discover/portal/-/knowledge_base/6-2/user-groups). Team members,
-unlike user group members, are guaranteed to be members of the desired
-site.
+The permissions assigned to a Site Team only apply to that site. Knowing that
+a team's permissions don't impact other sites, the site administrator can
+concentrate on defining and applying permissions to his site's teams. 
+
++$$$
+
+To create and apply permissions for a group of users to use across multiple
+sites or organizations in your portal, consider aggregating the users into a
+[User Group](/discover/portal/-/knowledge_base/6-2/user-groups) and assigning
+the User Group permissions via
+[Roles](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/roles-and-permissions). 
+
+$$$
 
 To create a team within a site, first navigate to the Site Administration page
 of your site and select *Users* &rarr; *Site Teams*. It's important to note that
 configuring other site membership groupings, such as *Users*, *Organizations*,
-and *User Groups* can be found in the *Site Memberships* portlet, which is also
-located in the Users tab. You can visit the *Management* chapter for more
-information on how these site memberships. Finally, click the *Add Team* button.
+and *User Groups* can be done in the *Site Memberships* portlet, which is also
+located in the Users tab. You can visit the 
+[User Management](/discover/portal/-/knowledge_base/6-2/user-management)
+chapter for more information on how these site memberships. Finally, click the
+*Add Team* button. 
 
-![Figure 3.26: Creating teams within your site helps your users demonstrate teamwork and collaboration.](../../images/01-creating-a-team.png)
+![Figure 3.26: Creating teams within your site can foster teamwork and collaboration, as team permissions enable team members to access the same resources and perform the same types of tasks.](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
-click *Save*. Your new team will appear in the list. To add members, simply
-click on *Actions &rarr; Assign Members*.
+click *Save*. Your new team shows in the list. To add members, simply click on
+*Actions &rarr; Assign Members*.
 
-Permission management for teams is configured by navigating to *Actions* &rarr;
-*Permissions* for your individual site. Setting permissions for the team assigns
-every member of the team with equal permissions. Only administrators with the
-ability to edit/manage the team have the ability to manage team permissions.
+To manage a team's permissions, click on *Actions* &rarr; *Permissions* for that
+team. Setting permissions for the team assigns all of the team's members those
+permissions. Only administrators with the ability to edit/manage the team have
+the ability to manage team permissions.
 
-If your team's task is to moderate the Message Boards portlet, you'll want to
-give the team any permissions they should have for the Message Boards. Navigate
-to *Site Administration* &rarr; *Content* &rarr; *Message Boards* &rarr;
-*Permissions*, find your team in the Role column, and select the appropriate
-permissions. 
+If created team whose task is to moderate the Message Boards, for example, you'd
+want to give the team all of the permissions they'd need. So you'd Navigate to
+*Site Administration* &rarr; *Content* &rarr; *Message Boards* &rarr;
+*Permissions*, find the team in the Role column, and select the appropriate
+permissions.
 
 ![Figure 3.27: The Troll-busters Site Team has unlimited permissions on the Message Boards portlet.](../../images/site-team-permissions-message-boards.png)
 
-That's it! Now your team is ready to perform their functions. Next, let's look
-at how to configure Liferay for mobile devices.
+That's it! It's easy to give groups of site users appropriate permissions to
+perform their tasks. Next, let's look at how to configure Liferay for mobile
+devices.
