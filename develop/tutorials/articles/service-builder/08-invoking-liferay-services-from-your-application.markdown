@@ -45,7 +45,11 @@ Here's how you find services for a user's blogs statistics:
    `BlogsStatsUserLocalServiceUtil`) in the *Class Summary* table or the
    *Classes* list. 
 
-Now you're ready to invoke Liferay services.
+Now you're ready to invoke Liferay services. To invoke Liferay services, your
+Liferay instance must be configured to allow remote web service access. Please
+see the
+[Understanding Liferay's Service Security Model](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model) 
+tutorial for details.
 
 <!--
 Add examples of invoking Liferay Portal and Liferay portlet services
