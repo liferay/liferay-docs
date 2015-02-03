@@ -26,7 +26,7 @@ To create and apply permissions for a group of users to use across multiple
 sites or organizations in your portal, consider aggregating the users into a
 [User Group](/discover/portal/-/knowledge_base/6-2/user-groups) and assigning
 the User Group permissions via
-[Roles](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/roles-and-permissions). 
+[Roles](/discover/portal/-/knowledge_base/6-2/roles-and-permissions). 
 
 $$$
 
@@ -36,7 +36,7 @@ configuring other site membership groupings, such as *Users*, *Organizations*,
 and *User Groups* can be done in the *Site Memberships* portlet, which is also
 located in the Users tab. You can visit the 
 [User Management](/discover/portal/-/knowledge_base/6-2/user-management)
-chapter for more information on how these site memberships. Finally, click the
+chapter for more information on how these site memberships work. Finally, click the
 *Add Team* button. 
 
 ![Figure 3.26: Creating teams within your site can foster teamwork and collaboration, as team permissions enable team members to access the same resources and perform the same types of tasks.](../../images/01-creating-a-team.png)

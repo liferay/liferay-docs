@@ -1623,23 +1623,23 @@ The permissions assigned to a Site Team only apply to that site. Knowing that
 a team's permissions don't impact other sites, the site administrator can
 concentrate on defining and applying permissions to his site's teams. 
 
-+$$$
+---
 
-To create and apply permissions for a group of users to use across multiple
-sites or organizations in your portal, consider aggregating the users into a
-[User Group](/discover/portal/-/knowledge_base/6-2/user-groups) and assigning
-the User Group permissions via
+![Tip](../../images/01-tip.png) **Tip:** To create and apply permissions for a
+group of users to use across multiple sites or organizations in your portal,
+consider aggregating the users into a [User Group](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/user-groups)
+and assigning the User Group permissions via
 [Roles](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/roles-and-permissions). 
 
-$$$
+---
 
 To create a team within a site, first navigate to the Site Administration page
 of your site and select *Users* &rarr; *Site Teams*. It's important to note that
 configuring other site membership groupings, such as *Users*, *Organizations*,
 and *User Groups* can be done in the *Site Memberships* portlet, which is also
 located in the Users tab. You can visit the 
-[User Management](/discover/portal/-/knowledge_base/6-2/user-management)
-chapter for more information on how these site memberships. Finally, click the
+[User Management](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/user-management)
+chapter for more information on how these site memberships work. Finally, click the
 *Add Team* button. 
 
 ![Figure 3.26: Creating teams within your site can foster teamwork and collaboration, as team permissions enable team members to access the same resources and perform the same types of tasks.](../../images/01-creating-a-team.png)
