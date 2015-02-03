@@ -183,7 +183,93 @@ visit the Audience Targeting
 [project](https://github.com/liferay/liferay-apps-content-targeting/tree/samples2015)
 on Github.
 
+Now you'll jump back into modifying your rule's behavior via the
+`<RULE_NAME>Rule.java` class.
 
+1. Find the `processRule` method in your Java class. This method is called when
+   you click *Save* after selecting your rule in the Rules form. The portlet's
+   request and response, the rule instance's ID, and the values from the form
+   are received when the method is called.
+
+    In some cases, you may need to retrieve info from the portlet's request
+    and response, or the rule's ID. However, for this tutorial, you'll only need
+    the `values` parameter. This parameter represents all the values on the form
+    you're saving. 
+
+2. You'll need to return the string value for the selected entity you chose for
+   your rule type. For example, recall the FreeMarker code example you studied
+   earlier. To retrieve the selected value from the *select* box, you'd need to
+   retrieve the *weather* value:
+
+        @Override
+        public String processRule(
+            PortletRequest request, PortletResponse response, String id,
+            Map<String, String> values) {
+
+            return values.get("weather");
+        }
+
+    The return value is stored in the `typeSettings` of the rule instance.
+
+3. The next method you'll need to modify is the `populateContext` method. This
+   method injects the value the user selected into the variable you're returning
+   in the `processRule` method. For example, the following `populateContext`
+   method populates a *weather* context variable.
+
+        @Override
+        protected void populateContext(
+            RuleInstance ruleInstance, Map<String, Object> context,
+            Map<String, String> values) {
+
+            String weather = "sunny";
+
+            if (!values.isEmpty()) {
+                // Values from Request
+
+                weather = values.get("weather");
+            }
+            else if (ruleInstance != null) {
+                // Values from Database
+
+                weather = ruleInstance.getTypeSettings();
+            }
+
+            context.put("weather", weather);
+        }
+
+    First, this method checks if the value is available from the request. If
+    not, it checks for the value in the database. Then the context map is
+    updated by assigning the string key to the object value.
+
+Excellent! You've processed your rule and populated the rule's context. The last
+step you'll need to take is specifying what your rule should evaluate. The
+evaluation process determines whether the user matches the rule.
+
+1. Find the boolean `evaluate` method in your `<RULE_NAME>Rule.java` class.
+   Insert logic that obtains the real time user value of what you plan on
+   evaluating. For example:
+
+        ...
+        String userWeather = getUserWeather(anonymousUser);
+
+2. Insert logic that retrieves the value you stored in the `processRule` method.
+   For this example, the value would be retrieved from the rule instance's type
+   settings:
+
+        String weather = ruleInstance.getTypeSettings();
+
+3. Now that you have both the user value and the rule value, check to see if the
+values match. If they match, return `true`; otherwise, return `false`:
+
+        if (Validator.equals(userWeather, weather)) {
+            return true;
+        }
+
+        return false;
+
+4. Finally, deploy the rule plugin in the Liferay server. Your new rule is fully
+   functional, and the GUI you've defined is added to the Add/Edit User Segment
+   form so that administrators can set a value for that specific user segment.
 
 Excellent! You now know how to create a custom rule type for your Audience
 Targeting application. For working examples of the default rules included in the
