@@ -142,6 +142,6 @@ layers of security checks:
 - *User permission layer*: The user needs permission to access the related
   resources. 
 
-If you'd like to develop client applications that need to invoke Liferay's web
+If you'd like to develop client applications that can invoke Liferay's web
 services, make sure that your Liferay instance's web service security settings
 have been configured to allow access.
