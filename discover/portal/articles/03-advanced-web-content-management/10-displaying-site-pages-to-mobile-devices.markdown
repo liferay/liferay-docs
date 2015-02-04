@@ -23,25 +23,26 @@ learn every detail about a device from the device type, which is included in
 each request sent to the portal. Liferay's Mobile Device Rules can connect to
 device databases so that you can use their device characteristics in your rules. 
 
-Among the plugins available on Liferay Marketplace, you can find the Device
-Recognition Provider plugin. This plugin provides out of the box integration
-with WURFL, an open source database licensed with the AGPLv3 license. Commercial
-licenses are also available. It's also possible to develop plugins that
-integrate with other device databases. Even if you don't have a device database,
-you can still set up mobile device rules. They won't, however, be effective
-until a database is deployed, because the portal won't have enough information
-about the devices being used to make page requests.
+Among the applications available on Liferay Marketplace, you can find the Device
+Recognition Provider EE application. This app provides out-of-the-box
+integration with WURFL, an open source database licensed with the AGPLv3
+license. Commercial licenses are also available. It's also possible to develop
+plugins that integrate with other device databases. Even if you don't have a
+device database, you can still set up mobile device rules. They won't, however,
+be effective until a database is deployed, because the portal won't have enough
+information about the devices being used to make page requests.
 
 To configure mobile device rules, you must install the Device Recognition
-Provider plugin. This plugin uses the WURFL database to enable Liferay to detect
-which mobile device or operating system is being used for any given request. To
-install the plugin, navigate to the Store section of the Control Panel, located
-under the Marketplace heading. Click on the *Utility* section and then on *See
-All*. Search for the appropriate Device Recognition Provider plugin (CE or EE)
-and click on it. Finally, click on *Free* to acquire the plugin. Once you've
-acquired the plugin, you need to download and install it. To do so, navigate to
-the Purchased section of the Control Panel, find your Device Recognition
-Provider plugin, and click on *Download* and then *Install*.
+Provider EE application on your instance of Liferay Portal EE. This app uses the
+WURFL database to enable Liferay to detect which mobile device or operating
+system is being used for any given request. To install the app, navigate to the
+Store section of the Control Panel, located under the Marketplace heading. Click
+on the *Utility* section and then on *See All*. Search for the Device
+Recognition Provider EE application and click on it. Finally, click on the price
+tag to begin purchasing the app. Once you've acquired the app, you need to
+download and install it. To do so, navigate to the Purchased section of the
+Control Panel, find your Device Recognition Provider EE app, and click on
+*Download* and then *Install*.
 
 +$$$
 
@@ -81,7 +82,7 @@ that it's characterized as a *Simple Rule*. By default, only the Simple Rule
 type is available. The rules are designed to be extensible, and additional rule
 types can be added by your developers.
 
-![Figure 3.28: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.28: You need to install the Device Recognition Provider EE application to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device families and added some rules to them,
 you'll be ready to set up some actions. The actions defined for a family
