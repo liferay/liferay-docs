@@ -13,39 +13,15 @@ following URL:
 Isn't that a lot more user friendly? You can greatly improve the readability of
 any portlet URL, and you can do it in two easy steps:
 
-1. Add three lines to `liferay-portlet.xml`. 
-2. Create an XML file defining Friendly URL routes. 
+1. Create an XML file defining Friendly URL routes. 
+2. Add three lines to `liferay-portlet.xml`. 
 
 You'll learn how to do that next. 
 
-## Declaring Friendly URL Mapping to Liferay
-
-First, modify the Liferay portlet descriptor,
-`docroot/WEB-INF/liferay-portlet.xml`, by adding these lines after the
-`<indexer-class...>` declaration:
-
-        <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper</friendly-url-mapper-class>
-		<friendly-url-mapping>guestbook</friendly-url-mapping>
-		<friendly-url-routes>com/liferay/docs/guestbook/guestbook-friendly-url-routes.xml</friendly-url-routes>
-
-Save the file and ignore the errors for now. We haven't yet created the file
-declared in the `friendly-url-routes` tag, but we'll get to that soon.
-
-<!-- The paragraph above is exactly the reason that in the rest of the
-documentation, we update the descriptor as the last step. Please fix. -Rich -->
-
-So what are these tags used for? The `friendly-url-routes` tag lets us declare
-an XML file with URL routes that relate to the Liferay URLs. In almost all
-cases, you'll use the `DefaultFriendlyURLMapper` class as
-the `friendly-url-mapper-class`. It contains the logic to map your Friendly URL
-routes to Liferay URLs with parameters. The second tag, `friendly-url-mapping`,
-is just a name used to identify the routes. It appears in the URL right
-before the routes you declare.
-
 ## Defining Friendly URL Routes
 
-Your Friendly URL is now ready to emerge from the beastly URL above. While
-you're here,  you can clean up the URLs for some of the other links as well.
+Your Friendly URL is ready to emerge from the beastly URL above. While
+you're here, you can clean up the URLs for some of the other links as well.
 Follow these steps:
 
 1. Create `com/liferay/docs/guestbook/portlet/guestbook-friendly-url-routes.xml`.
@@ -106,7 +82,31 @@ There are two tags from the XML to focus on:
   it's nice to specify it here so the portal doesn't need to bother generating it
   on the fly.
 
-Here's what your friendly portlet URLs look like:
+Liferay isn't yet aware of your intention to use friendly URLs. The next
+section shows you how to inform the portal.
+
+## Declaring Friendly URL Mapping to Liferay
+
+Modify the Liferay portlet descriptor,
+`docroot/WEB-INF/liferay-portlet.xml`, by adding these lines after the
+`<indexer-class...>` declaration:
+
+        <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper</friendly-url-mapper-class>
+		<friendly-url-mapping>guestbook</friendly-url-mapping>
+		<friendly-url-routes>com/liferay/docs/guestbook/guestbook-friendly-url-routes.xml</friendly-url-routes>
+
+Save the file and ignore the errors for now. We haven't yet created the file
+declared in the `friendly-url-routes` tag, but we'll get to that soon.
+
+So what are these tags used for? The `friendly-url-routes` tag lets us declare
+an XML file with URL routes that relate to the Liferay URLs. In almost all
+cases, you'll use the `DefaultFriendlyURLMapper` class as
+the `friendly-url-mapper-class`. It contains the logic to map your Friendly URL
+routes to Liferay URLs with parameters. The second tag, `friendly-url-mapping`,
+is just a name used to identify the routes. It appears in the URL right
+before the routes you declare.
+
+Here's what your friendly portlet URLs look like now:
 
 - Add Guestbook: `http://localhost:8080/web/guest/home/-/guestbook/add_guestbook`
 - Add Entry: `http://localhost:8080/web/guest/home/-/guestbook/10616/add_entry`
