@@ -140,18 +140,17 @@ add two column `<div>`s, and so on.
 
     You're getting the hang of specifying columns, right?
 
-$$$
+    +$$$
     
-    **Note:** Liferay 6.2 themes use a fork of
-    Twitter Bootstrap v2.3.2 called 
+    **Note:** Liferay 6.2 themes use a fork of Twitter Bootstrap v2.3.2 called 
     [Alloy Bootstrap](https://github.com/liferay/alloy-bootstrap). Alloy
     Bootstrap affects Liferay's layout templates as well as its themes. Liferay
     6.2 layout templates use Bootstrap's 12 column grid system: 
     <http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem>.
 
-$$$
+    $$$
 
-6.  Finally, with each column `<div>...</div>`, you must include a Velocity
+5.  Finally, with each column `<div>...</div>`, you must include a Velocity
 template directive to render each column's portlets. As a user adds a portlet to
 the column of a page, the directives of the layout template's columns renders
 the portlet. 
@@ -169,7 +168,7 @@ the portlet.
     `"portlet-column-content"` and `portlet-column-content-[first|last|only]` in 
     the second argument, separated by a space.
 
-7.  Save the `.tpl` file. 
+6.  Save the `.tpl` file. 
 
 Believe it or not, you've just created a layout template! You can
 [deploy](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
@@ -179,9 +178,10 @@ If you want to see more examples of layout templates, check out the Page Layouts
 section of [Liferay Marketplace](www.liferay.com/marketplace) or look at the
 source of Liferay's layout templates available in the
 [`layouttpl`](https://github.com/liferay/liferay-plugins/tree/6.2.x/layouttpl)
-folder of the Liferay CE Plugins SDK repository
-<http://github.com/liferay/liferay-plugins>. Liferay Portal CE's core layout
-template files are available in the installation's
+folder of the
+[Liferay CE Plugins SDK repository](http://github.com/liferay/liferay-plugins).
+Liferay Portal CE's core layout template files are available in the
+installation's
 [`portal-web/docroot/layouttpl/custom/`](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-web/docroot/layouttpl/custom)
 folder. 
 

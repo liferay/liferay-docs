@@ -30,7 +30,7 @@ The iOS app development tutorials include the following topics:
 You can get started by making Liferay services available to your app. This is 
 accomplished by installing the iOS SDK.
 
-Related Topics:
+## Related Topics [](id=related-topics)
 
 [Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
 

@@ -1705,9 +1705,14 @@ available to the JVM.
 Note that there is a law of diminishing returns on memory, especially with 64
 bit systems. These systems allow you to create very large JVMs, but the larger
 the JVM, the more time it takes for garbage collection to take place. For this
-reason, you probably won't want to create JVMs of more than 2 GB in size. To
-take advantage of higher amounts of memory on a single system, run multiple JVMs
-of Liferay instead.
+reason, you probably won't want to increase memory drastically. You'll have to
+measure your portal's memory utilization and find a value that's large enough to
+do real work besides garbage collection, but small enough so that garbage
+collection is quick enough. If you have large amounts of memory on your server
+*and* your portal is limited by memory, it might make sense to have multiple
+JVMs with Liferay on a single server, rather than doubling the amount of memory
+above a certain threshold. If your server is CPU- or I/O-limited, you have other
+problems. 
 
 Issues with PermGen space can also affect performance. PermGen space contains
 long-lived classes, anonymous classes and interned Strings (immutable String

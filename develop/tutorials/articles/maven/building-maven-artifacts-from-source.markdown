@@ -60,13 +60,12 @@ latest Liferay CE Maven artifacts from source, follow these steps:
     `gpg --gen-key` and following the instructions. Once you've generated a GPG
     key, you can find your GPG keyname by running `gpg --list-keys`.
     
-+$$$
+    +$$$
 
-**Note**: If you only plan to
-    install the Liferay artifacts locally and not deploy them, the
-    `releases.[user name].properties` is not required 
+    **Note**: If you only plan to install the Liferay artifacts locally and not
+    deploy them, the `releases.[user name].properties` is not required. 
 
-$$$
+    $$$
 
 5.  Open a command prompt, navigate to your Liferay home directory, and build
     the Liferay Portal WAR file by running 

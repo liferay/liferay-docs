@@ -69,9 +69,11 @@ mark as question box in the new thread window. Threads marked as questions
 display the flag "waiting for an answer." Subsequent replies to the original
 message can be marked as an answer.
 
-Lastly, you can set the amount of time a post is displayed until it is taken
-away. You have options of 24 hours, 7 days, 30 days, and 365 days. After the
-time has passed, the post is removed from the message board.
+Lastly, you can set the amount of time a post is displayed on the portlet's 
+*Recent Posts* tab until it is taken away. You have options of 24 hours, 7 days, 
+30 days, and 365 days. After the time has passed, the post is removed from 
+*Recent Posts*. However, the post itself isn't deleted. It remains accessible 
+elsewhere on the message board.
 
 ## Email From [](id=email-from)
 
@@ -269,7 +271,7 @@ portal-related email (e.g., events.liferay.com). If you don't want to use the
 subdomain approach, you can unset this value to tell Liferay to use the *Email
 From* address specified in the portlet preferences to receive message board
 notification email replies. For example, the *Email From* address could be set
-to *replies@liferay.com*.
+to *replies\@liferay.com*.
 
 If you don't want to use a mail server subdomain, add the following line to your
 `portal-ext.properties` file:

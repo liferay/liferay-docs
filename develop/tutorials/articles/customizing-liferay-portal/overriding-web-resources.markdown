@@ -2,20 +2,10 @@
 
 Hooks are commonly used to override web resources, found in the `portal-web`
 directory of Liferay's source. You can use a hook to override JSP files, JSPF
-files, JavaScript files, CSS files, and images. 
+files, JavaScript files, and images. 
 
-+$$$
-
-**Important:** Some resources have
-additional requisites:
-
-- ***JSPF:*** Changes won't take effect unless you modify the JSP that
-  includes it. 
-- ***CSS:*** When modifying a CSS file imported by another CSS file, the
-  changes won't take effect unless you modify the parent CSS file (usually
-  `main.css`). 
-
-$$$
+**Important:** A JSPF change takes effect only when you modify a JSP that
+includes the JSPF. 
 
 Replacing a portal JSP is a simple task with hooks. 
 
@@ -58,10 +48,14 @@ Terms of Use page. You can accomplish this by following these steps:
 
     Modify the JSP file with your customization.
 
-    Note: lots of errors may show in the editor because the resources used in
+    +$$$
+
+    **Note:** Many errors may show in the editor because the resources used in
     the JSP (e.g., `PortalUtil`) are not available in the project; but they'll
     be available from the portal once the hook plugin is deployed to the portal
     server. 
+
+    $$$
 
 6.  Deploy your hook and wait until it is deployed successfully. 
 
@@ -98,5 +92,7 @@ demonstrates how to override Liferay's JSP files.
 Congratulations on overriding a Liferay Portal JSP! 
 
 ## Related Topics [](id=related-topics)
+
+[Overriding Language Properties Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
 
 [Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)

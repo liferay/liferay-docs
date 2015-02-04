@@ -29,8 +29,7 @@ successfully. So, we'll demonstrate adding a success message for an action
 successfully completed in My Greeting portlet. 
 
 1.  As a starting point, use the My Greeting portlet which is available in the
-<https://github.com/liferay/liferay-docs> 
-GitHub repository 
+[liferay-docs](https://github.com/liferay/liferay-docs) GitHub repository 
 [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferayui/success/begin/my-greeting-portlet).
 You'll need to clone the repository if you haven't already done so. Then copy
 the `my-greeting-portlet` folder into the `portlets` folder of your Liferay
@@ -41,24 +40,23 @@ add the attribute value `"success"` to the `actionRequest` via the
 `SessionMessages` helper class. You can add it at the end of the `processAction`
 method, so that the method looks like this: 
 
-    ```
-    @Override
-    public void processAction(
-        ActionRequest actionRequest, ActionResponse actionResponse)
-        throws IOException, PortletException {
+        @Override
+        public void processAction(
+            ActionRequest actionRequest, ActionResponse actionResponse)
+            throws IOException, PortletException {
 
-        PortletPreferences prefs = actionRequest.getPreferences();
-        String greeting = actionRequest.getParameter("greeting");
+            PortletPreferences prefs = actionRequest.getPreferences();
+            String greeting = actionRequest.getParameter("greeting");
 
-        if (greeting != null) {
-            prefs.setValue("greeting", greeting);
-            prefs.store();
+            if (greeting != null) {
+                prefs.setValue("greeting", greeting);
+                prefs.store();
+            }
+
+            SessionMessages.add(actionRequest, "success");
+            super.processAction(actionRequest, actionResponse);
         }
 
-        SessionMessages.add(actionRequest, "success");
-        super.processAction(actionRequest, actionResponse);
-    }
-    ```
     Make sure to import the `com.liferay.portal.kernel.servlet.SessionMessages` 
     class. 
 
@@ -66,28 +64,26 @@ method, so that the method looks like this:
 user and add the `liferay-ui` taglib declaration, so that the JSP looks like
 this: 
 
-    ```
-    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %> 
-    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %> 
-    <%@ page import="javax.portlet.PortletPreferences" %>
+        <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %> 
+        <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %> 
+        <%@ page import="javax.portlet.PortletPreferences" %>
 
-    <portlet:defineObjects />
+        <portlet:defineObjects />
 
-    <liferay-ui:success key="success" message="Greeting saved successfully!"
-    />
+        <liferay-ui:success key="success" message="Greeting saved successfully!"
+        />
 
-    <% PortletPreferences prefs = renderRequest.getPreferences(); String
-    greeting = (String)prefs.getValue(
-        "greeting", "Hello! Welcome to our portal."); %>
+        <% PortletPreferences prefs = renderRequest.getPreferences(); String
+        greeting = (String)prefs.getValue(
+            "greeting", "Hello! Welcome to our portal."); %>
 
-    <p><%= greeting %></p>
+        <p><%= greeting %></p>
 
-    <portlet:renderURL var="editGreetingURL">
-        <portlet:param name="mvcPath" value="/edit.jsp" />
-    </portlet:renderURL>
+        <portlet:renderURL var="editGreetingURL">
+            <portlet:param name="mvcPath" value="/edit.jsp" />
+        </portlet:renderURL>
 
-    <p><a href="<%= editGreetingURL %>">Edit greeting</a></p>
-    ```
+        <p><a href="<%= editGreetingURL %>">Edit greeting</a></p>
 
 4.  Redeploy the portlet, go to the edit screen, edit the
 greeting, and save it. Similar to the figure below, the portlet shows your
@@ -111,38 +107,34 @@ Let's add error notification to the My Greeting portlet:
 1.  Add the following `liferay-ui:error` tag to your `view.jsp` after the
 `liferay-ui:success` tag: 
 
-    ```
-    <liferay-ui:error key="error" message="Sorry, an error prevented saving
-    your greeting" />
-    ```
+        <liferay-ui:error key="error" message="Sorry, an error prevented saving
+        your greeting" />
 
 2. Modify `MyGreetingPortlet.java`'s `processAction` method to flag an error to
 the `actionRequest`, on catching an exception. Your `processAction` method should
 look like this: 
 
-    ```
-    @Override
-    public void processAction(
-        ActionRequest actionRequest, ActionResponse actionResponse)
-        throws IOException, PortletException {
+        @Override
+        public void processAction(
+            ActionRequest actionRequest, ActionResponse actionResponse)
+            throws IOException, PortletException {
 
-        PortletPreferences prefs = actionRequest.getPreferences();
-        String greeting = actionRequest.getParameter("greeting");
+            PortletPreferences prefs = actionRequest.getPreferences();
+            String greeting = actionRequest.getParameter("greeting");
 
-        if (greeting != null) {
-            try {
-                prefs.setValue("greeting", greeting);
-                prefs.store();
+            if (greeting != null) {
+                try {
+                    prefs.setValue("greeting", greeting);
+                    prefs.store();
+                }
+                catch(Exception e) {
+                    SessionErrors.add(actionRequest, "error");
+                }
             }
-            catch(Exception e) {
-                SessionErrors.add(actionRequest, "error");
-            }
+
+            SessionMessages.add(actionRequest, "success");
+            super.processAction(actionRequest, actionResponse);
         }
-
-        SessionMessages.add(actionRequest, "success");
-        super.processAction(actionRequest, actionResponse);
-    }
-    ```
 
     Make sure to import the `com.liferay.portal.kernel.servlet.SessionErrors` 
     class.

@@ -141,7 +141,8 @@ functionality. For example, if you navigate to the Control Panel, click on
 *Server Administration* and then on *External Services*, you can install and
 enable Xuggler. Enabling Xuggler allows you to embed audio and video files in
 web content. Installing and enabling Xuggler is easy; you can do it right from
-the Control Panel. Please refer to chapter 17 of this guide for more details.
+the Control Panel. Please refer to [Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
+article of this guide for more details.
 
 Once Xuggler has been installed and enabled, embedding audio or video files in a
 web content is easy. From the Dockbar, navigate to *Site Content* &rarr; *Web
@@ -231,7 +232,8 @@ search engine that's crawling your site, this means that the location of your
 article never changes. And if you decide to use the content on another page in
 the future, the article is still available at this URL. This feature is used in
 search results, in related assets and in Asset Publishers. For more information
-on Liferay's Display Pages, see chapter 5.
+on Liferay's Display Pages, see the [Content Display Pages](/discover/portal/-/knowledge_base/6-2/using-the-asset-publisher#content-display-pages)
+article.
 
 **Related Assets:** enables you to connect any number of assets within a site or
 across the portal, even if they don't share any tags and aren't in the same

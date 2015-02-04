@@ -141,7 +141,6 @@ content, please take the following steps:
         importer-portlet to group 10194 takes 1294 ms
         ...
 
-
 4. View your resources from within Liferay. Log in to your portal as an
    administrator and check the Global site to make sure that your resources were
    deployed correctly. Here's how you can use the Control Panel to view your
@@ -236,16 +235,15 @@ Lastly, you can also specify portlet preferences for each portlet using the
 
 +$$$
 
-**Tip**: You can also import resources, such as
- web content articles, using the Resources Importer. For example, it's very
- useful to import web content articles along with a page template that
- references the articles, in a nested Web Content Display portlet. For more
- information on importing resources, see
- [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
+**Tip**: You can also import resources, such as web content articles, using the
+Resources Importer. For example, it's very useful to import web content articles
+along with a page template that references the articles, in a nested Web Content
+Display portlet. For more information on importing resources, see
+[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
 
 $$$
 
-The figure below, shows a page created using the Page 3 template.
+The figure below shows a page created using the Page 3 template.
 
 ![Figure 2: Users can create pages, like this one, prepopulated with portlets and content that you've specified in your plugins, that leverage the Templates Importer.](../../images/templates-importer-page-3-template.png)
 

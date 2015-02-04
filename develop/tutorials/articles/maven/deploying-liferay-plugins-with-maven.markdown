@@ -6,7 +6,7 @@ tutorial explain the process. Just follow these steps:
 1.  Make sure you've specified the Liferay specific properties (the properties
     starting with `liferay.`) in your plugin's (or your parent plugin's)
     `pom.xml`. See the 
-    [Using Maven Parent Plugin Projects](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/6-2/using-maven-parent-plugin-projects)
+    [Using Maven Parent Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/using-maven-parent-plugin-projects)
     tutorial for descriptions of these Liferay properties. 
 
     Here's an example where these *properties* are specified for a Liferay
@@ -76,19 +76,18 @@ tutorial explain the process. Just follow these steps:
         INFO  [pool-2-thread-2][PluginPackageUtil:1033] Reading plugin package for s
         ample-portlet
 
-$$$
+    +$$$
  
-    **Note:** If you get the following
-    error after executing `mvn liferay:deploy`, make sure you're executing the
-    command from your plugin's directory (e.g., `sample-portlet`)--not your
-    parent project's directory. 
+    **Note:** If you get the following error after executing `mvn
+    liferay:deploy`, make sure you're executing the command from your plugin's
+    directory (e.g., `sample-portlet`)--not your parent project's directory. 
  
      `[ERROR] No plugin found for prefix 'liferay' in the current project and in
      the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available
      from the repositories [local (C:\Users\cdhoag\.m2\repository), central
      (http://repo.maven .apache.org/maven2)] -> [Help 1]`
     
-$$$
+    $$$
 
 5.  If you're deploying the plugin to a release or snapshot repository,
     specify the repository by adding a distribution management section to your
@@ -126,8 +125,8 @@ Your plugin is now available in your Nexus repository!
 
 +$$$
 
-**Note:** There are three build phases
-you'll use when developing plugins with Maven: 
+**Note:** There are three build phases you'll use when developing plugins with
+Maven: 
 
 - In Maven's *compile* phase, explicit dependencies are downloaded to your
   local repository (i.e., `.m2/repository/com/liferay/portal`).

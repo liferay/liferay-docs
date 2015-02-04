@@ -38,7 +38,7 @@ To add a custom field, click on the *Custom Fields* link in the Control Panel.
 Then choose a resource, click on the *Edit* link next to it and select *Add
 Custom Field*.
 
-![Figure 17.8: You can add custom fields to these portal resources.](../../images/server-configuration-custom-fields-resource-list.png)
+![Figure 17.6: You can add custom fields to these portal resources.](../../images/server-configuration-custom-fields-resource-list.png)
 
 From here you need to add the custom field key. The key appears as the label for
 the field on the form. For some portal resources (like the User), custom fields
@@ -47,7 +47,7 @@ fields are integrated with the default fields on the form. Additionally,
 developers can access custom fields programatically through the
 `<liferay-ui:custom-attribute />` tag.
 
-![Figure 17.9: The `book-author` and `book-title` custom fields are integrated with the rest of the form for editing a Wiki page.](../../images/server-configuration-custom-fields-integrated.png)
+![Figure 17.7: The `book-author` and `book-title` custom fields are integrated with the rest of the form for editing a Wiki page.](../../images/server-configuration-custom-fields-integrated.png)
 
 You can create fields of many different types: text fields (indexed or secret),
 integers, selection of multiple values and more. Once you've created a field,

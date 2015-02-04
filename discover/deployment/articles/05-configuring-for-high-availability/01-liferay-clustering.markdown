@@ -1062,11 +1062,10 @@ separate search server or syncing the indexes on the nodes' file systems.
 
 +$$$
 
-**Note:** MySQL users need to modify their JDBC
- connection string for this to work. Add the following parameter to your
- connection string:
+**Note:** MySQL users need to modify their JDBC connection string for this to
+work. Add the following parameter to your connection string:
 
-    emulateLocators=true
+`emulateLocators=true`
 
 $$$
 

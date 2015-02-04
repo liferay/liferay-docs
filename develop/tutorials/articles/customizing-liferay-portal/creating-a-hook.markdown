@@ -88,19 +88,19 @@ overriding with your hook.
 
 +$$$
 
-**Note:** If the Liferay server
- prints the following message to your console, the *Marketplace Portlet* and 
- *Portal Compatibility Hook* must not already be deployed on your server.
+**Note:** If the Liferay server prints the following message to your console,
+the *Marketplace Portlet* and *Portal Compatibility Hook* must not already be
+deployed on your server.
 
-    Plugin example-hook requires marketplace-portlet, portal-compat-hook
+`Plugin example-hook requires marketplace-portlet, portal-compat-hook`
 
- For Liferay 6.2.0 CE GA1, you can fork and clone Liferay's *liferay-plugins*
- project from GitHub, checkout the respective branch and/or tag, and deploy
- each plugin. You can install the Plugins SDK in Liferay IDE and import each
- plugin and deploy them. Here is information on each of the plugins: 
+For Liferay 6.2.0 CE GA1, you can fork and clone Liferay's *liferay-plugins*
+project from GitHub, checkout the respective branch and/or tag, and deploy each
+plugin. You can install the Plugins SDK in Liferay IDE and import each plugin
+and deploy them. Here is information on each of the plugins: 
 
 - *Marketplace Portlet* (`marketplace-portlet`) - is available at
-`liferay-plugins/portlets/marketplace-portlet`.
+[`liferay-plugins/portlets/marketplace-portlet`](https://github.com/liferay/liferay-plugins/tree/master/portlets/marketplace-portlet).
 - *Portal Compatibility Hook* (`portal-compat-hook`) - is available at 
 `liferay-plugins/hooks/portal-compat-hook`.
 
@@ -109,10 +109,9 @@ $$$
 
 +$$$
 
-**Note:** When you created portlets and themes,
-they were fully functional upon deployment. Hooks aren't like that because
-they're Liferay customizations. The default customization is the original
-implementation! 
+**Note:** When you created portlets and themes, they were fully functional upon
+deployment. Hooks aren't like that because they're Liferay customizations. The
+default customization is the original implementation! 
 
 $$$
 
