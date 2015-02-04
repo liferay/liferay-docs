@@ -24,10 +24,10 @@ Liferay's Javadocs are easy to browse and well-organized. Here's how to find the
 
 That was easy! What if you want to find portlet services? 
 
-## Finding Liferay Portlet Services
+## Finding Liferay Plugin Services
 
-Searching for one of Liferay's built-in portlet services is also easy. Instead
-of clicking the link for the service package of the *portal*, click the link for
+Searching for one of Liferay's built-in plugin services is also easy. Instead of
+clicking the link for the service package of the *portal*, click the link for
 the service package of the *portlet*. The portlet service packages use the
 naming convention `com.liferay.portlet.[portlet-name].service`, where
 `[portlet-name]` is replaced with the actual name of the portlet. 
