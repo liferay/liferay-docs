@@ -51,7 +51,7 @@ access. Please see the
 [Understanding Liferay's Service Security Model](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model) 
 tutorial for details.
 
-## Invoking Liferay Services
+## Invoking Liferay Services Locally
 
 Every Liferay service provides a local interface to clients running in the same
 JVM as Liferay Portal. Many local services (`*LocalServiceUtil` classes) are
@@ -76,7 +76,7 @@ Note that only a local service, not a remote service, is available for
 This JSP code invokes the static method `getOrganizationStatsUsers()` from the
 `*LocalServiceUtil` class `BlogsStatsUserLocalServiceUtil`. 
 
-In addition to the services you create using Service Builder, your applications
+In addition to any services you create using Service Builder, your applications
 can access a variety of services built into Liferay. These include the following
 services:
 
@@ -95,11 +95,44 @@ services:
 - `RoleService` - for accessing, adding, unassigning, checking, deleting, and
   updating roles. 
 
-For more information on Liferay services, see the Liferay Portal CE Javadocs at
-[http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/)
-or the Liferay Portal EE Javadocs included in the Liferay Portal EE
-Documentation `.zip` file that you can download from the Customer Portal on
-[http://www.liferay.com](http://www.liferay.com). 
+## Invoking Liferay Services Remotely
+
+Many default Liferay services are available as web services. Liferay exposes its
+web services via SOAP and JSON web services. If you're running Liferay locally
+on port 8080, visit the following URL to browse Liferay's default SOAP web
+services:
+
+    http://localhost:8080/api/axis
+
+To browse Liferay's default JSON web services, visit this URL:
+
+    http://localhost:8080/api/jsonws/
+
+By default, the context path is set to `/` which means that core Liferay
+services are listed. You can select a different content path to view the
+services of a Liferay plugin. E.g., set the context path to `/calendar-portlet`
+to view the services of Liferay's Calendar portlet.
+
+Click on the name of a service method to view details about it. The full package
+path to the service's `*Impl` class is displayed along with the method's
+parameters, return type, and possible exceptions. There's also a form that you
+can use to enter values for the method's parameters and actually invoke the
+service. Note that you must be logged in a user that has permission to invoke
+the service for your service invocation to succeed.
+
+The web interface for JSON web services is very handy for development and
+testing. However, Liferay web services are designed to be invoked by client
+applications. Liferay's web services APIs can be accessed by many different
+kinds of clients, including non-portlet and even non-Java clients. For
+information on how to develop client applications that can access Liferay's JSON
+web services, please see the
+[Working With JSON Web Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/working-with-json-web-services)
+tutorial. For information on how to develop
+client applications that access Liferay's SOAP web services, please see the [Working With SOAP Web Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/working-with-soap-web-services)
+tutorial. To learn how to create remote web services for your own application,
+please refer to the
+[Creating Remote Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-remote-services)
+tutorial. 
 
 <!--
 Add more examples of invoking Liferay Portal and Liferay portlet remote services
@@ -108,3 +141,10 @@ Add more examples of invoking Liferay Portal and Liferay portlet remote services
 
 ## Invoking Liferay Portlet Services
 -->
+
+For more information on Liferay services, see the Liferay Portal CE Javadocs at
+[http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/)
+or the Liferay Portal EE Javadocs included in the Liferay Portal EE
+Documentation `.zip` file that you can download from the Customer Portal on
+[http://www.liferay.com](http://www.liferay.com). 
+
