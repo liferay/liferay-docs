@@ -1,9 +1,10 @@
 # Enabling Workflow at the Service Layer
 
-<!--For just Entries, or for Guestbooks too? We've made both Guestbooks and Entries into assets, so...-->
-While asset enabled entities are added to the AssetEntry table, workflow
-enabled entities require a few database columns in their own entity table (e.g.,
-`GB_Entry`)  that allows the tracking of their workflow status. The necessary
+<!--For just Entries, or for Guestbooks too? We've made both Guestbooks and Entries into assets, so...--> 
+In the learning path on assets, you learned that asset enabled entities are
+added to the AssetEntry table. There's no special table to workflow entities,
+but there are some additional database columns in the entity table (e.g.,
+`GB_Entry`)  that allow you to keep track of workflow status. The necessary
 fields include *status*, *statusByUserName*, *statusByUserId*, and
 *statusDate*. Add the following to `docroot/WEB-INF/service.xml`, in the
 `Entry` entity section:
@@ -34,57 +35,14 @@ Still in the `addGuestbookEntry` method, place the following code right before t
 				entry.getGroupId(), entry.getUserId(), Entry.class.getName(), 
 				entry.getPrimaryKey(), entry, serviceContext);
 
-The `startWorkflowInstance` method will call your custom `EntryWorkflowHandler`
-class, so you should create that next. First create a new package in your
-`docroot/WEB-INF/src` folder, and call it
-`com.liferay.docs.guestbook.workflow`. Create a new class inside this apckage,
-called `EntryWorkflowHandler`. Populate it with the following code:
+This will detect whether workflow is installed and enabled. If it isn't, the
+added entity is automatically marked as approved. The `startWorkflowInstance`
+will call your custom `EntryWorkflowHandler` class,  which you'll create later
+in this learning path. The service layer needs to be given the ability to
+update the workfflow status fields you added to `service.xml`. For this
+purpose, add the following method to the bottom of `EntryLocalServiceImpl`:
 
-public class EntryWorkflowHandler extends BaseWorkflowHandler {
-
-	@Override
-	public String getClassName() {
-		
-		return CLASS_NAME;
-	}
-
-	@Override
-	public String getType(Locale locale) {
-		return LanguageUtil.get(locale,  "model.resource" + CLASS_NAME);
-	}
-
-	@Override
-	public Object updateStatus(int status,
-			Map<String, Serializable> workflowContext) throws PortalException,
-			SystemException {
-
-		long userId = GetterUtil.getLong(
-		        (String)workflowContext.get(WorkflowConstants.CONTEXT_USER_ID));
-		    long entryId = GetterUtil.getLong(
-		        (String)workflowContext.get(
-		            WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
-
-		    ServiceContext serviceContext = (ServiceContext)workflowContext.get(
-		        "serviceContext");
-
-		    return EntryLocalServiceUtil.updateStatus(
-		        userId, entryId, status, serviceContext);
-
-	}
-
-	public static final String CLASS_NAME = Entry.class.getName();
-
-}
-
-The most important thing to note is that this class calls `updateStatus` from
-`EntryLocalServiceUtil` in the return statement. That method doesn't exist yet;
-you'll create it next.
-
-Back in your `EntryLocalServiceImpl` class, add the following method to the end
-of the class:
-
-    public Entry updateStatus(long userId, long guestbookId, long entryId,
-			String name, String message, String email, int status,
+     public Entry updateStatus(long userId, long guestbookId, long entryId, int status,
 			ServiceContext serviceContext) throws PortalException,
 			SystemException {
 
@@ -96,8 +54,11 @@ of the class:
 		entry.setStatusByUserName(user.getFullName());
 		entry.setStatusDate(new Date());
 
-		updateEntry(userId, guestbookId, entryId, name, email, message,
-				serviceContext);
+        String name = entry.getName();
+		String email = entry.getEmail();
+		String message = entry.getMessage();
+
+		entryPersistence.update(entry);
 
 		if (status == WorkflowConstants.STATUS_APPROVED) {
 
@@ -114,6 +75,61 @@ of the class:
 	}
 
 Make sure you run service builder.
+
+The `updateStatus` method is responsible for setting the status fields, then
+persisting the information to the database. The `if` block checks the workflow
+status of the entity and does on of two things:
+
+- If the entity has an approved status, it is marked as visible in the 
+
+
+First create a new package in your `docroot/WEB-INF/src` folder, and call it
+`com.liferay.docs.guestbook.workflow`. Create a new class inside this apckage,
+called `EntryWorkflowHandler`. Populate it with the following code:
+
+    public class EntryWorkflowHandler extends BaseWorkflowHandler {
+
+        @Override
+        public String getClassName() {
+            
+            return CLASS_NAME;
+        }
+
+        @Override
+        public String getType(Locale locale) {
+            return LanguageUtil.get(locale,  "model.resource" + CLASS_NAME);
+        }
+
+        @Override
+        public Object updateStatus(int status,
+                Map<String, Serializable> workflowContext) throws PortalException,
+                SystemException {
+
+                long userId = GetterUtil.getLong(
+                    (String)workflowContext.get(WorkflowConstants.CONTEXT_USER_ID));
+                long entryId = GetterUtil.getLong(
+                    (String)workflowContext.get(
+                        WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
+
+                ServiceContext serviceContext = (ServiceContext)workflowContext.get(
+                    "serviceContext");
+
+                return EntryLocalServiceUtil.updateStatus(
+                    userId, entryId, status, serviceContext);
+
+        }
+
+        public static final String CLASS_NAME = Entry.class.getName();
+
+    }
+
+The most important thing to note is that this class calls `updateStatus` from
+`EntryLocalServiceUtil` in the return statement. That method doesn't exist yet;
+you'll create it next.
+
+Back in your `EntryLocalServiceImpl` class, add the following method to the end
+of the class:
+
 
 You might think that's all there is to it, but you haven't told Liferay about
 your `EntryWorkflowHandler` yet. Add the following to
