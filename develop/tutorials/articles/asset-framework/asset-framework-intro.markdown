@@ -1,66 +1,70 @@
 # Asset Framework 
 
-Liferay's asset framework is a system that allows you to add common 
-functionality to your application. For example, you might build an event 
-management application that shows a list of upcoming events. It might be nice to 
-be able to tag or categorize those events to provide users with metadata 
-describing more about them. You might also want to let users comment on events. 
+Liferay's asset framework is a system that allows you to add common
+functionality to custom content types used in your application. For example, if
+you've built an event management application that lets you operate on a listing
+of upcoming events, it might be nice to be able to tag the events or categorize
+them, to make event entries more self-descriptive. And you might also want to
+let users comment on them. 
 
-This common functionality is what Liferay's asset framework gives you. Using the
-power of Liferay's built-in message boards, tags, and categories, Liferay lets
-you infuse your application with these features in no time. 
+Tags, categories, and comments are just a few of the common functionalities that
+Liferay's asset framework offers. And the simplicity of the asset framework
+lets you infuse your application with these features in no time. 
 
-The term *asset* is a generic term that refers to any type of content, including
-text, an external file, a URL, an image, or a record in an online book library.
-Consequently, when the term *asset* is used in these tutorials, some type of 
-Liferay content is being referred to. For example, *asset* can be used to refer 
-to documents, blog entries, bookmarks, wiki pages, or anything you create in 
-your applications. 
+As background, the term *asset* is a generic term that refers to any type of
+content, such as text, an external file, a URL, an image, or any kind of
+electronic record. When Liferay's tutorials use the term *asset*, they're
+referring to some type of content. For example, assets can be documents, blog
+entries, bookmarks, wiki pages, or anything you create in your applications. 
 
-Here are the features you can reuse thanks to the asset framework: 
+The Learning Path
+[Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+takes you through the fundamentals of enabling an example application's custom
+entities to use the asset framework. If you haven't travelled through that
+Learning Path, we recommend you do so before continuing with these tutorials, as
+they explore the details of leveraging the framework's various features. 
 
--   Associate tags to custom content types. New tags are created automatically
-    when the author assigns them to the content. 
--   Associate categories to custom content types. Authors are only allowed to
-    select from predefined categories within several predefined vocabularies. 
--   Manage tags from the Control Panel, including merging tags. 
--   Manage categories from the Control Panel, including creating complex
-    hierarchies. 
+Here are some features that your users can leverage, as you implement them
+in your app using the asset framework: 
+
+-   Associate tags to custom content types. Users can create and assign new
+    tags, or use existing tags. 
+-   Associate categories to custom content types. 
+-   Manage tags from the Control Panel. Administrators can even merge tags. 
+-   Manage categories from the Control Panel. This includes the ability to
+    create category hierarchies. 
 -   Associate comments with assets. 
--   Rate assets using a five star rating system. 
--   Assign social bookmarks to assets, including via tweet, Facebook like, or +1
-    (Google Plus). 
+-   Rate assets, using a five star rating system. 
+-   Assign social bookmarks to assets. Bookmark types include tweets, Facebook
+    likes, and +1 (Google Plus). 
 -   Add custom fields to assets. 
 -   Relate assets to one another. 
--   Flag asset content as inappropriate. 
--   Keep track of the number of visualizations of an asset. 
+-   Flag an asset's content as inappropriate. 
+-   Track the number of times an asset is viewed. 
 -   Integrate workflow with assets. 
--   Publish your content using the Asset Publisher portlet. Asset Publisher can
-    publish dynamic asset lists or manually selected asset lists. It can also
-    show an asset summary view with a link to the full view. This saves you
-    time, since it likely won't be necessary to develop custom portlets for your
-    custom content types. 
+-   Publish asset content using the Asset Publisher portlet. The Asset Publisher
+    lets you publish dynamic asset lists or manually selected asset lists. It
+    can also show an asset summary view with a link to the full view. 
 
-At this point you might be saying, "Liferay's asset framework sounds great, but
-how do I leverage all these awesome functions?" Excellent question, young
+At this point, you might be saying, "Liferay's asset framework sounds great, but
+how do I leverage all of its awesome features?" Excellent question, young
 padawan, and perfect timing! 
 
-Before diving into the tutorials head first, the first two steps are described 
-here: 
-
--   The first step is mandatory. You must let the framework know whenever one of
-    your custom content entries is added, updated, or deleted. 
--   The second step enables the asset framework in the UI. You can use a set of
-    taglibs to provide widgets that allow authors to enter comments, tags and
-    categories and that show the entered tags and categories along with the
-    content. 
+Before diving head first into this section's tutorials that show you how to
+implement the specific features, you must implement a way to let the framework
+know whenever any of your custom content entries is added, updated, or deleted.
+This section's next tutorial covers that. From that point onward, the tutorials
+show you how to leverage the asset framework in your UI. You can use a set of
+taglibs to provide widgets that allow users to exercise all of the features that
+have been mentioned, like entering comments, adding tags, and adding categories
+to an asset. It's time to start your asset framework training! 
 
 ## Related Topics
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+
+[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
 
 [Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
 [User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
-
-[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
