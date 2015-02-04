@@ -21,6 +21,13 @@ related permissions are copied to the site. If the site template administrator
 adds, removes, or deletes some categories, however, such changes *aren't*
 propagated to the site. 
 
+## Page 97: Displaying Site Pages to mobile devices [](id=page-97-displaying-site-pages-to-mobile-devices)
+
+In section *3.8 Displaying Site Pages to mobile devices* of Chapter 3, the
+editions of the Device Recognition Provider application are now out of date. It
+is now available only for Liferay Portal Enterprise Edition (EE). The
+application is now named Device Recognition Provider EE. 
+
 ## Page 123: Microsoft Office Integration [](id=page-123-microsoft-office-integration)
 
 The Microsoft Office integration features are supported only on Windows XP with
