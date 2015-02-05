@@ -209,8 +209,7 @@ Let's examine a sample `sitemap.json` file:
                                 "articleId": "Custom Title.html",
                                 "groupId": "${groupId}",
                                 "portletSetupShowBorders": "true",
-                                "portletSetupTitle_en_US":
-                                    "Web Content Display with Custom Title",
+                                "portletSetupTitle_en_US": "Web Content Display with Custom Title",
                                 "portletSetupUseCustomTitle": "true"
                             }
                         }
@@ -239,13 +238,10 @@ Let's examine a sample `sitemap.json` file:
                                         {
                                             "portletId": "56",
                                             "portletPreferences": {
-                                                "articleId":
-                                                    "Child Web Content 1.xml",
-                                                "groupId": "${groupId}",
-                                                "portletSetupShowBorders": "true",
-                                                "portletSetupTitle_en_US":
-                                                    "Web Content Display with 
-                                                        Child Structure 1",
+                                            "articleId": "Child Web Content 1.xml",
+                                            "groupId": "${groupId}",
+                                            "portletSetupShowBorders": "true",
+                                            "portletSetupTitle_en_US": "Web Content Display with Child Structure 1",
                                                 "portletSetupUseCustomTitle": "true"
                                             }
                                         }
@@ -254,13 +250,10 @@ Let's examine a sample `sitemap.json` file:
                                         {
                                             "portletId": "56",
                                             "portletPreferences": {
-                                                "articleId":
-                                                    "Child Web Content 2.xml",
-                                                "groupId": "${groupId}",
-                                                "portletSetupShowBorders": "true",
-                                                "portletSetupTitle_en_US":
-                                                    "Web Content Display with 
-                                                        Child Structure 2",
+                                            "articleId": "Child Web Content 2.xml",
+                                            "groupId": "${groupId}",
+                                            "portletSetupShowBorders": "true",
+                                            "portletSetupTitle_en_US": "Web Content Display with Child Structure 2",
                                                 "portletSetupUseCustomTitle": "true"
                                             }
                                         }
@@ -274,9 +267,41 @@ Let's examine a sample `sitemap.json` file:
                 "friendlyURL": "/home",
                 "nameMap": {
                     "en_US": "Welcome",
-                    "fr_CA": "Bienvenue"
+                    "fr_FR": "Bienvenue"
                 },
                 "title": "Welcome"
+            },
+            {
+                "columns": [
+                    [
+                        {
+                            "portletId": "58"
+                        }
+                    ],
+                    [
+                        {
+                            "portletId": "47"
+                        }
+                    ]
+                ],
+                "friendlyURL": "/layout-prototypes-parent-page",
+                "layouts": [
+                    {
+                        "friendlyURL": "/layout-prototypes-page-1",
+                        "layoutPrototypeLinkEnabled": "true",
+                        "layoutPrototypeUuid": "371647ba-3649-4039-bfe6-ae32cf404737",
+                        "name": "Layout Prototypes Page 1",
+                        "title": "Layout Prototypes Page 1"
+                    },
+                    {
+                        "friendlyURL": "/layout-prototypes-page-2",
+                        "layoutPrototypeUuid": "c98067d0-fc10-9556-7364-238d39693bc4",
+                        "name": "Layout Prototypes Page 2",
+                        "title": "Layout Prototypes Page 2"
+                    }
+                ],
+                "name": "Layout Prototypes",
+                "title": "Layout Prototypes"
             },
             {
                 "columns": [
@@ -306,6 +331,12 @@ Let's examine a sample `sitemap.json` file:
                 ],
                 "name": "Parent Page",
                 "title": "Parent Page"
+            },
+            {
+                "friendlyURL": "/url-page",
+                "name": "URL Page",
+                "title": "URL Page",
+                "type": "url"
             },
             {
                 "friendlyURL": "/hidden-page",
