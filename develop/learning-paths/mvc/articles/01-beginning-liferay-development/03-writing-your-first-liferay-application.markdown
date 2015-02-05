@@ -643,22 +643,22 @@ to make this happen.
     *Taglib Imports* category.
 
 2.  Drag the snippet labeled *Liferay UI Taglib Import* from the snippet area to
-    the line beneath the existing taglib import in `view.jsp`. The following code gets
-    added to `view.jsp`:
+    the line beneath the existing taglib imports in `view.jsp`. The following
+    code gets added to `view.jsp`:
 
-	<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+        <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
     This declares that you want to use Liferay’s UI tags. 
 
-3.  Open the `docroot/html/guestbook/view.jsp` file. Below the
-`<portlet:defineObjects />` tag, add the following tag: 
+3.  Below the `<portlet:defineObjects />` tag, add the following tag: 
 
         <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
 
     This makes your list of `Entry` objects available to the page. 
 
 4.  From the *Liferay UI Search Container* snippet category, drag the *Model
-Search Container* snippet and drop it at the bottom of your page. 
+Search Container* snippet and drop it above the
+`<aui:button-row cssClass="guestbook-buttons">` tag. 
 
 5.  In the dialog that pops up, click the *Browse* button and then type *Entry*
 into the search dialog. Liferay IDE shows every instance of an `Entry` class on
