@@ -113,13 +113,13 @@ and `content/Language.properties` files, respectively. You'll learn more about
 the latter two components later on.
 
 You'll begin creating your rule's functionality by specifying its behavior via
-the Java class (e.g., `WeatherRule.java`) that implements the Rule Interface.
-The class generated for you already implements the `Rule` interface (required),
-and extends the `BaseRule` class (it is not mandatory to extend this class, but
-BaseRule provides some useful utilities such as the support to generate the UI
-of your rule using freemarker). Furthermore, multiple methods are present in the
-Java class by default, but will require modifications before you have a working
- rule.
+the Java class (e.g., `WeatherRule.java`) that was generated for you. This class
+implements the `Rule` interface (required), and extends the
+[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)
+class. It is not mandatory to extend `BaseRule`, but it provides some useful
+utilities such as the support to generate the UI of your rule using FreeMarker.
+Furthermore, multiple methods are present in the Java class by default, but will
+require modifications before you have a working rule.
 
 If you navigate back to your rule inside of your portal, you'll notice it's
 listed under its own Sample category and has a puzzle piece icon. You'll change
@@ -142,7 +142,7 @@ these next by modifying a couple generated default methods.
    updated rule should now have its customized icon and reside in the category
    you specified.
 
-    ![Figure 2: For a Weather rule, the sun icon is chosen, and the Sesssion Attributes category is configured for the rule's residing place.](../../images/icon-category-rule.png)
+    ![Figure 2: For a Weather rule, the sun icon is chosen, and the Session Attributes category is configured for the rule's residing place.](../../images/icon-category-rule.png)
 
 Now that you've modified some basic features in your Java class, you'll need to
 develop the UI for your rule's configuration. As you read earlier, your rule
@@ -223,7 +223,8 @@ Now you'll jump back into modifying your rule's behavior via the
             return values.get("weather");
         }
 
-    The return value is stored in the `typeSettings` of the rule instance.
+    The return value is stored in the `typeSettings` of the rule instance. The
+    `typeSettings` field is managed by the framework in the Rule Instance table.
 
 3. The next method you'll need to modify is the `populateContext` method. This
    method injects the value the user selected into the variable you're returning
@@ -285,20 +286,23 @@ values match. If they match, return `true`; otherwise, return `false`:
    functional, and the GUI you've defined is added to the Add/Edit User Segment
    form so that administrators can set a value for that specific user segment.
 
-If you were to deploy this rule (or a similar one in production) you may want to
-consider adding some cache for the values of the weather in different locations
-since obtaining the weather on every request would be very inefficient and it
-could slow down your portal. Rule plugins do support Service Builder, so they
-can even persist complex information into the database (besides the typeSettings
-field already managed by the framework in the Rule Instance table).
+If you deploy your rule into a production environment, you may want to consider
+adding your values to the cache (e.g., weather in different locations), since
+obtaining the same value on every request is very inefficient, which could
+result in slowing down your portal. Rule plugins also support Service Builder,
+so you can persist complex information into the database, instead of the
+`typeSettings` field already managed by the framework in the Rule Instance
+table).
 
-The method deleteData in your Rule class can be used to delete any data you may
-have created for the rule that is currently being deleted.
+Also, you can add the `deleteData` method in your `<RULE_NAME>Rule.java` to
+delete any data associated with the rule that is currently being deleted.
 
-If your rule handles data or references to data that can be staged (for example,
-a reference to a page or web content), you may need to use the methods
-exportData and importData to manage the content properly. See an example in the
-[VisitedContentRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/rule-visited/src/com/liferay/content/targeting/rule/visited/ContentVisitedRule.java)
+If your rule handles data or references to data that can be staged (e.g., a
+reference to a page or web content), you may need to use the `exportData` and
+`importData` methods to manage the content properly. To see an example of how
+these methods are used, visit the 
+[ContentVisitedRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/rule-visited/src/com/liferay/content/targeting/rule/visited/ContentVisitedRule.java)
+class.
 
 Excellent! You now know how to create a custom rule type for your Audience
 Targeting application. For working examples of the default rules included in the
