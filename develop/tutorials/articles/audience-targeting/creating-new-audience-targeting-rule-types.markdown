@@ -113,10 +113,13 @@ and `content/Language.properties` files, respectively. You'll learn more about
 the latter two components later on.
 
 You'll begin creating your rule's functionality by specifying its behavior via
-the Java class (e.g., `WeatherRule.java`). This class already implements the
-`Rule` interface (required), and extends the `BaseRule` class. Furthermore,
-multiple methods are present in the Java class by default, but will require
-modifications before you have a working rule.
+the Java class (e.g., `WeatherRule.java`) that implements the Rule Interface.
+The class generated for you already implements the `Rule` interface (required),
+and extends the `BaseRule` class (it is not mandatory to extend this class, but
+BaseRule provides some useful utilities such as the support to generate the UI
+of your rule using freemarker). Furthermore, multiple methods are present in the
+Java class by default, but will require modifications before you have a working
+ rule.
 
 If you navigate back to your rule inside of your portal, you'll notice it's
 listed under its own Sample category and has a puzzle piece icon. You'll change
@@ -281,6 +284,21 @@ values match. If they match, return `true`; otherwise, return `false`:
 4. Finally, deploy the rule plugin in the Liferay server. Your new rule is fully
    functional, and the GUI you've defined is added to the Add/Edit User Segment
    form so that administrators can set a value for that specific user segment.
+
+If you were to deploy this rule (or a similar one in production) you may want to
+consider adding some cache for the values of the weather in different locations
+since obtaining the weather on every request would be very inefficient and it
+could slow down your portal. Rule plugins do support Service Builder, so they
+can even persist complex information into the database (besides the typeSettings
+field already managed by the framework in the Rule Instance table).
+
+The method deleteData in your Rule class can be used to delete any data you may
+have created for the rule that is currently being deleted.
+
+If your rule handles data or references to data that can be staged (for example,
+a reference to a page or web content), you may need to use the methods
+exportData and importData to manage the content properly. See an example in the
+[VisitedContentRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/rule-visited/src/com/liferay/content/targeting/rule/visited/ContentVisitedRule.java)
 
 Excellent! You now know how to create a custom rule type for your Audience
 Targeting application. For working examples of the default rules included in the
