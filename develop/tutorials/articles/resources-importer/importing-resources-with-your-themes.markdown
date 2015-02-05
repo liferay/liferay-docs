@@ -360,6 +360,24 @@ specifying their portlet IDs which can be found in Liferay's
 `WEB-INF/portlet-custom.xml` file. You can also specify portlet preferences for
 each portlet.
 
++$$$
+
+**Tip:** You can specify an application display template (ADT) for a portlet in
+the `sitemap.json` file by setting the `displayStyle` and `displayStyleGroupId`
+portlet preferences. For example:
+
+    "portletId": "101",
+        "portletPreferences": {
+            "displayStyleGroupId": "10197",
+            "displayStyle": "ddmTemplate_6fe4851b-53bc-4ca7-868a-c836982836f4",
+    }
+
+To learn more about ADTs, visit the
+[Using Application Display Templates](/discover/portal/-/knowledge_base/6-2/using-application-display-templates)
+chapter.
+
+$$$
+
 Optionally, you can create an `assets.json` file in your
 `[theme-name]/docroot/WEB-INF/src/resources-importer` folder. While the
 `sitemap.json` file defines the pages of the site or site template to be
