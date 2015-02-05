@@ -40,40 +40,34 @@ You'll start by creating the finders.
 First, modify the Guestbook App's `docroot/WEB-INF/service.xml` file, adding
 the following XML below the current `<finder>` in the `Guestbook` entity:
 
-    <finder name="GuestbookName" return-type="Collection">
+    <finder name="G_N" return-type="Collection">
+        <finder-column name="groupId"></finder-column>
         <finder-column name="name"></finder-column>
     </finder>
 
 Next, in the `Entry` entity, add the following finder tag:
 
-    <finder name="G_N" return-type="Collection">
+    <finder name="G_G_N" return-type="Collection">
+        <finder-column name="groupId"></finder-column>
         <finder-column name="guestbookId"></finder-column>
         <finder-column name="name"></finder-column>
     </finder>
 
 Run Service Builder to generate the new finders.
 
-Why are you creating a finder on the `name` and `guestbookId` database fields
-for the `Entry`? It makes sense if you think about the portlet's design. When
-finding an Entry in the database, using the Primary Key guarantees you'll find
-the entity you are looking for. However, the name field in your portlet is the
-name of the person creating the entry. Multiple people with the same name can
-easily create entries, right? What if Penelope creates an entry, and then a day
-later, another Penelope also creates an entry. If you rely solely on `name` to
-find the entries, which one should you retrieve from the database in the case
-that two records have matching fields? You can easily see the problem, and the
-convention is to retrieve the first entity when two entities with matching
-fields values are retrieved. However, you can reduce the likelihood of finding
-multiple entries if our finder also uses `guestbookId`. In this case, as long as
-both Penelope's create entries in different guestbooks, you'll be able to
-retrieve both without issue. If they do happen to create entries in the same
-guestbook, then the first one will be retrieved when the finder is called in our
-portlet's service layer. 
-
-<!-- I think we should change how it works, because this way, we're losing data.
-Let's instead modify the finder so that it returns everything it finds, and then
-modify the view_entry.jsp so that it loops through and displays all the entries
-that it finds. -Rich --> 
+Why are you creating a finder on the `groupId`, `name` and `guestbookId`
+database fields for the `Entry`? It makes sense if you think about the
+portlet's design. When finding an Entry in the database, using the Primary Key
+guarantees you'll find the entity you are looking for. However, the name field
+in your portlet is the name of the person creating the entry. Multiple people
+with the same name can easily create entries, right? What if Penelope creates
+an entry, and then a day later, another Penelope also creates an entry. If you
+rely solely on `name` to find the entries, which one should you retrieve from
+the database in the case that two records have matching fields? You can easily
+see the problem. You haven't solved it compeletely by creating this finder.
+There could still be multiple Penelopes creating entries in the same guestbook
+in the same site. You'll deal with this in the `view_entry.jsp` file, by
+using this finder to retieve a list of entries, and displaying them all.
 
 ## Modifying the Service Layer
 
@@ -84,21 +78,20 @@ specified.
 Open `GuestbookLocalServiceImpl` and insert the following method at the top of the
 class: 
 
-    public Guestbook getGuestbookByName(String name, OrderByComparator orderByComparator) 
-			throws SystemException, NoSuchGuestbookException {
+    public Guestbook getGuestbookByG_N(long groupId, String name,
+			OrderByComparator orderByComparator) throws SystemException,
+			NoSuchGuestbookException {
 
-		return guestbookPersistence.findByGuestbookName_First(name, orderByComparator);
-
+		return guestbookPersistence.findByG_N_First(groupId, name, orderByComparator);
 	}
 
 Now open `EntryLocalServiceImpl` and insert the following method at the top of
 the class:
 
-    public Entry getEntryByGuestbookIdAndName(long guestbookId, String name, OrderByComparator orderByComparator) 
-			throws SystemException, NoSuchEntryException {
+    public List<Entry> getEntriesByG_G_N(long groupId, long guestbookId,
+			String name) throws SystemException {
 
-		return entryPersistence.findByG_N_First(guestbookId, name, orderByComparator);
-
+		return entryPersistence.findByG_G_N(groupId, guestbookId, name);
 	}
 
 Organize the imports for both files:
@@ -108,23 +101,24 @@ Organize the imports for both files:
 
 Run Service Builder.
 
-Note the use of the finder methods appended by `_first` (e.g.,
-`findByGuestbookName_first`), and the need for the `OrderByComparator` as an
-argument. This is simply to protect against cases like the one described above,
-in which two Penelopes create guestbook entries in the same guestbook, with the
-same `name` value. This code ensures that only the first one is retrieved.
-
-<!-- Please fix as we discussed. -Rich -->
+Note the use of the `Guestbook` finder method appended by `_first`
+(`findByGuestbookName_first`), and the need for the `OrderByComparator` as an
+argument. This is simply to protect against cases where two `Guestbook` are
+created with the same name. This code ensures that only the first one is
+retrieved.
 
 The Portlet's Controller class needs to add a `Guestbook` object to the
-attribute for our modifications to work. 
+attribute for the modifications to work. 
 
 ## Updating the Guestbook Portlet's Controller Class
 
 Open `GuestbookPortlet` and add the following method to the bottom of the class:
 
     public void switchTabs(ActionRequest request, ActionResponse response)
-			throws NoSuchGuestbookException, SystemException {
+			throws SystemException, PortalException {
+
+		ServiceContext serviceContext = ServiceContextFactory.getInstance(
+				Guestbook.class.getName(), request);
 
 		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil
 				.getOrderByComparatorFactory();
@@ -134,16 +128,17 @@ Open `GuestbookPortlet` and add the following method to the bottom of the class:
 		String guestbookName = ParamUtil.getString(request, "guestbookName");
 
 		try {
-			
-			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(
-					guestbookName, orderByComparator);
-			
+
+			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(
+					serviceContext.getScopeGroupId(), guestbookName,
+					orderByComparator);
+
 			request.setAttribute("guestbook", guestbook);
-			
+
 		} catch (Exception e) {
-			
+
 			SessionErrors.add(request, "guestbook-cannot-be-displayed");
-			
+
 		}
 		response.setRenderParameter("mvcPath", "/html/guestbook/view.jsp");
 	}
@@ -181,32 +176,91 @@ languages:
 
 Since you won't be passing the `guestbookId` into most URLs any longer, there
 are some changes that need to be made to the existing methods in the
-controller. Find the `addEntry` method and replace the `long guestbookId...`
-line with a `guestbookName` declaration:
+controller. Replace the current `addEntry` method with this one:
+
+    public void addEntry(ActionRequest request, ActionResponse response)
+			throws PortalException, SystemException {
+
+		ServiceContext serviceContext = ServiceContextFactory.getInstance(
+				Entry.class.getName(), request);
+
+		String userName = ParamUtil.getString(request, "name");
+		String email = ParamUtil.getString(request, "email");
+		String message = ParamUtil.getString(request, "message");
+		String guestbookName = ParamUtil.getString(request, "guestbookName");
+		long entryId = ParamUtil.getLong(request, "entryId");
+		
+		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+		OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
+		
+		Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(
+				serviceContext.getScopeGroupId(), guestbookName,
+				orderByComparator);
+
+		if (entryId > 0) {
+			try {
+				EntryLocalServiceUtil.updateEntry(serviceContext.getUserId(),
+						guestbook.getGuestbookId(), entryId, userName, email, message,
+						serviceContext);
+
+				SessionMessages.add(request, "entryAdded");
+
+				response.setRenderParameter("guestbookName",
+						guestbookName);
+			} catch (Exception e) {
+				SessionErrors.add(request, e.getClass().getName());
+				
+				PortalUtil.copyRequestParameters(request, response);
+
+				response.setRenderParameter("mvcPath",
+						"/html/guestbook/edit_entry.jsp");
+			}
+		}
+		else {
+			try {
+				EntryLocalServiceUtil.addEntry(serviceContext.getUserId(),
+						guestbook.getGuestbookId(), userName, email, message, serviceContext);
+
+				SessionMessages.add(request, "entryAdded");
+
+				response.setRenderParameter("guestbookName",
+						guestbookName);
+			} catch (Exception e) {
+				SessionErrors.add(request, e.getClass().getName());
+				
+				PortalUtil.copyRequestParameters(request, response);
+
+				response.setRenderParameter("mvcPath",
+						"/html/guestbook/edit_entry.jsp");
+			}
+		}
+	}
+
+There are several lines to take note of:
 
     String guestbookName = ParamUtil.getString(request, "guestbookName");
 
-Now you need to get the `Guestbook` by its `guestbookName`, so add these lines
-before the `if` statement:
+The above variable declaration gets the `guetbookName`, rather than the
+`guestbookId`, from the request.
 
+You need to get the `Guestbook` by its `groupId` and `name`, so these lines
+are added before the `if` statement:
 
     OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
     OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
 		
     Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
 
-In the calls to `updateEntry` and `addEntry`, change the `guestbookId` parameter to
-`guestbook.getGuestbookId()`.
+In the calls to `updateEntry` and `addEntry`, you changed the `guestbookId`
+parameter to `guestbook.getGuestbookId()`.
 
 Since the `guestbookId` is no longer in the request, you now use the
 `guestbookName`. Any fields from the object (like `guestbookId`) must now be
 retrieved from the object to use in the *update* and *add* methods that require
 them.
 
-Also change the `setRenderParameter` calls in both the `try` blocks to
-
-    response.setRenderParameter("guestbookName",
-                guestbookName);
+You also changed the `setRenderParameter` calls in both the `try` blocks to set
+`guestbookName`.
 
 Leave the `deleteEntry` method alone. Limit your work to the URLs that
 most users use, including viewing guestbooks, viewing full entries, adding
@@ -218,37 +272,26 @@ variable, change the second parameter in the `ParamUtil` call to
 
     String name = ParamUtil.getString(request, "guestbookName");
 
-Now find the `render` method. At the top of the first `try` block, initialize a
-Guestbook object, but set it as null:
+Replace the current `render` method with this one:
 
-    Guestbook guestbook = null;
+    public void render(RenderRequest renderRequest,
+			RenderResponse renderResponse) throws PortletException, IOException {
 
-Delete the `guestbookId` variable declaration and replace it with the
-following call, which gets the `guestbookName` from the request:
+		try {
+			
+			Guestbook guestbook = null;
+			
+			ServiceContext serviceContext = ServiceContextFactory.getInstance(
+					Guestbook.class.getName(), renderRequest);
+			
+			String guestbookName = ParamUtil.getString(renderRequest, "guestbookName");
 
-    String guestbookName = ParamUtil.getString(renderRequest, "guestbookName");
+			long groupId = serviceContext.getScopeGroupId();
 
-Now you need to change the logic used in the `if` and `else` blocks. This
-logic decides which `Guestbook` needs to be set as an attribute of the
-`renderRequest`.
+			List<Guestbook> guestbooks = GuestbookLocalServiceUtil
+					.getGuestbooks(groupId);
 
-Since `guestbook` is already declared as a `Guestbook` object, remove the
-type declaration `Guestbook` from the declaration in the first `if` statement.
-If this is the first time the portlet is added to a page (i.e., the
-list of guestbooks is empty), a new `Guestbook` named *Main* will be created.
-
-Here are the other scenarios the `render` method should handle:
-- If the render request contains a `Guestbook` attribute (e.g., if the
-  `switchTabs` action is triggered), get it.
-- If the request contains no `Guestbook` object or `guestbookName`, just get the
-  first `Guestbook` in the list. 
-- If the request contains a `guestbookName` parameter, use it to get the
-  `Guestbook` by its name. This is the case when the user clicks the
-  `viewEntryURL` or the `addEntryURL`, defined in the `view.jsp` file.
-
-Here's what the logic looks like:
-
-    if (guestbooks.size() == 0) {
+			if (guestbooks.size() == 0) {
 				guestbook = GuestbookLocalServiceUtil.addGuestbook(
 						serviceContext.getUserId(), "Main", serviceContext);
 			}
@@ -267,14 +310,48 @@ Here's what the logic looks like:
 					OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
 					OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
 					
-					guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
+					guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(serviceContext.getScopeGroupId(), guestbookName, orderByComparator);
 				}	
 			}
 			renderRequest.setAttribute("guestbook", guestbook);
 
-Next, organize the imports.
+		} catch (Exception e) {
 
-    import com.liferay.docs.guestbook.NoSuchGuestbookException;
+			throw new PortletException(e);
+		}
+
+		super.render(renderRequest, renderResponse);
+	}
+
+At the top of the first `try` block, a Guestbook object is intialized, but set
+as null:
+
+    Guestbook guestbook = null;
+
+The `guestbookId` variable declaration is replaced with `guestbookName`, retrieved from the request:
+
+    String guestbookName = ParamUtil.getString(renderRequest, "guestbookName");
+
+The logic used in the `if` and `else` blocks is also modified. This
+logic decides which `Guestbook` needs to be set as an attribute of the
+`renderRequest`.
+
+Since `guestbook` is already declared as a `Guestbook` object, you removed the
+type declaration `Guestbook` from the declaration in the first `if` statement.
+If this is the first time the portlet is added to a page (i.e., the
+list of guestbooks is empty), a new `Guestbook` named *Main* will be created.
+
+Here are the other scenarios the `render` method handles:
+- If the render request contains a `Guestbook` attribute (e.g., if the
+  `switchTabs` action is triggered), get it.
+- If the request contains no `Guestbook` object or `guestbookName`, just get the
+  first `Guestbook` in the list. 
+- If the request contains a `guestbookName` parameter, use it to get the
+  `Guestbook` by its name. This is the case when the user clicks the
+  `viewEntryURL` or the `addEntryURL`, defined in the `view.jsp` file.
+
+Organize the imports.
+
     import com.liferay.portal.kernel.util.OrderByComparator;
     import com.liferay.portal.kernel.util.OrderByComparatorFactory;
     import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
@@ -288,15 +365,14 @@ the request.
 Many of the portlet URLs and scriptlets defined in the JSPs you've written
 currently include the `guestbookId` or `entryId` as a parameter. You need to
 change these instead to provide and use a `guestbookName` (the `name` column for
-`Guestbook`s) or `name` (for `Entry` entities).  Additionally, use your new
+`Guestbook`s) or `name` (for `Entry` entities). Additionally, use your new
 service layer *getter* methods in the place of the current ones, if they need
 the Primary Key of any entities. You'll also be making use of your new action
 method, `switchTabs`.
 
-Open `docroot/html/guestbook/view.jsp`. At the top of the file, immediately
-after the `<%@include...` statement, is a scriptlet that gets the `guestbookId`
-from the `renderRequest`. Find the `<aui:nav...` tag. Replace it with the
-following tag:
+Open `docroot/html/guestbook/view.jsp`. Replace the entire contents of the file with the following code:
+
+    <%@include file="/html/init.jsp"%>
 
     <liferay-ui:error key="guestbook-cannot-be-displayed" message="guestbook-cannot-be-displayed" />
 
@@ -305,45 +381,151 @@ following tag:
                 .getAttribute("guestbook");
     %>
 
+    <liferay-portlet:renderURL varImpl="searchURL">
+        <portlet:param name="mvcPath" value="/html/guestbook/view_search.jsp" />
+    </liferay-portlet:renderURL>
+
+    <aui:form action="<%= searchURL %>" method="get" name="fm">
+        <liferay-portlet:renderURLParams varImpl="searchURL" />
+
+        <div class="search-form">
+            <span class="aui-search-bar">
+                <aui:input inlineField="<%= true %>" label="" name="keywords" size="30" title="search-entries" type="text" />
+            
+                <aui:button type="submit" value="search" />
+            </span>
+        </div>
+    </aui:form>
+
+    <aui:nav cssClass="nav-tabs">
+
+        <%
+             List<Guestbook> guestbooks = GuestbookLocalServiceUtil
+                        .getGuestbooks(scopeGroupId);
+                for (int i = 0; i < guestbooks.size(); i++) {
+                    Guestbook curGuestbook = (Guestbook) guestbooks.get(i);
+
+                    String cssClass = StringPool.BLANK;
+
+                    if (curGuestbook.getGuestbookId() == guestbook.getGuestbookId()) {
+                        cssClass = "active";
+                    }
+                    
+                    if (GuestbookPermission.contains(
+                            permissionChecker, curGuestbook.getGuestbookId(), "VIEW")) {
+                        
+        %>
+
+
+            <portlet:actionURL name= "switchTabs" var="switchTabsURL">
+                <portlet:param name="guestbookName" value="<%=curGuestbook.getName() %>"/>
+            </portlet:actionURL>
+
+            <aui:nav-item cssClass="<%=cssClass%>" href="<%=switchTabsURL%>"
+                label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
+        <% 
+                }
+            } 
+        %>
+
+    </aui:nav>
+
+    <aui:button-row cssClass="guestbook-buttons">
+
+    <c:if test='<%= GuestbookModelPermission.contains(permissionChecker, scopeGroupId, "ADD_GUESTBOOK") %>'>
+        <portlet:renderURL var="addGuestbookURL">
+            <portlet:param name="mvcPath"
+                value="/html/guestbook/edit_guestbook.jsp" />
+        </portlet:renderURL>
+
+        <aui:button onClick="<%=addGuestbookURL.toString()%>"
+            value="Add Guestbook" />
+    </c:if>
+
+    <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbook.getGuestbookId(), "ADD_ENTRY") %>'>
+        <portlet:renderURL var="addEntryURL">
+            <portlet:param name="mvcPath" value="/html/guestbook/edit_entry.jsp" />
+            <portlet:param name="guestbookName" value="<%=guestbook.getName()%>" />
+        </portlet:renderURL>
+
+        <aui:button onClick="<%=addEntryURL.toString()%>" value="Add Entry"></aui:button>
+    </c:if>
+
+    </aui:button-row>
+
+    <liferay-ui:search-container>
+        <liferay-ui:search-container-results
+            results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId,
+                            guestbook.getGuestbookId(), searchContainer.getStart(),
+                            searchContainer.getEnd())%>"
+            total="<%=EntryLocalServiceUtil.getEntriesCount(scopeGroupId,
+                            guestbook.getGuestbookId())%>" />
+
+        <liferay-ui:search-container-row
+            className="com.liferay.docs.guestbook.model.Entry" modelVar="entry">
+            
+            <portlet:renderURL var="viewEntry">
+                <portlet:param name="mvcPath" value="/html/guestbook/view_entry.jsp" />
+                <portlet:param name="name" value="<%=entry.getName() %>" />
+                <portlet:param name="guestbookName" value="<%=guestbook.getName() %>" />
+            </portlet:renderURL>
+
+            <liferay-ui:search-container-column-text property="message" href="<%= viewEntry %>"/>
+
+            <liferay-ui:search-container-column-text property="name" />
+            
+            <liferay-ui:search-container-column-jsp
+                path="/html/guestbook/guestbook_actions.jsp"
+                align="right" />
+
+        </liferay-ui:search-container-row>
+
+        <liferay-ui:search-iterator />
+    </liferay-ui:search-container>
+
+There have been some important changes to the `view.jsp`. At the top of the
+file, immediately after the `<%@include...` statement, a scriptlet getting the
+`guestbookId` from the `renderRequest` is replaced by a scriptlet getting the
+`Guestbook` object, and a `liferay-ui:error` tag added.
+
 The `liferay-ui:error` tag is for displaying the error message you added to the
 `SessionErrors` object in the `switchTabs` method.
 
-In the next scriptlet, change the `if` statement to get the `guestbookId` from
-the `Guestbook` retrieved from the render request: 
+In the next scriptlet, the `if` statement is modified to get the `guestbookId`
+from the `Guestbook` retrieved from the render request: 
     
     if (curGuestbook.getGuestbookId() == guestbook.getGuestbookId()) {
         cssClass = "active";
     }
 
-There are two more instances in this file that use the `guestbookId`
-parameter; replace them with the `guestbook.getGuestbookId()`
+There are two more places in this file that used the `guestbookId`
+parameter; they're replaced with the `guestbook.getGuestbookId()`
 call:
 
 - There's one in the permission check for the `addEntryURL`.
 - There are two in the `<liferay-ui:search-container-results...` tag.
 
-Find the `viewPageURL`, inside the `<aui:nav...` tag. It's a `renderURL`,
-but you should replace it with an `actionURL` that triggers your new
+The `viewPageURL` inside the `<aui:nav...` tag was a `renderURL`,
+but is replaced with an `actionURL` that triggers your new
 `swtichTabs` action: 
 
     <portlet:actionURL name= "switchTabs" var="switchTabsURL">
         <portlet:param name="guestbookName" value="<%=curGuestbook.getName() %>"/>
     </portlet:actionURL>
 
-Directly below this URL, the UI component that triggers the action is defined.
-Change it to use `switchTabsURL`:
+Directly below this URL, the UI component that triggers the action is defined:
 
     <aui:nav-item cssClass="<%=cssClass%>" href="<%=switchTabsURL%>"
         label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
 
-In the `addEntryURL`, change the `guestbookId` parameter to a `guestbookName`
+In the `addEntryURL`, the `guestbookId` parameter is now a `guestbookName`
 parameter, using the name of the `Guestbook` attribute retrieved from the
 request:
 
     <portlet:param name="guestbookName" value="<%=guestbook.getName()%>" />
 
-In the `viewEntryURL`, replace the `entryId` parameter with
-a `name` parameter, and add a `guestbookName` parameter as well:
+In the `viewEntryURL`, the `entryId` is replaced with
+a `name` parameter, and a `guestbookName` parameter is added:
 
     <portlet:param name="name" value="<%=entry.getName() %>" />
     <portlet:param name="guestbookName" value="<%=guestbook.getName() %>" />
@@ -356,7 +538,7 @@ for viewing entries. Additionally, the `guestbookName` is needed by the
 That's it for the `view.jsp` file. 
 
 Open `docroot/html/init.jsp`. This is where you organize the imports
-necessary for our JSP files. Add the following imports to the file:
+necessary for JSP files. Add the following imports to the file:
 
     <%@ page import="com.liferay.portal.kernel.util.OrderByComparator" %>
     <%@ page import="com.liferay.portal.kernel.util.OrderByComparatorFactory" %>
@@ -367,10 +549,10 @@ used in the `view_entry.jsp`; an `OrderByComparator` is a necessary parameter
 in those methods.
 
 The JSP files for viewing entries, editing entries, and editing guestbooks need
-some modifications to fully support our changes.
+some modifications to fully support the Friendly URL changes.
 
-First, there's a `renderURL` and an `actionURL` at the top of the file. Move
-them to follow the first scriptlet. 
+Open `edit_entry.jsp`. There's a `renderURL` and an `actionURL` at the top
+of the file. Move them to follow the first scriptlet. 
 
 Change the scriptlet at the top of the file by adding the following line above
 the definition of the `entryId` variable:
@@ -388,28 +570,119 @@ request, get it from the `Guestbook` taken from the request:
 
     String.valueOf(guestbook.getGuestbookId())
 
-Now open `view_entry.jsp`. All the work you have to do here is in the first
-scriptlet. Your aim is to get the `Entry` the user selects, using its `name`
-and the `guestbookId` of the `Guestbook` it's in. 
+Now open `view_entry.jsp`. Replace its content with this code:
 
-- Delete the lines defining the `entryId` and `entry` variables. Since you're 
-  working with the entry `name`, you'll get that from the request instead of the
-  `entryId`, and use it to get the correct `Entry` from the database. 
-- To get the correct `guestbookId`, you'll need to get the `Guestbook` by its
-  name. First get the `guestbookName` so you can get the `Guestbook` (and
-  its `guestbookId`). Then you can get the `Entry` by both its own `name` and the
-  `guestbookId` of its associated `Guestbook`. 
+    <%@include file = "/html/init.jsp" %>
 
-Add these lines to the top of the scriptlet:
+    <portlet:renderURL var="viewURL">
+        <portlet:param name="mvcPath" value="/html/guestbook/view.jsp"></portlet:param>
+    </portlet:renderURL>
 
-	String name = ParamUtil.getString(renderRequest, "name");
+    <liferay-ui:header backURL="<%= viewURL %>" title="entry" />
+
+    <%
+        String name = ParamUtil.getString(renderRequest, "name");
+        
+        String guestbookName=ParamUtil.getString(renderRequest, "guestbookName");
+        
+        OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+        OrderByComparator orderByComparator = orderByComparatorFactory.create("Entry", "name", true);
+        Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(scopeGroupId, guestbookName, orderByComparator);
+        
+        List<Entry> entries = EntryLocalServiceUtil.getEntriesByG_G_N(scopeGroupId, guestbook.getGuestbookId(), name);
+        
+        for (Entry entry : entries) {
+            entry = entry.toEscapedModel();
+
+            AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(
+                    Entry.class.getName(), entry.getEntryId());
+
+            String currentURL = PortalUtil.getCurrentURL(request);
+
+            PortalUtil.addPortletBreadcrumbEntry(request,
+                    entry.getMessage(), currentURL);
+
+            PortalUtil.setPageSubtitle(entry.getMessage(), request);
+            PortalUtil.setPageDescription(entry.getMessage(), request);
+
+            List<AssetTag> assetTags = AssetTagLocalServiceUtil.getTags(
+                    Entry.class.getName(), entry.getEntryId());
+            PortalUtil.setPageKeywords(
+                    ListUtil.toString(assetTags, "name"), request);
+    %>
+
+    <dl>
+        <dt>Guestbook</dt>
+        <dd><%= GuestbookLocalServiceUtil.getGuestbook(entry.getGuestbookId()).getName() %></dd>
+        <dt>Name</dt>
+        <dd><%= entry.getName() %></dd>
+        <dt>Message</dt>
+        <dd><%= entry.getMessage() %></dd>
+    </dl>
+
+    <c:if test="<%= themeDisplay.isSignedIn() %>">
+        <liferay-ui:panel-container extended="<%= false %>"
+            id="entryCollaborationPanelContainer" persistState="<%= true %>">
+            <liferay-ui:panel collapsible="<%= true %>" extended="<%= true %>"
+                id="entryCollaborationPanel" persistState="<%= true %>"
+                title='<%= LanguageUtil.get(pageContext, "collaboration") %>'>
+                <liferay-ui:ratings className="<%= Entry.class.getName() %>"
+                    classPK="<%= entry.getEntryId() %>" type="stars" />
+                
+                <br />
+
+                <portlet:actionURL name="invokeTaglibDiscussion" var="discussionURL" />
+        
+                <liferay-ui:discussion className="<%= Entry.class.getName() %>"
+                    classPK="<%= entry.getEntryId() %>"
+                    formAction="<%= discussionURL %>" formName="fm2"
+                    ratingsEnabled="<%= true %>" redirect="<%= currentURL %>"
+                    subject="<%= entry.getMessage() %>"
+                    userId="<%= entry.getUserId() %>" />
+
+            </liferay-ui:panel>
+        </liferay-ui:panel-container>
+    </c:if>
+
+    <liferay-ui:asset-links
+        assetEntryId="<%= (assetEntry != null) ? assetEntry.getEntryId() : 0 %>"
+        className="<%= Entry.class.getName() %>"
+        classPK="<%= entry.getEntryId() %>" />
+
+    <%
+        }
+    %>
+
+Your aim is to display the `Entry` the user selects, using its `name` and the
+`guestbookId` of the `Guestbook` it's in. Here's how the new `view_entry.jsp`
+does this:
+
+- Using the request parameters `name` and `guestbookName`, you get a list of
+  entries from the database:
+
+        List<Entry> entries = EntryLocalServiceUtil.getEntriesByG_G_N(scopeGroupId, guestbook.getGuestbookId(), name);
 	
-	String guestbookName=ParamUtil.getString(renderRequest, "guestbookName");
-	
-	OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
-	OrderByComparator orderByComparator = orderByComparatorFactory.create("Entry", "name", true);
-	Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
-	Entry entry = EntryLocalServiceUtil.getEntryByGuestbookIdAndName(guestbook.getGuestbookId(), name, orderByComparator);
+- The entries are looped through, and each one is displayed in the portlet:
+
+    for (Entry entry : entries) {
+        ...
+    }
+    <dl>
+        <dt>Guestbook</dt>
+        <dd><%= GuestbookLocalServiceUtil.getGuestbook(entry.getGuestbookId()).getName() %></dd>
+        <dt>Name</dt>
+        <dd><%= entry.getName() %></dd>
+        <dt>Message</dt>
+        <dd><%= entry.getMessage() %></dd>
+    </dl>
+    To get the correct `guestbookId`, you need to get the `Guestbook` by its
+      name. The `guestbookName` is used to get the `Guestbook` (and its
+    `guestbookId`). Then you can get the `Entry` by both its own `name` and the
+    `guestbookId` of its associated `Guestbook`. 
+        ...
+    <%
+        }
+    %>
 
 Finally, open `edit_guestbook.jsp`. For clarity, you've been referring to the `name`
 field of the `Guestbook` as `guestbookName`, so it is not confused with the `name`
