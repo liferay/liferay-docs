@@ -95,10 +95,7 @@ Modify the Liferay portlet descriptor,
 		<friendly-url-mapping>guestbook</friendly-url-mapping>
 		<friendly-url-routes>com/liferay/docs/guestbook/portlet/guestbook-friendly-url-routes.xml</friendly-url-routes>
 
-Save the file and ignore the errors for now. We haven't yet created the file
-declared in the `friendly-url-routes` tag, but we'll get to that soon.
-
-So what are these tags used for? The `friendly-url-routes` tag lets us declare
+So what are these tags used for? The `friendly-url-routes` tag lets you declare
 an XML file with URL routes that relate to the Liferay URLs. In almost all
 cases, you'll use the `DefaultFriendlyURLMapper` class as
 the `friendly-url-mapper-class`. It contains the logic to map your Friendly URL
@@ -114,9 +111,9 @@ Here's what your friendly portlet URLs look like now:
 - View Guestbook: `http://localhost:8080/web/guest/home/-/guestbook/10619/view`
 
 Now you know how to quickly implement Friendly URLs in a custom portlet. You
-could leave it at that, but providing the `guestbookId` and `entryId` in the
-URL really isn't helpful. The next step is to replace those IDs with the title
-of the Guestbook or Guestbook Entry.
+could leave it at that, but using the `guestbookId` and `entryId` in the
+URL really isn't as friendly as it could be. The next step is to replace those
+IDs with the title of the Guestbook or Guestbook Entry.
 
 ## Next Steps
 

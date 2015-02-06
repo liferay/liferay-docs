@@ -61,13 +61,13 @@ portlet's design. When finding an Entry in the database, using the Primary Key
 guarantees you'll find the entity you are looking for. However, the name field
 in your portlet is the name of the person creating the entry. Multiple people
 with the same name can easily create entries, right? What if Penelope creates
-an entry, and then a day later, another Penelope also creates an entry. If you
+an entry, and then a day later, another Penelope also creates an entry? If you
 rely solely on `name` to find the entries, which one should you retrieve from
 the database in the case that two records have matching fields? You can easily
-see the problem. You haven't solved it compeletely by creating this finder.
+see the problem. You haven't solved it completely by creating this finder.
 There could still be multiple Penelopes creating entries in the same guestbook
-in the same site. You'll deal with this in the `view_entry.jsp` file, by using
-this finder to retieve a list of entries in a particular site, in a particular
+in the same site. You'll deal with this in the `view_entry.jsp` file by using
+this finder to retrieve a list of entries in a particular site, in a particular
 guestbook, by a particular name, and displaying them all.
 
 ## Modifying the Service Layer
@@ -534,7 +534,8 @@ for viewing entries. Additionally, the `guestbookName` is needed by the
 That's it for the `view.jsp` file. 
 
 Open `docroot/html/init.jsp`. This is where you organize the imports
-necessary for JSP files. Add the following imports to the file:
+necessary for JSP files, according to Liferay's convention. Add the following
+imports to the file:
 
     <%@ page import="com.liferay.portal.kernel.util.OrderByComparator" %>
     <%@ page import="com.liferay.portal.kernel.util.OrderByComparatorFactory" %>
@@ -690,7 +691,7 @@ to `guestbookName`:
 
 The JSPs have changed quite a bit. In review: 
 
-- Mention of `guestbookId` and `entryId` are removed as necessary, and replaced
+- Mention of `guestbookId` and `entryId` are removed as necessary and replaced
   with `guestbookName` and `name` parameters, where applicable.
 - Method calls that get database entities by their Primary Key are replaced
   with methods that use different database fields.
@@ -740,8 +741,8 @@ In the second route, for `add_entry`, the `<pattern>` tag replaces
 The `view_entry` route's `<pattern>` includes both the `guestbookName` and
 `name` (of the `Entry`) now.
 
-The `view` route includes the `guestbookName`, and changes the
-`<implicit-parameter...` tags since we're now using the `switchTabsURL`, which
+The `view` route includes the `guestbookName` and changes the
+`<implicit-parameter...` tags, since you're now using the `switchTabsURL`, which
 is an `actionURL`.
 
 Now it's time to make sure everything is working as expected. 
