@@ -703,27 +703,46 @@ Now that you've made the necessary changes to your portlet's code, you're ready
 to modify the URL routes you defined in the previous section of this learning
 path.
 
-Open `guestbook-friendly-url-routes.xml`.
+Open `guestbook-friendly-url-routes.xml`, and replace its contents: 
 
-The first route, for `add_guestbook`, does not need modification. 
+    <?xml version="1.0"?>
+    <!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.2.0//EN"
+    "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_2_0.dtd">
 
-In the second route, for `add_entry`, edit the `<pattern>` tag to replace
+    <routes>
+       <route>
+            <pattern>/add_guestbook</pattern>
+            <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+            <implicit-parameter name="mvcPath">/html/guestbook/edit_guestbook.jsp</implicit-parameter>
+        </route>
+        <route>
+            <pattern>/{guestbookName}/add_entry</pattern>
+            <implicit-parameter name="mvcPath">/html/guestbook/edit_entry.jsp</implicit-parameter>
+            
+        </route>
+        <route>
+            <pattern>/{guestbookName}/{name}/view_entry</pattern>
+            <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+            <implicit-parameter name="mvcPath">/html/guestbook/view_entry.jsp</implicit-parameter>
+        </route>
+        <route>
+            <pattern>/{guestbookName}/view</pattern>
+            <implicit-parameter name="p_p_lifecycle">1</implicit-parameter>
+            <implicit-parameter name="javax.portlet.action">switchTabs</implicit-parameter>
+        </route>
+    </routes>
+
+The first route, for `add_guestbook`, remains the same. 
+
+In the second route, for `add_entry`, the `<pattern>` tag replaces
 `{guestbookId}` with `{guestbookName}`.
 
-The `view_entry` route's `<pattern>` needs to include both the `guestbookName` and
-`name` (of the `Entry`):
+The `view_entry` route's `<pattern>` includes both the `guestbookName` and
+`name` (of the `Entry`) now.
 
-    <pattern>/{guestbookName}/{name}/view_entry</pattern>
-
-The `view` route can include the `guestbookName`, but you should also change the
-`<implicit-parameter...` tags since we're using the `switchTabsURL` now. Here's
-what the  route looks like when you're done with it:
-
-    <route>
-        <pattern>/{guestbookName}/view</pattern>
-        <implicit-parameter name="p_p_lifecycle">1</implicit-parameter>
-        <implicit-parameter name="javax.portlet.action">switchTabs</implicit-parameter>
-    </route>
+The `view` route includes the `guestbookName`, and changes the
+`<implicit-parameter...` tags since we're now using the `switchTabsURL`, which
+is an `actionURL`.
 
 Now it's time to make sure everything is working as expected. 
 
