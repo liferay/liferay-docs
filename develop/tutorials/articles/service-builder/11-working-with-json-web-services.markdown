@@ -57,7 +57,7 @@ regards to your remote services.
 via JSON automatically. If you haven't used Service Builder before, please see
 the
 [Defining an Object-Relational Map with Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
-tutorial. 
+tutorial.
 
 $$$
 
