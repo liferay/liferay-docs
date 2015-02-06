@@ -130,10 +130,10 @@ public class GuestbookLocalServiceClp implements GuestbookLocalService {
 
 		_methodParameterTypes21 = new String[] { "java.lang.String" };
 
-		_methodName23 = "getGuestbookByName";
+		_methodName23 = "getGuestbookByG_N";
 
 		_methodParameterTypes23 = new String[] {
-				"java.lang.String",
+				"long", "java.lang.String",
 				"com.liferay.portal.kernel.util.OrderByComparator"
 			};
 
@@ -851,8 +851,8 @@ public class GuestbookLocalServiceClp implements GuestbookLocalService {
 	}
 
 	@Override
-	public com.liferay.docs.guestbook.model.Guestbook getGuestbookByName(
-		java.lang.String name,
+	public com.liferay.docs.guestbook.model.Guestbook getGuestbookByG_N(
+		long groupId, java.lang.String name,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.docs.guestbook.NoSuchGuestbookException,
 			com.liferay.portal.kernel.exception.SystemException {
@@ -862,7 +862,9 @@ public class GuestbookLocalServiceClp implements GuestbookLocalService {
 			returnObj = _invokableLocalService.invokeMethod(_methodName23,
 					_methodParameterTypes23,
 					new Object[] {
-						ClpSerializer.translateInput(name),
+						groupId,
+						
+					ClpSerializer.translateInput(name),
 						
 					ClpSerializer.translateInput(orderByComparator)
 					});

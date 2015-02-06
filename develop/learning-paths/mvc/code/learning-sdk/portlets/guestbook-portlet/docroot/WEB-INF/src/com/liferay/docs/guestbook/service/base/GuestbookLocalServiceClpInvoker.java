@@ -130,10 +130,10 @@ public class GuestbookLocalServiceClpInvoker {
 
 		_methodParameterTypes55 = new String[] { "java.lang.String" };
 
-		_methodName60 = "getGuestbookByName";
+		_methodName60 = "getGuestbookByG_N";
 
 		_methodParameterTypes60 = new String[] {
-				"java.lang.String",
+				"long", "java.lang.String",
 				"com.liferay.portal.kernel.util.OrderByComparator"
 			};
 
@@ -297,8 +297,9 @@ public class GuestbookLocalServiceClpInvoker {
 
 		if (_methodName60.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes60, parameterTypes)) {
-			return GuestbookLocalServiceUtil.getGuestbookByName((java.lang.String)arguments[0],
-				(com.liferay.portal.kernel.util.OrderByComparator)arguments[1]);
+			return GuestbookLocalServiceUtil.getGuestbookByG_N(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1],
+				(com.liferay.portal.kernel.util.OrderByComparator)arguments[2]);
 		}
 
 		if (_methodName61.equals(name) &&
