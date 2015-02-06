@@ -37,7 +37,7 @@ You'll start by creating the finders.
 
 ## Finding Entities
 
-First, modify the Guestbook App's `docroot/WEB-INF/service.xml` file, adding
+First, modify the Guestbook app's `docroot/WEB-INF/service.xml` file, adding
 the following XML below the current `<finder>` in the `Guestbook` entity:
 
     <finder name="G_N" return-type="Collection">
@@ -66,8 +66,9 @@ rely solely on `name` to find the entries, which one should you retrieve from
 the database in the case that two records have matching fields? You can easily
 see the problem. You haven't solved it compeletely by creating this finder.
 There could still be multiple Penelopes creating entries in the same guestbook
-in the same site. You'll deal with this in the `view_entry.jsp` file, by
-using this finder to retieve a list of entries, and displaying them all.
+in the same site. You'll deal with this in the `view_entry.jsp` file, by using
+this finder to retieve a list of entries in a particular site, in a particular
+guestbook, by a particular name, and displaying them all.
 
 ## Modifying the Service Layer
 
@@ -101,11 +102,10 @@ Organize the imports for both files:
 
 Run Service Builder.
 
-Note the use of the `Guestbook` finder method appended by `_first`
-(`findByGuestbookName_first`), and the need for the `OrderByComparator` as an
-argument. This is simply to protect against cases where two `Guestbook` are
-created with the same name. This code ensures that only the first one is
-retrieved.
+Note the use of the `Guestbook` finder method appended by `_first`, and the
+need for the `OrderByComparator` as an argument. This is simply to protect
+against cases where two `Guestbook`s are created with the same name. This code
+ensures that only the first one is retrieved.
 
 The Portlet's Controller class needs to add a `Guestbook` object to the
 attribute for the modifications to work. 
@@ -240,7 +240,7 @@ There are several lines to take note of:
 
     String guestbookName = ParamUtil.getString(request, "guestbookName");
 
-The above variable declaration gets the `guetbookName`, rather than the
+The above variable declaration gets the `guestbookName`, rather than the
 `guestbookId`, from the request.
 
 You need to get the `Guestbook` by its `groupId` and `name`, so these lines
@@ -249,18 +249,20 @@ are added before the `if` statement:
     OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
     OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
 		
-    Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
+    Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(
+				serviceContext.getScopeGroupId(), guestbookName,
+				orderByComparator);
 
-In the calls to `updateEntry` and `addEntry`, you changed the `guestbookId`
-parameter to `guestbook.getGuestbookId()`.
+In the calls to `updateEntry` and `addEntry`, the `guestbookId` parameter is
+replaced with `guestbook.getGuestbookId()`.
 
 Since the `guestbookId` is no longer in the request, you now use the
 `guestbookName`. Any fields from the object (like `guestbookId`) must now be
 retrieved from the object to use in the *update* and *add* methods that require
 them.
 
-You also changed the `setRenderParameter` calls in both the `try` blocks to set
-`guestbookName`.
+The `setRenderParameter` calls in both the `try` blocks now set
+`guestbookName`, rather than `guestbookId`.
 
 Leave the `deleteEntry` method alone. Limit your work to the URLs that
 most users use, including viewing guestbooks, viewing full entries, adding
@@ -570,7 +572,7 @@ request, get it from the `Guestbook` taken from the request:
 
     String.valueOf(guestbook.getGuestbookId())
 
-Now open `view_entry.jsp`. Replace its content with this code:
+Now open `view_entry.jsp`. Replace its contents with this code:
 
     <%@include file = "/html/init.jsp" %>
 
@@ -664,25 +666,25 @@ does this:
 	
 - The entries are looped through, and each one is displayed in the portlet:
 
-    for (Entry entry : entries) {
-        ...
-    }
-    <dl>
-        <dt>Guestbook</dt>
-        <dd><%= GuestbookLocalServiceUtil.getGuestbook(entry.getGuestbookId()).getName() %></dd>
-        <dt>Name</dt>
-        <dd><%= entry.getName() %></dd>
-        <dt>Message</dt>
-        <dd><%= entry.getMessage() %></dd>
-    </dl>
-    To get the correct `guestbookId`, you need to get the `Guestbook` by its
-      name. The `guestbookName` is used to get the `Guestbook` (and its
-    `guestbookId`). Then you can get the `Entry` by both its own `name` and the
-    `guestbookId` of its associated `Guestbook`. 
-        ...
-    <%
+        for (Entry entry : entries) {
+            ...
         }
-    %>
+        <dl>
+            <dt>Guestbook</dt>
+            <dd><%= GuestbookLocalServiceUtil.getGuestbook(entry.getGuestbookId()).getName() %></dd>
+            <dt>Name</dt>
+            <dd><%= entry.getName() %></dd>
+            <dt>Message</dt>
+            <dd><%= entry.getMessage() %></dd>
+        </dl>
+        To get the correct `guestbookId`, you need to get the `Guestbook` by its
+          name. The `guestbookName` is used to get the `Guestbook` (and its
+        `guestbookId`). Then you can get the `Entry` by both its own `name` and the
+        `guestbookId` of its associated `Guestbook`. 
+            ...
+        <%
+            }
+        %>
 
 Finally, open `edit_guestbook.jsp`. For clarity, you've been referring to the `name`
 field of the `Guestbook` as `guestbookName`, so it is not confused with the `name`
