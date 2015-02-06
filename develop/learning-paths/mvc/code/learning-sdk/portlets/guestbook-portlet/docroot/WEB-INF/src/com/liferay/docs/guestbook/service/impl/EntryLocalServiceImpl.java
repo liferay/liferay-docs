@@ -20,7 +20,6 @@ import java.util.List;
 import com.liferay.docs.guestbook.EntryEmailException;
 import com.liferay.docs.guestbook.EntryMessageException;
 import com.liferay.docs.guestbook.EntryNameException;
-import com.liferay.docs.guestbook.NoSuchEntryException;
 import com.liferay.docs.guestbook.model.Entry;
 import com.liferay.docs.guestbook.service.base.EntryLocalServiceBaseImpl;
 import com.liferay.portal.kernel.exception.PortalException;
@@ -28,7 +27,6 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.search.Indexer;
 import com.liferay.portal.kernel.search.IndexerRegistryUtil;
 import com.liferay.portal.kernel.util.ContentTypes;
-import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ResourceConstants;
 import com.liferay.portal.model.User;
@@ -63,16 +61,12 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 	 * entry local service.
 	 */
 
-	public Entry getEntryByName(String name, OrderByComparator orderByComparator) 
-			throws SystemException, NoSuchEntryException {
-		return entryPersistence.findByEntryName_First(name, orderByComparator);
+	public List<Entry> getEntriesByG_G_N(long groupId, long guestbookId,
+			String name) throws SystemException {
+		
+		return entryPersistence.findByG_G_N(groupId, guestbookId, name);
 	}
-	
-	public Entry getEntryByGuestbookIdAndName(long guestbookId, String name, OrderByComparator orderByComparator) 
-			throws SystemException, NoSuchEntryException {
-		return entryPersistence.findByG_N_First(guestbookId, name, orderByComparator);
-	}
-	
+
 	public List<Entry> getEntries(long groupId, long guestbookId)
 			throws SystemException {
 
