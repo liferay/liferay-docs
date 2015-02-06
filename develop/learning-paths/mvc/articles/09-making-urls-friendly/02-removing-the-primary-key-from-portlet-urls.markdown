@@ -562,9 +562,10 @@ following parameter to each one:
 
 The only other modification you need here is in the `<aui:input...` tag for the
 hidden `guestbookId` field. Instead of getting the `guestbookId` from the
-request, get it from the `Guestbook` taken from the request:
+request, get it from the `Guestbook` taken from the request. Replace the tag
+with this snippet:
 
-    String.valueOf(guestbook.getGuestbookId())
+    <aui:input name='guestbookId' type='hidden' value='<%= String.valueOf(guestbook.getGuestbookId()) %>'/>
 
 Now open `view_entry.jsp`. Replace its contents with this code:
 
