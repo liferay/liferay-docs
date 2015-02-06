@@ -910,14 +910,13 @@ from their JavaScript in the following ways:
 Each of these methods returned server generated URLs that included
 authentication tokens (the `p_auth` or `p_p_auth` URL parameters), whenever
 necessary. That behavior, however, posed a security risk. In all Liferay EE 6.2
-GA and CE 6.2 GA releases, and Milestone releases after Liferay 6.2.0 M5, these
-methods have been updated so that they still work (i.e., they still return
-appropriate portlet URLs) but they no longer include the authentication tokens
-in the returned URLs. Also, although it's still possible to generate portlet
-URLs via JavaScript, the generated URLs will not be friendly. See the note below
-for an explanation. The fix for the security issue has been applied to all GA
-releases of Liferay 6.2 CE and has been supplied to Liferay 6.1 EE customers as
-a fix pack for LSV-2.
+GA and CE 6.2 GA releases, these methods have been updated so that they still
+work (i.e., they still return appropriate portlet URLs) but they no longer
+include the authentication tokens in the returned URLs. Also, although it's
+still possible to generate portlet URLs via JavaScript, the generated URLs will
+not be friendly. See the note below for an explanation. The fix for the
+security issue has been applied to all GA releases of Liferay 6.2 CE and has
+been supplied to Liferay 6.1 EE customers as a fix pack for LSV-2.
 
 Note: Before the fix for the security issue, the
 `Liferay.PortletURL.createActionURL()`, `Liferay.PortletURL.createRenderURL()`,
