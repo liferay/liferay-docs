@@ -7,17 +7,18 @@ in your persistence layer and adds methods to your service layer that invoke the
 finder. But what if you'd like to do more complicated searches that incorporate
 attributes from multiple entities? 
 
-For example, consider the Event Listing Portlet you've been developing in this
-chapter. Suppose you want to find an event based on its name, description, and
-location name. If you recall, the event entity refers to its location by the
-location's ID, not its name. That is, the event entity table, `Event_Event`,
-refers to an event's location by its long integer ID in the table's `locationId`
-column. But you need to access the *name* of the event's location. Of course,
-with SQL you can join the event and location tables to include the location
-name. But how would you incorporate custom SQL into your portlet? And how would
-you invoke the SQL from your service? Service Builder lets you do this by
-specifying the SQL as *Liferay custom SQL* and invoking it in your service via
-a *custom finder method*.
+For example, consider the
+[Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet)
+portlet. Suppose you want to find an event based on its name, description, and
+location name. In the Event Listing portlet, the event entity refers to its
+location by the location's ID, not its name. That is, the event entity table,
+`Event_Event`, refers to an event's location by its long integer ID in the
+table's `locationId` column. But you need to access the *name* of the event's
+location. Of course, with SQL you can join the event and location tables to
+include the location name. But how would you incorporate custom SQL into your
+portlet? And how would you invoke the SQL from your service? Service Builder
+lets you do this by specifying the SQL as *Liferay custom SQL* and invoking it
+in your service via a *custom finder method*.
 
 Liferay custom SQL is a Service Builder-supported method for performing complex
 and custom queries against the database. Invoking custom SQL from a finder
@@ -31,8 +32,8 @@ these steps:
 
 3. Access your finder method from your service. 
 
-Next, you'll do exactly this to create and invoke custom SQL in your Event
-Listing Portlet. 
+Next, using the Event Listing portlet as an example, you'll learn how to
+accomplish these steps. 
 
 ## Step 1: Specify Your Custom SQL
 
@@ -56,16 +57,15 @@ using for the ID value is the fully-qualified class name of the finder followed
 by a dot (`.`) character and the name of the finder method. More detail on the
 finder class and finder methods is in Step 2. 
 
-For this example, you'll use the following ID value for the query: 
+In the Event Listing project, the following ID value was used for the query: 
 
     com.nosester.portlet.eventlisting.service.persistence.\
     EventFinder.findByEventNameEventDescriptionLocationName
 
-Custom SQL must be wrapped in character data (`CDATA`) for the `sql`
-element. Importantly, the SQL must *not* be terminated with a semi-colon. 
-
-Following these rules, specify the custom SQL for this query by replacing the
-contents of the `default.xml` file with the following code: 
+Custom SQL must be wrapped in character data (`CDATA`) for the `sql` element.
+Importantly, the SQL must *not* be terminated with a semi-colon. Following these
+rules, the `default.xml` file of the Event Listing project specifies an SQL
+query that joins the Event and Location tables: 
 
     <?xml version="1.0" encoding="UTF-8"?>
     <custom-sql>
@@ -82,15 +82,16 @@ contents of the `default.xml` file with the following code:
         </sql>
     </custom-sql>
 
-Make sure to delete the backslash (`\`) character from the end of the ID so that
-the finder method name `findByEventNameEventDescriptionLocationName` immediately
-follows the package path specified below:
+If you copy the XML fragment above, make sure to delete the backslash (`\`)
+character from the end of the ID so that the finder method name
+`findByEventNameEventDescriptionLocationName` immediately follows the package
+path specified below:
 
     com.nosester.portlet.eventlisting.service.persistence.
 
-Now that you've specified some custom SQL, the next step is to implement the
-finder method. The method name for the finder should match the ID you just
-specified for the `sql` element. 
+Now that you've specified some custom SQL, the next step is to implement a
+finder method to invoke it. The method name for the finder should match the ID
+you just specified for the `sql` element. 
 
 ## Step 2: Implement Your Finder Method
 
@@ -101,33 +102,24 @@ for it. But before you do that, you need to create the implementation of the
 finder. 
 
 The first step is to create a `*FinderImpl` class in the service persistence
-package. Create a class called `EventFinderImpl` in the
-`com.nosester.portlet.eventlisting.service.persistence.impl` package. Make
-the class extend `BasePersistenceImpl<Event>`. Your `EventFinderImpl.java` file
-should now have the following contents: 
-
-    package com.nosester.portlet.eventlisting.service.persistence;
-
-    import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
-    import com.nosester.portlet.eventlisting.model.Event;
-
-    public class EventFinderImpl extends BasePersistenceImpl<Event> {
-
-    }
+package. The Event Listing project includes the `EventFinderImpl` class in the
+`com.nosester.portlet.eventlisting.service.persistence.impl` package. Your
+class, like `EventFinderImpl`, should extend `BasePersistenceImpl<Event>`.
 
 Run Service Builder to generate the `*Finder` interface and the `*Util` class
-for the finder. Service Builder generates the `EventFinder` interface and the
-`EventFinderUtil` utility class based on the `EventFinderImpl` class. Modify
-your `EventFinderImpl` class to have it implement the `EventFinder` interface
-you just generated: 
+for the finder. Service Builder generates the `*Finder` interface and the
+`*FinderUtil` utility class based on the `*FinderImpl` class. Modify your
+`*FinderImpl` class to have it implement the `*Finder` interface you just
+generated: 
 
-    public class EventFinderImpl extends BasePersistenceImpl<Event>
+    public class *FinderImpl extends BasePersistenceImpl<Event>
         implements EventFinder {
 
     }
 
-Now you can create our finder method in your `EventFinderImpl` class. Add
-the following finder method and static field to the `EventFinderImpl` class:
+Now you can create our finder method in your `EventFinderImpl` class. Add your
+finder method and static field to the `*FinderImpl` class. Here's the
+`EventFinderImpl` class:
 
     public List<Event> findByEventNameEventDescriptionLocationName(
         String eventName, String eventDescription, String locationName,
@@ -167,8 +159,8 @@ the following finder method and static field to the `EventFinderImpl` class:
         EventFinder.class.getName() +
             ".findByEventNameEventDescriptionLocationName";
 
-Remember to import the required classes. We've provided the imports here for
-your convenience: 
+Remember to import the required classes. The following imports are required for
+`EventFinderImpl`: 
 
     import java.util.List;
 
@@ -196,18 +188,19 @@ you'll call the finder method from your service.
 
 ## Step 3: Access Your Finder Method from Your Service
 
-So far, you created a `*FinderImpl` class and generated a `*FinderUtil`
-utility class. However, your portlet class should not use the finder utility
-class directly; only a local or remote service implementation (i.e.,
+So far, you created a `*FinderImpl` class and generated a `*FinderUtil` utility
+class. However, your portlet class should not use the finder utility class
+directly; only a local or remote service implementation (i.e.,
 `*LocalServiceImpl` or `*ServiceImpl`) in your plugin project should invoke the
 `*FinderUtil` class. This encourages a proper separation of concerns: the
 portlet classes invoke business logic of the services and the services in turn
-access the data model using the persistence layer's finder classes.  So you'll
+access the data model using the persistence layer's finder classes. So you'll
 add a method in the `*LocalServiceImpl` class that invokes the finder method
 implementation via the `*FinderUtil` class. Then you'll provide the portlet and
 JSPs access to this service method by rebuilding the service.
 
-Add the following method to the `EventLocalServiceImpl` class: 
+The following method in `EventLocalServiceImpl` invokes the finder method
+discussed in step 2: 
 
     public List<Event> findByEventNameEventDescriptionLocationName(String eventName,
         String eventDescription, String locationName, int begin, int end)
@@ -217,11 +210,12 @@ Add the following method to the `EventLocalServiceImpl` class:
             eventName, eventDescription, locationName, begin, end);
     }	
 
-After you've added this method, run Service Builder to generate the interface
-and make this finder method available in the `EventLocalServiceUtil` class. 
+After you've added a service method to invoke your finder method, run Service
+Builder to generate the interface and make your finder service method available
+in the `EventLocalServiceUtil` class. 
 
 Now you can indirectly call the finder method from your portlet class or from a
-JSP by calling
+JSP. To call the finder method in the Event Listing project, just calling
 `EventLocalServiceUtil.findByEventNameEventDescriptionLocationName(...)`! 
 
 <!-- Note, the view JSP currently does not call
