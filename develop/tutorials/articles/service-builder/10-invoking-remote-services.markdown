@@ -1,4 +1,4 @@
-# Calling Remote Services
+# Invoking Remote Services
 
 Service Builder can expose your project's remote web services both via a JSON
 API and via SOAP. By default, running Service Builder with `remote-service` set
