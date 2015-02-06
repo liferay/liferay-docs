@@ -8,13 +8,13 @@ Developers are able to extend the set of available types of rules by creating
 and deploying their own OSGi plugins which contain a class implementing the
 [Rule Interface](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/Rule.java).
 
-OSGi plugins can be quickly hot deployed and undeployed, manage their own
+OSGi plugins can be hot deployed and undeployed, manage their own
 dependencies, and provide new services that other OSGi plugins can consume. In
 the case of a rule OSGi plugin, it is consumed by the Audience Targeting
 application.
 
 Before you begin creating a custom rule type, you'll learn how/where to install
-the Audience Targeting project for usage, and a couple tips along the way.
+the Audience Targeting project for usage, as well as a few tips along the way.
 
 ## Installing the Audience Targeting Project [](id=installing-the-audience-targeting-project)
 
@@ -24,20 +24,20 @@ project itself. To do this, you'll need to install the Audience Targeting SDK.
 
 So why is this SDK useful for Audience Targeting? The Audience Targeting project
 is included in the SDK, meaning you can run useful development scripts from the
-project that automatically create rule, report, and tracking action plugins that
-can be customized. It essentially provides an entire Audience Targeting
-development environment for developers.
+project that automatically create customizable rule, report, and tracking action
+plugins. It essentially provides an entire Audience Targeting development
+environment.
 
 You can download the Audience Targeting SDK from the following
 [wiki](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Audience+Targeting).
 
-<!-- There's not an the official downloads page because the WCM team is working
-on a new SDK based on gradle and they want that one to replace this one. Once
+<!-- There's not an official downloads page because the WCM team is working
+on a new SDK based on Gradle and they want that one to replace this one. Once
 that one is available (~end Feb 2015), an official downloads page link will be
 available. -Cody -->
 
-Once you've completed this, the root directory you'll need to work from in the
-SDK for this tutorial is the `apps/content-targeting` directory.
+Once you've completed this, unzip it. Inside the SDK, you'll work from
+`apps/content-targeting` directory.
 
 +$$$
 
@@ -79,22 +79,22 @@ server.
    application.
 
 3. Of course, you still need to make some changes to define how your rule works.
-   Open the Java class file that was created (e.g., `TimeZoneRule.java`). Some
-   of the methods that you can implement to modify your rule behavior are:
+   Open the Java class file that was created (e.g., `TimeZoneRule.java`). Here
+   are some of the methods that you can implement to modify your rule behavior:
 
     * `processRule`: handles the information provided by the administrator when
-    configuring this rule through the Rule GUI. For example, to store the
+    configuring this rule through the Rule GUI (for example, to store the
     selected time zone in the `typeSettings` field in the database from a
-    *select*.
+    *select*).
 
     * `evaluate`: determines whether a given user matches the rule with the
     information that has been stored. For example, it checks the time zone in
-    the user profile and compares with the one stored in the database by the
+    the user profile and compares it with the one stored in the database by the
     `processRule` method. If they match, it returns `true`.
 
     * `getFormHtml`: returns the HTML displayed to administrators when
     configuring a Rule through the Rule GUI. The `BaseRule` class already
-    implements this method including a FreeMarker template placed in
+    implements this method, including a FreeMarker template placed in
     `templates/ct_fields.ftl`. For example, for the Time Zone Rule, you may add a
     selector with the available time zones.
 
@@ -119,7 +119,7 @@ server.
 Excellent! You now know how to create a custom rule type for your Audience
 Targeting application. For working examples of the default rules included in the
 Audience Targeting app, visit the Audience Targeting
-[project](https://github.com/liferay/liferay-apps-content-targeting) page, and
+[project](https://github.com/liferay/liferay-apps-content-targeting) page and
 study the folders with the `rule-` prefix.
 
 <!-- ## Customize the Rules Engine -->

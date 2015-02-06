@@ -1,17 +1,16 @@
 # Reporting User Behavior with Audience Targeting [](id=reporting-user-behavior-with-audience-targeting)
 
 In the Audience Targeting application, a report is a tool that allows
-administrators to analyze the behavior of users belonging to specific user
-segments, or in the context of a campaign.
+administrators to analyze the behavior of users in a campaign or belonging to
+specific user segments.
 
 Developers are able to extend the set of available reports by creating and
 deploying their own OSGi plugins which contain a class implementing the
 [Report Interface](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/Report.java).
 
-OSGi plugins can be quickly hot deployed and undeployed, manage their own
-dependencies, and provide new services that other OSGi plugins can consume. In
-the case of a report OSGi plugin, it is consumed by the Audience Targeting
-application.
+OSGi plugins can be hot deployed and undeployed, manage their own dependencies,
+and provide new services that other OSGi plugins can consume. In the case of a
+report OSGi plugin, it is consumed by the Audience Targeting application.
 
 To follow this tutorial, you must first have the Audience Targeting
 [project](https://github.com/liferay/liferay-apps-content-targeting) and
@@ -42,10 +41,10 @@ server.
 
 3. Of course, you still need to make some changes to define how your report
    works. Open the Java class file that was created
-   (e.g.,`HitsByCountryReport.java`). Some of the methods that you can implement
-   to modify your report behavior are:
+   (e.g.,`HitsByCountryReport.java`). Here are some of the methods that you can
+   implement to modify your report behavior:
 
-    * `getReportType`: determines which resource the report is associated to. By
+    * `getReportType`: determines the associated resource for the report. By
     default, the resource is a Campaign, but you can change it to User Segment
     to create a report for this type of resource.
 
@@ -75,4 +74,4 @@ Congratulations! You're now equipped with the knowledge necessary to create a
 custom report for your Audience Targeting app. For working examples of the
 default reports included in the Audience Targeting app, visit the Audience
 Targeting [project](https://github.com/liferay/liferay-apps-content-targeting)
-page, and study the folders with the `report-` prefix.
+page and study the folders with the `report-` prefix.
