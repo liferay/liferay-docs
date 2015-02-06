@@ -1,4 +1,4 @@
-# Removing the Primary Key from Portlet URLs
+# Removing the Primary Key from Portlet URLs [](id=removing-the-primary-key-from-portlet-urls)
 
 After the last section on Making URLs Friendly, you have a good understanding of
 Liferay's Friendly URL pattern, from declaring your intentions in
@@ -35,7 +35,7 @@ work:
 
 You'll start by creating the finders. 
 
-## Finding Entities
+## Finding Entities [](id=finding-entities)
 
 First, modify the Guestbook app's `docroot/WEB-INF/service.xml` file, adding
 the following XML below the current `<finder>` in the `Guestbook` entity:
@@ -70,7 +70,7 @@ in the same site. You'll deal with this in the `view_entry.jsp` file by using
 this finder to retrieve a list of entries in a particular site, in a particular
 guestbook, by a particular name, and displaying them all.
 
-## Modifying the Service Layer
+## Modifying the Service Layer [](id=modifying-the-service-layer)
 
 Next, you need to create methods that use the Guestbook Portlet's new ability to
 retrieve `Guestbook` and `Entry` entities from the database by the fields you
@@ -110,7 +110,7 @@ ensures that only the first one is retrieved.
 The Portlet's Controller class needs to add a `Guestbook` object to the
 attribute for the modifications to work. 
 
-## Updating the Guestbook Portlet's Controller Class
+## Updating the Guestbook Portlet's Controller Class [](id=updating-the-guestbook-portlets-controller-class)
 
 Open `GuestbookPortlet` and add the following method to the bottom of the class:
 
@@ -356,7 +356,7 @@ The Controller is updated. Now you should update the View layer of the Guestbook
 app, changing URL parameters and any scriptlets that rely on Primary Keys from
 the request.
 
-## Updating the View Layer
+## Updating the View Layer [](id=updating-the-view-layer)
 
 Many of the portlet URLs and scriptlets defined in the JSPs you've written
 currently include the `guestbookId` or `entryId` as a parameter. You need to
@@ -698,7 +698,7 @@ The JSPs have changed quite a bit. In review:
 - The `view_entry.jsp` now displays all the entries in a site's Guestbook that
   share the same `name` field value.
 
-## Modifying the URL Routes
+## Modifying the URL Routes [](id=modifying-the-url-routes)
 
 Now that you've made the necessary changes to your portlet's code, you're ready
 to modify the URL routes you defined in the previous section of this learning
@@ -747,7 +747,7 @@ is an `actionURL`.
 
 Now it's time to make sure everything is working as expected. 
 
-## Testing the URL Routes
+## Testing the URL Routes [](id=testing-the-url-routes)
 
 Log in to the portal with the Guestbook Portlet deployed. If you haven't
 already added the portlet to a page, do so now. Because of the `render` method's
@@ -780,7 +780,7 @@ You're a Friendly URL expert now. Not only can you create Friendly URLs from the
 existing URL parameters, but you know how to remove the Primary Key from the URL
 to create even friendlier URLs.
 
-## Next Steps
+## Next Steps [](id=next-steps)
 
 [Creating Remote Services](/develop/learning-paths/-/knowledge_base/creating-remote-services)
 

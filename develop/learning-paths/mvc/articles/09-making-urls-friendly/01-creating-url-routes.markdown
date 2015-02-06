@@ -1,4 +1,4 @@
-# Creating URL Routes
+# Creating URL Routes [](id=creating-url-routes)
 
 If you have the Guestbook Portlet deployed and added to a page, click on the
 *Add Guestbook* button. Here's what the generated URL looks like:
@@ -18,7 +18,7 @@ any portlet URL, and you can do it in two easy steps:
 
 You'll learn how to do that next. 
 
-## Defining Friendly URL Routes
+## Defining Friendly URL Routes [](id=defining-friendly-url-routes)
 
 Your Friendly URL is ready to emerge from the beastly URL above. While
 you're here, you can clean up the URLs for some of the other links as well.
@@ -85,7 +85,7 @@ There are two tags from the XML to focus on:
 Liferay isn't yet aware of your intention to use friendly URLs. The next
 section shows you how to inform the portal.
 
-## Declaring Friendly URL Mapping to Liferay
+## Declaring Friendly URL Mapping to Liferay [](id=declaring-friendly-url-mapping-to-liferay)
 
 Modify the Liferay portlet descriptor,
 `docroot/WEB-INF/liferay-portlet.xml`, by adding these lines after the
@@ -115,7 +115,7 @@ could leave it at that, but using the `guestbookId` and `entryId` in the
 URL really isn't as friendly as it could be. The next step is to replace those
 IDs with the title of the Guestbook or Guestbook Entry.
 
-## Next Steps
+## Next Steps [](id=next-steps)
 
 [Removing the Primary Key from Portlet URLs](/develop/learning-paths/-/knowledge_base/removing-primary-keys-from-the-url)
 
