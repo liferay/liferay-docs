@@ -130,48 +130,40 @@ public class EntryLocalServiceClp implements EntryLocalService {
 
 		_methodParameterTypes21 = new String[] { "java.lang.String" };
 
-		_methodName23 = "getEntryByName";
+		_methodName23 = "getEntriesByG_G_N";
 
 		_methodParameterTypes23 = new String[] {
-				"java.lang.String",
-				"com.liferay.portal.kernel.util.OrderByComparator"
+				"long", "long", "java.lang.String"
 			};
 
-		_methodName24 = "getEntryByGuestbookIdAndName";
+		_methodName24 = "getEntries";
 
-		_methodParameterTypes24 = new String[] {
-				"long", "java.lang.String",
-				"com.liferay.portal.kernel.util.OrderByComparator"
-			};
+		_methodParameterTypes24 = new String[] { "long", "long" };
 
 		_methodName25 = "getEntries";
 
-		_methodParameterTypes25 = new String[] { "long", "long" };
+		_methodParameterTypes25 = new String[] { "long", "long", "int", "int" };
 
-		_methodName26 = "getEntries";
+		_methodName26 = "getEntriesCount";
 
-		_methodParameterTypes26 = new String[] { "long", "long", "int", "int" };
+		_methodParameterTypes26 = new String[] { "long", "long" };
 
-		_methodName27 = "getEntriesCount";
+		_methodName27 = "deleteEntry";
 
-		_methodParameterTypes27 = new String[] { "long", "long" };
-
-		_methodName28 = "deleteEntry";
-
-		_methodParameterTypes28 = new String[] {
+		_methodParameterTypes27 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName29 = "addEntry";
+		_methodName28 = "addEntry";
 
-		_methodParameterTypes29 = new String[] {
+		_methodParameterTypes28 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName30 = "updateEntry";
+		_methodName29 = "updateEntry";
 
-		_methodParameterTypes30 = new String[] {
+		_methodParameterTypes29 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
@@ -854,28 +846,24 @@ public class EntryLocalServiceClp implements EntryLocalService {
 	}
 
 	@Override
-	public com.liferay.docs.guestbook.model.Entry getEntryByName(
-		java.lang.String name,
-		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
-		throws com.liferay.docs.guestbook.NoSuchEntryException,
-			com.liferay.portal.kernel.exception.SystemException {
+	public java.util.List<com.liferay.docs.guestbook.model.Entry> getEntriesByG_G_N(
+		long groupId, long guestbookId, java.lang.String name)
+		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableLocalService.invokeMethod(_methodName23,
 					_methodParameterTypes23,
 					new Object[] {
-						ClpSerializer.translateInput(name),
+						groupId,
 						
-					ClpSerializer.translateInput(orderByComparator)
+					guestbookId,
+						
+					ClpSerializer.translateInput(name)
 					});
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.docs.guestbook.NoSuchEntryException) {
-				throw (com.liferay.docs.guestbook.NoSuchEntryException)t;
-			}
 
 			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
 				throw (com.liferay.portal.kernel.exception.SystemException)t;
@@ -890,49 +878,7 @@ public class EntryLocalServiceClp implements EntryLocalService {
 			}
 		}
 
-		return (com.liferay.docs.guestbook.model.Entry)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public com.liferay.docs.guestbook.model.Entry getEntryByGuestbookIdAndName(
-		long guestbookId, java.lang.String name,
-		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
-		throws com.liferay.docs.guestbook.NoSuchEntryException,
-			com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName24,
-					_methodParameterTypes24,
-					new Object[] {
-						guestbookId,
-						
-					ClpSerializer.translateInput(name),
-						
-					ClpSerializer.translateInput(orderByComparator)
-					});
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.docs.guestbook.NoSuchEntryException) {
-				throw (com.liferay.docs.guestbook.NoSuchEntryException)t;
-			}
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.liferay.docs.guestbook.model.Entry)ClpSerializer.translateOutput(returnObj);
+		return (java.util.List<com.liferay.docs.guestbook.model.Entry>)ClpSerializer.translateOutput(returnObj);
 	}
 
 	@Override
@@ -942,8 +888,8 @@ public class EntryLocalServiceClp implements EntryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName25,
-					_methodParameterTypes25,
+			returnObj = _invokableLocalService.invokeMethod(_methodName24,
+					_methodParameterTypes24,
 					new Object[] { groupId, guestbookId });
 		}
 		catch (Throwable t) {
@@ -972,8 +918,8 @@ public class EntryLocalServiceClp implements EntryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName26,
-					_methodParameterTypes26,
+			returnObj = _invokableLocalService.invokeMethod(_methodName25,
+					_methodParameterTypes25,
 					new Object[] { groupId, guestbookId, start, end });
 		}
 		catch (Throwable t) {
@@ -1001,8 +947,8 @@ public class EntryLocalServiceClp implements EntryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName27,
-					_methodParameterTypes27,
+			returnObj = _invokableLocalService.invokeMethod(_methodName26,
+					_methodParameterTypes26,
 					new Object[] { groupId, guestbookId });
 		}
 		catch (Throwable t) {
@@ -1032,8 +978,8 @@ public class EntryLocalServiceClp implements EntryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName28,
-					_methodParameterTypes28,
+			returnObj = _invokableLocalService.invokeMethod(_methodName27,
+					_methodParameterTypes27,
 					new Object[] {
 						entryId,
 						
@@ -1073,8 +1019,8 @@ public class EntryLocalServiceClp implements EntryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName29,
-					_methodParameterTypes29,
+			returnObj = _invokableLocalService.invokeMethod(_methodName28,
+					_methodParameterTypes28,
 					new Object[] {
 						userId,
 						
@@ -1122,8 +1068,8 @@ public class EntryLocalServiceClp implements EntryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName30,
-					_methodParameterTypes30,
+			returnObj = _invokableLocalService.invokeMethod(_methodName29,
+					_methodParameterTypes29,
 					new Object[] {
 						userId,
 						
@@ -1222,6 +1168,4 @@ public class EntryLocalServiceClp implements EntryLocalService {
 	private String[] _methodParameterTypes28;
 	private String _methodName29;
 	private String[] _methodParameterTypes29;
-	private String _methodName30;
-	private String[] _methodParameterTypes30;
 }

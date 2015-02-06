@@ -9,7 +9,6 @@ import javax.portlet.PortletException;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
-import com.liferay.docs.guestbook.NoSuchGuestbookException;
 import com.liferay.docs.guestbook.model.Entry;
 import com.liferay.docs.guestbook.model.Guestbook;
 import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
@@ -47,7 +46,9 @@ public class GuestbookPortlet extends MVCPortlet {
 		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
 		OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
 		
-		Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
+		Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(
+				serviceContext.getScopeGroupId(), guestbookName,
+				orderByComparator);
 
 		if (entryId > 0) {
 			try {
@@ -166,7 +167,7 @@ public class GuestbookPortlet extends MVCPortlet {
 					OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
 					OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
 					
-					guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
+					guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(serviceContext.getScopeGroupId(), guestbookName, orderByComparator);
 				}	
 			}
 			renderRequest.setAttribute("guestbook", guestbook);
@@ -180,7 +181,10 @@ public class GuestbookPortlet extends MVCPortlet {
 	}
 
 	public void switchTabs(ActionRequest request, ActionResponse response)
-			throws NoSuchGuestbookException, SystemException {
+			throws SystemException, PortalException {
+
+		ServiceContext serviceContext = ServiceContextFactory.getInstance(
+				Guestbook.class.getName(), request);
 
 		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil
 				.getOrderByComparatorFactory();
@@ -190,16 +194,17 @@ public class GuestbookPortlet extends MVCPortlet {
 		String guestbookName = ParamUtil.getString(request, "guestbookName");
 
 		try {
-			
-			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(
-					guestbookName, orderByComparator);
-			
+
+			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(
+					serviceContext.getScopeGroupId(), guestbookName,
+					orderByComparator);
+
 			request.setAttribute("guestbook", guestbook);
-			
+
 		} catch (Exception e) {
-			
+
 			SessionErrors.add(request, "guestbook-cannot-be-displayed");
-			
+
 		}
 		response.setRenderParameter("mvcPath", "/html/guestbook/view.jsp");
 	}

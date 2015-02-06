@@ -26,7 +26,8 @@
         <finder name="GroupId" return-type="Collection">
             <finder-column name="groupId"></finder-column>
         </finder>
-        <finder name="GuestbookName" return-type="Collection">
+        <finder name="G_N" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
         	<finder-column name="name"></finder-column>
         </finder>
         
@@ -63,6 +64,11 @@
         	<finder-column name="name"></finder-column>
         </finder>
         <finder name="G_N" return-type="Collection">
+        	<finder-column name="guestbookId"></finder-column>
+        	<finder-column name="name"></finder-column>
+        </finder>
+        <finder name="G_G_N" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
         	<finder-column name="guestbookId"></finder-column>
         	<finder-column name="name"></finder-column>
         </finder>

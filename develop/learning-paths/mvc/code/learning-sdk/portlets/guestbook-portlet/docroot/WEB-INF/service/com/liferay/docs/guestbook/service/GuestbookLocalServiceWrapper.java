@@ -354,12 +354,13 @@ public class GuestbookLocalServiceWrapper implements GuestbookLocalService,
 	}
 
 	@Override
-	public com.liferay.docs.guestbook.model.Guestbook getGuestbookByName(
-		java.lang.String name,
+	public com.liferay.docs.guestbook.model.Guestbook getGuestbookByG_N(
+		long groupId, java.lang.String name,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.docs.guestbook.NoSuchGuestbookException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return _guestbookLocalService.getGuestbookByName(name, orderByComparator);
+		return _guestbookLocalService.getGuestbookByG_N(groupId, name,
+			orderByComparator);
 	}
 
 	@Override

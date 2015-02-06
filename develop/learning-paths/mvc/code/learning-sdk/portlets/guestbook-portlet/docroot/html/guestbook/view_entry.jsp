@@ -7,32 +7,35 @@
 <liferay-ui:header backURL="<%= viewURL %>" title="entry" />
 
 <%
-	
 	String name = ParamUtil.getString(renderRequest, "name");
 	
 	String guestbookName=ParamUtil.getString(renderRequest, "guestbookName");
 	
 	OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
 	OrderByComparator orderByComparator = orderByComparatorFactory.create("Entry", "name", true);
-	Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByName(guestbookName, orderByComparator);
-	Entry entry = EntryLocalServiceUtil.getEntryByGuestbookIdAndName(guestbook.getGuestbookId(), name, orderByComparator);
-	entry = entry.toEscapedModel();
+	Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(scopeGroupId, guestbookName, orderByComparator);
 	
-	AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(
-	Entry.class.getName(), entry.getEntryId());
+	List<Entry> entries = EntryLocalServiceUtil.getEntriesByG_G_N(scopeGroupId, guestbook.getGuestbookId(), name);
 	
-	String currentURL = PortalUtil.getCurrentURL(request);
+	
+	for (Entry entry : entries) {
+		entry = entry.toEscapedModel();
 
-	PortalUtil.addPortletBreadcrumbEntry(request, entry.getMessage(),
-			currentURL);
+		AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(
+				Entry.class.getName(), entry.getEntryId());
 
-	PortalUtil.setPageSubtitle(entry.getMessage(), request);
-	PortalUtil.setPageDescription(entry.getMessage(), request);
+		String currentURL = PortalUtil.getCurrentURL(request);
 
-	List<AssetTag> assetTags = AssetTagLocalServiceUtil.getTags(
-			Entry.class.getName(), entry.getEntryId());
-	PortalUtil.setPageKeywords(ListUtil.toString(assetTags, "name"),
-			request);
+		PortalUtil.addPortletBreadcrumbEntry(request,
+				entry.getMessage(), currentURL);
+
+		PortalUtil.setPageSubtitle(entry.getMessage(), request);
+		PortalUtil.setPageDescription(entry.getMessage(), request);
+
+		List<AssetTag> assetTags = AssetTagLocalServiceUtil.getTags(
+				Entry.class.getName(), entry.getEntryId());
+		PortalUtil.setPageKeywords(
+				ListUtil.toString(assetTags, "name"), request);
 %>
 
 <dl>
@@ -72,3 +75,7 @@
 	assetEntryId="<%= (assetEntry != null) ? assetEntry.getEntryId() : 0 %>"
 	className="<%= Entry.class.getName() %>"
 	classPK="<%= entry.getEntryId() %>" />
+
+<%
+	}
+%>

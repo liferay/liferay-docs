@@ -64,9 +64,12 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 	 * the guestbook local service.
 	 */
 
-	public Guestbook getGuestbookByName(String name, OrderByComparator orderByComparator) 
-			throws SystemException, NoSuchGuestbookException {
-		return guestbookPersistence.findByGuestbookName_First(name, orderByComparator);
+	public Guestbook getGuestbookByG_N(long groupId, String name,
+			OrderByComparator orderByComparator) throws SystemException,
+			NoSuchGuestbookException {
+		
+		return guestbookPersistence.findByG_N_First(groupId, name,
+				orderByComparator);
 	}
 	
 	public List<Guestbook> getGuestbooks(long groupId) throws SystemException {
