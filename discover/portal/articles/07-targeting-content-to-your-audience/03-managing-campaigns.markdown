@@ -26,7 +26,7 @@ For example, suppose you wanted the ability to display certain content (for
 example, advertisements about your new Android app) to female baseball fans
 during the months leading up to the World Series. To achieve this, you could use
 the Gender rule (configured to female), the Device Rule (configured for Android
-devices) and the Score Points rule to define a user segment called *Female
+devices), and the Score Points rule to define a user segment called *Female
 Baseball Fans*. The Score points rule assigns 1 point to a user each time the
 user visits a page or views an asset categorized under the user segment *Female
 Baseball Fans*. When a user accumulates a certain number of points (specified by
@@ -37,9 +37,10 @@ choose *Active*, and then click *Save*. To actually present content to the users
 belonging to the *Female Baseball Fans* user segment, you need to use the
 Campaign Content Display application.
 
-To configure permissions for creating, editing, and deleting campaigns, visit
-the Roles section of the Control Panel and search for *Audience Targeting
-Resources*.
+To configure permissions for creating, editing, and deleting user segments,
+visit the Roles section of the Control Panel. Then click on the *Actions* &rarr;
+*Define Permissions* button corresponding to the role you'd like to configure
+permissions for, and search for *Audience Targeting Resources*.
 
 ## Managing Campaign Priorities [](id=managing-campaign-priorities)
 
@@ -65,7 +66,7 @@ actions that you want to track. The Audience Targeting app can display reports
 of how often those actions are triggered. For example, suppose you want to run a
 campaign for an event that your company is hosting next month. For this event,
 imagine that you have created a main page for the event which contains a Youtube
-video and a banner which says "Register Now". Imagine also that you have a blog
+video and a banner which says *Register Now*. Imagine also that you have a blog
 entry about the event displayed on several different pages of your website and a
 Register page which contains the form to pay for the event. In this campaign,
 your goal is to get as many people to register as possible. However, you will
