@@ -93,7 +93,7 @@ Modify the Liferay portlet descriptor,
 
         <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper</friendly-url-mapper-class>
 		<friendly-url-mapping>guestbook</friendly-url-mapping>
-		<friendly-url-routes>com/liferay/docs/guestbook/guestbook-friendly-url-routes.xml</friendly-url-routes>
+		<friendly-url-routes>com/liferay/docs/guestbook/portlet/guestbook-friendly-url-routes.xml</friendly-url-routes>
 
 Save the file and ignore the errors for now. We haven't yet created the file
 declared in the `friendly-url-routes` tag, but we'll get to that soon.
