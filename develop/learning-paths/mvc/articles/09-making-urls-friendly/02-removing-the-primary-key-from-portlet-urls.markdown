@@ -684,7 +684,9 @@ does this:
 Finally, open `edit_guestbook.jsp`. For clarity, you've been referring to the `name`
 field of the `Guestbook` as `guestbookName`, so it is not confused with the `name`
 field of the `Entry`. Find the `<aui:input name="name"` line and change `name`
-to `guestbookName`. 
+to `guestbookName`: 
+
+    <aui:input name="guestbookName" />
 
 The JSPs have changed quite a bit. In review: 
 
