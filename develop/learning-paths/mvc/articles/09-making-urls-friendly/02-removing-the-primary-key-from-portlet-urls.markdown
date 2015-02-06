@@ -691,17 +691,20 @@ field of the `Guestbook` as `guestbookName`, so it is not confused with the `nam
 field of the `Entry`. Find the `<aui:input name="name"` line and change `name`
 to `guestbookName`. 
 
+The JSPs have changed quite a bit. In review: 
+
+- Mention of `guestbookId` and `entryId` are removed as necessary, and replaced
+  with `guestbookName` and `name` parameters, where applicable.
+- Method calls that get database entities by their Primary Key are replaced
+  with methods that use different database fields.
+- The `view_entry.jsp` now displays all the entries in a site's Guestbook that
+  share the same `name` field value.
+
 ## Modifying the URL Routes
 
-All the modifications you made to the JSPs were doing these things:
-
-- Removing mention of `guestbookId` and `entryId`
-- Adding `guestbookName` and `name` parameters, where applicable
-- Swapping methods that get database entities by their Primary Key for methods
-  that use a different database column
-
-Now that you've made those changes, you're ready to modify the URL routes you
-defined in the last section of this learning path.
+Now that you've made the necessary changes to your portlet's code, you're ready
+to modify the URL routes you defined in the previous section of this learning
+path.
 
 Open `guestbook-friendly-url-routes.xml`.
 
