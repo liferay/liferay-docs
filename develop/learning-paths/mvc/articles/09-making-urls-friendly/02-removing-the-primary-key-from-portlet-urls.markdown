@@ -352,12 +352,6 @@ Here are the other scenarios the `render` method handles:
   `Guestbook` by its name. This is the case when the user clicks the
   `viewEntryURL` or the `addEntryURL`, defined in the `view.jsp` file.
 
-Organize the imports.
-
-    import com.liferay.portal.kernel.util.OrderByComparator;
-    import com.liferay.portal.kernel.util.OrderByComparatorFactory;
-    import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
-
 The Controller is updated. Now you should update the View layer of the Guestbook
 app, changing URL parameters and any scriptlets that rely on Primary Keys from
 the request.
