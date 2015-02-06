@@ -3,8 +3,8 @@
 Faceted search is a search mechanism that allows search results to be narrowed
 down by applying a set of filters to the result of a search query. Liferay's
 Search portlet supports faceted search. Its default configuration contains
-several facets including site, asset type, tag, category, folder, user, and
-modified date. When you use Liferay's Search portlet to perform a search, a
+several facets including Site, Asset Type, Tag, Category, Folder, User, and
+Modified Date. When you use Liferay's Search portlet to perform a search, a
 result set is displayed. You can refine your search by clicking on one or more
 facets to apply a search filter. For example, the Search portlet displays
 results from any site, by default. In the Search portlet, you can click on the
@@ -18,41 +18,41 @@ create custom search filters that aren't suited to being implemented as facets.
 Before proceeding, make sure you're familiar with the following terminology:
 
 - A *facet* is a combination of information about a specific indexed field: its
-  terms and their frequency. Facets are typically named after the field in
+  terms and their frequencies. Facets are typically named after the field in
   question.
 
 - The number of times a given term appears within a set of documents is called
   the term's *frequency*.
 
-- A list of facet information, i.e., a list of terms and their frequencies for a
-  specific field, is called a *term result list*.
+- A list of facet information. This, in other words, is a list of terms and
+  their frequencies for a specific field, is called a *term result list*.
 
 - Some facets have a property called *frequency threshold*. This value indicates
   the minimum frequency required for terms to appear in the term result list.
-  E.g., if the frequency threshold of of a facet is set to `3`, a term appearing
-  only twice will not appear in the term result list.
+  For example, if the frequency threshold of of a facet is set to `3`, a term
+  appearing only twice won't appear in the term result list.
 
 - Some facets have a property called *max terms*. This value indicates the
-  maximum number of terms that will be included in the term result list
+  maximum number of terms that are included in the term result list
   regardless of how many actual matching terms are found for the facet. Using a
-  max terms property can keep the search results displayed by the user interface
-  under control so that users are not overwhelmed by too much information.
+  max terms property can keep the number of search results under control so that
+  users are not overwhelmed by too much information.
 
 - The *order* property determines the default ordering used for the term result
   list. There are two possible modes: *Order Hits Descending*, or *Order Value
   Ascending*. The first, Order Hits Descending, means that results will be
   ordered by frequency in a descending order. The second, Order Value Ascending,
   means that the results will be ordered by value (i.e., by term) in ascending
-  order. Both modes will fall back to the other mode as a secondary sort order
+  order. Both modes fall back to the other mode as a secondary sort order
   when there are duplicates. This means that many terms with the same frequency
-  will always be sorted by value.
+  are always sorted by value.
 
 - A *range* defines an interval within which all the matching terms' frequencies
   are summed. This means that if a facet defines a term range for the
   *createDate* field between the years 2008 to 2010, and another for 2012 to
   2014, all matching documents having a creation time within one of these
-  specified ranges will be returned as a sum for that range. Thus you may find 7
-  documents in the first range, and 18 documents in the second range. Ranges
+  specified ranges are returned as a sum for that range. Thus you may find seven
+  documents in the first range and 18 documents in the second range. Ranges
   cannot be used with multi-value fields.
 
 ## Configuring Custom Facets
@@ -61,12 +61,12 @@ There are two ways to configure custom facets for search in Liferay:
 
 1. Configure custom facets in Liferay's Search portlet JSON configuration.
 
-2. Use Liferay's search API to programatically create facets and add them to a
+2. Use Liferay's search API to programmatically create facets and add them to a
    search context.
 
 Setting up facet configurations using a JSON definition is the most flexible
 solution since the configuration can be dynamically changed at runtime. However,
-this option is only available in Liferay's Search portlet. Programatically
+this option is only available in Liferay's Search portlet. Programmatically
 adding facets to a search context allows developers to tightly control how the
 search is used. This option is available to developers of custom Liferay
 portlets.
@@ -74,8 +74,8 @@ portlets.
 Suppose you need to provide a means for users to search only for images in
 Liferay. You can easily configure custom facets in Liferay's Search portlet to
 achieve this. To configure the Search portlet to search only for images, open
-the Search portlet's Configuration window. add the
-following two facets to its JSON configuration:
+the Search portlet's Configuration window. Add the following two facets to its
+JSON configuration:
 
     {
             "displayStyle": "asset_entries",
@@ -108,18 +108,17 @@ following two facets to its JSON configuration:
             "fieldName": "extension"
     }
 
-For an explanation of the JSON configuration of Liferay's Search
-portlet, including an explanation of this example, please refer to the
-[Search portlet documentation](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/searching-for-content-in-liferay).
+To learn how to configure Liferay's Search portlet, including an explanation of
+this example, please refer to the
+[Search portlet documentation](/discover/portal/-/knowledge_base/6-2/searching-for-content-in-liferay).
 
 Faceted search in Liferay is not restricted to Liferay's Search portlet. If
 you're implementing a search feature for a custom Liferay portlet, you can still
-implement faceted search by programatically creating facets and adding them to a
+implement faceted search by programmatically creating facets and adding them to a
 search context. Liferay provides several facet implementation classes that
 developers can instantiate and use for custom portlet development. These facet
 implementation classes belong to Liferay's
-`com.liferay.portal.kernel.search.facet` package. They include the following
-ones:
+`com.liferay.portal.kernel.search.facet` package. They include these: 
 
 - `SimpleFacet`
 - `MultiValueFacet`
@@ -161,11 +160,11 @@ example shows how you can configure your search context to achieve this:
 
 Remember that `AssetEntriesFacet` only operates on the `entryClassName` field
 and `ScopeFacet` only operates on the `groupId` (or `scopeGroupId` field). Also,
-recall from the [Search portlet documentation](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/searching-for-content-in-liferay)
+recall from the [Search portlet documentation](/portal/-/knowledge_base/6-2/searching-for-content-in-liferay)
 that static facets are not rendered in the UI. Static facets use pre-set values
-rather than inputs dynamically applied by users. When programatically
-configuring facets that won't be configurable by users, you should declare the
-facets to be static. Since static facets aren't configurable by users, you need
+rather than inputs dynamically applied by users. When programmatically
+configuring facets that aren't configurable by users, you should declare the
+facets to be static. Since users can't configure static facets, you need
 to specify the types of assets and group IDs that should be searched. To do
 this, you populate the `entryClassNames` and `groupIds` arrays and add them to
 the search context via `searchContext.setEntryClassNames(...)` and
@@ -179,24 +178,24 @@ to the `groupIds` array is filtered out of the search results.
 Sometimes, you might be required to implement very specific kinds of search
 filters. For example, suppose you need to search both web content articles and
 only PDF files from the Documents and Media library. This kind of requirement is
-not suited to being implemented as facets. Since facets are metrics that are
+not suited to a facet implementation. Since facets are metrics that are
 calculated across an entire result set, using facets' ability to drill down
-as a means of filtering will likely lead to poor performance and overly complex
-facet configurations. *Drilling down* means manually selecting filters to apply
-to a search.
+as a means of filtering may lead to poor performance and overly complex
+facet configurations. *Drilling down* means manually applying filters to a
+search.
 
 ![Figure 1: Here, the user has *drilled down* (filtered the search results) by manually selecting the *Liferay* site and the *Document* asset type.](../../images/drilling-down.png)
 
-If you need to implement specific filters that are not suited to being
-implemented as facets, you can still use Liferay's search API. Instead of
-adding facets to a search context, you can set boolean clauses on the search
-context. That is, instead of using `searchContext.addFacet(Facet facet)`, you
-would use `searchContext.setBooleanClauses(BooleanClause[] booleanClauses)`.
-This method allows you to pass any number of filter criteria to the search
-context as an array of boolean clauses. Filtering implemented this way is
-several times for efficient than anything done via the facet API. Another
-advantage of the boolean clause API is that it supports features like exclusions
-(e.g., `(-field:not_this_value)`) which are not supported by facets.
+If you need specific filters that are not suited to being implemented as facets,
+you can still use Liferay's search API. Instead of adding facets to a search
+context, you can set boolean clauses on the search context. That is, instead of
+using `searchContext.addFacet(Facet facet)`, you would use
+`searchContext.setBooleanClauses(BooleanClause[] booleanClauses)`. This strategy
+allows you to pass any number of filter criteria to the search context as an
+array of boolean clauses. Filtering implemented this way is several times more
+efficient than anything done via the facet API. Another advantage of the boolean
+clause API is that it supports features like exclusions (e.g.,
+`(-field:not_this_value)`) which are not supported by facets.
 
 Consider again the case where you need to search both web content articles and
 only PDF files from the Documents and Media library. You could develop a custom
@@ -215,8 +214,8 @@ Search portlet to satisfy this use case.
    `html/portlet/search/init.jsp` and `html/portlet/search/main_search.jsp`,
    then click *Finish*.
 
-    If you're not using Liferay IDE, create a `liferay-hook.xml` file in your
-    project's `docroot/WEB-INF` folder and add the following contents to it:
+   If you're not using Liferay IDE, create a `liferay-hook.xml` file in your
+   project's `docroot/WEB-INF` folder and add the following contents to it:
 
         <?xml version="1.0"?>
         <!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
@@ -237,7 +236,7 @@ Search portlet to satisfy this use case.
 
         searchContext.setStart(mainSearchSearchContainer.getStart());
 
-    Add the following lines just below the line above:
+   Add the following lines just below the line above:
 
         Query stringQuery = StringQueryFactoryUtil.create("entryClassName:com.liferay.portlet.journal.model.JournalArticle (+entryClassName:com.liferay.portlet.documentlibrary.model.DLFileEntry +extension:pdf)");
 
