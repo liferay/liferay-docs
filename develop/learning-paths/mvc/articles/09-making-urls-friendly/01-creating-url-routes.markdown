@@ -69,8 +69,8 @@ There are two tags from the XML to focus on:
   case, `guestbookId` is available in the  Friendly URL because it's
   already in the `addEntryURL` in `docroot/html/view.jsp`:
 
-    <portlet:param name="guestbookId"
-			value="<%=String.valueOf(guestbookId)%>" />
+        <portlet:param name="guestbookId"
+                value="<%=String.valueOf(guestbookId)%>" />
 
 - The `implicit-parameter` tag defines parameters that don't need to be
   generated because they'll always be the same for this URL. All URLs for
