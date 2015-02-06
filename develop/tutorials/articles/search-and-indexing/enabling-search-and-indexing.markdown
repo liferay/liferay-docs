@@ -399,9 +399,6 @@ including these:
 - `TermRangeQuery`
 - `TermQuery`
 
-<!-- Why did you call these out specifically? You should tell the reader where
-you're going with this. -Rich -->
-
 Liferay also provides several query implementations and factory classes. Use
 Liferay's query factory classes to instantiate query implementation classes. For
 example, suppose you want to use Liferay's search engine to search for indexed
