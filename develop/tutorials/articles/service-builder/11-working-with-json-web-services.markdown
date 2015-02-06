@@ -18,15 +18,15 @@ Let's start by discussing how to register JSON web services.
 Liferay's developers use a tool called *Service Builder* to build services. When
 you build services with Service Builder, all remote-enabled services (i.e.,
 `service.xml` entities with the property `remote-service="true"`) are exposed as
-JSON web services. When each `-Service.java` interface is created for a
+JSON web services. When each `*Service.java` interface is created for a
 remote-enabled service, the `@JSONWebService` annotation is added on the class
 level of that interface. All of the public methods of that interface become
 registered and available as JSON web services. 
 
-The `-Service.java` interface source file should never be modified by the user.
+The `*Service.java` interface source file should never be modified by the user.
 If you need, however, more control over its methods (e.g., hiding some methods
-and exposing others), you can configure the `-ServiceImpl` class. When the
-service implementation class (`-ServiceImpl`) is annotated with the
+and exposing others), you can configure the `*ServiceImpl` class. When the
+service implementation class (`*ServiceImpl`) is annotated with the
 `@JSONWebService` annotation, the service interface is ignored and the service
 implementation class is used for configuration in its place. In other words,
 `@JSONWebService` annotations in the service implementation override any JSON
@@ -35,8 +35,8 @@ Web Service configuration in service interface.
 That's it! When you start Liferay Portal, it scans service classes for
 annotations (more about scanning later). Each class that uses the
 `@JSONWebService` annotation is examined and its methods become exposed as JSON
-API. As explained previously, the `-ServiceImpl` configuration overrides the
-`-Service` interface configuration during registration.
+API. As explained previously, the `*ServiceImpl` configuration overrides the
+`*Service` interface configuration during registration.
 
 Liferay Portal, however, does not scan all available classes for the
 annotations. Instead, it only scans services. More precisely, it scans all
@@ -185,7 +185,7 @@ facilitates switching between the plugins' list of remote services and the
 portal's list of remote services.
 
 If you've been paying attention, you already know how to control registration by
-using the `@JSONWebService` annotation in your `-ServiceImpl` class. This
+using the `@JSONWebService` annotation in your `*ServiceImpl` class. This
 overrides any configuration defined in the interface. What you might not know is
 that you can control the visibility of methods using annotations at the method
 level. 
