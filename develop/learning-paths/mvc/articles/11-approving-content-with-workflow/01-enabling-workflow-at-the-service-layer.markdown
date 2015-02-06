@@ -1,6 +1,5 @@
 # Enabling Workflow at the Service Layer
 
-<!--For just Entries, or for Guestbooks too? We've made both Guestbooks and Entries into assets, so...--> 
 In the learning path on assets, you learned that asset enabled entities are
 added to the AssetEntry table. There's no special table to workflow entities,
 but there are some additional database columns in the entity table (e.g.,
