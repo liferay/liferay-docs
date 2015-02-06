@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.2.0//EN"
+"http://www.liferay.com/dtd/liferay-friendly-url-routes_6_2_0.dtd">
+
+<routes>
+   <route>
+        <pattern>/add_guestbook</pattern>
+        <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+        <implicit-parameter name="mvcPath">/html/guestbook/edit_guestbook.jsp</implicit-parameter>
+    </route>
+    <route>
+        <pattern>/{guestbookName}/add_entry</pattern>
+        <implicit-parameter name="mvcPath">/html/guestbook/edit_entry.jsp</implicit-parameter>
+        
+    </route>
+    <route>
+        <pattern>/{guestbookName}/{name}/view_entry</pattern>
+        <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+        <implicit-parameter name="mvcPath">/html/guestbook/view_entry.jsp</implicit-parameter>
+    </route>
+    <route>
+        <pattern>/{guestbookName}/view</pattern>
+        <implicit-parameter name="p_p_lifecycle">1</implicit-parameter>
+        <implicit-parameter name="javax.portlet.action">switchTabs</implicit-parameter>
+    </route>
+</routes>
+

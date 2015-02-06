@@ -6,6 +6,9 @@
 		<portlet-name>guestbook</portlet-name>
 		<icon>/entry.png</icon>
 		<indexer-class>com.liferay.docs.guestbook.search.EntryIndexer</indexer-class>
+		<friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper</friendly-url-mapper-class>
+		<friendly-url-mapping>guestbook</friendly-url-mapping>
+		<friendly-url-routes>com/liferay/docs/guestbook/portlet/guestbook-friendly-url-routes.xml</friendly-url-routes>
 		<asset-renderer-factory>com.liferay.docs.guestbook.asset.EntryAssetRendererFactory</asset-renderer-factory>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>

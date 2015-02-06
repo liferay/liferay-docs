@@ -1,20 +1,26 @@
 <%@include file = "/html/init.jsp" %>
 
-<portlet:renderURL var="viewURL">
-	<portlet:param name="mvcPath" value="/html/guestbook/view.jsp"></portlet:param>
-</portlet:renderURL>
-
-<portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
-
 <%
-long entryId = ParamUtil.getLong(renderRequest, "entryId");
+Guestbook guestbook = (Guestbook) renderRequest.getAttribute("guestbook");
 
+long entryId = ParamUtil.getLong(renderRequest, "entryId");
 Entry entry = null;
 
-if (entryId > 0) {
-	entry = EntryLocalServiceUtil.getEntry(entryId);
-}
+	if (entryId > 0) {
+		entry = EntryLocalServiceUtil.getEntry(entryId);
+	}
+
+
 %>
+
+<portlet:renderURL var="viewURL">
+	<portlet:param name="mvcPath" value="/html/guestbook/view.jsp"></portlet:param>
+	<portlet:param name="guestbookName" value="<%= guestbook.getName() %>"/>
+</portlet:renderURL>
+
+<portlet:actionURL name="addEntry" var="addEntryURL">
+	<portlet:param name="guestbookName" value="<%= guestbook.getName() %>"/>
+</portlet:actionURL>
 
 <aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
 	<aui:model-context bean="<%= entry %>" model="<%= Entry.class %>" />
@@ -33,7 +39,7 @@ if (entryId > 0) {
 		</aui:input>
 		<div id="counterContainer"><p>Message: <span id="counter"></span> character(s) remaining</p></div>
 
-	    <aui:input name='guestbookId' type='hidden' value='<%= ParamUtil.getString(renderRequest, "guestbookId") %>'/>
+	    <aui:input name='guestbookId' type='hidden' value='<%= String.valueOf(guestbook.getGuestbookId()) %>'/>
 
 	    <aui:input name="entryId" type="hidden" />
 	</aui:fieldset>

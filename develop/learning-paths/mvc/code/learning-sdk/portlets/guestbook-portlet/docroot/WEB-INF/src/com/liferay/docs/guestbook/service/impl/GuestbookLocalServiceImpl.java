@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.liferay.docs.guestbook.GuestbookNameException;
+import com.liferay.docs.guestbook.NoSuchGuestbookException;
 import com.liferay.docs.guestbook.model.Entry;
 import com.liferay.docs.guestbook.model.Guestbook;
 import com.liferay.docs.guestbook.service.EntryLocalServiceUtil;
@@ -27,6 +28,7 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.search.Indexer;
 import com.liferay.portal.kernel.search.IndexerRegistryUtil;
 import com.liferay.portal.kernel.util.ContentTypes;
+import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ResourceConstants;
 import com.liferay.portal.model.User;
@@ -62,6 +64,14 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 	 * the guestbook local service.
 	 */
 
+	public Guestbook getGuestbookByG_N(long groupId, String name,
+			OrderByComparator orderByComparator) throws SystemException,
+			NoSuchGuestbookException {
+		
+		return guestbookPersistence.findByG_N_First(groupId, name,
+				orderByComparator);
+	}
+	
 	public List<Guestbook> getGuestbooks(long groupId) throws SystemException {
 		return guestbookPersistence.findByGroupId(groupId);
 	}
