@@ -77,18 +77,6 @@ public class InsultLocalServiceImpl extends InsultLocalServiceBaseImpl {
                 insult.getCompanyId(), insult.getGroupId(), insult.getUserId(),
                 Insult.class.getName(), insult.getInsultId(), false,
                 true, true);
-	    
-	    assetEntryLocalService.updateEntry(userId,
-				groupId, insult.getCreateDate(),
-				insult.getModifiedDate(), Insult.class.getName(),
-				insultId, insult.getUuid(), 0,
-				serviceContext.getAssetCategoryIds(),
-				serviceContext.getAssetTagNames(), true, null, null, null,
-				ContentTypes.TEXT_HTML, insult.getInsultString(), null, null, null,
-				null, 0, 0, null, false);
-	    
-	    Indexer indexer = IndexerRegistryUtil.getIndexer(Insult.class);
-		indexer.reindex(insult);
 
 	    return insult;
 	}
@@ -99,13 +87,6 @@ public class InsultLocalServiceImpl extends InsultLocalServiceBaseImpl {
 				Insult.class.getName(),
 				ResourceConstants.SCOPE_INDIVIDUAL,
 				insult.getPrimaryKey());
-		
-		AssetEntry assetEntry = assetEntryLocalService.fetchEntry(Insult.class.getName(), insult.getInsultId());
-		
-		assetEntryLocalService.deleteEntry(assetEntry);
-		
-		Indexer indexer = IndexerRegistryUtil.getIndexer(Insult.class);
-		indexer.delete(insult);
 	    	    
 	    return insultPersistence.remove(insult);
 	}
@@ -131,18 +112,6 @@ public class InsultLocalServiceImpl extends InsultLocalServiceBaseImpl {
 	    insult.setModifiedDate(serviceContext.getModifiedDate(now));
 
 	    super.updateInsult(insult);
-	    
-	    assetEntryLocalService.updateEntry(userId,
-	    		insult.getGroupId(), insult.getCreateDate(),
-				insult.getModifiedDate(), Insult.class.getName(),
-				insultId, insult.getUuid(), 0,
-				serviceContext.getAssetCategoryIds(),
-				serviceContext.getAssetTagNames(), true, null, null, null,
-				ContentTypes.TEXT_HTML, insult.getInsultString(), null, null, null,
-				null, 0, 0, null, false);
-	    
-	    Indexer indexer = IndexerRegistryUtil.getIndexer(Insult.class);
-		indexer.reindex(insult);
 
 	    return insult;
 	}
