@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -487,6 +487,10 @@ public class InsultClp extends BaseModelImpl<Insult> implements Insult {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -580,4 +584,5 @@ public class InsultClp extends BaseModelImpl<Insult> implements Insult {
 	private Date _createDate;
 	private Date _modifiedDate;
 	private BaseModel<?> _insultRemoteModel;
+	private Class<?> _clpSerializerClass = com.liferay.docs.insult.service.ClpSerializer.class;
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -16,6 +16,7 @@ package com.liferay.docs.insult.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface InsultLocalService extends BaseLocalService,
 	* @return the insult that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public com.liferay.docs.insult.model.Insult addInsult(
 		com.liferay.docs.insult.model.Insult insult)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -72,6 +74,7 @@ public interface InsultLocalService extends BaseLocalService,
 	* @throws PortalException if a insult with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.docs.insult.model.Insult deleteInsult(long insultId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -84,6 +87,7 @@ public interface InsultLocalService extends BaseLocalService,
 	* @throws PortalException
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.docs.insult.model.Insult deleteInsult(
 		com.liferay.docs.insult.model.Insult insult)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -280,6 +284,7 @@ public interface InsultLocalService extends BaseLocalService,
 	* @return the insult that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public com.liferay.docs.insult.model.Insult updateInsult(
 		com.liferay.docs.insult.model.Insult insult)
 		throws com.liferay.portal.kernel.exception.SystemException;
