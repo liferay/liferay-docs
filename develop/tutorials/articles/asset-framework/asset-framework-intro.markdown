@@ -21,11 +21,12 @@ The Learning Path
 [Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
 takes you through the fundamentals of enabling an example application's custom
 entities to use the asset framework. If you haven't travelled through that
-Learning Path, we recommend you do so before continuing with these tutorials, as
-they explore the details of leveraging the framework's various features. 
+Learning Path, we recommend you do so before continuing with the tutorials in
+this section.
 
-Here are some features that your users can leverage, as you implement them
-in your app using the asset framework: 
+These tutorials explore the details of leveraging the framework's various
+features. Here are some features that your users can leverage, as you implement
+them in your app using the asset framework: 
 
 -   Associate tags to custom content types. Users can create and assign new
     tags, or use existing tags. 

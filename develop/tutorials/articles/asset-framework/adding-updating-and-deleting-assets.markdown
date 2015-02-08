@@ -1,15 +1,18 @@
 # Adding, Updating, and Deleting Assets 
 
-Whenever you create a new entity, you need to let the asset framework know. In
-this sense, it's similar to permission resources. It's a simple procedure: you
-invoke a method of the asset framework that adds an `AssetEntry` so that Liferay
-can keep track of the asset. 
+In order to properly leverage asset features for an entity, you must inform the
+asset framework about each instance that you create of that entity. In this
+sense, it's similar to informing the permissions framework about a new resource.
+It's a simple procedure: you invoke a method of the asset framework that adds an
+`AssetEntry` associated with the entity instance, so that Liferay can keep track
+of the instance as an asset. 
 
 Specifically, you should access these methods using either the static methods
-of `AssetLocalServiceUtil` or an instance of the `AssetEntryLocalService`
-injected by Spring. This tutorial uses the latter approach. Code from Liferay's 
-Blogs portlet is used as an example. You can find it in Liferay's source code 
-on [Github](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-impl/src/com/liferay/portlet/blogs).
+of the class `AssetLocalServiceUtil` or an instance of the class
+`AssetEntryLocalService` injected using Spring. This tutorial uses the latter
+approach.
+[Code](https://github.com/liferay/liferay-portal/tree/6.2.1-ga2/portal-impl/src/com/liferay/portlet/blogs)
+from Liferay's Blogs portlet is used as an example. 
 
 <!-- To simplify this section, you'll use the static methods of 
 `AssetLocalServiceUtil`, since it doesn't require any special setup in your 
@@ -28,13 +31,15 @@ example code here doesn't even match what we just stated. We need to fix this.
 
 Before proceeding, make sure that you've implemented an indexer for your plugin. 
 Liferay's asset framework uses the indexer to manage assets. For instructions on 
-creating an indexer, see the learning path [Enabling Search and Indexing](/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing). 
+creating an indexer, see the learning path
+[Enabling Search and Indexing](/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing). 
 
-You also need to make a small addition to your project's `service.xml` file. Put 
-the following line of code below any finder methods and then run Service 
-Builder:
+You also need to make a small addition to your project's `service.xml` file. Add
+the following `reference` tag before the closing `</entity>` for the entity.
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+
+Then run Service Builder.
 
 Now you're ready to learn about adding and updating assets!
 
@@ -54,8 +59,20 @@ signature:
 		boolean sync)
 	throws PortalException, SystemException
 
-Here's an example of this method's invocation extracted from the built in
-Blogs portlet: 
+Here's an example of this method's invocation extracted from Liferay Portal's
+Blogs portlet (where?): 
+
+    int foo1 = 0;
+    boolean visible = ???;
+    String title = ???;
+    String description = ???;
+    String summary = ???;
+    publishDate
+    expirationDate;
+    = 0; 
+    = 0;
+    = null;
+    sync = false;
 
     assetEntryLocalService.updateEntry(
 		userId, entry.getGroupId(), entry.getCreateDate(),
@@ -83,7 +100,7 @@ Here's a quick summary of the most important parameters of this method:
 -   `assetCategoryIds` and `assetTagNames` represent the categories and tags
     selected by the author of the content. The asset framework stores them for
     you.
--   `visible` specifies whether the content should be shown at all by Asset
+-   `visible` specifies whether the content should be shown at all by the Asset
     Publisher. 
 -   `title,` `description` and `summary` are descriptive fields used by the
     Asset Publisher when displaying entries of your content type. 
@@ -99,14 +116,13 @@ Otherwise, it looks like we're holding back information for no apparent reason.
 -Rich -->
 
 Another thing you need to do when adding or updating assets is call the indexer. 
-For example, the calls to the indexer that the Blogs portlet makes when adding 
-or updating assets are shown here:
+For example, here are the calls to the indexer that the Blogs portlet makes when
+adding and updating blog entries:
 
-    ```
     Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(BlogsEntry.class);
-    ```
     indexer.reindex(entry);
-    ```
+
+<!-- TODO transition -->
 
 ## Deleting Assets 
 
@@ -126,11 +142,9 @@ As with adding and updating assets, you also need to call the indexer when
 deleting assets. The calls to the indexer that the Blogs portlet makes when 
 deleting assets are shown here:
 
-    ```
     Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(BlogsEntry.class);
     
     indexer.delete(entry);
-    ```
 
 Great! Now you know how to add, update, and delete assets in your portlets!
 
