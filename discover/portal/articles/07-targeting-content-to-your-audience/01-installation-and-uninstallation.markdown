@@ -14,6 +14,11 @@ instructions for details.
 If you're running Liferay on Weblogic, note that the Audience Targeting app is
 only supported on Liferay 6.2 EE SP10 and above.
 
+If you're running Liferay on WebSphere, note that you must have the servlet
+filters configured to initialize on application startup. See the
+[Installing Liferay on WebSphere 8.5](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-websphere-8-5)
+section for details.
+
 If you can't uninstall the Audience Targeting app via Marketplace or you want to
 manually uninstall it, follow these steps:
 
