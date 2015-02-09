@@ -1,3 +1,0 @@
-== Projects ==
-
-Welcome to the projects page! Here you can get an overview of the projects being worked on internally and optionally gain access to contribute to them. Ask your project manager for further details.
