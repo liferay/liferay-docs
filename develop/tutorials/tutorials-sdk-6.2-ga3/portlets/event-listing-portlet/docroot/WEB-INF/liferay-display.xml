@@ -7,6 +7,5 @@
 		<portlet id="eventlisting"></portlet>
 		<portlet id="locationlisting"></portlet>
 		<portlet id="my-created-events"></portlet>
-		<portlet id="dynamic-query"></portlet>
 	</category>
 </display>
