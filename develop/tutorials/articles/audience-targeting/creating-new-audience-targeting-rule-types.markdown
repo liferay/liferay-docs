@@ -292,7 +292,7 @@ obtaining the same value on every request is very inefficient, which could
 result in slowing down your portal. Rule plugins also support Service Builder,
 so you can persist complex information into the database, instead of the
 `typeSettings` field already managed by the framework in the Rule Instance
-table).
+table.
 
 Also, you can add the `deleteData` method in your `<RULE_NAME>Rule.java` to
 delete any data associated with the rule that is currently being deleted.
