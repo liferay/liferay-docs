@@ -1,4 +1,4 @@
-# User Documentation for Liferay Portal 6.0 and Earlier [](id=user-documentation-for-liferay-portal-6-0-and-earlier)
+# Liferay Portal 6.0 and Earlier
 
 This page provides access to user and administrator documentation for Liferay
 Portal version 6.0 and earlier.
