@@ -1,4 +1,4 @@
-# Implementing Search and Indexing [](id=implementing-search-and-indexing)
+# Using Search and Indexing [](id=using-search-and-indexing)
 
 Suppose you're developing a data-driven application. You anticipate that your
 application will have to store a huge number of database records. You could
