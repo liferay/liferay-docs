@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
-<service-builder package-path="com.nosester.portlet.eventlisting">
+<service-builder package-path="com.liferay.docs.eventlisting">
 	<author>Joe Bloggs</author>
 	<namespace>Event</namespace>
 

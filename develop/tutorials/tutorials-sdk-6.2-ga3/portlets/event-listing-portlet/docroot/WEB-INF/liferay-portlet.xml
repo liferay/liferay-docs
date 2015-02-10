@@ -16,8 +16,8 @@
 	<portlet>
 		<portlet-name>locationlisting</portlet-name>
 		<icon>/icon.png</icon>
-		<configuration-action-class>com.nosester.portlet.eventlisting.action.ConfigurationActionImpl</configuration-action-class>
-		<template-handler>com.nosester.portlet.eventlisting.template.LocationListingPortletDisplayTemplateHandler</template-handler>
+		<configuration-action-class>com.liferay.docs.eventlisting.action.ConfigurationActionImpl</configuration-action-class>
+		<template-handler>com.liferay.docs.eventlisting.template.LocationListingPortletDisplayTemplateHandler</template-handler>
 		<instanceable>false</instanceable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>

@@ -4,7 +4,7 @@
 	<portlet>
 		<portlet-name>eventlisting</portlet-name>
 		<display-name>Event Listing Portlet</display-name>
-		<portlet-class>com.nosester.portlet.eventlisting.EventListingPortlet</portlet-class>
+		<portlet-class>com.liferay.docs.eventlisting.portlet.EventListingPortlet</portlet-class>
 		<init-param>
 			<name>view-template</name>
 			<value>/html/eventlisting/view.jsp</value>
@@ -36,7 +36,7 @@
 	<portlet>
 		<portlet-name>locationlisting</portlet-name>
 		<display-name>Location Listing Portlet</display-name>
-		<portlet-class>com.nosester.portlet.eventlisting.LocationListingPortlet</portlet-class>
+		<portlet-class>com.liferay.docs.eventlisting.portlet.LocationListingPortlet</portlet-class>
 		<init-param>
 			<name>view-template</name>
 			<value>/html/locationlisting/view.jsp</value>
@@ -73,7 +73,7 @@
 		<portlet-name>my-created-events</portlet-name>
 		<display-name>My Created Events</display-name>
 		<portlet-class>
-			com.nosester.portlet.eventlisting.MyCreatedEvents
+			com.liferay.docs.eventlisting.portlet.MyCreatedEvents
 		</portlet-class>
 		<init-param>
 			<name>view-template</name>
