@@ -3,12 +3,18 @@
 Here you'll find Liferay's reference documentation for Java, JavaScript
 (including AlloyUI), tag libraries, deployment descriptors, and Liferay Faces. 
 
-<h3><span style="font-size: 22px;">Java APIs</span></h3>
+<p style="margin-left: 40px;">&nbsp;</p>
+
+<h3><span style="font-size: 30px;">Liferay Portal 6.0</span></h3>
+
+<p style="margin-left: 40px;">&nbsp;</p>
+
+<h3><span style="font-size: 22px;">Java API</span></h3>
 
 <p style="margin-left: 40px;">
 <span style="font-size:18px;">
-<a href="http://docs.liferay.com/portal/6.2/javadocs/" target="_blank">
-Portal API<span class="opens-new-window-accessible">(Opens New Window)</span>
+<a href="http://docs.liferay.com/portal/6.0/javadocs/" target="_blank">
+Portal 6.0 Java API<span class="opens-new-window-accessible">(Opens New Window)</span>
 </a>
 </span>
 </p>
@@ -19,28 +25,12 @@ Describes Liferay packages and classes for you to use in your Liferay plugins.
 
 <p style="margin-left: 40px;">&nbsp;</p>
 
-<p style="margin-left: 40px;">
-<span style="font-size:18px;">
-<a href="http://docs.liferay.com/portal/6.2/javadocs-all/" target="_blank">
-Internal API <span class="opens-new-window-accessible">(Opens New Window)</span>
-</a>
-</span>
-</p>
-
-<p style="margin-left: 40px;">
-These docs are for those hacking on Liferay's core. Many of the classes
-referenced in this documentation should not be referenced directly from Liferay
-plugins.
-</p>
-
-<p style="margin-left: 40px;">&nbsp;</p>
-
 <h3><span style="font-size: 22px;">Taglibs</span></h3>
 
 <p style="margin-left: 40px;">
 <span style="font-size:18px;">
-<a href="http://docs.liferay.com/portal/6.2/taglibs/" target="_blank">
-Portal Taglibs <span class="opens-new-window-accessible">(Opens New Window)</span>
+<a href="http://docs.liferay.com/portal/6.0/taglibs/" target="_blank">
+Portal 6.0 Taglibs <span class="opens-new-window-accessible">(Opens New Window)</span>
 </a>
 </span>
 </p>
@@ -55,28 +45,28 @@ Liferay themes, Liferay portlets, Liferay security, and standard portlets.
 
 <p style="margin-left: 40px;">
 <span style="font-size:18px;">
-<a href="http://docs.liferay.com/faces/3.1/vdldoc/" target="_blank">
-Faces Taglibs<span class="opens-new-window-accessible">(Opens New Window)</span>
+<a href="http://docs.liferay.com/faces/3.0/vdldoc/" target="_blank">
+Faces 3.0 Taglibs<span class="opens-new-window-accessible">(Opens New Window)</span>
 </a>
 </span>
 </p>
 
 <p style="margin-left: 40px;">
-The latest version of Liferay Faces JSF tag documentation in View Declaration
-Language (VDL) format. VDL docs for all versions of Liferay Faces are available
-at <a href="http://docs.liferay.com/faces/"
+The Liferay Faces JSF tag documentation in View Declaration Language (VDL)
+format. VDL docs for all versions of Liferay Faces are available at
+<a href="http://docs.liferay.com/faces/"
 target="_blank">http://docs.liferay.com/faces/ <span
 class="opens-new-window-accessible">(Opens New Window)</span></a>.
 </p>
 
 <p style="margin-left: 40px;">&nbsp;</p>
 
-<h3><span style="font-size: 22px;">JavaScript &amp; CSS</span></h3>
+<h3><span style="font-size: 22px;">JavaScript</span></h3>
 
 <p style="margin-left: 40px;">
 <span style="font-size:18px;">
-<a href="http://alloyui.com/versions/2.0.x/" target="_blank">
-AlloyUI 2&nbsp;<span class="opens-new-window-accessible">(Opens New Window)</span>
+<a href="http://alloyui.com/versions/1.0.x/" target="_blank">
+AlloyUI 1.0&nbsp;<span class="opens-new-window-accessible">(Opens New Window)</span>
 </a>
 </span>
 </p>
@@ -88,27 +78,12 @@ within portlets, templates and themes.
 
 <p style="margin-left: 40px;">&nbsp;</p>
 
-<p style="margin-left: 40px;">
-<span style="font-size:18px;">
-<a href="http://getbootstrap.com/2.3.2" target="_blank">
-Bootstrap 2.3.2 <span class="opens-new-window-accessible">(Opens New Window)</span>
-</a>
-</span>
-</p>
-
-<p style="margin-left: 40px;">
-Liferay uses Bootstrap natively and all of its CSS classes are available within
-portlets, templates and themes.
-</p>
-
-<p style="margin-left: 40px;">&nbsp;</p>
-
 <h3><span style="font-size: 22px;">Descriptor Definitions</span></h3>
 
 <p style="margin-left: 40px;">
 <span style="font-size:18px;">
-<a href="http://docs.liferay.com/portal/6.2/definitions/" style="text-decoration: none;" target="_blank">
-DTDs <span class="opens-new-window-accessible">(Opens New Window)</span>
+<a href="http://docs.liferay.com/portal/6.0/definitions/" style="text-decoration: none;" target="_blank">
+Portal 6.0 DTDs <span class="opens-new-window-accessible">(Opens New Window)</span>
 </a>
 </span>
 </p>
@@ -120,19 +95,96 @@ Liferay Portal.
 
 <p style="margin-left: 40px;">&nbsp;</p>
 
+<h3><span style="font-size: 30px;">Liferay Portal 5.2</span></h3>
+
+<p style="margin-left: 40px;">&nbsp;</p>
+
+<h3><span style="font-size: 22px;">Java API</span></h3>
+
 <p style="margin-left: 40px;">
 <span style="font-size:18px;">
-<a href="http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html"
-id="yui_patched_v3_11_0_1_1414746645512_1007" style="word-spacing: normal;
-outline: 0px;" target="_blank">
-liferay-plugin-package_6_2_0.properties<span class="opens-new-window-accessible">(Opens New Window)</span>
+<a href="http://docs.liferay.com/portal/5.2/javadocs/" target="_blank">
+Portal 5.2 Java API<span class="opens-new-window-accessible">(Opens New Window)</span>
 </a>
 </span>
 </p>
 
 <p style="margin-left: 40px;">
-Defines properties used for Liferay plugins. These properties describe the
-the Liferay plugin, declare its resources, and specify its security related
-parameters.  </p>
+Describes Liferay packages and classes for you to use in your Liferay plugins.
+</p>
 
+<p style="margin-left: 40px;">&nbsp;</p>
 
+<h3><span style="font-size: 22px;">Taglibs</span></h3>
+
+<p style="margin-left: 40px;">
+<span style="font-size:18px;">
+<a href="http://docs.liferay.com/faces/3.0/vdldoc/" target="_blank">
+Faces 3.0 legacy Taglibs<span class="opens-new-window-accessible">(Opens New Window)</span>
+</a>
+</span>
+</p>
+
+<p style="margin-left: 40px;">
+The Liferay Faces JSF tag documentation in View Declaration Language (VDL)
+format. VDL docs for all versions of Liferay Faces are available at
+<a href="http://docs.liferay.com/faces/"
+target="_blank">http://docs.liferay.com/faces/ <span
+class="opens-new-window-accessible">(Opens New Window)</span></a>.
+</p>
+
+<p style="margin-left: 40px;">&nbsp;</p>
+
+<h3><span style="font-size: 22px;">Descriptor Definitions</span></h3>
+
+<p style="margin-left: 40px;">
+<span style="font-size:18px;">
+<a href="http://docs.liferay.com/portal/5.2/javadocs/definitions/" style="text-decoration: none;" target="_blank">
+Portal 5.2 DTDs <span class="opens-new-window-accessible">(Opens New Window)</span>
+</a>
+</span>
+</p>
+
+<p style="margin-left: 40px;">
+Describes the XML files used in configuring Liferay apps, Liferay plugins, and
+Liferay Portal.
+</p>
+
+<p style="margin-left: 40px;">&nbsp;</p>
+
+<h3><span style="font-size: 30px;">Liferay Portal 5.1</span></h3>
+
+<p style="margin-left: 40px;">&nbsp;</p>
+
+<h3><span style="font-size: 22px;">Java API</span></h3>
+
+<p style="margin-left: 40px;">
+<span style="font-size:18px;">
+<a href="http://docs.liferay.com/portal/5.1/javadocs/" target="_blank">
+Portal 5.1 Java API<span class="opens-new-window-accessible">(Opens New Window)</span>
+</a>
+</span>
+</p>
+
+<p style="margin-left: 40px;">
+Describes Liferay packages and classes for you to use in your Liferay plugins.
+</p>
+
+<p style="margin-left: 40px;">&nbsp;</p>
+
+<h3><span style="font-size: 22px;">Descriptor Definitions</span></h3>
+
+<p style="margin-left: 40px;">
+<span style="font-size:18px;">
+<a href="http://docs.liferay.com/portal/5.1/javadocs/definitions/" style="text-decoration: none;" target="_blank">
+Portal 5.1 DTDs <span class="opens-new-window-accessible">(Opens New Window)</span>
+</a>
+</span>
+</p>
+
+<p style="margin-left: 40px;">
+Describes the XML files used in configuring Liferay apps, Liferay plugins, and
+Liferay Portal.
+</p>
+
+<p style="margin-left: 40px;">&nbsp;</p>
