@@ -127,7 +127,7 @@ these next by modifying a couple generated default methods.
 
 1. Open your rule's Java class file and find the `getIcon` method. This method
    configures the icon displayed in the Rule GUI. Replace the *"icon-puzzle"*
-   return value with the name of a FontAwesome icon (e.g., *"icon-coffee"* or
+   return value with the name of a *FontAwesome* icon (e.g., *"icon-coffee"* or
    *"icon-globe"*) that appropriately fits your rule. Visit the [Font Awesome
    documentation](http://fortawesome.github.io/Font-Awesome/3.2.1/) for a
    complete list of values.
@@ -252,8 +252,8 @@ Now you'll jump back into modifying your rule's behavior via the
             context.put("weather", weather);
         }
 
-    First, this method checks if the value is available from the request. If
-    not, it checks for the value in the database. Then the context map is
+    First, this method checks if the values are available from the request. If
+    not, it checks for the values in the database. Then the context map is
     updated by assigning the string key to the object value.
 
 Excellent! You've processed your rule and populated the rule's context. The last
@@ -308,6 +308,7 @@ Excellent! You now know how to create a custom rule type for your Audience
 Targeting application. For working examples of the default rules included in the
 Audience Targeting app, visit the Audience Targeting
 [project](https://github.com/liferay/liferay-apps-content-targeting) page and
-study the folders with the `rule-` prefix.
+study the folders with the `rule-` prefix. To view the final solution of a
+depoyable sample weather rule, download the ZIP file attached to this tutorial.
 
 <!-- ## Customize the Rules Engine -->
