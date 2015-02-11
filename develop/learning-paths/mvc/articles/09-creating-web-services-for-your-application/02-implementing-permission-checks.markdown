@@ -5,16 +5,20 @@ it's time to implement permission checks for them. Implementing permission
 checks for a web service ensures that only users with the correct permissions
 can invoke the web service. To implement permission checks in your remote
 services, you'll use the `GuestbookModelPermission`, `GuestbookPermission`, and
-`EntryPermission` helper classes that you created in an earlier learning path.
+`EntryPermission` helper classes that you created in an earlier Learning Path.
 These classes provide helper methods for checking permissions. The helper
 methods in `GuestbookModelPermission` are for checking top level model
 permissions. For example, if you need to check whether a user has permission to
 add a new guestbook or guestbook entry, you can use `GuestbookModelPermission`s
 helper methods. If, on the other hand, you need to check whether a user has
 permission to update or delete an existing guestbook or guestbook entry, you can
-use `GuestbookPermission` or `EntryPermission`. After you've secured your remote
-services with permission checks, you need to update your portlet classes so that
-they call the remote services instead of the local services.
+use `GuestbookPermission` or `EntryPermission`. 
+
+Once you've secured your remote services with permission checks, you'll want to
+update your portlet classes so that they call the remote services instead of the
+local services. This is to prevent attackers from trying to bypass the UI of
+your app by playing with URL parameters to access sensitive portions of your
+application. 
 
 ## Implementing Permission Checks at the Service Layer
 
@@ -59,8 +63,10 @@ services, use the following steps:
 
     Here, you've added permission checks to the remote service methods by
     calling the `check` helper methods of `GuestbookModelPermission` and
-    `GuestbookPermission`. The `GuestbookModelPermission.check` method takes
-    the following three parameters:
+    `GuestbookPermission`. Remember that these methods throw exceptions, so if
+    the user doesn't have permission, processing stops at the permission check.
+    The `GuestbookModelPermission.check` method takes the following three
+    parameters:
 
     - a `PermissionChecker` object
     - a `groupId`
@@ -76,13 +82,14 @@ services, use the following steps:
     `BaseServiceImpl` contains a `getPermissionChecker` method which you can
     invoke to get a `PermissionChecker` object. This is possible since
     `GuestbookServiceImpl` extends `GuestbookServiceBaseImpl`, which extends
-    `BaseServiceImpl`. Getting a `groupId` can be easily done via the
-    `getScopeGroupId` method of `serviceContext`. To specify the `actionId`
-    string which determines the particular action for which you're checking
-    permissions, you use a specific field of your `ActionKeys` class. Choosing a
-    specific field of `ActionKeys` is less error prone than than manually typing
-    the name of the string. Also, by using a string from `ActionKeys`, you avoid
-    creating a duplicate string.
+    `BaseServiceImpl`. Getting a `groupId` can be easily done using the
+    `getScopeGroupId` method of `serviceContext`. The `actionId`
+    string determines the particular action for which you're checking
+    permissions. For this, you use a specific field of your `ActionKeys` class.
+    Choosing a specific field of `ActionKeys` is less error prone than than
+    manually typing the name of the string every time you want to check a
+    permission. Also, by using a string from `ActionKeys`, you avoid creating a
+    duplicate string.
 
 2. Open `EntryServiceImpl` and replace the `addEntry`, `deleteEntry`, and
    `updateEntry` methods with the following ones:
@@ -127,8 +134,7 @@ services, use the following steps:
     require a specific permission on a specific entity.
 
 3. Open `GuestbookServiceImpl` and replace both `getGuestbooks` methods (this
-   method is overloaded) and the `getGuestbookCount` method with the following
-   ones:
+   method is overloaded) and the `getGuestbookCount` method with these:
 
         public List<Guestbook> getGuestbooks(long groupId) throws SystemException {
                 return guestbookPersistence.filterFindByGroupId(groupId);
@@ -145,7 +151,7 @@ services, use the following steps:
         }
 
 4. Open `EntryServiceImpl` and replace the `getEntries` methods (this method is
-   overloaded) and the `getGuestbookCount` method with the following ones:
+   overloaded) and the `getGuestbookCount` method with these:
 
         public List<Entry> getEntries(long groupId, long guestbookId)
                         throws SystemException {
@@ -166,8 +172,8 @@ services, use the following steps:
                 return entryPersistence.filterCountByG_G(groupId, guestbookId);
         }
 
-In general, all remote service methods should include permission checks. In
-steps 1 and 2, you directly invoked permission checks for the `addGuestbook`,
+All remote service methods should include permission checks. In steps 1 and 2,
+you directly invoked permission checks for the `addGuestbook`,
 `deleteGuestbook`, `updateGuestbook`, `addEntry`, `deleteEntry`, and
 `updateEntry` remote service methods by using the `check` methods of the
 permissions utility classes: `GuestbookModelPermission`, `GuestbookPermission`,
@@ -179,7 +185,8 @@ checks for the `getGuestbooks`, `getGuestbooksCount`, `getEntries`, and
 generated by Service Builder if the following conditions are met:
 
 - The entity has a simple primitive primary key
-- The entity has permission checks registed in an XML file in your project's `docroot/WEB-INF/src/resource-actions` directory
+- The entity has permission checks registered in an XML file in your project's
+    `docroot/WEB-INF/src/resource-actions` directory
 - The entity has `userId` and `groupId` fields
 - The finder method has a `groupId` argument in its method signature
 
@@ -201,28 +208,26 @@ available as Spring beans in the `*ServiceImpl` classes. These beans are named
 You've now secured your remote services but you still have some work to do. In a
 previous learning path, you implemented portlet action methods such as
 `addGuestbook`, `addEntry`, `deleteEntry`, etc. in your `GuestbookPortlet` and
-`GuestbookAdminPortlet` classes. When you implemented such portlet action
-methods, you ended up calling local service methods. For example, in the
-`addEntry` method of `GuestbookPortlet`, you used the following call to add a
-new guestbook entry:
+`GuestbookAdminPortlet` classes. When you did this, you ended up calling local
+service methods. For example, in the `addEntry` method of `GuestbookPortlet`,
+you used the following call to add a new guestbook entry:
 
     EntryLocalServiceUtil.addEntry(serviceContext.getUserId(),
         guestbookId, userName, email, message, serviceContext);
 
 Calling local services from the portlet layer of your application is not
-recommended. To make sure that your application is secure, you should only
-call remote services from the portlet layer. And double check that you've
-implemented permission checking for your remote services! Your application's
-local services do not and should not contain permission checks. Your remote
-services now do contain permission checks. If the permission check of one of
-your remote services is satisfied, then the remote service call succeeds. Thus,
-to secure service calls at the portlet layer, all you have to do is replace the
-local service calls with remote service calls.
+recommended. Why? Because they don't contain permission checks. Nefarious
+individuals messing with URL parameters might be able to access areas of your
+application that they're not authorized to access. To make sure that your
+application is secure, you should only call remote services from the portlet
+layer, because that's the layer that has permission checking. Thus, to secure
+service calls at the portlet layer, all you have to do is replace the local
+service calls with remote service calls.
 
 +$$$
 
 **Note:** An alternative approach to securing service calls at the portlet layer
-could be to manually check permissions at the portlet layer. To do so, you could
+is to manually check permissions at the portlet layer. To do so, you could
 obtain a `ThemeDisplay` from the `ActionRequest` (`ThemeDisplay themeDisplay =
 (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);`) and obtain a
 `PermissionChecker` from the `ThemeDisplay` (`PermissionChecker
@@ -231,8 +236,8 @@ the permission check, then you could call the local service method. However,
 it's best to avoid rewriting permission checks whenever possible. For this
 reason, if you need to wrap a service call in a permission check, it's best to
 implement that service method as a remote service and to add the permission
-check to the remote service. This is the pattern that you followed in this
-learning path.
+check to the remote service. This is the pattern that Liferay uses, and that you
+have followed in this Learning Path.
 
 $$$
 
