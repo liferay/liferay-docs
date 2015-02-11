@@ -10,19 +10,6 @@ Liferay plugin projects using the command line.
 
 Follow these steps to create a Liferay plugin from the command line:
 
-<!-- **Important:** Sometimes, after a new Liferay release, the Liferay CE and
-EE artifacts might only be available from
-[repository.liferay.com](repository.liferay.com). In this case, you must use the
-`-DarchetypeCatalog=...` option to access the Liferay Repository when generate
-Maven archetypes (e.g., mvn archetype:generate
--DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce.
-You'll also need to configure a couple other files to ensure the generation
-command completes successfully. Please refer to the *Installing Artifacts from
-the Liferay Repository* section of the [Setting Up
-Maven](/develop/tutorials/-/knowledge_base/6-2/setting-up-maven) tutorial to
-configure Maven to access the Liferay Repository for Liferay CE and EE
-artifacts. -Cody -->
-
 1. Open the command prompt or terminal and navigate to the parent directory in
    which you want to create the plugin project. Create a sub-directory
    for each plugin project you create.
@@ -58,6 +45,25 @@ artifacts. -Cody -->
         ...
         Choose a number or apply filter (format: [groupId:]artifactId,
         case sensitive contains):
+
+    +$$$
+    
+    **Important:** Sometimes, after a new Liferay release, Liferay's most
+    up-to-date Maven artifacts may not be available from the default *Maven
+    Central* repository. In this case, you must use the artifacts stored at
+    [repository.liferay.com](https://repository.liferay.com). To do this, use
+    the `-DarchetypeCatalog` option to point to the Liferay Repository when
+    generating Maven archetypes. For example:
+
+        mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
+
+    You'll also need to configure a couple other files to ensure the generation
+    command completes successfully. You can refer to the
+    [Installing Artifacts from the Liferay Repository](/develop/tutorials/-/knowledge_base/6-2/managing-liferay-maven-artifacts#installing-artifacts-from-the-liferay-repository)
+    section of the *Managing Liferay Maven Artifacts* tutorial to configure
+    Maven to access the Liferay Repository for Liferay Maven artifacts.
+
+    $$$
 
 3. To find the right Liferay archetype for your project, you can either scroll
    up to find it or apply filters to narrow the set of results. Filtering on
