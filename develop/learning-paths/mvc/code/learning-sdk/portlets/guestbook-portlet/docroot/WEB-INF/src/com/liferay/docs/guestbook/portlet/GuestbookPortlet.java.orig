@@ -40,8 +40,8 @@ public class GuestbookPortlet extends MVCPortlet {
 		String userName = ParamUtil.getString(request, "name");
 		String email = ParamUtil.getString(request, "email");
 		String message = ParamUtil.getString(request, "message");
-        String guestbookName = ParamUtil.getString(request, "guestbookName");
-        long entryId = ParamUtil.getLong(request, "entryId");
+		String guestbookName = ParamUtil.getString(request, "guestbookName");
+		long entryId = ParamUtil.getLong(request, "entryId");
 		
 		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
 		OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
@@ -52,14 +52,14 @@ public class GuestbookPortlet extends MVCPortlet {
 
 		if (entryId > 0) {
 			try {
-                EntryServiceUtil.updateEntry(serviceContext.getUserId(),
-                        guestbookId, entryId, userName, email, message,
+				EntryServiceUtil.updateEntry(serviceContext.getUserId(),
+						guestbookId, entryId, userName, email, message,
 						serviceContext);
 
 				SessionMessages.add(request, "entryAdded");
 
-                response.setRenderParameter("guestbookName",
-                        guestbookName);
+				response.setRenderParameter("guestbookName",
+						guestbookName);
 			} catch (Exception e) {
 				SessionErrors.add(request, e.getClass().getName());
 				
@@ -71,13 +71,13 @@ public class GuestbookPortlet extends MVCPortlet {
 		}
 		else {
 			try {
-                EntryServiceUtil.addEntry(serviceContext.getUserId(),
-                        guestbookId, userName, email, message, serviceContext);
+				EntryServiceUtil.addEntry(serviceContext.getUserId(),
+						guestbookId, userName, email, message, serviceContext);
 
 				SessionMessages.add(request, "entryAdded");
 
-                response.setRenderParameter("guestbookName",
-                        guestbookName);
+				response.setRenderParameter("guestbookName",
+						guestbookName);
 			} catch (Exception e) {
 				SessionErrors.add(request, e.getClass().getName());
 				
@@ -101,8 +101,8 @@ public class GuestbookPortlet extends MVCPortlet {
 			response.setRenderParameter("guestbookId",
 					Long.toString(guestbookId));
 
-            EntryServiceUtil.deleteEntry(entryId, serviceContext);
-        } catch (Exception e) {
+			EntryServiceUtil.deleteEntry(entryId, serviceContext);
+		} catch (Exception e) {
 			
 			SessionErrors.add(request, e.getClass().getName());
 		}
@@ -114,11 +114,11 @@ public class GuestbookPortlet extends MVCPortlet {
 		ServiceContext serviceContext = ServiceContextFactory.getInstance(
 				Guestbook.class.getName(), request);
 
-        String name = ParamUtil.getString(request, "guestbookName");
+		String name = ParamUtil.getString(request, "guestbookName");
 
 		try {
-            GuestbookServiceUtil.addGuestbook(serviceContext.getUserId(),
-                    name, serviceContext);
+			GuestbookServiceUtil.addGuestbook(serviceContext.getUserId(),
+					name, serviceContext);
 
 			SessionMessages.add(request, "guestbookAdded");
 

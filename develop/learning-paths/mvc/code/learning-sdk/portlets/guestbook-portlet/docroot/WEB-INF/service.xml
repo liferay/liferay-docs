@@ -4,7 +4,7 @@
 	<author>Rich Sezov</author>
 	<namespace>GB</namespace>
 
-	<entity name="Guestbook" local-service="true" uuid="true">
+	<entity name="Guestbook" local-service="true" remote-service="true" uuid="true">
 
 		<!-- PK fields -->
 
@@ -34,7 +34,7 @@
         <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
         <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 	</entity>
-	<entity name="Entry" local-service="true" uuid="true">
+	<entity name="Entry" local-service="true" remote-service="true" uuid="true">
 
 		<!-- PK fields -->
 
