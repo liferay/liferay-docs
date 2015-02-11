@@ -56,6 +56,38 @@ public class LocationServiceWrapper implements LocationService,
 		return _locationService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	@Override
+	public com.liferay.docs.eventlisting.model.Location addLocation(
+		long groupId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.addLocation(groupId, name, description,
+			streetAddress, city, stateOrProvince, country, serviceContext);
+	}
+
+	@Override
+	public com.liferay.docs.eventlisting.model.Location deleteLocation(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.deleteLocation(locationId);
+	}
+
+	@Override
+	public com.liferay.docs.eventlisting.model.Location updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.updateLocation(locationId, name, description,
+			streetAddress, city, stateOrProvince, country, serviceContext);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

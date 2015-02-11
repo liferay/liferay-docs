@@ -63,6 +63,43 @@ public class EventServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static com.liferay.docs.eventlisting.model.Event addEvent(
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .addEvent(groupId, name, description, month, day, year,
+			hour, minute, locationId, serviceContext);
+	}
+
+	public static com.liferay.docs.eventlisting.model.Event deleteEvent(
+		long eventId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().deleteEvent(eventId);
+	}
+
+	public static com.liferay.docs.eventlisting.model.Event getEvent(
+		long eventId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEvent(eventId);
+	}
+
+	public static com.liferay.docs.eventlisting.model.Event updateEvent(
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateEvent(userId, eventId, name, description, month, day,
+			year, hour, minute, locationId, serviceContext);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

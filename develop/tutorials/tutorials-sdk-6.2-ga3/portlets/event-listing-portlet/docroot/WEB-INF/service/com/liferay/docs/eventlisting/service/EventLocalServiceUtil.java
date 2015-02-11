@@ -275,6 +275,94 @@ public class EventLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static com.liferay.docs.eventlisting.model.Event addEvent(
+		long userId, long groupId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .addEvent(userId, groupId, name, description, month, day,
+			year, hour, minute, locationId, serviceContext);
+	}
+
+	public static void addEventResources(
+		com.liferay.docs.eventlisting.model.Event event,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService()
+			.addEventResources(event, addGroupPermissions, addGuestPermissions);
+	}
+
+	public static void addEventResources(
+		com.liferay.docs.eventlisting.model.Event event,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService().addEventResources(event, groupPermissions, guestPermissions);
+	}
+
+	public static void addEventResources(long eventId,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService()
+			.addEventResources(eventId, addGroupPermissions, addGuestPermissions);
+	}
+
+	public static void addEventResources(long eventId,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService()
+			.addEventResources(eventId, groupPermissions, guestPermissions);
+	}
+
+	public static java.util.List<com.liferay.docs.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
+		java.lang.String eventName, java.lang.String eventDescription,
+		java.lang.String locationName, int begin, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .findByEventNameEventDescriptionLocationName(eventName,
+			eventDescription, locationName, begin, end);
+	}
+
+	public static java.util.List<com.liferay.docs.eventlisting.model.Event> findByUserId(
+		long userId) throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByUserId(userId);
+	}
+
+	public static java.util.List<com.liferay.docs.eventlisting.model.Event> getEventsByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEventsByGroupId(groupId);
+	}
+
+	public static java.util.List<com.liferay.docs.eventlisting.model.Event> getEventsByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEventsByGroupId(groupId, start, end);
+	}
+
+	public static int getEventsCountByGroupId(long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEventsCountByGroupId(groupId);
+	}
+
+	public static com.liferay.docs.eventlisting.model.Event updateEvent(
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateEvent(userId, eventId, name, description, month, day,
+			year, hour, minute, locationId, serviceContext);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

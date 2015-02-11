@@ -14,6 +14,13 @@
 
 package com.liferay.docs.eventlisting.service.http;
 
+import com.liferay.docs.eventlisting.service.EventServiceUtil;
+
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import java.rmi.RemoteException;
+
 /**
  * Provides the SOAP utility for the
  * {@link com.liferay.docs.eventlisting.service.EventServiceUtil} service utility. The
@@ -55,4 +62,72 @@ package com.liferay.docs.eventlisting.service.http;
  * @generated
  */
 public class EventServiceSoap {
+	public static com.liferay.docs.eventlisting.model.EventSoap addEvent(
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.liferay.docs.eventlisting.model.Event returnValue = EventServiceUtil.addEvent(groupId,
+					name, description, month, day, year, hour, minute,
+					locationId, serviceContext);
+
+			return com.liferay.docs.eventlisting.model.EventSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.docs.eventlisting.model.EventSoap deleteEvent(
+		long eventId) throws RemoteException {
+		try {
+			com.liferay.docs.eventlisting.model.Event returnValue = EventServiceUtil.deleteEvent(eventId);
+
+			return com.liferay.docs.eventlisting.model.EventSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.docs.eventlisting.model.EventSoap getEvent(
+		long eventId) throws RemoteException {
+		try {
+			com.liferay.docs.eventlisting.model.Event returnValue = EventServiceUtil.getEvent(eventId);
+
+			return com.liferay.docs.eventlisting.model.EventSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.docs.eventlisting.model.EventSoap updateEvent(
+		long userId, long eventId, java.lang.String name,
+		java.lang.String description, int month, int day, int year, int hour,
+		int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.liferay.docs.eventlisting.model.Event returnValue = EventServiceUtil.updateEvent(userId,
+					eventId, name, description, month, day, year, hour, minute,
+					locationId, serviceContext);
+
+			return com.liferay.docs.eventlisting.model.EventSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(EventServiceSoap.class);
 }

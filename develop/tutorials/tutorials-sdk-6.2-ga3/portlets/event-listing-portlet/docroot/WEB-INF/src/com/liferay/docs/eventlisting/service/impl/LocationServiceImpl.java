@@ -14,16 +14,28 @@
 
 package com.liferay.docs.eventlisting.service.impl;
 
+import com.liferay.docs.eventlisting.model.Location;
+import com.liferay.docs.eventlisting.service.LocationLocalServiceUtil;
 import com.liferay.docs.eventlisting.service.base.LocationServiceBaseImpl;
+import com.liferay.docs.eventlisting.service.permission.EventListingPermission;
+import com.liferay.docs.eventlisting.service.permission.LocationPermission;
+import com.liferay.docs.eventlisting.util.EventListingActionKeys;
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.service.ServiceContext;
 
 /**
  * The implementation of the location remote service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.liferay.docs.eventlisting.service.LocationService} interface.
+ * All custom service methods should be put in this class. Whenever methods are
+ * added, rerun ServiceBuilder to copy their definitions into the
+ * {@link com.liferay.docs.eventlisting.service.LocationService} interface.
  *
  * <p>
- * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
+ * This is a remote service. Methods of this service are expected to have
+ * security checks based on the propagated JAAS credentials because this service
+ * can be accessed remotely.
  * </p>
  *
  * @author Joe Bloggs
@@ -33,7 +45,46 @@ import com.liferay.docs.eventlisting.service.base.LocationServiceBaseImpl;
 public class LocationServiceImpl extends LocationServiceBaseImpl {
 	/*
 	 * NOTE FOR DEVELOPERS:
-	 *
-	 * Never reference this interface directly. Always use {@link com.liferay.docs.eventlisting.service.LocationServiceUtil} to access the location remote service.
+	 * 
+	 * Never reference this interface directly. Always use {@link
+	 * com.liferay.docs.eventlisting.service.LocationServiceUtil} to access the
+	 * location remote service.
 	 */
+
+	public Location addLocation(long groupId, String name, String description,
+			String streetAddress, String city, String stateOrProvince,
+			String country, ServiceContext serviceContext)
+			throws PortalException, SystemException {
+
+		EventListingPermission.check(getPermissionChecker(), groupId,
+				EventListingActionKeys.ADD_LOCATION);
+
+		return LocationLocalServiceUtil.addLocation(getUserId(), groupId, name,
+				description, streetAddress, city, stateOrProvince, country,
+				serviceContext);
+	}
+
+	public Location deleteLocation(long locationId) throws PortalException,
+			SystemException {
+
+		LocationPermission.check(getPermissionChecker(), locationId,
+				EventListingActionKeys.DELETE_LOCATION);
+
+		return locationLocalService.deleteLocation(locationId);
+	}
+
+	public Location updateLocation(long locationId, String name,
+			String description, String streetAddress, String city,
+			String stateOrProvince, String country,
+			ServiceContext serviceContext) throws PortalException,
+			SystemException {
+
+		LocationPermission.check(getPermissionChecker(), locationId,
+				EventListingActionKeys.VIEW);
+
+		return LocationLocalServiceUtil.updateLocation(getUserId(), locationId,
+				name, description, streetAddress, city, stateOrProvince,
+				country, serviceContext);
+	}
+
 }

@@ -14,6 +14,13 @@
 
 package com.liferay.docs.eventlisting.service.http;
 
+import com.liferay.docs.eventlisting.service.LocationServiceUtil;
+
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import java.rmi.RemoteException;
+
 /**
  * Provides the SOAP utility for the
  * {@link com.liferay.docs.eventlisting.service.LocationServiceUtil} service utility. The
@@ -55,4 +62,59 @@ package com.liferay.docs.eventlisting.service.http;
  * @generated
  */
 public class LocationServiceSoap {
+	public static com.liferay.docs.eventlisting.model.LocationSoap addLocation(
+		long groupId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.liferay.docs.eventlisting.model.Location returnValue = LocationServiceUtil.addLocation(groupId,
+					name, description, streetAddress, city, stateOrProvince,
+					country, serviceContext);
+
+			return com.liferay.docs.eventlisting.model.LocationSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.docs.eventlisting.model.LocationSoap deleteLocation(
+		long locationId) throws RemoteException {
+		try {
+			com.liferay.docs.eventlisting.model.Location returnValue = LocationServiceUtil.deleteLocation(locationId);
+
+			return com.liferay.docs.eventlisting.model.LocationSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.docs.eventlisting.model.LocationSoap updateLocation(
+		long locationId, java.lang.String name, java.lang.String description,
+		java.lang.String streetAddress, java.lang.String city,
+		java.lang.String stateOrProvince, java.lang.String country,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.liferay.docs.eventlisting.model.Location returnValue = LocationServiceUtil.updateLocation(locationId,
+					name, description, streetAddress, city, stateOrProvince,
+					country, serviceContext);
+
+			return com.liferay.docs.eventlisting.model.LocationSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(LocationServiceSoap.class);
 }

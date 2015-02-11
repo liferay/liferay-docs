@@ -432,7 +432,7 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	}
 
 	@Override
-	public int compareTo(Event event) {
+	public int compareTo(com.liferay.docs.eventlisting.model.Event event) {
 		return _event.compareTo(event);
 	}
 
@@ -442,17 +442,17 @@ public class EventWrapper implements Event, ModelWrapper<Event> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<Event> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<com.liferay.docs.eventlisting.model.Event> toCacheModel() {
 		return _event.toCacheModel();
 	}
 
 	@Override
-	public Event toEscapedModel() {
+	public com.liferay.docs.eventlisting.model.Event toEscapedModel() {
 		return new EventWrapper(_event.toEscapedModel());
 	}
 
 	@Override
-	public Event toUnescapedModel() {
+	public com.liferay.docs.eventlisting.model.Event toUnescapedModel() {
 		return new EventWrapper(_event.toUnescapedModel());
 	}
 

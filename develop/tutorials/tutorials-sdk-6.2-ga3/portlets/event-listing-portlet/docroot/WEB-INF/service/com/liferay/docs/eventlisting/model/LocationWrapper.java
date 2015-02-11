@@ -486,7 +486,7 @@ public class LocationWrapper implements Location, ModelWrapper<Location> {
 	}
 
 	@Override
-	public int compareTo(Location location) {
+	public int compareTo(com.liferay.docs.eventlisting.model.Location location) {
 		return _location.compareTo(location);
 	}
 
@@ -496,17 +496,17 @@ public class LocationWrapper implements Location, ModelWrapper<Location> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<Location> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<com.liferay.docs.eventlisting.model.Location> toCacheModel() {
 		return _location.toCacheModel();
 	}
 
 	@Override
-	public Location toEscapedModel() {
+	public com.liferay.docs.eventlisting.model.Location toEscapedModel() {
 		return new LocationWrapper(_location.toEscapedModel());
 	}
 
 	@Override
-	public Location toUnescapedModel() {
+	public com.liferay.docs.eventlisting.model.Location toUnescapedModel() {
 		return new LocationWrapper(_location.toUnescapedModel());
 	}
 

@@ -56,6 +56,42 @@ public class EventServiceWrapper implements EventService,
 		return _eventService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	@Override
+	public com.liferay.docs.eventlisting.model.Event addEvent(long groupId,
+		java.lang.String name, java.lang.String description, int month,
+		int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.addEvent(groupId, name, description, month, day,
+			year, hour, minute, locationId, serviceContext);
+	}
+
+	@Override
+	public com.liferay.docs.eventlisting.model.Event deleteEvent(long eventId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.deleteEvent(eventId);
+	}
+
+	@Override
+	public com.liferay.docs.eventlisting.model.Event getEvent(long eventId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.getEvent(eventId);
+	}
+
+	@Override
+	public com.liferay.docs.eventlisting.model.Event updateEvent(long userId,
+		long eventId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.updateEvent(userId, eventId, name, description,
+			month, day, year, hour, minute, locationId, serviceContext);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

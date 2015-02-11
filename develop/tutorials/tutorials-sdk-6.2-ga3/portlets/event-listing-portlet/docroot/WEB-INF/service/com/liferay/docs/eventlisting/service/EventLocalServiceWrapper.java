@@ -280,6 +280,102 @@ public class EventLocalServiceWrapper implements EventLocalService,
 		return _eventLocalService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	@Override
+	public com.liferay.docs.eventlisting.model.Event addEvent(long userId,
+		long groupId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.addEvent(userId, groupId, name, description,
+			month, day, year, hour, minute, locationId, serviceContext);
+	}
+
+	@Override
+	public void addEventResources(
+		com.liferay.docs.eventlisting.model.Event event,
+		boolean addGroupPermissions, boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_eventLocalService.addEventResources(event, addGroupPermissions,
+			addGuestPermissions);
+	}
+
+	@Override
+	public void addEventResources(
+		com.liferay.docs.eventlisting.model.Event event,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_eventLocalService.addEventResources(event, groupPermissions,
+			guestPermissions);
+	}
+
+	@Override
+	public void addEventResources(long eventId, boolean addGroupPermissions,
+		boolean addGuestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_eventLocalService.addEventResources(eventId, addGroupPermissions,
+			addGuestPermissions);
+	}
+
+	@Override
+	public void addEventResources(long eventId,
+		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_eventLocalService.addEventResources(eventId, groupPermissions,
+			guestPermissions);
+	}
+
+	@Override
+	public java.util.List<com.liferay.docs.eventlisting.model.Event> findByEventNameEventDescriptionLocationName(
+		java.lang.String eventName, java.lang.String eventDescription,
+		java.lang.String locationName, int begin, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.findByEventNameEventDescriptionLocationName(eventName,
+			eventDescription, locationName, begin, end);
+	}
+
+	@Override
+	public java.util.List<com.liferay.docs.eventlisting.model.Event> findByUserId(
+		long userId) throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.findByUserId(userId);
+	}
+
+	@Override
+	public java.util.List<com.liferay.docs.eventlisting.model.Event> getEventsByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.getEventsByGroupId(groupId);
+	}
+
+	@Override
+	public java.util.List<com.liferay.docs.eventlisting.model.Event> getEventsByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.getEventsByGroupId(groupId, start, end);
+	}
+
+	@Override
+	public int getEventsCountByGroupId(long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.getEventsCountByGroupId(groupId);
+	}
+
+	@Override
+	public com.liferay.docs.eventlisting.model.Event updateEvent(long userId,
+		long eventId, java.lang.String name, java.lang.String description,
+		int month, int day, int year, int hour, int minute, long locationId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.updateEvent(userId, eventId, name,
+			description, month, day, year, hour, minute, locationId,
+			serviceContext);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

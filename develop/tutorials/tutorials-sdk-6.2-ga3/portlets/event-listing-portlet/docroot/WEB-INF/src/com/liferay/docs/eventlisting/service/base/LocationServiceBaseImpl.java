@@ -16,6 +16,7 @@ package com.liferay.docs.eventlisting.service.base;
 
 import com.liferay.docs.eventlisting.model.Location;
 import com.liferay.docs.eventlisting.service.LocationService;
+import com.liferay.docs.eventlisting.service.persistence.EventFinder;
 import com.liferay.docs.eventlisting.service.persistence.EventPersistence;
 import com.liferay.docs.eventlisting.service.persistence.LocationPersistence;
 
@@ -103,6 +104,24 @@ public abstract class LocationServiceBaseImpl extends BaseServiceImpl
 	 */
 	public void setEventPersistence(EventPersistence eventPersistence) {
 		this.eventPersistence = eventPersistence;
+	}
+
+	/**
+	 * Returns the event finder.
+	 *
+	 * @return the event finder
+	 */
+	public EventFinder getEventFinder() {
+		return eventFinder;
+	}
+
+	/**
+	 * Sets the event finder.
+	 *
+	 * @param eventFinder the event finder
+	 */
+	public void setEventFinder(EventFinder eventFinder) {
+		this.eventFinder = eventFinder;
 	}
 
 	/**
@@ -338,6 +357,8 @@ public abstract class LocationServiceBaseImpl extends BaseServiceImpl
 	protected com.liferay.docs.eventlisting.service.EventService eventService;
 	@BeanReference(type = EventPersistence.class)
 	protected EventPersistence eventPersistence;
+	@BeanReference(type = EventFinder.class)
+	protected EventFinder eventFinder;
 	@BeanReference(type = com.liferay.docs.eventlisting.service.LocationLocalService.class)
 	protected com.liferay.docs.eventlisting.service.LocationLocalService locationLocalService;
 	@BeanReference(type = com.liferay.docs.eventlisting.service.LocationService.class)
