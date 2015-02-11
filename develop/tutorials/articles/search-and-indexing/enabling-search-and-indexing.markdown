@@ -1,4 +1,4 @@
-# Enabling Search and Indexing [](id=enabling-search-and-indexing)
+# Implementing Search and Indexing [](id=implementing-search-and-indexing)
 
 Liferay's search and indexing functionality is provided by Apache Lucene, a
 Java-based search library. To implement search and indexing functionality for an
