@@ -1,4 +1,4 @@
-# Implementing Permission Checks
+# Implementing Permission Checks [](id=implementing-permission-checks)
 
 Now that your guestbook and guestbook entry web services are up and running,
 it's time to implement permission checks for them. Implementing permission
@@ -20,7 +20,7 @@ local services. This is to prevent attackers from trying to bypass the UI of
 your app by playing with URL parameters to access sensitive portions of your
 application. 
 
-## Implementing Permission Checks at the Service Layer
+## Implementing Permission Checks at the Service Layer [](id=implementing-permission-checks-at-the-service-layer)
 
 To implement permission checks for the guestbook-portlet project's remote
 services, use the following steps:
@@ -203,7 +203,7 @@ available as Spring beans in the `*ServiceImpl` classes. These beans are named
 `guestbookPersistence` and `entryPersistence` in `GuestbookServiceImpl` and
 `EntryServiceImpl`, respectively.
 
-## Securing Service Calls at the Portlet Layer
+## Securing Service Calls at the Portlet Layer [](id=securing-service-calls-at-the-portlet-layer)
 
 You've now secured your remote services but you still have some work to do. In a
 previous learning path, you implemented portlet action methods such as

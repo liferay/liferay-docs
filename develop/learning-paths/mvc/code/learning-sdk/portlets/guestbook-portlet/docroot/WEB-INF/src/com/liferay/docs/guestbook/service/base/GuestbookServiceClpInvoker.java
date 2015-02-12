@@ -53,13 +53,20 @@ public class GuestbookServiceClpInvoker {
 
 		_methodParameterTypes43 = new String[] { "long", "int", "int" };
 
-		_methodName44 = "getGuestbooksCount";
+		_methodName44 = "getGuestbookByG_N";
 
-		_methodParameterTypes44 = new String[] { "long" };
+		_methodParameterTypes44 = new String[] {
+				"long", "java.lang.String",
+				"com.liferay.portal.kernel.util.OrderByComparator"
+			};
 
-		_methodName45 = "updateGuestbook";
+		_methodName45 = "getGuestbooksCount";
 
-		_methodParameterTypes45 = new String[] {
+		_methodParameterTypes45 = new String[] { "long" };
+
+		_methodName46 = "updateGuestbook";
+
+		_methodParameterTypes46 = new String[] {
 				"long", "long", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
@@ -106,11 +113,18 @@ public class GuestbookServiceClpInvoker {
 
 		if (_methodName44.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes44, parameterTypes)) {
-			return GuestbookServiceUtil.getGuestbooksCount(((Long)arguments[0]).longValue());
+			return GuestbookServiceUtil.getGuestbookByG_N(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1],
+				(com.liferay.portal.kernel.util.OrderByComparator)arguments[2]);
 		}
 
 		if (_methodName45.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes45, parameterTypes)) {
+			return GuestbookServiceUtil.getGuestbooksCount(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName46.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes46, parameterTypes)) {
 			return GuestbookServiceUtil.updateGuestbook(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2],
@@ -136,4 +150,6 @@ public class GuestbookServiceClpInvoker {
 	private String[] _methodParameterTypes44;
 	private String _methodName45;
 	private String[] _methodParameterTypes45;
+	private String _methodName46;
+	private String[] _methodParameterTypes46;
 }
