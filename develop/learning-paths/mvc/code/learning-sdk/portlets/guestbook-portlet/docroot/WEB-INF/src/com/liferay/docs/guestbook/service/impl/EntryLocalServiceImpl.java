@@ -21,7 +21,6 @@ import com.liferay.docs.guestbook.EntryEmailException;
 import com.liferay.docs.guestbook.EntryMessageException;
 import com.liferay.docs.guestbook.EntryNameException;
 import com.liferay.docs.guestbook.model.Entry;
-import com.liferay.docs.guestbook.model.Guestbook;
 import com.liferay.docs.guestbook.service.base.EntryLocalServiceBaseImpl;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -61,6 +60,12 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 	 * com.liferay.docs.guestbook.service.EntryLocalServiceUtil} to access the
 	 * entry local service.
 	 */
+
+	public List<Entry> getEntriesByG_G_N(long groupId, long guestbookId,
+			String name) throws SystemException {
+		
+		return entryPersistence.findByG_G_N(groupId, guestbookId, name);
+	}
 
 	public List<Entry> getEntries(long groupId, long guestbookId)
 			throws SystemException {

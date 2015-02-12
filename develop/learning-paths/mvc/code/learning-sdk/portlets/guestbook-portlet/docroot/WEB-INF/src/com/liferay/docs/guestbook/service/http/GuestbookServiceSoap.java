@@ -14,6 +14,13 @@
 
 package com.liferay.docs.guestbook.service.http;
 
+import com.liferay.docs.guestbook.service.GuestbookServiceUtil;
+
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import java.rmi.RemoteException;
+
 /**
  * Provides the SOAP utility for the
  * {@link com.liferay.docs.guestbook.service.GuestbookServiceUtil} service utility. The
@@ -55,4 +62,117 @@ package com.liferay.docs.guestbook.service.http;
  * @generated
  */
 public class GuestbookServiceSoap {
+	public static com.liferay.docs.guestbook.model.GuestbookSoap addGuestbook(
+		long userId, java.lang.String name,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.liferay.docs.guestbook.model.Guestbook returnValue = GuestbookServiceUtil.addGuestbook(userId,
+					name, serviceContext);
+
+			return com.liferay.docs.guestbook.model.GuestbookSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.docs.guestbook.model.GuestbookSoap deleteGuestbook(
+		long guestbookId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.liferay.docs.guestbook.model.Guestbook returnValue = GuestbookServiceUtil.deleteGuestbook(guestbookId,
+					serviceContext);
+
+			return com.liferay.docs.guestbook.model.GuestbookSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.docs.guestbook.model.GuestbookSoap[] getGuestbooks(
+		long groupId) throws RemoteException {
+		try {
+			java.util.List<com.liferay.docs.guestbook.model.Guestbook> returnValue =
+				GuestbookServiceUtil.getGuestbooks(groupId);
+
+			return com.liferay.docs.guestbook.model.GuestbookSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.docs.guestbook.model.GuestbookSoap[] getGuestbooks(
+		long groupId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.liferay.docs.guestbook.model.Guestbook> returnValue =
+				GuestbookServiceUtil.getGuestbooks(groupId, start, end);
+
+			return com.liferay.docs.guestbook.model.GuestbookSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.docs.guestbook.model.GuestbookSoap getGuestbookByG_N(
+		long groupId, java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws RemoteException {
+		try {
+			com.liferay.docs.guestbook.model.Guestbook returnValue = GuestbookServiceUtil.getGuestbookByG_N(groupId,
+					name, orderByComparator);
+
+			return com.liferay.docs.guestbook.model.GuestbookSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static int getGuestbooksCount(long groupId)
+		throws RemoteException {
+		try {
+			int returnValue = GuestbookServiceUtil.getGuestbooksCount(groupId);
+
+			return returnValue;
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.docs.guestbook.model.GuestbookSoap updateGuestbook(
+		long userId, long guestbookId, java.lang.String name,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.liferay.docs.guestbook.model.Guestbook returnValue = GuestbookServiceUtil.updateGuestbook(userId,
+					guestbookId, name, serviceContext);
+
+			return com.liferay.docs.guestbook.model.GuestbookSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(GuestbookServiceSoap.class);
 }

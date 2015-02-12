@@ -63,6 +63,52 @@ public class EntryServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static com.liferay.docs.guestbook.model.Entry addEntry(long userId,
+		long guestbookId, java.lang.String name, java.lang.String email,
+		java.lang.String message,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .addEntry(userId, guestbookId, name, email, message,
+			serviceContext);
+	}
+
+	public static com.liferay.docs.guestbook.model.Entry deleteEntry(
+		long entryId, com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().deleteEntry(entryId, serviceContext);
+	}
+
+	public static java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
+		long groupId, long guestbookId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEntries(groupId, guestbookId);
+	}
+
+	public static java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
+		long groupId, long guestbookId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEntries(groupId, guestbookId, start, end);
+	}
+
+	public static int getEntriesCount(long groupId, long guestbookId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEntriesCount(groupId, guestbookId);
+	}
+
+	public static com.liferay.docs.guestbook.model.Entry updateEntry(
+		long userId, long guestbookId, long entryId, java.lang.String name,
+		java.lang.String email, java.lang.String message,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateEntry(userId, guestbookId, entryId, name, email,
+			message, serviceContext);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

@@ -9,23 +9,24 @@ campaigns.
 A user segment represents a subset of the total group of portal users (logged in
 or not). A user segment is defined by one or more rules that users have to match
 in order to belong to that user segment. Click on *Site Administration* &rarr;
-*Configuration* &rarr; *Audience Targeting* &rarr; *New User Segment* to add a
+*Configuration* &rarr; *Audience Targeting* &rarr; *Add User Segment* to add a
 new user segment. All the rules that have been deployed appear under the Rules
 heading. Drag a rule to the right to apply the rule to the user segment. Once a
-rule has been applied, you can adjust the rule's parameters. E.g., once the
-Gender rule has been applied, you can select *Male* or *Female*. Once the Age
-rule has been applied, you can select an *Older than* value and a *Younger than*
-value. For example, you could define a *Women over 30* user segment by applying
-the Gender rule and selecting *Female* and applying the Age rule and setting the
-*Older than* attribute to *30*. Once you've customized the rules for the new
-user segment, entered a name and, optionally, a description, click *Save* to
-actually create the user segment.
+rule has been applied, you can adjust the rule's parameters. For example, once
+the Gender rule has been applied, you can select *Male* or *Female*. Once the
+Age rule has been applied, you can select an *Older than* value and a *Younger
+than* value. For example, you could define a *Women over 30* user segment by
+applying the Gender rule and selecting *Female*, and applying the Age rule and
+setting the *Older than* attribute to *30*. Once you've customized the rules for
+the new user segment, entered a name and, optionally, a description, click
+*Save* to actually create the user segment.
 
 ![Figure 7.2: Drag a rule to the right to create a user segment.](../../images/07-audience-targeting-rules.png)
 
 To configure permissions for creating, editing, and deleting user segments,
-visit the Roles section of the Control Panel and search for *Audience Targeting
-Resources*.
+visit the Roles section of the Control Panel. Then click on the *Actions* &rarr;
+*Define Permissions* button corresponding to the role you'd like to configure
+permissions for, and search for *Audience Targeting Resources*.
 
 Both user segments and campaigns are inherited in your site hierarchy.
 Therefore, user segments and campaigns defined in the Global scope will be
@@ -66,13 +67,13 @@ your audience into three user segments (Basketball fans, Tennis fans, and Soccer
 fans) in order to display the most relevant content to them on your site's front
 page. After creating these three user segments using the Score Points rule with
 a threshold of, say, 20, you should appropriately categorize the content which
-would be most relevant to each user segment. E.g., apply the *Basketball fans*
-user segment to content about basketball, apply the *Tennis fans* user segment
-to content about tennis, etc. Now, every time a user (even a guest user) visits
-a page or views a piece of content categorized for a user segment to which the
-Score Points rule has been applied, the user will start accumulating points.
-Once the user has accumulated enough points, the user will belong to the user
-segment. After a user has visited more than 20 pages or pieces of content
+would be most relevant to each user segment. For example, apply the *Basketball
+fans* user segment to content about basketball, apply the *Tennis fans* user
+segment to content about tennis, etc. Now, every time a user (even a guest user)
+visits a page or views a piece of content categorized for a user segment to
+which the Score Points rule has been applied, the user will start accumulating
+points. Once the user has accumulated enough points, the user will belong to the
+user segment. After a user has visited more than 20 pages or pieces of content
 related to basketball, the user will belong to the Basketball fans user segment.
 Once the user belongs to a user segment, you can use that information to direct
 more relevant information to the user in your website using the User Segment
