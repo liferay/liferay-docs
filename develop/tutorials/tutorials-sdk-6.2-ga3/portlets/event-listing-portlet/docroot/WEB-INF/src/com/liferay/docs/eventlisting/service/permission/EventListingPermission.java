@@ -25,6 +25,6 @@ public class EventListingPermission {
 			groupId, _CLASS_NAME, groupId, actionId);
 	}
 
-	private static final String _CLASS_NAME = "com.liferay.docs.eventlisting";
+	private static final String _CLASS_NAME = "com.liferay.docs.eventlisting.model";
 
 }

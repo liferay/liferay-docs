@@ -39,8 +39,9 @@
 			<guest-unsupported />
 		</permissions>
 	</portlet-resource>
+	
 	<model-resource>
-		<model-name>com.liferay.docs.eventlisting</model-name>
+		<model-name>com.liferay.docs.eventlisting.model</model-name>
 		<portlet-ref>
 			<portlet-name>event-listing</portlet-name>
 		</portlet-ref>
@@ -55,6 +56,7 @@
 			</guest-unsupported>
 		</permissions>
 	</model-resource>
+	
 	<model-resource>
 		<model-name>com.liferay.docs.eventlisting.model.Event</model-name>
 		<portlet-ref>
@@ -83,8 +85,9 @@
 			</owner-defaults>
 		</permissions>
 	</model-resource>
+	
 	<model-resource>
-		<model-name>com.liferay.docs.eventlisting</model-name>
+		<model-name>com.liferay.docs.eventlisting.model</model-name>
 		<portlet-ref>
 			<portlet-name>location-listing</portlet-name>
 		</portlet-ref>
@@ -99,6 +102,7 @@
 			</guest-unsupported>
 		</permissions>
 	</model-resource>
+	
 	<model-resource>
 		<model-name>com.liferay.docs.eventlisting.model.Location</model-name>
 		<portlet-ref>
@@ -127,4 +131,5 @@
 			</owner-defaults>
 		</permissions>
 	</model-resource>
+
 </resource-action-mapping>
