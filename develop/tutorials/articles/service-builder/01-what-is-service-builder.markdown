@@ -104,9 +104,9 @@ Ehcache as an underlying cache provider for each of these cache levels. However,
 this is configurable via portal properties. All you have to do to enable entity
 and finder caching for an entity in your project is to set the
 `cache-enabled=true` attribute of your entity's `<entity>` element in your
-`service.xml` configuration file. Please refer to 
-[Liferay Clustering](/discover/deployment/-/knowledge_base/6-2/liferay-clustering)
-for more details about Liferay caching.
+`service.xml` configuration file. Please refer to the
+[Distributed Caching](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/liferay-clustering#distributed-caching)
+documentation for more details about Liferay caching.
 
 Service Builder is a flexible tool. It automates many of the common tasks
 associated with creating database persistence code but it doesn't prevent you
