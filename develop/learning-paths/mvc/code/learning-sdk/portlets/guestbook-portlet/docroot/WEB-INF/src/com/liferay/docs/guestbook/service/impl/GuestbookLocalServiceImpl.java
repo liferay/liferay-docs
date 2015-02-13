@@ -97,7 +97,7 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		
 		if (test.size() > 0) {
 			
-			throw new PortalException("There is an existing Guestbook with that name.");
+			throw new PortalException("existing-guestbook");
 			
 		}
 
