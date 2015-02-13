@@ -3,8 +3,8 @@
 This tutorial explains how to run Service Builder and provides an overview of
 the code that Service Builder generates. If you'd like to use Service Builder in
 your application but haven't yet created a `service.xml` file, please see the
-[Defining an Object-relational Map with Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
-tutorial.
+[Defining an Object-Relational Map with Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
+tutorial and then come back to this one.
 
 ## Running Service Builder
 
@@ -13,9 +13,7 @@ To build a service from a `service.xml` file, you can use *Liferay IDE*,
 to the Event Listing example project that's referenced throughout the Liferay
 Service Builder tutorials. You can find the Event Listing example project on
 Github here:
-[https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet).
-If you'd like to experiment with this project, just copy it to the `portlets`
-folder of your Plugins SDK. 
+[https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet).
 
 +$$$
 
@@ -93,9 +91,10 @@ will copy plugins (WAR files) to be deployed. Liferay modifies the WAR files
 before deploying and exploding them to the `app.server.tomcat.deploy.dir`
 directory. If you customize the value of the `auto.deploy.dir` property in your
 Plugins SDK, make sure you also configure Liferay to scan the new directory. To
-do so, you must configure Liferay's `auto.deploy.deploy.dir` portal property to
-point to the same directory that you specified via the `auto.deploy.dir`
-property of your Plugins SDK's `build.[username].properties` file.
+do so, you must configure Liferay's `auto.deploy.deploy.dir` portal property
+(e.g., in `portal-ext.properties`) to point to the same directory that you
+specified via the `auto.deploy.dir` property of your Plugins SDK's
+`build.[username].properties` file.
 
 $$$
 
