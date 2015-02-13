@@ -24,7 +24,7 @@ added to the `LocationListingPortlet` class.
 Here's a version of the `EventListingPortlet` class containing these portlet
 methods and their service invocations. Note that this version of the
 `EventListingPortlet` differs from the
-[final version](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/portlet/EventListingPortlet.java)
+[final version](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/portlet/EventListingPortlet.java)
 since this portlet invokes local services and the final version of the portlet
 invokes remote services.
 

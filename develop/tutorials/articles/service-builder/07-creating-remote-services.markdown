@@ -28,7 +28,7 @@ Remember that your application's local service methods are implemented in
 `*LocalServiceImpl`. Similarly, you'll implement remote service methods in
 `*ServiceImpl`. Here are the remote service methods of the `EventServiceImpl`
 class that belongs to the
-[Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet)
+[Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet)
 project:
 
 	public Event addEvent(
