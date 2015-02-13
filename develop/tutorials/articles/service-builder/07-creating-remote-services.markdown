@@ -31,50 +31,47 @@ class that belongs to the
 [Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet)
 project:
 
-	public Event addEvent(
-			long groupId, String name, String description,
-			int month, int day, int year, int hour, int minute, long locationId,
-			ServiceContext serviceContext)
-		throws PortalException, SystemException {
+	public Event addEvent(long groupId, String name, String description,
+			int month, int day, int year, int hour, int minute,
+			long locationId, ServiceContext serviceContext)
+			throws PortalException, SystemException {
 
-		EventListingPermission.check(
-			getPermissionChecker(), groupId, EventListingActionKeys.ADD_EVENT);
+		EventListingPermission.check(getPermissionChecker(), groupId,
+				EventListingActionKeys.ADD_EVENT);
 
-		return EventLocalServiceUtil.addEvent(
-			getUserId(), groupId, name, description, month, day, year, hour,
-			minute, locationId, serviceContext);
+		return EventLocalServiceUtil.addEvent(getUserId(), groupId, name,
+				description, month, day, year, hour, minute, locationId,
+				serviceContext);
 	}
 
-	public Event deleteEvent(long eventId)
-		throws PortalException, SystemException {
+	public Event deleteEvent(long eventId) throws PortalException,
+			SystemException {
 
 		EventPermission.check(getPermissionChecker(), eventId,
-			EventListingActionKeys.DELETE_EVENT);
+				EventListingActionKeys.DELETE_EVENT);
 
 		return eventLocalService.deleteEvent(eventId);
 	}
 
-	public Event getEvent(long eventId)
-		throws PortalException, SystemException {
+	public Event getEvent(long eventId) throws PortalException, SystemException {
 
 		EventPermission.check(getPermissionChecker(), eventId,
-			EventListingActionKeys.VIEW);
+				EventListingActionKeys.VIEW);
 
 		return EventLocalServiceUtil.getEvent(eventId);
 	}
 
-	public Event updateEvent(
-			long userId, long eventId, String name, String description,
-			int month, int day, int year, int hour, int minute, long locationId,
-			ServiceContext serviceContext)
-		throws PortalException, SystemException {
+	public Event updateEvent(long userId, long eventId, String name,
+			String description, int month, int day, int year, int hour,
+			int minute, long locationId, ServiceContext serviceContext)
+			throws PortalException, SystemException {
 
 		EventPermission.check(getPermissionChecker(), eventId,
-			EventListingActionKeys.UPDATE_EVENT);
+				EventListingActionKeys.UPDATE_EVENT);
 
-		return EventLocalServiceUtil.updateEvent(
-			userId, eventId, name, description, month, day, year, hour, minute,
-			locationId, serviceContext);
+		return EventLocalServiceUtil.updateEvent(userId, eventId, name,
+				description, month, day, year, hour, minute, locationId,
+				serviceContext);
 	}
 
 As demonstrated above, each of your remote service methods should perform
@@ -83,16 +80,16 @@ permission to perform the action in question. In the example above, the
 permission checks determine whether the user has permission to add, view,
 update, or delete events. Notice that the methods use three new classes:
 
-- [`EventListingActionKeys`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/svc-build/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/util/EventListingActionKeys.java)
+- [`EventListingActionKeys`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/util/EventListingActionKeys.java)
   is an extension of the [`ActionKeys`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/security/permission/ActionKeys.html)
   class. You can create similar classes to provide constants that specify the
   types of actions that be performed in your application. 
 
-- [`EventPermission`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/svc-build/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/permission/EventPermission.java)
+- [`EventPermission`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/service/permission/EventPermission.java)
   is a helper class for checking whether the user is authorized to perform
   specific actions on the Event entity. 
 
-- [`EventListingPermission`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/svc-build/event-listing-portlet/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/permission/EventListingPermission.java)
+- [`EventListingPermission`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/service/permission/EventListingPermission.java)
   is a helper class for checking whether the user is authorized to add the
   instances of the plugin's specific entity types. 
 
@@ -100,13 +97,14 @@ You can create analogues of the above classes for your application. The
 `*ActionKeys` and `*Permission` classes are not generated by Service Builder. If
 you want to use such classes in your application, you must manually create them.
 <!--
-To learn about Liferay's framework, please refer to the
+To learn about Liferay's permissions framework, please refer to the
 [Security and Permissions](http://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/security-and-permissions-liferay-portal-6-2-dev-guide-06-en)
 tutorial.
 -->
 To see how the Event Listing Portlet is integrated with Liferay's permissions
-system, browse the Event Listing example project available on Github here:
-[Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet).
+system, you can browse the Event Listing example project available on Github
+here:
+[Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet).
 
 Notice the calls to the `eventLocalService` field's `addEvent`, `updateEvent`,
 and `deleteEvent` methods. The `eventLocalService` field holds a Spring bean of
