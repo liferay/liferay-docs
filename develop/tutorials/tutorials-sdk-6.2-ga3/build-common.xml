@@ -1,0 +1,2477 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="build-common" xmlns:antelope="antlib:ise.antelope.tasks">
+	<dirname file="${ant.file.build-common}" property="sdk.dir" />
+
+	<property environment="env" />
+
+	<path id="lib.classpath">
+		<fileset dir="${sdk.dir}/lib" includes="*.jar" />
+	</path>
+
+	<taskdef classpathref="lib.classpath" resource="net/sf/antcontrib/antlib.xml" />
+	<taskdef classpathref="lib.classpath" resource="ise/antelope/tasks/antlib.xml" uri="antlib:ise.antelope.tasks" />
+
+	<property file="${sdk.dir}/build.${user.name}.properties" />
+	<property file="${sdk.dir}/build.${env.COMPUTERNAME}.properties" />
+	<property file="${sdk.dir}/build.${env.HOST}.properties" />
+	<property file="${sdk.dir}/build.${env.HOSTNAME}.properties" />
+
+	<if>
+		<isset property="app.server.dir" />
+		<then>
+			<if>
+				<isset property="app.server.type" />
+				<then>
+					<propertycopy from="app.server.dir" name="app.server.${app.server.type}.dir" />
+				</then>
+				<else>
+					<propertycopy from="app.server.dir" name="app.server.tomcat.dir" />
+				</else>
+			</if>
+		</then>
+	</if>
+
+	<property file="${sdk.dir}/build.properties" />
+
+	<propertycopy from="app.server.${app.server.type}.dir" name="app.server.dir" />
+	<propertycopy from="app.server.${app.server.type}.deploy.dir" name="app.server.deploy.dir" />
+	<propertycopy from="app.server.${app.server.type}.lib.global.dir" name="app.server.lib.global.dir" />
+	<propertycopy from="app.server.${app.server.type}.portal.dir" name="app.server.portal.dir" />
+	<propertycopy from="app.server.${app.server.type}.zip.name" name="app.server.zip.name" silent="true" />
+
+	<property name="app.server.classes.portal.dir" value="${app.server.portal.dir}/WEB-INF/classes" />
+	<property location="${app.server.portal.dir}/WEB-INF/lib" name="app.server.lib.portal.dir" />
+
+	<import file="build-common-ivy.xml" />
+
+	<path id="plugin.classpath">
+		<path refid="plugin-lib.classpath" />
+		<fileset dir="${app.server.lib.global.dir}" includes="*.jar" />
+		<fileset dir="${app.server.lib.portal.dir}" includes="annotations.jar,commons-logging.jar,log4j.jar,util-bridges.jar,util-java.jar,util-taglib.jar" />
+		<fileset dir="${sdk.dir}/lib" includes="activation.jar,bnd.jar,javax.servlet-api.jar,jsp-api.jar,mail.jar,portal-ant-shared.jar" />
+	</path>
+
+	<path id="portal.classpath">
+		<pathelement location="${app.server.classes.portal.dir}" />
+		<fileset dir="${app.server.lib.global.dir}" includes="*.jar" />
+		<fileset dir="${app.server.lib.portal.dir}" excludes="bnd.jar" includes="*.jar" />
+		<fileset dir="${sdk.dir}/lib" includes="activation.jar,jargs.jar,javax.servlet-api.jar,jsp-api.jar,qdox.jar" />
+	</path>
+
+	<path id="portal-ant.classpath">
+		<path refid="portal.classpath" />
+		<fileset dir="${sdk.dir}/lib" includes="bnd.jar,portal-ant-shared.jar" />
+	</path>
+
+	<path id="test.classpath">
+		<path refid="plugin.classpath" />
+		<path refid="plugin-test-type.classpath" />
+		<fileset dir="${app.server.lib.portal.dir}" excludes="ant.jar" includes="*.jar" />
+		<fileset dir="${sdk.dir}/lib" includes="junit.jar,mockito-all.jar,powermock-*.jar,spring-test.jar" />
+	</path>
+
+	<taskdef classpathref="lib.classpath" resource="aQute/bnd/ant/taskdef.properties" />
+
+	<condition property="correct.ant.version">
+		<antversion atleast="1.8.0" />
+	</condition>
+
+	<if>
+		<not>
+			<equals arg1="${correct.ant.version}" arg2="true" />
+		</not>
+		<then>
+			<fail>Please use Ant 1.8.0 or above.</fail>
+		</then>
+	</if>
+
+	<whichresource resource="/org/eclipse/jdt/core/JDTCompilerAdapter.class" property="ecj.compiler" />
+	<whichresource resource="/com/google/errorprone/ErrorProneAntCompilerAdapter.class" property="google.errorprone.compiler" />
+
+	<if>
+		<and>
+			<equals arg1="${javac.compiler}" arg2="org.eclipse.jdt.core.JDTCompilerAdapter" />
+			<not>
+				<isset property="ecj.compiler" />
+			</not>
+		</and>
+		<then>
+			<copy file="${sdk.dir}/lib/ecj.jar" todir="${ant.home}/lib" />
+
+			<fail>
+.
+
+Task cannot continue because ECJ is not installed.
+
+ECJ was automatically installed. Please rerun your task.
+			</fail>
+		</then>
+		<else>
+			<if>
+				<and>
+					<equals arg1="${javac.compiler}" arg2="com.google.errorprone.ErrorProneAntCompilerAdapter" />
+					<not>
+						<isset property="google.errorprone.compiler" />
+					</not>
+				</and>
+				<then>
+					<copy file="${sdk.dir}/lib/error_prone_ant.jar" todir="${ant.home}/lib" />
+
+					<fail>
+.
+
+Task cannot continue because Error-Prone is not installed.
+
+Error-Prone was automatically installed. Please rerun your task.
+					</fail>
+				</then>
+			</if>
+		</else>
+	</if>
+
+	<macrodef name="baseline-jar-macro">
+		<attribute name="bndRootFile" />
+		<attribute name="file" />
+		<attribute name="outputPath" />
+		<attribute name="rootProjectDir" />
+		<attribute name="sourcePath" />
+
+		<sequential>
+			<taskdef
+				classname="com.liferay.portal.ant.bnd.BaselineJarTask"
+				classpathref="portal-ant.classpath"
+				name="baseline-jar"
+			/>
+
+			<manifest-helper />
+
+			<bndexpand propertyfile="@{bndRootFile}" />
+
+			<baseline-jar
+				bndRootFile="@{bndRootFile}"
+				file="@{file}"
+				outputPath="@{outputPath}"
+				sourcePath="@{sourcePath}"
+			>
+				<classpath>
+					<pathelement location="@{sourcePath}/classes" />
+				</classpath>
+			</baseline-jar>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="build-css">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<java
+				classname="com.liferay.portal.tools.SassToCssBuilder"
+				classpathref="portal.classpath"
+				failonerror="true"
+				fork="true"
+				newenvironment="true"
+			>
+				<jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+				<arg value="sass.dir=/" />
+				<arg value="sass.docroot.dir=${module.dir.unix}/docroot" />
+				<arg value="sass.portal.common.dir=${app.server.portal.dir}/html/css/common" />
+			</java>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="call-macrodef-or-target">
+		<attribute name="macrodef.name" />
+		<attribute name="module.dir" />
+
+		<sequential>
+			<if>
+				<resourcecontains
+					resource="${module.dir.unix}/build.xml"
+					substring="&lt;target name=&quot;@{macrodef.name}&quot;&gt;"
+				/>
+				<then>
+					<ant dir="@{module.dir}" target="@{macrodef.name}" inheritAll="false" />
+				</then>
+				<else>
+					<if>
+						<equals arg1="@{macrodef.name}" arg2="clean" />
+						<then>
+							<clean
+								module.dir="@{module.dir}"
+							/>
+						</then>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="clean-portal-dependencies" />
+							<then>
+								<clean-portal-dependencies
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="compile" />
+							<then>
+								<compile
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="compile-import-shared" />
+							<then>
+								<compile-import-shared
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="deploy" />
+							<then>
+								<deploy
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="direct-deploy" />
+							<then>
+								<direct-deploy
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="jar" />
+							<then>
+								<jar-macro
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="jar-javadoc" />
+							<then>
+								<jar-javadoc
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="jar-source" />
+							<then>
+								<jar-source
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="javadoc" />
+							<then>
+								<javadoc-macro
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="merge" />
+							<then>
+								<merge
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="merge-unzip" />
+							<then>
+								<merge-unzip
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="test" />
+							<then>
+								<test
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="test-integration" />
+							<then>
+								<test-integration
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="test-unit" />
+							<then>
+								<test-unit
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+						<elseif>
+							<equals arg1="@{macrodef.name}" arg2="war" />
+							<then>
+								<war-macro
+									module.dir="@{module.dir}"
+								/>
+							</then>
+						</elseif>
+					</if>
+				</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="clean">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<delete dir="@{module.dir}/classes" />
+			<delete dir="@{module.dir}/docroot/WEB-INF/classes" />
+
+			<if>
+				<available file="@{module.dir}/docroot/WEB-INF/.gitignore" />
+				<then>
+					<if>
+						<resourcecontains
+							resource="${module.dir.unix}/docroot/WEB-INF/.gitignore"
+							substring="/lib"
+						/>
+						<then>
+							<delete dir="@{module.dir}/docroot/WEB-INF/lib" />
+						</then>
+					</if>
+				</then>
+			</if>
+
+			<if>
+				<and>
+					<available file="@{module.dir}/docroot/WEB-INF/.svn" />
+					<not>
+						<available file="@{module.dir}/docroot/WEB-INF/lib/.svn" />
+					</not>
+					<length length="0" when="equal">
+						<fileset dir="@{module.dir}/docroot/WEB-INF/lib" erroronmissingdir="false" />
+					</length>
+				</and>
+				<then>
+					<delete dir="@{module.dir}/docroot/WEB-INF/lib" />
+				</then>
+			</if>
+
+			<delete dir="@{module.dir}/javadoc" />
+			<delete dir="@{module.dir}/test-classes" />
+			<delete dir="@{module.dir}/test-results" />
+			<delete dir="@{module.dir}/tmp" />
+
+			<delete failonerror="false" includeemptydirs="true">
+				<fileset dir="@{module.dir}/docroot" includes="**/*.processed" />
+				<fileset dir="@{module.dir}/docroot" includes="**/.sass-cache/**" />
+				<fileset dir="@{module.dir}/docroot" includes="**/.sprite.png" />
+				<fileset dir="@{module.dir}/docroot" includes="**/.sprite.properties" />
+				<fileset dir="@{module.dir}/docroot" includes="**/Thumbs.db" />
+			</delete>
+
+			<delete file="${plugin.file}" />
+			<delete file="${plugin.javadoc.file}" />
+			<delete file="${plugin.pom.file}" />
+			<delete file="${plugin.sources.file}" />
+			<delete file="${plugin.src.file}" />
+
+			<if>
+				<equals arg1="${clean.delete.ivy.md5}" arg2="true" />
+				<then>
+					<delete file="@{module.dir}/ivy.xml.MD5" />
+				</then>
+			</if>
+
+			<if>
+				<equals arg1="${clean.delete.lib}" arg2="true" />
+				<then>
+					<delete dir="@{module.dir}/lib" />
+				</then>
+			</if>
+
+			<call-macrodef-or-target
+				macrodef.name="clean-portal-dependencies"
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<matches pattern=".*-theme" string="@{module.dir}" />
+				<then>
+					<if>
+						<available file="@{module.dir}/docroot/_diffs" />
+						<then>
+							<delete includeemptydirs="true" quiet="true" failonerror="false">
+								<fileset
+									dir="@{module.dir}/docroot"
+									excludes=".gitignore,_diffs.*,_diffs/**,WEB-INF/**"
+								/>
+							</delete>
+						</then>
+					</if>
+				</then>
+			</if>
+
+			<if>
+				<resourcecontains
+					resource="${module.dir.unix}/build.xml"
+					substring="/build-common-osgi-plugin.xml&quot;"
+				/>
+				<then>
+					<set-build-xml-var
+						build.xml.var.name="auto.deploy.dir"
+						module.dir="@{module.dir}"
+					/>
+
+					<if>
+						<isset property="set-build-xml-var.return" />
+						<then>
+							<var name="module.auto.deploy.dir" value="${set-build-xml-var.return}" />
+						</then>
+						<else>
+							<var name="module.auto.deploy.dir" value="${auto.deploy.dir}" />
+						</else>
+					</if>
+
+					<delete file="${module.auto.deploy.dir}/${plugin.name}.${plugin.packaging}" />
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="clean-portal-dependencies">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<equals arg1="${plugins.war.clean.portal.dependencies}" arg2="true" />
+				<then>
+					<if>
+						<available file="@{module.dir}/docroot/WEB-INF/lib" />
+						<then>
+							<delete>
+								<fileset dir="@{module.dir}/docroot/WEB-INF/lib" includes="${required.portal.jars}" />
+								<fileset dir="@{module.dir}/docroot/WEB-INF/lib" includes="${plugin.jars}" />
+							</delete>
+						</then>
+					</if>
+
+					<if>
+						<available file="@{module.dir}/docroot/WEB-INF/tld" />
+						<then>
+							<delete>
+								<fileset dir="@{module.dir}/docroot/WEB-INF/tld" includes="${plugin.tlds}" />
+							</delete>
+						</then>
+					</if>
+
+					<if>
+						<available file="@{module.dir}/tmp/WEB-INF/lib" />
+						<then>
+							<delete>
+								<fileset dir="@{module.dir}/tmp/WEB-INF/lib" includes="${required.portal.jars}" />
+								<fileset dir="@{module.dir}/tmp/WEB-INF/lib" includes="${plugin.jars}" />
+							</delete>
+						</then>
+					</if>
+
+					<if>
+						<available file="@{module.dir}/tmp/WEB-INF/tld" />
+						<then>
+							<delete>
+								<fileset dir="@{module.dir}/tmp/WEB-INF/tld" includes="${plugin.tlds}" />
+							</delete>
+						</then>
+					</if>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="compile">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<or>
+					<antelope:endswith string="${plugin.name}" with="-hook" />
+					<antelope:endswith string="${plugin.name}" with="-portlet" />
+					<antelope:endswith string="${plugin.name}" with="-web" />
+				</or>
+				<then>
+					<compile-portlet
+						module.dir="@{module.dir}"
+					/>
+				</then>
+				<elseif>
+					<antelope:endswith string="${plugin.name}" with="-layouttpl" />
+					<then>
+						<call-macrodef-or-target
+							macrodef.name="merge"
+							module.dir="@{module.dir}"
+						/>
+					</then>
+				</elseif>
+				<elseif>
+					<antelope:endswith string="${plugin.name}" with="-theme" />
+					<then>
+						<compile-theme
+							module.dir="@{module.dir}"
+						/>
+					</then>
+				</elseif>
+				<else>
+					<call-macrodef-or-target
+						macrodef.name="compile-import-shared"
+						module.dir="@{module.dir}"
+					/>
+
+					<process-ivy
+						module.dir="@{module.dir}"
+					/>
+
+					<mkdir dir="@{module.dir}/classes" />
+
+					<compile-java
+						javac.classpathref="plugin.classpath"
+						javac.destdir="@{module.dir}/classes"
+						javac.srcdir="@{module.dir}/src"
+					/>
+				</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="compile-import-shared">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<set-build-xml-var
+				build.xml.var.name="import.compat.shared"
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<isset property="set-build-xml-var.return" />
+				<then>
+					<var name="compile-import-shared.import.compat.shared" value="${set-build-xml-var.return}" />
+				</then>
+			</if>
+
+			<set-build-xml-var
+				build.xml.var.name="import.shared"
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<isset property="set-build-xml-var.return" />
+				<then>
+					<var name="compile-import-shared.import.shared" value="${set-build-xml-var.return}" />
+				</then>
+			</if>
+
+			<if>
+				<not>
+					<equals arg1="${plugin.name}" arg2="portal-compat-shared" />
+				</not>
+				<then>
+					<if>
+						<or>
+							<not>
+								<isset property="compile-import-shared.import.compat.shared" />
+							</not>
+							<equals arg1="${compile-import-shared.import.compat.shared}" arg2="true" />
+						</or>
+						<then>
+							<if>
+								<isset property="compile-import-shared.import.shared" />
+								<then>
+									<var name="compile-import-shared.import.shared" value="portal-compat-shared,${compile-import-shared.import.shared}" />
+								</then>
+								<else>
+									<var name="compile-import-shared.import.shared" value="portal-compat-shared" />
+								</else>
+							</if>
+						</then>
+					</if>
+				</then>
+			</if>
+
+			<if>
+				<isset property="compile-import-shared.import.shared" />
+				<then>
+					<var name="import.shared.list" value="${compile-import-shared.import.shared}" />
+
+					<var name="compile-import-shared.import.shared" unset="true" />
+
+					<for list="${import.shared.list}" param="import.shared.current">
+						<sequential>
+							<if>
+								<available file="${sdk.dir}/shared/@{import.shared.current}/src" />
+								<then>
+									<compile-import-shared-jar
+										import.shared.current="@{import.shared.current}"
+										import.shared.current.dir="${sdk.dir}/shared/@{import.shared.current}"
+										module.dir="@{module.dir}"
+									/>
+								</then>
+								<elseif>
+									<available file="${module.dir.unix}/../@{import.shared.current}/src" />
+									<then>
+										<compile-import-shared-jar
+											import.shared.current="@{import.shared.current}"
+											import.shared.current.dir="${module.dir.unix}/../@{import.shared.current}"
+											module.dir="@{module.dir}"
+										/>
+									</then>
+								</elseif>
+							</if>
+						</sequential>
+					</for>
+				</then>
+			</if>
+
+			<var name="compile-import-shared.import.compat.shared" unset="true" />
+			<var name="compile-import-shared.import.shared" unset="true" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="compile-import-shared-jar">
+		<attribute name="import.shared.current" />
+		<attribute name="import.shared.current.dir" />
+		<attribute name="module.dir" />
+
+		<sequential>
+			<if>
+				<available file="@{import.shared.current.dir}/src" />
+				<then>
+					<call-macrodef-or-target
+						macrodef.name="jar"
+						module.dir="@{import.shared.current.dir}"
+					/>
+
+					<set-module-properties
+						module.dir="@{module.dir}"
+					/>
+
+					<for param="import.shared.full.path">
+						<path>
+							<fileset dir="${sdk.dir}/dist" includes="@{import.shared.current}-${lp.version}.*.jar" />
+						</path>
+						<sequential>
+							<copy
+								file="@{import.shared.full.path}"
+								tofile="${plugin.lib.dir}/@{import.shared.current}.jar"
+							/>
+						</sequential>
+					</for>
+
+					<if>
+						<available file="@{import.shared.current.dir}/lib" />
+						<then>
+							<copy todir="${plugin.lib.dir}">
+								<fileset dir="@{import.shared.current.dir}/lib" includes="*.jar" />
+							</copy>
+						</then>
+					</if>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="compile-java">
+		<attribute name="javac.classpathref" />
+		<attribute name="javac.destdir" />
+		<attribute name="javac.srcdir" />
+
+		<sequential>
+			<copy todir="@{javac.destdir}">
+				<fileset dir="@{javac.srcdir}" excludes="**/*.java" />
+			</copy>
+
+			<javac
+				classpathref="@{javac.classpathref}"
+				compiler="${javac.compiler}"
+				debug="${javac.debug}"
+				deprecation="${javac.deprecation}"
+				destdir="@{javac.destdir}"
+				encoding="${javac.encoding}"
+				includeAntRuntime="false"
+				nowarn="${javac.nowarn}"
+				srcdir="@{javac.srcdir}"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="compile-portlet">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<call-macrodef-or-target
+				macrodef.name="merge"
+				module.dir="@{module.dir}"
+			/>
+
+			<call-macrodef-or-target
+				macrodef.name="compile-import-shared"
+				module.dir="@{module.dir}"
+			/>
+
+			<mkdir dir="@{module.dir}/docroot/WEB-INF/classes" />
+			<mkdir dir="@{module.dir}/docroot/WEB-INF/lib" />
+
+			<copy todir="@{module.dir}/docroot/WEB-INF/lib">
+				<fileset dir="${app.server.lib.portal.dir}" includes="${plugin.jars}" />
+			</copy>
+
+			<if>
+				<available file="@{module.dir}/overwrite" />
+				<then>
+					<copy overwrite="true" preservelastmodified="true" todir="@{module.dir}/docroot">
+						<fileset dir="@{module.dir}/overwrite" />
+					</copy>
+				</then>
+			</if>
+
+			<if>
+				<isset property="plugin.required.contexts" />
+				<then>
+					<for list="${plugin.required.contexts}" param="plugin.required.context">
+						<sequential>
+							<if>
+								<available file="${sdk.dir}/hooks/@{plugin.required.context}/docroot/WEB-INF/lib/@{plugin.required.context}-service.jar" />
+								<then>
+									<copy
+										file="${sdk.dir}/hooks/@{plugin.required.context}/docroot/WEB-INF/lib/@{plugin.required.context}-service.jar"
+										todir="@{module.dir}/docroot/WEB-INF/lib"
+										overwrite="true"
+									/>
+								</then>
+								<elseif>
+									<available file="${sdk.dir}/portlets/@{plugin.required.context}/docroot/WEB-INF/lib/@{plugin.required.context}-service.jar" />
+									<then>
+										<copy
+											file="${sdk.dir}/portlets/@{plugin.required.context}/docroot/WEB-INF/lib/@{plugin.required.context}-service.jar"
+											todir="@{module.dir}/docroot/WEB-INF/lib"
+											overwrite="true"
+										/>
+									</then>
+								</elseif>
+								<elseif>
+									<available file="${sdk.dir}/webs/@{plugin.required.context}/docroot/WEB-INF/lib/@{plugin.required.context}-service.jar" />
+									<then>
+										<copy
+											file="${sdk.dir}/webs/@{plugin.required.context}/docroot/WEB-INF/lib/@{plugin.required.context}-service.jar"
+											todir="@{module.dir}/docroot/WEB-INF/lib"
+											overwrite="true"
+										/>
+									</then>
+								</elseif>
+							</if>
+						</sequential>
+					</for>
+				</then>
+			</if>
+
+			<copy todir="@{module.dir}/docroot/WEB-INF/tld">
+				<fileset dir="${app.server.portal.dir}/WEB-INF/tld" includes="${plugin.tlds}" />
+			</copy>
+
+			<if>
+				<available file="@{module.dir}/docroot/WEB-INF/src" />
+				<then>
+					<copy todir="@{module.dir}/docroot/WEB-INF/lib">
+						<fileset dir="${app.server.lib.portal.dir}" includes="${required.portal.jars}" />
+					</copy>
+
+					<if>
+						<available file="@{module.dir}/docroot/WEB-INF/lib/portal-impl.jar" />
+						<then>
+							<fail>
+.
+
+Detected inclusion of portal-impl.jar in WEB-INF/lib.
+
+portal-impl.jar is designed with a large number of singleton classes which are
+instantiated on the basis that they will exist alone in the application server.
+
+While compile time issues may be resolved, portlets cannot be made to work by
+simply adding portal-impl.jar, because doing so violates the above assumption,
+and the resulting problems will be extremely difficult to debug.
+
+Please find a solution that does not require portal-impl.jar.
+							</fail>
+						</then>
+					</if>
+
+					<compile-java
+						javac.classpathref="plugin.classpath"
+						javac.destdir="@{module.dir}/docroot/WEB-INF/classes"
+						javac.srcdir="@{module.dir}/docroot/WEB-INF/src"
+					/>
+				</then>
+			</if>
+
+			<if>
+				<and>
+					<available file="@{module.dir}/docroot/WEB-INF/liferay-hook.xml" />
+					<available file="@{module.dir}/docroot/WEB-INF/src/content" />
+				</and>
+				<then>
+					<if>
+						<resourcecontains
+							resource="${module.dir.unix}/docroot/WEB-INF/liferay-hook.xml"
+							substring="&lt;language-properties&gt;content/Language*.properties&lt;/language-properties&gt;"
+						/>
+						<then>
+							<pathconvert pathsep="${line.separator}&#x9;" property="language.properties.elements">
+								<fileset dir="@{module.dir}/docroot/WEB-INF/src/content">
+									<include name="Language*.properties" />
+								</fileset>
+								<mapper>
+									<chainedmapper>
+										<flattenmapper />
+										<globmapper
+											from="Language*.properties"
+											to="&lt;language-properties&gt;content/Language*.properties&lt;/language-properties&gt;"
+										/>
+									</chainedmapper>
+								</mapper>
+							</pathconvert>
+
+							<copy file="@{module.dir}/docroot/WEB-INF/liferay-hook.xml" overwrite="true" tofile="@{module.dir}/docroot/WEB-INF/liferay-hook.xml.processed">
+								<filterchain>
+									<tokenfilter>
+										<replacestring from="&lt;language-properties&gt;content/Language*.properties&lt;/language-properties&gt;" to="${language.properties.elements}" />
+									</tokenfilter>
+								</filterchain>
+							</copy>
+						</then>
+					</if>
+				</then>
+			</if>
+
+			<call-macrodef-or-target
+				macrodef.name="merge"
+				module.dir="@{module.dir}"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="compile-test">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<compile
+				module.dir="@{module.dir}"
+			/>
+
+			<compile-test-integration
+				module.dir="@{module.dir}"
+			/>
+
+			<compile-test-unit
+				module.dir="@{module.dir}"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="compile-test-cmd">
+		<attribute name="module.dir" />
+		<attribute name="test.type" />
+
+		<sequential>
+			<if>
+				<available file="@{module.dir}/test/@{test.type}" type="dir" />
+				<then>
+					<mkdir dir="@{module.dir}/test-classes/@{test.type}" />
+					<mkdir dir="@{module.dir}/test-results/@{test.type}" />
+
+					<copy todir="@{module.dir}/test-classes/@{test.type}">
+						<fileset dir="@{module.dir}/test" includes="*.properties" />
+						<fileset dir="@{module.dir}/test/@{test.type}" includes="**/*.png,**/*.properties,**/*.xml" />
+					</copy>
+
+					<path id="plugin-test-type.classpath">
+						<pathelement location="@{module.dir}/test-classes/@{test.type}" />
+					</path>
+
+					<compile-java
+						javac.classpathref="test.classpath"
+						javac.destdir="@{module.dir}/test-classes/@{test.type}"
+						javac.srcdir="@{module.dir}/test/@{test.type}"
+					/>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="compile-test-integration">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<compile-test-cmd
+				module.dir="@{module.dir}"
+				test.type="integration"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="compile-test-unit">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<compile-test-cmd
+				module.dir="@{module.dir}"
+				test.type="unit"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="compile-theme">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<available file="@{module.dir}/docroot/_diffs/images" />
+				<then>
+					<for param="file">
+						<path>
+							<fileset
+								dir="@{module.dir}/docroot/_diffs/images"
+								includes="**/screenshot.png"
+							/>
+						</path>
+						<sequential>
+							<propertyregex input="@{file}" override="yes" property="thumbnail.file" regexp="screenshot\.png" replace="thumbnail\.png" />
+
+							<java
+								classname="com.liferay.portal.tools.ThumbnailBuilder"
+								classpathref="portal.classpath"
+							>
+								<arg value="thumbnail.original.file=@{file}" />
+								<arg value="thumbnail.thumbnail.file=${thumbnail.file}" />
+								<arg value="thumbnail.height=120" />
+								<arg value="thumbnail.width=160" />
+								<arg value="thumbnail.overwrite=false" />
+							</java>
+						</sequential>
+					</for>
+				</then>
+			</if>
+
+			<if>
+				<not>
+					<isset property="theme.type" />
+				</not>
+				<then>
+					<var name="theme.type" value="vm" />
+				</then>
+			</if>
+
+			<if>
+				<equals arg1="${theme.parent}" arg2="_unstyled" />
+				<then>
+					<copy todir="@{module.dir}/docroot" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/_unstyled"
+							excludes="templates/**"
+						/>
+					</copy>
+
+					<copy todir="@{module.dir}/docroot/templates" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="${app.server.portal.dir}/html/themes/_unstyled/templates"
+							excludes="init.${theme.type}"
+							includes="*.${theme.type}"
+						/>
+					</copy>
+				</then>
+				<elseif>
+					<equals arg1="${theme.parent}" arg2="_styled" />
+					<then>
+						<copy todir="@{module.dir}/docroot" overwrite="true" preservelastmodified="true">
+							<fileset
+								dir="${app.server.portal.dir}/html/themes/_unstyled"
+								excludes="templates/**"
+							/>
+						</copy>
+
+						<copy todir="@{module.dir}/docroot/templates" overwrite="true" preservelastmodified="true">
+							<fileset
+								dir="${app.server.portal.dir}/html/themes/_unstyled/templates"
+								excludes="init.${theme.type}"
+								includes="*.${theme.type}"
+							/>
+						</copy>
+
+						<copy todir="@{module.dir}/docroot" overwrite="true" preservelastmodified="true">
+							<fileset
+								dir="${app.server.portal.dir}/html/themes/_styled"
+							/>
+						</copy>
+					</then>
+				</elseif>
+				<elseif>
+					<equals arg1="${theme.parent}" arg2="classic" />
+					<then>
+						<copy todir="@{module.dir}/docroot" overwrite="true" preservelastmodified="true">
+							<fileset
+								dir="${app.server.portal.dir}/html/themes/classic"
+								excludes="**/.sass-cache/**,_diffs/**,templates/**"
+							/>
+						</copy>
+
+						<copy todir="@{module.dir}/docroot/templates" overwrite="true" preservelastmodified="true">
+							<fileset
+								dir="${app.server.portal.dir}/html/themes/classic/templates"
+								includes="*.${theme.type}"
+							/>
+						</copy>
+					</then>
+				</elseif>
+				<elseif>
+					<equals arg1="${theme.parent}" arg2="control_panel" />
+					<then>
+						<copy todir="@{module.dir}/docroot" overwrite="true" preservelastmodified="true">
+							<fileset
+								dir="${app.server.portal.dir}/html/themes/control_panel"
+								excludes="**/.sass-cache/**,_diffs/**,templates/**"
+							/>
+						</copy>
+
+						<copy todir="@{module.dir}/docroot/templates" overwrite="true" preservelastmodified="true">
+							<fileset
+								dir="${app.server.portal.dir}/html/themes/control_panel/templates"
+								includes="*.${theme.type}"
+							/>
+						</copy>
+					</then>
+				</elseif>
+				<elseif>
+					<isset property="theme.parent" />
+					<then>
+						<compile-theme
+							module.dir="${theme.parent}"
+						/>
+
+						<set-module-properties
+							module.dir="@{module.dir}"
+						/>
+
+						<copy todir="@{module.dir}/docroot" overwrite="true" preservelastmodified="true">
+							<fileset
+								dir="${theme.parent}/docroot"
+								excludes="**/.sass-cache/**,_diffs/**,WEB-INF/*.properties,WEB-INF/*.xml"
+							/>
+						</copy>
+					</then>
+				</elseif>
+			</if>
+
+			<if>
+				<available file="@{module.dir}/docroot/_diffs" />
+				<then>
+					<copy todir="@{module.dir}/docroot" overwrite="true" preservelastmodified="true">
+						<fileset
+							dir="@{module.dir}/docroot/_diffs"
+						/>
+					</copy>
+				</then>
+			</if>
+
+			<if>
+				<available file="@{module.dir}/docroot/WEB-INF/src" />
+				<then>
+					<compile-portlet
+						module.dir="@{module.dir}"
+					/>
+				</then>
+				<else>
+					<if>
+						<available file="@{module.dir}/overwrite" />
+						<then>
+							<copy overwrite="true" preservelastmodified="true" todir="@{module.dir}/docroot">
+								<fileset dir="@{module.dir}/overwrite" />
+							</copy>
+						</then>
+					</if>
+				</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="deploy">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<or>
+					<antelope:endswith string="${plugin.name}" with="-hook" />
+					<antelope:endswith string="${plugin.name}" with="-layouttpl" />
+					<antelope:endswith string="${plugin.name}" with="-portlet" />
+					<antelope:endswith string="${plugin.name}" with="-theme" />
+					<antelope:endswith string="${plugin.name}" with="-web" />
+				</or>
+				<then>
+					<call-macrodef-or-target
+						macrodef.name="war"
+						module.dir="@{module.dir}"
+					/>
+
+					<copy file="${plugin.file}" todir="${auto.deploy.dir}" />
+				</then>
+				<else>
+					<call-macrodef-or-target
+						macrodef.name="jar"
+						module.dir="@{module.dir}"
+					/>
+
+					<if>
+						<resourcecontains
+							resource="${module.dir.unix}/build.xml"
+							substring="/build-common-osgi-plugin.xml&quot;"
+						/>
+						<then>
+							<set-build-xml-var
+								build.xml.var.name="auto.deploy.dir"
+								module.dir="@{module.dir}"
+							/>
+
+							<if>
+								<isset property="set-build-xml-var.return" />
+								<then>
+									<var name="module.auto.deploy.dir" value="${set-build-xml-var.return}" />
+								</then>
+								<else>
+									<var name="module.auto.deploy.dir" value="${auto.deploy.dir}" />
+								</else>
+							</if>
+
+							<mkdir dir="${module.auto.deploy.dir}" />
+
+							<if>
+								<available file="@{module.dir}/lib" />
+								<then>
+									<set-build-xml-var
+										build.xml.var.name="osgi.dependencies"
+										module.dir="@{module.dir}"
+									/>
+
+									<if>
+										<isset property="set-build-xml-var.return" />
+										<then>
+											<copy failonerror="false" todir="${module.auto.deploy.dir}">
+												<fileset dir="@{module.dir}/lib" includes="${set-build-xml-var.return}" />
+											</copy>
+										</then>
+									</if>
+								</then>
+							</if>
+
+							<copy
+								file="${plugin.file}"
+								tofile="${module.auto.deploy.dir}/${plugin.name}.${plugin.packaging}"
+							/>
+						</then>
+					</if>
+				</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="direct-deploy">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<call-macrodef-or-target
+				macrodef.name="war"
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<antelope:endswith string="${plugin.name}" with="-ext" />
+				<then>
+					<java
+						classname="com.liferay.portal.tools.deploy.ExtDeployer"
+						classpathref="portal.classpath"
+						fork="true"
+						newenvironment="true"
+					>
+
+						<!-- Required Arguments -->
+
+						<jvmarg value="-Dexternal-properties=com/liferay/portal/tools/dependencies/portal-tools.properties" />
+						<jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+						<jvmarg value="-Ddeployer.base.dir=${sdk.dir}/dist" />
+						<jvmarg value="-Ddeployer.dest.dir=${app.server.deploy.dir}" />
+						<jvmarg value="-Ddeployer.app.server.type=${app.server.type}" />
+						<jvmarg value="-Ddeployer.unpack.war=${auto.deploy.unpack.war}" />
+						<jvmarg value="-Ddeployer.file.pattern=${plugin.name}-*.war" />
+
+						<!-- Optional Arguments -->
+
+						<jvmarg value="-Ddeployer.tomcat.lib.dir=${app.server.tomcat.lib.global.dir}" />
+
+						<!-- Dependent Libraries -->
+
+						<arg value="${app.server.lib.portal.dir}/util-bridges.jar" />
+						<arg value="${app.server.lib.portal.dir}/util-java.jar" />
+						<arg value="${app.server.lib.portal.dir}/util-taglib.jar" />
+					</java>
+				</then>
+				<elseif>
+					<antelope:endswith string="${plugin.name}" with="-hook" />
+					<then>
+						<java
+							classname="com.liferay.portal.tools.deploy.HookDeployer"
+							classpathref="portal.classpath"
+							fork="true"
+							newenvironment="true"
+						>
+
+							<!-- Required Arguments -->
+
+							<jvmarg value="-Dexternal-properties=com/liferay/portal/tools/dependencies/portal-tools.properties" />
+							<jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+							<jvmarg value="-Ddeployer.base.dir=${sdk.dir}/dist" />
+							<jvmarg value="-Ddeployer.dest.dir=${app.server.deploy.dir}" />
+							<jvmarg value="-Ddeployer.app.server.type=${app.server.type}" />
+							<jvmarg value="-Ddeployer.unpack.war=${auto.deploy.unpack.war}" />
+							<jvmarg value="-Ddeployer.file.pattern=${plugin.name}-*.war" />
+
+							<!-- Optional Arguments -->
+
+							<jvmarg value="-Ddeployer.tomcat.lib.dir=${app.server.tomcat.lib.global.dir}" />
+
+							<!-- Dependent Libraries -->
+
+							<arg value="${app.server.lib.portal.dir}/util-bridges.jar" />
+							<arg value="${app.server.lib.portal.dir}/util-java.jar" />
+							<arg value="${app.server.lib.portal.dir}/util-taglib.jar" />
+						</java>
+					</then>
+				</elseif>
+				<elseif>
+					<antelope:endswith string="${plugin.name}" with="-layouttpl" />
+					<then>
+						<java
+							classname="com.liferay.portal.tools.deploy.LayoutTemplateDeployer"
+							classpathref="portal.classpath"
+							fork="true"
+							newenvironment="true"
+						>
+
+							<!-- Required Arguments -->
+
+							<jvmarg value="-Dexternal-properties=com/liferay/portal/tools/dependencies/portal-tools.properties" />
+							<jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+							<jvmarg value="-Ddeployer.base.dir=${sdk.dir}/dist" />
+							<jvmarg value="-Ddeployer.dest.dir=${app.server.deploy.dir}" />
+							<jvmarg value="-Ddeployer.app.server.type=${app.server.type}" />
+							<jvmarg value="-Ddeployer.unpack.war=${auto.deploy.unpack.war}" />
+							<jvmarg value="-Ddeployer.file.pattern=${plugin.name}-*.war" />
+
+							<!-- Dependent Libraries -->
+
+							<arg value="${app.server.lib.portal.dir}/util-bridges.jar" />
+							<arg value="${app.server.lib.portal.dir}/util-java.jar" />
+							<arg value="${app.server.lib.portal.dir}/util-taglib.jar" />
+						</java>
+					</then>
+				</elseif>
+				<elseif>
+					<antelope:endswith string="${plugin.name}" with="-portlet" />
+					<then>
+						<java
+							classname="com.liferay.portal.tools.deploy.PortletDeployer"
+							classpathref="portal.classpath"
+							fork="true"
+							newenvironment="true"
+						>
+
+							<!-- Required Arguments -->
+
+							<jvmarg value="-Dexternal-properties=com/liferay/portal/tools/dependencies/portal-tools.properties" />
+							<jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+							<jvmarg value="-Ddeployer.base.dir=${sdk.dir}/dist" />
+							<jvmarg value="-Ddeployer.dest.dir=${app.server.deploy.dir}" />
+							<jvmarg value="-Ddeployer.app.server.type=${app.server.type}" />
+							<jvmarg value="-Ddeployer.aui.taglib.dtd=${app.server.portal.dir}/WEB-INF/tld/aui.tld" />
+							<jvmarg value="-Ddeployer.portlet.taglib.dtd=${app.server.portal.dir}/WEB-INF/tld/liferay-portlet.tld" />
+							<jvmarg value="-Ddeployer.portlet-ext.taglib.dtd=${app.server.portal.dir}/WEB-INF/tld/liferay-portlet-ext.tld" />
+							<jvmarg value="-Ddeployer.security.taglib.dtd=${app.server.portal.dir}/WEB-INF/tld/liferay-security.tld" />
+							<jvmarg value="-Ddeployer.theme.taglib.dtd=${app.server.portal.dir}/WEB-INF/tld/liferay-theme.tld" />
+							<jvmarg value="-Ddeployer.ui.taglib.dtd=${app.server.portal.dir}/WEB-INF/tld/liferay-ui.tld" />
+							<jvmarg value="-Ddeployer.util.taglib.dtd=${app.server.portal.dir}/WEB-INF/tld/liferay-util.tld" />
+							<jvmarg value="-Ddeployer.unpack.war=${auto.deploy.unpack.war}" />
+							<jvmarg value="-Ddeployer.custom.portlet.xml=${auto.deploy.custom.portlet.xml}" />
+							<jvmarg value="-Ddeployer.file.pattern=${plugin.name}-*.war" />
+
+							<!-- Optional Arguments -->
+
+							<jvmarg value="-Ddeployer.tomcat.lib.dir=${app.server.tomcat.lib.global.dir}" />
+
+							<!-- Dependent Libraries -->
+
+							<arg value="${app.server.lib.portal.dir}/util-bridges.jar" />
+							<arg value="${app.server.lib.portal.dir}/util-java.jar" />
+							<arg value="${app.server.lib.portal.dir}/util-taglib.jar" />
+						</java>
+					</then>
+				</elseif>
+				<elseif>
+					<antelope:endswith string="${plugin.name}" with="-theme" />
+					<then>
+						<java
+							classname="com.liferay.portal.tools.deploy.ThemeDeployer"
+							classpathref="portal.classpath"
+							fork="true"
+							newenvironment="true"
+						>
+
+							<!-- Required Arguments -->
+
+							<jvmarg value="-Dexternal-properties=com/liferay/portal/tools/dependencies/portal-tools.properties" />
+							<jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+							<jvmarg value="-Ddeployer.base.dir=${sdk.dir}/dist" />
+							<jvmarg value="-Ddeployer.dest.dir=${app.server.deploy.dir}" />
+							<jvmarg value="-Ddeployer.app.server.type=${app.server.type}" />
+							<jvmarg value="-Ddeployer.theme.taglib.dtd=${app.server.portal.dir}/WEB-INF/tld/liferay-theme.tld" />
+							<jvmarg value="-Ddeployer.util.taglib.dtd=${app.server.portal.dir}/WEB-INF/tld/liferay-util.tld" />
+							<jvmarg value="-Ddeployer.unpack.war=${auto.deploy.unpack.war}" />
+							<jvmarg value="-Ddeployer.file.pattern=${plugin.name}-*.war" />
+
+							<!-- Optional Arguments -->
+
+							<jvmarg value="-Ddeployer.tomcat.lib.dir=${app.server.tomcat.lib.global.dir}" />
+
+							<!-- Dependent Libraries -->
+
+							<arg value="${app.server.lib.portal.dir}/util-bridges.jar" />
+							<arg value="${app.server.lib.portal.dir}/util-java.jar" />
+							<arg value="${app.server.lib.portal.dir}/util-taglib.jar" />
+						</java>
+					</then>
+				</elseif>
+				<elseif>
+					<antelope:endswith string="${plugin.name}" with="-web" />
+					<then>
+						<java
+							classname="com.liferay.portal.tools.deploy.WebDeployer"
+							classpathref="portal.classpath"
+							fork="true"
+							newenvironment="true"
+						>
+
+							<!-- Required Arguments -->
+
+							<jvmarg value="-Dexternal-properties=com/liferay/portal/tools/dependencies/portal-tools.properties" />
+							<jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
+							<jvmarg value="-Ddeployer.base.dir=${sdk.dir}/dist" />
+							<jvmarg value="-Ddeployer.dest.dir=${app.server.deploy.dir}" />
+							<jvmarg value="-Ddeployer.app.server.type=${app.server.type}" />
+							<jvmarg value="-Ddeployer.unpack.war=${auto.deploy.unpack.war}" />
+							<jvmarg value="-Ddeployer.file.pattern=${plugin.name}-*.war" />
+
+							<!-- Optional Arguments -->
+
+							<jvmarg value="-Ddeployer.tomcat.lib.dir=${app.server.tomcat.lib.global.dir}" />
+
+							<!-- Dependent Libraries -->
+
+							<arg value="${app.server.lib.portal.dir}/util-bridges.jar" />
+							<arg value="${app.server.lib.portal.dir}/util-java.jar" />
+							<arg value="${app.server.lib.portal.dir}/util-taglib.jar" />
+						</java>
+					</then>
+				</elseif>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="javadoc-macro">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<javadoc
+				classpathref="plugin.classpath"
+				destdir="javadoc"
+				sourcepath="${plugin.source.dir}"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="jar-javadoc">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<jar
+				basedir="javadoc"
+				jarfile="${plugin.javadoc.file}"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="jar-macro">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<call-macrodef-or-target
+				macrodef.name="compile"
+				module.dir="@{module.dir}"
+			/>
+
+			<mkdir dir="${sdk.dir}/dist" />
+
+			<if>
+				<resourcecontains
+					resource="${module.dir.unix}/build.xml"
+					substring="/build-common-osgi-plugin.xml&quot;"
+				/>
+				<then>
+					<if>
+						<not>
+							<uptodate targetfile="${plugin.file}">
+								<srcfiles dir="${plugin.classes.dir}" includes="**/*.*" />
+							</uptodate>
+						</not>
+						<then>
+							<set-build-xml-var
+								build.xml.var.name="original.lib.name"
+								module.dir="@{module.dir}"
+							/>
+
+							<if>
+								<isset property="set-build-xml-var.return" />
+								<then>
+									<var name="original.lib.name" value="${set-build-xml-var.return}" />
+								</then>
+							</if>
+
+							<set-build-xml-var
+								build.xml.var.name="original.lib.url"
+								module.dir="@{module.dir}"
+							/>
+
+							<if>
+								<isset property="set-build-xml-var.return" />
+								<then>
+									<var name="original.lib.url" value="${set-build-xml-var.return}" />
+								</then>
+							</if>
+
+							<set-build-xml-var
+								build.xml.var.name="original.lib.version"
+								module.dir="@{module.dir}"
+							/>
+
+							<if>
+								<isset property="set-build-xml-var.return" />
+								<then>
+									<var name="original.lib.version" value="${set-build-xml-var.return}" />
+								</then>
+							</if>
+
+							<loadfile property="jar-macro.bnd.bnd.content" srcFile="@{module.dir}/bnd.bnd" />
+
+							<var name="jar-macro.bnd.bnd.content" unset="true" />
+
+							<baseline-jar-macro
+								bndRootFile="${sdk.dir}/common.bnd"
+								file="@{module.dir}/bnd.bnd"
+								outputPath="${plugin.file}"
+								rootProjectDir="${sdk.dir}"
+								sourcePath="@{module.dir}"
+							/>
+						</then>
+					</if>
+				</then>
+				<else>
+					<jar
+						basedir="@{module.dir}/classes"
+						jarfile="${plugin.file}"
+					/>
+				</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="jar-source">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<jar
+				basedir="src"
+				jarfile="${plugin.sources.file}"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="manifest-helper">
+		<attribute name="analyze" default="false" />
+
+		<sequential>
+			<taskdef
+				classname="com.liferay.portal.ant.ManifestHelperTask"
+				classpathref="portal-ant.classpath"
+				name="liferay-manifest-helper"
+			/>
+
+			<liferay-manifest-helper
+				analyze="@{analyze}"
+				classpathref="plugin.classpath"
+				projectDirPropertyName="sdk.dir"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="merge">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-build-xml-var
+				build.xml.var.name="original.war.file"
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<isset property="set-build-xml-var.return" />
+				<then>
+					<var name="merge.original.war.file" value="${set-build-xml-var.return}" />
+
+					<if>
+						<not>
+							<uptodate srcfile="@{module.dir}/${merge.original.war.file}" targetfile="@{module.dir}/tmp" />
+						</not>
+						<then>
+							<delete dir="@{module.dir}/tmp" />
+							<mkdir dir="@{module.dir}/tmp" />
+
+							<mkdir dir="@{module.dir}/tmp/WEB-INF/classes" />
+							<mkdir dir="@{module.dir}/tmp/WEB-INF/lib" />
+
+							<call-macrodef-or-target
+								macrodef.name="merge-unzip"
+								module.dir="@{module.dir}"
+							/>
+
+							<copy todir="@{module.dir}/tmp" overwrite="true">
+								<fileset dir="@{module.dir}/docroot" />
+							</copy>
+						</then>
+					</if>
+
+					<copy todir="@{module.dir}/tmp">
+						<fileset dir="@{module.dir}/docroot" />
+					</copy>
+
+					<var name="merge.original.war.file" unset="true" />
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="merge-unzip">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-build-xml-var
+				build.xml.var.name="original.war.file"
+				module.dir="@{module.dir}"
+			/>
+
+			<var name="merge-unzip.original.war.file" value="${set-build-xml-var.return}" />
+
+			<unzip
+				dest="@{module.dir}/tmp"
+				src="@{module.dir}/${merge-unzip.original.war.file}"
+			/>
+
+			<var name="merge-unzip.original.war.file" unset="true" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="set-build-xml-var">
+		<attribute name="build.xml.var.name" />
+		<attribute name="module.dir" />
+
+		<sequential>
+			<loadfile property="set-build-xml-var.build.xml.content" srcFile="@{module.dir}/build.xml" />
+
+			<antelope:stringutil string="${set-build-xml-var.build.xml.content}" property="set-build-xml-var.value.beginindex">
+				<antelope:indexof string="property name=&quot;@{build.xml.var.name}&quot; value=&quot;" fromindex="0" />
+			</antelope:stringutil>
+
+			<if>
+				<equals arg1="${set-build-xml-var.value.beginindex}" arg2="-1" />
+				<then>
+					<var name="set-build-xml-var.return" unset="true" />
+				</then>
+				<else>
+					<antelope:stringutil string="${set-build-xml-var.build.xml.content}" property="set-build-xml-var.value.beginindex">
+						<antelope:indexof string="value=&quot;" fromindex="${set-build-xml-var.value.beginindex}" />
+					</antelope:stringutil>
+
+					<antelope:math
+						datatype="int"
+						operand1="${set-build-xml-var.value.beginindex}"
+						operand2="7"
+						operation="+"
+						result="set-build-xml-var.value.beginindex"
+					/>
+
+					<antelope:stringutil string="${set-build-xml-var.build.xml.content}" property="set-build-xml-var.value.endindex">
+						<antelope:indexof string="&quot;" fromindex="${set-build-xml-var.value.beginindex}" />
+					</antelope:stringutil>
+
+					<antelope:stringutil string="${set-build-xml-var.build.xml.content}" property="set-build-xml-var.return">
+						<antelope:substring beginindex="${set-build-xml-var.value.beginindex}" endindex="${set-build-xml-var.value.endindex}" />
+					</antelope:stringutil>
+				</else>
+			</if>
+
+			<var name="set-build-xml-var.build.xml.content" unset="true" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="set-module-properties">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<var name="module.dir.unix" unset="true" />
+
+			<pathconvert property="module.dir.unix" targetos="unix">
+				<path location="@{module.dir}" />
+			</pathconvert>
+
+			<var name="plugin.jars" unset="true" />
+			<var name="plugin.required.contexts" unset="true" />
+			<var name="plugin.tlds" unset="true" />
+			<var name="plugin.version" unset="true" />
+
+			<if>
+				<available file="@{module.dir}/docroot/WEB-INF/liferay-plugin-package.properties" />
+				<then>
+					<var name="plugin-package.module-incremental-version" unset="true" />
+					<var name="plugin-package.portal-dependency-jars" unset="true" />
+					<var name="plugin-package.portal-dependency-tlds" unset="true" />
+					<var name="plugin-package.required-deployment-contexts" unset="true" />
+
+					<property file="@{module.dir}/docroot/WEB-INF/liferay-plugin-package.properties" prefix="plugin-package" />
+
+					<var name="plugin.jars" value="${plugin-package.portal-dependency-jars}" />
+					<var name="plugin.required.contexts" value="${plugin-package.required-deployment-contexts}" />
+					<var name="plugin.tlds" value="${plugin-package.portal-dependency-tlds}" />
+					<var name="plugin.version" value="${plugin-package.module-incremental-version}" />
+				</then>
+				<else>
+					<set-build-xml-var
+						build.xml.var.name="plugin.version"
+						module.dir="@{module.dir}"
+					/>
+
+					<if>
+						<isset property="set-build-xml-var.return" />
+						<then>
+							<var name="plugin.version" value="${set-build-xml-var.return}" />
+						</then>
+						<else>
+							<var name="plugin.version" value="1" />
+						</else>
+					</if>
+				</else>
+			</if>
+
+			<if>
+				<equals arg1="@{module.dir}" arg2="." />
+				<then>
+					<var name="plugin.name" value="${ant.project.name}" />
+				</then>
+				<else>
+					<antelope:grep
+						group="1"
+						in="@{module.dir}"
+						property="plugin.name"
+						regex="(?:.*[/\\])(.*)"
+					/>
+				</else>
+			</if>
+
+			<set-build-xml-var
+				build.xml.var.name="theme.parent"
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<isset property="set-build-xml-var.return" />
+				<then>
+					<var name="theme.parent" value="${set-build-xml-var.return}" />
+				</then>
+				<else>
+					<var name="theme.parent" unset="true" />
+				</else>
+			</if>
+
+			<set-build-xml-var
+				build.xml.var.name="theme.type"
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<isset property="set-build-xml-var.return" />
+				<then>
+					<var name="theme.type" value="${set-build-xml-var.return}" />
+				</then>
+				<else>
+					<var name="theme.type" unset="true" />
+				</else>
+			</if>
+
+			<if>
+				<or>
+					<antelope:endswith string="${plugin.name}" with="-ext" />
+					<antelope:endswith string="${plugin.name}" with="-hook" />
+					<antelope:endswith string="${plugin.name}" with="-layouttpl" />
+					<antelope:endswith string="${plugin.name}" with="-portlet" />
+					<antelope:endswith string="${plugin.name}" with="-theme" />
+					<antelope:endswith string="${plugin.name}" with="-web" />
+				</or>
+				<then>
+					<var name="plugin.packaging" value="war" />
+				</then>
+				<else>
+					<var name="plugin.packaging" value="jar" />
+				</else>
+			</if>
+
+			<var name="plugin.full.version.default" value="${lp.version}.${plugin.version}${lp.version.file.suffix}" />
+
+			<var name="plugin.file.default" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}.${plugin.packaging}" />
+			<var name="plugin.javadoc.file.default" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}-javadoc.zip" />
+			<var name="plugin.pom.file.default" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}.pom" />
+			<var name="plugin.sources.file.default" value="${sdk.dir}/dist/${plugin.name}-${plugin.full.version}-sources.${plugin.packaging}" />
+			<var name="plugin.src.file.default" value="${sdk.dir}/dist/${plugin.name}-src-${plugin.full.version}.zip" />
+
+			<var name="plugin.full.version" value="${plugin.full.version.default}" />
+
+			<var name="plugin.file" value="${plugin.file.default}" />
+			<var name="plugin.javadoc.file" value="${plugin.javadoc.file.default}" />
+			<var name="plugin.pom.file" value="${plugin.pom.file.default}" />
+			<var name="plugin.sources.file" value="${plugin.sources.file.default}" />
+			<var name="plugin.src.file" value="${plugin.src.file.default}" />
+
+			<if>
+				<available file="@{module.dir}/src" />
+				<then>
+					<var name="plugin.classes.dir" value="@{module.dir}/classes" />
+					<var name="plugin.lib.dir" value="@{module.dir}/lib" />
+					<var name="plugin.source.dir" value="@{module.dir}/src" />
+
+					<if>
+						<available file="@{module.dir}/lib" />
+						<then>
+							<path id="plugin-lib.classpath">
+								<fileset dir="@{module.dir}/lib" includes="*.jar" />
+								<pathelement location="@{module.dir}/classes" />
+							</path>
+						</then>
+						<else>
+							<path id="plugin-lib.classpath">
+								<pathelement location="@{module.dir}/classes" />
+							</path>
+						</else>
+					</if>
+				</then>
+				<else>
+					<var name="plugin.classes.dir" value="@{module.dir}/docroot/WEB-INF/classes" />
+					<var name="plugin.lib.dir" value="@{module.dir}/docroot/WEB-INF/lib" />
+					<var name="plugin.source.dir" value="@{module.dir}/docroot/WEB-INF/src" />
+
+					<if>
+						<available file="@{module.dir}/tmp" />
+						<then>
+							<path id="plugin-lib.classpath">
+								<fileset dir="@{module.dir}/docroot/WEB-INF/lib" erroronmissingdir="false" includes="*.jar" />
+								<fileset dir="@{module.dir}/tmp/WEB-INF/lib" erroronmissingdir="false" includes="*.jar" />
+								<pathelement location="@{module.dir}/docroot/WEB-INF/classes" />
+								<pathelement location="@{module.dir}/tmp/WEB-INF/classes" />
+							</path>
+						</then>
+						<else>
+							<path id="plugin-lib.classpath">
+								<fileset dir="@{module.dir}/docroot/WEB-INF/lib" erroronmissingdir="false" includes="*.jar" />
+								<pathelement location="@{module.dir}/docroot/WEB-INF/classes" />
+							</path>
+						</else>
+					</if>
+				</else>
+			</if>
+
+			<if>
+				<resourcecontains
+					resource="${module.dir.unix}/build.xml"
+					substring="/build-common-osgi-plugin.xml&quot;"
+				/>
+				<then>
+					<property name="plugin-lib.classpath.path" refid="plugin-lib.classpath" />
+
+					<set-build-xml-var
+						build.xml.var.name="ignore.osgi.portal.classpath"
+						module.dir="@{module.dir}"
+					/>
+
+					<path id="plugin-lib.classpath">
+						<path refid="portal.classpath" />
+						<fileset dir="@{module.dir}/lib" erroronmissingdir="false" includes="*.jar" />
+						<pathelement path="${plugin-lib.classpath.path}" />
+					</path>
+
+					<var name="plugin-lib.classpath.path" unset="true" />
+				</then>
+			</if>
+
+			<set-build-xml-var
+				build.xml.var.name="plugin-lib.additional.dir"
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<isset property="set-build-xml-var.return" />
+				<then>
+					<property name="plugin-lib.classpath.path" refid="plugin-lib.classpath" />
+
+					<path id="plugin-lib.classpath">
+						<fileset dir="@{module.dir}/${set-build-xml-var.return}" includes="*.jar" />
+						<pathelement path="${plugin-lib.classpath.path}" />
+					</path>
+
+					<var name="plugin-lib.classpath.path" unset="true" />
+				</then>
+			</if>
+
+			<var name="set-module-properties.plugin.version" unset="true" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="test">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<test-integration
+				module.dir="@{module.dir}"
+			/>
+
+			<test-unit
+				module.dir="@{module.dir}"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="test-class">
+		<attribute name="module.dir" />
+		<attribute name="test.class" />
+
+		<sequential>
+			<if>
+				<available file="@{module.dir}/test/integration" type="dir" />
+				<then>
+					<resourcecount property="test.integration.count">
+						<fileset dir="@{module.dir}/test-classes/integration" includes="**/@{test.class}.class" />
+					</resourcecount>
+				</then>
+			</if>
+
+			<if>
+				<available file="@{module.dir}/test/unit" type="dir" />
+				<then>
+					<resourcecount property="test.unit.count">
+						<fileset dir="@{module.dir}/test-classes/unit" includes="**/@{test.class}.class" />
+					</resourcecount>
+				</then>
+			</if>
+
+			<if>
+				<equals arg1="${test.integration.count}" arg2="1" />
+				<then>
+					<var name="test.type" value="integration" />
+				</then>
+				<elseif>
+					<equals arg1="${test.unit.count}" arg2="1" />
+					<then>
+						<var name="test.type" value="unit" />
+					</then>
+				</elseif>
+				<else>
+					<if>
+						<not>
+							<isset property="test.class" />
+						</not>
+						<then>
+							<fail>Use "ant test-class -Dtest.class=StringUtilTest".</fail>
+						</then>
+						<elseif>
+							<not>
+								<isset property="test.type" />
+							</not>
+							<then>
+								<fail>Test class ${test.class} cannot be found.</fail>
+							</then>
+						</elseif>
+					</if>
+				</else>
+			</if>
+
+			<test-cmd
+				junit.forkmode="once"
+				module.dir="@{module.dir}"
+				test.class="${test.class}"
+				test.type="${test.type}"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="test-cmd">
+		<attribute name="junit.forkmode" />
+		<attribute name="module.dir" />
+		<attribute name="test.class" />
+		<attribute name="test.type" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<available file="@{module.dir}/test/@{test.type}" />
+				<then>
+					<delete dir="@{module.dir}/test-classes/@{test.type}" />
+					<delete dir="@{module.dir}/test-results/@{test.type}" />
+
+					<compile
+						module.dir="@{module.dir}"
+					/>
+
+					<compile-test-cmd
+						module.dir="@{module.dir}"
+						test.type="@{test.type}"
+					/>
+
+					<path id="plugin-test-type.classpath">
+						<pathelement location="@{module.dir}/test-classes/@{test.type}" />
+					</path>
+
+					<if>
+						<available file="@{module.dir}/test/@{test.type}" type="dir" />
+						<then>
+							<junit dir="${sdk.dir}" fork="on" forkmode="@{junit.forkmode}" outputtoformatters="false" printsummary="on" showoutput="true">
+								<sysproperty key="net.sourceforge.cobertura.datafile" file="@{module.dir}/test-coverage/cobertura.ser" />
+								<jvmarg line="${junit.debug.jpda}" />
+								<jvmarg value="-Xmx${junit.java.mx}" />
+								<jvmarg value="-XX:MaxPermSize=${junit.java.maxpermsize}" />
+								<jvmarg value="-Dexternal-properties=${test.properties}" />
+								<jvmarg value="-Dfile.encoding=UTF-8" />
+								<jvmarg value="-Djava.net.preferIPv4Stack=true" />
+								<jvmarg value="-Duser.timezone=GMT" />
+								<classpath location="@{module.dir}/test-coverage" />
+								<classpath refid="test.classpath" />
+								<formatter type="brief" usefile="false" />
+								<formatter type="xml" />
+								<batchtest todir="@{module.dir}/test-results/@{test.type}">
+									<fileset dir="@{module.dir}/test-classes/@{test.type}" includes="**/@{test.class}.class">
+										<filename regex="${junit.test.excludes}" negate="true" />
+									</fileset>
+								</batchtest>
+							</junit>
+						</then>
+					</if>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="test-integration">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<test-cmd
+				junit.forkmode="once"
+				module.dir="@{module.dir}"
+				test.class="*Test"
+				test.type="integration"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="test-unit">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<test-cmd
+				junit.forkmode="perTest"
+				module.dir="@{module.dir}"
+				test.class="*Test"
+				test.type="unit"
+			/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="war-macro">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<or>
+					<antelope:endswith string="${plugin.name}" with="-hook" />
+					<antelope:endswith string="${plugin.name}" with="-layouttpl" />
+					<antelope:endswith string="${plugin.name}" with="-web" />
+				</or>
+				<then>
+					<war-web
+						module.dir="@{module.dir}"
+					/>
+				</then>
+				<elseif>
+					<antelope:endswith string="${plugin.name}" with="-portlet" />
+					<then>
+						<call-macrodef-or-target
+							macrodef.name="compile"
+							module.dir="@{module.dir}"
+						/>
+
+						<build-css
+							module.dir="@{module.dir}"
+						/>
+
+						<war-web
+							module.dir="@{module.dir}"
+						/>
+					</then>
+				</elseif>
+				<elseif>
+					<antelope:endswith string="${plugin.name}" with="-theme" />
+					<then>
+						<call-macrodef-or-target
+							macrodef.name="compile"
+							module.dir="@{module.dir}"
+						/>
+
+						<build-css
+							module.dir="@{module.dir}"
+						/>
+
+						<if>
+							<not>
+								<available file="@{module.dir}/docroot/images/screenshot.png" />
+							</not>
+							<then>
+								<echo>screenshot.png does not exist.</echo>
+							</then>
+						</if>
+
+						<if>
+							<not>
+								<available file="@{module.dir}/docroot/images/thumbnail.png" />
+							</not>
+							<then>
+								<echo>thumbnail.png does not exist.</echo>
+							</then>
+						</if>
+
+						<mkdir dir="${sdk.dir}/dist" />
+
+						<delete file="${plugin.file}" />
+
+						<zip
+							basedir="@{module.dir}/docroot"
+							destfile="${plugin.file}"
+							excludes="_diffs.*,_diffs/**,${plugins.war.excludes}"
+						/>
+					</then>
+				</elseif>
+				<else>
+					<call-macrodef-or-target
+						macrodef.name="jar"
+						module.dir="@{module.dir}"
+					/>
+				</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="war-web">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<set-module-properties
+				module.dir="@{module.dir}"
+			/>
+
+			<call-macrodef-or-target
+				macrodef.name="compile"
+				module.dir="@{module.dir}"
+			/>
+
+			<mkdir dir="${sdk.dir}/dist" />
+
+			<if>
+				<available file="@{module.dir}/tmp" />
+				<then>
+					<var name="docroot.dir" value="@{module.dir}/tmp" />
+				</then>
+				<else>
+					<var name="docroot.dir" value="@{module.dir}/docroot" />
+				</else>
+			</if>
+
+			<delete file="${plugin.file}" />
+
+			<clean-portal-dependencies
+				module.dir="@{module.dir}"
+			/>
+
+			<if>
+				<available file="@{module.dir}/docroot/WEB-INF/liferay-hook.xml.processed" />
+				<then>
+					<var name="liferay-hook.xml.excludes" value="WEB-INF/liferay-hook.xml*" />
+				</then>
+				<else>
+					<var name="liferay-hook.xml.excludes" value="" />
+				</else>
+			</if>
+
+			<if>
+				<contains string="${app.server.dir}" substring="glassfish" />
+				<then>
+					<zip
+						basedir="${docroot.dir}"
+						destfile="${plugin.file}"
+						excludes="**/META-INF/context.xml,${liferay-hook.xml.excludes},${plugins.war.excludes}"
+					>
+						<zipfileset
+							dir="${docroot.dir}"
+							fullpath="WEB-INF/liferay-hook.xml"
+							includes="WEB-INF/liferay-hook.xml.processed"
+						/>
+					</zip>
+				</then>
+				<else>
+					<zip
+						basedir="${docroot.dir}"
+						destfile="${plugin.file}"
+						excludes="${liferay-hook.xml.excludes},${plugins.war.excludes}"
+					>
+						<zipfileset
+							dir="${docroot.dir}"
+							fullpath="WEB-INF/liferay-hook.xml"
+							includes="WEB-INF/liferay-hook.xml.processed"
+						/>
+					</zip>
+				</else>
+			</if>
+
+			<if>
+				<and>
+					<equals arg1="${plugins.src.zip.enabled}" arg2="true" />
+				</and>
+				<then>
+					<zip destfile="${plugin.src.file}">
+						<zipfileset
+							dir="${docroot.dir}"
+							excludes="${liferay-hook.xml.excludes}"
+							prefix="${plugin.name}-src-${plugin.full.version}"
+						/>
+						<zipfileset
+							dir="${docroot.dir}"
+							fullpath="${plugin.name}-src-${plugin.full.version}/WEB-INF/liferay-hook.xml"
+							includes="WEB-INF/liferay-hook.xml.processed"
+						/>
+					</zip>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<target name="clean">
+		<for list="${plugins.includes.path}" param="module.dir">
+			<sequential>
+				<call-macrodef-or-target
+					macrodef.name="clean"
+					module.dir="@{module.dir}"
+				/>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="compile">
+		<for list="${plugins.includes.path}" param="module.dir">
+			<sequential>
+				<call-macrodef-or-target
+					macrodef.name="compile"
+					module.dir="@{module.dir}"
+				/>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="create">
+		<if>
+			<or>
+				<not>
+					<isset property="plugin.type" />
+				</not>
+			</or>
+			<then>
+				<fail>This task must be called by the create script.</fail>
+			</then>
+		</if>
+
+		<if>
+			<or>
+				<equals arg1="${plugin.type}" arg2="hook" />
+				<equals arg1="${plugin.type}" arg2="portlet" />
+				<equals arg1="${plugin.type}" arg2="theme" />
+			</or>
+			<then>
+				<subant target="create">
+					<fileset dir="${sdk.dir}/${plugin.type}s" includes="build.xml" />
+				</subant>
+			</then>
+			<else>
+				<subant target="create">
+					<fileset dir="${sdk.dir}/${plugin.type}" includes="build.xml" />
+				</subant>
+			</else>
+		</if>
+	</target>
+
+	<target name="deploy">
+		<for list="${plugins.includes.path}" param="module.dir">
+			<sequential>
+				<call-macrodef-or-target
+					macrodef.name="deploy"
+					module.dir="@{module.dir}"
+				/>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="direct-deploy">
+		<for list="${plugins.includes.path}" param="module.dir">
+			<sequential>
+				<call-macrodef-or-target
+					macrodef.name="direct-deploy"
+					module.dir="@{module.dir}"
+				/>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="format-javadoc">
+		<java
+			classname="com.liferay.portal.tools.JavadocFormatter"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Xmx512m" />
+			<arg value="javadoc.init=${init}" />
+			<arg value="javadoc.input.dir=${input.dir}" />
+			<arg value="javadoc.limit=${limit}" />
+			<arg value="javadoc.output.file.prefix=${output.file.prefix}" />
+			<arg value="javadoc.update=${update}" />
+		</java>
+	</target>
+
+	<target name="format-source">
+		<java
+			classname="com.liferay.portal.tools.sourceformatter.SourceFormatter"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Xmx512m" />
+			<jvmarg value="-Xss2048k" />
+		</java>
+
+		<delete file="ServiceBuilder.temp" />
+	</target>
+
+	<target name="jar">
+		<for list="${plugins.includes.path}" param="module.dir">
+			<sequential>
+				<call-macrodef-or-target
+					macrodef.name="jar"
+					module.dir="@{module.dir}"
+				/>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="print-current-time">
+		<tstamp>
+			<format property="current.time" pattern="MMMM d, yyyy 'at' hh:mm aa" />
+		</tstamp>
+
+		<echo message="${current.time}" />
+	</target>
+
+	<target name="setup-eclipse">
+		<java
+			classname="com.liferay.portal.tools.PluginsEnvironmentBuilder"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Dplugins.env.dir=." />
+		</java>
+	</target>
+
+	<target name="setup-jrebel">
+		<property name="jrebel.plugin.classes.dir" value="${basedir}/${plugin.classes.dir}" />
+
+		<echo file="${jrebel.plugin.classes.dir}/rebel.xml"><![CDATA[<?xml version="1.0"?>
+
+<application
+	xmlns="http://www.zeroturnaround.com"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zeroturnaround.com http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd"
+>
+	<classpath>
+		<dir name="${jrebel.plugin.classes.dir}" />
+	</classpath>
+</application>]]></echo>
+
+		<if>
+			<available file="docroot" type="dir" />
+			<then>
+				<replace file="${jrebel.plugin.classes.dir}/rebel.xml">
+					<replacetoken><![CDATA[</application>]]></replacetoken>
+					<replacevalue expandProperties="true"><![CDATA[	<web>
+		<link target="/${plugin.name}">
+			<dir name="${basedir}/docroot" />
+		</link>
+	</web>
+</application>]]></replacevalue>
+				</replace>
+			</then>
+		</if>
+	</target>
+
+	<target name="sort-xml-attributes">
+		<java
+			classname="com.liferay.portal.tools.XMLAttributesSorter"
+			classpathref="portal.classpath"
+			fork="true"
+			newenvironment="true"
+		>
+			<jvmarg value="-Xmx512m" />
+			<jvmarg value="-Xss2048k" />
+			<arg value="sort.xml.file.name=${sort.xml.file.name}" />
+		</java>
+	</target>
+
+	<target name="test">
+		<for list="${plugins.includes.path}" param="module.dir">
+			<sequential>
+				<call-macrodef-or-target
+					macrodef.name="test"
+					module.dir="@{module.dir}"
+				/>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="test-integration">
+		<for list="${plugins.includes.path}" param="module.dir">
+			<sequential>
+				<call-macrodef-or-target
+					macrodef.name="test-integration"
+					module.dir="@{module.dir}"
+				/>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="test-unit">
+		<for list="${plugins.includes.path}" param="module.dir">
+			<sequential>
+				<call-macrodef-or-target
+					macrodef.name="test-unit"
+					module.dir="@{module.dir}"
+				/>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="war">
+		<for list="${plugins.includes.path}" param="module.dir">
+			<sequential>
+				<call-macrodef-or-target
+					macrodef.name="war"
+					module.dir="@{module.dir}"
+				/>
+			</sequential>
+		</for>
+	</target>
+</project>
