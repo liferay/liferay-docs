@@ -1,11 +1,17 @@
 # Invoking Remote Services
 
+<!-- Explain that you can invoke your own application's remote services the same
+way that you can invoke your application's local services. Provide Event Listing
+portlet example. This could be described as "invoking remote services locally".
+Of course, the main reason (permission checking is a secondary reason) for
+creating remote services is to be able to invoke them remotely. -->
+
 Service Builder can expose your project's remote web services both via a JSON
 API and via SOAP. By default, running Service Builder with `remote-service` set
 to `true` for your entities generates a JSON web services API for your project.
 You can access your project's JSON-based RESTful services via a convenient web
 interface. If you've deployed the
-[Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet) 
+[Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet) 
 project, visit the following URL to view its JSON web services:
 
     http://localhost:8080/event-listing-portlet/api/jsonws
