@@ -62,18 +62,6 @@ If you wish to publish your app on behalf of your company, but your company does
 not yet have a Marketplace profile, register your company by clicking *Register
 My Company*, filling out the registration form, and submitting the form. 
 
-Publishing on behalf of yourself is the default. When you publish on behalf of
-yourself, your name appears in the Marketplace as the Publisher/Author. You are
-the only one who can manage your personal app (add new releases to it, add new
-versions of it, edit its details, etc.). 
-
-Publishing on behalf of a company effectively hands the keys over to the
-administrators of the company. The app only appears on the company's Marketplace
-app development page. Company admins have the same permission you have to manage
-this app (add new releases, new versions, edit details, etc). The app appears to
-be authored/developed by the company, not you personally. It also appears on the
-company's public profile page under its list of apps.
-
 **App Pricing:** Choose whether you want the app to be free or paid. If you
 choose paid, you'll have the option to specify pricing and licensing details
 later in the submission process. Once your app is published to the Marketplace,

@@ -2,6 +2,22 @@
 
 <!-- TODO intro -->
 
+You must first develop your app using your preferred development tool. For
+example, using
+[Liferay IDE or Liferay Developer Studio](/develop/tutorials/-/knowledge_base/6-2/liferay-ide),
+the [Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk),
+or [Maven](/develop/tutorials/-/knowledge_base/6-2/maven).
+An app will consists of one or more Liferay plugins. Ensure your app is designed
+to work with Liferay 6.1 or later. If you wish to target multiple versions of
+Liferay (for example, you may wish to support 6.2 EE SP1, 6.2 CE GA1, 6.1 EE
+GA3, and 6.1 CE GA3), ensure you have built binary images of your app for each
+supported minor family release, if necessary. If a single set of files works
+across all supported Liferay versions, you don't need to build multiple versions
+of the plugins. Liferay guarantees compatibility within a given minor release
+family, so your users can rest assured that your app works with the minor
+release that you specify, along with all future maintenance releases of that
+minor release. 
+
 ## Image and Naming Requirements [](id=image-and-naming-requirements)
 
 You'll want to think of a good name and description of your app, along with the version
