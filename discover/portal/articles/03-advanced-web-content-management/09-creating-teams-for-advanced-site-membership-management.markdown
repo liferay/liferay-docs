@@ -1,10 +1,10 @@
 # Creating Teams for Advanced Site Membership Management [](id=creating-teams-for-advanced-site-membership-management)
 
-Site Teams are ad hoc groups of a site's users, that perform the same set of
-tasks in the site. Site administrators can assign these teams permissions for
-various site-specific functions. Site Teams are the preferred method for
-collecting permissions within a single site. Some common functions to assign
-a Site Team include:
+If you have an ad hoc group of users who perform the same set of tasks in a
+site, you can organize them into Site Teams. Site administrators can assign
+these teams permissions for various site-specific functions. Site Teams are the
+preferred method for collecting permissions within a single site. Some common
+functions to assign a Site Team include these:
 
 - Moderating site Wiki content, Message Boards threads, etc.
 - Writing blogs
@@ -12,13 +12,13 @@ a Site Team include:
 
 For instance, if your site has Message Boards, you might want to enable a subset
 of the site's members to moderate the categories and threads, and perhaps to ban
-abusive/offensive posters. To do this, you could create a Site Team named *Web
-Moderators*, define the team's permissions on the Message Boards portlet, and
-assign the desired site members to the team. 
+abusive/offensive posters. To do this, you could create a Site Team named
+*Message Board Moderators*, define the team's permissions on the Message Boards
+portlet, and assign the desired site members to the team. 
 
 The permissions assigned to a Site Team only apply to that site. Knowing that
-a team's permissions don't impact other sites, the site administrator can
-concentrate on defining and applying permissions to his site's teams. 
+a team's permissions don't impact other sites, site administrators can
+concentrate on defining and applying permissions to their sites' teams. 
 
 +$$$
 
@@ -42,19 +42,19 @@ chapter for more information on how these site memberships work. Finally, click 
 ![Figure 3.26: Creating teams within your site can foster teamwork and collaboration, as team permissions enable team members to access the same resources and perform the same types of tasks.](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
-click *Save*. Your new team shows in the list. To add members, simply click on
-*Actions &rarr; Assign Members*.
+click *Save*. Your new team shows in the list. To add members, click on *Actions
+&rarr; Assign Members*.
 
 To manage a team's permissions, click on *Actions* &rarr; *Permissions* for that
 team. Setting permissions for the team assigns all of the team's members those
 permissions. Only administrators with the ability to edit/manage the team have
 the ability to manage team permissions.
 
-If created team whose task is to moderate the Message Boards, for example, you'd
-want to give the team all of the permissions they'd need. So you'd Navigate to
-*Site Administration* &rarr; *Content* &rarr; *Message Boards* &rarr;
-*Permissions*, find the team in the Role column, and select the appropriate
-permissions.
+If you created team whose task is to moderate the Message Boards, for example,
+you'd want to give the team all the permissions they'd need. To do this, 
+Navigate to *Site Administration* &rarr; *Content* &rarr; *Message Boards*
+&rarr; *Permissions*, find the team in the Role column, and select the
+appropriate permissions.
 
 ![Figure 3.27: The Troll-busters Site Team has unlimited permissions on the Message Boards portlet.](../../images/site-team-permissions-message-boards.png)
 
