@@ -154,8 +154,8 @@ following imports:
     import com.liferay.portal.model.User;
     import com.liferay.portal.service.ServiceContext;
 
-    import com.nosester.portlet.eventlisting.model.Event;
-    import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
+    import com.liferay.docs.eventlisting.model.Event;
+    import com.liferay.docs.eventlisting.service.EventLocalServiceUtil;
 
 In order to add an Event to the database, you need an ID for the Event. Liferay
 provides a counter service which you call to obtain a unique ID for each new
@@ -314,8 +314,8 @@ the `LocationLocalServiceImpl` class in the Event Listing project:
     import com.liferay.portal.model.User;
     import com.liferay.portal.service.ServiceContext;
 
-    import com.nosester.portlet.eventlisting.model.Location;
-    import com.nosester.portlet.eventlisting.service.base.LocationLocalServiceBaseImpl;
+    import com.liferay.docs.eventlisting.model.Location;
+    import com.liferay.docs.eventlisting.service.base.LocationLocalServiceBaseImpl;
 
 Before you can use any custom methods that you added to your `*LocalServiceImpl`
 class, you must run Service Builder again. Running Service Builder again adds

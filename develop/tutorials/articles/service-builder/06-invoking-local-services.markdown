@@ -21,16 +21,22 @@ These portlet methods invoke the location service methods responsible for
 adding, updating, and deleting Event entities. Similar portlet methods were
 added to the `LocationListingPortlet` class.
 
-Here's the `EventListingPortlet` class containing these portlet methods and
-their service invocations:
+Here's a version of the `EventListingPortlet` class containing these portlet
+methods and their service invocations. Note that this version of the
+`EventListingPortlet` differs from the
+[final version](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/portlet/EventListingPortlet.java)
+since this portlet invokes local services and the final version of the portlet
+invokes remote services.
 
-    package com.nosester.portlet.eventlisting;
+    package com.liferay.docs.eventlisting.portlet;
     
     import java.util.Calendar;
     
     import javax.portlet.ActionRequest;
     import javax.portlet.ActionResponse;
     
+    import com.liferay.docs.eventlisting.model.Event;
+    import com.liferay.docs.eventlisting.service.EventLocalServiceUtil;
     import com.liferay.portal.kernel.exception.PortalException;
     import com.liferay.portal.kernel.exception.SystemException;
     import com.liferay.portal.kernel.log.Log;
@@ -39,8 +45,6 @@ their service invocations:
     import com.liferay.portal.service.ServiceContext;
     import com.liferay.portal.service.ServiceContextFactory;
     import com.liferay.util.bridges.mvc.MVCPortlet;
-    import com.nosester.portlet.eventlisting.model.Event;
-    import com.nosester.portlet.eventlisting.service.EventLocalServiceUtil;
     
     public class EventListingPortlet extends MVCPortlet {
     
@@ -151,11 +155,13 @@ at runtime.
 The `LocationListingPortlet` class contains methods that are very similar to the
 ones in the `EventListingPortlet` class:
 
-    package com.nosester.portlet.eventlisting;
+    package com.liferay.docs.eventlisting.portlet;
 
     import javax.portlet.ActionRequest;
     import javax.portlet.ActionResponse;
 
+    import com.liferay.docs.eventlisting.model.Location;
+    import com.liferay.docs.eventlisting.service.LocationLocalServiceUtil;
     import com.liferay.portal.kernel.exception.PortalException;
     import com.liferay.portal.kernel.exception.SystemException;
     import com.liferay.portal.kernel.log.Log;
@@ -164,8 +170,6 @@ ones in the `EventListingPortlet` class:
     import com.liferay.portal.service.ServiceContext;
     import com.liferay.portal.service.ServiceContextFactory;
     import com.liferay.util.bridges.mvc.MVCPortlet;
-    import com.nosester.portlet.eventlisting.model.Location;
-    import com.nosester.portlet.eventlisting.service.LocationLocalServiceUtil;
 
     public class LocationListingPortlet extends MVCPortlet {
 
