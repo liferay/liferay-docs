@@ -59,7 +59,7 @@ finder class and finder methods is in Step 2.
 
 In the Event Listing project, the following ID value was used for the query: 
 
-    com.nosester.portlet.eventlisting.service.persistence.\
+    com.liferay.docs.eventlisting.service.persistence.\
     EventFinder.findByEventNameEventDescriptionLocationName
 
 Custom SQL must be wrapped in character data (`CDATA`) for the `sql` element.
@@ -69,7 +69,7 @@ query that joins the Event and Location tables:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <custom-sql>
-        <sql id="com.nosester.portlet.eventlisting.service.persistence.EventFinder.\
+        <sql id="com.liferay.docs.eventlisting.service.persistence.EventFinder.\
     findByEventNameEventDescriptionLocationName">
             SELECT Event_Event.*
             FROM Event_Event
@@ -87,7 +87,7 @@ character from the end of the ID so that the finder method name
 `findByEventNameEventDescriptionLocationName` immediately follows the package
 path specified below:
 
-    com.nosester.portlet.eventlisting.service.persistence.
+    com.liferay.docs.eventlisting.service.persistence.
 
 Now that you've specified some custom SQL, the next step is to implement a
 finder method to invoke it. The method name for the finder should match the ID
@@ -103,8 +103,8 @@ finder.
 
 The first step is to create a `*FinderImpl` class in the service persistence
 package. The Event Listing project includes the `EventFinderImpl` class in the
-`com.nosester.portlet.eventlisting.service.persistence.impl` package. Your
-class, like `EventFinderImpl`, should extend `BasePersistenceImpl<Event>`.
+`com.liferay.docs.eventlisting.service.persistence.impl` package. Your class,
+like `EventFinderImpl`, should extend `BasePersistenceImpl<Event>`.
 
 Run Service Builder to generate the `*Finder` interface and the `*Util` class
 for the finder. Service Builder generates the `*Finder` interface and the
@@ -164,6 +164,8 @@ Remember to import the required classes. The following imports are required for
 
     import java.util.List;
 
+    import com.liferay.docs.eventlisting.model.Event;
+    import com.liferay.docs.eventlisting.model.impl.EventImpl;
     import com.liferay.portal.kernel.dao.orm.QueryPos;
     import com.liferay.portal.kernel.dao.orm.QueryUtil;
     import com.liferay.portal.kernel.dao.orm.SQLQuery;
@@ -171,9 +173,6 @@ Remember to import the required classes. The following imports are required for
     import com.liferay.portal.kernel.exception.SystemException;
     import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
     import com.liferay.util.dao.orm.CustomSQLUtil;
-
-    import com.nosester.portlet.eventlisting.model.Event;
-    import com.nosester.portlet.eventlisting.model.impl.EventImpl;
 
 The custom finder method opens a new Hibernate session and uses Liferay's
 `CustomSQLUtil.get(String id)` method to get the custom SQL to use for the
