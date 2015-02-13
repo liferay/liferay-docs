@@ -84,7 +84,7 @@ profile was created successfully. Awesome! Your profile is complete. There's one
 more thing you'll need to configure.
 
 In this version of WebSphere, servlet filters are not initialized on web
-application startup, but rather, on first access. This can cause problems while
+application startup, but rather, on first access. This can cause problems when
 deploying certain plugins to Liferay Portal. To configure servlet filters to
 initialize on application startup (i.e., deployment), you need to set the
 following `webcontainer` custom properties in your WebSphere application server:
