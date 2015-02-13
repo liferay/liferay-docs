@@ -140,20 +140,21 @@ service's global information. The fields include the service's package path,
 author, and namespace options. Here are the values used for the event-listing
 project's service:
 
-- **Package path:** *com.nosester.portlet.eventlisting*
+- **Package path:** *com.liferay.docs.eventlisting*
 - **Auto namespace tables:** *no*
 - **Author:** [your name]
 - **Namespace:** *Event*
 
 The *package path* specifies the package in which the service and persistence
 classes are generated. The package path defined above ensures that the
-service classes are generated in the `com.nosester.portlet.eventlisting`
+service classes are generated in the `com.liferay.docs.eventlisting`
 package under the `docroot/WEB-INF/service` folder. The persistence classes are
 generated in a package of that name under the `docroot/WEB-INF/src` folder. The
 complete file paths for the service and persistence classes are 
-`docroot/WEB-INF/service/com/nosester/portlet/eventlisting` and
-`docroot/WEB-INF/src/com/nosester/portlet/eventlisting`, respectively. Please
-refer to the [Running Service Builder and Understanding the Generated Code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+`docroot/WEB-INF/service/com/liferay/docs/eventlisting` and
+`docroot/WEB-INF/src/com/liferay/docs/eventlisting`, respectively. Please
+refer to the
+[Running Service Builder and Understanding the Generated Code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 tutorial for a description of the contents of these packages. 
 
 Service Builder uses the service *namespace* in naming the database tables it
@@ -438,9 +439,9 @@ your entities in the `*Persistence` and `*PersistenceImpl` classes.
 The first of these classes is the interface; the second is its implementation.
 The Event and Location entity's finder methods are generated in the
 `-Persistence` classes in the
-`/docroot/WEB-INF/service/com/nosester/portlet/eventlisting/service/persistence`
+`/docroot/WEB-INF/service/com/liferay/docs/eventlisting/service/persistence`
 folder and the `-PersistenceImpl` classes in the
-`/docroot/WEB-INF/src/com/nosester/portlet/eventlisting/service/persistence`
+`/docroot/WEB-INF/src/com/liferay/docs/eventlisting/service/persistence`
 folder.
 
 Now you know to configure Service Builder to create finder methods for your
@@ -452,7 +453,7 @@ project's `service.xml` file's when you're creating your own:
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
     "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
-    <service-builder package-path="com.nosester.portlet.eventlisting">
+    <service-builder package-path="com.liferay/docs.eventlisting">
         <author>Joe Bloggs</author>
         <namespace>Event</namespace>
 
