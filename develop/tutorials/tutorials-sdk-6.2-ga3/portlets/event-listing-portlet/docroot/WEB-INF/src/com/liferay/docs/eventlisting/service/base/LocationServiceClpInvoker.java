@@ -44,9 +44,13 @@ public class LocationServiceClpInvoker {
 
 		_methodParameterTypes33 = new String[] { "long" };
 
-		_methodName34 = "updateLocation";
+		_methodName34 = "getLocation";
 
-		_methodParameterTypes34 = new String[] {
+		_methodParameterTypes34 = new String[] { "long" };
+
+		_methodName35 = "updateLocation";
+
+		_methodParameterTypes35 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
@@ -83,6 +87,11 @@ public class LocationServiceClpInvoker {
 
 		if (_methodName34.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes34, parameterTypes)) {
+			return LocationServiceUtil.getLocation(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName35.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes35, parameterTypes)) {
 			return LocationServiceUtil.updateLocation(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
@@ -103,4 +112,6 @@ public class LocationServiceClpInvoker {
 	private String[] _methodParameterTypes33;
 	private String _methodName34;
 	private String[] _methodParameterTypes34;
+	private String _methodName35;
+	private String[] _methodParameterTypes35;
 }

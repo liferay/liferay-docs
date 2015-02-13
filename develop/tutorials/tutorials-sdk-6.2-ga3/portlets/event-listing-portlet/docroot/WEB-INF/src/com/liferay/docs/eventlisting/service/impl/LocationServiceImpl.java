@@ -22,6 +22,7 @@ import com.liferay.docs.eventlisting.service.permission.LocationPermission;
 import com.liferay.docs.eventlisting.util.EventListingActionKeys;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.security.auth.PrincipalException;
 import com.liferay.portal.service.ServiceContext;
 
 /**
@@ -71,6 +72,15 @@ public class LocationServiceImpl extends LocationServiceBaseImpl {
 				EventListingActionKeys.DELETE_LOCATION);
 
 		return locationLocalService.deleteLocation(locationId);
+	}
+	
+	public Location getLocation(long locationId) throws PortalException,
+			SystemException {
+
+		LocationPermission.check(getPermissionChecker(), locationId,
+				EventListingActionKeys.VIEW);
+
+		return LocationLocalServiceUtil.getLocation(locationId);
 	}
 
 	public Location updateLocation(long locationId, String name,

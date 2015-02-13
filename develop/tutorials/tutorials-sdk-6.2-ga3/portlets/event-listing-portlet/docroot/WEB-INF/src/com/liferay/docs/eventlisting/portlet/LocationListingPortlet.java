@@ -4,7 +4,7 @@ import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 
 import com.liferay.docs.eventlisting.model.Location;
-import com.liferay.docs.eventlisting.service.LocationLocalServiceUtil;
+import com.liferay.docs.eventlisting.service.LocationServiceUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
@@ -32,7 +32,7 @@ public class LocationListingPortlet extends MVCPortlet {
 
 		long locationId = ParamUtil.getLong(request, "locationId");
 
-		LocationLocalServiceUtil.deleteLocation(locationId);
+		LocationServiceUtil.deleteLocation(locationId);
 
 		sendRedirect(request, response);
 	}
@@ -63,15 +63,15 @@ public class LocationListingPortlet extends MVCPortlet {
 
 		if (locationId <= 0) {
 
-			location = LocationLocalServiceUtil.addLocation(
-				serviceContext.getUserId(), serviceContext.getScopeGroupId(), name, description,
+			location = LocationServiceUtil.addLocation(
+				serviceContext.getScopeGroupId(), name, description,
 				streetAddress, city, stateOrProvince, country, serviceContext);
 		}
 		else {
-			location = LocationLocalServiceUtil.getLocation(locationId);
+			location = LocationServiceUtil.getLocation(locationId);
 
-			location = LocationLocalServiceUtil.updateLocation(
-					serviceContext.getUserId(), locationId, name,
+			location = LocationServiceUtil.updateLocation(
+					locationId, name,
 					description, streetAddress, city, stateOrProvince, country,
 					serviceContext);
 		}

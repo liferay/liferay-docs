@@ -82,6 +82,13 @@ public class LocationServiceUtil {
 		return getService().deleteLocation(locationId);
 	}
 
+	public static com.liferay.docs.eventlisting.model.Location getLocation(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().getLocation(locationId);
+	}
+
 	public static com.liferay.docs.eventlisting.model.Location updateLocation(
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,

@@ -6,7 +6,6 @@ import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 
 import com.liferay.docs.eventlisting.model.Event;
-import com.liferay.docs.eventlisting.service.EventLocalServiceUtil;
 import com.liferay.docs.eventlisting.service.EventServiceUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -35,7 +34,7 @@ public class EventListingPortlet extends MVCPortlet {
 
 		long eventId = ParamUtil.getLong(request, "eventId");
 
-		EventLocalServiceUtil.deleteEvent(eventId);
+		EventServiceUtil.deleteEvent(eventId);
 
 		sendRedirect(request, response);
 	}

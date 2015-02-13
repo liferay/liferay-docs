@@ -96,6 +96,20 @@ public class LocationServiceSoap {
 		}
 	}
 
+	public static com.liferay.docs.eventlisting.model.LocationSoap getLocation(
+		long locationId) throws RemoteException {
+		try {
+			com.liferay.docs.eventlisting.model.Location returnValue = LocationServiceUtil.getLocation(locationId);
+
+			return com.liferay.docs.eventlisting.model.LocationSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static com.liferay.docs.eventlisting.model.LocationSoap updateLocation(
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,

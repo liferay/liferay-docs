@@ -77,6 +77,14 @@ public class LocationServiceWrapper implements LocationService,
 	}
 
 	@Override
+	public com.liferay.docs.eventlisting.model.Location getLocation(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.getLocation(locationId);
+	}
+
+	@Override
 	public com.liferay.docs.eventlisting.model.Location updateLocation(
 		long locationId, java.lang.String name, java.lang.String description,
 		java.lang.String streetAddress, java.lang.String city,
