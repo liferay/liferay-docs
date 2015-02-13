@@ -2,9 +2,9 @@
 
 +$$$
 
-**Tip:** Throughout this installation and
-configuration process, WebSphere prompts you to Click Save to apply changes to
-Master Configuration. Do so intermittently to save your changes.
+**Tip:** Throughout this installation and configuration process, WebSphere
+prompts you to Click Save to apply changes to Master Configuration. Do so
+intermittently to save your changes.
 
 $$$
 
@@ -23,7 +23,7 @@ by Liferay.
 When the application server binaries have been installed, start the **Profile
 Management Tool** to create a profile appropriate for Liferay. 
 
-1. Click on *Create…*. Choose *Application Server*. Click *Next*. 
+1. Click on *Create...*. Choose *Application Server*. Click *Next*. 
 
 2. Click the Advanced profile creation option and then click *Next*. Why
    Advanced? You can specify your own values for settings such as the location
@@ -55,7 +55,7 @@ Management Tool** to create a profile appropriate for Liferay.
 
 7. Each profile needs a security certificate, which comes next in the wizard. If
    you don't have certificates already, choose the option to generate a personal
-   certificate and a signing certficate and click *Next*. 
+   certificate and a signing certificate and click *Next*. 
 
 8. Once the certificates are generated, set a password for your keystore. Click
    *Next*. 
@@ -80,7 +80,23 @@ Management Tool** to create a profile appropriate for Liferay.
 ![Figure 1.10: The Summary page shows you what you selected, giving you the chance to go back and change something if it's not exactly what you want.](../../images/websphere-03-summary.png)
 
 WebSphere then creates your profile and finishes with a message telling you the
-profile was created successfully. You're now ready to install Liferay! 
+profile was created successfully. Awesome! Your profile is complete. There's one
+more thing you'll need to configure.
+
+In this version of WebSphere, servlet filters are not initialized on web
+application startup, but rather, on first access. This can cause problems while
+deploying certain plugins to Liferay Portal. To configure servlet filters to
+initialize on application startup (i.e., deployment), you need to set the
+following `webcontainer` custom properties in your WebSphere application server:
+
+    com.ibm.ws.webcontainer.initFilterBeforeInitServlet = true
+    com.ibm.ws.webcontainer.invokeFilterInitAtStartup = true
+
+To set `webcontainer` custom properties in the WebSphere application server,
+follow the instructions
+[here](http://www-01.ibm.com/support/docview.wss?rss=180&uid=swg21284395).
+
+You're now ready to install Liferay! 
 
 ## Copying portal dependencies [](id=copying-portal-dependencies)
 
