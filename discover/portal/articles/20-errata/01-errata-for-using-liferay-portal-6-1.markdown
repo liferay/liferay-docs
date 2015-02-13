@@ -27,6 +27,16 @@ The Microsoft Office integration features are supported only on Windows XP with
 32-bit versions of Microsoft Internet Explorer and 32-bit versions of Microsoft
 Office.
 
+## Page 468: Xuggler configuration
+
+Since Liferay 6.1.1+, you can install Xuggler completely from the Control Panel.
+Navigate to the *Server Administration* &rarr; *External Services* page. From
+the dropdown, select the Xuggler `.jar` file that matches your operating system.
+Then click on *Install*. 
+
+Liferay versions 6.1.0 and earlier still requires manual configuration of
+environment variables to use Xuggler. 
+
 ## Page 473: Installing Liferay on GlassFish 3 [](id=page-473-installing-liferay-on-glassfish-3)
 
 The following sections are related to configuring Liferay Faces to function
