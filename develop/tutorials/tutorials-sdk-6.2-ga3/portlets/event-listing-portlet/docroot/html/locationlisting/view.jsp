@@ -1,6 +1,6 @@
 <%@ include file="/html/init.jsp" %>
 
-This is the <b>Location Listing Portlet</b> in View mode.
+<p>This is the <b>Location Listing Portlet</b> in View mode.</p>
 
 <%
 	String redirect = PortalUtil.getCurrentURL(renderRequest);

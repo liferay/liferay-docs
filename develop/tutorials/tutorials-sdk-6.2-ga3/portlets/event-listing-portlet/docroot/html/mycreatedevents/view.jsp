@@ -2,7 +2,7 @@
 
 <%@ page import="com.liferay.portal.model.User" %>
 
-This is the <b>My Created Events</b> portlet in View mode.
+<p>This is the <b>My Created Events</b> portlet in View mode.</p>
 
 <%
 User currentUser = PortalUtil.getUser(request);
