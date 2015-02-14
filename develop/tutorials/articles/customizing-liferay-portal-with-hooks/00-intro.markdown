@@ -1,4 +1,4 @@
-# Customizing Liferay Portal [](id=customizing-liferay-portal)
+# Customizing Liferay Portal with Hooks [](id=customizing-liferay-portal)
 
 Liferay Hooks are the best type of plugin for customizing Liferay's core
 features. If possible, use hooks whenever you need to override Liferay's core
