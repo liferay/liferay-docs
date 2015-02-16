@@ -130,24 +130,3 @@ discussed on this page.
 </tr>
 </table>
 </div>
-
-<style>
-table
-{
-width:860px;
-}
-th
-{
-text-align: left;
-}
-th, td
-{
-padding-left: 0.4em;
-padding-top: 0.3em;
-
-}
-#wrapper [](id=wrapper)
-{
-margin-left: -0.4em;
-}
-</style>
