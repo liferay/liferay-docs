@@ -124,13 +124,71 @@ action. For a complete listing of icons that you can specify, you can visit
 [Font Awesome](http://fortawesome.github.io/Font-Awesome/3.2.1/).
 
 2. Redeploy your tracking action plugin by running `ant deploy` from the command
-   prompt. Now your rule uses its new icon.
+   prompt. Now your tracking action uses its new icon.
 
-        ![Figure 2: Your tracking action now uses the Font Awesome icon you specified.](../../images/tracking-action-icon.png)
+    ![Figure 2: Your tracking action now uses the Font Awesome icon you specified.](../../images/tracking-action-icon.png)
 
 Now that you've modified a basic feature in your `-TrackingAction` class, you'll
-need to develop the UI for your tracking rule's configuration.
+need to develop the UI for your tracking action's configuration. As you read
+earlier, your tracking action already has an FTL template, which is used to show
+the Tracking Actions form. Since a generated tracking action Java class extends
+`BaseTrackingAction` by default, your tracking action already supports using the
+FreeMarker language.
 
+If you're interested in using a technology besides FreeMarker to implement your
+UI, you can add a method `getFormHTML` to your `-TrackingAction` class. For
+further details on thismethod, see the
+[BaseTrackingAction](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseTrackingAction.java)
+class.
+
+The `getFormHTML` method is configured for FreeMarker templates in the
+`BaseTrackingAction` class. This method is used to retrieve the HTML created by
+the technology you choose, and to return it as a string that is viewable from
+your tracking action's form. Therefore, if you plan on using an alternative to
+FreeMarker, you must override this method by creating and modifying it in your
+`-TrackingAction` class. This tutorial demonstrates implementing the UI using
+FreeMarker.
+
+For example, if you wanted to create a tracking action that tracks the number of
+times a user views a newsletter, you could create a menu with fields for
+*Alias*, *Newsletter ID*, and *Tracking Action*. The administrator could input
+the necessary values in these fields to track the newsletter they're interested
+in. Here's a code snippet from a FreeMarker template (e.g.,
+`ct_tracking_action.ftl`) that could be applied to this example:
+
+    <@aui["input"] helpMessage="alias-help" label="alias" name="{ct_field_guid}alias" type="text" value=alias>
+        <@aui["validator"] name="required" />
+    </@>
+
+    <@aui["input"] helpMessage="enter-the-id-of-the-newsletter-to-be-tracked" label="newsletter-id" name="{ct_field_guid}elementId" type="text" value=elementId>
+        <@aui["validator"] name="required" />
+    </@>
+
+    <#if eventTypes?has_content && (eventTypes?size > 1)>
+        <@aui["select"] label="tracking-action" name="{ct_field_guid}eventType">
+            <#list eventTypes as curEventType>
+                 <@aui["option"] label="${curEventType}" selected=(eventType == curEventType) value=curEventType />
+             </#list>
+         </@>
+    <#else>
+        <#list eventTypes as curEventType>
+            <@aui["input"] disabled=true label="tracking-action" name="{ct_field_guid}eventType" type="text" value=curEventType />
+        </#list>
+    </#if>
+
+This FreeMarker code creates an AUI input field for an alias and newsletter
+ID. If there is more than one event type, then the Tracking Action field is a
+*select* drop-down box; otherwise, the event type field is disabled. For this
+example template, you'd need to declare the `eventTypes` variable in your
+`-TrackingAction` class. You'll learn how to do this later.
+
+![Figure 3: This Newsletter tracking action requires the newsletter alias and ID.](../../images/tracking-action-template.png)
+
+For other working examples of FreeMarker templates used for tracking actions,
+visit the Audience Targeting [project](https://github.com/liferay/liferay-apps-content-targeting/tree/samples2015)
+on Github.
+
+<!-- Have not added FTL snippet 5 to code project in IDE -->
 
 
 3. Of course, you still need to make some changes to define how your tracking
