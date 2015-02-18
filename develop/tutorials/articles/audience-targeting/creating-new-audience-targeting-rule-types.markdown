@@ -5,7 +5,7 @@ users that match a set of rules. Out of the box, Liferay provides several types
 of rules that are based on characteristics such as age range, gender, location,
 etc. To extend the set of available rule types, you can create a class that
 implements the
-[Rule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/Rule.java)
+[Rule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/Rule.java)
 interface and deploy the class in your own OSGi plugin. 
 
 OSGi plugins can be hot-deployed and undeployed, they manage their own
@@ -131,9 +131,9 @@ the latter two components later on.
 Now, you can begin creating your rule's functionality by specifying its behavior
 in the `-Rule` class (e.g., `WeatherRule.java`) that the SDK generated for
 you. This class implements the
-[Rule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/Rule.java) interface (required),
-and extends the
-[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)
+[Rule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/Rule.java)
+interface (required), and extends the
+[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)
 class. It's not mandatory to extend `BaseRule`, but it provides some helpful
 utilities, such as support for generating your rule's UI using FreeMarker.
 Note that there are multiple methods in the generated `-Rule` class; you must
@@ -157,9 +157,9 @@ generated default methods.
    replace the return value `SampleRuleCategory.KEY` with the value
    `SessionAttributesRuleCategory.KEY`, and make sure to import that class.
    There are several category classes listed 
-   [here](https://github.com/liferay/liferay-apps-content-targeting/tree/master/content-targeting-api/service/com/liferay/content/targeting/rule/categories)
+   [here](https://github.com/liferay/liferay-apps-content-targeting/tree/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/rule/categories)
    in the
-   [liferay-apps-content-targeting](https://github.com/liferay/liferay-apps-content-targeting)
+   [liferay-apps-content-targeting](https://github.com/liferay/liferay-apps-content-targeting/tree/samples-v1.1)
    repository.
 
 3. Redeploy your rule plugin by running `ant deploy` from the command prompt.
@@ -176,7 +176,7 @@ already supports using the FreeMarker language.
 If you're interested in using a technology besides FreeMarker to implement your
 UI, you can add a method `getFormHTML` to your `-Rule` class. For further
 details on this method, see the
-[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)
+[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)
 class.
 
 The `getFormHTML` method is configured for FreeMarker templates in the
@@ -332,22 +332,22 @@ consider persisting to a database by using
 which is supported in the Rule plugins. 
 
 - You can override
-[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)'s
+[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)'s
 `deleteData` method in your `-Rule`, so that it deletes any data associated with
 the rule that is currently being deleted.
 
 - If your rule handles data or references to data that can be staged (e.g., a
 reference to a page or web content article), you may need to override
-[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)'s
+[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)'s
 `exportData` and `importData` methods, to manage the content properly. To see an
 example of how these methods are used, visit the 
-[ContentVisitedRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/rule-visited/src/com/liferay/content/targeting/rule/visited/ContentVisitedRule.java)
+[ContentVisitedRule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/rule-visited/src/com/liferay/content/targeting/rule/visited/ContentVisitedRule.java)
 class.
 
 You now know how to create a custom rule type for your Audience Targeting
 application. For working examples of the default rules included in the Audience
 Targeting app, visit the Audience Targeting
-[project](https://github.com/liferay/liferay-apps-content-targeting) page and
+[project](https://github.com/liferay/liferay-apps-content-targeting/tree/samples-v1.1) page and
 study the folders with the `rule-` prefix. To view the final solution of a
 deployable sample weather rule, you can download its
 [ZIP file](/documents/10184/359829/rule-weather.zip).
