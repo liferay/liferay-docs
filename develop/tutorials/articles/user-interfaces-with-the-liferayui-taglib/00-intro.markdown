@@ -1,4 +1,4 @@
-# Liferay UI Taglibs [](id=liferay-ui-taglibs)
+# User Interfaces with the Liferay UI Taglib [](id=liferay-ui-taglibs)
 
 Liferay UI is a set of taglibs that are fully integrated with Liferay Portal.
 They provide powerful UI tags that implement commonly used UI components.
