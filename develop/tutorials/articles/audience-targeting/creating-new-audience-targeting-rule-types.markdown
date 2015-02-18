@@ -26,11 +26,11 @@ project itself. To do this, you should install the Audience Targeting SDK.
 
 So what does Audience Targeting SDK provide that's useful for Audience
 Targeting? First, the Audience Targeting SDK contains a Liferay Plugins SDK that
-facilitates deploying audience targeting plugins to Liferay Portal. In addition,
-the Audience Targeting SDK includes the Audience Targeting project, for
-leveraging its useful development scripts to generate code for customizable
-rule, report, and tracking action plugins. The Audience Targeting SDK
-essentially provides an entire Audience Targeting development environment. 
+facilitates deploying audience targeting plugins to Liferay Portal. Additionally,
+the Audience Targeting SDK includes the Audience Targeting project, so you can
+leverage its development scripts to generate customizable rule, report, and
+tracking action plugins. The Audience Targeting SDK essentially provides an
+Audience Targeting development environment. 
 
 You can download the Audience Targeting SDK from
 [here](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Audience+Targeting).
@@ -43,8 +43,8 @@ on a new SDK based on Gradle and they want that one to replace this one. Once
 that one is available (~end Feb 2015), an official downloads page link will be
 available. -Cody -->
 
-You'll want to setup the Plugins SDK to point to your application server. To
-learn more about setting up and using the Plugins SDK included with the Audience
+You'll want the Plugins SDK to point to your application server. To learn more
+about setting up and using the Plugins SDK included with the Audience
 Targeting SDK, you can visit the 
 [Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk) tutorials.
 
@@ -69,8 +69,8 @@ Liferay server.
 
 1. In the root Audience Targeting project folder `apps/content-targeting`, run
    the `create_rule` command (appropriate for your OS) from a command prompt.
-   For example, the command below shows creating a rule project that uses
-   `weather` in it's project name and uses *Weather* as its display name: 
+   For example, the command below creates a rule project with 
+   `weather` for its project name and *Weather* as its display name: 
 
         create_rule.bat weather "Weather"
 
@@ -88,14 +88,14 @@ Liferay server.
 3. Now is a convenient time to deploy the project to see how it currently looks
    in Portal.
 
-    To deploy the plugin project, open a command prompt to your plugin project's
+    To deploy the plugin project, open a terminal to your plugin project's
     directory and run the `ant deploy` command. You'll find this new rule listed
     when creating or editing a user segment in the Audience Targeting
     application. 
 
     +$$$
 
-    **Tip:** When a plugin has been successfully deployed but its changes aren't
+    **Tip:** If a plugin has been successfully deployed, but its changes aren't
     visible, check that the generated `.jar` in the Plugins SDK's `/dist`
     folder contains the latest modifications. if it doesn't contain them, delete
     it and then redeploy the plugin. 
@@ -109,7 +109,7 @@ Liferay server.
 
     ![Figure 1: Although your new rule is very bare bones, it is deployable to your portal straight out of the box.](../../images/default-sample-rule.png)
 
-    The default rule is not configured to evaluate anything yet, but you can
+    The default rule doesn't evaluate anything yet, but you can
     drag and drop the rule onto the form, as shown above.
 
 Awesome! You've deployed your rule plugin. Next, you'll need to learn about the
@@ -139,8 +139,8 @@ utilities, such as support for generating your rule's UI using FreeMarker.
 Note that there are multiple methods in the generated `-Rule` class; you must
 modify them to create a working rule. 
 
-If you navigate back to your rule inside of your portal, notice that it's
-listed under a category named Sample and that it uses an a puzzle piece icon.
+If you navigate back to your rule deployed in your portal, notice that it's
+listed under a category named Sample and that it uses a puzzle piece icon.
 You can change both a rule's category and icon by modifying their respective
 generated default methods. 
 
@@ -153,7 +153,7 @@ generated default methods.
 
 2. Locate the `getRuleCategoryKey` method and replace its return value with the
    key name of the category in which you'd like your rule to reside. For
-   example, to categorize your rule in the *Session Attributes* category, you'd
+   example, to categorize your rule in the *Session Attributes* category, 
    replace the return value `SampleRuleCategory.KEY` with the value
    `SessionAttributesRuleCategory.KEY`, and make sure to import that class.
    There are several category classes listed 
@@ -186,10 +186,10 @@ rule's form. If you plan, therefore, on using an alternative to FreeMarker, you
 must override this method by creating and modifying it in your `-Rule` class.
 This tutorials demonstrates implementing the UI using FreeMarker. 
 
-If you wanted, for example, to create user segment rule's based on the type of
+If you wanted, for example, to create user segment rules based on the type of
 weather a user is experiencing, you could create a drop-down menu that lets the
 administrator select a weather type to associate with that user segment rule.
-Here's a code snippet from a FreeMarker template (e.g., `ct_fields.ftl`) that
+Here's a code snippet from a FreeMarker template (`ct_fields.ftl`) that
 could be applied to this example: 
 
     <@aui["fieldset"]>
@@ -203,9 +203,9 @@ could be applied to this example:
     </@>
 
 This FreeMarker code creates a *select* drop-down box with the name *weather*.
-Then is specifies several options to choose from associated with different types
-of weather. You could borrow from this FreeMarker code and change the name and
-labels for a *select* drop-down box and values appropriate for your rule plugin.
+Then it specifies several options associated with different types of weather.
+You could borrow from this FreeMarker code and change the name and labels for a
+*select* drop-down box and values appropriate for your rule plugin.
 
 ![Figure 3: This example rule uses a *select* drop-down box.](../../images/select-box-rule.png)
 
@@ -218,7 +218,7 @@ on GitHub.
 
 **Note:** Recall the last component of Audience Targeting rules: Language Keys.
 To learn more about language keys and how to create, use, and generate them,
-you can visit the
+visit the
 [Localization](/develop/tutorials/-/knowledge_base/6-2/localization) tutorials.
 
 $$$
@@ -231,15 +231,15 @@ Now you'll jump back into modifying your rule's behavior via the `-Rule` class.
    the form can be used by this method.
 
     In some cases, you may need to retrieve info from the portlet's request
-    and response, or the rule's ID. This tutorial demonstrates using the
+    and response or the rule's ID. This tutorial demonstrates using the
     `values` parameter. This parameter represents all the values on the form
     you're saving. 
 
 2. If you wanted to process one of the form's values, you could do that from the
    `processRule` method. You'll need to return the string value for the selected
    entity you chose for your rule type. For example, recall the FreeMarker code
-   example you studied earlier. To retrieve the selected value from the *select*
-   box, you'd need to retrieve the *weather* value:
+   example you studied earlier. To retrieve the selected value from the select
+   box, you'd need to retrieve the weather value:
 
         @Override
         public String processRule(
@@ -255,7 +255,7 @@ Now you'll jump back into modifying your rule's behavior via the `-Rule` class.
 3. The next method you'd modify is the `populateContext` method. This
    method takes the value the user selected and injects it into the `context`
    map parameter. For example, the following `populateContext` method populates
-   a *weather* context variable with the *weather* value of the `values` map
+   a `weather` context variable with the *weather* value of the `values` map
    parameter. 
 
         @Override
@@ -297,14 +297,14 @@ evaluation process determines whether a user matches the rule.
     You can look at this method's code in the downloadable ZIP file for the
     sample weather rule. 
 
-2. Insert logic that retrieves the value you stored in the type settings, via the
-   `processRule` method. For the weather example, you could retrieve the value
+2. Insert logic that retrieves the value you stored in the type settings, using
+   the `processRule` method. For the weather example, you could retrieve the value
    from the rule instance's type settings:
 
         String weather = ruleInstance.getTypeSettings();
 
 3. Now that you have both the user's value and the rule's value, check whether
-   they match. If they match return `true`; otherwise, return `false`. 
+   they match. If they match, return `true`; otherwise, return `false`. 
 
         if (Validator.equals(userWeather, weather)) {
             return true;
@@ -322,7 +322,7 @@ Here are some things to consider as you implement and deploy rules:
 
 - If you deploy your rule into a production environment, you may want to
 consider adding your values to the cache (e.g., weather in different locations),
-since obtaining the same value on every request is very inefficient, and could
+since obtaining the same value on every request is very inefficient and could
 result in slowing down your portal.
 
 - As an alternative to storing complex information in the `typeSettings` field
@@ -339,7 +339,7 @@ the rule that is currently being deleted.
 - If your rule handles data or references to data that can be staged (e.g., a
 reference to a page or web content article), you may need to override
 [BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)'s
-`exportData` and `importData` methods, to manage the content properly. To see an
+`exportData` and `importData` methods to manage the content properly. To see an
 example of how these methods are used, visit the 
 [ContentVisitedRule](https://github.com/liferay/liferay-apps-content-targeting/blob/master/rule-visited/src/com/liferay/content/targeting/rule/visited/ContentVisitedRule.java)
 class.
