@@ -1,45 +1,40 @@
 # Preparing Your App [](id=preparing-your-app)
 
-<!-- TODO intro -->
+As a Liferay developer, you're undoubtedly already familiar with the concept of
+plugins (portlets, hooks, themes, etc). If you're not familiar with Liferay
+plugins, see the [Tutorials Introduction](/develop/tutorials/-/knowledge_base/6-2/tutorials).
+A *Liferay App* (sometimes just called an *app*) is a collection of one or more
+of these plugins, packaged together to represent the full functionality of an
+application on the Liferay platform. In addition to the plugins contained within
+an app, apps have meta-data such as names, descriptions, versions, and other
+ancillary information used to describe and track the app throughout its life
+cycle.
 
-You must first develop your app using your preferred development tool. For
-example, using
-[Liferay IDE or Liferay Developer Studio](/develop/tutorials/-/knowledge_base/6-2/liferay-ide),
-the [Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk),
-or [Maven](/develop/tutorials/-/knowledge_base/6-2/maven).
-An app will consists of one or more Liferay plugins. Ensure your app is designed
-to work with Liferay 6.1 or later. If you wish to target multiple versions of
-Liferay (for example, you may wish to support 6.2 EE SP1, 6.2 CE GA1, 6.1 EE
-GA3, and 6.1 CE GA3), ensure you have built binary images of your app for each
-supported minor family release, if necessary. If a single set of files works
-across all supported Liferay versions, you don't need to build multiple versions
-of the plugins. Liferay guarantees compatibility within a given minor release
-family, so your users can rest assured that your app works with the minor
-release that you specify, along with all future maintenance releases of that
-minor release. 
+Much like standard Liferay plugins, Liferay apps are also *hot-deployable*. On
+downloading an app from the Marketplace, you'll find that it is a special file
+type with a `.lpkg` extension. This file can be dropped into Liferay's
+hot-deploy folder (`liferay-portal-[version]/deploy`) like any other plugin, to
+deploy it into that running instance of Liferay Portal.
 
-<!-- Decide whether this next section really belongs here -->
+As an app developer, you're not required to create the `.lpkg` files. Instead,
+your app's individual plugins (`.war` files) are uploaded as part of the
+publication process, along with information (name, description, version, icon,
+etc.) that identifies the app. The publication process is described in detail
+later.
 
+At this point in preparing to publish your app, you've developed your app and,
+if you're preparing a paid app, you've specified a portal access control list [\(PACL\)](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl),
+so that your app can be deployed on Liferay instances that have their [Plugin Security Manager](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl#enabling-the-security-manager)
+running. But before you start the formal publishing process, you must prepare
+your app's files and app meta-data. 
 
-## Consider Packaging Variations to Target Different Versions of Liferay [](id=consider-packaging-variations-for-different-versions-of-liferay)
+## Image and Naming Requirements
 
-Apps can be written to work across many different versions of Liferay. For
-example, suppose you wish to publish version 1.0 of your app, which you're
-supporting on Liferay 6.1 and 6.2. It may not be possible to create a single
-binary `.war` file that works across both Liferay versions, due to
-incompatibilities between these Liferay versions. In this case, you need to
-compile your app twice: once against Liferay 6.1 and once against 6.2, producing
-2 different *packages* (also called variations) of your version 1.0 app. Each
-package has the same functionality, but they're different files, and it is these
-packages that you can upload in support of different versions of Liferay, as you
-will see in a later section. In this guide, packages are sometimes referred to
-as files that make up your app.
+You'll want to think of a good name and description of your app. if you haven't
+already done so. take some screenshots, design an icon, and create a web site
+for your app. 
 
-## Image and Naming Requirements [](id=image-and-naming-requirements)
-
-You'll want to think of a good name and description of your app, along with the version
-scheme you wish to use. Take some screenshots, design an icon, create web sites
-for your app (if they do not already exist), and have a support plan in place.
+Here are some guidelines for these items:
 
 **Icons** for your app *must be* exactly 90 pixels in both height and width and
 must be in GIF, JPEG/JPG, or PNG format. The image size cannot exceed 512KB.
@@ -58,21 +53,22 @@ titles *must not be* longer than 50 characters.
 
 **Description, Tags, Websites and Version Numbers**: Descriptions, web sites and
 version numbers are to be as reflective of the product as possible. Please do
-not use misleading names, information, or icons. A tags suggestion tool has been
-provided to aid with tagging your asset. Descriptions should be as concise as
-possible. Ensure your icons, images, descriptions, and tags are free of
-profanity or other offensive material.
+not use misleading names, information, or icons. The tags suggestion tool that's
+a part of the app submittion wizard can aid you with tagging your asset.
+Descriptions should be as concise as possible.
 
-Above and beyond these basics of creating apps in the form of Liferay plugins,
-there are additional considerations to take into account when designing and
-publishing apps.
+Make sure your icons, images, descriptions, and tags are free of profanity or
+other offensive material. 
 
 During the publication process, you upload your app's individual plugins (`.war`
 files) along with its meta-data (name, description, version, icon,
-etc.). The publication process is described in detail
-later.
+etc.). 
 
-## Deployment Requirements [](id=deployment-requirements)
+Above and beyond these basics of creating apps in the form of Liferay plugins,
+there are additional considerations to take into account for preparing your app
+for publishing. 
+
+## Deployment Requirements
 
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
@@ -92,8 +88,8 @@ keep in mind:
   this setting. Your app will be rejected if its bytecode is not compatible
   with the Java JRE for the intended version of Liferay. 
 - *WAR (`.war`) files*:
-    - WARs must contain a `WEB-INF/liferay-plugin-package.properties` file.
-    - WARs must not contain any `WEB-INF/liferay-plugin-package.xml` file.
+    - WAR files must contain a `WEB-INF/liferay-plugin-package.properties` file.
+    - WAR files must not contain any `WEB-INF/liferay-plugin-package.xml` file.
     - WAR file names must not contain any commas.
     - WAR file names must conform to the following naming convention:
     
@@ -147,25 +143,39 @@ Now that you've learned the packaging and deployment requirements for your app,
 let's ...
 -->
 
-<!-- Incorporate content from https://www.liferay.com/web/developer/marketplace/app-metadata-guidelines -->
+<!-- TODO - Incorporate content from https://www.liferay.com/web/developer/marketplace/app-metadata-guidelines -->
 
 
-In the real world, apps usually consist of multiple components (e.g., multiple
-`.war` file plugins), are spread across multiple plugin types, and present
-non-trivial functionality which in many cases requires some configuration. How
-these advanced tasks are dealt with is out of scope for this section, but some
-tips and considerations for Marketplace development can be found in the sections
-that follow.
+Apps usually consist of multiple components (e.g., multiple
+`.war` file plugins) that are spread across multiple plugin types. In addition,
+you may want to consider how to package your app for running on different
+versions of Liferay. 
 
-## Specify App Packaging Directives [](id=specify-app-packaging-directives)
+## Considering Package Variations to Target Different Versions of Liferay
+
+Apps can be written to work across many different versions of Liferay. For
+example, suppose you want to publish version 1.0 of your app, which you're
+supporting on Liferay 6.1 and 6.2. Due to incompatibilities between these
+Liferay versions, it may not be possible to create a single binary `.war` file
+that works across both Liferay versions. In this case, you must compile your app
+twice: once against Liferay 6.1 and once against 6.2, producing 2 different
+*packages* (also called variations) of your version 1.0 app. Each package has
+the same functionality, but they're different files. You can upload such
+packages to support your app on different versions of Liferay. With regards to
+Liferay apps, packages are sometimes referred to as files that make up your app.
+
+Next, you'll drill down into the app packaging directives for each of your app's
+plugin projects. 
+
+## Specify App Packaging Directives
 
 When publishing your app, each plugin you upload is packaged into one or more
-*packages* for each Liferay release you intend to support. When you upload your
+*packages* for each Liferay release you're supporting. When you upload your
 plugins to the Liferay Marketplace, your app is scanned, and the embedded
-packaging directives you have specified are extracted and used to create
-different downloadable *packages* of your app for different Liferay releases.
-You must insert this information into each plugin in your app before you can
-publish it to the Marketplace.
+packaging directives you've specified are extracted and used to create different
+downloadable *packages* of your app for the different Liferay releases. You must
+insert this information into each plugin in your app before you can publish it
+to the Marketplace.
 
 The packaging directives are related to the Liferay releases with which your app
 is compatible. In order to specify which release of Liferay your app is
@@ -177,14 +187,14 @@ can be found in
 Accordingly, Liferay 6.2 CE GA1 is designated as version `6.2.0`. CE GA2 is then
 `6.2.1`, and so on. Liferay 6.2 EE GA1 is designated as `6.2.10`. EE versions 
 follow a slightly different policy given the presence of fix packs and service
-packs, so 6.2 EE GA2 will be `6.2.20`.
+packs; so 6.2 EE GA2 is `6.2.20`.
 
-For each plugin that makes up your app, packaging directives must be placed in
-the `liferay-plugin-package.properties` file (in the `WEB-INF/` directory of
-your plugin's `.war` file). In this file, you must specify a comma-separated
-list of Liferay releases with which your app is compatible and for which
-packages should be generated using the `liferay-versions` keyword. Marketplace
-creates packages that contain your plugins based on these packaging
+For each plugin that makes up your app, packaging directives must be specified
+in the `liferay-plugin-package.properties` file (in the `WEB-INF/` directory of
+your plugin's `.war` file). In this properties file, you must specify a
+comma-separated list of Liferay releases with which your app is compatible and
+for which packages should be generated using the `liferay-versions` keyword.
+Marketplace creates packages that contain your plugins based on these packaging
 directives (and groups them together as each plugin is uploaded). You should
 specify CE versions first, followed by EE versions, using this form:
 `liferay-versions=CE,CE,CE+,EE,EE,EE+` (where `CE` and `EE` are replaced with
@@ -192,10 +202,10 @@ the corresponding Liferay Releases with which your app is compatible).
 
 +$$$
 
-**Note:** If your app is compatible
- with both CE and EE, you must specify a set of versions for both CE and EE
- releases. If you only specify compatibility with CE, then your app will not be
- compatible with (and will fail to deploy to) any EE release.
+**Note:** If your app is compatible with both CE and EE, you must specify a set
+of versions for both CE and EE releases. If you only specify compatibility with
+CE, then your app will not be compatible with (and will fail to deploy to) any
+EE release.
 
 $$$
  
@@ -205,21 +215,20 @@ your `liferay-plugin-packages.properties` file:
 
     liferay-versions=6.1.2+,6.1.30+
 
-This means that the app works with any 6.1 CE release starting with CE GA3
-and 6.1 EE releases starting with EE GA3. Marketplace creates two packages:
-one that is compatible with the 6.1 CE GA3 release and *later*, and another that
-is compatible with 6.1 EE GA3 release and *later*.
+This means that the app works with any 6.1 CE release starting with CE GA3 and
+6.1 EE releases starting with EE GA3. Marketplace creates two packages: one that
+is compatible with the 6.1 CE GA3 release and *later*, and another that is
+compatible with 6.1 EE GA3 release and *later*.
 
 +$$$
 
-**Note:** Any CE or EE versions you
- include in your packaging directives *must* be terminated with a version using
- the `+` symbol.  This ensures that your app will be deployable onto future
- versions of Liferay (but does not guarantee your app will work in future
- versions). So, `liferay-versions=6.1.1,6.1.2` doesn't work, but
- `liferay-versions=6.1.1,6.1.2+` does. Similarly,
- `liferay-versions=6.1.2+,6.1.30,6.1.31` doesn't work (as the EE versions are
- not properly terminated), but `liferay=versions=6.1.2+,6.1.30,6.1.31+` does.
+**Note:** Any CE or EE versions you include in your packaging directives *must*
+be terminated with a version using the plus (`+`) symbol. This ensures that your
+app will be deployable onto future versions of Liferay (but does not guarantee
+your app will work in future versions). So, `liferay-versions=6.1.1,6.1.2`
+doesn't work, but `liferay-versions=6.1.1,6.1.2+` does. Similarly,
+`liferay-versions=6.1.2+,6.1.30,6.1.31` doesn't work (as the EE versions are not
+properly terminated), but `liferay=versions=6.1.2+,6.1.30,6.1.31+` does.
 
 $$$
 
@@ -240,7 +249,7 @@ You may find it advantageous to implement one of your app's plugins in multiple
 ways, customizing that plugin for different Liferay releases. We'll illustrate
 this with an example. 
 
-### Example App: Using Different Versions of a Hook [](id=example-app-using-different-versions-of-a-hook)
+### Example App: Using Different Versions of a Hook
 
 Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
 standard API calls that work on all Liferay 6.1 releases. Your hook, on the
@@ -262,32 +271,5 @@ that has plugins targeted to different Liferay releases, but it's easy.
 Marketplace takes care of it based on the `liferay-versions` values you
 specified for each plugin. We'll talk about that next.
 
-### Marketplace Packages Your App's Plugins [](id=marketplace-packages-your-apps-plugins)
-
-When you upload your app's plugins as demonstrated later, you'll notice that
-Marketplace groups them into separate packages based on the respective releases
-each plugin supports. Marketplace copies a plugin into each of the release
-packages corresponding to its list of `liferay-versions` values.  If Marketplace
-cannot verify the version of Liferay the plugin supports, it rejects the plugin.
-For example, if you specify `liferay-versions=1.0.0+` for your plugin--perhaps
-because you are confident it can work on any Liferay release--Marketplace
-rejects it, because it doesn't know of a `1.0` release of Liferay. So take care
-to specify the Liferay version information correctly for each your app's plugins. 
-
-Now that you've developed your app and specified its packaging directives, it's
+Now that you've prepared your app's files and specified its meta-data, it's
 time to get it to the Marketplace! 
-
-## What Kind of Validations Are Performed by Liferay? [](id=what-kind-of-validations-are-performed-by-liferay)
-
-Liferay ensures that apps meet a minimum set of requirements by performing the
-following activities:
-
-- Running basic anti-virus checks
-- Ensuring titles, descriptions, images, etc. are appropriate
-- Doing basic sanity checking of functionality (e.g., deployment testing, etc.)
-
-Liferay does not do source code reviews and will not ask for your source code.
-Further, Liferay is not responsible for the behavior (or misbehavior) of apps on
-the Marketplace. For details regarding this, consult the *Liferay Marketplace
-User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual
-*End User License Agreements* associated with each app.
