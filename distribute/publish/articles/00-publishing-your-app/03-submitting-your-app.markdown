@@ -260,8 +260,21 @@ When you submit apps to the Marketplace, they are reviewed by Liferay
 Marketplace staff to ensure that your app meets the minimum standards described
 in the previous section *What Are the Requirements for Publishing Apps?*
 
-Each of the following changes requires a review by Marketplace staff before the
-change is published to the Marketplace:
+Liferay ensures that apps meet a minimum set of requirements by performing the
+following activities:
+
+- Running basic anti-virus checks
+- Ensuring titles, descriptions, images, etc. are appropriate
+- Doing basic sanity checking of functionality (e.g., deployment testing, etc.)
+
+Liferay does not do source code reviews and will not ask for your source code.
+Further, Liferay is not responsible for the behavior (or misbehavior) of apps on
+the Marketplace. For details regarding this, consult the *Liferay Marketplace
+User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual
+*End User License Agreements* associated with each app.
+
+Note, each of the following changes requires a review by Marketplace staff
+before the change is published to the Marketplace:
 
 - Submitting a new app
 - Changing details of an app (for example, changing the description or the
