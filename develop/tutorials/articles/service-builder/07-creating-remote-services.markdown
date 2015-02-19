@@ -24,9 +24,26 @@ service methods can be called remotely via JSON and SOAP web services.
 
 <!-- Need to specify resource-actions/default.xml - Jim -->
 
-Remember that your application's local service methods are implemented in
-`*LocalServiceImpl`. Similarly, you'll implement remote service methods in
-`*ServiceImpl`. Here are the remote service methods of the `EventServiceImpl`
+Remember that your application's local service methods should be implemented in
+`*LocalServiceImpl`. Similarly, your applications remote service methods should
+be implemented in `*ServiceImpl`.
+
+<!--
+This best practice appears in both 05-creating-local-service.markdown and
+in 07-creating-remote-services.markdown. If you edit it, please update both
+locations.
+-->
+**Best Practice:** If your application needs both local and remote services,
+determine the service methods that your application needs for working with your
+entity model. Add these service methods to `*LocalServiceImpl`. Then create
+corresponding remote services methods in `*ServiceImpl`. Add permission checks
+to the remote service methods and make the remote service methods invoke the
+local service methods. The remote service methods can have the same names as the
+local service methods that they call. Within your application, only call the
+remote services. This ensures that your service methods are secured and that you
+don't have to duplicate permissions code.
+
+Here are the remote service methods of the `EventServiceImpl`
 class that belongs to the
 [Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet)
 project:

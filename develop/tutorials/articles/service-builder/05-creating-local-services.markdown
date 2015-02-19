@@ -11,15 +11,20 @@ should be added as methods of your `*LocalServiceImpl` class. However, before
 adding any custom service methods, you should review the initial service classes
 that Service Builder generated during its initial run. 
 
+<!--
+This best practice appears in both 05-creating-local-service.markdown and
+in 07-creating-remote-services.markdown. If you edit it, please update both
+locations.
+-->
 **Best Practice:** If your application needs both local and remote services,
 determine the service methods that your application needs for working with your
 entity model. Add these service methods to `*LocalServiceImpl`. Then create
-corresponding remote services methods to `*ServiceImpl`. Add permission checks
-to the remote services methods and make them call the local service methods. The
-remote service methods can have the same names as the local service methods that
-they call. Within your application, only call the remote services. This ensures
-that your services methods are secured and you don't have to duplicate
-permissions code.
+corresponding remote services methods in `*ServiceImpl`. Add permission checks
+to the remote service methods and make the remote service methods invoke the
+local service methods. The remote service methods can have the same names as the
+local service methods that they call. Within your application, only call the
+remote services. This ensures that your service methods are secured and that you
+don't have to duplicate permissions code.
 
 Note that Service Builder creates a `*LocalService` class which is the interface
 for the local service. It contains the signatures of every method in
