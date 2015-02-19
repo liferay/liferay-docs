@@ -134,14 +134,6 @@ please refer to the
 [Creating Remote Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-remote-services)
 tutorial. 
 
-<!--
-Add more examples of invoking Liferay Portal and Liferay portlet remote services
-
-## Invoking Liferay Portal Services
-
-## Invoking Liferay Portlet Services
--->
-
 For more information on Liferay services, see the Liferay Portal CE Javadocs at
 [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/)
 or the Liferay Portal EE Javadocs included in the Liferay Portal EE

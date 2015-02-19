@@ -95,11 +95,10 @@ you just specified for the `sql` element.
 
 ## Step 2: Implement Your Finder Method
 
-It's time to implement the finder method to invoke the custom SQL query. This
-should be done in the service's persistence layer, since it's SQL invoked on a
-relational database. You'll rely on Service Builder to generate the interface
-for it. But before you do that, you need to create the implementation of the
-finder. 
+After specifying your custom SQL query, you need to implement the finder method
+to invoke it. This should be done in the service's persistence layer. Service
+Builder generates the interface for the finder but you need to create the
+implementation. 
 
 The first step is to create a `*FinderImpl` class in the service persistence
 package. The Event Listing project includes the `EventFinderImpl` class in the
@@ -182,8 +181,8 @@ field contains the custom SQL query's ID. The
 fully-qualified class name of the `*Finder` interface (`EventFinder`) and
 the name of the finder method (`findByEventNameEventDescriptionLocationName`). 
 
-Awesome! Custom SQL is in place and your finder method is implemented. Next,
-you'll call the finder method from your service. 
+Awesome! Your custom SQL is in place and your finder method is implemented.
+Next, you'll call the finder method from your service. 
 
 ## Step 3: Access Your Finder Method from Your Service
 
