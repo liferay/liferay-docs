@@ -29,15 +29,15 @@ don't have to duplicate permissions code.
 Note that Service Builder creates a `*LocalService` class which is the interface
 for the local service. It contains the signatures of every method in
 `*LocalServiceBaseImpl` and `*LocalServiceImpl`. `*LocalServiceBaseImpl`
-contains a few automatically generated methods providing common functionality.
-Since the `*LocalService` class is generated, you should never modify it. If you
-do, your changes will be overwritten the next time you run Service Builder. All
-custom code should be placed in `EventLocalServiceImpl`, where it will not be
-overwritten.
+contains some automatically generated methods that provide functionality that's
+common to all local services. Since the `*LocalService` class is generated, you
+should never modify it. If you do, your changes will be overwritten the next
+time you run Service Builder. All custom code should be placed in
+`*LocalServiceImpl`, where it will not be overwritten.
 
 The Event Listing project's `EventLocalServiceImpl` class demonstrates the kinds
 of service methods that applications commonly need for working with an entity
-model. This class includes the following local service methods:
+model. `EventLocalServiceImpl` includes the following local service methods:
 
     public Event addEvent(
             long userId, long groupId, String name, String description,
