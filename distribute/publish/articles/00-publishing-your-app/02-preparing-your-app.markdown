@@ -18,6 +18,23 @@ family, so your users can rest assured that your app works with the minor
 release that you specify, along with all future maintenance releases of that
 minor release. 
 
+<!-- Decide whether this next section really belongs here -->
+
+
+## Consider Packaging Variations to Target Different Versions of Liferay [](id=consider-packaging-variations-for-different-versions-of-liferay)
+
+Apps can be written to work across many different versions of Liferay. For
+example, suppose you wish to publish version 1.0 of your app, which you're
+supporting on Liferay 6.1 and 6.2. It may not be possible to create a single
+binary `.war` file that works across both Liferay versions, due to
+incompatibilities between these Liferay versions. In this case, you need to
+compile your app twice: once against Liferay 6.1 and once against 6.2, producing
+2 different *packages* (also called variations) of your version 1.0 app. Each
+package has the same functionality, but they're different files, and it is these
+packages that you can upload in support of different versions of Liferay, as you
+will see in a later section. In this guide, packages are sometimes referred to
+as files that make up your app.
+
 ## Image and Naming Requirements [](id=image-and-naming-requirements)
 
 You'll want to think of a good name and description of your app, along with the version
