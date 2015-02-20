@@ -187,6 +187,18 @@ globally) or as granular (different price in each country offered) as you want.
 
 ![Figure 2: Liferay Marteplace lets you specify prices for all of your license options and lets you specify them by region.](../../images/pricing_screenshot.png)
 
+
+Choose the currency to use with your pricing options. Decide on the renewal cost
+for any support services you offer. The support services price is per instance,
+so if you specify $100 USD and the customer is running 10 instances, their
+annual support services renewal cost will be $1000. Note: This only applies to
+perpetual licenses. For non-perpetual licenses, you should include any support
+services cost in the annual license price. 
+
+Although Liferay Marketplace supports major currencies and a broad list of
+countries, not all currencies and countries are currently available. Additional
+currencies and countries may become available at a later time. 
+
 ### Considering the Liferay Marketplace Fee
 
 By selling your paid apps on the Liferay Marketplace, you're agreeing to share
@@ -298,4 +310,3 @@ specifying the releases of Liferay for which your app is designed.
 
 Congratulations on coming up with a sound game plan for your app! Next, you
 should read the next article to learn how to prepare your app for publishing. 
-
