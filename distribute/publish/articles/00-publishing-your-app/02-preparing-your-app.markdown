@@ -28,7 +28,7 @@ so that your app can be deployed on Liferay instances that have their [Plugin Se
 running. But before you start the formal publishing process, you must prepare
 your app's files and app metadata. 
 
-## Marketplace App Metadata Guidelines
+## Marketplace App Metadata Guidelines [](id=marketplace-app-metadata-guidelines)
 
 The following app metadata guidelines are intended to ensure that apps are
 submitted with important and necessary supporting information. The metadata that
@@ -207,7 +207,7 @@ download a theme from Marketplace, install it on their portal, go to Sites or
 Site Templates in the Control Panel and immediately see their new theme in
 action. You can read more about themes and even find examples in the [Tutorials](/develop/tutorials).
 
-## Deployment Requirements
+## Deployment Requirements [](id=deployment-requirements)
 
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
@@ -282,7 +282,7 @@ Apps usually consist of multiple components (e.g., multiple
 you may want to consider how to package your app for running on different
 versions of Liferay. 
 
-## Considering Package Variations to Target Different Versions of Liferay
+## Considering Package Variations to Target Different Versions of Liferay [](id=considering-package-variations-to-target-different-versions-of-liferay)
 
 Apps can be written to work across many different versions of Liferay. For
 example, suppose you want to publish version 1.0 of your app, which you're
@@ -298,7 +298,7 @@ Liferay apps, packages are sometimes referred to as files that make up your app.
 Next, you'll drill down into the app packaging directives for each of your app's
 plugin projects. 
 
-## Specifying Packaging Directives
+## Specifying Packaging Directives [](id=specifying-packaging-directives)
 
 When publishing your app, each plugin you upload is packaged into one or more
 *packages* for each Liferay release you're supporting. When you upload your
@@ -380,7 +380,7 @@ You may find it advantageous to implement one of your app's plugins in multiple
 ways, customizing that plugin for different Liferay releases. The section below
 contains an example that demonstrates doing this. 
 
-+$$$ 
++$$$
 
 **Example: Using Different Versions of a Hook in an App**
 

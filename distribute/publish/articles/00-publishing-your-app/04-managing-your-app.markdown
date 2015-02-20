@@ -1,4 +1,4 @@
-# Managing Your Published App
+# Managing Your Published App [](id=managing-your-published-app)
 
 You've launched your new app on the Marketplace. Congratulations! As you settle
 down from your launch celebration, you start to wonder how your app's doing in
@@ -12,7 +12,7 @@ with respect to views, downloads, and purchases. And the app wizard lets you
 upload new versions of your app and it lets you make changes to some of its
 details. In this article you'll learn how all of this works. 
 
-## Tracking App Performance
+## Tracking App Performance [](id=tracking-app-performance)
 
 One of the main reasons for developing and publishing apps on the Marketplace
 is to drive downloads and adoption of your app. The Marketplace enables you, as
@@ -29,7 +29,7 @@ data within the date range. Finally, the same data that is graphed is also shown
 in tabular format, in case you want to know the exact values making up the
 graph. The different types of data available to view are described below.
 
-### Views
+### Views [](id=views)
 
 When someone searches or browses the Marketplace, they click on apps to see
 detailed views of the apps they're interested in. When this occurs for your app,
@@ -38,13 +38,13 @@ Metrics screen when *Views* is selected at the top. *Views* is also the default
 view, as shown above. The number of recorded views per day per user is
 unlimited.
 
-### Downloads
+### Downloads [](id=downloads)
 
 A download is recorded for your app when someone downloads a specific package of
 a specific version of your app. The number of recorded downloads per day per
 user is unlimited.
 
-### Purchases
+### Purchases [](id=purchases)
 
 The Marketplace makes an effort to count the total number of purchases for your
 app. 
@@ -54,7 +54,7 @@ As you see areas to improve your app or when necessary changes come up, you'll
 want to know how to make changes to your published app. The next section
 explains what changes you can make. 
 
-## Making Changes to Published Apps
+## Making Changes to Published Apps [](id=making-changes-to-published-apps)
 
 After your app is published and approved, you will undoubtedly need to make one
 or more of these kinds of changes during the life of the app:
@@ -67,7 +67,7 @@ or more of these kinds of changes during the life of the app:
 
 Liferay Marketplace supports all of the above operations as described below.
 
-### Editing Your App Details
+### Editing Your App Details [](id=editing-your-app-details)
 
 App details include the name, description, icon, screenshots, and other
 information that you supplied on the first screen during the app creation
@@ -85,7 +85,7 @@ reach the final preview screen. Click *Submit for Review* to submit your detail
 changes for review. Once approved, the changes you request appear on the
 Marketplace.
 
-### Editing App Prices
+### Editing App Prices [](id=editing-app-prices)
 
 You can change your app's prices, instance bundles, and regional availability if
 you wish. This can be for a variety of reasons, whether it's to run a
@@ -99,7 +99,7 @@ These changes do not require Liferay verification process to approve. Simply
 make the changes you wish and save your app. These new prices will be reflected
 immediately. 
 
-### Adding Support for New Versions of Liferay Portal
+### Adding Support for New Versions of Liferay Portal [](id=adding-support-for-new-versions-of-liferay-portal)
 
 If you need to add files in support of another Liferay release, the process is
 similar. Navigate to navigate to *Home* &rarr; *Apps* and select the app you
@@ -124,7 +124,7 @@ bottom of the preview screen. Click *Submit for Review* to submit your requested
 change (adding of files). The files will be reviewed by Liferay, and once
 approved, the new package becomes available for download in the Marketplace.
 
-### Releasing a New Version of your App
+### Releasing a New Version of your App [](id=releasing-a-new-version-of-your-app)
 
 As time passes, you may wish to add new functionality to your app or fix a
 batch of bugs. This can be accomplished by releasing a new version of your app.
@@ -157,7 +157,7 @@ from here allows you to upload the files associated with the new version of the
 app. For a new version of the app, you must upload all files for all supported
 Liferay versions again, even if they have not changed since the last version.
 
-### Deactivating Your App
+### Deactivating Your App [](id=deactivating-your-app)
 
 When the time comes to retire your app, you can *Deactivate* it. Deactivating an
 app causes the app to become unavailable from the Marketplace for new

@@ -1,4 +1,4 @@
-# Planning Your App's Distribution
+# Planning Your App's Distribution [](id=planning-your-apps-distribution)
 
 When you start the formal process of submitting your app to the Marketplace, in
 addition to uploading your app's files you'll need to answer a host of important
@@ -10,7 +10,7 @@ you determine whether you'll need to package multiple versions of the app. This
 tutorial prepares you by explaining the questions and ways you might answer
 them. 
 
-## Selling Your App or Making it Free
+## Selling Your App or Making it Free [](id=selling-your-app-or-making-it-free)
 
 Do you want to sell your app on the Marketplace? Or do you want to freely share
 it with anyone on the Marketplace? It's up to you. Most of the content that
@@ -24,7 +24,7 @@ Have you decided who's going to be listed as the app's author/owner? Have
 you decided who's going to manage the app once it's on the Marketplace? App
 ownership options are explained next. 
 
-## Publishing as an Individual or on Behalf of a Company
+## Publishing as an Individual or on Behalf of a Company [](id=publishing-as-an-individual-or-on-behalf-of-a-company)
 
 You can publish an app as yourself (an individual) or on behalf of a *company*.
 This determines the who is shown as the app's author and owner. Your selection
@@ -99,7 +99,7 @@ developer account options:
 Now that you've determined your app's owner and you've registered an account to
 manage the app, you can learn about licensing options for paid apps. 
 
-## Licensing and Pricing Your App
+## Licensing and Pricing Your App [](id=licensing-and-pricing-your-app)
 
 You have significant control over how to price your app. You choose the license
 term (perpetual vs. annual), choose the license type (standard vs. developer),
@@ -107,7 +107,7 @@ define a pricing structure (pricing and bundled discounting based on a license
 unit), and specify regional availability. Even after your app is on the
 Marketplace, you can tweak general pricing or modify regional pricing. 
 
-### Determining a License Term
+### Determining a License Term [](id=determining-a-license-term)
 
 Here are the license term options:
 
@@ -128,7 +128,7 @@ information on licensing terms and fees, please refer to the
 
 $$$
 
-### Determining License Type and License Unit Pricing
+### Determining License Type and License Unit Pricing [](id=determining-license-type-and-license-unit-pricing)
 
 Licenses are set to run on a permitted number of Instance Units (defined as a
 single installation of the Liferay Portal, which corresponds to one (1) Liferay
@@ -179,7 +179,7 @@ If you choose not to offer subscription services, customers are entitled to only
 app updates if and when updates become available. They can receive updates as
 long as they continue to have valid non-perpetual licenses. 
 
-### Setting Prices for License Options by Region
+### Setting Prices for License Options by Region [](id=setting-prices-for-license-options-by-region)
 
 You can specify countries your app will be available in and the app's price in
 in each of those countries. You can make it as simple (single price offered
@@ -199,7 +199,7 @@ Although Liferay Marketplace supports major currencies and a broad list of
 countries, not all currencies and countries are currently available. Additional
 currencies and countries may become available at a later time. 
 
-### Considering the Liferay Marketplace Fee
+### Considering the Liferay Marketplace Fee [](id=considering-the-liferay-marketplace-fee)
 
 By selling your paid apps on the Liferay Marketplace, you're agreeing to share
 app sales revenue with Liferay. For each app sale, you receive 80% of the sales
@@ -256,7 +256,7 @@ Payments are issued no later than 90 days after the transaction.
 Now that you've decided on licensing options and pricing, you can concentrate on
 what versions of Liferay your app will run on. 
 
-## Determining Versions of Liferay to Target
+## Determining Versions of Liferay to Target [](id=determining-versions-of-liferay-to-target)
 
 Of course, targeting the widest possible range of Liferay versions in an app
 typically draws larger audiences to the app. And there are certain features in
@@ -285,7 +285,7 @@ $$$
 Lastly, you should determine a versioning scheme for your app. How will you
 refer to the first version of your app, the second version, and so on. 
 
-## Decide on a Versioning Scheme
+## Decide on a Versioning Scheme [](id=decide-on-a-versioning-scheme)
 
 A version of an app represents the functionality of the app at a given point in
 time. When you first create an app, you give it an initial version (e.g.,

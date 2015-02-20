@@ -18,7 +18,7 @@ app!
 To begin the process of publishing your app, click *Add New App*. The app wizard
 appears, so that you can fill in your app's details.
 
-## Specify Your App's Initial Details
+## Specify Your App's Initial Details [](id=specify-your-apps-initial-details)
 
 From this screen you enter your app's basic details. Previous articles [Planning Your App's Distribution](/distribute/publish/-/knowledge_base/publish/planning-your-apps-distribution)
 and [Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app)
@@ -113,7 +113,7 @@ for information to help you decide how best to fill in many of these fields.
 Once you've entered all your app's details, click *Next* to get to the screen
 for uploading your app's files. 
 
-## Upload Your App's Plugin Files
+## Upload Your App's Plugin Files [](id=upload-your-apps-plugin-files)
 
 On this screen, you must specify the version of your app and upload its plugin
 files. The article [Planning Your App's Distribution](/distribute/publish/-/knowledge_base/publish/planning-your-apps-distribution)
@@ -142,7 +142,7 @@ If you selected *Free* for your app pricing, click *Next* to advance to the
 final screen. If you selected *Paid*, you'll be presented with additional
 options for licensing and pricing your app. 
 
-## Creating Your Licensing and Pricing Model
+## Creating Your Licensing and Pricing Model [](id=creating-your-licensing-and-pricing-model)
 
 Carefully consider which licensing structure best meets your needs. Once your
 app has been approved, these options, except for price updates, cannot be
@@ -191,7 +191,7 @@ each license option and for any support option you offered.
 When you have completed your app's pricing and availability, click *Next* to
 advance to the app preview screen. 
 
-## Preview and Submit Your App
+## Preview and Submit Your App [](id=preview-and-submit-your-app)
 
 Whenever you make a change (app details, adding files, adding new versions), you
 always wind up at the *App Preview* screen. This allows you to preview your app
@@ -202,7 +202,7 @@ changes until you are satisfied.
 
 Once you are satisfied, click *Submit for Review*. 
 
-## The Review Process
+## The Review Process [](id=the-review-process)
 
 When you submit an app to the Marketplace, the app is reviewed by the Liferay
 Marketplace staff to ensure that it meets the minimum standards described in the
