@@ -28,37 +28,160 @@ so that your app can be deployed on Liferay instances that have their [Plugin Se
 running. But before you start the formal publishing process, you must prepare
 your app's files and app meta-data. 
 
-<!-- TODO - Incorporate content from https://www.liferay.com/web/developer/marketplace/app-metadata-guidelines -->
-<!-- Rename to App Meta-data Guidelines -->
+## Marketplace App Meta-data Guidelines
 
-## Image and Naming Requirements
+The following app meta-data guidelines are intended to ensure that apps are
+submitted with important and necessary supporting information. The metadata that
+you submit with your app will serve both as necessary information for your app's
+buyers (eg., your contact info) and as promotional assets (eg., description,
+screenshots, etc.) that can help drive traffic to and downloads of your app!
+
+![Figure 1: Check out how good your app can look on the Markeplace.](../../images/dev-portal-app-metadata-guidelines.png)
 
 You'll want to think of a good name and description of your app. if you haven't
 already done so. take some screenshots, design an icon, and create a web site
-for your app. 
+for your app. The table below, can help guide you address the Marketplace app
+meta-data requirements and produce an appealing advertisement for your app.
 
-Here are some guidelines for these items:
-
-**Icons** for your app *must be* exactly 90 pixels in both height and width and
-must be in GIF, JPEG/JPG, or PNG format. The image size cannot exceed 512KB.
-Animated images are prohibited. 
-
-**Screenshots** for your app *must not exceed* 1080 pixels in width x 678 pixels
-in height and must be in  GIF, JPEG/JPG, or PNG format. The file size of each
-screenshot *must not exceed* 384KB. Each screenshot should preferably be the
-same size (each will be automatically scaled to match the aspect ratio of the
-above dimensions), and it is preferable if they are named sequentially, for
-example `fluffy-puppies-01.png`, `fluffy-puppies-02.png`, and so on. 
-
-**Titles of Apps**: In some views with Marketplace, titles of applications
-longer than 18 characters are shortened using an ellipsis. In the Marketplace,
-titles *must not be* longer than 50 characters.
-
-**Description, Tags, Websites and Version Numbers**: Descriptions, web sites and
-version numbers are to be as reflective of the product as possible. Please do
-not use misleading names, information, or icons. The tags suggestion tool that's
-a part of the app submittion wizard can aid you with tagging your asset.
-Descriptions should be as concise as possible.
+**Marketplace App Meta-data Guidelines:**
+  
+<table>
+	<thead>
+		<td class="table-header left-header">
+			Required Meta-data
+		</td>
+		<td class="table-header second">
+			Description
+		</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="table-header left-header">
+				App Name
+			</td>
+			<td class="">
+				This is probably the most important branding element of your
+				app, so be creative! Some important things to keep in mind:
+				<ul>
+					<li>
+						In some views within the Marketplace, titles of
+						applications longer than 18 characters will be shortened
+						with ellipsis.
+					</li>
+					<li>Titles must not be longer than 50 characters.</li>
+					<li>
+						App title may contain the word "Liferay" to describe its
+						use or intent as long as the name does not imply
+						official certification or validation from Liferay, Inc.
+						(For example, names such as "Exchange Connector for
+						Liferay" or "Integration Connector Kit for Liferay"
+						would be allowed, while "Liferay Mail Portlet," "Liferay
+						Management Console," or "Liferay UI Kit" would not be
+						permissible without explicit approval). Please refer to
+						our <a href="https://www.liferay.com/trademark">
+						trademark policy</a> for details.  
+					</li>
+					<li>
+					    Please try to conform the app name, as closely as
+					    possible, to the actual plugin (portlet, hook, theme,
+					    etc.) name.
+					</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="table-header left-header"> Support Information </td>
+			<td class="">
+				<p>
+					Please include an email address, contact information, and/or
+					website URL for the "Support" field. If someone encounters
+					an issue with your app, they will need a way to contact you.
+				<p>
+				    Even if you choose not to offer Support Services (by
+				    unchecking "Offer Support" during the app submission
+				    process), we require that you provide support contact
+				    information so that buyers can reach you with general
+				    questions about your app. 
+			</td>
+		</tr>
+		<tr>
+			<td class="table-header left-header"> Description </td>
+			<td class="">
+				Please provide a description for your app in English. At a
+				minimum, the description should provide a concise overview of
+				what the app does. Great descriptions also list key
+				functionalities and what customers can expect to gain by
+				deploying your app. If you'd like to see an example, you can
+				check out our description of the Social Office app on the
+				<a href="https://www.liferay.com/marketplace">Markeplace</a>. 
+				<p>
+					It's important that you specify any plugin dependencies
+					(eg., plugins that must be installed prior to running your
+					app) and environment compatibilities (eg., compatibility
+					with specific app servers) here, so that both potential
+					buyers and the Liferay app review team will be aware of
+					these requirements.
+			</td>
+		</tr>
+		<tr>
+			<td class="table-header left-header">
+				Compatibility with Future Minor Releases of Liferay Portal
+			</td>
+			<td class="">
+				Please include a "+" at the end of the latest version when
+				specifying version constraints in your
+				liferay-plugin-package.properties file (eg.,
+				"liferay-versions=6.1.1+, 6.1.20+"). This will ensure that your
+				app will continue to be deployable to future versions of Liferay
+				within a minor release. If, in the future, you discover your app
+				does NOT work with a particular Liferay version, you can modify
+				the list to exclude that version.
+			</td>
+		</tr>
+		<tr>
+			<td class="table-header left-header">
+				Increase Your Potential User Base </td>
+			<td class="">
+				In most cases, an app that is compatible with CE portal will
+				also run under EE portal, and vice versa. Specifying
+				compatibility with both EE and CE versions of the portal will
+				ensure that a wider audience has access to your app!
+				<p>
+					You can <a href="/web/developer/marketplace/license">request
+					a Liferay EE Developer License </a> to support testing and
+					confirm compatibility.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class="table-header left-header"> Icon </td>
+			<td class="">
+				Icons for your app must be exactly 90 pixels in both height and
+				width and must be in PNG, JPG, or GIF format. The image size
+				cannot exceed 512kb. Animated images are prohibited.
+				<p>
+					The use of the Liferay logo, including any permitted
+					alternate versions of the Liferay logo, is permitted only
+					with Liferay's explicit approval. Please refer to our <a
+					href="https://www.liferay.com/trademark">trademark
+					policy</a> for details.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class="table-header left-header"> Screenshots </td>
+			<td class=""> Screenshots for your app must not exceed 1080 pixels
+				in width x 678 pixels in height and must be in the JPG format.
+				The file size of each screenshot must not exceed 384KB. Each
+				screenshot should preferably be the same size (each will be
+				automatically scaled to match the aspect ratio of the above
+				dimensions), and it is preferable if they are named
+				sequentially, for example fluffy-puppies-01.png,
+				fluffy-puppies-02.png, and so on.
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 Make sure your icons, images, descriptions, and tags are free of profanity or
 other offensive material. 
@@ -67,9 +190,22 @@ During the publication process, you upload your app's individual plugins (`.war`
 files) along with its meta-data (name, description, version, icon,
 etc.). 
 
-Above and beyond these basics of creating apps in the form of Liferay plugins,
-there are additional considerations to take into account for preparing your app
-for publishing. 
+**Additional Requirements for Themes/Site Templates**
+ 
+A theme without content is like an empty house. If you're trying to sell an
+empty house, it may be difficult for prospective buyers to see its full beauty.
+However, staging the house with some furniture and decorations helps prospective
+buyers imagine what the house might look like with their belongings. Liferay's
+resources importer application is a tool that allows a theme developer to have
+files and web content automatically imported into the portal when a theme is
+deployed.
+
+All standalone themes that are uploaded to Liferay Marketplace must use the
+resources importer to include files/web content to provide a sample context for
+their theme. This ensures a uniform experience for Marketplace users: a user can
+download a theme from Marketplace, install it on their portal, go to Sites or
+Site Templates in the Control Panel and immediately see their new theme in
+action. You can read more about themes and even find examples in the [Tutorials](/develop/tutorials).
 
 ## Deployment Requirements
 
