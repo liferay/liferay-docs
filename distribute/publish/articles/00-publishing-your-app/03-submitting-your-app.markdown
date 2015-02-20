@@ -202,48 +202,6 @@ changes until you are satisfied.
 
 Once you are satisfied, click *Submit for Review*. 
 
-## The Review Process [](id=the-review-process)
-
-When you submit an app to the Marketplace, the app is reviewed by the Liferay
-Marketplace staff to ensure that it meets the minimum standards described in the
-previous articles.
-
-Liferay ensures that apps meet a minimum set of requirements by performing the
-following activities:
-
-- Running basic anti-virus checks
-- Ensuring titles, descriptions, images, etc. are appropriate
-- Doing basic sanity checking of functionality (e.g., deployment testing, etc.)
-
-Liferay does not do source code reviews and will not ask for your source code.
-Further, Liferay is not responsible for the behavior (or misbehavior) of apps on
-the Marketplace. For details regarding this, consult the *Liferay Marketplace
-User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual
-*End User License Agreements* associated with each app.
-
-Note, each of the following changes requires a review by Marketplace staff
-before the change is published to the Marketplace:
-
-- Submitting a new app
-- Changing details of an app (for example, changing the description or the
-  screenshots)
-- Adding a new package (set of files) to an existing app, in order to support
-  more Liferay releases
-- Adding a new version of an existing app
-
-While your submitted change is under review, you can view the status of your
-change by visiting *Home* &rarr; *Apps*. You can also cancel your submission by
-clicking *Cancel Submission* on the *App Preview* screen for each app.
-
-Once your app is approved by Marketplace staff, congratulations! You'll receive
-an email confirmation and at that moment your app is approved, it is made
-available on Marketplace. The app is also shown on your public Profile page,
-which lists all apps that you or your company's developed and published.
-
-If your app is rejected, an email is sent to the email address associated with
-the app, along with a note explaining the reasons for rejection. At that point,
-you can make the requested changes, and re-submit the app for approval.
-
-Now that you have successfully published your app, you'll likely get all kinds
-of feedback from users and yourself about what's right and wrong with it. The
-next article explores how to make changes once you have published your app.
+The Liferay Marketplace staff reviews and QA's your app. If you're interested in
+learning the status of your app through the QA/review process or if you're
+curious about the rigors of the process, you should read the next article. 
