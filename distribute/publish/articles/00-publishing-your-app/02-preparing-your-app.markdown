@@ -167,7 +167,7 @@ Liferay apps, packages are sometimes referred to as files that make up your app.
 Next, you'll drill down into the app packaging directives for each of your app's
 plugin projects. 
 
-## Specify App Packaging Directives
+## Specifying Packaging Directives
 
 When publishing your app, each plugin you upload is packaged into one or more
 *packages* for each Liferay release you're supporting. When you upload your
@@ -246,10 +246,12 @@ Here are some additional examples:
     liferay-versions=6.1.30+
 
 You may find it advantageous to implement one of your app's plugins in multiple
-ways, customizing that plugin for different Liferay releases. We'll illustrate
-this with an example. 
+ways, customizing that plugin for different Liferay releases. The section below
+contains an example that demonstrates doing this. 
 
-### Example App: Using Different Versions of a Hook
++$$$ 
+
+**Example: Using Different Versions of a Hook in an App**
 
 Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
 standard API calls that work on all Liferay 6.1 releases. Your hook, on the
@@ -271,5 +273,7 @@ that has plugins targeted to different Liferay releases, but it's easy.
 Marketplace takes care of it based on the `liferay-versions` values you
 specified for each plugin. We'll talk about that next.
 
+$$$
+
 Now that you've prepared your app's files and specified its meta-data, it's
-time to get it to the Marketplace! 
+time to get it to submit it to Liferay for publishing on the Marketplace! 
