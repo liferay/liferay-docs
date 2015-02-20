@@ -6,7 +6,7 @@ plugins, see the [Tutorials Introduction](/develop/tutorials/-/knowledge_base/6-
 A *Liferay App* (sometimes just called an *app*) is a collection of one or more
 of these plugins, packaged together to represent the full functionality of an
 application on the Liferay platform. In addition to the plugins contained within
-an app, apps have meta-data such as names, descriptions, versions, and other
+an app, apps have metadata such as names, descriptions, versions, and other
 ancillary information used to describe and track the app throughout its life
 cycle.
 
@@ -26,11 +26,11 @@ At this point in preparing to publish your app, you've developed your app and,
 if you're preparing a paid app, you've specified a portal access control list [\(PACL\)](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl),
 so that your app can be deployed on Liferay instances that have their [Plugin Security Manager](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl#enabling-the-security-manager)
 running. But before you start the formal publishing process, you must prepare
-your app's files and app meta-data. 
+your app's files and app metadata. 
 
-## Marketplace App Meta-data Guidelines
+## Marketplace App Metadata Guidelines
 
-The following app meta-data guidelines are intended to ensure that apps are
+The following app metadata guidelines are intended to ensure that apps are
 submitted with important and necessary supporting information. The metadata that
 you submit with your app will serve both as necessary information for your app's
 buyers (eg., your contact info) and as promotional assets (eg., description,
@@ -41,14 +41,14 @@ screenshots, etc.) that can help drive traffic to and downloads of your app!
 You'll want to think of a good name and description of your app. if you haven't
 already done so. take some screenshots, design an icon, and create a web site
 for your app. The table below, can help guide you address the Marketplace app
-meta-data requirements and produce an appealing advertisement for your app.
+metadata requirements and produce an appealing advertisement for your app.
 
-**Marketplace App Meta-data Guidelines:**
+**Marketplace App Metadata Guidelines:**
   
 <table>
 	<thead>
 		<td class="table-header left-header">
-			Required Meta-data
+			Required Metadata
 		</td>
 		<td class="table-header second">
 			Description
@@ -187,7 +187,7 @@ Make sure your icons, images, descriptions, and tags are free of profanity or
 other offensive material. 
 
 During the publication process, you upload your app's individual plugins (`.war`
-files) along with its meta-data (name, description, version, icon,
+files) along with its metadata (name, description, version, icon,
 etc.). 
 
 **Additional Requirements for Themes/Site Templates**
@@ -276,11 +276,6 @@ keep in mind:
  test your app thoroughly with the security manager enabled. 
 
 $$$
-
-<!--
-Now that you've learned the packaging and deployment requirements for your app,
-let's ...
--->
 
 Apps usually consist of multiple components (e.g., multiple
 `.war` file plugins) that are spread across multiple plugin types. In addition,
@@ -411,5 +406,5 @@ specified for each plugin. We'll talk about that next.
 
 $$$
 
-Now that you've prepared your app's files and specified its meta-data, it's
+Now that you've prepared your app's files and specified its metadata, it's
 time to get it to submit it to Liferay for publishing on the Marketplace! 
