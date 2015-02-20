@@ -28,6 +28,9 @@ so that your app can be deployed on Liferay instances that have their [Plugin Se
 running. But before you start the formal publishing process, you must prepare
 your app's files and app meta-data. 
 
+<!-- TODO - Incorporate content from https://www.liferay.com/web/developer/marketplace/app-metadata-guidelines -->
+<!-- Rename to App Meta-data Guidelines -->
+
 ## Image and Naming Requirements
 
 You'll want to think of a good name and description of your app. if you haven't
@@ -142,9 +145,6 @@ $$$
 Now that you've learned the packaging and deployment requirements for your app,
 let's ...
 -->
-
-<!-- TODO - Incorporate content from https://www.liferay.com/web/developer/marketplace/app-metadata-guidelines -->
-
 
 Apps usually consist of multiple components (e.g., multiple
 `.war` file plugins) that are spread across multiple plugin types. In addition,
