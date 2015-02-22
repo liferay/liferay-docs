@@ -177,7 +177,7 @@ available on your profile [liferay.com](http://liferay.com) page
 ([liferay.com](http://liferay.com) account required!). Then, we covered the
 requirements for publishing apps, which did not differ significantly from
 requirements for general Liferay development. Next, we showed how you can
-publish a sample app on the Marketplace and how you can modify it as the app
+publish apps on the Marketplace and how you can modify it as the app
 evolves. Finally, we looked at how to track the adoption of apps using view,
 download, and install metrics.
 
