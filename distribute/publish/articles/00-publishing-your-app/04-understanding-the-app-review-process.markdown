@@ -33,6 +33,41 @@ Pending), Approved (Version Pending QA), and Approved (Version Denied).
 
 The app review process consists of **Two Major Phases**:
 
+<style>
+.lego-image {
+	max-height: 100%;
+	max-width: 100%;
+}
+.max-960 {
+	margin: 0 auto;
+	max-width: 960px;
+}
+.no-max .max-960 {
+	max-width: none;
+}
+.app-review-process-table {
+	padding-bottom: 40px;
+}
+.app-review-process-table thead td {
+	font-weight: bold;
+}
+.app-review-process-table .first-column {
+	border-left: none;
+}
+.app-review-process-table .second-column {
+	border-right: none;
+	width: 156px;
+}
+.app-review-process-table td {
+	border : 1px solid;
+	padding: 15px;
+}
+</style>
+<div class="lego-article app-review-process-table" id="article-33460874">
+<div class="lego-article-content max-960">
+<div class="aui-helper-clearfix lego-section section-1" >
+<div class="aui-w100 block-1 content-column lego-block" >
+<div class="content-column-content">
 <table>
 	<thead>
 		<td class="first-column"> <strong> Review Phase </strong> </td>
@@ -76,6 +111,11 @@ The app review process consists of **Two Major Phases**:
 		</tr>
 	</tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 **Our QA Test Environments** are summarized below. At a minimum, your app should
 be tested against these environments prior to submission. If technical reasons
@@ -84,6 +124,41 @@ issues), please specify your app's requirements in the app description and
 documentation so that our review team can test accordingly and exclude certain
 test conditions, if necessary. 
 
+<style>
+.lego-image {
+	max-height: 100%;
+	max-width: 100%;
+}
+.max-960 {
+	margin: 0 auto;
+	max-width: 960px;
+}
+.no-max .max-960 {
+	max-width: none;
+}
+.test-environments-table td {
+	border : 1px solid;
+	padding: 15px;
+}
+.test-environments-table td.empty {
+	border-left: none;
+}
+.test-environments-table thead td {
+	text-align: center;
+}
+.test-environments-table .first-column {
+	border-left: none;
+	font-weight: bold;
+}
+.test-environments-table .third-column {
+	border-right: none;
+}
+</style> 
+<div class="lego-article test-environments-table" id="article-33460919">
+<div class="lego-article-content max-960">
+<div class="aui-helper-clearfix lego-section section-1" >
+<div class="aui-w100 block-1 content-column lego-block" >
+<div class="content-column-content">
 <table>
 	<thead>
 		<td class="empty">
@@ -182,6 +257,11 @@ test conditions, if necessary.
 		</tr>
 	</tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 **Important:** Unless specified otherwise in your app description or
 documentation, your app must run under all specified app servers in order to be

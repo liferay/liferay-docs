@@ -44,7 +44,40 @@ for your app. The table below, can help guide you address the Marketplace app
 metadata requirements and produce an appealing advertisement for your app.
 
 **Marketplace App Metadata Guidelines:**
-  
+
+<style>
+.lego-image {
+	max-height: 100%;
+	max-width: 100%;
+}
+.max-960 {
+	margin: 0 auto;
+	max-width: 960px;
+}
+.no-max
+.max-960 {
+	max-width: none;
+}
+.metadata-guidelines-table td {
+	border-bottom: 1px solid;
+	border-top: 1px solid;
+	padding: 10px;
+}
+.table-header {
+	font-weight: bold;
+}
+.table-header.second {
+	width: 70%;
+}
+.left-header {
+	border-right: 1px solid;
+}
+</style>
+<div class="lego-article metadata-guidelines-table" id="article-33460946">
+<div class="lego-article-content max-960">
+<div class="aui-helper-clearfix lego-section section-1" >
+<div class="aui-w100 block-1 content-column lego-block" >
+<div class="content-column-content">
 <table>
 	<thead>
 		<td class="table-header left-header">
@@ -182,6 +215,11 @@ metadata requirements and produce an appealing advertisement for your app.
 		</tr>
 	</tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 Make sure your icons, images, descriptions, and tags are free of profanity or
 other offensive material. 
