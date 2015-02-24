@@ -1,10 +1,11 @@
+#  Installation and Setup [](id=installation-and-setup)
+
 <div id="62-PDF" style="width:250px; float: left; text-align:center"><a href="https://dev.liferay.com/documents/10184/359510/using-liferay-portal-6.2.pdf">PDF</a></div>
 
-<div id="62-eBooks" style="width:250px; float: left; text-align:center">eBook (coming soon)</div>
+<div id="62-eBooks" style="width:250px; float: left; text-align:center"><a href="https://dev.liferay.com/documents/10184/359510/using-liferay-portal-62.azw3">Kindle</a> <a href="https://dev.liferay.com/documents/10184/359510/using-liferay-portal-62.epub">epub (iPad, Nook)</a></div>
 
-<div id="62-purchase" style="width:250px; float: left; text-align:center"><a href="http://www.lulu.com/shop/richard-sezov-jr/using-liferay-portal-62/paperback/product-22010160.html">Purchase Paperback</a></div>
+<div id="62-purchase" style="width:250px; float: left; text-align:center"><a href="http://www.lulu.com/shop/richard-sezov-jr/using-liferay-portal-62/paperback/product-22010160.html">Paperback</a></div>
 
-#  Installation and Setup [](id=installation-and-setup)
 
 Liferay Portal is one of the most flexible applications on the market today with
 regard to application server environments. It supports a wide variety of
