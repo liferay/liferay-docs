@@ -106,8 +106,8 @@ the SDK generated for you. This class implements the
 interface (required), and extends the
 [BaseTrackingAction](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseTrackingAction.java)
 class. It's not mandatory to extend `BaseTrackingAction`, but it provides some
-helpful utilities, such as support for generating your rule's UI using
-FreeMarker. Note that there are multiple methods in the generated
+helpful utilities, such as support for generating your tracking action's UI
+using FreeMarker. Note that there are multiple methods in the generated
 `-TrackingAction` class; you must modify them to create a working tracking
 action. You'll begin defining the tracking action's behavior by modifying the
 way it looks to administrators in the Tracking Actions form.
@@ -117,11 +117,11 @@ icon. You can change the tracking action's icon by modifying the `getIcon`
 default method used in the `-TrackingAction` class.
 
 1. Open your tracking action's Java class file and find the `getIcon` method.
-This method configures the icon displayed in the Tracking Actions UI. You can
-replace the value *"icon-puzzle"* with the name of a Font Awesome icon (e.g.,
-*"icon-envelope-alt"* or *"icon-trophy"*) that appropriately fits your tracking
-action. For a complete listing of icons that you can specify, you can visit
-[Font Awesome](http://fortawesome.github.io/Font-Awesome/3.2.1/).
+   This method configures the icon displayed in the Tracking Actions UI. You can
+   replace the value *"icon-puzzle"* with the name of a Font Awesome icon (e.g.,
+   *"icon-envelope-alt"* or *"icon-trophy"*) that appropriately fits your
+   tracking action. For a complete listing of icons that you can specify, you
+   can visit [Font Awesome](http://fortawesome.github.io/Font-Awesome/3.2.1/).
 
 2. Redeploy your tracking action plugin by running `ant deploy` from the command
    prompt. Now your tracking action uses its new icon.
@@ -137,7 +137,7 @@ FreeMarker language.
 
 If you're interested in using a technology besides FreeMarker to implement your
 UI, you can add a method `getFormHTML` to your `-TrackingAction` class. For
-further details on thismethod, see the
+further details on this method, see the
 [BaseTrackingAction](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseTrackingAction.java)
 class.
 
@@ -176,10 +176,17 @@ in. Here's a code snippet from a FreeMarker template (e.g.,
         </#list>
     </#if>
 
-This FreeMarker code creates an AUI input field for an alias and newsletter
-ID. If there is more than one event type, then the Tracking Action field is a
-*select* drop-down box; otherwise, the event type field is disabled. For this
-example template, you'd need to declare the `eventTypes` variable in your
+This FreeMarker code creates an AUI input field for an Alias and Newsletter ID,
+which are both required. The Alias and Newsletter ID fields are necessary
+because a name and ID are required for the tracking action to know which
+newsletter to track.
+
+Another field that is created from the above sample code is the Tracking Action
+field. The tracking action specifies the type of event to monitor related to the
+tracked entity (e.g., view, click, submit, etc.). If there is more than one
+event type, then the Tracking Action field is a *select* drop-down box;
+otherwise, the event type field is disabled, or view only. For this example
+template, you'd need to declare the possible `eventTypes` in your
 `-TrackingAction` class. You'll learn how to do this later.
 
 ![Figure 3: This Newsletter tracking action requires the newsletter alias and ID.](../../images/tracking-action-template.png)
@@ -188,8 +195,112 @@ For other working examples of FreeMarker templates used for tracking actions,
 visit the Audience Targeting [project](https://github.com/liferay/liferay-apps-content-targeting/tree/samples2015)
 on Github.
 
-<!-- Have not added FTL snippet 5 to code project in IDE -->
+Now that the your tracking action's UI is developed, you can resume the
+configuration of your tracking action's behavior. The next method you'll edit in
+your `-TrackingAction` class is the `populateContext` method. This method takes
+the values that were entered by the user in the tracking action form and injects
+them into the `context` map parameter. For example, the following
+`populateContext` method populates the `eventTypes` variable that was used in
+the newsletter FTL sample with the event types available in the newsletter
+tracking action:
 
+    @Override
+    protected void populateContext(
+            TrackingActionInstance trackingActionInstance,
+            Map<String, Object> context, Map<String, String> values) {
+
+        context.put("eventTypes", getEventTypes());
+
+        ThemeDisplay themeDisplay = (ThemeDisplay)context.get("themeDisplay");
+
+        String trackURL = themeDisplay.getPortalURL() + "/o/tracking-action-newsletter/track";
+
+        String trackImageURL = HttpUtil.addParameter(
+                trackURL, "elementId", "elementIdToken");
+        trackImageURL = HttpUtil.addParameter(trackImageURL, "imageId", "1");
+        trackImageURL = HttpUtil.addParameter(trackImageURL, "email", "");
+
+        context.put("trackImageURL", trackImageURL);
+    }
+
+By populating the `eventTypes` variable, the Tracking Action field can use it to
+distinguish whether or not a drop-down menu of tracking actions are displayed.
+In many cases, a tracking action has multiple tracking event options. The more
+tracking options your tracking action provides, the more oppurtunities you have
+to decipher your audience's likes and dislikes within your site.
+
+This sample newsletter tracking action tracks who views the configured
+newsletter by placing a transparent image in the newsletter. Whenever the image
+is viewed, the image makes a call to the tracking mechanism, which computes and
+stores the information. You'll learn more about the tracking mechanism and how
+to create one later.
+
+Notice in the `populateContext` method above, a tracking URL `.../track` is
+created and a tracking image URL is also injected into the `context` parameter.
+These will be used in the tracking mechanism that you'll create next.
+
+Now that your tracking action's behavior is configured, you'll create the
+tracking mechanism. This can be done using a hook or servlet. For this tutorial,
+you'll learn about creating a tracking servlet.
+
+The first thing you'll need to do is create a separate Java class where all of
+your tracking logic is stored. In the
+`src/com/liferay/content/targeting/tracking/action/[TRACKING_ACTION_NAME]`
+directory, create a `[TRACKING_ACTION_NAME]ProcessorServlet` class. This class
+should extend the
+[HttpServlet](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServlet.html)
+class.
+
+There are two important aspects of the tracking mechanism that you'll need to
+configure:
+
+- tracking the requests that match the tracking action event configured from the
+UI
+- storing the tracked information
+
+To illustrate how to accomplish these two goals, you can study the
+[NewsletterProcessorServlet](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/tracking-action-newsletter/src/com/liferay/content/targeting/tracking/action/newsletter/NewsletterProcessorServlet.java)
+class, which tracks when a user views a newsletter.
+
+Whenever the transparent image is viewed in the newsletter, the image makes a
+call to the servlet. The servlet intercepts all requests matching the pattern
+`/track` in order to track information about them. Recall from the
+`populateContext` method that you injected the tracking URL `.../track` into the
+`context` variable. This is what is used to distinguish calls to the servlet
+that are relevant to the tracking action.
+
+Once the servlet intercepts the calls related to the transparent image, it must
+have a way to store it. An analytics service is available, which can be used to
+store your tracking information.
+
+In the newsletter servlet tracking mechanism, the tracking information is
+injected into a
+[Message](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/messaging/Message.html)
+object and sent to the analytics service using Liferay's message bus:
+
+    Message message = new Message();
+
+    ...
+    message.put("userId", userId);
+    message.put("event", event);
+    message.put("elementId", elementId);
+    message.put("layoutURL", url);
+
+    MessageBusUtil.sendMessage("liferay/analytics", message);
+
+Using the message bus is a common way to send tracking information for storage
+in Liferay's analytics service. To learn more about Liferay's message bus, visit
+the [Using Message Bus](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/using-message-bus-liferay-portal-6-2-dev-guide-06-en)
+section.
+
+<!-- Replace link once Message Bus section is available in LDN. -Cody -->
+
+
+
+
+
+
+<!-- Have not added FTL snippet 5 to code project in IDE -->
 
 3. Of course, you still need to make some changes to define how your tracking
    action works. Open the Java class file that was created (e.g.,
