@@ -74,7 +74,7 @@ Campaign*. Then scroll down to the Tracking Actions form.
 
     ![Figure 1: You can add your new tracking action to the form, but it doesn't do anything yet.](../../images/tracking-action-deploy.png)
 
-You've succesfully deployed your tracking action plugin. Next, you'll learn
+You've successfully deployed your tracking action plugin. Next, you'll learn
 about the components that were generated for you and how to edit them to create
 a functional Audience Targeting tracking action.
 
@@ -184,8 +184,8 @@ newsletter to track.
 Another field that is created from the above sample code is the Tracking Action
 field. The tracking action specifies the type of event to monitor related to the
 tracked entity (e.g., view, click, submit, etc.). If there is more than one
-event type, then the Tracking Action field is a *select* drop-down box;
-otherwise, the event type field is disabled, or view only. For this example
+event type available, then the Tracking Action field is a *select* drop-down
+box; otherwise, the event type field is disabled, or view only. For this example
 template, you'd need to declare the possible `eventTypes` in your
 `-TrackingAction` class. You'll learn how to do this later.
 
@@ -198,7 +198,7 @@ on Github.
 Now that the your tracking action's UI is developed, you can resume the
 configuration of your tracking action's behavior. The next method you'll edit in
 your `-TrackingAction` class is the `populateContext` method. This method takes
-the values that were entered by the user in the tracking action form and injects
+the values that were entered by the user in the Tracking Action form and injects
 them into the `context` map parameter. For example, the following
 `populateContext` method populates the `eventTypes` variable that was used in
 the newsletter FTL sample with the event types available in the newsletter
@@ -224,20 +224,21 @@ tracking action:
     }
 
 By populating the `eventTypes` variable, the Tracking Action field can use it to
-distinguish whether or not a drop-down menu of tracking actions are displayed.
+distinguish whether or not a drop-down menu of tracking actions is displayed.
 In many cases, a tracking action has multiple tracking event options. The more
-tracking options your tracking action provides, the more oppurtunities you have
+tracking options your tracking action provides, the more opportunities you have
 to decipher your audience's likes and dislikes within your site.
 
 This sample newsletter tracking action tracks who views the configured
 newsletter by placing a transparent image in the newsletter. Whenever the image
 is viewed, the image makes a call to the tracking mechanism, which computes and
 stores the information. You'll learn more about the tracking mechanism and how
-to create one later.
+to create one later. You'll also learn more about the transparent image, and how
+it communicates with the tracking mechanism later in this tutorial.
 
 Notice in the `populateContext` method above, a tracking URL `.../track` is
-created and a tracking image URL is also injected into the `context` parameter.
-These will be used in the tracking mechanism that you'll create next.
+created and a tracking image URL is injected into the `context` parameter. These
+will be used in the tracking mechanism that you'll create next.
 
 Now that your tracking action's behavior is configured, you'll create the
 tracking mechanism. This can be done using a hook or servlet. For this tutorial,
@@ -254,9 +255,9 @@ class.
 There are two important aspects of the tracking mechanism that you'll need to
 configure:
 
-- tracking the requests that match the tracking action event configured from the
+- Tracking the requests that match the tracking action event configured from the
 UI
-- storing the tracked information
+- Storing the tracked information
 
 To illustrate how to accomplish these two goals, you can study the
 [NewsletterProcessorServlet](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/tracking-action-newsletter/src/com/liferay/content/targeting/tracking/action/newsletter/NewsletterProcessorServlet.java)
@@ -264,7 +265,7 @@ class, which tracks when a user views a newsletter.
 
 Whenever the transparent image is viewed in the newsletter, the image makes a
 call to the servlet. The servlet intercepts all requests matching the pattern
-`/track` in order to track information about them. Recall from the
+`/track` in order to track the request's information. Recall from the
 `populateContext` method that you injected the tracking URL `.../track` into the
 `context` variable. This is what is used to distinguish calls to the servlet
 that are relevant to the tracking action.
@@ -293,56 +294,41 @@ in Liferay's analytics service. To learn more about Liferay's message bus, visit
 the [Using Message Bus](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/using-message-bus-liferay-portal-6-2-dev-guide-06-en)
 section.
 
-<!-- Replace link once Message Bus section is available in LDN. -Cody -->
+<!-- Replace above link once Message Bus section is available in LDN. -Cody -->
 
+Now that you know about the tracking mechanism and how it should function, it's
+time to finish off your custom tracking action. 
 
+Throughout this tutorial, using a transparent image has been mentioned
+frequently, which sends requests to the tracking mechanism when the newsletter
+is viewed. You're probably curious as to how a transparent image can be added to
+content to track its views.
 
+The transparent image can be generated as a code snippet by your tracking action
+once you've entered the ID into the form. Once saving, you can add the generated
+code into the content you'd like to track (e.g., newsletter).
 
+![Figure 4: You can insert the transparent image into your content by copying and pasting the generated code from the form.](../../images/tracking-action-paste-image.png)
 
+To do this, you'll need to make a few modifications to your FTL file. As an
+example to reference, view the sample newsletter's
+[ct_tracking_action.ftl](https://github.com/liferay/liferay-apps-content-targeting/commit/82ac9bd2d63e285decb85bd69cf7ed9445016e61)
+diffs, which highlight the logic necessary for your tracking action to generate
+transparent image code.
 
-<!-- Have not added FTL snippet 5 to code project in IDE -->
+In summary, the `-TrackingAction` class generates a generic tracking URL which
+is missing the newsletter ID. In the updated FTL, the newsletter ID you
+specified in the form is added, supplying the full tracking URL that should be
+used by the transparent image.
 
-3. Of course, you still need to make some changes to define how your tracking
-   action works. Open the Java class file that was created (e.g.,
-   `ForumSubscriptionTrackingAction.java`). Here are some of the methods that
-   you can implement to modify your tracking action behavior:
-
-    * `processTrackingAction`: handles the information provided by the
-    administrator when configuring this tracking action through the tracking
-    action GUI (for example, to store the selected time zone in the
-    `typeSettings` field in the database from a *select*).
-
-    * `getEventTypes`: returns a list of events that can be tracked by this
-    tracking action.
-
-    * `getFormHtml`: returns the HTML displayed to administrators when
-    configuring a tracking action through the tracking action GUI. The
-    `BaseTrackingAction` class already implements this method, including a
-    FreeMarker template placed in `templates/ct_tracking_action.ftl`. For
-    example, for a Forum Subscription Tracking Action, you may add a selector
-    with the available forums and categories.
-
-    * `getIcon`: configures the icon displayed in the Tracking Action GUI. You
-    should use the name of a FontAwesome icon. For example: *"icon-coffee"* or
-    *"icon-globe"*
-    (See [Font Awesome documentation](http://fortawesome.github.io/Font-Awesome/3.2.1/)).
-
-    * `getName`: the name of your tracking action (it can be localized).
-
-    * `getSummary`: the description of the tracking action once it is
-    configured. This is used to help administrators. For example, if the Forum
-    Subscription Tracking Action has been configured to track the Sports Forum,
-    then the summary may be *Tracking visits to content in the Sports Forum*.
-
-4. Finally, deploy the tracking action plugin to the Liferay server. The new
-   tracking action is available in the Add/Edit Campaign form. When the Campaign
-   admin selects it, the GUI defined by the developer (e.g., the forums and
-   categories selector) is added to the Add/Edit Campaign form so the admin can
-   set a value for that specific campaign.
-
-Awesome! You now have all the knowledge necessary to create your own customized
-tracking actions and deploy them to your Audience Targeting app. For working
+You now have all the knowledge necessary to create your own customized tracking
+action and deploy it to your Audience Targeting application. For working
 examples of the default tracking actions included in the Audience Targeting app,
 visit the Audience Targeting
 [project](https://github.com/liferay/liferay-apps-content-targeting) page and
-study the folders with the `tracking-action-` prefix.
+study the folders with the `tracking-action-` prefix. To view the final solution
+of a deployable sample newsletter tracking action, you can download its
+[ZIP file]().
+
+<!-- Provide link to newsletter tracking action ZIP file once it's available.
+-Cody -->
