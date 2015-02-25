@@ -379,5 +379,5 @@ That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
 Liferay's WCM, you'll want to use structures and templates found in the
 [Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
-section. Next, let's see how you can manage your content with an approval
+chapter. Next, let's see how you can manage your content with an approval
 process called workflow.

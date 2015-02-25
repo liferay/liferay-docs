@@ -9,7 +9,7 @@ to the site only after it has been reviewed and approved.
 Liferay's workflow engine is called Kaleo workflow and it ships with Liferay CE.
 If you have uninstalled it or are using EE, it needs to be installed and
 configured separately. This is covered in the
-[Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow) section.
+[Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow) chapter.
 Since we have somewhat of a "What came first--the chicken or the egg?" problem,
 for now, we'll assume it's installed and look at how you can take advantage of
 workflow in getting your content through any approval steps between creation and
@@ -36,7 +36,7 @@ to Liferay.
 ![Figure 2.23: You can select the pre-made *Single Approver* workflow to experiment with workflow management.](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in the
-[Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow) section,
+[Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow) chapter,
 you can design workflows to suit your organization's approval process. For the
 Lunar Resort's implementation we'll use the *Single Approver* workflow which
 ships with the product.

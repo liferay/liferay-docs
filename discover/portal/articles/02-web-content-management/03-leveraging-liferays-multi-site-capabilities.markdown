@@ -359,7 +359,7 @@ import data onto production servers, but you should not make this a regular
 occurrence. If you want to regularly move pages from one server to another, you
 should use Liferay's staging environment, which we discuss in the
 [Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
-section.
+chapter.
 
 LARs can be a good way to back up your site's content. You can export them to a
 specific location on your server which is backed up. If you ever have to restore

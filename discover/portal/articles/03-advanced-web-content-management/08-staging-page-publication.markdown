@@ -235,19 +235,20 @@ Lunar Resort site and then click *Save*.
 
 Before you activate staging, you can choose which portlets' data should be
 copied to staging. We'll cover many of the collaboration portlets listed under
-the Staged Portlets heading when we come to chapter 8. For now, you just need to
-be aware that you can enable or disable staging for any of these portlets. Why
-might you want to enable staging for some portlet types but not others? In the
-case of collaborative portlets, you probably *don't* want to enable staging
-since such portlets are designed for user interaction. If their content were
-staged, you'd have to manually publish your site whenever somebody posted a
-message on the message boards to make that message appear on the live site.
-Generally, you'll want web content to be staged because end users aren't
-creating that kind of content--web content is the stuff you publish to your
-site. But portlets like the Message Boards or Wiki would likely benefit from
-*not* being staged. Notice which portlets are marked for staging by default: if
-you enable staging and accept the defaults, staging is *not* enabled for the
-collaborative portlets.
+the Staged Portlets heading when we come to the
+[Collaboration Suite](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
+chapter. For now, you just need to be aware that you can enable or disable
+staging for any of these portlets. Why might you want to enable staging for some
+portlet types but not others? In the case of collaborative portlets, you
+probably *don't* want to enable staging since such portlets are designed for
+user interaction. If their content were staged, you'd have to manually publish
+your site whenever somebody posted a message on the message boards to make that
+message appear on the live site. Generally, you'll want web content to be staged
+because end users aren't creating that kind of content--web content is the stuff
+you publish to your site. But portlets like the Message Boards or Wiki would
+likely benefit from *not* being staged. Notice which portlets are marked for
+staging by default: if you enable staging and accept the defaults, staging is
+*not* enabled for the collaborative portlets.
 
 ## Using the Staging Environment [](id=using-the-staging-environment)
 
