@@ -38,7 +38,9 @@ down into its features. Note that web content is just one kind of asset on
 Liferay. Other types of content (blog posts, wiki articles, message board posts,
 etc.) are also considered assets. Liferay provides a general framework for
 handling assets that includes tags, categories, comments, ratings, and more.
-Please see chapter 5 for more information on Liferay's asset framework.
+Please see the
+[Displaying Content Dynamically](/discover/portal/-/knowledge_base/6-2/displaying-content-dynamically)
+section for more information on Liferay's asset framework.
 
 ## Creating (Basic) Content [](id=creating-basic-content)
 
@@ -168,7 +170,9 @@ also pair the text with a small image.
 *Announcements*, *Blogs*, *General*, *News*, *Press Release*, and *Test*. You
 can also create tags to make the content easier to find in a search. Note that
 these categories are defined by a property in the properties file; see the
-`journal.article.types` property in chapter 20 for further information. 
+`journal.article.types` property in the
+[Properties Document](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Journal%20Portlet)
+for further information. 
 
 +$$$
 
@@ -244,7 +248,9 @@ a Wiki Page.
 ![Figure 2.19: This blog entry has links to three Related Assets: one web content and two message board entries.](../../images/related-assets-link.png)
 
 You'll learn how to publish links to related assets using the Related Assets
-portlet in the *Defining content relationships* section of chapter 5.
+portlet in the
+[Defining Content Relationships](/discover/portal/-/knowledge_base/6-2/defining-content-relationships)
+section.
 
 **Permissions:** customize who has access to the content. By default, content is
 viewable by Anyone (Guest Role). You can limit viewable permissions by selecting
@@ -258,8 +264,8 @@ represent anything you like, such as the web content's author or creation date.
 If custom fields have been defined for web content (which can be done from the
 *Custom Fields* page of the Control Panel), they appear here.
 
-For more information on Custom Fields see the Custom Fields section in chapter
-16.
+For more information on Custom Fields see the
+[Custom Fields](/discover/portal/-/knowledge_base/6-2/custom-fields) section.
 
 For this piece of web content, we don't need to change anything. After you're
 finished with permissions, click *Save as Draft*. This saves the content in
@@ -311,8 +317,9 @@ The Print button pops the content up in a separate browser window that contains
 just the content, without any of the web site navigation. This is handy for
 printing the content. Enabling ratings shows one of two ratings interfaces
 Liferay has: five stars or thumbs up and thumbs down. This can be set globally
-in the `portal-ext.properties` file. See chapter 12 for further information
-about this.
+in the `portal-ext.properties` file. See the
+[Properties Document](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Ratings%20Tag%20Library) for further information
+for more details about this.
 
 Enabling comments creates a discussion forum attached to your content which
 users can use to discuss your content. Enabling ratings on comments gives your
@@ -370,6 +377,7 @@ Controls* to return to the original format.
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
-Liferay's WCM, you'll want to use structures and templates found in chapter 3.
-Next, let's see how you can manage your content with an approval process called
-workflow. 
+Liferay's WCM, you'll want to use structures and templates found in the
+[Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
+section. Next, let's see how you can manage your content with an approval
+process called workflow.

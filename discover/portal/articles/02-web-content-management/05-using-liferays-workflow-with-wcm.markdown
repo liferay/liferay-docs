@@ -8,10 +8,12 @@ to the site only after it has been reviewed and approved.
 
 Liferay's workflow engine is called Kaleo workflow and it ships with Liferay CE.
 If you have uninstalled it or are using EE, it needs to be installed and
-configured separately. This is covered in chapter 6. Since we have somewhat of a
-"What came first--the chicken or the egg?" problem, for now, we'll assume it's
-installed and look at how you can take advantage of workflow in getting your
-content through any approval steps between creation and publication.
+configured separately. This is covered in the
+[Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow) section.
+Since we have somewhat of a "What came first--the chicken or the egg?" problem,
+for now, we'll assume it's installed and look at how you can take advantage of
+workflow in getting your content through any approval steps between creation and
+publication.
 
 You may have noticed something appears to be missing from the staging process
 discussed above. In particular, you might be asking the question, "How do I
@@ -33,16 +35,20 @@ to Liferay.
 
 ![Figure 2.23: You can select the pre-made *Single Approver* workflow to experiment with workflow management.](../../images/04-web-content-workflow-config.png)
 
-As you'll discover in chapter 10, you can design workflows to suit your
-organization's approval process. For the Lunar Resort's implementation we'll use
-the *Single Approver* workflow which ships with the product.
+As you'll discover in the
+[Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow) section,
+you can design workflows to suit your organization's approval process. For the
+Lunar Resort's implementation we'll use the *Single Approver* workflow which
+ships with the product.
 
 ## Defining Workflows for Web Content [](id=defining-workflows-for-web-content)
 
 Let's set up Liferay's Workflow for the Lunar Resort web site. You must have the
 Kaleo workflow plugin installed in order for the workflow categories to appear
 in the Control Panel. Liferay's Kaleo workflow engine ships with CE versions of
-Liferay. For installation instructions for Liferay EE, please see chapter 10.
+Liferay. For installation instructions for Liferay EE, please see the
+[Enabling Workflow](/discover/portal/-/knowledge_base/6-2/enabling-workflow)
+section.
 
 1. Go to the Site Administration page and select *Workflow Configuration* from
 the *Configuration* section.
@@ -85,4 +91,6 @@ specific users assigned to one or more roles for approving content. Our example
 was of a very straightforward workflow, as it has only a single approver. Kaleo
 workflow allows you to design workflows that go through as many steps as you
 need to conform to your business processes. We look at Kaleo workflow in more
-detail in chapter 6.
+detail in the
+[Kaleo Forms: Defining Business Processes](/discover/portal/-/knowledge_base/6-2/kaleo-forms-defining-business-processes)
+section.

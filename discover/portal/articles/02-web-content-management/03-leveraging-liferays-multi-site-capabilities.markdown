@@ -1,10 +1,11 @@
 # Leveraging Liferay's Multi-site Capabilities [](id=leveraging-liferays-multi-site-capabilities)
 
-As stated in chapter 1, a site is a set of pages that can be used to publish
-content or applications. Sites can be independent or they can be associated with
-an organization and serve as the website for that organization. With Liferay,
-you can create as many different sites as you like within the context of a
-single portal.
+As stated in the [Building a site with Liferay Web Content](/discover/portal/-/knowledge_base/6-2/building-a-site-with-liferay-web-content)
+section, a site is a set of pages that can be used to publish content or
+applications. Sites can be independent or they can be associated with an
+organization and serve as the website for that organization. With Liferay, you
+can create as many different sites as you like within the context of a single
+portal.
 
 You can use sites in Liferay to build many different kinds of websites. Whether
 you're building a large corporate website, a company intranet, or a small site
@@ -114,11 +115,14 @@ Settings*.
 Sites can be created through the Control Panel by a portal administrator.
 Liferay's Control Panel provides an administrative interface for managing your
 portal. There are four main sections of the Liferay's Control Panel: Users,
-Sites, Apps, and Configuration. In this chapter, we'll learn how to use the
-Control Panel to manage sites. In the next chapter, we'll learn about using the
+Sites, Apps, and Configuration. In this section, we'll learn how to use the
+Control Panel to manage sites. In the next section, we'll learn about using the
 Control Panel to manage site templates and page templates. For information about
-the Apps, Users, and Configuration sections of the Control Panel, please see
-chapters 14, 16, and 17 of this guide.
+the Apps, Users, and Configuration sections of the Control Panel, please see the
+[Leveraging the Liferay Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace),
+[User Management](/discover/portal/-/knowledge_base/6-2/user-management), and
+[Using the Control Panel](/discover/portal/-/knowledge_base/6-2/using-the-control-panel)
+sections, respectively.
 
 +$$$
 
@@ -353,7 +357,9 @@ content from a site in one environment (say, a development or QA environment)
 and move it all in one shot to a site on another server. You can use LARs to
 import data onto production servers, but you should not make this a regular
 occurrence. If you want to regularly move pages from one server to another, you
-should use Liferay's staging environment, which we discuss in chapter 3.
+should use Liferay's staging environment, which we discuss in the
+[Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
+section.
 
 LARs can be a good way to back up your site's content. You can export them to a
 specific location on your server which is backed up. If you ever have to restore
@@ -379,8 +385,9 @@ category name collision, Liferay renames the imported categories.
 **Note:** LAR files are version dependent. You can't import a LAR file that was
 exported from one version of Liferay into a Liferay server that's running a
 different version of Liferay. Also, note that periodically exporting LARs is
-*not* a complete backup solution; please refer to chapter 18 of this guide for
-information on backing up Liferay.
+*not* a complete backup solution; please refer to the
+[Backing up a Liferay Installation](/discover/deployment/-/knowledge_base/6-2/backing-up-a-liferay-installation)
+section for information on backing up Liferay.
 
 $$$
 
@@ -437,9 +444,10 @@ Starting in Liferay 6.2, WAP related technologies have been deprecated. In
 particular, the ability to modify themes for regular browsers and mobile devices
 can now only be accomplished using Mobile Device Rules, which can be found in
 the right menu. You can learn more about using Mobile Device Rules in the
-*Advanced Content Management* chapter. You can enable the WAP functionality for
-your portal's Look and Feel section by opening/creating your
-`portal-ext.properties` file in your `${LIFERAY_HOME}` directory and setting
+[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/6-2/displaying-site-pages-to-mobile-devices)
+section. You can enable the WAP functionality for your portal's Look and Feel
+section by opening/creating your `portal-ext.properties` file in your
+`${LIFERAY_HOME}` directory and setting
 `mobile.device.styling.wap.enabled=true`. WAP functionality will be completely
 removed from Liferay in the next release.
 
@@ -659,8 +667,9 @@ removed from the page. Users can add new portlets of their own choosing to these
 columns of the page and can also customize portlet configurations. If at any
 time users determine they don't like their customizations, they can click *Reset
 My Customizations* to revert their pages back to the default. For more
-information about page customizations, please refer to the Page Customizations
-section of chapter 6.
+information about page customizations, please refer to the
+[Page Customizations](/discover/portal/-/knowledge_base/6-2/page-customizations)
+section.
 
 Now that you know how to enable page customizations, let's look at the settings
 for the site as a whole.
@@ -757,12 +766,17 @@ don't have Virtual Hosting set up, this tab is rather boring.
 
 **Default User Associations:** lets you configure site roles and teams that
 newly assigned site members will have by default. If you'd like to learn more
-about creating roles and/or teams, visit the *Advanced Web Content Management*
-chapter. 
+about creating roles and/or teams, visit the
+[Roles and Permissions](/discover/portal/-/knowledge_base/6-2/roles-and-permissions)
+and
+[Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management)
+sections, respectively. 
 
 **Staging:** enables you to edit and revise a page behind the scenes, then
 publish changes to your site once they have been completed and reviewed. For a
-full explanation of Staging, see chapter 3: *Advanced Web Content Management*.
+full explanation of Staging, see the
+[Staging Page Publication](/discover/portal/-/knowledge_base/6-2/staging-page-publication)
+section.
 
 **Analytics:** allows you to integrate your pages with Google Analytics. Liferay
 provides seamless integration with Google Analytics, allowing you to place your
@@ -781,8 +795,9 @@ revoke content sharing from all sub-sites.
 **Recycle Bin:** provides the option to enable/disable the Recycle Bin for your
 site. You can also regulate the age (in days) for which content is able to be
 stored in the Recycle Bin until it is permanently deleted. For a full
-explanation of the Recycle Bin, see the *Configuring Liferay Applications*
-chapter.
+explanation of the Recycle Bin, see the
+[Recyling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
+section.
 
 **Custom Fields:** lets you edit the custom fields you already have configured
 for the *Site* resource. If you don't have any custom fields configured for the
@@ -820,8 +835,11 @@ enable you to preconfigure a single page and then apply it to any new page you
 create. Site templates allow you to do the same thing but on the scale of a
 site--if you have multiple sites that use a similar structure of pages, you can
 create a single site template and use it to create as many sites as desired. For
-more information on page templates and site templates, see the *Advanced Web
-Content Management* chapter. 
+more information on page templates and site templates, see the
+[Using Page Templates](/discover/portal/-/knowledge_base/6-2/using-page-templates)
+and
+[Using Site Templates](/discover/portal/-/knowledge_base/6-2/using-site-templates)
+sections. 
 
 ### Site Content [](id=site-content)
 
@@ -832,7 +850,9 @@ managed, including web content.
 
 ![Figure 2.11: Your site's content resides on the Site Administration page.](../../images/web-content-site-content.png)
 
-For details about Liferay's social collaboration suite, see chapter 10.
+For details about Liferay's social collaboration suite, see the
+[Social Collaboration](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
+section.
 
 +$$$
 

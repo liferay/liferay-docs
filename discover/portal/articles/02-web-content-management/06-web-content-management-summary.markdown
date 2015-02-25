@@ -12,6 +12,8 @@ to publish on the web.
 Liferay WCM also includes a powerful workflow engine, allowing you to set up
 custom publishing rules to fit your organization. You can set up custom approval
 processes for different sites as well as for different kinds of content within a
-site. We'll examine sites in more detail in chapter 3. We'll also cover some
-more advanced web content management tools such as web content structures and
-templates, page templates and site templates, staging, and mobile device rules.
+site. We'll examine sites in more detail in the 
+[Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
+section. We'll also cover some more advanced web content management tools such
+as web content structures and templates, page templates and site templates,
+staging, and mobile device rules.
