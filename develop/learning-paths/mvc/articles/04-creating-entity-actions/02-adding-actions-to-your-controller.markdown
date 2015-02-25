@@ -108,7 +108,7 @@ Next, you'll add an action that lets users delete guestbook entries:
 			ServiceContext serviceContext = ServiceContextFactory.getInstance(
 				Entry.class.getName(), request);
 
-                        response.setRenderParameter("guestbookId", Long.toString(guestbookId);
+                        response.setRenderParameter("guestbookId", Long.toString(guestbookId));
 
 			EntryLocalServiceUtil.deleteEntry(entryId, serviceContext);
 			
