@@ -6,7 +6,7 @@ the Mobile SDK in a Guestbook app that leverages the functionality of the
 Guestbook portlet developed in the Liferay MVC learning path. This screenshot 
 shows how the Guestbook app should look when you're finished:
 
-<!-- Insert screenshot -->
+![Figure 1: Your finished Guestbook app.](../../images/android-guestbook-app-intro.png)
 
 While this learning path provides complete code snippets of the app as it's 
 developed, not every aspect of the Android code is explained in detail. Focus is 
@@ -19,7 +19,7 @@ Android APIs as well as some basic tutorials on [developer.android.com](http://d
 It's also important to note that you needn't have completed the Liferay MVC 
 learning path to obtain a working Guestbook portlet. You can download the 
 complete portlet code [here on GitHub](https://github.com/liferay/liferay-docs/tree/master/develop/learning-paths/mvc/code/learning-sdk/portlets). 
-for instructions on building and deploying the portlet to your Liferay instance, 
+For instructions on building and deploying the portlet to your Liferay instance, 
 see [this tutorial](/tutorials/-/knowledge_base/6-2/deploying-plugins-to-a-local-portal-instance).
 
 Fantastic! Now you're ready to get started with Liferay's Mobile SDK!
