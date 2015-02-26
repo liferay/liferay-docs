@@ -1,4 +1,4 @@
-# Removing the Primary Key from Portlet URLs
+# Removing the Primary Key from Portlet URLs [](id=removing-the-primary-key-from-portlet-urls)
 
 After the last section on Making URLs Friendly, you have a good understanding of
 Liferay's Friendly URL pattern, from declaring your intentions in
@@ -35,7 +35,7 @@ work:
 
 You'll start by creating the finders. 
 
-## Finding Entities
+## Finding Entities [](id=finding-entities)
 
 First, modify the Guestbook app's `docroot/WEB-INF/service.xml` file, adding
 the following XML below the current `<finder>` in the `Guestbook` entity:
@@ -61,16 +61,16 @@ portlet's design. When finding an Entry in the database, using the Primary Key
 guarantees you'll find the entity you are looking for. However, the name field
 in your portlet is the name of the person creating the entry. Multiple people
 with the same name can easily create entries, right? What if Penelope creates
-an entry, and then a day later, another Penelope also creates an entry. If you
+an entry, and then a day later, another Penelope also creates an entry? If you
 rely solely on `name` to find the entries, which one should you retrieve from
 the database in the case that two records have matching fields? You can easily
-see the problem. You haven't solved it compeletely by creating this finder.
+see the problem. You haven't solved it completely by creating this finder.
 There could still be multiple Penelopes creating entries in the same guestbook
-in the same site. You'll deal with this in the `view_entry.jsp` file, by using
-this finder to retieve a list of entries in a particular site, in a particular
+in the same site. You'll deal with this in the `view_entry.jsp` file by using
+this finder to retrieve a list of entries in a particular site, in a particular
 guestbook, by a particular name, and displaying them all.
 
-## Modifying the Service Layer
+## Modifying the Service Layer [](id=modifying-the-service-layer)
 
 Next, you need to create methods that use the Guestbook Portlet's new ability to
 retrieve `Guestbook` and `Entry` entities from the database by the fields you
@@ -110,69 +110,7 @@ ensures that only the first one is retrieved.
 The Portlet's Controller class needs to add a `Guestbook` object to the
 attribute for the modifications to work. 
 
-## Updating the Guestbook Portlet's Controller Class
-
-Open `GuestbookPortlet` and add the following method to the bottom of the class:
-
-    public void switchTabs(ActionRequest request, ActionResponse response)
-			throws SystemException, PortalException {
-
-		ServiceContext serviceContext = ServiceContextFactory.getInstance(
-				Guestbook.class.getName(), request);
-
-		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil
-				.getOrderByComparatorFactory();
-		OrderByComparator orderByComparator = orderByComparatorFactory.create(
-				"guestbook", "name", true);
-
-		String guestbookName = ParamUtil.getString(request, "guestbookName");
-
-		try {
-
-			Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(
-					serviceContext.getScopeGroupId(), guestbookName,
-					orderByComparator);
-
-			request.setAttribute("guestbook", guestbook);
-
-		} catch (Exception e) {
-
-			SessionErrors.add(request, "guestbook-cannot-be-displayed");
-
-		}
-		response.setRenderParameter("mvcPath", "/html/guestbook/view.jsp");
-	}
-	
-Organize Imports.
-
-    import com.liferay.portal.kernel.util.OrderByComparator;
-	import com.liferay.portal.kernel.util.OrderByComparatorFactory;
-	import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
-
-The `switchTabs` method is called by an Action URL that replaces one of the
-Render URLs in the view layer of the portlet; its purpose is to take the
-`guestbookName` from the request and get a `Guestbook` using your new method
-from the `-LocalServiceUtil` class. Then it sets the `Guestbook` as a request
-attribute. If you recall, guestbooks are organized in the UI with tabs.  The
-`switchTabs` method is called when one of the tabs is clicked, making the
-appropriate Guestbook available in the request.
-
-First, you're creating the necessary `OrderByComparator`, and then you're
-getting the `guestbookName` from the request. The `actionURL` to trigger this
-method doesn't exist yet, but you'll get to that soon enough. The `try` block
-uses the `guestbookName` from the request to get the `Guestbook` from the
-database and sets it as an attribute in the request.
-
-Last, you call `setRenderParameter` and add the path to `view.jsp` as the
-`mvcPath` parameter of the request.
-
-In the `catch` block, you're adding an error message to the `SessionErrors`
-object. Before moving on, open the `Language.properties` file in
-`docroot/WEB-INF/src/content` and provide a message for the key
-`guestbook-cannot-be-displayed`. Copy the following into the file, then build
-languages:
-
-    guestbook-cannot-be-displayed=The selected guestbook cannot be displayed.
+## Updating the Guestbook Portlet's Controller Class [](id=updating-the-guestbook-portlets-controller-class)
 
 Since you won't be passing the `guestbookId` into most URLs any longer, there
 are some changes that need to be made to the existing methods in the
@@ -236,6 +174,12 @@ controller. Replace the current `addEntry` method with this one:
 		}
 	}
 
+Organize Imports.
+
+    import com.liferay.portal.kernel.util.OrderByComparator;
+	import com.liferay.portal.kernel.util.OrderByComparatorFactory;
+	import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
+
 There are several lines to take note of:
 
     String guestbookName = ParamUtil.getString(request, "guestbookName");
@@ -253,13 +197,10 @@ are added before the `if` statement:
 				serviceContext.getScopeGroupId(), guestbookName,
 				orderByComparator);
 
-In the calls to `updateEntry` and `addEntry`, the `guestbookId` parameter is
-replaced with `guestbook.getGuestbookId()`.
-
-Since the `guestbookId` is no longer in the request, you now use the
-`guestbookName`. Any fields from the object (like `guestbookId`) must now be
-retrieved from the object to use in the *update* and *add* methods that require
-them.
+First, you're creating the necessary `OrderByComparator` Since the `guestbookId`
+is no longer in the request, you now use the `guestbookName`. Any fields from
+the object (like `guestbookId`) must now be retrieved from the object to use in
+the *update* and *add* methods that require them.
 
 The `setRenderParameter` calls in both the `try` blocks now set
 `guestbookName`, rather than `guestbookId`.
@@ -276,46 +217,62 @@ variable, change the second parameter in the `ParamUtil` call to
 
 Replace the current `render` method with this one:
 
-    public void render(RenderRequest renderRequest,
+	@Override
+	public void render(RenderRequest renderRequest,
 			RenderResponse renderResponse) throws PortletException, IOException {
 
 		try {
-			
+
 			Guestbook guestbook = null;
-			
+
 			ServiceContext serviceContext = ServiceContextFactory.getInstance(
 					Guestbook.class.getName(), renderRequest);
-			
-			String guestbookName = ParamUtil.getString(renderRequest, "guestbookName");
+
+			String guestbookName = "";
 
 			long groupId = serviceContext.getScopeGroupId();
 
+			// First, get all the guestbooks to populate the tabs
 			List<Guestbook> guestbooks = GuestbookLocalServiceUtil
 					.getGuestbooks(groupId);
 
 			if (guestbooks.size() == 0) {
 				guestbook = GuestbookLocalServiceUtil.addGuestbook(
 						serviceContext.getUserId(), "Main", serviceContext);
+
+				// If we had to create the default guestbook, put it in the
+				// request
+				renderRequest.setAttribute(WebKeys.GUESTBOOK, guestbook);
 			}
 
-			else {
-				
-				if (!(renderRequest.getAttribute("guestbook") == null)) {
-					guestbook = (Guestbook) renderRequest.getAttribute("guestbook");
-				}
-				
-				else if (renderRequest.getAttribute("guestbook") == null && guestbookName.length() == 0) {
+			// Now we check to see if the user selected a guestbook
+			guestbook = (Guestbook) renderRequest
+					.getAttribute(WebKeys.GUESTBOOK);
+
+			if (guestbook == null) {
+
+				// The user still could have selected a guestbook
+				guestbookName = ParamUtil.getString(renderRequest,
+						"guestbookName");
+				if (guestbookName.equalsIgnoreCase("")) {
+
 					guestbook = guestbooks.get(0);
+
+				} else {
+
+					OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil
+							.getOrderByComparatorFactory();
+					OrderByComparator orderByComparator = orderByComparatorFactory
+							.create("guestbook", "name", true);
+
+					guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(
+							serviceContext.getScopeGroupId(), guestbookName,
+							orderByComparator);
 				}
-				
-				else if (guestbookName.length() > 0) {
-					OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
-					OrderByComparator orderByComparator = orderByComparatorFactory.create("guestbook", "name", true);
-					
-					guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(serviceContext.getScopeGroupId(), guestbookName, orderByComparator);
-				}	
+
 			}
-			renderRequest.setAttribute("guestbook", guestbook);
+
+			renderRequest.setAttribute(WebKeys.GUESTBOOK, guestbook);
 
 		} catch (Exception e) {
 
@@ -324,7 +281,6 @@ Replace the current `render` method with this one:
 
 		super.render(renderRequest, renderResponse);
 	}
-
 At the top of the first `try` block, a Guestbook object is intialized, but set
 as null:
 
@@ -345,32 +301,70 @@ list of guestbooks is empty), a new `Guestbook` named *Main* will be created.
 
 Here are the other scenarios the `render` method handles:
 - If the render request contains a `Guestbook` attribute (e.g., if the
-  `switchTabs` action is triggered), get it.
+  user clicked a tab)
 - If the request contains no `Guestbook` object or `guestbookName`, just get the
   first `Guestbook` in the list. 
 - If the request contains a `guestbookName` parameter, use it to get the
   `Guestbook` by its name. This is the case when the user clicks the
   `viewEntryURL` or the `addEntryURL`, defined in the `view.jsp` file.
 
+One other thing of note is a Liferay best practice. You've replaced all
+instances of the request attribute key with the constant (`WebKeys.GUESTBOOK`)
+that was defined in an earlier Learning Path. This makes it less error-prone to
+put the current `Guestbook` object in the request as an attribute and take it
+out again. 
+
+One thing is left to do. You are now working with `Guestbook`s by their names
+instead of by their IDs. What about the case where a Guestbook administrator
+creates two guestbooks with the same name? You certainly don't want two tabs
+with the same name in your nice, clean interface! 
+
+Fortunately, there's an easy way to fix that. When adding a new guestbook, you
+can check to see if there's an existing guestbook with the same name, and then
+prevent the user from adding it. 
+
+Open `GuestbookLocalServiceImpl.java`. In the `addGuestbook` method, just after
+getting the `groupId`, add this simple test: 
+
+    List <Guestbook> test = guestbookPersistence.findByG_N(groupId, name);
+		
+		if (test.size() > 0) {
+			
+			throw new PortalException("existing-guestbook");
+			
+		}
+
+Save the file and run Service Builder. This code throws a `PortalException` if
+the guestbook the user is trying to add already exists. Next, open
+`Language.properties`. Add the following message to the bottom of the file: 
+
+    existing-guestbook=There is an existing Guestbook with that name.
+
+Finally, you want this error message to display when the user accidentally tries
+to enter a guestbook with the same name as another guestbook. Open the
+`edit_guestbook.jsp` and add this tag just beneath the `<portlet:actionURL>`: 
+
+    <liferay-ui:error key="existing-guestbook" message="existing-guestbook" />
+
+Your custom error message is now displayed to users who try to enter duplicate
+guestbooks. 
+
 The Controller is updated. Now you should update the View layer of the Guestbook
 app, changing URL parameters and any scriptlets that rely on Primary Keys from
 the request.
 
-## Updating the View Layer
+## Updating the View Layer [](id=updating-the-view-layer)
 
 Many of the portlet URLs and scriptlets defined in the JSPs you've written
 currently include the `guestbookId` or `entryId` as a parameter. You need to
 change these instead to provide and use a `guestbookName` (the `name` column for
 `Guestbook`s) or `name` (for `Entry` entities). Additionally, use your new
 service layer *getter* methods in the place of the current ones, if they need
-the Primary Key of any entities. You'll also be making use of your new action
-method, `switchTabs`.
+the Primary Key of any entities. 
 
 Open `docroot/html/guestbook/view.jsp`. Replace the entire contents of the file with the following code:
 
     <%@include file="/html/init.jsp"%>
-
-    <liferay-ui:error key="guestbook-cannot-be-displayed" message="guestbook-cannot-be-displayed" />
 
     <%
         Guestbook guestbook = (Guestbook) renderRequest
@@ -413,11 +407,13 @@ Open `docroot/html/guestbook/view.jsp`. Replace the entire contents of the file 
         %>
 
 
-            <portlet:actionURL name= "switchTabs" var="switchTabsURL">
-                <portlet:param name="guestbookName" value="<%=curGuestbook.getName() %>"/>
-            </portlet:actionURL>
+        <portlet:renderURL var="viewPageURL">
+			<portlet:param name="mvcPath" value="/html/guestbook/view.jsp" />
+			<portlet:param name="guestbookName"
+				value="<%=curGuestbook.getName()%>" />
+		</portlet:renderURL>
 
-            <aui:nav-item cssClass="<%=cssClass%>" href="<%=switchTabsURL%>"
+            <aui:nav-item cssClass="<%=cssClass%>" href="<%=viewPageURL%>"
                 label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
         <% 
                 }
@@ -484,9 +480,6 @@ file, immediately after the `<%@include...` statement, a scriptlet getting the
 `guestbookId` from the `renderRequest` is replaced by a scriptlet getting the
 `Guestbook` object, and a `liferay-ui:error` tag added.
 
-The `liferay-ui:error` tag is for displaying the error message you added to the
-`SessionErrors` object in the `switchTabs` method.
-
 In the next scriptlet, the `if` statement is modified to get the `guestbookId`
 from the `Guestbook` retrieved from the render request: 
     
@@ -501,18 +494,8 @@ call:
 - There's one in the permission check for the `addEntryURL`.
 - There are two in the `<liferay-ui:search-container-results...` tag.
 
-The `viewPageURL` inside the `<aui:nav...` tag was a `renderURL`,
-but is replaced with an `actionURL` that triggers your new
-`swtichTabs` action: 
-
-    <portlet:actionURL name= "switchTabs" var="switchTabsURL">
-        <portlet:param name="guestbookName" value="<%=curGuestbook.getName() %>"/>
-    </portlet:actionURL>
-
-Directly below this URL, the UI component that triggers the action is defined:
-
-    <aui:nav-item cssClass="<%=cssClass%>" href="<%=switchTabsURL%>"
-        label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
+The `viewPageURL` inside the `<aui:nav...` has now been modified. Instead of
+using the `guestbookId`, it now uses the `guestbookName`. 
 
 In the `addEntryURL`, the `guestbookId` parameter is now a `guestbookName`
 parameter, using the name of the `Guestbook` attribute retrieved from the
@@ -534,7 +517,8 @@ for viewing entries. Additionally, the `guestbookName` is needed by the
 That's it for the `view.jsp` file. 
 
 Open `docroot/html/init.jsp`. This is where you organize the imports
-necessary for JSP files. Add the following imports to the file:
+necessary for JSP files, according to Liferay's convention. Add the following
+imports to the file:
 
     <%@ page import="com.liferay.portal.kernel.util.OrderByComparator" %>
     <%@ page import="com.liferay.portal.kernel.util.OrderByComparatorFactory" %>
@@ -690,14 +674,14 @@ to `guestbookName`:
 
 The JSPs have changed quite a bit. In review: 
 
-- Mention of `guestbookId` and `entryId` are removed as necessary, and replaced
+- Mention of `guestbookId` and `entryId` are removed as necessary and replaced
   with `guestbookName` and `name` parameters, where applicable.
 - Method calls that get database entities by their Primary Key are replaced
   with methods that use different database fields.
 - The `view_entry.jsp` now displays all the entries in a site's Guestbook that
   share the same `name` field value.
 
-## Modifying the URL Routes
+## Modifying the URL Routes [](id=modifying-the-url-routes)
 
 Now that you've made the necessary changes to your portlet's code, you're ready
 to modify the URL routes you defined in the previous section of this learning
@@ -727,8 +711,8 @@ Open `guestbook-friendly-url-routes.xml`, and replace its contents:
         </route>
         <route>
             <pattern>/{guestbookName}/view</pattern>
-            <implicit-parameter name="p_p_lifecycle">1</implicit-parameter>
-            <implicit-parameter name="javax.portlet.action">switchTabs</implicit-parameter>
+            <implicit-parameter name="p_p_lifecycle">0</implicit-parameter>
+            <implicit-parameter name="mvcPath">/html/guestbook/view.jsp</implicit-parameter>
         </route>
     </routes>
 
@@ -740,13 +724,11 @@ In the second route, for `add_entry`, the `<pattern>` tag replaces
 The `view_entry` route's `<pattern>` includes both the `guestbookName` and
 `name` (of the `Entry`) now.
 
-The `view` route includes the `guestbookName`, and changes the
-`<implicit-parameter...` tags since we're now using the `switchTabsURL`, which
-is an `actionURL`.
+The `view` route now includes the `guestbookName`.
 
 Now it's time to make sure everything is working as expected. 
 
-## Testing the URL Routes
+## Testing the URL Routes [](id=testing-the-url-routes)
 
 Log in to the portal with the Guestbook Portlet deployed. If you haven't
 already added the portlet to a page, do so now. Because of the `render` method's
@@ -779,7 +761,7 @@ You're a Friendly URL expert now. Not only can you create Friendly URLs from the
 existing URL parameters, but you know how to remove the Primary Key from the URL
 to create even friendlier URLs.
 
-## Next Steps
+## Next Steps [](id=next-steps)
 
 [Creating Remote Services](/develop/learning-paths/-/knowledge_base/creating-remote-services)
 

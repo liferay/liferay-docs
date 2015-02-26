@@ -23,25 +23,26 @@ learn every detail about a device from the device type, which is included in
 each request sent to the portal. Liferay's Mobile Device Rules can connect to
 device databases so that you can use their device characteristics in your rules. 
 
-Among the plugins available on Liferay Marketplace, you can find the Device
-Recognition Provider plugin. This plugin provides out of the box integration
-with WURFL, an open source database licensed with the AGPLv3 license. Commercial
-licenses are also available. It's also possible to develop plugins that
-integrate with other device databases. Even if you don't have a device database,
-you can still set up mobile device rules. They won't, however, be effective
-until a database is deployed, because the portal won't have enough information
-about the devices being used to make page requests.
+Among the applications available on Liferay Marketplace, you can find the Device
+Recognition Provider EE application. This app provides out-of-the-box
+integration with WURFL, an open source database licensed with the AGPLv3
+license. Commercial licenses are also available. It's also possible to develop
+plugins that integrate with other device databases. Even if you don't have a
+device database, you can still set up mobile device rules. They won't, however,
+be effective until a database is deployed, because the portal won't have enough
+information about the devices being used to make page requests.
 
 To configure mobile device rules, you must install the Device Recognition
-Provider plugin. This plugin uses the WURFL database to enable Liferay to detect
-which mobile device or operating system is being used for any given request. To
-install the plugin, navigate to the Store section of the Control Panel, located
-under the Marketplace heading. Click on the *Utility* section and then on *See
-All*. Search for the appropriate Device Recognition Provider plugin (CE or EE)
-and click on it. Finally, click on *Free* to acquire the plugin. Once you've
-acquired the plugin, you need to download and install it. To do so, navigate to
-the Purchased section of the Control Panel, find your Device Recognition
-Provider plugin, and click on *Download* and then *Install*.
+Provider EE application on your instance of Liferay Portal EE. This app uses the
+WURFL database to enable Liferay to detect which mobile device or operating
+system is being used for any given request. To install the app, navigate to the
+Store section of the Control Panel, located under the Marketplace heading. Click
+on the *Utility* section and then on *See All*. Search for the Device
+Recognition Provider EE application and click on it. Finally, click on the price
+tag to begin purchasing the app. Once you've acquired the app, you need to
+download and install it. To do so, navigate to the Purchased section of the
+Control Panel, find your Device Recognition Provider EE app, and click on
+*Download* and then *Install*.
 
 +$$$
 
@@ -68,7 +69,7 @@ displays a list of defined families and lets you add more. To add rules to a
 family, select *Actions* &rarr; *Manage Classification Rules*, or click on a
 family to edit it, and then click the *Manage Classification Rules* link.
 
-![Figure 3.27: You can manage device rules from the Mobile Device Families administrative page.](../../images/mobile-device-families.png)
+![Figure 3.28: You can manage device rules from the Mobile Device Families administrative page.](../../images/mobile-device-families.png)
 
 The rules defined for a family, along with the priorities of the families
 selected for a particular site or page, determine which family's actions are
@@ -81,7 +82,7 @@ that it's characterized as a *Simple Rule*. By default, only the Simple Rule
 type is available. The rules are designed to be extensible, and additional rule
 types can be added by your developers.
 
-![Figure 3.28: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.29: You need to install the Device Recognition Provider EE application to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device families and added some rules to them,
 you'll be ready to set up some actions. The actions defined for a family
@@ -99,7 +100,7 @@ apply only to that page. You can select multiple families for a particular site
 or page and order them by priority. The families are checked in decreasing order
 of priority: the actions defined by the first family that applies are executed.
 
-![Figure 3.29: You can select a mobile device family to apply for a site or page from the Site Pages section of Site Administration.](../../images/mobile-device-selection.png)
+![Figure 3.30: You can select a mobile device family to apply for a site or page from the Site Pages section of Site Administration.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage
 Actions* button and then click *Add Action*. By default, there are four kinds of
@@ -159,7 +160,7 @@ mobile phones, and click *Save*. Now we just need to define the redirect action
 for our family. Navigate to *Pages* &rarr; *Site Pages* and click on *Mobile
 Device Rules* in the navigation menu to the right.
 
-![Figure 3.30: To apply a mobile device family to a page set of a site, click on *Mobile Device Rules*, click *Select Device Family*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
+![Figure 3.31: To apply a mobile device family to a page set of a site, click on *Mobile Device Rules*, click *Select Device Family*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
 
 Click *Select Device Family* and then click the *Android and Bada Mobile Phones*
 device family that you configured. Once you've selected your device family,

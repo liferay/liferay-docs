@@ -1,4 +1,4 @@
-# Enabling Search and Indexing
+# Implementing Search and Indexing [](id=implementing-search-and-indexing)
 
 Liferay's search and indexing functionality is provided by Apache Lucene, a
 Java-based search library. To implement search and indexing functionality for an
@@ -38,7 +38,7 @@ make sure you're familiar with the following search and indexing terminology.
 - The result of a search is a collection of *hits*. Hits are pointers to
   documents that match the search query.
 
-## Creating and Registering an Indexer Class
+## Creating and Registering an Indexer Class [](id=creating-and-registering-an-indexer-class)
 
 Indexer classes are responsible for creating the Lucene documents that represent
 your entities. When creating an indexer class, you need to decide which
@@ -136,7 +136,7 @@ Check your console to find a list of portlet IDs and their associated indexer
 class names. Check that your portlet and the indexer class that you registered
 in `liferay-portlet.xml` appear in the list.
 
-## Implementing Indexing at the Service Layer
+## Implementing Indexing at the Service Layer [](id=implementing-indexing-at-the-service-layer)
 
 If you're creating a data-driven application, you've presumably written code for
 adding, updating, and deleting your entities. If you want the documents
@@ -235,7 +235,7 @@ search query syntax, please refer to Lucene's
 [documentation](http://lucene.apache.org/core/3_5_0/queryparsersyntax.html).
 Note: Liferay 6.2 uses Lucene 3.5.0.
 
-## Providing a Search Mechanism
+## Providing a Search Mechanism [](id=providing-a-search-mechanism)
 
 Now that your indexer has been registered and the index is updated whenever an
 entity is added, updated, or deleted, it's time to create a search mechanism.
@@ -490,6 +490,6 @@ search API to configure a search context, perform a search, and obtain a list of
 search results. To explore more features of Liferay's search API, please see the
 tutorial on Faceted Search and Customized Search Filtering.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Faceted Search and Customized Search Filtering](/develop/tutorials/-/knowledge_base/6-2/faceted-search-and-customized-search-filtering)

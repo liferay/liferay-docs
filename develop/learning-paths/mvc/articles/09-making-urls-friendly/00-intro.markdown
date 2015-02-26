@@ -1,4 +1,4 @@
-# Making URLs Friendly
+# Making URLs Friendly [](id=making-urls-friendly)
 
 You're probably feeling good about the Guestbook Portlet now. The UI is looking
 snazzy, it has front- and back-end validation, and you've implemented several

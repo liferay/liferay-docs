@@ -1,4 +1,4 @@
-# Faceted Search and Customized Search Filtering
+# Faceted Search and Customized Search Filtering [](id=faceted-search-and-customized-search-filtering)
 
 Faceted search is a search mechanism that allows search results to be narrowed
 down by applying a set of filters to the result of a search query. Liferay's
@@ -55,7 +55,7 @@ Before proceeding, make sure you're familiar with the following terminology:
   documents in the first range and 18 documents in the second range. Ranges
   cannot be used with multi-value fields.
 
-## Configuring Custom Facets
+## Configuring Custom Facets [](id=configuring-custom-facets)
 
 There are two ways to configure custom facets for search in Liferay:
 
@@ -173,7 +173,7 @@ type name does not belong to the `entryClassName` array is filtered out of the
 search results. Likewise, any indexed document whose `groupId` does not belong
 to the `groupIds` array is filtered out of the search results.
 
-## Customized Search Filtering
+## Customized Search Filtering [](id=customized-search-filtering)
 
 Sometimes, you might be required to implement very specific kinds of search
 filters. For example, suppose you need to search both web content articles and
@@ -274,6 +274,6 @@ application adapter hook. See the
 [Application Adapters](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters)
 tutorial for details.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)

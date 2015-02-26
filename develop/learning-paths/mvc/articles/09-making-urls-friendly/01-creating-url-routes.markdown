@@ -1,4 +1,4 @@
-# Creating URL Routes
+# Creating URL Routes [](id=creating-url-routes)
 
 If you have the Guestbook Portlet deployed and added to a page, click on the
 *Add Guestbook* button. Here's what the generated URL looks like:
@@ -18,7 +18,7 @@ any portlet URL, and you can do it in two easy steps:
 
 You'll learn how to do that next. 
 
-## Defining Friendly URL Routes
+## Defining Friendly URL Routes [](id=defining-friendly-url-routes)
 
 Your Friendly URL is ready to emerge from the beastly URL above. While
 you're here, you can clean up the URLs for some of the other links as well.
@@ -85,7 +85,7 @@ There are two tags from the XML to focus on:
 Liferay isn't yet aware of your intention to use friendly URLs. The next
 section shows you how to inform the portal.
 
-## Declaring Friendly URL Mapping to Liferay
+## Declaring Friendly URL Mapping to Liferay [](id=declaring-friendly-url-mapping-to-liferay)
 
 Modify the Liferay portlet descriptor,
 `docroot/WEB-INF/liferay-portlet.xml`, by adding these lines after the
@@ -95,10 +95,7 @@ Modify the Liferay portlet descriptor,
 		<friendly-url-mapping>guestbook</friendly-url-mapping>
 		<friendly-url-routes>com/liferay/docs/guestbook/portlet/guestbook-friendly-url-routes.xml</friendly-url-routes>
 
-Save the file and ignore the errors for now. We haven't yet created the file
-declared in the `friendly-url-routes` tag, but we'll get to that soon.
-
-So what are these tags used for? The `friendly-url-routes` tag lets us declare
+So what are these tags used for? The `friendly-url-routes` tag lets you declare
 an XML file with URL routes that relate to the Liferay URLs. In almost all
 cases, you'll use the `DefaultFriendlyURLMapper` class as
 the `friendly-url-mapper-class`. It contains the logic to map your Friendly URL
@@ -114,11 +111,11 @@ Here's what your friendly portlet URLs look like now:
 - View Guestbook: `http://localhost:8080/web/guest/home/-/guestbook/10619/view`
 
 Now you know how to quickly implement Friendly URLs in a custom portlet. You
-could leave it at that, but providing the `guestbookId` and `entryId` in the
-URL really isn't helpful. The next step is to replace those IDs with the title
-of the Guestbook or Guestbook Entry.
+could leave it at that, but using the `guestbookId` and `entryId` in the
+URL really isn't as friendly as it could be. The next step is to replace those
+IDs with the title of the Guestbook or Guestbook Entry.
 
-## Next Steps
+## Next Steps [](id=next-steps)
 
 [Removing the Primary Key from Portlet URLs](/develop/learning-paths/-/knowledge_base/removing-primary-keys-from-the-url)
 

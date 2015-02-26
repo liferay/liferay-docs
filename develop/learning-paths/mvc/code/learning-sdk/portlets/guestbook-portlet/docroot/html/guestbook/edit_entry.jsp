@@ -1,7 +1,7 @@
 <%@include file = "/html/init.jsp" %>
 
 <%
-Guestbook guestbook = (Guestbook) renderRequest.getAttribute("guestbook");
+Guestbook guestbook = (Guestbook) renderRequest.getAttribute(WebKeys.GUESTBOOK);
 
 long entryId = ParamUtil.getLong(renderRequest, "entryId");
 Entry entry = null;
