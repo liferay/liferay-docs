@@ -1,4 +1,4 @@
-# Managing Files with Liferay Sync 2.0 Beta
+# Managing Files with Liferay Sync 2.0 Beta [](id=managing-files-with-liferay-sync-2-0-beta)
 
 Liferay Sync is an add-on product for Liferay 6.2 CE and EE that synchronizes 
 files between your Liferay server and users' desktop and mobile environments. 
@@ -21,7 +21,7 @@ you can skip this section. The remaining sections of this guide cover installing
 and using the Sync desktop and mobile clients. These sections are useful to 
 administrators and end users alike. Now choose your path and journey forth!
 
-## Administering Liferay Sync
+## Administering Liferay Sync [](id=administering-liferay-sync)
 
 As an administrator, there are some things you need to do before Sync can 
 connect with your portal. There are also some things to keep in mind to ensure 
@@ -29,7 +29,7 @@ your portal's security and prevent accidental file deletion by Sync users.
 First, there are two plugins you need to install and configure. The next section 
 walks you through this.
 
-### Installing the Liferay Sync Plugins
+### Installing the Liferay Sync Plugins [](id=installing-the-liferay-sync-plugins)
 
 Prior to Liferay 6.2, Liferay Portal's Documents and Media services contained
 all the logic used by Liferay Sync. As of Liferay 6.2, Sync processing is 
@@ -57,7 +57,7 @@ the latter sections of this guide for instructions on installing and using the
 clients. However, if you're using Sync Admin it's a good idea to first configure 
 it so that Sync functions exactly the way you want it to.
 
-### Using Sync Admin to Configure Liferay Sync
+### Using Sync Admin to Configure Liferay Sync [](id=using-sync-admin-to-configure-liferay-sync)
 
 The first thing you should do after installing Sync Admin is configure it so 
 that Sync functions the way you want it to. Configuring Sync Admin is very 
@@ -113,7 +113,7 @@ Now that you know how to configure Sync in your portal, it's time to look closer
 at a use case that warrants special attention for administrators: accidental 
 file deletion.
 
-### Protecting Against Accidental File Deletion
+### Protecting Against Accidental File Deletion [](id=protecting-against-accidental-file-deletion)
 
 The power of Liferay Sync rests in its ability to propogate any changes that 
 users make across the portal and connected clients. However, these changes could 
@@ -139,7 +139,7 @@ However, portal and site administrators can disable the Recycle Bin. If you've
 disabled the Recycle Bin, then you won't be able to protect against accidental 
 file deletion that is propogated through Sync. 
 
-### Ensuring Sync Security
+### Ensuring Sync Security [](id=ensuring-sync-security)
 
 As an administrator, you're undoubtedly concerned about the security of any 
 connections to and from your portal. It's important to note that to support 
@@ -151,7 +151,7 @@ only access the documents and sites they have permission for. The next section
 gives a brief demonstration of how Sync's permissions work with those of your 
 portal.
 
-### Demonstrating Liferay Sync Permissions
+### Demonstrating Liferay Sync Permissions [](id=demonstrating-liferay-sync-permissions)
 
 Sync uses Liferay's default permissions to determine the files and folders to 
 sync with the user's machine. This means that Sync can only sync with files a 
@@ -188,7 +188,7 @@ permissions, Sync only allows users to access the files and folders they can
 access in the portal. Great! Now you know how to enable and configure Liferay 
 Sync in your portal. 
 
-## Using the Desktop Liferay Sync Client
+## Using the Desktop Liferay Sync Client [](id=using-the-desktop-liferay-sync-client)
 
 For desktop environments, Liferay Sync creates a new folder structure used for
 synchronizing files. You can treat the files there the same as any ordinary 
@@ -198,7 +198,7 @@ is doing. Native menu and taskbar integration keep Sync controls within easy
 reach. You'll first need to install the Sync client for your desktop 
 environment. 
 
-### Installing the Desktop Liferay Sync Client
+### Installing the Desktop Liferay Sync Client [](id=installing-the-desktop-liferay-sync-client)
 
 The installation steps for Liferay Sync on Windows and Mac OS differ only 
 slightly. Regardless of platform, you need administrator privilages on your 
@@ -252,7 +252,7 @@ initial sync may take a significant amount of time depending on the amount of
 data being transferred. You can safely close the window for syncing to continue 
 in the background. To view the local sync folder, click *Open Folder*.
 
-### Viewing Your Sync Status
+### Viewing Your Sync Status [](id=viewing-your-sync-status)
 
 Once the Liferay Sync desktop client is installed, an icon appears in your 
 taskbar (Windows) or menu bar (Mac) whenever it's running. Clicking this icon 
@@ -276,7 +276,7 @@ the repositories you can access.
 
 Next, you'll learn how to use Sync's preferences to control how Sync behaves.
 
-### Using Sync Preferences
+### Using Sync Preferences [](id=using-sync-preferences)
 
 You can use Sync's preferences to add or remove portals to sync with, edit the 
 settings used to connect to your portals, and control the basic behavior of 
@@ -317,7 +317,7 @@ clicking the *Check Now* button.
 Now that you have a handle on configuring Sync, it's time to see how it works 
 with the files in your Sync folder.
 
-### Using Your Local Sync Folder
+### Using Your Local Sync Folder [](id=using-your-local-sync-folder)
 
 Once Sync is configured and running, any files you add or modify in your Sync 
 folder are automatically uploaded to your portal. File changes by other users 
@@ -370,7 +370,7 @@ important to remember this rule of thumb when you're working with files in your
 local Sync folder: deleting files there deletes them *everywhere*! Next, using 
 the Liferay Sync mobile client is covered.
 
-## Using the Mobile Liferay Sync Client
+## Using the Mobile Liferay Sync Client [](id=using-the-mobile-liferay-sync-client)
 
 Liferay Sync for Android and iOS contains most of the desktop Sync client's 
 functionality. The main difference is that the mobile client can only be 
@@ -389,7 +389,7 @@ mobile app is to search the App Store or Google Play for Liferay. Once you've
 installed the Sync app on your device, follow the instructions below to learn 
 how to use it.
 
-### Connecting to Your Portal
+### Connecting to Your Portal [](id=connecting-to-your-portal)
 
 When Liferay Sync first starts on your mobile device, press the *Get Started* 
 button to begin setting up the app. The next screen asks for your login 
@@ -427,7 +427,7 @@ Liferay feedback on the app.
 Great! Now that you know how to connect to your portal and find your sites, you 
 can get started managing the files and folders in those sites.
 
-### Managing Files and Folders
+### Managing Files and Folders [](id=managing-files-and-folders)
 
 Managing files and folders is the same whether you're working in My Documents or 
 My Sites. Pressing a site or folder shows you a list of its contents. Each file 
