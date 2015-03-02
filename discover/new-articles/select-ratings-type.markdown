@@ -44,12 +44,12 @@ public class BlogsPortletRatingsDefinition implements PortletRatingsDefinition {
 If the site admin or portal admin changes the ratings type, and there are existing ratings values in the database, Liferay won't modify any of them. It will interpret those values using the selected ratings type according to the following mechanism:
 
 1. When changing from stars to...
-  - **like:** 1 or 2 stars won't be considered. 3, 4 or 5 stars will be considered a Like. 1
-  - **thumbs up/down:** 1 or 2 stars will be considered a thumbs down. 3, 4 or 5 stars will be considered a thumbs up.
+ 	- **like:** 1 or 2 stars won't be considered. 3, 4 or 5 stars will be considered a Like. 1
+ 	- **thumbs up/down:** 1 or 2 stars will be considered a thumbs down. 3, 4 or 5 stars will be considered a thumbs up.
 
 2. When changing from thumbs up/down to...
-  - **stars:** A thumbs down will be considered as 1 star. A thumbs up will be considered 5 stars.
-  - **like:** A like will be considered a thumbs up.
+ 	- **like:** A like will be considered a thumbs up.
+	- **stars:** A thumbs down will be considered as 1 star. A thumbs up will be considered 5 stars.
 
 3. When changing from like to...
 	- **stars:** A like will be considered as 5 stars.
@@ -59,7 +59,7 @@ There may be cases where this interpretation is not good enough or a different c
 
 The implementation of method `transformRatingsData` will perform the transformation of the data. In order to obtain a fine-grained behaviour framework provides the `fromRatingsType` ant the `toRatingsType`, so developer could transform data as needed, and perform different transformations under different circumstances.
 
-This is an example of a `PortletRatingsDefition` that will reset the score from the ratings type when passing from `LIKE` to `STARS`. In this particular case changes are not reversible.
+This is an example of a `RatingsDataTransformer` that will reset the score from the ratings type when passing from `LIKE` to `STARS`. In this particular case changes are not reversible.
 
 ```java
 @Component
