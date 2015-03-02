@@ -1,4 +1,4 @@
-# Managing Files with Liferay Sync 2.0 Beta [](id=managing-files-with-liferay-sync-2-0-beta)
+# Managing Files with Liferay Sync 3.0 Beta [](id=managing-files-with-liferay-sync-3-0-beta)
 
 Liferay Sync is an add-on product for Liferay 6.2 CE and EE that synchronizes 
 files between your Liferay server and users' desktop and mobile environments. 
