@@ -35,14 +35,14 @@ download the Mobile SDK to and clone it by running the following command. This
 creates the `liferay-mobile-sdk` directory and downloads the Mobile SDK to it: 
 
     git clone git@github.com:liferay/liferay-mobile-sdk.git
-    
+
 Once the clone completes you can generate a Mobile SDK for the Guestbook 
 portlet. The Mobile SDK contains a convenient command line wizard for helping 
 you with this step. To start it, navigate to the `liferay-mobile-sdk` directory 
 and issue the following command:
 
     ./gradlew createModule
-    
+
 The wizard launches and then asks you to enter some properties for your project. 
 You're first asked to provide the project's `Context` property. This needs to be 
 set to the context path of the Guestbook portlet's remote services. To view the 
@@ -69,9 +69,37 @@ the Mobile SDK Builder:
 ![Figure 3: The command line wizard for building the Mobile SDK.](../../images/mobile-sdk-build-wizard.png)
 
 Upon entering the final property, the Mobile SDK Builder runs and generates a 
-`BUILD SUCCESSFUL` message. Congratulations! You just built the Liferay Mobile 
-SDK for the Guestbook portlet. Now that's an accomplishment worthy of writing 
-down in a guestbook! However, after your initial elation at the success message, 
-you're probably wondering what just happened. The Mobile SDK Builder didn't 
-automagically whisk you away to a place where you can see what it generated. 
-Fret not! That's what the next section is for.
+`BUILD SUCCESSFUL` message. At this point, you're probably wondering what just 
+happened. The Mobile SDK Builder generated the source classes you'll use in your 
+Android app to interact with the Guestbook portlet in your Liferay instance. 
+You can find these source classes in the following directory of your 
+`liferay-mobile-sdk` directory:
+
+    modules/guestbook-portlet/android/src/gen/java
+
+You should also note that the source classes are in the package path you 
+specified during the build, with an additional directory that denotes the 
+Liferay version. Therefore, the full path to the generated source 
+classes is:
+
+    modules/guestbook-portlet/android/src/gen/java/com/liferay/mobile/android/v62
+
+Inside this directory are two subdirectories that correspond to each entity in 
+the Guestbook portlet: `guestbook` and `entry`. It's here that you'll find the 
+respective source class for each, `EntryService.java` and 
+`GuestbookService.java`. There's just one last thing to take care of before you 
+can use these classes in your Android app: put them in a `jar` file.
+
+To do this, navigate to the `modules` directory on the command line and run 
+`../../gradlew jar`. This command does two things: 
+
+1. Generates a `jar` file with the Guestbook portlet's service classes. This is 
+    in `liferay-mobile-sdk/modules/guestbook-portlet/build/libs`.
+
+2. Generates a `jar` file for the rest of the Mobile SDK. This is in 
+    `liferay-mobile-sdk/android/build/libs`.
+
+Congratulations! You just built the Liferay Mobile SDK for the Guestbook 
+portlet. Now that's an accomplishment worthy of writing down in a guestbook! All 
+you need now is an Android app to install the Mobile SDK in. The next article in 
+this learning path walks you through the steps of creating this app. 
