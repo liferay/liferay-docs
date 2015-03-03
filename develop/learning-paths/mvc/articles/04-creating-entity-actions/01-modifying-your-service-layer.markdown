@@ -25,7 +25,7 @@ that's the easiest one to implement.
 
 2.  Add the following code to the file: 
 
-       	public Entry deleteEntry(long entryId, ServiceContext serviceContext)
+	public Entry deleteEntry(long entryId, ServiceContext serviceContext)
 			throws PortalException, SystemException {
 
             Entry entry = getEntry(entryId);
