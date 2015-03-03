@@ -92,13 +92,22 @@ in the same project.
     place in the `portlet` element when developing your own app. See the
     `portlet.xml` file's schema
     [http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd)
-    for details. 
+    for details.
+    
+5. Create the file `liferay-hook.xml` if it doesn't already exist and add the following lines in order for your custom         language properties to be available for use.
 
-5. Redeploy the plugin project and place the portlets on a page, if
+      <?xml version="1.0"?>
+      <!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
+
+      <hook>
+         <language-properties>content/Language*.properties</language-properties>
+      </hook>
+
+6. Redeploy the plugin project and place the portlets on a page, if
    you haven't already done so. Verify that they display the same intended
    messages based on your resource bundle. 
 
-6. Switch your portal's locale to the alternate language by adding the
+7. Switch your portal's locale to the alternate language by adding the
    language's two letter abbreviation in the context of the URL and refreshing
    the page.
 
