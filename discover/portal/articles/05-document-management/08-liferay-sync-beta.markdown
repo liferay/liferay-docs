@@ -34,17 +34,16 @@ walks you through this.
 Prior to Liferay 6.2, Liferay Portal's Documents and Media services contained
 all the logic used by Liferay Sync. As of Liferay 6.2, Sync processing is 
 instead in the *Sync Connector Web* plugin (sync-web). This plugin is therefore 
-required for using Sync with your Liferay 6.2 instances. While Sync Connector 
+required for using Sync in your Liferay 6.2 installations. While Sync Connector 
 Web is installed by default in Liferay Portal bundles, you need to install the 
-plugin's latest version for Sync to work properly. The new Sync clients won't 
-work with the Sync Connector Web plugin's bundled version. The install process 
-for Sync Connector Web is the same as that of any other Liferay plugin. Once 
-you've installed it, you're ready to use Sync. The plugin has no UI and 
-functions in the background to enable Sync without requiring any other attention 
-from you or your end users.
+latest version for Sync to work properly. The new Sync clients work only with
+the latest Sync Connector Web plugin. The install process for Sync Connector Web
+is the same as that of any other Liferay plugin. Once you've installed it,
+you're ready to use Sync. The plugin has no UI and functions in the background
+to enable Sync without requiring any other attention from you or your end users.
 
 There's also an optional Sync plugin available for Liferay 6.2, *Sync Admin* 
-(sync-admin-portlet), that lets administrators control how Sync clients function 
+(sync-admin-portlet). It lets administrators control how Sync clients function 
 with their portal. This plugin is new to Liferay Sync's latest version and is 
 not installed by default in Liferay bundles. While Sync Admin isn't required to 
 use Sync, without it you won't be able to turn off Sync for specific sites. The 
@@ -54,58 +53,56 @@ Once you've installed Sync Connector Web and optionally Sync Admin, end users
 need to install and configure the desktop Sync client. Users can also connect to 
 Sync using the Sync mobile app for Android and iOS. You can refer your users to 
 the latter sections of this guide for instructions on installing and using the 
-clients. However, if you're using Sync Admin it's a good idea to first configure 
-it so that Sync functions exactly the way you want it to.
+clients. If you decide to use Sync Admin, it's a good idea to first configure it
+so that Sync functions exactly the way you want it to.
 
 ### Using Sync Admin to Configure Liferay Sync [](id=using-sync-admin-to-configure-liferay-sync)
 
-The first thing you should do after installing Sync Admin is configure it so 
-that Sync functions the way you want it to. Configuring Sync Admin is very 
-straightforward. It has a simple UI that lets you enable or disable Sync across 
-the portal or for specific sites. You can access Sync Admin in the Control 
-Panel's Configuration section.
+Configuring Sync Admin is very straightforward. It has a simple UI that lets you
+enable or disable Sync across the portal or for specific sites. You can access
+Sync Admin in the Control Panel's Configuration section.
 
 ![Figure 5.23: The Sync Admin portlet is available in the Control Panel's Configuration Section.](../../images/sync-admin-01.png)
 
 By default, Sync is enabled for all sites in the portal. You can uncheck the 
 checkbox next to *Enable* to disable Sync for all sites. To enable or disable 
-Sync for only specific sites, first make sure that the checkbox next to 
-*Enabled* is checked. Sync is enabled for sites in the *Enabled* column, while 
-it's disabled for sites in the *Disabled* column. You can move sites between the 
-columns by selecting them and then clicking the arrow button in the direction of 
-the column you want to move them to. Note that you should use caution when 
-disabling Sync for a specific site, as doing so causes any files for that site 
-to be deleted from the clients as well. However, disabling Sync for a site 
-doesn't affect the site's files in the portal.
+Sync for a particular site, first make sure that the checkbox next to 
+*Enabled* is checked. Sync is enabled for sites in the *Enabled* column and 
+disabled for sites in the *Disabled* column. You can move sites back and forth
+by selecting them and then clicking the arrow button in the direction of the
+column where they should go. **Please use caution** when disabling Sync for a
+specific site, as doing so causes any files for that site to be **deleted** from the
+clients as well. Disabling Sync for a site, however, doesn't affect the site's
+files in the portal.
 
 +$$$
 
 **Warning:** Disabling Sync for specific sites from Sync Admin can result in 
-data loss across clients. If Sync is disabled for a site users are synced with, 
-any files in the clients' sync folders for that site are automatically deleted. 
-If a user is offline when Sync is disabled for a site, any offline changes or 
-additions they make are deleted upon reconnection. 
+data loss across clients. If Sync is disabled for a site users are currently
+syncing, any files in the clients' sync folders for that site are automatically
+deleted from their clients. If a user is offline when Sync is disabled for a
+site, any offline changes or additions they make are deleted upon reconnection. 
 
 $$$
 
 The remaining two settings in Sync Admin control how your portal exchanges data 
 with Sync clients. The *Max Connections* field sets the maximum number of 
 simultaneous connections each client is allowed per account. For example, if 
-this is set to three then a client can upload or download up to three files 
+this is set to three, a client can upload or download up to three files 
 simultaneously for each account. It's important to remember that this setting 
 operates on a per client basis. If this is set to three and a user has two 
-clients connected to an account (as they might if they have Sync set up on two 
+clients connected to an account (which is possible if Sync is installed on two 
 different machines), then this effectively becomes six for that user. While 
 increasing Max Connections can speed up file transfers, it also places a heavier 
 load on the server. *Max Connections* is set to one by default.
 
 The next setting in Sync Admin is *Poll Interval*. Poll Interval sets the length 
 of time in seconds for how often clients check the portal for updates. For 
-example, if this is set to ten then any connected clients check the portal for 
-updates every ten seconds. The default value is five.
+example, if this is set to ten, connected clients check the portal for updates
+every ten seconds. The default value is five.
 
 Also, each site enabled for Sync must have a Documents and Media portlet. If 
-there's not a Documents and Media portlet on a site selected for syncing, users 
+there's no Documents and Media portlet on a site selected for syncing, users 
 get a *The requested resource was not found* error when they try to use the 
 *Open Website* link from their Sync menus. 
 
@@ -115,12 +112,12 @@ file deletion.
 
 ### Protecting Against Accidental File Deletion [](id=protecting-against-accidental-file-deletion)
 
-The power of Liferay Sync rests in its ability to propogate any changes that 
-users make across the portal and connected clients. However, these changes could 
-also include file deletion. When a file is deleted in a connected client, that 
-deletion is also carried out in the portal and in any other connected clients. 
-Likewise, if a file is deleted in the portal then it's also deleted in any 
-connected clients. In other words, if a file is deleted anywhere, it's deleted 
+The power of Liferay Sync rests in its ability to propagate any changes that 
+users make across the portal and connected clients. These changes can also
+include file deletion. When a file is deleted from a connected client, that
+deletion is also carried out in the portal and in any other connected clients.
+Likewise, if a file is deleted in the portal, it's also deleted in any
+connected clients. In other words, if a file is deleted anywhere, it's deleted
 *everywhere*. You're probably thinking, "This is a disaster waiting to happen!" 
 Don't fret! Liferay's Recycle Bin is enabled by default and allows recovery of 
 any deleted files. You can access the Recycle Bin from each site's 
@@ -128,63 +125,62 @@ any deleted files. You can access the Recycle Bin from each site's
 
 +$$$
 
-**Warning:** Liferay Sync automatically propogates file and folder deletion 
+**Warning:** Liferay Sync automatically propagates file and folder deletion 
 through the portal and in any connected clients. If the portal or site 
 administrator has disabled the Recycle Bin, accidentally deleted files can't be 
 recovered.
 
 $$$
 
-However, portal and site administrators can disable the Recycle Bin. If you've 
-disabled the Recycle Bin, then you won't be able to protect against accidental 
-file deletion that is propogated through Sync. 
+Portal and site administrators can, of course, disable the Recycle Bin. If
+you've disabled the Recycle Bin, then you have any protection from accidental
+file deletion propagated through Sync. 
 
 ### Ensuring Sync Security [](id=ensuring-sync-security)
 
 As an administrator, you're undoubtedly concerned about the security of any 
 connections to and from your portal. It's important to note that to support 
 Security Mode in the Sync mobile client, your Liferay server must use SSL. 
-Otherwise, files are transmitted in the open as plaintext. Also, as long as your 
-server is configured to use HTTPS, the Sync clients communicate securely with 
-your portal using user-supplied credentials. This ensures that each user can 
-only access the documents and sites they have permission for. The next section 
-gives a brief demonstration of how Sync's permissions work with those of your 
-portal.
+Otherwise, files are transmitted in the open. Also, as long as your server is
+configured to use HTTPS, the Sync clients communicate securely with your portal
+using user-supplied credentials. This ensures that each user can only access the
+documents and sites they have permission for. The next section gives a brief
+demonstration of how Sync's permissions work with those of your portal.
 
 ### Demonstrating Liferay Sync Permissions [](id=demonstrating-liferay-sync-permissions)
 
 Sync uses Liferay's default permissions to determine the files and folders to 
-sync with the user's machine. This means that Sync can only sync with files a 
-user can access in the portal. After installing the desktop Sync client, you can 
-use the following steps to test this functionality.
+sync with the user's machine. This means that Sync can only sync files a user
+can access in the portal. After installing the desktop Sync client, you can use
+the following steps to test this functionality.
 
 First, enter the text `classified information` into a new text file and save it 
 on your desktop as `secret.txt`. Then use your browser to log into your portal 
-and create a new user with the username *secretagent* and the email address 
+and create a new user with the user name *secretagent* and the email address 
 *secretagent@liferay.com*. Give this user a password and then create a new 
 private site called *Secret Site*. Create a page on the site and add the 
 Documents and Media portlet to it. Then assign the secretagent user to the 
 Secret Site and grant the *Site Administrator* role to this user. Log in as 
 secretagent and select *Secret Site* from the *My Sites* menu on the Dockbar. 
-Then upload the `secret.txt` document to the Documents and Media portlet. You 
-also need to have a user that isn't a member of the Secret Site and therefore 
+Then upload the `secret.txt` document to the Documents and Media portlet. Make
+sure you also have a user that isn't a member of the Secret Site and therefore 
 doesn't have access to any of its documents through Sync. If you don't have such 
 a user, create one now.
 
-Next, you'll configure your Liferay Sync client to log in with the secretagent 
+Next, configure your Liferay Sync client to log in with the secretagent 
 user's credentials and sync with the Secret Site. Open the Liferay Sync menu 
-from the taskbar and select *Preferences*. In the *Accounts* tab, click the plus 
-icon at the window's bottom left to add an account. Complete the setup with the 
-secretagent user's credentials and uncheck all Liferay sites except the 
-Secret Site. Now confirm that the `secret.txt` file you uploaded to the Secret 
-Site is downloaded to your new Sync folder. Open it and check that it contains 
-the text `classified information`. Next, use Sync to connect to your portal 
-using the user that doesn't belong to the Secret Site. Note that this user isn't 
-able to sync with the Secret Site because they aren't a site member. 
+from the system tray and select *Preferences*. In the *Accounts* tab, click the
+plus icon at the window's bottom left to add an account. Provide the secretagent
+user's credentials and uncheck all Liferay sites except the Secret Site. Now
+confirm that the `secret.txt` file you uploaded to the Secret Site is downloaded
+to your new Sync folder. Open it and check that it contains the text `classified
+information`. Next, use Sync to connect to your portal with the user that
+doesn't belong to the Secret Site. Since this user isn't a site member, the file
+is doesn't sync. 
 
 Congratulations! You've successfully set up a Liferay Sync folder that can only 
 be accessed by the secretagent user and administrators. By using Liferay's 
-permissions, Sync only allows users to access the files and folders they can 
+permissions, Sync allows users to access only the files and folders they can 
 access in the portal. Great! Now you know how to enable and configure Liferay 
 Sync in your portal. 
 
@@ -194,14 +190,14 @@ For desktop environments, Liferay Sync creates a new folder structure used for
 synchronizing files. You can treat the files there the same as any ordinary 
 file. Credentials, sync folder location, and other options are configured in the 
 client. Also, native desktop notification events keep you informed of what Sync 
-is doing. Native menu and taskbar integration keep Sync controls within easy 
+is doing. Native menu and task bar integration keep Sync controls within easy 
 reach. You'll first need to install the Sync client for your desktop 
 environment. 
 
 ### Installing the Desktop Liferay Sync Client [](id=installing-the-desktop-liferay-sync-client)
 
 The installation steps for Liferay Sync on Windows and Mac OS differ only 
-slightly. Regardless of platform, you need administrator privilages on your 
+slightly. Regardless of platform, you need administrator privileges on your 
 machine. Upon launching the Windows application installer, you're prompted to 
 choose an install location. Select an appropriate location and click *Install*. 
 Sync automatically starts when the installation finishes. The first time you run 
@@ -219,9 +215,9 @@ the tool is installed or upgraded.
 ![Figure 5.24: Drag the Liferay Sync icon to the Applications folder.](../../images/sync-mac-install.png)
 
 Now that you've installed sync, you're ready to configure it! The configuration 
-steps for Sync on Windows and Mac are identical. The screenshots below show 
-these steps. First, enter your portal's address along with your account 
-credentials. Click *Sign In* when you're finished. 
+steps for Sync on Windows and Mac are identical. First, enter your portal's
+address along with your account credentials. Click *Sign In* when you're
+finished. 
 
 Next, Sync offers you a warm greeting and shows you the list of sites in your 
 portal that you can sync with. If there's a long list of sites that you don't 
@@ -229,14 +225,14 @@ want to scroll through, or you don't see the site you want to sync with, you can
 search for sites in the *Search* bar above the site list. Check the checkbox for 
 each site you want to sync with and then click *Proceed*. 
 
-You now need to specify the local folder that you want to use for syncing with 
-your portal. This folder is created for you if it doesn't exist. By default, 
-this folder is located in your user documents folder and is named after your 
-portal. For example, since the portal in the screenshots below is running 
-locally, the Sync folder is named *localhost*. You can also see that this folder 
-is located in the machine's user documents directory. Of course, you're free to 
-place this folder anywhere and call it anything you want. Click *Start Syncing* 
-when you're ready to begin syncing files. 
+You now need to specify the local folder that you want to sync with your portal.
+This folder is created for you if it doesn't exist. By default, this folder is
+in your user documents folder and is named after your portal. For example, since
+the portal in the screenshots below is running locally, the Sync folder is named
+*localhost*. You can also see that this folder is located in the machine's user
+documents directory. Of course, you're free to place this folder anywhere and
+call it anything you want. Click *Start Syncing* when you're ready to begin
+syncing files. 
 
 ![Figure 5.25: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../images/sync-setup-01.png)
 
@@ -249,21 +245,21 @@ when you're ready to begin syncing files.
 Sync congratulates you on setting it up and begins to sync files from the sites 
 you selected, in the local folder you specified. Note that completing the 
 initial sync may take a significant amount of time depending on the amount of 
-data being transferred. You can safely close the window for syncing to continue 
-in the background. To view the local sync folder, click *Open Folder*.
+data being transferred. You can safely close the window, and syncing will
+continue in the background. To view the local sync folder, click *Open Folder*.
 
 ### Viewing Your Sync Status [](id=viewing-your-sync-status)
 
 Once the Liferay Sync desktop client is installed, an icon appears in your 
-taskbar (Windows) or menu bar (Mac) whenever it's running. Clicking this icon 
+task bar (Windows) or menu bar (Mac) whenever it's running. Clicking this icon 
 opens a menu that shows the portals you're synced with, links to preferences and 
 help, and the option to quit Sync. Mousing over a portal extends the menu to 
 show additional options for that portal. The following screenshots show this 
 menu in Windows.
 
-![Figure 5.29: The Sync desktop menu options.](../../images/sync-taskbar-01.png)
+![Figure 5.29: The Sync desktop menu options are always available from the task bar.](../../images/sync-taskbar-01.png)
 
-![Figure 5.30: Each portal also has its own set of options in the taskbar menu.](../../images/sync-taskbar-02.png)
+![Figure 5.30: Each portal also has its own set of options in the task bar menu.](../../images/sync-taskbar-02.png)
 
 The menu for each portal first shows the sync status. The sync status shows 
 *Synced* when synchronization is complete. Mousing over *Open Sync Folder* 
@@ -280,7 +276,7 @@ Next, you'll learn how to use Sync's preferences to control how Sync behaves.
 
 You can use Sync's preferences to add or remove portals to sync with, edit the 
 settings used to connect to your portals, and control the basic behavior of 
-Sync. Open Sync's preferences by clicking the Sync icon in the taskbar (Windows) 
+Sync. Open Sync's preferences by clicking the Sync icon in the task bar (Windows) 
 or menu bar (Mac OS) and selecting *Preferences*. You're first shown the 
 Preferences menu's *Accounts* tab.
 
@@ -295,13 +291,12 @@ Preferences UI, the sites you have permission to sync with are shown on the
 right. These sites are further broken down into *Selected Sites* and 
 *Unselected Sites*. The sites you currently sync with are shown under 
 *Selected Sites*. Other sites available for syncing are shown under 
-*Unselected Sites*. To change the sites you sync with, click the *Select Sites* 
+*Unselected Sites*. To select a site to sync, click the *Select Sites* 
 button under the site list. In the menu that appears, check the checkbox for the 
-sites you want to sync with and then click *Confirm*. Use caution when 
-unselecting sites to sync with. Unselecting a site deletes its folder on your 
-machine. Below the *Select Sites* button, the local sync folder location for the 
-selected account is shown. Click the *Change* button to change this folder's 
-location.
+sites you want and then click *Confirm*. Use caution when de-selecting sites.
+De-selecting a site deletes its folder on your machine. Below the *Select Sites*
+button, the local sync folder location for the selected account is shown. Click
+the *Change* button to change this folder's location.
 
 The Preferences menu's *General* tab contains three settings for the Sync 
 client's general behavior. To start Sync automatically each time your machine 
@@ -331,7 +326,7 @@ recovering the file isn't possible.
 
 +$$$
 
-**Warning:** Deleting a file in your Sync folder causes it's deletion in the 
+**Warning:** Deleting a file in your Sync folder also deletes it in the 
 portal and in other clients. If you accidentally delete a file, it can be 
 recovered from the portal's Recycle Bin. The Recycle Bin is enabled by default. 
 However, file recovery isn't possible if the portal or site administrator has 
@@ -348,13 +343,14 @@ navigate to its Documents and Media portlet. You should see your `README.txt`
 file listed there.
 
 Next, download the file to a convenient location on your machine. The simplest 
-way to do this is to mouseover the file's icon, click the small triangle icon on 
-the file's top right corner, and click *Download*. Open the file and check that 
-it still says `test`. Now open the `README.txt` file in your Sync folder and 
-edit it so that it says `second test`. Once the changes are synced, go back to 
-your browser and refresh the page with your Documents and Media portlet. Click 
-on the *README.txt* icon, look at the information displayed to the right, and 
-you should see that the file's version number has been incremented.
+way to do this is to hover your mouse over the file's icon, click the small
+triangle icon on the file's top right corner, and click *Download*. Open the
+file and check that it still says `test`. Now open the `README.txt` file in your
+Sync folder and edit it so that it says `second test`. Once the changes are
+synced, go back to your browser and refresh the page with your Documents and
+Media portlet. Click on the *README.txt* icon, look at the information displayed
+to the right, and you should see that the file's version number has been
+incremented.
 
 ![Figure 5.33: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/sync-file-edit-01.png)
 
@@ -367,8 +363,8 @@ syncing, go back to your browser and refresh the page with your Documents and
 Media portlet. The file is now gone! The file is also deleted from the local 
 Sync folders of all other Sync clients connected to the site. It's very, very 
 important to remember this rule of thumb when you're working with files in your 
-local Sync folder: deleting files there deletes them *everywhere*! Next, using 
-the Liferay Sync mobile client is covered.
+local Sync folder: deleting files there deletes them *everywhere*! Next, you'll
+learn how to use the client for your mobile device. 
 
 ## Using the Mobile Liferay Sync Client [](id=using-the-mobile-liferay-sync-client)
 
@@ -398,11 +394,11 @@ After signing in, the app takes you to a panel that shows your name, a gear icon
 for accessing the app's settings, *My Sites*, and *My Documents*. My Sites and 
 My Documents encompass the sites you're permitted to sync with in your portal. 
 My Documents is your personal user site, while My Sites shows the other sites 
-you can sync with. No matter how deep you are in the folder hierarchy of a site, 
-swiping to the right returns you to the panel. If you're in the first level of 
-My Sites or My Documents, pressing the location bar at the top slides the screen 
-slightly to the right to reveal a compact view of the panel. The following 
-screenshots show both views of the panel.
+available. No matter how deep you are in the folder hierarchy of a site, swiping
+to the right returns you to the panel. If you're in the first level of My Sites
+or My Documents, pressing the location bar at the top slides the screen slightly
+to the right to reveal a compact view of the panel. The following screenshots
+show both views of the panel.
 
 ![Figure 5.34: This panel lets you access the app's settings, as well as your sites and documents.](../../images/sync-mobile-panel.png)
 
@@ -416,11 +412,11 @@ app when using Security Mode. The passcode is then used to access the Sync app
 and decrypt your files. This protects the files on your device and portal in the 
 event your device is lost or stolen. However, you should note that enabling 
 Security Mode causes downloading and opening files to take slightly longer than 
-usual. Your Liferay server must also use SSL, otherwise your files are 
-transmitted in the open as plaintext. Security Mode is currently only available 
-in the Android version of Sync, but is coming soon to Sync on iOS. Below the 
-Security Mode toggle, the app's version is listed as well as a link to send 
-Liferay feedback on the app.
+usual. Your Liferay server must also use SSL; otherwise your files are 
+transmitted in the open. Security Mode is currently only available in the
+Android version of Sync, but is coming soon to Sync on iOS. Below the Security
+Mode toggle, the app's version is listed as well as a link to send Liferay
+feedback on the app.
 
 ![Figure 5.36: The Settings screen for the Sync app lets you sign out of your portal, enable Security Mode, view the app's version, and send feedback.](../../images/sync-mobile-settings.png)
 
@@ -475,11 +471,11 @@ files.
 
 +$$$
 
-**Warning:** Deleting a file in the mobile Sync app causes it's deletion in the 
-portal and across any synced clients. If a file is accidentally deleted, you can 
-restore it from the portal's Recycle Bin. The Recycle Bin is enabled by default. 
-However, file recovery isn't possible if the portal or site administrator has 
-disabled the Recycle Bin. 
+**Warning:** Deleting a file in the mobile Sync app deletes it in the portal and
+across any synced clients. If a file is accidentally deleted, you can restore it
+from the portal's Recycle Bin. The Recycle Bin is enabled by default.  However,
+file recovery isn't possible if the portal or site administrator has disabled
+the Recycle Bin. 
 
 $$$
 
