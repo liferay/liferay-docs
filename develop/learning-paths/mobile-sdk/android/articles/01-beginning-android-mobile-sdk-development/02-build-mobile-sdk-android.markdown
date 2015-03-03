@@ -85,13 +85,13 @@ Inside this directory are two subdirectories that correspond to each entity in
 the Guestbook portlet: `guestbook` and `entry`. It's here that you'll find the 
 respective source class for each, `EntryService.java` and 
 `GuestbookService.java`. There's just one last thing to take care of before you 
-can use these classes in your Android app: put them in a `jar` file.
+can use these classes in your Android app: put them in a `jar` file. 
 
-To do this, navigate to the `modules` directory on the command line and run 
-`../../gradlew jar`. This command does two things: 
+To do this, navigate to the `modules/guestbook-portlet` directory on the command 
+line and run `../../gradlew jar`. This command does two things: 
 
 1. Generates a `jar` file with the Guestbook portlet's service classes. This is 
-    in `liferay-mobile-sdk/modules/guestbook-portlet/build/libs`.
+    in `modules/guestbook-portlet/build/libs`.
 
 2. Generates a `jar` file for the rest of the Mobile SDK. This is in 
     `liferay-mobile-sdk/android/build/libs`.
