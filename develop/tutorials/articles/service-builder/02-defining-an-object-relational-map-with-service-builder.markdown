@@ -1,11 +1,10 @@
 # Defining an Object-Relational Map with Service Builder
 
 In this tutorial, you'll learn how to define an object relational map for your
-application so that your application can persist data. The example code in this
-tutorial, as well as the example code in the other Service Builder and Services
-tutorials, comes from the Event Listing project, which you can find on Github
-here:
-[https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet).
+application so that it can persist data. The example code in this tutorial, as
+well as the example code in the other Service Builder and Services tutorials,
+comes from the Event Listing project, which you can find on [Github](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet).
+
 The Event Listing project is an example portlet project that an organization can
 use to schedule social events. The event-listing-portlet project allows
 administrators to manage and list these events. The project defines two
@@ -20,7 +19,7 @@ If you want to display entity data in a Liferay application, you're free to
 create any kind of user interface that you can imagine. The following image
 shows a simple example. To learn how to create simple user interfaces for
 Liferay Service Builder applications, please see the
-[Implementing a UI with Liferay Taglibs](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
+[Implementing a UI with Liferay Taglibs](/develop/learning-paths/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
 learning path.
 
 ![Figure 1: The Event Listing and Location Listing portlets let you add and modify social events and locations. The portlets rely on the event and location entities and the service infrastructure that Liferay Service Builder builds around them.](../../images/service-builder-view-events.png)
@@ -33,14 +32,14 @@ described in this section is only intended to demonstrate how to use Service
 Builder. The Calendar portlet provides many more features than the simple
 example application described here. For information about the Calendar portlet,
 please refer to the
-[Managing Events and Calendar Resources with Liferay's Calendar Portlet](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/managing-events-and-calendar-resources-with-liferays-c) section.
+[Managing Events and Calendar Resources with Liferay's Calendar Portlet](/discover/portal/-/knowledge_base/6-2/managing-events-and-calendar-resources-with-liferays-c) section.
 
 $$$
 
 As with any portlet project, the event-listing-portlet project's Java sources
 reside in the `docroot/WEB-INF/src` folder. Notice the
 `EventListingPortlet.java` and `LocationListingPortlet.java` files in the
-`com.nostester.portlet.eventlisting` package. These portlet classes extend
+`com.liferay.docs.eventlisting` package. These portlet classes extend
 Liferay's `MVCPortlet` class. They act as the controllers in the MVC pattern.
 These classes contain the business logic that invokes the Service Builder
 generated event and location services that you'll learn how to create in this
@@ -122,7 +121,7 @@ Explorer and then select *File* &rarr; *New* &rarr; *Liferay Service Builder*.
 Liferay IDE creates a `service.xml` file in your `docroot/WEB-INF/src` folder
 and displays the file in *Overview* mode.
 
-Liferay IDE also provides a *Diagram* mode and a *Source* mode to give you
+Liferay IDE also provides a Diagram mode and a Source mode to give you
 different perspectives of the service information in your `service.xml` file.
 Diagram mode is helpful for creating and visualizing relationships between
 service entities. Source mode brings up the `service.xml` file's raw XML content
@@ -154,7 +153,7 @@ complete file paths for the service and persistence classes are
 `docroot/WEB-INF/service/com/liferay/docs/eventlisting` and
 `docroot/WEB-INF/src/com/liferay/docs/eventlisting`, respectively. Please
 refer to the
-[Running Service Builder and Understanding the Generated Code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 tutorial for a description of the contents of these packages. 
 
 Service Builder uses the service *namespace* in naming the database tables it
@@ -263,7 +262,7 @@ Service Builder creates a database field for each column you add to the
 specified for each column, and it does this across all the databases Liferay
 supports. Once Service Builder runs, it generates a Hibernate
 configuration that handles the object-relational mapping. Service Builder
-automatically generates accessor methods in the model class for these
+automatically generates getter/setter methods in the model class for these
 attributes. The column's Name specifies the name used in the getters and setters
 that are created for the entity's Java field. The column's Type indicates the
 Java type of this field for the entity. If a column's Primary (i.e., primary
@@ -450,83 +449,83 @@ content of the Event Listing project below. We've added some comments to
 highlight the service's various elements. You can refer to the Event Listing
 project's `service.xml` file's when you're creating your own: 
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
-    "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
-    <service-builder package-path="com.liferay/docs.eventlisting">
-        <author>Joe Bloggs</author>
-        <namespace>Event</namespace>
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+        <service-builder package-path="com.liferay/docs.eventlisting">
+            <author>Joe Bloggs</author>
+            <namespace>Event</namespace>
 
-        <entity name="Event" local-service="true" remote-service="true">
+            <entity name="Event" local-service="true" remote-service="true">
 
-            <!-- PK fields -->
+                <!-- PK fields -->
 
-            <column name="eventId" type="long" primary="true" />
+                <column name="eventId" type="long" primary="true" />
 
-            <!-- Audit fields -->
+                <!-- Audit fields -->
 
-            <column name="companyId" type="long" />
-            <column name="groupId" type="long" />
-            <column name="userId" type="long" />
-            <column name="createDate" type="Date" />
-            <column name="modifiedDate" type="Date" />
+                <column name="companyId" type="long" />
+                <column name="groupId" type="long" />
+                <column name="userId" type="long" />
+                <column name="createDate" type="Date" />
+                <column name="modifiedDate" type="Date" />
 
-            <!-- Other fields -->
+                <!-- Other fields -->
 
-            <column name="name" type="String" />
-            <column name="description" type="String" />
-            <column name="date" type="Date" />
-            <column name="locationId" type="long" />
+                <column name="name" type="String" />
+                <column name="description" type="String" />
+                <column name="date" type="Date" />
+                <column name="locationId" type="long" />
 
-            <!-- Order -->
+                <!-- Order -->
 
-            <order by="asc">
-                    <order-column name="date" />
-            </order>
+                <order by="asc">
+                        <order-column name="date" />
+                </order>
 
-            <!-- Finder methods -->
+                <!-- Finder methods -->
 
-            <finder name="GroupId" return-type="Collection">
-                    <finder-column name="groupId" />
-            </finder>
-        </entity>
+                <finder name="GroupId" return-type="Collection">
+                        <finder-column name="groupId" />
+                </finder>
+            </entity>
 
-        <entity name="Location" local-service="true" remote-service="true">
+            <entity name="Location" local-service="true" remote-service="true">
 
-            <!-- PK fields -->
+                <!-- PK fields -->
 
-            <column name="locationId" type="long" primary="true" />
+                <column name="locationId" type="long" primary="true" />
 
-            <!-- Audit fields -->
+                <!-- Audit fields -->
 
-            <column name="companyId" type="long" />
-            <column name="groupId" type="long" />
-            <column name="userId" type="long" />
-            <column name="createDate" type="Date" />
-            <column name="modifiedDate" type="Date" />
+                <column name="companyId" type="long" />
+                <column name="groupId" type="long" />
+                <column name="userId" type="long" />
+                <column name="createDate" type="Date" />
+                <column name="modifiedDate" type="Date" />
 
-            <!-- Other fields -->
+                <!-- Other fields -->
 
-            <column name="name" type="String" />
-            <column name="description" type="String" />
-            <column name="streetAddress" type="String" />
-            <column name="city" type="String" />
-            <column name="stateOrProvince" type="String" />
-            <column name="country" type="String" />
-            
-            <!-- Order -->
+                <column name="name" type="String" />
+                <column name="description" type="String" />
+                <column name="streetAddress" type="String" />
+                <column name="city" type="String" />
+                <column name="stateOrProvince" type="String" />
+                <column name="country" type="String" />
+                
+                <!-- Order -->
 
-            <order by="asc">
-                    <order-column name="name" />
-            </order>
+                <order by="asc">
+                        <order-column name="name" />
+                </order>
 
-            <!-- Finder methods -->
+                <!-- Finder methods -->
 
-            <finder name="GroupId" return-type="Collection">
-                    <finder-column name="groupId" />
-            </finder>
-        </entity>
-    </service-builder>
+                <finder name="GroupId" return-type="Collection">
+                        <finder-column name="groupId" />
+                </finder>
+            </entity>
+        </service-builder>
 
 <!--
 We should include the entity element's uuid attribute here and in the SDK
