@@ -15,7 +15,7 @@ directly on the page as well, as will be described.
 
 The My Sites section provides a list of the sites which the logged-in user can
 access. These appear as a drop down list. Next are Notifications. The
-Notifications icon shows the unread notifications you have. You are
+Notifications icon shows the unread notifications and requests you have. You are
 notified upon receiving a private message, an invitation to join a site, a
 social connection request, or an event reminder. Alerts and announcements
 created via the Alerts or Announcements applications are accessible via the
