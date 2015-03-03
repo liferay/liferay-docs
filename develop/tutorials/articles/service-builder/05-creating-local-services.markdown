@@ -5,7 +5,7 @@ entity's local service extension point. Local services can be invoked within
 your application or by other Liferay applications running on the same Liferay
 instance as your application. Remote services differ from local services in that
 remote services can be invoked from any application that can access your Liferay
-instance (e.g., over the internet) and has permission to do so. All of your
+instance (e.g., over the Internet) and has permission to do so. All of your
 application's core business logic for working with your entity model (or models)
 should be added as methods of your `*LocalServiceImpl` class. However, before
 adding any custom service methods, you should review the initial service classes
@@ -16,6 +16,7 @@ This best practice appears in both 05-creating-local-service.markdown and
 in 07-creating-remote-services.markdown. If you edit it, please update both
 locations.
 -->
+
 **Best Practice:** If your application needs both local and remote services,
 determine the service methods that your application needs for working with your
 entity model. Add these service methods to `*LocalServiceImpl`. Then create
