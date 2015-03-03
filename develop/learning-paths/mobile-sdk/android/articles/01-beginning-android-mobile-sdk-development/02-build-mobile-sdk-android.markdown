@@ -1,38 +1,35 @@
 # Building the Liferay Mobile SDK
 
-Once you've built and deployed the Guestbook portlet to your Liferay instance, 
-you're ready to build the Liferay Mobile SDK. You might be asking yourself, "Why 
-do I have to build it? Can't I just use the pre-built Mobile SDK that Liferay 
-already provides?" Fantastic question! The reason is that the pre-built Mobile 
-SDK provided by Liferay only includes classes for calling the remote services of 
-Liferay's core portlets. This learning path calls the remote services of the 
-custom Guestbook portlet developed in the [Liferay MVC learning path](/learning-paths/-/knowledge_base/6-2/beginning-liferay-development). 
-To generate the classes required to call these services, you have to build the 
-Mobile SDK. This is the case with any custom portlet. You must build the Mobile 
-SDK if you want to use it to call your portlet's remote services. Now it's time 
-to build!
-
-## Building the Guestbook Portlet's WSDD
-
-For the Mobile SDK Builder to discover the Guestbook portlet's remote services, 
-you must first build the portlet's WSDD (Web Service Deployment Descriptor) 
-file. Open the Guestbook portlet's `service.xml` file in Liferay IDE. In the 
-Overview tab of `service.xml`, click the middle icon in the top right corner. 
-This icon is highlighted in red in the following screenshot:
-
-![Figure 1: Click the icon highlighted in red to build the Guestbook portlet's WSDD file.](../../images/build-wsdd.png)
-
-Redeploy the Guestbook portlet once the WSDD build completes. Now you're ready 
-to build the Mobile SDK.
+Once you've deployed the Guestbook portlet to your Liferay instance, you're 
+ready to build the Liferay Mobile SDK. You might be asking yourself, "Why do I 
+have to build it? Can't I just use the pre-built Mobile SDK that Liferay already 
+provides?" Fantastic question! The reason is that the pre-built Mobile SDK 
+provided by Liferay only includes classes for calling the remote services of 
+Liferay's *core* portlets. Core portlets are the portlets included with every 
+Liferay installation (also referred to as *out-of-the-box* portlets). Since this 
+learning path calls the remote services of the Guestbook portlet developed in 
+the [Liferay MVC learning path](/learning-paths/-/knowledge_base/6-2/beginning-liferay-development), 
+you have to build the Mobile SDK. This is the case with any non-core portlet: 
+you must build the Mobile SDK if you want to use it to call your portlet's 
+remote services. Now it's time to get building!
 
 ## Building the Mobile SDK
 
+For the Mobile SDK Builder to generate the classes that call any non-core 
+portlet's remote services, those services must be available and accompanied by a 
+Web Service Deployment Descriptor (WSDD). The Guestbook portlet's remote 
+services and WSDD are generated in the [last section](/learning-paths/-/knowledge_base/6-2/creating-web-services-for-your-application) 
+of the Liferay MVC learning path, so you don't need to generate them here. You 
+should keep this requirement in mind though if you're developing your own 
+portlets.
+
 To build the Mobile SDK, you first need to download its source code. You'll do 
-this by using Git to clone the `liferay-mobile-sdk` project from GitHub. If your 
-machine isn't set up to use Git, set it up by following [these instructions](https://help.github.com/articles/set-up-git/) 
-on GitHub. Once you've set up Git, navigate to the directory you want to 
-download the Mobile SDK to and clone it by running the following command. This 
-creates the `liferay-mobile-sdk` directory and downloads the Mobile SDK to it: 
+this by using Git to *clone* the `liferay-mobile-sdk` project from GitHub. If 
+your machine isn't set up to use Git, set it up by following [these instructions](https://help.github.com/articles/set-up-git/) 
+on GitHub. Once you've set up Git, navigate to the directory on your machine 
+that you want to download the Mobile SDK to and clone it by running the 
+following command. This creates the `liferay-mobile-sdk` directory on your 
+machine and downloads the Mobile SDK to it: 
 
     git clone git@github.com:liferay/liferay-mobile-sdk.git
 
@@ -52,7 +49,7 @@ page's upper left, there's a menu for selecting from the available context
 paths. Select *guestbook-portlet*. The UI updates to show you only the remote 
 services available in that context path. 
 
-![Figure 2: The guestbook-portlet context path on the server.](../../images/remote-services-context.png)
+![Figure 1: The guestbook-portlet context path on the server.](../../images/remote-services-context.png)
 
 The Mobile SDK Builder needs this value so that it knows what remote services to 
 generate classes and methods for. Return to the terminal and enter 
@@ -66,7 +63,7 @@ for the build to run, enter `Guestbook Portlet SDK`. The following screenshot
 shows the `Context`, `Package Name`, and `POM Description` properties entered in 
 the Mobile SDK Builder:
 
-![Figure 3: The command line wizard for building the Mobile SDK.](../../images/mobile-sdk-build-wizard.png)
+![Figure 2: The command line wizard for building the Mobile SDK.](../../images/mobile-sdk-build-wizard.png)
 
 Upon entering the final property, the Mobile SDK Builder runs and generates a 
 `BUILD SUCCESSFUL` message. At this point, you're probably wondering what just 
