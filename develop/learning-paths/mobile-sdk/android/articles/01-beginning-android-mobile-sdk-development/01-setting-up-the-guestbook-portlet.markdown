@@ -66,11 +66,21 @@ the Liferay instance you just set up.
 
 ## Deploying the Guestbook Portlet
 
-<!-- Replace link once .war file is on GitHub -->
+<!-- Replace link once .war file is on LDN -->
 Now that your portal is set up, you can deploy the Guestbook portlet to it. 
 Download the Guestbook portlet's `.war` package from [here](http://www.liferay.com/) 
 and place it in the `[Liferay Home]/deploy` directory. You should see messages 
 in your console indicating that the Guestbook portlet has been successfully 
-deployed.
+deployed. On the default site of your portal, click the + icon on the left side 
+of the screen and then click *Applications* at the top of the menu that slides 
+out. Open the *Sample* category and drag *Guestbook* onto the page. The 
+Guestbook portlet should now appear with the default *Main* guestbook. Add a new 
+guestbook and an entry or two to each. When you create the Guestbook Android 
+app, this ensures that there is some content to display in it. The Guestbook 
+portlet on your site should now look something like this: 
 
-<!-- Add steps for adding the Guestbook portlet to a page and creating some entries/guestbooks -->
+![Figure 1: The Guestbook portlet, with a new guestbook and some entries.](../../images/guestbook-portlet-01.png)
+
+Stupendous! You've successfully set up a Liferay instance and added the 
+Guestbook portlet to it. Now you're ready to get started with the Liferay Mobile 
+SDK.
