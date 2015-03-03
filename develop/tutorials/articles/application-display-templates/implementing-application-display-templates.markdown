@@ -36,7 +36,9 @@ exposing the ADT functionality to users. Let's walk through these steps:
     - **getName():** Declares the name of your ADT type (typically, the name of
     the portlet).
     - **getResourceName():** Specifies which resource is using the ADT (e.g., a
-    portlet) for permission checking.
+    portlet) for permission checking. This method must return the Fully Qualified
+    Portlet ID for the portlet. Visit the [Embedding Portlets In A Layout Template](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/embedding-portlets-in-a-layout-template)
+    section for details on how to construct the FQPI.
     - **getTemplateVariableGroups():** Defines the variables exposed in the
     template editor.
 
