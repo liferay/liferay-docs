@@ -73,7 +73,7 @@ After you've configured your portal for sandboxing and restarted it, deploy the
 sandbox app. Then navigate to the Control Panel to see the *SPI Administration*
 link displayed in the *Configuration* section.
 
-![Figure 4.11: The Sandboxing App comes with an *SPI Administration* UI that's accessible from the portal's Control Panel.](../../images/sandboxing-spi-admin-available-in-control-panel.png)
+![Figure 2.5: The Sandboxing App comes with an *SPI Administration* UI that's accessible from the portal's Control Panel.](../../images/sandboxing-spi-admin-available-in-control-panel.png)
 
 Click the *SPI Administration* link to start creating SPIs for running new or
 troublesome portlets. 
@@ -85,12 +85,12 @@ in the Configuration section of the Control Panel.
 
 To add a new SPI, simply click on the *Add SPI* button. 
 
-![Figure 4.12: Click the *Add SPI* button to define a new "sandbox" (SPI).](../../images/sandboxing-add-spi-button.png)
+![Figure 2.6: Click the *Add SPI* button to define a new "sandbox" (SPI).](../../images/sandboxing-add-spi-button.png)
 
 The Add SPI panel divides the SPI's fields into General, SPI Configurations, and
 Advanced Configurations sections. 
 
-![Figure 4.13: You can name your SPI, describe it, and configure it from the *Add SPI* panel.](../../images/sandboxing-add-spi-general-details.png)
+![Figure 2.7: You can name your SPI, describe it, and configure it from the *Add SPI* panel.](../../images/sandboxing-add-spi-general-details.png)
 
 In the General section, you must provide a unique name for the SPI and describe
 the SPI. 
@@ -99,7 +99,7 @@ The SPI Configurations contains some of the most important settings for the SPI.
 It is broken into 4 sections: SPI Runtime, SPI Applications, Java Runtime,
 and Recovery Options. 
 
-![Figure 4.14: From the *SPI Runtime* section of your SPI, you can set its maximum number of working threads based the number of threads available to your portal that you'd like to designate for the SPI. You must also set a unique connector port for the SPI.](../../images/sandboxing-configure-spi-runtime.png)
+![Figure 2.8: From the *SPI Runtime* section of your SPI, you can set its maximum number of working threads based the number of threads available to your portal that you'd like to designate for the SPI. You must also set a unique connector port for the SPI.](../../images/sandboxing-configure-spi-runtime.png)
 
 Let's set the SPI's runtime options first. 
 
@@ -130,7 +130,7 @@ The SPI Applications panel provides a way to select applications to be hosted
 in the SPI. All requests that call these applications are processed by the
 SPI. 
 
-![Figure 4.15: All the portlets and web plugins that you've installed on your portal are available for moving into a SPI.](../../images/sandboxing-configure-spi-apps.png)
+![Figure 2.9: All the portlets and web plugins that you've installed on your portal are available for moving into a SPI.](../../images/sandboxing-configure-spi-apps.png)
 
 The panel lists non-core portlets and web plugins that have been installed on
 the portal. Since theme, layout template, hook, and Liferay EXT plugins are not
@@ -159,7 +159,7 @@ for guidance on setting the JVM arguments.
 
 In development, you may also choose to add debug settings to the JVM arguments. 
 
-![Figure 4.16: You can specify Java runtime options optimal for your SPI's apps.](../../images/sandboxing-configure-spi-java-runtime.png)
+![Figure 2.10: You can specify Java runtime options optimal for your SPI's apps.](../../images/sandboxing-configure-spi-java-runtime.png)
 
 In the event that the SPI terminates unexpectedly, you may want to consider
 automatically restarting it and having the Sandboxing App send notifications to
@@ -168,7 +168,7 @@ you and other stakeholders.
 The Sandboxing App lets you configure email notifications for when an SPI crashes
 and lets you configure for the app to automatically restart the SPI. 
 
-![Figure 4.17: You can have the SPI notify you and others if the SPI's apps crash it. And you can configure the maximum number of times to automatically revive the SPI, before requiring manual intervention.](../../images/sandboxing-configure-spi-recovery.png)
+![Figure 2.11: You can have the SPI notify you and others if the SPI's apps crash it. And you can configure the maximum number of times to automatically revive the SPI, before requiring manual intervention.](../../images/sandboxing-configure-spi-recovery.png)
 
 **Use Default Notification Options:** Select this checkbox to use the globally
 defined notification options. Otherwise the notification options specified in
@@ -226,7 +226,7 @@ operate the SPI.
 The Portal automatically starts SPIs on startup. However, when you first add a
 new SPI, you must start it manually. 
 
-![Figure 4.18: When you first create a SPI, you'll need to start it manually. You can edit and delete SPIs that are not running.](../../images/sandboxing-start-stop-spi.png)
+![Figure 2.12: When you first create a SPI, you'll need to start it manually. You can edit and delete SPIs that are not running.](../../images/sandboxing-start-stop-spi.png)
 
 Once successfully started, you can stop or restart a SPI. You can't, however,
 delete an SPI that is running. You must first stop the SPI. 
@@ -234,7 +234,7 @@ delete an SPI that is running. You must first stop the SPI.
 You can edit an SPI's configuration too. Configuration changes made to a running
 SPI take effect after it's restarted. 
 
-![Figure 4.19: SPI configuration modifications only take affect after the SPI has been restarted.](../../images/sandboxing-modify-spi.png)
+![Figure 2.13: SPI configuration modifications only take affect after the SPI has been restarted.](../../images/sandboxing-modify-spi.png)
 
 As you can see, operating SPIs is straightforward and easy to do. 
 
@@ -248,7 +248,7 @@ The SPI Administration console allows you to configure a series of global
 settings. You can access them by clicking on the configuration gear icon as
 shown in the figure below. 
 
-![Figure 4.20: Click on the global settings gear icon, in the upper right corner of the SPI Administration console, to set default configuration options for all of the portal's SPIs.](../../images/sandboxing-global-settings.png)
+![Figure 2.14: Click on the global settings gear icon, in the upper right corner of the SPI Administration console, to set default configuration options for all of the portal's SPIs.](../../images/sandboxing-global-settings.png)
 
 Once you've opened the configuration panel, the SPI Administration console
 enables you to configure global notification and set restart options for your
@@ -257,7 +257,7 @@ SPIs.
 Note that option values explicitly configured in an SPI take precedence over
 the global settings with respect to that SPI.
 
-![Figure 4.21: You can set default notification and restart options for all of the portal's SPIs.](../../images/sandboxing-global-recovery-options.png)
+![Figure 2.15: You can set default notification and restart options for all of the portal's SPIs.](../../images/sandboxing-global-recovery-options.png)
 
 Let's look at the global notification options first. 
 
@@ -265,7 +265,7 @@ The notification options allow you to configure both the notfication email
 content and specify the recipients of the notification email. These values are
 used by all defined SPIs. 
 
-![Figure 4.22: Via the SPI Administration's global configuration panel, you can set specific email notification options, including the sender's address, the sender's name, default recipients, a default email subject template, and a default email body template.](../../images/sandboxing-global-notification-options.png)
+![Figure 2.16: Via the SPI Administration's global configuration panel, you can set specific email notification options, including the sender's address, the sender's name, default recipients, a default email subject template, and a default email body template.](../../images/sandboxing-global-notification-options.png)
 
 **Notification Email From Address:** Enter a default origin email address to use
 for notification emails sent from the SPIs. 
@@ -288,7 +288,7 @@ is restarted in the event that it terminates unexpectedly. In the example
 below, all SPIs are restarted 3 times before requiring administrator
 intervention to restart them. 
 
-![Figure 4.23: You can set default restart options for your SPIs from the SPI Administration's global configuration panel.](../../images/sandboxing-global-restart-options.png)
+![Figure 2.17: You can set default restart options for your SPIs from the SPI Administration's global configuration panel.](../../images/sandboxing-global-restart-options.png)
 
 Let's recap what Liferay's Sandboxing App does for you. It lets you isolate
 portlets and web plugins that are known troublemakers or that you are simply

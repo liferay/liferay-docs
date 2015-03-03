@@ -44,6 +44,9 @@
 <%@ page import="com.liferay.portal.security.permission.ActionKeys" %>
 <%@ page import="com.liferay.portal.theme.ThemeDisplay" %>
 <%@ page import="com.liferay.portal.util.PortalUtil" %>
+<%@ page import="com.liferay.portal.kernel.util.OrderByComparator" %>
+<%@ page import="com.liferay.portal.kernel.util.OrderByComparatorFactory" %>
+<%@ page import="com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil" %>
 
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>

@@ -35,7 +35,7 @@ hosts portlets that are consumed by other portal servers (Liferay or
 non-Liferay) acting as WSRP consumers. The image below illustrates WSRP
 producers and consumers and how they interact.
 
-![Figure 4.24: Portlets can interact with other portlets located on a different portal server using WSRP.](../../images/wsrp-illustration.png)
+![Figure 2.18: Portlets can interact with other portlets located on a different portal server using WSRP.](../../images/wsrp-illustration.png)
 
 As we mentioned in the previous chapter, there are two main components of the
 WSRP process: producers and consumers. Let's go through the basic process of how
@@ -90,7 +90,7 @@ purposes, select the Hello World portlet and click the *Save* button. The portal
 generates a WSDL document to define your producer. To view the WSDL document,
 click the URL link provided.
 
-![Figure 4.25: You can view the WSDL document for your producer by clicking the provided URL.](../../images/wsdl-url.png)
+![Figure 2.19: You can view the WSDL document for your producer by clicking the provided URL.](../../images/wsdl-url.png)
 
 Now that we've created a producer, let's create a consumer on your second portal
 server. 
@@ -129,14 +129,14 @@ To enable your custom portlet for WSRP, you'll need to add the
 `<remoteable>true</remoteable>` tag in your portlet's
 `docroot/WEB-INF/liferay-portlet.xml` file:
 
-	<liferay-portlet-app>
-		<portlet>
-			<portlet-name>RemoteSamplePortlet</portlet-name>
-			<remoteable>true</remoteable>
-	...
-		</portlet>
-	...
-	</liferay-portlet-app>
+    <liferay-portlet-app>
+        <portlet>
+            <portlet-name>RemoteSamplePortlet</portlet-name>
+            <remoteable>true</remoteable>
+    ...
+        </portlet>
+    ...
+    </liferay-portlet-app>
 
 After editing your portlet's `liferay-portlet.xml` file, your custom portlet
 will appear in the list of portlets available when creating a WSRP producer.

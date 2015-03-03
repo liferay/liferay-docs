@@ -32,37 +32,37 @@ requires.
    them yourself, so let's get started. Place these `.jar` files into
    `$TCAT_HOME/lib/ext`:
 
-   - `jta.jar`: Support for Java transactions. You can get this `.jar`, which manages transactions, from
+    - `jta.jar`: Support for Java transactions. You can get this `.jar`, which manages transactions, from
             [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
 
-   - `mail.jar`: Support for the Java Mail API. You can get this `.jar` from
+    - `mail.jar`: Support for the Java Mail API. You can get this `.jar` from
             [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
 
-   - `persistence.jar`: Support for the Java Persistence API. You can get this
+    - `persistence.jar`: Support for the Java Persistence API. You can get this
       `.jar` from
             [http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
 
-   - `activation.jar`: This is an implementation of the Java Activation
+    - `activation.jar`: This is an implementation of the Java Activation
       Framework. You can get this `.jar` from
         [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
 
-   - `ccpp.jar`: Enables Composite Capability/Preference Profiles. You can get this `.jar` from 
+    - `ccpp.jar`: Enables Composite Capability/Preference Profiles. You can get this `.jar` from 
         [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
 
-   - `jms.jar`: The Java Messaging Service. You can get this `.jar` from
+    - `jms.jar`: The Java Messaging Service. You can get this `.jar` from
         [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
 
-   - `jutf7.jar`: Provides UTF-7 and Modified UTF-7 charsets for Java. You can get this `.jar` from 
+    - `jutf7.jar`: Provides UTF-7 and Modified UTF-7 charsets for Java. You can get this `.jar` from 
           [http://sourceforge.net/projects/jutf7/](http://sourceforge.net/projects/jutf7/)
 
-   - `junit.jar`: Optional: lets you run unit tests. You can get this `.jar` from 
+    - `junit.jar`: Optional: lets you run unit tests. You can get this `.jar` from 
         [http://sourceforge.net/projects/junit/](http://sourceforge.net/projects/junit/)
 
-   Although you can get each `.jar` listed above separately, it may be more
-   convenient to get them by downloading the Liferay source code and copying them
-   from there. Once you have downloaded the Liferay source, unzip the source
-   into a temporary folder. You can find the `.jar` files in
-   `[LIFERAY_SOURCE]/lib/development`. 
+    Although you can get each `.jar` listed above separately, it may be more
+    convenient to get them by downloading the Liferay source code and copying
+    them from there. Once you have downloaded the Liferay source, unzip the
+    source into a temporary folder. You can find the `.jar` files in
+    `[LIFERAY_SOURCE]/lib/development`. 
 
 4. Make sure the JDBC driver for your database is accessible by Tomcat. Obtain
    the JDBC driver for your version of the database server. In the case of
@@ -103,49 +103,49 @@ Variable* button. Name it `CATALINA_OPTS` and give it the following value:
 
         -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
-This sets the character encoding to UTF-8, sets the time zone to Greenwich
-Mean Time and allocates memory to the Java virtual machine.
+    This sets the character encoding to UTF-8, sets the time zone to Greenwich
+    Mean Time and allocates memory to the Java virtual machine.
 
-Apply the profile to the Tcat server where you're deploying Liferay. To do so,
-go to the *Servers* tab, select the desired server, and select your profile from
-the *Set Profile* dropdown menu. 
+    Apply the profile to the Tcat server where you're deploying Liferay. To do
+    so, go to the *Servers* tab, select the desired server, and select your
+    profile from the *Set Profile* dropdown menu. 
 
 2. Create a file locally called `ROOT.xml`: 
 
-    <Context path="" crossContext="true">
+        <Context path="" crossContext="true">
 
-    <!-- JAAS -->
+        <!-- JAAS -->
 
-    <!--<Realm
-        classNjame="org.apache.catalina.realm.JAASRealm"
-        appName="PortalRealm"
-        userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
-        roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
-    />-->
+        <!--<Realm
+            classNjame="org.apache.catalina.realm.JAASRealm"
+            appName="PortalRealm"
+            userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+            roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+        />-->
 
-    <!--
-    Uncomment the following to disable persistent sessions across reboots.
-    -->
+        <!--
+        Uncomment the following to disable persistent sessions across reboots.
+        -->
 
-    <!--<Manager pathname="" />-->
+        <!--<Manager pathname="" />-->
 
-    <!--
-    Uncomment the following to not use sessions. See the property
-    "session.disabled" in portal.properties.
-    -->
+        <!--
+        Uncomment the following to not use sessions. See the property
+        "session.disabled" in portal.properties.
+        -->
 
-    <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
-    </Context>
+        <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
+        </Context>
 
-<!-- Why do we have all that stuff up there commmented out? Wouldn't it be
-better not to include it at all? -Rich -->
+    <!-- Why do we have all that stuff up there commmented out? Wouldn't it be
+    better not to include it at all? -Rich -->
 
-Click your server's name to edit its configuration. Using the *Files* tab,
-navigate to the directory `[TCAT_HOME]/conf/Catalina/localhost` and upload your
-ROOT.xml file.  Setting `crossContext="true"` allows multiple web apps to use the same class
-loader. In the content above you will also find commented instructions and
-tags for configuring a JAAS realm, disabling persistent sessions and
-disabling sessions in general.
+    Click your server's name to edit its configuration. Using the *Files* tab,
+    navigate to the directory `[TCAT_HOME]/conf/Catalina/localhost` and upload
+    your ROOT.xml file. Setting `crossContext="true"` allows multiple web apps
+    to use the same class loader. In the content above you will also find
+    commented instructions and tags for configuring a JAAS realm, disabling
+    persistent sessions and disabling sessions in general.
 
 3. Still in your server's *Files* tab, open
 `[TCAT_HOME]/conf/catalina.properties`, click the *Edit catalina.properties*
@@ -153,19 +153,19 @@ link, and replace the line:
 
         common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
 
-with:
+    with:
 
         common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
 
-This allows Catalina to access the dependency jars you extracted to
-`[TCAT_HOME]/lib/ext`.
+    This allows Catalina to access the dependency jars you extracted to
+    `[TCAT_HOME]/lib/ext`.
 
 4. To ensure consistent use of UTF-8 URI Encoding, edit
    `[TCAT_HOME]/conf/server.xml` and add the attribute `URIEncoding="UTF-8"`
    where you see `redirectPort=8443`, in the definition of your connectors (HTTP
    and AJP). For example:
 
-    <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
+        <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
 
 ![Figure 1.3: You can edit your Tcat configuration files in the Administration Console.](../../images/15-tcat-server-files.png)
 
@@ -248,10 +248,11 @@ connecting to your database and mail session.
    the `portal-ext.properties` file in your *Liferay Home*. This points Liferay
    Portal to your data source: 
 
-    jdbc.default.jndi.name=jdbc/LiferayPool
+        jdbc.default.jndi.name=jdbc/LiferayPool
 
-   Otherwise, if you are using *Liferay Portal* to manage your data source, follow
-   the instructions in the *Deploy Liferay* section for using the setup wizard.
+    Otherwise, if you are using *Liferay Portal* to manage your data source,
+    follow the instructions in the *Deploy Liferay* section for using the setup
+    wizard.
 
 2. If you want to use Liferay Portal to manage your mail session, you can
    configure the mail session in Liferay Portal. After starting
@@ -259,10 +260,10 @@ connecting to your database and mail session.
    Panel &rarr; Server Administration &rarr; Mail* and enter the settings for
    your mail session.
 
-   If you are using Tcat to manage your mail session, add the following to your
-   `portal-ext.properties` file to reference that mail session:
+    If you are using Tcat to manage your mail session, add the following to your
+    `portal-ext.properties` file to reference that mail session:
 
-    mail.session.jndi.name=mail/MailSession
+        mail.session.jndi.name=mail/MailSession
 
 Before you deploy Liferay Portal, let's look at configuring Portal Access
 Control Lists (PACL) with Liferay on Tomcat. 
@@ -278,7 +279,7 @@ Profiles* and click the profile applied to your Liferay Tcat server. Click the
 *Value* field of the `CATALINA_OPTS` variable created earlier, and add the
 following parameter to it:
 
-    `-Djava.security.manager -Djava.security.policy==$CATALINA_BASE/conf/catalina.policy`
+    -Djava.security.manager -Djava.security.policy==$CATALINA_BASE/conf/catalina.policy
 
 The double equals sign tells the app server to use this policy file on top of
 any existing security policies. 
@@ -308,7 +309,7 @@ running; then follow these steps to deploy and start Liferay.
    Liferay, and under the *Name* field, type `/` to put the extracted Liferay into
    `[TCAT_HOME]/webapps/ROOT`.
 
-   ![Figure 1.4: Upload your Liferay Portal WAR file using the Deployments tab of the Tcat Administration Console.](../../images/15-tcat-upload-webapp.png)
+    ![Figure 1.4: Upload your Liferay Portal WAR file using the Deployments tab of the Tcat Administration Console.](../../images/15-tcat-upload-webapp.png)
 
 3. Once you've entered all the deployment details, you can select *Deploy*.
    Once you see a *Successful* message in the Tcat Administration Console,

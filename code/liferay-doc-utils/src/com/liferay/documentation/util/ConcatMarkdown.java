@@ -2,7 +2,9 @@ package com.liferay.documentation.util;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -19,6 +21,8 @@ public class ConcatMarkdown extends Task {
 		File docDir = new File("../" + _docdir + "/articles");
 		
 		String book = ""; 
+		int chapter = 0;
+		int count=1;
 		
 		try {
 			
@@ -26,8 +30,54 @@ public class ConcatMarkdown extends Task {
 			
 			for (File file : files) {
 				
-				if (!file.isDirectory()) {
-					book = book + FileUtils.readFileToString(file);
+				if (file.isDirectory()) {
+					
+					// save the chapter number
+					chapter = Integer.parseInt(file.getName().substring(0,2));
+					System.out.println("Chapter " + chapter);
+					
+				} else {
+					LineNumberReader in =
+							new LineNumberReader(new FileReader(file));
+					
+					String line;
+					
+							;
+					while ((line = in.readLine()) != null) {
+
+						if (line.startsWith("#")) {
+							
+							if (!file.getName().startsWith("00")) {
+								
+								line = "#" + line;
+							}
+								
+						}
+						
+						if (line.contains("+$")) {
+							
+							line = "+sidebar";
+						}
+						
+						if (line.contains("$$")) {
+							
+							line = "-sidebar";
+						}
+						
+						if (line.startsWith("![Figure")) {
+							
+							line = numberImage(line, chapter, count);
+							count = count + 1;
+						}
+						
+						book = book + line + "\n";
+						
+					}
+					
+					in.close();
+					count = 1;
+					
+					//book = book + FileUtils.readFileToString(file);
 					book = book + "\n";
 				}
 				
@@ -36,6 +86,8 @@ public class ConcatMarkdown extends Task {
 			File fullBook = new File("book.markdown");
 			
 			FileUtils.writeStringToFile(fullBook, book);
+			
+			StripHeaderIds.stripHeaderIds(fullBook.getAbsolutePath());
 			
 		
 		} catch (IOException e) {
@@ -46,16 +98,35 @@ public class ConcatMarkdown extends Task {
 		
 	}
 	
-	public List collectFiles(File dir) throws FileNotFoundException, IOException {
+	private String numberImage (String line, int chapter, int imageNum) {
+		
+		//find the colon
+		//int colon = line.indexOf(":");
+		//find the e
+		int e = line.indexOf("e");
+		//find the period
+		int period = line.indexOf(".");
+		
+		String prefix = line.substring(0, e+1);
+		System.out.println(prefix);
+		String suffix = line.substring(period, line.length());
+		System.out.println(suffix);
+		line = prefix + " " + chapter + suffix;
+	
+		return line;
+	}
+	
+	public List<File> collectFiles(File dir) throws FileNotFoundException, IOException {
 		validateDirectory(dir);
 		List<File> result = getFileListingNoSort(dir);
 		Collections.sort(result);
 
-		ArrayList<File> results = new ArrayList();
+		ArrayList<File> results = new ArrayList<File>();
 		for (File file : result) {
 			String fileName = file.getCanonicalPath();
 			if (!fileName.contains(".svn")) {
 				results.add(file);
+				System.out.println(file.getName());
 			}
 		}
 		return results;

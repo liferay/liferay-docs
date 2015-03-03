@@ -5,8 +5,13 @@ Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/cod
 End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/loc/use-lang-keys/end/my-greeting-portlet
 -->
 
-Liferay specifies a host of language keys in its core `Language.properties` file
-found in the `content` folder of your `portal-impl.jar` or
+Liferay specifies a host of language keys in its core `Language.properties`
+file. This file can be found in two different places. If you want to extract it
+from an existing runtime, you can find it in the `content` folder of your portal
+instance's `portal-impl.jar`. This file is in the
+`tomcat-[version]/webapps/ROOT/WEB-INF/lib` directory of Liferay Portal bundled
+with Tomcat or the `WEB-INF/lib` folder of the Liferay .war file. If you want to
+get it from the Liferay source code, you can find it in
 `portal-impl/src/content` of your Liferay Portal source tree. Leveraging
 Portal's core language keys saves you time, since these keys always have up to
 date translations for multiple languages. Additionally, your portlet blends
@@ -92,4 +97,8 @@ Your portlet now greets you by your screen name!
 That's all you need to do to leverage Liferay's core localization keys. In this
 tutorial, you learned about Liferay core language keys, and how to implement in
 a Liferay portlet. 
+
+Related Topics:
+
+[Overriding Language Properties Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
 

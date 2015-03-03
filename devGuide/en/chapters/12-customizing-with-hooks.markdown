@@ -184,20 +184,10 @@ plugin customizations: a customization of Liferay's web resources.
 
 Hooks are commonly used to override web resources, found in `portal-web` in
 Liferay's source. You can use a hook to override JSP files, JSPF files,
-JavaScript files, CSS files, or images. 
+JavaScript files, or images. 
 
----
-
- ![Important](../../images/tip-pen-paper.png) **Important:** Some resources have
- additional requisites:
-
- - ***JSPF:*** Changes won't take effect unless you modify the JSP that
-   includes it. 
- - ***CSS:*** When modifying a CSS file imported by another CSS file, the
- changes won't take effect unless you modify the parent CSS file (usually
- `main.css`). 
-
----
+**Important:** A JSPF change takes effect only when you modify a JSP that
+includes the JSPF. 
 
 Replacing a portal JSP is a simple task with hooks. Let's create and deploy a
 hook to modify your portal's *Terms of Use* page. 
@@ -494,6 +484,46 @@ Custom action hook plugins aren't limited to the login event. You can define
 custom actions for other events, too. For actions that require access to the
 `HttpServletRequest` object, extend `com.liferay.portal.kernel.events.Action`;
 for others, extend `com.liferay.portal.struts.SimpleAction`.
+
+---
+
+![Warning](../../images/tip-pen-paper.png) **Warning:** Due to a known bug
+([LPS-52754](https://issues.liferay.com/browse/LPS-52754)), a problem can occur
+when overriding Struts actions with overlapping paths. Struts action paths
+overlap when one path is a substring of another path. The following example from
+Liferay's `struts-config.xml` file shows three Struts action paths. Notice that
+the first Struts action path is a substring of each of the last two.
+
+    <action path="/document_library/edit_file_entry" ...
+    </action>
+
+    <action path="/document_library/edit_file_entry_discussion" ...
+    </action>
+
+    <action path="/document_library/edit_file_entry_type" ...
+    </action>
+
+Suppose you create a hook plugin to override the
+`/document_library/edit_file_entry` path. Due to the bug mentioned above, your
+hook's new, custom action is triggered not only when the intended path is
+invoked, but also when one of the larger, containing paths (e.g.,
+`document_library/edit_file_entry_discussion`) is invoked!
+
+To work around this issue, use the following steps:
+
+1. Find any Struts actions with paths that contain the path of the Struts
+action that you are overriding.
+
+2. If any offending paths are found, create a `<struts-action>` for them in
+your `liferay-hook.xml`.
+
+3. In the class you create for each Struts action, override only the
+`processAction`, `render`, and `serveResource` methods.
+
+4. In each overridden method, simply call the original Struts action's method
+(e.g., `originalStrutsPortletAction.processAction`).
+
+---
 
 ---
 

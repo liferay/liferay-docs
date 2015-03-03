@@ -527,6 +527,14 @@ administrators can also use the Web Content administration portlet to manage
 their site's RSS feeds. Click *Manage* &rarr; *Feeds* if you'd like to add,
 edit, or delete RSS feeds.
 
+---
+
+ ![Note](../../images/01-tip.png) **Note:** The Web Content Feeds portlet is
+ deprecated for Liferay 6.2 and will be removed in Liferay 7.0. The portlet will
+ be migrated to the Asset Publisher portlet. 
+
+---
+
 ![Figure 3.7: Clicking *Manage* &rarr; *Feeds* from the Control Panel's Web Content administration portlet opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../images/web-content-manage-feeds.png)
 
 Click the *Add Feed* button to add a new feed. You need to enter a name and
@@ -1595,38 +1603,67 @@ Let's examine teams next.
 
 ## Creating Teams for Advanced Site Membership Management [](id=creating-teams-for-advanced-site-member-liferay-portal-6-2-user-guide-03-en)
 
-Teams allow site administrators a greater degree of flexibility than was
-possible using just user groups and roles. They allow site administrators to
-create various sets of users and permissions for site-specific functions. Teams
-are the preferred method for collecting permissions within a single site.
+Site Teams are ad hoc groups of a site's users, that perform the same set of
+tasks in the site. Site administrators can assign these teams permissions for
+various site-specific functions. Site Teams are the preferred method for
+collecting permissions within a single site. Some common functions to assign
+a Site Team include:
 
-If you create a team for one site, the permissions defined for it are not
-available to any other sites. In contrast, if you assigned a custom role to a
-user group, the role would be available portal-wide even though the specific
-permissions defined by it would only apply within the scope of a designated
-site. Furthermore, team members, unlike user group members, are guaranteed to be
-members of the desired site.
+- Moderating site Wiki content, Message Boards threads, etc.
+- Writing blogs
+- Editing a specific page in the site
+
+For instance, if your site has Message Boards, you might want to enable a subset
+of the site's members to moderate the categories and threads, and perhaps to ban
+abusive/offensive posters. To do this, you could create a Site Team named *Web
+Moderators*, define the team's permissions on the Message Boards portlet, and
+assign the desired site members to the team. 
+
+The permissions assigned to a Site Team only apply to that site. Knowing that
+a team's permissions don't impact other sites, the site administrator can
+concentrate on defining and applying permissions to his site's teams. 
+
+---
+
+![Tip](../../images/01-tip.png) **Tip:** To create and apply permissions for a
+group of users to use across multiple sites or organizations in your portal,
+consider aggregating the users into a [User Group](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/user-groups)
+and assigning the User Group permissions via
+[Roles](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/roles-and-permissions). 
+
+---
 
 To create a team within a site, first navigate to the Site Administration page
 of your site and select *Users* &rarr; *Site Teams*. It's important to note that
 configuring other site membership groupings, such as *Users*, *Organizations*,
-and *User Groups* can be found in the *Site Memberships* portlet, which is also
-located in the Users tab. You can visit the *Management* chapter for more
-information on how these site memberships. Finally, click the *Add Team* button.
+and *User Groups* can be done in the *Site Memberships* portlet, which is also
+located in the Users tab. You can visit the 
+[User Management](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/user-management)
+chapter for more information on how these site memberships work. Finally, click the
+*Add Team* button. 
 
-![Figure 3.26: Creating teams within your site helps your users demonstrate teamwork and collaboration.](../../images/01-creating-a-team.png)
+![Figure 3.26: Creating teams within your site can foster teamwork and collaboration, as team permissions enable team members to access the same resources and perform the same types of tasks.](../../images/01-creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
-click *Save*. Your new team will appear in the list. To add members, simply
-click on *Actions &rarr; Assign Members*.
+click *Save*. Your new team shows in the list. To add members, simply click on
+*Actions &rarr; Assign Members*.
 
-Permission management for teams is configured by navigating to *Actions* &rarr;
-*Permissions* for your individual site. Setting permissions for the team assigns
-every member of the team with equal permissions. Only administrators with the
-ability to edit/manage the team have the ability to manage team permissions.
+To manage a team's permissions, click on *Actions* &rarr; *Permissions* for that
+team. Setting permissions for the team assigns all of the team's members those
+permissions. Only administrators with the ability to edit/manage the team have
+the ability to manage team permissions.
 
-That's it! Now your team is ready to perform their functions. Next, let's look
-at how to configure Liferay for mobile devices.
+If created team whose task is to moderate the Message Boards, for example, you'd
+want to give the team all of the permissions they'd need. So you'd Navigate to
+*Site Administration* &rarr; *Content* &rarr; *Message Boards* &rarr;
+*Permissions*, find the team in the Role column, and select the appropriate
+permissions.
+
+![Figure 3.27: The Troll-busters Site Team has unlimited permissions on the Message Boards portlet.](../../images/site-team-permissions-message-boards.png)
+
+That's it! It's easy to give groups of site users appropriate permissions to
+perform their tasks. Next, let's look at how to configure Liferay for mobile
+devices.
 
 ## Displaying Site Pages to Mobile Devices [](id=displaying-site-pages-to-mobile-devices-liferay-portal-6-2-user-guide-03-en)
 
@@ -1653,25 +1690,26 @@ learn every detail about a device from the device type, which is included in
 each request sent to the portal. Liferay's Mobile Device Rules can connect to
 device databases so that you can use their device characteristics in your rules. 
 
-Among the plugins available on Liferay Marketplace, you can find the Device
-Recognition Provider plugin. This plugin provides out of the box integration
-with WURFL, an open source database licensed with the AGPLv3 license. Commercial
-licenses are also available. It's also possible to develop plugins that
-integrate with other device databases. Even if you don't have a device database,
-you can still set up mobile device rules. They won't, however, be effective
-until a database is deployed, because the portal won't have enough information
-about the devices being used to make page requests.
+Among the applications available on Liferay Marketplace, you can find the Device
+Recognition Provider EE application. This app provides out-of-the-box
+integration with WURFL, an open source database licensed with the AGPLv3
+license. Commercial licenses are also available. It's also possible to develop
+plugins that integrate with other device databases. Even if you don't have a
+device database, you can still set up mobile device rules. They won't, however,
+be effective until a database is deployed, because the portal won't have enough
+information about the devices being used to make page requests.
 
 To configure mobile device rules, you must install the Device Recognition
-Provider plugin. This plugin uses the WURFL database to enable Liferay to detect
-which mobile device or operating system is being used for any given request. To
-install the plugin, navigate to the Store section of the Control Panel, located
-under the Marketplace heading. Click on the *Utility* section and then on *See
-All*. Search for the appropriate Device Recognition Provider plugin (CE or EE)
-and click on it. Finally, click on *Free* to acquire the plugin. Once you've
-acquired the plugin, you need to download and install it. To do so, navigate to
-the Purchased section of the Control Panel, find your Device Recognition
-Provider plugin, and click on *Download* and then *Install*.
+Provider EE application on your instance of Liferay Portal EE. This app uses the
+WURFL database to enable Liferay to detect which mobile device or operating
+system is being used for any given request. To install the app, navigate to the
+Store section of the Control Panel, located under the Marketplace heading. Click
+on the *Utility* section and then on *See All*. Search for the Device
+Recognition Provider EE application and click on it. Finally, click on the price
+tag to begin purchasing the app. Once you've acquired the app, you need to
+download and install it. To do so, navigate to the Purchased section of the
+Control Panel, find your Device Recognition Provider EE app, and click on
+*Download* and then *Install*.
 
 **Installation Note:** If your server doesn't have access to the outside
 Internet, an error appears in your log: `SLF4J: Failed to load class
@@ -1694,7 +1732,7 @@ displays a list of defined families and lets you add more. To add rules to a
 family, select *Actions* &rarr; *Manage Classification Rules*, or click on a
 family to edit it, and then click the *Manage Classification Rules* link.
 
-![Figure 3.27: You can manage device rules from the Mobile Device Families administrative page.](../../images/mobile-device-families.png)
+![Figure 3.28: You can manage device rules from the Mobile Device Families administrative page.](../../images/mobile-device-families.png)
 
 The rules defined for a family, along with the priorities of the families
 selected for a particular site or page, determine which family's actions are
@@ -1707,7 +1745,7 @@ that it's characterized as a *Simple Rule*. By default, only the Simple Rule
 type is available. The rules are designed to be extensible, and additional rule
 types can be added by your developers.
 
-![Figure 3.28: You need to install the Device Recognition Provider plugin to populate the OS list.](../../images/mobile-device-editing-rule.png)
+![Figure 3.29: You need to install the Device Recognition Provider EE application to populate the OS list.](../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device families and added some rules to them,
 you'll be ready to set up some actions. The actions defined for a family
@@ -1725,7 +1763,7 @@ apply only to that page. You can select multiple families for a particular site
 or page and order them by priority. The families are checked in decreasing order
 of priority: the actions defined by the first family that applies are executed.
 
-![Figure 3.29: You can select a mobile device family to apply for a site or page from the Site Pages section of Site Administration.](../../images/mobile-device-selection.png)
+![Figure 3.30: You can select a mobile device family to apply for a site or page from the Site Pages section of Site Administration.](../../images/mobile-device-selection.png)
 
 To add actions to a selected rule group, use the *Actions* &rarr; *Manage
 Actions* button and then click *Add Action*. By default, there are four kinds of
@@ -1785,7 +1823,7 @@ mobile phones, and click *Save*. Now we just need to define the redirect action
 for our family. Navigate to *Pages* &rarr; *Site Pages* and click on *Mobile
 Device Rules* in the navigation menu to the right.
 
-![Figure 3.30: To apply a mobile device family to a page set of a site, click on *Mobile Device Rules*, click *Select Device Family*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
+![Figure 3.31: To apply a mobile device family to a page set of a site, click on *Mobile Device Rules*, click *Select Device Family*, and select the desired rule group.](../../images/site-pages-mobile-device-rules.png)
 
 Click *Select Device Family* and then click the *Android and Bada Mobile Phones*
 device family that you configured. Once you've selected your device family,

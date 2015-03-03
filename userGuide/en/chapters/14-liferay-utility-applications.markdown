@@ -14,6 +14,7 @@ customers. In this chapter we'll discuss following applications:
 - Knowledge Base
 - Akismet
 - Weather
+- OAuth
 
 Liferay's Bookmarks application is a simple way for users to keep track of URLs
 in the portal that can also be used by an administrator to publish relevant
@@ -1514,7 +1515,7 @@ provides a search bar that allows users to find information about locations that
 aren't listed by the portlet. Searching via the search bar forwards the user to
 [Open Weather Map](http://openweathermap.org/), where the search is executed.
 
-![Liferay's Weather portlet displays basic weather-related information (temperature, conditions) for multiple configurable locations.](../../images/weather-portlet.png)
+![Figure 13.35: Liferay's Weather portlet displays basic weather-related information (temperature, conditions) for multiple configurable locations.](../../images/weather-portlet.png)
 
 To configure the displayed locations, open the Weather portlet's configuration
 window. In the first text area, enter the names of the cities about which you'd
@@ -1522,25 +1523,121 @@ like weather information to be displayed. Alternatively, you can use zip codes.
 Enter one city or zip code per line. For the temperature format, you can choose
 between Celsius and Fahrenheit.
 
+## OAuth [](id=oauth-liferay-portal-6-2-user-guide-14-en)
+
+![EE Only Feature](../../images/ee-feature-web.png)
+
+Liferay's OAuth utility authorizes third-party applications to interact with a
+user's resources. It's available as an app from Liferay Marketplace. Let's say
+you're hosting Liferay Portal and have users and customers coming to your web
+site. You want them to have access to a third party resource, like Twitter, and
+be able to access their accounts from your site. In the past, they would have to
+provide their Twitter user names and passwords, but not if you use OAuth.
+For this reason, a popular characterization for the OAuth client is the "valet key for
+your web services."
+
+OAuth is a handshake mechanism where, instead of asking for personal
+information, Liferay redirects users to a service provider like Twitter, where
+they can tell Twitter to allow Liferay limited access to their accounts. This
+example is similar to our earlier "valet key" characterization. You wouldn't
+want a valet driver opening your glove box, storage spaces, hood, and other
+personal compartments in your vehicle. You would only want the valet to
+access what is necessary to park your car. OAuth is based on this same
+idea: it gives a site just enough information to do what it needs and nothing
+more. This assures users that their personal information is safe, but gives
+them freedom to take advantage of valuable resources they typically use from the
+service provider's site.
+
+### Registering OAuth Applications [](id=registering-oauth-applications-liferay-portal-6-2-user-guide-14-en)
+
+The first thing you'll need to do is register an application for OAuth's
+services. To access the OAuth Admin page, navigate to the Control Panel and,
+under the *Users* heading, select *OAuth Admin*. Then select *Add* to create a
+new OAuth application in the OAuth registry. You'll be given the following
+options:
+
+**Application Name:** the display name for your application
+
+**Description:** the short description that is attached to your application
+
+**Website URL:** your application's URL
+
+**Callback URI:** the URI where users are redirected after authentication is
+complete
+
+**Access Level:** select the *Read* or *Write* access level. For the *Read*
+access level, the user can only view the application's contents, but not modify
+them. The *Write* access level gives the user permission to access and modify
+the application's contents.
+
+After you're finished registering the OAuth app, click *Actions* &rarr; *View*.
+You'll notice Liferay generated two Application Credentials: the *Consumer Key*
+and *Consumer Secret*. The consumer key is a value used by the application to
+identify itself to the service provider. Likewise, the consumer secret is a
+value the application uses to establish ownership of the consumer key.
+
+![Figure 13.36: You'll need the application credentials to implement OAuth in your application.](../../images/oauth-app-credentials.png)
+
+Take note of your application credentials; you'll need them when configuring
+your application with OAuth. To learn how to configure an application with
+OAuth, visit the [Liferay Developer's Guide](https://www.liferay.com/documentation/liferay-portal/6.2/development).
+Once you have your application configured to use OAuth, visit the next section to
+begin authorizing requests via OAuth. 
+
+<!-- Add link to Dev Guide OAuth section when available -->
+
+### Authorizing Requests via OAuth [](id=authorizing-requests-via-oauth-liferay-portal-6-2-user-guide-14-en)
+
+Once you have your application configured to use OAuth, you can place your
+application on a page and test out the process. Here is a basic synopsis of
+what's happening during the authorization process.
+
+The app you registered in the previous section and configured with the consumer
+key and secret in the Developer's Guide is characterized as a service provider.
+The service provider uses OAuth to allow users access to its protected
+resources. These protected resources are data controlled by the service
+provider, which can only be accessed by the application through authentication.
+By configuring an application in Liferay to use OAuth, you're keeping all
+private information you have between a third-party service provider and the
+portal separate. Essentially, OAuth bridges the connection between the portal
+and third-party services without the user sharing any protected resources
+between them. 
+
+Once your OAuth application is placed on a portal page, you'll be asked to
+grant or deny the third-party service provider limited access to your portal.
+
+![Figure 13.37: You can grant or deny the service provider access to your.](../../images/oauth-authorize.png)
+
+Congratulations! You've successfully installed your OAuth app and authorized
+access between a service provider and Liferay Portal!
+
 ## Summary [](id=summary-liferay-portal-6-2-user-guide-13-en)
 
 In this chapter, we examined several Liferay utility applications: the Bookmarks
 portlet, the Shopping portlet, the Software Catalog, the Reports and
-JasperReports applications, and the Knowledge Base. The Bookmarks portlet allows
-users and administrators to collect and share useful link to pages either within
-or outside of the portal. The Shopping portlet allows you to use PayPal to set
-up your portal for E-commerce activity. The Software Catalog allows you to
-define a set of software items to make available to visitors to your portal.
-Remember that the Software Catalog has been replaced by Liferay Marketplace. If
-you want to use it, you'll have to manually install it as a plugin. The Reports
-application is an EE-only application that provides a Reports Admin portlet in
-the Control Panel for creating reports and scheduling report generation. When
-combined with a suitable implementation, such as the JasperReports application
-(also EE-only), you can upload report definitions in the Reports Admin portlet,
-generate reports, and export reports to a wide variety of formats. The Knowledge
-Base application is an EE-only application that allows you to create articles
-and organize them into full books or guides that be published on your portal.
-The Weather portlet provides users with a summary of weather-related information
-for multiple locations and provides a links to [Open Weather Map](http://openweathermap.org/)
-for more detailed information for each location. Next, let's take a tour of the
-Liferay Marketplace and learn how to manage Liferay plugins.
+JasperReports applications, the Knowledge Base, the Akismet application, the
+Weather portlet, and the OAuth application.
+
+The Bookmarks portlet allows users and administrators to collect and share
+useful link to pages either within or outside of the portal. The Shopping
+portlet allows you to use PayPal to set up your portal for E-commerce activity.
+The Software Catalog allows you to define a set of software items to make
+available to visitors to your portal. Remember that the Software Catalog has
+been replaced by Liferay Marketplace. If you want to use it, you'll have to
+manually install it as a plugin. The Reports application is an EE-only
+application that provides a Reports Admin portlet in the Control Panel for
+creating reports and scheduling report generation. When combined with a suitable
+implementation, such as the JasperReports application (also EE-only), you can
+upload report definitions in the Reports Admin portlet, generate reports, and
+export reports to a wide variety of formats.
+
+The Knowledge Base application is an EE-only application that allows you to
+create articles and organize them into full books or guides that be published on
+your portal. The Akismet application offers a web-based spam detection service
+for your portal's message boards, blogs, wikis, and comments. The Weather
+portlet provides users with a summary of weather-related information for
+multiple locations and provides a links to [Open Weather
+Map](http://openweathermap.org/) for more detailed information for each
+location. Lastly, the EE-only OAuth application manages third-party
+applications' access to your portal's resources and vice versa. Next, let's take
+a tour of the Liferay Marketplace and learn how to manage Liferay plugins.

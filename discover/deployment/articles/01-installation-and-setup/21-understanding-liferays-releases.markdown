@@ -90,8 +90,9 @@ installation.
   maintenance release. That is, a plugin developed for Liferay 6.2 GA1 will also
   work in Liferay 6.2 GA2 or a GA2 fix pack. 
 
-For more details on updating Liferay Portal, see Upgrading Liferay in chapter
-17.
+For more details on updating Liferay Portal, see the
+[Upgrading Liferay](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
+article.
 
 Liferay Portal is a very flexible application that runs well on several
 different server environments. It's simple to install and follows a systematic

@@ -87,8 +87,9 @@ Now go ahead and get started by setting up your LCS account.
 
 ### Setting up Your LCS Account [](id=setting-up-your-lcs-account-liferay-portal-6-2-user-guide-21-en)
 
-To use LCS, you first need to set up an account at [lcs.liferay.com](https://lcs.liferay.com). 
-When creating an account, you're taken through the steps of accepting the 
+To use LCS, you first need to have an account at [Liferay.com](http://www.liferay.com/). 
+You then need to set up an LCS account at [lcs.liferay.com](https://lcs.liferay.com). 
+When creating an LCS account, you're taken through the steps of accepting the 
 terms of service, setting your password, and setting your password reminder. 
 You're then taken to the *Projects* screen where you can join an existing 
 project or create a new one.
@@ -128,6 +129,30 @@ available:
   an environment, with the exception of managing other users.
 - LCS Environment Viewer: Has read-only access in the scope of an environment.
 
+You should note that each of these LCS roles assume that the user already has 
+the LCS User role in his or her Liferay.com account. The LCS User role is
+granted automatically the first time the user enters their LCS account. The
+actions that can be performed by each of the LCS roles are detailed in the below
+permissions matrix. 
+
+**LCS Permissions Matrix**
+
+Action | &nbsp;LCS Administrator | &nbsp;LCS Environment Manager | &nbsp;LCS Environment Viewer |
+------ | ----------------------- | ----------------------------- | ---------------------------- |
+Access LCS | true | true | true |
+Access Any Environment | true | false | false |
+Access a Particular Environment | true | true | true |
+Manage Users in Any Environment | true | false | false |
+Manage Users in a Particular Environment | true | true | false |
+Invite Users to LCS | true | false | false |
+Create and Delete Environments | true | false | false |
+Edit Any Environment | true | false | false |
+Edit a Particular Environment | true | true | false |
+Server Registration in Any Environment | true | false | false |
+Server Registration in a Particular Environment | true | true | false |
+Install Fix Packs in Any Environment | true | false | false |
+Install Fix Packs in a Particular Environment | true | true | false |
+
 Now that your LCS account has been set up and you have an understanding of the 
 LCS roles, you can get your portal ready for LCS.
 
@@ -140,9 +165,6 @@ in your `portal-ext.properties` file. This is a workaround for a bug in Liferay
 6.1 GA3, where the values for this property are listed in the wrong order. This 
 causes the metrics service in LCS to not be initialized. To fix this, add the 
 following configuration to your `portal-ext.properties` file:
-
-<!-- From the configuration below, it's not clear what has been added. Can you
-describe what exactly you're asking the user to do here? -Rich -->
 
     spring.configs=\
         META-INF/base-spring.xml,\
@@ -232,6 +254,23 @@ property. For example:
 Great! Now you're all set to deploy and configure the LCS client portlet.
 
 ### Configuring the LCS Client [](id=configuring-the-lcs-client-liferay-portal-6-2-user-guide-21-en)
+
+You're now ready to configure the LCS client for use in your portal. If your 
+server accesses the web through a proxy, then you need to set a couple of 
+properties inside the WAR file of the LCS client portlet.
+
+1. In the WAR file of the LCS client portlet, open the 
+   `WEB-INF/classes/portlet-ext.properties` file.
+   
+2. At the end of the file, add the following properties and set them to the 
+   appropriate values for your proxy.
+   
+        proxy.host.name=
+        proxy.host.port=
+
+3. Update LCS client WAR with the modified `portlet-ext.properties` file.
+    
+4. Deploy the LCS client WAR, or redeploy it if it's already deployed.
 
 Once you deploy the LCS client portlet, you can use it to register your server 
 with your LCS account. Access the portlet by clicking on *Cloud Services* under 
@@ -339,11 +378,6 @@ exception of the following non-sensitive properties:
     portal.jaas.strict.password
     login.create.account.allow.custom.password
 
-<!-- Sensitive data being database URLs, user names, and passwords? What about
-Documents & Media repository information? I think we should spell out exactly
-what sensitive data is *not* stored in order to give people peace of mind. -Rich
---> 
-
 Now that you know what information is stored on the LCS servers, it's time to 
 get to the heart of LCS--the *Dashboard*.
 
@@ -370,13 +404,6 @@ tells you the download is finished and to restart your server. Restarting your
 server installs any downloaded fix packs. Note that you must start your server
 with the privileges required to write to the disk location where patches are 
 stored and processed (the `patching-tool` folder). 
-
-<!-- This is unclear. Administrative access to what? In fact, what is
-administrative access, as mentioned here? I assume you're talking about
-permissions at the operating system level, but beyond that, I'm not sure what
-permissions are needed exactly. Most people won't run their servers as root, as
-that's a bad practice, so they'll want to know exactly what permissions are
-necessary. -Rich -->
 
 But what about using LCS to install fix packs across a cluster? Just follow the 
 same procedure! LCS downloads and installs fix packs simultaneously across all 
@@ -483,33 +510,6 @@ the update process and also gives you extensive information on how your servers
 are running. Next you'll take a look at how to manage the users in your LCS 
 project.
 
-<!-- You had "the LCS Dashboard is a formidable tool...." That struck me as
-possibly close to what you wanted, but having a negative connotation, and indeed
-the dictionary definition has four definitions: 
-
-1.  causing fear, apprehension, or dread:
-a formidable opponent.
-2.  of discouraging or awesome strength, size, difficulty, etc.; intimidating:
-a formidable problem.
-3.  arousing feelings of awe or admiration because of grandeur, strength, etc.
-4.  of great strength; forceful; powerful:
-formidable opposition to the proposal.
-
-Synonyms
-1. dreadful, appalling, threatening, menacing, fearful, frightful, horrible.
-Antonyms
-1. pleasant.
-
-I'm sure you meant definition three, but I'm guessing many readers will assume
-the negative connotations of definitions one and two, as they're the more common
-definitions (which the synonyms list makes clear). For that reason, I changed
-"formidable" to "powerful." 
-
-Just 'splaining. :-)
-
--Rich
---> 
-
 #### Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project-liferay-portal-6-2-user-guide-21-en)
 
 The Users section of LCS is where you manage the LCS users that are part of your 
@@ -523,12 +523,20 @@ user.
 ![Figure 20.16: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
 
 To invite external users to your project, click on the *Invite* button. The
-*Invite External Users* pop up lets you invite anyone with a valid email address.
-You can also search for users of Liferay.com to invite. Once you've chosen who
-to invite, the *Role* selection box lets you preassign LCS roles for when they
-accept your invitation.
+*Invite User* pop up lets you invite anyone with a valid email address. You can 
+also search for Liferay.com users to invite. Once you've chosen some users, the
+*Role* selection box lets you preassign LCS roles for when they accept your
+invitation.
 
-![Figure 20.17: You can invite external users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
+![Figure 20.17: You can invite users to your LCS project, and even preassign them roles.](../../images/lcs-invite-users.png)
+
+To view sent invitations, click the *Invitations* tab. A table displays
+invitations, listing invited users' email addresses along with who invited them
+and the date that the invitation was sent. The table also shoes the preassigned
+LCS role and environment. You can cancel an invitation by clicking the red
+*Cancel* button in the *Action* column of the invitation.
+
+![Figure 20.18: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
 your Liferay servers. You can apply fix packs with just a single click and a 
@@ -548,7 +556,7 @@ web sites. Out of the box, it's configured optimally for a single server
 environment. If one server isn't sufficient to serve the high traffic needs of
 your site, Liferay scales to the size you need. 
 
-![Figure 20.18: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
+![Figure 20.19: Liferay is designed to scale to as large an installation as you need.](../../images/enterprise-configuration.png) 
 
 Liferay works well in clusters of multiple machines (horizontal cluster) or in
 clusters of multiple VMs on a single machine (vertical cluster), or any mixture
@@ -734,7 +742,7 @@ If you're using the RoundRobinShardSelector class, Liferay automatically enters
 data into each instance one by one. If you're using the `ManualShardSelector`
 class, you'll have to specify a shard for each instance using the UI.
 
-![Figure 20.19: When creating a shard using the manual shard selector, specify the shard you want to use for that instance.](../../images/enterprise-sharding-portal-instance.png)
+![Figure 20.20: When creating a shard using the manual shard selector, specify the shard you want to use for that instance.](../../images/enterprise-sharding-portal-instance.png)
 
 The last thing you need to do is modify the `spring.configs` section of your
 `portal-ext.properties` file to enable the sharding configuration, which by
@@ -830,7 +838,7 @@ database. If, for example, you upload a presentation with the file name
 `workflow.odp` into a folder called *stuff*, the file system store creates a
 folder structure which looks like the figure below. 
 
-![Figure 20.20: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../images/enterprise-file-system-store.png)
+![Figure 20.21: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../images/enterprise-file-system-store.png)
 
 The actual folder path that is used by Liferay for storing documents is this:
 
@@ -871,7 +879,7 @@ store. Like that store, it saves files to the local file system--which, of
 course, could be a remote file system mount. It uses a slightly different folder
 structure to store files, which is pictured below. 
 
-![Figure 20.21: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
+![Figure 20.22: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
 
 So what makes the advanced file system store *advanced*? Several operating
 systems have limitations on the number of files which can be stored in a
@@ -1263,7 +1271,7 @@ threads. Threads are expensive, because they take resources (memory and CPU
 power). Most of the time, these threads are sleeping, because they only need to
 work when a cached entity has to talk to remote peers. 
 
-![Figure 20.22: The default algorithm requires each node to create massive amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
+![Figure 20.23: The default algorithm requires each node to create massive amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
 
 Putting heap memory aside (because the amount of memory on the heap depends on
 the application(s) running), consider the stack memory footprint of those 100+
@@ -1278,7 +1286,7 @@ algorithm for handling cache replication that can can fix both the `1` to `N -
 1` network communication bottleneck, as well as the massive threads bottleneck.
 The default implementation uses JGroups' UDP multicast to communicate. 
 
-![Figure 20.23: Liferay's algorithm uses a single UDP multicast channel, so that
+![Figure 20.24: Liferay's algorithm uses a single UDP multicast channel, so that
 nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
 
 To reduce the number of replication threads, we provide a small pool of
@@ -1697,9 +1705,14 @@ available to the JVM.
 Note that there is a law of diminishing returns on memory, especially with 64
 bit systems. These systems allow you to create very large JVMs, but the larger
 the JVM, the more time it takes for garbage collection to take place. For this
-reason, you probably won't want to create JVMs of more than 2 GB in size. To
-take advantage of higher amounts of memory on a single system, run multiple JVMs
-of Liferay instead.
+reason, you probably won't want to increase memory drastically. You'll have to
+measure your portal's memory utilization and find a value that's large enough to
+do real work besides garbage collection, but small enough so that garbage
+collection is quick enough. If you have large amounts of memory on your server
+*and* your portal is limited by memory, it might make sense to have multiple
+JVMs with Liferay on a single server, rather than doubling the amount of memory
+above a certain threshold. If your server is CPU- or I/O-limited, you have other
+problems. 
 
 Issues with PermGen space can also affect performance. PermGen space contains
 long-lived classes, anonymous classes and interned Strings (immutable String
@@ -1732,7 +1745,7 @@ will need to use a profiler to monitor garbage collection during a load test to
 tune the numbers properly for your server hardware, operating system, and
 application server.
 
-![Figure 20.24: Java uses generational garbage collection. If an object survives enough garbage collection events, it's promoted to a new memory pool. For example, an object could be promoted from the young generation memory pool to the old generation memory pool or from the old generation memory pool to the permanent generation memory pool.](../../images/portal-admin-ch7_html_518957a7.png)
+![Figure 20.25: Java uses generational garbage collection. If an object survives enough garbage collection events, it's promoted to a new memory pool. For example, an object could be promoted from the young generation memory pool to the old generation memory pool or from the old generation memory pool to the permanent generation memory pool.](../../images/portal-admin-ch7_html_518957a7.png)
 
 The Java heap is divided into sections for the young generation, the old
 generation, and the permanent generation. The young generation is further
@@ -1893,7 +1906,7 @@ a server machine using an algorithm. That algorithm attempts to use a server
 closest to the user. The figure below shows a visual representation of using
 geographical proximity to improve latency. 
 
-![Figure 20.25: The red lines on the map represent the required distances traveled by requests from a server to the user. Using CDN allows a user to request static resources from a much closer local server, improving download times.](../../images/cdn-map.png)
+![Figure 20.26: The red lines on the map represent the required distances traveled by requests from a server to the user. Using CDN allows a user to request static resources from a much closer local server, improving download times.](../../images/cdn-map.png)
 
 Because of the reduced wait time for requests and reduced load on your
 application server, a CDN is a great option to improve your portal's performance.
@@ -1932,7 +1945,7 @@ to CDNs:
 - *CDN Host HTTPS* 
 - *CDN Dynamic Resources Enabled*
 
-![Figure 20.26: The Control Panel lets you configure your portal's CDN.](../../images/cdn-control-panel.png)
+![Figure 20.27: The Control Panel lets you configure your portal's CDN.](../../images/cdn-control-panel.png)
 
 These properties are exactly the same as the ones you can specify in your
 `portal-ext.properties`. Make sure to visit the CDN section of the Properties

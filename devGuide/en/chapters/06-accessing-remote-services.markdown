@@ -15,6 +15,8 @@ Here are the topics we'll cover in this chapter:
 - Service Security Layers 
 - SOAP Web Services 
 - JSON Web Services 
+- Skinny JSON Provider EE
+- Authorizing Access to Services with OAuth
 
 ## Finding Services [](id=finding-services-liferay-portal-6-2-dev-guide-05-en)
 
@@ -1530,20 +1532,664 @@ following format:
 The result is a JSON array populated with results from each command. The
 commands are collectively invoked in a single HTTP request, one after another. 
 
+Now that you've learned the ins and outs of invoking JSON web services in
+Liferay, you may want to consider taking a streamlined approach to accessing Web
+Content articles and Dynamic Data List records. Liferay's new Skinny JSON
+Provider app gives you access to them and returns them in an easy-to-use
+fashion. 
+
+## Invoking Services Using Skinny JSON Provider [](id=invoking-services-using-skinny-json-prov-liferay-portal-6-2-dev-guide-06-en)
+
+![EE Only Feature](../../images/ee-feature-web.png)
+
+**Important:** This is a "Labs" application. Any app designated as " Labs" is
+experimental in features and is not supported by Liferay. This status may change
+without notice. Labs apps allow us to accelerate the availability of useful and
+cutting-edge features, but these apps are not yet hardened like standard Liferay
+EE apps. Please download and use Labs apps at your own discretion. 
+
+Out of the box, Liferay's built-in JSON web services provide access to Web
+Content articles and Dynamic Data Lists (DDLs), but return them in a verbose
+XML-based representation. The *Skinny JSON Provider EE* app also offers web
+services for retrieving web content articles and DDLs, but returns them in a
+simplified, "skinny" JSON fashion. As a convenience, the app performs additional
+parsing and processing, to return the bare essentials of each article and DDL.
+Each web content article representation is comprised of its associated web
+content structure fields. Each DDL record representation is comprised of its
+data definition fields. The returned values are easier to read and light-weight,
+making them ideal to use in browsers and mobile applications. 
+
+The Skinny JSON Provider EE app is available through the Liferay Marketplace.
+You'll find it categorized as a Utility app. You can read the section on
+[Downloading and Installing Apps](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/downloading-and-installing-apps-liferay-portal-6-2-user-guide-14-en)
+for details on how to install it.
+
+The Skinny JSON Provider EE app adds two new web service APIs that you can
+configure like other Liferay web services. Here are the context and class name
+that you must specify to access them:
+
+- *Plugin Context Name:* `skinny-web`
+- *Service Class Name:* `skinny`
+
+To retrieve web content articles, use the `get-skinny-journal-articles` service.
+To retrieve Dynamic Data Lists, use the `get-skinny-ddl-records` service. Note
+that both services include "skinny" in their name. Both services are accessible
+from Liferay's JSON Web Service Console. 
+
+![Figure 6.2: You can access Skinny JSON web services from JavaScript, cURL, URLs in your browser, and from Liferay's trusty JSON Web Service API browser interface.](../../images/jsonws-api-services-01.png)
+
+Before invoking the `get-skinny-journal-articles` and `get-skinny-ddl-records`
+services, you should understand how to anonymously use the Skinny JSON Provider 
+and how to use it in a CSRF protected environment. 
+
+### Accessing the Services Anonymously and in CSRF Protected Environments [](id=accessing-the-services-anonymously-and-i-liferay-portal-6-2-dev-guide-06-en)
+
+Retrieving data through an anonymous request to a web service is a typical use
+case for Skinny JSON Provider. You can configure Liferay to allow anonymous
+access to the Skinny JSON Provider. The configuration varies depending on the
+version of Liferay you are using. 
+
+For Liferay 6.2 and later, the Skinny JSON Provider EE app is preconfigured to
+allow anonymous access by default. The underlying implementation uses the
+`@AccessControlled` annotation to accomplish this. Note that this
+preconfiguration can only be changed by modifying the plugin's source code and
+recompiling the plugin. 
+
+For Liferay 6.1, you must add the value `getSkinny*` as a public JSON web
+service method entry in your `portal-ext.properties` file, in order to alloy
+anonymous access to the services. 
+
+    jsonws.web.service.public.methods=getSkinny*
+
+Regardless of whether you've configured authentication as being required for the
+Skinny Provider methods, all of Liferay's JSON web services require you to use a
+`p_auth` token for CSRF protection in environments that pass sensitive per-user
+data, like browser cookies. If your application is running in such an
+environment (e.g., JavaScript in a browser) and you're calling Liferay's JSON
+web services, you should never disable CSRF checking. 
+
+The table below shows various ways that you can specify a p_auth token. 
+
+**Specifying a p_auth Token:**
+
+Invocation Type | Parameter and Value
+--------------- | -------------------
+JavaScript JSON object | `p_auth: 'value'`
+curl | `-d pauth='value'`
+URL | `p_auth/value`
+
+You can substitute `value` with the value of your p_auth token. 
+
+If your app is running in a simpler environment, like that of a custom mobile
+app, and you're okay with foregoing the risks involved with disabling CSRF
+projection, you can disable that protection. The mechanism for disabling CSRF
+protection varies depending on the version of Liferay you are using. 
+
+For Liferay 6.2 and later, you can disable CSRF protection for services that you
+believe don't need checking. To disable CSRF protection for the Skinny
+Provider's services, you can open access to the app's plugin context and service
+class by adding their values to the list of `auth.token.ignore.origins` values
+in your `portal-ext.properties`. Here's a `auth.token.ignore.origins` property
+setting with these two values: 
+
+    auth.token.ignore.origins=\
+        com.liferay.portal.jsonwebservice.JSONWebServiceServiceAction:/skinny-web.skinny/,\
+        com.liferay.portal.jsonwebservice.JSONWebServiceServiceAction:/skinny/
+
+For Liferay 6.1, the only way to disable CSRF checking and disable the `p_auth`
+token requirement is by globally disabling them. You can globally disable them
+by specifying the following setting in your `portal-ext.properties`: 
+
+    json.service.auth.token.enabled=false
+
+Now that you've configured appropriate access for your Skinny JSON Provider EE
+app, you can call its services!
+
+### Retrieving Skinny Web Content Articles [](id=retrieving-skinny-web-content-articles-liferay-portal-6-2-dev-guide-06-en)
+
+The `get-skinny-journal-articles` service is designed to retrieve all web
+content articles that are based on a given web content structure, in a given
+site or organization. To retrieve skinny web content articles, you must specify
+values for the following parameters: 
+
+- `companyId` - The ID of the company in which the articles exist.
+- `groupName` - The human-readable name of the group (site or organization) in
+  which the articles exist.
+- `ddmStructureId` - The dynamic data mapping structure ID of the web content
+  structure upon which the desired articles are based.
+- `locale` (optional) - The name of the locale for which you want localized
+  articles (e.g., `en_US`, `es_ES`, `fr`, etc.). If you omit this argument, the
+  default locale of the server is used. If you specify a locale and no such
+  localization exists for one of the articles, the article's default locale is
+  used.
+
+To demonstrate using the web service, imagine a simple web content structure
+that has the following fields:
+
+- `title` - A Text field with a title.
+- `image` - A Documents and Media Library field for referencing an image file.
+- `date` - A Date field (Date fields for web content structures are supported in
+  Liferay Portal 6.2 and later).
+- `toggle` - a Boolean field.
+
+Imagine that you have multiple articles based on this structure, and you wish to
+retrieve them through the `get-skinny-journal-articles` service. Here is an
+example JavaScript invocation to retrieve the articles:
+
+    Liferay.Service(
+      '/skinny-web.skinny/get-skinny-journal-articles',
+      {
+        companyId: 10157,
+        groupName: 'Guest',
+        ddmStructureId: '15521',
+        locale: 'en_US'
+      },
+      function(obj) {
+        console.log(obj);
+      }
+    );
+
+You could make the same service invocation by specifying the following URL in
+your browser: 
+
+    http://localhost:8080/api/jsonws/skinny-web.skinny/get-skinny-journal-articles/company-id/10157/group-name/Guest/ddm-structure-id/15521/locale/en_US
+
+Note that the URL above specifies the DDM record ID parameter
+`ddm-structure-id`, which has a slightly different name than the JavaScript
+parameter `ddmStructureId`. Also, when invoking a service via a URL, make sure
+to URL-encode any parameters that contain special characters. 
+
+Now that you've seen a couple example invocations, you're might be wondering how
+to get the different ID values to pass in to the service. For starters, you'll
+need your portal's company ID. Here are steps you can follow to find that ID
+value: 
+
+1.  Sign in to your portal.
+2.  To view your user account, click on your profile picture and select *My
+    Account*.
+3.  Note the numeric value of your *User ID*.
+4.  In your browser's address bar, specify the URL to your portal's JSON web
+    services. Here's an example URL for services on port `8080` of a portal
+    running on a local host.
+
+        http://localhost:8080/api/jsonws/
+
+5.  With the slash character (`/`) selected as the *Context Path*, search for
+    service `get-user-roles` and select the link to the service under *Role*.
+6.  Specify your user ID in the *userId* field and click on *Invoke*. 
+7.  From the *Result* text area, copy the value returned next to the
+    `companyId`. 
+
+Note, your portal's company ID so that you can specify it when invoking Skinny
+Provider's services. As mentioned previously, you'll need to know your web
+content article DDM Structure ID too. You'll learn how to get that next. 
+
+On adding or editing a web content article, you can select a structure for the
+article. The structure selection screen displays a listing of web content
+structures. Each web content structure has an ID that you can note for supplying
+to the Skinny Provider web service as a DDM structure ID value.
+
+![Figure 6.3: On adding or configuring a structure for web content, the structure's ID is displayed. You can specify the ID as the value for the DDM structure ID in querying for the articles associated with the structure.](../../images/web-content-structure-listing.png)
+
+Now that you know your portal's company ID and your DDM structure's ID, you can
+invoke Skinny Provider's `get-skinny-journal-articles` service. 
+
+---
+
+![Note](../../images/tip-pen-paper.png) **Note:** there is a known issue
+[LRDCOM-11877](https://issues.liferay.com/browse/LRDCOM-11877) in which invoking
+services, such as Skinny Provider's services, via the JSON Web Services console
+erroneously returns empty result sets. 
+
+---
+
+The `get-skinny-journal-articles` service returns a `JSONArray` object
+containing zero or more articles. The following example return value shows a
+`JSONArray` object that includes web content articles:
+
+    [
+        {
+            "dynamicElements": {
+                "title": "Liferay Portal Welcome",
+                "toggle": "true",
+                "image": "/documents/10184/0/welcome_tools/9921a6ff-2a83-414e-b629-d174ea7f2a0c?t=1385161659939",
+                "date": "1393909200000"
+            }
+        },
+        {
+            "dynamicElements": {
+                "title": "It's Super",
+                "toggle": "",
+                "image": "/documents/10184/0/welcome_cube/f9e23e2c-122d-4b7e-bf67-29d33abc1ec1?t=1385161661151",
+                "date": "1394596800000"
+            }
+        },
+        {
+            "dynamicElements": {
+                "title": "And Amazing",
+                "toggle": "true",
+                "image": "/documents/10184/0/welcome_community/ef976219-16c8-481b-a482-e3dac3291dcf?t=1385161662900",
+                "date": "1395374400000"
+            }
+        }
+    ]
+
+Each web content article representation is comprised of its associated web
+content structure fields. The service returns an empty array (`[]`) if no
+matching articles are found. 
+
+If you think getting web content articles through Skinny Provider is easy,
+you'll find it a snap to get Dynamic Data List records. 
+
+### Retrieving Skinny Dynamic Data Lists [](id=retrieving-skinny-dynamic-data-lists-liferay-portal-6-2-dev-guide-06-en)
+
+The `get-skinny-ddl-records` service retrieves all records found in a specified
+Dynamic Data List (DDL). Each DDL is globally recognized by its unique ID--no
+company ID or group name are required to locate them. And since DDLs don't
+support localization, no locale argument is needed. 
+
+Dynamic Data List's records can be retrieved using the DDL's record set ID. You
+can find the ID from within the Dynamic Data Lists app. Each list is assigned an
+ID that you can supply to the Skinny Provider web service as the DDL record set
+ID value. 
+
+![Figure 6.4: On adding or configuring lists in Liferay's the Dynamic Data List app, each list's ID is displayed. You can specify this ID as the value for the DDL record set ID in querying the list from the Skinny web service.](../../images/ddl-data-definition-listing.png)
+
+Now that you know how to get a DDL record set ID, you can specify it in calling
+the `get-skinny-ddl-records` service. 
+
+For example, imagine that you have a simple DDL based on the following data
+definition:
+
+- `title` - A Text field with a title.
+- `image` - A Documents and Media Library field for referencing images.
+- `date` - A Date field.
+- `toggle` - a Boolean field.
+
+If the DDL's record set ID is `15002`, for example, you can retrieve its records
+by invoking JavaScript code like this:
+
+    Liferay.Service(
+      '/skinny-web.skinny/get-skinny-ddl-records',
+      {
+        ddlRecordSetId: 15002
+      },
+      function(obj) {
+        console.log(obj);
+      }
+    );
+
+In JavaScript, you pass the DDL record set ID via parameter `ddlRecordSetId`.
+
+If you want to retrieve DDL records using a URL, you can specify a URL like this
+one:
+
+    http://localhost:8081/api/jsonws/skinny-web.skinny/get-skinny-ddl-records/ddl-record-set-id/15002
+
+Make sure to specify your DDL record set ID as the value for the URL parameter
+`ddl-record-set-id`. 
+
+The Skinny Provider's `get-skinny-ddl-records` service returns a `JSONArray`
+object, containing zero or more dynamic data list records. The following example
+return value shows a `JSONArray` object that includes several dynamic data list
+records:
+
+    [
+        {
+            "dynamicElements": {
+                "title": "Amazing Liferay",
+                "toggle": "true",
+                "image": "{\"groupId\":\"10184\",\"uuid\":\"012c2d55-b99f-4c85-92c9-7381c3693044\",\"version\":\"1.0\"}",
+                "date": "2014-03-14"
+            }
+        },
+        {
+            "dynamicElements": {
+                "title": "Can Do Much",
+                "toggle": "false",
+                "image": "{\"groupId\":\"10184\",\"uuid\":\"f9e23e2c-122d-4b7e-bf67-29d33abc1ec1\",\"version\":\"1.0\"}",
+                "date": "2011-03-04"
+            }
+        },
+        {
+            "dynamicElements": {
+                "title": "For You!",
+                "toggle": "true",
+                "image": "{\"groupId\":\"10184\",\"uuid\":\"ef976219-16c8-481b-a482-e3dac3291dcf\",\"version\":\"1.0\"}",
+                "date": "2013-03-04"
+            }
+        }
+    ]
+
+Each DDL record representation is comprised of its data definition fields. The
+service returns an empty array (`[]`) if the DDL has no records. 
+
+Each value returned by the service is a JSON object that you can parse (e.g., by
+invoking JavaScript's `JSON.parse()` method on it). Each object includes the
+group ID and UUID of the target image. You can use the group ID and UUID to
+construct a URL, of the format below, to access the image.
+
+    http://localhost:8081/documents/[groupId]/[uuid]
+
+As a recap, the Skinny JSON Provider EE app helps you retrieve lightweight
+"skinny" representations of dynamic data list records and web content articles.
+What a great way to access these core Liferay entities!
+
 By learning to leverage JSON web services in Liferay, you've added some powerful
-tools to your toolbox. Good job! 
+tools to your toolbox. Good job! Next, let's learn how to implement OAuth so
+you can access third-party services. 
+
+## Authorizing Access to Services with OAuth [](id=authorizing-access-to-services-with-oaut-liferay-portal-6-2-dev-guide-06-en)
+
+Suppose you wanted users to authenticate to your Liferay Portal plugin from a
+provider, like Twitter. You might think that you'd need to store the user's
+credentials (e.g., the user's Twitter account name and password), so you could
+pass them along with requests to the service provider and log them in. But this
+opens up a can of worms. The third party is a moving target: what happens when
+they modify their site, and your slick authenticator stops working?
+Additionally, you might receive some criticism from your users for asking them
+to give their Twitter credentials to you so you can use them to log in. Sounds
+like a hassle, right? This is where OAuth comes into play, taking a approach
+that is safe and simple. 
+
+OAuth delegates user authentication to the service provider. An OAuth-enabled
+plugin uses a token to prove it is authorized to access the user's third-party
+profile data and invoke authorized services. By implementing OAuth in your
+plugin, you get the best of both worlds--access to an outside service provider,
+and your users' trust that the plugin won't have access to their protected
+resources. 
+
+In addition, Liferay Portal instances can act as OAuth service providers: you
+can provide a means for your users to use their portal credentials to access
+other services that have OAuth configured. We refer to such portals as
+*Liferay Service Portals*. The OAuth framework lets Liferay Service Portal
+administrators specify well-defined service authorizations. Once authorized,
+the users can invoke the services via OAuth clients, such as the OAuth-enabled
+plugin that you'll learn about in this section. 
+
+---
+
+ ![Note](../../images/tip-pen-paper.png) **Note:** To learn more about the OAuth
+ framework, Liferay OAuth app, registering your OAuth app, or activating it from
+ a portal page, visit the
+ [OAuth](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/liferay-utility-applications-liferay-portal-6-2-user-guide-13-en)
+ section of *Using Liferay Portal*. 
+
+---
+
+<!-- Update link to User Guide when available. -->
+
+To access portal services using OAuth, you'll need to create a client that uses
+an OAuth cycle implementation, along with a user interface to lead your users
+through the cycle. In this section, you'll see  an example of a portlet accessing
+JSON Web Services from a remote portal. Let's get started by first selecting and
+implementing services of an OAuth Client library. 
+
+### Selecting an OAuth Client Library [](id=selecting-an-oauth-client-library-liferay-portal-6-2-dev-guide-06-en)
+
+In order for your portlet to use OAuth, it must have a reference to OAuth
+standards for authorization. You can offer your portlet an OAuth client library
+by specifying a single JAR file. In this example, Scribe is chosen as the
+OAuth library because it's available in Liferay Portal and can be easily
+included in a plugin. To use the Scribe OAuth client library, open your plugin's
+`liferay-plugin-package.properties` file and insert the `scribe.jar` file as a
+portal dependency jar:
+
+    portal-dependency-jars=\
+       scribe.jar
+
+That's all you have to do! Your portlet now has access to Scribe's OAuth
+library. Next, you'll implement Scribe's OAuth service interface.
+
+### Configuring OAuth's Service Implementation [](id=configuring-oauths-service-implementatio-liferay-portal-6-2-dev-guide-06-en)
+
+Now that your portlet can access an OAuth client library, you need to
+implement the OAuth services in your portlet. The following code demonstrates
+implementing a Scribe OAuth service API:
+
+    import org.scribe.builder.api.DefaultApi10a;
+    ...
+
+    public class OAuthAPIImpl extends DefaultApi10a {
+
+        @Override
+        protected String getAccessTokenEndpoint() {
+            if (Validator.isNull(_accessTokenEndpoint)) {
+                _accessTokenEndpoint = OAuthUtil.buildURL(
+                    "oauth-portal-host", 80, "http",
+                    PortletPropsValues.OSB_LCS_PORTLET_OAUTH_ACCESS_TOKEN_URI);
+            }
+
+            return _accessTokenEndpoint;
+        }
+
+        @Override
+        protected String getRequestTokenEndpoint() {
+            if (Validator.isNull(_requestTokenEndpoint)) {
+                _requestTokenEndpoint = OAuthUtil.buildURL(
+                    "oauth-portal-host", 80, "http",
+                    PortletPropsValues.OSB_LCS_PORTLET_OAUTH_REQUEST_TOKEN_URI);
+            }
+
+            return _requestTokenEndpoint;
+        }
+
+        private String _accessTokenEndpoint;
+        private String _requestTokenEndpoint;
+
+    }
+
+In this code snippet, the portlet provides the service platform's OAuth URLs to
+Scribe to acquire the access token and request token from the service
+provider. A *request token* is a value the portlet uses to obtain user
+authorization. It is exchanged for an *access token*. The access token is a
+value the portlet uses to gain access to protected resources on behalf of the
+user. The exchange of a request token for an access token replaces the need for
+supplying the user's service provider credentials. 
+
+In addition to the tokens, you'll also need to provide the callback URL so that
+the service platform can redirect the user's browser back to your portlet, once
+authentication and authorization is complete. The callback URL can be provided
+in an authorization request as a parameter, or it can be specified when
+registering your application through Liferay's OAuth Admin menu. Keep in mind
+that a callback URL provided via an authorization parameter overrides the
+callback setting specified in the OAuth Admin menu. You can specify the callback
+URL as an authorization parameter in your portlet's `portlet.properties` file.
+You'll see this process later. Here's a code snippet that uses the callback URL
+and request token in acquiring the OAuth Service:
+
+    public class OAuthUtil {
+
+        public static String buildURL(
+            String hostName, int port, String protocol, String uri) {
+            ...
+        }
+
+        public static Token extractAccessToken(
+            Token requestToken, String oAuthVerifier) {
+
+            Verifier verifier = new Verifier(oAuthVerifier);
+
+            OAuthService oAuthService = getOAuthService();
+
+            return oAuthService.getAccessToken(requestToken, verifier);
+        }
+
+        public static String getAuthorizeURL(
+            String callbackURL, Token requestToken) {
+
+            if (Validator.isNull(_authorizeRequestURL)) {
+                authorizeRequestURL = buildURL(
+                "oauth-portal-host", 80, "http",
+                PortletPropsValues.OSB_LCS_PORTLET_OAUTH_AUTHORIZE_URI);
+
+                if (Validator.isNotNull(callbackURL)) {
+                    authorizeRequestURL = HttpUtil.addParameter(
+                        authorizeRequestURL, "oauth_callback",
+                        callbackURL);
+                }
+            }
+
+            _authorizeRequestURL.replace("{0}", requestToken.getToken());
+        }
+
+        public static OAuthService getOAuthService() {
+            if (_oAuthService == null) {
+                ServiceBuilder oAuthServiceBuilder = new ServiceBuilder();
+
+                oAuthServiceBuilder.apiKey(
+                    PortletPropsValues.OSB_LCS_PORTLET_OAUTH_CONSUMER_KEY);
+                oAuthServiceBuilder.apiSecret(
+                    PortletPropsValues.OSB_LCS_PORTLET_OAUTH_CONSUMER_SECRET);
+                oAuthServiceBuilder.provider(OAuthAPIImpl.class);
+
+                _oAuthService = oAuthServiceBuilder.build();
+            }
+
+            return _oAuthService;
+        }
+
+        public static Token getRequestToken() {
+            OAuthService oAuthService = getOAuthService();
+
+            return oAuthService.getRequestToken();
+        }
+
+        private static String _authorizeRequestURL;
+        private static OAuthService _oAuthService;
+
+    }
+
+Besides authorizing the callback URL, you're also implementing methods to acquire
+the OAuth service, submit the request to that service, and obtain tokens from
+the service. By doing this, you provide OAuth services to your portlet.
+You're not quite done yet; you still need to provide information about the OAuth
+platform you're accessing. 
+
+First, you need to specify the OAuth protocol context paths for your URLs. In
+the case of using Liferay Portal as a service platform, the default paths for
+the OAuth portlet are specified in the `auth.public.paths` portal property found
+in the [Authentication Pipeline](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Authentication%20Pipeline)
+section of Portal's `portal.properties` file. The URLs specified here do not
+require authentication to access.
+
+    auth.public.paths=\
+        /portal/oauth/access_token,\
+        /portal/oauth/authorize,\
+        /portal/oauth/request_token
+
+You'll need to transfer these OAuth related constants to your portlet's
+`portlet.properties` file. Here's an example code snippet of what these
+property settings look like:
+
+    oauth.access.token.uri=/c/portal/oauth/access_token
+    oauth.authorize.uri=/c/portal/oauth/authorize?oauth_token={0}
+    oauth.consumer.key=42c56e22-d5a2-4003-86f4-cbc34b6de3e3
+    oauth.consumer.secret=793195c2936a85649042b24ed843a036
+    oauth.request.token.uri=/c/portal/oauth/request_token
+
+Great! Now your OAuth services are implemented and OAuth constants are
+specified. Your portlet can now take part in the OAuth authorization process!
+You'll just need to set up a simple user interface to start the OAuth cycle.
+Let's do this next!
+
+### Creating a User Interface for Authentication [](id=creating-a-user-interface-for-authentica-liferay-portal-6-2-dev-guide-06-en)
+
+Your portlet's user interface must initiate the OAuth cycle the first time it
+accesses the OAuth platform for each specific user. Your portlet must
+render the OAuth authorization UI automatically when the portlet does not
+possess the access token and access secret. The JSP code snippet below initiates
+the OAuth authorization process:
+
+    <portlet:actionurl name="setupOAuth" var="setupOAuthURL">
+    <%
+    Token requestToken = OAuthUtil.getRequestToken();
+
+    portletSession.setAttribute(Token.class.getName(), requestToken);
+    %>
+    <div class="button-container"%>
+        <a class="lcs-portal-link" href="<%= OAuthUtil.getAuthorizeURL(setupOAuthURL, requestToken) %>"><liferay-ui:message key="authorize-access"/>
+        </a>
+    </div>
+
+On successfully getting authorization from the service provider, the OAuth
+platform redirects the user back to the callback URL, which in this case is a URL
+for the `setupOAuth` portlet action. This action method uses the request token
+to get the access token. It stores the token secret and the token itself. Here's
+a snippet of the portlet action method:
+
+    public void setupOAuth(
+            ActionRequest actionRequest, ActionResponse actionResponse)
+        throws Exception {
+
+        PortletSession portletSession = actionRequest.getPortletSession();
+
+        Token requestToken = (Token)portletSession.getAttribute(
+            Token.class.getName());
+
+        String oAuthVerifier = ParamUtil.getString(
+            actionRequest, "oauth_verifier");
+
+        Token token = OAuthUtil.extractAccessToken(requestToken, oAuthVerifier);
+
+        // store token.getSecret() and token.getToken()
+        ...
+    }
+
+The figure below shows the OAuth authorization user interface.
+
+![Figure 5.2: When your portlet is granted access to the service provider, it acquires the access token and access secret.](../../images/oauth-application-authorize.png)
+
+On completing initial OAuth authorization via the UI and on the user revisiting
+the portlet instance thereafter, the portlet should render its normal UI. 
+Once your portlet is granted access, the OAuth platform redirects the user back
+to the callback URL you specified during the portlet's registration.
+
+Once you have the access token and access secret stored, your portlet can use
+them to access services such as JSON web services. Here's a simple code example
+for this scenario:
+
+    Token token = new Token(getAccessToken(), getAccessSecret());
+
+    String requestURL = OAuthUtil.buildURL(
+        "oauth-portal-host", 80, "http",
+        "/api/secure/jsonws/context.service/method/parms");
+
+    OAuthRequest oAuthRequest = new OAuthRequest(Verb.POST, requestURL);
+
+    OAuthService oAuthService = OAuthUtil.getOAuthService();
+
+    oAuthService.signRequest(token, oAuthRequest);
+
+    Response response = oAuthRequest.send();
+
+    if (response.getCode() == HttpServletResponse.SC_UNAUTHORIZED) {
+        String value = response.getHeader("WWW-Authenticate");
+
+        throw new CredentialException(value);
+    }
+
+    if (response.getCode() == HttpServletResponse.SC_OK) {
+        // do something with results from response.getBody();
+    }
+
+That's it! You've implemented an OAuth client library, created a service
+implementation, and developed a user interface to present the OAuth cycle. Of
+course, this example and its code snippets are not compatible for all use cases,
+but they demonstrate configuring an OAuth-ready application for Liferay Portal. 
 
 ## Summary [](id=summary-liferay-portal-6-2-dev-guide-05-en)
 
-In this chapter, we showed you how easy it is to find and invoke Liferay remote
+In this chapter, you saw how easy it is to find and invoke Liferay remote
 web services. We also explained how Liferay's service security layers are used
 to protect your data and prevent unauthorized service calls. Then, we dove into
 SOAP web services and showed you how to create SOAP web service clients to
 invoke them. Lastly, we jumped into JSON web services. We learned how to
 register them, list them, and invoke them from Liferay JSON web service
-interface. We also learned about several different URL patterns and ways to pass
-JSON web service parameters in service calls. You see, here at Liferay, we aim
-to give you terrific service! 
+interface. Next, we learned about several different URL patterns and ways to
+pass JSON web service parameters in service calls. Lastly, we explored the world
+of OAuth and explained how to configure a Liferay application to use the OAuth
+platform. You see, here at Liferay, we aim to give you terrific service!
 
 Next, we'll take a look at some of the powerful frameworks of Liferay Portal,
 learn how they work and how you can leverage them.

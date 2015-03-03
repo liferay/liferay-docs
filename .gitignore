@@ -4,9 +4,10 @@
 *.iml
 *.swp
 *-tmp.html
-.METADATA
+*.zip
 .project
 .classpath
+.METADATA
 .settings
 git-modified-list.txt
 nbbuild.xml
@@ -15,7 +16,7 @@ properties/
 /*.ipr
 /*.iws
 /*.patch
-/build.*.properties
+build.*.properties
 
 build/
 classes/

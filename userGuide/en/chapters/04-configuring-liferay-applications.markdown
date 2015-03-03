@@ -45,6 +45,14 @@ feature and web content articles' Display Page attribute to achieve a more
 elegant solution for displaying the full view of web content articles on
 specific pages. Please see the Display Page section of chapter 5 for details.
 
+---
+
+ ![Note](../../images/01-tip.png) **Note:** The *Link Portlet URLs to Page* menu
+ is deprecated for Liferay 6.2 and will be removed in Liferay 7.0. The
+ functionality of this menu can also be found in the Asset Publisher. 
+
+---
+
 You can also choose whether or not to display borders around your portlet. By
 default, borders are displayed. Be careful about turning portlet borders off;
 some themes assume that portlet borders are turned on and may not display

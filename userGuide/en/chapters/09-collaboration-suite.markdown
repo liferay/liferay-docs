@@ -717,9 +717,11 @@ mark as question box in the new thread window. Threads marked as questions
 display the flag "waiting for an answer." Subsequent replies to the original
 message can be marked as an answer.
 
-Lastly, you can set the amount of time a post is displayed until it is taken
-away. You have options of 24 hours, 7 days, 30 days, and 365 days. After the
-time has passed, the post is removed from the message board.
+Lastly, you can set the amount of time a post is displayed on the portlet's 
+*Recent Posts* tab until it is taken away. You have options of 24 hours, 7 days, 
+30 days, and 365 days. After the time has passed, the post is removed from 
+*Recent Posts*. However, the post itself isn't deleted. It remains accessible 
+elsewhere on the message board.
 
 ### Email From [](id=email-from-liferay-portal-6-2-user-guide-08-en)
 
