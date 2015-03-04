@@ -32,9 +32,10 @@ First, you'll need to specify some attributes of the embedded portlet:
   exist in the portal. 
 - ***Web Application Context:*** (required for plugins only) Log in to
   Liferay Portal. Go to the portlet's *Look and Feel* &rarr; *Advanced
-  Styling* to find the context in the Fully Qualified Portlet ID (FQPI). The
-  context is the portion of the Portlet ID string that follows `WAR_`. The *Web
-  Application Context* in the following figure is *myhelloworldportlet*. 
+  Styling* to find the context in the [Fully Qualified Portlet ID](/participate/liferaypedia/-/wiki/Main/Fully+Qualified+Portlet+ID)
+  \(FQPI\). The context is the portion of the Portlet ID string that follows
+  `WAR_`. The *Web Application Context* in the following figure is
+  *myhelloworldportlet*. 
 
 ![Figure 1: You can view the Fully Qualified Portlet ID (FQPI) in the Advanced Styling tab for a custom portlet.](../../images/layout-template-custom-portlet-look-n-feel.png)
 
@@ -60,17 +61,9 @@ To embed a portlet, you must specify the following things:
 1.  Add a `$processor.processPortlet(...)` directive within the column in which
 to embed the portlet. 
 
-2.  Pass in the portlet's Fully Qualified Portlet ID (FQPI) as the string
-parameter to the `$processor.processPortlet(...)` directive. 
-
-    **Fully Qualified Portlet ID (FQPI) Value Contentions**
-
-    | Convention | Description |
-    | ---------- | ----------- |
-    | [portletID] |  Non-instanceable core portlet |
-    | [portletID]\_INSTANCE\_[instanceID] |  Instanceable core portlet |
-    | [portletID]\_WAR\_[portletContext] |  Non-instanceable custom portlet |
-    | [portletID]\_WAR\_[portletContext]\_INSTANCE\_[instanceID] |  Instanceable custom portlet |
+2.  Pass in the portlet's [Fully Qualified Portlet ID](/participate/liferaypedia/-/wiki/Main/Fully+Qualified+Portlet+ID)
+    \(FQPI\) as the string parameter to the `$processor.processPortlet(...)`
+    directive. 
 
 Here's a template that implements embedding the example portlets in an example
 layout: 
