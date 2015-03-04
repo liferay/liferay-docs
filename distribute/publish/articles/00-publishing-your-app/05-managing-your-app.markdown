@@ -60,7 +60,9 @@ After your app is published and approved, you will undoubtedly need to make one
 or more of these kinds of changes during the life of the app:
 
 - Editing your app details (e.g., description, icon, etc.)
-- Editing app prices
+- Adding new license bundles (quantities)
+- Editing app prices of bundles
+- Modifying regional availability
 - Adding support for a new version of Liferay Portal
 - Releasing a new version of your app to fix bugs or offer new functionality
 - Disabling your apps
@@ -87,17 +89,25 @@ Marketplace.
 
 ### Editing App Prices [](id=editing-app-prices)
 
-You can change your app's prices, instance bundles, and regional availability if
-you wish. This can be for a variety of reasons, whether it's to run a
-promotional offer, or to adjust your pricing model to better account for app
-demand. To make changes to your app, navigate to *Company Profile Home* &rarr;
-*Apps*, then click the app you wish to edit, and then at the bottom, click
-*Edit* &rarr; *Pricing*. When you've finished editing your app's prices, click
-*Next*. 
+You can change your app's prices, add or remove bundles, and modify regional
+availability if you wish. This can be for a variety of reasons, whether it's to
+run a promotional offer, or to adjust your pricing model to better account for
+app demand. To make changes to your app, navigate to *Company Profile Home*
+&rarr; *Apps*, then click the app you wish to edit, and then at the bottom,
+click *Edit* &rarr; *Pricing*. When you've finished editing your app's prices,
+click *Next*. 
 
 These changes do not require Liferay verification process to approve. Simply
-make the changes you wish and save your app. These new prices will be reflected
+make the changes you wish and save your app. These new prices are reflected
 immediately. 
+
+You however, cannot modify the following attributes of an approved app: 
+
+- Free vs. paid
+- License term (perpetual vs. non-perpetual)
+- Support subscription offering (cannot be removed)
+
+Next, you can consider adding support for new versions of Liferay. 
 
 ### Adding Support for New Versions of Liferay Portal [](id=adding-support-for-new-versions-of-liferay-portal)
 

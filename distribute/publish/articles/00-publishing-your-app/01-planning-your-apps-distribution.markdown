@@ -20,6 +20,14 @@ If you're selling your app, you must publish using a Paid App Account. You must
 also specify licensing, a price structure, and regional availability for your
 paid apps.
 
+Importantly, you can't change the app from free to paid or from paid to free
+once the app is published to the Marketplace. In order to offer the app in the
+other license type, you must submit another app under a different name (title).
+If you wish to have both free and paid licenses for your app, you must submit
+the app under one name for free licenses and submit it under another name for
+paid licenses. Make sure to select the license type (i.e., free or paid) that's
+best for your app. 
+
 Have you decided who's going to be listed as the app's author/owner? Have
 you decided who's going to manage the app once it's on the Marketplace? App
 ownership options are explained next. 
@@ -115,15 +123,17 @@ Here are the license term options:
 
 - Non-perpetual license: must be renewed annually.
 
+Importantly, you can't change your app's license terms once the app is approved.
+In order to release an approved app under a different license term you must
+submit another app under a new name (title). So make sure you think through the
+license term that makes the most sense for your app. 
+
 +$$$
 
-**Note:** Once Liferay has approved your app, you cannot change its license
-term. 
-
-If you are a foreign developer based outside of the United States, non-perpetual
-license sales (considered to be royalty income) to US customers are subject to a
-30% withholding tax. This tax does not apply to perpetual licenses. For more
-information on licensing terms and fees, please refer to the
+**Note:** If you are a foreign developer based outside of the United States,
+non-perpetual license sales (considered to be royalty income) to US customers
+are subject to a 30% withholding tax. This tax does not apply to perpetual
+licenses. For more information on licensing terms and fees, please refer to the
 [FAQ](/distribute/faq). 
 
 $$$
@@ -187,13 +197,16 @@ globally) or as granular (different price in each country offered) as you want.
 
 ![Figure 2: Liferay Marteplace lets you specify prices for all of your license options and lets you specify them by region.](../../images/pricing_screenshot.png)
 
-
 Choose the currency to use with your pricing options. Decide on the renewal cost
 for any support services you offer. The support services price is per instance,
 so if you specify $100 USD and the customer is running 10 instances, their
 annual support services renewal cost will be $1000. Note: This only applies to
 perpetual licenses. For non-perpetual licenses, you should include any support
 services cost in the annual license price. 
+
+Even after an app has been approved, you can change the currency type and
+currency price of its license bundles, and you can modify regional availability
+of license bundles. 
 
 Although Liferay Marketplace supports major currencies and a broad list of
 countries, not all currencies and countries are currently available. Additional
