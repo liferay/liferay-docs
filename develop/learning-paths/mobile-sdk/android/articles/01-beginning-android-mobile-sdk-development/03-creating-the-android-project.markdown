@@ -74,8 +74,6 @@ are summarized here:
 - *Title*: The activity's name.
 - *Navigation Drawer Fragment Name*: The drawer fragment's name.
 
-![Figure 4: The final screen of Android Studio's Create New Project wizard.](../../images/android-studio-new-project-04.png)
-
 At this point, you're probably wondering what *fragments* and *layouts* are. 
 Fragments are similar to activities in that they are an on-screen view that can 
 be accessed in your app. However, fragments exist *within* activities. There can 
@@ -87,6 +85,8 @@ horizontally across the bottom of the screen. The buttons can be placed in
 Android's `LinearLayout` to accomplish this. Layouts are typically specified in 
 `xml` files, with one file for each activity or fragment. For more information 
 on layouts, see Android's [documentation](http://developer.android.com/guide/topics/ui/declaring-layout.html). 
+
+![Figure 4: The final screen of Android Studio's Create New Project wizard.](../../images/android-studio-new-project-04.png)
 
 Now that you know a bit about fragments and layouts, accept the defaults in the 
 wizard and click *Finish*. A progress indicator launches that indicates your 
@@ -105,3 +105,49 @@ the [Android Studio Overview](http://developer.android.com/tools/studio/index.ht
 for more information on project view.
 
 ![Figure 5: Project view in Android Studio.](../../images/android-studio-project-view.png)
+
+Well done! You've successfully created the Guestbook app and know how to access 
+its files in Android Studio. Now you're ready to run it.
+
+## Running the Guestbook App
+
+Even though your app doesn't do much yet, Android Studio created enough of its 
+basic structure so that you can run it. This learning path runs the app in the 
+default emulator created by Android Studio. To run the app, click the green 
+play button in the toolbar. This button is highlighted by a red box in the 
+following screenshot:
+
+![Figure 6: Click the green play button to run your app.](../../images/android-studio-run.png)
+
+After a moment, a new window opens that asks you to select an emulator. Make 
+sure the radio button next to *Launch emulator* is selected, select the emulator 
+from the *Android virtual device* menu, and click *OK*. The emulator starts up 
+to Android's default lock screen. Note that it may take some time for it to 
+start, especially if your machine is low on memory. Click the lock icon on the 
+bottom of the lock screen and drag up. The emulated device opens to the 
+Guestbook app with the drawer open. The bar across the top contains a stack of 
+three small horizontal lines, the app's name, and a stack of three small dots. 
+This bar is called the *action bar*. Google provides extensive [design](http://developer.android.com/design/patterns/actionbar.html) 
+and [developer](http://developer.android.com/guide/topics/ui/actionbar.html) 
+documentation for the action bar. In short, the action bar is where you should 
+put actions and navigation elements relevant to the displayed activity or 
+fragment. For example, clicking the dots opens a menu that lets you access the 
+app's settings (clicking settings doesn't do anything yet). Clicking the 
+horizontal lines serves as a toggle that opens and closes the drawer. When the 
+drawer is closed either via the toggle or by selecting an item in the drawer, 
+the text in the action bar changes to reflect the last item selected. There's 
+also an additional item in the action bar when the drawer is closed: an 
+*EXAMPLE ACTION* button. Click it now. A message appears at the bottom of the 
+emulator's screen that says *Example action*. This message type in Android is 
+called a *toast*. Toasts are useful for showing simple messages that you want to 
+disappear. They're also very useful for debugging. Android's developer 
+documentation for toasts can be found [here](http://developer.android.com/guide/topics/ui/notifiers/toasts.html).
+
+![Figure 7: When the Guestbook app first runs, it should look something like this.](../../images/android-guestbook-first-run.png)
+
+![Figure 8: The action bar when an item is selected from the drawer.](../../images/android-guestbook-action-bar.png)
+
+As you can see, Android Studio does a significant amount of work for you in 
+creating the basic structure of the app. With only a few steps and no coding, 
+you created an app with a functional navigation drawer. Now it's time to put 
+Liferay's Mobile SDK to work!
