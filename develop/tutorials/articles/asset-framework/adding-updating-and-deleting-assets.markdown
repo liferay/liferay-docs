@@ -9,6 +9,8 @@ Liferay can keep track of the instance as an asset. You similarly, update the
 asset as you update the entity. To see how to asset-enable entities in a working example portlet, visit learning
 path [Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities).
 
+![Figure 1: It can be useful to show custom entities, like this example insult entity, in an Asset Publisher.](../../images/basic-asset-in-asset-publisher.png)
+
 To leverage assets, you must implement indexers for your portlet's entities.
 Liferay's asset framework uses indexers to manage assets. For instructions on
 creating an indexer in a working example portlet, see the learning path [Enabling Search and Indexing](/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing).
@@ -126,17 +128,28 @@ parameters, they're declared in variables before the invocation.
         expirationDate, mimeType, title, description, summary, url,
         layoutUuid, height, width, priority, sync);
 
-Immediately after invoking the `updateEntry` method, you must update the
-respective asset and index the entity instance. For example, here are calls to
-the indexer that an example insults portlet makes when adding and updating its
-insult entities:
-
     Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(Insult.class);
     indexer.reindex(insult);
+
+Immediately after invoking the `updateEntry` method, you must update the
+respective asset and you must index the entity instance. The above example code
+calls the indexer to index (or re-index, in the case of an entity update) the
+entity.
 
 As you can see, you get an indexer for your entity's class and re-index the
 entity instance. It's that easy to to update assets and indexes when adding and
 updating entities.
+
++$$$
+
+**Tip:** The current user's ID and the scope group ID are commonly made
+available in a service context parameter. You can check for them in a service
+context with calls like these:
+
+	long userId = serviceContext.getUserId();
+	long groupId = serviceContext.getScopeGroupId();
+
+$$$
 
 Next, you'll learn what's needed to properly delete an entity that's associated
 with an asset. 
