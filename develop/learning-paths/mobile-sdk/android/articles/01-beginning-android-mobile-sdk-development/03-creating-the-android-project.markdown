@@ -33,9 +33,75 @@ Company Domain field. These fields are used to automatically fill in your app's
 
 ![Figure 1: The first screen of Android Studio's Create New Project wizard.](../../images/android-studio-new-project-01.png)
 
-The next screen of the wizard asks you to specify your app's form factors and 
-the minimum supported Android SDK for each. Make sure that only the 
-*Phone and Tablet* checkbox is selected. In the *Minimum SDK* menu, select 
-*API 15: Android 4.0.3 (IceCreamSandwich)*.
+The next screen of the wizard asks you to specify your app's supported form 
+factors and minimum Android SDK. Make sure that only the *Phone and Tablet* 
+checkbox is selected. In the *Minimum SDK* menu, select 
+*API 15: Android 4.0.3 (IceCreamSandwich)*. For each API level, Android Studio 
+provides you with an estimate of the percentage of devices active on the Google 
+Play store that your app can run on. You can view a graphical representation of 
+these estimates by clicking on the *Help me choose* link in the text below the 
+Minimum SDK menu. Click *Next* when you're finished.
 
 ![Figure 2: The second screen of Android Studio's Create New Project wizard.](../../images/android-studio-new-project-02.png)
+
+You now need to specify the *activity* to create for your app. An Android 
+activity is essentially an on-screen view that serves as an entry point to an 
+app. It's important to note that an activity can be *any* on-screen view. It's 
+not restricted to the app's initial screen. For example, an email app might 
+contain several activities: one for displaying a list of emails, one for writing 
+emails, and another for selecting between mailboxes. Other apps can start the 
+email app in any of those activities. For example, if the user presses an email 
+address in their web browser app, the browser can open the email app in the 
+activity used for writing emails, with the email address the user pressed 
+automatically put in the To field of a new message.
+
+The design for the Guestbook portlet is to display the guestbooks in a drawer 
+that slides out from the left side of the screen. When a guestbook is pressed in 
+the drawer, the drawer closes and the guestbook's entries are displayed. While 
+this functionality makes for a smooth UX, it's rather complex to implement. 
+Fortunately, Android Studio has an activity template that does most of the work 
+for you! Select *Navigation Drawer Activity* in the wizard and click *Next*.
+
+![Figure 3: The third screen of Android Studio's Create New Project wizard.](../../images/android-studio-new-project-03.png)
+
+The final screen of the New Project Wizard asks you to specify the activity's 
+class name and the names of the activity's components. The fields in the wizard 
+are summarized here:
+
+- *Activity Name*: The activity's class name.
+- *Layout Name*: The activity's layout name.
+- *Fragment Layout Name*: The activity fragment's layout name.
+- *Title*: The activity's name.
+- *Navigation Drawer Fragment Name*: The drawer fragment's name.
+
+![Figure 4: The final screen of Android Studio's Create New Project wizard.](../../images/android-studio-new-project-04.png)
+
+At this point, you're probably wondering what *fragments* and *layouts* are. 
+Fragments are similar to activities in that they are an on-screen view that can 
+be accessed in your app. However, fragments exist *within* activities. There can 
+also be more than one fragment per activity. In this case, the Guestbook app's 
+drawer and main views are fragments. Google describes fragments in detail [here](http://developer.android.com/guide/components/fragments.html). 
+Layouts determine how UI components are positioned in a fragment or activity. 
+For example, an app may have a series of buttons that are positioned 
+horizontally across the bottom of the screen. The buttons can be placed in 
+Android's `LinearLayout` to accomplish this. Layouts are typically specified in 
+`xml` files, with one file for each activity or fragment. For more information 
+on layouts, see Android's [documentation](http://developer.android.com/guide/topics/ui/declaring-layout.html). 
+
+Now that you know a bit about fragments and layouts, accept the defaults in the 
+wizard and click *Finish*. A progress indicator launches that indicates your 
+project is building. Android Studio then opens the project, with the main 
+fragment's layout (`fragment_main.xml`) open in its *design view*. The main 
+fragment is for displaying the entries of the guestbook selected from the 
+drawer. Of course, it doesn't do that yet, but it will once you're finished! 
+Click the *Text* tab at the bottom left of `fragment_main.xml` to show the main 
+fragment's *text view*. When you edit layout files in this learning path, you'll 
+be doing so in text view. To the left of the open `fragment_main.xml` is the 
+*project view*. The project view lets you access your project's source files. 
+Most of the files you'll be working with in this learning path are in the 
+`res/layout` and `java` directories. Your app's layout files are contained in 
+`res/layout`. The `java` directory contains your app's Java source files. See 
+the [Android Studio Overview](http://developer.android.com/tools/studio/index.html) 
+for more information on project view.
+
+![Figure 5: Project view in Android Studio.](../../images/android-studio-project-view.png)
