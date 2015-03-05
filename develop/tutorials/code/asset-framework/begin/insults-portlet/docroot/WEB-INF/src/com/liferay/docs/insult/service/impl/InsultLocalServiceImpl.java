@@ -102,6 +102,7 @@ public class InsultLocalServiceImpl extends InsultLocalServiceBaseImpl {
 	public Insult updateInsult(
 	        long insultId, String insultString, ServiceContext serviceContext)
 	    throws PortalException, SystemException {
+		long groupId = serviceContext.getScopeGroupId();
 
 	    Insult insult = InsultLocalServiceUtil.fetchInsult(insultId);
 	    long userId = serviceContext.getUserId();
