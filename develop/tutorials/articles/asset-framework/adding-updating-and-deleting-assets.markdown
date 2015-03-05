@@ -1,41 +1,27 @@
 # Adding, Updating, and Deleting Assets 
 
-In order to properly leverage asset features for an entity, you must inform the
-asset framework about each instance that you create of that entity. In this
-sense, it's similar to informing the permissions framework about a new resource.
-It's a simple procedure: you invoke a method of the asset framework that adds an
-`AssetEntry` associated with the entity instance, so that Liferay can keep track
-of the instance as an asset. 
+To leverage Liferay asset features with an entity, you must inform Liferay's
+asset framework about each entity instance you create, modify, and delete. In
+this sense, it's similar to informing Liferay's permissions framework about a
+new resource. It's a simple procedure: you invoke a method of the asset
+framework that adds an `AssetEntry` associated with the entity instance, so that
+Liferay can keep track of the instance as an asset. You similarly, update the
+asset as you update the entity. To see how to asset-enable entities in a working example portlet, visit learning
+path [Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities).
 
-Specifically, you should access these methods using either the static methods
-of the class `AssetLocalServiceUtil` or an instance of the class
-`AssetEntryLocalService` injected using Spring. This tutorial uses the latter
-approach.
-[Code](https://github.com/liferay/liferay-portal/tree/6.2.1-ga2/portal-impl/src/com/liferay/portlet/blogs)
-from Liferay's Blogs portlet is used as an example. 
+To leverage assets, you must implement indexers for your portlet's entities.
+Liferay's asset framework uses indexers to manage assets. For instructions on
+creating an indexer in a working example portlet, see the learning path [Enabling Search and Indexing](/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing).
+This tutorial also shows you how to implement indexes that are required for
+asset-enabling your entities. 
 
-<!-- To simplify this section, you'll use the static methods of 
-`AssetLocalServiceUtil`, since it doesn't require any special setup in your 
-application.
-- Commenting out this original sentence that Rich's comment applies to -Nick -->
-
-<!-- This is wrong. We should show them the right way to do it, rather than the
-way that's easier to document. Remember that developers will be taking direction
-from our text and writing actual code based on it. The right way is to add a
-<reference> tag to the service.xml and inject the service with Spring. In fact,
-the example below does just that (since it's Liferay's best practice), so the
-example code here doesn't even match what we just stated. We need to fix this.
--Rich--> 
+It's time to associate assets with your portlet's entities. 
 
 ## Preparing Your Project for the Asset Framework
 
-Before proceeding, make sure that you've implemented an indexer for your plugin. 
-Liferay's asset framework uses the indexer to manage assets. For instructions on 
-creating an indexer, see the learning path
-[Enabling Search and Indexing](/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing). 
-
-You also need to make a small addition to your project's `service.xml` file. Add
-the following `reference` tag before the closing `</entity>` for the entity.
+In your project's `service.xml` file, you must add an asset entry entity for
+your custom entity. Add the following `reference` tag before the closing
+`</entity>` tag for your custom entity.
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
 
@@ -45,9 +31,14 @@ Now you're ready to learn about adding and updating assets!
 
 ## Adding and Updating Assets 
 
-The method to invoke when one of your custom content entries is added or
-updated is the same. This method is called `updateEntry`. Here's the full 
-signature: 
+Your `-LocalServiceImpl` Java class inherits from its parent base class an
+`AssetEntryLocalService` instance; it's assigned to field `assetEntryLocalService`.
+Service Builder creates this field in the `-LocalServiceBaseImpl` base class that
+it generates. To add your custom entity as a Liferay asset, you must invoke the
+`assetEntryLocalService` field's `updateEntry` method.
+
+Here's what the [`updateEntry`](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html)
+method's signature looks like:
 
     AssetEntry updateEntry(
 		long userId, long groupId, Date createDate, Date modifiedDate,
@@ -59,101 +50,128 @@ signature:
 		boolean sync)
 	throws PortalException, SystemException
 
-Here's an example of this method's invocation extracted from Liferay Portal's
-Blogs portlet (where?): 
+Here are descriptions of each of the `updateEntry` method's parameters: 
 
-    int foo1 = 0;
-    boolean visible = ???;
-    String title = ???;
-    String description = ???;
-    String summary = ???;
-    publishDate
-    expirationDate;
-    = 0; 
-    = 0;
-    = null;
-    sync = false;
+-   `userId` - identifies the user updating the content. 
+-   `groupId` - identifies the scope of the created content. If your content
+    doesn't support scopes (extremely rare), pass `0` as the value. 
+-   `createDate` - the date the entity was created.
+-   `modifiedDate` - the date of this change to the entity.
+-   `className` - identifies the entity's class. The recommended convention
+    is to use the name of the Java class that represents your content type. For
+    example, you can pass in the value returned from
+    `[YourClassName].class.getName()`. 
+-   `classPK` - identifies the specific entity instance, distinguishing it
+    from other instances of the same type. It's usually the primary key of the
+    table where the entity is stored.
+-   `classUuid` - serves as a secondary identifier that's guaranteed  to
+    be universally unique. It correlates entity instances accross scopes. It's
+    especially useful if your content is exported and imported across separate
+    portals. 
+-   `classTypeId` - identifies the particular variation of this class, if it has
+    any variations. Otherwise, use `0`. 
+-   `categoryIds` - represent the categories selected for the entity.
+    The asset framework stores them for you. 
+-   `assetTagNames` - represent the tags selected for the entity.
+    The asset framework stores them for you.
+-   `visible` - specifies whether the entity is approved. 
+-   `startDate` - the entity's publish date. You can use it to specify when an
+     Asset Publisher should show the entity's content.
+-   `endDate` - the date the entity is taken down. You can use it to specify
+     when an Asset Publisher should stop showing the entity's content.
+-   `expirationDate` - the date the entity will no longer be shown. 
+-   `mimetype` - the Multi-Purpose Internet Mail Extensions type, such as [ContentTypes.TEXT_HTML](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portal/kernel/util/ContentTypes.html#TEXT_HTML),
+    used for the content.
+-   `title` - the entity's name.
+-   `description` - provides a complete description of the entity.
+-   `summary` - provides an overview of the entity's description. 
+-   `url` - a URL to optionally associate with the entity. 
+-   `layoutUuid` - the universally unique ID of the layout of the entry's
+    default display page.
+-   `priority` - specifies how the entity is ranked among peer entity instances.
+    Low integers take priority over higher integers.
+
+<!-- We need get definitions for these params. Jim
+-   `height` - 
+-   `width` - 
+-   `sync` - 
+-->
+
+The following example code demonstrates invoking this method on an example
+entity called `Insult`. To help show the values assigned to some of the
+parameters, they're declared in variables before the invocation.
+
+    long classTypeId = 0;
+    boolean visible = true;
+    Date startDate = null;
+    Date endDate = null;
+    Date expirationDate = null;
+    String mimeType = ContentTypes.TEXT_HTML;
+    String title = insult.getInsultString();
+    String description = insult.getInsultString();
+    String summary = insult.getInsultString();
+    String url = null;
+    String layoutUuid = null;
+    int height = 0;
+    int width = 0;
+    Integer priority = null;
+    boolean sync = false;
 
     assetEntryLocalService.updateEntry(
-		userId, entry.getGroupId(), entry.getCreateDate(),
-		entry.getModifiedDate(), BlogsEntry.class.getName(),
-		entry.getEntryId(), entry.getUuid(), 0, assetCategoryIds,
-		assetTagNames, visible, null, null, null, ContentTypes.TEXT_HTML,
-		entry.getTitle(), entry.getDescription(), summary, null, null, 0, 0,
-		null, false);
+        userId, groupId, insult.getCreateDate(),
+        insult.getModifiedDate(), Insult.class.getName(),
+        insult.getInsultId(), insult.getUuid(), classTypeId,
+        serviceContext.getAssetCategoryIds(),
+        serviceContext.getAssetTagNames(), visible, startDate, endDate,
+        expirationDate, mimeType, title, description, summary, url,
+        layoutUuid, height, width, priority, sync);
 
-Here's a quick summary of the most important parameters of this method: 
+Immediately after invoking the `updateEntry` method, you must update the
+respective asset and index the entity instance. For example, here are calls to
+the indexer that an example insults portlet makes when adding and updating its
+insult entities:
 
--   `userId` is the identifier of the user who created the content. 
--   `groupId` identifies the scope of the created content. If your content
-    doesn't support scopes (extremely rare), just pass `0` as the value. 
--   `className` identifies the type of asset. The recommended convention is to
-    use the name of the Java class that represents your content type, but you
-    can actually use any String you want as long as you are sure that it is
-    unique.  
--   `classPK` identifies the specific content being created among others of the
-    same type. It's usually the primary key of the table where the custom
-    content is stored. If you want, you can use the *classUuid* parameter to
-    specify a secondary identifier; it's guaranteed to be universally unique.
-    It's especially useful if your content will be exported and imported across
-    separate portals.  
--   `assetCategoryIds` and `assetTagNames` represent the categories and tags
-    selected by the author of the content. The asset framework stores them for
-    you.
--   `visible` specifies whether the content should be shown at all by the Asset
-    Publisher. 
--   `title,` `description` and `summary` are descriptive fields used by the
-    Asset Publisher when displaying entries of your content type. 
--   `publishDate` and `expirationDate`, when specified, tell Asset Publisher it
-    shouldn't show the content before a given publication date or after a given
-    expiration date, respectively. 
--   All other fields are optional. It won't always make sense to include them.
-    The `sync` parameter should always be *false* unless you're doing something
-    very advanced (feel free to look at the code if you're really curious). 
+    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(Insult.class);
+    indexer.reindex(insult);
 
-<!-- We should fully describe the sync parameter, as well as any others.
-Otherwise, it looks like we're holding back information for no apparent reason.
--Rich -->
+As you can see, you get an indexer for your entity's class and re-index the
+entity instance. It's that easy to to update assets and indexes when adding and
+updating entities.
 
-Another thing you need to do when adding or updating assets is call the indexer. 
-For example, here are the calls to the indexer that the Blogs portlet makes when
-adding and updating blog entries:
-
-    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(BlogsEntry.class);
-    indexer.reindex(entry);
-
-<!-- TODO transition -->
+Next, you'll learn what's needed to properly delete an entity that's associated
+with an asset. 
 
 ## Deleting Assets 
 
-When one of your custom content entries is deleted, you should once again let
-the asset framework know. This way, it can clean up stored information and make
-sure that the Asset Publisher doesn't show any information for the content that
-has been deleted. The signature of the method to delete an asset entry is: 
+On deleting your custom entities, you should similarly delete the assets and
+indexes associated with the entities. This cleans up stored information and
+makes sure that the Asset Publisher doesn't show any information for the
+entities you've deleted.
 
-    void deleteEntry(String className, long classPK)
+After deleting an entity's resource in your `delete-` method, delete the entity
+instance's asset entry and delete the entity instance's index. 
 
-Here's an example invocation extracted from the blogs portlet: 
+Here's example code for deleting an asset entry and deleting an index associated
+with an example insult portlet's `Insult` entity. 
 
     assetEntryLocalService.deleteEntry(
-        BlogsEntry.class.getName(), entry.getEntryId());
-        
-As with adding and updating assets, you also need to call the indexer when 
-deleting assets. The calls to the indexer that the Blogs portlet makes when 
-deleting assets are shown here:
+        Insult.class.getName(), insult.getInsultId());
 
-    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(BlogsEntry.class);
-    
-    indexer.delete(entry);
+    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(Insult.class);
+    indexer.delete(insult);
+
+In your `-LocalServiceImpl` class, you can write similar code. Instead of using
+the class name `Insult` however, you use your entity's class name, and instead
+of using a variable named `insult` use a variable that holds your entity's
+instance. 
+
+On deploying your portlet with all of these asset and indexer implementations in
+place, an Asset Publisher can show your custom entities! 
 
 Great! Now you know how to add, update, and delete assets in your portlets!
 
 ## Related Topics
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
-
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
-
-[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+[Relating Assets](/tutorials/-/knowledge_base/6-2/relating-assets)
 
 [Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
