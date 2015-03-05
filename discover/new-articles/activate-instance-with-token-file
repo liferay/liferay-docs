@@ -1,0 +1,7 @@
+Automatic Activation feature provides administrator with ability to generate file with data needed for client to automatically register and connect to LCS.
+This way LCS client can access LCS Portal without user interaction what is desired behaviour in cloud environments where auto scaling algorithms turn servers on and off.
+Token files can be listed and created in dashboard's Subscriptions Menu, or in Subscriptions tab in Environment Details.
+Once created, token file should be carefully shared since allows anybody to connect theri portal instance to project's environment where token file was created.
+If file is deleted, all portal instances used token file to start up and connect will disconnect from LCS, and wont be able to connect unless new token file is provided, or Administrator manually connects
+instance using his own credentials.
+It is important to mention that disconnecting portal instance from LCS due token file removal wont delete existing archive data, and LCS will link data to portal instance once new credentials are set.
