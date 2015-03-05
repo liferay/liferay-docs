@@ -25,20 +25,20 @@ that's the easiest one to implement.
 
 2.  Add the following code to the file: 
 
-       	public Entry deleteEntry(long entryId, ServiceContext serviceContext)
-			throws PortalException, SystemException {
+            public Entry deleteEntry(long entryId, ServiceContext serviceContext)
+                throws PortalException, SystemException {
 
-            Entry entry = getEntry(entryId);
+                Entry entry = getEntry(entryId);
 
-            resourceLocalService.deleteResource(serviceContext.getCompanyId(),
-                    Entry.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
-                    entryId);
-            
-            entry = deleteEntry(entryId);
+                resourceLocalService.deleteResource(serviceContext.getCompanyId(),
+                        Entry.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
+                        entryId);
+                
+                entry = deleteEntry(entryId);
 
-            return entry;
+                return entry;
 
-    	}
+            }
 
 In the last step, you added resources to your entities. This means that when you
 delete your entities, you have to delete the resource also. Since your entities
