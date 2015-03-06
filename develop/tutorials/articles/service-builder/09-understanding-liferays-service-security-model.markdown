@@ -15,17 +15,16 @@ service is called *invoker IP filtering*. Imagine that you have have a batch job
 that runs on another machine in your network. This job polls a shared folder on
 your network and uploads documents to your Liferay site's *Documents and Media*
 portlet on a regular basis, using Liferay's web services. To get your batch job
-through the IP filter, your portal administrator must grant web service access
-to the machine on which the batch job is running. For example, if your batch job
-uses Liferay's SOAP web services to upload the documents, your portal
-administrator must add the IP address of the machine on which the batch job is
-running to the `axis.servlet.hosts.allowed` property. A typical entry might look
-like this:
+through the IP filter, you must grant web service access to the machine on which
+the batch job is running. For example, if your batch job uses Liferay's SOAP web
+services to upload the documents, you must add the IP address of the machine
+where the batch job runs to the `axis.servlet.hosts.allowed` property. A typical
+entry might look like this:
 
     axis.servlet.hosts.allowed=192.168.100.100, 127.0.0.1, [SERVER_IP]
 
-If the IP address of the machine on which the batch job is running is listed
-as an authorized host for the service, it's allowed to connect to Liferay's web
+If the IP address of the machine where the batch job runs is listed as an
+authorized host for the service, it's allowed to connect to Liferay's web
 services, pass in the appropriate user credentials, and upload the documents. 
 
 +$$$
@@ -42,12 +41,12 @@ $$$
 
 Next, if you're invoking the remote service via web services (e.g., JSON WS, old
 JSON, Axis, REST, etc.), a two step process of authentication and authentication
-verification takes place. Each call to a Liferay portal web services must be
+verification takes place. Each call to a Liferay portal web service must be
 accompanied by a user authentication token. It's up to the web service caller to
 produce the token (e.g., through Liferay's utilities or through some third-party
 software). Liferay verifies that there is a Liferay user that matches the token.
 If the credentials are invalid, the web service invocation is aborted.
-Otherwise, processing enters into Liferay's user permission layer. 
+Otherwise, processing enters Liferay's user permission layer. 
 
 Liferay's user permission layer is the last Liferay security layer triggered
 when services are invoked remotely. It's used for every object in the portal,

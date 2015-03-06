@@ -245,5 +245,3 @@ and
 [Invoking Liferay Services from Your Application](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-from-your-application)
 tutorials.
 
-<!-- The above paragraph would be much more clear if we delineate the various
-layers of the app as recommended above. -Rich -->

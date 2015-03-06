@@ -2,7 +2,7 @@
 
 You can invoke the remote services of any installed Liferay application the same
 way that you invoke your local services. Doing so could be described as
-"invoking remote services locally". One reason to invoke a remote service
+"invoking remote services locally." One reason to invoke a remote service
 instead of the corresponding local service might be to take advantage of the
 remote service's permission checks. Consider the following common scenario:
 

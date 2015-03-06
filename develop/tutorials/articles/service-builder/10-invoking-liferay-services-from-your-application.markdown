@@ -80,19 +80,19 @@ In addition to any services you create using Service Builder, your applications
 can access a variety of services built into Liferay. These include the following
 services:
 
-- `UserService` - for accessing, adding, authenticating, deleting, and updating
+- `UserService`: for accessing, adding, authenticating, deleting, and updating
   users. 
-- `OrganizationService` - for accessing, adding, deleting, and updating
+- `OrganizationService`: for accessing, adding, deleting, and updating
   organizations. 
-- `GroupService` - for accessing, adding, deleting, and updating groups.
-- `CompanyService` - for accessing, adding, checking, and updating companies.
-- `ImageService` - for accessing images.
-- `LayoutService` - for accessing, adding, deleting, exporting, importing, and
+- `GroupService`: for accessing, adding, deleting, and updating groups.
+- `CompanyService`: for accessing, adding, checking, and updating companies.
+- `ImageService`: for accessing images.
+- `LayoutService`: for accessing, adding, deleting, exporting, importing, and
   updating layouts. 
-- `PermissionService` - for checking permissions.
-- `UserGroupService` - for accessing, adding, deleting, and updating user
+- `PermissionService`: for checking permissions.
+- `UserGroupService`: for accessing, adding, deleting, and updating user
   groups. 
-- `RoleService` - for accessing, adding, unassigning, checking, deleting, and
+- `RoleService`: for accessing, adding, unassigning, checking, deleting, and
   updating roles. 
 
 ## Invoking Liferay Services Remotely
