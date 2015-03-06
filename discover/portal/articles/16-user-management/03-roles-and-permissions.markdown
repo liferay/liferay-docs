@@ -39,7 +39,9 @@ described as follows:
 - Team: Permissions are defined within a *specific site* and are assigned within
   that *specific site*.
 
-For more information about teams, please refer to chapter 3.
+Read
+[here](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management)For
+more information about teams.
 
 ![Figure 16.9: To examine all the roles defined for your portal, navigate to the Control Panel and click on *Roles*.](../../images/01-roles-and-role-actions.png)
 
