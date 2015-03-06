@@ -5,8 +5,9 @@ added to the `AssetEntry` table. There's no special table for workflow
 entities, but there are some additional database columns in the entity table
 (e.g., `GB_Entry`)  that allow you to keep track of workflow status. The
 necessary fields include *status*, *statusByUserName*, *statusByUserId*, and
-*statusDate*. Add the following columns to `docroot/WEB-INF/service.xml`, in
-both the `Guestbook` and `Entry` entity *Audit fields* sections:
+*statusDate*. Add thecolums to the database by entering the following columns
+into `docroot/WEB-INF/service.xml`, in both the `Guestbook` and `Entry` entity
+*Audit fields* sections:
 
     <column name="status" type="int" />
     <column name="statusByUserId" type="long" />
@@ -15,9 +16,8 @@ both the `Guestbook` and `Entry` entity *Audit fields* sections:
 
 Once you run service builder, the database tables for both entities contain the
 proper fields for workflow. However, if you add an `Entry`, you'll see that the
-new fields are not populated. The service implementation classes need some
-modifications to set these fields. 
-
+new fields are not populated. The local service implementation classes need
+some modifications to set these fields. 
 
 ## Setting the Workflow Fields in `EntryLocalServiceImpl`
 
@@ -89,12 +89,69 @@ status of the entity and does one of two things:
 - If the entity is not approved, it is marked as not visible, and can't be
   displayed in the Asset Publisher portlet.
 
-## Setting the Woirkflow Fields in `GuestbookLocalServiceImpl`
+## Setting the Workflow Fields in `GuestbookLocalServiceImpl`
 
-<!--Do the same thing here -->
+You need to repeat the above steps to enable the service layer of the
+`Guestbook` entity to set the necessary status fields needed for workflow.
+Open `GuestbookLocalServiceImpl` and add the following line in the
+`addGuestbook` method, immediately following the current setter methods (e.g.,
+`guestbook.setExpandoBridgeAttributes(serviceContext)`):
 
-Wait a minute. The `updateStatus` methods created for each entity can set the
-workflow fields appropriately, but how will they be called? You need to create
-`-WorkflowHandler` classes to interact with the workflow API, and call your
-`updateStatus` methods. 
+    guestbook.setStatus(WorkflowConstants.STATUS_DRAFT);
+
+Still in the `addGuestbookEntry` method, place the following code right before
+the `return` statement:
+
+    WorkflowHandlerRegistryUtil.startWorkflowInstance(guestbook.getCompanyId(), 
+				guestbook.getGroupId(), guestbook.getUserId(), Guestbook.class.getName(), 
+				guestbook.getPrimaryKey(), guestbook, serviceContext);
+
+Add these imports:
+
+    import com.liferay.portal.kernel.workflow.WorkflowConstants;
+    import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
+
+The `startWorkflowInstance` will call your custom `GuestbookWorkflowHandler` class,
+which you'll create later in this learning path. 
+
+The service layer needs to be given the ability to update the workfflow status
+fields you added to `Guestbook` entity's database table. Add
+the following method to the bottom of `GuestbookLocalServiceImpl`:
+
+     public Guestbook updateStatus(long userId, long guestbookId, int status,
+			ServiceContext serviceContext) throws PortalException,
+			SystemException {
+
+		User user = userLocalService.getUser(userId);
+		Guestbook guestbook = getGuestbook(guestbookId);
+
+		guestbook.setStatus(status);
+		guestbook.setStatusByUserId(userId);
+		guestbook.setStatusByUserName(user.getFullName());
+		guestbook.setStatusDate(new Date());
+
+		entryPersistence.update(entry);
+
+		if (status == WorkflowConstants.STATUS_APPROVED) {
+
+			assetEntryLocalService.updateVisible(Guestbook.class.getName(),
+					guestbookId, true);
+
+		} else {
+
+			assetEntryLocalService.updateVisible(Guestbook.class.getName(),
+					guestbookId, false);
+		}
+
+		return guestbook;
+	}
+
+Run service builder after saving the changes you made.
+
+Now the status fields can be set appropriately and persisted to the database.
+However, you're still missing some important functionality. Perhaps you
+noticed, but the `updateStatus` methods aren't called from anywhere in your
+portlet's code! `-WorkflowHandler` classes are needed to interfce between the
+workflow API and the Guestbook App's service layer, via the new `updateStatus`
+methods.
 
