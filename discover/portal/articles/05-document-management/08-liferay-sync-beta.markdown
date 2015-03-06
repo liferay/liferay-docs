@@ -47,7 +47,9 @@ There's also an optional Sync plugin available for Liferay 6.2, *Sync Admin*
 with their portal. This plugin is new to Liferay Sync's latest version and is 
 not installed by default in Liferay bundles. While Sync Admin isn't required to 
 use Sync, without it you won't be able to turn off Sync for specific sites. The 
-install process for Sync Admin is the same as that of any other Liferay plugin.
+install process for Sync Admin is the same as that of any other Liferay plugin. 
+You can download the Sync Connector Web and Sync Admin plugins from the 
+[Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync).
 
 Once you've installed Sync Connector Web and optionally Sync Admin, end users 
 need to install and configure the desktop Sync client. Users can also connect to 
@@ -133,8 +135,8 @@ recovered.
 $$$
 
 Portal and site administrators can, of course, disable the Recycle Bin. If
-you've disabled the Recycle Bin, then you have any protection from accidental
-file deletion propagated through Sync. 
+you've disabled the Recycle Bin, then you don't have any protection from 
+accidental file deletion propagated through Sync. 
 
 ### Ensuring Sync Security [](id=ensuring-sync-security)
 
@@ -198,11 +200,13 @@ environment.
 
 The installation steps for Liferay Sync on Windows and Mac OS differ only 
 slightly. Regardless of platform, you need administrator privileges on your 
-machine. Upon launching the Windows application installer, you're prompted to 
-choose an install location. Select an appropriate location and click *Install*. 
-Sync automatically starts when the installation finishes. The first time you run 
+machine. You can download the desktop client from the 
+[Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
+Upon launching the Windows application installer, you're prompted to choose an 
+install location. Select an appropriate location and click *Install*. Sync 
+automatically starts when the installation finishes. The first time you run 
 Sync, you need to configure it to connect and sync with your portal. The 
-configuration steps are shown following the Mac installation instructions.
+configuration steps are shown following the Mac installation instructions. 
 
 Liferay Sync for Mac is packaged in a DMG file. Double-clicking on a DMG mounts
 it as a disk image and opens a window showing the image's contents. To install 
@@ -381,9 +385,10 @@ on iOS.
 
 Installing Sync on your Android or iOS device is done through each platform's 
 app store, the same as any other mobile app. The quickest way to find the Sync 
-mobile app is to search the App Store or Google Play for Liferay. Once you've 
-installed the Sync app on your device, follow the instructions below to learn 
-how to use it.
+mobile app is to search the App Store or Google Play for Liferay. You can also 
+download it from the [Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
+Once you've installed the Sync app on your device, follow the instructions below 
+to learn how to use it. 
 
 ### Connecting to Your Portal [](id=connecting-to-your-portal)
 
