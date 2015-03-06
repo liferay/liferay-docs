@@ -63,7 +63,8 @@ your Liferay server.
     **Tip:** When a plugin has been successfully deployed but its changes aren't
     visible, check that the generated `.jar` in the Plugins SDK's `/dist` folder
     contains the latest modifications. If it doesn't contain them, delete it and
-    redeploy the plugin or alternatively run the `ant clean deploy` command
+    redeploy the plugin. Alternatively, you can run the `ant clean deploy`
+    command.
 
     $$$
 
@@ -150,14 +151,14 @@ FreeMarker, you must override this method by creating and modifying it in your
 FreeMarker.
 
 For example, if you wanted to create a tracking action that tracks the number of
-times a user views a newsletter, you could create a menu with fields for
-*Newsletter ID* (to differentiate different newsletters), and *Tracking Action*
-(to differentiate several actions on the same newsletter such as opening the
-newsletter or clicking on a link). The administrator could input
-the necessary values in these fields to track the newsletter they're interested
-in.
-All tracking actions must have an *alias* to to be shown in different reports
-that count the number of times a tracking action has been triggered.
+times a user views a newsletter, you could create a menu with the following
+fields:
+
+- *Alias:* used in reports that count the number of times a tracking action has
+been triggered.
+- *Newsletter ID:* used to differentiate between newsletters.
+- *Tracking Action:* used to differentiate several actions on the same
+newsletter, such as opening the newsletter or clicking on a link.
 
 Here's a code snippet from a FreeMarker template (e.g.,
 `ct_tracking_action.ftl`) that could be applied to this example:
