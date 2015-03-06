@@ -500,10 +500,15 @@ company's public profile page under its list of apps.
 
 **App Pricing:** Choose whether you want the app to be free or paid. If you
 choose paid, you'll have the option to specify pricing and licensing details
-later in the submission process. Once your app is published to the Marketplace,
-you cannot change this option. If you wish to have both free and paid licenses
-for your app, you must submit one version of your app for free licenses and
-another version of your app for paid licenses. 
+later in the submission process. 
+
+Importantly, you can't change the app from free to paid or from paid to free
+once the app is published to the Marketplace. In order to offer the app in the
+other license type, you must submit another app under a different name (title).
+If you wish to have both free and paid licenses for your app, you must submit
+the app under one name for free licenses and submit it under another name for
+paid licenses. Make sure to select the license type (i.e., free or paid) that's
+best for your app. 
 
 **Title:** The name of your application. Arguably the most important detail of
 your app, the name of your app should be a good title that conveys the function
@@ -626,7 +631,12 @@ purchase date. Perpetual License also allows you to offer Support Services,
 which the customer must renew annually to maintain access to app updates and
 support. If you choose not to offer Support Services with a Perpetual License,
 customers will be provided with app updates only, whenever updates are
-available. You cannot change your app's license terms once the app is approved. 
+available.
+
+Importantly, you can't change your app's license terms once the app is approved.
+In order to release an approved app under a different license term you must
+submit another app under a new name (title). So make sure you think through the
+license term that makes the most sense for your app. 
 
 **Creating license options:**
 
@@ -640,9 +650,17 @@ Developer Licenses. Developer Licenses are limited to 10 unique IP addresses.
 You must specify at least one license option, but no more than 10 options per
 type. You'll price these options on the next page. 
 
+You can add or remove bundles (quantities) of your app's license type even after
+the app is approved. You must however, always honor any support agreements you
+have with current customers that are using bundles you've removed.
+
 **Paid support:** You can offer additional paid Support Services for your app.
 If you select this option, customers can contact you with support requests and
 are entitled to regular updates. 
+
+Once an app that offers a support subscription offering is approved, you can't
+remove that support subscription offering. You can however, add a support
+subscription offering to an approved app. 
 
 **Offer a trial:** You can offer a free 30-day trial of your app, restricted to
 1 Instance and 25 users. 
@@ -673,6 +691,10 @@ Although the Liferay Marketplace supports major currencies and a broad list of
 countries, not all currencies and countries are currently available. Additional
 currencies and countries may become available at a later time. 
 
+Even after an app has been approved, you can change the currency type and
+currency price of its license bundles, and you can modify regional availability
+of license bundles. 
+
 When you have completed your app's pricing and availability, click *Next* to
 advance to the final screen. 
 
@@ -686,6 +708,14 @@ as it will appear in the Marketplace, so you can confirm your changes.
 
 For this example, review the information. Is it as you expect? If not, click
 *Edit* to go back and continue making changes until you are satisfied.
+
+Before finalizing your app's submission, make sure that you're pleased with the
+values you've set for the following app details that are not modifiable once an
+app is approved: 
+
+- Free vs. paid type app
+- License term (perpetual vs. non-perpetual)
+- Support subscription offering (cannot be removed)
 
 Once you are satisfied, click *Submit for Review*. If you're walking through
 this example on Liferay's Marketplace, don't do it, since this is only an
@@ -759,13 +789,15 @@ Marketplace.
 
 ### Editing App Prices [](id=editing-app-prices-liferay-portal-6-2-dev-guide-13-en)
 
-You can change your app's prices, Instance bundles, and regional availability if
-you wish. This can be for a variety of reasons, whether it's to run a
-promotional offer, or to adjust your pricing model to better account for app
-demand. To make changes to your app, navigate to *Company Profile Home* &rarr;
-*Apps*, then click the app you wish to edit, and then at the bottom, click
-*Edit* &rarr; *Pricing*. When you've finished editing your app's prices, click
-*Next*. 
+If you want, you can change your app's prices, instance bundles, and regional
+availability. You may have a variety of reasons for changing them: you want to
+run a promotional offer, you want to adjust your pricing model to better account
+for app demand, etc. 
+
+**Important:** If Liferay has already approved your app, you can't change the license
+term (ie., perpetual or non-perpetual license); so carefully choose the license
+term that makes the most sense for your app. If you want to change an approved
+app's license term, you must resubmit another app under a different name. 
 
 These changes do not require Liferay verification process to approve. Simply
 make the changes you wish and save your app. These new prices will be reflected
