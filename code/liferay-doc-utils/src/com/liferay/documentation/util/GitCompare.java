@@ -48,7 +48,7 @@ public class GitCompare {
 		}
 		
 		else {
-			baseFilePath = purposedir + "/" + docdir;
+			baseFilePath = purposedir + "/" + docdir + "/";
 		}
 
 		for (DiffEntry entry : diff) {

@@ -334,6 +334,12 @@ public class EntryLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List<com.liferay.docs.guestbook.model.Entry> getEntriesByG_G_N(
+		long groupId, long guestbookId, java.lang.String name)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEntriesByG_G_N(groupId, guestbookId, name);
+	}
+
 	public static java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
 		long groupId, long guestbookId)
 		throws com.liferay.portal.kernel.exception.SystemException {

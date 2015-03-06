@@ -4,7 +4,7 @@
 	<author>Rich Sezov</author>
 	<namespace>GB</namespace>
 
-	<entity name="Guestbook" local-service="true" uuid="true">
+	<entity name="Guestbook" local-service="true" remote-service="true" uuid="true">
 
 		<!-- PK fields -->
 
@@ -26,11 +26,15 @@
         <finder name="GroupId" return-type="Collection">
             <finder-column name="groupId"></finder-column>
         </finder>
+        <finder name="G_N" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        	<finder-column name="name"></finder-column>
+        </finder>
         
         <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
         <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 	</entity>
-	<entity name="Entry" local-service="true" uuid="true">
+	<entity name="Entry" local-service="true" remote-service="true" uuid="true">
 
 		<!-- PK fields -->
 
@@ -55,6 +59,18 @@
         <finder name="G_G" return-type="Collection">
             <finder-column name="groupId"></finder-column>
             <finder-column name="guestbookId"></finder-column>
+        </finder>
+        <finder name="EntryName" return-type="Collection">
+        	<finder-column name="name"></finder-column>
+        </finder>
+        <finder name="G_N" return-type="Collection">
+        	<finder-column name="guestbookId"></finder-column>
+        	<finder-column name="name"></finder-column>
+        </finder>
+        <finder name="G_G_N" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+        	<finder-column name="guestbookId"></finder-column>
+        	<finder-column name="name"></finder-column>
         </finder>
         
         <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
