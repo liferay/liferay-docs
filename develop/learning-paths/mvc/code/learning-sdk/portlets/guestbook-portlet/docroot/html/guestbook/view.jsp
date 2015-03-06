@@ -4,7 +4,7 @@
 
 <%
 	Guestbook guestbook = (Guestbook) renderRequest
-			.getAttribute("guestbook");
+			.getAttribute(WebKeys.GUESTBOOK);
 %>
 
 <liferay-portlet:renderURL varImpl="searchURL">
@@ -44,11 +44,13 @@
 	
 	
 
-		<portlet:actionURL name= "switchTabs" var="switchTabsURL">
-			<portlet:param name="guestbookName" value="<%=curGuestbook.getName() %>"/>
-		</portlet:actionURL>
+		<portlet:renderURL var="viewPageURL">
+			<portlet:param name="mvcPath" value="/html/guestbook/view.jsp" />
+			<portlet:param name="guestbookName"
+				value="<%=curGuestbook.getName()%>" />
+		</portlet:renderURL>
 
-		<aui:nav-item cssClass="<%=cssClass%>" href="<%=switchTabsURL%>"
+		<aui:nav-item cssClass="<%=cssClass%>" href="<%=viewPageURL%>"
 			label="<%=HtmlUtil.escape(curGuestbook.getName())%>" />
 	<% 
 			}

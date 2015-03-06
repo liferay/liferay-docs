@@ -87,7 +87,7 @@ something not working as your team expected:
 You could drag and drop *tracking actions* from the palette to track all the
 actions mentioned above. More types of tracking actions can be created by
 developers and deployed as OSGI plugins. See the
-[Extending the Audience Targeting Application](/develop/tutorials/-/knowledge_base/6-2/extending-the-audience-targeting-application)
+[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/tracking-user-actions-with-audience-targeting)
 tutorial for details.
 
 The tracking actions use an analytics engine called *Audience Targeting
@@ -103,7 +103,7 @@ the tracking of any actions about which you don't need information.
 Reports are available for campaigns. You can click *Actions* &rarr; *Reports*
 next to a campaign to see the list of reports available. More reports can be
 created by developers and deployed as OSGI plugins. See the
-[Extending the Audience Targeting Application](/develop/tutorials/-/knowledge_base/6-2/extending-the-audience-targeting-application)
+[Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/reporting-user-behavior-with-audience-targeting)
 tutorial for details. 
 
 The Content Views report shows the number of times that different assets have

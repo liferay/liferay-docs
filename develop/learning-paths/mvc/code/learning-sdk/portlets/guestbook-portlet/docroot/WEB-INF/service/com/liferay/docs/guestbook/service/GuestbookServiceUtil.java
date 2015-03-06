@@ -91,6 +91,14 @@ public class GuestbookServiceUtil {
 		return getService().getGuestbooks(groupId, start, end);
 	}
 
+	public static com.liferay.docs.guestbook.model.Guestbook getGuestbookByG_N(
+		long groupId, java.lang.String name,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.docs.guestbook.NoSuchGuestbookException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().getGuestbookByG_N(groupId, name, orderByComparator);
+	}
+
 	public static int getGuestbooksCount(long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService().getGuestbooksCount(groupId);
