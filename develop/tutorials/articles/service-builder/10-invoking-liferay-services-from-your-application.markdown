@@ -1,4 +1,4 @@
-# Invoking Liferay Services from Your Application
+# Invoking Liferay Services from Your Application [](id=invoking-liferay-services-from-your-application)
 
 You can find Liferay's services by searching for them in the Javadocs:
 [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/).
@@ -6,7 +6,7 @@ Below, we'll show you how to search for portal services and portlet services.
 
 Let's start by finding a portal service. 
 
-## Finding Liferay Portal Services
+## Finding Liferay Portal Services [](id=finding-liferay-portal-services)
 
 Liferay's Javadocs are easy to browse and well-organized. Here's how to find the
 *Organization* services: 
@@ -24,7 +24,7 @@ Liferay's Javadocs are easy to browse and well-organized. Here's how to find the
 
 That was easy! What if you want to find portlet services? 
 
-## Finding Liferay Plugin Services
+## Finding Liferay Plugin Services [](id=finding-liferay-plugin-services)
 
 Searching for one of Liferay's built-in plugin services is also easy. Instead of
 clicking the link for the service package of the *portal*, click the link for
@@ -51,7 +51,7 @@ access. Please see the
 [Understanding Liferay's Service Security Model](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model) 
 tutorial for details.
 
-## Invoking Liferay Services Locally
+## Invoking Liferay Services Locally [](id=invoking-liferay-services-locally)
 
 Every Liferay service provides a local interface to clients running in the same
 JVM as Liferay Portal. Many local services (`*LocalServiceUtil` classes) are
@@ -95,7 +95,7 @@ services:
 - `RoleService`: for accessing, adding, unassigning, checking, deleting, and
   updating roles. 
 
-## Invoking Liferay Services Remotely
+## Invoking Liferay Services Remotely [](id=invoking-liferay-services-remotely)
 
 Many default Liferay services are available as web services. Liferay exposes its
 web services via SOAP and JSON web services. If you're running Liferay locally

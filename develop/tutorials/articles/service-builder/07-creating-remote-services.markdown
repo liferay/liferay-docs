@@ -1,4 +1,4 @@
-# Creating Remote Services
+# Creating Remote Services [](id=creating-remote-services)
 
 Many default Liferay services are available as web services. Liferay exposes its
 web services via JSON and SOAP web services. If you're running Liferay locally

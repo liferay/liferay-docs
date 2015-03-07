@@ -1,4 +1,4 @@
-# Invoking Remote Services
+# Invoking Remote Services [](id=invoking-remote-services)
 
 You can invoke the remote services of any installed Liferay application the same
 way that you invoke your local services. Doing so could be described as

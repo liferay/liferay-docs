@@ -1,4 +1,4 @@
-# Writing Local Service Classes
+# Writing Local Service Classes [](id=writing-local-service-classes)
 
 The heart of your service is its `*LocalServiceImpl` class. This class is your
 entity's local service extension point. Local services can be invoked within

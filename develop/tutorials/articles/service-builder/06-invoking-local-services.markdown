@@ -1,4 +1,4 @@
-# Invoking Local Services
+# Invoking Local Services [](id=invoking-local-services)
 
 Once Service Builder has generated your portlet project's services, you can call
 them from anywhere in your application. For example, you can invoke services
