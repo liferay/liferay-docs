@@ -83,6 +83,15 @@ public class CheckHeadersTask {
 					// Check if markdown files start with the proper single #
 					// header
 					// if not, throw an exception identifying the file
+					
+					// Enhancement: check first to see if we've put some HTML at the top
+					
+					if (line.startsWith("<")) {
+						
+						continue;
+						
+					}
+					
 					if (!line.startsWith("# ")) {
 						String message =
 							filename + " does not start with single # header";

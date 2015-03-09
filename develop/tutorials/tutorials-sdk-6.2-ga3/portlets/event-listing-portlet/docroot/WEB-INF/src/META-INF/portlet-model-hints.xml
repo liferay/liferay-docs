@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.docs.eventlisting.model.Event">
+		<field name="eventId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="date" type="Date" />
+		<field name="locationId" type="long" />
+	</model>
+	<model name="com.liferay.docs.eventlisting.model.Location">
+		<field name="locationId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="streetAddress" type="String" />
+		<field name="city" type="String" />
+		<field name="stateOrProvince" type="String" />
+		<field name="country" type="String" />
+	</model>
+</model-hints>

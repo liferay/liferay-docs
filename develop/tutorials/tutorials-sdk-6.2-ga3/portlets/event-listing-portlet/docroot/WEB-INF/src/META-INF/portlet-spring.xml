@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.liferay.docs.eventlisting.service.EventLocalService" class="com.liferay.docs.eventlisting.service.impl.EventLocalServiceImpl" />
+	<bean id="com.liferay.docs.eventlisting.service.EventService" class="com.liferay.docs.eventlisting.service.impl.EventServiceImpl" />
+	<bean id="com.liferay.docs.eventlisting.service.persistence.EventPersistence" class="com.liferay.docs.eventlisting.service.persistence.EventPersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.docs.eventlisting.service.persistence.EventFinder" class="com.liferay.docs.eventlisting.service.persistence.EventFinderImpl" parent="basePersistence" />
+	<bean id="com.liferay.docs.eventlisting.service.LocationLocalService" class="com.liferay.docs.eventlisting.service.impl.LocationLocalServiceImpl" />
+	<bean id="com.liferay.docs.eventlisting.service.LocationService" class="com.liferay.docs.eventlisting.service.impl.LocationServiceImpl" />
+	<bean id="com.liferay.docs.eventlisting.service.persistence.LocationPersistence" class="com.liferay.docs.eventlisting.service.persistence.LocationPersistenceImpl" parent="basePersistence" />
+</beans>
