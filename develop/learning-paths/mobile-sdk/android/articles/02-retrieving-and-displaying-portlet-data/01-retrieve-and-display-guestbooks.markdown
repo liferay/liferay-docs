@@ -227,18 +227,64 @@ app's main UI thread. Now it's time to write that processing code!
 
 ## Displaying Guestbooks in the Drawer
 
-In the `MainActivity` class, create the variable for holding the `List` of 
-`GuestbookModel` objects returned by the callback. This variable needs to be 
-`public` and `static` so it can be referred to throughout the UI, independent of 
-any single instance of `MainActivity`.
+To display guestbooks in the drawer, you need a variable for holding the `List` 
+of `GuestbookModel` objects returned by the callback. This variable needs to be 
+`public` and `static` so it can be used throughout the UI, independent of 
+any activity or fragment instance. Create this variable in the `MainActivity` 
+class as follows: 
 
     public static List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
 
-Now open the `NavigationDrawerFragment` class. In it, declare the following 
-variable.
+The app displays items in the drawer using a [`ListView`](http://developer.android.com/guide/topics/ui/layout/listview.html) 
+with an [adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews). 
+Specifically, an `ArrayAdapter` is used to hold the list of items for display in 
+the `ListView`. This is done in the `onCreateView` method of the 
+`NavigationDrawerFragment` class. 
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        mDrawerListView = (ListView) inflater.inflate(
+                R.layout.fragment_navigation_drawer, container, false);
+        mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selectItem(position);
+            }
+        });
+        mDrawerListView.setAdapter(new ArrayAdapter<String>(
+                getActionBar().getThemedContext(),
+                android.R.layout.simple_list_item_activated_1,
+                android.R.id.text1,
+                new String[]{
+                        "Section 1",
+                        "Section 2",
+                        "Section 3",
+                }));
+        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
+        return mDrawerListView;
+    }
+
+Android Studio generated this method for you when you created the project. 
+You'll change it to display the list of guestbooks instead of the hardcoded 
+`"Section *"` strings. Before doing so, you should understand what this method 
+does. The `onCreateView` method is called as part of the 
+[fragment activity lifecycle](http://developer.android.com/guide/components/fragments.html#Creating). 
+Specifically, `onCreateView` creates the fragment's UI. Here, it first inflates 
+the `ListView` by calling `inflater.inflate` on the fragment's layout file 
+`R.layout.fragment_navigation_drawer`. A click listener is then created and set 
+for the list items. In this case, the click listener simply registers which item 
+in the list is pressed by the user. Next, the `ArrayAdapter` is created inside 
+of the `setAdapter` method, which is used to set the `ArrayAdapter` to the 
+`ListView`. The `onCreateView` method finishes by setting the currently selected 
+list item and returning the `ListView`. Now, you'll leverage the basic structure 
+of `onCreateView` to display guestbooks from the Guestbook portlet.
+
+Begin by declaring the following variable in the `NavigationDrawerFragment` 
+class:
 
     public ArrayAdapter _adapter;
-    
+
 Pull the `new ArrayAdapter` code out of the `setAdapter` method in 
 `onCreateView`, and set it to `_adapter`. Then put `_adapter` as the argument to 
 `setAdapter` (all within `onCreateView`).
