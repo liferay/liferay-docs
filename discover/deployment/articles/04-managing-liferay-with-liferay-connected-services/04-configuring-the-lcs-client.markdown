@@ -18,10 +18,10 @@ properties inside the WAR file of the LCS client portlet.
 4. Deploy the LCS client WAR, or redeploy it if it's already deployed.
 
 Once you deploy the LCS client portlet, you can use it to register your server 
-with your LCS account. Access the portlet by clicking on *Liferay Cloud Services* 
-under the *Apps* section of the *Control Panel*.
+with your LCS account. Access the portlet by clicking on 
+*Liferay Connected Services* under the *Apps* section of the *Control Panel*.
 
-![Figure 4.3: LCS appears in your Control Panel as Liferay Cloud Services, in the Apps section.](../../images/lcs-post-install-01.png)
+![Figure 4.3: LCS appears in your Control Panel as Liferay Connected Services, in the Apps section.](../../images/lcs-post-install-01.png)
 
 After clicking *Authorize Access* on the screen that appears, you are then taken 
 to the LCS website. Log in with your credentials and then click *Grant Access*.
@@ -31,7 +31,7 @@ to the LCS website. Log in with your credentials and then click *Grant Access*.
 Next, you need to register your server with LCS by filling out the following 
 fields:
 
-1. Cloud Services Project: Choose your project from the menu. 
+1. Connected Services Project: Choose your project from the menu. 
 
 2. Environment: Select an environment from the menu or create a new one by
    clicking the *Add New Environment* button. An environment should be a logical
@@ -55,10 +55,10 @@ fields:
 
 Upon clicking *Register*, your LCS client portlet shows your connection status. 
 Note that it can take up to 10 or 20 seconds to perform the initial handshake 
-with LCS and send the first batch of information to the cloud. If you don't see 
-any change in status after 20 seconds, try refreshing the page. If you see a 
-red symbol indicating no data is being transmitted, please contact the Liferay 
-team for support.
+and send the first batch of information to LCS. If you don't see any change in 
+status after 20 seconds, try refreshing the page. If you see a red symbol 
+indicating no data is being transmitted, please contact the Liferay team for 
+support.
 
 ![Figure 4.7: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
 

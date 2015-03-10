@@ -1,9 +1,9 @@
-# Managing Liferay with Liferay Cloud Services [](id=managing-liferay-with-liferay-cloud-services)
+# Managing Liferay with Liferay Connected Services [](id=managing-liferay-with-liferay-connected-services)
 
-Liferay Cloud Services (LCS) is a set of tools and services that lets you manage 
-and monitor your Liferay installations. While Liferay's patching tool lets you 
-apply fix packs and other updates, the install process is still manual. LCS 
-simplifies this process by automatically installing any fix packs that you 
+Liferay Connected Services (LCS) is a set of tools and services that lets you 
+manage and monitor your Liferay installations. While Liferay's patching tool 
+lets you apply fix packs and other updates, the install process is still manual. 
+LCS simplifies this process by automatically installing any fix packs that you 
 *choose*. That last point is an important one--LCS won't install anything that 
 you don't specifically choose for installation. You still have control over what 
 gets applied to your Liferay installations. LCS just automates the process by 
