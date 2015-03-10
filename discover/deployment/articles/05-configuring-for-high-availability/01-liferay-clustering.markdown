@@ -986,7 +986,7 @@ consider five different scenarios.
   files and sets `cluster.link.enabled=true` and
   `ehcache.cluster.link.replication.enabled=true`. In this case, Liferay uses
   Cluster Link based replication for any caches configured with the
-  LiferayCacheEventListenerFactory classs. If the portal administrator
+  LiferayCacheEventListenerFactory class. If the portal administrator
   configured a different CacheEventListener class for a specific cache (e.g.,
   JGroups), then Liferay uses that listener class. This a basically a hybrid
   mode that was useful prior to Liferay 6.1 before Liferay supported cached
