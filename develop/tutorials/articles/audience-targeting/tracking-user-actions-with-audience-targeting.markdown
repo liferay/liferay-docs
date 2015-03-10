@@ -6,7 +6,7 @@ campaign administrators to learn how users behave in the context of a campaign
 by monitoring their interaction over different elements of the portal.
 
 Developers are able to extend the set of available tracking actions by creating
-and deploying their own OSGi plugins, which contain a class implementing the
+and deploying their own OSGi plugin, which contains a class implementing the
 [Tracking Action Interface](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/TrackingAction.java).
 
 OSGi plugins can be hot deployed and undeployed, manage their own dependencies,
@@ -53,15 +53,15 @@ your Liferay server.
     plugin deployable.
 
 3. Now is a good time to deploy the project to see how it currently looks in
-   Portal. To deploy the plugin project, open a command prompt to your plugin's
-   directory and run the `ant deploy` command. You'll find your new tracking
-   action listed when creating or editing a campaign in the Audience Targeting
-   application.
+   the Portal. To deploy the plugin project, open a command prompt to your
+   plugin's directory and run the `ant deploy` command. You'll find your new
+   tracking action listed when creating or editing a campaign in the Audience
+   Targeting application.
 
     +$$$
 
-    **Tip:** When a plugin has been successfully deployed but its changes aren't
-    visible, check that the generated `.jar` in the Plugins SDK's `/dist` folder
+    **Tip:** When a plugin has been successfully deployed and you don't see its
+    changes, check that the generated `.jar` in the Plugins SDK's `/dist` folder
     contains the latest modifications. If it doesn't contain them, delete it and
     redeploy the plugin. Alternatively, you can run the `ant clean deploy`
     command.
@@ -144,7 +144,7 @@ class.
 
 The `getFormHTML` method is configured for FreeMarker templates in the
 `BaseTrackingAction` class. This method is used to retrieve the HTML created by
-the technology you choose, and to return it as a string that is viewable from
+the technology you choose and to return it as a string that is viewable from
 your tracking action's form. Therefore, if you plan on using an alternative to
 FreeMarker, you must override this method by creating and modifying it in your
 `-TrackingAction` class. This tutorial demonstrates implementing the UI using
@@ -191,8 +191,8 @@ newsletter to track.
 Another field that is created from the above sample code is the Tracking Action
 field. The tracking action specifies the type of event to monitor related to the
 tracked entity (e.g., view, click, submit, etc.). If there is more than one
-event type available, then the Tracking Action field is a *select* drop-down
-box; otherwise, the event type field is disabled, or view only. For this example
+event type available, the Tracking Action field is a *select* drop-down
+box; otherwise, the event type field is disabled or view only. For this example
 template, you'd need to declare the possible `eventTypes` in your
 `-TrackingAction` class. You'll learn how to do this later.
 
@@ -240,18 +240,18 @@ This sample newsletter tracking action tracks who views the configured
 newsletter by placing a transparent image in the newsletter. Whenever the image
 is viewed, the image makes a call to the tracking mechanism, which computes and
 stores the information. You'll learn more about the tracking mechanism and how
-to create one later. You'll also learn more about the transparent image, and how
+to create one later. You'll also learn more about the transparent image and how
 it communicates with the tracking mechanism later in this tutorial.
 
 Notice in the `populateContext` method above, a tracking URL `.../track` is
 created and a tracking image URL is injected into the `context` parameter. These
-will be used in the tracking mechanism that you'll create next.
+are used in the tracking mechanism that you'll create next.
 
 Now that your tracking action's behavior is configured, you'll create the
 tracking mechanism. This can be done using a hook or servlet. For this tutorial,
 you'll learn about creating a tracking servlet.
 
-The first thing you'll need to do is create a separate Java class where all of
+The first thing you'll need to do is create a separate Java class where all 
 your tracking logic is stored. In the
 `src/com/liferay/content/targeting/tracking/action/[TRACKING_ACTION_NAME]`
 directory, create a `[TRACKING_ACTION_NAME]ProcessorServlet` class. This class
@@ -278,8 +278,8 @@ call to the servlet. The servlet intercepts all requests matching the pattern
 that are relevant to the tracking action.
 
 Once the servlet intercepts the calls related to the transparent image, it must
-have a way to store it. An analytics service is available, which can be used to
-store your tracking information.
+have a way to store it. An analytics service which can be used to
+store your tracking information is available for that purpose.
 
 In the newsletter servlet tracking mechanism, the tracking information is
 injected into a
@@ -306,10 +306,10 @@ section.
 Now that you know about the tracking mechanism and how it should function, it's
 time to finish off your custom tracking action. 
 
-Throughout this tutorial, using a transparent image has been mentioned
-frequently, which sends requests to the tracking mechanism when the newsletter
-is viewed. You're probably curious as to how a transparent image can be added to
-content to track its views.
+Throughout this tutorial, using a transparent image that sends requests to the
+tracking mechanism when the newsletter is viewed has been mentioned frequently.
+You're probably curious as to how a transparent image can be added to content to
+track its views.
 
 The transparent image can be generated as a code snippet by your tracking action
 once you've entered the ID into the form. Once saving, you can add the generated
