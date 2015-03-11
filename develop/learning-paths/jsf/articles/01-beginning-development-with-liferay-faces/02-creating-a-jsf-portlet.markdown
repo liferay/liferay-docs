@@ -62,15 +62,43 @@ wizard that is launched after the project is created.
 
 4. Click *Finish*. 
 
-Awesome! You just created a JSF portlet! However, the current JSF portlet is
-very bare bones and needs some further development so it can serve a purpose.
-Just for kicks, deploy the JSF portlet to your Liferay Portal instance to see
-what it looks like. 
+Awesome! You just created a JSF portlet! 
+
+You may have noticed that you specified the
+[`GenericFacesPortlet`](http://myfaces.apache.org/portlet-bridge/api/apidocs/javax/portlet/faces/GenericFacesPortlet.html)
+class when setting up your JSF portlet. This class handles invocations to your
+JSF portlet and makes the portlet relying on the Liferay Faces Bridge easier to
+develop by acting as a turnkey implementation. You can learn more about the
+bridge in the
+[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+tutorial. 
+
+So where is the bridge in our new guestbook portlet?
+
+In your Package Explorer, navigate to the *Ivy* library and you'll discover
+there are a list of JARs that are related to JSF, including the bridge JARs. 
+
+![Figure 3: Ivy downloads the required JARs for your JSF portlet, depending on the JSF UI Component Suite you selected.](../../images/jsf-jars-package-explorer.png)
+
+When using a Plugins SDK to build a Liferay portlet,
+[Ivy](http://ant.apache.org/ivy/index.html) is used to download dependencies
+needed for your intended project. When creating a JSF portlet, the bridge JARs
+are automatically downloaded into the portlet project, along with several other
+dependency JARs. This is done behind the scenes so you never have to worry about
+it, but nonetheless, they are there. Other important JARs that are part of the
+Liferay Faces project are
+[*Liferay Faces Alloy*](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
+and
+[*Liferay Faces Portal*](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal). 
+
+The current JSF portlet is very bare bones and needs some further development so
+it can serve a purpose. Just for kicks, deploy the JSF portlet to your Liferay
+Portal instance to see what it looks like. 
 
 To deploy this portlet, simply drag the project from the Package Explorer onto
 your Liferay server. 
 
-![Figure 3: Drag and drop your project onto the Liferay server to deploy it.](../../images/deploy-jsf-portlet.png)
+![Figure 4: Drag and drop your project onto the Liferay server to deploy it.](../../images/deploy-jsf-portlet.png)
 
 +$$$
 
@@ -106,6 +134,5 @@ tutorial.
 
 $$$
 
-Remember reading briefly about how the Liferay Faces Bridge is used to keep JSF
-portlets compatible with Liferay Portal? You'll dive into the bridge and its
-usage next. 
+You've successfully created a simple JSF Guestbook. In the next learning path,
+you'll transform this simple application into a data-driven JSF application. 

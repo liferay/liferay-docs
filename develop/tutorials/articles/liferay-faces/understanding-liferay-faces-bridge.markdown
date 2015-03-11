@@ -75,28 +75,15 @@ namespace. If you're curious of ways to configure Liferay Faces Bridge using
 these configuration options, you can run through provided in-depth
 [tutorials](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-jsf-portlets). 
 
-With the main aspects of JSF portlet bridges described, you'll now learn how
-your JSF guestbook is using a bridge. 
+With the main aspects of JSF portlet bridges described, you can learn how
+a JSF application uses the bridge in the
+[Creating a JSF Portlet](/develop/learning-paths/jsf/-/knowledge_base/6-2/creating-a-jsf-portlet)
+learning path. 
 
-You may have noticed that you specified the
-[`GenericFacesPortlet`](http://myfaces.apache.org/portlet-bridge/api/apidocs/javax/portlet/faces/GenericFacesPortlet.html)
-class when setting up your JSF portlet. This class handles invocations to your
-JSF portlet and makes the portlet relying on the bridge easier to develop by
-acting as a turnkey implementation. 
+## Related Topics [](id=related-topics)
 
-So where is the bridge in our new guestbook portlet?
+[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
 
-In your Package Explorer, navigate to the *Ivy* library and you'll discover
-there are a list of JARs that are related to JSF, including the bridge JARs. 
+[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
 
-![Figure 2: Ivy downloads the required JARs for your JSF portlet, depending on the JSF UI Component Suite you selected.](../../images/jsf-jars-package-explorer.png)
-
-When using a Plugins SDK to build a Liferay portlet,
-[Ivy](http://ant.apache.org/ivy/index.html) is used to download dependencies
-needed for your intended project. When creating a JSF portlet, the bridge JARs
-are automatically downloaded into the portlet project, along with several other
-dependency JARs. This is done behind the scenes so you never have to worry about
-it, but nonetheless, they are there. Other important JARs that are part of the
-Liferay Faces project are *Liferay Faces Alloy* and *Liferay Faces Portal*. 
-
-You'll explore what Liferay Faces Alloy can do for your JSF portlet, first. 
+[Specifying and Using Portlet Preferences with JSF](/develop/tutorials/-/knowledge_base/6-2/specifying-and-using-portlet-preferences-with-jsf)
