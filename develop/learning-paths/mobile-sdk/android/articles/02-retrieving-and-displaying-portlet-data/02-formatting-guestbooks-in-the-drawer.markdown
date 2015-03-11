@@ -164,9 +164,8 @@ guestbooks from your portlet are now showing correctly!
 
 ![Figure 4: Your guestbooks now appear by name in the drawer.](../../images/android-guestbooks-rendered.png)
 
-However, the drawer doesn't look that great. The guestbooks are perilously close 
-to the left edge of the screen. The white text on a light gray background 
-doesn't look so hot either. Why doesn't the drawer have the same styling it did 
+However, the drawer doesn't look so hot. The guestbooks are perilously close to 
+the left edge of the screen. Why doesn't the drawer have the same styling it did 
 earlier? Recall that earlier you were using a simple `ArrayAdapter` with 
 Android's built-in layout `simple_list_item_activated_1`. You're not using this 
 anymore. Not to worry: simply replace the contents of 
@@ -185,8 +184,8 @@ anymore. Not to worry: simply replace the contents of
 
 Run your app again and open the navigation drawer. The guestbooks look much 
 better now! Using the `android:padding*` attributes helps by putting some space 
-between each item and its surroundings. Likewise, the `android:background` 
-attribute is used to darken the drawer's background color. 
+between each item and its surroundings. The `android:background` attribute is 
+also used to set the drawer's background color similar to its previous color. 
 
 ![Figure 5: Your guestbooks look much better now.](../../images/android-guestbooks-rendered-nice.png)
 
