@@ -27,7 +27,7 @@ section for information on how to do this.
 Next, you'll begin learning how to create a custom tracking action using the
 Audience Targeting SDK.
 
-## Creating a Tracking Action
+## Creating a Tracking Action [](id=creating-a-tracking-action)
 
 Adding a new tracking action to the Audience Targeting application is easy.
 In this tutorial, you'll learn how to create a tracking action and deploy it to
