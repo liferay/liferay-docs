@@ -269,10 +269,20 @@ when you created the project:
 Before you change this method to display the list of guestbooks instead of the 
 hardcoded `"Section *"` strings, you should understand how it works. The 
 `onCreateView` method is called as part of the [fragment activity lifecycle](http://developer.android.com/guide/components/fragments.html#Creating). 
-Specifically, `onCreateView` creates the fragment's UI. Here, it first inflates 
+Specifically, `onCreateView` creates the fragment's UI. Here, it first *inflates* 
 the `ListView` by calling `inflater.inflate` on the fragment's layout file 
-`R.layout.fragment_navigation_drawer`. A click listener is then created and set 
-for the list items. In this case, the click listener selects the item in the 
+`fragment_navigation_drawer.xml`. This file is represented by 
+`R.layout.fragment_navigation_drawer`. You can think of this representation as 
+an address used by the app to find the corresponding layout file. That's all 
+fine and well, but you might be thinking, "Why do `xml` files need air pumped 
+into them?" Fortunately, we're not talking about that kind of inflation. Liferay 
+is fresh out of air pumps and pressure gauges. When an Android layout `xml` file 
+is inflated, its `xml` is converted into Java code that the system then uses to 
+draw the UI. In this case, `fragment_navigation_drawer.xml` only contains a 
+single `ListView`, so it can be cast as such to a `ListView` object.
+
+Following layout inflation in `onCreateView`, a click listener is created and 
+set for the list items. In this case, the click listener selects the item in the 
 list pressed by the user. Next, the `ArrayAdapter` is created inside of the 
 `setAdapter` method. The `setAdapter` method is used to set this `ArrayAdapter` 
 to the `ListView`. Lastly, `onCreateView` finishes by setting the currently 
