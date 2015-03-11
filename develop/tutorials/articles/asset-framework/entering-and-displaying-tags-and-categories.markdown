@@ -1,55 +1,70 @@
-# Entering and Displaying Tags and Categories 
+# Implementing Asset Categorization and Tagging [](id=implementing-asset-categorization-and-tagging)
 
-Once you've let the asset framework know about the tags and categories you've 
-associated with a given asset, you might think your work is done. Vacation time, 
-right? Not quite yet. Content authors still can't specify the tags and 
-categories for their content in the UI. Don't fret! 
+<!--
+Testing Notes:
 
-Liferay provides a set of JSP tags you can use to make this task very easy. Go 
-ahead and get started! 
+The starting example portlet for this tutorial is at ...
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-asset-enable-insults-portlet
 
-## Implementing Tags and Categories in the UI 
+On completing this tutorial, the example portlet looks like the portlet at ...
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-end-insults-portlet
 
-You can put the following Liferay UI tags in your forms to create content that 
-can be associated with new or existing tags or predefined categories: 
+Make sure to read their README files.
+-->
 
-    <label>Tags</label>
-    <liferay-ui:asset-tags-selector
-        className="<%= entry.getClass().getName() %>"
-        classPK="<%= entry.getPrimaryKey() %>"
-    />
+At this point, you've [asset-enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities)
+your custom entities. In addition to that, you should make sure to [implement asset renders](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
+for them. Content authors however still can't specify the tags and categories
+for these entities in the UI. Don't fret! Liferay provides a set of JSP tags for
+showing category and tag inputs in your UI. 
 
-    <label>Categories</label>
-        <liferay-ui:asset-categories-selector
-            className="<%= entry.getClass().getName() %>"
-            classPK="<%= entry.getPrimaryKey() %>"
-    />
+![Figure 1: Adding category and tag input options lets authors aggregate and label custom entities.](../../images/asset-fw-categories-and-tags-options.png)
 
-These two taglibs create appropriate form controls that allow the user to 
-search for a tag, create a new one, or select an existing category. 
+Go ahead and get started! 
 
-+$$$
+You can put the following tags in the JSPs you provide for adding/editing custom
+entities. Here's what the tags look like in a the [`edit_insult.jsp`](https://github.com/jhinkey/liferay-docs/blob/asset-fw-tutorials/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/edit_insult.jsp) 
+for a custom Insults portlet that's used as an example. 
 
-**Tip:** If you're using Liferay's AlloyUI Form taglibs, creating fields to 
-enter tags and categories is even simpler. You just use 
-`<aui:input name="tags" type="assetTags" />` and
-`<aui:input name="categories" type="assetCategories" />`, respectively. 
+    <liferay-ui:asset-categories-error />
+    <liferay-ui:asset-tags-error />
+    <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="insultsCategorizationPanel" persistState="<%= true %>" title="categorization">
+        <aui:fieldset>
+            <aui:input name="categories" type="assetCategories" />
 
-$$$
+            <aui:input name="tags" type="assetTags" />
+         </aui:fieldset>
+    </liferay-ui:panel>
+
+These category and tag `aui:input` tags generate form controls that let users
+browse/select a categories for the entity, browse/select tags, and or create new
+tags to associate with the entity. 
+
+The `liferay-ui:asset-categories-error` and `liferay-ui:asset-tags-error` tags
+display messages from any errors that can occur during the asset category or tag
+input process. The `liferay-ui:panel` tag uses a container that lets user hide
+or show the category and tag input options.
+
+For styling purposes, give the `liferay-ui:panel` an arbitrary `id` value that
+relates to your custom entity. 
+
+<!--
+
+Until we implement this in a solution portlet, we'll leave it out. - Jim
 
 Once the tags and categories have been entered, you'll want to show them along
 with the content of the asset. Here's how to display the tags and categories: 
+ 
+    <label>Categories</label>
+    <liferay-ui:asset-categories-summary
+        className="<%= insult.getClass().getName() %>"
+        classPK="<%= insult.getPrimaryKey() %>"
+    />
 
     <label>Tags</label>
     <liferay-ui:asset-tags-summary
-        className="<%= entry.getClass().getName() %>"
-        classPK="<%= entry.getPrimaryKey() %>"
-    />
-
-    <label>Categories</label>
-    <liferay-ui:asset-categories-summary
-        className="<%= entry.getClass().getName() %>"
-        classPK="<%= entry.getPrimaryKey() %>"
+        className="<%= insult.getClass().getName() %>"
+        classPK="<%= insult.getPrimaryKey() %>"
     />
 
 You can also support navigation of tags and categories within your portlet by 
@@ -60,17 +75,20 @@ look-up functionality in your portlet code. Do this by reading the values of
 those two parameters and using `AssetEntryService` to query the database for 
 entries based on the specified tag or category. 
 
-<!-- An example of this would be really nice. -Rich -->
+-->
 
-Great! Now you know how to make tags and categories available to content authors 
-in your portlets. 
+Deploy your changes and add/edit a custom entity in your UI. Your form shows the
+categorization and tag input options in a panel that the user can hide/show. 
 
-## Related Topics
+Great! Now you know how to make category and tag input options available to your
+portlet's content authors. 
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+**Related Topics**
+
+[Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+
+[Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
 
 [Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
 [User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
-
-[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)

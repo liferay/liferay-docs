@@ -1,132 +1,92 @@
-# Rating Assets
+# Rating Assets [](id=rating-assets)
 
-Liferay's asset framework supports a rating system that lets your users rate 
-content in plugins. You've probably seen this in many of Liferay's built-in 
-plugins. A great example is the Blogs portlet. When users click on a blog, a row 
-of stars appears at the bottom that lets them rate the blog from one to five 
-stars. Letting users rate content is a fantastic way not only to figure out what 
-content is popular, but also to foster a sense of community and collaboration 
-among content producers and consumers. Even better, once your plugin is asset 
-enabled, implementing ratings is a snap. 
+<!--
+Testing Notes:
 
-This tutorial shows you how to add ratings to an asset enabled portlet by using 
-code from a custom Insults portlet as an example. After all, a truly 
-distinguished writer of insults needs to know how good his or her insults really 
-are. You can find the beginning Insults portlet [here on Github](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/begin).
-Likewise, the ending Insults portlet is on Github, [here](https://github.com/liferay/liferay-docs/tree/assetfw-tutorials/develop/tutorials/code/asset-framework/ratings/end).
+The starting example portlet for this tutorial is at ...
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-asset-enable-insults-portlet
+
+On completing this tutorial, the example portlet looks like the portlet at ...
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-end-insults-portlet
+
+Make sure to read their README files.
+-->
+
+Liferay's asset framework supports a rating system that lets your users rate
+content in plugins. You've probably seen this in many of Liferay's built-in
+plugins. A great example is the Blogs portlet. On viewing a blogs entry,
+a row of stars appears letting the user rate the entry on a scale from one to
+five stars. Ratings help users figure out what content is popular. The feature
+also fosters a sense of community and collaboration among content producers and
+consumers. Even better, once your plugin is asset enabled, implementing ratings
+is a snap. 
+
+![Figure 1: Users can now rate instances of your custom entities.](../../images/asset-fw-ratings.png)
+
+This tutorial shows you how to add ratings to an asset enabled portlet. The
+tutorial uses code from a custom Insults portlet as an example. The Insults
+portlet seemed appropriate since a truly distinguished writer of insults needs
+to know how good his or her insults really are. 
+
+In order to implement ratings on your custom entity, it must be [asset enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities). 
+The completed Insults portlet code that uses this feature is on GitHub, [here](https://github.com/jhinkey/liferay-docs/tree/asset-fw-tutorials/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet).
 
 Now go ahead and get started learning how to add ratings to your portlets!
 
-## Creating a JSP for Rating Entities
+If you've implemented [asset rendering](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
+for your custom entity, you can show this asset feature in the full content view
+of your entity for users to view in an Asset Publisher portlet. You can also
+show this asset feature in any view JSP you create for viewing the entity. 
 
-The first step to enabling ratings in your portlet is to create a separate JSP 
-specifically for letting your users rate content. You might be wondering why you 
-need a separate JSP for this. The truth is, you don't. You could just put the 
-ratings in the edit JSP. However, separating collaborative activities like 
-ratings from editing or creating content makes sense--it reduces confusion 
-between the two activities. Also, you probably don't want users to be able to 
-edit content that someone else produced.
+As an example, the Insult portlet's view JSP file [`view_insult.jsp`](https://github.com/jhinkey/liferay-docs/blob/asset-fw-tutorials/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view_insult.jsp)
+shows an insult entity and its ratings. This tutorial shows you how to associate
+the ratings component with your custom entity.
 
-Create this JSP in the same directory as your portlet's `view.jsp`. For example, 
-in the Insults portlet this JSP is `docroot/html/insult/view_insult.jsp`. The 
-rest of this section uses `view_insult.jsp` as an example. The first thing you 
-want to do is make sure that your users have a way of getting back to `view.jsp` 
-after clicking on an entity. This is handled by the `portlet:renderURL` and 
-`liferay-ui:header` tags:
+In your view JSP you can use `ParamUtil` to get the ID of the entity from the
+render request. Then you can create an entity object using your
+`-LocalServiceUtil` class. 
 
-    ```
-    <portlet:renderURL windowState="normal" var="backURL">
-        <portlet:param name="mvcPath" value="/html/insult/view.jsp"></portlet:param>
-    </portlet:renderURL>
-
-    <liferay-ui:header backURL="<%=backURL%>" title="insult" />
-    ```
-    
-You also want to show the entity in the JSP when a user clicks on it. To do 
-this, use `ParamUtil` to get the id of the entity from the `renderRequest`. Then 
-create an object using your `*LocalServiceUtil`. Here, this is done to create an 
-`Insult` object:
-
-    ```
     <%
     long insultId = ParamUtil.getLong(renderRequest, "insultId");
     Insult ins = InsultLocalServiceUtil.getInsult(insultId);
-    ```
     %>
-    ```
-    
-Now it's time to add the ratings. This is done with the `liferay-ui:ratings` 
-tag. Note that the `Insult` object is used to tie the ratings to the entity:
 
-    ```
+After your JSP code that displays your entity you can add the ratings component
+using the `liferay-ui:ratings` tag. Note that the object's ID is used to tie the
+ratings to the entity:
+
     <liferay-ui:ratings className="<%=Insult.class.getName()%>"
         classPK="<%=ins.getInsultId()%>" type="stars" />
-    ```
 
-Also, `type` is given the value `"stars"`. You can instead implement a simple 
-thumbs-up or thumbs-down rating system by changing this value to `"thumbs"`.
+In the code above the `type` attribute is given the value `"stars"`, to use the
+five star rating system. You can optionally replace the star ratings with a
+simple thumbs-up or thumbs-down rating system by changing this value to
+`"thumbs"`.
 
-Great! Now you have the JSP that lets your users rate content. However, it's not 
-hooked up to anything yet--your users can't access it from your portlet. The 
-next step addresses this issue.
+If you haven't already connected your portlet's view to the JSP for your entity,
+you can refer [here](/develop/tutorials/-/knowledge_base/6-2/relating-assets#creating-a-url-to-your-new-jsp)
+to see how to connect your portlet's main view JSP to your entity's view JSP.
 
-## Creating a URL to Your New JSP
+Great! Now you have the JSP that lets your users rate content.
 
-Now that you have ratings implemented, you need to add a URL to your new JSP in 
-the `view.jsp`. This is done by inserting the `portlet:renderURL` tag just after 
-the `liferay-ui:search-container-row` tag. For example, in the Insults portlet 
-it looks like this:
-
-    ```
-    <liferay-ui:search-container-row
-        className="com.liferay.docs.insult.model.Insult"
-        keyProperty="insultId"
-        modelVar="insult" escapedModel="<%= true %>"
-    >
-    
-        <portlet:renderURL windowState="maximized" var="rowURL">
-            <portlet:param name="mvcPath" value="/html/insult/view_insult.jsp" />
-            <portlet:param name="insultId" value="<%= String.valueOf(insult.getInsultId()) %>" />
-        </portlet:renderURL>
-    ```
-
-Next, add the `href` attribute to the first search container column with the 
-value of the URL you just created in the `portlet:renderURL` tag. For example, 
-the value of `href` in the Insults portlet is `"<%=rowURL %>"`:
-
-    ```
-    <liferay-ui:search-container-column-text
-        name="Insult"
-        value="<%= insult.getInsultString() %>"
-        href="<%=rowURL %>"
-    />
-    ```
-
-Now just redeploy your portlet and refresh the page so that the `view.jsp` of 
-your plugin reloads. Each entity in the portlet should now be a link. Click on 
-one to view the new JSP that you made in the first step of this tutorial. The 
-ratings should appear at the bottom of the page.
-
-![Figure 1: Entities in portlets appear as links after implementing ratings.](../../images/asset-fw-ratings-link.png)
-
-![Figure 2: The new JSP lets users rate content in your portlet.](../../images/asset-fw-ratings.png)
+Now redeploy your portlet and refresh the page so that the your plugin's UI
+reloads. The ratings UI component now shows in your entity's view. 
 
 Great! Now you know how to add ratings for content in your asset enabled 
-portlets. Remember, you just follow two simple steps--make a new JSP for the 
-ratings, and then create a URL to that JSP so that your users can get to it. 
+portlets. 
 
 Another thing you might want to do is perform permissions checks to control 
 access to the JSP your ratings are in. For example, the Add Insult and 
 Permissions buttons of the Insults portlet are wrapped in a permissions check in 
-the `view.jsp`. For more information on this, see the learning path 
-[Checking Permissions in the UI](/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+its [`view.jsp`](https://github.com/jhinkey/liferay-docs/blob/asset-fw-tutorials/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view.jsp).
+For more information on this, see the learning path [Checking Permissions in the UI](/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
-## Related Topics
+**Related Topics**
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+
+[Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
 
 [Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
 [User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
-
-[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)

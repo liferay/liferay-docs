@@ -1,4 +1,4 @@
-# Asset Framework 
+# Asset Framework [](id=asset-framework)
 
 Liferay's asset framework is a system that allows you to add common
 functionality to custom content types used in your application. For example, if
@@ -69,7 +69,7 @@ You'll use a set of tags to provide widgets that allow users to exercise all of
 the features that have been mentioned, like entering comments, adding tags, and
 adding categories to an asset. It's time to start your asset framework training!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
 
