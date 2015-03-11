@@ -192,7 +192,7 @@ class. Note that the process below can also be used to locate an id.
     
         <aui:button name="test" value="test" cssClass=""/>
         
-3.  Inside of the `cssClass`Â attribute press *ctrl+space* to bring up the code
+3.  Inside of the `cssClass` attribute press *ctrl+space* to bring up the code
     inference for CSS and type "sam" to narrow down the classes to your CSS 
     class.
     
@@ -223,3 +223,4 @@ features to improve your workflow.
 ## Related Topics
 
  [Enabling Tern Code Assist Features in your Project](/develop/tutorials/-/knowledge_base/6-2/enabling-tern-code-assist-features-in-your-project) 
+
