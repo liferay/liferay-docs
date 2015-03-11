@@ -335,7 +335,7 @@ visit the Audience Targeting
 [project](https://github.com/liferay/liferay-apps-content-targeting) page and
 study the folders with the `tracking-action-` prefix. To view the final solution
 of a deployable sample newsletter tracking action, you can download its
-[ZIP file]().
+[ZIP file](/documents/10184/359829/tracking-action-newsletter.zip).
 
 <!-- Provide link to newsletter tracking action ZIP file once it's available.
 -Cody -->
