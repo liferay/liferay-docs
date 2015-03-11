@@ -109,7 +109,7 @@ Here are descriptions of each of the `updateEntry` method's parameters:
     Low integers take priority over higher integers.
 -   `sync` - this can be set to `false`.
 
-The following code from an example portlet's [`-LocalServiceImpl`](https://github.com/jhinkey/liferay-docs/blob/asset-fw-tutorials/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-asset-enable-insults-portlet/docroot/WEB-INF/src/com/liferay/docs/insult/service/impl/InsultLocalServiceImpl.java)
+The following code from an example portlet's [`-LocalServiceImpl`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-asset-enable-insults-portlet/docroot/WEB-INF/src/com/liferay/docs/insult/service/impl/InsultLocalServiceImpl.java)
 Java class demonstrates invoking the `updateEntry` method on an example entity
 called `Insult`. In your `add-` method you invoke `updateEntry` after adding
 your entity's resources. In your `update-` method you invoke `updateEntry` after

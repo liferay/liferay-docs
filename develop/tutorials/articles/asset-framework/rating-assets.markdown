@@ -29,7 +29,7 @@ portlet seemed appropriate since a truly distinguished writer of insults needs
 to know how good his or her insults really are. 
 
 In order to implement ratings on your custom entity, it must be [asset enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities). 
-The completed Insults portlet code that uses this feature is on GitHub, [here](https://github.com/jhinkey/liferay-docs/tree/asset-fw-tutorials/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet).
+The completed Insults portlet code that uses this feature is on GitHub, [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet).
 
 Now go ahead and get started learning how to add ratings to your portlets!
 
@@ -38,7 +38,7 @@ for your custom entity, you can show this asset feature in the full content view
 of your entity for users to view in an Asset Publisher portlet. You can also
 show this asset feature in any view JSP you create for viewing the entity. 
 
-As an example, the Insult portlet's view JSP file [`view_insult.jsp`](https://github.com/jhinkey/liferay-docs/blob/asset-fw-tutorials/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view_insult.jsp)
+As an example, the Insult portlet's view JSP file [`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view_insult.jsp)
 shows an insult entity and its ratings. This tutorial shows you how to associate
 the ratings component with your custom entity.
 
@@ -78,7 +78,7 @@ portlets.
 Another thing you might want to do is perform permissions checks to control 
 access to the JSP your ratings are in. For example, the Add Insult and 
 Permissions buttons of the Insults portlet are wrapped in a permissions check in 
-its [`view.jsp`](https://github.com/jhinkey/liferay-docs/blob/asset-fw-tutorials/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view.jsp).
+its [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view.jsp).
 For more information on this, see the learning path [Checking Permissions in the UI](/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 **Related Topics**

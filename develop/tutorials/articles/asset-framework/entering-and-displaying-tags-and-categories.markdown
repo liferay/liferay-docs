@@ -23,7 +23,7 @@ showing category and tag inputs in your UI.
 Go ahead and get started! 
 
 You can put the following tags in the JSPs you provide for adding/editing custom
-entities. Here's what the tags look like in a the [`edit_insult.jsp`](https://github.com/jhinkey/liferay-docs/blob/asset-fw-tutorials/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/edit_insult.jsp) 
+entities. Here's what the tags look like in a the [`edit_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/edit_insult.jsp) 
 for a custom Insults portlet that's used as an example. 
 
     <liferay-ui:asset-categories-error />
