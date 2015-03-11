@@ -432,12 +432,12 @@ the emulator!
 
 ## Running Your App
 
-Run your app as you did before, by clicking the green play button in Android 
-Studio's toolbar. If the emulator is already running, you're prompted to select 
-it when your app deploys. With the app now running in the emulator, click the 
-horizontal line stack on the action bar's left to open the drawer. Voila! Your 
-guestbooks appear in the drawer! Wait, not so fast; the guestbook names aren't 
-rendering properly.
+Make sure that your portal is running and then run your app as you did before, 
+by clicking the green play button in Android Studio's toolbar. If the emulator 
+is already running, you're prompted to select it when your app deploys. With the 
+app now running in the emulator, click the horizontal line stack on the action 
+bar's left to open the drawer. Voila! Your guestbooks appear in the drawer! 
+Wait, not so fast; the guestbook names aren't rendering properly. 
 
 ![Figure 4: Strings representing `GuestbookModel` objects appear in the drawer instead of proper guestbook names.](../../images/android-guestbook-drawer-01.png)
 
