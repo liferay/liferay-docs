@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-
-<project name="Marketplace Developer's Guide" basedir=".">
-
-	<import file="../build.xml" />
-
-	<property name="doc.dir" value="marketplace-dev-guide"/>
-
-</project>

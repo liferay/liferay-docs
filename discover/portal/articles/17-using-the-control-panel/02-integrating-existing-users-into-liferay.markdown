@@ -674,7 +674,7 @@ steps:
     your certificate and private key information, you can view information about
     your certificate or download your certificate.
 
-![Figure 17.5: After saving your certificate and private key information, you can view information about your certificate or download your certificate.](../../images/saml-admin-certificate-saved.png)
+![Figure 17.2: After saving your certificate and private key information, you can view information about your certificate or download your certificate.](../../images/saml-admin-certificate-saved.png)
 
 5. Finally, after you've saved your certificate and private key information,
    check the *Enabled* box at the top of the General tab and click *Save*.

@@ -347,9 +347,15 @@ default. You can set the *Default View* to *Day*, *Week*, or *Month*. You can
 set *Week Starts On* to *Sunday*, *Monday*, or *Saturday*. For *Time Zone*, you
 can either specify a particular time zone like *Pacific Standard Time* or *China
 Standard Time* or you can check the *Use Global Time Zone* box. If you check
-*Use Global Time Zone*, your calendar uses the portal-wide time zone that an
-administrator can set via *Control Panel* &rarr; *Portal Settings* &rarr;
-*Display Settings* &rarr; *Time Zone*.
+*Use Global Time Zone*, the time displayed by the Calendar portlet depends on
+whether it's being viewed by a guest or a logged in user:
+
+-If a user is logged in to the portal, the Calendar portlet displays events using the
+time zone set for the user in *My Account* &rarr; *Display Settings* &rarr; *Time Zone*.
+-If the Calendar portlet is viewed by a guest, or by a user who is not logged
+in, the Calendar portlet displays events using the time zone set by the portal
+administrator in *Control Panel* &rarr; *Portal Settings* &rarr; *Display
+Settings* &rarr; *Time Zone*.
 
 **RSS:** You can enable and customize your RSS Subscriptions for your calendar
 from this screen. You have the following options: *Enable RSS Subscription*,
@@ -717,9 +723,11 @@ mark as question box in the new thread window. Threads marked as questions
 display the flag "waiting for an answer." Subsequent replies to the original
 message can be marked as an answer.
 
-Lastly, you can set the amount of time a post is displayed until it is taken
-away. You have options of 24 hours, 7 days, 30 days, and 365 days. After the
-time has passed, the post is removed from the message board.
+Lastly, you can set the amount of time a post is displayed on the portlet's 
+*Recent Posts* tab until it is taken away. You have options of 24 hours, 7 days, 
+30 days, and 365 days. After the time has passed, the post is removed from 
+*Recent Posts*. However, the post itself isn't deleted. It remains accessible 
+elsewhere on the message board.
 
 ### Email From [](id=email-from-liferay-portal-6-2-user-guide-08-en)
 

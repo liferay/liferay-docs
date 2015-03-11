@@ -15,11 +15,23 @@ directly on the page as well, as will be described.
 
 The My Sites section provides a list of the sites which the logged-in user can
 access. These appear as a drop down list. Next are Notifications. The
-Notifications icon shows the unread notifications you have. You are
+Notifications icon shows the unread notifications and requests you have. You are
 notified upon receiving a private message, an invitation to join a site, a
 social connection request, or an event reminder. Alerts and announcements
 created via the Alerts or Announcements applications are accessible via the
-Notifications icon.
+Notifications icon. Clicking *Mark as Read* clears notifications from the list, 
+but leaves each request for you to respond to individually. Clicking 
+*Notifications* or *Requests* lets you view further details about each item 
+you've received and lets you configure your preferences for receiving 
+notifications and requests.
+
++$$$
+
+**Note:** Currently, requests do not appear under the Requests section of the 
+Notifications portlet. Any received requests instead appear as regular 
+notifications.
+
+$$$
 
 Finally, the user section shows the users name and provides links to the user's
 profile (his or her publicly-accessible pages), dashboard (his or her private

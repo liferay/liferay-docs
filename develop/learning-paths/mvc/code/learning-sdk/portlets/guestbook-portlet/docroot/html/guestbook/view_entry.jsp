@@ -7,25 +7,35 @@
 <liferay-ui:header backURL="<%= viewURL %>" title="entry" />
 
 <%
-	long entryId = ParamUtil.getLong(renderRequest, "entryId");
-	Entry entry = EntryLocalServiceUtil.getEntry(entryId);
-	entry = entry.toEscapedModel();
+	String name = ParamUtil.getString(renderRequest, "name");
 	
-	AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(
-	Entry.class.getName(), entry.getEntryId());
+	String guestbookName=ParamUtil.getString(renderRequest, "guestbookName");
 	
-	String currentURL = PortalUtil.getCurrentURL(request);
+	OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+	OrderByComparator orderByComparator = orderByComparatorFactory.create("Entry", "name", true);
+	Guestbook guestbook = GuestbookLocalServiceUtil.getGuestbookByG_N(scopeGroupId, guestbookName, orderByComparator);
+	
+	List<Entry> entries = EntryLocalServiceUtil.getEntriesByG_G_N(scopeGroupId, guestbook.getGuestbookId(), name);
+	
+	
+	for (Entry entry : entries) {
+		entry = entry.toEscapedModel();
 
-	PortalUtil.addPortletBreadcrumbEntry(request, entry.getMessage(),
-			currentURL);
+		AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(
+				Entry.class.getName(), entry.getEntryId());
 
-	PortalUtil.setPageSubtitle(entry.getMessage(), request);
-	PortalUtil.setPageDescription(entry.getMessage(), request);
+		String currentURL = PortalUtil.getCurrentURL(request);
 
-	List<AssetTag> assetTags = AssetTagLocalServiceUtil.getTags(
-			Entry.class.getName(), entry.getEntryId());
-	PortalUtil.setPageKeywords(ListUtil.toString(assetTags, "name"),
-			request);
+		PortalUtil.addPortletBreadcrumbEntry(request,
+				entry.getMessage(), currentURL);
+
+		PortalUtil.setPageSubtitle(entry.getMessage(), request);
+		PortalUtil.setPageDescription(entry.getMessage(), request);
+
+		List<AssetTag> assetTags = AssetTagLocalServiceUtil.getTags(
+				Entry.class.getName(), entry.getEntryId());
+		PortalUtil.setPageKeywords(
+				ListUtil.toString(assetTags, "name"), request);
 %>
 
 <dl>
@@ -65,3 +75,7 @@
 	assetEntryId="<%= (assetEntry != null) ? assetEntry.getEntryId() : 0 %>"
 	className="<%= Entry.class.getName() %>"
 	classPK="<%= entry.getEntryId() %>" />
+
+<%
+	}
+%>
