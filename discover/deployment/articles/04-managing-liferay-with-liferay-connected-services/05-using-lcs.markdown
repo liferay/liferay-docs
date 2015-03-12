@@ -241,14 +241,22 @@ without requiring any user interaction. For example, for users to connect to
 LCS, they must first manually configure the client portlet to connect to an 
 environment. The previous article of this guide covers this process. To bypass 
 the need for manual client configuration, you can generate and distribute an 
-environment token file. This environment token contains all the information 
-needed by the client to connect to that environment on LCS. It's important to 
-note that each environment can have only one token file. You should also use 
-caution when distributing it to your project's users. Anyone with the token file 
-can connect to your environment. So why bother with environment tokens at all? 
-Besides the benefit of simplifying the setup process for your users, using 
-environemnt tokens is valuable in auto-scaling environments where algorithms 
-create and destroy servers automatically. 
+environment token file. This token contains all the information the client needs 
+to connect to that environment on LCS. It's important to note that each 
+environment can have only one token file. You should also use caution when 
+distributing it to your project's users. Anyone with the token file can use it 
+to connect to your environment. Administrators should also use caution when 
+regenerating or otherwise removing a token file from LCS. When this is done, 
+clients using the file can't connect until receiving the new file. The only 
+alternative is to use the administrator's own credentials to manually connect 
+the client. Once the client reconnects, it's once again linked to the client's 
+existing archive data in LCS.
+
+So why bother with environment tokens at all? Besides the benefit of simplifying 
+the setup process for your users, using environemnt tokens is valuable in 
+auto-scaling environments where algorithms create and destroy servers 
+automatically. In this situation, having clients that configure themselves is 
+crucial. 
 
 There are two places in LCS where you can generate and access environment 
 tokens. If you read the previous sections of this article, then you already know 
