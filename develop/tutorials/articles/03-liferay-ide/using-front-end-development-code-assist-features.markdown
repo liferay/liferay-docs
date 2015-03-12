@@ -2,12 +2,12 @@
 
 Since IDE 2.2, front-end development has become a much smoother process. You now
 have access to code inferencing and code completion features for AlloyUI,
-JavaScript, and CSS.
+JavaScript, CSS, and jQuery.
 
 This tutorial covers how to use the code assist features for AlloyUI,
-JavaScript, and CSS in IDE. Each language is covered in its own section, so you
-can navigate to the language you're most interested in. Continue reading to find
-out how to use IDE's code assist features in your project.
+JavaScript, CSS, and jQuery in IDE. Each language is covered in its own section,
+so you can navigate to the language you're most interested in. Continue reading
+to find out how to use IDE's code assist features in your project.
 
 ## Using Code Assist Features
 
@@ -37,10 +37,19 @@ access the AlloyUI code assist features in the `main.js` of your project:
         AUI().
 
 2. Press *Ctrl+Space* with your cursor to the right of `AUI().`. This brings up
-   the code inference for the `AUI()` global object. Press *Enter* to use code
-   completion.
+   the code inference for the `AUI()` global object. Notice the AlloyUI
+   framework's own API documentation is also displayed. Press *Enter* to use
+   code completion.
 
 ![Figure 1: This figure demonstrates code inference in a JS file.](../../images/code-inference.png)
+
++$$$
+
+**Note:** Code assist not only works for methods of an object; you can also use
+AUI specific Tern completions for objects. For instance, you could type `AU` and
+press *Ctrl+Space* and you're given a list of objects to choose from.
+
+$$$
 
 By default, code inference is triggered by a keystroke combination; however, you
 can enable auto activation in IDE's Preferences menu. Follow the steps below
@@ -59,7 +68,9 @@ Now, if you follow the previous example, code inference activates as soon as
 you press the trigger key, which in this case is the *.* (period) key.
 
 In addition to general code inference for AlloyUI, you have access to code 
-templates. Follow the steps below to use AUI code templates:
+templates. AUI JavaScript templates are available in Eclipse's JavaScript editor
+as well as in the HTML/JSP editor when working with `<script>` and
+`<aui-script>` tags. Follow the steps below to use AUI code templates:
 
 1. Type the following code in your `main.js`:
  
@@ -69,7 +80,7 @@ templates. Follow the steps below to use AUI code templates:
    see a list of all the available AlloyUI code templates, along with
    documentation.
 
-    ![Figure 3: IDE now gives you access to AUI code templates.](../../images/code-template.png)
+    ![Figure 3: IDE gives you access to AUI code templates in the JS and JSP editors.](../../images/code-template.png)
     
 3. Select your template and hit *Enter* to paste its contents into your
    `main.js`.
@@ -80,10 +91,10 @@ templates. Follow the steps below to use AUI code templates:
     installed by going to IDE's Preferences menu and selecting *JavaScript*
     &rarr; *Editor* &rarr; *Templates*.
 
-    $$$        
+    $$$    
 
 In addition to code inference in your JS files, you can also use code inference 
-in your JSP files using `<aui:script>` tags.
+in your JSP/HTML files using `<aui:script>` tags.
 
 Open one of your project's JSPs and add the AUI taglib directive if it is not
 already in your JSP. The import should look like the following:
@@ -110,9 +121,17 @@ Next, you can take a closer look at the JavaScript code assist features for IDE.
 
 ### JavaScript Code Assist Features
 
-In addition to AlloyUI code assist features, you also have access to code 
-inference and completion using raw JavaScript. The example below shows how you 
-can use code assist features to easily access functions in your portlet project.
+In addition to AlloyUI code assist features, you also have access to code
+inference and completion using raw JavaScript. This code assist feature is
+available in your project because the Tern module `liferay` is enabled. This
+plugin provides code completions for the static JavaScript object APIs available
+for portlets when running in Liferay Portal. To learn more about enabling Tern
+modules in Eclipse, refer to the
+[Enabling Code Assist Features in Your Project](/develop/tutorials/-/knowledge_base/6-2/enabling-tern-code-assist-features-in-your-project)
+tutorial.
+
+The example below shows how you can use code assist features to easily access
+functions in your portlet project.
 
 1. Open the `main.js` of your portlet and add the following function:
 
@@ -199,15 +218,46 @@ classes found in Liferay Portal.
 
 +$$$
 
-**Note:** You can go to the file that the class, ID, or function is located in by
-hovering over top of it in your JSP and holding down the `Ctrl` (Windows) or
+**Note:** You can go to the file that the class, ID, or function is located in
+by hovering over top of it in your JSP and holding down the `Ctrl` (Windows) or
 `command` (Mac) key, and clicking the hyperlink that appears.
 
 $$$
 
+Lastly, you'll learn about the code assist features for jQuery.
+
+### jQuery Code Assist Features
+
+The last language's code assist features you'll learn about in this tutorial is
+jQuery. To use jQuery code assist in your project you'll need to enable the
+`jQuery` Tern module. Follow the instructions in the
+[Enabling Code Assist Features in Your Project](/develop/tutorials/-/knowledge_base/6-2/enabling-tern-code-assist-features-in-your-project)
+tutorial to learn how to enable Tern modules in your project.
+
+The jQuery Tern plugin gives type information for the jQuery framework. In the
+example below, you'll test the jQuery code assist feature.
+
+1. Open your project's `jquery.js` file.
+
+2. In the file, type the following sample variable:
+
+        var form = 
+
+3. Press *Ctrl+Space* to bring up the code inference for the variable you're
+   declaring, and you'll see a list of everything that is available. Also notice
+   jQuery documentation is available for each method. Take a look at the figure
+   below for an example of using code assit in jQuery.
+
+    ![Figure 6: Using the jQuery code assist features gives you the convenience of showing you what's available, and the documentation behind each option.](../../images/jquery_js_1.png)
+
+Furthermore, for jQuery callback handlers, the type information for parameters
+is also made available.
+
+![Figure 7: jQuery code assist also displays type information for parameters.](../../images/jquery_js_2.png)
+
 Excellent! You now know how to use IDE's front-end development code assist 
-features to improve your workflow. 
-    
+features to improve your workflow.
+
 ## Related Topics
 
 [Enabling Code Assist Features in your Project](/develop/tutorials/-/knowledge_base/6-2/enabling-code-assist-features-in-your-project) 
