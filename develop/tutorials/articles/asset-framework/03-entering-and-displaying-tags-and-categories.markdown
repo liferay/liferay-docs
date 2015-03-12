@@ -4,10 +4,10 @@
 Testing Notes:
 
 The starting example portlet for this tutorial is at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-asset-enable-insults-portlet
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-02-asset-enable-insults-portlet
 
 On completing this tutorial, the example portlet looks like the portlet at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-end-insults-portlet
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-03-end-insults-portlet
 
 Make sure to read their README files.
 -->
@@ -23,7 +23,7 @@ showing category and tag inputs in your UI.
 Go ahead and get started! 
 
 You can put the following tags in the JSPs you provide for adding/editing custom
-entities. Here's what the tags look like in a the [`edit_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/edit_insult.jsp) 
+entities. Here's what the tags look like in a the [`edit_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/edit_insult.jsp) 
 for a custom Insults portlet that's used as an example. 
 
     <liferay-ui:asset-categories-error />
@@ -85,10 +85,10 @@ portlet's content authors.
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
 [Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)

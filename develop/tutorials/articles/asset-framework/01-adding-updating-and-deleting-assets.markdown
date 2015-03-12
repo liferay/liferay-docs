@@ -4,10 +4,10 @@
 Testing Notes:
 
 The starting example portlet for this tutorial is at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-begin-insults-portlet
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-01-begin-insults-portlet
 
 On completing this tutorial, the example portlet looks like the portlet at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-asset-enable-insults-portlet
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-02-asset-enable-insults-portlet
 
 Make sure to read their README files. - Jim
 -->
@@ -19,12 +19,12 @@ new resource. It's a simple procedure: you invoke a method of the asset
 framework that adds an `AssetEntry` associated with the entity instance, so that
 Liferay can keep track of the instance as an asset. You similarly, update the
 asset as you update the entity. To see how to asset-enable entities in a working example portlet, visit learning
-path [Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities).
+path [Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities).
 
 To leverage assets, you must also implement indexers for your portlet's
 entities. Liferay's asset framework uses indexers to manage assets. For
 instructions on
-creating an indexer in a working example portlet, see the learning path [Enabling Search and Indexing](/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing).
+creating an indexer in a working example portlet, see the learning path [Enabling Search and Indexing](/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing).
 
 This tutorial shows you how to enable assets for your custom entities and
 implement indexes for them. It's time to associate assets with your portlet's
@@ -109,7 +109,7 @@ Here are descriptions of each of the `updateEntry` method's parameters:
     Low integers take priority over higher integers.
 -   `sync` - this can be set to `false`.
 
-The following code from an example portlet's [`-LocalServiceImpl`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-asset-enable-insults-portlet/docroot/WEB-INF/src/com/liferay/docs/insult/service/impl/InsultLocalServiceImpl.java)
+The following code from an example portlet's [`-LocalServiceImpl`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-02-asset-enable-insults-portlet/docroot/WEB-INF/src/com/liferay/docs/insult/service/impl/InsultLocalServiceImpl.java)
 Java class demonstrates invoking the `updateEntry` method on an example entity
 called `Insult`. In your `add-` method you invoke `updateEntry` after adding
 your entity's resources. In your `update-` method you invoke `updateEntry` after
@@ -203,10 +203,10 @@ Great! Now you know how to add, update, and delete assets in your portlets!
 
 ## Related Topics [](id=related-topics)
 
-[Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
 [Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
 
-[Relating Assets](/tutorials/-/knowledge_base/6-2/relating-assets)
+[Relating Assets](/develop/tutorials/-/knowledge_base/6-2/relating-assets)
 
-[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)

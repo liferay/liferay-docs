@@ -4,10 +4,10 @@
 Testing Notes:
 
 The starting example portlet for this tutorial is at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-asset-enable-insults-portlet
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-02-asset-enable-insults-portlet
 
 On completing this tutorial, the example portlet looks like the portlet at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-end-insults-portlet
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-03-end-insults-portlet
 
 Make sure to read their README files.
 -->
@@ -24,7 +24,7 @@ In order to implement the comments feature on your custom entity, it must be [as
 This tutorial shows you how to enable commenting on content posted in an asset 
 enabled portlet. A custom Insults portlet is used as an example--a community 
 discussion will definitely help to bring about insults of the highest quality! 
-The completed Insults portlet code that uses this feature is on GitHub, [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet).
+The completed Insults portlet code that uses this feature is on GitHub, [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet).
 
 Without any further ado, go ahead and get started enabling comments in your 
 portlet!
@@ -35,7 +35,7 @@ for your custom entity, you can show the asset feature in the full content view
 of your entity for users to view in an Asset Publisher portlet.  
 
 As an example, the Insult portlet's view JSP file
-[`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view_insult.jsp)
+[`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
 shows an insult entity and this asset feature. This section shows you how to
 access an entity's asset entry in your entity's view JSP and how to display the
 social bookmarks asset feature. 
@@ -100,7 +100,7 @@ portlets.
 
 Before moving on, another thing you might want to do is perform permissions 
 checks to control who can access the discussion. For example, the collapsible 
-panel in the [`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view_insult.jsp) of the Insults portlet is surrounded by `c:if` 
+panel in the [`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp) of the Insults portlet is surrounded by `c:if` 
 tags that only reveal their contents to users that are signed in to the portal:
 
     <c:if test="<%=themeDisplay.isSignedIn()%>">
@@ -108,15 +108,15 @@ tags that only reveal their contents to users that are signed in to the portal:
 
 This is just one way of controlling access to the discussion. For example, you 
 can also do so by performing more specific permissions checks, as the Insults 
-portlet does for the Add Insults and Permissions buttons in its [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view.jsp).
-For more information, see the learning path [Checking Permissions in the UI](/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+portlet does for the Add Insults and Permissions buttons in its [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
+For more information, see the learning path [Checking Permissions in the UI](/develop/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
 [Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)

@@ -4,10 +4,10 @@
 Testing Notes:
 
 The starting example portlet for this tutorial is at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-asset-enable-insults-portlet
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-02-asset-enable-insults-portlet
 
 On completing this tutorial, the example portlet looks like the portlet at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-end-insults-portlet
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-03-end-insults-portlet
 
 Make sure to read their README files. - Jim
 -->
@@ -24,7 +24,7 @@ This tutorial shows you how to provide a means for authors to relate content.
 This tutorial assumes that you've [asset enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities)
 your portlet. A custom Insults portlet is used as an example. After all, users
 of such a portlet would want to relate their insults to all kinds of content!
-The completed Insults portlet code that uses this feature is on GitHub, [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet). 
+The completed Insults portlet code that uses this feature is on GitHub, [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet). 
 Now go ahead and get started relating your assets!
 
 ## Relating Assets in the Service Layer [](id=relating-assets-in-the-service-layer)
@@ -44,7 +44,7 @@ persistence actions. When you add and update assets you must invoke the `addInsu
 and `updateInsult` methods of `InsultLocalServiceImpl` both utilize the
 `updateLinks` via your instance variable `assetLinkLocalService`. Here's the
 `updateLinks` invocation in the example Insults portlet's
-[`-LocalServiceImpl`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/WEB-INF/src/com/liferay/docs/insult/service/impl/InsultLocalServiceImpl.java):
+[`-LocalServiceImpl`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/WEB-INF/src/com/liferay/docs/insult/service/impl/InsultLocalServiceImpl.java):
 
     assetLinkLocalService.updateLinks(
         userId, assetEntry.getEntryId(), serviceContext.getAssetLinkEntryIds(),
@@ -81,7 +81,7 @@ assets. You'll take care of that in the next step.
 You typically implement the UI for linking assets in the JSP that you provide
 users the ability to create and edit your entity, This way only content creators
 can relate other assets to the entity. In the Insults portlet, for example,
-assets can only be related from its [`edit_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/edit_insult.jsp).
+assets can only be related from its [`edit_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/edit_insult.jsp).
 Related assets are implemented in the JSP by using the Liferay UI tag
 `liferay-ui:input-asset-links` inside of a collapsible panel. This code is
 placed inside the `aui:fieldset` tags of the JSP. The panel and
@@ -139,7 +139,7 @@ for your custom entity, you can show related assets in the full content view of
 your entity for users to view in an Asset Publisher portlet. 
 
 As an example, the Insult portlet's view JSP file
-[`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view_insult.jsp)
+[`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
 shows an insult entity and links to all of its related assets. This section
 shows you how to access an entity's asset entry in your entity's view JSP and
 how to display links to its related assets. When you finish, users can click on
@@ -180,7 +180,7 @@ your portlet's main view JSP to your entity's view JSP. If your main view JSP
 uses a search container to list your entity instances, you can insert a
 `portlet:renderURL` tag just after the `liferay-ui:search-container-row` tag.
 For example, in the Insults portlet's
-[`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view.jsp)
+[`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp)
 it looks like this:
 
     <liferay-ui:search-container-row
@@ -220,14 +220,14 @@ Another thing you might want to do is investigate permissioning in the UI. For
 example, the Insults portlet only allows assets to be related by those with
 `ADD_INSULT` or `UPDATE` permissions. These permissions are checked in the
 Insults portlet's `view.jsp` and `insult_actions.jsp`, respectively. For more
-information on this, see the learning path [Checking Permissions in the UI](/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+information on this, see the learning path [Checking Permissions in the UI](/develop/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 ## Related Topics [](id=related-topics)
 
-[Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
 [Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)

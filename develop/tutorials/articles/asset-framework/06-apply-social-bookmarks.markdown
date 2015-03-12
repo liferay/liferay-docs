@@ -4,10 +4,10 @@
 Testing Notes:
 
 The starting example portlet for this tutorial is at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-asset-enable-insults-portlet
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-02-asset-enable-insults-portlet
 
 On completing this tutorial, the example portlet looks like the portlet at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-end-insults-portlet
+liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-03-end-insults-portlet
 
 Make sure to read their README files.
 -->
@@ -28,7 +28,7 @@ before you can add social bookmarks.
 Users naturally want to share the greatest of insults with the world! To help
 demonstrate this feature, a custom Insults portlet is used in this tutorial's
 examples. You can find the Insults portlet complete with social bookmarks
-enabled on GitHub, [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/asset-framework/social-bookmarks/end).
+enabled on GitHub, [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet).
 
 Now go ahead and get started with social bookmarks!
 
@@ -38,7 +38,7 @@ for your custom entity, you can show social bookmarks in the full content view
 of your entity for users to view in an Asset Publisher portlet. 
 
 As an example, the Insult portlet's view JSP file
-[`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view_insult.jsp)
+[`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
 shows an insult entity and this asset feature. This section
 shows you how to access an entity's asset entry in your entity's view JSP and
 how to display the social bookmarks asset feature. 
@@ -93,15 +93,15 @@ portlets.
 Another thing you might want to do is perform permissions checks to control 
 access to the JSP your ratings are in. For example, the Add Insult and 
 Permissions buttons of the Insults portlet are wrapped in a permissions check in 
-the [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-end-insults-portlet/docroot/html/insult/view.jsp).
-For more information on this, see the learning path [Checking Permissions in the UI](/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+the [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
+For more information on this, see the learning path [Checking Permissions in the UI](/develop/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
 [Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)

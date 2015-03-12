@@ -69,7 +69,7 @@ You'll use a set of tags to provide widgets that allow users to exercise all of
 the features that have been mentioned, like entering comments, adding tags, and
 adding categories to an asset. It's time to start your asset framework training!
 
-## Related Topics [](id=related-topics)
+**Related Topics**
 
 [Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
 
@@ -77,8 +77,8 @@ adding categories to an asset. It's time to start your asset framework training!
 
 [Enabling Search and Indexing](/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing)
 
-[Asset Enabling Custom Entities](/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
