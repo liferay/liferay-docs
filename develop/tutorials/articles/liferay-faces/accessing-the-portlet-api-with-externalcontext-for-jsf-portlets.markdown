@@ -42,3 +42,6 @@ Notice that you're able to retrieve the `ExternalContext` from the current
 In this tutorial, you've explored requesting objects from the portlet API using
 `ExternalContext`. 
 
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->

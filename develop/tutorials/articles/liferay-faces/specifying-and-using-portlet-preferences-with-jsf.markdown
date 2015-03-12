@@ -111,3 +111,7 @@ facelet file `/preferences.xhtml` as the view, by mapping it to the
 Terrific! You're now familiar with specifying and using portlet preferences in
 your JSF portlet. 
 
+## Related Topics
+
+<!-- Add once JSF tutorials are finished. -Cody -->
+
