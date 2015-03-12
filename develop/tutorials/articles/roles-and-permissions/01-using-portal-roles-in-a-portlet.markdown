@@ -1,9 +1,9 @@
 # Using Portal Roles in a Portlet [](id=using-portal-roles-in-a-portlet)
 
-"A role, a role, my portal for a role!" Don't worry, using portal roles in your 
-portlets isn't that difficult. Roles in Liferay Portal are the key means for 
-granting or restricting access to content. As such, portlet developers require a 
-means for making use of portal roles in their portlets. This tutorial covers 
+"A role, a role, my portal for a role!" Don't worry, using portal roles in your
+portlets isn't too difficult. Roles in Liferay Portal are the key means for
+granting or restricting access to content. As such, portlet developers require a
+means for making use of portal roles in their portlets. This tutorial covers
 those means. Read on to learn how!
 
 ## JSR 286 Portlet Security
@@ -85,8 +85,8 @@ an example, see the mapping defined in the Calendar portlet's
         <role-link>User</role-link>
     </role-mapper>
 
-If a portlet definition references the role `power-user`, that portlet is
-mapped to the Liferay role called *Power User* that's already in its database. 
+If a portlet definition references the role `power-user`, that portlet is mapped
+to the Liferay role called *Power User* that's already in Liferay's database. 
 
 Once roles are mapped to the portal, you can use methods as defined in the
 portlet specification: 
