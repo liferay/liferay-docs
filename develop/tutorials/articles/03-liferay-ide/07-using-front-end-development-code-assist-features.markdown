@@ -1,4 +1,4 @@
-# Using Front-End Development Code Assist Features in IDE
+# Using Front-End Development Code Assist Features in IDE [](id=using-front-end-development-code-assist-features-in-ide)
 
 Since IDE 2.2, front-end development has become a much smoother process. You now
 have access to code inferencing and code completion features for AlloyUI,
@@ -9,7 +9,7 @@ JavaScript, CSS, and jQuery in IDE. Each language is covered in its own section,
 so you can navigate to the language you're most interested in. Continue reading
 to find out how to use IDE's code assist features in your project. 
 
-## Using Code Assist Features
+## Using Code Assist Features [](id=using-code-assist-features)
 
 IDE's integration of [Tern](http://ternjs.net/) features give you access to code
 assist in JavaScript, AlloyUI, and CSS. To access these features, you must be
@@ -31,7 +31,7 @@ $$$
 
 You'll begin testing the AlloyUI code assist features next.
 
-### AlloyUI Code Assist Features
+### AlloyUI Code Assist Features [](id=alloyui-code-assist-features)
 
 There are several helpful code assist features that can improve your 
 productivity when writing code for AlloyUI. The example below shows how to 
@@ -124,7 +124,7 @@ access to code assist features that improve your workflow.
 
 Next, you can take a closer look at the JavaScript code assist features for IDE.
 
-### JavaScript Code Assist Features
+### JavaScript Code Assist Features [](id=javascript-code-assist-features)
 
 In addition to AlloyUI code assist features, you also have access to code
 inference and completion using raw JavaScript. This code assist feature is
@@ -167,7 +167,7 @@ As you can see, JavaScript development is a breeze using IDE's code assist
 features. Now that you know how to use the AlloyUI and JavaScript code assist
 features, you can begin learning how to use the CSS code assist features next. 
 
-### CSS Code Assist Features
+### CSS Code Assist Features [](id=css-code-assist-features)
 
 IDE offers code inference and completion tools for CSS. In order to use these
 tools, you'll need to install an additional plugin. Follow the steps below to
@@ -231,7 +231,7 @@ $$$
 
 Lastly, you'll learn about the code assist features for jQuery. 
 
-### jQuery Code Assist Features
+### jQuery Code Assist Features [](id=jquery-code-assist-features)
 
 The last language's code assist features you'll learn about in this tutorial is
 jQuery. To use jQuery code assist in your project you'll need to enable the
@@ -263,7 +263,7 @@ is also made available.
 Excellent! You now know how to use IDE's front-end development code assist 
 features to improve your workflow. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Enabling Code Assist Features in your Project](/develop/tutorials/-/knowledge_base/6-2/enabling-code-assist-features-in-your-project) 
 
