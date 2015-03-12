@@ -13,14 +13,19 @@ to find out how to use IDE's code assist features in your project.
 
 IDE's integration of [Tern](http://ternjs.net/) features give you access to code
 assist in JavaScript, AlloyUI, and CSS. To access these features, you must be
-working in a JavaScript, JSP, or CSS file. 
+working in a JavaScript, JSP, HTML, or CSS file. 
 
-+$$$
-
-**Note:** You must have Tern features enabled in your project in order to use 
+You must have Tern features enabled in your project in order to use 
 them. By default, Liferay portlet plugins already have Tern features enabled. 
 Visit the [Enabling Code Assist Features in your Project](/develop/tutorials/-/knowledge_base/6-2/enabling-tern-code-assist-features-in-your-project)
 tutorial to learn how to enable Tern features for non-Liferay specific projects.
+
++$$$
+
+**Note:** The taglib descriptions that IDE makes available to users is dependent
+upon the Plugins SDK being used. IDE uses taglib descriptions from the current
+SDK's `util-taglib.jar` file, so a more up-to-date Plugins SDK means more
+up-to-date taglib descriptions. 
 
 $$$
 
