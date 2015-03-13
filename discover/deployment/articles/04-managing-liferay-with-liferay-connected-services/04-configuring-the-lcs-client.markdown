@@ -71,10 +71,11 @@ displayed. Here's a description of what's displayed:
   LCS let the portlet know about any available updates. 
 - Metrics Task Interval: The interval at which server statistics and metrics are 
   taken.
-- Project: Clicking this link takes you to this server's registered project.
+- Project Home: Clicking this link takes you to this server's registered 
+  project.
 - Environment: Clicking this link takes you to this server's registered
   environment.
-- Server: Clicking this link takes you to the server on LCS.
+- Server Dashboard: Clicking this link takes you to the server on LCS.
 - Disconnect: Disconnects this Liferay instance from LCS.
 - Reset Credentials: Removes the authorizing account from registration with LCS. 
   It's important to note that your credentials are not human readable in the 
