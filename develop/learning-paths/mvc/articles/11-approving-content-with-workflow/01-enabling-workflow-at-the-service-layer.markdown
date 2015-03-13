@@ -31,7 +31,8 @@ This manually sets the status of the workflow as a draft; in the `GB_Entry`
 database table, you'll now see the `status` field of an added Entry with the
 value `2`. But you still haven't set the rest of the values.
 
-Still in the `addGuestbookEntry` method, place the following code right before the `return` statement:
+Still in the `addGuestbookEntry` method, place the following code right before
+the `return` statement:
 
     WorkflowHandlerRegistryUtil.startWorkflowInstance(entry.getCompanyId(), 
 				entry.getGroupId(), entry.getUserId(), Entry.class.getName(), 

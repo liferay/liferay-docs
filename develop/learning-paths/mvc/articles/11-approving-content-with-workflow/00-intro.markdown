@@ -11,10 +11,7 @@ other violation of the terms of use, is published.
 
 This learning path instructs the reader in workflow-enabling the Guestbook's
 *Entry* entities, ensuring that guestbook entries are only published after
-they're reviewed. As a bonus, you'll learn how to create custom workflow
-definitions for use with your entities or any other workflow-enabled entities
-in the portal.
+they're reviewed.
 
-<!-- When workflow is enabled for the Guestbook App, add a screenshot -->
-
+![Figure 1: Your custom entities can be workflow enabled, just like the core portal's entities.](../../images/test-workflow-1.png)
 
