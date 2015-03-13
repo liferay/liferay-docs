@@ -253,7 +253,7 @@ the client. Once the client reconnects, it's once again linked to the client's
 existing archive data in LCS.
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
-the setup process for your users, using environemnt tokens is valuable in 
+the setup process for your users, using environment tokens is valuable in 
 auto-scaling environments where algorithms create and destroy servers 
 automatically. In this situation, having clients that configure themselves is 
 crucial. 
