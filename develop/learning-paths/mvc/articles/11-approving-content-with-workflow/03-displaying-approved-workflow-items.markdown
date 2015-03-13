@@ -126,16 +126,17 @@ Run service builder.
 ## Exposing the Guestbook's New Finder in the Service Layer
 
 Open `GuestbookLocalServiceImpl`. Find the current method with the signature
-`public List<Guestbook> getGuestbooks(long groupId)`. Add this one right below
-it:
+`public List<Guestbook> getGuestbooks(long groupId)`. Delete it and add this
+one in it's place:
 
 	public List<Guestbook> getGuestbooks(long groupId, int status) throws SystemException {
 		return guestbookPersistence.findByG_S(groupId, WorkflowConstants.STATUS_APPROVED);
 	}
 
-This time, don't delete the current getter method, even though it doesn't
-account for workflow status. The Guestbook Admin portlet should display all
-Guestbooks, regardless of workflow status.
+Leave the other getter methods alone, even though they don't account for
+workflow status. The Guestbook Admin portlet should display all Guestbooks,
+regardless of workflow status, and these getters are used to populate it's
+search container.
 
 ## Updating the View Layer to Display Approved Guestbooks
 
@@ -160,8 +161,9 @@ the strategy be there?
 ## Modifying the Guestbook Admin Portlet to Display Workflow Status
 
 The Guestbook Admin portlet currently displays the `Guestbook`s for a site in a
-Search Container. This is implemented to follow the pattern of some core
-portlets, such as the Message Boards Admin portlet.
+Search Container, which is consistent with Liferay's core portlets, such as the
+Message Boards Admin portlet. Like those portlets, you should include the
+workflow status as a column in the search container.
 
 ![Figure 1: The Message Boards Admin portlet displays the workflow status of its entities.](../../images/message-boards-admin.png)
 
@@ -193,7 +195,6 @@ There's a new `<liferay-ui:search-container-column-text>` tag, defining a
 `int` value of `guestbook.getStatus()` into a `String` displayed with some
 styling that matches that of Liferay's core portlet's.
 
-
 Note that you didn't change the `getter` method for one that only returns
 `Guestbook`s marked as approved in the workflow. In the Guestbook Admin
 portlet, you're allowing all `Guestbook`s to be displayed with their workflow
@@ -219,7 +220,7 @@ are a couple of additional things to note:
 is automatically set as approved, and they will appear as soon as they are
 added, just like before you enabled them for workflow.
 -In the Guestbook Admin portlet, the *Status* field is always displayed, even
-when workflow is disabled. You'll just see that aded guestbooks are always
+when workflow is disabled. You'll just see that added guestbooks are always
 marked as *Approved*, with no review necessary and no workflow notifications
 sent.
 
