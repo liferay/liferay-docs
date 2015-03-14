@@ -145,22 +145,22 @@ your app's `callback` package. Replace its contents with the following code:
     
     public class GetEntriesCallback extends GenericAsyncTaskCallback<List<EntryModel>> {
     
-      private MainActivity _activity;
+      private MainActivity.EntriesFragment _fragment;
     
-      public GetEntriesCallback(MainActivity activity) {
-        _activity = activity;
+      public GetEntriesCallback(MainActivity.EntriesFragment fragment) {
+        _fragment = fragment;
       }
     
       @Override
       public void onFailure(Exception e) {
         String message = "Couldn't get entries " + e.getMessage();
     
-        Toast.makeText(_activity, message, Toast.LENGTH_LONG).show();
+        Toast.makeText(_fragment.getActivity(), message, Toast.LENGTH_LONG).show();
       }
     
       @Override
       public void onSuccess(List<EntryModel> entries) {
-        _activity.reloadEntries(entries);
+        _fragment.reloadEntries(entries);
       }
     
       @Override
@@ -179,10 +179,10 @@ your app's `callback` package. Replace its contents with the following code:
       }
     }
 
-Don't worry about the `reloadEntries` method being marked as an error in Android 
-Studio. You'll take care of this later. Your app now contains the basic 
-infrastructure it needs to retrieve a guestbook's entries, but it still can't 
-display them. This is addressed in the sections that follow. 
+Don't worry about the errors for `MainActivity.EntriesFragment` and 
+`reloadEntries`. You'll take care of this in a moment. Your app now contains the 
+basic infrastructure it needs to retrieve a guestbook's entries, but it still 
+can't display them. This is addressed in the sections that follow. 
 
 ## Creating an Adapter
 
@@ -235,7 +235,7 @@ that the message text is set larger (`20sp` vs `12sp`). Since screen space is
 limited, this lets the message dominate while still showing who left it. Switch 
 to design view to see the layout's preview with the placeholder text.
 
-![Figure 1: A preview of each entry's layout.](../../images/android-entry-preview.png)
+![Figure 2: A preview of each entry's layout.](../../images/android-entry-preview.png)
 
 Now you need to create an adapter class. The adapter class uses the layout to 
 render each `EntryModel` object retrieved from a guestbook in the portlet. 
@@ -305,11 +305,8 @@ that makes the call to the portlet and displays the entries in the app.
 ## Displaying Entries
 
 To display the entries in the UI, you first need to create variables for holding 
-the entries and the adapter. Add the following variable to `MainActivity`:
-
-    public static List<EntryModel> _entries = new ArrayList<EntryModel>();
-
-Also in `MainActivity`, scroll down until you find the nested 
+the entries and the adapter. First though, you should understand where you'll 
+put them. In `MainActivity`, scroll down until you find the nested 
 `PlaceholderFragment` class. Android Studio created this class when you created 
 the activity from the Navigation Drawer Activity template. You're expected to 
 use `PlaceholderFragment` to display the drawer selection. Each drawer selction 
@@ -317,9 +314,109 @@ in your app is a guestbook, so you'll use `PlaceholderFragment` to display the
 selected guestbook's entries. First though, you should change its name. Right 
 click `PlaceholderFragment` in the class declaration and select 
 *Refactor* &rarr; *Rename* in the context menu. Type `EntriesFragment` and then 
-hit *Enter*. Add the following variable in `EntriesFragment`:
+hit *Enter*. Add the following variables in `EntriesFragment`:
 
+    public List<EntryModel> _entries = new ArrayList<EntryModel>();
     private EntriesAdapter _adapter;
 
 Now that you have variables for the guestbook entries and the adapter, you can 
-create the `reloadEntries` method.
+create the `reloadEntries` method. Place this method in the `EntriesFragment` 
+class: 
+
+    public void reloadEntries(List<EntryModel> entries) {
+      _entries.clear();
+      _entries.addAll(entries);
+    
+      _adapter.notifyDataSetChanged();
+    }
+    
+Next, add the `getEntries` method in the `EntriesFragment` class: 
+
+    protected void getEntries(long guestbookId) {
+    
+      Session session = new SessionImpl("http://10.0.2.2:8080", 
+        new BasicAuthentication("joebloggs@liferay.com", "test"));
+      GetEntriesCallback callback = new GetEntriesCallback(this);
+      session.setCallback(callback);
+      EntryService service = new EntryService(session);
+    
+      try {
+        service.getEntries(SITE_ID, guestbookId);
+      }
+      catch (Exception e) {
+        String message = "Couldn't get entries " + e.getMessage();
+    
+        Toast.makeText(this.getActivity(), message, Toast.LENGTH_LONG).show();
+      }
+    }
+
+Now replace the contents of `onCreateView` in `EntriesFragment` with the 
+following code:
+
+    ListView entriesListView = (ListView) inflater.inflate(R.layout.fragment_main, container, false);
+    _adapter = new EntriesAdapter(this.getActivity(), _entries);
+    entriesListView.setAdapter(_adapter);
+    return entriesListView;
+
+You also need to make some changes to `fragment_main.xml`. Change 
+`RelativeLayout` to `ListView`, and delete the `TextView` inside of it. Great! 
+Now you're ready to make the calls to retrieve guestbook entries. You'll do this 
+in the `MainActivity` class. First, you need a reference to `EntriesFragment`. 
+Add the following variable to `MainActivity`:
+
+    private EntriesFragment mEntriesFragment;
+
+Next, add the following code to the end of the `reloadGuestbooks` method: 
+
+    GuestbookModel guestbook = _guestbooks.get(0);
+    mTitle = guestbook.getGuestbookName();
+    restoreActionBar();
+    
+    mEntriesFragment.getEntries(guestbook.getGuestbookId());
+    
+This gets the entries for the first guestbook in the list when the app first 
+starts up. It begins by setting the guestbook's name as the action bar's title 
+using the `restoreActionBar()` method. The `getEntries` method then makes the 
+call to retrieve the entries for that guestbook. 
+
+Next, replace the contents of the `onNavigationDrawerItemSelected` method with 
+the following code:
+
+    FragmentManager fragmentManager = getSupportFragmentManager();
+    mEntriesFragment = EntriesFragment.newInstance(position + 1);
+    fragmentManager.beginTransaction().replace(R.id.container, mEntriesFragment).commit();
+    
+    if(_guestbooks.size() > 0) {
+      GuestbookModel guestbook = _guestbooks.get(position);
+      mEntriesFragment.getEntries(guestbook.getGuestbookId());
+    }
+
+This code is called whenever a guestbook is selected in the drawer. The 
+`FragmentManager` transaction replaces the existing `EntriesFragment` with a new 
+one that corresponds with the selected guestbook. The `getEntries` method then 
+retrieves the selected guestbook's entries.
+
+Now you need to get rid of the hardcoded `"Section *"` strings that are set to 
+the action bar title. This is done in the `onSectionAttached` method. Replace 
+its contents with the following code: 
+
+    if (_guestbooks.size() > 0) {
+      mTitle = _guestbooks.get(number - 1).getGuestbookName();
+    } else {
+      mTitle = "";
+    }
+
+As long as there is a guestbook in the list, this code sets the action bar's 
+title to its name. Otherwise, an empty string is used. That's it! Make sure your 
+portal is running and then run the app. The entries now show up when a guestbook 
+is selected in the drawer.
+
+![Figure 3: The entries for the selected guestbook now display in your app.](../../images/android-guestbook-entries.png)
+
+Congratulations! Up to this point, you've successfully built the Liferay Mobile 
+SDK and used it in an Android app to to retrieve and display a custom portlet's 
+entities. That's all the app does though: display the entities. Mobile users 
+want more in an app though. They want to be able to do all or most of the things 
+they can do in the portlet. In the next series of articles in this learning 
+path, you'll add the functionality to let users add, update, and delete 
+guestbooks and entries.
