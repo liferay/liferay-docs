@@ -240,17 +240,17 @@ Environment tokens allow clients to connect automatically to environments in LCS
 without requiring any user interaction. For example, for users to connect to 
 LCS, they must first manually configure the client portlet to connect to an 
 environment. The previous article of this guide covers this process. To bypass 
-the need for manual client configuration, you can generate and distribute an 
-environment token file. This token contains all the information the client needs 
-to connect to that environment on LCS. It's important to note that each 
-environment can have only one token file. You should also use caution when 
-distributing it to your project's users. Anyone with the token file can use it 
-to connect to your environment. Administrators should also use caution when 
+the need for manual client configuration, LCS Administrators and Environment 
+Managers can generate and distribute an environment token file. This token 
+contains all the information the client needs to connect to that environment on 
+LCS. It's important to note that each environment can have only one token file. 
+You should also use caution when distributing it. Anyone with the token file can 
+use it to connect to your environment. You should also use caution when 
 regenerating or otherwise removing a token file from LCS. When this is done, 
 clients using the file can't connect until receiving the new file. The only 
 alternative is to use the administrator's own credentials to manually connect 
 the client. Once the client reconnects, it's once again linked to the client's 
-existing archive data in LCS.
+existing archive data in LCS. 
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
 the setup process for your users, using environment tokens is valuable in 
@@ -280,7 +280,44 @@ same.
 
 ![Figure 4.22: The Subscriptions tab on the left lets you manage the environment tokens for your entire project.](../../images/lcs-subscriptions.png)
 
-<!-- Information needed on using the token file -->
+Once you have an environment token, use it with the following steps to register 
+a previously unregistered Liferay instance with LCS:
+
+1. Place the token file in your portal's `data` folder.
+
+2. Deploy the LCS client portlet to your portal. If the portlet is bundled with 
+   your portal installation, start up the portal.
+   
+3. Once its deployment completes, the LCS client portlet connects automatically 
+   to LCS. You should see this in your LCS project's environment view.
+   
+When using an environment token, minimal information (server name, location, 
+etc...) is used to register a portal instance with LCS. You can change this 
+information from the server view in LCS at any time. Also, since environment 
+tokens connect using OAuth, it's important to note that using an environment 
+token overrides the portal instance's OAuth authorization cycle. If a portal 
+instance has never been registered with LCS, an OAuth authorization entry is 
+created and is visible in the portal instance's 
+*My Account* &rarr; *OAuth Authorizations* menu. If the LCS Administrator or 
+Environment Manager has previously registered portal instances with LCS, then 
+their existing credentials are used to create the token file. 
+
+![Figure 4.23: The OAuth authorization entry in the portal instance using an environment token to connect to LCS.](../../images/lcs-token-oauth-entry.png)
+
+What if your Liferay instance has already been manually registered with LCS, but 
+you want to switch to using an environment token? No problem! Just use the 
+following steps: 
+
+1. Use the LCS client portlet to disconnect and reset the credentials in the 
+   Liferay instance. Then press the *Back* button to the left of the Control 
+   Panel text in the Dockbar. Pressing *Back* deletes the current OAuth 
+   credentials. 
+
+2. Shut down your Liferay instance and place the token file in the portal's 
+   `data` folder. 
+
+3. Restart your Liferay instance. The LCS client portlet uses the token file to 
+   automatically connect to LCS. 
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
 your Liferay servers. You can apply fix packs with just a single click and a 
