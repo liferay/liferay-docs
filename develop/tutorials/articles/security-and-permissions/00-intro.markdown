@@ -1,4 +1,4 @@
-# Roles and Permissions [](id=roles-and-permissions)
+# Security and Permissions
 
 The Java portlet standard defines a simple security scheme using portlet roles 
 and their mapping to portal roles. On top of this, Liferay provides a 
