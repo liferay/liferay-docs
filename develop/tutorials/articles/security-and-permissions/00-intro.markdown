@@ -3,9 +3,9 @@
 The Java portlet standard defines a simple security scheme using portlet roles 
 and their mapping to portal roles. On top of this, Liferay provides a 
 fine-grained permissions system that you can use to implement access security 
-in your custom portlets. Here, you'll get an overview of the standard Java 
-security system, Liferay's permission system, and how to use them in your own 
-portlets. 
+in your custom portlets. Here, you'll find an overview of the standard Java
+security system, Liferay's permission system, you'll learn how to use them in
+your own portlets.
 
 This section's tutorials cover the following topics: 
 
