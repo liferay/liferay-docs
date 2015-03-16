@@ -25,7 +25,7 @@ organizations, or user groups.
 Developers need to define the different types of operations that are required to
 suit the business logic of their applications. They don't need to worry about
 which users will receive which permissions. Once the actions have been
-identified and configured, portal administrators can grant permissions to
+determined and configured, portal administrators can grant permissions to
 perform those actions to users, sites, organizations, or user groups by
 assigning roles. Administrators can either use the portal's administration tools
 to grant permissions to roles or they can use the permissions UIs of individual
@@ -61,9 +61,9 @@ There are two kinds of resources in Liferay: *portlet resources* and *model
 resources*. Portlet resources represents portlets. The names of portlet
 resources are the numeric IDs of the portlets they represent. Model resources
 refer to entities within Liferay. The names of model resources are the fully
-qualified names of the entities they represent. In the XML displayed below,
-permission implementations are first defined for the *portlet* resource and then
-for the *model* resources. 
+qualified class names of the entities they represent. In the XML displayed
+below, permission implementations are first defined for the *portlet* resource
+and then for the *model* resources. 
 
 +$$$
 
@@ -223,36 +223,43 @@ following mapping of resources to actions:
     </resource-action-mapping>
 
 The `<portlet-resource>` tag is used to define actions that can be taken with
-respect to the Calendar portlet window. Such actions include adding the portlet
-to a page, viewing the portlet, and accessing its Configuration window. Changes
-to portlet level permissions are performed on a per-site basis. All these
-actions are defined in the `<supports>` tag for the portlet resource's
-permissions. The default portlet-level permissions for members of the site are
-defined in the `<site-member-defaults>` tag. In the case of the Calendar
-portlet, site members can view any calendar in the site. Similarly, default
-guest permissions are defined in the `<guest-defaults>` tag. Guests can also
-view any Calendar in the site. The `<guest-unsupported>` tag contains
-permissions forbidden to guests. Here, guests can't be given permission to
-access the portlet in the Control Panel, add the portlet to a page, or configure
-the portlet. 
+respect to the Calendar portlet window. Such actions include the following
+ones:
+
+- *Access* the portlet in the Control Panel
+- *Add* the portlet to a page
+- *View* the portlet
+- *Access* the portlet's Configuration window
+
+All of the supported actions are defined in the `<supports>` tag for the portlet
+resource's permissions. The default portlet-level permissions for members of the
+site are defined in the `<site-member-defaults>` tag. In the case of the
+Calendar portlet, site members can view any calendar in the site. Similarly,
+default guest permissions are defined in the `<guest-defaults>` tag. Guests can
+also view any Calendar in the site. The `<guest-unsupported>` tag specifies
+permissions forbidden to guests. For the Calendar portlet, guests can't be given
+permission to access the portlet in the Control Panel, add the portlet to a
+page, or configure the portlet. 
 
 The `<model-resource>` tag is used to define actions that can be performed with
 respect to models, a.k.a. entities. There are two kinds of such actions in
 Liferay: *top-level actions* and *resource actions*. Top-level actions are not
-applied to a particular entity. They can be used, however, to create new
-entities. The first `<model-resource>` tag (the one that has the
+applied to a particular resource. For example, the action of adding a new entity
+is not applied to a particular resource so it's considered a top-level action.
+The first `<model-resource>` tag (the one that has the
 `<model-name>com.liferay.calendar</model-name>` inner tag) defines adding a
 Calendar resource as a top-level action. (Note: A Calendar resource represents
 something that can be used when booking Calendar events. E.g., a Calendar
 resource could be a room or a projector. A Calendar resource is a completely
-separate concept from a permissions resource.) The third through fifth
+separate concept from a permissions resource.) The second through fourth
 `<model-resource>` tags define resource actions that can be applied to the
 `Calendar`, `CalendarBooking`, and `CalendarResource` entities. E.g., the
 `DELETE`, `UPDATE`, and `VIEW` permissions are defined with respect to the
-`Calendar` entity. The `ADD_DISCUSSION`, `DELETE_DISCUSSION`, and
-`UPDATE_DISCUSSION` permissions are defined with respect to the
-`CalendarBooking` entity. And the `DELETE`, `UPDATE`, and `VIEW` permissions are
-defined with respect to the `CalendarResource` entity.
+resource associated with the `Calendar` entity. The `ADD_DISCUSSION`,
+`DELETE_DISCUSSION`, and `UPDATE_DISCUSSION` permissions are defined with
+respect to the resource associated with the `CalendarBooking` entity. And the
+`DELETE`, `UPDATE`, and `VIEW` permissions are defined with respect to the
+resource associated with the `CalendarResource` entity.
 
 Inside of each `<model-resource>` tag, notice that the model name must be
 defined. The `<model-name>` must be either the fully-qualified name of a package
@@ -277,9 +284,10 @@ do the following:
 - *View* a calendar 
 - *View the bookings (events)* of a calendar
 
-As with a portlet resource, the `<site-member-defaults>` tag, `<guest-defaults>`
-tag, and `<guest-unsupported>` tag define default permissions for site members
-and guests, respectively, for *model resources*. 
+For *model resources*, as for portlet resources, the `<site-member-defaults>`
+tag and the `<guest-defaults>` tags define default permissions for site members
+and guests, respectively. And the `<guest-unsupported>` tag specifies
+permissions forbidden to guests.
 
 After defining resource permissions for your custom portlet, you need to point
 Liferay to the `resource-actions` XML file that contains your definitions. This
@@ -303,21 +311,23 @@ resource permission definition files for all built-in Liferay portlets:
         ...
     </resource-action-mapping>
 
-You should put your plugin's `resource-actions` XML file (it should be called
-`default.xml`) in a directory in your project's classpath. Then create a
-properties file named `portlet.properties` for your portlet that references the
-file that specifies your `<resource-action-mapping>` element (e.g.
-`default.xml`). In your `portlet.properties` file, create a property named
+Your plugin's permissions XML file should be named `default.xml` and should be
+placed in a directory in your project's classpath.
+`docroot/WEB-INF/src/resource-actions` is the standard location. Once your
+project's `default.xml` file has been created, you should create a properties
+file named `portlet.properties` that contains a reference to your permissions
+XML file. In your `portlet.properties` file, create a property named
 `resource.actions.configs` with the relative path to your portlet's
 resource-action mapping file (e.g. `default.xml`) as its value. Here's what this
 property specification might look like: 
 
     resource.actions.configs=resource-actions/default.xml
 
+Your permissions XML file must contain a root `resource-action-mapping` element.
 Check out a copy of the Liferay source code from the
 [Liferay Portal repository](https://github.com/liferay/liferay-portal)
-to see an example of a portlet that defines its resources and permissions as
-described above. Start by looking at the definition files found in the
+to see how resources and permissions are defined for core Liferay portlets.
+Start by looking at the definition files found in the
 `portal-impl/src/resource-actions` directory. For a simple example of defining
 permissions in the context of a portlet plugin, check out the
 [Liferay Plugins repository](https://github.com/liferay/liferay-plugins)
