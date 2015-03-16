@@ -1,10 +1,10 @@
 # Using Portal Roles in a Portlet [](id=using-portal-roles-in-a-portlet)
 
 "A role, a role, my portal for a role!" Don't worry, using portal roles in your
-portlets isn't too difficult. Roles in Liferay Portal are the key means for
-granting or restricting access to content. As such, portlet developers require a
-means for making use of portal roles in their portlets. This tutorial covers
-those means. Read on to learn how!
+portlets isn't too difficult. Roles in Liferay Portal are the primary means for
+granting or restricting access to content. When a role is assigned to a user,
+the user is granted all of the permissions that have been defined for the role.
+Read on to learn how to use portal roles in your application!
 
 ## JSR 286 Portlet Security
 
