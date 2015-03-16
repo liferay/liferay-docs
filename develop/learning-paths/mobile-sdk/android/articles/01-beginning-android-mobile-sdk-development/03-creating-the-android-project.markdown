@@ -81,10 +81,11 @@ also be more than one fragment per activity. In this case, the Guestbook app's
 drawer and main views are fragments. Google describes fragments in detail [here](http://developer.android.com/guide/components/fragments.html). 
 Layouts determine how UI components are positioned in a fragment or activity. 
 For example, an app may have a series of buttons that are positioned 
-horizontally across the bottom of the screen. The buttons can be placed in 
-Android's `LinearLayout` to accomplish this. Layouts are typically specified in 
-`xml` files, with one file for each activity or fragment. For more information 
-on layouts, see Android's [documentation](http://developer.android.com/guide/topics/ui/declaring-layout.html). 
+horizontally across the bottom of the screen. To accomplish this, the buttons 
+can be placed in Android's `LinearLayout` with its `android:orientation` 
+attribute set to `horizontal`. Layouts are typically specified in `xml` files, 
+with one file for each activity or fragment. For more information on layouts, 
+see Android's [layout documentation](http://developer.android.com/guide/topics/ui/declaring-layout.html). 
 
 ![Figure 4: The final screen of Android Studio's Create New Project wizard.](../../images/android-studio-new-project-04.png)
 
