@@ -3,37 +3,51 @@
 Liferay provides a system that allows you to implement permissions for your 
 custom portlets. The first step in implementing permissions is to define all 
 resources and their permissions. Once you've done this, you're ready to register 
-these resources in the permissions system. This is also known as adding 
-resources.
+these resources in the permissions system. This step is also known as adding
+resources and is the **R** in the **DRAC** acronym:
 
-This tutorial discusses both adding and deleting resources. Liferay's Blogs 
-portlet is used as an example. You can find it in Liferay's source code on 
-[Github](https://github.com/liferay/liferay-portal). Read on to find out how to 
-add and delete resources!
+1. **D**efine all resources and their permissions.
 
-+$$$
+2. **R**egister all defined resources in the permissions system.
 
- **Note:** *Resource* is a generic term for any object represented in the 
- portal. Examples of resources include portlets (e.g. Message Boards, Calendar, 
- etc.), Java classes (e.g. Message Board Topics, Calendar Events, etc.), and 
- files (e.g.  documents, images, etc.). 
+3. **A**ssociate the necessary permissions with resources.
 
-$$$
+4. **C**heck permission before returning resources.
 
-+$$$
+This tutorial discusses both adding and deleting resources. Liferay's Calendar
+portlet is used as an example. You can find it in the Liferay Plugins repository
+here:
+[Liferay Calendar portlet](https://github.com/liferay/liferay-plugins/tree/master/portlets/calendar-portlet).
+Read on to find out how to add and delete resources!
 
- **Note:** *Permission* is an action on a resource. For example, the *view* 
- action with respect to *viewing the calendar portlet* is defined as a 
- permission in Liferay.
+Before proceeding, make sure you understand these critical terms:
 
-$$$
+- *Action*: An operation that can be performed by a portal user. E.g., actions
+  that be performed on the Calendar portlet include `ADD_TO_PAGE`,
+  `CONFIGURATION`, and `VIEW`. Actions that can be performed on a Calendar
+  entity include `DELETE`, `UPDATE`, and `VIEW`. 
+
+- *Resource*: A generic representation of any portlet or entity in the portal on
+  which an action can be performed. Resources are used for permission checking.
+  E.g., resources within a Liferay portal instance could include the RSS portlet
+  with instance ID `hF5f`, a globally scoped Wiki page, a Calendar event of the
+  site X, and the message board post with ID `5052`.
+
+- *Permission*: An action that can be performed on a resource. In Liferay's
+  database, resources and actions are saved in pairs. (Each entry in the
+  `ResourceAction` table contains both the name of a portlet or entity and the
+  name of an action.) For example, the `VIEW` action with respect to *viewing
+  the Calendar portlet* is associated with the `1_WAR_calendarportlet` portlet
+  ID. The `VIEW` actions with respect to *viewing a Calendar* or *viewing a
+  Calendar event* are associated with the `com.liferay.calendar.model.Calendar`
+  and `com.liferay.calendar.model.Calendar` entities, respectively.
 
 ## Adding a Resource 
 
-Resources are added at the same time entities are added to the database. 
-Managing resources follows the same pattern you've seen throughout Liferay: 
-there's a service to use. Adding resources is as easy as calling the 
-`addResources(...)` method of Liferay's `ResourceLocalServiceUtil` class. Here's 
+Resources should be added at the same time entities are added to the database.
+Due to Liferay's service-oriented architecture, you must invoke Liferay service
+methods to manage Liferay resources. Adding resources is as easy as calling the
+`addResources(...)` method of Liferay's `ResourceLocalServiceUtil` class. Here's
 the signature of that method: 
 
     public void addResources(
@@ -41,11 +55,10 @@ the signature of that method:
         String primKey, boolean portletActions,
         boolean addGroupPermissions, boolean addGuestPermissions)
 
-Each entity that requires access permission must be added as a resource every 
-time it is stored. For example, every time a user adds a new entry to their 
-blog, the `addResources(...)` method must be called to add the new entry object 
-to the resource system. Here's an example of the call from the Blogs portlet's 
-`BlogsEntryLocalServiceImpl` class: 
+Each entity that requires access permission must be added as a resource. For
+example, every time a user adds a new blog entry, the `addResources(...)` method
+must be called to add the new entry object to the resource system. Here's an
+example of the call from the Blogs portlet's `BlogsEntryLocalServiceImpl` class: 
 
     resourceLocalService.addResources(
         entry.getCompanyId(), entry.getGroupId(), entry.getUserId(),
