@@ -11,30 +11,38 @@ Read on to learn how to use portal roles in your application!
 The JSR 286 portlet specification defines a means to specify roles used by
 portlets in their `docroot/WEB-INF/portlet.xml` descriptors. The role names
 themselves, however, are not standardized. When these portlets run in Liferay,
-you'll recognize familiar role names. For example, the Liferay Calendar
-`portlet.xml` definition references the *guest*, *power-user*, and *user* roles: 
+you'll recognize familiar role names. For example, consider the Guestbook
+project:
+[Guestbook Project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/learning-paths/mvc/code/learning-sdk/portlets/guestbook-portlet).
+The Guestbook project is the sample project that you create by
+following the steps of Liferay's
+[Learning Paths](https://dev.liferay.com/develop/learning-paths).
+The Guestbook project contains two portlets: The Guestbook portlet and the
+Guestbook Admin portlet. Notice that Guestbook project's `portlet.xml` file
+references the *administrator*, *guest*, *power-user*, and *user* roles: 
+
+    <?xml version="1.0"?>
+    <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
 
     <portlet>
-        <portlet-name>1</portlet-name>
-        <display-name>Calendar</display-name>
-        <portlet-class>com.liferay.calendar.portlet.CalendarPortlet</portlet-class>
-        <init-param>
-            <name>copy-request-parameters</name>
-            <value>true</value>
-        </init-param>
+        <portlet-name>guestbook</portlet-name>
+        <display-name>Guestbook</display-name>
+        <portlet-class>
+            com.liferay.docs.guestbook.portlet.GuestbookPortlet
+        </portlet-class>
         <init-param>
             <name>view-template</name>
-            <value>/view.jsp</value>
+            <value>/html/guestbook/view.jsp</value>
         </init-param>
         <expiration-cache>0</expiration-cache>
         <supports>
             <mime-type>text/html</mime-type>
+            <portlet-mode>view</portlet-mode>
         </supports>
-        <resource-bundle>content.Language</resource-bundle>
         <portlet-info>
-            <title>Calendar</title>
-            <short-title>Calendar</short-title>
-            <keywords>Calendar</keywords>
+            <title>Guestbook</title>
+            <short-title>Guestbook</short-title>
+            <keywords></keywords>
         </portlet-info>
         <security-role-ref>
             <role-name>administrator</role-name>
@@ -46,13 +54,46 @@ you'll recognize familiar role names. For example, the Liferay Calendar
             <role-name>power-user</role-name>
         </security-role-ref>
         <security-role-ref>
-           <role-name>user</role-name>
+            <role-name>user</role-name>
+        </security-role-ref>
+    </portlet>
+    <portlet>
+        <portlet-name>guestbook-admin</portlet-name>
+        <display-name>Guestbook Admin</display-name>
+        <portlet-class>
+            com.liferay.docs.guestbook.portlet.GuestbookAdminPortlet
+        </portlet-class>
+        <init-param>
+            <name>view-template</name>
+            <value>/html/guestbookadmin/view.jsp</value>
+        </init-param>
+        <expiration-cache>0</expiration-cache>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>view</portlet-mode>
+        </supports>
+        <portlet-info>
+            <title>Guestbook Admin</title>
+            <short-title>Guestbook Admin</short-title>
+            <keywords></keywords>
+        </portlet-info>
+        <security-role-ref>
+            <role-name>administrator</role-name>
+        </security-role-ref>
+        <security-role-ref>
+            <role-name>guest</role-name>
+        </security-role-ref>
+        <security-role-ref>
+            <role-name>power-user</role-name>
+        </security-role-ref>
+        <security-role-ref>
+            <role-name>user</role-name>
         </security-role-ref>
     </portlet>
 
 Your `portlet.xml` roles need to be mapped to specific roles in the portal.
-That way the portal can resolve conflicts between roles with the same name that
-are from different portlets (e.g. portlets from different developers). 
+These mappings allow the portal to resolve conflicts between roles with the same
+name that are from different portlets (e.g. portlets from different developers). 
 
 +$$$
 
@@ -65,8 +106,8 @@ $$$
 
 To map the roles to the portal, you'll have to use the
 `docroot/WEB-INF/liferay-portlet.xml` Liferay-specific configuration file. For
-an example, see the mapping defined in the Calendar portlet's
-`liferay-portlet.xml` file. Many Liferay portlets use identical role mappings.
+an example, see the mapping defined in the Guestbook project's
+`liferay-portlet.xml` file. Many Liferay projects use identical role mappings.
 
     <role-mapper>
         <role-name>administrator</role-name>
