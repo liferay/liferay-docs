@@ -1,7 +1,8 @@
 # Setting up the Guestbook Portlet
 
 You need to set up a few things before you can begin developing the Guestbook 
-Android app. This article walks you through the setup with the following steps:
+app for Android. This article walks you through this setup with the following 
+steps:
 
 1. Installing the Java Development Kit (JDK)
 2. Installing and Configuring a Local Liferay Instance
@@ -26,7 +27,7 @@ recommend creating a `bundles` directory and unzipping it there. The bundle's
 root directory is referred to as *Liferay Home* and is named according to the 
 version, edition, and specific Liferay release. For example, if you downloaded 
 Liferay Portal 6.2 CE GA3 and unzipped it to a `bundles` directory on your 
-machine, then the path of the bundle's Liferay Home directory is:
+machine, then the path of that bundle's Liferay Home directory is:
 
     bundles/liferay-portal-6.2-ce-ga3
 
@@ -41,10 +42,10 @@ Tomcat `bin` directory in this example is:
     
 When you get to this directory, run `startup` if you're on Windows, or 
 `./startup.sh` if you're on Mac or Linux. If you're on Mac or Linux you should 
-also run `tail -f ../logs/catalina.out` immediately following the `./startup.sh` 
-command. This ensures that the server log prints in the terminal window. This 
-step isn't necessary on Windows because the server log opens in another window 
-automatically.
+also run `tail -f ../logs/catalina.out` immediately after the `./startup.sh` 
+command executes. This ensures that the server log prints in the terminal 
+window. This step isn't necessary on Windows because the server log opens in 
+another window automatically.
 
 After a minute or two, Liferay finishes starting up and should automatically 
 take you to its initial setup page at [http://localhost:8080](http://localhost:8080). 
@@ -61,8 +62,8 @@ click *Go to My Portal* and accept the license agreement. Then set a password
 and a password reminder query for your administrative user. You're then taken to 
 the default site of your portal. 
 
-Great! Now there's just one thing left to do: deploy the Guestbook portlet to 
-the Liferay instance you just set up.
+Great! Now there's just one more thing left to do: deploy the Guestbook portlet 
+to the Liferay installation you just set up. 
 
 ## Deploying the Guestbook Portlet
 
@@ -75,12 +76,12 @@ deployed. On the default site of your portal, click the + icon on the left side
 of the screen and then click *Applications* at the top of the menu that slides 
 out. Open the *Sample* category and drag *Guestbook* onto the page. The 
 Guestbook portlet should now appear with the default *Main* guestbook. Add a new 
-guestbook and an entry or two to each. When you create the Guestbook Android 
-app, this ensures that there is some content to display in it. The Guestbook 
-portlet on your site should now look something like this: 
+guestbook in the portlet and an entry or two to each. When you create the 
+Guestbook Android app, this ensures there's some content to display in it. The 
+Guestbook portlet on your site should now look something like this: 
 
 ![Figure 1: The Guestbook portlet, with a new guestbook and some entries.](../../images/guestbook-portlet-01.png)
 
-Stupendous! You've successfully set up a Liferay instance and added the 
+Stupendous! You've successfully set up a Liferay installation and added the 
 Guestbook portlet to it. Now you're ready to get started with the Liferay Mobile 
 SDK.
