@@ -10,12 +10,13 @@ with an empty screen. Also, the action bar's title is still hardcoded with the
 
 ![Figure 1: Guestbook entries aren't showing yet in the app.](../../images/android-entries-empty.png)
 
-This article walks you through the steps required to add the functionality that 
-retrieves guestbook entries from the portal. These steps follow the same basic 
-pattern used to retrieve and display guestbooks. For this reason, the concepts 
-behind the steps aren't explained in detail here. Refer to the previous two 
-articles of this learning path for such an explanation. As you did when you 
-wrote the code to retrive guestbooks from the portal, you'll begin here by 
+This article walks you through the steps required to retrieve and display 
+guestbook entries from the portal. As you did to display guestbooks, you'll use 
+`ListView` to display entries in a list. The steps in this article follow the 
+same basic pattern you used to retrieve and display guestbooks. For this reason, 
+the concepts behind the steps aren't explained in detail here. Refer to this 
+learning path's previous two articles for such an explanation. As you did when 
+you wrote the code to retrive guestbooks from the portal, you'll begin here by 
 encapsulating the objects being retrieved. 
 
 ## Encapsulating the Entries
@@ -193,14 +194,15 @@ Remember a couple articles ago when you first displayed the guestbooks in the
 drawer? They appeared as literal strings of `GuestbookModel` objects. That was a 
 bummer. Since you already know why that happened and how to fix it, there's no 
 need to repeat the same mistake here. You need to create a custom adapter for 
-the `EntryModel` objects so they display properly in your app (just as you did 
-for the `GuestbookModel` objects). 
+the `EntryModel` objects so they display properly in your app, just as you did 
+for the `GuestbookModel` objects. Remember that this adapter formats each item 
+for display in the list.
 
-Creating a layout file is the first step in creating an adapter. Right click the 
-`res/layout` directory and select *New* &rarr; *Layout resource file*. In the 
-dialog that appears, name the file `item_entry.xml`. Accept the defaults for 
+Creating a layout file is the first step in creating this adapter. Right click 
+the `res/layout` directory and select *New* &rarr; *Layout resource file*. In 
+the dialog that appears, name the file `item_entry.xml`. Accept the defaults for 
 the remaining fields and click *OK*. When the new file opens, click the *Text* 
-tab to switch to its text view. Replace its contents with the following code:
+tab to switch to its text view. Replace its contents with the following code: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -341,7 +343,7 @@ class:
       _adapter.notifyDataSetChanged();
     }
 
-Next, you need a method for initiating the call to retrive the entries from the 
+Next, you need a method for making the call to retrive the entries from the 
 portlet. Recall that you retrieved guestbooks with the `getGuestbooks` method. 
 You'll retrieve the entries simliarly with the `getEntries` method. Add it as 
 follows to the `EntriesFragment` class: 
@@ -364,35 +366,43 @@ follows to the `EntriesFragment` class:
       }
     }
 
-You now need to make some changes to how the layout of `EntriesFragment` is 
-processed and rendered. This layout is defined in `fragment_main.xml`. It's 
-important to note that this layout is different than the one you defnied for the 
-entries adapter. The entries adapter layout defines a single entry's appearance, 
-while `fragment_main.xml` defnies the appearance of `EntriesFragment` as a 
-whole. As such, you need to change `fragment_main.xml` to use `ListView`. 
-Begin by replacing the contents of `onCreateView` in `EntriesFragment` with the 
-following code:
+As with the `getGuestbooks` method, `getEntries` creates a session, sets the 
+session's callback, creates a service object, and then makes the call to the 
+portlet. The only difference is that `getEntries` takes a guestbook's ID as a 
+parameter, which it then uses to request that guestbook's entries. 
+
+Before using `getEntries`, you need to make some changes to how the layout of 
+`EntriesFragment` is processed and rendered. This layout is defined in 
+`fragment_main.xml`. It's important to note that this layout is different than 
+the one you defnied for the entries adapter. The entries adapter layout defines 
+a single entry's appearance, while `fragment_main.xml` defines the appearance of 
+all the entries on the screen. Since you want the entries to appear in a list, 
+you need to change `fragment_main.xml` to use `ListView`. Begin by replacing the 
+contents of `onCreateView` in `EntriesFragment` with the following code:
 
     ListView entriesListView = (ListView) inflater.inflate(R.layout.fragment_main, container, false);
     _adapter = new EntriesAdapter(this.getActivity(), _entries);
     entriesListView.setAdapter(_adapter);
     return entriesListView;
 
-Next, open `fragment_main.xml` and change `RelativeLayout` to `ListView`. You 
-should also delete its `TextView`. Awesome! Now you're ready to put `getEntries` 
-to work! As with `getGuestbooks`, this is done from the `MainActivity` class. 
-First, get a reference to `EntriesFragment` by defining the following variable 
-in `MainActivity`: 
+This casts the layout to a `ListView` upon inflation. An adapter is then created 
+with the entries and set as the underlying data source for the `ListView`, which 
+is then returned. Next, open `fragment_main.xml` and change `RelativeLayout` to 
+`ListView`. You should also delete its `TextView`. 
+
+Awesome! Now you're ready to put `getEntries` to work! As with `getGuestbooks`, 
+this is done from the `MainActivity` class. First, get a reference to 
+`EntriesFragment` by defining the following variable in `MainActivity`: 
 
     private EntriesFragment mEntriesFragment;
 
-There are two places where you need to call `getEntries`: the `reloadGuestbooks` 
-and `onNavigationDrawerItemSelected` methods. The `getEntries` method needs to 
-be called in `reloadGuestbooks` so the entries of the first guestbook in the 
-list are displayed when the app first starts up. This is done independent of any 
-user interaction with the drawer. Also in `reloadGuestbooks`, you should set the 
-action bar's title to this guestbook's name. Add the following code to the end 
-of `reloadGuestbooks`: 
+There are two situations in which your app needs to call `getEntries`: on 
+startup, and when a guestbook is manually selected from the drawer. On startup, 
+your app defaults to show the first guestbook's entries. Therefore, `getEntries` 
+needs to be called with the first guestbook retrieved from the portlet. This 
+needs to be done in the `reloadGuestbooks` method. This method is also where you 
+should set the action bar's title to this guestbook's name. Add the following 
+code to the end of `reloadGuestbooks`: 
 
     GuestbookModel guestbook = _guestbooks.get(0);
     mTitle = guestbook.getGuestbookName();
@@ -400,15 +410,15 @@ of `reloadGuestbooks`:
     
     mEntriesFragment.getEntries(guestbook.getGuestbookId());
     
-After getting the first guestbook, this code sets the action bar title variable 
-`mTitle` to the guestbook's name. This change is then processed by 
+This code gets the first guestbook in the list and sets the action bar title 
+variable `mTitle` to the guestbook's name. This change is then processed by 
 `restoreActionBar()`. The `getEntries` method then makes the call to retrieve 
 the guestbook's entries. 
 
-Since `onNavigationDrawerItemSelected` is called whenever a guestbook is 
-selected from the drawer, it also needs to contain a call to `getEntries` for 
-the selected guestbook. Replace the contents of `onNavigationDrawerItemSelected` 
-with the following code: 
+When the user manually selects a guestbook from the drawer, the 
+`onNavigationDrawerItemSelected` method is called. This method therefore needs 
+to contain a `getEntries` call with the selected guestbook's ID. Replace the 
+contents of `onNavigationDrawerItemSelected` with the following code: 
 
     FragmentManager fragmentManager = getSupportFragmentManager();
     mEntriesFragment = EntriesFragment.newInstance(position + 1);
@@ -425,9 +435,10 @@ managing fragments, see [that section of Android's fragment documentation](http:
 The new `EntriesFragment` instance is then used with `getEntries` to retrieve 
 the selected guestbook's entries, provided there are guestbooks in the list. 
 
-There's just one more thing left to do! You need to get rid of the hardcoded 
-`"Section *"` strings that are set to the action bar's title. This is done in 
-the `onSectionAttached` method. Replace its contents with the following code: 
+Now there's just one more thing left to do! You need to get rid of the hardcoded 
+`"Section *"` strings that are set to the action bar's title when a guestbook is 
+selected in the drawer. This is done in the `onSectionAttached` method. Replace 
+its contents with the following code: 
 
     if (_guestbooks.size() > 0) {
       mTitle = _guestbooks.get(number - 1).getGuestbookName();
