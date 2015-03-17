@@ -1,13 +1,4 @@
-# Configuring CDI for JSF Portlets
-
-<!-- Explain what CDI is, the benefits of using it and any drawbacks to using
-it. - Jim -->
-
-<!-- I think the below paragraph does some of that. It explains that CDI is the
-dependency injection standard for Java (as opposed to Spring). It explains that
-it's a part of both Java EE 6 and 7, and that it's required by the Faces Flows
-feature; thus you'll need to know it and use it if you're using that feature.
--Rich -->
+# Contexts and Dependency Injection \(CDI\) for JSF Portlets [](id=contexts-and-dependency-injection-cdi-for-jsf-portlets)
 
 In December 2009, [JSR 299](http://jcp.org/en/jsr/detail?id=299) introduced the
 Contexts and Dependency Injection (CDI) 1.0 standard into the Java EE 6
@@ -24,8 +15,14 @@ Still wondering what CDI accomplishes? Visit the [CDI
 Specs](http://cdi-spec.org/) to learn more about CDI and why it has become a
 popular component for JSF. 
 
-In this tutorial, you'll cover how to configure CDI on Liferay Portal. To do
-this, you'll configure Weld on Liferay Portal to leverage CDI with JSF portlets.
+This tutorial covers the following topics: 
+
+- Configuring CDI on Liferay Portal
+- Configuring the Liferay CDI Portlet Bridge
+- Understanding CDI in JSF Annotations
+
+First, you'll configure Weld on Liferay Portal to leverage CDI with JSF
+portlets. 
 
 ## Configuring CDI on Liferay Portal
 
@@ -114,7 +111,7 @@ implementation of CDI by default.
 The next section contains information about specifically configuring Tomcat, so
 developers running other application servers can skip it. 
 
-## Additional Weld Configuration for Tomcat
+**Additional Weld Configuration for Tomcat**
 
 If Weld is running in a Java EE application server like Oracle GlassFish or
 JBoss AS, then Weld is automatically included in the global classpath. However,
@@ -140,8 +137,101 @@ descriptor:
         <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
     </listener>
 
-As you can see, configuring CDI for your JSF portlets is a snap! 
+Next, you'll learn how to configure the Liferay CDI Portlet Bridge
 
-## Related Topics
+## Configuring the Liferay CDI Portlet Bridge
 
-<!-- Add once JSF tutorials are finished. -Cody -->
+The Liferay CDI Portlet Bridge makes it possible to use CDI with your JSF
+portlets on Liferay. Your JSF portlet projects must include the Liferay CDI
+Portlet Bridge as a dependency.
+
+For example, to specify the bridge dependency in a Maven project for Liferay
+6.2, add the following `<dependency>` to your POM's `<dependencies>` element: 
+
+    <dependency>    
+        <groupId>com.liferay.cdi</groupId>    
+        <artifactId>cdi-portlet-bridge-shared</artifactId>    
+        <version>6.2.0.2</version>
+    </dependency>
+
+The `WEB-INF/portlet.xml` descriptor of the portlet must include the following
+markup: 
+
+    <filter>    
+        <filter-name>CDIPortletFilter</filter-name>    
+        <filter-class>com.liferay.cdi.portlet.bridge.CDIPortletFilter</filter-class>
+        <lifecycle>ACTION_PHASE</lifecycle>
+        <lifecycle>EVENT_PHASE</lifecycle>
+        <lifecycle>RENDER_PHASE</lifecycle>
+        <lifecycle>RESOURCE_PHASE</lifecycle>
+    </filter>
+    <filter-mapping>
+        <filter-name>CDIPortletFilter</filter-name>    
+        <portlet-name>my-portlet-name</portlet-name>
+    </filter-mapping>
+
+Additionally, the portlet's `WEB-INF/web.xml` descriptor must include the
+following declarations: 
+
+    <filter>
+        <filter-name>CDICrossContextFilter</filter-name>
+        <filter-class>com.liferay.cdi.portlet.bridge.CDICrossContextFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CDICrossContextFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+    <listener>
+        <listener-class>com.liferay.cdi.portlet.bridge.CDIContextListener</listener-class>
+    </listener>
+
++$$$
+
+**Tip:** The Liferay Faces Project features the
+[jsf2-cdi-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-cdi-portlet)
+demo (which is a variant of the
+[jsf2-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
+demo). It's a good idea to download and deploy the jsf2-cdi-portlet demo in your
+development environment in order to verify that CDI functions properly. 
+
+$$$
+
+Configuring the Portlet Bridge for you JSF portlet is complete. For other
+configuration options dealing with CDI, visit the [Configuring CDI for JSF
+Portlets](/develop/learning-paths/-/knowledge_base/6-2/configuring-cdi-for-jsf-portlets)
+tutorial. 
+
+Now that everything is configured, you are ready to begin development with CDI.
+
+#### Understanding CDI in JSF Annotations [](id=cdi-jsf-annotations-liferay-portal-6-2-dev-guide-en)
+
+When developing portlets with CDI, it is possible to annotate Java classes as
+CDI managed beans with
+[`@Named`](http://docs.oracle.com/javaee/6/api/javax/inject/Named.html) with the
+following scopes: 
+
+| CDI Annotation | Description |
+|----------------|-------------|
+| [`@ApplicationScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/ApplicationScoped.html) | An `@ApplicationScoped` managed bean exists for the entire lifetime of the portlet application. |
+| [`@ConversationScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/ConversationScoped.html) | A `@ConversationScoped` managed bean is created when `Conversation.begin()` is called and is scheduled for garbage collection when `Conversation.end()` is called. |
+| [`@FlowScoped`](https://javaserverfaces.java.net/nonav/docs/2.2/javadocs/javax/faces/flow/FlowScoped.html) | A `@FlowScoped` managed bean is created when a JSF 2.2 Flow begins and scheduled for garbage collection when a JSF 2.2 Flow completes. |
+| [`@RequestScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/RequestScoped.html) | A `@RequestScoped` managed bean exists during an `ActionRequest`, `RenderRequest`, or `ResourceRequest`. Beans that are created during the `ActionRequest` do not survive into the `RenderRequest`. |
+| [`@SessionScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/SessionScoped.html) | A `@SessionScoped` managed bean exists for the duration of the user session. |
+
+In addition to CDI scope annotations, it's important to understand JSF 2
+annotations and their equivalence to CDI annotations. 
+
+| JSF Annotation | Equivalent CDI Annotation |
+|----------------|---------------------------|
+| `javax.faces.ManagedBean` | [`javax.inject.Named`](http://docs.oracle.com/javaee/6/api/javax/inject/Named.html) |
+| `javax.faces.ApplicationScoped` | [`javax.enterprise.context.ApplicationScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/ApplicationScoped.html) |
+| `javax.faces.RequestScoped` | No such equivalent, since [`javax.enterprise.context.RequestScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/RequestScoped.html) does not span portlet lifecycle phases. 
+| `javax.faces.SessionScoped` | [`javax.enterprise.context.SessionScoped`](http://docs.oracle.com/javaee/6/api/javax/enterprise/context/SessionScoped.html) |
+| `javax.faces.ManagedProperty` (corresponding setter method required) | [`javax.inject.Inject`](http://docs.oracle.com/javaee/6/api/javax/inject/Inject.html) (corresponding setter method not required) |
+
+This should help with your understanding of CDI and JSF annotations. And as
+you've also seen in this tutorial, configuring CDI for your JSF portlets and
+configuring the Liferay CDI Portlet Bridge is a snap!
