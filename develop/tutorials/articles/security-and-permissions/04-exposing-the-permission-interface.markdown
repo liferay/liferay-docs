@@ -1,18 +1,19 @@
 # Exposing the Permission Interface to Users [](id=exposing-the-permission-interface-to-users)
 
-Imagine that you bought a really nice electric guitar. Now imagine that you 
-bought an even nicer amplifier to go along with it. You get them home, and much 
-to the chagrin of your neighbors, you get ready to rock! However, your 
-neighbors' hearing is saved. You forgot to get a cable to plug the guitar into 
-the amplifier; bummer. This is a lot like what happens when you add permissions 
-to your portlet but don't expose them to users.
+Imagine that you bought a really nice electric guitar. Now imagine that you
+bought an even nicer amplifier to go along with it. You get them home, and much
+to the chagrin of your neighbors, you get ready to rock! However, your
+neighbors' ears are saved. You forgot to get a cable to plug the guitar into the
+amplifier. Bummer. This is essentially what happens when you add permissions to
+your portlet but don't expose them to users: the permissions exist but they're
+not yet configurable.
 
 On the portlet level, no code needs to be written in order to have the
 permission system work for your custom portlet. If you've defined any custom
 permissions (supported actions) in your configuration file's `portlet-resource`
 tag, they're automatically added to a list of permissions in Liferay's
-permissions UI. What good, however, are permissions that are available but can't
-be set by users? 
+permissions UI. What good, however, are permissions that exist but can't be
+configured? 
 
 This tutorial covers exposing your portlet permissions to users. Get ready to 
 rock! 
