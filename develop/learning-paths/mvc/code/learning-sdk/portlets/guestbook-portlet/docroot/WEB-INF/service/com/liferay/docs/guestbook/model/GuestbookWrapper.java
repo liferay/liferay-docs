@@ -59,6 +59,10 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 		attributes.put("createDate", getCreateDate());
 		attributes.put("modifiedDate", getModifiedDate());
 		attributes.put("name", getName());
+		attributes.put("status", getStatus());
+		attributes.put("statusByUserId", getStatusByUserId());
+		attributes.put("statusByUserName", getStatusByUserName());
+		attributes.put("statusDate", getStatusDate());
 
 		return attributes;
 	}
@@ -117,6 +121,30 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 
 		if (name != null) {
 			setName(name);
+		}
+
+		Integer status = (Integer)attributes.get("status");
+
+		if (status != null) {
+			setStatus(status);
+		}
+
+		Long statusByUserId = (Long)attributes.get("statusByUserId");
+
+		if (statusByUserId != null) {
+			setStatusByUserId(statusByUserId);
+		}
+
+		String statusByUserName = (String)attributes.get("statusByUserName");
+
+		if (statusByUserName != null) {
+			setStatusByUserName(statusByUserName);
+		}
+
+		Date statusDate = (Date)attributes.get("statusDate");
+
+		if (statusDate != null) {
+			setStatusDate(statusDate);
 		}
 	}
 
@@ -340,6 +368,196 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 	@Override
 	public void setName(java.lang.String name) {
 		_guestbook.setName(name);
+	}
+
+	/**
+	* Returns the status of this guestbook.
+	*
+	* @return the status of this guestbook
+	*/
+	@Override
+	public int getStatus() {
+		return _guestbook.getStatus();
+	}
+
+	/**
+	* Sets the status of this guestbook.
+	*
+	* @param status the status of this guestbook
+	*/
+	@Override
+	public void setStatus(int status) {
+		_guestbook.setStatus(status);
+	}
+
+	/**
+	* Returns the status by user ID of this guestbook.
+	*
+	* @return the status by user ID of this guestbook
+	*/
+	@Override
+	public long getStatusByUserId() {
+		return _guestbook.getStatusByUserId();
+	}
+
+	/**
+	* Sets the status by user ID of this guestbook.
+	*
+	* @param statusByUserId the status by user ID of this guestbook
+	*/
+	@Override
+	public void setStatusByUserId(long statusByUserId) {
+		_guestbook.setStatusByUserId(statusByUserId);
+	}
+
+	/**
+	* Returns the status by user uuid of this guestbook.
+	*
+	* @return the status by user uuid of this guestbook
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public java.lang.String getStatusByUserUuid()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _guestbook.getStatusByUserUuid();
+	}
+
+	/**
+	* Sets the status by user uuid of this guestbook.
+	*
+	* @param statusByUserUuid the status by user uuid of this guestbook
+	*/
+	@Override
+	public void setStatusByUserUuid(java.lang.String statusByUserUuid) {
+		_guestbook.setStatusByUserUuid(statusByUserUuid);
+	}
+
+	/**
+	* Returns the status by user name of this guestbook.
+	*
+	* @return the status by user name of this guestbook
+	*/
+	@Override
+	public java.lang.String getStatusByUserName() {
+		return _guestbook.getStatusByUserName();
+	}
+
+	/**
+	* Sets the status by user name of this guestbook.
+	*
+	* @param statusByUserName the status by user name of this guestbook
+	*/
+	@Override
+	public void setStatusByUserName(java.lang.String statusByUserName) {
+		_guestbook.setStatusByUserName(statusByUserName);
+	}
+
+	/**
+	* Returns the status date of this guestbook.
+	*
+	* @return the status date of this guestbook
+	*/
+	@Override
+	public java.util.Date getStatusDate() {
+		return _guestbook.getStatusDate();
+	}
+
+	/**
+	* Sets the status date of this guestbook.
+	*
+	* @param statusDate the status date of this guestbook
+	*/
+	@Override
+	public void setStatusDate(java.util.Date statusDate) {
+		_guestbook.setStatusDate(statusDate);
+	}
+
+	/**
+	* @deprecated As of 6.1.0, replaced by {@link #isApproved()}
+	*/
+	@Override
+	public boolean getApproved() {
+		return _guestbook.getApproved();
+	}
+
+	/**
+	* Returns <code>true</code> if this guestbook is approved.
+	*
+	* @return <code>true</code> if this guestbook is approved; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isApproved() {
+		return _guestbook.isApproved();
+	}
+
+	/**
+	* Returns <code>true</code> if this guestbook is denied.
+	*
+	* @return <code>true</code> if this guestbook is denied; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isDenied() {
+		return _guestbook.isDenied();
+	}
+
+	/**
+	* Returns <code>true</code> if this guestbook is a draft.
+	*
+	* @return <code>true</code> if this guestbook is a draft; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isDraft() {
+		return _guestbook.isDraft();
+	}
+
+	/**
+	* Returns <code>true</code> if this guestbook is expired.
+	*
+	* @return <code>true</code> if this guestbook is expired; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isExpired() {
+		return _guestbook.isExpired();
+	}
+
+	/**
+	* Returns <code>true</code> if this guestbook is inactive.
+	*
+	* @return <code>true</code> if this guestbook is inactive; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isInactive() {
+		return _guestbook.isInactive();
+	}
+
+	/**
+	* Returns <code>true</code> if this guestbook is incomplete.
+	*
+	* @return <code>true</code> if this guestbook is incomplete; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isIncomplete() {
+		return _guestbook.isIncomplete();
+	}
+
+	/**
+	* Returns <code>true</code> if this guestbook is pending.
+	*
+	* @return <code>true</code> if this guestbook is pending; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isPending() {
+		return _guestbook.isPending();
+	}
+
+	/**
+	* Returns <code>true</code> if this guestbook is scheduled.
+	*
+	* @return <code>true</code> if this guestbook is scheduled; <code>false</code> otherwise
+	*/
+	@Override
+	public boolean isScheduled() {
+		return _guestbook.isScheduled();
 	}
 
 	@Override
