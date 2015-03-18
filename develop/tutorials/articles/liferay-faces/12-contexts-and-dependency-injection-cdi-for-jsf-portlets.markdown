@@ -21,26 +21,27 @@ This tutorial covers the following topics:
 - Understanding CDI in JSF Annotations
 
 First, you'll configure your portlets to use a CDI implementation, such as JBoss
-Weld or CanDI. 
+Weld or [CanDI](http://www.caucho.com/candi-java-dependency-injection/). 
 
 ## Configuring JSF Portlets to Use CDI [](id=configuring-jsf-portlets-to-use-cdi)
 
-Several app-server/portal/CDI-impl combinations support using CDI with JSF on
-Liferay Portal.
+Several app-server/portal/CDI-implementation combinations support using CDI with
+JSF on Liferay Portal.
 
 For Liferay Portal 6.2, you can use one of these combinations:
 
-- [Tomcat with Weld](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-tomcat-7)
-- [GlassFish with Weld](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-glassfish-4)
+- GlassFish 3 with Weld
 - [JBoss AS with Weld](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-jboss-7-1#jsf-configuration)
-- Resin with CanDI
+- Resin with [CanDI](http://www.caucho.com/candi-java-dependency-injection/)
+- [Tomcat with Weld](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-tomcat-7)
+- [WebLogic 12c with Weld](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-oracle-weblogic-12c-12-1-2-and-h)
 
 For Liferay Portal 6.1, you can use one of these combinations:
 
-- [Tomcat with Weld](/discover/portal/-/knowledge_base/6-1/errata-for-using-liferay-portal-6-1#adding-mojarra-to-tomcat-7)
-- [GlassFish with Weld](/discover/portal/-/knowledge_base/6-1/errata-for-using-liferay-portal-6-1#upgrading-weld-in-glassfish-3)
+- [GlassFish 3 with Weld](/discover/portal/-/knowledge_base/6-1/errata-for-using-liferay-portal-6-1#upgrading-weld-in-glassfish-3)
 - [JBoss AS with Weld](/discover/portal/-/knowledge_base/6-1/errata-for-using-liferay-portal-6-1#upgrading-weld-in-jboss-7)
 - [Resin with CanDI](/discover/portal/-/knowledge_base/6-1/errata-for-using-liferay-portal-6-1#page-504)
+- [Tomcat with Weld](/discover/portal/-/knowledge_base/6-1/errata-for-using-liferay-portal-6-1#adding-mojarra-to-tomcat-7)
 
 When developing portlets with CDI 1.0, you must include a `WEB-INF/beans.xml`
 descriptor in your JSF portlet plugin's `.war` deployment, so that when the CDI
