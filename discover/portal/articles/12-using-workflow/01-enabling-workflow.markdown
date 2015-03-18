@@ -2,7 +2,7 @@
 
 Liferay's Kaleo workflow engine can be installed for both CE and EE versions of
 Liferay. The web plugin's name is `kaleo-web` and is bundled in the *Kaleo
-Forms EE* and *Kaleo Workflow CE* apps on Liferay marketplace, wich you can
+Forms EE* and *Kaleo Workflow CE* apps on Liferay marketplace, which you can
 access through the Apps section of the Control Panel. Installing the plugin
 adds a *Workflow* option under the *Configuration* section of your Control
 Panel. 

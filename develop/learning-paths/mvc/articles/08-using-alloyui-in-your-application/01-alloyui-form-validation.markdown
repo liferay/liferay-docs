@@ -43,7 +43,7 @@ To keep things simple, replace the contents between the `<aui:fieldset>` and
 
     <aui:input name="email" >
          <aui:validator name="email" />
-         <aui:validator name="required "/>
+         <aui:validator name="required"/>
     </aui:input>
 
     <aui:input id="message" type="textarea" name="message">

@@ -909,30 +909,8 @@ For example:
 
     jsonws.web.service.invalid.http.methods=DELETE,POST,PUT
 
-Now all requests that use HTTP methods from the list above are ignored.
-
-Next, we'll show you how to restrict public access to exposed JSON APIs. 
-
-#### Controlling Public Access [](id=json-controlling-public-access-liferay-portal-6-2-dev-guide-05-en)
-
-Each service method knows if it can be executed by unauthenticated users and
-if a user has adequate permission for the chosen action. Most of the portal's
-read-only methods are open to public access.
-
-If you're concerned about security, you can further restrict public access to
-exposed JSON APIs by explicitly stating which methods are *public* (i.e.,
-accessible to unauthenticated users). Use the following property to specify your
-public methods: 
-
-    jsonws.web.service.public.methods=*
-
-The property supports wildcards, so if you specify `get*,has*,is*` on the right
-hand side of the `=` symbol, all read-only JSON methods will be publicly
-accessible. All other JSON methods will be secured. To disable access to *all*
-exposed methods, you can leave the right side of the `=` symbol empty; to enable
-access to all exposed methods, specify `*`. 
-
-Read on to find out how to invoke JSON web services. 
+Now all requests that use HTTP methods from the list above are ignored. Read on
+to find out how to invoke JSON web services. 
 
 ### Invoking JSON Web Services [](id=invoking-json-web-services-liferay-portal-6-2-dev-guide-05-en)
 

@@ -215,8 +215,41 @@ the JavaScript console. Copy it to your system clipboard. Next, navigate to
 ![Figure 2: After you've added remote service methods to your project's `*ServiceImpl` classes, run Service Builder and redeploy your project. Then check that your remote services are accessible.](../../images/jsonws-guestbook-invoke.png) 
 
 Paste the scope group ID that you copied into the group ID field and click
-*Invoke*. Confirm that the correct number of guestbooks is returned. Great! Now
-that you've confirmed that your remote web services are working, it's time to
-learn how to secure them. Unless you secure your web services by implementing
-permission checks, any user can add, update, or delete guestbooks or guestbook
-entries, and you certainly don't want that. 
+*Invoke*. Confirm that the correct number of guestbooks is returned. Great! Your
+remote web services are working.
+
+Next, you'll build a WSDD (Web Service Deployment Descriptor) document for your
+remote services to make them available via SOAP (Simple Object Access Protocol).
+In Liferay IDE, open your guestbook-portlet project's
+`docroot/WEB-INF/service.xml` file. Make sure that you're viewing the
+`service.xml` file in Overview mode. Click on the *Build WSDD* button near the
+top right corner of the Overview tab of `service.xml`. Alternatively,
+right-click on your guestbook-portlet project in the Package Explorer and select
+*Liferay* &rarr; *Build WSDD*. When the Ant task finishes, notice that a
+`server-config.wsdd` file was created in your project's `WEB-INF` directory.
+This deployment descriptor file describes the services and service methods that
+your application is publishing.
+
+After the Ant task has finished, re-deploy your guestbook-portlet application,
+then navigate to the following URL:
+
+[http://localhost:8080/guestbook-portlet/api/axis/Plugin_GB_GuestbookService?wsdl](http://localhost:8080/guestbook-portlet/api/axis/Plugin_GB_GuestbookService?wsdl)
+
+This is a WSDL (Web Services Description Language) document that describes the
+details about the Guestbook service methods. Such details include, for example,
+the format of the data that can be sent to and received from the Guestbook web
+service methods. The following URL contains a similar WSDL document for the
+Guestbook Entry service:
+
+[http://localhost:8080/guestbook-portlet/api/axis/Plugin_GB_EntryService?wsdl](http://localhost:8080/guestbook-portlet/api/axis/Plugin_GB_EntryService?wsdl)
+
+If you'd like to make your application's services available for remote
+invocation, generating a WSDD and WSDL documents is an important step. The WSDL
+documents describe the functionality offered by your application's web services.
+If you want to be able to create mobile clients that can access your
+application's web services, you must generate WSDD and WSDL documents for your
+application. 
+
+Next, you'll learn how to secure your web services. Unless you secure your web
+services by implementing permission checks, any user can add, update, or delete
+guestbooks or guestbook entries, and you certainly don't want that. 
