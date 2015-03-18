@@ -6,6 +6,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 
+<%@ page import="com.liferay.portal.kernel.workflow.WorkflowConstants" %>
 <%@ page import="com.liferay.docs.guestbook.model.Guestbook" %>
 <%@ page import="com.liferay.docs.guestbook.model.Entry" %>
 <%@ page import="com.liferay.docs.guestbook.util.WebKeys" %>
