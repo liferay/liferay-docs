@@ -22,13 +22,21 @@
 		<column name="createDate" type="Date"></column>
 		<column name="modifiedDate" type="Date"></column>
         <column name="name" type="String"></column>
-        
+        <column name="status" type="int" />
+        <column name="statusByUserId" type="long" />
+        <column name="statusByUserName" type="String" />
+        <column name="statusDate" type="Date" /> 
+
         <finder name="GroupId" return-type="Collection">
             <finder-column name="groupId"></finder-column>
         </finder>
         <finder name="G_N" return-type="Collection">
             <finder-column name="groupId"></finder-column>
         	<finder-column name="name"></finder-column>
+        </finder>
+        <finder name="G_S" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="status"></finder-column>
         </finder>
         
         <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
@@ -55,6 +63,10 @@
         <column name="email" type="String"></column>
         <column name="message" type="String"></column>
         <column name="guestbookId" type="long"></column>
+        <column name="status" type="int" />
+        <column name="statusByUserId" type="long" />
+        <column name="statusByUserName" type="String" />
+        <column name="statusDate" type="Date" /> 
         
         <finder name="G_G" return-type="Collection">
             <finder-column name="groupId"></finder-column>
@@ -71,6 +83,11 @@
         	<finder-column name="groupId"></finder-column>
         	<finder-column name="guestbookId"></finder-column>
         	<finder-column name="name"></finder-column>
+        </finder>
+        <finder name="G_G_S" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="guestbookId"></finder-column>
+            <finder-column name="status"></finder-column>
         </finder>
         
         <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
