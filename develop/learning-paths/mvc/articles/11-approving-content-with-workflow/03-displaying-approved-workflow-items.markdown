@@ -1,15 +1,15 @@
 # Displaying Approved Workflow Items
 
-To display only entites approved in the workflow, you'll add a new *finder*,
+To display only entities approved in the workflow, you'll add a new *finder*,
 then a *getter* that uses it in your service layer. The new methods will serve
 the purpose of getting only entities with the proper workflow status, and then
-displaying those entities can be displayed properly in the portlet's search
+displaying those entities in the portlet's search
 container. Service Builder makes this easy.
 
 ## Adding a Finder for the Entry
 
 If you look in `docroot/html/guestbook/view.jsp`, you'll see that entries are
-retrieved from the database for display in the Search Container using the
+retrieved from the database for display in the search container using the
 following code:
 
     <liferay-ui:search-container>
@@ -24,12 +24,9 @@ following code:
         <liferay-ui:search-iterator />
     </liferay-ui:search-container>
 
-The getter methods used here are those responsible for populating the Search
+The getter methods used are those responsible for populating the Search
 Container. They need to include the workflow status as a parameter, in addition
-to the current list of parameters. `EntryLocalServiceImpl` needs these methods:
-
--`getEntriesByG_G_S`
--`getEntriesCountByG_G_S`
+to their current parameters. 
 
 First, you need a finder method to expose. Open `service.xml` and add this
 tag below the current list of finders for the `Entry` entity:
@@ -39,6 +36,8 @@ tag below the current list of finders for the `Entry` entity:
         <finder-column name="guestbookId"></finder-column>
         <finder-column name="status"></finder-column>
     </finder>
+
+Run Service Builder.
 
 ## Exposing the Entry's New Finder in the Service Layer
 
@@ -59,21 +58,22 @@ Add these methods:
 
 	public List<Entry> getEntries(long groupId, long guestbookId, int status, int start,
 			int end) throws SystemException {
-		return entryPersistence.findByG_G_S(groupId, guestbookId, WorkflowConstants.STATUS_APPROVED, start, end);
+		return entryPersistence.findByG_G_S(groupId, guestbookId, WorkflowConstants.STATUS_APPROVED, 
+            start, end);
 	}
 	
 	public int getEntriesCount(long groupId, long guestbookId, int status) throws SystemException {
 		return entryPersistence.countByG_G_S(groupId, guestbookId, WorkflowConstants.STATUS_APPROVED);
 	}
 
-Since there's nowhere in the portlet where an entry's workflow status should be
-ignored, it's a best practice to simply replace the current getters with
+Since there's nowhere in the portlet where an `Entry`'s workflow status should
+be ignored, it's a best practice to simply replace the current getters with
 appropriate ones.
 
 ## Updating the View Layer to Display Approved Entries
 
 Back in the `view.jsp`, find the following tag, which currently retrieves the
-entries from the database for display in the Search Container.
+entries from the database for display in the search container.
 
 	<liferay-ui:search-container-results
 		results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId,
@@ -93,7 +93,7 @@ Replace the above tag with this one:
 
 As you'd expect, the calls to `getEntries` and `getEntriesCount` are replaced
 with the updated methods we created in the local service implementation, so
-that the Search Container is only populated with approved entries. 
+that the search container is only populated with approved entries. 
 
 Open `init.jsp` and add the following import:
 
@@ -104,17 +104,17 @@ The `Entry` entity is now fully enabled for workflow. Do the same thing for
 
 ## Adding a Finder for the Guestbook
 
-In the portlet's `view.jsp`, you can see the code that displays guestbooks in
-the `<aui:nav cssClass="nav-tabs">` setion. Here's the call to the local
+In the portlet's `view.jsp`, you can see the code that displays `Guestbook`s in
+the `<aui:nav cssClass="nav-tabs">` section. Here's the call to the local
 service implementation that gets the list of `Guestbook`s from the database:
 
      List<Guestbook> guestbooks = GuestbookLocalServiceUtil
                 .getGuestbooks(scopeGroupId);
 
-This call doesn't yet account for workflow status of the `Guestbook`s.
+This call doesn't yet account for the workflow status of the `Guestbook`s.
 
 Open `service.xml` again and add the following finder, below the existing
-finder tags:
+finder tags for the `Guestbook`:
 
     <finder name="G_S" return-type="Collection">
         <finder-column name="groupId"></finder-column>
@@ -133,10 +133,10 @@ one in it's place:
 		return guestbookPersistence.findByG_S(groupId, WorkflowConstants.STATUS_APPROVED);
 	}
 
-Leave the other getter methods alone, even though they don't account for
-workflow status. The Guestbook Admin portlet should display all Guestbooks,
-regardless of workflow status, and these getters are used to populate it's
-search container.
+Run Service Builder. Leave the other getter methods alone, even though they
+don't account for workflow status. The Guestbook Admin portlet should display
+all of a site's `Guestbook`s, regardless of workflow status, and these getters
+are used to populate it's search container.
 
 ## Updating the View Layer to Display Approved Guestbooks
 
@@ -145,7 +145,7 @@ Open `view.jsp`, and find this method call:
      List<Guestbook> guestbooks = GuestbookLocalServiceUtil
                 .getGuestbooks(scopeGroupId);
 
-replace it with this one:
+Replace it with this one:
 
      List<Guestbook> guestbooks = GuestbookLocalServiceUtil
                 .getGuestbooks(scopeGroupId, WorkflowConstants.STATUS_APPROVED);
@@ -161,14 +161,14 @@ the strategy be there?
 ## Modifying the Guestbook Admin Portlet to Display Workflow Status
 
 The Guestbook Admin portlet currently displays the `Guestbook`s for a site in a
-Search Container, which is consistent with Liferay's core portlets, such as the
+search container, which is consistent with Liferay's core portlets, such as the
 Message Boards Admin portlet. Like those portlets, you should include the
 workflow status as a column in the search container.
 
 ![Figure 1: The Message Boards Admin portlet displays the workflow status of its entities.](../../images/message-boards-admin.png)
 
 Open `docroot/html/guestbookadmin/view.jsp`, and find the section where both
-colums of the Search Container are populated:
+columns of the search container are populated:
 
 		<liferay-ui:search-container-column-text property="name" href="<%= viewGuestbook %>" />
 
@@ -192,12 +192,13 @@ You need a column in between the *Name* column and the column containing the
 
 There's a new `<liferay-ui:search-container-column-text>` tag, defining a
 *Status* column. The `<aui:workflow-status>` tag makes it easy to convert the
-`int` value of `guestbook.getStatus()` into a `String` displayed with some
+`int` value of `guestbook.getStatus()` into a `String` representing the status
+label value (e.g., the int *02* becomes *Pending*). It's displayed with some
 styling that matches that of Liferay's core portlet's.
 
 Note that you didn't change the `getter` method for one that only returns
 `Guestbook`s marked as approved in the workflow. In the Guestbook Admin
-portlet, you're allowing all `Guestbook`s to be displayed with their workflow
+Portlet, you're allowing all `Guestbook`s to be displayed with their workflow
 status.
 
 ## Testing Workflow
@@ -205,22 +206,22 @@ status.
 To test that workflow is working properly for both entities, log in to the
 portal and go to *Admin* &rarr; *Control Panel* &rarr; *Configuration*
 &rarr; *Workflow*. Click on *Defualt Configuration*, and select 
-*Single Approver* for both *Entry* and Guestbook*.
+*Single Approver* for both *Entry* and *Guestbook*.
 
 ![Figure 2: Enable workflow for entities in the Control Panel.](../../images/test-workflow-1.png)
 
-After Saving your selections, navigate to a page with the Guestbook Portlet
-added to it, and try to add a new Guestbook, and then a new entity. If you
-are the portal administrator, you should receive notiications that you have
+After saving your selections, navigate to a page with the Guestbook Portlet
+added to it, and try to add a new Guestbook, and then a new Entry. If you
+are the portal administrator, you should receive notifications that you have
 items waiting in the workflow. The entities should not appear in the portlet
 until you assign them to yourself, then approve them in the workflow. There
 are a couple of additional things to note:
 
--When workflow is disabled in the Control Panel, the `status` of the entities
+- When workflow is disabled in the Control Panel, the `status` of the entities
 is automatically set as approved, and they will appear as soon as they are
 added, just like before you enabled them for workflow.
--In the Guestbook Admin portlet, the *Status* field is always displayed, even
-when workflow is disabled. You'll just see that added guestbooks are always
+- In the Guestbook Admin Portlet, the *Status* field is always displayed, even
+when workflow is disabled. You'll just see that added `Guestbook`s are always
 marked as *Approved*, with no review necessary and no workflow notifications
 sent.
 
