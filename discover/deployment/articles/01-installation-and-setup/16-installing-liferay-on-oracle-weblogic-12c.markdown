@@ -337,6 +337,12 @@ dependencies.
     classpath, `jsf-api.jar` and `jsf-impl.jar` must not be included in
     `WEB-INF/lib`. 
 
+You've successfully upgraded your Mojarra version. If you're interested in
+configuring CDI for your JSF portlets running on WebLogic 12c, you'll need to
+configure a few more things. For more information on configuring CDI, visit the
+[Configuring JSF Portlets to Use CDI](/develop/tutorials/-/knowledge_base/6-2/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
+section. 
+
 Now it's the moment you've been waiting for: Liferay deployment! 
 
 ## Deploy Liferay [](id=deploy-liferay)
