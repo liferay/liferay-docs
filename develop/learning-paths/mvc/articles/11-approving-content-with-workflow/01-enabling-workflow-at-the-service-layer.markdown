@@ -1,13 +1,12 @@
 # Enabling Workflow at the Service Layer
 
 In the learning path on assets, you learned that asset enabled entities are
-added to the `AssetEntry` table. There's no special table for workflow
-entities, but there are some additional database columns in the entity table
-(e.g., `GB_Entry`)  that allow you to keep track of workflow status. The
-necessary fields include *status*, *statusByUserName*, *statusByUserId*, and
-*statusDate*. Add thecolums to the database by entering the following columns
-into `docroot/WEB-INF/service.xml`, in both the `Guestbook` and `Entry` entity
-*Audit fields* sections:
+added to the `AssetEntry` table. There's no special table for workflow entities,
+but there are some additional database columns in the entity table (e.g.,
+`GB_Entry`)  that allow you to keep track of workflow status. The necessary
+fields include *status*, *statusByUserName*, *statusByUserId*, and *statusDate*.
+Add the columns to the database by entering the following `<column>`s into
+`docroot/WEB-INF/service.xml`, in *Audit fields* section of both entities:
 
     <column name="status" type="int" />
     <column name="statusByUserId" type="long" />
@@ -43,13 +42,12 @@ Add these imports:
     import com.liferay.portal.kernel.workflow.WorkflowConstants;
     import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
 
-The call to `startWorkflowInstance` will detect whether workflow is installed
-and enabled. If it isn't, the added entity is automatically marked as approved.
-The `startWorkflowInstance` will call your custom `EntryWorkflowHandler` class,
-which you'll create later in this learning path. The service layer needs to be
-given the ability to update the workfflow status fields you added to
-`service.xml`. For this purpose, add the following method to the bottom of
-`EntryLocalServiceImpl`:
+The call to `startWorkflowInstance` detects whether workflow is installed and
+enabled. If it isn't, the added entity is automatically marked as approved.  The
+`startWorkflowInstance` also calls your custom `EntryWorkflowHandler` class,
+which you'll create later in this learning path. The service layer also needs
+the ability to update the workflow status fields you added to `service.xml`. For
+this purpose, add the following method to the bottom of `EntryLocalServiceImpl`:
 
      public Entry updateStatus(long userId, long guestbookId, long entryId, int status,
 			ServiceContext serviceContext) throws PortalException,
@@ -79,7 +77,7 @@ given the ability to update the workfflow status fields you added to
 		return entry;
 	}
 
-Make sure you run service builder.
+Run Service Builder.
 
 The `updateStatus` method is responsible for setting the status fields, then
 persisting the information to the database. The `if` block checks the workflow
@@ -115,9 +113,9 @@ Add these imports:
 The `startWorkflowInstance` will call your custom `GuestbookWorkflowHandler` class,
 which you'll create later in this learning path. 
 
-The service layer needs to be given the ability to update the workfflow status
-fields you added to `Guestbook` entity's database table. Add
-the following method to the bottom of `GuestbookLocalServiceImpl`:
+The service layer needs to be given the ability to update the workflow status
+fields you added to `Guestbook` entity's database table. Add the following
+method to the bottom of `GuestbookLocalServiceImpl`:
 
      public Guestbook updateStatus(long userId, long guestbookId, int status,
 			ServiceContext serviceContext) throws PortalException,
@@ -147,12 +145,10 @@ the following method to the bottom of `GuestbookLocalServiceImpl`:
 		return guestbook;
 	}
 
-Run service builder after saving the changes you made.
+Run Service Builder after saving the changes you made.
 
 Now the status fields can be set appropriately and persisted to the database.
-However, you're still missing some important functionality. Perhaps you
-noticed, but the `updateStatus` methods aren't called from anywhere in your
-portlet's code! `-WorkflowHandler` classes are needed to interfce between the
-workflow API and the Guestbook App's service layer, via the new `updateStatus`
-methods.
-
+However, you're still missing some important functionality. Perhaps you noticed,
+but the `updateStatus` methods aren't called from anywhere in your portlet's
+code! The entities need `-WorkflowHandler` classes to interface between the
+portal's workflow classes and the Guestbook App's service layer.
