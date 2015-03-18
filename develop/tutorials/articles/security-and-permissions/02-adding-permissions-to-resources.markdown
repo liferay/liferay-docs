@@ -38,24 +38,25 @@ of control over permissions that she has over the default Liferay applications.
 Before proceeding, make sure you understand these critical terms: 
 
 - *Action*: An operation that can be performed by a portal user. E.g., actions
-  that be performed on the Calendar portlet include `ADD_TO_PAGE`,
-  `CONFIGURATION`, and `VIEW`. Actions that can be performed on a Calendar
-  entity include `DELETE`, `UPDATE`, and `VIEW`. 
+  that be performed on the Guestbook portlet include `ADD_TO_PAGE`,
+  `CONFIGURATION`, and `VIEW`. Actions that can be performed on a Guestbook
+  entity include `ADD_ENTRY`, `DELETE`, `PERMISSIONS`, `UPDATE`, and `VIEW`. 
 
 - *Resource*: A generic representation of any portlet or entity in the portal on
   which an action can be performed. Resources are used for permission checking.
   E.g., resources within a Liferay portal instance could include the RSS portlet
-  with instance ID `hF5f`, a globally scoped Wiki page, a Calendar event of the
-  site X, and the message board post with ID `5052`.
+  with instance ID `hF5f`, a globally scoped Wiki page, a Guestbook entry of the
+  site X, and the Message Boards post with ID `5052`.
 
 - *Permission*: An action that can be performed on a resource. In Liferay's
   database, resources and actions are saved in pairs. (Each entry in the
   `ResourceAction` table contains both the name of a portlet or entity and the
   name of an action.) For example, the `VIEW` action with respect to *viewing
-  the Calendar portlet* is associated with the `1_WAR_calendarportlet` portlet
-  ID. The `VIEW` actions with respect to *viewing a Calendar* or *viewing a
-  Calendar event* are associated with the `com.liferay.calendar.model.Calendar`
-  and `com.liferay.calendar.model.Calendar` entities, respectively.
+  the Guestbook portlet* is associated with the `guestbook_WAR_guestbookportlet`
+  portlet ID. The `VIEW` actions with respect to *viewing a Guestbook* or
+  *viewing a Guestbook entry* are associated with the
+  `com.liferay.docs.guestbook.model.Guestbook` and
+  `com.liferay.docs.guestbook.model.Entry` entities, respectively.
 
 There are two kinds of resources in Liferay: *portlet resources* and *model
 resources*. Portlet resources represents portlets. The names of portlet
@@ -93,20 +94,20 @@ known as *DRAC*):
 ## Define All Resources and Permissions
 
 The first step is to define your resources and the actions that can be defined
-on them. The Calendar portlet is used here to demonstrate how to define portlet
-resources and model resources. Open the `default.xml` file in the Calendar
+on them. The Guestbook portlet is used here to demonstrate how to define portlet
+resources and model resources. Open the `default.xml` file in the Guestbook
 portlet's `docroot/WEB-INF/src/resource-actions` directory and you'll see the
 following mapping of resources to actions: 
 
     <?xml version="1.0"?>
-    <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
+    <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
+    "http://www.liferay.com/dtd/liferay-resource-action- mapping_6_2_0.dtd">
 
     <resource-action-mapping>
         <portlet-resource>
-            <portlet-name>1</portlet-name>
+            <portlet-name>guestbook</portlet-name>
             <permissions>
                 <supports>
-                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
                     <action-key>ADD_TO_PAGE</action-key>
                     <action-key>CONFIGURATION</action-key>
                     <action-key>VIEW</action-key>
@@ -117,181 +118,200 @@ following mapping of resources to actions:
                 <guest-defaults>
                     <action-key>VIEW</action-key>
                 </guest-defaults>
-                <guest-unsupported>
-                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-                    <action-key>ADD_TO_PAGE</action-key>
-                    <action-key>CONFIGURATION</action-key>
-                </guest-unsupported>
+                <guest-unsupported />
             </permissions>
         </portlet-resource>
+
         <model-resource>
-            <model-name>com.liferay.calendar</model-name>
+            <model-name>com.liferay.docs.guestbook.model</model-name>
             <portlet-ref>
-                <portlet-name>1</portlet-name>
+                <portlet-name>guestbook</portlet-name>
             </portlet-ref>
             <permissions>
-                <supports>
-                    <action-key>ADD_RESOURCE</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>ADD_RESOURCE</action-key>
-                </site-member-defaults>
-                <guest-defaults />
-                <guest-unsupported>
-                    <action-key>ADD_RESOURCE</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                </guest-unsupported>
+            <supports>
+                <action-key>ADD_GUESTBOOK</action-key>
+                <action-key>ADD_ENTRY</action-key>
+            </supports>
+            <site-member-defaults>
+                <action-key>ADD_ENTRY</action-key>
+            </site-member-defaults>
+            <guest-defaults />
+            <guest-unsupported>
+                <action-key>ADD_GUESTBOOK</action-key>
+                <action-key>ADD_ENTRY</action-key>
+            </guest-unsupported>
             </permissions>
         </model-resource>
+
         <model-resource>
-            <model-name>com.liferay.calendar.model.Calendar</model-name>
+            <model-name>com.liferay.docs.guestbook.model.Guestbook</model-name>
             <portlet-ref>
-                <portlet-name>1</portlet-name>
+                <portlet-name>guestbook</portlet-name>
             </portlet-ref>
             <permissions>
-                <supports>
-                    <action-key>DELETE</action-key>
-                    <action-key>MANAGE_BOOKINGS</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                    <action-key>UPDATE</action-key>
-                    <action-key>VIEW</action-key>
-                    <action-key>VIEW_BOOKING_DETAILS</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>VIEW</action-key>
-                </site-member-defaults>
-                <guest-defaults>
-                    <action-key>VIEW</action-key>
-                </guest-defaults>
-                <guest-unsupported>
-                    <action-key>DELETE</action-key>
-                    <action-key>MANAGE_BOOKINGS</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                    <action-key>UPDATE</action-key>
-                </guest-unsupported>
+            <supports>
+                <action-key>ADD_ENTRY</action-key>
+                <action-key>DELETE</action-key>
+                <action-key>PERMISSIONS</action-key>
+                <action-key>UPDATE</action-key>
+                <action-key>VIEW</action-key>
+            </supports>
+            <site-member-defaults>
+                <action-key>ADD_ENTRY</action-key>
+                <action-key>VIEW</action-key>
+            </site-member-defaults>
+            <guest-defaults>
+                <action-key>VIEW</action-key>
+            </guest-defaults>
+            <guest-unsupported>
+                <action-key>UPDATE</action-key>
+            </guest-unsupported>
             </permissions>
         </model-resource>
+
         <model-resource>
-            <model-name>com.liferay.calendar.model.CalendarBooking</model-name>
+            <model-name>com.liferay.docs.guestbook.model.Entry</model-name>
             <portlet-ref>
-                <portlet-name>1</portlet-name>
+                <portlet-name>guestbook</portlet-name>
             </portlet-ref>
             <permissions>
-                <supports>
-                    <action-key>ADD_DISCUSSION</action-key>
-                    <action-key>DELETE_DISCUSSION</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                    <action-key>UPDATE_DISCUSSION</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>ADD_DISCUSSION</action-key>
-                </site-member-defaults>
-                <guest-defaults />
-                <guest-unsupported>
-                    <action-key>DELETE_DISCUSSION</action-key>
-                    <action-key>UPDATE_DISCUSSION</action-key>
-                </guest-unsupported>
-            </permissions>
-        </model-resource>
-        <model-resource>
-            <model-name>com.liferay.calendar.model.CalendarResource</model-name>
-            <portlet-ref>
-                <portlet-name>1</portlet-name>
-            </portlet-ref>
-            <permissions>
-                <supports>
-                    <action-key>ADD_CALENDAR</action-key>
-                    <action-key>DELETE</action-key>
-                    <action-key>UPDATE</action-key>
-                    <action-key>VIEW</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>UPDATE</action-key>
-                    <action-key>VIEW</action-key>
-                </site-member-defaults>
-                <guest-defaults>
-                    <action-key>VIEW</action-key>
-                </guest-defaults>
-                <guest-unsupported>
-                    <action-key>ADD_CALENDAR</action-key>
-                    <action-key>DELETE</action-key>
-                    <action-key>UPDATE</action-key>
-                </guest-unsupported>
+            <supports>
+                <action-key>DELETE</action-key>
+                <action-key>PERMISSIONS</action-key>
+                <action-key>UPDATE</action-key>
+                <action-key>VIEW</action-key>
+            </supports>
+            <site-member-defaults>
+                <action-key>VIEW</action-key>
+            </site-member-defaults>
+            <guest-defaults>
+                <action-key>VIEW</action-key>
+            </guest-defaults>
+            <guest-unsupported>
+                <action-key>UPDATE</action-key>
+            </guest-unsupported>
             </permissions>
         </model-resource>
     </resource-action-mapping>
 
 The `<portlet-resource>` tag is used to define actions that can be taken with
-respect to the Calendar portlet window. Such actions include the following
-ones:
+respect to the portlet window. For the Guestbook portlet, such actions include
+the following ones:
 
-- *Access* the portlet in the Control Panel
-- *Add* the portlet to a page
-- *View* the portlet
-- *Access* the portlet's Configuration window
+- `ADD_TO_PAGE`: *Add* the portlet to a page
+- `CONFIGURATION`: *Access* the portlet's Configuration window
+- `VIEW`: *View* the portlet
 
-All of the supported actions are defined in the `<supports>` tag for the portlet
-resource's permissions. The default portlet-level permissions for members of the
-site are defined in the `<site-member-defaults>` tag. In the case of the
-Calendar portlet, site members can view any calendar in the site. Similarly,
-default guest permissions are defined in the `<guest-defaults>` tag. Guests can
-also view any Calendar in the site. The `<guest-unsupported>` tag specifies
-permissions forbidden to guests. For the Calendar portlet, guests can't be given
-permission to access the portlet in the Control Panel, add the portlet to a
-page, or configure the portlet. 
+All of the supported actions are defined in the `<supports>` tag, a sub-tag of
+the `<permissions>` tag (which is itself a subtag of the `<portlet-resource>`
+tag:
+
+    <supports>
+        <action-key>ADD_TO_PAGE</action-key>
+        <action-key>CONFIGURATION</action-key>
+        <action-key>VIEW</action-key>
+    </supports>
+
+The default permissions for site members are defined in the
+`<site-member-defaults>` tag. In the case of the Guestbook portlet, site members
+can view any Guestbook portlet in the site:
+
+    <site-member-defaults>
+        <action-key>VIEW</action-key>
+    </site-member-defaults>
+
+Similarly, the default permissions for guests are defined in the
+`<guest-defaults>` tag. Guests can also view any Guestbook portlet in the site:
+
+    <guest-defaults>
+        <action-key>VIEW</action-key>
+    </guest-defaults>
+
+The `<guest-unsupported>` tag specifies permissions forbidden to guests. There
+aren't any forbidden Guestbook portlet for guests:
+
+    <guest-unsupported />
+
+However, guests are forbidden from adding guestbooks and guestbook entries, for
+example, see the following entry in the first `<model-resource>` tag:
+
+    <guest-unsupported>
+        <action-key>ADD_GUESTBOOK</action-key>
+        <action-key>ADD_ENTRY</action-key>
+    </guest-unsupported>
 
 The `<model-resource>` tag is used to define actions that can be performed with
 respect to models, a.k.a. entities. There are two kinds of such actions in
 Liferay: *top-level actions* and *resource actions*. Top-level actions are not
 applied to a particular resource. For example, the action of adding a new entity
 is not applied to a particular resource so it's considered a top-level action.
-The first `<model-resource>` tag (the one that has the
-`<model-name>com.liferay.calendar</model-name>` inner tag) defines adding a
-Calendar resource as a top-level action. (Note: A Calendar resource represents
-something that can be used when booking Calendar events. E.g., a Calendar
-resource could be a room or a projector. A Calendar resource is a completely
-separate concept from a permissions resource.) The second through fourth
-`<model-resource>` tags define resource actions that can be applied to the
-`Calendar`, `CalendarBooking`, and `CalendarResource` entities. E.g., the
-`DELETE`, `UPDATE`, and `VIEW` permissions are defined with respect to the
-resource associated with the `Calendar` entity. The `ADD_DISCUSSION`,
-`DELETE_DISCUSSION`, and `UPDATE_DISCUSSION` permissions are defined with
-respect to the resource associated with the `CalendarBooking` entity. And the
-`DELETE`, `UPDATE`, and `VIEW` permissions are defined with respect to the
-resource associated with the `CalendarResource` entity.
+The first `<model-resource>` tag defines adding guestbook and guestbook entry
+resources as top-level actions:
+
+    <supports>
+        <action-key>ADD_GUESTBOOK</action-key>
+        <action-key>ADD_ENTRY</action-key>
+    </supports>
+
+The second and third `<model-resource>` tags define resource actions that can be
+applied to the `Guestbook`, and `GuestbookEntry` entities, respectively. E.g.,
+the permissions for the following actions are defined with respect to the
+resource associated with the `Guestbook` entity:
+
+    <supports>
+        <action-key>ADD_ENTRY</action-key>
+        <action-key>DELETE</action-key>
+        <action-key>PERMISSIONS</action-key>
+        <action-key>UPDATE</action-key>
+        <action-key>VIEW</action-key>
+    </supports>
+
+Similarly, the permissions for the following actions are defined with respect to
+the resource associated with the `GuestbookEntry` entity:
+
+    <supports>
+        <action-key>DELETE</action-key>
+        <action-key>PERMISSIONS</action-key>
+        <action-key>UPDATE</action-key>
+        <action-key>VIEW</action-key>
+    </supports>
 
 Inside of each `<model-resource>` tag, notice that the model name must be
 defined. The `<model-name>` must be either the fully-qualified name of a package
-or of an entity class. E.g. `com.liferay.calendar` is the name of a package and
-`com.liferay.calendar.model.Calendar` is the name of an entity class. Using a
-package is the recommended convention for permissions that refer to top-level
-actions. The `ADD_RESOURCE` permission is defined this way since it's a
-top-level action. The `<portlet-ref>` element comes next and contains a
-`<portlet-name>`. The value of `<portlet-name>` references the name of the
-portlet to which the model resource belongs. It's possible for a model resource
-to belong to multiple portlets referenced with multiple `<portlet-name>`
-elements but this is uncommon. Like a portlet resource, a model resource lets
-you define a list of supported actions that require permission to perform. You
-must list all the performable actions that require a permission check. For a
-calendar, users must belong to appropriate roles in order to have permission to
-do the following: 
+or of an entity class. E.g. `com.liferay.docs.guestbook.model` is the name of a
+package and `com.liferay.docs.guestbook.model.Guestbook` is the name of an
+entity class. Using a package is the recommended convention for permissions that
+refer to top-level actions:
 
-- *Delete* a calendar
-- *Manage the bookings* of a calendar 
-- *Manage the permissions* of a calendar
-- *Update* a calendar 
-- *View* a calendar 
-- *View the bookings (events)* of a calendar
+    <model-name>com.liferay.docs.guestbook.model</model-name>
 
-For *model resources*, as for portlet resources, the `<site-member-defaults>`
-tag and the `<guest-defaults>` tags define default permissions for site members
-and guests, respectively. And the `<guest-unsupported>` tag specifies
-permissions forbidden to guests.
+The `ADD_GUESTBOOK` and `ADD_ENTRY` permissions are defined this way since
+they're top-level actions. For resource actions, the entity class is specified:
+
+    <model-name>com.liferay.docs.guestbook.model.Guestbook</model-name>
+
+The `<portlet-ref>` element comes next and contains a `<portlet-name>` sub-tag.
+
+    <portlet-ref>
+        <portlet-name>guestbook</portlet-name>
+    </portlet-ref>
+
+The value of `<portlet-name>` references the name of the portlet to which the
+model resource belongs. It's possible for a model resource to belong to multiple
+portlets referenced with multiple `<portlet-name>` elements but this is
+uncommon.
+
+The `<supports>`, `<site-member-defaults>`, `<guest-defaults>`, and
+`<guest-unsupported>` tags work the same way inside the `<model-resource>` tag
+as they do inside the `<portlet-resource>` tag. The `<supports>` tag lets you
+specify a list of supported actions that require permission to perform. The
+`<site-member-defaults>` tag and the `<guest-defaults>` tags define default
+permissions for site members and guests, respectively. And the
+`<guest-unsupported>` tag specifies permissions forbidden to guests.
 
 After defining resource permissions for your custom portlet, you need to point
 Liferay to the `resource-actions` XML file that contains your definitions. This
-is `docroot/WEB-INF/src/resource-actions/default.xml` for the Calendar portlet.
+is `docroot/WEB-INF/src/resource-actions/default.xml` for the Guestbook project.
 In Liferay's core, there are multiple permissions XML definition files for
 various core Liferay portlets in the `portal/portal-impl/src/resource-actions`
 directory. The `default.xml` file contains pointers to the definition files of
