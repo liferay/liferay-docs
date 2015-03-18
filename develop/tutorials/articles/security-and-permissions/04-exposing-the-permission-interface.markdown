@@ -11,55 +11,58 @@ not yet configurable.
 On the portlet level, no code needs to be written in order to have the
 permission system work for your custom portlet. If you've defined any custom
 permissions (supported actions) in your configuration file's `portlet-resource`
-tag, they're automatically added to a list of permissions in Liferay's
-permissions UI. What good, however, are permissions that exist but can't be
-configured? 
+tag, they're automatically added to a list of permissions that are displayed by
+Liferay's permissions UI. What good, however, are permissions that exist but
+can't be configured? 
 
 This tutorial covers exposing your portlet permissions to users. Get ready to 
 rock! 
 
 +$$$
 
-**Note:** The Liferay Blogs portlet is used in this tutorial to illustrate 
-exposing permissions to users. You can find it in Liferay's source code on 
-[Github](https://github.com/liferay/liferay-portal).
+**Note:** The Guestbook project is used in this tutorial to illustrate exposing
+permissions to users. You can find it in the Liferay Docs repository here:
+[Liferay Guestbook project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/learning-paths/mvc/code/learning-sdk/portlets/guestbook-portlet).
 
 $$$
 
 ## Adding Permissions 
 
-To let a user set permissions on model resources, you must expose the permission
-interface to the user. Just add these two Liferay UI tags to your JSP:
+To allow permissions to be configured for model resources, you must add the
+permissions interface to the UI. Just add these two Liferay UI tags to your JSP:
 
-1.  `<liferay-security:permissionsURL>`: Returns a URL to the permission
-    settings configuration page. 
+1. `<liferay-security:permissionsURL>`: Returns a URL to the permission settings
+   configuration page. 
 
 2. `<liferay-ui:icon>`: Shows an icon to the user. These are defined in the
-    theme, and one of them (see below) is used for permissions. 
+   theme and one of them (see below) is used for permissions. 
 
 This example demonstrates the use of both tags; it comes from the
-`view_entry_content.jspf` file of Liferay's Blogs portlet. 
+`guestbook_actions.jsp` file of the Guestbook portlet. 
 
     <liferay-security:permissionsURL
-        modelResource="<%= BlogsEntry.class.getName() %>"
-        modelResourceDescription="<%= entry.getTitle() %>"
-        resourcePrimKey="<%= entry.getPrimaryKey().toString() %>"
-        var="entryURL"
-    />
+        modelResource="<%= Entry.class.getName() %>"
+        modelResourceDescription="<%= entry.getMessage() %>"
+        resourcePrimKey="<%= String.valueOf(entry.getEntryId()) %>"
+        var="permissionsURL" />
 
-    <liferay-ui:icon image="permissions" url="<%= entryURL %>" />
+    <liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
 
-For the first tag, specify the following attributes: 
+For the `<liferay-security:permissionsURL />` tag, specify the following
+attributes: 
 
--   `modelResource`: The fully qualified Java object class name. This class name
-    gets translated into its more readable name as specified in
-    `Language.properties`. 
--   `modelResourceDescription`: You can pass in anything that best describes
-    this model instance. In this example, the blogs title was passed in. 
--   `resourcePrimKey`: The primary key of your model instance. 
--   `var`: Specifies the name of the variable to which the resulting URL string
-    will be assigned. The variable is then passed to the `<liferay-ui:icon>` tag
-    so the permission icon has the proper URL link.
+- `modelResource`: The fully qualified class name of the entity class. This
+  class name gets translated into a more readable name as specified in
+  `Language.properties`. The entity class in the example above is the guestbook
+  entry class for which the fully qualified class name is
+  `com.liferay.docs.guestbook.model.Entry`.
+- `modelResourceDescription`: You can enter anything that best describes this
+  model instance. In the example above, the guestbook entry message is used for
+  the model resource description. 
+- `resourcePrimKey`: The primary key of your entity. 
+- `var`: Specifies the name of the variable to which the resulting URL string
+  will be assigned. The variable is then passed to the `<liferay-ui:icon>` tag
+  so the permission icon has the proper URL link.
 
 There's an optional attribute called `redirect` that's available if you want to
 override the default behavior of the upper right arrow link. That's it; now your
