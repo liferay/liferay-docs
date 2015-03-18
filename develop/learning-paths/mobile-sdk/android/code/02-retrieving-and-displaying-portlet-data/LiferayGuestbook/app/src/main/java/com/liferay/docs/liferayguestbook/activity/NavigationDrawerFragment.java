@@ -102,12 +102,7 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
-        // Create and set the ArrayAdapter for the guestbooks
-        /*_adapter = new ArrayAdapter<GuestbookModel>(
-                getActionBar().getThemedContext(),
-                android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1,
-                MainActivity._guestbooks);*/
+
         _adapter = new GuestbooksAdapter(getActionBar().getThemedContext(), MainActivity._guestbooks);
         mDrawerListView.setAdapter(_adapter);
         // Set the position of the selected item in the drawer, and return the ListView
