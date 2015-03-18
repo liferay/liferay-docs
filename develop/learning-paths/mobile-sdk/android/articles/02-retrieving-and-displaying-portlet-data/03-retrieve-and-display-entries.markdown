@@ -16,7 +16,7 @@ guestbook entries from the portal. As you did to display guestbooks, you'll use
 same basic pattern you used to retrieve and display guestbooks. For this reason, 
 the concepts behind the steps aren't explained in detail here. Refer to this 
 learning path's previous two articles for such an explanation. As you did when 
-you wrote the code to retrive guestbooks from the portal, you'll begin here by 
+you wrote the code to retrieve guestbooks from the portal, you'll begin here by 
 encapsulating the objects being retrieved. 
 
 ## Encapsulating the Entries
@@ -317,7 +317,7 @@ entries and the adapter. First though, you need to rename the fragment you'll
 put them in. In `MainActivity`, scroll down until you find the nested 
 `PlaceholderFragment` class. Android Studio created this class when you created 
 the activity from the Navigation Drawer Activity template. You're expected to 
-use it to display the drawer selection. Since each drawer selction in your app 
+use it to display the drawer selection. Since each drawer selection in your app 
 is a guestbook, you'll use `PlaceholderFragment` to display the selected 
 guestbook's entries. However, `PlaceholderFragment` isn't a very meaningful 
 name. To change its name, right click `PlaceholderFragment` in the class 
@@ -343,9 +343,9 @@ class:
       _adapter.notifyDataSetChanged();
     }
 
-Next, you need a method for making the call to retrive the entries from the 
+Next, you need a method for making the call to retrieve the entries from the 
 portlet. Recall that you retrieved guestbooks with the `getGuestbooks` method. 
-You'll retrieve the entries simliarly with the `getEntries` method. Add it as 
+You'll retrieve the entries similarly with the `getEntries` method. Add it as 
 follows to the `EntriesFragment` class: 
 
     protected void getEntries(long guestbookId) {
@@ -374,7 +374,7 @@ parameter, which it then uses to request that guestbook's entries.
 Before using `getEntries`, you need to make some changes to how the layout of 
 `EntriesFragment` is processed and rendered. This layout is defined in 
 `fragment_main.xml`. It's important to note that this layout is different than 
-the one you defnied for the entries adapter. The entries adapter layout defines 
+the one you defined for the entries adapter. The entries adapter layout defines 
 a single entry's appearance, while `fragment_main.xml` defines the appearance of 
 all the entries on the screen. Since you want the entries to appear in a list, 
 you need to change `fragment_main.xml` to use `ListView`. Begin by replacing the 
