@@ -1,24 +1,28 @@
 ## Using Liferay's Message Bus 
 
-The *Message Bus* is a service level API used to exchange messages within 
-Liferay. The Message Bus is a mechanism for sending message payloads to 
-different components in Liferay, providing loose coupling between message 
-producers and consumers to prevent class loading issues. It's located in the 
-global class loader, making it accessible to every deployed web application. 
-Remote messaging isn't supported, but messages are sent across a cluster when 
+Liferay's *Message Bus* is a service level API that Liferay components use to
+send and receive messages within Liferay. It provides loose coupling between
+message producers and consumers. The Message Bus is located in Liferay's global
+class loader, making it accessible to every deployed web application. Remote
+messaging isn't supported, but messages are sent across a cluster when
 ClusterLink is enabled. 
 
-Message Bus has several common uses, including sending search index write
-events, sending subscription emails, handling messages at scheduler endpoints,
-and running asynchronous processes. You can leverage Message Bus to send 
-messages between and within your plugins. 
+Here are a few common uses of the Message Bus:
 
-As you read through the Message Bus tutorials, you'll learn about things like 
-*synchronous* and *asynchronous* messaging , *serial* vs. *in-parallel* message 
-dispatching, and Java and JSON style messages formats. 
+- Sending search index write events
+- Sending subscription emails
+- Handling messages at scheduler endpoints
+- Running asynchronous processes
+
+You can leverage the Message Bus to send messages between and within your
+plugins. 
+
+As you read through the Message Bus tutorials, you'll learn about *synchronous*
+and *asynchronous* messaging, *serial* vs. *in-parallel* message dispatching,
+and style messages formats. 
 
 Before you get into those topics, you should first learn about the Message Bus 
-System's architecture. 
+system's architecture. 
 
 ## Related Topics
 
