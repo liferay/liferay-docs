@@ -1,11 +1,11 @@
 # Liferay's Message Bus System 
 
-Using Liferay's Message Bus system is a great way to handle communication both 
-between and within your applications. However, before you get started with 
-Message Bus, you should know the basics of how it's structured. This tutorial 
-presents information on the components of the Message Bus system, as well as the 
-different types of messages that can be sent. Read on to fire up the wheels on 
-the Message Bus! 
+Using Liferay's Message Bus system is a great way to handle communication both
+between and within your applications. However, before you get started with
+Message Bus, you should know the basics of how it's structured. This tutorial
+presents information on the components of the Message Bus system, as well as the
+different types of messages that can be sent. Read on to inspect the Message
+Bus! 
 
 ## Message Bus System Components 
 
@@ -40,9 +40,9 @@ The Message Bus supports *synchronous* and *asynchronous* messaging:
       the destination for the response message. The recipient (listener) then
       send a response message back to the sender via this response destination. 
     - **Send-and-Forget**: The sender includes no call-back information in the
-      message sent. 
+      sent message. 
 
-Configuring Message Bus is done using the following files: 
+The Message Bus can be configured via the following files: 
 
 - `WEB-INF/src/META-INF/messaging-spring.xml`: Specifies your destinations,
   listeners, and their mappings to each other. 
@@ -58,11 +58,13 @@ message sender class, and default synchronous message sender class for Liferay.
 
 $$$
 
-You can control your *Message Types* by using either the `Message` or
-`JSONObject` class. Liferay core services are typically serialized and
-deserialized in JSON. Both types of message classes are used in the following 
-tutorials to show you how to implement both synchronous and asynchronous 
-messaging. 
+You can control your *Message Types* using either the
+`com.liferay.portal.kernel.messaging.Message` class or the
+`com.liferay.portal.kernel.json.JSONObject` class. These classes are included in
+Liferay's `portal-service.jar` file. Liferay core services are typically
+serialized and deserialized in JSON. Both types of message classes are used in
+the following tutorials to show you how to implement both synchronous and
+asynchronous messaging. 
 
 ## Related Topics
 
