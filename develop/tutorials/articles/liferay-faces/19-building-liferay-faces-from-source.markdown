@@ -1,7 +1,7 @@
-# Building Liferay Faces From Source
+# Building Liferay Faces From Source [](id=building-liferay-faces-from-source)
 
 You may have several reasons for downloading and building Liferay Faces from its
-project sourcee code: 
+project source code: 
 
 - To try out the latest cutting edge changes
 - To investigate a suspected bug
@@ -12,7 +12,7 @@ build it yourself.
 
 First, you'll start with installing the liferay-faces project. 
 
-## Installing the liferay-faces Project
+## Installing the liferay-faces Project [](id=installing-the-liferay-faces-project)
 
 It's important to install the version of Liferay Faces that you want. So, it's a
 good idea to check the [Liferay Faces Version
@@ -70,7 +70,7 @@ Now that you've installed the liferay-faces project, you can configure your
 environment for building the project. In the next section of this tutorial,
 you'll explore building Liferay Faces with Maven. 
 
-## Building Liferay Faces with Maven
+## Building Liferay Faces with Maven [](id=building-liferay-faces-with-maven)
 
 Maven is required to build the liferay-faces project. You can download Maven
 from
@@ -101,6 +101,6 @@ Maven builds the following Liferay Faces artifacts:
 
 That's it; you've built Liferay Faces from source! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 <!-- Add once JSF tutorials are finished. -Cody -->
