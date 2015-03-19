@@ -8,8 +8,8 @@ continue working correctly.
 
 This tutorial covers the following migration topics:
 
-    Migrating the liferay-portlet.xml File for Liferay Faces 3.2/4.2
-    Migrating Liferay Faces Alloy Tags for Liferay Faces Alloy 3.2/4.2
+- Migrating the liferay-portlet.xml File for Liferay Faces 3.2/4.2
+- Migrating Liferay Faces Alloy Tags for Liferay Faces Alloy 3.2/4.2
 
 First, you'll learn how to upgrade your `liferay-portal.xml` file. 
 
@@ -19,7 +19,7 @@ Liferay Portal 6.2 has two compatible Liferay Faces Versions: 3.2 and 4.2.
 Liferay provides Liferay Faces 3.2 for compatibility with JSF 2.1 and Liferay
 Faces 4.2 for compatibility with JSF 2.2 (see the [Liferay Faces Version
 Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
-for more info on Liferay Portal and JSF compatibility). If you are currently
+for more info on Liferay Portal and JSF compatibility). If you're currently
 using Liferay Faces 3.1 and are interested in upgrading from Liferay Portal 6.1
 to 6.2, but aren't interested in compatibility with JSF 2.2, you should upgrade
 from Liferay Faces 3.1 to 3.2. But, if you want to use JSF 2.2 in addition to
@@ -75,7 +75,7 @@ AlloyUI was upgraded from AlloyUI 1.5 to AlloyUI 2.0 between Liferay Portal 6.1
 and Liferay Portal 6.2. The AlloyUI changes include the deprecation and removal
 of some JavaScript functionality, and the addition of some JavaScript widgets.
 As a result, in Liferay Faces 3.2 and 4.2, corresponding Liferay Faces Alloy
-tags are deprecated and some are replaced. In this tutorial, you'll go over the
+tags are deprecated and some are replaced. In this section, you'll go over the
 Liferay Faces Alloy tag changes that you'll need to accommodate in your
 Facelets. 
 
@@ -100,8 +100,7 @@ nested within an `aui:row` tag.
 
 Also, because `aui:col` has completely different attributes than `aui:column`,
 you must account for the `aui:col` attributes. For more information on the
-`aui:col` tag, see the [VDLdocs for Liferay Faces
-3.2](http://docs.liferay.com/faces/3.2/vdldoc/). 
+`aui:col` tag, see the [VDLdocs for Liferay Faces 3.2](http://docs.liferay.com/faces/3.2/vdldoc/). 
 
 $$$
 

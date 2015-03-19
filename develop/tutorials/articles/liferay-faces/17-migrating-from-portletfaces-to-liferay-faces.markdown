@@ -227,7 +227,8 @@ Liferay Faces namespace:
 javax.portlet.faces.preference.Preference;`
 
 With the new converted namespace, you've migrated portlet preferences to Liferay
-Faces. 
+Faces. That wraps up your migration from PortletFaces to Liferay Faces.
+Congratulations! 
 
 ## Related Topics [](id=related-topics)
 
