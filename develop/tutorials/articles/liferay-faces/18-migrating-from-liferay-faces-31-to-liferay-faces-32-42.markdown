@@ -1,4 +1,19 @@
-# Migrating the liferay-portlet.xml File for Liferay Faces 3.2/4.2
+# Migrating from Liferay Faces 3.1 to Liferay Faces 3.2/4.2
+
+Liferay Faces 3.2 and 4.2 are compatible with Liferay Portal 6.2 (see the
+[Liferay Faces Version Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
+for more info on Liferay Portal compatibility). Migrating to Liferay Faces
+3.2/4.2 from Liferay Faces 3.1 requires a few changes to ensure your projects
+continue working correctly. 
+
+This tutorial covers the following migration topics:
+
+    Migrating the liferay-portlet.xml File for Liferay Faces 3.2/4.2
+    Migrating Liferay Faces Alloy Tags for Liferay Faces Alloy 3.2/4.2
+
+First, you'll learn how to upgrade your `liferay-portal.xml` file. 
+
+## Migrating the liferay-portlet.xml File
 
 Liferay Portal 6.2 has two compatible Liferay Faces Versions: 3.2 and 4.2.
 Liferay provides Liferay Faces 3.2 for compatibility with JSF 2.1 and Liferay
@@ -54,6 +69,71 @@ file.
 Your `liferay-portlet.xml` file is now migrated to Liferay Faces 3.2/4.2.
 Stupendous! 
 
-## Related Topics
+## Migrating Liferay Faces Alloy 3.1 Tags to Liferay Faces Alloy 3.2/4.2 Tags
+
+AlloyUI was upgraded from AlloyUI 1.5 to AlloyUI 2.0 between Liferay Portal 6.1
+and Liferay Portal 6.2. The AlloyUI changes include the deprecation and removal
+of some JavaScript functionality, and the addition of some JavaScript widgets.
+As a result, in Liferay Faces 3.2 and 4.2, corresponding Liferay Faces Alloy
+tags are deprecated and some are replaced. In this tutorial, you'll go over the
+Liferay Faces Alloy tag changes that you'll need to accommodate in your
+Facelets. 
+
+First, you'll look at the changes to the `aui` namespace tags. 
+
+### Changes to the Liferay Faces Alloy aui Tags [](id=changes-to-the-liferay-faces-alloy-aui-tags)
+
+The following table identifies the `aui` tags that are deprecated in 3.2/4.2 and
+each tag's replacement, if a replacement exists. 
+
+**Tag Deprecations in the `aui` Namespace**
+
+| Deprecated `aui` Tag&nbsp;&nbsp;&nbsp; | Replacement `aui` Tag |
+|----------------------|-----------------------|
+| `aui:column` | [`aui:row`](http://docs.liferay.com/faces/3.2/vdldoc/aui/row.html) and  [`aui:col`](http://docs.liferay.com/faces/3.2/vdldoc/aui/col.html) |
+| `aui:layout` | No Replacement |
+
++$$$
+
+**Note:** The `aui:column` tag must be replaced by an `aui:col` tag that is
+nested within an `aui:row` tag.
+
+Also, because `aui:col` has completely different attributes than `aui:column`,
+you must account for the `aui:col` attributes. For more information on the
+`aui:col` tag, see the [VDLdocs for Liferay Faces
+3.2](http://docs.liferay.com/faces/3.2/vdldoc/). 
+
+$$$
+
+Next, you'll look at the changes to the tags in the `aui-cc` namespace. 
+
+### Changes to the Liferay Faces Alloy aui-cc Tags [](id=changes-to-the-liferay-faces-alloy-aui-cc-tags)
+
+Below is a table of the `aui-cc` tags that are deprecated or removed with
+respect to the Liferay Faces 3.2, 4.1, and 4.2 releases: 
+
+**Tag Deprecations in the `aui-cc` Namespace**
+
+| Deprecated `aui-cc` Tag |
+|-------------------------|
+| `aui-cc:button` |
+| `aui-cc:input` |
+| `aui-cc:select` |
+| `aui-cc:message` (**REMOVED in 4.1/4.2**) |
+| `aui-cc:messages` (**REMOVED in 4.1/4.2**) |
+
++$$$
+
+**Note:** The `aui-cc:message` and `aui-cc:messages` tags have been completely
+removed in 4.1/4.2 because no analogous tags in Liferay Portal exist for them
+and their functionality is already implemented in the bridge's `h:message` and
+`h:messages` tags, respectively. 
+
+$$$
+
+Excellent! You're now familiar with the AlloyUI related migration changes, in
+addition to other changes required to migrate to Liferay Faces 3.2/4.2.   
+
+## Related Topics [](id=related-topics)
 
 <!-- Add once JSF tutorials are finished. -Cody -->
