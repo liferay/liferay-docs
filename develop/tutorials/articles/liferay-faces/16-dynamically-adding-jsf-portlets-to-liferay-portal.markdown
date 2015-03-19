@@ -1,7 +1,7 @@
-# Dynamically Adding JSF Portlets to Liferay Portal
+# Dynamically Adding JSF Portlets to Liferay Portal [](id=dynamically-adding-jsf-portlets-to-liferay-portal)
 
-For this tutorial, you'll learn how Liferay Portal lets you add portlets
-dynamically to portal pages. Here are several approaches to do this:  
+For this tutorial, you'll learn how to dynamically add portlets to Liferay
+Portal pages. Here are the places in which you can add a portlet: 
 
 - Inside the FreeMarker template or [Velocity
   template](http://www.liferay.com/community/wiki/-/wiki/Main/Embedding+a+portlet+in+the+theme)
@@ -76,6 +76,7 @@ ensures that JSF 2 is properly initialized. You specify the required
 Now, you know the options you have in dynamically adding your JSF portlets at
 runtime. 
 
-## Related Topics
+<!--
+**Related Topics [](id=related-topics)**
 
-<!-- Add once JSF tutorials are finished. -Cody -->
+Add once JSF tutorials are finished. -Cody -->
