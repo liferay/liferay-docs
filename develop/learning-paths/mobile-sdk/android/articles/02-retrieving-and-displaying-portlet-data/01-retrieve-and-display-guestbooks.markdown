@@ -10,7 +10,7 @@ placeholders that are in dire need of replacement.
 
 In this article you'll use the Liferay Mobile SDK to call the Guestbook 
 portlet's remote services and replace the placeholders with guestbooks. This is 
-conceptually simple, but a bit more complex in practice. Not to worry! This 
+conceptually simple, but it's a bit more complex in practice. Not to worry! This 
 article guides you through each step in the process. First, you'll do some 
 simple refactoring in your project. 
 
@@ -93,6 +93,11 @@ opens in Android Studio. Replace its contents with the following code:
 
         return (_guestbookId == guestbook.getGuestbookId());
       }
+      
+      @Override
+      public String toString() {
+        return _name;
+      }
 
       public long getGuestbookId() {
         return _guestbookId;
@@ -135,11 +140,20 @@ the `JSONObject` returned by the Mobile SDK's remote service calls. This is done
 in the constructor by the `getLong` and `getString` methods. To see how the 
 `Guestbook` parameters are defined in the portlet, see the 
 [Liferay MVC learning path article on Service Builder](/learning-paths/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
-
 For now, the only parameters you really need in this class are `guestbookId` and 
 `name`. However, you'll need the rest later in this learning path. It's simpler 
-to add support for all of them now. Next, you'll add the basic infrastructure 
-for requesting guestbooks from the portlet. 
+to add support for all of them now.
+
+You should also note the `toString` method in this class. By returning a 
+guestbook's name, it's very simple, but very important. To render objects in the 
+drawer, Android calls `toString` on them. If `toString` isn't defined for the 
+objects, then strings with each object's full package path and internal ID are 
+shown. In other words, illegible text is displayed. By defining `toString` to 
+return the name of each `GuestbookModel`, you're telling Android to show each 
+guestbook's name in the drawer.
+
+Next, you'll add the basic infrastructure for requesting guestbooks from the 
+portlet. 
 
 ## Creating a Callback Class
 
@@ -237,7 +251,7 @@ with an [adapter](http://developer.android.com/guide/topics/ui/declaring-layout.
 Specifically, an `ArrayAdapter` is used as the data source for the drawer's 
 `ListView`. This is done in the `onCreateView` method of the 
 `NavigationDrawerFragment` class. Android Studio generated this method for you 
-when you created the project:
+when you created the project: 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -364,29 +378,40 @@ This method makes the portlet call to get the guestbooks. Since a portal
 *session* is required for the Mobile SDK to communicate with the portal, the 
 `getGuestbooks` method first creates a session with the user's credentials. The 
 session is created by using `SessionImpl` with the server's address 
-(`10.0.2.2:8080` is the same as `localhost:8080`) and a `BasicAuthentication` 
-object containing the user's credentials. Be sure to change the user credentials 
-here to match those of the user you created when you set up your portal. A new 
-instance of `GetGuestbooksCallback` is then created and set as the session's 
-callback. Next, the session is used to create a `GuestbookService` instance. 
-This lets you call the Guestbook portlet's remote services, as is done in the 
-`try` block by `service.getGuestbooks(SITE_ID)`. The `getGuestbooks(siteId)` 
-method is the Guestbook portlet's remote service method that retrieves a site's 
-guestbooks. Note that `SITE_ID` doesn't exist yet. Create it now as the 
-following variable in the `MainActivity` class: 
+(for the Android emulator, `10.0.2.2:8080` is the same as `localhost:8080`) and 
+a `BasicAuthentication` object containing the user's credentials. Be sure to 
+change the user credentials here to match those of the user you created when you 
+set up your portal. A new instance of `GetGuestbooksCallback` is then created 
+and set as the session's callback. Next, the session is used to create a 
+`GuestbookService` instance. This lets you call the Guestbook portlet's remote 
+services, as is done in the `try` block by `service.getGuestbooks(SITE_ID)`. The 
+`getGuestbooks(siteId)` method is the Guestbook portlet's remote service method 
+that retrieves a site's guestbooks. Note that `SITE_ID` doesn't exist yet. 
+Create it now as the following variable in the `MainActivity` class: 
 
     public static final int SITE_ID = 10182;
 
-This is the portal's default site ID. At this point, you're probably thinking, 
-"Hang on a minute. What good is an Android app that has the portal, site, and 
-user hardcoded in? It can only be used by one person, on one site, and in one 
-portal!" You're right. This implementation is most untenable. However, you don't 
-need to worry about it right now. It's done strictly for simplicity while you're 
-developing the app's main features. Later in this learning path, you'll add a 
-proper UI for portal selection, site selection, and authentication. If you add 
-it right now, you'll have to enter this information *every time* your app 
-redeploys to the emulator. Trust us; this becomes rather bothersome and slows 
-down development. 
+The value `10182` is the ID of the site the Guestbook portlet was placed on in 
+this example. In your code, you should make sure it matches the ID of the site 
+your Guestbook portlet is on. It's easy to look up in your portal. Log in to 
+your Liferay installation and navigate to the site with the Guestbook portlet. 
+In the Dockbar (the bar at the top of the screen), click 
+*Admin* &rarr; *Site Administration* &rarr; *Configuration*. The site ID is in 
+the *Site Settings* section. It's highlighted by the red box in the following 
+screenshot. 
+
+![Figure 4: The site ID is listed in the *Site Settings* section of the *Site Administration*'s *Configuration* menu.](../../images/site-id.png)
+
+At this point, you're probably thinking, "Hang on a minute. What good is an 
+Android app that has the portal, site, and user hardcoded in? It can only be 
+used by one person, on one site, and in one portal!" You're right. This 
+implementation is most untenable. However, you don't need to worry about it 
+right now. It's done strictly for simplicity while you're developing the app's 
+main features. Later in this learning path, you'll add a proper UI for portal 
+selection, site selection, and authentication. If you add it right now, you'll 
+have to enter this information *every time* your app redeploys to the emulator. 
+Trust us; this becomes rather bothersome and significantly slows down 
+development. 
 
 Now you can call your new `getGuestbooks` method. Place the call in the 
 `onCreate` method of `MainActivity`, following the call to 
@@ -443,16 +468,8 @@ Make sure that your portal is running and then run your app as you did before,
 by clicking the green play button in Android Studio's toolbar. If the emulator 
 is already running, you're prompted to select it when your app deploys. With the 
 app now running in the emulator, open the drawer. Your guestbooks now appear in 
-the drawer! Wait, not so fast; the guestbook names aren't rendering properly. 
+the drawer! 
 
-![Figure 4: Strings representing `GuestbookModel` objects appear in the drawer instead of proper guestbook names.](../../images/android-guestbook-drawer-01.png)
+![Figure 5: The guestbooks from the Guestbook portlet now appear in the drawer.](../../images/android-guestbook-drawer-01.png)
 
-Instead of each guestbook's name, a string representing each `GuestbookModel` 
-object is showing. If you're a seasoned Java developer you probably have an idea 
-of what's going on here. This is the sort of text you get when `toString` is 
-called on a Java object without any other instructions on what exactly should be 
-turned into a string. In fact, that's *exactly* what's happening here, because 
-it's the default behavior of Android's built-in adapter classes. Recall that 
-`ArrayAdapter` is being used to hold the guestbooks for display in the drawer's 
-`ListView`. To show the proper guestbook names in the drawer, you need to 
-implement your own adapter class. You'll do this next.
+Great! Now you're ready to retrieve and display the guestbook entries. 
