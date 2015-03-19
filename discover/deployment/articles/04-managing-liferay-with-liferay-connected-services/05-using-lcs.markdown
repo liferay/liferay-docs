@@ -295,12 +295,12 @@ When using an environment token, minimal information (server name, location,
 etc...) is used to register a portal instance with LCS. You can change this 
 information from the server view in LCS at any time. Also, since environment 
 tokens connect using OAuth, it's important to note that using an environment 
-token overrides the portal instance's OAuth authorization cycle. If a portal 
-instance has never been registered with LCS, an OAuth authorization entry is 
-created and is visible in the portal instance's 
-*My Account* &rarr; *OAuth Authorizations* menu. If the LCS Administrator or 
-Environment Manager has previously registered portal instances with LCS, then 
-their existing credentials are used to create the token file. 
+token overrides the OAuth authorization cycle. If an LCS Administrator or 
+Environment Manager has never registered portal instances with LCS, the first 
+time they do so an OAuth authorization entry is created. This is visible in 
+their LCS account's *My Account* &rarr; *OAuth Authorizations* menu. If they 
+have previously registered portal instances with LCS, then their existing 
+credentials are used when they create a token file. 
 
 ![Figure 4.23: The OAuth authorization entry in the portal instance using an environment token to connect to LCS.](../../images/lcs-token-oauth-entry.png)
 
