@@ -9,8 +9,8 @@ doesn't have permission.
 
 +$$$
 
-**Note:** The Guestbook project is used in this tutorial to illustrate exposing
-permissions to users. You can find it in the Liferay Docs repository here:
+**Note:** The Guestbook project is used in this tutorial to illustrate how to
+run permissions checks. You can find it in the Liferay Docs repository here:
 [Liferay Guestbook project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/learning-paths/mvc/code/learning-sdk/portlets/guestbook-portlet).
 
 $$$
@@ -20,15 +20,15 @@ $$$
 Once you've defined permissions in your
 `docroot/WEB-INF/src/resource-actions/default.xml` file, you need to implement
 permission checking. In the Guestbook portlet, one supported custom action is
-`ADD_GUESTBOOK`. There are two places in the source code to check for this
-permission: in the user interface and in the business logic. The user interface
-of the Guestbook portlet is implemented in JSP files while the business logic is
-implement at the portlet layer and service layer. For the JSP files, you want to
-wrap certain elements in permission checks so they only appear for users with
-permission to interact with those elements. For example, the presence of the Add
-Guestbook button is contingent on whether the user has permission to add a
-guestbook. Here's how the `ADD_GUESTBOOK` action is wrapped in a permission
-check in `docroot/html/guestbook/view.jsp`: 
+`ADD_GUESTBOOK`. There are two places in the source code where you might want to
+check for this permission: in the user interface and in the business logic. The
+user interface of the Guestbook portlet is implemented in JSP files while the
+business logic is implement at the portlet layer and service layer. For the JSP
+files, you want to wrap certain elements in permission checks so they only
+appear for users with permission to interact with those elements. For example,
+the presence of the Add Guestbook button is contingent on whether the user has
+permission to add a guestbook. Here's how the `ADD_GUESTBOOK` action is wrapped
+in a permission check in `docroot/html/guestbook/view.jsp`: 
 
     <c:if test='<%= GuestbookModelPermission.contains(permissionChecker, scopeGroupId, "ADD_GUESTBOOK") %>'>
         // Display the Add Guestbook button
@@ -36,37 +36,48 @@ check in `docroot/html/guestbook/view.jsp`:
 
 The second place to check for the `ADD_GUESTBOOK` permission is in the business
 logic. The `GuestbookPortlet.addGuestbook(...)` method invokes the
-`GuestbookServiceUtil.addGuestbook(...)`. Therefore, permission checking only
-needs to be implemented at the service layer. The following code is used to
+`GuestbookServiceUtil.addGuestbook(...)` method. Therefore, permission checking
+only needs to be implemented at the service layer. The following code is used to
 implement permission checking in the `GuestbookServiceImpl` class:
 
     GuestbookModelPermission.check(getPermissionChecker(),
-	serviceContext.getScopeGroupId(), ActionKeys.ADD_GUESTBOOK);
+        serviceContext.getScopeGroupId(), ActionKeys.ADD_GUESTBOOK);
 
 If the check fails, a `PrincipalException` is thrown and the `ADD_GUESTBOOK`
-request is aborted. `GuestbookModelPermission` is a helper class. See
-`GuestbookModelPermission.check(...)`:
+request is aborted. `GuestbookModelPermission` is a helper class. Here's its
+full contents:
 
-    public static void check(PermissionChecker permissionChecker, long groupId,
-        String actionId) throws PortalException {
+    package com.liferay.docs.guestbook.service.permission;
 
-        if (!contains(permissionChecker, groupId, actionId)) {
-            throw new PrincipalException();
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.security.auth.PrincipalException;
+    import com.liferay.portal.security.permission.PermissionChecker;
+
+    public class GuestbookModelPermission {
+
+        public static final String RESOURCE_NAME = "com.liferay.docs.guestbook.model";
+
+        public static void check(PermissionChecker permissionChecker, long groupId,
+            String actionId) throws PortalException {
+
+            if (!contains(permissionChecker, groupId, actionId)) {
+                throw new PrincipalException();
+            }
+        }
+
+        public static boolean contains(PermissionChecker permissionChecker,
+            long groupId, String actionId) {
+
+            return permissionChecker.hasPermission(groupId, RESOURCE_NAME, groupId,
+                actionId);
         }
     }
 
-    public static boolean contains(PermissionChecker permissionChecker,
-        long groupId, String actionId) {
-
-        return permissionChecker.hasPermission(groupId, RESOURCE_NAME, groupId,
-            actionId);
-    }
-
-The `PermissionChecker` class has a method `hasPermission(...)` that checks
-whether a user attempting to perform an action on a resource has the required
-permission. If the user isn't signed in (i.e., is a guest user), it checks for
-guest permissions. Otherwise, it checks for user permissions. Here's an overview
-of the parameters of this method: 
+The `PermissionChecker` class is a Liferay class. It has a `hasPermission(...)`
+method that checks whether a user attempting to perform an action on a resource
+has the required permission. If the user isn't signed in (i.e., is a guest
+user), it checks for guest permissions. Otherwise, it checks for user
+permissions. Here's an overview of the parameters of this method: 
 
 - `groupId`: Represents the scope where the permission check is performed. In
   Liferay, several scopes are available, including global (company) scope, group
@@ -115,20 +126,24 @@ permission checker:
             themeDisplay.getPermissionChecker();
 
 Next, you'll take a look at how to create helper classes for permission
-checking. Using helper classes makes it easier to invoke permission checks.
+checking. Using helper classes makes it easier to invoke permission checks. When
+using permissions helper classes, you won't have to manually invoke the
+`PermissionChecker.hasPermission(...)` method discussed above.
 
-## Helper Classes for Permission Checking 
+## Creating Helper Classes for Permission Checking 
 
 Helper classes streamline your code. They encapsulate the use of
 `permissionChecker` and the names of the resources for a specific portlet. This
 is especially useful when there are complex parent-child relationships, or if
 your permission logic calls for checking multiple action types.
-`GuestbookPermission` and `GuestbookModelPermission` are examples of permission
-helper classes. `GuestbookModelPermission` should be used when checking
-permissions for top-level resource actions whereas `GuestbookPermission` should
-be used for checking permissions on Guestbook model resource actions. Above, you
-saw an example of how `GuestbookModelPermisson` was used. Here's how
-`GuestbookPermission` is used in a JSP: 
+`GuestbookPermission` and `GuestbookModelPermission` from the Guestbook project
+are examples of permission helper classes. `GuestbookModelPermission` should be
+used when checking permissions for top-level resource actions whereas
+`GuestbookPermission` should be used for checking permissions on Guestbook model
+resource actions. In the previous section, you saw the `GuestbookModelPermisson`
+class and some examples of how it was used. Here, you'll examine the
+`GuestbookPermission` permissions helper class and use it to learn how to create
+your own. To start, consider how `GuestbookPermission` is used in a JSP:
 
     <%
         if (GuestbookPermission.contains(
@@ -147,41 +162,83 @@ the helper class `GuestbookPermission`. If the check fails, it throws a
     GuestbookPermission.check(getPermissionChecker(), guestbookId,
         ActionKeys.DELETE);
 
-See the following methods from `GuestbookPermission`:
+Here's the full contents of the `GuestbookPermission` helper class:
 
-    public static void check(PermissionChecker permissionChecker,
-        long guestbookId, String actionId) throws PortalException,
-        SystemException {
+    package com.liferay.docs.guestbook.service.permission;
+
+    import com.liferay.docs.guestbook.model.Guestbook;
+    import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.security.auth.PrincipalException;
+    import com.liferay.portal.security.permission.PermissionChecker;
+
+    public class GuestbookPermission {
+        public static void check(PermissionChecker permissionChecker,
+                long guestbookId, String actionId) throws PortalException,
+                SystemException {
 
             if (!contains(permissionChecker, guestbookId, actionId)) {
                 throw new PrincipalException();
             }
-	}
+        }
 
-	public static boolean contains(PermissionChecker permissionChecker,
-            long guestbookId, String actionId) throws PortalException,
-            SystemException {
+        public static boolean contains(PermissionChecker permissionChecker,
+                long guestbookId, String actionId) throws PortalException,
+                SystemException {
 
-        Guestbook guestbook = GuestbookLocalServiceUtil
-            .getGuestbook(guestbookId);
+            Guestbook guestbook = GuestbookLocalServiceUtil
+                .getGuestbook(guestbookId);
 
-        return permissionChecker
-            .hasPermission(guestbook.getGroupId(),
-            Guestbook.class.getName(), guestbook.getGuestbookId(),
-            actionId);
+            return permissionChecker
+                .hasPermission(guestbook.getGroupId(),
+                    Guestbook.class.getName(), guestbook.getGuestbookId(),
+                    actionId);
 
+        }
     }
 
-Check out the parameters passed into the `check(...)` method. Again, the
-`getPermissionChecker()` method is readily available in all `ServiceImpl`
-classes. The guestbook ID is available in the `serviceContext`, indicating that
-the permission check is against a guestbook resource. The action ID is used to
-indicate the action requiring the permission check. You're encouraged to use
-custom portlet action keys like the `ActionKeys.DELETE` string used above.
+Notice that both the `check` and `contains` methods of `GuestbookPermission`
+each take three parameters:
 
-<!-- We're not ready for review yet. We haven't covered how to create the helper
-class, which is what the reader is expecting out of this section. Certainly I
-was. We've only seen how to use a helper class that already exists. -Rich --> 
+1. A `PermissionChecker` object
+
+2. A `long` representing the primary key of the entity on which the action is to
+   be performed
+
+3. A `String` representing the action ID of the action to be performed on the
+   entity.
+
+Compare these parameters to the three parameters required by the `check` and
+`contains` methods of `GuestbookModelPermission`:
+
+1. A `PermissionChecker` object
+
+2. A `long` representing the primary key of the group in which the action is to
+   be performed
+
+3. A `String` representing the action ID of the action to be performed in the
+   group.
+
+These parameters make it clear that `GuestbookModelPermission` should be used
+for checking for top-level action permissions and `GuestbookPermission` should
+be used for checking resource action permissions. For both kinds of permissions
+helper classes, the `check` method when a failed permission check should throw
+an exception and use the `contains` method when a `boolean` should be returned
+indicating whether the user has permission to perform the specified action on
+the specified resource. When you're creating your own permissions helper
+classes, remember to make one helper class for your portlet's top-level actions
+and one permissions class per custom entity. Remember also that your helper
+classes should contain `check` and `contains` methods similar to those described
+above.
+
+Notice the parameters passed into the `check(...)` method. Remember that the
+`getPermissionChecker()` method is readily available in all `ServiceImpl`
+classes. The guestbook ID is available from the `serviceContext`. Using a
+guestbook ID for the permission check indicates that the permission check is
+against a guestbook resource. The action ID is used to indicate the action
+requiring the permission check. You're encouraged to use custom portlet action
+keys like the `ActionKeys.DELETE` string used above.
 
 ## Related Topics
 
