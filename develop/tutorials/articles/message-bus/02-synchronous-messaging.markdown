@@ -101,7 +101,7 @@ the tour manager's Tasks portlet here:
 [`SetupMessagingImpl.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
 It's in the package `com.tour.portlet.tasks.messaging.impl`. 
 
-The listener class performs the following steps: 
+The listener class takes the following steps: 
 
 1. Implements the `receive(Message message)` method of the
    `com.liferay.portal.kernel.messaging.MessageListener` interface. 
