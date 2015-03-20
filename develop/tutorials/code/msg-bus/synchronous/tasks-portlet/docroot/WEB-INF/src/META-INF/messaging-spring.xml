@@ -8,10 +8,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
 >
 
-<!-- Listeners -->
+	<!-- Listeners -->
 
 	<bean id="messageListener.setup_listener" class="com.tour.portlet.tasks.messaging.impl.SetupMessagingImpl" />
-
 	
     <!-- Destinations -->
 
@@ -22,7 +21,6 @@
     <bean id="tour.manager.task" class="com.liferay.portal.kernel.messaging.SynchronousDestination">
 		<property name="name" value="tour/manager/task" />
 	</bean>
-
 
     <!-- Configurator -->
 

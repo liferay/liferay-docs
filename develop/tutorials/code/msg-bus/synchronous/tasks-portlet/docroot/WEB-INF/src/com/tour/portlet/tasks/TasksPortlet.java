@@ -22,90 +22,90 @@ import javax.portlet.ActionResponse;
  * Portlet implementation class TasksPortlet
  */
 public class TasksPortlet extends MVCPortlet {
-	
+
 	public void addTask(ActionRequest request, ActionResponse response)
-            throws Exception {
+			throws Exception {
 
-        _updateTask(request);
+		_updateTask(request);
 
-        sendRedirect(request, response);
-    }
-	
-	public void deleteTask(ActionRequest request, ActionResponse response)
-	        throws Exception {
-
-	        long taskId = ParamUtil.getLong(request, "taskId");
-
-	        TaskLocalServiceUtil.deleteTask(taskId);
-
-	        sendRedirect(request, response);
-	    }
-	
-	public void updateTask(ActionRequest request, ActionResponse response)
-	        throws Exception {
-
-	        _updateTask(request);
-
-	        sendRedirect(request, response);
-	    }
-	
-	private Task _updateTask(ActionRequest request)
-	        throws PortalException, SystemException {
-		
-		long taskId = ParamUtil.getLong(request, "taskId");
-        String name = ParamUtil.getString(request, "name");
-        String description = ParamUtil.getString(request, "description");
-        String status = ParamUtil.getString(request, "status");
-        
-        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                Task.class.getName(), request);
-
-        Task task = null;
-        
-        if (taskId <= 0) {
-        	task = TaskLocalServiceUtil.addTask(
-                name, description, status, serviceContext);
-        	
-        	// Begin Message Bus
- 	       
-            Message message = new Message();
-            message.put("name", name);
-            message.put("description", description);
-            message.put("status", status);
-            message.setResponseId("1111");
-            message.setResponseDestinationName("tour/manager/task");
-           
-            try {
-        	   
-        	    String roadieResponse = (String) MessageBusUtil.sendSynchronousMessage(
-        		        "tour/roadie/setup", message, 10000);
-        	    
-        	    if (roadieResponse.equals("RECEIVED")) {
-        	      SessionMessages.add(request, "success");
-        	    }
-        	   
-        	    System.out.println(
-        		        "Tour manager received response from roadie for " +
-        		        name + ": " + roadieResponse);
-        	   
-            } catch (MessageBusException e) {
-        	    e.printStackTrace();
-            }
-           
-           // End Message Bus
-            
-        }
-        else {
-        	task = TaskLocalServiceUtil.getTask(taskId);
-
-        	task = TaskLocalServiceUtil.updateTask(
-                taskId, name, description, status, serviceContext);
-        }
-
-        return task;
-		
+		sendRedirect(request, response);
 	}
-	
+
+	public void deleteTask(ActionRequest request, ActionResponse response)
+			throws Exception {
+
+		long taskId = ParamUtil.getLong(request, "taskId");
+
+		TaskLocalServiceUtil.deleteTask(taskId);
+
+		sendRedirect(request, response);
+	}
+
+	public void updateTask(ActionRequest request, ActionResponse response)
+			throws Exception {
+
+		_updateTask(request);
+
+		sendRedirect(request, response);
+	}
+
+	private Task _updateTask(ActionRequest request) throws PortalException,
+			SystemException {
+
+		long taskId = ParamUtil.getLong(request, "taskId");
+		String name = ParamUtil.getString(request, "name");
+		String description = ParamUtil.getString(request, "description");
+		String status = ParamUtil.getString(request, "status");
+
+		ServiceContext serviceContext = ServiceContextFactory.getInstance(
+				Task.class.getName(), request);
+
+		Task task = null;
+
+		if (taskId <= 0) {
+			task = TaskLocalServiceUtil.addTask(name, description, status,
+					serviceContext);
+
+			// Begin Message Bus
+
+			Message message = new Message();
+			message.put("name", name);
+			message.put("description", description);
+			message.put("status", status);
+			message.setResponseId("1111");
+			message.setResponseDestinationName("tour/manager/task");
+
+			try {
+				String roadieResponse = (String) MessageBusUtil
+						.sendSynchronousMessage("tour/roadie/setup", message,
+								10000);
+
+				if (roadieResponse.equals("RECEIVED")) {
+					SessionMessages.add(request, "success");
+				}
+
+				System.out
+						.println("Tour manager received response from roadie for "
+								+ name + ": " + roadieResponse);
+			}
+			catch (MessageBusException mbe) {
+				mbe.printStackTrace();
+			}
+
+			// End Message Bus
+
+		}
+		else {
+			task = TaskLocalServiceUtil.getTask(taskId);
+
+			task = TaskLocalServiceUtil.updateTask(taskId, name, description,
+					status, serviceContext);
+		}
+
+		return task;
+
+	}
+
 	private static Log _log = LogFactoryUtil.getLog(TasksPortlet.class);
 
 }

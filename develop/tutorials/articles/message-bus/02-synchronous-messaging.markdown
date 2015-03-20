@@ -126,7 +126,7 @@ The listener class performs the following steps:
    success message. 
    
         Message responseMessage = MessageBusUtil.createResponseMessage(message);
-        ```
+
         responseMessage.setPayload("RECEIVED");
 
 4. Sends the response `Message` to the response destination. 
@@ -154,7 +154,7 @@ mappings in your plugin's `WEB-INF/src/META-INF/messaging-spring.xml` file.
 listeners you have. Tools like Liferay IDE and Liferay Developer Studio
 automatically deploy plugins as you save changes. If you declare sender or
 listener classes in the configuration file that don't yet exist, exceptions will
-be thrown. 
+be thrown when your application is deployed. 
 
 $$$
 
@@ -220,7 +220,6 @@ Now you just need to register this `messaging-spring.xml` file in your
 `docroot/WEB-INF/web.xml` file. To do so, place the following code just above 
 the closing `</web-app>` tag in the `web.xml` file:
 
-    ```
     <listener>
       <listener-class>com.liferay.portal.kernel.spring.context.PortletContextLoaderListener</listener-class>
     </listener>
@@ -229,7 +228,6 @@ the closing `</web-app>` tag in the `web.xml` file:
       <param-name>portalContextConfigLocation</param-name>
       <param-value>/WEB-INF/classes/META-INF/messaging-spring.xml</param-value>
     </context-param>
-    ```
 
 Save and redeploy your portlet. Your plugin should now send and receive messages 
 as you've configured it to. In the case of the tour manager, the Tasks portlet 

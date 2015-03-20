@@ -20,61 +20,61 @@ import com.tour.portlet.tasks.service.SetupLocalServiceUtil;
  * Portlet implementation class SetupPortlet
  */
 public class SetupPortlet extends MVCPortlet {
-	
+
 	public void addSetup(ActionRequest request, ActionResponse response)
-            throws Exception {
+			throws Exception {
 
-        _updateSetup(request);
+		_updateSetup(request);
 
-        sendRedirect(request, response);
-    }
-	
-	public void deleteSetup(ActionRequest request, ActionResponse response)
-	        throws Exception {
-
-	        long setupId = ParamUtil.getLong(request, "setupId");
-
-	        SetupLocalServiceUtil.deleteSetup(setupId);
-
-	        sendRedirect(request, response);
-	    }
-	
-	public void updateSetup(ActionRequest request, ActionResponse response)
-	        throws Exception {
-
-	        _updateSetup(request);
-
-	        sendRedirect(request, response);
-	    }
-	
-	private Setup _updateSetup(ActionRequest request)
-	        throws PortalException, SystemException {
-		
-		long setupId = ParamUtil.getLong(request, "setupId");
-        String name = ParamUtil.getString(request, "name");
-        String description = ParamUtil.getString(request, "description");
-        String status = ParamUtil.getString(request, "status");
-        
-        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                Setup.class.getName(), request);
-
-        Setup setup = null;
-        
-        if (setupId <= 0) {
-        	setup = SetupLocalServiceUtil.addSetup(
-                name, description, status, serviceContext);
-        }
-        else {
-        	setup = SetupLocalServiceUtil.getSetup(setupId);
-
-        	setup = SetupLocalServiceUtil.updateSetup(
-        			setupId, name, description, status, serviceContext);
-        }
-
-        return setup;
-		
+		sendRedirect(request, response);
 	}
-	
-	private static Log _log = LogFactoryUtil.getLog(SetupPortlet.class); 
+
+	public void deleteSetup(ActionRequest request, ActionResponse response)
+			throws Exception {
+
+		long setupId = ParamUtil.getLong(request, "setupId");
+
+		SetupLocalServiceUtil.deleteSetup(setupId);
+
+		sendRedirect(request, response);
+	}
+
+	public void updateSetup(ActionRequest request, ActionResponse response)
+			throws Exception {
+
+		_updateSetup(request);
+
+		sendRedirect(request, response);
+	}
+
+	private Setup _updateSetup(ActionRequest request) throws PortalException,
+			SystemException {
+
+		long setupId = ParamUtil.getLong(request, "setupId");
+		String name = ParamUtil.getString(request, "name");
+		String description = ParamUtil.getString(request, "description");
+		String status = ParamUtil.getString(request, "status");
+
+		ServiceContext serviceContext = ServiceContextFactory.getInstance(
+				Setup.class.getName(), request);
+
+		Setup setup = null;
+
+		if (setupId <= 0) {
+			setup = SetupLocalServiceUtil.addSetup(name, description, status,
+					serviceContext);
+		}
+		else {
+			setup = SetupLocalServiceUtil.getSetup(setupId);
+
+			setup = SetupLocalServiceUtil.updateSetup(setupId, name,
+					description, status, serviceContext);
+		}
+
+		return setup;
+
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(SetupPortlet.class);
 
 }
