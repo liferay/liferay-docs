@@ -165,50 +165,49 @@ Inventory portlets:
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
 	>
 
-	<!-- Listeners -->
+        <!-- Listeners -->
 
-	<bean id="messageListener.setup_listener" class="com.tour.portlet.tasks.messaging.impl.SetupMessagingImpl" />
-	<bean id="messageListener.inventory_listener" class="com.tour.portlet.tasks.messaging.impl.InventoryMessagingImpl" />
-	<bean id="messageListener.tasks_listener" class="com.tour.portlet.tasks.messaging.impl.TasksMessagingImpl" />
+        <bean id="messageListener.setup_listener" class="com.tour.portlet.tasks.messaging.impl.SetupMessagingImpl" />
+        <bean id="messageListener.inventory_listener" class="com.tour.portlet.tasks.messaging.impl.InventoryMessagingImpl" />
+        <bean id="messageListener.tasks_listener" class="com.tour.portlet.tasks.messaging.impl.TasksMessagingImpl" />
 
 	
-    <!-- Destinations -->
+        <!-- Destinations -->
 
-    <bean id="tour.roadie.setup" class="com.liferay.portal.kernel.messaging.SerialDestination">
-		<property name="name" value="tour/roadie/setup" />
-	</bean>
+        <bean id="tour.roadie.setup" class="com.liferay.portal.kernel.messaging.SerialDestination">
+            <property name="name" value="tour/roadie/setup" />
+        </bean>
 
-    <bean id="tour.manager.task" class="com.liferay.portal.kernel.messaging.SerialDestination">
-		<property name="name" value="tour/manager/task" />
-	</bean>
+        <bean id="tour.manager.task" class="com.liferay.portal.kernel.messaging.SerialDestination">
+            <property name="name" value="tour/manager/task" />
+        </bean>
 
+        <!-- Configurator -->
 
-    <!-- Configurator -->
-
-	<bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
-		<property name="messageListeners">
-			<map key-type="java.lang.String" value-type="java.util.List">
-				<entry key="tour/roadie/setup">
-					<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
-						<ref bean="messageListener.setup_listener" />
-						<ref bean="messageListener.inventory_listener" />
-					</list>
-				</entry>
-				<entry key="tour/manager/task">
-					<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
-						<ref bean="messageListener.tasks_listener" />
-					</list>
-				</entry>
-			</map>
-		</property>
-        <property name="destinations">
-            <list>
-                <ref bean="tour.roadie.setup"/>
-                <ref bean="tour.manager.task"/>
-            </list>
-        </property>
-	</bean>
-	</beans>
+        <bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
+            <property name="messageListeners">
+                <map key-type="java.lang.String" value-type="java.util.List">
+                    <entry key="tour/roadie/setup">
+                        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+                                <ref bean="messageListener.setup_listener" />
+                                <ref bean="messageListener.inventory_listener" />
+                        </list>
+                    </entry>
+                    <entry key="tour/manager/task">
+                        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+                                <ref bean="messageListener.tasks_listener" />
+                        </list>
+                    </entry>
+                </map>
+            </property>
+            <property name="destinations">
+                <list>
+                    <ref bean="tour.roadie.setup"/>
+                    <ref bean="tour.manager.task"/>
+                </list>
+            </property>
+        </bean>
+    </beans>
 
 This configuration specifies the following beans: 
 
