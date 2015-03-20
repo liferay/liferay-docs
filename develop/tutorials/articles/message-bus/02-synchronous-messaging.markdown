@@ -82,13 +82,13 @@ The sender takes the following steps:
    milliseconds. This is how long the sender blocks for while waiting for a 
    response. If no response is received, then a `MessageBusException` is thrown.
 
-    try {
-        String roadieResponse = (String) MessageBusUtil.sendSynchronousMessage("tour/roadie/setup", message, 10000);
-    } catch (MessageBusException e) {
-	e.printStackTrace();
-	}
+        try {
+            String roadieResponse = (String) MessageBusUtil.sendSynchronousMessage("tour/roadie/setup", message, 10000);
+        } catch (MessageBusException e) {
+            e.printStackTrace();
+        }
 
-Also be sure to add the following imports to your message sender file: 
+    Make sure to add the following imports to your message sender file: 
 
         import com.liferay.portal.kernel.messaging.Message;
         import com.liferay.portal.kernel.messaging.MessageBusException;
@@ -99,13 +99,14 @@ next stop on the Message Bus--the message listener!
 
 ## Implementing the Message Listener 
 
-Implementing the message listener is a bit more involved than implementing the 
-message sender, but not by much. To implement the listener you need to make a 
-class that implements Liferay's `MessageListener` interface. You can find the 
-listener of the tour manager's Tasks portlet [here on Github](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
+Implementing the message listener is slightly more involved than implementing
+the message sender. To implement the listener you need to make a class that
+implements Liferay's `MessageListener` interface. You can find the listener of
+the tour manager's Tasks portlet here:
+[`SetupMessagingImpl.java`](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
 It's in the package `com.tour.portlet.tasks.messaging.impl`. 
 
-The listener class executes the following steps: 
+The listener class performs the following steps: 
 
 1. Implements the `receive(Message message)` method of the
    `com.liferay.portal.kernel.messaging.MessageListener` interface. 
@@ -132,28 +133,28 @@ The listener class executes the following steps:
 
         MessageBusUtil.sendMessage(responseMessage.getDestinationName(), responseMessage);
 
-Also be sure to add the following imports to your message listener file: 
+    Make sure to add the following imports to your message listener file: 
 
-    import com.liferay.portal.kernel.messaging.Message;
-    import com.liferay.portal.kernel.messaging.MessageBusUtil;
-    import com.liferay.portal.kernel.messaging.MessageListener;
+        import com.liferay.portal.kernel.messaging.Message;
+        import com.liferay.portal.kernel.messaging.MessageBusUtil;
+        import com.liferay.portal.kernel.messaging.MessageListener;
 
 Now you have both a sender and a listener implemented for your messages! There's 
 just one more thing to take care of before you're done. 
 
-## Configuring Message Bus 
+## Configuring the Message Bus 
 
-For Message Bus to successfully direct messages from destinations to listeners, 
-you must register the listeners by configuring the appropriate mappings in your 
-plugin's `WEB-INF/src/META-INF/messaging-spring.xml` file. 
+For the Message Bus to successfully direct messages from destinations to
+listeners, you must register the listeners by configuring the appropriate
+mappings in your plugin's `WEB-INF/src/META-INF/messaging-spring.xml` file. 
 
 +$$$
 
-**Warning:** You should only do this *after* implementing any senders and 
-listeners you have. Tools like Liferay IDE and Liferay Developer Studio try to 
-deploy plugins automatically as you save changes. If you declare sender or 
-listener classes in the configuration file that don't exist yet, your plugin 
-will break. 
+**Warning:** You should only do this *after* implementing any senders and
+listeners you have. Tools like Liferay IDE and Liferay Developer Studio
+automatically deploy plugins as you save changes. If you declare sender or
+listener classes in the configuration file that don't yet exist, exceptions will
+be thrown. 
 
 $$$
 
@@ -241,7 +242,7 @@ manager.
 
 ![Figure 3: The task was created in the roadies' Setup portlet.](../../images/msg-bus-synch-setup.png)
 
-Congratulations! You've successfully made your first trip on the Message Bus! 
+Congratulations! You've completed your first trip on the Message Bus! 
 
 ## Related Topics 
 
