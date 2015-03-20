@@ -78,7 +78,287 @@ these configuration options, you can run through provided in-depth
 With the main aspects of JSF portlet bridges described, you can learn how
 a JSF application uses the bridge in the
 [Creating a JSF Portlet](/develop/learning-paths/jsf/-/knowledge_base/6-2/creating-a-jsf-portlet)
-learning path. 
+learning path. Next, you'll learn how to configure Liferay Faces Bridge,
+starting with configuring its scope behavior. 
+
+## Configuring Bridge Request Scope Behavior
+
+For this tutorial, you'll step through requirements, drawbacks, assumptions, and
+behaviors for configuring the Bridge Request Scope. 
+
+One of the key requirements in creating a JSF portlet bridge is managing JSF
+request-scoped data within the portlet lifecycle. This is normally referred to
+as the *Bridge Request Scope* by JSR 329. The lifespan of the Bridge Request
+Scope works like this: 
+
+1. `ActionRequest`/`EventRequest`: `BridgeRequestScope` begins.
+
+2. `RenderRequest`: `BridgeRequestScope` is preserved.
+
+3. Subsequent `RenderRequest`: `BridgeRequestScope` is reused.
+
+4. Subsequent `ActionRequest`/`EventRequest`: `BridgeRequestScope` ends, and a
+   new `BridgeRequestScope` begins.
+
+5. If the session expires or is invalidated, then similar to the
+   `PortletSession` scope, all `BridgeRequestScope` instances associated with
+   the session are made available for garbage collection by the JVM.
+
+The main use-case for having the `BridgeRequestScope` preserved in Step 2
+(above) is for *re-rendering* portlets. consider the following example to help
+illustrate this use-case. 
+
+Suppose two or more JSF portlets are placed on a portal page (Portlets X and
+Y), and those portlets are *not* using `f:ajax` for form submission. In such a
+case, if the user were to submit a form (via full `ActionRequest` postback) in
+Portlet X, and then submit a form in Portlet Y, then Portlet X should be
+re-rendered with its previously submitted form data. 
+
+With the advent of JSF 2.x and Ajax, there were four drawbacks for continuing
+to support this use-case as the default behavior: 
+
+-   Request-scoped data is basically semi-session-scoped in nature, because the
+    `BridgeRequestScope` is preserved (even though the user might *never* click
+    the Submit button again). 
+-   `BridgeRequestScope` can't be stored in the `PortletSession` because the
+    data is request-scoped in nature, and the data stored in the scope isn't
+    guaranteed to be `Serializable` for replication. Therefore, it doesn't
+    really work well in a clustered deployment. 
+-   The developer might have to specify the
+    `javax.portlet.faces.MAX_MANAGED_REQUEST_SCOPES` `<init-param>` in the
+    `WEB-INF/web.xml` descriptor in order to tune the memory settings on the
+    server. 
+
+As result, Liferay Faces Bridge was designed for JSF 2.x, and keeps Ajax in
+mind. The Liferay Faces Bridge makes the following assumptions: 
+
+-   Developers are not primarily concerned about the *re-rendering of
+    portlets* use-case mentioned above. 
+-   Developers don't want any of the drawbacks mentioned above. 
+-   Developers are making heavy use of the `f:ajax` tag and submitting
+    forms via Ajax with their modern-day portlets. 
+-   Developers want to do as little configuration as possible and don't
+    want to be forced to add anything to the `WEB-INF/web.xml` descriptor. 
+
+Consequently, the default behavior of Liferay Faces Bridge is to cause the
+`BridgeRequestScope` to end at the end of the `RenderRequest`. 
+
+If you prefer the standard behavior over Liferay Faces Bridge's default
+behavior, then you can place the following option in your portlet's
+`WEB-INF/web.xml` descriptor: 
+
+    <context-param>
+        <param-name>com.liferay.faces.bridge.bridgeRequestScopePreserved</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>javax.portlet.faces.MAX_MANAGED_REQUEST_SCOPES</param-name>
+        <param-value>2000</param-value>
+    </context-param>
+
+The default value of the `com.liferay.faces.bridge.bridgeRequestScopePreserved`
+param is `false`, meaning that Liferay Faces Bridge would cause the
+`BridgeRequestScope` to end after the `RENDER_PHASE` of the portlet lifecycle.
+Setting the value to `true` causes Liferay Faces Bridge to allow the
+`BridgeRequestScope` to last until the next `ACTION_PHASE` or `EVENT_PHASE` of
+the portlet lifecycle. 
+
+The default value of the `javax.portlet.faces.MAX_MANAGED_REQUEST_SCOPES` param
+is `100`. It defines the maximum number of `BridgeRequestScope` instances to
+keep in memory on the server if the `bridgeRequestScopePreserved` option is
+`true`. 
+
+Alternatively, the `com.liferay.faces.bridge.bridgeRequestScopePreserved` value
+can be specified on a portlet-by-portlet basis in the `WEB-INF/portlet.xml`
+descriptor. 
+
+Now you know the two options for Bridge Request Scope behavior. By considering
+the assumptions and drawbacks that were outlined in this tutorial, you should be
+able to make an educated decision about how you'd like to implement the Bridge
+Request Scope behavior. 
+
+## Configuring the Portlet Container Abilities
+
+Liferay Faces Bridge can be run in a variety of portlet containers (Liferay,
+Pluto, etc.) and is aware of some of the abilities (or limitations) of these
+containers. For this tutorial, you'll see how to configure a portlet container
+in Liferay Faces Bridge.
+
+Liferay Faces Bridge enables you to configure the abilities of the portlet
+container in the `WEB-INF/web.xml` descriptor. 
+
+An example of configuring the abilities of the portlet container can be found in
+the code snippet below: 
+
+    <context-param>
+        <param-name>com.liferay.faces.bridge.containerAbleToSetHttpStatusCode</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+The default value of the `context-param` depends on which portlet container the
+bridge is running in. The value determines whether or not the bridge resource
+handler will attempt to set the status code of downloaded resources to values
+like `HttpServletResponse.SC_NOT_MODIFIED`. 
+
+By configuring portlet container capabilities, you can take advantage of your
+portlet container's specific strengths while using Liferay Faces Bridge. 
+
+## Configuring Portlet Namespace Optimization
+
+For this tutorial, you'll learn about configuring your portlet's namespace to
+abide to the JSR 329 standard. 
+
++$$$
+
+**Note:** Due to strict namespacing requirements introduced in Liferay Portal
+6.2, the namespace optimization feature only works in Liferay Portal 5.2, 6.0,
+and 6.1. 
+
+$$$
+
+The JSR 329 standard requires the bridge implementation to prepend the portlet
+namespace to every JSF view component's `id` attribute. This distinguishes the
+component when there are multiple JSF portlets on a portal page that contain
+similar component hierarchies and naming.  Also, the JSR 329 standard indicates
+that the bridge implementation of the `ExternalContext.encodeNamesapce(String)`
+method is to prepend the value of `javax.portlet.PortletResponse.getNamespace()`
+to the specified `String`. The problem is that since the value returned by
+`getNamespace()` can be a lengthy `String`, the size of the rendered HTML portal
+page can become unnecessarily large. This can be especially non-performant when
+using the `f:ajax` tag in a Facelet view to perform partial-updates to the
+browser's DOM. 
+
+Liferay Faces Bridge has a built-in optimization that minimizes the value
+returned by the `ExternalContext.encodeNamespace(String)` method, while
+still guaranteeing uniqueness. 
+
+If you don't want to leverage the namespace optimization and instead want to
+leverage the default behavior specified by JSR 329, you must set this value to
+`false` in the `WEB-INF/web.xml` descriptor: 
+
+    <context-param>
+        <param-name>com.liferay.faces.bridge.optimizePortletNamespace</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+The default value of the following `context-param` is `true`, meaning that
+Liferay Faces Bridge will optimize the portlet namespace. Setting the value of
+the `context-param` to `false` disables the optimization. 
+
+That's it! Now you have a better understanding for configuring your portlet for
+namespace optimization. 
+
+## Configuring XML Entity Validation
+
+<!-- Explain why this is helpful. - Jim -->
+
+Liferay Faces Bridge gives you the option of enabling or disabling XML
+validation for all `faces-config.xml` file entities. This tutorial will show you
+how! 
+
+By default, the validation is disabled. To enable XML validation for all
+`faces-config.xml` file entities, you can set the option to `true` in the
+`WEB-INF/web.xml` descriptor: 
+
+    <context-param>
+        <param-name>com.liferay.faces.bridge.resolveXMLEntities</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+Excellent! You now know how to enable XML entity validation using Liferay Faces
+Bridge. 
+
+## Configuring Resource Buffer Size
+
+Liferay Faces Bridge lets you set the size of the buffer used to load resources
+into memory as file contents are copied to the response. This tutorial
+demonstrates how to configure this setting. 
+
+You can configure the resource buffer size in the `WEB-INF/web.xml` descriptor: 
+
+    <context-param>
+        <param-name>com.liferay.faces.bridge.resourceBufferSize</param-name>
+        <param-value>4096</param-value>
+    </context-param>
+
+The default value of this `context-param` is `1024` (1KB). 
+
+Alternatively, you can specify the `com.liferay.faces.bridge.resourceBufferSize`
+value on a portlet-by-portlet basis in the `WEB-INF/portlet.xml` descriptor. 
+
+## Configuring Distinct Request Scoped Managed Beans
+
+Liferay Portal gives you the ability to specify whether or not request
+attributes are shared among portlets, using the `<private-request-attributes>`
+element in the `WEB-INF/liferay-portlet.xml` descriptor. The default value of
+this option is `true`, meaning that request attributes are *not* shared among
+portlets. 
+
+    <liferay-portlet-app>
+        <portlet>
+
+            ...
+
+            <private-request-attributes>false</private-request-attributes>
+        </portlet>
+
+        ...
+
+    </liferay-portlet-app>
+
+However, this non-shared feature only works for request attributes that are
+present in the request map and that have a non-null value. This can cause a
+problem for JSF managed-beans in request scope. Specifically, the problem arises
+when a portal page has two or more portlets that have a request scope managed
+bean with the same name.
+
+For example, suppose Portlet X and Portlet Y each have a class named
+`BackingBean` annotated with `@RequestScoped` `@ManagedBean`. When the JSF
+runtime is asked to resolve an EL-expression `#{backingBean}`, there is no
+guarantee that the correct instance will be resolved. In order to solve this
+problem, Liferay Faces Bridge provides a configuration option that can be
+specified in `WEB-INF/web.xml`. It causes request-scoped managed beans to be
+distinct for each portlet. 
+
+    <context-param>
+        <param-name>com.liferay.faces.bridge.distinctRequestScopedManagedBeans</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+The default value of this `context-param` is `false`. Therefore, to ensure that
+`@RequestScoped` managed beans are resolved correctly for each portlet, set this
+value to `true`. 
+
+Great! You can now configure distinct request scoped managed beans with Liferay
+Faces Bridge. 
+
+## Configuring View Parameters
+
+In the case of a portlet `RenderRequest`, Section 5.2.6 of the JSR 329 Spec
+requires that the bridge only executes the `RESTORE_VIEW` and `RENDER_RESPONSE`
+phases of the JSF lifecycle. In addition, Section 6.4 requires that a
+`PhaseListener` be used to skip the `APPLY_REQUEST_VALUES`,
+`PROCESS_VALIDATIONS`, `UPDATE_MODEL_VALUES`, and `INVOKE_APPLICATION` phases.
+These requirements are valid for JSF 1.x, but for JSF 2.x *View Parameters*, the
+presence of `f:metadata` and `f:viewParam` in a Facelet view, makes the entire
+JSF lifecycle run. 
+
+Liferay Faces Bridge enables support for View Parameters by default, but
+provides a configuration option in the `WEB-INF/web.xml` descriptor that lets
+you disable the feature. 
+
+    <!--  -->
+    <context-param>
+        <param-name>com.liferay.faces.bridge.viewParametersEnabled</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+The default value of this param is `true`. If it is necessary to use the JSF 1.x
+version of this feature, then this parameter should be set to `false`. 
+
+Great! You've learned another JSF portlet bridge standard and how to configure
+several key options in Liferay Faces Bridge. 
 
 ## Related Topics [](id=related-topics)
 
