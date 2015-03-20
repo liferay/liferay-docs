@@ -22,11 +22,6 @@ The manager also needs confirmation, before moving on with other things, that
 the roadies' Setup portlet has received each request. Synchronous messaging to 
 the rescue! 
 
-<!-- 
-Note: Links to sample code referenced throughout will need to be changed once it 
-gets merged into master.
--->
-
 ## Deciding on Destination Keys 
 
 You first need to figure out what your destination keys will be. Destination 
@@ -55,7 +50,7 @@ messages. You'll start with the message sender first.
 Now it's time to write the message sender code. So where should you put this 
 code? Great question! Simply place it in the method of your application that you 
 want it to be called with. For example, the message sender code for the tour 
-manager's Tasks portlet is in the method of [`TasksPortlet.java`](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java) 
+manager's Tasks portlet is in the method of [`TasksPortlet.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java) 
 that adds a new task. This is because a synchronous message needs to be sent 
 each time the tour manager adds a new task to the portlet. 
 
@@ -103,7 +98,7 @@ Implementing the message listener is slightly more involved than implementing
 the message sender. To implement the listener you need to make a class that
 implements Liferay's `MessageListener` interface. You can find the listener of
 the tour manager's Tasks portlet here:
-[`SetupMessagingImpl.java`](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
+[`SetupMessagingImpl.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
 It's in the package `com.tour.portlet.tasks.messaging.impl`. 
 
 The listener class performs the following steps: 
