@@ -7,7 +7,8 @@ therefore can't reply to them. Think of it this way--if you got a letter in the
 mail without any kind of return address or other information telling you who 
 sent it, who could you send a reply to? This tutorial shows you how to implement 
 messaging in this fashion between one sending and two receiving portlets. You 
-can find the code for this example plugin project [here on Github](https://github.com/ngaskill/liferay-docs/tree/message-bus-tutorials/develop/tutorials/code/msg-bus/async-send-forget/insults-portlet).
+can find the code for this example plugin project here:
+[Insults Portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/msg-bus/async-send-forget/insults-portlet).
 
 Even though there are many cases where you want to include some sort of response 
 information in your messages, there are times where leaving out a response 
@@ -25,14 +26,14 @@ it's time to load up the Message Bus with insults!
 
 ## Deciding on Destination Keys 
 
-As with other types of messaging in the Message Bus, the first thing you need to 
-do is decide where you're going to send the message. You do this by using 
-destination keys. Destination keys serve as the specific locations where 
-messages are sent. You can think of them as the mailing addresses of the Message 
-Bus system. The destination keys need to be included with the message and 
-registered as destinations in `WEB-INF/src/META-INF/messaging-spring.xml`. In 
-this example there's just one destination key--`insults/users`. Both of the 
-receiving portlets are configured to listen on this destination key and no 
+As with other types of messaging in the Message Bus, the first thing you need to
+do is specify where you're going to send messages. To do so, you specify
+destination keys. Destination keys serve as the specific locations where
+messages are sent. You can think of them as the mailing addresses of the Message
+Bus system. The destination keys need to be included with the message and
+registered as destinations in `WEB-INF/src/META-INF/messaging-spring.xml`. In
+this example, there's just one destination key--`insults/users`. Both of the
+receiving portlets are configured to listen on this destination key and no
 response is required. 
 
 Now that you know what your destination keys are, you can use them when writing 
@@ -40,13 +41,14 @@ the code that sends the messages.
 
 ## Implementing the Message Sender
 
-Writing the message sender is a fairly straightforward task. Simply place your 
-message sending code in the method of your application that you want it to be 
-called with. There's also not much code involved. In this example, the message 
-sender is placed inside the method of the insult writer portlet that is 
-responsible for adding a new insult to the database. Therefore a message is sent 
-out each time a new insult is written, which is precisely what the insult writer 
-wants to happen. You can find this code in `InsultWriterPortlet.java` [here on on Github](https://github.com/ngaskill/liferay-docs/blob/message-bus-tutorials/develop/tutorials/code/msg-bus/async-send-forget/insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/InsultWriterPortlet.java).
+Writing the message sender is a fairly straightforward task. Simply place your
+message sending code in the method of your application in which it should be
+called. There's also not much code involved. In this example, the message sender
+is placed inside the method of the insult writer portlet that is responsible for
+adding a new insult to the database. Therefore a message is sent out each time a
+new insult is written, which is precisely what the insult writer wants to happen.
+You can find this code here:
+[`InsultWriterPortlet.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/msg-bus/async-send-forget/insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/InsultWriterPortlet.java).
 
 A sender for an asynchronous send and forget message takes the following steps:
 
@@ -64,7 +66,7 @@ A sender for an asynchronous send and forget message takes the following steps:
 
         MessageBusUtil.sendMessage("insults/users", jsonObject.toString());
         
-You also need to be sure that you add the following imports:
+Make sure that you add the following imports:
 
         import com.liferay.portal.kernel.messaging.MessageBusUtil;
         import com.liferay.portal.kernel.json.JSONFactoryUtil;
@@ -78,7 +80,8 @@ you need.
 You need to have one or more message listeners implemented to receive messages 
 from your sender. Each listener is a class that implements Liferay's 
 `MessageListener` interface. In this example there are two listeners, one for 
-each receiving portlet. You can find the example listeners [here on Github](https://github.com/ngaskill/liferay-docs/tree/message-bus-tutorials/develop/tutorials/code/msg-bus/async-send-forget/insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/messaging/impl).
+each receiving portlet. You can find the example listeners here:
+[Listeners](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/msg-bus/async-send-forget/insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/messaging/impl).
 
 Asynchronous listeners for send and forget messages take the following steps: 
 
@@ -109,7 +112,7 @@ Make sure that you add the following imports to your listener classes:
 Any other listeners you need can be implemented using the same steps. Next, 
 you'll configure your listeners and destinations for use with the Message Bus. 
 
-## Configuring Message Bus 
+## Configuring the Message Bus 
 
 Now that you've implemented your message senders and listeners, you need to 
 configure them in your plugin's `WEB-INF/src/META-INF/messaging-spring.xml` 
@@ -117,11 +120,11 @@ file. Create this file if it doesn't yet exist.
 
 +$$$
 
-**Warning:** You should only do this *after* implementing any senders and 
-listeners you have. Tools like Liferay IDE and Liferay Developer Studio try to 
-deploy plugins automatically as you save changes. If your sender or listener 
-classes don't exist and you declare them in `messaging-spring.xml`, your plugin 
-will break. 
+**Warning:** You should only do this *after* implementing any senders and
+listeners you have. Tools like Liferay IDE and Liferay Developer Studio
+automatically deploy plugins as you save changes. If you declare sender or
+listener classes in the configuration file that don't yet exist, exceptions will
+be thrown when your application is deployed. 
 
 $$$
 
@@ -138,36 +141,36 @@ and insulted portlets:
 	    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
     >
 
-	<!-- Listeners -->
-	
-	<bean id="messageListener.insultlog_listener" class="com.insults.portlet.insults.messaging.impl.InsultLogMessagingImpl" />
-	<bean id="messageListener.insulted_listener" class="com.insults.portlet.insults.messaging.impl.InsultedMessagingImpl" />
-	
-	<!-- Destinations -->
+        <!-- Listeners -->
 
-    <bean id="insults.users" class="com.liferay.portal.kernel.messaging.ParallelDestination">
-		<property name="name" value="insults/users" />
-	</bean>
-	
-    <!-- Configurator -->
+        <bean id="messageListener.insultlog_listener" class="com.insults.portlet.insults.messaging.impl.InsultLogMessagingImpl" />
+        <bean id="messageListener.insulted_listener" class="com.insults.portlet.insults.messaging.impl.InsultedMessagingImpl" />
 
-	<bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
-		<property name="messageListeners">
-			<map key-type="java.lang.String" value-type="java.util.List">
-				<entry key="insults/users">
-					<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
-						<ref bean="messageListener.insultlog_listener" /> 
-						<ref bean="messageListener.insulted_listener" />
-					</list>
-				</entry>
-			</map>
-		</property>
-        <property name="destinations">
-            <list>
-                <ref bean="insults.users"/>
-            </list>
-        </property>
-	</bean>
+        <!-- Destinations -->
+
+        <bean id="insults.users" class="com.liferay.portal.kernel.messaging.ParallelDestination">
+            <property name="name" value="insults/users" />
+        </bean>
+
+        <!-- Configurator -->
+
+        <bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
+            <property name="messageListeners">
+                <map key-type="java.lang.String" value-type="java.util.List">
+                    <entry key="insults/users">
+                        <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+                            <ref bean="messageListener.insultlog_listener" /> 
+                            <ref bean="messageListener.insulted_listener" />
+                        </list>
+                    </entry>
+                </map>
+            </property>
+            <property name="destinations">
+                <list>
+                    <ref bean="insults.users"/>
+                </list>
+            </property>
+        </bean>
     </beans>
 
 This configuration specifies the following beans: 
@@ -182,16 +185,16 @@ Now you just need to register this `messaging-spring.xml` file in your
 the closing `</web-app>` tag in the `web.xml` file: 
 
     <listener>
-      <listener-class>com.liferay.portal.kernel.spring.context.PortletContextLoaderListener</listener-class>
+        <listener-class>com.liferay.portal.kernel.spring.context.PortletContextLoaderListener</listener-class>
     </listener>
 
     <context-param>
-      <param-name>portalContextConfigLocation</param-name>
-      <param-value>/WEB-INF/classes/META-INF/messaging-spring.xml</param-value>
+        <param-name>portalContextConfigLocation</param-name>
+        <param-value>/WEB-INF/classes/META-INF/messaging-spring.xml</param-value>
     </context-param>
 
-Save and redeploy your portlet. Your plugin should now send and receive messages 
-as you've configured it to.	In the case of the insult writer, the insult log 
+Save and redeploy your portlet. Your plugin should now send and receive messages
+according to its configuration. In the case of the insult writer, the insult log
 and insulted portlets now show each insult. 
 
 ![Figure 2: Message Bus carries the insult to the receiving portlets.](../../images/msg-bus-insults.png)
