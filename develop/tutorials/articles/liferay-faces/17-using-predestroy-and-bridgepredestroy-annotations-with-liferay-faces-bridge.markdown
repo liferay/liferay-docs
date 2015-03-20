@@ -1,11 +1,11 @@
 # Using PreDestroy and BridgePreDestroy Annotations with Liferay Faces Bridge
 
 For this tutorial, you'll learn about the`PreDestroy` and `BridgePreDestroy`
-annotations and background to why they are used. 
+annotations and how to use them. 
 
-When JSF developers want to perform cleanup on managed-beans before they are
-destroyed, they typically annotate a method inside the bean with the
-`@PreDestroy` annotation. However, section 6.8.1 of the JSR 329 standard
+When JSF developers want to perform cleanup on managed-beans before theyre
+destroyed, they typically annotate a method inside the bean using the
+`@PreDestroy` annotation. Section 6.8.1 of the JSR 329 standard, however,
 discusses the need for the `@BridgePreDestroy` and
 `@BridgeRequestScopeAttributeAdded` annotations in the bridge API. 
 
@@ -16,28 +16,27 @@ discusses the need for the `@BridgePreDestroy` and
 
 $$$
 
-In order to explain this requirement, it is necessary to make a distinction
-between *local* portals and *remote* portals. Local portals invoke portlets that
-are deployed in the same (local) portlet container. Remote portals invoke
-portlets that are deployed elsewhere via WSRP (Web Services for Remote
-Portlets). The `@BridgePreDestroy` and `@BridgeRequestScopeAttributeAdded`
-annotations were introduced into the JSR 329 standard primarily to support WSRP
-in remote portals. That being the case, the standard indicates that developers
-should always use `@BridgePreDestroy` instead of `@PreDestroy`. Liferay Faces
-Bridge however takes a different approach: rather than assuming the remote
-portal use-case, Liferay Faces Bridge assumes the local portal use-case. When
-developing with a local portal like Liferay, Liferay Faces Bridge ensures that
-the standard `@PreDestroy` annotation works as expected. This means there is no
-reason to use the `@BridgeRequestScope` annotation with a local portal when
-using Liferay Faces Bridge. Developers must manually configure Liferay Faces
-Bridge via the `WEB-INF/web.xml` descriptor in order to leverage the
-`@BridgePreDestroy` and `@BridgeRequestScopeAttributeAdded` annotations for
-WSRP. 
+In order to understand this requirement, it's necessary to differentiate between
+*local* portals and *remote* portals. Local portals invoke portlets that are
+deployed in the same (local) portlet container. Remote portals invoke portlets
+that are deployed elsewhere via WSRP (Web Services for Remote Portlets). The
+`@BridgePreDestroy` and `@BridgeRequestScopeAttributeAdded` annotations were
+introduced into the JSR 329 standard primarily to support WSRP in remote
+portals. That being the case, the standard indicates that developers should
+always use `@BridgePreDestroy` instead of `@PreDestroy`. Liferay Faces Bridge,
+however, takes a different approach: rather than assuming the remote portal
+use-case, Liferay Faces Bridge assumes the local portal use-case. When
+developing with a local portal like Liferay Portal, Liferay Faces Bridge ensures
+that the standard `@PreDestroy` annotation works as expected. This means there
+is no reason to use the `@BridgeRequestScope` annotation with a local portal
+when using Liferay Faces Bridge. To leverage the `@BridgePreDestroy` and
+`@BridgeRequestScopeAttributeAdded` annotations for WSRP, you must manually
+configure Liferay Faces Bridge via the portlet project's `WEB-INF/web.xml`
+descriptor. 
 
-In the below declaration located in `WEB-INF/web.xml`, the default value of the
-following `context-param` is false, meaning that Liferay Faces Bridge will
-invoke methods annotated with `@PreDestroy` over those annoated with
-`@BridgePreDestroy`: 
+In the below declaration taken from a `WEB-INF/web.xml`, the default value of
+the `context-param` is false, meaning that Liferay Faces Bridge invokes methods
+annotated with `@PreDestroy` over those annoated with `@BridgePreDestroy`: 
 
     <context-param>
         <param-name>com.liferay.faces.bridge.preferPreDestroy</param-name>
@@ -46,9 +45,9 @@ invoke methods annotated with `@PreDestroy` over those annoated with
 
 Setting the value of the `context-param` instructs Liferay Faces Bridge to
 prefer the `@BridgePreDestroy` annotation over the standard `@PreDestroy`
-annotation in order to support a WSRP remote portal environment. 
+annotation, in order to support a WSRP remote portal environment. 
 
-The following listener in `WEB-INF/web.xml` is required to support the
+The following listener from a `WEB-INF/web.xml` demonstrates supporting the
 `@BridgeRequestScopeAttributeAdded` annotation in a WSRP remote portal
 environment: 
 
@@ -56,12 +55,13 @@ environment:
         <listener-class>com.liferay.faces.bridge.servlet.BridgeRequestAttributeListener</listener-class>
     </listener>
 
-Alternatively, the `com.liferay.faces.bridge.preferPreDestroy` value can be
-specified on a portlet-by-portlet basis in the `WEB-INF/portlet.xml` descriptor.
+The `com.liferay.faces.bridge.preferPreDestroy` value can, alternatively, be
+specified on a portlet-by-portlet basis in the portlet project's
+`WEB-INF/portlet.xml` descriptor. 
 
 Be learning these requirements, you're able to perform cleanup on managed-beans
-before they are destroyed while abiding by section 6.8.1 of the JSR 329
-standard. 
+before they're destroyed. You can do all of this while still abiding by section
+6.8.1 of the JSR 329 standard. 
 
 ## Related Topics
 
