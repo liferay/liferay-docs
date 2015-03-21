@@ -220,3 +220,13 @@ annotations and their equivalence to CDI annotations.
 This should help with your understanding of CDI and JSF annotations. And as
 you've also seen in this tutorial, configuring CDI for your JSF portlets and
 configuring the Liferay CDI Portlet Bridge is a snap!
+
+**Related Topics**
+
+[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+
+[Communicating Between JSF Portlets Using IPC](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/communicating-between-jsf-portlets-using-ipc)
+
+[Understanding Liferay Faces Portal](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-portal)
+
+[Understanding Liferay Faces Alloy](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-alloy)

@@ -1,4 +1,4 @@
-# Communicating Between JSF Portlets Using IPC
+# Communicating Between JSF Portlets Using IPC [](id=communicating-between-jsf-portlets-using-ipc)
 
 Liferay Faces Bridge supports Portlet 2.0 Inter Portlet Communication (IPC),
 using the JSR 329 approach for supporting Portlet 2.0 Events and Portlet 2.0
@@ -13,7 +13,7 @@ for IPC, using ICEfaces+ICEPush and PrimeFaces+PrimePush.
 For the first tutorial, you'll learn how to use Portlet 2.0 Public Render
 Parameters.
 
-## Using Portlet 2.0 Public Render Parameters
+## Using Portlet 2.0 Public Render Parameters [](id=using-portlet-2-0-public-render-parameters)
 
 The Public Render Parameters technique provides a way for portlets to share data
 by setting public/shared parameter names in a URL controlled by the portal.
@@ -117,7 +117,7 @@ $$$
 Now that you've explored Public Render Parameters for JSF in IPC, you'll learn
 about Events in IPC. 
 
-## Handling Portlet 2.0 Events
+## Handling Portlet 2.0 Events [](id=handling-portlet-2-0-events)
 
 In Portlet 2.0, you can leverage a server-side events technique that uses an
 event-listener design to share data between portlets. When using this form of
@@ -244,6 +244,16 @@ You've explored some common basic JSF portlet development topics dealing with
 IPC. These techniques should help launch you into development of your own JSF
 portlet development using IPC! 
 
-## Related Topics
+**Related Topics**
 
-<!-- Add once JSF tutorials are finished. -Cody -->
+[Contexts and Dependency Injection for JSF Portlets](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/contexts-and-dependency-injection-for-jsf-portlets)
+
+[Liferay Faces Alloy UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-alloy-ui-components)
+
+[Liferay Faces Bridge UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-bridge-ui-components)
+
+[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+
+[Understanding Liferay Faces Portal](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-portal)
+
+[Understanding Liferay Faces Alloy](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-alloy)

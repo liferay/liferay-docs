@@ -74,6 +74,14 @@ tutorial. -->
 With the knowledge of the Liferay Faces versioning scheme under your belt, you
 can now recognize what each version supports. 
 
-## Related Topics
+**Related Topics**
 
-<!-- Add once JSF tutorials are finished. -Cody -->
+[Creating and Deploying JSF Portlets](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/creating-and-deploying-jsf-portlets)
+
+[Developing Liferay Faces Portlets with Maven](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/developing-liferay-faces-portlets-with-maven)
+
+[Using Portlet Preferences with JSF](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/using-portlet-preferences-with-jsf)
+
+[Liferay Faces Alloy UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-alloy-ui-components)
+
+[Liferay Faces Bridge UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-bridge-ui-components)

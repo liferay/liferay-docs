@@ -1,4 +1,4 @@
-# Extending Liferay Faces Bridge Using Factory Wrappers
+# Extending Liferay Faces Bridge Using Factory Wrappers [](id=extending-liferay-faces-bridge-using-factory-wrappers)
 
 In this tutorial, you'll explore how to extend the
 [Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
@@ -29,7 +29,7 @@ file). This mechanism enables you to plug in your own factory implementations to
 decorate (wrap) the default implementations, using a
 [`FactoryExtension`](https://github.com/liferay/liferay-faces/blob/master/util/src/main/java/com/liferay/faces/util/factory/FactoryExtension.java). 
 
-## Wrapping the BridgeContextFactory with a Custom BridgeContext
+## Wrapping the BridgeContextFactory with a Custom BridgeContext [](id=wrapping-the-bridgecontextfactory-with-a-custom-bridgecontext)
 
 This tutorial for [Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
 shows you how to wrap the
@@ -124,6 +124,14 @@ instance by overriding one of the methods to provide custom functionality.
 That's all you need to do to implement and deploy a `BridgeContextFactory`
 wrapper. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-<!-- Add once JSF tutorials are finished. -Cody -->
+[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+
+[Liferay Faces Bridge UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-bridge-ui-components)
+
+[Understanding Liferay Faces Alloy](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-alloy)
+
+[Liferay Faces Alloy UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-alloy-ui-components)
+
+[Understanding Liferay Faces Portal](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-portal)

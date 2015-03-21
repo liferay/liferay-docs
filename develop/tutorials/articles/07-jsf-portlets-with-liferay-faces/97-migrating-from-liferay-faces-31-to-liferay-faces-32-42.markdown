@@ -1,4 +1,4 @@
-# Migrating from Liferay Faces 3.1 to Liferay Faces 3.2/4.2
+# Migrating from Liferay Faces 3.1 to Liferay Faces 3.2/4.2 [](id=migrating-from-liferay-faces-3-1-to-liferay-faces-3-2-4-2)
 
 Liferay Faces 3.2 and 4.2 are compatible with Liferay Portal 6.2 (see the
 [Liferay Faces Version Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
@@ -13,7 +13,7 @@ This tutorial covers the following migration topics:
 
 First, you'll learn how to upgrade your `liferay-portal.xml` file. 
 
-## Migrating the liferay-portlet.xml File
+## Migrating the liferay-portlet.xml File [](id=migrating-the-liferay-portlet-xml-file)
 
 Liferay Portal 6.2 has two compatible Liferay Faces Versions: 3.2 and 4.2.
 Liferay provides Liferay Faces 3.2 for compatibility with JSF 2.1 and Liferay
@@ -69,7 +69,7 @@ file.
 Your `liferay-portlet.xml` file is now migrated to Liferay Faces 3.2/4.2.
 Stupendous! 
 
-## Migrating Liferay Faces Alloy 3.1 Tags to Liferay Faces Alloy 3.2/4.2 Tags
+## Migrating Liferay Faces Alloy 3.1 Tags to Liferay Faces Alloy 3.2/4.2 Tags [](id=migrating-liferay-faces-alloy-3-1-tags-to-liferay-faces-alloy-3-2-4-2-tags)
 
 AlloyUI was upgraded from AlloyUI 1.5 to AlloyUI 2.0 between Liferay Portal 6.1
 and Liferay Portal 6.2. The AlloyUI changes include the deprecation and removal

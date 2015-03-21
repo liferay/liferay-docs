@@ -1,4 +1,4 @@
-# Internationalizing JSF Portlets [](id=internationalizing-jsf-portlets)
+# Localizing JSF Portlets [](id=localizing-jsf-portlets)
 
 In this tutorial, you'll learn how to internationalize your JSF portlet. If
 you're unfamiliar with the term localization, you can learn the basics about it
@@ -9,7 +9,7 @@ Liferay Portal. One way is to use the standard JSF mechanism to create your own
 *i18n* keyword; the other way is to use the built-in *i18n* keyword provided by
 [Liferay Faces Portal](http://www.liferay.com/community/liferay-projects/liferay-faces/portal).
 
-## Option 1: Using the Standard JSF Mechanism to Create Your Own i18n Keyword
+## Option 1: Using the Standard JSF Mechanism to Create Your Own i18n Keyword [](id=option-1-using-the-standard-jsf-mechanism-to-create-your-own-i18n-keyword)
 
 The following steps demonstrate internationalizing a portlet using the standard
 JSF mechanism. 
@@ -70,7 +70,7 @@ JSF mechanism.
 
 You may find the next way of implementing i18n easier and more powerful.
 
-## Option 2: Using the Built-in *i18n* keyword provided by Liferay Faces Portal
+## Option 2: Using the Built-in *i18n* keyword provided by Liferay Faces Portal [](id=option-2-using-the-built-in-i18n-keyword-provided-by-liferay-faces-portal)
 
 The other way to handle internationalization with JSF portlets as shown in the
  [jsf2-registration-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-registration-portlet)
@@ -109,6 +109,14 @@ Internationalizing your portlets is especially easy to do using the options that
 Liferay Faces provides. Awesome! You now know how to internationalize your JSF
 portlet. 
 
-<!-- 
-## Related Topics
-Add once JSF tutorials are finished. -Cody -->
+**Related Topics**
+
+[Liferay Faces Alloy UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-alloy-ui-components)
+
+[Liferay Faces Bridge UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-bridge-ui-components)
+
+[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+
+[Understanding Liferay Faces Portal](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-portal)
+
+[Understanding Liferay Faces Alloy](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-alloy)

@@ -1,4 +1,4 @@
-# Migrating From PortletFaces to Liferay Faces
+# Migrating From PortletFaces to Liferay Faces [](id=migrating-from-portletfaces-to-liferay-faces)
 
 The Liferay Faces project originated from the <http://portletfaces.org>
 community website. On April 3, 2012 Liferay announced that it would be assuming
@@ -10,7 +10,7 @@ underwent the following name changes:
 - PorltetFaces Bridge &rarr; Liferay Faces Bridge 
 - LiferayFaces &rarr; Liferay Faces Portal 
 
-## Migrating BridgeRequestAttributeListener
+## Migrating BridgeRequestAttributeListener [](id=migrating-bridgerequestattributelistener)
 
 PortletFaces Bridge provided a class named
 `org.portletfaces.bridge.servlet.BridgeRequestAttributeListener` but Liferay
@@ -48,7 +48,7 @@ Liferay Faces Bridge version of `BridgeRequestAttributeListener`:
 As you can see, migrating from PortletFaces Bridge to Liferay Faces Bridge is a
 snap! 
 
-## Migrating Configuration Option Names
+## Migrating Configuration Option Names [](id=migrating-configuration-option-names)
 
 PortletFaces Bridge provided several configuration options for use within the
 `WEB-INF/web.xml` and `WEB-INF/portlet.xml` descriptors. In order to ease
@@ -77,7 +77,7 @@ used, as shown in the following listing:
 By making these changes, you're well on your way to migrating configuration
 option names to the Liferay Faces project. 
 
-## Migrating File Upload
+## Migrating File Upload [](id=migrating-file-upload)
 
 PortletFaces Bridge provided classes named
 `org.portletfaces.bridge.component.HtmlInputFile` and
@@ -99,7 +99,7 @@ com.liferay.faces.bridge.component.UploadedFile;`
 Once you've refactored to the new package namespace, you've completed the
 migrating process for file uploading to Liferay Faces. 
 
-## Migrating Facelet Tag Library Namespaces
+## Migrating Facelet Tag Library Namespaces [](id=migrating-facelet-tag-library-namespaces)
 
 The projects at portletfaces.org provided several UIComponents and Composite
 Components for use within Facelet views. The tag library documentation for these
@@ -132,7 +132,7 @@ Lfieray Faces Bridge).
 By using the VDL documentation, your migration of the facelet tag library
 namespaces from PortletFaces to Liferay Faces is a snap! 
 
-## Migrating GenericFacesPortlet
+## Migrating GenericFacesPortlet [](id=migrating-genericfacesportlet)
 
 PortletFaces Bridge provided its own
 `org.portletfaces.bridge.GenericFacesPortlet` class, but the Liferay Faces
@@ -171,7 +171,7 @@ the Liferay Faces Bridge version of `GenericFacesPortlet`:
 After completing the above steps, you've officially migrated your
 `GenericFacesPortlet` class to Liferay Faces! 
 
-## Migrating LiferayFacesContext
+## Migrating LiferayFacesContext [](id=migrating-liferayfacescontext)
 
 PortletFaces provided a class named
 `org.portletfaces.liferay.faces.context.LiferayFacesContext` class, but Liferay
@@ -189,7 +189,7 @@ Liferay Faces namespace:
 Once you've refactored to the new package namespace, you've completed the
 migrating process for `LiferayFacesContext`. 
 
-## Migrating Logging
+## Migrating Logging [](id=migrating-logging)
 
 The PortletFaces-Logging project at portletletfaces.org has been moved into the
 Liferay Faces Bridge codebase. In order to keep using this logging API in your
@@ -212,7 +212,7 @@ com.liferay.faces.util.logging.Logger;`
 
 Great! You've officially migrated logging to Liferay Faces. 
 
-## Migrating Portlet Preferences
+## Migrating Portlet Preferences [](id=migrating-portlet-preferences)
 
 PortletFaces Bridge provided its own
 `org.portletfaces.bridge.preference.Preference` class but Liferay Faces Bridge
@@ -232,7 +232,6 @@ Congratulations!
 
 ## Related Topics [](id=related-topics)
 
-<!-- Add once JSF tutorials are finished. -Cody -->
+[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
 
-
-
+[Specifying the portlet.xml file for Your JSF Portlet](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/specifying-the-portlet-xml-file-for-your-jsf-portlet)

@@ -1,4 +1,4 @@
-# Using PreDestroy and BridgePreDestroy Annotations with Liferay Faces Bridge
+# Using PreDestroy and BridgePreDestroy Annotations with Liferay Faces Bridge [](id=using-predestroy-and-bridgepredestroy-annotations-with-liferay-faces-bridge)
 
 For this tutorial, you'll learn about the`PreDestroy` and `BridgePreDestroy`
 annotations and how to use them. 
@@ -63,6 +63,14 @@ Be learning these requirements, you're able to perform cleanup on managed-beans
 before they're destroyed. You can do all of this while still abiding by section
 6.8.1 of the JSR 329 standard. 
 
-## Related Topics
+**Related Topics**
 
-<!-- Add once JSF tutorials are finished. -Cody -->
+[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+
+[Liferay Faces Bridge UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-bridge-ui-components)
+
+[Understanding Liferay Faces Alloy](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-alloy)
+
+[Liferay Faces Alloy UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-alloy-ui-components)
+
+[Understanding Liferay Faces Portal](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-portal)
