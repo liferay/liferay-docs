@@ -5,21 +5,21 @@ In this tutorial, you'll explore how to extend the
 using factory wrappers. Liferay Faces Bridge has several abstract classes that
 serve as contracts for defining factories: 
 
-- [`BridgeContextFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContextFactory.java)
-- [`BridgePhaseFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/BridgePhaseFactory.java)
-- [`BridgeRequestScopeFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeFactory.java)
-- [`BridgeRequestScopeCacheFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeCacheFactory.java)
-- [`BridgeRequestScopeManagerFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeManagerFactory.java)
-- [`BridgeWriteBehindSupportFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/application/view/BridgeWriteBehindSupportFactory.java)
-- [`BridgeURLFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/url/BridgeURLFactory.java)
-- [`IncongruityContextFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/IncongruityContextFactory.java)
-- [`PortletContainerFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/container/PortletContainerFactory.java)
-- [`PortletContainerFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/container/PortletContainerFactory.java)
-- [`UploadedFileFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/model/UploadedFileFactory.java)
+- [`BridgeContextFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContextFactory.java)
+- [`BridgePhaseFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/BridgePhaseFactory.java)
+- [`BridgeRequestScopeFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeFactory.java)
+- [`BridgeRequestScopeCacheFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeCacheFactory.java)
+- [`BridgeRequestScopeManagerFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/scope/BridgeRequestScopeManagerFactory.java)
+- [`BridgeWriteBehindSupportFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/application/view/BridgeWriteBehindSupportFactory.java)
+- [`BridgeURLFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/context/url/BridgeURLFactory.java)
+- [`IncongruityContextFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/context/IncongruityContextFactory.java)
+- [`PortletContainerFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/container/PortletContainerFactory.java)
+- [`PortletContainerFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/container/PortletContainerFactory.java)
+- [`UploadedFileFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/model/UploadedFileFactory.java)
 
 These factories are defined using the standard JSF `<factory-extension>` element
 in `faces-config.xml`. The *default implementations* of these factories are
-defined in the bridge's [`META-INF/faces-config.xml`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/resources/META-INF/faces-config.xml)
+defined in the bridge's [`META-INF/faces-config.xml`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/resources/META-INF/faces-config.xml)
 file. 
 
 The bridge features an *extension mechanism* that enables you to decorate any of
@@ -27,15 +27,15 @@ these factories using a `META-INF/faces-config.xml` descriptor (inside a `.jar`
 file), or a `WEB-INF/faces-config.xml` descriptor (inside a portlet `.war`
 file). This mechanism enables you to plug in your own factory implementations to
 decorate (wrap) the default implementations, using a
-[`FactoryExtension`](https://github.com/liferay/liferay-faces/blob/master/util/src/main/java/com/liferay/faces/util/factory/FactoryExtension.java). 
+[`FactoryExtension`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/util/src/main/java/com/liferay/faces/util/factory/FactoryExtension.java). 
 
 ## Wrapping the BridgeContextFactory with a Custom BridgeContext [](id=wrapping-the-bridgecontextfactory-with-a-custom-bridgecontext)
 
 This tutorial for [Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
 shows you how to wrap the
-[`BridgeContextFactory`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContextFactory.java)
+[`BridgeContextFactory`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContextFactory.java)
 class, so that it returns a custom
-[`BridgeContext`](https://github.com/liferay/liferay-faces/blob/master/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContext.java)
+[`BridgeContext`](https://github.com/liferay/liferay-faces/blob/3.2.4-ga5/bridge-impl/src/main/java/com/liferay/faces/bridge/context/BridgeContext.java)
 instance by overriding one of the methods to provide custom functionality. 
 
 1. Create a wrapper class for the `BridgeContext` that overrides the
