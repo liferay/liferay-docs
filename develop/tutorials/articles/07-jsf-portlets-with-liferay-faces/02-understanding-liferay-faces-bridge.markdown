@@ -4,10 +4,10 @@ The Liferay Faces Bridge enables you to deploy JSF web apps as portlets without
 writing portlet-specific code. It also contains innovative features that make it
 possible to leverage the power of JSF 2.x inside a portlet application.
 
-Liferay Faces Bridge is a JAR that you can add as a dependency to your portlet
-WAR projects, in order to deploy JSF web applications as portlets within JSR 286
-(Portlet 2.0) compliant portlet containers, like Liferay Portal 5.2, 6.0, 6.1,
-and 6.2. 
+Liferay Faces Bridge is distributed in a `.jar` file. You can add Liferay Faces
+Bridge as a dependency to your portlet projects, in order to deploy your JSF web
+applications as portlets within JSR 286 (Portlet 2.0) compliant portlet
+containers, like Liferay Portal 5.2, 6.0, 6.1, and 6.2. 
 
 The Liferay Faces Bridge project home page can be found
 [here](http://www.liferay.com/community/liferay-projects/liferay-faces/bridge). 

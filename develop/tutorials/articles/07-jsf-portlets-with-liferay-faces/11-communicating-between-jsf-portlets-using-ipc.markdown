@@ -124,8 +124,8 @@ event-listener design to share data between portlets. When using this form of
 IPC, the portlet container acts as a broker and distributes events and payload
 (data) to portlets. One requirement of this approach is that the payload must
 implement the `java.io.Serializable` interface since it might be sent to a
-portlet in another WAR running in a different classloader. In addition, the
-Portlet 2.0 standard requires the events to be declared in the
+portlet in another `.war` file running in a different classloader. In addition,
+the Portlet 2.0 standard requires the events to be declared in the
 `WEB-INF/portlet.xml` descriptors of the involved portlets. 
 
 The following example `WEB-INF/portlet.xml` descriptor snippets define an IPC

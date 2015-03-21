@@ -1,8 +1,8 @@
 # Understanding Liferay Faces Alloy [](id=understanding-liferay-faces-alloy)
 
-Liferay Faces Alloy is a JAR that JSF developers can add as a dependency to
-their portlet WAR projects in order to utilize AlloyUI in a way that is
-consistent with JSF development. 
+Liferay Faces Alloy is distributed in a `.jar` file. You can add Liferay Faces
+Alloy as a dependency to your portlet projects, in order to use AlloyUI in a
+way that is consistent with JSF development. 
 
 During the creation of a JSF portlet in Liferay IDE/Developer Studio, you have
 the option of choosing the portlet's JSF Component Suite. The options include
@@ -15,7 +15,7 @@ visit the
 to walk through this process. 
 
 If you selected the Liferay Faces Alloy JSF Component Suite during your
-portlet's setup, the JAR is included in your portlet project using Ivy. 
+portlet's setup, the `.jar` file is included in your portlet project using Ivy. 
 
 The Liferay Faces Alloy project provides a set of UI components that are JSF
 equivalents of the `aui:` JSP tag library provided by Liferay Portal. For
@@ -32,8 +32,8 @@ example, a brief list of some of the supported `aui:` tags are listed below:
 will be deprecated and replaced by `alloy:` components. Update when this is
 completed. -Cody -->
 
-If you want to utilize Liferay's AlloyUI technology based on YUI3, you'll need
-to include the Liferay Faces Alloy JAR in your JSF portlet project. If you
+If you want to utilize Liferay's AlloyUI technology based on YUI3, you must
+include the Liferay Faces Alloy `.jar` file in your JSF portlet project. If you
 selected *Liferay Faces Alloy* during your JSF portlet's setup, you have Liferay
 Faces Alloy preconfigured in your project, so you're automatically able to use
 AUI tags. 
