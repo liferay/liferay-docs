@@ -16,3 +16,6 @@ portlets, including Struts, Spring MVC, JSF, and Vaadin. Here you'll use the
 Liferay MVC portlet framework, because it's simple, lightweight, and easy to
 understand. 
 
+**Related Topics**
+
+[JSF Portlets with Liferay Faces](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/jsf-portlets-with-liferay-faces)
