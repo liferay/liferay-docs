@@ -54,3 +54,5 @@ Portlet](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/portal/js
 **Related Topics**
 
 [Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/tutorials/liferay-faces-bridge-ui-components)
+
+[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)

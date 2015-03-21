@@ -31,3 +31,5 @@ and have can now implement it into your JSF portlet!
 **Related Topics**
 
 [Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/tutorials/liferay-faces-alloy-ui-components)
+
+[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
