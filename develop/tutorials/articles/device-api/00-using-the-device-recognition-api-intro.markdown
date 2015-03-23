@@ -1,4 +1,4 @@
-# Using the Device Recognition API
+# Using the Device Recognition API [](id=using-the-device-recognition-api)
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -25,7 +25,7 @@ This tutorial shows you some of the methods in the Device API that you
 can use to retrieve device attributes and capabilities. Now go ahead and get 
 started! 
 
-## Getting Started with the Device API
+## Getting Started with the Device API [](id=getting-started-with-the-device-api)
 
 One important thing that you'll want to get using the Device API is the 
 `Device` object. You can obtain it from the `themeDisplay` object like this: 
@@ -46,7 +46,7 @@ attributes that help you take care of the pesky problems that arise when sending
 content to different devices. Refer to the Device Javadocs mentioned above for 
 assistance. Next, you'll learn about retrieving some other device capabilities.
 
-## Getting Device Capabilities 
+## Getting Device Capabilities [](id=getting-device-capabilities)
 
 With the Device API, you can detect the capabilities of a device making a
 request to your portal and then render content accordingly. Capabilities
@@ -72,7 +72,7 @@ grandma's gnarly tablet and your cousin's awesome new mobile phone can make
 requests to your portal and receive identical content. This will make everyone 
 happy! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Using the Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile)
 
