@@ -9,12 +9,11 @@ challenges for content management. How will content adapt to different devices
 with different capabilities? How can your grandma's gnarly tablet and your 
 cousin's awesome new smartphone request the same information from your portal?
 
-The Device Detection API detects the capabilities of any device making a request
-to your portal. It can also determine what mobile device or operating system was
-used to make a request, and then follows rules to make Liferay render pages
-based on the device. To use this feature, you first need to install the *Device
-Recognition Provider EE* app from the
-[Liferay Marketplace](http://www.liferay.com/marketplace). 
+The Device API detects the capabilities of any device making a request to your
+portal. It can also determine what mobile device or operating system was used to
+make a request, and then follows rules to make Liferay render pages based on the
+device. To use this feature, you first need to install the *Device Recognition
+Provider EE* app from the [Liferay Marketplace](http://www.liferay.com/marketplace). 
 
 The Device Recognition plugin comes bundled inside the Device Recognition
 Provider app. It uses a device database called *WURFL* to determine the 
@@ -49,11 +48,11 @@ assistance. Next, you'll learn about retrieving some other device capabilities.
 
 ## Getting Device Capabilities 
 
-With the Device Detection API, you can detect the capabilities of a device
-making a request to your portal and then render content accordingly. 
-Capabilities generally refer to things that the requesting device can do. For 
-example, you can determine the device's operating system, browser, form factor, 
-and much more. Capabilities can be retreived with the `getCapability` and 
+With the Device API, you can detect the capabilities of a device making a
+request to your portal and then render content accordingly. Capabilities
+generally refer to things that the requesting device can do. For example, you
+can determine the device's operating system, browser, form factor, and much
+more. Capabilities can be retreived with the `getCapability` and
 `getCapabilities` methods of the Device API. 
 
 Most of the capabilities of the requesting device can be detected, depending on 
@@ -75,6 +74,6 @@ happy!
 
 ## Related Topics
 
-[Mobile](/tutorials/-/knowledge_base/6-2/mobile)
+[Using the Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile)
 
-[Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
