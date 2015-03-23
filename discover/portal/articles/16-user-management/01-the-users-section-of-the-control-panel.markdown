@@ -234,16 +234,17 @@ the currently configured parent.
 
 +$$$
 
-**Tip:** By creating an organization, you
- automatically become both a member and receive the Organization Owner role,
- which gives you full administrative rights within the organization. This means
- that you can, for example, appoint other users to be organization
- administrators or organization owners. Organization owners are equivalent to
- organization administrators except that they can assign the Organization Owner
- and Organization Administrator roles to other users; they can also remove the
- memberships of other Organization Administrators or Owners. Organization
- administrators can't make these role assignments and can't manage the
- memberships of other Organization Administrators or Owners.
+**Tip:** After creating an organization, you should assign the desired user to
+the Organization Owner Role. The Organization Owner can do everything that an
+Organization Administrator can. In addition to their full administrative rights
+within the organization, they can do these things:
+
+- Appoint other users to be Organization Administrators 
+- Appoint other users to be Organization Owners
+- Remove the memberships of other Organization Administrators or Owners
+
+Organization Administrators can't make these role assignments and can't manage
+the memberships of other Organization Administrators or Owners.
 
 $$$
 
