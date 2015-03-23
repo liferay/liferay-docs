@@ -13,18 +13,18 @@ Make sure to read their README files. - Jim
 -->
 
 The ability to relate assets is one of the most powerful features of Liferay's 
-asset framework. By relating assets you can connect individual pieces of content 
+asset framework. By relating assets, you can connect individual pieces of content 
 across your site or portal. This helps your users discover related content, 
 particularly when there's an abundance of other available content. For example, 
-assets related to a Blog entry appear alongside that entry in the Blogs portlet:
+assets related to a Blog entry appear alongside that entry in the Blogs portlet.
 
 ![Figure 1: You and your users can find it helpful to relate assets to entities, such as this blogs entry.](../../images/asset-fw-related-blog-insults.png)
 
-This tutorial shows you how to provide a means for authors to relate content.
+This tutorial shows you how to provide a way for authors to relate content.
 This tutorial assumes that you've [asset enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities)
 your portlet. A custom Insults portlet is used as an example. After all, users
 of such a portlet would want to relate their insults to all kinds of content!
-The completed Insults portlet code that uses this feature is on GitHub, [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet). 
+The completed Insults portlet code that uses this feature is on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet). 
 Now go ahead and get started relating your assets!
 
 ## Relating Assets in the Service Layer [](id=relating-assets-in-the-service-layer)
@@ -37,10 +37,10 @@ Service Builder:
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 
-Next, you need to modify the `add-`, `delete-`, and `udpate-` methods in your
+Next, you need to modify the `add-`, `delete-`, and `update-` methods in your
 `-LocalServiceImpl` to persist the asset relationships. You'll use your
 `-LocalServiceImpl`'s `assetLinkLocalService` instance variable to execute
-persistence actions. When you add and update assets you must invoke the `addInsult`
+persistence actions. When you add and update assets, you must invoke the `addInsult`
 and `updateInsult` methods of `InsultLocalServiceImpl` both utilize the
 `updateLinks` via your instance variable `assetLinkLocalService`. Here's the
 `updateLinks` invocation in the example Insults portlet's
