@@ -15,7 +15,7 @@ Make sure to read their README files.
 Liferay's asset framework supports a rating system that lets your users rate
 content in plugins. You've probably seen this in many of Liferay's built-in
 plugins. A great example is the Blogs portlet. On viewing a blogs entry,
-a row of stars appears letting the user rate the entry on a scale from one to
+a row of stars appears, letting the user rate the entry on a scale from one to
 five stars. Ratings help users figure out what content is popular. The feature
 also fosters a sense of community and collaboration among content producers and
 consumers. Even better, once your plugin is asset enabled, implementing ratings
@@ -25,7 +25,7 @@ is a snap.
 
 This tutorial shows you how to add ratings to an asset enabled portlet. The
 tutorial uses code from a custom Insults portlet as an example. The Insults
-portlet seemed appropriate since a truly distinguished writer of insults needs
+portlet seemed appropriate, since a truly distinguished writer of insults needs
 to know how good his or her insults really are. 
 
 In order to implement ratings on your custom entity, it must be [asset enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities). 
@@ -34,9 +34,9 @@ The completed Insults portlet code that uses this feature is on GitHub, [here](h
 Now go ahead and get started learning how to add ratings to your portlets!
 
 If you've implemented [asset rendering](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
-for your custom entity, you can show this asset feature in the full content view
-of your entity for users to view in an Asset Publisher portlet. You can also
-show this asset feature in any view JSP you create for viewing the entity. 
+for your custom entity, you can display ratings in the full content view
+of your entity. You can, of course, also display this asset feature in any view
+JSP you create for viewing the entity. 
 
 As an example, the Insult portlet's view JSP file [`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
 shows an insult entity and its ratings. This tutorial shows you how to associate
@@ -51,16 +51,16 @@ render request. Then you can create an entity object using your
     Insult ins = InsultLocalServiceUtil.getInsult(insultId);
     %>
 
-After your JSP code that displays your entity you can add the ratings component
+After the code that displays your entity, you can add the ratings component
 using the `liferay-ui:ratings` tag. Note that the object's ID is used to tie the
 ratings to the entity:
 
     <liferay-ui:ratings className="<%=Insult.class.getName()%>"
         classPK="<%=ins.getInsultId()%>" type="stars" />
 
-In the code above the `type` attribute is given the value `"stars"`, to use the
+In the code above, the `type` attribute is given the value `"stars"` to use the
 five star rating system. You can optionally replace the star ratings with a
-simple thumbs-up or thumbs-down rating system by changing this value to
+thumbs-up or thumbs-down rating system by changing this value to
 `"thumbs"`.
 
 If you haven't already connected your portlet's view to the JSP for your entity,
@@ -70,13 +70,13 @@ to see how to connect your portlet's main view JSP to your entity's view JSP.
 Great! Now you have the JSP that lets your users rate content.
 
 Now redeploy your portlet and refresh the page so that the your plugin's UI
-reloads. The ratings UI component now shows in your entity's view. 
+reloads. The ratings UI component now appears in your entity's view. 
 
 Great! Now you know how to add ratings for content in your asset enabled 
 portlets. 
 
-Another thing you might want to do is perform permissions checks to control 
-access to the JSP your ratings are in. For example, the Add Insult and 
+Another thing you might want to do is perform permissions checks to make sure
+only the proper users can rate content. For example, the Add Insult and 
 Permissions buttons of the Insults portlet are wrapped in a permissions check in 
 its [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
 For more information on this, see the learning path [Checking Permissions in the UI](/develop/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
