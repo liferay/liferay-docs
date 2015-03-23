@@ -39,6 +39,15 @@ connect through a proxy, then you can skip these steps.
  
 5. Deploy the LCS client WAR, or redeploy it if it's already deployed.
 
+If your proxy connects via HTTPS, then you may need to set the following 
+properties in a `system-ext.properties` file in your Liferay instance's Liferay 
+Home folder:
+
+    http.proxyHost=
+    https.proxyHost=
+    http.proxyPort=
+    https.proxyPort=
+
 Once you deploy the LCS client, you're ready to register your server with LCS. 
 Access the client by clicking on *Liferay Connected Services* under the *Apps* 
 section of the *Control Panel*. 
@@ -80,7 +89,7 @@ that it can take up to 10 or 20 seconds to perform the initial handshake and
 send the first batch of information to LCS. If you don't see any change in 
 status after 20 seconds, try refreshing the page. If you see a red symbol 
 indicating no data is being transmitted, please contact the Liferay team for 
-support.
+support. 
 
 ![Figure 4.9: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
 
@@ -88,14 +97,19 @@ Once a successful connection is established, some statistics and links are
 displayed. Here's a description of what's displayed:
 
 - Heartbeat Interval: The communication interval with LCS. For example, if this 
-  value is `00:01:00`, then the client communicates with LCS once every minute.
-- Message Task Interval: The message interval with LCS. Messages received from 
-  LCS let the client know about any available updates. 
+  value is `00:01:00`, then the client communicates with LCS once every minute. 
+  This regular communication keeps the client's LCS connection alive, even when 
+  there's nothing else to report. 
+- Message Task Interval: The interval at which the client checks LCS for new 
+  messages. For example, LCS messages are used to let the client know that new 
+  fix packs are available.
 - Metrics Task Interval: The interval at which server statistics and metrics are 
-  taken.
+  sent to LCS.
+- Last Message Received: The time the latest message was received from LCS.
+- Connection Uptime: The duration of the client's connection with LCS.
 - Project Home: Clicking this link takes you to this server's registered 
   project.
-- Environment: Clicking this link takes you to this server's registered
+- Environment: Clicking this link takes you to this server's registered 
   environment.
 - Server Dashboard: Clicking this link takes you to the server on LCS.
 - Disconnect: Disconnects this Liferay instance from LCS.
