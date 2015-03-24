@@ -148,9 +148,9 @@ You should also note the `toString` method in this class. By returning a
 guestbook's name, it's very simple, but very important. To render objects in the 
 drawer, Android calls `toString` on them. If `toString` isn't defined for the 
 objects, then strings with each object's full package path and internal ID are 
-shown. In other words, illegible text is displayed. By defining `toString` to 
-return the name of each `GuestbookModel`, you're telling Android to show each 
-guestbook's name in the drawer.
+shown. In other words, illegible text is displayed if you don't define `toString` 
+here. By defining `toString` to return the name of each `GuestbookModel`, you're 
+telling Android to show each guestbook's name in the drawer. 
 
 Next, you'll add the basic infrastructure for requesting guestbooks from the 
 portlet. 
@@ -219,7 +219,7 @@ code in the class with the following:
       }
 
     }
-    
+
 So what's going on here? First, you should note that this class has a 
 `MainActivity` instance as its only variable. This is so it can refer results 
 back to the main activity, which runs in Android's main UI thread. The 
@@ -235,23 +235,26 @@ method puts all the guestbooks it receives from the portlet into a `List` of
 `GuestbookModel` objects. It's this `List` that's fed to the `onSuccess` method. 
 You're probably starting to see that `reloadGuestbooks` is an important method. 
 It receives guestbooks for processing in the app's main UI thread. Now it's time 
-to write that processing code!
+to write that processing code! 
 
 ## Displaying Guestbooks in the Drawer
 
-To display guestbooks in the drawer, you need a variable for the `GuestbookModel` 
-objects returned by the callback. This variable needs to be `public` and `static` 
-so it can be used throughout the UI, independent of any activity or fragment 
-instance. Create this variable in the `MainActivity` class as follows: 
+To display guestbooks in the drawer, you first need a variable for the 
+`GuestbookModel` objects returned by the callback. Create this variable in the 
+`MainActivity` class as follows: 
 
-    public static List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
+    public List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
 
-The app displays a list of items in the drawer by using [`ListView`](http://developer.android.com/guide/topics/ui/layout/listview.html) 
+In the `NavigationDrawerFragment` class, the app displays a list of items in the 
+drawer by using a [`ListView`](http://developer.android.com/guide/topics/ui/layout/listview.html) 
 with an [adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews). 
 Specifically, an `ArrayAdapter` is used as the data source for the drawer's 
-`ListView`. This is done in the `onCreateView` method of the 
-`NavigationDrawerFragment` class. Android Studio generated this method for you 
-when you created the project: 
+`ListView`. Even though the `ListView` and `ArrayAdapter` are closely linked, 
+it's important to note that they each serve a different purpose. The `ListView` 
+is used to render the adapter's contents as a scrollable list. The `ArrayAdapter` 
+contains and renders each individual item for that list. This is all done in the 
+`onCreateView` method of the `NavigationDrawerFragment` class. Android Studio 
+generated this method for you when you created the project: 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -284,27 +287,36 @@ Specifically, `onCreateView` creates the fragment's UI. Here, it first *inflates
 the `ListView` by calling `inflater.inflate` on the fragment's layout file 
 `fragment_navigation_drawer.xml`. This file is represented by 
 `R.layout.fragment_navigation_drawer`. You can think of this representation as 
-an address the app uses to find the corresponding layout file. That's all fine 
-and well, but why do `xml` files need air pumped into them? Fortunately, we're 
-not talking about that kind of inflation; Liferay is fresh out of air pumps and 
-pressure gauges. When an Android layout `xml` file is inflated, its `xml` is 
-converted into Java code that the system uses to draw the UI. In this case, 
+an address the app uses to find the layout file. That's all fine and well, but 
+why do `xml` files need air pumped into them? Fortunately, we're not talking 
+about that kind of inflation; Liferay is fresh out of air pumps and pressure 
+gauges. When an Android layout `xml` file is inflated, its `xml` is converted 
+into Java code that the system uses to draw the UI. In this case, 
 `fragment_navigation_drawer.xml` only contains a single `ListView`, so it can be 
-cast to a `ListView` object. 
+cast to a `ListView` object following inflation. 
 
 After this, a click listener for the list's items is created and set to the 
 `ListView`. This lets the app respond when the user taps an item in the drawer. 
 The click listener does this by calling the `selectItem` method with the 
 selected item's position in the list (for now, you don't need to worry about 
-what this method does). Next, the `ArrayAdapter` is created inside the 
-`setAdapter` method, which sets it to the `ListView`. The `onCreateView` method 
-then finishes by setting the currently selected list item in the UI and 
-returning the `ListView`. Now that you understand the basics of how 
-`onCreateView` works here, you'll change it to display guestbooks from the 
-Guestbook portlet. 
+what this method does). 
+
+Next, the `ArrayAdapter` is created inside the `setAdapter` method. There are 
+two main things you should take note of in the `ArrayAdapter`. First is that it 
+uses the layout `simple_list_item_activated_1` to render each of its items. This 
+is one of Android's default layouts and is suitable in cases where each list 
+item is only a single string. Using a default layout also means that you don't 
+have to write your own layout file. The second thing of note in the 
+`ArrayAdapter` is the array of hardcoded `"Section *"` strings. You'll replace 
+this shortly. The `setAdapter` method sets the adapter to the `ListView`.
+
+The `onCreateView` method then finishes by setting the currently selected list 
+item in the UI and returning the `ListView`. Now that you understand the basics 
+of how `onCreateView` works here, you'll change it to display guestbooks from 
+the Guestbook portlet. 
 
 Begin by declaring the following variable in the `NavigationDrawerFragment` 
-class:
+class: 
 
     public ArrayAdapter _adapter;
 
@@ -326,7 +338,7 @@ Next, replace `onCreateView` with the following code:
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                MainActivity._guestbooks);
+                ((MainActivity)getActivity())._guestbooks);
         mDrawerListView.setAdapter(_adapter);
         
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
@@ -350,7 +362,7 @@ as shown here:
 This method first clears any existing guestbooks from the `_guestbooks` 
 variable. It then populates `_guestbooks` with the guestbooks retrieved from the 
 portlet call. You must also notify the list's adapter of this change. This is 
-done with `notifyDataSetChanged()`.
+done with `notifyDataSetChanged()`. 
 
 You're now ready to make the portlet call! This is done in the `MainActivity` 
 class. First, add the following `getGuestbooks` method to `MainActivity`: 
