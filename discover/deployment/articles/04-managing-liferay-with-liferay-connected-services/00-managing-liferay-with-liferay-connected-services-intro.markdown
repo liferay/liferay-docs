@@ -10,7 +10,7 @@ gets applied to your Liferay installations. LCS just automates the process by
 enabling one-click downloading and updating. You can also use LCS to monitor the 
 performance of your Liferay instances. This includes data on pages, portlets, 
 memory usage, JVM performance, and much more. Even better, the features of LCS 
-work regardless of whether your Liferay instance is on a single discreet server, 
+work regardless of whether your Liferay instance is on a single discreet server 
 or distributed across a node. 
 
 Before going any further, you should make sure that your Liferay instances meet 
@@ -23,7 +23,7 @@ Also, you should take note of a few key terms used throughout this guide:
 - *Project*: Represents a group of users belonging to a company or organization. 
   For example, a project can consist of all the users from a project team or 
   business unit, or it can include the entire company.
-- *Environment*: Represents a physical cluster of servers, or a virtual or 
+- *Environment*: Represents a physical cluster of servers or a virtual or 
   logical aggregation of servers.
 - *Server*: Describes a concrete portal instance. It can be a standalone server 
   or a cluster node.
