@@ -88,10 +88,10 @@ Great! Now you know how to let users share content in your asset enabled
 portlets. 
 
 Another thing you might want to do is perform permissions checks to control 
-access to the JSP your ratings are in. For example, the Add Insult and 
+who can rate content. For example, the Add Insult and 
 Permissions buttons of the Insults portlet are wrapped in a permissions check in 
 the [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
-For more information on this, see the learning path [Checking Permissions in the UI](/develop/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+For more information on this, see the Learning Path [Checking Permissions in the UI](/develop/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 
