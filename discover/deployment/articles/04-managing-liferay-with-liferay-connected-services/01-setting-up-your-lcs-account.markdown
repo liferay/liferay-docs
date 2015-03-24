@@ -22,7 +22,7 @@ section. To become the administrator for one of these projects, check the
 checkbox next to it and click *Save*.
 
 Any other existing projects in your domain are listed in the 
-*My Company Projects* section. To request access to a project, simply check its 
+*My Company Projects* section. To request access to a project, check its 
 checkbox and click *Save*. Your request is then sent to the project 
 administrator for approval. Note that it's possible for the project 
 administrator to pre-assign you a role in a project (more on LCS roles in a 
@@ -30,12 +30,12 @@ moment). In this case, you won't have to wait for approval. For more information
 on user management in LCS, please see the *Managing LCS Users in Your Project* 
 section of this guide.
 
-Alternatively, you can create a new project and make yourself its administrator. 
-To do so, click the checkbox next to 
-*Create a project and become an administrator* in the *New Project* section of 
-the Projects screen. The section then expands to let you name the project and 
-choose to go to directly to the project's *Dashboard* (more on the Dashboard 
-later). Give your project a name and then click *Save*. 
+Alternatively, you can create a new project and make yourself its administrator.
+To do so, click the checkbox next to *Create a project and become an
+administrator* in the *New Project* section of the Projects screen. The section
+then expands to let you name the project and choose to go to directly to the
+project's *Dashboard* (more on the Dashboard later). Give your project a name
+and then click *Save*. 
 
 ![Figure 4.2: Check the checkbox and click *Save* to begin creating a new project.](../../images/lcs-projects-02.png)
 
