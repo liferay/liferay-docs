@@ -13,34 +13,31 @@ Make sure to read their README files.
 -->
 
 Liferay's asset framework facilitates discussions on individual pieces of 
-content posted in a plugin. This is great because when users see content posted, 
-they expect to be able to discuss it. Fortunately, most of the work is already 
-done for you so you don't have to spend time developing a commenting system from 
-scratch. 
+content posted in a plugin. This is great because it lets discuss any posted
+content. Fortunately, most of the work is already done for you so you don't have
+to spend time developing a commenting system from scratch. 
 
 ![Figure 1: Your JSP lets users comment on content in your portlet.](../../images/asset-fw-comments.png)
 
 In order to implement the comments feature on your custom entity, it must be [asset enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities). 
-This tutorial shows you how to enable commenting on content posted in an asset 
-enabled portlet. A custom Insults portlet is used as an example--a community 
-discussion will definitely help to bring about insults of the highest quality! 
-The completed Insults portlet code that uses this feature is on GitHub, [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet).
+This tutorial shows you how to add the comment feature for your application's
+content. A custom Insults portlet is used as an example: a community discussion
+definitely helps to bring about insults of the highest quality! The
+completed Insults portlet code that uses this feature is on 
+[Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet).
 
 Without any further ado, go ahead and get started enabling comments in your 
 portlet!
 
-You can show the comments component in your portlet's view of your custom entity
-or, if you've implemented [asset rendering](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
-for your custom entity, you can show the asset feature in the full content view
-of your entity for users to view in an Asset Publisher portlet.  
+You can display the comments component in your portlet's view 
+or, if you've implemented [asset rendering](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers),
+you can display it in the full content view in the Asset Publisher portlet. 
 
 As an example, the Insult portlet's view JSP file
 [`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
-shows an insult entity and this asset feature. This section shows you how to
-access an entity's asset entry in your entity's view JSP and how to display the
-social bookmarks asset feature. 
+shows an insult entity and this asset feature. 
 
-In your entity's view JSP you can use `ParamUtil` to get the ID of the entity
+In your entity's view JSP, you can use `ParamUtil` to get the ID of the entity
 from the render request. Then you can create an entity object using your
 `-LocalServiceUtil` class. 
 
@@ -50,17 +47,16 @@ from the render request. Then you can create an entity object using your
     %>
 
 Next, you need to add the code that handles the discussion. First you'll create 
-a collapsible panel to put the discussion in. This is done with the 
-`liferay-ui:panel-container` and `liferay-ui:panel` tags. Collapsible panels are 
-a nice feature of Liferay UI that lets your users obscure any potentially long 
-content on a page. Now that this panel is in place, you need to create a URL for 
-the discussion. This is done with the `portlet:actionURL` tag. You also need to 
-get the current URL from the `request` object, so that your user can return to 
-the JSP after adding a comment. This is done with `PortalUtil`. Last, but 
-certainly not least, is the implementation of the discussion itself with the 
-`liferay-ui:discussion` tag. Note that the URLs you created are used here, as 
-well as the entity object. The following block of code shows the collapsible 
-panel, URLs, and the discussion:
+a collapsible panel for the comments, so the discussion area doesn't visually
+take precedence over the content. This is done with the
+`liferay-ui:panel-container` and `liferay-ui:panel` tags. Collapsible panels let
+your users obscure any potentially long content on a page. Now that this panel
+is in place, you need to create a URL for the discussion. This is done with the
+`portlet:actionURL` tag. You also need to get the current URL from the `request`
+object, so that your user can return to the JSP after adding a comment. This is
+done using `PortalUtil`. Last, but certainly not least, is the implementation of
+the discussion itself with the `liferay-ui:discussion` tag. The following block
+of code shows the collapsible panel, URLs, and the discussion:
 
     <liferay-ui:panel-container extended="<%=false%>"
         id="insultCommentsPanelContainer" persistState="<%=true%>">
@@ -92,24 +88,29 @@ If you haven't already connected your portlet's view to the JSP for your entity,
 you can refer [here](/develop/tutorials/-/knowledge_base/6-2/relating-assets#creating-a-url-to-your-new-jsp)
 to see how to connect your portlet's main view JSP to your entity's view JSP. 
 
-Now, redeploy your portlet and refresh the page so that the your plugin's UI
-reloads. The comments section should appear at the bottom of the page.
+Now redeploy your portlet and refresh the page so that the your plugin's UI
+reloads. The comments section appear at the bottom of the page.
 
 Great! Now you know how to let users comment on content in your asset enabled 
 portlets. 
 
 Before moving on, another thing you might want to do is perform permissions 
-checks to control who can access the discussion. For example, the collapsible 
-panel in the [`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp) of the Insults portlet is surrounded by `c:if` 
-tags that only reveal their contents to users that are signed in to the portal:
+checks to control who can access the discussion. For example, you can surround
+the collapsible panel 
+[`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
+with `c:if` tags that only reveal their contents to users that are signed in to
+the portal:
 
     <c:if test="<%=themeDisplay.isSignedIn()%>">
+
+        [Collapsible Panel Here]
+
     </c:if>
 
-This is just one way of controlling access to the discussion. For example, you 
-can also do so by performing more specific permissions checks, as the Insults 
+This is just one way of controlling access to the discussion. You 
+could also perform more specific permissions checks as the Insults 
 portlet does for the Add Insults and Permissions buttons in its [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
-For more information, see the learning path [Checking Permissions in the UI](/develop/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+For more information, see the Learning Path [Checking Permissions in the UI](/develop/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 
