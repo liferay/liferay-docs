@@ -6,7 +6,7 @@ to LCS and provides a simple UI for managing that connection. You can also use
 the LCS client to directly access your LCS project, environment, and server from 
 within your Liferay instance. 
 
-You can download the LCS client from your LCS project's *Dashboard*. You're 
+You can download the LCS client from your LCS project's Dashboard. You're 
 taken to the Dashboard when you log in to your LCS project on the web, or click
 your project's link in the LCS client. By letting you view and manage the 
 environments and servers in your project, the Dashboard is at the heart of LCS. 
@@ -16,9 +16,9 @@ highlighted in a red box.
 ![Figure 4.4: The LCS Dashboard contains links to download the client.](../../images/lcs-dashboard-client-download.png)
 
 In most cases, deploying and configuring the LCS client is simple. However, if 
-you connect to the web through a proxy, then there are a couple of properties 
-you need to set in the client's WAR file before deploying it. If you don't 
-connect through a proxy, then you can skip these steps.
+you connect to the web through a proxy, then there are some properties you need
+to set in the client's WAR file before deploying it. If you don't connect
+through a proxy, then you can skip these steps.
 
 1. In the LCS client's WAR file, open the 
    `WEB-INF/classes/portlet-ext.properties` file.
@@ -35,9 +35,9 @@ connect through a proxy, then you can skip these steps.
         proxy.host.login=
         proxy.host.password=
         
-4. Update LCS client WAR with the modified `portlet-ext.properties` file.
+4. Update the LCS client WAR with the modified `portlet-ext.properties` file.
  
-5. Deploy the LCS client WAR, or redeploy it if it's already deployed. 
+5. Deploy the LCS client WAR or redeploy it if it's already deployed. 
 
 Once you deploy the LCS client, you're ready to register your server with LCS. 
 Access the client by clicking on *Liferay Connected Services* under the *Apps* 
@@ -87,24 +87,24 @@ support.
 Once a successful connection is established, some statistics and links are
 displayed. Here's a description of what's displayed:
 
-- Heartbeat Interval: The communication interval with LCS. For example, if this 
-  value is `00:01:00`, then the client communicates with LCS once every minute. 
+- **Heartbeat Interval:** The communication interval with LCS. For example, if this 
+  value is `00:01:00`, the client communicates with LCS once every minute. 
   This regular communication keeps the client's LCS connection alive, even when 
   there's nothing else to report. 
 - Message Task Interval: The interval at which the client checks LCS for new 
   messages. For example, LCS messages are used to let the client know that new 
   fix packs are available.
-- Metrics Task Interval: The interval at which server statistics and metrics are 
+- **Metrics Task Interval:** The interval at which server statistics and metrics are 
   sent to LCS.
-- Last Message Received: The time the latest message was received from LCS.
-- Connection Uptime: The duration of the client's connection with LCS.
-- Project Home: Clicking this link takes you to this server's registered 
+- **Last Message Received:** The time the latest message was received from LCS.
+- **Connection Uptime:** The duration of the client's connection with LCS.
+- **Project Home:** This link takes you to this server's registered 
   project.
-- Environment: Clicking this link takes you to this server's registered 
+- **Environment:** This link takes you to this server's registered 
   environment.
-- Server Dashboard: Clicking this link takes you to the server on LCS.
-- Disconnect: Disconnects this Liferay instance from LCS.
-- Reset Credentials: Removes the authorizing account from registration with LCS. 
+- **Server Dashboard:** This link takes you to the server on LCS.
+- **Disconnect:** Disconnects this Liferay instance from LCS.
+- **Reset Credentials:** Removes the authorizing account from registration with LCS. 
   It's important to note that your credentials are not human readable in the 
   portal instance. This is because OAuth, which uses tokens, is used for 
   authentication.
