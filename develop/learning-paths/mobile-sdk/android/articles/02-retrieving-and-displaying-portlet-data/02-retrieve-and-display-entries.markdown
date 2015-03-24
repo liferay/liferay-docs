@@ -12,12 +12,12 @@ with an empty screen. Also, the action bar's title is still hardcoded with the
 
 This article walks you through the steps required to retrieve and display 
 guestbook entries from the portal. As you did to display guestbooks, you'll use 
-`ListView` to display entries in a list. The steps in this article follow the 
-same basic pattern you used to retrieve and display guestbooks. For this reason, 
-the concepts behind the steps aren't explained in detail here. Refer to this 
-learning path's previous two articles for such an explanation. As you did when 
-you wrote the code to retrieve guestbooks from the portal, you'll begin here by 
-encapsulating the objects being retrieved. 
+`ListView` to display entries in a list. Also, the first two steps in this 
+article follow the same basic pattern you used to retrieve guestbooks. For this 
+reason, the concepts behind these steps aren't explained in detail here. Refer 
+to this learning path's previous article for such an explanation. As you did 
+when you wrote the code to retrieve guestbooks from the portal, you'll begin 
+here by encapsulating the objects being retrieved. 
 
 ## Encapsulating the Entries
 
@@ -186,129 +186,7 @@ your app's `callback` package. Replace its contents with the following code:
 For now, don't worry about the errors for `MainActivity.EntriesFragment` and 
 `reloadEntries`. You'll take care of this in a moment. Your app now contains the 
 basic infrastructure it needs to retrieve a guestbook's entries, but it still 
-can't display them. This is addressed in the following sections. 
-
-## Creating an Adapter
-
-Remember a couple articles ago when you first displayed the guestbooks in the 
-drawer? They appeared as literal strings of `GuestbookModel` objects. That was a 
-bummer. Since you already know why that happened and how to fix it, there's no 
-need to repeat the same mistake here. You need to create a custom adapter for 
-the `EntryModel` objects so they display properly in your app, just as you did 
-for the `GuestbookModel` objects. Remember that this adapter formats each item 
-for display in the list.
-
-Creating a layout file is the first step in creating this adapter. Right click 
-the `res/layout` directory and select *New* &rarr; *Layout resource file*. In 
-the dialog that appears, name the file `item_entry.xml`. Accept the defaults for 
-the remaining fields and click *OK*. When the new file opens, click the *Text* 
-tab to switch to its text view. Replace its contents with the following code: 
-
-    <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:minHeight="?android:attr/listPreferredItemHeight"
-        android:gravity="center_vertical" >
-    
-        <TextView
-            android:id="@+id/entry_message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="This is the Entry message" />
-    
-        <TextView
-            android:id="@+id/entry_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:textSize="12sp"
-            android:text="This is the Entry name" />
-    
-    </LinearLayout>
-
-This is a simple `LinearLayout` containing two `TextView` components. Recall 
-that `LinearLayout` arranges its components linearly in the direction specified 
-by the `android:orientation` attribute. Since that attribute's value here is 
-`vertical`, the second `TextView` renders immediately below the first. So why 
-two `TextView` components? The first `TextView` is for the guestbook message. 
-The second is for the name of the person that left the message. Both can be fit 
-into a single `ListView` item by adjusting the text size. At `12sp`, the name of 
-the person who left the message is smaller than the message itself (`20sp`). 
-This lets the message dominate while still showing who left it. Switch to the 
-layout file's design view to see its preview with the placeholder text. 
-
-![Figure 2: A preview of each entry's layout.](../../images/android-entry-preview.png)
-
-Now that the layout is defined, you need to create an adapter class that extends 
-Android's `ArrayAdapter` class. Your adapter class needs to make use of the 
-`item_entry` layout to render each `EntryModel` object. Create a new class 
-called `EntriesAdapter` in your app's `adapter` package. Replace its contents 
-with the following code: 
-
-    package com.liferay.docs.liferayguestbook.adapter;
-    
-    import android.content.Context;
-    import android.view.LayoutInflater;
-    import android.view.View;
-    import android.view.ViewGroup;
-    import android.widget.ArrayAdapter;
-    import android.widget.TextView;
-    
-    import com.liferay.docs.liferayguestbook.R;
-    import com.liferay.docs.liferayguestbook.model.EntryModel;
-    
-    import java.util.List;
-    
-    public class EntriesAdapter extends ArrayAdapter<EntryModel> {
-    
-      public EntriesAdapter(Context context, List<EntryModel> entries) {
-        super(context, 0, entries);
-      }
-    
-      @Override
-      public View getView(int position, View view, ViewGroup parent) {
-        ViewHolder holder;
-    
-        LayoutInflater inflater = LayoutInflater.from(getContext());
-    
-        if (view == null) {
-            view = inflater.inflate(R.layout.item_entry, parent, false);
-    
-            holder = new ViewHolder();
-    
-            holder.entryMessage = (TextView)view.findViewById(R.id.entry_message);
-            holder.entryName = (TextView)view.findViewById(R.id.entry_name);
-    
-            view.setTag(holder);
-        }
-        else {
-            holder = (ViewHolder)view.getTag();
-        }
-    
-        EntryModel entry = getItem(position);
-    
-        holder.entryMessage.setText(entry.getMessage());
-        holder.entryName.setText(entry.getName());
-    
-        return view;
-      }
-    
-      class ViewHolder {
-    
-        TextView entryMessage, entryName;
-      }
-    }
-
-This class is almost exactly the same as the `GuestbooksAdapter` class you wrote 
-in this learning path's previous article. The only differences are that the 
-`item_entry` layout and `EntryModel` class are used. Great! Now that you have an 
-adapter to properly format entries for display, you're ready to add the logic 
-that makes the portlet call and displays the entries in the UI. 
+can't display them. This is addressed in the following section. 
 
 ## Displaying Entries
 
@@ -317,24 +195,98 @@ entries and the adapter. First though, you need to rename the fragment you'll
 put them in. In `MainActivity`, scroll down until you find the nested 
 `PlaceholderFragment` class. Android Studio created this class when you created 
 the activity from the Navigation Drawer Activity template. You're expected to 
-use it to display the drawer selection. Since each drawer selection in your app 
-is a guestbook, you'll use `PlaceholderFragment` to display the selected 
-guestbook's entries. However, `PlaceholderFragment` isn't a very meaningful 
-name. To change its name, right click `PlaceholderFragment` in the class 
-declaration and select *Refactor* &rarr; *Rename* in the context menu. Type 
-`EntriesFragment` and then hit *Enter*. Note that the errors for `EntryFragment` 
-in your `GetEntriesCallback` are now gone. Next, add the following variables in 
-`EntriesFragment`:
+use it to display the drawer selection (in this case, guestbook entries). 
+However, `PlaceholderFragment` isn't a very meaningful name. Right click 
+`PlaceholderFragment` in the class declaration and select 
+*Refactor* &rarr; *Rename* in the context menu. Type `EntriesFragment` and then 
+hit *Enter*. Note that the errors for `EntryFragment` in your 
+`GetEntriesCallback` are now gone.
+
+Now you need to change the class `EntriesFragment` extends from `Fragment` to 
+`ListFragment`. Once you make this change, the class declaration should look 
+like this: 
+
+    public static class EntriesFragment extends ListFragment {
+
+Make sure that you're importing the Android Support Library version of 
+`ListFragment`. Check the file's import statements and make sure that it appears 
+as follows: 
+
+    import android.support.v4.app.ListFragment;
+
+So what's so special about `ListFragment`? Why use it instead of `Fragment`? In 
+short, `ListFragment` contains a default `ListView` layout that you can use 
+instead of having to write your own. In fact, go ahead and delete 
+`layout/fragment_main.xml`; you don't need it anymore. Android Studio now shows 
+errors in the `onCreateView` method of `EntriesFragment`, indicating that it 
+can't find `fragment_main.xml`. You'll address this in a moment.
+
+First though, you need to add variables for the entries and the adapter. Add 
+them to `EntriesFragment` as shown here:
 
     public List<EntryModel> _entries = new ArrayList<EntryModel>();
-    private EntriesAdapter _adapter;
+    private ArrayAdapter _adapter;
 
-Now that you have variables for the guestbook entries and the adapter, you can 
-create the `reloadEntries` method. Similar to `reloadGuestbooks` in the previous 
-article of this learning path, `reloadEntries` needs to replace any existing 
-model objects with the updated set retrieved from the portlet. It then needs to 
-notify the adapter of that change. Place this method in the `EntriesFragment` 
-class: 
+Now you're ready to tackle the errors in the `onCreateView` method by deleting 
+it. Yes, you read that correctly. Delete the entire `onCreateView` method. Don't 
+get too excited though. You're not being ushered into a magical new place where 
+you can simply delete problematic code. Since you're using the default layout of 
+`ListFragment`, you don't need to override `onCreateView` to inflate and return 
+your own layout. But what about using `onCreateView` to create the adapter and 
+set it to the layout, as you did to display guestbooks in the drawer? For 
+entries, you need to wait until later in the [fragment lifecycle](http://developer.android.com/guide/components/fragments.html#Creating). 
+Specifically, you need to wait until the default implementation of `onCreateView` 
+creates the layout. Then you can create the adapter and attach it to the layout. 
+Since `onActivityCreated` follows `onCreateView` in the fragment lifecycle, 
+you can use it to create and attach the adapter. Add the following 
+`onActivityCreated` method to `EntriesFragment`: 
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    
+        _adapter = new ArrayAdapter(this.getActivity(), android.R.layout.simple_list_item_2,
+                android.R.id.text1, _entries) {
+                    @Override
+                    public View getView(int position, View convertView, ViewGroup parent) {
+                        View view = super.getView(position, convertView, parent);
+                        TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+                        TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+    
+                        text1.setText(_entries.get(position).getMessage());
+                        text2.setText(_entries.get(position).getName());
+    
+                        text1.setTypeface(Typeface.DEFAULT_BOLD);
+                        text2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12);
+    
+                        return view;
+                    }
+                };
+    
+        setListAdapter(_adapter);
+    }
+
+Note that the adapter uses the layout `simple_list_item_2`. This is another 
+default Android layout. Recall that you used the default layout 
+`simple_list_item_1` for each guestbook in the drawer. That layout is sufficient 
+for showing guestbook names because it displays a single string for each list 
+item. However, each entry needs to display two strings: the message, and the 
+name of the person that left it. This is where `simple_list_item_2` comes in; it 
+lets you display two strings for each list item. 
+
+The `getView` method is overridden so that you can tell `simple_list_item_2` 
+what two strings to display. After using `findViewById` to retrieve the layout's 
+two strings, `setText` is used to set their content to an entry's message and 
+name. The `setTypeface` and `setTextSize` methods are then used to format the 
+message in bold and shrink the name, respectively. The `onActivityCreated` 
+method concludes by using `setListAdapter` to set the adapter to the default 
+`ListView` layout of `EntriesFragment`.
+
+Now that you've taken care of the `ListView` and adapter, you can create the 
+`reloadEntries` method. Similar to `reloadGuestbooks` in this learning path's 
+previous article, `reloadEntries` needs to replace any existing model objects 
+with the updated set retrieved from the portlet. It then needs to notify the 
+adapter of that change. Place this method in the `EntriesFragment` class: 
 
     public void reloadEntries(List<EntryModel> entries) {
       _entries.clear();
@@ -371,32 +323,13 @@ session's callback, creates a service object, and then makes the call to the
 portlet. The only difference is that `getEntries` takes a guestbook's ID as a 
 parameter, which it then uses to request that guestbook's entries. 
 
-Before using `getEntries`, you need to make some changes to how the layout of 
-`EntriesFragment` is processed and rendered. This layout is defined in 
-`fragment_main.xml`. It's important to note that this layout is different than 
-the one you defined for the entries adapter. The entries adapter layout defines 
-a single entry's appearance, while `fragment_main.xml` defines the appearance of 
-all the entries on the screen. Since you want the entries to appear in a list, 
-you need to change `fragment_main.xml` to use `ListView`. Begin by replacing the 
-contents of `onCreateView` in `EntriesFragment` with the following code:
-
-    ListView entriesListView = (ListView) inflater.inflate(R.layout.fragment_main, container, false);
-    _adapter = new EntriesAdapter(this.getActivity(), _entries);
-    entriesListView.setAdapter(_adapter);
-    return entriesListView;
-
-This casts the layout to a `ListView` upon inflation. An adapter is then created 
-with the entries and set as the underlying data source for the `ListView`, which 
-is then returned. Next, open `fragment_main.xml` and change `RelativeLayout` to 
-`ListView`. You should also delete its `TextView`. 
-
 Awesome! Now you're ready to put `getEntries` to work! As with `getGuestbooks`, 
 this is done from the `MainActivity` class. First, get a reference to 
 `EntriesFragment` by defining the following variable in `MainActivity`: 
 
     private EntriesFragment mEntriesFragment;
 
-There are two situations in which your app needs to call `getEntries`: on 
+There are two situations in which your app needs to call `getEntries`: on app 
 startup, and when a guestbook is manually selected from the drawer. On startup, 
 your app defaults to show the first guestbook's entries. Therefore, `getEntries` 
 needs to be called with the first guestbook retrieved from the portlet. This 
@@ -451,7 +384,7 @@ there's a guestbook in the list. Otherwise, an empty string is used. That's it!
 Make sure your portal is running and then run the app. The entries now show up 
 when a guestbook is selected in the drawer. 
 
-![Figure 3: The entries for the selected guestbook now display in your app.](../../images/android-guestbook-entries.png)
+![Figure 2: The entries for the selected guestbook now display in your app.](../../images/android-guestbook-entries.png)
 
 Congratulations! Up to this point, you've successfully built the Liferay Mobile 
 SDK and used it in an Android app to to retrieve and display a custom portlet's 
