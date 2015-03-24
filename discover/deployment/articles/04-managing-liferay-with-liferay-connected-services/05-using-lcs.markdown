@@ -245,12 +245,12 @@ Managers can generate and distribute an environment token file. This token
 contains all the information the client needs to connect to that environment on 
 LCS. It's important to note that each environment can have only one token file. 
 You should also use caution when distributing it. Anyone with the token file can 
-use it to connect to your environment. You should also use caution when 
-regenerating or otherwise removing a token file from LCS. When this is done, 
-clients using the file can't connect until receiving the new file. The only 
-alternative is to use the administrator's own credentials to manually connect 
-the client. Once the client reconnects, it's once again linked to the client's 
-existing archive data in LCS. 
+use it to connect to your environment. Also, be careful when regenerating or 
+otherwise removing a token file from LCS. When this is done, clients using the 
+file can't connect until receiving the new file. The only alternative is to use 
+the administrator's own credentials to manually connect the client. Once the 
+client reconnects, it's once again linked to the client's existing archive data 
+in LCS. 
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
 the setup process for your users, using environment tokens is valuable in 
@@ -262,7 +262,7 @@ There are two places in LCS where you can generate and access environment
 tokens. If you read the previous sections of this article, then you already know 
 one: the environment view. Navigate to an environment in LCS and click the 
 *Environment Details* button. In environment details, click the *Subscriptions* 
-tab. From here you can manage the environment's token.
+tab. From here you can manage the environment's token. 
 
 ![Figure 4.22: The Subscriptions tab in Environment Details shows the token for only that environment.](../../images/lcs-environment-view-subscriptions.png)
 

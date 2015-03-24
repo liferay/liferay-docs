@@ -37,16 +37,7 @@ connect through a proxy, then you can skip these steps.
         
 4. Update LCS client WAR with the modified `portlet-ext.properties` file.
  
-5. Deploy the LCS client WAR, or redeploy it if it's already deployed.
-
-If your proxy connects via HTTPS, then you may need to set the following 
-properties in a `system-ext.properties` file in your Liferay instance's Liferay 
-Home folder:
-
-    http.proxyHost=
-    https.proxyHost=
-    http.proxyPort=
-    https.proxyPort=
+5. Deploy the LCS client WAR, or redeploy it if it's already deployed. 
 
 Once you deploy the LCS client, you're ready to register your server with LCS. 
 Access the client by clicking on *Liferay Connected Services* under the *Apps* 
