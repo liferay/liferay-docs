@@ -36,34 +36,34 @@ exception of the following non-sensitive properties:
     login.create.account.allow.custom.password
 
 Now that you know what information is stored on the LCS servers, it's time to 
-get to the heart of LCS--the Dashboard. 
+get to the heart of LCS: the Dashboard. 
 
-As mentioned previously, the LCS Dashboard lets you view and manage your 
-project, environments, and servers. If you're not already at the Dashboard, 
-click it near the upper left-hand corner of your LCS site. Clicking *Dashboard* 
-takes you to the project view. From there, you can get to the environment view 
-and the server view. Each of these views gives you a different look into certain 
-aspects of your LCS project. You'll start with the project view.
+The LCS Dashboard lets you view and manage your project, environments, and
+servers. If you're not already at the Dashboard, click it near the upper
+left-hand corner of your LCS site. Clicking *Dashboard* takes you to the
+project view. From there, you can get to the environment view and the server
+view. Each of these views gives you a different look into certain aspects of
+your LCS project. You'll start with the project view.
 
 ## Using the Project View [](id=using-the-project-view)
 
-You can get to the project view at any time by clicking the Dashboard tab near 
+You can get to the project view at any time by clicking the *Dashboard* tab near 
 the upper left-hand corner of your LCS site. The project is listed to the right 
 of this tab, with a drop-down arrow that lets you switch between projects if you 
 have more than one. You can also switch between projects from the user menu at 
 the top right of the Dockbar. The project view provides you with an overview of 
 your LCS project, including fix packs, alerts, environments, and servers. Fix 
-packs are displayed prominently in a table on the middle of the page. Note that 
+packs are displayed prominently in a table in the middle of the page. Note that 
 the status, environment, server, and location are listed for each fix pack. If 
-the fix pack is available, you can download it by clicking the Download icon to 
-its right. You can download several fix packs at once by checking the checkbox 
-to the left of each and then clicking the Download button above the Fix Packs 
-table. Once a fix pack is finished downloading, an alert appears in the Alerts 
-table below the Fix Packs table. This notification tells you the download is 
-finished and to restart your server. Restarting your server installs any 
-downloaded fix packs. Note that you must start your server with the privileges 
-required to write to the disk location where patches are stored and processed 
-(the `patching-tool` folder). 
+the fix pack is available, you can download it by clicking the *Download* icon
+to its right. You can download several fix packs at once by checking the
+checkbox to the left of each and then clicking the *Download* button above the
+Fix Packs table. Once a fix pack is finished downloading, an alert appears in
+the Alerts table below the Fix Packs table. This notification tells you the
+download is finished and to restart your server. Restarting your server
+installs any downloaded fix packs. Note that you must start your server with
+the privileges required to write to the disk location where patches are stored
+and processed (the `patching-tool` folder). 
 
 But what about using LCS to install fix packs across a cluster? Just follow the 
 same procedure! LCS downloads and installs fix packs simultaneously across all 
@@ -82,11 +82,11 @@ Note that the icon to the left of each environment differs depending on the
 environment's type and status. In fact, the icon's color and type tells you 
 something about that environment:
 
-- Red icon: Indicates that there is some sort of problem or issue with one or 
+- **Red icon:** Indicates that there is some sort of problem or issue with one or 
   more servers in that environment.
-- Green icon: Indicates that the servers in that environment are operating 
+- **Green icon:** Indicates that the servers in that environment are operating 
   properly.
-- Icon with a circle: Indicates that the servers in that environment are in a 
+- **Icon with a circle:** Indicates that the servers in that environment are in a 
   cluster.
 
 If an environment has fix packs available, a badge icon to its right indicates 
@@ -119,27 +119,27 @@ Alerts tables. Fix packs and alerts are the first thing you see when you enter
 server view. While the Alerts table functions the same as it does in the other 
 views, the Fix Packs table behaves a bit differently. Fix packs are broken down 
 into those that are available for installation and those that are already 
-installed. You can access these through the *Available* and *Installed* tabs at 
+installed. You can access these through the Available and Installed tabs at 
 the top of the fix packs table. 
 
 ![Figure 4.13: The LCS server view shows an overview of a server registered with LCS.](../../images/lcs-server-view.png)
 
-Above the Fix Packs table is the *Notifications* button. Clicking it provides a 
+Above the Fix Packs table is the Notifications button. Clicking it provides a 
 list of notifications generated for the server. So how do notifications differ 
-from alerts? Fantastic question! LCS notifications are sent via email. They're 
-therefore an active form of notification. Alerts are passive, only appearing in 
-the Alerts table of a project, environment, or server. Also, notifications are 
-disabled by default. Configuring them is covered later in this article in the 
-section on notifications. 
+from alerts? Fantastic question! LCS notifications are sent via email. Thus,
+they're an active form of notification. Alerts are passive, only appearing in
+the Alerts table of a project, environment, or server. Also, notifications are
+disabled by default. Configuring them is covered later in the section on
+notifications. 
 
 To view metrics and statistics of your server's performance, click the *Metrics* 
 button near the top of the page. The metrics are broken down into three main 
 categories: *Application*, *JVM*, and *Server*. Application is selected by 
 default when you click the Metrics button. 
 
-The Application category also has three other categories within it: *Pages*, 
-*Portlets*, and *Cache*. Pages lists the frequency with which specific pages are 
-loaded, along with their average load time. Portlets lists the same statistics, 
+The Application category also has three other categories: *Pages*, 
+*Portlets*, and *Cache*. Pages lists the frequency that specific pages 
+load, along with their average load time. Portlets lists the same statistics, 
 but for specific portlets in your server. The Cache category lists Liferay 
 Single VM metrics and Hibernate metrics. In the following screenshot, the 
 statistics in the Portlets category are shown.
@@ -165,10 +165,10 @@ connection pools.
 
 You can view the settings for a server by clicking on the *Server Details* 
 button, which is to the right of the Metrics button. The first tab under the 
-Settings button is *Server Settings*. This lets you view or edit your 
+Settings button is Server Settings. This lets you view or edit your 
 server's name, description, location, and environment. You can also unregister 
 your server from LCS. The second tab under the Settings button is 
-*Server Properties*. This provides general information about your Liferay 
+Server Properties. This provides general information about your Liferay 
 installation and hardware. This information is useful to the Liferay support 
 team in the event that you need their assistance.
 
@@ -184,24 +184,23 @@ LCS can be configured to send you notification emails when specific events occur
 in your projects. LCS notifications are configured by adding *rules*. The rules 
 define what events trigger a notification. To access notification settings, 
 click *Notifications* from the user menu in the upper-right corner of LCS. 
-You're presented with a very simple interface: the *Add Rule* button and a table 
-that lists any existing rules. There are no rules by default. Click *Add Rule* 
-to define one. 
+You're presented with the *Add Rule* button and a table that lists any existing
+rules. There are no rules by default. Click *Add Rule* to define one. 
 
 ![Figure 4.18: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
 
-First specify the project, environment, and server that the notification applies 
-to. Note that you have the option of selecting all environments and servers in a 
-project. Then check the checkbox for each event that you want to trigger an 
-email notification. For example, the notification rule being created in the 
-screenshot tells LCS to send you an email whenever any server in any of the 
-project's environments unexpectedly goes offline. You should note that this 
-differs from normal shutdown events, which don't trigger email notifications. 
-During normal server shutdown, the server communicates this status to LCS. An 
+First specify the project, environment, and server for the notification. Note
+that you have the option of selecting all environments and servers in a
+project. Then check the checkbox for each event that you want to trigger an
+email notification. For example, the notification rule in the illustration
+above tells LCS to send you an email whenever any server in any of the
+project's environments unexpectedly goes offline. You should note that this
+differs from normal shutdown events, which don't trigger email notifications.
+During normal server shutdown, the server communicates this status to LCS. An
 email notification is only generated when the connection with the server is 
 abruptly terminated. Click *Save* when you're done defining the notification 
 rule. It then appears in a table along with any other existing rules. Each has 
-an *Actions* button that lets you edit or delete it. 
+an Actions button that lets you edit or delete it. 
 
 Great! Now you know how to set notification rules in LCS. The next section shows 
 you how to manage your project's users. 
@@ -209,20 +208,20 @@ you how to manage your project's users.
 ## Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
 
 The Users section of LCS is where you manage the LCS users that are part of your 
-project. It's here that you can grant or revoke LCS roles, or invite others that 
+project. It's here that you can grant or revoke LCS roles or invite others that 
 aren't yet part of your project. To manage users, first click the *Users* tab 
 just below the Dashboard tab on the upper-left of your screen. You're presented 
-with a table of the users in your project. To the right of each is the *Manage* 
+with a table of the users in your project. To the right of each is the Manage 
 button. Clicking *Manage* lets you assign or revoke LCS roles for that user. 
 
 ![Figure 4.19: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
 
-To invite external users to your project, click the *Invite* button to launch 
-the *Invite User* pop up. Here you can invite anyone with a valid email address. 
-You can also search for Liferay.com users to invite. Once you choose some users, 
-the *Role* selection box lets you preassign LCS roles for when they accept your
-invitation. You can also use the *Environment* selection box to preassign them 
-to an environment in your project.
+To invite external users to your project, click the *Invite* button. Here you
+can invite anyone with a valid email address. You can also search for
+Liferay.com users to invite. Once you choose some users, the *Role* selection
+box lets you preassign LCS roles for when they accept your invitation. You can
+also use the Environment selection box to preassign them to an environment in
+your project.
 
 ![Figure 4.20: You can invite users to your LCS project and even preassign them roles.](../../images/lcs-invite-users.png)
 
@@ -230,27 +229,27 @@ To view sent invitations, click the *Invitations* tab. A table displays
 invitations, listing invited users' email addresses along with who invited them
 and the date that the invitation was sent. The table also shoes the preassigned
 LCS role and environment. You can cancel an invitation by clicking *Cancel* in 
-the *Action* column of the invitation. 
+the Action column of the invitation. 
 
 ![Figure 4.21: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
 
 ## Using Environment Tokens
 
 Environment tokens allow clients to connect automatically to environments in LCS 
-without requiring any user interaction. For example, for users to connect to 
+without requiring any user interaction. For example, when users connect to 
 LCS, they must first manually configure the client portlet to connect to an 
-environment. The previous article of this guide covers this process. To bypass 
-the need for manual client configuration, LCS Administrators and Environment 
-Managers can generate and distribute an environment token file. This token 
-contains all the information the client needs to connect to that environment on 
-LCS. It's important to note that each environment can have only one token file. 
-You should also use caution when distributing it. Anyone with the token file can 
-use it to connect to your environment. Also, be careful when regenerating or 
-otherwise removing a token file from LCS. When this is done, clients using the 
-file can't connect until receiving the new file. The only alternative is to use 
-the administrator's own credentials to manually connect the client. Once the 
-client reconnects, it's once again linked to the client's existing archive data 
-in LCS. 
+environment. To bypass the need for manual client configuration, LCS
+Administrators and Environment Managers can generate and distribute an
+environment token file. This token contains all the information the client
+needs to connect to that environment on LCS. It's important to note that each
+environment can have only one token file. You should also use caution when
+distributing it. Anyone with the token file can use it to connect to your
+environment. Also, be careful when regenerating or otherwise removing a token
+file from LCS. When this is done, clients using the old file can't connect
+until receiving the new file. The only alternative is to use the
+administrator's own credentials to connect the client manually. Once the client
+reconnects, it's once again linked to the client's existing archive data in
+LCS. 
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
 the setup process for your users, using environment tokens is valuable in 
@@ -269,10 +268,10 @@ tab. From here you can manage the environment's token.
 By default, there's no existing token. A table appears that contains only a 
 *Generate* button. Click it to generate a token for the environment. The new 
 token then appears in the table with information on who generated it and when. 
-There's also an *Actions* button next to it that you can use to download or 
-regenerate the token. 
+There's also an Actions button next to it for downloading or regenerating the
+token. 
 
-You can also access environment tokens from the *Subscriptions* tab on the left 
+You can also access environment tokens from the Subscriptions tab on the left 
 side of LCS. Clicking the *Subscriptions* tab here shows the tokens for all the 
 environments in your project. This provides a central location to manage all 
 your environment tokens. Otherwise, the UI for managing them is exactly the 
@@ -280,15 +279,15 @@ same.
 
 ![Figure 4.23: The Subscriptions tab on the left lets you manage the environment tokens for your entire project.](../../images/lcs-subscriptions.png)
 
-Once you have an environment token, use it with the following steps to register 
-a previously unregistered Liferay instance with LCS:
+Once you have an environment token, use the following steps to register a
+previously unregistered Liferay instance with LCS:
 
 1. Place the token file in your portal's `data` folder.
 
 2. Deploy the LCS client portlet to your portal. If the portlet is bundled with 
    your portal installation, start up the portal.
    
-3. Once its deployment completes, the LCS client portlet connects automatically 
+3. Once deployment completes, the LCS client portlet connects automatically 
    to LCS. You should see this in your LCS project's environment view.
    
 When using an environment token, minimal information (server name, location, 
@@ -299,14 +298,14 @@ token overrides the OAuth authorization cycle. If an LCS Administrator or
 Environment Manager has never registered portal instances with LCS, the first 
 time they do so an OAuth authorization entry is created. This is visible in 
 their LCS account's *My Account* &rarr; *OAuth Authorizations* menu. If they 
-have previously registered portal instances with LCS, then their existing 
+have previously registered portal instances with LCS, their existing
 credentials are used when they create a token file. 
 
 ![Figure 4.24: The OAuth authorization entry in the portal instance using an environment token to connect to LCS.](../../images/lcs-token-oauth-entry.png)
 
-What if your Liferay instance has already been manually registered with LCS, but 
-you want to switch to using an environment token? No problem! Just use the 
-following steps: 
+What if your Liferay instance has already been manually registered with LCS,
+but you want to switch to using an environment token? No problem! Follow these
+steps:  
 
 1. Use the LCS client portlet to disconnect and reset the credentials in the 
    Liferay instance. Then press the *Back* button to the left of the Control 
@@ -317,7 +316,7 @@ following steps:
    `data` folder. 
 
 3. Restart your Liferay instance. The LCS client portlet uses the token file to 
-   automatically connect to LCS. 
+   connect to LCS automatically. 
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
 your Liferay servers. You can apply fix packs with just a single click and a 
