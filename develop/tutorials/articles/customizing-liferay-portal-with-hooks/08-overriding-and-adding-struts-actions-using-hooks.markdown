@@ -1,11 +1,5 @@
 ## Overriding and Adding Struts Actions
 
-<!-- The hook that overrides a Struts action and the hook that adds a new Struts
-path are two separate hooks:
-Override: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/struts-actions/override/example-hook
-Add: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/struts-actions/add/example-hook2-hook
--->
-
 Do you want to add a new Struts action to Liferay or override existing Struts
 actions? *Struts action hooks* let you do just that. 
 
@@ -254,6 +248,6 @@ Struts action to your custom hook next.
 
     ![Figure 2: The new Struts action displays *Hello World!* in your browser.](../../images/struts-action-display.png)
 
-In this tutorial, you learned about the interfaces used for Struts actions.
-Then, you learned how to override an exisiting action and create a new action
-using a hook.
+Great! Now you know about the interfaces used for Struts actions. You also 
+learned how to override an exisiting action and create a new action using a 
+hook. Your're ready to strut your stuff! 
