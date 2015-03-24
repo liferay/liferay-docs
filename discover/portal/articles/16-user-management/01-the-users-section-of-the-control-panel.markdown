@@ -7,11 +7,14 @@ and roles.
 
 ![Figure 16.1: The Users section of the Control Panel allows portal administrators to manage users, organizations, user groups, and roles. It also allows administrators to monitor users' live portal sessions if monitoring has been enabled for the portal.](../../images/users-section-control-panel.png)
 
-Since we explained how to manage sites, teams, site templates, and page
-templates in chapters 2 and 3, we won't discuss them in detail here.
-Nevertheless, remember that it's possible and sometimes simpler to use sites,
-site memberships, and teams to organize users and manage permissions than it is
-to use organizations, user groups, and custom roles.
+Managing
+[sites](discover/portal/-/knowledge_base/6-2/building-a-site-with-liferay-web-content),
+[teams](discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management),
+[site templates](discover/portal/-/knowledge_base/6-2/using-site-templates), and
+[page templates](discover/portal/-/knowledge_base/6-2/using-page-templates) is
+covered in detail elsewhere. Remember that it's possible and sometimes simpler
+to use sites, site memberships, and teams to organize users and manage
+permissions than it is to use organizations, user groups, and custom roles.
 
 As a portal administrator, you'll use the Users section of the Control Panel to
 create users, organizations, and user groups, implement security via roles and
@@ -36,10 +39,11 @@ After you submit the form, the page reloads with a success message. An expanded
 form appears that allows you to fill out a lot more information about the user.
 You don't have to fill anything else out right now. Just note that when the user
 account was created, a password was automatically generated. If Liferay was
-correctly installed and a mail server was set up (see chapter 14), an email
-message with the user's new password was sent to the user's email address. This,
-of course, requires that Liferay can properly communicate with your SMTP mail
-server.
+correctly installed and a mail server was set up (see
+[here](discover/portal/-/knowledge_base/6-2/server-administration#mail), an
+email message with the user's new password was sent to the user's email address.
+This, of course, requires that Liferay can properly communicate with your SMTP
+mail server.
 
 ![Figure 16.3: Once you've completed the basic form for creating a new user account, you'll see a much more detailed form for editing the user and adding additional information.](../../images/01-user-account-editor.png)
 
@@ -162,10 +166,12 @@ can create new users within their organization. Only portal administrators can
 add existing users to an organization.
 
 Many simple portal designs don't use organizations at all; they only use sites
-(see chapters 2 and 3 for more information on sites). Remember that the main
-purpose of organizations is to allow for distributed user management. They allow
-portal administrators to delegate some of their user management responsibilities
-to organization administrators. If you don't anticipate needing to delegate user
+(see the sections on 
+[Web content Management](discover/portal/-/knowledge_base/6-2/web-content-management) and
+[Advanced Web Content Management](discover/portal/-/knowledge_base/6-2/advanced-web-content-management) for more information on sites). Remember that the main purpose of 
+organizations is to allow for distributed user management. They allow portal
+administrators to delegate some of their user management responsibilities to
+organization administrators. If you don't anticipate needing to delegate user
 management responsibilities, your portal design need not include organizations.
 In order to decide whether or not your portal design should include
 organization, think about your portal's function. A simple photo-sharing web
