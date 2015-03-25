@@ -22,20 +22,16 @@ services and WSDD are generated in the Liferay MVC learning path's [last section
 so you don't need to generate them here. You should keep this requirement in 
 mind though when developing your own portlets.
 
-To build the Mobile SDK, you first need to download its source code. You'll do 
-this by using Git to *clone* the `liferay-mobile-sdk` project from GitHub. If 
-your machine isn't set up to use Git, set it up by following [these instructions](https://help.github.com/articles/set-up-git/) 
-on GitHub. Once you've set up Git, navigate to the directory on your machine 
-you want to download the Mobile SDK to and clone the project by running the 
-following command: 
-
-    git clone git@github.com:liferay/liferay-mobile-sdk.git
-
-This creates the `liferay-mobile-sdk` directory on your machine and downloads 
-the Mobile SDK's source code to it. Once the clone completes you can generate a 
-Mobile SDK for the Guestbook portlet. The Mobile SDK contains a convenient 
-command line wizard for helping you with this step. To start it, navigate to the 
-`liferay-mobile-sdk` directory and issue the following command:
+To build the Mobile SDK, you first need to download its source code. You can do 
+so by clicking [this link](https://github.com/liferay/liferay-mobile-sdk/archive/android-6.2.0.15.zip). 
+Unzip the ZIP file to a location on your machine where you want the Mobile SDK 
+to reside. This is purely personal preference; it works the same regardless of 
+where it is. Once unzipped, the source code for this version of the Mobile SDK 
+is in the `liferay-mobile-sdk-android-6.2.0.15` folder. Now you're ready to 
+build a Mobile SDK for the Guestbook portlet! The Mobile SDK contains a 
+convenient command line wizard for helping you with this step. To start it, 
+navigate to the `liferay-mobile-sdk-android-6.2.0.15` directory and issue the 
+following command:
 
     ./gradlew createModule
 
@@ -68,10 +64,10 @@ entered in the Mobile SDK Builder:
 Once you enter the final property, the Mobile SDK Builder runs and generates a 
 `BUILD SUCCESSFUL` message. Great! However, you're probably wondering what just 
 happened. Obviously, the build completed successfully, but other than that it 
-doesn't tell you too much. What happened is this: the Mobile SDK Builder 
-generated the source classes you'll use in your Android app to interact with 
-your Liferay installation's Guestbook portlet. You can find these source classes 
-in the following directory of your `liferay-mobile-sdk` directory:
+doesn't tell you much. What happened is this: the Mobile SDK Builder generated 
+the source classes you'll use in your Android app to interact with your Liferay 
+installation's Guestbook portlet. You can find these source classes in the 
+following directory of your `liferay-mobile-sdk-android-6.2.0.15` directory: 
 
     modules/guestbook-portlet/android/src/gen/java
 
@@ -94,7 +90,7 @@ line and run `../../gradlew jar`. This command does two things:
     in `modules/guestbook-portlet/build/libs`.
 
 2. Generates a `jar` file for the rest of the Mobile SDK. This is in 
-    `liferay-mobile-sdk/android/build/libs`.
+    `liferay-mobile-sdk-android-6.2.0.15/android/build/libs`.
 
 Congratulations! You just built the Liferay Mobile SDK for the Guestbook 
 portlet. Now that's an accomplishment worthy of writing down in a guestbook! All 

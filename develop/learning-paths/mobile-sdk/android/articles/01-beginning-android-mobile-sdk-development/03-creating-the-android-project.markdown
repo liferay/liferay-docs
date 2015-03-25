@@ -17,6 +17,7 @@ with Android Studio:
 - [Download Android Studio](http://developer.android.com/sdk/index.html)
 - [Android Studio Installation Instructions](https://developer.android.com/sdk/installing/index.html?pkg=studio)
 - [Android Studio Overview](http://developer.android.com/tools/studio/index.html)
+- [Android Studio Tips and Tricks](http://developer.android.com/sdk/installing/studio-tips.html)
 
 Once you get Android Studio up and running, you're ready to create the Guestbook 
 app! 

@@ -1,88 +1,75 @@
 # Installing the Liferay Mobile SDK for Android
 
-The Liferay Mobile SDK you built must be installed in your Android app for it to 
-interact with the Guestbook portlet. To install it, you'll copy the Mobile SDK's 
-`jar` files into your Android Studio project and then tweak a couple build 
-parameters. When you finish the steps in this article, you'll be ready to use 
-the Mobile SDK to call the remote services of the Guestbook portlet. 
+You must install the Liferay Mobile SDK in your app for it to interact with the 
+Guestbook portlet. The Mobile SDK you built for the Guestbook portlet contains 
+only the classes and methods required to call the portlet's remote services. You 
+also need to install the Mobile SDK that contains the classes and methods 
+required to call Liferay's built-in remote services. This article shows you how 
+to do both. When you finish, you'll be ready to get guestbooks and their entries 
+from the portal.
 
-## Copying the Mobile SDK to Your Project
+## Installing the Guestbook Mobile SDK
 
 The Mobile SDK Builder generated two separate `jar` files in your 
-`liferay-mobile-sdk` directory: 
+`liferay-mobile-sdk-android-6.2.0.15` directory: 
 
 1. `modules/guestbook-portlet/build/libs/liferay-guestbook-portlet-android-sdk-1.0.jar`
 
 2. `android/build/libs/liferay-android-sdk-6.2.0.15.jar`
 
 The first contains the classes and methods for calling the Guestbook portlet's 
-remote services. The second contains the rest of the Mobile SDK. Navigate to 
-your project's location on disk (`AndroidStudioProjects/LiferayGuestbook` by 
-default) and copy the above `jar` files into your app's `app/libs` directory. 
-You also need to install a couple dependencies. Download and copy the following 
-files into your app's `app/libs` directory: 
+remote services. The second contains the rest of the Mobile SDK. You don't 
+actually need the second `jar` file. You can instead add the Mobile SDK as a 
+dependency in your project's build system, which then downloads and installs the 
+Mobile SDK for you. You still need to install the first `jar` file manually 
+though. To do so, navigate to your project's location on disk 
+(`AndroidStudioProjects/LiferayGuestbook` by default) and copy 
+`liferay-guestbook-portlet-android-sdk-1.0.jar` into your app's `app/libs` 
+directory. That's it! Next, you'll install the rest of the Mobile SDK. 
 
-3. [`httpclient-android-4.3.3.jar`](http://search.maven.org/remotecontent?filepath=org/apache/httpcomponents/httpclient-android/4.3.3/httpclient-android-4.3.3.jar)
+## Installing the Liferay Mobile SDK
 
-4. [`httpmime-4.3.3.jar`](http://search.maven.org/remotecontent?filepath=org/apache/httpcomponents/httpmime/4.3.3/httpmime-4.3.3.jar)
+To add the rest of the Mobile SDK, you need to edit your app's `build.gradle` 
+file. Gradle is the build system used by Android Studio. Note that your project 
+has two `build.gradle` files: one for the project, and another for the app 
+module. You can find them under *Gradle Scripts* in Android Studio's project 
+view. The app module's `build.gradle` file is highlighted in this screenshot: 
 
-Next, you need to update your Android Studio project to pick up these additions. 
+![Figure 1: The app module's `build.gradle` file.](../../images/android-build-gradle-app-module.png)
 
-## Synchronizing Your Project
+In the app module's `build.gradle` file, add the following code on the first 
+level (the same level as the `android` element): 
 
-For your app to access the `jar` files you just installed in it, you must 
-synchronize its Gradle files. Gradle is the build system used by Android Studio. 
-In Android Studio, click the *Sync Project with Gradle Files* button in the 
-toolbar. This button is outlined in red in the following screenshot: 
+    repositories {
+      jcenter()
+      mavenCentral()
+    }
 
-![Figure 1: Click this button for your app to recognize the installed Liferay Mobile SDK.](../../images/android-gradle-sync.png)
+Next, add the following line of code inside the `dependencies` element: 
+    
+    compile group: 'com.liferay.mobile', name: 'liferay-android-sdk', version: '6.2.0.15'
+    
+Once you edit `build.gradle`, a message appears at the top of the file that asks 
+you to *sync* your app with its Gradle files. Syncing with the Gradle files is 
+required to incorporate any changes you make to them. Syncing also downloads and 
+installs any new dependencies, like the Mobile SDK dependency you just added. 
+Sync the Gradle files now by clicking the *Sync Now* link in the message. The 
+following screenshot shows the edited `build.gradle` file, with the Sync Now 
+link highlighted in a red box: 
+
+![Figure 2: After editing the `build.gradle` file, click *Sync Now* to incorporate the changes in your app.](../../images/android-build-gradle-sync.png)
 
 If you get errors such as `Duplicate files copied in APK META-INF/NOTICE` during 
-this process, you need to edit your app module's `build.gradle` file. Note that 
-your project has two `build.gradle` files: one for the project, and another for 
-the app module. You can find them under *Gradle Scripts* in Android Studio's 
-project view. The app module's `build.gradle` file is highlighted in this 
-screenshot:
-
-![Figure 2: The app module's `build.gradle` file.](../../images/android-build-gradle-app-module.png)
-
-Open this file and put the following code inside the `android` element, at the 
-first level:
+this process, then you need to add the following code to the same `build.gradle` 
+file. You should place it on the first level, after the `buildTypes` element. 
+After adding this code, click the *Sync Now* link when prompted:
 
     packagingOptions {
       exclude 'META-INF/LICENSE'
       exclude 'META-INF/NOTICE'
     }
-    
-For example, the entire `android` element may then look something like this:
 
-    android {
-      compileSdkVersion 21
-      buildToolsVersion "21.1.2"
-
-      defaultConfig {
-        applicationId "com.liferay.docs.liferayguestbook"
-        minSdkVersion 15
-        targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
-      }
-      buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-      }
-      packagingOptions {
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/NOTICE'
-      }
-    }
-    
-After you add the `packagingOptions` element, click the 
-*Sync Project with Gradle Files* button again. Your project should now 
-synchronize without any errors. Next, you'll check to make sure that the Mobile 
-SDK installed correctly. 
+Great! Now you're ready to test your Mobile SDK installation. 
 
 ## Verifying the Mobile SDK Installation
 
