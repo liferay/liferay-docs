@@ -38,7 +38,7 @@ view. The app module's `build.gradle` file is highlighted in this screenshot:
 ![Figure 1: The app module's `build.gradle` file.](../../images/android-build-gradle-app-module.png)
 
 In the app module's `build.gradle` file, add the following code on the first 
-level (the same level as the `android` element): 
+level (on the same level as the `android` element): 
 
     repositories {
       jcenter()
@@ -61,8 +61,8 @@ link highlighted in a red box:
 
 If you get errors such as `Duplicate files copied in APK META-INF/NOTICE` during 
 this process, then you need to add the following code to the same `build.gradle` 
-file. You should place it on the first level, after the `buildTypes` element. 
-After adding this code, click the *Sync Now* link when prompted:
+file. You should place it inside the `android` element, after the `buildTypes` 
+element. After adding this code, click the *Sync Now* link when prompted:
 
     packagingOptions {
       exclude 'META-INF/LICENSE'
