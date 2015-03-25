@@ -23,7 +23,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.liferay.docs.liferayguestbook.R;
-import com.liferay.docs.liferayguestbook.adapter.GuestbooksAdapter;
+import com.liferay.docs.liferayguestbook.model.GuestbookModel;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -102,8 +102,11 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
-
-        _adapter = new GuestbooksAdapter(getActionBar().getThemedContext(), MainActivity._guestbooks);
+        _adapter = new ArrayAdapter<GuestbookModel>(
+                getActionBar().getThemedContext(),
+                android.R.layout.simple_list_item_activated_1,
+                android.R.id.text1,
+                ((MainActivity)getActivity())._guestbooks);
         mDrawerListView.setAdapter(_adapter);
         // Set the position of the selected item in the drawer, and return the ListView
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);

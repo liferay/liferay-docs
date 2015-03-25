@@ -39,6 +39,11 @@ public class GuestbookModel implements Serializable {
         return (_guestbookId == guestbook.getGuestbookId());
     }
 
+    @Override
+    public String toString() {
+        return _name;
+    }
+
     public long getGuestbookId() {
         return _guestbookId;
     }
