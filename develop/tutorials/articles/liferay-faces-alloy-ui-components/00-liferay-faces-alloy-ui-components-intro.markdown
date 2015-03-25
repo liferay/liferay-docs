@@ -3,7 +3,7 @@
 <!-- Eventually, this section (and module) needs to be expanded. First, the
 reader needs some insight as to what AlloyUI is and why they'd want to use it.
 Then, eventually, we need to demonstrate using AlloyUI in a JSF portlet. - Jim
--->  
+--> 
 
 Liferay Faces Alloy is a `.jar` file that you add as a dependency in your JSF
 portlet project to leverage [AlloyUI](http://alloyui.com/). Liferay Faces Alloy
@@ -29,18 +29,17 @@ versions
 <!--(/develop/learning-paths/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)-->
 (targeting different versions of JSF, Liferay Portal, etc.), there are several
 versions of the project's View Declaration Language (VDL) documentation for
-these tags. The VDL documentation can be found at the following addresses: 
+these tags: 
 
-- The VDL documentation for the Liferay Faces 2.1 can be found at
-  <http://docs.liferay.com/faces/2.1/vdldoc/>.
-- The VDL documentation for the Liferay Faces 3.0-legacy can be found at
-  <http://docs.liferay.com/faces/3.0-legacy/vdldoc/>.
-- The VDL documentation for the Liferay Faces 3.0 can be found at
-  <http://docs.liferay.com/faces/3.0/vdldoc/>.
-- The VDL documentation for the Liferay Faces 3.1 can be found at
-  <http://docs.liferay.com/faces/3.1/vdldoc/>. 
-- The VDL documentation for Liferay Faces 3.2 can be found at
-  <http://docs.liferay.com/faces/3.2/vdldoc/>. 
+**Liferay Faces 2.1:** <http://docs.liferay.com/faces/2.1/vdldoc/>
+
+**Liferay Faces 3.0-legacy:** <http://docs.liferay.com/faces/3.0-legacy/vdldoc/>
+
+**Liferay Faces 3.0:** <http://docs.liferay.com/faces/3.0/vdldoc/>
+
+**Liferay Faces 3.1:** <http://docs.liferay.com/faces/3.1/vdldoc/> 
+
+**Liferay Faces 3.2:** <http://docs.liferay.com/faces/3.2/vdldoc/> 
 
 <!-- Re-add links to VDLs for versions 4.1 and 4.2 when they are released. - Jim
 - The VDL documentation for the Liferay Faces 4.1 can be found at <http://docs.liferay.com/faces/4.1/vdldoc/>.
