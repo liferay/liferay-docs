@@ -178,7 +178,7 @@ As you can see, the LCS Dashboard is a powerful tool that greatly simplifies
 the update process and also gives you extensive information on how your servers 
 are running. Next, you'll learn how to configure notifications in LCS.
 
-## Configuring LCS Notifications
+## Configuring LCS Notifications [](id=configuring-lcs-notifications)
 
 LCS can be configured to send you notification emails when specific events occur 
 in your projects. LCS notifications are configured by adding *rules*. The rules 
@@ -233,7 +233,7 @@ the Action column of the invitation.
 
 ![Figure 4.21: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
 
-## Using Environment Tokens
+## Using Environment Tokens [](id=using-environment-tokens)
 
 Environment tokens allow clients to connect automatically to environments in LCS 
 without requiring any user interaction. For example, when users connect to 

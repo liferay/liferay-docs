@@ -76,7 +76,7 @@ to see how to connect your portlet's main view JSP to your entity's view JSP.
 Now redeploy your portlet and refresh the page so that the your plugin's UI
 reloads. The flag icon appears at the bottom of the page.
 
-![Figure 3: Users can now flag content in your portlet as inappropriate.](../../images/asset-fw-flags.png)
+![Figure 2: Users can now flag content in your portlet as inappropriate.](../../images/asset-fw-flags.png)
 
 Great! Now you know how to let users flag inappropriate content in your asset 
 enabled portlets. 
