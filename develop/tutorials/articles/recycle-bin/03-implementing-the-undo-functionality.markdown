@@ -1,4 +1,4 @@
-# Implementing the Undo Functionality
+# Implementing the Undo Functionality [](id=implementing-the-undo-functionality)
 
 Sometimes, you may accidentally send the wrong entry to the Recycle Bin. It
 seems kind of grueling to navigate away from your page to the Recycle Bin to
@@ -18,7 +18,7 @@ Walk through the following steps to implement the Undo functionality:
 
 Go ahead and implement the Undo button and its related links!
 
-## Step 1: Add the Undo Tag
+## Step 1: Add the Undo Tag [](id=step-1-add-the-undo-tag)
 
 You must first use the `liferay-ui:trash-undo` tag in your JSP. Then, you need
 to set a portlet action URL and pass it to the `liferay-ui:trash-undo` tag. This
@@ -35,7 +35,7 @@ song in the Jukebox portlet:
 Now that you've added the taglib and action URL, go ahead and implement the 
 portlet action to restore the entry.
 
-## Step 2: Create a Portlet Action to Initiate Restoration
+## Step 2: Create a Portlet Action to Initiate Restoration [](id=step-2-create-a-portlet-action-to-initiate-restoration)
 
 You must create a portlet action method that invokes your service method to
 restore the entry. 
@@ -63,7 +63,7 @@ entries by calling the `restore*` service method.
 Are you wondering how this portlet action gets the IDs of the entries to
 restore? You'll learn how to pass this data to the session next. 
 
-## Step 3: Providing Trash Entry Data for the Taglib
+## Step 3: Providing Trash Entry Data for the Taglib [](id=step-3-providing-trash-entry-data-for-the-taglib)
 
 The final step for implementing the Undo button is to provide the trashed
 entry's information to the `liferay-ui:trash-undo` tag. In order for the

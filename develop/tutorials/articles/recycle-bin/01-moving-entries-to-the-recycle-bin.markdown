@@ -1,4 +1,4 @@
-# Moving Entries to the Recycle Bin
+# Moving Entries to the Recycle Bin [](id=moving-entries-to-the-recycle-bin)
 
 This tutorial covers how to add the ability to move your app's entries to the
 Recycle Bin. Implementing this Recycle Bin component enables users to move
@@ -16,7 +16,7 @@ Here are the steps for implementing this Recycle Bin component:
 
 Start off by configuring the app's service. 
 
-## Step 1: Enable Trash for Service Entities
+## Step 1: Enable Trash for Service Entities [](id=step-1-enable-trash-for-service-entities)
 
 You must enable the trash feature for each of your app's entities that you want to
 use with the Recycle Bin. In your app's `service.xml` file, insert the
@@ -31,7 +31,7 @@ to generate back-end trash related classes for the entities.
 
 You'll implement trash handlers for these entities next.
 
-## Step 2: Implement a Trash Handler for Each Trash-Enabled Entity
+## Step 2: Implement a Trash Handler for Each Trash-Enabled Entity [](id=step-2-implement-a-trash-handler-for-each-trash-enabled-entity)
 
 As with many other Liferay frameworks--such as the workflow, assets, and
 indexing frameworks--you must implement handler classes for that framework. A
@@ -80,7 +80,7 @@ Great! You have trash handlers ready to manage your trash entries, but you still
 need a way to get the entries to the Recycle Bin. You must create a service
 method for moving them there.
 
-## Step 3: Create a Service Method to Move Entries to the Recycle Bin
+## Step 3: Create a Service Method to Move Entries to the Recycle Bin [](id=step-3-create-a-service-method-to-move-entries-to-the-recycle-bin)
 
 You'll implement a local service method for moving them to the
 Recycle Bin. This service method must implement a trash service for the
@@ -169,7 +169,7 @@ method, to set the entry's *trash title*. The trash title is an alternative
 reference to the entry. The trash title prevents duplicate entry name conflicts,
 discussed in the tutorial [Resolving Recycling Conflicts](https://dev.liferay.com/develop/tutorials/-/knowledge_base/resolving-recycling-conflicts-lp-6-2-develop-tutorial).
 
-## Step 4: Create a Portlet Action to Initiate Moving Entries to Recycle Bin
+## Step 4: Create a Portlet Action to Initiate Moving Entries to Recycle Bin [](id=step-4-create-a-portlet-action-to-initiate-moving-entries-to-recycle-bin)
 
 Great! You must now provide the means of invoking the service method from your
 portlet. You implement this using a portlet action that you can trigger from
@@ -246,7 +246,7 @@ Bin, you're ready to set up the framework for rendering the trashed entries in
 the Recycle Bin. You do this by implementing trash renderers for the
 trash-enabled entities. 
 
-## Step 5: Implement a Trash Renderer for Each Trash-Enabled Entity
+## Step 5: Implement a Trash Renderer for Each Trash-Enabled Entity [](id=step-5-implement-a-trash-renderer-for-each-trash-enabled-entity)
 
 Now that you have the necessary classes and methods to accomplish moving entries
 to the Recycle Bin, you can implement the appropriate renderer so you can see

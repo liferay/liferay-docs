@@ -1,4 +1,4 @@
-# Restoring Entries from the Recycle Bin
+# Restoring Entries from the Recycle Bin [](id=restoring-entries-from-the-recycle-bin)
 
 This tutorial covers how to implement restoring entries from the Recycle Bin. 
 To learn how to set up the framework for using the Recycle Bin in your apps, 
@@ -25,7 +25,7 @@ Go through the following steps for implementing the restoration capability:
 Go ahead and begin this process by creating a service method for restoring the
 entry.
 
-## Step 1: Create a Service Method to Restore Entries from the Recycle Bin
+## Step 1: Create a Service Method to Restore Entries from the Recycle Bin [](id=step-1-create-a-service-method-to-restore-entries-from-the-recycle-bin)
 
 You'll create a service method that removes the trash entry from the Recycle Bin
 and makes the asset entry visible again in its original location. 
@@ -105,7 +105,7 @@ corresponding service interface and utility methods by running [Service Builder]
 To finish implementing the entry restoration process, invoke the service method 
 from the entity's trash handler.
 
-## Step 2: Invoke the Service Method from the Trash Handler
+## Step 2: Invoke the Service Method from the Trash Handler [](id=step-2-invoke-the-service-method-from-the-trash-handler)
 
 Now that your service provides a method for restoring the entry, you must invoke
 it from the trash handler's `restoreTrashEntry` method. The Recycle Bin

@@ -1,4 +1,4 @@
-# Recycle Bin
+# Recycle Bin [](id=recycle-bin)
 
 How many times have you deleted something, only to realize it was a mistake and 
 you need to restore it? Does the app you're working on have a delete function? 

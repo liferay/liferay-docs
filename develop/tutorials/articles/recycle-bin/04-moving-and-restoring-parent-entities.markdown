@@ -1,4 +1,4 @@
-# Moving and Restoring Parent Entities
+# Moving and Restoring Parent Entities [](id=moving-and-restoring-parent-entities)
 
 What happens if you need to trash a parent entity, such as a parent wiki page, 
 or a web content folder full of articles? Don't sweat it. Moving parent entries
@@ -10,7 +10,7 @@ move/restore albums to/from the Recycle Bin. This tutorial uses code from the
 Jukebox portlet to demonstrate moving/restoring parent entities. You can
 translate the logic for your app's parent entities. 
 
-## Step 1: Mark Container Model Service Entities
+## Step 1: Mark Container Model Service Entities [](id=step-1-mark-container-model-service-entities)
 
 First, define each container/parent model as such in your app's services. To do
 this, open your app's `service.xml` file and add the `container-model="true"`
@@ -30,7 +30,7 @@ and use these models as container models.
 
 Next, you'll handle the child entities.
 
-## Step 2: Manage Children Entities
+## Step 2: Manage Children Entities [](id=step-2-manage-children-entities)
 
 Because parent entities hold child entities, the child entities must be
 accounted for. The service method for moving a parent entry to the Recycle Bin

@@ -1,4 +1,4 @@
-# Resolving Recycling Conflicts
+# Resolving Recycling Conflicts [](id=resolving-recycling-conflicts)
 
 The Conflict Resolution framework helps Liferay users identify and solve
 conflicts in the Recycle Bin. The most common conflict for the Recycle Bin is
@@ -18,7 +18,7 @@ Follow these steps and you'll be resolving conflicts in no time!
 2. Restore the Entity's Original Name When Restoring From Recycle Bin
 3. Implement Conflict Resolution Trash Handler Methods
 
-## Step 1: Rename Entities Sent to the Recycle Bin
+## Step 1: Rename Entities Sent to the Recycle Bin [](id=step-1-rename-entities-sent-to-the-recycle-bin)
 
 When an entry is sent to the Recycle Bin, it is essentially replicated. The
 entity is kept in its original location and a similar entry in the Recycle Bin
@@ -66,7 +66,7 @@ original entities, on restoring those entities from the Recycle Bin.
 Next, you'll see how to restore the original name of each trashed entity when 
 it's restored from the Recycle Bin. 
 
-## Step 2: Restore the Entity's Original Name When Restoring From Recycle Bin
+## Step 2: Restore the Entity's Original Name When Restoring From Recycle Bin [](id=step-2-restore-the-entitys-original-name-when-restoring-from-recycle-bin)
 
 Since your entity is renamed, you'll need a way to retrieve its old name, in the
 case that the entity gets restored. The code snippet below, from in the
@@ -107,7 +107,7 @@ return the song's original name.
 Next, you need to implement some required methods to completely implement the
 Conflicts Resolution functionality.
 
-## Step 3: Implement Conflict Resolution Trash Handler Methods
+## Step 3: Implement Conflict Resolution Trash Handler Methods [](id=step-3-implement-conflict-resolution-trash-handler-methods)
 
 Your app can now uniquely rename entries when they're removed and reinstate their original
 names when they're restored. What happens when the original entry is restored to its
