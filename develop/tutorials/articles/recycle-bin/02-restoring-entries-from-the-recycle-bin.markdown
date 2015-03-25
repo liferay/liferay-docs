@@ -139,3 +139,15 @@ $$$
 
 You now know how to provide the means for users to restore your app's entries
 from the Recycle Bin!
+
+## Related Topics [](id=related-topics)
+
+[Recycling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
+
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+
+[Enabling Search and Indexing](/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing)
+
+[Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
+
+[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)

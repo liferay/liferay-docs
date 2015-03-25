@@ -154,3 +154,15 @@ Terrific! You've learned how to designate parent models as container model
 entities in your service definition. You've provided a means to trash/restore a
 parent's child entities when trashing/restoring that parent and you've learned
 how the Recycle Bin UI lets you work with a parent's child entities.
+
+## Related Topics [](id=related-topics)
+
+[Recycling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
+
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+
+[Enabling Search and Indexing](/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing)
+
+[Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
+
+[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)

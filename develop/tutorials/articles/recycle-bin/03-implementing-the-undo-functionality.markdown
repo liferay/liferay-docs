@@ -118,3 +118,15 @@ elements that were deleted.
 In your portlet's delete action, you can similarly populate the session with the
 entry information of the entries being deleted. Now you know how to implement
 the Undo functionality for your app's trash-enabled entities!
+
+## Related Topics [](id=related-topics)
+
+[Recycling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
+
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+
+[Enabling Search and Indexing](/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing)
+
+[Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
+
+[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
