@@ -11,7 +11,7 @@ to find out how to use IDE's code assist features in your project.
 
 ## Using Code Assist Features [](id=using-code-assist-features)
 
-IDE's integration of [Tern](http://ternjs.net/) features give you access to code
+IDE's integration of [Tern](http://ternjs.net/) gives you access to code
 assist in JavaScript, AlloyUI, and CSS. To access these features, you must be
 working in a JavaScript, JSP, HTML, or CSS file. 
 
@@ -22,12 +22,15 @@ tutorial to learn how to enable Tern features for non-Liferay specific projects.
 
 +$$$
 
-**Note:** The taglib descriptions that IDE makes available to users is dependent
+**Note:** The taglib descriptions that IDE makes available to users are dependent
 upon the Plugins SDK being used. IDE uses taglib descriptions from the current
 SDK's `util-taglib.jar` file, so a more up-to-date Plugins SDK means more
 up-to-date taglib descriptions. 
 
 $$$
+
+<!-- Maybe we should have a tutorial on how to update your Plugins SDK from the
+Github source project. -Rich --> 
 
 You'll begin testing the AlloyUI code assist features next.
 
@@ -50,8 +53,8 @@ access the AlloyUI code assist features in the `main.js` of your project:
 
 +$$$
 
-**Note:** Code assist not only works for methods of an object; you can also use
-AUI specific Tern completions for objects. For instance, you could type `AU` and
+**Note:** Code assist not only works for methods of an object, but also works
+for AUI-specific Tern completions for objects. For instance, you could type `AU` and
 press *Ctrl+Space* and you're given a list of objects to choose from. 
 
 $$$
@@ -59,14 +62,14 @@ $$$
 By default, code inference is triggered by a keystroke combination; however, you
 can enable auto activation in IDE's Preferences menu. Follow the steps below
 to enable auto activation: 
-    
+ 
 1. Navigate to *Window* &rarr; *Preferences* &rarr; *JavaScript* &rarr; *Editor*
    &rarr; *Content Assist*. 
 
 2. Check the *Enable auto activation* box and click *Apply*. Then click *OK*. 
 
 The figure below shows how to enable auto activation: 
-    
+ 
 ![Figure 2: The *Enable auto activation* checkbox is listed below the *Auto-Activation* heading.](../../images/enable-auto-activation.png)
 
 Now, if you follow the previous example, code inference activates as soon as
@@ -77,32 +80,32 @@ templates. AUI JavaScript templates are available in Eclipse's JavaScript editor
 as well as in the HTML/JSP editor when working with `<script>` and
 `<aui-script>` tags. Follow the steps below to use AUI code templates: 
 
-1. Type the following code in your `main.js`: 
+1.  Type the following code in your `main.js`: 
  
         AUI
 
-2. Press *Ctrl+Space* to bring up the code inference for `AUI`, and you'll 
-   see a list of all the available AlloyUI code templates, along with
-   documentation. 
+2.  Press *Ctrl+Space* to bring up the code inference for `AUI`, and you'll 
+    see a list of all the available AlloyUI code templates, along with
+    documentation. 
 
     ![Figure 3: IDE gives you access to AUI code templates in the JS and JSP editors.](../../images/code-template.png)
-    
-3. Select your template and hit *Enter* to paste its contents into your
-   `main.js`. 
+ 
+3.  Select your template and hit *Enter* to paste its contents into your
+    `main.js`. 
 
     +$$$
 
-    **Note:** You can view all of the AlloyUI code templates you have 
+    **Note:** You can view all the AlloyUI code templates you have 
     installed by going to IDE's Preferences menu and selecting *JavaScript*
     &rarr; *Editor* &rarr; *Templates*. 
 
-    $$$    
+    $$$ 
 
 In addition to code inference in your JS files, you can also use code inference 
 in your JSP/HTML files using `<aui:script>` tags. 
 
 Open one of your project's JSPs and add the AUI taglib directive if it is not
-already in your JSP. The import should look like the following: 
+already in your JSP: 
 
     <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
 
@@ -119,10 +122,10 @@ You can also add the import from the Snippets menu under *Taglib imports* &rarr;
 2. Press *Ctrl+Space* with your cursor placed to the right of `aui` to bring up
    code inference. 
 
-There you go! Whether in a JavaScript file, or inside of a JSP, you now have
-access to code assist features that improve your workflow. 
+There you go! Whether in a JavaScript file or inside a JSP, you now have access
+to code assist features that improve your workflow. 
 
-Next, you can take a closer look at the JavaScript code assist features for IDE.
+Next, you'll examine the JavaScript code assist features for IDE.
 
 ### JavaScript Code Assist Features [](id=javascript-code-assist-features)
 
@@ -130,7 +133,7 @@ In addition to AlloyUI code assist features, you also have access to code
 inference and completion using raw JavaScript. This code assist feature is
 available in your project because the Tern module `liferay` is enabled. This
 plugin provides code completions for the static JavaScript object APIs available
-for portlets when running in Liferay Portal. To learn more about enabling Tern
+to portlets when running in Liferay Portal. To learn more about enabling Tern
 modules in Eclipse, refer to the
 [Enabling Code Assist Features in Your Project](/develop/tutorials/-/knowledge_base/6-2/enabling-tern-code-assist-features-in-your-project)
 tutorial. 
@@ -138,34 +141,34 @@ tutorial.
 The example below shows how you can use code assist features to easily access
 functions in your portlet project. 
 
-1. Open the `main.js` of your portlet and add the following function: 
+1.  Open the `main.js` of your portlet and add the following function: 
 
         function say(text){
             alert(text);
         }
 
-2. Add the following button to the `view.jsp` of your portlet: 
+2.  Add the following button to the `view.jsp` of your portlet: 
 
         <aui:button onClick=""/>
 
-3. Place your cursor within the quotation marks of the `onClick` attribute and
-   press *Ctrl+Space*. You'll see the code inference dialog popup with a list of
-   possible JavaScript functions available for you to use. 
+3.  Place your cursor within the quotation marks of the `onClick` attribute and
+    press *Ctrl+Space*. The code inference dialog pops up with a list of possible
+    JavaScript functions available for you to use. 
 
-4. Type *say* and you'll notice the list is narrowed down to your new
-   `say(text)` function. 
+4.  Type *say* and you'll notice the list is narrowed down to your new
+    `say(text)` function. 
 
     ![Figure 4: JavaScript code assist features give easy access to your functions.](../../images/js-code-inference.png)
 
-5. Select the `say(text)` function, and you'll notice that it's accompanied by
-   documentation that provides the parameter for the function, as well as the
-   file path to which the function is located. 
+5.  Select the `say(text)` function, and you'll notice that it's accompanied by
+    documentation that provides the parameter for the function, as well as the
+    file path where the function is located. 
 
-6. Press *Enter* to use code completion and add the function to your button. 
+6.  Press *Enter* to use code completion and add the function to your button. 
 
 As you can see, JavaScript development is a breeze using IDE's code assist
 features. Now that you know how to use the AlloyUI and JavaScript code assist
-features, you can begin learning how to use the CSS code assist features next. 
+features, you can learn how to use the CSS code assist features next. 
 
 ### CSS Code Assist Features [](id=css-code-assist-features)
 
@@ -195,27 +198,27 @@ Now that you have the CSS features enabled, you'll find out how to use them
 next. Follow the steps below to use the CSS code assist features to locate a CSS
 class. Note that the process below can also be used to locate an ID. 
 
-1. Open your `main.css` file and add the following class to it: 
+1.  Open your `main.css` file and add the following class to it: 
 
         .sample-class {
             background-color:green;
         }
 
-2. Inside of your `view.jsp` add an `<aui:button/>` tag and configure it to
-   match the following code: 
+2.  Inside your `view.jsp` add an `<aui:button/>` tag and configure it to
+    match the following code: 
 
         <aui:button name="test" value="test" cssClass=""/>
-  
-3. Within the quotations of the `cssClass` attribute, press *Ctrl+Space* to
-   bring up the code inference for CSS. Begin typing *sample-class* to narrow
-   down the classes to the one you're looking for. 
+ 
+3.  Within the quotations of the `cssClass` attribute, press *Ctrl+Space* to
+    bring up the code inference for CSS. Begin typing *sample-class* to narrow
+    down the classes to the one you're looking for. 
 
     ![Figure 5: CSS code inference improves your workflow when developing in CSS.](../../images/css-code-inference.png)
 
     Notice, along with code inference, you can also view the styling you have
     for the class, as well as the file in which it is located. 
-    
-4. Press *Enter* to use code completion and add the CSS class to the JSP. 
+ 
+4.  Press *Enter* to use code completion and add the CSS class to the JSP. 
 
 If you look at the code inference dialog for CSS classes, you'll also notice
 that in addition to your own CSS classes, you also have access to Bootstrap CSS
@@ -242,16 +245,16 @@ tutorial to learn how to enable Tern modules in your project.
 The jQuery Tern plugin gives type information for the jQuery framework. In the
 example below, you'll test the jQuery code assist feature. 
 
-1. Open your project's `jquery.js` file. 
+1.  Open your project's `jquery.js` file. 
 
-2. In the file, type the following sample variable: 
+2.  In the file, type the following sample variable: 
 
         var form = 
 
-3. Press *Ctrl+Space* to bring up the code inference for the variable you're
-   declaring, and you'll see a list of everything that is available. Also notice
-   jQuery documentation is available for each method. Take a look at the figure
-   below for an example of using code assit in jQuery. 
+3.  Press *Ctrl+Space* to bring up the code inference for the variable you're
+    declaring, and you'll see a list of everything that is available. Also notice
+    jQuery documentation is available for each method. Take a look at the figure
+    below for an example of using code assit in jQuery. 
 
     ![Figure 6: Using the jQuery code assist features gives you the convenience of showing you what's available, and the documentation behind each option.](../../images/jquery_js_1.png)
 
