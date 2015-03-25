@@ -161,10 +161,10 @@ portal.
 Instead of using your Liferay server's `portal-ext.properties` file to configure
 a mail server, you can configure a mail server from the Mail tab of the Server
 Configuration section of the Control Panel. If your portal is to receive mail
-(see, for example, our coverage of the Message Boards portlet in chapter 8), you
-can connect a POP mail server. If your portal is to send mail, which is useful
-for sending notifications to users, you can connect to an SMTP server. We highly
-recommend setting up mail servers for your portal.
+(see, for example, our coverage of the [Message Boards portlet](discover/portal/-/knowledge_base/6-2/discuss-ask-and-answer-using-the-message-boards)
+), you can connect a POP mail server. If your portal is to send mail, which is
+useful for sending notifications to users, you can connect to an SMTP server.
+We highly recommend setting up mail servers for your portal.
 
 Note that if you configure mail server settings here in the Control Panel, these
 settings will override any mail server settings in your `portal-ext.properties`
@@ -182,7 +182,8 @@ LibreOffice, ImageMagick and Xuggler. With Liferay configured to use these
 tools, you can generate automatic previews for many types of files including text
 files, office suite files, PDFs, images, audio files and videos. Users will also
 be able to use the conversion functionality to download documents in a variety
-of formats. Please see chapter 4 on Documents and Media for more information.
+of formats. Please see the [Automatic Previews and Metadata](discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata)
+section for more information.
 
 LibreOffice is available here: [LibreOffice](http://www.libreoffice.org),
 ImageMagick is available here: [ImageMagick](http://www.imagemagick.org), and

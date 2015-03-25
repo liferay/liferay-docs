@@ -73,10 +73,10 @@ After that, you define your initial state.
 In this case, the state is simply that the asset has been created. States can
 contain actions and transitions. Actions can contain scripts. You can specify
 the language of the script with the `<script-language>` tag. Scripts can be
-written in Groovy, JavaScript, Ruby or Python (see chapter 18 for more
-information on leveraging scripts in workflow). For a state, the action is
-triggered automatically and then executes a transition. Transitions move you to
-a new state or task.
+written in Groovy, JavaScript, Ruby or Python (read [here](deployment/-/knowledge_base/6-2/using-scripting-for-advanced-flexibility)
+for more information on leveraging scripts in workflow). For a state, the
+action is triggered automatically and then executes a transition. Transitions
+move you to a new state or task.
 
     <state>
         <name>created</name>
@@ -505,7 +505,8 @@ were at their desk that hadn't reviewed content assigned to them.
 		</action>
     </timer-actions>
 
-For more information on using scripting in Liferay, please refer to chapter 18.
+For more information on using scripting in Liferay, please refer to the [Using Scripting for Advanced Flexibility](deployment/-/knowledge_base/6-2/using-scripting-for-advanced-flexibility)
+section of *Deployment*.
 
 Using workflows and approvals is necessary for virtually any organization and
 timers are an excellent way to help mitigate the potential headaches caused by
