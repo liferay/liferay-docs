@@ -1,22 +1,23 @@
 package com.liferay.docs.liferayguestbook.activity;
 
 import android.app.Activity;
+import android.graphics.Typeface;
+import android.support.v4.app.ListFragment;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ListView;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.liferay.docs.liferayguestbook.R;
-import com.liferay.docs.liferayguestbook.adapter.EntriesAdapter;
 import com.liferay.docs.liferayguestbook.callback.GetEntriesCallback;
 import com.liferay.docs.liferayguestbook.callback.GetGuestbooksCallback;
 import com.liferay.docs.liferayguestbook.model.EntryModel;
@@ -44,7 +45,7 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
     public static final int SITE_ID = 10182;
-    public static List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
+    public List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
 
     public void reloadGuestbooks(List<GuestbookModel> guestbooks) {
         _guestbooks.clear();
@@ -152,14 +153,14 @@ public class MainActivity extends ActionBarActivity
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class EntriesFragment extends Fragment {
+    public static class EntriesFragment extends ListFragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
         public List<EntryModel> _entries = new ArrayList<EntryModel>();
-        private EntriesAdapter _adapter;
+        private ArrayAdapter _adapter;
 
         /**
          * Returns a new instance of this fragment for the given section
@@ -202,12 +203,28 @@ public class MainActivity extends ActionBarActivity
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            ListView entriesListView = (ListView) inflater.inflate(R.layout.fragment_main, container, false);
-            _adapter = new EntriesAdapter(this.getActivity(), _entries);
-            entriesListView.setAdapter(_adapter);
-            return entriesListView;
+        public void onActivityCreated(Bundle savedInstanceState) {
+            super.onActivityCreated(savedInstanceState);
+
+            _adapter = new ArrayAdapter(this.getActivity(), android.R.layout.simple_list_item_2,
+                    android.R.id.text1, _entries) {
+                        @Override
+                        public View getView(int position, View convertView, ViewGroup parent) {
+                            View view = super.getView(position, convertView, parent);
+                            TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+                            TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+
+                            text1.setText(_entries.get(position).getMessage());
+                            text2.setText(_entries.get(position).getName());
+
+                            text1.setTypeface(Typeface.DEFAULT_BOLD);
+                            text2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12);
+
+                            return view;
+                        }
+                    };
+
+            setListAdapter(_adapter);
         }
 
         @Override
