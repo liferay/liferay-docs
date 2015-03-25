@@ -905,10 +905,29 @@ to portlet plugins; extension environment portlets have been deprecated since
 Liferay Portal 6.0, and support isn't guaranteed in future Liferay Portal
 releases. 
 
-Ext plugins are a powerful way to extend Liferay. There are no limits to what
-you can use them to customize, so use them carefully. Before using an Ext
-plugin, see if you can implement all or part of the desired functionality
-through [Application Display Templates]](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+#### Licensing and Contributing [](id=licensing-and-contributing)
+
+Liferay Portal is Open Source software licensed under the LGPL 2.1 license
+([http://www.gnu.org/licenses/lgpl-2.1.html](http://www.gnu.org/licenses/lgpl-2.1.html)).
+If you reuse any code snippet and redistribute it, whether publicly or to a
+specific customer, make sure your modifications are compliant with the license.
+One common way is to make the source code of your modifications available to the
+community under the same license. Make sure you read the license text yourself
+to find the option that best fits your needs. 
+
+If your goal in making changes is fixing a bug or improving Liferay, it could be
+of interest to a broader audience. Consider contributing it back to the project.
+That benefits all users of the product, including you since you won't have to
+maintain the changes with each newly released version of Liferay. You can notify
+Liferay of bugs or improvements in
+[issues.liferay.com](http://issues.liferay.com). Check out the [Participate](/participate/contribute-a-feature)
+section of [dev.liferay.com](https://dev.liferay.com), to learn all the ways
+that you can contribute to Liferay projects. 
+
+In summary, Ext plugins are a powerful way to extend Liferay. There are no
+limits to what you can use them to customize, so use them carefully. Before
+using an Ext plugin, see if you can implement all or part of the desired
+functionality through [Application Display Templates]](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 or a different plugin type: portlets, [hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal),
 and web plugins offer you a lot of extension capabilities themselves, without
 introducing the complexity that's inherent with Ext plugins. If you need to use
