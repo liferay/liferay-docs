@@ -244,6 +244,14 @@ To display guestbooks in the drawer, you first need a variable for the
 `MainActivity` class as follows: 
 
     public List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
+    
+Android Studio doesn't recognize `GuestbookModel` and marks it as an error 
+because you haven't imported it yet. To do so, first place your cursor in the 
+line of code containing `GuestbookModel`. Android Studio then displays a 
+notification telling you the keyboard combination to press to add the import. 
+Press it now. On Windows it's *Alt* + *Enter*, and on Mac it's 
+*Option* + *Return*. You need to remember this going forward. The rest of this 
+learning path assumes that you'll use this to organize any required imports.
 
 In the `NavigationDrawerFragment` class, the app displays a list of items in the 
 drawer by using a [`ListView`](http://developer.android.com/guide/topics/ui/layout/listview.html) 

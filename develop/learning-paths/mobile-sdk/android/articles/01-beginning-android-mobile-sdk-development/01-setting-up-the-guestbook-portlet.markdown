@@ -69,7 +69,7 @@ to the Liferay installation you just set up.
 
 <!-- Replace link once .war file is on LDN -->
 Now that your portal is set up, you can deploy the Guestbook portlet to it. 
-Download the Guestbook portlet's `.war` package from [here](http://www.liferay.com/) 
+Download the Guestbook portlet's `.war` package from [here](https://github.com/ngaskill/liferay-docs/blob/LRDOCS-1534-msdk-lp/develop/learning-paths/mobile-sdk/guestbook-portlet-war/guestbook-portlet.war) 
 and place it in the `[Liferay Home]/deploy` directory. You should see messages 
 in your console indicating that the Guestbook portlet has been successfully 
 deployed. On the default site of your portal, click the + icon on the left side 
