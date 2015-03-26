@@ -173,14 +173,25 @@ features, you can learn how to use the CSS code assist features next.
 ### CSS Code Assist Features [](id=css-code-assist-features)
 
 IDE offers code inference and completion tools for CSS. In order to use these
-tools, you'll need to install an additional plugin. Follow the steps below to
-install the plugin in IDE: 
+tools, you'll need to install an additional plugin. 
+
++$$$
+
+**Note:** The plugin described below is planned to be bundled with Liferay
+IDE in the near future. Initial tests of the plugin revealed performance issues
+in some cases, which is why it is not yet a part of Liferay IDE. Problems were
+not consistent, so you may have no issues installing the plugin, but we wanted
+to give full disclosure about it. 
+
+$$$
+
+Follow the steps below to install the plugin in IDE: 
 
 1. Go to *Help* &rarr; *Install New Software...*. 
 
 2. Paste the following link into the `Work with:` input field: 
 
-        http://oss.opensagres.fr/eclipse-wtp-webresources/0.7.0/
+        http://oss.opensagres.fr/eclipse-wtp-webresources/0.8.0/
 
 3. Click *Add...* and check the box next to *WTP HTML - Web Resources*. 
 
