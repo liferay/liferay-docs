@@ -39,6 +39,41 @@ through a proxy, then you can skip these steps.
  
 5. Deploy the LCS client WAR or redeploy it if it's already deployed. 
 
+While the default values are sufficient in most cases, you can also set other 
+properties in `portlet-ext.properties` to fine tune the client's communication 
+with LCS. As with the proxy properties, you should set these prior to deploying 
+the client. The communication properties are shown here with their default 
+settings. The values are specified in milliseconds. 
+
+- The Heartbeat Interval is the communication interval with LCS that keeps the 
+  client's connection alive, even when there's nothing else to report. It's set 
+  by the following property.
+  
+    communication.heartbeat.interval=60000
+
+- The handshake properties set the maximum time the client waits to receive a 
+  response from LCS on the initial connection. Added together, these two 
+  properties determine the total time the client can wait for the handshake to 
+  complete.
+  
+    communication.handshake.reply.reads=6
+    communication.handshake.wait.time=60000
+
+- When the connection to LCS is terminated by the user, the stop properties set 
+  the maximum time the client can wait to receive an acknowledgement from LCS. 
+  Added together, these two properties determine the total time the client can 
+  wait for a response from LCS. 
+  
+    communication.stop.reply.reads=6
+    communication.stop.wait.time=15000
+
+- The LCS client depends on a gateway to connect with LCS. If it can't reach the 
+  gateway, it displays a message indicating that fact. The following property 
+  sets the amount of time the client can wait for a response before displaying 
+  that message.
+  
+    communication.lcs.gateway.unavailable.wait.time=60000
+
 Once you deploy the LCS client, you're ready to register your server with LCS. 
 Access the client by clicking on *Liferay Connected Services* under the *Apps* 
 section of the *Control Panel*. 
@@ -87,15 +122,15 @@ support.
 Once a successful connection is established, some statistics and links are
 displayed. Here's a description of what's displayed:
 
-- **Heartbeat Interval:** The communication interval with LCS. For example, if this 
-  value is `00:01:00`, the client communicates with LCS once every minute. 
+- **Heartbeat Interval:** The communication interval with LCS. For example, if 
+  this value is `00:01:00`, the client communicates with LCS once every minute. 
   This regular communication keeps the client's LCS connection alive, even when 
   there's nothing else to report. 
-- Message Task Interval: The interval at which the client checks LCS for new 
+- **Message Task Interval:** The interval at which the client checks LCS for new 
   messages. For example, LCS messages are used to let the client know that new 
   fix packs are available.
-- **Metrics Task Interval:** The interval at which server statistics and metrics are 
-  sent to LCS.
+- **Metrics Task Interval:** The interval at which server statistics and metrics 
+  are sent to LCS.
 - **Last Message Received:** The time the latest message was received from LCS.
 - **Connection Uptime:** The duration of the client's connection with LCS.
 - **Project Home:** This link takes you to this server's registered 
