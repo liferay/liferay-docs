@@ -49,30 +49,30 @@ settings. The values are specified in milliseconds.
   client's connection alive, even when there's nothing else to report. It's set 
   by the following property.
   
-    communication.heartbeat.interval=60000
+        communication.heartbeat.interval=60000
 
 - The handshake properties set the maximum time the client waits to receive a 
   response from LCS on the initial connection. Added together, these two 
   properties determine the total time the client can wait for the handshake to 
   complete.
   
-    communication.handshake.reply.reads=6
-    communication.handshake.wait.time=60000
+        communication.handshake.reply.reads=6
+        communication.handshake.wait.time=60000
 
 - When the connection to LCS is terminated by the user, the stop properties set 
   the maximum time the client can wait to receive an acknowledgement from LCS. 
   Added together, these two properties determine the total time the client can 
   wait for a response from LCS. 
   
-    communication.stop.reply.reads=6
-    communication.stop.wait.time=15000
+        communication.stop.reply.reads=6
+        communication.stop.wait.time=15000
 
 - The LCS client depends on a gateway to connect with LCS. If it can't reach the 
   gateway, it displays a message indicating that fact. The following property 
   sets the amount of time the client can wait for a response before displaying 
   that message.
   
-    communication.lcs.gateway.unavailable.wait.time=60000
+        communication.lcs.gateway.unavailable.wait.time=60000
 
 Once you deploy the LCS client, you're ready to register your server with LCS. 
 Access the client by clicking on *Liferay Connected Services* under the *Apps* 
