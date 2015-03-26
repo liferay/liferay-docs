@@ -16,28 +16,32 @@ highlighted in a red box.
 ![Figure 4.4: The LCS Dashboard contains links to download the client.](../../images/lcs-dashboard-client-download.png)
 
 In most cases, deploying and configuring the LCS client is simple. However, if 
-you connect to the web through a proxy, then there are some properties you need
-to set in the client's WAR file before deploying it. If you don't connect
-through a proxy, then you can skip these steps.
+you connect to the web through a proxy, or you want to change how the client 
+communicates with LCS, then there are some properties you need to set in the 
+client's WAR file before deploying it. Specifically, you need to set these 
+properties in the client's `portlet-ext.properties` file. Regardless of the 
+properties you're setting, the procedure doing so is the same.
 
 1. In the LCS client's WAR file, open the 
    `WEB-INF/classes/portlet-ext.properties` file.
+   
+2. Make your changes in the file.
+
+3. Update the LCS client WAR with the modified `portlet-ext.properties` file.
  
-2. At the end of the file, add the following properties and set them to the 
-   appropriate values for your proxy.
+4. Deploy the LCS client WAR or redeploy it if it's already deployed. 
+
+To connect to LCS through a proxy, add the following properties at the end of 
+`portlet-ext.properties` and set them to the appropriate values for your proxy.
    
         proxy.host.name=
         proxy.host.port=
 
-3. If your proxy also uses authentication, you should also add the following 
-   properties and set them to the appropriate values for your proxy.
+If your proxy uses authentication, you should also add the following properties 
+and set them to the appropriate values for your proxy.
    
         proxy.host.login=
-        proxy.host.password=
-        
-4. Update the LCS client WAR with the modified `portlet-ext.properties` file.
- 
-5. Deploy the LCS client WAR or redeploy it if it's already deployed. 
+        proxy.host.password= 
 
 While the default values are sufficient in most cases, you can also set other 
 properties in `portlet-ext.properties` to fine tune the client's communication 
