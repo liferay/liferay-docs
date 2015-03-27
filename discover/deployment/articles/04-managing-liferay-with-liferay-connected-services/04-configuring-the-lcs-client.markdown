@@ -15,6 +15,13 @@ highlighted in a red box.
 
 ![Figure 4.4: The LCS Dashboard contains links to download the client.](../../images/lcs-dashboard-client-download.png)
 
+If you connect to the web through a proxy, or need to fine-tune how the client 
+connects to LCS, proceed to the next section. Otherwise, you can skip to the 
+final section in this article for instructions on registering the client with 
+LCS. 
+
+## Preconfiguring the LCS Client [](id=preconfiguring-the-lcs-client)
+
 In most cases, deploying and configuring the LCS client is simple. However, if 
 you connect to the web through a proxy, or you want to change how the client 
 communicates with LCS, then there are some properties you need to set in the 
@@ -55,28 +62,24 @@ settings. The values are specified in milliseconds.
   
         communication.heartbeat.interval=60000
 
-- The handshake properties set the maximum time the client waits to receive a 
-  response from LCS on the initial connection. Added together, these two 
-  properties determine the total time the client can wait for the handshake to 
-  complete.
-  
-        communication.handshake.reply.reads=6
+- The handshake properties control how the client handles its initial handshake 
+  connection with LCS. The `communication.handshake.wait.time` property sets the 
+  maximum amount of time the client can wait to receive a response from LCS. The 
+  `communication.handshake.reply.reads` property sets the maximum number of 
+  times the client can check for a response from LCS during that time. 
+
         communication.handshake.wait.time=60000
+        communication.handshake.reply.reads=6        
 
-- When the connection to LCS is terminated by the user, the stop properties set 
-  the maximum time the client can wait to receive an acknowledgement from LCS. 
-  Added together, these two properties determine the total time the client can 
-  wait for a response from LCS. 
-  
-        communication.stop.reply.reads=6
-        communication.stop.wait.time=15000
-
-- The LCS client depends on a gateway to connect with LCS. If it can't reach the 
-  gateway, it displays a message indicating that fact. The following property 
-  sets the amount of time the client can wait for a response before displaying 
-  that message.
+- The LCS client depends on a gateway to connect with LCS. If it can�t reach the 
+  gateway, the client waits a predetermined amount of time before attempting the 
+  connection again. This length of time is set by the following property.
   
         communication.lcs.gateway.unavailable.wait.time=60000
+
+Great! Now you're ready to deploy the client and register your portal with LCS.
+
+## Registering the Client with LCS [](id=registering-the-client-with-lcs)
 
 Once you deploy the LCS client, you're ready to register your server with LCS. 
 Access the client by clicking on *Liferay Connected Services* under the *Apps* 
@@ -126,13 +129,14 @@ support.
 Once a successful connection is established, some statistics and links are
 displayed. Here's a description of what's displayed:
 
-- **Heartbeat Interval:** The communication interval with LCS. For example, if 
-  this value is `00:01:00`, the client communicates with LCS once every minute. 
-  This regular communication keeps the client's LCS connection alive, even when 
-  there's nothing else to report. 
+- **Heartbeat Interval:** The interval of the communication that maintains the 
+  connection with LCS. This regular communication keeps the client's LCS 
+  connection alive, even when there's nothing else to report. The value is 
+  listed in hours, minutes, and then seconds. For example, if this value is 
+  `00:01:00`, the client communicates with LCS once every minute. 
 - **Message Task Interval:** The interval at which the client checks LCS for new 
-  messages. For example, LCS messages are used to let the client know that new 
-  fix packs are available.
+  messages. For example, LCS messages are used to instruct the client to 
+  download new fix packs.
 - **Metrics Task Interval:** The interval at which server statistics and metrics 
   are sent to LCS.
 - **Last Message Received:** The time the latest message was received from LCS.
@@ -150,5 +154,9 @@ displayed. Here's a description of what's displayed:
  
 ![Figure 4.10: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
-Great! Now that you've registered your server with your LCS account, you can dig 
-in to the features of LCS.
+This article's previous section contains instructions for changing the heartbeat 
+interval. Currently, the message and metrics task intervals are fixed and cannot 
+be changed. 
+
+Awesome! Now that you've registered your server with your LCS account, you can 
+dig in to the features of LCS. 
