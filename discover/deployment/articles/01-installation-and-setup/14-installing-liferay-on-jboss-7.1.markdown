@@ -508,6 +508,12 @@ and copy it to the following location:
 
         <resource-root path="weld-core-1.1.10.Final.jar"/>
 
+You've successfully upgraded your Weld version. If you're interested in
+configuring CDI for your JSF portlets running on JBoss, you'll need to configure
+a few more things. For more information on configuring CDI, visit the
+[Configuring JSF Portlets to Use CDI](/develop/tutorials/-/knowledge_base/6-2/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
+section. 
+
 Now you're ready to deploy Liferay Portal. 
 
 ## Deploy Liferay [](id=deploy-liferay)

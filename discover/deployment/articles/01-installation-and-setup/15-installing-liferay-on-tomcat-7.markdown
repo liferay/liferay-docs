@@ -425,8 +425,15 @@ To upgrade Tomcat's global classpath, follow the steps below:
             <scope>provided</scope>
         </dependency>
 
-You've officially added Mojarra to your application server. Now you can deploy
-Liferay. 
+You've officially added Mojarra to your application server. 
+
+If you're interested in configuring CDI for your JSF portlets running on Tomcat,
+you'll also need to configure Weld. For more information on configuring Weld for
+Tomcat, visit the
+[Configuring JSF Portlets to Use CDI](/develop/tutorials/-/knowledge_base/6-2/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
+section. 
+
+You're now all set to deploy Liferay. 
 
 ## Deploy Liferay [](id=deploy-liferay)
 
