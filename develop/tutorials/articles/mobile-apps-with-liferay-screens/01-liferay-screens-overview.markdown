@@ -14,7 +14,7 @@ Liferay Portal's functionality. Screenlets use a specific UI to handle input
 from the user and present information from the portal. This enables your app to 
 receive user input, handle communication with the server, and present the user 
 with the results. Each screenlet is tied to one or more of 
-[Liferay's remote services](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/accessing-services-remotely-liferay-portal-6-2-dev-guide-05-en). 
+[Liferay's remote services](/tutorials/-/knowledge_base/6-2/invoking-remote-services). 
 Since [Screens' architecture](https://www.liferay.com/) is designed to isolate 
 the screenlets, using Screens is a great way to construct your app in a modular 
 fashion. When the screenlet needs to show information to the user, it relies on 
@@ -26,24 +26,40 @@ are fully pluggable and can be contributed by third parties. This gives you a
 great deal of flexibility when styling your UI.
 
 The same screenlets are available in Liferay Screens for Android and iOS. 
-[Once your project is ready for Screens](https://www.liferay.com/), you can use 
-the following screenlets in your app: 
+Screenlets are grouped in modules based on internal dependencies. Each module is 
+isolated, so you can use only the modules that are necessary for your project. 
+However, it's important to note that you can't use a screenlet from a single 
+module without using the entire module. The modules are listed here with their 
+screenlets.
 
-- `LoginScreenlet`: Sign users in to a Liferay installation.
-- `SignUpScreenlet`: Register new portal users with a Liferay installation.
-- `ForgotPasswordScreenlet`: Send emails containing a new password or password 
-  reset link to users.
-- `UserPortraitScreenlet`: Show the user's portrait picture.
-- `DDLFormScreenlet`: Present dynamic forms to be filled out by users and 
-  submitted back to the portal.
-- `DDLListScreenlet`: Show a list of records based on a pre-existing 
-  [Dynamic Data List](/portal/-/knowledge_base/6-2/using-web-forms-and-dynamic-data-lists) 
-  in a Liferay installation.
+- *Auth*: Module for user authentication. It uses the [user management](/portal/-/knowledge_base/6-2/user-management) 
+  features of Liferay Portal. It includes the following screenlets: 
+
+	- `LoginScreenlet`: Gives your app the ability to sign users into a 
+	  Liferay instance.
+	- `SignUpScreenlet`: Gives your app the ability to sign new users into a 
+	  Liferay instance.
+	- `ForgotPasswordScreenlet`: Gives your app the ability to send emails 
+	  containing a new password or password reset link to users.
+	- `UserPortraitScreenlet`: Gives your app the ability to show the user's 
+	  portrait picture.
+
+- *Dynamic Data Lists (DDL)*: Module for interacting with [Dynamic Data Lists](/portal/-/knowledge_base/6-2/using-web-forms-and-dynamic-data-lists) 
+  in a Liferay instance. It includes the following screenlets:
+
+	- `DDLFormScreenlet`: Gives your app the ability to present dynamic 
+	  forms to be filled out by users and submitted back to the server.
+	- `DDLListScreenlet`: Gives your app the ability to show a list of 
+	  records based on a pre-existing DDL in a Liferay instance.
+
+Also, some screenlets can be used individually without the need to import an 
+entire module. These include: 
+
 - `AssetListScreenlet`: Shows a list of assets managed by 
   [Liferay's Asset Framework](/tutorials/-/knowledge_base/6-2/asset-framework). 
-  Assets include web content, blog entries, documents, users, and more.
-- `WebContentDisplayScreenlet`: Shows web content's HTMLt. This screenlet uses 
-  the features available in [Web Content Management](/portal/-/knowledge_base/6-2/web-content-management). 
+  This includes web content, blog entries, documents, users and more. 
+- `WebContentDisplayScreenlet`: Shows the HTML of web content. This screenlet 
+  uses the features avaiable in [Web Content Management](/portal/-/knowledge_base/6-2/web-content-management). 
 
 ## Liferay Screens for Android
 
@@ -59,7 +75,7 @@ development using Screens requires the following:
   implementation.
 - [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases).
 - [Liferay Screens' compatiblity plugin](https://github.com/liferay/liferay-screens/tree/master/portal). 
-- Liferay Screens' source code.
+- Liferay Screens' source code. 
 
 Other internal dependencies are: 
 
@@ -69,12 +85,12 @@ Other internal dependencies are:
 Liferay Screens for Android also contains the following view sets that you can 
 use to change the screenlets' UI and UX: 
 
-- **Default views**: The standard views used when you add a screenlet in your 
+- *Default views*: The standard views used when you add a screenlet in your 
 app's activities or fragments and don't set the `liferay:layoutId` attribute. 
 The Default views can be used as parent views for any of your custom views. 
 Refer to the [Architecture Guide](https://www.liferay.com/) 
 for more details.
-- **Material views**: The sample views intended to demonstrate how to develop 
+- *Material views*: The sample views intended to demonstrate how to develop 
 your own full view set from scratch. Refer to the [Views Guide](https://www.liferay.com/) 
 for instructions on creating your own view set. 
 
@@ -87,9 +103,9 @@ Objective-C. The implementation of Screens for iOS uses standard iOS development
 tools, such as Xcode, the iOS SDK, the iOS Simulator, and others. Screens for 
 iOS is developed using the new Swift language and modern development techniques, 
 such as functional Swift code and the [Model View Presenter architecture](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter). 
-However, it doesn't use the new iOS 8 APIs, so it can be run only on devices 
-with iOS 7 and above. Also, iOS app development using Screens requires the 
-following: 
+However, it doesn't use the new iOS 8 APIs, so iOS apps developed with Screens 
+can be run on devices with iOS 7 and above. Using Screens to develop iOS apps 
+requires the following: 
 
 - Xcode 6.1 or above
 - iOS 8 SDK
@@ -101,18 +117,13 @@ following:
 Liferay Screens for iOS also contains the following themes that you can use to 
 change the screenlets' UI and UX: 
 
-- **Default**: The standard theme that is used when you insert any screenlet in 
+- *Default*: The standard theme that is used when you insert any screenlet in 
 your app's UI. The Default theme can be used as the parent theme for any of your 
 custom themes. Please refer to the [Architecture Guide](ios/Documentation/architecture.md#theme-layer) 
 for more details on this.
-- **Flat7**: A sample theme intended to demonstrate how to develop your own full 
+- *Flat7*: A sample theme intended to demonstrate how to develop your own full 
 theme from scratch. Please refer to the [Theme Guide](ios/Documentation/themes.md) 
 for instructions on creating your own theme.
-
-You should note that themes provided in early versions of Screens for iOS 
-support only vertical screen orientation and the iPhone 5, 5s, and 5c screen 
-size. Support for the full range of screen orientations and sizes will be added 
-in the future. 
 
 ## Related Topics
 

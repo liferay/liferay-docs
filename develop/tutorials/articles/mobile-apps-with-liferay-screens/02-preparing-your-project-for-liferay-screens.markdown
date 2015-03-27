@@ -155,3 +155,9 @@ as a template. This screenshot shows such a file being browsed:
 ![liferay-context.plist file](../../images/screens-ios-liferay-context.png)
 
 Great! Your iOS project should now be ready for Liferay Screens. 
+
+## Related Topics
+
+[Architecture of Liferay Screens](https://www.liferay.com/)
+
+[Preparing Your Project for Liferay Screens](https://www.liferay.com/)
