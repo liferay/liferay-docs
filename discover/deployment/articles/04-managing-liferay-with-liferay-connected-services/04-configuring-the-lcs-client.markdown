@@ -71,7 +71,7 @@ settings. The values are specified in milliseconds.
         communication.handshake.wait.time=60000
         communication.handshake.reply.reads=6        
 
-- The LCS client depends on a gateway to connect with LCS. If it can�t reach the 
+- The LCS client depends on a gateway to connect with LCS. If it can't reach the 
   gateway, the client waits a predetermined amount of time before attempting the 
   connection again. This length of time is set by the following property.
   
