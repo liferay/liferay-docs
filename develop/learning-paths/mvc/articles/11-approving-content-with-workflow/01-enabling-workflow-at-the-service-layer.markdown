@@ -1,22 +1,28 @@
 # Enabling Workflow at the Service Layer
 
-In the learning path on assets, you learned that asset enabled entities are
+In the Learning Path on assets, you learned that asset enabled entities are
 added to the `AssetEntry` table. There's no special table for workflow entities,
 but there are some additional database columns in the entity table (e.g.,
-`GB_Entry`)  that allow you to keep track of workflow status. The necessary
-fields include *status*, *statusByUserName*, *statusByUserId*, and *statusDate*.
-Add the columns to the database by entering the following `<column>`s into
-`docroot/WEB-INF/service.xml`, in *Audit fields* section of both entities:
+`GB_Entry`) that allow you to keep track of workflow status. The necessary
+fields include `status`, `statusByUserName`, `statusByUserId`, and `statusDate`.
+Add the columns to the database by entering the following `<column>` tags into
+`docroot/WEB-INF/service.xml`, in the Audit Fields section of both entities:
 
     <column name="status" type="int" />
     <column name="statusByUserId" type="long" />
     <column name="statusByUserName" type="String" />
     <column name="statusDate" type="Date" />
 
-Once you run service builder, the database tables for both entities contain the
+Once you run Service Builder, the database tables for both entities contain the
 proper fields for workflow. However, if you add an `Entry`, you'll see that the
 new fields are not populated. The local service implementation classes need
-some modifications to set these fields. 
+some modifications to put values in these fields. 
+
+<!-- The general rule is to create any class that another class calls first, so
+you don't have errors in your code. Below, you're calling WorkflowHandlers that
+haven't been created yet. You need to change the order of the Learning Path to
+have the Workflow Handlers created first, then called in the service layer.
+-Rich -->
 
 ## Setting the Workflow Fields in `EntryLocalServiceImpl`
 
@@ -43,9 +49,9 @@ Add these imports:
     import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
 
 The call to `startWorkflowInstance` detects whether workflow is installed and
-enabled. If it isn't, the added entity is automatically marked as approved.  The
+enabled. If it isn't, the added entity is automatically marked as approved. The
 `startWorkflowInstance` also calls your custom `EntryWorkflowHandler` class,
-which you'll create later in this learning path. The service layer also needs
+which you'll create later in this Learning Path. The service layer also needs
 the ability to update the workflow status fields you added to `service.xml`. For
 this purpose, add the following method to the bottom of `EntryLocalServiceImpl`:
 
@@ -93,7 +99,7 @@ status of the entity and does one of two things:
 You need to repeat the above steps to enable the service layer of the
 `Guestbook` entity to set the necessary status fields needed for workflow.
 Open `GuestbookLocalServiceImpl` and add the following line in the
-`addGuestbook` method, immediately following the current setter methods (e.g.,
+`addGuestbook` method, immediately after the current setter methods (e.g.,
 `guestbook.setExpandoBridgeAttributes(serviceContext)`):
 
     guestbook.setStatus(WorkflowConstants.STATUS_DRAFT);
@@ -110,8 +116,8 @@ Add these imports:
     import com.liferay.portal.kernel.workflow.WorkflowConstants;
     import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
 
-The `startWorkflowInstance` will call your custom `GuestbookWorkflowHandler` class,
-which you'll create later in this learning path. 
+The `startWorkflowInstance` calls your custom `GuestbookWorkflowHandler` class,
+which you'll create later in this Learning Path. 
 
 The service layer needs to be given the ability to update the workflow status
 fields you added to `Guestbook` entity's database table. Add the following
