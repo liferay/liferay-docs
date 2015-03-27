@@ -95,17 +95,15 @@ diagram are explained in this section.
 - *MyScreenlet*: This is the class that represents the screenlet component. It
   includes: 
 
-        - A set of inspectable parameters that allow configuration of its 
-          behavior. Optionally, the initial state can be set in the screenlet's 
-          data. 
-        - A reference to its view, depending on the selected theme. To meet the 
-          screenlet's requirements, all themes must implement the `Data` 
-          interface. 
-        - Zero or more methods that create and start server operations. These 
-          can be public methods like `loadMyData()`, which is intended to be 
-          called by a developer, or UI events received on `onUserAction()`. 
-        - A [delegate object](https://developer.apple.com/library/ios/documentation/general/conceptual/DevPedia-CocoaCore/Delegation.html)
-          to be called when events occur. this is optional, but recommended.
+    - A set of inspectable parameters that allow configuration of its behavior. 
+      Optionally, the initial state can be set in the screenlet's data. 
+    - A reference to its view, depending on the selected theme. To meet the 
+      screenlet's requirements, all themes must implement the `Data` interface. 
+    - Zero or more methods that create and start server operations. These can be 
+      public methods like `loadMyData()`, which is intended to be called by a 
+      developer, or UI events received on `onUserAction()`. 
+    - A [delegate object](https://developer.apple.com/library/ios/documentation/general/conceptual/DevPedia-CocoaCore/Delegation.html)
+      to be called when events occur. this is optional, but recommended.
 
 - *MyScreenletOperation*: This is related to the screenlet, but is located in
   the server operations layer and has one or more server operations. If the 

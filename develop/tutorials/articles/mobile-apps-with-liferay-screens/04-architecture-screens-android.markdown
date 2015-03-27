@@ -118,21 +118,19 @@ diagram are explained in this section.
 - *MyScreenlet*: The class that represents the screenlet component that the
   developer interacts with. It includes:
 
-	- A set of attributes that allows the screenlet's behavior to be
-	  configured. The attribute values are read with the screenlet's
-	  `createScreenletView` method. Optionally, the default values can be 
-	  also set there. 
-	- A reference to its view, depending on the `liferay:layoutId` 
-	  attribute's value. To meet the screenlet's requirements, all views 
-	  must implement the corresponding `ViewModel` interface. 
-	- Zero or more methods that start the interactor's operations. These can 
-	  be public methods intended to be called by a developer, such as 
-	  `loadMyData()`. These methods can also be UI events received in the 
-	  `View` class through a regular listener (such as Android's 
-	  `OnClickListener`) and forwarded to the screenlet by using the
-	  `performUserAction()` method. 
-	- A listener object, provided by the app, intented to be called when any 
-	  event occurs. This is optional, but recommended.
+    - A set of attributes that allows the screenlet's behavior to be configured. 
+      The attribute values are read with the screenlet's `createScreenletView` 
+      method. Optionally, the default values can be also set there. 
+    - A reference to its view, depending on the `liferay:layoutId` attribute's 
+      value. To meet the screenlet's requirements, all views must implement the 
+      corresponding `ViewModel` interface. 
+    - Zero or more methods that start the interactor's operations. These can be 
+      public methods intended to be called by a developer, such as 
+      `loadMyData()`. These methods can also be UI events received in the `View` 
+      class through a regular listener (such as Android's `OnClickListener`) and 
+      forwarded to the screenlet by using the `performUserAction()` method. 
+    - A listener object, provided by the app, intented to be called when any 
+      event occurs. This is optional, but recommended.
 
 - *MyScreenletInteractor*: The screenlet's interactor. A screenlet can have zero
   or more interactors, depending on the number of use cases it supports. For
@@ -158,15 +156,15 @@ diagram are explained in this section.
   components used to render the screenlet's view. Typically, the XML appears as 
   follows:
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<com.your.package.MyScreenletView 
-		xmlns:android="http://schemas.android.com/apk/res/android">
-	
-		<!-- 
-			put your regular components here: EditText, Button...
-		-->
-	
-	</com.your.package.MyScreenletView>
+        <?xml version="1.0" encoding="utf-8"?>
+        <com.your.package.MyScreenletView 
+            xmlns:android="http://schemas.android.com/apk/res/android">
+        
+                <!-- 
+                    put your regular components here: EditText, Button...
+                -->
+        
+        </com.your.package.MyScreenletView>
 
 For more details, refer the guide on [How to Create Your Own Screenlet](http://www.liferay.com/).
 
