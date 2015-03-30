@@ -153,8 +153,11 @@ method to the bottom of `GuestbookLocalServiceImpl`:
 
 Run Service Builder after saving the changes you made.
 
-Now the status fields can be set appropriately and persisted to the database.
-However, you're still missing some important functionality. Perhaps you noticed,
-but the `updateStatus` methods aren't called from anywhere in your portlet's
-code! The entities need `-WorkflowHandler` classes to interface between the
-portal's workflow classes and the Guestbook App's service layer.
+Now you're almost done. The status fields can be set appropriately and
+persisted to the database. If you test the workflow by adding an Entry to one
+of the Guestbooks, your portal's administrative user will receive a
+notification for reviewing the submission. However, the entity will still be
+displayed in the portlet's search container! Why even bother having a review
+process if the entity will be published anyway? Taking workflow status into
+account while displaying entities in the Guestbook Portlet is the final task of
+this learning path. 

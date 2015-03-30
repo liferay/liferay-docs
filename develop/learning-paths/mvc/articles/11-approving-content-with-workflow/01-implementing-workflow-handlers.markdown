@@ -1,10 +1,8 @@
 # Implementing Workflow Handlers
 
-The Guestbook Portlet is well on its way to being enabled for workflow. The
-service layer can now set the appropriate database fields. In this section
-you'll learn to implement workflow handlers that interact with both the
-portal's workflow classes and your service layer (by calling `updateStatus` on the
-appropriate entity).
+In this section you'll learn to implement workflow handlers. Workflow handlers
+are fairly simple clases that interact with both the portal's workflow classes
+and your service layer (by calling `updateStatus` on the appropriate entity).
 
 ## Creating a Workflow Handler for Guestbook Entries
 
@@ -68,7 +66,7 @@ Your workflow handler class extends the abstract class `BaseWorkflowHandler`,
 which implements the `WorkflowHandler` interface. The methods included in the
 workflow handler are methods with no implementation in `BaseWorkflowHandler`.
 The most important thing to note is that this class calls `updateStatus` from
-`EntryLocalServiceUtil`.
+`EntryLocalServiceUtil`. You'll add that method later.
 
 ## Creating a Workflow Handler for Guestbooks
 
@@ -114,22 +112,20 @@ with the following code:
 
 Now the Guestbook App can not only update the database with the necessary
 information, but can interact with Liferay's workflow classes to make sure each
-entity is properly handled by the portal.
+entity is properly handled by the portal. The `updateStatus` method called in
+this class needs must be added to your local service implementation. You'll do
+that in the next section of the Learning Path.
 
 ## Registering the Guestbook Portlet's Workflow Handlers
 
-You might think that's all there is to it, but you haven't told Liferay about
-your `-WorkflowHandler` classes. Add the following lines to
-`docroot/WEB-INF/liferay-portlet.xml`, underneath the `<asset-renderer-factory>`
-declaration:
+Now that you have new `-WorkflowHandler`s, you need to register them with
+Liferay. Add the following lines to `docroot/WEB-INF/liferay-portlet.xml`,
+underneath the `<asset-renderer-factory>` declaration:
 
 		<workflow-handler>com.liferay.docs.guestbook.workflow.EntryWorkflowHandler</workflow-handler>
 	    <workflow-handler>com.liferay.docs.guestbook.workflow.GuestbookWorkflowHandler</workflow-handler>
 
-Now you're almost done. If you test the workflow by adding an Entry to one of
-the Guestbooks, your portal's administrative user will receive a notification
-for reviewing the submission. However, the entity will still be displayed in the
-portlet's search container! Why even bother having a review process if the
-entity will be published anyway? Taking workflow status into account while
-displaying entities in the Guestbook Portlet is the final task of this learning
-path. 
+Both the Guestbook App's entities can now be handled by the portal's workflow.
+However, the service layer needs some updating to set the initial workflow
+status, send the entity through the portal's workflow (if any), and persist
+the status to the database after it's returned from the workflow process.
