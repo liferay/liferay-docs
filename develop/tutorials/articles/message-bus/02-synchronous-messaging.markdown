@@ -12,22 +12,22 @@ plugin project.
 
 ![Figure 1: Synchronous messaging.](../../images/msg-bus-sync-msg.png)
 
-Imagine the following scenario. A rock concert requires many, many things to be 
+Imagine the following scenario. A rock concert requires many things to be 
 set up before the show can go on. The amplifiers, sound system, lighting, and 
-any other stage effects have to be properly set up for the show to be 
+any other stage effects have to be installed and tested for the show to be
 successful. Naturally, the tour manager has chosen Liferay Portal for managing 
-all these tasks. The manager has a custom Tasks portlet for submitting setup 
-tasks, which then need to go to the roadies' Setup portlet on a separate page. 
-The manager also needs confirmation, before moving on with other things, that 
-the roadies' Setup portlet has received each request. Synchronous messaging to 
-the rescue! 
+all these tasks. The manager has a Tasks portlet for submitting setup tasks,
+which then need to go to the roadies' Setup portlet on a separate page. The
+manager also needs confirmation, before moving on with other things, that the
+roadies' Setup portlet has received each request. Synchronous messaging to the
+rescue! 
 
 ## Deciding on Destination Keys 
 
 You first need to figure out what your destination keys will be. Destination 
 keys serve as the specific locations where messages are sent. You can think of 
 them as the mailing addresses of the Message Bus system. The destination keys 
-need to be included with the message and registered as destinations in 
+are included with the message and registered as destinations in
 `WEB-INF/src/META-INF/messaging-spring.xml`. In this example, the destination 
 keys are chosen to reflect the package names of the two portlets. 
 
@@ -39,7 +39,7 @@ Tasks and Setup portlets described above:
  `tour/roadie/setup` | Tasks | Setup |
  `tour/manager/task` | Setup | Tasks |
 
-The receiver sends its response messages to a destination on which the sender 
+The receiver sends its response messages to a destination where the sender 
 listens. This way, a full-bodied response message is sent back to the sender 
 along with the response object. Now that you know what your destination keys 
 are, you can use them when writing the code that sends and receives the 
@@ -47,10 +47,11 @@ messages. You'll start with the message sender first.
 
 ## Implementing the Message Sender 
 
-Now it's time to write the message sender code. So where should you put this 
-code? Great question! Simply place it in the method of your application that you 
-want it to be called with. For example, the message sender code for the tour 
-manager's Tasks portlet is in the method of [`TasksPortlet.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java) 
+Now it's time to write the message sender code. This code goes in the method of
+your application that you want it to be called with. For example, the message
+sender code for the tour manager's Tasks portlet is in the `_updateTask` method
+of
+[`TasksPortlet.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java),
 that adds a new task. This is because a synchronous message needs to be sent 
 each time the tour manager adds a new task to the portlet. 
 
@@ -95,7 +96,7 @@ next stop on the Message Bus--the message listener!
 ## Implementing the Message Listener 
 
 Implementing the message listener is slightly more involved than implementing
-the message sender. To implement the listener you need to make a class that
+the message sender. To implement the listener, you need to make a class that
 implements Liferay's `MessageListener` interface. You can find the listener of
 the tour manager's Tasks portlet here:
 [`SetupMessagingImpl.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
@@ -139,8 +140,8 @@ just one more thing to take care of before you're done.
 
 ## Configuring the Message Bus 
 
-For the Message Bus to successfully direct messages from destinations to
-listeners, you must register the listeners by configuring the appropriate
+For the Message Bus to direct messages from destinations to listeners
+successfully, you must register the listeners by configuring the appropriate
 mappings in your plugin's `WEB-INF/src/META-INF/messaging-spring.xml` file. 
 
 +$$$
@@ -148,8 +149,8 @@ mappings in your plugin's `WEB-INF/src/META-INF/messaging-spring.xml` file.
 **Warning:** You should only do this *after* implementing any senders and
 listeners you have. Tools like Liferay IDE and Liferay Developer Studio
 automatically deploy plugins as you save changes. If you declare sender or
-listener classes in the configuration file that don't yet exist, exceptions will
-be thrown when your application is deployed. 
+listener classes that don't yet exist, exceptions will be thrown when your
+application is deployed. 
 
 $$$
 
@@ -225,7 +226,7 @@ the closing `</web-app>` tag in the `web.xml` file:
     </context-param>
 
 Save and redeploy your portlet. Your plugin should now send and receive messages 
-as you've configured it to. In the case of the tour manager, the Tasks portlet 
+the way you've configured it. In the case of the tour manager, the Tasks portlet 
 now displays the success message when a setup task is added.
 
 ![Figure 2: The response to the synchronous message is successful!](../../images/msg-bus-synch-tasks.png)
