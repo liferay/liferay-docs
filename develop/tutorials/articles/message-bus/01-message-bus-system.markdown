@@ -1,6 +1,6 @@
 # Liferay's Message Bus System 
 
-Using Liferay's Message Bus system is a great way to handle communication both
+Liferay's Message Bus system is a great way to handle communication both
 between and within your applications. However, before you get started with
 Message Bus, you should know the basics of how it's structured. This tutorial
 presents information on the components of the Message Bus system, as well as the
@@ -25,6 +25,11 @@ service can be both a message sender and a message listener. For example, in the
 figure below both *Plugin 2 - Service 3* and *Plugin 5 - Service 7* send and
 listen for messages. 
 
+<!-- We need to redo this diagram and example. We should avoid examples that
+contain names like Plugin 1 Service 3, etc. It should be something like "plugin
+Oliver with service Dabney send and listen for messages from plugin Melissa with
+service Jane." These names are easier to follow than numbered names. -Rich -->
+
 ![Figure 1: Example, Message Bus system](../../images/msg-bus-system.png)
 
 ## Message Types 
@@ -35,7 +40,7 @@ The Message Bus supports *synchronous* and *asynchronous* messaging:
   thread, waiting for a response from a recipient. 
 - **Asynchronous messaging**: After it sends a message, the sender is free to
   continue processing. The sender can be configured to receive a call-back or 
-  simply send and forget. 
+  to send and forget. 
     - **Call-back**: The sender includes a call-back destination key to serve as 
       the destination for the response message. The recipient (listener) then
       send a response message back to the sender via this response destination. 
