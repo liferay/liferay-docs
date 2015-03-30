@@ -1,11 +1,10 @@
 ## Using Liferay's Message Bus 
 
-Liferay's *Message Bus* is a service level API that Liferay components use to
-send and receive messages within Liferay. It provides loose coupling between
-message producers and consumers. The Message Bus is located in Liferay's global
-class loader, making it accessible to every deployed web application. Remote
-messaging isn't supported, but messages are sent across a cluster when
-ClusterLink is enabled. 
+Liferay's *Message Bus* is a service level API that components can use to send
+and receive messages. It provides loose coupling between message producers and
+consumers. The Message Bus is located in Liferay's global class loader, making
+it accessible to every deployed web application. Remote messaging isn't
+supported, but messages are sent across a cluster when ClusterLink is enabled. 
 
 Here are a few common uses of the Message Bus:
 
@@ -19,7 +18,7 @@ plugins.
 
 As you read through the Message Bus tutorials, you'll learn about *synchronous*
 and *asynchronous* messaging, *serial* vs. *in-parallel* message dispatching,
-and style messages formats. 
+and how to style message formats. 
 
 Before you get into those topics, you should first learn about the Message Bus 
 system's architecture. 
