@@ -120,28 +120,29 @@ you'll be able to set up your project by simply adding a single line to your
 
 Meanwhile, there are a few things you need to manually setup in your app to 
 prepare it for Liferay Screens. First, you need to download the 
-[Liferay Screens source code](https://github.com/liferay/liferay-screens/archive/master.zip) 
-and add it to your project. The steps for doing this are shown here:
+[Liferay Screens source code](https://github.com/liferay/liferay-screens/releases) 
+and include it in your project. The steps for doing this are shown here:
 
-1. Create a folder at the root of the project called `Liferay-Screens`.
-2. Copy the folders `Library/Source` and `Library/Themes` from the downloaded 
-   source code into this new folder.
+1. Create a folder at the root of your project called `Liferay-Screens`.
+2. Copy the folders `Library/Core` and `Library/Themes` from the downloaded 
+   source code into this new folder. After this, you'll have two subdirectories 
+   in your project's `Liferay-Screens` directory: `Core` and `Themes`.
 3. Drag `Liferay-Screens` from the Finder and drop it into your Xcode project.
 
-![This Xcode project has Liferay Screens.](../../images/screens-ios-project-setup.png)
+![This Xcode project includes Liferay Screens.](../../images/screens-ios-project-setup.png)
 
 Next, set up [CocoaPods](http://cocoapods.org) for your project if you haven't 
 done so already. Add the dependencies to your `Podfile` and then execute 
 `pod install`. Use this [Podfile](https://github.com/liferay/liferay-screens/tree/master/ios/Library/Podfile) 
 as a template. You should consider using the [CocoaPods for Xcode plugin](https://github.com/kattrali/cocoapods-xcode-plugin). 
-You can install it through the [Alcatraz package manager](http://alcatraz.io/)) 
+You can install it through the [Alcatraz package manager](http://alcatraz.io/) 
 for Xcode. This way, you can perform these tasks from Xcode.
 
 ![The CocoaPods for Xcode plugin.](../../images/screens-ios-xcode-cocoapods.png)
 
 In your project's build settings, you also need to edit the 
 *Objective-C Bridging* Header to include 
-`${SRCROOT}/Liferay-Screens/Source/liferay-screens-bridge.h`. This is shown in 
+`${SRCROOT}/Liferay-Screens/Core/liferay-screens-bridge.h`. This is shown in 
 the following screenshot:
 
 ![Objective-C Bridging Header](../../images/screens-ios-project-header.png)
@@ -149,7 +150,7 @@ the following screenshot:
 There's just one more thing to take care of to ensure that your project is ready 
 for Liferay Screens. Create a new property list file called 
 `liferay-server-context.plist`. You'll use this file to configure the settings 
-for your Liferay Portal instance. Use [`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/tree/master/ios/Library/Source/liferay-server-context-sample.plist) 
+for your Liferay Portal instance. Use [`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/tree/master/ios/Library/Core/liferay-server-context-sample.plist) 
 as a template. This screenshot shows such a file being browsed:
 
 ![liferay-context.plist file](../../images/screens-ios-liferay-context.png)
