@@ -3,12 +3,12 @@
 Would you like to modify the search summaries, indexes, and queries available in
 your portal instance? Developing an Indexer Post Processor hook lets you do just
 that. The indexer hook implements a post processing system on top of the
-existing indexer that lets you modify your portal's search, index, and query 
+existing indexer, letting you modify your portal's search, index, and query 
 capabilities.
 
-In this tutorial you'll run through a simple example to show what you can 
+In this tutorial, you'll run through a simple example to learn what you can 
 accomplish with an indexer hook. For this example, you'll add *Job Title* into 
-the User Indexer so you can search for users by their Job Title.
+the User Indexer, so you can search for users by job title.
 
 ## Implementing the Indexer Post Processor Hook
 
@@ -24,13 +24,14 @@ the User Indexer so you can search for users by their Job Title.
             <indexer-post-processor-impl>com.liferay.hook.indexer.SampleIndexerPostProcessor</indexer-post-processor-impl>
         </indexer-post-processor>
 
-    The `<indexer-class-name/>` tag clarifies the model entity for the indexer.
-    Furthermore, the `<indexer-post-processor-impl/>` tag clarifies the
-    implementation of the interface.
+    You specify the indexer's model entity in the `indexer-class-name` element
+    and specify your custom indexer post processor class in the
+    `indexer-post-processor-impl` element. The DTD for `liferay-hook.xml` is
+    [here](https://docs.liferay.com/portal/6.2/definitions/liferay-hook_6_2_0.dtd.html). 
 
-3. In your hook project's `docroot/WEB-INF/src` folder, create the package
-   `com.liferay.hook.indexer`. Inside that package, create a class called
-   `SampleIndexerPostProcessor.java` with the following content:
+3. In your hook project's `docroot/WEB-INF/src` folder, create your custom
+   indexer post processor class and its package. Here's code for the
+   `SampleIndexerPostProcessor` custom indexer post processor class:
 
         package com.liferay.hook.indexer;
 
@@ -87,24 +88,39 @@ the User Indexer so you can search for users by their Job Title.
         }
 
 	Notice the `SampleIndexerPostProcessor` class extends Liferay's
-	`BaseIndexerPostProcessor` base implementation. Then logic is added to
-	enable users to search for *Job Title* amongst all the portal's users. Thus,
-	you just added a new feature for the User Indexer!
+	[`BaseIndexerPostProcessor`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/search/BaseIndexerPostProcessor.html)
+	base implementation. In your custom class' `postProcessDocument` method, you
+	can add fields to index. The `SampleIndexerPostProcessor` class'
+	`postProcessDocument` method adds the *Job Title* field, enabling users to
+	search by *Job Title*. You've just extended an indexer!
 	
-4. You now need to reindex the portal. Go to the *Control Panel* and click 
-   *Server Administration*. Now click the *Execute* button next to 
+4. [Deploy](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins-to-a-local-portal-instance)
+   the hook plugin. 
+
+5. You now need to reindex the portal. Go to the *Control Panel* and click 
+   *Server Administration*. Click on the *Execute* button for the Action
    *Reindex all search indexes*.
    
     ![Figure 1: Click *Execute* to reindex the search indexes.](../../images/reindex-search-indexes.png)
    
-5. Navigate to *Control Panel* &rarr; *Users and Organizations* &rarr; *All
-   Users* and select a user. Assign the user a job title (e.g., Blogger) and
+6. Navigate to *Control Panel* &rarr; *Users and Organizations* &rarr; *All
+   Users* and select a user. Assign the user a job title (e.g., *Blogger*) and
    click *Save*.
 
-6. Restart your server. Now test out the indexer hook by searching for that job
-   title.
+7. Test the indexer hook by searching for the user by the job title you
+   assigned. 
 
-    ![Figure 2: In this example, searching for *Blogger* returns two users with that job title.](../../images/indexer-hook-search.png)
+![Figure 2: By extending the indexer post processor for a model entity, you can search for instances of that model based on the fields you add to the indexer post processor. In this example, you extended the User entity's search index to include *Job Title* so you could search for users by job title (e.g., *Blogger*).](../../images/indexer-hook-search.png)
 
-Great! Now you know the basics of extending the Indexer Post Proccessor using a 
+Great! Now you know the basics of extending the Indexer Post Processor using a 
 hook.
+
+## Related Topics
+
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+
+[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+
+[Developging Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+
+[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
