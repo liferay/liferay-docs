@@ -13,23 +13,24 @@ the User Indexer so you can search for users by their Job Title.
 ## Implementing the Indexer Post Processor Hook
 
 1. If you don't yet have a hook project, create one following the steps in the 
-   [Creating a Hook](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/creating-a-hook-lp-6-2-develop-tutorial) tutorial.
+   [Creating a Hook Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk)
+   tutorial.
 
-2. In your hook project, open `liferay-hook.xml` and insert the following lines 
-   before the closing `</hook>` tag:
+2. In your hook project, open `docroot/WEB-INF/liferay-hook.xml` and insert the
+   following lines before the closing `</hook>` tag:
 
-		<indexer-post-processor>
-        	<indexer-class-name>com.liferay.portal.model.User</indexer-class-name>
-        	<indexer-post-processor-impl>com.liferay.hook.indexer.SampleIndexerPostProcessor</indexer-post-processor-impl>
+        <indexer-post-processor>
+            <indexer-class-name>com.liferay.portal.model.User</indexer-class-name>
+            <indexer-post-processor-impl>com.liferay.hook.indexer.SampleIndexerPostProcessor</indexer-post-processor-impl>
         </indexer-post-processor>
 
     The `<indexer-class-name/>` tag clarifies the model entity for the indexer.
     Furthermore, the `<indexer-post-processor-impl/>` tag clarifies the
     implementation of the interface.
 
-3. In your hook project, create the directory 
-   `docroot/WEB-INF/src/com/liferay/hook/indexer`. Inside that directory, create 
-   a file called `SampleIndexerPostProcessor.java` with the following content:
+3. In your hook project's `docroot/WEB-INF/src` folder, create the package
+   `com.liferay.hook.indexer`. Inside that package, create a class called
+   `SampleIndexerPostProcessor.java` with the following content:
 
 		package com.liferay.hook.indexer;
 
@@ -44,7 +45,6 @@ the User Indexer so you can search for users by their Job Title.
 		import com.liferay.portal.kernel.search.SearchContext;
 		import com.liferay.portal.kernel.search.Summary;
 		import com.liferay.portal.model.User;
-
 
 			public class SampleIndexerPostProcessor extends BaseIndexerPostProcessor
 			{
@@ -94,13 +94,15 @@ the User Indexer so you can search for users by their Job Title.
    *Server Administration*. Now click the *Execute* button next to 
    *Reindex all search indexes*.
    
-   ![Click *Execute* to reindex the search indexes.](../../images/reindex-search-indexes.png)
+    ![Figure 1: Click *Execute* to reindex the search indexes.](../../images/reindex-search-indexes.png)
    
-5. Navigate to *Control Panel* &rarr; *Users and Organizations* and make sure a
-   user has a job title, which can be added in any user's *My Account* 
-   interface. Then test out the indexer hook by searching for that job title.
+5. Navigate to *Control Panel* &rarr; *Users and Organizations* and assign a job
+   title to a user (e.g., Blogger). This can be done by selecting the *All
+   Users* tab, selecting a user, and giving the user a job title.
 
-![In this example, searching for *Blogger* returns two users with that job title.](../../images/indexer-hook-search.png)
+6. Test out the indexer hook by searching for that job title.
+
+    ![Figure 2: In this example, searching for *Blogger* returns two users with that job title.](../../images/indexer-hook-search.png)
 
 Great! Now you know the basics of extending the Indexer Post Proccessor using a 
 hook.
