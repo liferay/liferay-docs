@@ -220,7 +220,7 @@ class. Note that the process below can also be used to locate an ID.
 
         <aui:button name="test" value="test" cssClass=""/>
  
-3.  Within the quotations of the `cssClass` attribute, press *Ctrl+Space* to
+3.  Within the quotations of the `cssClass`ï¿½attribute, press *Ctrl+Space* to
     bring up the code inference for CSS. Begin typing *sample-class* to narrow
     down the classes to the one you're looking for. 
 
