@@ -1,4 +1,4 @@
-## Overriding and Adding Struts Actions
+# Overriding and Adding Struts Actions [](id=overriding-and-adding-struts-actions)
 
 <!--
 Testing Notes:
@@ -38,7 +38,7 @@ or to create a new Struts action and path; you'll do both in this tutorial.
 You'll override a Struts action to use a custom class. Then you'll create a new
 Struts action path and navigate to it. It's time to begin! 
 
-## Overriding Struts Actions
+## Overriding Struts Actions [](id=overriding-struts-actions)
 
 For the first part of this tutorial, you'll override a portlet's existing Struts
 action using a [hook plugin project](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk). 
@@ -168,7 +168,7 @@ methods that you override.
 That's it for overriding Struts actions! The next section of this tutorial
 demonstrates how to add a new Struts action. 
 
-## Adding Struts Actions
+## Adding Struts Actions [](id=adding-struts-actions)
 
 Now that you know how to override a Struts action, you might also be interested
 in learning how to add a new Struts action. Here's how you do it:
@@ -271,7 +271,7 @@ Great! Now you know about the interfaces used for Struts actions. You also
 learned how to override an existing action and create a new action using a 
 hook. You're ready to strut your stuff! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 
