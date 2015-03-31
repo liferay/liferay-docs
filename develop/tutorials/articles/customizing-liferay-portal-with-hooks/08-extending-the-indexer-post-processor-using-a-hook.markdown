@@ -32,58 +32,59 @@ the User Indexer so you can search for users by their Job Title.
    `com.liferay.hook.indexer`. Inside that package, create a class called
    `SampleIndexerPostProcessor.java` with the following content:
 
-		package com.liferay.hook.indexer;
+        package com.liferay.hook.indexer;
 
-		import java.util.Locale;
-		import javax.portlet.PortletURL;
-		import com.liferay.portal.kernel.log.Log;
-		import com.liferay.portal.kernel.log.LogFactoryUtil;
-		import com.liferay.portal.kernel.search.BaseIndexerPostProcessor;
-		import com.liferay.portal.kernel.search.BooleanQuery;
-		import com.liferay.portal.kernel.search.Document;
-		import com.liferay.portal.kernel.search.Field;
-		import com.liferay.portal.kernel.search.SearchContext;
-		import com.liferay.portal.kernel.search.Summary;
-		import com.liferay.portal.model.User;
+        import java.util.Locale;
+        import javax.portlet.PortletURL;
+        import com.liferay.portal.kernel.log.Log;
+        import com.liferay.portal.kernel.log.LogFactoryUtil;
+        import com.liferay.portal.kernel.search.BaseIndexerPostProcessor;
+        import com.liferay.portal.kernel.search.BooleanQuery;
+        import com.liferay.portal.kernel.search.Document;
+        import com.liferay.portal.kernel.search.Field;
+        import com.liferay.portal.kernel.search.SearchContext;
+        import com.liferay.portal.kernel.search.Summary;
+        import com.liferay.portal.model.User;
 
-			public class SampleIndexerPostProcessor extends BaseIndexerPostProcessor
-			{
-				public void postProcessContextQuery(BooleanQuery booleanQuery, SearchContext searchcontext)
-						throws Exception {
-					if(_log.isDebugEnabled())
-						_log.debug(" postProcessContextQuery()");
-					}
+        public class SampleIndexerPostProcessor extends BaseIndexerPostProcessor {
 
-				public void postProcessDocument(Document document, Object object)
-						throws Exception {
-					User userEntity = (User) object;
-					String indexerUserTitle = "";
-					try {
-						indexerUserTitle = userEntity.getJobTitle();
-					} catch (Exception e) {}
-					if(indexerUserTitle.length() > 0)
-						document.addText(Field.TITLE, indexerUserTitle);
-				}
+            public void postProcessContextQuery(BooleanQuery booleanQuery, SearchContext searchcontext)
+                    throws Exception {
+                if(_log.isDebugEnabled())
+                    _log.debug(" postProcessContextQuery()");
+            }
 
-				public void postProcessFullQuery(BooleanQuery fullQuery, SearchContext searchcontext)
-						throws Exception {
-					if(_log.isDebugEnabled())
-						_log.debug(" postProcessFullQuery()");
-				}
+            public void postProcessDocument(Document document, Object object)
+                    throws Exception {
+                User userEntity = (User) object;
+                String indexerUserTitle = "";
+                try {
+                    indexerUserTitle = userEntity.getJobTitle();
+                } catch (Exception e) {}
+                if(indexerUserTitle.length() > 0)
+                    document.addText(Field.TITLE, indexerUserTitle);
+            }
 
-				public void postProcessSearchQuery(BooleanQuery searchquery, SearchContext searchcontext)
-						throws Exception {
-					if(_log.isDebugEnabled())
-						_log.debug(" postProcessSearchQuery()");
-				}
+            public void postProcessFullQuery(BooleanQuery fullQuery, SearchContext searchcontext)
+                    throws Exception {
+                if(_log.isDebugEnabled())
+                    _log.debug(" postProcessFullQuery()");
+            }
 
-				public void postProcessSummary(Summary summary, Document document, Locale locale,
-						String snippet, PortletURL portletURL) {
-					if(_log.isDebugEnabled())
-						_log.debug("postProcessSummary()");
-				}
-				private static Log _log = LogFactoryUtil.getLog(SampleIndexerPostProcessor.class);
-			}
+            public void postProcessSearchQuery(BooleanQuery searchquery, SearchContext searchcontext)
+                    throws Exception {
+                if(_log.isDebugEnabled())
+                    _log.debug(" postProcessSearchQuery()");
+            }
+
+            public void postProcessSummary(Summary summary, Document document, Locale locale,
+                    String snippet, PortletURL portletURL) {
+                if(_log.isDebugEnabled())
+                    _log.debug("postProcessSummary()");
+            }
+
+            private static Log _log = LogFactoryUtil.getLog(SampleIndexerPostProcessor.class);
+        }
 
 	Notice the `SampleIndexerPostProcessor` class extends Liferay's
 	`BaseIndexerPostProcessor` base implementation. Then logic is added to
@@ -96,9 +97,9 @@ the User Indexer so you can search for users by their Job Title.
    
     ![Figure 1: Click *Execute* to reindex the search indexes.](../../images/reindex-search-indexes.png)
    
-5. Navigate to *Control Panel* &rarr; *Users and Organizations* and assign a job
-   title to a user (e.g., Blogger). This can be done by selecting the *All
-   Users* tab, selecting a user, and giving the user a job title.
+5. Navigate to *Control Panel* &rarr; *Users and Organizations* &rarr; *All
+   Users* and select a user. Assign the user a job title (e.g., Blogger) and
+   click *Save*.
 
 6. Test out the indexer hook by searching for that job title.
 
