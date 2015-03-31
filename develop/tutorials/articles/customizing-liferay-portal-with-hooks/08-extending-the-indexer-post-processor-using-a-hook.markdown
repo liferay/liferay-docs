@@ -1,4 +1,4 @@
-# Extending the Indexer Post Processor Using a Hook
+# Extending the Indexer Post Processor Using a Hook [](id=extending-the-indexer-post-processor-using-a-hook)
 
 Would you like to modify the search summaries, indexes, and queries available in
 your portal instance? Developing an Indexer Post Processor hook lets you do just
@@ -10,7 +10,7 @@ In this tutorial, you'll run through a simple example to learn what you can
 accomplish with an indexer hook. For this example, you'll add *Job Title* into 
 the User Indexer, so you can search for users by job title.
 
-## Implementing the Indexer Post Processor Hook
+## Implementing the Indexer Post Processor Hook [](id=implementing-the-indexer-post-processor-hook)
 
 1. If you don't yet have a hook project, create one following the steps in the 
    [Creating a Hook Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk)
@@ -115,7 +115,7 @@ the User Indexer, so you can search for users by job title.
 Great! Now you know the basics of extending the Indexer Post Processor using a 
 hook.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 
