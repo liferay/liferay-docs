@@ -12,15 +12,15 @@ between one sending and two listening portlets in a plugin project. You can find
 the code for this example plugin project here:
 [Tasks Portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/async-callback/tasks-portlet).
 
-Imagine the following scenario. A rock concert requires many, many things to be
-done before the show can go on. The amplifiers, sound system, lighting, and any
-other stage effects have to be properly set up for the show to be successful.
+Imagine the following scenario. A rock concert requires many things to be done
+before the show can go on. The amplifiers, sound system, lighting, and any other
+stage effects have to be set up properly for the show to be successful.
 Naturally, the tour manager has chosen Liferay Portal for managing all these
-tasks. The manager has a custom Tasks portlet for submitting items that need to
-be set up. The tasks then need to go to the roadies' Setup portlet and the
-inventory manager's Inventory portlet. The manager also wants a response from
-these portlets. However, the manager is very busy. It wouldn't be practical to
-put everything else on hold while waiting for responses from each setup task.
+tasks. The manager has a Tasks portlet for submitting items that need to be set
+up. The tasks then need to go to the roadies' Setup portlet and the inventory
+manager's Inventory portlet. The manager also wants a response from these
+portlets. However, the manager is very busy. It wouldn't be practical to put
+everything else on hold while waiting for responses from each setup task.
 Asynchronous messaging with call-backs is an ideal solution. In this example,
 the messages sent by the Tasks portlet to the Setup and Inventory portlets are
 sent in serial instead of in parallel. Now it's time to hop on the Message Bus! 
@@ -29,10 +29,10 @@ sent in serial instead of in parallel. Now it's time to hop on the Message Bus!
 
 ## Deciding on Destination Keys 
 
-You first need to figure out what your destination keys will be. Destination 
-keys serve as the specific locations where messages are sent. You can think of 
-them as the mailing addresses of the Message Bus system. The destination keys 
-need to be included with the message and registered as destinations in 
+You first need to figure out what your destination keys will be. Destination
+keys are the locations where messages are sent. You can think of them as the
+mailing addresses of the Message Bus system. The destination keys need to be
+included with the message and registered as destinations in
 `WEB-INF/src/META-INF/messaging-spring.xml`. In this example, the destination 
 keys are chosen to reflect the package names of the two portlets. 
 
@@ -57,7 +57,7 @@ the messages need to be sent each time the tour manager adds a new setup task.
 You can find this code here:
 [`TasksPortlet.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/async-callback/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java). 
 
-A sender for an asynchronous message with a call-back takes the following steps:
+A sender for an asynchronous message with a call-back does the following things:
 
 1. Creates a `JSONObject` to serve as the message:
 
@@ -93,20 +93,20 @@ from your sender. Each listener is a class that implements Liferay's
 each portlet. You can find the example listeners here:
 [Listeners](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/async-callback/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl).
 
-Asynchronous listeners with call-backs take the following steps: 
+Asynchronous listeners with call-backs do the following things: 
 
-1. Implement the `receive(Message message)` method of the
+1. Implements the `receive(Message message)` method of the
    `com.liferay.portal.kernel.messaging.MessageListener` interface.
 
-2. Get the message payload and cast it to a `String`.
+2. Gets the message payload and cast it to a `String`.
 
         String payload = (String)message.getPayload();
 
-3. Create a `JSONObject` from the payload string.
+3. Creates a `JSONObject` from the payload string.
 
         JSONObject jsonObject = JSONFactoryUtil.createJSONObject(payload);
-        
-4. Get values from the `JSONObject` using its getter methods. This example gets 
+ 
+4. Gets values from the `JSONObject` using its getter methods. This example gets 
    the values that were added by the sender. Also note that the destination key 
    from the sender is retrieved for use in the call-back.
 
@@ -115,15 +115,15 @@ Asynchronous listeners with call-backs take the following steps:
         String status = (String) jsonObject.getString("status");
         String responseDestinationName = jsonObject.getString("responseDestinationName");
 
-5. Create a `JSONObject` to use as the response message.
+5. Creates a `JSONObject` to use as the response message.
 
         jsonObject = JSONFactoryUtil.createJSONObject();
 
-6. Stuff the response message with key/value pairs.
+6. Stuffs the response message with key/value pairs.
 
         jsonObject.put("roadieResponse", "Yes");
-        
-7. Send the message back to the sender.
+ 
+7. Sends the message back to the sender.
 
         MessageBusUtil.sendMessage(responseDestinationName, jsonObject.toString());
 
@@ -152,8 +152,8 @@ be thrown when your application is deployed.
 
 $$$
 
-For example, here's the configuration file for the custom Tasks, Setup, and 
-Inventory portlets: 
+For example, here's the configuration file for the Tasks, Setup, and Inventory
+portlets: 
 
     <?xml version="1.0"?>
 
@@ -230,7 +230,7 @@ the closing `</web-app>` tag in the `web.xml` file:
     </context-param>
 
 Save and redeploy your portlet. Your plugin should now send and receive messages
-as you've configured it to. In the case of the tour manager, the Tasks portlet
+the way you've configured it. In the case of the tour manager, the Tasks portlet
 now shows replies from the Setup and Inventory portlets. 
 
 ![Figure 2: Responses from the Setup and Inventory portlets show in the Tasks portlet.](../../images/msg-bus-async-callb-tasks.png)
