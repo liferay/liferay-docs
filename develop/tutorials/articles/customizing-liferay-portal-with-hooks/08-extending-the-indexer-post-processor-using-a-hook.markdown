@@ -101,7 +101,8 @@ the User Indexer so you can search for users by their Job Title.
    Users* and select a user. Assign the user a job title (e.g., Blogger) and
    click *Save*.
 
-6. Test out the indexer hook by searching for that job title.
+6. Restart your server. Now test out the indexer hook by searching for that job
+   title.
 
     ![Figure 2: In this example, searching for *Blogger* returns two users with that job title.](../../images/indexer-hook-search.png)
 
