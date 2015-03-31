@@ -248,13 +248,15 @@ following steps:
 
         @Override
         protected View createScreenletView(Context context, AttributeSet attributes) {
-            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributes, R.styleable.AddBookmarkScreenlet, 0, 0);
+            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributes, 
+                R.styleable.AddBookmarkScreenlet, 0, 0);
         
             int layoutId = typedArray.getResourceId(R.styleable.AddBookmarkScreenlet_layoutId, 0);
         
             View view = LayoutInflater.from(context).inflate(layoutId, null);
         
-            String defaultTitle = typedArray.getResourceString(R.styleable.AddBookmarkScreenlet_defaultTitle, 0);
+            String defaultTitle = typedArray.getResourceString(
+                R.styleable.AddBookmarkScreenlet_defaultTitle, 0);
         
             typedArray.recycle();
         
