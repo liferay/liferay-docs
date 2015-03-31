@@ -115,7 +115,3 @@ could leave it at that, but using the `guestbookId` and `entryId` in the
 URL really isn't as friendly as it could be. The next step is to replace those
 IDs with the title of the Guestbook or Guestbook Entry.
 
-## Next Steps [](id=next-steps)
-
-[Removing the Primary Key from Portlet URLs](/develop/learning-paths/-/knowledge_base/removing-primary-keys-from-the-url)
-
