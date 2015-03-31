@@ -1,40 +1,51 @@
 ## Overriding and Adding Struts Actions
 
-Do you want to add a new Struts action to Liferay or override existing Struts
-actions? *Struts action hooks* let you do just that. 
+<!--
+Testing Notes:
 
-First, consider the interfaces used for Struts actions. There are two:
+On completing the first part of this tutorial, the plugin looks like the hook plugin at ...
+liferay-docs/develop/tutorials/tutorials-sdk-6.2-ga3/hooks/struts-actions-overriding-example-hook
 
-- `com.liferay.portal.kernel.struts.StrutsAction`
-- `com.liferay.portal.kernel.struts.StrutsPortletAction`
+On completing the second part of this tutorial, the plugin looks like the hook plugin at ...
+liferay-docs/develop/tutorials/tutorials-sdk-6.2-ga3/hooks/struts-actions-adding-example-hook2-hook
 
-The `StrutsAction` interface is for regular Struts actions from the portal, like
+Make sure to read their README files. - Jim
+-->
+
+Do you want to override Liferay's Struts actions or add a new Struts action to
+Liferay? You can do both using Struts action hooks. 
+
+First, consider the interfaces used for Struts actions:
+
+- [`com.liferay.portal.kernel.struts.StrutsAction`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/struts/StrutsAction.html)
+- [`com.liferay.portal.kernel.struts.StrutsPortletAction`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/struts/StrutsPortletAction.html)
+
+The `StrutsAction` interface is used with portal Struts actions, like
 `/c/portal/update_email_address`. The `StrutsPortletAction` interface is used
-for similar Struts actions, but from portlets. 
+with portlet Struts actions. 
 
-Struts actions are defined as classes, and they're all connected in a
-`struts-config.xml` file. The `struts-config.xml` for a Liferay Portal instance
-running on Apache Tomcat can be found in the
-`liferay-portal-[version]/tomcat-[version]/webapps/ROOT/WEB-INF` directory. The
-`struts-config.xml` file links actions to specific JSP pages. Each action
-performs a specific task and then returns a *forward*, an object containing a
-name and path. The forward defines the page the portal sends the user to after
-the action completes. When a user submits a form that maps to one of these
-actions, the action class is loaded, executed, and returns a forward. 
+Struts actions are defined as classes, and they're specified in a
+`struts-config.xml` file. Liferay Portal's [`struts-config.xml`](https://github.com/liferay/liferay-portal/blob/6.2.2-ga3/portal-web/docroot/WEB-INF/struts-config.xml)
+file resides in its `WEB-INF` folder. It links actions to specific JSPs. Each
+action performs a specific task and then returns a *forward*, an object
+containing a name and path. The forward defines the page the portal sends the
+user to after the action completes. When a user submits a form that maps to a
+Struts action, the portal loads and executes the action class' method, which
+returns a forward. 
 
-A Struts action hook can wrap or override existing Struts actions or create a
-new Struts path; you'll complete both in this tutorial. You'll override the
-Struts actions in the `struts-config.xml` file by using a Struts action hook to
-point to a custom class. Then you'll create a new Struts path and navigate to
-it. It's time to begin! 
+You can use a Struts action hook plugin to override/wrap existing Struts actions
+or to create a new Struts action and path; you'll do both in this tutorial.
+You'll override a Struts action to use a custom class. Then you'll create a new
+Struts action path and navigate to it. It's time to begin! 
 
 ## Overriding Struts Actions
 
 For the first part of this tutorial, you'll override a portlet's existing Struts
-action using your custom hook project. 
+action using a [hook plugin project](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk). 
 
-You can view the current actions in your portal's `struts-config.xml` file. For
-example, the following is the default login action:
+
+You can view the current actions in your portal's [`struts-config.xml`](https://github.com/liferay/liferay-portal/blob/6.2.2-ga3/portal-web/docroot/WEB-INF/struts-config.xml)
+file. For example, here's the default login Struts action:
 
     <action path="/login/login"
         type="com.liferay.portlet.login.action.LoginAction">
@@ -49,28 +60,39 @@ example, the following is the default login action:
         />
     </action>
 
-By following the steps below, you can override a portlet's Struts action:
+You can override a portlet's Struts action, like the one above, following these
+steps: 
 
-1. Navigate to the `your-hook/docroot/WEB-INF` folder and open
-    `liferay-hook.xml`. 
+1. Open the `liferay-hook.xml` file, found in your hook plugin's
+   `docroot/WEB-INF` folder. 
 
-2. Insert the following code between the `<hook>...</hook>` tags. Be sure to 
-   replace `[action_path_to_override]` in `<struts-action-path>` with the Struts 
-   action path that you want to override:
+2. Add a `struts-action` element within the `hook` element.
+
+3. Add to the `struts-action` element, a `struts-action-path` element with a
+   value that specifies the action path you're overriding and add a
+   `struts-action-impl` element with a value that specifies your custom action
+   class.
+
+    The following Struts action from example hook plugin [example-hook](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/hooks/struts-actions-overriding-example-hook)
+    specifies a custom Struts portlet action class called
+    `ExampleStrutsPortletAction`. This action class is invoked for the Struts
+    action path `/login/login`. The example hook's `struts-action` element looks
+    like this:  
 
         <struts-action>
-            <struts-action-path>[action_path_to_override]</struts-action-path>
+            <struts-action-path>/login/login</struts-action-path>
             <struts-action-impl>
             com.liferay.sample.hook.action.ExampleStrutsPortletAction
             </struts-action-impl>
         </struts-action>
 
-3. Create a new package `com.liferay.sample.hook.action` in your
-   `example-hook/docroot/WEB-INF/src` folder. 
+    The DTD for `liferay-hook.xml` is
+    [here](https://docs.liferay.com/portal/6.2/definitions/liferay-hook_6_2_0.dtd.html).
 
-4. In your new package, create a class named *ExampleStrutsPortletAction*, which
-   modifies the portlet Struts action. Your class should look similar to the one
-   listed below:
+4. In your hook plugin's `docroot/WEB-INF/src` folder, create a custom Struts
+   portlet action class and its package folders.  
+
+    Here's an example Struts portlet action class:
 
         package com.liferay.sample.hook.action;
 
@@ -134,79 +156,38 @@ By following the steps below, you can override a portlet's Struts action:
 
         }
 
-    Notice the `ExampleStrutsPortletAction` class extends the
-    [BaseStrutsPortletAction](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/struts/BaseStrutsPortletAction.java)
-    class. The example class prints an example line of text every time the
-    specified Struts path is triggered.
+Notice that the class extends base class [`BaseStrutsPortletAction`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/struts/BaseStrutsPortletAction.html).
+The `render` method of the example custom action class above prints to the
+console the message *Custom Struts Action*, every time a user logs in.
 
-When this hook is deployed, you'll observe the printed lines in your console
-that your example class generated. For the figure below, the `login/login`
-Struts action path was overridden, and prints out custom made lines whenever a
-user logs in, or accesses the *Sign In* portlet.
+![Figure 1: You can override a Struts action with custom behaviors. This example Struts action hook prints a message to the console every time a user logs in.](../../images/struts-action-console.png)
 
-![Figure 1: The overridden Login Struts action displays custom printed lines in the console.](../../images/struts-action-console.png)
-
-For best practice, when overriding an existing Struts action, it's usually best
-to override the method that takes the original Struts action handle as a
-parameter and execute that original Struts action. Think of the original action
-as a servlet filter or aspect. If you override the method that *takes* the
-original action handle as a parameter and don't explicitly execute it, the
-original action won't be executed. If you override the `execute` method that
-*does not take* the original action as a parameter, you are ignoring the
-original action and it won't be executed. 
+As a best practice in extending Struts actions, consider invoking the base class
+methods that you override.  
 
 That's it for overriding Struts actions! The next section of this tutorial
-demonstrates how to create a new Struts action path. 
+demonstrates how to add a new Struts action. 
 
 ## Adding Struts Actions
 
-Now that you know how to override a Struts action, you'll learn how to add a new
-Struts action to your custom hook next.
+Now that you know how to override a Struts action, you might also be interested
+in learning how to add a new Struts action. Here's how you do it:
 
-1. Navigate to the `your-hook/docroot/WEB-INF` folder and open
-    `liferay-hook.xml`. 
+1. If you like, create a folder for the new action's JSP. The example hook
+   plugin example-hook2-hook on [GitHub](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/hooks/struts-actions-adding-example-hook2-hook),
+   stores its custom JSP in a folder `docroot/META-INF/custom_jsps/html/portal`. 
 
-2. Insert the following code between the `<hook>...</hook>` tags. Be sure to 
-   replace `/custom/path` in `<struts-action-path>` with the Struts action path 
-   that you're adding:
-
-        <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
-        <struts-action>
-            <struts-action-path>/custom/path</struts-action-path>
-            <struts-action-impl>
-            com.liferay.sample.hook.action.ExampleStrutsAction
-            </struts-action-impl>
-        </struts-action>
-
-3. In your custom hook, create the
-   `yourhook/docroot/META-INF/custom_jsps/html/portal` directory (if necessary).
-
-4. Create a `sample.jsp` file in the
-   `your-hook/docroot/META-INF/custom_jsps/html/portal` directory and insert
-   what you'd like your new Struts path to accomplish. For an example, a simple
-   code snippet is listed below, which prints Hello [user_name] to the screen.
+2. Add a JSP for your new Struts action. For example, the following code from
+   the example-hook2-hook plugin's JSP greets the user:
 
         <%
         String name = (String)request.getAttribute("name");
         %>
         Hello <%= name %>!
 
-5. If you'd like your Struts path to be public, add your Struts action path to 
-   your portal's list of paths that don't require authentication. Do this by 
-   copying your existing `auth.public.paths` property assignment from your 
-   portal's `portal.properties` into your `portal-ext.properties` file. Then add 
-   your Struts action path to the end of the value list. It looks similar to the
-   assignment below, with `/custom/path` representing your Struts action path: 
-
-            auth.public.paths=\
-                /asset/get_categories,\
-                ...
-                /wiki/rss,\
-                /custom/path
-   
-6.  Create a new class named `ExampleStrutsAction` in the
-    `com.liferay.sample.hook.action` package. It will implement your new portal
-    Struts action. Below is sample code to provide what this might look like:
+3.  Create a new Struts action class. Consider extending [`BaseStrutsPortletAction`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/struts/BaseStrutsPortletAction.html).
+    As an example, here's the code from the example-hook2-hook plugin's Struts
+    action class [`ExampleStrutsAction`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/hooks/struts-actions-adding-example-hook2-hook/docroot/WEB-INF/src/com/liferay/sample/hook/action/ExampleStrutsAction.java):
 
         package com.liferay.sample.hook.action;
 
@@ -231,23 +212,67 @@ Struts action to your custom hook next.
 
         }
 
-    Notice the `ExampleStrutsAction` class extends
-    [BaseStrutsAction](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/struts/BaseStrutsAction.java).
-    When the `execute()` method is called, the `name` string is initialized and
-    set to the user's name, or *World* if the user's name could not be found.
+    Notice that the `ExampleStrutsAction` class' `execute` method sets the
+    request attribute `name` to the current user's name, or to *World* if the
+    user's name isn't accessible. 
 
-    The class has overridden the `execute(HttpServletRequest,
-    HttpServletResponse)` method of `BaseStrutsAction`, but not the
-    `execute(StrutsAction, HttpServletRequest, HttpServletResponse)` method. The
-    original Struts action's `execute()` method is ignored. That's fine for this
-    example.
+    This class overrides `BaseStrutsAction`'s `execute(HttpServletRequest,
+    HttpServletResponse)` method, but not its `execute(StrutsAction,
+    HttpServletRequest, HttpServletResponse)` method. You'd typically override
+    both methods. It's fine to ignore overriding that method in this example
+    hook. 
 
-7. Restart your portal server and try your new Struts path. The example code
-   provided can be accessed from a browser by inserting the custom path URL
-   (e.g., `http://localhost:8080/c/portal/sample`). 
+4. Open the `liferay-hook.xml` file, from the hook plugin's `docroot/WEB-INF`
+   folder. 
 
-    ![Figure 2: The new Struts action displays *Hello World!* in your browser.](../../images/struts-action-display.png)
+5. If you're using a custom JSP folder, add within the `hook` element a
+   `custom-jsp-dir` element that specifies the custom JSP folder path as its
+   value. Within the `hook` element, just after the `custom-jsp-dir` element (if
+   you added one), add a `struts-action` element. Within the `struts-action`
+   element, add a `struts-action-path` element with a value that specifies the
+   action path you're overriding and add a `struts-action-impl` element with a
+   value that specifies your custom action class. 
+
+    The following example Struts action from the example-hook2-hook plugin
+    specifies Struts action path `/custom/path` for invoking the custom Struts
+    portlet action class `ExampleStrutsPortletAction`. 
+
+        <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
+        <struts-action>
+            <struts-action-path>/custom/path</struts-action-path>
+            <struts-action-impl>
+            com.liferay.sample.hook.action.ExampleStrutsAction
+            </struts-action-impl>
+        </struts-action>
+
+6. If you'd like your Struts action path to be public, add it to 
+   your portal's list of paths that don't require authentication. Do this by 
+   copying your existing [`auth.public.paths`](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Authentication%20Pipeline)
+   property assignment from your portal's `portal.properties` into your
+   `portal-ext.properties` file. Then add your Struts action path to the end of
+   the value list. It looks similar to the assignment below, where you'd replace
+   `/custom/path` with your custom Struts action path: 
+
+            auth.public.paths=\
+                /asset/get_categories,\
+                ...
+                /wiki/rss,\
+                /custom/path
+
+7. Restart the portal server and try your new Struts path.
+
+8. Open your custom Struts action's JSP in your browser. The JSP for example
+   hook plugin example-hook2-hook can be accessed from a browser at a custom
+   path URL `http://localhost:8080/c/portal/sample`. 
+
+![Figure 2: The example-hook2-hook example hook plugin's new Struts action JSP displays *Hello World!*.](../../images/struts-action-display.png)
 
 Great! Now you know about the interfaces used for Struts actions. You also 
-learned how to override an exisiting action and create a new action using a 
-hook. Your're ready to strut your stuff! 
+learned how to override an existing action and create a new action using a 
+hook. You're ready to strut your stuff! 
+
+## Related Topics
+
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+
+[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
