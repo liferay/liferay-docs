@@ -1,4 +1,4 @@
-# Preparing Your Project for Liferay Screens
+# Preparing Your Project for Liferay Screens [](id=preparing-your-project-for-liferay-screens)
 
 Regardless of whether you have an Android or iOS project, you need to set it up 
 to use Liferay Screens. This consists of installing Screens in your project and 
@@ -7,7 +7,7 @@ to do this in Android using Gradle, Maven, or manual configuration. This
 tutorial's second section shows you how to use CocoaPods to configure Screens in 
 your iOS project. Let the configuration begin!
 
-## Preparing Your Android Project for Screens
+## Preparing Your Android Project for Screens [](id=preparing-your-android-project-for-screens)
 
 Liferay Screens is released as an [AAR file](http://tools.android.com/tech-docs/new-build-system/aar-format) 
 that is currently hosted in jCenter. The following sections describe how to set 
@@ -15,7 +15,7 @@ up Screens with Gradle and Maven. While instructions are also provided for
 manual setup, it's strongly recommended that you use Maven or Gradle to set and 
 download your dependencies. 
 
-### Using Gradle to Configure Your Project
+### Using Gradle to Configure Your Project [](id=using-gradle-to-configure-your-project)
 
 Use the following steps to configure your project with Gradle:
 
@@ -44,7 +44,7 @@ building with Gradle, add this to your `build.gradle` file:
         ...
     }
 
-### Using Maven to Configure Your Project
+### Using Maven to Configure Your Project [](id=using-maven-to-configure-your-project)
 
 Use the following steps to configure your project with Maven:
 
@@ -84,17 +84,17 @@ repository in your maven settings (`.m2/settings.xml`):
         <activeProfile>bintray</activeProfile>
     </activeProfiles>
 
-### Configuring Your Project Manually
+### Configuring Your Project Manually [](id=configuring-your-project-manually)
 
 If you're using Gradle, you can also use the SDK sources manually:
 
 1. [Download](https://github.com/liferay/liferay-screens/releases) the
-latest version of Liferay Screens for Android.
+   latest version of Liferay Screens for Android.
 
 2. Copy the contents of `Android/library` in a folder next to your project.
 
 3. Configure a `settings.gradle` file in your project with the paths to the 
-library folders:
+   library folders:
 
         include ':core'
         include ':themes'
@@ -111,7 +111,7 @@ You can also configure the `.aar` binary files (in `Android/dist`) as local
 
 Super! Your Android project should now be ready for Liferay Screens. 
 
-## Preparing Your iOS Project for Screens
+## Preparing Your iOS Project for Screens [](id=preparing-your-ios-project-for-screens)
 
 Liferay Screens is released as a plain source code library. As soon as CocoaPods 
 supports Swift libraries ([1](https://github.com/CocoaPods/CocoaPods/pull/2222), [2](https://github.com/CocoaPods/CocoaPods/issues/2272)), 
@@ -129,7 +129,7 @@ and include it in your project. The steps for doing this are shown here:
    in your project's `Liferay-Screens` directory: `Core` and `Themes`.
 3. Drag `Liferay-Screens` from the Finder and drop it into your Xcode project.
 
-![This Xcode project includes Liferay Screens.](../../images/screens-ios-project-setup.png)
+![Figure 1: This Xcode project includes Liferay Screens.](../../images/screens-ios-project-setup.png)
 
 Next, set up [CocoaPods](http://cocoapods.org) for your project if you haven't 
 done so already. Add the dependencies to your `Podfile` and then execute 
@@ -138,14 +138,14 @@ as a template. You should consider using the [CocoaPods for Xcode plugin](https:
 You can install it through the [Alcatraz package manager](http://alcatraz.io/) 
 for Xcode. This way, you can perform these tasks from Xcode.
 
-![The CocoaPods for Xcode plugin.](../../images/screens-ios-xcode-cocoapods.png)
+![Figure 2: The CocoaPods for Xcode plugin.](../../images/screens-ios-xcode-cocoapods.png)
 
 In your project's build settings, you also need to edit the 
 *Objective-C Bridging* Header to include 
 `${SRCROOT}/Liferay-Screens/Core/liferay-screens-bridge.h`. This is shown in 
 the following screenshot:
 
-![Objective-C Bridging Header](../../images/screens-ios-project-header.png)
+![Figure 3: The Objective-C Bridging Header.](../../images/screens-ios-project-header.png)
 
 There's just one more thing to take care of to ensure that your project is ready 
 for Liferay Screens. Create a new property list file called 
@@ -153,12 +153,14 @@ for Liferay Screens. Create a new property list file called
 for your Liferay Portal instance. Use [`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/tree/master/ios/Library/Core/liferay-server-context-sample.plist) 
 as a template. This screenshot shows such a file being browsed:
 
-![liferay-context.plist file](../../images/screens-ios-liferay-context.png)
+![Figure 4: The `liferay-context.plist` file.](../../images/screens-ios-liferay-context.png)
 
 Great! Your iOS project should now be ready for Liferay Screens. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Architecture of Liferay Screens](https://www.liferay.com/)
+[Using Screenlets](/tutorials/-/knowledge_base/6-2/using-screenlets)
 
-[Preparing Your Project for Liferay Screens](https://www.liferay.com/)
+[Using Views and Themes](/tutorials/-/knowledge_base/6-2/using-views-and-themes)
+
+[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)

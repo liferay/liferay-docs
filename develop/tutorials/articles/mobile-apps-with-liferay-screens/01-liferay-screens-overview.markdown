@@ -1,13 +1,12 @@
-# Liferay Screens Overview
+# Liferay Screens Overview [](id=liferay-screens-overview)
 
 Before using Screens, you should understand more about how it works. Screens has 
 separate implementations for Android and iOS. Even so, care has been taken to 
 ensure that the same features are availble on both platforms. This tutorial 
 describes those features. The basic implementation differences between Screens 
 for Android and iOS are also presented. 
-<!-- Replace links with links to other Screens tutorials, once they exist -->
 
-## Screenlets
+## Screenlets [](id=screenlets)
 
 In Liferay Screens, a *screenlet* is a visual component that is connected to 
 Liferay Portal's functionality. Screenlets use a specific UI to handle input 
@@ -15,15 +14,15 @@ from the user and present information from the portal. This enables your app to
 receive user input, handle communication with the server, and present the user 
 with the results. Each screenlet is tied to one or more of 
 [Liferay's remote services](/tutorials/-/knowledge_base/6-2/invoking-remote-services). 
-Since [Screens' architecture](https://www.liferay.com/) is designed to isolate 
-the screenlets, using Screens is a great way to construct your app in a modular 
-fashion. When the screenlet needs to show information to the user, it relies on 
-a *view* or a *theme*. Views are exclusive to Screens on Android, while themes 
-are exclusive to Screens on iOS. Views and themes serve the same purpose on 
-their respective platforms. They let you implement a different look and feel for 
-your app, without changing its core functionality. What's more, themes and views 
-are fully pluggable and can be contributed by third parties. This gives you a 
-great deal of flexibility when styling your UI.
+Since [Screens' architecture](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens) 
+is designed to isolate the screenlets, using Screens is a great way to construct 
+your app in a modular fashion. When the screenlet needs to show information to 
+the user, it relies on a *view* or a *theme*. Views are exclusive to Screens on 
+Android, while themes are exclusive to Screens on iOS. Views and themes serve 
+the same purpose on their respective platforms. They let you implement a 
+different look and feel for your app, without changing its core functionality. 
+What's more, themes and views are fully pluggable and can be contributed by 
+third parties. This gives you a great deal of flexibility when styling your UI.
 
 The same screenlets are available in Liferay Screens for Android and iOS. 
 Screenlets are grouped in modules based on internal dependencies. Each module is 
@@ -61,7 +60,7 @@ entire module. These include:
 - `WebContentDisplayScreenlet`: Shows the HTML of web content. This screenlet 
   uses the features avaiable in [Web Content Management](/portal/-/knowledge_base/6-2/web-content-management). 
 
-## Liferay Screens for Android
+## Liferay Screens for Android [](id=liferay-screens-for-android)
 
 Liferay Screens for Android includes the component library (the screenlets) and 
 a sample project. Screens for Android also uses Android's standard set of 
@@ -88,13 +87,14 @@ use to change the screenlets' UI and UX:
 - *Default views*: The standard views used when you add a screenlet in your 
 app's activities or fragments and don't set the `liferay:layoutId` attribute. 
 The Default views can be used as parent views for any of your custom views. 
-Refer to the [Architecture Guide](https://www.liferay.com/) 
+Refer to the tutorial [Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens) 
 for more details.
 - *Material views*: The sample views intended to demonstrate how to develop 
-your own full view set from scratch. Refer to the [Views Guide](https://www.liferay.com/) 
+your own full view set from scratch. Refer to the tutorial 
+[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes) 
 for instructions on creating your own view set. 
 
-## Liferay Screens for iOS
+## Liferay Screens for iOS [](id=liferay-screens-for-ios)
 
 Liferay Screens for iOS includes the component library (the screenlets) and two 
 sample projects. One sample project uses Screens with Objective-C. The second 
@@ -119,14 +119,14 @@ change the screenlets' UI and UX:
 
 - *Default*: The standard theme that is used when you insert any screenlet in 
 your app's UI. The Default theme can be used as the parent theme for any of your 
-custom themes. Please refer to the [Architecture Guide](ios/Documentation/architecture.md#theme-layer) 
-for more details on this.
+custom themes. Refer to the tutorial [Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens) 
+for more details. 
 - *Flat7*: A sample theme intended to demonstrate how to develop your own full 
-theme from scratch. Please refer to the [Theme Guide](ios/Documentation/themes.md) 
-for instructions on creating your own theme.
+theme from scratch. Refer to the tutorial [Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes) 
+for instructions on creating your own view set. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Architecture of Liferay Screens](https://www.liferay.com/)
+[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)
 
-[Preparing Your Project for Liferay Screens](https://www.liferay.com/)
+[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes)

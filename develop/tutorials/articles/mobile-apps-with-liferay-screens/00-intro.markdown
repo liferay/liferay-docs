@@ -1,4 +1,4 @@
-# Mobile Apps with Liferay Screens
+# Mobile Apps with Liferay Screens [](id=mobile-apps-with-liferay-screens)
 
 Screens is Liferay's effort to speed up and simplify the development of native 
 apps for Android and iOS devices. Liferay Screens provides a common 
@@ -12,8 +12,8 @@ However, Mobile SDK is a low-level layer on top of the Liferay JSON API. This
 means that you need to know what [Liferay's remote services](/tutorials/-/knowledge_base/6-2/invoking-remote-services) 
 are and how to make specific calls to them. If you already know some of those 
 Liferay concepts, then you may want to take a look at the 
-[Mobile SDK documentation](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/mobile) 
-to check whether it's convenient for your needs.
+[Mobile SDK documentation](/tutorials/-/knowledge_base/6-2/mobile) to check 
+whether it's convenient for your needs. 
 
 ![An app using Liferay Screens for its sign up screen.](../../images/screens-phone-intro.png)
 

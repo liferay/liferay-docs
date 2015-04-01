@@ -1,4 +1,4 @@
-# Architecture of Liferay Screens
+# Architecture of Liferay Screens [](id=architecture-of-liferay-screens)
 
 Liferay Screens separates presentation and business-logic code, following the 
 ideas of the [Model View Presenter](http://en.wikipedia.org/wiki/Model-view-presenter), 
@@ -16,7 +16,7 @@ iOS. Each begins with an overview of the high level components that make up the
 system, such as the core, screenlets, views (Android), and themes (iOS). These 
 components are then described in detail.
 
-## Architecture of Liferay Screens for Android
+## Architecture of Liferay Screens for Android [](id=architecture-of-liferay-screens-for-android)
 
 Liferay Screens for Android is composed of the core, screenlet, and view layers. 
 Interactors, while technically part of the core layer, are also an important 
@@ -24,7 +24,7 @@ component type that facilitate communication with the screenlet layer and the
 Liferay Mobile SDK. A diagram of Screens' high-level architecture is shown here, 
 followed by a brief description of each item on the diagram.
 
-![The high level components of Liferay Screens for Android.](../../images/screens-android-architecture-01.png)
+![Figure 1: The high level components of Liferay Screens for Android.](../../images/screens-android-architecture-01.png)
 
 - *Core*: Includes all the base classes needed to develop other components. The 
   core is defined as a micro-framework that lets developers write their own 
@@ -48,14 +48,14 @@ followed by a brief description of each item on the diagram.
 
 The next section describes the core layer in detail.
 
-### The Core Layer of Screens for Android
+### The Core Layer of Screens for Android [](id=the-core-layer-of-screens-for-android)
 
 The core layer is the micro-framework that lets developers write their own 
 screenlets in a structured and isolated way. This is possible because each 
 screenlet has a clear communication API and purpose. Therefore, even components
 developed by different people share a common structure.
 
-![The core layer of Liferay Screens for Android.](../../images/screens-android-architecture-02.png)
+![Figure 2: The core layer of Liferay Screens for Android.](../../images/screens-android-architecture-02.png)
 
 - *Interactor*: The base class for all interactions and use cases supported by 
   the screenlet. These actions can range in complexity from simple algorithms to 
@@ -112,14 +112,14 @@ developed by different people share a common structure.
 Now that you know the details of the core layer, you're ready to learn the 
 screenlet layer's details.
 
-### The Screenlet Layer of Screens for Android
+### The Screenlet Layer of Screens for Android [](id=the-screenlet-layer-of-screens-for-android)
 
 The screenlet layer contains the screenlets available in Liferay Screens for
 Android. The following diagram shows the screenlet layer in relation to the 
 core, view, and interactor components. The screenlet classes detailed in the
 diagram are explained in this section.
 
-![The screenlet layer in relation to the other components of Liferay Screens for Android.](../../images/screens-android-architecture-03.png)
+![Figure 3: The screenlet layer in relation to the other components of Liferay Screens for Android.](../../images/screens-android-architecture-03.png)
 
 - *MyScreenletViewModel*: An interface that defines the attributes shown in the
   UI. It typically includes all the input and output values presented to the 
@@ -179,16 +179,16 @@ diagram are explained in this section.
         
         </com.your.package.MyScreenletView>
 
-For more details, refer the tutorial [Creating Screenlets](http://www.liferay.com/). 
+For more details, refer the tutorial [Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets). 
 Next, the view layer's details are described. 
 
-### The View Layer of Screens for Android
+### The View Layer of Screens for Android [](id=the-view-layer-of-screens-for-android)
 
 The view layer lets developers use more than one look and feel for any 
 screenlet. Screenlets have the `liferay:layoutId` attribute, which is used to
 determine the view responsible for rendering the UI.
 
-![The view layer of Liferay Screens for Android.](../../images/screens-android-architecture-04.png)
+![Figure 4: The view layer of Liferay Screens for Android.](../../images/screens-android-architecture-04.png)
 
 There are several different view types:
 
@@ -221,16 +221,15 @@ There are several different view types:
   new behavior in the view, such as displaying new components in the UI or
   otherwise introducing new functionality. In the diagram, the Extended view
   extends the Full one, but provides a specific view class for the screenlet
-  (extending from the corresponding parent's view class). For more information,
-  see the guide [How to Create Your Own Theme](http://www.liferay.com/).
+  (extending from the corresponding parent's view class).
 
-For more details, see the tutorial [Creating Views and Themes](http://www.liferay.com/). 
+For more information, see the tutorial [Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes). 
 
 Great! Now you know how Liferay Screens for Android is composed. However, 
 there's one other detail that you should know before moving on: how screenlets 
 interact with the Android lifecycle. 
 
-### Android Lifecycle and Screenlets
+### Android Lifecycle and Screenlets [](id=android-lifecycle-and-screenlets)
 
 Liferay Screens automatically saves and restores the screenlets' state by using
 the Android SDK methods `onSaveInstanceState` and `onRestoreInstanceState`. Each
@@ -250,7 +249,7 @@ activity's `onResume` method. This ensures that the state is restored before
 your code and any executing task is able to deliver the result to their source
 interactor and screenlet.
 
-## Architecture of Liferay Screens for iOS
+## Architecture of Liferay Screens for iOS [](id=architecture-of-liferay-screens-for-ios)
 
 Liferay Screens for iOS is composed of the core, screenlet, and theme layers. 
 Server operations, while technically part of the core layer, allow interaction 
@@ -258,7 +257,7 @@ with local and remote data sources. They also leverage Liferay operations to
 call the Liferay Mobile SDK. A diagram of Screens' high-level architecture is 
 shown here, followed by a description of each item on the diagram.
 
-![The high level components of Liferay Screens for iOS.](../../images/screens-ios-architecture-01.png)
+![Figure 5: The high level components of Liferay Screens for iOS.](../../images/screens-ios-architecture-01.png)
 
 - *Core*: This is the component that includes all the base classes needed to
   develop other components. It can be defined as a micro-framework that allows
@@ -285,14 +284,14 @@ shown here, followed by a description of each item on the diagram.
 
 The next section describes the core layer in detail.
 
-### The Core Layer of Screens for iOS
+### The Core Layer of Screens for iOS [](id=the-core-layer-of-screens-for-ios)
 
 The core layer is the micro-framework that lets developers write their own 
 components in a structured and isolated way. This is due to the fact that each 
 component has a clear purpose and communication API. Therefore, even components 
 developed by different people share a common structure. 
 
-![The core layer of Liferay Screens for iOS.](../../images/screens-ios-architecture-02.png)
+![Figure 6: The core layer of Liferay Screens for iOS.](../../images/screens-ios-architecture-02.png)
 
 - *ServerOperation*: This is the base class for all operations started by
   screenlets. These operations retrieve data asynchronously. Despite the name
@@ -324,20 +323,20 @@ developed by different people share a common structure.
 Now that you know the details of the core layer, you're ready to learn the 
 screenlet layer's details.
 
-### The Screenlet Layer of Screens for iOS
+### The Screenlet Layer of Screens for iOS [](id=the-screenlet-layer-of-screens-for-ios)
 
 The screenlet layer contains the screenlets available in Liferay Screens for
 iOS. The following diagram shows the screenlet layer in relation to the core,
 theme, and server operation components. The screenlet classes detailed in the
 diagram are explained in this section.
 
-![The screenlet layer in relation to the other components of Liferay Screens for iOS.](../../images/screens-ios-architecture-03.png)
+![Figure 7: The screenlet layer in relation to the other components of Liferay Screens for iOS.](../../images/screens-ios-architecture-03.png)
 
 - *MyScreenletData*: This is an interface that defines the attributes of the
   screenlet. It typically includes the input values for the `LoginScreenlet`, 
   such as the user name and password. The operation can read and validate these 
   values to configure the operation. The screenlet can change these values based 
-  on the operation's result and any default values.
+  on the operation's result and any default values. 
 
 - *MyScreenlet*: This is the class that represents the screenlet component. It
   includes: 
@@ -350,14 +349,14 @@ diagram are explained in this section.
       public methods like `loadMyData()`, which is intended to be called by a 
       developer, or UI events received on `onUserAction()`. 
     - A [delegate object](https://developer.apple.com/library/ios/documentation/general/conceptual/DevPedia-CocoaCore/Delegation.html)
-      to be called when events occur. this is optional, but recommended.
+      to be called when events occur. this is optional, but recommended. 
 
 - *MyScreenletOperation*: This is related to the screenlet, but is located in
   the server operations layer and has one or more server operations. If the 
   server operation is a back-end call, then there's typically just a single 
   request. Each server operation is responsible for retrieving a set of related 
   values. The results are stored in a `result` object that can be read by the 
-  screenlet when it's notified.
+  screenlet when it's notified. 
 
 - *MyScreenletView_themeX*: This class belongs to one specific theme. In the
   diagram this theme is `ThemeX`. The class renders the UI of the screenlet 
@@ -366,24 +365,24 @@ diagram are explained in this section.
   occurs in the `xib` file, it's received by `BaseScreenletView` and then passed 
   to the screenlet class using the `onUserAction()` method. To identify 
   different events, the `restorationIdentifier` property of the component is 
-  passed to the `onUserAction()` method.
+  passed to the `onUserAction()` method. 
 
 - *MyScreenletView_themeX.xib*: This is the `xib` file with the components used
   to render the view. Note that the name of this class is very important. By
   convention, the `xib` file for a screenlet `FooScreenlet` and a theme 
-  `BarTheme` must be called `FooScreenlet_barTheme.xib`.
+  `BarTheme` must be called `FooScreenlet_barTheme.xib`. 
 
-For more details, refer to the tutorial [Creating Screenlets](http://www.liferay.com/). 
-Next, the theme layer of Screens for iOS is described.
+For more details, refer to the tutorial [Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets). 
+Next, the theme layer of Screens for iOS is described. 
 
-### The Theme Layer of Screens for iOS
+### The Theme Layer of Screens for iOS [](id=the-theme-layer-of-screens-for-ios)
 
 The theme layer lets developers use more than one theme for any screenlet.
 Screenlets have a property called `themeName`, which is used to determine the
 theme to load. Depending on your requirements, a single theme can be used to
-implement a look and feel for a limited set of screenlets.
+implement a look and feel for a limited set of screenlets. 
 
-![The theme layer of Liferay Screens for iOS](../../images/screens-ios-architecture-04.png)
+![Figure 8: The theme layer of Liferay Screens for iOS](../../images/screens-ios-architecture-04.png)
 
 - *Default theme*: This is a mandatory theme that is supplied by Liferay. It's
   used by default when the screenlet's `themeName` isn't specified or is 
@@ -418,14 +417,14 @@ implement a look and feel for a limited set of screenlets.
   theme is a good sample of an Extended theme. In this case, it's based on the
   Default theme.
 
-For more details, see the tutorial [Creating Views and Themes](http://www.liferay.com/).
+For more details, see the tutorial [Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Using Screenlets](http://www.liferay.com/)
+[Using Screenlets](/tutorials/-/knowledge_base/6-2/using-screenlets)
 
-[Using Views and Themes](http://www.liferay.com/)
+[Using Views and Themes](/tutorials/-/knowledge_base/6-2/using-views-and-themes)
 
-[Creating Screenlets](http://www.liferay.com/)
+[Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets)
 
-[Creating Views and Themes](http://www.liferay.com/)
+[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes)

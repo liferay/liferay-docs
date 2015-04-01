@@ -1,19 +1,19 @@
-# Creating Views and Themes
+# Creating Views and Themes [](id=creating-views-and-themes)
 
 Liferay Screens includes several built-in views and themes that let you 
 customize your app's look and feel. You can extend this even further by creating 
 your own views and themes. Recall that views are exclusive to Screens for 
 Android, while themes are exclusive to Screens for iOS. Although named 
 differently, both serve the same function in their respective Screens 
-implementation.
+implementation. 
 
 This tutorial shows you how to create views and themes, covering view creation 
 first. Before proceeding, you may want to read the tutorial 
-[Architecture of Liferay Screens](http://www.liferay.com/) to understand the 
-concepts behind views and themes. It may also be useful to read the tutorial 
-[Creating Screenlets](http://www.liferay.com/). 
+[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens) 
+to understand the concepts behind views and themes. It may also be useful to 
+read the tutorial [Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets). 
 
-## Creating a View in Liferay Screens for Android
+## Creating a View in Liferay Screens for Android [](id=creating-a-view-in-liferay-screens-for-android)
 
 The first step in creating a new view is deciding what kind of view to create.
 There are three basic view types:
@@ -23,11 +23,11 @@ There are three basic view types:
 - Extended view
 
 For a detailed explanation of these view types, see the 
-[section on views in the Screens architecture tutorial](architecture.md#view-layer).
+[section on views in the Screens architecture tutorial](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens#the-view-layer-of-screens-for-android). 
 The following sections show you how to create each type of view, using 
-`LoginScreenlet` as an example. You'll begin by creating a new Full view.
+`LoginScreenlet` as an example. You'll begin by creating a new Full view. 
 
-### Full View
+### Full View [](id=full-view)
 
 By using different components and input data, a Full view can present a 
 completely different layout. The example here presents a single `EditText` 
@@ -35,8 +35,8 @@ component for the user name. For the password, [`Secure.ANDROID_ID`](http://deve
 is used. 
 
 1. Create a new layout called `login_full.xml`. This is where the new UI is 
-    built. A good way to start is to duplicate `login_default.xml` and use it as 
-    a template. Use a custom view class as the root view: 
+   built. A good way to start is to duplicate `login_default.xml` and use it as 
+   a template. Use a custom view class as the root view: 
 
         <?xml version="1.0" encoding="utf-8"?>
         <com.your.package.LoginFullView
@@ -57,20 +57,20 @@ is used.
         </com.your.package.LoginFullView>
 
 2. Create the new custom view class used in the layout XML. In this example, 
-    this is `LoginFullView`. As before, you can use the default `LoginView` 
-    class as a template. In the new class, first get a reference to the 
-    components. The components in this example are the Add button and its 
-    listener. The class must also implement the `LoginViewModel` interface, with 
-    its getter and setter methods. In this case, the `getPassword()` method 
-    returns the `ANDROID_ID`.
+   this is `LoginFullView`. As before, you can use the default `LoginView` 
+   class as a template. In the new class, first get a reference to the 
+   components. The components in this example are the Add button and its 
+   listener. The class must also implement the `LoginViewModel` interface, with 
+   its getter and setter methods. In this case, the `getPassword()` method 
+   returns the `ANDROID_ID`.
 
 3. Insert the `LoginScreenlet` in any of your activities or fragments, using 
-    `@layout/login_full` as the `liferay:layoutId` attribute's value.
+   `@layout/login_full` as the `liferay:layoutId` attribute's value.
 
 Sweetness! Now you know how to create a Full view. Next, you're shown how to 
 create a Child view. 
 
-### Child View
+### Child View [](id=child-view)
 
 Child views inherit another view's components, but use a different layout to 
 present them. As such, the changes in a Child view are only visual. For example, 
@@ -79,11 +79,11 @@ completely different layout. The view is oriented horizontally instead of
 vertically. The following steps show how to create a Child view.
 
 1. Create a new layout file called `login_horizontal.xml`. This is where the new 
-    UI is built. A good way to start is to duplicate the parent layout's XML and 
-    use it as a template. The child components such as the `EditText` fields, 
-    `Button` elements, and so on must use the same identifiers as the parent 
-    view. You must also use the same custom view class as the parent view. The 
-    example `login_horizontal.xml` is shown here: 
+   UI is built. A good way to start is to duplicate the parent layout's XML and 
+   use it as a template. The child components such as the `EditText` fields, 
+   `Button` elements, and so on must use the same identifiers as the parent 
+   view. You must also use the same custom view class as the parent view. The 
+   example `login_horizontal.xml` is shown here: 
 
         <?xml version="1.0" encoding="utf-8"?>
         <com.liferay.mobile.screens.themes.default.auth.login.LoginView
@@ -113,12 +113,12 @@ vertically. The following steps show how to create a Child view.
         </com.liferay.mobile.screens.themes.auth.login.LoginScreenletView>
 
 2. Insert the `LoginScreenlet` in any of your activities or fragments, and use 
-    `@layout/login_horizontal` as the `liferay:layoutId` attribute's value.
+   `@layout/login_horizontal` as the `liferay:layoutId` attribute's value.
 
 Stupdendous! Now you know how to create Child views. Creating an extended view 
 is shown next. 
 
-### Extended View
+### Extended View [](id=extended-view)
 
 Extended views inherit another view's components and layout, letting you add new 
 functionality. The example Extended view here presents the same components as 
@@ -126,9 +126,9 @@ the Default view, but adds new functionality to the screenlet: the password
 strength is computed before sending the request.
 
 1. Create a new layout file called `login_password.xml`. However, there's no 
-    need to actually build a new UI. All you need to do is change the parent's 
-    class to a new custom class. To use the same UI, use the `<include>` tag to 
-    import the parent's layout:
+   need to actually build a new UI. All you need to do is change the parent's 
+   class to a new custom class. To use the same UI, use the `<include>` tag to 
+   import the parent's layout:
 
         <?xml version="1.0" encoding="utf-8"?>
         <com.your.package.LoginCheckPasswordView
@@ -140,10 +140,10 @@ strength is computed before sending the request.
         </com.your.package.LoginCheckPasswordView>
 
 2. Create the new view class `LoginCheckPasswordView` using the default 
-    `LoginView` parent class. Override the `onClick` method and perform the 
-    password strength computation in it. If the password is strong enough, call 
-    `super`. Otherwise, show a message dialog to the user that tells them their 
-    password isn't strong enough.
+   `LoginView` parent class. Override the `onClick` method and perform the 
+   password strength computation in it. If the password is strong enough, call 
+   `super`. Otherwise, show a message dialog to the user that tells them their 
+   password isn't strong enough.
 
         public class LoginCheckPasswordView extends LoginView {
 	
@@ -164,12 +164,12 @@ strength is computed before sending the request.
         }
 
 3. Insert the `LoginScreenlet` in any of your activities or fragments and use 
-    `@layout/login_password` as the `liferay:layoutId` attribute's value.
+   `@layout/login_password` as the `liferay:layoutId` attribute's value.
 
 Awesome! Now you know how to create all three view types in Liferay Screens for 
 Android. Next, you'll learn how to package views for distribution.
 
-### Packaging Your Views
+### Packaging Your Views [](id=packaging-your-views)
 
 Views are typically created as source code inside your app's project. If you
 want to distribute your views or reuse them in different projects, however, you
@@ -178,7 +178,7 @@ dependency. To do this, use the [viewsets](https://github.com/liferay/liferay-sc
 subproject as a template using a similar [`build.gradle`](https://github.com/liferay/liferay-screens/blob/master/android/library/viewsets/build.gradle)
 file.
 
-## Creating a Theme in Liferay Screens for iOS
+## Creating a Theme in Liferay Screens for iOS [](id=creating-a-theme-in-liferay-screens-for-ios)
 
 The first step in creating a new theme is deciding what kind of theme to create. 
 There are three theme types:
@@ -188,11 +188,11 @@ There are three theme types:
 - Extended theme
 
 For a detailed explanation of these theme types, see the 
-[section on themes in the Screens architecture tutorial](architecture.md#view-layer).
+[section on themes in the Screens architecture tutorial](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens#the-theme-layer-of-screens-for-ios).
 The following sections show you how to create each type of view, using 
 `LoginScreenlet` as an example. You'll begin by creating a new Full view.
 
-### Full Theme
+### Full Theme [](id=full-theme)
 
 A Full theme can present a completely different layout, using different 
 components and input data. The example here presents just a single `UITextField` 
@@ -200,33 +200,33 @@ for the user name. The [UDID](http://www.idownloadblog.com/2010/12/21/iphone-udi
 is used for the password. 
 
 1. Create a new `xib` called `LoginScreenlet_full.xib`. You'll build your new UI 
-    here as usual with Interface Builder. A good way to start is to duplicate 
-    `LoginScreenlet_default.xib` and use it as a template. Insert the text field 
-    for the user name and add a *Sign In* button with the same 
-    `restorationIdentifier` as the Default theme's button. 
+   here as usual with Interface Builder. A good way to start is to duplicate 
+   `LoginScreenlet_default.xib` and use it as a template. Insert the text field 
+   for the user name and add a *Sign In* button with the same 
+   `restorationIdentifier` as the Default theme's button. 
 
-    ![New xib for full theme](../../images/screens-ios-xcode-full-theme.png)
+    ![Figure 1: New xib for full theme](../../images/screens-ios-xcode-full-theme.png)
 
 2. Create a new view class called `LoginScreenletView_full`. As before, you can 
-    duplicate the `LoginScreenletView_default` class and use it as a template. 
-    In this class, add all `@IBOutlet` properties or `@IBAction` methods you 
-    need to bind your UI components. This class must inherit the 
-    `BaseScreenletView` class and conform to the `LoginScreenletData` protocol, 
-    implementing the corresponding getters and setters. In this case, the 
-    `password` getter returns the UDID.
+   duplicate the `LoginScreenletView_default` class and use it as a template. 
+   In this class, add all `@IBOutlet` properties or `@IBAction` methods you 
+   need to bind your UI components. This class must inherit the 
+   `BaseScreenletView` class and conform to the `LoginScreenletData` protocol, 
+   implementing the corresponding getters and setters. In this case, the 
+   `password` getter returns the UDID.
 
 3. Set `LoginScreenletView_full` as the custom class of your 
-    `LoginScreenlet_full.xib` file and bind your `@IBOutlet` and `@IBAction` to 
-    your class.
+   `LoginScreenlet_full.xib` file and bind your `@IBOutlet` and `@IBAction` to 
+   your class.
 
 4. Install the new theme, insert the `LoginScreenlet` in any of your view 
-    controllers, and use the `full` value as the `themeName` screenlet's 
-    property. Your new look and feel is shown in Interface Builder.
+   controllers, and use the `full` value as the `themeName` screenlet's 
+   property. Your new look and feel is shown in Interface Builder.
 
 Super! Now that you know how to create a Full theme, you'll learn to create a 
 Child theme.
 
-### Child Theme
+### Child Theme [](id=child-theme)
 
 A Child theme inherits only the look and feel of its parent. It doesn't inherit 
 any code. The example theme here presents the same components as the Default 
@@ -234,24 +234,24 @@ theme, but is adjusted to a larger resolution. This makes it appropriate for
 iOS devices such as the iPad, iPhone 6, and iPhone 6 Plus.
 
 1. Create a new `xib` called `LoginScreenlet_large.xib`. You'll build your new 
-    UI here as usual with Interface Builder. A good place to start is to 
-    duplicate `LoginScreenlet_default.xib` and use it as a template for your new 
-    `xib`.
+   UI here as usual with Interface Builder. A good place to start is to 
+   duplicate `LoginScreenlet_default.xib` and use it as a template for your new 
+   `xib`.
 
-    ![New xib for child theme](../../images/screens-ios-xcode-child-theme.png)
+    ![Figure 2: New xib for child theme](../../images/screens-ios-xcode-child-theme.png)
 
 2. Change the position, size, or other properties of the parent components. 
-    However, be sure not to change the custom class, outlet connection, or 
-    `restorationIdentifier`.
+   However, be sure not to change the custom class, outlet connection, or 
+   `restorationIdentifier`.
 
 3. Install your new theme, insert the `LoginScreenlet` in any of your view 
-    controllers, and use `large` as the value of the screenlet's `themeName` 
-    property. Your new look and feel is shown in Interface Builder.
+   controllers, and use `large` as the value of the screenlet's `themeName` 
+   property. Your new look and feel is shown in Interface Builder.
     
 Fantastic! Last but certainly not least, you'll learn how to create an Extended 
 theme.
 
-### Extended Theme
+### Extended Theme [](id=extended-theme)
 
 An Extended theme inherits the functionality and UI of its parent. This lets you
 add your own functionality and UI on top of it. For an example of an Extended 
@@ -262,34 +262,36 @@ component is also introduced to configure whether or not the password is shown
 when typed by the user.
 
 1. Create a new `xib` called `LoginScreenlet_ext.xib`. You'll build your new UI 
-    here as usual with Interface Builder. A good place to start is to duplicate 
-    `LoginScreenlet_default.xib` and use it as a template for your new `xib`. 
-    Add a new `UISwitch` component to configure the password presentation.
+   here as usual with Interface Builder. A good place to start is to duplicate 
+   `LoginScreenlet_default.xib` and use it as a template for your new `xib`. 
+   Add a new `UISwitch` component to configure the password presentation.
 
-    ![New xib for extended theme](../../images/screens-ios-xcode-ext-theme.png)
+    ![Figure 3: New xib for extended theme](../../images/screens-ios-xcode-ext-theme.png)
 
 2. Create a new view class called `LoginScreenletView_ext` using 
-    `LoginScreenletView_default` as the parent class. To set new translations, 
-    you can override the `onSetTranslations` method. For other customizations, 
-    consider overriding other methods of the parent class, or add new delegates 
-    to the class. Add new `@IBOutlet` or `@IBAction` for the new `IBSwitch` 
-    component.
+   `LoginScreenletView_default` as the parent class. To set new translations, 
+   you can override the `onSetTranslations` method. For other customizations, 
+   consider overriding other methods of the parent class, or add new delegates 
+   to the class. Add new `@IBOutlet` or `@IBAction` for the new `IBSwitch` 
+   component.
 
 3. Set `LoginScreenletView_full` as the custom class of your 
-    `LoginScreenlet_ext.xib` file and bind your new `@IBOutlet` and `@IBAction` 
-    to your class.
+   `LoginScreenlet_ext.xib` file and bind your new `@IBOutlet` and `@IBAction` 
+   to your class.
 
 4. Install the new theme, insert `LoginScreenlet` in any of your view 
-    controllers, and use `ext` as the value for the screenlet's `themeName` 
-    property. Your new look and feel is shown in Interface Builder.
+   controllers, and use `ext` as the value for the screenlet's `themeName` 
+   property. Your new look and feel is shown in Interface Builder.
     
 Well done! You now know how to create an Extended theme in Screens for iOS. 
 You're the master of the themes!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Architecture of Liferay Screens](http://www.liferay.com/)
+[Using Views and Themes](/tutorials/-/knowledge_base/6-2/using-views-and-themes)
 
-[Using Views and Themes](http://www.liferay.com/)
+[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)
 
-[Creating Screenlets](http://www.liferay.com/)
+[Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets)
+
+[Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
