@@ -323,11 +323,6 @@ before publishing.
 **Permissions** allows you to include permissions for the pages and portlets
 when the changes are published.
 
-Furthermore, you're given the Current and Previous and Scheduled tabs. 
-The Current and Previous tab lets you view past publications along with their 
-authors and create/completion dates. The Scheduled tab lets you view what 
-publication processes are scheduled for publishing.
-
 Click on *Mark as Ready for Publication*, then click *Publish to Live* &rarr;
 *Now*, and select *Publish* to publish your Bookmarks portlet to the live site.
 
@@ -364,6 +359,8 @@ the latest approved version of web content articles. If you'd like to change the
 default behavior, add the following line to your `portal-ext.properties` file:
 
     journal.publish.version.history.by.default=false
+
+<!-- Insert date range docs here? --Cody -->
 
 One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
