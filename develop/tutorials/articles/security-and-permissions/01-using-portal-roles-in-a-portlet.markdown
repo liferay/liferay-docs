@@ -3,8 +3,8 @@
 "A role, a role, my portal for a role!" Don't worry, using portal roles in your
 portlets isn't too difficult. Roles in Liferay Portal are the primary means for
 granting or restricting access to content. When a role is assigned to a user,
-the user is granted all of the permissions that have been defined for the role.
-Read on to learn how to use portal roles in your application!
+the user is granted the permissions that have been defined for the role. Read
+on to learn how to use portal roles in your application!
 
 ## JSR 286 Portlet Security
 
@@ -104,7 +104,7 @@ $$$
 
 ## Mapping Portlet Roles to Portal Roles
 
-To map the roles to the portal, you'll have to use the
+To map the roles to Liferay Portal, you'll have to use the
 `docroot/WEB-INF/liferay-portlet.xml` Liferay-specific configuration file. For
 an example, see the mapping defined in the Guestbook project's
 `liferay-portlet.xml` file. Many Liferay projects use identical role mappings.
@@ -145,9 +145,9 @@ the `power-user` role:
 
 By default, Liferay doesn't use the `isUserInRole()` method in any built-in
 portlets. Liferay uses its own permission system directly to achieve more
-fine-grained security. We recommend using Liferay's permission system,
-because it offers a much more robust way of tailoring your application's
-permissions. 
+fine-grained security. If you don't intend on deploying your portlets to other
+portal servers, we recommend using Liferay's permission system, because it
+offers a much more robust way of tailoring your application's permissions. 
 
 ## Related Topics
 
