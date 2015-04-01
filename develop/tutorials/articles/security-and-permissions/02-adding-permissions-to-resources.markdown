@@ -12,23 +12,22 @@ system and how add permissions to your application.
 
 ## Liferay's Permission System 
 
-Liferay's permission system uses a very flexible mechanism that defines the
-actions that a given user can perform within the general context of the portal
-or within the context of a specific portlet. Portal and portlet developers break
-down the operations which can be performed within the portal or portlet into
-distinct *actions*. The act of granting the ability to perform a certain action
-to a specific role is the act of granting a *permission*. In Liferay,
-permissions are not granted to directly to users. Instead, permissions are
-granted to roles. Roles, in turn, can be assigned to specific users, sites,
-organizations, or user groups.
+Liferay's permission system uses a flexible mechanism that defines the actions
+that a given user can perform within the context of the portal or a specific
+portlet. Portal and portlet developers break down the operations that can be
+performed in the portal or portlet into distinct *actions*. The act of granting
+the ability to perform an action to a specific role is the act of granting a
+*permission*. In Liferay, permissions are not granted to directly to users.
+Instead, permissions are granted to roles. Roles, in turn, can be assigned to
+specific users, sites, organizations, or user groups.
 
 Developers need to define the different types of operations that are required to
 suit the business logic of their applications. They don't need to worry about
 which users will receive which permissions. Once the actions have been
 determined and configured, portal administrators can grant permissions to
 perform those actions to users, sites, organizations, or user groups by
-assigning roles. Administrators can either use the portal's administration tools
-to grant permissions to roles or they can use the permissions UIs of individual
+assigning roles. Administrators can use the portal's administration tools to
+grant permissions to roles or they can use the permissions UIs of individual
 portlets.
 
 In this article, you'll learn how a Liferay application developer can use
@@ -37,30 +36,31 @@ of control over permissions that she has over the default Liferay applications.
 
 Before proceeding, make sure you understand these critical terms: 
 
-- *Action*: An operation that can be performed by a portal user. E.g., actions
-  that be performed on the Guestbook portlet include `ADD_TO_PAGE`,
-  `CONFIGURATION`, and `VIEW`. Actions that can be performed on a Guestbook
-  entity include `ADD_ENTRY`, `DELETE`, `PERMISSIONS`, `UPDATE`, and `VIEW`. 
+**Action**: An operation that can be performed by a portal user. For example,
+actions that be performed on the Guestbook portlet include `ADD_TO_PAGE`,
+`CONFIGURATION`, and `VIEW`. Actions that can be performed on a Guestbook
+entity include `ADD_ENTRY`, `DELETE`, `PERMISSIONS`, `UPDATE`, and `VIEW`. 
 
-- *Resource*: A generic representation of any portlet or entity in the portal on
-  which an action can be performed. Resources are used for permission checking.
-  E.g., resources within a Liferay portal instance could include the RSS portlet
-  with instance ID `hF5f`, a globally scoped Wiki page, a Guestbook entry of the
-  site X, and the Message Boards post with ID `5052`.
+**Resource**: A generic representation of any portlet or entity in the portal
+on which an action can be performed. Resources are used for permission
+checking.  For example, resources within a Liferay portal instance could include
+the RSS portlet with instance ID `hF5f`, a globally scoped Wiki page, a
+Guestbook entry of the site X, and the Message Boards post with ID `5052`.
 
-- *Permission*: An action that can be performed on a resource. In Liferay's
-  database, resources and actions are saved in pairs. (Each entry in the
-  `ResourceAction` table contains both the name of a portlet or entity and the
-  name of an action.) For example, the `VIEW` action with respect to *viewing
-  the Guestbook portlet* is associated with the `guestbook_WAR_guestbookportlet`
-  portlet ID. The `VIEW` actions with respect to *viewing a Guestbook* or
-  *viewing a Guestbook entry* are associated with the
-  `com.liferay.docs.guestbook.model.Guestbook` and
-  `com.liferay.docs.guestbook.model.Entry` entities, respectively.
+**Permission**: An action that can be performed on a resource. In Liferay's
+database, resources and actions are saved in pairs. (Each entry in the
+`ResourceAction` table contains both the name of a portlet or entity and the
+name of an action.) For example, the `VIEW` action with respect to *viewing
+the Guestbook portlet* is associated with the `guestbook_WAR_guestbookportlet`
+portlet ID. The `VIEW` actions with respect to *viewing a Guestbook* or
+*viewing a Guestbook entry* are associated with the
+`com.liferay.docs.guestbook.model.Guestbook` and
+`com.liferay.docs.guestbook.model.Entry` entities, respectively.
 
 There are two kinds of resources in Liferay: *portlet resources* and *model
-resources*. Portlet resources represents portlets. The names of portlet
-resources are the numeric IDs of the portlets they represent. Model resources
+resources*. Portlet resources represent portlets. The names of portlet
+resources are the portlet IDs from the portlets' `portlet.xml` files (or in the
+case of core portlets, Liferay's `portlet-custom.xml`. Model resources
 refer to entities within Liferay. The names of model resources are the fully
 qualified class names of the entities they represent. In the XML displayed
 below, permission implementations are first defined for the *portlet* resource
@@ -90,7 +90,7 @@ known as *DRAC*):
 
 4. **C**heck permission before returning resources. This step is described in 
    the tutorial [Checking Permissions](/tutorials/-/knowledge_base/checking-permissions).
-   
+ 
 ## Define All Resources and Permissions
 
 The first step is to define your resources and the actions that can be defined
@@ -196,14 +196,14 @@ following mapping of resources to actions:
 
 The `<portlet-resource>` tag is used to define actions that can be taken with
 respect to the portlet window. For the Guestbook portlet, such actions include
-the following ones:
+these: 
 
 - `ADD_TO_PAGE`: *Add* the portlet to a page
 - `CONFIGURATION`: *Access* the portlet's Configuration window
 - `VIEW`: *View* the portlet
 
-All of the supported actions are defined in the `<supports>` tag, a sub-tag of
-the `<permissions>` tag (which is itself a subtag of the `<portlet-resource>`
+All the supported actions are defined in the `<supports>` tag, a sub-tag of
+the `<permissions>` tag (which is itself a sub-tag of the `<portlet-resource>`
 tag:
 
     <supports>
@@ -241,10 +241,10 @@ example, see the following entry in the first `<model-resource>` tag:
     </guest-unsupported>
 
 The `<model-resource>` tag is used to define actions that can be performed with
-respect to models, a.k.a. entities. There are two kinds of such actions in
+respect to models, also known as entities. There are two kinds of actions in
 Liferay: *top-level actions* and *resource actions*. Top-level actions are not
 applied to a particular resource. For example, the action of adding a new entity
-is not applied to a particular resource so it's considered a top-level action.
+is not applied to a particular resource, so it's considered a top-level action.
 The first `<model-resource>` tag defines adding guestbook and guestbook entry
 resources as top-level actions:
 
@@ -254,8 +254,8 @@ resources as top-level actions:
     </supports>
 
 The second and third `<model-resource>` tags define resource actions that can be
-applied to the `Guestbook`, and `GuestbookEntry` entities, respectively. E.g.,
-the permissions for the following actions are defined with respect to the
+applied to the `Guestbook`, and `GuestbookEntry` entities, respectively. For
+example, the permissions for the following actions are defined with respect to the
 resource associated with the `Guestbook` entity:
 
     <supports>
@@ -276,12 +276,12 @@ the resource associated with the `GuestbookEntry` entity:
         <action-key>VIEW</action-key>
     </supports>
 
-Inside of each `<model-resource>` tag, notice that the model name must be
-defined. The `<model-name>` must be either the fully-qualified name of a package
-or of an entity class. E.g. `com.liferay.docs.guestbook.model` is the name of a
+In each `<model-resource>` tag, notice that the model name must be defined. The
+`<model-name>` must be either the fully-qualified name of a package or of an
+entity class. For example, `com.liferay.docs.guestbook.model` is the name of a
 package and `com.liferay.docs.guestbook.model.Guestbook` is the name of an
-entity class. Using a package is the recommended convention for permissions that
-refer to top-level actions:
+entity class.  Using a package is the recommended convention for permissions
+that refer to top-level actions:
 
     <model-name>com.liferay.docs.guestbook.model</model-name>
 
@@ -298,20 +298,20 @@ The `<portlet-ref>` element comes next and contains a `<portlet-name>` sub-tag.
 
 The value of `<portlet-name>` references the name of the portlet to which the
 model resource belongs. It's possible for a model resource to belong to multiple
-portlets referenced with multiple `<portlet-name>` elements but this is
+portlets referenced with multiple `<portlet-name>` elements, but this is
 uncommon.
 
 The `<supports>`, `<site-member-defaults>`, `<guest-defaults>`, and
-`<guest-unsupported>` tags work the same way inside the `<model-resource>` tag
-as they do inside the `<portlet-resource>` tag. The `<supports>` tag lets you
-specify a list of supported actions that require permission to perform. The
+`<guest-unsupported>` tags work the same way in the `<model-resource>` tag as
+they do in the `<portlet-resource>` tag. The `<supports>` tag lets you specify a
+list of supported actions that require permission to perform. The
 `<site-member-defaults>` tag and the `<guest-defaults>` tags define default
 permissions for site members and guests, respectively. And the
 `<guest-unsupported>` tag specifies permissions forbidden to guests.
 
-After defining resource permissions for your custom portlet, you need to point
-Liferay to the `resource-actions` XML file that contains your definitions. This
-is `docroot/WEB-INF/src/resource-actions/default.xml` for the Guestbook project.
+After defining resource permissions for your portlet, you need to point Liferay
+to the `resource-actions` XML file that contains your definitions. This is
+`docroot/WEB-INF/src/resource-actions/default.xml` for the Guestbook project.
 In Liferay's core, there are multiple permissions XML definition files for
 various core Liferay portlets in the `portal/portal-impl/src/resource-actions`
 directory. The `default.xml` file contains pointers to the definition files of
