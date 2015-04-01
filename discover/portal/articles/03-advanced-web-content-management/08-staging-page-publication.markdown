@@ -323,6 +323,25 @@ before publishing.
 **Permissions** allows you to include permissions for the pages and portlets
 when the changes are published.
 
+The *Date Range* feature provides you with another way to select specific
+content to publish. Specifying a date range allows you to choose content to
+publish based on when it was created. You can change the date range of content
+by selecting *Choose Content* in the *Content* section. Then click *Change* next
+to *Date Range*. You have several options to choose from:
+
+- *All:* publishes content regardless of its creation date.
+
+- *From Last Publish Date:* publishes content that was created since the last
+publish date.
+
+- *Date Range:* publishes content based on a specified date range. You have the
+ability to set a start and end date/time window. The content that was created
+within that window of time is published.
+
+- *Last:* publishes content based on a set amount of time since the current time.
+For example, you can set the date range to the past 48 hours, starting from the
+current time.
+
 Click on *Mark as Ready for Publication*, then click *Publish to Live* &rarr;
 *Now*, and select *Publish* to publish your Bookmarks portlet to the live site.
 
@@ -359,8 +378,6 @@ the latest approved version of web content articles. If you'd like to change the
 default behavior, add the following line to your `portal-ext.properties` file:
 
     journal.publish.version.history.by.default=false
-
-<!-- Insert date range docs here? --Cody -->
 
 One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
