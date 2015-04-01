@@ -5,10 +5,12 @@ processing. In the *send and forget* model of asynchronous messaging, the
 sender's messages don't contain any response information. Message listeners 
 therefore can't reply to them. Think of it this way--if you got a letter in the 
 mail without any kind of return address or other information telling you who 
-sent it, who could you send a reply to? This tutorial shows you how to implement 
+sent it, how could you send a reply? This tutorial shows you how to implement 
 messaging in this fashion between one sending and two receiving portlets. You 
 can find the code for this example plugin project here:
 [Insults Portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/msg-bus/async-send-forget/insults-portlet).
+
+<!-- Why do we suddenly switch to the Insults portlet here? -Rich -->
 
 Even though there are many cases where you want to include some sort of response 
 information in your messages, there are times where leaving out a response 
@@ -27,30 +29,28 @@ it's time to load up the Message Bus with insults!
 ## Deciding on Destination Keys 
 
 As with other types of messaging in the Message Bus, the first thing you need to
-do is specify where you're going to send messages. To do so, you specify
-destination keys. Destination keys serve as the specific locations where
-messages are sent. You can think of them as the mailing addresses of the Message
-Bus system. The destination keys need to be included with the message and
-registered as destinations in `WEB-INF/src/META-INF/messaging-spring.xml`. In
-this example, there's just one destination key--`insults/users`. Both of the
-receiving portlets are configured to listen on this destination key and no
-response is required. 
+do is specify where you'll send messages. To do so, you specify destination
+keys. Destination keys are the locations where messages are sent. You can think
+of them as the mailing addresses of the Message Bus system. The destination keys
+must be included with the message and registered as destinations in
+`WEB-INF/src/META-INF/messaging-spring.xml`. In this example, there's just one
+destination key: `insults/users`. Both of the receiving portlets are configured
+to listen on this destination key, and no response is required. 
 
 Now that you know what your destination keys are, you can use them when writing 
 the code that sends the messages. 
 
 ## Implementing the Message Sender
 
-Writing the message sender is a fairly straightforward task. Simply place your
-message sending code in the method of your application in which it should be
-called. There's also not much code involved. In this example, the message sender
-is placed inside the method of the insult writer portlet that is responsible for
-adding a new insult to the database. Therefore a message is sent out each time a
-new insult is written, which is precisely what the insult writer wants to happen.
-You can find this code here:
+Writing the message sender is a fairly straightforward task. Place your message
+sending code in the method of your application in which it should be called.
+There's also not much code involved. In this example, the message sender is
+placed in the Insult Writer portlet's `_updateInsultWriter` method. A message is
+sent out each time a new insult is written, which is precisely what the insult
+writer wants to happen.  You can find this code here:
 [`InsultWriterPortlet.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/msg-bus/async-send-forget/insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/InsultWriterPortlet.java).
 
-A sender for an asynchronous send and forget message takes the following steps:
+A sender for an asynchronous send and forget message does the following things:
 
 1. Creates a `JSONObject` to serve as the message:
 
@@ -65,7 +65,7 @@ A sender for an asynchronous send and forget message takes the following steps:
 3. Sends the message to the destination:
 
         MessageBusUtil.sendMessage("insults/users", jsonObject.toString());
-        
+ 
 Make sure that you add the following imports:
 
         import com.liferay.portal.kernel.messaging.MessageBusUtil;
@@ -83,20 +83,20 @@ from your sender. Each listener is a class that implements Liferay's
 each receiving portlet. You can find the example listeners here:
 [Listeners](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/msg-bus/async-send-forget/insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/messaging/impl).
 
-Asynchronous listeners for send and forget messages take the following steps: 
+Asynchronous listeners for send and forget messages do the following things: 
 
-1. Implements the `receive(Message message)` method of the
+1. Implement the `receive(Message message)` method of the
    `com.liferay.portal.kernel.messaging.MessageListener` interface.
 
-2. Gets the message payload and cast it to a `String`.
+2. Get the message payload and cast it to a `String`.
 
         String payload = (String)message.getPayload();
 
-3. Creates a `JSONObject` from the payload string.
+3. Create a `JSONObject` from the payload string.
 
         JSONObject jsonObject = JSONFactoryUtil.createJSONObject(payload);
 
-4. Gets values from the `JSONObject` using its getter methods. This example gets 
+4. Get values from the `JSONObject` using its getter methods. This example gets 
    the values that were added by the sender.
 
         String insult = (String) jsonObject.getString("insult");
@@ -108,7 +108,7 @@ Make sure that you add the following imports to your listener classes:
         import com.liferay.portal.kernel.messaging.MessageListener;
         import com.liferay.portal.kernel.json.JSONObject;
         import com.liferay.portal.kernel.json.JSONFactoryUtil;
-        
+ 
 Any other listeners you need can be implemented using the same steps. Next, 
 you'll configure your listeners and destinations for use with the Message Bus. 
 
