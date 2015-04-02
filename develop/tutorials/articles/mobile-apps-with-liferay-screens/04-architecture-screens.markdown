@@ -1,12 +1,12 @@
 # Architecture of Liferay Screens [](id=architecture-of-liferay-screens)
 
-Liferay Screens separates presentation and business-logic code, following the 
-ideas of the [Model View Presenter](http://en.wikipedia.org/wiki/Model-view-presenter), 
+Liferay Screens separates its presentation and business-logic code, following 
+the ideas of [Model View Presenter](http://en.wikipedia.org/wiki/Model-view-presenter), 
 [Model View ViewModel](http://en.wikipedia.org/wiki/Model_View_ViewModel), and 
-[VIPER](http://www.objc.io/issue-13/viper.html) architectures. However, Screens 
-can't be considered a canonical implementation of these architectures. This is 
-because they're designed for apps. Screens isn't an app, but is instead a suite 
-of visual components intended for use in apps.
+[VIPER](http://www.objc.io/issue-13/viper.html). However, because they’re 
+designed for apps, Screens can’t be considered a canonical implementation of 
+these architectures. Screens isn't an app; it's a suite of visual components 
+intended for use *in* apps. 
 
 This tutorial explains Liferay Screens' internal architecture. Since Screens has 
 separate implementations for Android and iOS, the architectures for these 
@@ -14,7 +14,8 @@ platforms are presented separately. The first section details Screens'
 architecture for Android. The second section details Screens' architecture for 
 iOS. Each begins with an overview of the high level components that make up the 
 system, such as the core, screenlets, views (Android), and themes (iOS). These 
-components are then described in detail.
+components are then described in detail. Now go ahead and get started examining 
+Screens' building blocks!
 
 ## Architecture of Liferay Screens for Android [](id=architecture-of-liferay-screens-for-android)
 
@@ -22,9 +23,9 @@ Liferay Screens for Android is composed of the core, screenlet, and view layers.
 Interactors, while technically part of the core layer, are also an important 
 component type that facilitate communication with the screenlet layer and the 
 Liferay Mobile SDK. A diagram of Screens' high-level architecture is shown here, 
-followed by a brief description of each item on the diagram.
+followed by a brief description of each item in the diagram.
 
-![Figure 1: The high level components of Liferay Screens for Android.](../../images/screens-android-architecture-01.png)
+![Figure 1: The high-level components of Liferay Screens for Android.](../../images/screens-android-architecture-01.png)
 
 - *Core*: Includes all the base classes needed to develop other components. The 
   core is defined as a micro-framework that lets developers write their own 
@@ -32,42 +33,41 @@ followed by a brief description of each item on the diagram.
 
 - *Screenlets*: The library that contains all the available screenlets. Each 
   screenlet is a Java View class that can be inserted in any activity or 
-  fragment view hierarchy. Screenlets render the selected layout both in the 
-  runtime and Android Studio's visual editor. They also react to user interface 
-  events, sending server requests if necessary. Screenlets also define a set of 
-  configurable properties that can be set from the layout XML and your Java 
-  code.
+  fragment view hierarchy. Screenlets render the selected layout in the runtime 
+  and in Android Studio's visual editor. They also react to UI events, sending 
+  server requests if necessary. Screenlets also define a set of configurable 
+  properties that can be set from the layout XML and your Java code. 
 
 - *Interactors*: A collection of classes that implement one specific user 
-  interaction or use case. These classses can interact with both remote and 
-  local data sources. Most of the interactors need to send/receive data to/from 
-  Liferay Portal. In this case, interactors use the [Mobile SDK](/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app).
+  interaction or use case. These classses can interact with local and remote 
+  data sources. Most interactors need to send or receive data to or from a 
+  Liferay instance. In this case, interactors use the [Mobile SDK](/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app).
 
 - *Views*: A set of layout and accompanying custom view classes that present 
   screenlets to the user.
 
-The next section describes the core layer in detail.
+Next, the the core layer is described in detail.
 
 ### The Core Layer of Screens for Android [](id=the-core-layer-of-screens-for-android)
 
 The core layer is the micro-framework that lets developers write their own 
 screenlets in a structured and isolated way. This is possible because each 
 screenlet has a clear communication API and purpose. Therefore, even components
-developed by different people share a common structure.
+written by different developers share a common structure.
 
 ![Figure 2: The core layer of Liferay Screens for Android.](../../images/screens-android-architecture-02.png)
 
 - *Interactor*: The base class for all interactions and use cases supported by 
   the screenlet. These actions can range in complexity from simple algorithms to 
   asynchronous data requests from a server or database. A screenlet can have 
-  more than one interactor, typically one for each kind of supported operation. 
-  An interactor can call Liferay Mobile SDK services and receive the responses
-  asynchronously through the EventBus, eventually changing the state of the view
-  classes.
+  more than one interactor. Typically, one interactor is required for each 
+  supported operation. An interactor can call services through the Liferay 
+  Mobile SDK and receive the responses asynchronously through the EventBus. This 
+  eventually changes the state of the view classes. 
   
 - *BaseScreenlet*: The base class for all screenlet classes. The main task of a
-  screenlet class is to receive user action events from the screenlet's view,
-  instantiate and call interactors, and then update any view data with the 
+  screenlet class is to receive user events from the screenlet's view, 
+  instantiate and call interactors, and then update the view data with the 
   result. This class contains a set of [templated methods](http://www.oodesign.com/template-method-pattern.html) 
   that are intended to be overriden by children classes. These methods are 
   listed here:
@@ -81,18 +81,18 @@ developed by different people share a common structure.
 	- *onUserAction*: Runs the interactor intended for use with an action 
 	  name.
 
-- *ScreenletView*: The class that implements the screenlet UI. The object is 
-  created in the screenlet's `createScreenletView` method. The main task of the 
-  view class is to render a specific UI using standard layout files and then 
-  update the UI when the data changes.
+- *ScreenletView*: The class that implements the screenlet's UI. The object is 
+  created in the screenlet's `createScreenletView` method. The view class' main 
+  task is to render a specific UI using standard layout files and then update 
+  the UI when the data changes.
   
 - *InteractorAsyncTaskCallback*: Receives asynchronous responses from the 
   Liferay Mobile SDK's `AsyncTask`.
 
 - *[EventBus](https://github.com/greenrobot/EventBus)*: The bus implementation 
   used to notify the interactor when asynchronous operations complete. This 
-  decouples `AsyncTask` from the activity lifecycle, avoiding most of the 
-  typical problems associated with `AsyncTask`.
+  decouples `AsyncTask` from the activity lifecycle, avoiding most problems 
+  typically associated with `AsyncTask`.
   
 - *[MobileSDK](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)*: 
   Used to call Liferay's remote services in a typesafe and transparent way.
@@ -103,13 +103,13 @@ developed by different people share a common structure.
   implemented with `LoginScreenlet`.
   
 - *LiferayServerContext*: A singleton object that holds server configuration
-  parameters. It's loaded from the `server_context.xml` file, or from any other
-  XML file that overrides the keys defined in that file.
-  
+  parameters. It's loaded from `server_context.xml`, or from any other XML file 
+  that overrides the keys defined in that file. 
+
 - *LiferayScreensContext*: A singleton object that holds a reference to the
   application context. It's used internally where the context is necessary.
 
-Now that you know the details of the core layer, you're ready to learn the 
+Now that you know what the core layer is comprised of, you're ready to learn the 
 screenlet layer's details.
 
 ### The Screenlet Layer of Screens for Android [](id=the-screenlet-layer-of-screens-for-android)
@@ -125,15 +125,14 @@ diagram are explained in this section.
   UI. It typically includes all the input and output values presented to the 
   user. For instance, `LoginScreenletViewModel` includes attributes like the 
   user name and password. The screenlet reads those values to start the 
-  interactor's operations and may eventually change them based on the 
-  interactor's result.
+  interactor's operations and may eventually change them based on the result.
 
-- *MyScreenlet*: The class that represents the screenlet component that the
-  developer interacts with. It includes:
+- *MyScreenlet*: The class that represents the screenlet component the developer 
+  interacts with. It includes:
 
     - A set of attributes that allows the screenlet's behavior to be configured. 
       The attribute values are read with the screenlet's `createScreenletView` 
-      method. Optionally, the default values can be also set there. 
+      method. The default values can optionally be set there. 
     - A reference to its view, depending on the `liferay:layoutId` attribute's 
       value. To meet the screenlet's requirements, all views must implement the 
       corresponding `ViewModel` interface. 
@@ -142,12 +141,12 @@ diagram are explained in this section.
       `loadMyData()`. These methods can also be UI events received in the `View` 
       class through a regular listener (such as Android's `OnClickListener`) and 
       forwarded to the screenlet by using the `performUserAction()` method. 
-    - A listener object, provided by the app, intented to be called when any 
+    - A listener object provided by the app, intended to be called when any 
       event occurs. This is optional, but recommended.
 
 - *MyScreenletInteractor*: The screenlet's interactor. A screenlet can have zero
   or more interactors, depending on the number of use cases it supports. For
-  example, the `LoginScreenlet` only supports one use case (to log the user in),
+  example, the `LoginScreenlet` only supports one use case (to log in the user),
   so it has only one interactor. However, the `DDLFormScreenlet` supports 
   several use cases (load the form, load a record, submit the form, etc...), so 
   it includes one interactor for each. It's important to note that an interactor
@@ -159,14 +158,14 @@ diagram are explained in this section.
   
 - *MyScreenletDefaultView*: The class that renders the UI of the screenlet by
   using the screenlet's associated layout `myscreenlet_default.xml`. In the
-  diagram this class belongs to the Default view set. The view object and the
+  diagram, this class belongs to the Default view set. The view object and the
   layout file communicate using standard mechanisms like `findViewById` and
   listeners. When a user action occurs in the UI, it's received by the specified
   listener (for example, `OnClickListener`) and then passed to the screenlet
   object using the `performUserAction()` method.
 
-- *myscreenlet_default.xml*: The layout file with the definitions of the 
-  components used to render the screenlet's view. Typically, the XML appears as 
+- *myscreenlet_default.xml*: The layout file containing the component 
+  definitions used to render the screenlet's view. The XML typically appears as 
   follows:
 
         <?xml version="1.0" encoding="utf-8"?>
@@ -179,7 +178,8 @@ diagram are explained in this section.
         
         </com.your.package.MyScreenletView>
 
-For more details, refer the tutorial [Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets). 
+For more details on how a screenlet is constructed, refer the tutorial 
+[Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets). 
 Next, the view layer's details are described. 
 
 ### The View Layer of Screens for Android [](id=the-view-layer-of-screens-for-android)
@@ -195,10 +195,11 @@ There are several different view types:
 - *Default views*: A mandatory view set that is supplied by Liferay. It's used 
   by default when the screenlet's `layoutId` is invalid or isn't specified. The
   Default view set uses a neutral, flat white and blue design with standard UI
-  components. For example, in `LoginScreenlet` it uses standard but styled text
-  boxes for the user name and password. At any point you can change the styles
-  associated with this view set to customize the colors, positions, and sizes. 
-  To do this, see the `styles.xml` file.
+  components. For example, `LoginScreenlet` uses standard text boxes for the 
+  user name and password. However, the text boxes are styled with the Default 
+  view's flat white and blue design. You can change the styles associated with 
+  this view set to customize the colors, positions, and sizes. To do this, see 
+  the `styles.xml` file.
 
 - *Full views*: Can be used to show a different set of components and 
   attributes. Using the `LoginScreenlet` as an example, the Full view can be 
