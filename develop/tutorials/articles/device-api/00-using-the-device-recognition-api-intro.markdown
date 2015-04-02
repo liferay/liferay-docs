@@ -2,12 +2,12 @@
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
-As you know, Internet traffic has risen exponentially over the past decade and
-this trend shows no sign of stopping. In addition, the bulk of internet traffic 
+As you know, Internet traffic has risen exponentially over the past decade, and
+this trend shows no sign of stopping. In addition, the bulk of Internet traffic 
 now comes from mobile devices. The mobile boom presents new obstacles and 
 challenges for content management. How will content adapt to different devices 
 with different capabilities? How can your grandma's gnarly tablet and your 
-cousin's awesome new smartphone request the same information from your portal?
+cousin's awesome new smart phone request the same information from your portal?
 
 The Device API detects the capabilities of any device making a request to your
 portal. It can also determine what mobile device or operating system was used to
@@ -48,12 +48,12 @@ assistance. Next, you'll learn about retrieving some other device capabilities.
 
 ## Getting Device Capabilities [](id=getting-device-capabilities)
 
-With the Device API, you can detect the capabilities of a device making a
-request to your portal and then render content accordingly. Capabilities
-generally refer to things that the requesting device can do. For example, you
-can determine the device's operating system, browser, form factor, and much
-more. Capabilities can be retreived with the `getCapability` and
-`getCapabilities` methods of the Device API. 
+With the Device API, you can detect the *capabilities* of a device making a
+request to your portal and then render content accordingly. Capabilities refer
+to things that the requesting device can do. For example, you can determine the
+device's operating system, browser, form factor, and much more. Capabilities
+can be retrieved with the `getCapability` and `getCapabilities` methods of the
+Device API. 
 
 Most of the capabilities of the requesting device can be detected, depending on 
 the device detection implementation you're using. The Device Recognition 
@@ -68,7 +68,7 @@ You can grab many other device capabilities, including `model_name`,
 `is_wireless_device`, `is_tablet`, and many more. 
 
 Now that you know about the Device API, you can use it to make sure that your 
-grandma's gnarly tablet and your cousin's awesome new mobile phone can make 
+grandma's gnarly tablet and your cousin's awesome new smart phone can make 
 requests to your portal and receive identical content. This will make everyone 
 happy! 
 
