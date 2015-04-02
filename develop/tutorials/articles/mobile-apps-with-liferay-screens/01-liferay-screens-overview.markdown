@@ -83,7 +83,7 @@ using Screens requires the following:
 Other internal dependencies are: 
 
 - [EventBus](https://github.com/greenrobot/EventBus) 
-- [Picasso](http://square.github.io/picasso/)
+- [Picasso](http://square.github.io/picasso/) (used only for `UserPortraitScreenlet`)
 
 Liferay Screens for Android also contains the following view sets that you can 
 use to change the screenlets' UI and UX: 
