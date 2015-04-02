@@ -137,7 +137,7 @@ Maven:
 
 $$$
 
-Congratulations on deployin your plugin to Liferay and to your repository! 
+Congratulations on deploying your plugin to Liferay and to your repository! 
 
 ## Related Topics [](id=related-topics)
 
