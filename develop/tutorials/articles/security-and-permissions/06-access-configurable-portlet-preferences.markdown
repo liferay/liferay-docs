@@ -20,18 +20,17 @@ configurations in no time flat!
 ## Deciding to Use Configurable Portlet Preferences
 
 So why bother with configurable portlet preferences for controlling access to
-portlet features? Why not just use permissions? First of all, using portlet
-preferences can be a simpler approach. If you use portlet preferences, you only
-have to worry about one permission: the permission to access your portlet's
-Configuration window. Any user with permission to access your portlet's
-Configuration window can adjust any of your portlet's preferences. For example,
-administrators can allow certain users access to the portlet's Configuration
-window without also allowing them to edit to the portlet's permissions.
+portlet features? Why not just use permissions? First of all, portlet
+preferences can be a simpler approach. You only have to worry about one
+permission: the permission to access your portlet's Configuration window. Any
+user with permission to access your portlet's Configuration window can adjust
+any of your portlet's preferences. For example, administrators can allow certain
+users access to the portlet's Configuration window without also allowing them to
+edit to the portlet's permissions.
 
-By default, Liferay stores a set of portlet preferences for each portlet
-instance that's independent of the user viewing the portlet. However, this can
-be adjusted by changing the following `liferay-portlet.xml` settings of your
-portlet from these defaults:
+By default, Liferay stores a set of portlet preferences for each user, for each
+portlet instance. However, this can be adjusted by changing the following
+`liferay-portlet.xml` settings of your portlet from these defaults:
 
 - `<preferences-company-wide>false</preferences-company-wide>`
 - `<preferences-unique-per-layout>true</preferences-unique-per-layout>`
@@ -80,7 +79,7 @@ shown:
         <!--tags for your feature go here-->
     </c:if>
     ```
-    
+
 Administrators can then use the portlet's Permissions tab in the Configuration
 menu to set the roles that can access the Configuration menu. Those with access
 to the Configuration menu are then able to set any preferences defined in the
