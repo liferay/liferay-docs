@@ -1,4 +1,4 @@
-# Using the Mobile SDK [](id=mobile)
+# Mobile SDK [](id=mobile)
 
 With all the power that Liferay Portal offers, why not leverage it from your
 mobile apps! Thanks to Liferay's Mobile SDK, you can do just that. The Liferay
