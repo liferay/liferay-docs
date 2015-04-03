@@ -89,6 +89,16 @@ you'll be ready to set up some actions. The actions defined for a family
 determine what happens to a particular request when the device is detected and
 the family has been found to apply.
 
++$$$
+
+**Tip:** The Audience Targeting application offers a *Device* rule, which
+evaluates if the user is accessing something with a selected device family. This
+rule is integrated with the Mobile Device Families portlet. Visit the
+[Liferay Audience Targeting Rules](/discover/portal/-/knowledge_base/6-2/liferay-audience-targeting-rules#device)
+section for more details.
+
+$$$
+
 You can add actions to a family from the Site Pages page of Site Administration.
 Select either the public or private pages and then look for the *Mobile Device
 Rules* link in the right-hand menu. Use the *Select Device Family* button to

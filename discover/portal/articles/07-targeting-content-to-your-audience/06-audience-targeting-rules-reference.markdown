@@ -92,8 +92,9 @@ Evaluates if the user likes the configured Facebook page.
 
 These rules allow you to classify users based on the attributes.
 
-These rules will not work properly if the corresponding attributes are not
-available. Follow the given instructions for each rule in such cases.
+These rules will not work properly if the corresponding attributes from the user
+profile are not available. Follow the given instructions for each rule in such
+cases.
 
 ### Age [](id=age)
 
