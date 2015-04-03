@@ -128,12 +128,22 @@ UI and language keys can be configured in the `src/templates/ct_fields.ftl` and
 `src/content/Language.properties` files, respectively. You'll learn more about
 the latter two components later on.
 
++$$$
+
+**Note:** If you're planning on developing a social rule type that classifies
+users based on their social network profile, it's important to remember that
+they will not work properly unless the specific social network's SSO (Single
+Sign On) is enabled and configured properly. Visit the
+[Social Rules](/discover/portal/-/knowledge_base/6-2/liferay-audience-targeting-rules#social-rules)
+section for more details.
+
+$$$
+
 Now, you can begin creating your rule's functionality by specifying its behavior
 in the `-Rule` class (e.g., `WeatherRule.java`) that the SDK generated for
 you. This class implements the
 [Rule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/Rule.java)
-interface (required), and extends the
-[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)
+([BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)
 class. It's not mandatory to extend `BaseRule`, but it provides some helpful
 utilities, such as support for generating your rule's UI using FreeMarker.
 Note that there are multiple methods in the generated `-Rule` class; you must
