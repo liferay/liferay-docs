@@ -7,10 +7,11 @@ fully pluggable, they give you a great deal of flexibility when implementing
 your app's look and feel. You should note that views are exclusive to Screens on 
 Android, while themes are exclusive to Screens on iOS. Even though they have 
 different names and implementations, views and themes serve the same purpose on 
-each of their respective mobile platforms. Liferay provides a limited set of 
-views and themes, but new ones can be created and contributed to the community. 
-This tutorial shows you how to use views and themes in your Screens apps. Using 
-views in Liferay Screens for Android is shown first. 
+their respective mobile platforms. Screens provides a limited set of views and 
+themes, but new ones can be created and contributed to the community. This 
+tutorial shows you how to use views and themes in your Screens apps. Using views 
+in Liferay Screens for Android is shown first. Now get ready to dress up your 
+app! 
 
 ## Using Views in Liferay Screens for Android [](id=using-views-in-liferay-screens-for-android)
 
@@ -22,10 +23,10 @@ layer:
   listener for the UI component's events.
 - *Layout*: The XML file that defines the UI components in the view. The root 
   element is usually the same view type as the previous screenlet view.
-- *View set*: The group of views for several screenlets together with their 
-  layouts. A view set usually has a name that is easy to refer to, such as 
-  *Default* or *Material*. Anyone can create their own view set and release it 
-  to the community. 
+- *View set*: The view group for several screenlets together with their layouts. 
+  A view set usually has a name that is easy to refer to, such as *Default* or 
+  *Material*. Anyone can create their own view set and release it to the 
+  community. 
 
 When you set up your project it includes two view sets by default: Default and 
 Material. However, anyone can create a new view set and publish it in a public 
@@ -43,24 +44,24 @@ Currently, the view sets included with Liferay Screens for Android are:
 - *Default*: Standard views used when you insert any screenlet and don't set the 
   `liferay:layoutId` attribute.
 - *Material*: Sample views intended to demonstrate how to develop your own 
-  viewsets from scratch. It follows the [Material Design](https://developer.android.com/design/material/index.html) 
-  guidelines published by Google.
+  view sets from scratch. It follows the [Material Design](https://developer.android.com/design/material/index.html) 
+  guidelines published by Google. 
 
 ## Using Themes in Liferay Screens for iOS [](id=using-themes-in-liferay-screens-for-ios)
 
-To install a theme in your app, drag and drop the theme's folder into your 
+To install a theme in your iOS app, drag and drop the theme's folder into your 
 project. Liferay Screens detects the new classes and then applies the new look 
-and feel, in both the Interface Builder and runtime.
+and feel in the runtime and in Interface Builder. 
 
 ![Figure 2: Installing the Flat7 theme in an XCode project.](../../images/screens-ios-xcode-install-theme.png)
 
 As soon as CocoaPods is ready to work with Swift, it will be possible to simply 
 publish a new recipe for your theme. Users will then be able to install new 
-themes by just adding a new line in their `Podfile`. 
+themes by adding a new line in their `Podfile`. 
 
 To use themes, it's as simple as setting the `themeName` property in your 
-Interface Builder. If you leave this property empty or type a wrong name, the 
-Default theme will be used. 
+Interface Builder. If you leave this property empty or type the wrong name, the 
+Default theme is used. 
 
 ![Figure 3: The `themeName` property in Interface Builder.](../../images/screens-ios-themes-property.png)
 

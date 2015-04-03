@@ -19,10 +19,10 @@ Without any further ado, let the screenlet creation begin!
 ## Creating Screenlets in Liferay Screens for Android [](id=creating-screenlets-in-liferay-screens-for-android)
 
 In this section, you'll create an example bookmarks screenlet for Android. This 
-screenlet needs to let the user enter a URL and title for the bookmark in a text 
-box. When the user touches the submit button, the URL and title are sent to the 
-Liferay instance's Bookmark service to be saved. Implement this by using the 
-following steps:
+screenlet needs to let the user enter the bookmark's URL and title in text 
+boxes. When the user touches the submit button, the URL and title are sent to 
+the Liferay instance's Bookmark service to be saved. Implement this by using the 
+following steps: 
 
 1. Create a new interface called `AddBookmarkViewModel`. This is for adding the 
    attributes to show in the view. In this case, the attributes are `url` and 
@@ -70,11 +70,12 @@ following steps:
     At this point, the graphical layout viewer in Android Studio should look 
     like this:
 
-    ![Figure 1: An app based on Liferay Screens.](../../images/screens-android-add-bookmark-view.png)
+    ![Figure 1: Android Studio's graphical layout viewer while creating your own screenlet.](../../images/screens-android-add-bookmark-view.png)
 
-3. Create a new custom view class called `AddBookmarkDefaultView`, that extends 
-   `LinearLayout` and implements `AddBookmarkViewModel`. This new class is where 
-   you implement the UI using the layout XML file from the previous step.
+3. Create a new custom view class called `AddBookmarkDefaultView`. This class 
+   should extend `LinearLayout` and implement `AddBookmarkViewModel`. This new 
+   class is where you implement your UI using the layout XML file from the 
+   previous step.
 
         public class AddBookmarkDefaultView
             extends LinearLayout implements AddBookmarkViewModel {
@@ -99,8 +100,8 @@ following steps:
             public void setTitle(String value) ...
         }
 
-4. In the `onFinishInflate` method, get the reference to the components. Then 
-   complete the getters and setters using the inner value of the components:
+4. In the `onFinishInflate` method, get references to the components. Then 
+   complete the getters and setters by using the components' inner values:
 
         @Override
         protected void onFinishInflate() {
@@ -130,9 +131,8 @@ following steps:
    Liferay instance (or any other backend). Note that it's a good practice to 
    use [IoC](http://en.wikipedia.org/wiki/Inversion_of_control) in your 
    interactor classes. This way, anyone can provide a different implementation 
-   without breaking the code. The `Interactor` base class also needs a 
-   parameter that represents the type of listener to notify. This is defined 
-   here:
+   without breaking the code. The `Interactor` base class also needs a parameter 
+   that represents the listener type to notify. This is defined here:
 
         public interface AddBookmarkInteractor extends Interactor<AddBookmarkListener> {
         
@@ -174,25 +174,25 @@ following steps:
 
     Pay special attention to the second step in the `addBookmark` method. When 
     the request ends, make sure you post an event into the bus using 
-    `EventBusUtil.post(event)`, where `event` is a `BasicEvent` object 
+    `EventBusUtil.post(event)`. Here, `event` is a `BasicEvent` object 
     containing the `targetScreenletId` together with either the result or the 
     exception. Every interactor should also implement the `onEvent` method. This 
-    method is invoked by the `EventBus` and calls the registered listener.
+    method is invoked by the `EventBus` and calls the registered listener. 
 
 6. Once your interactor is ready, you need to create the screenlet class. This 
-   is the cornerstone and entry point that your app developer sees and 
-   interacts with. In this example, this class is called `AddBookmarkScreenlet` 
-   and extends from `BaseScreenlet`. Again, this class needs to be 
-   parameterized with the interactor class. Since the screenlet is notified by 
-   the interactor when the asynchronous operation ends, you must implement the 
-   listener interface used by the interactor (`AddBookmarkListener`, in this 
-   case). Also, to notify the app, this class usually has another listener. 
-   This listener can be the same one you used in the interactor or a different 
-   one altogether (if you want different methods or signatures). You could even 
-   notify the app using a different mechanism such as the Event Bus, Android's 
-   `BroadcastReceiver`, or others.  Note that the implemented interface methods 
-   call the view to modify the UI and the app's listener to allow the app to 
-   perform any action:
+   is the cornerstone and entry point that the app developer sees and interacts 
+   with. In this example, this class is called `AddBookmarkScreenlet` and 
+   extends from `BaseScreenlet`. Again, this class needs to be parameterized 
+   with the interactor class. Since the screenlet is notified by the interactor 
+   when the asynchronous operation ends, you must implement the listener 
+   interface used by the interactor. In this case, this is 
+   `AddBookmarkListener`. Also, this class usually has another listener to 
+   notify the app. This listener can be the same one you used in the interactor, 
+   or a different one altogether (for example, if you want different methods or 
+   signatures). You can even notify the app using a different mechanism such as 
+   the Event Bus, Android's `BroadcastReceiver`, or others. Note that the 
+   implemented interface methods call the view to modify the UI and the app's 
+   listener. This allows the app to perform any action:
 
         public class AddBookmarkScreenlet
             extends BaseScreenlet<LoginInteractor>
@@ -240,11 +240,11 @@ following steps:
         }
 
 7. You're almost finished! The next step is to implement the screenlet's 
-   abstract methods. First is the `createScreenletView` method. In this method 
-   you get attributes from the XML definition and either store them as class 
-   attributes or otherwise make use of them. Then inflate the view using the 
-   layout specified in the `liferay:layoutId` attribute. You can even configure 
-   the initial state of the view, using the attributes read.
+   abstract methods. First up is the `createScreenletView` method. In this 
+   method, you get attributes from the XML definition and then either store them 
+   as class attributes or use them otherwise. Next, inflate the view using the 
+   layout specified in the `liferay:layoutId` attribute. You can even use the 
+   read attributes to configure the initial state of the view. 
 
         @Override
         protected View createScreenletView(Context context, AttributeSet attributes) {
@@ -267,21 +267,21 @@ following steps:
         }
 
     The Second abstract method to implement is `createInteractor`. This is a 
-    factory method in which you have to create the corresponding interactor for 
+    factory method in which you must create the corresponding interactor for 
     a specific action name. Note that a single screenlet may have several 
     interactions (use cases). Each interaction should therefore be implemented 
     in a separate interactor. In this example there is only one interactor, so 
     the object is created in the method. Alternatively, you can retrieve the 
-    instance by using your IoC framework. Also, you need to pass the 
-    `screenletId` (a number autogenerated by the `BaseScreenlet` class) to the 
-    constructor:
+    instance via your IoC framework. You also need to pass the `screenletId` 
+    (a number autogenerated by the `BaseScreenlet` class) to the constructor:
 
         protected AddBookmarkInteractor createInteractor(String actionName) {
             return new AddBookmarkInteractorImpl(getScreenletId());
         }
 
     The third and final abstract method to implement is `onUserAction`. In this 
-    method, retrieve the data entered in the view and start the operation by using the supplied interactor and the data:
+    method, retrieve the data entered in the view and start the operation by 
+    using the data and the supplied interactor:
     
         protected void onUserAction(String userActionName, AddBookmarkInteractor interactor) {
             AddBookmarkViewModel viewModel = (AddBookmarkViewModel) getScreenletView();
@@ -313,7 +313,7 @@ following steps:
 
 Congratulations! By creating an example bookmarks screenlet, you now know how to 
 create screenlets in Screens for Android. The next section covers screenlet 
-creation in Screens for iOS.
+creation in Screens for iOS. 
 
 ## Creating Screenlets in Liferay Screens for iOS [](id=creating-screenlets-in-liferay-screens-for-ios)
 
@@ -321,20 +321,20 @@ In this section, you'll create an example bookmarks screenlet for iOS that has
 the following features: 
 
 - Allows entry of a URL in a text box. 
-- Checks if the URL is valid and extract its title value. 
+- Checks if the URL is valid and extracts its title value. 
 - Shows a preview image and title for user confirmation. 
-- Allows the user to modify the title. 
+- Lets the user modify the title. 
 - Upon user confirmation, the URL and title is sent back to the Liferay 
-  instance's Bookmark services to be saved.
+  instance's Bookmark services to be saved. 
 
-Use these steps to implement this screenlet:
+Use these steps to implement this screenlet: 
 
 1. Create a new `xib` called `BookmarkView_default.xib`. You'll build your UI 
-   here using Interface Builder. Put in two text box fields (`UITextField`) for 
-   the URL and title. Also, add a couple of buttons to let the user retrieve 
-   the title and save the bookmark. To differentiate between these two user 
-   actions, assign a value for the `restorationIdentifier` property in each 
-   button.
+   here using Interface Builder. Put in two text box fields (`UITextField`). 
+   You'll use these for the URL and title. Also, add two buttons to let the user 
+   retrieve the title and save the bookmark. To differentiate between these two 
+   user actions, assign a value for the `restorationIdentifier` property in each 
+   button. 
 
     ![Figure 2: The new `xib` file for the new screenlet.](../../images/screens-ios-xcode-add-bookmark.png)
 
@@ -346,18 +346,18 @@ Use these steps to implement this screenlet:
 3. Create a new class called `BookmarkView_default` that extends 
    `BaseScreenletView` and conforms `BookmarkViewModel`. It must wire all UI 
    components and events from the `xib` using the standard `@IBOutlet` and 
-   `@IBAction`. Getters and setters from `BookmarkViewModel` should, 
-   respectively, get and set the data from UI components. Also be sure to write 
-   any animations or front end code here.
+   `@IBAction`. Getters and setters from `BookmarkViewModel` should 
+   respectively get and set the data from the UI components. Also be sure to 
+   write any animations or front end code here.
 
 4. Set `BookmarkView_default` as the custom class of your 
    `BookmarkView_default.xib` file.
 
 5. Create a class called `BookmarkScreenlet` that extends `BaseScreenlet`.
 
-6. Optionally, you can add any `@IBInspectable` property to configure the 
-   behavior. For example, you could use a boolean property to configure whether 
-   the user can save broken URLs.
+6. Optionally, you can add any `@IBInspectable` properties to configure the 
+   screenlet's behavior. For example, you could use a boolean property to 
+   configure whether the user can save broken URLs.
 
 7. Override the `onUserAction` method so that it receives both button actions. 
    Use the `name` parameter to differentiate between the following actions. 
@@ -375,17 +375,17 @@ Use these steps to implement this screenlet:
    operation classes are described here:
 
     - `GetSiteTitleOperation`: Retrieves content from start of the HTML to the 
-      `<title>` tag. This results in the title being extracted from the HTML.
+      `<title>` tag. This results in the title's extraction from the HTML.
     - `LiferaySaveBookmarkOperation`: Sends the URL and title to the Liferay 
       instance's Bookmark services.
 
 9. In the screenlet's `onUserAction` method, create and start these operations:
 
-    - When `name` argument is `"check"`: Create and start 
-      `GetSiteTitleOperation`. The closure specified should get the retrieved 
+    - When the `name` argument is `"check"`: Create and start 
+      `GetSiteTitleOperation`. The specified closure should get the retrieved 
       title and set it to the associated `BookmarkViewModel` using the 
       `screenletView`. If the operation fails, show the error to the user.
-    - When `name` argument is `"save"`: Get the URL and title from 
+    - When the `name` argument is `"save"`: Get the URL and title from 
       `BookmarkViewModel` and create a `LiferaySaveBookmarkOperation` object 
       with these values. Start the operation and set the closure to show the 
       success or failure to the user.
@@ -393,8 +393,8 @@ Use these steps to implement this screenlet:
 10. You're done! Now you can add your new screenlet to your storyboard as usual 
     and use it as a ready-to-use component.
 
-Great! By creating this example bookmarks screenlet, now you know how to create 
-screenlets for use in Screens for iOS. 
+Great! By creating this example bookmarks screenlet, you now know how to create 
+screenlets in Screens for iOS. 
 
 ## Related Topics [](id=related-topics)
 
