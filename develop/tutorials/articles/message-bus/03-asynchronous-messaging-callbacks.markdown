@@ -1,4 +1,4 @@
-# Asynchronous Messaging with Callbacks 
+# Asynchronous Messaging with Callbacks [](id=asynchronous-messaging-with-callbacks)
 
 Asynchronous messaging consists of sending a message and then continuing with
 processing. The sender doesn't block and wait for an immediate response. This 
@@ -27,7 +27,7 @@ sent in serial instead of in parallel. Now it's time to hop on the Message Bus!
 
 ![Figure 1: Asynchronous messaging with *serial* dispatching](../../images/msg-bus-async-serial-msg.png)
 
-## Deciding on Destination Keys 
+## Deciding on Destination Keys [](id=deciding-on-destination-keys)
 
 You first need to figure out what your destination keys will be. Destination
 keys are the locations where messages are sent. You can think of them as the
@@ -48,7 +48,7 @@ Now that you know what your destination keys are, you can use them when writing
 the code for sending and receiving messages. You'll start with the message
 sender in the Tasks portlet first. 
 
-## Implementing the Message Sender 
+## Implementing the Message Sender [](id=implementing-the-message-sender)
 
 To get the wheels on the Message Bus rolling, you need to start with the initial 
 message sender. In this example, the initial sender is inside the method of the
@@ -85,7 +85,7 @@ You also need to be sure that you add the following import:
 Now that you've implemented your initial sender, you can implement your 
 listeners.
 
-## Implementing the Message Listeners 
+## Implementing the Message Listeners [](id=implementing-the-message-listeners)
 
 You need to have one or more message listeners implemented to receive messages 
 from your sender. Each listener is a class that implements Liferay's 
@@ -136,7 +136,7 @@ Make sure that you add the following imports to your listener classes:
 Any other listeners you need can be implemented using the same steps. Next, 
 you'll configure your listeners and destinations for use with the Message Bus. 
 
-## Configuring the Message Bus 
+## Configuring the Message Bus [](id=configuring-the-message-bus)
 
 Now that you've implemented your message senders and listeners, you need to 
 configure them in your plugin's `WEB-INF/src/META-INF/messaging-spring.xml` 
@@ -238,7 +238,7 @@ now shows replies from the Setup and Inventory portlets.
 Great! Now you know how to use Message Bus to send asynchronous messages with 
 call-backs. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
 

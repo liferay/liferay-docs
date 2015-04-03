@@ -1,4 +1,4 @@
-# Asynchronous "Send and Forget" Messaging 
+# Asynchronous "Send and Forget" Messaging [](id=asynchronous-send-and-forget-messaging)
 
 Asynchronous messaging occurs when the sender sends a message and then continues 
 processing. In the *send and forget* model of asynchronous messaging, the 
@@ -26,7 +26,7 @@ it's time to load up the Message Bus with insults!
 
 ![Figure 1: Asynchronous messaging with *parallel* dispatching](../../images/msg-bus-async-parallel-msg.png)
 
-## Deciding on Destination Keys 
+## Deciding on Destination Keys [](id=deciding-on-destination-keys)
 
 As with other types of messaging in the Message Bus, the first thing you need to
 do is specify where you'll send messages. To do so, you specify destination
@@ -40,7 +40,7 @@ to listen on this destination key, and no response is required.
 Now that you know what your destination keys are, you can use them when writing 
 the code that sends the messages. 
 
-## Implementing the Message Sender
+## Implementing the Message Sender [](id=implementing-the-message-sender)
 
 Writing the message sender is a fairly straightforward task. Place your message
 sending code in the method of your application in which it should be called.
@@ -75,7 +75,7 @@ Make sure that you add the following imports:
 Now that you've implemented your sender, you can implement any listeners that 
 you need.
 
-## Implementing Message Listeners
+## Implementing Message Listeners [](id=implementing-message-listeners)
 
 You need to have one or more message listeners implemented to receive messages 
 from your sender. Each listener is a class that implements Liferay's 
@@ -112,7 +112,7 @@ Make sure that you add the following imports to your listener classes:
 Any other listeners you need can be implemented using the same steps. Next, 
 you'll configure your listeners and destinations for use with the Message Bus. 
 
-## Configuring the Message Bus 
+## Configuring the Message Bus [](id=configuring-the-message-bus)
 
 Now that you've implemented your message senders and listeners, you need to 
 configure them in your plugin's `WEB-INF/src/META-INF/messaging-spring.xml` 
@@ -202,7 +202,7 @@ and insulted portlets now show each insult.
 Great! Now you know how to use Message Bus to send asynchronous send and forget 
 messages. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
 

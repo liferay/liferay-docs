@@ -34,7 +34,7 @@ which an action can be performed.
 For further explanation and examples, please see the
 [Adding Permissions to Resources](/develop/tutorials/-/knowledge_base/6-2/using-portal-roles-in-a-portlet) tutorial.
 
-## Adding a Resource 
+## Adding a Resource [](id=adding-a-resource)
 
 Resources should be added at the same time that entities are added to the
 database. To do this, you must invoke Liferay service methods to manage Liferay
@@ -110,7 +110,7 @@ Notice that this `<liferay-ui:input-permissions />` tag appears within an
 `<aui:form />` tag. The `<liferay-ui:input-permissions />` tag only makes sense
 in the context of a form.
 
-## Deleting a Resource 
+## Deleting a Resource [](id=deleting-a-resource)
 
 When you remove an entity from the database, you should remove permissions that
 were mapped directly to the entity. This prevents dead resources from taking up
@@ -125,7 +125,7 @@ method:
 
 Great! Now you know how to work with resource permissions! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 

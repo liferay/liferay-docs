@@ -1,4 +1,4 @@
-# Implementing Synchronous Messaging 
+# Implementing Synchronous Messaging [](id=implementing-synchronous-messaging)
 
 Synchronous messaging occurs when the sender blocks, waiting for a response from 
 the recipient. During this block, the sender cannot process *any* additional 
@@ -22,7 +22,7 @@ manager also needs confirmation, before moving on with other things, that the
 roadies' Setup portlet has received each request. Synchronous messaging to the
 rescue! 
 
-## Deciding on Destination Keys 
+## Deciding on Destination Keys [](id=deciding-on-destination-keys)
 
 You first need to figure out what your destination keys will be. Destination 
 keys serve as the specific locations where messages are sent. You can think of 
@@ -45,7 +45,7 @@ along with the response object. Now that you know what your destination keys
 are, you can use them when writing the code that sends and receives the 
 messages. You'll start with the message sender first. 
 
-## Implementing the Message Sender 
+## Implementing the Message Sender [](id=implementing-the-message-sender)
 
 Now it's time to write the message sender code. This code goes in the method of
 your application that you want it to be called with. For example, the message
@@ -93,7 +93,7 @@ The sender takes the following steps:
 Now that you've got your message sender implemented, it's time to head to the 
 next stop on the Message Bus--the message listener! 
 
-## Implementing the Message Listener 
+## Implementing the Message Listener [](id=implementing-the-message-listener)
 
 Implementing the message listener is slightly more involved than implementing
 the message sender. To implement the listener, you need to make a class that
@@ -138,7 +138,7 @@ The listener class takes the following steps:
 Now you have both a sender and a listener implemented for your messages! There's 
 just one more thing to take care of before you're done. 
 
-## Configuring the Message Bus 
+## Configuring the Message Bus [](id=configuring-the-message-bus)
 
 For the Message Bus to direct messages from destinations to listeners
 successfully, you must register the listeners by configuring the appropriate
@@ -238,7 +238,7 @@ manager.
 
 Congratulations! You've completed your first trip on the Message Bus! 
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
 

@@ -10,7 +10,7 @@ Fortunately, no matter what your portlet does, access to it and to its content
 can be controlled with permissions. Read on to learn about Liferay's permissions
 system and how add permissions to your application.
 
-## Liferay's Permission System 
+## Liferay's Permission System [](id=liferays-permission-system)
 
 Liferay's permission system uses a flexible mechanism that defines the actions
 that a given user can perform within the context of the portal or a specific
@@ -91,7 +91,7 @@ known as *DRAC*):
 4. **C**heck permission before returning resources. This step is described in 
    the tutorial [Checking Permissions](/tutorials/-/knowledge_base/checking-permissions).
  
-## Define All Resources and Permissions
+## Define All Resources and Permissions [](id=define-all-resources-and-permissions)
 
 The first step is to define your resources and the actions that can be defined
 on them. The Guestbook portlet is used here to demonstrate how to define portlet
@@ -353,7 +353,7 @@ permissions in the context of a portlet plugin, check out the
 [Liferay Plugins repository](https://github.com/liferay/liferay-plugins)
 and examine the portlet `sample-permissions-portlet`.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 

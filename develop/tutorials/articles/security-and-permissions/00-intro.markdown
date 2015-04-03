@@ -1,4 +1,4 @@
-# Security and Permissions
+# Security and Permissions [](id=security-and-permissions)
 
 The Java portlet standard defines a simple security scheme using portlet roles 
 and their mapping to portal roles. On top of this, Liferay provides a 
@@ -21,7 +21,7 @@ This section's tutorials cover the following topics:
 
 - Creating a Custom Action Key
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 

@@ -6,7 +6,7 @@ granting or restricting access to content. When a role is assigned to a user,
 the user is granted the permissions that have been defined for the role. Read
 on to learn how to use portal roles in your application!
 
-## JSR 286 Portlet Security
+## JSR 286 Portlet Security [](id=jsr-286-portlet-security)
 
 The JSR 286 portlet specification defines a means to specify roles used by
 portlets in their `docroot/WEB-INF/portlet.xml` descriptors. The role names
@@ -102,7 +102,7 @@ permission to add the portlet to a page.
 
 $$$
 
-## Mapping Portlet Roles to Portal Roles
+## Mapping Portlet Roles to Portal Roles [](id=mapping-portlet-roles-to-portal-roles)
 
 To map the roles to Liferay Portal, you'll have to use the
 `docroot/WEB-INF/liferay-portlet.xml` Liferay-specific configuration file. For
@@ -149,7 +149,7 @@ fine-grained security. If you don't intend on deploying your portlets to other
 portal servers, we recommend using Liferay's permission system, because it
 offers a much more robust way of tailoring your application's permissions. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 

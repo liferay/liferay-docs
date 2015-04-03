@@ -26,7 +26,7 @@ permissions to users. You can find it in the Liferay Docs repository here:
 
 $$$
 
-## Adding Permissions 
+## Adding Permissions [](id=adding-permissions)
 
 To allow permissions to be configured for model resources, you must add the
 permissions interface to the UI. Just add these two Liferay UI tags to your JSP:
@@ -72,7 +72,7 @@ There's an optional attribute called `redirect` that's available if you want to
 override the default behavior of the upper right arrow link. That's it; now your
 users can configure the permission settings for model resources!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 

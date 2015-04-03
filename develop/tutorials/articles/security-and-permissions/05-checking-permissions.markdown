@@ -15,7 +15,7 @@ run permissions checks. You can find it in the Liferay Docs repository here:
 
 $$$
 
-## Implementing Permissions Checking
+## Implementing Permissions Checking [](id=implementing-permissions-checking)
 
 Once you've defined permissions in your
 `docroot/WEB-INF/src/resource-actions/default.xml` file, you need to implement
@@ -132,7 +132,7 @@ helper classes makes it easier to invoke permission checks. When using
 permissions helper classes, you won't have to invoke the
 `PermissionChecker.hasPermission(...)` method manually.
 
-## Creating Helper Classes for Permission Checking 
+## Creating Helper Classes for Permission Checking [](id=creating-helper-classes-for-permission-checking)
 
 Helper classes streamline your code. They encapsulate the use of
 `permissionChecker` and the names of the resources for a specific portlet. This
@@ -240,7 +240,7 @@ against a guestbook resource. The action ID is used to indicate the action
 requiring the permission check. You're encouraged to use custom portlet action
 keys like the `ActionKeys.DELETE` string used above.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 
