@@ -13,10 +13,10 @@ all rules in a user segment to be classified into it.
 These rules allow to classify users based on their navigation behavior.
 
 These rules will not work properly if content tracking or page tracking are not
-enabled. They can be enabled in Control Panel > Portal Settings >
-Audience Targeting Analytics (for portal level configuration) or in
-Control Panel > Site Settings > Audience Targeting Analytics (for site level
-configuration).
+enabled. They can be enabled in *Control Panel* &rarr; *Portal Settings* &rarr;
+*Audience Targeting Analytics* (for portal level configuration) or in *Control
+Panel* &rarr; *Site Settings* &rarr; *Audience Targeting Analytics* (for site
+level configuration).
 
 ### Content Visited [](id=content-visited)
 
@@ -33,31 +33,31 @@ user segment a number of times equals or higher than the configured threshold.
 
 ## Social Rules [](id=social-rules)
 
-These rules allow you to classify users based on their profiles in social networks
-(e.g. Facebook).
+These rules allow you to classify users based on their profiles in social
+networks (e.g. Facebook).
 
 These rules will not work properly if login through the specific social network
 (Single Sign On) is not enabled and properly configured. Follow these steps to
-enable Facebook Single Sign on in Liferay:
+enable Facebook Single Sign On in Liferay:
 
 1. Sign in to the [Facebook Developers site](https://developers.facebook.com)
-and add a new App. For more information, read the [Facebook app developer guide]
-(https://developers.facebook.com/docs/guides/appcenter). After going through all
-the steps, you will finally have a new App with an Application ID and an
-Application Secret.
+   and add a new App. For more information, read the
+   [Facebook app developer guide](https://developers.facebook.com/docs/guides/appcenter).
+   After going through all the steps, you'll finally have a new app with an
+   Application ID and an Application Secret.
 
 2. Log in as a Portal administrator in your Liferay Portal and go to the Control
-Panel &rarr; *Portal Settings* &rarr; *Authentication* &rarr; *Facebook*. Check
-*Enable* and copy your Application ID and Application Secret to their respective
-fields. Finally click *Save*.
+   Panel &rarr; *Portal Settings* &rarr; *Authentication* &rarr; *Facebook*.
+   Check *Enable* and copy your Application ID and Application Secret to their
+   respective fields. Finally, click *Save*.
 
 3. To verify that the Facebook Single Sign On works properly, sign out and then
-click the Facebook option in the Sign In box. Enter your Facebook username and
-password in the prompted pop-up and click *Login*. You should be automatically
-signed in to your Liferay Portal with your Facebook user.
+   click the Facebook option in the Sign In box. Enter your Facebook username
+   and password in the prompted pop-up and click *Login*. You should be
+   automatically signed in to your Liferay Portal with your Facebook user.
 
 Read the
-[Integrating Existing Users Into Liferay] (/discover/portal/-/knowledge_base/6-2/integrating-existing-users-into-liferay)
+[Integrating Existing Users Into Liferay](/discover/portal/-/knowledge_base/6-2/integrating-existing-users-into-liferay)
 section for more information.
 
 ### Facebook Age [](id=facebook-age)
