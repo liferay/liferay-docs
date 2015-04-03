@@ -146,7 +146,8 @@ Now, you can begin creating your rule's functionality by specifying its behavior
 in the `-Rule` class (e.g., `WeatherRule.java`) that the SDK generated for
 you. This class implements the
 [Rule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/Rule.java)
-([BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)
+interface (required), and extends the
+[BaseRule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseRule.java)
 class. It's not mandatory to extend `BaseRule`, but it provides some helpful
 utilities, such as support for generating your rule's UI using FreeMarker.
 Note that there are multiple methods in the generated `-Rule` class; you must
