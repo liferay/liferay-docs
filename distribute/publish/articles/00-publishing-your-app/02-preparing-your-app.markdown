@@ -180,7 +180,7 @@ metadata requirements and produce an appealing advertisement for your app.
 				compatibility with both EE and CE versions of the portal will
 				ensure that a wider audience has access to your app!
 				<p>
-					You can <a href="/web/developer/marketplace/license">request
+					You can <a href="/distribute/license">request
 					a Liferay EE Developer License </a> to support testing and
 					confirm compatibility.
 				</p>
