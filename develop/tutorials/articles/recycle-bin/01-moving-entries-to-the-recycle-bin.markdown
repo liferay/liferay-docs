@@ -1,28 +1,26 @@
 # Moving Entries to the Recycle Bin [](id=moving-entries-to-the-recycle-bin)
 
 This tutorial covers how to add the ability to move your app's entries to the
-Recycle Bin. Implementing this Recycle Bin component enables users to move
-entries to the Recycle Bin, with the click of a button. 
+Recycle Bin. 
 
 ![Figure 1: You can easily create a way to move your app's entries to the Recycle Bin.](../../images/move-entities-rb.png)
 
 Here are the steps for implementing this Recycle Bin component:
 
 1. Enable Trash for Service Entities
-2. Implement a Trash Handler for Each Trash-Enabled Entity
-3. Create a Service Method to Move Entries to the Recycle Bin
-4. Create a Portlet Action to Initiate Moving Entries to Recycle Bin
-5. Implement a Trash Renderer for Each Trash-Enabled Entity
+2. Implement a Trash Handler for each trash-enabled entity
+3. Create a service method to move entries to the Recycle Bin
+4. Create a portlet action to initiate moving entries to Recycle Bin
+5. Implement a Trash Renderer for each trash-enabled entity
 
 Start off by configuring the app's service. 
 
 ## Step 1: Enable Trash for Service Entities [](id=step-1-enable-trash-for-service-entities)
 
-You must enable the trash feature for each of your app's entities that you want to
-use with the Recycle Bin. In your app's `service.xml` file, insert the
-`trash-enabled="true"` attribute within the `<entity>` tag for each of these
-entities. Each trash-enabled entity element in your `service.xml` file should
-look similar to this one: 
+For every entity you want to recycle bin-enable, you must enable the trash
+feature. To do this, insert insert the `trash-enabled="true"` attribute inside
+your entities' `<entity>` tags in your `service.xml` file. Each trash-enabled
+entity element should look similar to this one: 
 
     <entity name="YourEntity" local-service="true" remote-service="true" uuid="true" trash-enabled="true">
 
@@ -34,16 +32,15 @@ You'll implement trash handlers for these entities next.
 ## Step 2: Implement a Trash Handler for Each Trash-Enabled Entity [](id=step-2-implement-a-trash-handler-for-each-trash-enabled-entity)
 
 As with many other Liferay frameworks--such as the workflow, assets, and
-indexing frameworks--you must implement handler classes for that framework. A
+indexing frameworks--you must implement a handler class for Recycle Bin. A
 Recycle Bin handler class manages moving entries to the Recycle Bin, viewing
 them in the Recycle Bin, restoring them, and permanently deleting them. You must
 implement the [`TrashHandler`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/trash/TrashHandler.html)
 interface for each trash-enabled entity. As a convenience, Liferay provides the
-abstract class [`BaseTrashHandler`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/trash/BaseTrashHandler.html)
-for trash handlers to extend.
+extensible abstract class [`BaseTrashHandler`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/trash/BaseTrashHandler.html).
 
 Consider the following [`TrashHandler`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/trash/TrashHandler.html)
-methods as a minimal set of methods a trash handler to implement or override: 
+methods as a minimal set of methods a trash handler must implement or override: 
 
 - `deleteTrashEntry`
 - `getClassName`
@@ -59,9 +56,9 @@ song and album entities. As an example trash handler implementation, you
 can refer to the [`SongTrashHandler`](https://github.com/liferay-labs/jukebox-portlet/blob/6.2.x/docroot/WEB-INF/src/org/liferay/jukebox/trash/SongTrashHandler.java)
 and its base class [`JukeBoxBaseTrashHandler`](https://github.com/liferay-labs/jukebox-portlet/blob/6.2.x/docroot/WEB-INF/src/org/liferay/jukebox/trash/JukeBoxBaseTrashHandler.java).
 
-After you've implemented trash handlers for your trash-enabled entities, you
+After you've implemented trash handlers for your trash-enabled entities, 
 specify the handlers in your app's `liferay-portlet.xml` file. For example, the
-Jukebox's Song portlet specifies the the song trash handler like this:
+Jukebox's Song portlet specifies the song trash handler like this:
 
     <trash-handler>org.liferay.jukebox.trash.SongTrashHandler</trash-handler>
 
@@ -71,8 +68,8 @@ file to see the trash handlers it specifies.
 +$$$
 
 **Note:** A trash handler refers to an entity, not a portlet. A trash handler
-can, therefore, be declared in any of a plugin's portlets. For neatness,
-however, they're usually declared in the app's principal portlet.
+can, therefore, be declared in any of a plugin's portlets. A best practice is to
+declare them in the app's principal portlet.
 
 $$$
 
@@ -130,14 +127,14 @@ class:
 	}
 
 Notice that this method is annotated as `@Indexable`. That means that every time
-an entry is moved to the Recycle Bin, Liferay reindexes the entities and their
-corresponding trash entries, making the trashed entries searchable from within
-the Recycle Bin. Trashed entries aren't searchable outside of the Recycle Bin.
+an entry is moved to the Recycle Bin, Liferay re-indexes the entities and their
+corresponding trash entries. This makes the trashed entries searchable only from 
+the Recycle Bin, while regular entries aren't searchable outside of the Recycle Bin.
 
 There's also a call to `song.setStatus(WorkflowConstants.STATUS_IN_TRASH)`,
-which sets the song's status, so that workflows know the song is in the trash.
-Note that a portlet need not leverage workflow to implement the Recycle Bin's
-components. 
+which sets the song's status, so that the workflow engine knows the song is in
+the trash. Note that a portlet need not leverage workflow to implement the
+Recycle Bin's components. 
 
 Next, the asset's visibility is updated so that it no longer appears outside the
 Recycle Bin. Its visibility is deactivated by the following call:
@@ -147,14 +144,14 @@ Recycle Bin. Its visibility is deactivated by the following call:
 On first thought, this may seem a bit odd. Why do you have to make the entry 
 invisible in its original location? I thought I was moving it to the Recycle Bin?
 Importantly, entries that are moved to the Recycle Bin are actually left in
-their original location, they're just not visible. 
+their original location; they're just not visible. 
 
 +$$$
 
 **Note:** If you're not using assets with your entity, you'll need to filter the
-elements in your UI by status, so it only shows approved entities. Your app will
-otherwise display your trashed entities. The `updateVisible` method only works
-on asset enabled entities.
+elements in your UI by status, so it only shows approved entities. Otherwise,
+trashed entities still appear. The `updateVisible` method only works on asset
+enabled entities.
 
 $$$
 
@@ -165,7 +162,7 @@ Next, notice that the service method adds a new trash entry to the Recycle Bin:
             song.getUuid(), null, oldStatus, null, typeSettingsProperties);
 
 Lastly, the `moveSongToTrash` service method invokes `TrashUtil`'s [`getTrashTitle`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/trash/util/TrashUtil.html#getTrashTitle(long))
-method, to set the entry's *trash title*. The trash title is an alternative
+method to set the entry's *trash title*. The trash title is an alternative
 reference to the entry. The trash title prevents duplicate entry name conflicts,
 discussed in the tutorial [Resolving Recycling Conflicts](https://dev.liferay.com/develop/tutorials/-/knowledge_base/resolving-recycling-conflicts-lp-6-2-develop-tutorial).
 
@@ -211,13 +208,13 @@ method:
     }
 
 Note that the logic in the `try` block handles moving entries to the Recycle Bin
-and permanently deleting entries. You can write a similar portlet action methods
-for deleting your apps entries. 
+and permanently deleting entries. You can write similar portlet action methods
+for deleting your app's entries. 
 
 Now that you've written your portlet action class, you can use a JSP 
 to invoke your portlet action. For example, the Jukebox portlet's [`view_song.jsp`](https://github.com/liferay-labs/jukebox-portlet/blob/6.2.x/docroot/html/songs/view_song.jsp)
-implements buttons named *Move to the Recycle Bin* and *Delete*, to
-trash or permanently delete a song, respectively: 
+implements buttons named *Move to the Recycle Bin* and *Delete* to
+trash or permanently delete a song: 
 
     <aui:nav>
         <portlet:actionURL name="deleteSong" var="deleteSongURL">
@@ -241,18 +238,17 @@ method. It also displays an appropriate button for recycling or deleting the
 entry, depending on whether the portlet class found the entity to be
 trash-enabled. 
 
-Now that you've layed all the ground work for moving your entries to the Recycle
+Now that you laid all the ground work for moving your entries to the Recycle
 Bin, you're ready to set up the framework for rendering the trashed entries in
 the Recycle Bin. You do this by implementing trash renderers for the
 trash-enabled entities. 
 
 ## Step 5: Implement a Trash Renderer for Each Trash-Enabled Entity [](id=step-5-implement-a-trash-renderer-for-each-trash-enabled-entity)
 
-Now that you have the necessary classes and methods to accomplish moving entries
-to the Recycle Bin, you can implement the appropriate renderer so you can see
-the trashed entries. Similar to creating a trash handler, you create a class to
-render trash entries in the Recycle Bin. If you're already using an asset
-renderer, you can reuse it, as long as it also implements the [`TrashRenderer`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/trash/TrashHandler.html)
+In a similar way to creating a trash handler, you create a class to render trash
+entries in the Recycle Bin. If you're already using an asset renderer, you can
+reuse it, as long as it also implements the
+[`TrashRenderer`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/trash/TrashHandler.html)
 interface.
 
 As an example of a combined asset renderer and trash renderer implementation,
@@ -261,7 +257,7 @@ class.
 
 If you don't already have an asset renderer, you must create a trash renderer.
 In it, implement a `getTrashRenderer` method to instantiate and return a trash
-renderer, based on the trash entry's primary key. For an example of accessing
+renderer based on the trash entry's primary key. For an example of accessing
 the trash renderer from a trash handler, consider the `getTrashRenderer` method
 from the Document Library class [`DLFileShortcutTrashHandler`](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portlet/documentlibrary/trash/DLFileShortcutTrashHandler.java):
 
