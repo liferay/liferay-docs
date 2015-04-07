@@ -1,29 +1,27 @@
 # Restoring Entries from the Recycle Bin [](id=restoring-entries-from-the-recycle-bin)
 
-This tutorial covers how to implement restoring entries from the Recycle Bin. 
-To learn how to set up the framework for using the Recycle Bin in your apps, 
-refer to the tutorial [Moving Entries to the Recycle Bin](/develop/tutorials/-/knowledge_base/moving-entries-to-the-recycle-bin).
-Now that you're able to move entries *to* the Recycle Bin, you can 
-make sure your app can restore entries *from* the Recycle Bin. Besides, what's 
-the point of having a Recycle Bin if you can't restore its entries?
+This tutorial covers how to implement restoring entries from the Recycle Bin. If
+you haven't yet implemented the framework for using the Recycle Bin in your
+apps, refer to the tutorial [Moving Entries to the Recycle Bin](/develop/tutorials/-/knowledge_base/moving-entries-to-the-recycle-bin).
+Once you can move entries *to* the Recycle Bin, you then want to be able to
+restore entries *from* the Recycle Bin. What's the point of having a
+Recycle Bin if you can't restore its entries?
 
-![Figure 1: By implementing the *Restore* functionality, you'll be able to move entries out of the Recycle Bin and make them visible again in their original locations.](../../images/restore-entry-rb.png)
+![Figure 1: By implementing the *Restore* functionality, you can move entries out of the Recycle Bin and make them visible again in their original locations.](../../images/restore-entry-rb.png)
 
-Entries are restored by returning their visibility in their original location
-and removing them from the Recycle Bin. Entries are never removed from their 
-original location; their visibility is simply turned off and references to their 
-original entries is placed in the Recycle Bin. Each reference is a *trash entry*.
-The entry restoration process is similar to the entry moving 
-process, in reverse: you return the entry's visibility in its original 
-location and delete its trash entry.
+Recycle Bin entries are just pointers to the real entity. When a user wants to
+recycle an entity, its visibility is turned off, and a reference to the entity
+is placed in the Recycle Bin. This is called a *trash entry*. You can restore
+rash entries by first making their entities visible again and then removing the
+trash entry. The entry restoration process is similar to the entry moving
+process, but in reverse. 
 
-Go through the following steps for implementing the restoration capability: 
+Use these steps to restore an entry: 
 
 1. Create a Service Method to Restore Entries from the Recycle Bin
 2. Invoke the Service Method from the Trash Handler
 
-Go ahead and begin this process by creating a service method for restoring the
-entry.
+Your first step is to create a service method for restoring the entry.
 
 ## Step 1: Create a Service Method to Restore Entries from the Recycle Bin [](id=step-1-create-a-service-method-to-restore-entries-from-the-recycle-bin)
 
