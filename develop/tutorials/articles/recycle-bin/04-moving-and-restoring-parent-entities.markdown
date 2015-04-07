@@ -33,20 +33,18 @@ Next, you'll handle the child entities.
 ## Step 2: Manage Children Entities [](id=step-2-manage-children-entities)
 
 Because parent entities hold child entities, the child entities must be
-accounted for. The service method for moving a parent entry to the Recycle Bin
-must also move the parent's child entries to the Recycle Bin. The service method
-for restoring a parent entry from the Recycle Bin must also restore the parent's
-child entries. 
+recycled if the parent entity is. You'll implement service methods both to
+recycle and to restore parent and child entities. 
 
-On moving a parent entry to the Recycle Bin, the following things must be done
-with each of its dependents: 
+On moving a parent entry to the Recycle Bin, you must perform these actions on
+it and its children: 
 
 1. Update its status
 2. Add a trash version for it
 3. Turn off the visibility of its asset
-4. Reindex it
+4. Re-index it
 
-For example, look at how method `moveDependentsToTrash` from [`AlbumLocalServiceImpl`](https://github.com/liferay-labs/jukebox-portlet/blob/6.2.x/docroot/WEB-INF/src/org/liferay/jukebox/service/impl/AlbumLocalServiceImpl.java)
+For example, look at how the method `moveDependentsToTrash` from [`AlbumLocalServiceImpl`](https://github.com/liferay-labs/jukebox-portlet/blob/6.2.x/docroot/WEB-INF/src/org/liferay/jukebox/service/impl/AlbumLocalServiceImpl.java)
 class handles moving an album's songs to the Recycle Bin. Here's the method's
 code: 
 
@@ -98,9 +96,9 @@ code:
 This method updates the entry's status, adds a trash version for it, turns 
 off the visibility of its asset, and reindexes it for search purposes.
 
-Here's the breakdown of how the method implements this for the song entity: 
+Here's how the method implements this for the song entity: 
 
-1. *Update its status*: Similar to updating the status for a single entry, the
+1. *Update its status:* Similar to updating the status for a single entry, the
    status of each album's song must reflect that the song has been moved to the
    Recycle Bin. The following code updates the song's status: 
 
@@ -108,7 +106,7 @@ Here's the breakdown of how the method implements this for the song entity:
 
         songPersistence.update(song);
 
-2. *Add a trash version for it*: When moving content with versions to the
+2. *Add a trash version for it:* When moving content with versions to the
    Recycle Bin, the trash version entity stores the status of those versions, so
    those statuses can be set back to their original values when the entity is
    restored. When a parent entity with content is sent to the Recycle Bin, each 
@@ -119,13 +117,13 @@ Here's the breakdown of how the method implements this for the song entity:
         trashVersionLocalService.addTrashVersion(trashEntryId,
              Song.class.getName(), song.getSongId(), status, null);
 
-3. *Turn off the visibility of its asset*: The song's visibility is turned off
+3. *Turn off the visibility of its asset:* The song's visibility is turned off
    in the following code:
 
         assetEntryLocalService.updateVisible(Song.class.getName(), song.getSongId(), false);
 
-4. *Reindex it*: Since the visibility of the song entity has been modified, 
-   the album's songs must be reindexed so they're searchable. Here's the code 
+4. *Re-index it:* Since the visibility of the song entity has been modified, 
+   the album's songs must be re-indexed so they're searchable. Here's the code 
    that accomplishes this: 
 
         Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(Song.class);
@@ -141,10 +139,10 @@ for each child entity:
 1. Update its status
 2. Remove the trash version of it
 3. Turn on the visibility of its asset
-4. Reindex it
+4. Re-index it
 
-It's really very straightforward, making it easy for you to do in the service
-classes for your app's parent entities. 
+Restoring entities placed in the trash is straightforward when done in the
+service classes for your app's parent entities. 
 
 As a developer, you only need to tell the portal that the parent entity has 
 children and how to obtain them. The Recycle Bin UI automatically accounts for 
@@ -152,7 +150,7 @@ the parent's children.
 
 Terrific! You've learned how to designate parent models as container model
 entities in your service definition. You've provided a means to trash/restore a
-parent's child entities when trashing/restoring that parent and you've learned
+parent's child entities when trashing/restoring that parent, and you've learned
 how the Recycle Bin UI lets you work with a parent's child entities.
 
 ## Related Topics [](id=related-topics)
