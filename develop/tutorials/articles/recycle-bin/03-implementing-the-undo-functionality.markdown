@@ -1,12 +1,11 @@
 # Implementing the Undo Functionality [](id=implementing-the-undo-functionality)
 
-Sometimes, you may accidentally send the wrong entry to the Recycle Bin. It
+Sometimes, users accidentally send the wrong entry to the Recycle Bin. It
 seems kind of grueling to navigate away from your page to the Recycle Bin to
 restore the item, just to go back to where you originally started, right?
 For this reason, the Recycle Bin framework supports an *Undo* button, so you can
-conveniently undo the action of sending an entry to the Recycle Bin, without
-leaving the page. In addition, the undo functionality provides links to the
-trashed entry and the Recycle Bin.
+conveniently undo the action of sending an entry to the Recycle Bin without
+leaving the page. 
 
 ![Figure 1: Implementing the Undo button enables users to conveniently retrieve entries back from the Recycle Bin.](../../images/undo-rb.png)
 
@@ -20,10 +19,10 @@ Go ahead and implement the Undo button and its related links!
 
 ## Step 1: Add the Undo Tag [](id=step-1-add-the-undo-tag)
 
-You must first use the `liferay-ui:trash-undo` tag in your JSP. Then, you need
-to set a portlet action URL and pass it to the `liferay-ui:trash-undo` tag. This
-maps the tag's *Undo* button to the portlet action that you'll implement in the
-next step. 
+First, you must use the `liferay-ui:trash-undo` tag in your JSP. Then you need
+to set a portlet action URL and pass it to the `liferay-ui:trash-undo` tag.
+This maps the tag's *Undo* button to the portlet action that you'll implement in
+the next step. 
 
 The tags you add to your JSP should look similar to these tags for restoring a
 song in the Jukebox portlet:
@@ -32,7 +31,7 @@ song in the Jukebox portlet:
 
     <liferay-ui:trash-undo portletURL="<%= undoTrashURL %>" />
 
-Now that you've added the taglib and action URL, go ahead and implement the 
+Now that you've added the tag and action URL, go ahead and implement the 
 portlet action to restore the entry.
 
 ## Step 2: Create a Portlet Action to Initiate Restoration [](id=step-2-create-a-portlet-action-to-initiate-restoration)
@@ -68,9 +67,8 @@ restore? You'll learn how to pass this data to the session next.
 The final step for implementing the Undo button is to provide the trashed
 entry's information to the `liferay-ui:trash-undo` tag. In order for the
 tag to display properly, you must provide some information for the session
-messages. The session needs to know which entries were just deleted. Once the
-session knows which elements were just deleted, the restore method can use that
-information to restore the entries. 
+messages. The session needs to know which entries were just deleted. Then the
+restore method can use that information to restore the entries. 
 
 For example, the following `if` block from the [JukeboxPortlet](https://github.com/liferay-labs/jukebox-portlet/blob/6.2.x/docroot/WEB-INF/src/org/liferay/jukebox/portlet/JukeboxPortlet.java)'s
 method `deleteSong` populates the session with the entries that were just
@@ -106,8 +104,8 @@ included.
     data.put("restoreEntryIds",
         new String[] {String.valueOf(songId)});
 
-Then these elements are added to the session messages, telling the session the
-elements that were deleted. 
+Then these elements are added to the session messages, so they appear in the
+portlet when it refreshes. 
 
     SessionMessages.add(request, PortalUtil.getPortletId(request) +
         SessionMessages.KEY_SUFFIX_DELETE_SUCCESS_DATA, data);
