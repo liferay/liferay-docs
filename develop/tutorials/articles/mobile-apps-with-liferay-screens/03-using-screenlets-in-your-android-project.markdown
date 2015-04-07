@@ -1,0 +1,43 @@
+# Using Screenlets in Your Android Project [](id=using-screenlets-in-your-android-project)
+
+You can start using screenlets once your Android project is configured to use 
+Liferay Screens. Using screenlets is very straightforward. This tutorial shows 
+you how to insert and configure screenlets in your Android project. You'll be a 
+screenlet master in no time! 
+
+## Inserting and Configuring Screenlets in Your Android Project
+
+To start using sceenlets in your Android project, first insert a screenlet in 
+your activity or fragment layout. You can do this in XML or with Android 
+Studio's visual layout editor. The following screenshot shows the 
+`LoginScreenlet` inside a `FrameLayout`. 
+
+![Figure 1: The `LoginScreenlet` in a layout file.](../../images/screens-android-insert-screenlet.png)
+
+Next, set the screenlet's attributes in its XML tag. Refer to the screenlet 
+documentation to see the attributes each screenlet supports. This screenshot 
+shows the attributes of the `LoginScreenlet` being set:
+
+![Figure 2: The screenlet's attributes are also set in its layout file.](../../images/screens-android-screenlet-attributes.png)
+
+You now need to configure your app to listen for the events the screenlet 
+produces. To do this, implement the listener interface associated with the 
+screenlet in your activity or fragment class. For example, for the 
+`LoginScreenlet` you need to implement the `LoginListener` interface. Then set 
+your activity or fragment as the screenlet's listener. This is shown in the 
+following screenshot:
+
+![Figure 3: Implement the screenlet's listener in your activity or fragment class.](../../images/screens-android-screenlet-listener.png)
+
+That's all there is to it! Awesome! Now you know how to use screenlets in your 
+Android apps. 
+
+## Related Topics [](id=related-topics)
+
+[Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets)
+
+[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes)
+
+[Preparing Your Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-project-for-liferay-screens)
+
+[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)

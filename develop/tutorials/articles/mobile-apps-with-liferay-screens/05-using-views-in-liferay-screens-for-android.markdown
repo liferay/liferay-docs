@@ -1,19 +1,15 @@
-# Using Views and Themes [](id=using-views-and-themes)
+# Using Views in Liferay Screens for Android [](id=using-views-in-liferay-screens-for-android)
 
-Liferay Screens uses *views* and *themes* to set your app's UI independently of 
+Liferay Screens for Android uses *views* to set your app's UI independently of 
 its core functionality. This lets you focus on your app's UI and UX without also 
-needing to adjust its feature implementation. Also, since views and themes are 
-fully pluggable, they give you a great deal of flexibility when implementing 
-your app's look and feel. You should note that views are exclusive to Screens on 
-Android, while themes are exclusive to Screens on iOS. Even though they have 
-different names and implementations, views and themes serve the same purpose on 
-their respective mobile platforms. Screens provides a limited set of views and 
-themes, but new ones can be created and contributed to the community. This 
-tutorial shows you how to use views and themes in your Screens apps. Using views 
-in Liferay Screens for Android is shown first. Now get ready to dress up your 
-app! 
+needing to adjust its feature implementation. Also, since views are fully 
+pluggable, they give you a great deal of flexibility when implementing your 
+app's look and feel. Screens provides a limited set of views, but new ones can 
+be created and contributed to the community. This tutorial shows you how to use 
+views in your Screens for Android apps. Using views is very straightforward. 
+You'll be a UI master in no time!
 
-## Using Views in Liferay Screens for Android [](id=using-views-in-liferay-screens-for-android)
+## Using Views in Your App
 
 Before starting, you should understand the different components in the view 
 layer: 
@@ -47,30 +43,9 @@ Currently, the view sets included with Liferay Screens for Android are:
   view sets from scratch. It follows the [Material Design](https://developer.android.com/design/material/index.html) 
   guidelines published by Google. 
 
-## Using Themes in Liferay Screens for iOS [](id=using-themes-in-liferay-screens-for-ios)
-
-To install a theme in your iOS app, drag and drop the theme's folder into your 
-project. Liferay Screens detects the new classes and then applies the new look 
-and feel in the runtime and in Interface Builder. 
-
-![Figure 2: Installing the Flat7 theme in an XCode project.](../../images/screens-ios-xcode-install-theme.png)
-
-As soon as CocoaPods is ready to work with Swift, it will be possible to simply 
-publish a new recipe for your theme. Users will then be able to install new 
-themes by adding a new line in their `Podfile`. 
-
-To use themes, it's as simple as setting the `themeName` property in your 
-Interface Builder. If you leave this property empty or type the wrong name, the 
-Default theme is used. 
-
-![Figure 3: The `themeName` property in Interface Builder.](../../images/screens-ios-themes-property.png)
-
-Currently, the themes included with Liferay Screens for iOS are:
-
-- *Default*: The standard theme that is used when you insert any screenlet on 
-  your screen.
-- *Flat7*: A sample theme intended to demonstrate how to develop your own theme 
-  from scratch.
+That's all there is to it! Great! Now you know how to use views to spruce up 
+your Android app. This opens up a world of possibilities, like writing your own 
+views. 
 
 ## Related Topics [](id=related-topics)
 
