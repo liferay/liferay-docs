@@ -26,42 +26,48 @@ further ado, let the screenlet creation begin!
 
 ## Creating the Screenlet
 
-Use these steps to implement this screenlet: 
+Use the following steps to create the screenlet: 
 
-1. Create a new `xib` called `BookmarkView_default.xib`. You'll build your UI 
-   here using Interface Builder. Put in two text box fields (`UITextField`). 
-   You'll use these for the URL and title. Also, add two buttons to let the user 
-   retrieve the title and save the bookmark. To differentiate between these two 
-   user actions, assign a value for the `restorationIdentifier` property in each 
-   button. 
+1. Create a new `xib` file for your screenlet. In this example the file is named 
+   `BookmarkView_default.xib`. You'll build your UI here using Interface 
+   Builder. Since the bookmarkds screenlet needs text box fields for the 
+   bookmark's URL and title, put in two text box fields (`UITextField`). Also, 
+   add two buttons to let the user retrieve the title and save the bookmark. To 
+   differentiate between these two user actions, assign a value for the 
+   `restorationIdentifier` property in each button. 
 
     ![Figure 2: The new `xib` file for the new screenlet.](../../images/screens-ios-xcode-add-bookmark.png)
 
-2. Create a new interface (protocol) called `BookmarkViewModel`. The associated 
+2. Create a new interface (protocol) for the screenlet, containing any needed 
+   attributes. Here, this is called `BookmarkViewModel` and the associated 
    attributes are `url` and `title`.
 
     ![Figure 3: The new view model for the new screenlet.](../../images/screens-ios-xcode-bookmark-viewmodel.png)
 
-3. Create a new class called `BookmarkView_default` that extends 
-   `BaseScreenletView` and conforms `BookmarkViewModel`. It must wire all UI 
-   components and events from the `xib` using the standard `@IBOutlet` and 
-   `@IBAction`. Getters and setters from `BookmarkViewModel` should 
+3. Create a new class that extends `BaseScreenletView` and conforms the protocol 
+   you created in the previous step. This new class must wire all UI components 
+   and events from the `xib` using the standard `@IBOutlet` and `@IBAction`. In 
+   this example, this class is called `BookmarkView_default` and conforms 
+   `BookmarkViewModel`. Getters and setters from `BookmarkViewModel` should 
    respectively get and set the data from the UI components. Also be sure to 
    write any animations or front end code here.
 
-4. Set `BookmarkView_default` as the custom class of your 
-   `BookmarkView_default.xib` file.
+4. Set the class you created in the previous step as your `xib` file's custom 
+   class. In this example, `BookmarkView_default` is set as the 
+   `BookmarkView_default.xib` file's custom class.
 
-5. Create a class called `BookmarkScreenlet` that extends `BaseScreenlet`.
+5. Create a screenlet class that extends `BaseScreenlet`. Here, this is called 
+   `BookmarkScreenlet`.
 
 6. Optionally, you can add any `@IBInspectable` properties to configure the 
    screenlet's behavior. For example, you could use a boolean property to 
    configure whether the user can save broken URLs.
 
-7. Override the `onUserAction` method so that it receives both button actions. 
-   Use the `name` parameter to differentiate between the following actions. 
-   These strings should be set in the `Restoration ID` attribute of the trigger 
-   component (for example, `UIButton` or others): 
+7. Override the `onUserAction` method so that it receives user actions. In this 
+   example, it needs to receive both button actions. Use the `name` parameter to 
+   differentiate between the following actions. These strings should be set in 
+   the `Restoration ID` attribute of the trigger component (for example, 
+   `UIButton` or others): 
 
     - `"check"`: Occurs when the "Add bookmark" button is touched. 
     - `"save"`: Occurs when the "Confirm" button is touched. 
