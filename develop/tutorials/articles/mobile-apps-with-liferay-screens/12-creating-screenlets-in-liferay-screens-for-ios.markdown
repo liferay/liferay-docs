@@ -50,24 +50,24 @@ Use the following steps to create the screenlet:
    this example, this class is called `BookmarkView_default` and conforms 
    `BookmarkViewModel`. Getters and setters from `BookmarkViewModel` should 
    respectively get and set the data from the UI components. Also be sure to 
-   write any animations or front end code here.
+   write any animations or front end code here. 
 
 4. Set the class you created in the previous step as your `xib` file's custom 
    class. In this example, `BookmarkView_default` is set as the 
-   `BookmarkView_default.xib` file's custom class.
+   `BookmarkView_default.xib` file's custom class. 
 
 5. Create a screenlet class that extends `BaseScreenlet`. Here, this is called 
-   `BookmarkScreenlet`.
+   `BookmarkScreenlet`. 
 
 6. Optionally, you can add any `@IBInspectable` properties to configure the 
    screenlet's behavior. For example, you could use a boolean property to 
-   configure whether the user can save broken URLs.
+   configure whether the user can save broken URLs. 
 
 7. Override the `onUserAction` method so that it receives user actions. In this 
    example, it needs to receive both button actions. Use the `name` parameter to 
    differentiate between the following actions. These strings should be set in 
-   the `Restoration ID` attribute of the trigger component (for example, 
-   `UIButton` or others): 
+   the trigger component's `Restoration ID` attribute (for example, `UIButton` 
+   or others): 
 
     - `"check"`: Occurs when the "Add bookmark" button is touched. 
     - `"save"`: Occurs when the "Confirm" button is touched. 
@@ -77,7 +77,7 @@ Use the following steps to create the screenlet:
 8. Write two operation classes that extend `ServerOperation`. Override the 
    `doRun` method to perform the operation. Also override the `validateData` 
    method to check if the data stored in `BookmarkViewModel` is valid. These two 
-   operation classes are described here:
+   operation classes are described here: 
 
     - `GetSiteTitleOperation`: Retrieves content from start of the HTML to the 
       `<title>` tag. This results in the title's extraction from the HTML.
