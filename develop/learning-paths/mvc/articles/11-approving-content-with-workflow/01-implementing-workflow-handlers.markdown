@@ -1,13 +1,13 @@
 # Implementing Workflow Handlers
 
 In this section you'll learn to implement workflow handlers. Workflow handlers
-are fairly simple clases that interact with both the portal's workflow classes
+are fairly simple classes that interact with both the portal's workflow classes
 and your service layer (by calling `updateStatus` on the appropriate entity).
 
 ## Creating a Workflow Handler for Guestbook Entries
 
-Create a new package in your `docroot/WEB-INF/src` folder, and call it
-`com.liferay.docs.guestbook.workflow`. Create a new class in the package,
+Create a new package in your `docroot/WEB-INF/src` folder and call it
+`com.liferay.docs.guestbook.workflow`. Create a new class in the package
 called `EntryWorkflowHandler`. Populate it with the following code:
 
     public class EntryWorkflowHandler extends BaseWorkflowHandler {
@@ -110,11 +110,11 @@ with the following code:
 
     }
 
-Now the Guestbook App can not only update the database with the necessary
-information, but can interact with Liferay's workflow classes to make sure each
-entity is properly handled by the portal. The `updateStatus` method called in
-this class needs must be added to your local service implementation. You'll do
-that in the next section of the Learning Path.
+Now the Guestbook App not only can update the database with the necessary
+information, but also can interact with Liferay's workflow classes to make sure
+each entity is properly handled by the portal. The `updateStatus` method called
+in this class must be added to your local service implementation. You'll do that
+in the next section of the Learning Path.
 
 ## Registering the Guestbook Portlet's Workflow Handlers
 
@@ -125,7 +125,8 @@ underneath the `<asset-renderer-factory>` declaration:
 		<workflow-handler>com.liferay.docs.guestbook.workflow.EntryWorkflowHandler</workflow-handler>
 	    <workflow-handler>com.liferay.docs.guestbook.workflow.GuestbookWorkflowHandler</workflow-handler>
 
-Both the Guestbook App's entities can now be handled by the portal's workflow.
-However, the service layer needs some updating to set the initial workflow
-status, send the entity through the portal's workflow (if any), and persist
-the status to the database after it's returned from the workflow process.
+Both the Guestbook App's entities are now prepared to be handled by the portal's
+workflow. To make this work, the service layer still needs some updating to set
+the initial workflow status, send the entity through the portal's workflow (if
+any), and persist the status to the database after it's returned from the
+workflow process.

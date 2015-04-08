@@ -1,10 +1,10 @@
 # Displaying Approved Workflow Items
 
-To display only entities approved in the workflow, you'll add a new *finder*,
-then a *getter* that uses it in your service layer. The new methods will serve
-the purpose of getting only entities with the proper workflow status, and then
-displaying those entities in the portlet's search
-container. Service Builder makes this easy.
+To display only approved entities, you'll add a new *finder*, then a *getter*
+that uses it in your service layer. The new methods will serve the purpose of
+getting only entities with the proper workflow status. Then you can display only
+those entities in the portlet's search container. Service Builder makes this
+easy.
 
 ## Adding a Finder for the Entry
 
@@ -25,8 +25,7 @@ following code:
     </liferay-ui:search-container>
 
 The getter methods used are those responsible for populating the Search
-Container. They need to include the workflow status as a parameter, in addition
-to their current parameters. 
+Container. They need to include the workflow status as an additional parameter. 
 
 First, you need a finder method to expose. Open `service.xml` and add this
 tag below the current list of finders for the `Entry` entity:
@@ -67,13 +66,13 @@ Add these methods:
 	}
 
 Since there's nowhere in the portlet where an `Entry`'s workflow status should
-be ignored, it's a best practice to simply replace the current getters with
-appropriate ones.
+be ignored, it's a best practice to replace the current getters with appropriate
+ones.
 
 ## Updating the View Layer to Display Approved Entries
 
 Back in the `view.jsp`, find the following tag, which currently retrieves the
-entries from the database for display in the search container.
+entries from the database for display in the search container:
 
 	<liferay-ui:search-container-results
 		results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId,
@@ -91,9 +90,9 @@ Replace the above tag with this one:
 		total="<%=EntryLocalServiceUtil.getEntriesCount(scopeGroupId,
 						guestbook.getGuestbookId(), WorkflowConstants.STATUS_APPROVED)%>" />
 
-As you'd expect, the calls to `getEntries` and `getEntriesCount` are replaced
-with the updated methods we created in the local service implementation, so
-that the search container is only populated with approved entries. 
+As you'd expect, the calls to `getEntries` and `getEntriesCount` now call the
+updated methods you created in the local service implementation, so that the
+search container is only populated with approved entries. 
 
 Open `init.jsp` and add the following import:
 
@@ -127,7 +126,7 @@ Run service builder.
 
 Open `GuestbookLocalServiceImpl`. Find the current method with the signature
 `public List<Guestbook> getGuestbooks(long groupId)`. Delete it and add this
-one in it's place:
+one in its place:
 
 	public List<Guestbook> getGuestbooks(long groupId, int status) throws SystemException {
 		return guestbookPersistence.findByG_S(groupId, WorkflowConstants.STATUS_APPROVED);
@@ -136,7 +135,9 @@ one in it's place:
 Run Service Builder. Leave the other getter methods alone, even though they
 don't account for workflow status. The Guestbook Admin portlet should display
 all of a site's `Guestbook`s, regardless of workflow status, and these getters
-are used to populate it's search container.
+are used to populate its search container. What you will do later is add a
+column to the Guestbook Admin portlet's Search Container to display guestbooks'
+statuses. 
 
 ## Updating the View Layer to Display Approved Guestbooks
 
@@ -153,21 +154,21 @@ Replace it with this one:
 All you did here was add the parameter that marks a `Guestbook`
 as approved in the workflow.
 
-Now both entities are enabled for workflow, and the view layer of the Guestbook
-Portlet is modified accordingly. But what about the Guestbook Admin Portlet
-that's accessed through the portal's Site Administration section? What should
-the strategy be there?
+Now both entities are enabled for workflow, and the Guestbook portlet's view
+layer is modified accordingly. But what about the Guestbook Admin Portlet that's
+accessed through the portal's Site Administration section? What should the
+strategy be there?
 
 ## Modifying the Guestbook Admin Portlet to Display Workflow Status
 
 The Guestbook Admin portlet currently displays the `Guestbook`s for a site in a
-search container, which is consistent with Liferay's core portlets, such as the
-Message Boards Admin portlet. Like those portlets, you should include the
-workflow status as a column in the search container.
+Search Container, which is how all of Liferay's portlets work. Like those
+portlets, you should include the workflow status as a column in the Search
+Container.
 
 ![Figure 1: The Message Boards Admin portlet displays the workflow status of its entities.](../../images/message-boards-admin.png)
 
-Open `docroot/html/guestbookadmin/view.jsp`, and find the section where both
+Open `docroot/html/guestbookadmin/view.jsp` and find the section where both
 columns of the search container are populated:
 
 		<liferay-ui:search-container-column-text property="name" href="<%= viewGuestbook %>" />
@@ -190,11 +191,11 @@ You need a column in between the *Name* column and the column containing the
 	            path="/html/guestbookadmin/guestbook_actions.jsp"
 	            align="right" />
 
-There's a new `<liferay-ui:search-container-column-text>` tag, defining a
+You've added a new `<liferay-ui:search-container-column-text>` tag, defining a
 *Status* column. The `<aui:workflow-status>` tag makes it easy to convert the
 `int` value of `guestbook.getStatus()` into a `String` representing the status
 label value (e.g., the int *02* becomes *Pending*). It's displayed with some
-styling that matches that of Liferay's core portlet's.
+styling that matches that of Liferay's core portlets.
 
 Note that you didn't change the `getter` method for one that only returns
 `Guestbook`s marked as approved in the workflow. In the Guestbook Admin
@@ -205,26 +206,25 @@ status.
 
 To test that workflow is working properly for both entities, log in to the
 portal and go to *Admin* &rarr; *Control Panel* &rarr; *Configuration*
-&rarr; *Workflow*. Click on *Defualt Configuration*, and select 
+&rarr; *Workflow*. Click on *Default Configuration* and select 
 *Single Approver* for both *Entry* and *Guestbook*.
 
 ![Figure 2: Enable workflow for entities in the Control Panel.](../../images/test-workflow-1.png)
 
-After saving your selections, navigate to a page with the Guestbook Portlet
-added to it, and try to add a new Guestbook, and then a new Entry. If you
-are the portal administrator, you should receive notifications that you have
-items waiting in the workflow. The entities should not appear in the portlet
-until you assign them to yourself, then approve them in the workflow. There
-are a couple of additional things to note:
+After saving your selections, navigate to the Guestbook Portlet and try to add a
+new Guestbook and then a new Entry. If you are the portal administrator, you
+will receive notifications that you have items waiting in the workflow. The
+entities won't appear in the portlet until you assign them to yourself and then
+approve them in the workflow. There are a couple of additional things to note:
 
 - When workflow is disabled in the Control Panel, the `status` of the entities
-is automatically set as approved, and they will appear as soon as they are
-added, just like before you enabled them for workflow.
+  is automatically set as approved, and they appear as soon as they are added,
+  just like before you enabled them for workflow.
 - In the Guestbook Admin Portlet, the *Status* field is always displayed, even
-when workflow is disabled. You'll just see that added `Guestbook`s are always
-marked as *Approved*, with no review necessary and no workflow notifications
-sent.
+  when workflow is disabled. You'll just see that added `Guestbook`s are always
+  marked as *Approved*, with no review necessary and no workflow notifications
+  sent.
 
 ![Figure 3: The Guestbook Admin portlet now displays the workflow status of each `Guestbook` in the site.](../../images/guestbook-admin.png)
 
-The entities of the Guestbook Application now support workflow!
+Your Guestbook Application now supports workflow!

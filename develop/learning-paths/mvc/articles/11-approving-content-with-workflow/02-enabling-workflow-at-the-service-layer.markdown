@@ -18,12 +18,6 @@ proper fields for workflow. However, if you add an `Entry`, you'll see that the
 new fields are not populated. The local service implementation classes need
 some modifications to put values in these fields. 
 
-<!-- The general rule is to create any class that another class calls first, so
-you don't have errors in your code. Below, you're calling WorkflowHandlers that
-haven't been created yet. You need to change the order of the Learning Path to
-have the Workflow Handlers created first, then called in the service layer.
--Rich -->
-
 ## Setting the Workflow Fields in `EntryLocalServiceImpl`
 
 Open `EntryLocalServiceImpl` and add the following line in the
@@ -33,7 +27,7 @@ Open `EntryLocalServiceImpl` and add the following line in the
     entry.setStatus(WorkflowConstants.STATUS_DRAFT);
 
 This manually sets the status of the workflow as a draft; in the `GB_Entry`
-database table, you'll now see the `status` field of an added Entry with the
+database table, you'll now see the `status` field of an added `Entry` with the
 value `2`. But you still haven't set the rest of the values.
 
 Still in the `addGuestbookEntry` method, place the following code right before
@@ -50,10 +44,10 @@ Add these imports:
 
 The call to `startWorkflowInstance` detects whether workflow is installed and
 enabled. If it isn't, the added entity is automatically marked as approved. The
-`startWorkflowInstance` also calls your custom `EntryWorkflowHandler` class,
-which you'll create later in this Learning Path. The service layer also needs
-the ability to update the workflow status fields you added to `service.xml`. For
-this purpose, add the following method to the bottom of `EntryLocalServiceImpl`:
+`startWorkflowInstance` also calls your `EntryWorkflowHandler` class, which
+you'll create later in this Learning Path. The service layer must also update
+the workflow status fields you added to `service.xml`. For this purpose, add the
+following method to the bottom of `EntryLocalServiceImpl`:
 
      public Entry updateStatus(long userId, long guestbookId, long entryId, int status,
 			ServiceContext serviceContext) throws PortalException,
@@ -86,12 +80,12 @@ this purpose, add the following method to the bottom of `EntryLocalServiceImpl`:
 Run Service Builder.
 
 The `updateStatus` method is responsible for setting the status fields, then
-persisting the information to the database. The `if` block checks the workflow
-status of the entity and does one of two things:
+persisting the information to the database. The `if` block checks the entity's
+workflow status and does one of two things:
 
-- If the entity has an approved status, it is marked as visible, and can be
+- If the entity has an approved status, it is marked as visible and can be
   displayed in the Asset Publisher portlet.
-- If the entity is not approved, it is marked as not visible, and can't be
+- If the entity is not approved, it is marked as not visible and can't be
   displayed in the Asset Publisher portlet.
 
 ## Setting the Workflow Fields in `GuestbookLocalServiceImpl`
@@ -116,12 +110,12 @@ Add these imports:
     import com.liferay.portal.kernel.workflow.WorkflowConstants;
     import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
 
-The `startWorkflowInstance` calls your custom `GuestbookWorkflowHandler` class,
-which you'll create later in this Learning Path. 
+The `startWorkflowInstance` calls the `GuestbookWorkflowHandler` class that you
+created in the previous step. 
 
-The service layer needs to be given the ability to update the workflow status
-fields you added to `Guestbook` entity's database table. Add the following
-method to the bottom of `GuestbookLocalServiceImpl`:
+The service layer must be able to update the workflow status fields you added to
+`Guestbook` entity's database table. Add the following method to the bottom of
+`GuestbookLocalServiceImpl`:
 
      public Guestbook updateStatus(long userId, long guestbookId, int status,
 			ServiceContext serviceContext) throws PortalException,
@@ -154,10 +148,10 @@ method to the bottom of `GuestbookLocalServiceImpl`:
 Run Service Builder after saving the changes you made.
 
 Now you're almost done. The status fields can be set appropriately and
-persisted to the database. If you test the workflow by adding an Entry to one
-of the Guestbooks, your portal's administrative user will receive a
-notification for reviewing the submission. However, the entity will still be
-displayed in the portlet's search container! Why even bother having a review
-process if the entity will be published anyway? Taking workflow status into
-account while displaying entities in the Guestbook Portlet is the final task of
-this learning path. 
+persisted to the database. If you test the workflow by adding an `Entry` to one
+of the Guestbooks, your portal's administrative user receives a
+notification for reviewing the submission. The entity, however, is still visible
+in the portlet's search container! Why even bother having a review process if
+the entity gets published anyway? Taking workflow status into account while
+displaying entities in the Guestbook Portlet is the final task of this Learning
+Path. 
