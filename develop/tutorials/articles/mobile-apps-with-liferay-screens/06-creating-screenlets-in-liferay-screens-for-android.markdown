@@ -12,13 +12,13 @@ Android. You'll create a bookmarks screenlet that lets the user enter the
 bookmark's URL and title in text boxes. When the user touches the submit button, 
 the URL and title are sent to the Liferay instance's Bookmark service to be 
 saved. Before proceeding, you may want to read the tutorial 
-[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens) 
+[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
 to understand in detail the concepts underlying screenlets. You may also want to 
-read the tutorial [Creating Views](/tutorials/-/knowledge_base/6-2/creating-views-and-themes) 
+read the tutorial [Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android) 
 to support your new screenlet from the view that you want to use. Without any 
-further ado, let the screenlet creation begin!
+further ado, let the screenlet creation begin! 
 
-## Creating the Screenlet's UI 
+## Creating the Screenlet's UI [](id=creating-the-screenlets-ui)
 
 You should start by creating the screenlet's UI. This is done by creating a new 
 interface for the view and then creating a new layout file. Use the following 
@@ -74,7 +74,7 @@ steps to do this for the bookmarks screenlet:
 
 Next, you'll create a view class for the screenlet.
 
-## Creating the Screenlet's View Class
+## Creating the Screenlet's View Class [](id=creating-the-screenlets-view-class)
 
 Your new screenlet now needs a view class to implement the UI you just created. 
 Create a new custom view class called `AddBookmarkDefaultView`. This class 
@@ -132,7 +132,7 @@ the getters and setters by using the components' inner values:
 
 Now you're ready to create your screenlet's interactor class.
 
-## Creating the Screenlet's Interactor Class
+## Creating the Screenlet's Interactor Class [](id=creating-the-screenlets-interactor-class)
 
 The screenlet's interactor class is responsible for sending the bookmark to the 
 Liferay instance (or any other backend). Note that it's a good practice to use 
@@ -188,7 +188,7 @@ the `EventBus` and calls the registered listener.
 
 Next, you'll create the screenlet class.
 
-## Creating the Screenlet Class
+## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 Once your interactor is ready, you need to create the screenlet class. This is 
 the cornerstone and entry point that the app developer sees and interacts with. 
@@ -304,7 +304,7 @@ the data and the supplied interactor:
 Great! Now you have a screenlet class for the bookmarks screenlet. The final 
 step is hooking it up to the rest of the screenlet's code.
 
-## Triggering the User Action
+## Triggering the User Action [](id=triggering-the-user-action)
 
 The only thing left to do is to trigger the user action when the button is 
 pressed. To do this, go back to the view and add a listener to the button:
@@ -330,10 +330,10 @@ create screenlets in Screens for Android.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets](/tutorials/-/knowledge_base/6-2/using-screenlets)
+[Using Screenlets in Your Android Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
 
-[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)
+[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
 
-[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes)
+[Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android)
 
 [Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)

@@ -3,8 +3,8 @@
 Liferay Screens separates its presentation and business-logic code, following 
 the ideas of [Model View Presenter](http://en.wikipedia.org/wiki/Model-view-presenter), 
 [Model View ViewModel](http://en.wikipedia.org/wiki/Model_View_ViewModel), and 
-[VIPER](http://www.objc.io/issue-13/viper.html). However, because theyÕre 
-designed for apps, Screens canÕt be considered a canonical implementation of 
+[VIPER](http://www.objc.io/issue-13/viper.html). However, because theyï¿½re 
+designed for apps, Screens can't be considered a canonical implementation of 
 these architectures. Screens isn't an app; it's a suite of visual components 
 intended for use *in* apps. 
 
@@ -13,7 +13,7 @@ with an overview of the high level components that make up the system,
 such as the core, screenlets, and themes. These components are then described in 
 detail. Now go ahead and get started examining Screens' building blocks! 
 
-## High Level Architecture of Liferay Screens for iOS
+## High Level Architecture of Liferay Screens for iOS [](id=high-level-architecture-of-liferay-screens-for-ios)
 
 Liferay Screens for iOS is composed of the core, screenlet, and theme layers. 
 Server operations, while technically part of the core layer, allow interaction 
@@ -21,7 +21,7 @@ with local and remote data sources. They also leverage Liferay operations to
 call the Liferay Mobile SDK. A diagram of Screens' high-level architecture is 
 shown here, followed by a description of each item on the diagram.
 
-![Figure 5: The high level components of Liferay Screens for iOS.](../../images/screens-ios-architecture-01.png)
+![Figure 1: The high level components of Liferay Screens for iOS.](../../images/screens-ios-architecture-01.png)
 
 - *Core*: This is the component that includes all the base classes needed to
   develop other components. It can be defined as a micro-framework that allows
@@ -55,7 +55,7 @@ components in a structured and isolated way. This is possible because each
 component has a clear communication API and purpose. Therefore, even components 
 written by different developers share a common structure. 
 
-![Figure 6: The core layer of Liferay Screens for iOS.](../../images/screens-ios-architecture-02.png)
+![Figure 2: The core layer of Liferay Screens for iOS.](../../images/screens-ios-architecture-02.png)
 
 - *ServerOperation*: This is the base class for all operations started by 
   screenlets. These operations retrieve data asynchronously. Despite the name
@@ -94,7 +94,7 @@ iOS. The following diagram shows the screenlet layer in relation to the core,
 theme, and server operation layers. The screenlet classes detailed in the
 diagram are explained in this section. 
 
-![Figure 7: The screenlet layer in relation to the other components of Liferay Screens for iOS.](../../images/screens-ios-architecture-03.png)
+![Figure 3: The screenlet layer in relation to the other components of Liferay Screens for iOS.](../../images/screens-ios-architecture-03.png)
 
 - *MyScreenletData*: This is an interface that defines the screenlet's 
   attributes. It typically includes the input values for the `LoginScreenlet`, 
@@ -136,7 +136,8 @@ diagram are explained in this section.
   convention, the `xib` file for a screenlet `FooScreenlet` and a theme 
   `BarTheme` must be called `FooScreenlet_barTheme.xib`. 
 
-For more details, refer to the tutorial [Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets). 
+For more details, refer to the tutorial 
+[Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios). 
 Next, the theme layer of Screens for iOS is described. 
 
 ## The Theme Layer of Screens for iOS [](id=the-theme-layer-of-screens-for-ios)
@@ -146,7 +147,7 @@ Screenlets have a property called `themeName` that is used to determine the
 theme to load. Depending on your requirements, a single theme can be used to
 implement a look and feel for a limited set of screenlets. 
 
-![Figure 8: The theme layer of Liferay Screens for iOS.](../../images/screens-ios-architecture-04.png)
+![Figure 4: The theme layer of Liferay Screens for iOS.](../../images/screens-ios-architecture-04.png)
 
 - *Default theme*: This is a mandatory theme supplied by Liferay. It's used by 
   default when the screenlet's `themeName` isn't specified or is invalid. The 
@@ -178,16 +179,16 @@ implement a look and feel for a limited set of screenlets.
   theme is a good sample of an Extended theme. In this case, it's based on the
   Default theme.
 
-For more details, see the tutorial [Creating Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes). 
+For more details, see the tutorial [Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios). 
 Awesome! Now you know the nitty gritty details of Liferay Screens for iOS. This 
 information is invaluable when using Screens to develop your apps. 
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets](/tutorials/-/knowledge_base/6-2/using-screenlets)
+[Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
 
-[Using Views and Themes](/tutorials/-/knowledge_base/6-2/using-views-and-themes)
+[Using Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/using-themes-in-liferay-screens-for-ios)
 
-[Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets)
+[Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios)
 
-[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes)
+[Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios)

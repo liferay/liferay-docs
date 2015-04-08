@@ -1,4 +1,4 @@
-# Preparing Your Android Project for Liferay Screens
+# Preparing Your Android Project for Liferay Screens [](id=preparing-your-android-project-for-liferay-screens)
 
 Your Android project must be set up for use with Liferay Screens. This consists 
 of installing Screens in your project and then configuring its dependencies. 
@@ -114,8 +114,8 @@ Super! Your Android project should now be ready for Liferay Screens.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets](/tutorials/-/knowledge_base/6-2/using-screenlets)
+[Using Screenlets in Your Android Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
 
-[Using Views and Themes](/tutorials/-/knowledge_base/6-2/using-views-and-themes)
+[Using Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/using-views-in-liferay-screens-for-android)
 
-[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)
+[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)

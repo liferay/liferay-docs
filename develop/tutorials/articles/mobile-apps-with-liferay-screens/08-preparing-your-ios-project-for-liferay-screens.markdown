@@ -1,4 +1,4 @@
-# Preparing Your iOS Project for Liferay Screens
+# Preparing Your iOS Project for Liferay Screens [](id=preparing-your-ios-project-for-liferay-screens)
 
 Your iOS project must be configured properly before you can use Liferay Screens. 
 This consists of inserting Screens in your project and then adding its 
@@ -9,7 +9,7 @@ you'll be able to set up your project by simply adding a single line to your
 in your app to prepare it for Liferay Screens. This tutorial shows you how to do 
 this. Let the configuration begin! 
 
-## Inserting and Configuring Screens
+## Inserting and Configuring Screens [](id=inserting-and-configuring-screens)
 
 First, you need to download the [Liferay Screens source code](https://github.com/liferay/liferay-screens/releases) 
 and include it in your project. The steps for doing this are shown here: 
@@ -53,8 +53,8 @@ Great! Your iOS project should now be ready for Liferay Screens.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets](/tutorials/-/knowledge_base/6-2/using-screenlets)
+[Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
 
-[Using Views and Themes](/tutorials/-/knowledge_base/6-2/using-views-and-themes)
+[Using Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/using-themes-in-liferay-screens-for-ios)
 
-[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)
+[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)

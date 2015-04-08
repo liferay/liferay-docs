@@ -16,15 +16,15 @@ the following features:
 - Lets the user modify the title. 
 - Upon user confirmation, the URL and title is sent back to the Liferay 
   instance's Bookmark services to be saved. 
-  
-Before proceeding, you may want to read the tutorial 
-[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens) 
-to understand in detail the concepts underlying screenlets. You may also want to 
-read the tutorial [Creating Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes) 
-to support your new screenlet from the theme that you want to use. Without any 
-further ado, let the screenlet creation begin!
 
-## Creating the Screenlet
+Before proceeding, you may want to read the tutorial 
+[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
+to understand in detail the concepts underlying screenlets. You may also want to 
+read the tutorial [Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios) 
+to support your new screenlet from the theme that you want to use. Without any 
+further ado, let the screenlet creation begin! 
+
+## Creating the Screenlet [](id=creating-the-screenlet)
 
 Use the following steps to create the screenlet: 
 
@@ -36,13 +36,13 @@ Use the following steps to create the screenlet:
    differentiate between these two user actions, assign a value for the 
    `restorationIdentifier` property in each button. 
 
-    ![Figure 2: The new `xib` file for the new screenlet.](../../images/screens-ios-xcode-add-bookmark.png)
+    ![Figure 1: The new `xib` file for the new screenlet.](../../images/screens-ios-xcode-add-bookmark.png)
 
 2. Create a new interface (protocol) for the screenlet, containing any needed 
    attributes. Here, this is called `BookmarkViewModel` and the associated 
    attributes are `url` and `title`.
 
-    ![Figure 3: The new view model for the new screenlet.](../../images/screens-ios-xcode-bookmark-viewmodel.png)
+    ![Figure 2: The new view model for the new screenlet.](../../images/screens-ios-xcode-bookmark-viewmodel.png)
 
 3. Create a new class that extends `BaseScreenletView` and conforms the protocol 
    you created in the previous step. This new class must wire all UI components 
@@ -72,7 +72,7 @@ Use the following steps to create the screenlet:
     - `"check"`: Occurs when the "Add bookmark" button is touched. 
     - `"save"`: Occurs when the "Confirm" button is touched. 
 
-    ![Figure 4: The restoration ID for trigger components.](../../images/screens-ios-xcode-restoration-id.png)
+    ![Figure 3: The restoration ID for trigger components.](../../images/screens-ios-xcode-restoration-id.png)
 
 8. Write two operation classes that extend `ServerOperation`. Override the 
    `doRun` method to perform the operation. Also override the `validateData` 
@@ -103,10 +103,10 @@ screenlets in Screens for iOS.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets](/tutorials/-/knowledge_base/6-2/using-screenlets)
+[Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
 
-[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)
+[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 
-[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes)
+[Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios)
 
 [Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)

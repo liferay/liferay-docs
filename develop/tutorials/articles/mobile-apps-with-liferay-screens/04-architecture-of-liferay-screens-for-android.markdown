@@ -1,10 +1,10 @@
-# Architecture of Liferay Screens for Android
+# Architecture of Liferay Screens for Android [](id=architecture-of-liferay-screens-for-android)
 
 Liferay Screens separates its presentation and business-logic code, following 
 the ideas of [Model View Presenter](http://en.wikipedia.org/wiki/Model-view-presenter), 
 [Model View ViewModel](http://en.wikipedia.org/wiki/Model_View_ViewModel), and 
-[VIPER](http://www.objc.io/issue-13/viper.html). However, because theyÕre 
-designed for apps, Screens canÕt be considered a canonical implementation of 
+[VIPER](http://www.objc.io/issue-13/viper.html). However, because theyï¿½re 
+designed for apps, Screens can't be considered a canonical implementation of 
 these architectures. Screens isn't an app; it's a suite of visual components 
 intended for use *in* apps. 
 
@@ -13,7 +13,7 @@ begins with an overview of the high level components that make up the system,
 such as the core, screenlets, and views. These components are then described in 
 detail. Now go ahead and get started examining Screens' building blocks! 
 
-## High Level Architecture of Liferay Screens for Android
+## High Level Architecture of Liferay Screens for Android [](id=high-level-architecture-of-liferay-screens-for-android)
 
 Liferay Screens for Android is composed of the core, screenlet, and view layers. 
 Interactors, while technically part of the core layer, are also an important 
@@ -37,7 +37,7 @@ followed by a brief description of each item in the diagram.
 - *Interactors*: A collection of classes that implement one specific user 
   interaction or use case. These classses can interact with local and remote 
   data sources. Most interactors need to send or receive data to or from a 
-  Liferay instance. In this case, interactors use the [Mobile SDK](/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app).
+  Liferay instance. In this case, interactors use the [Mobile SDK](/tutorials/-/knowledge_base/6-2/mobile).
 
 - *Views*: A set of layout and accompanying custom view classes that present 
   screenlets to the user.
@@ -175,7 +175,7 @@ diagram are explained in this section.
         </com.your.package.MyScreenletView>
 
 For more details on how a screenlet is constructed, refer the tutorial 
-[Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets). 
+[Creating Screenlets in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android). 
 Next, the view layer's details are described. 
 
 ## The View Layer of Screens for Android [](id=the-view-layer-of-screens-for-android)
@@ -220,7 +220,7 @@ There are several different view types:
   extends the Full view, but provides a specific view class for the screenlet
   (extending from the corresponding parent's view class).
 
-For more information, see the tutorial [Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes). 
+For more information, see the tutorial [Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android). 
 
 Great! Now you know how Liferay Screens for Android is composed. However, 
 there's one other detail that you should know before moving on: how screenlets 
@@ -235,8 +235,7 @@ restored. This ID is used, among other things, to identify the source of the
 executed actions and assign results to them. 
 
 The screenlets' state is restored after the `onCreated` and `onStart` methods,
-as specified by the [standard Android
-lifecycle](http://developer.android.com/training/basics/activity-lifecycle/recreating.html).
+as specified by the [standard Android lifecycle](http://developer.android.com/training/basics/activity-lifecycle/recreating.html).
 It's recommended that you avoid any operation with an interactor before the 
 state is restored. This is because it can't be assured that the executed action 
 can find its intended destination. 
@@ -251,10 +250,10 @@ This information is invaluable when using Screens to develop your apps.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets](/tutorials/-/knowledge_base/6-2/using-screenlets)
+[Using Screenlets in Your Android Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
 
-[Using Views and Themes](/tutorials/-/knowledge_base/6-2/using-views-and-themes)
+[Using Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/using-views-in-liferay-screens-for-android)
 
-[Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets)
+[Creating Screenlets in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android)
 
-[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes)
+[Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android)

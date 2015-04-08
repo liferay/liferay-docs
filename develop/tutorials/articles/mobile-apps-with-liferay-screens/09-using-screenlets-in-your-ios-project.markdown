@@ -6,7 +6,7 @@ you how to insert and configure screenlets in your iOS project. Steps for using
 screenlets from Objective-C code are also presented. You'll be a screenlet 
 master in no time! 
 
-## Inserting and Configuring Screenlets in Your iOS Project
+## Inserting and Configuring Screenlets in Your iOS Project [](id=inserting-and-configuring-screenlets-in-your-ios-project)
 
 To start using screenlets in your iOS project, first use Interface Builder to 
 insert a new UIView in your Storyboard or XIB file. This is shown here: 
@@ -75,10 +75,10 @@ project.
 
 ## Related Topics [](id=related-topics)
 
-[Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets)
+[Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios)
 
-[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes)
+[Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios)
 
-[Preparing Your Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-project-for-liferay-screens)
+[Preparing Your iOS Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-ios-project-for-liferay-screens)
 
-[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)
+[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)

@@ -1,4 +1,4 @@
-# Creating Views in Liferay Screens for Android
+# Creating Views in Liferay Screens for Android [](id=creating-views-in-liferay-screens-for-android)
 
 Liferay Screens is highly customizable. In addition to letting you create your 
 own screenlets, Screens for Android lets you create your own views. This gives 
@@ -8,12 +8,12 @@ also write your view completely from scratch.
 
 This tutorial shows you how to create views in Liferay Screens for Android. 
 Before proceeding, you may want to read the tutorial 
-[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens) 
+[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
 to understand the concepts underlying views. It may also be useful to 
-read the tutorial [Creating Screenlets in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-screenlets). 
+read the tutorial [Creating Screenlets in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android). 
 Now get ready to create some great views! 
 
-## View Types
+## View Types [](id=view-types)
 
 The first step in creating a new view is deciding what kind of view to create.
 There are three basic view types:
@@ -23,7 +23,7 @@ There are three basic view types:
 - Extended view
 
 For a detailed explanation of these view types, see the 
-[section on views in the Screens architecture tutorial](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens#the-view-layer-of-screens-for-android). 
+[section on views in the Screens architecture tutorial](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android#the-view-layer-of-screens-for-android). 
 The following sections show you how to create each type of view, using 
 `LoginScreenlet` as an example. You'll begin by creating a new Full view. 
 
@@ -191,10 +191,10 @@ also lets you distribute your themes to others.
 
 ## Related Topics [](id=related-topics)
 
-[Using Views and Themes](/tutorials/-/knowledge_base/6-2/using-views-and-themes)
+[Using Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/using-views-in-liferay-screens-for-android)
 
-[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)
+[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
 
-[Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets)
+[Creating Screenlets in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android)
 
 [Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)

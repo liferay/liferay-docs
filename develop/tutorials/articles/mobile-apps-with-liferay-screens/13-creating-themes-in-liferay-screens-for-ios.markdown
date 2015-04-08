@@ -1,4 +1,4 @@
-## Creating Themes in Liferay Screens for iOS
+# Creating Themes in Liferay Screens for iOS [](id=creating-themes-in-liferay-screens-for-ios)
 
 Liferay Screens is highly customizable. In addition to letting you create your 
 own screenlets, Screens for iOS lets you create your own themes. This gives you 
@@ -8,12 +8,12 @@ write your theme completely from scratch.
 
 This tutorial shows you how to create themes in Liferay Screens for iOS. Before 
 proceeding, you may want to read the tutorial 
-[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens) 
+[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
 to understand the concepts underlying themes. It may also be useful to read the 
-tutorial [Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets). 
+tutorial [Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios). 
 Now get ready to create some themes! 
 
-## Theme Types
+## Theme Types [](id=theme-types)
 
 The first step in creating a new theme is deciding what kind of theme to create. 
 There are three theme types: 
@@ -23,7 +23,7 @@ There are three theme types:
 - Extended theme
 
 For a detailed explanation of these theme types, see the 
-[section on themes in the Screens for iOS architecture tutorial](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens#the-theme-layer-of-screens-for-ios).
+[section on themes in the Screens for iOS architecture tutorial](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios#the-theme-layer-of-screens-for-ios).
 The following sections show you how to create each type of theme, using 
 `LoginScreenlet` as an example. You'll begin by creating a new Full theme.
 
@@ -138,10 +138,10 @@ You're the master of the themes!
 
 ## Related Topics [](id=related-topics)
 
-[Using Views and Themes](/tutorials/-/knowledge_base/6-2/using-views-and-themes)
+[Using Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/using-themes-in-liferay-screens-for-ios)
 
-[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)
+[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 
-[Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets)
+[Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios)
 
 [Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)

@@ -13,12 +13,11 @@ Liferay Screens' power is based on *screenlets*. In Screens, a screenlet is a
 visual component that is connected to Liferay Portal's functionality. Screenlets 
 use a specific UI to handle user input and present portal data. Behind the 
 scenes, each screenlet uses one or more of [Liferay's remote services](/tutorials/-/knowledge_base/6-2/invoking-remote-services). 
-Since [Screens' architecture](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens) 
-is designed to isolate the screenlets, using Screens is a great way to construct 
-your app in a modular fashion. When the screenlet needs to show information to 
-the user, it relies on a *view* or a *theme*. Views are exclusive to Screens on 
-Android, while themes are exclusive to Screens on iOS. Although named 
-differently, views and themes serve the same purpose on their respective 
+Since Screens is designed to isolate the screenlets, using Screens is a great 
+way to construct your app in a modular fashion. When the screenlet needs to show 
+information to the user, it relies on a *view* or a *theme*. Views are exclusive 
+to Screens on Android, while themes are exclusive to Screens on iOS. Although 
+named differently, views and themes serve the same purpose on their respective 
 platforms. They let you implement a different look and feel for your app without 
 changing its core functionality. What's more, views and themes are fully 
 pluggable and can be contributed by third parties. This gives you a great deal 
@@ -29,7 +28,7 @@ iOS. Screenlets are grouped in modules based on internal dependencies. Each
 module is isolated, so you can use only the modules that are necessary for your 
 app. However, it's important to note that you can't use a screenlet from a 
 single module without using the entire module. The modules are listed here with 
-their screenlets.
+their screenlets. 
 
 - *Auth*: The module for user authentication. It uses Liferay Portal's 
   [user management](/portal/-/knowledge_base/6-2/user-management) features. It 
@@ -91,11 +90,11 @@ use to change the screenlets' UI and UX:
 - *Default views*: The standard views used when you add a screenlet in your 
 app's activities or fragments and don't set the `liferay:layoutId` attribute. 
 The Default views can be used as parent views for any of your custom views. 
-Refer to the tutorial [Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens) 
+Refer to the tutorial [Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
 for more information. 
 - *Material views*: The sample views intended to demonstrate how to develop 
 your own full view set from scratch. Refer to the tutorial 
-[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes) 
+[Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android) 
 for instructions on creating your own view set. 
 
 ## Liferay Screens for iOS [](id=liferay-screens-for-ios)
@@ -123,22 +122,35 @@ change the screenlets' UI and UX:
 
 - *Default*: The standard theme that is used when you insert any screenlet in 
 your app's UI. The Default theme can be used as the parent for any of your 
-custom themes. Refer to the tutorial [Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens) 
+custom themes. Refer to the tutorial [Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
 for more information. 
 - *Flat7*: A sample theme intended to demonstrate how to develop your own full 
-theme from scratch. Refer to the tutorial [Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes) 
+theme from scratch. Refer to the tutorial 
+[Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios) 
 for instructions on creating your own themes. 
 
 ## Related Topics [](id=related-topics)
 
-[Architecture of Liferay Screens](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens)
+[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
 
-[Preparing Your Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-project-for-liferay-screens)
+[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 
-[Using Screenlets](/tutorials/-/knowledge_base/6-2/using-screenlets)
+[Preparing Your Android Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-android-project-for-liferay-screens)
 
-[Using Views and Themes](/tutorials/-/knowledge_base/6-2/using-views-and-themes)
+[Preparing Your iOS Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-ios-project-for-liferay-screens)
 
-[Creating Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets)
+[Using Screenlets in Your Android Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
 
-[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes)
+[Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
+
+[Using Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/using-views-in-liferay-screens-for-android)
+
+[Using Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/using-themes-in-liferay-screens-for-ios)
+
+[Creating Screenlets in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android)
+
+[Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios)
+
+[Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android)
+
+[Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios)

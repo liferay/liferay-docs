@@ -9,7 +9,7 @@ be created and contributed to the community. This tutorial shows you how to use
 themes in your Screens for iOS apps. Using themes is very straightforward. 
 You'll be a UI master in no time! 
 
-## Using Themes in Your App
+## Using Themes in Your App [](id=using-themes-in-your-app)
 
 To install a theme in your iOS app, drag and drop the theme's folder into your 
 project. Liferay Screens detects the new classes and then applies the new look 
@@ -25,7 +25,7 @@ To use themes, it's as simple as setting the `themeName` property in your
 Interface Builder. If you leave this property empty or type the wrong name, the 
 Default theme is used. 
 
-![Figure 2: The `themeName` property in Interface Builder.](../../images/screens-ios-themes-property.png)
+![Figure 1: The `themeName` property in Interface Builder.](../../images/screens-ios-themes-property.png)
 
 Currently, the themes included with Liferay Screens for iOS are:
 
@@ -42,8 +42,8 @@ themes.
 
 [Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
 
-[Preparing Your Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-project-for-liferay-screens)
+[Preparing Your iOS Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-ios-project-for-liferay-screens)
 
-[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes)
+[Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios)
 
-[Using Screenlets](/tutorials/-/knowledge_base/6-2/using-screenlets)
+[Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)

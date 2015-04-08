@@ -9,7 +9,7 @@ be created and contributed to the community. This tutorial shows you how to use
 views in your Screens for Android apps. Using views is very straightforward. 
 You'll be a UI master in no time!
 
-## Using Views in Your App
+## Using Views in Your App [](id=using-views-in-your-app)
 
 Before starting, you should understand the different components in the view 
 layer: 
@@ -28,7 +28,7 @@ When you set up your project it includes two view sets by default: Default and
 Material. However, anyone can create a new view set and publish it in a public 
 repository like Maven Central or jCenter. In that event, include the artifact 
 containing the view set by using the standard steps for Gradle or Maven 
-described in the tutorial [Preparing Your Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-project-for-liferay-screens). 
+described in the tutorial [Preparing Your Android Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-android-project-for-liferay-screens). 
 
 To use a view set, set the `liferay:layoutId` property in your layout XML. This 
 is shown in the following screenshot: 
@@ -51,8 +51,8 @@ views.
 
 [Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
 
-[Preparing Your Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-project-for-liferay-screens)
+[Preparing Your Android Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-android-project-for-liferay-screens)
 
-[Creating Views and Themes](/tutorials/-/knowledge_base/6-2/creating-views-and-themes)
+[Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android)
 
-[Using Screenlets](/tutorials/-/knowledge_base/6-2/using-screenlets)
+[Using Screenlets in Your Android Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
