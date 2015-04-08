@@ -29,9 +29,9 @@ import com.liferay.portal.kernel.search.Indexer;
 import com.liferay.portal.kernel.search.IndexerRegistryUtil;
 import com.liferay.portal.kernel.util.ContentTypes;
 import com.liferay.portal.kernel.util.OrderByComparator;
-import com.liferay.portal.kernel.util.OrderByComparatorFactory;
-import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
 import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.kernel.workflow.WorkflowConstants;
+import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
 import com.liferay.portal.model.ResourceConstants;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
@@ -74,8 +74,10 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 				orderByComparator);
 	}
 	
-	public List<Guestbook> getGuestbooks(long groupId) throws SystemException {
-		return guestbookPersistence.findByGroupId(groupId);
+	public List<Guestbook> getGuestbooks(long groupId, int status)
+			throws SystemException {
+		return guestbookPersistence.findByG_S(groupId,
+				WorkflowConstants.STATUS_APPROVED);
 	}
 
 	public List<Guestbook> getGuestbooks(long groupId, int start, int end)
@@ -120,6 +122,7 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		guestbook.setModifiedDate(serviceContext.getModifiedDate(now));
 		guestbook.setName(name);
 		guestbook.setExpandoBridgeAttributes(serviceContext);
+        guestbook.setStatus(WorkflowConstants.STATUS_DRAFT);
 
 		guestbookPersistence.update(guestbook);
 
@@ -143,6 +146,11 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 				Guestbook.class);
 
 		indexer.reindex(guestbook);
+
+		WorkflowHandlerRegistryUtil.startWorkflowInstance(
+				guestbook.getCompanyId(), guestbook.getGroupId(),
+				guestbook.getUserId(), Guestbook.class.getName(),
+				guestbook.getPrimaryKey(), guestbook, serviceContext);
 
 		return guestbook;
 
@@ -235,4 +243,31 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 		}
 	}
 
+	public Guestbook updateStatus(long userId, long guestbookId, int status,
+			ServiceContext serviceContext) throws PortalException,
+			SystemException {
+
+		User user = userLocalService.getUser(userId);
+		Guestbook guestbook = getGuestbook(guestbookId);
+
+		guestbook.setStatus(status);
+		guestbook.setStatusByUserId(userId);
+		guestbook.setStatusByUserName(user.getFullName());
+		guestbook.setStatusDate(new Date());
+
+		guestbookPersistence.update(guestbook);
+
+		if (status == WorkflowConstants.STATUS_APPROVED) {
+
+			assetEntryLocalService.updateVisible(Guestbook.class.getName(),
+					guestbookId, true);
+
+		} else {
+
+			assetEntryLocalService.updateVisible(Guestbook.class.getName(),
+					guestbookId, false);
+		}
+
+		return guestbook;
+	}
 }
