@@ -15,23 +15,23 @@ highlighted in a red box.
 
 ![Figure 4.4: The LCS Dashboard contains links to download the client.](../../images/lcs-dashboard-client-download.png)
 
-If you connect to the web through a proxy, or need to fine-tune how the client 
+If you connect to the web through a proxy or need to fine-tune how the client 
 connects to LCS, proceed to the next section. Otherwise, you can skip to the 
 final section in this article for instructions on registering the client with 
 LCS. 
 
 ## Preconfiguring the LCS Client [](id=preconfiguring-the-lcs-client)
 
-In most cases, deploying and configuring the LCS client is simple. However, if 
+In most cases, deploying and configuring the LCS client is simple. If, however,
 you connect to the web through a proxy, or you want to change how the client 
-communicates with LCS, then there are some properties you need to set in the 
+communicates with LCS, there are some properties you need to set in the 
 client's WAR file before deploying it. Specifically, you need to set these 
 properties in the client's `portlet-ext.properties` file. Regardless of the 
 properties you're setting, the procedure doing so is the same.
 
 1. In the LCS client's WAR file, open the 
    `WEB-INF/classes/portlet-ext.properties` file.
-   
+ 
 2. Make your changes in the file.
 
 3. Update the LCS client WAR with the modified `portlet-ext.properties` file.
