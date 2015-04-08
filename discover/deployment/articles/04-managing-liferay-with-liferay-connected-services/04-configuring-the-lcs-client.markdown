@@ -15,29 +15,71 @@ highlighted in a red box.
 
 ![Figure 4.4: The LCS Dashboard contains links to download the client.](../../images/lcs-dashboard-client-download.png)
 
-In most cases, deploying and configuring the LCS client is simple. However, if 
-you connect to the web through a proxy, then there are some properties you need
-to set in the client's WAR file before deploying it. If you don't connect
-through a proxy, then you can skip these steps.
+If you connect to the web through a proxy or need to fine-tune how the client 
+connects to LCS, proceed to the next section. Otherwise, you can skip to the 
+final section in this article for instructions on registering the client with 
+LCS. 
+
+## Preconfiguring the LCS Client [](id=preconfiguring-the-lcs-client)
+
+In most cases, deploying and configuring the LCS client is simple. If, however,
+you connect to the web through a proxy, or you want to change how the client 
+communicates with LCS, there are some properties you need to set in the 
+client's WAR file before deploying it. Specifically, you need to set these 
+properties in the client's `portlet-ext.properties` file. Regardless of the 
+properties you're setting, the procedure doing so is the same.
 
 1. In the LCS client's WAR file, open the 
    `WEB-INF/classes/portlet-ext.properties` file.
  
-2. At the end of the file, add the following properties and set them to the 
-   appropriate values for your proxy.
+2. Make your changes in the file.
+
+3. Update the LCS client WAR with the modified `portlet-ext.properties` file.
+ 
+4. Deploy the LCS client WAR or redeploy it if it's already deployed. 
+
+To connect to LCS through a proxy, add the following properties at the end of 
+`portlet-ext.properties` and set them to the appropriate values for your proxy.
    
         proxy.host.name=
         proxy.host.port=
 
-3. If your proxy also uses authentication, you should also add the following 
-   properties and set them to the appropriate values for your proxy.
+If your proxy uses authentication, you should also add the following properties 
+and set them to the appropriate values for your proxy.
    
         proxy.host.login=
-        proxy.host.password=
-        
-4. Update the LCS client WAR with the modified `portlet-ext.properties` file.
- 
-5. Deploy the LCS client WAR or redeploy it if it's already deployed. 
+        proxy.host.password= 
+
+While the default values are sufficient in most cases, you can also set other 
+properties in `portlet-ext.properties` to fine tune the client's communication 
+with LCS. As with the proxy properties, you should set these prior to deploying 
+the client. The communication properties are shown here with their default 
+settings. The values are specified in milliseconds. 
+
+- The Heartbeat Interval is the communication interval with LCS that keeps the 
+  client's connection alive, even when there's nothing else to report. It's set 
+  by the following property.
+  
+        communication.heartbeat.interval=60000
+
+- The handshake properties control how the client handles its initial handshake 
+  connection with LCS. The `communication.handshake.wait.time` property sets the 
+  maximum amount of time the client can wait to receive a response from LCS. The 
+  `communication.handshake.reply.reads` property sets the maximum number of 
+  times the client can check for a response from LCS during that time. 
+
+        communication.handshake.wait.time=60000
+        communication.handshake.reply.reads=6        
+
+- The LCS client depends on a gateway to connect with LCS. If it can't reach the 
+  gateway, the client waits a predetermined amount of time before attempting the 
+  connection again. This length of time is set by the following property.
+  
+        communication.lcs.gateway.unavailable.wait.time=60000
+
+Great! Now you're ready to deploy the client and register your portal with LCS.
+
+## Registering the Client with LCS [](id=registering-the-client-with-lcs)
 
 Once you deploy the LCS client, you're ready to register your server with LCS. 
 Access the client by clicking on *Liferay Connected Services* under the *Apps* 
@@ -87,15 +129,16 @@ support.
 Once a successful connection is established, some statistics and links are
 displayed. Here's a description of what's displayed:
 
-- **Heartbeat Interval:** The communication interval with LCS. For example, if this 
-  value is `00:01:00`, the client communicates with LCS once every minute. 
-  This regular communication keeps the client's LCS connection alive, even when 
-  there's nothing else to report. 
-- Message Task Interval: The interval at which the client checks LCS for new 
-  messages. For example, LCS messages are used to let the client know that new 
-  fix packs are available.
-- **Metrics Task Interval:** The interval at which server statistics and metrics are 
-  sent to LCS.
+- **Heartbeat Interval:** The interval of the communication that maintains the 
+  connection with LCS. This regular communication keeps the client's LCS 
+  connection alive, even when there's nothing else to report. The value is 
+  listed in hours, minutes, and then seconds. For example, if this value is 
+  `00:01:00`, the client communicates with LCS once every minute. 
+- **Message Task Interval:** The interval at which the client checks LCS for new 
+  messages. For example, LCS messages are used to instruct the client to 
+  download new fix packs.
+- **Metrics Task Interval:** The interval at which server statistics and metrics 
+  are sent to LCS.
 - **Last Message Received:** The time the latest message was received from LCS.
 - **Connection Uptime:** The duration of the client's connection with LCS.
 - **Project Home:** This link takes you to this server's registered 
@@ -111,5 +154,9 @@ displayed. Here's a description of what's displayed:
  
 ![Figure 4.10: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
-Great! Now that you've registered your server with your LCS account, you can dig 
-in to the features of LCS.
+This article's previous section contains instructions for changing the heartbeat 
+interval. Currently, the message and metrics task intervals are fixed and cannot 
+be changed. 
+
+Awesome! Now that you've registered your server with your LCS account, you can 
+dig in to the features of LCS. 
