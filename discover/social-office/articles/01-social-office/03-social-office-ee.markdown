@@ -12,7 +12,7 @@ These additional features include the following:
 - Bug fixes and usability improvements since Social Office 3.0 CE
 - Access to Liferay Support
 
-## Installing Social Office EE 
+## Installing Social Office EE [](id=installing-social-office-ee)
 
 To find Social Office EE on Liferay Marketplace, click on the *EE Marketplace*
 link and look for the Social Office EE app. Once you've found it, click on it to
@@ -61,7 +61,7 @@ $$$
 
 - sharepoint-hook
 
-## Social Office EE Features 
+## Social Office EE Features [](id=social-office-ee-features)
 
 The Sharepoint plugin that is included in Social Office EE is the same plugin as 
 provided by the [Sharepoint Connector EE](https://www.liferay.com/marketplace/-/mp/application/15188537) app on

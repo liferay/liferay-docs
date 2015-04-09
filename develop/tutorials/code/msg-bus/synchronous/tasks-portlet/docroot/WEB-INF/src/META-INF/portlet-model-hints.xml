@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.tour.portlet.tasks.model.Setup">
+		<field name="setupId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="status" type="String" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.tour.portlet.tasks.model.Task">
+		<field name="taskId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="status" type="String" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+</model-hints>

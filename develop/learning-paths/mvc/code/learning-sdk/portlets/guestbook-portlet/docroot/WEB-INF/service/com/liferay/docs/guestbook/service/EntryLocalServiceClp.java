@@ -142,11 +142,13 @@ public class EntryLocalServiceClp implements EntryLocalService {
 
 		_methodName25 = "getEntries";
 
-		_methodParameterTypes25 = new String[] { "long", "long", "int", "int" };
+		_methodParameterTypes25 = new String[] {
+				"long", "long", "int", "int", "int"
+			};
 
 		_methodName26 = "getEntriesCount";
 
-		_methodParameterTypes26 = new String[] { "long", "long" };
+		_methodParameterTypes26 = new String[] { "long", "long", "int" };
 
 		_methodName27 = "deleteEntry";
 
@@ -166,6 +168,13 @@ public class EntryLocalServiceClp implements EntryLocalService {
 		_methodParameterTypes29 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName30 = "updateStatus";
+
+		_methodParameterTypes30 = new String[] {
+				"long", "long", "int",
+				"com.liferay.portal.service.ServiceContext"
 			};
 	}
 
@@ -913,14 +922,14 @@ public class EntryLocalServiceClp implements EntryLocalService {
 
 	@Override
 	public java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
-		long groupId, long guestbookId, int start, int end)
+		long groupId, long guestbookId, int status, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableLocalService.invokeMethod(_methodName25,
 					_methodParameterTypes25,
-					new Object[] { groupId, guestbookId, start, end });
+					new Object[] { groupId, guestbookId, status, start, end });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -942,14 +951,14 @@ public class EntryLocalServiceClp implements EntryLocalService {
 	}
 
 	@Override
-	public int getEntriesCount(long groupId, long guestbookId)
+	public int getEntriesCount(long groupId, long guestbookId, int status)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableLocalService.invokeMethod(_methodName26,
 					_methodParameterTypes26,
-					new Object[] { groupId, guestbookId });
+					new Object[] { groupId, guestbookId, status });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1109,6 +1118,50 @@ public class EntryLocalServiceClp implements EntryLocalService {
 		return (com.liferay.docs.guestbook.model.Entry)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
+	public com.liferay.docs.guestbook.model.Entry updateStatus(long userId,
+		long entryId, int status,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName30,
+					_methodParameterTypes30,
+					new Object[] {
+						userId,
+						
+					entryId,
+						
+					status,
+						
+					ClpSerializer.translateInput(serviceContext)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.liferay.docs.guestbook.model.Entry)ClpSerializer.translateOutput(returnObj);
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -1168,4 +1221,6 @@ public class EntryLocalServiceClp implements EntryLocalService {
 	private String[] _methodParameterTypes28;
 	private String _methodName29;
 	private String[] _methodParameterTypes29;
+	private String _methodName30;
+	private String[] _methodParameterTypes30;
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.sample.model.Insulted">
+		<field name="insultedId" type="long" />
+		<field name="insult" type="String" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.liferay.sample.model.InsultLog">
+		<field name="insultLogId" type="long" />
+		<field name="insult" type="String" />
+		<field name="rating" type="String" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.liferay.sample.model.InsultWriter">
+		<field name="insultWriterId" type="long" />
+		<field name="insult" type="String" />
+		<field name="rating" type="String" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+</model-hints>

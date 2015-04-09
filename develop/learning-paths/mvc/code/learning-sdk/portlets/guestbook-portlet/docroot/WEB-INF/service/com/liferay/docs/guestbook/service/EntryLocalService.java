@@ -16,6 +16,7 @@ package com.liferay.docs.guestbook.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface EntryLocalService extends BaseLocalService,
 	* @return the entry that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public com.liferay.docs.guestbook.model.Entry addEntry(
 		com.liferay.docs.guestbook.model.Entry entry)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -72,6 +74,7 @@ public interface EntryLocalService extends BaseLocalService,
 	* @throws PortalException if a entry with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.docs.guestbook.model.Entry deleteEntry(long entryId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -83,6 +86,7 @@ public interface EntryLocalService extends BaseLocalService,
 	* @return the entry that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.docs.guestbook.model.Entry deleteEntry(
 		com.liferay.docs.guestbook.model.Entry entry)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -278,6 +282,7 @@ public interface EntryLocalService extends BaseLocalService,
 	* @return the entry that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public com.liferay.docs.guestbook.model.Entry updateEntry(
 		com.liferay.docs.guestbook.model.Entry entry)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -313,11 +318,11 @@ public interface EntryLocalService extends BaseLocalService,
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
-		long groupId, long guestbookId, int start, int end)
+		long groupId, long guestbookId, int status, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-	public int getEntriesCount(long groupId, long guestbookId)
+	public int getEntriesCount(long groupId, long guestbookId, int status)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	public com.liferay.docs.guestbook.model.Entry deleteEntry(long entryId,
@@ -335,6 +340,12 @@ public interface EntryLocalService extends BaseLocalService,
 	public com.liferay.docs.guestbook.model.Entry updateEntry(long userId,
 		long guestbookId, long entryId, java.lang.String name,
 		java.lang.String email, java.lang.String message,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public com.liferay.docs.guestbook.model.Entry updateStatus(long userId,
+		long entryId, int status,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
