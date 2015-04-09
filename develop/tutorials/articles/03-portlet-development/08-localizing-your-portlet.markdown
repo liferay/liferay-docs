@@ -68,7 +68,7 @@ to the `welcome-x` language key in the "My Greeting" portlet.
 3.  Replace the current welcome message tag and exclamation point,
     `<liferay-ui:message key="welcome" />!`, in the JSP with the following:
 
-        <liferay-ui:message key="welcome-x" /> <%= user.getScreenName() %>
+        <liferay-ui:message key="welcome-x" arguments="<%= user.getScreenName() %>"/> 
 
 When you refesh your page, your "My Greeting" portlet greets you by your screen
 name!
