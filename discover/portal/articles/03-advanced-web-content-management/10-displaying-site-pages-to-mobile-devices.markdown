@@ -91,10 +91,10 @@ the family has been found to apply.
 
 +$$$
 
-**Tip:** The Audience Targeting application offers a *Device* rule, which
-evaluates if the user is accessing something with a selected device family. This
-rule is integrated with the Mobile Device Families portlet. Visit the
-[Liferay Audience Targeting Rules](/discover/portal/-/knowledge_base/6-2/liferay-audience-targeting-rules#device)
+**Tip:** The Audience Targeting application offers a *Device* rule that
+evaluates whether the user is accessing content using a particular device
+family. This rule is integrated with the Mobile Device Families portlet. Visit
+the [Liferay Audience Targeting Rules](/discover/portal/-/knowledge_base/6-2/liferay-audience-targeting-rules#device)
 section for more details.
 
 $$$
