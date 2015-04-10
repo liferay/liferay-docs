@@ -323,10 +323,24 @@ before publishing.
 **Permissions** allows you to include permissions for the pages and portlets
 when the changes are published.
 
-Furthermore, you're given the Current and Previous and Scheduled tabs. 
-The Current and Previous tab lets you view past publications along with their 
-authors and create/completion dates. The Scheduled tab lets you view what 
-publication processes are scheduled for publishing.
+The *Date Range* feature provides you with another way to select specific
+content to publish. Specifying a date range allows you to choose content to
+publish based on when it was created. You can change the date range of content
+by selecting *Choose Content* in the *Content* section. Then click *Change* next
+to *Date Range*. You have several options to choose from:
+
+-  *All:* publishes content regardless of its creation date.
+
+-  *From Last Publish Date:* publishes content that was created since the last
+   publish date.
+
+-  *Date Range:* publishes content based on a specified date range. You can set a
+   start and end date/time window. The content created within that window of
+   time is published.
+
+-  *Last:* publishes content based on a set amount of time since the current
+   time.  For example, you can set the date range to the past 48 hours,
+   starting from the current time.
 
 Click on *Mark as Ready for Publication*, then click *Publish to Live* &rarr;
 *Now*, and select *Publish* to publish your Bookmarks portlet to the live site.
