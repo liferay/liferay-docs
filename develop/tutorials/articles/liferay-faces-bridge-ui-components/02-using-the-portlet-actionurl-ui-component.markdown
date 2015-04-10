@@ -1,4 +1,4 @@
-# Using the portlet:actionURL UI Component tag [](id=using-the-portletactionurl-ui-component)
+# Using the portlet:actionURL UI Component [](id=using-the-portletactionurl-ui-component)
 
 Liferay Faces Bridge provides several Portlet 2.0 `UIComponent` tags as part of
 its component suite. In this tutorial, you'll learn about the
