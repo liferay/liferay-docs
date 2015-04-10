@@ -43,6 +43,10 @@ public class EntrySoap implements Serializable {
 		soapModel.setEmail(model.getEmail());
 		soapModel.setMessage(model.getMessage());
 		soapModel.setGuestbookId(model.getGuestbookId());
+		soapModel.setStatus(model.getStatus());
+		soapModel.setStatusByUserId(model.getStatusByUserId());
+		soapModel.setStatusByUserName(model.getStatusByUserName());
+		soapModel.setStatusDate(model.getStatusDate());
 
 		return soapModel;
 	}
@@ -191,6 +195,38 @@ public class EntrySoap implements Serializable {
 		_guestbookId = guestbookId;
 	}
 
+	public int getStatus() {
+		return _status;
+	}
+
+	public void setStatus(int status) {
+		_status = status;
+	}
+
+	public long getStatusByUserId() {
+		return _statusByUserId;
+	}
+
+	public void setStatusByUserId(long statusByUserId) {
+		_statusByUserId = statusByUserId;
+	}
+
+	public String getStatusByUserName() {
+		return _statusByUserName;
+	}
+
+	public void setStatusByUserName(String statusByUserName) {
+		_statusByUserName = statusByUserName;
+	}
+
+	public Date getStatusDate() {
+		return _statusDate;
+	}
+
+	public void setStatusDate(Date statusDate) {
+		_statusDate = statusDate;
+	}
+
 	private String _uuid;
 	private long _entryId;
 	private long _groupId;
@@ -203,4 +239,8 @@ public class EntrySoap implements Serializable {
 	private String _email;
 	private String _message;
 	private long _guestbookId;
+	private int _status;
+	private long _statusByUserId;
+	private String _statusByUserName;
+	private Date _statusDate;
 }

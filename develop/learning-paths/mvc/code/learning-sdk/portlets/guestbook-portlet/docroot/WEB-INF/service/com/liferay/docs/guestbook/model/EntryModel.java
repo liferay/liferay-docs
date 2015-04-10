@@ -19,6 +19,7 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.model.StagedGroupedModel;
+import com.liferay.portal.model.WorkflowedModel;
 import com.liferay.portal.service.ServiceContext;
 
 import com.liferay.portlet.expando.model.ExpandoBridge;
@@ -40,7 +41,8 @@ import java.util.Date;
  * @see com.liferay.docs.guestbook.model.impl.EntryModelImpl
  * @generated
  */
-public interface EntryModel extends BaseModel<Entry>, StagedGroupedModel {
+public interface EntryModel extends BaseModel<Entry>, StagedGroupedModel,
+	WorkflowedModel {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
@@ -264,6 +266,158 @@ public interface EntryModel extends BaseModel<Entry>, StagedGroupedModel {
 	 * @param guestbookId the guestbook ID of this entry
 	 */
 	public void setGuestbookId(long guestbookId);
+
+	/**
+	 * Returns the status of this entry.
+	 *
+	 * @return the status of this entry
+	 */
+	@Override
+	public int getStatus();
+
+	/**
+	 * Sets the status of this entry.
+	 *
+	 * @param status the status of this entry
+	 */
+	@Override
+	public void setStatus(int status);
+
+	/**
+	 * Returns the status by user ID of this entry.
+	 *
+	 * @return the status by user ID of this entry
+	 */
+	@Override
+	public long getStatusByUserId();
+
+	/**
+	 * Sets the status by user ID of this entry.
+	 *
+	 * @param statusByUserId the status by user ID of this entry
+	 */
+	@Override
+	public void setStatusByUserId(long statusByUserId);
+
+	/**
+	 * Returns the status by user uuid of this entry.
+	 *
+	 * @return the status by user uuid of this entry
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public String getStatusByUserUuid() throws SystemException;
+
+	/**
+	 * Sets the status by user uuid of this entry.
+	 *
+	 * @param statusByUserUuid the status by user uuid of this entry
+	 */
+	@Override
+	public void setStatusByUserUuid(String statusByUserUuid);
+
+	/**
+	 * Returns the status by user name of this entry.
+	 *
+	 * @return the status by user name of this entry
+	 */
+	@AutoEscape
+	@Override
+	public String getStatusByUserName();
+
+	/**
+	 * Sets the status by user name of this entry.
+	 *
+	 * @param statusByUserName the status by user name of this entry
+	 */
+	@Override
+	public void setStatusByUserName(String statusByUserName);
+
+	/**
+	 * Returns the status date of this entry.
+	 *
+	 * @return the status date of this entry
+	 */
+	@Override
+	public Date getStatusDate();
+
+	/**
+	 * Sets the status date of this entry.
+	 *
+	 * @param statusDate the status date of this entry
+	 */
+	@Override
+	public void setStatusDate(Date statusDate);
+
+	/**
+	 * @deprecated As of 6.1.0, replaced by {@link #isApproved()}
+	 */
+	@Override
+	public boolean getApproved();
+
+	/**
+	 * Returns <code>true</code> if this entry is approved.
+	 *
+	 * @return <code>true</code> if this entry is approved; <code>false</code> otherwise
+	 */
+	@Override
+	public boolean isApproved();
+
+	/**
+	 * Returns <code>true</code> if this entry is denied.
+	 *
+	 * @return <code>true</code> if this entry is denied; <code>false</code> otherwise
+	 */
+	@Override
+	public boolean isDenied();
+
+	/**
+	 * Returns <code>true</code> if this entry is a draft.
+	 *
+	 * @return <code>true</code> if this entry is a draft; <code>false</code> otherwise
+	 */
+	@Override
+	public boolean isDraft();
+
+	/**
+	 * Returns <code>true</code> if this entry is expired.
+	 *
+	 * @return <code>true</code> if this entry is expired; <code>false</code> otherwise
+	 */
+	@Override
+	public boolean isExpired();
+
+	/**
+	 * Returns <code>true</code> if this entry is inactive.
+	 *
+	 * @return <code>true</code> if this entry is inactive; <code>false</code> otherwise
+	 */
+	@Override
+	public boolean isInactive();
+
+	/**
+	 * Returns <code>true</code> if this entry is incomplete.
+	 *
+	 * @return <code>true</code> if this entry is incomplete; <code>false</code> otherwise
+	 */
+	@Override
+	public boolean isIncomplete();
+
+	/**
+	 * Returns <code>true</code> if this entry is pending.
+	 *
+	 * @return <code>true</code> if this entry is pending; <code>false</code> otherwise
+	 */
+	@Override
+	public boolean isPending();
+
+	/**
+	 * Returns <code>true</code> if this entry is scheduled.
+	 *
+	 * @return <code>true</code> if this entry is scheduled; <code>false</code> otherwise
+	 */
+	@Override
+	public boolean isScheduled();
 
 	@Override
 	public boolean isNew();

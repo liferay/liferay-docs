@@ -42,7 +42,6 @@ Entry entry = (Entry)row.getObject();
 	<c:if
 		test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.PERMISSIONS) %>">
 
-
 		<liferay-security:permissionsURL
 			modelResource="<%= Entry.class.getName() %>"
 			modelResourceDescription="<%= entry.getMessage() %>"

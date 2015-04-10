@@ -1,4 +1,4 @@
-# Liferay's Message Bus System 
+# Liferay's Message Bus System [](id=liferays-message-bus-system)
 
 Liferay's Message Bus system is a great way to handle communication both
 between and within your applications. However, before you get started with
@@ -7,7 +7,7 @@ presents information on the components of the Message Bus system, as well as the
 different types of messages that can be sent. Read on to inspect the Message
 Bus! 
 
-## Message Bus System Components 
+## Message Bus System Components [](id=message-bus-system-components)
 
 The Message Bus system contains the following components: 
 
@@ -32,7 +32,7 @@ service Jane." These names are easier to follow than numbered names. -Rich -->
 
 ![Figure 1: Example, Message Bus system](../../images/msg-bus-system.png)
 
-## Message Types 
+## Message Types [](id=message-types)
 
 The Message Bus supports *synchronous* and *asynchronous* messaging: 
 
@@ -71,7 +71,7 @@ serialized and deserialized in JSON. Both types of message classes are used in
 the following tutorials to show you how to implement both synchronous and
 asynchronous messaging. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
 

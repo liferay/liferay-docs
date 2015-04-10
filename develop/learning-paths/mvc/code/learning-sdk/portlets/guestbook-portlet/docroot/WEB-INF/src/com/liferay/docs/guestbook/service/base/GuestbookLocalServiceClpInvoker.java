@@ -139,7 +139,7 @@ public class GuestbookLocalServiceClpInvoker {
 
 		_methodName61 = "getGuestbooks";
 
-		_methodParameterTypes61 = new String[] { "long" };
+		_methodParameterTypes61 = new String[] { "long", "int" };
 
 		_methodName62 = "getGuestbooks";
 
@@ -167,6 +167,13 @@ public class GuestbookLocalServiceClpInvoker {
 
 		_methodParameterTypes66 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName68 = "updateStatus";
+
+		_methodParameterTypes68 = new String[] {
+				"long", "long", "int",
+				"com.liferay.portal.service.ServiceContext"
 			};
 	}
 
@@ -304,7 +311,8 @@ public class GuestbookLocalServiceClpInvoker {
 
 		if (_methodName61.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes61, parameterTypes)) {
-			return GuestbookLocalServiceUtil.getGuestbooks(((Long)arguments[0]).longValue());
+			return GuestbookLocalServiceUtil.getGuestbooks(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue());
 		}
 
 		if (_methodName62.equals(name) &&
@@ -338,6 +346,14 @@ public class GuestbookLocalServiceClpInvoker {
 				Arrays.deepEquals(_methodParameterTypes66, parameterTypes)) {
 			return GuestbookLocalServiceUtil.deleteGuestbook(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
+		}
+
+		if (_methodName68.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes68, parameterTypes)) {
+			return GuestbookLocalServiceUtil.updateStatus(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				((Integer)arguments[2]).intValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
 		throw new UnsupportedOperationException();
@@ -401,4 +417,6 @@ public class GuestbookLocalServiceClpInvoker {
 	private String[] _methodParameterTypes65;
 	private String _methodName66;
 	private String[] _methodParameterTypes66;
+	private String _methodName68;
+	private String[] _methodParameterTypes68;
 }

@@ -9,9 +9,10 @@ icon of your portlet and select *Export/Import*. Exporting portlet data produces
 a `.lar` file that you can save and import into another portlet application of
 the same type. To import portlet data, you must select a `.lar` file. Be careful
 not to confuse portlet-specific `.lar` files with site-specific `.lar` files.
-See the Backing up and Restoring Pages section of chapter 2 for a discussion of
-exporting and importing data across an entire site. Let's explore the export
-process first.
+See the section on [Creating and Managing Pages](discover/portal/-/knowledge_base/6-2/leveraging-liferays-multi-site-capabilities#creating-and-managing-pages) 
+for a discussion of exporting and importing site page data. 
+
+Let's explore the export process for portlets first.
 
 ![Figure 4.7: When exporting portlet data, you can choose what content to include.](../../images/portlet-export.png)
 
