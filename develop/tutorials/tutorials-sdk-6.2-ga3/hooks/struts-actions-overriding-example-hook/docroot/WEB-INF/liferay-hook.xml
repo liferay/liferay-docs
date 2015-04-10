@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
+
+<hook>
+    <struts-action>
+        <struts-action-path>/login/login</struts-action-path>
+        <struts-action-impl>
+        com.liferay.sample.hook.action.ExampleStrutsPortletAction
+        </struts-action-impl>
+    </struts-action>
+</hook>
