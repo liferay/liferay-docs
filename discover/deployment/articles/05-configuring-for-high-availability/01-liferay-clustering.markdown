@@ -497,10 +497,10 @@ for clustering, let's move on to configuring search.
 
 ## Clustering Search [](id=clustering-search)
 
-You can configure search for clustering in one of two ways: you can use pluggable
-enterprise search (recommended) or you can configure Lucene so indexes replicate
-across the individual file systems of the nodes in the cluster. We'll look at
-both ways to do this. 
+You can configure search for clustering in one of two ways: you can use
+pluggable enterprise search (recommended) or you can configure Lucene so indexes
+replicate across the individual file systems of the nodes in the cluster. We'll
+look at both ways to do this. 
 
 ### Using Pluggable Enterprise Search [](id=using-pluggable-enterprise-search)
 
@@ -959,14 +959,15 @@ consider five different scenarios.
   configuration files (i.e., does not override
   `ehcache.single.vm.config.location`, `ehcache.multi.vm.config.location`, or
   `net.sf.ehcache.configurationResourceName`) but does set
-  `cluster.link.enabled=true` and `ehcache.cluster.link.replication.enabled=true`. This
-  is the recommended configuration for a Liferay cluster, as long as the Ehcache
-  Cluster EE app, available from Liferay Marketplace, has been installed.
-  **Important**: The Ehcache Cluster EE app must be installed or cache
-  replication will *not* work with this configuration. In this scenario, Liferay
-  automatically resets cache peer and cache event listers and replaces them with
-  Cluster Link based listeners. This basically activates Cluster Link based
-  cache replication. The configured LiferayCacheManagerPeerProviderFactory,
+  `cluster.link.enabled=true` and
+  `ehcache.cluster.link.replication.enabled=true`. This is the recommended
+  configuration for a Liferay cluster, as long as the Ehcache Cluster EE app,
+  available from Liferay Marketplace, has been installed. **Important**: The
+  Ehcache Cluster EE app must be installed or cache replication will *not* work
+  with this configuration. In this scenario, Liferay automatically resets cache
+  peer and cache event listers and replaces them with Cluster Link based
+  listeners. This basically activates Cluster Link based cache replication. The
+  configured LiferayCacheManagerPeerProviderFactory,
   RMICacheManagerPeerListenerFactory, and LiferayCacheEventListenerFactory
   classes are replaced with Cluster Link based implementations.
 
@@ -978,9 +979,9 @@ consider five different scenarios.
   log with this configuration.
 
 - Scenario 3: The portal administrator does not override the default cache
-  configuration files and does not set `cluster.link.enabled=true`. In this case,
-  Liferay does not activate any replication and operates with the assumption
-  that there's no cluster.
+  configuration files and does not set `cluster.link.enabled=true`. In this
+  case, Liferay does not activate any replication and operates with the
+  assumption that there's no cluster.
 
 - Scenario 4: The portal administrator overrides the default cache configuration
   files and sets `cluster.link.enabled=true` and
@@ -995,10 +996,10 @@ consider five different scenarios.
 
 - Scenario 5: The portal administrator overrides the default cache configuration
   files and sets `cluster.link.enabled=true` but does not set
-  `ehcache.cluster.link.replication.enabled=true`. In this case, Liferay uses the cache
-  configurations specified in the custom cache configuration files. This is the
-  recommended configuration when overriding the default cache configuration
-  files.
+  `ehcache.cluster.link.replication.enabled=true`. In this case, Liferay uses
+  the cache configurations specified in the custom cache configuration files.
+  This is the recommended configuration when overriding the default cache
+  configuration files.
 
 As a general rule, we recommend that portal administrators *not* set custom
 cache configuration files but to set `cluster.link.enabled=true` and
