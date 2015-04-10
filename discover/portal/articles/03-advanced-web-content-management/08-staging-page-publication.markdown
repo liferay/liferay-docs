@@ -329,18 +329,18 @@ publish based on when it was created. You can change the date range of content
 by selecting *Choose Content* in the *Content* section. Then click *Change* next
 to *Date Range*. You have several options to choose from:
 
-- *All:* publishes content regardless of its creation date.
+-  *All:* publishes content regardless of its creation date.
 
-- *From Last Publish Date:* publishes content that was created since the last
-publish date.
+-  *From Last Publish Date:* publishes content that was created since the last
+   publish date.
 
-- *Date Range:* publishes content based on a specified date range. You have the
-ability to set a start and end date/time window. The content that was created
-within that window of time is published.
+-  *Date Range:* publishes content based on a specified date range. You can set a
+   start and end date/time window. The content created within that window of
+   time is published.
 
-- *Last:* publishes content based on a set amount of time since the current time.
-For example, you can set the date range to the past 48 hours, starting from the
-current time.
+-  *Last:* publishes content based on a set amount of time since the current
+   time.  For example, you can set the date range to the past 48 hours,
+   starting from the current time.
 
 Click on *Mark as Ready for Publication*, then click *Publish to Live* &rarr;
 *Now*, and select *Publish* to publish your Bookmarks portlet to the live site.
