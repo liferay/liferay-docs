@@ -1,4 +1,4 @@
-# Approving Content with Workflow
+# Approving Content with Workflow [](id=approving-content-with-workflow)
 
 In any application that accepts user created content, it's important to have an
 approval process for publishing that content. Review and approval might be
