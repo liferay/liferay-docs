@@ -47,9 +47,9 @@ convenience method provided by Service Builder.
 
 Next, you'll add a method for updating an entry: 
 
-    public Entry updateEntry(long userId, long guestbookId, long entryId,
-            String name, String email, String message,
-            ServiceContext serviceContext)
+    public Entry updateEntry(
+            long userId, long guestbookId, long entryId, String name,
+            String email, String message, ServiceContext serviceContext)
         throws PortalException, SystemException {
 
         long groupId = serviceContext.getScopeGroupId();
