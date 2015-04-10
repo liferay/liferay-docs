@@ -1,17 +1,17 @@
-# DDLListScreenlet for iOS
+# DDLListScreenlet for iOS [](id=ddllistscreenlet-for-ios)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - XCode 6.0 or above
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
 - Mobile Widgets plugin installed
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - iOS 7 and above
 
-## Features
+## Features [](id=features)
 
 The `DDLListScreenlet` enables the following features:
 
@@ -21,11 +21,11 @@ The `DDLListScreenlet` enables the following features:
 - Allows filtering of records by creator.
 - Supports i18n in record values.
 
-## Module
+## Module [](id=module)
 
 - DDL
 
-## Themes
+## Themes [](id=themes)
 
 - The Default theme uses a standard `UITableView` to show the scrollable list. 
   Other themes may use a different component, such as `UICollectionView` or 
@@ -33,14 +33,14 @@ The `DDLListScreenlet` enables the following features:
 
 ![The DDLList screenlet using the Default theme.](../../images/screens-ios-ddllist.png)
 
-## Portal Configuration
+## Portal Configuration [](id=portal-configuration)
 
 Dynamic Data Lists (DDL) and Data Types should be properly configured in the 
 portal. For more details, please refer to the Liferay User Guide sections 
 [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
 and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists).
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -52,13 +52,13 @@ and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists).
 | `userId` | `number` | The ID of the user to filter records on. Records aren't filtered if the `userId` is `0`. The default value is `0`. |
 | `labelFields` | `string` | The comma separated names of the DDL fields to show. Refer to the list's data definition to find the field names. To do so, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* and click the *Manage Data Definitions* button. You can view the fields by clicking on any of the data definitions in the table that appears. Note that the appearance of these values depends on the theme selected by the user. |
 
-## Methods
+## Methods [](id=methods)
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 |  `loadList()` | `boolean` | Starts the request to load the list of records. The list is shown when the response is received. This method returns `true` if the request is sent. |
 
-## Delegate
+## Delegate [](id=delegate)
 
 The `DDLListScreenlet` delegates some events in an object that conforms to the 
 `DDLListScreenletDelegate` protocol. This protocol lets you implement the 

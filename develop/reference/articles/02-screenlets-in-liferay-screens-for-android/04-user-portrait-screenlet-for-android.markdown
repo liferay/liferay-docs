@@ -1,39 +1,39 @@
-# UserPortraitScreenlet for Android
+# UserPortraitScreenlet for Android [](id=userportraitscreenlet-for-android)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 14) and above
 - Liferay Portal 6.2 CE or EE
 - Mobile Widgets plugin
 - Picasso library
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - Android SDK 4.0 (API Level 14) and above
 
-## Features
+## Features [](id=features)
 
 The `UserPortraitScreenlet` shows the user's profile picture from their Liferay 
 Portal. If the user doesn't have a profile picture, a placeholder image is 
 shown. The screenlet allows the profile picture to be edited via the `editable` 
 property.
 
-## Module
+## Module [](id=module)
 
 - None
 
-## Views
+## Views [](id=views)
 
 - Default
 - Material
 
 ![The `UserPortraitScreenlet` using the Default and Material viewsets.](../../images/screens-android-userportrait.png)
 
-## Portal Configuration
+## Portal Configuration [](id=portal-configuration)
 
 No additional steps required.
 
-## Activity Configuration
+## Activity Configuration [](id=activity-configuration)
 
 The `UserPortraitScreenlet` needs the following user permissions:
 
@@ -55,7 +55,7 @@ implementation:
         }
     }
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -67,14 +67,14 @@ implementation:
 | `uuid` | `string` | The `uuid` of the user whose portrait is being requested. This attribute is used if `userId` isn't specified. |
 | `editable` | `boolean` | Lets the user change the portrait image by taking a photo or selecting a gallery picture. |
 
-## Methods
+## Methods [](id=methods)
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `load()` | `void` | Starts the request to load the user specified in the `userId` property, or the portrait specified in the `portraitId`and `uuid` properties. |
 | `upload(int requestCode,`<br/>`Intent onActivityResultData)` | `void` | Starts the request to upload a profile picture from the source specified in the `requestCode` property (gallery or camera), and with the path stored in the `onActivityResultData` variable. |
 
-## Listener
+## Listener [](id=listener)
 
 The `UserPortraitScreenlet` delegates some events to an object that implements 
 the `UserPortraitListener` interface. This interface lets you implement the 

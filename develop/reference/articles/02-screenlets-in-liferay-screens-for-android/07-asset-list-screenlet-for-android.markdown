@@ -1,16 +1,16 @@
-# AssetListScreenlet for Android
+# AssetListScreenlet for Android [](id=assetlistscreenlet-for-android)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 14) and above
 - Liferay Portal 6.2 CE or EE
 - Mobile Widgets plugin
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - Android SDK 4.0 (API Level 14) and above
 
-## Features
+## Features [](id=features)
 
 The `AssetListScreenlet` can be used to show [asset](/tutorials/-/knowledge_base/6-2/asset-framework) 
 lists from a Liferay instance. For example, you can use the screenlet to show a 
@@ -48,11 +48,11 @@ to the following classes:
 
 The `AssetListScreenlet` also supports i18n in asset values.
 
-## Module
+## Module [](id=module)
 
 - None
 
-## Views
+## Views [](id=views)
 
 The Default views use a standard `RecyclerView` to show the scrollable list. 
 Other views may use a different component, such as `ViewPager` or others, to 
@@ -60,14 +60,14 @@ show the items.
 
 ![`AssetListScreenlet` using the Default and Material viewsets.](../../images/screens-android-assetlist.png)
 
-## Portal Configuration
+## Portal Configuration [](id=portal-configuration)
 
 Dynamic Data Lists (DDL) and Data Types should be configured properly in the 
 portal. Refer to the [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
 and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists) 
 sections of the User Guide for more details.
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -78,13 +78,13 @@ sections of the User Guide for more details.
 | `groupId` | `number` | The asset's group (site) ID. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0 `. |
 | `classNameId` | `number` | The asset class name's ID. Use values from the `AssetClassNameId` enumeration or the `classname_` database table. |
 
-## Methods
+## Methods [](id=methods)
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `loadPage(pageNumber)` | `void` | Starts the request to load the specified page of assets. The page is shown when the response is received. |
 
-## Listener
+## Listener [](id=listener)
 
 The `AssetListScreenlet` delegates some events to an object that implements the 
 `AssetListListener` interface. This interface extends from `BaseListListener` 

@@ -1,17 +1,17 @@
-# AssetListScreenlet for iOS
+# AssetListScreenlet for iOS [](id=assetlistscreenlet-for-ios)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - XCode 6.0 or above
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
 - Mobile Widgets plugin installed
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - iOS 7 and above
 
-## Features
+## Features [](id=features)
 
 The `AssetListScreenlet` can be used to show lists of [assets](/tutorials/-/knowledge_base/6-2/asset-framework) 
 from a Liferay instance. For example, you can use the screenlet to show a 
@@ -49,11 +49,11 @@ following classes:
 
 The `AssetListScreenlet` also supports i18n in asset values.
 
-## Module
+## Module [](id=module)
 
 - None
 
-## Themes
+## Themes [](id=themes)
 
 The Default theme uses a standard `UITableView` to show the scrollable list. 
 Other themes may use a different component, such as `UICollectionView` or 
@@ -61,14 +61,14 @@ others, to show the items.
 
 ![`AssetListScreenlet` using the Default theme.](../../images/screens-ios-assetlist.png)
 
-## Portal Configuration
+## Portal Configuration [](id=portal-configuration)
 
 Dynamic Data Lists and Data Types should be configured properly in the portal. 
 Refer to the [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
 and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists) 
 sections of the User Guide for more details. 
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -79,13 +79,13 @@ sections of the User Guide for more details.
 | `groupId` | `number` | The ID of the site (group) where the asset is stored. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
 | `classNameId` | `number` | The ID of the asset's class name. Use values from the `AssetClassNameId` enumeration or the `classname_` database table. |
 
-## Methods
+## Methods [](id=methods)
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `loadList()` | `boolean` | Starts the request to load the list of assets. This list is shown when the response is received. Returns `true` if the request is sent. |
 
-## Delegate
+## Delegate [](id=delegate)
 
 The `AssetListScreenlet` delegates some events to an object that conforms to the 
 `AssetListScreenletDelegate` protocol. This protocol lets you implement the 

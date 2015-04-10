@@ -1,17 +1,17 @@
-# DDLFormScreenlet for iOS
+# DDLFormScreenlet for iOS [](id=ddlformscreenlet-for-ios)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - XCode 6.0 or above
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
 - Mobile Widgets plugin installed
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - iOS 7 and above
 
-## Features
+## Features [](id=features)
 
 The `DDLFormScreenlet` can be used to show a collection of fields so that a user 
 can fill in their values. Initial or existing values may be shown in the fields. 
@@ -43,11 +43,11 @@ There are also a few limitations you should be aware of when using
 - Selection of multiple items in the Radio and Select data types isn't supported 
   yet.
 
-## Module
+## Module [](id=module)
 
 - DDL
 
-## Themes
+## Themes [](id=themes)
 
 The Default theme uses a standard `UITableView` to show a scrollable list of 
 fields. Other themes may use a different component, such as `UICollectionView` 
@@ -55,7 +55,7 @@ or others, to show the fields.
 
 ![The `DDLForm` screenlet using Default theme.](../../images/screens-ios-ddlform.png)
 
-### Custom Cells
+### Custom Cells [](id=custom-cells)
 
 A theme needs to define a cell view for each field type. For instance, the `xib` 
 file `DDLFieldDateTableCell_default` is used to render `Date` fields in the 
@@ -71,7 +71,7 @@ the field `subscriberName`. The filename is therefore
 `DDLCustomFieldSubscriberNameTableCell_default`. Be careful to keep the same 
 components and `IBOutlet` defined in the custom file.
 
-## Portal Configuration
+## Portal Configuration [](id=portal-configuration)
 
 Dynamic Data Lists and Data Types should be configured properly in the portal. 
 Refer to the [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
@@ -80,7 +80,7 @@ sections of the User Guide for more details. If Workflow is required, it also
 must be configured. Please see the [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow) 
 section of the User Guide for details.
 
-### Permissions
+### Permissions [](id=permissions)
 
 To add new records using this screenlet, you must grant the Add Record 
 permission in the used Dynamic Data List:
@@ -102,7 +102,7 @@ For more details, please see the User Guide sections [Defining Data Types](/port
 [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists), 
 and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data Type | Explanation |
 |-----------|-----------|-------------| 
@@ -117,7 +117,7 @@ and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 |  `autoscrollOnValidation` | `boolean` | Sets whether or not the form automatically scrolls to the first failed field when validation is used. |
 |  `showSubmitButton` | `boolean` | Sets whether or not the form shows a submit button at the bottom. If this is set to `false`, you should call the `submitForm()` method. |
 
-## Methods
+## Methods [](id=methods)
 
 | Method | Return Type | Explanation |
 |-----------|-----------|-------------| 
@@ -125,7 +125,7 @@ and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 | `loadRecord()` | `boolean` | Starts the request to load the record specified in `recordId`. If needed, the form definition is also loaded. The form fields are shown filled with record values when the response is received. This method returns `true` if the request is sent. |
 | `submitForm()` | `boolean` | Starts the request to submit form values to the dynamic data list specified in `recordSetId`. All fields are validated prior to submission. Validation errors stop the submit process. |
 
-## Delegate
+## Delegate [](id=delegate)
 
 The `DDLFormScreenlet` delegates some events to an object that conforms with the 
 `DDLFormScreenletDelegate` protocol. This protocol lets you implement the 

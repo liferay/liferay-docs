@@ -1,16 +1,16 @@
-# LoginScreenlet for iOS
+# LoginScreenlet for iOS [](id=loginscreenlet-for-ios)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - XCode 6.0 or above
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - iOS 7 and above
 
-## Features
+## Features [](id=features)
 
 The `LoginScreenlet` lets you authenticate portal users in your iOS app. The 
 following authentication methods are supported:
@@ -25,18 +25,18 @@ attributes. It's important to note that user credentials and attributes can be
 stored securely in the keychain. This information can then be used to perform 
 automatic login in subsequent sessions (see the `saveCredentials` attribute).
 
-## Module
+## Module [](id=module)
 
 - Auth
 
-## Themes
+## Themes [](id=themes)
 
 - Default
 - Flat7
 
 ![The `LoginScreenlet` using the Default and Flat7 themes.](../../images/screens-ios-login.png)
 
-## Portal Configuration
+## Portal Configuration [](id=portal-configuration)
 
 The authentication method should be configured in your Liferay instance. You can 
 set this in the Control Panel by clicking *Portal Settings* and then 
@@ -47,7 +47,7 @@ set this in the Control Panel by clicking *Portal Settings* and then
 For more details, please refer to the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide. 
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -55,7 +55,7 @@ section of the User Guide.
 |  `companyId` | `number` | When set, authentication is done for a user in the specified company. If the value is `0`, the company specified in `LiferayServerContext` is used. |
 |  `authMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. |
 
-## Delegate
+## Delegate [](id=delegate)
 
 The `LoginScreenlet` delegates some events to an object that conforms to the 
 `LoginScreenletDelegate` protocol. This protocol lets you implement the 

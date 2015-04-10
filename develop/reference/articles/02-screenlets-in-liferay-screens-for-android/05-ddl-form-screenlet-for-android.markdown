@@ -1,16 +1,16 @@
-# DDLFormScreenlet for Android
+# DDLFormScreenlet for Android [](id=ddlformscreenlet-for-android)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 14) and above
 - Liferay Portal 6.2 CE or EE
 - Mobile Widgets plugin
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - Android SDK 4.0 (API Level 14) and above
 
-## Features
+## Features [](id=features)
 
 The `DDLFormScreenlet` shows a set of fields that can be filled in by the user. 
 Initial or existing values can be shown in the fields. Fields of the following 
@@ -43,11 +43,11 @@ There are also a few limitations that you should be aware of when using
 - Selection of multiple items in the Radio and Select data types isn't 
 supported.
 
-## Module
+## Module [](id=module)
 
 - DDL
 
-## Views
+## Views [](id=views)
 
 The Default view uses a standard vertical `ScrollView` to show a scrollable list 
 of fields. Other views may use different components, such as `ViewPager` or 
@@ -56,7 +56,7 @@ others, to show the fields. You can find a sample of this implementation in the
 
 ![The `DDLForm` screenlet's Default and Material viewsets.](../../images/screens-android-ddlform.png)
 
-### Editor Types
+### Editor Types [](id=editor-types)
 
 Each field defines an editor type. You must define each editor type's layout by 
 using the following attributes:
@@ -76,7 +76,7 @@ If you don't define the editor type's layout in the attributes of
 is the name of the editor type. It's important to note that you can change the 
 layout used with any editor type at any point.
 
-### Custom Editors
+### Custom Editors [](id=custom-editors)
 
 What if you want to have a unique appearance for one specific field? No problem! 
 You can customize your field's editor view by calling the screenlet's 
@@ -85,7 +85,7 @@ is the name of the field customize and the second parameter is the layout to
 use. You can also easily create custom editor views. For examples of this, see 
 the files `ddlfield_custom_rating_number.xml` and `CustomRatingNumberView.java`.
 
-## Activity Configuration
+## Activity Configuration [](id=activity-configuration)
 
 The `DDLForm Screenlet` needs the following user permissions:
 
@@ -104,7 +104,7 @@ picture/video information. Here's an example implementation:
         _screenlet.startUploadByPosition(requestCode);
     }
 
-## Portal Configuration
+## Portal Configuration [](id=portal-configuration)
 
 Before using `DDLFormScreenlet`, you should make sure that Dynamic Data Lists 
 and Data Types are configured properly in the portal. Refer to the 
@@ -114,7 +114,7 @@ sections of the User Guide for more details. If Workflow is required, it must
 also be configured. See the [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow) 
 section of the User Guide for details.
 
-### Permissions
+### Permissions [](id=permissions)
 
 To use `DDLFormScreenlet` to add new records, you must grant the Add Record 
 permission in the Dynamic Data List:
@@ -136,7 +136,7 @@ For more details, see the User Guide sections [Defining Data Types](/portal/-/kn
 [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists), 
 and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data Type | Explanation |
 |-----------|-----------|-------------| 
@@ -160,7 +160,7 @@ and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 | `autoScrollOnValidation` | `boolean` | Sets whether the form automatically scrolls to the first failed field when validation is used. The default value is `true`. |
 | `showSubmitButton` | `boolean` | Sets whether the form shows a submit button at the bottom. If this is set to `false`, you should call the `submitForm()` method. The default value is `true`. |
 
-## Methods
+## Methods [](id=methods)
 
 | Method | Return Type | Explanation |
 |-----------|-----------|-------------| 
@@ -169,7 +169,7 @@ and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 | `load()` | `void` | Starts the request to load the record if `recordId` is specified. Otherwise, the form definition is loaded. |
 | `submitForm()` | `void` | Starts the request to submit form values to the dynamic data list specified by `recordSetId`. If the record is new, a new record is added. If `loadRecord` is used to retrieve the record, or the record already exists, its values are updated. Fields are validated prior to the request. If validation fails, the validation errors are shown and the request is terminated. |
 
-## Listener
+## Listener [](id=listener)
 
 The `DDLFormScreenlet` delegates some events to an object that implements to the 
 `DDLFormScreenletListener` interface. This interface lets you implement the 

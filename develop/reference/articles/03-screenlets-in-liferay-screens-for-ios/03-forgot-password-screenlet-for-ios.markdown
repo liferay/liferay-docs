@@ -1,17 +1,17 @@
-# ForgotPasswordScreenlet for iOS
+# ForgotPasswordScreenlet for iOS [](id=forgotpasswordscreenlet-for-ios)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - XCode 6.0 or above
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
 - Mobile Widgets plugin installed
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - iOS 7 and above
 
-## Features
+## Features [](id=features)
 
 The `ForgotPasswordScreenlet` can send an email to a registered user with their 
 new password or a password reset link, depending on the server configuration. 
@@ -21,30 +21,30 @@ The available authentication methods are:
 - Screen name
 - User id
 
-## Module
+## Module [](id=module)
 
 - Auth
 
-## Themes
+## Themes [](id=themes)
 
 - Default
 - Flat7
 
 ![The `ForgotPasswordScreenlet` with the Default and Flat7 themes.](../../images/screens-ios-forgotpwd.png)
 
-## Portal Configuration
+## Portal Configuration [](id=portal-configuration)
 
 To use the `ForgotPasswordScreenlet`, you must allow users to request new 
 passwords in the portal. The next sections show you how to do this.
 
-### Authentication Method
+### Authentication Method [](id=authentication-method)
 
 Note that the authentication method configured in the portal can be different 
 than the one used by this screenlet. For example, it's *perfectly fine* to use 
 `screenName` for sign in authentication, but allow users to recover their 
 password using the `email` authentication method.
 
-### Password Reset
+### Password Reset [](id=password-reset)
 
 Password recovery depends on the authentication settings in the portal:
 
@@ -59,14 +59,14 @@ For more details on authentication in Liferay Portal, please refer to the
 [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide.
 
-### Anonymous Request
+### Anonymous Request [](id=anonymous-request)
 
 An anonymous request can be done without the user being logged in. However, 
 authentication is needed to call the API. To allow this operation, it's 
 recommended that the portal administrator create a specific user with minimal 
 permissions.
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -75,7 +75,7 @@ permissions.
 | `companyId` | `number` | When set, the authentication is done for a user within the specified company. If the value is `0`, the company specified in `LiferayServerContext` is used. |
 | `authMethod` | `string` | The authentication method that is presented to the user. This can be `email`, `screenName`, or `userId`. |
 
-## Delegate
+## Delegate [](id=delegate)
 
 The `ForgotPasswordScreenlet` delegates some events to an object that conforms 
 to the `ForgotPasswordScreenletDelegate` protocol. This protocol lets you 

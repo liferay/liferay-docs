@@ -1,16 +1,16 @@
-# DDLListScreenlet for Android
+# DDLListScreenlet for Android [](id=ddllistscreenlet-for-android)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 14) and above
 - Liferay Portal 6.2 CE or EE
 - Mobile Widgets plugin
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - Android SDK 4.0 (API Level 14) and above
 
-## Features
+## Features [](id=features)
 
 The `DDLListScreenlet` enables the following features:
 
@@ -20,11 +20,11 @@ The `DDLListScreenlet` enables the following features:
 - Allows record filtering by creator.
 - Supports i18n in record values.
 
-## Module
+## Module [](id=module)
 
 - DDL
 
-## Views
+## Views [](id=views)
 
 - The Default view uses a standard `RecyclerView` to show the scrollable list. 
   Other views may use a different component, such as `ViewPager` or others, to 
@@ -32,14 +32,14 @@ The `DDLListScreenlet` enables the following features:
 
 ![The DDLList screenlet using the Default and Material viewsets.](../../images/screens-android-ddllist.png)
 
-## Portal Configuration
+## Portal Configuration [](id=portal-configuration)
 
 DDLs and Data Types should be properly configured in the portal before using 
 `DDLListScreenlet`. For more details, see the Liferay User Guide sections 
 [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
 and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists).
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -51,13 +51,13 @@ and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists).
 | `userId` | `number` | The ID of the user to filter records on. Records aren't filtered if the `userId` is `0`. The default value is `0`. |
 | `labelFields` | `string` | The comma separated names of the DDL fields to show. Refer to the list's data definition to find the field names. To do so, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left and click the *Manage Data Definitions* button. You can view the fields by clicking on any of the data definitions in the table. Note that the appearance of these values depends on the `layoutId` set. |
 
-## Methods
+## Methods [](id=methods)
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `loadPage(pageNumber)` | `void` | Starts the request to load the specified page of records. The page is shown when the response is received. |
 
-## Listener
+## Listener [](id=listener)
 
 The `DDLListScreenlet` delegates some events to an object that implements the 
 `DDLListListener` interface. This interface extends from `BaseListListener` and 

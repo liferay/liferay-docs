@@ -1,16 +1,16 @@
-# LoginScreenlet for Android
+# LoginScreenlet for Android [](id=loginscreenlet-for-android)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 14) and above
 - Liferay Portal 6.2 CE or EE
 - Mobile Widgets plugin
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - Android SDK 4.0 (API Level 14) and above
 
-## Features
+## Features [](id=features)
 
 The `LoginScreenlet` lets you authenticate portal users in your Android app. The 
 following authentication methods are supported:
@@ -26,17 +26,17 @@ only data store implemented. However, new and more secure data stores will be
 added in the future. Stored user credentials can be used to perform automatic 
 login in subsequent sessions.
 
-## Module
+## Module [](id=module)
 
 - Auth
 
-## Views
+## Views [](id=views)
 
 - Default
 
 ![The `LoginScreenlet` using the Default and Material viewsets.](../../images/screens-android-login.png)
 
-## Portal Configuration
+## Portal Configuration [](id=portal-configuration)
 
 Before using `LoginScreenlet`, you should make sure your portal is configured 
 with the authentication method you want to use. You can set this in the Control 
@@ -47,7 +47,7 @@ Panel by clicking *Portal Settings* &rarr; *Authentication*.
 For more details, see the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide. 
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -56,7 +56,7 @@ section of the User Guide.
 | `authMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. The default value is `email`. |
 | `credentialsStore ` | `enum` | Sets the mode for storing user credentials. The posible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
 
-## Listener
+## Listener [](id=listener)
 
 The `LoginScreenlet` delegates some events to an object that implements the 
 `LoginListener` interface. This interface let you implement the following 
