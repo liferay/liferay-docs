@@ -88,3 +88,8 @@ see your changes applied immediately on redeploying your theme! Make sure you
 copy any changes you make back into your `_diffs` folder, or they'll be
 overwritten when you redeploy your theme.
 
+## Related Topics [](id=related-topics)
+
+[Designing a Layout Template](/develop/tutorials/-/knowledge_base/6-2/designing-a-layout-template)
+
+[Developing Applications with Liferay Developer Studio](/develop/learning-paths/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu)

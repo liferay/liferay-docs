@@ -129,3 +129,8 @@ $$$
 Now that you know how to use the predefined settings available to you in Liferay
 Portal, the sky's the limit!
 
+## Related Topics [](id=related-topics)
+
+[Making Themes Configurable with Settings](/develop/tutorials/-/knowledge_base/6-2/making-themes-configurable-with-settings)
+
+[Designing a Layout Template](/develop/tutorials/-/knowledge_base/6-2/designing-a-layout-template)

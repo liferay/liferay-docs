@@ -191,3 +191,8 @@ fit your needs.
 Since you're now a master at designing layout templates, go out there and
 generate some positive Feng Shui with your eye-pleasing layout templates! 
 
+**Related Topics**
+
+[Embedding Portlets in a Layout Template](/develop/tutorials/-/knowledge_base/6-2/embedding-portlets-in-a-layout-template)
+
+[Developing Liferay Layout Template Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-layout-template-plugins-with-mav)
