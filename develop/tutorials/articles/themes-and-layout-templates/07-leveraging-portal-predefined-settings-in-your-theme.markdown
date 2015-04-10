@@ -11,7 +11,7 @@ The first thing to cover is settings for portlet borders.
 
 ## Portlet Borders [](id=portlet-borders)
 
-By default, the theme turns on portlet borderst. But you can turn them off by
+By default, the theme turns on portlet borders. But you can turn them off by
 setting `portlet-setup-show-borders-default` to `false`, in your theme's
 `liferay-look-and-feel.xml` file. For example, the following setting makes
 border display configurable for the site administrator and disables the default
