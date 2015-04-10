@@ -89,25 +89,21 @@ the files `ddlfield_custom_rating_number.xml` and `CustomRatingNumberView.java`.
 
 The `DDLForm Screenlet` needs the following user permissions:
 
-	```xml
-	<uses-permission android:name="android.permission.CAMERA"/>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-	```
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
 Both are used by the Documents and Media fields to take a picture/video and 
 store it locally before uploading it to the portal. The Documents and Media 
 fields also need to override the `onActivityResult` method to receive the 
-picture/video information. Here's an example implementation:
+picture/video information. Here's an example implementation: 
 
-	```java
-		@Override
-		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-			super.onActivityResult(requestCode, resultCode, data);
-	
-			_screenlet.startUploadByPosition(requestCode);
-		}
-	```
-	
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    
+        _screenlet.startUploadByPosition(requestCode);
+    }
+
 ## Portal Configuration
 
 Before using `DDLFormScreenlet`, you should make sure that Dynamic Data Lists 
