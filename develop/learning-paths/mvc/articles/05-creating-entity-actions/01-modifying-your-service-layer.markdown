@@ -25,20 +25,19 @@ that's the easiest one to implement.
 
 2.  Add the following code to the file: 
 
-	public Entry deleteEntry(long entryId, ServiceContext serviceContext)
-			throws PortalException, SystemException {
+        public Entry deleteEntry(long entryId, ServiceContext serviceContext)
+            throws PortalException, SystemException {
 
-                Entry entry = getEntry(entryId);
+            Entry entry = getEntry(entryId);
 
-                resourceLocalService.deleteResource(serviceContext.getCompanyId(),
-                        Entry.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
-                        entryId);
-                
+            resourceLocalService.deleteResource(
+                serviceContext.getCompanyId(), Entry.class.getName(),
+                ResourceConstants.SCOPE_INDIVIDUAL, entryId);
+
                 entry = deleteEntry(entryId);
 
                 return entry;
-
-            }
+        }
 
 In the last step, you added resources to your entities. This means that when you
 delete your entities, you have to delete the resource also. Since your entities
@@ -48,37 +47,37 @@ convenience method provided by Service Builder.
 
 Next, you'll add a method for updating an entry: 
 
-	public Entry updateEntry(long userId, long guestbookId, long entryId,
-			String name, String email, String message,
-			ServiceContext serviceContext) throws PortalException,
-			SystemException {
-		long groupId = serviceContext.getScopeGroupId();
+    public Entry updateEntry(long userId, long guestbookId, long entryId,
+            String name, String email, String message,
+            ServiceContext serviceContext)
+        throws PortalException, SystemException {
 
-		User user = userPersistence.findByPrimaryKey(userId);
+        long groupId = serviceContext.getScopeGroupId();
 
-		Date now = new Date();
+        User user = userPersistence.findByPrimaryKey(userId);
 
-		validate(name, email, message);
+        Date now = new Date();
 
-		Entry entry = getEntry(entryId);
+        validate(name, email, message);
 
-		entry.setUserId(userId);
-		entry.setUserName(user.getFullName());
-		entry.setName(name);
-		entry.setEmail(email);
-		entry.setMessage(message);
-		entry.setModifiedDate(serviceContext.getModifiedDate(now));
-		entry.setExpandoBridgeAttributes(serviceContext);
+        Entry entry = getEntry(entryId);
 
-		entryPersistence.update(entry);
+        entry.setUserId(userId);
+        entry.setUserName(user.getFullName());
+        entry.setName(name);
+        entry.setEmail(email);
+        entry.setMessage(message);
+        entry.setModifiedDate(serviceContext.getModifiedDate(now));
+        entry.setExpandoBridgeAttributes(serviceContext);
 
-		resourceLocalService.updateResources(user.getCompanyId(), groupId,
-				Entry.class.getName(), entryId,
-				serviceContext.getGroupPermissions(),
-				serviceContext.getGuestPermissions());
+        entryPersistence.update(entry);
+
+        resourceLocalService.updateResources(
+            user.getCompanyId(), groupId, Entry.class.getName(), entryId,
+            serviceContext.getGroupPermissions(),
+            serviceContext.getGuestPermissions());
 
 		return entry;
-
 	}
 
 As you can see, this method is extremely similar to the `addEntry` method. The
