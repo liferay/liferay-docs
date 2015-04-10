@@ -167,3 +167,8 @@ Congrats! Now you know how to create configurable settings for your theme and
 use multiple page templates from the same `portal_normal.[vm|ftl]` template
 script! 
 
+## Related Topics [](id=related-topics)
+
+[Using Configurable Portlet Preferences](/develop/tutorials/-/knowledge_base/6-2/using-configurable-portlet-preferences)
+
+[Leveraging Portal Predefined Settings in Your Theme](/develop/tutorials/-/knowledge_base/6-2/leveraging-portal-predefined-settings-in-your-theme)

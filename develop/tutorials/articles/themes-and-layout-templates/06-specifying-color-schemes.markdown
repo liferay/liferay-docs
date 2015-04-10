@@ -58,3 +58,8 @@ tutorial.
 
 There you have it. Now you can go color scheme crazy with your themes!
 
+**Related Topics**
+
+[Designing a Layout Template](/develop/tutorials/-/knowledge_base/6-2/designing-a-layout-template)
+
+[Creating a Theme Thumbnail](/develop/tutorials/-/knowledge_base/6-2/creating-a-theme-thumbnail)

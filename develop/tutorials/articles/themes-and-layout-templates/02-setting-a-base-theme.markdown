@@ -44,3 +44,8 @@ theme that's installed in your portal or available in your Plugins SDK.
 
 As you can see, setting a base theme is a piece of cake!
 
+**Related Topics**
+
+[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes)
+
+[Developing Liferay Theme Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-theme-plugins-with-maven)
