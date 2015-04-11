@@ -1,12 +1,11 @@
 # Creating Model Listeners
 
-Model Listeners are used to *listen* for events on *models*, and do something
+Model Listeners are used to listen for events on models and do something
 in response. They're similar in concept to [custom action hooks](develop/tutorials/-/knowledge_base/6-2/performing-a-custom-action-using-a-hook),
-which perform an action in response to a portal event (user login, for
-example). Models built by Service Builder are called *entities*, and their data
-lives in a database table. Model listeners implement the
+which perform actions in response to portal events (user login, for
+example). Model listeners implement the
 [`ModelListener`](https://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portal/model/ModelListener.html)
-interface, which provides lots of opportunity to listen for model events.
+interface.
 
 There are a few steps required to create a model listener for a model included in
 Liferay's core:
@@ -23,7 +22,7 @@ entity for illustrative purposes.
 ## Creating a Hook Plugin Project 
 
 First, create a hook plugin project in a [Liferay Plugins SDK](develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk)
-, or using
+or with 
 [Maven](develop/tutorials/-/knowledge_base/6-2/developing-liferay-hook-plugins-with-maven).
 
 Once you have a hook plugin, start developing your model listener.
@@ -33,9 +32,9 @@ Once you have a hook plugin, start developing your model listener.
 Create a `-ModelListener` class under the hook's `docroot/WEB-INF/src`
 directory that extends `BaseModelListener`. You can implement the
 `ModelListener` interface directly, but then you need to provide
-implementations for all its methods. By extending `BaseModelListener`, an
-abstract class containing implementations for the interface methods, you just
-need to worry about the methods you're customizing.
+implementations for all its methods. By extending `BaseModelListener` (an
+abstract class containing default implementations for the interface methods),
+you just need to worry about the methods you're customizing.
 
 
     package com.liferay.samples.hooks;
@@ -58,8 +57,8 @@ need to worry about the methods you're customizing.
 
 You'll probably want to do something more interesting than print the user's
 full name in your console after the user is added or updated, but this gives you
-the idea. You have the ability to respond to actions occurring on portal
-entities by creating model listeners.
+the idea. You can respond to actions occurring on portal entities by creating
+model listeners.
 
 The `ModelListener` interface provides lots of opportunity to listen for model
 events:
@@ -75,12 +74,12 @@ events:
     onBeforeRemoveAssociation
     onBeforeUpdate
 
-After writing your listener class, there's some Liferay specific actions you
+After writing your listener class, there are some Liferay-specific actions you
 need to take so the portal runs your code.
 
 ## Modifying `liferay-hook.xml`
 
-Open `docroot/WEB-INF/liferay-hook.xml`, and add a `<portal-properties>`
+Open `docroot/WEB-INF/liferay-hook.xml` and add a `<portal-properties>`
 element inside the `<hook>` tags: 
 
     <portal-properties>portal.properties</portal-properties>
@@ -90,15 +89,15 @@ The last step is to add your listener class name to the correct property in a
 
 ## Adding the Model Listener in `portal.properties`
 
-You have your class created, but Liferay doesn't yet know what you want to do
-with it. If you don't yet have one, create a `portal.properties` file under
-`docroot/WEB-INF/src`.  Specify which model to listen for in a
+You have your class created, but Liferay doesn't know it exists yet. If you
+don't yet have one, create a `portal.properties` file under
+`docroot/WEB-INF/src`. Specify which model to listen for in a
 `value.object.listener` property, using this pattern:
 
     value.object.listener.fully.qualified.class.Name=fully.qualified.MyModelListener
 
-The property Specifying the `MyUserListener` model listener class illustrated
-above looks like this: 
+The property for the `MyUserListener` model listener class illustrated above
+looks like this: 
 
     value.object.listener.com.liferay.portal.model.User=com.liferay.samples.hooks.MyUserListener
 
@@ -111,20 +110,20 @@ If you look into the *Value Object* section of Liferay's
 [`portal.propertties`](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Value%20Object)
 file, you'll see that there's already a `UserListener` class. Among other
 things, it includes logic for exporting users to an LDAP directory. Adding
-another model listener on the `User` entity won't override the portal's
-`UserListener`. Instead, it will run your code after the portal's `UserListener`
-is run. The same is true for any of the other models listed in
+another model listener on the `User` entity doesn't override the portal's
+`UserListener`. Instead, it runs your code after the portal's `UserListener`
+runs. The same is true for any of the other models listed in
 `portal.properties`. To override one of the portal's model listeners, set the
 model's `value.object.listener` property to be blank in the portal's
-`portal-ext.properties` file, and create a model listener hook as described in
-this tutorial. Here's how the `portal-ext.properties` entry looks for the
-`User` entity:
+`portal-ext.properties` file and create a model listener hook as described in
+this tutorial. If you were to clear it out, here's how the
+`portal-ext.properties` entry would look for the `User` entity:
 
     value.object.listener.com.liferay.portal.model.User=
 
 You can create model listeners for any of the portal's entities, using the
 same process outlined above. If there is no existing listener on the model, your
-model listener will simply be the only one that is run.
+model listener is the only one that runs.
 
 +$$$
 
@@ -142,10 +141,7 @@ $$$
 Listening for events on Liferay's entities is just one of the many interesting
 ways to customize Liferay's core functionality with hooks. Keep reading in 
 [this section](develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal) to
-learn of more extension points you can hook into, and use the *Feedback* button
-(you need to be signed in to the site) to let us know if you've done something
-especially cool with model listeners (or, offer constructive criticism if we've
-missed something important in the tutorial).
+learn about more of Liferay's extension points. 
 
 ## Related Topics
 
