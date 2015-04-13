@@ -1,5 +1,12 @@
 # Building Mobile SDKs [](id=building-mobile-sdks)
 
+The Liferay Mobile SDK is great for letting you connect your mobile apps to a 
+Liferay instance. By accessing Liferay services through a Liferay Mobile SDK, 
+your apps can access the data or functionality in a Liferay instance. But what 
+happens when the services you need to use aren't built-in Liferay services? What 
+if they're custom portlet services? No problem! In this case, you just need to 
+build your own Mobile SDK to access the services of the custom portlets. 
+
 The Liferay Mobile SDK project comes with an SDK Builder that generates the 
 Liferay Mobile SDK for the Android and iOS platforms. Think of it as a Service
 Builder on the client side. The SDK Builder generates client libraries that 

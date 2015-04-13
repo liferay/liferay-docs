@@ -1,7 +1,5 @@
 # Invoking Services Using Skinny JSON Provider [](id=invoking-services-using-skinny-json-provider)
 
-![EE Only Feature](../../images/ee-feature-web.png)
-
 **Important:** This is a "Labs" application. Any app designated as "Labs" is
 experimental in features and is not supported by Liferay. This status may change
 without notice. Labs apps allow us to accelerate the availability of useful and
@@ -33,7 +31,7 @@ The hero cowers away quickly in a hurried mess.
 Maybe you've been asked to get "the skinny" on Liferay Portal data. Your gruff
 boss demands it or you're personally anxious to get the data to use in a slick
 mobile app you're developing. Either way, you want information from the portal
-and you want it now. The *Skinny JSON Provider EE* app is your ticket to getting
+and you want it now. The *Skinny JSON Provider* app is your ticket to getting
 skinny data. 
 
 The Skinny JSON Provider offers web services for retrieving web content
@@ -45,7 +43,7 @@ structure fields. Each DDL record representation is comprised of its data
 definition fields. The returned values are light-weight and easy to read,
 making them ideal to use in browsers and mobile applications. 
 
-The Skinny JSON Provider EE app is available through the Liferay Marketplace.
+The Skinny JSON Provider app is available through the Liferay Marketplace.
 You'll find it categorized as a Utility app. To learn how to install it, you can
 read the section
 [Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps).
@@ -370,7 +368,7 @@ construct a URL of the format below to access the image.
 
     http://localhost:8081/documents/[groupId]/[uuid]
 
-As a recap, the Skinny JSON Provider EE app helps you retrieve lightweight
+As a recap, the Skinny JSON Provider app helps you retrieve lightweight
 "skinny" representations of dynamic data list records and web content articles.
 What a great way to access these core Liferay entities! 
 

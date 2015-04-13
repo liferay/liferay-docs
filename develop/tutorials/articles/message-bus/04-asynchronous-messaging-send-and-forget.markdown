@@ -1,4 +1,4 @@
-# Asynchronous "Send and Forget" Messaging [](id=asynchronous-send-and-forget-messaging)
+# Asynchronous Send and Forget Messaging [](id=asynchronous-send-and-forget-messaging)
 
 Asynchronous messaging occurs when the sender sends a message and then continues 
 processing. In the *send and forget* model of asynchronous messaging, the 

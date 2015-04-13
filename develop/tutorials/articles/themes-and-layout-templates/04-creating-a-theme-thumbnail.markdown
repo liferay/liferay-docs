@@ -21,3 +21,9 @@ Now, when you visit your the *Look and Feel* settings, your theme's thumbnail
 displays along with the thumbnail images of other themes available to your site.
 
 Congrats! Now you know how to create a thumbnail image for your theme!
+
+**Related Topics**
+
+[Developing Liferay Theme Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-theme-plugins-with-maven)
+
+[Creating a User Interface](/develop/learning-paths/-/knowledge_base/6-2/creating-a-user-interface)

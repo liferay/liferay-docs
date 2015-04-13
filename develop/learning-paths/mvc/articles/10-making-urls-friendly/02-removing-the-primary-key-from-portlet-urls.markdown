@@ -763,5 +763,5 @@ to create even friendlier URLs.
 
 ## Next Steps [](id=next-steps)
 
-[Creating Remote Services](/develop/learning-paths/-/knowledge_base/creating-remote-services)
+[Creating Remote Services](develop/learning-paths/-/knowledge_base/6-2/creating-web-services-for-your-application)
 

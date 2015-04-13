@@ -65,3 +65,8 @@ editor.
 
 [Using the Device Recognition API](develop/tutorials/-/knowledge_base/6-2/using-the-device-recognition-api)
 
+[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+
+[Localization](/develop/tutorials/-/knowledge_base/6-2/localization)
