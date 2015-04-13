@@ -110,3 +110,9 @@ In this tutorial, you learned that application adapters are used to scope
 customizations to specific sites in your portal instance. Then you created one
 for yourself and learned best practices along the way. 
 
+**Related Topics**
+
+[Themes and Layout Templates](develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+
+[Advanced Content with Structures and Layout Templates](discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates)
+

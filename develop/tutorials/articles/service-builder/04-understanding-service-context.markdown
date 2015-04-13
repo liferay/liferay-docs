@@ -213,3 +213,9 @@ You can see that the `ServiceContext` can be used to transfer lots of useful
 information for your services. Understanding how `ServiceContext` is used in
 Liferay helps you determine when and how to use `ServiceContext` in your own
 Liferay application development.
+
+## Related Topics
+
+[Security and Permissions](develop/tutorials/-/knowledge_base/6-2/security-and-permissions)
+
+[Invoking Local Services](develop/tutorials/-/knowledge_base/6-2/invoking-local-services)

@@ -381,3 +381,10 @@ What a great way to access these core Liferay entities!
 [Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
 
 [Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
+
+## Related Topics
+
+[Checking Permissions](develop/tutorials/-/knowledge_base/6-2/checking-permissions)
+
+[Invoking Liferay Services from Your Application](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-from-your-application)
+

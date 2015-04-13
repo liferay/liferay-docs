@@ -284,8 +284,7 @@ Let's examine a sample `sitemap.json` file:
                         }
                     ]
                 ],
-                "friendlyURL": "/layout-prototypes-parent-page",
-                "layouts": [
+                "friendlyURL": "/layout-prototypes-parent-page", "layouts": [
                     {
                         "friendlyURL": "/layout-prototypes-page-1",
                         "layoutPrototypeLinkEnabled": "true",
@@ -499,3 +498,10 @@ have your theme's resources imported into a site template. For further examples,
 please examine the Zoe themes which you can find on Github here
 [https://github.com/liferay/liferay-plugins/tree/master/themes](https://github.com/liferay/liferay-plugins/tree/master/themes)
 and which you can download from Liferay Marketplace.
+
+**Related Topics**
+
+[Themes and Layout Templates](develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+
+[Application Display Templates](develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+

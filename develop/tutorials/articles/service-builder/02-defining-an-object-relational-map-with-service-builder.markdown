@@ -542,3 +542,8 @@ run Service Builder and to learn about the code that Service Builder generates,
 please refer to the
 [Running Service Builder and Understanding the Generated Code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 tutorial. 
+
+## Related Topics
+
+[What is Service Builder?](develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+

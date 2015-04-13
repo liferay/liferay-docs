@@ -58,3 +58,10 @@ comfort of your own Liferay Portal instance. You can facilitate the social
 interactions on your sites and increase your portal content's popularity across
 your social network by leveraging the power of OpenSocial gadgets and the gadget
 editor.
+
+**Related Topics**
+
+[Using the Mobile SDK](develop/tutorials/-/knowledge_base/6-2/mobile)
+
+[Using the Device Recognition API](develop/tutorials/-/knowledge_base/6-2/using-the-device-recognition-api)
+

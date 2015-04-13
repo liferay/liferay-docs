@@ -339,3 +339,10 @@ of a deployable sample newsletter tracking action, you can download its
 
 <!-- Provide link to newsletter tracking action ZIP file once it's available.
 -Cody -->
+
+## Related Topics
+
+[Creating Model Listeners](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-model-listeners)
+
+[Web Content Management](discover/portal/-/knowledge_base/6-2/web-content-management)
+

@@ -360,3 +360,10 @@ also generates a `service.properties` file. To learn about the
 tutorial. To learn how to invoke local services, please refer to the
 [Invoking Local Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
 tutorial. 
+
+**Related Topics**
+
+[Creating Remote Services](develop/tutorials/-/knowledge_base/6-2/creating-remote-services)
+
+[Running Service Builder and Understanding the Generated Code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+
