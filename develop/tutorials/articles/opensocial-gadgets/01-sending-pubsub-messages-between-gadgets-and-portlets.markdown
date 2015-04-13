@@ -222,5 +222,13 @@ into the `addresses.jsp` file:
     <a href="javascript:void(0);" onclick='publishAddress("<%= street1 + ", " + zipCode + ", " + city %>")'>Show in Google Maps</a>
 
 Letting your portlets communicate with gadgets enhances your portlet
-applications and gives you a plethora of different ways you can enhance your
+applications and gives you a plethora of different ways you can enhance your 
 user's experience. 
+
+## Related Topics
+
+[Customizing Liferay Portal with Hooks](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+
+[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+
+[Localization](/tutorials/-/knowledge_base/6-2/localization)
