@@ -170,10 +170,10 @@ connection pools.
 
 You can view the settings for a server by clicking on the *Server Details* 
 button, which is to the right of the Metrics button. The first tab under the 
-Settings button is Server Settings. This lets you view or edit your 
+Server Details button is Server Settings. This lets you view or edit your 
 server's name, description, location, and environment. Click the pencil icon to 
 the right of each field to edit it. You can also unregister your server from 
-LCS. The second tab under the Settings button is Server Properties. This 
+LCS. The second tab under the Server Details button is Server Properties. This 
 provides general information about your Liferay installation and hardware. This 
 information is useful to the Liferay support team in the event that you need 
 their assistance. 
