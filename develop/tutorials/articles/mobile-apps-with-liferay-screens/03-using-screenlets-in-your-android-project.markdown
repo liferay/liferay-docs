@@ -29,6 +29,28 @@ following screenshot:
 
 ![Figure 3: Implement the screenlet's listener in your activity or fragment class.](../../images/screens-android-screenlet-listener.png)
 
+Also make sure that you implement any additional methods required by the 
+screenlet's listener interface. These listener methods are listed in the 
+screenlet's [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
+For example, when implementing `LoginListener` you must also implement the 
+`onLoginSuccess(User user)` and `onLoginFailure(Exception e)` methods. Here, 
+example implementations that display `Toast` messages for each method are shown. 
+Of course, you're free to implement other functionality (or none at all) in 
+these methods as needed. 
+
+    @Override
+    public void onLoginSuccess(User user) {
+        Toast.makeText(getApplicationContext(), "Sign in successful!", 
+            Toast.LENGTH_SHORT).show();
+    }
+    
+    @Override
+    public void onLoginFailure(Exception e) {
+        String message = "Couldn't log in: " + e.getMessage();
+        Toast.makeText(getApplicationContext(), message, 
+            Toast.LENGTH_SHORT).show();
+    }
+
 That's all there is to it! Awesome! Now you know how to use screenlets in your 
 Android apps. 
 
