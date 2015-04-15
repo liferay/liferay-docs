@@ -98,14 +98,14 @@ Screens and its dependencies:
    library folders:
 
         include ':core'
-        include ':themes'
+        include ':viewsets'
         project(':core').projectDir = new File(settingsDir, '../../library/core')
-        project(':themes').projectDir = new File(settingsDir, '../../library/themes')
+        project(':viewsets').projectDir = new File(settingsDir, '../../library/viewsets')
 
 4. Include the required dependencies in your `build.gradle` file: 
 
         compile project (':core')
-        compile project (':themes')
+        compile project (':viewsets')
 
 You can also configure the `.aar` binary files (in `Android/dist`) as local 
 `.aar` dependencies.
