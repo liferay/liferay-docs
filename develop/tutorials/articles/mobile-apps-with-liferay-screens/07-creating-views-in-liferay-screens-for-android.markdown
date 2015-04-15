@@ -89,7 +89,7 @@ instead of vertically. The following steps show you how to create a Child view.
    example `login_horizontal.xml` is shown here: 
 
         <?xml version="1.0" encoding="utf-8"?>
-        <com.liferay.mobile.screens.themes.default.auth.login.LoginView
+        <com.liferay.mobile.screens.viewsets.defaultviews.auth.login.LoginView
             xmlns:android="http://schemas.android.com/apk/res/android"
             style="@style/default_screenlet"
             android:orientation="horizontal">
@@ -113,7 +113,7 @@ instead of vertically. The following steps show you how to create a Child view.
                 style="@style/default_submit_button"
                 android:text="@string/sign_in" />
         
-        </com.liferay.mobile.screens.themes.auth.login.LoginScreenletView>
+        </com.liferay.mobile.screens.viewsets.defaultviews.auth.login.LoginView>
 
 2. Insert the `LoginScreenlet` in any of your activities or fragments, using 
    your new layout as the `liferay:layoutId` attribute's value. In this case, 
@@ -187,7 +187,7 @@ file.
 
 Super! Now you know how to create and package views in Liferay Screens for 
 Android. This gives you extensive control over your app's look and feel, and 
-also lets you distribute your themes to others.
+also lets you distribute your views to others.
 
 ## Related Topics [](id=related-topics)
 
