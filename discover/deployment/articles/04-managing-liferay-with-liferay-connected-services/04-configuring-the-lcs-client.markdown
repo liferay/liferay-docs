@@ -29,7 +29,7 @@ LCS client download links highlighted in a red box.
 The LCS client is also available for download from the User menu in your LCS 
 account's Dockbar. To download it from here, click your name in the top-right 
 corner of your LCS account and then click *Download Client* in the menu that 
-appears. This is shown in the following screenshot. You're then shown a screen 
+appears. This is shown in the following screenshot. You then see a screen
 similar to the Welcome screen, where you select your portal's version, edition, 
 and then click *Download*. 
 
