@@ -34,7 +34,7 @@ The Microsoft Office integration features are supported only on Windows XP with
 32-bit versions of Microsoft Internet Explorer and 32-bit versions of Microsoft
 Office.
 
-## Page 468: Xuggler configuration
+## Page 468: Xuggler configuration [](id=page-468-xuggler-configuration)
 
 Since Liferay 6.1.1+, you can install Xuggler completely from the Control Panel.
 Navigate to the *Server Administration* &rarr; *External Services* page. From
