@@ -110,8 +110,8 @@ server takes you to its server view. You can also create a new server in the
 environment by clicking the *Add Server* tab. It's important to note that this 
 doesn't directly add a server in the environment. Instead, you're presented with 
 a screen that lets you download the LCS client for the new server's version and 
-edition. Once you download the client, you're presented with instructions for 
-registering the server with LCS.
+edition. Once you download the client, you're given instructions for registering
+the server with LCS.
 
 ![Figure 4.15: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
@@ -171,8 +171,8 @@ connection pools.
 You can view the settings for a server by clicking on the *Server Details* 
 button, which is to the right of the Metrics button. The first tab under the 
 Server Details button is Server Settings. This lets you view or edit your 
-server's name, description, location, and environment. Click the pencil icon to 
-the right of each field to edit it. You can also unregister your server from 
+server's name, description, location, and environment. Click the *pencil icon*
+to the right of each field to edit it. You can also unregister your server from 
 LCS. The second tab under the Server Details button is Server Properties. This 
 provides general information about your Liferay installation and hardware. This 
 information is useful to the Liferay support team in the event that you need 
