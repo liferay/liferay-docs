@@ -110,6 +110,43 @@ Screens and its dependencies:
 You can also configure the `.aar` binary files (in `Android/dist`) as local 
 `.aar` dependencies.
 
+## Configuring Your Project to Communicate with Your Liferay Installation [](id=configuring-your-project-to-communicate-with-your-liferay-installation)
+
+Regardless of how you install Screens in your project, you need to configure it 
+to communicate with your Liferay installation. You could have the greatest app 
+in existence, but if it can't communicate with your Liferay installation then 
+it's all for naught. Fortunately, setting this up is a simple task. In your 
+project's `res/values` directory, create the new file `server_context.xml`. Add 
+the following code to the new file: 
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+    
+    <!-- Change these values for your Liferay Portal installation -->
+    
+    <string name="liferay_server">http://10.0.2.2:8080</string>
+    
+    <integer name="liferay_company_id">10155</integer>
+    <integer name="liferay_group_id">10182</integer>
+    
+    </resources>
+    
+As the comment indicates, make sure to change these values to match those in 
+your Liferay installation. The server address `http://10.0.2.2:8080` is suitable 
+for testing with Android Studio's emulator, because it corresponds to 
+`localhost:8080` through the emulator.
+
+You should note that there are additional properties you can configure in 
+`server_context.xml`, depending on the screenlets in your project. For example, 
+you can add the following two properties if you're using `DDLFormScreenlet` and 
+`DDLListScreenlet` to interact with DDLs in your app. You can see an additional 
+example `server_context.xml` file [here](https://github.com/liferay/liferay-screens/blob/master/android/samples/bankofwesteros/src/main/res/values/server_context.xml).
+
+    <!-- Change these values for your Liferay Portal installation -->
+    
+    <integer name="liferay_recordset_id">20935</integer>
+    <string name="liferay_recordset_fields">Title</string>
+
 Super! Your Android project should now be ready for Liferay Screens.
 
 ## Related Topics [](id=related-topics)

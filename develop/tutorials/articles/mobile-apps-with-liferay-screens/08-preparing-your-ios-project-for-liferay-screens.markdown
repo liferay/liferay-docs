@@ -42,9 +42,9 @@ the following screenshot:
 ![Figure 3: The Objective-C bridging header.](../../images/screens-ios-project-header.png)
 
 There's just one more thing to take care of to ensure that your project is ready 
-for Liferay Screens. Create a new property list file called 
-`liferay-server-context.plist`. You'll use this file to configure the settings 
-for your Liferay Portal instance. Use [`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/tree/master/ios/Library/Core/liferay-server-context-sample.plist) 
+for Liferay Screens. You need to make sure that your project is configured to 
+communicate with your Liferay Portal instance. Create a new property list file 
+called `liferay-server-context.plist`. Use [`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Resources/liferay-server-context-sample.plist) 
 as a template. This screenshot shows such a file being browsed:
 
 ![Figure 4: The `liferay-context.plist` file.](../../images/screens-ios-liferay-context.png)
