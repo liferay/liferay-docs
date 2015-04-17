@@ -3,7 +3,7 @@
 Liferay Screens separates its presentation and business-logic code, following 
 the ideas of [Model View Presenter](http://en.wikipedia.org/wiki/Model-view-presenter), 
 [Model View ViewModel](http://en.wikipedia.org/wiki/Model_View_ViewModel), and 
-[VIPER](http://www.objc.io/issue-13/viper.html). However, because they�re 
+[VIPER](http://www.objc.io/issue-13/viper.html). However, because they're 
 designed for apps, Screens can't be considered a canonical implementation of 
 these architectures. Screens isn't an app; it's a suite of visual components 
 intended for use *in* apps. 
