@@ -157,3 +157,11 @@ working in a finished portlet, download and deploy the
 
 <!-- Insert the link to the sample portlet once it's available for download on
 LDN. -Cody -->
+
+## Related Topics
+
+[Creating New Audience Rule Types](/develop/tutorials/-/knowledge_base/6-2/creating-new-audience-targeting-rule-types)
+
+[Targeting Content to Your Audience](/discover/portal/-/knowledge_base/6-2/targeting-content-to-your-audience)
+
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
