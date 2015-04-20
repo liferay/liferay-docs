@@ -144,8 +144,12 @@ campaigns:
     ...
 
 Then, each campaign is listed in the `campaignsList` and displayed in your
-portlet for users to see. As you can see, accessing the Content Targeting JSON
-API is just as easy as accessing the related Java API.
+portlet for users to see.
+
+If you'd like to view all the available methods (with examples) exposed in the
+JSON API by Audience Targeting, you can visit your portal's `/api/jsonws` URL
+(e.g., `localhost:8080/api/jsonws`). As you can see, accessing the Content
+Targeting JSON API is just as easy as accessing the related Java API.
 
 You've learned how easy it is to expose the Content Targeting API and use it in
 a custom app to unleash its power! If you'd like to peruse the entire Content
