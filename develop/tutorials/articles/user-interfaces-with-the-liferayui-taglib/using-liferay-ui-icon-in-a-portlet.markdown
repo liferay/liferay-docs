@@ -131,8 +131,6 @@ learned how to use your own custom icons in a portlet!
 
 ## Related Topics
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs-lp-6-2-develop-tutorial)
+[Using Liferay UI Tabs and Sections](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
 
-<!--URl needs updated to correct one once it is added to LDN-->
-<!--[Replacing the default theme icons](https://www-ldn.liferay.com/develop/tutorials/-/knowledge_base/replacing-the-default-icons-in-a-theme)-->
-
+[Using Liferay-UI:Success and Liferay-UI:Error Messages](/develop/tutorials/-/knowledge_base/6-2/using-liferay-uisuccess-and-liferay-uierror-message)
