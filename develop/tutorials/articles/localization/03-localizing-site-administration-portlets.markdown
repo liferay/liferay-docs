@@ -1,8 +1,11 @@
 # Localizing Site Administration Portlets [](id=localizing-site-administration-portlets)
 
-<!-- The beginning and ending test portlets can be found at the following:
-Begin: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
-End: https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/loc/loc-sa-port/end/event-listing-portlet
+<!-- 
+The starting example portlet for this tutorial is at ...
+liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/mvc-01-begin-event-listing-portlet
+
+On completing this tutorial, the example portlet looks like the portlet at ...
+liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/localize-site-admin-event-listing-portlet
 -->
 
 Your plugin project may have Site Administration portlets that are missing
