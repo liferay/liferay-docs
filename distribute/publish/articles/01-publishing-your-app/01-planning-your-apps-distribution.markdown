@@ -82,12 +82,13 @@ developer account options:
 <h3>Converting from Basic-to-Paid</h3>
 
 <hr />
-<ul class="text-left">
-	<li>No cost to register as a Marketplace developer</li>
-	<li>Distribute free apps on the Marketplace</li>
-	<li>Access to developer-only resources (e.g., Developer Portal, Liferay IDE, Liferay Developer License)</li>
-	<li>Participate in Marketplace promotions</li>
-</ul>
+<p style="text-align: left;">When you're ready to submit a paid app to the Marketplace:</p>
+<ol class="text-left">
+	<li>Agree to the Developer Agreement</li>
+	<li>Pay $99 annual fee</li>
+	<li>Submit relevant tax documents (eg., W-9, W-8BEN) to receive payments</li>
+	<li>Enter PayPal info to receive payments (PayPal account must be a Verified Business Account)</li>
+</ol>
 </div>
 
 <div class="span4 thumbnail text-center" style="padding:20px;">
@@ -96,10 +97,12 @@ developer account options:
 
 <hr />
 <ul class="text-left">
-	<li>No cost to register as a Marketplace developer</li>
-	<li>Distribute free apps on the Marketplace</li>
-	<li>Access to developer-only resources (e.g., Developer Portal, Liferay IDE, Liferay Developer License)</li>
-	<li>Participate in Marketplace promotions</li>
+	<li>Upgrade when you're ready: only pay annual fee at time of paid app submission</li>
+	<li>Offer paid licensing/support for your apps</li>
+	<li>Receive 80% of app sales proceeds</li>
+	<li>Access to detailed transaction history</li>
+	<li>Paid apps customer management</li>
+	<li>All the benefits of a Basic Developer Account</li>
 </ul>
 </div>
 </div>
