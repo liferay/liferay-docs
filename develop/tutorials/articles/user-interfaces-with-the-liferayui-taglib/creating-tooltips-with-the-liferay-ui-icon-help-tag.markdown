@@ -61,8 +61,8 @@ better interact with your UI.
 
 ## Related Topics
 
- [Organizing Icons with the Liferay UI Icon Menu Tag](/tutorials/-/knowledge_base/6-2/organizing-icons-with-the-liferay-ui-icon-menu-tag)
+ [Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
 
- [Organizing Icons with the Liferay UI Icon List Tag](/tutorials/-/knowledge_base/6-2/organizing-icons-with-the-liferay-ui-icon-list-tag)
+ [Using the AlloyUI Form Validator in A Portlet](/develop/tutorials/-/knowledge_base/6-2/using-the-alloyui-form-validator-in-a-portlet)
  
- [Using Liferay UI Tabs and Sections](/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
+ [Using Liferay UI Tabs and Sections](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
