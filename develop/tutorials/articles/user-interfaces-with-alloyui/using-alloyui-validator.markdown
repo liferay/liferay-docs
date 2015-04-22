@@ -5,10 +5,9 @@ a form. It offers multiple validation methods depending on your needs, making
 form validation a simple task. This tutorial covers using the `aui:validator` 
 tag in your portlets. AlloyUI also offers a comprehensive form validator
 module that incorporates much of what is covered in this tutorial. See the 
-[AlloyUI Form Validator](dev.liferay.com) tutorial to learn more about it. Now 
-that you know that the `aui:validator` tag is a versatile tool, it's time to 
-learn how to use it. 
-<!-- alloyui form validator tutorial will need to be given a link -->
+[AlloyUI Form Validator](/develop/tutorials/-/knowledge_base/6-2/using-the-alloyui-form-validator-in-a-portlet) 
+tutorial to learn more about it. Now that you know that the `aui:validator` tag 
+is a versatile tool, it's time to learn how to use it. 
 
 ## Setting Up the AlloyUI Validator Tag [](id=setting-up-the-alloyui-validator-tag)
 
