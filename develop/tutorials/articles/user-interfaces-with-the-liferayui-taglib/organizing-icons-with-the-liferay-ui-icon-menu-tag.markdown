@@ -92,5 +92,6 @@ space.
 
 ## Related Topics
 
- [Using Liferay UI Tabs and Sections](/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
-
+ [Using Liferay UI Tabs and Sections](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
+ 
+ [Using Liferay-UI:Success and Liferay-UI:Error Messages](/develop/tutorials/-/knowledge_base/6-2/using-liferay-uisuccess-and-liferay-uierror-message)
