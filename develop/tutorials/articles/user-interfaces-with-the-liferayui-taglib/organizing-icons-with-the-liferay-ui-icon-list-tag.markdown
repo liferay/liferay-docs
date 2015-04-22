@@ -91,10 +91,10 @@ your site's icon layout.
 
 ## Related Topics
 
-[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
 
-[Themes and Layout Templates](/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
 
-[Application Display Templates](/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
