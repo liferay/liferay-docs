@@ -1,7 +1,10 @@
 # Customizing JSPs by Extending the Original [](id=customizing-jsps-by-extending-the-original)
 
-<!-- An ending test plugin can be found at:
-https://github.com/liferay/liferay-docs/develop/tutorials/code/cust/extend-jsp/end/extend-original-jsp-hook
+<!-- 
+Testing Notes:
+
+On completing this tutorial, the example hook looks like the hook at ...
+liferay-docs/develop/tutorials/code/tutorials-sdk/hooks/extend-original-jsp-hook
 -->
 
 Let's say you want to add more content to one of Liferay's JSPs, but you also

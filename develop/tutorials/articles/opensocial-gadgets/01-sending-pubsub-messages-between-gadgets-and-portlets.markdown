@@ -1,13 +1,15 @@
 # Sending PubSub Messages Between Gadgets and Portlets [](id=sending-pubsub-messages-between-gadgets-and-portlet)
 
-<!-- You can test the gadget-to-gadget tutorial using the following gadgets:
+<!-- 
+Testing Notes:
+
+You can test the gadget-to-gadget tutorial using the following gadgets:
 https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsPublisher.xml
 https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsViewer.xml
--->
 
-<!-- The Portal Directory hook required for the portlet-to-gadget tutorial is
+The Portal Directory hook required for the portlet-to-gadget tutorial is
 available here:
-https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/opensoc/sending-pubsub-messages/portal-directory-hook
+liferay-docs/develop/tutorials/code/tutorials-sdk/hooks/opensocial-pubsub-msg-portal-directory-hook
 -->
 
 Have you ever wanted your gadgets to communicate with each other or with
