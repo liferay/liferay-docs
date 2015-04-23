@@ -234,6 +234,7 @@ test conditions, if necessary.
 			<td class="">
 				<ul>
 					<li> Oracle JDK 6 </li>
+					<li> Oracle JDK 7 </li>
 				</ul>
 			</td>
 			<td class="third-column">
