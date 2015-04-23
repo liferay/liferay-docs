@@ -288,16 +288,6 @@ Marketplace and provide safeguards against malicious apps. If you want to use an
 app with an earlier version of Liferay, make sure that version of Liferay
 provides what your app needs from Liferay. 
 
-Read the section below for details on how to specify support for specific
-versions of Liferay. 
-
-+$$$
-
-**Note:** If you haven't yet done so, make sure to read 
- [Leveraging the Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace)! 
-
-$$$
-
 Lastly, you should determine a versioning scheme for your app. How will you
 refer to the first version of your app, the second version, and so on. 
 
