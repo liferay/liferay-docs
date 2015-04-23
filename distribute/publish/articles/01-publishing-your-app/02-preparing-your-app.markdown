@@ -140,9 +140,12 @@ metadata requirements and produce an appealing advertisement for your app.
 		<tr>
 			<td class="table-header left-header"> Description </td>
 			<td class="">
-				Please provide a description for your app in English. At a
-				minimum, the description should provide a concise overview of
-				what the app does. Great descriptions also list key
+				Using English as the default langauge, you must provide a
+				description for your app. After providing the description in
+				English, you can provide other translations of the text.
+				<p>
+				At a minimum, the description should provide a concise overview
+				of what the app does. Great descriptions also list key
 				functionalities and what customers can expect to gain by
 				deploying your app. If you'd like to see an example, you can
 				check out our description of the Social Office app on the
@@ -154,6 +157,17 @@ metadata requirements and produce an appealing advertisement for your app.
 					with specific app servers) here, so that both potential
 					buyers and the Liferay app review team will be aware of
 					these requirements.
+			</td>
+		</tr>
+		<tr>
+			<td class="table-header left-header"> What's New?* </td>
+			<td class="">
+				Using English as the default language, you describe what's new
+				and improved in your app. After providing a description of
+				what's new, in English, you can provide other translations of
+				the text. This field is shown on updating an app that you've
+				already submitted, regardless of whether the app has been
+				published. 
 			</td>
 		</tr>
 		<tr>
