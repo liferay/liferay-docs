@@ -272,14 +272,24 @@ Payments are issued no later than 90 days after the transaction.
 Now that you've decided on licensing options and pricing, you can concentrate on
 what versions of Liferay your app will run on. 
 
-## Determining Versions of Liferay to Target [](id=determining-versions-of-liferay-to-target)
+## Determining Editions and Versions of Liferay to Target [](id=determining-versions-of-liferay-to-target)
 
-Of course, targeting the widest possible range of Liferay versions in an app
-typically draws larger audiences to the app. And there are certain features in
-specific versions of Liferay that you may want to take advantage of. When
-uploading apps, you can specify which versions of Liferay your app is compatible
-with and you can have multiple files for your app that are designed for those
-different versions of Liferay.
+Of course, targeting the widest possible range of Liferay editions and versions
+in an app typically draws larger audiences to the app. And there may be certain
+features in these editions and versions that you want to take advantage of. In
+your app's plugin [packaging properties](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app#specifying-packaging-directives),
+you specify packaging directives to indicate the [editions](/discover/deployment/-/knowledge_base/6-2/editions-of-liferay)
+the app supports and the version that the app supports. To ensure the widest
+audience for your app, we encourage you to make your app compatible with both
+Liferay Community Edition (CE) and Liferay Enterprise Edition (EE). 
+
+You can prepare a set of app files (including its
+`liferay-plugin-package.properties` file) for each version of Liferay you want
+to support. When uploading your app, you can specify which versions of Liferay
+your app is compatible with and you can appropriately upload the sets of app
+files that are designed for those different versions. The next article in this
+guide explains how to go about
+[specifying packaging directives](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app#specifying-packaging-directives). 
 
 Note that apps on the Liferay Marketplace must be designed for Liferay 6.1 or
 later. That's not to say that they can't work with prior versions. However, only
