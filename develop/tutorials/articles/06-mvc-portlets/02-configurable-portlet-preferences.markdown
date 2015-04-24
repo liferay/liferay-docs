@@ -267,18 +267,18 @@ retrieves the value of a portlet preference named `showLocationAddress` and if
 the preference's value is true, *all* of the location's fields are displayed. If
 it is false, then the address fields are omitted. 
 
-![Figure 3: Liferay Portal makes it easy to customize a portlet UI. Privileged users can adjust the preference settings within the portlet's configuration page.](../../images/portlet-preferences-modifying-view.png)
+![Figure 3: Liferay Portal makes it easy to customize a portlet UI. Privileged users can adjust the preference settings within the portlet's Configuration page.](../../images/portlet-preferences-modifying-view.png)
 
-That's it! You've created a custom configuration page and added a portlet
+That's it! You've created a custom Configuration page and added a portlet
 preference to your portlet. 
 
-To see the configuration page and portlet preference in action! Navigate to your
-portlet's *Configuration* page to see the portlet preference control that you
+To see the Configuration page and portlet preference in action, navigate to your
+portlet's *Configuration* page and look for portlet preference control that you
 added. 
 
 ![Figure 4: Your new portlet preference is available in your portlet's *Configuration* page.](../../images/show-location-address-pref.png)
 
-Great job! You added a new Setup tab to your portlet's configuration page and
+Great job! You added a new Setup tab to your portlet's Configuration page and
 you added a configurable portlet preference to that page. Now you know how to
 use Liferay's portlet preferences in the portlets you develop. 
 
