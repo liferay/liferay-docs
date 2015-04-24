@@ -25,7 +25,7 @@ installation. You could have the greatest app in the world, but if it can't
 communicate with your Liferay installation then it's all for naught. This 
 tutorial's final section shows you how to do this. Onwards! 
 
-## Using CocoaPods to Prepare Your Project
+## Using CocoaPods to Prepare Your Project [](id=using-cocoapods-to-prepare-your-project)
 
 To prepare your iOS 8.0 (or above) project for Liferay Screens, simply add the 
 following line to your project's `Podfile`: 
@@ -50,7 +50,7 @@ Great! Although your project now includes Liferay Screens, you still need to
 configure it to communicate with your Liferay installation. Proceed to this 
 tutorial's final section for instructions on doing this.
 
-## Manually Preparing Your Project
+## Manually Preparing Your Project [](id=manually-preparing-your-project)
 
 There are a few things you need to manually setup in your iOS 7 app to prepare 
 it for Liferay Screens. First, you need to download the 
@@ -121,13 +121,34 @@ the following screenshot:
 
 ![Figure 3: The Objective-C bridging header.](../../images/screens-ios-project-header.png)
 
-<!-- Add troubleshooting section from Screens repository -->
+### Troubleshooting a Manual Installation [](id=troubleshooting-a-manual-installation)
+
+Since the preferred way to install Liferay Screens is using CocoaPods, you 
+should be aware that there are some problems associated with the manual 
+installation procedure. For example, when using a screenlet in your project, you 
+may get an exception due to an unknown class in Interface Builder. This is shown 
+in the following screenshot: 
+
+![Figure 4: When using a screenlet with Screens installed manually, you may get an exception due to an unknown class in Interface Builder.](../../images/screens-ios-xcode-unknown-class.png)
+
+This error occurs because the screenlet views are bound to the `LiferayScreens` 
+Module. This module exists only if you installed Screens with CocoaPods. To 
+solve this problem, you must open the failed `xib` file listed in the error 
+trace (in the above screenshot this is `LoginView_default`), select the root 
+view, and then re-set the Custom Class. Note that the Module value should change 
+from `LiferayScreens` to the grayed out text `Current - your app name`. Before 
+and after screenshots of this assignment are shown here: 
+
+![Figure 5: By default, the Module is set to LiferayScreens.](../../images/screens-ios-xcode-custom-class-after.png)
+
+![Figure 6: Here, the Module corresponds to `Current -` plus the app's name.](../../images/screens-ios-xcode-custom-class-before.png)
+
 Great! Although your project now includes Liferay Screens, you still need to 
 configure it to communicate with your Liferay installation. This is required 
 regardless of how you installed Screens in your iOS project. Proceed to the next 
 section for instructions on doing this.
 
-## Configuring Your Project to Communicate with Your Liferay Installation
+## Configuring Your Project to Communicate with Your Liferay Installation [](id=configuring-your-project-to-communicate-with-your-liferay-installation)
 
 There's just one more thing to take care of to ensure that your project is ready 
 for Liferay Screens. You need to make sure that your project is configured to 
@@ -135,7 +156,7 @@ communicate with your Liferay Portal instance. Create a new property list file
 called `liferay-server-context.plist`. Use [`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Resources/liferay-server-context-sample.plist) 
 as a template. This screenshot shows such a file being browsed:
 
-![Figure 4: The `liferay-context.plist` file.](../../images/screens-ios-liferay-context.png)
+![Figure 7: The `liferay-context.plist` file.](../../images/screens-ios-liferay-context.png)
 
 Great! Your iOS project should now be ready for Liferay Screens. 
 
