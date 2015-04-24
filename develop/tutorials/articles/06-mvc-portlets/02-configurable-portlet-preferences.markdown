@@ -18,14 +18,14 @@ in a portlet's Configuration menu.
 ![Figure 1: Portlet preferences, such as this portlet's checkbox for showing location addresses, let you customize your portlet in many different ways.](../../images/show-location-address-pref.png)
 
 First, you'll learn how to create the default Setup tab for your portlet's
-configuration page. 
+Configuration page. 
 
 ## Creating a Default Setup Tab in the Portlet's Configuration Page [](id=creating-a-default-setup-tab-in-the-port-liferay-portal-6-2-dev-guide-03-en)
 
 Before you can begin adding configurable portlet preferences, you must first
 create a place for them to reside in your portlet's Configuration menu. The
-following steps explain how you can put preference controls in a Setup tab in
-the Configuration menu for your portlet preference.
+following steps explain how you can add portlet preference controls to a Setup
+tab of your portlet's Configuration menu.
 
 1. Open your portlet's `liferay-portlet.xml` file.
 
@@ -59,8 +59,8 @@ it, next.
 Now that you have your Setup tab in the Configuration menu, you can add a custom
 option to it. 
 
-In order to add a configurable portlet preference to the portlet, you must do
-the following things: 
+In order to add a configurable portlet preference to the portlet, you must take
+the following steps: 
 
 1. Specify a Configuration JSP in the `portlet.xml`
 2. Create the Configuration JSP for Displaying the Portlet Preference Options
@@ -158,9 +158,9 @@ the name of your portlet preference.
 
 +$$$
 
-**Note:** Make sure to declare
-directives for any taglibs your configuration JSP requires, or declare the
-directives in one of the JSPs that the configuration JSP includes. 
+**Note:** Make sure to declare directives for any taglibs your configuration JSP
+requires, or declare the directives in one of the JSPs that the configuration
+JSP includes. 
 
 You may also need to declare the `<portlet:defineObjects />` tag to access
 implicit variables. This tag provides useful portlet variables such as
@@ -207,10 +207,9 @@ received from the form.
 
 +$$$
 
-**Note:** You won't need to store
-portlet preferences by calling `preferences.store()` since they're automatically
-stored in the `DefaultConfigurationAction` class, which your configuration class
-extends. 
+**Note:** You won't need to store portlet preferences by calling
+`preferences.store()` since they're automatically stored in the
+`DefaultConfigurationAction` class, which your configuration class extends. 
 
 $$$
 
@@ -249,10 +248,10 @@ preference.
 
 ### Step 4: Modify the View JSP to Respond to the Current Portlet Preference Value [](id=step-4-modify-the-view-jsp-to-respond-to-the-curren)
 
-In your view JSP, you can implement logic to display your portlet based on its
-configured preferences. You can access portlet preferences via the implicit
-variable `portletPreferences`. To access this variable, make sure to include the
-`<portlet:defineObjects />` tag in your JSP. 
+In your view JSP, you can implement logic to make your portlet change its
+display or behavior based on its configured preferences. You can access portlet
+preferences via the implicit variable `portletPreferences`. To access this
+variable, make sure to include the `<portlet:defineObjects />` tag in your JSP. 
 
 Here's an example of accessing a boolean value stored in a portlet preference
 named `showLocationAddress`: 
