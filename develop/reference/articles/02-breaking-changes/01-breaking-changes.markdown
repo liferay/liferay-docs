@@ -20,8 +20,6 @@ feature or API will be dropped in an upcoming version.
 replaces an old API, in spite of the old API being kept in Liferay Portal for
 backwards compatibility.
 
-*This document has been reviewed through commit `5996ef5`.*
-
 ## Breaking Changes Contribution Guidelines
 
 Each change must have a brief descriptive title and contain the following
@@ -65,28 +63,36 @@ horizontal rule):
 **80 Columns Rule:** Text should not exceed 80 columns. Keeping text within 80
 columns makes it easier to see the changes made between different versions of
 the document. Titles, links, and tables are exempt from this rule. Code samples
-must follow the column rules specified in Liferay's [Development
-Style](http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+development+style).
+must follow the column rules specified in Liferay's
+[Development Style](http://www.liferay.com/community/wiki/-/wiki/Main/Liferay+development+style).
 
 The remaining content of this document consists of the breaking changes listed
 in ascending chronological order.
 
 ## Breaking Changes List
 
-### Utility methods have been moved from ImageLocalService to ImageTool
+### Utility Methods Have Been Moved from [`ImageLocalServiceUtil`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html) to [`ImageTool`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html)
 - **Date:** 2013-Jan-13
 - **JIRA Ticket:** LPS-31888
 
 #### What changed?
-Utility methods have been moved from ImageLocalService to ImageTool.
+Utility methods have been moved from
+[`ImageLocalServiceUtil`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html)
+to
+[`ImageTool`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html).
 
 #### Who is affected?
-Developers using utility methods of ImageLocalService may find that the method
-they're using have been moved to ImageTool.
+Developers using utility methods of
+[`ImageLocalServiceUtil`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html)
+may find that the method they're using have been moved to
+[`ImageTool`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html).
 
 #### How should I update my code?
-If you were using a method of ImageLocalService that's no longer there, use the
-corresponding method of ImageTool instead.
+If you were using a method of
+[`ImageLocalServiceUtil`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html)
+that's no longer there, use the corresponding method of
+[`ImageTool`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html)
+instead.
 
 #### Why was this change made?
 Utility methods should stay in utility classes rather than service classes to
