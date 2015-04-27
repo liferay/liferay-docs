@@ -37,7 +37,11 @@ section of the server runtime environment creation wizard lets you select either
 *Server Mode*. The Standard server mode is selected by default. To enable
 Development Mode, select *Development(portal-developer.properties)* and save the
 runtime environment. The next time you start any Liferay server that is based on
-this runtime environment, it starts in Development Mode. 
+this runtime environment, it starts in Development Mode.
+
+To enable Development Mode for existing servers, access the *Liferay settings*
+section of your runtime environment by double-clicking on the server in
+the *Servers* tab.
 
 ![Figure 1: You can set Developer Mode in the *Liferay settings* section of your runtime environment in Liferay IDE](../../images/set-develop-mode.png)
 
