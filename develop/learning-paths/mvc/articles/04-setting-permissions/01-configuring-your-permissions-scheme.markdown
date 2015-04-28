@@ -56,7 +56,7 @@ Next, you'll create the file itself:
 
         <?xml version="1.0"?>
         <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
-    	"http://www.liferay.com/dtd/liferay-resource-action- mapping_6_2_0.dtd">
+    	"http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
 
 If you have a copy of Liferay's source code, you'll find the DTD for this file
 in the `definitions` folder. The DTD is fully documented and explains every tag
