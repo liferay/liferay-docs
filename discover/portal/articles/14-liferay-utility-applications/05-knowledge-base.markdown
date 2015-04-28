@@ -2,22 +2,23 @@
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
-Liferay's Knowledge Base portlet provides a means for creating and organizing
+Liferay's Knowledge Base app provides a means for creating and organizing
 articles within a site. The knowledge base is perfect for creating and
 organizing information more formally than in a wiki. For example, it can be used
-to organize and display professional product documentation. It's easy to set up
-the knowledge base with a workflow that requires articles to be approved before
-they are published. Additionally, it allows administrators to create article
-templates. Templates can be used to insure certain kinds of articles possess a
-common structure and include certain kinds of information. Knowledge base
-articles can be categorized to make them easy to find. They can also be
-organized hierarchically to form complete books or guides. The Knowledge Base
-portlet is available as an app from Liferay Marketplace. You can purchase,
-download, and install the Knowledge Base EE app directly from your Liferay
-instance's Control Panel interface or you can navigate to
-[http://www.liferay.com/marketplace](http://www.liferay.com/marketplace) in your
-browser, purchase and download the app, and copy the `.lpkg` file to your
-Liferay instance's `/deploy` folder.
+to hierarchically organize articles to display professional product
+documentation or to form complete books or guides. It even lets you import
+article source files written in Markdown, automatically converting them into
+full-fledged Knowledge Base articles. It's easy to set up the knowledge base
+with a workflow that requires articles to be approved before they are published.
+Additionally, the app lets administrators create article templates, to ensure
+that articles using the template follow a common structure and include certain
+kinds of information. 
+
+The Knowledge Base app is available for purchase on the [Liferay Marketplace](http://www.liferay.com/marketplace).
+On [installing](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps)
+the app, its admin portlet is available in Site Administration's Content section
+and the app's article portlet, display portlet, search portlet, and section
+portlet are available in the Applications menu. 
 
 ## Knowledge Base Display Portlet [](id=knowledge-base-display-portlet)
 
