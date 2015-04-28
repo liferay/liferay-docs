@@ -54,7 +54,7 @@ the same as wiki pages; they must be created in HTML, not MediaWiki or Creole.
 Click the *Source* button in the editor to view the HTML source of what you've
 written or write some HTML yourself.
 
-![Figure 14.27: You can create a new Knowledge Base Article using the WYSIWYG editor.](../../images/liferay-collaboration-kb-new-article.png)
+![Figure 14.27: You can create a new Knowledge Base Article using the WYSIWYG editor.](../../images/kb-admin-new-article.png)
 
 In addition to entering a title and creating content for your article, you can
 use the editor to add attachments, add tags, and set permissions. By default,
@@ -87,65 +87,125 @@ Knowledge Base page of Site Administration.
 
 ## Knowledge Base Page of Site Administration [](id=knowledge-base-page-of-site-administration)
 
-The Knowledge Base page of the Site Administration interface has two tabs: one
-for articles and one for templates. The *Articles* tab shows all the articles in
-the knowledge base and lets you perform actions on them. The *Templates* tab
-shows all the templates defined in the knowledge base and lets you perform
-actions on them.
+The Knowledge Base page of the Site Administration interface is the primary
+place where administrators and authors create, organize, and manage articles. It
+has three tabs: one for managing articles, one for managing templates, and the
+last one for managing suggestions to articles. The *Articles* tab shows all the
+article folders and articles in the knowledge base and lets you perform actions
+on them. The *Templates* tab shows all the templates defined in the knowledge
+base and lets you perform actions on them. The *Suggestions* tab shows all the
+suggestions users have submitted for the articles and lets you act on them in
+workflow fashion. 
 
-![Figure 14.29: Administrators can control knowledge base articles and templates from the *Site Administration* &rarr; *Content* page.](../../images/liferay-collaboration-kb-control-panel.png)
+![Figure 14.29: Administrators can control knowledge base articles and templates from the *Site Administration* &rarr; *Content* page.](../../images/kb-admin-page.png)
 
-Administrators can perform the following actions on an article:
+The *Add* drop-down lets you add a Basic Article, add an article based on an
+available template, add a folder, or import articles from a Zip file. Selecting
+*Basic Article* or the name of an available template brings up the  *New
+Article* window. When you enter your article's title, a URL-safe version of the
+title is added to the tail end of the article's friendly URL in the *Friendly
+URL* field. You can edit the fiendly URL.  
 
-*View:* displays an article. From here, you can add a child article, edit the
-article, change its permissions, move it or delete it.
+You create the article's content using the Content section's WYSIWYG editor.
+Knowledge Base articles are created in HTML. Click the *Source* button in the
+editor to view the HTML source of what you've written or write some HTML
+yourself. 
 
-*Edit:* allows you to change the title and content of an article as well as add
-attachments, select topics and add tags.
+![Figure 14.27: You can create a new Knowledge Base article using the WYSIWYG editor.](../../images/kb-admin-new-article.png)
 
-*Permissions:* lets you configure the permissions on a specific article.
+In addition to entering a title and creating content for your article, you can
+use the editor to add attachments, add tags, specify related assets, and set
+permissions. By default, view permission is granted to the guest role, meaning
+anyone can view your article. After you're done using the editor, you can save
+the article as draft and continue working on it later or you can submit it for
+publication. Your article may need to be approved before being published,
+depending on the workflow defined for your portal. 
 
-*Subscribe:* lets you to choose to be notified of any updates to a particular
-article.
+The *Permissions* button is next to the Add drop-down in the Knowledge Base page
+of Site Administration. Clicking this link brings up a window that lets you
+define permissions that apply to the knowledge base generally, not to particular
+articles. Here, you can define which roles can add/delete articles, folders and
+templates, which can change general knowledge base permissions, which can
+subscribe to articles, and which can view templates and view suggestions. 
 
-*Move:* lets you change an article's position in the hierarchy by choosing a new
-parent article for it.
+The Add drop-down in the Knowledge Base page of Site Administration also has
+options for adding a folder and importing articles using a Zip file. The
+interface for adding folders is straightforward, letting you enter a name,
+description, and permissions for the folder. Importing articles is a powerful
+option that is covered later in this section. 
 
-*Delete:* lets you remove an article from the knowledge base.
+As you add folders and articles to your knowledge base, you'll notice the
+actions you can perform on them. Administrators can perform the following
+actions on a folder: 
 
-These actions are similar to the ones that can be performed from the
-Administrator view of the Knowledge Base Display portlet. However, the Knowledge
-Base Display portlet is intended to be placed on a page for the end user so an
-additional action is available: *RSS* is a link to an RSS feed of an article.
-Also, the *View* action is only available from the Site Administration page
-since the Knowledge Base Article portlet can be used to display an article on a
-page.
+*Edit:* lets you  change the folder's name and description.
+
+*Move:* lets you relocate the folder under a new parent folder. 
+
+*Delete:* lets you remove the folder and its contents from the knowledge base. 
+
+*Permissions:* lets you grant or revoke a role's ability to add an article to
+the folder, add a subfolder to the folder, delete the folder, move the folder,
+set permissions on the folder, edit (update) the folder, and view the folder. 
+
+Articles can be created or moved into in several places in the knowledge base.
+They can reside in the root of the knowledge base, listed under the folder list,
+they can reside in the folders, and they can be children of other articles
+(parent articles). Regardless of where an article resides, administrators can
+perform the following actions on an article: 
+
+*View:* displays the article. 
+
+*Edit:* lets you change the article's title and content. It also lets you manage
+its attachments, categorization, and its related assets. 
+
+*Add Child Article:* lets you add a new child article to the article. 
+
+*Permissions:* lets you configure the permissions of roles with respect to the
+article. 
+
+*Subscribe:* lets you to choose to be notified of any updates to the article.
+Once you've subscribed to an article, the *Unsubscribe* action is made available
+giving you the option to unsubscribe from the article's notifications. 
+
+*Move:* lets you move the article to a different folder or change an article's
+position in the hierarchy by choosing a new parent article for it.
+
+*Delete:* lets you remove the article from the knowledge base. 
 
 The Templates tab of the Knowledge Base page of Site Administration allows
-administrators to create templates to facilitate the creation of articles. A
+administrators to create templates to facilitate creating articles. A
 template basically functions like a starting point for the creation of certain
-types of articles. Click the *Add Template* button on the Templates tab of the
-Knowledge Base page of Site Administration to create a new template.
+types of articles. To create a new template, you can click on the *Add Template*
+button in this tab. 
 
-![Figure 14.30: As an administrator, you can add a new template to your knowledge base by navigating to *Site Administration* &rarr; *Content* &rarr; *Knowledge Base (Admin)*.](../../images/liferay-collaboration-kb-new-template.png)
+![Figure 14.30: As an administrator, you can add a new template to your knowledge base by navigating to *Site Administration* &rarr; *Content* &rarr; *Knowledge Base (Admin)*.](../../images/kb-admin-new-template.png)
 
 Navigate back to the Templates tab of the Knowledge Base page of Site
 Administration. You can perform the following actions on a template:
 
-*View:* displays a template. From here, you can use the template to create an
-article, edit the template, modify the permissions on the template or delete it.
+*View:* displays the template. From here, you can print the template, use it to
+create an article, edit the template, modify the permissions on the template, or
+delete it. 
 
-*Edit:* allows you to change the title and content of a template.
+*Edit:* lets you to change the template's title and content.
 
-*Permissions:* allows you to configure the permissions on a template. You can
+*Permissions:* lets you to configure the permissions on the template. You can
 choose roles to have permission to update, view, delete or change the
-permissions on templates.
+permissions on the template.
 
-*Delete:* lets you remove a template from the knowledge base.
+*Delete:* lets you remove the template from the knowledge base.
 
-To use a template to create a new article, you have to view the template and
-then click *Use this Template*. This brings you to the New Article editor with
-the contents of the template copied for you.
+The Suggestions tab of the Knowledge Base page of Site Administration lets
+your view user feedback on articles and lets you mark progress on addressing the
+feedback. 
+
+![Figure 14.31: The Suggestions tag in the Knowledge Base page of Site Administration helps you monitor article feedback and mark progress towards addressing that feedback.](../../images/kb-admin-suggestions.png)
+
+Each Suggestion entry provides the link to the article, the user's feedback, the
+user's name and a link to the user's home page, the time the feedback was given,
+and a status indicating your progress on the suggestion. You can move the entry
+between New, In Progress, and Resolved states. 
 
 ## Knowledge Base Article Portlet [](id=knowledge-base-article-portlet)
 
