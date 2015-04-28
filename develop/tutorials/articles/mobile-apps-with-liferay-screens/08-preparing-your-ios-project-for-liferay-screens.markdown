@@ -59,7 +59,7 @@ and include it in your project. The steps for doing this are shown here:
 
 1. Create a folder at the root of your project called `Liferay-Screens`.
 
-2. Copy the folders `Library/Core` and `Library/Themes` from the downloaded 
+2. Copy the folders `Framework/Core` and `Framework/Themes` from the downloaded 
    source code into this new folder. After this, you'll have two subdirectories 
    in your project's `Liferay-Screens` directory: `Core` and `Themes`.
    
@@ -139,9 +139,9 @@ view, and then re-set the Custom Class. Note that the Module value should change
 from `LiferayScreens` to the grayed out text `Current - your app name`. Before 
 and after screenshots of this assignment are shown here: 
 
-![Figure 5: By default, the Module is set to LiferayScreens.](../../images/screens-ios-xcode-custom-class-after.png)
+![Figure 5: By default, the Module is set to LiferayScreens.](../../images/screens-ios-xcode-custom-class-before.png)
 
-![Figure 6: Here, the Module corresponds to `Current -` plus the app's name.](../../images/screens-ios-xcode-custom-class-before.png)
+![Figure 6: Here, the Module corresponds to `Current -` plus the app's name.](../../images/screens-ios-xcode-custom-class-after.png)
 
 Great! Although your project now includes Liferay Screens, you still need to 
 configure it to communicate with your Liferay installation. This is required 
