@@ -223,8 +223,8 @@ metadata requirements and produce an appealing advertisement for your app.
 				screenshot should preferably be the same size (each will be
 				automatically scaled to match the aspect ratio of the above
 				dimensions), and it is preferable if they are named
-				sequentially, for example fluffy-puppies-01.png,
-				fluffy-puppies-02.png, and so on.
+				sequentially, for example fluffy-puppies-01.jpg,
+				fluffy-puppies-02.jpg, and so on.
 			</td>
 		</tr>
 	</tbody>
