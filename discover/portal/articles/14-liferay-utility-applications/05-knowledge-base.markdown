@@ -438,7 +438,7 @@ to navigation. The Knowledge Base Search portlet allows you to search for
 articles in the knowledge base. This portlet presents the search results to you
 in order from most relevant to least relevant.
 
-![Figure 14.33: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/liferay-collaboration-kb-search-portlet.png)
+![Figure 14.33: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/kb-search-portlet.png)
 
 You can also use the Categories Navigation portlet in conjunction with the
 Knowledge Base Display portlet. When both of these portlets are placed on a page
