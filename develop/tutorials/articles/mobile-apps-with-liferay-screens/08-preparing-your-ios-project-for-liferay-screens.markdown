@@ -28,11 +28,12 @@ tutorial's final section shows you how to do this. Onwards!
 ## Using CocoaPods to Prepare Your Project [](id=using-cocoapods-to-prepare-your-project)
 
 To prepare your iOS 8.0 (or above) project for Liferay Screens, simply add the 
-following line to your project's `Podfile`: 
+following line to your project's `Podfile` (create this file if it doesn't yet 
+exist): 
 
     `pod 'LiferayScreens'`
 
-That's it! Your final `Podfile` should look something like this:
+Your final `Podfile` should look something like this:
 
     source 'https://github.com/CocoaPods/Specs.git'
     
@@ -44,7 +45,11 @@ That's it! Your final `Podfile` should look something like this:
     # the rest of your Podfile
 
 You can also use [this `Podfile`](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Showcase-swift/Podfile) 
-as a template. 
+as a template. Next, navigate to your project's directory on the command line 
+and execute `pod install`. This installs Liferay Screens into your project. Once 
+this completes, quit Xcode (if you have it open) and open your project by using 
+the `*.xcworkspace` file in your project's directory. From now on, you'll need 
+to use this file every time you open your project. 
 
 Great! Although your project now includes Liferay Screens, you still need to 
 configure it to communicate with your Liferay installation. Proceed to this 
@@ -69,8 +74,8 @@ and include it in your project. The steps for doing this are shown here:
 ![Figure 1: This Xcode project includes Liferay Screens.](../../images/screens-ios-project-setup.png)
 
 Next, set up [CocoaPods](http://cocoapods.org) for your project if you haven't 
-done so already. Add the following dependencies to your `Podfile` and then 
-execute `pod install`. 
+done so already. Add the following dependencies to your `Podfile` (create this 
+file if it doesn't yet exist):
 
     source 'https://github.com/CocoaPods/Specs.git'
     
@@ -85,6 +90,10 @@ execute `pod install`.
     pod 'ODRefreshControl'
     pod 'Liferay-iOS-SDK'
 
+Next, navigate to your project's directory on the command line and execute 
+`pod install`. Once this completes, quit Xcode and open your project by using 
+the `*.xcworkspace` file in your project's directory. From now on, you'll need 
+to use this file every time you open your project. 
 
 You should consider using the [CocoaPods for Xcode plugin](https://github.com/kattrali/cocoapods-xcode-plugin). 
 You can install it through the [Alcatraz package manager](http://alcatraz.io/) 
