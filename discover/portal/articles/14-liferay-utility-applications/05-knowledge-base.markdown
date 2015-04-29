@@ -174,6 +174,23 @@ position in the hierarchy by choosing a new parent article for it.
 
 *Delete:* lets you remove the article from the knowledge base. 
 
+You can also assign new *priority* values to articles. When multiple articles
+are configured to be displayed in the Knowledge Base Display portlet, peer
+articles are listed in the portlet's navigation by ascending priority. The lower
+an article's priority value, the higher up its listed in the display portlet's
+navigation. To assign new priority values, enter the new value for each article
+you want to reprioritize, select the check box of each modified article, and
+select *Actions* &rarr; *Save*. 
+
++$$$
+
+**Note:** In the *Articles* tab, the *Actions* drop-down is only displayed when
+article checkboxes are selected. The Actions drop-down lets you save changes
+(i.e., priority values) to the selected articles or delete selected articles
+from the knowledge base. 
+
+$$$
+
 The *Templates* tab of the Knowledge Base page of Site Administration allows
 administrators to create templates to facilitate creating articles. A
 template basically functions like a starting point for the creation of certain
@@ -319,8 +336,8 @@ file specifies `00-winter-excursions-intro.markdown` as the parent of its
 neighboring Markdown files: `01-star-dust-snow-shoeing.markdown` and
 `02-lunar-alpine.markdown`. 
 
-To designate an article's priority via it's source file, add a non-zero prefix to
-its file name. Example, the priorities for articles created from files named
+To designate an article's priority via it's source file, add a non-zero prefix
+to its file name. Example, the priorities for articles created from files named
 `01-file.markdown` and `02-file.markdown` would be `1.0` and `2.0`. In the
 importer's user interface, make sure to keep selected the import checkbox *Apply
 numerical prefixes of article files as priorities.* If a file doesn't have such
