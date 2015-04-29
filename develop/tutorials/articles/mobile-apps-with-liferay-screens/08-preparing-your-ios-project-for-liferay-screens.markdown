@@ -63,7 +63,8 @@ and include it in your project. The steps for doing this are shown here:
    source code into this new folder. After this, you'll have two subdirectories 
    in your project's `Liferay-Screens` directory: `Core` and `Themes`.
    
-3. In the Finder, drag and drop `Liferay-Screens` into your Xcode project.
+3. In the Finder, drag and drop `Liferay-Screens` into your Xcode project. Make 
+   sure the *Create groups* radio button is selected in the dialog that appears.
 
 ![Figure 1: This Xcode project includes Liferay Screens.](../../images/screens-ios-project-setup.png)
 
@@ -91,7 +92,8 @@ for Xcode. This way, you can perform these tasks from Xcode.
 
 ![Figure 2: The CocoaPods for Xcode plugin.](../../images/screens-ios-xcode-cocoapods.png)
 
-If you want to add Liferay Screens to your test target (to be used under XCTest), then you need to use a `Podfile` similar to this one:
+If you want to add Liferay Screens to your test target (to be used under 
+XCTest), then you need to use a `Podfile` similar to this one:
 
     source 'https://github.com/CocoaPods/Specs.git'
     
@@ -134,14 +136,20 @@ in the following screenshot:
 This error occurs because the screenlet views are bound to the `LiferayScreens` 
 Module. This module exists only if you installed Screens with CocoaPods. To 
 solve this problem, you must open the failed `xib` file listed in the error 
-trace (in the above screenshot this is `LoginView_default`), select the root 
+trace (in the above screenshot this is `LoginView_default.xib`), select the root 
 view, and then re-set the Custom Class. Note that the Module value should change 
-from `LiferayScreens` to the grayed out text `Current - your app name`. Before 
-and after screenshots of this assignment are shown here: 
+from `LiferayScreens` to be blank, which results in the grayed out text 
+`Current - your app name` being displayed as the Module value. Alternatively, 
+you can click the dropdown next to the Module field and select an element from 
+the list. For example, if your app's name is `ManualTestApp`, then you can 
+select `ManualTestApp` from the Module dropdown. Before and after screenshots of 
+this assignment are shown here: 
 
 ![Figure 5: By default, the Module is set to LiferayScreens.](../../images/screens-ios-xcode-custom-class-before.png)
 
 ![Figure 6: Here, the Module corresponds to `Current -` plus the app's name.](../../images/screens-ios-xcode-custom-class-after.png)
+
+![Figure 7: In this case, only the app's name is set as the Module.](../../images/screens-ios-xcode-custom-class-after-2.png)
 
 Great! Although your project now includes Liferay Screens, you still need to 
 configure it to communicate with your Liferay installation. This is required 
@@ -156,7 +164,7 @@ communicate with your Liferay Portal instance. Create a new property list file
 called `liferay-server-context.plist`. Use [`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Resources/liferay-server-context-sample.plist) 
 as a template. This screenshot shows such a file being browsed:
 
-![Figure 7: The `liferay-context.plist` file.](../../images/screens-ios-liferay-context.png)
+![Figure 8: The `liferay-context.plist` file.](../../images/screens-ios-liferay-context.png)
 
 Great! Your iOS project should now be ready for Liferay Screens. 
 
