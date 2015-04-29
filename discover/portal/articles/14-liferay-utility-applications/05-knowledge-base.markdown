@@ -17,34 +17,31 @@ kinds of information.
 Here are the Knowledge Base's new features:
 
 - Navigation built into the Knowledge Base Display 
-- Suggestions interface for soliciting article feedback and processing the
-feedback in workflow
-- Folders for organizing articles
-- Friendly URL, Source URL, Categorization, and Related Assets fields for
-articles
+- Suggestions interface for soliciting and managing article feedback
+- Article folders
+- Article fields for friendly URL, source URL, categorization, and related assets
 - Button ![*Edit on GitHub*](../../images/kb-display-edit-on-github-button.png)
-can be enabled to take readers to each article's online source repository
-location
-- Importing option for creating and updating articles via Markdown source files
+can be enabled to take readers to an article's online source repository location
+- Import article Markdown source files to create and update articles
 
 The Knowledge Base app is available for purchase on the [Liferay Marketplace](http://www.liferay.com/marketplace).
 Once you've [installed](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps)
-the Knowledge Base app, the Knowledge Base page is available in the Site
-Administration &rarr; Content section and the Knowledge Base Display portlet,
-Knowledge Base Article portlet, Knowledge Base Search portlet, and Knowledge
-Base Section portlet are available in the Applications menu. 
+the Knowledge Base app, the Knowledge Base page is available in the *Site
+Administration* &rarr; *Content* section and the following portlet are available
+at *Applications* &rarr; *Knowledge Base*: Knowledge Base Display, Knowledge
+Base Article, Knowledge Base Search, and Knowledge Base Section. 
 
 ## Knowledge Base Page of Site Administration [](id=knowledge-base-page-of-site-administration)
 
 The Knowledge Base page in *Site Administration* &rarr; *Content* has everything
-the knowledge base administrators and authors need to create, update, and manage
+knowledge base administrators and authors need to create, update, and manage
 articles. It has three tabs: one for managing articles, one for managing
-templates, and the last one for managing aritcle suggestions. The *Articles*
-tab shows all the articles and article folders in the knowledge base and it
-lets you perform actions on them. The *Templates* tab shows all the templates
-defined in the knowledge base and lets you perform actions on them. The
-*Suggestions* tab shows all the suggestions users have submitted for the
-articles and lets you act on them in workflow fashion. 
+templates, and the last one for managing aritcle suggestions. The *Articles* tab
+shows all the articles and article folders in the knowledge base and it lets you
+perform actions on them. The *Templates* tab shows all the templates defined in
+the knowledge base and lets you perform actions on them. The *Suggestions* tab
+shows all the suggestions users have submitted for the articles and lets you act
+on them in workflow fashion.
 
 ![Figure 14.26: You can manage knowledge base articles, templates, and suggestions from the *Knowledge Base* page in *Site Administration* &rarr; *Content*.](../../images/kb-admin-page.png)
 
@@ -247,7 +244,7 @@ folder called `images`.
 When you're finished editing Markdown files that you want to import, you can Zip
 them up with their accompanying image files. 
 
-**Importer Zip file requirements:**
+**Zip File Requirements:**
 
 - Each Zip file must end in the suffix `.zip`.
 - Each Zip file must contain at least one Markdown source file.
@@ -256,7 +253,7 @@ file's root.
 - Image files must use one of the portlet's designated suffixes (the default
 suffixes supported are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and `.png`).
 
-**Example basic Zip file structure:**
+**Example Basic Zip File Structure:**
 
 - `folder-1/`
     - `some-article.markdown`
@@ -283,14 +280,16 @@ The source URL constructed form the above base URL and the example file
     https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/folder-1/some-article.markdown
 
 To use this feature, you must specify the portlet property setting
-`knowledge.base.source.url.enabled=false`. You specify the base source URL in a
+`knowledge.base.source.url.enabled=true`. You specify the base source URL in a
 file called `.METADATA` in the Zip file's root folder and the importer applies
 that base source URL to all of the Zip file's resulting articles. 
 
 The Zip file importer also supports importing a two level hierarchy of articles
-and assigning articles a priority based on numerical file prefixes. Here's a
+and assigning articles a priority based on numerical file prefixes. Below is a
 more advanced listing that shows a Zip file structure that leverages these
-features:
+features.
+
+**Example Advanced Zip File Structure:**
 
 - `01-intro/`
     - `00-winter-excursions-intro.markdown`
@@ -308,14 +307,14 @@ features:
 
 - `.METADATA`
 
-To designate an article to be the parent of all other articles in the same
+To designate an article to be the *parent* of all other articles in the same
 source folder, end the article source file's name with `intro.markdown`. This
 creates a two-level parent-child hierarchy. Using this convention, the above Zip
 file specifies `00-winter-excursions-intro.markdown` as the parent of its
 neighboring Markdown files: `01-star-dust-snow-shoeing.markdown` and
 `02-lunar-alpine.markdown`. 
 
-To designate an article's priority via it's source file, add a non-zero prefix
+To designate an article's *priority* via it's source file, add a non-zero prefix
 to its file name. Example, the priorities for articles created from files named
 `01-file.markdown` and `02-file.markdown` would be `1.0` and `2.0`. In the
 importer's user interface, make sure to keep selected the import checkbox *Apply
@@ -336,6 +335,28 @@ if the intro file's folder(s) have a prefix of `1.0` or greater. It assigns, as
 the intro article's priority, the first folder prefix it finds that is `1.0` or
 greater. This folder prefix convention enables you to specify priorities for
 top-level (non-child) articles in your hierarchy. 
+
+It's important that you know the importer's limitations and best practices for
+importing articles. A good way to address these is in a Frequently Asked
+Questions (FAQ) format.
+
+**Importer FAQs:**
+
+- **What happens when I import an existing article?** The importer looks to see
+if the source file's leading header ID (e.g., `# Some Heading  [](id=some-heading)`)
+matches the URL title of any existing article in the Knowledge Base folder. If a
+match is found, the importer replaces the article's content with the incoming
+content converted from the source file. If no match is found, a new article is
+created. 
+
+- **Do I need to import all of a Knowledge Base folder's articles, even if I
+only want to create a new article or update a subset of the folder's current
+articles?** No. You can import as many or as few new articles and modified
+articles as you like. 
+
+- **Does the importer remove articles?** No. The importer only creates and
+updates articles. It doesn't delete any existing articles. To delete an article,
+you must manually do so in the Knowledge Base application. 
 
 That wraps it up for working with the Knowledge Base from within Site
 Administration. The next sections introduce Knowledge Base portlets for
