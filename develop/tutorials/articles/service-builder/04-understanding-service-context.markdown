@@ -105,6 +105,17 @@ portletRequest)`, you can assure that your Expando bridge attributes are set on
 the `ServiceContext`. Expandos are the back-end implementation of custom fields
 for entities in Liferay.
 
+## Creating and Populating a Service Context in JavaScript
+
+Liferay's API can be invoked in languages other than Java, such as Beanshell,
+Groovy, JavaScript, Python, and Ruby. Some methods of Liferay's API require or
+allow a `ServiceContext` parameter. If you're invoking such a method via
+Liferay's JSON web services, you need to create and populate a `ServiceContext`
+object in JavaScript. Creating a `ServiceContext` object in JavaScript is no
+different than creating any other object in JavaScript.
+
+
+
 Next, you'll learn how to access information from a `ServiceContext`. 
 
 ## Accessing Service Context Data [](id=accessing-service-context-data)
