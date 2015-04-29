@@ -91,48 +91,49 @@ The Knowledge Base page of the Site Administration interface is the primary
 place where administrators and authors create, organize, and manage articles. It
 has three tabs: one for managing articles, one for managing templates, and the
 last one for managing suggestions to articles. The *Articles* tab shows all the
-article folders and articles in the knowledge base and lets you perform actions
-on them. The *Templates* tab shows all the templates defined in the knowledge
-base and lets you perform actions on them. The *Suggestions* tab shows all the
-suggestions users have submitted for the articles and lets you act on them in
-workflow fashion. 
+articles and article folders in the knowledge base, and it lets you perform
+actions on them. The *Templates* tab shows all the templates defined in the
+knowledge base and lets you perform actions on them. The *Suggestions* tab shows
+all the suggestions users have submitted for the articles and lets you act on
+them in workflow fashion. 
 
-![Figure 14.29: Administrators can control knowledge base articles and templates from the *Site Administration* &rarr; *Content* page.](../../images/kb-admin-page.png)
+![Figure 14.29: Administrators can manage knowledge base articles and templates from the *Site Administration* &rarr; *Content* page.](../../images/kb-admin-page.png)
 
 The *Add* drop-down lets you add a Basic Article, add an article based on an
 available template, add a folder, or import articles from a Zip file. Selecting
-*Basic Article* or the name of an available template brings up the  *New
-Article* window. When you enter your article's title, a URL-safe version of the
-title is added to the tail end of the article's friendly URL in the *Friendly
-URL* field. You can edit the fiendly URL.  
+*Basic Article* or the name of an available template brings up the *New Article*
+window. From this interface as you enter your article's title, a URL-safe
+version of the title is added to the tail end of the article's friendly URL--see
+the value in the *Friendly URL* field. You can, of course, edit the friendly URL.  
 
 You create the article's content using the Content section's WYSIWYG editor.
 Knowledge Base articles are created in HTML. Click the *Source* button in the
-editor to view the HTML source of what you've written or write some HTML
-yourself. 
+editor to view the HTML source based on what you've written using the WYSIWYG
+editor or your can write some HTML yourself. 
 
 ![Figure 14.27: You can create a new Knowledge Base article using the WYSIWYG editor.](../../images/kb-admin-new-article.png)
 
-In addition to entering a title and creating content for your article, you can
-use the editor to add attachments, add tags, specify related assets, and set
+In addition to entering your article's title and creating its content, you can
+use the interface to add attachments, add tags, specify related assets, and set
 permissions. By default, view permission is granted to the guest role, meaning
 anyone can view your article. After you're done using the editor, you can save
-the article as draft and continue working on it later or you can submit it for
-publication. Your article may need to be approved before being published,
+the article as a draft and continue working on it later, or you can submit it
+for publication. Your article may need to be approved before being published,
 depending on the workflow defined for your portal. 
 
 The *Permissions* button is next to the Add drop-down in the Knowledge Base page
-of Site Administration. Clicking this link brings up a window that lets you
+of Site Administration. Clicking this button brings up a window that lets you
 define permissions that apply to the knowledge base generally, not to particular
 articles. Here, you can define which roles can add/delete articles, folders and
-templates, which can change general knowledge base permissions, which can
-subscribe to articles, and which can view templates and view suggestions. 
+templates, which roles can change general knowledge base permissions, which
+roles can subscribe to articles, and which roles can view templates and
+suggestions. 
 
 The Add drop-down in the Knowledge Base page of Site Administration also has
 options for adding a folder and importing articles using a Zip file. The
 interface for adding folders is straightforward, letting you enter a name,
 description, and permissions for the folder. Importing articles is a powerful
-option that is covered later in this section. 
+option covered at the end of this section. 
 
 As you add folders and articles to your knowledge base, you'll notice the
 actions you can perform on them. Administrators can perform the following
@@ -142,17 +143,17 @@ actions on a folder:
 
 *Move:* lets you relocate the folder under a new parent folder. 
 
-*Delete:* lets you remove the folder and its contents from the knowledge base. 
+*Delete:* lets you remove from the knowledge base the folder and its articles. 
 
 *Permissions:* lets you grant or revoke a role's ability to add an article to
-the folder, add a subfolder to the folder, delete the folder, move the folder,
+the folder, add a sub-folder to the folder, delete the folder, move the folder,
 set permissions on the folder, edit (update) the folder, and view the folder. 
 
 Articles can be created or moved into in several places in the knowledge base.
-They can reside in the root of the knowledge base, listed under the folder list,
-they can reside in the folders, and they can be children of other articles
-(parent articles). Regardless of where an article resides, administrators can
-perform the following actions on an article: 
+They can reside in the root of the knowledge base, they can reside in the
+folders, and they can be children of other articles (parent articles).
+Regardless of where an article resides, administrators can perform the following
+actions on an article: 
 
 *View:* displays the article. 
 
@@ -166,23 +167,23 @@ article.
 
 *Subscribe:* lets you to choose to be notified of any updates to the article.
 Once you've subscribed to an article, the *Unsubscribe* action is made available
-giving you the option to unsubscribe from the article's notifications. 
+giving you the option of unsubscribing from the article's notifications. 
 
 *Move:* lets you move the article to a different folder or change an article's
 position in the hierarchy by choosing a new parent article for it.
 
 *Delete:* lets you remove the article from the knowledge base. 
 
-The Templates tab of the Knowledge Base page of Site Administration allows
+The *Templates* tab of the Knowledge Base page of Site Administration allows
 administrators to create templates to facilitate creating articles. A
 template basically functions like a starting point for the creation of certain
 types of articles. To create a new template, you can click on the *Add Template*
 button in this tab. 
 
-![Figure 14.30: As an administrator, you can add a new template to your knowledge base by navigating to *Site Administration* &rarr; *Content* &rarr; *Knowledge Base (Admin)*.](../../images/kb-admin-new-template.png)
+![Figure 14.30: As an administrator, you can add a new template to your knowledge base by navigating to *Site Administration* &rarr; *Content* &rarr; *Knowledge Base*.](../../images/kb-admin-new-template.png)
 
-Navigate back to the Templates tab of the Knowledge Base page of Site
-Administration. You can perform the following actions on a template:
+Back in the Templates tab of the Knowledge Base page of Site Administration, you
+can perform the following actions on a template:
 
 *View:* displays the template. From here, you can print the template, use it to
 create an article, edit the template, modify the permissions on the template, or
@@ -191,21 +192,157 @@ delete it.
 *Edit:* lets you to change the template's title and content.
 
 *Permissions:* lets you to configure the permissions on the template. You can
-choose roles to have permission to update, view, delete or change the
-permissions on the template.
+choose whether a role is permitted to update, view, or delete the template, or
+change the permissions on the template.
 
 *Delete:* lets you remove the template from the knowledge base.
 
-The Suggestions tab of the Knowledge Base page of Site Administration lets
-your view user feedback on articles and lets you mark progress on addressing the
+The *Suggestions* tab of the Knowledge Base page of Site Administration lets
+you view user feedback on articles and lets you mark progress on addressing the
 feedback. 
 
-![Figure 14.31: The Suggestions tag in the Knowledge Base page of Site Administration helps you monitor article feedback and mark progress towards addressing that feedback.](../../images/kb-admin-suggestions.png)
+![Figure 14.31: The Suggestions tab in the Knowledge Base page of Site Administration helps you monitor article feedback and mark progress towards addressing feedback.](../../images/kb-admin-suggestions.png)
 
-Each Suggestion entry provides the link to the article, the user's feedback, the
-user's name and a link to the user's home page, the time the feedback was given,
-and a status indicating your progress on the suggestion. You can move the entry
-between New, In Progress, and Resolved states. 
+Each Suggestion entry provides the link to the associated article, the user's
+feedback, the user's name linked to the user's home page, the time the feedback
+was given, and a status indicating progress on addressing the suggestion. You
+can move the entry between *New*, *In Progress*, and *Resolved* states. 
+
+Circling back to the *Add* drop-down in the *Articles* tab, the Import option
+lets you import a Zip file full of articles and their images directly into your
+knowledge base. All you need to do is write your articles in a text format
+called Markdown, Zip up your Markdown article source files and their
+corresponding images, and import the Zip file into the knowledge base. The
+Knowledge Base app's importer automatically converts each source file's Markdown
+text to HTML, applying the HTML to the resulting Knowledge Base article. Any
+image files referenced in an article source file are imported as attachments to
+the article. The [Markdown](http://fletcher.github.io/MultiMarkdown-4/) syntax
+is easy to write, easy to read, and it supports plenty of markup features to
+produce high quality articles. Here are the simple requirements for the article
+source files: 
+
+- All article source files much end in the portlet's required suffixes (default
+acceptable suffixes are `.markdown` or `.md`).
+- Each article's Markdown file must start with a top level header (e.g., `# Some
+Heading`). 
+- Each header must have an associated ID to use in the article's friendly URL
+title and to use as anchors for the article's sub headers. Here's an example of
+a top level header that correctly specifies an ID: `# Some Heading  [](id=some-heading)`
+
+Below is Markdown source text for a simple article: 
+
+    # The Moons of Mars [](id=the-moons-of-mars)
+
+    As you look up from your chaise lounge, you're sure to see our neighboring
+    planet Mars. Did you know that Mars has two moons? You might have to break out a
+    pair of binoculars to see them.
+
+    ![Mars and its moons.](./images/kb-display-mars-moons.png)
+
+    Its two moons ar aptly named after the two sons of mythical Roman God Mars.
+    Their names are Phobos and Diemos.
+
+In the first line of the above example content, notice the friendly URL title
+specified via the header's ID assignment `id=the-moons-of-mars`. On import, the
+ID value becomes the URL title of the resulting knowledge base article. Also
+note that the referenced image file `kb-display-mars-moons.png` resides in a
+folder called `images`. 
+
+When you're finished editing Markdown files that you want to import, you can Zip
+them up with their accompanying image files. 
+
+**Importer Zip file requirements:**
+
+- Each Zip file must end in the suffix `.zip`.
+- Each Zip file must contain at least one Markdown source file.
+- All referenced image files must be in a folder named `images`, in the Zip
+file's root. 
+- Image files must use one of the portlet's designated suffixes (the default
+suffixes supported are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and `.png`).
+
+**Example basic Zip file structure:**
+
+- `folder-1/`
+    - `some-article.markdown`
+    - `another-article.markdown`
+- `images/`
+    - `some-image.png`
+    - `another-image.jpeg`
+
+Markdown files can be specified anywhere in the Zip file's directory structure.
+They can be nested in as many different folders as you like. 
+
+In addition to article Markdown files and their images you can pass to the
+importer a base source URL property that specifies your source file's online
+reposiotry location. The importer appends each Markdown file's path from the Zip
+file to the base source URL to construct a URL to the article's repository
+source location. Each imported article's source URL is set to `[base
+URL]/[article filename]`. Here's an example base source URL property:
+
+    base.source.url=https://github.com/liferay/liferay-docs/blob/master/develop/tutorials
+
+The source URL constructed form the above base URL and the example file
+`folder-1/some-article.markdown` would be this:
+
+    https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/folder-1/some-article.markdown
+
+To use this feature, you must specify the portlet property setting
+`knowledge.base.source.url.enabled=false`. You specify the base source URL in a
+file called `.METADATA` in the Zip file's root folder and the importer applies
+that base source URL to all of the Zip file's resulting articles. 
+
+The Zip file importer also supports importing a two level hierarchy of articles
+and assigning articles a priority based on numerical file prefixes. Here's a
+more advanced listing that shows a Zip file structure that leverages these
+features:
+
+- `01-intro/`
+    - `00-winter-excursions-intro.markdown`
+    - `01-star-dust-snow-shoeing.markdown`
+    - `02-lunar-alpine.markdown`
+
+- `02-intro/`
+    - `00-summer-excursions-intro.markdown`
+    - `01-lunar-rock-scrambling.markdown`
+    - `02-extra-terrestrial-mountain-biking.markdown`
+
+- `images/`
+    - `some-image.png`
+    - `another-image.jpeg`
+
+- `.METADATA`
+
+To designate an article to be the parent of all other articles in the same
+source folder, end the article source file's name with `intro.markdown`. This
+creates a two-level parent-child hierarchy. Using this convention, the above Zip
+file specifies `00-winter-excursions-intro.markdown` as the parent of its
+neighboring Markdown files: `01-star-dust-snow-shoeing.markdown` and
+`02-lunar-alpine.markdown`. 
+
+To designate an article's priority via it's source file, add a non-zero prefix to
+its file name. Example, the priorities for articles created from files named
+`01-file.markdown` and `02-file.markdown` would be `1.0` and `2.0`. In the
+importer's user interface, make sure to keep selected the import checkbox *Apply
+numerical prefixes of article files as priorities.* If a file doesn't have such
+a prefix, its article gets the next increment priority (i.e., that highest
+currently assigned priority, plus one). The Zip file's articles are processed in
+file order. 
+
+Also in the above example Zip file listing, notice that the `*intro.markdown`
+files have the prefix `00`. You can optionally start your intro files with `00`
+so that they're conveniently listed at the top of the folder's file listing in
+your local file browser. The real trick is that the importer uses the prefix of
+such a file's folder as its knowledge base article priority. Here's the
+underlying logic: if you use a prefix `00` for a file, the importer assigns the
+resulting article a priority of `1.0`. A top level intro file, however, gets
+special treatment: if its prefix is less than `1`, the importer checks to see if
+the intro file's folder(s) have a prefix of `1` or greater. It assigns, as the
+intro article's priority, the first folder prefix it finds that is `1` or
+greater. This folder prefix convention enables you to specify priorities for
+top-level (non-child) articles in your hierarchy. 
+
+That wraps it up for working with the Knowledge Base from within Site
+Administration. The Knowledge Base Article portlet is up next. 
 
 ## Knowledge Base Article Portlet [](id=knowledge-base-article-portlet)
 
