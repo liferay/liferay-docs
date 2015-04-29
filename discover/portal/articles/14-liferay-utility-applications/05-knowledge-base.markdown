@@ -422,7 +422,7 @@ article belongs to. You can add any number of Knowledge Base section portlets to
 a page and you can configure each portlet to display articles from any number of
 sections.
 
-![Figure 14.32: Here's an image of Knowledge Base Section portlets being displayed on a page.](../../images/liferay-collaboration-kb-section-portlet.png)
+![Figure 14.32: Here's an image of Knowledge Base Section portlets being displayed on a page.](../../images/kb-section-portlets.png)
 
 The Knowledge Base section portlet has some additional configurations that allow
 an administrator to select a display style (title or abstract), an article
