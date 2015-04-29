@@ -22,68 +22,10 @@ portlet are available in the Applications menu.
 
 ## Knowledge Base Display Portlet [](id=knowledge-base-display-portlet)
 
-The Knowledge Base app actually consists of four portlets that can be placed on
-site pages as well as one that adds a page to Site Administration. The four
-portlets that can be placed on a page are Knowledge Base (Display), Knowledge
-Base Article, Knowledge Base Search, and Knowledge Base Section. When placed on
-a page, the Knowledge Base display portlet presents many of the same options to
-an administrator that are available from the Knowledge Base page of Site
-Administration.
+The Display portlet's section is UNDER CONSTRUCTION! But at least the figure below is
+updated. Skip to the KB Admin section for creating and managing articles. 
 
-![Figure 14.26: The Knowledge Base Display portlet displays your recently added articles in a list.](../../images/liferay-collaboration-kb-display-portlet.png)
-
-You can use the four links at the top of the Knowledge Base Display portlet to
-control what it displays.
-
-*Knowledge Base Home:* shows you a list of all top level articles.
-
-*Recent Articles:* shows you a list of articles in order from most recent
-activity to least recent activity.
-
-*Administrator:* shows you a list of all articles, regardless of which ones are
-parents or children of the others.
-
-*My Subscriptions:* shows you a list of articles you are subscribed to.
-
-The *Add Article* button is available from the Knowledge Base Home or
-Administrator view of the Knowledge Base Display portlet or from the Articles
-tab of the Knowledge Base page of Site Administration. Use this button to create
-an article for the knowledge base. When creating an article, you can use the
-same WYSIWYG editor you used to create wiki pages. Articles, however, are not
-the same as wiki pages; they must be created in HTML, not MediaWiki or Creole.
-Click the *Source* button in the editor to view the HTML source of what you've
-written or write some HTML yourself.
-
-![Figure 14.27: You can create a new Knowledge Base Article using the WYSIWYG editor.](../../images/kb-admin-new-article.png)
-
-In addition to entering a title and creating content for your article, you can
-use the editor to add attachments, add tags, and set permissions. By default,
-view permission is granted to the guest role, meaning anyone can view your
-article. After you're done using the editor, you can save it as draft and
-continue working on it later or you can submit it for publication. Your article
-may need to be approved before being published, depending on the workflow
-defined for your portal.
-
-You can find the *Permissions* button next to the Add Article button in the
-Knowledge Base display portlet or on the Knowledge Base page of Site
-Administration. Click this button to define permissions that apply to the
-Knowledge Base Display portlet generally, not to particular articles. Here, you
-can define which roles can add articles and templates, which are granted
-knowledge base administrator privileges, which can change permissions on
-articles, which can subscribe to articles, and which can view templates.
-
-![Figure 14.28: Set various permissions for each of your portal's roles in the Knowledge Base Permissions interface.](../../images/liferay-collaboration-kb-permissions.png)
-
-Users may need to be granted access to the knowledge base page of Site
-Administration in order to exercise some of the above permissions. For example,
-suppose the user role has been granted the *Add Article* and the *View
-Templates* permissions. A user will be able to add articles from the Knowledge
-Base Display portlet but will need access to the knowledge base page of Site
-Administration in order to view templates. Note that the Knowledge Base
-Display permissions are distinct from the Knowledge Base Admin portlet. The
-display permissions define what a user can do with the Knowledge Base Display
-portlet on a page while the admin permissions define what a user can do on the
-Knowledge Base page of Site Administration.
+![Figure 14.26: The Knowledge Base Display portlet's navigation and viewing area facilitates viewing article hierarchies.](../../images/kb-display.png)
 
 ## Knowledge Base Page of Site Administration [](id=knowledge-base-page-of-site-administration)
 
