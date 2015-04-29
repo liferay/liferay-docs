@@ -110,7 +110,7 @@ However, it doesn't use the new iOS 8 APIs, so iOS apps developed with Screens
 can be run on devices with iOS 7 and above. Using Screens to develop iOS apps 
 requires the following: 
 
-- Xcode 6.1 or above
+- Xcode 6.3.x
 - iOS 8 SDK
 - [CocoaPods](http://cocoapods.org) installed
 - [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)

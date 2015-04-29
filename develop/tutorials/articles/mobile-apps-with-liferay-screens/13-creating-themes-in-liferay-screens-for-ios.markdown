@@ -99,7 +99,7 @@ theme.
 
 An Extended theme inherits the functionality and UI of its parent. This lets you
 add your own functionality and UI on top of it. For an example of an Extended 
-theme, see the [Flat7 theme source code](https://github.com/liferay/liferay-screens/tree/master/ios/Library/Themes/Flat7). 
+theme, see the [Flat7 theme source code](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Themes/Flat7). 
 The Extended theme here presents the same components as the Default theme, but 
 sets new translated strings and contains a few new animations. A new UI 
 component is also introduced to configure whether the password is shown when 
