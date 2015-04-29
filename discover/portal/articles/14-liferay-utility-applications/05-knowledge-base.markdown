@@ -352,9 +352,9 @@ your local file browser. The real trick is that the importer uses the prefix of
 such a file's folder as its knowledge base article priority. Here's the
 underlying logic: if you use a prefix `00` for a file, the importer assigns the
 resulting article a priority of `1.0`. A top level intro file, however, gets
-special treatment: if its prefix is less than `1`, the importer checks to see if
-the intro file's folder(s) have a prefix of `1` or greater. It assigns, as the
-intro article's priority, the first folder prefix it finds that is `1` or
+special treatment: if its prefix is less than `1.0`, the importer checks to see
+if the intro file's folder(s) have a prefix of `1.0` or greater. It assigns, as
+the intro article's priority, the first folder prefix it finds that is `1.0` or
 greater. This folder prefix convention enables you to specify priorities for
 top-level (non-child) articles in your hierarchy. 
 
