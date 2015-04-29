@@ -129,6 +129,16 @@ templates, which roles can change general knowledge base permissions, which
 roles can subscribe to articles, and which roles can view templates and
 suggestions. 
 
++$$$
+
+**Note:** In order for a role to be able to access the Knowledge Base in Site
+Administration, the role must have the permission *Knowledge Base* &rarr;
+*Access in Site Administration*. And to add or act on articles, folders, or
+suggestions, the Site Administrator must grant the role such permissions (e.g.,
+via the *Permissions* screen mentioned in the above paragraph).
+
+$$$
+
 The Add drop-down in the Knowledge Base page of Site Administration also has
 options for adding a folder and importing articles using a Zip file. The
 interface for adding folders is straightforward, letting you enter a name,
@@ -224,6 +234,21 @@ Each Suggestion entry provides the link to the associated article, the user's
 feedback, the user's name linked to the user's home page, the time the feedback
 was given, and a status indicating progress on addressing the suggestion. You
 can move the entry between *New*, *In Progress*, and *Resolved* states. 
+
++$$$
+
+**Note:** For a role to be able to view suggestions to articles in KB admin, the
+role must be granted the *Knowledge Base* &rarr; *Knowledge Base: View
+Suggestions* permission. 
+
+For a role to be able to move suggestions between the *New*, *In Progress*,
+and *Resolved* states, the role must be granted the *Knowledge Base* &rarr;
+*Knowledge Base Article: Update* permission. Users assigned to that role can
+also view article suggestions and update the state of article suggestions from
+outside of site administration, within any one of the other Knowledge Base
+portlets. 
+
+$$$
 
 Circling back to the *Add* drop-down in the *Articles* tab, the Import option
 lets you import a Zip file full of articles and their images directly into your
