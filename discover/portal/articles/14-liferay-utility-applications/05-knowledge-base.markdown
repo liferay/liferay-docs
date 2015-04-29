@@ -14,32 +14,39 @@ Additionally, the app lets administrators create article templates, to ensure
 that articles using the template follow a common structure and include certain
 kinds of information. 
 
+Here are the Knowledge Base's new features:
+
+- Navigation built into the Knowledge Base Display 
+- Suggestions interface for soliciting article feedback and processing the
+feedback in workflow
+- Folders for organizing articles
+- Friendly URL, Source URL, Categorization, and Related Assets fields for
+articles
+- Button ![*Edit on GitHub*](../../images/kb-display-edit-on-github-button.png)
+can be enabled to take readers to each article's online source repository
+location
+- Importing option for creating and updating articles via Markdown source files
+
 The Knowledge Base app is available for purchase on the [Liferay Marketplace](http://www.liferay.com/marketplace).
-On [installing](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps)
-the app, its admin portlet is available in Site Administration's Content section
-and the app's article portlet, display portlet, search portlet, and section
-portlet are available in the Applications menu. 
-
-## Knowledge Base Display Portlet [](id=knowledge-base-display-portlet)
-
-The Display portlet's section is UNDER CONSTRUCTION! But at least the figure below is
-updated. Skip to the KB Admin section for creating and managing articles. 
-
-![Figure 14.26: The Knowledge Base Display portlet's navigation and viewing area facilitates viewing article hierarchies.](../../images/kb-display.png)
+Once you've [installed](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps)
+the Knowledge Base app, the Knowledge Base page is available in the Site
+Administration &rarr; Content section and the Knowledge Base Display portlet,
+Knowledge Base Article portlet, Knowledge Base Search portlet, and Knowledge
+Base Section portlet are available in the Applications menu. 
 
 ## Knowledge Base Page of Site Administration [](id=knowledge-base-page-of-site-administration)
 
-The Knowledge Base page of the Site Administration interface is the primary
-place where administrators and authors create, organize, and manage articles. It
-has three tabs: one for managing articles, one for managing templates, and the
-last one for managing suggestions to articles. The *Articles* tab shows all the
-articles and article folders in the knowledge base, and it lets you perform
-actions on them. The *Templates* tab shows all the templates defined in the
-knowledge base and lets you perform actions on them. The *Suggestions* tab shows
-all the suggestions users have submitted for the articles and lets you act on
-them in workflow fashion. 
+The Knowledge Base page in *Site Administration* &rarr; *Content* has everything
+the knowledge base administrators and authors need to create, update, and manage
+articles. It has three tabs: one for managing articles, one for managing
+templates, and the last one for managing aritcle suggestions. The *Articles*
+tab shows all the articles and article folders in the knowledge base and it
+lets you perform actions on them. The *Templates* tab shows all the templates
+defined in the knowledge base and lets you perform actions on them. The
+*Suggestions* tab shows all the suggestions users have submitted for the
+articles and lets you act on them in workflow fashion. 
 
-![Figure 14.29: Administrators can manage knowledge base articles and templates from the *Site Administration* &rarr; *Content* page.](../../images/kb-admin-page.png)
+![Figure 14.26: You can manage knowledge base articles, templates, and suggestions from the *Knowledge Base* page in *Site Administration* &rarr; *Content*.](../../images/kb-admin-page.png)
 
 The *Add* drop-down lets you add a Basic Article, add an article based on an
 available template, add a folder, or import articles from a Zip file. Selecting
@@ -48,12 +55,12 @@ window. From this interface as you enter your article's title, a URL-safe
 version of the title is added to the tail end of the article's friendly URL--see
 the value in the *Friendly URL* field. You can, of course, edit the friendly URL.  
 
-You create the article's content using the Content section's WYSIWYG editor.
-Knowledge Base articles are created in HTML. Click the *Source* button in the
-editor to view the HTML source based on what you've written using the WYSIWYG
-editor or your can write some HTML yourself. 
+You create the article's content using the WYSIWYG editor. Knowledge Base
+articles are created in HTML. Click the *Source* button in the editor to view
+the HTML source based on what you've written using the WYSIWYG editor or your
+can write some HTML yourself. 
 
-![Figure 14.27: You can create a new Knowledge Base article using the WYSIWYG editor.](../../images/kb-admin-new-article.png)
+![Figure 14.27: You can create and modify a Knowledge Base article's content using the WYSIWYG editor.](../../images/kb-admin-new-article.png)
 
 In addition to entering your article's title and creating its content, you can
 use the interface to add attachments, add tags, specify related assets, and set
@@ -63,29 +70,29 @@ the article as a draft and continue working on it later, or you can submit it
 for publication. Your article may need to be approved before being published,
 depending on the workflow defined for your portal. 
 
-The *Permissions* button is next to the Add drop-down in the Knowledge Base page
-of Site Administration. Clicking this button brings up a window that lets you
-define permissions that apply to the knowledge base generally, not to particular
-articles. Here, you can define which roles can add/delete articles, folders and
-templates, which roles can change general knowledge base permissions, which
-roles can subscribe to articles, and which roles can view templates and
-suggestions. 
+The *Permissions* button is next to the *Add* drop-down in the Knowledge Base
+page. Clicking this button brings up a window that lets you define permissions
+for applying to the knowledge base generally, not to particular articles. Here,
+you can define which roles can add/delete articles, folders and templates, which
+roles can change general knowledge base permissions, which roles can subscribe
+to articles, and which roles can view templates and suggestions. 
 
 +$$$
 
 **Note:** In order for a role to be able to access the Knowledge Base in Site
 Administration, the role must have the permission *Knowledge Base* &rarr;
 *Access in Site Administration*. And to add or act on articles, folders, or
-suggestions, the Site Administrator must grant the role such permissions (e.g.,
-via the *Permissions* screen mentioned in the above paragraph).
+suggestions, the site administrator must grant the role such permissions (e.g.,
+via the *Permissions* window in the Knowledge Base page in Site Administration).
 
 $$$
 
-The Add drop-down in the Knowledge Base page of Site Administration also has
-options for adding a folder and importing articles using a Zip file. The
-interface for adding folders is straightforward, letting you enter a name,
-description, and permissions for the folder. Importing articles is a powerful
-option covered at the end of this section. 
+The Add drop-down in the Knowledge Base page of Site Administration also has an
+option for adding a folder. The interface for adding folders is straightforward,
+letting you enter a name, description, and permissions for the folder. The last
+add option lets you import articles using a Zip file. Importing articles is a
+powerful option covered in a later [section](/discover/portal/-/knowledge_base/6-2/knowledge-base#importing-articles-from-markown-source-files)
+of the Knowledge Base app documentation. 
 
 As you add folders and articles to your knowledge base, you'll notice the
 actions you can perform on them. Administrators can perform the following
@@ -104,8 +111,8 @@ set permissions on the folder, edit (update) the folder, and view the folder.
 Articles can be created or moved into in several places in the knowledge base.
 They can reside in the root of the knowledge base, they can reside in the
 folders, and they can be children of other articles (parent articles).
-Regardless of where an article resides, administrators can perform the following
-actions on an article: 
+
+Here are the actions you can perform on a Knowledge Base article:
 
 *View:* displays the article. 
 
@@ -128,31 +135,32 @@ position in the hierarchy by choosing a new parent article for it.
 
 You can also assign new *priority* values to articles. When multiple articles
 are configured to be displayed in the Knowledge Base Display portlet, peer
-articles are listed in the portlet's navigation by ascending priority. The lower
-an article's priority value, the higher up its listed in the display portlet's
-navigation. To assign new priority values, enter the new value for each article
-you want to reprioritize, select the check box of each modified article, and
-select *Actions* &rarr; *Save*. 
+articles are listed in the portlet's navigation are arranged top to bottom by
+ascending priority. The lower an article's priority value the higher up it's
+listed in the display portlet's navigation. To assign new priority values, enter
+a new priority value for each article you want to reprioritize, select the
+checkbox of each modified article, and select *Actions* &rarr; *Save*. 
 
 +$$$
 
 **Note:** In the *Articles* tab, the *Actions* drop-down is only displayed when
-article checkboxes are selected. The Actions drop-down lets you save changes
-(i.e., priority values) to the selected articles or delete selected articles
-from the knowledge base. 
+one or more article checkboxes are selected. The Actions drop-down lets you save
+changes (i.e., priority values) to the selected articles or delete selected
+articles from the knowledge base. 
 
 $$$
 
-The *Templates* tab of the Knowledge Base page of Site Administration allows
-administrators to create templates to facilitate creating articles. A
-template basically functions like a starting point for the creation of certain
-types of articles. To create a new template, you can click on the *Add Template*
-button in this tab. 
+The *Templates* tab of the Knowledge Base page in Site Administration lets you
+create aritcle templates. A template basically functions like a starting point
+for the creation of certain types of articles. You can create templates that
+have default headers or content to pre-populate articles created from the
+template. Using templates fosters consistency in format and content across new
+articles. To create a new template, click on the *Add Template* button in
+*Templates* tab. 
 
-![Figure 14.30: As an administrator, you can add a new template to your knowledge base by navigating to *Site Administration* &rarr; *Content* &rarr; *Knowledge Base*.](../../images/kb-admin-new-template.png)
+![Figure 14.28: As an administrator, you can add a new template to your knowledge base from the *Knowledge Base* page in *Site Administration*.](../../images/kb-admin-new-template.png)
 
-Back in the Templates tab of the Knowledge Base page of Site Administration, you
-can perform the following actions on a template:
+From the *Templates* tab, you can perform the following actions on a template:
 
 *View:* displays the template. From here, you can print the template, use it to
 create an article, edit the template, modify the permissions on the template, or
@@ -166,44 +174,48 @@ change the permissions on the template.
 
 *Delete:* lets you remove the template from the knowledge base.
 
-The *Suggestions* tab of the Knowledge Base page of Site Administration lets
+The *Suggestions* tab of the Knowledge Base page in Site Administration lets
 you view user feedback on articles and lets you mark progress on addressing the
 feedback. 
 
-![Figure 14.31: The Suggestions tab in the Knowledge Base page of Site Administration helps you monitor article feedback and mark progress towards addressing feedback.](../../images/kb-admin-suggestions.png)
+![Figure 14.29: The Suggestions tab in the Knowledge Base page in Site Administration helps you monitor article feedback and mark progress towards addressing feedback.](../../images/kb-admin-suggestions.png)
 
 Each Suggestion entry provides the link to the associated article, the user's
-feedback, the user's name linked to the user's home page, the time the feedback
-was given, and a status indicating progress on addressing the suggestion. You
-can move the entry between *New*, *In Progress*, and *Resolved* states. 
+feedback, the user's name linked to the user's home page, the feedback's
+timestamp, and a status value indicating progress on addressing the suggestion.
+You can move the entry between *New*, *In Progress*, and *Resolved* states. 
 
 +$$$
 
-**Note:** For a role to be able to view suggestions to articles in KB admin, the
-role must be granted the *Knowledge Base* &rarr; *Knowledge Base: View
-Suggestions* permission. 
+**Note:** For a role to be able to view suggestions to articles in the
+*Knowledge Base* page in *Site Adminiistration*, the role must be granted the
+*Knowledge Base* &rarr; *Knowledge Base: View Suggestions* permission. 
 
 For a role to be able to move suggestions between the *New*, *In Progress*,
 and *Resolved* states, the role must be granted the *Knowledge Base* &rarr;
 *Knowledge Base Article: Update* permission. Users assigned to that role can
 also view article suggestions and update the state of article suggestions from
-outside of site administration, within any one of the other Knowledge Base
-portlets. 
+within any one of the other Knowledge Base portlets. 
 
 $$$
 
-Circling back to the *Add* drop-down in the *Articles* tab, the Import option
-lets you import a Zip file full of articles and their images directly into your
-knowledge base. All you need to do is write your articles in a text format
-called Markdown, Zip up your Markdown article source files and their
-corresponding images, and import the Zip file into the knowledge base. The
-Knowledge Base app's importer automatically converts each source file's Markdown
-text to HTML, applying the HTML to the resulting Knowledge Base article. Any
-image files referenced in an article source file are imported as attachments to
-the article. The [Markdown](http://fletcher.github.io/MultiMarkdown-4/) syntax
-is easy to write, easy to read, and it supports plenty of markup features to
-produce high quality articles. Here are the simple requirements for the article
-source files: 
+Next you'll learn how to create new articles and update existing articles by
+importing them from Markdown source files bundled in a Zip file. 
+
+## Importing Articles from Markown Source Files [](id=importing-articles-from-markown-source-files)
+
+If you navigat to *Site Administration* &rarr; *Content* &rarr; *Knowledge Base*
+&rarr; *Articles* and click on *Add* &rarr; *Import* to bring up the window that
+lets you import into your knowledge base, a Zip file full of articles and their
+images. All you need to do is write your articles in a text format called
+Markdown, Zip up your Markdown article source files and their corresponding
+images, and import the Zip file into the knowledge base. The Knowledge Base
+app's importer automatically converts each source file's Markdown text to HTML,
+applying the HTML to the resulting Knowledge Base article. Any image files
+referenced in an article source file are imported as attachments to the article.
+The [Markdown](http://fletcher.github.io/MultiMarkdown-4/) syntax is easy to
+write, easy to read, and it supports plenty of markup features to produce high
+quality articles. Here are the simple requirements for the article source files: 
 
 - All article source files much end in the portlet's required suffixes (default
 acceptable suffixes are `.markdown` or `.md`).
@@ -213,7 +225,7 @@ Heading`).
 title and to use as anchors for the article's sub headers. Here's an example of
 a top level header that correctly specifies an ID: `# Some Heading  [](id=some-heading)`
 
-Below is Markdown source text for a simple article: 
+Below is Markdown source text for a simple example article: 
 
     # The Moons of Mars [](id=the-moons-of-mars)
 
@@ -326,7 +338,18 @@ greater. This folder prefix convention enables you to specify priorities for
 top-level (non-child) articles in your hierarchy. 
 
 That wraps it up for working with the Knowledge Base from within Site
-Administration. The Knowledge Base Article portlet is up next. 
+Administration. The next sections introduce Knowledge Base portlets for
+displaying articles and article hierarchies, aggregating articles for viewing,
+and finding articles. 
+
+## Knowledge Base Display Portlet [](id=knowledge-base-display-portlet)
+
+The Display portlet's section is UNDER CONSTRUCTION! But at least the figure
+below is up to date. 
+
+![Figure 14.30: The Knowledge Base Display portlet's navigation and viewing area facilitates viewing article hierarchies.](../../images/kb-display.png)
+
+The Knowledge Base Article portlet is up next. 
 
 ## Knowledge Base Article Portlet [](id=knowledge-base-article-portlet)
 
@@ -371,7 +394,7 @@ an administrator to select a display style (title or abstract), an article
 window state (maximized or normal), how to order the articles, how many articles
 to display per page, and whether or not to show pagination.
 
-## Knowledge Base Navigation [](id=knowledge-base-navigation)
+## Knowledge Base Search [](id=knowledge-base-search)
 
 Wikis often have deeply nested articles that can be hard to find by browsing.
 Liferay's knowledge base's ability to selectively display articles makes it
@@ -382,13 +405,10 @@ in order from most relevant to least relevant.
 
 ![Figure 14.33: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/kb-search-portlet.png)
 
-You can also use the Categories Navigation portlet in conjunction with the
-Knowledge Base Display portlet. When both of these portlets are placed on a page
-you can select a topic in the Categories Navigation portlet and the Knowledge
-Base Display portlet will show all of the articles that match the topic. You can
-create topics from the Categories page of *Site Administration* &rarr;
-*Content*.
+TODO - transition
 
-![Figure 14.34: Use the Categories Navigation portlet to search articles that match a specific topic.](../../images/liferay-collaboration-kb-catnavandkbdisplay-portlets.png)
+## Configuring Portlet Properties for the Knowledge Base [](id=configuring-portlet-properties-for-the-knowledge-base)
 
-You can select topics for articles when you are creating or editing them.
+TODO - Add content.
+
+TODO - Wrap up the KB documentation.
