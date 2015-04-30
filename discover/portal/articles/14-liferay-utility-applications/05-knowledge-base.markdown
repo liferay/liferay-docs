@@ -279,10 +279,10 @@ The source URL constructed form the above base URL and the example file
 
     https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/folder-1/some-article.markdown
 
-To use this feature, you must specify the portlet property setting
-`knowledge.base.source.url.enabled=true`. You specify the base source URL in a
-file called `.METADATA` in the Zip file's root folder and the importer applies
-that base source URL to all of the Zip file's resulting articles. 
+You specify the base source URL in a file called `.METADATA` in the Zip file's
+root folder and the importer applies that base source URL to all of the Zip
+file's resulting articles. To use the source URL feature, your portal
+administrator must enable it via the Knowledge Base application's portlet [properties](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration).
 
 The Zip file importer also supports importing a two level hierarchy of articles
 and assigning articles a priority based on numerical file prefixes. Below is a
@@ -393,20 +393,12 @@ view the history of the article, or print the article.
 The Knowledge Base Section portlet allows administrators to selectively show
 articles associated with a specific section. For example, a news site might have
 a *World* section, a *Politics* section, a *Business* section and an
-*Entertainment* section. In order to use sections, you need to set the
-`admin.kb.article.sections` property in your knowledge base portlet's
-`portlet.properties` file and redeploy the portlet. You can find the
-`portlet.properties` file in the knowledge base portlet's source directory.
-Updating the one in your server's directory won't work. Use comma delimited
-section names to set the property, like
-`admin.kb.article.sections=World,Politics,Business,Entertainment`, for example.
-
-Once you have defined some sections in your knowledge base's
-`portlet.properties` file, your users will see a multi-select box in the Add
+*Entertainment* section. Your users will see a multi-select box in the Add
 Article and Edit Article screens that allows them to select which section an
 article belongs to. You can add any number of Knowledge Base section portlets to
 a page and you can configure each portlet to display articles from any number of
-sections.
+sections. To use sections, you must enable it by specifying section values via
+the Knowledge Base application's portlet [properties](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration).
 
 ![Figure 14.32: Here's an image of Knowledge Base Section portlets being displayed on a page.](../../images/kb-section-portlets.png)
 
@@ -427,66 +419,71 @@ in order from most relevant to least relevant.
 ![Figure 14.33: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/kb-search-portlet.png)
 
 The search portlet helps you find articles in your knowledge base that match the
-information you need. 
+keywords you specify. 
 
-## Advanced Configuration
+## Advanced Configuration [](id=advanced-configuration)
 
-The Knowledge Base application provides several features that you can fine tune
-to meet your needs. Here are some of the features that you might be interested
-in enabling or configuring differently:
+The Knowledge Base application provides several features that you can fine-tune
+to meet your needs. Here are some features that you might be interested in
+enabling or configuring differently: source URL, import file conventions, new
+article priority increment, and sections. In this section, you'll learn how to
+configure these features by overriding the Knowledge Base app's portlet
+properties. Advanced configuration should be done by a portal administrator, as
+person modifying the configuration must have access access to the downloaded
+Knowledge Base application, must be comfortable repackaging applications, and
+must install the modified Knowledge Base app via the Control Panel. 
 
-- *Source URL:* lets you specify the URL of the article's source file and
-enables a button (default label is *Edit on GitHub*) in the article's display
-that users can click to go to navigate to the source location. 
-- *Importer File Conventions:* lets you specify supported file extensions for
-imported source article files and source image files, a file suffix for
-designating parent article source files, and the folder path within the Zip file
-in which the importer looks for source image files.
-- *Incrementing Priority of New Articles:* lets you specify whether to enable
-incrementing each new aritcle's priority to one greater than the highest
-priority of articles in the same destination knowledge base folder. 
-- *Sections:* let's you specify the names of topics to attribute to articles.
++$$$
 
-Configuration propoerties of some of these features has been mentioned in
-previous sections. This current section tells you how to configure these
-features in an advanced way by overriding the Knowledge Base app's portlet
-properties. 
+**Important:** Advanced configurations to the Knowledge Base application should
+only be performed by a portal administrator.
 
-You can start by creating a file called `portlet-ext.properties`. You can
-specify new values for properties you want to override by writing those
-property settings to your `portlet-ext.properties` file. The sections that
-follow describe the most common properties that Knowledge Base administrators
-consider overriding. 
+$$$
+
+To start, create a file called `portlet-ext.properties` to hold the property
+settings for the property values that you want to override. Keep your
+`portlet-ext.properties` open in an editor so you can add new property values.
+The sections that follow describe the most common properties that Knowledge Base
+administrators consider overriding. 
 
 ### Source URL Properties
 
-To enable the *Source URL* field in the article editor and enable the display
-button to take readers to the source location, specify the following setting:
+Enabling the source URL feature lets you specify the URL of the article's source
+file and it displays a button (default label is *Edit on GitHub*) above each
+displayed article. Users can click the button to navigate to the article's
+source location. To enable this feature, specify the following property setting:
 
     knowledge.base.source.url.enabled=true
 
-To override the source location button's default label *Edit on GitHub* with one
-suited to your repository, specify the new label as the value for property
-`knowledge.base.source.url.edit.message.key`. You can even specify a language
-key as the value.
-
+To override the button's default label *Edit on GitHub*, specify a new label as
+the value for property `knowledge.base.source.url.edit.message.key`. The best
+practice is to specify the value as a [language key](/develop/tutorials/-/knowledge_base/6-2/using-liferays-language-keys).
 For example, if you created a language key `edit-on-bitbucket=Edit on
-Bitbucket`, you could specify that key as the button's new label:
+Bitbucket`, you could specify that language key as the button's new label:
 
     knowledge.base.source.url.edit.message.key=edit-on-bitbucket
+
+You could alternatively, specify that same example label explicitly like this:
+
+    knowledge.base.source.url.edit.message.key=Edit on Bitbucket
 
 
 ### Importer File Convention Properties
 
+The importer file convention properties let you specify supported file name
+extensions for imported source article files and source image files, a file
+suffix for designating parent article source files, and the folder path within
+the Zip file, in which the importer looks for source image files.
+
 You can override the following property settings with values to specify
 supported file extensions and supported source image file extensions
-respectively:
+respectively. Here are the default settings that you can override:
 
     markdown.importer.article.extensions=.markdown,.md
     markdown.importer.image.file.extensions=.bmp,.gif,.jpeg,.jpg,.png
 
 You can specify the expected article parent file suffix by specifying a
-different property setting than the default setting listed here:
+different property setting. Here's the default setting that you can override:
 
     markdown.importer.article.intro=intro.markdown
 
@@ -495,7 +492,7 @@ source image files. Here's the default setting that you can override:
 
     markdown.importer.image.folder=images/
 
-### Incrementing Priority of New Articles
+### New Article Priority Increment Property
 
 By default new articles receive a priority value that is `1.0` higher than the
 highest priority of all other articles in the folder. To disable this increment
@@ -504,50 +501,68 @@ setting:
 
     admin.kb.article.increment.priority.enabled=false
 
-### Setting Section Names
+### Section Names Property
 
-In order to make section names available for article authors to choose, you must
-specify them in a comma-separated list. To create section names, specify them
-as a list of values for the property `admin.kb.article.sections`. Here's an
-example of setting them to arbitrary values *Politics*, *Business*, and *World*:
+The section names property lets you specify the names of categories/topics to
+attribute to articles. Using the Knowledge Base Sections portlet, you can
+display one or more *sections* (groups) of articles. In order to make section
+names available for article authors to choose, you must specify them in a
+comma-separated list. To create section names, specify them as a list of values
+for the property `admin.kb.article.sections`. Here's an example of setting them
+to section values *Politics*, *Business*, and *World*:
 
     admin.kb.article.sections=Politics,Business,World
 
-Next you'll learn how to deploy your portlet property settings. 
+Next you'll learn how to deploy any new portlet property settings you've
+specified. 
 
-### Deploying the Application with Your New Property Settings
+### Deploying New Property Settings
 
+For the Knowledge Base application to be able to use new portlet property
+settings, the properties must be made availabe in the application's class path.
+You can do this by putting the `portlet-ext.properties` file you've created into
+the application's class path via the Knowledge Base portlet's `.war` file. The
+`.war` file is available in the Knowledge Base application's `.lpkg` file--it's
+an archive file that contains the app's web archives and metadata files. The
+following steps show you how to put your `portlet-ext.properties` file into the
+app's `.lpkg` file and how to deploy the app using the `.lpkg` file. 
 
-1. Create a portlet-ext.properties file for specifying your property settings.
-
-2. Navigate to your purchased app by going to your Account Home in
+1. Navigate to your Knowledge Base app by going to your *Account Home* in
 [http://www.liferay.com](http://www.liferay.com) (e.g.,
-`https://www.liferay.com/web/username`), clicking on *Apps*, and finding and
-clicking on the Knowledge Base app. 
+`https://www.liferay.com/web/[username]`). Click on *Apps*, and then select
+the Knowledge Base app to display its description. 
 
-3. Click the *App* button to download the app as a `.lpkg` file. 
+2. Click the *App* button to download the app as a `.lpkg` file. 
 
-4. Extract the contents of the `.lpkg` file, extracting the app's `.war` file
-and its `liferay-marketplace.properties` file.
+3. Extract the contents of the `.lpkg` file. The extracted contents include the
+app's portlet `.war` file. 
 
-5. Extract the contents of the `.war` file, extracting the portlet project
-files. 
+4. Extract the contents of the portlet `.war` file. The extracted contents are
+comprised of the portlet project's files. 
 
-6. Add your `portlet-ext.properties` file to the portlet project folder
+5. Add your `portlet-ext.properties` file to the portlet project folder
 `WEB-INF/classes`. 
 
-7. Zip up the portlet project's folders and files into a `.war` file.
+6. Repackage (e.g., using the `jar` executable or a Zip tool) the portlet
+project's folders and files into a `.war` file. 
 
-8. Zip up that `.war` file and the `liferay-marketplace.properties` file into a
-`.lpkg` file.
+7. Repackage that newly packaged `.war` file and all other files originally
+extracted from the `.lpkg` file. **Important:** don't include the *original*
+portlet `.war` file. 
 
-9. In your portal, navigate to *Control Panel* &rarr; *Apps* &rarr; *App
+8. In your portal, navigate to *Control Panel* &rarr; *Apps* &rarr; *App
 Manager* &rarr; *Install*. 
 
-10. Select *File Upload*, select your `.lpkg` file, and click
-*Install* to deploy the Knowledge Base application.
+9. Select *File Upload*, select your `.lpkg` file, and click *Install* to deploy
+the Knowledge Base application.
 
-Your deployed application now uses the portlet property override settings that
-you specified in your `portlet-ext.properties` file. 
+Your deployed application now uses the property settings that you specified in
+your `portlet-ext.properties` file. Congratulations on deploying your advanced
+configuration settings! 
 
-TODO - Wrap up the KB documentation.
+In this section, you've learned the benefits of publishing articles using the
+Knowledge Base application. You've seen how easy it is to create, organize, and
+manage articles, and you've learned various ways to present articles in
+the Knowledge Base Display, Knowledge Base Article, and Knowledge Base Section
+portlets. You can consider yourself to be truly *knowledgeable* of Liferay's
+Knowledge Base application. 
