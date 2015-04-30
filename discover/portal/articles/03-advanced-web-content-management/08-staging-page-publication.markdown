@@ -104,15 +104,43 @@ environments helps secure the remote publication process. It also removes the
 need to send the publishing user's password to the remote server for web service
 authentication. Using a pre-shared key allows Liferay to create an authorization
 context (permission checker) from the provided email address, screen name, or
-user ID *without* the user's password. You can specify any value for the
-`tunneling.servlet.shared.secret` property; the value for your current server
-just has to match the value of your remote server. Remember to restart both
-Liferay servers after making these portal properties updates. After restarting,
-log back in to your local Liferay portal instance as a site administrator. Then
-navigate to the *Site Administration* &rarr; *Configuration* page for your site.
-Next, click on *Site Settings* in the left menu and then on *Staging* listed
-under the Advanced tab. Select *Remote Live* under Staging Type and additional
-options appear.
+user ID *without* the user's password.
+
+The values that you can specify for the `tunneling.servlet.shared.secret`
+property depend on the configured encryption algorithm since different
+encryption algorithms support keys of different lengths. Please see the
+[HTTP Tunneling](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
+section of Liferay's `portal.properties` file for more information. Note that
+the following key lengths supported by the available encryption algorithms:
+
+- AES: 128, 192, and 256 bit keys
+- Blowfish: 32 - 448 bit keys
+- DESede (Triple DES): 56, 112, or 168 bit keys (However, Liferay places an
+  artificial limit on the minimum key length and does not support the 56 bit key
+  length)
+
+To prevent potential character encoding issues, you can use one of the following
+two strategies:
+
+1. Use hexadecimal encoding (recommended). E.g., if your password was
+   *abcdefghijklmnop*, you'd set the following in your `portal-ext.properties`
+   file:
+
+        tunneling.servlet.shared.secret=6162636465666768696a6b6c6d6e6f70
+        tunneling.servlet.shared.secret.hex=true
+
+2. Use printable ASCII characters (less secure). This degrades the password
+   entropy.
+
+Once you've chosen a key, make sure that value of your current server matches
+the value of your remote server.
+
+Remember to restart both Liferay servers after making these portal properties
+updates. After restarting, log back in to your local Liferay portal instance as
+a site administrator. Then navigate to the *Site Administration* &rarr;
+*Configuration* page for your site. Next, click on *Site Settings* in the left
+menu and then on *Staging* listed under the Advanced tab. Select *Remote Live*
+under Staging Type and additional options appear.
 
 ![Figure 3.20: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
 
