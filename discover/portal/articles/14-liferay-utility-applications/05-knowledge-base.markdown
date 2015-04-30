@@ -440,18 +440,23 @@ only be performed by a portal administrator.
 
 $$$
 
+In this section, you'll learn about the Knowledge Base app's portlet properties,
+how to specify values to override the default values, and how to deploy the
+Knowledge Base app and these new values to your portal. 
+
+### Overriding Default Portlet Properties
+
 To start, create a file called `portlet-ext.properties` to hold the property
 settings for the property values that you want to override. Keep your
 `portlet-ext.properties` open in an editor so you can add new property values.
 The sections that follow describe the most common properties that Knowledge Base
 administrators consider overriding. 
 
-### Source URL Properties
-
-Enabling the source URL feature lets you specify the URL of the article's source
-file and it displays a button (default label is *Edit on GitHub*) above each
-displayed article. Users can click the button to navigate to the article's
-source location. To enable this feature, specify the following property setting:
+**Source URL Properties:** Enabling the source URL feature lets you specify the
+URL of the article's source file and it displays a button (default label is
+*Edit on GitHub*) above each displayed article. Users can click the button to
+navigate to the article's source location. To enable this feature, specify the
+following property setting:
 
     knowledge.base.source.url.enabled=true
 
@@ -468,12 +473,11 @@ You could alternatively, specify that same example label explicitly like this:
     knowledge.base.source.url.edit.message.key=Edit on Bitbucket
 
 
-### Importer File Convention Properties
-
-The importer file convention properties let you specify supported file name
-extensions for imported source article files and source image files, a file
-suffix for designating parent article source files, and the folder path within
-the Zip file, in which the importer looks for source image files.
+**Importer File Convention Properties:** The importer file convention properties
+let you specify supported file name extensions for imported source article files
+and source image files, a file suffix for designating parent article source
+files, and the folder path within the Zip file, in which the importer looks for
+source image files.
 
 You can override the following property settings with values to specify
 supported file extensions and supported source image file extensions
@@ -492,31 +496,27 @@ source image files. Here's the default setting that you can override:
 
     markdown.importer.image.folder=images/
 
-### New Article Priority Increment Property
-
-By default new articles receive a priority value that is `1.0` higher than the
-highest priority of all other articles in the folder. To disable this increment
-so that articles get a flat value of `1.0` by default, specify the following
-setting:
+**New Article Priority Increment Property:** By default new articles receive a
+priority value that is `1.0` higher than the highest priority of all other
+articles in the folder. To disable this increment so that articles get a flat
+value of `1.0` by default, specify the following setting:
 
     admin.kb.article.increment.priority.enabled=false
 
-### Section Names Property
-
-The section names property lets you specify the names of categories/topics to
-attribute to articles. Using the Knowledge Base Sections portlet, you can
-display one or more *sections* (groups) of articles. In order to make section
-names available for article authors to choose, you must specify them in a
-comma-separated list. To create section names, specify them as a list of values
-for the property `admin.kb.article.sections`. Here's an example of setting them
-to section values *Politics*, *Business*, and *World*:
+**Section Names Property:** The section names property lets you specify the
+names of categories/topics to attribute to articles. Using the Knowledge Base
+Sections portlet, you can display one or more *sections* (groups) of articles.
+In order to make section names available for article authors to choose, you must
+specify them in a comma-separated list. To create section names, specify them as
+a list of values for the property `admin.kb.article.sections`. Here's an example
+of setting them to section values *Politics*, *Business*, and *World*:
 
     admin.kb.article.sections=Politics,Business,World
 
 Next you'll learn how to deploy any new portlet property settings you've
 specified. 
 
-### Deploying New Property Settings
+### Deploying Override Property Values
 
 For the Knowledge Base application to be able to use new portlet property
 settings, the properties must be made availabe in the application's class path.
@@ -535,7 +535,7 @@ the Knowledge Base app to display its description.
 2. Click the *App* button to download the app as a `.lpkg` file. 
 
 3. Extract the contents of the `.lpkg` file. The extracted contents include the
-app's portlet `.war` file. 
+app's portlet `.war` file `knowledge-base-portlet-[version].war`. 
 
 4. Extract the contents of the portlet `.war` file. The extracted contents are
 comprised of the portlet project's files. 
