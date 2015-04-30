@@ -426,10 +426,128 @@ in order from most relevant to least relevant.
 
 ![Figure 14.33: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/kb-search-portlet.png)
 
-TODO - transition
+The search portlet helps you find articles in your knowledge base that match the
+information you need. 
 
-## Configuring Portlet Properties for the Knowledge Base [](id=configuring-portlet-properties-for-the-knowledge-base)
+## Advanced Configuration
 
-TODO - Add content.
+The Knowledge Base application provides several features that you can fine tune
+to meet your needs. Here are some of the features that you might be interested
+in enabling or configuring differently:
+
+- *Source URL:* lets you specify the URL of the article's source file and
+enables a button (default label is *Edit on GitHub*) in the article's display
+that users can click to go to navigate to the source location. 
+- *Importer File Conventions:* lets you specify supported file extensions for
+imported source article files and source image files, a file suffix for
+designating parent article source files, and the folder path within the Zip file
+in which the importer looks for source image files.
+- *Incrementing Priority of New Articles:* lets you specify whether to enable
+incrementing each new aritcle's priority to one greater than the highest
+priority of articles in the same destination knowledge base folder. 
+- *Sections:* let's you specify the names of topics to attribute to articles.
+
+Configuration propoerties of some of these features has been mentioned in
+previous sections. This current section tells you how to configure these
+features in an advanced way by overriding the Knowledge Base app's portlet
+properties. 
+
+You can start by creating a file called `portlet-ext.properties`. You can
+specify new values for properties you want to override by writing those
+property settings to your `portlet-ext.properties` file. The sections that
+follow describe the most common properties that Knowledge Base administrators
+consider overriding. 
+
+### Source URL Properties
+
+To enable the *Source URL* field in the article editor and enable the display
+button to take readers to the source location, specify the following setting:
+
+    knowledge.base.source.url.enabled=true
+
+To override the source location button's default label *Edit on GitHub* with one
+suited to your repository, specify the new label as the value for property
+`knowledge.base.source.url.edit.message.key`. You can even specify a language
+key as the value.
+
+For example, if you created a language key `edit-on-bitbucket=Edit on
+Bitbucket`, you could specify that key as the button's new label:
+
+    knowledge.base.source.url.edit.message.key=edit-on-bitbucket
+
+
+### Importer File Convention Properties
+
+You can override the following property settings with values to specify
+supported file extensions and supported source image file extensions
+respectively:
+
+    markdown.importer.article.extensions=.markdown,.md
+    markdown.importer.image.file.extensions=.bmp,.gif,.jpeg,.jpg,.png
+
+You can specify the expected article parent file suffix by specifying a
+different property setting than the default setting listed here:
+
+    markdown.importer.article.intro=intro.markdown
+
+You can specify the folder path within which the Zip file importer looks for
+source image files. Here's the default setting that you can override:
+
+    markdown.importer.image.folder=images/
+
+### Incrementing Priority of New Articles
+
+By default new articles receive a priority value that is `1.0` higher than the
+highest priority of all other articles in the folder. To disable this increment
+so that articles get a flat value of `1.0` by default, specify the following
+setting:
+
+    admin.kb.article.increment.priority.enabled=false
+
+### Setting Section Names
+
+In order to make section names available for article authors to choose, you must
+specify them in a comma-separated list. To create section names, specify them
+as a list of values for the property `admin.kb.article.sections`. Here's an
+example of setting them to arbitrary values *Politics*, *Business*, and *World*:
+
+    admin.kb.article.sections=Politics,Business,World
+
+Next you'll learn how to deploy your portlet property settings. 
+
+### Deploying the Application with Your New Property Settings
+
+
+1. Create a portlet-ext.properties file for specifying your property settings.
+
+2. Navigate to your purchased app by going to your Account Home in
+[http://www.liferay.com](http://www.liferay.com) (e.g.,
+`https://www.liferay.com/web/username`), clicking on *Apps*, and finding and
+clicking on the Knowledge Base app. 
+
+3. Click the *App* button to download the app as a `.lpkg` file. 
+
+4. Extract the contents of the `.lpkg` file, extracting the app's `.war` file
+and its `liferay-marketplace.properties` file.
+
+5. Extract the contents of the `.war` file, extracting the portlet project
+files. 
+
+6. Add your `portlet-ext.properties` file to the portlet project folder
+`WEB-INF/classes`. 
+
+7. Zip up the portlet project's folders and files into a `.war` file.
+
+8. Zip up that `.war` file and the `liferay-marketplace.properties` file into a
+`.lpkg` file.
+
+9. In your portal, navigate to *Control Panel* &rarr; *Apps* &rarr; *App
+Manager* &rarr; *Install*. 
+
+10. Select *File Upload*, select your `.lpkg` file, and click
+*Install* to deploy the Knowledge Base application.
+
+Your deployed application now uses the portlet property override settings that
+you specified in your `portlet-ext.properties` file. 
 
 TODO - Wrap up the KB documentation.
