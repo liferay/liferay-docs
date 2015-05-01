@@ -198,8 +198,169 @@ within any one of the other Knowledge Base application's portlets.
 
 $$$
 
+In this section, you've learned how to create, edit, and organize articles.
+You've also seen how the Suggestions feature shows user comments and gives you
+an interface for processing this feedback. The Knowledge Base page in Site
+Administration also provides a way to import articles from Markdown files
+packaged in `.zip` files. Since you're probably itching to publish your articles
+to your site, next sections introduce Knowledge Base portlets for displaying
+articles and article hierarchies, aggregating articles for viewing, and finding
+articles. The Markdown source file importer section comes after that.  
+
+## Knowledge Base Display Portlet [](id=knowledge-base-display-portlet)
+
+The Knowledge Base Display portlet (display portlet) is ideal for displaying
+sets of articles. You can access the portlet's *Configuration* menu by clicking
+on the gear icon in the top right corner of the portlet and selecting
+*Configuration*. In the configuration dialog box's *Setup* tab, there's a
+*General* sub-tab that has an *Article Folder* field with a *Select* button.
+Clicking the *Select* button brings up a dialog box for navigating to and
+choosing an existing article or folder of articles to display in the portlet. If
+you choose a folder of articles to display and click *Save*, the navigation in
+the left side of the portlet displays links to all of the folder's articles, and
+the viewing area in the right side of the portlet displays the folder's leading
+article (the article that has the lowest Priority value). 
+
+The display portlet is terrific for displaying hierarchies of articles. Clicking
+an article's link in the navigation displays the article in the view area.
+Clicking on a link to an article that has child articles expands the navigation
+tree to display links to the child articles. The expanded nodes naturally
+collapse when you click on a different top level article. Inside the viewing
+area you can use the links below the article content to navigate to the next
+article or previous article. The navigation reacts as you would expect,
+highlighting the link of the article you're viewing and expanding and collapsing
+the tree nodes appropriately. 
+
+![Figure 14.30: The Knowledge Base Display portlet's navigation and viewing area facilitates viewing article hierarchies.](../../images/kb-display.png)
+
+There are links at the top of the portlet that users can use to subscribe to an RSS
+feed of the knowledge base, subscribe to the article, view the history of the
+article, or print the article. 
+
+If your portal administrator enables the Knowledge Base application's source URL
+feature and an article has an assigned source URL, a button ![*Edit on GitHub*](../../images/kb-display-edit-on-github-button.png) displays to the
+right of the article's title, giving readers access to the article's online
+source location. This feature can be used to encourage users to contribute fixes
+or improvements to articles. If you're interested in using this feature, you can
+direct your portal administrator to follow instructions in [Advanced Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration). 
+
+Below the article's content, the thumbs up and thumbs down icon rating interface
+is displayed, by default. In addition to users being able to give thumb ratings,
+they can also click the link *Do you have suggestions?* and submit suggestions
+or comments for the article. Administrators can view the suggestions and mark
+progress (*In Progress* or *Resolved* statuses) addressing them.
+
+Administrators can perform the following actions on articles:
+
+*Edit:* change the article's title and content. It also lets you manage
+its attachments, categorization, and its related assets. 
+
+*Add Child Article:* add a new child article to the article. 
+
+*Move:* relocate the article to a different folder or change the article's
+position in the hierarchy by choosing a new parent article for it.
+
+*Delete:* remove the article from the knowledge base. 
+
+The display portlet provides common Liferay application [configuration](/discover/portal/-/knowledge_base/6-2/configuring-liferay-applications)
+options, including ones for look and feel, export/import, permissions, scope,
+and sharing.
+
+As an administrator, let's say that you've diligently used knowledge base
+folders to aggregate similar articles and you want to provide an easy way for
+users to switch between these sets of articles. The display portlet's *Root
+Context* feature lets you configure a drop-down selector at the top of the
+display portlet's navigation, to enable users to switch between the sets of
+articles. Here's what you do to set up Root Contexts and the Root Context
+selector:
+
+1. In the Knowledge Base page of Site Administration, add a folder to hold
+sub-folders of articles. Then add a sub-folder for each set of articles and add
+your articles to them. 
+2. Click on the Knowledge Base Display portlet's gear icon to bring up the
+*Configuration* dialog box. In *Setup* &rarr; *General*, select the top-level
+folder (the parent folder of the sub-folders) that you created in step 1 and
+click *Save*. 
+
+A Root Context selector displays at the top of the Knowledge Base Display
+portlet's navigation. Its values reflect the names of your top-level folder's
+sub-folders. Each sub-folder is considered to be the *Root Context* for the
+articles it contains. 
+
+![Figure 14.x: The Knowledge Base Display portlet's Root Context feature lets users switch between different sets of articles.](../../images/kb-display-root-context-selector.png)
+
+You can also add a common prefix to the Root Context names shown in the
+selector. For example, if you wanted to display user manuals (comprised of sets
+of articles) for different versions of a product, you could create a top-level
+folder and then create a sub-folder named after each product version. You'd
+configure the display portlet by selecting your top-level folder and clicking
+*Save*. In the *Root Context Prefix* field, you enter your product's name and
+click *Save*. In the display portlet's navigation, the Root Context selection
+for each of the product's user manuals would show the product's name followed by
+the product version, which is the name of each article set's folder. You can, of
+course, name your folders and Root Context Prefix whatever you like.  
+
+In this section, you've learned the features that the Knowledge Base Display
+portlet provides for displaying sets of articles. Next you'll learn how to use
+the Knowledge Base Article portlet to individually display articles. 
+
+## Knowledge Base Article Portlet [](id=knowledge-base-article-portlet)
+
+The Knowledge Base Article portlet (article portlet) can be placed on a page to
+display a single article's entire content, followed by abstracts of all its
+child articles. You can add any number of article portlets to a page and you can
+configure each article portlet to display a different article. When you first
+place this portlet on a page, it displays the message *Please configure this
+portlet to make it visible to all users*. This message is a link to the
+configuration dialog box for the portlet. Click *Select Article* to choose an
+article to display. Pick an article and then click *Save*. When your page
+refreshes it displays the article in the portlet.
+
+![Figure 14.31: The Knowledge Base Article portlet is great at individually displaying articles.](../../images/kb-article-portlet.png)
+
+The Knowledge Base Article portlet allows users to rate and comment on the
+article it displays. There are also links at the top of the portlet users can
+use to subscribe to an RSS feed of the knowledge base, subscribe to the article,
+view the history of the article, or print the article.
+
+## Knowledge Base Section Portlet [](id=knowledge-base-section-portlet)
+
+The Knowledge Base Section portlet (section portlet) allows administrators to
+selectively show articles associated with a specific section. For example, a
+news site might have a *World* section, a *Politics* section, a *Business*
+section and an *Entertainment* section. Your users will see a multi-select box
+in the Add Article and Edit Article screens that allows them to select which
+section an article belongs to. You can add any number of section portlets to a
+page and you can configure each section portlet to display articles from any
+number of sections. To use sections, a portal administrator must enable the
+feature the Knowledge Base application's portlet properties; and a portal
+administrator must specify any section names you want to use via the Knowledge
+Base application's portlet properties. The [Advanced Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration)
+section explains how to configure the sections feature in the portlet
+properties. 
+
+![Figure 14.32: Here's an image of Knowledge Base Section portlets being displayed on a page.](../../images/kb-section-portlets.png)
+
+The Knowledge Base section portlet has some additional configurations that allow
+an administrator to select a display style (title or abstract), an article
+window state (maximized or normal), how to order the articles, how many articles
+to display per page, and whether or not to show pagination.
+
+## Knowledge Base Search [](id=knowledge-base-search)
+
+Wikis often have deeply nested articles that can be hard to find by browsing.
+Liferay's knowledge base's ability to selectively display articles makes it
+easier to browse than a Wiki. The Knowledge Base Search portlet allows you to
+search for articles in the knowledge base. This portlet presents the search
+results to you in order from most relevant to least relevant.
+
+![Figure 14.33: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/kb-search-portlet.png)
+
+The search portlet helps you find articles in your knowledge base that match
+keywords you specify. 
+
 Next you'll learn how to create new articles and update existing articles by
-importing them from Markdown source files bundled in a Zip file. 
+importing them from Markdown source files bundled in a Zip file.
 
 ## Importing Articles from Markown Source Files [](id=importing-articles-from-markown-source-files)
 
@@ -361,162 +522,12 @@ articles as you like.
 updates articles. It doesn't delete any existing articles. To delete an article,
 you must manually do so in the Knowledge Base application. 
 
-That wraps it up for working with the Knowledge Base from within Site
-Administration. The next sections introduce Knowledge Base portlets for
-displaying articles and article hierarchies, aggregating articles for viewing,
-and finding articles. 
+Congratulations on mastering the art of creating and importing Markdown files to
+produce knowledge base articles! 
 
-## Knowledge Base Display Portlet [](id=knowledge-base-display-portlet)
-
-The Knowledge Base Display portlet (display portlet) is ideal for displaying
-sets of articles. You can access the portlet's *Configuration* menu by clicking
-on the gear icon in the top right corner of the portlet and selecting
-*Configuration*. In the configuration dialog box's *Setup* tab, there's a
-*General* sub-tab that has an *Article Folder* field with a *Select* button.
-Clicking the *Select* button brings up a dialog box for navigating to and
-choosing an existing article or folder of articles to display in the portlet. If
-you choose a folder of articles to display and click *Save*, the navigation in
-the left side of the portlet displays links to all of the folder's articles, and
-the viewing area in the right side of the portlet displays the folder's leading
-article (the article that has the lowest Priority value). 
-
-The display portlet is terrific for displaying hierarchies of articles. Clicking
-an article's link in the navigation displays the article in the view area.
-Clicking on a link to an article that has child articles expands the navigation
-tree to display links to the child articles. The expanded nodes naturally
-collapse when you click on a different top level article. Inside the viewing
-area you can use the links below the article content to navigate to the next
-article or previous article. The navigation reacts as you would expect,
-highlighting the link of the article you're viewing and expanding and collapsing
-the tree nodes appropriately. 
-
-![Figure 14.30: The Knowledge Base Display portlet's navigation and viewing area facilitates viewing article hierarchies.](../../images/kb-display.png)
-
-There are links at the top of the portlet that users can use to subscribe to an RSS
-feed of the knowledge base, subscribe to the article, view the history of the
-article, or print the article. 
-
-If your portal administrator enables the Knowledge Base application's source URL
-feature and an article has an assigned source URL, a button ![*Edit on GitHub*](../../images/kb-display-edit-on-github-button.png) displays to the
-right of the article's title, giving readers access to the article's online
-source location. This feature can be used to encourage users to contribute fixes
-or improvements to articles. If you're interested in using this feature, you can
-direct your portal administrator to follow instructions in [Advanced Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration). 
-
-Below the article's content, the thumbs up and thumbs down icon rating interface
-is displayed, by default. In addition to users being able to give thumb ratings,
-they can also click the link *Do you have suggestions?* and submit suggestions
-or comments for the article. Administrators can view the suggestions and mark
-progress (*In Progress* or *Resolved* statuses) addressing them.
-
-Administrators can perform the following actions on articles:
-
-*Edit:* change the article's title and content. It also lets you manage
-its attachments, categorization, and its related assets. 
-
-*Add Child Article:* add a new child article to the article. 
-
-*Move:* relocate the article to a different folder or change the article's
-position in the hierarchy by choosing a new parent article for it.
-
-*Delete:* remove the article from the knowledge base. 
-
-The display portlet provides common Liferay application [configuration](/discover/portal/-/knowledge_base/6-2/configuring-liferay-applications)
-options, including ones for look and feel, export/import, permissions, scope,
-and sharing.
-
-As an administrator, let's say that you've diligently used knowledge base
-folders to aggregate similar articles and you want to provide an easy way for
-users to switch between these sets of articles. The display portlet's *Root
-Context* feature lets you configure a drop-down selector at the top of the
-display portlet's navigation, to enable users to switch between the sets of
-articles. Here's what you do to set up Root Contexts and the Root Context
-selector:
-
-1. In the Knowledge Base page of Site Administration, add a folder to hold
-sub-folders of articles. Then add a sub-folder for each set of articles and add
-your articles to them. 
-2. Click on the Knowledge Base Display portlet's gear icon to bring up the
-*Configuration* dialog box. In *Setup* &rarr; *General*, select the top-level
-folder (the parent folder of the sub-folders) that you created in step 1 and
-click *Save*. 
-
-A Root Context selector displays at the top of the Knowledge Base Display
-portlet's navigation. Its values reflect the names of your top-level folder's
-sub-folders. Each sub-folder is considered to be the *Root Context* for the
-articles it contains. 
-
-![Figure 14.x: The Knowledge Base Display portlet's Root Context feature lets users switch between different sets of articles.](../../images/kb-display-root-context-selector.png)
-
-You can also add a common prefix to the Root Context names shown in the
-selector. For example, if you wanted to display user manuals (comprised of sets
-of articles) for different versions of a product, you could create a top-level
-folder and then create a sub-folder named after each product version. You'd
-configure the display portlet by selecting your top-level folder and clicking
-*Save*. In the *Root Context Prefix* field, you enter your product's name and
-click *Save*. In the display portlet's navigation, the Root Context selection
-for each of the product's user manuals would show the product's name followed by
-the product version, which is the name of each article set's folder. You can, of
-course, name your folders and Root Context Prefix whatever you like.  
-
-In this section, you've learned the features that the Knowledge Base Display
-portlet provides for displaying sets of articles. Next you'll learn how to use
-the Knowledge Base Article portlet to individually display articles. 
-
-## Knowledge Base Article Portlet [](id=knowledge-base-article-portlet)
-
-The Knowledge Base Article portlet (article portlet) can be placed on a page to
-display a single article's entire content, followed by abstracts of all its
-child articles. You can add any number of article portlets to a page and you can
-configure each article portlet to display a different article. When you first
-place this portlet on a page, it displays the message *Please configure this
-portlet to make it visible to all users*. This message is a link to the
-configuration dialog box for the portlet. Click *Select Article* to choose an
-article to display. Pick an article and then click *Save*. When your page
-refreshes it displays the article in the portlet.
-
-![Figure 14.31: The Knowledge Base Article portlet is great at individually displaying articles.](../../images/kb-article-portlet.png)
-
-The Knowledge Base Article portlet allows users to rate and comment on the
-article it displays. There are also links at the top of the portlet users can
-use to subscribe to an RSS feed of the knowledge base, subscribe to the article,
-view the history of the article, or print the article.
-
-## Knowledge Base Section Portlet [](id=knowledge-base-section-portlet)
-
-The Knowledge Base Section portlet (section portlet) allows administrators to
-selectively show articles associated with a specific section. For example, a
-news site might have a *World* section, a *Politics* section, a *Business*
-section and an *Entertainment* section. Your users will see a multi-select box
-in the Add Article and Edit Article screens that allows them to select which
-section an article belongs to. You can add any number of section portlets to a
-page and you can configure each section portlet to display articles from any
-number of sections. To use sections, a portal administrator must enable the
-feature the Knowledge Base application's portlet properties; and a portal
-administrator must specify any section names you want to use via the Knowledge
-Base application's portlet properties. The [Advanced Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration)
-section explains how to configure the sections feature in the portlet
-properties. 
-
-![Figure 14.32: Here's an image of Knowledge Base Section portlets being displayed on a page.](../../images/kb-section-portlets.png)
-
-The Knowledge Base section portlet has some additional configurations that allow
-an administrator to select a display style (title or abstract), an article
-window state (maximized or normal), how to order the articles, how many articles
-to display per page, and whether or not to show pagination.
-
-## Knowledge Base Search [](id=knowledge-base-search)
-
-Wikis often have deeply nested articles that can be hard to find by browsing.
-Liferay's knowledge base's ability to selectively display articles makes it
-easier to browse than a Wiki. The Knowledge Base Search portlet allows you to
-search for articles in the knowledge base. This portlet presents the search
-results to you in order from most relevant to least relevant.
-
-![Figure 14.33: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/kb-search-portlet.png)
-
-The search portlet helps you find articles in your knowledge base that match
-keywords you specify. 
+The next section is intended for portal administrators. It explains how to
+override the Knowledge Base Portlet application's portlet properties to enable
+certain features and configure them to suit your needs. 
 
 ## Advanced Configuration [](id=advanced-configuration)
 
