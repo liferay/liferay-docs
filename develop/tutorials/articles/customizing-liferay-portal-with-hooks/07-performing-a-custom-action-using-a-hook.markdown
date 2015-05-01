@@ -136,3 +136,9 @@ Great! You've created a hook that triggers a custom action on a common portal
 event. You now know the basic steps required to perform a custom action using a
 hook in Liferay Portal.
 
+**Related Topics**
+
+[MVC Portlets](develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+
+[Overriding and Adding Struts Actions](develop/tutorials/-/knowledge_base/6-2/overriding-and-adding-struts-actions)
+

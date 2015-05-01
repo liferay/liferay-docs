@@ -227,8 +227,10 @@ user's experience.
 
 ## Related Topics
 
-[Customizing Liferay Portal with Hooks](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Using Liferay's Message Bus](develop/tutorials/-/knowledge_base/6-2/using-liferays-message-bus)
 
-[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 
-[Localization](/tutorials/-/knowledge_base/6-2/localization)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+
+[Localization](/develop/tutorials/-/knowledge_base/6-2/localization)

@@ -129,3 +129,10 @@ these features can save lots of development time, both initial development time
 and time that would have to be spent maintaining, extending, or customizing a
 project. Finally, Service Builder is not a restrictive tool: it allows custom
 SQL queries and finder methods to be added and it also supports dynamic query.
+
+**Related Topics**
+
+[Developing with the Plugins SDK](develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+
+[Running Service Builder and Understanding the Generated Code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+

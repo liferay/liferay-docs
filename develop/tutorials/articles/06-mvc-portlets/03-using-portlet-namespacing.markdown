@@ -37,3 +37,7 @@ We discussed a brief scenario using portlet namespacing for two different
 portlets. Lastly, we learned when and why to use unnamespaced parameters in your
 Liferay portlets.
 
+## Related Topics
+
+[Search and Indexing](develop/tutorials/-/knowledge_base/6-2/search-and-indexing)
+[User Interfaces with AlloyUI](develop/tutorials/-/knowledge_base/6-2/alloyui)

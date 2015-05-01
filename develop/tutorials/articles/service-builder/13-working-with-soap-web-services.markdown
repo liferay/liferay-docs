@@ -367,3 +367,10 @@ using SOAP web services. To learn how to implement OAuth so that
 you can access third-party services, please see the
 [Authorizing Access to Services with OAuth](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/authorizing-access-to-services-with-oauth) 
 tutorial.
+
+## Related Topics
+
+[SOAP Web Services](develop/tutorials/-/knowledge_base/6-2/json-web-services)
+
+[Invoking Liferay Services from Yuor Application](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-from-your-application)
+

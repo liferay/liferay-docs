@@ -245,3 +245,11 @@ and
 [Invoking Liferay Services from Your Application](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-from-your-application)
 tutorials.
 
+**Related Topics**
+
+[Invoking Remote Services](develop/tutorials/-/knowledge_base/6-2/invoking-remote-services)
+
+[Invoking Liferay Services in your Android App](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
+
+[Invoking Liferay Services in your iOS App](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
+
