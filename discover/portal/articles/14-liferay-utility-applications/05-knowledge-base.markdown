@@ -46,8 +46,8 @@ to handle them in workflow fashion.
 
 ![Figure 14.26: You can manage knowledge base articles, folders, templates, and suggestions from the *Knowledge Base* portlet.](../../images/kb-admin-page.png)
 
-The *Add* drop-down lets you add a Basic Article, add an article based on an
-available template, add a folder, or import articles from a Zip file. Selecting
+The *Add* drop-down allows you to add a Basic Article, an article based on an
+available template, a folder,and import articles from a Zip file. Selecting
 *Basic Article* (or the name of an available template) brings up the *New
 Article* window. As you enter your article's title in this window, a URL-safe
 version of the title is added to the tail end of the article's friendly URL--see
@@ -56,13 +56,12 @@ URL.
 
 You create the article's content using the WYSIWYG editor. Knowledge Base
 articles are created in HTML. Click the *Source* button in the editor to view
-the HTML source based on what you've written using the WYSIWYG editor or your
-can write some HTML yourself. 
+the HTML source based on what you've written using the WYSIWYG editor or write some HTML yourself. 
 
 ![Figure 14.27: You can create and modify a knowledge base article's content using the WYSIWYG editor.](../../images/kb-admin-new-article.png)
 
 In addition to entering an article's title and creating its content, you can add
-attachments, add tags, specify related assets, and set permissions. By default,
+attachments, tags, specify related assets, and set permissions. By default,
 view permission is granted to the guest role, meaning anyone can view your
 article. After you're done using the editor, you can save the article as a draft
 and continue working on it later, or you can submit it for publication. Your
@@ -134,8 +133,8 @@ in the hierarchy by choosing a new parent article for it.
 
 You can also assign new *priority* values to articles. When multiple articles
 are configured to be displayed in the Knowledge Base Display portlet, the peer
-articles are listed in the portlet's navigation are arranged top to bottom in
-ascending priority. The lower an article's priority value the higher up it's
+articles listed in the portlet's navigation are arranged top to bottom in
+ascending priority. The lower an article's priority value, the higher up it is
 listed in the Knowledge Base Display portlet's navigation. To assign new
 priority values, enter a new priority value for each article you want to
 re-prioritize, select the checkbox of each modified article, and select
@@ -200,7 +199,7 @@ $$$
 In this section, you've learned how to create, edit, and organize articles.
 You've also seen how the Suggestions feature shows user comments and gives you
 an interface for processing this feedback. Since you're probably itching to
-publish your articles to your site, next sections introduce the Knowledge Base
+publish your articles to your site, these next few sections introduce the Knowledge Base
 application's portlets for displaying articles and article hierarchies,
 aggregating articles for viewing, and finding articles. The Markdown source file
 importer [section](/discover/portal/-/knowledge_base/6-2/knowledge-base#importing-articles-from-markown-source-files)
@@ -327,12 +326,12 @@ view the history of the article, or print the article.
 The Knowledge Base Section portlet (section portlet) allows administrators to
 selectively show articles associated with a specific topic (section). For
 example, a news site might have a *World* section, a *Politics* section, a
-*Business* section and an *Entertainment* section. Administrators multi-select
-box in the Add Article and Edit Article screens that allows them to select which
+*Business* section and an *Entertainment* section. Administrators can multi-select
+boxes in the Add Article and Edit Article screens that allows them to select which
 section an article belongs to. You can add any number of section portlets to a
 page and you can configure each section portlet to display articles from any
 number of sections. To use sections, a portal administrator must enable the
-feature the Knowledge Base application's portlet properties; and the portal
+feature in the Knowledge Base application's portlet properties; and the portal
 administrator must specify any section names you want to use via the Knowledge
 Base application's portlet properties. The [Advanced
 Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration)
@@ -539,9 +538,9 @@ interested in enabling or configuring differently: source URL, import file
 conventions, new article priority increment, and sections. Here you'll learn how
 to configure these features by overriding the Knowledge Base app's portlet
 properties. Advanced configuration should only be performed by a portal
-administrator, as person modifying the configuration must have access access to
-the downloaded Knowledge Base application, be comfortable repackaging
-applications, and be comfortable installing the modified Knowledge Base app via
+administrator, as the person modifying the configuration must have access access to
+the downloaded Knowledge Base application and be comfortable with repackaging
+applications and installing the modified Knowledge Base app via
 the Control Panel. 
 
 +$$$
@@ -629,7 +628,7 @@ specified.
 ### Deploying Override Property Values [](id=deploying-override-property-values)
 
 For the Knowledge Base application to be able to use new portlet property
-settings, the properties must be made availabe in the application's class path.
+settings, the properties must be made available in the application's class path.
 You can do this by putting your `portlet-ext.properties` file into
 the application's class path via the Knowledge Base portlet's `.war` file. The
 `.war` file is available in the Knowledge Base application's `.lpkg` file--it's
