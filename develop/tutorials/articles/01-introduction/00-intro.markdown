@@ -29,7 +29,7 @@ If you don't like Eclipse (which Liferay IDE is based on) and prefer to use
 NetBeans, IntelliJ IDEA, or something else, you certainly can. Liferay code can
 be written in any way Java code is written. 
 
-Here are some links to tutorials on development tools:
+Here are some links to tutorials on Liferay development tools:
 
 [Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development) 
 
@@ -52,7 +52,7 @@ Faces (JSF).
 As you write apps, you'll want to leverage powerful frameworks that work
 seamlessly with Liferay and help you complete your app faster. Liferay contains
 several frameworks that give you all the tools you need to perform various
-common tasks that you don't want to have to write yourself, such as handling
+common tasks that you don't want to write yourself, such as handling
 permissions and letting users enter comments, categories, and tags. 
 
 <!-- Here
@@ -95,73 +95,3 @@ Here are some good tutorials to start with:
 Now that you know what Liferay Tutorials offers, it's time to discover new
 things as you develop sites in Liferay. 
 
-
-
-
-
-
-
-
-
-
-
-
-<div id="wrapper">
-<table id="table" cellspacing="10">
-<tr>
-<th>
-<strong>Development Tools</strong>
-</th>
-
-<th>
-<strong>Developing Apps</strong>
-</th>
-
-<th>
-<strong>Styling and Customizing</strong>
-</th>
-</tr>
-
-<tr>
-<td>
-<a href="/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development" >Beginning Liferay Development</a>
-</td>
-<td>
-<a href="/develop/learning-paths/-/knowledge_base/6-2/writing-your-first-liferay-application" >Writing Your First Application</a>
-</td>
-<td>
-<a href="/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates" >Themes and Layout Templates</a>
-</td>
-</tr>
-
-<tr>
-<td>
-<a href="/develop/tutorials/-/knowledge_base/6-2/plugins-sdk" >Developing with the Plugins SDK</a>
-</td>
-<td>
-<a href="/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc" >Developing Portlets Using Liferay MVC</a>
-</td>
-<td>
-<a href="/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal" >Customizing Liferay Portal</a>
-</td>
-</tr>
-
-<tr>
-<td>
-<a href="/develop/tutorials/-/knowledge_base/6-2/liferay-ide" >Developing with Liferay IDE</a>
-</td>
-<td>
-<a href="/develop/tutorials/-/knowledge_base/6-2/liferay-faces-jsf-portlets" >Liferay Faces</a>
-</td>
-</tr>
-
-<tr>
-<td>
-<a href="/develop/tutorials/-/knowledge_base/6-2/maven" >Developing with Maven</a>
-</td>
-<td>
-<a href="/develop/tutorials/-/knowledge_base/6-2/opensocial-gadgets" >OpenSocial Gadgets</a>
-</td>
-</tr>
-</table>
-</div>
