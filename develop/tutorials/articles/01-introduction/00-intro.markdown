@@ -29,6 +29,16 @@ If you don't like Eclipse (which Liferay IDE is based on) and prefer to use
 NetBeans, IntelliJ IDEA, or something else, you certainly can. Liferay code can
 be written in any way Java code is written. 
 
+Here are some links to tutorials on development tools:
+
+[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development) 
+
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+
+[Developing with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+
+[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
+
 #### Developing Liferay Applications [](id=developing-liferay-applications)
 
 As a developer wanting to run your own applications on top of Liferay Portal,
@@ -60,19 +70,44 @@ tag libraries and snazzy UI components that
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 provide.
 
+Start learning to develop apps for Liferay:
+
+[Writing Your First Application](/develop/learning-paths/-/knowledge_base/6-2/writing-your-first-liferay-application)
+
+[Developing Portlets Using Liferay MVC](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+
+[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-jsf-portlets)
+
+[OpenSocial Gadgets](/develop/tutorials/-/knowledge_base/6-2/opensocial-gadgets)
+
+
 #### Styling and Customizing Liferay [](id=styling-and-customizing-liferay)
 
 What if you want to skin Liferay or customize it? Creating themes and
 customizations is easy in Liferay. 
 
+Here are some good tutorials to start with:
+
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+
+[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+
 Now that you know what Liferay Tutorials offers, it's time to discover new
 things as you develop sites in Liferay. 
 
-To get you started, here are links to topics in the three areas
-discussed on this page.
+
+
+
+
+
+
+
+
+
+
 
 <div id="wrapper">
-<table id="table">
+<table id="table" cellspacing="10">
 <tr>
 <th>
 <strong>Development Tools</strong>
