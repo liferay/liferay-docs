@@ -287,7 +287,7 @@ portlet's navigation. Its values reflect the names of your top-level folder's
 sub-folders. Each sub-folder is considered to be the *Root Context* for the
 articles it contains. 
 
-![Figure 14.x: The Knowledge Base Display portlet's Root Context feature lets users switch between different sets of articles.](../../images/kb-display-root-context-selector.png)
+![Figure 14.31: The Knowledge Base Display portlet's Root Context feature lets users switch between different sets of articles.](../../images/kb-display-root-context-selector.png)
 
 You can also add a common prefix to the Root Context names shown in the
 selector. For example, if you wanted to display user manuals (comprised of sets
@@ -316,7 +316,7 @@ configuration dialog box for the portlet. Click *Select Article* to choose an
 article to display. Pick an article and then click *Save*. When your page
 refreshes it displays the article in the portlet.
 
-![Figure 14.31: The Knowledge Base Article portlet is great at individually displaying articles.](../../images/kb-article-portlet.png)
+![Figure 14.32: The Knowledge Base Article portlet is great at individually displaying articles.](../../images/kb-article-portlet.png)
 
 The Knowledge Base Article portlet allows users to rate and comment on the
 article it displays. There are also links at the top of the portlet users can
@@ -339,7 +339,7 @@ Base application's portlet properties. The [Advanced Configuration](/discover/po
 section explains how to configure the sections feature in the portlet
 properties. 
 
-![Figure 14.32: Here's an image of Knowledge Base Section portlets being displayed on a page.](../../images/kb-section-portlets.png)
+![Figure 14.33: Here's an image of Knowledge Base Section portlets being displayed on a page.](../../images/kb-section-portlets.png)
 
 The Knowledge Base section portlet has some additional configurations that allow
 an administrator to select a display style (title or abstract), an article
@@ -354,7 +354,7 @@ easier to browse than a Wiki. The Knowledge Base Search portlet allows you to
 search for articles in the knowledge base. This portlet presents the search
 results to you in order from most relevant to least relevant.
 
-![Figure 14.33: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/kb-search-portlet.png)
+![Figure 14.34: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/kb-search-portlet.png)
 
 The search portlet helps you find articles in your knowledge base that match
 keywords you specify. 
@@ -373,7 +373,11 @@ corresponding images, and import the Zip file into the knowledge base. The
 Knowledge Base app's importer automatically converts each source file's Markdown
 text to HTML, applying the HTML to the resulting Knowledge Base article. Any
 image files referenced in an article source file are imported as attachments to
-the article. The [Markdown](http://fletcher.github.io/MultiMarkdown-4/) syntax
+the article.
+
+![Figure 14.35: Selecting *Add* &rarr; *Import* in the Knowledge Base page in Site Administration brings up the interface for selecting a Zip file of Markdown source files and images to produce and update articles in your knowledge base.](../../images/kb-admin-importer.png)
+
+The [Markdown](http://fletcher.github.io/MultiMarkdown-4/) syntax
 is easy to write, easy to read, and it supports plenty of markup features to
 produce high quality articles. Here are the simple requirements for the article
 source files: 
@@ -552,7 +556,7 @@ In this section, you'll learn about the Knowledge Base app's portlet properties,
 how to specify values to override the default values, and how to deploy the
 Knowledge Base app and these new values to your portal. 
 
-### Overriding Default Portlet Properties
+### Overriding Default Portlet Properties [](id=overriding-default-portlet-properties)
 
 To start, create a file called `portlet-ext.properties` to hold the property
 settings for the property values that you want to override. Keep your
@@ -624,7 +628,7 @@ of setting them to section values *Politics*, *Business*, and *World*:
 Next you'll learn how to deploy any new portlet property settings you've
 specified. 
 
-### Deploying Override Property Values
+### Deploying Override Property Values [](id=deploying-override-property-values)
 
 For the Knowledge Base application to be able to use new portlet property
 settings, the properties must be made availabe in the application's class path.
