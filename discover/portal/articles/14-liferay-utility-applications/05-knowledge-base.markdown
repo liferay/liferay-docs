@@ -498,14 +498,14 @@ processed in file order.
 
 **Advanced Example's Resulting Relationships and Priorities**
 
-Source File                                               | &nbsp;Article       | &nbsp;Relationship               | &nbsp;Priority    |
---------------------------------------------------------- | ------------------- | -------------------------------- | :---------------: |
- `01-intro/00-winter-excursions-intro.markdown`           | *Winter Excursions* | **parent**, peer of *Summer ...* | **1.0**           |
- `01-intro/01-star-dust-snow-shoeing.markdown`            | *Star Dust ...*     | child of *Winter  Excursions*    | 1.0               |
- `01-intro/02-lunar-alpine.markdown`                      | *Lunar Alpine*      | child of *Winter  Excursions*    | 2.0               |
- `02-intro/00-summer-excursions-intro.markdown`           | *Summer Excursions* | **parent**, peer of *Winter ...* | **2.0**           |
- `02-intro/01-lunar-rock-scrambling.markdown`             | *Lunar Rock ...*    | child of *Summer  Excursions*    | 1.0               |
- `02-intro/02-extra-terrestrial-mountain-biking.markdown` | *Extra Terrestrial* | child of *Summer  Excursions*    | 2.0               |
+Source File                                               | &nbsp;Article       | &nbsp;Relationship           | &nbsp;Priority  |
+--------------------------------------------------------- | ------------------- | ---------------------------- | :-------------: |
+ `01-intro/00-winter-excursions-intro.markdown`           | *Winter Excursions* | peer of *Summer Excursions*  | **1.0**         |
+ `01-intro/01-star-dust-snow-shoeing.markdown`            | *Star Dust ...*     | child of *Winter Excursions* | 1.0             |
+ `01-intro/02-lunar-alpine.markdown`                      | *Lunar Alpine*      | child of *Winter Excursions* | 2.0             |
+ `02-intro/00-summer-excursions-intro.markdown`           | *Summer Excursions* | peer of *Winter Excursions*  | **2.0**         |
+ `02-intro/01-lunar-rock-scrambling.markdown`             | *Lunar Rock ...*    | child of *Summer Excursions* | 1.0             |
+ `02-intro/02-extra-terrestrial-mountain-biking.markdown` | *Extra Terrestrial* | child of *Summer Excursions* | 2.0             |
     
 In the above Advanced Zip File Structure example, notice that the
 `-intro.markdown` files have the prefix `00`. You can optionally start your
