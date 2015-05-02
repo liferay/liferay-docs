@@ -487,18 +487,29 @@ doesn't have such a prefix, its article gets the next increment priority (i.e.,
 the highest currently assigned priority, plus one). The Zip file's articles are
 processed in file order. 
 
-In the above example Zip file listing, notice that the `*intro.markdown` files
-have the prefix `00`. You can optionally start your intro files with `00` so
-that they're conveniently listed at the top of the folder's file listing in your
-local file browser. The real trick is that the importer uses the prefix of such
-a file's folder as its knowledge base article priority. Here's the underlying
-logic: if a file has prefix `00`, the importer assigns the resulting article a
-priority of `1.0`. A top-level intro file, however, gets special treatment: if
-its prefix is less than `1.0`, the importer checks to see if the intro file's
-folder(s) have a prefix of `1.0` or greater. For the intro article's priority,
-the importer assigns the first folder prefix found that is `1.0` or greater.
-This folder prefix convention enables you to specify priorities for top-level
-(non-child) articles in your hierarchy. 
+**Advanced Example's Resulting Relationships and Priorities**
+
+Source File                                               | &nbsp;Article       | &nbsp;Relationship               | &nbsp;Priority    |
+--------------------------------------------------------- | ------------------- | -------------------------------- | :---------------: |
+ `01-intro/00-winter-excursions-intro.markdown`           | *Winter Excursions* | **parent**, peer of *Summer ...* | **1.0**           |
+ `01-intro/01-star-dust-snow-shoeing.markdown`            | *Star Dust ...*     | child of *Winter  Excursions*    | 1.0               |
+ `01-intro/02-lunar-alpine.markdown`                      | *Lunar Alpine*      | child of *Winter  Excursions*    | 2.0               |
+ `02-intro/00-summer-excursions-intro.markdown`           | *Summer Excursions* | **parent**, peer of *Winter ...* | **2.0**           |
+ `02-intro/01-lunar-rock-scrambling.markdown`             | *Lunar Rock ...*    | child of *Summer  Excursions*    | 1.0               |
+ `02-intro/02-extra-terrestrial-mountain-biking.markdown` | *Extra Terrestrial* | child of *Summer  Excursions*    | 2.0               |
+    
+In the above Advanced Zip File Structure example, notice that the
+`-intro.markdown` files have the prefix `00`. You can optionally start your
+intro files with `00` so that they're conveniently listed at the top of the
+folder's file listing on your local machine. The real trick is that the importer
+uses the prefix of such a file's folder as its knowledge base article priority.
+Here's the underlying logic: if a file has prefix `00`, the importer assigns the
+resulting article a priority of `1.0`. A top-level intro file, however, gets
+special treatment: if its prefix is less than `1.0`, the importer checks to see
+if the intro file's folder(s) have a prefix of `1.0` or greater. For the intro
+article's priority, the importer assigns the first folder prefix found that is
+`1.0` or greater. This folder prefix convention enables you to specify
+priorities for top-level (non-child) articles in your hierarchy. 
 
 It's important that you know the importer's limitations and know best practices
 for importing articles. A good way to address these is in a Frequently Asked
