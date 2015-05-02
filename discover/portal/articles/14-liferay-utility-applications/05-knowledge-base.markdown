@@ -266,37 +266,46 @@ and sharing.
 
 As an administrator, let's say that you've diligently used knowledge base
 folders to aggregate similar articles and you want to provide an easy way for
-users to switch between these sets of articles. The display portlet's *Root
-Context* feature lets you configure a drop-down selector at the top of the
-display portlet's navigation, that allows users to switch between the sets of
-articles. Here's what you do to set up Root Contexts and the Root Context
-selector:
+users to switch between these sets of articles. The display portlet's content
+folder feature lets you configure a drop-down selector at the top of the display
+portlet's navigation, that allows users to switch between the sets of articles.
+Here's what you do to set up content folders:
 
 1. In the Knowledge Base portlet (admin portlet), add a folder to hold
-sub-folders. Then add a sub-folder for each set of articles and add your
-articles to them. 
-2. Click on the Knowledge Base Display portlet's gear icon to bring up the
-*Configuration* dialog box. In *Setup* &rarr; *General*, select the top-level
-folder (the parent folder of the sub-folders) that you created in step 1 and
-click *Save*. 
+sub-folders. Then add to this folder the sub-folders that will hold articles.
+These sub-folders will be the *content folders*. 
+2. Add to each content folder a set of articles. 
+3. Click on the Knowledge Base Display portlet's (display portlet's) gear icon
+to bring up the *Configuration* dialog box. In *Setup* &rarr; *General*, select
+the top-level folder (the parent of the content folders) and click *Save*. 
 
-A Root Context selector displays at the top of the Knowledge Base Display
-portlet's navigation. Its values reflect the names of your top-level folder's
-sub-folders. Each sub-folder is considered to be the *Root Context* for the
-articles it contains. 
+A content selector displays at the top of the Knowledge Base Display
+portlet's navigation. Its values reflect the names of your content folders.
 
-![Figure 14.31: The Knowledge Base Display portlet's Root Context feature lets users switch between different sets of articles.](../../images/kb-display-root-context-selector.png)
+![Figure 14.31: The Knowledge Base Display portlet's content folder feature lets users switch between different sets of articles.](../../images/kb-display-root-context-selector.png)
 
-You can also add a common prefix to the Root Context names shown in the
-selector. For example, if you wanted to display user manuals (comprised of sets
-of articles) for different versions of a product, you could create a top-level
-folder and then create a sub-folder named after each product version. You'd
-configure the display portlet by selecting your top-level folder and clicking
-*Save*. In the *Root Context Prefix* field, you enter your product's name and
-click *Save*. In the display portlet's navigation, the Root Context selection
-for each of the product's user manuals would show the product's name followed by
-the product version, which is the name of each article set's folder. You can, of
-course, name your folders and Root Context Prefix whatever you like.  
+**Example Content Folder and Article Structure:**
+
+- Lunar Rover (folder)
+    - SE (content folder)
+        - Congratulations on Owning Your New Lunar Rover! (article)
+        - Driving and Operation (article)
+        - Doors, Windows, and Cup Holders (article)
+        - Vehicle Care (article)
+    - LTE (content folder)
+        - Congratulations on Owning Your New Lunar Rover! (article)
+        - (more articles ...)
+    - GT Extreme (content folder)
+        - Congratulations on Owning Your New Lunar Rover! (article)
+        - (more articles ...)
+
+You can also add a common prefix to the content names shown in the selector. To
+enter a common prefix, bring up the display portlet's Configuration dialog box,
+navigate to the *Setup* &rarr; *Display Settings* tab, enter the prefix into the
+*Content Root Prefix* field and click *Save*. For the example folder and article
+structure listed above, you could apply a common prefix *Lunar Rover* to produce
+content selector values as shown in Figure 14.13. You can specify whatever value
+you like as a root content prefix or you can leave it blank. 
 
 In this section, you learned the features that the Knowledge Base Display
 portlet provides for displaying sets of articles. Next you'll learn how to use
