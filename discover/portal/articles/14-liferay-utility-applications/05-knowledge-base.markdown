@@ -47,12 +47,12 @@ to handle them in workflow fashion.
 ![Figure 14.26: You can manage knowledge base articles, folders, templates, and suggestions from the *Knowledge Base* portlet.](../../images/kb-admin-page.png)
 
 The *Add* drop-down allows you to add a Basic Article, an article based on an
-available template, a folder,and import articles from a Zip file. Selecting
-*Basic Article* (or the name of an available template) brings up the *New
-Article* window. As you enter your article's title in this window, a URL-safe
-version of the title is added to the tail end of the article's friendly URL--see
-the value in the *Friendly URL* field. You can, of course, edit the friendly
-URL.  
+available template, or a folder, and it allows you to import articles from a Zip
+file. Selecting *Basic Article* (or the name of an available template) brings up
+the *New Article* window. As you enter your article's title in this window, a
+URL-safe version of the title is added to the tail end of the article's friendly
+URL--see the value in the *Friendly URL* field. You can, of course, edit the
+friendly URL.  
 
 You create the article's content using the WYSIWYG editor. Knowledge Base
 articles are created in HTML. Click the *Source* button in the editor to view
@@ -61,7 +61,7 @@ the HTML source based on what you've written using the WYSIWYG editor or write s
 ![Figure 14.27: You can create and modify a knowledge base article's content using the WYSIWYG editor.](../../images/kb-admin-new-article.png)
 
 In addition to entering an article's title and creating its content, you can add
-attachments, tags, specify related assets, and set permissions. By default,
+attachments, add tags, specify related assets, and set permissions. By default,
 view permission is granted to the guest role, meaning anyone can view your
 article. After you're done using the editor, you can save the article as a draft
 and continue working on it later, or you can submit it for publication. Your
@@ -326,15 +326,14 @@ view the history of the article, or print the article.
 The Knowledge Base Section portlet (section portlet) allows administrators to
 selectively show articles associated with a specific topic (section). For
 example, a news site might have a *World* section, a *Politics* section, a
-*Business* section and an *Entertainment* section. Administrators can multi-select
-boxes in the Add Article and Edit Article screens that allows them to select which
-section an article belongs to. You can add any number of section portlets to a
-page and you can configure each section portlet to display articles from any
-number of sections. To use sections, a portal administrator must enable the
-feature in the Knowledge Base application's portlet properties; and the portal
-administrator must specify any section names you want to use via the Knowledge
-Base application's portlet properties. The [Advanced
-Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration)
+*Business* section and an *Entertainment* section. Multi-select boxes in the Add
+Article and Edit Article screens allow administrators to select which section(s)
+an article belongs to. You can add any number of section portlets to a page and
+you can configure each section portlet to display articles from any number of
+sections. To use sections, a portal administrator must enable the feature in the
+Knowledge Base application's portlet properties; and the portal administrator
+must specify any section names you want to use via the Knowledge Base
+application's portlet properties. The [Advanced Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration)
 section explains how to configure the sections feature in the portlet
 properties.
 
