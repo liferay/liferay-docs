@@ -1,7 +1,5 @@
 # Knowledge Base [](id=knowledge-base)
 
-![EE Only Feature](../../images/ee-feature-web.png)
-
 Liferay's Knowledge Base application provides a means for creating and
 organizing articles within a site. It's perfect for creating and organizing
 information more formally than in a wiki. For example, it can be used to
