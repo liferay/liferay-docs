@@ -44,7 +44,7 @@ are some Ant targets you'll commonly use in developing your plugins:
 - `deploy` - builds and deploys the plugin to your application server. 
 - `format-source` - formats the source code per Liferay's source code
   guidelines, informing you of violations that must be addressed. See the
-  [Development Sytle](http://www.liferay.com/community/wiki/-/wiki/Main/Development+Style#section-Development+Style-Format+Source)
+  [Development Style](http://www.liferay.com/community/wiki/-/wiki/Main/Development+Style#section-Development+Style-Format+Source)
   community wiki page for details. 
 - `format-javadoc` - formats the Javadoc per Liferay's Javadoc guidelines. See
   the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
