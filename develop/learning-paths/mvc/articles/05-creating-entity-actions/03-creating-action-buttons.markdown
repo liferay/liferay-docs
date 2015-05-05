@@ -147,6 +147,11 @@ just include the same JSP over and over with different parameters.
     button definition. 
 
 6.  Save the file. 
+7.  Add the action buttons to the Entry list in `view.jsp`:
+    Bellow the column text for the name contributor in the Entry container row, add this tag:
+
+        <liferay-ui:search-container-column-jsp path="/html/guestbook/guestbook_actions.jsp" align="right" />
+
 
 You might think you're finished, but you actually have one more JSP to modify:
 the `edit_entry.jsp` file. You need to retro-fit this JSP so it can handle
