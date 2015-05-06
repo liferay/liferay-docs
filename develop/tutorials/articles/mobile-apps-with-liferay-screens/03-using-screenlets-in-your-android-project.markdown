@@ -14,17 +14,17 @@ Studio's visual layout editor. The following screenshot shows the
 
 ![Figure 1: The `LoginScreenlet` in a layout file.](../../images/screens-android-insert-screenlet.png)
 
-Next, set the screenlet's attributes in its XML tag. Refer to the screenlet 
-documentation to see the attributes each screenlet supports. This screenshot 
+Next, set the screenlet's attributes in its XML tag. Refer to the screenlet
+documentation to see the attributes supported by each screenlet. This screenshot
 shows the attributes of the `LoginScreenlet` being set:
 
 ![Figure 2: The screenlet's attributes are also set in its layout file.](../../images/screens-android-screenlet-attributes.png)
 
-You now need to configure your app to listen for the events the screenlet 
-produces. To do this, implement the listener interface associated with the 
-screenlet in your activity or fragment class. For example, for the 
-`LoginScreenlet` you need to implement the `LoginListener` interface. Then set 
-your activity or fragment as the screenlet's listener. This is shown in the 
+You now need to configure your app to listen for the events triggered by the
+screenlet. To do this, implement the listener interface associated with the
+screenlet in your activity or fragment class. For example, for the
+`LoginScreenlet` you need to implement the `LoginListener` interface. Then set
+your activity or fragment as the screenlet's listener. This is shown in the
 following screenshot:
 
 ![Figure 3: Implement the screenlet's listener in your activity or fragment class.](../../images/screens-android-screenlet-listener.png)
