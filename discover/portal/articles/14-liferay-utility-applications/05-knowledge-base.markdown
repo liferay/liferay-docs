@@ -376,8 +376,9 @@ articles and their images. All you need to do is write your articles in a text
 format called Markdown, Zip up your Markdown article source files and images,
 and import the Zip file into the knowledge base. The importer automatically
 converts each source file's Markdown text to HTML, applying the HTML to the
-resulting article. Any image files referenced in an article source file are
-imported as attachments to the article. 
+resulting article. Any image files that are included in the Zip file and that
+are referenced in an article source file are imported as attachments to the
+article. 
 
 ![Figure 14.35: Selecting *Add* &rarr; *Import* in the Knowledge Base portlet brings up the interface for selecting a Zip file of Markdown source files and images to produce and update articles in your knowledge base.](../../images/kb-admin-importer.png)
 
@@ -418,11 +419,13 @@ with their accompanying image files.
 **Zip File Requirements:**
 
 - Each Zip file must end in the suffix `.zip`.
-- Each Zip file must contain at least one Markdown source file.
+- Each Zip file must contain at least one Markdown source file, optionally
+organized in folders.
 - All referenced image files must be in a folder named `images`, in the Zip
 file's root. 
-- Image files must use one of the portlet's designated suffixes (the default
-suffixes supported are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and `.png`).
+- Image files must use one of the portlet's designated suffixes. The default
+supported suffixes are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and `.png`. They're
+specified via a portlet property. For details, see [Advanced Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration).
 
 **Example Basic Zip File Structure:**
 
@@ -434,26 +437,32 @@ suffixes supported are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and `.png`).
     - `another-image.jpeg`
 
 Markdown files can be specified anywhere in the Zip file's directory structure.
-They can be nested in any number of folders. 
+They can be nested in any number of folders. Image files are the only files
+supported for attachments. No other kinds of references are supported--not even
+anchors. 
 
 In addition to packaging the article Markdown files and their images, you can
 pass to the importer a base source URL property that specifies your source
-file's online reposiotry location. The importer appends each Markdown file's
-path from the Zip file to the base source URL to construct a URL to the
-article's repository source location. Each imported article's source URL is set
-to `[base URL]/[article filename]`. Here's an example base source URL property:
+file's online repository location. Each article's *Edit on GitHub* button (if
+enabled) takes the user to the the source location. The importer appends each
+Markdown file's path from the Zip file to the base source URL to construct a URL
+to the article's repository source location. Each imported article's source URL
+is set to `[base URL]/[article file path]`. Here's an example base source URL
+property:
 
     base.source.url=https://github.com/liferay/liferay-docs/blob/master/develop/tutorials
 
-The source URL constructed form the above base URL and the example file
-`folder-1/some-article.markdown` would be this:
+The source URL constructed from the above base URL and article source file
+`folder-1/some-article.markdown` from the example basic Zip file would be this:
 
     https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/folder-1/some-article.markdown
 
 You specify the base source URL in a file called `.METADATA` in the Zip file's
-root folder and the importer applies that base source URL to all of the Zip
-file's resulting articles. To use the source URL feature, your portal
-administrator must enable it via the Knowledge Base application's portlet [properties](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration).
+root folder. The importer treats the `.METADATA` file as a standard Java
+properties file and uses the base source URL to construct the source URL for
+all of the Zip file's resulting articles. To use the source URL feature, your
+portal administrator must enable it via the Knowledge Base application's portlet
+[properties](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration).
 
 The Zip file importer also supports importing a two level hierarchy of articles
 and assigning articles priorities based on numerical file prefixes. Below is a
