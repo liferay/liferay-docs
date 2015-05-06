@@ -17,8 +17,8 @@ forums for you to engage in mobile app development discussions.
 
 ![Figure 1: Liferay's Mobile SDK enables your native app to communicate with Liferay. You can even use the SDK from Eclipse via the Liferay Mobile SDK plugin..](../../images/mobile-sdk-diagram.png)
 
-The Liferay Mobile SDK plugin for Eclipse simplifies developing Android apps and
-iOS apps that use Liferay. You can configure the Liferay Mobile SDK manually to
+The Liferay Mobile SDK plugin for Eclipse simplifies developing Android apps 
+that use Liferay. You can also configure the Liferay Mobile SDK manually to
 use with Android and iOS apps. Note that there are separate downloads for the
 Liferay Mobile SDK for Android and the Liferay Mobile SDK for iOS. Once you've
 configured the appropriate SDK, you can invoke Liferay services from your app.
