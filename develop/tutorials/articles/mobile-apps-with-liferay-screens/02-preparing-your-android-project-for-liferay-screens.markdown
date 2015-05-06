@@ -116,8 +116,8 @@ Regardless of how you install Screens in your project, you need to configure it
 to communicate with your Liferay installation. You could have the greatest app 
 in existence, but if it can't communicate with your Liferay installation then 
 it's all for naught. Fortunately, setting this up is a simple task. In your 
-project's `res/values` directory, create the new file `server_context.xml`. Add 
-the following code to the new file: 
+project's `res/values` directory, create a new file called `server_context.xml`.
+Add the following code to the new file: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
