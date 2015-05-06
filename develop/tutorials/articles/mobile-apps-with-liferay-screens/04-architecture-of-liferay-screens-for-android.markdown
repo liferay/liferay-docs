@@ -42,7 +42,7 @@ followed by a brief description of each item in the diagram.
 - *Views*: A set of layout and accompanying custom view classes that present 
   screenlets to the user.
 
-Next, the the core layer is described in detail.
+Next, the core layer is described in detail.
 
 ## The Core Layer of Screens for Android [](id=the-core-layer-of-screens-for-android)
 
@@ -127,7 +127,7 @@ diagram are explained in this section.
   interacts with. It includes:
 
     - A set of attributes that allows the screenlet's behavior to be configured. 
-      The attribute values are read with the screenlet's `createScreenletView` 
+      The attribute values are read in the screenlet's `createScreenletView`
       method. The default values can optionally be set there. 
     - A reference to its view, depending on the `liferay:layoutId` attribute's 
       value. To meet the screenlet's requirements, all views must implement the 
@@ -180,8 +180,8 @@ Next, the view layer's details are described.
 
 ## The View Layer of Screens for Android [](id=the-view-layer-of-screens-for-android)
 
-The view layer lets developers change any screenlet's look and feel. Screenlets 
-have the `liferay:layoutId` attribute, which is used to determine the view 
+The view layer lets developers change any screenlet's look and feel. Screenlets
+include the `liferay:layoutId` attribute, which is used to determine the view
 responsible for rendering the UI.
 
 ![Figure 4: The view layer of Liferay Screens for Android.](../../images/screens-android-architecture-04.png)
@@ -234,10 +234,10 @@ screenlet uses a unique generated identifier (`screenletId`) that is also
 restored. This ID is used, among other things, to identify the source of the
 executed actions and assign results to them. 
 
-The screenlets' state is restored after the `onCreated` and `onStart` methods,
+The screenlets' state is restored after the `onCreate` and `onStart` methods,
 as specified by the [standard Android lifecycle](http://developer.android.com/training/basics/activity-lifecycle/recreating.html).
-It's recommended that you avoid any operation with an interactor before the 
-state is restored. This is because it can't be assured that the executed action 
+It's recommended that you avoid any operation with an interactor before the
+state is restored. This is because it can't be assured that the executed action
 can find its intended destination. 
 
 To avoid this behavior, screenlet method calls should be executed inside the
