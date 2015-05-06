@@ -14,14 +14,14 @@ You'll be a UI master in no time!
 Before starting, you should understand the different components in the view 
 layer: 
 
-- *View*: Sometimes refered to as the *Custom View* or *Screenlet View*. This is 
-  the Java class that implements the UI's behavior. This class is usually the 
+- *View*: Sometimes referred to as the *Custom View* or *Screenlet View*. This
+  is the Java class that implements the UI's behavior. This class is usually the
   listener for the UI component's events.
-- *Layout*: The XML file that defines the UI components in the view. The root 
+- *Layout*: The XML file that defines the UI components in the view. The root
   element is usually the same view type as the previous screenlet view.
-- *View set*: The view group for several screenlets together with their layouts. 
-  A view set usually has a name that is easy to refer to, such as *Default* or 
-  *Material*. Anyone can create their own view set and release it to the 
+- *View set*: The view group for several screenlets together with their layouts.
+  A view set usually has a name that is easy to refer to, such as *Default* or
+  *Material*. Anyone can create their own view set and release it to the
   community. 
 
 When you set up your project it includes two view sets by default: Default and 
