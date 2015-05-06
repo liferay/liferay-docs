@@ -23,12 +23,11 @@ changing its core functionality. What's more, views and themes are fully
 pluggable and can be contributed by third parties. This gives you a great deal 
 of flexibility when implementing your app's UI and UX. 
 
-Currently, the same screenlets are available in Liferay Screens for Android and 
-iOS. Screenlets are grouped in modules based on internal dependencies. Each 
-module is isolated, so you can use only the modules that are necessary for your 
-app. However, it's important to note that you can't use a screenlet from a 
-single module without using the entire module. The modules are listed here with 
-their screenlets. 
+Currently, the same screenlets are available in Liferay Screens for Android and
+iOS. Screenlets are grouped in modules based on internal dependencies. Each
+module is isolated, so you can use only the modules that are necessary for your
+app. However, if  you want to use a screenlet, you must import its entire
+module. The modules are listed here with their screenlets. 
 
 - *Auth*: The module for user authentication. It uses Liferay Portal's 
   [user management](/portal/-/knowledge_base/6-2/user-management) features. It 
@@ -51,8 +50,8 @@ their screenlets.
 	- `DDLListScreenlet`: Gives your app the ability to show a list of 
 	  records based on a pre-existing DDL in a Liferay instance.
 
-Also, some screenlets can be used individually without the need to import an 
-entire module. These include: 
+Some screenlets don't belong to modules can be used individually without the
+need for an import. These include: 
 
 - `AssetListScreenlet`: Shows a list of assets managed by 
   [Liferay's Asset Framework](/tutorials/-/knowledge_base/6-2/asset-framework). 
@@ -87,27 +86,27 @@ Other internal dependencies are:
 Liferay Screens for Android also contains the following view sets that you can 
 use to change the screenlets' UI and UX: 
 
-- *Default views*: The standard views used when you add a screenlet in your 
-app's activities or fragments and don't set the `liferay:layoutId` attribute. 
-The Default views can be used as parent views for any of your custom views. 
-Refer to the tutorial [Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
-for more information. 
-- *Material views*: The sample views intended to demonstrate how to develop 
-your own full view set from scratch. Refer to the tutorial 
-[Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android) 
-for instructions on creating your own view set. 
+- *Default views*: The standard views used when you add a screenlet in your
+  app's activities or fragments without setting the `liferay:layoutId`
+  attribute. The Default views can be used as parent views for any of your
+  custom views. Refer to the tutorial [Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+  for more information. 
+- *Material views*: The sample views intended to demonstrate how to develop your
+  own full view set from scratch. Refer to the tutorial [Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android)
+  for instructions on creating your own view set. 
 
 ## Liferay Screens for iOS [](id=liferay-screens-for-ios)
 
-Liferay Screens for iOS includes the component library (the screenlets) and two 
-sample projects. Your iOS app can be written in Swift or Objective-C. One sample 
-project uses Screens with Objective-C. The second sample project uses Screens 
-with Swift. The implementation of Screens for iOS uses standard iOS development 
-tools, such as Xcode, the iOS SDK, the iOS Simulator, and others. Screens for 
-iOS is developed using the new Swift language and modern development techniques, 
-such as functional Swift code and the [Model View Presenter architecture](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter). 
-However, it doesn't use the new iOS 8 APIs, so iOS apps developed with Screens 
-can be run on devices with iOS 7 and above. Using Screens to develop iOS apps 
+Liferay Screens for iOS includes the component library (the screenlets) and two
+sample projects. Your iOS app can be written in Objective-C or Swift. One sample
+project uses Screens with Objective-C. The second sample project uses Screens
+with Swift. The implementation of Screens for iOS uses standard iOS development
+tools, such as Xcode, the iOS SDK, the iOS Simulator, and others. Screens for
+iOS is developed using the new Swift language and modern development techniques,
+such as functional Swift code and the
+[Model View Presenter architecture](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter).
+However, it doesn't use the new iOS 8 APIs, so iOS apps developed with Screens
+can be run on devices with iOS 7 and above. Using Screens to develop iOS apps
 requires the following: 
 
 - Xcode 6.3.x
@@ -120,14 +119,13 @@ requires the following:
 Liferay Screens for iOS also contains the following themes that you can use to 
 change the screenlets' UI and UX: 
 
-- *Default*: The standard theme that is used when you insert any screenlet in 
-your app's UI. The Default theme can be used as the parent for any of your 
-custom themes. Refer to the tutorial [Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
-for more information. 
-- *Flat7*: A sample theme intended to demonstrate how to develop your own full 
-theme from scratch. Refer to the tutorial 
-[Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios) 
-for instructions on creating your own themes. 
+- *Default*: The standard theme that is used when you insert any screenlet in
+  your app's UI. The Default theme can be used as the parent for any of your
+  custom themes. Refer to the tutorial [Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+  for more information. 
+- *Flat7*: A sample theme intended to demonstrate how to develop your own full
+  theme from scratch. Refer to the tutorial [Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios)
+  for instructions on creating your own themes. 
 
 ## Related Topics [](id=related-topics)
 
