@@ -146,11 +146,11 @@ will be asked to fill out the fields.
 Another useful feature for Liferay's Documents and Media portlet is the
 drag-and-drop upload feature. Instead of manually uploading an asset via the
 portlet's menu, you can select and drag an asset from your desktop and drop it
-onto your portlet. You can also drag-and-drop folders full of assets. When you
+onto your portlet. When you
 drag the asset onto your browser, the Documents and Media portlet is highlighted
 blue indicating its compatibility for the drag-and-drop feature. When the asset
 is finally dropped on the highlighted region, the asset is automatically
-uploaded and available instantly.
+uploaded and available instantly. Currently, we don't support uploading folders from desktop.
 
 Let's move on and discuss the Sort action.
 
