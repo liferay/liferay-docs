@@ -131,6 +131,10 @@ two strategies:
 
 2. Use printable ASCII characters (less secure). This degrades the password
    entropy.
+   
+    If you don't use hexadecimal encoding, i.e. if you use the default setting
+    `tunneling.servlet.shared.secret.hex=false`, the value of the
+    `tunneling.servlet.shared.secret` property *must* be ASCII compliant.
 
 Once you've chosen a key, make sure that value of your current server matches
 the value of your remote server.
