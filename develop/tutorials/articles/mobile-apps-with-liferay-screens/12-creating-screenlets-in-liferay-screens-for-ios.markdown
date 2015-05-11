@@ -16,11 +16,16 @@ the following features:
 - Lets the user modify the title. 
 - Upon user confirmation, the URL and title is sent back to the Liferay 
   instance's Bookmark services to be saved. 
+  
+You can perform these steps in your app's Xcode project. However, if you want to 
+distribute your screenlet as a library so that other apps can use it, follow the 
+steps described in the section *Publish Your Themes Using CocoaPods* in 
+[Creating Themes in Liferay Screens for iOS](/develop/tutorials/creating-themes-in-liferay-screens-for-ios).
 
 Before proceeding, you may want to read the tutorial 
-[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
 to understand in detail the concepts underlying screenlets. You may also want to 
-read the tutorial [Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios) 
+read the tutorial [Creating Themes in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios) 
 to support your new screenlet from the theme that you want to use. Without any 
 further ado, let the screenlet creation begin! 
 

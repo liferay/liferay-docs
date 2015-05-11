@@ -24,6 +24,11 @@ There are three theme types:
 
 For a detailed explanation of these theme types, see the 
 [section on themes in the Screens for iOS architecture tutorial](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios#the-theme-layer-of-screens-for-ios).
+You can create your theme's classes and resources directly inside your app 
+project. If you want to use the theme in more than one app, follow the 
+instructions at the end of this tutorial to publish your theme as a CocoaPods 
+library. 
+
 The following sections show you how to create each type of theme, using 
 `LoginScreenlet` as an example. You'll begin by creating a new Full theme.
 
@@ -128,20 +133,104 @@ typed by the user.
    file's custom class. Also, bind your new `@IBOutlet` and `@IBAction` to your 
    class. 
 
-4. Install the new theme and insert the screenlet it applies to in any of your 
-   new controllers. The screenlet in this example is `LoginScreenlet`. Also, use 
-   `ext` as the value for the screenlet's `themeName` property. Your new look 
-   and feel is shown in Interface Builder. 
+4. Install the new theme (drag and drop the classes and resources) and insert 
+   the screenlet it applies to in any of your new controllers. The screenlet in 
+   this example is `LoginScreenlet`. Also, use `ext` as the value for the 
+   screenlet's `themeName` property. Your new look and feel is shown in 
+   Interface Builder. 
 
-Well done! You now know how to create an Extended theme in Screens for iOS. 
-You're the master of the themes! 
+Well done! You now know how to create an Extended theme in Screens for iOS. In 
+the next section, you'll learn how to package and distribute your themes using 
+CocoaPods.
+
+## Publish Your Themes Using CocoaPods [](id=publish-your-themes-using-cocoapods)
+
+Since your theme is a code library, you can package it using CocoaPods. Doing so 
+means that other developers are able to install and use your theme by simply 
+adding the following line in their `Podfile`: 
+
+    pod 'LiferayScreens-YourThemeName'
+	
+Use the following steps to package your theme for use with CocoaPods. *It's 
+important that you use the same names and identifiers described in these steps*:
+
+1. Create an empty Xcode project choosing *Cocoa Touch Framework*.
+
+    ![Choose *Cocoa Touch Framework* when creating a project for your theme.](../../images/screens-ios-cocoa-touch-framework.png)
+    
+2. Call your project `LiferayScreensThemeName` (change `Name` to your theme's 
+   name).
+
+3. Configure Liferay Screens for CocoaPods. To do this, follow the steps 
+   described in [Preparing Your Project for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-your-ios-project-for-liferay-screens).
+
+4. Create your theme's classes and resources according to the instructions in 
+   the above sections. Your classes must compile successfully in Xcode. Use 
+   caution if you create your own `xib` files. The custom class must use your 
+   theme's module name. For example, the Custom Class setting in this screenshot 
+   is incorrect. This is because the `xib` file is bound to the custom class 
+   name without specifying the module:
+
+    ![The `xib` file is bound to the custom class name without specifying the module.](../../images/screens-ios-theme-custom-module-wrong.png)
+
+    In the following screenshot, the setting for the custom class is correct:
+
+    ![Xib file binded to custom class name specifying the module.](../../images/screens-ios-theme-custom-module-right.png)
+
+5. In your project's root folder, add a file called 
+   `LiferayScreensTheme-Name.podspec` (change `Name` to your theme's name) with 
+   the following content:
+
+        Pod::Spec.new do |s|
+            s.name = 'LiferayScreensTheme-Name'
+            s.module_name = 'LiferayScreensThemeName'
+            s.version = '1.0'
+            s.summary = 'Your theme description'
+            s.source = {
+                :git => 'https://your_repository_url.git',
+                :tag => 'v1.0'
+            }
+        
+            s.platform = :ios
+            s.ios.deployment_target = '8.0'
+            s.requires_arc = true
+        
+            s.source_files = 'Your/Relative/Folder/**/*.{h,m,swift}'
+        
+            s.resource_bundle = {
+                'LiferayScreens-name' => 'Your/Relative/Folder/**/*.{xib,png,plist,lproj}'
+            }
+        
+            s.dependency 'LiferayScreens'
+        end
+
+6. Doublecheck this `podspec` file to make sure you changed the occurences of 
+   `Name` and `name` to your theme's name in the following lines: 
+
+        s.name = 'LiferayScreensTheme-Name'
+        s.module_name = LiferayScreensThemeName'
+        'LiferayScreens-name => Your/Folder/**/*'
+
+You can commit and push your project to your Git repository and then use the 
+theme by adding the following line in your app's `Podfile`: 
+
+    pod 'LiferayScreens-YourThemeName', :git => 'https://your_repository_url.git'
+
+If you want to simplify the process even more, you can publish your theme as a 
+public Pod. For instructions on this, see the chapter *Deploying a library* in 
+the [official CocoaPods guide](https://guides.cocoapods.org/making/getting-setup-with-trunk.html#deploying-a-library). 
+
+Nice work! If you followed along with every section in this tutorial, now you 
+know how to create a theme of each type in Liferay Screens for iOS. You even 
+know how to package and distribute them with CocoaPods. You're the master of the 
+themes! 
 
 ## Related Topics [](id=related-topics)
 
-[Using Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/using-themes-in-liferay-screens-for-ios)
+[Using Themes in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-liferay-screens-for-ios)
 
-[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 
-[Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios)
+[Creating Screenlets in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios)
 
-[Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
+[Liferay Screens Overview](/develop/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
