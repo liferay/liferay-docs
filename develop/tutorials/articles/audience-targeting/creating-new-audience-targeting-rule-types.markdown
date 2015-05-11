@@ -3,8 +3,11 @@
 In the Audience Targeting application, a User Segment is defined as a group of
 users that match a set of rules. Out of the box, Liferay provides several types
 of rules that are based on characteristics such as age range, gender, location,
-etc. To extend the set of available rule types, you can create a class that
-implements the
+etc. Visit the
+[Liferay Audience Targeting Rules](/discover/portal/-/knowledge_base/6-2/liferay-audience-targeting-rules)
+article for information on each rule type, and their configuration options. To
+extend the set of available rule types, you can create a class that implements
+the
 [Rule](https://github.com/liferay/liferay-apps-content-targeting/blob/samples-v1.1/content-targeting-api/service/com/liferay/content/targeting/api/model/Rule.java)
 interface and deploy the class in your own OSGi plugin. 
 
@@ -127,6 +130,17 @@ rule's `src/com/liferay/content/targeting/rule/[RULE_NAME]` folder. The rule's
 UI and language keys can be configured in the `src/templates/ct_fields.ftl` and
 `src/content/Language.properties` files, respectively. You'll learn more about
 the latter two components later on.
+
++$$$
+
+**Note:** If you're planning on developing a social rule type that classifies
+users based on their social network profile, it's important to remember that
+they will not work properly unless the specific social network's SSO (Single
+Sign On) is enabled and configured properly. Visit the
+[Social Rules](/discover/portal/-/knowledge_base/6-2/liferay-audience-targeting-rules#social-rules)
+section for more details.
+
+$$$
 
 Now, you can begin creating your rule's functionality by specifying its behavior
 in the `-Rule` class (e.g., `WeatherRule.java`) that the SDK generated for

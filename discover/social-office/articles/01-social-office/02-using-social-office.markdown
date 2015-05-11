@@ -29,7 +29,7 @@ provides some solid background colors. The Social Office welcome theme that was
 included with Social Office 2.x has been replaced by the regular Social Office
 theme in Social Office 3.x.
 
-## The Social Office User Role
+## The Social Office User Role [](id=the-social-office-user-role)
 
 Social Office adds a special role to Liferay Portal: Social Office User.
 Assigning users to the Social Office User role provides them with personal sites
@@ -76,7 +76,7 @@ You may also want to change the landing page that users see upon login. For
 instructions on doing this, see the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the Liferay User Guide.
 
-## The Social Office User Bar
+## The Social Office User Bar [](id=the-social-office-user-bar)
 
 When a user who has been assigned to the Social Office User role logs in, the 
 user bar appears in place of the Dockbar.
@@ -156,7 +156,7 @@ Now that we've learned how to use the Social Office user bar and seen how it
 works with the Dockbar, let's learn how to use the Social Office Dashboard and
 other private pages and their applications.
 
-## Using the Dashboard and Other Private Pages 
+## Using the Dashboard and Other Private Pages [](id=using-the-dashboard-and-other-private-pages)
 
 The private page sets of Social Office users serve as personal workspaces. Each
 private page displays a navigation menu in the left column so that you can
@@ -174,7 +174,7 @@ include:
 
 ![Figure 1.5: The Dashboard navigation menu contains links to each private page of your personal site as well as a link to your public Profile page. Clicking the Social Office logo takes you to your Dashboard.](../../images/dashboard-menu.png)
 
-### The Dashboard
+### The Dashboard [](id=the-dashboard)
 
 The Dashboard page provides several portlet applications designed to keep you up
 to date with various kinds of portal activity:
@@ -187,7 +187,7 @@ to date with various kinds of portal activity:
 
 ![Figure 1.6: The default Dashboard applications are designed to inform you about recent portal announcements, activities and upcoming events, and to help you manage your personal tasks.](../../images/dashboard-applications.png)
 
-#### The Announcements Portlet
+#### The Announcements Portlet [](id=the-announcements-portlet)
 
 The Announcements portlet lets you broadcast important information to different
 groups of users. Each announcement can be created in a specific scope so that
@@ -204,7 +204,7 @@ behaves a bit differently in Social Office than in a standard Liferay portal.
 Clicking *Mark as Read* completely hides announcements from view. Clicking *Read
 Entries* reveals them again.
 
-#### The Activities Portlet
+#### The Activities Portlet [](id=the-activities-portlet)
 
 Using the power of Liferay's Social API, the Activities portlet presents
 information about different categories of users' recent activities. Use the tabs
@@ -252,7 +252,7 @@ portlet loads more activities.
 
 ![Figure 1.7: The Activities portlet shows activities from the user, sites, and other users.](../../images/activities-feed.png)
 
-#### The Upcoming Tasks, Events, and Microblogs Status Update Portlets
+#### The Upcoming Tasks, Events, and Microblogs Status Update Portlets [](id=the-upcoming-tasks-events-and-microblogs-status-update-portlets)
 
 The Upcoming Tasks portlet displays a list of tasks that have been created for
 you or that you've assigned to yourself. The Events portlet integrates with the
@@ -281,7 +281,7 @@ click a link to view the full microblog post, comment on the post, or repost the
 microblog. Next, let's take a look at the applications provided on the other 
 private pages of Social Office users' personal sites.
 
-### The Contacts Center
+### The Contacts Center [](id=the-contacts-center)
 
 The Contacts Center is an important application for Social Office because it
 allows users to create LinkedIn-style connections and Twitter-style followers.
@@ -338,7 +338,7 @@ the left of each user. Doing so presents you with the same buttons listed above.
 This is a great time saver for when you want to manage your interactions with 
 several users at once.
 
-### Microblogs
+### Microblogs [](id=microblogs)
 
 Social Office's Microblogs application allows you to broadcast your thoughts as
 a Facebook-like status to a chosen audience. You can choose for your status to
@@ -367,7 +367,7 @@ tabs. On public pages, these portlets display microblogs but don't allow you to
 publish new posts. You wouldn't want to just anyone to publish microblogs under
 your name, would you?
 
-### Private Messaging
+### Private Messaging [](id=private-messaging)
 
 Social Office's private messaging system allows you to send email-like messages
 to other users within the portal. Its interface is similar to that of an email
@@ -422,7 +422,7 @@ if you want to exclude a site named *Default*, enter
 `autocomplete.recipient.site.excludes=Default`. That site is then ignored when
 determining the users that are available in the *To* field of a message.
 
-### Private Document Library
+### Private Document Library [](id=private-document-library)
 
 Social Office provides a private document library to each Social Office user.
 Users can navigate to it by clicking the *My Documents* link in the Dashboard
@@ -443,7 +443,7 @@ regular desktop or mobile environments. Users' documents are synced with your
 Liferay server at periodic intervals. You can read more about Liferay Sync in 
 Liferay's User Guide here: [Liferay Sync](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen04-liferay-sync-0).
 
-### The Tasks Portlet
+### The Tasks Portlet [](id=the-tasks-portlet)
 
 The Tasks system allows you and your team members to keep track of different
 tasks that you're working on. Tasks related to specific projects can be tagged
@@ -468,7 +468,7 @@ page of that site. Tasks created through a Tasks portlet on a site page are
 automatically scoped to that site. When you view a task in the Tasks portlet,
 its site is displayed.
 
-## Using the Profile Page and Other Public Pages 
+## Using the Profile Page and Other Public Pages [](id=using-the-profile-page-and-other-public-pages)
 
 You can access your public Profile page from the Dashboard by clicking on your 
 profile picture, which appears above the page navigation menu in the left 
@@ -520,7 +520,7 @@ other users can only view, not edit them. However, the Timeline tab of the
 Microblogs portlet allows users to comment on and repost entries. The public 
 Contacts application shows users that the current user is connected to.
 
-## Using Social Office Sites For Collaboration 
+## Using Social Office Sites For Collaboration [](id=using-social-office-sites-for-collaboration)
 
 Social Office not only provides custom pages and applications for users'
 personal sites but also for general sites that can have many members. To add a
@@ -589,7 +589,7 @@ Requested* notification to inform users that their request is pending.
 
 ![Figure 1.17: The *Join* link appears next to the Social Office logo at the top of the page for Social Office sites.](../../images/join-site-link.png)
 
-### Default Site Pages & Portlets
+### Default Site Pages & Portlets [](id=default-site-pages-portlets)
 
 The Home page of the default Social Office site contains a number of useful
 portlets. The Activities and Recent Downloads portlets keep site members up to
@@ -652,7 +652,7 @@ portlet. After clicking on a user, you can send them connections requests,
 follow them, block them, send them private messages, or download their vCards. 
 Please refer to the section on the Contacts portlet for more details. 
 
-### A Case Study: The Sales Team
+### A Case Study: The Sales Team [](id=a-case-study-the-sales-team)
 
 Here's an example of how it all comes together: Ryan, Jim, and Michael are all
 members of the Sales Site. Ryan schedules a meeting for the whole Sales team

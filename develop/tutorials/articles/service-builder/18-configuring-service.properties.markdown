@@ -1,4 +1,4 @@
-# Configuring *service.properties* [](id=configuring-service-properties)
+# Configuring service.properties [](id=configuring-service-properties)
 
 Service Builder generates a `service.properties` file in your project's
 `docroot/WEB-INF/src` folder. Liferay Portal uses the properties in this file to
@@ -30,3 +30,10 @@ apply any changes to the database model when a new version of the plugin is
 deployed. This is needed in projects in which it is preferred to manually manage
 the changes to the database or in which the SQL schema has intentionally been
 modified manually after generation by Service Builder.
+
+**Related Topics**
+
+[What is Service Builder?](develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+
+[Writing Local Service Classes](develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
+

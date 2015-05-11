@@ -145,3 +145,7 @@ Save your `build.[username].properties` file.
 
 You're set to start using your Liferay Plugins SDK! 
 
+**Related Topics**
+
+[Developing Plugins with Liferay IDE](develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Maven](develop/tutorials/-/knowledge_base/6-2/maven)

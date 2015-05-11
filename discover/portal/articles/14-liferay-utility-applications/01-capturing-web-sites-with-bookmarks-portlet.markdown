@@ -50,8 +50,8 @@ into the list of general bookmarks that aren't associated with a folder. These
 are listed in the bookmarks section, below the folders, in the portlet.
 
 Below the Permissions there are additional options for Categorization and
-Related Assets, just like in other Liferay applications. Please see chapter 6 on
-the Asset Framework for further information about this.
+Related Assets, just like in other Liferay applications. Please see the [Displaying Content Dynamically](discover/portal/-/knowledge_base/6-2/displaying-content-dynamically)
+chapter for further information about this.
 
 Once you have added a new bookmark, it appears in the portlet. From here, you
 can manage your bookmark using familiar Liferay editing features. Collecting and

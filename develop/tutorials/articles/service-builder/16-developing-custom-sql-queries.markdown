@@ -222,3 +222,9 @@ want to include this in the solution. - Jim -->
 
 Congratulations on developing a custom SQL query and custom finder for your
 portlet! 
+
+## Related Topics
+
+[Writing a Data Driven Application](develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
+
+[Running Service Builder and Understanding the Generated Code](develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)

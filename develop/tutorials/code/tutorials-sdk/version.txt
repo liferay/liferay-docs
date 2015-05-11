@@ -1,0 +1,2 @@
+Version: liferay-plugins-sdk-6.2-ce-ga3
+Downloaded from: http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.2.2%20GA3/liferay-plugins-sdk-6.2-ce-ga3-20150103155803016.zip/download

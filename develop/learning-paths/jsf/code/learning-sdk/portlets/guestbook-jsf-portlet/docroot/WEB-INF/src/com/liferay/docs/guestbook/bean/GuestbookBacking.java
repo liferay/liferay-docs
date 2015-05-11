@@ -101,6 +101,7 @@ public class GuestbookBacking extends AbstractBacking {
 
 	public void delete(Guestbook guestbook) {
 
+		entries = getEntries();
 		deleteGuestbookEntries();
 
 		try {

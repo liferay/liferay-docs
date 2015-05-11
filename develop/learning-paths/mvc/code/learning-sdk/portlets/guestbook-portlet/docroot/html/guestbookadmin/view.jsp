@@ -28,7 +28,12 @@
 		</portlet:renderURL>
 		
 		<liferay-ui:search-container-column-text property="name" href="<%= viewGuestbook %>" />
-		
+
+		<liferay-ui:search-container-column-text name="status" >
+            <aui:workflow-status showIcon="<%= false %>" showLabel="<%= false %>"
+                status="<%= guestbook.getStatus() %>" />
+        </liferay-ui:search-container-column-text>
+
 		<liferay-ui:search-container-column-jsp
 	            path="/html/guestbookadmin/guestbook_actions.jsp"
 	            align="right" />

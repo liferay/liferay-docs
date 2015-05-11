@@ -75,3 +75,10 @@ custom report for your Audience Targeting app. For working examples of the
 default reports included in the Audience Targeting app, visit the Audience
 Targeting [project](https://github.com/liferay/liferay-apps-content-targeting)
 page and study the folders with the `report-` prefix.
+
+**Related Topics**
+
+[User Management](discover/portal/-/knowledge_base/6-2/user-management)
+
+[Customizing Liferay Portal with Hooks](develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+
