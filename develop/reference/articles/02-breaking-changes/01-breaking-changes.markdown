@@ -71,7 +71,7 @@ in ascending chronological order.
 
 ## Breaking Changes List
 
-### Utility Methods Have Been Moved from [`ImageLocalServiceUtil`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html) to [`ImageTool`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html)
+### Utility Methods Have Been Moved from [ImageLocalServiceUtil](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html) to [ImageTool](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html)
 - **Date:** 2013-Jan-13
 - **JIRA Ticket:** LPS-31888
 
