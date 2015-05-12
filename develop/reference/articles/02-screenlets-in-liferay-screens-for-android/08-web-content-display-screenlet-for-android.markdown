@@ -31,6 +31,11 @@ content in the Liferay instance your app connects to. For more details on web
 content, see the [Web Content Management](/portal/-/knowledge_base/6-2/web-content-management) 
 section of the Liferay User Guide. 
 
+## Compulsory Attributes
+
+- `layoutId`
+- `articleId`
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |

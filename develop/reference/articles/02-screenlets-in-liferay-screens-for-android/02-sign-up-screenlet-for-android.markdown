@@ -45,7 +45,14 @@ section of the User Guide.
 Anonymous requests can be done without the user being logged in. However, 
 authentication is still required to call the API. To allow this operation, it's 
 recommended that the portal administrator create a specific user with minimal 
-permissions.
+permissions. To use `SignUpScreenlet`, you need to use that user in your layout. 
+It's recommended that you add that user's credentials to `server_context.xml`. 
+
+## Compulsory Attributes
+
+- `layoutId`
+- `anonymousApiUserName`
+- `anonymousApiPassword`
 
 ## Attributes [](id=attributes)
 

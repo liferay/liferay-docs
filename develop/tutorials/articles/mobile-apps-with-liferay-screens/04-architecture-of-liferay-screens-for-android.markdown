@@ -35,7 +35,7 @@ followed by a brief description of each item in the diagram.
   properties that can be set from the layout XML and your Java code. 
 
 - *Interactors*: A collection of classes that implement one specific user 
-  interaction or use case. These classses can interact with local and remote 
+  interaction or use case. These classes can interact with local and remote 
   data sources. Most interactors need to send or receive data to or from a 
   Liferay instance. In this case, interactors use the [Mobile SDK](/tutorials/-/knowledge_base/6-2/mobile).
 
@@ -64,8 +64,8 @@ written by different developers share a common structure.
 - *BaseScreenlet*: The base class for all screenlet classes. The main task of a
   screenlet class is to receive user events from the screenlet's view, 
   instantiate and call interactors, and then update the view data with the 
-  result. This class contains a set of [templated methods](http://www.oodesign.com/template-method-pattern.html) 
-  that are intended to be overriden by children classes. These methods are 
+  result. This class contains a set of [template methods](http://www.oodesign.com/template-method-pattern.html) 
+  that are intended to be overridden by children classes. These methods are 
   listed here:
 
 	- *createScreenletView*: Typically inflates the screenlet's view and
@@ -184,7 +184,9 @@ The view layer lets developers change any screenlet's look and feel. Screenlets
 include the `liferay:layoutId` attribute, which is used to determine the view
 responsible for rendering the UI.
 
+<!-- 
 ![Figure 4: The view layer of Liferay Screens for Android.](../../images/screens-android-architecture-04.png)
+-->
 
 There are several different view types:
 
@@ -195,32 +197,32 @@ There are several different view types:
   user name and password. However, the text boxes are styled with the Default 
   view's flat white and blue design. You can change the styles associated with 
   this view set to customize the colors, positions, and sizes. To do this, see 
-  the `styles.xml` file.
-
-- *Full views*: Can be used to show a different set of components and 
-  attributes. Using `LoginScreenlet` as an example, the Full view can be used to 
-  present different components for the user name and password fields. For 
-  example, it's possible to show only the password field and infer the user name 
-  from elsewhere. The Default views are a kind of Full view.
+  the `styles.xml` file. 
 
 - *Child views*: Inherits another view's behavior, without including any code.
   Child views only contain a new layout file. This layout file can contain
   different colors, component positions, or any other visual changes. Because 
   the changes in Child views are only visual, the UI components and their 
-  identifiers must be identical to those of the parent view. In the diagram, a 
-  Child view inherits from the Default view. As an example of implementing a 
-  Child view, you can create a view inherited from Default for `LoginScreenlet` 
-  and then configure the new layout file to change the position and size of the 
-  standard text boxes. Child views present a good alternative to implementing a 
-  completely different UI for one specific scenario.
+  identifiers must be identical to those of the parent view. Child views present 
+  a good alternative to implementing a completely different UI for one specific 
+  scenario. As an example of implementing a Child view, you can create a view 
+  inherited from Default for `LoginScreenlet` and then configure the new layout 
+  file to change the position and size of the standard text boxes. 
 
-- *Extended*: Inherits another view's behavior and code. This lets you implement
-  new behavior in the view, such as displaying new components in the UI or
-  otherwise introducing new functionality. In the diagram, the Extended view
-  extends the Full view, but provides a specific view class for the screenlet
-  (extending from the corresponding parent's view class).
+- *Extended*: Inherits another view's behavior and code. This lets you implement 
+  new behavior in the view, such as displaying new components in the UI or 
+  otherwise introducing new functionality. An extended view provides a specific 
+  view class for the screenlet (extending from the corresponding parent's view 
+  class). Using the `LoginScreenlet` as an example, the extended view can be 
+  used to present different components for the user name and password fields. 
 
-For more information, see the tutorial [Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android). 
+- *Full views*: Can be used to customize the screenlet listeners and call custom 
+  intereractors. Using the `LoginScreenlet` as an example, the Full view can be 
+  used to add a new interactor that calls to another Liferay Portal instance. 
+  The Default views are a kind of Full view. 
+
+For more information, see the tutorial 
+[Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android). 
 
 Great! Now you know how Liferay Screens for Android is composed. However, 
 there's one other detail that you should know before moving on: how screenlets 

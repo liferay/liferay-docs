@@ -54,7 +54,7 @@ of fields. Other views may use different components, such as `ViewPager` or
 others, to show the fields. You can find a sample of this implementation in the 
 `DDLFormScreenletPagerView` class.
 
-![The `DDLForm` screenlet's Default and Material viewsets.](../../images/screens-android-ddlform.png)
+![The `DDLFormScreenlet` Default and Material viewsets.](../../images/screens-android-ddlform.png)
 
 ### Editor Types [](id=editor-types)
 
@@ -72,9 +72,9 @@ using the following attributes:
 - `textDocumentFieldLayoutId`: The layout to use for Documents & Media fields.
 
 If you don't define the editor type's layout in the attributes of 
-`DDLFormScreent`, the default layout `ddlfield_xxx_default` is used, where `xxx` 
-is the name of the editor type. It's important to note that you can change the 
-layout used with any editor type at any point.
+`DDLFormScreenlet`, the default layout `ddlfield_xxx_default` is used, where 
+`xxx` is the name of the editor type. It's important to note that you can change 
+the layout used with any editor type at any point. 
 
 ### Custom Editors [](id=custom-editors)
 
@@ -134,7 +134,13 @@ grant permissions in the target repository and folder. For more details, see the
 
 For more details, see the User Guide sections [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-), 
 [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists), 
-and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
+and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow). 
+
+## Compulsory Attributes
+
+- `layoutId`
+- `structureId`
+- `recordSetId`
 
 ## Attributes [](id=attributes)
 

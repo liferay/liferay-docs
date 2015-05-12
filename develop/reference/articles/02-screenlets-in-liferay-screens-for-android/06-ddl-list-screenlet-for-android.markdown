@@ -39,6 +39,12 @@ DDLs and Data Types should be properly configured in the portal before using
 [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
 and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists).
 
+## Compulsory Attributes
+
+- `layoutId`
+- `recordSetId`
+- `labelFields`
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |

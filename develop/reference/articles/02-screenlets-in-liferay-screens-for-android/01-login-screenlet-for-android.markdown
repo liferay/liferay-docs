@@ -47,6 +47,10 @@ Panel by clicking *Portal Settings* &rarr; *Authentication*.
 For more details, see the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide. 
 
+## Compulsory Attributes
+
+- `layoutId`
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |

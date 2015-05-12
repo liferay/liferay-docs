@@ -5,7 +5,8 @@ apps that connect to Liferay. For example, you can use them to authenticate
 users, interact with Dynamic Data Lists, and view assets. However, what if 
 there's not a screenlet for *your* specific use case? No sweat! You can write 
 your own screenlet. Screenlets can also be written by others and contributed to 
-the Screens project. This extensibility is one of Screens' key strengths. 
+the Screens project. Screenlets can also be added to jCenter and Maven Central 
+for distribution. This extensibility is one of Screens' key strengths. 
 
 This tutorial shows you how to create your own screenlets in Liferay Screens for 
 Android. You'll create a bookmarks screenlet that lets the user enter the 
@@ -17,6 +18,18 @@ to understand in detail the concepts underlying screenlets. You may also want to
 read the tutorial [Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android) 
 to support your new screenlet from the view that you want to use. Without any 
 further ado, let the screenlet creation begin! 
+
+## Deciding Your Screenlet's Location
+
+You have a couple different options on where to create your screenlet, depending 
+on how you plan on using it. If you don't plan to reuse your screenlet in 
+another app, or if you don't want to redistribute it, the best place to create 
+it is in a new package inside your project. This way you can reference and 
+access Liferay Screens' core, in addition to all the view sets you've imported. 
+
+If you want to reuse your screenlet in another app, you need to create it in a 
+new Android application module. The steps for creating such a module are 
+presented in the tutorial [Packaging Your Android Screenlets](http://www.liferay.com/).
 
 ## Creating the Screenlet's UI [](id=creating-the-screenlets-ui)
 

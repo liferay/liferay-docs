@@ -55,6 +55,10 @@ implementation:
         }
     }
 
+## Compulsory Attributes
+
+- `layoutId`
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |

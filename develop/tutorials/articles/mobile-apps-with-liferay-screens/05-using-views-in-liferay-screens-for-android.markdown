@@ -9,7 +9,7 @@ be created and contributed to the community. This tutorial shows you how to use
 views in your Screens for Android apps. Using views is very straightforward. 
 You'll be a UI master in no time!
 
-## Using Views in Your App [](id=using-views-in-your-app)
+## Understanding View Components
 
 Before starting, you should understand the different components in the view 
 layer: 
@@ -23,12 +23,28 @@ layer:
   A view set usually has a name that is easy to refer to, such as *Default* or
   *Material*. Anyone can create their own view set and release it to the
   community. 
+  
+## Installing View Sets
 
-When you set up your project it includes two view sets by default: Default and 
-Material. However, anyone can create a new view set and publish it in a public 
-repository like Maven Central or jCenter. In that event, include the artifact 
-containing the view set by using the standard steps for Gradle or Maven 
-described in the tutorial [Preparing Your Android Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-android-project-for-liferay-screens). 
+When you set up your project it includes only the Default view set. Two 
+additional view sets, Material and Westeros, are available as dependencies in 
+jCenter. To add them, include the following code in your `build.gradle` file. 
+Note that you don't have to use both; you can omit the `compile` statement for 
+the view set you don't want to include. 
+
+    dependencies {
+        ...
+        compile 'com.liferay.mobile:liferay-material-viewset:1.0.+'
+        compile 'com.liferay.mobile:liferay-westeros-viewset:1.0.+'	
+        ...
+    }
+
+Anyone can create a new view set and publish it in a public repository like 
+Maven Central or jCenter. To use such a view set, include the artifact 
+containing the view set by using the standard steps for Gradle or Maven. These 
+steps are described in the section [Preparing Your Project for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-your-android-project-for-liferay-screens).
+
+## Using Views in Your App [](id=using-views-in-your-app)
 
 To use a view set, set the `liferay:layoutId` property in your layout XML. This 
 is shown in the following screenshot: 
@@ -38,7 +54,7 @@ is shown in the following screenshot:
 Currently, the view sets included with Liferay Screens for Android are:
 
 - *Default*: Standard views used when you insert any screenlet and don't set the 
-  `liferay:layoutId` attribute.
+  `liferay:layoutId` attribute. 
 - *Material*: Sample views intended to demonstrate how to develop your own 
   view sets from scratch. It follows the [Material Design](https://developer.android.com/design/material/index.html) 
   guidelines published by Google. 

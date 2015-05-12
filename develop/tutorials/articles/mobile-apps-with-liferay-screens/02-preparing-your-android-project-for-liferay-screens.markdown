@@ -108,7 +108,14 @@ Screens and its dependencies:
         compile project (':viewsets')
 
 You can also configure the `.aar` binary files (in `Android/dist`) as local 
-`.aar` dependencies.
+`.aar` dependencies. You can download all the necessary files from [jCenter](https://bintray.com/liferay/liferay-mobile/liferay-screens/view).
+
+Great! Your project should now be ready for Liferay Screens. You can do a quick 
+check by compiling and executing a blank activity and importing a Liferay 
+Screens class (like `LoginScreenlet`).
+
+Next, you'll learn how to configure the your app with the IP address of your 
+Liferay installation, as well as a few other required parameters.
 
 ## Configuring Your Project to Communicate with Your Liferay Installation [](id=configuring-your-project-to-communicate-with-your-liferay-installation)
 
@@ -134,7 +141,8 @@ Add the following code to the new file:
 As the comment indicates, make sure to change these values to match those in 
 your Liferay installation. The server address `http://10.0.2.2:8080` is suitable 
 for testing with Android Studio's emulator, because it corresponds to 
-`localhost:8080` through the emulator.
+`localhost:8080` through the emulator. If you're using the Genymotion emulator 
+instead, you should use `192.168.56.1` instead of `localhost`.
 
 You should note that there are additional properties you can configure in 
 `server_context.xml`, depending on the screenlets in your project. For example, 
