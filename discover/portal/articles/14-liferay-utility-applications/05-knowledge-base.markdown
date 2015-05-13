@@ -82,12 +82,6 @@ $$$
 The interface for adding folders is straightforward. You can enter a name,
 description, and permissions for the folder. 
 
-<!-- Consider deleting this. 
-The last add option lets you import
-articles using a Zip file. The article import feature is covered in a later
-[section](/discover/portal/-/knowledge_base/6-2/knowledge-base#importing-articles-from-markdown-source-files)
-of this documentation.  -->
-
 As you add folders and articles to your Knowledge Base, notice the
 actions you can perform on them: 
 
