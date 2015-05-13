@@ -77,7 +77,7 @@ window in the Knowledge Base Admin portlet.
 
 $$$
 
-### Adding Folders and Articles
+### Adding Folders and Articles [](id=adding-folders-and-articles)
 
 The interface for adding folders is straightforward. You can enter a name,
 description, and permissions for the folder. 
@@ -136,7 +136,7 @@ from the knowledge base.
 
 $$$
 
-### Managing Templates
+### Managing Templates [](id=managing-templates)
 
 The Admin portlet's Templates tab is for managing templates. Templates are
 starting points for articles. You can create templates with default headers
@@ -160,7 +160,7 @@ a role can change permissions, update, view, or delete the template.
 
 *Delete:* remove the template from the Knowledge Base.
 
-### Responding to User Feedback
+### Responding to User Feedback [](id=responding-to-user-feedback)
 
 The Admin portlet's *Suggestions* tab shows user feedback and lets you mark
 progress on addressing the feedback. 
@@ -412,7 +412,7 @@ resulting Knowledge Base article. Also note that the referenced image file
 When you're finished editing Markdown files that you want to import, Zip them up
 with their accompanying image files. 
 
-### Zip File Requirements
+### Zip File Requirements [](id=zip-file-requirements)
 
 -  Each Zip file must end in the suffix `.zip`.
 -  Each Zip file must contain at least one Markdown source file, optionally
@@ -531,7 +531,7 @@ article.
 
 ![Figure 14.35: Selecting *Add* &rarr; *Import* in the Knowledge Base portlet brings up the interface for selecting a Zip file of Markdown source files and images to produce and update articles in your Knowledge Base.](../../images/kb-admin-importer.png)
 
-### Importer FAQs
+### Importer FAQs [](id=importer-faqs)
 
 - **What happens when I import an existing article?** The importer checks 
 if the source file's leading header ID (e.g., `# Some Heading  [](id=some-heading)`)
