@@ -1,26 +1,24 @@
 # Knowledge Base [](id=knowledge-base)
 
-Liferay's Knowledge Base application provides a means for creating and
-organizing articles within a site. It's perfect for creating and organizing
-information more formally than in a wiki. For example, it can be used to
-hierarchically organize articles to display professional product documentation
-or to form complete books or guides. It even lets you import article source
-files written in Markdown, automatically converting them into full-fledged
-knowledge base articles. It's easy to set up the Knowledge Base application with
-a workflow that requires articles to be approved before they are published.
+Liferay's Knowledge Base application provides a way to create and organize
+articles in a site. For example, it can be used to display professional product
+documentation or form complete books or guides. It even lets you import
+article source files written in Markdown. It's
+[workflow-enabled](/discover/portal/-/knowledge_base/6-2/configuring-assets-to-use-workflow-process-definitions), 
+so you can require articles to be approved before they are published.
 Additionally, the Knowledge Base application lets administrators create article
-templates, to ensure that articles using the template follow a common structure
-and include certain kinds of information. 
+templates that help users follow a common structure and include consistent kinds
+of information. 
 
-Here are the Knowledge Base application's new features:
+Here's what the Knowledge Base can do:
 
-- Navigation built into the Knowledge Base Display 
-- Suggestions interface for soliciting and managing article feedback
-- Article folders
-- Article fields for friendly URL, source URL, categorization, and related assets
+- Navigation is built into the Knowledge Base Display 
+- Has a suggestions interface for article feedback
+- Stores articles in folders
+- Contains metadata fields for friendly URL, source URL, categorization, and related assets
 - Button ![*Edit on GitHub*](../../images/kb-display-edit-on-github-button.png)
 can be enabled to take readers to an article's online source repository location
-- Import article Markdown source files to create and update articles
+- Imports article Markdown source files to create and update articles
 
 The Knowledge Base application is available for purchase on the [Liferay Marketplace](http://www.liferay.com/marketplace).
 Once you've [installed](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps)
@@ -35,78 +33,77 @@ To navigate to the Knowledge Base portlet (admin portlet) page, go to *Site
 Administration* &rarr; *Content* &rarr; *Knowledge Base*. The admin portlet has
 everything administrators and authors need to create, update, and manage
 articles. It has three tabs: one for managing articles, one for managing
-templates, and the last one for managing article suggestions. The *Articles* tab
-shows all the articles and article folders in the knowledge base and it lets you
-perform actions on them. The *Templates* tab shows all the templates defined in
-the knowledge base and lets you perform actions on them. The *Suggestions* tab
-shows all the suggestions users have submitted for the articles and enables you
-to handle them in workflow fashion.
+templates, and one for managing article suggestions. The Articles tab is for
+managing all the articles and article folders in the Knowledge Base. The
+Templates tab is for managing all the article templates. The Suggestions tab is
+for managing user-submitted feedback. 
 
-![Figure 14.26: You can manage knowledge base articles, folders, templates, and suggestions from the *Knowledge Base* portlet.](../../images/kb-admin-page.png)
+![Figure 14.26: You can manage Knowledge Base articles, folders, templates, and suggestions from the *Knowledge Base* portlet.](../../images/kb-admin-page.png)
 
-The *Add* drop-down allows you to add a Basic Article, an article based on an
-available template, or a folder, and it allows you to import articles from a Zip
-file. Selecting *Basic Article* (or the name of an available template) brings up
-the *New Article* window. As you enter your article's title in this window, a
-URL-safe version of the title is added to the tail end of the article's friendly
-URL--see the value in the *Friendly URL* field. You can, of course, edit the
-friendly URL.  
+The Add selector shows you all the options for adding articles. You can add a
+folder, a Basic Article, an article based on a template, or you can import
+articles from a .zip file. Selecting *Basic Article* (or the name of an
+available template) brings up the New Article window. As you enter your
+article's title in this window, a URL-safe version of the title is added to the
+end of the article's friendly URL. The value is displayed and editable in the
+*Friendly URL* field. 
 
 You create the article's content using the WYSIWYG editor. Knowledge Base
 articles are created in HTML. Click the *Source* button in the editor to view
-the HTML source based on what you've written using the WYSIWYG editor or write some HTML yourself. 
+the HTML source, or use this view to write HTML yourself. 
 
-![Figure 14.27: You can create and modify a knowledge base article's content using the WYSIWYG editor.](../../images/kb-admin-new-article.png)
+![Figure 14.27: You can create and modify a Knowledge Base article's content using the WYSIWYG editor.](../../images/kb-admin-new-article.png)
 
-In addition to entering an article's title and creating its content, you can add
-attachments, add tags, specify related assets, and set permissions. By default,
-view permission is granted to the guest role, meaning anyone can view your
-article. After you're done using the editor, you can save the article as a draft
-and continue working on it later, or you can submit it for publication. Your
-article may need to be approved before being published, depending on the
-workflow defined for your portal. 
+You can also add attachments and tags, specify related assets, and set
+permissions. By default, View permission is granted to the Guest role, meaning
+anyone can view your article. At any time, you can save the article as a draft
+to continue working on it later, or you can submit it for publication. If
+workflow is enabled for the Knowledge Base, your article must be approved before
+it is published. 
 
-The *Permissions* button is next to the *Add* drop-down in the admin portlet.
-Clicking this button brings up a window that lets you define permissions for
-applying to the Knowledge Base application generally, not to particular
-articles. Here, you can define which roles can add/delete articles, folders, and
-templates, which roles can change general knowledge base permissions, which
-roles can subscribe to articles, and which roles can view templates and
-suggestions. 
+The Permissions button is next to the Add selector in the Admin portlet.
+Clicking this button lets you define permissions for the Knowledge Base
+application: the roles that can add/delete articles, folders, and templates, the
+roles that can change general knowledge base permissions, the roles that can
+subscribe to articles, and the roles that can view templates and suggestions. 
 
 +$$$
 
-**Note:** In order for a role to be able to access the Knowledge Base portlet,
-the role must have the permission *Knowledge Base* &rarr; *Access in Site
-Administration*. To be able to add or act on articles, folders, or suggestions,
-the site administrator must grant the role such permissions (e.g., via the
-*Permissions* window in the Knowledge Base portlet).
+**Note:** To be able to access the Knowledge Base Admin portlet, a role must
+have the permission *Knowledge Base* &rarr; *Access in Site Administration*. To
+be able to add or act on articles, folders, or suggestions, the site
+administrator must grant the appropriate permissions using the Permissions
+window in the Knowledge Base Admin portlet.
 
 $$$
 
-The Add drop-down in the admin portlet also has an option for adding a folder.
-The interface for adding folders is straightforward, letting you enter a name,
-description, and permissions for the folder. The last add option lets you import
-articles using a Zip file. The article import feature is covered in a later [section](/discover/portal/-/knowledge_base/6-2/knowledge-base#importing-articles-from-markown-source-files)
-of this documentation. 
+### Adding Folders and Articles
 
-As you add folders and articles to your knowledge base, notice the
-actions you can perform on them. Administrators can perform the following
-actions on a folder: 
+The interface for adding folders is straightforward. You can enter a name,
+description, and permissions for the folder. 
+
+<!-- Consider deleting this. 
+The last add option lets you import
+articles using a Zip file. The article import feature is covered in a later
+[section](/discover/portal/-/knowledge_base/6-2/knowledge-base#importing-articles-from-markdown-source-files)
+of this documentation.  -->
+
+As you add folders and articles to your Knowledge Base, notice the
+actions you can perform on them: 
 
 *Edit:* change the folder's name and description.
 
 *Move:* relocate the folder under a new parent folder. 
 
-*Delete:* remove from the knowledge base the folder and its articles. 
+*Delete:* remove the folder and its articles from the knowledge base. 
 
-*Permissions:* grant or revoke a role's ability to add an article to the folder,
-add a sub-folder to the folder, delete the folder, move the folder, set
+*Permissions:* grant or revoke the following permissions: add an article to the
+folder, add a sub-folder to the folder, delete the folder, move the folder, set
 permissions on the folder, edit (update) the folder, and view the folder. 
 
-Articles can be created or moved into in several places in the knowledge base.
-They can reside in the root of the knowledge base, they can reside in folders,
-and they can be children of other articles (parent articles).
+Articles can be created or moved to several places in the Knowledge Base: to the
+root of the Knowledge Base, to folders, and they can become children of other
+articles.
 
 Here are the actions you can perform on an article:
 
@@ -117,26 +114,24 @@ categorization, and its related assets.
 
 *Add Child Article:* add a new child article to the article. 
 
-*Permissions:* configure the permissions of roles with respect to the
-article. 
+*Permissions:* configure the permissions on the article. 
 
 *Subscribe:* choose to be notified of any updates to the article. Once you've
-subscribed to an article, the *Unsubscribe* action is made available, giving you
-the option of unsubscribing from the article's notifications. 
+subscribed to an article, the *Unsubscribe* action appears, letting you
+unsubscribe from the article's notifications. 
 
 *Move:* move the article to a different folder or change an article's position
 in the hierarchy by choosing a new parent article for it.
 
-*Delete:* remove the article from the knowledge base. 
+*Delete:* remove the article from the Knowledge Base. 
 
-You can also assign new *priority* values to articles. When multiple articles
-are configured to be displayed in the Knowledge Base Display portlet, the peer
-articles listed in the portlet's navigation are arranged top to bottom in
-ascending priority. The lower an article's priority value, the higher up it is
-listed in the Knowledge Base Display portlet's navigation. To assign new
-priority values, enter a new priority value for each article you want to
-re-prioritize, select the checkbox of each modified article, and select
-*Actions* &rarr; *Save*.
+You can also assign new *priority* values to articles. When many articles are
+in the Knowledge Base Display portlet, navigation arranges them 
+in ascending priority. Priority 1 is the highest priority; think "Priority 1
+distress call!" The higher an article's priority, the higher it is shown in the
+navigation. To assign new priorities, select the checkbox for each article you
+want to re-prioritize, enter a new priority value, and select *Actions* &rarr;
+*Save*.
 
 +$$$
 
@@ -147,12 +142,14 @@ from the knowledge base.
 
 $$$
 
-The *Templates* tab of the admin portlet lets you create article templates. A
-template basically functions like a starting point for the creation of certain
-types of articles. You can create templates that have default headers or other
-content that pre-populates articles created from the template. Using templates
-fosters consistency in format and content across new articles. To create a new
-template, click on the *Add Template* button in *Templates* tab. 
+### Managing Templates
+
+The Admin portlet's Templates tab is for managing templates. Templates are
+starting points for articles. You can create templates with default headers
+or other content to give your articles a starting outline users can work from.
+Templates help foster consistent formatting and content organization for
+articles. To create a new template, click the *Add Template* button in the 
+*Templates* tab. 
 
 ![Figure 14.28: As an administrator, you can add a new template to your knowledge base from the *Knowledge Base* portlet.](../../images/kb-admin-new-template.png)
 
@@ -165,119 +162,113 @@ delete it.
 *Edit:* change the template's title and content.
 
 *Permissions:* configure the permissions on the template. You can choose whether
-a role is permitted to update, view, or delete the template, or permitted to
-change permissions on the template.
+a role can change permissions, update, view, or delete the template. 
 
-*Delete:* remove the template from the knowledge base.
+*Delete:* remove the template from the Knowledge Base.
 
-The *Suggestions* tab of the admin portlet lets you view user feedback on
-articles and lets you mark progress on addressing the feedback. 
+### Responding to User Feedback
+
+The Admin portlet's *Suggestions* tab shows user feedback and lets you mark
+progress on addressing the feedback. 
 
 ![Figure 14.29: The Suggestions tab in the Knowledge Base portlet helps you monitor article feedback and mark progress in addressing feedback.](../../images/kb-admin-suggestions.png)
 
 Each Suggestion entry provides the link to the associated article, the user's
 feedback, the user's name linked to the user's home page, the feedback's
-time stamp, and a status value indicating progress on addressing the suggestion.
-You can move the entry between *New*, *In Progress*, and *Resolved* states. 
+time stamp, and the progress on addressing the suggestion. You can move the
+entry between *New*, *In Progress*, and *Resolved* states. 
 
 +$$$
 
-**Note:** For a role to be able to view suggestions to articles in the
-*Knowledge Base* portlet, the role must be granted the *Knowledge Base* &rarr;
-*Knowledge Base: View Suggestions* permission. 
+**Note:** To view article suggestions, the role must be granted the *Knowledge
+Base* &rarr; *Knowledge Base: View Suggestions* permission. 
 
-For a role to be able to move suggestions between the *New*, *In Progress*,
-and *Resolved* states, the role must be granted the *Knowledge Base* &rarr;
-*Knowledge Base Article: Update* permission. Users assigned to that role can
-also view article suggestions and update the state of article suggestions from
-within any one of the other Knowledge Base application's portlets. 
+To move suggestions between the *New*, *In Progress*, and *Resolved* states, the
+role must be granted the *Knowledge Base* &rarr; *Knowledge Base Article:
+Update* permission. Users assigned to that role can also view and update the
+state of article suggestions from any of the other Knowledge Base application's
+portlets. 
 
 $$$
 
-In this section, you've learned how to create, edit, and organize articles.
-You've also seen how the Suggestions feature shows user comments and gives you
-an interface for processing this feedback. Since you're probably itching to
-publish your articles to your site, these next few sections introduce the Knowledge Base
-application's portlets for displaying articles and article hierarchies,
-aggregating articles for viewing, and finding articles. The Markdown source file
-importer [section](/discover/portal/-/knowledge_base/6-2/knowledge-base#importing-articles-from-markown-source-files)
+So far, you've learned how to create, edit, and organize articles. You've also
+seen how the Suggestions feature lets you and your users collaborate on your
+Knowledge Base content. The next topic for discussion is the Knowledge Base
+application's portlets that display articles, their navigation, how to aggregate
+articles for viewing, and finding articles. The Markdown source file importer
+[section](/discover/portal/-/knowledge_base/6-2/knowledge-base#importing-articles-from-markown-source-files)
 comes after that. 
 
 ## Knowledge Base Display Portlet [](id=knowledge-base-display-portlet)
 
-The Knowledge Base Display portlet (display portlet) is ideal for displaying
-sets of articles. You can access the portlet's *Configuration* menu by clicking
-on the gear icon in the top right corner of the portlet and selecting
-*Configuration*. In the configuration dialog box's *Setup* tab, there's a
-*General* sub-tab that has an *Article Folder* field with a *Select* button.
-Clicking the *Select* button brings up a dialog box for navigating to and
-choosing an existing article or folder of articles to display in the portlet. If
-you choose a folder of articles to display and click *Save*, the navigation in
-the left side of the portlet displays links to all of the folder's articles, and
-the viewing area in the right side of the portlet displays the folder's leading
-article (the article that has the lowest Priority value). 
+The Knowledge Base Display portlet is how you publish articles. You can access
+the portlet's Configuration menu by clicking the gear icon in the top right
+corner of the portlet and selecting *Configuration*. In the configuration dialog
+box's *Setup* tab, there's a *General* sub-tab that has an *Article Folder*
+field with a *Select* button. Clicking the *Select* button lets you choose an
+existing article or folder of articles to display in the portlet. If you choose
+a folder of articles to display and click *Save*, the navigation in the left
+side of the portlet displays links to all of the folder's articles, and the
+viewing area in the right side of the portlet displays the folder's leading
+article (the "priority one" article). 
 
 ![Figure 14.30: The Knowledge Base Display portlet's navigation and viewing area facilitates viewing article hierarchies.](../../images/kb-display.png)
 
-The display portlet is terrific for displaying hierarchies of articles. Clicking
-an article's link in the navigation displays the article in the view area.
-Clicking on a link to an article that has child articles expands the navigation
-tree to display links to the child articles. The expanded nodes naturally
-collapse when you click on a different top level article. Inside the viewing
-area you can use the links below the article content to navigate to the next
-article or previous article. The navigation reacts as you would expect,
-highlighting the link of the article you're viewing, and the tree nodes expand
-and collapse appropriately. 
+The display portlet can display hierarchies of articles. Clicking an article's
+link in the navigation displays the article in the view area. Clicking a link
+to an article that has child articles expands the navigation tree to show
+links to the child articles. The expanded nodes naturally collapse when you
+click on a different top level article. Below the article content are links to
+navigate to the next or previous article. The navigation reacts as you
+would expect, highlighting the link of the article you're viewing, and the tree
+nodes expand and collapse appropriately. 
 
-There are links at the top of the portlet that users can select to subscribe to
-an RSS feed of the knowledge base, subscribe to the article, view the history of
-the article, or print the article.
+Links at the top of the portlet let users subscribe to an RSS feed of the
+Knowledge Base, subscribe to the current article, view its history, or print it.
 
 If your portal administrator enables the Knowledge Base application's source URL
-feature and an article has an assigned source URL, a button ![*Edit on GitHub*](../../images/kb-display-edit-on-github-button.png) displays to the
+feature and an article has an assigned source URL, an ![*Edit on GitHub*](../../images/kb-display-edit-on-github-button.png) button appears to the
 right of the article's title; it gives users access to the article's online
 source location. This feature can be used to encourage users to contribute fixes
 or improvements to articles. If you're interested in using this feature, you can
 direct your portal administrator to follow instructions in [Advanced Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration). 
 
-Below the article's content, the thumbs up and thumbs down icon rating interface
-is displayed. In addition to users being able to give thumb ratings, they can
-also click the link *Do you have suggestions?* and submit suggestions or
-comments for the article. Administrators can view the suggestions and mark
-progress using statuses *In Progress* and *Resolved*.
+Below the article's content is the rating interface, showing thumbs up and
+thumbs down icons. Users can also click the link *Do you have suggestions?* and
+submit suggestions or comments for the article. Administrators can view the
+suggestions and mark progress using statuses *In Progress* and *Resolved*.
 
 Administrators can perform the following actions on articles:
 
-*Edit:* change the article's title and content, and manage the article's its
-attachments, categorization, and its related assets. 
+*Edit:* change the article's title and content, or manage its attachments,
+categorization, and its related assets. 
 
 *Add Child Article:* add a new child article to the article. 
 
 *Move:* relocate the article to a different folder or change the article's
 position in the hierarchy by choosing a new parent article for it.
 
-*Delete:* remove the article from the knowledge base. 
+*Delete:* remove the article from the Knowledge Base. 
 
 The display portlet provides common Liferay application [configuration](/discover/portal/-/knowledge_base/6-2/configuring-liferay-applications)
 options, including ones for look and feel, export/import, permissions, scope,
 and sharing.
 
-As an administrator, let's say that you've diligently used knowledge base
-folders to aggregate similar articles and you want to provide an easy way for
-users to switch between these sets of articles. The display portlet's content
-folder feature lets you configure a drop-down selector at the top of the display
-portlet's navigation, that allows users to switch between the sets of articles.
-Here's what you do to set up content folders:
+As an administrator, say that you've used folders to aggregate similar articles,
+and you want to provide an easy way for users to switch between these sets of
+articles. The content folder feature lets you add a selector to the top of
+the display portlet's navigation that lets users switch between sets of
+articles. Here's what you do to set up content folders:
 
-1. In the Knowledge Base portlet (admin portlet), add a folder to hold
-sub-folders. Then add to this folder the sub-folders that will hold articles.
-These sub-folders will be the *content folders*. 
-2. Add to each content folder a set of articles. 
-3. Click on the Knowledge Base Display portlet's (display portlet's) gear icon
-to bring up the *Configuration* dialog box. In *Setup* &rarr; *General*, select
-the top-level folder (the parent of the content folders) and click *Save*. 
+1.  In the Knowledge Base Admin portlet, add a folder to hold sub-folders. Then
+    add to this folder the sub-folders that will hold articles. These sub-folders
+    are the *content folders*. 
+2.  Add articles to each content folders. 
+3.  Click the Knowledge Base Display portlet's gear icon.  In *Setup* &rarr;
+    *General*, select the top-level folder (the parent of the content folders) and
+    click *Save*. 
 
-A content selector displays at the top of the Knowledge Base Display
+A content selector appears at the top of the Knowledge Base Display
 portlet's navigation. Its values reflect the names of your content folders.
 
 ![Figure 14.31: The Knowledge Base Display portlet's content folder feature lets users switch between different sets of articles.](../../images/kb-display-root-context-selector.png)
@@ -300,98 +291,110 @@ portlet's navigation. Its values reflect the names of your content folders.
 You can also add a common prefix to the content names shown in the selector. To
 enter a common prefix, bring up the display portlet's Configuration dialog box,
 navigate to the *Setup* &rarr; *Display Settings* tab, enter the prefix into the
-*Content Root Prefix* field and click *Save*. For the example folder and article
+*Content Root Prefix* field, and click *Save*. For the example folder and article
 structure listed above, you could apply a common prefix *Lunar Rover* to produce
 content selector values as shown in Figure 14.13. You can specify whatever value
 you like as a root content prefix or you can leave it blank. 
 
-In this section, you learned the features that the Knowledge Base Display
-portlet provides for displaying sets of articles. Next you'll learn how to use
-the Knowledge Base Article portlet to individually display articles. 
+This is how the Knowledge Base Display portlet publishes articles. Next you'll
+learn how to use the Knowledge Base Article portlet to show articles
+individually. 
 
 ## Knowledge Base Article Portlet [](id=knowledge-base-article-portlet)
 
-The Knowledge Base Article portlet (article portlet) can be placed on a page to
-display a single article's entire content. The article portlet even displays
-abstracts of all of the article's children. You can add any number of article portlets to a page and you can
-configure each article portlet to display a different article. When you first
-place this portlet on a page, it displays the message *Please configure this
-portlet to make it visible to all users*. This message is a link to the
-configuration dialog box for the portlet. Click *Select Article* to choose an
-article to display. Pick an article and then click *Save*. When your page
-refreshes it displays the article in the portlet.
+The Knowledge Base Article portlet can be placed on a page to show a single
+article's content. The Article portlet even shows abstracts of an 
+article's children. You can add any number of article portlets to a page and
+each one can display a different article. When you first place this portlet on a
+page, it shows the link *Please configure this portlet to make it visible
+to all users*. Click the link and click *Select Article* to choose an article to
+display. Pick an article and then click *Save*. When your page refreshes, it
+displays the article in the portlet.
 
 ![Figure 14.32: The Knowledge Base Article portlet is great at individually displaying articles.](../../images/kb-article-portlet.png)
 
 The Knowledge Base Article portlet allows users to rate and comment on the
-article it displays. There are also links at the top of the portlet users can
-click to subscribe to an RSS feed of the knowledge base, subscribe to the article,
-view the history of the article, or print the article.
+article it displays. Links at the top of the portlet let users subscribe to an
+RSS feed of the Knowledge Base, subscribe to the current article, view its
+history, or print it.
 
 ## Knowledge Base Section Portlet [](id=knowledge-base-section-portlet)
 
-The Knowledge Base Section portlet (section portlet) allows administrators to
-selectively show articles associated with a specific topic (section). For
-example, a news site might have a *World* section, a *Politics* section, a
-*Business* section and an *Entertainment* section. Multi-select boxes in the Add
-Article and Edit Article screens allow administrators to select which section(s)
-an article belongs to. You can add any number of section portlets to a page and
-you can configure each section portlet to display articles from any number of
-sections. To use sections, a portal administrator must enable the feature in the
-Knowledge Base application's portlet properties; and the portal administrator
-must specify any section names you want to use via the Knowledge Base
-application's portlet properties. The [Advanced Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration)
+The Knowledge Base Section portlet lets you selectively show articles associated
+with a specific topic (section). For example, a news site might have a *World*
+section, a *Politics* section, a *Business* section and an *Entertainment*
+section. Multi-select boxes in the Add Article and Edit Article screens let you
+define section(s) articles belong to. You can add any number of section portlets
+to a page and each one can display articles from any number of sections. To use
+sections, a portal administrator must configure the feature in the Knowledge Base
+application's portlet properties. Once the feature is enabled, he or she must
+specify in the properties file any section names you want to use. The 
+[Advanced Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration)
 section explains how to configure the sections feature in the portlet
-properties.
+properties file.
 
 ![Figure 14.33: Here's an image of Knowledge Base Section portlets being displayed on a page.](../../images/kb-section-portlets.png)
 
-The Knowledge Base section portlet has some additional configurations that allow
-an administrator to select a display style (title or abstract), an article
-window state (maximized or normal), how to order the articles, how many articles
-to display per page, and whether or not to show pagination.
+The Knowledge Base section portlet can be configured with different display
+styles (title or abstract). Additionally you can define an article window state
+(maximized or normal), how to order the articles, how many articles to display
+per page, and whether or not to show pagination.
 
 ## Knowledge Base Search [](id=knowledge-base-search)
 
 Wikis often have deeply nested articles that can be hard to find by browsing.
-Liferay's knowledge base's ability to selectively display articles makes it
-easier to browse than a Wiki. The Knowledge Base Search portlet allows you to
-search for articles in the knowledge base. This portlet presents the search
-results to you in order from most relevant to least relevant.
+The Knowledge Base's ability to show the structure of articles makes it
+easier to browse than a Wiki. But this often isn't enough, and that's where
+users need search. Enter the Knowledge Base Search portlet. 
 
 ![Figure 14.34: The Knowledge Base Search portlet helps you search the knowledge base for keywords.](../../images/kb-search-portlet.png)
 
-The search portlet helps you find articles in your knowledge base that match
-keywords you specify. 
+The search portlet helps you find articles that match keywords you specify. 
 
 Next you'll learn how to create new articles and update existing articles by
 importing them from Markdown source files.
 
-## Importing Articles from Markown Source Files [](id=importing-articles-from-markown-source-files)
+## Importing Articles from Markdown Source Files [](id=importing-articles-from-markdown-source-files)
 
-You can navigate to *Site Administration* &rarr; *Content* &rarr; *Knowledge
-Base* &rarr; *Articles* and click on *Add* &rarr; *Import* to bring up the
-importer page. It lets you import into your knowledge base a Zip file full of
-articles and their images. All you need to do is write your articles in a text
-format called Markdown, Zip up your Markdown article source files and images,
-and import the Zip file into the knowledge base. The importer automatically
-converts each source file's Markdown text to HTML, applying the HTML to the
-resulting article. Any image files that are included in the Zip file and that
-are referenced in an article source file are imported as attachments to the
-article. 
+As has already been stated, the Knowledge Base application can import articles
+in bulk. This lets you have an offline process where articles are prepared ahead
+of time before they are published. The file format for the articles is Markdown. 
 
-![Figure 14.35: Selecting *Add* &rarr; *Import* in the Knowledge Base portlet brings up the interface for selecting a Zip file of Markdown source files and images to produce and update articles in your knowledge base.](../../images/kb-admin-importer.png)
+Markdown is a text-only file format that is designed to be easy to read, yet
+support all the things you'd need to do to format your articles. It's also
+something of a standard: there's [Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown), 
+forums that support Markdown (reddit, StackExchange, and others), Markdown
+editors, and an IETF draft for making it an official Internet media type
+(text/markdown). Why is there so much interest in Markdown? 
 
-The [Markdown](http://fletcher.github.io/MultiMarkdown-4/) syntax is easy to
-write and read, and it supports plenty of markup features to produce high
-quality articles. Here are the simple requirements for article source files: 
+1.  It's readable. Even if you don't know Markdown, you can read it without
+    having to filter out the syntax. 
 
-- All article source files much end in the portlet's required suffixes (default
-acceptable suffixes are `.markdown` or `.md`).
-- Each article's Markdown file must start with a top-level header (e.g., `# Some
+2.  It gets out of a writer's way. You don't have to worry about mousing to
+    various icons to change text into a heading or create bulleted lists. Just start
+    typing. The syntax is very intuitive. 
+
+3.  There are tools to convert it to many other formats, though it was designed
+    to convert to HTML. If your articles are in Markdown, it's straightforward to
+    publish them to the web, mobile formats (Kindle, ePub), and print. 
+
+4.  Since it's only text, you can use existing tools to collaborate on that
+    text. Using services like GitHub, people can contribute to your articles, and
+    you can see all the changes that have been made to them. 
+
+The Knowledge Base supports a Markdown dialect known as
+[Multi-Markdown](http://fletcher.github.io/MultiMarkdown-4/). This dialect
+extends the original Markdown with features like table formatting, image
+captions, and footnotes. 
+
+For the Knowledge Base to import your Markdown articles, they must adhere to
+these requirements: 
+
+- All source files must use the `.markdown` or `.md` extensions.
+- Articles must start with a top-level header (e.g., `# Some
 Heading ...`). 
-- Each header must have an associated ID to use in the article's friendly URL
-title and to use as anchors for the article's sub headers. Here's an example of
+- Each header must have an associated, unique ID for the article's friendly URL
+title and for anchor tags in the article's sub headers. Here's an example of
 a top-level header that correctly specifies an ID: `# Some Heading  [](id=some-heading)`
 
 Below is Markdown source text for a simple example article: 
@@ -404,28 +407,27 @@ Below is Markdown source text for a simple example article:
 
     ![Mars and its moons.](./images/kb-display-mars-moons.png)
 
-    Its two moons ar aptly named after the two sons of mythical Roman God Mars.
+    Its two moons are aptly named after the two sons of mythical Roman God Mars.
     Their names are Phobos and Diemos.
 
-In the first line of the above example Markdown text, notice the friendly URL
-title specified via the header's ID assignment `id=the-moons-of-mars`. On
-import, the ID value becomes the URL title of the resulting knowledge base
-article. Also note that the referenced image file `kb-display-mars-moons.png`
-resides in a folder called `images`. 
+In the first line above, notice the header's ID assignment
+`id=the-moons-of-mars`. On import, the ID value becomes the URL title of the
+resulting Knowledge Base article. Also note that the referenced image file
+`kb-display-mars-moons.png` resides in a folder called `images`. 
 
 When you're finished editing Markdown files that you want to import, Zip them up
 with their accompanying image files. 
 
-**Zip File Requirements:**
+### Zip File Requirements
 
-- Each Zip file must end in the suffix `.zip`.
-- Each Zip file must contain at least one Markdown source file, optionally
-organized in folders.
-- All referenced image files must be in a folder named `images`, in the Zip
-file's root. 
-- Image files must use one of the portlet's designated suffixes. The default
-supported suffixes are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and `.png`. They're
-specified via a portlet property. For details, see [Advanced Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration).
+-  Each Zip file must end in the suffix `.zip`.
+-  Each Zip file must contain at least one Markdown source file, optionally
+   organized in folders.
+-  All referenced image files must be in a folder named `images` in the Zip
+   file's root. 
+-  Image files must be in a supported format and must use the appropriate file
+   extensions. Supported extensions are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and
+   `.png`. They're specified via a portlet property. For details, see [Advanced Configuration](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration).
 
 **Example Basic Zip File Structure:**
 
@@ -441,13 +443,12 @@ They can be nested in any number of folders. Image files are the only files
 supported for attachments. No other kinds of references are supported--not even
 anchors. 
 
-In addition to packaging the article Markdown files and their images, you can
-pass to the importer a base source URL property that specifies your source
-file's online repository location. Each article's *Edit on GitHub* button (if
-enabled) takes the user to the the source location. The importer appends each
-Markdown file's path from the Zip file to the base source URL to construct a URL
-to the article's repository source location. Each imported article's source URL
-is set to `[base URL]/[article file path]`. Here's an example base source URL
+In addition to the source files and images, you can pass to the importer a base
+source URL property that specifies your source file's online repository
+location. Each article's *Edit on GitHub* button (if enabled) takes the user to
+the source location. The importer prefixes each file's path with the base source
+URL to construct a URL to the article's repository source location; it looks
+like `[base URL]/[article file path]`. Here's an example base source URL
 property:
 
     base.source.url=https://github.com/liferay/liferay-docs/blob/master/develop/tutorials
@@ -464,19 +465,18 @@ all of the Zip file's resulting articles. To use the source URL feature, your
 portal administrator must enable it via the Knowledge Base application's portlet
 [properties](/discover/portal/-/knowledge_base/6-2/knowledge-base#advanced-configuration).
 
-The Zip file importer also supports importing a two level hierarchy of articles
-and assigning articles priorities based on numerical file prefixes. Below is a
-more advanced listing that shows a Zip file structure that leverages these
-features.
+The importer also supports a two level hierarchy of articles and can assign
+article priorities based on numerical file prefixes. Below is a more advanced
+example showing a Zip file structure that leverages these features.
 
-**Example Advanced Zip File Structure:**
+**Advanced Zip File Structure Example:**
 
-- `01-intro/`
+- `01-winter-events/`
     - `00-winter-excursions-intro.markdown`
     - `01-star-dust-snow-shoeing.markdown`
     - `02-lunar-alpine.markdown`
 
-- `02-intro/`
+- `02-summer-events/`
     - `00-summer-excursions-intro.markdown`
     - `01-lunar-rock-scrambling.markdown`
     - `02-extra-terrestrial-mountain-biking.markdown`
@@ -488,19 +488,18 @@ features.
 - `.METADATA`
 
 To designate an article to be the *parent* of all other articles in the same
-source folder, end the article source file's name with `intro.markdown`. This
-creates a two-level parent-child hierarchy. Using this convention, the above Zip
-file specifies `00-winter-excursions-intro.markdown` as the parent of its
-neighboring Markdown files: `01-star-dust-snow-shoeing.markdown` and
-`02-lunar-alpine.markdown`. 
+source folder, end its file name with `-intro.markdown`. This creates a two-level
+parent-child hierarchy. Using this convention, the above Zip file specifies
+`00-winter-excursions-intro.markdown` as the parent of its neighboring Markdown
+files: `01-star-dust-snow-shoeing.markdown` and `02-lunar-alpine.markdown`. 
 
-To designate an article's *priority* via it's source file, add a non-zero prefix
-to its file name. For example, the priorities for articles created from files
-named `01-file.markdown` and `02-file.markdown` would be `1.0` and `2.0`. In the
-importer's user interface, make sure to keep selected the import checkbox
-labeled *Apply numerical prefixes of article files as priorities.* If a file
-doesn't have such a prefix, its article gets the next increment priority (i.e.,
-the highest currently assigned priority, plus one). The Zip file's articles are
+To designate an article's *priority* using its source file, add a numeric prefix
+to its file name. This prefix must be greater than zero. For example, the
+priorities for articles imported from files named `01-file.markdown` and
+`02-file.markdown` become `1.0` and `2.0`. When importing, keep the checkbox
+labeled *Apply numerical prefixes of article files as priorities* selected. If a
+file doesn't have a prefix, its article gets the next available priority
+(i.e., the highest current priority, plus one). The Zip file's articles are
 processed in file order. 
 
 **Advanced Example's Resulting Relationships and Priorities**
@@ -513,29 +512,36 @@ Source File                                               | &nbsp;Article       
  `02-intro/00-summer-excursions-intro.markdown`           | *Summer Excursions* | peer of *Winter Excursions*  | **2.0**         |
  `02-intro/01-lunar-rock-scrambling.markdown`             | *Lunar Rock ...*    | child of *Summer Excursions* | 1.0             |
  `02-intro/02-extra-terrestrial-mountain-biking.markdown` | *Extra Terrestrial* | child of *Summer Excursions* | 2.0             |
-    
+ 
 In the above Advanced Zip File Structure example, notice that the
-`-intro.markdown` files have the prefix `00`. You can optionally start your
-intro files with `00` so that they're conveniently listed at the top of the
-folder's file listing on your local machine. The real trick is that the importer
-uses the prefix of such a file's folder as its knowledge base article priority.
-Here's the underlying logic: if a file has prefix `00`, the importer assigns the
-resulting article a priority of `1.0`. A top-level intro file, however, gets
-special treatment: if its prefix is less than `1.0`, the importer checks to see
-if the intro file's folder(s) have a prefix of `1.0` or greater. For the intro
-article's priority, the importer assigns the first folder prefix found that is
-`1.0` or greater. This folder prefix convention enables you to specify
+`-intro.markdown` files have the prefix `00`. You can start your intro files
+with `00` so that they're listed at the top of the folder's file listing on your
+machine. The real trick is that the importer uses the prefix of such a file's
+folder as its Knowledge Base article priority.  Here's the underlying logic: if
+a file has prefix `00`, the importer assigns the resulting article's priority to
+`1.0`. A top-level intro file, however, gets special treatment: if its prefix is
+less than `1.0`, the importer checks the intro file's folder(s) for a prefix of
+`1.0` or greater. It then sets the intro article's priority to the first folder
+prefix found that is `1.0` or greater. This convention lets you specify
 priorities for top-level (non-child) articles in your hierarchy. 
 
-It's important that you know the importer's limitations and know best practices
-for importing articles. A good way to address these is in a Frequently Asked
-Questions (FAQ) format.
+Once you have your article Zip file, it's time to import it. Navigate to *Site
+Administration* &rarr; *Content* &rarr; *Knowledge Base* &rarr; *Articles* and
+click on *Add* &rarr; *Import* to bring up the importer page. Browse to the
+location of your file, and in most cases leave the checkbox for the article
+priorities checked, and then click *Save*. Your file is uploaded, and the
+importer converts each source file's Markdown text to HTML, applying the HTML to
+the resulting article. Any image files that are included in the Zip file and
+that are referenced in an article source file are imported as attachments to the
+article. 
 
-**Importer FAQs:**
+![Figure 14.35: Selecting *Add* &rarr; *Import* in the Knowledge Base portlet brings up the interface for selecting a Zip file of Markdown source files and images to produce and update articles in your Knowledge Base.](../../images/kb-admin-importer.png)
 
-- **What happens when I import an existing article?** The importer looks to see
+### Importer FAQs
+
+- **What happens when I import an existing article?** The importer checks 
 if the source file's leading header ID (e.g., `# Some Heading  [](id=some-heading)`)
-matches the URL title of any existing article in the knowledge base folder. If a
+matches the URL title of any existing article in the Knowledge Base folder. If a
 match is found, the importer replaces the article's content with the incoming
 content converted from the source file. If no match is found, a new article is
 created. 
@@ -553,57 +559,54 @@ you must manually do so via Knowledge Base portlets.
 prefix convention and re-import the article to update its priority. 
 
 - **If I change an article's title, should I also change it's header ID?** It
-depends on whether you've already published your article. If it's not yet been
-published then there's no public links to it, so it's fine to change the header
+depends on whether you've already published your article. If it hasn't been
+published, then there are no public links to it, so it's fine to change the header
 ID. If the article is already published, you must decide whether it's worth
 breaking existing links to the article and worth having search engines
 rediscover and re-rank your article based on its new friendly URL, which is
 based on the new header ID. 
 
 Congratulations on mastering the art of creating and importing Markdown files to
-produce knowledge base articles! 
+produce Knowledge Base articles! 
 
-The next section is intended for portal administrators. It explains how to
-override the Knowledge Base Portlet application's portlet properties to enable
-certain features and to configure certain features to suit your needs. 
+Next, portal administrators can learn how to override the Knowledge Base Portlet
+application's portlet properties to enable and configure some advanced, but
+optional features. 
 
 ## Advanced Configuration [](id=advanced-configuration)
 
-The Knowledge Base application provides several features that you can enable and
-configure to meet your needs. Here are some features that you might be
-interested in enabling or configuring differently: source URL, import file
-conventions, new article priority increment, and sections. Here you'll learn how
-to configure these features by overriding the Knowledge Base app's portlet
-properties. Advanced configuration should only be performed by a portal
-administrator, as the person modifying the configuration must have access access to
-the downloaded Knowledge Base application and be comfortable with repackaging
-applications and installing the modified Knowledge Base app via
-the Control Panel. 
+The Knowledge Base application has several optional features that are disabled
+by default. These include source URL, import file conventions, new article
+priority increment, and sections. Here you'll learn how to configure these
+features by overriding the Knowledge Base app's portlet properties. Advanced
+configuration should only be performed by a portal administrator, as the person
+modifying the configuration must have access to the downloaded Knowledge Base
+application and be comfortable with repackaging applications and installing the
+modified Knowledge Base app using the Control Panel. 
 
 +$$$
 
-**Important:** Advanced configurations to the Knowledge Base application should
+**Important:** Advanced configuration of the Knowledge Base application should
 only be performed by a portal administrator.
 
 $$$
 
-In this section, you'll learn about the Knowledge Base app's portlet properties,
-how to specify values to override the default values, and how to deploy the
-Knowledge Base app and these new values to your portal. 
+Next, you'll learn about the Knowledge Base app's portlet properties, how to
+override the default values, and how to deploy the result to your portal. 
 
 ### Overriding Default Portlet Properties [](id=overriding-default-portlet-properties)
 
-To start, create a file called `portlet-ext.properties` to hold the property
+To start, create a file called `portlet-ext.properties` to hold the 
 settings for the property values that you want to override. Keep your
-`portlet-ext.properties` open in an editor so you can add new property values.
-The sections that follow describe the most common properties that Knowledge Base
-administrators consider overriding. 
+`portlet-ext.properties` file open in an editor so you can add values as you go
+along. 
 
-**Source URL Properties:** Enabling the source URL feature lets knowledge base
-administrators specify URLs of article's source file and it displays a button
-(default label is *Edit on GitHub*) above each displayed article. Users can
-click the button to navigate to an article's source location. To enable this
-feature, specify the following property setting:
+**Source URL Properties:** Defines the source location of importable Markdown
+files. This is intended to point to an online source repository where the files
+are stored. GitHub is assumed as the default. Once defined, the Knowledge Base
+displays a button (default label is *Edit on GitHub*) above each displayed
+article. Users can click the button to navigate to an article's source location.
+To enable this feature, specify the following property setting:
 
     knowledge.base.source.url.enabled=true
 
@@ -615,76 +618,65 @@ you could specify that language key as the button's new label:
 
     knowledge.base.source.url.edit.message.key=edit-on-bitbucket
 
-You can alternatively specify that same example label explicitly like this:
+You can alternatively specify that label explicitly like this:
 
     knowledge.base.source.url.edit.message.key=Edit on Bitbucket
 
 
-**Importer File Convention Properties:** The importer file convention properties
-let you specify supported file name extensions for imported source article files
-and source image files, a file suffix for designating parent article source
-files, and the image folder's path within the Zip file.
+**Importer File Convention Properties:** These properties define the supported
+file extensions, the suffix for parent files, and the image folder's path within
+the Zip file.
 
-You can override the following property settings with values to specify
-supported file extensions and supported source image file extensions,
-respectively. Here are the default settings that you can override:
+You can modify the supported file extensions: 
 
     markdown.importer.article.extensions=.markdown,.md
     markdown.importer.image.file.extensions=.bmp,.gif,.jpeg,.jpg,.png
 
-You can set the expected article parent file suffix by specifying a different
-property setting. Here's the default setting that you can override:
+You can change the article parent file suffix: 
 
     markdown.importer.article.intro=intro.markdown
 
-You can specify the folder path within which the Zip file importer looks for
-source image files. Here's the default setting that you can override:
+You can modify the image folder path the importer looks for in the Zip file:
 
     markdown.importer.image.folder=images/
 
-**New Article Priority Increment Property:** By default new articles receive a
-priority value that is `1.0` higher than the highest priority of all other
-articles in the folder. To disable this increment so that articles get a flat
-value of `1.0`, specify the following setting:
+**New Article Priority Increment Property:** By default the priority for new
+articles is incremented by `1.0`. To disable this increment so that articles get
+a flat value of `1.0`, specify the following setting:
 
     admin.kb.article.increment.priority.enabled=false
 
-**Section Names Property:** The section names property lets you specify the
+**Section Names Property:** The section names property lets you specify 
 names of arbitrary topics to attribute to articles. Using the Knowledge Base
 Sections portlet, you can display one or more *sections* (groups) of articles.
-In order to make section names available for article authors to choose, you must
-specify them in a comma-separated list. To create section names, specify them as
-a list of values for the property `admin.kb.article.sections`. Here's an example
-of setting them to section values *Politics*, *Business*, and *World*:
+To make section names available, you must specify them in a comma-separated
+list. Specify them as a list of values for the property
+`admin.kb.article.sections`:
 
     admin.kb.article.sections=Politics,Business,World
 
-Next you'll learn how to deploy all of the new portlet property settings you've
-specified. 
+This creates the sections *Business*, *Politics*, and *World*. 
+
+Next you'll learn how to deploy your customized properties. 
 
 ### Deploying Override Property Values [](id=deploying-override-property-values)
 
-For the Knowledge Base application to be able to use new portlet property
-settings, the properties must be made available in the application's class path.
-You can do this by putting your `portlet-ext.properties` file into
-the application's class path via the Knowledge Base portlet's `.war` file. The
-`.war` file is available in the Knowledge Base application's `.lpkg` file--it's
-an archive file that contains the app's web archives and metadata files. The
-following steps show you how to put your `portlet-ext.properties` file into the
-app's `.lpkg` file and how to deploy/redeploy the app using the `.lpkg` file. 
+Your custom properties must be deployed with the Knowledge Base application. To
+do this, you'll have to extract the application, place your file in the proper
+location, re-package the application, and then deploy it. 
 
-1. Navigate to your Knowledge Base app by going to your *Account Home* in
-[http://www.liferay.com](http://www.liferay.com) (e.g.,
-`https://www.liferay.com/web/[username]`). Click on *Apps* and then select
-the Knowledge Base app. The Knowledge Base app's description page displays. 
+Don't worry; that's much easier than it sounds. 
 
-2. Click the *App* button to download the app as a `.lpkg` file. 
+1. 
+[Download](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps#downloading-through-liferay) 
+the Knowledge Base from Liferay Marketplace. You'll get a file with an `.lpkg`
+extension. 
 
-3. Extract the contents of the `.lpkg` file. The extracted contents include the
-app's portlet `.war` file `knowledge-base-portlet-[version].war`. 
+2. Extract the `.lpkg` file (any utility that handles Zip files works). The
+extracted contents include the app's `.war` file
+`knowledge-base-portlet-[version].war`. 
 
-4. Extract the contents of the portlet `.war` file. The extracted contents are
-comprised of the portlet project's files. 
+3. Extract the `.war` file to access the application's files. 
 
 5. Add your `portlet-ext.properties` file to the portlet project folder
 `WEB-INF/classes`. 
@@ -692,18 +684,14 @@ comprised of the portlet project's files.
 6. Repackage (e.g., using the `jar` executable or a Zip tool) the portlet
 project's folders and files into a `.war` file. 
 
-7. Repackage that newly packaged `.war` file and all other files originally
-extracted from the `.lpkg` file. **Important:** don't include the *original*
-portlet `.war` file. 
-
-8. In your portal, navigate to *Control Panel* &rarr; *Apps* &rarr; *App
+7. In your portal, navigate to *Control Panel* &rarr; *Apps* &rarr; *App
 Manager* &rarr; *Install*. 
 
-9. Select *File Upload*, select your `.lpkg` file, and click *Install* to deploy
+8. Select *File Upload*, select your `.war` file, and click *Install* to deploy
 the Knowledge Base application.
 
-Your deployed application now uses the property settings that you specified in
-your `portlet-ext.properties` file. Congratulations on deploying your advanced
+Your deployed application now uses the settings you specified in your
+`portlet-ext.properties` file. Congratulations on deploying your advanced
 configuration settings! 
 
 You've learned the benefits of publishing articles using the Knowledge Base
