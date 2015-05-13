@@ -19,7 +19,7 @@ read the tutorial [Creating Views in Liferay Screens for Android](/tutorials/-/k
 to support your new screenlet from the view that you want to use. Without any 
 further ado, let the screenlet creation begin! 
 
-## Deciding Your Screenlet's Location
+## Deciding Your Screenlet's Location [](id=deciding-your-screenlets-location)
 
 You have a couple different options on where to create your screenlet, depending 
 on how you plan on using it. If you don't plan to reuse your screenlet in 

@@ -1,4 +1,4 @@
-# Packaging Your Android Screenlets
+# Packaging Your Android Screenlets [](id=packaging-your-android-screenlets)
 
 If you want to distribute your screenlets for use in different projects, you 
 should package them in a module (Android library). To use the screenlet, 
@@ -13,7 +13,7 @@ Use the following steps to package your screenlets in a module:
 
 The next sections detail these steps.
 
-### Create a New Android Module
+### Create a New Android Module [](id=create-a-new-android-module)
 
 Fortunately, Android Studio has a menu option that automatically creates an 
 Android module and adds it to your `settings.gradle` file. Go to 
@@ -37,7 +37,7 @@ Here's an example of this configuration:
     include ':YOUR_MODULE_NAME'
     project(':YOUR_MODULE_NAME').projectDir = new File(settingsDir, 'RELATIVE_ROUTE_TO_YOUR_MODULE')
 
-### Configure Dependencies Between Each Module
+### Configure Dependencies Between Each Module [](id=configure-dependencies-between-each-module)
 
 Next, you need to configure your app to use the new module. To do so, add the 
 following `compile` statement to the `dependencies` in your `build.gradle` file:
@@ -59,7 +59,7 @@ following `compile` statement to the `dependencies` in your `build.gradle` file:
         ...
     }
 
-### Upload the Module to jCenter or Maven Central
+### Upload the Module to jCenter or Maven Central [](id=upload-the-module-to-jcenter-or-maven-central)
 
 If you want to distribute your screenlet so that others can use it, you can 
 upload it to jCenter or Maven Central. Use the [`build.gradle`](https://github.com/liferay/liferay-screens/blob/LMW-230-Changes-In-Westeros-App/android/viewsets/westeros/build.gradle) 

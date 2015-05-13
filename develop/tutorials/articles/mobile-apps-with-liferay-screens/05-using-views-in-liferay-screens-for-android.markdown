@@ -9,7 +9,7 @@ be created and contributed to the community. This tutorial shows you how to use
 views in your Screens for Android apps. Using views is very straightforward. 
 You'll be a UI master in no time!
 
-## Understanding View Components
+## Understanding View Components [](id=understanding-view-components)
 
 Before starting, you should understand the different components in the view 
 layer: 
@@ -24,7 +24,7 @@ layer:
   *Material*. Anyone can create their own view set and release it to the
   community. 
   
-## Installing View Sets
+## Installing View Sets [](id=installing-view-sets)
 
 When you set up your project it includes only the Default view set. Two 
 additional view sets, Material and Westeros, are available as dependencies in 
