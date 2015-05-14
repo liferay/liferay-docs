@@ -195,7 +195,7 @@ of replacing its contents, just edit what you have; it'll be easier.
 1.  Remove the tag library declarations and the `<portlet:defineObjects />` tag
     from the top of the file. Replace it with the `init.jsp` include: 
 
-        <%@include file="/html/init.jsp" />
+        <%@include file="/html/init.jsp" %>
 
 2.  The only other things you need to add are the missing fields. Make your
     `<aui:fieldset>` look like this: 
