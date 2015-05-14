@@ -28,7 +28,7 @@ To create a plugin which extends another, follow these steps:
 5. Copy any files from the original plugin that you're overwriting to your
    new plugin (using the same folder structure) and run the Ant target `merge`.
    Please note that the `merge` target is called whenever the plugin is
-   compiled. All you have to do is to check the Ant output: 
+   compiled. All you have to do is check the Ant output: 
 
         dsanz@host:~/sdk/portlets/my-social-networking-portlet$ ant war
         Buildfile:
