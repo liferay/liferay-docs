@@ -8,19 +8,22 @@ provided by Liferay only includes classes for calling the remote services of
 Liferay's *core* portlets. Core portlets are the portlets included with every 
 Liferay installation (also referred to as *out-of-the-box* portlets). Since this 
 learning path calls the remote services of the Guestbook portlet developed in 
-the [Liferay MVC learning path](/learning-paths/-/knowledge_base/6-2/beginning-liferay-development), 
+the [Liferay MVC learning path](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development), 
 you have to build the Mobile SDK. This is the case with any non-core portlet: 
 you must build the Liferay Mobile SDK if you want to use it to call your 
 portlet's remote services. Now it's time to get building! 
 
 ## Building the Mobile SDK
 
-For the Mobile SDK Builder to generate the classes that can call a non-core 
-portlet's remote services, those services must be available and accompanied by a 
-Web Service Deployment Descriptor (WSDD). The Guestbook portlet's remote 
-services and WSDD are generated in the Liferay MVC learning path's [last section](/learning-paths/-/knowledge_base/6-2/creating-web-services-for-your-application), 
-so you don't need to generate them here. You should keep this requirement in 
-mind though when developing your own portlets.
+For the Mobile SDK Builder to generate the classes that can call a non-core
+portlet's remote services, those services must be available and accompanied by a
+Web Service Deployment Descriptor (WSDD). To learn how the Guestbook portlet's
+remote services and WSDD were generated, please see the
+[Creating Web Services for Your Application](/develop/learning-paths/-/knowledge_base/6-2/creating-web-services-for-your-application)
+learning path. Since web services have already been generated for the Guestbook
+portlet that you're using in this learning path, you don't need to take this
+step here. Just remember that you need to generate web services when developing
+your own portlets.
 
 To build the Mobile SDK, you first need to download its source code. You can do 
 so by clicking [this link](https://github.com/liferay/liferay-mobile-sdk/archive/android-6.2.0.15.zip). 
@@ -86,13 +89,13 @@ Android app: put them in a `jar` file.
 To do this, navigate to the `modules/guestbook-portlet` directory on the command 
 line and run `../../gradlew jar`. This command does two things: 
 
-1. Generates a `jar` file with the Guestbook portlet's service classes. This is 
-    in `modules/guestbook-portlet/build/libs`.
+1. Generates a `jar` file with the Guestbook portlet's service classes. This is
+   in `modules/guestbook-portlet/build/libs`.
 
-2. Generates a `jar` file for the rest of the Mobile SDK. This is in 
-    `liferay-mobile-sdk-android-6.2.0.15/android/build/libs`.
+2. Generates a `jar` file for the rest of the Mobile SDK. This is in
+   `liferay-mobile-sdk-android-6.2.0.15/android/build/libs`.
 
 Congratulations! You just built the Liferay Mobile SDK for the Guestbook 
 portlet. Now that's an accomplishment worthy of writing down in a guestbook! All 
-you need now is an Android app to install the Mobile SDK in. The next article in 
-this learning path shows you how to create this app. 
+you need now is an Android app in which to install the Mobile SDK. The next
+article in this learning path shows you how to create this app. 
