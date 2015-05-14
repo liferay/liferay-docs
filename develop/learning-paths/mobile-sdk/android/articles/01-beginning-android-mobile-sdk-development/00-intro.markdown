@@ -5,7 +5,7 @@ process. This series of learning path articles walks you through the steps
 required to build and install the Liferay Mobile SDK in a Guestbook Android app
 that you'll use to leverage the functionality of the Guestbook portlet developed
 in the
-[Liferay MVC learning path](/learning-paths/-/knowledge_base/6-2/beginning-liferay-development).
+[Liferay MVC learning path](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development).
 This screenshot shows how the initial Guestbook Android app should look when
 you're finished with this series of learning path articles: 
 
