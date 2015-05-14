@@ -33,25 +33,27 @@ The following sections show you how to create each type of view, using
 Child views reuse another view's UI components, but use a different layout to 
 present them. The changes in a new Child view are therefore only visual. For 
 example, the Child view here presents the same components as the Default view, 
-but uses a completely different layout; the view is oriented horizontally 
-instead of vertically. The following steps show you how to create a Child view. 
+but uses a completely different layout; the view is more compact. The following 
+steps show you how to create a Child view. 
 
-1. Create a new layout file called `login_horizontal.xml`. You'll build the new 
+1. Create a new layout file called `login_compact.xml`. You'll build the new 
    UI in this layout. A good way to start is to duplicate the parent layout's 
    XML and use it as a template. The child components such as the `EditText` 
    fields, `Button` elements, and so on must use the same IDs as the parent 
    view. You must also use the same custom view class as the parent view. The 
-   example `login_horizontal.xml` is shown here: 
+   example `login_compact.xml` is shown here: 
 
         <?xml version="1.0" encoding="utf-8"?>
         <com.liferay.mobile.screens.viewsets.defaultviews.auth.login.LoginView
             xmlns:android="http://schemas.android.com/apk/res/android"
-            style="@style/default_screenlet"
-            android:orientation="horizontal">
+            style="@style/default_screenlet">
         
             <EditText
                 android:id="@+id/login"
                 style="@style/default_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:drawableLeft="@drawable/default_mail_icon"
                 android:hint="@string/email_address"
                 android:inputType="text" />
@@ -59,20 +61,25 @@ instead of vertically. The following steps show you how to create a Child view.
             <EditText
                 android:id="@+id/password"
                 style="@style/default_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:drawableLeft="@drawable/default_lock_icon"
                 android:hint="@string/password"
                 android:inputType="textPassword" />
         
             <Button
                 android:id="@+id/login_button"
-                style="@style/default_submit_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/default_button"
                 android:text="@string/sign_in" />
         
         </com.liferay.mobile.screens.viewsets.defaultviews.auth.login.LoginView>
 
 2. Insert the `LoginScreenlet` in any of your activities or fragments, using 
    your new layout as the `liferay:layoutId` attribute's value. In this case, 
-   `@layout/login_horizontal` is used as the `liferay:layoutId` attribute's 
+   `@layout/login_compact` is used as the `liferay:layoutId` attribute's 
    value. 
 
 A good example of this approach is the [`SignUpScreenlet`](https://github.com/liferay/liferay-screens/blob/master/android/library/viewsets/src/main/res/layout/sign_up_material.xml) 
@@ -87,17 +94,19 @@ is shown next.
 Extended views inherit another view's UI components and layout. This lets you 
 add new functionality. The example Extended view here presents the same 
 components as the Default view, but adds new functionality to the screenlet: the 
-password strength is computed before sending the request. 
+password strength is computed before sending the request. Of course, you're not 
+restricted to password strength computations; you can implement other 
+functionality if you wish. 
 
 1. Create a new layout file called `login_password.xml`, based on that 
    screenlet's default layout. 
 
 2. Create the new view class, extending the parent view's class. The example 
-   here creates `LoginCheckPasswordView` using the default `LoginView` parent 
-   class. Next, override the `onClick` method and perform the password strength 
-   computation in it. If the password is strong enough, call `super`. Otherwise, 
-   show a message dialog to the user that tells them their password isn't strong 
-   enough.
+   here creates `LoginCheckPasswordView` using the default [`LoginView`](https://github.com/liferay/liferay-screens/blob/master/android/library/viewsets/src/main/java/com/liferay/mobile/screens/viewsets/defaultviews/auth/login/LoginView.java) 
+   parent class. Next, override the `onClick` method and perform the password 
+   strength computation in it. If the password is strong enough, call `super`. 
+   Otherwise, show a message dialog to the user that tells them their password 
+   isn't strong enough. 
 
         public class LoginCheckPasswordView extends LoginView {
 	
