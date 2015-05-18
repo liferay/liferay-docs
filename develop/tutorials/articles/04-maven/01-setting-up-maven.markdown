@@ -42,7 +42,7 @@ this for two reasons: accessing remote repositories is slower, and remote
 repositories are sometimes unavailable. Most Maven proxy servers can also host
 private repositories that hold only your private artifacts. If you're interested
 in running your repository behind a proxy, see
-<http://www.sonatype.com/books/nexus-book/reference/install-sect-proxy.html>. 
+<http://books.sonatype.com/nexus-book/reference/install.html>. 
 
 Now that you've been introduced to Maven repositories and proxy servers, you may
 want to consider using a repository management server to create and manage your
