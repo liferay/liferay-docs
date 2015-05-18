@@ -153,7 +153,8 @@ shown next.
 By using different UI components and input data, a Full view can present a 
 completely different layout. The example here presents a single `EditText` 
 component for the user name. For the password, [`Secure.ANDROID_ID`](http://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID) 
-is used. 
+is used. A complete example of this Full view is the `LoginFullScreenlet` used 
+in the [Demo App](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app). 
 
 1. Create a new layout called `login_full.xml`. This is where the new UI is 
    built. Since the example here creates a new view for `LoginScreenlet`, a good 
@@ -201,8 +202,6 @@ is used.
    use the layout created here you need to use `@layout/login_full` as the 
    `liferay:layoutId` attribute's value. 
 
-A complete example of implementing a full view is the `LoginFullScreenlet` used 
-in the [Demo App](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app). 
 Another good example of this approach is the `SignUpScreenlet` found in the 
 [Bank of Westeros](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
 app. It uses a custom screenlet class to add a new listener to the base 
