@@ -5,7 +5,6 @@
 - XCode 6.3.x
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
-- Mobile Widgets plugin installed
 
 ## Compatibility [](id=compatibility)
 

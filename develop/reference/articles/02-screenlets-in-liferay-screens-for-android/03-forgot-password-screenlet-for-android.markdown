@@ -2,9 +2,9 @@
 
 ## Requirements [](id=requirements)
 
-- Android SDK 4.0 (API Level 14) and above
+- Android SDK 4.0 (API Level 14) or above
 - Liferay Portal 6.2 CE or EE
-- Mobile Widgets plugin
+- [Liferay Screens Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal)
 
 ## Compatibility [](id=compatibility)
 
@@ -33,7 +33,9 @@ The available authentication methods are:
 ## Portal Configuration [](id=portal-configuration)
 
 To use `ForgotPasswordScreenlet`, the portal must be configured to allow users 
-to request new passwords. The next sections show you how to do this.
+to request new passwords. The below sections show you how to do this. 
+Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
+must be installed. 
 
 ### Authentication Method [](id=authentication-method)
 

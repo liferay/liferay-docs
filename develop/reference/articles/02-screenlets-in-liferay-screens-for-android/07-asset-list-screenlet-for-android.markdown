@@ -2,9 +2,9 @@
 
 ## Requirements [](id=requirements)
 
-- Android SDK 4.0 (API Level 14) and above
+- Android SDK 4.0 (API Level 14) or above
 - Liferay Portal 6.2 CE or EE
-- Mobile Widgets plugin
+- [Liferay Screens Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal)
 
 ## Compatibility [](id=compatibility)
 
@@ -66,6 +66,9 @@ Dynamic Data Lists (DDL) and Data Types should be configured properly in the
 portal. Refer to the [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
 and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists) 
 sections of the User Guide for more details.
+
+Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
+must be installed to allow remote calls without the `userId`.
 
 ## Required Attributes
 

@@ -2,9 +2,8 @@
 
 ## Requirements [](id=requirements)
 
-- Android SDK 4.0 (API Level 14) and above
+- Android SDK 4.0 (API Level 14) or above
 - Liferay Portal 6.2 CE or EE
-- Mobile Widgets plugin
 
 ## Compatibility [](id=compatibility)
 

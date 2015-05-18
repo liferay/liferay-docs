@@ -2,9 +2,9 @@
 
 ## Requirements [](id=requirements)
 
-- Android SDK 4.0 (API Level 14) and above
+- Android SDK 4.0 (API Level 14) or above
 - Liferay Portal 6.2 CE or EE
-- Mobile Widgets plugin
+- [Liferay Screens Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal)
 
 ## Compatibility [](id=compatibility)
 
@@ -37,7 +37,10 @@ The `DDLListScreenlet` enables the following features:
 DDLs and Data Types should be properly configured in the portal before using 
 `DDLListScreenlet`. For more details, see the Liferay User Guide sections 
 [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
-and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists).
+and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists). 
+
+Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
+must be installed to allow remote calls without the `userId`. 
 
 ## Required Attributes
 
