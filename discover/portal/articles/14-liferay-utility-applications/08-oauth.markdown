@@ -51,7 +51,7 @@ and *Consumer Secret*. The consumer key is a value used by the application to
 identify itself to the service provider. Likewise, the consumer secret is a
 value the application uses to establish ownership of the consumer key.
 
-![Figure 14.36: You'll need the application credentials to implement OAuth in your application.](../../images/oauth-app-credentials.png)
+![Figure 14.37: You'll need the application credentials to implement OAuth in your application.](../../images/oauth-app-credentials.png)
 
 Take note of your application credentials; you'll need them when configuring
 your application with OAuth. To learn how to configure an application with
@@ -80,7 +80,7 @@ between them.
 Once your OAuth application is placed on a portal page, you'll be asked to
 grant or deny the third-party service provider limited access to your portal.
 
-![Figure 14.37: You can grant or deny the service provider access to your.](../../images/oauth-authorize.png)
+![Figure 14.38: You can grant or deny the service provider access to your.](../../images/oauth-authorize.png)
 
 Congratulations! You've successfully installed your OAuth app and authorized
 access between a service provider and Liferay Portal!

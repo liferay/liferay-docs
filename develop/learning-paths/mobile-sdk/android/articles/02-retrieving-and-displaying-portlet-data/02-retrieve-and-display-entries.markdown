@@ -1,7 +1,8 @@
 # Retrieve and Display Entries
 
 If you completed the previous articles in this learning path, then you have an 
-Android app that retrieves and displays guestbooks from the [MVC learning path's](/learning-paths/-/knowledge_base/6-2/beginning-liferay-development) 
+Android app that retrieves and displays guestbooks from the
+[MVC learning path's](/learning-paths/-/knowledge_base/6-2/beginning-liferay-development) 
 Guestbook portlet. However, that's all your app does. Tapping a guestbook in its 
 navigation drawer doesn't show the guestbook's entries. In fact, tapping a 
 guestbook doesn't do anything besides close the drawer to show the action bar 
@@ -26,7 +27,7 @@ your app. Create a new class in your app's `model` package by right clicking it
 and selecting *New* &rarr; *Java Class*. Name the new class *EntryModel*. 
 Replace its contents with the following code: 
 
-    package com.liferay.docs.mydrawers.model;
+    package com.liferay.docs.liferayguestbook.model;
     
     import org.json.JSONException;
     import org.json.JSONObject;
@@ -36,89 +37,89 @@ Replace its contents with the following code:
     
     public class EntryModel implements Serializable {
     
-      private long _entryId;
-      private long _groupId;
-      private long _companyId;
-      private long _userId;
-      private String _userName;
-      private long _createDate;
-      private long _modifiedDate;
-      private String _name;
-      private String _email;
-      private String _message;
-      private long _guestbookId;
+        private long _entryId;
+        private long _groupId;
+        private long _companyId;
+        private long _userId;
+        private String _userName;
+        private long _createDate;
+        private long _modifiedDate;
+        private String _name;
+        private String _email;
+        private String _message;
+        private long _guestbookId;
 
-      public EntryModel(JSONObject json) throws JSONException {
+        public EntryModel(JSONObject json) throws JSONException {
 
-        _entryId = json.getLong("entryId");
-        _groupId = json.getLong("groupId");
-        _companyId = json.getLong("companyId");
-        _userId = json.getLong("userId");
-        _userName = json.getString("userName");
-        _createDate = json.getLong("createDate");
-        _modifiedDate = json.getLong("modifiedDate");
-        _name = json.getString("name");
-        _email = json.getString("email");
-        _message = json.getString("message");
-        _guestbookId = json.getLong("guestbookId");
-      }
-
-      @Override
-      public boolean equals(Object obj) {
-        if (!(obj instanceof GuestbookModel)) {
-            return false;
+            _entryId = json.getLong("entryId");
+            _groupId = json.getLong("groupId");
+            _companyId = json.getLong("companyId");
+            _userId = json.getLong("userId");
+            _userName = json.getString("userName");
+            _createDate = json.getLong("createDate");
+            _modifiedDate = json.getLong("modifiedDate");
+            _name = json.getString("name");
+            _email = json.getString("email");
+            _message = json.getString("message");
+            _guestbookId = json.getLong("guestbookId");
         }
 
-        EntryModel entry = (EntryModel)obj;
+        @Override
+        public boolean equals(Object obj) {
+            if (!(obj instanceof GuestbookModel)) {
+                return false;
+            }
 
-        return (_entryId == entry.getEntryId());
-      }
+            EntryModel entry = (EntryModel)obj;
 
-      public long getEntryId() {
-        return _entryId;
-      }
+            return (_entryId == entry.getEntryId());
+        }
 
-      public long getGroupId() {
-        return _groupId;
-      }
+        public long getEntryId() {
+            return _entryId;
+        }
 
-      public long getCompanyId() {
-        return _companyId;
-      }
+        public long getGroupId() {
+            return _groupId;
+        }
 
-      public long getUserId() {
-        return _userId;
-      }
+        public long getCompanyId() {
+            return _companyId;
+        }
 
-      public String getUserName() {
-        return _userName;
-      }
+        public long getUserId() {
+            return _userId;
+        }
 
-      public Date getCreateDate() {
-        Date createDate = new Date(_createDate);
-        return createDate;
-      }
+        public String getUserName() {
+            return _userName;
+        }
 
-      public Date getModifiedDate() {
-        Date modifiedDate = new Date(_modifiedDate);
-        return modifiedDate;
-      }
+        public Date getCreateDate() {
+            Date createDate = new Date(_createDate);
+            return createDate;
+        }
 
-      public String getName() {
-        return _name;
-      }
+        public Date getModifiedDate() {
+            Date modifiedDate = new Date(_modifiedDate);
+            return modifiedDate;
+        }
 
-      public String getEmail() {
-        return _email;
-      }
+        public String getName() {
+            return _name;
+        }
 
-      public String getMessage() {
-        return _message;
-      }
+        public String getEmail() {
+            return _email;
+        }
 
-      public long getGuestbookId() {
-        return _guestbookId;
-      }
+        public String getMessage() {
+            return _message;
+        }
+
+        public long getGuestbookId() {
+            return _guestbookId;
+        }
     }
 
 Now that your `EntryModel` class exists, you can create the callback class used 
@@ -130,8 +131,8 @@ Recall from the article on retrieving and displaying guestbooks that Android
 doesn't allow network requests from its main UI thread. To retrieve a 
 guestbook's entries, you need to make the request from another thread. This is 
 handled by a callback class that extends the Mobile SDK's 
-`GenericAsyncTaskCallback`. Create a new class called `GetEntriesCallback` in 
-your app's `callback` package. Replace its contents with the following code: 
+`GenericAsyncTaskCallback` class. Create a new class called `GetEntriesCallback`
+in your app's `callback` package. Replace its contents with the following code: 
 
     package com.liferay.docs.liferayguestbook.callback;
     
@@ -149,38 +150,38 @@ your app's `callback` package. Replace its contents with the following code:
     
     public class GetEntriesCallback extends GenericAsyncTaskCallback<List<EntryModel>> {
     
-      private MainActivity.EntriesFragment _fragment;
-    
-      public GetEntriesCallback(MainActivity.EntriesFragment fragment) {
-        _fragment = fragment;
-      }
-    
-      @Override
-      public void onFailure(Exception e) {
-        String message = "Couldn't get entries " + e.getMessage();
-    
-        Toast.makeText(_fragment.getActivity(), message, Toast.LENGTH_LONG).show();
-      }
-    
-      @Override
-      public void onSuccess(List<EntryModel> entries) {
-        _fragment.reloadEntries(entries);
-      }
-    
-      @Override
-      public List<EntryModel> transform(Object obj) throws Exception {
-        List<EntryModel> entries = new ArrayList<EntryModel>();
-    
-        JSONArray jsonArray = (JSONArray)obj;
-    
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject json = jsonArray.getJSONObject(i);
-    
-            entries.add(new EntryModel(json));
+        private MainActivity.EntriesFragment _fragment;
+
+        public GetEntriesCallback(MainActivity.EntriesFragment fragment) {
+            _fragment = fragment;
         }
-    
-        return entries;
-      }
+
+        @Override
+        public void onFailure(Exception e) {
+            String message = "Couldn't get entries " + e.getMessage();
+
+            Toast.makeText(_fragment.getActivity(), message, Toast.LENGTH_LONG).show();
+        }
+
+        @Override
+        public void onSuccess(List<EntryModel> entries) {
+            _fragment.reloadEntries(entries);
+        }
+
+        @Override
+        public List<EntryModel> transform(Object obj) throws Exception {
+            List<EntryModel> entries = new ArrayList<EntryModel>();
+
+            JSONArray jsonArray = (JSONArray)obj;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject json = jsonArray.getJSONObject(i);
+
+                entries.add(new EntryModel(json));
+            }
+
+            return entries;
+        }
     }
 
 For now, don't worry about the errors for `MainActivity.EntriesFragment` and 
@@ -190,17 +191,16 @@ can't display them. This is addressed in the following section.
 
 ## Displaying Entries
 
-To display the entries in the UI, you need to create variables for holding the 
-entries and the adapter. First though, you need to rename the fragment you'll 
-put them in. In `MainActivity`, scroll down until you find the nested 
-`PlaceholderFragment` class. Android Studio created this class when you created 
-the activity from the Navigation Drawer Activity template. You're expected to 
-use it to display the drawer selection (in this case, guestbook entries). 
-However, `PlaceholderFragment` isn't a very meaningful name. Right click 
-`PlaceholderFragment` in the class declaration and select 
-*Refactor* &rarr; *Rename* in the context menu. Type `EntriesFragment` and then 
-hit *Enter*. Note that the errors for `EntryFragment` in your 
-`GetEntriesCallback` are now gone.
+To display the entries in the UI, you need to create variables for holding the
+entries and the adapter. First though, you need to rename the fragment into
+which you'll put them. In `MainActivity`, scroll down until you find the nested
+`PlaceholderFragment` class. Android Studio created this class when you created
+the activity from the Navigation Drawer Activity template. You're expected to
+use it to display the drawer selection (in this case, guestbook entries).
+However, `PlaceholderFragment` isn't a very meaningful name. Right click
+`PlaceholderFragment` in the class declaration and select *Refactor* &rarr;
+*Rename* in the context menu. Type `EntriesFragment` and then hit *Enter*. Note
+that the errors for `EntryFragment` in your `GetEntriesCallback` are now gone.
 
 Now you need to change the class `EntriesFragment` extends from `Fragment` to 
 `ListFragment`. Once you make this change, the class declaration should look 
@@ -289,10 +289,10 @@ with the updated set retrieved from the portlet. It then needs to notify the
 adapter of that change. Place this method in the `EntriesFragment` class: 
 
     public void reloadEntries(List<EntryModel> entries) {
-      _entries.clear();
-      _entries.addAll(entries);
-    
-      _adapter.notifyDataSetChanged();
+        _entries.clear();
+        _entries.addAll(entries);
+
+        _adapter.notifyDataSetChanged();
     }
 
 Next, you need a method for making the call to retrieve the entries from the 
@@ -301,21 +301,21 @@ You'll retrieve the entries similarly with the `getEntries` method. Add it as
 follows to the `EntriesFragment` class: 
 
     protected void getEntries(long guestbookId) {
-    
-      Session session = new SessionImpl("http://10.0.2.2:8080", 
-        new BasicAuthentication("joebloggs@liferay.com", "test"));
-      GetEntriesCallback callback = new GetEntriesCallback(this);
-      session.setCallback(callback);
-      EntryService service = new EntryService(session);
-    
-      try {
-        service.getEntries(SITE_ID, guestbookId);
-      }
-      catch (Exception e) {
-        String message = "Couldn't get entries " + e.getMessage();
-    
-        Toast.makeText(this.getActivity(), message, Toast.LENGTH_LONG).show();
-      }
+
+        Session session = new SessionImpl("http://10.0.2.2:8080", 
+            new BasicAuthentication("joebloggs@liferay.com", "test"));
+        GetEntriesCallback callback = new GetEntriesCallback(this);
+        session.setCallback(callback);
+        EntryService service = new EntryService(session);
+
+        try {
+            service.getEntries(SITE_ID, guestbookId);
+        }
+        catch (Exception e) {
+            String message = "Couldn't get entries " + e.getMessage();
+
+            Toast.makeText(this.getActivity(), message, Toast.LENGTH_LONG).show();
+        }
     }
 
 As with the `getGuestbooks` method, `getEntries` creates a session, sets the 
@@ -332,7 +332,7 @@ this is done from the `MainActivity` class. First, get a reference to
 There are two situations in which your app needs to call `getEntries`: on app 
 startup, and when a guestbook is manually selected from the drawer. On startup, 
 your app defaults to show the first guestbook's entries. Therefore, `getEntries` 
-needs to be called with the first guestbook retrieved from the portlet. This 
+needs to be called for the first guestbook retrieved from the portlet. This 
 needs to be done in the `reloadGuestbooks` method. This method is also where you 
 should set the action bar's title to this guestbook's name. Add the following 
 code to the end of `reloadGuestbooks`: 
@@ -358,13 +358,13 @@ contents of `onNavigationDrawerItemSelected` with the following code:
     fragmentManager.beginTransaction().replace(R.id.container, mEntriesFragment).commit();
     
     if(_guestbooks.size() > 0) {
-      GuestbookModel guestbook = _guestbooks.get(position);
-      mEntriesFragment.getEntries(guestbook.getGuestbookId());
+        GuestbookModel guestbook = _guestbooks.get(position);
+        mEntriesFragment.getEntries(guestbook.getGuestbookId());
     }
 
 This code first uses a fragment transaction to replace the existing 
 `EntriesFragment` instance with a new one. For more detailed information on 
-managing fragments, see [that section of Android's fragment documentation](http://developer.android.com/guide/components/fragments.html#Managing). 
+managing fragments, see [this section of Android's fragment documentation](http://developer.android.com/guide/components/fragments.html#Managing). 
 The new `EntriesFragment` instance is then used with `getEntries` to retrieve 
 the selected guestbook's entries, provided there are guestbooks in the list. 
 
@@ -374,9 +374,9 @@ selected in the drawer. This is done in the `onSectionAttached` method. Replace
 its contents with the following code: 
 
     if (_guestbooks.size() > 0) {
-      mTitle = _guestbooks.get(number - 1).getGuestbookName();
+        mTitle = _guestbooks.get(number - 1).getGuestbookName();
     } else {
-      mTitle = "";
+        mTitle = "";
     }
 
 This code sets the action bar's title to the selected guestbook's name, provided 

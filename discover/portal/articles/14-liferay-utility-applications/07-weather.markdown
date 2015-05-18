@@ -8,7 +8,7 @@ provides a search bar that allows users to find information about locations that
 aren't listed by the portlet. Searching via the search bar forwards the user to
 [Open Weather Map](http://openweathermap.org/), where the search is executed.
 
-![Figure 14.35: Liferay's Weather portlet displays basic weather-related information (temperature, conditions) for multiple configurable locations.](../../images/weather-portlet.png)
+![Figure 14.36: Liferay's Weather portlet displays basic weather-related information (temperature, conditions) for multiple configurable locations.](../../images/weather-portlet.png)
 
 To configure the displayed locations, open the Weather portlet's configuration
 window. In the first text area, enter the names of the cities about which you'd

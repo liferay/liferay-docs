@@ -21,7 +21,7 @@ page. This page also has links to the JDK installation instructions.
 ## Installing and Configuring a Local Liferay Instance
 
 Next, you need to install and configure a Local Liferay instance. You can 
-download a Tomcat server bundle with Liferay preinstalled from [here](https://www.liferay.com/downloads/liferay-portal/available-releases). 
+download a Tomcat server bundled with Liferay from [here](https://www.liferay.com/downloads/liferay-portal/available-releases). 
 Simply unzip the file to the location of your choice on your machine. We 
 recommend creating a `bundles` directory and unzipping it there. The bundle's 
 root directory is referred to as *Liferay Home* and is named according to the 
@@ -49,20 +49,20 @@ another window automatically.
 
 After a minute or two, Liferay finishes starting up and should automatically 
 take you to its initial setup page at [http://localhost:8080](http://localhost:8080). 
-On this page you need to provide some basic information about how you want your 
-portal to operate. Give your portal a name, select the default language, and 
-then uncheck the *Add Sample Data* box. Then enter the first name, last name, 
-and email address of the administrative user (for the purposes of this learning 
-path, these don't have to be real). If you want to connect Liferay to a separate 
-database such as MySQL, PostgreSQL, or similar, you can also configure it here. 
-If you want to start quickly, the embedded database is fine for your local 
-machine (but it’s not optimized for production, so don’t use it there). Click 
-*Finish Configuration* when you're done. When the success message displays, 
-click *Go to My Portal* and accept the license agreement. Then set a password 
-and a password reminder query for your administrative user. You're then taken to 
-the default site of your portal. 
+On this page, you need to provide some basic information about how to set up
+your portal. Enter a name for your portal, select the default language, and then
+uncheck the *Add Sample Data* box. Then enter the first name, last name, and
+email address of the default administrative user. (For the purposes of this
+learning path, these don't have to be real.) If you want to connect Liferay to a
+separate database such as MySQL or PostgreSQL, you can configure the database
+connection here. If you want to start quickly, the embedded database is fine for
+your local machine. (The embedded database is not optimized for production, so
+don't use it there.) Click *Finish Configuration* when you're done. When the
+success message appears, click on *Go to My Portal* and accept the license
+agreement. Then set a password and a password reminder query for your
+administrative user. You're then taken to the default site of your portal. 
 
-Great! Now there's just one more thing left to do: deploy the Guestbook portlet 
+Great! Now there's just one more thing left to do: deploy the Guestbook portlet
 to the Liferay installation you just set up. 
 
 ## Deploying the Guestbook Portlet

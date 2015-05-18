@@ -1,18 +1,18 @@
 # Retrieve and Display Guestbooks 
 
-The first order of business is to retrieve the guestbooks from the portlet and 
-display them in the app's navigation drawer. Recall that the app you created in 
-the first series of articles in this learning path contains a navigation drawer 
-that slides out from the left side of the screen. Currently, it contains simple 
+Your first order of business is to retrieve the guestbooks from the portlet and
+display them in the app's navigation drawer. Recall that the app you created in
+the first series of articles in this learning path contains a navigation drawer
+that slides out from the left side of the screen. Currently, it contains simple
 placeholders that are in dire need of replacement. 
 
 ![Figure 1: The placeholders currently in the navigation drawer.](../../images/android-guestbook-first-run.png)
 
-In this article you'll use the Liferay Mobile SDK to call the Guestbook 
-portlet's remote services and replace the placeholders with guestbooks. This is 
-conceptually simple, but it's a bit more complex in practice. Not to worry! This 
-article guides you through each step in the process. First, you'll do some 
-simple refactoring in your project. 
+In this article, you'll use the Liferay Mobile SDK to call the Guestbook
+portlet's remote services and replace the placeholders with guestbooks. This is
+conceptually simple, but it's a bit more complex in practice. Not to worry! This
+article guides you through each step in the process. First, you'll do some
+simple refactoring of your project. 
 
 ## Refactoring
 
@@ -21,15 +21,15 @@ project's activity and fragment classes into a new `activity` package. While
 this isn't required for the app to function, it makes it simpler to find and 
 work with these classes as you add new ones. In Android Studio's project view: 
 
-1. Right click the package `com.liferay.docs.liferayguestbook` and select 
-   *New* &rarr; *Package* in the context menu. In the dialog that appears, type 
+1. Right-click on the package `com.liferay.docs.liferayguestbook` and select
+   *New* &rarr; *Package* in the context menu. In the dialog that appears, type
    *activity* and click *OK*. 
    
-2. Right click the `MainActivity` class and select *Refactor* &rarr; *Move* in 
-   the context menu. In the *Move* dialog that appears, make sure the radio 
-   button for *To package* is selected, and then click the button to the right 
-   that contains the ellipsis. Another dialog then appears that lets you select 
-   the new package. In this dialog, expand *liferayguestbook*, click *activity*, 
+2. Right-click on the `MainActivity` class and select *Refactor* &rarr; *Move*
+   in the context menu. In the *Move* dialog that appears, make sure the radio
+   button for *To package* is selected, and then click the button to the right
+   that contains the ellipsis. Another dialog then appears that lets you select
+   the new package. In this dialog, expand *liferayguestbook*, click *activity*,
    and then click *OK*. Back in the Move dialog, click *Refactor*.
    
     ![Figure 2: The *Refactor* &rarr; *Move* dialog in Android Studio. Clicking the button highlighted by the red box lets you choose the file's new package.](../../images/android-studio-refactor.png)
@@ -48,9 +48,9 @@ functionality to your app. Now it's time to get some guestbooks!
 To efficiently work with guestbooks in your app, you need a way of encapsulating 
 them. This lets you refer to common guestbook objects throughout your code. 
 First, create a new package called *model* inside the 
-`com.liferay.docs.liferayguestbook` package. Right click the new `model` package 
-and select *New* &rarr; *Java Class* in the context menu. In the dialog that 
-appears, name the class *GuestbookModel* and click *OK*. The new class then 
+`com.liferay.docs.liferayguestbook` package. Right-click on the new `model`
+package and select *New* &rarr; *Java Class* in the context menu. In the dialog
+that appears, name the class *GuestbookModel* and click *OK*. The new class then
 opens in Android Studio. Replace its contents with the following code:
 
     package com.liferay.docs.liferayguestbook.model;
@@ -59,79 +59,79 @@ opens in Android Studio. Replace its contents with the following code:
     import org.json.JSONObject;
 
     import java.io.Serializable;
-
+    import java.util.Date;
 
     public class GuestbookModel implements Serializable {
 
-      private long _guestbookId;
-      private long _groupId;
-      private long _companyId;
-      private long _userId;
-      private String _userName;
-      private long _createDate;
-      private long _modifiedDate;
-      private String _name;
+        private long _guestbookId;
+        private long _groupId;
+        private long _companyId;
+        private long _userId;
+        private String _userName;
+        private long _createDate;
+        private long _modifiedDate;
+        private String _name;
 
-      public GuestbookModel(JSONObject json) throws JSONException {
-        _guestbookId = json.getLong("guestbookId");
-        _groupId = json.getLong("groupId");
-        _companyId = json.getLong("companyId");
-        _userId = json.getLong("userId");
-        _userName = json.getString("userName");
-        _createDate = json.getLong("createDate");
-        _modifiedDate = json.getLong("modifiedDate");
-        _name = json.getString("name");
-      }
-
-      @Override
-      public boolean equals(Object obj) {
-        if (!(obj instanceof GuestbookModel)) {
-            return false;
+        public GuestbookModel(JSONObject json) throws JSONException {
+            _guestbookId = json.getLong("guestbookId");
+            _groupId = json.getLong("groupId");
+            _companyId = json.getLong("companyId");
+            _userId = json.getLong("userId");
+            _userName = json.getString("userName");
+            _createDate = json.getLong("createDate");
+            _modifiedDate = json.getLong("modifiedDate");
+            _name = json.getString("name");
         }
 
-        GuestbookModel guestbook = (GuestbookModel)obj;
+        @Override
+        public boolean equals(Object obj) {
+            if (!(obj instanceof GuestbookModel)) {
+                return false;
+            }
 
-        return (_guestbookId == guestbook.getGuestbookId());
-      }
-      
-      @Override
-      public String toString() {
-        return _name;
-      }
+            GuestbookModel guestbook = (GuestbookModel)obj;
 
-      public long getGuestbookId() {
-        return _guestbookId;
-      }
-      
-      public long getGroupId() {
-        return _groupId;
-      }
+            return (_guestbookId == guestbook.getGuestbookId());
+        }
+          
+        @Override
+        public String toString() {
+            return _name;
+        }
 
-      public long getCompanyId() {
-        return _companyId;
-      }
+        public long getGuestbookId() {
+            return _guestbookId;
+        }
 
-      public long getUserId() {
-        return _userId;
-      }
+        public long getGroupId() {
+            return _groupId;
+        }
 
-      public String getUserName() {
-        return _userName;
-      }
+        public long getCompanyId() {
+            return _companyId;
+        }
 
-      public Date getCreateDate() {
-        Date createDate = new Date(_createDate);
-        return createDate;
-      }
+        public long getUserId() {
+            return _userId;
+        }
 
-      public Date getModifiedDate() {
-        Date modifiedDate = new Date(_modifiedDate);
-        return modifiedDate;
-      }
+        public String getUserName() {
+            return _userName;
+        }
 
-      public String getGuestbookName() {
-        return _name;
-      }
+        public Date getCreateDate() {
+            Date createDate = new Date(_createDate);
+            return createDate;
+        }
+
+        public Date getModifiedDate() {
+            Date modifiedDate = new Date(_modifiedDate);
+            return modifiedDate;
+        }
+
+        public String getGuestbookName() {
+            return _name;
+        }
     }
 
 This class creates `GuestbookModel` objects that effectively mirror `Guestbook` 
@@ -139,7 +139,7 @@ objects in the portlet. It does so by retrieving `Guestbook` parameters from
 the `JSONObject` returned by the Mobile SDK's remote service calls. This is done 
 in the constructor by the `getLong` and `getString` methods. To see how the 
 `Guestbook` parameters are defined in the portlet, see the 
-[Liferay MVC learning path article on Service Builder](/learning-paths/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
+[Liferay MVC learning path article on Service Builder](/develop/learning-paths/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
 For now, the only parameters you really need in this class are `guestbookId` and 
 `name`. However, you'll need the rest later in this learning path. It's simpler 
 to add support for all of them now.
@@ -159,10 +159,11 @@ portlet.
 
 Since Android doesn't allow network requests from its main UI thread, you have 
 to make them from another thread by creating a callback class that extends the 
-Mobile SDK's `GenericAsyncTaskCallback` class. See [Android's documentation](http://developer.android.com/guide/components/processes-and-threads.html#Threads) 
+Mobile SDK's `GenericAsyncTaskCallback` class. See
+[Android's documentation](http://developer.android.com/guide/components/processes-and-threads.html#Threads) 
 for more information on threading. At this point, you might be saying, "Oh no, 
 threading in mobile apps? That sounds complicated!" Fear not! The Mobile SDK's 
-`GenericAsyncTaskCallback` class obscures much of the added complexity. 
+`GenericAsyncTaskCallback` class hides much of the added complexity. 
 
 To create the callback class for retrieving guestbooks, first create a new 
 package called *callback* in `com.liferay.docs.liferayguestbook`. Then create a 
@@ -185,38 +186,38 @@ code in the class with the following:
 
     public class GetGuestbooksCallback extends GenericAsyncTaskCallback<List<GuestbookModel>> {
 
-      private MainActivity _activity;
+        private MainActivity _activity;
 
-      public GetGuestbooksCallback(MainActivity activity) {
-        _activity = activity;
-      }
-
-      @Override
-      public void onFailure(Exception e) {
-        String message = "Couldn't get guestbooks " + e.getMessage();
-
-        Toast.makeText(_activity, message, Toast.LENGTH_LONG).show();
-      }
-
-      @Override
-      public void onSuccess(List<GuestbookModel> guestbooks) {
-        _activity.reloadGuestbooks(guestbooks);
-      }
-
-      @Override
-      public List<GuestbookModel> transform(Object obj) throws Exception {
-        List<GuestbookModel> guestbooks = new ArrayList<GuestbookModel>();
-
-        JSONArray jsonArray = (JSONArray)obj;
-
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject json = jsonArray.getJSONObject(i);
-
-            guestbooks.add(new GuestbookModel(json));
+        public GetGuestbooksCallback(MainActivity activity) {
+            _activity = activity;
         }
 
-        return guestbooks;
-      }
+        @Override
+        public void onFailure(Exception e) {
+            String message = "Couldn't get guestbooks " + e.getMessage();
+
+            Toast.makeText(_activity, message, Toast.LENGTH_LONG).show();
+        }
+
+        @Override
+        public void onSuccess(List<GuestbookModel> guestbooks) {
+            _activity.reloadGuestbooks(guestbooks);
+        }
+
+        @Override
+        public List<GuestbookModel> transform(Object obj) throws Exception {
+            List<GuestbookModel> guestbooks = new ArrayList<GuestbookModel>();
+
+            JSONArray jsonArray = (JSONArray)obj;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject json = jsonArray.getJSONObject(i);
+
+                guestbooks.add(new GuestbookModel(json));
+            }
+
+            return guestbooks;
+        }
 
     }
 
@@ -230,11 +231,11 @@ is called when the it succeeds. In this case, `onFailure` displays a toast
 message with the error. The `onSuccess` method calls the main activity's 
 `reloadGuestbooks` method. Don't worry about the error Android Studio marks for 
 `reloadGuestbooks`. This method doesn't exist yet, but you'll create it in a 
-moment. Last but certainly not least is the overridden `transform` method. This 
-method puts all the guestbooks it receives from the portlet into a `List` of 
-`GuestbookModel` objects. It's this `List` that's fed to the `onSuccess` method. 
-You're probably starting to see that `reloadGuestbooks` is an important method. 
-It receives guestbooks for processing in the app's main UI thread. Now it's time 
+moment. Last but not least is the overridden `transform` method. This method
+puts all the guestbooks it receives from the portlet into a `List` of
+`GuestbookModel` objects. It's this `List` that's fed to the `onSuccess` method.
+You're probably starting to see that `reloadGuestbooks` is an important method.
+It receives guestbooks for processing in the app's main UI thread. Now it's time
 to write that processing code! 
 
 ## Displaying Guestbooks in the Drawer
@@ -288,19 +289,20 @@ generated this method for you when you created the project:
         return mDrawerListView;
     }
 
-Before you change this method to display the list of guestbooks instead of the 
-hardcoded `"Section *"` strings, you should understand how it works. The 
-`onCreateView` method is part of the [fragment activity lifecycle](http://developer.android.com/guide/components/fragments.html#Creating). 
-Specifically, `onCreateView` creates the fragment's UI. Here, it first *inflates* 
-the `ListView` by calling `inflater.inflate` on the fragment's layout file 
-`fragment_navigation_drawer.xml`. This file is represented by 
-`R.layout.fragment_navigation_drawer`. You can think of this representation as 
-an address the app uses to find the layout file. That's all fine and well, but 
-why do `xml` files need air pumped into them? Fortunately, we're not talking 
-about that kind of inflation; Liferay is fresh out of air pumps and pressure 
-gauges. When an Android layout `xml` file is inflated, its `xml` is converted 
-into Java code that the system uses to draw the UI. In this case, 
-`fragment_navigation_drawer.xml` only contains a single `ListView`, so it can be 
+Before you change this method to display the list of guestbooks instead of the
+hardcoded `"Section *"` strings, read the existing code to understand how it
+works. The `onCreateView` method is part of the
+[fragment activity lifecycle](http://developer.android.com/guide/components/fragments.html#Creating).
+Specifically, `onCreateView` creates the fragment's UI. Here, it first
+*inflates* the `ListView` by calling `inflater.inflate` on the fragment's layout
+file `fragment_navigation_drawer.xml`. This file is represented by
+`R.layout.fragment_navigation_drawer`. You can think of this representation as
+an address the app uses to find the layout file. That's all fine and well, but
+why do XML files need air pumped into them? Fortunately, we're not talking about
+that kind of inflation; Liferay is fresh out of air pumps and pressure gauges.
+When an Android layout XML file is inflated, its XML is converted into Java code
+that the system uses to draw the UI. In this case,
+`fragment_navigation_drawer.xml` only contains a single `ListView`, so it can be
 cast to a `ListView` object following inflation. 
 
 After this, a click listener for the list's items is created and set to the 
@@ -353,9 +355,9 @@ Next, replace `onCreateView` with the following code:
         return mDrawerListView;
     }
 
-This uses the `_guestbook` variable you added in `MainActivity` to create an 
-`ArrayAdapter` of `GuestbookModel` objects. This adapter is then set to the 
-`ListView` in the drawer. The rest of `onCreateView` remains unchanged.
+This method uses the `_guestbooks` variable that you added in `MainActivity` to
+create an `ArrayAdapter` of `GuestbookModel` objects. This adapter is then set
+to the `ListView` in the drawer. The rest of `onCreateView` remains unchanged.
 
 Now you need to add the `reloadGuestbooks` method that is called in the 
 `onSuccess` method of the `GetGuestbooksCallback` class. Add it in `MainActivity` 
@@ -476,11 +478,11 @@ In short, the Android manifest file (`AndroidManifest.xml`) is where your app's
 components are registered so they're recognized by the Android system. App 
 permissions are also placed in the manifest. You can find more information in 
 Android's [documentation on the manifest](http://developer.android.com/guide/topics/manifest/manifest-intro.html). 
-In most cases, Android Studio manages the manifest for you. For example, your 
-app and its activity are already present in the manifest, even though you never 
-put them there manually. However, defining your app's permissions is one case 
-where you need to manually edit the manifest. Now that your app has network 
-access, it's time to run it! 
+In most cases, Android Studio manages the manifest for you. For example,
+declarations for your app and its activity already appear in the manifest, even
+though you never put them there manually. However, defining your app's
+permissions is one case where you need to manually edit the manifest. Now that
+your app has network access, it's time to run it! 
 
 ## Running Your App
 
