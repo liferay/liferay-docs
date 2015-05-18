@@ -126,12 +126,12 @@ artifacts.
 
 +$$$
 
-**Note:** You only need to configure a
-repository server if you're installing downloaded Liferay CE/EE artifacts from
-a zip file or if you want to share artifacts (e.g., Liferay artifacts and/or
-your plugins) with others. If you're automatically installing Liferay CE
-artifacts from the Central Repository and aren't interested in sharing
-artifacts, you don't need a repository server specified in your Maven settings.
+**Note:** You only need to configure a repository server if you're installing
+downloaded Liferay CE/EE artifacts from a zip file or if you want to share
+artifacts (e.g., Liferay artifacts and/or your plugins) with others. If you're
+automatically installing Liferay CE artifacts from the Central Repository and
+aren't interested in sharing artifacts, you don't need a repository server
+specified in your Maven settings.
 
 However, configuring a mirror in your Maven settings is recommended as a best
 practice. Get more information on mirrors and their purpose in Maven's guide on
@@ -169,10 +169,9 @@ server, do the following:
 
 +$$$
 
-**Note:** The username `admin` and
-password `admin123` are the credentials of the default Nexus OSS administrator
-account. If you changed these credentials for your Nexus server, make sure to
-update `settings.xml` with these changes.
+**Note:** The username `admin` and password `admin123` are the credentials of
+the default Nexus OSS administrator account. If you changed these credentials
+for your Nexus server, make sure to update `settings.xml` with these changes.
 
 $$$
 
@@ -183,5 +182,6 @@ create!
 ## Related Topics
 
 [Developing with the Plugins SDK](develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+
 [Developing Plugins with Liferay IDE](develop/tutorials/-/knowledge_base/6-2/liferay-ide)
 
