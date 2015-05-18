@@ -42,7 +42,7 @@ this for two reasons: accessing remote repositories is slower, and remote
 repositories are sometimes unavailable. Most Maven proxy servers can also host
 private repositories that hold only your private artifacts. If you're interested
 in running your repository behind a proxy, see
-<http://books.sonatype.com/nexus-book/reference/install.html>. 
+<http://books.sonatype.com/nexus-book/reference/install-sect-proxy.html>. 
 
 Now that you've been introduced to Maven repositories and proxy servers, you may
 want to consider using a repository management server to create and manage your
@@ -61,7 +61,7 @@ Nexus as a repository management server, feel free to skip this section.
 
 To create a Maven repository using Nexus, first download Nexus from
 <http://www.sonatype.org/nexus/> and follow instructions at
-[http://www.sonatype.com/books/nexus-book/reference/\_installing\_nexus.html](http://www.sonatype.com/books/nexus-book/reference/_installing_nexus.html)
+[http://books.sonatype.com/nexus-book/reference/install.html](http://books.sonatype.com/nexus-book/reference/install.html)
 to install and start it. If you're using Windows, you must start Nexus from a
 command prompt with administrator privileges.
 
@@ -77,7 +77,7 @@ To create a repository using Nexus, follow these steps:
 
     **Note:** To learn more about each
     type of Nexus repository, read Sonatype's *Managing Repositories* at
-    <http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html>.
+    <http://books.sonatype.com/nexus-book/reference/confignx-sect-manage-repo.html>.
 
 3.  Enter repository properties appropriate for the type of artifacts it will
     hold. If you're installing release version artifacts into the repository,
