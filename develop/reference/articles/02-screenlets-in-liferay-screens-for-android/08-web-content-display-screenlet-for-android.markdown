@@ -42,6 +42,7 @@ section of the Liferay User Guide.
 | `layoutId` | `@layout` | The layout used to show the view. |
 | `groupId` | `number` | The ID of the site (group) where the asset is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
 | `articleId` | `string` | The ID of the web content to display. You can find this ID by clicking *Edit* on the web content in the portal. |
+| `javascriptEnabled` | `boolean` | Enables support for JavaScript. Disabled by default. |
 
 ## Methods [](id=methods)
 
