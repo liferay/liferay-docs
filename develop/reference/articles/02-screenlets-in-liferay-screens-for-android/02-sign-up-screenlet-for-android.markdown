@@ -48,7 +48,7 @@ recommended that the portal administrator create a specific user with minimal
 permissions. To use `SignUpScreenlet`, you need to use that user in your layout. 
 It's recommended that you add that user's credentials to `server_context.xml`. 
 
-## Compulsory Attributes
+## Required Attributes
 
 - `layoutId`
 - `anonymousApiUserName`

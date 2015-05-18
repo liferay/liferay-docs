@@ -67,7 +67,7 @@ portal. Refer to the [Defining Data Types](/portal/-/knowledge_base/6-2/building
 and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists) 
 sections of the User Guide for more details.
 
-## Compulsory Attributes
+## Required Attributes
 
 - `layoutId`
 - `classNameId`

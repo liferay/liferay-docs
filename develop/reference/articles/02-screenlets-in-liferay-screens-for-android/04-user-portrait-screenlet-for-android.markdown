@@ -55,7 +55,7 @@ implementation:
         }
     }
 
-## Compulsory Attributes
+## Required Attributes
 
 - `layoutId`
 

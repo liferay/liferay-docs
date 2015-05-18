@@ -64,7 +64,7 @@ authentication is needed to call the API. To allow this operation, it's
 recommended that the portal administrator create a specific user with minimal 
 permissions. 
 
-## Compulsory Attributes
+## Required Attributes
 
 - `layoutId`
 - `anonymousApiUserName`

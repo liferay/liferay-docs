@@ -162,19 +162,24 @@ is used.
 
         <?xml version="1.0" encoding="utf-8"?>
         <com.your.package.LoginFullView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
         
-            <EditText
+        <EditText
                 android:id="@+id/login"
-                android:hint="@string/email_address"
-                android:inputType="textEmailAddress" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"/>
         
-            <Button
+        <Button
                 android:id="@+id/login_button"
-                android:text="@string/sign_in" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign In"/>
         
         </com.your.package.LoginFullView>
 
@@ -196,7 +201,9 @@ is used.
    use the layout created here you need to use `@layout/login_full` as the 
    `liferay:layoutId` attribute's value. 
 
-A good example of this approach is the `SignUpScreenlet` found in the 
+A complete example of implementing a full view is the `LoginFullScreenlet` used 
+in the [Demo App](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app). 
+Another good example of this approach is the `SignUpScreenlet` found in the 
 [Bank of Westeros](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
 app. It uses a custom screenlet class to add a new listener to the base 
 `SignUpScreenlet`, and a new user action (this can be used to call a custom 
