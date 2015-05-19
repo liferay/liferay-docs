@@ -54,13 +54,14 @@ steps to do this for the bookmarks screenlet:
             void setTitle(String value);
         }
 
-2. Build your UI using a layout XML file. Put in two `EditText` tags: one for 
-   the URL and another for the title. Also, add a `Button` tag to let the user 
-   save the bookmark. Note that the root element is a custom class. You'll 
-   create this class in the next section.
+2. Build your UI using a layout XML file. Here, this file is called 
+   `bookmark_default.xml`. Put in two `EditText` tags: one for the URL and 
+   another for the title. Also, add a `Button` tag to let the user save the 
+   bookmark. Note that the root element is a custom class. You'll create this 
+   class in the next section.
 
         <?xml version="1.0" encoding="utf-8"?>
-	<com.your.package.AddBookmarkDefaultView 
+        <com.your.package.AddBookmarkView 
             xmlns:android="http://schemas.android.com/apk/res/android"
             style="@style/default_screenlet">
         
@@ -85,10 +86,10 @@ steps to do this for the bookmarks screenlet:
                 android:layout_height="wrap_content"
                 android:text="Add Bookmark"/>
         
-        </com.your.package.AddBookmarkDefaultView>
+        </com.your.package.AddBookmarkView>
 
-At this point, the graphical layout viewer in Android Studio should look like 
-this:
+At this point, the graphical layout viewer in Android Studio should look similar 
+to this: 
 
 ![Figure 1: Android Studio's graphical layout viewer while creating your own screenlet.](../../images/screens-android-add-bookmark-view.png)
 
@@ -294,7 +295,9 @@ methods. First up is the `createScreenletView` method. In this method, you get
 attributes from the XML definition and then either store them as class 
 attributes or use them otherwise. Next, inflate the view using the layout 
 specified in the `liferay:layoutId` attribute. You can even use the read 
-attributes to configure the initial state of the view. 
+attributes to configure the initial state of the view. Don't worry about 
+`R.styleable` showing as errors; you'll take care of this in the next section. 
+Go ahead and add the `createScreenletView` method now: 
 
     @Override
     protected View createScreenletView(Context context, AttributeSet attributes) {
@@ -390,6 +393,31 @@ To handle the button press, you also need to make `AddBookmarkView` implement
 `OnClickListener`.
 
 Celebrate! You're done! Now you can use the screenlet as you would any other. 
+Just remember to use the `xml` file you built your screenlet's UI in as the 
+`liferay:layoutId` attribute's value (`bookmark_default` in this example). An 
+example of the screenlet inserted in an Android activity is shown here: 
+
+    <com.your.package.AddBookmarkScreenlet
+        android:id="@+id/addbookmarks_screenlet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        liferay:folderId="@integer/bookmark_folder"
+        liferay:layoutId="@layout/bookmark_default"
+    />
+
+Another thing to keep in mind is additional settings in your app's 
+`server_context.xml`, if your screenlet requires them. The `AddBookmarkScreenlet` 
+in this example does in fact require such a setting: a folder's `folderId` in a 
+Bookmarks portlet. This is the folder the `AddBookmarkScreenlet` saves bookmarks 
+to. You can give the `folderId` property a name when you insert the screenlet in 
+a fragment or activity, and then use that name in `server_context.xml` to assign 
+it a value. In the above `xml`, `folderId` is named `bookmark_folder` in the 
+`liferay:folderId` setting. You can then add the following line in 
+`server_context.xml` to give `folderId` a value. Remember to change this value 
+to match a bookmarks folder's `folderId` in your portal.
+
+    <integer name="bookmark_folder">20676</integer>
+
 Congratulations! By creating an example bookmarks screenlet, you now know how to 
 create screenlets in Screens for Android. 
 
