@@ -12,7 +12,10 @@ This tutorial shows you how to create your own screenlets in Liferay Screens for
 Android. You'll create a bookmarks screenlet that lets the user enter the 
 bookmark's URL and title in text boxes. When the user touches the submit button, 
 the URL and title are sent to the Liferay instance's Bookmark service to be 
-saved. Before proceeding, you may want to read the tutorial 
+saved. As you follow along here with this screenlet's development, you can refer 
+to its finished code [here on GitHub](https://github.com/liferay/liferay-screens/tree/master/android/samples/addbookmarkscreenlet). 
+
+Also, before proceeding you may want to read the tutorial 
 [Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
 to understand in detail the concepts underlying screenlets. You may also want to 
 read the tutorial [Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android) 
@@ -41,14 +44,14 @@ steps to do this for the bookmarks screenlet:
    attributes to show in the view. In this case, the attributes are `url` and 
    `title`. Any screenlet view must implement this interface.
 
-        public interface AddBookmarkViewModel {
-	
-            public String getURL();
-            public void setURL(String value);
+        public interface AddBookmarkViewModel extends BaseViewModel {
+            String getURL();
             
-            public String getTitle();
-            public void setTitle(String value);
-	
+            void setURL(String value);
+            
+            String getTitle();
+            
+            void setTitle(String value);
         }
 
 2. Build your UI using a layout XML file. Put in two `EditText` tags: one for 
@@ -57,63 +60,76 @@ steps to do this for the bookmarks screenlet:
    create this class in the next section.
 
         <?xml version="1.0" encoding="utf-8"?>
-        <com.your.package.AddBookmarkDefaultView 
+	<com.your.package.AddBookmarkDefaultView 
             xmlns:android="http://schemas.android.com/apk/res/android"
             style="@style/default_screenlet">
         
             <EditText
                 android:id="@+id/url"
-                android:hint="@string/url_address"
-                style="@style/default_edit_text"
-                android:inputType="textUri" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:hint="URL Address"
+                android:inputType="textUri"/>
         
             <EditText
                 android:id="@+id/title"
-                style="@style/default_edit_text"
-                android:hint="@string/title"
-                android:inputType="textAutoComplete" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:hint="Title"/>
         
             <Button
                 android:id="@+id/add_button"
-                style="@style/default_submit_button"
-                android:text="@string/add_bookmark" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Bookmark"/>
         
         </com.your.package.AddBookmarkDefaultView>
 
-    At this point, the graphical layout viewer in Android Studio should look 
-    like this:
+At this point, the graphical layout viewer in Android Studio should look like 
+this:
 
-    ![Figure 1: Android Studio's graphical layout viewer while creating your own screenlet.](../../images/screens-android-add-bookmark-view.png)
+![Figure 1: Android Studio's graphical layout viewer while creating your own screenlet.](../../images/screens-android-add-bookmark-view.png)
 
-Next, you'll create a view class for the screenlet.
+Next, you'll create a view class for the screenlet. 
 
 ## Creating the Screenlet's View Class [](id=creating-the-screenlets-view-class)
 
 Your new screenlet now needs a view class to implement the UI you just created. 
-Create a new custom view class called `AddBookmarkDefaultView`. This class 
+Create a new custom view class called `AddBookmarkView`. This class 
 should extend `LinearLayout` and implement `AddBookmarkViewModel`:
 
-    public class AddBookmarkDefaultView
-        extends LinearLayout implements AddBookmarkViewModel {
+    public class AddBookmarkView extends LinearLayout 
+        implements AddBookmarkViewModel {
     
-        public AddBookmarkDefaultView(Context context) {
+        public AddBookmarkView(Context context) {
             super(context);
         }
     
-        public AddBookmarkDefaultView(Context context, AttributeSet attributes) {
+        public AddBookmarkView(Context context, AttributeSet attributes) {
             super(context, attributes);
         }
-    	
-        public AddBookmarkDefaultView(Context context, AttributeSet attributes, int defaultStyle) {
+    
+        public AddBookmarkView(Context context, AttributeSet attributes, int defaultStyle) {
             super(context, attributes, defaultStyle);
         }
-    
-        // TODO setters and getters have to set/get the data from/to the views
-        public String getURL() ... 
-        public void setURL(String value) ...
         
-        public String getTitle() ...
-        public void setTitle(String value) ...
+        @Override
+        public void showStartOperation(String actionName) {
+        }
+    
+        @Override
+        public void showFinishOperation(String actionName) {
+        }
+    
+        @Override
+        public void showFailedOperation(String actionName, Exception e) {
+        }
+    
+        private EditText _urlText;
+        private EditText _titleText;
+    
     }
 
 In the `onFinishInflate` method, get references to the components. Then complete 
@@ -152,11 +168,13 @@ Liferay instance (or any other backend). Note that it's a good practice to use
 [IoC](http://en.wikipedia.org/wiki/Inversion_of_control) in your interactor 
 classes. This way, anyone can provide a different implementation without 
 breaking the code. The `Interactor` base class also needs a parameter that 
-represents the listener type to notify. This is defined here: 
+represents the listener type to notify. This is defined here (you'll implement 
+the `AddBookmarkListener` in a moment): 
 
     public interface AddBookmarkInteractor extends Interactor<AddBookmarkListener> {
     
-        public void addBookmark(String url, String title);
+        void addBookmark(String url, String title, Integer folderId)
+            throws Exception;
     
     }
     
@@ -168,17 +186,17 @@ represents the listener type to notify. This is defined here:
             super(targetScreenletId);
         }
     
-        public void addBookmark(String url, String title) {
+        public void addBookmark(String url, String title, Integer folderId) {
             // 1. Validate input
             if (url == null || url.isEmpty()) {
                 throw new IllegalArgumentException("Invalid url");
             }
     
-        // 2. Call the service asynchronously.
-        // Notify when the request ends using the EventBus
+            // 2. Call the service asynchronously.
+            // Notify when the request ends using the EventBus
         }
     
-        public void onEvent(BasicEvent event) {
+        public void onEvent(JSONObjectEvent event) {
             if (!isValidEvent(event)) {
                 return;
             }
@@ -194,12 +212,23 @@ represents the listener type to notify. This is defined here:
 
 Pay special attention to the second step in the `addBookmark` method. When the 
 request ends, make sure you post an event into the bus using 
-`EventBusUtil.post(event)`. Here, `event` is a `BasicEvent` object containing 
-the `targetScreenletId` together with either the result or the exception. Every 
-interactor should also implement the `onEvent` method. This method is invoked by 
-the `EventBus` and calls the registered listener. 
+`EventBusUtil.post(event)`, where `event` is a `JSONObjectEvent` object 
+containing the `targetScreenletId` together with either the result or the 
+exception. Every interactor should also implement the `onEvent` method. This 
+method is invoked by the `EventBus` and calls the registered listener. A good 
+example is the `AddBookmarkInteractorImpl`.
 
-Next, you'll create the screenlet class.
+Now you can create the `AddBookmarkListener` interface. It's very simple, having 
+only two methods:
+
+    public interface AddBookmarkListener {
+    
+        void onAddBookmarkFailure(Exception exception);
+    
+        void onAddBookmarkSuccess();
+    }
+
+Next, you'll create the screenlet class. 
 
 ## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
@@ -218,7 +247,7 @@ others. Note that the implemented interface methods call the view to modify the
 UI and the app's listener. This allows the app to perform any action:
 
     public class AddBookmarkScreenlet
-        extends BaseScreenlet<LoginInteractor>
+        extends BaseScreenlet<AddBookmarkViewModel, AddBookmarkInteractor>
         implements AddBookmarkListener {
     
         public AddBookmarkScreenlet(Context context) {
@@ -237,8 +266,7 @@ UI and the app's listener. This allows the app to perform any action:
             // Invoked from the interactor:
             // Notify both the view and the app's listener
     
-            AddBookmarkListener view = (AddBookmarkListener) getScreenletView();
-            view.onAddBookmarkSuccess();
+            getViewModel().showFinishOperation(null);
     
             if (_listener != null) {
                 _listener.onAddBookmarkSuccess();
@@ -246,8 +274,7 @@ UI and the app's listener. This allows the app to perform any action:
         }
     
         public void onAddBookmarkFailure(Exception e) {
-            AddBookmarkListener view = (AddBookmarkListener) getScreenletView();
-            view.onAddBookmarkFailure(e);
+            getViewModel().showFinishOperation(null);
     
             if (_listener != null) {
                 _listener.onAddBookmarkFailure(e);
@@ -271,15 +298,15 @@ attributes to configure the initial state of the view.
 
     @Override
     protected View createScreenletView(Context context, AttributeSet attributes) {
-        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributes, 
-            R.styleable.AddBookmarkScreenlet, 0, 0);
+        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributes, R.styleable.AddBookmarkScreenlet, 0, 0);
     
         int layoutId = typedArray.getResourceId(R.styleable.AddBookmarkScreenlet_layoutId, 0);
     
         View view = LayoutInflater.from(context).inflate(layoutId, null);
     
-        String defaultTitle = typedArray.getResourceString(
-            R.styleable.AddBookmarkScreenlet_defaultTitle, 0);
+        String defaultTitle = typedArray.getString(R.styleable.AddBookmarkScreenlet_defaultTitle);
+    
+        _folderId = typedArray.getInteger(R.styleable.AddBookmarkScreenlet_folderId, 0);
     
         typedArray.recycle();
     
@@ -288,6 +315,8 @@ attributes to configure the initial state of the view.
     
         return view;
     }
+    
+    private Integer _folderId;
 
 The Second abstract method to implement is `createInteractor`. This is a factory 
 method in which you must create the corresponding interactor for a specific 
@@ -306,12 +335,20 @@ The third and final abstract method to implement is `onUserAction`. In this
 method, retrieve the data entered in the view and start the operation by using 
 the data and the supplied interactor:
     
-    protected void onUserAction(String userActionName, AddBookmarkInteractor interactor) {
+    @Override
+    protected void onUserAction(String userActionName, 
+        BookmarkInteractor interactor, Object... args) {
+        
         AddBookmarkViewModel viewModel = (AddBookmarkViewModel) getScreenletView();
         String url = viewModel.getURL();	
         String title = viewModel.getTitle();
     
-        interactor.addBookmark(url, title);
+        try {
+            interactor.addBookmark(url, title, _folderId);
+        }
+        catch (Exception e) {
+            onAddBookmarkFailure(e);
+        }
     }
 
 Great! Now you have a screenlet class for the bookmarks screenlet. The final 
@@ -319,8 +356,20 @@ step is hooking it up to the rest of the screenlet's code.
 
 ## Triggering the User Action [](id=triggering-the-user-action)
 
-The only thing left to do is to trigger the user action when the button is 
-pressed. To do this, go back to the view and add a listener to the button:
+To be able to read the screenlet attributes you have to add an `xml` file that 
+defines those attributes. Here's an example for this `AddBookmarkScreenlet`: 
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <declare-styleable name="AddBookmarkScreenlet">
+            <attr name="layoutId"/>
+            <attr name="folderId"/>
+            <attr name="defaultTitle" format="string"/>
+        </declare-styleable>
+    </resources>
+
+Next, you need to trigger the user action when the button is pressed. To do 
+this, go back to the view class and add a listener to the button: 
 
     protected void onFinishInflate() {
         super.onFinishInflate();
@@ -336,6 +385,9 @@ pressed. To do this, go back to the view and add a listener to the button:
     
         screenlet.performUserAction();
     }
+    
+To handle the button press, you also need to make `AddBookmarkView` implement 
+`OnClickListener`.
 
 Celebrate! You're done! Now you can use the screenlet as you would any other. 
 Congratulations! By creating an example bookmarks screenlet, you now know how to 
