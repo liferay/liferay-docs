@@ -119,31 +119,31 @@ Use the following steps to create the screenlet:
     - Since the interactor receives the source screenlet in the init method, you 
       can use that reference to read the input data. 
     
-        import UIKit
-        import LiferayScreens
-        
-        public class GetSiteTitleInteractor: Interactor {
-        
-            public var resultTitle: String?
-        
-            override public func start() -> Bool {
-                let viewModel = self.screenlet as! AddBookmarkViewModel
-        
-                if let URL = viewModel.URL {
-                    // 1. use NSURLSession to retrieve the HTML
-                    // 2. When the response arrives, extract the title from the HTML
-                    // 3. Save the extracted title in the property 'resultTitle'
-                    // 4. invoke callOnSuccess() or callOnFailure(error) when everything is done
-        
-                    // return true to notify the operation is in progress
-                    return true
+            import UIKit
+            import LiferayScreens
+            
+            public class GetSiteTitleInteractor: Interactor {
+            
+                public var resultTitle: String?
+            
+                override public func start() -> Bool {
+                    let viewModel = self.screenlet as! AddBookmarkViewModel
+            
+                    if let URL = viewModel.URL {
+                        // 1. use NSURLSession to retrieve the HTML
+                        // 2. When the response arrives, extract the title from the HTML
+                        // 3. Save the extracted title in the property 'resultTitle'
+                        // 4. invoke callOnSuccess() or callOnFailure(error) when everything is done
+            
+                        // return true to notify the operation is in progress
+                        return true
+                    }
+            
+                    // return false if you cannot start the operation
+                    return false
                 }
-        
-                // return false if you cannot start the operation
-                return false
+            
             }
-        
-        }
         
 6. Next, do the same with the second interactor, `LiferayAddBookmarkInteractor`. 
    This interactor is responsible for sending the URL and title to Liferay 
