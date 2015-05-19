@@ -154,6 +154,12 @@ and
 files, is posted on GitHub 
 [here](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferayui/success/end/my-greeting-portlet). 
 
+## Display default warning message ##
+
+Add the warning message you want to display with the key `warning`.
+
+        SessionErrors.add(request, "warning", "your-warning-message");
+
 To sum things up, you've added a success message for confirming successful
 portlet action execution and you've added an error message for notifying when
 something's gone wrong; you can implement these messages in your portlets too.
