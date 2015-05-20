@@ -1,12 +1,17 @@
 # Preparing Your Android Project for Liferay Screens [](id=preparing-your-android-project-for-liferay-screens)
 
-To use Liferay Screens, you must install it, install its dependencies, and
-configure it in your Android project. We recommend you use Gradle or Maven to
+To use Liferay Screens in your Android project, you must install it, install its
+dependencies, and configure it. We recommend you use Gradle or Maven to
 automatically configure your project with Liferay Screens; but you can do it
 manually too. Liferay Screens is released as an
 [AAR](http://tools.android.com/tech-docs/new-build-system/aar-format) file
-hosted in jCenter. This tutorial shows you all three configuration methods and
-how to set up communication with Liferay. Let the configuration begin! 
+hosted in jCenter. This tutorial specifies Screens's requirements, shows you all
+three configuration methods, and shows how to set up communication with Liferay.
+Let the preparations begin! 
+
+## Requirements
+
+<!-- TODO Introduce and list requirements here -->
 
 ## Configuring Your Project with Gradle
 
@@ -117,11 +122,9 @@ Next, you'll set up communication with Liferay.
 
 ## Configuring Communication with Liferay
 
-Regardless of how you install Screens in your project, you must configure
-communication with Liferay. You could have the greatest app in existence, but if
-it can't communicate with your Liferay installation then it's all for naught.
-Fortunately, setup is easy. In your project's `res/values` folder, create a new
-file called `server_context.xml`. Add the following code to the new file: 
+Configuring communication between screenlets and Liferay is easy. In your
+project's `res/values` folder, create a new file called `server_context.xml`.
+Add the following code to the new file: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
