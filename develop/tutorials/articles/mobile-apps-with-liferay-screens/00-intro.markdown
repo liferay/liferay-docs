@@ -4,13 +4,18 @@ Liferay Screens speeds up and simplifies developing native apps that use
 Liferay. Its power lies in its *screenlets*. A screenlet is a visual component
 that you insert into your native app to leverage Liferay Portal's content and
 [services](/develop/tutorials/-/knowledge_base/6-2/invoking-remote-services). On
-[Android](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android)
-and
-[iOS](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios),
-screenlets are available to log in to your portal, create accounts, submit
-forms, display content, and more. Screenlets leverage pluggable *views* or
-*themes* to provide different UIs and look and feel. Screens delivers powerful
-functionality and UI flexibility. 
+Android and iOS, screenlets are available to log in to your portal, create 
+accounts, submit forms, display content, and more. Using screenlets lets you 
+construct apps in modular fashion. Screenlets are independent, but in some cases 
+are aggregated in modules based on common dependencies. Screenlets also leverage 
+pluggable *views* or *themes* to provide different UIs and look and feel. 
+Although views and themes serve the same purpose, views are exclusive to Screens 
+on Android and themes are exclusive to Screens on iOS. They allow Screens to 
+deliver powerful functionality and UI flexibility. The reference documentation 
+for each screenlet in [Android](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
+and [iOS](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios) 
+lists the screenlet's features, its module (if any), available views or themes, 
+and more. 
 
 You're probably thinking, "These Screenlets sound like the greatest thing since
 taco Tuesdays, but what if they don't fit in with my app's UI? What if they
