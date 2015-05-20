@@ -91,9 +91,10 @@ The `AssetListScreenlet` delegates some events to an object that conforms to the
 `AssetListScreenletDelegate` protocol. This protocol lets you implement the 
 following methods: 
 
-- `onAssetListResponse(list of records)`: Called when a page of assets is 
+- `- screenlet:onAssetListResponseEntries:`: Called when a page of assets is 
   received. Note that this method may be called more than once; one call for 
   each page received.
-- `onAssetListError(error)`: Called when an error occurs in the process. The 
-  `NSError` object describes the error.
-- `onAssetListSelected(asset)`: Called when an item in the list is selected.
+- `- screenlet:onAssetListError:`: Called when an error occurs in the process. 
+  The `NSError` object describes the error.
+- `- screenlet:onAssetSelectedEntry:`: Called when an item in the list is 
+  selected.

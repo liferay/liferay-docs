@@ -64,10 +64,10 @@ The `DDLListScreenlet` delegates some events in an object that conforms to the
 `DDLListScreenletDelegate` protocol. This protocol lets you implement the 
 following methods:
 
-- `onDDLListResponse(list of records)`: Called when a page of contents is 
+- `- screenlet:onDDLListResponseRecords:`: Called when a page of contents is 
   received. Note that this method may be called more than once; once for each 
   retrieved page.
-- `onDDLListError(error)`: Called when an error occurs in the process. The 
+- `- screenlet:onDDLListError:`: Called when an error occurs in the process. The 
   `NSError` object describes the error.
-- `onDDLRecordSelected(record)`: Called when an item in the list is selected. 
-  The parameter is an instance of the class `DLLRecord`.
+- `- screenlet:onDDLSelectedRecord:`: Called when an item in the list is 
+  selected.

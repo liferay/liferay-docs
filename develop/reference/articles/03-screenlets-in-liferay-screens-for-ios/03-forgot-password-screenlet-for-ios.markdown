@@ -81,8 +81,8 @@ The `ForgotPasswordScreenlet` delegates some events to an object that conforms
 to the `ForgotPasswordScreenletDelegate` protocol. This protocol lets you 
 implement the following methods: 
 
-- `onForgotPasswordResponse(boolean)`: Called when a password reset email is 
+- `- screenlet:onForgotPasswordSent:`: Called when a password reset email is 
   successfully sent. The Boolean parameter indicates whether the email contains 
   the new password or a password reset link.
-- `onForgotPasswordError(error)`: Called when an error occurs in the process. 
-  The `NSError` object describes the error.
+- `- screenlet:onForgotPasswordError:`: Called when an error occurs in the 
+  process. The `NSError` object describes the error.

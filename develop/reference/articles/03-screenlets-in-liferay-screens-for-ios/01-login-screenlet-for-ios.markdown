@@ -61,13 +61,14 @@ The `LoginScreenlet` delegates some events to an object that conforms to the
 `LoginScreenletDelegate` protocol. This protocol lets you implement the 
 following methods:
 
-- `onLoginResponse(dictionary)`: Called when login successfully completes. The 
-  user attributes are passed as a dictionary of keys (`NSStrings`) and values 
-  (`NSObject`). The supported keys are the same as the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
-- `onLoginError(error)`: Called when an error occurs during login. The `NSError` 
-  object describes the error.
-- `onCredentialsSaved`: Called when the user credentials are stored after a 
-  successful login.
-- `onCredentialsLoaded`: Called when the user credentials are retrieved. Note 
-  that this only occurs when the screenlet is used and stored credentials are 
-  available.
+- `- screenlet:onLoginResponseUserAttributes:`: Called when login successfully 
+  completes. The user attributes are passed as a dictionary of keys (`String` or 
+  `NSStrings`) and values (`AnyObject` or `NSObject`). The supported keys are 
+  the same as the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
+- `- screenlet:onLoginResponseUserAttributes:`: Called when an error occurs 
+  during login. The `NSError` object describes the error.
+- `- onScreenletCredentialsSaved:`: Called when the user credentials are stored 
+  after a successful login.
+- `- onScreenletCredentialsLoaded:`: Called when the user credentials are 
+  retrieved. Note that this only occurs when the screenlet is used and stored 
+  credentials are available.

@@ -39,7 +39,7 @@ section of the Liferay User Guide.
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
 | `groupId` | `number` | The site (group) identifier where the asset is stored. If this value is 0, the `groupId` specified in `LiferayServerContext` is used. |
-|  `articleId` | `string` | The identifier of the web content to display. You can find the identifier by clicking *Edit* on the web content in the portal. |
+| `articleId` | `string` | The identifier of the web content to display. You can find the identifier by clicking *Edit* on the web content in the portal. |
 
 ## Methods [](id=methods)
 
@@ -53,7 +53,7 @@ The `WebContentDisplayScreenlet` delegates some events to an object that
 conforms to the `WebContentDisplayScreenletDelegate` protocol. This protocol 
 lets you implement the following methods:
 
-- `onWebContentDisplayResponse(html)`: Called when the web content's HTML is 
+- `- screenlet:onWebContentResponse:`: Called when the web content's HTML is 
   received. 
-- `onWebContentDisplayError(error)`: Called when an error occurs in the process. 
-  The `NSError` object describes the error. 
+- `- screenlet:onWebContentDisplayError:`: Called when an error occurs in the 
+  process. The `NSError` object describes the error. 
