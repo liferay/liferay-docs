@@ -8,22 +8,29 @@ screenlets are listed here with links to their reference documents:
 
 - [`LoginScreenlet`](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android/loginscreenlet-for-android): 
   Gives your app the ability to sign users in to a Liferay instance. 
+  
 - [`SignUpScreenlet`](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android/signupscreenlet-for-android): 
   Gives your app the ability to register new users in a Liferay instance. 
+  
 - [`ForgotPasswordScreenlet`](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android/forgotpasswordscreenlet-for-android): 
   Gives your app the ability to send emails containing a new password or 
   password reset link to users. 
+  
 - [`UserPortraitScreenlet`](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android/userportraitscreenlet-for-android): 
   Gives your app the ability to show the user's portrait picture. 
+  
 - [`DDLFormScreenlet`](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android/ddlformscreenlet-for-android): 
   Gives your app the ability to present dynamic forms to be filled out by users 
   and submitted back to the server. 
+  
 - [`DDLListScreenlet`](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android/ddllistscreenlet-for-android): 
   Gives your app the ability to show a list of records based on a pre-existing 
   DDL in a Liferay instance. 
+  
 - [`AssetListScreenlet`](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android/assetlistscreenlet-for-android): 
   Shows a list of assets managed by [Liferay's Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework). 
   This includes web content, blog entries, documents, users, and more. 
+  
 - [`WebContentDisplayScreenlet`](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android/webcontentdisplayscreenlet-for-android): 
   Shows the web content's HTML. This screenlet uses the features available in 
   [Web Content Management](/discover/portal/-/knowledge_base/6-2/web-content-management). 
