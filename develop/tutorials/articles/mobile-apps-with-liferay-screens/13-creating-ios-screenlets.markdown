@@ -99,11 +99,11 @@ Use the following steps to create the screenlet:
    Class setting in this screenshot is incorrect. This is because the `xib` file 
    is bound to the custom class name without specifying the module:
     
-    ![Figure 2: The `xib` file is bound to the custom class name without specifying the module.](../../screens-ios-theme-custom-module-wrong.png)
+    ![Figure 2: The `xib` file is bound to the custom class name without specifying the module.](../../images/screens-ios-theme-custom-module-wrong.png)
     
     In the following screenshot, the setting for the custom class is correct:
     
-    ![Figure 3: The `xib` file is bound to the custom class name, with the module specified.](../../screens-ios-theme-custom-module-right.png)
+    ![Figure 3: The `xib` file is bound to the custom class name, with the module specified.](../../images/screens-ios-theme-custom-module-right.png)
 
 5. Create a class called `GetSiteTitleInteractor` that extends from the 
    `Interactor` class. This new class is the place where you need to write the 
