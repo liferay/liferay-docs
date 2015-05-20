@@ -1,13 +1,15 @@
-# Using Screenlets in Your iOS Project [](id=using-screenlets-in-your-ios-project)
+# Using Screenlets in iOS Apps
 
 You can start using screenlets once your iOS project is configured to use 
-Liferay Screens. Using screenlets is very straightforward. This tutorial shows 
-you how to insert and configure screenlets in your iOS project. Steps for using 
-screenlets from Objective-C code are also presented. You're also shown how to 
-localize screenlets so your app can support multiple languages. You'll be a 
-screenlet master in no time! 
+Liferay Screens. Using screenlets is very straightforward. This tutorial uses 
+`LoginScreenlet` to show you how to insert and configure screenlets in your 
+iOS app. Steps for using screenlets from Objective-C code are also presented. 
+You're also shown how to localize screenlets so your app can support multiple 
+languages. For specific detail on each available screenlet, see the 
+[screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios). 
+You'll be a screenlet master in no time! 
 
-## Inserting and Configuring Screenlets in Your iOS Project [](id=inserting-and-configuring-screenlets-in-your-ios-project)
+## Inserting and Configuring Screenlets in iOS Apps
 
 To start using screenlets in your iOS project, first use Interface Builder to 
 insert a new UIView in your Storyboard or XIB file. This is shown here: 

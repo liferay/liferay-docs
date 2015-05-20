@@ -22,7 +22,22 @@ methods, and shows how to set up communication with Liferay. Onwards!
 
 ## Requirements
 
-<!-- TODO list requirements -->
+Liferay Screens for iOS includes the Component Library (the screenlets) and two
+sample projects: one uses Objective-C and the other Swift. It was developed
+using Swift and development techniques that leverage functional Swift code and
+the
+[Model View Presenter](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)
+architecture. You can use Swift or Objective-C with Screens, and you can run
+Screens apps on iOS 7 and above--Screens doesn't use iOS 8 APIs. 
+
+Liferay Screens for iOS requires the following software: 
+
+- Xcode 6.3.x
+- iOS 8 SDK
+- [CocoaPods](http://cocoapods.org) (installed)
+- [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
+- [Liferay Screens Compatiblity Plugin](https://github.com/liferay/liferay-screens/tree/master/portal)
+- Liferay Screens source code
 
 ## Configuring Your Project with CocoaPods
 

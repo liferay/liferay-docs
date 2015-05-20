@@ -12,7 +12,7 @@ pluggable *views* or *themes* to provide different UIs and look and feel.
 Although views and themes serve the same purpose, views are exclusive to Screens 
 on Android and themes are exclusive to Screens on iOS. They allow Screens to 
 deliver powerful functionality and UI flexibility. The reference documentation 
-for each screenlet in [Android](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
+for each screenlet available in [Android](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
 and [iOS](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios) 
 lists the screenlet's features, its module (if any), available views or themes, 
 and more. 
