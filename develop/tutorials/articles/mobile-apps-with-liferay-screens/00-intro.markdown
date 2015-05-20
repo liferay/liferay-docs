@@ -44,6 +44,6 @@ SDK's details are abstracted from you.
 
 These tutorials show you how to use, customize, create, and distribute
 screenlets for iOS and Android. They show you how to create views and themes,
-too. There are even tutorials that explain the nitty-gritty details the Liferay
-Screens architecture. No matter how deep you want to go, you'll use screenlets
-in no time. 
+too. There are even tutorials that explain the nitty-gritty details of the
+Liferay Screens architecture. No matter how deep you want to go, you'll use
+screenlets in no time. 
