@@ -361,11 +361,11 @@ as referenced content. If the user is exporting/publishing a web content article
 from staging, they can include embedded images by checking the *Referenced
 Content* checkbox in the Web Content section of the Publish to Live menu. By
 doing this, the embedded images will be parsed and exported independently from
-the Documents and Media settings. If the *Referenced Content* checkbox is not
+the Documents and Media content. If the *Referenced Content* checkbox is not
 checked, but the embedded image you're using is included in the Documents and
 Media export (or if the image already exists on the live site), the embedded
-images will still be available in the web content article. However, if the
-embedded images are not exported with the Documents and Media content or
+images will still be available in the published web content article. However, if
+the embedded images are not exported with the Documents and Media content or
 available on the live site, unchecking the *Referenced Content* checkbox will
 fail the publishing process.
 
