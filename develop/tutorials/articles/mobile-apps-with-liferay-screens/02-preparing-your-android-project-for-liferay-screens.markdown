@@ -14,8 +14,9 @@ Let the preparations begin!
 Liferay Screens for Android includes the Component Library (the screenlets) and 
 a sample project. It requires the following software:
 
-- Android Studio 1.0.2 or above.
-- Android SDK 4.0 (API Level 14) or above. Its [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
+- Android Studio 1.0.2 or newer.
+- Android SDK 4.0 (API Level 14) or newer. Its
+  [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
   (v7:21.0.3) implements the
   [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
   and offers older devices a material look and feel.
@@ -24,8 +25,7 @@ a sample project. It requires the following software:
 - Liferay Screens source code. 
 
 Liferay Screens for Android uses
-[EventBus](https://github.com/greenrobot/EventBus) internally and 
-`UserPortraitScreenlet` uses [Picasso](http://square.github.io/picasso/).
+[EventBus](https://github.com/greenrobot/EventBus) internally. 
 
 ## Configuring Your Project with Gradle
 

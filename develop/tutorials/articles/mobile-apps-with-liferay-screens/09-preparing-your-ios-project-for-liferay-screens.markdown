@@ -34,7 +34,7 @@ Liferay Screens for iOS requires the following software:
 
 - Xcode 6.3.x
 - iOS 8 SDK
-- [CocoaPods](http://cocoapods.org) (installed)
+- [CocoaPods](http://cocoapods.org) 0.36 or newer
 - [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
 - [Liferay Screens Compatiblity Plugin](https://github.com/liferay/liferay-screens/tree/master/portal)
 - Liferay Screens source code
@@ -87,9 +87,8 @@ and include it in your project. Follow these steps:
 
 ![Figure 1: This Xcode project includes Liferay Screens.](../../images/screens-ios-project-setup.png)
 
-Next, set up [CocoaPods](http://cocoapods.org) version 0.36 (or above) for your
-project if you haven't done so already. Add the following dependencies to your
-`Podfile` (create this file if it doesn't yet exist):
+Add the following dependencies to your `Podfile` (create this file if it doesn't
+yet exist): 
 
     source 'https://github.com/CocoaPods/Specs.git'
 
