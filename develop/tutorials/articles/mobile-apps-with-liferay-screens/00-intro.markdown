@@ -13,7 +13,7 @@ Liferay's reference documentation for
 [Android](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
 and
 [iOS](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios)
-screenlets describes each screenlet's features and their views/themes. 
+screenlets describes each screenlet's features and views/themes. 
 
 You're probably thinking, "These Screenlets sound like the greatest thing since
 taco Tuesdays, but what if they don't fit in with my app's UI? What if they
