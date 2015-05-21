@@ -1,54 +1,50 @@
 # Accessing the Content Targeting API
 
 The [Audience Targeting](https://www.liferay.com/marketplace/-/mp/application/43707761)
-application available in Liferay's Marketplace can be easily downloaded and
-configured to monitor your portal's audience. However, what if you'd like to
-take advantage of the Content Targeting API from you own custom app? For
-instance, you could list user segments in a custom portlet or update a campaign
-when someone creates a calendar event. By having access to the Content
-Targeting API, you can unleash the power of Audience Targeting to the realms
-outside of Liferay's default applications.
+application available in Liferay's Marketplace can be used to target content to
+specific audiences. You might want to take this to the next step and use the
+Content Targeting API. For instance, you could list user segments in your own
+application or update a campaign when someone creates a calendar event. Using
+the Content Targeting API, you can unleash the power of Audience Targeting to
+the realms outside of Liferay's default applications.
 
 In this tutorial, you'll learn how to give your application access to the
-Content Targeting API. Then, you can view some examples of how to use the Java
-and JSON APIs to take advantage of Audience Targeting in your custom app.
+Content Targeting API. Then you can view some examples of how to use the Java
+and JSON APIs that are available. 
 
 ## Exposing the Content Targeting API
 
-Configuring your app to have access to the Content Targeting API is very
-simple. So simple, in fact, that it only requires one line of code. This line of
-code is a dependency that should be added to your dependencies list via Ivy.
-Follow the instructions below to add the Content Targeting API dependency:
+Configuring your app to have access to the Content Targeting API requires only
+one line of code. This line of code is a dependency that should be added to your
+dependencies list via Ivy.  Follow the instructions below to add the Content
+Targeting API dependency:
 
-1. Open the `ivy.xml` file in your app's `ROOT` folder.
+1.  Open the `ivy.xml` file in your app's `ROOT` folder.
 
-2. Find the `<dependencies>` tag and place the following `dependency` within
-that tag. 
+2.  Find the `<dependencies>` tag and place the following `dependency` within
+    that tag. 
 
         <dependency org="com.liferay.content-targeting" name="com.liferay.content.targeting.api" rev="2.0.0"/>
 
-    It should look like the following:
+    The complete tag should look like this: 
 
         <dependencies defaultconf="default">
             <dependency org="com.liferay.content-targeting" name="com.liferay.content.targeting.api" rev="2.0.0"/>
         </dependencies>
 
-Your app now has access to the Content Targeting API, and can now take advantage
-of everything Audience Targeting has to offer in your custom app. In the next
-section, you'll learn how to use the Content Targeting API by studying a few
-examples.
+Your app now has access to the Content Targeting API and can now take advantage
+of everything Audience Targeting has to offer. In the next section, you'll learn
+how to use the Content Targeting API by studying a few examples.
 
 ## Using the Content Targeting API
 
-Now that you have access to the Content Targeting API, you'll take a look at a
-few examples that show how to call the API from your custom app. There are two
-ways you'll learn how to call the Content Targeting API: making direct calls to
-the Java API and making direct calls to the JSON API. You'll dive into calling
-the Java API first.
+There are two ways you'll learn how to call the Content Targeting API: making
+direct calls to the Java API and making direct calls to the JSON API. You'll
+dive into calling the Java API first.
 
 Suppose you'd like to display a list of existing user segments in your portlet.
-You could do this by opening your Portlet class (e.g., the class that extends
-the `MVCPortlet` class) and adding the following method:
+You could do this by opening your Portlet class (the class that extends the
+`MVCPortlet` class) and adding the following method:
 
     @Override
     public void doView(
@@ -73,9 +69,9 @@ the `MVCPortlet` class) and adding the following method:
         super.doView(renderRequest, renderResponse);
     }
 
-Notice that the `userSegments` list is populated by calling the
-`getUserSegments` method of the `UserSegmentLocalServiceUtil` class. This class
-is directly accessed from the Content Targeting API.
+Notice that the `userSegments` list is populated by calling
+`UserSegmentLocalServiceUtil`'s `getUserSegments` method. This service is part
+of the Content Targeting API. 
 
 To finish off this example, some logic needs to be added to your portlet's
 `view.jsp`:
@@ -100,7 +96,7 @@ To finish off this example, some logic needs to be added to your portlet's
     </ul>
 
 This logic uses the `UserSegment` object to list the existing user segments in
-the Portal. That's it! By simply importing the `UserSegment` and
+the Portal. That's it! By importing the `UserSegment` and
 `UserSegmentLocalServiceUtil` classes into your files, you have direct access to
 your portal's user segments via the Content Targeting Java API. 
 
@@ -157,10 +153,7 @@ Targeting API, visit the API's
 [Github page](https://github.com/liferay/liferay-apps-content-targeting/tree/master/content-targeting-api).
 If you're interested in seeing the examples that were discussed in this tutorial
 working in a finished portlet, download and deploy the
-[Sample Client Portlet]().
-
-<!-- Insert the link to the sample portlet once it's available for download on
-LDN. -Cody -->
+[Sample Client Portlet](/documents/10184/487286/sample-client-portlet-6.2.0.1.war).
 
 ## Related Topics
 
