@@ -211,12 +211,9 @@ advance to the app preview screen.
 
 ## Preview and Submit Your App [](id=preview-and-submit-your-app)
 
-Whenever you make a change (app details, adding files, adding new versions), you
-always wind up at the *App Preview* screen. This allows you to preview your app
-as it will appear in the Marketplace.
-
-If you want to change things, click *Edit* to go back and continue making
-changes until you are satisfied.
+The *App Preview* screen lets you preview your app as it will appear on the
+Marketplace. If you want to change things before finally submitting your app,
+click *Edit* to go back and continue making changes until you're satisfied.
 
 Before finalizing your app's submission, make sure that you're pleased with the
 values you've set for the following app details, as these details can't be
@@ -228,6 +225,7 @@ modified once the app is approved:
 
 Once you are satisfied, click *Submit for Review*. 
 
-The Liferay Marketplace staff reviews and QA's your app. If you're interested in
-learning the status of your app through the QA/review process or if you're
-curious about the rigors of the process, you should read the next article. 
+At this point, the Liferay Marketplace staff starts to review your app and test
+it. If you need to make changes to your app during its review or if you're
+curious about the rigors of the review process, make sure to read the next
+section of this guide. 

@@ -67,11 +67,15 @@ or more of these kinds of changes during the life of the app:
 - Releasing a new version of your app to fix bugs or offer new functionality
 - Disabling your apps
 
+Your currently approved app remains available while you're in the process of
+submitting changes to your app and while your submitted changes are under review
+and testing. 
+
 Liferay Marketplace supports all of the above operations as described below.
 
-### Editing Your App Details [](id=editing-your-app-details)
+### Editing Your App's Metadata [](id=editing-your-app-details)
 
-App details include the name, description, icon, screenshots, and other
+App metadata includes the name, description, icon, screenshots, and other
 information that you supplied on the first screen during the app creation
 process. To make changes to this content for your app, navigate to *Home* &rarr;
 *Apps* and select the app you wish to edit. Click the *Edit* button to edit that
@@ -83,9 +87,13 @@ allows you to edit details (as well as add new files to your existing version).
 Note that the current values as they appear in your app are used to pre-fill the
 form. Make any changes as needed on this screen and click *Next*. If you do not
 need to edit any more variations, you can continue clicking *Next* until you
-reach the final preview screen. Click *Submit for Review* to submit your detail
-changes for review. Once approved, the changes you request appear on the
-Marketplace.
+reach the final preview screen. Click *Submit for Review* to submit your changes
+for review. All changes must go through the submission process. If your
+app revision only consists of metadata changes, it need only go through the
+[*App metadata review*](/distribute/how-to-publish/-/knowledge_base/how-to-publish/understanding-the-app-review-process)
+phase of the review process. 
+
+Once approved, the changes you request appear for your app on the Marketplace.
 
 ### Editing App Prices [](id=editing-app-prices)
 
