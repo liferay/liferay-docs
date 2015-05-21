@@ -54,10 +54,16 @@ is shown in the following screenshot:
 Currently, the view sets included with Liferay Screens for Android are:
 
 - *Default*: Standard views used when you insert any screenlet and don't set the 
-  `liferay:layoutId` attribute. 
-- *Material*: Sample views intended to demonstrate how to develop your own 
+  `liferay:layoutId` attribute. The Default views can be used as parent views 
+  for any of your custom views. Refer to the [architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
+  for more details.
+- *Material*: Sample views intended to demonstrate how to develop your own full
   view sets from scratch. It follows the [Material Design](https://developer.android.com/design/material/index.html) 
-  guidelines published by Google. 
+  guidelines published by Google. Refer to the [view creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-views) 
+  for instructions on creating your own view set. 
+- *Westeros*: A custom view set created to customize the behavior and appearance 
+  of the [Westeros Bank](https://play.google.com/store/apps/details?id=com.liferay.mobile.screens.bankofwesteros) 
+  demo app. 
 
 That's all there is to it! Great! Now you know how to use views to spruce up 
 your Android app. This opens up a world of possibilities, like writing your own 
