@@ -1,13 +1,8 @@
 # Generating Language Properties File and Automated Translations [](id=generating-language-properties-file-and-automated-t)
 
-<!-- 
-Testing Notes:
-
-The starting example portlet for this tutorial is at ...
-https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/mvc-01-begin-event-listing-portlet
-
-On completing this tutorial, the example portlet looks like the portlet at ...
-https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/localize-auto-transl-event-listing-portlet
+<!-- The beginning and ending test portlets can be found at the following:
+Begin: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
+End: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/loc/lang-trans/end/event-listing-portlet
 -->
 
 In this tutorial, you'll learn how Liferay facilitates generating language key
@@ -83,7 +78,7 @@ add support for translations to your portlet.
     language key for the current locale and render it for the user.
 
     For example JSP code that references language keys, see
-    [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/localize-auto-transl-event-listing-portlet/docroot/html/locationlisting/view.jsp).
+    [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/loc/lang-trans/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
 
 3. Build the language keys, by either right-clicking on the
    `Language.properties` file &rarr; *Liferay* &rarr; *Build Languages* in

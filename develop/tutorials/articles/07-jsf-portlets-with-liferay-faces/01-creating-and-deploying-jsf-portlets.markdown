@@ -1,7 +1,7 @@
 # Creating and Deploying JSF Portlets [](id=creating-and-deploying-jsf-portlets)
 
 <!-- The JSF calendar portlet using PrimeFaces can be found at the following:
-https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-faces/creating-jsf-port/calendar/my-jsf-portlet
+https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-faces/creating-jsf-port/calendar/my-jsf-portlet
 -->
 
 Liferay supports developing and deploying JSF portlets on Liferay Portal by

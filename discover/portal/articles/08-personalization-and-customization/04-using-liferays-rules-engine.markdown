@@ -124,7 +124,7 @@ official [Drools Documentation](http://docs.jboss.org/drools/release/5.2.0.Final
 
 To see examples of a rules definition file, access the following directory in
 the Sample Drools portlet
-[`sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies`](https://github.com/liferay/liferay-plugins/tree/master/portlets/sample-drools-portlet/docroot/WEB-INF/src/com/liferay/sampledrools/dependencies). To
+[`sample-drools-portlet/WEB-INF/src/com/liferay/sampledrools/dependencies`](https://github.com/liferay/liferay-plugins/tree/6.2.x/portlets/sample-drools-portlet/docroot/WEB-INF/src/com/liferay/sampledrools/dependencies). To
 see how rules work in action, we'll look at the rule defined in
 `rules_user_address_content.drl`. 
 

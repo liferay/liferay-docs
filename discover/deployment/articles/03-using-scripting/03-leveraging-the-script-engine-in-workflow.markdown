@@ -105,7 +105,7 @@ Within a workflow, the next task or state is chosen based on the return value.
 For a complete example a workflow script that uses the above Groovy script,
 please see the `legal-workflow-script.xml` file in the User Guide's code folder
 on Github:
-[https://github.com/liferay/liferay-docs/blob/master/userGuide/code/legal-workflow-script.xml](https://github.com/liferay/liferay-docs/blob/master/userGuide/code/legal-workflow-script.xml).
+[https://github.com/liferay/liferay-docs/blob/6.2.x/userGuide/code/legal-workflow-script.xml](https://github.com/liferay/liferay-docs/blob/6.2.x/userGuide/code/legal-workflow-script.xml).
 
 The combination of Liferay's scripting and workflow engines is incredibly
 powerful. However, since it provides users with the ability to execute code, it

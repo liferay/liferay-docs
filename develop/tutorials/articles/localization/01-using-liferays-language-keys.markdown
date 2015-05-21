@@ -1,13 +1,8 @@
 # Using Liferay's Language Keys [](id=using-liferays-language-keys)
 
-<!-- 
-Testing Notes: 
-
-The starting example portlet for this tutorial is at ...
-https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/liferay-ui-02-end-my-greeting-portlet
-
-On completing this tutorial, the example portlet looks like the portlet at ...
-https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/localize-use-lang-keys-my-greeting-portlet
+<!-- The beginning and ending test portlets can be found at the following:
+Begin: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferayui/success/end/my-greeting-portlet
+End: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/loc/use-lang-keys/end/my-greeting-portlet
 -->
 
 Liferay specifies a host of language keys in its core `Language.properties`
@@ -77,7 +72,7 @@ arguments expected by the language key are used. The arguments are referenced in
 order as `{0}`, `{1}`, etc. Given this information, you now know how to pass in
 the user's screen name as an argument to the `welcome-x` language key in your
 portlet. You can compare your portlet's `view.jsp` to the completed
-[`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/localize-use-lang-keys-my-greeting-portlet/docroot/view.jsp)
+[`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/loc/use-lang-keys/end/my-greeting-portlet/docroot/view.jsp)
 for reference after you've completed the following steps. 
 
 1. Open the `view.jsp` file and add the following lines: 

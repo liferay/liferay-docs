@@ -3,7 +3,7 @@
 In this tutorial, you'll learn how to define an object relational map for your
 application so that it can persist data. The example code in this tutorial, as
 well as the example code in the other Service Builder and Services tutorials,
-comes from the Event Listing project, which you can find on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/svc-bld-event-listing-portlet).
+comes from the Event Listing project, which you can find on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet).
 
 The Event Listing project is an example portlet project that an organization can
 use to schedule social events. The event-listing-portlet project allows
@@ -534,7 +534,7 @@ Also, we should describe the uuid and the other audit fields - Jim
 -->
 
 Remember that you can view the complete Event Listing portlet project on Github
-here: [https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/svc-bld-event-listing-portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/svc-bld-event-listing-portlet).
+here: [https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet).
 
 Now that you've specified the service for the Event Listing example project,
 you're ready to *build* the service by running Service Builder. To learn how to

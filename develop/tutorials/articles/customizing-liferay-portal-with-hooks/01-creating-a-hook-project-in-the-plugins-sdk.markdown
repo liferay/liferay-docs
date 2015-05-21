@@ -100,7 +100,7 @@ plugin. You can install the Plugins SDK in Liferay IDE and import each plugin
 and deploy them. Here is information on each of the plugins: 
 
 - *Marketplace Portlet* (`marketplace-portlet`) - is available at
-[`liferay-plugins/portlets/marketplace-portlet`](https://github.com/liferay/liferay-plugins/tree/master/portlets/marketplace-portlet).
+[`liferay-plugins/portlets/marketplace-portlet`](https://github.com/liferay/liferay-plugins/tree/6.2.x/portlets/marketplace-portlet).
 - *Portal Compatibility Hook* (`portal-compat-hook`) - is available at 
 `liferay-plugins/hooks/portal-compat-hook`.
 
