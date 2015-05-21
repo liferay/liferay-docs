@@ -27,7 +27,7 @@ or with
 
 Once you have a hook plugin, start developing your model listener.
 
-## Creating a `-ModelListener` Class [](id=creating-a-modellistener-class)
+## Creating a Model Listener Class [](id=creating-a-modellistener-class)
 
 Create a `-ModelListener` class under the hook's `docroot/WEB-INF/src`
 directory that extends `BaseModelListener`. You can implement the
@@ -77,7 +77,7 @@ events:
 After writing your listener class, there are some Liferay-specific actions you
 need to take so the portal runs your code.
 
-## Modifying `liferay-hook.xml` [](id=modifying-liferay-hook-xml)
+## Modifying liferay-hook.xml [](id=modifying-liferay-hook-xml)
 
 Open `docroot/WEB-INF/liferay-hook.xml` and add a `<portal-properties>`
 element inside the `<hook>` tags: 
@@ -87,7 +87,7 @@ element inside the `<hook>` tags:
 The last step is to add your listener class name to the correct property in a
 `portal.properties` file.
 
-## Adding the Model Listener in `portal.properties` [](id=adding-the-model-listener-in-portal-properties)
+## Adding the Model Listener as a Portal Property [](id=adding-the-model-listener-in-portal-properties)
 
 You have your class created, but Liferay doesn't know it exists yet. If you
 don't yet have one, create a `portal.properties` file under
