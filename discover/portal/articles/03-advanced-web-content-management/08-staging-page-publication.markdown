@@ -107,11 +107,11 @@ context (permission checker) from the provided email address, screen name, or
 user ID *without* the user's password.
 
 The values that you can specify for the `tunneling.servlet.shared.secret`
-property depend on the configured encryption algorithm since different
+property depend on the configured encryption algorithm, since different
 encryption algorithms support keys of different lengths. Please see the
 [HTTP Tunneling](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
-section of Liferay's `portal.properties` file for more information. Note that
-the following key lengths supported by the available encryption algorithms:
+properties documentation for more information. Note that the following key
+lengths are supported by the available encryption algorithms:
 
 - AES: 128, 192, and 256 bit keys
 - Blowfish: 32 - 448 bit keys
@@ -123,8 +123,8 @@ To prevent potential character encoding issues, you can use one of the following
 two strategies:
 
 1. Use hexadecimal encoding (recommended). E.g., if your password was
-   *abcdefghijklmnop*, you'd set the following in your `portal-ext.properties`
-   file:
+   *abcdefghijklmnop*, you'd use the following settings in your
+   `portal-ext.properties` file:
 
         tunneling.servlet.shared.secret=6162636465666768696a6b6c6d6e6f70
         tunneling.servlet.shared.secret.hex=true
