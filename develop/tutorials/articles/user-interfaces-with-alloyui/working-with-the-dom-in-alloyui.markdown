@@ -338,7 +338,7 @@ and event handling features. You can add the following code into a portlet JSP
 or you can just look at the portlet's code. 
 
 The portlet's code resides on GitHub
-[here](../../code/alloy/silly-phrase-generator/end/silly-phrase-generator-portlet/docroot/view.jsp),
+[here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/alloy-ui-silly-phrase-generator-portlet),
 but it's also shown here for your convenience.
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
@@ -473,4 +473,4 @@ basic understanding of how to manipulate the DOM using AlloyUI.
 
  [Using AlloyUI Carousel](/develop/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-a-portlet)
 
- [Liferay UI  Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+ [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)

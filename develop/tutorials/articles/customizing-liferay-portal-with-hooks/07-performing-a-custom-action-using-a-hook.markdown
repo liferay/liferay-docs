@@ -1,8 +1,11 @@
 # Performing a Custom Action Using a Hook [](id=performing-a-custom-action-using-a-hook)
 
-<!-- The custom-action-hook project can be found here:
-https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/cust/custom-action/end/custom-action-hook
--->
+<!-- 
+Testing Notes:
+
+On completing this tutorial, the example hook looks like the hook at ...
+liferay-docs/develop/tutorials/code/tutorials-sdk/hooks/custom-action-hook
+--> 
 
 Hooks are useful for triggering custom actions on common portal events, like
 user login or system startup. The actions for each of these events are defined

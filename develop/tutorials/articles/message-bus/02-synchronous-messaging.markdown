@@ -51,7 +51,7 @@ Now it's time to write the message sender code. This code goes in the method of
 your application that you want it to be called with. For example, the message
 sender code for the tour manager's Tasks portlet is in the `_updateTask` method
 of
-[`TasksPortlet.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java),
+[`TasksPortlet.java`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/message-bus-01-sync-tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java),
 that adds a new task. This is because a synchronous message needs to be sent 
 each time the tour manager adds a new task to the portlet. 
 
@@ -99,7 +99,7 @@ Implementing the message listener is slightly more involved than implementing
 the message sender. To implement the listener, you need to make a class that
 implements Liferay's `MessageListener` interface. You can find the listener of
 the tour manager's Tasks portlet here:
-[`SetupMessagingImpl.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/synchronous/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
+[`SetupMessagingImpl.java`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/message-bus-01-sync-tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl/SetupMessagingImpl.java). 
 It's in the package `com.tour.portlet.tasks.messaging.impl`. 
 
 The listener class takes the following steps: 

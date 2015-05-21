@@ -1,7 +1,10 @@
 # Customizing Sites and Site Templates with Application Adapters [](id=customizing-sites-and-site-templates-with-application-adapters)
 
-<!-- The ending example hook can be found here:
-https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/application-adap/end/example-hook
+<!-- 
+Testing Notes:
+
+The ending example hook for this tutorial is at ...
+liferay-docs/develop/tutorials/code/tutorials-sdk/hooks/app-adapt-example-hook
 -->
 
 JSP hooks are often scoped to the portal, but what if you need to customize

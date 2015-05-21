@@ -8,7 +8,7 @@ mail without any kind of return address or other information telling you who
 sent it, how could you send a reply? This tutorial shows you how to implement 
 messaging in this fashion between one sending and two receiving portlets. You 
 can find the code for this example plugin project here:
-[Insults Portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/msg-bus/async-send-forget/insults-portlet).
+[Insults Portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/message-bus-03-async-send-forget-insults-portlet).
 
 <!-- Why do we suddenly switch to the Insults portlet here? -Rich -->
 
@@ -48,7 +48,7 @@ There's also not much code involved. In this example, the message sender is
 placed in the Insult Writer portlet's `_updateInsultWriter` method. A message is
 sent out each time a new insult is written, which is precisely what the insult
 writer wants to happen.  You can find this code here:
-[`InsultWriterPortlet.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/msg-bus/async-send-forget/insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/InsultWriterPortlet.java).
+[`InsultWriterPortlet.java`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/message-bus-03-async-send-forget-insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/InsultWriterPortlet.java).
 
 A sender for an asynchronous send and forget message does the following things:
 
@@ -81,7 +81,7 @@ You need to have one or more message listeners implemented to receive messages
 from your sender. Each listener is a class that implements Liferay's 
 `MessageListener` interface. In this example there are two listeners, one for 
 each receiving portlet. You can find the example listeners here:
-[Listeners](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/msg-bus/async-send-forget/insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/messaging/impl).
+[Listeners](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/message-bus-03-async-send-forget-insults-portlet/docroot/WEB-INF/src/com/insults/portlet/insults/messaging/impl).
 
 Asynchronous listeners for send and forget messages do the following things: 
 
