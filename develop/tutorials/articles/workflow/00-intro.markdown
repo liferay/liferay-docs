@@ -30,7 +30,7 @@ couldn't remember the details of his blog post, so he simply said, "Okay".*
 
 *Rufelia handed him a printed version of the thiscorp.com Blog page, with his
 blog post featured at the top. "I printed us both a copy of your post so we can
-look at it together. I printed our OtherCorp Guide to Official Web
+look at it together. I printed our ThisCorp Guide to Official Web
 Communications memo as well. Did you ever get that memo, Rupert?"*
 
 *"Yeah, I have the memo right here", Rupert replied, as he gently patted a

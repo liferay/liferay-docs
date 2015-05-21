@@ -1,14 +1,13 @@
 # Creating Workflows with Kaleo
 
-A resource to look at, that might not be entirely accurate and is certainly outdated: http://marksweep.blogspot.com/2011/11/10-things-programmer-should-know-about.html
-
 # Designing Workflow with Kaleo [](id=designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
 
 Liferay Portal includes the *Kaleo* workflow engine. With Kaleo, administrators
 can set up workflows for their organization's needs; the workflow calls users to
 participate in processes designed for them. Kaleo workflows, called *process
-definitions*, are XML documents. Kaleo supports a [host of XML element types](http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd) to trigger decisive 
-actions in your business process instances.
+definitions*, are XML documents. Kaleo supports a [host of XML element
+types](http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd) to
+trigger decisive actions in your business process instances.
 
 The *Kaleo Forms EE* app from Marketplace includes Liferay's *Kaleo Workflow
 Designer* that lets you create and modify portal workflows in your browser. With
@@ -16,11 +15,40 @@ Kaleo Designer for Java, you can design and publish Kaleo workflows from Liferay
 Developer Studio! 
 
 ![Figure 8.1: Kaleo Designer for Java gives you a powerful environment for designing, modifying, and publishing Kaleo workflows.](../../images/kaleo-designer-for-java.png)
-<!--Replace image using the designer in portal?-->
+
+Kaleo Workflow does a lot. This tutorial focuses on designing a workflow process
+definition, using solely XML. If you're an EE customer, you have access to Kaleo
+Designer for Java, a plugin for Liferay Developer Studio that makes workflow
+development much more simple. Additionally, there's a Kaleo Designer in the
+Control Panel of Liferay, for subscription customers.
+
+In other tutorials, you can explore the Kaleo Designer for Java plugin in
+Liferay Developer Studio. An additional tutorial on [scripting and notification
+templates]() is available.
 
 Kaleo Designer lets you incorporate [back-end Java development](PROVIDE URL WHEN TUTORIAL COMPLETED) and [scripting](PROVIDE URL WHEN TUTORIAL COMPLETED) in your 
 workflows. In this tutorial, installation and basic workflow design will be
 covered. 
+
+## Getting Started RENAME, THIS HEADING STINKS
+
+Liferay Portal ships with the Kaleo Web plugin already deployed. The Single
+Approver Definition is already installed in your portal, and can be managed in
+Control Panel &rarr; Workflow section. There are a few more definitions that
+ship with Kaleo Web, but aren't installed by default. You can find them by
+navigating to your portal's `webapps` folder, then to
+`kaleo-web/src/META-INF/definitions`, where you'll see
+
+`category-specific-definition.xml`
+
+`legal-marketing-definition.xml`
+
+`single-approver-definition.xml`
+
+`single-approver-definition-scripted-assignment.xml`
+
+Check out these definitions to determine whether you are best served by creating
+something from scratch or modifying the source XML from one of these.
 
 Kaleo Designer's graphical interface lets you drag and drop nodes into your
 workflow. A shortcut on each node gives you easy access to the node's XML,
@@ -52,10 +80,10 @@ Liferay Developer Studio.
 Although Kaleo Designer for Java is the tool of choice for EE workflow
 designers, CE workflow designers can write Kaleo workflows too. But they are
 limited to writing them in their favorite XML editor. All Kaleo process
-definitions must follow the schema
-[http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd](http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd).
-As we show you how to design workflows, we'll include their resulting XML code
-for your convenience. 
+definitions must follow the
+[schema](http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd). As
+we show you how to design workflows, we'll include their resulting XML code for
+your convenience. 
 
 We'll cover the following topics as we design workflows:
 
@@ -80,11 +108,9 @@ Here's how to download and install *Kaleo Forms EE*:
 
 1.  Go to [Liferay Marketplace](https://www.liferay.com/marketplace).
 
-2.  Click on [EE
-    Marketplace](http://www.liferay.com/marketplace/-/mp/category/12729032) in
-    the left navigation area.
+2.  Click on Categories &rarr; [Subscription Apps](http://www.liferay.com/marketplace/-/mp/category/12729032) 
 
-3.  Download and install the *Kaleo Forms EE* app.
+3.  Download and install the [*Kaleo Forms EE*](https://www.liferay.com/marketplace/-/mp/application/15194452) app.
 
 ---
 
@@ -92,28 +118,28 @@ Here's how to download and install *Kaleo Forms EE*:
 with an existing workflow designer that's used *within* Liferay Portal. It's
 used to design workflow configuration and is described in the [Kaleo Forms:
 Defining Business
-Processes](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/kaleo-forms-defining-business-processes-liferay-portal-6-2-user-guide-12-en)
+Processes](discover/portal/-/knowledge_base/6-2/kaleo-forms-defining-business-processes)
 chapter of *Using Liferay Portal*. Refer to the [Using
-Workflow](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/workflow-with-kal-4)
-chapter of *Using Liferay Portal* if you're unfamiliar with basic Kaleo workflow
+Workflow](discover/portal/-/knowledge_base/6-2/creating-new-workflow-definitions)
+chapter of *Discover &rarr; Portal* if you're unfamiliar with basic Kaleo workflow
 concepts or want to know how to design your workflow within Liferay Portal. 
 
 ---
 
 After downloading and installing the Kaleo Forms EE application, you must
-restart the Liferay Server. For Studio 2.0 to connect to the Kaleo APIs to open
-workflow definitions in Portal 6.2, you must make sure to use a portal admin
-username and password in your server's settings. 
+restart the Liferay Server. For Developer Studio to connect to the Kaleo APIs to
+open workflow definitions in Portal 6.2, specify a username
+and password for a portal administrator in your server's settings. 
 
-1. Stop your 6.2 server
+1. Stop your 6.2 server.
 
-2. Open the the server's configuration editor by double-clicking the server from
+2. Open the server's configuration editor by double-clicking the server from
 within the Servers view in Studio.
 
-3. In the configuration editor under Liferay Settings add your portal admin
-username and password. Save the configuration changes. 
+3. In the configuration editor, under Liferay Settings, add the portal
+administrator username and password. Save the configuration changes. 
 
-4. Start the server
+4. Start the server.
 
 A *Kaleo Workflows* folder automatically appears underneath the server instance
 in the Servers view of Developer Studio. 
@@ -254,9 +280,9 @@ use in your workflow:
 
 Drag and drop any nodes you need onto your workflow diagram. Each node type
 supports execution of scripted actions and sending notifications that can use
-templates. For additional information on the node types, refer to the [Designing
-Workflows with Kaleo Designer for
-Java](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/designing-workflows-with-kaleo-designer-liferay-portal-6-2-dev-guide-07-en)
+templates. For additional information on the node types, refer to the [Creating
+New Workflow
+Definitions](discover/portal/-/knowledge_base/6-2/creating-new-workflow-definitions)
 chapter of *Using Liferay Portal*. 
 
 For our ticket-process-definition workflow diagram, we have a simple
@@ -264,10 +290,10 @@ For our ticket-process-definition workflow diagram, we have a simple
 the `EndNode` *State* node. There are two transitions, from `StartNode` &rarr;
 `Developer` and from `Developer` &rarr; `EndNode`. 
 
-We want a developer to approve his fix and send it for quality assurance to
-*QA*, where it must pass testing by a QA engineer. Then it'll go to *QA
-Management*, where it must be approved by a QA manager. Let's use a *Fork* node
-to accurately depict these parallel approval tasks. 
+A developer should approve his fix and send it for quality assurance to *QA*,
+where it must pass testing by a QA engineer. Simultaneously, it'll go to *QA
+Management*, where it must be approved by a QA manager. Use a *Fork* node to
+accurately depict these parallel approval tasks. 
 
 Drag and drop a *Fork* node onto your workflow diagram. A wizard helps you
 create your node. Click the green plus symbol to select new or
@@ -293,6 +319,8 @@ markers momentarily.
 
 Clicking on a node brings up a floating palette; use it to make quick, 
 convenient customizations to a node. 
+
+![Figure 8.10: The floating pallet makes it convenient to edit workflow nodes.](../../images/task-floating-pallet.png)
 
 The floating palette has several features you can use: 
 
@@ -327,7 +355,7 @@ tasks to the same user. If you have a user in mind, specify that user.
 Otherwise, create a user named "Joe Bloggs" with screen name "joe". For the user
 to receive emails, he must be registered within Liferay Portal. If you haven't
 registered Joe Bloggs ("joe") already, see the [Adding and Editing
-Users](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/the-portal-section-of-the-control-panel-liferay-portal-6-2-user-guide-16-en)
+Users](discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel)
 section of *Using Liferay Portal* for instructions. To configure the user's
 email, login to the user's account and visit *Control Panel* &rarr; *Server
 Administration* &rarr; *Mail* for setup options. 
@@ -344,13 +372,11 @@ Assigning the QA and QA Management task nodes resolved their error markings (no
 more red "X"!). The join node's error marking won't disappear until you connect
 the join node to another task. 
 
-Let's take a moment to consider the XML code of the ticket process workflow
-definition in its current state.
-
-It specifies its XML version, encoding, and its document root element called
-`workflow-definition`. Nested within the `workflow-definition` element are its
-name, description (optional), version, and its nodes: 1 fork, 1 join, a start
-and end state. Here's the general overview of our workflow definition: 
+The XML of the ticket process workflow definition currently specifies its XML
+version, encoding, and its document root element called `workflow-definition`.
+Nested within the `workflow-definition` element are its name, description
+(optional), version, and its nodes: 1 fork, 1 join, a start and end state.
+Here's the general overview of our workflow definition: 
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<workflow-definition xmlns="urn:liferay.com:liferay-workflow_6.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:liferay.com:liferay-workflow_6.2.0 http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd">
@@ -473,8 +499,8 @@ Both the the QA-related task nodes are assigned to the user with screen name
         </transitions>
     </task>
 
-Lastly, the *QA* and *QA Manager* task nodes transition into the *Pass to QA
-Join* join node:
+Lastly, the *QA* and *QA Manager* task nodes transition into the join node named
+*Pass to QA Join*:
 
     <join>
         <name>Pass to QA Join</name>
@@ -483,8 +509,8 @@ Join* join node:
 Now you know what the resulting XML is like for your workflow definition. You
 can check your definition's source code anytime from within Liferay Studio or
 your favorite XML editor. To learn more on the different workflow nodes
-available to use in Liferay workflow definitions, see
-[Using Liferay Portal 6.2](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/creating-new-workflow-definitions-liferay-portal-6-2-user-guide-11-en). 
+available to use in Liferay workflow definitions, see [Creating New Workflow
+Definitions](discover/portal/-/knowledge_base/6-2/creating-new-workflow-definitions). 
 
 Since we've been using Designer's Workflow Diagram mode, let's go over some of
 its features. 
@@ -503,8 +529,6 @@ workflow designing experience.
     - *Save as Image*
     - *Print*
 
-	These toolbar icons are shown in the figure below.
-	
 	![Figure 8.11: The Workflow Diagram Actions are in the toolbar in the upper right corner of the Workflow Diagram.](../../images/kaleo-toolbar-icons-01.png)
 
 - *More Workflow Diagram Actions* are accessible by right clicking on the
