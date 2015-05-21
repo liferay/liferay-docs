@@ -105,6 +105,16 @@ remote server. If you'd like to learn more about what the WebDAV URL can do,
 visit the *Document Management* chapter's [WebDAV access](discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
 section.
 
++$$$
+
+**Note:** Embedding portlets into ADTs, although possible, is not recommended
+because this could cause conflicts with other portlets or unexpected behavior
+(e.g., embedding a portlet that aggregates data to the breadcrumb). If embedding
+a portlet into an ADT is your only option, make sure it does not interfere with
+other portlets.
+
+$$$
+
 To enable your ADT for a portlet, navigate to the portlet you want to modify and
 open its *Configuration* menu. In the *Display Settings* sub-tab located within
 the *Setup* tab, select your ADT from the *Display Template* drop-down menu.
