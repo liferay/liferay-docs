@@ -16,7 +16,7 @@ a sample project. It requires the following software:
 
 - Android Studio 1.0.2 or above.
 - Android SDK 4.0 (API Level 14) or above. Its [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
-  (v7:21.0.3) implements the
+  (v7:22.1.1) implements the
   [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
   and offers older devices a material look and feel.
 - [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases).
@@ -116,14 +116,12 @@ and its dependencies:
    library folders:
 
         include ':core'
-        include ':viewsets'
         project(':core').projectDir = new File(settingsDir, '../../library/core')
-        project(':viewsets').projectDir = new File(settingsDir, '../../library/viewsets')
+        project(':core').name = 'liferay-screens'
 
 4. Include the required dependencies in your `build.gradle` file: 
 
-        compile project (':core')
-        compile project (':viewsets')
+        compile project(':liferay-screens')
 
 You can also configure the `.aar` binary files (in `Android/dist`) as local 
 `.aar` file dependencies. You can download all necessary files from
@@ -172,10 +170,24 @@ interact with a portal's DDLs. You can see an additional example
 
 Super! Your Android project's ready for Liferay Screens.
 
+## Example Apps
+
+As you use Screens to develop your apps, you may want to refer to some example 
+apps that also use it. There are two demo applications available:
+
+- [test-app](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app): 
+  A showcase app containing all the currently available screenlets.
+- [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros): 
+  An example app that uses screenlets to manage technical issues for the 
+  *Westeros Bank*. It's also available in [Google Play](https://play.google.com/store/apps/details?id=com.liferay.mobile.screens.bankofwesteros).
+
+Great! Now you're ready to put Screens to use. The following tutorials show you 
+how to do this.
+
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in Your Android Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
+[Using Screenlets in Your Android Project](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
 
-[Using Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/using-views-in-liferay-screens-for-android)
+[Using Views in Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/using-views-in-liferay-screens-for-android)
 
-[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)

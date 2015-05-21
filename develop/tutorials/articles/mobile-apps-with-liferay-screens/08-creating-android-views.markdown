@@ -227,11 +227,11 @@ and `material`, respectively). These projects are good examples of how to use an
 independent theme in your project. 
 
 If you want to redistribute your theme and let others use it, you can upload it 
-to jCenter or Maven Central. In the example `build.gradle` file, after entering 
-your bintray api key you can execute `gradlew bintrayupload` to upload your 
-project to jCenter. When finished, you and others are able to use your theme as 
-any other Android dependency: simply add the repository, artifact, groupId, and 
-version to your gradle file. 
+to jCenter or Maven Central. In the example [`build.gradle`](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros/build.gradle) 
+file, after entering your bintray api key you can execute `gradlew bintrayupload` 
+to upload your project to jCenter. When finished, you and others are able to use 
+your theme as any other Android dependency: simply add the repository, artifact, 
+groupId, and version to your gradle file. 
 
 Super! Now you know how to create and package views in Liferay Screens for 
 Android. This gives you extensive control over your app's look and feel, and 
