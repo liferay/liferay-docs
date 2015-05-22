@@ -94,7 +94,9 @@ following methods:
 - `- screenlet:onAssetListResponseEntries:`: Called when a page of assets is 
   received. Note that this method may be called more than once; one call for 
   each page received.
+
 - `- screenlet:onAssetListError:`: Called when an error occurs in the process. 
   The `NSError` object describes the error.
+
 - `- screenlet:onAssetSelectedEntry:`: Called when an item in the list is 
   selected.

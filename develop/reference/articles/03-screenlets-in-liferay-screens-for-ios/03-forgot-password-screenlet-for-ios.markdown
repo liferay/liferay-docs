@@ -84,5 +84,6 @@ implement the following methods:
 - `- screenlet:onForgotPasswordSent:`: Called when a password reset email is 
   successfully sent. The Boolean parameter indicates whether the email contains 
   the new password or a password reset link.
+
 - `- screenlet:onForgotPasswordError:`: Called when an error occurs in the 
   process. The `NSError` object describes the error.

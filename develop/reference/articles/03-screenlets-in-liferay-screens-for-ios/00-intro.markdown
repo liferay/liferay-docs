@@ -3,6 +3,8 @@
 Liferay Screens for iOS contains several screenlets that you can use in your iOS 
 apps. This section contains the reference documentation for each. If you're 
 looking for instructions on using Screens, see the [Screens tutorials](/develop/tutorials/-/knowledge_base/6-2/mobile-apps-with-liferay-screens). 
+The Screens tutorials contain instructions on [using screenlets](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps) 
+and [using themes in screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets). 
 Each screenlet reference document here lists the screenlet's features, 
 compatibility, it's module (if any), available themes, attributes, delegate 
 methods, and more. The available screenlets are listed here with links to their 

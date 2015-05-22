@@ -72,5 +72,6 @@ The `SignUpScreenletDelegate` protocol lets you implement the following methods:
   successfully completes. The user attributes are passed as a dictionary of keys 
   (`String` or `NSStrings`) and values (`AnyObject` or `NSObject`). The 
   supported keys are the same as [Liferay Portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
+
 - `- screenlet:onSignUpError:`: Called when an error occurs in the process. The 
   `NSError` object describes the error.

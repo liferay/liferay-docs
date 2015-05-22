@@ -129,8 +129,8 @@ localization in your project's settings.
 
 ## Related Topics [](id=related-topics)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
 
 [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)

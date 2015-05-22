@@ -69,7 +69,8 @@ The `LoginScreenlet` delegates some events to an object that implements the
 `LoginListener` interface. This interface lets you implement the following 
 methods:
 
-| Method | Explanation |
-|-----------|-------------| 
-|  <pre>onSignUpSuccess(User user)</pre> | Called when sign up successfully completes. The `user` parameter contains a set of the created user's attributes. The supported keys are the same as those in the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227) |
-|  <pre>onSignUpFailure(Exception e)</pre> | Called when an error occurs in the process. |
+- `onSignUpSuccess(User user)`: Called when sign up successfully completes. The 
+  `user` parameter contains a set of the created user's attributes. The 
+  supported keys are the same as those in the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
+
+- `onSignUpFailure(Exception e)`: Called when an error occurs in the process.

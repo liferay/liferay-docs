@@ -134,23 +134,32 @@ following methods:
 
 - `- screenlet:onFormLoaded:`: Called when the form is loaded. The second 
   parameter (`record`) contains only field definitions.
+
 - `- screenlet:onFormLoadError:`: Called when an error occurs while loading the 
   form. The `NSError` object describes the error.
+
 - `- screenlet:onRecordLoaded:`: Called when a form with values loads. The 
   second parameter (`record`) contains field definitions and values. The method 
   `onFormLoadResult` is called before `onRecordLoaded`.
+
 - `- screenlet:onRecordLoadError:`: Called when an error occurs while loading a 
   record. The `NSError` object describes the error.
+
 - `- screenlet:onFormSubmitted:`: Called when the form values are successfully 
   submitted to the server.
+
 - `- screenlet:onFormSubmitError:`: Called when an error occurs while submitting 
   the form. The `NSError` object describes the error.
+
 - `- screenlet:onDocumentFieldUploadStarted:`: Called when the upload of a 
   Documents and Media field begins.
+
 - `- screenlet:onDocumentField:uploadedBytes:sentBytes:totalBytes`: Called when 
   a block of bytes in a Documents and Media field is uploaded. This method is 
   intended to track progress of the uploads.
+
 - `- screenlet:onDocumentField:uploadResult:`: Called when a Documents and Media 
   field upload is completed.
+
 - `- screenlet:onDocumentField:uploadError:`: Called when an error occurs in the 
   Documents and Media upload process. The `NSError` object describes the error.

@@ -3,6 +3,8 @@
 Liferay Screens for Android contains several screenlets that you can use in your 
 Android apps. This section contains the reference documentation for each. If 
 you're looking for instructions on using Screens, see the [Screens tutorials](/develop/tutorials/-/knowledge_base/6-2/mobile-apps-with-liferay-screens). 
+The Screens tutorials contain instructions on [using screenlets](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps) 
+and [using views in screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets). 
 Each screenlet reference document here lists the screenlet's features, 
 compatibility, its module (if any), available views, attributes, listener 
 methods, and more. The available screenlets are listed here with links to their 

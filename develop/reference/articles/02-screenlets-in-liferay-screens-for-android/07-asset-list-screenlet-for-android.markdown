@@ -98,8 +98,13 @@ The `AssetListScreenlet` delegates some events to an object that implements the
 `AssetListListener` interface. This interface extends from `BaseListListener` 
 and lets you implement the following methods:
 
-| Method | Explanation |
-|-----------|-------------| 
-|  <pre>onListPageReceived(<br/>      BaseListScreenlet source, <br/>      int page,<br/>      List<AssetEntry> entries,<br/>      int rowCount)</pre> | Called when a page of assets is received. Note that this method may be called more than once; once for each page received. |
-|  <pre>onListPageFailed(<br/>      BaseListScreenlet source, <br/>      int page,<br/>      Exception e)</pre> | Called when an error occurs in the process. |
-|  <pre>onListItemSelected(<br/>      BaseListScreenlet source, <br/>      AssetEntry entry)</pre> | Called when an item in the list is selected. |
+- `onListPageReceived(BaseListScreenlet source, int page, 
+  List<AssetEntry> entries, int rowCount)`: Called when a page of assets is 
+  received. Note that this method may be called more than once; once for each 
+  page received.
+
+- `onListPageFailed(BaseListScreenlet source, int page, Exception e)`: Called 
+  when an error occurs in the process.
+
+- `onListItemSelected(BaseListScreenlet source, AssetEntry entry)`: Called when 
+  an item in the list is selected.
