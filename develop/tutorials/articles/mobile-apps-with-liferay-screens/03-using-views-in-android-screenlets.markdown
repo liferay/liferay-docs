@@ -63,7 +63,7 @@ Currently, the view sets included with Liferay Screens for Android are:
   guidelines published by Google. Refer to the [view creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-views) 
   for instructions on creating your own view set. 
 - *Westeros*: A custom view set created to customize the behavior and appearance 
-  of the [Westeros Bank](https://play.google.com/store/apps/details?id=com.liferay.mobile.screens.bankofwesteros) 
+  of the [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
   demo app. 
 
 That's all there is to it! Great! Now you know how to use views to spruce up 

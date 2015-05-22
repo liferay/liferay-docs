@@ -30,9 +30,15 @@ Default theme is used.
 Currently, the themes included with Liferay Screens for iOS are:
 
 - *Default*: The standard theme that is used when you insert any screenlet on 
-  your screen.
+  your screen. The Default theme can be used as the parent theme for any of your 
+  custom themes. Please refer to the [Screens architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
+  for more details on this.
 - *Flat7*: A sample theme intended to demonstrate how to develop your own theme 
-  from scratch.
+  from scratch. Please refer to the [theme creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
+  for instructions on creating your own theme. 
+- *Westeros*: A custom theme created to customize the behaviour and appearance 
+  of the [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/WesterosBank) 
+  demo app.
 
 That's all there is to it! Great! Now you know how to use themes to dress up 
 your iOS app. This opens up a world of possibilities, like writing your own 
@@ -44,6 +50,6 @@ themes.
 
 [Preparing iOS Projects for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
 
-[Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios)
+[Creating Themes in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
 
 [Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
