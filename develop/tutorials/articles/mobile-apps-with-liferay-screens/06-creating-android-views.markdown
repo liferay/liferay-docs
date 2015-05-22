@@ -1,4 +1,4 @@
-# Creating Views in Liferay Screens for Android [](id=creating-views-in-liferay-screens-for-android)
+# Creating Android Views [](id=creating-android-views)
 
 Liferay Screens is highly customizable. In addition to letting you create your 
 own screenlets, Screens for Android lets you create your own views. This gives 
@@ -8,9 +8,9 @@ also write your view completely from scratch.
 
 This tutorial shows you how to create views in Liferay Screens for Android. 
 Before proceeding, you may want to read the tutorial 
-[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
+[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
 to understand the concepts underlying views. It may also be useful to 
-read the tutorial [Creating Screenlets in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android). 
+read the tutorial [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets). 
 Now get ready to create some great views! 
 
 ## View Types [](id=view-types)
@@ -24,7 +24,7 @@ There are three basic view types:
 - *Full view*: Overrides *all* Java code, including the screenlet code.
 
 For a detailed explanation of these view types, see the 
-[section on views in the Screens architecture tutorial](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android#the-view-layer-of-screens-for-android). 
+[section on views in the Screens architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android#the-view-layer). 
 The following sections show you how to create each type of view, using 
 `LoginScreenlet` as an example. You'll begin by creating a Child view. 
 
@@ -216,7 +216,7 @@ package views for distribution.
 Views are typically created as source code inside your app's project. However, 
 if you want to distribute your views or reuse them in different projects, you 
 should package them in a module that is then added as an app's project 
-dependency. To do this, use the [viewsets](https://github.com/liferay/liferay-screens/tree/master/android/library/viewsets) 
+dependency. To do this, use the [view sets](https://github.com/liferay/liferay-screens/tree/master/android/library/viewsets) 
 subproject as a template to your new [`build.gradle`](https://github.com/liferay/liferay-screens/blob/master/android/library/viewsets/build.gradle) 
 file. 
 
@@ -239,10 +239,8 @@ also lets you distribute your views to others.
 
 ## Related Topics [](id=related-topics)
 
-[Using Views in Android Screenlets](/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 
-[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
 
-[Creating Screenlets in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android)
-
-[Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)

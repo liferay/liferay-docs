@@ -8,9 +8,9 @@ write your theme completely from scratch.
 
 This tutorial shows you how to create themes in Liferay Screens for iOS. Before 
 proceeding, you may want to read the tutorial 
-[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
 to understand the concepts underlying themes. It may also be useful to read the 
-tutorial [Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios). 
+tutorial [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets). 
 Now get ready to create some themes! 
 
 ## Theme Types [](id=theme-types)
@@ -23,7 +23,7 @@ There are three theme types:
 - Extended theme
 
 For a detailed explanation of these theme types, see the 
-[section on themes in the Screens for iOS architecture tutorial](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios#the-theme-layer-of-screens-for-ios).
+[section on themes in the Screens for iOS architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios#the-theme-layer-of-screens-for-ios).
 You can create your theme's classes and resources directly inside your app 
 project. If you want to use the theme in more than one app, follow the 
 instructions at the end of this tutorial to publish your theme as a CocoaPods 
@@ -162,7 +162,7 @@ important that you use the same names and identifiers described in these steps*:
    name).
 
 3. Configure Liferay Screens for CocoaPods. To do this, follow the steps 
-   described in [Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens).
+   described in [Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens).
 
 4. Create your theme's classes and resources according to the instructions in 
    the above sections. Your classes must compile successfully in Xcode. Use 
@@ -231,6 +231,4 @@ themes!
 
 [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 
-[Creating Screenlets in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios)
-
-[Liferay Screens Overview](/develop/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)

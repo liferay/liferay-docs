@@ -46,10 +46,8 @@ themes.
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
+[Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
 
-[Preparing iOS Projects for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
 
-[Creating Themes in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
-
-[Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)

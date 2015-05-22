@@ -37,7 +37,7 @@ shown here, followed by a description of each item on the diagram.
 
 - *Server Operations*: This is a collection of `NSOperation` classes that
   interact with both remote and local data sources. Liferay has its own set of
-  operations, Liferay Operations, that use the [Liferay Mobile SDK](/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app).
+  operations, Liferay Operations, that use the [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app).
   Given that all server operations use the [`NSOperation` framework](https://developer.apple.com/library/mac/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/OperationObjects.html#//apple_ref/doc/uid/TP40008091-CH101-SW1),
   they can be run concurrently. It's very easy to define priorities and
   dependencies between operations, so you can build your own graph of operations
@@ -136,8 +136,7 @@ diagram are explained in this section.
   convention, the `xib` file for a screenlet `FooScreenlet` and a theme 
   `BarTheme` must be called `FooScreenlet_barTheme.xib`. 
 
-For more details, refer to the tutorial 
-[Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios). 
+For more details, refer to the tutorial [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets). 
 Next, the theme layer of Screens for iOS is described. 
 
 ## The Theme Layer of Screens for iOS [](id=the-theme-layer-of-screens-for-ios)
@@ -179,16 +178,16 @@ implement a look and feel for a limited set of screenlets.
   theme is a good sample of an Extended theme. In this case, it's based on the
   Default theme.
 
-For more details, see the tutorial [Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios). 
+For more details, see the tutorial [Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes). 
 Awesome! Now you know the nitty gritty details of Liferay Screens for iOS. This 
 information is invaluable when using Screens to develop your apps. 
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)
 
-[Using Themes in iOS Screenlets](/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
 
-[Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
 
-[Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)

@@ -33,8 +33,8 @@ You can set a screentlet's properties from its layout XML file and Java code.
 
 *Interactors*: implement specific user interactions or use cases. They can interact
 with local and remote data sources. Most interactors use the
-[Liferay Mobile SDK](/tutorials/-/knowledge_base/6-2/mobile) to exchange data
-with a Liferay instance. 
+[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile) to exchange 
+data with a Liferay instance. 
 
 *Views*: a set of layouts and accompanying custom view classes that present 
 screenlets to the user.
@@ -169,7 +169,7 @@ Here's a skeleton of a screenlet's layout XML file:
     </com.your.package.MyScreenletView>
 
 Refer to
-[Creating Android Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
 for more screenlet details. Next, the view layer's details are described. 
 
 ## The View Layer [](id=the-view-layer)
@@ -211,7 +211,7 @@ could implement a Full view, for example, with an additional new interactor for
 calling a different Liferay Portal instance. Default views are Full views. 
 
 For more information, see the tutorial 
-[Creating Android Views](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android). 
+[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views). 
 
 Great! Now you know how Liferay Screens for Android is composed. However,
 there's something you should know before moving on: how screenlets interact with
@@ -237,10 +237,10 @@ Screens.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
 
 [Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android)
+[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)

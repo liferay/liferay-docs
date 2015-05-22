@@ -185,7 +185,7 @@ how to do this.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in Your Android Project](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
 
 [Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 

@@ -22,12 +22,12 @@ You can use it as a reference as you follow along.
 You can create the screenlet in your app's Xcode project. However, if you want 
 to distribute your screenlet as a library so that other apps can use it, follow 
 the steps described in the section *Publish Your Themes Using CocoaPods* in 
-[Creating Themes in Liferay Screens for iOS](/develop/tutorials/creating-themes-in-liferay-screens-for-ios).
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes). 
 
 Before proceeding, you may want to read the tutorial 
 [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
 to understand in detail the concepts underlying screenlets. You may also want to 
-read the tutorial [Creating Themes in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios) 
+read the tutorial [Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
 to support your new screenlet from the theme that you want to use. Without any 
 further ado, let the screenlet creation begin! 
 
@@ -265,10 +265,8 @@ screenlets in Screens for iOS.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)
 
-[Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 
-[Creating Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-themes-in-liferay-screens-for-ios)
-
-[Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
