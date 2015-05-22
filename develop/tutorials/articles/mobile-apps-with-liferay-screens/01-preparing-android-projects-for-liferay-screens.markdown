@@ -187,6 +187,6 @@ how to do this.
 
 [Using Screenlets in Your Android Project](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
 
-[Using Views in Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/using-views-in-liferay-screens-for-android)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 
 [Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)

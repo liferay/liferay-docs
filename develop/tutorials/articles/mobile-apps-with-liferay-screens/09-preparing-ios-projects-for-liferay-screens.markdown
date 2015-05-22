@@ -190,6 +190,6 @@ Great! Your iOS project is ready for Liferay Screens.
 
 [Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
 
-[Using Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/using-themes-in-liferay-screens-for-ios)
+[Using Themes in iOS Screenlets](/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
 
 [Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)

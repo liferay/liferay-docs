@@ -1,4 +1,4 @@
-# Using Views in Liferay Screens for Android [](id=using-views-in-liferay-screens-for-android)
+# Using Views in Android Screenlets [](id=using-views-in-android-screenlets)
 
 Liferay Screens for Android uses *views* to set your app's UI independently of 
 its core functionality. This lets you focus on your app's UI and UX without also 

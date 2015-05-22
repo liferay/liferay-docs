@@ -227,7 +227,7 @@ themes!
 
 ## Related Topics [](id=related-topics)
 
-[Using Themes in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-liferay-screens-for-ios)
+[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
 
 [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 

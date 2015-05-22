@@ -187,7 +187,7 @@ information is invaluable when using Screens to develop your apps.
 
 [Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
 
-[Using Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/using-themes-in-liferay-screens-for-ios)
+[Using Themes in iOS Screenlets](/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
 
 [Creating Screenlets in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-ios)
 

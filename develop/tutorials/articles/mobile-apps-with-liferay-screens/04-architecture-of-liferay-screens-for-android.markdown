@@ -239,7 +239,7 @@ Screens.
 
 [Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
 
-[Using Views in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-views-in-liferay-screens-for-android)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android)
 
