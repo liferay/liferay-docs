@@ -6,8 +6,8 @@ without having to worry about its core functionality. Liferay's screenlets come
 with several themes, and more are being developed by Liferay and the community.
 A Liferay screenlet's themes are specified in its
 [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
-This tutorial shows you how to use themes in your iOS screenlets. Since it's
-straightforward, you'll master using screenlet themes in no time! 
+This tutorial shows you how to use themes in your iOS screenlets. It's
+straightforward; you'll master using themes in no time!
 
 To install a theme in your iOS app's screenlet, drag and drop the theme's folder
 into your project. Liferay Screens detects the new classes and then applies the
@@ -31,10 +31,10 @@ can't be found, the screenlet's Default theme is used.
 The initial release of Liferay Screens for iOS includes the following themes for
 its screenlets: 
 
-- *Default*: The standard theme that is used when you insert any screenlet on 
-  your screen. 
-- *Flat7*: A sample full theme made from scratch. 
-- *Westeros*: A custom theme created to customize the UX and appearance of the
+- *Default*: Comes standard with a screenlet. It's used by a screenlet if no
+  theme name is specified or the named theme can't be found.
+- *Flat7*: Demonstrates a theme made from scratch. 
+- *Westeros*: Customizes the behavior and appearance of the
   [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/WesterosBank) 
   demo app.
 
