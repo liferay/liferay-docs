@@ -15,7 +15,7 @@ To install a theme in your iOS app, drag and drop the theme's folder into your
 project. Liferay Screens detects the new classes and then applies the new look 
 and feel in the runtime and in Interface Builder. 
 
-![Figure !: Installing the Flat7 theme in an XCode project.](../../images/screens-ios-xcode-install-theme.png)
+![Figure 1: Installing the Flat7 theme in an XCode project.](../../images/screens-ios-xcode-install-theme.png)
 
 As soon as CocoaPods is ready to work with Swift, it will be possible to simply 
 publish a new recipe for your theme. Users will then be able to install new 
@@ -25,17 +25,15 @@ To use themes, it's as simple as setting the `themeName` property in your
 Interface Builder. If you leave this property empty or type the wrong name, the 
 Default theme is used. 
 
-![Figure 1: The `themeName` property in Interface Builder.](../../images/screens-ios-themes-property.png)
+![Figure 2: The `themeName` property in Interface Builder.](../../images/screens-ios-themes-property.png)
 
 Currently, the themes included with Liferay Screens for iOS are:
 
 - *Default*: The standard theme that is used when you insert any screenlet on 
   your screen. The Default theme can be used as the parent theme for any of your 
-  custom themes. Please refer to the [Screens architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
-  for more details on this.
+  custom themes. 
 - *Flat7*: A sample theme intended to demonstrate how to develop your own theme 
-  from scratch. Please refer to the [theme creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
-  for instructions on creating your own theme. 
+  from scratch. 
 - *Westeros*: A custom theme created to customize the behaviour and appearance 
   of the [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/WesterosBank) 
   demo app.
@@ -46,10 +44,8 @@ themes.
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
-
 [Preparing iOS Projects for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
 
-[Creating Themes in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+[Using Screenlets in iOS Apps](/tutorials/-/knowledge_base/6-2/using-screenlets-ios-apps)
 
-[Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
+[Using Views in Android Screenlets](/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
