@@ -34,7 +34,7 @@ None
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `borderWidth` | `number` | The size in pixels for the portrait's border. The default value is 1. Set this to 0 if you want to hide the border.|
+| `borderWidth` | `number` | The size in pixels for the portrait's border. The default value is 1. Set this to `0` if you want to hide the border.|
 | `borderColor` | `UIColor` | The border's color. Use the system's transparent color to hide the border. |
 | `editable` | `boolean` | Lets the user change the portrait image by taking a photo or selecting a gallery picture. The default value is `false`. Portraits loaded with the `load(portraitId, uuid, male)` method aren't editable. |
 
@@ -43,7 +43,7 @@ None
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 |  `loadLoggedUserPortrait()` | `boolean` | Starts the request to load the currently logged in user's portrait image (see the `SessionContext` class). |
-|  `load(userId)` | `boolean` | Starts the request to load the specified user's  portrait image. |
+|  `load(userId)` | `boolean` | Starts the request to load the specified user's portrait image. |
 |  `load(portraitId, uuid, male)` | `boolean` | Starts the request to load the portrait image using the specified user's data. The parameters `portraitId` and `uuid` can be retrieved by using the `SessionContext.userAttribute()` method. |
 |  `load(companyId, emailAddress)` | `boolean` | Starts the request to load the portrait image using the user's email address. |
 |  `load(companyId, screenName)` | `boolean` | Starts the request to load the portrait image using the user's screen name. |

@@ -23,7 +23,7 @@ Fields of the following data types are supported:
 - *Document and Media*: A file stored on the current device. It can be uploaded 
   to a specific portal repository.
 - *Radio*: A set of options to choose from. A single option must be chosen. 
-- *Select*: A dropdown list of options to choose from. A single option must be 
+- *Select*: A selection box of options to choose from. A single option must be 
   chosen.
 - *Text*: A single line of text.
 - *Text Box*: Supports multiple lines of text.
@@ -61,15 +61,14 @@ A theme needs to define a cell view for each field type. For instance, the `xib`
 file `DDLFieldDateTableCell_default` is used to render `Date` fields in the 
 `Default` theme. 
 
-What if you want a specific field to have a unique appearance though? No 
-problem! You can customize your field's display by using the following filename 
-pattern, where `XXX` is your field's name: `DDLCustomFieldXXXTableCell_default`. 
-For example, the the "Are you a subscriber?" field in screenshot above shows how 
-text fields appear in the Default theme. If you want to customize this, you 
-don't need to create an entire theme. You just need to create an `xib` file for 
-the field `subscriberName`. The filename is therefore 
-`DDLCustomFieldSubscriberNameTableCell_default`. Be careful to keep the same 
-components and `IBOutlet` defined in the custom file.
+If you want a specific field to have a unique appearance, you can customize your
+field's display by using the following filename pattern, where `XXX` is your
+field's name: `DDLCustomFieldXXXTableCell_default`.  For example, the "Are
+you a subscriber?" field in screenshot above shows how text fields appear in the
+Default theme. If you want to customize this, you don't need to create an entire
+theme. You just need to create an `xib` file for the field `subscriberName`. The
+filename is therefore `DDLCustomFieldSubscriberNameTableCell_default`. Be
+careful to keep the same components and `IBOutlet` defined in the custom file.
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -83,7 +82,7 @@ section of the User Guide for details.
 ### Permissions [](id=permissions)
 
 To add new records using this screenlet, you must grant the Add Record 
-permission in the used Dynamic Data List:
+permission in the Dynamic Data List:
 
 ![The Add Record permission.](../../images/screens-portal-permission-record-add.png)
 
@@ -108,7 +107,10 @@ and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 |-----------|-----------|-------------| 
 | `structureId` | `number` | This is the identifier of a data definition for your site in Liferay. To find the identifiers for your data definitions, click *Admin* from the Dockbar and select *Content*. Then click *Dynamic Data Lists* and click the *Manage Data Definitions* button. The identifier of each data definition is in the ID column of the table that appears. |
 | `groupId` | `number` | The site (group) identifier where the record is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
-| `recordSetId` | `number` | The identifier of a dynamic data list. To find the identifiers for your dynamic data lists, click *Admin* from the Dockbar and select *Content*. Then click *Dynamic Data Lists*. The identifier of each dynamic data list is in the ID column of the table that appears. |
+| `recordSetId` | `number` | The identifier of a dynamic data list. To find the
+identifiers for your dynamic data lists, click *Admin* from the Dockbar and
+select *Content*. Then click *Dynamic Data Lists*. The identifier of each
+dynamic data list is in the ID column of the table that appears. |
 | `recordId` | `number` | The identifier of the record you want to show. You can also allow editing of its values. This identifier can be obtained from other methods or delegates. |
 | `repositoryId` | `number` | The identifier of the Documents and Media repository to upload to. If this value is `0`, the default repository for the site specified in `groupId` is used. |
 | `folderId` | `number` | The identifier of the folder where Documents and Media files are uploaded. If this value is `0`, the root folder is used. |

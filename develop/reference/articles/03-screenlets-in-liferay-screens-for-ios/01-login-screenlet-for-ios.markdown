@@ -12,14 +12,14 @@
 
 ## Features [](id=features)
 
-The `LoginScreenlet` lets you authenticate portal users in your iOS app. The 
-following authentication methods are supported:
+The `LoginScreenlet` authenticates portal users in your iOS app. The following
+authentication methods are supported:
 
 - Email address
 - Screen name
 - User id
 
-When the user is successfully authenticated, their attributes are retrieved for 
+When users are successfully authenticated, their attributes are retrieved for 
 use in the app. You can use the `SessionContext` class to get current user 
 attributes. It's important to note that user credentials and attributes can be 
 stored securely in the keychain. This information can then be used to perform 

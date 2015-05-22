@@ -13,8 +13,8 @@
 
 ## Features [](id=features)
 
-The `ForgotPasswordScreenlet` can send an email to a registered user with their 
-new password or a password reset link, depending on the server configuration. 
+The `ForgotPasswordScreenlet` sends emails to registered users with their 
+new passwords or password reset links, depending on the server configuration. 
 The available authentication methods are:
 
 - Email address
@@ -40,7 +40,7 @@ passwords in the portal. The next sections show you how to do this.
 ### Authentication Method [](id=authentication-method)
 
 Note that the authentication method configured in the portal can be different 
-than the one used by this screenlet. For example, it's *perfectly fine* to use 
+from the one used by this screenlet. For example, it's *perfectly fine* to use 
 `screenName` for sign in authentication, but allow users to recover their 
 password using the `email` authentication method.
 
@@ -50,10 +50,10 @@ Password recovery depends on the authentication settings in the portal:
 
 ![Checkboxes for the password recovery features in Liferay Portal.](../../images/screens-password-reset.png)
 
-If both of these options are unchecked, then password recovery is disabled. If 
-both options are checked, an email containing a password reset link is sent when 
-a user requests it. If only the first option is checked, an email containing a 
-new password is sent when a user requests it.
+If both of these options are unchecked, password recovery is disabled. If both
+options are checked, an email containing a password reset link is sent when a
+user requests it. If only the first option is checked, an email containing a new
+password is sent when a user requests it.
 
 For more details on authentication in Liferay Portal, please refer to the 
 [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
@@ -61,10 +61,9 @@ section of the User Guide.
 
 ### Anonymous Request [](id=anonymous-request)
 
-An anonymous request can be done without the user being logged in. However, 
-authentication is needed to call the API. To allow this operation, it's 
-recommended that the portal administrator create a specific user with minimal 
-permissions.
+An anonymous request can be made without the user being logged in. However, 
+authentication is needed to call the API. To allow this operation, the portal
+administrator should create a specific user with minimal permissions.
 
 ## Attributes [](id=attributes)
 

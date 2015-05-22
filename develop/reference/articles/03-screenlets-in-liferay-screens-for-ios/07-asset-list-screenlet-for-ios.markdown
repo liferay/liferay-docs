@@ -63,7 +63,7 @@ others, to show the items.
 
 ## Portal Configuration [](id=portal-configuration)
 
-Dynamic Data Lists and Data Types should be configured properly in the portal. 
+Dynamic Data Lists and Data Types should be configured in the portal. 
 Refer to the [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
 and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists) 
 sections of the User Guide for more details. 
@@ -72,8 +72,8 @@ sections of the User Guide for more details.
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `autoLoad` | `boolean` | Whether the list should be loaded when it's presented on the screen. The default value is `true`. |
-| `refreshControl` | `boolean` | Whether a standard [UIRefreshControl](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) is shown when the user does the pull to refresh gesture. The default value is `true`. |
+| `autoLoad` | `boolean` | Defines whether the list should be loaded when it's presented on the screen. The default value is `true`. |
+| `refreshControl` | `boolean` | Defines whether a standard [UIRefreshControl](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) is shown when the user does the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items retrieved from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items retrieved from the server for display on the second and subsequent pages. The default value is `25`. |
 | `groupId` | `number` | The ID of the site (group) where the asset is stored. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |

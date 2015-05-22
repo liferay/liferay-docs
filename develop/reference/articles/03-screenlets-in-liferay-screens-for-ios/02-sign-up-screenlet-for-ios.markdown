@@ -12,12 +12,11 @@
 
 ## Features [](id=features)
 
-The main function of the `SignUpScreenlet` is to create a new user in your 
-Liferay instance. For example, by using the `SignUpScreenlet` a new user of your 
-app can become a new user in your portal. You can also use this screenlet to 
-save the credentials of the new user in their keychain. This enables auto login 
-for future sessions. The screenlet also supports navigation of form fields from 
-the keyboard of the user's device.
+The `SignUpScreenlet` creates a new user in your Liferay instance: a new user of
+your app can become a new user in your portal. You can also use this screenlet
+to save the credentials of the new user in their keychain. This enables auto
+login for future sessions. The screenlet also supports navigation of form fields
+from the keyboard of the user's device.
 
 ## Module [](id=module)
 
@@ -33,8 +32,7 @@ the keyboard of the user's device.
 ## Portal Configuration [](id=portal-configuration)
 
 The configuration related to the `SignUpScreenlet` can be set in the Control 
-Panel by clicking *Portal Settings* and then *Authentication*. These settings 
-are shown in the following screenshot:
+Panel by clicking *Portal Settings* and then *Authentication*. 
 
 ![The portal settings related to the `SignUpScreenlet`.](../../images/screens-portal-signup.png)
 
@@ -43,10 +41,9 @@ section of the User Guide.
 
 ## Anonymous Request [](id=anonymous-request)
 
-An anonymous request can be done without the user being logged in. However, 
-authentication is needed to call the API. To allow this operation, it's 
-recommended that the portal administrator create a specific user with minimal 
-permissions.
+Anonymous requests are unauthenticated requests. Authentication is needed,
+however, to call the API. To allow this operation, the portal administrator
+should create a specific user with minimal permissions.
 
 ## Attributes [](id=attributes)
 
