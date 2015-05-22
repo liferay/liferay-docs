@@ -1,36 +1,32 @@
 # Using Views in Android Screenlets [](id=using-views-in-android-screenlets)
 
-Liferay Screens for Android uses *views* to set your app's UI independently of 
-its core functionality. This lets you focus on your app's UI and UX without also 
-needing to adjust its feature implementation. Also, since views are fully 
-pluggable, they give you a great deal of flexibility when implementing your 
-app's look and feel. Screens provides a limited set of views, but new ones can 
-be created and contributed to the community. This tutorial shows you how to use 
-views in your Screens for Android apps. Using views is very straightforward. 
-You'll be a UI master in no time!
+Using a Liferay Screens *view*, you can set your screenlet's UI components,
+behavior, and look and feel. They let you focus on a screenlet's UI and UX,
+without having to worry about its core functionality. Liferay's screenlets come
+with several views, and more are being developed by Liferay and the community. A
+Liferay screenlet's views are specified in its
+[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android).
+This tutorial shows you how to use views in Android screenlets. It's
+straightforward; you'll master using views in no time!
 
-## Understanding View Components [](id=understanding-view-components)
+Here are some view layer components you should understand: 
 
-Before starting, you should understand the different components in the view 
-layer: 
-
-- *View*: Sometimes referred to as the *Custom View* or *Screenlet View*. This
-  is the Java class that implements the UI's behavior. This class is usually the
-  listener for the UI component's events.
-- *Layout*: The XML file that defines the UI components in the view. The root
+- *View*: Implements the UI's behavior. Sometimes referred to as the *Custom
+  View* or *Screenlet View*, it's a Java class that usually listens for the UI
+  components' events.
+- *Layout*: Defines the UI components in the view. It's an XML file whose root
   element is usually the same view type as the previous screenlet view.
-- *View set*: The view group for several screenlets together with their layouts.
-  A view set usually has a name that is easy to refer to, such as *Default* or
-  *Material*. Anyone can create their own view set and release it to the
-  community. 
-  
-## Installing View Sets [](id=installing-view-sets)
+- *View set*: It's a group of views and layouts, used by several
+  screenlets. They typically has simple names, like *Default* or *Material*. 
 
-When you set up your project it includes only the Default view set. Two 
-additional view sets, Material and Westeros, are available as dependencies in 
-jCenter. To add them, include the following code in your `build.gradle` file. 
-Note that you don't have to use both; you can omit the `compile` statement for 
-the view set you don't want to include. 
+Liferay Screens for Android comes with the Default view set, but Liferay makes
+additional view sets, like Material and Westeros, available in jCenter. Anyone
+can create view sets and publish them in public repositories like Maven Central
+and jCenter. 
+
+To install view sets for your Gradle or Maven projects, you add them as
+dependencies. The `build.gradle` file code snippet below specifies Material and
+Westeros view sets as dependencies: 
 
     dependencies {
         ...
@@ -39,39 +35,34 @@ the view set you don't want to include.
         ...
     }
 
-Anyone can create a new view set and publish it in a public repository like 
-Maven Central or jCenter. To use such a view set, include the artifact 
-containing the view set by using the standard steps for Gradle or Maven. These 
-steps are described in
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens).
+Here are some view sets that Liferay's created for Android screenlets:
 
-## Using Views in Your App [](id=using-views-in-your-app)
-
-To use a view set, set the `liferay:layoutId` property in your layout XML. This 
-is shown in the following screenshot: 
-
-![Figure 1: The `liferay:layoutId` attribute is used to change the layout.](../../images/screens-android-layoutid-xml.png)
-
-Currently, the view sets included with Liferay Screens for Android are:
-
-- *Default*: Standard views used when you insert any screenlet and don't set the 
-  `liferay:layoutId` attribute. The Default views can be used as parent views 
-  for any of your custom views. Refer to the [architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
-  for more details.
-- *Material*: Sample views intended to demonstrate how to develop your own full
-  view sets from scratch. It follows the [Material Design](https://developer.android.com/design/material/index.html) 
-  guidelines published by Google. Refer to the [view creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-views) 
-  for instructions on creating your own view set. 
-- *Westeros*: A custom view set created to customize the behavior and appearance 
-  of the [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
+- *Default*: Comes standard with a screenlet. They're used by screenlets if no
+  layout ID is specified or if no view is found with the layout ID.
+- *Material*: Demonstrates views built from scratch. They follow Google's
+  [Material Design](https://developer.android.com/design/material/index.html) 
+  guidelines. 
+- *Westeros*: Customizes the behavior and appearance of the
+  [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
   demo app. 
 
+To use a view set in your screenlet, specify its name as the `liferay:layoutId`
+property value in your app's layout XML. This is shown in the following
+screenshot: 
+
+![Figure 1: You can set a screenlet's layout via its `liferay:layoutId` attribute.](../../images/screens-android-layoutid-xml.png)
+
 That's all there is to it! Great! Now you know how to use views to spruce up 
-your Android app. This opens up a world of possibilities, like writing your own 
-views. 
+your Android screenlets. 
 
-## Related Topics [](id=related-topics)
+<!-- We can use this once the theme creation tutorial is available. - Jim 
+This opens up a world of possibilities, like writing your own views.
+-->
 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
+**Related Topics**
+
+[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
 
 [Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+
+[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
