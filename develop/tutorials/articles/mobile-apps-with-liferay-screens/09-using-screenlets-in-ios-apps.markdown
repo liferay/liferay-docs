@@ -4,7 +4,8 @@ Once you've
 [prepared](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
 your iOS project to use Liferay Screens, you can use screenlets in your app.
 There are plenty of Liferay screenlets available and they're described in the 
-[screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
+screenlet
+[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
 This tutorial shows you how to insert and configure screenlets in iOS apps
 written in Swift and Objective-C. It also explains how to localize them. You'll
 be a screenlet master in no time! 
@@ -127,10 +128,12 @@ localization in your project's settings.
 
 ![Figure 5: The Xcode localizations in the project's settings.](../../images/screens-ios-xcode-localizations.png)
 
+Way to go! You now know how to use screelets in your iOS apps, 
+
 ## Related Topics [](id=related-topics)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Using Screenlets in Android apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
