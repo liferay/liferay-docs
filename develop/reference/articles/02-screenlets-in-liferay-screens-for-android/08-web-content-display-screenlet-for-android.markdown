@@ -56,7 +56,10 @@ The `WebContentDisplayScreenlet` delegates some events to an object that
 implements the `WebContentDisplayListener` interface. This interface lets you 
 implement the following methods:
 
-| Method | Explanation |
-|-----------|-------------| 
-|  <pre>onWebContentReceived(<br/>        WebContentDisplayScreenlet source, <br/>        String html)</pre> | Called when the web content's HTML is received. To make some adaptations, the listener may return a modified version of the HTML. The original HTML is rendered if the listener returns `null`. |
-|  <pre>onWebContentFailure(<br/>        WebContentDisplayScreenlet source,<br/>        Exception e)</pre> | Called when an error occurs in the process. |
+- `onWebContentReceived(WebContentDisplayScreenlet source, String html)`: Called 
+  when the web content's HTML is received. To make some adaptations, the 
+  listener may return a modified version of the HTML. The original HTML is 
+  rendered if the listener returns `null`. 
+
+- `onWebContentFailure(WebContentDisplayScreenlet source, Exception e)`: Called 
+  when an error occurs in the process. 

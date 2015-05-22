@@ -55,5 +55,6 @@ lets you implement the following methods:
 
 - `- screenlet:onWebContentResponse:`: Called when the web content's HTML is 
   received. 
+
 - `- screenlet:onWebContentDisplayError:`: Called when an error occurs in the 
   process. The `NSError` object describes the error. 

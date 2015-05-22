@@ -83,9 +83,16 @@ The `UserPortraitScreenlet` delegates some events to an object that implements
 the `UserPortraitListener` interface. This interface lets you implement the 
 following methods:
 
-| Method | Explanation |
-|-----------|-------------| 
-|  <pre>onUserPortraitReceived(<br/>        UserPortraitScreenlet source, <br/>        Bitmap bitmap)</pre> | Called when an image is received from the server. You can then apply image filters (grayscale, for example) and return the new image. You can return `null` or the original image supplied as the argument if you don't want to modify it. |
-|  <pre>onUserPortraitFailure(<br/>        UserPortraitScreenlet source, <br/>        Exception e)</pre> | Called when an error occurs in the process. |
-|  <pre> onUserPortraitUploaded(<br/>        UserPortraitScreenlet source)</pre> | Called when the user portrait upload service finishes. |
-|  <pre> onUserPortraitUploadFailure(<br/>        UserPortraitScreenlet source, <br/>        Exception e)</pre> | Called when an error occurs uploading the user portrait. |
+- `onUserPortraitReceived(UserPortraitScreenlet source, Bitmap bitmap)`: Called 
+  when an image is received from the server. You can then apply image filters 
+  (grayscale, for example) and return the new image. You can return `null` or 
+  the original image supplied as the argument if you don't want to modify it.
+  
+- `onUserPortraitFailure(UserPortraitScreenlet source, Exception e)`: Called 
+  when an error occurs in the process.
+
+- `onUserPortraitUploaded(UserPortraitScreenlet source)`: Called when the user 
+  portrait upload service finishes.
+
+- `onUserPortraitUploadFailure(UserPortraitScreenlet source, Exception e)`: 
+  Called when an error occurs uploading the user portrait.

@@ -180,15 +180,32 @@ The `DDLFormScreenlet` delegates some events to an object that implements to the
 `DDLFormScreenletListener` interface. This interface lets you implement the 
 following methods:
 
-| Method | Explanation |
-|-----------|-------------| 
-|  <pre>onDDLFormLoaded(Record record)</pre> | Called when the form definition successfully loads.|
-|  <pre>onDDLFormRecordLoaded(Record record)</pre> | Called when the form record data successfully loads. |
-|  <pre>onDDLFormRecordAdded(Record record)</pre> | Called when the form record is successfully added. |
-|  <pre>onDDLFormRecordUpdated(Record record)</pre> | Called when the form record data successfully updates. |
-|  <pre>onDDLFormLoadFailed(Exception e)</pre> | Called when an error occurs in the load form definition request.|
-|  <pre>onDDLFormRecordLoadFailed(Exception e)</pre> | Called when an error occurs in the load form record request. |
-|  <pre>onDDLFormRecordAddFailed(Exception e)</pre> | Called when an error occurs in the request to add a new record. |
-|  <pre>onDDLFormUpdateRecordFailed(Exception e)</pre> | Called when an error occurs in the request to update an existing record. |
-|  <pre>onDDLFormDocumentUploaded(DocumentField field)</pre> | Called when a specified document field's upload completes. |
-|  <pre>onDDLFormDocumentUploadFailed(<br/>        DocumentField field,<br/>        Exception e)</pre> | Called when a specified document field's upload fails. |
+- `onDDLFormLoaded(Record record)`: Called when the form definition successfully 
+  loads.
+
+- `onDDLFormRecordLoaded(Record record)`: Called when the form record data 
+  successfully loads.
+
+- `onDDLFormRecordAdded(Record record)`: Called when the form record is 
+  successfully added.
+
+- `onDDLFormRecordUpdated(Record record)`: Called when the form record data 
+  successfully updates.
+
+- `onDDLFormLoadFailed(Exception e)`: Called when an error occurs in the load 
+  form definition request.
+
+- `onDDLFormRecordLoadFailed(Exception e)`: Called when an error occurs in the 
+  load form record request.
+
+- `onDDLFormRecordAddFailed(Exception e)`: Called when an error occurs in the 
+  request to add a new record.
+
+- `onDDLFormUpdateRecordFailed(Exception e)`: Called when an error occurs in the 
+  request to update an existing record.
+
+- `onDDLFormDocumentUploaded(DocumentField field)`: Called when a specified 
+  document field's upload completes.
+
+- `onDDLFormDocumentUploadFailed(DocumentField field, Exception e)`: Called when 
+  a specified document field's upload fails.

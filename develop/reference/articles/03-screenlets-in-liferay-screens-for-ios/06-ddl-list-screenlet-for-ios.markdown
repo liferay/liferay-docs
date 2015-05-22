@@ -67,7 +67,9 @@ following methods:
 - `- screenlet:onDDLListResponseRecords:`: Called when a page of contents is 
   received. Note that this method may be called more than once; once for each 
   retrieved page.
+
 - `- screenlet:onDDLListError:`: Called when an error occurs in the process. The 
   `NSError` object describes the error.
+
 - `- screenlet:onDDLSelectedRecord:`: Called when an item in the list is 
   selected.
