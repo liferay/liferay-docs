@@ -2,68 +2,49 @@
 
 You can start using screenlets once you've
 [prepared](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
-your project to use Liferay Screens. Using screenlets is very straightforward.
-This tutorial uses `LoginScreenlet` to show you how to insert and configure
-screenlets in your Android app. For specific detail on each available screenlet,
-see the
-[screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
-You'll be a screenlet master in no time! 
+your project to use Liferay Screens. There are plenty of Liferay screenlets
+available and they're described in the screenlet
+[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android).
+Using screenlets is very straightforward. This tutorial shows you how to insert
+and configure screenlets in your Android app. You'll be a screenlet master in no
+time! 
 
-## Inserting and Configuring Screenlets in Android Apps [](id=inserting-and-configuring-screenlets-in-android-apps)
+First, in Android Studio's visual layout editor or your favorite editor, open
+your app's layout XML file and insert the screenlet in your activity or fragment
+layout. The following screenshot, for example, shows the `LoginScreenlet`
+inserted in an activity's `FrameLayout`. 
 
-First, insert a screenlet in your activity or fragment layout. You can do this 
-in XML or with Android Studio's visual layout editor. For example, the following 
-screenshot shows `LoginScreenlet` inside a `FrameLayout` in an activity. 
+![Figure 1: Here's the `LoginScreenlet` in an activity's layout in Android Studio.](../../images/screens-android-insert-screenlet.png)
 
-![Figure 1: The `LoginScreenlet` in a layout file.](../../images/screens-android-insert-screenlet.png)
-
-Next, set the screenlet's attributes in its XML tag. Refer to the 
-[screenlet documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
-to see the attributes required and supported by each screenlet. This screenshot 
+Next, set the screenlet's attributes via the XML. If it's a Liferay screenlet,
+refer to the screenlet
+[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android)  
+to learn the screenlet's required and supported attributes. This screenshot
 shows the attributes of the `LoginScreenlet` being set:
 
-![Figure 2: The screenlet's attributes are also set in its layout file.](../../images/screens-android-screenlet-attributes.png)
+![Figure 2: You can set a screenlet's attributes via the app's layout XML file.](../../images/screens-android-screenlet-attributes.png)
 
-You now need to configure your app to listen for the events the screenlet 
-triggers. To do this, implement the screenlet's listener interface in your 
-activity or fragment class. For example, for `LoginScreenlet` you need to 
-implement `LoginListener`. Then set your activity or fragment as the screenlet's 
-listener. An example of this for `LoginScreenlet` is shown in the following 
-screenshot: 
+To configure your app to listen for events the screenlet triggers, implement the
+screenlet's listener interface in your activity or fragment class. Refer to the
+screenlet's documentation to learn its listener interface. Then register your
+activity or fragment as the screenlet's listener. The activity class, for
+example, in the screenshot below, declares that it implements the
+`LoginScreenlet`'s `LoginListener` interface, and it registers itself to listen
+for the screenlet's events.
 
 ![Figure 3: Implement the screenlet's listener in your activity or fragment class.](../../images/screens-android-screenlet-listener.png)
 
-Also, make sure that you implement any additional methods required by the 
-screenlet's listener interface. These listener methods are listed in each 
-screenlet's [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
-For example, when implementing `LoginListener` you must also implement the 
-`onLoginSuccess(User user)` and `onLoginFailure(Exception e)` methods. The 
-example implementations here display simple `Toast` messages for each method. Of 
-course, you're free to implement other functionality (or none at all) in 
-these methods as needed. 
-
-    @Override
-    public void onLoginSuccess(User user) {
-        Toast.makeText(getApplicationContext(), "Sign in successful!", 
-            Toast.LENGTH_SHORT).show();
-    }
-    
-    @Override
-    public void onLoginFailure(Exception e) {
-        String message = "Couldn't log in: " + e.getMessage();
-        Toast.makeText(getApplicationContext(), message, 
-            Toast.LENGTH_SHORT).show();
-    }
-
+Make sure to implement all methods required by the screenlet's listener
+interface. For Liferay's screenlets, the listener methods are listed in each
+screenlet's
+[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android).
 That's all there is to it! Awesome! Now you know how to use screenlets in your 
 Android apps. 
 
-## Related Topics [](id=related-topics)
+**Related Topics**
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
-
-[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
+[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
 
 [Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 
-[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Using Screenlets in iOS apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)
