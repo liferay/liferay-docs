@@ -1,13 +1,13 @@
 # Using Themes in iOS Screenlets [](id=using-themes-in-ios-screenlets)
 
-Using a Liferay Screens *theme*, you can set your screenlet's UI layout, look
-and feel, and alter the user experience. Themes let you focus on a screenlet's
-UI and UX, without having to worry about its core functionality. Liferay's
-screenlets come with a couple themes, and more are being developed by Liferay
-and the community. A Liferay screenlet's themes are specified in its
+Using a Liferay Screens *theme*, you can set your screenlet's UI components,
+behavior, and look and feel. They let you focus on a screenlet's UI and UX,
+without having to worry about its core functionality. Liferay's screenlets come
+with several themes, and more are being developed by Liferay and the community.
+A Liferay screenlet's themes are specified in its
 [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
-This tutorial shows you how to use themes in your iOS screenlets. Using themes
-is very straightforward. You'll master screenlet themes in no time! 
+This tutorial shows you how to use themes in your iOS screenlets. Since it's
+straightforward, you'll master using screenlet themes in no time! 
 
 To install a theme in your iOS app's screenlet, drag and drop the theme's folder
 into your project. Liferay Screens detects the new classes and then applies the
