@@ -72,8 +72,6 @@ views.
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
+[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
 
-[Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android)
-
-[Using Screenlets in Your Android Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)

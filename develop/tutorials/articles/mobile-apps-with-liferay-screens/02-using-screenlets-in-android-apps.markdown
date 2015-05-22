@@ -11,7 +11,6 @@ You'll be a screenlet master in no time!
 
 ## Inserting and Configuring Screenlets in Android Apps [](id=inserting-and-configuring-screenlets-in-android-apps)
 
-
 First, insert a screenlet in your activity or fragment layout. You can do this 
 in XML or with Android Studio's visual layout editor. For example, the following 
 screenshot shows `LoginScreenlet` inside a `FrameLayout` in an activity. 
@@ -64,5 +63,7 @@ Android apps.
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
 
 [Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
+
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 
 [Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)

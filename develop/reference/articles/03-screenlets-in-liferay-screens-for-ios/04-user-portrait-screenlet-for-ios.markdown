@@ -58,9 +58,12 @@ the following methods:
   from the server. You can then apply image filters (grayscale, for example) and 
   return the new image. You can return the original image supplied as the 
   argument if you don't want to modify it.
+
 - `- screenlet:onUserPortraitError:`: Called when an error occurs in the 
   process. The `NSError` object describes the error.
+
 - `- screenlet:onUserPortraitUploaded:`: Called when a new portrait is uploaded 
   to the server. You receive the user attributes as a parameter.
+
 - `- screenlet:onUserPortraitUploadError:`: Called when an error occurs in the 
   upload process. The `NSError` object describes the error.
