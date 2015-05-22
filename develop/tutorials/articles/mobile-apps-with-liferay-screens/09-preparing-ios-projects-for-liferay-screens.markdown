@@ -1,4 +1,4 @@
-# Preparing Your iOS Project for Liferay Screens [](id=preparing-your-ios-project-for-liferay-screens)
+# Preparing iOS Projects for Liferay Screens [](id=preparing-ios-projects-for-liferay-screens)
 
 To use Liferay Screens in your iOS project, you must install it, install its
 dependencies, and configure it. The steps differ depending on the iOS version

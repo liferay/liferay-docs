@@ -1,4 +1,4 @@
-# Preparing Your Android Project for Liferay Screens [](id=preparing-your-android-project-for-liferay-screens)
+# Preparing Android Projects for Liferay Screens [](id=preparing-android-projects-for-liferay-screens)
 
 To use Liferay Screens in your Android project, you must install it, install its
 dependencies, and configure it. We recommend you use Gradle or Maven to
