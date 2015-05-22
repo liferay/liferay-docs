@@ -1,4 +1,4 @@
-# Using Screenlets in Android Apps
+# Using Screenlets in Android Apps [](id=using-screenlets-in-android-apps)
 
 You can start using screenlets once you've
 [prepared](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
@@ -9,7 +9,7 @@ see the
 [screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
 You'll be a screenlet master in no time! 
 
-## Inserting and Configuring Screenlets in Android Apps
+## Inserting and Configuring Screenlets in Android Apps [](id=inserting-and-configuring-screenlets-in-android-apps)
 
 To start using sceenlets in your Android app, first insert a screenlet in your 
 activity or fragment layout. You can do this in XML or with Android Studio's 

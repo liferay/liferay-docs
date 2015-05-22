@@ -1,4 +1,4 @@
-# Creating Android Screenlets
+# Creating Android Screenlets [](id=creating-android-screenlets)
 
 The screenlets that come with Liferay Screens cover many common use cases in 
 mobile apps that connect to Liferay. For example, you can use them to 

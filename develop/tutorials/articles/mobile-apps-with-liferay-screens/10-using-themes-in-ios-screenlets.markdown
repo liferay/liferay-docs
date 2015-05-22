@@ -9,7 +9,7 @@ be created and contributed to the community. This tutorial shows you how to use
 themes in your Screens for iOS apps. Using themes is very straightforward. 
 You'll be a UI master in no time! 
 
-## Using Themes in Your Screenlet
+## Using Themes in Your Screenlet [](id=using-themes-in-your-screenlet)
 
 To install a theme in your iOS app, drag and drop the theme's folder into your 
 project. Liferay Screens detects the new classes and then applies the new look 

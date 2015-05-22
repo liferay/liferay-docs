@@ -1,4 +1,4 @@
-# Using Screenlets in iOS Apps
+# Using Screenlets in iOS Apps [](id=using-screenlets-in-ios-apps)
 
 Once you've
 [prepared](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
@@ -9,7 +9,7 @@ This tutorial shows you how to insert and configure screenlets in iOS apps
 written in Swift and Objective-C. It also explains how to localize them. You'll
 be a screenlet master in no time! 
 
-## Inserting and Configuring Screenlets in iOS Apps
+## Inserting and Configuring Screenlets in iOS Apps [](id=inserting-and-configuring-screenlets-in-ios-apps)
 
 The first step to using screenlets in your iOS project is adding a new UIView to
 your project. In Interface Builder, insert a new UIView into your Storyboard or
