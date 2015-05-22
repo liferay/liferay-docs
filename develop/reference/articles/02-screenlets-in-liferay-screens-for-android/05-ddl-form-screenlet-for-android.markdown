@@ -22,7 +22,7 @@ data types are supported:
 - *Documents & Media*: A file stored on the device. It can be uploaded to a 
   specific portal repository.
 - *Radio*: A set of options to choose from. A single option must be chosen. 
-- *Select*: A dropdown list of options to choose from. A single option must be 
+- *Select*: A selection box of options to choose from. A single option must be 
   chosen.
 - *Text*: A single line of text.
 - *Text Area*: Multiple lines of text.
@@ -68,7 +68,7 @@ using the following attributes:
 - `selectFieldLayoutId`: The layout to use for Select fields.
 - `textFieldLayoutId`: The layout to use for Text fields.
 - `textAreaFieldLayoutId`: The layout to use for Text Box fields.
-- `textDocumentFieldLayoutId`: The layout to use for Documents & Media fields.
+- `textDocumentFieldLayoutId`: The layout to use for Documents &amp; Media fields.
 
 If you don't define the editor type's layout in the attributes of 
 `DDLFormScreenlet`, the default layout `ddlfield_xxx_default` is used, where 
@@ -77,12 +77,12 @@ the layout used with any editor type at any point.
 
 ### Custom Editors [](id=custom-editors)
 
-What if you want to have a unique appearance for one specific field? No problem! 
-You can customize your field's editor view by calling the screenlet's 
-`setCustomFieldLayoutId(fieldName, layoutId)` method, where the first parameter 
-is the name of the field customize and the second parameter is the layout to 
-use. You can also easily create custom editor views. For examples of this, see 
-the files `ddlfield_custom_rating_number.xml` and `CustomRatingNumberView.java`.
+If you want to have a unique appearance for one specific field, you can
+customize your field's editor view by calling the screenlet's
+`setCustomFieldLayoutId(fieldName, layoutId)` method, where the first parameter
+is the name of the field to customize and the second parameter is the layout to
+use. You can also create custom editor views. For examples of this, see the
+files `ddlfield_custom_rating_number.xml` and `CustomRatingNumberView.java`.
 
 ## Activity Configuration [](id=activity-configuration)
 

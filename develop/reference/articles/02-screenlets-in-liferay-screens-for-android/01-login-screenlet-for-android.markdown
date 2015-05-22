@@ -18,7 +18,7 @@ following authentication methods are supported:
 - Screen name
 - User ID
 
-When a user successfully authenticates, their attributes are retrieved for use 
+When a users successfully authenticate, their attributes are retrieved for use 
 in the app. It's important to note that user credentials and attributes can be 
 stored in an app's data store. Android's `SharedPreferences` is currently the 
 only data store implemented. However, new and more secure data stores will be 
@@ -57,7 +57,7 @@ section of the User Guide.
 | `layoutId` | `@layout` | The layout to use to show the view. |
 | `companyId` | `number` | When set, a user in the specified company is authenticated. If set to `0`, the company specified in `LiferayServerContext` is used. |
 | `authMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. The default value is `email`. |
-| `credentialsStore ` | `enum` | Sets the mode for storing user credentials. The posible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
+| `credentialsStore ` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
 
 ## Listener [](id=listener)
 

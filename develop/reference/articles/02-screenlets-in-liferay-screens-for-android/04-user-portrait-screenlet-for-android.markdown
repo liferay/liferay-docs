@@ -12,10 +12,9 @@
 
 ## Features [](id=features)
 
-The `UserPortraitScreenlet` shows the user's profile picture from their Liferay 
-Portal. If the user doesn't have a profile picture, a placeholder image is 
-shown. The screenlet allows the profile picture to be edited via the `editable` 
-property.
+The `UserPortraitScreenlet` shows the users' profile pictures. If a user
+doesn't have a profile picture, a placeholder image is shown. The screenlet
+allows the profile picture to be edited via the `editable` property.
 
 ## Module [](id=module)
 
