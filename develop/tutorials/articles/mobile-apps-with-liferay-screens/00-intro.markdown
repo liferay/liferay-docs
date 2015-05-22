@@ -44,4 +44,8 @@ These tutorials show you how to use, customize, create, and distribute
 screenlets for iOS and Android. They show you how to create views and themes,
 too. There are even tutorials that explain the nitty-gritty details of the
 Liferay Screens architecture. No matter how deep you want to go, you'll use
-screenlets in no time. 
+screenlets in no time. Start by preparing your
+[Android project](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
+or
+[iOS project](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
+to use Liferay Screens. 
