@@ -11,12 +11,11 @@
 
 ## Features [](id=features)
 
-The main function of the `SignUpScreenlet` is to create a new user in your 
-Liferay instance. For example, by using `SignUpScreenlet` a new user of your app 
-can become a new user in your portal. You can also use this screenlet to save 
-the new user's credentials on their device. This enables auto login for future 
-sessions. The screenlet also supports navigation of form fields from the 
-keyboard of the user's device.
+The `SignUpScreenlet` creates a new user in your Liferay instance: a new user of
+your app can become a new user in your portal. You can also use this screenlet
+to save new users' credentials on their devices. This enables auto login for
+future sessions. The screenlet also supports navigation of form fields from the
+device's keyboard.
 
 ## Module [](id=module)
 
@@ -30,9 +29,8 @@ keyboard of the user's device.
 
 ## Portal Configuration [](id=portal-configuration)
 
-The portal configuration related to `SignUpScreenlet` can be set in the Control 
-Panel by clicking *Portal Settings* and then *Authentication*. These settings 
-are shown in the following screenshot:
+`SignUpScreenlet`'s portal configuration can be set in the Control Panel by
+clicking *Portal Settings* and then *Authentication*. 
 
 ![The portal's authentication settings.](../../images/screens-portal-signup.png)
 
@@ -41,11 +39,11 @@ section of the User Guide.
 
 ## Anonymous Requests [](id=anonymous-requests)
 
-Anonymous requests can be done without the user being logged in. However, 
-authentication is still required to call the API. To allow this operation, it's 
-recommended that the portal administrator create a specific user with minimal 
-permissions. To use `SignUpScreenlet`, you need to use that user in your layout. 
-It's recommended that you add that user's credentials to `server_context.xml`. 
+Anonymous requests are unauthenticated requests. Authentication is
+still required, however, to call the API. To allow this operation, the portal
+administrator should create a user with minimal permissions. To use
+`SignUpScreenlet`, you need to use that user in your layout. You should add that
+user's credentials to `server_context.xml`. 
 
 ## Required Attributes
 
@@ -58,11 +56,12 @@ It's recommended that you add that user's credentials to `server_context.xml`.
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
 | `layoutId` | `@layout` | The layout used to show the view.|
-| `anonymousApiUserName` | `string` | The user's name, email address, or ID to use for authenticating the request. Which of these is used depends on the portal's authentication method. |
-| `anoymousApiPassword` | `string` | The password to authenticate the request with. |
+| `anonymousApiUserName` | `string` | The user's name, email address, or ID to
+use for authenticating the request. The portal's authentication method defines which of these is used. |
+| `anoymousApiPassword` | `string` | The password used to authenticate the request. |
 | `companyId` | `number` | When set, a user in the specified company is authenticated. If set to `0`, the company specified in `LiferayServerContext` is used. |
 | `autoLogin` | `boolean` | Sets whether the user is logged in automatically after a successful sign up. |
-| `credentialsStore` | `enum` | Sets the mode for storing user credentials. The posible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
+| `credentialsStore` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
 
 ## Listener [](id=listener)
 

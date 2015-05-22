@@ -12,7 +12,7 @@
 
 ## Features [](id=features)
 
-The `DDLListScreenlet` enables the following features:
+The `DDLListScreenlet` has the following features:
 
 - Shows a scrollable collection of Dynamic Data List (DDL) records.
 - Implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
@@ -34,7 +34,7 @@ The `DDLListScreenlet` enables the following features:
 
 ## Portal Configuration [](id=portal-configuration)
 
-DDLs and Data Types should be properly configured in the portal before using 
+DDLs and Data Types should be configured in the portal before using
 `DDLListScreenlet`. For more details, see the Liferay User Guide sections 
 [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
 and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists). 
@@ -53,7 +53,7 @@ must be installed to allow remote calls without the `userId`.
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
 | `layoutId` | `@layout` | The layout to use to show the view. |
-| `autoLoad` | `boolean` | Whether the list should be loaded when it's presented on the screen. The default value is `true`. |
+| `autoLoad` | `boolean` | Defines whether the list should be loaded when it's presented on the screen. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
 | `recordSetId` | `number` | The ID of the DDL being called. To find your DDLs' IDs, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left. Each DDL's ID is in the ID column of the table. |
