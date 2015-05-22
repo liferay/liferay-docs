@@ -1,14 +1,16 @@
-# Using Screenlets in Android Apps
+# Using Screenlets in Android Apps [](id=using-screenlets-in-android-apps)
 
-You can start using screenlets once your Android app is configured to use 
-Liferay Screens. Using them is very straightforward. As an example, this 
-tutorial uses `LoginScreenlet` to show you how to insert and configure 
-screenlets in your Android app. The general steps apply for other screenlets as 
-well. For specific detail on each available screenlet, see the 
+You can start using screenlets once you've
+[prepared](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
+your project to use Liferay Screens. Using screenlets is very straightforward.
+This tutorial uses `LoginScreenlet` to show you how to insert and configure
+screenlets in your Android app. For specific detail on each available screenlet,
+see the
 [screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
 You'll be a screenlet master in no time! 
 
-## Inserting and Configuring Screenlets
+## Inserting and Configuring Screenlets in Android Apps [](id=inserting-and-configuring-screenlets-in-android-apps)
+
 
 First, insert a screenlet in your activity or fragment layout. You can do this 
 in XML or with Android Studio's visual layout editor. For example, the following 
@@ -63,6 +65,4 @@ Android apps.
 
 [Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
 
-[Preparing Your Android Project for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-your-android-project-for-liferay-screens)
-
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)

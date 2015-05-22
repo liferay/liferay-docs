@@ -239,7 +239,7 @@ also lets you distribute your views to others.
 
 ## Related Topics [](id=related-topics)
 
-[Using Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/using-views-in-liferay-screens-for-android)
+[Using Views in Android Screenlets](/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 
 [Architecture of Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
 

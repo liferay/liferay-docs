@@ -10,7 +10,7 @@ tutorial explains Screen's high-level architecture, its component's low-level
 architecture, and the Android screenlet lifecyle. Now, go ahead and get started
 examining Screens's building blocks! 
 
-## High-Level Architecture
+## High-Level Architecture [](id=high-level-architecture)
 
 Liferay Screens for Android is composed of a core, a screenlet layer, a view
 layer, and interactors. Interactors, though technically part of the core, are
@@ -41,7 +41,7 @@ screenlets to the user.
 
 Next, the core layer is described in detail. 
 
-## Core Layer
+## Core Layer [](id=core-layer)
 
 The core layer is the micro-framework that lets developers write screenlets in a
 structured and isolated way. All screenlets share a common structure based on
@@ -103,7 +103,7 @@ application context. It's used internally where necessary.
 Now that you know what the core layer is comprised of, you're ready to learn the 
 screenlet layer's details.
 
-## Screenlet Layer
+## Screenlet Layer [](id=screenlet-layer)
 
 The screenlet layer contains the screenlets available in Liferay Screens for
 Android. The following diagram uses screenlet classes prefixed with
@@ -172,7 +172,7 @@ Refer to
 [Creating Android Screenlets](/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android)
 for more screenlet details. Next, the view layer's details are described. 
 
-## The View Layer
+## The View Layer [](id=the-view-layer)
 
 The view layer lets developers set a screenlet's look and feel. Each screenlet's
 `liferay:layoutId` attribute specifies its view. 
@@ -217,7 +217,7 @@ Great! Now you know how Liferay Screens for Android is composed. However,
 there's something you should know before moving on: how screenlets interact with
 the Android lifecycle. 
 
-## Screenlet Lifecycle
+## Screenlet Lifecycle [](id=screenlet-lifecycle)
 
 Liferay Screens automatically saves and restores screenlets state using the
 Android SDK methods `onSaveInstanceState` and `onRestoreInstanceState`. Each
@@ -239,7 +239,7 @@ Screens.
 
 [Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
 
-[Using Views in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-views-in-liferay-screens-for-android)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-screenlets-in-liferay-screens-for-android)
 

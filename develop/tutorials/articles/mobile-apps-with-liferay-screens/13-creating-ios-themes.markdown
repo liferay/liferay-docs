@@ -162,7 +162,7 @@ important that you use the same names and identifiers described in these steps*:
    name).
 
 3. Configure Liferay Screens for CocoaPods. To do this, follow the steps 
-   described in [Preparing Your Project for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-your-ios-project-for-liferay-screens).
+   described in [Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens).
 
 4. Create your theme's classes and resources according to the instructions in 
    the above sections. Your classes must compile successfully in Xcode. Use 
@@ -227,7 +227,7 @@ themes!
 
 ## Related Topics [](id=related-topics)
 
-[Using Themes in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-liferay-screens-for-ios)
+[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
 
 [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 

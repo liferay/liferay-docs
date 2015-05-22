@@ -1,4 +1,4 @@
-# Using Views in Liferay Screens for Android [](id=using-views-in-liferay-screens-for-android)
+# Using Views in Android Screenlets [](id=using-views-in-android-screenlets)
 
 Liferay Screens for Android uses *views* to set your app's UI independently of 
 its core functionality. This lets you focus on your app's UI and UX without also 
@@ -42,7 +42,8 @@ the view set you don't want to include.
 Anyone can create a new view set and publish it in a public repository like 
 Maven Central or jCenter. To use such a view set, include the artifact 
 containing the view set by using the standard steps for Gradle or Maven. These 
-steps are described in the section [Preparing Your Project for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-your-android-project-for-liferay-screens).
+steps are described in
+[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens).
 
 ## Using Views in Your App [](id=using-views-in-your-app)
 
@@ -72,8 +73,6 @@ views.
 ## Related Topics [](id=related-topics)
 
 [Liferay Screens Overview](/tutorials/-/knowledge_base/6-2/liferay-screens-overview)
-
-[Preparing Your Android Project for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-your-android-project-for-liferay-screens)
 
 [Creating Views in Liferay Screens for Android](/tutorials/-/knowledge_base/6-2/creating-views-in-liferay-screens-for-android)
 

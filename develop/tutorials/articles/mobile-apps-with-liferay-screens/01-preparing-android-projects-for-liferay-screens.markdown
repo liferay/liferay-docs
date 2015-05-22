@@ -1,4 +1,4 @@
-# Preparing Your Android Project for Liferay Screens [](id=preparing-your-android-project-for-liferay-screens)
+# Preparing Android Projects for Liferay Screens [](id=preparing-android-projects-for-liferay-screens)
 
 To use Liferay Screens in your Android project, you must install it, install its
 dependencies, and configure it. We recommend you use Gradle or Maven to
@@ -9,7 +9,7 @@ hosted in jCenter. This tutorial specifies Screens's requirements, shows you all
 three configuration methods, and shows how to set up communication with Liferay.
 Let the preparations begin! 
 
-## Requirements
+## Requirements [](id=requirements)
 
 Liferay Screens for Android includes the Component Library (the screenlets) and 
 a sample project. It requires the following software:
@@ -26,7 +26,7 @@ a sample project. It requires the following software:
 Liferay Screens for Android uses
 [EventBus](https://github.com/greenrobot/EventBus) internally. 
 
-## Configuring Your Project with Gradle
+## Configuring Your Project with Gradle [](id=configuring-your-project-with-gradle)
 
 Follow these steps to configure Liferay Screens in a Gradle project:
 
@@ -58,7 +58,7 @@ file:
 
 Next, steps for configuring your project with Maven are shown.
 
-## Configuring Your Project with Maven
+## Configuring Your Project with Maven [](id=configuring-your-project-with-maven)
 
 Follow these steps to configure Liferay Screens in a Maven project:
 
@@ -101,7 +101,7 @@ a new repository in your maven settings (e.g., `.m2/settings.xml` file):
 Even though we strongly recommend using Gradle or Maven to automatically
 configure Liferay Screens in your project, you can configure it manually. 
 
-## Manual Configuration in Gradle
+## Manual Configuration in Gradle [](id=manual-configuration-in-gradle)
 
 If you're using Gradle, you can follow these steps to manually install Screens
 and its dependencies: 
@@ -131,7 +131,7 @@ import a Liferay Screens class (like `LoginScreenlet`).
 
 Next, you'll set up communication with Liferay. 
 
-## Configuring Communication with Liferay
+## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
 
 Configuring communication between screenlets and Liferay is easy. In your
 project's `res/values` folder, create a new file called `server_context.xml`.
@@ -169,7 +169,7 @@ interact with a portal's DDLs. You can see an additional example
 
 Super! Your Android project's ready for Liferay Screens.
 
-## Example Apps
+## Example Apps [](id=example-apps)
 
 As you use Screens to develop your apps, you may want to refer to some example 
 apps that also use it. There are two demo applications available:
@@ -187,6 +187,6 @@ how to do this.
 
 [Using Screenlets in Your Android Project](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-android-project)
 
-[Using Views in Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/using-views-in-liferay-screens-for-android)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 
 [Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)

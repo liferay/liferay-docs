@@ -1,4 +1,4 @@
-# Preparing Your iOS Project for Liferay Screens [](id=preparing-your-ios-project-for-liferay-screens)
+# Preparing iOS Projects for Liferay Screens [](id=preparing-ios-projects-for-liferay-screens)
 
 To use Liferay Screens in your iOS project, you must install it, install its
 dependencies, and configure it. The steps differ depending on the iOS version
@@ -20,7 +20,7 @@ CocoaPods works with Swift dependencies.
 This tutorial specifies Screens's requirements, shows you both configuration
 methods, and shows how to set up communication with Liferay. Onwards! 
 
-## Requirements
+## Requirements [](id=requirements)
 
 Liferay Screens for iOS includes the Component Library (the screenlets) and two
 sample projects: one uses Objective-C and the other Swift. It was developed
@@ -39,7 +39,7 @@ Liferay Screens for iOS requires the following software:
 - [Liferay Screens Compatiblity Plugin](https://github.com/liferay/liferay-screens/tree/master/portal)
 - Liferay Screens source code
 
-## Configuring Your Project with CocoaPods
+## Configuring Your Project with CocoaPods [](id=configuring-your-project-with-cocoapods)
 
 To prepare your iOS 8.0 (or above) project for Liferay Screens, add the
 following line to your project's `Podfile` (create this file if it doesn't yet
@@ -68,7 +68,7 @@ open your project use the `*.xcworkspace` file in your project's directory.
 Great! To configure your project's communication with Liferay, you can skip the
 next section and follow the instuctions in the final section. 
 
-## Manual Configuration
+## Manual Configuration [](id=manual-configuration)
 
 There are a few things you need to manually setup in your iOS 7 app to prepare 
 it for Liferay Screens. First, you must download the 
@@ -145,7 +145,7 @@ the following screenshot.
 
 ![Figure 3: Here's the Objective-C bridging header.](../../images/screens-ios-project-header.png)
 
-### Troubleshooting Manual Installation
+### Troubleshooting Manual Installation [](id=troubleshooting-manual-installation)
 
 There are some problems associated with the manual installation procedure. For
 example, when using a screenlet in your project, the Interface Builder may
@@ -173,7 +173,7 @@ screenshots of this assignment are shown in Figure 5 through Figure 7.
 Great! You've completed installing Liferay Screens and its dependencies in your
 project. It's time to configure its communication with your Liferay instance. 
 
-## Configuring Communication with Liferay
+## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
 
 Configuring communication between screenlets and Liferay is easy. Liferay
 Screens uses a property list (`.plist`) file, to access your Liferay instance.
@@ -190,6 +190,6 @@ Great! Your iOS project is ready for Liferay Screens.
 
 [Using Screenlets in Your iOS Project](/tutorials/-/knowledge_base/6-2/using-screenlets-in-your-ios-project)
 
-[Using Themes in Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/using-themes-in-liferay-screens-for-ios)
+[Using Themes in iOS Screenlets](/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
 
 [Architecture of Liferay Screens for iOS](/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
