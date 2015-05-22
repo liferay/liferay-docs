@@ -66,7 +66,7 @@ authentication is needed to call the API. To allow this operation, it's
 recommended that the portal administrator create a specific user with minimal 
 permissions. 
 
-## Required Attributes
+## Required Attributes [](id=required-attributes)
 
 - `layoutId`
 - `anonymousApiUserName`
@@ -88,7 +88,9 @@ The `ForgotPasswordScreenlet` delegates some events to an object that implements
 the `ForgotPasswordListener` interface. This interface lets you implement the 
 following methods:
 
-| Method | Explanation |
-|-----------|-------------| 
-|  <pre>onForgotPasswordRequestSuccess(boolean passwordSent)</pre> | Called when a password reset email is successfully sent. The boolean parameter determines whether the email contains the new password or a password reset link. |
-|  <pre>onForgotPasswordRequestFailure(Exception e)</pre> | Called when an error occurs in the process. |
+- `onForgotPasswordRequestSuccess(boolean passwordSent)`: Called when a password 
+reset email is successfully sent. The boolean parameter determines whether the 
+email contains the new password or a password reset link.
+
+- `onForgotPasswordRequestFailure(Exception e)`: Called when an error occurs in 
+the process.
