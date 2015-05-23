@@ -5,9 +5,9 @@ You can start using screenlets once you've
 your project to use Liferay Screens. There are plenty of Liferay screenlets
 available and they're described in the screenlet
 [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android).
-Using screenlets is very straightforward. This tutorial shows you how to insert
-and configure screenlets in your Android app. You'll be a screenlet master in no
-time! 
+It is very straightforward to use screenlets. This tutorial shows you how to
+insert screenlets into your android app and configure them. You'll be a
+screenlet master in no time! 
 
 First, in Android Studio's visual layout editor or your favorite editor, open
 your app's layout XML file and insert the screenlet in your activity or fragment
@@ -16,9 +16,9 @@ inserted in an activity's `FrameLayout`.
 
 ![Figure 1: Here's the `LoginScreenlet` in an activity's layout in Android Studio.](../../images/screens-android-insert-screenlet.png)
 
-Next, set the screenlet's attributes via the XML. If it's a Liferay screenlet,
-refer to the screenlet
-[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android)  
+Next, set the screenlet's attributes. If it's a Liferay screenlet, refer to the
+screenlet
+[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
 to learn the screenlet's required and supported attributes. This screenshot
 shows the attributes of the `LoginScreenlet` being set:
 
