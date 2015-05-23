@@ -2,7 +2,7 @@
 
 To use Liferay Screens in your Android project, you must install it, install its
 dependencies, and configure it. We recommend you use Gradle or Maven to
-automatically configure your project with Liferay Screens; but you can do it
+configure your project automatically with Liferay Screens, but you can do it
 manually too. Liferay Screens is released as an
 [AAR](http://tools.android.com/tech-docs/new-build-system/aar-format) file
 hosted in jCenter. This tutorial specifies Screens's requirements, shows you all
@@ -43,7 +43,7 @@ Follow these steps to configure Liferay Screens in a Gradle project:
         }
 
 Gradle downloads all the necessary dependencies before building your project. If 
-you get errors, such as `Duplicate files copied in APK META-INF/NOTICE`, when 
+you get errors such as `Duplicate files copied in APK META-INF/NOTICE` when 
 building with Gradle, add the following packaging options to your `build.gradle`
 file: 
 
@@ -98,8 +98,8 @@ a new repository in your maven settings (e.g., `.m2/settings.xml` file):
         <activeProfile>bintray</activeProfile>
     </activeProfiles>
 
-Even though we strongly recommend using Gradle or Maven to automatically
-configure Liferay Screens in your project, you can configure it manually. 
+Even though we strongly recommend using Gradle or Maven to configure Liferay
+Screens automatically in your project, you can configure it manually. 
 
 ## Manual Configuration in Gradle [](id=manual-configuration-in-gradle)
 
@@ -148,7 +148,7 @@ Add the following code to the new file:
         <integer name="liferay_group_id">10182</integer>
 
     </resources>
-    
+ 
 As the above comment indicates, make sure to change these values to match
 your Liferay instance. The server address `http://10.0.2.2:8080` is suitable 
 for testing with Android Studio's emulator, because it corresponds to 
