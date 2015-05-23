@@ -35,7 +35,7 @@ Westeros view sets as dependencies:
         ...
     }
 
-Here are some view sets that Liferay's created for Android screenlets:
+Here are some view sets that Liferay created for Android screenlets:
 
 - *Default*: Comes standard with a screenlet. It's used by a screenlet if no
   layout ID is specified or if no view is found with the layout ID.
