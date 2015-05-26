@@ -135,7 +135,7 @@ For more details, see the User Guide sections [Defining Data Types](/portal/-/kn
 [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists), 
 and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow). 
 
-## Required Attributes
+## Required Attributes [](id=required-attributes)
 
 - `layoutId`
 - `structureId`

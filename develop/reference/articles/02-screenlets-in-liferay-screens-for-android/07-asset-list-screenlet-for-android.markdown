@@ -70,7 +70,7 @@ sections of the User Guide for more details.
 Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
 must be installed to allow remote calls without the `userId`.
 
-## Required Attributes
+## Required Attributes [](id=required-attributes)
 
 - `layoutId`
 - `classNameId`

@@ -45,7 +45,7 @@ administrator should create a user with minimal permissions. To use
 `SignUpScreenlet`, you need to use that user in your layout. You should add that
 user's credentials to `server_context.xml`. 
 
-## Required Attributes
+## Required Attributes [](id=required-attributes)
 
 - `layoutId`
 - `anonymousApiUserName`

@@ -42,7 +42,7 @@ and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists).
 Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
 must be installed to allow remote calls without the `userId`. 
 
-## Required Attributes
+## Required Attributes [](id=required-attributes)
 
 - `layoutId`
 - `recordSetId`

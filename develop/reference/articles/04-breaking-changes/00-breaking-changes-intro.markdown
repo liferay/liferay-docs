@@ -1,4 +1,4 @@
-# What are the Breaking Changes for Liferay 6.2?
+# What are the Breaking Changes for Liferay 6.2? [](id=what-are-the-breaking-changes-for-liferay-6-2)
 
 This document presents a chronological list of changes that break existing
 functionality, APIs, or contracts with third party Liferay developers or users.
@@ -20,7 +20,7 @@ feature or API will be dropped in an upcoming version.
 replaces an old API, in spite of the old API being kept in Liferay Portal for
 backwards compatibility.
 
-## Breaking Changes Contribution Guidelines
+## Breaking Changes Contribution Guidelines [](id=breaking-changes-contribution-guidelines)
 
 Each change must have a brief descriptive title and contain the following
 information:
@@ -45,17 +45,17 @@ Here's the template to use for each breaking change (note how it ends with a
 horizontal rule):
 
 ```
-### [Title]
+### [Title] [](id=title)
 - **Date:**
 - **JIRA Ticket:**
 
-#### What changed?
+#### What changed? [](id=what-changed)
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected)
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code)
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made)
 
 ---------------------------------------
 ```
@@ -69,32 +69,32 @@ must follow the column rules specified in Liferay's
 The remaining content of this document consists of the breaking changes listed
 in ascending chronological order.
 
-## Breaking Changes List
+## Breaking Changes List [](id=breaking-changes-list)
 
-### Utility Methods Have Been Moved from [ImageLocalServiceUtil](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html) to [ImageTool](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html)
+### Utility Methods Have Been Moved from [ImageLocalServiceUtil](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html) to [ImageTool](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html) [](id=utility-methods-have-been-moved-from-imagelocalserviceutilhttps-docs-lifer)
 - **Date:** 2013-Jan-13
 - **JIRA Ticket:** LPS-31888
 
-#### What changed?
+#### What changed? [](id=what-changed-0)
 Utility methods have been moved from
 [`ImageLocalServiceUtil`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html)
 to
 [`ImageTool`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html).
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-0)
 Developers using utility methods of
 [`ImageLocalServiceUtil`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html)
 may find that the method they're using have been moved to
 [`ImageTool`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html).
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-0)
 If you were using a method of
 [`ImageLocalServiceUtil`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html)
 that's no longer there, use the corresponding method of
 [`ImageTool`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html)
 instead.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-0)
 Utility methods should stay in utility classes rather than service classes to
 avoid unnecessary AOP overhead.
 
