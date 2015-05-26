@@ -39,7 +39,7 @@ Follow these steps to configure Liferay Screens in a Gradle project:
 2. Include Screens as a dependency:
 
         dependencies {
-            compile 'com.liferay.mobile:liferay-screens:0.3.0'
+            compile 'com.liferay.mobile:liferay-screens:1.0.+'
         }
 
 Gradle downloads all the necessary dependencies before building your project. If 

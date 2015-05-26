@@ -43,6 +43,11 @@ This is indicated by the comments in the code here:
 
         ...
 
+If you're using CocoaPods, you need to import Liferay Screens in your view 
+controller:
+
+    import LiferayScreens
+
 Now that the screenlet's delegate protocol conforms in your `ViewController` 
 class, go back to Interface Builder and connect the screenlet's delegate to your 
 view controller. If the screenlet you're using has more outlets, you can assign 
@@ -56,6 +61,8 @@ follow these steps:
 
 1. Declare an outlet to hold a reference to the screenlet. You can connect it in 
    Interface Builder without any issues.
+   
+    ![Figure 3: Connect the outlet with the screenlet reference.](../../images/screens-ios-xcode-add-screenlet-delegate.png)
  
 2. Assign the screenlet's delegate the `viewDidLoad` method. This is 
    the connection typically done in Interface Builder.
@@ -74,7 +81,7 @@ controller.
 
         ...
 
-![Figure 3: Connect the screenlet's delegate in Interface Builder.](../../images/screens-ios-xcode-delegate.png)
+![Figure 4: Connect the screenlet's delegate in Interface Builder.](../../images/screens-ios-xcode-delegate.png)
 
 Awesome! Now you know how to use screenlets in your apps. If you need to use
 screenlets from Objective-C code, follow the instructions in the next section. 
@@ -106,7 +113,7 @@ steps:
     - Precompile Prefix Header: `Yes`
     - Prefix Header: `path/to/your/file/PrefixHeader.pch`
 
-    ![Figure 4: The `PrefixHeader.pch` configuration in Xcode settings.](../../images/screens-ios-xcode-prefix.png)
+    ![Figure 5: The `PrefixHeader.pch` configuration in Xcode settings.](../../images/screens-ios-xcode-prefix.png)
 
 You can use the precompiler header file
 [`PrefixHeader.pch`](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Showcase-objc/LiferayScreens-Showcase-Objc/PrefixHeader.pch) 
@@ -124,7 +131,7 @@ other words, a screenlet's support for a language is only valid if your app
 supports that language. To support a language, make sure to add it as a
 localization in your project's settings. 
 
-![Figure 5: The Xcode localizations in the project's settings.](../../images/screens-ios-xcode-localizations.png)
+![Figure 6: The Xcode localizations in the project's settings.](../../images/screens-ios-xcode-localizations.png)
 
 Way to go! You now know how to use screenlets in your iOS apps. 
 
