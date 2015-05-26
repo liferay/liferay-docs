@@ -158,13 +158,13 @@ Screenlets are comprised of several Java classes and an XML descriptor file:
 - *Default Layout*: an XML file that specifies how to render the screenlet's 
   view. Here's a skeleton of a screenlet's layout XML file: 
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <com.your.package.MyScreenletView 
-        xmlns:android="http://schemas.android.com/apk/res/android">
-    
-        <!-- Put your regular components here: EditText, Button, etc. -->
-
-    </com.your.package.MyScreenletView>
+        <?xml version="1.0" encoding="utf-8"?>
+        <com.your.package.MyScreenletView 
+            xmlns:android="http://schemas.android.com/apk/res/android">
+        
+            <!-- Put your regular components here: EditText, Button, etc. -->
+        
+        </com.your.package.MyScreenletView>
 
 Refer to [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
 for more screenlet details. Next, the view layer's details are described. 
