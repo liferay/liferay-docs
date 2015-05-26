@@ -1,24 +1,25 @@
 # Developing Applications with Liferay IDE [](id=developing-apps-with-liferay-ide)
 
-To develop an application, you need a development environment. Liferay
-provides a great environment with Liferay IDE. 
+To develop an application, you need a development environment. Liferay provides
+a great environment with Liferay IDE. 
 
-Liferay IDE is a plugin for Eclipse that brings many Liferay-specific
-features to the table. You can install it into your existing Eclipse
-environment, or Liferay provides a bundled version. 
+Liferay IDE is a plugin for Eclipse that brings many Liferay-specific features
+to the table. You can install it into your existing Eclipse environment, or
+Liferay provides a bundled version. 
 
 ## Option 1: Install the Liferay IDE Bundle [](id=option-1-install-the-liferay-ide-bundle)
 
 1. Download and install [Java](http://java.oracle.com). Liferay runs on Java, so
-you'll need it to run everything else. Because you'll be developing apps for
-Liferay Portal in Liferay IDE, the Java Development Kit (JDK) is required. It is
-an enhanced version of the Java Environment, used for developing new Java
-technology. You can download the Java SE JDK from the Java
-[Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-page. 
+   you'll need it to run everything else. Because you'll be developing apps for
+   Liferay Portal in Liferay IDE, the Java Development Kit (JDK) is required. It
+   is an enhanced version of the Java Environment, used for developing new Java
+   technology. You can download the Java SE JDK from the Java
+   [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+   page. 
 
-2. Download [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide).
-Installing it is easy: unzip it to a convenient location on your system. 
+2. Download
+   [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide).
+   Installing it is easy: unzip it to a convenient location on your system. 
 
 Congratulations! You've installed Liferay IDE! 
 
@@ -29,9 +30,10 @@ things, it's easy to add Liferay IDE to your existing Eclipse installation.
 
 1. Select *Help* &rarr; *Install New Software*. 
 
-2. In your browser, go to the [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide) 
-page. Copy the URL to the update site you're interested in (stable or
-milestone). 
+2. In your browser, go to the
+   [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
+   page. Copy the URL to the update site you're interested in (stable or
+   milestone). 
 
     ![Figure 1: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../images/liferay-ide-download.png)
 
@@ -75,15 +77,19 @@ Under the hood, it also works with Liferay's Plugins SDK, a barebones,
 command line driven development environment you can use with any IDE or text
 editor. Because of this, your next task is to get both of these installed. 
 
-1. Install a [Liferay Tomcat runtime](https://www.liferay.com/downloads/liferay-portal/available-releases)
-you'll use in your development environment to run your applications. This is just as easy as installing Liferay IDE: unzip it to
-your system. We recommend creating a `bundles` folder and unzipping it there. 
+1. Install a
+   [Liferay Tomcat runtime](https://www.liferay.com/downloads/liferay-portal/available-releases)
+   you'll use in your development environment to run your applications. This is
+   just as easy as installing Liferay IDE: unzip it to your system. We recommend
+   creating a `bundles` folder and unzipping it there. 
 
-2. Install the [Plugins SDK](https://www.liferay.com/downloads/liferay-portal/additional-files).
-Liferay's Plugins SDK is a basic, command-line driven development environment
-that the IDE uses behind the scenes to manage your Liferay projects. This is just as easy as installing everything else: unzip it
-to your system. We recommend unzipping it next to the `bundles` folder you
-created in the last step. 
+2. Install the
+   [Plugins SDK](https://www.liferay.com/downloads/liferay-portal/additional-files).
+   Liferay's Plugins SDK is a basic, command-line driven development environment
+   that the IDE uses behind the scenes to manage your Liferay projects. This is
+   just as easy as installing everything else: unzip it to your system. We
+   recommend unzipping it next to the `bundles` folder you created in the last
+   step. 
 
 ![Figure 2: The directory structure for Liferay development is pretty simple.](../../images/developer-directory-structure.png)
 
@@ -92,15 +98,15 @@ like the one above. Next, you need to get all these components talking to each
 other. Launch IDE.
  
 1. Use *Window* &rarr; *Open Perspective* &rarr; *Liferay* to switch to the
-Liferay perspective. 
+   Liferay perspective. 
 
 2. The tab on the low left corner is labeled *Servers*. Click the link to create
-a new server. 
+   a new server. 
 
 	![Figure 3: The Servers tab has no servers by default.](../../images/lds-servers.png)
 
 3. In the dialog that appears, select the server that matches the runtime you
-downloaded and installed. Click *Next*. 
+   downloaded and installed. Click *Next*. 
 
 	![Figure 4: Select the Liferay server runtime you downloaded.](../../images/lds-select-server.png)
 
@@ -125,11 +131,11 @@ password *liferay* does nicely), answer the security question, and you're done.
 
 Your runtime is now set up. Next, you need to register your Plugins SDK. 
 
-1. Select *Eclipse* &rarr; *Preferences* &rarr; *Liferay* &rarr; *Installed Plugin
-SDKs*. 
+1. Select *Window* &rarr; *Preferences* &rarr; *Liferay* &rarr; *Installed
+   Plugin SDKs*. 
 
 2. Click *Add*. Browse to the folder where you unzipped the Plugins SDK and
-click *OK*. 
+   click *OK*. 
 
 3. Click *OK* again. 
 

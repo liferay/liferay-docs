@@ -1,7 +1,7 @@
 # Implementing Application Display Templates [](id=implementing-application-display-templates)
 
 <!-- You can test this tutorial using the following portlet project 
-https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/wc/impl-adts/begin/event-listing-portlet)
+https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/wc/impl-adts/begin/event-listing-portlet)
 -->
 
 [Application Display Templates](/discover/portal/-/knowledge_base/6-2/using-application-display-templates)
@@ -45,7 +45,7 @@ exposing the ADT functionality to users. Let's walk through these steps:
 
     As an example `*PortletDisplayTemplateHandler` implementation, you can look
     at
-    [`LocationListingPortletDisplayTemplateHandler.java`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/wc/impl-adts/end/event-listing-portlet/docroot/WEB-INF/src/com/samples/portlet/eventlisting/template/LocationListingPortletDisplayTemplateHandler.java).
+    [`LocationListingPortletDisplayTemplateHandler.java`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/wc/impl-adts/end/event-listing-portlet/docroot/WEB-INF/src/com/samples/portlet/eventlisting/template/LocationListingPortletDisplayTemplateHandler.java).
 
 2. Now that you've created the template handler, declare it with the
    `<template-handler>...</template-handler>` tags in the `<portlet>` element of
@@ -136,7 +136,7 @@ exposing the ADT functionality to users. Let's walk through these steps:
     Configuration menu.
     
     As an example JSP, see
-    [`configuration.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/wc/impl-adts/end/event-listing-portlet/docroot/html/locationlisting/configuration.jsp). 
+    [`configuration.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/wc/impl-adts/end/event-listing-portlet/docroot/html/locationlisting/configuration.jsp). 
 
 5.  You're almost finished, but you still have to extend your view code to
     render your portlet with the selected ADT. Here is where you decide exactly
@@ -179,7 +179,7 @@ exposing the ADT functionality to users. Let's walk through these steps:
     Otherwise, the entities are displayed some other way that you implement.
 
     For an example that demonstrates implementing this, see
-    [`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/wc/impl-adts/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
+    [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/wc/impl-adts/end/event-listing-portlet/docroot/html/locationlisting/view.jsp).
 
 Now that your portlet supports ADTs, you can create your own scripts to change
 the display of your portlet. You can experiment by adding your own custom ADT.

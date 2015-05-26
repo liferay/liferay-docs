@@ -4,10 +4,10 @@
 Testing Notes:
 
 On completing the first part of this tutorial, the plugin looks like the hook plugin at ...
-liferay-docs/develop/tutorials/tutorials-sdk-6.2-ga3/hooks/struts-actions-overriding-example-hook
+liferay-docs/develop/tutorials/code/tutorials-sdk/hooks/struts-actions-override-example-hook
 
 On completing the second part of this tutorial, the plugin looks like the hook plugin at ...
-liferay-docs/develop/tutorials/tutorials-sdk-6.2-ga3/hooks/struts-actions-adding-example-hook2-hook
+liferay-docs/develop/tutorials/code/tutorials-sdk/hooks/struts-actions-add-example-hook2-hook
 
 Make sure to read their README files. - Jim
 -->
@@ -73,7 +73,7 @@ steps:
     `struts-action-impl` element with a value that specifies your custom action
     class.
 
-    The following Struts action from example hook plugin [example-hook](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/hooks/struts-actions-overriding-example-hook)
+    The following Struts action from example hook plugin [example-hook](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/hooks/struts-actions-override-example-hook)
     specifies a custom Struts portlet action class called
     `ExampleStrutsPortletAction`. This action class is invoked for the Struts
     action path `/login/login`. The example hook's `struts-action` element looks
@@ -174,7 +174,7 @@ Now that you know how to override a Struts action, you might also be interested
 in adding a new Struts action. Here's how you do it:
 
 1.  If you like, create a folder for the new action's JSP. The example hook
-    plugin example-hook2-hook on [GitHub](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/hooks/struts-actions-adding-example-hook2-hook),
+    plugin example-hook2-hook on [GitHub](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/hooks/struts-actions-add-example-hook2-hook),
     stores its custom JSP in a folder `docroot/META-INF/custom_jsps/html/portal`. 
 
 2.  Add a JSP for your new Struts action. For example, the following code from
@@ -187,7 +187,7 @@ in adding a new Struts action. Here's how you do it:
 
 3.  Create a new Struts action class. Consider extending [`BaseStrutsPortletAction`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/struts/BaseStrutsPortletAction.html).
     As an example, here's the code from the example-hook2-hook plugin's Struts
-    action class [`ExampleStrutsAction`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/hooks/struts-actions-adding-example-hook2-hook/docroot/WEB-INF/src/com/liferay/sample/hook/action/ExampleStrutsAction.java):
+    action class [`ExampleStrutsAction`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/hooks/struts-actions-add-example-hook2-hook/docroot/WEB-INF/src/com/liferay/sample/hook/action/ExampleStrutsAction.java):
 
         package com.liferay.sample.hook.action;
 

@@ -31,7 +31,7 @@ permission definitions you configured.
 With your permission definitions configured, its time to introduce those
 permissions in your managed beans. To do this, you'll provide getter and setter
 methods encapsulating permission properties using Liferay's
-[PermissionChecker](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/security/permission/PermissionChecker.java).
+[PermissionChecker](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-service/src/com/liferay/portal/security/permission/PermissionChecker.java).
 
 Before beginning, review what permission checks you'll implement: 
 

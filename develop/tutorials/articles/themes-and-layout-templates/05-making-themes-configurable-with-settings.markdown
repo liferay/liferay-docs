@@ -80,7 +80,7 @@ To define additional settings, add more `<setting>` elements inside the
 what other types of settings you can add to a theme, see the DTD file referenced
 at the beginning of this file's contents. This DTD and all of Liferay's
 definition files are available to view at 
-[https://github.com/liferay/liferay-portal/tree/master/definitions](https://github.com/liferay/liferay-portal/tree/master/definitions). 
+[https://github.com/liferay/liferay-portal/tree/6.2.x/definitions](https://github.com/liferay/liferay-portal/tree/6.2.x/definitions). 
 
 Any configurable settings you've defined are visible and ready for the site
 administrator to modify. In the *Look and Feel* section of the *Site
