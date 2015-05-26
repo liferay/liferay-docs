@@ -1,54 +1,51 @@
 # Creating Screenlets in Liferay Screens for iOS [](id=creating-screenlets-in-liferay-screens-for-ios)
 
-Liferay Screens' built-in screenlets cover many common use cases in mobile 
+The built-in screenlets in Liferay Screens cover many common use cases in mobile 
 apps that connect to Liferay. For example, you can use them to authenticate 
-users, interact with Dynamic Data Lists, and view assets. However, what if 
-there's not a screenlet for *your* specific use case? No sweat! You can write 
+users, interact with Dynamic Data Lists, view assets, and more. What if, 
+however, there's not a screenlet for *your* use case? No problem! You can write 
 your own screenlet. Screenlets can also be written by others and contributed to 
-the Screens project. This extensibility is one of Screens' key strengths. 
+the Screens project or distributed with CocoaPods. This extensibility is one of 
+Screens's key strengths. 
 
-In this tutorial, you'll create an example bookmarks screenlet for iOS that has 
-the following features: 
+This tutorial shows you how to create your own screenlets. As an example, code 
+is provided for a [sample Add Bookmark screenlet](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/AddBookmark-screenlet) 
+that saves bookmarks in Liferay's Bookmarks portlet.
 
-- Allows entry of a URL in a text box. 
-- Checks if the URL is valid and extracts its title value. 
-- Lets the user modify the title. 
-- Upon user confirmation, the URL and title is sent back to the Liferay 
-  instance's Bookmark services to be saved. 
-  
-This screenlet is located [here on GitHub](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/AddBookmark-screenlet). 
-You can use it as a reference as you follow along.
-  
-You can create the screenlet in your app's Xcode project. However, if you want 
-to distribute your screenlet as a library so that other apps can use it, follow 
-the steps described in the section *Publish Your Themes Using CocoaPods* in 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes). 
-
-Before proceeding, you may want to read the tutorial 
+Before creating your first screenlet, you may want to read the tutorial 
 [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
-to understand in detail the concepts underlying screenlets. You may also want to 
+to understand the components that comprise a screenlet. You may also want to 
 read the tutorial [Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
 to support your new screenlet from the theme that you want to use. Without any 
 further ado, let the screenlet creation begin! 
 
+## Deciding Your Screenlet's Location
+
+Where you create your screenlet depends on how you plan to use it. If you don't 
+plan to reuse or redistribute it, create it in your app's Xcode project. 
+Otherwise, follow the steps described in the section *Publish Your Themes Using 
+CocoaPods* in the tutorial [Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes). 
+Even though that section refers to themes, the steps for publishing screenlets 
+are the same. 
+
 ## Creating the Screenlet [](id=creating-the-screenlet)
 
-Use the following steps to create the screenlet: 
+Use the following steps to create your screenlet: 
 
-1. Create a new `xib` file for your screenlet. In this example the file is named 
-   `AddBookmarkView_default.xib`. You'll build your UI here using Interface 
-   Builder. Since the bookmarks screenlet needs text box fields for the 
-   bookmark's URL and title, put in two text box fields (`UITextField`). Also, 
-   add two buttons to let the user retrieve the title and save the bookmark. To 
-   differentiate between these two user actions, assign a value for the 
-   `restorationIdentifier` property in each button (for example, `get-title` and 
-   `add-bookmark`). The `xib` with the text fields and buttons is shown here:
+1. Create a new XIB file and construct your screenlet's UI with Interface 
+   Builder. For example, the Add Bookmark screenlet's XIB file is named 
+   `AddBookmarkView_default.xib` and contains text box fields for the 
+   bookmark's URL and title. It also contains two buttons that let the user 
+   retrieve the title and save the bookmark. To differentiate between these two 
+   user actions, a value is assigned for the `restorationIdentifier` property in 
+   each button (for example, `get-title` and `add-bookmark`). The example XIB 
+   with the text fields and buttons is shown here:
 
-    ![Figure 1: The new `xib` file for the new screenlet.](../../images/screens-ios-xcode-add-bookmark.png)
+    ![Figure 1: The example Add Bookmark screenlet's XIB file.](../../images/screens-ios-xcode-add-bookmark.png)
 
-2. Create a new interface protocol for the screenlet, containing any needed 
-   attributes. Here, this is called `AddBookmarkViewModel` and the associated 
-   attributes are `URL` and `title`:
+2. Create a new interface protocol for your screenlet, containing any needed 
+   attributes. In the example Add Bookmark screenlet, this is called 
+   `AddBookmarkViewModel` and the associated attributes are `URL` and `title`: 
 
         @objc protocol AddBookmarkViewModel {
         
@@ -58,12 +55,17 @@ Use the following steps to create the screenlet:
         
         }
 
-3. Create a new class called `AddBookmarkView_default` that extends 
-   `BaseScreenletView` and conforms `AddBookmarkViewModel`. It must wire all UI 
-   components and events from the `xib` by using the standard `@IBOutlet` and 
-   `@IBAction`. Getters and setters from `AddBookmarkViewModel` should, 
+3. Create a new class and give it a name that matches the XIB file's name. This 
+   new class should extend `BaseScreenletView` and conform the interface 
+   protocol you created in the previous step. It must also wire all UI 
+   components and events from the XIB by using the standard `@IBOutlet` and 
+   `@IBAction`. Getters and setters from the interface protocol should, 
    respectively, get and set the data from UI components. Also, be sure to write 
-   any animations or front end code here.
+   any animations or front end code here. As an example, this class in the Add 
+   Bookmark screenlet is called `AddBookmarkView_default` and conforms the 
+   `AddBookmarkViewModel` interface protocol. The URL and title text fields from 
+   its XIB are connected via `@IBOutlet`. It also implements the `URL` and 
+   `title` properties defined in its interface protocol: 
    
         import UIKit
         import LiferayScreens
@@ -96,14 +98,14 @@ Use the following steps to create the screenlet:
 4. Set `AddBookmarkView_default` as your `AddBookmarkView_default.xib` file's 
    custom class. If you're using CocoaPods, be careful to set the appropiate 
    module (don't use the grayed out value *Current*). For example, the Custom 
-   Class setting in this screenshot is incorrect. This is because the `xib` file 
+   Class setting in this screenshot is incorrect. This is because the XIB file 
    is bound to the custom class name without specifying the module:
     
-    ![Figure 2: The `xib` file is bound to the custom class name without specifying the module.](../../images/screens-ios-theme-custom-module-wrong.png)
+    ![Figure 2: The XIB file is bound to the custom class name without specifying the module.](../../images/screens-ios-theme-custom-module-wrong.png)
     
     In the following screenshot, the setting for the custom class is correct:
     
-    ![Figure 3: The `xib` file is bound to the custom class name, with the module specified.](../../images/screens-ios-theme-custom-module-right.png)
+    ![Figure 3: The XIB file is bound to the custom class name, with the module specified.](../../images/screens-ios-theme-custom-module-right.png)
 
 5. Create a class called `GetSiteTitleInteractor` that extends from the 
    `Interactor` class. This new class is the place where you need to write the 
