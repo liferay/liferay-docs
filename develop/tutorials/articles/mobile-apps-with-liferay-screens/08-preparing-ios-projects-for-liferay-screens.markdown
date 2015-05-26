@@ -2,13 +2,13 @@
 
 To use Liferay Screens in your iOS project, you must install it, install its
 dependencies, and configure it. The steps differ depending on the iOS version
-you're project supports. If your app only needs to support iOS versions 
-8.0 or above, then you can prepare it for Screens by adding a single line to 
+your project supports. If your app only needs to support iOS versions 
+8.0 or above, you can prepare it for Screens by adding a single line to 
 your project's `Podfile` and using CocoaPods to complete configuration. This is
 possible because Liferay Screens is released as a standard
-[CocoaPods](https://cocoapods.org/) dependency. If you need to support iOS 7,
+[CocoaPods](https://cocoapods.org) dependency. If you need to support iOS 7,
 however, then you must manually add Screens to your project. This CocoaPods
-[article](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/)
+[article](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks)
 explains why. As you've probably guessed, manually adding Screens to your
 project is more challenging; don't worry, though! It's still not horribly complicated. 
 
@@ -18,7 +18,7 @@ article](http://blog.cocoapods.org/CocoaPods-0.36/) for more details about how
 CocoaPods works with Swift dependencies. 
 
 This tutorial specifies Screens's requirements, shows you both configuration
-methods, and shows how to set up communication with Liferay. Onwards! 
+methods, and shows how to set up communication with Liferay. Onward! 
 
 ## Requirements [](id=requirements)
 
@@ -47,7 +47,7 @@ exist):
 
     pod 'LiferayScreens'
 
-Your final `Podfile` should look something like this:
+Your final `Podfile` should look like this:
 
     source 'https://github.com/CocoaPods/Specs.git'
     
@@ -61,17 +61,17 @@ Your final `Podfile` should look something like this:
 You can also use [this `Podfile`](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Showcase-swift/Podfile) 
 as a template.
 
-Next, in your terminal, install Liferay Screns by executing `pod install` from
+Next, in your terminal, install Liferay Screens by executing `pod install` from
 your project's folder. Once this completes, quit Xcode (if you have it open). To
-open your project use the `*.xcworkspace` file in your project's directory. 
+open your project, use the `*.xcworkspace` file in your project's directory. 
 
 Great! To configure your project's communication with Liferay, you can skip the
-next section and follow the instuctions in the final section. 
+next section and follow the instructions in the final section. 
 
 ## Manual Configuration [](id=manual-configuration)
 
-There are a few things you need to manually setup in your iOS 7 app to prepare 
-it for Liferay Screens. First, you must download the 
+There are a few things you need to setup manually in your iOS 7 app to prepare 
+it for Liferay Screens. First, you must download 
 Liferay Screens [source code](https://github.com/liferay/liferay-screens/releases) 
 and include it in your project. Follow these steps: 
 
@@ -105,11 +105,11 @@ yet exist):
 
 In a terminal, navigate to your project's directory and execute 
 `pod install`. Once this completes, quit Xcode (if you have it open). To
-open your project use the `*.xcworkspace` file in your project's directory. 
+open your project, use the `*.xcworkspace` file in your project's directory. 
 
 The
-[CocoaPods for Xcode plugin](https://github.com/kattrali/cocoapods-xcode-plugin),  
-that you can install with the [Alcatraz package manager](http://alcatraz.io/), 
+[CocoaPods for Xcode plugin](https://github.com/kattrali/cocoapods-xcode-plugin) 
+that you can install with the [Alcatraz package manager](http://alcatraz.io/) 
 can perform these tasks from Xcode. 
 
 ![Figure 2: You can perform Xcode tasks with the CocoaPods for Xcode plugin helps.](../../images/screens-ios-xcode-cocoapods.png)
@@ -140,8 +140,7 @@ XCTest). Here's a `Podfile` with a placeholder for a test target:
 
 In your project's build settings, you must edit its 
 *Objective-C bridging header* to include 
-`${SRCROOT}/Liferay-Screens/Core/liferay-screens-bridge.h`. This is shown in 
-the following screenshot.
+`${SRCROOT}/Liferay-Screens/Core/liferay-screens-bridge.h`. 
 
 ![Figure 3: Here's the Objective-C bridging header.](../../images/screens-ios-project-header.png)
 
@@ -149,7 +148,7 @@ the following screenshot.
 
 There are some problems associated with the manual installation procedure. For
 example, when using a screenlet in your project, the Interface Builder may
-complain about a unknown class. This error occurs because the screenlet is bound
+complain about an unknown class. This error occurs because the screenlet is bound
 to the `LiferayScreens` Module. This module exists only if you installed Screens
 with CocoaPods (for iOS 8 and above). To solve this problem, you must open the
 failed `xib` file listed in the error trace (in Figure 4, this is
@@ -159,10 +158,11 @@ Module values shows as the grayed-out text `Current - your app name`.
 
 ![Figure 4: When using a screenlet with Screens installed manually, you may get an exception due to an unknown class in Interface Builder.](../../images/screens-ios-xcode-unknown-class.png)
 
-Alternatively, you can click the dropdown next to the Module field and select an
-element from the list. For example, if your app's name is `ManualTestApp`, then
-you can select `ManualTestApp` from the Module dropdown. Before and after
-screenshots of this assignment are shown in Figure 5 through Figure 7. 
+Alternatively, you can click the selection box next to the Module field and
+select an element from the list. For example, if your app's name is
+`ManualTestApp`, you can select `ManualTestApp` from the Module selection box.
+Before and after screenshots of this assignment are shown in Figure 5 through
+Figure 7. 
 
 ![Figure 5: By default, the Module is set to LiferayScreens.](../../images/screens-ios-xcode-custom-class-before.png)
 
@@ -176,7 +176,7 @@ project. It's time to configure its communication with your Liferay instance.
 ## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
 
 Configuring communication between screenlets and Liferay is easy. Liferay
-Screens uses a property list (`.plist`) file, to access your Liferay instance.
+Screens uses a property list (`.plist`) file to access your Liferay instance.
 It must include the server's URL, the portal's company ID, and the site's group
 ID. Create a `.plist` file and specify values required for communicating with
 your Liferay instance. As an example, refer to

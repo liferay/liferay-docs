@@ -3,7 +3,7 @@
 Once you've
 [prepared](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
 your iOS project to use Liferay Screens, you can use screenlets in your app.
-There are plenty of Liferay screenlets available and they're described in the 
+There are plenty of Liferay screenlets available, and they're described in the 
 screenlet
 [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
 This tutorial shows you how to insert and configure screenlets in iOS apps
@@ -12,15 +12,14 @@ be a screenlet master in no time!
 
 ## Inserting and Configuring Screenlets in iOS Apps [](id=inserting-and-configuring-screenlets-in-ios-apps)
 
-The first step to using screenlets in your iOS project is adding a new UIView to
+The first step to using screenlets in your iOS project is to add a new UIView to
 your project. In Interface Builder, insert a new UIView into your Storyboard or
 XIB file. Figure 1 shows this. 
 
 ![Figure 1: Add a new UIView to your project.](../../images/screens-ios-add-uiwindow.png)
 
 Next, enter the screenlet's name as the Custom Class. For example, if you're
-using the `LoginScreenlet`, then enter `LoginScreenlet` as the class. This is
-shown in the following screenshot.
+using the `LoginScreenlet`, then enter `LoginScreenlet` as the class. 
 
 ![Figure 2: Change the Custom Class to match the screenlet.](../../images/screens-ios-custom-class.png)
 
@@ -57,12 +56,12 @@ follow these steps:
 
 1. Declare an outlet to hold a reference to the screenlet. You can connect it in 
    Interface Builder without any issues.
-   
+ 
 2. Assign the screenlet's delegate the `viewDidLoad` method. This is 
    the connection typically done in Interface Builder.
 
-These steps are shown in the following code for the view controller of 
-`LoginScreenlet`.
+These steps are shown in the following code for `LoginScreenlet`'s view
+controller. 
 
     class ViewController: UIViewController, LoginScreenletDelegate {
 
@@ -78,14 +77,13 @@ These steps are shown in the following code for the view controller of
 ![Figure 3: Connect the screenlet's delegate in Interface Builder.](../../images/screens-ios-xcode-delegate.png)
 
 Awesome! Now you know how to use screenlets in your apps. If you need to use
-screenlets from Objective-C code, then you can follow the instructions in the
-next section. You can otherwise skip that section. 
+screenlets from Objective-C code, follow the instructions in the next section. 
 
 ## Using Screenlets from Objective-C [](id=using-screenlets-from-objective-c)
 
-If you want to invoke screenlet classes from Objective-C code, then there is an
-additional header file that you must import. You can either import the header
-file `LiferayScreens-Swift.h` in all of your Objective-C files or configure a
+If you want to invoke screenlet classes from Objective-C code, there is an
+additional header file that you must import. You can import the header file
+`LiferayScreens-Swift.h` in all your Objective-C files or configure a
 precompiler header file. 
 
 The first option involves adding the following import line all of your
@@ -110,7 +108,7 @@ steps:
 
     ![Figure 4: The `PrefixHeader.pch` configuration in Xcode settings.](../../images/screens-ios-xcode-prefix.png)
 
-You can use precompiler header file
+You can use the precompiler header file
 [`PrefixHeader.pch`](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Showcase-objc/LiferayScreens-Showcase-Objc/PrefixHeader.pch) 
 as a template. 
 
@@ -128,7 +126,7 @@ localization in your project's settings.
 
 ![Figure 5: The Xcode localizations in the project's settings.](../../images/screens-ios-xcode-localizations.png)
 
-Way to go! You now know how to use screelets in your iOS apps, 
+Way to go! You now know how to use screenlets in your iOS apps. 
 
 ## Related Topics [](id=related-topics)
 
