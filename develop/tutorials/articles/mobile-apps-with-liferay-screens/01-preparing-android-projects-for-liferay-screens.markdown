@@ -189,4 +189,4 @@ how to do this.
 
 [Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Preparing iOS Projects for Liferay Screens](develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
