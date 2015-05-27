@@ -95,11 +95,13 @@ Use the following steps to create your screenlet:
         
         }
 
-4. Set `AddBookmarkView_default` as your `AddBookmarkView_default.xib` file's 
-   custom class. If you're using CocoaPods, be careful to set the appropiate 
-   module (don't use the grayed out value *Current*). For example, the Custom 
-   Class setting in this screenshot is incorrect. This is because the XIB file 
-   is bound to the custom class name without specifying the module:
+4. Set the class you just created as the XIB file's custom class. For example, 
+   in the Add Bookmark screenlet, `AddBookmarkView_default` is set as the 
+   `AddBookmarkView_default.xib` file's custom class. If you're using CocoaPods, 
+   be careful to set the appropiate module (don't use the grayed out value 
+   *Current*). For example, the Custom Class setting in this screenshot is 
+   incorrect. This is because the XIB file is bound to the custom class name 
+   without specifying the module:
     
     ![Figure 2: The XIB file is bound to the custom class name without specifying the module.](../../images/screens-ios-theme-custom-module-wrong.png)
     
@@ -107,51 +109,55 @@ Use the following steps to create your screenlet:
     
     ![Figure 3: The XIB file is bound to the custom class name, with the module specified.](../../images/screens-ios-theme-custom-module-right.png)
 
-5. Create a class called `GetSiteTitleInteractor` that extends from the 
-   `Interactor` class. This new class is the place where you need to write the 
-   code that gets the web site's title. It's important to understand how an 
-   interactor works:
+5. Create the interactor classes you need to make any network calls. Each 
+   interactor class should extend Screens's `Interactor` class. The number of 
+   interactor classes you need depends on your screenlet's functionality. 
+   Likewise, you should name your interactor classes after the network calls 
+   they make. It's important to understand how an interactor works:
 
-    - It works asynchronously. This means that the underlying operation (to 
-      retrieve the HTML page) runs in the background. When it completes, a 
-      closure is called: `onSuccess` or `onFailure` depending on the operation's 
-      result. You must use the `callOnSuccess()` and `callOnFailure(error)` 
-      methods, respectively, to invoke those closures. 
+    - It works asynchronously, running the underlying operation in the 
+      background. When it completes, a closure is called: `onSuccess` or 
+      `onFailure` depending on the operation's result. You must use the 
+      `callOnSuccess()` and `callOnFailure(error)` methods, respectively, to 
+      invoke those closures. 
     - You must override the `start()` method and place your code there. 
-    - Since the interactor receives the source screenlet in the init method, you 
-      can use that reference to read the input data. 
+    - Since the interactor receives the source screenlet in the `init` method, 
+      you can use that reference to read the input data. 
     
-            import UIKit
-            import LiferayScreens
-            
-            public class GetSiteTitleInteractor: Interactor {
-            
-                public var resultTitle: String?
-            
-                override public func start() -> Bool {
-                    let viewModel = self.screenlet as! AddBookmarkViewModel
-            
-                    if let URL = viewModel.URL {
-                        // 1. use NSURLSession to retrieve the HTML
-                        // 2. When the response arrives, extract the title from the HTML
-                        // 3. Save the extracted title in the property 'resultTitle'
-                        // 4. invoke callOnSuccess() or callOnFailure(error) when everything is done
-            
-                        // return true to notify the operation is in progress
-                        return true
-                    }
-            
-                    // return false if you cannot start the operation
-                    return false
-                }
-            
-            }
+    For example, the Add Bookmark screenlet needs two interactor classes: one 
+    for getting the site's title from its URL (`GetSiteTitleInteractor`), and 
+    one for adding the bookmark in the Liferay instance 
+    (`LiferayAddBookmarkInteractor`). Note that the latter's name begins with 
+    `Liferay`, because it communicates with a Liferay instance. These example 
+    interactor classes are shown here:
+    
+        import UIKit
+        import LiferayScreens
         
-6. Next, do the same with the second interactor, `LiferayAddBookmarkInteractor`. 
-   This interactor is responsible for sending the URL and title to Liferay 
-   portal to be stored there as a bookmark. Use `Liferay` as the class name 
-   prefix to denote the interactor uses Liferay's services.
-   
+        public class GetSiteTitleInteractor: Interactor {
+        
+            public var resultTitle: String?
+        
+            override public func start() -> Bool {
+                let viewModel = self.screenlet as! AddBookmarkViewModel
+        
+                if let URL = viewModel.URL {
+                    // 1. use NSURLSession to retrieve the HTML
+                    // 2. When the response arrives, extract the title from the HTML
+                    // 3. Save the extracted title in the property 'resultTitle'
+                    // 4. invoke callOnSuccess() or callOnFailure(error) when everything is done
+        
+                    // return true to notify the operation is in progress
+                    return true
+                }
+        
+                // return false if you cannot start the operation
+                return false
+            }
+            
+        }
+        
+        
         import UIKit
         import LiferayScreens
         
@@ -177,93 +183,89 @@ Use the following steps to create your screenlet:
         
         }
 
-7. Now it's time to glue everything together! Ccreate a class called 
-   `AddBookmarkScreenlet ` that extends `BaseScreenlet`. Optionally, you can add 
-   any `@IBInspectable` properties to configure the behavior. For example, you 
-   could use a boolean property to configure whether the user can save broken 
-   URLs.
+6. Create the screenlet class. This class leverages the code from the preceding 
+   steps to control your screenlet's behavior. It should extend `BaseScreenlet` 
+   and (optionally) include any `@IBInspectable` properties that you need. You 
+   should also override the `createInteractor` method to return an instance of 
+   the interactor needed when the method is called. If you have multiple 
+   interactors, you can write additional methods that return an instance of 
+   each, and then call them when needed in `createInteractor`. 
+   
+    The Add Bookmark screenlet's screenlet class is included here as an example. 
+    It extends `BaseScreenlet` and overrides `createInteractor` to return an 
+    interactor instance that depends on the `name` parameter's value. The 
+    `createGetTitleInteractor` and `createAddBookmarkInteractor` methods create 
+    the interactor instances for `GetSiteTitleInteractor` and 
+    `LiferayAddBookmarkInteractor`, respectively. 
    
         import UIKit
         import LiferayScreens
         
         class AddBookmarkScreenlet: BaseScreenlet {
         
+            override public func createInteractor(#name: String?, sender: AnyObject?) -> Interactor? {
+                switch name! {
+                case "get-title":
+                    return createGetTitleInteractor()
+        
+                case "add-bookmark":
+                    return createAddBookmarkInteractor()
+        
+                default:
+                    return nil
+                }
+            }
+        
+            private func createGetTitleInteractor() -> GetSiteTitleInteractor {
+                let interactor = GetSiteTitleInteractor(screenlet: self)
+        
+                // this shows the standard activity indicator in the screen...
+                self.showHUDWithMessage("Getting site title...", details: nil)
+        
+                interactor.onSuccess = {
+                    self.hideHUD()
+        
+                    // when the interactor is finished, set the resulting title in the title text field
+                    (self.screenletView as? AddBookmarkViewModel)?.title = interactor.resultTitle
+                }
+        
+                interactor.onFailure = { err in
+                    self.showHUDWithMessage("An error occurred retrieving the title",
+                        details: nil,
+                        closeMode: .ManualClose(true),
+                        spinnerMode: .NoSpinner)
+                }
+        
+                return interactor
+            }
+        
+            private func createAddBookmarkInteractor() -> LiferayAddBookmarkInteractor {
+                let interactor = LiferayAddBookmarkInteractor(screenlet: self)
+        
+                self.showHUDWithMessage("Saving bookmark...", details: nil)
+        
+                interactor.onSuccess = {
+                    self.hideHUDWithMessage("Bookmark saved!")
+                }
+        
+                interactor.onFailure = { e in
+                    self.showHUDWithMessage("An error occurred saving the bookmark",
+                        details: nil,
+                        closeMode: .ManualClose(true),
+                        spinnerMode: .NoSpinner)
+                }
+        
+                return interactor
+            }
         
         }
 
-8. Override the `createInteractor` method so it returns an instance of your 
-   interactor depending on the `name` parameter. Here, this is 
-   `GetSiteTitleInteractor` for the name `get-title` and 
-   `LiferayAddBookmarkInteractor` for the name `add-bookmark`. Call separate 
-   methods to create each interactor: 
+7. You're done! You can now add your new screenlet to your storyboard as usual 
+    and use it as a ready-to-use component. 
 
-        override public func createInteractor(#name: String?, sender: AnyObject?) -> Interactor? {
-            switch name! {
-            case "get-title":
-                return createGetTitleInteractor()
-        
-            case "add-bookmark":
-                return createAddBookmarkInteractor()
-        
-            default:
-                return nil
-            }
-        }
-        
-9. Define the `createGetTitleInteractor()` method as follows: 
-
-        private func createGetTitleInteractor() -> GetSiteTitleInteractor {
-            let interactor = GetSiteTitleInteractor(screenlet: self)
-        
-            // this shows the standard activity indicator in the screen...
-            self.showHUDWithMessage("Getting site title...", details: nil)
-        
-            interactor.onSuccess = {
-                self.hideHUD()
-        
-                // when the interactor is finished, set the resulting title in the title text field
-                (self.screenletView as? AddBookmarkViewModel)?.title = interactor.resultTitle
-            }
-        
-            interactor.onFailure = { err in
-                self.showHUDWithMessage("An error occurred retrieving the title",
-                    details: nil,
-                    closeMode: .ManualClose(true),
-                    spinnerMode: .NoSpinner)
-            }
-        
-            return interactor
-        }
-
-10. Similarly, define the `createAddBookmarkInteractor()` method as follows: 
-
-        private func createAddBookmarkInteractor() -> LiferayAddBookmarkInteractor {
-            let interactor = LiferayAddBookmarkInteractor(screenlet: self)
-        
-            self.showHUDWithMessage("Saving bookmark...", details: nil)
-        
-            interactor.onSuccess = {
-                self.hideHUDWithMessage("Bookmark saved!")
-            }
-        
-            interactor.onFailure = { e in
-                self.showHUDWithMessage("An error occurred saving the bookmark",
-                    details: nil,
-                    closeMode: .ManualClose(true),
-                    spinnerMode: .NoSpinner)
-            }
-        
-            return interactor
-        }
-
-11. You're done! Now you can add your new screenlet to your storyboard as usual 
-    and use it as a ready-to-use component. When the user presses any button, 
-    the BaseScreenlet's code creates and runs the interactor. 
-
-Remember, if you want to see this screenlet's final code, it's project is 
-located [here on GitHub](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/AddBookmark-screenlet). 
-Great! By creating this example bookmarks screenlet, you now know how to create 
-screenlets in Screens for iOS. 
+Remember, if you want to see the example Add Bookmark screenlet's final code, 
+its project is located [here on GitHub](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/AddBookmark-screenlet). 
+Great! Now you know how to create screenlets in Screens for iOS. 
 
 ## Related Topics [](id=related-topics)
 
