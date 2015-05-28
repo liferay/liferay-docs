@@ -31,30 +31,27 @@ First, you'll learn how to create a Child theme.
 
 ## Child Theme [](id=child-theme)
 
-A Child theme inherits only the look and feel of its parent. It doesn't inherit 
-any code. The example theme here uses `LoginScreenlet` to present the same 
-components as the Default theme, but adjusted to a larger resolution.
+A Child theme inherits the look and feel of its parent and allows you to customize it to fit your needs. The example theme here uses `LoginScreenlet` to present the same components as the Default theme, but adjusted to a larger resolution.
 
 1. Create a new XIB file and use Interface Builder to build your new UI in it. 
    Keep in mind, however, that you need to keep the same UI components as the 
    parent theme. You can use the XIB file of your theme's screenlet as a 
    template. Also, you should name your new XIB file after the theme's 
-   screenlet, with an additional modifier that indicates some information about 
-   the theme. For example, since the theme in this example uses `LoginScreenlet` 
-   and is meant for larger screen sizes, its new XIB file is called 
-   `LoginScreenlet_large.xib`.  
+   view, with an additional modifier that indicates some information about 
+   the theme. For example, since the theme in this example uses the view class of `LoginScreenlet` (`LoginView`) and is meant for larger screen sizes, its new XIB file is called 
+   `LoginView_large.xib`.  
 
     ![Figure 2: The new XIB file for the Child theme.](../../images/screens-ios-xcode-child-theme.png)
 
 2. Change the position, size, or other properties of the parent components in 
-   the XIB. However, don't change the custom class, outlet connection, or 
+   the XIB. However, don't change the custom class (`LoginView` in this case), outlet connection, or 
    `restorationIdentifier`. This is because Child themes must keep the same UI 
    components as their parent theme.
 
-3. Install your new theme and insert its screenlet in any of your view 
+3. Install your new theme (if you are using cocoapods) and insert its screenlet in any of your view 
    controllers. Use the additional modifier from your XIB file's name as the 
    value of the screenlet's `themeName` property. For example, for 
-   `LoginScreenlet_large.xib` this is `large`. Your new UI then appears in 
+   `LoginView_large.xib` this is `large`. Your new UI then appears in 
    Interface Builder. 
 
 Fantastic! Next, you'll learn how to create an Extended theme. 
@@ -74,7 +71,7 @@ the password is shown when typed by the user.
    should name your new XIB file after the theme's screenlet, with an additional 
    modifier that indicates some information about the theme. For example, the 
    new XIB file for the example `LoginScreenlet` is called 
-   `LoginScreenlet_ext.xib`. Also, it contains a new `UISwitch` component to 
+   `LoginView_ext.xib`. Also, it contains a new `UISwitch` component to 
    configure the password presentation. 
 
     ![Figure 3: The new XIB file for the example Extended theme.](../../images/screens-ios-xcode-ext-theme.png)
@@ -83,21 +80,21 @@ the password is shown when typed by the user.
    name this class after your theme's screenlet, with an additional modifier 
    that matches the one you used in the XIB. This class is where you should add 
    or override functionality. As an example, the view class for the 
-   `LoginScreenlet` XIB from the first step is called `LoginScreenletView_ext` 
-   and uses `LoginScreenletView_default` as the parent class. The new 
+   `LoginScreenlet` XIB from the first step is called `LoginView_ext` (the view class `LoginView` plus a modifier)
+   and uses `LoginView_default` as the parent class. The new 
    translations can be implemented by overriding the `onSetTranslations` method. 
    Also, the `IBSwitch` component can be wired up with `@IBOutlet` or 
    `@IBAction`. 
 
 3. Set your new view class as the custom class for your theme's XIB file. If you 
    added `@IBOutlet` or `@IBAction`, bind them to your class. In this example, 
-   `LoginScreenletView_ext` is set as the `LoginScreenlet_ext.xib` file's custom 
+   `LoginView_ext` is set as the `LoginView_ext.xib` file's custom 
    class. The `@IBOutlet` and `@IBAction` are also bound to the class. 
 
-4. Install the new theme and insert its screenlet in any of your view 
+4. Install the new theme (if you are using cocoapods) and insert its screenlet in any of your view 
    controllers. Use the additional modifier from your XIB file's name as the 
    value of the screenlet's `themeName` property. For example, for 
-   `LoginScreenlet_ext.xib` this is `ext`. Your new UI then appears in Interface 
+   `LoginView_ext.xib` this is `ext`. Your new UI then appears in Interface 
    Builder. 
 
 Well done! Now you know how to create an Extended theme. In the next section, 
@@ -115,7 +112,7 @@ password.
    You can use the XIB file from your theme's screenlet as a template. You 
    should name your XIB file after your theme's screenlet and theme type. For 
    example, the XIB of a Full theme for `LoginScreenlet` should be named 
-   `LoginScreenlet_full.xib`. In this example, a text field for the user name is 
+   `LoginView_full.xib`. In this example, a text field for the user name is 
    inserted. A *Sign In* button with the same `restorationIdentifier` as the 
    Default theme's button is also added. 
 
@@ -124,18 +121,18 @@ password.
 2. Create a new view class for your theme, named after your theme's screenlet 
    and theme type. You can use the view class of your screenlet's default theme 
    as a template. Your new view class must inherit `BaseScreenletView` and 
-   conform to the screenlet's `*ScreenletData` protocol, implementing the 
+   conform to the screenlet's `*ScreenletViewModel` protocol, implementing the 
    corresponding getters and setters. You should also add all the `@IBOutlet` 
    properties or `@IBAction` methods you need to bind your UI components. 
    
     For example, the view class for the `LoginScreenlet` example is called 
-    `LoginScreenletView_full`. It inherits `BaseScreenletView` and conforms the 
-    `LoginScreenletData` protocol. Its `password` getter returns the UDID. 
+    `LoginView_full`. It inherits `BaseScreenletView` and conforms the 
+    `LoginViewModel` protocol. Its `password` getter returns the UDID. 
 
 3. Set your theme's new view class as your XIB file's custom class. Also, bind 
    the `@IBOutlet` and `@IBAction` to your class. In the `LoginScreenlet` 
-   example here, `LoginScreenletView_full` is set as the 
-   `LoginScreenlet_full.xib` file's custom class. The `@IBOutlet` and 
+   example here, `LoginView_full` is set as the 
+   `LoginView_full.xib` file's custom class. The `@IBOutlet` and 
    `@IBAction` is also bound to this class. 
 
 4. Install your new theme and insert its screenlet in any of your view 
@@ -206,7 +203,7 @@ important that you use the same names and identifiers described in these steps:
             s.dependency 'LiferayScreens'
         end
 
-6. Doublecheck this `podspec` file to make sure you changed the occurences of 
+6. Doublecheck this `podspec` file to make sure you changed the occurrences of 
    `Name` and `name` to your theme's name in the following lines: 
 
         s.name = 'LiferayScreensTheme-Name'
