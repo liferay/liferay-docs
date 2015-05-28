@@ -53,11 +53,12 @@ resolution.
    outlet connection, or `restorationIdentifier`. This is because Child themes 
    must keep the same UI components as their parent theme. 
 
-3. If you're using CocoaPods, install your new theme. Insert its screenlet in 
-   any of your view controllers. Use the additional modifier from your XIB 
-   file's name as the value of the screenlet's `themeName` property. For 
-   example, for `LoginView_large.xib` this is `large`. Your new UI then appears 
-   in Interface Builder. 
+3. If you packaged your theme with CocoaPods, you must install it in your 
+   project before you can use it. To use your theme, insert its screenlet in any 
+   of your view controllers. Use the additional modifier from your XIB file's 
+   name as the value of the screenlet's `themeName` property. For example, for 
+   `LoginView_large.xib` this is `large`. Your new UI then appears in Interface 
+   Builder. 
 
 Fantastic! Next, you'll learn how to create an Extended theme. 
 
@@ -95,11 +96,12 @@ the password is shown when typed by the user.
    `LoginView_ext` is set as the `LoginView_ext.xib` file's custom class. The 
    `@IBOutlet` and `@IBAction` are also bound to the class. 
 
-4. If you're using CocoaPods, install your new theme. Insert its screenlet in 
-   any of your view controllers. Use the additional modifier from your XIB 
-   file's name as the value of the screenlet's `themeName` property. For 
-   example, for `LoginView_ext.xib` this is `ext`. Your new UI then appears in 
-   Interface Builder. 
+4. If you packaged your theme with CocoaPods, you must install it in your 
+   project before you can use it. To use your theme, insert its screenlet in any 
+   of your view controllers. Use the additional modifier from your XIB file's 
+   name as the value of the screenlet's `themeName` property. For example, for 
+   `LoginView_ext.xib` this is `ext`. Your new UI then appears in Interface 
+   Builder. 
 
 Well done! Now you know how to create an Extended theme. In the next section, 
 you'll learn how to create a Full theme.
@@ -140,11 +142,12 @@ password.
    example here, `LoginView_full` is set as the `LoginView_full.xib` file's 
    custom class. The `@IBOutlet` and `@IBAction` is also bound to this class. 
 
-4. If you're using CocoaPods, install your new theme. Insert its screenlet in 
-   any of your view controllers. Use the additional modifier from your XIB 
-   file's name as the value of the screenlet's `themeName` property. For 
-   example, for `LoginView_full.xib` this is `full`. Your new UI then appears in 
-   Interface Builder.
+4. If you packaged your theme with CocoaPods, you must install it in your 
+   project before you can use it. To use your theme, insert its screenlet in any 
+   of your view controllers. Use the additional modifier from your XIB file's 
+   name as the value of the screenlet's `themeName` property. For example, for 
+   `LoginView_full.xib` this is `full`. Your new UI then appears in Interface 
+   Builder. 
 
 Super! Now you know how to create a Full theme. In the next section, you'll 
 learn how to package and distribute your themes by using CocoaPods. 
