@@ -108,6 +108,8 @@ Use the following steps to create your screenlet:
     In the following screenshot, the setting for the custom class is correct:
     
     ![Figure 3: The XIB file is bound to the custom class name, with the module specified.](../../images/screens-ios-theme-custom-module-right.png)
+    
+    Remember to wire all the `@IBOutlet` and `@IBAction`, in this example you will have to wire the two text fields and the action button.
 
 5. Create the interactor classes you need to make any network calls. Each 
    interactor class should extend Screens's `Interactor` class. The number of 
