@@ -95,8 +95,9 @@ Use the following steps to create your screenlet:
         
         }
 
-4. Set the class you just created as the XIB file's custom class. For example, 
-   in the Add Bookmark screenlet, `AddBookmarkView_default` is set as the 
+4. Set the class you just created as the XIB file's custom class. You should 
+   also wire all `@IBOutlet` and `@IBAction` references. For example, in the Add 
+   Bookmark screenlet, `AddBookmarkView_default` is set as the 
    `AddBookmarkView_default.xib` file's custom class. If you're using CocoaPods, 
    be careful to set the appropiate module (don't use the grayed out value 
    *Current*). For example, the Custom Class setting in this screenshot is 
@@ -109,7 +110,8 @@ Use the following steps to create your screenlet:
     
     ![Figure 3: The XIB file is bound to the custom class name, with the module specified.](../../images/screens-ios-theme-custom-module-right.png)
     
-    Remember to wire all the `@IBOutlet` and `@IBAction`, in this example you will have to wire the two text fields and the action button.
+    For this example's `@IBOutlet` and `@IBAction` references, you need to wire 
+    the two text fields and the action button.
 
 5. Create the interactor classes you need to make any network calls. Each 
    interactor class should extend Screens's `Interactor` class. The number of 

@@ -8,17 +8,17 @@ A Liferay screenlet's themes are specified in its
 [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
 This tutorial shows you how to use themes in your iOS screenlets. 
 
-To install a theme in your iOS app's screenlet, you have two options, depending on how the theme has been published:
+To install a theme in your iOS app's screenlet, you have two options, depending 
+on how the theme has been published:
 
-* If the theme has been packaged as a pod dependency you can install and use your theme by simply adding the following line in your Podfile:
+1. If the theme has been packaged as a CocoaPods pod dependency, you can install 
+   and use the theme by adding the following line in your Podfile:
 
-```ruby
-	pod 'LiferayScreens-YourThemeName'
-``` 
+        pod 'LiferayScreens-YourThemeName'
 
-* Or you can drag and drop the theme's folder
-into your project. Liferay Screens detects the new classes and then applies the
-new look and feel in the runtime and in Interface Builder. 
+2. If the theme isn't available through CocoaPods, you can drag and drop the 
+   theme's folder into your project. Liferay Screens detects the new classes and 
+   then applies the new look and feel in the runtime and in Interface Builder. 
 
 ![Figure 1: To install a theme into an Xcode project, drag and drop the theme's folder into it.](../../images/screens-ios-xcode-install-theme.png)
 
@@ -42,16 +42,13 @@ its screenlets:
   demo app.
 
 That's all there is to it! Great! Now you know how to use themes to dress up 
-screenlets in your iOS app.
-
-<!-- We can use this once we make the theme creation tutorial available. Jim 
-This opens up a world of possibilities--like writing your own themes.
---> 
+screenlets in your iOS app. This opens up a world of possibilities--like 
+[writing your own themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes).
 
 **Related Topics**
 
-[Preparing iOS Projects for Liferay Screens](/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
+[Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
 
-[Using Screenlets in iOS Apps](/tutorials/-/knowledge_base/6-2/using-screenlets-ios-apps)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-ios-apps)
 
-[Using Views in Android Screenlets](/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
