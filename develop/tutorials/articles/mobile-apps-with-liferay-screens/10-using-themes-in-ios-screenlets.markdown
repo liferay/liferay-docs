@@ -49,6 +49,8 @@ screenlets in your iOS app. This opens up a world of possibilities--like
 
 [Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
 
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+
 [Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-ios-apps)
 
 [Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
