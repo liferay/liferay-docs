@@ -65,13 +65,13 @@ written by different developers share a common structure.
 
 - *BaseScreenlet*: The base class for all screenlet classes. Screenlet classes 
   receive user events from the UI, begin server operations, and update any view 
-  data from the result. `BaseScreenlet` contains a set of [templated methods](http://www.oodesign.com/template-method-pattern.html) 
+  data from the result. `BaseScreenlet` contains a set of [template methods](http://www.oodesign.com/template-method-pattern.html) 
   that children classes should overwrite.
 
 - *BaseScreenletView*: The base class of all screenlet view classes. Its 
   children classes belong to the theme layer. View classes use standard `xib` 
   files to render a UI and then update it when the data changes. 
-  `BaseScreenletView` contains templated methods that children classes should 
+  `BaseScreenletView` contains template methods that children classes should 
   overwrite. 
 
 - *SessionContext*: A singleton class that holds the user's session when they 
@@ -166,11 +166,12 @@ can be used to implement a look and feel for a limited set of screenlets.
 
 - *Extended*: Provides an extended implementation of a theme inherited from a 
   parent theme. In the diagram, the Extended theme inherits the Full theme and 
-  extends its screenlet view class. The [Flat7](https://github.com/liferay/liferay-screens/tree/master/ios/Library/Themes/Flat7)
+  extends its screenlet view class. The [Flat7](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Themes/Flat7)
   theme is a good sample of an Extended theme. In this case, it's based on the
   Default theme.
 
 For more details on theme creation, see the tutorial [Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes). 
+
 Awesome! Now you know the nitty gritty details of Liferay Screens for iOS. This 
 information is invaluable when using Screens to develop your apps. 
 
