@@ -1,9 +1,9 @@
-# Organizing Icons With the Liferay UI Icon Menu Tag [](id=organizing-icons-with-the-liferay-ui-icon-menu-tag)
+# Creating a Navigation Menu With the Liferay UI Icon Menu Tag [](id=organizing-icons-with-the-liferay-ui-icon-menu-tag)
 
 Icons can be very helpful tools to aid your users as they navigate your site. As
 you begin to design your site, it's important to conserve screen space wherever
 possible; liferay UI has several tags that do just that. Liferay UI provides the 
-Icon Menu tag to help organize your icons.
+Icon Menu tag to create a pop-up navigation menu.
 
 This tutorial covers how to configure and use the `liferay-ui:icon-menu` tag.
 
@@ -59,39 +59,41 @@ Still inside the `view.jsp` nest the `liferay-ui:icon` tags inside of the
             <liferay-ui:icon iconCssClass="icon-trash" message="Trash" url="www.liferay.com" />
         </liferay-ui:icon-menu>
         
-Repeat the step above to create as many icons as you need for your portlet. It's 
-important to note that the icons must have their `url` attribute configured in 
-order to render properly in the icon menu. The settings above create a default 
-icon-menu with default attributes. you can configure the available attributes 
-for the icon menu tag to give your menu more of a custom flare. The list below 
-gives some of the available attributes along with how to configure them. You can 
-view the full list of attributes [here](http://docs.liferay.com/portal/6.2/taglibs/liferay-ui/icon-menu.html). 
+Repeat the step above to create as many icons as you need for your navigation 
+menu. It's important to note that the icons must have their `url` attribute 
+configured in order to render properly in the icon menu. The settings above 
+create a default icon-menu with default attributes. you can configure the 
+available attributes for the icon menu tag to give your menu more of a custom 
+flare. The list below gives some of the available attributes along with how to 
+configure them. You can view the full list of attributes [here](http://docs.liferay.com/portal/6.2/taglibs/liferay-ui/icon-menu.html). 
 
 *direction:* Sets the direction the menu pops up, relative to the button that 
-triggers the icon menu. The default value is 'left'. Possible values are 'left,'
-'right,' 'up,' or 'down.'
+triggers the icon menu. The default value is `left`. Possible values are `left,`
+`right,` `up,` or `down.`
 
 *maxDisplayItems:* Sets the number of icons to display in the visible area of
-the menu before scrolling. The default value is '15.'
+the menu before scrolling. The default value is `15.`
 
 *message:* Sets the text to be displayed on the button trigger for the icon
-menu. The default value is 'actions.'
+menu. The default value is `actions.`
 
 *showArrow:* Sets whether to display a arrow on the button trigger to indicate
-a pop-up menu. The default value is 'true.'
+a pop-up menu. The default value is `true.`
 
 *useIconCaret:* Sets whether to point the arrow on the button trigger towards
-the direction set by the `direction` attribute. The default value is 'false.'
+the direction set by the `direction` attribute. The default value is `false.`
 
 With the settings above, your icon menu should look like the figure below:
 
 ![Figure 1: Setting up an icon menu is a piece of cake.](../../images/icon-menu.png)
 
 As you can see, the `liferay-ui:icon-menu` tag is easy to use and saves you some
-space.
+screen space.
 
 ## Related Topics [](id=related-topics)
 
  [Using Liferay UI Tabs and Sections](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
+ 
+ [Creating a Navigation Menu with the Liferay UI Icon List Tag](/develop/tutorials/-/knowledge_base/6-2/creating-a-navigation-menu-with-the-liferay-ui-icon-list-tag)
  
  [Using Liferay-UI:Success and Liferay-UI:Error Messages](/develop/tutorials/-/knowledge_base/6-2/using-liferay-uisuccess-and-liferay-uierror-message)
