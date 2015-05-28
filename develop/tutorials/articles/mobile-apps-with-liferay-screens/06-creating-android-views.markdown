@@ -203,23 +203,24 @@ in the [Demo App](https://github.com/liferay/liferay-screens/tree/master/android
         
         </com.your.package.LoginFullView>
 
-2. Create the new custom view class used in the layout XML. In this example, 
-   this is `LoginFullView`. As before, you can use the default `LoginView` 
-   class as a template. In the new class, first get a reference to the UI 
-   components. The components in this example are the *Add* button and its 
-   listener. The class must also implement the `LoginViewModel` interface and 
-   include its getter and setter methods. In this case, the `getPassword()` 
-   method returns the `ANDROID_ID`. 
+2. Create the new custom view class used in the layout XML. This class must 
+   implement the screenlet's view model interface and include its getter and 
+   setter methods. You also need to get a reference to the UI components in your 
+   view. In this example, `LoginFullView` is the custom view class. It 
+   implements the `LoginViewModel` interface by extending the default `LoginView` 
+   class. It overrides the `getPassword()` method to return the `ANDROID_ID`. 
 
-3. Create a new class that inherits the base screenlet class. In this example, 
-   the new class can be `LoginFullScreenlet`, inheriting from `LoginScreenlet`. 
-   In `LoginFullScreenlet`, you can also add custom behavior to the listeners or 
-   a call to a custom interactor. 
+3. Create a new class that inherits the base screenlet class. This new class is 
+   where you can add custom behavior to the listeners, or call a custom 
+   interactor. In this example, this new class is `LoginFullScreenlet`. It 
+   inherits `LoginScreenlet` and overrides `onUserAction` to log interactor 
+   calls.
 
-4. Insert the `LoginScreenlet` in any of your activities or fragments, using 
-   your new layout as the `liferay:layoutId` attribute's value. For example, to 
-   use the layout created here you need to use `@layout/login_full` as the 
-   `liferay:layoutId` attribute's value. 
+4. Insert your view's screenlet in any of your activities or fragments, using 
+   your view's layout as the `liferay:layoutId` attribute's value. For example, 
+   to use the example theme here, insert `LoginScreenlet` in an activity or 
+   fragment and set the `liferay:layoutId` attribute to 
+   `@layout/login_full`. 
 
 Another good example of this approach is the `SignUpScreenlet` found in the 
 [Bank of Westeros](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
@@ -232,29 +233,28 @@ package views for distribution.
 
 ## Packaging Your Views [](id=packaging-your-views)
 
-Views are typically created as source code inside your app's project. However, 
-if you want to distribute your views or reuse them in different projects, you 
-should package them in a module that is then added as an app's project 
-dependency. To do this, use the [view sets](https://github.com/liferay/liferay-screens/tree/master/android/library/viewsets) 
-subproject as a template to your new [`build.gradle`](https://github.com/liferay/liferay-screens/blob/master/android/library/viewsets/build.gradle) 
+If you want to distribute or reuse views, you should package them in a module 
+that is then added as an app's project dependency. To do this, use the 
+[material](https://github.com/liferay/liferay-screens/tree/master/android/viewsets/material) 
+subproject as a template for your new [`build.gradle`](https://github.com/liferay/liferay-screens/blob/master/android/viewsets/material/build.gradle) 
 file. 
 
 To use a packaged view, you need to import the new module into your project by 
-specifying its location in the file [`settings.gradle`](https://github.com/liferay/liferay-screens/blob/master/android/samples/bankofwesteros/settings.gradle). 
+specifying its location in your [`settings.gradle`](https://github.com/liferay/liferay-screens/blob/master/android/samples/bankofwesteros/settings.gradle). 
 The Bank of Westeros and test-app projects each use a custom theme (`westeros` 
 and `material`, respectively). These projects are good examples of how to use an 
 independent theme in your project. 
 
 If you want to redistribute your theme and let others use it, you can upload it 
-to jCenter or Maven Central. In the example [`build.gradle`](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros/build.gradle) 
+to jCenter or Maven Central. In the example [`build.gradle`](https://github.com/liferay/liferay-screens/blob/master/android/samples/bankofwesteros/build.gradle) 
 file, after entering your bintray api key you can execute `gradlew bintrayupload` 
-to upload your project to jCenter. When finished, you and others are able to use 
-your theme as any other Android dependency: simply add the repository, artifact, 
+to upload your project to jCenter. When finished, you and others can use your 
+theme as any other Android dependency: simply add the repository, artifact, 
 groupId, and version to your gradle file. 
 
 Super! Now you know how to create and package views in Liferay Screens for 
 Android. This gives you extensive control over your app's look and feel, and 
-also lets you distribute your views to others. 
+also lets you distribute and reuse your views. 
 
 ## Related Topics [](id=related-topics)
 
