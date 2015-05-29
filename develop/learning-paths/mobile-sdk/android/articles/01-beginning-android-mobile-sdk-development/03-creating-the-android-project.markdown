@@ -41,7 +41,7 @@ checkbox is selected. In the *Minimum SDK* menu, select
 estimate of the percentage of devices active on the Google Play store that can 
 run the selected API level. You can view a graphical representation of these 
 estimates by clicking on the *Help me choose* link in the text below the Minimum 
-SDK menu. Click *Next* when you're finished.
+SDK menu. Click *Next* when you're finished. 
 
 ![Figure 2: The second screen of Android Studio's Create New Project wizard lets you select your app's form factors and minimum Android API level.](../../images/android-studio-new-project-02.png)
 
@@ -129,32 +129,30 @@ Android virtual device, create one and then select it. The emulator starts up to
 Android's default lock screen. Note that it may take some time for it to start,
 especially if your machine is low on memory. Click the lock icon at the bottom
 of the lock screen and drag up. The emulated device then opens to the Guestbook
-app with the drawer open (it might take a few seconds for the app to launch
-after unlocking the emulated device).
+app with the first drawer item showing (it might take a few seconds for the app 
+to launch after unlocking the emulated device). 
 
-![Figure 7: When the Guestbook app first runs, it should look something like this.](../../images/android-guestbook-first-run.png)
+![Figure 7: When the Guestbook app first runs, it should look something like this.](../../images/android-entries-empty.png)
 
-The bar across the top contains a stack of three small horizontal lines, the
-app's name, and a stack of three small dots. This bar is called the *action
-bar*. Google provides extensive
-[design](http://developer.android.com/design/patterns/actionbar.html) and
-[developer](http://developer.android.com/guide/topics/ui/actionbar.html)
+The bar across the top contains a left arrow, the drawer selection's name, an 
+*EXAMPLE ACTION* button, and a stack of three small dots. This bar is called the 
+*action bar*. Google provides extensive [design](http://developer.android.com/design/patterns/actionbar.html) 
+and [developer](http://developer.android.com/guide/topics/ui/actionbar.html)
 documentation for the action bar. In short, the action bar is where you should
 put actions and navigation elements relevant to the displayed activity or
 fragment. For example, clicking the dots opens a menu that lets you access the
 app's settings (even though clicking settings doesn't do anything yet). Clicking
-the horizontal lines serves as a toggle that opens and closes the drawer. When
-the drawer is closed either via the toggle or by selecting an item in the
-drawer, the text in the action bar changes to reflect the last item selected.
-There's also an additional item in the action bar when the drawer is closed: an
-*EXAMPLE ACTION* button. Click it now. A message temporarily appears at the
-bottom of the emulator's screen that says *Example action*. This message type in
-Android is called a *toast*. Toasts are useful for showing simple messages that
-you want to appear and then disappear after a short time. They can also be handy
-for debugging. Android's developer documentation for toasts can be found
-[here](http://developer.android.com/guide/topics/ui/notifiers/toasts.html).
+the left arrow toggles the drawer open or closed. When the drawer is closed 
+either via this toggle or by selecting an item in the drawer, the text in the 
+action bar changes to reflect the last item selected.
 
-![Figure 8: The action bar when an item is selected from the drawer.](../../images/android-guestbook-action-bar.png)
+![Figure 8: The navigation drawer.](../../images/android-guestbook-first-run.png)
+
+Clicking the *EXAMPLE ACTION* button displays a temporary message at the bottom 
+of the emulator's screen that says *Example action*. This message type in 
+Android is called a *toast*. Toasts are useful for showing simple temporary 
+messages and can also be handy for debugging. The [Android toasts documentation](http://developer.android.com/guide/topics/ui/notifiers/toasts.html) 
+explains them in detail.
 
 As you can see, Android Studio does a significant amount of work for you in 
 creating the basic structure of the app. With only a few steps and no coding, 

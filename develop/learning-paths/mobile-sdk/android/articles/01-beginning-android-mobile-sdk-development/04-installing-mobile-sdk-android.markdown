@@ -11,11 +11,11 @@ guestbooks and their entries from the portal.
 ## Installing the Guestbook Mobile SDK
 
 The Mobile SDK Builder generated two separate JAR files in your
-`liferay-mobile-sdk-android-6.2.0.15` directory: 
+`liferay-mobile-sdk-android-6.2.0.19` directory: 
 
 1. `modules/guestbook-portlet/build/libs/liferay-guestbook-portlet-android-sdk-1.0.jar`
 
-2. `android/build/libs/liferay-android-sdk-6.2.0.15.jar`
+2. `android/build/libs/liferay-android-sdk-6.2.0.19.jar`
 
 The first JAR file contains the classes and methods for calling the Guestbook
 portlet's remote services. The second contains the rest of the Mobile SDK. You
@@ -48,7 +48,7 @@ level (on the same level as the `android` element):
 
 Next, add the following line of code inside the `dependencies` element: 
 
-    compile group: 'com.liferay.mobile', name: 'liferay-android-sdk', version: '6.2.0.15'
+    compile group: 'com.liferay.mobile', name: 'liferay-android-sdk', version: '6.2.0.19'
 
 Once you edit `build.gradle`, a message appears at the top of the file that asks 
 you to *sync* your app with its Gradle files. Syncing with the Gradle files is 
@@ -62,13 +62,15 @@ link highlighted in a red box:
 
 If you get errors such as `Duplicate files copied in APK META-INF/NOTICE` during 
 this process, then you need to add the following code to the same `build.gradle` 
-file. You should place it inside the `android` element, after the `buildTypes` 
-element. After adding this code, click the *Sync Now* link when prompted:
+file: 
 
     packagingOptions {
       exclude 'META-INF/LICENSE'
       exclude 'META-INF/NOTICE'
     }
+    
+See the above screenshot for where you should place this code. After adding it, 
+click the *Sync Now* link when prompted. 
 
 Great! Now you're ready to test your Mobile SDK installation. 
 
