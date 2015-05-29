@@ -66,12 +66,12 @@ entry permissioning!
     that can be granted to users. For example, the `getDeleteable()` method
     checks if the current user has the appropriate permissions to use the Delete
     action button for the entry. The method uses the
-    [`LiferayFacesContext`](https://github.com/liferay/liferay-faces/blob/master/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
+    [`LiferayFacesContext`](https://github.com/liferay/liferay-faces/blob/6.2.x/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
     to grab the
-    [`ThemeDisplay`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/theme/ThemeDisplay.java),
+    [`ThemeDisplay`](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-service/src/com/liferay/portal/theme/ThemeDisplay.java),
     and then checks if the user has the appropriate permissions to access the
     button by calling Liferay's
-    [`PermissionChecker`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/security/permission/PermissionChecker.java).
+    [`PermissionChecker`](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-service/src/com/liferay/portal/security/permission/PermissionChecker.java).
     The `PermissionChecker` scans the Entry's model resource to see if the
     current user holds the `DELETE` action key. If the user's role supports the
     action key, the Delete button is visible and usable; if not, the button is

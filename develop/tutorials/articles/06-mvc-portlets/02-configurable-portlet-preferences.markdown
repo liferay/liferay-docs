@@ -1,8 +1,8 @@
 # Using Configurable Portlet Preferences [](id=using-configurable-portlet-preferences)
 
 <!-- The beginning and ending test portlets can be found at the following:
-https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
-https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-mvc/prefs/end/event-listing-portlet
+https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
+https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-mvc/prefs/end/event-listing-portlet
 -->
 
 Portlet Preferences are properties for storing basic portlet configuration data.
@@ -262,7 +262,7 @@ named `showLocationAddress`:
     %>
 
 You can view a sample
-[`view.jsp`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/liferay-mvc/prefs/end/event-listing-portlet/docroot/html/locationlisting/view.jsp)
+[`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/liferay-mvc/prefs/end/event-listing-portlet/docroot/html/locationlisting/view.jsp)
 file to see an example of handling portlet preference inside a view JSP. The JSP
 retrieves the value of a portlet preference named `showLocationAddress` and if
 the preference's value is true, *all* of the location's fields are displayed. If

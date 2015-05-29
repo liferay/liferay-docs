@@ -4,10 +4,10 @@
 Testing Notes:
 
 The starting example portlet for this tutorial is at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-01-begin-insults-portlet
+liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-01-begin-insults-portlet
 
 On completing this tutorial, the example portlet looks like the portlet at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-02-asset-enable-insults-portlet
+liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-02-asset-enable-insults-portlet
 
 Make sure to read their README files. - Jim
 -->
@@ -108,7 +108,7 @@ Here are descriptions of each of the `updateEntry` method's parameters:
     Low integers take priority over higher integers.
 -   `sync`: this can be set to `false`.
 
-The following code from an example portlet's [`-LocalServiceImpl`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-02-asset-enable-insults-portlet/docroot/WEB-INF/src/com/liferay/docs/insult/service/impl/InsultLocalServiceImpl.java)
+The following code from an example portlet's [`-LocalServiceImpl`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-02-asset-enable-insults-portlet/docroot/WEB-INF/src/com/liferay/docs/insult/service/impl/InsultLocalServiceImpl.java)
 Java class demonstrates invoking the `updateEntry` method on an example entity
 called `Insult`. In your `add-` method, you invoke `updateEntry` after adding
 your entity's resources. In your `update-` method, you invoke `updateEntry` after
