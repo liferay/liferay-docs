@@ -20,7 +20,7 @@ a sample project. It requires the following software:
   [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
   and offers older devices a material look and feel.
 - [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases).
-- [Liferay Screens Compatiblity Plugin](https://github.com/liferay/liferay-screens/tree/master/portal). 
+- [Liferay Screens Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal). 
 - Liferay Screens source code. 
 
 Liferay Screens for Android uses

@@ -35,8 +35,13 @@ The initial release of Liferay Screens for iOS includes the following themes for
 its screenlets: 
 
 - *Default*: Comes standard with a screenlet. It's used by a screenlet if no
-  theme name is specified or the named theme can't be found.
-- *Flat7*: Demonstrates a theme made from scratch. 
+  theme name is specified or the named theme can't be found. The Default theme 
+  can be used as the parent theme for your custom themes. Refer to the 
+  [architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+  for more details.
+- *Flat7*: Demonstrates a theme made from scratch. Refer to the 
+  [theme creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
+  for instructions on creating your own theme.
 - *Westeros*: Customizes the behavior and appearance of the
   [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/WesterosBank) 
   demo app.
@@ -49,6 +54,10 @@ screenlets in your iOS app. This opens up a world of possibilities--like
 
 [Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
 
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+
 [Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-ios-apps)
+
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 
 [Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)

@@ -10,7 +10,8 @@ possible because Liferay Screens is released as a standard
 however, then you must manually add Screens to your project. This CocoaPods
 [article](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks)
 explains why. As you've probably guessed, manually adding Screens to your
-project is more challenging; don't worry, though! It's still not horribly complicated. 
+project is more challenging; don't worry, though! It's still not horribly 
+complicated. 
 
 Note: since Screens for iOS is written in Swift, you need to use CocoaPods
 version 0.36 or higher. Refer to [this

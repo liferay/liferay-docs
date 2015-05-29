@@ -47,4 +47,6 @@ Android apps.
 
 [Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
 
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+
 [Using Screenlets in iOS apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)

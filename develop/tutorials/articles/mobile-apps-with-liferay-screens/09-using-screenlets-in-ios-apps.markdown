@@ -141,4 +141,6 @@ Way to go! You now know how to use screenlets in your iOS apps.
 
 [Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
 
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+
 [Using Screenlets in Android apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
