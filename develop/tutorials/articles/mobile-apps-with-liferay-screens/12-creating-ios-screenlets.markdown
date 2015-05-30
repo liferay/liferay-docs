@@ -10,7 +10,7 @@ of Screens.
 
 This tutorial shows you how to create your own screenlet. As an example, it
 references code from the sample
-[Add Bookmark screenlet](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/AddBookmark-screenlet), 
+[Add Bookmark screenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Samples/AddBookmark-screenlet), 
 that saves bookmarks to Liferay's Bookmarks portlet.
 
 Before creating your first screenlet, you might want to learn the
@@ -47,6 +47,8 @@ Follow these steps to create your screenlet:
 2.  Create a new interface protocol that specifies your screenlet's attributes.
     The sample Add Bookmark screenlet's interface protocol is called
     `AddBookmarkViewModel` and has associated attributes `URL` and `title`: 
+
+        import UIKit
 
         @objc protocol AddBookmarkViewModel {
 
@@ -137,7 +139,9 @@ Follow these steps to create your screenlet:
     one for adding the bookmark to the Liferay instance 
     (`LiferayAddBookmarkInteractor`). Note that the latter class name begins with 
     `Liferay`, because it communicates with a Liferay instance. Here are
-    paraphrased versions of the sample screenlet's interactors classes: 
+    the sample screenlet's interactors classes: 
+
+    Interactor class 1:
 
         import UIKit
         import LiferayScreens
@@ -146,15 +150,34 @@ Follow these steps to create your screenlet:
 
             public var resultTitle: String?
 
-            override public func start() -> Bool {
-                let viewModel = self.screenlet as! AddBookmarkViewModel
+            private var session: NSURLSession?
 
-                if let URL = viewModel.URL {
-                    // 1. use NSURLSession to retrieve the HTML
-                    // 2. When the response arrives, extract the title from the HTML
-                    // 3. Save the extracted title in the property resultTitle
-                    // 4. invoke callOnSuccess() or callOnFailure(error) when everything is done
-        
+            override public func start() -> Bool {
+                let viewModel = self.screenlet.screenletView as! AddBookmarkViewModel
+
+                if let URL = NSURL(string: viewModel.URL!) {
+
+                    //1. Use NSURLSession to retrieve the HTML
+                    NSURLSession.sharedSession().dataTaskWithURL(URL) {
+                        (data, response, error) in
+
+                        if let errorValue = error {
+                            // Invoke callOnFailure(error) if an error occurs
+                            self.callOnFailure(errorValue)
+                        }
+                        else {
+                            if let html = NSString(data: data, encoding: NSUTF8StringEncoding) {
+
+                                // 2. When the response arrives, extract the title from the HTML
+                                // 3. Save the extracted title in the property resultTitle
+                                self.resultTitle = self.parseTitle(html)
+                            }
+
+                            // 4. invoke callOnSuccess() when everything is done
+                            self.callOnSuccess()
+                        }
+                    }.resume()
+
                     // return true to notify the operation is in progress
                     return true
                 }
@@ -163,30 +186,63 @@ Follow these steps to create your screenlet:
                 return false
             }
 
+            private func parseTitle(html: NSString) -> String {
+                // quick & dirty parse
+                let range1 = html.rangeOfString("<title>")
+                let range2 = html.rangeOfString("</title>")
+
+                let start = range1.location + range1.length
+
+                return html.substringWithRange(NSMakeRange(start, range2.location - start))
+            }
+
         }
 
+    Interactor class 2:
 
         import UIKit
         import LiferayScreens
+        import LRMobileSDK
 
-        public class LiferayAddBookmarkInteractor: Interactor {
+        public class LiferayAddBookmarkInteractor: Interactor, LRCallback {
 
             public var resultBookmarkInfo: [String:AnyObject]?
 
             override public func start() -> Bool {
-                let viewModel = self.screenlet as! AddBookmarkViewModel
+                let viewModel = self.screenlet.screenletView as! AddBookmarkViewModel
 
                 if let URL = viewModel.URL {
-                    // 1. use MobileSDK's services to send the bookmark to the portal
-                    // 3. Save the response in the property resultBookmarkInfo
-                    // 4. invoke callOnSuccess() or callOnFailure(error) when everything is done
+                    let session = SessionContext.createSessionFromCurrentSession()
+                    session?.callback = self
 
-                    // return true to notify the operation is in progress
-                    return true
+                    // Use MobileSDK's services to send the bookmark to the portal
+                    let service = LRBookmarksEntryService_v62(session: session)
+
+                    var error: NSError? = nil
+
+                    service.addEntryWithGroupId(LiferayServerContext.groupId,
+                            folderId: 0,
+                            name: viewModel.title,
+                            url: viewModel.URL,
+                            description: "Added from Liferay Screens",
+                            serviceContext: nil,
+                            error: &error)
+
+                    return (error == nil)
                 }
 
-                // return false if you cannot start the operation
                 return false
+            }
+
+            public func onFailure(error: NSError!) {
+                self.onFailure?(error)
+            }
+
+            public func onSuccess(result: AnyObject!) {
+                // Save the response in the property resultBookmarkInfo
+                resultBookmarkInfo = (result as! [String:AnyObject])
+
+                self.onSuccess?()
             }
 
         }
@@ -275,7 +331,7 @@ Follow these steps to create your screenlet:
         }
 
     For reference, the sample Add Bookmark screenlet's final code is on
-    [GitHub](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/AddBookmark-screenlet). 
+    [GitHub](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Samples/AddBookmark-screenlet). 
 
 You're done! Your screenlet is a ready-to-use component that you can add to your
 storyboard. You can even
