@@ -105,7 +105,7 @@ this is configurable via portal properties. All you have to do to enable entity
 and finder caching for an entity in your project is to set the
 `cache-enabled=true` attribute of your entity's `<entity>` element in your
 `service.xml` configuration file. Please refer to the
-[Distributed Caching](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/liferay-clustering#distributed-caching)
+[Distributed Caching](/discover/deployment/-/knowledge_base/6-2/liferay-clustering#distributed-caching)
 documentation for more details about Liferay caching.
 
 Service Builder is a flexible tool. It automates many of the common tasks
@@ -134,5 +134,5 @@ SQL queries and finder methods to be added and it also supports dynamic query.
 
 [Developing with the Plugins SDK](develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
-[Running Service Builder and Understanding the Generated Code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 

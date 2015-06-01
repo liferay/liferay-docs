@@ -213,7 +213,7 @@ the generated `addEvent` method of `EventLocalServiceBaseImpl` is called to add
 the Event to the database. Lastly, the Event is added as a resource so that
 permissions can be applied to it later. For more information about adding
 resources, please see the
-[Asset Enabling Custom Entities](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
 learning path. 
 
 The Event Listing project creates local services for Location entities as well
@@ -356,14 +356,14 @@ correspond to the methods you implemented in your `*LocalServiceImpl` class. The
 utility service methods invoke the implementation service methods that you
 wrote. In addition to all of the Java classes and interfaces, Service Builder
 also generates a `service.properties` file. To learn about the
-`service.properties` file and how to configure it, please refer to the [Configuring `service.properties`](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/configuring-service.properties)
+`service.properties` file and how to configure it, please refer to the [Configuring `service.properties`](/develop/tutorials/-/knowledge_base/6-2/configuring-service.properties)
 tutorial. To learn how to invoke local services, please refer to the
-[Invoking Local Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
 tutorial. 
 
 **Related Topics**
 
 [Creating Remote Services](develop/tutorials/-/knowledge_base/6-2/creating-remote-services)
 
-[Running Service Builder and Understanding the Generated Code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 

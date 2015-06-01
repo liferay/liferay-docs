@@ -56,7 +56,7 @@ regards to your remote services.
 **Note:** Liferay's developers use *Service Builder* to expose their services
 via JSON automatically. If you haven't used Service Builder before, please see
 the
-[Defining an Object-Relational Map with Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
+[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
 tutorial.
 
 $$$
@@ -336,7 +336,7 @@ parameters doesn't matter either.
 
 **Note:** An authentication related token must accompany each Liferay web
 service invocation. For details, please see the
-[Understanding Liferay's Service Security Model](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model)
+[Understanding Liferay's Service Security Model](/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model)
 tutorial. 
 
 $$$
@@ -921,7 +921,7 @@ Liferay, you may want to consider taking a streamlined approach to accessing Web
 Content articles and Dynamic Data List records. Liferay's Skinny JSON Provider
 app gives you access to them and returns them in an easy-to-use fashion. For
 more information, please refer to the
-[Invoking Services Using Skinny JSON Provider](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/invoking-services-using-skinny-json-provider) 
+[Invoking Services Using Skinny JSON Provider](/develop/tutorials/-/knowledge_base/6-2/invoking-services-using-skinny-json-provider) 
 tutorial.
 
 ## Related Topics

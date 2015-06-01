@@ -165,7 +165,7 @@ corner of the screen for calling the Build WSDD target. Liferay Portal makes
 your service's Web Services Definition Language (WSDL) available after you've
 built its WSDD and deployed your portlet project. Once you've created remote web
 services for your application, you'll want to know how to invoke them. To learn
-how, please see the [Invoking Remote Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder) tutorial.
+how, please see the [Invoking Remote Services](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder) tutorial.
 
 **Related Topics**
 

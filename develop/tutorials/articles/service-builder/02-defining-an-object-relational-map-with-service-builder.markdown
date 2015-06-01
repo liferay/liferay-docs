@@ -540,7 +540,7 @@ Now that you've specified the service for the Event Listing example project,
 you're ready to *build* the service by running Service Builder. To learn how to
 run Service Builder and to learn about the code that Service Builder generates,
 please refer to the
-[Running Service Builder and Understanding the Generated Code](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 tutorial. 
 
 ## Related Topics

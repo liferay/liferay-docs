@@ -3,7 +3,7 @@
 This tutorial explains how to run Service Builder and provides an overview of
 the code that Service Builder generates. If you'd like to use Service Builder in
 your application but haven't yet created a `service.xml` file, please see the
-[Defining an Object-Relational Map with Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
+[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
 tutorial and then come back to this one.
 
 ## Running Service Builder [](id=running-service-builder)
@@ -36,7 +36,7 @@ Make sure to click the *Build Services* button and not the *Build WSDD* button
 that appears next to it. Building the WSDDs won't hurt anything, but you'll
 generate files for the remote service instead of the local one. For information
 about WSDDs (web service deployment descriptors), please refer to the
-[Working with SOAP Web Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/working-with-soap-web-services)
+[Working with SOAP Web Services](/develop/tutorials/-/knowledge_base/6-2/working-with-soap-web-services)
 tutorial. 
 
 ![Figure 1: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../images/service-xml-overview.png)

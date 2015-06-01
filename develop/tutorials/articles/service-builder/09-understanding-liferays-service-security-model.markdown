@@ -119,7 +119,7 @@ line for the appropriate authentication type:
     #company.security.auth.type=userId
 
 Your Liferay Portal password policies (see the
-[Password Policies](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/roles-and-permissions#password-policies)
+[Password Policies](/discover/portal/-/knowledge_base/6-2/roles-and-permissions#password-policies)
 documentation) should be reviewed, since they'll be enforced on your
 administrative user as well. If the portal is enforcing password policies on its
 users (e.g., requiring them to change their passwords on a periodic basis), an

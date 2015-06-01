@@ -76,7 +76,7 @@ Here's the list of *secure* web services for `UserGroup`:
 **Note:** Liferay's developers use *Service Builder* to expose their services
 via JSON automatically. If you haven't used Service Builder before, please see
 the
-[Defining an Object-Relational Map with Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
+[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
 tutorial.
 
 $$$
@@ -365,7 +365,7 @@ time using PHP and a PHP SOAP Client:
 Remember, you can implement a web service client in any language that supports
 using SOAP web services. To learn how to implement OAuth so that
 you can access third-party services, please see the
-[Authorizing Access to Services with OAuth](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/authorizing-access-to-services-with-oauth) 
+[Authorizing Access to Services with OAuth](/develop/tutorials/-/knowledge_base/6-2/authorizing-access-to-services-with-oauth) 
 tutorial.
 
 ## Related Topics
