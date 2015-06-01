@@ -56,7 +56,7 @@ following `compile` statement to the `dependencies` in your `build.gradle` file:
 
     dependencies {
         ...
-        compile 'com.liferay.mobile:liferay-screens:0.3.+'
+        compile 'com.liferay.mobile:liferay-screens:1.0.+'
         ...
     }
 
