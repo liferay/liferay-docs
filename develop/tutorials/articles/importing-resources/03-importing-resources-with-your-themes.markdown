@@ -481,22 +481,22 @@ You can go back to any of the beginning steps in this outline to make
 refinements. It's just that easy to develop a theme with resources intact!
 
 To see a simple working example of the resources importer in action, visit
-[https://github.com/liferay/liferay-docs/blob/master/devGuide/code/test-resources-importer-theme-6.2.0.1.war](https://github.com/liferay/liferay-docs/blob/master/devGuide/code/test-resources-importer-theme-6.2.0.1.war).
+[https://github.com/liferay/liferay-docs/blob/6.2.x/devGuide/code/test-resources-importer-theme-6.2.0.1.war](https://github.com/liferay/liferay-docs/blob/6.2.x/devGuide/code/test-resources-importer-theme-6.2.0.1.war).
 This is just the classic Liferay theme with some sample resources added. If
 you're interested in extending the functionality of the resources-importer
 application, you can use the test-resources-importer-portlet to check that you
 aren't breaking existing functionality. The test-resources-importer-portlet is
 available on Github here:
-[https://github.com/liferay/liferay-plugins/tree/master/portlets/test-resources-importer-portlet](https://github.com/liferay/liferay-plugins/tree/master/portlets/test-resources-importer-portlet).
+[https://github.com/liferay/liferay-plugins/tree/6.2.x/portlets/test-resources-importer-portlet](https://github.com/liferay/liferay-plugins/tree/6.2.x/portlets/test-resources-importer-portlet).
 The sample resources included in the test-resources-importer-theme are the same
 ones included in the test-resources-importer-portlet. If you'd like to examine
 another example, check out the code for Liferay's welcome theme:
-[https://github.com/liferay/liferay-plugins/tree/master/themes/welcome-theme](https://github.com/liferay/liferay-plugins/tree/master/themes/welcome-theme).
+[https://github.com/liferay/liferay-plugins/tree/6.2.x/themes/welcome-theme](https://github.com/liferay/liferay-plugins/tree/6.2.x/themes/welcome-theme).
 Note that this theme imports resources directly into the default site.
 Typically, this won't be something you'll need to do; instead, you'll usually
 have your theme's resources imported into a site template. For further examples,
 please examine the Zoe themes which you can find on Github here
-[https://github.com/liferay/liferay-plugins/tree/master/themes](https://github.com/liferay/liferay-plugins/tree/master/themes)
+[https://github.com/liferay/liferay-plugins/tree/6.2.x/themes](https://github.com/liferay/liferay-plugins/tree/6.2.x/themes)
 and which you can download from Liferay Marketplace.
 
 **Related Topics**

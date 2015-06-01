@@ -415,6 +415,23 @@ When this template is rendered, it looks something like this:
 
 <!--Figure needs to be reworked-->
 
++$$$
+
+**Note:** During the creation of a web content article, Portal provides a *Basic
+Preview* button that gives you the option to preview your article as a final
+product before publishing. In some instances, the preview does not give an
+accurate depiction of the web content article. For example, fields provided by
+the `request` variable are not available because the `request` is not populated
+until the web content is rendered on a portal page. Therefore, the preview of
+the article would display errors. Use the *Basic Preview* functionality with
+caution.
+
+$$$
+
+<!-- Eduardo expressed that the *Basic Preview* functionality may change for
+7.0, giving the user a 100% accurate depiction of their web content article.
+-Cody -->
+
 New for Liferay 6.2 is the ability to create generic templates that aren't
 connected to a specific structure. In previous versions of Liferay, each
 template had to be associated with a structure. Now, you have options for

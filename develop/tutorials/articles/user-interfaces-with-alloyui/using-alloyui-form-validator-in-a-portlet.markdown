@@ -1,6 +1,11 @@
 # Using the AlloyUI Form Validator in a Portlet [](id=using-the-alloyui-form-validator-in-a-portlet)
 
-<!-- Test code is at develop/tutorials/code/alloy/form-validator/end -->
+<!-- 
+Testing notes: 
+
+On completing this tutorial, the example portlet looks like the portlet at... 
+liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/alloy-ui-form-validator-portlet
+-->
 
 Would you like to provide instant feedback to users when they fill out a form
 incorrectly? Do you like to use strongly-typed fields and show clear consistent
