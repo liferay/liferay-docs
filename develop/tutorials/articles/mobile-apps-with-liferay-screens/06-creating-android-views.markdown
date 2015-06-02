@@ -183,7 +183,7 @@ you can implement other functionality if you wish.
 
 4. Insert your view's screenlet in any of your activities or fragments, using 
    your view's layout as the `liferay:layoutId` attribute's value. For example, 
-   to use the example theme here, insert `LoginScreenlet` in an activity or 
+   to use the example view here, insert `LoginScreenlet` in an activity or 
    fragment and set the `liferay:layoutId` attribute to 
    `@layout/login_password`.
 
@@ -265,7 +265,7 @@ is used in the [Screens Test App](https://github.com/liferay/liferay-screens/tre
 
 4. Insert your view's screenlet in any of your activities or fragments, using 
    your view's layout as the value of the `liferay:layoutId` attribute. For
-   example, to use the example theme here, insert `LoginScreenlet` in an
+   example, to use the example view here, insert `LoginScreenlet` in an
    activity or fragment and set the `liferay:layoutId` attribute to
    `@layout/login_full`. 
 
@@ -289,15 +289,15 @@ file.
 
 To use a packaged view, you need to import the new module into your project by 
 specifying its location in your [`settings.gradle`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/samples/bankofwesteros/settings.gradle). 
-The Bank of Westeros and test-app projects each use a custom theme (`westeros` 
+The Bank of Westeros and test-app projects each use a custom view (`westeros` 
 and `material`, respectively). These projects are good examples of how to use an 
-independent theme in your project. 
+independent view in your project. 
 
-If you want to redistribute your theme and let others use it, you can upload it 
+If you want to redistribute your view and let others use it, you can upload it 
 to jCenter or Maven Central. In the example [`build.gradle`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/samples/bankofwesteros/build.gradle) 
 file, after entering your bintray api key you can execute `gradlew bintrayupload` 
 to upload your project to jCenter. When finished, you and others can use your 
-theme as any other Android dependency: simply add the repository, artifact, 
+view as any other Android dependency: simply add the repository, artifact, 
 groupId, and version to your gradle file. 
 
 Super! Now you know how to create and package views in Liferay Screens for 
