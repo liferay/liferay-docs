@@ -1,13 +1,32 @@
 # Creating iOS Themes
 
 By letting you create your own themes, Screens for iOS gives you nearly 
-limitless ways to customize your app's look and feel. You can create your themes 
-from scratch, or use the themes included with Screens as a foundation. There are 
-three types of themes you can create:
+limitless ways to customize your app's look and feel. Themes can also introduce 
+new functionality to screenlets. You can create themes from scratch, or use an 
+existing theme as a foundation for your themes. All themes consist of a view 
+class for screenlet behavior and an XIB file for the UI. Which of these 
+components you need to create, however, depends on the *type* of theme you're 
+creating. The type of theme you create depends on your needs. There are three 
+types of themes you can create: 
 
-- Child theme
-- Extended theme
-- Full theme
+- *Child theme*: Presents the same UI components as its parent theme, but lets 
+  you change their appearance and position. Since the parent theme's behavior is 
+  preserved, creating a Child theme is ideal when you only need to make visual 
+  changes to the parent. Child themes reuse the parent's view class, but use a 
+  new XIB. The Child theme's parent must be a Full theme. 
+
+- *Extended theme*: Inherits the parent theme's behavior and appearance, but 
+  lets you change and add to both. Creating an Extended theme is ideal when you 
+  need to modify or add to an existing Full theme's behavior. Extended themes 
+  subclass the parent theme's view class, and use a new XIB. An Extended theme's 
+  parent must be a Full theme. 
+
+- *Full theme*: A theme with no parent. Creating a Full theme is ideal when you 
+  need a screenlet to have completely different behavior and appearance. Since a 
+  Full theme doesn't have a parent theme, its view class must inherit Screens's 
+  `BaseScreenletView` and conform to the screenlet's view model protocol. A Full 
+  theme must also include an XIB file that specifies its UI. Any Full theme can 
+  be inherited by a Child or Extended theme.
 
 This tutorial explains how to create all three types of themes. Before creating
 your first theme, you might want to learn the
@@ -31,26 +50,30 @@ First, you'll learn how to create a Child theme.
 
 ## Child Theme [](id=child-theme)
 
-A Child theme inherits the look and feel of its parent and allows you to
-customize it. The example theme here uses the Login screenlet to present the
-Default theme's components using a larger resolution. 
+A Child theme presents the same behavior and UI components as another theme (its 
+parent theme). You can can only change the UI components' appearance and 
+position. The changes in a Child theme are therefore only visual. Due to this, 
+you only need to create a new XIB file when creating a Child theme; the 
+parent's view class is inherited. A Child theme's parent must be a Full theme. 
+For example, the Child theme discussed here presents the same UI components as 
+the Default theme for `LoginScreenlet`, but increases their size for use in 
+larger screen sizes. The following steps show you how to create a Child theme. 
 
 1.  Create a new XIB file and use Interface Builder to build your new UI in it. 
-    Keep in mind, however, that you need to keep the same UI components as the
-    parent theme. You can paste in the contents from the Default theme's XIB as
-    a foundation. Also, you should name your new XIB file after the screenlet's
-    view class, with an additional modifier that indicates some information
-    about the theme. For example, the theme in this example uses the Login
-    screenlet's default theme, which uses the view class `LoginView_default`.
-    Since the new theme is meant for larger screen sizes, its new XIB file is
-    called `LoginView_large.xib`. 
+    However, you must use only the parent theme's UI components. You can paste 
+    in the contents from [the Default theme's XIB](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Framework/Themes/Default/Auth/LoginScreenlet/LoginView_default.xib) 
+    to use as a template. Also, you should name your new XIB file after the 
+    screenlet's view class and your theme's intended use case. For example, the 
+    theme in this example uses the `LoginScreenlet`'s default theme, which uses 
+    the view class `LoginView_default`. Since the new theme is meant for larger 
+    screen sizes, its new XIB file is called `LoginView_large.xib`. 
 
     ![Figure 2: Here's the starting XIB file for the example Child theme for the Login screenlet.](../../images/screens-ios-xcode-child-theme.png)
 
-2.  In the XIB file, you can change the position, size, or other properties of
-    the parent components, but don't change its custom class (`LoginView` in
-    this case), outlet connection, or `restorationIdentifier`--the parent
-    theme's UI components must remain untouched. 
+     In the XIB, you can change the position, size, or other visual properties 
+     of the parent's UI components. However, you can't change the XIB file's 
+     custom class (`LoginView` in this case), outlet connection, or 
+     `restorationIdentifier`--these must match the parent XIB. 
 
 3.  If you packaged your theme with CocoaPods, you must install the theme in
     your project before you can use it, by adding the following line in your
