@@ -9,74 +9,91 @@ three types of themes you can create:
 - Extended theme
 - Full theme
 
-For a detailed explanation of these, see the 
-[section on themes in architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios#the-theme-layer).
-
-This tutorial shows you how to create all three types of themes. Before 
-proceeding, you may want to read the tutorial 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios) 
-to understand theme concepts and components. It may also be useful to read the 
-tutorial [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets). 
+This tutorial explains how to create all three types of themes. Before creating
+your first theme, you might want to learn the
+[architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+of Liferay Screens for iOS, to understand theme concepts and components. It
+might also be helpful to read the tutorial
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets). 
 Now get ready to create some themes! 
 
-## Deciding Your Theme's Location
+## Determining Your Theme's Location
 
-After deciding the type of theme to create, you need to decide where to create 
-it. If you want to reuse or redistribute it, you should create it in an empty 
-Cocoa Touch Framework project in Xcode. You can then use CocoaPods to publish 
-it. The section at the end of this tutorial shows you how to do this. Otherwise, 
-you can create your theme directly inside your app project. 
+After determining the type of theme to create, you need to determine where to
+create it. If you want to reuse or redistribute it, you should create it in an
+empty Cocoa Touch Framework project in Xcode. The 
+[publishing](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes#publish-your-themes-using-cocoapods)
+section later in this tutorial explains how to publish with CocoaPods. If you're
+not planning to reuse or redistribute your theme, you can create it directly
+inside your app project. 
 
 First, you'll learn how to create a Child theme.
 
 ## Child Theme [](id=child-theme)
 
-A Child theme inherits the look and feel of its parent and allows you to 
-customize it to fit your needs. The example theme here uses `LoginScreenlet` to 
-present the same components as the Default theme, but adjusted to a larger 
-resolution.
+A Child theme inherits the look and feel of its parent and allows you to
+customize it. The example theme here uses the Login screenlet to present the
+Default theme's components using a larger resolution. 
 
-1. Create a new XIB file and use Interface Builder to build your new UI in it. 
-   Keep in mind, however, that you need to keep the same UI components as the 
-   parent theme. You can use the XIB file of your theme's screenlet as a 
-   template. Also, you should name your new XIB file after the screenlet's view 
-   class, with an additional modifier that indicates some information about 
-   the theme. For example, the theme in this example uses `LoginScreenlet`'s 
-   default theme, which uses the view class `LoginView_default`. Since the new 
-   theme is meant for larger screen sizes, its new XIB file is called 
-   `LoginView_large.xib`. 
+1.  Create a new XIB file and use Interface Builder to build your new UI in it. 
+    Keep in mind, however, that you need to keep the same UI components as the
+    parent theme. You can paste in the contents from the Default theme's XIB as
+    a foundation. Also, you should name your new XIB file after the screenlet's
+    view class, with an additional modifier that indicates some information
+    about the theme. For example, the theme in this example uses the Login
+    screenlet's default theme, which uses the view class `LoginView_default`.
+    Since the new theme is meant for larger screen sizes, its new XIB file is
+    called `LoginView_large.xib`. 
 
-    ![Figure 2: The new XIB file for the Child theme.](../../images/screens-ios-xcode-child-theme.png)
+    ![Figure 2: Here's the starting XIB file for the example Child theme for the Login screenlet.](../../images/screens-ios-xcode-child-theme.png)
 
-2. Change the position, size, or other properties of the parent components in 
-   the XIB. However, don't change the custom class (`LoginView` in this case), 
-   outlet connection, or `restorationIdentifier`. This is because Child themes 
-   must keep the same UI components as their parent theme. 
+2.  In the XIB file, you can change the position, size, or other properties of
+    the parent components, but don't change its custom class (`LoginView` in
+    this case), outlet connection, or `restorationIdentifier`--the parent
+    theme's UI components must remain untouched. 
 
-3. If you packaged your theme with CocoaPods, you must install it in your 
-   project before you can use it. To use your theme, insert its screenlet in any 
-   of your view controllers. Use the additional modifier from your XIB file's 
-   name as the value of the screenlet's `themeName` property. For example, for 
-   `LoginView_large.xib` this is `large`. Your new UI then appears in Interface 
-   Builder. 
+3.  If you packaged your theme with CocoaPods, you must install the theme in
+    your project before you can use it, by adding the following line in your
+    Podfile: 
 
-Fantastic! Next, you'll learn how to create an Extended theme. 
+        pod 'LiferayScreens-YourThemeName'
+
+    Make sure to replace `YourThemeName`, in the line above, with your theme's
+    name. 
+
+    <!-- TODO - replace the description below with the standard iOS theme file
+    naming convention description. - Jim
+    -->
+
+    To use the installed theme, specify the modifier that you used in your XIB
+    file's name, as the *Theme Name* property field of the *Base Screenlet* in
+    Interface Builder or as the value for the `themeName` property for the view
+    controller in your XIB file. The modifier value for XIB file
+    `LoginView_large.xib`, for example, is `large`. 
+
+    Your new UI appears in Interface Builder. 
+
+Fantastic! You've created a Child theme and integrated it with your screenlet.
+Next, you'll learn how to create an Extended theme. 
 
 ## Extended Theme [](id=extended-theme)
 
-An Extended theme inherits the functionality and UI of its parent. This lets you
+An Extended theme inherits the functionality and UI of its parent, but lets you
 add your own functionality and UI on top of it. For an example of an Extended 
-theme, see the [Flat7 theme source code](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Themes/Flat7). 
-As an example, the Extended theme here for `LoginScreenlet` presents the same 
+theme, refer to the 
+[Flat7 theme](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Flat7).
+As an example, the Extended theme here for the Login screenlet presents the same 
 components as the Default theme, but sets new translated strings and contains a 
 few new animations. A new UI component is also introduced to configure whether 
 the password is shown when typed by the user. 
 
-1. Create a new XIB file and use Interface Builder to build your new UI in it. 
-   You can use the XIB file of your theme's screenlet as a template. Also, you 
+The following steps explain how to create an Extended theme.
+
+1. Create a new XIB file and use Interface Builder to build your new UI in it.
+   You can use the XIB file of your parent theme as a template. Also, you 
    should name your new XIB file after the screenlet's view class, with an 
    additional modifier that indicates some information about the theme. For 
-   example, the theme in this example uses `LoginScreenlet`'s default theme, 
+   example, the theme in this example uses the Login screenlet's default theme, 
    which uses the view class `LoginView_default`. Since the new theme is an 
    Extended theme, its new XIB file is called `LoginView_ext.xib`. It also 
    contains a new `UISwitch` component to configure the password presentation. 
@@ -109,8 +126,8 @@ you'll learn how to create a Full theme.
 ## Full Theme [](id=full-theme)
 
 A Full theme can present a completely different layout with different UI 
-components and input data. The example here creates a Full theme for 
-`LoginScreenlet` that presents a single `UITextField` for the user name. It uses 
+components and input data. The example here creates a Full theme for the Login
+screenlet that presents a single `UITextField` for the user name. It uses 
 the [UDID](http://www.idownloadblog.com/2010/12/21/iphone-udid/) for the 
 password. 
 
@@ -118,7 +135,7 @@ password.
    You can use the XIB file from your theme's screenlet as a template. You 
    should name your XIB file after the screenlet's view class, with an 
    additional modifier that indicates some information about the theme. For 
-   example, the theme in this example uses `LoginScreenlet`'s default theme, 
+   example, the theme in this example uses the Login screenlet's default theme, 
    which uses the view class `LoginView_default`. Since the new theme is a Full 
    theme, its XIB file is called `LoginView_full.xib`. Also, this example theme 
    includes a text field for the user name, and a *Sign In* button with the same 
@@ -133,13 +150,13 @@ password.
    corresponding getters and setters. You should also add all the `@IBOutlet` 
    properties or `@IBAction` methods you need to bind your UI components. 
    
-    For example, the view class for the `LoginScreenlet` example is called 
+    For example, the view class for the Login screenlet is called 
     `LoginView_full`. It inherits `BaseScreenletView` and conforms the 
     `LoginViewModel` protocol. Its `password` getter returns the UDID. 
 
 3. Set your theme's new view class as your XIB file's custom class. Also, bind 
-   the `@IBOutlet` and `@IBAction` to your class. In the `LoginScreenlet` 
-   example here, `LoginView_full` is set as the `LoginView_full.xib` file's 
+   the `@IBOutlet` and `@IBAction` to your class. In the Login screenlet, 
+   `LoginView_full` is set as the `LoginView_full.xib` file's 
    custom class. The `@IBOutlet` and `@IBAction` is also bound to this class. 
 
 4. If you packaged your theme with CocoaPods, you must install it in your 
