@@ -592,7 +592,7 @@ Note, in your app's `server_context.xml` file, you can specify any additional
 settings your app requires. You can set context variables for your screenlet to
 use by naming them in your screenlet's layout XML file and then setting their
 values in your app's `server_context.xml` file. This is done in the Add Bookmark
-screenlet to set the folder into which the the screenlet adds bookmarks. The
+screenlet to set the folder into which the screenlet adds bookmarks. The 
 preceding screenlet element code maps the screenlet's `liferay:folderId` setting
 to a bookmark folder context integer `@integer/bookmark_folder`. In the
 `server_context.xml` file below, the context integer element is set to the ID of

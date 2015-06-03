@@ -14,8 +14,8 @@ Now, get ready to package and distribute screenlets like a pro!
 
 ## Create a New Android Module [](id=create-a-new-android-module)
 
-Android Studio's *Create New Module* wizard can create automatically a module
-and adds it to your `settings.gradle` file. Go to *File* &rarr; *New Module...*,
+Android Studio's *Create New Module* wizard can automatically create a module
+and add it to your `settings.gradle` file. Go to *File* &rarr; *New Module...*,
 select *Android Library* in the *More Modules* section, and click *Next*. Then
 name your module and click *Next*. The wizard's final step lets you add a new
 activity. Since your module doesn't need one, select *Blank Activity* and click
