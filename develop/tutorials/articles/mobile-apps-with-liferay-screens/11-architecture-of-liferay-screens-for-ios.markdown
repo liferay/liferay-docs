@@ -44,7 +44,7 @@ diagram.
   you can build your own graph of operations that can be resolved by the 
   framework.
 
-- *Themes*: A set of `xib` files and accompanying `UIView` classes that present 
+- *Themes*: A set of XIB files and accompanying `UIView` classes that present 
   screenlets to the user.
 
 The next section describes the core layer in detail.
@@ -69,7 +69,7 @@ written by different developers share a common structure.
   that children classes should overwrite.
 
 - *BaseScreenletView*: The base class of all screenlet view classes. Its 
-  children classes belong to the theme layer. View classes use standard `xib` 
+  children classes belong to the theme layer. View classes use standard XIB 
   files to render a UI and then update it when the data changes. 
   `BaseScreenletView` contains template methods that children classes should 
   overwrite. 
@@ -122,15 +122,15 @@ explained in this section.
 
 - *MyScreenletView_themeX*: A class that belongs to one specific theme. In the
   diagram, this theme is `ThemeX`. The class renders the screenlet's UI by using 
-  its related `xib` file. The view object and `xib` file communicate using
+  its related XIB file. The view object and XIB file communicate using
   standard mechanisms like `@IBOutlet` and `@IBAction`. When a user action 
-  occurs in the `xib` file, it's received by `BaseScreenletView` and then passed 
+  occurs in the XIB file, it's received by `BaseScreenletView` and then passed 
   to the screenlet class by the `onUserAction()` method. To identify different 
   events, the component's `restorationIdentifier` property is passed to the `onUserAction()` method. 
 
-- *MyScreenletView_themeX.xib*: The `xib` file containing the components used to 
+- *MyScreenletView_themeX.xib*: The XIB file containing the components used to 
   render the view. This class's name is very important. By convention, a 
-  screenlet `FooScreenlet` and a theme `BarTheme` must have an `xib` file named 
+  screenlet `FooScreenlet` and a theme `BarTheme` must have an XIB file named 
   `FooScreenlet_barTheme.xib`. 
 
 For more details, refer to the tutorial [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets). 
@@ -138,37 +138,63 @@ Next, the theme layer of Screens for iOS is described.
 
 ## The Theme Layer
 
-The theme layer lets developers use more than one theme for any screenlet. 
-The screenlet property `themeName` determines the theme to load. A single theme 
-can be used to implement a look and feel for a limited set of screenlets. 
+The theme layer lets developers set a screenlet's look and feel. The screenlet 
+property `themeName` determines the theme to load. This can be set by the 
+screenlet's *Theme Name* field in Interface Builder. A theme consists of a view 
+class for screenlet behavior and an XIB file for the UI. By inheriting one or 
+more of these components from another theme, the different theme *types* allow 
+varying levels of control over a screenlet's look and feel. 
 
 ![Figure 4: The theme layer of Liferay Screens for iOS.](../../images/screens-ios-architecture-04.png)
 
-- *Default theme*: A mandatory theme supplied by Liferay. It's used by default 
-  when the screenlet's `themeName` isn't specified or is invalid. The Default 
-  theme uses a neutral, flat white and blue design with standard UI components. 
-  For example, `LoginScreenlet` uses standard text boxes for the user name and 
+There are several different theme types:
+
+- *Child*: Presents the same UI components and behavior as the parent theme, but 
+  changes the UI components' appearance or position. However, UI components 
+  can't be added or removed. The changes in a Child theme are therefore only 
+  visual. Child themes reuse the parent's view class, but introduce visual 
+  changes in a new XIB file. The Child theme's parent must be a Full theme. In 
+  the diagram, the Child theme inherits from the Default theme. Creating a Child 
+  theme is ideal when you only need to make visual changes to an existing theme. 
+  For example, you can create a Child theme for Login screenlet's Default theme 
+  that sets new positions and sizes for the standard text boxes.
+
+- *Extended*: Inherits another theme's UI components and behavior, letting you 
+  add to or alter both. Extended themes are therefore capable of augmenting a 
+  Screenlet's functionality in addition to making visual changes. This is done 
+  by subclassing the parent theme's view class and creating a new XIB. An 
+  Extended theme's parent must be a Full theme. In the diagram, the Extended 
+  theme inherits the Full theme and extends its screenlet's view class. See the 
+  [Flat7 theme](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Flat7) 
+  for an example of an Extended theme.
+  
+- *Full*: Has no parent theme and implements unique behavior and appearance for 
+  a screenlet. Its view class must inherit Screens's `BaseScreenletView` and 
+  conform to the screenlet's view model protocol. It must also specify a new UI 
+  in an XIB file. Full themes can also serve as the parent for Child and 
+  Extended themes. See the 
+  [Default theme](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Default) 
+  for an example of a Full theme.
+
+Themes in Liferay Screens are organized into sets that contain the themes for 
+several screenlets. The available theme sets are listed here: 
+
+- [*Default*](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Default): 
+  The mandatory themes supplied by Liferay. It's used by default when the 
+  screenlet's `themeName` isn't specified or is invalid. The Default theme uses 
+  a neutral, flat white and blue design with standard UI components. For 
+  example, `LoginScreenlet` uses standard text boxes for the user name and 
   password fields, but uses the Default theme's flat white and blue design. 
 
-- *Full*: A complete theme that can show different attributes and components. 
-  Using `LoginScreenlet` as an example, a Full theme can be used to present 
-  different components for the user name and password fields. For example, you 
-  can show the password field and then infer the user name from elsewhere. The 
-  Default theme is a Full theme. 
+- [*Flat7*](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Flat7):
+  A collection of themes that use a flat black and green design, and UI 
+  components with rounded edges. The Flat7 themes are an example of creating 
+  Extended themes.
 
-- *Child*: Inherits only the look and feel from another theme's UI components. 
-  This doesn't include any code; it only contains a new `xib` file with visual 
-  changes. Therefore, the parent and Child themes must share the same UI 
-  components. In the diagram, the Child theme inherits from the Default theme. 
-  As an example of implementing a Child theme for `LoginScreenlet`, you can 
-  create a theme inherited from Default and then configure the new `xib` file to 
-  change the position and size of the standard text boxes. 
-
-- *Extended*: Provides an extended implementation of a theme inherited from a 
-  parent theme. In the diagram, the Extended theme inherits the Full theme and 
-  extends its screenlet view class. The [Flat7](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Themes/Flat7)
-  theme is a good sample of an Extended theme. In this case, it's based on the
-  Default theme.
+- [*Westeros*](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Samples/WesterosBank/Theme):
+  The themes for the 
+  [Bank of Westeros](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Samples/WesterosBank/App) 
+  sample app.
 
 For more details on theme creation, see the tutorial [Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes). 
 
