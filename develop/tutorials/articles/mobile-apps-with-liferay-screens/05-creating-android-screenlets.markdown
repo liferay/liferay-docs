@@ -140,12 +140,13 @@ do so, follow these steps:
         private EditText _urlText;
         private EditText _titleText;
 
-3.  Implement a listener interface to handle user actions. You can implement the
-    `onFinishInflate` method to set references to your UI's components and add
-    this view class to listen on specific user actions. Lastly, implement the
-    listener interface methods (e.g., `android.view.View.OnClickListener`'s
-    method `onClick`) to invoke your screenlet's `performUserAction`
-    method--you'll implement the screenlet class shortly.
+3.  Implement a listener interface to handle the screenlet user's actions. You
+    can implement the `onFinishInflate` method to set references to your UI's
+    components and add this view class to listen on specific user actions.
+    Lastly, implement the listener interface methods (e.g.,
+    `android.view.View.OnClickListener`'s method `onClick`) to invoke your
+    screenlet's `performUserAction` method--you'll implement the screenlet class
+    shortly.
 
     For example, the Add Bookmark screenlet's view class `AddBookmarkView`
     implement's `android.view.View.OnClickListener` to set references to its
@@ -268,11 +269,13 @@ classes, so that anyone can insert different implementations without breaking
 the screenlet. Follow these steps to create an interactor interface and
 implementation: 
 
-1.  Create an interactor interface that extends `Interactor<YourScreenletListener>`,
-    replacing `YourScreenletListener` with the name of a listener class to use
-    internally in your screenlet. You'll create the listener class at the end of
-    this section. For example, here's the Add Bookmark screenlet's interactor
-    interface `AddBookmarkInteractor`: 
+1.  Create an interactor interface that extends
+    `Interactor<YourInternalListener>`, replacing `YourInternalListener` with
+    the name of a listener class to notify your screenlet class about operation
+    status. The listener class is refered to as an *internal* listener class.
+    You'll create the listener class at the end of this section. For example,
+    here's the Add Bookmark screenlet's interactor interface
+    `AddBookmarkInteractor`: 
 
         public interface AddBookmarkInteractor extends Interactor<AddBookmarkListener> {
 
@@ -282,7 +285,7 @@ implementation:
         }
 
 2.  Create an interactor implementation class that extends
-    [`BaseRemoteInteractor<YourScreenletListener>`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/BaseRemoteInteractor.java)
+    [`BaseRemoteInteractor<YourInternalListener>`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/BaseRemoteInteractor.java)
     and implements the interactor interface you just created. In your interactor
     methods, validate input and invoke the Liferay Mobile SDK to call the remote
     services. Also, when the service request ends, make sure to post an event
@@ -346,10 +349,10 @@ implementation:
 
 		}
     
-3.  Now you can create the `YourScreenletListener` interface that you references
+3.  Now you can create the `YourInternalListener` interface that you referenced
     in the previous step. Define one method to handle operation failure and
     another method to handle success. You can follow this naming convention for
-    the two methods: `onYourScreenletFailure` and `onYourScreenletSuccess`. The
+    the two methods: `onYourOperationFailure` and `onYourOperationSuccess`. The
     `AddBookmarkListener` interface serves as an example: 
 
 		public interface AddBookmarkListener {
@@ -367,18 +370,57 @@ Next, you'll create the screenlet class.
 The screenlet class is the screenlet's cornerstone and the entry point for app
 developers to use the screenlet. 
 
-Create the screenlet class so that it implements your listener class and extends
+Create the screenlet class so that it implements your interactor's internal
+listener class and extends
 [`BaseScreenlet`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/BaseScreenlet.java);
 specify your view model interface and interactor class as type parameters for
 `BaseScreenlet`. Since the screenlet is notified by its interactor when an
 asynchronous operation ends, the screenlet class must implement the listener
-interface used by the interactor. Screenlet classes usually use a listener to
-notify the app. That listener can be the same, or a completely different one
-(for example, one that uses different methods or signatures). You can even
-notify the app using a different mechanism such as the Event Bus or Android's
-`BroadcastReceiver`. Note that the implemented interface methods call the view
-to modify the UI and notify the app's listener. This allows your app to perform
-any action. Next you must implement `BaseScreenlet`'s abstract methods. 
+interface used by the interactor. 
+
+Screenlet classes can use an *external* listener class to notify classes outside
+of the screenlet (i.e., classes in your app) about events. In its
+[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android),
+every Liferay screenlet specifies listener classes that an app developer can
+register classes with. You can use an internal listener class as an external
+listener, or use a completely different listener class (for example, one that
+uses different methods or signatures). The `AddBookmarkScreenlet` class uses an
+internal listener class `AddBookmarkListener` as an external listener class. It
+provides public methods for the app's classes to register for its events. In the
+code below, the screenlet class has a public method for external classes to
+register as listeners and methods to propagate events to them: 
+
+	public void onAddBookmarkSuccess() {
+		getViewModel().showFinishOperation(null);
+
+		if (_listener != null) {
+			_listener.onAddBookmarkSuccess();
+		}
+	}
+
+	public void onAddBookmarkFailure(Exception e) {
+		getViewModel().showFailedOperation(null, e);
+
+		if (_listener != null) {
+			_listener.onAddBookmarkFailure(e);
+		}
+	}	   
+
+	public AddBookmarkListener getListener() {
+		return _listener;
+	}
+
+	public void setListener(AddBookmarkListener listener) {
+		_listener = listener;
+	}
+
+	private Integer _folderId;
+	private AddBookmarkListener _listener; 
+
+You can even notify the app using a different mechanism such as the Event Bus or
+Android's `BroadcastReceiver`. Note that the implemented interface methods call
+the view to modify the UI and notify the app's listener. This allows your app to
+perform any action. Next you must implement `BaseScreenlet`'s abstract methods.
 
 The first `BaseScreenlet` method to implement is the `createScreenletView`
 method. In this method, you get attributes from the XML definition and then
