@@ -8,16 +8,15 @@ and more. However, what if there's no screenlet for *your* specific use case? No
 sweat! You can create your own screenlet--anyone can create them. Extensibility
 is a key strength of Liferay Screens. 
 
-This tutorial explains how to create your own screenlets. As you follow the
-tutorial you'll examine code from the
-[sample Add Bookmark screenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/android/samples/addbookmarkscreenlet).
-In that screenlet, a user specifies a URL and title for a bookmark, and clicks
-on a button to submit it to Liferay's Bookmark service. 
+This tutorial explains how to create your own screenlets.  As an example, it
+references code from the sample
+[Add Bookmark screenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/android/samples/addbookmarkscreenlet), 
+that saves bookmarks to Liferay's Bookmarks portlet. 
 
 To understand the components that comprise a screenlet, you might want to first
-analyze the Liferay Screens
-[architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android).
-You might also want to learn how to
+learn the
+[architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+of Liferay Screens. You might also want to learn how to
 [create a view](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
 to present your screenlet. Without further ado, let the screenlet creation
 begin! 
