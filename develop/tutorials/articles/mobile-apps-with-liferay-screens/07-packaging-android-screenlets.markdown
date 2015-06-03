@@ -8,7 +8,7 @@ package and distribute screenlets, following these steps:
 
 1. Create a new Android module.
 2. Configure dependencies between each module.
-3. Optionally distribute the module by uploading it to jCenter or Maven Central.
+3. Distribute the module by uploading it to jCenter or Maven Central.
 
 Now, get ready to package and distribute screenlets like a pro! 
 
