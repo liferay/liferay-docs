@@ -30,7 +30,173 @@ Kaleo Designer lets you incorporate [back-end Java development](PROVIDE URL WHEN
 workflows. In this tutorial, installation and basic workflow design will be
 covered. 
 
+## Designing a Workflow
+
+To illustrate several different workflow strategies, here are diagrams of each
+of the workflows that ships with the Kaleo Web plugin.
+
+Think of workflow as a state machine made up of nodes. A node can be a state, a
+task, a condition, a fork, a join, or a timer. Transitions are used to move
+from one node to another. Each type of node has different properties. For
+example, states execute actions automatically and require no user input. Tasks
+block until user input completes a transition to another state. The transition
+then moves the workflow to the next task or state. This cycle continues until
+the end Approved state is reached. For example, you could create a workflow
+which goes through two approvers. Initiating the workflow puts it in the In
+Review state and then transitions to a task which requires user input. Users
+approve or reject the asset as part of the task. When the first user approves
+the asset in the workflow, a condition checks to see if there are two
+approvals. Since there is only one, workflow transitions back to the task. When
+the second user approves the asset, the condition finds there are two approvers
+and it triggers a different transition to the Approved state. 
+
+
+
 ## Getting Started RENAME, THIS HEADING STINKS
+
+To illustrate how to develop workflows in XML, a definition called Ticket
+Process Definition (LINK TO DOWNLOAD THE FILE) is useful to illustrate the
+process.
+
+The Ticket Process Worklfow will have several different nodes:
+
+- State nodes to indicate the beginning and end of the workflow process
+
+- A conditional node to move the asset along one or another transitions
+
+- Task nodes when the workflowing asset requires user action
+
+- Transitions to direct the asset to the next node in the workflow
+
+- Fork and join nodes so parallel processing can happen on the asset
+
+
+
+![Figure x.x: A visual representation of the Ticket Process Definition's nodes.](../../images/ticket-process-workflow.png)
+
+![EE Only Feature](../../images/ee-feature-web.png)
+
+Start by defining the schema. For Liferay workflows using Kaleo, it's
+`liferay-worklow-definition-6_2_0.xsd`. Find it in the `definitions` folder of
+the Liferay source or a good XML editor can cache it from Liferay's web site.
+Here's the XML:
+
+    <workflow-definition
+        xmlns="urn:liferay.com:liferay-workflow_6.2.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:liferay.com:liferay-workflow_6.2.0 http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd"
+    >
+
+Next you define a name and description for the workflow. This appears in the
+control panel when users choose and configure workflows.
+
+	<name>Ticket Process Definition</name>
+	<description>WIRTE DESCRIPTIVE SENTENCE.</description>
+	<version>1</version>
+
+After that, you define your initial state. 
+
+### Creating an initial state [](id=creating-an-initial-state-liferay-portal-6-2-user-guide-11-en)
+
+In this case, the state is simply that the asset has been created. States can
+contain actions and transitions. Actions can contain scripts. You can specify
+the language of the script with the `<script-language>` tag. Scripts can be
+written in Groovy, JavaScript, Ruby or Python (see chapter 18 for more
+information on leveraging scripts in workflow). For a state, the action is
+triggered automatically and then executes a transition. Transitions move you to
+a new state or task.
+
+    <state>
+            <name>StartNode</name>
+            <initial>true</initial>
+            <transitions>
+                <transition>
+                    <name>Assign</name>
+                    <target>Developer</target>
+                    <default>true</default>
+                </transition>
+            </transitions>
+    </state>
+
+The initial state in the Ticket Process Definition is named StartNode. While
+unimaginative, it gets the point across; this is the beginning of the workflow
+process. Other good names are *Created*, *Initialized*, or *ItsPartyTime*. from
+the intiial state, there's a transition named Assign to a new task called
+Developer. This one gets more complicatedso here's the first taste:
+
+    <task>
+		<name>Developer</name>
+		<actions>
+			<action>
+				<name>Reject</name>
+
+Pretty basic so far, with an opening `task` tag, follwed by a `name`. After
+that, there's an `actions` tag that will hold at least one `action` tag for the
+node. This actions is called Reject, and it contains a JavaScript script that
+malicious code. WHAT DOEsTHIS SCRRIPT DO?
+
+                    <script><![CDATA[Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("denied"), workflowContext);
+        Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("pending"), workflowContext);]]></script>
+                    <script-language>javascript</script-language>
+                    <execution-type>onAssignment</execution-type>
+                </action>
+                <notification>
+                    <name>Reject</name>
+                    <template>&lt;#assign refererPlid = serviceContext.getAttribute("refererPlid")!""&gt; &lt;#assign doAsGroupId = serviceContext.getAttribute("doAsGroupId")!""&gt; &lt;#assign comments = taskComments!""&gt; &lt;#assign comments = taskComments!""&gt; &lt;#assign portalURL = serviceContext.portalURL!""&gt; &lt;#assign pathCtx = portalUtil.pathContext!"NO_PATH_CTX"&gt; &lt;#assign wTasksURL = ""&gt; &lt;#if (portalURL?last_index_of("/") &gt; 6)&gt; &lt;#assign portalURL = portalURL?substring(0,portalURL?index_of("/", 7))&gt; &lt;/#if&gt; &lt;#if (portalURL?length &gt; 0) &amp;&amp; (refererPlid != "") &amp;&amp; (doAsGroupId != "")&gt; &lt;#if (pathCtx?length &gt; 0)&gt; &lt;#assign portalURL = portalURL+pathCtx&gt; &lt;/#if&gt; &lt;#assign wTasksURL = portalURL+"/group/control_panel/manage?p_p_id=153&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;doAsGroupId="+doAsGroupId+"&amp;refererPlid="+refererPlid&gt; &lt;/#if&gt; &lt;!-- email body --&gt; &lt;p&gt; Your ${entryType} submission was rejected by a reviewer. &lt;#if comments != "" &gt; Rejection comment says: &lt;strong&gt;"${comments}"&lt;/strong&gt; &lt;/#if&gt; &lt;br /&gt;Please do necessary modifications to your ${entryType} and &lt;strong&gt;resubmit&lt;/strong&gt; your work. &lt;/p&gt; &lt;#if (wTasksURL?length &gt; 0)&gt; &lt;p&gt; &lt;a href="${wTasksURL}"&gt;Click here&lt;/a&gt; to see workflow tasks assigned to you. &lt;/p&gt; &lt;/#if&gt; &lt;!-- Signature --&gt; &lt;p&gt;Sincerely,&lt;br /&gt;&lt;strong&gt;Liferay Portal Workflow&lt;/strong&gt;&lt;/p&gt;</template>
+				<template-language>freemarker</template-language>
+				<notification-type>email</notification-type>
+				<execution-type>onEntry</execution-type>
+			</notification>
+		</actions>
+		<assignments>
+			<user/>
+		</assignments>
+		<transitions>
+			<transition>
+				<name>Submit</name>
+				<target>Code Review</target>
+				<default>true</default>
+			</transition>
+		</transitions>
+	</task>
+
+
+
+    <state>
+        <name>created</name>
+		<metadata>
+			<![CDATA[{"xy":[36,51]}]]>
+		</metadata>
+        <initial>true</initial>
+
+From the initial state, you transition to a new task, where further processing
+is blocked so the asset can be reviewed.
+
+        <transitions>
+            <transition>
+                <name>review</name>
+                <target>review</target>
+            </transition>
+        </transitions>
+    </state>
+
+The next step is to create a task. 
+    <?xml version="1.0"?>
+
+    <workflow-definition 
+        xmlns="urn:liferay.com:liferay-workflow_6.2.0" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="urn:liferay.com:liferay-workflow_6.2.0 http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd"
+    >
+
+
+
+        <name>Ticket Process 2</name>
+        <version>1</version>
+
+
+
+
 
 Liferay Portal ships with the Kaleo Web plugin already deployed. The Single
 Approver Definition is already installed in your portal, and can be managed in
@@ -47,7 +213,7 @@ navigating to your portal's `webapps` folder, then to
 
 `single-approver-definition-scripted-assignment.xml`
 
-Check out these definitions to determine whether you are best served by creating
+Inspecting these existing definitions can help you determine whether you are best served by creating
 something from scratch or modifying the source XML from one of these.
 
 Kaleo Designer's graphical interface lets you drag and drop nodes into your
