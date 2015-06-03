@@ -172,44 +172,71 @@ for more screenlet details. Next, the view layer's details are described.
 ## The View Layer [](id=the-view-layer)
 
 The view layer lets developers set a screenlet's look and feel. Each screenlet's
-`liferay:layoutId` attribute specifies its view. 
-
-<!-- 
-![Figure 4: The view layer of Liferay Screens for Android.](../../images/screens-android-architecture-04.png)
--->
+`liferay:layoutId` attribute specifies its view. A view consists of a screenlet 
+class, a view class, and a layout XML file. The UI is constructed in the layout 
+XML, while the screenlet class and view class control the view's behavior. By 
+inheriting one or more of these components from another view, the different view 
+*types* allow varying levels of control over a screenlet's look and feel.
 
 There are several different view types:
 
-- *Default*: a mandatory view set that Liferay supplies; screenlets use it if no
-  layout ID is specified or if the ID is invalid. The Default view set uses a
-  neutral flat white and blue design with standard UI components. In the
-  `LoginScreenlet`, for example, the view uses standard text boxes for the user
-  name and password, but the text boxes are styled with the Default view's flat
-  white and blue design. You can customize aspects of this view set, such as its
-  colors, positions, and sizes. You can refer to the `styles.xml` file. 
+- *Child*: Presents the same UI components and behavior as the parent view, but 
+  changes the UI components' appearance or position. Since the UI component 
+  identifiers in a Child view and its parent must match, UI components cannot be 
+  added or removed. The changes in a Child view are therefore only visual. Child 
+  views reuse the parent's screenlet class and view class, but introduce visual 
+  changes in a new layout XML file. The Child view's parent must be a Full view. 
+  Creating a Child view is ideal when you only need to make visual changes to an 
+  existing view. For example, you can create a Child view for Login screenlet's 
+  Default view that sets new positions and sizes for the standard text boxes. 
 
-- *Child*: inherits the behavior of its parent view, without including any code.
-  Child views only contain a new layout file, which can specify different 
-  colors, component positions, or any other visual changes. Because the changes 
-  in Child views are only visual, its UI components and their identifiers must 
-  match those of the parent view. For a single scenario, creating a Child view 
-  can be a good alternative to implementing a completely new UI. You can, for 
-  example, create a Child view from the `LoginScreenlet`'s Default view and 
-  configure the layout file with new positions and sizes for the standard text 
-  boxes. 
+- *Extended*: Inherits another view's UI components and behavior, letting you 
+  add to or alter both. Extended views are therefore capable of augmenting a 
+  Screenlet's functionality in addition to making visual changes. This is done 
+  by creating a new view class that extends the parent's view class. Visual 
+  changes or additions are added in a new layout XML file. However, Extended 
+  views can't customize screenlet listeners or call custom interactors. This is 
+  because the screenlet class is inherited from the parent view. An Extended 
+  view's parent must be a Full view. Creating an Extended view is ideal when you 
+  need to add, remove, or change an existing view's UI components. For example, 
+  you can extend the Login screenlet's Default view to present different UI 
+  components for the user name and password fields. 
 
-- *Extended*: inherits another view's behavior and code. They let you introduce
-  new UI components or functionality. An extended view provides a specific view
-  class, that extends the parent's view class. You can, for example, extend the
-  `LoginScreenlet`'s view to present different components for the user name and
-  password fields. 
-
-- *Full*: can customize the screenlet listeners and call custom intereractors. 
-  You could implement a Full view, for example, with an additional new 
+- *Full*: A view with no parent. It doesn't inherit another view's UI components 
+  or behavior. When creating a Full view, you must therefore create its 
+  screenlet class, view class, and layout XML file. You should create a Full 
+  view when you don't need to inherit another view, or when you need to alter 
+  the core behavior of a screenlet by customizing its listeners or calling 
+  custom interactors. For example, you could implement a Full view with a new 
   interactor for calling a different Liferay Portal instance. Default views are 
   Full views. 
 
-For more information, see the tutorial [Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views). 
+Views in Liferay Screens are organized into *view sets* that contain the views 
+for several screenlets. The available view sets are listed here: 
+
+- [*Default*](https://github.com/liferay/liferay-screens/tree/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/viewsets/defaultviews): 
+  A mandatory view set supplied by Liferay. Screenlets use it if the layout ID 
+  is unspecified or invalid. The Default view set uses a neutral, flat white and 
+  blue design with standard UI components. In `LoginScreenlet`, for example, the 
+  Default view uses standard text boxes for the user name and password, but the 
+  text boxes are styled with the Default view's flat white and blue design. You 
+  can customize this view set's properties, such as its colors, positions, and 
+  sizes. See the Default view set's 
+  [`styles.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/res/values/styles.xml) 
+  file for specific values. Since the Default view set contains Full views, you 
+  can use them to create your own custom Child and Extended views.
+  
+- [*Material*](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/material):
+  The view set containing views that conform to Android's 
+  [Material design guidelines](https://developer.android.com/design/material/index.html).
+  
+- [*Westeros*](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/westeros): 
+  The view set containing views for the 
+  [Bank of Westeros](https://github.com/liferay/liferay-screens/tree/1.0.0/android/samples/bankofwesteros) 
+  sample app.
+
+For information on creating views, see the tutorial 
+[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views). 
 
 Great! Now you know how Liferay Screens for Android is composed. However,
 there's something you should know before moving on: how screenlets interact with
