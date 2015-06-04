@@ -44,10 +44,11 @@ parameters doesn't matter either.
 
 +$$$
 
-**Note:** An authentication related token must accompany each Liferay web
-service invocation. For details, please see the
+**Note:** An authentication related token (`p_auth`) must accompany each Liferay
+web service invocation. For details, please see the
 [Understanding Liferay's Service Security Model](develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model)
-tutorial. 
+tutorial. Also, please see the note in the following section to learn how to
+find the `p_auth` token value that corresponds to your Liferay Portal session.
 
 $$$
 
