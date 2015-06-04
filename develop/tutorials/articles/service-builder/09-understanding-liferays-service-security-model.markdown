@@ -69,11 +69,9 @@ we recommend using HTTPS whenever accessing these services on an untrusted
 network. Most HTTP clients let you specify the basic authentication credentials
 in the URL--this is very handy for testing.
 
-Use the following syntax to call the AXIS web service using credentials. Make
-sure to remove the line escape character `\` when entering your URL:
+Use the following syntax to call the AXIS web service using credentials.
 
-    http://" + screenNameOrUserIdAsString + ":" + password + "@[server.com]:\
-    [port]/api/axis/" + serviceName
+    http://" + screenNameOrUserIdAsString + ":" + password + "@[server.com]:[port]/api/axis/" + serviceName
 
 The `screenNameOrUserIdAsString` should either be the user's screen name or the
 user's ID from the Liferay database. The portal's authentication type setting
@@ -145,9 +143,11 @@ If you'd like to develop client applications that can invoke Liferay's web
 services, make sure that your Liferay instance's web service security settings
 have been configured to allow access.
 
-**Related Topics**
+## Related Topics
 
 [Plugin Security and PACL](develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
 
 [Security and Permissions](develop/tutorials/-/knowledge_base/6-2/security-and-permissions)
+
+[Finding and Invoking Liferay Services](develop/tutorials/-/knowledge_base/6-2/finding-and-invoking-liferay-services)
 
