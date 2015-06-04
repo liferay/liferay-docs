@@ -361,7 +361,7 @@ tutorial. To learn how to invoke local services, please refer to the
 [Invoking Local Services](develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
 tutorial. 
 
-**Related Topics**
+## Related Topics
 
 [Running Service Builder and Understanding the Generated Code](develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 
