@@ -1,10 +1,11 @@
 # Invoking Services Using Skinny JSON Provider [](id=invoking-services-using-skinny-json-provider)
 
-**Important:** This is a "Labs" application. Any app designated as "Labs" is
-experimental in features and is not supported by Liferay. This status may change
-without notice. Labs apps allow us to accelerate the availability of useful and
-cutting-edge features, but these apps are not yet hardened like standard Liferay
-EE apps. Please download and use Labs apps at your own discretion. 
+**Important:** The Skinny JSON Provider is a "Labs" application. Any app
+designated as "Labs" includes experimental features and is not supported by
+Liferay. This status may change without notice. Labs apps allow us to accelerate
+the availability of useful and cutting-edge features, but these apps are not yet
+hardened like standard Liferay EE apps. Please download and use Labs apps at
+your own discretion. 
 
 It's the classic story of a superhero trying to maintain his secret
 identity as a mild-mannered reporter. He's trying to make a living while
@@ -46,7 +47,7 @@ making them ideal to use in browsers and mobile applications.
 The Skinny JSON Provider app is available through the Liferay Marketplace.
 You'll find it categorized as a Utility app. To learn how to install it, you can
 read the section
-[Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps).
+[Downloading and Installing Apps](discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps).
 
 The app adds two new web service APIs that you can configure like other Liferay
 web services. Here is the context and the class name that you must specify to
@@ -374,15 +375,12 @@ What a great way to access these core Liferay entities!
 
 ## Related Topics [](id=related-topics)
 
+[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
+
+[Finding and Invoking Liferay Services](develop/tutorials/-/knowledge_base/6-2/finding-and-invoking-liferay-services)
+
 [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
 [Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
 
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
-
-## Related Topics
-
 [Checking Permissions](develop/tutorials/-/knowledge_base/6-2/checking-permissions)
-
-[Invoking Liferay Services from Your Application](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-from-your-application)
-
