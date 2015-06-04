@@ -3,7 +3,7 @@
 This tutorial explains how to run Service Builder and provides an overview of
 the code that Service Builder generates. If you'd like to use Service Builder in
 your application but haven't yet created a `service.xml` file, please see the
-[Defining an Object-Relational Map with Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
+[Defining an Object-Relational Map with Service Builder](develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
 tutorial and then come back to this one.
 
 ## Running Service Builder [](id=running-service-builder)
@@ -12,7 +12,7 @@ To build a service from a `service.xml` file, you can use *Liferay IDE*,
 *Liferay Developer Studio*, or use a terminal window. In this tutorial, we refer
 to the Event Listing example project that's referenced throughout the Liferay
 Service Builder tutorials. You can find the Event Listing example project on
-[Github](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet).
+[Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/event-listing-portlet).
 
 +$$$
 
@@ -244,6 +244,11 @@ interfaces and the service JAR.
 ## Related Topics
 
 [What is Service Builder](develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+
+[Running Service Builder and Understanding the Generated Code](develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+
+[Understanding Service
+Context](develop/tutorials/-/knowledge_base/6-2/service-context)
 
 [Writing Local Services](develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
 
