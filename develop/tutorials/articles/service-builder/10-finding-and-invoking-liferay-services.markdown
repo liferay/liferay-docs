@@ -1,4 +1,4 @@
-# Invoking Liferay Services from Your Application [](id=invoking-liferay-services-from-your-application)
+# Finding and Invoking Liferay Services
 
 You can find Liferay's services by searching for them in the Javadocs:
 [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/).

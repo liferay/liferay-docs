@@ -8,7 +8,7 @@ finder. But what if you'd like to do more complicated searches that incorporate
 attributes from multiple entities? 
 
 For example, consider the
-[Event Listing](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/svc-build/event-listing-portlet)
+[Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet)
 portlet. Suppose you want to find an event based on its name, description, and
 location name. In the Event Listing portlet, the event entity refers to its
 location by the location's ID, not its name. That is, the event entity table,

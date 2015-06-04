@@ -14,7 +14,7 @@ cigar clenched in his teeth.
 "Hey you!" barks the boss, "I want coverage on the hoopla going on in the
 lower-east side." 
 
-"Uh, yes sir. Right away sir," says the hero as he fuddles around for his pen
+"Uh, yes sir. Right away, sir," says the hero as he fuddles around for his pen
 and notepad. 
 
 "And you better shoot straight this time. No nonsense. I want the skinny on
