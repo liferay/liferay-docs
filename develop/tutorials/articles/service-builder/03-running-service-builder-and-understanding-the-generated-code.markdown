@@ -247,8 +247,7 @@ interfaces and the service JAR.
 
 [Running Service Builder and Understanding the Generated Code](develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 
-[Understanding Service
-Context](develop/tutorials/-/knowledge_base/6-2/service-context)
+[Understanding Service Context](develop/tutorials/-/knowledge_base/6-2/service-context)
 
-[Writing Local Services](develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
+[Creating Local Services](develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
 
