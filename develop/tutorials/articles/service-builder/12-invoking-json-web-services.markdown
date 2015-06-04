@@ -20,15 +20,10 @@ Example*, or *URL example* to see different ways of invoking the web service.
 ![Figure x: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../images/jsonws-simple-example.png)
 
 This tutorial explains general techniques for working with JSON web services and
-includes details about invoking via URL. For specific information about invoking
-Liferay's JSON web services via JavaScript, URL, or cURL, as well as examples,
-please see the appropriate tutorial:
-
-[Invoking JSON Web Services via JavaScript](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services-via-javascript)
-
-[Invoking JSON Web Services via URL](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services-via-url)
-
-[Invoking JSON Web Services via cURL](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services-via-curl)
+includes details about invoking via URL. For examples of invoking Liferay's JSON
+web services via JavaScript, URL, and cURL, please see the
+[JSON Web Services Invocation Examples](develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)
+tutorial.
 
 How you invoke a JSON web service depends on how you pass in its parameters. In
 this tutorial, you'll learn how to include parameters in web service
@@ -357,7 +352,7 @@ Find out how next.
 When you pass in an object parameter, you'll often need to populate its inner
 parameters (i.e., fields). Consider a default parameter `serviceContext` of type
 `ServiceContext` (see the
-[ServiceContext](develop/tutorials/-/knowledge_base/6-2/servicecontext)
+[Understanding ServiceContext](develop/tutorials/-/knowledge_base/6-2/servicecontext)
 tutorial to find out more about this type). To make an appropriate call to
 JSONWS, you might need to set the `serviceContext` parameter's
 `addGroupPermissions` and `scopeGroupId` fields. 
@@ -489,8 +484,4 @@ the following common errors:
 
 [JSON Web Services Invoker](develop/tutorials/-/knowledge_base/6-2/json-web-servies-invoker)
 
-[Invoking JSON Web Services via JavaScript](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services-via-javascript)
-
-[Invoking JSON Web Services via URL](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services-via-url)
-
-[Invoking JSON Web Services via cURL](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services-via-curl)
+[JSON Web Services Invocation Examples](develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)
