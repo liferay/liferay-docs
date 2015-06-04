@@ -35,5 +35,5 @@ modified manually after generation by Service Builder.
 
 [What is Service Builder?](develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
 
-[Writing Local Service Classes](develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
+[Creating Local Services](develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
 
