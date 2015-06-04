@@ -183,8 +183,4 @@ tutorial.
 
 [Invoking JSON Web Services](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
 
-[Invoking JSON Web Services via JavaScript](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services-via-javascript)
-
-[Invoking JSON Web Services via URL](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services-via-url)
-
-[Invoking JSON Web Services via cURL](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services-via-curl)
+[JSON Web Services Invocation Examples](develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)
