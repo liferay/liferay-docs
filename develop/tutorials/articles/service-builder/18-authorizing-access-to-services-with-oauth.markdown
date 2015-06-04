@@ -30,8 +30,7 @@ plugin that you'll learn about in this section.
 
 **Note:** To learn more about the OAuth framework, Liferay OAuth app,
 registering your OAuth app, or activating it from a portal page, please refer to
-the [OAuth](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/oauth)
-documentation. 
+the [OAuth](discover/portal/-/knowledge_base/6-2/oauth) documentation. 
 
 $$$
 
