@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="build-common-shared">
+	<import file="../build-common-plugin.xml" />
+
+	<target name="jar">
+		<jar-macro
+			module.dir="${basedir}"
+		/>
+	</target>
+</project>

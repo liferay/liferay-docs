@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="portlets" basedir="." default="deploy">
+	<import file="../build-common-plugins.xml" />
+
+	<target name="create">
+		<property name="portlet.display.name" value="" />
+		<property name="portlet.framework" value="" />
+		<property name="portlet.name" value="" />
+
+		<gradle-execute task="createPortlet">
+			<arg value="--build-file=../sdk.gradle" />
+			<arg value="-PportletDisplayName=${portlet.display.name}" />
+			<arg value="-PportletFramework=${portlet.framework}" />
+			<arg value="-PportletName=${portlet.name}" />
+		</gradle-execute>
+	</target>
+</project>
