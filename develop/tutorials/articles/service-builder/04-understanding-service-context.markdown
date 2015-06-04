@@ -1,4 +1,4 @@
-# ServiceContext [](id=servicecontext)
+# Understanding ServiceContext [](id=servicecontext)
 
 The `ServiceContext` class is a parameter class used for passing contextual
 information for a service. Using a parameter class lets you consolidate many
