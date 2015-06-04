@@ -260,14 +260,22 @@ Follow these steps to create your screenlet:
     interactor instance requested. You must handle each interactor's `onSuccess`
     and `onFailure` closures. 
 
-    As an example, the Add Bookmark screenlet's screenlet class extends
+    To let other classes, especially classes outside the screenlet, respond to
+    your screenlet's events, define a delegate protocol, declare a property of
+    that protocol type, and invoke appropriate delegate methods in handling each
+    interactor's closures. Classes conforming to the delegate protocol and
+    registered as delegates can respond to the delegated events. Note: every
+    Liferay screenlet's
+    [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios),
+    specifies its delegate protocols.
+
+    As an example, the Add Bookmark screenlet class is shown below. It extends
     `BaseScreenlet` and overrides `createInteractor` to return an interactor
     instance that that matches the `name` parameter's value. The
     `createGetTitleInteractor` and `createAddBookmarkInteractor` methods create
     instances for interactors `GetSiteTitleInteractor` and
     `LiferayAddBookmarkInteractor`, respectively. They show messages that
-    indicate the operation being invoked and they handle the closures. Here's
-    the sample Add Bookmark screenlet class: 
+    indicate the operation being invoked and they handle the closures. 
 
         import UIKit
         import LiferayScreens
