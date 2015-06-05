@@ -351,28 +351,31 @@ the applications and settings to be published.
 **Content** allows you to configure the content to be published. Clicking the 
 *select* option under All Content allows you to delete the portlet metadata
 before publishing.
-
-**Permissions** allows you to include permissions for the pages and portlets
-when the changes are published.
-
+Clicking the *Choose Content* option lets you filter the content that is going to be published, based mainly on the date range and content type, as well as other filtering sub-options for certain content types. Let's take a closer look at these content filtering options.
 The *Date Range* feature provides you with another way to select specific
 content to publish. Specifying a date range allows you to choose content to
-publish based on when it was created. You can change the date range of content
-by selecting *Choose Content* in the *Content* section. Then click *Change* next
-to *Date Range*. You have several options to choose from:
+publish based on when it was created or last modified. You can change the date range by clicking on *Change*, next to it. You have several options to choose from:
 
--  *All:* publishes content regardless of its creation date.
+-  *All:* publishes content regardless of its creation or last modification date.
 
--  *From Last Publish Date:* publishes content that was created since the last
+-  *From Last Publish Date:* publishes content that was created or modified since the last
    publish date.
 
 -  *Date Range:* publishes content based on a specified date range. You can set a
-   start and end date/time window. The content created within that window of
+   start and end date/time window. The content created or modified within that window of
    time is published.
 
 -  *Last:* publishes content based on a set amount of time since the current
    time.  For example, you can set the date range to the past 48 hours,
    starting from the current time.
+
+Under the *Date Range* section, you have the section which lists the different types of content that is about to be published. This list is populated based on the provided date range. For example, if at least one web content article has been created or modified in the given date range, a Web Content section appears in the list, with the amount of such articles being shown in paranthesis, after the Web Content label. Otherwise, the Web Content section is absent. Similarly, if at least one Documents and Media file has been uploaded or modified in the given date range, a Documents and Media section appears in the list, with the amount of documents to be published being shown in paranthesis. Otherwise, the Documents and Media section is absent.
+Categories and OpenSocial Gadget Publisher content types are not dependant on the date range and thus are always shown in the list.
+By unchecking the checkbox next to a certain content type, you disable the publication for that particular content type.
+Some of the content types in the list, like Web Content and Documents and Media, have further filtering options related to them.
+
+**Permissions** allows you to include permissions for the pages and portlets
+when the changes are published.
 
 Click on *Mark as Ready for Publication*, then click *Publish to Live* &rarr;
 *Now*, and select *Publish* to publish your Bookmarks portlet to the live site.
