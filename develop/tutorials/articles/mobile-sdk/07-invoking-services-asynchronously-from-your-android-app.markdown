@@ -41,7 +41,7 @@ The following code is an example of an implementation of these steps:
     };
 
     session.setCallback(callback);
-    userService.getGroupUsers(groupId);
+    service.getGroupEntries(10184, 0, 0, -1, -1);
 
 Now take a closer look to see how this code asynchronously invokes the Liferay 
 service. The code begins by importing the `AsyncTaskCallback` and 
@@ -53,18 +53,19 @@ instantiates the callback class.
     AsyncTaskCallback callback = new JSONArrayAsyncTaskCallback() {
     ...
 
-Lastly, it sets the callback on the session and calls the Liferay service.
+Lastly, it sets the callback on the session and calls the Liferay service 
+(`BlogsEntryService` in this case).
 
     session.setCallback(callback);
-    userService.getGroupUsers(groupId);
+    service.getGroupEntries(10184, 0, 0, -1, -1);
 
 Now take a look at the methods defined in `JSONArrayAsyncTaskCallback`. The 
 `onFailure()` method is called if an exception occurs during the request. This 
 could be triggered by a connection exception (e.g., a request timeout) or a
 `ServerException`. If a `ServerException` occurs, it's because something went
-wrong on the server side. For instance, if you pass a `groupId` that doesn't
-exist, the portal complains about it, and the SDK wraps the error message with a
-`ServerException`.
+wrong on the server side. For example, if you pass a `groupId` that doesn't
+exist, the portal complains about it, and the Mobile SDK wraps the error message 
+with a `ServerException`.
 
 There are multiple `AsyncTaskCallback` implementations, one for each method
 return type:
@@ -79,25 +80,20 @@ return type:
 
 All you'll need to do is pick the appropriate implementation for your service 
 method return type. In the example code snippet above, a 
-`JSONArrayAsyncTaskCallback` instance was used since `getGroupUsers` returns a 
+`JSONArrayAsyncTaskCallback` instance is used since `getGroupEntries` returns a 
 `JSONArray`. 
 
 It's also possible to use a generic `AsyncTaskCallback` implementation called
 `GenericAsyncTaskCallback`. For this implementation, you must implement a
 transform method and handle JSON parsing yourself. 
 
-+$$$
+Note that if you still don't want to use any of these callbacks, you can 
+implement `AsyncTaskCallback` directly, but be careful when doing so. You should 
+always get the first element of the `JSONArray` passed as a parameter to the 
+`onPostExecute(JSONArray jsonArray)` method (i.e. `jsonArray.get(0)`).
 
-**Note:** If you still don't want to use
-any of these callbacks, you can implement `AsyncTaskCallback` directly, but be
-careful. You should always get the first element of the `JSONArray` passed as a
-parameter to the `onPostExecute(JSONArray jsonArray)` method (i.e.,
-`jsonArray.get(0)`).
-
-$$$
-
-After the request has finished, the `onSuccess()` method is called on the main
-UI thread. Since the request is asynchronous, the service call immediately
+The `onSuccess` method is called on the main UI thread after the request 
+finishes. Since the request is asynchronous, the service call immediately
 returns a `null` object. The service delivers the service's real return value to
 the callback's `onSuccess()` method, instead. 
 
@@ -111,5 +107,3 @@ app.
 [Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
-
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
