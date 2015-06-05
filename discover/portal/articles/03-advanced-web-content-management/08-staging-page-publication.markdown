@@ -359,7 +359,7 @@ publish based on when it was created or last modified. You can change the date r
 -  *All:* publishes content regardless of its creation or last modification date.
 
 -  *From Last Publish Date:* publishes content that was created or modified since the last
-   publish date.
+   publish date. (this is the default option)
 
 -  *Date Range:* publishes content based on a specified date range. You can set a
    start and end date/time window. The content created or modified within that window of
@@ -369,28 +369,16 @@ publish based on when it was created or last modified. You can change the date r
    time.  For example, you can set the date range to the past 48 hours,
    starting from the current time.
 
-Under the *Date Range* section, you have the section which lists the different types of content that are about to be published. This list is populated based on the provided date range. For example, if at least one web content article has been created or modified in the given date range, a Web Content section appears in the list, with the amount of such articles being shown in paranthesis, after the Web Content label. Otherwise, the Web Content section is absent. Similarly, if at least one Documents and Media file has been uploaded or modified in the given date range, a Documents and Media section appears in the list, with the amount of documents to be published being shown in paranthesis. Otherwise, the Documents and Media section is absent.
+Under the *Date Range* section, you have the section which lists the different types of content that are about to be published. This list is populated based on the provided date range. For example, if at least one web content article has been created or modified in the given date range, a Web Content section appears in the list, with the amount of such articles being shown next to the Web Content label. Otherwise, the Web Content section is absent. Similarly, if at least one Documents and Media file has been uploaded or modified in the given date range, a Documents and Media section appears in the list, with the amount of documents to be published being shown next to it. Otherwise, the Documents and Media section is absent.
 Categories and OpenSocial Gadget Publisher content types are not dependant on the date range and thus are always shown in the list.
-By unchecking the checkbox next to a certain content type, you exclude it from the current publication to Live.
-Some of the content types in the list, like Web Content and Documents and Media, have further filtering options related to them.
-
-**Permissions** allows you to include permissions for the pages and portlets
-when the changes are published.
-
-Click on *Mark as Ready for Publication*, then click *Publish to Live* &rarr;
-*Now*, and select *Publish* to publish your Bookmarks portlet to the live site.
-
-Content publication can be also controlled using staging. Bookmarks are staged
-by default (this can be changed in Staging Configuration). If you create a
-bookmark in the staged site, it isn't visible in the live site until you publish
-it to the live site following the same steps you just performed (you can select
-which types of content are published when you publish to the live site). If
-workflow is enabled for any new resource, the resource needs to go through the
-workflow process before it can be published to the live site.
-
-![Figure 3.23: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
-
-Web content tends to be frequently updated, often more so than other kinds of
+By unchecking the checkbox next to a certain content type, you are excluding it from the current publication to Live.
+Some of the content types in the list, like Web Content and Documents and Media, have further filtering options related to them. Let's take a look at the ones for the Web Content section.
+When this section is present and is not unchecked, there is a comma-separated list of related items to be published, including the articles themselves. For example: "Web Content (12), Structures(3), Referenced Content, Version History". You can remove some of these items by clicking on the *Change* link net to the list.
+    *Referenced Content* is represented by the Documents and Media files included in web content articles through one of the following methods:
+         a) Click *Insert Image* icon of CKEditor, then click *Browse Server* and choose a file from Documents and Media.
+         b) The article is based on a web content structure with one or more fields of type *Documents and Media*.
+         
+    *Version History*: Web content tends to be frequently updated, often more so than other kinds of
 content. For some web content articles, this can result in very high numbers of
 versions, sometimes hundreds. Such high version numbers can make it very slow to
 publish web content articles. Liferay addresses this issue by allowing site
@@ -413,6 +401,22 @@ the latest approved version of web content articles. If you'd like to change the
 default behavior, add the following line to your `portal-ext.properties` file:
 
     journal.publish.version.history.by.default=false
+
+**Permissions** allows you to include permissions for the pages and portlets
+when the changes are published.
+
+Click on *Mark as Ready for Publication*, then click *Publish to Live* &rarr;
+*Now*, and select *Publish* to publish your Bookmarks portlet to the live site.
+
+Content publication can be also controlled using staging. Bookmarks are staged
+by default (this can be changed in Staging Configuration). If you create a
+bookmark in the staged site, it isn't visible in the live site until you publish
+it to the live site following the same steps you just performed (you can select
+which types of content are published when you publish to the live site). If
+workflow is enabled for any new resource, the resource needs to go through the
+workflow process before it can be published to the live site.
+
+![Figure 3.23: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
 
 One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
