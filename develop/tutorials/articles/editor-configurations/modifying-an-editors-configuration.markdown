@@ -70,3 +70,48 @@ A simple example of this is provided below.
     service applies to all editors in those portlets. Lastly, the service
     ranking is listed, which prioritizes this service over others that are
     currently deployed in Portal.
+
+4. Now that you've specified which editor configurations you'll modify, you'll
+   need to specify what about them you'd like to change. Add the following
+   method to your new class:
+
+        @Override
+        public void populateConfigJSONObject(
+            JSONObject jsonObject, Map<String, Object> inputEditorTaglibAttributes,
+            ThemeDisplay themeDisplay,
+            LiferayPortletResponse liferayPortletResponse) {
+
+        }
+
+    Currently, this method does nothing. You'll need to add some logic, which
+    you'll do next.
+
+5.  In the `populateConfigJSONObject` method, you'll need to instantiate a
+    [`JSONObject`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/json/JSONObject.java)
+    that holds the current configuration of the editor. For instance, you could
+    do something like this:
+
+        JSONObject toolbars = jsonObject.getJSONObject("toolbars");
+
+6. Now that the `JSONObject` holds your editor's configuration, you can modify
+   the configuration. For instance, suppose you'd like to add a button to your
+   editor's toolbar. To complete this, you'd need to extract the *Add* buttons
+   out of your toolbar configuration object as a
+   [`JSONArray`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/json/JSONArray.java),
+   and then add the button to that `JSONArray`. For example, the following
+   would add a *Camera* button to the editor's toolbar:
+
+        if (toolbars != null) {
+            JSONObject toolbarAdd = toolbars.getJSONObject("add");
+
+            if (toolbarAdd != null) {
+                JSONArray addButtons = toolbarAdd.getJSONArray("buttons");
+
+                addButtons.put("camera");
+            }
+        }
+
+Your Java class is complete! The only thing left to do is generate the module's
+JAR file and copy it to your Portal's `osgi/modules` directory. Once the module
+is installed and activated in your Portal's service registry, your new editor
+configuration is available for use.
