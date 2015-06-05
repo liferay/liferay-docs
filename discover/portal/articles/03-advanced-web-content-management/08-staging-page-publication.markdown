@@ -371,10 +371,15 @@ publish based on when it was created or last modified. You can change the date r
    starting from the current time.
 
 Under the *Date Range* section, you have the section which lists the different types of content that are about to be published. This list is populated based on the provided date range. For example, if at least one web content article has been created or modified in the given date range, a Web Content section appears in the list, with the amount of such articles being shown next to the Web Content label. Otherwise, the Web Content section is absent. Similarly, if at least one Documents and Media file has been uploaded or modified in the given date range, a Documents and Media section appears in the list, with the amount of documents to be published being shown next to it. Otherwise, the Documents and Media section is absent.
-Categories and OpenSocial Gadget Publisher content types are not dependant on the date range and thus are always shown in the list.
+
+*Categories* and *OpenSocial Gadget Publisher* content types are not dependant on the date range and thus are always shown in the list.
+
 By unchecking the checkbox next to a certain content type, you are excluding it from the current publication to Live.
+
 Some of the content types in the list, like Web Content and Documents and Media, have further filtering options related to them. Let's take a look at the ones for the Web Content section.
-When this section is present and is not unchecked, there is a comma-separated list of related items to be published, including the articles themselves. For example: "Web Content (12), Structures(3), Referenced Content, Version History". You can remove some of these items by clicking on the *Change* link net to the list.
+
+When this section is present and is not unchecked, it shows a comma-separated list of related items to be published, including the articles themselves. For example: "Web Content (12), Structures(3), Referenced Content, Version History". You can remove some of these items by clicking on the *Change* link net to the list.
+    
     *Referenced Content* is represented by the Documents and Media files included in web content articles through one of the following methods:
          a) Click *Insert Image* icon of CKEditor, then click *Browse Server* and choose a file from Documents and Media.
          b) The article is based on a web content structure with one or more fields of type *Documents and Media*.
