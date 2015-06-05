@@ -255,12 +255,10 @@ constructor, along with the file's mime type and name. For example:
 The Mobile SDK sends a multipart form request to the portal. On the server side, 
 a `File` instance is created and sent to the service method you're calling. 
 
-## Canceling or Monitoring Requests
-
-It's possible to cancel or monitor service calls that upload data to Liferay. 
-Every service that uploads data returns an `AsyncTask` instance. You can use 
-it to cancel the upload if needed. If want to listen for upload progress to 
-create a progress bar, you can create an `UploadProgressAsyncTaskCallback` 
+It's also possible to cancel or monitor service calls that upload data to 
+Liferay. Every service that uploads data returns an `AsyncTask` instance. You 
+can use it to cancel the upload if needed. If want to listen for upload progress 
+to create a progress bar, you can create an `UploadProgressAsyncTaskCallback` 
 callback and set it to the current `Session` object. Its `onProgress` method is 
 called for each byte chunk sent. It passes the total number of uploaded bytes so 
 far. For example: 
