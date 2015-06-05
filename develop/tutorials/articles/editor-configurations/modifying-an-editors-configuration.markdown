@@ -8,9 +8,9 @@ existing configurations exactly how you'd like.
 
 ## Extending the Editor's Configuration
 
-To modify the editor's configuration, you'll need to create a module that has a
+To modify the editor's configuration, you need to create a module that has a
 component that implements the
-[EditorConfigContributor](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.java)
+[`EditorConfigContributor`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.java)
 interface. By implementing this interface in your module, your module will
 provide a service to your portal that modifies the editors you'd like to change.
 A simple example of this is provided below.
@@ -24,7 +24,9 @@ A simple example of this is provided below.
     tutorials (once available) would be very helpful here. -Cody -->
 
 2. Create a unique package name in the module's `src` directory, and create a
-   new Java class in that package.
+   new Java class in that package. The class should extend the
+   [`BaseEditorConfigContributor`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/BaseEditorConfigContributor.java)
+   class.
 
 3. Directly above the class's declaration, insert the following:
 
@@ -39,13 +41,13 @@ A simple example of this is provided below.
     This annotation declares the implementation class of the Component, and
     specifies the Component's properties. You should implement the
     `EditorConfigContributor` interface for this scenario. The `property`
-    element is blank in the code snippet above. You'll need to insert properties
+    element is blank in the code snippet above. You need to insert properties
     that distinguish the editor's name, editor's configuration key, and/or the
     portlet name where the editor resides. These three properties can be
     specified independently, or in any variation with each other. You can find
     out more about the available properties and how they should be used by
     reading the Javadoc provided in the
-    [EditorConfigContributor](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.java)
+    [`EditorConfigContributor`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.java)
     interface.
 
     <!-- Change the Javadoc link above to the Javadoc listed on
@@ -71,7 +73,7 @@ A simple example of this is provided below.
     ranking is listed, which prioritizes this service over others that are
     currently deployed in Portal.
 
-4. Now that you've specified which editor configurations you'll modify, you'll
+4. Now that you've specified which editor configurations you want to modify, you
    need to specify what about them you'd like to change. Add the following
    method to your new class:
 
@@ -83,10 +85,10 @@ A simple example of this is provided below.
 
         }
 
-    Currently, this method does nothing. You'll need to add some logic, which
+    Currently, this method does nothing. You need to add some logic, which
     you'll do next.
 
-5.  In the `populateConfigJSONObject` method, you'll need to instantiate a
+5.  In the `populateConfigJSONObject` method, you need to instantiate a
     [`JSONObject`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/json/JSONObject.java)
     that holds the current configuration of the editor. For instance, you could
     do something like this:
