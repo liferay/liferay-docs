@@ -31,8 +31,8 @@ So what's going on here? After the import, the `BatchSessionImpl` session is
 created. The `BatchSessionImpl` constructor takes either credentials or another 
 session. Passing another session to the constructor is useful when you 
 already have a `Session` object and want to reuse the same credentials. Next, 
-the service calls are made as usual. If you use asynchronous calls, these 
-methods return a `null` object immediately. 
+the service calls are made as usual. As with asynchronous calls, these methods 
+return `null` immediately. 
 
 Finally, the `invoke()` method is called from the batch session object. It
 returns a `JSONArray` containing the results for each service call. Since there
