@@ -369,9 +369,9 @@ publish based on when it was created or last modified. You can change the date r
    time.  For example, you can set the date range to the past 48 hours,
    starting from the current time.
 
-Under the *Date Range* section, you have the section which lists the different types of content that is about to be published. This list is populated based on the provided date range. For example, if at least one web content article has been created or modified in the given date range, a Web Content section appears in the list, with the amount of such articles being shown in paranthesis, after the Web Content label. Otherwise, the Web Content section is absent. Similarly, if at least one Documents and Media file has been uploaded or modified in the given date range, a Documents and Media section appears in the list, with the amount of documents to be published being shown in paranthesis. Otherwise, the Documents and Media section is absent.
+Under the *Date Range* section, you have the section which lists the different types of content that are about to be published. This list is populated based on the provided date range. For example, if at least one web content article has been created or modified in the given date range, a Web Content section appears in the list, with the amount of such articles being shown in paranthesis, after the Web Content label. Otherwise, the Web Content section is absent. Similarly, if at least one Documents and Media file has been uploaded or modified in the given date range, a Documents and Media section appears in the list, with the amount of documents to be published being shown in paranthesis. Otherwise, the Documents and Media section is absent.
 Categories and OpenSocial Gadget Publisher content types are not dependant on the date range and thus are always shown in the list.
-By unchecking the checkbox next to a certain content type, you disable the publication for that particular content type.
+By unchecking the checkbox next to a certain content type, you exclude it from the current publication to Live.
 Some of the content types in the list, like Web Content and Documents and Media, have further filtering options related to them.
 
 **Permissions** allows you to include permissions for the pages and portlets
