@@ -66,7 +66,7 @@ installation using
    Podfile), you need to import the `LRMobileSDK` module:
    
         @import LRMobileSDK; // (Objective-C)
-	import LRMobileSDK // (Swift)
+        import LRMobileSDK // (Swift)
 
 For more information on how CocoaPods works, see their [documentation](http://guides.cocoapods.org/using/index.html).
 
