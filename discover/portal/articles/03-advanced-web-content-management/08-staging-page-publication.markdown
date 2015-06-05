@@ -352,6 +352,7 @@ the applications and settings to be published.
 *select* option under All Content allows you to delete the portlet metadata
 before publishing.
 Clicking the *Choose Content* option lets you filter the content that is going to be published, based mainly on the date range and content type, as well as other filtering sub-options for certain content types. Let's take a closer look at these content filtering options.
+
 The *Date Range* feature provides you with another way to select specific
 content to publish. Specifying a date range allows you to choose content to
 publish based on when it was created or last modified. You can change the date range by clicking on *Change*, next to it. You have several options to choose from:
