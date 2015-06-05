@@ -379,7 +379,7 @@ By unchecking the checkbox next to a certain content type, you are excluding it 
 Some of the content types in the list, like Web Content and Documents and Media, have further filtering options related to them. Let's take a look at the ones for the Web Content section.
 
 When this section is present and is not unchecked, it shows a comma-separated list of related items to be published, including the articles themselves. For example: "Web Content(12), Structures(3), Referenced Content, Version History". You can remove some of these items by clicking on the *Change* link next to the list.
-    
+      
     *Referenced Content* is represented by the Documents and Media files included in web content articles through one of the following methods:
          a) Click *Insert Image* icon of CKEditor, then click *Browse Server* and choose a file from Documents and Media.
          b) The article is based on a web content structure with one or more fields of type *Documents and Media*.
