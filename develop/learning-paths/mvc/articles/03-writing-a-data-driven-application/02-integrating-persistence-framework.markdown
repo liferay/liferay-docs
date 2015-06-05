@@ -200,7 +200,7 @@ to jump in and create a service API for guestbook entries.
             
             Entry entry = entryPersistence.create(entryId);
             
-            entry.setUuid(serviceContext.getUuid());
+            entry.setEntryId(CounterLocalServiceUtil.increment(Entry.class.getName()));
             entry.setUserId(userId);
             entry.setGroupId(groupId);
             entry.setCompanyId(user.getCompanyId());
