@@ -1,10 +1,10 @@
 # Modifying an Editor's Configuration
 
-Liferay supports many different kinds of editors that can be used in portlets to
-edit content. Depending on the content you're editing, you may want to modify
-the editor to provide a better configuration for your needs. In this tutorial,
-you'll learn how to extend your Liferay supported editor to add new or modify
-existing configurations exactly how you'd like.
+Liferay supports many different kinds of WYSIWYG editors that can be used in
+portlets to edit content. Depending on the content you're editing, you may want
+to modify the editor to provide a better configuration for your needs. In this
+tutorial, you'll learn how to extend your Liferay supported WYSIWYG editor to
+add new or modify existing configurations exactly how you'd like.
 
 ## Extending the Editor's Configuration
 
@@ -113,7 +113,20 @@ A simple example of this is provided below.
             }
         }
 
+    The configuration JSON object will be passed to the editor with the
+    modifications you've implemented in the `populateConfigJSONObject` method.
+
 Your Java class is complete! The only thing left to do is generate the module's
 JAR file and copy it to your Portal's `osgi/modules` directory. Once the module
 is installed and activated in your Portal's service registry, your new editor
 configuration is available for use.
+
+Liferay supports several different types of WYSIWYG editors, which include
+(among others):
+
+- [AlloyEditor](http://alloyeditor.com/api/)
+- [CKEditor](http://docs.ckeditor.com/#!/api/CKEDITOR.config)
+- [TinyMCE](http://www.tinymce.com/wiki.php/Configuration)
+
+Make sure to visit each editor's configuration API to learn what each editor
+offers for configuration settings.
