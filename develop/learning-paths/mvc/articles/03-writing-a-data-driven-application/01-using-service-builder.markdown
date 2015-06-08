@@ -250,7 +250,7 @@ model and service layers.
 At a micro level, each layer is implemented using Java Interfaces and various
 implementations of those interfaces. Rather than have one `Entry` class that
 represents your model, Service Builder has generated a system of classes that
-include an `Entry` interface, an `EntryBaseImpl` abstract class for Service
+includes an `Entry` interface, an `EntryBaseImpl` abstract class for Service
 Builder to manage, and an `EntryImpl` class that you can customize. This gives
 you the flexibility of being able to customize your model, while still allowing
 Service Builder to generate the code it needs. That's why Service Builder is a

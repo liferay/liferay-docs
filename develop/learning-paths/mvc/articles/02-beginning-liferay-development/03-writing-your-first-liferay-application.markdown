@@ -600,6 +600,7 @@ functionality, which it's currently inheriting from its parent class,
                 List<Entry> entries = parseEntries(guestbookEntries);
 
                 renderRequest.setAttribute("entries", entries);
+                
             }
 
             super.render(renderRequest, renderResponse);
@@ -619,12 +620,15 @@ conversion of the array to a `List` of your model objects: .
             ArrayList<Entry> entries = new ArrayList();
 
             for (String entry : guestbookEntries) {
+            
                 String[] parts = entry.split("\\^", 2);
                 Entry gbEntry = new Entry(parts[0], parts[1]);
                 entries.add(gbEntry);
+                
             }
 
             return entries;
+            
         }
 
 As you can see, this method splits the entries in the `String` array into two

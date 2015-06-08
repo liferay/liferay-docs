@@ -22,11 +22,10 @@ methods, and shows how to set up communication with Liferay. Onward!
 
 ## Requirements [](id=requirements)
 
-Liferay Screens for iOS includes the Component Library (the screenlets) and two
-sample projects: one uses Objective-C and the other Swift. It was developed
-using Swift and development techniques that leverage functional Swift code and
-the
-[Model View Presenter](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)
+Liferay Screens for iOS includes the Component Library (the screenlets) and 
+three sample projects: one uses Objective-C and the other two use Swift. Screens 
+was developed using Swift and development techniques that leverage functional 
+Swift code and the [Model View Presenter](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)
 architecture. You can use Swift or Objective-C with Screens, and you can run
 Screens apps on iOS 7 and above--Screens doesn't use iOS 8 APIs. 
 
@@ -36,7 +35,7 @@ Liferay Screens for iOS requires the following software:
 - iOS 8 SDK
 - [CocoaPods](http://cocoapods.org) 0.36 or newer
 - [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
-- [Liferay Screens Compatiblity Plugin](https://github.com/liferay/liferay-screens/tree/master/portal)
+- [Liferay Screens Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal)
 - Liferay Screens source code
 
 ## Configuring Your Project with CocoaPods [](id=configuring-your-project-with-cocoapods)
@@ -178,8 +177,8 @@ project. It's time to configure its communication with your Liferay instance.
 Configuring communication between screenlets and Liferay is easy. Liferay
 Screens uses a property list (`.plist`) file to access your Liferay instance.
 It must include the server's URL, the portal's company ID, and the site's group
-ID. Create a `.plist` file and specify values required for communicating with
-your Liferay instance. As an example, refer to
+ID. Create a `liferay-server-context.plist` file and specify values required for 
+communicating with your Liferay instance. As an example, refer to
 [`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Resources/liferay-server-context-sample.plist). 
 
 ![Figure 8: Here's a property list file, called `liferay-context.plist`.](../../images/screens-ios-liferay-context.png)
