@@ -1,7 +1,8 @@
 # Invoking Liferay Services in Your Android App [](id=invoking-liferay-services-in-your-android-app)
 
-Once the Mobile SDK is set up in your Android project, you can access and invoke 
-Liferay services in your app. The basic steps for doing this are listed here: 
+Once the appropriate Mobile SDKs are set up in your Android project, you can 
+access and invoke Liferay services in your app. The basic steps for doing this 
+are listed here: 
 
 1. Create a session.
 2. Import the Liferay services you need to call.
@@ -14,11 +15,11 @@ app!
 
 ## Step 1: Create a Session [](id=step-1-create-a-session)
 
-The session is a conversion state between the client and server, that consists 
-of multiple requests and responses between the two. You need a session to pass 
-requests between your app and the Mobile SDK. Sessions need to be created with 
-user authentication. The imports and code required to create a session are shown 
-here:
+A session is a conversion state between the client and server, that consists of 
+multiple requests and responses between the two. You need a session to pass 
+requests between your app and the Mobile SDK. In most cases, sessions need to be 
+created with user authentication. The imports and code required to create a 
+session are shown here:
 
     import com.liferay.mobile.android.auth.basic.BasicAuthentication;
     import com.liferay.mobile.android.service.Session;
@@ -42,17 +43,17 @@ should be disabled on a production Liferay instance.
 
 $$$
 
-The second parameter creates a new `BasicAuthentication` object with the user's 
-credentials to authenticate. You need to provide the user's email address, 
-screen name, or user ID (depending on the authentication method used by your 
-Liferay instance). You also need to provide the user's password. The 
-`BasicAuthentication` object tells the session to authenticate each service call 
-with Basic Authentication. The Mobile SDK also supports OAuth authentication, as 
-long as the OAuth Provider portlet is deployed to your Liferay instance. To 
-learn how to do OAuth authentication with the Mobile SDK, see the
+The second parameter creates a new `BasicAuthentication` object containing the 
+user's credentials. Depending on the authentication method used by your Liferay 
+instance, you need to provide the user's email address, screen name, or user ID. 
+You also need to provide the user's password. The `BasicAuthentication` object 
+tells the session to use Basic Authentication to authenticate each service call. 
+The Mobile SDK also supports OAuth authentication, as long as the OAuth Provider 
+portlet is deployed to your Liferay instance. To learn how to use OAuth 
+authentication with the Mobile SDK, see the
 [OAuth sample app](https://github.com/brunofarache/liferay-android-sdk-oauth). 
 
-If you're building a login view for your app, you can use the `SignIn` utility
+If you're building a sign in view for your app, you can use the `SignIn` utility
 class to check if the credentials given by the user are valid.
 
     import com.liferay.mobile.android.auth.SignIn;
@@ -71,13 +72,13 @@ class to check if the credentials given by the user are valid.
 
     });
 
-The Mobile SDK doesn't keep a persistent connection or session with the server. 
-Each request is sent with the user's credentials (except when using OAuth). 
-However, the `SignIn` class provides a way to return user information after a 
-successful sign-in. 
+Note that the Mobile SDK doesn't keep a persistent connection or session with 
+the server. Each request is sent with the user's credentials (except when using 
+OAuth). However, the `SignIn` class provides a way to return user information 
+after a successful sign-in. 
 
 Next, you're shown how to create an unauthenticated session in the limited cases 
-where this is possible.
+where this is possible. 
 
 ### Creating an Unauthenticated Session
 
@@ -114,25 +115,25 @@ the available portal and plugin services at
 Be sure to replace `http://localhost:8080` in this URL with your server's 
 address. 
 
-Once you determine the services you need to call, add their imports. For 
-example, if you're building a blogs app, you can import `BlogsEntryService`:
+Add the imports for the services you need to call. For example, if you're 
+building a blogs app, you can import `BlogsEntryService`: 
 
     import com.liferay.mobile.android.v62.blogsentry.BlogsEntryService;
 
 Note that the Liferay version (`.v62`) is used in the package namespace. Since 
-the Mobile SDK is built for a specific Liferay version, service classes are 
-separated by their package name. In this example, the Mobile SDK classes use the 
-`.v62` package, which means this Mobile SDK is compatible with Liferay 6.2. But, 
-you can use several SDKs in your classpath simultaneously to support different 
-Liferay versions. 
+the Mobile SDK is built for a specific Liferay version, service classes for 
+different Liferay versions are separated by their package names. In this 
+example, the Mobile SDK classes use the `.v62` package, which means this Mobile 
+SDK is compatible with Liferay 6.2. This namespacing lets your app support 
+multiple Liferay versions. 
 
 ## Step 3: Create a Service Object and Call its Service Methods [](id=step-3-create-a-service-object-and-call-its-service-methods)
 
-Once you have a session, you're ready to make the service call. This is done by 
-creating a service object for the service you want to call, and then calling its 
-service methods. For example, if you're creating a blogs app, you'll need to use 
-`BlogsEntryService` to get all the blogs entries from a site. This is 
-demonstrated by the following code. 
+Once you have a session and the required imports, you're ready to make the 
+service call. This is done by creating a service object for the service you want 
+to call, and then calling its service methods. For example, if you're creating a 
+blogs app, you need to use `BlogsEntryService` to get all the blogs entries from 
+a site. This is demonstrated by the following code: 
 
     BlogsEntryService service = new BlogsEntryService(session);
 
@@ -143,26 +144,26 @@ This fetches all blog entries from the *Guest* site. In this example, the
 `groupId` as a parameter. You can get the user's groups by calling the 
 `getUserSites()` method from `GroupService`. 
 
-Service method return types can be `void`, `String`, `JSONArray`, and
+Service method return types can be `void`, `String`, `JSONArray`, or 
 `JSONObject`. Primitive type wrappers can be `Boolean`, `Integer`,
-`Long`, and `Double`. 
+`Long`, or `Double`. 
 
 This `BlogsEntryService` call is a basic example of a synchronous service call; 
 the method only returns after the request finishes. However, Android doesn't 
-allow network communication from an app's main UI thread; service calls issued 
+allow network communication from an app's main UI thread. Service calls issued 
 from the main UI thread need need to be asynchronous. For instructions on doing 
 this, see the tutorial 
 [Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-services-asynchronously-from-your-android-app).
 
 Great! Now you're familiar with the basics of accessing Liferay services through 
 the Mobile SDK. However, there are some special cases you may run into when 
-making service calls from your app. These are discussed in the sections that 
-follow.
+making service calls from your app. These are discussed in the following 
+sections. 
 
 ## Non-Primitive Arguments
 
-There are some special cases in which service methods arguments aren't 
-primitives. In these cases, you should use `JSONObjectWrapper`. For example:
+There are some special cases in which a service method's arguments aren't 
+primitives. In these cases, you should use `JSONObjectWrapper`. For example: 
 
     JSONObjectWrapper wrapper = new JSONObjectWrapper(new JSONObject());
 
@@ -170,21 +171,21 @@ You must pass a JSON containing the object properties and their values. On the
 server side, your object is instantiated and setters for each property are 
 called with the values from the JSON you passed.
 
-There are some other cases in which server service methods require interfaces or
-abstract classes as arguments. Since it's impossible for the SDK to guess which
+There are other cases in which service methods require interfaces or abstract 
+classes as arguments. Since it's impossible for the SDK to guess which 
 implementation you want to use, you must initialize `JSONObjectWrapper` with
-the class name. For example:
+the class name. For example: 
 
     JSONObjectWrapper wrapper = new JSONObjectWrapper(className, new JSONObject());
 
 The server looks for the class name in its classpath and instantiates the object 
 for you. It then calls setters, as in the previous example. The abstract class 
-`OrderByComparator` is a good example of this. This is discussed next.
+`OrderByComparator` is a good example of this. This is discussed next. 
 
 ### OrderByComparator
 
 On the server side, `OrderByComparator` is an abstract class. You must therefore 
-pass the name of a class that implements it. For example:
+pass the name of a class that implements it. For example: 
 
     String className = "com.liferay.portlet.bookmarks.util.comparator.EntryNameComparator";
 
@@ -194,12 +195,11 @@ If the service you're calling accepts `null` for a comparator argument, pass
 `null` to the service call. 
 
 You may want to set the ascending property for a comparator. Unfortunately, as 
-of Liferay 6.2, most Liferay `OrderByComparator` implementations don't have a
-setter for this property and it's not possible to set from the Mobile SDK. 
-Future portal versions will address this.
-
-However, you may have a custom `OrderByComparator` that has a setter for 
-ascending. In this case, you can use the following code:
+of Liferay 6.2, most Liferay `OrderByComparator` implementations don't have a 
+setter for this property and it isn't possible to set from the Mobile SDK. 
+Future portal versions will address this. However, you may have a custom 
+`OrderByComparator` that has a setter for ascending. In this case, you can use 
+the following code: 
 
     String className = "com.example.MyOrderByComparator";
 
