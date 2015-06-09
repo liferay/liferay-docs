@@ -169,6 +169,17 @@ the [Resources Importer](/participate/liferaypedia/-/wiki/Main/Resources+Importe
 If you'd like to learn more about importing web content with a theme, visit its
 dedicated [tutorial](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
 
++$$$
+
+**Note:** The *Download* button for web content articles comes standard for
+Liferay 6.2 versions CE 6.2 GA4 and EE 6.2 SP10 and later. Prior Liferay 6.2
+versions require the [Resources Importer CE](https://www.liferay.com/marketplace/-/mp/application/15502239)
+or [EE](https://www.liferay.com/marketplace/-/mp/application/15502140) app
+installed, depending on your Liferay Portal edition. The Resources Importer app
+can be downloaded from [Liferay Marketplace](https://www.liferay.com/marketplace).
+
+$$$
+
 The right side of the New Web Content form provides options for customizing your
 web content.
 
