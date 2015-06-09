@@ -1,75 +1,70 @@
 # Creating Android Views [](id=creating-android-views)
 
-By letting you create your own views, Screens for Android gives you nearly 
-limitless ways to customize your app's look and feel. Views can also introduce 
-new functionality to screenlets. You can create views from scratch, or use an 
-existing view as a foundation for your views. All views consist of a screenlet 
-class, a view class, and a layout XML. Which of these components you need to 
-create, however, depends on the *type* of view you're creating. The type of view 
-you create depends on your needs. There are three types of views you can create: 
+By creating your own Views, you can customize your mobile app's look and feel and functionality.
+You can create them from scratch or use an existing View as a foundation. Views include a View class for implementing Screenlet behavior and an
+XIB file for specifying the UI. The three Liferay
+Screens View types support different levels of customization and parent View inheritance.
+Here's what each View type offers: 
 
-- *Child view*: Presents the same UI components as its parent view, but lets you 
-  change their appearance and position. Since the parent view's behavior is 
-  preserved, creating a Child view is ideal when you only need to make visual 
-  changes to the parent. Child views reuse the parent's screenlet class and view 
-  class, but change the layout XML. The Child view's parent must be a Full view.
+**Child View:** presents the same UI components as its parent View, but lets 
+you change their appearance and position.
 
-- *Extended view*: Inherits the parent view's behavior and appearance, but lets 
-  you change and add to both. Extended views reuse the parent view's screenlet
-  class, but let you change its view class and layout XML. An Extended view's
-  parent must be a Full view.
+**Extended View:** inherits its parent View's functionality and appearance,
+but lets you add to and modify both.
 
-- *Full view*: Provides a complete standalone view. Creating a Full view is
-  ideal when you need a screenlet to have completely different behavior and
-  appearance. Since a Full view doesn't have a parent view, it has its own
-  screenlet class, view class, and layout XML. Any Full view can be inherited by
-  a Child or Extended view.
+**Full View:** provides a complete standalone View for a Screenlet. A full
+View is ideal for implementing functionality and appearance completely
+different from a Screenlet's current themes.
 
-This tutorial shows you how to create all three types of views. Before 
-proceeding, you might want to examine the
-[architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
-to understand view concepts and components. It might also find it useful to
-learn how to
-[create Android screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets). 
-Now get ready to create some great views! 
+This tutorial explains how to create all three types of Views. To understand View concepts and components, you might want to examine the
+[architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+of Liferay Screens for Android. And the
+tutorial
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets) 
+can help you create or extend any Screenlet classes your View requires. Now get
+ready to create some great Views! 
 
 ## Determining Your View's Location
 
-Where you should create your view depends on how you plan to use it. If you
+Where you should create your View depends on how you plan to use it. If you
 don't plan to reuse it in another app or don't want to redistribute it, create
 it in your app project. 
 
-If you want to reuse your view in another app, create it in a new Android
+If you want to reuse your View in another app, create it in a new Android
 application module; the tutorial
 [Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-android-screenlets)
-explains how. When your view's project is in place, you can start creating it. 
+explains how. When your View's project is in place, you can start creating it. 
 
-First, you'll learn how to create a Child view.
+First, you'll learn how to create a Child View.
 
 ## Child View [](id=child-view)
 
-A Child view presents the same behavior and UI components as its parent, but can
-change the UI components' appearance and position. A Child view specifies visual
-changes in its own layout XML file; it inherits the parent's view class and
-screenlet class. The parent must be a Full view. For example, the Child view
-discussed here presents the same UI components as the Login screenlet's Default
-view, but displays them in a more compact layout. You can follow these steps to
-create a Child view. 
+A Child View presents the same behavior and UI components as its parent, but can
+change the UI components' appearance and position. It can't add or remove any UI
+components. A Child View specifies visual changes in its own layout XML file; it
+inherits the parent's View class and Screenlet class. The parent must be a Full
+View. 
 
-1.  Create a new layout XML file named after the view's screenlet and its
+The Child View discussed here presents the same UI components as the
+[Login Screenlet's](https://github.com/liferay/liferay-screens/tree/master/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login)
+Default View, but displays them in a more compact layout.
+
+You can follow these steps to create a Child View:
+
+1.  Create a new layout XML file named after the View's Screenlet and its
     intended use case. A good way to start building your UI is to duplicate the
     parent's layout XML file and use it as a template. However you start
-    building your UI, name the root element after the parent view's
+    building your UI, name the root element after the parent View's
     fully-qualified class name and specify the parent's UI components with the
     same IDs. 
 
-    In the example here, the Child view's layout file `login_compact.xml`
+    In the example here, the Child View's layout file `login_compact.xml`
     resembles its parent's layout file
     [`login_default.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/res/layout/login_default.xml)--
-    the layout of the Login screenlet's Default view. The child view's name
-    *compact* describes its use case: display the screenlet's components in a
+    the layout of the Login Screenlet's Default View. The child View's name
+    *compact* describes its use case: display the Screenlet's components in a
     more compact layout. The IDs of its `EditText` and `Button` components match
-    those of the parent view. Its root element uses the parent view class's
+    those of the parent View. Its root element uses the parent View class's
     fully-qualified name: 
 
         <?xml version="1.0" encoding="utf-8"?>
@@ -106,50 +101,48 @@ create a Child view.
 
         </com.liferay.mobile.screens.viewsets.defaultviews.auth.login.LoginView>
 
-    You can browse other layouts for Screens's Default views on
+    You can browse other layouts for Screens's Default Views on
     [GitHub](https://github.com/liferay/liferay-screens/tree/1.0.0/android/library/core/src/main/res/layout). 
 
-2.  Insert your view's screenlet in any of your activities or fragments, using
+2.  Insert your View's Screenlet in any of your activities or fragments, using
     your new layout's name as the `liferay:layoutId` attribute's value. For
     example, to use the new `login_compact` layout, insert `LoginScreenlet` in
     an activity or fragment, and set `liferay:layoutId="@layout/login_compact"`.
 
-Another good Child view layout file to examine is
+Another good Child View layout file to examine is
 [`sign_up_material.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/material/src/main/res/layout/sign_up_material.xml).
-It presents the same UI components and functionality as `SignUpScreenlet`'s
-Default view, but using
+It presents the same UI components and functionality as the Sign Up Screenlet's
+Default View, but using
 [Android's Material design](http://www.google.com/design/spec/material-design/introduction.html). 
 
-Stupendous! Now you know how to create Child views. Next, you'll learn how to
-create Extended views. 
+Stupendous! Now you know how to create Child Views. Next, you'll learn how to
+create Extended Views. 
 
 ## Extended View [](id=extended-view)
 
-An Extended view inherits the parent view's behavior and appearance, but lets
-you change and add to both. You can do so by writing a custom view class and a
-new layout XML file. An Extended view inherits all of the parent view's other
-classes, including its screenlet, listeners, and interactors; create a Full view
-to customize them for a screenlet. An Extended view's parent must be a Full
-view. 
+An Extended View inherits the parent View's behavior and appearance, but lets
+you change and add to both. You can do so by writing a custom View class and a
+new layout XML file. An Extended View inherits all of the parent View's other
+classes, including its Screenlet, listeners, and Interactors. An Extended View's
+parent must be a Full View.
 
-The example Extended view discussed here presents the same UI components as the
-Default view for the Login screenlet, but adds new functionality: computing
-password strength. Of course, you're not restricted to password strength
-computations; you can implement the functionality you want. 
+The example Extended View discussed here presents the same UI components as the
+Login Screenlet's Default View, but adds functionality: computing password
+strength. Of course, you're not restricted to password strength computations;
+you can implement the functionality you want. 
 
-1.  Create a new layout XML file named after the view's screenlet and its
+1.  Create a new layout XML file named after the View's Screenlet and its
     intended use case. A good way to start building your UI is to duplicate the
     parent's layout XML file and use it as a template. The new layout file for
-    the Login screenlet's Extended view is called `login_password.xml`, because
-    it adds a password strength computation. It's also based on the Login
-    screenlet's Default view layout file
-    [`login_default.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/res/layout/login_default.xml). 
+    the Login Screenlet's Extended View is called `login_password.xml`, because
+    it's based on the Login Screenlet's Default View layout file
+    [`login_default.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/res/layout/login_default.xml) and it adds a password strength computation.
 
-2.  Create a new custom view class that extends the parent view class. Name
-    it after the screenlet and the functionality you'll add or override. The
-    example view class `LoginCheckPasswordView` extends the Default view's
+2.  Create a new custom View class that extends the parent View class. Name it
+    after the Screenlet and the functionality you'll add or override. The
+    example View class `LoginCheckPasswordView` extends the Default View's
     [`LoginView`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/viewsets/defaultviews/auth/login/LoginView.java)
-    class. It overrides the `onClick` method to compute password strength:
+    class, overriding the `onClick` method to compute password strength:
 
         public class LoginCheckPasswordView extends LoginView {
 	
@@ -169,7 +162,7 @@ computations; you can implement the functionality you want.
         
         }
 
-3.  Rename the layout XML file's root element after your custom view's
+3.  Rename the layout XML file's root element after your custom View's
     fully-qualified class name. For example, the root element in
     `login_password.xml` is `com.your.package.LoginCheckPasswordView`: 
 
@@ -180,7 +173,7 @@ computations; you can implement the functionality you want.
             android:orientation="vertical">
             ...
 
-4.  Insert your view's screenlet in any of your activities or fragments, using
+4.  Insert your View's Screenlet in any of your activities or fragments, using
     your new layout's name as the `liferay:layoutId` attribute's value. For
     example, to use the new `login_password` layout, insert `LoginScreenlet` in
     an activity or fragment, and set
@@ -189,48 +182,51 @@ computations; you can implement the functionality you want.
 The
 [Bank of Westeros](https://github.com/liferay/liferay-screens/tree/1.0.0/android/samples/bankofwesteros) 
 sample app's
-[Westeros view set](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/westeros)
-has a couple Extended views that you can examine. It has an Extended view for
-the Login screenlet that adds a new button to show the password in the clear.
-The view uses custom layout file
+[Westeros View Set](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/westeros)
+has a couple Extended Views that you can examine. It has an Extended View that
+adds a new button to show the password in the clear for the Login Screenlet. The
+View uses custom layout file
 [`login_westeros.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/res/layout/login_westeros.xml) 
-and custom view class
+and custom View class
 [`LoginView`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/login/LoginView.java). 
-The Westeros view set also contains an Extended view for the User Portrait
-screenlet that changes the border color and width of the user's portrait
-picture. It uses custom layout file
+The Westeros View Set also contains an Extended View for the User Portrait
+Screenlet; it changes the border color and width of the user's portrait
+picture and it uses custom layout file
 [`userportrait_westeros.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/res/layout/userportrait_westeros.xml) 
-and custom view class
+and custom View class
 [`UserPortraitView`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/userportrait/UserPortraitView.java). 
 
-Awesome! Now you know how to create Extended views. Next, learn how to create a
-Full view. 
+Awesome! Now you know how to create Extended Views. Next, you can learn how to
+create a Full View. 
 
 ## Full View [](id=full-view)
 
-A Full view has a unique screenlet class, view class, and layout XML file. It's
-standalone and doesn't inherit from any view. You should create a Full view if
-there's no other view that you can extend to meet your needs or if your
-screenlet's behavior can only be augmented by customizing its listeners or
-calling custom interactors. To create a Full view, you must create its screenlet
-class, view class, and layout XML file. The example Full view here for the Login
-screenlet presents a single `EditText` component for the user name. For the
+A Full View has a unique Screenlet class, a View class, and layout XML file.
+It's standalone and doesn't inherit from any View. You should create a Full View
+if there's no other View that you can extend to meet your needs or if your
+Screenlet's behavior can only be augmented by customizing its listeners or
+calling custom Interactors. To create a Full View, you must create its Screenlet
+class, View class, and layout XML file. The example Full View here for the Login
+Screenlet presents a single `EditText` component for the user name. For the
 password, it uses
 [`Secure.ANDROID_ID`](http://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID).
 The
 [Screens Test App](https://github.com/liferay/liferay-screens/tree/1.0.0/android/samples/test-app)
 uses
-[this Full view](https://github.com/liferay/liferay-screens/tree/1.0.0/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/fullview). 
+[this Full View](https://github.com/liferay/liferay-screens/tree/1.0.0/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/fullview). 
+
+You can follow these steps to create a Full View:
 
 1.  Create a new layout XML file and build your UI in it. A good way to start
-    building your UI is to duplicate another view's layout XML file and use it
-    as a template. Name your layout XML file after the view's screenlet and
+    building your UI is to duplicate another View's layout XML file and use it
+    as a template. Name your layout XML file after the View's Screenlet and
     intended use case. Name its root element after the fully-qualified class
-    name of your custom view (you'll create this next). The Test App's Full view
-    layout XML file for the Login screenlet is called
+    name of your custom View (you'll create this next).
+
+	The Test App's Full View layout XML file for the Login Screenlet is called
     [`login_full.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/samples/test-app/src/main/res/layout/login_full.xml).
     It specifies `EditText` and `Button` elements copied from the
-    LongScreenlet's Default view file
+    LongScreenlet's Default View file
     [`login_default.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/res/layout/login_default.xml).
 
         <?xml version="1.0" encoding="utf-8"?>
@@ -256,73 +252,72 @@ uses
         
         </com.your.package.LoginFullView>
 
-2.  Create a new custom view class named after the layout's root element.
-    The tutorial on creating Android screenlets explains how to
-    [create a view class](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-view-class).
-    The custom view class
+2.  Create a new custom View class named after the layout's root element. The
+    tutorial on creating Android Screenlets explains how to
+    [create a View class](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-view-class). Note that you don't have to extend a View class to implement a View
+    model interface, but you might want to for convenience. The custom View
+    class
     [`LoginFullView`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/fullview/LoginFullView.java),
     for example, implements the
     [`LoginViewModel`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login/view/LoginViewModel.java)
     interface by extending the Default
     [`LoginView`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/viewsets/defaultviews/auth/login/LoginView.java)
-    class. Note that you don't have to extend a view class to implement a view
-    model interface, but you might want to for convenience. To return the
-    `ANDROID_ID`, the `LoginFullView` custom view class overrides the
-    `getPassword()` method. 
+    class. To return the `ANDROID_ID`, the `LoginFullView` custom View class
+    overrides the `getPassword()` method.
 
-3. Create a new screenlet class that inherits the base screenlet class. This new 
+3. Create a new Screenlet class that inherits the base Screenlet class. This new 
     class is where you can add custom behavior to the listeners or call custom
-    interactors. The screenlet class
+    Interactors. The Screenlet class
     [`LoginFullScreenlet`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/fullview/LoginFullScreenlet.java),
     for example, extends
     [`LoginScreenlet`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login/LoginScreenlet.java)
-    and overrides the `onUserAction` method to log interactor calls. 
+    and overrides the `onUserAction` method to log Interactor calls. 
 
-4.  Insert your view's screenlet in any of your activities or fragments, using
+4.  Insert your View's Screenlet in any of your activities or fragments, using
     your new layout's name as the `liferay:layoutId` attribute's value. For
     example, to use the new `login_password` layout, insert `LoginScreenlet` in
     an activity or fragment, and set
     `liferay:layoutId="@layout/login_password"`.  
 
 The 
-[Westeros view set's Full view for SignUpScreenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/signup) 
+[Westeros View Set's Full View for SignUpScreenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/signup) 
 uses a
-[custom screenlet class](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/signup/SignUpScreenlet.java) 
+[custom Screenlet class](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/signup/SignUpScreenlet.java) 
 to add a
 [new listener](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/signup/SignUpListener.java).
-The custom screenlet class also adds a new user action that calls the base
-interactor `SignUpInteractor`. 
+The custom Screenlet class also adds a new user action that calls the base
+Interactor `SignUpInteractor`. 
 
-Sweetness! Now you know how to create a Full view. Next, you'll learn how to 
-package views for distribution. 
+Sweetness! Now you know how to create a Full View. Next, you'll learn how to 
+package Views for distribution. 
 
 ## Packaging Your Views [](id=packaging-your-views)
 
-If you want to distribute or reuse views, you should package them in a module
+If you want to distribute or reuse Views, you should package them in a module
 that is then added as an app's project dependency. To do this, use the 
 [material](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/material) 
 sub-project as a template for your new
 [`build.gradle`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/material/build.gradle) 
 file. 
 
-To use a packaged view, you must import its module into your project by 
+To use a packaged View, you must import its module into your project by 
 specifying its location in your
 [`settings.gradle`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/samples/bankofwesteros/settings.gradle)
-file. The Bank of Westeros and test-app projects use custom views `westeros` and
-`material`, respectively. These projects exemplify using independent views in a
+file. The Bank of Westeros and test-app projects use custom Views `westeros` and
+`material`, respectively. These projects exemplify using independent Views in a
 project. 
 
-If you want to redistribute your view and let others use it, you can upload it 
+If you want to redistribute your View and let others use it, you can upload it 
 to jCenter or Maven Central. In the example
 [`build.gradle`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/samples/bankofwesteros/build.gradle) 
 file, after entering your bintray api key you can execute `gradlew
 bintrayupload` to upload your project to jCenter. When finished, anyone can use
-the view, as they would any Android dependency, by adding the repository,
-artifact, group ID, and version to their gradle file. 
+the View, as they would any Android dependency, by adding the repository,
+artifact, group ID, and version to their Gradle file. 
 
-Super! Now you know how to create and package views in Liferay Screens for 
+Super! Now you know how to create and package Views in Liferay Screens for 
 Android. This gives you extensive control over your app's look and feel, and 
-also lets you distribute and reuse your views. 
+also lets you distribute and reuse your Views. 
 
 ## Related Topics [](id=related-topics)
 
