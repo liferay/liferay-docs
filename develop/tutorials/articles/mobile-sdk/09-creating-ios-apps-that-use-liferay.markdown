@@ -34,7 +34,7 @@ accomplished by installing the iOS SDK.
 
 [Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 

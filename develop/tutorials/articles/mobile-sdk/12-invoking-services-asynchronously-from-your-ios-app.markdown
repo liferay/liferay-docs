@@ -4,18 +4,35 @@ The main drawback of using synchronous requests from your app is that each
 request must terminate before another can begin. If you're sending a large  
 number of synchronous requests, performance suffers as a bottleneck forms while 
 each one waits to be processed. Fortunately, Liferay's iOS SDK allows 
-*asynchronous* HTTP requests. All you need to do is set a callback to the 
+*asynchronous* HTTP requests. To do so, you need to set a callback to the 
 session object. If you want to make synchronous requests again, you can set the 
 callback to `nil`. 
 
-This tutorial shows you how to make asynchronous requests from your iOS app. 
+With the following steps, this tutorial shows you how to implement asynchronous 
+requests in your iOS app: 
+
+1. Implement your callback class.
+2. Instantiate your callback class and set it to the session.
+3. Call Liferay services.
+
 Objective-C is used in the code snippets that follow. Let the requesting begin! 
 
-## Implementing Asynchronous Service Requests [](id=implementing-asynchronous-service-requests)
+## Implementing Your Callback Class
 
 To configure asynchronous requests, first create a class that conforms to the 
-`LRCallback` protocol. For example, this could appear as follows if you were 
-creating a blogs app:
+`LRCallback` protocol. When implementing this callback class, you need to 
+implement its `onFailure` and `onSuccess` methods. These methods respectivley 
+determine what your app does when the request fails or succeeds. If a server 
+side exception or a connection error occurs during the request, the `onFailure` 
+method is called with an `NSError` instance that contains information about the 
+error. Note that the `onSuccess` result parameter doesn't have a specific type. 
+When deciding what to cast it to, you need to check the type in the service 
+method signature. 
+
+The example code here implements a callback class for an app that retrieves blog 
+entries from a Blogs portlet. The service method for this call is 
+`getGroupEntriesWithGroupId`, which returns an `NSArray` instance. The 
+`onSuccess` method's result parameter is therefore cast to this type: 
 
     #import "LRCallback.h"
 
@@ -34,39 +51,51 @@ creating a blogs app:
 
     - (void)onSuccess:(id)result {
         // Called after request has finished successfully
+        NSArray *entries = (NSArray *)result;
     }
 
     @end
+    
+Awesome! Now you have a callback class that you can use with the session.
 
-Next, set this callback to the session and call your service as usual.
+## Set the Callback to the Session    
+
+Next, create an instance of this callback and set it to the session. If you 
+haven't created a session yet, do so now. The tutorial 
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app) 
+shows you how to create a session. Now you're ready to set the callback to the 
+session. For example, this is done here for `BlogsEntriesCallback`: 
 
     BlogsEntriesCallback *callback = [[BlogsEntriesCallback alloc] init];
 
     [session setCallback:callback];
+
+Pretty simple! Now you're ready to make the service call.
+
+## Making the Service Call
+
+Last but certainly not least, make the service call. This is done the same as 
+calling any other service: create a service object from the session and use it 
+to make the service call. This is also described in the tutorial 
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app). 
+Here, an example service call that gets all the blog entries from a site's Blogs 
+portlet is shown: 
+
     [service getGroupEntriesWithGroupId:10184 status:0 start:-1 end:-1 error:&error];
 
-If a server side exception or a connection error occurs during the request, the
-`onFailure` method is called with an `NSError` instance that contains 
-information about the error.
+Since the request is asynchronous, `getGroupEntriesWithGroupId` immediately 
+returns `nil`. Once the request finishes successfully, the `onSuccess` method of 
+your callback is invoked with the results on the main UI thread. 
 
-Since the request is asynchronous, `getGroupEntriesWithGroupId` returns 
-immediately with `nil`. Once the request has finished successfully, the 
-`onSuccess` method of your callback is invoked with the results on the main UI 
-thread. 
+Great! Now you know how to make asynchronous requests in your iOS apps. However, 
+there's another way to accomplish the same thing. This is discussed next. 
 
-Note that the `onSuccess` result parameter doesn't have a specific type. When 
-deciding what to cast it to, you need to check the type in the service method 
-signature. In this example, the `getGroupEntriesWithGroupId` method returns an 
-`NSArray` instance. The `onSuccess` result parameter is therefore cast to this 
-type. 
+## Using Blocks as Callbacks
 
-    - (void)onSuccess:(id)result {
-        NSArray *entries = (NSArray *)result;
-    }
-    
-### Using Blocks as Callbacks
-
-It's also possible to use Objective-C blocks as callbacks: 
+Instead of implementing a separate callback class, you can use an Objective-C 
+block as a callback. An example of this is shown here for an asynchronous call 
+that retrieves a user's sites. Note that this includes all the code required to 
+make the call: 
 
     LRSession *session = [[LRSession alloc] 
         initWithServer:@"http://localhost:8080" username:@"test@liferay.com" password:@"test"];
@@ -85,17 +114,17 @@ It's also possible to use Objective-C blocks as callbacks:
     NSError *error;
     [service getUserSites:&error];
 
-Remember not to set a `LRCallback` to the session when doing this. If you do, it 
-gets overriden. Otherwise, support for blocks works the same way as described in 
-the previous section. 
+When using a block as a callback, take care not to also set an `LRCallback` 
+instance to the session. If you do, it gets overriden. Otherwise, support for 
+blocks works the same way as described in the previous sections. 
 
-Super! Now you know how to implement asynchronous service requests in your iOS 
-apps. 
+Super! Now you know two different ways to make asynchronous service requests in 
+your iOS apps. 
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
-
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
 
 [Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
+
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)

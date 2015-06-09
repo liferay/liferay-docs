@@ -216,10 +216,10 @@ For more examples, see the test case
 Another non-primitive argument is `ServiceContext`. It requires special 
 attention because most Liferay service methods require it. However, you aren't 
 required to pass it to the SDK; you can pass `null` instead. The server then 
-creates a `ServiceContext` instance with default values for you. 
+creates a `ServiceContext` instance for you, using default values. 
 
 If you need to set properties for `ServiceContext`, you can do so by adding them 
-to a new `JSONObject` and then passing that as the `ServiceContext` argument:
+to a new `JSONObject` and then passing it as the `ServiceContext` argument:
 
     JSONObject jsonObject = new JSONObject();
     jsonObject.put("addGroupPermissions", true);
@@ -281,17 +281,22 @@ far. For example:
         }
     );
 
-For more examples on this subject, check these test cases: 
+For more examples on this subject, see these test cases: 
 
 - The `aadFileEntry*` methods in 
-  [DLAppServiceTest.java](src/test/java/com/liferay/mobile/sdk/test/portal/DLAppServiceTest.java)
+  [`DLAppServiceTest.java`](src/test/java/com/liferay/mobile/sdk/test/portal/DLAppServiceTest.java)
   
-- [UploadFileUtil.java](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/util/UploadFileUtil.java)
+- [`UploadFileUtil.java`](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/util/UploadFileUtil.java)
+
+As you can see, the Mobile SDK does a great deal of work for you even when 
+special service method arguments are required.
 
 ## Related Topics [](id=related-topics)
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
+[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-services-asynchronously-from-your-android-app)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
+
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)

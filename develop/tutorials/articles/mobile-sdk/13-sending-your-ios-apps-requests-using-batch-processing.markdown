@@ -1,21 +1,30 @@
 # Sending Your iOS App's Requests Using Batch Processing [](id=sending-your-ios-apps-requests-using-batch-processing)
 
-If your app is making a large number of requests to your Liferay instance, 
-performance can suffer if the requests are processed one at a time. Requests 
-made like this are called *synchronous* requests. *Batch processing* is another 
-popular way to send requests to the Mobile SDK. Batch processing of requests can 
-be more efficient than synchronous requests. 
+The Mobile SDK also allows sending requests in batch. This can be much more 
+efficient than sending separate requests. For example, suppose you want to 
+delete ten blog entries in a site's Blogs portlet at the same time. Instead of 
+making a request for each deletion, you can create a batch of calls and send 
+them all together. 
 
-This tutorial shows you how to implement batch processing of requests from your 
-iOS app. Objective-C is used in the code snippets that follow. Now it's time to 
-get started whipping up a fresh batch of requests!
+This tutorial shows you how to implement batch processing for your iOS app. It's 
+assumed that you already know how to invoke Liferay services from your iOS app. 
+If you don't, see the tutorial 
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app). 
+Objective-C is used in the code snippets that follow. Now it's time to whip up a 
+fresh batch of requests! 
 
-## Implementing Batch Processing of Requests [](id=implementing-batch-processing-of-requests)
+## Implementing Batch Processing
 
-Suppose you want your app to delete 10 blog entries from a Liferay instance at 
-the same time. Instead of making one request for each delete call, you can 
-create a batch of delete calls and send them together. Here's an example of how 
-to do this.
+Making service calls in batch only requires two extra steps over making them one 
+at a time: 
+
+- Create a batch session with `LRBatchSession`.
+- Make the batch service calls with the `invoke` method of `LRBatchSession`.
+
+The rest of the steps are the same as making other service calls. You still need 
+a service object, and you still need to call its service methods. As an example, 
+here's a code snippet from an app that deletes a Blogs portlet's blog entries 
+synchronously in batch: 
 
     #import "LRBatchSession.h"
 
@@ -30,17 +39,17 @@ to do this.
 
     NSArray *entries = [batch invoke:&error];
 
-So what's going on here? First, create an `LRBatchSession` session. You can 
-either pass credentials or another `session` to the constructor. This is useful 
-when you already have a session object and want to reuse the same credentials. 
-Next, make the service calls as usual. With asynchronous calls, these methods 
-return `nil` right away. 
-
-Finally, call `[batch invoke:&error]`. This returns an `NSArray` containing the
-results for each service call (the return type for batch calls is always 
-`NSArray`). Since there are three `deleteEntryWithEntryId` calls, the `entries` 
-array contains three objects. The order of the results matches the order of the 
-service calls.
+So what's going on here? After the import, `LRBatchSession` is used with a 
+Liferay instance's URL and a user's credentials to create a batch session. You 
+can alternatively pass a pre-existing `session` to the constructor. This is 
+useful when you already have a session object and want to reuse the same 
+credentials. Next, the service calls are made as usual (in this case, 
+`deleteEntryWithEntryId`). With asynchronous calls, these methods return `nil` 
+right away. Finally, call `[batch invoke:&error]`. This returns an `NSArray` 
+containing the results for each service call (the return type for batch calls is 
+always `NSArray`). Since there are three `deleteEntryWithEntryId` calls, the 
+`entries` array contains three objects. The order of the results matches the 
+order of the service calls. 
 
 If you want to make batch calls asynchronously, set the callback to the session 
 as usual.
@@ -48,12 +57,12 @@ as usual.
     [batch setCallback:callback];
 
 Great! Now you know how to utilize batch processing to speed up your app's 
-requests.
+requests. 
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
+
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
-
-[Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay))

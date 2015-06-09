@@ -1,24 +1,25 @@
 # Invoking Liferay Services in Your iOS App [](id=invoking-liferay-services-in-your-ios-app)
 
-If you have data or functionality in your portal that you want to use in your 
-iOS app, you need to invoke Liferay services using Liferay's iOS SDK. Invoking 
-Liferay services in your iOS app requires the following steps:
+Once the appropriate Mobile SDKs are set up in your iOS project, you can access 
+and invoke Liferay services in your app. The basic steps for doing this are 
+listed here: 
 
-1. Creating a session.
-2. Importing the service.
-3. Calling the service.
+1. Create a session.
+2. Import the Liferay services you need to call.
+3. Create a service object and call the service methods.
 
 This tutorial takes you through these steps. Also, since some Liferay service 
 calls require special considerations, you're shown how to handle them. Note that 
 the code snippets in this tutorial are written in *Objective-C*. Now go ahead 
 and get started learning how to invoke Liferay services in your iOS app! 
 
-## Step 1: Creating a Session [](id=step-1-create-a-session)
+## Step 1: Create a Session [](id=step-1-create-a-session)
 
-The session is a conversion state between the client and server, that consists 
-of multiple requests and responses between the two. You need a session to pass 
-requests between your app and the Mobile SDK. Here, you create a session with 
-user credentials of the Liferay instance you are connecting to.
+A session is a conversion state between the client and server, consisting of 
+multiple requests and responses between the two. You need a session to pass 
+requests between your app and the Mobile SDK. In most cases, sessions need to be 
+created with user authentication. The imports and code required to create a 
+session are shown here: 
 
     #import "LRBasicAuthentication.h"
     #import "LRSession.h"
@@ -26,17 +27,24 @@ user credentials of the Liferay instance you are connecting to.
     LRSession *session = [[LRSession alloc] initWithServer:@"http://localhost:8080" 
         authentication:[[LRBasicAuthentication alloc] initWithUsername:@"test@liferay.com" password:@"test"]];
 
-The `initWithServer` parameter is the URL of the Liferay instance you're 
-connecting to. In this case, the emulator and Liferay are running on the same 
-machine. The `authentication` parameter uses `LRBasicAuthentication` with the 
-credentials of the user to authenticate. You need to provide the user's email 
-address, screen name, or user ID (depending on the authentication method used by 
-your Liferay instance) to the `initWithUsername` parameter. You also need to 
-provide the user's password to the `initWithUsername` parameter. Using 
-`LRBasicAuthentication` tells the session to authenticate each service call with 
-Basic Authentication. The Mobile SDK also supports OAuth authentication, as long 
-as the OAuth Provider portlet is deployed to your Liferay instance. To learn how 
-to do OAuth authentication with the Mobile SDK, see the [OAuth sample app](https://github.com/brunofarache/liferay-android-sdk-oauth). 
+The `LRSession` object is created with initializers specifying the Liferay 
+instance to connect to and the credentials of the user to authenticate. The 
+`initWithServer` parameter sets the URL of the Liferay instance you're 
+connecting to. In this case, the Liferay instance is running on 
+`http://localhost:8080`. The iOS emulator is also running on the same machine. 
+Next, the `authentication` parameter takes an `LRBasicAuthentication` instance 
+with the credentials of the user to authenticate. Depending on the 
+authentication method used by your Liferay instance, you need to provide the 
+user's email address, screen name, or user ID to the `initWithUsername` 
+parameter. You also need to provide the user's password to the `password` 
+parameter. 
+
+Using `LRBasicAuthentication` tells the session to authenticate each service 
+call with Basic Authentication. The Mobile SDK also supports OAuth 
+authentication, as long as the OAuth Provider portlet is deployed to your 
+Liferay instance. To learn how to use OAuth authentication with the Mobile SDK, 
+see the
+[OAuth sample app](https://github.com/brunofarache/liferay-ios-sdk-oauth). 
 
 +$$$
 
@@ -47,8 +55,8 @@ should be disabled on a production Liferay instance.
 
 $$$
 
-If you're building a login view for your app, you can use the `SignIn` utility
-class to check if the credentials given by the user are valid.
+If you're building a sign in view for your app, you can use the `LRSignIn` 
+utility class to check if the credentials given by the user are valid:
 
     #import "LRSignIn.h"
 
@@ -117,7 +125,7 @@ URL only:
 Fantastic! Now that you have a session, you can use it to call Liferay's 
 services.
 
-## Step 2: Importing the Service
+## Step 2: Import the Service
 
 First, you should determine the Liferay services you need to call. You can find 
 the available portal and plugin services at 
@@ -164,15 +172,15 @@ finished.
 
 ## Non-Primitive Arguments
 
-There are some special cases in which service methods arguments aren't 
-primitives. In these cases, you should use `LRJSONObjectWrapper`. For example:
+There are some special cases in which service method arguments aren't 
+primitives. In these cases, you should use `LRJSONObjectWrapper`. For example: 
 
     LRJSONObjectWrapper *wrapper = [[LRJSONObjectWrapper alloc] 
         initWithJSONObject:[NSDictionary dictionary]];
 
-You must pass a dictionary containing the object properties and their values. On
-the server side, your object is instantiated and setters for each property are 
-called with the values from the dictionary.
+You must pass a dictionary containing the object's properties and their values. 
+On the server side, your object is instantiated and setters for each property 
+are called with the values from the dictionary. 
 
 There are some other cases in which service methods require interfaces or 
 abstract classes as arguments. Since it's impossible for the SDK to guess which
@@ -184,27 +192,26 @@ the class name. For example:
 
 The server looks for the class name in its classpath and instantiates the object 
 for you. It then calls setters, as in the previous example. The abstract class 
-`OrderByComparator` is a good example of this. This is discussed next.
+`OrderByComparator` is a good example of this. This is discussed next. 
 
 ### OrderByComparator
 
-On the server side, `OrderByComparator` is an abstract class, because of that,
-you must pass the name of a class that implements it, for example:
+On the server side, `OrderByComparator` is an abstract class. You must therefore 
+pass the name of a class that implements it. For example: 
 
     NSString *className = @"com.liferay.portlet.bookmarks.util.comparator.EntryNameComparator";
 
     LRJSONObjectWrapper *orderByComparator = [[LRJSONObjectWrapper alloc] initWithClassName:className jsonObject:[NSDictionary dictionary]];
 
-If the service you are calling accepts `null` for a comparator argument, just
-pass `nil` to the service call.
+If the service you're calling accepts `null` for a comparator argument, pass 
+`nil` to the service call.
 
-You probably want to set the ascending property for a comparator. Unfortunately,
-as of Liferay 6.2, most Liferay `OrderByComparator` implementations don't have a
-setter for this property and it's not possible to set from the SDK. This will be
-fixed in future portal versions.
-
-However, if you have a custom `OrderByComparator` that has a setter for
-ascending you can do:
+You may want to set the ascending property for a comparator. Unfortunately, as 
+of Liferay 6.2, most Liferay `OrderByComparator` implementations don't have a 
+setter for this property and it isn't possible to set from the Mobile SDK. 
+Future portal versions will address this. However, you may have a custom 
+`OrderByComparator` that has a setter for ascending. In this case, you can use 
+the following code: 
 
     NSString *className = @"com.example.MyOrderByComparator";
 
@@ -223,10 +230,10 @@ For more examples, see the test case
 Another non-primitive argument is `ServiceContext`. It requires special 
 attention because most Liferay service methods require it. However, you aren't 
 required to pass it to the SDK; you can pass `nil` instead. The server then 
-creates a `ServiceContext` instance with default values for you. 
+creates a `ServiceContext` instance for you, using default values.  
 
 If you need to set properties for `ServiceContext`, you can do so by adding them 
-to a new `NSDictionary` and then passing that as the `ServiceContext` argument:
+to a new `NSDictionary` and then passing it as the `ServiceContext` argument:
 
     NSDictionary *jsonObject = @{
         @"addGroupPermissions": @(YES),
@@ -240,12 +247,12 @@ For more examples, see the test case
 
 ### Binaries
 
-Some Liferay services require binary argument types like `NSData` and 
+Some Liferay services require binary argument types like `NSData` or 
 `LRUploadData`. The Mobile SDK converts `NSData` instances to `NSString` before 
 sending the POST request. For example, 
 `[@"hello" dataUsingEncoding:NSUTF8StringEncoding]` becomes a JSON array such as 
 `"[104,101,108,108,111]"`. The Mobile SDK does this for you, so you don't have 
-worry about it. You just need to pass the `NSData` to the method.
+worry about it; you only need to pass the `NSData` instance to the method.
 
 However, you need to be careful when using such methods. This is because you're 
 allocating memory for the whole `NSData`, which may cause memory issues if the 
@@ -253,7 +260,7 @@ content is large.
 
 Other portal service methods require `java.io.File` as an argument. In these 
 cases the Mobile SDK requires `LRUploadData` instead. Here are two examples of 
-how to create `LRUploadData` instances:
+creating `LRUploadData` instances: 
 
     LRUploadData *upload = [[LRUploadData alloc] 
         initWithData:data fileName:@"file.png" mimeType:@"image/png"];
@@ -267,7 +274,8 @@ name. The `length` is the size in bytes of the content being sent. The SDK sends
 a multipart form request to the portal. On the server side, a `File` instance is 
 created and sent to the service method you're calling.
 
-If want to listen for upload progress to create a progress bar, you can create a 
+It's also possible to monitor service calls that upload data to Liferay. If want 
+to listen for upload progress to create a progress bar, you can create a 
 `LRProgressDelegate` delegate and set it to an `LRUploadData` object. Its
 `onProgressBytes` method is called for each byte chunk sent. It passes the 
 bytes that were sent, the total number of bytes sent so far, and the total 
@@ -295,7 +303,7 @@ For more examples of this, see the test case
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
