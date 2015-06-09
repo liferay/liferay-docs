@@ -1,11 +1,17 @@
 # Building Mobile SDKs [](id=building-mobile-sdks)
 
 The Liferay Mobile SDK is great for letting you connect your mobile apps to a 
-Liferay instance. By accessing Liferay services through a Liferay Mobile SDK, 
-your apps can access the data or functionality in a Liferay instance. But what 
-happens when the services you need to use aren't built-in Liferay services? What 
-if they're custom portlet services? No problem! In this case, you need to build 
-your own Mobile SDK to access the services of the custom portlets. 
+Liferay instance. By accessing Liferay services through Liferay's prebuilt 
+Mobile SDK, your apps can access the data and functionality in a Liferay 
+instance. But what happens when the services you need to use aren't built-in 
+Liferay services? What if they're custom portlet services? No problem! In this 
+case, you need to build your own Mobile SDK to access the services of the custom 
+portlets. 
+
+Note that when you build a Mobile SDK for your portlet, it contains *only* the 
+classes needed to call your portlet's remote services. You still need to install 
+Liferay's prebuilt Mobile SDK in your app; it also contains the classes required 
+to construct remote service calls in general.
 
 The Liferay Mobile SDK project comes with an SDK Builder that generates the 
 Liferay Mobile SDK for the Android and iOS platforms. Think of it as a Service
@@ -47,16 +53,10 @@ your mobile app!
 
 ## Setting Up the SDK Builder [](id=setting-up-the-sdk-builder)
 
-The Liferay Mobile SDK takes care of making JSON Web Services 
-requests to your portlet. In this section you'll configure the SDK builder for 
-building your custom portlet SDK. 
-
-### Download the Liferay Mobile SDK Project [](id=download-the-liferay-mobile-sdk-project)
-
-You need to have the 
+To build a Mobile SDK for your custom portlet's services, you need to have the 
 [Liferay Mobile SDK project](https://github.com/liferay/liferay-mobile-sdk) 
-on your local machine to use the SDK Builder. If you haven't done so already, 
-download the Mobile SDK project using Git.
+on your local machine. If you haven't done so already, download the Mobile SDK 
+project using Git.
 
 	git clone git@github.com:liferay/liferay-mobile-sdk.git
 
@@ -92,7 +92,7 @@ these properties, run the same command with the `all` argument:
 
     ./gradlew createModule -P=all
 
-The wizard should look similar to this screenshot Note that default values are 
+The wizard should look similar to this screenshot. Note that default values are 
 in square brackets with blue text:
 
 ![Figure 1: The Mobile SDK Builder's wizard lets you specify property values for building your module.](../../images/mobile-sdk-create-module.png)
@@ -100,8 +100,8 @@ in square brackets with blue text:
 So what properties are available, and what do they do? Fantastic question! 
 They're described here. These properties can be set while running 
 `createModule`, or after your module is created in the `gradle.properties` file 
-inside your module folder. The values in parentheses are the keys used in 
-`gradle.properties`.
+inside your module's folder. The values in parentheses are the keys used in 
+`gradle.properties`:
 
 * `Context (context)` - Your portlet's web context. For example, if you're 
 generating a Mobile SDK for Liferay's Calendar portlet, which is generally 
@@ -147,9 +147,9 @@ property.
 only needed if you are building for Android and want to publish your JAR file to 
 Maven.
 
-Note that there is also a `destination` property that can only be set in 
-`gradle.properties`. This property specifies the destination for the generated 
-source files. Generally, you won't need to change this.
+Note that there is also a `destination` property that can only be set in the
+`gradle.properties` file. This property specifies the destination for the 
+generated source files. Generally, you don't need to change this.
 
 After you specify the properties you need, the Mobile SDK Builder generates your 
 portlet client code in the folder `modules/${your_portlet_context}`. In this 
@@ -170,14 +170,15 @@ the platforms you need to use it on.
 
 ## Building a Liferay Android SDK [](id=building-a-liferay-android-sdk)
 
-To build a JAR file containing the generated service and utility classes, run
+To build a JAR file containing your module's service and utility classes, run
 the following command from your module's folder:
 
     ../../gradlew jar
 
 This writes a `liferay-${your_portlet_context}-android-sdk-${version}.jar` 
-file to your module's `android/build/libs` folder. You can use this JAR file in 
-your Android project to call your portlet's remote services.
+file to your module's `android/build/libs` folder. This is your portlet's Mobile 
+SDK! You can use it in your Android project to call your portlet's remote 
+services.
 
 Note that if you regenerate your Mobile SDK to include new functionality, you 
 can update your module's version in its `gradle.properties` file. For example, 
@@ -185,22 +186,23 @@ if you added or changed a service method in the Mobile SDK you initially built,
 you could update it's version by setting `version=1.1` in your module's 
 `gradle.properties` file.
 
-To learn how to use the Liferay Android SDK in your mobile app, see the
-[Liferay Android SDK documentation](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay).
+To learn how to use the Mobile SDK in your Android app, see the
+[Android Mobile SDK documentation](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay).
 
 ## Building a Liferay iOS SDK [](id=building-a-liferay-ios-sdk)
 
-To build a ZIP file containing the generated service and utility classes, run
+To build a ZIP file containing your module's service and utility classes, run
 the following command from your module's folder:
 
     ../../gradlew zip
 
 This writes a `liferay-${your_portlet_context}-ios-sdk-${version}.zip` file to 
-your module's `ios/build` folder. You can use this file's contents in your iOS
-project. Simply unzip it and add its files to your Xcode project.
+your module's `ios/build` folder. This contains your portlet's Mobile SDK! You 
+can use this file's contents in your iOS project to call your portlet's remote 
+services. Simply unzip it and add its files to your Xcode project. 
 
-To learn how to use the Liferay iOS SDK in your mobile app, see the
-[Liferay iOS SDK documentation](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay).
+To learn how to use the Mobile SDK in your iOS app, see the
+[iOS Mobile SDK documentation](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay).
 
 Super! You've just built Liferay Mobile SDKs for Android and iOS. Now you can 
 use them to call your custom portlet services in your mobile apps. You're a 

@@ -63,7 +63,7 @@ prebuilt Mobile SDK manually if you don't want to use CocoaPods.
 
 2. Unzip the file into your Xcode project. 
 
-3. Within XCode, right-click on your project and click 
+3. Within Xcode, right-click on your project and click 
    *Add Files to 'Project Name'*. 
    
 4. Add the `core` and `v62` folders. Note the `v62` folder's name can change for 

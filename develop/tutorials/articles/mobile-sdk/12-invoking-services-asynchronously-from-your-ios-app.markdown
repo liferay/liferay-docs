@@ -1,7 +1,7 @@
 # Invoking Services Asynchronously from Your iOS App [](id=invoking-services-asynchronously-from-your-ios-app)
 
 The main drawback of using synchronous requests from your app is that each 
-request must terminate before another can begin. If you're sending a large  
+request must terminate before another can begin. If you're sending a large 
 number of synchronous requests, performance suffers as a bottleneck forms while 
 each one waits to be processed. Fortunately, Liferay's iOS SDK allows 
 *asynchronous* HTTP requests. To do so, you need to set a callback to the 
