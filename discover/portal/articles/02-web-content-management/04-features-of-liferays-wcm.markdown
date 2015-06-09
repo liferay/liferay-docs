@@ -158,6 +158,15 @@ Select the file and then check that the audio or video component appears in the
 web content. Excellent! When your web content is published, users can view or
 listen the embedded multimedia!
 
+You can also download the web content article in XML format by clicking the
+*Download* button. This button is available on the Edit Web Content screen,
+after you've created your web content article.
+
+An XML version of an article is essential when creating content for themes using
+the [Resources Importer](/participate/liferaypedia/-/wiki/Main/Resources+Importer).
+If you'd like to learn more about importing web content with a theme, visit its
+dedicated [tutorial](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
+
 The right side of the New Web Content form provides options for customizing your
 web content.
 
