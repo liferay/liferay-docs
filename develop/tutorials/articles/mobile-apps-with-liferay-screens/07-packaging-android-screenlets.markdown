@@ -75,7 +75,7 @@ use your Screenlet as any other Android dependency by specifying its repository,
 artifact, group ID, and version in their Gradle file. Congratulations on
 publishing your Screenlet! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
 

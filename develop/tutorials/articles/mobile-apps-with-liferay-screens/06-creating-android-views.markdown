@@ -24,7 +24,7 @@ tutorial
 can help you create or extend any Screenlet classes your View requires. Now get
 ready to create some great Views! 
 
-## Determining Your View's Location
+## Determining Your View's Location [](id=determining-your-views-location)
 
 Where you should create your View depends on how you plan to use it. If you
 don't plan to reuse it in another app or don't want to redistribute it, create

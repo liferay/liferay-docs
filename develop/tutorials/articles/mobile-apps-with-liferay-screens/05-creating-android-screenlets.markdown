@@ -563,7 +563,7 @@ resolve such errors.
 
 Great! Now you know how to create a Screenlet class. 
 
-## Defining Screenlet Attributes in Your App
+## Defining Screenlet Attributes in Your App [](id=defining-screenlet-attributes-in-your-app)
 
 To be able to read the Screenlet attributes, you need to add an XML file in
 `res/values` that defines those attributes. Here's the `bookmark_attrs.xml`

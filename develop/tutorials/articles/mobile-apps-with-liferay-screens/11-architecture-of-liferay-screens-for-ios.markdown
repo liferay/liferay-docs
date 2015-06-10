@@ -53,7 +53,7 @@ Screenlets to the user.
 
 The next section describes the Core in detail.
 
-## Core
+## Core [](id=core)
 
 The Core is the micro-framework that lets developers write Screenlets in a
 structured and isolated way. All Screenlets share a common structure based on
@@ -96,7 +96,7 @@ default values.
 Now that you know what the Core is comprised of, you're ready to learn the 
 Screenlet layer's details. 
 
-## Screenlet Layer
+## Screenlet Layer [](id=screenlet-layer)
 
 The Screenlet layer contains the Screenlets available in Liferay Screens for
 iOS. The following diagram shows the Screenlet layer in relation to the Core,
@@ -156,7 +156,7 @@ For more details, refer to the tutorial
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets). 
 Next, the Theme Layer of Screens for iOS is described. 
 
-## Theme Layer
+## Theme Layer [](id=theme-layer)
 
 The Theme Layer lets developers set a Screenlet's look and feel. The Screenlet 
 property `themeName` determines the Theme to load. This can be set by the 

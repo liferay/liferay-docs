@@ -1,4 +1,4 @@
-# Creating iOS Themes
+# Creating iOS Themes [](id=creating-ios-themes)
 
 By creating your own themes, you can customize your mobile app's look and feel
 and functionality. You can create them from scratch or use an existing Theme as
@@ -24,7 +24,7 @@ of Liferay Screens for iOS. And the tutorial
 can help you create any Screenlet classes your Theme requires. Now get ready to
 create some Themes! 
 
-## Determining Your Theme's Location
+## Determining Your Theme's Location [](id=determining-your-themes-location)
 
 After determining the type of Theme to create, you need to determine where to
 create it. If you want to reuse or redistribute it, you should create it in an
@@ -37,7 +37,7 @@ inside your app project.
 The rest of this tutorial explains how to create each type of Theme. First,
 you'll learn how to create a Child Theme.
 
-## Creating a Child Theme
+## Creating a Child Theme [](id=creating-a-child-theme)
 
 In a Child Theme, you leverage a parent Theme's behavior and UI components, but
 you can modify the appearance and position of the UI components. Note that you
