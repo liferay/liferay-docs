@@ -78,7 +78,7 @@ When the app is created, copy *Consumer Key* and *Consumer Secret* values to be 
 |-----------|-----------|-------------| 
 | `layoutId` | `@layout` | The layout to use to show the view. |
 | `companyId` | `number` | When set, a user in the specified company is authenticated. If set to `0`, the company specified in `LiferayServerContext` is used. |
-| `authMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. The default value is `email`. |
+| `basicAuthMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. The default value is `email`. |
 | `credentialsStore ` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
 |  `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to be used in OAuth authentication or leave it empty if you want to use basic authentication. |
 |  `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to be used in OAuth authentication or leave it empty if you want to use basic authentication. |

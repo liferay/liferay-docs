@@ -79,7 +79,7 @@ administrator should create a specific user with minimal permissions.
 | `anonymousApiUserName` | `string` | The user name, email address, or `userId` to use for authenticating the request. This depends on the portal's authentication settings. |
 | `anonymousApiPassword` | `string` | The password to use to authenticate the request. |
 | `companyId` | `number` | When set, a user within the specified company is authenticated. If the value is set to `0`, the company specified in `LiferayServerContext` is used. |
-| `authMethod` | `string` | The authentication method presented to the user. This can be `email`, `screenName`, or `userId`. The default value is `email`. |
+| `basicAuthMethod` | `string` | The authentication method presented to the user. This can be `email`, `screenName`, or `userId`. The default value is `email`. |
 
 ## Listener [](id=listener)
 

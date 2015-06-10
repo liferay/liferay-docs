@@ -69,7 +69,7 @@ When the app is created, copy *Consumer Key* and *Consumer Secret* values to be 
 |-----------|-----------|-------------| 
 |  `saveCredentials` | `boolean` | When set, the user credentials and attributes are stored securely in the keychain. This information can then be loaded in subsequent sessions by calling the `SessionContext.loadSessionFromStore()` method. |
 |  `companyId` | `number` | When set, authentication is done for a user in the specified company. If the value is `0` or empty, the company specified in `LiferayServerContext` is used. |
-|  `authMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. |
+|  `basicAuthMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. |
 |  `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to be used in OAuth authentication or leave it empty if you want to use basic authentication. |
 |  `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to be used in OAuth authentication or leave it empty if you want to use basic authentication. |
 
