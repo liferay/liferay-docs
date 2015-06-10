@@ -52,6 +52,14 @@ server.
         mvn -P jboss clean package
         cp target/primefaces4-portlet*.war $LIFERAY_HOME/deploy
 
+    +$$$
+
+    **Note:** In some cases, you may need to clean and reinstall all projects in
+    liferay-faces before you can succesfully build the demo portlets. To do
+    this, run `mvn clean install` from the top-level `liferay-faces` directory.
+
+    $$$
+
 8. Examine the working example WARs and find out how they are different from the
    WARs that you are having trouble deploying.
 
