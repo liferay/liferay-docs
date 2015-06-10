@@ -1,15 +1,15 @@
 # Troubleshooting JSF Portlet Deployment Errors
 
-Many of us have experienced it, you go to deploy a new application into your
+Many of us have experienced it; you go to deploy a new application into your
 portal instance and see the dreaded deployment error messages. What do you do?
 Is the error message helpful? How can I find the solution?
 
-If you're experiencing deployment problems with deploying a JSF portlet on
-Liferay, there's a simple process you can follow to solve your deployment
+If you're experiencing deployment problems with deploying a JSF portlet to
+Liferay Portal, there's a simple process you can follow to solve your deployment
 issues. Instead of trying to figure out what's wrong with your code, it's
-sometimes easier to compare your portlet to a working example. The
-strategy/tutorial below creates a working example to compare your project to.
-This strategy is recommended by the Liferay Faces team.
+usually easier to compare your portlet to a working example, and find the
+differences between the two. This strategy is recommended by the Liferay Faces
+team. This tutorial creates a working example to compare your project to.
 
 For each step below, follow the instructions (if applicable) that pertain to
 your specific app server. These fundamental steps can be followed for any app
@@ -25,13 +25,13 @@ server.
    to the one used by Liferay Faces. Visit the *Upgrading Mojarra* section of
    your respective app server's installation tutorial found in the
    [Installation and Setup](/discover/deployment/-/knowledge_base/6-2/installation-and-setup)
-   section.
+   section for more information.
 
 4. Upgrade your app server's Weld version (if applicable) so it is identical
    to the one used by Liferay Faces. Visit the *Upgrading Weld* section of
    your respective app server's installation tutorial found in the
    [Installation and Setup](/discover/deployment/-/knowledge_base/6-2/installation-and-setup)
-   section.
+   section for more information.
 
 5. Download and build Liferay Faces from its project source code. Visit the
    [Building Liferay Faces from Source](/develop/tutorials/-/knowledge_base/6-2/building-liferay-faces-from-source)
