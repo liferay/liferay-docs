@@ -19,7 +19,7 @@ requests in your Android app:
 
 Now go ahead and get started! 
 
-## Implementing and Instantiating Your Callback Class
+## Implementing and Instantiating Your Callback Class [](id=implementing-and-instantiating-your-callback-class)
 
 Before implementing and instantiating your callback class, you should add the 
 required imports. The imports you add depend on the return type of the service 
@@ -83,7 +83,7 @@ Example code is shown here for `AsyncTaskCallback` and
     
 Now that you have your callback class, you can set it to the session.
 
-## Setting the Callback to the Session
+## Setting the Callback to the Session [](id=setting-the-callback-to-the-session)
 
 Once you've implemented and instantiated your callback class, you're ready to 
 set it to the session. If you haven't created a session yet, do so now. The 
@@ -96,7 +96,7 @@ session. For example, this is done here for `AsyncTaskCallback`:
 
 Pretty simple! Now you're ready to make the service call.
 
-## Making the Service Call
+## Making the Service Call [](id=making-the-service-call)
 
 Last but certainly not least, make the service call. This is done the same as 
 calling any other service: create a service object from the session and use it 

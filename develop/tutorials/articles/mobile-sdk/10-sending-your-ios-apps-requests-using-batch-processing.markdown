@@ -13,7 +13,7 @@ If you don't, see the tutorial
 Objective-C is used in the code snippets that follow. Now it's time to whip up a 
 fresh batch of requests! 
 
-## Implementing Batch Processing
+## Implementing Batch Processing [](id=implementing-batch-processing)
 
 Making service calls in batch only requires two extra steps over making them one 
 at a time: 

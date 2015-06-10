@@ -1,4 +1,4 @@
-# Making Liferay and Custom Portlet Services Available in Your Android App
+# Making Liferay and Custom Portlet Services Available in Your Android App [](id=making-liferay-and-custom-portlet-services-available-in-your-android-app)
 
 You must install the correct Mobile SDKs in your Android project to call the 
 remote services you need in your app. You should first install Liferay's 
@@ -85,7 +85,7 @@ Use the following steps to manually set up a Mobile SDK in your Android project:
 
 Great! Now you know how to manually install a Mobile SDK in your Android apps. 
 
-## Making Custom Portlet Services Available in Your Android App
+## Making Custom Portlet Services Available in Your Android App [](id=making-custom-portlet-services-available-in-your-android-app)
 
 If you want to invoke remote web services for your custom portlet, then you need 
 to generate its client libraries by building an Android Mobile SDK yourself. 

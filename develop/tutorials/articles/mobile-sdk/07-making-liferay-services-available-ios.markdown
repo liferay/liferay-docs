@@ -48,7 +48,7 @@ For more information on how CocoaPods works, see their
 [documentation](http://guides.cocoapods.org/using/index.html). 
 Next, you'll learn how to install a Mobile SDK manually.
 
-## Installing an iOS SDK Manually
+## Installing an iOS SDK Manually [](id=installing-an-ios-sdk-manually)
 
 You can also install Mobile SDKs manually. This is required if you built one 
 for your custom portlet's services. You can also install install Liferay's 

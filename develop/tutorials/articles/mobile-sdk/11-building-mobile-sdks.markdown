@@ -77,7 +77,7 @@ If you don't want to use either of those methods, you can download
 
 Now you're ready to create your own module with the Mobile SDK! 
 
-## Creating Your Module
+## Creating Your Module [](id=creating-your-module)
 
 After you've downloaded the Mobile SDK's source code, you need to build a module 
 for your portlet's services. The Mobile SDK Builder comes with a command line 

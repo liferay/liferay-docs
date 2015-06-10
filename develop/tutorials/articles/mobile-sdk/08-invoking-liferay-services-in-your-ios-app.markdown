@@ -98,7 +98,7 @@ For more examples of this, see
 Next, you're shown how to create an unauthenticated session in the limited cases 
 where this is possible.
 
-### Creating an Unauthenticated Session
+### Creating an Unauthenticated Session [](id=creating-an-unauthenticated-session)
 
 In some cases, it's possible to create an `LRSession` instance without user 
 credentials. However, most Liferay remote methods don't accept unauthenticated 
@@ -125,7 +125,7 @@ URL only:
 Fantastic! Now that you have a session, you can use it to call Liferay's 
 services.
 
-## Step 2: Import the Service
+## Step 2: Import the Service [](id=step-2-import-the-service)
 
 First, you should determine the Liferay services you need to call. You can find 
 the available portal and plugin services at 
@@ -145,7 +145,7 @@ Because service class names contain the Liferay version they're compatible with,
 you can use several Mobile SDKs simultaneously to support different Liferay 
 versions in the same app. 
 
-## Step 3: Calling the Service
+## Step 3: Calling the Service [](id=step-3-calling-the-service)
 
 Once you have a session and have imported the service class, you're ready to 
 make the service call. This is done by creating a service object for the service 
@@ -170,7 +170,7 @@ This `LRBlogsEntryService` call is a basic example of a synchronous service
 call. The method in a synchronous service call returns only after the request is 
 finished.
 
-## Non-Primitive Arguments
+## Non-Primitive Arguments [](id=non-primitive-arguments)
 
 There are some special cases in which service method arguments aren't 
 primitives. In these cases, you should use `LRJSONObjectWrapper`. For example: 
@@ -194,7 +194,7 @@ The server looks for the class name in its classpath and instantiates the object
 for you. It then calls setters, as in the previous example. The abstract class 
 `OrderByComparator` is a good example of this. This is discussed next. 
 
-### OrderByComparator
+### OrderByComparator [](id=orderbycomparator)
 
 On the server side, `OrderByComparator` is an abstract class. You must therefore 
 pass the name of a class that implements it. For example: 
@@ -225,7 +225,7 @@ the following code:
 For more examples, see the test case 
 [`OrderByComparatorTest.m`](https://github.com/liferay/liferay-mobile-sdk/blob/ios-6.2.0.17/ios/Test/OrderByComparatorTest.m).
 
-### ServiceContext
+### ServiceContext [](id=servicecontext)
 
 Another non-primitive argument is `ServiceContext`. It requires special 
 attention because most Liferay service methods require it. However, you aren't 
@@ -245,7 +245,7 @@ to a new `NSDictionary` and then passing it as the `ServiceContext` argument:
 For more examples, see the test case 
 [`ServiceContextTest.m`](https://github.com/liferay/liferay-mobile-sdk/blob/ios-6.2.0.17/ios/Test/ServiceContextTest.m). 
 
-### Binaries
+### Binaries [](id=binaries)
 
 Some Liferay services require binary argument types like `NSData` or 
 `LRUploadData`. The Mobile SDK converts `NSData` instances to `NSString` before 

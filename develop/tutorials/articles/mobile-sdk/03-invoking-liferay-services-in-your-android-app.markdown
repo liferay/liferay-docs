@@ -80,7 +80,7 @@ after a successful sign-in.
 Next, you're shown how to create an unauthenticated session in the limited cases 
 where this is possible. 
 
-### Creating an Unauthenticated Session
+### Creating an Unauthenticated Session [](id=creating-an-unauthenticated-session)
 
 In some cases, it's possible to create a `Session` instance without user 
 credentials. However, most Liferay remote methods don't accept unauthenticated 
@@ -107,7 +107,7 @@ URL only:
 Fantastic! Now that you have a session, you can use it to call Liferay's 
 services.
 
-## Step 2: Import the Liferay Services You Need [](id=step-2-import-the-liferay-services-for-your-app-to-use)
+## Step 2: Import the Liferay Services You Need [](id=step-2-import-the-liferay-services-you-need)
 
 First, you should determine the Liferay services you need to call. You can find 
 the available portal and plugin services at 
@@ -160,7 +160,7 @@ the Mobile SDK. However, there are some special cases you may run into when
 making service calls from your app. These are discussed in the following 
 sections. 
 
-## Non-Primitive Arguments
+## Non-Primitive Arguments [](id=non-primitive-arguments)
 
 There are some special cases in which a service method's arguments aren't 
 primitives. In these cases, you should use `JSONObjectWrapper`. For example: 
@@ -182,7 +182,7 @@ The server looks for the class name in its classpath and instantiates the object
 for you. It then calls setters, as in the previous example. The abstract class 
 `OrderByComparator` is a good example of this. This is discussed next. 
 
-### OrderByComparator
+### OrderByComparator [](id=orderbycomparator)
 
 On the server side, `OrderByComparator` is an abstract class. You must therefore 
 pass the name of a class that implements it. For example: 
@@ -211,7 +211,7 @@ the following code:
 For more examples, see the test case 
 [`OrderByComparatorTest.java`](src/test/java/com/liferay/mobile/sdk/test/portal/OrderByComparatorTest.java).
 
-### ServiceContext
+### ServiceContext [](id=servicecontext)
 
 Another non-primitive argument is `ServiceContext`. It requires special 
 attention because most Liferay service methods require it. However, you aren't 
@@ -230,7 +230,7 @@ to a new `JSONObject` and then passing it as the `ServiceContext` argument:
 For more examples, see the test case 
 [`ServiceContextTest.java`](src/test/java/com/liferay/mobile/sdk/test/portal/ServiceContextTest.java).
 
-### Binaries
+### Binaries [](id=binaries)
 
 Some Liferay services require argument types such as byte arrays (`byte[]`) and
 Files (`java.io.File`).
