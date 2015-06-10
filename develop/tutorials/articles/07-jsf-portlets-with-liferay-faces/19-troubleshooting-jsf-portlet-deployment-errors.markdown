@@ -11,4 +11,52 @@ sometimes easier to compare your portlet to a working example. The
 strategy/tutorial below creates a working example to compare your project to.
 This strategy is recommended by the Liferay Faces team.
 
+For each step below, follow the instructions (if applicable) that pertain to
+your specific app server. These fundamental steps can be followed for any app
+server.
 
+1. Download a Liferay + *[app server]* bundle.
+
+2. Determine the correct version of Liferay Faces. Visit the
+   [Understanding the Liferay Faces Version Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
+   tutorial for more information.
+
+3. Upgrade your app server's Mojarra version (if applicable) so it is identical
+   to the one used by Liferay Faces. Visit the *Upgrading Mojarra* section of
+   your respective app server's installation tutorial found in the
+   [Installation and Setup](/discover/deployment/-/knowledge_base/6-2/installation-and-setup)
+   section.
+
+4. Upgrade your app server's Weld version (if applicable) so it is identical
+   to the one used by Liferay Faces. Visit the *Upgrading Weld* section of
+   your respective app server's installation tutorial found in the
+   [Installation and Setup](/discover/deployment/-/knowledge_base/6-2/installation-and-setup)
+   section.
+
+5. Download and build Liferay Faces from its project source code. Visit the
+   [Building Liferay Faces from Source](/develop/tutorials/-/knowledge_base/6-2/building-liferay-faces-from-source)
+   tutorial for more information.
+
+6. Build the `jsf2-portlet` from liferay-faces on Github and deploy it to your
+   portal bundle. The following commands do this using the JBoss profile:
+
+        cd liferay-faces/demos/bridge/jsf2-portlet
+        mvn -P jboss clean package
+        cp target/jsf2-portlet*.war $LIFERAY_HOME/deploy
+
+7. Build the `primefaces4-portlet` from liferay-faces on Github and deploy it to
+   your portal bundle. For example, the commands below do this using the JBoss
+   profile:
+
+        cd liferay-faces/demos/bridge/primefaces4-portlet
+        mvn -P jboss clean package
+        cp target/primefaces4-portlet*.war $LIFERAY_HOME/deploy
+
+8. Examine the working example WARs and find out how they are different from the
+   WARs that you are having trouble deploying.
+
+Typically, deployment errors are associated with dependencies. For example, you
+might be including the `portal-service.jar` inside the `WEB-INF/lib` directory,
+which could cause a `ClassCastException`. Whichever case is causing your
+deployment errors, comparing your portlet with a verified JSF portlet example is
+the most efficient way to find your problem.
