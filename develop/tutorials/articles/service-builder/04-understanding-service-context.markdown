@@ -112,10 +112,10 @@ Groovy, JavaScript, Python, and Ruby. Some methods of Liferay's API require or
 allow a `ServiceContext` parameter. If you're invoking such a method via
 Liferay's JSON web services, you might want to create and populate a
 `ServiceContext` object in JavaScript. Creating a `ServiceContext` object in
-JavaScript is no different than creating any other object in JavaScript.
+JavaScript is no different from creating any other object in JavaScript.
 
-Before looking at a JSON web service invocation that uses a `ServiceContext`
-object, let's look at a simple JSON web service example in JavaScript:
+Before examining a JSON web service invocation that uses a `ServiceContext`
+object, it helps to see a simple JSON web service example in JavaScript:
 
     Liferay.Service(
         '/user/get-user-by-email-address`,
@@ -140,14 +140,14 @@ The `Liferay.Service(...)` function takes three arguments:
 The callback function takes the result of the service invocation as an argument.
 
 The Liferay JSON web services page (its URL is
-[localhost:8080/api/jsonws](localhost:8080/api/jsonws) you're running Liferay
+[localhost:8080/api/jsonws](localhost:8080/api/jsonws) if you're running Liferay
 locally on port 8080) generates example code for invoking web services. To see
 the generated code for a particular service, click on the name of the service,
-enter the required parameters and click *Invoke*. The JSON result of your
+enter the required parameters, and click *Invoke*. The JSON result of your
 service invocation appears. There are multiple ways to invoke Liferay's JSON web
 services: click on *JavaScript Example* to see how to invoke the web service via
 JavaScript, click on *curl Example* to see how to invoke the web service via
-curl, or on *URL example* to see how to invoke the web service via a URL.
+curl, or click on *URL example* to see how to invoke the web service via a URL.
 
 ![Figure x: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../images/jsonws-simple-example.png)
 
@@ -159,10 +159,10 @@ For an example of how to create and populate a `ServiceContext` object in
 JavaScript and how to pass it as a parameter to a Liferay JSON web service
 invocation, please see the
 [Sample JSONWS Portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/svc-build/sample-jsonws-portlet).
-All of the functionality of the Sample JSONWS Portlet is provided in its
-`view.jsp` file. The portlet simply displays a button, that, when clicked,
-creates a new user by invoking Liferay's JSON web services. Let's examine the
-JSON web service invocation:
+All the Sample JSONWS portlet's functionality is provided in its `view.jsp`
+file. The portlet displays a button that, when clicked, creates a new
+user by invoking Liferay's JSON web services. Let's examine the JSON web service
+invocation:
 
     Liferay.Service(
         '/user/add-user',
@@ -199,29 +199,28 @@ JSON web service invocation:
         }
     );
 
-The add user service requires a lot of information to be specified as fields of
-the parameters object. The `serviceContext` parameter is optional. You can use it
-with the add user service to specify tags to be applied to the user that's being
-created. See the Javadoc of the service method for details:
+The Add User service requires a lot of parameters. The `serviceContext`
+parameter is optional. You can use it with the Add User service to specify tags
+to be applied to the user that's being created. See the Javadoc of the service
+method for details:
 [https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/UserServiceUtil.html](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/UserServiceUtil.html#addUser%28long,%20boolean,%20java.lang.String,%20java.lang.String,%20boolean,%20java.lang.String,%20java.lang.String,%20long,%20java.lang.String,%20java.util.Locale,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20int,%20int,%20boolean,%20int,%20int,%20int,%20java.lang.String,%20long[],%20long[],%20long[],%20long[],%20boolean,%20com.liferay.portal.service.ServiceContext%29).
 In the example above, the `serviceContext` parameter specifies that the tag
 *test* should be applied to the user that's being created.
 
-To test the service invocation with the serviceContext parameter, deploy the
+To test the service invocation with the `serviceContext` parameter, deploy the
 [Sample JSONWS Portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/svc-build/sample-jsonws-portlet),
 add it to a page, and click on the *Create User* button. Then navigate to the
 Control Panel, click on *Users and Organizations*, edit the newly created user,
-click on *Categorization* and confirm that the specified tag has been applied.
+click on *Categorization*, and confirm that the specified tag has been applied.
 
-![Figure x: To test invoking a Liferay JSON web service, deploy the Sample
-JSONWS Portlet, add it to a page, and click on *Create User* and confirm that the tag *test* has been applied to newly created user.](../../images/jsonws-simple-example.png)
+![Figure x: To test invoking a Liferay JSON web service, deploy the Sample JSONWS Portlet, add it to a page, click on *Create User*, and confirm that the tag *test* has been applied to the newly created user.](../../images/jsonws-simple-example.png)
 
 **Important:** To invoke Liferay web services via JavaScript, your JavaScript
 context must include AlloyUI. In the Sample JSONWS Portlet, the JavaScript code
 in `view.jsp` was wrapped in the `<aui:script use="node, event">` and
-`</aui:script>` tags. (The `node` and `event` modules were required to
+`</aui:script>` tags. The `node` and `event` modules were required to
 implement the button. Only the base AUI is required to invoke a Liferay JSON
-web service.) The `<aui:script>` tag was made available to the `view.jsp` page
+web service. The `<aui:script>` tag was made available to the `view.jsp` page
 by this taglib import:
 
     <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
