@@ -39,6 +39,13 @@ interface events, to start Server operations. Screenlets also define a set of
 Screenlets bundled with Liferay Screens are known as the [Screenlet
 library](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
 
+**Interactors**: implement specific use cases that involve communicating with
+servers. They can interact with local and remote data sources by using 
+*Server Operations* or custom classes. If a user action or use case needs to 
+execute more than one query to a local or remote store, the sequence is done 
+in the corresponding Interactor. If a screenlet supports more than one user 
+action or use case, an Interactor needs to be created for each. 
+
 **Server Operations:** a collection of `NSOperation` classes that can interact
 with local and remote data sources and Liferay instances. Liferay's own set of
 operations, Liferay Operations, use the

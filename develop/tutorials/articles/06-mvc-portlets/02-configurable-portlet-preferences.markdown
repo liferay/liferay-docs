@@ -5,27 +5,24 @@ https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/lifera
 https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-mvc/prefs/end/event-listing-portlet
 -->
 
-Portlet Preferences are properties for storing basic portlet configuration data.
-Administrators often use preferences to provide a customized view of a portlet
-to subsets of users or even all of a portlet's users. Portlet preference
-controls are sometimes made accessible to users themselves for configuring
-portlets just the way they like them. Liferay simplifies making portlet
-preferences configurable in portlet JSPs. In this tutorial, you'll learn how to
-create a default configuration JSP page and how to add a portlet preference
-control to it. Figure 1 shows what a configurable portlet preference looks like
-in a portlet's Configuration menu. 
+Portlet Preferences are stored portlet configuration data. Administrators often
+use preferences to provide a customized view of a portlet to subsets of users or
+even all of a portlet's users. Portlet preference controls are sometimes made
+accessible to users for configuring portlets the way they like them. In this
+tutorial, you'll learn how to create a default configuration JSP page that has
+portlet preference controls. Figure 1 shows what a configurable portlet
+preference looks like in a portlet's Configuration menu. 
 
 ![Figure 1: Portlet preferences, such as this portlet's checkbox for showing location addresses, let you customize your portlet in many different ways.](../../images/show-location-address-pref.png)
 
 First, you'll learn how to create the default Setup tab for your portlet's
-configuration page. 
+Configuration page. 
 
 ## Creating a Default Setup Tab in the Portlet's Configuration Page [](id=creating-a-default-setup-tab-in-the-port-liferay-portal-6-2-dev-guide-03-en)
 
 Before you can begin adding configurable portlet preferences, you must first
-create a place for them to reside in your portlet's Configuration menu. The
-following steps explain how you can put preference controls in a Setup tab in
-the Configuration menu for your portlet preference.
+create a place for them in the UI. The following steps explain how you can add
+portlet preference controls to a Setup tab of your portlet's Configuration menu.
 
 1. Open your portlet's `liferay-portlet.xml` file.
 
@@ -45,7 +42,7 @@ the Configuration menu for your portlet preference.
         ...
 
 Notice that you've specified the *default* configuration action class. You can
-update this tag with a custom configuration class, as demonstrated later in this
+update this tag with a custom configuration class as demonstrated later in this
 tutorial. If you redeploy your portlet and open your portlet's *Configuration*
 page, you'll find the new Setup tab. 
 
@@ -59,28 +56,25 @@ it, next.
 Now that you have your Setup tab in the Configuration menu, you can add a custom
 option to it. 
 
-In order to add a configurable portlet preference to the portlet, you must do
-the following things: 
+Follow these steps to add a configurable portlet preference: 
 
 1. Specify a Configuration JSP in the `portlet.xml`
 2. Create the Configuration JSP for Displaying the Portlet Preference Options
 3. Create a Configuration Action Implementation Class for Processing the
 Portlet Preference Value
-4. Modify the View JSP to Respond to the Current Portlet Preference Value
+4. Modify the View JSP to respond to the current Portlet Preference value
 
 You can specify a configuration JSP file, first. 
 
 ### Step 1: Specify a Configuration JSP in the portlet.xml [](id=step-1-specify-a-configuration-jsp-in-the-portlet-x)
 
-Your portlet needs a way to display configuration options to the user. Liferay
-checks to see if your portlet specifies a configuration JSP via a
-`config-template` initialization parameter in your `portlet.xml` file. You can
-specify one for your portlet. 
+Your portlet needs a way to show configuration options to the user. Liferay
+checks to see if your portlet specifies a configuration JSP using a
+`config-template` initialization parameter in your `portlet.xml` file. 
 
-Open the `portlet.xml` file and declare your initialization parameters with the
-`<init-param>...</init-param>` tags within your portlet's `<portlet>` element.
-Here's an example code snippet that sets a portlet's configuration JSP path to
-`/html/yourportlet/configuration.jsp`: 
+Open the `portlet.xml` file and declare your initialization parameters using the
+`<init-param>...</init-param>` tags in your portlet's `<portlet>` element like
+this:
 
     <portlet>
         <portlet-name>yourportlet</portlet-name>
@@ -95,6 +89,9 @@ Here's an example code snippet that sets a portlet's configuration JSP path to
         <expiration-cache>0</expiration-cache>
         ...
     </portlet>
+
+This code snippet that sets a portlet's configuration JSP path to
+`/html/yourportlet/configuration.jsp`: 
 
 Next, you can create the configuration JSP file that you just specified. 
 
@@ -125,10 +122,10 @@ code:
     class provides helpful methods for processing values from portlet
     preferences. 
 
-4.  Add a form to present the current setup and to enable the user to submit any
-changes via the action URL that you specified in step 2. For example, you could
-specify the form using an `<aui:form>` with a submit button. Here's a form into
-which you could present the portlet preference for the user to control: 
+4.  Add a form that shows the current settings and lets users submit changes
+using the action URL that you specified in step two. For example, you could
+specify the form using an `<aui:form>` with a submit button. Here's an example
+form: 
 
         <aui:form action="<%= configurationURL %>" method="post" name="fm">
             <aui:input name="<%= Constants.CMD %>" type="hidden" value="<%= Constants.UPDATE %>" />
@@ -151,16 +148,16 @@ user's input. In order for the value to be persisted, the `<aui:input>` tag's
 `preferences--somePreferenceKey--`, where you'd replace `somePreferenceKey` with
 the name of your portlet preference. 
 
-    For example, here is an input checkbox that lets the user set the value of a
+    For example, here is an input checkbox for setting the value of a
     portlet preference named `somePreferenceKey`: 
 
         <aui:input name="preferences--somePreferenceKey--" type="checkbox" value="<%= somePreferenceKey_cfg %>" />
 
 +$$$
 
-**Note:** Make sure to declare
-directives for any taglibs your configuration JSP requires, or declare the
-directives in one of the JSPs that the configuration JSP includes. 
+**Note:** Make sure to declare directives for any taglibs your configuration JSP
+requires, or declare the directives in one of the JSPs that the configuration
+JSP includes. 
 
 You may also need to declare the `<portlet:defineObjects />` tag to access
 implicit variables. This tag provides useful portlet variables such as
@@ -168,10 +165,10 @@ implicit variables. This tag provides useful portlet variables such as
 
 $$$
 
-Your configuration JSP is all set to display your portlet preference options.
+Your configuration JSP is all set to display your portlet preference options!
 You're ready to implement a custom class to handle the configuration action. If
 you don't need to use the portlet preference in your portlet's controller logic,
-then you can skip the next step. 
+you can skip the next step. 
 
 ### Step 3: Create a Configuration Action Implementation Class for Processing the Portlet Preference Value [](id=step-3-create-a-configuration-action-implementation)
 
@@ -207,10 +204,9 @@ received from the form.
 
 +$$$
 
-**Note:** You won't need to store
-portlet preferences by calling `preferences.store()` since they're automatically
-stored in the `DefaultConfigurationAction` class, which your configuration class
-extends. 
+**Note:** You won't need to store portlet preferences by calling
+`preferences.store()` since they're automatically stored in the
+`DefaultConfigurationAction` class, which your configuration class extends. 
 
 $$$
 
@@ -227,7 +223,7 @@ Here are some common classes you may need to import:
     import javax.portlet.PortletConfig;
     import javax.portlet.PortletPreferences;
 
-Lastly, you must specify your new custom configuration class in the
+Finally, you must specify your new custom configuration class in the
 `liferay-portlet.xml` file. Replace the value of the existing
 `<configuration-action-class>...</configuration-action-class>` with your custom
 configuration class' fully qualified class name. Here's a snippet to show you
@@ -249,10 +245,10 @@ preference.
 
 ### Step 4: Modify the View JSP to Respond to the Current Portlet Preference Value [](id=step-4-modify-the-view-jsp-to-respond-to-the-curren)
 
-In your view JSP, you can implement logic to display your portlet based on its
-configured preferences. You can access portlet preferences via the implicit
-variable `portletPreferences`. To access this variable, make sure to include the
-`<portlet:defineObjects />` tag in your JSP. 
+In your view JSP, you can implement logic to make your portlet change its
+display or behavior based on its configured preferences. You can access portlet
+preferences using the implicit variable `portletPreferences`. To access this
+variable, make sure you include the `<portlet:defineObjects />` tag in your JSP. 
 
 Here's an example of accessing a boolean value stored in a portlet preference
 named `showLocationAddress`: 
@@ -268,18 +264,18 @@ retrieves the value of a portlet preference named `showLocationAddress` and if
 the preference's value is true, *all* of the location's fields are displayed. If
 it is false, then the address fields are omitted. 
 
-![Figure 3: Liferay Portal makes it easy to customize a portlet UI. Privileged users can adjust the preference settings within the portlet's configuration page.](../../images/portlet-preferences-modifying-view.png)
+![Figure 3: Liferay Portal makes it easy to customize a portlet UI. Privileged users can adjust the preference settings within the portlet's Configuration page.](../../images/portlet-preferences-modifying-view.png)
 
-That's it! You've created a custom configuration page and added a portlet
+That's it! You've created a custom Configuration page and added a portlet
 preference to your portlet. 
 
-To see the configuration page and portlet preference in action! Navigate to your
-portlet's *Configuration* page to see the portlet preference control that you
+To see the Configuration page and portlet preference in action, navigate to your
+portlet's *Configuration* page and look for portlet preference control that you
 added. 
 
 ![Figure 4: Your new portlet preference is available in your portlet's *Configuration* page.](../../images/show-location-address-pref.png)
 
-Great job! You added a new Setup tab to your portlet's configuration page and
+Great job! You added a new Setup tab to your portlet's Configuration page and
 you added a configurable portlet preference to that page. Now you know how to
 use Liferay's portlet preferences in the portlets you develop. 
 

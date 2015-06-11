@@ -1,10 +1,11 @@
-# LoginScreenlet for iOS [](id=loginscreenlet-for-ios)
+# Login Screenlet for iOS [](id=loginscreenlet-for-ios)
 
 ## Requirements [](id=requirements)
 
 - XCode 6.3.x
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
+- [OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) (only for OAuth based authentication)
 
 ## Compatibility [](id=compatibility)
 
@@ -13,17 +14,25 @@
 ## Features [](id=features)
 
 The `LoginScreenlet` authenticates portal users in your iOS app. The following
-authentication methods are supported:
+types of authentication are supported:
 
-- Email address
-- Screen name
-- User id
+- Basic: uses user login and password according to 
+  [HTTP Basic Access Authenication specification](http://tools.ietf.org/html/rfc2617). 
+  Depending on the authentication method used by your Liferay instance, you need 
+  to provide the user's email address, screen name, or user ID. You also need to 
+  provide the user's password. 
 
-When users are successfully authenticated, their attributes are retrieved for 
-use in the app. You can use the `SessionContext` class to get current user 
-attributes. It's important to note that user credentials and attributes can be 
-stored securely in the keychain. This information can then be used to perform 
-automatic login in subsequent sessions (see the `saveCredentials` attribute).
+- OAuth: implements the 
+  [OAuth 1.0a specification](http://oauth.net/core/1.0a/).
+
+When a user successfully authenticates, their attributes are retrieved for use 
+in the app. You can use the `SessionContext` class to get the current user's 
+attributes.
+
+Note that user credentials and attributes can be stored securely in the keychain 
+(see the `saveCredentials` attribute). Stored user credentials can be used to 
+automatically log the user in to subsequent sessions. To do this, you can use 
+the method `SessionContext.loadSessionFromStore()` method.
 
 ## Module [](id=module)
 
@@ -31,29 +40,46 @@ automatic login in subsequent sessions (see the `saveCredentials` attribute).
 
 ## Themes [](id=themes)
 
-- Default
-- Flat7
+- Default (`default`)
+- Flat7 (`flat7`)
 
-![The `LoginScreenlet` using the Default and Flat7 themes.](../../images/screens-ios-login.png)
+![The `LoginScreenlet` using the Default and Flat7 Themes.](../../images/screens-ios-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
-The authentication method should be configured in your Liferay instance. You can 
-set this in the Control Panel by clicking *Portal Settings* and then 
-*Authentication*.
+### Basic authentication
+
+Before using `LoginScreenlet`, you should make sure your portal is configured 
+with the authentication method you want to use. You can choose email address, 
+screen name, or user ID. You can set this in the Control Panel by clicking 
+*Portal Settings* &rarr; *Authentication*.
 
 ![Setting the authentication method in Liferay Portal.](../../images/screens-portal-auth.png)
 
-For more details, please refer to the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
+For more details, see the 
+[Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide. 
+
+### OAuth
+
+If you want to use OAuth authentication, you first need to install the 
+[OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 
+from Liferay's Marketplace. Once this plugin is installed, go to 
+*Control Panel &rarr; Users &rarr; OAuth Admin*, and add a new application to be 
+used from Liferay Screens. When the app is created, copy the *Consumer Key* and 
+*Consumer Secret* values for later use in `LoginScreenlet`.
+
+![Copy the Consumer Key and Consumer Secret from OAuth Admin in your portal.](../../images/screens-portal-oauth.png)
 
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-|  `saveCredentials` | `boolean` | When set, the user credentials and attributes are stored securely in the keychain. This information can then be loaded in subsequent sessions by calling the `SessionContext.loadSessionFromStore()` method. |
-|  `companyId` | `number` | When set, authentication is done for a user in the specified company. If the value is `0`, the company specified in `LiferayServerContext` is used. |
-|  `authMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. |
+| `saveCredentials` | `boolean` | When set, the user credentials and attributes are stored securely in the keychain. This information can then be loaded in subsequent sessions by calling the `SessionContext.loadSessionFromStore()` method. |
+| `companyId` | `number` | When set, authentication is done for a user in the specified company. If the value is `0` or empty, the company specified in `LiferayServerContext` is used. |
+| `basicAuthMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. |
+| `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to used in OAuth authentication. Leave this empty if you want to use Basic authentication. |
+| `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to use in OAuth authentication. Leave this empty if you want to use Basic authentication. |
 
 ## Delegate [](id=delegate)
 
@@ -73,5 +99,5 @@ following methods:
   after a successful login.
 
 - `- onScreenletCredentialsLoaded:`: Called when the user credentials are 
-  retrieved. Note that this only occurs when the screenlet is used and stored 
+  retrieved. Note that this only occurs when the Screenlet is used and stored 
   credentials are available.

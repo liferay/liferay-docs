@@ -23,7 +23,7 @@ methods, and shows how to set up communication with Liferay. Onward!
 
 ## Requirements [](id=requirements)
 
-Liferay Screens for iOS includes the Component Library (the screenlets) and 
+Liferay Screens for iOS includes the Component Library (the Screenlets) and 
 three sample projects: one uses Objective-C and the other two use Swift. Screens 
 was developed using Swift and development techniques that leverage functional 
 Swift code and the [Model View Presenter](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)
@@ -147,8 +147,8 @@ In your project's build settings, you must edit its
 ### Troubleshooting Manual Installation [](id=troubleshooting-manual-installation)
 
 There are some problems associated with the manual installation procedure. For
-example, when using a screenlet in your project, the Interface Builder may
-complain about an unknown class. This error occurs because the screenlet is bound
+example, when using a Screenlet in your project, the Interface Builder may
+complain about an unknown class. This error occurs because the Screenlet is bound
 to the `LiferayScreens` Module. This module exists only if you installed Screens
 with CocoaPods (for iOS 8 and above). To solve this problem, you must open the
 failed `xib` file listed in the error trace (in Figure 4, this is
@@ -156,7 +156,7 @@ failed `xib` file listed in the error trace (in Figure 4, this is
 Class. Note that the Module value changes from `LiferayScreens` to blank; the
 Module values shows as the grayed-out text `Current - your app name`. 
 
-![Figure 4: When using a screenlet with Screens installed manually, you may get an exception due to an unknown class in Interface Builder.](../../images/screens-ios-xcode-unknown-class.png)
+![Figure 4: When using a Screenlet with Screens installed manually, you may get an exception due to an unknown class in Interface Builder.](../../images/screens-ios-xcode-unknown-class.png)
 
 Alternatively, you can click the selection box next to the Module field and
 select an element from the list. For example, if your app's name is
@@ -175,7 +175,7 @@ project. It's time to configure its communication with your Liferay instance.
 
 ## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
 
-Configuring communication between screenlets and Liferay is easy. Liferay
+Configuring communication between Screenlets and Liferay is easy. Liferay
 Screens uses a property list (`.plist`) file to access your Liferay instance.
 It must include the server's URL, the portal's company ID, and the site's group
 ID. Create a `liferay-server-context.plist` file and specify values required for 

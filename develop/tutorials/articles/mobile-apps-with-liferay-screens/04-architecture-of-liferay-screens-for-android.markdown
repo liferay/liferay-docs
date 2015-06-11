@@ -36,8 +36,12 @@ The Screenlets bundled with Liferay Screens are known collectively as the
 
 **Interactors:** implement specific use cases that involve communicating with
 servers. They can interact with local and remote data sources. Most Interactors
-use the [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile) to
-exchange data with a Liferay instance. 
+use the
+[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile) 
+to exchange data with a Liferay instance. If a user action or use case needs to 
+execute more than one query to a local or remote store, the sequence is done 
+in the corresponding Interactor. If a screenlet supports more than one user 
+action or use case, an Interactor needs to be created for each. 
 
 **Views:** a set of layouts and accompanying custom view classes that present 
 Screenlets to the user.
