@@ -152,7 +152,7 @@ complain about an unknown class. This error occurs because the Screenlet is boun
 to the `LiferayScreens` Module. This module exists only if you installed Screens
 with CocoaPods (for iOS 8 and above). To solve this problem, you must open the
 failed `xib` file listed in the error trace (in Figure 4, this is
-`LoginView_default.xib`), select the root view, and then re-set the Custom
+`LoginView_default.xib`), select the root View, and then re-set the Custom
 Class. Note that the Module value changes from `LiferayScreens` to blank; the
 Module values shows as the grayed-out text `Current - your app name`. 
 

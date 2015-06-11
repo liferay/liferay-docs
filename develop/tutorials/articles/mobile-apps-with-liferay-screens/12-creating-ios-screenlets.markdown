@@ -64,7 +64,7 @@ Follow these steps to create your Screenlet:
 
         }
 
-3.  Create a new view class with a name that matches the prefix of your XIB
+3.  Create a new View class with a name that matches the prefix of your XIB
     file's name. The class must extend
     [`BaseScreenletView`](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Framework/Core/Base/BaseScreenletView.swift)
     and conform to the interface protocol you created. Use standard `@IBOutlet`s
@@ -106,7 +106,7 @@ Follow these steps to create your Screenlet:
 
         }
 
-4.  Specify the view class as your XIB file's custom class. In the Add Bookmark
+4.  Specify the View class as your XIB file's custom class. In the Add Bookmark
     Screenlet, for example, `AddBookmarkView_default` is set as the
     `AddBookmarkView_default.xib` file's custom class.
 
@@ -251,7 +251,7 @@ Follow these steps to create your Screenlet:
 6.  Create a Screenlet class that extends
     [`BaseScreenlet`](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Framework/Core/Base/BaseScreenlet.swift)
     and includes, optionally, any `@IBInspectable` properties you need. The
-    Screenlet class leverages your interface protocol, custom view class, and
+    Screenlet class leverages your interface protocol, custom View class, and
     Interactor classes to control your Screenlet's behavior.
 
     Override the `createInteractor` method to return an instance of the

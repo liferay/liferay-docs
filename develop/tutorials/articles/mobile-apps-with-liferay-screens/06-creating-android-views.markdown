@@ -257,7 +257,7 @@ You can follow these steps to create a Full View:
 2.  Create a new custom View class named after the layout's root element. The
     tutorial on creating Android Screenlets explains how to
     [create a View class](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-view-class).
-    Note that you don't have to extend a View class to implement a View model
+    Note that you don't have to extend a View class to implement a View Model
     interface, but you might want to for convenience. The custom View class
     [`LoginFullView`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/fullview/LoginFullView.java),
     for example, implements the

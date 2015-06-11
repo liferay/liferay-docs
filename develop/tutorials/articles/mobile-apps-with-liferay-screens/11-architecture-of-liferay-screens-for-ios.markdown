@@ -18,7 +18,7 @@ building blocks, you'll be ready to create some amazing Screenlets and Themes!
 
 ## High Level Architecture of Liferay Screens for iOS [](id=high-level-architecture-of-liferay-screens-for-ios)
 
-Liferay Screens for iOS is composed of a Core, a Screenlet layer, a view layer,
+Liferay Screens for iOS is composed of a Core, a Screenlet layer, a View layer,
 and Server operations. Server operations are, although technically part of the
 Core, worth describing separately. They facilitate interaction with local and
 remote data sources and communication between the Screenlet layer and the
@@ -74,7 +74,7 @@ the base class for all Liferay Portal interactions and use cases that a
 Screenlet supports. Operations retrieve data asynchronously from local or remote
 data sources. The Screenlet classes instantiate operation classes, invoke their
 operations, and receive operation responses, which change the state of the
-Screenlet's view classes. 
+Screenlet's View classes. 
 
 [**BaseScreenlet**](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Framework/Core/Base/BaseScreenlet.swift):
 the base class for all Screenlet classes. Screenlet classes receive user events
@@ -84,7 +84,7 @@ from the UI, begin Server operations, and update any view data from the result.
 that child classes should overwrite.
 
 [**BaseScreenletView**](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Framework/Core/Base/BaseScreenletView.swift):
-the base class for all Screenlet view classes. Its child classes belong to the
+the base class for all Screenlet View classes. Its child classes belong to the
 Theme layer. View classes use standard XIB files to render a UI and then update
 it when the data changes. `BaseScreenletView` contains template methods that
 child classes should overwrite.
@@ -127,7 +127,7 @@ developer interacts with. It includes the following things:
 
 - Inspectable parameters for configuring the Screenlet's behavior. The
   initial state can be set in the Screenlet's data. 
-- A reference to the Screenlet's view, based on the selected Theme. To meet
+- A reference to the Screenlet's View, based on the selected Theme. To meet
   the Screenlet's requirements, all Themes must implement the `Data`
   interface. 
 - Any number of methods for invoking Server operations. You can optionally
@@ -147,7 +147,7 @@ requires depends on the number of server use cases it supports.
 
 **MyScreenletView_themeX:** A class that belongs to one specific Theme. In the
 diagram, this Theme is *ThemeX*. The class renders the Screenlet's UI by using
-its related XIB file. The view object and XIB file communicate using standard
+its related XIB file. The View object and XIB file communicate using standard
 mechanisms like `@IBOutlet` and `@IBAction`. When a user action occurs in the
 XIB file, it's received by `BaseScreenletView` and then passed to the Screenlet
 class via the `onUserAction` method. To identify different events, the
@@ -155,7 +155,7 @@ component's `restorationIdentifier` property is passed to the `onUserAction`
 method.
 
 **MyScreenletView_themeX.xib:** an XIB file that specifies how to render the
-Screenlet's view. Its name is very important. By convention, a Screenlet with a
+Screenlet's View. Its name is very important. By convention, a Screenlet with a
 view class named *FooScreenletView* and a Theme named *BarTheme* must have an
 XIB file named `FooScreenletView_barTheme.xib`.
 

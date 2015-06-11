@@ -43,20 +43,20 @@ This is indicated by the comments in the code here:
 
         ...
 
-If you're using CocoaPods, you need to import Liferay Screens in your view 
-controller:
+If you're using CocoaPods, you need to import Liferay Screens in your View 
+Controller:
 
     import LiferayScreens
 
 Now that the Screenlet's delegate protocol conforms in your `ViewController` 
 class, go back to Interface Builder and connect the Screenlet's delegate to your 
-view controller. If the Screenlet you're using has more outlets, you can assign 
+View Controller. If the Screenlet you're using has more outlets, you can assign 
 them as well.
 
 Note that currently Xcode has some
 [issues](http://stackoverflow.com/questions/26180268/interface-builder-iboutlet-and-protocols-for-delegate-and-datasource-in-swift/26180481#26180481) 
 connecting outlets to Swift source code. To get around this, you can change the
-delegate data type or assign the outlets in your code. In your view controller,
+delegate data type or assign the outlets in your code. In your View Controller,
 follow these steps: 
 
 1. Declare an outlet to hold a reference to the Screenlet. You can connect it in 
@@ -67,8 +67,8 @@ follow these steps:
 2. Assign the Screenlet's delegate the `viewDidLoad` method. This is 
    the connection typically done in Interface Builder.
 
-These steps are shown in the following code for Login Screenlet's view
-controller. 
+These steps are shown in the following code for Login Screenlet's View
+Controller. 
 
     class ViewController: UIViewController, LoginScreenletDelegate {
 
