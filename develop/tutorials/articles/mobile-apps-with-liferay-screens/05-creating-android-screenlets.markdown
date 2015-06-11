@@ -8,7 +8,7 @@ and more. However, what if there's no Screenlet for *your* specific use case? No
 sweat! You can create your own Screenlet--anyone can create them. Extensibility
 is a key strength of Liferay Screens. 
 
-This tutorial explains how to create your own Screenlets.  As an example, it
+This tutorial explains how to create your own Screenlets. As an example, it
 references code from the sample
 [Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/android/samples/addbookmarkscreenlet), 
 that saves bookmarks to Liferay's Bookmarks portlet. 
@@ -169,7 +169,8 @@ do so, follow these steps:
 			screenlet.performUserAction();
 		}
 
-4.  Override [`BaseViewModel`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/view/BaseViewModel.java)'s
+4.  Override
+    [`BaseViewModel`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/view/BaseViewModel.java)'s
     methods `showStartOperation`, `showFinishOperation`, and
    `showFailedOperation`. In these methods, you can log what's happening in your
     Screenlet. 
@@ -289,14 +290,13 @@ implementation:
     and implements the Interactor interface you just created. In your Interactor
     methods, validate input and invoke the Liferay Mobile SDK to call the remote
     services. Also, when the service request ends, make sure to post an event
-    into the
-	[EventBus](https://github.com/greenrobot/EventBus) by invoking `EventBusUtil.post(event)`; `event` is
-    a `JSONObjectEvent` object containing the `targetScreenletId` together with
-    either the service result or an exception. Note that every Interactor must
-    implement the `onEvent(JSONObjectEvent event)` method for `EventBus` to
-    invoke. Implement this to notify the registered listener on the service's
-    success or failure. Your constructor can invoke the superclass's
-    constructor. 
+    into the [EventBus](https://github.com/greenrobot/EventBus) by invoking
+    `EventBusUtil.post(event)`; `event` is a `JSONObjectEvent` object containing
+    the `targetScreenletId` together with either the service result or an
+    exception. Note that every Interactor must implement the
+    `onEvent(JSONObjectEvent event)` method for `EventBus` to invoke. Implement
+    this to notify the registered listener on the service's success or failure.
+    Your constructor can invoke the superclass's constructor.
 
     <!-- I'm not sure how to "post an event into the `EventBus`", as mentioned
     above. I haven't found it implemented in the Add Bookmarks Screenlet. - Jim

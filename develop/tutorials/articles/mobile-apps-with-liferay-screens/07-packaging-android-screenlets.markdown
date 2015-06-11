@@ -24,12 +24,12 @@ Library configuration and adds the new module to your `settings.gradle` file.
 
 If you prefer to create a new module manually, you can examine the
 `build.gradle` file from the
-[Material View set](https://github.com/liferay/liferay-screens/blob/master/android/viewsets/material/build.gradle) 
+[Material View set](https://github.com/liferay/liferay-screens/blob/master/android/viewsets/material/build.gradle)
 or
-[Westeros app](https://github.com/liferay/liferay-screens/blob/master/android/viewsets/westeros/build.gradle) 
+[Westeros app](https://github.com/liferay/liferay-screens/blob/master/android/viewsets/westeros/build.gradle)
 as an example. After creating the module, you need to import it into your
 project by specifying its location in
-[`settings.gradle`](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/settings.gradle). 
+[`settings.gradle`](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/settings.gradle).
 Here's an example configuration: 
 
     // Change YOUR_MODULE_NAME and RELATIVE_ROUTE_TO_YOUR_MODULE to match your module

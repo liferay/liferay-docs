@@ -2,7 +2,7 @@
 
 Once you've 
 [created a Theme](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes),
-you can package it up to 
+you can package it up to
 [install and use](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
 with its Screenlet. Your Liferay Screens Theme is a code library that you can
 package using CocoaPods. 
@@ -15,7 +15,7 @@ steps):
 
     ![Figure 1: Choose *Cocoa Touch Framework* when creating a project for your Theme.](../../images/screens-ios-cocoa-touch-framework.png)
     
-2.  Name your project `LiferayScreensThemeName`, replacing `Name` to your
+2.  Name your project `LiferayScreensThemeName`, replacing `Name` with your
     Theme's name. You can specify any name, but it's a best practice to use your
     Theme's Xcode name. The entire name becomes its project's CocoaPods name.
 

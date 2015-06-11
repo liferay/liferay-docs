@@ -17,7 +17,8 @@ but lets you add to and modify both.
 Theme is ideal for implementing functionality and appearance completely
 different from a Screenlet's current Themes.
 
-This tutorial explains how to create all three types. To understand Theme concepts and components, you might want to examine the
+This tutorial explains how to create all three types. To understand Theme
+concepts and components, you might want to examine the
 [architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 of Liferay Screens for iOS. And the tutorial
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
@@ -101,7 +102,7 @@ These steps explain how to create an Extended Theme:
 3.  Set your new view class as the custom class for your Theme's XIB file.
     If you added `@IBOutlet` or `@IBAction` actions, bind them to your class. 
 
-4.  [Package your Theme](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes). 
+4.  [Package your Theme](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes).  
 
 Well done! Your Theme is ready to
 [install and use](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
@@ -115,8 +116,8 @@ using a parent Theme. Its view class must inherit Screens's
 [`BaseScreenletView`](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Framework/Core/Base/BaseScreenletView.swift)
 and conform to the Screenlet's view model protocol. It must also specify a new
 UI in an XIB file. As you create a Full Theme, you can refer to the tutorial
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
-to learn how to create these classes.  
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets) to
+learn how to create these classes. 
 
 Follow these steps to create a Full Theme:
 
@@ -144,7 +145,7 @@ Follow these steps to create a Full Theme:
 Super! Your Theme is ready to
 [install and use](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
 with its Screenlet. Now you know how to create a Full Theme. Note a Full Theme
-can serve as a parent to a Child and Extended Theme. 
+can serve as a parent to a Child and Extended Theme.
 
 You've mastered Themes! 
 

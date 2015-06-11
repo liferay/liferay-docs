@@ -1,10 +1,11 @@
 # Creating Android Views [](id=creating-android-views)
 
-By creating your own Views, you can customize your mobile app's look and feel and functionality.
-You can create them from scratch or use an existing View as a foundation. Views include a View class for implementing Screenlet behavior and an
-XIB file for specifying the UI. The three Liferay
-Screens View types support different levels of customization and parent View inheritance.
-Here's what each View type offers: 
+By creating your own Views, you can customize your mobile app's look and feel
+and functionality. You can create them from scratch or use an existing View as a
+foundation. Views include a View class for implementing Screenlet behavior and
+an XIB file for specifying the UI. The three Liferay Screens View types support
+different levels of customization and parent View inheritance. Here's what each
+View type offers: 
 
 **Child View:** presents the same UI components as its parent View, but lets 
 you change their appearance and position.
@@ -16,11 +17,11 @@ but lets you add to and modify both.
 View is ideal for implementing functionality and appearance completely
 different from a Screenlet's current themes.
 
-This tutorial explains how to create all three types of Views. To understand View concepts and components, you might want to examine the
+This tutorial explains how to create all three types of Views. To understand
+View concepts and components, you might want to examine the
 [architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
-of Liferay Screens for Android. And the
-tutorial
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets) 
+of Liferay Screens for Android. And the tutorial
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
 can help you create or extend any Screenlet classes your View requires. Now get
 ready to create some great Views! 
 
@@ -279,8 +280,8 @@ You can follow these steps to create a Full View:
     an activity or fragment, and set
     `liferay:layoutId="@layout/login_password"`.  
 
-The 
-[Westeros View Set's Full View for SignUpScreenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/signup) 
+The
+[Westeros View Set's Full View for the Sign Up Screenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/signup)
 uses a
 [custom Screenlet class](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/signup/SignUpScreenlet.java) 
 to add a

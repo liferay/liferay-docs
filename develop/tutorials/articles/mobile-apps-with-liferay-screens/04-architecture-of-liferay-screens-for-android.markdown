@@ -13,8 +13,8 @@ examining Screens's building blocks!
 ## High-Level Architecture [](id=high-level-architecture)
 
 Liferay Screens for Android is composed of a Core, a Screenlet layer, a View
-layer, and Interactors. Interactors are, although technically part of the core, 
-worth describing here, as they facilitate interaction with local and remote data
+layer, and Interactors. Interactors are, although technically part of the core,
+worth describing as they facilitate interaction with local and remote data
 sources and communication between the Screenlet layer and the
 [Liferay Mobile SDK](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/mobile). 
 
@@ -31,13 +31,13 @@ hierarchy. They render a selected layout in the runtime and in Android Studio's
 visual editor, and react to UI events, sending any necessary server requests.
 You can set a screentlet's properties from its layout XML file and Java classes.
 The Screenlets bundled with Liferay Screens are known collectively as the
+[Screenlet
 [Screenlet Library](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
 
 **Interactors:** implement specific use cases that involve communicating with
 servers. They can interact with local and remote data sources. Most Interactors
-use the
-[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile) to
- exchange data with a Liferay instance. 
+use the [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile) to
+exchange data with a Liferay instance. 
 
 **Views:** a set of layouts and accompanying custom view classes that present 
 Screenlets to the user.
@@ -106,7 +106,8 @@ keys defined in the `server_context.xml`.
 
 [**LiferayScreensContext:**](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/context/LiferayScreensContext.java)
 a singleton object that holds a reference to the application context. It's used
-internally where necessary.
+internally where necessary. 
+
 Now that you know what the core layer comprises, you're ready to learn the 
 Screenlet layer's details.
 
@@ -125,9 +126,9 @@ Screenlets are comprised of several Java classes and an XML descriptor file:
 UI. It typically accounts for all the input and output values presented to the
 user. For instance,
 [`LoginViewModel`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login/view/LoginViewModel.java)
-  includes attributes like the user name and password. The Screenlet can read
-  the attribute values, invoke Interactor operations, and change these values,
-  based on operation results.
+includes attributes like the user name and password. The Screenlet can read the
+attribute values, invoke Interactor operations, and change these values, based
+on operation results.
 
 **MyScreenlet:** a class that represents the Screenlet component the app
 developer interacts with. It includes the following things:
@@ -154,11 +155,10 @@ server. On completing an interaction, the Interactor must notify its listeners,
 which typically includes the Screenlet class instance. The number of Interactors
 a Screenlet requires depends on the number of server use cases it supports. For
 example, the
-[Login
-Screenlet](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login/LoginScreenlet.java)
+[Login Screenlet](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login/LoginScreenlet.java)
 class only supports one use case (log in the user), so it has only one
 Interactor. Whereas, the
-[DDL Form Screenlet](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/ddl/form/DDLFormScreenlet.java)
+[DDL Forms Screenlet](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/ddl/form/DDLFormScreenlet.java)
 class supports several use cases (load the form, load a record, submit the form,
 etc.); so it uses a different Interactor class for each use case.
 

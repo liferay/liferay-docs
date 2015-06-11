@@ -1,13 +1,13 @@
 # Architecture of Liferay Screens for iOS [](id=architecture-of-liferay-screens-for-ios)
 
-Liferay Screens separates its presentation and business-logic code using ideas 
+Liferay Screens separates its presentation and business-logic code using ideas
 from
-[Model View Presenter](http://en.wikipedia.org/wiki/Model-view-presenter), 
+[Model View Presenter](http://en.wikipedia.org/wiki/Model-view-presenter),
 [Model View ViewModel](http://en.wikipedia.org/wiki/Model_View_ViewModel),
-and 
-[VIPER](http://www.objc.io/issue-13/viper.html). However, Screens isn't a 
-canonical implementation of these architectures because they're designed for 
-apps. Screens isn't an app; it's a suite of visual components intended for use 
+and
+[VIPER](http://www.objc.io/issue-13/viper.html). However, Screens isn't a
+canonical implementation of these architectures because they're designed for
+apps. Screens isn't an app; it's a suite of visual components intended for use
 *in* apps. 
 
 This tutorial explains the architecture of Liferay Screens for iOS. It begins 
@@ -179,12 +179,12 @@ changes to an existing Theme. For example, you can create a Child Theme for
 Login Screenlet's Default Theme that sets new positions and sizes for the
 standard text boxes.
 
-**Extended:** Inherits the parent Theme's behavior and
-appearance, but lets you change and add to both. You can do so by creating a
-custom view class that extends parent Theme's view class and a new XIB file. An
-Extended Theme's parent must be a Full Theme. In the diagram, the Extended Theme
-inherits the Full Theme and extends its Screenlet's view class. Refer to the
-[Flat7 Theme](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Flat7) 
+**Extended:** Inherits the parent Theme's behavior and appearance, but lets you
+change and add to both. You can do so by creating a custom view class that
+extends parent Theme's view class and a new XIB file. An Extended Theme's parent
+must be a Full Theme. In the diagram, the Extended Theme inherits the Full Theme
+and extends its Screenlet's view class. Refer to the
+[Flat7 Theme](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Flat7)
 for an example of an Extended Theme.
 
 **Full:** Provides a complete standalone view. It has no parent Theme and
@@ -192,7 +192,7 @@ implements unique behavior and appearance for a Screenlet. Its view class must
 extend Screens's `BaseScreenletView` class and conform to the Screenlet's view
 model protocol. It must also specify a new UI in an XIB file. Full Themes can
 also serve as parents for Child and Extended Themes. Refer to the
-[Default Theme](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Default) 
+[Default Theme](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Default)
 for an example of a Full Theme.
 
 Themes in Liferay Screens are organized into sets that contain Themes for 
