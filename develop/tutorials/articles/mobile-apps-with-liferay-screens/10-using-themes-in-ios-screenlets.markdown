@@ -11,10 +11,13 @@ This tutorial shows you how to use themes in your iOS screenlets.
 To install a theme in your iOS app's screenlet, you have two options, depending 
 on how the theme has been published:
 
-1. If the theme has been packaged as a CocoaPods pod dependency, you can install 
-   and use the theme by adding the following line in your Podfile:
+1.  If the Theme has been packaged as a CocoaPods pod dependency, you can install 
+    it by adding a line to your Podfile:
 
-        pod 'LiferayScreens-YourThemeName'
+        pod 'LiferayScreensThemeName'
+
+    Make sure to replace `LiferayScreensThemeName` with the Theme's
+    CocoaPods project name. 
 
 2. If the theme isn't available through CocoaPods, you can drag and drop the 
    theme's folder into your project. Liferay Screens detects the new classes and 

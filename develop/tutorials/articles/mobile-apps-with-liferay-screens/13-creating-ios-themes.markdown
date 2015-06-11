@@ -1,6 +1,6 @@
 # Creating iOS Themes [](id=creating-ios-themes)
 
-By creating your own themes, you can customize your mobile app's look and feel
+By creating your own Themes, you can customize your mobile app's look and feel
 and functionality. You can create them from scratch or use an existing Theme as
 a foundation. Themes include a view class for implementing Screenlet behavior
 and an XIB file for specifying the UI. The three Liferay Screens Theme types
@@ -30,8 +30,8 @@ create some Themes!
 After determining the type of Theme to create, you need to determine where to
 create it. If you want to reuse or redistribute it, you should create it in an
 empty Cocoa Touch Framework project in Xcode. The 
-[publishing](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes#publish-your-themes-using-cocoapods)
-section later in this tutorial explains how to publish with CocoaPods. If you're
+[packaging](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes)
+tutorial explains how to package and publish with CocoaPods. If you're
 not planning to reuse or redistribute your Theme, you can create it directly
 inside your app project. 
 
@@ -44,7 +44,7 @@ In a Child Theme, you leverage a parent Theme's behavior and UI components, but
 you can modify the appearance and position of the UI components. Note that you
 can't add or remove any components and the parent Theme must be a Full Theme.
 The Child Theme presents visual changes with its own XIB file and inherits the
-parent's view class
+parent's view class. 
 
 For example, the Child Theme in Figure 1 presents the same UI components as the
 [Login Screenlet's](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Core/Auth/LoginScreenlet)
@@ -55,28 +55,31 @@ Default Theme, but enlarges them for viewing on devices with larger screens.
 You can follow these steps to create a Child Theme:  
 
 1.  In Xcode, create a new XIB file that's named after the Screenlet's view
-    class and your Theme's intended use case. You can use content from the
-    parent Theme's XIB file as a foundation for your new XIB file. In your new
-    XIB, you can change the UI components' visual properties (e.g., their position and size). You mustn't, however, change the XIB file's custom
-    class, outlet connection, or `restorationIdentifier`--these must match those
-    of the parent's XIB file.
+    class and your Theme. By convention, a XIB file for a Screenlet with a view
+    class named *FooScreenletView* and a Theme named *BarTheme* must be named
+    `FooScreenletView_barTheme.xib`. You can use content from the parent Theme's
+    XIB file as a foundation for your new XIB file. In your new XIB, you can
+    change the UI components' visual properties (e.g., their position and size).
+    You mustn't change, however, the XIB file's custom class, outlet connection,
+    or `restorationIdentifier`--these must match those of the parent's XIB file.
 
 	+$$$
 
 	The XIB file name serves as the Theme's Xcode name. For example, the Theme
 	in Figure 1 inherits from the Login Screenlet's Default Theme, which uses
-	the view class `LoginView_default`. Since the new child Theme's purpose is
-	to enlarge the UI components, its XIB file is named
-	`LoginView_large.xib` and its Xcode project is named `large`. 
+	the view class `LoginView_default`. The new child Theme is named *Large*
+	because it's purpose is to enlarge the Screenlet's UI components. In Xcode,
+	it's assigned the Theme Name *large*. The XIB file is named
+	`LoginView_large.xib`, after the Login Screenlet's view class and the
+	Theme's Xcode name.
 
 	$$$
 
-2.  [Package your Theme](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes). 
-
-Your Theme is ready to
-[install and use](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
-with its Screenlet. Fantastic! Next, you'll learn how to create an Extended
-Theme.
+You can optionally
+[package](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes) your
+Theme and/or start
+[using](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+it. Fantastic! Next, you'll learn how to create an Extended Theme.
 
 ## Extended Theme [](id=extended-theme)
 
@@ -89,7 +92,9 @@ for example, is an Extended Theme.
 These steps explain how to create an Extended Theme:
 
 1.  In Xcode, create a new XIB file named after the Screenlet's view class and
-    your Theme's intended use case. You can use the XIB file of your parent
+    your Theme. By convention, a XIB file for a Screenlet with a view class
+    named *FooScreenletView* and a Theme named *BarTheme* must be named
+    `FooScreenletView_barTheme.xib`. You can use the XIB file of your parent
     Theme as a template. Build your UI changes in your new XIB file with
     Interface Builder.
 
@@ -102,12 +107,12 @@ These steps explain how to create an Extended Theme:
 3.  Set your new view class as the custom class for your Theme's XIB file.
     If you added `@IBOutlet` or `@IBAction` actions, bind them to your class. 
 
-4.  [Package your Theme](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes).  
-
-Well done! Your Theme is ready to
-[install and use](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
-with its Screenlet. Now you know how to create and use an Extended Theme. Next,
-you'll learn how to create a Full Theme.
+Well done! You can optionally
+[package](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes) your
+Theme and/or start
+[using](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+it. Now you know how to create and use an Extended Theme. Next, you'll learn how
+to create a Full Theme.
 
 ## Full Theme [](id=full-theme)
 
@@ -116,15 +121,16 @@ using a parent Theme. Its view class must inherit Screens's
 [`BaseScreenletView`](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Framework/Core/Base/BaseScreenletView.swift)
 and conform to the Screenlet's view model protocol. It must also specify a new
 UI in an XIB file. As you create a Full Theme, you can refer to the tutorial
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets) to
-learn how to create these classes. 
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+to learn how to create these classes. 
 
 Follow these steps to create a Full Theme:
 
-1.  Create a new XIB file and use Interface Builder to build your UI. You can
-    use the XIB file from the Screenlet's default Theme as a template. Also, you
-    should name your new XIB file after the Screenlet's view class and your
-    Theme's intended use case. 
+1.  Create a new XIB file and use Interface Builder to build your UI. By
+    convention, a XIB file for a Screenlet with a view class named
+    *FooScreenletView* and a Theme named *BarTheme* must be named
+    `FooScreenletView_barTheme.xib`. You can use the XIB file from the
+    Screenlet's default Theme as a template. 
 
     ![Figure 3: This Full Theme for the Login Screenlet, includes a text field for entering the user name, uses the UDID for the password, and adds a *Sign In* button with the same `restorationIdentifier` as the Default Theme.](../../images/screens-ios-xcode-full-theme.png)
 
@@ -140,12 +146,12 @@ Follow these steps to create a Full Theme:
 3.  Set your Theme's new view class as your XIB file's custom class. And bind 
     any `@IBOutlet` and `@IBAction` actions to your class. 
 
-4.  [Package your Theme](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes). 
-
-Super! Your Theme is ready to
-[install and use](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
-with its Screenlet. Now you know how to create a Full Theme. Note a Full Theme
-can serve as a parent to a Child and Extended Theme.
+Super! You can optionally
+[package](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes) your
+Theme and/or start
+[using](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+it. Now you know how to create a Full Theme. Note a Full Theme can serve as a
+parent to a Child and Extended Theme. 
 
 You've mastered Themes! 
 

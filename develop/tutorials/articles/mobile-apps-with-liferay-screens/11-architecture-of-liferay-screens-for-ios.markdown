@@ -19,9 +19,9 @@ building blocks, you'll be ready to create some amazing Screenlets and Themes!
 ## High Level Architecture of Liferay Screens for iOS [](id=high-level-architecture-of-liferay-screens-for-ios)
 
 Liferay Screens for iOS is composed of a Core, a Screenlet layer, a view layer,
-and Server operations. Server operations, although technically part of the Core,
-are worth describing as they facilitate interaction with local and remote data
-sources and communication between the Screenlet layer and the
+and Server operations. Server operations are, although technically part of the
+Core, worth describing separately. They facilitate interaction with local and
+remote data sources and communication between the Screenlet layer and the
 [Liferay Mobile SDK](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/mobile). 
 
 ![Figure 1: The high level components of Liferay Screens for iOS.](../../images/screens-ios-architecture-01.png)
@@ -105,7 +105,7 @@ explained in this section.
 
 ![Figure 3: This diagram illustrates the iOS Screenlet Layer's relationship to other Screens components.](../../images/screens-ios-architecture-03.png)
 
-Screenlets are comprised of several Switft classes and a XIB file:
+Screenlets are comprised of several Swift classes and an XIB file:
 
 **MyScreenletData:** an interface that defines the attributes shown in the UI.
 It typically accounts for all the input and output values presented to the user.
@@ -116,10 +116,10 @@ configured by reading and validating these values. Also, the Screenlet can
 change these values based on any default values and operation results. 
 
 **MyScreenlet:**  a class that represents the Screenlet component the app
-developer interacts with. It's comprised of the following things:
+developer interacts with. It includes the following things:
 
 - Inspectable parameters for configuring the Screenlet's behavior. The
-  initial state can, optionally, be set in the Screenlet's data. 
+  initial state can be set in the Screenlet's data. 
 - A reference to the Screenlet's view, based on the selected Theme. To meet
   the Screenlet's requirements, all Themes must implement the `Data`
   interface. 
@@ -148,9 +148,9 @@ component's `restorationIdentifier` property is passed to the `onUserAction`
 method.
 
 **MyScreenletView_themeX.xib:** an XIB file that specifies how to render the
-Screenlet's view. Its name is very important. By convention, a Screenlet named
-*FooScreenlet* and a Theme named *BarTheme* must have an XIB file named
-`FooScreenlet_barTheme.xib`.
+Screenlet's view. Its name is very important. By convention, a Screenlet with a
+view class named *FooScreenletView* and a Theme named *BarTheme* must have an
+XIB file named `FooScreenletView_barTheme.xib`.
 
 For more details, refer to the tutorial
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets). 

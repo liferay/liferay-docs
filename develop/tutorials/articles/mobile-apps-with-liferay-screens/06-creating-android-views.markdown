@@ -2,8 +2,9 @@
 
 By creating your own Views, you can customize your mobile app's look and feel
 and functionality. You can create them from scratch or use an existing View as a
-foundation. Views include a View class for implementing Screenlet behavior and
-an XIB file for specifying the UI. The three Liferay Screens View types support
+foundation. Views include a View class for implementing Screenlet behavior, a
+Screenlet class for notifying listeners and invoking Interactors, and an XIB
+file for specifying the UI. The three Liferay Screens View types support
 different levels of customization and parent View inheritance. Here's what each
 View type offers: 
 
@@ -255,9 +256,9 @@ You can follow these steps to create a Full View:
 
 2.  Create a new custom View class named after the layout's root element. The
     tutorial on creating Android Screenlets explains how to
-    [create a View class](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-view-class). Note that you don't have to extend a View class to implement a View
-    model interface, but you might want to for convenience. The custom View
-    class
+    [create a View class](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-view-class).
+    Note that you don't have to extend a View class to implement a View model
+    interface, but you might want to for convenience. The custom View class
     [`LoginFullView`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/fullview/LoginFullView.java),
     for example, implements the
     [`LoginViewModel`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login/view/LoginViewModel.java)

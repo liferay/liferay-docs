@@ -14,15 +14,16 @@ steps):
 1.  Create an empty *Cocoa Touch Framework* Xcode project.
 
     ![Figure 1: Choose *Cocoa Touch Framework* when creating a project for your Theme.](../../images/screens-ios-cocoa-touch-framework.png)
-    
+
 2.  Name your project `LiferayScreensThemeName`, replacing `Name` with your
     Theme's name. You can specify any name, but it's a best practice to use your
-    Theme's Xcode name. The entire name becomes its project's CocoaPods name.
+    Theme's Xcode name, capitalizing its first letter. The entire name becomes
+    the Theme's CocoaPods name. 
 
 3.  Configure Liferay Screens for CocoaPods, using the steps described in 
     [Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens).
 
-4.  Prepare your Theme's classes and resources by making sure your   classes
+4.  Prepare your Theme's classes and resources by making sure your classes
     compile successfully in Xcode and by explicitly specifying a valid module
     for the custom class--the grayed-out *Current* default value only suggests a
     module.
@@ -35,9 +36,10 @@ steps):
 
 5.  In your project's root folder, add a file named
     `LiferayScreensTheme-Name.podspec` (change `Name` to your Theme's CocoaPods
-    name). Note: you must start your project's name with `LiferayScreens`.
+    name--the value you used to replace `Name` in step 2). Note: you must start
+    your the `.podspec` file's name and the project's name with `LiferayScreens`.
 
-	Add the following content to the file: 
+    Add the following content to the file: 
 
         Pod::Spec.new do |s|
             s.name = 'LiferayScreensThemeName'
@@ -56,14 +58,14 @@ steps):
         
             s.dependency 'LiferayScreens'
         end
-	
-	Make the following substitutions in the `.podspec` file:
+    
+    Make the following substitutions in the `.podspec` file:
 
-	* Replace `Name` in `LiferayScreensThemeName`, with your Theme's CocoaPods
-	  name. 
-	* Replace `your_repository_url` with your repository's URL.
-	* Replace `Your/Relative/Folder/` with the path to your source and resource
-	  files. 
+    * Replace `Name` in `LiferayScreensThemeName`, with your Theme's CocoaPods
+      name--the value you used to replace `Name` in step 2. 
+    * Replace `your_repository_url` with your repository's URL.
+    * Replace `Your/Relative/Folder/` with the path to your source and resource
+      files. 
 
 6. Commit your changes and push your project's branch to your Git repository.
 
