@@ -1,6 +1,6 @@
 # Creating Android Views [](id=creating-android-views)
 
-By creating your own Views, you can customize your mobile app's look and feel
+By creating your own Views, you can customize your mobile app's layout, style,
 and functionality. You can create them from scratch or use an existing View as a
 foundation. Views include a View class for implementing Screenlet behavior, a
 Screenlet class for notifying listeners and invoking Interactors, and an XIB
@@ -317,9 +317,9 @@ bintrayupload` to upload your project to jCenter. When finished, anyone can use
 the View, as they would any Android dependency, by adding the repository,
 artifact, group ID, and version to their Gradle file. 
 
-Super! Now you know how to create and package Views in Liferay Screens for 
-Android. This gives you extensive control over your app's look and feel, and 
-also lets you distribute and reuse your Views. 
+Super! Now you know how to create and package Views in Liferay Screens for
+Android. This gives you extensive control over your app's visual design and
+behavior, and also lets you distribute and reuse your Views. 
 
 ## Related Topics [](id=related-topics)
 

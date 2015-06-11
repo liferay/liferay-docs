@@ -8,8 +8,8 @@ Android and iOS, Screenlets are available to log in to your portal, create
 accounts, submit forms, display content, and more. You can use any number of
 Screenlets in your app; they're independent, so you can use them in modular
 fashion. Screenlets also deliver UI flexibility with pluggable *Views* (Android)
-or *Themes* (iOS) that implement look and feel and elegant user interfaces.
-Liferay's reference documentation for
+or *Themes* (iOS) that implement elegant user interfaces. Liferay's reference
+documentation for
 [Android](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
 and
 [iOS](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios)

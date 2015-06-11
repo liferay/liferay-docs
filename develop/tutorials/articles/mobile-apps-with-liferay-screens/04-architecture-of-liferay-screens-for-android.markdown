@@ -196,7 +196,7 @@ class, view class, and layout XML file. The layout XML file specifies the UI
 components, while the Screenlet class and view class control the View's
 behavior. By inheriting one or more of these View layer components from another
 View, the different View *types* allow varying levels of control over a
-Screenlet's look and feel.
+Screenlet's UI design and behavior.
 
 There are several different View types:
 

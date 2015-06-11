@@ -1,11 +1,11 @@
 # Creating iOS Themes [](id=creating-ios-themes)
 
-By creating your own Themes, you can customize your mobile app's look and feel
-and functionality. You can create them from scratch or use an existing Theme as
-a foundation. Themes include a view class for implementing Screenlet behavior
-and an XIB file for specifying the UI. The three Liferay Screens Theme types
-support different levels of customization and parent Theme inheritance. Here's
-what each Theme type offers: 
+By creating your own Themes, you can customize your mobile app's design and
+functionality. You can create them from scratch or use an existing Theme as a
+foundation. Themes include a view class for implementing Screenlet behavior and
+an XIB file for specifying the UI. The three Liferay Screens Theme types support
+different levels of customization and parent Theme inheritance. Here's what each
+Theme type offers: 
 
 **Child Theme:** presents the same UI components as its parent Theme, but lets 
 you change their appearance and position.

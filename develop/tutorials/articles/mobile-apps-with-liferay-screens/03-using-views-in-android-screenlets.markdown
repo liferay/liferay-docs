@@ -1,9 +1,9 @@
 # Using Views in Android Screenlets [](id=using-views-in-android-screenlets)
 
 Using a Liferay Screens *View*, you can set your Screenlet's UI components,
-behavior, and look and feel. They let you focus on a Screenlet's UI and UX,
-without having to worry about its core functionality. Liferay's Screenlets come
-with several Views, and more are being developed by Liferay and the community. A
+behavior, and style. They let you focus on a Screenlet's UI and UX, without
+having to worry about its core functionality. Liferay's Screenlets come with
+several Views, and more are being developed by Liferay and the community. A
 Liferay Screenlet's Views are specified in its
 [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android).
 This tutorial shows you how to use Views in Android Screenlets. It's

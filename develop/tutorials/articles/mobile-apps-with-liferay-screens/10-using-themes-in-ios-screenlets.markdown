@@ -1,10 +1,10 @@
 # Using Themes in iOS Screenlets [](id=using-themes-in-ios-screenlets)
 
 Using a Liferay Screens *Theme*, you can set your Screenlet's UI components,
-behavior, and look and feel. They let you focus on a Screenlet's UI and UX,
-without having to worry about its core functionality. Liferay's Screenlets come
-with several Themes, and more are being developed by Liferay and the community.
-A Liferay Screenlet's Themes are specified in its
+style, and behavior. They let you focus on a Screenlet's UI and UX, without
+having to worry about its core functionality. Liferay's Screenlets come with
+several Themes, and more are being developed by Liferay and the community. A
+Liferay Screenlet's Themes are specified in its
 [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
 This tutorial shows you how to use Themes in your iOS Screenlets. 
 
@@ -21,7 +21,7 @@ on how the Theme has been published:
 
 2. If the Theme isn't available through CocoaPods, you can drag and drop the 
    Theme's folder into your project. Liferay Screens detects the new classes and 
-   then applies the new look and feel in the runtime and in Interface Builder. 
+   then applies the new design in the runtime and in Interface Builder. 
 
 ![Figure 1: To install a Theme into an Xcode project, drag and drop the Theme's folder into it.](../../images/screens-ios-xcode-install-theme.png)
 

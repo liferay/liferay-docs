@@ -170,7 +170,7 @@ property `themeName` determines the Theme to load. This can be set by the
 Screenlet's *Theme Name* field in Interface Builder. A Theme consists of a view 
 class for Screenlet behavior and an XIB file for the UI. By inheriting one or 
 more of these components from another Theme, the different Theme *types* allow 
-varying levels of control over a Screenlet's look and feel. 
+varying levels of control over a Screenlet's  UI design and behavior. 
 
 ![Figure 4: The Theme Layer of Liferay Screens for iOS.](../../images/screens-ios-architecture-04.png)
 
