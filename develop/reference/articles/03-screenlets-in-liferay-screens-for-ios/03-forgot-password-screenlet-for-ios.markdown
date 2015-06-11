@@ -1,4 +1,4 @@
-# ForgotPasswordScreenlet for iOS [](id=forgotpasswordscreenlet-for-ios)
+# Forgot Password Screenlet for iOS [](id=forgotpasswordscreenlet-for-ios)
 
 ## Requirements [](id=requirements)
 
@@ -27,10 +27,10 @@ The available authentication methods are:
 
 ## Themes [](id=themes)
 
-- Default
-- Flat7
+- Default (`default`)
+- Flat7 (`flat7`)
 
-![The `ForgotPasswordScreenlet` with the Default and Flat7 themes.](../../images/screens-ios-forgotpwd.png)
+![The `ForgotPasswordScreenlet` with the Default and Flat7 Themes.](../../images/screens-ios-forgotpwd.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -40,7 +40,7 @@ passwords in the portal. The next sections show you how to do this.
 ### Authentication Method [](id=authentication-method)
 
 Note that the authentication method configured in the portal can be different 
-from the one used by this screenlet. For example, it's *perfectly fine* to use 
+from the one used by this Screenlet. For example, it's *perfectly fine* to use 
 `screenName` for sign in authentication, but allow users to recover their 
 password using the `email` authentication method.
 

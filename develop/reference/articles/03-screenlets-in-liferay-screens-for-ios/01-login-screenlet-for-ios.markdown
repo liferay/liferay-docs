@@ -1,4 +1,4 @@
-# LoginScreenlet for iOS [](id=loginscreenlet-for-ios)
+# Login Screenlet for iOS [](id=loginscreenlet-for-ios)
 
 ## Requirements [](id=requirements)
 
@@ -31,10 +31,10 @@ automatic login in subsequent sessions (see the `saveCredentials` attribute).
 
 ## Themes [](id=themes)
 
-- Default
-- Flat7
+- Default (`default`)
+- Flat7 (`flat7`)
 
-![The `LoginScreenlet` using the Default and Flat7 themes.](../../images/screens-ios-login.png)
+![The `LoginScreenlet` using the Default and Flat7 Themes.](../../images/screens-ios-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -73,5 +73,5 @@ following methods:
   after a successful login.
 
 - `- onScreenletCredentialsLoaded:`: Called when the user credentials are 
-  retrieved. Note that this only occurs when the screenlet is used and stored 
+  retrieved. Note that this only occurs when the Screenlet is used and stored 
   credentials are available.

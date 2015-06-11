@@ -1,4 +1,4 @@
-# LoginScreenlet for Android [](id=loginscreenlet-for-android)
+# Login Screenlet for Android [](id=loginscreenlet-for-android)
 
 ## Requirements [](id=requirements)
 
@@ -33,7 +33,7 @@ login in subsequent sessions.
 
 - Default
 
-![The `LoginScreenlet` using the Default and Material viewsets.](../../images/screens-android-login.png)
+![The `LoginScreenlet` using the Default and Material Viewsets.](../../images/screens-android-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -54,7 +54,7 @@ section of the User Guide.
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The layout to use to show the view. |
+| `layoutId` | `@layout` | The layout to use to show the View. |
 | `companyId` | `number` | When set, a user in the specified company is authenticated. If set to `0`, the company specified in `LiferayServerContext` is used. |
 | `authMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. The default value is `email`. |
 | `credentialsStore ` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |

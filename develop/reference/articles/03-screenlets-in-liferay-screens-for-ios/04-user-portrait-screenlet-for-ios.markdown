@@ -1,4 +1,4 @@
-# UserPortraitScreenlet for iOS [](id=userportraitscreenlet-for-ios)
+# User Portrait Screenlet for iOS [](id=userportraitscreenlet-for-ios)
 
 ## Requirements [](id=requirements)
 
@@ -21,10 +21,10 @@ the user doesn't have a portrait configured, a placeholder image is shown.
 
 ## Themes [](id=themes)
 
-- Default
-- Flat7
+- Default (`default`)
+- Flat7 (`flat7`)
 
-![The `UserPortraitScreenlet` using the Default and Flat7 themes.](../../images/screens-ios-portrait.png)
+![The `UserPortraitScreenlet` using the Default and Flat7 Themes.](../../images/screens-ios-portrait.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
