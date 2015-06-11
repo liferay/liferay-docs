@@ -1,0 +1,2851 @@
+<?xml version="1.0"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+	<description><![CDATA[Provides the AUI component tags, prefixed with <code>aui:</code>.]]></description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>aui</short-name>
+	<uri>http://alloy.liferay.com/tld/aui</uri>
+	<tag>
+		<description><![CDATA[Deprecated as of 6.2, replaced by aui:button.]]></description>
+		<name>button-item</name>
+		<tag-class>com.liferay.taglib.aui.ButtonItemTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[Whether to track the active state of the button.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
+			<name>activeState</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The outermost DOM node for the Widget, used for sizing and positioning
+	of a Widget as well as a containing element for any decorator elements used
+	for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
+			<name>boundingBox</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An object map of the CSS class names to use for the different interaction states.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
+			<name>classNames</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A DOM node that is a direct descendant of a Widget's bounding box that
+	houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
+			<name>contentBox</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to apply the default interaction state to the button<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
+			<name>defaultState</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Number representing the depth of this Widget relative to
+	the root Widget in the object heirarchy.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"-1"}-->]]></description>
+			<name>depth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Flag indicating whether or not this object
+	has been through the destroy lifecycle phase.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
+			<name>destroyed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Boolean indicating if the Widget should be disabled. The disabled implementation
+	is left to the specific classes extending widget.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Boolean indicating if the Widget, or one of its descendants,
+	has focus.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
+			<name>focused</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An event callback to handle when a user interacts with the button.
+	This can either be a function that will be attached on click, or
+	an object map that accepts the following keys:
+	<code>{fn: // The function to execute
+	context: // The context to execute the function in
+	type: // The type of event to listen for (defaults to "click")
+	}</code><!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false,"defaultValue":"false"}-->]]></description>
+			<name>handler</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[String with units, or number, representing the height of the Widget. If a number is provided,
+	the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[css class added to hide the <code>boundingBox</code> when
+	<a href="Component.html#config_visible">visible</a> is set to
+	<code>false</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false,"defaultValue":"aui-hide"}-->]]></description>
+			<name>hideClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to track the hover interaction state of the button.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
+			<name>hoverState</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The icon to use inside of the button. Possible values are:<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
+			<name>icon</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[DOM Node to display the icon of the ButtonItem. If not
+	specified try to query using HTML_PARSER an element inside
+	boundingBox which matches <code>aui-button-icon</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
+			<name>iconNode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
+			<name>buttonitemId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Number representing the Widget's ordinal position in its
+	parent Widget.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"0"}-->]]></description>
+			<name>index</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Flag indicating whether or not this object
+	has been through the init lifecycle phase.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
+			<name>initialized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to use inside of the button.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[DOM Node to display the text of the ButtonItem. If not
+	specified try to query using HTML_PARSER an element inside
+	boundingBox which matches <code>aui-button-label</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
+			<name>labelNode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Retrieves the parent of the Widget in the object hierarchy.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>buttonitemParent</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[If <code>true</code> the render phase will be autimatically invoked
+	preventing the <code>.render()</code> manual call.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false,"defaultValue":"false"}-->]]></description>
+			<name>render</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Flag indicating whether or not this Widget
+	has been through the render lifecycle phase.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
+			<name>rendered</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Returns the root Widget in the object hierarchy.  If the
+	ROOT_TYPE property is set, the search for the root Widget will be
+	constrained to parent Widgets of the specified type.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>root</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Number indicating if the Widget is selected.  Possible
+	values are:
+	<dl>
+	<dt>0</dt> <dd>(Default) Not selected</dd>
+	<dt>1</dt> <dd>Fully selected</dd>
+	<dt>2</dt> <dd>Partially selected</dd>
+	</dl><!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"0"}-->]]></description>
+			<name>selected</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The DOM node to parse for configuration values, passed to the Widget's HTML_PARSER definition<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
+			<name>srcNode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
+			<name>strings</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Number (between -32767 to 32767) indicating the widget's
+	position in the default tab flow.  The value is used to set the
+	"tabIndex" attribute on the widget's bounding box.  Negative values allow
+	the widget to receive DOM focus programmatically (by calling the focus
+	method), while being removed from the default tab flow.  A value of
+	null removes the "tabIndex" attribute from the widget's bounding box.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"0"}-->]]></description>
+			<name>tabIndex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to use as the title attribute of the button.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Button type.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false,"defaultValue":"button"}-->]]></description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Boolean indicating if use of the WAI-ARIA Roles and States should be
+	enabled for the Widget.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
+			<name>useARIA</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Boolean indicating weather or not the Widget is visible.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
+			<name>visible</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[String with units, or number, representing the width of the Widget. If a number is provided,
+	the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'activeState' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterActiveStateChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'boundingBox' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterBoundingBoxChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'classNames' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterClassNamesChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'contentBox' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterContentBoxChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'cssClass' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterCssClassChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'defaultState' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterDefaultStateChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'depth' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterDepthChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[<p>
+	Lifecycle event for the destroy phase,
+	fired prior to destruction. Invoking the preventDefault
+	method on the event object provided to subscribers will
+	prevent destruction from proceeding.
+	</p>
+	<p>
+	Subscribers to the "after" moment of this event, will be notified
+	after destruction is complete (and as a result cannot prevent
+	destruction).
+	</p><!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'destroyed' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterDestroyedChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'disabled' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterDisabledChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'focused' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterFocusedChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'handler' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterHandlerChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'height' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterHeightChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'hideClass' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterHideClassChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'hoverState' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterHoverStateChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'icon' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterIconChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'iconNode' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterIconNodeChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'id' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterIdChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'index' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterIndexChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[<p>
+	Lifecycle event for the init phase, fired prior to initialization.
+	Invoking the preventDefault() method on the event object provided
+	to subscribers will prevent initialization from occuring.
+	</p>
+	<p>
+	Subscribers to the "after" momemt of this event, will be notified
+	after initialization of the object is complete (and therefore
+	cannot prevent initialization).
+	</p><!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterInit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'initialized' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterInitializedChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'label' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterLabelChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'labelNode' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterLabelNodeChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'parent' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterParentChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'render' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterRenderChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'rendered' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterRenderedChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'root' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterRootChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'selected' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterSelectedChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'srcNode' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterSrcNodeChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'strings' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterStringsChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'tabIndex' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterTabIndexChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'title' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterTitleChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'type' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterTypeChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'useARIA' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterUseARIAChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'visible' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterVisibleChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Notification event, which widget implementations can fire, when
+	they change the content of the widget. This event has no default
+	behavior and cannot be prevented, so the "on" or "after"
+	moments are effectively equivalent (with on listeners being invoked before
+	after listeners).<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterContentUpdate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Lifecycle event for the render phase, fired prior to rendering the UI
+	for the widget (prior to invoking the widget's renderer method).
+	<p>
+	Subscribers to the "on" moment of this event, will be notified
+	before the widget is rendered.
+	</p>
+	<p>
+	Subscribers to the "after" moment of this event, will be notified
+	after rendering is complete.
+	</p><!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterRender</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'width' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>afterWidthChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'activeState' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onActiveStateChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'boundingBox' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onBoundingBoxChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'classNames' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onClassNamesChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'contentBox' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onContentBoxChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'cssClass' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onCssClassChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'defaultState' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onDefaultStateChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'depth' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onDepthChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[<p>
+	Lifecycle event for the destroy phase,
+	fired prior to destruction. Invoking the preventDefault
+	method on the event object provided to subscribers will
+	prevent destruction from proceeding.
+	</p>
+	<p>
+	Subscribers to the "after" moment of this event, will be notified
+	after destruction is complete (and as a result cannot prevent
+	destruction).
+	</p><!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onDestroy</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'destroyed' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onDestroyedChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'disabled' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onDisabledChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'focused' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onFocusedChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'handler' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onHandlerChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'height' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onHeightChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'hideClass' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onHideClassChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'hoverState' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onHoverStateChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'icon' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onIconChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'iconNode' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onIconNodeChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'id' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onIdChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'index' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onIndexChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[<p>
+	Lifecycle event for the init phase, fired prior to initialization.
+	Invoking the preventDefault() method on the event object provided
+	to subscribers will prevent initialization from occuring.
+	</p>
+	<p>
+	Subscribers to the "after" momemt of this event, will be notified
+	after initialization of the object is complete (and therefore
+	cannot prevent initialization).
+	</p><!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onInit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'initialized' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onInitializedChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'label' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onLabelChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'labelNode' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onLabelNodeChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'parent' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onParentChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'render' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onRenderChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'rendered' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onRenderedChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'root' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onRootChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'selected' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onSelectedChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'srcNode' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onSrcNodeChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'strings' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onStringsChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'tabIndex' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onTabIndexChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'title' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onTitleChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'type' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onTypeChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'useARIA' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onUseARIAChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'visible' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onVisibleChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Notification event, which widget implementations can fire, when
+	they change the content of the widget. This event has no default
+	behavior and cannot be prevented, so the "on" or "after"
+	moments are effectively equivalent (with on listeners being invoked before
+	after listeners).<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onContentUpdate</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Lifecycle event for the render phase, fired prior to rendering the UI
+	for the widget (prior to invoking the widget's renderer method).
+	<p>
+	Subscribers to the "on" moment of this event, will be notified
+	before the widget is rendered.
+	</p>
+	<p>
+	Subscribers to the "after" moment of this event, will be notified
+	after rendering is complete.
+	</p><!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onRender</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Fires when the value for the configuration attribute 'width' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
+			<name>onWidthChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates an anchor (or link) that offers custom configuration and localization.]]></description>
+		<name>a</name>
+		<tag-class>com.liferay.taglib.aui.ATag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A role for assistive technologies to interpret HTML elements that have been used for something other than their intended purpose. For example, the <code>&lt;p&gt;</code> tag could be used for something other than a paragraph.]]></description>
+			<name>ariaRole</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Miscellaneous data to be stored via a map. For example, the <code>HashMap&lt;"class-name", foo&gt;</code> would render as the attribute <code>data-class-name = foo;</code>.]]></description>
+			<name>data</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.util.Map</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A URL to navigate to when the link is clicked.]]></description>
+			<name>href</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text for the anchor's label.]]></description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A language to associate with the anchor component, to assist search engines and web browsers in finding and rendering the anchor appropriately.]]></description>
+			<name>lang</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to translate the label's text into the user's language. The default value is <code>true</code>.]]></description>
+			<name>localizeLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A function to be called on a user clicking the anchor.]]></description>
+			<name>onClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A target window in which to open the URL. The default value is <code>self</code>. Possible values are <code>blank</code>, <code>self</code>, <code>parent</code>, <code>top</code>, and a unique frame's name.]]></description>
+			<name>target</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A title for the anchor.]]></description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<name>alert</name>
+		<tag-class>com.liferay.taglib.aui.AlertTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>animated</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>closeable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>destroyOnHide</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>duration</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<name>audio</name>
+		<tag-class>com.liferay.taglib.aui.AudioTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>boundingBox</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>oggURL</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>swfURL</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a fully configurable button that offers portlet namespacing and custom icons.]]></description>
+		<name>button</name>
+		<tag-class>com.liferay.taglib.aui.ButtonTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component. These styles override the ones set by the <code>primary</code> attribute.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Miscellaneous data to be stored via a map. For example, the <code>HashMap&lt;"class-name", foo&gt;</code> would render as the attribute <code>data-class-name = foo;</code>.]]></description>
+			<name>data</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the component is disabled. The default value is <code>false</code>.]]></description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A URL to navigate to when the button is clicked.]]></description>
+			<name>href</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An icon to display on the button based on the icon CSS class value given. Possible CSS class values can be found at <a href="http://marcoceppi.github.io/bootstrap-glyphicons/">here</a>.]]></description>
+			<name>icon</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An alignment for the button's icon. The default value is <code>left</code>.]]></description>
+			<name>iconAlign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A name for the button.]]></description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A function to be called on a user clicking the button.]]></description>
+			<name>onClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to apply the <code>btn btn-primary</code> CSS styling to the button. If the <code>type</code> attribute is set to <code>submit</code>, this value is set to <code>true</code>. For all other types, the value is set to <code>false</code> by default.]]></description>
+			<name>primary</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The button's type. Possible values are <code>button</code>, <code>submit</code>, <code>cancel</code> and <code>reset</code>. The default value is <code>button</code>.]]></description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to open a dialog window with the <code>href</code> location when a user clicks the button. The default value is <code>false</code>.]]></description>
+			<name>useDialog</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to use the default portlet namespace, to avoid name conflicts. The default value is <code>true</code>.]]></description>
+			<name>useNamespace</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display on the button.]]></description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a button row <code>&lt;div&gt;</code> tag to wrap <code>&lt;aui:button&gt;</code> components and offer additional styling.]]></description>
+		<name>button-row</name>
+		<tag-class>com.liferay.taglib.aui.ButtonRowTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a column to display content in an <code>&lt;aui:row&gt;</code> component.]]></description>
+		<name>col</name>
+		<tag-class>com.liferay.taglib.aui.ColTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>lg</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>md</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>sm</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The width of the column in the containing row as a fraction of <code>12</code>. For example, a span of <code>4</code> would result in a column width <code>4/12</code> (or <code>1/3</code>) of the total width of the containing row.]]></description>
+			<name>span</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The width of the column in the containing row as a percentage, overriding the <code>span</code> attribute. The width is then converted to a span expressed as <code>((width/100) x 12)</code>, rounded to the nearest whole number. For example, a width of <code>33</code> would be converted to <code>3.96</code>, which would be rounded up to a span value of <code>4</code>.]]></description>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<name>xs</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Deprecated as of 6.2, replaced by <code>aui:col</code>.]]></description>
+		<name>column</name>
+		<tag-class>com.liferay.taglib.aui.ColumnTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[The width of the column in percentage. For example, <code>20</code> would be 20%. The default value is <code>0</code>.]]></description>
+			<name>columnWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the column should be the first column. The default value is <code>false</code>.]]></description>
+			<name>first</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the column is the last column. The default value is <code>false</code>.]]></description>
+			<name>last</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<name>component</name>
+		<tag-class>com.liferay.taglib.aui.ComponentTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>defineVar</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>excludeAttributes</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>javaScriptAttributes</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>module</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.util.Map</type>
+		</attribute>
+		<attribute>
+			<name>scriptPosition</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>tagPageContext</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>javax.servlet.jsp.JspContext</type>
+		</attribute>
+		<attribute>
+			<name>useJavaScript</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.io.Serializable</type>
+		</attribute>
+		<attribute>
+			<name>var</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a container <code>&lt;div&gt;</code> tag to wrap <code>&lt;aui:row&gt;</code> components and offer additional styling.]]></description>
+		<name>container</name>
+		<tag-class>com.liferay.taglib.aui.ContainerTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to enable the container to span the entire width of the viewport. The default value is <code>true</code>.]]></description>
+			<name>fluid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a <code>&lt;div&gt;</code> tag to wrap form fields and offer additional styling.]]></description>
+		<name>field-wrapper</name>
+		<tag-class>com.liferay.taglib.aui.FieldWrapperTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Miscellaneous data to be stored via a map. For example, the <code>HashMap&lt;"class-name", foo&gt;</code> would render as the attribute <code>data-class-name = foo;</code>.]]></description>
+			<name>data</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the wrapper should be the first element of the form. The default value is <code>false</code>.]]></description>
+			<name>first</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display as a help tooltip on mouse over of the component's help icon.]]></description>
+			<name>helpMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to make this field inline with the next element. The default value is <code>false</code>.]]></description>
+			<name>inlineField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The alignment for the label's text. Possible values are <code>right</code> and <code>left</code>.]]></description>
+			<name>inlineLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text for the wrapper's label.]]></description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the wrapper should be the last element of the form. The default value is <code>false</code>.]]></description>
+			<name>last</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to translate the label's text into the user's language. The default value is <code>true</code>.]]></description>
+			<name>localizeLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A name for the field wrapper.]]></description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to mark the wrapped fields as required.]]></description>
+			<name>required</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a <code>&lt;div&gt;</code> tag to group related form elements and offer additional styling.]]></description>
+		<name>fieldset</name>
+		<tag-class>com.liferay.taglib.aui.FieldsetTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[Whether to display the field set as a column instead of a row.]]></description>
+			<name>column</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display as a help tooltip on mouse over of the component's help icon.]]></description>
+			<name>helpMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text for the field set's label and renders it as a legend, with a horizontal rule, above the fieldset.]]></description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Sets whether to translate the label's text into the user's language. The default value is <code>true</code>.]]></description>
+			<name>localizeLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a form that offers additional styling and custom namespacing.]]></description>
+		<name>form</name>
+		<tag-class>com.liferay.taglib.aui.FormTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[Where to send the form data when the form is submitted.]]></description>
+			<name>action</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to escape the XML of the form's action URL. The default value is <code>true</code>.]]></description>
+			<name>escapeXml</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to align the form's labels. The default value is <code>false</code>.]]></description>
+			<name>inlineLabels</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The method to send the form data. The default value is <code>post</code>. Possible values are <code>get</code> and <code>post</code>.]]></description>
+			<name>method</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A name for the form that is also used for the ID of the component instance. The default value is <code>fm</code>.]]></description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A function to be called on submitting the form.]]></description>
+			<name>onSubmit</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A namespace for the form and its elements. This attribute lets you set a namespace value that differs from the default portlet namespace.]]></description>
+			<name>portletNamespace</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to use the default portlet namespace, to avoid name conflicts. The default value is <code>true</code>.]]></description>
+			<name>useNamespace</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a customizable icon that can leverage Bootstrap CSS icon classes.]]></description>
+		<name>icon</name>
+		<tag-class>com.liferay.taglib.aui.IconTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A class to give to the container of the icon, to provide an implementation for the icon. Note that the preferred method of setting the icon's image is via the <code>image</code> attribute.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Miscellaneous data to be stored via a map. For example, the <code>HashMap&lt;"class-name", foo&gt;</code> would render as the attribute <code>data-class-name = foo;</code>.]]></description>
+			<name>data</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.util.Map</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The image to display for the icon. Values are taken from the suffix of the Bootstrap icon CSS classes. For example, to display the edit icon you would reference the <code>icon-edit</code> CSS class by setting the value <code>edit</code>. If an icon image is referenced for <code>cssClass</code> and <code>image</code>, both icons are shown in the component.]]></description>
+			<name>image</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display alongside the icon.]]></description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The target window in which the URL is opened. The default value is <code>self</code>. Possible values are <code>blank</code>, <code>self</code>, <code>parent</code>, <code>top</code>, and a unique frame's name.]]></description>
+			<name>target</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A URL navigated to when the icon is clicked.]]></description>
+			<name>url</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a configurable input component.]]></description>
+		<name>input</name>
+		<tag-class>com.liferay.taglib.aui.InputTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[Whether to focus on the input component by default.]]></description>
+			<name>autoFocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to autosize the input component.]]></description>
+			<name>autoSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A bean to associate with the input component.]]></description>
+			<name>bean</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to reload the page when the value of the input changes. The default value is <code>false</code>.]]></description>
+			<name>changesContext</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to select the input. Note that this attribute is only enabled when <code>type</code> is <code>radio</code> or <code>checkbox</code>.]]></description>
+			<name>checked</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The primary key for the instance of the class. The default value is <code>0</code>.]]></description>
+			<name>classPK</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>long</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The primary key for the class type. The default value is <code>-1</code>.]]></description>
+			<name>classTypePK</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>long</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Miscellaneous data to be stored via a map. For example, the <code>HashMap&lt;"class-name", foo&gt;</code> would render as the attribute <code>data-class-name = foo;</code>.]]></description>
+			<name>data</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<name>dateTogglerCheckboxLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The default language ID for the component.]]></description>
+			<name>defaultLanguageId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the component is disabled. The default value is <code>false</code>.]]></description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>field</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A variable name to refer to the <code>field</code> of the component.]]></description>
+			<name>fieldParam</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the input component should be the first element of the form.]]></description>
+			<name>first</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A name for the form.]]></description>
+			<name>formName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display as a help tooltip on mouse over of the component's help icon.]]></description>
+			<name>helpMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the help message text. The default value is <code>input-group-addon</code>.]]></description>
+			<name>helpTextCssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to ignore the value saved from the request object. The default value is <code>false</code>.]]></description>
+			<name>ignoreRequestValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to align the input's field with the next element in the form. The default value is <code>false</code>.]]></description>
+			<name>inlineField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The input label's text alignment. Possible values are <code>right</code> and <code>left</code>.]]></description>
+			<name>inlineLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A label for the input component. If not assigned a value, the label is automatically taken from the <code>name</code> attribute's value.]]></description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to translate the label's text into the user's language. The default value is <code>true</code>.]]></description>
+			<name>localizeLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>languageId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the component should be the last element of the form.]]></description>
+			<name>last</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to translate the component's text features into the user's language. The default value is <code>false</code>.]]></description>
+			<name>localized</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The maximum value for the input if its <code>type</code> is <code>number</code> or <code>range</code>. Note that the max value is inclusive if the input's <code>type</code> is <code>range</code>.]]></description>
+			<name>max</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A class for the bean object.]]></description>
+			<name>model</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Class</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The minimum value for the input if its <code>type</code> is <code>number</code> or <code>range</code>. Note that the min value is inclusive if the input's <code>type</code> is <code>range</code>.]]></description>
+			<name>min</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<name>multiple</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A name for the component.]]></description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A function to be called when the input's value changes.]]></description>
+			<name>onChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A function to be called on a user clicking the input.]]></description>
+			<name>onClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Placeholder text for the input's field.]]></description>
+			<name>placeholder</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display before the input.]]></description>
+			<name>prefix</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to mark the input as required.]]></description>
+			<name>required</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to make the input's field resizeable, if the input is of type <code>textarea</code>.]]></description>
+			<name>resizable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to show the input's required label, if an input value is required.]]></description>
+			<name>showRequiredLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display after the input.]]></description>
+			<name>suffix</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A title for the input.]]></description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The input's type. Possible values are <code>text</code>, <code>hidden</code>, <code>assetCategories</code>, <code>assetTags</code>, <code>textarea</code>, <code>timeZone</code>, <code>password</code>, <code>checkbox</code>, <code>radio</code>, <code>submit</code>, <code>button</code>, <code>color</code>, <code>email</code>, <code>number</code>, <code>range</code>, <code>resource</code>, <code>url</code>, and an empty value. If an empty value or no value is set, the input's type is obtained automatically from the input component's bean.]]></description>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to use the default portlet namespace, to avoid name conflicts. The default value is <code>true</code>.]]></description>
+			<name>useNamespace</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A value for the input.]]></description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to wrap the input component in a <code>div</code>, that can be styled. The default value is <code>false</code>. If the <code>wrapperCssClass</code> attribute is configured, the value is set automatically to <code>true</code>.]]></description>
+			<name>wrappedField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the <code>div</code> that wraps the input component.]]></description>
+			<name>wrapperCssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Deprecated as of 6.2, with no replacement.]]></description>
+		<name>layout</name>
+		<tag-class>com.liferay.taglib.aui.LayoutTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a configurable model context object that can be used as a model for other components.]]></description>
+		<name>model-context</name>
+		<tag-class>com.liferay.taglib.aui.ModelContextTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A bean associated with the model object.]]></description>
+			<name>bean</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The default language ID for the component.]]></description>
+			<name>defaultLanguageId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A class for the bean object.]]></description>
+			<name>model</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Class</type>
+		</attribute>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a navigation wrapper component to hold <code>&lt;nav:item&gt;</code> components for an <code>&lt;aui:nav-bar&gt;</code> component.]]></description>
+		<name>nav</name>
+		<tag-class>com.liferay.taglib.aui.NavTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A name for the navigation component for assistive technologies to interpret.]]></description>
+			<name>ariaLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A role for assistive technologies to interpret HTML elements that have been used for something other than their intended purpose. For example, the <code>&lt;p&gt;</code> tag could be used for something other than a paragraph.]]></description>
+			<name>ariaRole</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>collapsible</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A search container for the navigation component to use.]]></description>
+			<name>searchContainer</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>com.liferay.portal.kernel.dao.search.SearchContainer</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to use the default portlet namespace, to avoid name conflicts. The default value is <code>true</code>.]]></description>
+			<name>useNamespace</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a navigation bar to house navigation components.]]></description>
+		<name>nav-bar</name>
+		<tag-class>com.liferay.taglib.aui.NavBarTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a search component for an <code>&lt;aui:nav-bar&gt;</code> component.]]></description>
+		<name>nav-bar-search</name>
+		<tag-class>com.liferay.taglib.aui.NavBarSearchTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>file</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A search container for the navigation bar to use.]]></description>
+			<name>searchContainer</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>com.liferay.portal.kernel.dao.search.SearchContainer</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a navigation item for using in an <code>&lt;aui:nav&gt;</code> component.]]></description>
+		<name>nav-item</name>
+		<tag-class>com.liferay.taglib.aui.NavItemTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the link set in the <code>href</code> attribute.]]></description>
+			<name>anchorCssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Miscellaneous data to be stored via a map. For example, the <code>HashMap&lt;"class-name", foo&gt;</code> would render as the attribute <code>data-class-name = foo;</code>.]]></description>
+			<name>anchorData</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the instance of the navigation item's link, set in the <code>href</code> attribute.]]></description>
+			<name>anchorId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A name for the navigation item for assistive technologies to interpret.]]></description>
+			<name>ariaLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A role for assistive technologies to interpret HTML elements that have been used for something other than their intended purpose. For example, the <code>&lt;p&gt;</code> tag could be used for something other than a paragraph.]]></description>
+			<name>ariaRole</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Miscellaneous data to be stored via a map. For example, the <code>HashMap&lt;"class-name", foo&gt;</code> would render as the attribute <code>data-class-name = foo;</code>.]]></description>
+			<name>data</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the navigation item is a dropdown menu. The default value is <code>false</code>.]]></description>
+			<name>dropdown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A URL navigated to when the navigation item is clicked.]]></description>
+			<name>href</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the navigation item's icon.]]></description>
+			<name>iconCssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>iconSrc</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display for the navigation item.]]></description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to translate the label's text into the user's language. The default value is <code>true</code>.]]></description>
+			<name>localizeLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the navigation item is selected by default. The default value is <code>false</code>.]]></description>
+			<name>selected</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>state</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>target</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Sets the navigation item's title.]]></description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>toggle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>toggleTouch</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to open a dialog window with the <code>href</code> location when a user clicks the navigation item. The default value is <code>false</code>.]]></description>
+			<name>useDialog</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to wrap the navigation item's dropdown menu in an unordered list with the <code>drop-down-menu</code> class. The default value is <code>true</code>.]]></description>
+			<name>wrapDropDownMenu</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates an option component for using in an <code>&lt;aui:select&gt;</code> component.]]></description>
+		<name>option</name>
+		<tag-class>com.liferay.taglib.aui.OptionTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Miscellaneous data to be stored via a map. For example, the <code>HashMap&lt;"class-name", foo&gt;</code> would render as the attribute <code>data-class-name = foo;</code>.]]></description>
+			<name>data</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.util.Map</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the component is disabled. The default value is <code>false</code>.]]></description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display as the option in the select form.]]></description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to translate the label's text into the user's language. The default value is <code>true</code>.]]></description>
+			<name>localizeLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the option is selected when the component loads. The default value is <code>false</code>.]]></description>
+			<name>selected</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Styling for the option component. For example, to align the text to the right you would specify <code>text-align:right;</code>.]]></description>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>useModelValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A value for the option. If no value is given, the value is taken from the <code>label</code> attribute.]]></description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<name>panel</name>
+		<tag-class>com.liferay.taglib.aui.PanelTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>collapsed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>collapsible</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>localizeLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a row to hold <code>&lt;aui:col&gt;</code> components.]]></description>
+		<name>row</name>
+		<tag-class>com.liferay.taglib.aui.RowTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a script component in which to write JavaScript that facilitates using AlloyUI modules.]]></description>
+		<name>script</name>
+		<tag-class>com.liferay.taglib.aui.ScriptTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A position for the script.]]></description>
+			<name>position</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>sandbox</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[AlloyUI modules to be used in the script. Names of multiple modules must be separated by commas.]]></description>
+			<name>use</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a select field (or combo box) for holding <code>&lt;aui:option&gt;</code> components.]]></description>
+		<name>select</name>
+		<tag-class>com.liferay.taglib.aui.SelectTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A bean associated with the select component.]]></description>
+			<name>bean</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to reload the page when the value of the field changes. The default value is <code>false</code>.]]></description>
+			<name>changesContext</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the component.]]></description>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Miscellaneous data to be stored via a map. For example, the <code>HashMap&lt;"class-name", "foo"&gt;</code> would render as the attribute <code>data-class-name = "foo";</code>.]]></description>
+			<name>data</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.util.Map</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the component is disabled. The default value is <code>false</code>.]]></description>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the component should be the first element of the form. The default value is <code>false</code>.]]></description>
+			<name>first</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display as a help tooltip on mouse over of the component's help icon.]]></description>
+			<name>helpMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>ignoreRequestValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to align the select field with the next element in the form. The default value is <code>false</code>.]]></description>
+			<name>inlineField</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An alignment for the label's text. Possible values are <code>right</code> and <code>left</code>.]]></description>
+			<name>inlineLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A label for the select field that is displayed above the field.]]></description>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether the component should be the last element in the form. The default value is <code>false</code>.]]></description>
+			<name>last</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A list type in which to automatically generate the options. Possible values can be found in <code>ListTypeImpl.java</code>.]]></description>
+			<name>listType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>listTypeFieldName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to translate the label's text into the user's language. The default value is <code>true</code>.]]></description>
+			<name>localizeLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether multiple options can be selected. If set to <code>true</code>, the select field expands to allow for multiple selections. The default value is <code>false</code>.]]></description>
+			<name>multiple</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A name for the select field. Note that this value overrides the <code>label</code> attribute and takes the place of the label.]]></description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A function to be called when the select field's value changes.]]></description>
+			<name>onChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A function to be called on users clicking the select field.]]></description>
+			<name>onClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display before the select field.]]></description>
+			<name>prefix</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to mark the select field as required. The default value is <code>false</code>.]]></description>
+			<name>required</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to display an empty option as a placeholder. The default value is <code>false</code>.]]></description>
+			<name>showEmptyOption</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to display the required label above the select field. Note that this attribute is only active if the <code>required</code> attribute is set to <code>true</code>. The default value is <code>false</code>.]]></description>
+			<name>showRequiredLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display after the select field.]]></description>
+			<name>suffix</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A title for the select field.]]></description>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to use the default portlet namespace, to avoid name conflicts. The default value is <code>true</code>.]]></description>
+			<name>useNamespace</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A CSS class for styling the <code>div</code> that wraps the select field.]]></description>
+			<name>wrapperCssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a spacer component that enables JSP 2.1 server-side trimming of white spaces.]]></description>
+		<name>spacer</name>
+		<tag-class>com.liferay.taglib.aui.SpacerTag</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a UI component for managing translation of associated content.]]></description>
+		<name>translation-manager</name>
+		<tag-class>com.liferay.taglib.aui.TranslationManagerTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[Available locales of translation languages from which to choose.]]></description>
+			<name>availableLocales</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.util.Locale[]</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The language ID to which the translation manager defaults when no other translations are available in the user's language.]]></description>
+			<name>defaultLanguageId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>editingLanguageId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to activate the translation manager. The default value is <code>true</code>. If this is set to <code>false</code>, the translation manager will not work entirely.]]></description>
+			<name>initialize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to make the translation manager read-only for the user. The default value is <code>false</code>.]]></description>
+			<name>readOnly</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a component to validate input fields.]]></description>
+		<name>validator</name>
+		<tag-class>com.liferay.taglib.aui.ValidatorTagImpl</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A custom error message to replace the default validation error message.]]></description>
+			<name>errorMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The type of validation for the input field. Possible values are <code>acceptFiles</code>, <code>alpha</code>, <code>alphanum</code>, <code>date</code>, <code>digits</code>, <code>email</code>, <code>equalTo</code>, <code>iri</code>, <code>max</code>, <code>maxLength</code>, <code>min</code>, <code>minLength</code>, <code>number</code>, <code>required</code>, and <code>url</code>.]]></description>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<name>video</name>
+		<tag-class>com.liferay.taglib.aui.VideoTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>boundingBox</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>cssClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>flashPlayerVersion</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>ogvURL</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>poster</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>swfURL</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[Creates a UI component that displays the current status of its associated workflow.]]></description>
+		<name>workflow-status</name>
+		<tag-class>com.liferay.taglib.aui.WorkflowStatusTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description><![CDATA[A bean associated with the workflow status component.]]></description>
+			<name>bean</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Object</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Text to display as a help tooltip on mouse over of the component's help icon.]]></description>
+			<name>helpMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[An ID for the component instance.]]></description>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A class for the bean object.]]></description>
+			<name>model</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Class</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to show the workflow status icon. The default value is <code>true</code>.]]></description>
+			<name>showIcon</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[Whether to show the status label. The default value is <code>true</code>.]]></description>
+			<name>showLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A workflow status. Possible values are <code>0</code> (Approved), <code>1</code> (Pending), <code>2</code> (Draft), <code>3</code> (Expired), <code>4</code> (Denied), <code>5</code> (Inactive), <code>6</code> (Incomplete), <code>7</code> (Scheduled), and <code>8</code> (In-Trash). Any other value defaults to status (Any).]]></description>
+			<name>status</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Integer</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A workflow status message that overrides the existing one.]]></description>
+			<name>statusMessage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[A version for the workflow status that is displayed in a label next to the workflow status.]]></description>
+			<name>version</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+</taglib>
