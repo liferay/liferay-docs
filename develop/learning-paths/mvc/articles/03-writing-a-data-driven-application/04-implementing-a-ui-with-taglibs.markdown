@@ -263,5 +263,5 @@ want to add, some of which are listed below.
 
 ## Next Steps [](id=next-steps)
 
-[Setting Permissions](/develop/learning-paths/-/knowledge_base/6-2/setting-permissions)
+[Setting Permissions](/develop/learning-paths/mvc/-/knowledge_base/6-2/setting-permissions)
 
