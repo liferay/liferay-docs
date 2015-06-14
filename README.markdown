@@ -38,9 +38,8 @@ GitHub.
 
     - <a href="distribute/new-articles" target="_blank">`distribute/new-articles`</a>
 
-3.  Select the liferay-docs branch
-    that matches the Liferay
-    Portal version you're writing about:
+3.  Select the liferay-docs branch that matches the Liferay Portal version
+    you're writing about: 
 
     <table border="1">
     <tr>
