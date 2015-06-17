@@ -48,8 +48,8 @@ project.
 ## Creating a Hook Project from the Command Line [](id=creating-a-hook-project-from-the-command-line)
 
 From your command line terminal, navigate to your Plugins SDK's `hooks` folder.
-To create a hook project, you must execute the *create* script. Here's the format
-to follow in executing the script: 
+To create a hook project, you must execute the *create* script. Here's the
+format to follow in executing the script: 
 
     create.[sh|bat] [project-name] "[Hook Display Name]"
 
