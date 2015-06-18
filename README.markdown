@@ -1,5 +1,7 @@
 # LIFERAY-DOCS
 
+[![Join the chat at https://gitter.im/liferay/liferay-docs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/liferay/liferay-docs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <a href="https://dev.liferay.com" >
 <img src="guidelines/images/liferayDeveloperNetworkSmallerEdit7.jpg" alt="Liferay Docs Icon">
 </a>
