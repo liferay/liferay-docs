@@ -4,6 +4,8 @@
 <img src="guidelines/images/liferayDeveloperNetworkSmallerEdit7.jpg" alt="Liferay Docs Icon">
 </a>
 
+[![Join the chat at https://gitter.im/rotty3000/blade](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/liferay/liferay-docs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Welcome to Liferay's official documentation project, the home of
 [Liferay Developer Network](https://dev.liferay.com) articles. All articles are
 written in
