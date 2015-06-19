@@ -109,7 +109,7 @@ Next, you'll look at the changes to the tags in the `aui-cc` namespace.
 ### Changes to the Liferay Faces Alloy aui-cc Tags [](id=changes-to-the-liferay-faces-alloy-aui-cc-tags)
 
 Below is a table of the `aui-cc` tags that are deprecated or removed with
-respect to the Liferay Faces 3.2, 4.1, and 4.2 releases: 
+respect to the Liferay Faces 3.2 and 4.2 releases:
 
 **Tag Deprecations in the `aui-cc` Namespace**
 
@@ -118,13 +118,13 @@ respect to the Liferay Faces 3.2, 4.1, and 4.2 releases:
 | `aui-cc:button` |
 | `aui-cc:input` |
 | `aui-cc:select` |
-| `aui-cc:message` (**REMOVED in 4.1/4.2**) |
-| `aui-cc:messages` (**REMOVED in 4.1/4.2**) |
+| `aui-cc:message` (**REMOVED in 4.2**) |
+| `aui-cc:messages` (**REMOVED in 4.2**) |
 
 +$$$
 
 **Note:** The `aui-cc:message` and `aui-cc:messages` tags have been completely
-removed in 4.1/4.2 because no analogous tags in Liferay Portal exist for them
+removed in 4.2 because no analogous tags in Liferay Portal exist for them
 and their functionality is already implemented in the bridge's `h:message` and
 `h:messages` tags, respectively. 
 
