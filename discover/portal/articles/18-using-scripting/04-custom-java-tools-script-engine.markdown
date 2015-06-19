@@ -27,7 +27,7 @@ Instead, you'll begin by adding your utility code.
 
 You'll be following the Dependency Injection design pattern so begin by creating
 the interface. Right click on the `docroot/WEB-INF/src` folder and select *New*
-&rarr; *Interface*. You'll create your interface in the `com.liferay.sample`
+&rarr; *Interface*. You'll create your interface in the `com.liferay.samples`
 package. Name it `ScriptUtil`. 
 
 ![Figure 18.2: Create a new Java Interface which you'll later
@@ -47,8 +47,8 @@ Next, add two methods to the interface.
 
 Next, create the implementation class. Right click on the `docroot/WEB-INF/src`
 folder and select *New* &rarr; *Class*. Create the interface in the
-`com.liferay.sample` package and name it `ScriptUtilImpl`. Be sure to select
-`com.liferay.sample.ScripUtil` as the Interface. 
+`com.liferay.samples` package and name it `ScriptUtilImpl`. Be sure to select
+`com.liferay.samples.ScripUtil` as the Interface. 
 
 ![Figure 18.3: Create a new Java Class that implements the interface you created
 earlier.](../../images/13-new-class.png)
@@ -89,7 +89,7 @@ Create this file in the `docroot/WEB-INF/` directory and add the following code:
 	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 	<beans>
-		<bean id="com.liferay.sample.ScriptUtil" class="com.liferay.sample.ScriptUtilImpl" />
+		<bean id="com.liferay.samples.ScriptUtil" class="com.liferay.samples.ScriptUtilImpl" />
 	</beans>
 
 Upon deployment, you'll need the portal to create a `BeanLocator` for your
@@ -101,14 +101,19 @@ is not already using Service Builder, you'll need to define a context loader
 listener in our Hook to provide a `BeanLocator`. Open the
 `docroot/WEB-INF/web.xml` file and replace its contents with the following code: 
 
-	<?xml version="1.0"?>
-	<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.5"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-	<web-app>
-		<listener>
-			<listener-class>com.liferay.portal.kernel.spring.context.PortletContextLoaderListener</listener-class>
-		</listener>
-	</web-app>
+	<context-param>
+		<param-name>portalContextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>com.liferay.portal.kernel.spring.context.PortletContextLoaderListener</listener-class>
+	</listener>
+</web-app>
 	
 Save all of the changes you've made and deploy the hook. Once the hook has been
 deployed successfully, the `ScriptUtil` can be used in your script engine code. 
