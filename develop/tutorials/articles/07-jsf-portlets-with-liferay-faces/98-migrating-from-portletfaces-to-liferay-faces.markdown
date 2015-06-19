@@ -127,7 +127,7 @@ Each link for the VDL documentation contains information about all the `aui`,
 for that version of the Liferay Faces Bridge, so each VDL documentation link
 basically holds the entirety of the PortletFaces tag library documentation (with
 the exception of certain tags which are excluded from certain versions of the
-Lfieray Faces Bridge). 
+Liferay Faces Bridge). 
 
 By using the VDL documentation, your migration of the facelet tag library
 namespaces from PortletFaces to Liferay Faces is a snap! 
