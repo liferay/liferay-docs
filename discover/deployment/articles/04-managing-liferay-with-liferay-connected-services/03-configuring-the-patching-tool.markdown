@@ -15,9 +15,11 @@ each command that has it.
 2. Make sure that you have version 10 or higher of the patching tool. To 
    display the version of your patching tool, run `patching-tool.sh info`.
 
-3. Configure the patching tool by running `patching-tool.sh setup`.
+3. Let the patching tool discovers your liferay installation by running `patching-tool.sh auto-discovery`.
 
-4. Patches downloaded through LCS are installed by the patching tool agent on 
+4. Configure the patching tool by running `patching-tool.sh setup`.
+
+5. Patches downloaded through LCS are installed by the patching tool agent on 
    server startup. For the agent to start with your server, you need to set the 
    `javaagent` property in the JVM options. Make sure that you specify the 
    correct file path to the `patching-tool-agent.jar`. Here's an example of 
