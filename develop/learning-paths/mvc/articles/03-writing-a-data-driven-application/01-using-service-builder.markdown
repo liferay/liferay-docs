@@ -138,9 +138,9 @@ one site could host different wikis on different pages.
 If you write your application to support this, Liferay handles all of it
 automatically for you. You've already taken steps to support scope in your
 application by adding the default columns to your entities. Those default
-columns included the [Company ID](/encyclopedia/-/wiki/Main/Company+ID), 
-the [Group ID](/encyclopedia/-/wiki/Main/Group+ID),
-the [User ID](/encyclopedia/-/wiki/Main/User+ID), the
+columns included the [Company ID](/participate/liferaypedia/-/wiki/Main/Company+ID), 
+the [Group ID](/participate/liferaypedia/-/wiki/Main/Group+ID),
+the [User ID](/participate/liferaypedia/-/wiki/Main/User+ID), the
 user name, and some metadata, such as the create and modify dates. 
 
 The next thing you have to do is make sure your application's queries filter by
