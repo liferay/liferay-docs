@@ -149,6 +149,58 @@ triggered:
 
 ![Figure 2: Here's an example of a finished portlet that uses the above code.](../../images/aui-validator-01.png)
 
+The custom error message is supplied as a string at the moment. As this is not
+best practice, you should supply the custom error message via a language key.
+You'll take care of this next.
+
+## Creating a Language Key Hook for the Error Message
+
+In order to supply the language key for the custom error message you will need
+to create a hook.
+
+Follow the steps below to create the language key hook:
+    
+1.  Goto *File*&rarr;*New*&rarr;*Liferay Plugin Project*.
+
+2.  Set the *Project name* as `aui-validator-language-hook` and *Display name* 
+as `Aui Validator Language Hook`.
+
+3. Set the proper SDK and runtime, select *Hook* for the *Plugin type*, and
+click *Finish*.
+
+    The skeleton for the hook is complete. Now you need to configure the hook to
+    modify the existing language properties. In this case you'll be modifying
+    the English US language properties, but the process can be used to hook into
+    any existing language properties file.
+
+1. Right-click the language key hook you just created in the package explorer
+on the left and select *New*&rarr;*Liferay Hook Configuration*.
+
+2. With `aui-validator-language-hook` set as the *Hook plugin project* select
+*Language properties* for the *hook type* and *click* *Next*.
+
+3. Leave the default *Content folder* and click *Add*.
+
+4. Enter *Language_en.properties* for the property file, click *OK* and 
+*Finish*.
+
+5. Open the `docroot/WEB-INF/src` folder of the `aui-validator-language-hook` 
+and open the `Language_en.properties` file in the `content` package.
+
+6. Add the following language key to the file and Save it:
+
+        characters-that-exist = Enter characters that exist in the alphabet next time please
+
+    Now that you have the language key defined you can update the tag to use it.     
+    
+7. In your `view.jsp`, update the `aui:validator` tag to look like the following 
+   code:
+
+        <aui:validator name="alpha" errorMessage="characters-that-exist"/>
+    
+8. Redeploy the portlet, leave the *Name* field blank, and submit the form. 
+The error message now uses the language key you just created! 
+
 Congrats! Now you know how to use the `aui:validator` tag. As you can see, it 
 gives you a lot of control over what your users can enter in input fields.
 
