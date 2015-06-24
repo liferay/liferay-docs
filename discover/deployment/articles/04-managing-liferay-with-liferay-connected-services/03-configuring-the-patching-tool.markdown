@@ -15,7 +15,8 @@ each command that has it.
 2. Make sure that you have version 10 or higher of the patching tool. To 
    display the version of your patching tool, run `patching-tool.sh info`.
 
-3. Let the patching tool discovers your liferay installation by running `patching-tool.sh auto-discovery`.
+3. Let the patching tool discover your Liferay installation by running 
+   `patching-tool.sh auto-discovery`.
 
 4. Configure the patching tool by running `patching-tool.sh setup`.
 
