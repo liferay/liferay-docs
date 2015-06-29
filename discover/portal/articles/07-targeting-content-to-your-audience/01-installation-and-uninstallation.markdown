@@ -13,11 +13,13 @@ If you're running Liferay on JBoss, make sure to have your
 [Installing Liferay on JBoss](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-jboss-7-1)
 instructions for details.
 
-If you're running Liferay on WebLogic, note that the Audience Targeting app is
-only supported on Liferay 6.2 EE SP10 and above.
+If you're running Liferay on WebLogic, note that the Audience Targeting app
+requires Liferay 6.2 EE SP10 and above to work properly.
 
-If you're running Liferay on WebSphere, note that you must have the servlet
-filters configured to initialize on application startup. See the
+If you're running Liferay on WebSphere, note that the Audience Targeting app
+requires Liferay 6.2 EE SP11 and above to work properly. Also, when running
+Liferay on WebSphere, you must have the servlet filters configured to initialize
+on application startup. See the
 [Installing Liferay on WebSphere 8.5](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-websphere-8-5)
 section for details.
 
