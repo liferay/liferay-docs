@@ -42,7 +42,7 @@ first.
         }
 
 You can already see differences in this action from the other one you have in
-the class. First, you obtain a `ServiceContext` [object](https://dev.liferay.com/encyclopedia/-/wiki/Main/Service+Context) 
+the class. First, you obtain a `ServiceContext` [object](/participate/liferaypedia/-/wiki/Main/Service+Context) 
 so that you can use some of the information, such as the ID of the current user,
 in your call to your service layer. Then you get the value of the `name` field
 from the form (which you haven't implemented yet). Once you have all the
