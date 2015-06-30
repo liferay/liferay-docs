@@ -79,7 +79,7 @@ The app review process consists of **Two Major Phases**:
 				<strong> App metadata review </strong>
 				<p>
 					Our team will
-					<a href="/distribute/publish/-/knowledge_base/publish/preparing-your-app#marketplace-app-metadata-guidelines">
+					<a href="/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app#marketplace-app-metadata-guidelines">
 					review your app's metadata</a>
 					to confirm that titles, descriptions, images, etc. are
 					appropriate. 

@@ -320,7 +320,8 @@ discourage it, as such characters may confuse customers as to how your app's
 versions relate to one another.
 
 Keep in mind that the releases of Liferay with which your app works must be
-specified using Liferay's versioning scheme, as explained in [Understanding Liferay's Releases](/discover/portal/-/knowledge_base/6-2/understanding-liferays-releases).
+specified using Liferay's versioning scheme, as explained in
+[Understanding Liferay's Releases](/discover/deployment/-/knowledge_base/6-2/understanding-liferays-releases).
 See the later section *Specify App Packaging Directives* for details on
 specifying the releases of Liferay for which your app is designed. 
 

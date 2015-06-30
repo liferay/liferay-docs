@@ -148,7 +148,9 @@ metadata requirements and produce an appealing advertisement for your app.
 				of what the app does. Great descriptions also list key
 				functionalities and what customers can expect to gain by
 				deploying your app. If you'd like to see an example, you can
-				check out our description of the Social Office app on the
+				check out our description of the
+				<a href="https://www.liferay.com/marketplace/-/mp/application/18535553">Social Office</a>
+				app on the
 				<a href="https://www.liferay.com/marketplace">Markeplace</a>. 
 				<p>
 					It's important that you specify any plugin dependencies
@@ -194,7 +196,7 @@ metadata requirements and produce an appealing advertisement for your app.
 				compatibility with both EE and CE versions of the portal will
 				ensure that a wider audience has access to your app!
 				<p>
-					You can <a href="/distribute/license">request
+					You can <a href="https://www.liferay.com/web/developer/marketplace/license">request
 					a Liferay EE Developer License </a> to support testing and
 					confirm compatibility.
 				</p>
