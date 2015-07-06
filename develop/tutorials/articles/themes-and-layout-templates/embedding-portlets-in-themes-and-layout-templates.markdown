@@ -12,7 +12,8 @@ Liferay Portal.
 
 In this tutorial, you'll learn how to declare an element type and action in a
 custom theme/layout, and create a module that finds the correct portlet to use
-based on those given parameters.
+based on those given parameters. You'll first learn how to embed portlets into a
+theme.
 
 ## Adding a Portlet to a Custom Theme
 
@@ -32,7 +33,7 @@ embedded portlet declaration can be viewed below:
 
 This declares that the theme is requesting to view language entries. There are
 four different kinds of actions supported by the Portlet Providers framework:
-`ADD`, `BROWSE`, `EDIT`, and `VIEW`. Specify these two parameters in your
+`ADD`, `BROWSE`, `EDIT`, and `VIEW`. Specify the element type and action in your
 theme's runtime declaration.
 
 Great, your theme declaration is complete! However, the Portal is not yet
@@ -92,8 +93,8 @@ find the portlet that fits the theme's request.
 
 The only thing left to do is generate the module's JAR file and copy it to your
 Portal's `osgi/modules` directory. Once the module is installed and activated in
-your Portal's service registry, your new editor configuration is available for
-use.
+your Portal's service registry, your embedded portlet is available for
+use wherever your theme is used.
 
 You succesfully requested a portlet based on the element and action types
 required, and created and deployed a module that retrieves the portlet and
@@ -142,5 +143,5 @@ Make sure to set the service ranking higher than the default portlet being used.
 $$$
 
 Lastly, generate the module's JAR file and deploy it to Liferay Portal. Now when
-you assign your layout to a page, the portlet that fulfills the request is
-embedded on the page.
+you assign your layout to a page, the portlet that fulfills the layout's request
+is embedded on the page.
