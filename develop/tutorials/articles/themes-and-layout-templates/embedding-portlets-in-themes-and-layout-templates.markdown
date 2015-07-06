@@ -1,4 +1,4 @@
-# Embedding Portlets in a Theme
+# Embedding Portlets in Themes and Layout Templates
 
 A frequently used capability that Liferay provides when building a site is the
 ability to embed a portlet in a theme. This allows the portlet to be visible on
