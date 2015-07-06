@@ -1,17 +1,18 @@
 # Embedding Portlets in Themes and Layout Templates
 
 A frequently used capability that Liferay provides when building a site is the
-ability to embed a portlet in a theme. This allows the portlet to be visible on
-all pages where the theme is used. In the past, this was only possible by
-hardcoding a specific portlet into the theme, which has many drawbacks. Liferay
-now provides the *Portlet Providers* framework that only requires you specify
-the element type and action to be displayed. Based on the given element type and
-action, Liferay can distinguish which deployed portlet to use. This increases
-the flexibility and modularity of theming in Liferay Portal.
+ability to embed a portlet in themes and layout templates. This allows the
+portlet to be visible on all pages where the theme/layout is used. In the past,
+this was only possible by hardcoding a specific portlet into place, which has
+many drawbacks. Liferay now provides the *Portlet Providers* framework that only
+requires you specify the element type and action to be displayed. Based on the
+given element type and action, Liferay can distinguish which deployed portlet to
+use. This increases the flexibility and modularity of embedding portlets in
+Liferay Portal.
 
 In this tutorial, you'll learn how to declare an element type and action in a
-custom theme, and create a module that finds the correct portlet to use based on
-those given parameters.
+custom theme/layout, and create a module that finds the correct portlet to use
+based on those given parameters.
 
 ## Adding a Portlet to a Custom Theme
 
@@ -32,7 +33,7 @@ embedded portlet declaration can be viewed below:
 This declares that the theme is requesting to view language entries. There are
 four different kinds of actions supported by the Portlet Providers framework:
 `ADD`, `BROWSE`, `EDIT`, and `VIEW`. Specify these two parameters in your
-theme's empty runtime declaration.
+theme's runtime declaration.
 
 Great, your theme declaration is complete! However, the Portal is not yet
 configured to handle this request. You'll need to create a module that can
@@ -96,4 +97,50 @@ use.
 
 You succesfully requested a portlet based on the element and action types
 required, and created and deployed a module that retrieves the portlet and
-embeds it in your theme.
+embeds it in your theme. Next, you'll learn a similar process to embed a portlet
+in your custom layout template.
+
+## Adding a Portlet to a Custom Layout Template
+
+The process for embedding portlets in layout templates is similar to that of the
+theme. The only change is the declaration you insert in your template's TPL
+file.
+
+1. Open your layout template's TPL file (e.g., `docroot/1_2_1-columns.tpl`).
+
+2. Add a `$processor.processPortlet("CLASS_NAME", ACTION)` directive within the
+   column in which to embed the portlet.
+
+    This declaration, just as the theme declaration, expects two parameters: the
+    class name of the element type you'd like the portlet to handle, and the
+    type of action. An example of an embedded portlet declaration can be viewed
+    below:
+
+        $processor.processPortlet("com.liferay.portal.kernel.servlet.taglib.ui.BreadcrumbEntry", $portletProviderAction.VIEW)
+
+    This declares that the layout is requesting to view breadcrumb entries. The
+    Portlet Providers framework offers four different actions for layout
+    templates: `ADD`, `BROWSE`, `EDIT`, and `VIEW`. Specify the element type and
+    action in your layout's declaration.
+
+Now that your layout declaration is complete, you'll need to create a module
+that can handle this request. This process is exactly the same for themes and
+layout templates. Follow steps 1-4 in the previous section to set up your
+module.
+
++$$$
+
+**Note:** In some cases, a default portlet is already provided by Liferay to
+fulfill certain requests. You can override the default portlet with your custom
+portlet by specifying a higher service rank. To do this, set the following
+property within your class' `@Component` declaration:
+
+    property= {"service.ranking:Integer=20"}
+
+Make sure to set the service ranking higher than the default portlet being used.
+
+$$$
+
+Lastly, generate the module's JAR file and deploy it to Liferay Portal. Now when
+you assign your layout to a page, the portlet that fulfills the request is
+embedded on the page.
