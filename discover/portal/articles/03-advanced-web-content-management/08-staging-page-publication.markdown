@@ -350,60 +350,91 @@ the applications and settings to be published.
 
 **Content** allows you to configure the content to be published. Clicking the 
 *select* option under All Content allows you to delete the portlet metadata
-before publishing.
-Clicking the *Choose Content* option lets you filter the content that is going to be published, based mainly on the date range and content type, as well as other filtering sub-options for certain content types. Let's take a closer look at these content filtering options.
+before publishing. Clicking the *Choose Content* option lets you filter the
+content that is going to be published, based mainly on the date range and
+content type, as well as other filtering sub-options for certain content types.
+Next, you'll take a closer look at these content filtering options.
 
 The *Date Range* feature provides you with another way to select specific
 content to publish. Specifying a date range allows you to choose content to
-publish based on when it was created or last modified. You can change the date range by clicking on *Change*, next to it. You have several options to choose from:
+publish based on when it was created or last modified. You can change the date
+range by clicking the *Change* button next to it. You have several options to
+choose from:
 
--  *All:* publishes content regardless of its creation or last modification date.
+- *All:* publishes content regardless of its creation or last modification date.
 
--  *From Last Publish Date:* publishes content that was created or modified since the last
-   publish date. (this is the default option)
+- *From Last Publish Date:* publishes content that was created or modified since
+  the last publish date. (this is the default option)
 
--  *Date Range:* publishes content based on a specified date range. You can set a
-   start and end date/time window. The content created or modified within that window of
-   time is published.
+- *Date Range:* publishes content based on a specified date range. You can set a
+  start and end date/time window. The content created or modified within that
+  window of time is published.
 
 -  *Last:* publishes content based on a set amount of time since the current
    time.  For example, you can set the date range to the past 48 hours,
    starting from the current time.
 
-Under the *Date Range* section, you have the section which lists the different types of content that are about to be published. This list is populated based on the provided date range, with . For example, if at least one web content article has been created or modified in the given date range, a Web Content section appears in the list, with the amount of such articles being shown next to the Web Content label. Otherwise, the Web Content section is absent. Similarly, if at least one Documents and Media file has been uploaded or modified in the given date range, a Documents and Media section appears in the list, with the amount of documents to be published being shown next to it. Otherwise, the Documents and Media section is absent.
+Under the *Date Range* section, you have a section which lists the different
+types of content that can be published. This list is populated based on the
+provided date range. For example, if at least one web content article has been
+created or modified in the given date range, a Web Content section appears in
+the list, with the amount of such articles being shown next to the Web Content
+label. Otherwise, the Web Content section is absent.
 
-*Categories* and *OpenSocial Gadget Publisher* content types are not dependant on the date range and thus are always shown in the list.
+*Categories* and *OpenSocial Gadget Publisher* content types are not dependant
+on the date range, and thus are always shown in the list.
 
-By unchecking the checkbox next to a certain content type, you are excluding it from the current publication to Live.
+By unchecking the checkbox next to a certain content type, you are excluding it
+from the current publication to Live.
 
-Some of the content types in the list, like Web Content and Documents and Media, have further filtering options related to them. Let's take a look at the ones for the Web Content section.
+Some of the content types in the list, like Web Content and Documents and Media,
+have further filtering options related to them. For instance, when the Web
+Content section is present and checked, it shows a comma-separated list of
+related items to be published, including the articles themselves. A sample list
+of related items for web content is the following: *Web Content(12),
+Structures(3), Referenced Content, Version History* . You can remove some of
+these items by clicking on the *Change* button next to the list.
 
-When this section is present and is not unchecked, it shows a comma-separated list of related items to be published, including the articles themselves. For example: "Web Content(12), Structures(3), Referenced Content, Version History". You can remove some of these items by clicking on the *Change* link next to the list.
- 
-*Referenced Content* is represented by the Documents and Media files included in web content articles through one of the following methods:
-* Click *Insert Image* icon of CKEditor, then click *Browse Server* and choose a file from Documents and Media.
-* The article is based on a web content structure with one or more fields of type *Documents and Media*.
-         
-*Version History*: Web content tends to be frequently updated, often more so than other kinds of content. For some web content articles, this can result in very high numbers of versions, sometimes hundreds. Such high version numbers can make it very slow to publish web content articles. Liferay addresses this issue by allowing you to choose whether or not to publish the past versions of the web content articles to be published. If you disable this option, only the last **approved** version of each web content article is published to Live. This can significantly speed up the publication process.
+*Referenced Content* is represented by the Documents and Media files included in
+web content articles through one of the following methods:
 
-When the *Documents and Media* section is present (because at least one document has been created or modified in the provided date range), you have the possibility to disable the transfer to live of the previews and thumbnails associated with the documents to be published. This can also speed up publication time.
+- Click the *Insert Image* icon of the CKEditor, click *Browse Server*, and
+  choose a file from Documents and Media.
+- The article is based on a web content structure with one or more fields of
+  type *Documents and Media*.
 
-![Figure 3.24: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+*Version History* for web content tends to be frequently updated, often more so
+than other kinds of content. For some web content articles, this can result in
+very high numbers of versions, sometimes hundreds. Such high version numbers can
+make it very slow to publish web content articles. Liferay addresses this issue
+by allowing you to choose whether or not to publish the past versions of the web
+content articles to be published. If you disable this option, only the last
+**approved** version of each web content article is published to Live. This can
+significantly speed up the publication process.
+
+![Figure 3.23: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
 
 Liferay 6.2 also added a portal property,
 `journal.publish.version.history.by.default`, that sets the default behavior. By
 default, this property is set to `true` so site administrators have to manually
-uncheck the *Version History* box mentioned above if they only want to publish 
-the latest approved version of web content articles. If you'd like to change the 
+uncheck the *Version History* box mentioned above if they only want to publish
+the latest approved version of web content articles. If you'd like to change the
 default behavior, add the following line to your `portal-ext.properties` file:
 
     journal.publish.version.history.by.default=false
 
+When the *Documents and Media* section is present (because at least one document
+has been created or modified in the provided date range), you have the
+possibility to disable the transfer to live of the previews and thumbnails
+associated with the documents to be published. This can also speed up
+publication time.
+
 **Permissions** allows you to include permissions for the pages and portlets
 when the changes are published.
 
-Click on *Mark as Ready for Publication*, then click *Publish to Live* &rarr;
-*Now*, and select *Publish* to publish your Bookmarks portlet to the live site.
+Now that you have an idea of what staging options you have available, click on
+*Mark as Ready for Publication*, then click *Publish to Live* &rarr; *Now*, and
+select *Publish* to publish your Bookmarks portlet to the live site.
 
 Content publication can be also controlled using staging. Bookmarks are staged
 by default (this can be changed in Staging Configuration). If you create a
@@ -413,7 +444,7 @@ which types of content are published when you publish to the live site). If
 workflow is enabled for any new resource, the resource needs to go through the
 workflow process before it can be published to the live site.
 
-![Figure 3.23: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+![Figure 3.24: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
 
 One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
