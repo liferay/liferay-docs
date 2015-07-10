@@ -1,4 +1,4 @@
-# AssetListScreenlet for Android [](id=assetlistscreenlet-for-android)
+# Asset List Screenlet for Android [](id=assetlistscreenlet-for-android)
 
 ## Requirements [](id=requirements)
 
@@ -13,7 +13,7 @@
 ## Features [](id=features)
 
 The `AssetListScreenlet` can be used to show [asset](/tutorials/-/knowledge_base/6-2/asset-framework) 
-lists from a Liferay instance. For example, you can use the screenlet to show a 
+lists from a Liferay instance. For example, you can use the Screenlet to show a 
 scrollable list of assets. It also implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
 with configurable page size. The `AssetListScreenlet` can show assets belonging 
 to the following classes:
@@ -54,11 +54,11 @@ The `AssetListScreenlet` also supports i18n in asset values.
 
 ## Views [](id=views)
 
-The Default views use a standard `RecyclerView` to show the scrollable list. 
-Other views may use a different component, such as `ViewPager` or others, to 
+The Default Views use a standard `RecyclerView` to show the scrollable list. 
+Other Views may use a different component, such as `ViewPager` or others, to 
 show the items.
 
-![`AssetListScreenlet` using the Default and Material viewsets.](../../images/screens-android-assetlist.png)
+![`AssetListScreenlet` using the Default and Material Viewsets.](../../images/screens-android-assetlist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -79,7 +79,7 @@ must be installed to allow remote calls without the `userId`.
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The layout to use to show the view.|
+| `layoutId` | `@layout` | The layout to use to show the View.|
 | `autoLoad` | `boolean` | Whether the list should be loaded when it's presented on the screen. The default value is `true`. |
 |  `firstPageSize` | `number` | The number of items to retrieve from the server for display on the list's first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |

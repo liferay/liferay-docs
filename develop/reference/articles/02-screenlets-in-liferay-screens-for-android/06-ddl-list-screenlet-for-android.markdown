@@ -1,4 +1,4 @@
-# DDLListScreenlet for Android [](id=ddllistscreenlet-for-android)
+# DDL List Screenlet for Android [](id=ddllistscreenlet-for-android)
 
 ## Requirements [](id=requirements)
 
@@ -26,11 +26,11 @@ The `DDLListScreenlet` has the following features:
 
 ## Views [](id=views)
 
-- The Default view uses a standard `RecyclerView` to show the scrollable list. 
-  Other views may use a different component, such as `ViewPager` or others, to 
+- The Default View uses a standard `RecyclerView` to show the scrollable list. 
+  Other Views may use a different component, such as `ViewPager` or others, to 
   show the items.
 
-![The DDLList screenlet using the Default and Material viewsets.](../../images/screens-android-ddllist.png)
+![The `DDLListScreenlet` using the Default and Material Viewsets.](../../images/screens-android-ddllist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -52,7 +52,7 @@ must be installed to allow remote calls without the `userId`.
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The layout to use to show the view. |
+| `layoutId` | `@layout` | The layout to use to show the View. |
 | `autoLoad` | `boolean` | Defines whether the list should be loaded when it's presented on the screen. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
