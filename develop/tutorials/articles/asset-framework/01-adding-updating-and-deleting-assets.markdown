@@ -20,12 +20,12 @@ associates an `AssetEntry` with the entity so Liferay can keep track of
 the entity as an asset. When it's time to update the entity, you update the
 asset at the same time. To see how to asset-enable entities in a working example
 portlet, visit the Learning
-Path [Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities).
+Path [Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities).
 
 To leverage assets, you must also implement indexers for your portlet's
 entities. Liferay's asset framework uses indexers to manage assets. For
 instructions on
-creating an indexer in a working example portlet, see the learning path [Enabling Search and Indexing](/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing).
+creating an indexer in a working example portlet, see the learning path [Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing).
 
 This tutorial shows you how to enable assets for your custom entities and
 implement indexes for them. It's time to get started! 
@@ -188,7 +188,7 @@ instance.
 
 **Important:** In order for Liferay's Asset Publisher portlet to show your
 entity, the entity must have an Asset Renderer. To learn how to implement
-an Asset Renderer for your custom entity, refer to Learning Path [Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers).
+an Asset Renderer for your custom entity, refer to Learning Path [Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers).
 Note also that an Asset Renderer is how you show a user the components of your
 entity in the Asset Publisher. On deploying your portlet with asset, indexer,
 and asset rendering implementations in place, an Asset Publisher can show your
@@ -200,9 +200,9 @@ Great! Now you know how to add, update, and delete assets in your portlets!
 
 ## Related Topics [](id=related-topics)
 
-[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
 
 [Relating Assets](/develop/tutorials/-/knowledge_base/6-2/relating-assets)
 

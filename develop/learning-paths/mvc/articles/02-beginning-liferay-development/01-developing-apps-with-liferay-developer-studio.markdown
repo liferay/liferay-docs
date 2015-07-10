@@ -18,7 +18,7 @@ of getting your Liferay Portal runtime installed. The fastest way to do this is
 with the defaults: leave *Configure Liferay Portal EE bundled with the Studio
 installation* checked and click *Next*. 
 
-5.  Browse to select your license key provided by Liferay and click *Next*. 
+5.  Browse to select your activation key provided by Liferay and click *Next*. 
 
 6.  Though Liferay Portal ships with an embedded database, as a developer,
 you'll want to use a database you can query with your own tools. For this
@@ -41,8 +41,8 @@ repository. Click *Finish*.
 After this, the wizard completes, and you have a fully configured development
 environment, ready to begin work! 
 
-If you don't have a Liferay enterprise edition license or if you want to use an
-existing installation of Eclipse, continue with the next tutorial on developing
-apps with Liferay IDE. You can otherwise start
-[Writing Your First Liferay Application](/develop/learning-paths/-/knowledge_base/6-2/writing-your-first-liferay-application).
+If you don't have a Liferay enterprise edition activation key or if you want to
+use an existing installation of Eclipse, continue with the next tutorial on
+developing apps with Liferay IDE. You can otherwise start
+[Writing Your First Liferay Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-your-first-liferay-application).
 

@@ -24,8 +24,9 @@ Before proceeding, make sure you're familiar with the following terminology:
 - The number of times a given term appears within a set of documents is called
   the term's *frequency*.
 
-- A list of facet information. This, in other words, is a list of terms and
-  their frequencies for a specific field, is called a *term result list*.
+- A list of terms and their frequencies for a specific field is called a *term
+  result list*. In other words, a term result list is a list of information
+  about a specific facet.
 
 - Some facets have a property called *frequency threshold*. This value indicates
   the minimum frequency required for terms to appear in the term result list.

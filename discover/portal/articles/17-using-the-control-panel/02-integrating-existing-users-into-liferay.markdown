@@ -52,7 +52,7 @@ LDAP directory first. Uncheck this box if you want to allow users with Liferay
 accounts but no LDAP accounts to log in to the portal.
 
 **LDAP Servers:** Liferay supports connections to multiple LDAP servers. You can
-you the Add button beneath this heading to add LDAP servers. We explain how to
+use the Add button beneath this heading to add LDAP servers. We explain how to
 configure new LDAP servers below.
 
 **Import/Export:** You can import and export user data from LDAP directories

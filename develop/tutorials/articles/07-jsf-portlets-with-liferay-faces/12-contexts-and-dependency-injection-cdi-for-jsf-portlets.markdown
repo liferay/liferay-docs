@@ -185,10 +185,6 @@ development environment in order to verify that CDI functions properly.
 $$$
 
 You've completed configuring the Liferay CDI Portlet Bridge for you JSF portlet.
-For other configuration options dealing with CDI, visit the
-[Configuring CDI for JSF Portlets](/develop/learning-paths/-/knowledge_base/6-2/configuring-cdi-for-jsf-portlets)
-tutorial. 
-
 Now that everything is configured, you are ready to begin development with CDI.
 
 ## Understanding CDI in JSF Annotations [](id=cdi-jsf-annotations-liferay-portal-6-2-dev-guide-en)
