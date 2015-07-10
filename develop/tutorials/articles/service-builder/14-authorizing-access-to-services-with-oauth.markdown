@@ -294,7 +294,7 @@ implementation, and developed a user interface to present the OAuth cycle. Of
 course, this example and its code snippets are not compatible for all use cases,
 but they demonstrate configuring an OAuth-ready application for Liferay Portal. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [OAuth](discover/portal/-/knowledge_base/6-2/oauth)
 

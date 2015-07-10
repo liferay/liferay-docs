@@ -179,7 +179,7 @@ Now that your repositories are configured, they're ready to receive all the
 Liferay Maven artifacts you'll download and the Liferay plugin artifacts you'll
 create!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Developing with the Plugins SDK](develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 

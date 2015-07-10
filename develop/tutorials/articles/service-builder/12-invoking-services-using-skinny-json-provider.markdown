@@ -380,7 +380,7 @@ What a great way to access these core Liferay entities!
 
 [Writing a Data-Driven Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-a-data-driven-application)
 
-## Related Topics
+## Related Topics [](id=related-topics-0)
 
 [Checking Permissions](develop/tutorials/-/knowledge_base/6-2/checking-permissions)
 

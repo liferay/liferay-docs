@@ -346,7 +346,7 @@ JSP by calling `EntryLocalServiceUtil.findByEntryNameGuestbookName(...)`!
 Congratulations on following the three step process of developing a dynamic
 query in a custom finder and exposing it as a service for your portlet! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Running Service Builder and Understanding the Generated Code](develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 

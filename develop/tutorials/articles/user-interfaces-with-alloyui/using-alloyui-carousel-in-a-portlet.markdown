@@ -143,7 +143,7 @@ Now that you've written code to display your carousel, you can deploy your
 plugin and see your images in the carousel. Give yourself a pat on the back.
 You've just successfully used the `aui-carousel` in your portlet! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [User Interfaces with the Liferay UI taglib](develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 

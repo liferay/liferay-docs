@@ -924,7 +924,7 @@ more information, please refer to the
 [Invoking Services Using Skinny JSON Provider](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/invoking-services-using-skinny-json-provider) 
 tutorial.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [SOAP Web Services](develop/tutorials/-/knowledge_base/6-2/soap-web-services)
 

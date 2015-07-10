@@ -118,7 +118,7 @@ $$$
 Now that you know how to create a hook using Liferay IDE and Ant, it's time to 
 get out there and create your customizations!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Developing with the Plugins SDK](develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 

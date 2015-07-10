@@ -223,7 +223,7 @@ want to include this in the solution. - Jim -->
 Congratulations on developing a custom SQL query and custom finder for your
 portlet! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Writing a Data Driven Application](develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
 

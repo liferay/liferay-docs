@@ -279,7 +279,7 @@ Great job! You added a new Setup tab to your portlet's Configuration page and
 you added a configurable portlet preference to that page. Now you know how to
 use Liferay's portlet preferences in the portlets you develop. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [User Interfaces with AlloyUI](develop/tutorials/-/knowledge_base/6-2/alloyui)
 [User Interfaces with the Liferay UI Taglib](develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)

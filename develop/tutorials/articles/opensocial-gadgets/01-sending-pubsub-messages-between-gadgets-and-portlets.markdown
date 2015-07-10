@@ -225,7 +225,7 @@ Letting your portlets communicate with gadgets enhances your portlet
 applications and gives you a plethora of different ways you can enhance your 
 user's experience. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Using Liferay's Message Bus](develop/tutorials/-/knowledge_base/6-2/using-liferays-message-bus)
 
