@@ -21,10 +21,7 @@ You can also download the LCS client from your LCS project's Dashboard. To get
 to your Dashboard, click the *Go to My Dashboard* link on the Welcome screen, or 
 click your project's link in a deployed and registered LCS client. By letting 
 you view and manage the environments and servers in your project, the Dashboard 
-is at the heart of LCS. The following screenshot shows the Dashboard with its 
-LCS client download links highlighted in a red box. 
-
-![Figure 4.5: The LCS Dashboard contains links to download the client.](../../images/lcs-dashboard-client-download.png)
+is at the heart of LCS. 
 
 The LCS client is also available for download from the User menu in your LCS 
 account's Dockbar. To download it from here, click your name in the top-right 
