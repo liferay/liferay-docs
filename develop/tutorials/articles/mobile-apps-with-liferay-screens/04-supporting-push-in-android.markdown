@@ -1,4 +1,4 @@
-# Supporting Push Notifications in Android
+# Using Liferay Push in Android Apps
 
 Liferay Screens is capable of supporting push notifications. To support push 
 notifications 
@@ -33,7 +33,7 @@ project. The following steps describe this process:
 Now that you've set up your Google project, you're ready to install and 
 configure Liferay Push in your portal.
 
-## Install and configure Liferay Push in Liferay Portal
+## Setting Up Liferay Push in Liferay Portal
 
 For your Screens app to receive push notifications, your portal must be able to 
 send them. Fortunately, the 
@@ -46,7 +46,7 @@ server key you generated earlier.
 
 Your portal is now ready to send push notifications to Android apps!
 
-## Using Liferay Push in your Android Application
+## Receiving Push Notifications
 
 The 
 [Liferay Push Client for Android](https://github.com/brunofarache/liferay-push-android) 
@@ -86,7 +86,7 @@ To see an example of push notifications in action, see the
 [`PushNotifications`](https://github.com/liferay/liferay-screens/tree/master/android/samples) 
 example project (especially the `PushActivity` class). 
 
-## Using Liferay Push in Your Server
+## Sending Push Notifications
 
 By using the Liferay Push plugin, sending push notifications to your Android 
 users is very straightforward. Just send the user ids and the message content as 
