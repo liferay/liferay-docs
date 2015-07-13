@@ -106,7 +106,11 @@ Note that your project should depend on the `push-notifications-portlet`
     required-deployment-contexts=\
         push-notifications-portlet
 
-Also, link your Java class with the model you want to listen for. For example:
+In your app's `portal.properties` file, you can add a listener for a specific
+class by creating a
+[*value.object.listener*](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Value%20Object)
+property set to a comma separate list of intended listener classes. Here's an
+example listener setting for `DDLRecord` objects:
 
     value.object.listener.com.liferay.portlet.dynamicdatalists.model.DDLRecord=com.liferay.push.hooks.DDLRecordModelListener
 
