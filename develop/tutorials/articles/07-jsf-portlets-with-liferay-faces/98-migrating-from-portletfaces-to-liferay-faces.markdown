@@ -118,7 +118,6 @@ Liferay Faces Bridge:
   <http://docs.liferay.com/faces/3.2/vdldoc/>.
 
 <!-- Re-add upon release. - Jim
-- The VDL documentation for the Liferay Faces 4.1 can be found at <http://docs.liferay.com/faces/4.1/vdldoc/>.
 - The VDL documentation for the Liferay Faces 4.2 can be found at <http://docs.liferay.com/faces/4.2/vdldoc/>.
 -->
 
