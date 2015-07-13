@@ -17,16 +17,13 @@ First, you'll learn how to upgrade your `liferay-portal.xml` file.
 
 Liferay Portal 6.2 has two compatible Liferay Faces Versions: 3.2 and 4.2.
 Liferay provides Liferay Faces 3.2 for compatibility with JSF 2.1 and Liferay
-Faces 4.2 for compatibility with JSF 2.2 (see the [Liferay Faces Version
-Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
+Faces 4.2 for compatibility with JSF 2.2 (see the
+[Liferay Faces Version Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
 for more info on Liferay Portal and JSF compatibility). If you're currently
 using Liferay Faces 3.1 and are interested in upgrading from Liferay Portal 6.1
 to 6.2, but aren't interested in compatibility with JSF 2.2, you should upgrade
 from Liferay Faces 3.1 to 3.2. But, if you want to use JSF 2.2 in addition to
 Liferay 6.2, you must upgrade to Liferay Faces 4.2. 
-
-<!-- Verify above link is correct, once Liferay Faces tutorials are published to
-dev.liferay.com -Cody -->
 
 +$$$
 
@@ -124,9 +121,9 @@ respect to the Liferay Faces 3.2 and 4.2 releases:
 +$$$
 
 **Note:** The `aui-cc:message` and `aui-cc:messages` tags have been completely
-removed in 4.2 because no analogous tags in Liferay Portal exist for them
-and their functionality is already implemented in the bridge's `h:message` and
-`h:messages` tags, respectively. 
+removed in 4.2 because no analogous tags in Liferay Portal exist for them and
+their functionality is already implemented in the bridge's `h:message` and
+`h:messages` tags, respectively.
 
 $$$
 
@@ -136,5 +133,5 @@ addition to other changes required to migrate to Liferay Faces 3.2/4.2.
 ## Related Topics [](id=related-topics)
 
 [Creating and Deploying JSF Portlets](develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets)
+
 [Understanding Liferay Faces Alloy](develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
-<!-- Add once JSF tutorials are finished. -Cody -->
