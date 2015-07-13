@@ -1,123 +1,134 @@
-# Using Liferay Push in Android Apps
+# Using Liferay Push in Android Apps [](id=using-liferay-push-in-android-apps)
 
-Liferay Screens is capable of supporting push notifications. To support push 
-notifications 
-([GCM](https://developers.google.com/cloud-messaging/)) in your Android app, 
-there are a few steps you need to follow. This tutorial describes these steps. 
+Liferay Screens supports using push notifications in Android apps. To use
+Liferay Push notifications in your Android app, you must configure a couple
+things and modify your app to consume and/or produce push notifications. This
+tutorial how to do all these things. 
 
-## Create a Google Project and Enable Push
+## Configuring to Use Liferay Push Notifications [](id=configuring-to-use-liferay-push-notifications)
 
-The first things you need to do are in the 
-[Google Developers Console](https://console.developers.google.com/). In the 
-Google Developers Console, you need to create a Google project, generate a 
-`SENDER_ID` and *API Key*, and enable push notifications for your Google 
-project. The following steps describe this process:
+To use Liferay Push in your app, you must create and configure a Google project
+to use Google Cloud Messaging
+([GCM](https://developers.google.com/cloud-messaging/)). You also need to set up
+the Liferay Push app to use the project's GCM API. 
 
-1. Create a Google project in the Google Developers Console. After creation, 
-   the *Project Number* (next to your Project ID) is your `SENDER_ID`. Copy this 
-   to a text file so you can access it quickly.
+Follow these steps to create and configure a Google project to support cloud
+messaging: 
 
-    ![Figure 1: An example Google project with the Project Number showing in the upper right hand corner of the Project Dashboard.](../../images/screens-android-push-project-number.png)
+1.  In the [Google Developers Console](https://console.developers.google.com/),
+    create a Google project. Note the *Project Number* (e.g., save it to a text
+    file), so you can later specify it as the `SENDER_ID` for your push
+    notifications. 
 
-2. Enable push notifications for your new Google project by going to 
-   *APIs & auth* &rarr; *APIs* &rarr; *Cloud Messaging for Android*, and 
-   clicking *Enable API*.
+    ![Figure 1: The Google Developers Console displays the Project Number in the project's Overview screen.](../../images/screens-android-push-project-number.png)
 
-3. Now you need to create a server key. First navigate to *APIs & auth* &rarr; 
-   *Credentials* &rarr; *Create new Key (Server Key)*. Select *Create* and copy 
-   the API Key string. This string acts as your API Key in Liferay Portal. 
-   Copy this to a text file so you can access it quickly.
+2.  Enable push notifications for your Google project by going to *APIs & auth*
+    &rarr; *APIs* &rarr; *Cloud Messaging for Android* and clicking on *Enable
+    API*. 
 
-    ![Figure 2: Create a server key to act as the API Key in your portal.](../../images/screens-android-push-server-key.png)
+3.  Your Liferay Portal instance requires a key to access the Google project's
+    messaging API. To generate the key, navigate to *APIs & auth* &rarr;
+    *Credentials* &rarr; *Create new Key (Server Key)* and click *Create new
+    Key*. Copy and save the *API Key* value for specifying later as the push
+    notifications API key for Liferay Push. 
 
-Now that you've set up your Google project, you're ready to install and 
-configure Liferay Push in your portal.
+    ![Figure 2: Create a server key to act as the API Key for push notifications in your portal.](../../images/screens-android-push-server-key.png)
 
-## Setting Up Liferay Push in Liferay Portal
+Now that you've set up your Google project, you can set up the Liferay Push app
+to use the project's GCM API. Install the Liferay Push app from the [Liferay
+Marketplace](http://www.liferay.com/marketplace). In the portal's control panel,
+set the Push Notifications *API Key* to the value of the API key you generated
+earlier in your Google project.
 
-For your Screens app to receive push notifications, your portal must be able to 
-send them. Fortunately, the 
-[Liferay Push](http://www.liferay.com/marketplace/-/mp/application/48439053) 
-plugin on Marketplace streamlines your portal's push configuration. Install the 
-Liferay Push plugin from Marketplace and then configure the API Key using the 
-server key you generated earlier. 
+![Figure 3: In the portal, you can configure the API Key for the Liferay Push app to send notifications to your Android apps.](../../images/push-portlet.png)
 
-![Figure 3: Configure the API Key in the Liferay Push portlet.](../../images/push-portlet.png)
+Your portal is now ready to send push notifications to your Android apps!
 
-Your portal is now ready to send push notifications to Android apps!
-
-## Receiving Push Notifications
+## Receiving and Sending Push Notifications [](id=receiving-and-sending-push-notifications)
 
 The 
 [Liferay Push Client for Android](https://github.com/brunofarache/liferay-push-android) 
-streamlines the complex flow of registering a device with the portal for 
-sending and receiving push notifications.
+streamlines registering a device with the portal for receiving and sending push
+notifications. 
 
-The steps for using this client are explained in detail 
+The steps for using the client are explained in detail 
 [here](https://github.com/brunofarache/liferay-push-android), 
-but the main steps are shown next:
+but the main steps are demonstrated here.
 
-1. Add a new Gradle dependency to the Liferay Push Client for Android:
+In your Android application's Gradle build file, add a new dependency on the
+Liferay Push Client for Android:
 
-        dependencies {
+	dependencies {
 
-            ...
+		...
 
-            compile 'com.liferay.mobile:liferay-push:1.0.2'
-        }
+		compile 'com.liferay.mobile:liferay-push:1.0.2'
+	}
 
-2. Register your device in GCM with the `SENDER_ID` you previously generated:
+Make sure your app's `liferay-plugin-package.properties` file specifies the Push
+Notifications portlet as a required deployment context: 
 
-        Session session = new SessionImpl(YOUR_SERVER, new BasicAuthentication(YOUR_USER, YOUR_PASSWORD));
+    required-deployment-contexts=\
+        push-notifications-portlet\
+        ...
 
-        Push.with(session).register(this, YOUR_SENDER_ID);
-	
-    If you're using Liferay Screens to maintain a session, you can retrieve and 
-    use it instead of creating a new one:
+Next, you can learn how to register listeners for push notifications. 
 
-        Push.with(SessionContext.createSessionFromCurrentSession()).register(this, YOUR_SENDER_ID);
+### Receiving Push Notifications [](id=receiving-push-notifications)
 
-3. That's it! You can attach a listener to store the registration id or to 
-process the notification sent to the activity (setting `onPushNotification()`). 
-You can also register a receiver and service to process the notification (as 
-shown in the example project).
+This section explains how to listen for push notifications. First, register your
+device in GCM with the `SENDER_ID` you generated previously:
 
-To see an example of push notifications in action, see the 
-[`PushNotifications`](https://github.com/liferay/liferay-screens/tree/master/android/samples) 
-example project (especially the `PushActivity` class). 
+	Session session = new SessionImpl(YOUR_SERVER, new BasicAuthentication(YOUR_USER, YOUR_PASSWORD));
 
-## Sending Push Notifications
+	Push.with(session).register(this, YOUR_SENDER_ID);
 
-By using the Liferay Push plugin, sending push notifications to your Android 
-users is very straightforward. Just send the user ids and the message content as 
-follows: 
+If you're using Liferay Screens to maintain a session, you can retrieve it and 
+use it, instead of creating a new one:
+
+	Push.with(SessionContext.createSessionFromCurrentSession()).register(this, YOUR_SENDER_ID);
+
+If you use these example lines of code, make sure to replace `YOUR_SERVER`,
+`YOUR_USER`, `YOUR_PASSWORD`, and `YOUR_SENDER_ID` with your own values. 
+
+That's it! You can attach a listener to store the registration ID or to process
+the notification sent to the activity (setting `onPushNotification()`). You can
+also register a receiver and service to process the notification. You can refer
+to the
+[`PushNotifications`](https://github.com/liferay/liferay-screens/tree/master/android/samples)
+project (especially its `PushActivity` class) as an example push notifications
+implementation. 
+
+It's time to learn how to implement sending push notifications. 
+
+### Sending Push Notifications [](id=sending-push-notifications)
+
+Using the Liferay Push app, sending notifications to your app's users is
+straightforward. You can specify the user IDs along with the message content: 
 
     PushNotificationsDeviceLocalServiceUtil.sendPushNotification(userIds, content);
 
-An example 
-[hook](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal) 
-that sends a push notification each time a user creates a new DDL record or 
-updates an existing one is available 
-[here](https://github.com/nhpatt/push-with-ddl-hook). 
-
-Note that your project should depend on the `push-notifications-portlet` 
-(in `liferay-plugin-package.properties`):
-
-    required-deployment-contexts=\
-        push-notifications-portlet
+This
+[example hook plugin](https://github.com/nhpatt/push-with-ddl-hook) sends a push
+notification each time a user creates a new DDL record or updates an existing
+one. 
 
 In your app's `portal.properties` file, you can add a listener for a specific
 class by creating a
 [*value.object.listener*](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Value%20Object)
-property set to a comma separate list of intended listener classes. Here's an
+property, set to a comma separate list of intended listener classes. Here's an
 example listener setting for `DDLRecord` objects:
 
     value.object.listener.com.liferay.portlet.dynamicdatalists.model.DDLRecord=com.liferay.push.hooks.DDLRecordModelListener
 
 Great! Now you know how to configure your Android apps to receive push 
-notifications sent from Liferay.
+notifications from Liferay.
 
-## Related Topics
+In this tutorial, you've set up your portal to accomodate push notifications,
+registered notification listeners, and implemented sending push notifications.
+Way to go! 
+
+## Related Topics [](id=related-topics)
 
 [Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
 
