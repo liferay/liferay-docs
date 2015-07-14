@@ -1,4 +1,4 @@
-# Using Liferay Sync
+# Using Liferay Sync [](id=using-liferay-sync)
 
 Liferay Sync keeps files from your Liferay sites synchronized with your desktop 
 and mobile devices. This lets you work with your files without using a browser. 
@@ -16,7 +16,7 @@ your desktop and mobile devices. Before proceeding, check with your portal or
 site administrator to ensure that Sync is enabled for your sites. The 
 instructions for installing and using Sync on your desktop are shown first. 
 
-## Using Liferay Sync on Your Desktop
+## Using Liferay Sync on Your Desktop [](id=using-liferay-sync-on-your-desktop)
 
 On your desktop devices, Liferay Sync creates a new folder structure used for
 synchronizing files. You can treat the files there the same as any ordinary 
@@ -45,7 +45,7 @@ Mac, you're prompted for administrator credentials for your machine so that the
 Finder icon/context menu tool can be installed. This prompt only appears when 
 the tool is installed or upgraded.
 
-![Figure 5.24: Drag the Liferay Sync icon to the Applications folder.](../../images/sync-mac-install.png)
+![Figure 5.15: Drag the Liferay Sync icon to the Applications folder.](../../images/sync-mac-install.png)
 
 Now that you've installed sync, you're ready to configure it! The configuration 
 steps for Sync on Windows and Mac are identical. First, enter your portal's
@@ -67,13 +67,13 @@ documents directory. Of course, you're free to place this folder anywhere and
 call it anything you want. Click *Start Syncing* when you're ready to begin
 syncing files. 
 
-![Figure 5.25: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../images/sync-setup-01.png)
+![Figure 5.16: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../images/sync-setup-01.png)
 
-![Figure 5.26: Select the sites you want to sync with and then click *Proceed*.](../../images/sync-setup-02.png)
+![Figure 5.17: Select the sites you want to sync with and then click *Proceed*.](../../images/sync-setup-02.png)
 
-![Figure 5.27: Specify your local Sync folder's name and location.](../../images/sync-setup-03.png)
+![Figure 5.18: Specify your local Sync folder's name and location.](../../images/sync-setup-03.png)
 
-![Figure 5.28: Congratulations, you've successfully set up Liferay Sync!](../../images/sync-setup-04.png)
+![Figure 5.19: Congratulations, you've successfully set up Liferay Sync!](../../images/sync-setup-04.png)
 
 Sync congratulates you on setting it up and begins to sync files from the sites 
 you selected, in the local folder you specified. Note that completing the 
@@ -90,9 +90,9 @@ help, and the option to quit Sync. Mousing over a portal extends the menu to
 show additional options for that portal. The following screenshots show this 
 menu in Windows.
 
-![Figure 5.29: The Sync desktop menu options are always available from the task bar.](../../images/sync-taskbar-01.png)
+![Figure 5.20: The Sync desktop menu options are always available from the task bar.](../../images/sync-taskbar-01.png)
 
-![Figure 5.30: Each portal also has its own set of options in the task bar menu.](../../images/sync-taskbar-02.png)
+![Figure 5.21: Each portal also has its own set of options in the task bar menu.](../../images/sync-taskbar-02.png)
 
 The menu for each portal first shows the sync status. The sync status shows 
 *Synced* when synchronization is complete. Mousing over *Open Sync Folder* 
@@ -113,7 +113,7 @@ Sync. Open Sync's preferences by clicking the Sync icon in the task bar
 (Windows) or menu bar (Mac OS) and selecting *Preferences*. You're first shown 
 the Preferences menu's *Accounts* tab.
 
-![Figure 5.31: The Preferences menu's *Accounts* tab.](../../images/sync-preferences-accounts-01.png)
+![Figure 5.22: The Preferences menu's *Accounts* tab.](../../images/sync-preferences-accounts-01.png)
 
 The accounts and portals that you sync with are listed on the left. The plus, 
 minus, and pencil icons at the bottom of the account list can be used to 
@@ -140,7 +140,7 @@ for new client versions, check the checkbox next to
 *Automatically check for updates*. You can also check for updates manually by 
 clicking the *Check Now* button. 
 
-![Figure 5.32: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../images/sync-preferences-general-01.png)
+![Figure 5.23: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../images/sync-preferences-general-01.png)
 
 Now that you have a handle on configuring Sync, it's time to see how it works 
 with the files in your Sync folder.
@@ -185,7 +185,7 @@ Media portlet. Click on the *README.txt* icon, look at the information displayed
 to the right, and you should see that the file's version number has been
 incremented.
 
-![Figure 5.33: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/sync-file-edit-01.png)
+![Figure 5.24: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/sync-file-edit-01.png)
 
 If you download and open the file again, it now says `second test`. Your edit 
 was uploaded to the server! You can be confident that this edit was also 
@@ -199,7 +199,7 @@ important to remember this rule of thumb when you're working with files in your
 local Sync folder: deleting files there deletes them *everywhere*! Next, you'll
 learn how to use the Sync client for your mobile device. 
 
-## Using Liferay Sync on Your Mobile Device
+## Using Liferay Sync on Your Mobile Device [](id=using-liferay-sync-on-your-mobile-device)
 
 Liferay Sync for Android and iOS contains most of the desktop Sync client's 
 functionality. The main difference is that the mobile client can only be 
@@ -234,9 +234,9 @@ or My Documents, pressing the location bar at the top slides the screen slightly
 to the right to reveal a compact view of the panel. The following screenshots
 show both views of the panel.
 
-![Figure 5.34: This panel lets you access the app's settings, as well as your sites and documents.](../../images/sync-mobile-panel.png)
+![Figure 5.25: This panel lets you access the app's settings, as well as your sites and documents.](../../images/sync-mobile-panel.png)
 
-![Figure 5.35: Tapping the title bar at the top of My Sites or My Documents opens the main Sync panel's compact view.](../../images/sync-mobile-panel-compact.png)
+![Figure 5.26: Tapping the title bar at the top of My Sites or My Documents opens the main Sync panel's compact view.](../../images/sync-mobile-panel-compact.png)
 
 Press the gear icon to access the app's settings. Settings shows your account 
 information and gives you the option to sign out of your portal. Settings also 
@@ -252,7 +252,7 @@ Android version of Sync, but is coming soon to Sync on iOS. Below the Security
 Mode toggle, the app's version is listed as well as a link to send Liferay
 feedback on the app.
 
-![Figure 5.36: The Settings screen for the Sync app lets you sign out of your portal, enable Security Mode, view the app's version, and send feedback.](../../images/sync-mobile-settings.png)
+![Figure 5.27: The Settings screen for the Sync app lets you sign out of your portal, enable Security Mode, view the app's version, and send feedback.](../../images/sync-mobile-settings.png)
 
 Great! Now that you know how to connect to your portal and find your sites, you 
 can get started managing the files and folders in those sites.
@@ -270,7 +270,7 @@ camera app to take and upload a picture or video. Pressing the *X* icon on the
 upload screen's top right corner returns you to the list of items for that 
 location without taking any action.
 
-![Figure 5.37: Sync shows files and folders in a list.](../../images/sync-mobile-site.png)
+![Figure 5.28: Sync shows files and folders in a list.](../../images/sync-mobile-site.png)
 
 To download a file to your device, press the file in this list. The label 
 indicating the file's size and modification date then changes to a download 
@@ -283,7 +283,7 @@ install one that can. Downloaded files appear in the list with the file size in
 blue instead of gray. For example, the screenshot below shows that 
 `LiferayinAction.pdf` has been downloaded to the device.
 
-![Figure 5.38: Downloaded files appear in the list with their size in blue.](../../images/sync-mobile-file-downloaded.png)
+![Figure 5.29: Downloaded files appear in the list with their size in blue.](../../images/sync-mobile-file-downloaded.png)
 
 The Sync mobile app also lets you move, rename, and delete files and folders. To 
 the right of each file and folder in the list is a circle icon with three dots. 
@@ -321,7 +321,7 @@ capable of sharing the file. To close the context menu and return to the list of
 files and folders, swipe to the right. The following screenshot shows the 
 options available in the context menu for files. 
 
-![Figure 5.39: The badge on the file's icon shows the file's version in the portal. You can also share files that you've downloaded to your device.](../../images/sync-mobile-file-actions.png)
+![Figure 5.30: The badge on the file's icon shows the file's version in the portal. You can also share files that you've downloaded to your device.](../../images/sync-mobile-file-actions.png)
 
 Awesome! You've now seen how Liferay Sync keeps you up to date with the files on 
 your Liferay sites. Any new or modified files on your sites are automatically 
