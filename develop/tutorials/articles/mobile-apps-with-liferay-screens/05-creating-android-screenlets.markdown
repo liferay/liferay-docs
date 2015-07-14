@@ -5,18 +5,18 @@ The
 that come with Liferay Screens cover common use cases for mobile apps that use
 Liferay. They authenticate users, interact with Dynamic Data Lists, view assets,
 and more. However, what if there's no Screenlet for *your* specific use case? No
-sweat! You can create your own Screenlet--anyone can create them. Extensibility
-is a key strength of Liferay Screens. 
+sweat! You can create your own. Extensibility is a key strength of Liferay
+Screens. 
 
 This tutorial explains how to create your own Screenlets. As an example, it
 references code from the sample
 [Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/android/samples/addbookmarkscreenlet), 
 that saves bookmarks to Liferay's Bookmarks portlet. 
 
-To understand the components that comprise a Screenlet, you might want to first
+To understand the components that comprise a Screenlet, you might want to 
 learn the
-[architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android).
-You might also want to learn how to
+[architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) first.
+You might also want to review how to
 [create a View](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
 to present your Screenlet. Without further ado, let the Screenlet creation
 begin! 
@@ -37,8 +37,8 @@ its user interface.
 
 ## Creating the Screenlet's UI [](id=creating-the-screenlets-ui)
 
-The first things to create for a Screenlet's UI are its View Model interface and
-layout. The following steps explain how to create them: 
+The first items to create for a Screenlet's UI are its View Model interface and
+layout. The following steps explain how: 
 
 1.  Create a new View Model interface that extends
     [`BaseViewModel`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/view/BaseViewModel.java).
@@ -108,7 +108,7 @@ Next, you'll create a View class for the Screenlet.
 Your new Screenlet now needs a View class to support the UI you just created.
 This class must extend an Android layout class, implement your Screenlet's View
 Model interface, and implement a listener interface to handle user actions. To
-do so, follow these steps: 
+do this, follow these steps: 
 
 1.  Create a View class that extends an Android layout class. Implement
     constructors that call the parent layout class's constructors. 
@@ -149,7 +149,7 @@ do so, follow these steps:
     shortly.
 
     The Add Bookmark Screenlet's View class `AddBookmarkView`, for example,
-    implement's `android.view.View.OnClickListener` to set references to its
+    implements `android.view.View.OnClickListener` to set references to its
     Screenlet's UI components and invoke its Screenlet's `performUserAction`
     method: 
 
@@ -273,9 +273,9 @@ implementation:
 1.  Create an Interactor interface that extends
     `Interactor<YourInternalListener>`; replace `YourInternalListener` with
     the name of a listener class to notify your Screenlet class about operation
-    status. The listener class is refered to as an *internal* listener class.
-    You'll create the listener class at the end of this section. For example,
-    here's the Add Bookmark Screenlet's Interactor interface
+    status. The listener class is an *internal* listener class.
+    You'll create the listener class later. For example, here's the Add Bookmark
+    Screenlet's Interactor interface
     `AddBookmarkInteractor`: 
 
         public interface AddBookmarkInteractor extends Interactor<AddBookmarkListener> {
@@ -349,7 +349,7 @@ implementation:
 			}
 
 		}
-    
+ 
 3.  Now you can create the `YourInternalListener` interface that you referenced
     in the previous step. Define one method to handle operation failure and
     another method to handle success. You can follow this naming convention for
@@ -373,21 +373,21 @@ developers to use the Screenlet.
 
 Create the Screenlet class so that it implements your Interactor's internal
 listener class and extends
-[`BaseScreenlet`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/BaseScreenlet.java);
-specify your View Model interface and Interactor class as type parameters for
+[`BaseScreenlet`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/BaseScreenlet.java).
+Specify your View Model interface and Interactor class as type parameters for
 `BaseScreenlet`. Since the Screenlet is notified by its Interactor when an
 asynchronous operation ends, the Screenlet class must implement the listener
 interface that the Interactor uses. 
 
 Screenlet classes can use an *external* listener class to notify classes outside
-of the Screenlet (i.e., classes in your app) about events. In its
+the Screenlet (i.e., classes in your app) about events. The 
 [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android),
-every Liferay Screenlet specifies listener classes that an app developer can
-register classes with. You can use an internal listener class as an external
+shows that every Liferay Screenlet specifies listener classes for registering
+with your classes. You can use an internal listener class as an external
 listener, or use a completely different listener class (for example, one that
 uses different methods or signatures).
 
-The `AddBookmarkScreenlet` class uses internal listener class
+The `AddBookmarkScreenlet` class uses the internal listener class
 `AddBookmarkListener` as an external listener class. It provides public methods
 for the app's classes to register for its events. In the code below, the
 Screenlet class has a public method for external classes to register as
@@ -422,7 +422,7 @@ listeners and methods to propagate events to them:
 
 You can even notify the app using a different mechanism such as the Event Bus or
 Android's `BroadcastReceiver`. Note that the implemented interface methods call
-the View to modify the UI and notify the app's listener. This lets your app to
+the View to modify the UI and notify the app's listener. This lets your app 
 perform any action. Next you must implement `BaseScreenlet`'s abstract methods.
 
 The first `BaseScreenlet` method to implement is the `createScreenletView`
@@ -433,7 +433,7 @@ even use the read attributes to configure the initial state of the View.
 
 The second abstract `BaseScreenlet` method to implement is `createInteractor`.
 This is a factory method in which you must create the corresponding Interactor
-for a specific action name, passing in the Screenlet's ID--`BaseScreenlet`'s
+for a specific action name, passing in the Screenlet's ID. `BaseScreenlet`'s
 method `getScreenletId()` returns the ID. Note that a single Screenlet may have
 several interactions (use cases). Each interaction should be implemented in a
 separate Interactor. In the example Add Bookmark Screenlet, there is only one
@@ -594,15 +594,15 @@ activity:
 
 Note that in your app's `server_context.xml` file, you can specify any
 additional settings your app requires. You can set context variables for your
-Screenlet to use, by naming them in your Screenlet's layout XML file and then
+Screenlet to use by naming them in your Screenlet's layout XML file and then
 setting their values in your app's `server_context.xml` file.
 
 The Add Bookmark Screenlet's `server_context.xml` file sets the folder into
 which the Screenlet adds bookmarks. The preceding Screenlet element code maps
 the Screenlet's `liferay:folderId` setting to a bookmark folder context integer
 `@integer/bookmark_folder`. In the `server_context.xml` file below, the context
-integer element is set to the ID of a Bookmarks portlet folder. That value is,
-in turn, assigned to the Screenlet's `folderId` variable, for the Screenlet to
+integer element is set to the ID of a Bookmarks portlet folder. That value is
+in turn assigned to the Screenlet's `folderId` variable, so the Screenlet can
 add bookmarks to that folder. Notice that in addition to the value specified for
 the `bookmark_folder`, values are also specified for `liferay_server`,
 `liferay_company_id`, and the `liferay_group_id`: 

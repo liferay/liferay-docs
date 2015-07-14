@@ -1,16 +1,14 @@
 # Using Liferay Push in Android Apps [](id=using-liferay-push-in-android-apps)
 
-Liferay Screens supports using push notifications in Android apps. To use
-Liferay Push notifications in your Android app, you must configure a couple
-things and modify your app to consume and/or produce push notifications. This
-tutorial how to do all these things. 
+Liferay Screens supports push notifications in Android apps. To use
+them, you must configure some APIs and modify your app to consume and/or
+produce push notifications. This tutorial shows how to do all these things. 
 
 ## Configuring to Use Liferay Push Notifications [](id=configuring-to-use-liferay-push-notifications)
 
-To use Liferay Push in your app, you must create and configure a Google project
-to use Google Cloud Messaging
-([GCM](https://developers.google.com/cloud-messaging/)). You also need to set up
-the Liferay Push app to use the project's GCM API. 
+Your first step is to create and configure a Google project to use Google Cloud
+Messaging ([GCM](https://developers.google.com/cloud-messaging/)). You also need
+to configure the Liferay Push app to use the project's GCM API. 
 
 Follow these steps to create and configure a Google project to support cloud
 messaging: 
@@ -34,9 +32,8 @@ messaging:
 
     ![Figure 2: Create a server key to act as the API Key for push notifications in your portal.](../../images/screens-android-push-server-key.png)
 
-Now that you've set up your Google project, you can set up the Liferay Push app
-to use the project's GCM API. Install the Liferay Push app from the [Liferay
-Marketplace](http://www.liferay.com/marketplace). In the portal's control panel,
+Now that you've set up your Google project, you can configure the Liferay Push
+app to use the project's GCM API. Install the Liferay Push app from the [Liferay Marketplace](http://www.liferay.com/marketplace). In the portal's control panel,
 set the Push Notifications *API Key* to the value of the API key you generated
 earlier in your Google project.
 
@@ -76,15 +73,15 @@ Next, you can learn how to register listeners for push notifications.
 
 ### Receiving Push Notifications [](id=receiving-push-notifications)
 
-This section explains how to listen for push notifications. First, register your
-device in GCM with the `SENDER_ID` you generated previously:
+First, register your device in GCM with the `SENDER_ID` you generated
+previously:
 
 	Session session = new SessionImpl(YOUR_SERVER, new BasicAuthentication(YOUR_USER, YOUR_PASSWORD));
 
 	Push.with(session).register(this, YOUR_SENDER_ID);
 
 If you're using Liferay Screens to maintain a session, you can retrieve it and 
-use it, instead of creating a new one:
+use it instead of creating a new one:
 
 	Push.with(SessionContext.createSessionFromCurrentSession()).register(this, YOUR_SENDER_ID);
 
@@ -92,7 +89,7 @@ If you use these example lines of code, make sure to replace `YOUR_SERVER`,
 `YOUR_USER`, `YOUR_PASSWORD`, and `YOUR_SENDER_ID` with your own values. 
 
 That's it! You can attach a listener to store the registration ID or to process
-the notification sent to the activity (setting `onPushNotification()`). You can
+the notification sent to the activity (using `onPushNotification()`). You can
 also register a receiver and service to process the notification. You can refer
 to the
 [`PushNotifications`](https://github.com/liferay/liferay-screens/tree/master/android/samples)
@@ -113,10 +110,10 @@ This
 notification each time a user creates a new DDL record or updates an existing
 one. 
 
-In your app's `portal.properties` file, you can add a listener for a specific
-class by creating a
+In your app's `portal.properties` file, you can add a listener for a class by
+creating a
 [*value.object.listener*](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Value%20Object)
-property, set to a comma separate list of intended listener classes. Here's an
+property, set to a comma separated list of intended listener classes. Here's an
 example listener setting for `DDLRecord` objects:
 
     value.object.listener.com.liferay.portlet.dynamicdatalists.model.DDLRecord=com.liferay.push.hooks.DDLRecordModelListener
@@ -124,7 +121,7 @@ example listener setting for `DDLRecord` objects:
 Great! Now you know how to configure your Android apps to receive push 
 notifications from Liferay.
 
-In this tutorial, you've set up your portal to accomodate push notifications,
+In this tutorial, you've configured your portal to accommodate push notifications,
 registered notification listeners, and implemented sending push notifications.
 Way to go! 
 
