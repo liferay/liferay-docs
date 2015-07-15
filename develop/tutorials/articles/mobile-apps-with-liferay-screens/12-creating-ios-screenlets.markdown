@@ -2,11 +2,10 @@
 
 The built-in
 [Screenlets](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios)
-of Liferay Screens cover common use cases for mobile apps that use Liferay. They
+cover common use cases for mobile apps that use Liferay. They
 authenticate users, interact with Dynamic Data Lists, view assets, and more.
 What if, however, there's no Screenlet for *your* use case? No problem! You can
-write your own--anyone can create a Screenlet. Extensibility is a key strength
-of Liferay Screens. 
+create your own. Extensibility is a key strength of Liferay Screens. 
 
 This tutorial explains how to create your own Screenlets. As an example, it
 references code from the sample
@@ -52,7 +51,7 @@ Follow these steps to create your Screenlet:
 2.  Create a new interface protocol that specifies your Screenlet's attributes.
     The Add Bookmark Screenlet's interface protocol
     [`AddBookmarkViewModel`](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Samples/AddBookmark-screenlet/LiferayScreensAddBookmarkScreenletSample/AddBookmarkScreenlet/AddBookmarkViewModel.swift)
-    has associated attributes `URL` and `title`: 
+    has the associated attributes `URL` and `title`: 
 
         import UIKit
 
@@ -69,9 +68,8 @@ Follow these steps to create your Screenlet:
     [`BaseScreenletView`](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Framework/Core/Base/BaseScreenletView.swift)
     and conform to the interface protocol you created. Use standard `@IBOutlet`s
     and `@IBAction`s to wire in all the UI components and events from the XIB.
-    Implement getters and setters to respectively get and set values from the UI
-    components. Also, in this class, make sure to implement any required
-    animations or front-end logic. 
+    Implement getters and setters to get and set values from the UI components.
+    Also make sure to implement any required animations or front-end logic. 
 
     For example, the sample Screenlet's
     [`AddBookmarkView_default`](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Samples/AddBookmark-screenlet/LiferayScreensAddBookmarkScreenletSample/AddBookmarkScreenlet/AddBookmarkView_default.swift)
@@ -198,8 +196,8 @@ Follow these steps to create your Screenlet:
 
     The sample Add Bookmark Screenlet's Interactor class
     `LiferayAddBookmarkInteractor` adds a bookmark to the Liferay instance.
-    Note, its name begins with `Liferay` because it communicates with a Liferay
-    instance: 
+    Note that its name begins with `Liferay` because it communicates with a
+    Liferay instance: 
 
         import UIKit
         import LiferayScreens

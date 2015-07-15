@@ -15,19 +15,19 @@ but lets you add to and modify both.
 
 **Full Theme:** provides a complete standalone View for a Screenlet. A full
 Theme is ideal for implementing functionality and appearance completely
-different from a Screenlet's current Themes.
+different from a Screenlet's current Theme.
 
 This tutorial explains how to create all three types. To understand Theme
 concepts and components, you might want to examine the
 [architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
-of Liferay Screens for iOS. And the tutorial
+of Liferay Screens for iOS. The tutorial
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
 can help you create any Screenlet classes your Theme requires. Now get ready to
 create some Themes! 
 
 ## Determining Your Theme's Location [](id=determining-your-themes-location)
 
-After determining the type of Theme to create, you need to determine where to
+After determining the type of Theme to create, you need to decide where to
 create it. If you want to reuse or redistribute it, you should create it in an
 empty Cocoa Touch Framework project in Xcode. The 
 [packaging](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes)
@@ -52,10 +52,10 @@ Default Theme, but enlarges them for viewing on devices with larger screens.
 
 ![Figure 1: The UI components are enlarged in the the example Child Theme's XIB file.](../../images/screens-ios-xcode-child-theme.png)
 
-You can follow these steps to create a Child Theme:  
+You can follow these steps to create a Child Theme: 
 
 1.  In Xcode, create a new XIB file that's named after the Screenlet's View
-    class and your Theme. By convention, a XIB file for a Screenlet with a View
+    class and your Theme. By convention, an XIB file for a Screenlet with a View
     class named *FooScreenletView* and a Theme named *BarTheme* must be named
     `FooScreenletView_barTheme.xib`. You can use content from the parent Theme's
     XIB file as a foundation for your new XIB file. In your new XIB, you can
@@ -84,15 +84,15 @@ it. Fantastic! Next, you'll learn how to create an Extended Theme.
 ## Extended Theme [](id=extended-theme)
 
 An Extended Theme inherits another Theme's UI components and behavior, but lets
-you add to or alter them, by extending the parent Theme's View class and
+you add to or alter it by extending the parent Theme's View class and
 creating a new XIB file. An Extended Theme's parent must be a Full Theme. The
-[Flat7 Theme](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Flat7),
-for example, is an Extended Theme.
+[Flat7 Theme](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Flat7)
+is an Extended Theme.
 
 These steps explain how to create an Extended Theme:
 
 1.  In Xcode, create a new XIB file named after the Screenlet's View class and
-    your Theme. By convention, a XIB file for a Screenlet with a View class
+    your Theme. By convention, an XIB file for a Screenlet with a View class
     named *FooScreenletView* and a Theme named *BarTheme* must be named
     `FooScreenletView_barTheme.xib`. You can use the XIB file of your parent
     Theme as a template. Build your UI changes in your new XIB file with
@@ -100,7 +100,7 @@ These steps explain how to create an Extended Theme:
 
     ![Figure 2: This example Extended Theme's XIB file extends the Login Portlet's UI and behavior with a switch that lets the user show or hide the password field value.](../../images/screens-ios-xcode-ext-theme.png)
 
-2.  Create a new View class, that extends the parent Theme's View class. You 
+2.  Create a new View class that extends the parent Theme's View class. You 
     should name this class after the XIB file you just created. You can add or
     override functionality of the parent Theme's View class.
 
@@ -127,14 +127,14 @@ to learn how to create these classes.
 Follow these steps to create a Full Theme:
 
 1.  Create a new XIB file and use Interface Builder to build your UI. By
-    convention, a XIB file for a Screenlet with a View class named
+    convention, an XIB file for a Screenlet with a View class named
     *FooScreenletView* and a Theme named *BarTheme* must be named
     `FooScreenletView_barTheme.xib`. You can use the XIB file from the
     Screenlet's default Theme as a template. 
 
     ![Figure 3: This Full Theme for the Login Screenlet, includes a text field for entering the user name, uses the UDID for the password, and adds a *Sign In* button with the same `restorationIdentifier` as the Default Theme.](../../images/screens-ios-xcode-full-theme.png)
 
-2.  Create a new View class for your Theme, named after the XIB file you just 
+2.  Create a new View class for your Theme named after the XIB file you just 
     created. As a template, you can use the View class of your Screenlet's
     Default Theme. Your new View class must inherit
     [`BaseScreenletView`](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Framework/Core/Base/BaseScreenletView.swift)
@@ -143,15 +143,15 @@ Follow these steps to create a Full Theme:
 	`@IBOutlet` properties or `@IBAction` methods you need to bind your UI
 	components. 
 
-3.  Set your Theme's new View class as your XIB file's custom class. And bind 
+3.  Set your Theme's new View class as your XIB file's custom class and bind 
     any `@IBOutlet` and `@IBAction` actions to your class. 
 
 Super! You can optionally
 [package](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes) your
 Theme and/or start
 [using](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
-it. Now you know how to create a Full Theme. Note a Full Theme can serve as a
-parent to a Child and Extended Theme. 
+it. Now you know how to create a Full Theme. Note that a Full Theme can serve as
+a parent to a Child and Extended Theme. 
 
 You've mastered Themes! 
 

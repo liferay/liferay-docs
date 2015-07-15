@@ -4,8 +4,8 @@ Once you've
 [created a Theme](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes),
 you can package it up to
 [install and use](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
-with its Screenlet. Your Liferay Screens Theme is a code library that you can
-package using CocoaPods. 
+with its Screenlet. Your Theme is a code library that you can package using
+CocoaPods. 
 
 Follow the steps below to package your Theme for use with CocoaPods. (Note that
 it's important that you use the same names and identifiers described in these
@@ -58,7 +58,7 @@ steps):
         
             s.dependency 'LiferayScreens'
         end
-    
+ 
     Make the following substitutions in the `.podspec` file:
 
     * Replace `Name` in `LiferayScreensThemeName`, with your Theme's CocoaPods
@@ -74,7 +74,7 @@ repository. You can, alternatively, publish your Theme as a public Pod. For
 instructions, see the chapter *Deploying a library* in the
 [official CocoaPods guide](https://guides.cocoapods.org/making/getting-setup-with-trunk.html#deploying-a-library). 
 
-Developers can now use your Theme by adding the following line in their app's
+Developers can now use your Theme by adding the following line to their app's
 `Podfile`; they must, of course, change `Name` to the Theme's CocoaPods name and
 `your_repository_url` to your repository's URL: 
 

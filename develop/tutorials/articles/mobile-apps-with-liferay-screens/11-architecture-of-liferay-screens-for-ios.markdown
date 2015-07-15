@@ -19,8 +19,8 @@ building blocks, you'll be ready to create some amazing Screenlets and Themes!
 ## High Level Architecture of Liferay Screens for iOS [](id=high-level-architecture-of-liferay-screens-for-ios)
 
 Liferay Screens for iOS is composed of a Core, a Screenlet layer, a View layer,
-and Server operations. Server operations are, although technically part of the
-Core, worth describing separately. They facilitate interaction with local and
+and Server operations. Server operations are technically part of the Core, but
+are worth describing separately. They facilitate interaction with local and
 remote data sources and communication between the Screenlet layer and the
 [Liferay Mobile SDK](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/mobile). 
 
@@ -34,17 +34,16 @@ and Server operation classes.
 
 **Screenlets:** Swift classes for inserting into any `UIView`. They render a
 selected Theme in the runtime and in Interface Builder. They also react to user
-interface events, to start Server operations. Screenlets also define a set of
+interface events to start Server operations. Screenlets also define a set of
 `@IBInspectable` properties that can be configured from Interface Builder. The
-Screenlets bundled with Liferay Screens are known as the [Screenlet
-library](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
+Screenlets bundled with Liferay Screens are known as the [Screenlet library](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
 
 **Interactors**: implement specific use cases that involve communicating with
-servers. They can interact with local and remote data sources by using 
-*Server Operations* or custom classes. If a user action or use case needs to 
-execute more than one query to a local or remote store, the sequence is done 
-in the corresponding Interactor. If a screenlet supports more than one user 
-action or use case, an Interactor needs to be created for each. 
+servers. They can use local and remote data sources by using *Server Operations*
+or custom classes. If a user action or use case needs to execute more than one
+query on a local or remote store, the sequence is done in the corresponding
+Interactor. If a screenlet supports more than one user action or use case, an
+Interactor needs to be created for each. 
 
 **Server Operations:** a collection of `NSOperation` classes that can interact
 with local and remote data sources and Liferay instances. Liferay's own set of
@@ -73,7 +72,7 @@ API.
 the base class for all Liferay Portal interactions and use cases that a
 Screenlet supports. Operations retrieve data asynchronously from local or remote
 data sources. The Screenlet classes instantiate operation classes, invoke their
-operations, and receive operation responses, which change the state of the
+operations, and receive operation responses that change the state of the
 Screenlet's View classes. 
 
 [**BaseScreenlet**](https://github.com/liferay/liferay-screens/blob/1.0.0/ios/Framework/Core/Base/BaseScreenlet.swift):
@@ -100,12 +99,12 @@ a singleton object that holds server configuration parameters. It's loaded from
 the `liferay-server-context.plist` file. Most Screenlets use these parameters as
 default values.
 
-Now that you know what the Core is comprised of, you're ready to learn the 
-Screenlet layer's details. 
+Now that you know what the Core contains, you're ready to learn the Screenlet
+layer's details. 
 
 ## Screenlet Layer [](id=screenlet-layer)
 
-The Screenlet layer contains the Screenlets available in Liferay Screens for
+The Screenlet layer contains the available Screenlets in Liferay Screens for
 iOS. The following diagram shows the Screenlet layer in relation to the Core,
 Theme, and Server Operation layers. The Screenlet classes in the diagram are 
 explained in this section. 
@@ -131,19 +130,19 @@ developer interacts with. It includes the following things:
   the Screenlet's requirements, all Themes must implement the `Data`
   interface. 
 - Any number of methods for invoking Server operations. You can optionally
-  make them public, for app developers to call. They can also handle UI
+  make them public for app developers to call. They can also handle UI
   events received in the `onUserAction` method. 
 - An optional (but recommended)
   [delegate object](https://developer.apple.com/library/ios/documentation/general/conceptual/DevPedia-CocoaCore/Delegation.html)
-  for the Screenlet to call on for particular events. 
+  the Screenlet can call on for particular events. 
 
 **MyScreenletOperation:** This is related to the Screenlet, but has one or
-more Server Operations and is located in the Server Operations Layer. If the
-Server Operation is a back-end call, then there's typically only a single
-request. Each Server Operation is responsible for retrieving a set of related
-values. The results are stored in a `result` object that can be read by the
-Screenlet when it's notified. The number of Server Operation classes a Screenlet
-requires depends on the number of server use cases it supports. 
+more Server Operations and is in the Server Operations Layer. If the Server
+Operation is a back-end call, then there's typically only a single request. Each
+Server Operation is responsible for retrieving a set of related values. The
+results are stored in a `result` object that can be read by the Screenlet when
+it's notified. The number of Server Operation classes a Screenlet requires
+depends on the number of server use cases it supports. 
 
 **MyScreenletView_themeX:** A class that belongs to one specific Theme. In the
 diagram, this Theme is *ThemeX*. The class renders the Screenlet's UI by using
@@ -182,19 +181,19 @@ visual changes in its own XIB file; it inherits the parent's view class and
 Screenlet class. It can't add or remove any UI components. The Child Theme's
 parent must be a Full Theme. In the diagram, the Child Theme inherits from the
 Default Theme. Creating a Child Theme is ideal when you only need to make visual
-changes to an existing Theme. For example, you can create a Child Theme for
-Login Screenlet's Default Theme that sets new positions and sizes for the
-standard text boxes.
+changes to an existing Theme. For example, you can create a Child Theme that
+sets new positions and sizes for the standard text boxes in Login Screenlet's
+Default Theme.
 
 **Extended:** Inherits the parent Theme's behavior and appearance, but lets you
 change and add to both. You can do so by creating a custom view class that
-extends parent Theme's view class and a new XIB file. An Extended Theme's parent
-must be a Full Theme. In the diagram, the Extended Theme inherits the Full Theme
-and extends its Screenlet's view class. Refer to the
+extends the parent Theme's view class and a new XIB file. An Extended Theme's
+parent must be a Full Theme. In the diagram, the Extended Theme inherits the
+Full Theme and extends its Screenlet's view class. Refer to the
 [Flat7 Theme](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Flat7)
 for an example of an Extended Theme.
 
-**Full:** Provides a complete standalone view. It has no parent Theme and
+**Full:** Provides a complete standalone theme. It has no parent Theme and
 implements unique behavior and appearance for a Screenlet. Its view class must
 extend Screens's `BaseScreenletView` class and conform to the Screenlet's view
 model protocol. It must also specify a new UI in an XIB file. Full Themes can
@@ -206,10 +205,9 @@ Themes in Liferay Screens are organized into sets that contain Themes for
 several Screenlets. Liferay's available Theme sets are listed here: 
 
 - [*Default:*](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Themes/Default)
-  A mandatory Theme set supplied by Liferay. It's used by default if the
-  Screenlet's `themeName` isn't specified or is invalid. The Default Theme uses
-  a neutral, flat white and blue design with standard UI components. For
-  example, the
+  A mandatory Theme set supplied by Liferay. It's used if the Screenlet's
+  `themeName` isn't specified or is invalid. The Default Theme uses a neutral,
+  flat white and blue design with standard UI components. For example, the
   [Login Screenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Framework/Core/Auth/LoginScreenlet)
   uses standard text boxes for the user name and password fields, but uses the
   Default Theme's flat white and blue design. 
@@ -219,7 +217,7 @@ several Screenlets. Liferay's available Theme sets are listed here:
   components with rounded edges. They're Extended Themes. 
 
 - [*Westeros:*](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Samples/WesterosBank/Theme)
-  The Themes for the 
+  The Theme for the 
   [Bank of Westeros](https://github.com/liferay/liferay-screens/tree/1.0.0/ios/Samples/WesterosBank/App) 
   sample app.
 
