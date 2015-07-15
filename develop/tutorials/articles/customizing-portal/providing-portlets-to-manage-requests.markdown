@@ -4,10 +4,10 @@ One of the most important capabilities of Liferay Portal is the ability to
 configure portlets to manage certain requests. For example, if you'd like users
 to add Blog posts, you would configure a portlet that could handle requests to
 add blogs, like the Blogs portlet. However, you shouldn't request a specific
-hardcoded portlet module; instead, you should request an app that abides by the
-entity and action type requested. Based on the entity type and action, Liferay
-will use the available portlet that can handle the request. This increases the
-flexibility and modularity of using portlets in Liferay Portal.
+hardcoded portlet module; instead, you should request an app based on an entity
+and action type. Processing the entity type and action, Liferay will use an
+available portlet that can handle the request. This increases the flexibility
+and modularity of using portlets in Liferay Portal.
 
 In this tutorial, you'll learn how to declare an entity type and action for a
 desired portlet functionality, and create a module that finds the correct
@@ -27,9 +27,8 @@ can view an example declaration below:
 
 This declaration expects two parameters: the class name of the entity type you'd
 like the portlet to handle, and the type of action. The above code requests a
-portlet ID for a portlet that can view Recycle Bin entries.
-
-For an in-context example, visit the
+portlet ID for a portlet that can view Recycle Bin entries. For an in-context
+example, visit the
 [PortalOpenSearchImpl.search](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portal/search/PortalOpenSearchImpl.java)
 method.
 
@@ -70,8 +69,6 @@ portlet to handle the request.
    [BrowsePortletProvider](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/portlet/BrowsePortletProvider.java),
    etc.).
 
-<!-- Explain how a portlet can handle multiple actions -->
-
 3. Directly above the class's declaration, insert the following:
 
         @Component(
@@ -104,7 +101,17 @@ portlet to handle the request.
 
     $$$
 
-4. Specify the methods you'd like to implement. Make sure to retrieve the
+4. In some cases, a default portlet is already in place to handle the entity
+   and action type requested. To override this default portlet with a custom
+   portlet, you can assign your portlet a higher service ranking. You can do
+   this by setting the following property in your `@Component` declaration:
+
+        property= {"service.ranking:Integer=10"}
+
+    Make sure to replace the integer with a number that is ranked higher than
+    the portlet being used by default. 
+
+5. Specify the methods you'd like to implement. Make sure to retrieve the
    portlet ID/portlet URL that should be provided when this service is called.
 
 Lastly, generate the module's JAR file and deploy it to your portal instance.

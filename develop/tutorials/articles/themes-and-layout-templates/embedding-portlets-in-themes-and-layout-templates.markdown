@@ -5,12 +5,12 @@ ability to embed a portlet in themes and layout templates. This allows the
 portlet to be visible on all pages where the theme/layout is used. In the past,
 this was only possible by hardcoding a specific portlet into place, which has
 many drawbacks. Liferay now provides the *Portlet Providers* framework that only
-requires you specify the element type and action to be displayed. Based on the
-given element type and action, Liferay can distinguish which deployed portlet to
+requires you specify the entity type and action to be displayed. Based on the
+given entity type and action, Liferay can distinguish which deployed portlet to
 use. This increases the flexibility and modularity of embedding portlets in
 Liferay Portal.
 
-In this tutorial, you'll learn how to declare an element type and action in a
+In this tutorial, you'll learn how to declare an entity type and action in a
 custom theme/layout, and create a module that finds the correct portlet to use
 based on those given parameters. You'll first learn how to embed portlets into a
 theme.
@@ -25,15 +25,15 @@ following declaration:
 
     ${theme.runtime("CLASS_NAME", ACTION)}
 
-This declaration expects two parameters: the class name of the element type
-you'd like the portlet to handle, and the type of action. An example of an
-embedded portlet declaration can be viewed below:
+This declaration expects two parameters: the class name of the entity type you'd
+like the portlet to handle, and the type of action. An example of an embedded
+portlet declaration can be viewed below:
 
     $theme.runtime("com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry", $portletProviderAction.VIEW)
 
 This declares that the theme is requesting to view language entries. There are
 four different kinds of actions supported by the Portlet Providers framework:
-`ADD`, `BROWSE`, `EDIT`, and `VIEW`. Specify the element type and action in your
+`ADD`, `BROWSE`, `EDIT`, and `VIEW`. Specify the entity type and action in your
 theme's runtime declaration.
 
 Great, your theme declaration is complete! However, the Portal is not yet
@@ -50,7 +50,7 @@ find the portlet that fits the theme's request.
 
 2. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. To follow naming conventions, name the class
-   based on the element type and action type, followed by *PortletProvider*
+   based on the entity type and action type, followed by *PortletProvider*
    (e.g., `LanguageEntryViewPortletProvider`). The class should extend the
    [`BasePortletProvider`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/portlet/BasePortletProvider.java)
    class and implement the appropriate portlet provider interface based on the
@@ -67,7 +67,7 @@ find the portlet that fits the theme's request.
             service = INTERFACE.class
         )
 
-    The `property` element should match the element type you specified in your
+    The `property` element should match the entity type you specified in your
     theme declaration (e.g.,
     `com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry`). Also, your
     `service` element should match the interface you're implementing (e.g.,
@@ -96,7 +96,7 @@ Portal's `osgi/modules` directory. Once the module is installed and activated in
 your Portal's service registry, your embedded portlet is available for
 use wherever your theme is used.
 
-You succesfully requested a portlet based on the element and action types
+You successfully requested a portlet based on the entity and action types
 required, and created and deployed a module that retrieves the portlet and
 embeds it in your theme. Next, you'll learn a similar process to embed a portlet
 in your custom layout template.
@@ -113,15 +113,15 @@ file.
    column in which to embed the portlet.
 
     This declaration, just as the theme declaration, expects two parameters: the
-    class name of the element type you'd like the portlet to handle, and the
-    type of action. An example of an embedded portlet declaration can be viewed
+    class name of the entity type you'd like the portlet to handle, and the type
+    of action. An example of an embedded portlet declaration can be viewed
     below:
 
         $processor.processPortlet("com.liferay.portal.kernel.servlet.taglib.ui.BreadcrumbEntry", $portletProviderAction.VIEW)
 
     This declares that the layout is requesting to view breadcrumb entries. The
     Portlet Providers framework offers four different actions for layout
-    templates: `ADD`, `BROWSE`, `EDIT`, and `VIEW`. Specify the element type and
+    templates: `ADD`, `BROWSE`, `EDIT`, and `VIEW`. Specify the entity type and
     action in your layout's declaration.
 
 Now that your layout declaration is complete, you'll need to create a module
