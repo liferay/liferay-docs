@@ -134,6 +134,8 @@ Here are some useful Gogo shell commands:
   the `-s` flag to list the bundles using the bundles' symbolic names.
 - `services`: lists all of the services that have been registered in Liferay's
   module framework.
+- `start [bundle ID]`: starts the specified bundle
+- `stop [bundle ID]`: stops the specified bundle
 
 For more information about the Gogo shell, please visit [http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html](http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html).
 
@@ -176,5 +178,26 @@ for the Liferay Bookmarks API bundle and check the list of exported packages for
 the `com.liferay.bookmarks.service` package and find the version of the package
 that's exported. Then you could update your bundle's dependency on the package
 to use the correct version of the exported package.
+
+With the Felix Web Console, you can not only view all of the installed bundles
+in Liferay's module framework but also all of the registered services. For each
+service, you can see the service ID, the type of the service, and the bundle
+providing the service. The type of the service is the name of the interface
+which the service implements and under which it's registered. (Services can
+implement and register themselves under multiple interfaces.)
+
+You can expand each registered service by clicking on the arrow next to the
+service name to view details about each service. These details include the
+following information about each service (this is not an exhaustive list):
+
+- The name of the service bean
+- The symbolic name of the bundle providing the service
+- The version of the bundle providing the service
+- The bundles using the service (if any)
+- The JSON web service context name (if applicable)
+- The JSON web service context path (if applicable)
+
+This information can be very useful when developing Liferay bundles that consume
+or provide services.
 
 ## Related Topics
