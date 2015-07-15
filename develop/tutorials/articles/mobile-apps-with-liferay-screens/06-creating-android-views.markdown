@@ -15,8 +15,8 @@ you change their appearance and position.
 but lets you add to and modify both.
 
 **Full View:** provides a complete standalone View for a Screenlet. A full
-View is ideal for implementing functionality and appearance completely
-different from a Screenlet's current themes.
+View is ideal for implementing completely different functionality and appearance
+from a Screenlet's current theme.
 
 This tutorial explains how to create all three types of Views. To understand
 View concepts and components, you might want to examine the
@@ -28,9 +28,9 @@ ready to create some great Views!
 
 ## Determining Your View's Location [](id=determining-your-views-location)
 
-Where you should create your View depends on how you plan to use it. If you
-don't plan to reuse it in another app or don't want to redistribute it, create
-it in your app project. 
+First, decide whether you'll reuse your view or if it's just for your current
+app. If you don't plan to reuse it in another app or don't want to redistribute
+it, create it in your app project. 
 
 If you want to reuse your View in another app, create it in a new Android
 application module; the tutorial
@@ -49,7 +49,7 @@ View.
 
 The Child View discussed here presents the same UI components as the
 [Login Screenlet's](https://github.com/liferay/liferay-screens/tree/master/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login)
-Default View, but displays them in a more compact layout.
+Default View, but uses a more compact layout.
 
 You can follow these steps to create a Child View:
 
@@ -109,7 +109,7 @@ You can follow these steps to create a Child View:
 2.  Insert your View's Screenlet in any of your activities or fragments, using
     your new layout's name as the `liferay:layoutId` attribute's value. For
     example, to use the new `login_compact` layout, insert `LoginScreenlet` in
-    an activity or fragment, and set `liferay:layoutId="@layout/login_compact"`.
+    an activity or fragment and set `liferay:layoutId="@layout/login_compact"`.
 
 Another good Child View layout file to examine is
 [`sign_up_material.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/material/src/main/res/layout/sign_up_material.xml).
@@ -131,7 +131,7 @@ parent must be a Full View.
 The example Extended View discussed here presents the same UI components as the
 Login Screenlet's Default View, but adds functionality: computing password
 strength. Of course, you're not restricted to password strength computations;
-you can implement the functionality you want. 
+you can implement anything you want. 
 
 1.  Create a new layout XML file named after the View's Screenlet and its
     intended use case. A good way to start building your UI is to duplicate the
@@ -185,7 +185,7 @@ The
 [Bank of Westeros](https://github.com/liferay/liferay-screens/tree/1.0.0/android/samples/bankofwesteros) 
 sample app's
 [Westeros View Set](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/westeros)
-has a couple Extended Views that you can examine. It has an Extended View that
+has a couple of Extended Views that you can examine. It has an Extended View that
 adds a new button to show the password in the clear for the Login Screenlet. The
 View uses custom layout file
 [`login_westeros.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/res/layout/login_westeros.xml) 
@@ -193,9 +193,9 @@ and custom View class
 [`LoginView`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/login/LoginView.java). 
 The Westeros View Set also contains an Extended View for the User Portrait
 Screenlet; it changes the border color and width of the user's portrait
-picture and it uses custom layout file
+picture and it uses the custom layout file
 [`userportrait_westeros.xml`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/res/layout/userportrait_westeros.xml) 
-and custom View class
+and the custom View class
 [`UserPortraitView`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/userportrait/UserPortraitView.java). 
 
 Awesome! Now you know how to create Extended Views. Next, you can learn how to
@@ -279,10 +279,10 @@ You can follow these steps to create a Full View:
     your new layout's name as the `liferay:layoutId` attribute's value. For
     example, to use the new `login_password` layout, insert `LoginScreenlet` in
     an activity or fragment, and set
-    `liferay:layoutId="@layout/login_password"`.  
+    `liferay:layoutId="@layout/login_password"`. 
 
 The
-[Westeros View Set's Full View for the Sign Up Screenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/signup)
+[Westeros View Set's full view for the Sign Up Screenlet](https://github.com/liferay/liferay-screens/tree/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/signup)
 uses a
 [custom Screenlet class](https://github.com/liferay/liferay-screens/blob/1.0.0/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/auth/signup/SignUpScreenlet.java) 
 to add a
@@ -314,12 +314,12 @@ to jCenter or Maven Central. In the example
 [`build.gradle`](https://github.com/liferay/liferay-screens/blob/1.0.0/android/samples/bankofwesteros/build.gradle) 
 file, after entering your bintray api key you can execute `gradlew
 bintrayupload` to upload your project to jCenter. When finished, anyone can use
-the View, as they would any Android dependency, by adding the repository,
+the View as they would any Android dependency by adding the repository,
 artifact, group ID, and version to their Gradle file. 
 
 Super! Now you know how to create and package Views in Liferay Screens for
 Android. This gives you extensive control over your app's visual design and
-behavior, and also lets you distribute and reuse your Views. 
+behavior and also lets you distribute and reuse your Views. 
 
 ## Related Topics [](id=related-topics)
 
