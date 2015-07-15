@@ -93,12 +93,12 @@ module framework. There are pros and cons to each approach:
         - More complex to produce because more of the metadata analysis must be
           done manually
 
-- OSGi Service (a.k.a. Component Portlets)
+- OSGi Service (a.k.a. Component Portlet)
     - This form virtually eliminates all JavaEE-isms from portlet development
       and results in 95% pure OSGi bundles (5% is reserved because JSP support
       is provided seamlessly).
     - Pros:
-        - Lowest amount of boilerplate
+        - Lowest amount of boilerplate code
         - Complete OSGi dynamics
         - Promotes ultimate composability
         - No XML in most cases
@@ -144,7 +144,7 @@ For more information about the Gogo shell, please visit [http://felix.apache.org
 Another way to interact with Liferay's module framework is via the Felix Web
 Console. To access Liferay's Felix Web Console if you're running Liferay
 locally, visit
-[http://localhost:8080/o/system/console](http://localhost:8080/o/system/console).
+[http://localhost:8080/o/system/console/bundles](http://localhost:8080/o/system/console/bundles).
 
 By default, you'll see a list of all the bundles installed in Liferay's module
 framework. You can expand each bundle entry by clicking on the arrow next to the
@@ -180,11 +180,13 @@ that's exported. Then you could update your bundle's dependency on the package
 to use the correct version of the exported package.
 
 With the Felix Web Console, you can not only view all of the installed bundles
-in Liferay's module framework but also all of the registered services. For each
-service, you can see the service ID, the type of the service, and the bundle
-providing the service. The type of the service is the name of the interface
-which the service implements and under which it's registered. (Services can
-implement and register themselves under multiple interfaces.)
+in Liferay's module framework but also all of the registered services. To view
+the services registered on your locally running Liferay instance, visit
+[http://localhost:8080/o/system/console](http://localhost:8080/o/system/console).
+For each service, you can see the service ID, the type of the service, and the
+bundle providing the service. The type of the service is the name of the
+interface which the service implements and under which it's registered.
+(Services can implement and register themselves under multiple interfaces.)
 
 You can expand each registered service by clicking on the arrow next to the
 service name to view details about each service. These details include the
@@ -199,5 +201,10 @@ following information about each service (this is not an exhaustive list):
 
 This information can be very useful when developing Liferay bundles that consume
 or provide services.
+
+Liferay's Felix Web Console allows you to manage more than just bundles and
+services (although these management tools are probably its most important
+features). Explore the Web Console's navigation menu to find additional tools
+such as Configuration, Log Service, Licenses, and System Information.
 
 ## Related Topics
