@@ -7,12 +7,12 @@ public class SimpleBundleActivator implements BundleActivator {
 
 	@Override
     public void start(BundleContext bundleContext) throws Exception {
-        System.out.println("Simple Bundle starting");
+        System.out.println("Hello Liferay!");
     }
 
 	@Override
 	public void stop(BundleContext bundleContext) throws Exception {
-        System.out.println("Simple Bundle stopping");
+        System.out.println("Goodbye Liferay!");
 	}
 
 }
