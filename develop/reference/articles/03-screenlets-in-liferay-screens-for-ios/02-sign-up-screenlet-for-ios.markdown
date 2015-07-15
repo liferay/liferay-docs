@@ -1,4 +1,4 @@
-# SignUpScreenlet for iOS [](id=signupscreenlet-for-ios)
+# Sign Up Screenlet for iOS [](id=signupscreenlet-for-ios)
 
 ## Requirements [](id=requirements)
 
@@ -13,9 +13,9 @@
 ## Features [](id=features)
 
 The `SignUpScreenlet` creates a new user in your Liferay instance: a new user of
-your app can become a new user in your portal. You can also use this screenlet
+your app can become a new user in your portal. You can also use this Screenlet
 to save the credentials of the new user in their keychain. This enables auto
-login for future sessions. The screenlet also supports navigation of form fields
+login for future sessions. The Screenlet also supports navigation of form fields
 from the keyboard of the user's device.
 
 ## Module [](id=module)
@@ -24,10 +24,10 @@ from the keyboard of the user's device.
 
 ## Themes [](id=themes)
 
-- Default
-- Flat7
+- Default (`default`)
+- Flat7 (`flat7`)
 
-![The `SignUpScreenlet` with the Default and Flat7 themes.](../../images/screens-ios-signup.png)
+![The `SignUpScreenlet` with the Default and Flat7 Themes.](../../images/screens-ios-signup.png)
 
 ## Portal Configuration [](id=portal-configuration)
 

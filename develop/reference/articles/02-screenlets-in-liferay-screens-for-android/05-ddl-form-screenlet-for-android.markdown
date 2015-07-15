@@ -1,4 +1,4 @@
-# DDLFormScreenlet for Android [](id=ddlformscreenlet-for-android)
+# DDL Form Screenlet for Android [](id=ddlformscreenlet-for-android)
 
 ## Requirements [](id=requirements)
 
@@ -48,12 +48,12 @@ supported.
 
 ## Views [](id=views)
 
-The Default view uses a standard vertical `ScrollView` to show a scrollable list 
-of fields. Other views may use different components, such as `ViewPager` or 
+The Default View uses a standard vertical `ScrollView` to show a scrollable list 
+of fields. Other Views may use different components, such as `ViewPager` or 
 others, to show the fields. You can find a sample of this implementation in the 
 `DDLFormScreenletPagerView` class.
 
-![The `DDLFormScreenlet` Default and Material viewsets.](../../images/screens-android-ddlform.png)
+![The `DDLFormScreenlet` Default and Material Viewsets.](../../images/screens-android-ddlform.png)
 
 ### Editor Types [](id=editor-types)
 
@@ -78,10 +78,10 @@ the layout used with any editor type at any point.
 ### Custom Editors [](id=custom-editors)
 
 If you want to have a unique appearance for one specific field, you can
-customize your field's editor view by calling the screenlet's
+customize your field's editor View by calling the Screenlet's
 `setCustomFieldLayoutId(fieldName, layoutId)` method, where the first parameter
 is the name of the field to customize and the second parameter is the layout to
-use. You can also create custom editor views. For examples of this, see the
+use. You can also create custom editor Views. For examples of this, see the
 files `ddlfield_custom_rating_number.xml` and `CustomRatingNumberView.java`.
 
 ## Activity Configuration [](id=activity-configuration)
@@ -145,7 +145,7 @@ and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 
 | Attribute | Data Type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The layout to use to show the view. |
+| `layoutId` | `@layout` | The layout to use to show the View. |
 | `checkboxFieldLayoutId ` | `@layout` | The layout to use to show the view for Boolean fields. |
 | `dateFieldLayoutId` | `@layout` | The layout to use to show the view for Date fields. |
 | `numberFieldLayoutId` | `@layout` | The layout to use to show the view for Number, Decimal, and Integer fields. |
@@ -161,7 +161,7 @@ and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 | `repositoryId` | `number` | The ID of the Documents and Media repository to upload to. If this value is `0`, the default repository for the site specified by `groupId` is used. |
 | `folderId` | `number` | The ID of the folder where Documents and Media files are uploaded. If this value is `0`, the root is used. |
 | `filePrefix` | `string` | The prefix to attach to the names of files uploaded to a Documents and Media repository. The upload date followed by the original file name is appended following the prefix. |
-| `autoLoad` | `boolean` | Sets whether the form loads when the screenlet is shown. If `recordId` is set, the record value is loaded together with the form definition. The default value is `false`. |
+| `autoLoad` | `boolean` | Sets whether the form loads when the Screenlet is shown. If `recordId` is set, the record value is loaded together with the form definition. The default value is `false`. |
 | `autoScrollOnValidation` | `boolean` | Sets whether the form automatically scrolls to the first failed field when validation is used. The default value is `true`. |
 | `showSubmitButton` | `boolean` | Sets whether the form shows a submit button at the bottom. If this is set to `false`, you should call the `submitForm()` method. The default value is `true`. |
 

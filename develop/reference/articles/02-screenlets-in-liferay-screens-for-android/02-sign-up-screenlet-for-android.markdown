@@ -1,4 +1,4 @@
-# SignUpScreenlet for Android [](id=signupscreenlet-for-android)
+# Sign Up Screenlet for Android [](id=signupscreenlet-for-android)
 
 ## Requirements [](id=requirements)
 
@@ -12,9 +12,9 @@
 ## Features [](id=features)
 
 The `SignUpScreenlet` creates a new user in your Liferay instance: a new user of
-your app can become a new user in your portal. You can also use this screenlet
+your app can become a new user in your portal. You can also use this Screenlet
 to save new users' credentials on their devices. This enables auto login for
-future sessions. The screenlet also supports navigation of form fields from the
+future sessions. The Screenlet also supports navigation of form fields from the
 device's keyboard.
 
 ## Module [](id=module)
@@ -25,7 +25,7 @@ device's keyboard.
 
 - Default
 
-![The `SignUpScreenlet` with the Default and Material viewsets.](../../images/screens-android-signup.png)
+![The `SignUpScreenlet` with the Default and Material Viewsets.](../../images/screens-android-signup.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -55,7 +55,7 @@ user's credentials to `server_context.xml`.
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The layout used to show the view.|
+| `layoutId` | `@layout` | The layout used to show the View.|
 | `anonymousApiUserName` | `string` | The user's name, email address, or ID to
 use for authenticating the request. The portal's authentication method defines which of these is used. |
 | `anoymousApiPassword` | `string` | The password used to authenticate the request. |
