@@ -1,0 +1,130 @@
+# Creating a Simple Bundle
+
+In this tutorial, you'll learn how to create a simple bundle that can be
+deployed to Liferay's module framework.
+
+It's easy to create a bundle using Liferay's Ant-based [Plugins SDK](http://www.liferay.com/downloads/liferay-portal/available-releases).
+Using the Plugins SDK is not required; you could use
+[Maven](https://maven.apache.org), [Gradle](https://gradle.org), or
+[Bndtools](http://bndtools.org) instead.
+
+To begin, navigate to your Plugins SDK's `portlets` folder in a terminal or
+command prompt. Run the `create.[sh|bat]` script to create a new portlet
+project. For example, enter this command
+
+    ./create.sh simple-bundle "Simple Bundle"
+
+to create a project named `simple-bundle-portlet`. Delete the `-portlet` suffix
+from your project's name. Also, delete your project's `docroot` folder. You
+don't need the `-portlet` suffix or the `docroot` folder since you're just
+creating a simple bundle, not a portlet.
+
+Still from the terminal or command line, create a new file in your project
+called `bnd.bnd`. Add the following contents to this file:
+
+    Bundle-Name: Simple Bundle
+    Bundle-SymbolicName: com.liferay.docs.simplebundle
+    Bundle-Version: 1.0.0
+    Private-Package: com.liferay.docs.simplebundle
+    Bundle-Activator: com.liferay.docs.simplebundle.SimpleBundleActivator
+
+Liferay's Plugins SDK uses a tool called [bnd](http://www.aqute.biz/Bnd/Bnd) to
+read the `bnd.bnd` file and, based on its contents, to generate the
+`MANIFEST.MF` file that the OSGi specification requires of bundles.
+
+Next, edit your project's `ivy.xml` file. Remove the `-portlet` suffix from the
+line in which it appears. Then remove the default dependencies and replace them
+with this one:
+
+    <dependency name="org.osgi.core" org="org.osgi" rev="5.0.0" />
+
+You don't need the default dependencies to create a simple bundle but you do
+need the OSGi core.
+
+Finally, edit your project's `build.xml` file. Remove the `-portlet` suffix from
+the project name. Then replace this import declaration
+
+    <import file="../build-common-portlet.xml" />
+
+with this one:
+
+    <import file="../../build-common-osgi-plugin.xml" />
+
+Run the following command to download the dependencies required to build a
+bundle:
+
+    ant clean
+
+Now you're ready to import your project into Eclipse. Open Eclipse and click
+*File* &rarr; *New* &rarr; *Other* &rarr; *Java Project*. Uncheck the *Use
+default location* box and click *Browse*. Navigate to your project in your
+Plugins SDK and select it. Eclipse generates `.classpath` and `.project` files
+based on the contents of your project.
+
+Now it's time to turn your project into a bundle. Right-click on your project's
+`src` folder and select *New* &rarr; *Package* and create a new package. For
+example, suppose you create a new package called
+*com.liferay.docs.simplebundle*. Right-click on your new package and select
+*New* &rarr; *Class*. Name the class *SimpleBundleActivator*. Replace its
+default contents with the following code:
+
+    package com.liferay.docs.simplebundle;
+
+    import org.osgi.framework.BundleActivator;
+    import org.osgi.framework.BundleContext;
+
+    public class SimpleBundleActivator implements BundleActivator {
+
+        @Override
+        public void start(BundleContext bundleContext) throws Exception {
+            System.out.println("Hello Liferay!");
+        }
+
+        @Override
+        public void stop(BundleContext bundleContext) throws Exception {
+            System.out.println("Goodbye Liferay!");
+        }
+
+    }
+
+Of course, replace the package declaration with your package.
+
+Next, make sure that you've configured your Plugins SDK with the location of
+your Liferay instance. To do so, create a `build.[username].properties` file in
+your Plugins SDK and add the following contents to it:
+
+    app.server.dir=[Liferay Home]/tomcat-7.0.62
+    auto.deploy.dir=[Liferay Home]/deploy
+    liferay.home=[Liferay Home]
+
+Replace `[Liferay Home]` with the path to your Liferay bundle.
+
+Now you can deploy your simple bundle application by opening a terminal or
+command prompt and running the following command from your project folder:
+
+    ant clean deploy
+
+Check Liferay's log for a message like this:
+
+    com.liferay.docs.simplebundle.jar copied successfully. Deployment will start in a few seconds.
+
+This message means that Liferay's deployment mechanism has detected the JAR file
+that you copied to the `deploy` folder. Liferay copies your JAR file to the
+`osgi/modules` folder. When your bundle starts, look for the following message
+(or whatever message you configured your bundle to display) in Liferay's log:
+
+    Hello Liferay!
+
+If you see this message, your bundle is working correctly!
+
+Optionally, you can edit your bundle (e.g., change the messages that are printed
+upon the bundle starting and stopping) and redeploy your bundle to update it. To
+replace, use the following command from your project's directory again:
+
+    ant clean deploy
+
+Confirm that Liferay automatically updates your bundle and that the new message
+is displayed. This demonstrates one advantage afforded by Liferay's module
+framework: it speeds up development since it's much faster to update a bundle
+running in Liferay's module framework than it is to redeploy a traditional
+Liferay plugin which must be redeployed to Liferay's application server.
