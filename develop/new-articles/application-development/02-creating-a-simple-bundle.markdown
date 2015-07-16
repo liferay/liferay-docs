@@ -119,7 +119,7 @@ If you see this message, your bundle is working correctly!
 
 Optionally, you can edit your bundle (e.g., change the messages that are printed
 upon the bundle starting and stopping) and redeploy your bundle to update it. To
-replace, use the following command from your project's directory again:
+redeploy, use the following command from your project's directory again:
 
     ant clean deploy
 
