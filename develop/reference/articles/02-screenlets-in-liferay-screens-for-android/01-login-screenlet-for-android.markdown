@@ -48,7 +48,7 @@ the method `SessionContext.loadSessionFromStore()`.
 
 ## Portal Configuration [](id=portal-configuration)
 
-### Basic Authentication
+### Basic Authentication [](id=basic-authentication)
 
 Before using `LoginScreenlet`, you should make sure your portal is configured 
 with the authentication method you want to use. You can choose email address, 
@@ -60,7 +60,7 @@ screen name, or user ID. You can set this in the Control Panel by clicking
 For more details, see the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide. 
 
-### OAuth Authentication
+### OAuth Authentication [](id=oauth-authentication)
 
 If you want to use OAuth authentication, you first need to install the 
 [OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 
