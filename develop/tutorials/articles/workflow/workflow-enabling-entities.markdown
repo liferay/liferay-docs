@@ -1,17 +1,19 @@
 # Workflow Enabling Entities
 
-Workflow enabled (Workflown? Workflowed? Workflowized?) entities require a
-workflow handler class to interact with Liferay's workflow back end and the
-entity's service layer. They also have some extra fields in their database table
-that help keep track of their status. Service Builder is used to create those
-fields. After that, the service layer needs updating. It needs code to populate
-the new fields when entities are added to the database, it needs to send the
-entity through Liferay's workflow, and it needs to handle the workflow status of
-the entity when it's returned by the workflow. 
+Enabling your app's entities to support workflow is so easy, you could do it in
+your sleep (but don't try). Workflow enabled (Workflown? Workflowed?
+Workflowized?) entities require a workflow handler class to interact with
+Liferay's workflow back end and the entity's service layer. They also have some
+extra fields in their database table that help keep track of their status.
+Service Builder is used to create those fields. After that, the service layer
+needs updating. It needs code to populate the new fields when entities are added
+to the database, it needs to send the entity through Liferay's workflow, and it
+needs to handle the workflow status of the entity when it's returned by the
+workflow. 
 
 ## Creating a Workflow Handler
 
-Workflow handler's are your application's way of interacting with the workflow
+Workflow handlers are your application's way of interacting with the workflow
 back end. They must implement the `WorkflowHandler` interface.  Liferay's
 abstract class, `BaseWorkflowHandler`, provides a base implementation you can
 leverage. Extend this class and implement only the methods not included in
@@ -192,7 +194,7 @@ entities are presented to the app's users.
 
 ## Updating the View Layer
 
-Make sure that you account for the workflow status in your App's UI. This
+Make sure that you account for the workflow status in your app's UI. This
 involves creating a new *finder* method that accounts for workflow status,
 exposing the finder by creating a *getter* in the local service implementation,
 then calling the new getter method in the view layer, populating the UI with
@@ -208,7 +210,7 @@ For an example of using service Builder to create a finder that takes workflow s
 
 If your app includes an *admin* portlet in Liferay's Site Administration
 console, consider displaying all entities, regardless of workflow status. Many
-of Liferay's portlet's take this approach, displaying the entities in a 
+of Liferay's portlets take this approach, displaying the entities in a 
 [Search Container](https://docs.liferay.com/portal/6.2/taglibs/liferay-ui/search-container.html) and including the workflow status as a column.
 
 ![Figure 1: The Message Boards Admin portlet displays the workflow status of its entities.](../../images/message-boards-admin.png)
