@@ -129,14 +129,13 @@ marks your portlet class as a
 [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
 [Service Component](https://osgi.org/javadoc/r5/cmpn/org/osgi/service/component/annotations/Component.html).
 
-The `immediate = true` component property declares that your component must be
-immediately activated once its dependencies are satisfied by Liferay's module
-framework.
+The `immediate = true` property declares that your component must be immediately
+activated once its dependencies are satisfied by Liferay's module framework.
 
-The `property` component property allows multiple properties to be specified.
-Notice that the properties that you specify here are the ones that you used to
-specify in files like `portlet.xml`, `liferay-portlet.xml`, and `web.xml` in a
-traditional Liferay plugin. Specifying
+The `property` property allows multiple attributes to be specified. Notice that
+the properties that you specify here are the ones that you used to specify in
+files like `portlet.xml`, `liferay-portlet.xml`, and `web.xml` in a traditional
+Liferay plugin. Specifying
 `com.liferay.portlet.display-category=category.sample` makes your portlet appear
 in the Sample category. Specifying `com.liferay.portlet.instanceable=true` makes
 your portlet instanceable. Specifying `javax.portlet.display-name=Example
