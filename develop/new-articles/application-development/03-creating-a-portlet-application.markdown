@@ -157,9 +157,9 @@ contents to it:
     auto.deploy.dir=[Liferay Home]/deploy
     liferay.home=[Liferay Home]
 
-Replace `[Liferay Home]` with the path to your Liferay bundle.
+Replace `[Liferay Home]` with the path to your Liferay portlet bundle.
 
-Now you can deploy your simple bundle application by opening a terminal or
+Now you can deploy your portlet bundle application by opening a terminal or
 command prompt and running the following command from your project folder:
 
     ant clean deploy
@@ -178,14 +178,39 @@ configured in your portlet) to be displayed by your portlet.
 
 If you see this message, your portlet bundle is working correctly!
 
-Optionally, you can edit your portlet bundle (e.g., change the message that your
-portlet displays) and redeploy your bundle to update it. To redeploy, use the
-following command from your project's directory again:
+Alternative methods of verifying that your portlet bundle was installed into
+Liferay's module include using the Felix Gogo shell and the Felix Web Console.
+To use the Gogo shell to confirm that your portlet bundle was successfully
+installed, connect to Liferay's Gogo shell. If you're running Liferay locally,
+use
+
+    telnet localhost 11311
+
+then, at the prompt, enter this command:
+
+    lb
+
+The `lb` command stands for *list bundles*. Verify that your bundle is listed
+and its status is active. You should see a result like this:
+
+    257|Active     |    1|Example Portlet (1.0.0)
+
+To use the Web Console to confirm that your portlet bundle was successfully
+installed, navigate to
+[http://localhost:8080/o/system/console/bundles](http://localhost:8080/o/system/console/bundles)
+and confirm that your bundle appears in the list. (It should be the bundle with
+the highest ID).
+
+During development, you'll often want to edit and update your bundle. To test
+the (very easy) redeployment process, edit your bundle (e.g., change the message
+that's displayed by your portlet) and redeploy your bundle by using the
+following command from your project's directory:
 
     ant clean deploy
 
-Confirm that Liferay automatically updates your bundle and that the new message
-is displayed. This demonstrates one advantage afforded by Liferay's module
-framework: it speeds up development since it's much faster to update a bundle
-running in Liferay's module framework than it is to redeploy a traditional
-Liferay plugin which must be redeployed to Liferay's application server.
+Confirm that Liferay automatically updates your portlet bundle and that the new
+message is displayed. This demonstrates one advantage afforded by Liferay's
+module framework: it speeds up development since it's much faster to update a
+bundle running in Liferay's module framework than it is to redeploy a
+traditional Liferay plugin which must be redeployed to Liferay's application
+server.

@@ -117,9 +117,32 @@ that you copied to the `deploy` folder. Liferay copies your JAR file to the
 
 If you see this message, your bundle is working correctly!
 
-Optionally, you can edit your bundle (e.g., change the messages that are printed
-upon the bundle starting and stopping) and redeploy your bundle to update it. To
-redeploy, use the following command from your project's directory again:
+Alternative methods of verifying that your bundle was installed into Liferay's
+module include using the Felix Gogo shell and the Felix Web Console. To use the
+Gogo shell to confirm that your bundle was successfully installed, connect to
+Liferay's Gogo shell. If you're running Liferay locally, use
+
+    telnet localhost 11311
+
+then, at the prompt, enter this command:
+
+    lb
+
+The `lb` command stands for *list bundles*. Verify that your bundle is listed
+and its status is active. You should see a result like this:
+
+    257|Active     |    1|Simple Bundle (1.0.0)
+
+To use the Web Console to confirm that your bundle was successfully installed,
+navigate to
+[http://localhost:8080/o/system/console/bundles](http://localhost:8080/o/system/console/bundles)
+and confirm that your bundle appears in the list. (It should be the bundle with
+the highest ID).
+
+During development, you'll often want to edit and update your bundle. To test
+the (very easy) redeployment process, edit your bundle (e.g., change the
+messages that are printed upon the bundle starting and stopping) and redeploy
+your bundle by using the following command from your project's directory:
 
     ant clean deploy
 
