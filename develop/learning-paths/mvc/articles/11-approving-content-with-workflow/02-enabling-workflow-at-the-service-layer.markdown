@@ -18,7 +18,7 @@ proper fields for workflow. However, if you add an `Entry`, you'll see that the
 new fields are not populated. The local service implementation classes need
 some modifications to put values in these fields. 
 
-## Setting the Workflow Fields in `EntryLocalServiceImpl` [](id=setting-the-workflow-fields-in-entrylocalserviceimpl)
+## Setting the Workflow Fields in EntryLocalServiceImpl [](id=setting-the-workflow-fields-in-entrylocalserviceimpl)
 
 Open `EntryLocalServiceImpl` and add the following line in the
 `addGuestbookEntry` method, immediately following the current setter methods
@@ -88,7 +88,7 @@ workflow status and does one of two things:
 - If the entity is not approved, it is marked as not visible and can't be
   displayed in the Asset Publisher portlet.
 
-## Setting the Workflow Fields in `GuestbookLocalServiceImpl` [](id=setting-the-workflow-fields-in-guestbooklocalserviceimpl)
+## Setting the Workflow Fields in GuestbookLocalServiceImpl [](id=setting-the-workflow-fields-in-guestbooklocalserviceimpl)
 
 You need to repeat the above steps to enable the service layer of the
 `Guestbook` entity to set the necessary status fields needed for workflow.

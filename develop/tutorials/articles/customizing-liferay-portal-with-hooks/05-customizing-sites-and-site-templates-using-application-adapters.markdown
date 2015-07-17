@@ -1,7 +1,7 @@
 # Customizing Sites and Site Templates with Application Adapters [](id=customizing-sites-and-site-templates-with-application-adapters)
 
 <!-- The ending example hook can be found here:
-https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/plat-fws/application-adap/end/example-hook
+https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/plat-fws/application-adap/end/example-hook
 -->
 
 JSP hooks are often scoped to the portal, but what if you need to customize
@@ -109,4 +109,10 @@ template. The added sites include your application adapter automatically.
 In this tutorial, you learned that application adapters are used to scope
 customizations to specific sites in your portal instance. Then you created one
 for yourself and learned best practices along the way. 
+
+**Related Topics**
+
+[Themes and Layout Templates](develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+
+[Advanced Content with Structures and Layout Templates](discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates)
 

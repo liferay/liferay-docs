@@ -140,3 +140,15 @@ or the Liferay Portal EE Javadocs included in the Liferay Portal EE
 Documentation `.zip` file that you can download from the Customer Portal on
 [http://www.liferay.com](http://www.liferay.com). 
 
+## Related Topics [](id=related-topics)
+
+[Invoking Local Services](develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+
+[Invoking Remote Services](develop/tutorials/-/knowledge_base/6-2/invoking-remote-services)
+
+[Invoking Services Using Skinny JSON Provider](develop/tutorials/-/knowledge_base/6-2/invoking-services-using-skinny-json-provider)
+
+[Invoking Liferay Services in Your Android App](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
+
+[Invoking Liferay Services in Your iOS App](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
+

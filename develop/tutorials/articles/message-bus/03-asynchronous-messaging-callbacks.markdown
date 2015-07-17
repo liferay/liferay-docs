@@ -10,7 +10,7 @@ think of this as a return address of sorts. This tutorial illustrates
 asynchronous messaging with call-backs by showing you how to implement it
 between one sending and two listening portlets in a plugin project. You can find
 the code for this example plugin project here:
-[Tasks Portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/async-callback/tasks-portlet).
+[Tasks Portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/message-bus-02-async-callback-tasks-portlet).
 
 Imagine the following scenario. A rock concert requires many things to be done
 before the show can go on. The amplifiers, sound system, lighting, and any other
@@ -55,7 +55,7 @@ message sender. In this example, the initial sender is inside the method of the
 Tasks portlet that is responsible for adding new setup tasks. This is because
 the messages need to be sent each time the tour manager adds a new setup task.
 You can find this code here:
-[`TasksPortlet.java`](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/async-callback/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java). 
+[`TasksPortlet.java`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/message-bus-02-async-callback-tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/TasksPortlet.java). 
 
 A sender for an asynchronous message with a call-back does the following things:
 
@@ -91,7 +91,7 @@ You need to have one or more message listeners implemented to receive messages
 from your sender. Each listener is a class that implements Liferay's 
 `MessageListener` interface. In this example there are three listeners, one for 
 each portlet. You can find the example listeners here:
-[Listeners](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/msg-bus/async-callback/tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl).
+[Listeners](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/message-bus-02-async-callback-tasks-portlet/docroot/WEB-INF/src/com/tour/portlet/tasks/messaging/impl).
 
 Asynchronous listeners with call-backs do the following things: 
 

@@ -39,22 +39,25 @@ Development Mode, select *Development(portal-developer.properties)* and save the
 runtime environment. The next time you start any Liferay server that is based on
 this runtime environment, it starts in Development Mode. 
 
+To enable Development Mode for existing servers, access the *Liferay settings*
+section of your runtime environment by double-clicking on the server in
+the *Servers* tab. 
+
 ![Figure 1: You can set Developer Mode in the *Liferay settings* section of your runtime environment in Liferay IDE](../../images/set-develop-mode.png)
 
 +$$$
 
-**Warning:** Only change the Server Mode
-from the runtime environment's Liferay settings section. On server
-startup, if Standard mode is set in Liferay IDE, the
+**Warning:** Only change the Server Mode from the runtime environment's Liferay
+settings section. On server startup, if Standard mode is set in Liferay IDE, the
 `portal-developer.properties` file is not included for overriding portal
 properties. 
 
 $$$
 
-For Liferay Portal servers below version 6.2 (e.g., Liferay v6.1 CE
-Server, Liferay v6.0 CE Server), Liferay IDE enables Developer Mode by
-default. On starting your Liferay server for the first time, IDE creates
-a `portal-ide.properties` file in your Liferay Portal directory. This properties
+For Liferay Portal servers below version 6.2 (e.g., Liferay v6.1 CE Server,
+Liferay v6.0 CE Server), Liferay IDE enables Developer Mode by default. On
+starting your Liferay server for the first time, IDE creates a
+`portal-ide.properties` file in your Liferay Portal directory. This properties
 file has the property setting:
 `include-and-override=portal-developer.properties`, which enables Developer
 Mode. Next you can take a look at how you can set Developer Mode outside of IDE.
@@ -75,10 +78,9 @@ options for your `CATALINA_OPTS` variable, in your `setenv.sh` file
 
 +$$$
 
-**Tip:** If you're already using the system
-property `external-properties` to load other properties files, add
-`portal-developer.properties` to the list and use a comma to separate it from
-other entries. 
+**Tip:** If you're already using the system property `external-properties` to
+load other properties files, add `portal-developer.properties` to the list and
+use a comma to separate it from other entries. 
 
 $$$
 
@@ -92,4 +94,4 @@ overwritten when you redeploy your theme.
 
 [Designing a Layout Template](/develop/tutorials/-/knowledge_base/6-2/designing-a-layout-template)
 
-[Developing Applications with Liferay Developer Studio](/develop/learning-paths/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu)
+[Developing Applications with Liferay Developer Studio](/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu)

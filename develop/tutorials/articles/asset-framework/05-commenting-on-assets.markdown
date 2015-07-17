@@ -4,10 +4,10 @@
 Testing Notes:
 
 The starting example portlet for this tutorial is at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-02-asset-enable-insults-portlet
+liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-02-asset-enable-insults-portlet
 
 On completing this tutorial, the example portlet looks like the portlet at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-03-end-insults-portlet
+liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet
 
 Make sure to read their README files.
 -->
@@ -24,17 +24,17 @@ This tutorial shows you how to add the comment feature for your application's
 content. A custom Insults portlet is used as an example: a community discussion
 definitely helps to bring about insults of the highest quality! The
 completed Insults portlet code that uses this feature is on 
-[Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet).
+[Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet).
 
 Without any further ado, go ahead and get started enabling comments in your 
 portlet!
 
 You can display the comments component in your portlet's view 
-or, if you've implemented [asset rendering](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers),
+or, if you've implemented [asset rendering](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers),
 you can display it in the full content view in the Asset Publisher portlet. 
 
 As an example, the Insult portlet's view JSP file
-[`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
+[`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
 shows an insult entity and this asset feature. 
 
 In your entity's view JSP, you can use `ParamUtil` to get the ID of the entity
@@ -97,7 +97,7 @@ portlets.
 Before moving on, another thing you might want to do is perform permissions 
 checks to control who can access the discussion. For example, you can surround
 the collapsible panel 
-[`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
+[`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
 with `c:if` tags that only reveal their contents to users that are signed in to
 the portal:
 
@@ -109,14 +109,14 @@ the portal:
 
 This is just one way of controlling access to the discussion. You 
 could also perform more specific permissions checks as the Insults 
-portlet does for the Add Insults and Permissions buttons in its [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
-For more information, see the Learning Path [Checking Permissions in the UI](/develop/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+portlet does for the Add Insults and Permissions buttons in its [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
+For more information, see the Learning Path [Checking Permissions in the UI](/develop/learning-paths/mvc/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
 
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 

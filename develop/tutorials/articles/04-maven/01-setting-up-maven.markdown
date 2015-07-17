@@ -42,7 +42,7 @@ this for two reasons: accessing remote repositories is slower, and remote
 repositories are sometimes unavailable. Most Maven proxy servers can also host
 private repositories that hold only your private artifacts. If you're interested
 in running your repository behind a proxy, see
-<http://www.sonatype.com/books/nexus-book/reference/install-sect-proxy.html>. 
+<http://books.sonatype.com/nexus-book/reference/install-sect-proxy.html>. 
 
 Now that you've been introduced to Maven repositories and proxy servers, you may
 want to consider using a repository management server to create and manage your
@@ -61,7 +61,7 @@ Nexus as a repository management server, feel free to skip this section.
 
 To create a Maven repository using Nexus, first download Nexus from
 <http://www.sonatype.org/nexus/> and follow instructions at
-[http://www.sonatype.com/books/nexus-book/reference/\_installing\_nexus.html](http://www.sonatype.com/books/nexus-book/reference/_installing_nexus.html)
+[http://books.sonatype.com/nexus-book/reference/install.html](http://books.sonatype.com/nexus-book/reference/install.html)
 to install and start it. If you're using Windows, you must start Nexus from a
 command prompt with administrator privileges.
 
@@ -77,7 +77,7 @@ To create a repository using Nexus, follow these steps:
 
     **Note:** To learn more about each
     type of Nexus repository, read Sonatype's *Managing Repositories* at
-    <http://www.sonatype.com/books/nexus-book/reference/confignx-sect-manage-repo.html>.
+    <http://books.sonatype.com/nexus-book/reference/confignx-sect-manage-repo.html>.
 
 3.  Enter repository properties appropriate for the type of artifacts it will
     hold. If you're installing release version artifacts into the repository,
@@ -126,12 +126,12 @@ artifacts.
 
 +$$$
 
-**Note:** You only need to configure a
-repository server if you're installing downloaded Liferay CE/EE artifacts from
-a zip file or if you want to share artifacts (e.g., Liferay artifacts and/or
-your plugins) with others. If you're automatically installing Liferay CE
-artifacts from the Central Repository and aren't interested in sharing
-artifacts, you don't need a repository server specified in your Maven settings.
+**Note:** You only need to configure a repository server if you're installing
+downloaded Liferay CE/EE artifacts from a zip file or if you want to share
+artifacts (e.g., Liferay artifacts and/or your plugins) with others. If you're
+automatically installing Liferay CE artifacts from the Central Repository and
+aren't interested in sharing artifacts, you don't need a repository server
+specified in your Maven settings.
 
 However, configuring a mirror in your Maven settings is recommended as a best
 practice. Get more information on mirrors and their purpose in Maven's guide on
@@ -169,13 +169,19 @@ server, do the following:
 
 +$$$
 
-**Note:** The username `admin` and
-password `admin123` are the credentials of the default Nexus OSS administrator
-account. If you changed these credentials for your Nexus server, make sure to
-update `settings.xml` with these changes.
+**Note:** The username `admin` and password `admin123` are the credentials of
+the default Nexus OSS administrator account. If you changed these credentials
+for your Nexus server, make sure to update `settings.xml` with these changes.
 
 $$$
 
 Now that your repositories are configured, they're ready to receive all the
 Liferay Maven artifacts you'll download and the Liferay plugin artifacts you'll
 create!
+
+## Related Topics [](id=related-topics)
+
+[Developing with the Plugins SDK](develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+
+[Developing Plugins with Liferay IDE](develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+

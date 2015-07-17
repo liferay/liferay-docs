@@ -12,7 +12,7 @@ To build a service from a `service.xml` file, you can use *Liferay IDE*,
 *Liferay Developer Studio*, or use a terminal window. In this tutorial, we refer
 to the Event Listing example project that's referenced throughout the Liferay
 Service Builder tutorials. You can find the Event Listing example project on
-[Github](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet).
+[Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet).
 
 +$$$
 
@@ -240,3 +240,10 @@ Service Builder. Whenever you add methods to, remove methods from, or change a
 method signature of a `*LocalServiceImpl` class, `*ServiceImpl` class, or
 `*Impl` class, you should run Service Builder again to regenerate the affected
 interfaces and the service JAR.
+
+## Related Topics [](id=related-topics)
+
+[What is Service Builder](develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+
+[Writing Local Services](develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
+

@@ -245,3 +245,9 @@ individual hints directly into your fields, apply a set of default hints to all
 of a model's fields, or define collections of hints to apply at either of those
 scopes. You've picked up the "hints" on how Liferay portlet model hints specify
 how portlet data is displayed! 
+
+**Related Topics**
+
+[Using the AlloyUI From Validator in a Portlet](develop/tutorials/-/knowledge_base/6-2/using-the-alloyui-form-validator-in-a-portlet)
+
+[Using Configurable Portlet Preferences](develop/tutorials/-/knowledge_base/6-2/using-configurable-portlet-preferences)

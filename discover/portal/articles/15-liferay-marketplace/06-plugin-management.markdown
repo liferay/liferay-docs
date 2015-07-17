@@ -152,7 +152,7 @@ automatically copies it to your `[Liferay Home]/data/osgi/modules` directory.
 To test Liferay's OSGi module framework and deploy mechanism, you can use the
 `test-module-framework-shared` bundle from Liferay's plugin repository on
 Github:
-[test-module-framework-shared](https://github.com/liferay/liferay-plugins/tree/master/shared/test-module-framework-shared).
+[test-module-framework-shared](https://github.com/liferay/liferay-plugins/tree/6.2.x/shared/test-module-framework-shared).
 In order to deploy the module framework test plugin from a clone of the
 liferay-plugins repository, you should first add the following lines to your
 `build.[username].properties` file in your `liferay-plugins` directory. If this

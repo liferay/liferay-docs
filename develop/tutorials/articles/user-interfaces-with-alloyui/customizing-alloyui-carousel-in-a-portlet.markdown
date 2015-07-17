@@ -300,13 +300,13 @@ Here is an example of a carousel that uses customizations from this tutorial:
 ![Figure 2: Here is an example of a customized carousel, that uses this tutorial's scripts.](../../images/alloyui-customized-carousel-in-portlet.png)
 
 You can access a finished version of the example customized portlet at 
-[https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet).
+[https://github.com/liferay/liferay-docs/tree/6.2.x/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/devGuide/code/12-working-with-alloyUI/customized-carousel-portlet).
 
 Enjoy making your carousel the best that it can be!
 
 ## Related Topics [](id=related-topics)
 
-[Implementing a UI with Liferay Taglibs](/develop/learning-paths/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
+[Implementing a UI with Liferay Taglibs](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
 
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 

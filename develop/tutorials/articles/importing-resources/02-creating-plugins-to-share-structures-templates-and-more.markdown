@@ -291,8 +291,15 @@ Importantly, you must name the files of all structures and templates, except
 page templates, after their source structures and templates. You can go back to
 any of the beginning steps in this section to make refinements to the sample
 plugin to try importing different structures and templates. The final
-`sample-templates-importer-portlet` project is available [here](https://github.com/liferay/liferay-docs/tree/master/devGuide/code/devGuide-sdk/portlets/sample-templates-importer-portlet). 
+`sample-templates-importer-portlet` project is available [here](https://github.com/liferay/liferay-docs/tree/6.2.x/devGuide/code/devGuide-sdk/portlets/sample-templates-importer-portlet). 
 
 As you've seen for yourself, importing structures and templates with your plugin
 isn't difficult at all. The Resource Importer app's Templates Importer feature
 makes it easy. Have fun distributing your structures and templates!
+
+**Related Topics**
+
+[Customizing Sites and Site Templates with Application Adapters](develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters)
+
+[Advanced Content with Structures and Templates](discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates)
+

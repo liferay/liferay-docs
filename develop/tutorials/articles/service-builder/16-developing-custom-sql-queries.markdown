@@ -8,7 +8,7 @@ finder. But what if you'd like to do more complicated searches that incorporate
 attributes from multiple entities? 
 
 For example, consider the
-[Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/svc-build/event-listing-portlet)
+[Event Listing](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/svc-build/event-listing-portlet)
 portlet. Suppose you want to find an event based on its name, description, and
 location name. In the Event Listing portlet, the event entity refers to its
 location by the location's ID, not its name. That is, the event entity table,
@@ -222,3 +222,9 @@ want to include this in the solution. - Jim -->
 
 Congratulations on developing a custom SQL query and custom finder for your
 portlet! 
+
+## Related Topics [](id=related-topics)
+
+[Writing a Data Driven Application](develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
+
+[Running Service Builder and Understanding the Generated Code](develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)

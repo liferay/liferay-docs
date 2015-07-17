@@ -1,7 +1,7 @@
 # Performing a Custom Action Using a Hook [](id=performing-a-custom-action-using-a-hook)
 
 <!-- The custom-action-hook project can be found here:
-https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/cust/custom-action/end/custom-action-hook
+https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/cust/custom-action/end/custom-action-hook
 -->
 
 Hooks are useful for triggering custom actions on common portal events, like
@@ -135,4 +135,10 @@ $$$
 Great! You've created a hook that triggers a custom action on a common portal
 event. You now know the basic steps required to perform a custom action using a
 hook in Liferay Portal.
+
+**Related Topics**
+
+[MVC Portlets](develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+
+[Overriding and Adding Struts Actions](develop/tutorials/-/knowledge_base/6-2/overriding-and-adding-struts-actions)
 

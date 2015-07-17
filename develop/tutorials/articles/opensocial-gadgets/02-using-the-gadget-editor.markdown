@@ -57,12 +57,16 @@ The OpenSocial Gadget Editor allows you to create and improve gadgets within the
 comfort of your own Liferay Portal instance. You can facilitate the social
 interactions on your sites and increase your portal content's popularity across
 your social network by leveraging the power of OpenSocial gadgets and the gadget
-editor. 
+editor.
 
 **Related Topics**
 
-[Customizing Liferay Portal with Hooks](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Using the Mobile SDK](develop/tutorials/-/knowledge_base/6-2/mobile)
 
-[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+[Using the Device Recognition API](develop/tutorials/-/knowledge_base/6-2/using-the-device-recognition-api)
 
-[Localization](/tutorials/-/knowledge_base/6-2/localization)
+[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+
+[Localization](/develop/tutorials/-/knowledge_base/6-2/localization)

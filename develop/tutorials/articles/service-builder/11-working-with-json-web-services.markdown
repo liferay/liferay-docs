@@ -923,3 +923,10 @@ app gives you access to them and returns them in an easy-to-use fashion. For
 more information, please refer to the
 [Invoking Services Using Skinny JSON Provider](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/invoking-services-using-skinny-json-provider) 
 tutorial.
+
+## Related Topics [](id=related-topics)
+
+[SOAP Web Services](develop/tutorials/-/knowledge_base/6-2/soap-web-services)
+
+[Plugin Security and PACL](develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+

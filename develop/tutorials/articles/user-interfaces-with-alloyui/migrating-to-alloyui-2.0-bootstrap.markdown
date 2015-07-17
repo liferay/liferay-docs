@@ -385,3 +385,9 @@ And remember that the tool may not pick up all of the changes that need to be
 made to your plugin. But you'll be happy that the tool does a good bit of the
 monotonous conversion work for you. 
 
+## Related Topics [](id=related-topics)
+
+[Liferay Faces AlloyUI Components](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+
+[Themes and Layout Templates](develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+

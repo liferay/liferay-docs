@@ -1,13 +1,13 @@
 # Sending PubSub Messages Between Gadgets and Portlets [](id=sending-pubsub-messages-between-gadgets-and-portlet)
 
 <!-- You can test the gadget-to-gadget tutorial using the following gadgets:
-https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsPublisher.xml
-https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsViewer.xml
+https://raw.github.com/dejuknow/opensocial-gadgets/6.2.x/GoogleMaps/GoogleMapsPublisher.xml
+https://raw.github.com/dejuknow/opensocial-gadgets/6.2.x/GoogleMaps/GoogleMapsViewer.xml
 -->
 
-<!-- The Portal Directory hook required for the portlet-to-gadget tutorial is
+The Portal Directory hook required for the portlet-to-gadget tutorial is
 available here:
-https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/opensoc/sending-pubsub-messages/portal-directory-hook
+https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/opensoc/sending-pubsub-messages/portal-directory-hook
 -->
 
 Have you ever wanted your gadgets to communicate with each other or with
@@ -70,7 +70,7 @@ $$$
 
 We will now dive into the source code and analyze how this interaction is
 accomplished. To view the full contents of the Google Map, visit the
-[GoogleMapsPublisher.xml](https://raw.githubusercontent.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsPublisher.xml)
+[GoogleMapsPublisher.xml](https://raw.githubusercontent.com/dejuknow/opensocial-gadgets/6.2.x/GoogleMaps/GoogleMapsPublisher.xml)
 file.
 
 The following excerpt from the Google Map XML file enables the gadget to use
@@ -109,7 +109,7 @@ processed by the gadget to show the address location on its map.
 
 Next, we'll analyze the tutorial's *subscribing* gadget's source code specified
 in the
-[GoogleMapsViewer.xml](https://raw.githubusercontent.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsViewer.xml)
+[GoogleMapsViewer.xml](https://raw.githubusercontent.com/dejuknow/opensocial-gadgets/6.2.x/GoogleMaps/GoogleMapsViewer.xml)
 file.
 
 The subscriber source code is similar to that of the publisher: it mandates the
@@ -225,10 +225,12 @@ Letting your portlets communicate with gadgets enhances your portlet
 applications and gives you a plethora of different ways you can enhance your 
 user's experience. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Customizing Liferay Portal with Hooks](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Using Liferay's Message Bus](develop/tutorials/-/knowledge_base/6-2/using-liferays-message-bus)
 
-[User Interfaces with AlloyUI](/tutorials/-/knowledge_base/6-2/alloyui)
+[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
 
-[Localization](/tutorials/-/knowledge_base/6-2/localization)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+
+[Localization](/develop/tutorials/-/knowledge_base/6-2/localization)

@@ -4,10 +4,10 @@
 Testing Notes:
 
 The starting example portlet for this tutorial is at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-02-asset-enable-insults-portlet
+liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-02-asset-enable-insults-portlet
 
 On completing this tutorial, the example portlet looks like the portlet at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-03-end-insults-portlet
+liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet
 
 Make sure to read their README files.
 -->
@@ -33,16 +33,16 @@ tutorial demonstrates implementing this feature in a custom Insults portlet.
 Coming up with great insults is a natural part of comedy, but sometimes things
 can go too far. It's for these situations that flagging inappropriate content is
 useful. You can find the Insults portlet complete with the flagging feature
-enabled on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-begin-insults-portlet).
+enabled on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-01-begin-insults-portlet).
 
 Now it's time to get on with the flagging!
 
-If you've implemented [asset rendering](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
+If you've implemented [asset rendering](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
 for your entity, you can use flags in the full content view of an Asset
 Publisher portlet. You can also use flags in any view JSP you create for viewing
 the entity. 
 
-As an example, the Insult portlet's view JSP file [`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
+As an example, the Insult portlet's view JSP file [`view_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view_insult.jsp)
 shows an insult entity and the flagging component. This tutorial shows you how
 to associate the flagging component with your custom entity.
 
@@ -84,8 +84,8 @@ enabled portlets.
 Another thing you might want to do is perform permissions checks to control 
 who can flag content. For example, the Add Insult and Permissions buttons of the
 Insults portlet are wrapped in a permissions check in the 
-[`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
-For more information on this, see the Learning Path [Checking Permissions in the UI](/develop/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+[`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
+For more information on this, see the Learning Path [Checking Permissions in the UI](/develop/learning-paths/mvc/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 

@@ -7,7 +7,7 @@ by monitoring their interaction over different elements of the portal.
 
 Developers are able to extend the set of available tracking actions by creating
 and deploying their own OSGi plugin, which contains a class implementing the
-[Tracking Action Interface](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/TrackingAction.java).
+[Tracking Action Interface](https://github.com/liferay/liferay-apps-content-targeting/blob/6.2.x/content-targeting-api/service/com/liferay/content/targeting/api/model/TrackingAction.java).
 
 OSGi plugins can be hot deployed and undeployed, manage their own dependencies,
 and provide new services that other OSGi plugins can consume. In the case of a
@@ -103,9 +103,9 @@ tutorial. You'll begin with customizing your tracking action's behavior.
 You can begin creating your tracking action's functionality by specifying its
 behavior in the `-TrackingAction` class (e.g., `NewsletterTrackingAction`) that
 the SDK generated for you. This class implements the
-[TrackingAction](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/TrackingAction.java)
+[TrackingAction](https://github.com/liferay/liferay-apps-content-targeting/blob/6.2.x/content-targeting-api/service/com/liferay/content/targeting/api/model/TrackingAction.java)
 interface (required), and extends the
-[BaseTrackingAction](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseTrackingAction.java)
+[BaseTrackingAction](https://github.com/liferay/liferay-apps-content-targeting/blob/6.2.x/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseTrackingAction.java)
 class. It's not mandatory to extend `BaseTrackingAction`, but it provides some
 helpful utilities, such as support for generating your tracking action's UI
 using FreeMarker. Note that there are multiple methods in the generated
@@ -139,7 +139,7 @@ FreeMarker language.
 If you're interested in using a technology besides FreeMarker to implement your
 UI, you can add a method `getFormHTML` to your `-TrackingAction` class. For
 further details on this method, see the
-[BaseTrackingAction](https://github.com/liferay/liferay-apps-content-targeting/blob/master/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseTrackingAction.java)
+[BaseTrackingAction](https://github.com/liferay/liferay-apps-content-targeting/blob/6.2.x/content-targeting-api/service/com/liferay/content/targeting/api/model/BaseTrackingAction.java)
 class.
 
 The `getFormHTML` method is configured for FreeMarker templates in the
@@ -339,3 +339,10 @@ of a deployable sample newsletter tracking action, you can download its
 
 <!-- Provide link to newsletter tracking action ZIP file once it's available.
 -Cody -->
+
+## Related Topics [](id=related-topics)
+
+[Creating Model Listeners](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-model-listeners)
+
+[Web Content Management](discover/portal/-/knowledge_base/6-2/web-content-management)
+

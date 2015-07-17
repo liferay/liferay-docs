@@ -26,7 +26,7 @@ The Liferay Faces Alloy project home page can be found at
 
 Because Liferay Faces has several active
 versions
-<!--(/develop/learning-paths/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)-->
+<!--(/develop/learning-paths/jsf/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)-->
 (targeting different versions of JSF, Liferay Portal, etc.), there are several
 versions of the project's View Declaration Language (VDL) documentation for
 these tags: 

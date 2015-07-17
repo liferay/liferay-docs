@@ -4,16 +4,16 @@
 Testing Notes:
 
 The starting example portlet for this tutorial is at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-02-asset-enable-insults-portlet
+liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-02-asset-enable-insults-portlet
 
 On completing this tutorial, the example portlet looks like the portlet at ...
-liferay-docs\develop\tutorials\tutorials-sdk-6.2-ga3\portlets\asset-framework-03-end-insults-portlet
+liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet
 
 Make sure to read their README files.
 -->
 
 At this point, you've [asset-enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities)
-your entities. In addition to that, you should make sure to [implement asset renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
+your entities. In addition to that, you should make sure to [implement asset renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
 for them. Content authors, however, still can't specify the tags and categories
 for these entities in the UI. Don't fret! Liferay provides a set of JSP tags for
 showing category and tag inputs in your UI. 
@@ -23,7 +23,7 @@ showing category and tag inputs in your UI.
 Go ahead and get started! 
 
 You can use the following tags in the JSPs you provide for adding/editing custom
-entities. Here's what the tags look like in a the [`edit_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/edit_insult.jsp) 
+entities. Here's what the tags look like in a the [`edit_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/edit_insult.jsp) 
 for a custom Insults portlet that's used as an example. 
 
     <liferay-ui:asset-categories-error />
@@ -90,9 +90,9 @@ portlet's content authors.
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
 
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
