@@ -15,7 +15,7 @@ Liferay Screens for Android includes the Component Library (the Screenlets) and
 a sample project. It requires the following software:
 
 - Android Studio 1.0.2 or above.
-- Android SDK 4.0 (API Level 14) or above. Its [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
+- Android SDK 4.0 (API Level 15) or above. Its [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
   (v7:22.1.1) implements the
   [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
   and offers older devices a material look and feel.
@@ -39,7 +39,7 @@ Follow these steps to configure Liferay Screens in a Gradle project:
 2. Include Screens as a dependency:
 
         dependencies {
-            compile 'com.liferay.mobile:liferay-screens:1.0.+'
+            compile 'com.liferay.mobile:liferay-screens:+'
         }
 
 Gradle downloads all the necessary dependencies before building your project. If 
