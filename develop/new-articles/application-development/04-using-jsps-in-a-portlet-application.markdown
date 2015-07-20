@@ -67,8 +67,8 @@ your portlet class might look like this:
             
     }
 
-Note that the contents of your portlet class can be empty. All of the
-functionality is required is supplied by `MVCPortlet`.
+Note that the contents of your portlet class can be empty. All of the required
+functionality is supplied by `MVCPortlet`.
 
 ## Use the @Component Annotation to Specify the Location of Your JSPs
 
@@ -100,8 +100,8 @@ Add the following contents to your `view.jsp` file:
 
     <p>Hello from view.jsp!</p>
 
-This simple example suffices for now. Once you've verified that everything's
-working correctly, you can start using JSP tags.
+This simple example suffices for now. Once you've redeployed your project and
+verified that everything's working correctly, you can start using JSP tags.
 
 ## In Your Project's bnd.bnd file, Specify Resources to Include
 
