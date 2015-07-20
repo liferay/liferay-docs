@@ -30,8 +30,8 @@ Westeros View Sets as dependencies:
 
     dependencies {
         ...
-        compile 'com.liferay.mobile:liferay-material-viewset:1.0.+'
-        compile 'com.liferay.mobile:liferay-westeros-viewset:1.0.+'	
+        compile 'com.liferay.mobile:liferay-material-viewset:1.1.+'
+        compile 'com.liferay.mobile:liferay-westeros-viewset:1.1.+'	
         ...
     }
 

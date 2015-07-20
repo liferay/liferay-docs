@@ -58,7 +58,7 @@ Sets your Screenlet currently uses to your `build.gradle` file's dependencies.
 To add Liferay Screens as a dependency, add to your `build.gradle` file's
 dependencies the following project compile statement: 
 
-    compile 'com.liferay.mobile:liferay-screens:1.0.+'
+    compile 'com.liferay.mobile:liferay-screens:1.1.+'
 
 Awesome! Now you're ready to share your Screenlet with the world!
 
