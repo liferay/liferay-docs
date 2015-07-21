@@ -41,9 +41,9 @@ public class ExampleServiceConsumerPortlet extends MVCPortlet {
 		super.doView(request, response);
 	}
 	
-    public BookmarksFolderLocalService getBookmarksFolderLocalService() {
-        return _bookmarksFolderLocalService;
-    }
+	public BookmarksFolderLocalService getBookmarksFolderLocalService() {
+		return _bookmarksFolderLocalService;
+	}
 
 	public UserLocalService getUserLocalService() {
 		return _userLocalService;

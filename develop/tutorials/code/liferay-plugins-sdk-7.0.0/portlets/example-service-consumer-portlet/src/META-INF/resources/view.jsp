@@ -6,8 +6,6 @@
 
 <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
 
-<%@ page import="java.util.Enumeration" %>
-
 <portlet:defineObjects />
 
 <liferay-theme:defineObjects />
