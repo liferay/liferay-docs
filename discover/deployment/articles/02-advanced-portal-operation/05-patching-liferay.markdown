@@ -72,8 +72,56 @@ you'd issue this command:
 
     ./patching-tool.sh auto-discovery /opt/Liferay/tomcat-7.0.21
  
-In all, this is pretty simple. Now let's see how to use the patching tool to get
-your patches installed. 
+In all, this is pretty simple. Now that you've installed the patching tool, 
+you're ready to download and install patches. You can install patches manually 
+or automatically. For automatic patch installation, you need to set up the 
+patching tool agent. This is presented next.
+
+### Configuring the Patching Tool Agent
+
+The patching tool agent automatically installs downloaded patches on server 
+startup. For the agent to start with your server, you need to set the `javaagent` 
+property in the JVM options. Make sure that you specify the correct file path to 
+the `patching-tool-agent.jar`. Here's an example of setting the `javaagent` 
+property:
+
+    -javaagent:../../patching-tool/lib/patching-tool-agent.jar
+    
+When the agent runs, it tries to find the patching tool's home folder. If your 
+patching tool is installed in a location other than the Liferay Home folder, you 
+must specify the path of the `patching-tool` folder as a JVM argument for the 
+app server. This is done with the `patching.tool.home` property. For example:
+
+    -Dpatching.tool.home=/opt/liferay-portal-6.1.20-ee-ga2/patching-tool/
+    
+There are also a few other things to consider when using the agent. Due to class 
+loading issues, the agent starts in a separate JVM. You can specify options for 
+it by using the `patching.tool.agent.jvm.opts` property. For example:
+
+    -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m"
+    
+You may also experience issues on Windows if the user starting the app server 
+doesn't have administrator privileges. Here are some examples of the errors you 
+may see:
+
+    `java.nio.file.FileSystemException: ..\tomcat-7.0.42\webapps\ROOT\WEB-INF\lib\util-java.jar: Not a file!`
+    `java.io.FileNotFoundException: java.io.IOException: Access refused`
+
+To solve this, set the `java.io.tmpdir` system property as follows in the 
+`patching.tool.agent.jvm.opts` property:
+
+    -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Djava.io.tmpdir=%TMP%"
+
+The agent also has some flags you can set to control how it behaves:
+
+- **debug**: Provides verbose output in the console.
+- **nohalt**: Starts the portal even if the agent encounters an issue.
+
+You can specify these as follows:
+
+    -Dpatching.tool.agent.properties=debug,nohalt
+
+Now let's see how to use the patching tool to get your patches installed. 
 
 ## Installing patches [](id=installing-patches)
 
@@ -93,8 +141,12 @@ done that, it's a simple matter to install it. First, execute
     ./patching-tool.sh info
  
 This shows you a list of patches you've already installed, along with a list of
-patches that *can* be installed, from what's in the `patches` folder. To install
-the available patches, issue the following command: 
+patches that *can* be installed, from what's in the `patches` folder. To use the 
+patching tool agent to install the patches, restart the server. The agent takes 
+care of the rest. 
+
+To install the available patches manually, use the following steps. First, 
+issue the following command: 
 
     ./patching-tool.sh install
 
