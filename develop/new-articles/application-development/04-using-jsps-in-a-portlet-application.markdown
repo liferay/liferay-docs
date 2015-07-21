@@ -100,8 +100,13 @@ Add the following contents to your `view.jsp` file:
 
     <p>Hello from view.jsp!</p>
 
-This simple example suffices for now. Once you've redeployed your project and
-verified that everything's working correctly, you can start using JSP tags.
+This simple example suffices for now. Redeploy your project using the following
+command from your project's directory:
+
+    ant clean deploy
+
+Once you've redeployed your project and verified that everything's working
+correctly, you can start using JSP tags.
 
 ## In Your Project's bnd.bnd file, Specify Resources to Include
 
@@ -121,12 +126,9 @@ The bnd tool is included in Liferay's Plugins SDK.
 
 ## Verifying Your Application's JSP Configuration
 
-To check that your application's JSPs are correctly configured, deploy your
+To check that your application's JSPs are correctly configured, redeploy your
 portlet bundle and confirm that the contents of your JSP is displayed by your
-portlet. To deploy your portlet bundle, use this command from your project's
-directory:
-
-    ant clean deploy
+portlet.
 
 Add your portlet to a page and confirm that this message (or whatever message
 you configured) is displayed by the portlet:
