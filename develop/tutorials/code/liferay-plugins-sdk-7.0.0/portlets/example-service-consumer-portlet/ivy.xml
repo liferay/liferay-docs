@@ -15,5 +15,6 @@
 	    <dependency name="org.osgi.compendium" org="org.osgi" rev="5.0.0" />
 	    <dependency name="portlet-api" org="javax.portlet" rev="2.0" />
         <dependency org="com.liferay.portal" name="portal-service" rev="7.0.0-nightly"/>
+	    <dependency org="com.liferay" name="com.liferay.bookmarks.api" rev="1.0.0-SNAPSHOT"/>
 	</dependencies>
 </ivy-module>
