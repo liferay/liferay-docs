@@ -1,13 +1,14 @@
 # Consuming Liferay Services
 
-Liferay's services are made available as services in Liferay's module framework.
-They are created via the
+Liferay's services are registered in Liferay's module framework. They are
+created via the
 [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
 component model. Declarative Services isn't a dependency injection tool but it
-can behave and feel like one. In this tutorial, you'll learn how to invoke
-Liferay services from your application, both core Liferay services and services
-provided by modules. To invoke a service from your application, you need to take
-these steps:
+can behave and feel like one. The declarative services component model makes it
+easy to publish and consume services from Liferay's module framework. In this
+tutorial, you'll learn how to invoke Liferay services from your application,
+both core Liferay services and services provided by modules. To invoke a service
+from your application, take these steps:
 
 1. Add any required dependencies. You need to add the bundle that provides the
    service you'd like to invoke and you need to resolve its dependencies.
@@ -64,7 +65,9 @@ And you should generate getter and setter methods like this:
         return _userLocalService;
     }
 
-    public void setBookmarksFolderLocalService(BookmarksFolderLocalService bookmarksFolderLocalService) {
+    public void setBookmarksFolderLocalService(
+            BookmarksFolderLocalService bookmarksFolderLocalService) {
+
         _bookmarksFolderLocalService = bookmarksFolderLocalService;
     }
 
@@ -77,7 +80,9 @@ And you should generate getter and setter methods like this:
 Add the `@Reference` annotation to the setter methods:
 
     @Reference
-    public void setBookmarksFolderLocalService(BookmarksFolderLocalService bookmarksFolderLocalService) {
+    public void setBookmarksFolderLocalService(
+            BookmarksFolderLocalService bookmarksFolderLocalService) {
+
         _bookmarksFolderLocalService = bookmarksFolderLocalService;
     }
 
@@ -88,12 +93,13 @@ Add the `@Reference` annotation to the setter methods:
 
 ## Obtain the Service Beans and Invoke the Services
 
-In this example, we obtain service instances and invoke the services from the
+In this example, you obtain service instances and invoke the services from the
 portlet's `doView` method. But you can do this from any method from the class
 where you've declared the service beans and their getters and setters:
 
     int userCount = getUserLocalService().getUsersCount();
-    int bookmarksFolderCount = _bookmarksFolderLocalService.getBookmarksFoldersCount();
+    int bookmarksFolderCount =
+            getBookmarksFolderLocalService().getBookmarksFoldersCount();
 
 ## (Optional) Display the Results of Your Service Invocations
 
@@ -106,7 +112,8 @@ service invocations as attributes of the request object:
     request.setAttribute("BOOKMARKS_FOLDER_COUNT", bookmarksFolderCount);
 
 Here, the type of `request` is `javax.portlet.RenderRequest`. To retrieve the
-request attributes from a JSP page, you can do something like this:
+request attributes from a JSP page, you can follow the pattern of this
+`view.jsp` file:
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 
@@ -116,19 +123,94 @@ request attributes from a JSP page, you can do something like this:
 
     <%
     int userCount = GetterUtil.getInteger(renderRequest.getAttribute("USER_COUNT"));
+
+    int bookmarksFolderCount = GetterUtil.getInteger(renderRequest.getAttribute("BOOKMARKS_FOLDER_COUNT"));
     %>
 
     <p>The portal has <%= userCount %> users.</p>
 
+    <p>The portal has <%= bookmarksFolderCount %> bookmarks folders.</p>
+
 Why so many lines for a simple JSP? The first line imports the portlet tag
-library which allows the `<portlet:defineObjects />` tag to be used on the
-third line. The `<portlet:defineObjects />` tag makes the `renderRequest`
-variable available to the page (among other things). The second line imports
-Liferay's `GetterUtil` class provides static utility methods like
-`getInteger` which handle type conversions. The fourth line gets the
-`"USER_COUNT"` attribute and uses `GetterUtil.getInteger` to convert it from
-an `Object` to an integer. Finally, the fifth line displays the value.
+library which allows the `<portlet:defineObjects />` tag to be used on the third
+line. The `<portlet:defineObjects />` tag makes the `renderRequest` variable
+available to the page (among other things). The second line imports Liferay's
+`GetterUtil` class provides static utility methods like `getInteger` which
+handle type conversions. The fourth and fifth lines get the `"USER_COUNT"` and
+`"BOOKMARKS_FOLDER_COUNT"` attributes and use `GetterUtil.getInteger` to convert
+the attributes from objects to integers. Finally, the last two lines display the
+values.
+
+For reference, here's the complete `ExampleServiceConsumerPortlet` class:
+
+    package com.liferay.docs.exampleserviceconsumerportlet;
+
+    import java.io.IOException;
+
+    import javax.portlet.Portlet;
+    import javax.portlet.PortletException;
+    import javax.portlet.RenderRequest;
+    import javax.portlet.RenderResponse;
+
+    import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.component.annotations.Reference;
+
+    import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+    import com.liferay.portal.service.UserLocalService;
+    import com.liferay.bookmarks.service.BookmarksFolderLocalService;
+
+    @Component(
+            immediate = true,
+            property = {
+                    "com.liferay.portlet.display-category=category.sample",
+                    "com.liferay.portlet.instanceable=true",
+                    "javax.portlet.display-name=Example Service Consumer Portlet",
+                    "javax.portlet.init-param.template-path=/",
+                    "javax.portlet.init-param.view-template=/view.jsp",
+                    "javax.portlet.security-role-ref=power-user,user"
+            },
+            service = Portlet.class
+    )
+    public class ExampleServiceConsumerPortlet extends MVCPortlet {
+            
+            @Override
+            public void doView(RenderRequest request, RenderResponse response)
+                            throws IOException, PortletException {
+
+                    int userCount = getUserLocalService().getUsersCount();
+                    request.setAttribute("USER_COUNT", userCount);
+
+                    int bookmarksFolderCount =
+                                    getBookmarksFolderLocalService().getBookmarksFoldersCount();
+                    request.setAttribute("BOOKMARKS_FOLDER_COUNT", bookmarksFolderCount);
+
+                    super.doView(request, response);
+            }
+            
+            public BookmarksFolderLocalService getBookmarksFolderLocalService() {
+                    return _bookmarksFolderLocalService;
+            }
+
+            public UserLocalService getUserLocalService() {
+                    return _userLocalService;
+            }
+
+            @Reference
+            public void setBookmarksFolderLocalService(
+                            BookmarksFolderLocalService bookmarksFolderLocalService) {
+
+                    _bookmarksFolderLocalService = bookmarksFolderLocalService;
+            }
+
+            @Reference
+            public void setUserLocalService(UserLocalService userLocalService) {
+                    _userLocalService = userLocalService;
+            }
+
+        private UserLocalService _userLocalService;
+        private BookmarksFolderLocalService _bookmarksFolderLocalService;
+    }
 
 Great! Now you've seen how easy the
-[Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services) component model makes
-invoking services in Liferay.
+[Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services) component 
+model makes invoking services in Liferay.
