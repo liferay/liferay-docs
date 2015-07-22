@@ -4,7 +4,7 @@ In this tutorial, you'll learn how to create a simple bundle that can be
 deployed to Liferay's module framework.
 
 It's easy to create a bundle using Liferay's Ant-based [Plugins SDK](http://www.liferay.com/downloads/liferay-portal/available-releases).
-Using the Plugins SDK is not required; you could use
+Using the Plugins SDK is not required; you can use
 [Maven](https://maven.apache.org), [Gradle](https://gradle.org), or
 [Bndtools](http://bndtools.org) instead.
 
@@ -117,10 +117,10 @@ that you copied to the `deploy` folder. Liferay copies your JAR file to the
 
 If you see this message, your bundle is working correctly!
 
-Alternative methods of verifying that your bundle was installed into Liferay's
-module include using the Felix Gogo shell and the Felix Web Console. To use the
-Gogo shell to confirm that your bundle was successfully installed, connect to
-Liferay's Gogo shell. If you're running Liferay locally, use
+You can also use the Felix Gogo shell and the Felix Web Console to verify that
+your bundle was installed into Liferay's module framework. To use the Gogo shell
+to confirm that your bundle was successfully installed, connect to Liferay's
+Gogo shell. If you're running Liferay locally, use
 
     telnet localhost 11311
 
