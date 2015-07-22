@@ -1,7 +1,9 @@
 # Creating a Portlet Application
 
 In this tutorial, you'll learn how to create a simple portlet application as a
-bundle that can be deployed to Liferay's module framework.
+bundle that can be deployed to Liferay's module framework. You can find the code
+referenced by this tutorial in a complete project on Github here:
+[https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/example-portlet](https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/example-portlet)
 
 It's easy to create a portlet application bundle using Liferay's Ant-based
 [Plugins SDK](http://www.liferay.com/downloads/liferay-portal/available-releases).

@@ -7,8 +7,11 @@ component model. Declarative Services isn't a dependency injection tool but it
 can behave and feel like one. The declarative services component model makes it
 easy to publish and consume services from Liferay's module framework. In this
 tutorial, you'll learn how to invoke Liferay services from your application,
-both core Liferay services and services provided by modules. To invoke a service
-from your application, take these steps:
+both core Liferay services and services provided by modules. You can find the
+code referenced by this tutorial in a complete project on Github here:
+[https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/example-service-consumer-portlet](https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/example-service-consumer-portlet)
+
+To invoke a service from your application, follow these steps:
 
 1. Add any required dependencies. You need to add the bundle that provides the
    service you'd like to invoke and you need to resolve its dependencies.

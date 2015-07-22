@@ -1,7 +1,9 @@
 # Creating a Simple Bundle
 
 In this tutorial, you'll learn how to create a simple bundle that can be
-deployed to Liferay's module framework.
+deployed to Liferay's module framework. You can find the code referenced by this
+tutorial in a complete project on Github here:
+[https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/simple-bundle-app](https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/simple-bundle-app)
 
 It's easy to create a bundle using Liferay's Ant-based [Plugins SDK](http://www.liferay.com/downloads/liferay-portal/available-releases).
 Using the Plugins SDK is not required; you can use

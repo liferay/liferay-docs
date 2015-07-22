@@ -2,8 +2,11 @@
 
 In this tutorial, you'll learn how to add JSP support to a portlet application.
 If you haven't yet created a portlet application, please refer to the
-[Creating a Portlet Application]() tutorial for instructions. To add JSP support
-to your portlet application, you need to take these steps:
+[Creating a Portlet Application]() tutorial for instructions. You can find the
+code referenced by this tutorial in a complete project on Github here:
+[https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/example-jsp-portlet](https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/example-jsp-portlet)
+
+To add JSP support to your portlet application, follow these steps:
 
 1. Add the `portal-service` dependency to your project so that your portlet
    class can extend Liferay's `MVCPortlet` class.
