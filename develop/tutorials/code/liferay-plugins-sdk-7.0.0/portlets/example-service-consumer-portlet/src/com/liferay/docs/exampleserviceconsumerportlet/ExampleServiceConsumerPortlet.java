@@ -35,7 +35,8 @@ public class ExampleServiceConsumerPortlet extends MVCPortlet {
 		int userCount = getUserLocalService().getUsersCount();
 		request.setAttribute("USER_COUNT", userCount);
 
-		int bookmarksFolderCount = _bookmarksFolderLocalService.getBookmarksFoldersCount();
+		int bookmarksFolderCount =
+				getBookmarksFolderLocalService().getBookmarksFoldersCount();
 		request.setAttribute("BOOKMARKS_FOLDER_COUNT", bookmarksFolderCount);
 
 		super.doView(request, response);
@@ -50,7 +51,9 @@ public class ExampleServiceConsumerPortlet extends MVCPortlet {
 	}
 
 	@Reference
-	public void setBookmarksFolderLocalService(BookmarksFolderLocalService bookmarksFolderLocalService) {
+	public void setBookmarksFolderLocalService(
+			BookmarksFolderLocalService bookmarksFolderLocalService) {
+
 		_bookmarksFolderLocalService = bookmarksFolderLocalService;
 	}
 
