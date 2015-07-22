@@ -150,4 +150,5 @@ Confirm that Liferay automatically updates your bundle and that the new message
 is displayed. This demonstrates one advantage afforded by Liferay's module
 framework: it speeds up development since it's much faster to update a bundle
 running in Liferay's module framework than it is to redeploy a traditional
-Liferay plugin which must be redeployed to Liferay's application server.
+Liferay plugin. Traditional Liferay plugins must be redeployed as web
+applications to Liferay's application server.
