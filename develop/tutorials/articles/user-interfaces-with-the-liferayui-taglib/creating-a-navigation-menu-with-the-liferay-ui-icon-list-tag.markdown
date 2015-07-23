@@ -37,10 +37,10 @@ Go through each of these steps to get your navigation going!
 
 ### Step 1: Reference the liferay-ui Taglib
 
-1.  Open the `view.jsp` of your portlet. Create one if it does not already 
-exist.
+1.  Open the `view.jsp` of your portlet. Create one if it doesn't already 
+    exist.
 
-2.  Add the following directive to reference the `liferay-ui` taglib:
+2.  Add this directive to reference the `liferay-ui` taglib:
 
         <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
@@ -57,23 +57,21 @@ Next, add the `liferay-ui:icon-list` tags to the bottom of your portlet's
 
         </liferay-ui:icon-list>
 
-In the next step, you'll place all of the icons in your list inside of the tags 
-you just added.
+In the next step, you'll place all the icons in your list inside the tags you 
+just added.
 
 ### Step 3: Insert and Configure the liferay-ui:icon Tags inside of the liferay-ui:icon-list Tags
 
-In this step you'll add the icons that you want to list in your navigation. 
-Still inside the `view.jsp`, nest the `liferay-ui:icon` tags inside of the 
-`liferay-ui:icon-list` tags. There are a few attributes for the `liferay-ui:icon` 
-tag that you should take note of. One such attribute is `image`. The `image` 
-attribute tells Liferay what image to use for the icon. For example, if the 
-value of `image` is `"status_online"`, then Liferay uses its default icon for a 
-user that is online. Next is the `message` attribute. This attribute defines the 
-text to use alongside the icon. For example, if you set the value of `message` 
-to `"Sign In"`, then that text appears next to the icon. Last but certainly not 
-least is the `url` attribute. As you might have guessed, this attribute defines 
-the URL to go to when the icon is clicked. Here's an example of an icon list 
-with three icons that use these attributes:
+Still inside the `view.jsp`, nest the `liferay-ui:icon` tags inside the 
+`liferay-ui:icon-list` tags. There are a few attributes for the 
+`liferay-ui:icon` tag that you should note. One such attribute is 
+`image`. The `image` attribute tells Liferay what image to use for the icon. For 
+example, if the value of `image` is `"status_online"`, then Liferay uses its 
+default icon for a user that is online. The `message` attribute defines the text 
+to use alongside the icon. For example, if you set the value of `message` to 
+`"Sign In"`, that text appears next to the icon. Finally, the `url` attribute 
+defines the URL to go to when the icon is clicked. Here's an example of an icon 
+list with three icons that use these attributes:
 
         <liferay-ui:icon-list>
             <liferay-ui:icon image="status_online" message="Sign In" url="www.liferay.com"/>
