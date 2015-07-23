@@ -33,7 +33,7 @@ create a service API bundle, you don't need to create a bundle activator.
    from the traditional (prior to Liferay 7) way of creating Liferay portlet
    applications.
 
-4. Create a `bnd.bnd` file in your project and add contents like the following:
+4. Create a `bnd.bnd` file in your project and the following contents:
 
         Bundle-Name: Example API
         Bundle-SymbolicName: com.liferay.docs.exampleapi
@@ -86,6 +86,8 @@ create a service API bundle, you don't need to create a bundle activator.
             public void greet(String name);
 
         }
+
+    Of course, replace the package declaration with your package.
 
 10. That's it! Make sure your Plugins SDK's `build.[username].properties` file
     is correctly configured with the location of your Liferay instance, then
