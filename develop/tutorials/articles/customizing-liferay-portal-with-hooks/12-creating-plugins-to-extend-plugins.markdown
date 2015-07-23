@@ -4,7 +4,7 @@ For Liferay plugins, you can create a new plugin that extends an existing one.
 By extending a plugin, you can use all its features in your new plugin while
 keeping your changes/extensions separate from the existing plugin's source code. 
 
-To create a plugin which extends another, follow these steps: 
+To create a plugin that extends another, follow these steps: 
 
 1. Create a new empty plugin in the Plugins SDK. Visit the
    [Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
@@ -17,7 +17,7 @@ To create a plugin which extends another, follow these steps:
    `social-networking-portlet-6.2.0.1.war`) to the root folder of your new
    plugin. 
 
-4. Add the following line to your `build.xml` inside of the `<project>` tag to
+4. Add the following line to your `build.xml` inside the `<project>` tag to 
    reference the original WAR file you are going to extend: 
 
         <property
@@ -30,31 +30,31 @@ To create a plugin which extends another, follow these steps:
    Please note that the `merge` target is called whenever the plugin is
    compiled. All you have to do is check the Ant output: 
 
-        dsanz@host:~/sdk/portlets/my-social-networking-portlet$ ant war
+        user@host:~/sdk/portlets/my-social-networking-portlet$ ant war
         Buildfile:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/build.xml
+        /home/user/sdk/portlets/my-social-networking-portlet/build.xml
 
         compile:
 
         merge:
         [mkdir] Created dir:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp
+        /home/user/sdk/portlets/my-social-networking-portlet/tmp
         [mkdir] Created dir:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/
+        /home/user/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/
         classes 
         [mkdir] Created dir:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/
+        /home/user/sdk/portlets/my-social-networking-portlet/tmp/WEB-INF/
         lib 
 
         merge-unzip:
         [unzip] Expanding:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/social-
+        /home/user/sdk/portlets/my-social-networking-portlet/social-
         networking-portlet-6.2.0.1.war into /home/dsanz/sdk/
         portlets/my-social-networking-portlet/tmp 
         [copy] Copying 2 files to
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/tmp 
+        /home/user/sdk/portlets/my-social-networking-portlet/tmp 
         [mkdir] Created dir:
-        /home/dsanz/sdk/portlets/my-social-networking-portlet/docroot/
+        /home/user/sdk/portlets/my-social-networking-portlet/docroot/
         WEB-INF/classes
 
         ...
