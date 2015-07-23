@@ -1,135 +1,108 @@
 # Making Your Applications Configurable
 
-This tutorial show how to make applications configurable. It starts with
-basic configuration and then covers some advanced use cases.
+This tutorial shows how to make applications configurable. It starts with basic
+configuration and then covers some advanced use cases.
 
-Note that the methods described here are not mandatory. You can make
-your applications configurable using any other mechanism that you know. 
-We have found, however, that the method described below provides the
-largest benefit with the smallest amount of effort.
+Note that the methods described here are not mandatory. You can make your
+applications configurable using any other mechanism that you know.  We have
+found, however, that the method described below provides the largest benefit
+with the smallest amount of effort.
 
 ## Fundamentals 
 
-While you don't need to know much to make your applications
-configurable, understanding a few concepts helps you achieve a
-higher degree of configurability with little effort.
+While you don't need to know much to make your applications configurable,
+understanding a few concepts helps you achieve a higher degree of
+configurability with little effort.
 
 The first important concept is that the method described here uses *typed*
 configuration. That means that the application configuration isn't just a list
-of key-value pairs. The values can actually have types, like `Integer`, a list
-of `Strings`, a URL, etc. This can prevent many programmatic errors and is
-easier to use. Related to this we also believe in making the configuration
-options explicit programmatically, so that developers can use autocomplete in
-modern IDEs to find out all the configuration options of a given application or
-one of its components.
+of key-value pairs. The values can be types, like `Integer`, a list of
+`Strings`, a URL, etc. This can prevent many programmatic errors and is easier
+to use. Related to this, the configuration options should be programmatically
+explicit, so that developers can use autocomplete in modern IDEs to find out all
+the configuration options of a given application or one of its components.
 
-A second concept that you should know about is modularity. With Liferay 7, 
+A second concept that you should know about is modularity. With Liferay 7,
 applications are modular and built as a collection of lightweight components. A
-component is just a class that has the @Component annotation, often along with a
-set of properties to provide metadata. The configuration mechanisms described on
-this tutorial leverage the concept of components.
+component is just a class that has the `@Component` annotation, often along with a
+set of properties to provide metadata. The configuration mechanisms described
+here leverage the concept of components.
 
-A third important concept is the ability to have different
-configurations for the same application at different scopes. Not all
-applications need this, but if you do, the APIs described below will
-take most of the burden for you. However it’s still good for you to
-understand what we mean when you read the term configuration scope. Here
-are the most common configuration scopes that a Liferay application may
-have:
+A third important concept is the ability to have different configurations for
+the same application at different scopes. Not all applications need this, but if
+you do, the APIs described below handle most of the burden for you. It’s still
+good, however, for you to understand the term *configuration scope*. Here are the
+most common configuration scopes that Liferay applications can have:
 
-1.  System: configuration that is unique for the complete installation of the
+1.  **System:** configuration that is unique for the complete installation of the
     application. 
-2.  Portal Instance: configuration that might vary per portal
+2.  **Portal Instance:** configuration that can vary per portal
     instance.
-3.  Site: configuration that might vary per Liferay site.
-4.  Portlet Instance: this is applicable for applications that are placed in a
-    page (aka portlets). It allows for each placement (aka instance) of the
-    application in the page to have different configuration.
+3.  **Site:** configuration that can vary per Liferay site.
+4.  **Portlet Instance:** applicable for applications that are placed on a
+    page (i.e., portlets). Each placement (instance) of the application on the
+    page can have a different configuration.
 
 That’s it for now. You are ready to get started with some code. If you already
 had a portlet or service that was configurable using the traditional mechanisms
-of Liferay 6.2 and before you might also want to read
-[How to change your portlets and services to use Settings](https://docs.google.com/a/liferay.com/document/d/1o6U0fqsUv9WSJTLQmSytMMcW2exUwWclZPQ5A3vUKwc/edit#)[](https://docs.google.com/a/liferay.com/document/d/1o6U0fqsUv9WSJTLQmSytMMcW2exUwWclZPQ5A3vUKwc/edit#). 
+of Liferay 6.2 and before, you might also want to read
+[How to change your portlets and services to use the new Configuration API](https://docs.google.com/a/liferay.com/document/d/1o6U0fqsUv9WSJTLQmSytMMcW2exUwWclZPQ5A3vUKwc/edit#)[](https://docs.google.com/a/liferay.com/document/d/1o6U0fqsUv9WSJTLQmSytMMcW2exUwWclZPQ5A3vUKwc/edit#). 
 
 ## Making your application configurable 
 
 Now you'll see the minimum amount of code you need to write to make your
-application configurable the Liferay 7 way. For now only the System scope will
-be covered (read the previous section if you don’t know what that means).
+application configurable the Liferay 7 way. The System scope is
+covered first (read the previous section if you don’t know what that means).
 
-The first step is to create a Java interface to represent the
-configuration and its default values. The reason for using a Java
-interface is that it allows for an advanced type system for each of the
-configuration options. Here is an example of such an interface:
+The first step is to create a Java interface to represent the configuration and
+its default values. The reason for using a Java interface is that it allows for
+an advanced type system for each of the configuration options. Here is an
+example of such an interface:
 
-<span style="background: #ffffff">@Meta.OCD</span><span
-style="background: #ffffff">(id = </span>**<span
-style="background: #ffffff">"com.foo.bar.MyAppConfiguration"</span>**<span
-style="background: #ffffff">)</span>
+    @Meta.OCD(id = "com.foo.bar.MyAppConfiguration")
+    public interface MyAppConfiguration {
+        
+        @Meta.AD(deflt = es)
+        public String defaultLanguage();
 
-**<span style="background: #ffffff">public interface </span><span
-style="background: #ffffff">MyAppConfiguration</span>**<span
-style="background: #ffffff"> {</span>
+        @Meta.AD(
+           deflt = "en|es|pt",
+           required = true
+        )
+        public String[] validLanguages();
 
-<span style="background: #ffffff"> </span>
+        @Meta.AD(required = false)
+        public int itemsPerPage();
 
-<span style="background: #ffffff"> </span><span
-style="background: #ffffff">@Meta.AD</span><span
-style="background: #ffffff">(deflt = </span>**<span
-style="background: #ffffff">es</span>**<span
-style="background: #ffffff">)</span>
+    }
 
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">public </span>**<span
-style="background: #ffffff">String defaultLanguage();</span>
-
-
-<span style="background: #ffffff"> </span><span
-style="background: #ffffff">@Meta.AD</span><span
-style="background: #ffffff">(</span>
-
-<span style="background: #ffffff"> deflt = </span>**<span
-style="background: #ffffff">"en|es|pt"</span>**<span
-style="background: #ffffff">,</span>
-
-<span style="background: #ffffff"> required = </span>**<span
-style="background: #ffffff">true</span>**
-
-<span style="background: #ffffff"> </span><span
-style="background: #ffffff">)</span>
-
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">public </span>**<span
-style="background: #ffffff">String[] validLanguages();</span>
-
-
-<span style="background: #ffffff"> </span><span
-style="background: #ffffff">@Meta.AD</span><span
-style="background: #ffffff">(required = </span>**<span
-style="background: #ffffff">false</span>**<span
-style="background: #ffffff">)</span>
-
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">public </span>**<span
-style="background: #ffffff">int itemsPerPage();</span>
-
-
-<span style="background: #ffffff">}</span>
-
-As you can see you are using two Java annotations to provide some metadata about
+As you can see, you are using two Java annotations to provide some metadata about
 the configuration. Here is what they do:
 
 1.  **Meta.OCD:** Registers this class as a configuration with a specific id. You
     can choose any string you want, but make sure it's unique. A common
     pattern is to use the fully qualified class name. 
 2.  **Meta.AD:** Specifies the default value of a configuration field as
-    well as whether it is required or not. Note that if you set a field as required
+    well as whether it's required or not. Note that if you set a field as required
     and don’t specify a default value, the system administrator must specify a
     value for your application to work properly.
 
+<!-- 
+This brings up lots of questions in my mind: 
+What do OCD and AD stand for? 
+What are the possible parameters for these annotations? 
+What is deflt? 
+
+I could go on. The description here doesn't help me understand what's going on.
+Is there some reference for these annotations? If so, we should link to it. 
+
+-Rich --> 
+
 With this information, the system already knows a lot about your application's
 configuration options. In fact it knows enough to generate a user interface
-automatically. Cool, isn’t it?
+automatically. Cool, isn’t it? 
+
+<!-- It's cool, but at this point, it's "magic." --Rich --> 
 
 [Show screenshot here]
 
@@ -137,60 +110,23 @@ At this point you might be wondering, while this is pretty cool, how do
 I read the configuration from my application code? It’s actually quite
 easy. Here's an example:
 
-<span style="background: #ffffff">@Component</span><span
-style="background: #ffffff">(configurationPid = </span>**<span
-style="background: #ffffff">"com.foo.bar.MyAppConfiguration"</span>**<span
-style="background: #ffffff">)</span>
+    @Component(configurationPid = "com.foo.bar.MyAppConfiguration")
+    public class MyAppManager {
 
-**<span style="background: #ffffff">public class </span>**<span
-style="background: #ffffff">MyAppManager {</span>
+      public String getDefaultLanguageLabel(Map labels) {
+           return labels.get(_configuration.defaultLanguage());
+      }
 
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">public String </span>**<span
-style="background: #ffffff">getDefaultLanguageLabel(Map labels) {</span>
+      @Activate
+      @Modified
+      protected void activate(Map<String, Object> properties) {
+         _configuration = Configurable.createConfigurable(
+            MyAppConfiguration.class, properties);
+      }
 
-<span style="background: #ffffff"> return
-labels.get(\_configuration.defaultLanguage());</span>
+      private volatile MyAppConfiguration _configuration;
 
-<span style="background: #ffffff"> }</span>
-
-\
-
-<span style="background: #ffffff"> </span><span
-style="background: #ffffff">@Activate</span>
-
-<span style="background: #ffffff"> @Modified</span>
-
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">protected void </span>**<span
-style="background: #ffffff">activate(Map\<String, Object\> properties)
-{</span>
-
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">\_configuration </span>**<span
-style="background: #ffffff">= Configurable.</span>*<span
-style="background: #ffffff">createConfigurable</span>*<span
-style="background: #ffffff">(</span>
-
-<span style="background: #ffffff"> MyAppConfiguration.</span>**<span
-style="background: #ffffff">class</span>**<span
-style="background: #ffffff">, properties);</span>
-
-<span style="background: #ffffff"> }</span>
-
-\
-
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">private volatile </span>**<span
-style="background: #ffffff">MyAppConfiguration </span>**<span
-style="background: #ffffff">\_configuration</span>**<span
-style="background: #ffffff">;</span>
-
-\
-
-<span style="background: #ffffff">}</span>
-
-\
+    }
 
 Here are the most relevant aspects of this example one by one:
 
@@ -205,16 +141,16 @@ Here are the most relevant aspects of this example one by one:
 4.  The configuration is stored in a “volatile” field. Don’t forget to make it
     volatile or you’ll run into weird problems. 
 
-That’s it. As you can see with very few lines of code you have a configurable
+That’s it. As you can see with very few lines of code, you have a configurable
 application that dynamically changes its configuration, has an auto-generated
 UI, and uses a simple API to access the configuration.
 
 ## Supporting different configurations per scope 
 
-When an application is deployed to Liferay, it is common to need different
+When an application is deployed to Liferay, it's common to need different
 configurations depending on the scope. That means having different
 configurations for a given service per portal instance or site. It's also very
-common is to need different configurations for each portlet instance. Liferay 7
+common to need different configurations for each portlet instance. Liferay 7
 provides an easy way to achieve this with little effort through a new framework
 called the Settings API.
 
@@ -222,69 +158,36 @@ In order to use the Settings API you need to
 
 1.  Declare the configuration interface by creating a `ConfigurationBeanDeclaration` class:
 
-<span style="background: #ffffff">@Component</span>
+        @Component
+        public class RSSPortletInstanceConfigurationBeanDeclaration
+          implements ConfigurationBeanDeclaration {
 
-**<span style="background: #ffffff">public class </span>**<span
-style="background: #ffffff">RSSPortletInstanceConfigurationBeanDeclaration</span>
+          @Override
+          public Class getConfigurationBeanClass() {
+             return RSSPortletInstanceConfiguration.class;
+          }
 
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">implements </span>**<span
-style="background: #ffffff">ConfigurationBeanDeclaration {</span>
-
-\
-
-<span style="background: #ffffff"> </span><span
-style="background: #ffffff">@Override</span>
-
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">public </span>**<span
-style="background: #ffffff">Class getConfigurationBeanClass() {</span>
-
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">return </span>**<span
-style="background: #ffffff">RSSPortletInstanceConfiguration.</span>**<span
-style="background: #ffffff">class</span>**<span
-style="background: #ffffff">;</span>
-
-<span style="background: #ffffff"> }</span>
-
-<span style="background: #ffffff">}</span>
-
+        }
 
 2.  Obtain the configuration using the following code: 
 
-<span style="background: #ffffff">RSSPortletInstanceConfiguration
-rssPortletInstanceConfiguration =</span>
+        RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
+          _settingsFactory.getSettings(
+             RSSPortletInstanceConfiguration.class,
+             new PortletInstanceSettingsLocator(
+                themeDisplay.getLayout(), portletDisplay.getId()));
 
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">\_settingsFactory</span>**<span
-style="background: #ffffff">.getSettings(</span>
-
-<span style="background: #ffffff">
-RSSPortletInstanceConfiguration.</span>**<span
-style="background: #ffffff">class</span>**<span
-style="background: #ffffff">,</span>
-
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">new </span>**<span
-style="background: #ffffff">PortletInstanceSettingsLocator(</span>
-
-<span style="background: #ffffff"> themeDisplay.getLayout(),
-portletDisplay.getId()));</span>
+        RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
+          _settingsFactory.getPortletInstanceSettings(
+             RSSPortletInstanceConfiguration.class,
+             themeDisplay.getLayout(), portletDisplay.getId()));
 
 3.  In order to get the `SettingsFactory`, your class must have a method: 
 
-<span style="background: #ffffff">@Reference</span>
-
-**<span style="background: #ffffff">protected void </span>**<span
-style="background: #ffffff">setSettingsFactory(SettingsFactory
-settingsFactory) {</span>
-
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">\_settingsFactory </span>**<span
-style="background: #ffffff">= settingsFactory;</span>
-
-<span style="background: #ffffff">}</span>
+        @Reference
+        protected void setSettingsFactory(SettingsFactory settingsFactory) {
+          _settingsFactory = settingsFactory;
+        }
 
 ### Accessing the Portlet Instance Settings through the PortletDisplay 
 
@@ -298,8 +201,8 @@ request object). Here is an example of how to use it:
 
             RSSPortletInstanceConfiguration.class);
 
-As you can see, it knows how to find the values and returns a typed bean with
-them just by passing the configuration class.
+As you can see, it knows how to find the values and returns a typed bean
+containing them just by passing the configuration class.
 
 ### Reusing the same configuration class for different purposes 
 
@@ -307,55 +210,25 @@ The settings service also allows reusing a single class for different
 configuration needs. In order to support this, you must create a class that
 maps the different scenarios to the class that will be used. Here is an example:
 
-<span style="background: #ffffff">@Component</span>
+    @Component
+    public class RSSPortletInstanceSettingsIdMapping implements SettingsIdMapping {
 
-**<span style="background: #ffffff">public class </span>**<span
-style="background: #ffffff">RSSPortletInstanceSettingsIdMapping
-</span>**<span style="background: #ffffff">implements </span>**<span
-style="background: #ffffff">SettingsIdMapping {</span>
+      @Override
+      public Class<?> getConfigurationBeanClass() {
+         return RSSPortletInstanceConfiguration.class;
+      }
 
-\
+      @Override
+      public String getSettingsId() {
+         return RSSPortletKeys.RSS;
+      }
 
-<span style="background: #ffffff"> </span><span
-style="background: #ffffff">@Override</span>
+    }
 
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">public </span>**<span
-style="background: #ffffff">Class\<?\> getConfigurationBeanClass()
-{</span>
+<!-- One rule is never to end a section with code. This section needs to be tied
+up. -Rich --> 
 
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">return </span>**<span
-style="background: #ffffff">RSSPortletInstanceConfiguration.</span>**<span
-style="background: #ffffff">class</span>**<span
-style="background: #ffffff">;</span>
+## Summary 
 
-<span style="background: #ffffff"> }</span>
-
-\
-
-<span style="background: #ffffff"> </span><span
-style="background: #ffffff">@Override</span>
-
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">public </span>**<span
-style="background: #ffffff">String getSettingsId() {</span>
-
-<span style="background: #ffffff"> </span>**<span
-style="background: #ffffff">return </span>**<span
-style="background: #ffffff">RSSPortletKeys.</span>***<span
-style="background: #ffffff">RSS</span>***<span
-style="background: #ffffff">;</span>
-
-<span style="background: #ffffff"> }</span>
-
-\
-
-<span style="background: #ffffff">}</span>
-
-\
-
-\
-
-\
+<!-- Please summarize what the reader has learned. -Rich -->
 
