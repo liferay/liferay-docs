@@ -60,8 +60,8 @@ simple bundle via the Plugins SDK.
 
         <import file="../../build-common-osgi-plugin.xml" />
 
-7. Run the following command to download the dependencies required to build a
-   bundle:
+7. Run the following command to download the Ivy dependencies required to build
+   your bundle:
 
         ant clean
 
@@ -73,8 +73,8 @@ simple bundle via the Plugins SDK.
 
 9. To turn your project into a simple bundle, you'll implement a
    `[BundleActivator](https://osgi.org/javadoc/r5/core/org/osgi/framework/BundleActivator.html)`.
-   If your project does not have a `src` folder, create one and add it to
-   Eclipse's build path. Right-click on your project's `src` folder and select
+   If your project does not have a `src` folder, create one and add it to your
+   Eclipse build path. Right-click on your project's `src` folder and select
    *New* &rarr; *Package* and create a new package. E.g., create a new package
    called *com.liferay.docs.simplebundle*. Then right-click on your new package
    and select *New* &rarr; *Class*. Enter a name for the class, e.g.,
