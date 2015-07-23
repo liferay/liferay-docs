@@ -72,12 +72,12 @@ create a service API bundle, you don't need to create a bundle activator.
    files based on the contents of your project.
 
 9. To create a service API, you only need to create an interface. If your
-   project does not have a `src` folder, create one. Right-click on your
-   project's `src` folder and select *New* &rarr; *Package* and create a new
-   package. E.g., create a new package called *com.liferay.docs.exampleapi*.
-   Then right-click on your new package and select *New* &rarr; *Interface*.
-   Enter a name for the interface, e.g., *Greeting*. Replace its default
-   contents with the following code:
+   project does not have a `src` folder, create one and add it to Eclipse's
+   build path. Right-click on your project's `src` folder and select *New*
+   &rarr; *Package* and create a new package. E.g., create a new package called
+   *com.liferay.docs.exampleapi*. Then right-click on your new package and
+   select *New* &rarr; *Interface*. Enter a name for the interface, e.g.,
+   *Greeting*. Replace its default contents with the following code:
 
         package com.liferay.docs.exampleapi;
 

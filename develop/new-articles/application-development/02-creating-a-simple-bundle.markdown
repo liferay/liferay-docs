@@ -73,12 +73,13 @@ simple bundle via the Plugins SDK.
 
 9. To turn your project into a simple bundle, you'll implement a
    `[BundleActivator](https://osgi.org/javadoc/r5/core/org/osgi/framework/BundleActivator.html)`.
-   If your project does not have a `src` folder, create one. Right-click on your
-   project's `src` folder and select *New* &rarr; *Package* and create a new
-   package. E.g., create a new package called *com.liferay.docs.simplebundle*.
-   Then right-click on your new package and select *New* &rarr; *Class*. Enter a
-   name for the class, e.g., *SimpleBundleActivator*. Replace its default
-   contents with the following code:
+   If your project does not have a `src` folder, create one and add it to
+   Eclipse's build path. Right-click on your project's `src` folder and select
+   *New* &rarr; *Package* and create a new package. E.g., create a new package
+   called *com.liferay.docs.simplebundle*. Then right-click on your new package
+   and select *New* &rarr; *Class*. Enter a name for the class, e.g.,
+   *SimpleBundleActivator*. Replace its default contents with the following
+   code:
 
         package com.liferay.docs.simplebundle;
 
