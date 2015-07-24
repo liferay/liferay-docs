@@ -33,7 +33,7 @@ Because of the reduced wait time for requests and reduced load on your
 application server, a CDN is a great option to improve your portal's
 performance. Using a CDN with Liferay, however, has some restrictions. 
 
-## Liferay CDN Requirements
+## Liferay CDN Requirements [](id=liferay-cdn-requirements)
 
 Liferay only works with CDNs that can dynamically retrieve requested resources
 from Liferay. Dynamic resources are resources which change over time or via

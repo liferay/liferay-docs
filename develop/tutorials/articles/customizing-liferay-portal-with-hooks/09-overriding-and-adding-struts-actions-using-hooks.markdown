@@ -263,7 +263,7 @@ in adding a new Struts action. Here's how you do it:
     hook plugin example-hook2-hook can be accessed from a browser at the path
     you specified: `http://localhost:8080/c/portal/sample`. 
 
-![Figure 2: The example-hook2-hook example hook plugin's new Struts action JSP displays *Hello World!*.](../../images/struts-action-display.png)
+![Figure 1: The example-hook2-hook example hook plugin's new Struts action JSP displays *Hello World!*.](../../images/struts-action-display.png)
 
 Great! Now you know about the interfaces used for Struts actions. You also 
 learned how to override an existing action and create a new action using a 

@@ -56,7 +56,7 @@ and configure the `liferay-ui:icon-help` tag:
 The message is supplied as a string at the moment. As this is not best practice, 
 you should supply the message via a language key. You'll take care of this next.
 
-## Creating a Language Key Hook for the Help Message
+## Creating a Language Key Hook for the Help Message [](id=creating-a-language-key-hook-for-the-help-message)
 
 In order to supply the language key for the help message you will need to create 
 a hook.

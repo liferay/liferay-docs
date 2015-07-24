@@ -1,4 +1,4 @@
-# Creating a Navigation Menu With the liferay-ui:icon-list Tag
+# Creating a Navigation Menu With the liferay-ui:icon-list Tag [](id=creating-a-navigation-menu-with-the-liferay-uiicon-list-tag)
 
 The navigation for your site can have a huge impact on how people interact with 
 it. Poorly designed navigation can ruin even the best of content, causing people 
@@ -24,7 +24,7 @@ list-style navigation menu. By the end of this tutorial you should be able to
 keep the torch carrying mob at bay, at least when it comes to the navigation of 
 your apps.
 
-## Setting Up the liferay-ui:icon-list Tag
+## Setting Up the liferay-ui:icon-list Tag [](id=setting-up-the-liferay-uiicon-list-tag)
 
 The example in this tutorial shows how to add and use the `liferay-ui:icon-list` 
 tag in the `view.jsp` of a portlet by using the following steps:
@@ -35,7 +35,7 @@ tag in the `view.jsp` of a portlet by using the following steps:
 
 Go through each of these steps to get your navigation going!
 
-### Step 1: Reference the liferay-ui Taglib
+### Step 1: Reference the liferay-ui Taglib [](id=step-1-reference-the-liferay-ui-taglib)
 
 1.  Open the `view.jsp` of your portlet. Create one if it doesn't already 
     exist.
@@ -48,7 +48,7 @@ You can now use Liferay UI tags in your portlet! Next, you'll add the
 `liferay-ui:icon-list` tag to your portlet. It sounds like the unruly mob is 
 already starting to head back to the village!
 
-### Step 2: Add the liferay-ui:icon-list Tags in the View JSP
+### Step 2: Add the liferay-ui:icon-list Tags in the View JSP [](id=step-2-add-the-liferay-uiicon-list-tags-in-the-view-jsp)
 
 Next, add the `liferay-ui:icon-list` tags to the bottom of your portlet's 
 `view.jsp`. The example here shows these tags:
@@ -60,7 +60,7 @@ Next, add the `liferay-ui:icon-list` tags to the bottom of your portlet's
 In the next step, you'll place all the icons in your list inside the tags you 
 just added.
 
-### Step 3: Insert and Configure the liferay-ui:icon Tags inside of the liferay-ui:icon-list Tags
+### Step 3: Insert and Configure the liferay-ui:icon Tags inside of the liferay-ui:icon-list Tags [](id=step-3-insert-and-configure-the-liferay-uiicon-tags-inside-of-the-liferay-u)
 
 Still inside the `view.jsp`, nest the `liferay-ui:icon` tags inside the 
 `liferay-ui:icon-list` tags. There are a few attributes for the 
@@ -87,7 +87,7 @@ shows the icon list created by the above code:
 There you have it! You can rest easy now, knowing that the villagers will enjoy
 your site's navigation.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
 

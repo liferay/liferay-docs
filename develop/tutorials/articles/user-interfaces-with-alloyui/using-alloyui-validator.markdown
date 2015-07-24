@@ -77,7 +77,7 @@ that `"alpha"` is used as the validation rule to restrict users to alphabetic
 characters for that field. Next, the full list of values available
 for the `name` attribute of the `aui:validator` tag are presented. 
 
-## Available Validation Rules
+## Available Validation Rules [](id=available-validation-rules)
 
 There are several validation rules that you can implement for your input fields. 
 As shown in the previous example, this is done by choosing different values for 
@@ -153,7 +153,7 @@ The custom error message is supplied as a string at the moment. As this is not
 best practice, you should supply the custom error message via a language key.
 You'll take care of this next.
 
-## Creating a Language Key Hook for the Error Message
+## Creating a Language Key Hook for the Error Message [](id=creating-a-language-key-hook-for-the-error-message)
 
 In order to supply the language key for the custom error message you will need
 to create a hook.
