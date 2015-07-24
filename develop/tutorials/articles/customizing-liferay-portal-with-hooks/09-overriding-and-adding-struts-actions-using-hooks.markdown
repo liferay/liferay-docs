@@ -160,8 +160,6 @@ Notice that the class extends the base class [`BaseStrutsPortletAction`](https:/
 The `render` method of class above prints to the console the message *Custom
 Struts Action* every time a user logs in.
 
-![Figure 1: You can override a Struts action with custom behaviors. This example Struts action hook prints a message to the console every time a user logs in.](../../images/struts-action-console.png)
-
 As a best practice in extending Struts actions, consider invoking the base class
 methods that you override. 
 
