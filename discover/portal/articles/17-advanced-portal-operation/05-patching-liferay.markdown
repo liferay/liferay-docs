@@ -112,7 +112,7 @@ command:
 
     ./patching-tool.sh index-info
 
-As there's no database connection at patching time, the patches needed to be
+As there's no database connection at patching time, the indexes need to be
 created at portal startup. In order to get the indexes automatically created,
 please add the following line to your `portal-ext.properties` file if your
 server has permissions to modify the indexes on the database:
