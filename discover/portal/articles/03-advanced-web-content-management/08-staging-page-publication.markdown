@@ -437,34 +437,6 @@ it to the live site. If workflow is enabled for any new resource, the resource
 needs to go through the workflow process before it can be published to the live
 site.
 
-<<<<<<< HEAD
-Frequently, web content articles include embedded images that need to be
-published. Images embedded in a web content article are characterized in Portal
-as referenced content. If the user is exporting/publishing a web content article
-from staging, they can include embedded images by checking the *Referenced
-Content* checkbox in the Web Content section of the Publish to Live menu. By
-doing this, the embedded images will be parsed and exported independently from
-the Documents and Media content. If the *Referenced Content* checkbox is not
-checked, but the embedded image you're using is included in the Documents and
-Media export (or if the image already exists on the live site), the embedded
-images will still be available in the published web content article. However, if
-the embedded images are not exported with the Documents and Media content or
-available on the live site, unchecking the *Referenced Content* checkbox will
-fail the publishing process.
-
-Web content tends to be frequently updated, often more so than other kinds of
-content. For some web content articles, this can result in very high numbers of
-versions, sometimes hundreds. Such high version numbers can make it very slow to
-publish web content articles. Liferay addresses this issue by allowing site
-administrators to choose whether or not to publish a web content article's
-version history when a staged article is ready to be published. To use this
-feature, staging must be enabled. Edit a web content article that's being
-displayed in a Web Content Display portlet on one of your pages and then click
-*Staging* &rarr; *Publish to Live* from the Dockbar. In the popup, expand the
-Content heading and find the section for Web Content. You can click the *Change*
-button to select/deselect options to publish dealing with your new Web Content
-instance.
-
 ![Figure 3.24: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
 
 One of the most powerful features of staging is page variations. Let's see how
