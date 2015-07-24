@@ -1,13 +1,13 @@
 # Screenlets in Liferay Screens for Android [](id=screenlets-in-liferay-screens-for-android)
 
-Liferay Screens for Android contains several screenlets that you can use in your 
+Liferay Screens for Android contains several Screenlets that you can use in your 
 Android apps. This section contains the reference documentation for each. If 
 you're looking for instructions on using Screens, see the [Screens tutorials](/develop/tutorials/-/knowledge_base/6-2/mobile-apps-with-liferay-screens). 
-The Screens tutorials contain instructions on [using screenlets](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps) 
-and [using views in screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets). 
-Each screenlet reference document here lists the screenlet's features, 
-compatibility, its module (if any), available views, attributes, listener 
-methods, and more. The available screenlets are listed here with links to their 
+The Screens tutorials contain instructions on [using Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps) 
+and [using views in Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets). 
+Each Screenlet reference document here lists the Screenlet's features, 
+compatibility, its module (if any), available Views, attributes, listener 
+methods, and more. The available Screenlets are listed here with links to their 
 reference documents: 
 
 - [`LoginScreenlet`](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android): 
@@ -34,6 +34,6 @@ reference documents:
   This includes web content, blog entries, documents, users, and more. 
   
 - [`WebContentDisplayScreenlet`](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android): 
-  Shows the web content's HTML. This screenlet uses the features available in 
+  Shows the web content's HTML. This Screenlet uses the features available in 
   [Web Content Management](/discover/portal/-/knowledge_base/6-2/web-content-management). 
 

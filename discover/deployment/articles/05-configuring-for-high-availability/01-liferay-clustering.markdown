@@ -475,10 +475,10 @@ We have one more store to go over: the Documentum store.
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
-If you have a Liferay Portal EE license, you have access to the Documentum hook
-which adds support for Documentum to Liferay's Documents and Media library.
-The Documentum hook is included in the Documentum Connector EE app which you can
-download and install from Liferay Marketplace. 
+If you have a Liferay Portal EE activation key, you have access to the
+Documentum hook which adds support for Documentum to Liferay's Documents and
+Media library. The Documentum hook is included in the Documentum Connector EE
+app which you can download and install from Liferay Marketplace. 
 
 This hook doesn't add an option to make the Liferay repository into a Documentum
 repository, as the other store implementations do. Instead, it gives you the

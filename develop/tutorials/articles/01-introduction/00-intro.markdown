@@ -31,7 +31,7 @@ be written in any way Java code is written.
 
 Here are some links to tutorials on Liferay development tools:
 
-[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development) 
+[Beginning Liferay Development](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development) 
 
 [Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
@@ -72,7 +72,7 @@ provide.
 
 Start learning to develop apps for Liferay:
 
-[Writing Your First Application](/develop/learning-paths/-/knowledge_base/6-2/writing-your-first-liferay-application)
+[Writing Your First Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-your-first-liferay-application)
 
 [Developing Portlets Using Liferay MVC](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 

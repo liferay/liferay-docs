@@ -368,7 +368,7 @@ you can access third-party services, please see the
 [Authorizing Access to Services with OAuth](/develop/tutorials/-/knowledge_base/6-2/authorizing-access-to-services-with-oauth) 
 tutorial.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [SOAP Web Services](develop/tutorials/-/knowledge_base/6-2/json-web-services)
 

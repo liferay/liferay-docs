@@ -23,7 +23,7 @@ For the SDK Builder to discover a portlet's remote services, the services must
 be available and accompanied by a Web Service Deployment Descriptor (WSDD). 
 
 If you're in the process of developing the portlet, see
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-a-data-driven-application)
 for in-depth instructions on implementing remote services.
 
 The following steps outline how to implement remote services for your portlet 

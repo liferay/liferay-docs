@@ -19,7 +19,7 @@ If you want to display entity data in a Liferay application, you're free to
 create any kind of user interface that you can imagine. The following image
 shows a simple example. To learn how to create simple user interfaces for
 Liferay Service Builder applications, please see the
-[Implementing a UI with Liferay Taglibs](/develop/learning-paths/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
+[Implementing a UI with Liferay Taglibs](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
 learning path.
 
 ![Figure 1: The Event Listing and Location Listing portlets let you add and modify social events and locations. The portlets rely on the event and location entities and the service infrastructure that Liferay Service Builder builds around them.](../../images/service-builder-view-events.png)
@@ -543,7 +543,7 @@ please refer to the
 [Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 tutorial. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [What is Service Builder?](develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
 

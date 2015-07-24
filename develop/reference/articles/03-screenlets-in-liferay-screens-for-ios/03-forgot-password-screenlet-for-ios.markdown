@@ -1,4 +1,4 @@
-# ForgotPasswordScreenlet for iOS [](id=forgotpasswordscreenlet-for-ios)
+# Forgot Password Screenlet for iOS [](id=forgotpasswordscreenlet-for-ios)
 
 ## Requirements [](id=requirements)
 
@@ -27,10 +27,10 @@ The available authentication methods are:
 
 ## Themes [](id=themes)
 
-- Default
-- Flat7
+- Default (`default`)
+- Flat7 (`flat7`)
 
-![The `ForgotPasswordScreenlet` with the Default and Flat7 themes.](../../images/screens-ios-forgotpwd.png)
+![The `ForgotPasswordScreenlet` with the Default and Flat7 Themes.](../../images/screens-ios-forgotpwd.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -40,7 +40,7 @@ passwords in the portal. The next sections show you how to do this.
 ### Authentication Method [](id=authentication-method)
 
 Note that the authentication method configured in the portal can be different 
-from the one used by this screenlet. For example, it's *perfectly fine* to use 
+from the one used by this Screenlet. For example, it's *perfectly fine* to use 
 `screenName` for sign in authentication, but allow users to recover their 
 password using the `email` authentication method.
 
@@ -72,7 +72,7 @@ administrator should create a specific user with minimal permissions.
 | `anonymousApiUserName` | `string` | The user name, email address, or userId (depending on the portal's authentication method) to use for authenticating the request. |
 | `anonymousApiPassword` | `string` | The password to use to authenticate the request. |
 | `companyId` | `number` | When set, the authentication is done for a user within the specified company. If the value is `0`, the company specified in `LiferayServerContext` is used. |
-| `authMethod` | `string` | The authentication method that is presented to the user. This can be `email`, `screenName`, or `userId`. |
+| `basicAuthMethod` | `string` | The authentication method that is presented to the user. This can be `email`, `screenName`, or `userId`. |
 
 ## Delegate [](id=delegate)
 

@@ -103,14 +103,11 @@ your new web content article by clicking *Select* next to the *Structure*
 heading. We discuss web content structures and templates in detail in the next
 chapter.
 
-Type the words *Welcome to the Lunar Resort* in the *Name* field. Notice that
-content can be localized in whatever language you want. If you click on the
-*localize* checkbox, two select boxes appear which allow you to pick the
-language you're working in and the default language. You can enter translations
-of your content for any language in the list. The figure below shows this
-interface but for now, we won't be using it, so you can leave it unchecked. In
-the content field, add a short sentence announcing the web site is up and
-running.
+Type the words *Welcome to the Lunar Resort* in the *Name* field. In the content
+field, add a short sentence announcing the web site is up and running. The
+content can be localized in whatever language you want. You'll learn more about
+localizing your content later on, which can be done after you publish your web
+content.
 
 Getting a new web site up and running is an exciting step for anyone, whether it
 is a large corporation or a small non-profit charity. To celebrate this
@@ -299,7 +296,9 @@ there is lots of published content available, you could search for the content
 by name, ID, type, version, content and site (click the *Advanced* gear to see
 all the options). You can also show the available locales for your content. If
 you're working on the page for a particular language, you can select the
-translation of your content that goes with your locale.
+translation of your content that goes with your locale. To learn more about
+translating your content, visit the
+[Localization](/discover/portal/-/knowledge_base/6-2/localization) section.
 
 ![Figure 2.21: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
 

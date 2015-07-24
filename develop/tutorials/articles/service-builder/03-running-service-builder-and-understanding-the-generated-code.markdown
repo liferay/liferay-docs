@@ -241,7 +241,7 @@ method signature of a `*LocalServiceImpl` class, `*ServiceImpl` class, or
 `*Impl` class, you should run Service Builder again to regenerate the affected
 interfaces and the service JAR.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [What is Service Builder](develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
 

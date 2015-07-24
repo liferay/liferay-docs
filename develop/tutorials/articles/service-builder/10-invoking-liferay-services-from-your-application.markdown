@@ -140,7 +140,7 @@ or the Liferay Portal EE Javadocs included in the Liferay Portal EE
 Documentation `.zip` file that you can download from the Customer Portal on
 [http://www.liferay.com](http://www.liferay.com). 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Invoking Local Services](develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
 
