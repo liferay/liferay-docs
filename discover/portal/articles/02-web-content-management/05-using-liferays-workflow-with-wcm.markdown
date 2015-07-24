@@ -33,7 +33,7 @@ To enable workflow for Web Content, navigate to the Control Panel and select
 *Workflow Configuration*. From there, select a workflow that has been deployed
 to Liferay.
 
-![Figure 2.23: You can select the pre-made *Single Approver* workflow to experiment with workflow management.](../../images/04-web-content-workflow-config.png)
+![Figure 2.24: You can select the pre-made *Single Approver* workflow to experiment with workflow management.](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in the
 [Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow) chapter,
