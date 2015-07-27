@@ -220,11 +220,37 @@ information`. Next, use Sync to connect to your portal with the user that
 doesn't belong to the Secret Site. Since this user isn't a site member, the file 
 doesn't sync. 
 
+Now go to Sync Admin and set the Secret Site's default file permissions to View 
+Only. Create a new user, add them to the Secret Site, and add their account in 
+your Liferay Sync client. As with the secretagent user, when Sync completes, the 
+`secret.txt` file is in this user's local Sync folder because they're a member 
+of the Secret Site. Now edit and save this file. Even though you can edit and 
+save it locally, those edits aren't synced because the site's default file 
+permissions are set to View Only. After attempting the sync, a red *x* appears 
+next to the file in the local Sync folder. Right click the file to see the 
+error; it confirms the user doesn't have the required permissions.
+
+![Figure 5.15: The upload error occurs because the user only has permission to view files.](../../images/sync-file-permissions-error.png)
+
+To confirm that the error didn't propagate through Sync, open the file in the 
+secretagent user's local Sync folder. It still contains the original text. 
+Likewise, the original file remains in the site's Documents and Media portlet. 
+To get rid of the error in the other user's local Sync folder, return there and 
+then right click the file and select *Download From Server*. This replaces the 
+file with the latest file in the portal. 
+
+Now edit `secret.txt` in the secretagent user's local Sync folder. When you 
+check the file in the other user's local Sync folder and in the portal, you can 
+see that Sync propagated the edits. This is because the secretagent user is the 
+file's owner in the portal. Owners can do whatever they want with their files, 
+even when the site's default file permissions are set to View Only.
+
 Congratulations! You've successfully set up a Liferay Sync folder that can only 
-be accessed by the secretagent user and administrators. By using Liferay's 
-permissions, Sync allows users to access only the files and folders they can 
-access in the portal. 
+be accessed by site members and administrators. You've also seen how Sync's 
+default file permissions work. By using Liferay's permissions alongside Sync 
+Admin's default file permissions, Sync gives administrators two levels of 
+control over files in their sites. 
 
 Great! Now you know how to enable and configure Liferay Sync in your portal. The 
 next article explains how end users can install and configure the Sync desktop 
-and mobile clients. 
+client. 
