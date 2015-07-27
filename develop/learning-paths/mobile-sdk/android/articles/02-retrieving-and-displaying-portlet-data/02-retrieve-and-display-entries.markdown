@@ -386,10 +386,5 @@ when a guestbook is selected in the drawer.
 
 ![Figure 2: The entries for the selected guestbook now display in your app.](../../images/android-guestbook-entries.png)
 
-Congratulations! Up to this point, you've successfully built the Liferay Mobile 
-SDK and used it in an Android app to to retrieve and display a custom portlet's 
-entities. That's all the app does though: display the entities. Mobile users 
-typically want more in an app. They want to be able to do all or most of the 
-things they can do in the portlet. In the next series of articles in this 
-learning path, you'll add the functionality to let users add, update, and delete 
-guestbooks and entries.
+Congratulations! You've successfully built the Liferay Mobile SDK and used it in 
+an Android app to to retrieve and display a custom portlet's entities. 

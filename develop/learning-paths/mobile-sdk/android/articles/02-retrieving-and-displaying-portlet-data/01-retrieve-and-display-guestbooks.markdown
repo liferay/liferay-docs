@@ -424,16 +424,12 @@ screenshot.
 
 ![Figure 4: The site ID is listed in the *Site Settings* section of the *Site Administration*'s *Configuration* menu.](../../images/site-id.png)
 
-At this point, you're probably thinking, "Hang on a minute. What good is an 
-Android app that has the portal, site, and user hardcoded in? It can only be 
-used by one person, on one site, and in one portal!" You're right. This 
-implementation is most untenable. However, you don't need to worry about it 
-right now. It's done strictly for simplicity while you're developing the app's 
-main features. Later in this learning path, you'll add a proper UI for portal 
-selection, site selection, and authentication. If you add it right now, you'll 
-have to enter this information *every time* your app redeploys to the emulator. 
-Trust us; this becomes rather bothersome and significantly slows down 
-development. 
+At this point, you might be thinking, "Hang on a minute. What good is an Android 
+app that has the user hardcoded in? It can only be used by one person!" You're 
+right. This implementation is most untenable. However, you don't need to worry 
+about it right now. It's done strictly for simplicity while you're developing 
+the app's main features. You can add a proper UI for portal authentication 
+later. 
 
 Now you can call your new `getGuestbooks` method. Place the call in the 
 `onCreate` method of `MainActivity`, following the call to 

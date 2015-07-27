@@ -11,9 +11,6 @@ If you know how to develop Android apps, but need a start-to-finish guide on how
 to integrate them with Liferay, then you're in the right place. This learning 
 path walks you through the creation of an Android app that interacts with the 
 Guestbook portlet developed in the [Liferay MVC learning path](/learning-paths/-/knowledge_base/6-2/beginning-liferay-development). 
-When you're finished, you'll have an Android app that's able to do everything
-that the Guestbook portlet is capable of. This includes adding, editing, and
-deleting Guestbooks and their entries. 
 
 You should note that while this learning path provides complete code snippets of 
 the app as it's developed, not every aspect of Android development is explained 
