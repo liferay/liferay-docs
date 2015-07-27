@@ -92,14 +92,15 @@ per-site basis.
 
 ![Figure 5.13: Sync Admin's Sites tab lets you manage Sync on a per-site basis.](../../images/sync-admin-02.png)
 
-Each site in the portal is listed here, along with its default file permissions, 
-and whether it's enabled for Sync. By default, all sites are enabled. To disable 
-a site for Sync, click its drop-down arrow to the right and then click *Disable 
-Sync Site*. To disable multiple sites at once, check their checkbox in the left 
-column, and then click *Disable Sync Sites* when it appears above the table. 
-**Please use caution** when disabling Sync for a site, as doing so causes any 
-files for that site to be **deleted** from the Sync clients as well. Disabling 
-Sync for a site, however, doesn't affect the site's files in the portal. 
+Each site in the portal is listed here, along with its default file permissions 
+(more on this in a moment), and whether it's enabled for Sync. By default, all 
+sites are enabled. To disable a site for Sync, click its drop-down arrow to the 
+right and then click *Disable Sync Site*. To disable multiple sites at once, 
+check their checkbox in the left column, and then click *Disable Sync Sites* 
+when it appears above the table. **Please use caution** when disabling Sync for 
+a site, as doing so causes any files for that site to be **deleted** from the 
+Sync clients as well. Disabling Sync for a site, however, doesn't affect the 
+site's files in the portal. 
 
 +$$$
 
@@ -133,6 +134,19 @@ to use.
 To set the default file permissions for several sites, check the checkbox to the 
 left of each. Then click *Default File Permissions* when it appears above the 
 table, and select the permissions you want to use. 
+
+Now that you know how to set default file permissions, you should learn more 
+about what exactly they do.
+
+### Understanding Default File Permissions
+
+Default file permissions don't behave how you might expect them to. They control 
+*only* what other users in a site can do to documents in that site; they don't 
+control upload permission or restrict document owners (the user who originally 
+uploaded a document) in any way. For example, even if you set a site's default 
+file permissions to View Only, that site's users can still upload new documents 
+to the site. However, only the file's owner has edit permission; the rest of the 
+site's users have View Only permission.
 
 Awesome! Now that you know how to configure Sync in your portal, it's time to 
 look closer at a use case that warrants special attention for administrators: 
@@ -203,8 +217,8 @@ user's credentials and uncheck all Liferay sites except the Secret Site. Now
 confirm that the `secret.txt` file you uploaded to the Secret Site is downloaded
 to your new Sync folder. Open it and check that it contains the text `classified
 information`. Next, use Sync to connect to your portal with the user that
-doesn't belong to the Secret Site. Since this user isn't a site member, the file
-is doesn't sync. 
+doesn't belong to the Secret Site. Since this user isn't a site member, the file 
+doesn't sync. 
 
 Congratulations! You've successfully set up a Liferay Sync folder that can only 
 be accessed by the secretagent user and administrators. By using Liferay's 
