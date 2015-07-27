@@ -1,0 +1,5 @@
+Bundle-Name: Example Configuration Portlet
+Bundle-SymbolicName: com.liferay.docs.exampleconfigurationportlet
+Bundle-Version: 1.0.0
+Private-Package: com.liferay.docs.exampleconfigurationportlet,\
+com.liferay.docs.exampleconfigurationportlet.configuration
