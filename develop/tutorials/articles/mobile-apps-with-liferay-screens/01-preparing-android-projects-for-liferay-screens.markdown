@@ -11,16 +11,19 @@ Let the preparations begin!
 
 ## Requirements [](id=requirements)
 
-Liferay Screens for Android includes the Component Library (the screenlets) and 
+Liferay Screens for Android includes the Component Library (the Screenlets) and 
 a sample project. It requires the following software:
 
 - Android Studio 1.0.2 or above.
-- Android SDK 4.0 (API Level 14) or above. Its [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
-  (v7:22.1.1) implements the
+- Android SDK 4.0 (API Level 15) or above. Its [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
+  (v7:22.2.0) implements the
   [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
   and offers older devices a material look and feel.
 - [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases).
-- [Liferay Screens Compatiblity Plugin](https://github.com/liferay/liferay-screens/tree/master/portal). 
+- Liferay Screens Compatibility Plugin (
+  [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+  [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
+  depending on your portal edition). 
 - Liferay Screens source code. 
 
 Liferay Screens for Android uses
@@ -39,7 +42,7 @@ Follow these steps to configure Liferay Screens in a Gradle project:
 2. Include Screens as a dependency:
 
         dependencies {
-            compile 'com.liferay.mobile:liferay-screens:1.0.+'
+            compile 'com.liferay.mobile:liferay-screens:+'
         }
 
 Gradle downloads all the necessary dependencies before building your project. If 
@@ -127,13 +130,13 @@ You can also configure the `.aar` binary files (in `Android/dist`) as local
 [jCenter](https://bintray.com/liferay/liferay-mobile/liferay-screens/view).
 
 To check your configuration, you can compile and execute a blank activity and
-import a Liferay Screens class (like `LoginScreenlet`). 
+import a Liferay Screens class (like Login Screenlet). 
 
 Next, you'll set up communication with Liferay. 
 
 ## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
 
-Configuring communication between screenlets and Liferay is easy. In your
+Configuring communication between Screenlets and Liferay is easy. In your
 project's `res/values` folder, create a new file called `server_context.xml`.
 Add the following code to the new file: 
 
@@ -155,12 +158,12 @@ for testing with Android Studio's emulator, because it corresponds to
 `localhost:8080` through the emulator. If you're using the Genymotion emulator,
 you should, however, use address `192.168.56.1` instead of `localhost`. 
 
-In your `server_context.xml` file, you can configure screenlet properties. The
+In your `server_context.xml` file, you can configure Screenlet properties. The
 example properties listed below, `liferay_recordset_id` and
-`liferay_recordset_fields`, enable `DDLFormScreenlet` and `DDLListScreenlet` to
+`liferay_recordset_fields`, enable DDL Form Screenlet and DDL List Screenlet to
 interact with a portal's DDLs. You can see an additional example
 `server_context.xml` file
-[here](https://github.com/liferay/liferay-screens/blob/master/android/samples/bankofwesteros/src/main/res/values/server_context.xml).
+[here](https://github.com/liferay/liferay-screens/blob/1.1.0/android/samples/bankofwesteros/src/main/res/values/server_context.xml).
 
     <!-- Change these values for your Liferay Portal installation -->
     
@@ -174,10 +177,10 @@ Super! Your Android project's ready for Liferay Screens.
 As you use Screens to develop your apps, you may want to refer to some example 
 apps that also use it. There are two demo applications available:
 
-- [test-app](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app): 
-  A showcase app containing all the currently available screenlets.
-- [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros): 
-  An example app that uses screenlets to manage technical issues for the 
+- [test-app](https://github.com/liferay/liferay-screens/tree/1.1.0/android/samples/test-app): 
+  A showcase app containing all the currently available Screenlets.
+- [Westeros Bank](https://github.com/liferay/liferay-screens/tree/1.1.0/android/samples/bankofwesteros): 
+  An example app that uses Screenlets to manage technical issues for the 
   *Westeros Bank*. It's also available in [Google Play](https://play.google.com/store/apps/details?id=com.liferay.mobile.screens.bankofwesteros).
 
 Great! Now you're ready to put Screens to use. The following tutorials show you 

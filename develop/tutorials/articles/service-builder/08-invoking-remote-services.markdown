@@ -82,4 +82,4 @@ service's WSDL is available, any SOAP web service client can access it.
 
 [Invoking Liferay Services in your Android App](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
 
-[Invoking Liferay Services in your iOS App](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
+[Invoking Liferay Services in your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)

@@ -17,30 +17,21 @@ screenshot, Liferay Portal 6.2 EE is selected.
 
 ![Figure 4.4: You can download the LCS client from the LCS Welcome screen.](../../images/lcs-welcome-client-download.png)
 
-You can also download the LCS client from your LCS project's Dashboard. To get 
-to your Dashboard, click the *Go to My Dashboard* link on the Welcome screen, or 
-click your project's link in a deployed and registered LCS client. By letting 
-you view and manage the environments and servers in your project, the Dashboard 
-is at the heart of LCS. The following screenshot shows the Dashboard with its 
-LCS client download links highlighted in a red box. 
-
-![Figure 4.5: The LCS Dashboard contains links to download the client.](../../images/lcs-dashboard-client-download.png)
-
 The LCS client is also available for download from the User menu in your LCS 
 account's Dockbar. To download it from here, click your name in the top-right 
-corner of your LCS account and then click *Download Client* in the menu that 
+corner of your LCS account and then click *Downloads* in the menu that 
 appears. This is shown in the following screenshot. You then see a screen
 similar to the Welcome screen, where you select your portal's version, edition, 
 and then click *Download*. 
 
-![Figure 4.6: You can also download the LCS client from the User menu in your LCS account's Dockbar.](../../images/lcs-user-menu-client-download.png)
+![Figure 4.5: You can also download the LCS client from the User menu in your LCS account's Dockbar.](../../images/lcs-user-menu-client-download.png)
 
 There's one final place where you can download the LCS client: when creating a 
 new server in an environment. When you click the *Add Server* tab in an 
 environment, you're presented with a screen similar to the Welcome screen. 
 Select your portal's version and edition, and then click *Download*.
 
-![Figure 4.7: Adding a new server in an environment also presents you with the LCS client download screen.](../../images/lcs-add-server-client-download.png)
+![Figure 4.6: Adding a new server in an environment also presents you with the LCS client download screen.](../../images/lcs-add-server-client-download.png)
 
 Super! Now you know all the places where you can download the LCS client. Before 
 you deploy it though, there are a few other things you should check. If you 
@@ -113,12 +104,12 @@ Once you deploy the LCS client, you're ready to register your server with LCS.
 Access the client by clicking on *Liferay Connected Services* under the *Apps* 
 section of the *Control Panel*. 
 
-![Figure 4.8: LCS appears in your Control Panel as Liferay Connected Services, in the Apps section.](../../images/lcs-post-install-01.png)
+![Figure 4.7: LCS appears in your Control Panel as Liferay Connected Services, in the Apps section.](../../images/lcs-post-install-01.png)
 
 After clicking *Authorize Access* on the screen that appears, you are then taken 
 to the LCS website. Log in with your credentials and then click *Grant Access*.
 
-![Figure 4.9: The LCS client requires access to your LCS account.](../../images/lcs-auth-access.png)
+![Figure 4.8: The LCS client requires access to your LCS account.](../../images/lcs-auth-access.png)
 
 Next, you need to register your server with LCS by filling out the following 
 fields:
@@ -131,7 +122,7 @@ fields:
    examples of environments. If you elect to create a new environment, a popup 
    asks you to enter its *Name*, *Location*, and *Description*.
 
-    ![Figure 4.10: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
+    ![Figure 4.9: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
 
 3. Server Name: Give your server a name that you can use to distinguish it in 
    your LCS account.
@@ -143,7 +134,7 @@ fields:
    server. You can use this field to help differentiate the servers you are 
    managing using LCS.
 
-![Figure 4.11: The server registration screen.](../../images/lcs-register-server.png)
+![Figure 4.10: The server registration screen.](../../images/lcs-register-server.png)
 
 Upon clicking *Register*, your LCS client shows your connection status. Note 
 that it can take up to 10 or 20 seconds to perform the initial handshake and 
@@ -152,7 +143,7 @@ status after 20 seconds, try refreshing the page. If you see a red symbol
 indicating no data is being transmitted, please contact the Liferay team for 
 support. 
 
-![Figure 4.12: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
+![Figure 4.11: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
 
 Once a successful connection is established, some statistics and links are
 displayed. Here's a description of what's displayed:
@@ -180,7 +171,7 @@ displayed. Here's a description of what's displayed:
   portal instance. This is because OAuth, which uses tokens, is used for 
   authentication.
 
-![Figure 4.13: The server is connected to LCS.](../../images/lcs-server-connected.png)
+![Figure 4.12: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
 This article's previous section contains instructions for changing the heartbeat 
 interval. Currently, the message and metrics task intervals are fixed and cannot 

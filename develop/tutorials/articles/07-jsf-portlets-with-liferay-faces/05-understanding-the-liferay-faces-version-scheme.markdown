@@ -54,7 +54,6 @@ Liferay Portal and JSF versions:
 | `3.0.x`               | `2.1`                  | `6.0`                             |
 | `3.1.x`               | `2.1`                  | `6.1`                             | 
 | `3.2.x`               | `2.1`                  | `6.2`                             |
-| `4.1.x`               | `2.2`                  | `6.1`                             | 
 | `4.2.x` (master)      | `2.2`                  | `6.2`                             |
 
 While Liferay Faces Bridge is theoretically compatible with any portal that

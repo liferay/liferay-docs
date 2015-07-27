@@ -30,7 +30,8 @@ plugin that you'll learn about in this section.
 
 **Note:** To learn more about the OAuth framework, Liferay OAuth app,
 registering your OAuth app, or activating it from a portal page, please refer to
-the [OAuth](discover/portal/-/knowledge_base/6-2/oauth) documentation. 
+the [OAuth](/discover/portal/-/knowledge_base/6-2/oauth)
+documentation. 
 
 $$$
 
@@ -293,7 +294,7 @@ implementation, and developed a user interface to present the OAuth cycle. Of
 course, this example and its code snippets are not compatible for all use cases,
 but they demonstrate configuring an OAuth-ready application for Liferay Portal. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[OAuth](discover/portal/-/knowledge_base/6-2/oauth)
+[OAuth](/discover/portal/-/knowledge_base/6-2/oauth)
 

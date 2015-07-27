@@ -121,7 +121,7 @@ sign) and choosing *Applications*. Then from the Sample category, drag the JSF
 Guestbook onto the page. The portlet display a simple message, which comes by
 default when creating a Liferay portlet through IDE/Developer Studio. 
 
-![Figure 4: The JSF Guestbook only displays a default message--for now.](../../images/jsf-guestbook-bare.png)
+![Figure 5: The JSF Guestbook only displays a default message--for now.](../../images/jsf-guestbook-bare.png)
 
 +$$$
 

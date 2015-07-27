@@ -1,19 +1,19 @@
-# UserPortraitScreenlet for Android [](id=userportraitscreenlet-for-android)
+# User Portrait Screenlet for Android [](id=userportraitscreenlet-for-android)
 
 ## Requirements [](id=requirements)
 
-- Android SDK 4.0 (API Level 14) or above
+- Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 CE or EE
 - Picasso library
 
 ## Compatibility [](id=compatibility)
 
-- Android SDK 4.0 (API Level 14) and above
+- Android SDK 4.0 (API Level 15) and above
 
 ## Features [](id=features)
 
 The `UserPortraitScreenlet` shows the users' profile pictures. If a user
-doesn't have a profile picture, a placeholder image is shown. The screenlet
+doesn't have a profile picture, a placeholder image is shown. The Screenlet
 allows the profile picture to be edited via the `editable` property.
 
 ## Module [](id=module)
@@ -25,7 +25,7 @@ allows the profile picture to be edited via the `editable` property.
 - Default
 - Material
 
-![The `UserPortraitScreenlet` using the Default and Material viewsets.](../../images/screens-android-userportrait.png)
+![The `UserPortraitScreenlet` using the Default and Material Viewsets.](../../images/screens-android-userportrait.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -41,7 +41,7 @@ The `UserPortraitScreenlet` needs the following user permissions:
 Both are used by the `editable` property to take a picture with the phone's 
 camera and store it locally before uploading it to the portal. The activity 
 using `UserPortraitScreenlet` also needs to override the `onActivityResult` 
-method to send the picture information to the screenlet. Here's an example 
+method to send the picture information to the Screenlet. Here's an example 
 implementation:
 
     @Override
@@ -61,8 +61,8 @@ implementation:
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The layout used to show the view. |
-| `autoLoad` | `boolean` | Whether the portrait should load when the screenlet is attached to the window. |
+| `layoutId` | `@layout` | The layout used to show the View. |
+| `autoLoad` | `boolean` | Whether the portrait should load when the Screenlet is attached to the window. |
 | `userId` | `number` | The ID of the user whose portrait is being requested. If this attribute is set, the `male`, `portraitId`, and `uuid` attributes are ignored. |
 | `male` | `boolean` | Whether the default portrait placeholder shows a male or female outline. This attribute is used if `userId` isn't specified. |
 | `portraitId` | `number` | The ID of the portrait to load. This attribute is used if `userId` isn't specified. |

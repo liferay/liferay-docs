@@ -375,12 +375,16 @@ What a great way to access these core Liferay entities!
 
 ## Related Topics [](id=related-topics)
 
-[Writing a Data-Driven Application](/develop/learning-paths/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Finding and Invoking Liferay Services](develop/tutorials/-/knowledge_base/6-2/finding-and-invoking-liferay-services)
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+
+[Writing a Data-Driven Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-a-data-driven-application)
+
+## Related Topics [](id=related-topics-0)
 
 [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
 [Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
 
-[Checking Permissions](develop/tutorials/-/knowledge_base/6-2/checking-permissions)
+[Checking Permissions](/develop/tutorials/-/knowledge_base/6-2/checking-permissions)

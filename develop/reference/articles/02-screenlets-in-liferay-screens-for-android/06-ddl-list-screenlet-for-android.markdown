@@ -1,14 +1,17 @@
-# DDLListScreenlet for Android [](id=ddllistscreenlet-for-android)
+# DDL List Screenlet for Android [](id=ddllistscreenlet-for-android)
 
 ## Requirements [](id=requirements)
 
-- Android SDK 4.0 (API Level 14) or above
+- Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 CE or EE
-- [Liferay Screens Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal)
+- Liferay Screens Compatibility Plugin (
+  [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+  [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
+  depending on your portal edition). 
 
 ## Compatibility [](id=compatibility)
 
-- Android SDK 4.0 (API Level 14) and above
+- Android SDK 4.0 (API Level 15) and above
 
 ## Features [](id=features)
 
@@ -26,11 +29,11 @@ The `DDLListScreenlet` has the following features:
 
 ## Views [](id=views)
 
-- The Default view uses a standard `RecyclerView` to show the scrollable list. 
-  Other views may use a different component, such as `ViewPager` or others, to 
+- The Default View uses a standard `RecyclerView` to show the scrollable list. 
+  Other Views may use a different component, such as `ViewPager` or others, to 
   show the items.
 
-![The DDLList screenlet using the Default and Material viewsets.](../../images/screens-android-ddllist.png)
+![The `DDLListScreenlet` using the Default and Material Viewsets.](../../images/screens-android-ddllist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -52,7 +55,7 @@ must be installed to allow remote calls without the `userId`.
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The layout to use to show the view. |
+| `layoutId` | `@layout` | The layout to use to show the View. |
 | `autoLoad` | `boolean` | Defines whether the list should be loaded when it's presented on the screen. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |

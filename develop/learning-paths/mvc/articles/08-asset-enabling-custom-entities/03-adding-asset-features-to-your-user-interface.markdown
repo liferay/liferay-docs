@@ -574,4 +574,4 @@ tags, categories, related assets, comments, and ratings for both entities.
 
 ## Next Steps [](id=next-steps)
 
-[Enhancing Your User Interface with AlloyUI](/develop/learning-paths/-/knowledge_base/6-2/enhancing-your-user-interface-with-alloyui)
+[Enhancing Your User Interface with AlloyUI](/develop/learning-paths/mvc/-/knowledge_base/6-2/enhancing-your-user-interface-with-alloyui)

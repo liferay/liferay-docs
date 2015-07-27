@@ -51,7 +51,7 @@ existing portal frameworks such as faceted search. If you want to asset-enable
 your entities, creating an indexer for them is a necessary step. When
 creating an indexer class, you can use the indexer classes that correspond to
 Liferay assets as examples. These include `BlogsIndexer`,
-`JournalArticleIndexer`, `WikiPageIndexer`, etc. You can refer to the [Search and Indexing](/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing-for-guestbook-entries)
+`JournalArticleIndexer`, `WikiPageIndexer`, etc. You can refer to the [Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing-for-guestbook-entries)
 learning path for another example.
 
 If your indexer class extends `com.liferay.portal.kernel.search.BaseIndexer` (as
@@ -469,7 +469,7 @@ Or you can retrieve the documents in list form:
 To display the search results, you have to iterate over the array or list of
 documents. Each document is essentially a hash map of the indexed fields and
 their values. Please refer to the
-[Search and Indexing Learning Path](https://dev.liferay.com/develop/learning-paths/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Search and Indexing Learning Path](https://dev.liferay.com/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing)
 for an explanation of how to create a portlet user interface that facilitates
 searching and viewing search results. In that Learning Path's example, a search
 bar is added to the JSP that renders the main portlet view. When a search query
