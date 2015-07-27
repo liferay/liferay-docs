@@ -1,31 +1,29 @@
-# Replacing the Default Theme Icons With Your Own Using Sprites
+# Using Image Sprites
 
-While Liferay's default icons are great, there may come a time when you wish to
-introduce a little more of your own flair and style in your theme. Custom icons
-can be the icing on the cake: the last layer of design that kicks it up a notch, 
-BAM!
+While Liferay's default icons are great, you might want introduce your own flair
+and style with new icons your custom theme. Custom icons can be the icing on the
+cake: the last layer of a beautiful design.
 
-You may be asking yourself "What is a sprite? and why would I use them?" No, I'm
-not talking about the delicious, cold, refreshing beverage that advertisements 
-try to pressure you into buying at the cinema. A sprite in this case refers to 
-an image sprite: a group of images that are combined into one single image.
+As you introduce custom icons, you might wonder "What is a sprite? And why would
+I use one?" No, I'm not talking about the delicious, cold, refreshing beverage
+that advertisements pressure you to buy at the cinema. I'm referring to an image
+sprite: a group of images combined next to each other into one single image file.
 
-While loading one image separately will get the job done, it slows down your
-load time and decreases the overall efficiency of your site. Each image that 
-gets loaded is a separate HTTP-request; if you're using one or two icons, this 
-may not be an issue; however, when you start talking about all the icons for a 
-site, or even just the icons for navigation, the HTTP-request can pile up fast, 
-leaving your images stuck in a 5 O'clock traffic jam.
+As you may know, each image in your site requires a separate HTTP request to
+load it in a page. Loading single images is slow and decreases your site's
+overall efficiency. Loading a couple of images is no big deal, but HTTP requests
+can pile up fast if you load all of your sites icons, or even just its
+navigation icons, individually. Image sprites can help you avoid such 5 O'clock
+traffic jams. 
 
-Now that your interest is peaked, it's time to learn how to make it happen.
-
-## Using Sprites in Your Theme
+Now that your interest is peaked, it's time to learn how to make use image
+sprites in Liferay. 
 
 Typically, if you wanted to use sprites, you would have to use CSS styles to
 tell your theme where each image is located on the larger image of the sprite.
 Luckily, Liferay takes care of the heavy lifting for you and saves the proper
-coordinates to a _sprite.properties file that is generated upon deployment;
-furthermore, a _sprite.png file is generated for you.
+coordinates to a `_sprite.properties` file that is generated upon deployment;
+furthermore, a `_sprite.png` file is generated for you.
 
 Follow these steps, and you'll be a sprite master in no time:
 
