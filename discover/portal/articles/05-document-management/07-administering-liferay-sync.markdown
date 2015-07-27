@@ -228,7 +228,7 @@ of the Secret Site. Now edit and save this file. Even though you can edit and
 save it locally, those edits aren't synced because the site's default file 
 permissions are set to View Only. After attempting the sync, a red *x* appears 
 next to the file in the local Sync folder. Right click the file to see the 
-error; it confirms the user doesn't have the required permissions.
+error; it confirms the user doesn't have the required permissions. 
 
 ![Figure 5.15: The upload error occurs because the user only has permission to view files.](../../images/sync-file-permissions-error.png)
 

@@ -33,9 +33,9 @@ or My Documents, pressing the location bar at the top slides the screen slightly
 to the right to reveal a compact view of the panel. The following screenshots
 show both views of the panel.
 
-![Figure 5.25: This panel lets you access the app's settings, as well as your sites and documents.](../../images/sync-mobile-panel.png)
+![Figure 5.26: This panel lets you access the app's settings, as well as your sites and documents.](../../images/sync-mobile-panel.png)
 
-![Figure 5.26: Tapping the title bar at the top of My Sites or My Documents opens the main Sync panel's compact view.](../../images/sync-mobile-panel-compact.png)
+![Figure 5.27: Tapping the title bar at the top of My Sites or My Documents opens the main Sync panel's compact view.](../../images/sync-mobile-panel-compact.png)
 
 Press the gear icon to access the app's settings. Settings shows your account 
 information and gives you the option to sign out of your portal. Settings also 
@@ -51,7 +51,7 @@ Android version of Sync, but is coming soon to Sync on iOS. Below the Security
 Mode toggle, the app's version is listed as well as a link to send Liferay
 feedback on the app.
 
-![Figure 5.27: The Settings screen for the Sync app lets you sign out of your portal, enable Security Mode, view the app's version, and send feedback.](../../images/sync-mobile-settings.png)
+![Figure 5.28: The Settings screen for the Sync app lets you sign out of your portal, enable Security Mode, view the app's version, and send feedback.](../../images/sync-mobile-settings.png)
 
 Great! Now that you know how to connect to your portal and find your sites, you 
 can get started managing the files and folders in those sites.
@@ -69,7 +69,7 @@ camera app to take and upload a picture or video. Pressing the *X* icon on the
 upload screen's top right corner returns you to the list of items for that 
 location without taking any action.
 
-![Figure 5.28: Sync shows files and folders in a list.](../../images/sync-mobile-site.png)
+![Figure 5.29: Sync shows files and folders in a list.](../../images/sync-mobile-site.png)
 
 To download a file to your device, press the file in this list. The label 
 indicating the file's size and modification date then changes to a download 
@@ -82,7 +82,7 @@ install one that can. Downloaded files appear in the list with the file size in
 blue instead of gray. For example, the screenshot below shows that 
 `LiferayinAction.pdf` has been downloaded to the device.
 
-![Figure 5.29: Downloaded files appear in the list with their size in blue.](../../images/sync-mobile-file-downloaded.png)
+![Figure 5.30: Downloaded files appear in the list with their size in blue.](../../images/sync-mobile-file-downloaded.png)
 
 The Sync mobile app also lets you move, rename, and delete files and folders. To 
 the right of each file and folder in the list is a circle icon with three dots. 
@@ -120,7 +120,7 @@ capable of sharing the file. To close the context menu and return to the list of
 files and folders, swipe to the right. The following screenshot shows the 
 options available in the context menu for files. 
 
-![Figure 5.30: The badge on the file's icon shows the file's version in the portal. You can also share files that you've downloaded to your device.](../../images/sync-mobile-file-actions.png)
+![Figure 5.31: The badge on the file's icon shows the file's version in the portal. You can also share files that you've downloaded to your device.](../../images/sync-mobile-file-actions.png)
 
 Awesome! You've now seen how Liferay Sync keeps you up to date with the files on 
 your Liferay sites. Any new or modified files on your sites are automatically 
