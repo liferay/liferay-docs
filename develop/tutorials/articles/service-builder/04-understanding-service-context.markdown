@@ -1,4 +1,4 @@
-# ServiceContext [](id=servicecontext)
+# Understanding ServiceContext [](id=servicecontext)
 
 The `ServiceContext` class is a parameter class used for passing contextual
 information for a service. Using a parameter class lets you consolidate many
@@ -343,6 +343,8 @@ Liferay application development.
 
 ## Related Topics [](id=related-topics)
 
-[Security and Permissions](develop/tutorials/-/knowledge_base/6-2/security-and-permissions)
+[Creating Local Service Classes](/develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
 
-[Invoking Local Services](develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+
+[Security and Permissions](/develop/tutorials/-/knowledge_base/6-2/security-and-permissions)

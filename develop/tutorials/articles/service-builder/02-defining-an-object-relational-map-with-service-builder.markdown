@@ -3,7 +3,7 @@
 In this tutorial, you'll learn how to define an object relational map for your
 application so that it can persist data. The example code in this tutorial, as
 well as the example code in the other Service Builder and Services tutorials,
-comes from the Event Listing project, which you can find on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet).
+comes from the Event Listing project, which you can find on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/event-listing-portlet).
 
 The Event Listing project is an example portlet project that an organization can
 use to schedule social events. The event-listing-portlet project allows
@@ -32,7 +32,7 @@ described in this section is only intended to demonstrate how to use Service
 Builder. The Calendar portlet provides many more features than the simple
 example application described here. For information about the Calendar portlet,
 please refer to the
-[Managing Events and Calendar Resources with Liferay's Calendar Portlet](/discover/portal/-/knowledge_base/6-2/managing-events-and-calendar-resources-with-liferays-c) section.
+[Managing Events and Calendar Resources with Liferay's Calendar Portlet](discover/portal/-/knowledge_base/6-2/managing-events-and-calendar-resources-with-liferays-c) section.
 
 $$$
 
@@ -534,16 +534,18 @@ Also, we should describe the uuid and the other audit fields - Jim
 -->
 
 Remember that you can view the complete Event Listing portlet project on Github
-here: [https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet).
+here: [https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/event-listing-portlet).
 
 Now that you've specified the service for the Event Listing example project,
 you're ready to *build* the service by running Service Builder. To learn how to
 run Service Builder and to learn about the code that Service Builder generates,
 please refer to the
+=======
 [Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 tutorial. 
 
 ## Related Topics [](id=related-topics)
 
-[What is Service Builder?](develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+[What is Service Builder?](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
 
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)

@@ -370,7 +370,6 @@ tutorial.
 
 ## Related Topics [](id=related-topics)
 
-[SOAP Web Services](develop/tutorials/-/knowledge_base/6-2/json-web-services)
+[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/6-2/finding-and-invoking-liferay-services)
 
-[Invoking Liferay Services from Yuor Application](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-from-your-application)
-
+[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)

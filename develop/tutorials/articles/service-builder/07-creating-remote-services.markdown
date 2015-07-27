@@ -44,7 +44,7 @@ don't have to duplicate permissions code.
 
 Here are the remote service methods of the `EventServiceImpl`
 class that belongs to the
-[Event Listing](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet)
+[Event Listing](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/event-listing-portlet)
 project:
 
 	public Event addEvent(long groupId, String name, String description,
@@ -96,16 +96,16 @@ permission to perform the action in question. In the example above, the
 permission checks determine whether the user has permission to add, view,
 update, or delete events. Notice that the methods use three new classes:
 
-- [`EventListingActionKeys`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/util/EventListingActionKeys.java)
+- [`EventListingActionKeys`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/util/EventListingActionKeys.java)
   is an extension of the [`ActionKeys`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/security/permission/ActionKeys.html)
   class. You can create similar classes to provide constants that specify the
   types of actions that be performed in your application. 
 
-- [`EventPermission`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/service/permission/EventPermission.java)
+- [`EventPermission`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/service/permission/EventPermission.java)
   is a helper class for checking whether the user is authorized to perform
   specific actions on the Event entity. 
 
-- [`EventListingPermission`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/service/permission/EventListingPermission.java)
+- [`EventListingPermission`](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/service/permission/EventListingPermission.java)
   is a helper class for checking whether the user is authorized to add the
   instances of the plugin's specific entity types. 
 
@@ -122,7 +122,7 @@ tutorial.
 To see how the Event Listing Portlet is integrated with Liferay's permissions
 system, you can browse the Event Listing example project available on Github
 here:
-[Event Listing](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet).
+[Event Listing](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/event-listing-portlet).
 
 Notice the calls to the `eventLocalService` field's `addEvent`, `updateEvent`,
 and `deleteEvent` methods. The `eventLocalService` field holds a Spring bean of
@@ -167,9 +167,13 @@ built its WSDD and deployed your portlet project. Once you've created remote web
 services for your application, you'll want to know how to invoke them. To learn
 how, please see the [Invoking Remote Services](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder) tutorial.
 
-**Related Topics**
+## Related Topics
 
-[Writing Local Service Classes]](develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
+[Writing Local Service Classes]](/develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
 
-[JSON Web Services](develop/tutorials/-/knowledge_base/6-2/json-web-services)
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+
+[Invoking Remote Services](/develop/tutorials/-/knowledge_base/6-2/invoking-remote-services)
+
+[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
 

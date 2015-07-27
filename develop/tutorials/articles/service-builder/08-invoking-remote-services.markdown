@@ -14,7 +14,7 @@ remote service's permission checks. Consider the following common scenario:
 In the above scenario, it's a best practice to invoke the remote service instead
 of the local service. Doing so ensures that you don't need to duplicate
 permission checking code. This is the practice followed by the
-[Event Listing](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet)
+[Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet)
 project.
 
 Of course, the main reason for creating remote services is to be able to invoke
@@ -23,7 +23,7 @@ both via a JSON API and via SOAP. By default, running Service Builder with
 `remote-service` set to `true` for your entities generates a JSON web services
 API for your project. You can access your project's JSON-based RESTful services
 via a convenient web interface. If you've deployed the
-[Event Listing](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet)
+[Event Listing](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet)
 project, visit the following URL to view its JSON web services:
 
     http://localhost:8080/event-listing-portlet/api/jsonws
@@ -78,8 +78,8 @@ service's WSDL is available, any SOAP web service client can access it.
 
 **Related Topics**
 
-[Invoking Local Services](develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
 
-[Invoking Liferay Services in your Android App](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
+[Invoking Liferay Services in your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
 
 [Invoking Liferay Services in your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
