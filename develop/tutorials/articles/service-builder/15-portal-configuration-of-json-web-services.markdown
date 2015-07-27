@@ -60,10 +60,10 @@ access to all exposed methods, specify `*`.
 
 ## Related Topics
 
-[Registering JSON Web Services](develop/tutorials/-/knowledge_base/6-2/registering-json-web-services)
+[Registering JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/registering-json-web-services)
 
-[Invoking JSON Web Services](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
+[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
 
-[JSON Web Services Invoker](develop/tutorials/-/knowledge_base/6-2/json-web-services-invoker)
+[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/6-2/json-web-services-invoker)
 
-[JSON Web Services Invocation Examples](develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)
+[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)

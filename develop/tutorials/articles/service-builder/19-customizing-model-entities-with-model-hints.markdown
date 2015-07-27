@@ -248,6 +248,6 @@ how portlet data is displayed!
 
 ## Related Topics
 
-[Using the AlloyUI From Validator in a Portlet](develop/tutorials/-/knowledge_base/6-2/using-the-alloyui-form-validator-in-a-portlet)
+[Using the AlloyUI From Validator in a Portlet](/develop/tutorials/-/knowledge_base/6-2/using-the-alloyui-form-validator-in-a-portlet)
 
-[Using Configurable Portlet Preferences](develop/tutorials/-/knowledge_base/6-2/using-configurable-portlet-preferences)
+[Using Configurable Portlet Preferences](/develop/tutorials/-/knowledge_base/6-2/using-configurable-portlet-preferences)

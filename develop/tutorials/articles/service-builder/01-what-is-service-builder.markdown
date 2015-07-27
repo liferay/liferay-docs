@@ -132,7 +132,7 @@ SQL queries and finder methods to be added and it also supports dynamic query.
 
 ## Related Topics
 
-[Developing with the Plugins SDK](develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
 [Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 

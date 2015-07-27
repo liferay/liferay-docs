@@ -343,8 +343,8 @@ Liferay application development.
 
 ## Related Topics [](id=related-topics)
 
-[Creating Local Service Classes](develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
+[Creating Local Service Classes](/develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
 
-[Invoking Local Services](develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
 
-[Security and Permissions](develop/tutorials/-/knowledge_base/6-2/security-and-permissions)
+[Security and Permissions](/develop/tutorials/-/knowledge_base/6-2/security-and-permissions)

@@ -41,7 +41,7 @@ regards to your remote services.
 **Note:** Liferay's developers use *Service Builder* to expose their services
 via JSON automatically. If you haven't used Service Builder before, please see
 the
-[Defining an Object-Relational Map with Service Builder](develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
+[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
 tutorial.
 
 $$$

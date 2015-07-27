@@ -174,13 +174,13 @@ Liferay, you may want to consider taking a streamlined approach to accessing Web
 Content articles and Dynamic Data List records. Liferay's Skinny JSON Provider
 app gives you access to them and returns them in an easy-to-use fashion. For
 more information, please refer to the
-[Invoking Services Using Skinny JSON Provider](develop/tutorials/-/knowledge_base/6-2/invoking-services-using-skinny-json-provider) 
+[Invoking Services Using Skinny JSON Provider](/develop/tutorials/-/knowledge_base/6-2/invoking-services-using-skinny-json-provider) 
 tutorial.
 
 ## Related Topics
 
-[Registering JSON Web Services](develop/tutorials/-/knowledge_base/6-2/registering-json-web-services)
+[Registering JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/registering-json-web-services)
 
-[Invoking JSON Web Services](develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
+[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
 
-[JSON Web Services Invocation Examples](develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)
+[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)

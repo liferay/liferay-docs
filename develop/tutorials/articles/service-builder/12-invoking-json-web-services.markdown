@@ -22,7 +22,7 @@ Example*, or *URL example* to see different ways of invoking the web service.
 This tutorial explains general techniques for working with JSON web services and
 includes details about invoking via URL. For examples of invoking Liferay's JSON
 web services via JavaScript, URL, and cURL, please see the
-[JSON Web Services Invocation Examples](develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)
+[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)
 tutorial.
 
 How you invoke a JSON web service depends on how you pass in its parameters. In
@@ -41,7 +41,7 @@ parameters doesn't matter either.
 
 **Note:** An authentication related token (`p_auth`) must accompany each Liferay
 web service invocation. For details, please see the
-[Understanding Liferay's Service Security Model](develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model)
+[Understanding Liferay's Service Security Model](/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model)
 tutorial. Also, please see the note in the following section to learn how to
 find the `p_auth` token value that corresponds to your Liferay Portal session.
 
@@ -352,7 +352,7 @@ Find out how next.
 When you pass in an object parameter, you'll often need to populate its inner
 parameters (i.e., fields). Consider a default parameter `serviceContext` of type
 `ServiceContext` (see the
-[Understanding ServiceContext](develop/tutorials/-/knowledge_base/6-2/servicecontext)
+[Understanding ServiceContext](/develop/tutorials/-/knowledge_base/6-2/servicecontext)
 tutorial to find out more about this type). To make an appropriate call to
 JSONWS, you might need to set the `serviceContext` parameter's
 `addGroupPermissions` and `scopeGroupId` fields. 
@@ -480,8 +480,8 @@ the following common errors:
 
 ## Related Topics
 
-[Registering JSON Web Services](develop/tutorials/-/knowledge_base/6-2/registering-json-web-services)
+[Registering JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/registering-json-web-services)
 
-[JSON Web Services Invoker](develop/tutorials/-/knowledge_base/6-2/json-web-servies-invoker)
+[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/6-2/json-web-servies-invoker)
 
-[JSON Web Services Invocation Examples](develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)
+[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)
