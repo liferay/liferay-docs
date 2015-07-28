@@ -116,5 +116,5 @@ portlet to handle the request.
 
 Lastly, generate the module's JAR file and deploy it to your portal instance.
 Now a portlet that can handle the entity and action type you specified is used
-returned when requesting a portlet ID/URL. You now have the ability to specify
-portlet usage with hardcoding a specific portlet!
+when requesting a portlet ID/URL. You now have the ability to specify portlet
+usage with hardcoding a specific portlet!
