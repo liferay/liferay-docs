@@ -1,4 +1,4 @@
-# Using Image Sprites
+# Using Image Sprites [](id=using-image-sprites)
 
 You can decorate your site's theme and apps with terrific icons and small images
 that load quickly. They can be for new and existing portlets and for replacing
