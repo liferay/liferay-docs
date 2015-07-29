@@ -1,67 +1,77 @@
 # Using Image Sprites
 
-While Liferay's default icons are great, you might want introduce your own flair
-and style with new icons your custom theme. Custom icons can be the icing on the
-cake: the last layer of a beautiful design.
+You can decorate your site's theme and apps with terrific icons and small images
+that load quickly. They can be for new and existing portlets and for replacing
+any of Liferay's default icons, to introduce your own flair and style. Custom
+icons are the icing on the cake: an integral part of a site's presentation. 
 
-As you introduce custom icons, you might wonder "What is a sprite? And why would
-I use one?" No, I'm not talking about the delicious, cold, refreshing beverage
-that advertisements pressure you to buy at the cinema. I'm referring to an image
-sprite: a group of images combined next to each other into one single image file.
+As you've learned how to create icons, you might have seen mentioned the term
+*sprite* and wondered "What is a sprite? And why would I use one?" It's not the
+delicious cold refreshing beverage that cinema advertisements pressure you to
+buy; it's an image sprite: a group of images combined next to each other into a
+single image file. 
 
-As you may know, each image in your site requires a separate HTTP request to
-load it in a page. Loading single images is slow and decreases your site's
-overall efficiency. Loading a couple of images is no big deal, but HTTP requests
-can pile up fast if you load all of your sites icons, or even just its
-navigation icons, individually. Image sprites can help you avoid such 5 O'clock
-traffic jams. 
+You might already know that each of a site's image files requires its own HTTP
+request to load to a page. The more image files a page has, the slower the page
+loads. HTTP requests for loading image files can pile up fast, slowing down your
+site's performance. Image sprites can help you avoid such 5 O'clock traffic jams
+so that your site loads icons as efficiently as possible. 
 
-Now that your interest is peaked, it's time to learn how to make use image
-sprites in Liferay. 
+If this has peaked your interest, it's time to learn how to use image sprites in
+Liferay portal. Liferay uses image sprites throughout its default themes and in
+its built-in portlets. You can replace or add to these images and use image
+sprites in your own custom portlets by following these steps: 
 
-Typically, if you wanted to use sprites, you would have to use CSS styles to
-tell your theme where each image is located on the larger image of the sprite.
-Luckily, Liferay takes care of the heavy lifting for you and saves the proper
-coordinates to a `_sprite.properties` file that is generated upon deployment;
-furthermore, a `_sprite.png` file is generated for you.
+1.  Create image `.png` files for your icons and small images. For an image
+    to qualify as an image sprite in Liferay, its dimensions must not exceed
+    16 pixels by 16 pixels and its file size must not exceed 10240 bytes. Image
+    files that don't meet this criteria can't be used as sprite images and are
+    processed, instead, as individual image files. 
 
-Follow these steps, and you'll be a sprite master in no time:
+    **Portlet image sprite files** belong in the portlet's `docroot/icons/`
+    folder. 
 
-1.  Navigate to your themes root directory.
-2.  *Open* the `/docroot/images` folder.
-3.  Note the names of the png files you wish to change and the folder they are in.
-4.  Navigate to your `/docroot/_diffs/` directory.
-5.  Recreate the file structure for the images you wish to change.
+    **Theme image sprite files** that replace existing image files must use the
+    same file name as the original and use the same file path, but belong in the
+    `/docroot/_diffs/` folder. 
 
-    For example if you wanted to change the en_US.png icon in the language 
-    folder of the `/docroot/images/` directory of your theme, you would recreate 
-    the language folder in the `/docroot/_diffs/images/` directory of your theme. 
-    So, your file structure would look like this:
+2.  To display the images in JSPs, you can reference them in 
+    [`liferay-ui:icon`](http://docs.liferay.com/portal/6.2/taglibs/liferay-ui/icon.html)
+    taglib tags. All of Liferay's taglibs are described
+    [here](https://docs.liferay.com/portal/6.2/taglibs/). 
 
-    `/docroot/_diffs/images/language/en_US.png`
-    
-    **It is important that your new icon has the exact same name as the icon you
-    wish to replace.**
+3.  Deploy your plugin.
 
-    To make changes to other images, follow the same steps, making sure to 
-    recreate the file structure that you wish to alter.
+Your plugin now leverages images as image sprites!
 
-6.  Deploy/re-deploy your theme.
+Note that to use image sprites outside of Liferay, you'd have to construct your
+own combined image sprite file and use CSS styles to specify each image's
+location in the combined image sprite file. Liferay, however, takes care of the
+heavy lifting: it generates a `_sprite.png` file composed of the plugin's images
+that meet Liferay's image sprite criteria and it generates a
+`_sprite.properties` file that specifies each image's coordinates within the
+`_sprite.png` file. 
 
----
+Image sprite files are generated and deployed to the following locations:
 
- ![Note](../../images/tip-pen-paper.png) **Note:** if your changes are not 
- showing up after deployment, delete the existing _sprite.png and 
- _sprite.properties files in your 
- /tomcat-xxx/work/Catalina/localhost/theme-name/sprite/images/subdirectory/ you 
- changed, redeploy, and you should be good to go. If you find that your changes 
- still are not showing up, refresh the cache.
+- Theme plugin sprite files are stored in file
+`<PORLET-WEB-CONTEXT>/sprite/images/<IMAGE-FOLDER-NAME>/_sprite.png`
+- Custom portlet plugin sprite images are stored in file
+`<PORLET-WEB-CONTEXT>/sprite/icons/_sprite.png`.
+- Built-in portlet sprite files are stored in file
+`<PORTAL-WEB-CONTEXT>/sprite/html/<IMAGE-FOLDER-PATH>/_sprite.png`
 
----
+You've mastered the art of making sprites so that you can kick your portal's
+design and performance up a notch--BAM! 
 
-If you navigate to your /tomcat-xxx/work/Catalina/localhost/theme-name/sprite/
-images/subdirectory-of-your-new-icon/ you can observe the changes you made in
-the newly updated _sprite.png file.
+**Related Topics**
 
-Now that you have mastered the art of sprite making, go out there and kick it up
-a notch, BAM!
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+
+[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+
+[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+
+[User Interfaces with the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+
+[User Interfaces with the AlloyUI Taglib](/develop/tutorials/-/knowledge_base/6-2/alloyui)
