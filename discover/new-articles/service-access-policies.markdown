@@ -81,8 +81,6 @@ restrictive. The `DEFAULT_USER` policy is applied whenever
 `AuthVerifierResult.isPasswordBasedAuthentication` is `true`, i.e., whenever
 authentication took place using a password.
 
-To 
-
 The `DEFAULT_APP` policy doesn't grant access to any services, by default. You
 can change this by editing the `DEFAULT_APP` policy and adding some classes or
 methods in the Allowed Service Signatures text area. The `DEFAULT_APP` policy is
@@ -125,11 +123,11 @@ implementation for `ServiceAccessPolicy`.
 To configure the Service Access Policy module, navigate to Liferay's Control
 Panel, click on *Configuration Admin*, and find the *SAPConfiguration* module.
 Click on its name to edit it. Here, you can edit the default service access
-policy configuration. You can force a default policy to be applied even when no
-policies are applied by the `AuthVerifier`.
+policy configuration. You can also force a default policy to be applied even
+when no policies are applied by the `AuthVerifier`.
 
 Liferay also contains an `AuthenticatedAccessControlPolicy`. This policy doesn't
 do anything if a `ServiceAccessPolicyManager` implementation is present.
 However, if the service access policy module is disabled, the
-`AuthenticatedAccessControlPolicy` provides a fallback and still requires
+`AuthenticatedAccessControlPolicy` provides a fallback that still requires
 authenticated access for web services.
