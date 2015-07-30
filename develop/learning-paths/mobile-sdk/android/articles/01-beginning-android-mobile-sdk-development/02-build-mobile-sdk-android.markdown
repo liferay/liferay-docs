@@ -7,8 +7,8 @@ provides?" Fantastic question! The reason is that the pre-built Mobile SDK
 provided by Liferay only includes classes for calling the remote services of 
 Liferay's *core* portlets. Core portlets are the portlets included with every 
 Liferay installation (also referred to as *out-of-the-box* portlets). Since this 
-learning path calls the remote services of the Guestbook portlet developed in 
-the [Liferay MVC learning path](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development), 
+you'll be calling the remote services of the Guestbook portlet developed in 
+the [Liferay MVC Learning Path](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development), 
 you have to build the Mobile SDK. This is the case with any non-core portlet: 
 you must build the Liferay Mobile SDK if you want to use it to call your 
 portlet's remote services. Now it's time to get building! 
@@ -18,10 +18,10 @@ portlet's remote services. Now it's time to get building!
 For the Mobile SDK Builder to generate the classes that can call a non-core
 portlet's remote services, those services must be available and accompanied by a
 Web Service Deployment Descriptor (WSDD). To learn how the Guestbook portlet's
-remote services and WSDD were generated, please see the
-[Creating Web Services for Your Application](/develop/learning-paths/-/knowledge_base/6-2/creating-web-services-for-your-application)
-learning path. Since web services have already been generated for the Guestbook
-portlet that you're using in this learning path, you don't need to take this
+remote services and WSDD were generated, please see 
+[Creating Web Services for Your Application](/develop/learning-paths/-/knowledge_base/6-2/creating-web-services-for-your-application).
+Since web services have already been generated for the Guestbook portlet that
+you're using in this learning path, you don't need to take this
 step here. Just remember that you need to generate web services when developing
 your own portlets.
 
@@ -65,7 +65,7 @@ entered in the Mobile SDK Builder:
 ![Figure 2: The command line wizard for building the Mobile SDK.](../../images/mobile-sdk-build-wizard.png)
 
 Once you enter the final property, the Mobile SDK Builder runs and generates a 
-`BUILD SUCCESSFUL` message. Great! However, you're probably wondering what just 
+`BUILD SUCCESSFUL` message. Great! You're probably wondering, however, what just
 happened. Obviously, the build completed successfully, but other than that it 
 doesn't tell you much. What happened is this: the Mobile SDK Builder generated 
 the source classes you'll use in your Android app to interact with your Liferay 
@@ -83,8 +83,8 @@ Liferay version. Therefore, the full path to the generated source classes is:
 This directory has two subdirectories that correspond to each entity in the 
 Guestbook portlet: `guestbook` and `entry`. In them, you'll find the respective 
 source class for each, `EntryService.java` and `GuestbookService.java`. There's 
-just one last thing to take care of before you can use these classes in your 
-Android app: put them in a `jar` file. 
+one last thing to do before you can use these classes in your Android app: put
+them in a `jar` file. 
 
 To do this, navigate to the `modules/guestbook-portlet` directory on the command 
 line and run `../../gradlew jar`. This command does two things: 
@@ -97,5 +97,5 @@ line and run `../../gradlew jar`. This command does two things:
 
 Congratulations! You just built the Liferay Mobile SDK for the Guestbook 
 portlet. Now that's an accomplishment worthy of writing down in a guestbook! All 
-you need now is an Android app in which to install the Mobile SDK. The next
-article in this learning path shows you how to create this app. 
+you need next is an Android app in which to install the Mobile SDK. The next
+article shows you how to create this app. 

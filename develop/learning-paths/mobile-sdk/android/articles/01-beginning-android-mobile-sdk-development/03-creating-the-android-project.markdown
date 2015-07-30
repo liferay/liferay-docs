@@ -9,7 +9,7 @@ Android's development tools.
 
 ## Installing Android Studio 
 
-This learning path uses Android Studio to develop the Guestbook app. While it's 
+This Learning Path uses Android Studio to develop the Guestbook app. While it's 
 possible to use Eclipse, Android Studio is used here because it's the official 
 Android IDE. Use the following links to download, install, and get acquainted 
 with Android Studio: 
@@ -29,18 +29,19 @@ Click on *Start a new Android Studio project* in the Quick Start menu. Android
 Studio's *Create New Project* wizard launches and asks you to fill in the
 *Application name*, *Company Domain*, and *Project location*. Enter *Liferay
 Guestbook* as the Application name and *docs.liferay.com* as the Company Domain.
-These fields are used to automatically fill in your app's *Package name* and
-*Project location*. Click *Next*. 
+These fields are used to fill in your app's *Package name* and
+*Project location* automatically. For location, choose a location on your system
+that's convenient for you. Click *Next*. 
 
 ![Figure 1: The first screen of Android Studio's Create New Project wizard asks you to enter your app's name and Company Domain.](../../images/android-studio-new-project-01.png)
 
-The next screen of the wizard asks you to specify your app's supported form 
-factors and minimum Android SDK. Make sure that only the *Phone and Tablet* 
-checkbox is selected. In the *Minimum SDK* menu, select 
-*API 15: Android 4.0.3 (IceCreamSandwich)*. Android Studio provides you with an 
-estimate of the percentage of devices active on the Google Play store that can 
-run the selected API level. You can view a graphical representation of these 
-estimates by clicking on the *Help me choose* link in the text below the Minimum 
+The next screen asks you to specify your app's supported form factors and
+minimum Android SDK. Make sure that only the *Phone and Tablet* checkbox is
+selected. In the *Minimum SDK* menu, select *API 15: Android 4.0.3
+(IceCreamSandwich)*. Android Studio provides you with an estimate of the
+percentage of devices active on the Google Play store that can run the selected
+API level. You can view a graphical representation of these estimates by
+clicking on the *Help me choose* link in the text below the Minimum 
 SDK menu. Click *Next* when you're finished. 
 
 ![Figure 2: The second screen of Android Studio's Create New Project wizard lets you select your app's form factors and minimum Android API level.](../../images/android-studio-new-project-02.png)
@@ -78,7 +79,7 @@ summarized here:
 
 At this point, you're probably wondering what *fragments* and *layouts* are.
 Fragments are similar to activities. They are portions of on-screen views that
-can be accessed in your app. Fragments exist *within* activities and there can
+can be accessed in your app. Fragments exist *within* activities, and there can
 be multiple fragments per activity. In this case, the Guestbook app's drawer and
 main views are fragments. Google describes fragments in detail
 [here](http://developer.android.com/guide/components/fragments.html). Layouts
@@ -99,12 +100,12 @@ fragment's layout (`fragment_main.xml`) open in *design view*. Design view gives
 you a preview of how a layout file is rendered in the app. It also contains
 graphical tools for constructing a UI via drag and drop. Click the *Text* tab at
 the bottom of `fragment_main.xml` to show its *text view*. When you edit layout
-files in this learning path, you'll do so in text view. By default, the *project
+files in this Learning Path, you'll do so in text view. By default, the *project
 view* appears to the left of the open layout file. It lets you access your
-project's source files. Most of the files you'll be working with in this
-learning path are in the `res/layout` and `java` directories. Your app's layout
-files are contained in `res/layout`. The `java` directory contains your app's
-Java source files. See the
+project's source files. Most of the files you'll be working with are in the
+`res/layout` and `java` directories. Your app's layout files are contained in
+`res/layout`. The `java` directory contains your app's Java source files. See
+the
 [Android Studio Overview](http://developer.android.com/tools/studio/index.html) 
 for more information on the project view.
 
@@ -116,9 +117,9 @@ access its files in Android Studio. Now you're ready to run it.
 ## Running the Guestbook App
 
 Even though your app doesn't do much yet, Android Studio created enough of its 
-basic structure to let you run it. This learning path runs the app in Android 
-Studio's default emulator. To run the app, click the green play button in the 
-toolbar. This button is highlighted by a red box in the following screenshot:
+basic structure to let you run it. You'll run the app in Android Studio's
+default emulator. Click the green play button in the toolbar. This button is
+highlighted by a red box in the following screenshot:
 
 ![Figure 6: Click the green play button to run your app.](../../images/android-studio-run.png)
 
@@ -132,7 +133,7 @@ of the lock screen and drag up. The emulated device then opens to the Guestbook
 app with the first drawer item showing (it might take a few seconds for the app 
 to launch after unlocking the emulated device). 
 
-![Figure 7: When the Guestbook app first runs, it should look something like this.](../../images/android-entries-empty.png)
+![Figure 7: When the Guestbook app first runs, it looks like this.](../../images/android-entries-empty.png)
 
 The bar across the top contains a left arrow, the drawer selection's name, an 
 *EXAMPLE ACTION* button, and a stack of three small dots. This bar is called the 

@@ -1,6 +1,6 @@
 # Installing the Liferay Mobile SDK for Android
 
-You must install the Liferay Mobile SDK in your Android app so that your app can
+You must install the Liferay Mobile SDK in your Android app so that it can
 interact with the Guestbook portlet. The Mobile SDK you built for the Guestbook
 portlet contains only the classes and methods required to call the portlet's
 remote services. You also need to install the Mobile SDK that contains the
@@ -19,7 +19,7 @@ The Mobile SDK Builder generated two separate JAR files in your
 
 The first JAR file contains the classes and methods for calling the Guestbook
 portlet's remote services. The second contains the rest of the Mobile SDK. You
-don't actually need to manually install the second JAR file. You can instead add
+don't actually need to install the second JAR file manually. You can instead add
 the Mobile SDK as a dependency in your project's build system, which then
 downloads and installs the Mobile SDK for you. However, you need to install the
 first JAR file manually. To do so, copy the
@@ -48,7 +48,16 @@ level (on the same level as the `android` element):
 
 Next, add the following line of code inside the `dependencies` element: 
 
-    compile group: 'com.liferay.mobile', name: 'liferay-android-sdk', version: '6.2.0.19'
+    compile group: 'com.liferay.mobile', name: 'liferay-android-sdk', version: '6.2.0.22'
+
+Finally, add these lines just after the closing `buildTypes` brace: 
+
+    packagingOptions {
+      exclude 'META-INF/LICENSE'
+      exclude 'META-INF/NOTICE'
+    }
+
+If you're unsure of where to add the above lines, please see the figure below. 
 
 Once you edit `build.gradle`, a message appears at the top of the file that asks 
 you to *sync* your app with its Gradle files. Syncing with the Gradle files is 
@@ -59,19 +68,7 @@ The following screenshot shows the edited `build.gradle` file, with the Sync Now
 link highlighted in a red box: 
 
 ![Figure 2: After editing the `build.gradle` file, click *Sync Now* to incorporate the changes in your app.](../../images/android-build-gradle-sync.png)
-
-If you get errors such as `Duplicate files copied in APK META-INF/NOTICE` during 
-this process, then you need to add the following code to the same `build.gradle` 
-file: 
-
-    packagingOptions {
-      exclude 'META-INF/LICENSE'
-      exclude 'META-INF/NOTICE'
-    }
-    
-See the above screenshot for where you should place this code. After adding it, 
-click the *Sync Now* link when prompted. 
-
+ 
 Great! Now you're ready to test your Mobile SDK installation. 
 
 ## Verifying the Mobile SDK Installation

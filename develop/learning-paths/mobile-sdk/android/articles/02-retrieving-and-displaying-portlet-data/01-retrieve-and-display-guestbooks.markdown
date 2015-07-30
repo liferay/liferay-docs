@@ -2,29 +2,30 @@
 
 Your first order of business is to retrieve the guestbooks from the portlet and
 display them in the app's navigation drawer. Recall that the app you created in
-the first series of articles in this learning path contains a navigation drawer
-that slides out from the left side of the screen. Currently, it contains simple
-placeholders that are in dire need of replacement. 
+the first series of articles contains a navigation drawer that slides out from
+the left side of the screen. Currently, it contains simple placeholders that are
+in dire need of replacement. 
 
 ![Figure 1: The placeholders currently in the navigation drawer.](../../images/android-guestbook-first-run.png)
 
-In this article, you'll use the Liferay Mobile SDK to call the Guestbook
-portlet's remote services and replace the placeholders with guestbooks. This is
-conceptually simple, but it's a bit more complex in practice. Not to worry! This
-article guides you through each step in the process. First, you'll do some
-simple refactoring of your project. 
+Next, you'll use the Liferay Mobile SDK to call the Guestbook portlet's remote
+services and replace the placeholders with guestbooks. This is conceptually
+simple, but it's a bit more complex in practice. Not to worry! You'll be guided
+though each step in the process. First, you'll do some simple refactoring of
+your project. 
 
 ## Refactoring
 
 Before you call the Guestbook portlet's remote services, you should move your 
 project's activity and fragment classes into a new `activity` package. While 
 this isn't required for the app to function, it makes it simpler to find and 
-work with these classes as you add new ones. In Android Studio's project view: 
+work with these classes as you add new ones. Perform these steps in Android
+Studio's project view: 
 
 1. Right-click on the package `com.liferay.docs.liferayguestbook` and select
    *New* &rarr; *Package* in the context menu. In the dialog that appears, type
    *activity* and click *OK*. 
-   
+
 2. Right-click on the `MainActivity` class and select *Refactor* &rarr; *Move*
    in the context menu. In the *Move* dialog that appears, make sure the radio
    button for *To package* is selected, and then click the button to the right
@@ -33,14 +34,14 @@ work with these classes as you add new ones. In Android Studio's project view:
    and then click *OK*. Back in the Move dialog, click *Refactor*.
    
     ![Figure 2: The *Refactor* &rarr; *Move* dialog in Android Studio. Clicking the button highlighted by the red box lets you choose the file's new package.](../../images/android-studio-refactor.png)
-   
+ 
 3. Repeat step 2 for the `NavigationDrawerFragment` class. The `MainActivity` 
    and `NavigationDrawerFragment` classes should now be in the `activity` 
    package you created in step 1.
    
     ![Figure 3: The classes are now in the `activity` package.](../../images/android-studio-after-refactor.png)
 
-Great! Now you'll be able to quickly find these classes as you add new files and 
+Great! Now you'll be able to find these classes quickly as you add new files and 
 functionality to your app. Now it's time to get some guestbooks!
 
 ## Encapsulating Guestbooks
@@ -139,18 +140,19 @@ objects in the portlet. It does so by retrieving `Guestbook` parameters from
 the `JSONObject` returned by the Mobile SDK's remote service calls. This is done 
 in the constructor by the `getLong` and `getString` methods. To see how the 
 `Guestbook` parameters are defined in the portlet, see the 
-[Liferay MVC learning path article on Service Builder](/develop/learning-paths/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
+[Liferay MVC Learning Path article on Service Builder](/develop/learning-paths/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
 For now, the only parameters you really need in this class are `guestbookId` and 
-`name`. However, you'll need the rest later in this learning path. It's simpler 
-to add support for all of them now.
+`name`. However, you'll need the rest later. It's simpler to add support for all
+of them now.
 
-You should also note the `toString` method in this class. By returning a 
-guestbook's name, it's very simple, but very important. To render objects in the 
-drawer, Android calls `toString` on them. If `toString` isn't defined for the 
-objects, then strings with each object's full package path and internal ID are 
-shown. In other words, illegible text is displayed if you don't define `toString` 
-here. By defining `toString` to return the name of each `GuestbookModel`, you're 
-telling Android to show each guestbook's name in the drawer. 
+You should also note the `toString` method in this class. Since all it does is
+return a guestbook's name, it's very simple, but very important. To render
+objects in the drawer, Android calls `toString` on them. If `toString` isn't
+defined for the objects, strings with each object's full package path and
+internal ID are shown. In other words, illegible text is displayed if you don't
+define `toString` here. By defining `toString` to return the name of each
+`GuestbookModel`, you're telling Android to show each guestbook's name in the
+drawer. 
 
 Next, you'll add the basic infrastructure for requesting guestbooks from the 
 portlet. 
@@ -168,7 +170,7 @@ threading in mobile apps? That sounds complicated!" Fear not! The Mobile SDK's
 To create the callback class for retrieving guestbooks, first create a new 
 package called *callback* in `com.liferay.docs.liferayguestbook`. Then create a 
 new class in the `callback` package called `GetGuestbooksCallback`. Replace the 
-code in the class with the following: 
+code in the class with this code: 
 
     package com.liferay.docs.liferayguestbook.callback;
 
@@ -223,14 +225,14 @@ code in the class with the following:
 
 So what's going on here? First, you should note that this class has a 
 `MainActivity` instance as its only variable. This is so it can refer results 
-back to the main activity, which runs in Android's main UI thread. The 
-constructor of `GetGuestbooksCallback` thus does only one thing: it sets this 
+back to the main activity, which runs in Android's main UI thread.
+`GetGuestbooksCallback`'s constructor thus does only one thing: it sets this
 variable. Next, the `onFailure` and `onSuccess` methods are overridden. As you 
 probably guessed, `onFailure` is called when the request fails, while `onSuccess` 
-is called when the it succeeds. In this case, `onFailure` displays a toast 
-message with the error. The `onSuccess` method calls the main activity's 
-`reloadGuestbooks` method. Don't worry about the error Android Studio marks for 
-`reloadGuestbooks`. This method doesn't exist yet, but you'll create it in a 
+is called when it succeeds. In this case, `onFailure` displays a toast message
+with the error. The `onSuccess` method calls the main activity's
+`reloadGuestbooks` method. Don't worry about the error Android Studio marks for
+`reloadGuestbooks`. This method doesn't exist yet, but you'll create it in a
 moment. Last but not least is the overridden `transform` method. This method
 puts all the guestbooks it receives from the portlet into a `List` of
 `GuestbookModel` objects. It's this `List` that's fed to the `onSuccess` method.
@@ -242,10 +244,10 @@ to write that processing code!
 
 To display guestbooks in the drawer, you first need a variable for the 
 `GuestbookModel` objects returned by the callback. Create this variable in the 
-`MainActivity` class as follows: 
+`MainActivity` class: 
 
     public List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
-    
+ 
 Android Studio doesn't recognize `GuestbookModel` and marks it as an error 
 because you haven't imported it yet. To do so, first place your cursor in the 
 line of code containing `GuestbookModel`. Android Studio then displays a 
@@ -259,7 +261,7 @@ drawer by using a [`ListView`](http://developer.android.com/guide/topics/ui/layo
 with an [adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews). 
 Specifically, an `ArrayAdapter` is used as the data source for the drawer's 
 `ListView`. Even though the `ListView` and `ArrayAdapter` are closely linked, 
-it's important to note that they each serve a different purpose. The `ListView` 
+it's important to note that they serve different purposes. The `ListView` 
 is used to render the adapter's contents as a scrollable list. The `ArrayAdapter` 
 contains and renders each individual item for that list. This is all done in the 
 `onCreateView` method of the `NavigationDrawerFragment` class. Android Studio 
@@ -316,14 +318,14 @@ two main things you should take note of in the `ArrayAdapter`. First is that it
 uses the layout `simple_list_item_activated_1` to render each of its items. This 
 is one of Android's default layouts and is suitable in cases where each list 
 item is only a single string. Using a default layout also means that you don't 
-have to write your own layout file. The second thing of note in the 
-`ArrayAdapter` is the array of hardcoded `"Section *"` strings. You'll replace 
-this shortly. The `setAdapter` method sets the adapter to the `ListView`.
+have to write your own layout file. Second is the array of hardcoded `"Section
+*"` strings. You'll replace this shortly. The `setAdapter` method sets the
+adapter to the `ListView`.
 
 The `onCreateView` method then finishes by setting the currently selected list 
 item in the UI and returning the `ListView`. Now that you understand the basics 
-of how `onCreateView` works here, you'll change it to display guestbooks from 
-the Guestbook portlet. 
+of how `onCreateView` works, you'll change it to display guestbooks from the
+Guestbook portlet. 
 
 Begin by declaring the following variable in the `NavigationDrawerFragment` 
 class: 
@@ -358,6 +360,10 @@ Next, replace `onCreateView` with the following code:
 This method uses the `_guestbooks` variable that you added in `MainActivity` to
 create an `ArrayAdapter` of `GuestbookModel` objects. This adapter is then set
 to the `ListView` in the drawer. The rest of `onCreateView` remains unchanged.
+
+<!-- Hey Nick, this is not a best practice for Java developers. You should
+change this so that the _guestbook variable isn't public but instead has a
+getter and a setter. Then you'd call the getter here. -Rich -->
 
 Now you need to add the `reloadGuestbooks` method that is called in the 
 `onSuccess` method of the `GetGuestbooksCallback` class. Add it in `MainActivity` 
@@ -397,7 +403,7 @@ class. First, add the following `getGuestbooks` method to `MainActivity`:
     }
 
 This method makes the portlet call to get the guestbooks. Since a portal 
-*session* is required for the Mobile SDK to communicate with the portal, the 
+session is required for the Mobile SDK to communicate with the portal, the 
 `getGuestbooks` method first creates a session with the user's credentials. The 
 session is created by using `SessionImpl` with the server's address 
 (for the Android emulator, `10.0.2.2:8080` is the same as `localhost:8080`) and 
@@ -415,12 +421,11 @@ Create it now as the following variable in the `MainActivity` class:
 
 The value `10182` is the ID of the site the Guestbook portlet was placed on in 
 this example. In your code, you should make sure it matches the ID of the site 
-your Guestbook portlet is on. It's easy to look up in your portal. Log in to 
-your Liferay installation and navigate to the site with the Guestbook portlet. 
-In the Dockbar (the bar at the top of the screen), click 
-*Admin* &rarr; *Site Administration* &rarr; *Configuration*. The site ID is in 
-the *Site Settings* section. It's highlighted by the red box in the following 
-screenshot. 
+your Guestbook portlet is on. It's easy to look this up in your portal. Log in
+to your Liferay installation and navigate to the site with the Guestbook
+portlet. In the Dockbar (the bar at the top of the screen), click *Admin*
+&rarr; *Site Administration* &rarr; *Configuration*. The site ID is in the *Site
+Settings* section. It's highlighted by the red box in the following screenshot. 
 
 ![Figure 4: The site ID is listed in the *Site Settings* section of the *Site Administration*'s *Configuration* menu.](../../images/site-id.png)
 
@@ -464,9 +469,9 @@ the app.
 
 By default, Android apps can't access network connections. This means that even 
 though your app is now capable of retrieving and displaying guestbooks from the 
-portlet, the Android system doesn't yet allow it to. No worries! Adding this 
-permission is simple. Open your app's `AndroidManifest.xml` and put the 
-following line of code above the opening `application` tag: 
+portlet, the Android system doesn't let it. No worries! Adding this permission
+is simple. Open your app's `AndroidManifest.xml` and put the following line of
+code above the opening `application` tag: 
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -476,8 +481,8 @@ permissions are also placed in the manifest. You can find more information in
 Android's [documentation on the manifest](http://developer.android.com/guide/topics/manifest/manifest-intro.html). 
 In most cases, Android Studio manages the manifest for you. For example,
 declarations for your app and its activity already appear in the manifest, even
-though you never put them there manually. However, defining your app's
-permissions is one case where you need to manually edit the manifest. Now that
+though you never put them there manually. Defining your app's permissions,
+however, is one case where you need to manually edit the manifest. Now that
 your app has network access, it's time to run it! 
 
 ## Running Your App
