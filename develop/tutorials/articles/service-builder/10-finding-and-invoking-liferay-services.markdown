@@ -1,4 +1,4 @@
-# Invoking Liferay Services from Your Application [](id=invoking-liferay-services-from-your-application)
+# Finding and Invoking Liferay Services
 
 You can find Liferay's services by searching for them in the Javadocs:
 [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/).
@@ -142,13 +142,13 @@ Documentation `.zip` file that you can download from the Customer Portal on
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Local Services](develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
 
-[Invoking Remote Services](develop/tutorials/-/knowledge_base/6-2/invoking-remote-services)
+[Invoking Remote Services](/develop/tutorials/-/knowledge_base/6-2/invoking-remote-services)
 
-[Invoking Services Using Skinny JSON Provider](develop/tutorials/-/knowledge_base/6-2/invoking-services-using-skinny-json-provider)
+[Invoking Services Using Skinny JSON Provider](/develop/tutorials/-/knowledge_base/6-2/invoking-services-using-skinny-json-provider)
 
-[Invoking Liferay Services in Your Android App](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
+[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
 
-[Invoking Liferay Services in Your iOS App](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
 

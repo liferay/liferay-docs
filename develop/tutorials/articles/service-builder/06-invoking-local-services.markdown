@@ -24,7 +24,7 @@ added to the `LocationListingPortlet` class.
 Here's a version of the `EventListingPortlet` class containing these portlet
 methods and their service invocations. Note that this version of the
 `EventListingPortlet` differs from the
-[final version](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/tutorials-sdk-6.2-ga3/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/portlet/EventListingPortlet.java)
+[final version](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/event-listing-portlet/docroot/WEB-INF/src/com/liferay/docs/eventlisting/portlet/EventListingPortlet.java)
 since this portlet invokes local services and the final version of the portlet
 invokes remote services.
 
@@ -245,11 +245,15 @@ and
 [Invoking Liferay Services from Your Application](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-from-your-application)
 tutorials.
 
-**Related Topics**
+## Related Topics
 
-[Invoking Remote Services](develop/tutorials/-/knowledge_base/6-2/invoking-remote-services)
+[Creating Local Services](/develop/tutorials/-/knowledge_base/6-2/writing-local-services)
 
-[Invoking Liferay Services in your Android App](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
+[Creating Remote Services](/develop/tutorials/-/knowledge_base/6-2/creating-remote-services)
+
+[Invoking Remote Services](/develop/tutorials/-/knowledge_base/6-2/invoking-remote-services)
+
+[Invoking Liferay Services in your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
 
 [Invoking Liferay Services in your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
 

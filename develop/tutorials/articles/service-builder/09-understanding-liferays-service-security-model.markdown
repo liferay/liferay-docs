@@ -85,8 +85,7 @@ service via the JSON web services API page or via JavaScript using
 
 $$$
 
-Use the following syntax to call the AXIS web service using credentials. Make
-sure to remove the line escape character `\` when entering your URL:
+Use the following syntax to call the AXIS web service using credentials.
 
     http://" + emailAddressOrScreenNameOrUserIdAsString + ":" + password + "@[server.com]:\
     [port]/api/axis/" + serviceName
@@ -160,9 +159,11 @@ If you'd like to develop client applications that can invoke Liferay's web
 services, make sure that your Liferay instance's web service security settings
 have been configured to allow access.
 
-**Related Topics**
+## Related Topics
 
-[Plugin Security and PACL](develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
 
-[Security and Permissions](develop/tutorials/-/knowledge_base/6-2/security-and-permissions)
+[Security and Permissions](/develop/tutorials/-/knowledge_base/6-2/security-and-permissions)
+
+[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/6-2/finding-and-invoking-liferay-services)
 

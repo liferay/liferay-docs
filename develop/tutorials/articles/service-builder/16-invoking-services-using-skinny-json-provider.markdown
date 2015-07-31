@@ -1,10 +1,11 @@
 # Invoking Services Using Skinny JSON Provider [](id=invoking-services-using-skinny-json-provider)
 
-**Important:** This is a "Labs" application. Any app designated as "Labs" is
-experimental in features and is not supported by Liferay. This status may change
-without notice. Labs apps allow us to accelerate the availability of useful and
-cutting-edge features, but these apps are not yet hardened like standard Liferay
-EE apps. Please download and use Labs apps at your own discretion. 
+**Important:** The Skinny JSON Provider is a "Labs" application. Any app
+designated as "Labs" includes experimental features and is not supported by
+Liferay. This status may change without notice. Labs apps allow us to accelerate
+the availability of useful and cutting-edge features, but these apps are not yet
+hardened like standard Liferay EE apps. Please download and use Labs apps at
+your own discretion. 
 
 It's the classic story of a superhero trying to maintain his secret
 identity as a mild-mannered reporter. He's trying to make a living while
@@ -14,7 +15,7 @@ cigar clenched in his teeth.
 "Hey you!" barks the boss, "I want coverage on the hoopla going on in the
 lower-east side." 
 
-"Uh, yes sir. Right away sir," says the hero as he fuddles around for his pen
+"Uh, yes sir. Right away, sir," says the hero as he fuddles around for his pen
 and notepad. 
 
 "And you better shoot straight this time. No nonsense. I want the skinny on
@@ -46,7 +47,7 @@ making them ideal to use in browsers and mobile applications.
 The Skinny JSON Provider app is available through the Liferay Marketplace.
 You'll find it categorized as a Utility app. To learn how to install it, you can
 read the section
-[Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps).
+[Downloading and Installing Apps](discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps).
 
 The app adds two new web service APIs that you can configure like other Liferay
 web services. Here is the context and the class name that you must specify to
@@ -382,7 +383,8 @@ What a great way to access these core Liferay entities!
 
 ## Related Topics [](id=related-topics-0)
 
-[Checking Permissions](develop/tutorials/-/knowledge_base/6-2/checking-permissions)
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Invoking Liferay Services from Your Application](develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-from-your-application)
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
 
+[Checking Permissions](/develop/tutorials/-/knowledge_base/6-2/checking-permissions)

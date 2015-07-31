@@ -348,6 +348,6 @@ query in a custom finder and exposing it as a service for your portlet!
 
 ## Related Topics [](id=related-topics)
 
-[Running Service Builder and Understanding the Generated Code](develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
 
-[Using Service Builder to Generate a Persistence Framework](develop/learning-paths/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr)
+[Using Service Builder to Generate a Persistence Framework](/develop/learning-paths/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr)
