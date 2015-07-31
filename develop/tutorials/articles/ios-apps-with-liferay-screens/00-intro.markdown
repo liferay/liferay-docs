@@ -1,29 +1,25 @@
-# Mobile Apps with Liferay Screens [](id=mobile-apps-with-liferay-screens)
+# iOS Apps with Liferay Screens [](id=ios-apps-with-liferay-screens)
 
 Liferay Screens speeds up and simplifies developing native mobile apps that use
 Liferay. Its power lies in its *Screenlets*. A Screenlet is a visual component
 that you insert into your native app to leverage Liferay Portal's content and
 [services](/develop/tutorials/-/knowledge_base/6-2/invoking-remote-services). On
-Android and iOS, Screenlets are available to log in to your portal, create
-accounts, submit forms, display content, and more. You can use any number of
-Screenlets in your app; they're independent, so you can use them in modular
-fashion. Screenlets also deliver UI flexibility with pluggable *Views* (Android)
-or *Themes* (iOS) that implement elegant user interfaces. Liferay's reference
-documentation for
-[Android](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
-and
-[iOS](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios)
-Screenlets describes each Screenlet's features and Views/Themes. 
+iOS, Screenlets are available to log in to your portal, create accounts, submit 
+forms, display content, and more. You can use any number of Screenlets in your 
+app; they're independent, so you can use them in modular fashion. Screenlets on 
+iOS also deliver UI flexibility with pluggable *Themes* that implement elegant 
+user interfaces. Liferay's reference documentation for
+[iOS](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios) 
+Screenlets describes each Screenlet's features and Themes. 
 
 You might be thinking, "These Screenlets sound like the greatest thing since
 taco Tuesdays, but what if they don't fit in with my app's UI? What if they
 don't behave exactly how I want them to? What if there's no Screenlet for what I
 want to do?" Fret not! You can customize Screenlets to fit your needs by
 changing or extending their UI and behavior. You can even write your own
-Screenlets! What's more, Screens seamlessly integrates with Android and iOS
-projects. 
+Screenlets! What's more, Screens seamlessly integrates with iOS projects. 
 
-![Figure 1: Here's an app that uses a Liferay Screens Sign Up Screenlet.](../../images/screens-phone-intro.png)
+![Figure 1: Here's an app that uses a Liferay Screens Sign Up Screenlet.](../../images/screens-ios-intro.png)
 
 Screenlets leverage the
 [Liferay Mobile SDK](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)
@@ -40,12 +36,10 @@ forgo writing a Screenlet and, instead, work with the
 integrating an existing Screenlet into your app, however, is that the Mobile
 SDK's details are abstracted from you. 
 
-These tutorials show you how to use, customize, create, and distribute
-Screenlets for iOS and Android. They show you how to create Views and Themes
-too. There are even tutorials that explain the nitty-gritty details of the
-Liferay Screens architecture. No matter how deep you want to go, you'll use
-Screenlets in no time. Start by preparing your
-[Android project](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
-or
+These tutorials show you how to use, customize, create, and distribute 
+Screenlets for iOS. They show you how to create Themes too. There's even a 
+tutorial that explains the nitty-gritty details of the Liferay Screens 
+architecture. No matter how deep you want to go, you'll use Screenlets in no 
+time. Start by preparing your
 [iOS project](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
 to use Liferay Screens. 
