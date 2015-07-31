@@ -1,71 +1,83 @@
-#Using the ThemeDisplay Methods of the Liferay JS Object
+# Getting IDs, Paths, and Sign-in Details in JavaScript [](id=getting-ids-paths-and-sign-in-details-in-javascript)
 
-The ThemeDisplay module provides methods to easily retrieve information about 
-the user. If you're familar with the Java ThemeDisplay object, then you'll 
-recognize a lot of the objects available to you through the JavaScript 
-ThemeDisplay module. 
+The scene is set: the developer wakes up in an unfamiliar portal. She realizes
+she's in a portlet on some page with other portlets. The styling of the buttons
+and windows around her resemble the handiwork of the design team from the second
+floor; but the designers are nowhere to be found. Suddenly, a user, who looks
+like her friend Stanley, enters the portlet and starts pressing buttons and
+pointing at things. That's odd; he didn't even say hello? Is he really Stanley?
+Who is this user? How is the developer ever going to familiarize herself with
+this new portal?!
 
-This tutorial covers some of the available ThemeDisplay methods provided to 
-you through the liferay.js object, and how you can apply them to your app.
+She can use Liferay's `ThemeDisplay` JavaScript object!
 
-## Retrieving Ids
+It's a part of the `Liferay` global object that's automatically available to you
+in Liferay at runtime. You can refer to the object as `Liferay.ThemeDisplay`.
+The `ThemeDisplay` object provides information on so many aspects of a portal.
+It can identify the portal instance, the current user, the user's language, and
+the user's navigational context. It can tell you the paths to a portlet's
+scripts and images, a theme's images and files, and a portal's main folder. And
+it let's you know whether a user is signed in and whether the user is being
+impersonated. You can quickly assess your portal surroundings with
+`ThemeDisplay`. 
 
-Using the ThemeDisplay methods below, you can quickly get the id object you need: 
+This tutorial describes some of the most commonly used `ThemeDisplay` methods
+for getting IDs, paths, and user sign-in details. 
 
-**getCompanyId:** Returns the company id of the user, written as
-`Liferay.ThemeDisplay.getCompanyId()`.
+## Retrieving IDs [](id=retrieving-ids)
 
-**getLanguageId:** Returns the language id of the user, written as
-`Liferay.ThemeDisplay.getLanguageId()`.
+Using the `ThemeDisplay` methods below, you can IDs of various portal elements: 
 
-**getScopeGroupId:** Returns the group id of the user, written as
-`Liferay.ThemeDisplay.getScopeGroupId()`.
+**getCompanyId:** Returns the
+[company ID](/participate/liferaypedia/-/wiki/Main/Company+ID). 
 
-**getUserId:** Returns the user id of the user, written as
-`Liferay.ThemeDisplay.getUserId()`.
+**getLanguageId:** Returns the language ID of the user. 
 
-**getUserName:** Returns the username of the user, written as
-`Liferay.ThemeDisplay.getUserName()`.
+**getScopeGroupId:** Returns the
+[group ID](/participate/liferaypedia/-/wiki/Main/Group+ID) of where the user has
+navigated to in the portal. 
 
-Now that you know how to retrieve id objects using JavaScript, you can learn how
-to get file paths next.
+**getUserId:** Returns the
+[user's ID](/participate/liferaypedia/-/wiki/Main/User+ID).
 
-## Retrieving File Paths
+**getUserName:** Returns the user's name. 
 
-The liferay.js object has a few methods that you can use to retrieve file paths,
-so you don't have to write out the entire path each time. Below are a few of the
-methods:
+Now that you know how to retrieve IDs of some of Liferay's key elements, you
+can learn how to get paths to various deployed entities in the portal. 
 
-**getPathImage:** Returns the relative path of the image directory for the 
-portlet, written as `Liferay.ThemeDisplay.getPathImage()`.
+## Retrieving File Paths [](id=retrieving-file-paths)
 
-**getPathJavaScript:** Returns the relative path of the JavaScript directory for
-the portlet, written as `Liferay.ThemeDisplay.getPathJavaScript()`.
+The `ThemeDisplay` object has methods for retrieving commonly used file paths.
+Below are a few of the methods: 
 
-**getPathMain:** Returns the relative path of the main directory, written as
-`Liferay.ThemeDisplay.getPathMain()`.
+**getPathImage:** Returns the relative path of the portlet's image directory. 
 
-**getPathThemeImages:** Returns the path of the current theme's image directory, 
-written as `Liferay.ThemeDisplay.getPathThemeImages()`.
+**getPathJavaScript:** Returns the relative path of the directory containing the
+portlet's JavaScript source files. 
+
+**getPathMain:** Returns the path of the portal instance's main directory. 
+
+**getPathThemeImages:** Returns the path of the current theme's image directory. 
 
 **getPathThemeRoot:** Returns the relative path of the current theme's root 
-directory, written as `Liferay.ThemeDisplay.getThemeRoot()`.
+directory. 
 
-Now that you know how to retrieve file paths, you can learn how to get more
-information on the user's login next.
+Now that you know how to retrieve paths to Liferay's deployed entities, you can
+next learn how to get information about a user's login.
 
-## Retrieving Login Information
+## Retrieving Login Information [](id=retrieving-login-information)
 
-There are a couple login methods that can be very useful when writing your app:
+Here are a couple methods related to a user's login: 
 
-**isImpersonated:** Returns `true` if the user currenty logged in is 
-impersonated, written as `Liferay.ThemeDisplay.isImpersonated()`.
+**isImpersonated:** Returns `true` if the user currently logged in is being
+impersonated. Authorized administrative users can
+[impersonate](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel#user-management)
+(act as) another user to test that user's account. 
 
-**isSignedIn:** Returns `true` if the user is logged in, written as 
-`Liferay.ThemeDisplay.isSignedIn()`.
+**isSignedIn:** Returns `true` if the user is logged in to the portal. 
 
-Below is a snippet that shows one possible use of the methods covered in this
-tutorial:
+Below is JavaScript code that demonstrates using `ThemeDisplay`'s `isSignedIn`
+method: 
 
     if(Liferay.ThemeDisplay.isSignedIn()){
         alert('Hello ' + Liferay.ThemeDisplay.getUserName() + '. Welcome Back.')
@@ -73,12 +85,16 @@ tutorial:
     else {
         alert('Hello Guest.')
     }
-    
-The example above alerts the user with a personalized greeting if they're signed 
-in, otherwise it defaults to a guest greeting. Although this example is a basic 
-one, it shows how you can easily define unique user experiences with the
-liferay.js ThemeDisplay module.
 
-## Related Topics
+The example above alerts the user with a personalized greeting, if he's signed 
+in, otherwise it defaults to a guest greeting. Although this is a basic example,
+it shows how you can easily define unique user experiences with the 
+`ThemeDisplay` object. 
 
-[Using the Browser Methods of the Liferay JS Object](/develop/tutorials/-/knowledge_base/6-2/using-browser-methods-of-liferay-js)
+## Related Topics [](id=related-topics)
+
+[Getting Browser and Platform Details in JavaScript](/develop/tutorials/-/knowledge_base/6-2/getting-browser-and-platform-details-in-javascript)
+
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+
+[User Interfaces with the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
