@@ -138,9 +138,9 @@ one site could host different wikis on different pages.
 If you write your application to support this, Liferay handles all of it
 automatically for you. You've already taken steps to support scope in your
 application by adding the default columns to your entities. Those default
-columns included the [Company ID](/encyclopedia/-/wiki/Main/Company+ID), 
-the [Group ID](/encyclopedia/-/wiki/Main/Group+ID),
-the [User ID](/encyclopedia/-/wiki/Main/User+ID), the
+columns included the [Company ID](/participate/liferaypedia/-/wiki/Main/Company+ID), 
+the [Group ID](/participate/liferaypedia/-/wiki/Main/Group+ID),
+the [User ID](/participate/liferaypedia/-/wiki/Main/User+ID), the
 user name, and some metadata, such as the create and modify dates. 
 
 The next thing you have to do is make sure your application's queries filter by
@@ -250,7 +250,7 @@ model and service layers.
 At a micro level, each layer is implemented using Java Interfaces and various
 implementations of those interfaces. Rather than have one `Entry` class that
 represents your model, Service Builder has generated a system of classes that
-includes an `Entry` interface, an `EntryBaseImpl` abstract class for Service
+include an `Entry` interface, an `EntryBaseImpl` abstract class for Service
 Builder to manage, and an `EntryImpl` class that you can customize. This gives
 you the flexibility of being able to customize your model, while still allowing
 Service Builder to generate the code it needs. That's why Service Builder is a

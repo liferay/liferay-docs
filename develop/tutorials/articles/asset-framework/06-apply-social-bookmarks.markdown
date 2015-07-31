@@ -31,7 +31,7 @@ examples. You can find the Insults portlet complete with social bookmarks
 enabled on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet).
 
 You can show social bookmarks in your portlet's view of your custom entity or, if
-you've implemented [asset rendering](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers),
+you've implemented [asset rendering](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers),
 you can show social bookmarks in the full content view in an Asset Publisher
 portlet. 
 
@@ -91,13 +91,13 @@ Another thing you might want to do is perform permissions checks to control
 who can rate content. For example, the Add Insult and 
 Permissions buttons of the Insults portlet are wrapped in a permissions check in 
 the [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
-For more information on this, see the Learning Path [Checking Permissions in the UI](/develop/learning-paths/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+For more information on this, see the Learning Path [Checking Permissions in the UI](/develop/learning-paths/mvc/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/develop/learning-paths/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/learning-paths/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
 
 [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 

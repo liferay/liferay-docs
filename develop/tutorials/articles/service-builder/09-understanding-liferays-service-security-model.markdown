@@ -42,11 +42,11 @@ $$$
 Next, if you're invoking the remote service via web services (e.g., JSON WS, old
 JSON, Axis, REST, etc.), a two step process of authentication and authentication
 verification takes place. Each call to a Liferay portal web service must be
-accompanied by a user authentication token. It's up to the web service caller to
-produce the token (e.g., through Liferay's utilities or through some third-party
-software). Liferay verifies that there is a Liferay user that matches the token.
-If the credentials are invalid, the web service invocation is aborted.
-Otherwise, processing enters Liferay's user permission layer. 
+accompanied by a user authentication token: `p_auth`. It's up to the web service
+caller to produce the token (e.g., through Liferay's utilities or through some
+third-party software). Liferay verifies that there is a Liferay user that
+matches the token. If the credentials are invalid, the web service invocation is
+aborted. Otherwise, processing enters Liferay's user permission layer. 
 
 Liferay's user permission layer is the last Liferay security layer triggered
 when services are invoked remotely. It's used for every object in the portal,
@@ -63,30 +63,53 @@ member of this role (or using the user ID of a user with individual rights to
 add documents to this folder, such as a portal administrator). If you don't,
 Liferay denies you access to the web service. 
 
-With remote services, you can specify the user credentials using HTTP basic
-authentication. Since those credentials are passed over the network unencrypted,
-we recommend using HTTPS whenever accessing these services on an untrusted
-network. Most HTTP clients let you specify the basic authentication credentials
-in the URL--this is very handy for testing.
+When invoking remote Liferay services from a non-browser client, you can specify
+the user credentials using HTTP basic authentication. For security reasons, you
+must be logged in and you must supply a valid `p_auth` authentication token to
+invoke a Liferay web service via a browser. Since you should never pass
+credentials over the network unencrypted, we recommend using HTTPS whenever
+accessing Liferay services on an untrusted network. Most HTTP clients (e.g.,
+[cURL](http://curl.haxx.se/)) let you specify the basic authentication
+credentials in the URL--this is very handy for testing.
 
-Use the following syntax to call the AXIS web service using credentials. Make
-sure to remove the line escape character `\` when entering your URL:
++$$$
 
-    http://" + screenNameOrUserIdAsString + ":" + password + "@[server.com]:\
+**Important:** To invoke a Liferay web service via your browser, you must be
+logged in to Liferay. You must also supply an authentication token (the `p_auth`
+parameter). If you navigate to your portal's JSON web services API page
+([localhost:8080/api/jsonws](localhost:8080/api/jsonws), by default) and click
+on a remote service method, you'll see the `p_auth` token for your browser
+session. This token is automatically supplied when you invoke a Liferay web
+service via the JSON web services API page or via JavaScript using
+`Liferay.Service(...)`.
+
+$$$
+
+Use the following syntax to call the AXIS web service using credentials.
+
+    http://" + emailAddressOrScreenNameOrUserIdAsString + ":" + password + "@[server.com]:\
     [port]/api/axis/" + serviceName
 
-The `screenNameOrUserIdAsString` should either be the user's screen name or the
-user's ID from the Liferay database. The portal's authentication type setting
-determines which one to use; we discuss this in more detail below. A user can
-find his or her ID by logging in as the user and accessing *My Account* from the
-Dockbar. On this interface, the user ID appears below the user's profile picture
-and above the birthday field.
+The `emailAddressOrScreenNameOrUserIdAsString` should be the user's email
+address, screen name, or user ID. The portal's authentication type setting
+determines which one to use. A user can find his or her ID by logging in as the
+user and accessing *My Account* from the Dockbar. On this interface, the user ID
+appears below the user's profile picture and above the birthday field.
 
-Let's pretend that your portal's authentication type is set to be by *user ID*
-and that there's a user whose ID is `2` and whose password is `test`. You can
-access Liferay's remote Organization service with the following URL: 
+Suppose that your portal's authentication type is set to be by *user ID* and
+that there's a user whose ID is `2` and whose password is `test`. You can access
+Liferay's remote Organization service with the following URL: 
 
     http://2:test@localhost:8080/api/axis/Portal_OrganizationService
+
+Note that if an email address appears in the URL path, it must be URL-encoded.
+E.g., `test@liferay.com` becomes `test%40liferay.com`.
+
+Suppose that your portal's authentication is now set to be *by email address*.
+If the user with the user ID of `2` has the email address `test@liferay.com`,
+the above URL should be changed to this:
+
+    http://test%40liferay.com:test@localhost:8080/api/axis/Portal_OrganizationService
 
 As mentioned above, the authentication type specified for your Liferay Portal
 instance dictates the authentication type you'll use to access your web service.
@@ -96,15 +119,6 @@ following:
 - *email address*
 - *screen name*
 - *user ID*
-
-+$$$
-
-**Important:** In order for authentication to work for remote service calls, the
-portal authentication type must be set either to *screen name* or *user ID*.
-Authentication using the *email address* authentication type is not supported
-for remote service calls. 
-
-$$$
 
 You can set the authentication type via the Control Panel or via the
 `portal-ext.properties` file. To set the portal authentication type via the
@@ -119,7 +133,7 @@ line for the appropriate authentication type:
     #company.security.auth.type=userId
 
 Your Liferay Portal password policies (see the
-[Password Policies](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/roles-and-permissions#password-policies)
+[Password Policies](/discover/portal/-/knowledge_base/6-2/roles-and-permissions#password-policies)
 documentation) should be reviewed, since they'll be enforced on your
 administrative user as well. If the portal is enforcing password policies on its
 users (e.g., requiring them to change their passwords on a periodic basis), an
@@ -145,9 +159,11 @@ If you'd like to develop client applications that can invoke Liferay's web
 services, make sure that your Liferay instance's web service security settings
 have been configured to allow access.
 
-**Related Topics**
+## Related Topics
 
-[Plugin Security and PACL](develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
 
-[Security and Permissions](develop/tutorials/-/knowledge_base/6-2/security-and-permissions)
+[Security and Permissions](/develop/tutorials/-/knowledge_base/6-2/security-and-permissions)
+
+[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/6-2/finding-and-invoking-liferay-services)
 

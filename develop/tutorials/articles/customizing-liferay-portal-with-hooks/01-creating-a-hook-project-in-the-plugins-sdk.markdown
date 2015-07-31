@@ -48,8 +48,8 @@ project.
 ## Creating a Hook Project from the Command Line [](id=creating-a-hook-project-from-the-command-line)
 
 From your command line terminal, navigate to your Plugins SDK's `hooks` folder.
-To create a hook project, you must execute the *create* script. Here's the format
-to follow in executing the script: 
+To create a hook project, you must execute the *create* script. Here's the
+format to follow in executing the script: 
 
     create.[sh|bat] [project-name] "[Hook Display Name]"
 
@@ -102,7 +102,7 @@ and deploy them. Here is information on each of the plugins:
 - *Marketplace Portlet* (`marketplace-portlet`) - is available at
 [`liferay-plugins/portlets/marketplace-portlet`](https://github.com/liferay/liferay-plugins/tree/6.2.x/portlets/marketplace-portlet).
 - *Portal Compatibility Hook* (`portal-compat-hook`) - is available at 
-`liferay-plugins/hooks/portal-compat-hook`.
+[`liferay-plugins/hooks/portal-compat-hook`](https://github.com/liferay/liferay-plugins/tree/6.2.x/hooks/portal-compat-hook).
 
 $$$
 
@@ -118,7 +118,7 @@ $$$
 Now that you know how to create a hook using Liferay IDE and Ant, it's time to 
 get out there and create your customizations!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Developing with the Plugins SDK](develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 

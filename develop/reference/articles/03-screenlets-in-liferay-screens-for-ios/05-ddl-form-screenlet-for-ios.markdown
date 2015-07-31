@@ -1,11 +1,14 @@
-# DDLFormScreenlet for iOS [](id=ddlformscreenlet-for-ios)
+# DDL Form Screenlet for iOS [](id=ddlformscreenlet-for-ios)
 
 ## Requirements [](id=requirements)
 
 - XCode 6.3.x
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
-- [Liferay Screens Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal)
+- Liferay Screens Compatibility Plugin (
+  [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+  [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
+  depending on your portal edition). 
 
 ## Compatibility [](id=compatibility)
 
@@ -49,24 +52,24 @@ There are also a few limitations you should be aware of when using
 
 ## Themes [](id=themes)
 
-The Default theme uses a standard `UITableView` to show a scrollable list of 
-fields. Other themes may use a different component, such as `UICollectionView` 
+The Default Theme uses a standard `UITableView` to show a scrollable list of 
+fields. Other Themes may use a different component, such as `UICollectionView` 
 or others, to show the fields.
 
-![The `DDLForm` screenlet using Default theme.](../../images/screens-ios-ddlform.png)
+![The `DDLForm` Screenlet using the Default (`default`) Theme.](../../images/screens-ios-ddlform.png)
 
 ### Custom Cells [](id=custom-cells)
 
-A theme needs to define a cell view for each field type. For instance, the `xib` 
+A Theme needs to define a cell view for each field type. For instance, the `xib` 
 file `DDLFieldDateTableCell_default` is used to render `Date` fields in the 
-`Default` theme. 
+`Default` Theme. 
 
 If you want a specific field to have a unique appearance, you can customize your
 field's display by using the following filename pattern, where `XXX` is your
 field's name: `DDLCustomFieldXXXTableCell_default`.  For example, the "Are
 you a subscriber?" field in screenshot above shows how text fields appear in the
-Default theme. If you want to customize this, you don't need to create an entire
-theme. You just need to create an `xib` file for the field `subscriberName`. The
+Default Theme. If you want to customize this, you don't need to create an entire
+Theme. You just need to create an `xib` file for the field `subscriberName`. The
 filename is therefore `DDLCustomFieldSubscriberNameTableCell_default`. Be
 careful to keep the same components and `IBOutlet` defined in the custom file.
 
@@ -81,7 +84,7 @@ section of the User Guide for details.
 
 ### Permissions [](id=permissions)
 
-To add new records using this screenlet, you must grant the Add Record 
+To add new records using this Screenlet, you must grant the Add Record 
 permission in the Dynamic Data List:
 
 ![The Add Record permission.](../../images/screens-portal-permission-record-add.png)
@@ -115,7 +118,7 @@ dynamic data list is in the ID column of the table that appears. |
 | `repositoryId` | `number` | The identifier of the Documents and Media repository to upload to. If this value is `0`, the default repository for the site specified in `groupId` is used. |
 | `folderId` | `number` | The identifier of the folder where Documents and Media files are uploaded. If this value is `0`, the root folder is used. |
 | `filePrefix` | `string` | The prefix to attach to the names of files uploaded to a Documents and Media repository. A random GUID string is appended following the prefix. |
-| `autoLoad` | `boolean` | Sets whether or not the form is loaded when the screenlet is shown. If `recordId` is set, the record value is loaded together with the form definition. |
+| `autoLoad` | `boolean` | Sets whether or not the form is loaded when the Screenlet is shown. If `recordId` is set, the record value is loaded together with the form definition. |
 | `autoscrollOnValidation` | `boolean` | Sets whether or not the form automatically scrolls to the first failed field when validation is used. |
 | `showSubmitButton` | `boolean` | Sets whether or not the form shows a submit button at the bottom. If this is set to `false`, you should call the `submitForm()` method. |
 | `editable` | `boolean` | Sets whether the values can be changed by the user. The default is `true`. |

@@ -160,8 +160,6 @@ Notice that the class extends the base class [`BaseStrutsPortletAction`](https:/
 The `render` method of class above prints to the console the message *Custom
 Struts Action* every time a user logs in.
 
-![Figure 1: You can override a Struts action with custom behaviors. This example Struts action hook prints a message to the console every time a user logs in.](../../images/struts-action-console.png)
-
 As a best practice in extending Struts actions, consider invoking the base class
 methods that you override. 
 
@@ -265,7 +263,7 @@ in adding a new Struts action. Here's how you do it:
     hook plugin example-hook2-hook can be accessed from a browser at the path
     you specified: `http://localhost:8080/c/portal/sample`. 
 
-![Figure 2: The example-hook2-hook example hook plugin's new Struts action JSP displays *Hello World!*.](../../images/struts-action-display.png)
+![Figure 1: The example-hook2-hook example hook plugin's new Struts action JSP displays *Hello World!*.](../../images/struts-action-display.png)
 
 Great! Now you know about the interfaces used for Struts actions. You also 
 learned how to override an existing action and create a new action using a 

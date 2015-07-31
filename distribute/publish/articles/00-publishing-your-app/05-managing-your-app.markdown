@@ -193,7 +193,7 @@ download, and install metrics.
 
 ## Related Topics [](id=related-topics)
 
-[Beginning Liferay Development](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development)
+[Beginning Liferay Development](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development)
 
 [Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
