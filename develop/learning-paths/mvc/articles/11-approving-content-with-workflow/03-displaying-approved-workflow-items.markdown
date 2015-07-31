@@ -155,9 +155,9 @@ All you did here was add the parameter that marks a `Guestbook`
 as approved in the workflow.
 
 Now open the `view_search.jsp`, located in `docroot/html/guestbook`. Find the
-scriptlet, denoted by `<%`,that comes right after the closing `</aui:form>`
-tag. As in the `view.jsp`, replace the current `List<Guestbook> guestbooks...`
-line with this one:
+scriptlet, denoted by `<%`,that comes right after the closing `</aui:form>` tag.
+As in the `view.jsp`, replace the current line starting with `List<Guestbook>
+guestbooks...` with this one:
 
      List<Guestbook> guestbooks = GuestbookLocalServiceUtil
                 .getGuestbooks(scopeGroupId, WorkflowConstants.STATUS_APPROVED);
