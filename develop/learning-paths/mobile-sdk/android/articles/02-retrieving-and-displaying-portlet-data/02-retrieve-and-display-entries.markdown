@@ -1,8 +1,7 @@
 # Retrieve and Display Entries
 
-If you completed the previous articles in this learning path, then you have an 
-Android app that retrieves and displays guestbooks from the
-[MVC learning path's](/learning-paths/-/knowledge_base/6-2/beginning-liferay-development) 
+If you completed the previous articles in this Learning Path, then you have an
+Android app that retrieves and displays guestbooks from the [MVC Learning Path's](/learning-paths/-/knowledge_base/6-2/beginning-liferay-development) 
 Guestbook portlet. However, that's all your app does. Tapping a guestbook in its 
 navigation drawer doesn't show the guestbook's entries. In fact, tapping a 
 guestbook doesn't do anything besides close the drawer to show the action bar 
@@ -13,12 +12,12 @@ with an empty screen. Also, the action bar's title is still hardcoded with the
 
 This article walks you through the steps required to retrieve and display 
 guestbook entries from the portal. As you did to display guestbooks, you'll use 
-`ListView` to display entries in a list. Also, the first two steps in this 
-article follow the same basic pattern you used to retrieve guestbooks. For this 
-reason, the concepts behind these steps aren't explained in detail here. Refer 
-to this learning path's previous article for such an explanation. As you did 
-when you wrote the code to retrieve guestbooks from the portal, you'll begin 
-here by encapsulating the objects being retrieved. 
+`ListView` to display entries in a list. Also, the first two steps follow the
+same basic pattern you used to retrieve guestbooks. For this reason, the
+concepts behind these steps aren't explained in detail here. Refer to the
+previous article more information. As you did when you wrote the code to
+retrieve guestbooks from the portal, you'll begin here by encapsulating the
+objects being retrieved. 
 
 ## Encapsulating the Entries
 
@@ -283,10 +282,10 @@ method concludes by using `setListAdapter` to set the adapter to the default
 `ListView` layout of `EntriesFragment`.
 
 Now that you've taken care of the `ListView` and adapter, you can create the 
-`reloadEntries` method. Similar to `reloadGuestbooks` in this learning path's 
-previous article, `reloadEntries` needs to replace any existing model objects 
-with the updated set retrieved from the portlet. It then needs to notify the 
-adapter of that change. Place this method in the `EntriesFragment` class: 
+`reloadEntries` method. Similar to `reloadGuestbooks` in the previous article,
+`reloadEntries` replaces any existing model objects with the updated set
+retrieved from the portlet. It then notifies the adapter of that change.
+Place this method in the `EntriesFragment` class: 
 
     public void reloadEntries(List<EntryModel> entries) {
         _entries.clear();
@@ -332,8 +331,8 @@ this is done from the `MainActivity` class. First, get a reference to
 There are two situations in which your app needs to call `getEntries`: on app 
 startup, and when a guestbook is manually selected from the drawer. On startup, 
 your app defaults to show the first guestbook's entries. Therefore, `getEntries` 
-needs to be called for the first guestbook retrieved from the portlet. This 
-needs to be done in the `reloadGuestbooks` method. This method is also where you 
+must be called for the first guestbook retrieved from the portlet. This should
+also be done in the `reloadGuestbooks` method. This method is also where you 
 should set the action bar's title to this guestbook's name. Add the following 
 code to the end of `reloadGuestbooks`: 
 
@@ -342,7 +341,7 @@ code to the end of `reloadGuestbooks`:
     restoreActionBar();
     
     mEntriesFragment.getEntries(guestbook.getGuestbookId());
-    
+ 
 This code gets the first guestbook in the list and sets the action bar title 
 variable `mTitle` to the guestbook's name. This change is then processed by 
 `restoreActionBar()`. The `getEntries` method then makes the call to retrieve 

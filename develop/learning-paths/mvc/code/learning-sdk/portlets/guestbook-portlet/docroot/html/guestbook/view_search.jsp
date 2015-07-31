@@ -63,7 +63,7 @@
 		entries.add(entry);
 	}
 	
-	List<Guestbook> guestbooks = GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId);
+	List<Guestbook> guestbooks = GuestbookLocalServiceUtil.getGuestbooks(scopeGroupId, WorkflowConstants.STATUS_APPROVED);
 	
 	Map<String, String> guestbookMap = new HashMap<String, String>();
 	
