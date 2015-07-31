@@ -1,92 +1,81 @@
-#Using the Browser Methods of the Liferay JS Object
+# Getting Browser and Platform Details in JavaScript [](id=getting-browser-and-platform-details-in-javascript)
 
-When designing your app, it's important to consider the browser and platform the 
-user is on. You may wish to offer one set of features to users on 
-browser/platform A and a different set of features to users on browser/platform 
-B; the liferay.js object provides several browser methods that allow you to do 
-just that! 
+As you design apps, consider the user's browser and platform. You can tailor an
+app's UI to features and limitations of user environments. You might, for
+example, display one set of controls to a user on browser/platform A and a
+different set to a user on browser/platform B. The `Liferay.Browser` object's
+methods can determine a user's browser, operating system, and device type. This
+tutorial describes these methods and shows how to use them. 
 
-This tutorial covers some of the browser methods available to you in the 
-liferay.js object, and how you can use them in your app.
+First, you can determine a browser's type and version. 
 
-You can get started by learning how to determine the browser and version the
-user is on next.
+## Getting Browser Details [](id=getting-browser-details)
 
-## Determining the Browser and Version
+The following methods return `true` if the user's browser matches the type:
 
-The following methods return boolean values that determine which browser the 
-user is currently on:
+**isChrome:** Returns `true` if the browser is Google Chrome. 
 
-**isChrome:** Returns `true` if the browser is Chrome, written as
-`Liferay.Browser.isChrome()`.
+**isFirefox:** Returns `true` if the browser is Mozilla Firefox. 
 
-**isFirefox:** Returns `true` if the browser is Firefox, written as
-`Liferay.Browser.isFirefox()`.
+**isIe:** Returns `true` if the browser is Microsoft Internet Explorer. 
 
-**isIe:** Returns `true` if the browser is Internet Explorer, written as
-`Liferay.Browser.isIe()`.
+**isSafari:** Returns `true` if the browser is Apple Safari. 
 
-**isSafari:** Returns `true` if the browser is Safari, written as
-`Liferay.Browser.isSafari()`.
+**isOpera:** Returns `true` if the browser is Opera. 
 
-**isOpera:** Returns `true` if the browser is Opera, written as
-`Liferay.Browser.isOpera()`.
+The following methods return information about a user's browser version and
+revision: 
 
-Furthermore, you can determine what version of the browser the user has by
-running the following methods:
+**getVersion:** Returns the browser's version number (e.g., `44.0`). 
 
-**getMajorVersion:** Gets the major(whole integer) version number of the browser, 
-written as `Liferay.Browser.getMajorVersion()`.
+**getMajorVersion:** Returns the starting whole number portion of the browser's
+version number (e.g., `44`).
 
-**getRevision:** Gets the revision number of the browser, written as
-`Liferay.Browser.getRevision()`.
+**getRevision:** Returns the browser's revision number (e.g., `537.29`). The
+revision number might have no resemblance to the version number. 
 
-**getVersion:** Gets the browser version number, written as
-`Liferay.Browser.getVersion()`.
+Now that you're familiar with the browser type and version methods, you can
+learn how to get a user's platform information. 
 
-Now that you are aware of some of the methods that allow you to retrieve basic 
-information about the user's browser and version, you can learn how to figure
-out what platform the user is on next. 
+## Getting Platform Details [](id=getting-platform-details)
 
-## Determining the Platform
+The `Liferay.Browser` object has methods that can help you determine the user's
+platform, including the user's device type and operating system. 
 
-In addition to determining the browser the user is on, and the version it is,
-you can also determine the platform the user is viewing your app on.
+Here are the platform detail methods: 
 
-The methods below determine what platform the user is on:
+**isMobile:** Returns `true` if it's a mobile device. 
 
-**isIphone:** Returns `true` if the platform is iPhone, written as
-`Liferay.Browser.isIphone()`.
+**isIphone:** Returns `true` if the device is an Apple iPhone. 
 
-**isLinux:** Returns `true` if the platform is Linux, written as
-`Liferay.Browser.isLinux()`.
+**isMac:** Returns `true` if the device is an Apple Mac. 
 
-**isMac:** Returns `true` if the platform is Mac, written as
-`Liferay.Browser.isMac()`.
+**isLinux:** Returns `true` if the operating system is Linux. 
 
-**isMobile:** Returns `true` if the platform is mobile, written as
-`Liferay.Browser.isMobile()`.
+**isWindows:** Returns `true` if the operating system is Microsoft Windows. 
 
-**isWindows:** Returns `true` if the platform is Windows, written as
-`Liferay.Browser.isWindows()`.
-
-Below is a code snippet that shows how you could implement the methods above in
-the `main.js` file of your portlet's `docroot/js/` directory:
+Below is a code snippet that demonstrates how to use these methods in a
+`main.js` file in a portlet's `docroot/js/` folder: 
 
     function checkBrowser() {
-        if(Liferay.Browser.isFirefox() && Liferay.Browser.getMajorVersion() > 30)
+        if(Liferay.Browser.isFirefox() && Liferay.Browser.getMajorVersion() > 30) {
             //code to execute goes here
+        }
     }
-    
-Once the JavaScript is written in your `main.js`, you need to call the function 
-in your JSP. The snippet below shows one possible method of calling the function 
-via the click event of a button:
+
+Such JavaScript functions can be referenced in the portlet's JSP's. In a JSP,
+the following `input` tag associates the previous function with a button's click
+event: 
 
     <input type="button" value="click me" onclick="checkBrowser()" />
 
-As you can see, using a combination of the methods above, you can easily cater 
-your app to the user's browser and platform.
+You can use `Liferay.Browser` object's methods to cater to users on various
+browsers and platforms. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Using the ThemeDisplay methods of the Liferay JS Object](/develop/tutorials/-/knowledge_base/6-2/using-themedisplay-methods-of-liferay-js)
+[Getting IDs, Paths, and Sign-in Details in JavaScript](/develop/tutorials/-/knowledge_base/6-2/getting-ids-paths-and-sign-in-details-in-javascript)
+
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+
+[User Interfaces with the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
