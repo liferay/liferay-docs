@@ -1,33 +1,31 @@
 # Embedding Portlets in Themes and Layout Templates
 
-A frequently used capability that Liferay provides when building a site is the
-ability to embed a portlet in themes and layout templates. This allows the
-portlet to be visible on all pages where the theme/layout is used. In the past,
-this was only possible by hardcoding a specific portlet into place, which has
-many drawbacks. Liferay now provides the *Portlet Providers* framework that only
-requires you specify the entity type and action to be displayed. Based on the
-given entity type and action, Liferay can distinguish which deployed portlet to
-use. This increases the flexibility and modularity of embedding portlets in
-Liferay Portal.
+One thing developers often want to do is embed a portlet in a theme or layout
+template. This makes the portlet visible on all pages where the theme/layout is
+used. In the past, this was only possible by hard-coding a specific portlet into
+place, which has many drawbacks. Liferay now provides the *Portlet Providers*
+framework that requires you only specify the entity type and action to be
+displayed. Based on the given entity type and action, Liferay determines which
+deployed portlet to use. This increases the flexibility and modularity of
+embedding portlets in Liferay Portal.
 
 In this tutorial, you'll learn how to declare an entity type and action in a
-custom theme/layout, and create a module that finds the correct portlet to use
-based on those given parameters. You'll first learn how to embed portlets into a
-theme.
+custom theme/layout, and you'll create a module that finds the correct portlet
+to use based on those given parameters. You'll first learn how to embed portlets
+into a theme.
 
 ## Adding a Portlet to a Custom Theme
 
-The first thing you'll need to do is open your theme's template file that you'd
-like to declare the embedded portlet for. For example, the `portal_normal.ftl`
-template file is a popular place to declare embedded portlets. In the template
-file, find the location where you plan on embedding a portlet and insert the
-following declaration:
+The first thing you should do is open the template file for which you want to
+declare an embedded portlet. For example, the `portal_normal.ftl` template file
+is a popular place to declare embedded portlets. Insert the following
+declaration wherever you want to embed the portlet:
 
     ${theme.runtime("CLASS_NAME", ACTION)}
 
-This declaration expects two parameters: the class name of the entity type you'd
-like the portlet to handle, and the type of action. An example of an embedded
-portlet declaration can be viewed below:
+This declaration expects two parameters: the class name of the entity type the
+portlet should handle and the type of action. Here's an example of an embedded
+portlet declaration: 
 
     $theme.runtime("com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry", $portletProviderAction.VIEW)
 
@@ -36,8 +34,8 @@ four different kinds of actions supported by the Portlet Providers framework:
 `ADD`, `BROWSE`, `EDIT`, and `VIEW`. Specify the entity type and action in your
 theme's runtime declaration.
 
-Great, your theme declaration is complete! However, the Portal is not yet
-configured to handle this request. You'll need to create a module that can
+Great! Your theme declaration is complete. However, the Portal is not yet
+configured to handle this request. You must create a module that can
 find the portlet that fits the theme's request.
 
 1. Create a generic OSGi module using your favorite third party tool.
@@ -59,7 +57,7 @@ find the portlet that fits the theme's request.
    [BrowsePortletProvider](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/portlet/BrowsePortletProvider.java),
    etc.).
 
-3. Directly above the class's declaration, insert the following:
+3. Directly above the class's declaration, insert the following annotation:
 
         @Component(
             immediate = true,
@@ -76,7 +74,7 @@ find the portlet that fits the theme's request.
     [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/roles/roles-selector-web/src/com/liferay/roles/selector/web/portlet/RolesSelectorEditPortletProvider.java)
     class.
 
-4. Specify the methods you'd like to implement. Make sure to retrieve the
+4. Specify the methods you want to implement. Make sure to retrieve the
    portlet ID and page ID that should be provided when this service is called by
    your theme.
 
@@ -99,11 +97,11 @@ use wherever your theme is used.
 You successfully requested a portlet based on the entity and action types
 required, and created and deployed a module that retrieves the portlet and
 embeds it in your theme. Next, you'll learn a similar process to embed a portlet
-in your custom layout template.
+in your layout template.
 
 ## Adding a Portlet to a Custom Layout Template
 
-The process for embedding portlets in layout templates is similar to that of the
+The process for embedding portlets in layout templates is similar to that for the
 theme. The only change is the declaration you insert in your template's TPL
 file.
 
@@ -113,7 +111,7 @@ file.
    column in which to embed the portlet.
 
     This declaration, just as the theme declaration, expects two parameters: the
-    class name of the entity type you'd like the portlet to handle, and the type
+    class name of the entity type you want the portlet to handle and the type
     of action. An example of an embedded portlet declaration can be viewed
     below:
 
@@ -134,11 +132,11 @@ module.
 **Note:** In some cases, a default portlet is already provided by Liferay to
 fulfill certain requests. You can override the default portlet with your custom
 portlet by specifying a higher service rank. To do this, set the following
-property within your class' `@Component` declaration:
+property in your class' `@Component` declaration:
 
     property= {"service.ranking:Integer=20"}
 
-Make sure to set the service ranking higher than the default portlet being used.
+Make sure you set the service ranking higher than the default portlet being used.
 
 $$$
 
