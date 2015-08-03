@@ -90,11 +90,11 @@ opens in Android Studio. Replace its contents with the following code:
                 return false;
             }
 
-            GuestbookModel guestbook = (GuestbookModel)obj;
+            GuestbookModel guestbook = (GuestbookModel) obj;
 
             return (_guestbookId == guestbook.getGuestbookId());
         }
-          
+
         @Override
         public String toString() {
             return _name;
@@ -130,7 +130,7 @@ opens in Android Studio. Replace its contents with the following code:
             return modifiedDate;
         }
 
-        public String getGuestbookName() {
+        public String getName() {
             return _name;
         }
     }
@@ -143,7 +143,7 @@ in the constructor by the `getLong` and `getString` methods. To see how the
 [Liferay MVC Learning Path article on Service Builder](/develop/learning-paths/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
 For now, the only parameters you really need in this class are `guestbookId` and 
 `name`. However, you'll need the rest later. It's simpler to add support for all
-of them now.
+of them now. 
 
 You should also note the `toString` method in this class. Since all it does is
 return a guestbook's name, it's very simple, but very important. To render
@@ -154,10 +154,44 @@ define `toString` here. By defining `toString` to return the name of each
 `GuestbookModel`, you're telling Android to show each guestbook's name in the
 drawer. 
 
-Next, you'll add the basic infrastructure for requesting guestbooks from the 
-portlet. 
+Next, you'll write the code that retrieves guestbooks from the portlet. 
 
-## Creating a Callback Class
+## Getting the Guestbooks
+
+Before making the server call, you need to prepare the `MainActivity` class to 
+handle the `GuestbookModel` objects that result from the call. First, add the 
+following `_guestbooks` variable for these objects: 
+
+    private List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
+
+Android Studio doesn't recognize `GuestbookModel` and marks it as an error 
+because you haven't imported it yet. To do so, first place your cursor in the 
+line of code containing `GuestbookModel`. Android Studio then displays a 
+notification telling you the keyboard combination to press to add the import. 
+Press it now. On Windows it's *Alt* + *Enter*, and on Mac it's 
+*Option* + *Return*. You need to remember this going forward. The rest of this 
+learning path assumes that you'll use this to organize any required imports.
+
+Now create a getter method for the `_guestbooks` variable:
+
+    public List<GuestbookModel> getGuestbooksList() {
+        return _guestbooks;
+    }
+
+You also need a way to refresh `_guestbooks` with the latest `GuestbookModel` 
+objects from the portlet. You'll do this with the `reloadGuestbooks` method. 
+This method replaces any existing content in `_guestbooks` with the list of 
+`GuestbookModel` objects supplied to it. Add it as shown here: 
+
+    public void reloadGuestbooks(List<GuestbookModel> guestbooks) {
+        _guestbooks.clear();
+        _guestbooks.addAll(guestbooks);
+    }
+
+You'll call `reloadGuestbooks` when the call to retrive guestbooks from the 
+portlet succeeds. You need a callback class to make this call. 
+
+### Creating a Callback Class
 
 Since Android doesn't allow network requests from its main UI thread, you have 
 to make them from another thread by creating a callback class that extends the 
@@ -231,30 +265,14 @@ variable. Next, the `onFailure` and `onSuccess` methods are overridden. As you
 probably guessed, `onFailure` is called when the request fails, while `onSuccess` 
 is called when it succeeds. In this case, `onFailure` displays a toast message
 with the error. The `onSuccess` method calls the main activity's
-`reloadGuestbooks` method. Don't worry about the error Android Studio marks for
-`reloadGuestbooks`. This method doesn't exist yet, but you'll create it in a
-moment. Last but not least is the overridden `transform` method. This method
-puts all the guestbooks it receives from the portlet into a `List` of
-`GuestbookModel` objects. It's this `List` that's fed to the `onSuccess` method.
-You're probably starting to see that `reloadGuestbooks` is an important method.
-It receives guestbooks for processing in the app's main UI thread. Now it's time
-to write that processing code! 
+`reloadGuestbooks` method. Last but not least is the overridden `transform` 
+method. This method puts all the guestbooks it receives from the portlet into a 
+`List` of `GuestbookModel` objects. It's this `List` that's fed to the 
+`onSuccess` method. You're probably starting to see that `reloadGuestbooks` is 
+an important method. It receives guestbooks for processing in the app's main UI 
+thread. Now it's time to write that processing code! 
 
 ## Displaying Guestbooks in the Drawer
-
-To display guestbooks in the drawer, you first need a variable for the 
-`GuestbookModel` objects returned by the callback. Create this variable in the 
-`MainActivity` class: 
-
-    public List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
- 
-Android Studio doesn't recognize `GuestbookModel` and marks it as an error 
-because you haven't imported it yet. To do so, first place your cursor in the 
-line of code containing `GuestbookModel`. Android Studio then displays a 
-notification telling you the keyboard combination to press to add the import. 
-Press it now. On Windows it's *Alt* + *Enter*, and on Mac it's 
-*Option* + *Return*. You need to remember this going forward. The rest of this 
-learning path assumes that you'll use this to organize any required imports.
 
 In the `NavigationDrawerFragment` class, the app displays a list of items in the 
 drawer by using a [`ListView`](http://developer.android.com/guide/topics/ui/layout/listview.html) 
@@ -364,21 +382,6 @@ to the `ListView` in the drawer. The rest of `onCreateView` remains unchanged.
 <!-- Hey Nick, this is not a best practice for Java developers. You should
 change this so that the _guestbook variable isn't public but instead has a
 getter and a setter. Then you'd call the getter here. -Rich -->
-
-Now you need to add the `reloadGuestbooks` method that is called in the 
-`onSuccess` method of the `GetGuestbooksCallback` class. Add it in `MainActivity` 
-as shown here: 
-
-    public void reloadGuestbooks(List<GuestbookModel> guestbooks) {
-        _guestbooks.clear();
-        _guestbooks.addAll(guestbooks);
-        mNavigationDrawerFragment._adapter.notifyDataSetChanged();
-    }
-
-This method first clears any existing guestbooks from the `_guestbooks` 
-variable. It then populates `_guestbooks` with the guestbooks retrieved from the 
-portlet call. You must also notify the list's adapter of this change. This is 
-done with `notifyDataSetChanged()`. 
 
 You're now ready to make the portlet call! This is done in the `MainActivity` 
 class. First, add the following `getGuestbooks` method to `MainActivity`: 
