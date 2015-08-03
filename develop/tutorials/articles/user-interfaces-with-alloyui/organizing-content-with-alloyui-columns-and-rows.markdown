@@ -1,47 +1,21 @@
-# Organizing Your Content with AlloyUI Columns and Rows 
+# Organizing Content with AlloyUI Rows and Columns 
 
-Organizing the content in your portlet's UI doesn't have to be a large, 
-complicated task. AlloyUI gives you a built in, easy to use solution for 
-constructing portlet UIs. Say goodbye to those sleepless nights spent tossing, 
-turning, and worrying about your portlet's UI! The AlloyUI `aui:col` and 
-`aui:row` tags transform the potentially daunting process of organizing your 
-portlet's UI into a simple task. This tutorial covers how to use these tags in 
-your portlet. 
+Say goodbye to sleepless nights tossing, turning, and worrying about the
+potentially daunting task of arranging content in your portlets! It doesn't have
+to be complicated. AlloyUI's `aui:col` and `aui:row` tags simplify organizing
+portlet content. This tutorial shows you how to use these tags in your portlet
+JSPs. 
 
-+$$$
+You can follow these steps to add rows and columns of content to your portlet: 
 
-**Note:** The `aui:column` and `aui:layout` tags previously used to create 
-columns and layouts have been deprecated.
+1.  Create, or edit, the JSP file in which you want to organize content. 
 
-$$$
-
-## Setting Up the AlloyUI aui:col and aui:row Tags
-
-Adding columns and rows to your portlet's UI can be done quickly by using 
-AlloyUI. The example in this tutorial uses the following steps to show how to 
-add and use the `aui:col` and `aui:row` tags in the `view.jsp` of a portlet:
-
-- **Step 1:** Reference the AUI Taglib.
-- **Step 2:** Insert and Configure the AUI Row Tags.
-- **Step 3:** Insert and Configure the AUI Col Tags inside of the Row Tags.
-
-Once you finish these steps you'll be building columns and rows in no time 
-flat!
-
-### Step 1: Reference the AUI Taglib
-
-1.  Open the `view.jsp` of your portlet. Create it if it doesn't already exist.
-
-2.  Add a directive to reference the `aui` taglib:
+2.  Reference the AlloyUI taglib `aui` by adding the following directive: 
 
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
 
-Now you're ready to use AUI tags in your portlet. Onwards to the second step!
-
-### Step 2: Insert and Configure the aui:row Tags
-
-In this step you'll add the rows to put your columns in. Still inside the 
-`view.jsp`, add the `aui:row` tags. For example, the code here creates two rows:
+3.  Add an `aui:row` tag for each row of content you want. For example, the tags
+    below create placeholders for two rows of content: 
 
         <aui:row>
         	
@@ -50,128 +24,130 @@ In this step you'll add the rows to put your columns in. Still inside the
         	
         </aui:row>
 
-Repeat this step to create as many rows as you need for your portlet. Now 
-there's just one last step to go!
+4.  Insert and configure `aui:col` tags between each row's starting and ending
+    `aui:row` tags. You can define each column's width using a `width` or `span`
+    attribute. The `width` attribute takes precedance over the `span` attribute,
+    if they're both specified in a column. 
 
-### Step 3: Insert and Configure the aui:col Tags Inside of the aui:row Tags
+	The `width` value represents a percentage of the row's width. A `span` value
+	represents the number of parts a column uses, out of the twelve parts in
+	which the containing row is divided. For example, `<aui:col span="4">`
+	specifies a column to use `4/12`, or `1/3`, of the row's width. 
 
-Adding columns is similar to adding rows. You simply place the `aui:col` tags 
-inside of the `aui:row` tags. You can also define the width of each column in a 
-row by using the `width` or `span` attributes. While you can use both of these 
-attributes together on a single column, the value of `width` overrides that of 
-`span`. There are a few other things to note about how these attributes work. 
-First, each `span` value is represented as a fraction of 12 when determining the 
-width of the column in its containing row. For example, `<aui:col span="4">` 
-specifies a column width of 4/12, or 1/3, of the total width of the containing 
-row. When using the `width` attribute, its value must be expressed a percentage 
-of 100. The `width` value is then automatically converted to a `span` value 
-before it is rendered. This conversion is done by dividing the `width` value by 
-100, multiplying by 12, and then rounding the result to the nearest whole 
-number. For example, the `width` value of `<aui:col width="33">` is converted to 
-3.96, which is rounded up to a `span` value of 4 before the column width is 
-rendered. Thus, the `span` value of 4 and the `width` value of 33 are 
-functionally equivalent. The example below shows these values with some sample 
-content to demonstrate the width of the columns:
+    +$$$
 
-        <aui:row>
-            <aui:col span="4">
-                <p>
-        		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-        		eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-        		enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        		nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-        		in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-        		nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        		sunt in culpa qui officia deserunt mollit anim id est laborum."
+    Note, before a column is rendered, every `width` attribute is automatically
+    converted to a `span`. The `width` attribute's value is divided by `100`,
+    multiplied by `12`, and rounded to the nearest whole number. For example,
+    the `width` value in column `<aui:col width="33">` is divided by `100` and
+    multiplied by `12` resulting in `3.96`, which is then rounded up to a `span`
+    value of `4`-- the column is rendered across `4/12` the row's width. 
 
-        		Section 1.10.32 of "de Finibus Bonorum et Malorum", written by 
-        		Cicero in 45 BC
+    $$$
 
-        		"Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-        		accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
-        		quae ab illo inventore veritatis et quasi architecto beatae 
-        		vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
-        		voluptas sit aspernatur aut odit aut fugit, sed quia"
-                </p>
-            </aui:col>
-            <aui:col width="33">
-                <p>
-        		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-        		eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-        		enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        		nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-        		in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-        		nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        		sunt in culpa qui officia deserunt mollit anim id est laborum."
+Rows and columns are easy to use. As an example, here are a couple rows of
+columns that demonstrate setting column widths using `width` and `span`
+attributes: 
 
-        		Section 1.10.32 of "de Finibus Bonorum et Malorum", written by 
-        		Cicero in 45 BC
+	<aui:row>
+		<aui:col span="4">
+			<p>
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+			eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+			enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+			nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+			in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+			nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+			sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-        		"Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-        		accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
-        		quae ab illo inventore veritatis et quasi architecto beatae 
-        		vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
-        		voluptas sit aspernatur aut odit aut fugit, sed quia"
-                </p>
-            </aui:col>
-            <aui:col span="4">
-                <p>
-        		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-        		eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-        		enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        		nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-        		in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-        		nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        		sunt in culpa qui officia deserunt mollit anim id est laborum."
+			Section 1.10.32 of "de Finibus Bonorum et Malorum", written by 
+			Cicero in 45 BC
 
-        		Section 1.10.32 of "de Finibus Bonorum et Malorum", written by 
-        		Cicero in 45 BC
+			"Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+			accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
+			quae ab illo inventore veritatis et quasi architecto beatae 
+			vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
+			voluptas sit aspernatur aut odit aut fugit, sed quia"
+			</p>
+		</aui:col>
+		<aui:col width="33">
+			<p>
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+			eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+			enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+			nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+			in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+			nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+			sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-        		"Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-        		accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
-        		quae ab illo inventore veritatis et quasi architecto beatae 
-        		vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
-        		voluptas sit aspernatur aut odit aut fugit, sed quia"
-                </p>
-            </aui:col>
-        </aui:row>
-        <aui:row>
-            <aui:col span="4">
-                <aui:input type="textarea" name="comments" label="Comments"/>
-                <aui:button value="Submit"/>
-            </aui:col>
-            <aui:col span="8">
-                <p>
-        		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-        		eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-        		enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        		nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-        		in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-        		nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        		sunt in culpa qui officia deserunt mollit anim id est laborum."
+			Section 1.10.32 of "de Finibus Bonorum et Malorum", written by 
+			Cicero in 45 BC
 
-        		Section 1.10.32 of "de Finibus Bonorum et Malorum", written by 
-        		Cicero in 45 BC
+			"Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+			accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
+			quae ab illo inventore veritatis et quasi architecto beatae 
+			vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
+			voluptas sit aspernatur aut odit aut fugit, sed quia"
+			</p>
+		</aui:col>
+		<aui:col span="4">
+			<p>
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+			eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+			enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+			nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+			in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+			nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+			sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-        		"Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-        		accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
-        		quae ab illo inventore veritatis et quasi architecto beatae 
-        		vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
-        		voluptas sit aspernatur aut odit aut fugit, sed quia"
-                </p>
-            </aui:col>
-        </aui:row>
+			Section 1.10.32 of "de Finibus Bonorum et Malorum", written by 
+			Cicero in 45 BC
 
-The first row in this layout has three columns evenly divided into a third of 
-the space of the row. The second row has two columns broken up into 1/3 and 2/3 
-of the space of the row, respectively. A portlet with this configuration should 
-look like the figure here:
+			"Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+			accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
+			quae ab illo inventore veritatis et quasi architecto beatae 
+			vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
+			voluptas sit aspernatur aut odit aut fugit, sed quia"
+			</p>
+		</aui:col>
+	</aui:row>
+	<aui:row>
+		<aui:col span="4">
+			<aui:input type="textarea" name="comments" label="Comments"/>
+			<aui:button value="Submit"/>
+		</aui:col>
+		<aui:col span="8">
+			<p>
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+			eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+			enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+			nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+			in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+			nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+			sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-![Figure 1: The two rows in this portlet contain columns of different widths.](../../images/columns-01.png)
+			Section 1.10.32 of "de Finibus Bonorum et Malorum", written by 
+			Cicero in 45 BC
 
-There you have it! Now you know how to make columns and rows with AlloyUI.
+			"Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+			accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
+			quae ab illo inventore veritatis et quasi architecto beatae 
+			vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
+			voluptas sit aspernatur aut odit aut fugit, sed quia"
+			</p>
+		</aui:col>
+	</aui:row>
 
-## Related Topics
+In the above example, the portlet's first row has three columns of equivalent
+width. The second row's first column uses `1/3` of the row's width and its
+second column uses the remaining `2/3` of the row's width. 
+
+![Figure 1: Here's what the example's rows and columns look like.](../../images/columns-01.png)
+
+There you have it! Now you know how to organize your portlet's content using
+AlloyUI rows and columns. 
+
+**Related Topics**
 
 [Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
