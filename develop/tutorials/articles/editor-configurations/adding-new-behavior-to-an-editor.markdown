@@ -7,8 +7,8 @@ help developers in these situations, Liferay provides a way to programatically
 access the editor instance to add any kind of behavior needed.
 
 This can be done by using the `liferay-util:dynamic-include` JavaScript
-extension point. This allows anyone to inject JavaScript code after the tag
-declaration to configure/change the editor.
+extension point. This allows anyone to inject JavaScript code right after the
+editor instantiation to configure/change the editor.
 
 In this tutorial, you'll learn how to use the JavaScript extension point in your
 Liferay supported WYSIWYG editor.
@@ -18,9 +18,7 @@ Liferay supported WYSIWYG editor.
 The `liferay-util:dynamic-include` extension point is available in the JSP files
 of Liferay's configurable editors. This extension point serves as the gateway
 for injecting JavaScript into your editor instance. To take advantage of this
-extension point, you'll need to create a JS file with the JavaScript code you'd
-like to inject into your editor, and a new module that facilitates the
-injection. You'll start by creating the JS file.
+extension point, you'll need to:
 
 1. Create a JS file with the JavaScript code you'd like to inject in your
    editor. Create the JS file in a directory that makes sense to reference,
@@ -116,7 +114,7 @@ example, if you were injecting JS code into the CKEditor's JSP file, the code
 would look like the following:
 
         dynamicIncludeRegistry.register(
-            "com.liferay.frontend.editors.web#ckeditor#js#onEditorCreate");
+            "com.liferay.frontend.editors.web#ckeditor#onEditorCreate");
 
     This registers the CKEditor into the Dynamic Include registry and specifies
     that JS code will be injected into the editor once it's created.
@@ -125,11 +123,11 @@ would look like the following:
     implementation of the available WYSIWYG editors, you can use those same
     implementation options for the registration process. Visit the
     [Editors](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Editors)
-    section of `portal.properties` for more details. For example, to register
-    the Creole implementation of the CKEditor, you could register the following
-    string:
+    section of `portal.properties` for more details. For example, to configure
+    the Creole implementation of the CKEditor, you could use the following
+    key:
 
-        "com.liferay.frontend.editors.web#ckeditor_creole#js#onEditorCreate"
+        "com.liferay.frontend.editors.web#ckeditor_creole#onEditorCreate"
 
 That's it! The JS code that you created is now injected into the editor instance
 you've specified. You're now able to use JavaScript to add new behavior to your
