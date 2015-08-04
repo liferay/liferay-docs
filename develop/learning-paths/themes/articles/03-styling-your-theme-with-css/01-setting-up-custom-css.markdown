@@ -19,27 +19,29 @@ steps.
         /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
         @import "compass";
         @import "mixins";
-        /*---------------*/
-        
-        
-        html{
-            height:100%;
-            body{
-                height:100%;
-                @include background-image( linear-gradient(to bottom, rgba(0,196,255,1), rgba(0, 196, 255, 0.3), rgba(238, 231, 0, 0)));
+
+        html {
+            height: 100%;
+
+            body {
+                @include background-image(linear-gradient(to bottom, rgba(0,196,255,1), rgba(0, 196, 255, 0.3), rgba(238, 231, 0, 0)));
+
                 background-repeat: no-repeat;
-        /*----------Return Body styling for popup menus back to normal-----------*/
-                &.portal-popup{
+                height: 100%;
+
+                /* ---------- Return Body styling for popup menus back to normal ----------- */
+
+                &.portal-popup {
                     background-image:none;
                 }
-        }
-                
-        /* ---------- Wrapper ---------- */	
-        
+            }
+
+        /* ---------- Wrapper ---------- */
+
         /* ---------- Banner ---------- */
-        
+
         /* ---------- Content ---------- */
-        
+
         /* ---------- Footer ---------- */
         }
    
