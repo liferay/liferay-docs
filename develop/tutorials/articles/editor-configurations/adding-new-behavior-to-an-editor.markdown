@@ -89,7 +89,7 @@ extension point, you'll need to:
     suggested previously dealing with Creole's deficiency with displaying
     background colors in table cells. You can take a look at how this could be
     done by looking at the `include(...)` method located in the
-    [CKEditorCreoleOnEditorCreateDynamicInclude](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/com/liferay/frontend/editors/web/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java).
+    [CKEditorCreoleOnEditorCreateDynamicInclude](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/com/liferay/frontend/editors/web/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java)
     class.
 
 7. You'll need to make sure you've instantiated your bundle's context, so you
