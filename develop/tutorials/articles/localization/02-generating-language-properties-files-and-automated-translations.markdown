@@ -27,7 +27,7 @@ translation for you to start with. To create base translations using the
 Microsoft Translator service, you'll need to do the following:
 
 1.  Sign up for a
-    [Microsoft Azure Marketplace](ttps://datamarket.azure.com/home) account. 
+    [Microsoft Azure Marketplace](https://datamarket.azure.com/home) account. 
 
 2.  Purchase a subscription to the
     [Microsoft Translator](https://datamarket.azure.com/dataset/bing/microsofttranslator).
