@@ -1,0 +1,41 @@
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element dataType="document-library" fieldNamespace="ddm" indexType="" localizable="true" name="image" readOnly="false" repeatable="true" required="false" showLabel="true" type="ddm-documentlibrary" width="">
+		<dynamic-element dataType="html" fieldNamespace="ddm" indexType="" localizable="true" name="content" readOnly="false" repeatable="false" required="false" showLabel="true" type="ddm-text-html" width="25">
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[Description]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[This is text made availability to users with accessibility issues. Screen readers will be able to read this text.]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		<dynamic-element dataType="string" indexType="" localizable="true" name="link" readOnly="false" repeatable="false" required="false" showLabel="true" type="text" width="25">
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[Image Link]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[A URL to use for this image. Be sure to include the "http://" at the beginning.]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		<meta-data locale="en_US">
+			<entry name="label">
+				<![CDATA[Image]]>
+			</entry>
+			<entry name="predefinedValue">
+				<![CDATA[]]>
+			</entry>
+			<entry name="tip">
+				<![CDATA[Image to use in the carousel.]]>
+			</entry>
+		</meta-data>
+	</dynamic-element>
+</root>
