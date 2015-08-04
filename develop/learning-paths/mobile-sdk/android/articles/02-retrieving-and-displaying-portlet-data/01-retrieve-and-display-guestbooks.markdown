@@ -156,11 +156,11 @@ drawer.
 
 Next, you'll write the code that retrieves guestbooks from the portlet. 
 
-## Getting the Guestbooks
+## Getting Guestbooks
 
 Before making the server call, you need to prepare the `MainActivity` class to 
-handle the `GuestbookModel` objects that result from the call. First, add the 
-following `_guestbooks` variable for these objects: 
+handle `GuestbookModel` objects. Add the following `_guestbooks` variable for 
+these objects: 
 
     private List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
 
@@ -188,8 +188,8 @@ This method replaces any existing content in `_guestbooks` with the list of
         _guestbooks.addAll(guestbooks);
     }
 
-You'll call `reloadGuestbooks` when the call to retrive guestbooks from the 
-portlet succeeds. You need a callback class to make this call. 
+You'll use `reloadGuestbooks` when the call to retrive guestbooks from the 
+portlet succeeds. A callback class is needed to make this call. 
 
 ### Creating a Callback Class
 
@@ -270,7 +270,99 @@ method. This method puts all the guestbooks it receives from the portlet into a
 `List` of `GuestbookModel` objects. It's this `List` that's fed to the 
 `onSuccess` method. You're probably starting to see that `reloadGuestbooks` is 
 an important method. It receives guestbooks for processing in the app's main UI 
-thread. Now it's time to write that processing code! 
+thread. 
+
+Now that you have everything you need to retrieve guestbooks from the Guestbook 
+portlet, you're ready to make the server call.
+
+### Making the Server Call
+
+Calling the server requires that you specify the ID of the site you placed the 
+Guestbook portlet on. You can specify the site's ID in a constant. Create this 
+constant now as the following variable in the `MainActivity` class: 
+
+    public static final int SITE_ID = 10182;
+
+In your code, you should make sure the `SITE_ID` value matches the ID of the 
+site your Guestbook portlet is on. It's easy to look this up in your portal. Log 
+in to your Liferay installation and navigate to the site with the Guestbook 
+portlet. In the Dockbar (the bar at the top of the screen), click *Admin*
+&rarr; *Site Administration* &rarr; *Configuration*. The site ID is in the *Site
+Settings* section. It's highlighted by the red box in the following screenshot. 
+
+![Figure 4: The site ID is listed in the *Site Settings* section of the *Site Administration*'s *Configuration* menu.](../../images/site-id.png)
+
+Next, you need to define the method that calls the portlet to get the 
+guestbooks. Add this `getGuestbooks` method to `MainActivity`: 
+
+    protected void getGuestbooks() {
+        Session session = new SessionImpl("http://10.0.2.2:8080",
+                new BasicAuthentication("joebloggs@liferay.com", "test"));
+    
+        GetGuestbooksCallback callback = new GetGuestbooksCallback(this);
+        session.setCallback(callback);
+    
+        GuestbookService service = new GuestbookService(session);
+    
+        try {
+            service.getGuestbooks(SITE_ID);
+        }
+        catch (Exception e) {
+            String message = "Couldn't get guestbooks " + e.getMessage();
+    
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        }
+    }
+
+Since a portal session is required for the Mobile SDK to communicate with the 
+portal, the `getGuestbooks` method first creates a session with the user's 
+credentials. The session is created by using `SessionImpl` with the server's 
+address (for the Android emulator, `10.0.2.2:8080` is the same as 
+`localhost:8080`) and a `BasicAuthentication` object containing the user's 
+credentials. Be sure to change the user credentials here to match those of the 
+user you created when you set up your portal. A new instance of 
+`GetGuestbooksCallback` is then created and set as the session's callback. Next, 
+the session is used to create a `GuestbookService` instance. This lets you call 
+the Guestbook portlet's remote services, as is done in the `try` block by 
+`service.getGuestbooks(SITE_ID)`. The `getGuestbooks(siteId)` method is the 
+Guestbook portlet's remote service method that retrieves a site's guestbooks. 
+
+At this point, you might be thinking, "Hang on a minute. What good is an Android 
+app that has the user hardcoded in? It can only be used by one person!" You're 
+right. This implementation is most untenable. However, you don't need to worry 
+about it right now. It's done strictly for simplicity while you're developing 
+the app's main features. You can add a proper UI for portal authentication 
+later. 
+
+Now you can call your new `getGuestbooks` method. Place the `getGuestbooks` call 
+in the `onCreate` method of `MainActivity`, following the call to 
+`setContentView(R.layout.activity_main)`. The `onCreate` method should now look 
+like this: 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        getGuestbooks();
+
+        mNavigationDrawerFragment = (NavigationDrawerFragment)
+                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mTitle = getTitle();
+
+        // Set up the drawer.
+        mNavigationDrawerFragment.setUp(
+                R.id.navigation_drawer,
+                (DrawerLayout) findViewById(R.id.drawer_layout));
+    }
+
+As its name implies, an activity's `onCreate` method is called to start the 
+activity. This makes it a good place to make the portlet call that retrieves 
+guestbooks. The `onCreate` method is described further in Android's 
+[activity lifecycle documentation](http://developer.android.com/training/basics/activity-lifecycle/starting.html). 
+
+Awesome! Your app is now fully capable of retrieving the portlet's guestbooks. 
+Next, you'll display them in the app's UI.
 
 ## Displaying Guestbooks in the Drawer
 
@@ -345,10 +437,14 @@ item in the UI and returning the `ListView`. Now that you understand the basics
 of how `onCreateView` works, you'll change it to display guestbooks from the
 Guestbook portlet. 
 
-Begin by declaring the following variable in the `NavigationDrawerFragment` 
-class: 
+Begin by declaring the following variable and its accompanying getter method in 
+the `NavigationDrawerFragment` class: 
 
-    public ArrayAdapter _adapter;
+    private ArrayAdapter _adapter;
+    ...
+    public ArrayAdapter getArrayAdapter() {
+        return _adapter;
+    }
 
 Next, replace `onCreateView` with the following code:
 
@@ -368,103 +464,24 @@ Next, replace `onCreateView` with the following code:
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                ((MainActivity)getActivity())._guestbooks);
+                ((MainActivity)getActivity()).getGuestbooksList());
         mDrawerListView.setAdapter(_adapter);
         
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }
 
-This method uses the `_guestbooks` variable that you added in `MainActivity` to
-create an `ArrayAdapter` of `GuestbookModel` objects. This adapter is then set
-to the `ListView` in the drawer. The rest of `onCreateView` remains unchanged.
+This method creates an `ArrayAdapter` of `GuestbookModel` objects by using the 
+`getGuestbooksList()` method you created earlier. This adapter is then set
+to the `ListView` in the drawer. The rest of `onCreateView` remains unchanged. 
 
-<!-- Hey Nick, this is not a best practice for Java developers. You should
-change this so that the _guestbook variable isn't public but instead has a
-getter and a setter. Then you'd call the getter here. -Rich -->
+You now need to notify the adapter of any changes to its underlying data in the 
+`MainActivity` class. Because these changes occur when guestbooks are 
+successfully retrieved from the server, this is done in the `reloadGuestbooks` 
+method. Add the following line of code at the end of this method:
 
-You're now ready to make the portlet call! This is done in the `MainActivity` 
-class. First, add the following `getGuestbooks` method to `MainActivity`: 
+    mNavigationDrawerFragment.getArrayAdapter().notifyDataSetChanged();
 
-    protected void getGuestbooks() {
-        Session session = new SessionImpl("http://10.0.2.2:8080",
-                new BasicAuthentication("joebloggs@liferay.com", "test"));
-    
-        GetGuestbooksCallback callback = new GetGuestbooksCallback(this);
-        session.setCallback(callback);
-    
-        GuestbookService service = new GuestbookService(session);
-    
-        try {
-            service.getGuestbooks(SITE_ID);
-        }
-        catch (Exception e) {
-            String message = "Couldn't get guestbooks " + e.getMessage();
-    
-            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-        }
-    }
-
-This method makes the portlet call to get the guestbooks. Since a portal 
-session is required for the Mobile SDK to communicate with the portal, the 
-`getGuestbooks` method first creates a session with the user's credentials. The 
-session is created by using `SessionImpl` with the server's address 
-(for the Android emulator, `10.0.2.2:8080` is the same as `localhost:8080`) and 
-a `BasicAuthentication` object containing the user's credentials. Be sure to 
-change the user credentials here to match those of the user you created when you 
-set up your portal. A new instance of `GetGuestbooksCallback` is then created 
-and set as the session's callback. Next, the session is used to create a 
-`GuestbookService` instance. This lets you call the Guestbook portlet's remote 
-services, as is done in the `try` block by `service.getGuestbooks(SITE_ID)`. The 
-`getGuestbooks(siteId)` method is the Guestbook portlet's remote service method 
-that retrieves a site's guestbooks. Note that `SITE_ID` doesn't exist yet. 
-Create it now as the following variable in the `MainActivity` class: 
-
-    public static final int SITE_ID = 10182;
-
-The value `10182` is the ID of the site the Guestbook portlet was placed on in 
-this example. In your code, you should make sure it matches the ID of the site 
-your Guestbook portlet is on. It's easy to look this up in your portal. Log in
-to your Liferay installation and navigate to the site with the Guestbook
-portlet. In the Dockbar (the bar at the top of the screen), click *Admin*
-&rarr; *Site Administration* &rarr; *Configuration*. The site ID is in the *Site
-Settings* section. It's highlighted by the red box in the following screenshot. 
-
-![Figure 4: The site ID is listed in the *Site Settings* section of the *Site Administration*'s *Configuration* menu.](../../images/site-id.png)
-
-At this point, you might be thinking, "Hang on a minute. What good is an Android 
-app that has the user hardcoded in? It can only be used by one person!" You're 
-right. This implementation is most untenable. However, you don't need to worry 
-about it right now. It's done strictly for simplicity while you're developing 
-the app's main features. You can add a proper UI for portal authentication 
-later. 
-
-Now you can call your new `getGuestbooks` method. Place the call in the 
-`onCreate` method of `MainActivity`, following the call to 
-`setContentView(R.layout.activity_main)`. The `onCreate` method should now look 
-like this: 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        
-        getGuestbooks();
-
-        mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
-
-        // Set up the drawer.
-        mNavigationDrawerFragment.setUp(
-                R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
-    }
-
-As its name implies, an activity's `onCreate` method is called to start the 
-activity. This makes it a good place to make the portlet call that retrieves 
-guestbooks. The `onCreate` method is described further in Android's 
-[activity lifecycle documentation](http://developer.android.com/training/basics/activity-lifecycle/starting.html). 
 Awesome! You're almost done! There's one final detail to address before running 
 the app. 
 
