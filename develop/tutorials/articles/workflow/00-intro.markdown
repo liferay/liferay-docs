@@ -1,8 +1,8 @@
 # Workflow
 
-Applications accepting user created content usually need
-to support an approval process so that low quality, objectionable, or otherwise
-undesirable data is not inadvertently published. 
+Applications accepting user created content usually need to support an approval
+process so that low quality, objectionable, or otherwise undesirable data is
+not inadvertently published. 
 
 Liferay Portal includes a workflow engine called *Kaleo*. Kaleo allows portal
 administrators to set up workflows for their organization's needs; the workflow
