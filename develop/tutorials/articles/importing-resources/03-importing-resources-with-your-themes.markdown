@@ -427,6 +427,11 @@ Liferay:
   template under `resources-importer/journal/articles/`, rename the downloaded
   `article.xml` file as desired, and copy it into the folder for the template.
   The web content article's XML fills in the data required by the structure.
+  Older versions of Liferay Portal 6.2 do not offer the *Download* button for
+  web content articles by default. Visit the
+  [Features of Liferay's WCM](/discover/portal/-/knowledge_base/6-2/features-of-liferays-wcm#rich-wysiwyg-editing)
+  section for information on which Portal versions include the *Download* button
+  by default, and how to install it for older versions.
 - **structure:** Edit the structure by clicking *Source*, and copy and paste its
   contents into a new XML file for the structure in the
   `resources-importer/journal/structures/` folder. The structure XML sets a

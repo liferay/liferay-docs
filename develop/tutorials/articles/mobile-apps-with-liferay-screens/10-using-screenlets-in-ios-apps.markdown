@@ -116,7 +116,7 @@ steps:
     ![Figure 5: The `PrefixHeader.pch` configuration in Xcode settings.](../../images/screens-ios-xcode-prefix.png)
 
 You can use the precompiler header file
-[`PrefixHeader.pch`](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Showcase-objc/LiferayScreens-Showcase-Objc/PrefixHeader.pch) 
+[`PrefixHeader.pch`](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Samples/Showcase-objc/LiferayScreens-Showcase-Objc/PrefixHeader.pch) 
 as a template. 
 
 Super! Now you know how to use Screenlets from Objective-C code in your apps. 

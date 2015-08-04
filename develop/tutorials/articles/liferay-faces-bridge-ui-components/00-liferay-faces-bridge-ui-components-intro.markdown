@@ -19,9 +19,7 @@ tags:
 
 **Liferay Faces 3.2:** <http://docs.liferay.com/faces/3.2/vdldoc/> 
 
-<!-- Re-add VDLs for 4.1 and 4.2 when released. - Jim
-**Liferay Faces 4.1:** <http://docs.liferay.com/faces/4.1/vdldoc/>
-
+<!-- Re-add VDLs for 4.2 when released. - Jim
 **Liferay Faces 4.2:** <http://docs.liferay.com/faces/4.2/vdldoc/>
 -->
 

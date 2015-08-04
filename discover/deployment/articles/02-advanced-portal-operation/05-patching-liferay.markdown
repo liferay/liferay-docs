@@ -111,7 +111,7 @@ notifies you to update them. To get the list, run this command:
 
     ./patching-tool.sh index-info
 
-As there's no database connection at patching time, the patches needed to be
+As there's no database connection at patching time, the indexes need to be
 created at portal startup. In order to get the indexes automatically created,
 add the following line to the `portal-ext.properties` file if the server has
 permissions to modify the indexes on the database:
