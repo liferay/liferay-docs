@@ -9,26 +9,26 @@ It's easy to create a bundle using Liferay's Ant-based [Plugins SDK](http://www.
 Using the Plugins SDK is not required; you can use
 [Maven](https://maven.apache.org), [Gradle](https://gradle.org), or
 [Bndtools](http://bndtools.org) instead. Use the following steps to create a
-simple bundle via the Plugins SDK.
+simple bundle using the Plugins SDK.
 
-1. To begin, navigate to your Plugins SDK's `portlets` folder in a terminal or
-   command prompt. Run the `create.[sh|bat]` script to create a new portlet
-   project. E.g., enter this command
+1.  To begin, navigate to your Plugins SDK's `portlets` folder in a terminal or
+    command prompt. Run the `create.[sh|bat]` script to create a new portlet
+    project by entering this command:
 
         ./create.sh simple-bundle "Simple Bundle"
 
-    to create a project named `simple-bundle-portlet`.
+    This creates a project named `simple-bundle-portlet`.
 
-2. Delete the `-portlet` suffix from your project's name. You don't need the
-   `-portlet` suffix since you're just creating a simple bundle, not a portlet. 
+2 . Delete the `-portlet` suffix from your project's name. You don't need the
+    `-portlet` suffix since you're just creating a simple bundle, not a portlet. 
 
-3. Also, delete your project's `docroot` folder. Even if you were creating a
-   portlet, you still wouldn't need the `docroot` folder since that folder is a
-   legacy folder from the traditional (prior to Liferay 7) way of creating
-   Liferay portlet applications.
+3.  Also, delete your project's `docroot` folder. Even if you were creating a
+    portlet, you still wouldn't need the `docroot` folder since that folder is a
+    legacy folder from the traditional (prior to Liferay 7) way of creating
+    Liferay portlet applications.
 
-4. Create a new file in your project called `bnd.bnd`. Add the following
-   contents to this file:
+4.  Create a new file in your project called `bnd.bnd`. Add the following
+    contents to this file:
 
         Bundle-Name: Simple Bundle
         Bundle-SymbolicName: com.liferay.docs.simplebundle
@@ -42,17 +42,17 @@ simple bundle via the Plugins SDK.
     its contents, to generate the `MANIFEST.MF` file that the OSGi specification
     requires of bundles.
 
-5. Next, edit your project's `ivy.xml` file. Remove the `-portlet` suffix from
-   the line in which it appears. Then remove the default dependencies and
-   replace them with this one:
+5.  Next, edit your project's `ivy.xml` file. Remove the `-portlet` suffix from
+    the line in which it appears. Then remove the default dependencies and
+    replace them with this one:
 
         <dependency name="org.osgi.core" org="org.osgi" rev="5.0.0" />
 
     You don't need the default dependencies to create a simple bundle but you do
     need the OSGi core.
 
-6. Finally, edit your project's `build.xml` file. Remove the `-portlet` suffix
-   from the project name. Then replace this import declaration
+6.  Finally, edit your project's `build.xml` file. Remove the `-portlet` suffix
+    from the project name. Then replace this import declaration
 
         <import file="../build-common-portlet.xml" />
 
@@ -60,26 +60,26 @@ simple bundle via the Plugins SDK.
 
         <import file="../../build-common-osgi-plugin.xml" />
 
-7. Run the following command to download the Ivy dependencies required to build
-   your bundle:
+7.  Run the following command to download the Ivy dependencies required to build
+    your bundle:
 
         ant clean
 
-8. Now you're ready to import your project into Eclipse. Open Eclipse and click
-   *File* &rarr; *New* &rarr; *Other* &rarr; *Java Project*. Uncheck the *Use
-   default location* box and click *Browse*. Navigate to your project in your
-   Plugins SDK and select it. Eclipse generates `.classpath` and `.project`
-   files based on the contents of your project.
+8.  Now you're ready to import your project into Eclipse. Open Eclipse and click
+    *File* &rarr; *New* &rarr; *Other* &rarr; *Java Project*. Uncheck the *Use
+    default location* box and click *Browse*. Navigate to your project in your
+    Plugins SDK and select it. Click *Finish*. Eclipse generates `.classpath`
+    and `.project` files based on the contents of your project.
 
-9. To turn your project into a simple bundle, you'll implement a
-   `[BundleActivator](https://osgi.org/javadoc/r5/core/org/osgi/framework/BundleActivator.html)`.
-   If your project does not have a `src` folder, create one and add it to your
-   Eclipse build path. Right-click on your project's `src` folder and select
-   *New* &rarr; *Package* and create a new package. E.g., create a new package
-   called *com.liferay.docs.simplebundle*. Then right-click on your new package
-   and select *New* &rarr; *Class*. Enter a name for the class, e.g.,
-   *SimpleBundleActivator*. Replace its default contents with the following
-   code:
+9.  To turn your project into a simple bundle, you'll implement a
+    `[BundleActivator](https://osgi.org/javadoc/r5/core/org/osgi/framework/BundleActivator.html)`.
+    If your project does not have a `src` folder, create one and add it to your
+    Eclipse build path. Right-click on your project's `src` folder and select
+    *New* &rarr; *Package* and create a new package. For example, create a new
+    package called *com.liferay.docs.simplebundle*. Then right-click on your new
+    package and select *New* &rarr; *Class*. Enter a name for the class, e.g.,
+    *SimpleBundleActivator*. Replace its default contents with the following
+    code:
 
         package com.liferay.docs.simplebundle;
 
@@ -146,6 +146,9 @@ simple bundle via the Plugins SDK.
     listed and its status is active. You should see a result like this:
 
         257|Active     |    1|Simple Bundle (1.0.0)
+
+    When you want to disconnect from the shell, type `disconnect` and hit
+    *Enter*. 
 
 13. To use the Web Console to confirm that your bundle was successfully
     installed, navigate to
