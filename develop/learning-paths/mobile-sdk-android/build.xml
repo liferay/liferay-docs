@@ -2,9 +2,9 @@
 
 <project name="Android Mobile SDK Learning Path Conversion" basedir=".">
 
-	<property name="doc.dir" value="android-mobile-sdk"/>
+	<property name="doc.dir" value="mobile-sdk-android"/>
 
-	<import file="../../build.xml" />
+	<import file="../build.xml" />
 
 	<property name="doc.type" value="learnpath"/>
 
