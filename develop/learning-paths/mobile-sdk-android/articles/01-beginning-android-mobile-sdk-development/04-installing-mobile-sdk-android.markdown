@@ -11,11 +11,11 @@ guestbooks and their entries from the portal.
 ## Installing the Guestbook Mobile SDK
 
 The Mobile SDK Builder generated two separate JAR files in your
-`liferay-mobile-sdk-android-6.2.0.19` directory: 
+`liferay-mobile-sdk-android-6.2.0.22` directory: 
 
 1. `modules/guestbook-portlet/build/libs/liferay-guestbook-portlet-android-sdk-1.0.jar`
 
-2. `android/build/libs/liferay-android-sdk-6.2.0.19.jar`
+2. `android/build/libs/liferay-android-sdk-6.2.0.22.jar`
 
 The first JAR file contains the classes and methods for calling the Guestbook
 portlet's remote services. The second contains the rest of the Mobile SDK. You

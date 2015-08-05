@@ -26,14 +26,14 @@ step here. Just remember that you need to generate web services when developing
 your own portlets.
 
 To build the Mobile SDK, you first need to download its source code. You can do 
-so by clicking [this link](https://github.com/liferay/liferay-mobile-sdk/archive/android-6.2.0.19.zip). 
+so by clicking [this link](https://github.com/liferay/liferay-mobile-sdk/archive/android-6.2.0.22.zip). 
 Unzip the ZIP file to a location on your machine where you want the Mobile SDK 
 to reside. This is purely personal preference; it works the same regardless of 
 where it is. Once unzipped, the source code for this version of the Mobile SDK 
-is in the `liferay-mobile-sdk-android-6.2.0.19` folder. Now you're ready to 
+is in the `liferay-mobile-sdk-android-6.2.0.22` folder. Now you're ready to 
 build a Mobile SDK for the Guestbook portlet! The Mobile SDK contains a 
 convenient command line wizard for helping you with this step. To start it, 
-navigate to the `liferay-mobile-sdk-android-6.2.0.19` directory and issue the 
+navigate to the `liferay-mobile-sdk-android-6.2.0.22` directory and issue the 
 following command:
 
     ./gradlew createModule
@@ -70,7 +70,7 @@ happened. Obviously, the build completed successfully, but other than that it
 doesn't tell you much. What happened is this: the Mobile SDK Builder generated 
 the source classes you'll use in your Android app to interact with your Liferay 
 installation's Guestbook portlet. You can find these source classes in the 
-following directory of your `liferay-mobile-sdk-android-6.2.0.19` directory: 
+following directory of your `liferay-mobile-sdk-android-6.2.0.22` directory: 
 
     modules/guestbook-portlet/android/src/gen/java
 
@@ -93,7 +93,7 @@ line and run `../../gradlew jar`. This command does two things:
    in `modules/guestbook-portlet/build/libs`.
 
 2. Generates a `jar` file for the rest of the Mobile SDK. This is in
-   `liferay-mobile-sdk-android-6.2.0.19/android/build/libs`.
+   `liferay-mobile-sdk-android-6.2.0.22/android/build/libs`.
 
 Congratulations! You just built the Liferay Mobile SDK for the Guestbook 
 portlet. Now that's an accomplishment worthy of writing down in a guestbook! All 
