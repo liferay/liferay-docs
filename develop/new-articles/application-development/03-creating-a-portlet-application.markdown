@@ -35,7 +35,7 @@ read the `bnd.bnd` file and, based on its contents, to generate the
 `MANIFEST.MF` file that the OSGi specification requires of bundles. Notice that
 you're omitting a `Bundle-Activator` specification in your `bnd.bnd` file. A
 [Bundle Activator](http://wiki.osgi.org/wiki/Bundle-Activator) is usually
-required when creating a simple OSGi bundle. However, you're going to create
+required when creating a simple OSGi bundle. However, you're creating
 your portlet as a
 [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
 component. A declarative services component can do anything that a bundle
@@ -71,16 +71,15 @@ bundle:
 Now you're ready to import your project into Eclipse. Open Eclipse and click
 *File* &rarr; *New* &rarr; *Other* &rarr; *Java Project*. Uncheck the *Use
 default location* box and click *Browse*. Navigate to your project in your
-Plugins SDK and select it. Eclipse generates `.classpath` and `.project` files
-based on the contents of your project.
+Plugins SDK and select it. Click *Finish*. Eclipse generates `.classpath` and
+`.project` files based on the contents of your project.
 
 Now it's time to create your portlet class. Right-click on your project's `src`
 folder (if this folder doesn't exist, create it and add it to your project's
 classpath) and select *New* &rarr; *Package* and create a new package. For
-example, suppose you create a new package called
-*com.liferay.docs.exampleportlet*. Right-click on your new package and select
-*New* &rarr; *Class*. Name the class *ExamplePortlet*. Replace its default
-contents with the following code:
+example, create a new package called `com.liferay.docs.exampleportlet`.
+Right-click on your new package and select *New* &rarr; *Class*. Name the class
+*ExamplePortlet*. Replace its default contents with the following code:
 
     package com.liferay.docs.exampleportlet;
 
@@ -122,9 +121,8 @@ Of course, replace the package declaration with your package.
 
 First, notice that your portlet class extends `GenericPortlet`. `GenericPortlet`
 is an abstract class provided by the `portlet-api.jar` that you added as an Ivy
-dependency. You're implementing overriding the dummy `doView` method of
-`GenericPortlet` to make your portlet display some text so that you can confirm
-that it's working.
+dependency. You're overriding the dummy `doView` method of `GenericPortlet` to
+make your portlet display some text so that you can confirm that it's working.
 
 Next, notice the `@Component` annotation on your portlet class. This annotation
 marks your portlet class as a
@@ -171,9 +169,9 @@ Check Liferay's log for a message like this:
 
 This message means that Liferay's deployment mechanism has detected the JAR file
 that you copied to the `deploy` folder. Liferay copies your JAR file to the
-`osgi/modules` folder. Once your portlet bundle has been deployed, add your
-portlet to a page and look for the following message (or the message that you
-configured in your portlet) to be displayed by your portlet.
+`osgi/modules` folder. Once your portlet bundle has been deployed, add it to a
+page and look for the following message (or the message that you configured in
+your portlet) to be displayed by your portlet.
 
     Example Portlet is working!
 
@@ -195,6 +193,8 @@ The `lb` command stands for *list bundles*. Verify that your bundle is listed
 and its status is active. You should see a result like this:
 
     257|Active     |    1|Example Portlet (1.0.0)
+
+When you want to disconnect from the shell, type `disconnect` and hit *Enter*. 
 
 To use the Web Console to confirm that your portlet bundle was successfully
 installed, navigate to
