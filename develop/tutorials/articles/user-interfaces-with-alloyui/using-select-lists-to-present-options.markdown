@@ -1,56 +1,40 @@
-# Using the AlloyUI aui:select and aui:option Tags
+# Using Select Lists to Present Options [](id=using-select-lists-to-present-options)
 
-Select fields, also known as drop-down menus or lists, are very handy tools that 
-give your users a list of options to choose from in the UI. Unlike radio 
-buttons, which display options in a static list, select fields display all the 
-available options in a collapsible menu. AlloyUI provides the `aui:select` and 
-`aui:option` tags for creating select fields. 
+Select lists, also known as drop-down lists, are UI components that present
+collapsible groups of options. A select list initially displays a single default
+option. On clicking the option, all the options are displayed. On selecting an
+option from the list, it collapses to display only the newly selected option.
+It's handy for getting user input while conserving UI real estate. 
 
-This tutorial shows you how to implement select fields by using the `aui:select` 
-and `aui:option` tags. The first section shows you how to add select fields to 
-your UI. The second section shows you how to retrieve the value of the option 
-your users select. After all, select fields aren't very useful if your 
-application can't tell what is selected! 
+This tutorial shows you how to implement select lists using the AlloyUI taglib
+tags `aui:select` and `aui:option`. The first section shows you how to add a
+select list to your UI. The second section shows you how to retrieve the option
+a user selects. 
 
-## Setting Up the AlloyUI aui:select and aui:option Tags
+## Adding a Select List [](id=adding-a-select-list)
 
-The example in this tutorial shows you how to implement select fields by using 
-the `aui:select` and `aui:option` tags in the `view.jsp` of a portlet. The 
-following steps are used:
+This tutorial's example demonstrates how to implement select lists in a
+portlet's View using `aui:select` and `aui:option` tags in a JSP file. 
 
-- **Step 1:** Reference the aui Taglib.
-- **Step 2:** Add the aui:select Tag in the View JSP.
-- **Step 3:** Configure the aui:option Tags for your Select Field.
+1.  Create, or edit, a JSP file in which you want to add a select list. 
 
-### Step 1: Reference the aui Taglib
-
-1.  Open the `view.jsp` of your portlet. Create one if it does not already 
-    exist.
-
-2.  Add a directive to reference the `aui` taglib:
+2.  Reference the AlloyUI taglib `aui` by adding the following directive: 
 
         <%@ taglib prefix="aui" uri="http://alloy.liferay.com/tld/aui" %>
 
-Alright! You can now use the `aui` tags in your JSP. Next, you'll add the 
-`aui:select` tags to your JSP.
-
-### Step 2: Add the aui:select Tag in the View JSP
-
-Inside the `view.jsp` of your portlet, add the `aui:select` tag and give it a 
-`name`:
+3.  Add an `aui:select` element and name it. 
 
         <aui:select name="select-example">
 
         </aui:select>
 
-It's important to note that the `name` attribute is required for the 
-`aui:select` tag. Now that the tag for the select field is in place, you can add 
-its options.
+    The `aui:select` tag's
+    [reference documentation](https://docs.liferay.com/portal/6.2/taglibs/aui/select.html)
+    describes all its attributes. 
 
-### Step 3: Configure the aui:option Tags for Your Select Field
-
-Still inside the `view.jsp`, nest the `aui:option` tags inside of the 
-`aui:select` tag:
+4.  For each option you want listed in the select, insert an `aui:option`
+    element between the starting and ending `aui:select` tags. Here's an example
+    select list with three options: 
 
         <aui:select name="select-example">
             <aui:option value="Option 1">Option 1</aui:option>
@@ -58,70 +42,34 @@ Still inside the `view.jsp`, nest the `aui:option` tags inside of the
             <aui:option value="Option 3">Option 3</aui:option>
         </aui:select>
 
-This example implements three options. Of course, you can have as many options 
-as you want. There you have it! Now you know how to create a select field and 
-populate it with options using AlloyUI's tags. However, it's important to note 
-that this configuration only skims the surface of what `aui:select` is capable 
-of.
+    The `aui:option` tag's 
+    [reference documentation](https://docs.liferay.com/portal/6.2/taglibs/aui/option.html)
+    describes all its attributes. 
 
-What makes AlloyUI's tag library so robust is that each tag has a set of 
-configurable attributes that allow for quite a bit of flexibility. The list 
-below shows a few of the available attributes that you can customize for the 
-`aui:select` tag. You can find the full list [here](http://docs.liferay.com/portal/6.2/taglibs/).
+There you have it! Now you know how to create a select list and populate it with
+options using `aui` taglib tags. It's important to note, however, the above
+example implementation skims only the surface of the `aui:select` and
+`aui:option` tag capabilities. The `aui:select` tag's configurable attributes
+give you lots of flexibility to customize select lists. So, make sure to check
+out its
+[reference documentation](https://docs.liferay.com/portal/6.2/taglibs/aui/select.html). 
 
-**first:** Sets whether to mark this as the first element in the form. The 
-default value is false. 
+Adding the select list to your UI is first part of creating a fully functional
+select list. Next, you'll learn how to implement retrieval of the selected
+options. 
 
-**helpMessage:** Creates a help tooltip for the help icon and displays the given 
-string as a pop-up dialog. 
+## Getting the Selected Option [](id=getting-the-selected-option)
 
-**label:** Sets the select field's label and displays it above the field.
+There are a couple of ways to retrieve a select list's selected option.
+Both are viable and achieve the same goal. One way does so within an
+[`aui:script`](https://docs.liferay.com/portal/6.2/taglibs/aui/select.html)
+element. The other way does so using JavaScript inside the portlet's
+`main.js` file. The sections that follow cover both techniques. 
 
-**last:** Sets whether to mark this as the last element in the form. The default 
-value is false.
-
-**onChange:** Sets a function to be called on a change in value of the select 
-field.
-
-**onClick:** Sets a function to be called when users click the select field.
-
-**prefix:** Sets the text to be displayed to the left of the select field.
-
-**required:** Sets whether to mark the field as required. The default value is 
-false.
-
-**showEmptyOption:** Sets whether to display an empty option as a placeholder. 
-The default value is false.
-
-**suffix:** Sets the text to be displayed to the right of the select field.
-
-Now that you have a better understanding of the attributes available to you for 
-the `aui:select` tag, here are some helpful attributes to consider when 
-configuring the `aui:option` tag:
-
-**label:** Sets the text to be displayed as the option in the select field.
-
-**selected:** Sets whether the option is selected when the component loads. The 
-default value is false.
-
-**value:** Sets the option's value. If no value is given, the value is taken 
-from the `label` attribute.
-
-Creating the select field and adding selectable options to it is a great start, 
-but it's really just the first step in the process. Next, you need to have your 
-application retrieve the option your user chooses. A select field isn't very 
-useful without this capability!
-
-## Retrieving the Selected Option from Your Select Field 
-
-There are a couple of ways to retrieve the selected value in a select field. 
-Both are viable solutions and achieve the same goal. The first is done with an 
-`aui:script` inside of your JSP. The second is done by using JavaScript inside 
-the `main.js` of your portlet. The steps below cover both techniques.
-
-It's also important to note that up to this point, the select field has been 
-shown as a stand alone field in your JSP. However, select fields typically 
-appear in forms. As such, this section uses the following as an example: 
+Up to this point, the select list has been shown as a stand-alone component.
+Since select lists are typically used in forms, this tutorial demonstrates
+implementing a fully functional select list in a form. Here's the example
+form JSP code: 
 
     <aui:form>
         <aui:fieldset>
@@ -134,196 +82,214 @@ appear in forms. As such, this section uses the following as an example:
         </aui:fieldset>
     </aui:form>
 
-The next section shows you how to use an `aui:script` inside of your JSP to 
-retrieve the selected value in your select field.
+The next section shows you how to retrieve a select list's selected option by
+leveraging the AlloyUI modules in an `aui:script` tag inside a JSP. 
 
-### Using an AlloyUI Script to Retrieve the Selected Option
+### Getting the Selected Option Using an AlloyUI Script [](id=getting-the-selected-option-using-an-alloyui-script)
 
-The example here retrieves the selected value in the select field and then 
-simply alerts the user of their selection. This is done by attaching an 
-`onClick` event to a button node. The following steps detail this process:
+The example here retrieves the select list's selected option and 
+displays the option's value to the user in an alert. The following steps
+explain how to implementing this: 
 
-1.  Add `aui:script` in your `view.jsp` and set the `use` attribute to `node` 
+1.  Add an `aui:script` element in your JSP and set the `use` attribute to `node` 
     and `event`:
 
         <aui:script use="node, event">
-        
+
         </aui:script>
 
-    The values `node` and `event` are set since you are retrieving your button 
-    node and attaching an event to it.
-    
-2.  Add a variable inside of the `aui:script` tag to retrieve the node that the
-    event is attached to. In this example, the node is a button node:
+    The `node` and `event` packages can be used to retrieve the button node and
+    attach an event to it. 
+
+2.  Inside the `aui:script` element, retrieve the node that the
+    event is attached to. In this example, the event is attached to a button that has an ID `btnSubmit`: 
 
         var btn = A.one('#btnSubmit');
-        
-    The `A.one` method uses the button's id `btnSubmit` to retrieve the button. 
-    This method grabs the first element returned.
 
-3.  Add a variable inside of the `aui:script` tag to stand for your select field
-    node:
+    The `A.one` method retrieves the button with the ID `btnSubmit`. 
+    This method returns the first matching node. 
+
+3.  Add a variable to represent the select list node: 
 
         var option = A.one('#<portlet:namespace/>options')
-        
-    Like the previous step, the select field is referenced with an id as the 
-    parameter to the `A.one` method. However, note that the `portlet:namespace` 
-    tag is part of the id. This is done to avoid conflicts between other 
-    elements and portlets on the same page. Since the `aui:select` tag used to 
-    implement select fields appends a unique namespace to the given id, the 
-    `portlet:namespace` tag here adds this unique namespace to the id to 
-    complete it. Namespacing is discussed in greater detail later in this 
-    tutorial. You can also read more about namespacing in the tutorial 
-    [Using Portlet Namespacing](/tutorials/-/knowledge_base/6-2/using-portlet-namespacing).
 
-4.  Below the variables you just declared, attach a function to the node so that 
-    you can retrieve the selected option. The example here attaches a click 
-    event to the button node `btn`:
+    As with the button, the select list can be referenced with its ID. It's used
+    as part of the argument value passed to the `A.one` method. Note the
+    `portlet:namespace` tag is part of the ID. The namespace avoids conflicts
+    with other elements and portlets on the same page. Since a unique namespace
+    is associated with the select list's ID, the `portlet:namespace` tag is a
+    required qualifier for retrieving the select list. Namespacing is discussed
+    in greater detail later in this tutorial. You can also read more about it in
+    the tutorial
+    [Using Portlet Namespacing](/develop/tutorials/-/knowledge_base/6-2/using-portlet-namespacing).
+
+4.  Below the variables you just declared, attach a function to the node for
+    retrieving the selected option. The example here attaches a click  
+    event to the button node assigned to variable `btn`:
 
         btn.on('click', function(event){
-        
+
         });
-    
-5.  Inside the function, retrieve the option selected in the select field by 
-    calling the `val` method. The example here uses `alert` to alert the user 
-    to the selected option:
+
+5.  Inside the function, retrieve the select list's selected option by 
+    calling the `val` method. The example here uses the method `alert` to notify
+    the user about the selected option: 
 
         alert(option.val());
 
-    The `val` method can be used to get and set the `value` attribute of the 
-    node it's attached to. Since the `val` method in this example is called 
-    without parameters, it gets the value of the option selected in the select 
-    field. Alternatively, you can use the following code to achieve the same 
-    result:
-    
+    You can use the `val` method to get and set the `value` attribute of the
+    node it's attached to. Since this example calls the `val` method without
+    parameters, it *gets* the value of the node. You can, alternatively, use the
+    following code to achieve the same result: 
+
         alert(option.attr('value'));
-        
-    Like the `val` method, the `attr` method also retrieves the value of the
-    selected option. However, while the `val` method retrieves only the `value` 
-    attribute of the node it's attached to, the `attr` method can grab the value 
-    of any attribute of the node. To use the `attr` method to retrieve the value 
-    of an attribute, you must pass that attribute as the argument to the method. 
-    For example, `attr('value')` retrieves the value of the `value` attribute. 
-    The `attr` method can also be used to set the value of the attribute. This 
-    is done by passing a second parameter, which serves as the setting. For 
-    example, the following code sets 'Selector:' as the value of the select 
-    field's `label` attribute: 
-    
+
+    Note, while the `val` method can get only the value of the node's `value`
+    attribute, the `attr` method can get the value of any of the node's
+    attributes. To use the `attr` method to retrieve a node attribute's value ,
+    you must pass that attribute's name as the argument to the method. For
+    example, `attr('value')` retrieves the value of the `value` attribute. The
+    `attr` method can also be used to set the value of an attribute. You can do
+    this by passing a second argument, which serves as the attribute's new
+    value. For example, the following code sets 'Selector:' as the value of the
+    select list's `label` attribute: 
+
         option.attr('label', 'Selector:');
-        
-    If you're following along with the example in this tutorial, your finished 
-    script should look like this:
-    
+
+    If you're following along with the example in this tutorial, the finished 
+    script looks like this:
+
         <aui:script use="event, node">
-            
-            var btn = A.one('#btnSubmit');
+
+            var btn = A.one('#btnSubmit');       
             var option = A.one('#<portlet:namespace/>options');
 
             btn.on('click', function(event){
                 alert(option.val());
             });
-            
+
         </aui:script>
     
-6.  Redeploy your portlet, select an option from the select field, and perform 
-    the action that calls your script. For this example, clicking the *Submit* 
-    button after selecting an option from the select field calls the script.
+6.  Redeploy your portlet, select an option from the select list, and perform 
+    the action that calls your script. For this example, click the *Submit* 
+    button after selecting an option from the select list. 
 
-There you go! As you can see, it doesn't take an excessive amount of effort to 
-use a small AlloyUI script in a JSP to retrieve the selected option from a 
-select field. Next, you'll learn how to achieve the same results by using some 
-JavaScript in your `main.js` file.
+There you go! As you can see, it takes little effort to implement an AlloyUI
+script to retrieve a select list's selected option. Next, you'll learn how to
+achieve the same results using JavaScript in your portlet's `main.js` file. 
 
-## Using JavaScript to Retrieve the Selected Option
+### Getting the Selected Option Using a JavaScript File [](id=getting-the-selected-option-using-a-javascript-file)
 
-Alternatively, you can use JavaScript in your `main.js` file to retrieve the 
-selected option. Because the `main.js` file is loaded after the JSP, you have to 
-pass the `portlet:namespace` to the `main.js` file. The example here shows how 
-to accomplish this.
+You can also use JavaScript in your `main.js` file to retrieve a select
+list's selected option. Because the `main.js` file is loaded after the JSP, you
+have to pass the `portlet:namespace` to the `main.js` file. The following steps
+leverage the example form shown at the start of this section to demonstrate how
+to get a select list's selected option: 
 
-1.  Open the `main.js` file from your portlet's `docroot/js/` directory.
+1.  Open the `main.js` file from your portlet's `docroot/js/` folder. 
 
 2.  Add the following code to your `main.js` file. The `init` function retrieves 
     the portlet namespace, while the `get` function retrieves the value of the 
-    option selected in the select list:
+    elect list's selected option:            
 
         AUI().use(
             'aui-base',
             function (A){
                 Liferay.namespace('your-portlet-name');
-            
+
                 Liferay.yourportletname = {
-                
+
                     init: function(config){
                         var instance = this;
                         instance._namespace = config.namespace;
                     },
-            
+
                     get: function(){
                         var instance = this;
                         var option = A.one('#' + instance._namespace + 'options');
                         alert(option.attr('value'));
                     },
-            
+
                 };
             }
         );
-    
-    The `init` function is attached as a method to `Liferay.yourportletname`. 
-    The namespace is set up to be passed in as the argument for the config 
-    parameter. The namespace is also set to the `instance._namespace` variable. 
-    The `get` function uses this variable to add the `portlet:namespace` to the 
-    select field's id. Note that the `instance` variable is declared and set 
-    inside of the `get` function to the `this` keyword. 
-    
-3.  Now you're ready to call the JavaScript you just wrote from one of your 
-    portlet's JSPs. This is done with an AlloyUI script. For example, here's an 
-    AlloyUI script that calls the JavaScript from the previous step:
-    
+
+    Make sure to replace `your-portlet-name` with your portlet's name and
+    `options` with your `aui:select` element's ID value. 
+
+    The `init` function is attached as a method to `Liferay.yourportletname`.
+    The namespace is set up to be passed as the argument for the `init`
+    function's parameter. The `instance._namespace` variable is assigned the
+    namespace. The `get` function uses this variable to add the
+    `portlet:namespace` to the select list's ID. Note, the `instance` variable
+    is declared and set to keyword `this`. 
+
+3.  From within the JSP containing your select list, you must link to the
+    JavaScript in `main.js` the component that produces the event (e.g., a
+    button). 
+
+    The JSP in the example form has the following button:
+
+        <aui:button value="Submit" onClick="get()" id="btnSubmit"/>
+
+    Using an AlloyUI script in the select list's JSP, you can register to
+    receive the event. From within an AlloyUI script, you can initialize the
+    JavaScript you wrote in `main.js` and make accessible its function that gets
+    the selected option. 
+
+    For example, here's an AlloyUI script that calls the JavaScript from the
+    previous step: 
+
         <aui:script use="aui-base, event, node">
             var btn = A.one('#btnSubmit');
-        
+
             Liferay.yourportletname.init(
                 {
                     namespace: '<portlet:namespace/>'
                 }
             );
-        
+
             get = function(){
-            Liferay.yourportletname.get();
+                Liferay.yourportletname.get();
             }
         </aui:script>
-        
-    When setting the `aui:script`, make sure that you set its `use` attribute to 
-    `"aui-base, event, node"`. Also note that the `init` function is called 
-    inside the script and sets the namespace to `<portlet:namespace/>`. The 
-    `get` variable is then set to the `get` method you created in `main.js`. 
-    
-4.  There's just one last thing to check before you're done. If you're following 
-    along with this example, then this is already done and you can redeploy and 
-    test your portlet. Make sure that you've attached the function that 
-    retrieves the select list's option to the node that calls it. For example, 
-    this is done here by setting the `get` method to a button's `onClick` 
-    attribute:
 
-        <aui:button value="Submit" onClick="get()" id="btnSubmit"/>
+    When setting the `aui:script`, make sure to set its `use` attribute to 
+    `aui-base, event, node`. Also make sure to replace `yourportletname` with
+    your portlet's name and set `btnSubmit` to your button's ID. 
+
+    The `A.one` method uses the button's ID `btnSubmit` to retrieve the button.
+    The `init` function is called inside the script and sets the namespace to
+    `<portlet:namespace/>`. The `get` variable is then set to the `get` method
+    you created in `main.js`. Make sure to match the name of the function you
+    implemented to handle the select option to the name of the function
+    associated with your button. 
 
 5.  Redeploy the portlet, select an option from the select list, and perform the 
     action that calls the method. If you're following along with this example, 
     the method is called when you click the *Submit* button.
 
-Congratulations! Now you know how to retrieve the option that your users choose 
-from a select field in your portlet. Of course, the example here simply alerts 
-the user of that choice--it doesn't actually do anything else with it. You'll 
-want to utilize it to perform other actions in your portlet, or across the 
-portal as a whole.
+Congratulations! Now you know how to retrieve the options users choose from your
+portlet's select lists. This tutorial's example demonstrates only getting the
+option and alerting the user of that option. You can, however, build off of
+these principles to use the select list's input in your app's business logic. To
+learn how to do this, check out the article
+[Writing Your First Liferay Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-your-first-liferay-application)
+in the Learning Path
+[Beginning Liferay Development](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development)
+or dive in to the Learning Path
+[Writing a Data-Driven Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-a-data-driven-application).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Liferay UI Taglibs](/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Beginning Liferay Development](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development)
 
-[Themes and Layout Templates](/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Writing a Data-Driven Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-a-data-driven-application)
 
-[Application Display Templates](/tutorials/-/knowledge_base/6-2/application-display-templates)
+[User Interfaces with the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
 
-[Customizing Liferay Portal](/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+
+[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+
+[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
