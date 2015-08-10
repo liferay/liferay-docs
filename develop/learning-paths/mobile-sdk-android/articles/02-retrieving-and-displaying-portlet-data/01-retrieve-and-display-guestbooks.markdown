@@ -435,15 +435,15 @@ the currently selected list item in the UI and returning the `ListView`.
 
 +$$$
 
-**Note:** You may have noticed that Android Studio's generated code uses the 
-deprecated class 
+**Note:** You may have noticed that Android Studio's generated code in 
+`NavigationDrawerFragment` uses the deprecated class 
 [`ActionBarDrawerToggle`](https://developer.android.com/reference/android/support/v4/app/ActionBarDrawerToggle.html) 
 to create the navigation drawer. The preferred way to create a navigation drawer 
 is with the 
 [`NavigationView`](http://developer.android.com/reference/android/support/design/widget/NavigationView.html) 
 class, which is part of the new 
 [Android Design Support Library](http://android-developers.blogspot.com/2015/05/android-design-support-library.html). 
-However, a bug in `NavigationView` requires you to use a workaround when 
+A bug in `NavigationView`, however, requires you to use a workaround when 
 programmatically adding items to the drawer. For this reason, 
 `ActionBarDrawerToggle` is used in this learning path. 
 
