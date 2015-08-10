@@ -1,4 +1,4 @@
-# Writing an Android Application with the Liferay Mobile SDK
+# Writing an Android Application with the Liferay Mobile SDK [](id=writing-an-android-application-with-the-liferay-mobile-sdk)
 
 Users expect to access their accounts from their mobile devices. As an intrepid
 developer, you naturally want to turn these expectations into reality.

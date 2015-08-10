@@ -1,4 +1,4 @@
-# Retrieve and Display Guestbooks 
+# Retrieve and Display Guestbooks [](id=retrieve-and-display-guestbooks)
 
 Your first order of business is to retrieve the guestbooks from the portlet and
 display them in the app's navigation drawer. Recall that the app you created in
@@ -14,7 +14,7 @@ simple, but it's a bit more complex in practice. Not to worry! You'll be guided
 though each step in the process. First, you'll do some simple refactoring of
 your project. 
 
-## Refactoring
+## Refactoring [](id=refactoring)
 
 Before you call the Guestbook portlet's remote services, you should move your 
 project's activity and fragment classes into a new `activity` package. While 
@@ -44,7 +44,7 @@ Studio's project view:
 Great! Now you'll be able to find these classes quickly as you add new files and 
 functionality to your app. Now it's time to get some guestbooks!
 
-## Encapsulating Guestbooks
+## Encapsulating Guestbooks [](id=encapsulating-guestbooks)
 
 To efficiently work with guestbooks in your app, you need a way of encapsulating 
 them. This lets you refer to common guestbook objects throughout your code. 
@@ -156,7 +156,7 @@ drawer.
 
 Next, you'll write the code that retrieves guestbooks from the portlet. 
 
-## Getting Guestbooks
+## Getting Guestbooks [](id=getting-guestbooks)
 
 Before making the server call, you need to prepare the `MainActivity` class to 
 handle `GuestbookModel` objects. Add the following `_guestbooks` variable for 
@@ -191,7 +191,7 @@ This method replaces any existing content in `_guestbooks` with the list of
 You'll use `reloadGuestbooks` when the call to retrive guestbooks from the 
 portlet succeeds. A callback class is needed to make this call. 
 
-### Creating a Callback Class
+### Creating a Callback Class [](id=creating-a-callback-class)
 
 Since Android doesn't allow network requests from its main UI thread, you have 
 to make them from another thread by creating a callback class that extends the 
@@ -275,7 +275,7 @@ thread.
 Now that you have everything you need to retrieve guestbooks from the Guestbook 
 portlet, you're ready to make the server call.
 
-### Making the Server Call
+### Making the Server Call [](id=making-the-server-call)
 
 Calling the server requires that you specify the ID of the site you placed the 
 Guestbook portlet on. You can specify the site's ID in a constant. Create this 
@@ -364,7 +364,7 @@ guestbooks. The `onCreate` method is described further in Android's
 Awesome! Your app is now fully capable of retrieving the portlet's guestbooks. 
 Next, you'll display them in the app's UI.
 
-## Displaying Guestbooks in the Drawer
+## Displaying Guestbooks in the Drawer [](id=displaying-guestbooks-in-the-drawer)
 
 In the `NavigationDrawerFragment` class, the app displays a list of items in the 
 drawer by using a [`ListView`](http://developer.android.com/guide/topics/ui/layout/listview.html) 
@@ -499,7 +499,7 @@ method. Add the following line of code at the end of this method:
 Awesome! You're almost done! There's one final detail to address before running 
 the app. 
 
-## Giving Your App Network Access
+## Giving Your App Network Access [](id=giving-your-app-network-access)
 
 By default, Android apps can't access network connections. This means that even 
 though your app is now capable of retrieving and displaying guestbooks from the 
@@ -519,7 +519,7 @@ though you never put them there manually. Defining your app's permissions,
 however, is one case where you need to manually edit the manifest. Now that
 your app has network access, it's time to run it! 
 
-## Running Your App
+## Running Your App [](id=running-your-app)
 
 Make sure that your portal is running and then run your app as you did before, 
 by clicking the green play button in Android Studio's toolbar. If the emulator 

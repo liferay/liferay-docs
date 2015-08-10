@@ -1,4 +1,4 @@
-# Building the Liferay Mobile SDK
+# Building the Liferay Mobile SDK [](id=building-the-liferay-mobile-sdk)
 
 Once you've deployed the Guestbook portlet to your Liferay instance, you're 
 ready to build the Liferay Mobile SDK. You might be asking yourself, "Why do I 
@@ -13,7 +13,7 @@ you have to build the Mobile SDK. This is the case with any non-core portlet:
 you must build the Liferay Mobile SDK if you want to use it to call your 
 portlet's remote services. Now it's time to get building! 
 
-## Building the Mobile SDK
+## Building the Mobile SDK [](id=building-the-mobile-sdk)
 
 For the Mobile SDK Builder to generate the classes that can call a non-core
 portlet's remote services, those services must be available and accompanied by a

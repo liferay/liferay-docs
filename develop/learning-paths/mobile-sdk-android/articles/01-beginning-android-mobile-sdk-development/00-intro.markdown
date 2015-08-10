@@ -1,4 +1,4 @@
-# Beginning Android Development with the Liferay Mobile SDK
+# Beginning Android Development with the Liferay Mobile SDK [](id=beginning-android-development-with-the-liferay-mobile-sdk)
 
 Getting started with the Liferay Mobile SDK for Android is a straightforward
 process. This series of Learning Path articles walks you through using the

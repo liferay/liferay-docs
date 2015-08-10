@@ -1,4 +1,4 @@
-# Creating the Android Project 
+# Creating the Android Project [](id=creating-the-android-project)
 
 Now that you've built the Liferay Mobile SDK for the Guestbook portlet, you're 
 ready to create the Guestbook Android app. This article walks you through the 
@@ -7,7 +7,7 @@ you'll be ready to leverage the service classes the Mobile SDK Builder generated
 for the Guestbook portlet. First though, you should make sure you've installed 
 Android's development tools. 
 
-## Installing Android Studio 
+## Installing Android Studio [](id=installing-android-studio)
 
 This Learning Path uses Android Studio to develop the Guestbook app. While it's 
 possible to use Eclipse, Android Studio is used here because it's the official 
@@ -22,7 +22,7 @@ with Android Studio:
 Once you get Android Studio up and running, you're ready to create the Guestbook 
 app! 
 
-## Creating the Guestbook App
+## Creating the Guestbook App [](id=creating-the-guestbook-app)
 
 When you start Android Studio, a welcome screen with a Quick Start menu appears.
 Click on *Start a new Android Studio project* in the Quick Start menu. Android
@@ -114,7 +114,7 @@ for more information on the project view.
 Well done! You've successfully created the initial Guestbook app and know how to 
 access its files in Android Studio. Now you're ready to run it.
 
-## Running the Guestbook App
+## Running the Guestbook App [](id=running-the-guestbook-app)
 
 Even though your app doesn't do much yet, Android Studio created enough of its 
 basic structure to let you run it. You'll run the app in Android Studio's

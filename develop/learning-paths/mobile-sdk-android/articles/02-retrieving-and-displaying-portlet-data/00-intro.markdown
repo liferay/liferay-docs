@@ -1,4 +1,4 @@
-# Retrieving and Displaying Portlet Data with the Mobile SDK
+# Retrieving and Displaying Portlet Data with the Mobile SDK [](id=retrieving-and-displaying-portlet-data-with-the-mobile-sdk)
 
 When developing Android apps with the Liferay Mobile SDK, retrieving and 
 displaying portlet data is often the first piece of functionality to add. If you 

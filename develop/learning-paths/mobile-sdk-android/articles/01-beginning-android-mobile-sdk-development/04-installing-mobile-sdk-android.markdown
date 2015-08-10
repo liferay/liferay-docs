@@ -1,4 +1,4 @@
-# Installing the Liferay Mobile SDK for Android
+# Installing the Liferay Mobile SDK for Android [](id=installing-the-liferay-mobile-sdk-for-android)
 
 You must install the Liferay Mobile SDK in your Android app so that it can
 interact with the Guestbook portlet. The Mobile SDK you built for the Guestbook
@@ -8,7 +8,7 @@ classes and methods required to call Liferay's built-in remote services. This
 article shows you how to do both. When you finish, you'll be ready to retrieve
 guestbooks and their entries from the portal.
 
-## Installing the Guestbook Mobile SDK
+## Installing the Guestbook Mobile SDK [](id=installing-the-guestbook-mobile-sdk)
 
 The Mobile SDK Builder generated two separate JAR files in your
 `liferay-mobile-sdk-android-6.2.0.22` directory: 
@@ -28,7 +28,7 @@ directory. (The default location for your Android app's directory is
 `AndroidStudioProjects/LiferayGuestbook`.) That's it! Next, you'll install the
 rest of the Mobile SDK. 
 
-## Installing the Liferay Mobile SDK
+## Installing the Liferay Mobile SDK [](id=installing-the-liferay-mobile-sdk)
 
 To add the rest of the Mobile SDK, you need to edit your app's `build.gradle` 
 file. Gradle is the build system used by Android Studio. Note that your project 
@@ -71,7 +71,7 @@ link highlighted in a red box:
  
 Great! Now you're ready to test your Mobile SDK installation. 
 
-## Verifying the Mobile SDK Installation
+## Verifying the Mobile SDK Installation [](id=verifying-the-mobile-sdk-installation)
 
 To check your Mobile SDK installation, first open your project's `MainActivity` 
 class in Android Studio. It's located in the `java` folder's 
