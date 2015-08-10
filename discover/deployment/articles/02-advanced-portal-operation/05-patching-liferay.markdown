@@ -12,15 +12,9 @@ A hot fix is provided to a customer when a customer contacts Liferay about an
 issue, and Liferay's support team--working with the customer--determines that
 the problem is indeed an issue with the product that needs to be fixed. Support
 fixes the bug and provides a hot fix to the customer immediately. This is a
-short-term fix that solves the issue for the customer as quickly as possible. 
-
-On a regular schedule, these hot fixes are bundled together into fix packs. Fix
-packs are provided to all of Liferay's customers and are component-based. This
-means any issues with the content management system will be bundled together
-separately from issues with another component, such as the message boards. This
-lets you determine which patches are critical and which are not, based on your
-usage. Of course, if Liferay issues a security advisory, that's something you're
-always going to want to patch. 
+short-term fix that solves the issue for the customer as quickly as possible. On 
+a regular schedule, these hot fixes are bundled together into fix packs. Fix 
+packs are provided to all of Liferay's customers. 
 
 Now that you know what patching is all about, let's check out the tool. 
 
