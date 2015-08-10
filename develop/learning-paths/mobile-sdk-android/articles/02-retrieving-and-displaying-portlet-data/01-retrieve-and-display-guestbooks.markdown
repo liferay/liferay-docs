@@ -430,15 +430,29 @@ is one of Android's default layouts and is suitable in cases where each list
 item is only a single string. Using a default layout also means that you don't 
 have to write your own layout file. Second is the array of hardcoded `"Section
 *"` strings. You'll replace this shortly. The `setAdapter` method sets the
-adapter to the `ListView`.
+adapter to the `ListView`. The `onCreateView` method then finishes by setting 
+the currently selected list item in the UI and returning the `ListView`. 
 
-The `onCreateView` method then finishes by setting the currently selected list 
-item in the UI and returning the `ListView`. Now that you understand the basics 
-of how `onCreateView` works, you'll change it to display guestbooks from the
-Guestbook portlet. 
++$$$
 
-Begin by declaring the following variable and its accompanying getter method in 
-the `NavigationDrawerFragment` class: 
+**Note:** You may have noticed that Android Studio's generated code uses the 
+deprecated class 
+[`ActionBarDrawerToggle`](https://developer.android.com/reference/android/support/v4/app/ActionBarDrawerToggle.html) 
+to create the navigation drawer. The preferred way to create a navigation drawer 
+is with the 
+[`NavigationView`](http://developer.android.com/reference/android/support/design/widget/NavigationView.html) 
+class, which is part of the new 
+[Android Design Support Library](http://android-developers.blogspot.com/2015/05/android-design-support-library.html). 
+However, a bug in `NavigationView` requires you to use a workaround when 
+programmatically adding items to the drawer. For this reason, 
+`ActionBarDrawerToggle` is used in this learning path. 
+
+$$$
+
+Now that you understand the basics of how `onCreateView` works, you'll change it 
+to display guestbooks from the Guestbook portlet. Begin by declaring the 
+following variable and its accompanying getter method in the 
+`NavigationDrawerFragment` class: 
 
     private ArrayAdapter _adapter;
     ...
