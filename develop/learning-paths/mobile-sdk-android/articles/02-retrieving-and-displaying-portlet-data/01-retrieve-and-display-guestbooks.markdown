@@ -435,7 +435,7 @@ the currently selected list item in the UI and returning the `ListView`.
 
 +$$$
 
-**Note:** You may have noticed that Android Studio's generated code in 
+**Note:** You may have noticed that the code Android Studio generated in 
 `NavigationDrawerFragment` uses the deprecated class 
 [`ActionBarDrawerToggle`](https://developer.android.com/reference/android/support/v4/app/ActionBarDrawerToggle.html) 
 to create the navigation drawer. The preferred way to create a navigation drawer 
