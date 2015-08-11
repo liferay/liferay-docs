@@ -9,6 +9,8 @@ Liferay Screenlet's Views are specified in its
 This tutorial shows you how to use Views in Android Screenlets. It's
 straightforward; you'll master using Views in no time!
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ImAcH3JHYug" frameborder="0" allowfullscreen></iframe>
+
 Here are some View layer components you should understand: 
 
 - *View*: Implements the UI's behavior. Sometimes referred to as the *Custom

@@ -1,5 +1,7 @@
 # DDL Form Screenlet for iOS [](id=ddlformscreenlet-for-ios)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z1efQ2-LQQc" frameborder="0" allowfullscreen></iframe>
+
 ## Requirements [](id=requirements)
 
 - XCode 6.3.x
@@ -110,10 +112,7 @@ and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 |-----------|-----------|-------------| 
 | `structureId` | `number` | This is the identifier of a data definition for your site in Liferay. To find the identifiers for your data definitions, click *Admin* from the Dockbar and select *Content*. Then click *Dynamic Data Lists* and click the *Manage Data Definitions* button. The identifier of each data definition is in the ID column of the table that appears. |
 | `groupId` | `number` | The site (group) identifier where the record is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
-| `recordSetId` | `number` | The identifier of a dynamic data list. To find the
-identifiers for your dynamic data lists, click *Admin* from the Dockbar and
-select *Content*. Then click *Dynamic Data Lists*. The identifier of each
-dynamic data list is in the ID column of the table that appears. |
+| `recordSetId` | `number` | The identifier of a dynamic data list. To find the identifiers for your dynamic data lists, click *Admin* from the Dockbar and select *Content*. Then click *Dynamic Data Lists*. The identifier of each dynamic data list is in the ID column of the table that appears. |
 | `recordId` | `number` | The identifier of the record you want to show. You can also allow editing of its values. This identifier can be obtained from other methods or delegates. |
 | `repositoryId` | `number` | The identifier of the Documents and Media repository to upload to. If this value is `0`, the default repository for the site specified in `groupId` is used. |
 | `folderId` | `number` | The identifier of the folder where Documents and Media files are uploaded. If this value is `0`, the root folder is used. |

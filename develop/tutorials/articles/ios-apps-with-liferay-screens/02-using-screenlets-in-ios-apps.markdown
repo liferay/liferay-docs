@@ -12,6 +12,8 @@ be a Screenlet master in no time!
 
 ## Inserting and Configuring Screenlets in iOS Apps [](id=inserting-and-configuring-screenlets-in-ios-apps)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1eUzxIKgzWY" frameborder="0" allowfullscreen></iframe>
+
 The first step to using Screenlets in your iOS project is to add a new UIView to
 your project. In Interface Builder, insert a new UIView into your Storyboard or
 XIB file. Figure 1 shows this. 
@@ -87,6 +89,8 @@ Awesome! Now you know how to use Screenlets in your apps. If you need to use
 Screenlets from Objective-C code, follow the instructions in the next section. 
 
 ## Using Screenlets from Objective-C [](id=using-screenlets-from-objective-c)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YuniaiFzRbQ" frameborder="0" allowfullscreen></iframe>
 
 If you want to invoke Screenlet classes from Objective-C code, there is an
 additional header file that you must import. You can import the header file
