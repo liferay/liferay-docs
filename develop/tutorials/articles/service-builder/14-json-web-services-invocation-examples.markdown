@@ -109,7 +109,13 @@ user. It requires a lot more parameters than the one for retrieving a user!
     );
 
 Including the specified `serviceContext` object assigns the *test* tag to the
-newly created user.
+newly created user. Note that you can use JSON syntax to supply values for
+objects and arrays. E.g., to supply a value for the `serviceContext` object, you
+use curly brackets: `{` and `}`. And to supply a value for the `assetTagNames`
+array, you use square brackets: `[` and `]`. Thus, the line
+`serviceContext: {assetTagNames: ['test']}` indicates that `serviceContext` is
+an object containing an array named `assetTagNames` which contains the string
+`test`.
 
 ## Invoking JSON Web Services via JavaScript in a Portlet
 
