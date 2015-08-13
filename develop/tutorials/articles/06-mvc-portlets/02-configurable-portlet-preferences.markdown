@@ -158,13 +158,15 @@ the name of your portlet preference.
 
 +$$$
 
-**Note:** Make sure to declare
-directives for any taglibs your configuration JSP requires, or declare the
-directives in one of the JSPs that the configuration JSP includes. 
+**Note:** Make sure to declare directives for any taglibs your configuration JSP
+requires, or declare the directives in one of the JSPs that the configuration
+JSP includes. 
 
 You may also need to declare the `<portlet:defineObjects />` tag to access
 implicit variables. This tag provides useful portlet variables such as
-*renderRequest*, *portletConfig*, and *portletPreferences*. 
+*renderRequest*, *portletConfig*, and *portletPreferences*. For more information
+about the `<portlet:defineObjects />` tag, see
+[Java's portlet specification documentation](https://portlet-container.java.net/docs/jsr286.html#Tag_Library).
 
 $$$
 
