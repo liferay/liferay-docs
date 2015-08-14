@@ -23,15 +23,14 @@ To add JSP support to your portlet application, follow these steps:
 5. In your project's `bnd.bnd` file, specify the resources that must be included
    in your portlet application bundle.
 
-Let's examine these steps in more detail.
+Next, you'll examine these steps in more detail.
 
 ## Add the portal-service Dependency to Your Project
 
 To add the `portal-service` dependency to your project, edit your project's
-`ivy.xml` file and add the following line instead of the `<dependencies>`
-element:
+`ivy.xml` file and add the following line inside the `<dependencies>` element:
 
-    <dependency org="com.liferay.portal" name="portal-service" rev="7.0.0-nightly"/>
+    <dependency name="portal-service" org="com.liferay.portal" rev="7.0.0-nightly"/>
 
 Save your `ivy.xml` file and then run this command from your project's directory
 to download the dependency:
@@ -43,7 +42,7 @@ project's build path.
 
 ## Make Your Portlet Extend MVCPortlet
 
-Once you've added the `portal-service.jar` dependency to you're project, you can
+Once you've added the `portal-service.jar` dependency to your project, you can
 make your portlet class extend Liferay's `MVCPortlet` class. After performing
 this step by either creating a new portlet class or updating an existing one,
 your portlet class might look like this:
@@ -70,7 +69,7 @@ your portlet class might look like this:
             
     }
 
-Note that the contents of your portlet class can be empty. All of the required
+Note that the contents of your portlet class can be empty. All the required
 functionality is supplied by `MVCPortlet`.
 
 ## Use the @Component Annotation to Specify the Location of Your JSPs
@@ -88,8 +87,8 @@ the default JSP file (the one that's used for the portlet's initial view).
 
 ## Create Your Portlet's JSP Files
 
-Now that you've you've specified locations for your portlet's JSPs, it's time to
-actually created the JSPs in these locations.
+Now that you've specified locations for your portlet's JSPs, it's time to create
+the JSPs in these locations.
 
 In your project's `src` folder, create a JSP file with this path:
 `src/META-INF/resources/view.jsp`. In a bundle, resources are stored in the
@@ -103,13 +102,7 @@ Add the following contents to your `view.jsp` file:
 
     <p>Hello from view.jsp!</p>
 
-This simple example suffices for now. Redeploy your project using the following
-command from your project's directory:
-
-    ant clean deploy
-
-Once you've redeployed your project and verified that everything's working
-correctly, you can start using JSP tags.
+This simple example suffices for now. 
 
 ## In Your Project's bnd.bnd file, Specify Resources to Include
 
@@ -144,7 +137,7 @@ configured, it's time to learn how to use tag libraries.
 ## Using Tag Libraries in Your Application's JSPs
 
 Liferay supports [JSTL](https://jstl.java.net) by default. To use JSTL tags in
-one of your application's JSPs, simply add the following taglib declaration:
+one of your application's JSPs, add the following taglib declaration:
 
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -156,25 +149,19 @@ add the following lines to your `view.jsp` file:
     </c:if>
 
 Then redeploy your portlet bundle and confirm that you can see the message that
-you wrapped inside of the `<c:if>` tag.
+you wrapped inside the `<c:if>` tag.
 
-Liferay also supports the [AlloyUI](http://alloyui.com/) tag library by default.
-To use AUI tags in one of your application's JSPs, simply add the following
-taglib declaration:
++$$$
 
-    <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
-
-Add this declaration your project's `view.jsp` file. To test that it's working,
-add the following line to your `view.jsp` file:
-
-    <p>Hello from <aui:a href="http://alloyui.com">AlloyUI</aui:a>!</p>
-
-Note: Since Liferay supports JSTL and AlloyUI, you don't have to add the JSTL or
-AlloyUI tag library JARs as Ivy dependencies to your project. Just as an
-example, here's how you could add JSTL to your project as a dependency if
-Liferay did not already provide it. Just add the following line to your
-project's `ivy.xml` file, inside of the `<dependencies>` tag:
+Note: Since Liferay supports JSTL, you don't have to add the JSTL tag library
+JAR as Ivy dependencies to your project. Just as an example, here's how you
+could add JSTL to your project as a dependency if Liferay did not already
+provide it. Just add the following line to your project's `ivy.xml` file, inside
+of the `<dependencies>` tag:
 
     <dependency name="jstl" org="javax.servlet" rev="1.2" />
 
-However, this step isn't necessary.
+This step, however, isn't necessary. It would be necessary only for dependencies
+that Liferay does not already provide. 
+
+$$$
