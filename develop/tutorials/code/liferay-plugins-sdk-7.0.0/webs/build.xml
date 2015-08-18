@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="webs" basedir="." default="deploy">
+	<import file="../build-common-plugins.xml" />
+
+	<target name="create">
+		<property name="web.display.name" value="" />
+		<property name="web.name" value="" />
+
+		<gradle-execute task="createWeb">
+			<arg value="--build-file=../sdk.gradle" />
+			<arg value="-PwebDisplayName=${web.display.name}" />
+			<arg value="-PwebName=${web.name}" />
+		</gradle-execute>
+	</target>
+</project>
