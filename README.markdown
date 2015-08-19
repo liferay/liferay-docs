@@ -4,6 +4,8 @@
 <img src="guidelines/images/liferayDeveloperNetworkSmallerEdit7.jpg" alt="Liferay Docs Icon">
 </a>
 
+[![Join the chat at https://gitter.im/rotty3000/blade](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/liferay/liferay-docs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Welcome to Liferay's official documentation project, the home of
 [Liferay Developer Network](https://dev.liferay.com) articles. All articles are
 written in
@@ -38,16 +40,34 @@ GitHub.
 
     - <a href="distribute/new-articles" target="_blank">`distribute/new-articles`</a>
 
-3.  Click the **plus** sign after **new-articles/:**
+3.  Select the liferay-docs branch that matches the Liferay Portal version
+    you're writing about: 
+
+    <table border="1">
+    <tr>
+    <td><b>&nbsp;Branch&nbsp;</b></td>
+    <td><b>&nbsp;Portal Version&nbsp;</b></td>
+    </tr>
+    <tr>
+    <td>&nbsp;master&nbsp;</td>
+    <td>&nbsp;7.0</td>
+    </tr>
+    <tr>
+    <td>&nbsp;6.2.x</td>
+    <td>&nbsp;6.2</td>
+    </tr>
+    </table>
+
+4.  Click the **plus** sign after **new-articles/:**
     ![new articles folder](guidelines/images/new-articles-folder.png)
 
-4.  Write your article and click the
+5.  Write your article and click the
     ![Propose new file](guidelines/images/propose-new-file.png) button, to
     prepare a [pull request](https://help.github.com/articles/using-pull-requests/). 
 
-5.  Send the pull request to the default user `liferay`. 
+6.  Send the pull request to the default user `liferay`. 
 
-6.  Drag your article's images into the pull request's comments to associate
+7.  Drag your article's images into the pull request's comments to associate
     the images with your article. 
 
 Your new article is submitted! Liferay's Knowledge Management team will review
@@ -74,7 +94,7 @@ Discover, Develop, and Deployment sections.
  :------------------------------------------------------------------------------------------------------------------------------------ |
   &nbsp;[**liferay-docs/discover/**](discover)                                                                                         |
   &nbsp;&#8226;&nbsp;[`portal/`](discover/portal) &rarr; [Portal](https://dev.liferay.com/discover/portal)                             |
-  &nbsp;&#8226;&nbsp;[`social-office/`](discover/social-office) &rarr; [Social Office](https://dev.liferay.com/discover/social-office) |
+  &nbsp;&#8226;&nbsp;[`social-office/`](https://github.com/liferay/liferay-docs/tree/6.2.x/discover/social-office) &rarr; [Social Office](https://dev.liferay.com/discover/social-office) |
   &nbsp;&#8226;&nbsp;[`deployment/`](discover/deployment) &rarr; [Deployment](https://dev.liferay.com/discover/deployment)             |
   &nbsp;&#8226;&nbsp;[`reference/`](discover/reference) &rarr; [Reference](https://dev.liferay.com/discover/reference)                 |
   &nbsp;&#8226;&nbsp;[`new-articles/`](discover/new-articles)  (You can submit new articles here for LDN's *Discover* section)         |

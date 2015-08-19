@@ -20,8 +20,10 @@ appears, so that you can fill in your app's details.
 
 ## Specify Your App's Initial Details [](id=specify-your-apps-initial-details)
 
-From this screen you enter your app's basic details. Previous articles [Planning Your App's Distribution](/distribute/publish/-/knowledge_base/publish/planning-your-apps-distribution)
-and [Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app)
+From this screen you enter your app's basic details. Previous articles
+[Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution)
+and
+[Preparing Your App](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app)
 helped prepare you for filling in these details. 
 
 The top portion of the app wizard's initial screen is shown in the figure below.
@@ -111,8 +113,10 @@ you're uploading a bug fix or would like to replace a previous version of your
 app, specify the app entry IDs of the apps to be replaced by the new app in the
 *Supercedes App Entry IDs* field.
 
-Remember to visit the articles [Planning Your App's Distribution](/distribute/publish/-/knowledge_base/publish/planning-your-apps-distribution)
-and [Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app)
+Remember to visit the articles
+[Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution)
+and
+[Preparing Your App](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app)
 for information to help you decide how best to fill in many of these fields. 
 
 Once you've entered all your app's details, click *Next* to get to the screen
@@ -121,8 +125,10 @@ for uploading your app's files.
 ## Upload Your App's Plugin Files [](id=upload-your-apps-plugin-files)
 
 On this screen, you must specify the version of your app and upload its plugin
-files. The article [Planning Your App's Distribution](/distribute/publish/-/knowledge_base/publish/planning-your-apps-distribution)
-guided you in planning your app's versioning scheme. And article [Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app)
+files. The article
+[Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution)
+guided you in planning your app's versioning scheme. And article
+[Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app)
 helped you determine your app's plugin files to upload.  
 
 Upload the different sets of plugin files (variations) to support the different

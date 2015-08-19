@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="hooks" basedir="." default="deploy">
+	<import file="../build-common-plugins.xml" />
+
+	<target name="create">
+		<property name="hook.display.name" value="" />
+		<property name="hook.name" value="" />
+
+		<gradle-execute task="createHook">
+			<arg value="--build-file=../sdk.gradle" />
+			<arg value="-PhookDisplayName=${hook.display.name}" />
+			<arg value="-PhookName=${hook.name}" />
+		</gradle-execute>
+	</target>
+</project>

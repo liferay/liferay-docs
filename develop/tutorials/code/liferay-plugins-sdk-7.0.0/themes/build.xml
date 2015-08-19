@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="themes" basedir="." default="deploy">
+	<import file="../build-common-plugins.xml" />
+
+	<target name="create">
+		<property name="theme.display.name" value="" />
+		<property name="theme.name" value="" />
+
+		<gradle-execute task="createTheme">
+			<arg value="--build-file=../sdk.gradle" />
+			<arg value="-PthemeDisplayName=${theme.display.name}" />
+			<arg value="-PthemeName=${theme.name}" />
+		</gradle-execute>
+	</target>
+</project>
