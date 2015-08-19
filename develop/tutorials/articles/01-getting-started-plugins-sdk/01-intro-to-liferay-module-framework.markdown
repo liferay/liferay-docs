@@ -39,8 +39,8 @@ files. An OSGi bundle is simply a group of Java classes, additional resources
 need not be familiar with OSGi to create plugins for Liferay 7. We'll explain
 all the steps you need to take.
 
-Liferay supports 3 mechanisms for developing and installing plugins into its
-module framework. There are pros and cons to each approach:
+Liferay supports three mechanisms for developing and installing plugins into
+its module framework. There are pros and cons to each approach:
 
 - WAB from traditional Liferay plugin
     - This form is exactly the output of the traditional Liferay SDK: a WAR file
