@@ -38,13 +38,8 @@ Great! Your theme declaration is complete. However, the Portal is not yet
 configured to handle this request. You must create a module that can
 find the portlet that fits the theme's request.
 
-1. Create a generic OSGi module using your favorite third party tool.
-
-    <!-- If we decide to document how to create an OSGi module from scratch, we
-    should point to that documentation here. At the current time, there is no
-    Liferay "recommended" way of doing this. Therefore, I'm assuming that the
-    reader has experience with OSGi development. Pointing to introductory OSGi
-    tutorials (once available) would be very helpful here. -Cody -->
+1. Create a generic OSGi module using your favorite third party tool, or use the
+[Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle). 
 
 2. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. To follow naming conventions, name the class
@@ -143,3 +138,11 @@ $$$
 Lastly, generate the module's JAR file and deploy it to Liferay Portal. Now when
 you assign your layout to a page, the portlet that fulfills the layout's request
 is embedded on the page.
+
+## Related Topics
+
+[Providing Portlets to Manage Requests](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
+
+[Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
+
+[Creating a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/creating-a-portlet-application)

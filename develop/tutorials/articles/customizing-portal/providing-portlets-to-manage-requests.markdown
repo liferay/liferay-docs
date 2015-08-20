@@ -58,13 +58,8 @@ matches your entity and action type. The portal, however, is not yet configured
 to handle this request. You'll need to create a module that can find the correct
 portlet to handle the request.
 
-1. Create a generic OSGi module using your favorite third party tool.
-
-    <!-- If we decide to document how to create an OSGi module from scratch, we
-    should point to that documentation here. At the current time, there is no
-    Liferay "recommended" way of doing this. Therefore, I'm assuming that the
-    reader has experience with OSGi development. Pointing to introductory OSGi
-    tutorials (once available) would be very helpful here. -Cody -->
+1. Create a generic OSGi module using your favorite third party tool, or use the
+[Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle). 
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package. To follow naming conventions, name the class
@@ -125,3 +120,11 @@ Lastly, generate the module's JAR file and deploy it to your portal instance.
 Now a portlet that can handle the entity and action type you specified is used
 when requesting a portlet ID/URL. You can now specify portlet usage without
 hardcoding a specific portlet!
+
+## Related Topics
+
+[Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
+
+[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
+
+[Creating a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/creating-a-portlet-application)
