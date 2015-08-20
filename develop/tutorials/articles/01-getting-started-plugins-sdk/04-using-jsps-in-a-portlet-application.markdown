@@ -1,4 +1,4 @@
-# Using JSPs in a Portlet Application
+# Using JSPs in a Portlet Application [](id=using-jsps-in-a-portlet-application)
 
 In this tutorial, you'll learn how to add JSP support to a portlet application.
 If you haven't yet created a portlet application, please refer to the
@@ -25,7 +25,7 @@ To add JSP support to your portlet application, follow these steps:
 
 Next, you'll examine these steps in more detail.
 
-## Add the portal-service Dependency to Your Project
+## Add the portal-service Dependency to Your Project [](id=add-the-portal-service-dependency-to-your-project)
 
 To add the `portal-service` dependency to your project, edit your project's
 `ivy.xml` file and add the following line inside the `<dependencies>` element:
@@ -40,7 +40,7 @@ to download the dependency:
 If you're working in Eclipse, add the `lib/portal-service.jar` file to your
 project's build path.
 
-## Make Your Portlet Extend MVCPortlet
+## Make Your Portlet Extend MVCPortlet [](id=make-your-portlet-extend-mvcportlet)
 
 Once you've added the `portal-service.jar` dependency to your project, you can
 make your portlet class extend Liferay's `MVCPortlet` class. After performing
@@ -72,7 +72,7 @@ your portlet class might look like this:
 Note that the contents of your portlet class can be empty. All the required
 functionality is supplied by `MVCPortlet`.
 
-## Use the @Component Annotation to Specify the Location of Your JSPs
+## Use the @Component Annotation to Specify the Location of Your JSPs [](id=use-the-component-annotation-to-specify-the-location-of-your-jsps)
 
 Now you need to specify the location of your portlet's JSP files. To do so, add
 the following two portlet properties to the `@Component` annotation's list of
@@ -85,7 +85,7 @@ The `javax.portlet.init-param.template-path` property sets the path to the JSP
 view templates. The `javax.portlet.init-param.view-template` sets the path to
 the default JSP file (the one that's used for the portlet's initial view).
 
-## Create Your Portlet's JSP Files
+## Create Your Portlet's JSP Files [](id=create-your-portlets-jsp-files)
 
 Now that you've specified locations for your portlet's JSPs, it's time to create
 the JSPs in these locations.
@@ -104,7 +104,7 @@ Add the following contents to your `view.jsp` file:
 
 This simple example suffices for now. 
 
-## In Your Project's bnd.bnd file, Specify Resources to Include
+## In Your Project's bnd.bnd file, Specify Resources to Include [](id=in-your-projects-bnd-bnd-file-specify-resources-to-include)
 
 Your last step is to specify the resources that must be included in your portlet
 application bundle.
@@ -120,7 +120,7 @@ the contents of your project's `src/META-INF/resources` folder, along with your
 project's classes, when your portlet application bundle JAR file is generated.
 The bnd tool is included in Liferay's Plugins SDK.
 
-## Verifying Your Application's JSP Configuration
+## Verifying Your Application's JSP Configuration [](id=verifying-your-applications-jsp-configuration)
 
 To check that your application's JSPs are correctly configured, redeploy your
 portlet bundle and confirm that the contents of your JSP is displayed by your
@@ -134,7 +134,7 @@ you configured) is displayed by the portlet:
 Great! Now that you've verified that your application's JSPs are correctly
 configured, it's time to learn how to use tag libraries.
 
-## Using Tag Libraries in Your Application's JSPs
+## Using Tag Libraries in Your Application's JSPs [](id=using-tag-libraries-in-your-applications-jsps)
 
 Liferay supports [JSTL](https://jstl.java.net) by default. To use JSTL tags in
 one of your application's JSPs, add the following taglib declaration:
@@ -166,7 +166,7 @@ that Liferay does not already provide.
 
 $$$
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
 

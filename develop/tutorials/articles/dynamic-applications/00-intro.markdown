@@ -1,4 +1,4 @@
-# Dynamic Applications
+# Dynamic Applications [](id=dynamic-applications)
 
 One of the great strengths of Liferay is the sheer number of out of the box
 applications. This gives it great flexibility in what it can do, which is why

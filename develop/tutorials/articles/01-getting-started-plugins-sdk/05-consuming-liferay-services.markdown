@@ -1,4 +1,4 @@
-# Consuming Liferay Services
+# Consuming Liferay Services [](id=consuming-liferay-services)
 
 Liferay's services are registered in Liferay's module framework. They are
 created using the
@@ -37,7 +37,7 @@ Suppose you need to invoke two Liferay services, `UserLocalService` and
 whereas `BookmarksFolderLocalService` is provided by a module. Let's take these
 services as examples and follow the steps specified above.
 
-## Add Required Dependencies
+## Add Required Dependencies [](id=add-required-dependencies)
 
 `UserLocalService` is provided by Liferay's `portal-service.jar` file, so make
 sure that it's declared as a dependency in your project's `ivy.xml` file.
@@ -49,7 +49,7 @@ file and add the following lines inside the `<dependencies>` element:
     <dependency org="com.liferay.portal" name="portal-service" rev="7.0.0-nightly"/>
     <dependency org="com.liferay" name="com.liferay.bookmarks.api" rev="1.0.0-SNAPSHOT"/>
 
-## Declare the Service Beans and Their Getters and Setters
+## Declare the Service Beans and Their Getters and Setters [](id=declare-the-service-beans-and-their-getters-and-setters)
 
 We'll assume that you're developing a portlet application and you want to
 declare the `UserLocalService` and `BookmarksFolderLocalService` beans in your
@@ -78,7 +78,7 @@ And you should generate getter and setter methods like this:
         _userLocalService = userLocalService;
     }
 
-## Add the @Reference Annotations
+## Add the @Reference Annotations [](id=add-the-reference-annotations)
 
 Add the `@Reference` annotation to the setter methods:
 
@@ -94,7 +94,7 @@ Add the `@Reference` annotation to the setter methods:
         _userLocalService = userLocalService;
     }
 
-## Obtain the Service Beans and Invoke the Services
+## Obtain the Service Beans and Invoke the Services [](id=obtain-the-service-beans-and-invoke-the-services)
 
 In this example, you obtain service instances and invoke the services from the
 portlet's `render` method. But you can do this from any method from the class
@@ -104,7 +104,7 @@ where you've declared the service beans and their getters and setters:
     int bookmarksFolderCount =
             getBookmarksFolderLocalService().getBookmarksFoldersCount();
 
-## (Optional) Display the Results of Your Service Invocations
+## (Optional) Display the Results of Your Service Invocations [](id=optional-display-the-results-of-your-service-invocations)
 
 It's not necessary to display the results of your service invocations. However,
 if you want to do so, using request attributes is an easy way to make the
@@ -202,7 +202,7 @@ Great! Now you've seen how easy the
 [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services) component 
 model makes invoking services in Liferay.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/creating-a-portlet-application)
 

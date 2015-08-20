@@ -1,4 +1,4 @@
-# Introduction 
+# Introduction [](id=introduction)
 
 Liferay 7 introduces a whole new paradigm: component-based development. This
 architecture gives developers more flexibility than ever before. Not only are

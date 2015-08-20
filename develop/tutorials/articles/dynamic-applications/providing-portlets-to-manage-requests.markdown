@@ -1,10 +1,10 @@
-# Providing Portlets to Manage Requests
+# Providing Portlets to Manage Requests [](id=providing-portlets-to-manage-requests)
 
 In this tutorial, you'll learn how to declare an entity type and action for a
 desired function, and you'll create a module that finds the correct application
 (portlet) to use based on those given parameters.
 
-## Specifying a Desired Portlet Behavior
+## Specifying a Desired Portlet Behavior [](id=specifying-a-desired-portlet-behavior)
 
 To find the portlet you need for your particular request, you'll use the
 *Portlet Providers* framework. The first thing you'll need to do is call the
@@ -104,7 +104,7 @@ Now a portlet that can handle the entity and action type you specified is used
 when requesting a portlet ID/URL. You can now specify portlet usage without
 hardcoding a specific portlet!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
 

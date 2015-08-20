@@ -1,4 +1,4 @@
-# Understanding Liferay's Module Framework
+# Understanding Liferay's Module Framework [](id=understanding-liferays-module-framework)
 
 At a basic level, Liferay Portal is a web application that runs on a Java EE
 application server or servlet container. In Liferay 6.2 and prior versions,
@@ -17,7 +17,7 @@ extracted into modules and installed using Liferay's module framework. Read on
 to learn how to create Liferay 7 applications and how to manage Liferay's module
 framework.
 
-## Creating Liferay Plugins
+## Creating Liferay Plugins [](id=creating-liferay-plugins)
 
 Prior to Liferay 7, Liferay supported several different types of plugins:
 
@@ -106,7 +106,7 @@ its module framework. There are pros and cons to each approach:
     - Cons:
         - Only supported by Liferay's Module Framework
 
-## Using the Felix Gogo Shell
+## Using the Felix Gogo Shell [](id=using-the-felix-gogo-shell)
 
 To interact with Liferay's module framework, you can use Felix Gogo shell. To
 access it, use a telnet client to connect to port `11311` of your Liferay
@@ -167,7 +167,7 @@ framework
 
 For more information about the Gogo shell, please visit [http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html](http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html).
 
-## Using the Felix Web Console
+## Using the Felix Web Console [](id=using-the-felix-web-console)
 
 Another way to interact with Liferay's module framework is via the Felix Web
 Console. To access Liferay's Felix Web Console if you're running Liferay
@@ -238,6 +238,6 @@ such as Configuration, Log Service, Licenses, and System Information.
 <!-- This was great, Jesse! I think, however, that some screenshots are in
 order for the web console, to illustrate what you mention in the text. -Rich -->
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)

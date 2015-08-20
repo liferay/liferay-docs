@@ -1,4 +1,4 @@
-# Publishing Liferay Services
+# Publishing Liferay Services [](id=publishing-liferay-services)
 
 To publish a service to Liferay, the service must be registered in Liferay's
 module framework. The easiest way to do this is to create them as [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
@@ -13,7 +13,7 @@ invoked from Liferay's Felix Gogo shell. You can find the code referenced by
 this tutorial in complete projects on Github here:
 [https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets](https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets). The specific projects referenced by this tutorial are `example-api`, `example-service`, and `example-command`.
 
-## Creating a Service API Bundle
+## Creating a Service API Bundle [](id=creating-a-service-api-bundle)
 
 Follow the steps below to create a service bundle. These steps are similar to
 the ones explained in the [Creating a Simple Bundle]() tutorial. To
@@ -105,7 +105,7 @@ Since you've only published an interface, there's not much else to test at this
 point. Next, you'll implement the interface in a separate bundle to provide some
 functionality.
 
-## Creating a Service Implementation Bundle
+## Creating a Service Implementation Bundle [](id=creating-a-service-implementation-bundle)
 
 Now that you've created a service API bundle, it's time to create a service
 implementation bundle. This bundle contains an implementation of the
@@ -244,7 +244,7 @@ Now you've implemented the interface published by your service API bundle but
 you still need a client to invoke the service. Next, you'll create such a
 client.
 
-## Creating a Service Client Bundle
+## Creating a Service Client Bundle [](id=creating-a-service-client-bundle)
 
 The service client that you'll create takes the form of a command which can be
 invoked from Liferay's Felix Gogo shell. This command invokes the service
@@ -447,7 +447,7 @@ Great! You've learned how to create service API, service implementation, and
 service client bundles. You've also learned how to create a specific kind of
 service client bundle: the kind that be invoked from Liferay's Felix Gogo shell.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
 
