@@ -239,3 +239,5 @@ such as Configuration, Log Service, Licenses, and System Information.
 order for the web console, to illustrate what you mention in the text. -Rich -->
 
 ## Related Topics
+
+[Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)

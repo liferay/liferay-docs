@@ -201,3 +201,11 @@ For reference, here's the complete `ExampleServiceConsumerPortlet` class:
 Great! Now you've seen how easy the
 [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services) component 
 model makes invoking services in Liferay.
+
+## Related Topics
+
+[Creating a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/creating-a-portlet-application)
+
+[Using JSPs in a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/using-jsps-in-a-portlet-application)
+
+[Publishing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/publishing-liferay-services)

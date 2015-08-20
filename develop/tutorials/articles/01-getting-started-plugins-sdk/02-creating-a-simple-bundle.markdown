@@ -173,3 +173,9 @@ simple bundle using the Plugins SDK.
 
 Excellent! You've learned how to create simple bundles that can be deployed to
 Liferay's module framework.
+
+## Related Topics
+
+[Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
+
+[Publishing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/publishing-liferay-services)

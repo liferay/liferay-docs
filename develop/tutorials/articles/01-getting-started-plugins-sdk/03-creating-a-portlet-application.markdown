@@ -215,3 +215,11 @@ module framework: it speeds up development since it's much faster to update a
 bundle running in Liferay's module framework than it is to redeploy a
 traditional Liferay plugin which must be redeployed to Liferay's application
 server.
+
+## Related Topics
+
+[Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
+
+[Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
+
+[Using JSPs in a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/using-jsps-in-a-portlet-application)

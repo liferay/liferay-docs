@@ -165,3 +165,11 @@ This step, however, isn't necessary. It would be necessary only for dependencies
 that Liferay does not already provide. 
 
 $$$
+
+## Related Topics
+
+[Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
+
+[Creating a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/creating-a-portlet-application)
+
+[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)

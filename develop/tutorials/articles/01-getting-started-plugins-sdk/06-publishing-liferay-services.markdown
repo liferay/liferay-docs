@@ -446,3 +446,11 @@ command to invoke your service:
 Great! You've learned how to create service API, service implementation, and
 service client bundles. You've also learned how to create a specific kind of
 service client bundle: the kind that be invoked from Liferay's Felix Gogo shell.
+
+## Related Topics
+
+[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
+
+[Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
+
+[Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
