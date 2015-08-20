@@ -1,9 +1,9 @@
-# Leveraging Template Editors for Notifications 
+# Leveraging Template Editors for Notifications [](id=leveraging-template-editors-for-notifications)
 
 Designer lets you leverage the FreeMarker editor to customize templates for your 
 workflow notifications. A FreeMarker editor comes bundled with Developer Studio.
 
-## Creating Notifications 
+## Creating Notifications [](id=creating-notifications)
 
 To access the template editor, click on the node of your choice and select the
 *Notifications* sub-tab in the *Properties* view. Create a new notification by
@@ -168,7 +168,7 @@ for the Project Management task we created:
 In the next section you'll see a list of workflow and service context content
 you can use when creating a customized script or template. 
 
-## Workflow Context and Service Context Variables
+## Workflow Context and Service Context Variables [](id=workflow-context-and-service-context-variables)
 
 A context variable provides a uniform variable to insert into your templates and
 scripts. When executed, a context variable is automatically deleted and replaced

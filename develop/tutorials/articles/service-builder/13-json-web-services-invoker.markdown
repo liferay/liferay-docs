@@ -1,4 +1,4 @@
-## JSON Web Services Invoker [](id=json-web-services-invoker)
+# JSON Web Services Invoker [](id=json-web-services-invoker)
 
 Using JSON web services is easy: you send a request that defines a service
 method and parameters, and you receive the result as a JSON object. As easy as
@@ -19,7 +19,7 @@ Invoker* does just that!
 Liferay's JSON Web Service Invoker helps you optimize your use of JSON Web
 Services. In the following sections, we'll show you how. 
 
-### A Simple Invoker Call [](id=a-simple-invoker-call)
+## A Simple Invoker Call [](id=a-simple-invoker-call)
 
 The Invoker is accessible from the following fixed address:
 
@@ -80,7 +80,7 @@ user's contact ID using the syntax `$user.contactId`.
 Next, see how you can use nested service calls to join information from two
 related objects. 
 
-### Nesting Service Calls [](id=nesting-service-calls)
+## Nesting Service Calls [](id=nesting-service-calls)
 
 With nested service calls, you can magically bind information from related
 objects together in a JSON object. You can call other services within the same
@@ -125,7 +125,7 @@ $$$
 Next, let's talk about filtering object properties so that only the properties
 you need are returned when you invoke a service. 
 
-### Filtering Results [](id=filtering-results)
+## Filtering Results [](id=filtering-results)
 
 Many of Liferay Portal's model objects are rich with properties. If you only
 need a handful of an object's properties for your business logic, making a web
@@ -151,7 +151,7 @@ white-list properties, you simply place the properties in square brackets (e.g.,
 
 Let's talk about batching calls next. 
 
-### Batching Calls [](id=batching-calls)
+## Batching Calls [](id=batching-calls)
 
 When we nested service calls earlier, the intent was to invoke multiple services
 with a single HTTP request. Using a single request for multiple service calls is
@@ -177,7 +177,7 @@ more information, please refer to the
 [Invoking Services Using Skinny JSON Provider](/develop/tutorials/-/knowledge_base/6-2/invoking-services-using-skinny-json-provider) 
 tutorial.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Registering JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/registering-json-web-services)
 

@@ -167,7 +167,7 @@ built its WSDD and deployed your portlet project. Once you've created remote web
 services for your application, you'll want to know how to invoke them. To learn
 how, please see the [Invoking Remote Services](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder) tutorial.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Writing Local Service Classes]](/develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
 
