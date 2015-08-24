@@ -1,26 +1,16 @@
 # Using Image Sprites [](id=using-image-sprites)
 
-You can decorate your site's theme and apps with terrific icons and small images
-that load quickly. They can be for new and existing portlets and for replacing
-any of Liferay's default icons, to introduce your own flair and style. Custom
-icons are the icing on the cake: an integral part of a site's presentation. 
+You might already know that every image on a site generates an HTTP request.
+Page load time is impacted every time the browser has to negotiate another HTTP
+request. The more image files a page has, the slower the page loads. The way to
+combat this is to combine all the images into one larger image sprite. This way,
+there's only one HTTP request for images, and you can refer to the individual
+images by their coordinates in the sprite. This technique helps you avoid
+traffic jams so that your site loads icons as efficiently as possible. 
 
-As you've learned how to create icons, you might have seen mentioned the term
-*sprite* and wondered "What is a sprite? And why would I use one?" It's not the
-delicious cold refreshing beverage that cinema advertisements pressure you to
-buy; it's an image sprite: a group of images combined next to each other into a
-single image file. 
-
-You might already know that each of a site's image files requires its own HTTP
-request to load to a page. The more image files a page has, the slower the page
-loads. HTTP requests for loading image files can pile up fast, slowing down your
-site's performance. Image sprites can help you avoid such 5 O'clock traffic jams
-so that your site loads icons as efficiently as possible. 
-
-If this has peaked your interest, it's time to learn how to use image sprites in
-Liferay portal. Liferay uses image sprites throughout its default themes and in
-its built-in portlets. You can replace or add to these images and use image
-sprites in your own custom portlets by following these steps: 
+Normally, you have to create these sprites on your own, but Liferay can generate
+them for you automatically. If this has piqued your interest, it's time to learn
+how! 
 
 1.  Create image `.png` files for your icons and small images. For an image
     to qualify as an image sprite in Liferay, its dimensions must not exceed
@@ -55,11 +45,11 @@ that meet Liferay's image sprite criteria and it generates a
 Image sprite files are generated and deployed to the following locations:
 
 - Theme plugin sprite files are stored in file
-`<PORLET-WEB-CONTEXT>/sprite/images/<IMAGE-FOLDER-NAME>/_sprite.png`
+`[PORTLET-WEB-CONTEXT]/sprite/images/<IMAGE-FOLDER-NAME>/_sprite.png`
 - Custom portlet plugin sprite images are stored in file
-`<PORLET-WEB-CONTEXT>/sprite/icons/_sprite.png`.
+`[PORLTET-WEB-CONTEXT]/sprite/icons/_sprite.png`.
 - Built-in portlet sprite files are stored in file
-`<PORTAL-WEB-CONTEXT>/sprite/html/<IMAGE-FOLDER-PATH>/_sprite.png`
+`[PORTAL-WEB-CONTEXT]/sprite/html/<IMAGE-FOLDER-PATH>/_sprite.png`
 
 You've mastered the art of making sprites so that you can kick your portal's
 design and performance up a notch--BAM! 
