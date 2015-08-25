@@ -8,6 +8,8 @@ Liferay Screenlet's Themes are specified in its
 [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
 This tutorial shows you how to use Themes in your iOS Screenlets. 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vgwDZJcs3-Y" frameborder="0" allowfullscreen></iframe>
+
 To install a Theme in your iOS app's Screenlet, you have two options, depending 
 on how the Theme has been published:
 

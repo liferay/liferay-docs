@@ -4,6 +4,8 @@ Liferay Screens supports push notifications in Android apps. To use
 them, you must configure some APIs and modify your app to consume and/or
 produce push notifications. This tutorial shows how to do all these things. 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4LjutX0dcRw" frameborder="0" allowfullscreen></iframe>
+
 ## Configuring to Use Liferay Push Notifications [](id=configuring-to-use-liferay-push-notifications)
 
 Your first step is to create and configure a Google project to use Google Cloud
