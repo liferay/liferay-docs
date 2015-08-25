@@ -32,6 +32,15 @@ automatically starts when the installation finishes. The first time you run
 Sync, you need to configure it to connect and sync with your portal. The 
 configuration steps are shown below, after the Mac installation instructions. 
 
++$$$
+
+**Note:** You can upgrade previous versions of the desktop Liferay Sync client 
+to version 3.0. When doing so, however, you need to set up your account again in 
+the new version of the client. Prior to upgrading, it's also recommended that 
+you shut down Liferay Sync and then delete your local Sync folder. 
+
+$$$
+
 Liferay Sync for Mac is packaged in a DMG file. Double-clicking on a DMG mounts
 it as a disk image and opens a window showing the image's contents. To install 
 Sync, drag the Liferay Sync icon to the Applications folder. Once it's 
