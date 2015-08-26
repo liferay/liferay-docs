@@ -445,7 +445,7 @@ class, which is part of the new
 [Android Design Support Library](http://android-developers.blogspot.com/2015/05/android-design-support-library.html). 
 A bug in `NavigationView`, however, requires you to use a workaround when 
 programmatically adding items to the drawer. For this reason, 
-`ActionBarDrawerToggle` is used in this learning path. 
+`ActionBarDrawerToggle` is used in this Learning Path. 
 
 $$$
 
