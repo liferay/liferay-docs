@@ -132,3 +132,18 @@ do anything if a `ServiceAccessPolicyManager` implementation is present.
 If the service access policy module is disabled, however, the
 `AuthenticatedAccessControlPolicy` provides a fallback that still requires
 authenticated access for web services.
+
+## Summary
+
+Great! Now you know service access policies can restrict access to Liferay's web
+services. Custom service access policies can be created by portal
+administrators. They are applied by the portal's token authenticator, e.g., by
+OAuth. The service access policies attached to an application define the
+services that can be invoked by the application. For example, a Sync service
+access policy could be created that defines all of the services that the Sync
+application needs to invoke. Then this service access policy could be attached
+to the Sync application on OAuth.
+
+## Related Topics
+
+[Service Security Layers]()
