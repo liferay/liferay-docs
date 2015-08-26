@@ -36,6 +36,8 @@ stores will be added in the future. Stored user credentials can be used to
 automatically log the user in to subsequent sessions. To do this, you can use 
 the method `SessionContext.loadSessionFromStore()`.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kEZEahTzuck" frameborder="0" allowfullscreen></iframe>
+
 ## Module [](id=module)
 
 - Auth
@@ -61,6 +63,8 @@ For more details, see the [Configuring Portal Settings](/portal/-/knowledge_base
 section of the User Guide. 
 
 ### OAuth Authentication [](id=oauth-authentication)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u5-_VVAyY-0" frameborder="0" allowfullscreen></iframe>
 
 If you want to use OAuth authentication, you first need to install the 
 [OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 

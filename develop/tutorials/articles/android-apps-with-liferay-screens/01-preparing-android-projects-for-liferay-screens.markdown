@@ -9,6 +9,8 @@ hosted in jCenter. This tutorial specifies Screens's requirements, shows you all
 three configuration methods, and shows how to set up communication with Liferay.
 Let the preparations begin! 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ABxCUUg7zhs" frameborder="0" allowfullscreen></iframe>
+
 ## Requirements [](id=requirements)
 
 Liferay Screens for Android includes the Component Library (the Screenlets) and 
@@ -135,6 +137,8 @@ import a Liferay Screens class (like Login Screenlet).
 Next, you'll set up communication with Liferay. 
 
 ## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QEJPEicgle8" frameborder="0" allowfullscreen></iframe>
 
 Configuring communication between Screenlets and Liferay is easy. In your
 project's `res/values` folder, create a new file called `server_context.xml`.

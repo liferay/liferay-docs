@@ -9,6 +9,8 @@ It is very straightforward to use Screenlets. This tutorial shows you how to
 insert Screenlets into your android app and configure them. You'll be a
 Screenlet master in no time! 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TZ09fbV9UuU" frameborder="0" allowfullscreen></iframe>
+
 First, in Android Studio's visual layout editor or your favorite editor, open
 your app's layout XML file and insert the Screenlet in your activity or fragment
 layout. The following screenshot, for example, shows the Login Screenlet

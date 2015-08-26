@@ -1,4 +1,4 @@
-## Registering JSON Web Services [](id=registering-json-web-services)
+# Registering JSON Web Services [](id=registering-json-web-services)
 
 Liferay's developers use a tool called *Service Builder* to build services. When
 you build services with Service Builder, all remote-enabled services (i.e.,
@@ -51,7 +51,7 @@ services. Keep in mind that Liferay's developers use this same mechanism. This
 is why Liferay Portal's remote service are exposed as JSON web services
 out-of-the-box. 
 
-### Registering Plugin JSON Web Services [](id=registering-plugin-json-web-services)
+## Registering Plugin JSON Web Services [](id=registering-plugin-json-web-services)
 
 Let's say you have a portlet named `SupraSurf` that has some services. And you
 decide to expose them as remote services. After enabling the `remote-service`
@@ -101,7 +101,7 @@ conveniently enabled by default, so you don't have to configure them.
 Next, let's learn how to form a mapped URL for the remote service so we can
 access it. 
 
-### Mapping and Naming Conventions [](id=mapping-and-naming-conventions)
+## Mapping and Naming Conventions [](id=mapping-and-naming-conventions)
 
 You can form the mapped URL of an exposed service by following the naming
 convention below: 
@@ -150,7 +150,7 @@ associated with the user's current portal session.
 
 Next, we'll learn to how to *list* JSON web services available from our portal. 
 
-### Listing Available JSON Web Services [](id=listing-available-json-web-services)
+## Listing Available JSON Web Services [](id=listing-available-json-web-services)
 
 To see which service methods are registered and available for use, open your
 browser to the following address: 
@@ -180,7 +180,7 @@ control the visibility of methods using annotations at the method level.
 
 Let's find out how to ignore a specific method. 
 
-### Ignoring a Method [](id=ignoring-a-method)
+## Ignoring a Method [](id=ignoring-a-method)
 
 To keep a method from being exposed as a service, annotate the method with the
 following option:
@@ -191,7 +191,7 @@ Methods with this annotation don't become part of the JSON Web Service API.
 
 Let's learn how to define custom HTTP method names and URL names. 
 
-### HTTP Method Name and URL [](id=http-method-name-and-url)
+## HTTP Method Name and URL [](id=http-method-name-and-url)
 
 At the method level, you can define custom HTTP method names and URL names. Just
 use an annotation like this one: 
@@ -223,7 +223,7 @@ of the default class name `surfboard`.
 Next, we'll show you a different approach to exposing your methods as we discuss
 manual registration. 
 
-### Manual Registration Mode [](id=manual-registration-mode)
+## Manual Registration Mode [](id=manual-registration-mode)
 
 Up to now, it is assumed that you want to expose most of your service methods,
 while hiding some specific methods (the *blacklist* approach).
@@ -242,6 +242,6 @@ Now only the `addBoard` method and any other method annotated with
 `@JSONWebService` will be part of the JSON Web Service API; all other methods
 of this service will be excluded from the API.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)

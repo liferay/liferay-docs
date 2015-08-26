@@ -1,4 +1,4 @@
-# Designing a Kaleo Workflow Definition
+# Designing a Kaleo Workflow Definition [](id=designing-a-kaleo-workflow-definition)
 
 To illustrate several different workflow strategies, here are diagrams of each
 of the workflows that ship with the Kaleo Web plugin. You'll find these
@@ -301,7 +301,7 @@ the *Discover* documentation on [Creating New Workflow Definitions](/discover/po
 Since we've been using Designer's Workflow Diagram mode, let's go over some of
 its features. 
 
-## Workflow Diagram Features 
+## Workflow Diagram Features [](id=workflow-diagram-features)
 
 Developer Studio provides you with additional features within the workflow
 diagram. Below we list some of these features; they can greatly enhance your
@@ -331,7 +331,7 @@ workflow designing experience.
 You've probably noticed the *Properties* and *Outline* views below your workflow
 diagram. Let's explore them next. 
 
-## Properties View and Outline View 
+## Properties View and Outline View [](id=properties-view-and-outline-view)
 
 The *Properties* and *Outline* views contain more cool features you can use to
 customize your workflow; they're located on the bottom and bottom right of
@@ -376,7 +376,7 @@ focus.
 Developer Studio's *Properties* and *Outline* views make customizing your
 workflow easier than ever! 
 
-## Viewing Workflow Definition XML Source 
+## Viewing Workflow Definition XML Source [](id=viewing-workflow-definition-xml-source)
 
 The workflow diagram view of your workflow definition is convenient; sometimes
 you'll also want to edit and review your workflow definition's XML source code.

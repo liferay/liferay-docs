@@ -44,6 +44,8 @@ Liferay Screens for iOS requires the following software:
 
 ## Configuring Your Project with CocoaPods [](id=configuring-your-project-with-cocoapods)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/usRo6bCpR_U" frameborder="0" allowfullscreen></iframe>
+
 To prepare your iOS 8.0 (or above) project for Liferay Screens, add the
 following line to your project's `Podfile` (create this file if it doesn't yet
 exist):
@@ -177,6 +179,8 @@ Great! You've completed installing Liferay Screens and its dependencies in your
 project. It's time to configure its communication with your Liferay instance. 
 
 ## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5aCELB1Lq80" frameborder="0" allowfullscreen></iframe>
 
 Configuring communication between Screenlets and Liferay is easy. Liferay
 Screens uses a property list (`.plist`) file to access your Liferay instance.

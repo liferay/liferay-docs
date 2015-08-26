@@ -1,4 +1,4 @@
-# Creating a Workflow Definition with Kaleo Designer for Java
+# Creating a Workflow Definition with Kaleo Designer for Java [](id=creating-a-workflow-definition-with-kaleo-designer-for-java)
 
 Developer Studio makes it easy for you to write custom business logic that
 enhances Kaleo workflows. Learn to create your own workflow in Developer Studio
@@ -10,7 +10,7 @@ definition for a software ticketing process: view it in full
 Are you ready to roll? Let's get started! 
 
 
-![Figure 1: Check out the adventures of Liferay's mascots, Ray and Alloy, found at [http://www.liferay.com/ray](http://www.liferay.com/ray).](../../images/kaleo-15.png)
+![Figure 1: Check out the adventures of Liferay's mascots, Ray and Alloy at http://www.liferay.com/ray](../../images/kaleo-15.png)
 
 1.  Create new workflow definitions by going to *File* &rarr; *New* &rarr;
     *Liferay Kaleo Workflow*. Alternatively, you can select *Liferay Kaleo
@@ -77,7 +77,7 @@ The graphical workflow diagram appears, which is convenient for editing the
 workflow. Graphical features and toolbars allow you to customize your workflow
 definition. The *Palette* view is one of Designer's most commonly used tools.
 
-## Palette and Floating Palette 
+## Palette and Floating Palette [](id=palette-and-floating-palette)
 
 The *Palette* lets you graphically customize your workflow with nodes and
 transitions. In addition, you can choose different behaviors for your mouse

@@ -1,4 +1,4 @@
-# Workflow Enabling Entities
+# Workflow Enabling Entities [](id=workflow-enabling-entities)
 
 Enabling your app's entities to support workflow is so easy, you could do it in
 your sleep (but don't try). Workflow enabled (Workflown? Workflowed?
@@ -11,7 +11,7 @@ to the database, it needs to send the entity through Liferay's workflow, and it
 needs to handle the workflow status of the entity when it's returned by the
 workflow. 
 
-## Creating a Workflow Handler
+## Creating a Workflow Handler [](id=creating-a-workflow-handler)
 
 Workflow handlers are your application's way of interacting with the workflow
 back end. They must implement the `WorkflowHandler` interface.  Liferay's
@@ -98,7 +98,7 @@ after it.
 
 To fully implement workflow, the service layer also needs updating.
 
-## Updating the Service Layer for Workflow
+## Updating the Service Layer for Workflow [](id=updating-the-service-layer-for-workflow)
 
 There are four database fields your entity should include for workflow
 purposes. Add them to each entity’s `service.xml` file:
@@ -192,7 +192,7 @@ After following these steps, an entity is fully workflow enabled. Your view
 layer, however, likely requires some work to make sure that only approved
 entities are presented to the app's users.
 
-## Updating the View Layer
+## Updating the View Layer [](id=updating-the-view-layer)
 
 Make sure that you account for the workflow status in your app's UI. This
 involves creating a new *finder* method that accounts for workflow status,
@@ -229,7 +229,7 @@ Now you know how to workflow enable any entities you create. Keep exploring
 Liferay's workflow capabilities in this tutorial, by learning to develop
 your own workflow definitions, and use scripting to make them more robust.
 
-##  Related Topics
+##  Related Topics [](id=related-topics)
 
 [Approving Content with Workflow](develop/learning-paths/-/knowledge_base/6-2/approving-content-with-workflow)
 

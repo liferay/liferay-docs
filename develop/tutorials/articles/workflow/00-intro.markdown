@@ -1,4 +1,4 @@
-# Workflow
+# Workflow [](id=workflow)
 
 Applications accepting user created content usually need to support an approval
 process so that low quality, objectionable, or otherwise undesirable data is
@@ -17,7 +17,7 @@ Designer* that lets you create and modify portal workflows in your browser. With
 Kaleo Designer for Java, you can design and publish Kaleo workflows from Liferay
 Developer Studio! 
 
-![Figure 2: Kaleo Designer for Java gives you a powerful environment for designing, modifying, and publishing Kaleo workflows.](../../images/kaleo-designer-for-java.png)
+![Figure 1: Kaleo Designer for Java gives you a powerful environment for designing, modifying, and publishing Kaleo workflows.](../../images/kaleo-designer-for-java.png)
 
 Additionally, if you have a Liferay Portal Enterprise Subscription, you have
 access to the Kaleo Designer directly from Liferay Portal (*Control Panel* &rarr;

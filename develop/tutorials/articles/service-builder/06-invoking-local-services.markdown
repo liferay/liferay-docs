@@ -245,7 +245,7 @@ and
 [Invoking Liferay Services from Your Application](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-from-your-application)
 tutorials.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Local Services](/develop/tutorials/-/knowledge_base/6-2/writing-local-services)
 
