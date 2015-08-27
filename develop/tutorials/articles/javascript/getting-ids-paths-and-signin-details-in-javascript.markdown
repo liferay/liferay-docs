@@ -1,41 +1,35 @@
 # Getting IDs, Paths, and Sign-in Details in JavaScript [](id=getting-ids-paths-and-sign-in-details-in-javascript)
 
-The scene is set: the developer wakes up in an unfamiliar portal. She realizes
-she's in a portlet on some page with other portlets. The styling of the buttons
-and windows around her resemble the handiwork of the design team from the second
-floor; but the designers are nowhere to be found. Suddenly, a user, who looks
-like her friend Stanley, enters the portlet and starts pressing buttons and
-pointing at things. That's odd; he didn't even say hello? Is he really Stanley?
-Who is this user? How is the developer ever going to familiarize herself with
-this new portal?!
-
-She can use Liferay's `ThemeDisplay` JavaScript object!
+In Java, developers are used to being able to find lots of context information
+at runtime. You can learn about what user is browsing your application, what
+page it's on, what site it's in, and lots more. Wouldn't it be great if you
+could access that same information in JavaScript? You can! You can use Liferay's
+`ThemeDisplay` JavaScript object!
 
 It's a part of the `Liferay` global object that's automatically available to you
 in Liferay at runtime. You can refer to the object as `Liferay.ThemeDisplay`.
-The `ThemeDisplay` object provides information on so many aspects of a portal.
+The `ThemeDisplay` object provides information on many aspects of a portal.
 It can identify the portal instance, the current user, the user's language, and
 the user's navigational context. It can tell you the paths to a portlet's
 scripts and images, a theme's images and files, and a portal's main folder. And
-it let's you know whether a user is signed in and whether the user is being
-impersonated. You can quickly assess your portal surroundings with
-`ThemeDisplay`. 
+it lets you know if a user is signed in and if the user is being impersonated.
+You can quickly assess your portal surroundings with `ThemeDisplay`. 
 
 This tutorial describes some of the most commonly used `ThemeDisplay` methods
 for getting IDs, paths, and user sign-in details. 
 
 ## Retrieving IDs [](id=retrieving-ids)
 
-Using the `ThemeDisplay` methods below, you can IDs of various portal elements: 
+Using the `ThemeDisplay` methods below, you can grab IDs of various portal
+elements: 
 
 **getCompanyId:** Returns the
 [company ID](/participate/liferaypedia/-/wiki/Main/Company+ID). 
 
-**getLanguageId:** Returns the language ID of the user. 
+**getLanguageId:** Returns the user's language ID. 
 
 **getScopeGroupId:** Returns the
-[group ID](/participate/liferaypedia/-/wiki/Main/Group+ID) of where the user has
-navigated to in the portal. 
+[group ID](/participate/liferaypedia/-/wiki/Main/Group+ID) of the current site. 
 
 **getUserId:** Returns the
 [user's ID](/participate/liferaypedia/-/wiki/Main/User+ID).
@@ -63,16 +57,16 @@ portlet's JavaScript source files.
 directory. 
 
 Now that you know how to retrieve paths to Liferay's deployed entities, you can
-next learn how to get information about a user's login.
+next learn how to get information about the current user. 
 
 ## Retrieving Login Information [](id=retrieving-login-information)
 
-Here are a couple methods related to a user's login: 
+Here are a couple methods related to the current user. 
 
-**isImpersonated:** Returns `true` if the user currently logged in is being
-impersonated. Authorized administrative users can
+**isImpersonated:** Returns `true` if the current user is being impersonated.
+Authorized administrative users can
 [impersonate](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel#user-management)
-(act as) another user to test that user's account. 
+act as another user to test that user's account. 
 
 **isSignedIn:** Returns `true` if the user is logged in to the portal. 
 
@@ -86,10 +80,10 @@ method:
         alert('Hello Guest.')
     }
 
-The example above alerts the user with a personalized greeting, if he's signed 
-in, otherwise it defaults to a guest greeting. Although this is a basic example,
-it shows how you can easily define unique user experiences with the 
-`ThemeDisplay` object. 
+The example above alerts a signed in user with a personalized greeting.
+Otherwise, it defaults to a guest greeting. Although this is a basic example, it
+shows how you can easily define unique user experiences with the `ThemeDisplay`
+object. 
 
 ## Related Topics [](id=related-topics)
 

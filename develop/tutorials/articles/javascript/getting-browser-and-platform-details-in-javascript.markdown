@@ -1,11 +1,12 @@
 # Getting Browser and Platform Details in JavaScript [](id=getting-browser-and-platform-details-in-javascript)
 
-As you design apps, consider the user's browser and platform. You can tailor an
-app's UI to features and limitations of user environments. You might, for
-example, display one set of controls to a user on browser/platform A and a
-different set to a user on browser/platform B. The `Liferay.Browser` object's
-methods can determine a user's browser, operating system, and device type. This
-tutorial describes these methods and shows how to use them. 
+As you design apps, you have to consider the user's browser and platform. Often,
+you find that you must tailor an app's UI to the features and limitations of
+user environments. You might, for example, display one set of controls to a user
+on browser/platform A and a different set to a user on browser/platform B. The
+`Liferay.Browser` object's methods can determine a user's browser, operating
+system, and device type. This tutorial describes these methods and shows how to
+use them. 
 
 First, you can determine a browser's type and version. 
 
