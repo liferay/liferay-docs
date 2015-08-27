@@ -20,7 +20,7 @@ called `EntryWorkflowHandler`. Populate it with the following code:
 
         @Override
         public String getType(Locale locale) {
-            return LanguageUtil.get(locale,  "model.resource" + CLASS_NAME);
+            return ResourceActionsUtil.getModelResource(locale, getClassName());
         }
 
         @Override
@@ -84,7 +84,7 @@ with the following code:
 
         @Override
         public String getType(Locale locale) {
-            return LanguageUtil.get(locale,  "model.resource" + CLASS_NAME);
+            return ResourceActionsUtil.getModelResource(locale, getClassName());
         }
 
         @Override

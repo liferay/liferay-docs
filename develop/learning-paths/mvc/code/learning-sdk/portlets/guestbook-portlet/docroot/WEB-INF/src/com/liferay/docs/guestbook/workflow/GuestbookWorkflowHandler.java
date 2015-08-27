@@ -1,18 +1,18 @@
 package com.liferay.docs.guestbook.workflow;
 
-import java.io.Serializable;
-import java.util.Locale;
-import java.util.Map;
-
 import com.liferay.docs.guestbook.model.Guestbook;
 import com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.language.LanguageUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.workflow.BaseWorkflowHandler;
 import com.liferay.portal.kernel.workflow.WorkflowConstants;
+import com.liferay.portal.security.permission.ResourceActionsUtil;
 import com.liferay.portal.service.ServiceContext;
+
+import java.io.Serializable;
+import java.util.Locale;
+import java.util.Map;
 
 public class GuestbookWorkflowHandler extends BaseWorkflowHandler {
 
@@ -24,7 +24,7 @@ public String getClassName() {
 
 @Override
 public String getType(Locale locale) {
-    return LanguageUtil.get(locale,  "model.resource" + CLASS_NAME);
+	return ResourceActionsUtil.getModelResource(locale, getClassName());
 }
 
 @Override

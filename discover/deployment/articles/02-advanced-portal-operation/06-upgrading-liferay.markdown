@@ -368,12 +368,13 @@ supported application server.
 
 Running a manual upgrade is almost as easy as upgrading a bundle: 
 
-   1. Verify your application server is supported by Liferay. You can do this by
-      viewing the appropriate document on the Customer Portal (EE), in chapter
-      14 (because there are installation instructions for it), or on liferay.com
-      (CE).  If your application server isn't supported by Liferay 6.2, *do not
-      continue!* You'll need to upgrade or switch to a supported application
-      server first. 
+   1. Verify that your application server is supported by Liferay. You can do
+      this by viewing the appropriate document on the Customer Portal (EE), in
+      the [Deployment](/discover/deployment) documentation (if there are
+      installation instructions for your app server, then it's supported), or on
+      liferay.com (CE). If your application server isn't supported by Liferay
+      6.2, *do not continue!* You'll need to upgrade or switch to a supported
+      application server first. 
 
    2. Obtain the Liferay Portal .war file and the dependency .jars archive. 
 
@@ -384,11 +385,13 @@ Running a manual upgrade is almost as easy as upgrading a bundle:
 
    5. Copy the new versions of Liferay's dependency .jars to a location on your
       server's class path, overwriting the ones you already have for the old
-      version of Liferay. This location is documented for your application
-      server in chapter 14. 
+      version of Liferay. This location is documented in the
+      [Deployment](/discover/deployment) documentation, in the section that
+      corresponds to your app server. 
 
    6. Deploy the new Liferay .war file to your application server. Follow the
-      deployment instructions in chapter 14.
+      deployment instructions in the appropriate section of the
+      [Deployment](/discover/deployment) documentation.
 
    7. Start (or, if your app server has a console from which you've installed
       the .war, restart) your application server. Watch the console as Liferay

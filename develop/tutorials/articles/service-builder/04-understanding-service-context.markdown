@@ -1,4 +1,4 @@
-# ServiceContext [](id=servicecontext)
+# Understanding ServiceContext [](id=servicecontext)
 
 The `ServiceContext` class is a parameter class used for passing contextual
 information for a service. Using a parameter class lets you consolidate many
@@ -105,7 +105,7 @@ portletRequest)`, you can assure that your Expando bridge attributes are set on
 the `ServiceContext`. Expandos are the back-end implementation of custom fields
 for entities in Liferay.
 
-## Creating and Populating a Service Context in JavaScript
+## Creating and Populating a Service Context in JavaScript [](id=creating-and-populating-a-service-context-in-javascript)
 
 Liferay's API can be invoked in languages other than Java, such as Beanshell,
 Groovy, JavaScript, Python, and Ruby. Some methods of Liferay's API require or
@@ -149,7 +149,7 @@ services: click on *JavaScript Example* to see how to invoke the web service via
 JavaScript, click on *curl Example* to see how to invoke the web service via
 curl, or click on *URL example* to see how to invoke the web service via a URL.
 
-![Figure x: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../images/jsonws-simple-example.png)
+![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../images/jsonws-simple-example.png)
 
 To learn more about Liferay's JSON web services, please see the
 [JSON Web Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/json-web-services)
@@ -213,7 +213,7 @@ add it to a page, and click on the *Create User* button. Then navigate to the
 Control Panel, click on *Users and Organizations*, edit the newly created user,
 click on *Categorization*, and confirm that the specified tag has been applied.
 
-![Figure x: To test invoking a Liferay JSON web service, deploy the Sample JSONWS Portlet, add it to a page, click on *Create User*, and confirm that the tag *test* has been applied to the newly created user.](../../images/jsonws-simple-example.png)
+![Figure 2: To test invoking a Liferay JSON web service, deploy the Sample JSONWS Portlet, add it to a page, click on *Create User*, and confirm that the tag *test* has been applied to the newly created user.](../../images/jsonws-simple-example.png)
 
 **Important:** To invoke Liferay web services via JavaScript, your JavaScript
 context must include AlloyUI. In the Sample JSONWS Portlet, the JavaScript code
@@ -341,8 +341,10 @@ information for your services. Understanding how `ServiceContext` is used in
 Liferay helps you determine when and how to use `ServiceContext` in your own
 Liferay application development.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Security and Permissions](develop/tutorials/-/knowledge_base/6-2/security-and-permissions)
+[Creating Local Service Classes](/develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
 
-[Invoking Local Services](develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+
+[Security and Permissions](/develop/tutorials/-/knowledge_base/6-2/security-and-permissions)

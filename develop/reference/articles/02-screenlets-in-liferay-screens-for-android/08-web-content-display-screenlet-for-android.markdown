@@ -1,18 +1,20 @@
-# WebContentDisplayScreenlet for Android [](id=webcontentdisplayscreenlet-for-android)
+# Web Content Display Screenlet for Android [](id=webcontentdisplayscreenlet-for-android)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JVxfjAnCve8" frameborder="0" allowfullscreen></iframe>
 
 ## Requirements [](id=requirements)
 
-- Android SDK 4.0 (API Level 14) or above
+- Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 CE or EE
 
 ## Compatibility [](id=compatibility)
 
-- Android SDK 4.0 (API Level 14) and above
+- Android SDK 4.0 (API Level 15) and above
 
 ## Features [](id=features)
 
 The `WebContentDisplayScreenlet` shows web content elements in your app, 
-rendering the web content's inner HTML. The screenlet also supports i18n, 
+rendering the web content's inner HTML. The Screenlet also supports i18n, 
 rendering contents differently depending on the device's locale.
 
 ## Module [](id=module)
@@ -21,7 +23,7 @@ rendering contents differently depending on the device's locale.
 
 ## Views [](id=views)
 
-The Default view uses a standard `WebView` to render the HTML.
+The Default View uses a standard `WebView` to render the HTML.
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -39,7 +41,7 @@ section of the Liferay User Guide.
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The layout used to show the view. |
+| `layoutId` | `@layout` | The layout used to show the View. |
 | `groupId` | `number` | The ID of the site (group) where the asset is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
 | `articleId` | `string` | The ID of the web content to display. You can find this ID by clicking *Edit* on the web content in the portal. |
 | `javascriptEnabled` | `boolean` | Enables support for JavaScript. Disabled by default. |

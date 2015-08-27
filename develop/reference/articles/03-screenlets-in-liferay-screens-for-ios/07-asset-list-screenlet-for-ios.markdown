@@ -1,11 +1,14 @@
-# AssetListScreenlet for iOS [](id=assetlistscreenlet-for-ios)
+# Asset List Screenlet for iOS [](id=assetlistscreenlet-for-ios)
 
 ## Requirements [](id=requirements)
 
 - XCode 6.3.x
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
-- [Liferay Screens Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal)
+- Liferay Screens Compatibility Plugin (
+  [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+  [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
+  depending on your portal edition). 
 
 ## Compatibility [](id=compatibility)
 
@@ -14,7 +17,7 @@
 ## Features [](id=features)
 
 The `AssetListScreenlet` can be used to show lists of [assets](/tutorials/-/knowledge_base/6-2/asset-framework) 
-from a Liferay instance. For example, you can use the screenlet to show a 
+from a Liferay instance. For example, you can use the Screenlet to show a 
 scrollable collection of assets. It also implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
 with configurable page size. The `AssetListScreenlet` can show assets of the 
 following classes: 
@@ -55,11 +58,11 @@ The `AssetListScreenlet` also supports i18n in asset values.
 
 ## Themes [](id=themes)
 
-The Default theme uses a standard `UITableView` to show the scrollable list. 
-Other themes may use a different component, such as `UICollectionView` or 
+The Default Theme uses a standard `UITableView` to show the scrollable list. 
+Other Themes may use a different component, such as `UICollectionView` or 
 others, to show the items.
 
-![`AssetListScreenlet` using the Default theme.](../../images/screens-ios-assetlist.png)
+![`AssetListScreenlet` using the Default (`default`) Theme.](../../images/screens-ios-assetlist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 

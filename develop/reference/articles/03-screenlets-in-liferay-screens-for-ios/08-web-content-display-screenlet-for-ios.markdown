@@ -1,4 +1,6 @@
-# WebContentDisplayScreenlet for iOS [](id=webcontentdisplayscreenlet-for-ios)
+# Web Content Display Screenlet for iOS [](id=webcontentdisplayscreenlet-for-ios)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ODfb_4igvCs" frameborder="0" allowfullscreen></iframe>
 
 ## Requirements [](id=requirements)
 
@@ -13,7 +15,7 @@
 ## Features [](id=features)
 
 The `WebContentDisplayScreenlet` shows web content elements in your app, 
-rendering the inner HTML of the web content. The screenlet also supports i18n, 
+rendering the inner HTML of the web content. The Screenlet also supports i18n, 
 rendering contents differently depending on the device's current locale. 
 
 ## Module [](id=module)
@@ -22,10 +24,10 @@ rendering contents differently depending on the device's current locale.
 
 ## Themes [](id=themes)
 
-The Default theme uses a standard `UIWebView` to render the HTML. Other themes 
+The Default Theme uses a standard `UIWebView` to render the HTML. Other Themes 
 may use a different component, such as iOS 8's. 
 
-![The `WebContentDisplayScreenlet` using the Default theme](../../images/screens-ios-webcontent.png)
+![The `WebContentDisplayScreenlet` using the Default (`default`) Theme](../../images/screens-ios-webcontent.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
