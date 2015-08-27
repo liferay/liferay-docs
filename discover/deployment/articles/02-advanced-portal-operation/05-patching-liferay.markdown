@@ -71,7 +71,7 @@ you're ready to download and install patches. You can install patches manually
 or automatically. For automatic patch installation, you need to set up the 
 patching tool agent. This is presented next.
 
-### Configuring the Patching Tool Agent
+### Configuring the Patching Tool Agent [](id=configuring-the-patching-tool-agent)
 
 The patching tool agent automatically installs downloaded patches on server 
 startup. For the agent to start with your server, you need to set the `javaagent` 
