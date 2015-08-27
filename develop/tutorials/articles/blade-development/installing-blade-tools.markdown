@@ -1,30 +1,30 @@
-# Installing BLADE Tools
+# Installing Blade Tools
 
-There are two ways to install BLADE Tools. You can clone the repository and
-build BLADE Tools from source, or you can install them through the 
-[Java Package Manager](http://pm4j.org)(JPM). 
+There are two ways to install Blade Tools. You can clone the repository and
+build Blade Tools from source, or you can install them through the 
+[Java Package Manager](http://pm4j.org) (JPM). 
 
-Either way, before downloading or building the BLADE Tools, you need to install
+Either way, before downloading or building the Blade Tools, you need to install
 [JPM](http://jpm4j.org/#!/md/install). The exact process
 will vary depending on your OS.
 
-## Using the Java Package Manager to Download BLADE Tools
+## Using the Java Package Manager to Download Blade Tools
 
 If you'd rather clone the repository and build the tools from source, skip to
 the next section.
 
 After you have JPM installed, download the `blade.cli.jar`
 [here](https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/blade.cli/generated/distributions/executable/blade.cli.jar).
-At the time of this writing the BLADE CLI tool is the only one available. More
+At the time of this writing the Blade CLI tool is the only one available. More
 tools, such as a plugin migration tool (for migrating plugins from a 6.2 Plugins
-SDK to a BLADE module), will be made available in the future. 
+SDK to a module for 7.0), will be made available in the future. 
 
 Next, install the downloaded JAR using the following terminal command:
 
     (sudo) jpm install -fl [Downloads Directory]/blade.cli.jar
 
-Now the BLADE CLI tool is installed, and the `blade` executable is in your path.
-Test it's usage by typing `blade` into the terminal. If BLADE Tools are
+Now the Blade CLI tool is installed, and the `blade` executable is in your path.
+Test its usage by typing `blade` into the terminal. If Blade Tools are
 installed correctly and on your path, you'll see the *MAIN OPTIONS* and
 *Available sub-commands* for the installed tools:
 
@@ -56,9 +56,9 @@ installed correctly and on your path, you'll see the *MAIN OPTIONS* and
                                             project in Liferay IDE 
 
 
-## Installing BLADE Tools from the Source Code
+## Installing Blade Tools from the Source Code
 
-Instead of downloading the BLADE tools from JPM, you can download the repository
+Instead of downloading the Blade Tools from JPM, you can download the repository
 and build the JAR locally. You first need to clone the [Blade Tools
 GitHub Repository](https://github.com/gamerson/blade.tools). 
 
@@ -71,8 +71,8 @@ Next, use JPM to install the JAR:
 
     (sudo) jpm install -fl blade.cli/generated/distributions/executable/blade.cli.jar
 
-Now the BLADE CLI tool is installed, and the `blade` executable is in your
-path. Test it's usage by typing `blade` into the terminal. If BLADE Tools are
+Now the Blade CLI tool is installed, and the `blade` executable is in your
+path. Test its usage by typing `blade` into the terminal. If Blade Tools are
 installed correctly and on your path, you'll see the *MAIN OPTIONS*, followed
 by the *Available sub-commands* for the installed tools:
 
@@ -102,5 +102,11 @@ by the *Available sub-commands* for the installed tools:
       migrate                     -
       open                        -         Opens or imports a file or
 
-Now you have BLADE Tools installed, and you probably want to learn how to
-create prpjects using the tools. We have a [tutorial that shows just that](LINK).
+Now you have Blade Tools installed, and you probably want to learn how to
+create projects using the tools. We have a [tutorial that shows just that](LINK).
+
+## Related Topics
+
+[Crerating a Simple bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
+
+[Using JSPs in a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/using-jsps-in-a-portlet-application)

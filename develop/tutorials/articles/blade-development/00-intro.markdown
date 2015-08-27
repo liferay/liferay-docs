@@ -47,9 +47,15 @@ There are two basic approaches you can take when using the BLADE project to
 develop and build your plugins. You can just copy existing projects from the
 BLADE repository, refactor them and modify them to suit your use case, and then
 build and deploy them to Liferay's module framework. If this is the approach
-you choose, see our tutorial on 
-[manually creating projects from BLADE templates](LINK). Alternatively, you can 
-use BLADE Tools to build plugins from scratch, using a subcommand and
-specifying options to properly set up your project during its creation. The
-first step in this case is to [install BLADE Tools](LINK).
+you choose, see our tutorial on manually creating projects from BLADE
+templates. Alternatively, you can use Blade Tools to build plugins from
+scratch, using a subcommand and specifying options to properly set up your
+project during its creation. The first step in this case is to 
+[install Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-tools).
+
+## Related Topics
+
+[Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
+
+[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
 
