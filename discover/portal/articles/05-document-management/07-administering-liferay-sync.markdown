@@ -31,8 +31,8 @@ all the logic used by Liferay Sync. As of Liferay 6.2, Sync processing is
 instead in the Sync Connector plugin. This plugin is therefore required for 
 using Sync in your Liferay 6.2 installations. While an older version of the 
 plugin (*Sync Connector Web*) is installed by default in Liferay Portal 6.2 
-bundles, you need to install the new Sync Connector plugin for Sync to work 
-properly. The new Sync clients work only with the latest Sync Connector plugin. 
+bundles, you need to upgrade to the new Sync Connector plugin for Sync to work 
+properly. The new Sync clients work only with the latest Sync Connector plugin. Older Sync 1.x clients will not be able to connect to the new Sync Connector plugin. 
 The install process for Sync Connector is the same as that of any other Liferay 
 plugin. Once you've installed it, you're ready to use Sync. 
 
@@ -116,13 +116,12 @@ You can use the same procedures to enable one or more sites for Sync that have
 been disabled. The only difference is that you must click *Enable Sync Site* or 
 *Enable Sync Sites* instead.
 
-Also, each site enabled for Sync must have a Documents and Media portlet. If 
-there's no Documents and Media portlet on a site selected for syncing, users 
+Also, each site enabled for Sync should have a Documents and Media portlet on one of the site pages. If 
+there's no Documents and Media portlet on a site page selected for syncing, users 
 get a *The requested resource was not found* error when they try to use the 
 *Open Website* link from their Sync menus. 
 
-Sync Admin's Sites tab also lets you set the default file permissions for the 
-sites enabled for Sync. Setting the default file permissions works similarly to 
+Sync Admin's Sites tab also lets you set the default file permissions for files uploaded via Sync clients. Setting the default file permissions works similarly to 
 enabling or disabling sites for Sync. To set the default file permissions for a 
 single site, click its drop-down arrow to the right, and then click 
 *Default File Permissions*. This opens a window that lets you select the default 
@@ -141,7 +140,7 @@ about what exactly they do.
 ### Understanding Default File Permissions
 
 Default file permissions don't behave how you might expect them to. They control 
-*only* what other users in a site can do to documents in that site; they don't 
+*only* the permissions for new files uploaded through the Sync client; they don't 
 control upload permission or restrict document owners (the user who originally 
 uploaded a document) in any way. For example, even if you set a site's default 
 file permissions to View Only, that site's users can still upload new documents 
