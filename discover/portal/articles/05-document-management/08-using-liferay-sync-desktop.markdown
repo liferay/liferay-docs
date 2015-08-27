@@ -23,7 +23,7 @@ need to install the Sync client on your desktop device.
 ## Installing the Desktop Liferay Sync Client [](id=installing-the-desktop-liferay-sync-client)
 
 The installation steps for Liferay Sync on Windows and Mac OS differ only 
-slightly. Regardless of platform, you need administrator privileges on your 
+slightly. All Windows versions and Mac OS X 10.9 and lower requires administrator privileges on your 
 machine. You can download the desktop client from the 
 [Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
 Upon launching the Windows application installer, you're prompted to choose an 
@@ -44,8 +44,7 @@ $$$
 Liferay Sync for Mac is packaged in a DMG file. Double-clicking on a DMG mounts
 it as a disk image and opens a window showing the image's contents. To install 
 Sync, drag the Liferay Sync icon to the Applications folder. Once it's 
-installed, run it from your Applications folder. When you first run Sync for 
-Mac, you're prompted for administrator credentials for your machine so that the 
+installed, run it from your Applications folder. If you're running Mac OS X 10.9 or lower, you will be prompted for administrator credentials for your machine so that the 
 Finder icon/context menu tool can be installed. This prompt only appears when 
 the tool is installed or upgraded.
 
@@ -63,7 +62,7 @@ search for sites in the *Search* bar above the site list. Check the checkbox for
 each site you want to sync with and then click *Proceed*. 
 
 You now need to specify the local folder that you want to sync with your portal.
-This folder is created for you if it doesn't exist. By default, this folder is
+The Sync client will create the specified folder so the folder cannot already exist on your machine. By default, this folder is
 in your user documents folder and is named after your portal. For example, since
 the portal in the screenshots below is running locally, the Sync folder is named
 *localhost*. You can also see that this folder is located in the machine's user
