@@ -6,9 +6,9 @@ to be complicated. AlloyUI's `aui:col` and `aui:row` tags simplify organizing
 portlet content. This tutorial shows you how to use these tags in your portlet
 JSPs. 
 
-You can follow these steps to add rows and columns of content to your portlet: 
+Here's how to add rows and columns of content to your portlet: 
 
-1.  Create, or edit, the JSP file in which you want to organize content. 
+1.  Create or edit the JSP file in which you want to organize content. 
 
 2.  Reference the AlloyUI taglib `aui` by adding the following directive: 
 
@@ -26,7 +26,7 @@ You can follow these steps to add rows and columns of content to your portlet:
 
 4.  Insert and configure `aui:col` tags between each row's starting and ending
     `aui:row` tags. You can define each column's width using a `width` or `span`
-    attribute. The `width` attribute takes precedance over the `span` attribute,
+    attribute. The `width` attribute takes precedence over the `span` attribute
     if they're both specified in a column. 
 
 	The `width` value represents a percentage of the row's width. A `span` value
@@ -36,7 +36,7 @@ You can follow these steps to add rows and columns of content to your portlet:
 
     +$$$
 
-    Note, before a column is rendered, every `width` attribute is automatically
+    Note: before a column is rendered, every `width` attribute is automatically
     converted to a `span`. The `width` attribute's value is divided by `100`,
     multiplied by `12`, and rounded to the nearest whole number. For example,
     the `width` value in column `<aui:col width="33">` is divided by `100` and
