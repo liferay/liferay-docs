@@ -1,111 +1,77 @@
 # Styling the Content Div
 
-Like the Wrapper, the Content `<div>` is used to position and set the dimensions 
-for the theme's content. Currently the Content `<div>` is pressed right up 
-agianst the edge of the Wrapper, giving the theme a claustrophobic feel. It's 
-time to give the content a little breathing room.
+The Content `<div>` is used to position and set the dimensions for the theme's 
+content. Currently the Content `<div>` is pressed right up agianst the edge of 
+the Wrapper, giving the theme a claustrophobic feel. It's time to give the 
+content a little breathing room.
 
 1. Add the following code to `custom.css` below the *Content* placeholder:
 
-        #content{
-        background-color:$bkColor;
-        padding: 0px 20px;
+        #content {
+            background-color: $bkColor;
+            padding: 0px 20px;
         
-        /* ---------- Carousel ---------- */
-        .carousel {
-        margin-top:-10px;
-        z-index:0;
-        }
+            /* ---------- Carousel ---------- */
+            .carousel {
+                z-index: 0;
+            }
         
-        /*------Activities------*/
-            #imgWrapper{
-            min-width:100px; 
-            max-width:800px; 
-            margin-left:auto; 
-            margin-right:auto; 
-            padding-top:15px;
-        
-                .img{
-                max-height: 30%;
-                max-width: 30%;
-                @include border-radius(90px);
-                    &:hover{
-                    opacity:0.5;
-                    }
+            /*------Activities------*/
+            .img:hover {
+                opacity: 0.5;
+            }
+
+            /*------Out of This World------*/
+            #columnLeft { 
+                font-size: 36px; 
+                line-height: 60px;   
+                text-align: center;
+                color: $themeMainColor%;
+            }
+                
+            #columnRight {
+                font-size: 16px;
+                line-height: 30px;            
+                color: #696969;
+            }
+
+            /*------Reserve Button------*/
+            #reserveBtnWrapper {
+                margin-left: auto;
+                margin-right: auto;
+                padding-bottom: 25px;
+                width: 300px;
+
+                #reserveBtn {
+                    background-color: #00C4FB;
+                    border-radius: 10px;                    
+                    color: #FFF;
+                    font-size: 1.5em;
+                    height: 62px;
+                    margin: 30px;
+                    padding: 10px 0;
+
+                        &:hover {
+                            background-color: $themeMainColor;
+                        }
+
+                        a {
+                            border-radius: 10px;                        
+                            color: #FFF;
+                            padding: 9px 10px;
+                            text-decoration: none;
+                        }
                 }
             }
 
-        /*------Out of This World------*/
-        #columnWrapper{
-        overflow: visible; 
-        max-width:812px; 
-        height:200px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        
-            #columnLeft{
-            float: left; 
-            font-size: 36px; 
-            border-right: 1px solid black; 
-            width: 30%; 
-            max-height: 700px; 
-            min-width:100px; 
-            line-height: 60px; 
-            text-align: center
+            /*--Portlet styles---*/
+            .portlet {
+                .portlet-title {
+                    img {
+                        display: none;
+                    }
+                }
             }
-                
-            #columnRight{
-            float: right; 
-            font-size:16px; 
-            width:67%;
-            max-height: 700px; 
-            line-height:30px
-            }
-        }
-        
-        #reserveBtnWrapper{
-        margin-left: auto;
-        margin-right: auto;
-        width: 300px;
-        padding-bottom: 25px;
-        }
-
-        #reserveBtn{
-        background-color: #00C4FB;
-        color: white;
-        margin-left: 32px;
-        font-size: 1.5em;
-        height: 62px;
-        border-radius: 10px;
-        border: none;
-        padding:10px 0px;
-    
-        &:hover{
-        background-color: #df5946;
-        }
-
-        a{
-        text-decoration:none;
-        color:white;
-        padding: 9px 10px;
-        border-radius:10px;
-        }
-        }
-
-        /*--Portlet styles---*/
-        .portlet{
-        
-           .portlet-title{
-        
-               img{
-               display:none;
-               }
-           }
-        
-        }
-
         }
    
     This adds some padding between the edge of the Wrapper and the Content 
@@ -126,11 +92,8 @@ time to give the content a little breathing room.
 
 5. Close the dialog window and refresh the page.
 
-    The carousel has been centered within the Wrapper and pushed up towards the 
-    *Breadcrumbs* to bring it into focus; this ties the content to the header.
-    Later in the learning path, you'll add a theme setting to remove the
-    breadcrumbs from the *Welcome* page, which will place the carousel right
-    against the navigation bar. 
+    The carousel has been given a little margin between the navigation and 
+    *Breadcrumbs*.
    
 6. Save the file and refresh the browser.
 

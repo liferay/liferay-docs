@@ -14,7 +14,7 @@ modify `language_en.properties`. Follow the steps below to create the hook:
 
 The foundation for the hook is created. Next you need to set up the hook
 configuration. In this case you'll be modifying the English US language 
-properties, but the process can be used to hook into any existing language 
+properties, but the same process can be used to hook into any existing language 
 properties file.
 
 1. Right-click the language key hook you just created in the package explorer
@@ -43,5 +43,5 @@ properties file.
    theme setting is now using the language key you just created!
    
 Excellent! The theme settings now all have language keys! In the next portion of 
-the learning path you'll expand your CSS further by making the Lunar Resort 
+the Learning Path you'll expand your CSS further by making the Lunar Resort 
 theme responsive to mobile devices.

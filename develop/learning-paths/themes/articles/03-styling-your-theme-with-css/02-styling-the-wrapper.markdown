@@ -7,11 +7,11 @@ the dimensions and background for the theme.
 1. Add the following code below the *Wrapper* placeholder:
 
         #wrapper {
-        background-color: $bkColor;
-        margin: 0 auto;
-        max-width: 1000px;
-        padding:0;
-        position:relative;
+            background-color: $bkColor;
+            margin: 0 auto;
+            max-width: 1000px;
+            padding:0;
+            position:relative;
     
 2. Add the closing `}`(brace) for the `#wrapper` just above the closing `}` 
    for the `html` styling.

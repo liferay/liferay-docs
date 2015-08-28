@@ -33,9 +33,3 @@ Liferay.on(
 	function() {
 	}
 );
-
-function reserve() {
-	var name = document.getElementById("fmName");
-
-	alert("Your reservation has been made. Thank you, and we'll see you soon on the Moon " + name.value + "!");
-}

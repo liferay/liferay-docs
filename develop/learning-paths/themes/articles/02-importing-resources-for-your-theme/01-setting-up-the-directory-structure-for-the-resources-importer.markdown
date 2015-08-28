@@ -16,18 +16,18 @@ organize the files for the Lunar Resort:
     - `docroot/WEB-INF/src/`
         - `resources-importer/`
             - `document_library/`
-            	-`documents/`
-            		- (documents and media files)
+                -`documents/`
+                        - (documents and media files)
             - `journal/`
-            	-`articles`
-            		- (web content articles)
-            	-`structures/`
-            	-`templates/`
+                -`articles`
+                        - (web content articles)
+                -`structures/`
+                -`templates/`
    
 The resources for the theme are organized into documents and media files and
 web content articles. Structures and templates are given their own folders
 inside of the `journal` directory.
-            	
+                
 web content articles can be written in either HTML or XML and placed in the 
 `journal/articles/` folder. Images included in the web content are referenced 
 using the name of the file in the `document_library/documents` folder. The Web 
@@ -56,8 +56,8 @@ directory for the carousel matches the following structure:
         -`carousel/`
             -`carousel.vm`
 
-It's important that you setup the file structure this way so the web
-content will be recognized.
+It's important that you setup the file structure this way so the web content 
+will be recognized.
 
 Now that you have the resources-importer file structure layed out, you can
 create the `sitemap.json` next.

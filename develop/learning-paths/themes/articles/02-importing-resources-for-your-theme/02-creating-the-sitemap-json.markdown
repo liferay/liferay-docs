@@ -147,32 +147,32 @@ template, and populates the pages with web content articles:
 
 
     {
-	    "layoutTemplateId": "1_column",
-	    "layouts": [
-		    {
-			    "name": "Welcome",
-			    "title": "Welcome",
-			    "friendlyURL": "/home",
-			    "columns": [
-				    [
-					    "carousel.xml",
-					    "Welcome to the Lunar Resort.html",
-					    "Amenities.html",
-					    "2 column description.html"
-				    ]
-			    ]
-		    },
-		    {
-		            "name": "About Us",
-			    "title": "About Us",
-			    "friendlyURL": "/about-us",
-			    "columns": [
-				    [
-					    "About Us Info.html"
-				    ]
-			    ]
-		    }
-		    
+            "layoutTemplateId": "1_column",
+            "layouts": [
+                    {
+                            "name": "Welcome",
+                            "title": "Welcome",
+                            "friendlyURL": "/home",
+                            "columns": [
+                                    [
+                                            "carousel.xml",
+                                            "Welcome to the Lunar Resort.html",
+                                            "Amenities.html",
+                                            "2 column description.html"
+                                    ]
+                            ]
+                    },
+                    {
+                            "name": "About Us",
+                            "title": "About Us",
+                            "friendlyURL": "/about-us",
+                            "columns": [
+                                    [
+                                            "About Us Info.html"
+                                    ]
+                            ]
+                    }
+                    
 The sitemap starts out by defining a default layout template ID for the pages.
 You can find layout template IDs in the `layouttpl` folder in your Liferay 
 bundle. Next, the pages, referred to as `layouts` in the sitemap, are organized. 
@@ -193,23 +193,23 @@ populates them with web content:
     "title": "Activities",
     "friendlyURL": "/activities",
     "columns":[
-	        [
-		    "Activities Info.html",
-		    "Activities Links.html"
-		]
+                [
+                    "Activities Info.html",
+                    "Activities Links.html"
+                ]
     ],
     "layouts":[
     {
         "name": "Rover Racing",
-	"title": "Rover Racing",
-	"friendlyURL": "/rover-racing",
-	"columns": [
-	    [
-	        "Rover Racing Article.html"
+        "title": "Rover Racing",
+        "friendlyURL": "/rover-racing",
+        "columns": [
+            [
+                "Rover Racing Article.html"
             ]
-	]
+        ]
     },
-		
+                
 As you can see, to create a child page you use the same `layouts` syntax that 
 you would use to create a parent page. The `layouts` configuration for the child 
 page is placed within the parent page's configuration. 

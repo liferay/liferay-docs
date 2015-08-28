@@ -46,5 +46,5 @@ Your theme should look like the image below:
 
 As you can see the Resources Importer is not too complicated once you break down
 the individual pieces, and it serves as an effective way to stage your theme 
-with content and pages. In the next portion of the learning path you'll learn
+with content and pages. In the next portion of the Learning Path you'll learn
 how to style your theme using CSS.

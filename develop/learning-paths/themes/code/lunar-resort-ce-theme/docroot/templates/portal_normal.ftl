@@ -80,33 +80,30 @@ ${theme.include(body_top_include)}
         </h2>
         <ul>
             <li>
-                <div style="background-color:#3C5998;"><a class="icon-facebook" 
-                style="color:#ffffff;" 
+                <div id="facebook"><a class="icon-facebook"  
                 href="http://www.facebook.com/pages/Liferay/45119213107" 
                 target="_blank"><span class="hide">Facebook</span></a></div>
             </li>
             <li>
-                <div style="background-color:#34A9E3;"><a class="icon-twitter" 
-                style="color:#ffffff;" href="http://www.twitter.com/liferay" 
+                <div id="twitter"><a class="icon-twitter" 
+ 				href="http://www.twitter.com/liferay" 
                 target="_blank"><span class="hide">Twitter</span></a></div>
             </li>
             <li>
-                <div style="background-color:#0C2C5B;"><a class="icon-linkedin" 
-                style="color:#ffffff;" 
+                <div id="linked-in"><a class="icon-linkedin" 
                 href="http://www.linkedin.com/company/83609" 
                 target="_blank"><span class="hide">LinkedIn</span></a></div>
             </li>
             <li>
-                <div style="background-color:##CF3327;"><a class="icon-youtube" 
-                style="color:#ffffff;" 
+                <div id="youtube"><a class="icon-youtube" 
                 href="http://www.youtube.com/user/liferayinc" 
                 target="_blank"><span class="hide">YouTube</span></a></div>
             </li>
             <li>
-                <div style="background-color:#DA4835;"><a 
-                class="icon-google-plus" style="color:#ffffff;" 
+                <div id="google-plus">
+                <a class="icon-google-plus" 
                 href="https://plus.google.com/+liferay/posts" 
-                target="_blank"><span class="hide">Bloogs</span></a></div>
+                target="_blank"><span class="hide">Google</span></a></div>
             </li>
         </ul>
         </div>

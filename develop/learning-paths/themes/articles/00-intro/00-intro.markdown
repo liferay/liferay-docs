@@ -10,10 +10,11 @@ As you approach the theme's design, keep in mind the target audience, the
 message you are trying to communicate, and the site's purpose. The theme's 
 design will serve to answer these questions.
 
-This learning path will take you through developing a theme for Liferay's Lunar
+This Learning Path will take you through developing a theme for Liferay's Lunar
 Resort using the Freemarker template language. You'll learn how to style your 
 theme with CSS, how to make it responsive for mobile devices, how to leverage 
-Bootstrap's and Font Awesome's icons in your theme, and finally how to implement configurable theme settings.
+Bootstrap's and Font Awesome's icons in your theme, and finally how to implement 
+configurable theme settings.
 
 Before you start, make sure you have a Liferay development environment installed. 
 You can learn how to install Liferay IDE or Liferay Developer Studio in the 

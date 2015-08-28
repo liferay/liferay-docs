@@ -10,11 +10,11 @@ complete:
             - `images/`
             - `templates/`
         - `css/`
-        	- `aui`
-        		- (many directories)
-        	- `_aui_custom.scss`
-        	- `_aui_variables.scss`
-        	- `_liferay_custom.scss`
+                - `aui`
+                        - (many directories)
+                - `_aui_custom.scss`
+                - `_aui_variables.scss`
+                - `_liferay_custom.scss`
             - `application.css`
             - `aui.css`
             - `base.css`
@@ -36,7 +36,7 @@ complete:
             - `portal_pop_up.ftl`
             - `portlet.ftl`
         - `WEB-INF/`
-        	- `liferay-look-and-feel.xml`
+                - `liferay-look-and-feel.xml`
             - `liferay-plugin-package.properties`
 
 Your edits should be made to the files in the `_diffs` directory, which then 
@@ -76,8 +76,8 @@ to take care of before you move on to the next section.
 
 1. Open `_aui_variables.scss` and add the following variables to the top:
 
-        $bkColor: #fff;
-        $themeMainColor: #df5946;
+        $bkColor: #FFF;
+        $themeMainColor: #DF5946;
 
 2. Copy the *lunar-resort-logo.png* from the `/images` directory of the code
    folder into the `_diffs/images` directory of the theme.
@@ -86,7 +86,7 @@ to take care of before you move on to the next section.
    the learning path into your Liferay bundle's `/deploy` directory.
    
 The Guestbook Portlet was created in the [MVC](https://dev.liferay.com/develop/learning-paths/mvc)
-learning path. I encourage you to check it out if you are interested in
+Learning Path. I encourage you to check it out if you are interested in
 developing applications for Liferay.
 
 Now that the house keeping is finished, you can take a closer look at the 

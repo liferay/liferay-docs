@@ -16,7 +16,7 @@ In this section you'll add some finishing touches to `portal_normal.ftl` and
             <a href="${sign_in_url}" data-redirect="${is_login_redirect_
             required?string}" id="sign-in" rel="nofollow">${sign_in_text}</a>
         </#if>
-	
+        
     The default *Sign In* link has been removed, but you'll replace it in the 
     next step.
     
@@ -32,18 +32,18 @@ In this section you'll add some finishing touches to `portal_normal.ftl` and
    `<div>`:
    
         <#if the_title != "Reservation">
-        <div id="reserveBtnWrapper">
-        <span id="reserveBtn">
-        <a href="/web/guest/reservation">Make Your Reservation!</a>
-        </span>
-        </div>
+            <div id="reserveBtnWrapper">
+                <span id="reserveBtn">
+                <a href="/web/guest/reservation">Make Your Reservation!</a>
+                </span>
+            </div>
         </#if>
         
     This adds a link to make a reservation for the Lunar Resort on every page, 
     except the *Reservation* page. At the moment you only have the default 
     *Welcome* page so you may be scratching your head. Don't worry, you'll add 
-    the remaining pages in the next section of the learning path using the 
-    Resources Importer. So if you try to make a reservation using the link,
+    the remaining pages in the next section of the Learning Path using the 
+    Resources Importer. If you try to make a reservation using the link,
     you'll be greeted with an error, but this is to be expected at this point. 
 
 5. Save the file.
@@ -143,7 +143,7 @@ the theme next.
 
 4. Select the radio button for the *Lunar Resort* theme and click *Save*.
 
-    The theme is now installed! Before you take a look at it though, you need to 
+    The theme is now applied! Before you take a look at it though, you need to 
     take care of a few more house keeping items.
     
 5. Select *logo* in the menu on the right and uncheck *Show Site Name*.
@@ -165,5 +165,5 @@ The theme appears broken at the moment, but this is to be expected. In the
 sections that follow, you'll fix this. This shows you the starting point the 
 base theme provides. 
 
-You've successfuly installed your new theme! In the next section you'll learn
-how to import resources for your theme.
+You've successfuly installed and applied your new theme! In the next section 
+you'll learn how to import resources for your theme.

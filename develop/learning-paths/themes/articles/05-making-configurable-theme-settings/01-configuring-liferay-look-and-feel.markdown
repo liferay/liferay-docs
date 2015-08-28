@@ -1,4 +1,11 @@
-# Configuring liferay-look-and-feel.xml 
+# Configuring liferay-look-and-feel.xml
+
+First, you'll need to identify the theme elements you want to make configurable.
+In the case of the Lunar Resort, the *Breadcrumbs*, Portlet borders, and *Page
+Title* elements are going to be configurable.
+
+Now that you know which elements you want to give the Administrator control
+over, you can get started.
 
 Making configurable theme settings involves a multi-step process. First, you'll
 need to add the theme settings to `liferay-look-and-feel.xml`.

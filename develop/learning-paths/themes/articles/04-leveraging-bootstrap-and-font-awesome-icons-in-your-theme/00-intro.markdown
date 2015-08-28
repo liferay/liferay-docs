@@ -16,5 +16,6 @@ the [Github repository](http://liferay.github.io/alloy-bootstrap/base-css.html#i
 Likewise, you will find the list of available Font Awesome icons, along with
 their names, in their [Github repository](http://fortawesome.github.io/Font-Awesome/3.2.1/icons/).
 
-In this portion of the learning path, you'll leverage some of Font Awesome's
-icons to create the social media links for the Lunar Resort.
+In this portion of the Learning Path, you'll leverage some of Font Awesome's
+icons to create the social media links for the Lunar Resort, but you could use 
+Bootstrap's icons using the same methods.

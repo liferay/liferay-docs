@@ -32,6 +32,13 @@ important because it is the first thing the user sees when they visit your site.
                 position: relative;
                 z-index: 1;
 
+                .active{
+                    background-color: #00C4FF;
+                        > a {
+                            color: #FFF;
+                        }
+                }        
+                
                 .dropdown-menu li {
                     background: #00ACFF;
                     border-width: 0;
@@ -46,8 +53,7 @@ important because it is the first thing the user sees when they visit your site.
                         color: #FFF;
 
                         &:hover {
-                            background: none;
-                            text-decoration: underline;
+                            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
                         }
                     }
                 }
@@ -75,9 +81,16 @@ important because it is the first thing the user sees when they visit your site.
                 ul {
                     li {
                         &:hover {
+                        background-color:#00C4FF;
                             .child-menu {
                                 display: block;
-
+                                padding: 0;
+                                li {
+                                    background-color: $themeMainColor;
+                                    &:hover {
+                                        background-color: #00C4FB;
+                                    }
+                                }
                                 a {
                                     color: #FFF;
                                     margin: -10px;
