@@ -728,7 +728,7 @@ interest you.
 
 Here are more tutorials that you may find interesting:
 
-[Developing Plugins with the Plugins SDK](/develop/tutorials/knowledge_base/6-2/plugins-sdk)
+[Developing Plugins with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
 
 [Developing Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
 
