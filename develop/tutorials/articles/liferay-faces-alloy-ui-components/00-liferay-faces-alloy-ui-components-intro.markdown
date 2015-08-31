@@ -10,16 +10,15 @@ portlet project to leverage [AlloyUI](http://alloyui.com/). Liferay Faces Alloy
 provides a way to use AlloyUI in a typical JSF development fashion. It provides
 a set of Facelet `UIComponent` tags as part of its component suite. 
 
-For demos and code examples of Liferay Faces Alloy components, check out the
-[Liferay Faces Showcase](www.liferayfaces.org) and the [Liferay Faces 3
-Portlet](https://github.com/liferay/liferay-faces/tree/3.2.5-ga6/demos/bridge/liferayfaces3-portlet). 
+For listings, demos, and code examples of Liferay Faces Alloy components, check
+out the [Liferay Faces Showcase](www.liferayfaces.org). To view a working
+example using Liferay Faces Alloy components, visit the
+[Liferay Faces 3 Portlet](https://github.com/liferay/liferay-faces/tree/3.2.5-ga6/demos/bridge/liferayfaces3-portlet). 
 
 The Liferay Faces Alloy project home page can be found at
 <http://www.liferay.com/community/liferay-projects/liferay-faces/alloy>. 
 
-Because Liferay Faces has several active
-versions
-<!--(/develop/learning-paths/jsf/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)-->
+Because Liferay Faces has several active [versions](/develop/learning-paths/jsf/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
 (targeting different versions of JSF, Liferay Portal, etc.), there are several
 versions of the project's View Declaration Language (VDL) documentation for
 these tags: 
@@ -34,7 +33,7 @@ these tags:
 
 **Liferay Faces 3.0-legacy:** <http://docs.liferay.com/faces/3.0-legacy/vdldoc/> 
 
-### Deprecated/Removed Tags
+## Deprecated/Removed Tags [](id=deprecated-removed-tags)
 
 The following tags have been deprecated in the Liferay Faces Alloy 3.2.5-ga6
 release and removed in the Liferay Faces Alloy 4.2.5-ga6 release: 
@@ -61,10 +60,10 @@ release and removed in the Liferay Faces Alloy 4.2.5-ga6 release:
 | [`aui-cc:message`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui-cc/message.html) | [`alloy:message`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/message.html) |
 | [`aui-cc:messages`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui-cc/messages.html) | [`alloy:messages`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/messages.html) |
 
-**Related Topics**
+## Related Topics [](id=related-topics)
 
 [Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/tutorials/liferay-faces-bridge-ui-components)
 
 [Liferay Faces Portal UI Components](/develop/tutorials/-/knowledge_base/6-2/tutorials/liferay-faces-portal-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)

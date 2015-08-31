@@ -6,22 +6,19 @@ Then, eventually, we need to demonstrate using Portal components in a JSF portle
 --> 
 
 Liferay Faces Portal is a `.jar` file that you add as a dependency in your JSF
-portlet project to leverage
-[Liferay Portal's JSP components](https://docs.liferay.com/portal/6.2/taglibs/index.html)
+portlet project to leverage [Liferay Portal's JSP components](https://docs.liferay.com/portal/6.2/taglibs/index.html)
 in JSF. Liferay Faces Portal provides a way to use [`liferay-security`](https://docs.liferay.com/portal/6.2/taglibs/liferay-security/tld-summary.html)
 and [`liferay-ui`](https://docs.liferay.com/portal/6.2/taglibs/liferay-ui/tld-summary.html)
 JSP components in a typical JSF development fashion. It provides a set of
 Facelet `UIComponent` tags as part of its component suite. 
 
-For demos and code examples of Liferay Faces Portal components, check out the
-[Liferay Faces Showcase](www.liferayfaces.org). 
+For listings, demos, and code examples of Liferay Faces Portal components, check
+out the [Liferay Faces Showcase](www.liferayfaces.org). 
 
 The Liferay Faces Portal project home page can be found at
 <http://www.liferay.com/community/liferay-projects/liferay-faces/portal>. 
 
-Because Liferay Faces has several active
-versions
-<!--(/develop/learning-paths/jsf/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)-->
+Because Liferay Faces has several active [versions](/develop/learning-paths/jsf/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
 (targeting different versions of JSF, Liferay Portal, etc.), there are several
 versions of the project's View Declaration Language (VDL) documentation for
 these tags: 
@@ -36,7 +33,7 @@ these tags:
 
 **Liferay Faces 3.0-legacy:** <http://docs.liferay.com/faces/3.0-legacy/vdldoc/> 
 
-### Deprecated/Removed Tags [](id=deprecated-removed-tags)
+## Deprecated/Removed Tags [](id=deprecated-removed-tags)
 
 The following tags have been deprecated in the Liferay Faces Portal 3.2.5-ga6
 release and removed in the Liferay Faces Portal 4.2.5-ga6 release: 
@@ -61,10 +58,10 @@ release and removed in the Liferay Faces Portal 4.2.5-ga6 release:
 | [`liferay-util:validateCaptcha`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/liferay-util/validateCaptcha.html) | Validation is automatically built-in to [`portal:captcha`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/portal/captcha.html) |
 | [`liferay-util:validateRichTextLength`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/liferay-util/validateRichTextLength.html) | Validation is automatically built-in to [`portal:inputRichText`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/portal/inputRichText.html) |
 
-**Related Topics**
+## Related Topics [](id=related-topics)
 
 [Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/tutorials/liferay-faces-alloy-ui-components)
 
 [Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/tutorials/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
