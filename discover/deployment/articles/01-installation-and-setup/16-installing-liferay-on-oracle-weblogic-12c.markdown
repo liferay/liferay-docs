@@ -315,7 +315,7 @@ Next, you'll need to upgrade Mojarra for your WebLogic application server.
  
 ### Upgrading Mojarra [](id=upgrading-mojarra)
 
-Liferay Faces requires JSF 2.1.21. However, the version of Mojarra that comes
+Liferay Faces requires JSF 2.1.29-04. However, the version of Mojarra that comes
 with WebLogic 12c is version 2.1.20. Therefore, it is necessary to upgrade
 Mojarra in WebLogic by creating a new Shared Library WAR with the updated
 dependencies. 
@@ -323,15 +323,19 @@ dependencies.
 1. Make sure your `MW_HOME` environment variable is defined (completed in step 2
    of the previous section).
  
-2. Build the patched version of Mojarra:
+2. `cd` into `liferay-faces/support`
 
-        cd liferay-faces/support
-        mvn -P weblogic clean install
+3. If you are on Weblogic 12.1.3, then run the following command to upgrade to
+    the latest version of JSF:
 
-3. Copy the patched version of Mojarra over the version that was shipped
-   out-of-the-box: 
+        mvn -P weblogic,upgrade clean install
 
-        cp $HOME/.m2/repository/com/oracle/weblogic/glassfish.jsf_1.0.0.0_2-1-21/12.1.2-0-0/glassfish.jsf_1.0.0.0_2-1-21-12.1.2-0-0.jar $MW_HOME/wlserver/modules/glassfish.jsf_1.0.0.0_2-1-20.jar
+    If you are on a version of weblogic other than 12.1.3, you will need to
+    specify the path to Mojarra's pom file as the value of the maven property:
+    `weblogic.mojarra.pom`. For example, on Weblogic 12.1.2 you would run the
+    following command:
+
+        mvn -P weblogic,upgrade clean install -Dweblogic.mojarra.pom=$MW_HOME/wlserver/plugins/maven/com/oracle/weblogic/glassfish.jsf_1.0.0.0_2-1-20/12.1.2/glassfish.jsf_1.0.0.0_2-1-20.12.1.2.pom  
 
     Since the Mojarra API and Implementation JARs are present in the global
     classpath, `jsf-api.jar` and `jsf-impl.jar` must not be included in
