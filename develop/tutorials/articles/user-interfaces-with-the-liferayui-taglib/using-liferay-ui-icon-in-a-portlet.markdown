@@ -1,4 +1,4 @@
-# Using Icons with the *liferay-ui* Taglib [](id=using-icons-with-the-liferay-ui-taglib)
+# Using Icons with the liferay-ui Taglib [](id=using-icons-with-the-liferay-ui-taglib)
 
 By using meaningful graphics as icons, you can draw your users' attention 
 toward important parts of your portlet. Using icons also enhances your portlet's
