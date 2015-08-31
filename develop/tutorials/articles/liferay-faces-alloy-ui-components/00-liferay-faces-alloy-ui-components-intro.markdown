@@ -40,7 +40,7 @@ The following tags have been deprecated in the Liferay Faces Alloy 3.2.5-ga6
 release and removed in the Liferay Faces Alloy 4.2.5-ga6 release: 
 
 | Deprecated/Removed Alloy (`aui` or `aui-cc`) Tag | Replacement `alloy` Tag |
-| --- | --- |
+| :---: | :---: |
 | [`aui:button-row`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/button-row.html) | [`alloy:buttonRow`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/buttonRow.html) |
 | [`aui:col`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/col.html) | [`alloy:column`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/column.html) |
 | [`aui:convertLongList`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/convertLongList.html) | No replacement available |

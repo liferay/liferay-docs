@@ -42,7 +42,7 @@ The following tags have been deprecated in the Liferay Faces Portal 3.2.5-ga6
 release and removed in the Liferay Faces Portal 4.2.5-ga6 release: 
 
 | Deprecated/Removed Portal (`liferay-security`, `liferay-ui`, and `liferay-util`) Tag | Replacement Tag |
-| --- | --- |
+| :---: | :---: |
 | [`liferay-security:permissionsURL`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/liferay-security/permissionsURL.html) | [`portal:permissionsURL`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/portal/permissionsURL.html) |
 | [`liferay-ui:captcha`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/liferay-ui/captcha.html) | [`portal:captcha`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/portal/captcha.html) |
 | [`liferay-ui:ice-info-data-paginator`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/liferay-ui/ice-info-data-paginator.html) | No replacement available |
