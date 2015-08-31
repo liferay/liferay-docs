@@ -36,7 +36,7 @@ these tags:
 
 **Liferay Faces 3.0-legacy:** <http://docs.liferay.com/faces/3.0-legacy/vdldoc/> 
 
-### Deprecated/Removed Tags
+### Deprecated/Removed Tags [](id=deprecated-removed-tags)
 
 The following tags have been deprecated in the Liferay Faces Portal 3.2.5-ga6
 release and removed in the Liferay Faces Portal 4.2.5-ga6 release: 
