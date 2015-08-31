@@ -323,15 +323,15 @@ dependencies.
 1. Make sure your `MW_HOME` environment variable is defined (completed in step 2
    of the previous section).
  
-2. `cd` into `liferay-faces/support`
+2. Open a command prompt and navigate to the `liferay-faces/support` directory.
 
-3. If you are on Weblogic 12.1.3, then run the following command to upgrade to
-    the latest version of JSF:
+3. If you're on WebLogic 12.1.3, then run the following command to upgrade to
+   the latest version of JSF:
 
         mvn -P weblogic,upgrade clean install
 
-    If you are on a version of weblogic other than 12.1.3, you will need to
-    specify the path to Mojarra's pom file as the value of the maven property:
+    If you're on a version of WebLogic other than 12.1.3, you'll need to
+    specify the path to Mojarra's POM file as the value of the Maven property
     `weblogic.mojarra.pom`. For example, on Weblogic 12.1.2 you would run the
     following command:
 
