@@ -14,50 +14,54 @@ message property with key `welcome` must be present with a Spanish translation
 of the word "Welcome." Don't worry, the Plugins SDK provides a means for you to
 get translations for your default resource bundle.
 
-It's time to get started by doing the initial setup for the Bing Translator
+It's time to get started by doing the initial setup for the Microsoft Translator
 service for translating the language properties. 
 
-## Translating Languages Using the Bing Translator [](id=translating-languages-using-the-bing-translator)
+## Translating Languages Using the Microsoft Translator [](id=translating-languages-using-the-bing-translator)
 
-The Plugins SDK uses the Bing Translator service
-[http://www.microsofttranslator.com/](http://www.microsofttranslator.com/) to
+The Plugins SDK uses the Microsoft Translator service
+[http://www.microsoft.com/translator/](http://www.microsoft.com/translator/) to
 translate all the resources in your `Language.properties` file to multiple
 languages. Since it's a machine-generated translation, you can use it as a base
-translation for you to start with. To create base translations using the Bing
-Translator service, you'll need to do the following:
+translation for you to start with. To create base translations using the
+Microsoft Translator service, you'll need to do the following:
 
-1. Sign up for an Azure Marketplace account and subscribe to the Microsoft 
-   Translator. It's listed in the *Data* section of the Azure Marketplace.
+1.  Sign up for a
+    [Microsoft Azure Marketplace](https://datamarket.azure.com/home) account. 
 
-2. Register your portlet in the Azure Marketplace. You can do this from the 
-   *Developers* tab in *My Account*. The client ID needs to match the project
-   name of the portlet. Accept the default client secret. Make sure to save the
-   client ID and client secret for later use.
+2.  Purchase a subscription to the
+    [Microsoft Translator](https://datamarket.azure.com/dataset/bing/microsofttranslator).
 
-3. Create a `build.[username].properties` file in your Plugins
-   SDK root directory, if you don't already have one. This 
-   `build.[username].properties` file must reference a Liferay 
-   bundle. If you have a Liferay Tomcat bundle, for example, your reference 
-   should look like this:
+3.  Register your portlet as an application in the Azure Marketplace. You can do
+    this from the *Developers* screen in *My Account*. The client ID needs to
+    match the project name of the portlet. Accept the default client secret.
+    Make sure to save the client ID and client secret for later use. 
+
+4.  Create a `build.[username].properties` file in your Plugins SDK root
+    directory, if you don't already have one. This `build.[username].properties`
+    file must reference a Liferay bundle. If you have a Liferay Tomcat bundle,
+    for example, your reference should look like this: 
 
         app.server.dir=[Liferay Home]/tomcat-7.0.42
         auto.deploy.dir=[Liferay Home]/deploy
 
     `[Liferay Home]` refers to your bundle's root directory.
 
-4. Make sure that you have a `portal-ext.properties` file in your Liferay Home 
-   directory. Create it if you do not. Edit the `portal-ext.properties` file, 
-   adding the following two lines replaced with your values:
+5.  Make sure that you have a `portal-ext.properties` file in your Liferay Home 
+    directory. Create it if you do not. Edit the `portal-ext.properties` file, 
+    adding the following two lines replaced with your values for the Microsoft
+    Translator client ID and client secret
+    [portal properties](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Microsoft%20Translator):
 
         microsoft.translator.client.id=[your-client-id]
         microsoft.translator.client.secret=[your-client-secret]
 
 Next, you'll make the necessary changes to your portlet so that it can leverage 
-the Bing Translator service.
+the Microsoft Translator service.
  
 ## Implementing Translations in Your Portlet [](id=implementing-translations-in-your-portlet)
 
-Now that you've done the initial setup for the Bing Translator, you're ready to 
+Now that you've done the initial setup for the Microsoft Translator, you're ready to 
 add support for translations to your portlet.
 
 1. In your portlet's `docroot/WEB-INF/src/content/Language.properties` file, add
@@ -110,8 +114,8 @@ work. That said, if you want to generate new translations of an existing
 property you must first remove that property from `Language.properties`, build
 the languages (to remove the property from the `Language_*.properties` files),
 re-add that property and its new value to `Language.properties`, and build the
-languages again. At this point, Bing Translator generates translations based on
-your property's new value. 
+languages again. At this point, Microsoft Translator generates translations
+based on your property's new value. 
 
 +$$$
 
@@ -132,7 +136,7 @@ simply inaccurate. Someone fluent in each language should review the
 translations before the translations are deployed to a production environment. 
 
 In this tutorial you learned to leverage the Plugins SDK to generate 
-translations for your portlets using the Bing Translator.
+translations for your portlets using the Microsoft Translator.
 
 ## Related Topics [](id=related-topics)
 
