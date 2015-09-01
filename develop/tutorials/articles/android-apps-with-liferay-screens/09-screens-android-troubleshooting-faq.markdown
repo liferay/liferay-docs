@@ -1,11 +1,11 @@
-# Liferay Screens for Android Troubleshooting and FAQs
+# Liferay Screens for Android Troubleshooting and FAQs [](id=liferay-screens-for-android-troubleshooting-and-faqs)
 
 Even though Liferay developed Screens for Android with great care, you may still 
 run into some common issues. Solutions and tips for solving these issues are 
 presented in this tutorial. Also, common questions about Screens for Android 
 are answered. 
 
-## Best Practices
+## Best Practices [](id=best-practices)
 
 Before delving into specific issues, you should first make sure that you have 
 the latest tools installed and know where to get additional help if you need it. 
@@ -30,7 +30,7 @@ Note that you must
 [login](https://issues.liferay.com/login.jsp?os_destination=%2Fbrowse%2F) 
 first to be able to see the project.
 
-## Troubleshooting
+## Troubleshooting [](id=troubleshooting)
 
 This section contains information on common issues that can occur when using 
 Liferay Screens. 
@@ -117,7 +117,7 @@ Liferay Screens.
     [Liferay Screens Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal). 
     This plugin adds new API calls to Liferay Portal.
 
-## FAQs
+## FAQs [](id=faqs)
 
 1. Do I have to use Android Studio?
 
@@ -159,7 +159,7 @@ Liferay Screens.
 
     This feature is coming soon to a Screenlet near you!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
 
