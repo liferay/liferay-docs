@@ -46,10 +46,8 @@ and decrypt your files. This protects the files on your device and portal in the
 event your device is lost or stolen. However, you should note that enabling 
 Security Mode causes downloading and opening files to take slightly longer than 
 usual. Your Liferay server must also use SSL; otherwise your files are 
-transmitted in the open. Security Mode is currently only available in the
-Android version of Sync, but is coming soon to Sync on iOS. Below the Security
-Mode toggle, the app's version is listed as well as a link to send Liferay
-feedback on the app.
+transmitted in the open. Below the Security Mode toggle, the app's version is 
+listed as well as a link to send Liferay feedback on the app.
 
 ![Figure 5.28: The Settings screen for the Sync app lets you sign out of your portal, enable Security Mode, view the app's version, and send feedback.](../../images/sync-mobile-settings.png)
 
