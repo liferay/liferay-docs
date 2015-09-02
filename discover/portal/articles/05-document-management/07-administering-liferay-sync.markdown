@@ -19,32 +19,31 @@ addition to basic portal configuration, important topics such as portal security
 and accidental data loss are covered. Note that you must be an administrator to 
 set up your portal for Sync. If you're not a portal or site administrator, you 
 can skip this guide and move on to 
-[installing and using the Sync desktop and mobile clients](/discover/portal/-/knowledge_base/6-2/using-liferay-sync). 
+[installing and using the Sync desktop client](/discover/portal/-/knowledge_base/6-2/using-liferay-sync-on-your-desktop). 
 
-The first thing you need to do to prepare your portal for Sync is install the 
-*Sync Connector* plugin. This is discussed next. 
+To prepare your portal for Sync, you first need to install the *Sync Connector* 
+plugin. The next section discusses this. 
 
 ## Installing the Sync Connector Plugin [](id=installing-the-sync-connector-plugin)
 
 Prior to Liferay 6.2, Liferay Portal's Documents and Media services contained
-all the logic used by Liferay Sync. As of Liferay 6.2, Sync processing is 
-instead in the Sync Connector plugin. This plugin is therefore required for 
-using Sync in your Liferay 6.2 installations. While an older version of the 
-plugin (*Sync Connector Web*) is installed by default in Liferay Portal 6.2 
-bundles, you need to upgrade to the new Sync Connector plugin for Sync to work 
-properly. The new Sync clients work only with the latest Sync Connector plugin. 
-Older Sync 1.x clients will not be able to connect to the new Sync Connector 
-plugin. The install process for Sync Connector is the same as that of any other 
+all the logic used by Liferay Sync. As of Liferay 6.2, the Sync Connector plugin 
+instead contains the required Sync logic. You must therefore use this plugin 
+when using Sync with your Liferay 6.2 installations. Liferay Portal 6.2 includes 
+an older version of the plugin (*Sync Connector Web*). You need to upgrade to 
+the new Sync Connector plugin for Sync to work properly. The new Sync clients 
+require the latest Sync Connector plugin. Older Sync 1.x clients can't connect 
+to the new Sync Connector plugin. Sync Connector installs the same as any other 
 Liferay plugin. Once you've installed it, you're ready to use Sync. 
 
 The plugin contains two applications: *Sync Web* (sync-web) and *Sync Admin* 
 (sync-admin-portlet). Sync Web contains the logic required for Sync to function. 
 It has no UI and works in the background to enable Sync without requiring any 
-attention from you or your end users. Sync Admin lets you control how Sync 
-clients function with your portal. For example, you can use Sync Admin to 
-disable Sync across the portal, or on a site-by-site basis. However, you don't 
-have to interact with Sync Admin for Sync to function properly. By default, Sync 
-Admin is set to enable Sync for all sites in the portal.
+attention from you or your users. Sync Admin lets you control how Sync clients 
+function with your portal. For example, you can use Sync Admin to disable Sync 
+across the portal, or on a site-by-site basis. However, you don't have to 
+interact with Sync Admin for Sync to function properly. By default, Sync Admin 
+enables Sync for all the portal's sites.
 
 If you've installed the Sync Connector plugin and want to use Sync Admin's 
 default settings, you can skip the following section on configuring Sync Admin 
@@ -54,49 +53,49 @@ of the potential for accidental data loss. Then direct your users to install and
 configure the Sync desktop and/or mobile clients. 
 
 If you need to disable Sync for specific sites, however, you need to configure 
-Sync Admin. This is shown next. 
+Sync Admin. The following section discusses this. 
 
 ## Using Sync Admin to Configure Liferay Sync [](id=using-sync-admin-to-configure-liferay-sync)
 
-Configuring Sync Admin is very straightforward. It has a simple UI that lets you
-enable or disable Sync across the portal or for specific sites. You can also 
-configure the default file permissions on a per-site basis. You can access 
-Sync Admin in the Control Panel's Configuration section. 
+Sync Admin has a simple UI that lets you enable or disable Sync across the 
+portal or for specific sites. You can also configure the default file 
+permissions on a per-site basis. You can access Sync Admin in the Control 
+Panel's Configuration section. 
 
-![Figure 5.12: The Sync Admin portlet is available in the Control Panel's Configuration Section.](../../images/sync-admin-01.png)
+![Figure 5.12: The Control Panel's Configuration section contains the Sync Admin portlet.](../../images/sync-admin-01.png)
 
 Sync Admin has two tabs: *Settings* and *Sites*. The Settings tab has *General* 
 and *Advanced* settings that apply to Sync as a whole. In the General settings, 
 you can disable Sync for all sites by unchecking the checkbox next to *Allow the 
 use of Sync?*. You can also disable user personal sites from syncing by 
 unchecking the checkbox next to *Allow users to sync their personal sites?*. 
-Both of these settings are enabled by default.
+These settings are enabled by default.
 
 The Advanced settings in the Settings tab control how your portal exchanges data 
 with Sync clients. The *Max Connections* field sets the maximum number of 
 simultaneous connections each client is allowed per account. For example, if 
-this is set to three, a client can upload or download up to three files 
-simultaneously for each account. It's important to remember that this setting 
-operates on a per client basis. If this is set to three and a user has two 
-clients connected to an account (which is possible if Sync is installed on two 
-different machines), then this effectively becomes six for that user. While 
-increasing Max Connections can speed up file transfers, it also places a heavier 
-load on the server. *Max Connections* is set to one by default.
+this is set to three, a client can simultaneously upload or download up to three 
+files for each account. Note that this setting operates on a per client basis. 
+If this is set to three and a user has two clients connected to an account 
+(which is possible if Sync is installed on two different machines), then this 
+effectively becomes six for that user. While increasing Max Connections can 
+speed up file transfers, it also places a heavier load on the server. 
+*Max Connections* is set to one by default. 
 
 The next Advanced setting in the Settings tab is *Poll Interval*. Poll Interval 
 sets the length of time in seconds for how often clients check the portal for 
 updates. For example, if this is set to ten, connected clients check the portal 
 for updates every ten seconds. The default value is five. 
 
-Next up is Sync Admin's Sites tab. This is where you can control Sync on a 
-per-site basis. 
+Next up is Sync Admin's Sites tab. This lets you can control Sync on a per-site 
+basis. 
 
 ![Figure 5.13: Sync Admin's Sites tab lets you manage Sync on a per-site basis.](../../images/sync-admin-02.png)
 
-Each site in the portal is listed here, along with its default file permissions 
-(more on this in a moment), and whether it's enabled for Sync. By default, all 
-sites are enabled. To disable a site for Sync, click its drop-down arrow to the 
-right and then click *Disable Sync Site*. To disable multiple sites at once, 
+For each site in the portal, the Sites tab lists the default file permissions 
+(more on this in a moment) and whether Sync is enabled. All sites are enabled 
+for Sync by default. To disable a site for Sync, click its drop-down arrow to 
+the right and then click *Disable Sync Site*. To disable multiple sites at once, 
 check their checkbox in the left column, and then click *Disable Sync Sites* 
 when it appears above the table. **Please use caution** when disabling Sync for 
 a site, as doing so causes any files for that site to be **deleted** from the 
@@ -157,13 +156,13 @@ accidental file deletion.
 
 The power of Liferay Sync rests in its ability to propagate any changes that 
 users make across the portal and connected clients. These changes can also
-include file deletion. When a file is deleted from a connected client, that
-deletion is also carried out in the portal and in any other connected clients.
-Likewise, if a file is deleted in the portal, it's also deleted in any
-connected clients. In other words, if a file is deleted anywhere, it's deleted
-*everywhere*. You're probably thinking, "This is a disaster waiting to happen!" 
-Don't fret! Liferay's Recycle Bin is enabled by default and allows recovery of 
-any deleted files. You can access the Recycle Bin from each site's 
+include file deletion. When a user deletes a file from a connected client, Sync 
+also deletes that file in the portal and in any other connected clients. 
+Likewise, if a user deletes a file in the portal, Sync also deletes the file in 
+any connected clients. In other words, if a user deletes a file anywhere, Sync 
+deletes it *everywhere*. You're probably thinking, "This is a disaster waiting 
+to happen!" Don't fret! Liferay's Recycle Bin is enabled by default and lets you 
+recover deleted files. You can access the Recycle Bin from each site's 
 *Site Administration* menu. 
 
 +$$$
@@ -182,13 +181,13 @@ accidental file deletion propagated through Sync.
 ## Ensuring Sync Security [](id=ensuring-sync-security)
 
 As an administrator, you're undoubtedly concerned about the security of any 
-connections to and from your portal. It's important to note that to support 
-Security Mode in the Sync mobile client, your Liferay server must use SSL. 
-Otherwise, files are transmitted in the open. Also, as long as your server is
-configured to use HTTPS, the Sync clients communicate securely with your portal
-using user-supplied credentials. This ensures that each user can only access the
-documents and sites they have permission for. The next section gives a brief
-demonstration of how Sync's permissions work with those of your portal. 
+connections to and from your portal. As long as your server is configured to use 
+HTTPS, the Sync clients communicate securely with your portal using 
+user-supplied credentials. This ensures that each user can only access the
+documents and sites they have permission for. Also, your Liferay server must use 
+SSL to support Security Mode in the Sync mobile client. Otherwise, files are 
+transmitted in the open. The next section gives a brief demonstration of how 
+Sync's permissions work with your portal's permissions. 
 
 ### Demonstrating Liferay Sync Permissions [](id=demonstrating-liferay-sync-permissions)
 
@@ -215,21 +214,20 @@ user's credentials and sync with the Secret Site. Open the Liferay Sync menu
 from the system tray and select *Preferences*. In the *Accounts* tab, click the
 plus icon at the window's bottom left to add an account. Provide the secretagent
 user's credentials and uncheck all Liferay sites except the Secret Site. Now
-confirm that the `secret.txt` file you uploaded to the Secret Site is downloaded
-to your new Sync folder. Open it and check that it contains the text `classified
-information`. Next, use Sync to connect to your portal with the user that
-doesn't belong to the Secret Site. Since this user isn't a site member, the file 
-doesn't sync. 
+confirm that Sync downloaded the `secret.txt` file to your new Sync folder. Open 
+it and check that it contains the text `classified information`. Next, use Sync 
+to connect to your portal with the user that doesn't belong to the Secret Site. 
+The file doesn't sync because this user isn't a site member. 
 
 Now go to Sync Admin and set the Secret Site's default file permissions to View 
 Only. Create a new user, add them to the Secret Site, and add their account in 
-your Liferay Sync client. As with the secretagent user, when Sync completes, the 
-`secret.txt` file is in this user's local Sync folder because they're a member 
+your Liferay Sync client. As with the secretagent user, Sync downloads the 
+`secret.txt` file to this user's local Sync folder because they're a member 
 of the Secret Site. Now edit and save this file. Even though you can edit and 
 save it locally, those edits aren't synced because the site's default file 
 permissions are set to View Only. After attempting the sync, a red *x* appears 
 next to the file in the local Sync folder. Right click the file to see the 
-error; it confirms the user doesn't have the required permissions. 
+error. It confirms the user doesn't have the required permissions. 
 
 ![Figure 5.15: The upload error occurs because the user only has permission to view files.](../../images/sync-file-permissions-error.png)
 
@@ -242,8 +240,8 @@ file with the latest file in the portal.
 
 Now edit `secret.txt` in the secretagent user's local Sync folder. When you 
 check the file in the other user's local Sync folder and in the portal, you can 
-see that Sync propagated the edits. This is because the secretagent user is the 
-file's owner in the portal. Owners can do whatever they want with their files, 
+see that Sync propagated the edits. This occurs because the secretagent user 
+owns the file in the portal. Owners can do whatever they want with their files, 
 even when the site's default file permissions are set to View Only.
 
 Congratulations! You've successfully set up a Liferay Sync folder that can only 
