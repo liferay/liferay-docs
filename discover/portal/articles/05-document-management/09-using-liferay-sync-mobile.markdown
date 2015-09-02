@@ -1,20 +1,19 @@
 # Using Liferay Sync on Your Mobile Device [](id=using-liferay-sync-on-your-mobile-device)
 
 Liferay Sync for Android and iOS contains most of the desktop Sync client's 
-functionality. The main difference is that the mobile client can only be 
-connected to a single account at a time. Also, mobile Sync doesn't automatically 
-download files to your device. Storage space on mobile devices is typically 
-limited, so this saves precious space on your device. The Sync mobile app 
-instead lets you download only the files you want to work with. As with the Sync 
-desktop clients, the latest versions of Sync on Android and iOS have been 
+functionality. The mobile client, however, can only be connected to a single 
+account at a time. Also, mobile Sync doesn't automatically download files to 
+your device. This saves precious storage space on your device. Instead, the Sync 
+mobile app lets you download only the files you want to work with. As with the 
+Sync desktop clients, the latest versions of Sync on Android and iOS have been 
 redesigned to provide a consistent user experience across platforms. While this 
-section details using Sync on Android, the instructions also apply to Sync 
-on iOS. 
+article details using Sync on Android, the instructions also apply to Sync on 
+iOS. 
 
-Installing Sync on your Android or iOS device is done through each platform's 
-app store, the same as any other mobile app. The quickest way to find the Sync 
-mobile app is to search the App Store or Google Play for Liferay. You can also 
-download it from the [Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
+You need to install Sync on your Android or iOS device through each platform's 
+app store, the same as any other mobile app. To find the app, search the App 
+Store or Google Play for Liferay. You can also download it from the 
+[Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
 Once you've installed the Sync app on your device, follow the instructions below 
 to learn how to use it. 
 
@@ -41,7 +40,7 @@ Press the gear icon to access the app's settings. Settings shows your account
 information and gives you the option to sign out of your portal. Settings also 
 lets you toggle *Security Mode*. Security Mode protects files that are stored on 
 your device by encrypting them. You therefore need to set up a passcode for the 
-app when using Security Mode. The passcode is then used to access the Sync app 
+app when using Security Mode. You then use this passcode to access the Sync app 
 and decrypt your files. This protects the files on your device and portal in the 
 event your device is lost or stolen. However, you should note that enabling 
 Security Mode causes downloading and opening files to take slightly longer than 
@@ -56,16 +55,16 @@ can get started managing the files and folders in those sites.
 
 ## Managing Files and Folders [](id=managing-files-and-folders)
 
-Managing files and folders is the same whether you're working in My Documents or 
-My Sites. Pressing a site or folder shows you a list of its contents. Each file 
-is labeled with its size and modification date. You can refresh the list by 
-pulling down from the top of the screen. Your current location in the navigation 
-hierarchy also appears at the top of the screen alongside a plus icon. Pressing 
-the plus icon launches an upload screen that lets you add content in the current 
-location. You can add a new folder, upload a file, and launch your device's 
-camera app to take and upload a picture or video. Pressing the *X* icon on the 
-upload screen's top right corner returns you to the list of items for that 
-location without taking any action.
+Whether you're working in My Documents or My Sites, you manage files and folders 
+the same way. Pressing a site or folder shows you a list of its contents. This 
+list also shows each file's size and modification date. You can refresh the list 
+by pulling down from the top of the screen. Your current location in the 
+navigation hierarchy also appears at the top of the screen alongside a plus 
+icon. Pressing the plus icon launches an upload screen that lets you add content 
+in the current location. You can add a new folder, upload a file, and launch 
+your device's camera app to take and upload a picture or video. Pressing the *X* 
+icon on the upload screen's top right corner returns you to the list of items 
+for that location without taking any action.
 
 ![Figure 5.29: Sync shows files and folders in a list.](../../images/sync-mobile-site.png)
 
@@ -78,7 +77,7 @@ you're presented with a list of apps on your device that can open the file. If
 your device doesn't have an app that can open the file, Sync tells you to 
 install one that can. Downloaded files appear in the list with the file size in 
 blue instead of gray. For example, the screenshot below shows that 
-`LiferayinAction.pdf` has been downloaded to the device.
+`LiferayinAction.pdf` is on the device. 
 
 ![Figure 5.30: Downloaded files appear in the list with their size in blue.](../../images/sync-mobile-file-downloaded.png)
 
@@ -89,30 +88,30 @@ rename, or delete that item. The screenshots below show these options. Note that
 you should use **extreme caution** when deleting files or folders. Deleting 
 files or folders in the mobile Sync app also deletes them from your portal and 
 across any synced clients. Accidentally deleted files can be restored from the 
-portal's Recycle Bin, which is enabled by default. However, you should note that 
-file recovery isn't possible if the portal or site administrator has disabled 
-the Recycle Bin. 
+portal's Recycle Bin, which is enabled by default. If the portal or site 
+administrator disables the Recycle Bin, however, recovering deleted files isn't 
+possible. 
 
 What if you want to delete a file on your device without also deleting it 
-in the portal? Currently, the only way to do this is to sign out of your account 
-in the app's Settings menu. Doing so removes any downloaded files from your 
-device, but preserves them in the portal. However, if you're on Android then 
-it's possible to use a system file browser app to manually remove any downloaded 
+in the portal? Currently, you can only do this by signing out of your account in 
+the app's Settings menu. Doing so removes any downloaded files from your device, 
+but preserves them in the portal. If you're on Android, however, then it may be 
+possible to use a system file browser app to manually remove any downloaded 
 files. 
 
 +$$$
 
 **Warning:** Deleting a file in the mobile Sync app deletes it in the portal and
-across any synced clients. If a file is accidentally deleted, you can restore it
-from the portal's Recycle Bin. The Recycle Bin is enabled by default.  However,
-file recovery isn't possible if the portal or site administrator has disabled
-the Recycle Bin. 
+across any synced clients. If you accidentally delete a file, the portal or site 
+administrator can restore it from the portal's Recycle Bin. The Recycle Bin is 
+enabled by default. If the portal or site administrator disables the Recycle 
+Bin, however, recovering deleted files isn't possible. 
 
 $$$
 
-The context menu also provides additional options for files. The file's version 
-in the portal is indicated by a small badge on the file icon's top right corner. 
-You can also share files from the context menu if you've downloaded them to your 
+The context menu also provides additional options for files. A small badge on 
+the file icon's top-right corner indicates the file's version in the portal. You 
+can also use the context menu to share files if you've downloaded them to your 
 device. Pressing the *Share* icon opens a list of apps on your device that are 
 capable of sharing the file. To close the context menu and return to the list of 
 files and folders, swipe to the right. The following screenshot shows the 

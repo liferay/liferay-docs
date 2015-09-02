@@ -15,10 +15,10 @@ client. Also, native desktop notification events keep you informed of what Sync
 is doing. Native menu and task bar integration keep Sync controls within easy 
 reach. 
 
-This guide walks you through setting up and using the Liferay Sync client 
-on your desktop. Before proceeding, check with your portal or site administrator 
-to ensure that Sync is enabled for your sites. Once this is done, you'll then 
-need to install the Sync client on your desktop device. 
+This guide walks you through setting up and using the Liferay Sync client on 
+your desktop. Before proceeding, check with your portal or site administrator 
+to ensure that your sites are enabled for Sync. You then need to install the 
+Sync client on your desktop device. The next section walks you through this.
 
 ## Installing the Desktop Liferay Sync Client [](id=installing-the-desktop-liferay-sync-client)
 
@@ -47,7 +47,7 @@ Sync, drag the Liferay Sync icon to the Applications folder. Once it's
 installed, run it from your Applications folder. If you're running Mac OS X 10.9 
 or lower, you're prompted for your machine's administrator credentials so that 
 the Finder icon/context menu tool can be installed. This prompt only appears 
-when the tool is installed or upgraded.
+when installing or upgrading the tool.
 
 ![Figure 5.16: Drag the Liferay Sync icon to the Applications folder.](../../images/sync-mac-install.png)
 
@@ -64,12 +64,13 @@ each site you want to sync with and then click *Proceed*.
 
 You now need to specify the local folder that you want to sync with your portal.
 The Sync client creates this folder, so you can't use a folder that already 
-exists on your machine. By default, this folder is in your user documents folder 
-and is named after your portal. For example, since the portal in the screenshots 
-below is running locally, the Sync folder is named *localhost*. You can also see 
-that this folder is located in the machine's user documents directory. Of 
-course, you're free to place this folder anywhere and call it anything you want. 
-Click *Start Syncing* when you're ready to begin syncing files. 
+exists on your machine. By default, Sync creates this folder in your user 
+documents folder and names it after your portal. For example, since the portal 
+in the screenshots below runs locally at the address `http://localhost:8080/`, 
+Sync names the Sync folder *localhost*. You can also see that Sync placed this 
+folder in the machine's user documents directory. Of course, you're free to 
+place this folder anywhere and call it anything you want. Click *Start Syncing* 
+when you're ready to begin syncing files. 
 
 ![Figure 5.17: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../images/sync-setup-01.png)
 
@@ -80,14 +81,14 @@ Click *Start Syncing* when you're ready to begin syncing files.
 ![Figure 5.20: Congratulations, you've successfully set up Liferay Sync!](../../images/sync-setup-04.png)
 
 Sync congratulates you on setting it up and begins to sync files from the sites 
-you selected, in the local folder you specified. Note that completing the 
+you selected, into the local folder you specified. Note that completing the 
 initial sync may take a significant amount of time depending on the amount of 
-data being transferred. You can safely close the window, and syncing will
-continue in the background. To view the local sync folder, click *Open Folder*.
+data being transferred. You can safely close the window, and syncing continues 
+in the background. To view the local sync folder, click *Open Folder*.
 
 ## Viewing Your Sync Status [](id=viewing-your-sync-status)
 
-Once the Liferay Sync desktop client is installed, an icon appears in your 
+Once you've installed the Liferay Sync desktop client, an icon appears in your 
 task bar (Windows) or menu bar (Mac) whenever it's running. Clicking this icon 
 opens a menu that shows the portals you're synced with, links to preferences and 
 help, and the option to quit Sync. Mousing over a portal extends the menu to 
@@ -112,10 +113,10 @@ Next, you'll learn how to use Sync's preferences to control how Sync behaves.
 ## Using Sync Preferences [](id=using-sync-preferences)
 
 You can use Sync's preferences to add or remove portals to sync with, edit the 
-settings used to connect to your portals, and control the basic behavior of 
-Sync. Open Sync's preferences by clicking the Sync icon in the task bar 
-(Windows) or menu bar (Mac OS) and selecting *Preferences*. You're first shown 
-the Preferences menu's *Accounts* tab.
+settings used to connect to your portals, and control Sync's basic behavior. 
+Open Sync's preferences by clicking the Sync icon in the task bar (Windows) or 
+menu bar (Mac OS) and selecting *Preferences*. You're first shown the 
+Preferences menu's *Accounts* tab.
 
 ![Figure 5.23: The Preferences menu's *Accounts* tab.](../../images/sync-preferences-accounts-01.png)
 
@@ -123,14 +124,14 @@ The accounts and portals that you sync with are listed on the left. The plus,
 minus, and pencil icons at the bottom of the account list can be used to 
 respectively add, delete, or edit an account. You should use caution when 
 deleting an account from your Sync client, as doing so also deletes any local 
-files and folders for that account. When an account is selected in the 
+files and folders for that account. When you select an account in the 
 Preferences UI, the sites you have permission to sync with are shown on the 
 right. These sites are further broken down into *Selected Sites* and 
 *Unselected Sites*. The sites you currently sync with are shown under 
 *Selected Sites*. Other sites available for syncing are shown under 
-*Unselected Sites*. To select a site to sync, click the *Select Sites* 
-button under the site list. In the menu that appears, check the checkbox for the 
-sites you want and then click *Confirm*. Use caution when de-selecting sites.
+*Unselected Sites*. To select a site to sync, click the *Select Sites* button 
+under the site list. In the menu that appears, check the checkbox for the sites 
+you want and then click *Confirm*. Use caution when de-selecting sites. 
 De-selecting a site deletes its folder on your machine. Below the *Select Sites*
 button, the local sync folder location for the selected account is shown. Click
 the *Change* button to change this folder's location.
@@ -151,15 +152,15 @@ with the files in your Sync folder.
 
 ## Using Your Local Sync Folder [](id=using-your-local-sync-folder)
 
-Once Sync is configured and running, any files you add or modify in your Sync 
-folder are automatically uploaded to your portal. File changes by other users 
-are also downloaded to your Sync folder. You should note that if you delete a 
-file in your Sync folder, it's also deleted from the portal and other clients. 
-You should therefore use **extreme caution** when deleting files in your Sync 
-folder. If you accidentally delete a file, not all is lost! The file can still 
-be recovered from the portal's Recycle Bin, which is enabled by default. Note 
-that if the portal or site administrator has disabled the Recycle Bin, 
-recovering the file isn't possible.
+Once you configure and run Sync, Sync automatically uploads any files you add or 
+modify in your Sync folder to your portal. Sync also downloads any file changes 
+by other users to your Sync folder. Note that if you delete a file in your Sync 
+folder, Sync also deletes it from the portal and other clients. You should 
+therefore use **extreme caution** when deleting files in your Sync folder. If 
+you accidentally delete a file though, not all is lost! The file can still be 
+recovered from the portal's Recycle Bin, which is enabled by default. Note that 
+if the portal or site administrator has disabled the Recycle Bin, recovering 
+deleted files isn't possible. 
 
 +$$$
 
@@ -167,17 +168,16 @@ recovering the file isn't possible.
 portal and in other clients. If you accidentally delete a file, it can be 
 recovered from the portal's Recycle Bin. The Recycle Bin is enabled by default. 
 However, file recovery isn't possible if the portal or site administrator has 
-disabled the Recycle Bin.
+disabled the Recycle Bin. 
 
 $$$
 
 You can run through the following exercise to familiarize yourself with how to 
 create, edit, download, and upload files with Sync. First, open your Sync folder 
 in your file manager and create a new file called `README.txt`. Enter the word 
-`test` in this file. Next, check that you can access this file in your Liferay 
-site. Make sure that that you're on the site you want to sync with and then 
-navigate to its Documents and Media portlet. You should see your `README.txt` 
-file listed there.
+`test` in this file. Next, make sure you can access this file in your Liferay 
+site. Go to the site you want to sync with and then navigate to its Documents 
+and Media portlet. You should see your `README.txt` file listed there.
 
 Next, download the file to a convenient location on your machine. The simplest 
 way to do this is to hover your mouse over the file's icon, click the small
