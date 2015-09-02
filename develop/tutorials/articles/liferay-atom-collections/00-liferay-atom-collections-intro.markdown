@@ -12,9 +12,11 @@ how to manage RSS feeds in Liferay, please see the
 Liferay also includes a bundled Atom server and provides Atom collections for
 several portal entities including web content articles, blog entries, documents,
 document folders, and users. Liferay's Atom server implementation is based on
-[Apache Abdera](). Abdera is intended to be a functionally-complete,
-high-performance implementation of the IETF Atom Syndication Format
-([RFC 4287](http://www.ietf.org/rfc/rfc4287.txt)) and Atom Publishing Protocol ([RFC 5023](http://www.ietf.org/rfc/rfc5023.txt)) specifications. 
+[Apache Abdera](https://abdera.apache.org/). Abdera is intended to be a
+functionally-complete, high-performance implementation of the IETF Atom
+Syndication Format ([RFC 4287](http://www.ietf.org/rfc/rfc4287.txt)) and Atom
+Publishing Protocol ([RFC 5023](http://www.ietf.org/rfc/rfc5023.txt))
+specifications. 
 
 ## Atom Service Document
 
@@ -64,8 +66,8 @@ This document lists four available Liferay Atom collections:
 - Documents and Media Folders Atom collection
 - Web Content Atom collection
 
-There's an Atom collection of portal users but it's read-only and is not listed
-in the `atom` XML document:
+There's also an Atom collection of portal users but it's read-only and is not
+listed in the `atom` XML document:
 
 - Users Atom collection
 
@@ -188,8 +190,8 @@ entries from a site with a site ID of `20146` by using curl like this:
 
     curl -v 'http://localhost:8080/api/atom/blogs?groupId=20146&page=1&max=5' -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0'
 
-Here is an example of the returned XML (in this example, there is only one blog
-entry):
+Here is an example of the returned XML feed document (in this example, there is
+only one blog entry):
 
     <?xml version='1.0' encoding='UTF-8'?>
     <feed xmlns="http://www.w3.org/2005/Atom">
@@ -219,3 +221,195 @@ entry):
 
 This XML document can be read by any Atom feed reader and the blog entry or
 entries will be displayed correctly.
+
+### Liferay Blogs Atom Client
+
+In addition to allowing entries to be read, Liferay's Blogs Atom collection
+allows entries to added, updated, or deleted. In this section, you'll learn how
+to create a client that can manipulate Liferay's blogs collection via the
+[AtomPub](https://en.wikipedia.org/wiki/Atom_%28standard%29) protocol. As
+mentioned before, Liferay's Atom server implementation is based on
+[Apache Abdera](https://abdera.apache.org/). Abdera can also be used to create
+Atom clients. See
+[Abdera's documentation](https://cwiki.apache.org/confluence/display/ABDERA/AtomPub+Client)
+for more information. In order to add, update, or delete blog posts, the Abdera
+client builds the appropriate Atom XML documents and uses the
+[Apache Commons HTTP Client](http://hc.apache.org/httpclient-3.x/)
+to send requests to Liferay.
+
+In order to create an create an Atom client using Abdera, you should declare the
+[abdera-client](http://search.maven.org/#artifactdetails|org.apache.abdera|abdera-client|1.1.2|bundle) as a dependency of your project.
+
+For example, here's a code snippet that demonstrates how to add a new blog post
+to Liferay. To add a new blog post, an HTTP POST request must be used. Note that
+in this snippet, the `groupId` of the Liferay site within which to add the blog
+post is hard-coded.
+
+    Abdera abdera = new Abdera();
+    Factory factory = abdera.getFactory();
+    Entry entry = factory.newEntry();
+    entry.setId(FOMHelper.generateUuid());
+    entry.setUpdated(new Date());
+    entry.addAuthor("Joe Bloggs");
+    entry.setTitle("Title");
+    entry.setSummary("Summary");
+    entry.setContentAsHtml(
+        "<p>This is post was <b>created</b> by the Atom client!</p>");
+
+    AbderaClient client = new AbderaClient(abdera);
+    RequestOptions options = createRequestOptions(client);
+    BaseRequestEntity requestEntity =
+        new BaseRequestEntity(entry, false);
+
+    String url = "http://localhost:8080/api/atom/blogs";
+
+    ClientResponse response =
+        client.post(url + "?groupId=20146", requestEntity, options);
+
+Here, `createRequestOptions` is a helper method defined like this:
+
+    private static RequestOptions createRequestOptions(AbderaClient client) {
+        String encodedCredential =
+            Base64.encode("test@liferay.com:test".getBytes());
+        RequestOptions options = client.getDefaultRequestOptions();
+        options.setHeader("Authorization", "Basic " + encodedCredential);
+
+        return options;
+    }
+
+Next, here's a code snippet that demonstrates how to update an existing blog
+post in Liferay. To update a blog post, an HTTP PUT request must be used. Note
+that in this snippet, the `companyId` of the portal instance within which to
+find the blog post and the `entryId` of the blog post are hard-coded. When
+updating a blog entry (or any portal entry in an Atom collection), you have to
+specify the entry ID.
+
+    Abdera abdera = new Abdera();
+    Entry entry = abdera.newEntry();
+    entry.setId("tag:liferay.com:blogs:entry:21308");
+    entry.setUpdated(new Date());
+    entry.addAuthor("Joseph Blogger");
+    entry.setTitle("Updated title");
+    entry.setSummary("Updated summary");
+    entry.setContentAsHtml(
+        "<p>This post was <b>updated</b> by the Atom client!</p>");
+
+    AbderaClient client = new AbderaClient(abdera);
+    RequestOptions options = createRequestOptions(client);
+    BaseRequestEntity requestEntity =
+        new BaseRequestEntity(entry, false);
+
+    String url = "http://localhost:8080/api/atom/blogs";
+
+    ClientResponse response = client.put(
+        url + "/21308?companyId=20118", requestEntity, options);
+
+The same `createRequestOptions` helper method is used here.
+
+Lastly, here's a code snippet that demonstrates how to delete a blog post in
+Liferay. To delete a blog post, an HTTP DELETE request must be used. Note that
+in this snippet, the `companyId` of the portal instance within which to find the
+blog post and the `entryId` of the blog post are hard-coded.
+
+    Abdera abdera = new Abdera();
+    AbderaClient client = new AbderaClient(abdera);
+    RequestOptions options = createRequestOptions(client);
+
+    String url = "http://localhost:8080/api/atom/blogs";
+
+    ClientResponse response = client.delete(
+        url + "/21315?companyId=20118", options);
+
+You can find the Atom client examples in this section in the
+`com.liferay.docs.atomclient` project on
+[Github](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/com.liferay.docs.atomclient).
+To create a runnable JAR file of the Atom client including all of its
+dependencies, run `gradle shadowJar`.
+[Gradle Shadow](https://github.com/johnrengelman/shadow) provides an easy and
+efficient way to package the Atom client's dependencies alongside of the Atom
+client code in a runnable JAR file. To run the client from the project
+directory, use one of the following commands:
+
+- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "POST"`
+- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "PUT"`
+- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "DELETE"`
+
+Before running the Atom client, however, make sure to update any hard-coded
+values (company ID, group ID, or entry ID) to match your portal's content. Then
+rebuild your Atom client JAR file. This Atom client isn't a real-world example
+but it does demonstrate how a real-world client could interact with Liferay's
+Atom collections.
+
+Of course, Liferay's Blogs Atom collection isn't the only collection that you
+can interact with via a client. You can also create clients to interact with the
+Web Content Atom collection, the Documents and Media Files Atom collection, and
+the Documents and Media Folders Atom collection. (The Users Atom collection is
+read-only.)
+
+## Liferay's Web Content Atom Collection
+
+Just as with Blogs, Liferay's Web Content Atom collection can be listed using
+the Atom protocol. E.g., if you're running Liferay locally, the URL for web
+content is
+
+    http://localhost:8080/api/atom/web-content
+
+There is only view for viewing web content:
+
+- *Group web content entries* are displayed if the `groupId` URL parameter is
+  provided. This view supports pagination via the `page` and `max` URL
+  parameters.
+
+Since there is only view, the `groupId` URL parameter must be appended to the
+URL.
+
+There is one optional parameter, `type`, that indicates the type of web content.
+By default its value is `general`. 
+
+Suppose you wanted to view a feed of all the web content articles belonging to a
+site with a `groupId` of `20146`. If you're running Liferay locally, you can do
+so with curl like this:
+
+    curl -v 'http://localhost:8080/api/atom/web-content?groupId=20146' -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0'
+
+Liferay returns an XML feed document like this:
+
+    <?xml version='1.0' encoding='UTF-8'?>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <author>
+        <name>Liferay</name>
+      </author>
+      <link href="http://localhost:8080/api/atom/web-content?groupId=20146" />
+      <link href="http://localhost:8080/api/atom/web-content?groupId=20146" rel="self" />
+      <id>tag:liferay.com:web-content:feed</id>
+      <title type="text">Liferay javax.portlet.title.com_liferay_journal_web_portlet_JournalPortlet</title>
+      <updated>2015-09-02T19:23:35.263Z</updated>
+      <link href="http://localhost:8080/api/atom/web-content?groupId=20146&amp;page=1" rel="first" />
+      <link href="http://localhost:8080/api/atom/web-content?groupId=20146&amp;page=1" rel="last" />
+      <entry>
+        <link href="http://localhost:8080/api/atom/web-content/21401" />
+        <author>
+          <name>Test Test</name>
+        </author>
+        <id>tag:liferay.com:web-content:entry:21401</id>
+        <summary type="text" />
+        <title type="text">&lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;root available-locales="en_US" default-locale="en_US"&gt;&lt;Title language-id="en_US"&gt;Web Content Title&lt;/Title&gt;&lt;/root&gt;</title>
+        <updated>2015-09-02T19:23:18.000Z</updated>
+        <content type="application/xml">&lt;?xml version="1.0"?&gt;
+     
+    &lt;root available-locales="en_US" default-locale="en_US"&gt;
+    	&lt;dynamic-element name="content" type="text_area" index-type="keyword" index="0" instance-id="byoi"&gt;
+    		&lt;dynamic-content language-id="en_US"&gt;&lt;![CDATA[Content]]&gt;&lt;/dynamic-content&gt;
+    	&lt;/dynamic-element&gt;
+    &lt;/root&gt;</content>
+      </entry>
+    </feed>
+
+In this example, there's only one web content article in the specified site, and
+thus only one entry.
+
+Creating new Web Content articles via an Atom client is similar to creating new
+Blog posts. Note that entries created or updated using AtomPub have many
+attributes set by default: they never expire, never are reviewed, they are
+indexable, are already in the approved workflow status. Deleting web content
+articles via an Atom client works the same way as for deleting blog posts. 
