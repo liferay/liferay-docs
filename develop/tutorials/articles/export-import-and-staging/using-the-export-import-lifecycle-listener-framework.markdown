@@ -3,19 +3,21 @@
 The `ExportImportLifecycleListener` framework allows developers to write code
 that listens to certain staging events during the publication process. The
 staging and export/import processes have many behind-the-scenes events that you
-cannot inspect, by default. Some of these events, like logging and caching, can
-hold important information that you'd like to know about.
+cannot react upon, by default. Some of these events, like export successes and
+import failures, can hold important information that you'd like to know about
+and react upon. You also have the ability to listen for processes comprised of
+many events, and implement custom code when these processes are initiated.
 
-As the publication (or export/import) is executed, different events are being
-sent as a broadcast, and developers can write code to react or process these
-events. Some examples of these events include:
+As the publication is executed, different events are being sent as a broadcast,
+and developers can write code to react to these events, or their processes. Some
+examples of these events include:
 
 - Staging has started
-- A portlet export has succeeded or failed
-- An entity export succeeded
+- A portlet export has failed
+- An entity export has succeeded
 
 In this tutorial, you'll learn how to use the `ExportImportLifecycleListener`
-framework to react or process events during the staging and export/import
+framework to listen for processes/events during the staging and export/import
 lifecycles.
 
 ## Listening to Lifecycle Events
@@ -28,7 +30,7 @@ Follow the steps below:
 
 2. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. To follow naming conventions, begin the class
-   name with the entity or action you're processing, followed by
+   name with the entity or action name you're processing, followed by
    *ExportImportLifecycleListener* (e.g.,
    `LoggerExportImportLifecycleListener`).
 
@@ -55,8 +57,14 @@ Follow the steps below:
         @Component(immediate = true, service = ExportImportLifecycleListener.class)
 
     This annotation declares the implementation class of the component, and
+    specifies to immediately start the module once deployed to Portal.
 
 5. Specify the methods you want to implement in your class.
+
+Once you've successfully created your export/import lifecycle listener module,
+generate the module's JAR file and copy it to your Portal's `osgi/modules`
+directory. Once your module is installed and activated in your Portal's service
+registry, your lifecycle listener is ready for use in your Portal instance.
 
 If you're still thirsting for more information on this framework, and want to
 look at some examples for guidance, you're in luck! The first example this
@@ -69,15 +77,16 @@ The first method `isParallel()` determines whether your listener should run
 parallel with the execution, or if the listener should stop and return the
 execution to the coding method. The next method is the
 `onExportImportLifecycleEvent(...)` method, which consumes the lifecycle event
-and passes it through the Base class's method (as long as Debug mode is not
+and passes it through the base class's method (as long as Debug mode is not
 enabled).
 
 Each remaining method is called to print logging information to the user. For
 example, when a layout export starts, succeeds, and fails, logging information
 directly related to that event is printed. In summary, the
 `LoggerExportImportLifecycleListener` uses the lifecycle listener framework to
-log messages to the user when an export/import event occurs. Other good examples
-for event lifecycle listeners are [`CacheExportImportLifecycleListener`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/export-import/export-import-service/src/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.java)
+print messages to the user when an export/import event occurs. Other good
+examples for event lifecycle listeners are
+[`CacheExportImportLifecycleListener`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/export-import/export-import-service/src/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.java)
 and [`JournalCacheExportImportLifecycleListener`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/journal/journal-web/src/com/liferay/journal/web/lar/lifecycle/JournalCacheExportImportLifecycleListener.java).
 
 For an example of a lifecycle listener extending the
@@ -85,11 +94,6 @@ For an example of a lifecycle listener extending the
 [`ExportImportProcessCallbackLifecycleListener`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/export-import/export-import-service/src/com/liferay/exportimport/lifecycle/ExportImportProcessCallbackLifecycleListener.java)
 class. Instead of listening for lifecycle events, this class only listens for
 process actions.
-
-Once you've successfully created your export/import lifecycle listener module,
-generate the module's JAR file and copy it to your Portal's `osgi/modules`
-directory. Once your module is installed and activated in your Portal's service
-registry, your lifecycle listener is ready for use in your Portal instance.
 
 Terrific! You learned about the Export/Import Lifecycle Listener framework, and
 created your own listener to react to events/processes that occur during
