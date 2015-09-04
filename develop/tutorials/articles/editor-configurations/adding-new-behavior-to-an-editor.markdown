@@ -39,13 +39,8 @@ extension point, you'll need to:
 
 2. Now you'll need to create a module that can register your new JS file and
    inject it into your editor instance. Create a generic OSGi module using your
-   favorite third party tool.
-
-    <!-- If we decide to document how to create an OSGi module from scratch, we
-    should point to that documentation here. At the current time, there is no
-    Liferay "recommended" way of doing this. Therefore, I'm assuming that the
-    reader has experience with OSGi development. Pointing to introductory OSGi
-    tutorials (once available) would be very helpful here. -Cody -->
+   favorite third party tool, or use the
+   [Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle).
 
 3. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. To follow naming conventions, your class name
@@ -55,9 +50,6 @@ extension point, you'll need to:
    implement the
    [DynamicInclude](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/servlet/taglib/DynamicInclude.java)
    interface.
-
-    <!-- Boilerplate text for OSGi module creation. Replace once we have firm
-    grasp on how to explain this. -Cody -->
 
 4. Directly above the class's declaration, insert the following:
 

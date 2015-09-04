@@ -15,13 +15,8 @@ interface. By implementing this interface in your module, your module will
 provide a service to your portal that modifies the editors you'd like to change.
 A simple example of this is provided below.
 
-1. Create a generic OSGi module using your favorite third party tool.
-
-    <!-- If we decide to document how to create an OSGi module from scratch, we
-    should point to that documentation here. At the current time, there is no
-    Liferay "recommended" way of doing this. Therefore, I'm assuming that the
-    reader has experience with OSGi development. Pointing to introductory OSGi
-    tutorials (once available) would be very helpful here. -Cody -->
+1. Create a generic OSGi module using your favorite third party tool, or use the
+   [Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle).
 
 2. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. The class should extend the
