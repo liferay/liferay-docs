@@ -183,7 +183,7 @@ in adding a new Struts action. Here's how you do it:
         %>
         Hello <%= name %>!
 
-3.  Create a new Struts action class. Consider extending [`BaseStrutsPortletAction`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/struts/BaseStrutsPortletAction.html).
+3.  Create a new Struts action class. Consider extending [`BaseStrutsAction`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/struts/BaseStrutsAction.html).
     As an example, here's the code from the example-hook2-hook plugin's Struts
     action class [`ExampleStrutsAction`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/hooks/struts-actions-add-example-hook2-hook/docroot/WEB-INF/src/com/liferay/sample/hook/action/ExampleStrutsAction.java):
 
