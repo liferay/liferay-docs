@@ -298,8 +298,8 @@ name of the person submitting the entry and one for the entry itself.
 1. From the *Liferay AUI Taglib* snippet category, drag the *form* snippet to
 your page. 
 
-2. For the `action` attribute, supply *<%= addEntryURL %>*, which is the action URL you
-just created. 
+2. For the `action` attribute, supply `<%= addEntryURL %>`, which is the action
+URL you just created. 
 
 3. For the `name` attribute, give your form the name *<portlet:namespace />fm*.
 Click *Insert*. The `<portlet:namespace />` tag inserts a unique runtime value
