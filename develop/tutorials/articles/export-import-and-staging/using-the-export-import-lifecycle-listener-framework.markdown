@@ -1,16 +1,17 @@
 # Using the Export/Import Lifecycle Listener Framework
 
 The `ExportImportLifecycleListener` framework allows developers to write code
-that listens to certain staging events during the publication process. The
-staging and export/import processes have many behind-the-scenes events that you
-cannot react upon, by default. Some of these events, like export successes and
-import failures, can hold important information that you'd like to know about
-and react upon. You also have the ability to listen for processes comprised of
-many events, and implement custom code when these processes are initiated.
+that listens to certain staging or export/import events during the publication
+process. The staging and export/import processes have many behind-the-scenes
+events that you cannot react upon, by default. Some of these events, like export
+successes and import failures, can hold important information that you'd like
+to know about and react upon. You also have the ability to listen for processes
+comprised of many events, and implement custom code when these processes are
+initiated.
 
-As the publication is executed, different events are being sent as a broadcast,
-and developers can write code to react to these events, or their processes. Some
-examples of these events include:
+As the different processes are executed, different events are being sent as a
+broadcast, and developers can write code to react to these events, or their
+processes. Some examples of these events include:
 
 - Staging has started
 - A portlet export has failed
@@ -26,7 +27,7 @@ To begin creating your lifecycle listener, you'll need to create a module.
 Follow the steps below:
 
 1. Create a generic OSGi module using your favorite third party tool, or use the
-[Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle). 
+[Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle).
 
 2. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. To follow naming conventions, begin the class
@@ -74,8 +75,9 @@ This listener extends the `BaseExportImportLifecycleListener`, so you should
 immediately know that it deals with lifecycle events specifically.
 
 The first method `isParallel()` determines whether your listener should run
-parallel with the execution, or if the listener should stop and return the
-execution to the coding method. The next method is the
+parallel with the execution, or if the calling method should stop, execute the
+listener and return the execution to where the event was fired after the
+listener has finished. The next method is the
 `onExportImportLifecycleEvent(...)` method, which consumes the lifecycle event
 and passes it through the base class's method (as long as Debug mode is not
 enabled).
