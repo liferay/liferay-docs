@@ -10,7 +10,7 @@ portlets.
 If you know how to develop Android apps but need a start-to-finish guide on how 
 to integrate them with Liferay, you're in the right place. This Learning Path
 walks you through the creation of an Android app that interacts with the
-Guestbook portlet developed in the [Liferay MVC learning path](/learning-paths/-/knowledge_base/6-2/beginning-liferay-development). 
+Guestbook portlet developed in the [Liferay MVC learning path](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development).
 
 You should note that while this Learning Path provides complete code snippets of 
 the app as it's developed, not every aspect of Android development is explained 
