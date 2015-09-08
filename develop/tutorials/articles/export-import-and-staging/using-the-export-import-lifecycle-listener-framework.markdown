@@ -48,7 +48,7 @@ Follow the steps below:
     want to write custom code for when a layout export fails.
 
     The `BaseProcessExportImportLifecycleListener` class should be extended if
-    you'd like to listen for processes during a lifecycle. For example, if you
+    you'd like to listen for *processes* during a lifecycle. For example, if you
     want to write custom code for when a site publication fails. Keep in mind
     that a process usually consists of many individual events. Methods provided
     by this base class are only run once when the desired process action occurs.
@@ -76,14 +76,14 @@ immediately know that it deals with lifecycle events specifically.
 
 The first method `isParallel()` determines whether your listener should run
 parallel with the execution, or if the calling method should stop, execute the
-listener and return the execution to where the event was fired after the
+listener, and return the execution to where the event was fired after the
 listener has finished. The next method is the
 `onExportImportLifecycleEvent(...)` method, which consumes the lifecycle event
 and passes it through the base class's method (as long as Debug mode is not
 enabled).
 
 Each remaining method is called to print logging information to the user. For
-example, when a layout export starts, succeeds, and fails, logging information
+example, when a layout export starts, succeeds, or fails, logging information
 directly related to that event is printed. In summary, the
 `LoggerExportImportLifecycleListener` uses the lifecycle listener framework to
 print messages to the user when an export/import event occurs. Other good
