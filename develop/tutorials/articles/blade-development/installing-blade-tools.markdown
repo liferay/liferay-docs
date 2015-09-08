@@ -13,15 +13,15 @@ will vary depending on your OS.
 If you'd rather clone the repository and build the tools from source, skip to
 the next section.
 
-After you have JPM installed, download the `blade.cli.jar`
-[here](https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/blade.cli/generated/distributions/executable/blade.cli.jar).
+After you have JPM installed, download the `blade.jar`
+[here](https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/blade.cli/generated/distributions/executable/blade.jar).
 At the time of this writing the Blade CLI tool is the only one available. More
 tools, such as a plugin migration tool (for migrating plugins from a 6.2 Plugins
 SDK to a module for 7.0), will be made available in the future. 
 
 Next, install the downloaded JAR using the following terminal command:
 
-    (sudo) jpm install -fl [Downloads Directory]/blade.cli.jar
+    (sudo) jpm install -fl [Downloads Directory]/blade.jar
 
 Now the Blade CLI tool is installed, and the `blade` executable is in your path.
 Test its usage by typing `blade` into the terminal. If Blade Tools are
@@ -65,11 +65,11 @@ GitHub Repository](https://github.com/gamerson/blade.tools).
 Once you have the repository cloned down to your local machine, open your
 terminal and execute
 
-    gradle build export.blade.cli
+    gradle build export.blade
 
 Next, use JPM to install the JAR:
 
-    (sudo) jpm install -fl blade.cli/generated/distributions/executable/blade.cli.jar
+    (sudo) jpm install -fl blade.cli/generated/distributions/executable/blade.jar
 
 Now the Blade CLI tool is installed, and the `blade` executable is in your
 path. Test its usage by typing `blade` into the terminal. If Blade Tools are
