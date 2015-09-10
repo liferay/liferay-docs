@@ -9,8 +9,7 @@ publish all their updates in one fell swoop. To learn more about the
 [Staging](/discover/portal/-/knowledge_base/6-2/staging-page-publication)
 features, visit their respective user documentation articles.
 
-Liferay also provides development extension points for these features that allow
+Liferay also provides development options for these features that allow
 developers to write custom code, extending Liferay's default functionality. In
-this section of tutorials, you'll learn about the various extension points
-provided to you for export/import and staging, and extend the frameworks offered
-by these features.
+this section of tutorials, you'll learn about the various extension points and
+other options that are provided to you for export/import and staging.
