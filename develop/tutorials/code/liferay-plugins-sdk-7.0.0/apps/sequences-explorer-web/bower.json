@@ -1,0 +1,7 @@
+{
+  "name": "sequences-explorer",
+  "version": "1.0.0",
+  "dependencies": {
+  	"dragula.js": ""
+  }
+}
