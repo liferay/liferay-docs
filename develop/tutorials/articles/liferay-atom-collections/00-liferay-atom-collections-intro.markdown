@@ -330,15 +330,17 @@ efficient way to package the Atom client's dependencies alongside of the Atom
 client code in a runnable JAR file. To run the client from the project
 directory, use one of the following commands:
 
-- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "POST"`
-- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "PUT"`
-- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "DELETE"`
+- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "BLOGS_POST"`
+- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "BLOGS_PUT"`
+- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "BLOGS_DELETE"`
 
 Before running the Atom client, however, make sure to update any hard-coded
 values (company ID, group ID, or entry ID) to match your portal's content. Then
 rebuild your Atom client JAR file. This Atom client isn't a real-world example
 but it does demonstrate how a real-world client could interact with Liferay's
-Atom collections.
+Atom collections. (A simple improvement to the Atom client would be to update it
+so that values like company ID, group ID, and entry ID could be supplied as
+command line arguments instead of being hard-coded.)
 
 Of course, Liferay's Blogs Atom collection isn't the only collection that you
 can interact with via a client. You can also create clients to interact with the
@@ -353,6 +355,10 @@ the Atom protocol. E.g., if you're running Liferay locally, the URL for web
 content is
 
     http://localhost:8080/api/atom/web-content
+
+This chart demonstrates how to interact with the web content collection:
+
+![Atom Web Content Summary](../../images/atom-blogs-summary.png)
 
 There is only view for viewing web content:
 
@@ -405,7 +411,7 @@ Liferay returns an XML feed document like this:
       </entry>
     </feed>
 
-In this example, there's only one web content article in the specified site, and
+In this example, there's only one web content article in the specified site and
 thus only one entry.
 
 Creating new Web Content articles via an Atom client is similar to creating new
@@ -413,3 +419,96 @@ Blog posts. Note that entries created or updated using AtomPub have many
 attributes set by default: they never expire, never are reviewed, they are
 indexable, are already in the approved workflow status. Deleting web content
 articles via an Atom client works the same way as for deleting blog posts. 
+
+## Liferay's Documents and Media Files Atom Collection
+
+Liferay's Documents and Media Files Atom collection can be listed using the Atom
+protocol. If you're running Liferay locally, the base URL for files is
+
+    http://localhost:8080/api/atom/files
+
+You need to append a `folderId` parameter to this URL to specify a specific
+folder. For root folders (where `folderId` is `0`), you must specify the
+`repository` request parameter instead of the `folderId` parameter. The value of
+the `repositoryId` parameter should be the group ID of the site containing the
+root folder. The files collection supports pagination, using the `page` and
+`max` request parameters. 
+
+This chart demonstrates how to interact with the files collection:
+
+![Atom Files Summary](../../images/atom-files-summary.png)
+
+There is one view for viewing a file collection and another view for viewing
+individual files:
+
+- *Folder file entries* are displayed if the `folderId` (or `repositoryId` in
+  the case of root folders) URL parameter is provided. This view supports
+  pagination via the `page` and `max` URL parameters.
+- A *file entry* is displayed if `/[entryId]` is appended to the base URL.
+
+Suppose you wanted to view a feed of all the documents belonging to the root
+documents and media folder of a site with a `groupId` of `20146`. If you're
+running Liferay locally, you can do so with curl like this:
+
+    curl -v 'http://localhost:8080/api/atom/files?repositoryId=20146' -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0'
+
+Liferay returns an XML feed document like this:
+
+    <?xml version='1.0' encoding='UTF-8'?>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <author>
+        <name>Liferay</name>
+      </author>
+      <link href="http://localhost:8080/api/atom/files?repositoryId=20146" />
+      <link href="http://localhost:8080/api/atom/files?repositoryId=20146" rel="self" />
+      <id>tag:liferay.com:files:feed</id>
+      <title type="text">Liferay javax.portlet.title.com_liferay_document_library_web_portlet_DLPortlet files</title>
+      <updated>2015-09-09T18:29:28.856Z</updated>
+      <link href="http://localhost:8080/api/atom/files?repositoryId=20146&amp;page=1" rel="first" />
+      <link href="http://localhost:8080/api/atom/files?repositoryId=20146&amp;page=1" rel="last" />
+      <entry>
+        <link href="http://localhost:8080/api/atom/files/21519" />
+        <author>
+          <name>Test Test</name>
+        </author>
+        <id>tag:liferay.com:files:entry:21519</id>
+        <summary type="text">
+        </summary>
+        <title type="text">test.txt</title>
+        <updated>2015-09-09T18:28:03.000Z</updated>
+        <content type="application/xml" src="http://localhost:8080/api/atom/files/21519:media" />
+      </entry>
+    </feed>
+
+In this example, there's only one file in the specified folder and thus only one
+entry. (The inclusion of the `respositoryId=20146` URL parameter means that the
+root folder of the site whose `groupId` is `20146` is specified.) 
+
+If you wanted to view a feed of all the documents inside of a specific
+(non-root) documents and media folder, you could do so with curl like this:
+
+    curl -v 'http://localhost:8080/api/atom/files?folderId=21503' -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0'
+
+A file entry can be viewed either as an Atom entry (i.e., as Atom XML content)
+or as media (i.e., as binary content).
+
+- To view a file as an Atom entry, use a URL like this:
+
+        http://localhost:8080/api/atom/files/21519
+
+    Here, `21519` is the `entryId` of a file. Here's an example using curl:
+
+        curl -v 'http://localhost:8080/api/atom/files/21519' -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0'
+
+- To view the actual media content of a file, use a URL like this:
+
+        http://localhost:8080/api/atom/files/21519:media
+
+    You can test this using curl:
+
+        curl -v 'http://localhost:8080/api/atom/files/21519:media' -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0'
+
+Next, you'll learn how to create an Atom client to add, update, and delete
+Liferay documents.
+
+###
