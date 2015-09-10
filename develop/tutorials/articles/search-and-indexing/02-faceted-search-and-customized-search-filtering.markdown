@@ -251,8 +251,8 @@ Search portlet to satisfy this use case.
     `extension` equal to `pdf`. For more information on Lucene query syntax,
     please refer to Lucene's [documentation](http://lucene.apache.org/core/3_5_0/queryparsersyntax.html).
 
-4. Then edit your `docroot/custom_jsps/html/portlet/search/main_search.jsp` file
-   to add the required imports.
+4. Then edit your `docroot/custom_jsps/html/portlet/search/init.jsp` file to add
+   the required imports.
 
     Find the following line:
 
