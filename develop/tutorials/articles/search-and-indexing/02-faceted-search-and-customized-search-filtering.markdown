@@ -215,8 +215,8 @@ Search portlet to satisfy this use case.
    `html/portlet/search/init.jsp` and `html/portlet/search/main_search.jsp`,
    then click *Finish*.
 
-   If you're not using Liferay IDE, create a `liferay-hook.xml` file in your
-   project's `docroot/WEB-INF` folder and add the following contents to it:
+    If you're not using Liferay IDE, create a `liferay-hook.xml` file in your
+    project's `docroot/WEB-INF` folder and add the following contents to it:
 
         <?xml version="1.0"?>
         <!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
@@ -237,7 +237,7 @@ Search portlet to satisfy this use case.
 
         searchContext.setStart(mainSearchSearchContainer.getStart());
 
-   Add the following lines just below the line above:
+    Add the following lines just below the line above:
 
         Query stringQuery = StringQueryFactoryUtil.create("entryClassName:com.liferay.portlet.journal.model.JournalArticle (+entryClassName:com.liferay.portlet.documentlibrary.model.DLFileEntry +extension:pdf)");
 
