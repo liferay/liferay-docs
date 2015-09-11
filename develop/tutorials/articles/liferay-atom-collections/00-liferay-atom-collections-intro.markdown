@@ -229,12 +229,12 @@ allows entries to added, updated, or deleted. In this section, you'll learn how
 to create a client that can manipulate Liferay's blogs collection via the
 [AtomPub](https://en.wikipedia.org/wiki/Atom_%28standard%29) protocol. As
 mentioned before, Liferay's Atom server implementation is based on
-[Apache Abdera](https://abdera.apache.org/). Abdera can also be used to create
+[Apache Abdera](https://abdera.apache.org). Abdera can also be used to create
 Atom clients. See
 [Abdera's documentation](https://cwiki.apache.org/confluence/display/ABDERA/AtomPub+Client)
 for more information. In order to add, update, or delete blog posts, the Abdera
 client builds the appropriate Atom XML documents and uses the
-[Apache Commons HTTP Client](http://hc.apache.org/httpclient-3.x/)
+[Apache Commons HTTP Client](http://hc.apache.org/httpclient-3.x)
 to send requests to Liferay.
 
 In order to create an create an Atom client using Abdera, you should declare the
@@ -261,10 +261,10 @@ post is hard-coded.
     BaseRequestEntity requestEntity =
         new BaseRequestEntity(entry, false);
 
-    String url = "http://localhost:8080/api/atom/blogs";
+    String blogsUrl = "http://localhost:8080/api/atom/blogs";
 
     ClientResponse response =
-        client.post(url + "?groupId=20146", requestEntity, options);
+        client.post(blogsUrl + "?groupId=20146", requestEntity, options);
 
 Here, `createRequestOptions` is a helper method defined like this:
 
@@ -299,10 +299,10 @@ specify the entry ID.
     BaseRequestEntity requestEntity =
         new BaseRequestEntity(entry, false);
 
-    String url = "http://localhost:8080/api/atom/blogs";
+    String blogsUrl = "http://localhost:8080/api/atom/blogs";
 
     ClientResponse response = client.put(
-        url + "/21308?companyId=20118", requestEntity, options);
+        blogsUrl + "/21308?companyId=20118", requestEntity, options);
 
 The same `createRequestOptions` helper method is used here.
 
@@ -315,10 +315,10 @@ blog post and the `entryId` of the blog post are hard-coded.
     AbderaClient client = new AbderaClient(abdera);
     RequestOptions options = createRequestOptions(client);
 
-    String url = "http://localhost:8080/api/atom/blogs";
+    String blogsUrl = "http://localhost:8080/api/atom/blogs";
 
     ClientResponse response = client.delete(
-        url + "/21315?companyId=20118", options);
+        blogsUrl + "/21315?companyId=20118", options);
 
 You can find the Atom client examples in this section in the
 `com.liferay.docs.atomclient` project on
@@ -511,4 +511,251 @@ or as media (i.e., as binary content).
 Next, you'll learn how to create an Atom client to add, update, and delete
 Liferay documents.
 
-###
+### Liferay Documents and Media Files Atom Client
+
+In this section, you'll learn how to create an [Abdera](https://abdera.apache.org)
+client that can add, update, and delete entries from Liferay's Documents and
+Media files collection via the
+[AtomPub](https://en.wikipedia.org/wiki/Atom_%28standard%29) protocol. See
+[Abdera's documentation](https://cwiki.apache.org/confluence/display/ABDERA/AtomPub+Client)
+for more information. In order to add, update, or delete files, the Abdera
+client uses the [Apache Commons HTTP Client](http://hc.apache.org/httpclient-3.x) 
+to send requests to Liferay.
+
+In order to create an create an Atom client using Abdera, you should declare the
+[abdera-client](http://search.maven.org/#artifactdetails|org.apache.abdera|abdera-client|1.1.2|bundle) as a dependency of your project.
+
+There are two ways to add new files to Liferay's Atom file collection:
+
+1. The first way to add a file is to submit an Atom XML document.
+2. The second way is to submit the file directly.
+
+We'll demonstrate both ways.
+
+For example, here's a code snippet that demonstrates how to add a new image file
+to Liferay by submitting an Atom XML document. To add a new file, an HTTP POST
+request must be used. Note that in this snippet, the `groupId` of the Liferay
+site within which to add the file is hard-coded.
+
+    Abdera abdera = new Abdera();
+    Factory factory = abdera.getFactory();
+    Entry entry = factory.newEntry();
+    entry.setId(FOMHelper.generateUuid());
+    entry.setUpdated(new Date());
+    entry.setTitle("cat.jpg");
+    entry.setSummary("This is a cat!");
+
+    File f = new File("/home/jrao/Pictures/cat.jpg");
+    FileInputStream fis = new FileInputStream(f);
+    entry.setContent(fis, "image/jpeg");
+
+    AbderaClient client = new AbderaClient(abdera);
+    RequestOptions options = createRequestOptions(client);
+    options.setSlug(f.getName());
+    options.setContentType("application/atom+xml");
+    options.setHeader("Media-Content-Type", "image/jpeg");
+
+    String filesUrl = "http://localhost:8080/api/atom/files";
+
+    // ClientResponse response = client.post(filesUrl + "?folderId=21503", entry, options);
+    ClientResponse response = client.post(filesUrl + "?repositoryId=20146", entry, options);
+
+Here, `createRequestOptions` is the same helper method that was defined earlier:
+
+    private static RequestOptions createRequestOptions(AbderaClient client) {
+        String encodedCredential =
+            Base64.encode("test@liferay.com:test".getBytes());
+        RequestOptions options = client.getDefaultRequestOptions();
+        options.setHeader("Authorization", "Basic " + encodedCredential);
+
+        return options;
+    }
+
+Next, here's a code snippet that demonstrates how to add a new image file to
+Liferay by submitting it directly:
+
+    Abdera abdera = new Abdera();
+
+    File f = new File("/home/jrao/Pictures/cat.jpg");
+    FileInputStream fis = new FileInputStream(f);
+
+    AbderaClient client = new AbderaClient(abdera);
+    RequestOptions options = createRequestOptions(client);
+    options.setSlug(f.getName());
+    options.setContentType("image/jpeg");
+    options.setHeader("Title", "cat");
+    options.setHeader("Summary", "This is another cat!");
+
+    InputStreamRequestEntity streamRequest = new InputStreamRequestEntity(fis, "image/jpeg");
+
+    String filesUrl = "http://localhost:8080/api/atom/files";
+
+    // ClientResponse response = client.post(filesUrl + "?folderId=21503", streamRequest, options);
+    ClientResponse response = client.post(filesUrl + "?repositoryId=20146", streamRequest, options);
+
+Here's a code snippet that demonstrates how to update an image file by
+submitting an Atom XML document:
+
+    Abdera abdera = new Abdera();
+
+    Factory factory = abdera.getFactory();
+    Entry entry = factory.newEntry();
+    entry.setId("tag:liferay.com:dl:entry:20776");
+    entry.setUpdated(new Date());
+    entry.setTitle("updated-title.jpg");
+    entry.setSummary("Updated summary");
+
+    File f = new File("/local/path/cat.jpg");
+    FileInputStream fis = new FileInputStream(f);
+    entry.setContent(fis, "image/jpeg");
+
+    AbderaClient client = new AbderaClient(abdera);
+    RequestOptions options = createRequestOptions(client);
+    options.setContentType("application/atom+xml");
+    options.setHeader("Media-Content-Type", "image/jpeg");
+    options.setSlug(f.getName());
+
+    ClientResponse response = client.put(filesUrl + "/20776", entry, options);
+
+Next, here's a code snippet that demonstrates how to update an image file by
+submitting a new one directly:
+
+    Abdera abdera = new Abdera();
+
+    File f = new File("/local/path/cat.jpg");
+    FileInputStream fis = new FileInputStream(f);
+
+    AbderaClient client = new AbderaClient(abdera);
+    RequestOptions options = createRequestOptions(client);
+    options.setSlug(f.getName());
+    options.setContentType("image/jpeg");
+    options.setHeader("Title", "updated-directly.jpg");
+    options.setHeader("Summary", "Summary updated directly!");
+
+    InputStreamRequestEntity streamRequest = new InputStreamRequestEntity(fis, "image/jpeg");
+    ClientResponse response = client.put(filesUrl + "/20789:media", streamRequest, options);
+
+Finally, here's a code snippet that demonstrates how to delete an image file:
+
+    Abdera abdera = new Abdera();
+    AbderaClient client = new AbderaClient(abdera);
+    RequestOptions options = createRequestOptions(client);
+
+    ClientResponse response = client.delete(
+        filesUrl + "/20776", options);
+
+Remember that you can find the Atom client examples in this section in the
+`com.liferay.docs.atomclient` project on
+[Github](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/com.liferay.docs.atomclient).
+To create a runnable JAR file of the Atom client including all of its
+dependencies, run `gradle shadowJar`.
+[Gradle Shadow](https://github.com/johnrengelman/shadow) provides an easy and
+efficient way to package the Atom client's dependencies alongside of the Atom
+client code in a runnable JAR file. To run the client from the project
+directory, use one of the following commands:
+
+- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "FILES_POST"`
+- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "FILES_POST_DIRECT"`
+- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "FILES_PUT"`
+- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "FILES_PUT_DIRECT"`
+- `java -jar build/libs/com.liferay.docs.atomclient-all.jar "FILES_DELETE"`
+
+Before running the Atom client, remember to update any hard-coded values
+(company ID, group ID, or entry ID) to match your portal's content. Then rebuild
+your Atom client JAR file. Also, remember that this Atom client isn't a
+real-world example but it does demonstrate how a real-world client could
+interact with Liferay's Atom collections. (A simple improvement to the Atom
+client would be to update it so that values like company ID, group ID, and entry
+ID could be supplied as command line arguments instead of being hard-coded.)
+
+The last Liferay Atom collection that supports adding, updating, and deleting entries via a client is the Documents and Media Folders Atom collection.
+
+## Liferay's Documents and Media Folders Atom Collection
+
+As with the other Liferay Atom collections that you've seen (Blogs, Web Content,
+and Documents and Media Files), Liferay's Documents and Media Folders Atom
+collection can be listed using the Atom protocol. E.g., if you're running
+Liferay locally, the URL for documents and media folders is
+
+    http://localhost:8080/api/atom/folders
+
+This chart demonstrates how to interact with the documents and media folders
+collection:
+
+![Atom Documents and Media Folders Summary](../../images/atom-folders-summary.png)
+
+There is only view for viewing Documents and Media folders:
+
+- *Folder entries* are displayed if either the `parentFolderId` or the
+  `repositoryId` URL parameter is provided. This view lists all of the
+  subfolders of the specified parent folder. Either the `parentFolderId` or the
+  `repositoryId` parameter must be provided. Use the `repositoryId` parameter to
+  list subfolders of a root folder, otherwise use the `parentFolderId`
+  parameter.
+
+Atom entries that represent folder do not contain content. Instead, they point
+to the Files Atom collections using the `src` attribute. Although folders do not
+contain content, the Abdera client requires that content be provided when
+creating or updating folders. You can just pass an empty string to satisfy this
+requirement.
+
+Suppose you wanted to view all the subfolders belonging to the root folder of a
+site with a `groupId` of `20146`. If you're running Liferay locally, you can do
+so with curl like this:
+
+    curl -v 'http://localhost:8080/api/atom/folders?repositoryId=20146' -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0'
+
+Liferay returns an XML feed document like this:
+
+    <?xml version='1.0' encoding='UTF-8'?>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <author>
+        <name>Liferay</name>
+      </author>
+      <link href="http://localhost:8080/api/atom/folders?repositoryId=20146" />
+      <link href="http://localhost:8080/api/atom/folders?repositoryId=20146" rel="self" />
+      <id>tag:liferay.com:folders:feed</id>
+      <title type="text">Liferay javax.portlet.title.com_liferay_document_library_web_portlet_DLPortlet folders</title>
+      <updated>2015-09-11T03:20:24.300Z</updated>
+      <link href="http://localhost:8080/api/atom/folders?repositoryId=20146&amp;page=1" rel="first" />
+      <link href="http://localhost:8080/api/atom/folders?repositoryId=20146&amp;page=1" rel="last" />
+      <entry>
+        <link href="http://localhost:8080/api/atom/folders/20816" />
+        <author>
+          <name>Test Test</name>
+        </author>
+        <id>tag:liferay.com:folders:entry:20816</id>
+        <summary type="text">
+        </summary>
+        <title type="text">My Folder</title>
+        <updated>2015-09-11T03:20:14.000Z</updated>
+        <content type="application/xml" src="http://localhost:8080/api/atom/files?folderId=20816" />
+      </entry>
+    </feed>
+
+In this example, there's only one subfolder (named *My Folder*) of the root
+folder of the specified site and thus only one entry.
+
+Creating, updating, and deleting Documents and Media folders via an Atom client
+is similar to creating new blog posts, web content articles, or documents and
+media files.
+
+## Liferay's Users Atom Collection
+
+Liferay's Users atom collection is read-only. There are several different
+collection views:
+
+- Company users (a.k.a. portal users)
+- Organization users (a.k.a. organization members)
+- Site users (a.k.a. site members)
+- User group users (a.k.a. user group members)
+
+Company users is the default view. If no URL parameter is supplied, this view is
+used. To use another view, supply the appropriate URL parameter:
+`organizationId`, `userGroupId`, or `groupId`. Pagination is also supported via
+the`page` and `max` parameters.
+
+![Atom Users Summary](../../images/atom-users-summary.png)
+
+Excellent! Now you know how to work with Liferay's Atom collections.
+
