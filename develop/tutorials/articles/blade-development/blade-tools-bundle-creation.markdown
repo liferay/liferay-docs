@@ -7,21 +7,21 @@ module framework, is between you and your code (and your boss). The Blade Tools
 project can be used to create projects based on Maven or Gradle, and then you
 can manage them however you like. 
 
-Blade Tools aims to provide an alternative development strategy that will allow
-you to simply create project templates that fulfill the requirements of Liferay
-7, to be added to your preferred development environment. 
+Blade Tools provides project templates for Liferay 7 that don't require any
+special developer tools. Like IntelliJ or NetBeans? Like to code with just a
+text editor? Then BLADE is for you. 
 
 This tutorial assumes you already installed Blade Tools. There's an
 [installation tutorial](/develop/tutorials/-/knowledge_base/7-0/installing-blade-tools) 
 if you haven't yet installed the tools.
 
-The tool's `create` subcommand creates a project template, including directory
-structure, `build.gradle` script, any resources (such as JSPs), and a Java
-class with the `@Component` annotation. After that, you just develop as you
-would normally, build the JAR file, and deploy the bundle to Liferay's module
-framework.
+The tool's `create` subcommand creates a project from a template, including
+the folder structure, `build.gradle` script, any resources (such as
+JSPs)--depending on the template--, and a Java class with the `@Component`
+annotation. After that, you just develop as you would normally, build the JAR
+file, and deploy the bundle to Liferay's module framework.
 
-This tutorial will focus only on two commands available with Blade Tools; the
+This tutorial focuses only on two commands available with Blade Tools; the
 `blade create ...`  and `blade deploy ...  ` commands.
 
 ## Using the Create Command
@@ -54,14 +54,14 @@ The correct command syntax for creating a project is found under SYNOPSIS:
 
 To create a bundle with a JSP Portlet, you could specify
 
-    blade create --projectType "jspportlet" --classname "MyJsp" --dir "../blade/gradle" com.liferay.jspportlet Portlet
+    blade create --projectType "jspportlet" --classname "MyJsp" --dir . com.liferay.jspportlet Portlet
 
 The above command creates a JSP Portlet (`projectType`) with a component class
-called MyJspPortlet (`classname`), in the BLADE project's `gradle` directory
-(`dir`). The project `name` is `com.liferay.jspportlet`, and the `service` type
-we are creating is `Portlet`.
+called MyJspPortlet (`classname`), in the current directory (`dir`). The project
+`name` is `com.liferay.jspportlet`, and the `service` type we are creating is
+`Portlet`.
 
-Here's the class that's automatically created for us based on the above command:
+Here's the class that's created based on the above command:
 
     package com.liferay.jspportlet;
 
@@ -88,10 +88,9 @@ Here's the class that's automatically created for us based on the above command:
     }
 
 Your `@Component` is already set up for you, with all necessary properties
-configured, and the necessary imports declared.
+configured and the necessary imports declared.
 
-Since the command illustrated above included `projectType jspportlet`, we also
-have some JSPs set up for us, located at
+Since the above command included `projectType jspportlet`, you also have JSPs at
 `[Project_Root]/src/main/resources/META-INF/resources`. Both `init.jsp` and
 `view.jsp` are included by default.
 
@@ -103,29 +102,23 @@ The default view looks like this:
         <b><liferay-ui:message key="____________________________.caption"/></b>
     </p>
 
-Oh wait, we have a fake question from a make believe reader. Alfred from
-Tuscaloosa, Alabama asks: *What does that command actually create, in the way
-of files and directories, and overall project structure?* 
-
-That's a great question, Alfred! Since a picture is worth a
-thousand words (at least), check out this file manager screenshot of the
-created project's root directory:
+Here's the full view of your new project: 
 
 ![Figure 1: The `create` command generates a project structure and some basic files so you can begin developing quickly.](../../images/blade-jspportlet-structure.png)
 
 You probably noticed that *Portlet* was appended to the string specified with
 the `classname` option, resulting in a Java class with the name `MyJspPortlet`.
-If you instead specified `--classname "MyJspPortlet"`, the resulting class is
-named `MyJspPortletPortlet`, which is more redundanter, don't you think?
+If you instead specified `--classname "MyJspPortlet"`, the resulting class
+becomes `MyJspPortletPortlet`, which is rather redundant, don't you think?
 
-In addition to the auto-gernerated files and directories, the `build.gradle`
-build script was created, as well as the necessary `bnd.bnd` file.
+In addition to the auto-generated files and directories, you get a `build.gradle`
+build script, along with the necessary `bnd.bnd` file.
 
 ## Using the Deploy Command
 
 Once you have your portlet developed and built (`gradle build` if you use
 Gradle), deploy it to Liferay. With Blade Tools, you can take advantage of the
-`deploy` subocommand. If you have Liferay 7 running, just open a terminal and
+`deploy` subcommand. If you have Liferay 7 running, just open a terminal and
 type `blade deploy [path-to-JAR]`. The blade tool connects to the Liferay
 Module Framework and installs your module's JAR file. By typing `telnet
 localhost 11311` in a terminal and then `lb` once inside the Gogo Shell, you
