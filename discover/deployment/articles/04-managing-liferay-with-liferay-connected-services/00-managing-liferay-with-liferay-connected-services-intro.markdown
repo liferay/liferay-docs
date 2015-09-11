@@ -1,6 +1,6 @@
 # Managing Liferay with Liferay Connected Services [](id=managing-liferay-with-liferay-connected-services)
 
-Liferay Connected Services (LCS) is a set of tools and services that lets you 
+Liferay Connected Services (LCS) is a set of online tools and services that lets you 
 manage and monitor your Liferay installations. While Liferay's patching tool 
 lets you apply fix packs and other updates, the install process is still manual. 
 LCS simplifies this process by automatically installing any fix packs that you 
@@ -11,7 +11,10 @@ enabling one-click downloading and updating. You can also use LCS to monitor the
 performance of your Liferay instances. This includes data on pages, portlets, 
 memory usage, JVM performance, and much more. Even better, the features of LCS 
 work regardless of whether your Liferay instance is on a single discreet server 
-or distributed across a node. 
+or distributed across a node.
+
+You can find more information about LSC in the official product page:
+http://www.liferay.com/products/liferay-connected-services
 
 Before going any further, you should make sure that your Liferay instances meet 
 the requirements for LCS--you must be running Liferay Portal 6.1 GA 3, or 6.2 GA
