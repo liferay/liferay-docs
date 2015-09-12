@@ -155,6 +155,8 @@ working (e.g., unresolved dependencies, etc.)
 `services`: lists all of the services that have been registered in Liferay's
 module framework.
 
+`inspect capability service [bundle ID]`: list of services exposed by a bundle.
+
 `install [path to JAR file]`: installs the specified bundle into Liferay's
 module framework
 
@@ -163,7 +165,12 @@ module framework
 `stop [bundle ID]`: stops the specified bundle
 
 `uninstall [bundle ID]`: uninstalls the specified bundle from Liferay's module
-framework
+framework.
+
+`system:getproperties`: lists all of the system properties.
+
+
+
 
 For more information about the Gogo shell, please visit [http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html](http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html).
 
