@@ -172,7 +172,7 @@ For more information about the Gogo shell, please visit [http://felix.apache.org
 Another way to interact with Liferay's module framework is via the Felix Web
 Console. To access Liferay's Felix Web Console if you're running Liferay
 locally, visit
-[http://localhost:8080/o/system/console/bundles](http://localhost:8080/o/system/console/bundles).
+[http://localhost:8080/o/system/console/bundles](http://localhost:8080/o/system/console/bundles) (default credentials: admin/admin).
 
 By default, you'll see a list of all the bundles installed in Liferay's module
 framework. You can expand each bundle entry by clicking on the arrow next to the
