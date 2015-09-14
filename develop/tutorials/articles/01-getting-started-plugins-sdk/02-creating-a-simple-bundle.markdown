@@ -19,7 +19,7 @@ simple bundle using the Plugins SDK.
 
     This creates a project named `simple-bundle-portlet`.
 
-2 . Delete the `-portlet` suffix from your project's name. You don't need the
+2.  Delete the `-portlet` suffix from your project's name. You don't need the
     `-portlet` suffix since you're just creating a simple bundle, not a portlet. 
 
 3.  Also, delete your project's `docroot` folder. Even if you were creating a
