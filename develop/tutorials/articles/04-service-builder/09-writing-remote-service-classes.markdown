@@ -151,8 +151,11 @@ Finding a portlet's web services is easy with Liferay's JSON web service
 interface. Invoking a portlet's web services via Liferay's JSON web service
 interface is a great way to test them. You can also examine alternate equivalent
 methods of calling the SOAP and JSON web services via JavaScript, Curl, and
-URLs. Next, we'll consider how to implement custom SQL queries in your portlet,
-so you can easily leverage information from multiple entity types. 
+URLs. If you'd like to learn more about how to invoke remote services from a
+client application, visit the
+[JSON Web Services](/develop/tutorials/-/knowledge_base/6-1/json-web-services)
+tutorial. Next, we'll consider how to implement custom SQL queries in your
+portlet, so you can easily leverage information from multiple entity types.
 
 Service Builder can also make your project's web services available via SOAP
 using Apache Axis. After you've built your portlet project's WSDDs and deployed
