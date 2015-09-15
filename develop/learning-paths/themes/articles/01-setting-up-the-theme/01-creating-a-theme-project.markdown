@@ -1,14 +1,15 @@
 # Creating a Theme Project
 
-By this point you should already be setup with a development environment with 
-either Liferay IDE or Developer Studio, so you can dive right in to creating 
-the theme. 
+The rest of this Learning Path assumes you've followed the instructions for
+setting up [Liferay IDE](/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
+or [Liferay Developer Studio](/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu). 
+If you've done that, you're ready to begin! 
 
 1. Select *File* &rarr; *New* &rarr; *Liferay Plugin Project*.
 
 2. In the Project Wizard, enter *lunar-resort-theme* for the *Project name* and 
 *Lunar Resort Theme* for the *Display name*. Leave the *build type* as *Ant* and 
-select the proper *Plugins SDK* and matching *Liferay runtime*.
+select the proper Plugins SDK and matching Liferay runtime.
 
 3. Select *Theme* for the *Plugin type* and click *Next*
 
@@ -20,19 +21,18 @@ and click *Finish*.
 +$$$
 
 **Note:** The first time you create a project, make sure you're online. In the 
-background, Liferay's Plugins SDK downloads several JAR files that it needs in 
-order to operate. This keeps the initial Plugins SDK download small but means 
-that it may take several minutes to create your first project. Subsequent 
-projects are created almost instantly.
+background, Liferay's Plugins SDK downloads several necessary JAR files. This
+keeps the initial Plugins SDK download small, but it may take several minutes to
+create your first project. Subsequent projects are created almost instantly.
 
 $$$
 
 You'll now see your project in the Package Explorer on the left. What you've
-just done is create a blank Freemarker theme based off of Liferay's *_styled* 
+just done is create a blank Liferay theme based off of Liferay's *_styled* 
 theme. 
 
 Rather than build a theme from scratch, it is best practice to use a Liferay 
 base theme as a starting point to ensure full compatibility. The changes you 
-make to the theme will override the default settings of the *_styled* theme.
+make to the theme override the default settings of the *_styled* theme.
 
 You can learn about the theme's anatomy next.
