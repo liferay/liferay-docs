@@ -22,7 +22,7 @@ annotation. After that, you just develop as you would normally, build the JAR
 file, and deploy the bundle to Liferay's module framework.
 
 This tutorial focuses only on two commands available with Blade Tools; the
-`blade create ...`  and `blade deploy ...  ` commands.
+`blade create ...`  and `blade deploy ...` commands.
 
 ## Using the Create Command
 
