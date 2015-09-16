@@ -6,11 +6,11 @@ the [BLADE project](https://github.com/rotty3000/blade) is going to be your best
 friend. It's recommended to use the [Blade Tools command line
 utility](/develop/tutorials/-/knowledge_base/7-0/blade-tools-bundle-creation) to
 generate a BLADE module from a set of Blade Tools subcommands. That said, there
-tends to be more project types available in BLADE than can be built using Blade
-Tools. Because of this, you might find yourself needing to manually create a
-module from an existing BLADE template.
+are more project types available in BLADE than can be built using Blade Tools.
+Because of this, you might find yourself needing to manually create a module
+from an existing BLADE template.
 
-It takes several basic steps to manually create bundles from BLADE project
+Follow some basic steps to manually create bundles from BLADE project
 templates:
 
 1. Clone the BLADE repository for access to the latest module templates.
@@ -22,19 +22,19 @@ One good way of developing plugins for Liferay 7 is to find a BLADE project
 that meets your developments goals (for example, modifying Liferay's core
 services). You would choose your build tool (Gradle, for instance), navigate to
 the BLADE Gradle directory, and find the `blade.service.hook.user` project.
-Copy the project out of the BLADE repository, wherever you'd like to work with it.
+Copy the project from the BLADE repository to your local directory.
 
 For demonstration, this tutorial will assume that you're using Gradle to build
 your bundles. 
 
-## Clone the BLADE Repository
+## Cloning the BLADE Repository
 
 You need to clone the [BLADE GitHub repository](https://github.com/rotty3000/blade) 
 to have access to its template modules. New templates will continue to be added
 to the project by contributors, so update your local version of
 the repository regularly.
 
-## Copy the Template Module out of BLADE
+## Copying the Template Module out of BLADE
 
 Find the project you want to use as your template module. Start by choosing
 your build tool. At the time of this writing, you have three options: Gradle,
@@ -42,9 +42,8 @@ Maven, or Bndtools. The root BLADE project has a separate directory for each
 build tool. Copy the BLADE template from the `blade/[build-tool]` directory
 into your local directory.
 
-The list of BLADE templates is always growing, but for illustrative purposes,
-here's the list of project in the `blade/gradle` directory at the time of this
-writing: 
+The list of BLADE templates is always growing, but here's the list of project in
+the `blade/gradle` directory at the time of this writing: 
 
     blade.authenticator.shiro 
     blade.indexerpostprocessor
@@ -79,7 +78,7 @@ Once you find the proper template module, copy it from BLADE into your own
 directory. If you try to build the project after copying it, it won't work. You
 need to reconfigure the build script.
 
-## Reconfigure the Build Script
+## Reconfiguring the Build Script
 
 Looking at the `blade/gradle/blade.service.hook.user` project's `build.gradle`
 file will quickly reveal why it won't build if you simply copy the BLADE module
@@ -153,10 +152,10 @@ Because the goal is to create a standalone project, don't just copy the
 copied project, and include a `settings.gradle` file that lists your project. If
 you're going to do that, why not just develop in the BLADE environment (which is
 a viable option)? To develop a standalone module that will build no matter where
-it is on your file system, merge the parent build file with the build file of
-the module. For the `blade.service.hook.user` Gradle module, it's not
-difficult. Copy the contents of the parent build file into the module's
-`gradle.build` file to start.
+it is on your file system, merge the parent build file from the BLADE project
+with the build file of the module. For the `blade.service.hook.user` Gradle
+module, it's not difficult. Copy the contents of the parent build file into the
+module's `gradle.build` file to start.
 
 Once you have the combined build files, start paring it down to the bare
 essentials. The build script for the `blade.service.hook.user` module is easily
@@ -198,7 +197,8 @@ of the dependencies and repositories can be removed since they do not apply to
 the specific project in this example. Take note of the plugin that's applied,
 `biz.aQute.bnd.builder`. This plugin lets you have your Bnd cake, and eat it,
 too (so to speak). It's needed because the BLADE Gradle projects use Bnd to
-configure the project, without using a Bnd Workspace based build environment. 
+configure the project, without using a build environment based on a Bnd
+Workspace. 
 
 If you run `gradle build` now, the project builds successfully. Of course you
 can do whatever you want with your build script, and fold it into any existing
@@ -207,7 +207,7 @@ As you develop the project, making it into something more beautiful than the
 simple template you copied out of BLADE, you'll probably need to revisit your
 build script.
 
-## Refactor the BLADE Project
+## Refactoring the BLADE Project
 
 Once the module is copied and the build script reconfigured, it builds properly
 and can be deployed to Liferay's module framework. It still carries the BLADE
@@ -255,11 +255,11 @@ renamed, and it's ready to be coded to suit your needs. Delete the existing code
 if you like and start from scratch, or just modify it where you need.
 
 If you dislike the idea of taking an existing template project and manually
-reconfiguring it, consider using the Blade Tools application. Blade Tools is a
+reconfiguring it, consider using the Blade Tools utility. Blade Tools is a
 utility that builds you a module from scratch based on a set of options that you
 enter via the command line. It also allows you to deploy your module easily to a
-running Liferay module framework. Check out our 
-[tutorial on Blade Tools](/develop/tutorials/-/knowledge_base/7-0/blade-tools-bundle-creation) 
+running Liferay module framework. Check out the
+tutorial on [creating bundles with Blade Tools](/develop/tutorials/-/knowledge_base/7-0/blade-tools-bundle-creation) 
 for more information.
 
 ## Related Topics

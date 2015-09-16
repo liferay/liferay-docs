@@ -44,7 +44,8 @@ At the time of this writing, typing *blade create* into a terminal produces this
        [ -d, --dir <file> ]       - The directory where to create the new project.
        [ -i, --ide <ide> ]        - The type of IDE metadata to create along side
                                     the new project.
-       [ -p, --projectType <type> ] - The type of Liferay module to create. 
+       [ -p, --projectType <type> ] - The type of Liferay module to create. Valid
+                                    values are portlet, jspportlet, or service.
        [ -v, --version <version> ] - The version of Liferay to create the module
                                     for, by default its 7.0.0
 
@@ -131,7 +132,7 @@ active.
 
 If Blade Tools doesn't meet your needs, consider using one of the BLADE
 repository project templates to manually create Liferay bundles. Check out our
-[tutorial on that next](LINK).
+[tutorial on that next](/develop/tutorials/-/knowledge_base/7-0/blade-manual-bundle-creation).
 
 ## Related Topics
 

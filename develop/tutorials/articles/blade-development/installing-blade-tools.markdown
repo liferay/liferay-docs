@@ -102,7 +102,7 @@ by the *Available sub-commands* for the installed tools:
       open                        -         Opens or imports a file or
 
 Now you have Blade Tools installed, and you probably want to learn how to
-create projects using the tools. We have a [tutorial that shows just that](LINK).
+create projects using the tools. We have a [tutorial that shows just that](/develop/tutorials/-/knowledge_base/7-0/blade-tools-bundle-creation).
 
 ## Related Topics
 
