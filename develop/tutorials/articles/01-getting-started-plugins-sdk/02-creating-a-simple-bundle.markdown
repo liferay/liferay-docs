@@ -1,4 +1,4 @@
-# Creating a Simple Bundle
+# Creating a Simple Bundle [](id=creating-a-simple-bundle)
 
 In this tutorial, you'll learn how to create a simple bundle that can be
 deployed to Liferay's module framework. You can find the code referenced by this
@@ -173,3 +173,9 @@ simple bundle using the Plugins SDK.
 
 Excellent! You've learned how to create simple bundles that can be deployed to
 Liferay's module framework.
+
+## Related Topics [](id=related-topics)
+
+[Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
+
+[Publishing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/publishing-liferay-services)

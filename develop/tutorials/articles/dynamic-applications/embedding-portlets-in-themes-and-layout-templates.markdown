@@ -1,4 +1,4 @@
-# Embedding Portlets in Themes and Layout Templates
+# Embedding Portlets in Themes and Layout Templates [](id=embedding-portlets-in-themes-and-layout-templates)
 
 One thing developers often want to do is embed a portlet in a theme or layout
 template. This makes the portlet visible on all pages where the theme/layout is
@@ -14,7 +14,7 @@ custom theme/layout, and you'll create a module that finds the correct portlet
 to use based on those given parameters. You'll first learn how to embed portlets
 into a theme.
 
-## Adding a Portlet to a Custom Theme
+## Adding a Portlet to a Custom Theme [](id=adding-a-portlet-to-a-custom-theme)
 
 The first thing you should do is open the template file for which you want to
 declare an embedded portlet. For example, the `portal_normal.ftl` template file
@@ -38,13 +38,8 @@ Great! Your theme declaration is complete. However, the Portal is not yet
 configured to handle this request. You must create a module that can
 find the portlet that fits the theme's request.
 
-1. Create a generic OSGi module using your favorite third party tool.
-
-    <!-- If we decide to document how to create an OSGi module from scratch, we
-    should point to that documentation here. At the current time, there is no
-    Liferay "recommended" way of doing this. Therefore, I'm assuming that the
-    reader has experience with OSGi development. Pointing to introductory OSGi
-    tutorials (once available) would be very helpful here. -Cody -->
+1. Create a generic OSGi module using your favorite third party tool, or use the
+[Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle). 
 
 2. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. To follow naming conventions, name the class
@@ -99,7 +94,7 @@ required, and created and deployed a module that retrieves the portlet and
 embeds it in your theme. Next, you'll learn a similar process to embed a portlet
 in your layout template.
 
-## Adding a Portlet to a Custom Layout Template
+## Adding a Portlet to a Custom Layout Template [](id=adding-a-portlet-to-a-custom-layout-template)
 
 The process for embedding portlets in layout templates is similar to that for the
 theme. The only change is the declaration you insert in your template's TPL
@@ -143,3 +138,11 @@ $$$
 Lastly, generate the module's JAR file and deploy it to Liferay Portal. Now when
 you assign your layout to a page, the portlet that fulfills the layout's request
 is embedded on the page.
+
+## Related Topics [](id=related-topics)
+
+[Providing Portlets to Manage Requests](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
+
+[Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
+
+[Creating a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/creating-a-portlet-application)

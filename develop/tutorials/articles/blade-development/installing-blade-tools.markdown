@@ -2,11 +2,11 @@
 
 There are two ways to install Blade Tools. You can clone the repository and
 build Blade Tools from source, or you can install them through the 
-[Java Package Manager](http://pm4j.org) (JPM). 
+[Java Package Manager](http://jpm4j.org) (JPM). 
 
 Either way, before downloading or building the Blade Tools, you need to install
-[JPM](http://jpm4j.org/#!/md/install). The exact process
-will vary depending on your OS.
+[JPM](http://jpm4j.org/#!/md/install). The exact process varies depending on
+your OS.
 
 ## Using the Java Package Manager to Download Blade Tools
 
@@ -19,7 +19,7 @@ At the time of this writing the Blade CLI tool is the only one available. More
 tools, such as a plugin migration tool (for migrating plugins from a 6.2 Plugins
 SDK to a module for 7.0), will be made available in the future. 
 
-Next, install the downloaded JAR using the following terminal command:
+Next, install the downloaded JAR:
 
     (sudo) jpm install -fl [Downloads Directory]/blade.jar
 
@@ -59,8 +59,7 @@ installed correctly and on your path, you'll see the *MAIN OPTIONS* and
 ## Installing Blade Tools from the Source Code
 
 Instead of downloading the Blade Tools from JPM, you can download the repository
-and build the JAR locally. You first need to clone the [Blade Tools
-GitHub Repository](https://github.com/gamerson/blade.tools). 
+and build the JAR locally. You first need to clone the [Blade Tools GitHub Repository](https://github.com/gamerson/blade.tools). 
 
 Once you have the repository cloned down to your local machine, open your
 terminal and execute
