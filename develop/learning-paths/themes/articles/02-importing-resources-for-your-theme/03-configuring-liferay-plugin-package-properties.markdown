@@ -1,25 +1,24 @@
-# Configuring liferay-plugin-package.properties
+# Defining liferay-plugin-package.properties
 
-In this section you'll configure the `liferay-plugin-package.properties` file
+In this section, you'll configure the `liferay-plugin-package.properties` file
 for the Resources Importer.
 
-1. Open the `liferay-plugin-package.properties` file in the `WEB-INF/lib/`
-   folder of the theme.
+1.  Open the `liferay-plugin-package.properties` file in the `WEB-INF`
+    folder of the theme.
    
     By default, developer mode is enabled with the following line of code: 
-    `resources-importer-developer-mode-enabled=true`. This ensures that the
-    theme resources will overwrite the existing portal resources on every
+    `resources-importer-developer-mode-enabled=true`. This ensures that 
+    theme resources overwrite the existing portal resources on every
     deployment. You should leave this property enabled during development of the
     theme, but it should never be on in production. Since the resources for the
     theme will be imported directly into the site, and not a site template, you
-    will need to add two additional properties.
-   
-2. Add the following code to the bottom of the file:
+    need to add two additional properties.
+ 
+2.  Add the following code to the bottom of the file:
 
         resources-importer-target-class-name=com.liferay.portal.model.Group
-
         resources-importer-target-value=Guest
-        
+ 
     The first property sets the type of portal entity to write the resources to,
     which is the site in this case. The second property sets the name of the 
     portal entity to write the resources to, which is set to the Guest group in 
@@ -28,17 +27,17 @@ for the Resources Importer.
     `resources-importer-target-class-name=com.liferay.portal.model.Group`
     property in a production environment. Instead you should remove the
     property, which will import the resources to the site template.
-    
-3. Uncomment the following code and save the file:
+ 
+3.  Uncomment the following code and save the file:
 
         required-deployment-contexts=\resources-importer-web
-        
+
     This requires the resources-importer-web plugin to be installed in order for 
     the theme to be deployed. If the *resources-importer-web* is not installed, 
     the theme will be placed on hold until the plugin is installed. There you 
     have it! All of the resources are ready to be deployed with the theme.
 
-4. Redploy the Lunar Resort theme and refresh the browser to see the changes.
+4.  Redeploy the Lunar Resort theme and refresh the browser to see the changes.
 
 Your theme should look like the image below:
 
