@@ -1,29 +1,32 @@
 # Styling Custom Portlets
 
+If you click the *Make Your Reservation* link, the site presents you with a
+reservation form, along with the Guestbook portlet from the [MVC Learning Path](/develop/learning-paths/mvc). 
+
 The Guestbook portlet is looking pretty plain at the moment. It's time to change
 that. It can be styled just like any other element on the page; you just need to
 know the existing classes to override.
 
-1. Sign in as an Admin and click the *Make Your Reservation!* link at the bottom
-   of the page.
+1.  Sign in as an Admin and click the *Make Your Reservation!* link at the bottom
+    of the page.
 
-2. Click the *gear icon* on the Guestbook portlet and select *Look and Feel*.
+2.  Click the *gear icon* on the Guestbook portlet and select *Look and Feel*.
 
-3. Select the *Advanced Styling* tab at the top of the dialog window.
+3.  Select the *Advanced Styling* tab at the top of the dialog window.
 
-4. At the top of the section you'll see a box highlighted in blue that reads
-   *Your current portlet information is as follows*
+4.  At the top of the section you'll see a box highlighted in blue that reads
+    *Your current portlet information is as follows*
 
     ![Figure 1: You can view a custom portlet's class in the *Look and Feel* configuration menu.](../../images/current-portlet-info.png)
 
 Now you can see that the class for the Guestbook portlet is
 `.guestbook-portlet`. It follows an easy pattern: `.project-name`. You could
-write all of your CSS for the Guestbook portlet here in the *Advanced Styling*
+write all your CSS for the Guestbook portlet here in the *Advanced Styling*
 section, but to keep things organized, you should place the styling in
 `custom.css` with the rest of the styles.
 
-1. Open `custom.css` and add the following code above the closing `}` for the
-   `#content` styling:
+1.  Open `custom.css` and add the following code above the closing `}` for the
+    `#content` styling:
 
         /*---------Guestbook Portlet Styles------------*/
         .guestbook-portlet {
@@ -37,10 +40,10 @@ section, but to keep things organized, you should place the styling in
 
     This gets you most of the way there, but the styling could use some more
     work. The background matches the color of the theme's navigation and Footer,
-    but the text is unreadble in the first entry in the table. If you haven't
+    but the text is unreadable in the table's first entry. If you haven't
     added any entries to the guestbook, you won't see the table elements. Go
     ahead and add a couple entries to the *Main* guestbook if you haven't
-    already, and save them. You should now see the table for the entries. As you
+    already and save them. You should now see the table for the entries. As you
     can see the red background is a bit jarring with the second entry link. In
     order to make the needed changes to the rest of the guestbook styles, you'll
     need to know the elements or classes.
@@ -51,10 +54,10 @@ section, but to keep things organized, you should place the styling in
 
 2. Right click on the table and select *Inspect Element*.
 
-    A new area will appear showing the HTML for the page. If you take a closer
-    look, you'll see that the table is a `table` element with a `th` element for
-    the column names and `td` elements for each of the columns in the rows. Now
-    you can add the styles to update the table.
+    A new area appears, showing the HTML for the page. You'll see that the table
+    is a `table` element with a `th` element for the column names and `td`
+    elements for each of the columns in the rows. Now you can add the styles to
+    update the table.
 
 3. Add the following code below the `color: #FFF;` style and save the file:
 
@@ -85,5 +88,5 @@ to the styling, the Guestbook portlet should look similar to the figure below:
 
 ![Figure 1: The Guestbook portlet's styles now complement the theme.](../../images/guestbook-portlet-fin.png)
 
-In the next section you'll learn how you can use Boostrap markup and styles to
+In the next section you'll learn how you can use Bootstrap markup and styles to
 give your theme's UI a consistent look.
