@@ -1,0 +1,8 @@
+Bundle-Name: Form Nav Extension Portlet
+Bundle-SymbolicName: com.liferay.docs.formnavextensionportlet
+Bundle-Version: 1.0.0
+Include-Resource:\
+        classes,\
+        META-INF/resources=src/META-INF/resources
+Private-Package: com.liferay.docs.formnavextensionportlet
+Web-ContextPath: /formnavextensionportlet
