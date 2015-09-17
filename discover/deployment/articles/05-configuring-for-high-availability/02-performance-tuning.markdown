@@ -5,6 +5,15 @@ performance, especially if your site winds up generating more traffic than you'd
 anticipated. There are some definite steps you can take with regard to improving
 Liferay's performance.
 
++$$$
+
+**Note:** You can use Liferay Connected Services (LCS) to obtain performance 
+metrics for your portal servers. See the 
+[LCS documentation](/discover/deployment/-/knowledge_base/6-2/managing-liferay-with-liferay-connected-services) 
+for more information.
+
+$$$
+
 ## Memory [](id=memory)
 
 Memory is one of the first things to look at when you want to optimize
@@ -88,7 +97,7 @@ application server.
 The Java heap is divided into sections for the young generation, the old
 generation, and the permanent generation. The young generation is further
 divided into three sections: Eden, which is where new objects are created, and
-two “survivor spaces, which we can call the *From* and *To* spaces. Garbage
+two survivor spaces, which we can call the *From* and *To* spaces. Garbage
 collection occurs in stages. Generally, it's more frequently done in the young
 generation, less frequently done in the old generation, and even less frequently
 done in the permanent generation, where long-lived objects reside. When garbage
