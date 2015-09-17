@@ -1,7 +1,7 @@
 # Styling the Content Div
 
 The Content `<div>` is used to position and set the dimensions for the theme's 
-content. Currently the Content `<div>` is pressed right up agianst the edge of 
+content. Currently the Content `<div>` is pressed right up against the edge of 
 the Wrapper, giving the theme a claustrophobic feel. It's time to give the 
 content a little breathing room.
 
@@ -26,7 +26,7 @@ content a little breathing room.
                 font-size: 36px; 
                 line-height: 60px;   
                 text-align: center;
-                color: $themeMainColor%;
+                color: $themeMainColor;
             }
                 
             #columnRight {
@@ -73,32 +73,20 @@ content a little breathing room.
                 }
             }
         }
-   
+
     This adds some padding between the edge of the Wrapper and the Content 
-    `<div>`. It also takes care of the styles for a couple web content articles 
-    on the *Welcome* page and removes the portlet icons from the bordered 
-    portlets.
-    
-    The carousel has been given some styling as well. Although, at the moment it 
-    does not reflect this. You will have to turn off the portlet borders for the 
-    carousel in order for the styles to take effect.
-   
-2. Save the file and navigate to the *Welcome* page.
+    `<div>`s. It also creates styles for some web content articles on the
+    *Welcome* page and removes the portlet icons from the bordered portlets.
 
-3. Click on the gear *Options* menu for the carousel's Web Content Display and 
-   select *look and Feel*.
-   
-4. Set the *Show Borders* option to *No* and Save.
+    The carousel has been given some styling as well. It's been centered and
+    some spacing has been added between the breadcrumbs and the carousel. Save
+    the file and navigate to the *Welcome* page.
 
-5. Close the dialog window and refresh the page.
-
-    The carousel has been given a little margin between the navigation and 
-    *Breadcrumbs*.
-   
-6. Save the file and refresh the browser.
+6.  Save the file and refresh the browser. Sometimes, you may need to redeploy
+    the theme. 
 
 Your theme should look similar to the figure below:
-    
+
 ![Figure 1: The content is clearer to read now that the there is some padding.](../../images/css-content.png)
-    
+
 Three down and one to go! You can move on to the Footer's styling next.
