@@ -2,10 +2,10 @@
 
 Follow the steps below to add the social media links to the Footer.
 
-1. Open `portal_normal.ftl`.
+1.  Open `portal_normal.ftl`.
 
-2. Add the following code inside of the `<footer>` tag, above 
-   `<p class="powered-by">`:
+2.  Add the following code inside the `<footer>` tag, above `<p
+    class="powered-by">`:
   
         <div class="social-media-wrapper">
         <h2 class="nav-heading">
@@ -41,40 +41,41 @@ Follow the steps below to add the social media links to the Footer.
         </ul>
         </div>
 
-3. Save the file.  
+3.  Save the file. 
 
 Each social media link uses a Font Awesome brand icon. Font Awesome offers two 
 choices for each brand icon: 
 
-1. One set of icons where the brand logo is in a fixed position, made up of 
-   empty pixels, with a border. This lets you move the logo and border around as 
-   a whole, but does not give you control over the position or styling of the 
-   logo itself.
+1.  One set of icons where the brand logo is in a fixed position, made up of 
+    empty pixels, with a border. This lets you move the logo and border around as 
+    a whole, but does not give you control over the position or styling of the 
+    logo itself.
 
     ![Figure 1: Font Awesome brand icons can have the logo made up of empty pixels.](../../images/font-awesome-icon-01.png)
-   
-2. One set of icons where the brand logo does not have a border. This allows you 
-   to position and style the logo, and create the border yourself.
+ 
+2.  One set of icons where the brand logo does not have a border. This allows you 
+    to position and style the logo and create the border yourself.
 
     ![Figure 2: Font Awesome brand icons also offer logos without borders.](../../images/font-awesome-icon-02.png)
 
 For the purposes of the social media links, you need control over the background 
-color and the logo's position. If you take a look at the [icon-facebook-sign](http://fortawesome.github.io/Font-Awesome/3.2.1/icon/facebook-sign/) 
+color and the logo's position. If you look at the
+[icon-facebook-sign](http://fortawesome.github.io/Font-Awesome/3.2.1/icon/facebook-sign/)
 icon's trademark *f* logo you can see that it is made up of empty pixels. 
-Because the icon's logo is made up of empty pixels, the Footers's background 
+Because the icon's logo is made up of empty pixels, the footer's background 
 color shows through the logo, which in this case red, doesn't fit the design 
 mockup.  
 
 Using the second option, the borderless brand icon, the brand logos are given 
 their own styling in the `<a>` tags. They're then placed within `<div>` tags, 
 which are given styling to color the background. This allows you to position the 
-logo, with its own color, while also letting you control the size and color of 
+logo with its own color, while also letting you control the size and color of 
 the background and border.
 
 Now that the social media links are in place, you can add the CSS for them.
 
-1. Open `custom.css` and place the following code below the `.powered-by` 
-   styling in the `footer`:
+1.  Open `custom.css` and place the following code below the `.powered-by` 
+    styling in the `footer`:
 
         .social-media-wrapper {
             h2 {
@@ -132,12 +133,12 @@ Now that the social media links are in place, you can add the CSS for them.
             }
         }
             
-2. Save the file and wait for the theme to republish.
+2.  Save the file and wait for the theme to republish.
 
-3. Load the *Welcome* page of the theme and you'll see your new social media 
-icons have been placed in the Footer just below the *Follow Us* heading.
+3.  Load the *Welcome* page and you'll see your new social media 
+    icons have been placed in the Footer just below the *Follow Us* heading.
 
-Congrats! the Footer is finished.
+Congrats! the footer is finished.
 
 In the next portion of the Learning Path you'll learn how to make configurable
 theme settings for the Lunar Resort.

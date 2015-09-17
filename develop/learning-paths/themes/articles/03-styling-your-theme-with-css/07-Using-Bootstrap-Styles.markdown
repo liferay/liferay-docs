@@ -1,14 +1,14 @@
 # Using Bootstrap Styles
 
-Since Liferay Portal 6.2, themes are based off of Bootstrap 2.3.2. When writing
-common markup, such as buttons, forms, and layouts, it is recommended that you
+Since Liferay Portal 6.2, themes are based on Bootstrap 2.3.2. When writing
+common markup such as buttons, forms, and layouts, it is recommended that you
 let Bootstrap handle the styling for you.
 
 You can view Bootstrap's Base CSS [here](http://getbootstrap.com/2.3.2/base-css.html).
 
 You may have not been aware, but some of the web content articles you imported
-with the theme are using Boostrap markup styles. If you take a look at the
-markup for the Reservation form, you'll see Bootstrap's classes are used:
+with the theme are using Bootstrap markup styles. If you look at the markup for
+the Reservation form, you'll see Bootstrap's classes:
 
     <form class="form-horizontal">
         <fieldset>
@@ -35,14 +35,14 @@ markup for the Reservation form, you'll see Bootstrap's classes are used:
         </fieldset>
     </form>
 
-This form was created following Bootstrap's [horizontal form](http://getbootstrap.com/2.3.2/base-css.html#forms)
-example. The form inputs are extended even further, using Boostrap's invalid
-inputs markup. For example, by settng the `type` for the E-mail input to `email`
+This form follows Bootstrap's [horizontal form](http://getbootstrap.com/2.3.2/base-css.html#forms)
+example. The form inputs are extended even further, using Bootstrap's invalid
+inputs markup. For example, by setting the `type` for the E-mail input to `email`
 you are able to get validation for the field!
 
 Bootstrap makes it easy for you to get a consistent look to your theme's UI in a
 short amount of time.
 
-A step-by-step approach to CSS allows you to handle it with ease, and keep track
+A step-by-step approach to CSS allows you to handle it with ease and keep track
 of your progress. In the next portion of the Learning Path you'll create the
 social media links for the Lunar Resort.
