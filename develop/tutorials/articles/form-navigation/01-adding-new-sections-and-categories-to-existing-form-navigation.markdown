@@ -19,10 +19,10 @@ This tutorial demonstrates adding a new navigation section (entry) to an
 existing list of navigation sections. Source code from an example portlet called
 the Form Nav Extension portlet demonstrates extending form navigation. You can
 find the code referenced by this tutorial in a complete project on Github here:
-<https://github.com/jhinkey/liferay-docs/tree/pr256-form-navigator/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/form-nav-extension-portlet>.
+<https://github.com/jhinkey/liferay-docs/tree/form-navigator/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/form-nav-extension-portlet>.
 You can also download the portlet's bundle from the following link (click *View
 Raw* to download it):
-<https://github.com/jhinkey/liferay-docs/blob/pr256-form-navigator/develop/tutorials/code/liferay-plugins-sdk-7.0.0/osgi/modules/com.liferay.docs.formnavportlet.jar>
+<https://github.com/jhinkey/liferay-docs/blob/form-navigator/develop/tutorials/code/osgi/modules/com.liferay.docs.formnavextensionportlet.jar>
 
 To add a new section entry to existing form navigation, follow these steps: 
 
@@ -37,21 +37,21 @@ To add a new section entry to existing form navigation, follow these steps:
     provides a checkbox input to enable or disable *My App*'s feature in the
     portal:  
 
-        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-	<%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %><%@
-	taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+        <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %><%@
+        taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
-	<%@ page import="com.liferay.portal.kernel.util.GetterUtil" %><%@
-	page import="com.liferay.docs.formnavextensionportlet.MyAppWebKeys" %>
+        <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %><%@
+        page import="com.liferay.docs.formnavextensionportlet.MyAppWebKeys" %>
 
-        <h3>My App Feature<h3>
+        <h3>My App<h3>
 
         <%
         boolean companyMyAppFeatureEnabled = GetterUtil.getBoolean(request.getAttribute(MyAppWebKeys.COMPANY_MY_APP_FEATURE_ENABLED));
         %>
 
-        <aui:input checked="<%= companyMyAppFeatureEnabled %>" label="My App Feature Enabled" name="settings--myAppFeatureEnabled--" type="checkbox" value="<%= companyMyAppFeatureEnabled %>" />
+        <aui:input checked="<%= companyMyAppFeatureEnabled %>" label="Enable Feature1" name="myAppFeatureEnabled" type="checkbox" value="<%= companyMyAppFeatureEnabled %>" />
 
 3.  To add a new section entry within an existing Liferay form navigator, you
     must create a Java class that  implements the
@@ -62,88 +62,85 @@ To add a new section entry to existing form navigation, follow these steps:
     operating on a portlet preference, the class simply implements the interface
     on `<Object>`. 
 
-       package com.liferay.docs.formnavextensionportlet;
+        package com.liferay.docs.formnavextensionportlet;
 
-	import java.io.IOException;
-	import java.util.Locale;
-	import java.util.ResourceBundle;
+        import java.io.IOException;
+        import java.util.Locale;
 
-	import javax.portlet.PortletPreferences;
-	import javax.servlet.ServletContext;
-	import javax.servlet.http.HttpServletRequest;
-	import javax.servlet.http.HttpServletResponse;
+        import javax.portlet.PortletPreferences;
+        import javax.servlet.ServletContext;
+        import javax.servlet.http.HttpServletRequest;
+        import javax.servlet.http.HttpServletResponse;
 
-	import org.osgi.service.component.annotations.Component;
-	import org.osgi.service.component.annotations.Reference;
+        import org.osgi.service.component.annotations.Component;
+        import org.osgi.service.component.annotations.Reference;
 
-	import com.liferay.portal.kernel.language.LanguageUtil;
-	import com.liferay.portal.kernel.servlet.taglib.ui.BaseJSPFormNavigatorEntry;
-	import com.liferay.portal.kernel.servlet.taglib.ui.FormNavigatorConstants;
-	import com.liferay.portal.kernel.servlet.taglib.ui.FormNavigatorEntry;
-	import com.liferay.portal.kernel.util.PrefsParamUtil;
-	import com.liferay.portal.kernel.util.PrefsPropsUtil;
-	import com.liferay.portal.kernel.util.ResourceBundleUtil;
-	import com.liferay.portal.kernel.util.WebKeys;
-	import com.liferay.portal.theme.ThemeDisplay;
+        import com.liferay.portal.kernel.servlet.taglib.ui.BaseJSPFormNavigatorEntry;
+        import com.liferay.portal.kernel.servlet.taglib.ui.FormNavigatorConstants;
+        import com.liferay.portal.kernel.servlet.taglib.ui.FormNavigatorEntry;
+        import com.liferay.portal.kernel.util.PrefsParamUtil;
+        import com.liferay.portal.kernel.util.PrefsPropsUtil;
+        import com.liferay.portal.kernel.util.WebKeys;
+        import com.liferay.portal.theme.ThemeDisplay;
 
-	@Component(immediate = true, property = {"service.ranking:Integer=25"},
-		service = FormNavigatorEntry.class)
-	public class MyAppCompanySettingsFormNavigatorEntry 
-		extends BaseJSPFormNavigatorEntry<Object>
-			implements FormNavigatorEntry<Object> {
+        @Component(immediate = true, property = {"service.ranking:Integer=20"},
+            service = FormNavigatorEntry.class)
+        public class MyAppCompanySettingsFormNavigatorEntry 
+            extends BaseJSPFormNavigatorEntry<Object>
+                implements FormNavigatorEntry<Object> {
 
-		@Override
-		public String getCategoryKey() {
-			return FormNavigatorConstants.CATEGORY_KEY_COMPANY_SETTINGS_MISCELLANEOUS;
-		}
+            @Override
+            public String getCategoryKey() {
+                return FormNavigatorConstants.CATEGORY_KEY_COMPANY_SETTINGS_MISCELLANEOUS;
+            }
 
-		@Override
-		public String getFormNavigatorId() {
-			return FormNavigatorConstants.FORM_NAVIGATOR_ID_COMPANY_SETTINGS;
-		}
+            @Override
+            public String getFormNavigatorId() {
+                return FormNavigatorConstants.FORM_NAVIGATOR_ID_COMPANY_SETTINGS;
+            }
 
-		@Override
-		protected String getJspPath() {
-			return "/portal_settings/my_app.jsp";
-		}
+            @Override
+            protected String getJspPath() {
+                return "/portal_settings/my_app.jsp";
+            }
 
-		@Override
-		public String getKey() {
-			return "my-app";
-		}
+            @Override
+            public String getKey() {
+                return "my-app";
+            }
 
-		@Override
-		public String getLabel(Locale locale) {
-			return LanguageUtil.get(locale, getKey());
-		}
+            @Override
+            public String getLabel(Locale locale) {
+                return "My App";
+            }
 
-		@Override
-		public void include(HttpServletRequest request, HttpServletResponse response)
-				throws IOException {
+            @Override
+            public void include(HttpServletRequest request, HttpServletResponse response)
+                    throws IOException {
 
-			ThemeDisplay themeDisplay = (ThemeDisplay) request
-				.getAttribute(WebKeys.THEME_DISPLAY);
+                ThemeDisplay themeDisplay = (ThemeDisplay) request
+                    .getAttribute(WebKeys.THEME_DISPLAY);
 
-			PortletPreferences companyPortletPreferences = PrefsPropsUtil
-				.getPreferences(themeDisplay.getCompanyId(), true);
+                PortletPreferences companyPortletPreferences = PrefsPropsUtil
+                    .getPreferences(themeDisplay.getCompanyId(), true);
 
-			boolean companyMyAppFeatureEnabled = PrefsParamUtil
-				.getBoolean(companyPortletPreferences, request,
-					"myAppFeatureEnabled", true);
+                boolean companyMyAppFeatureEnabled = PrefsParamUtil
+                    .getBoolean(companyPortletPreferences, request,
+                        "myAppFeatureEnabled", true);
 
-			request.setAttribute(MyAppWebKeys.COMPANY_MY_APP_FEATURE_ENABLED,
-				companyMyAppFeatureEnabled);
+                request.setAttribute(MyAppWebKeys.COMPANY_MY_APP_FEATURE_ENABLED,
+                    companyMyAppFeatureEnabled);
 
-			super.include(request, response);
-		}
+                super.include(request, response);
+            }
 
-		@Override
-		@Reference(target = "(osgi.web.symbolicname=com.liferay.docs.formnavextensionportlet)", unbind = "-")
-		public void setServletContext(ServletContext servletContext) {
-			super.setServletContext(servletContext);
-		}
+            @Override
+            @Reference(target = "(osgi.web.symbolicname=com.liferay.docs.formnavextensionportlet)", unbind = "-")
+            public void setServletContext(ServletContext servletContext) {
+                super.setServletContext(servletContext);
+            }
 
-	}
+        }
 
     The above class extends the `BaseJSPFormNavigatorEntry` class. Make sure to
     extend this base class too. It integrates your JSP with the existing form
@@ -168,7 +165,7 @@ To add a new section entry to existing form navigation, follow these steps:
     To identify the form navigator you're extending, implement method
     `getFormNavigatorId` to return that navigation's form navigator ID. 
     Liferay Portal's form navigator IDs are specified also in the class
-    [`FormNavigatorConstants`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.java).
+    `FormNavigatorConstants`.
 
     To map your entry class to your section entry's form input, implement method
     `getJspPath` to return the path to its JSP. 
@@ -195,7 +192,8 @@ To include a new category in a existing form navigator, you must implement the
 interface. You must identify the form navigator in which the category is to be
 included and implement method `getFormNavigatorId` to return that form
 navigator's ID. Values of existing form navigator IDs used in the portal can be
-found in the class `FormNavigatorConstants.java`. 
+found in the class
+[`FormNavigatorConstants.java`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.java). 
 
 Category implementations also need to be registered in the OSGi registry so
 the form navigator taglib can retrieve them. The order in which the categories
