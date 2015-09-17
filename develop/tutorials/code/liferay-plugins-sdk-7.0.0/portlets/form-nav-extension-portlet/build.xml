@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="form-nav-extension-portlet" basedir="." default="deploy">
+	<import file="../../build-common-osgi-plugin.xml" />
+</project>
