@@ -1,7 +1,7 @@
 # Styling the Banner
 
-The Banner holds all the elements in the theme's header. This section is very
-important because it is the first thing the user sees when they visit your site.
+The Banner holds all the elements in the theme's header. This section is
+is the first thing users see when they visit your site.
 
 1. Add the following code to `custom.css` below the *Banner* placeholder:
 
