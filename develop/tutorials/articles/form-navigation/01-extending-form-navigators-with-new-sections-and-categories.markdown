@@ -1,4 +1,4 @@
-# Adding New Sections and Categories to Existing Form Navigation
+# Extending Form Navigators with New Sections and Categories [](id=extending-form-navigators-with-new-sections-and-categories)
 
 Do you want to provide pages for administrators to configure your app's global
 and site-specific settings? Would you like to extend Liferay's user or
