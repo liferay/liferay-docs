@@ -234,10 +234,13 @@ Some HTML nodes can generate events. You can handle these events to process
 their information and to provide content based on interaction with the user.
 In this section, you'll learn how to subscribe to node events and handle them. 
 
-First, you must declare the `portlet` and `aui` taglibs to access their tags.
-You must also specify the `<portlet:defineObjects />` tag to access portlet
-objects in your JSP. Add the following declarations in the beginning of your
-JSP:
+First, you must declare the `portlet` and `aui` tag libraries to access their
+tags. From the `portlet` tag library, you should include the
+`<portlet:defineObjects />` tag so that you can access portlet objects like
+`renderRequest`, `actionRequest`, and `portletPreferences` in your JSP. For more
+information about the `<portlet:defineObjects />` tag, see
+[Java's portlet specification documentation](https://portlet-container.java.net/docs/jsr286.html#Tag_Library).
+Add the following declarations to the beginning of your JSP:
 
     <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
     <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
