@@ -1,9 +1,10 @@
 # Responding to Tablet and Phone Views
 
-With the theme elements identfied, you can now add the CSS to make them
+With the theme elements identified, you can now add the CSS to make them
 responsive for phones and tablets.
 
-1. Open the `custom.css` and add the following code to the bottom of the file:
+1.  Open `custom.css` and add the following code to the bottom of the file, after
+    the last closing brace:
 
         /*-------responsive-------*/
         @include respond-to(phone, tablet) {
@@ -347,18 +348,18 @@ responsive for phones and tablets.
 
 Now if you preview your theme on the tablet and phone you'll see that all the
 elements respond well. The logo has been scaled down and repositioned to better
-fit the tablet and phone; the main navigation bar now hides with the following
-code: `#navigation { display: none;...`. The pop-up navigation is handled with
-`#navigation.open`, and can be accessed by selecting the hamburger button next
-to the edit icon in the menu in the top right corner. Finally, the carousel has
-been removed in both the tablet and phone views.
+fit the tablet and phone; the main navigation bar now uses the following
+code to hide itself: `#navigation { display: none;...`. The pop-up navigation is
+handled with `#navigation.open`, and can be accessed by selecting the hamburger
+button next in the top right corner. Finally, the carousel has been removed in
+both the tablet and phone views.
 
 Sass mixins were used to tell the CSS to respond to the correct devices. For
 instance, the `@include respond-to(phone, tablet)` mixin is used to wrap the
 styles that are shared for both the phone and tablet devices. This is why it is
 good to work organically for responsiveness. By starting off with the tablet
-device, and moving down to the phone, you are able to figure out what elements
-have shared render issues, and can then update them for both the phone and
+device and moving down to the phone, you are able to figure out what elements
+have shared render issues and can then update them for both the phone and
 tablet in one mixin.
 
 The `@include respond-to(phone)` mixin is then used to wrap the remaining styles
@@ -366,4 +367,4 @@ that are unique to the phone only.
 
 ![Figure 1: With the updates to the CSS, the theme now responds well to the Smartphone.](../../images/phone-preview-04.png)
 
-Congratulations! Your theme is now responsive.
+Congratulations! Your theme is now responsive. 
