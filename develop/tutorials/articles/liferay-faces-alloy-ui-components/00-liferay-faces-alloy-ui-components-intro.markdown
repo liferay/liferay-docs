@@ -8,49 +8,62 @@ Then, eventually, we need to demonstrate using AlloyUI in a JSF portlet. - Jim
 Liferay Faces Alloy is a `.jar` file that you add as a dependency in your JSF
 portlet project to leverage [AlloyUI](http://alloyui.com/). Liferay Faces Alloy
 provides a way to use AlloyUI in a typical JSF development fashion. It provides
-a set of Facelet UIComponent and Facelet Composite Component tags as part of its
-component suite. 
+a set of Facelet `UIComponent` tags as part of its component suite. 
 
-The Liferay Faces Alloy project provides a set of UI components that are JSF
-equivalents of the `aui:` JSP tag library provided by Liferay Portal. Here are a
-few of the components:
-
-- Layout: `aui:panel`, `aui:button-row`, `aui:form`, `aui:fieldset`
-- UI Components: `aui:list`, `aui:list-item`, `aui:text-box-list`,
-  `aui:text-box-list-item`
-- Composite Components: `aui-cc:button`, `aui-cc:input`, `aui-cc:message`,
-  `aui-cc:messages`, `aui-cc:select`
+For listings, demos, and code examples of Liferay Faces Alloy components, check
+out the [Liferay Faces Showcase](www.liferayfaces.org). To view a working
+example using Liferay Faces Alloy components, visit the
+[Liferay Faces 3 Portlet](https://github.com/liferay/liferay-faces/tree/3.2.5-ga6/demos/bridge/liferayfaces3-portlet). 
 
 The Liferay Faces Alloy project home page can be found at
 <http://www.liferay.com/community/liferay-projects/liferay-faces/alloy>. 
 
-Because Liferay Faces has several active
-versions
-<!--(/develop/learning-paths/jsf/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)-->
+Because Liferay Faces has several active [versions](/develop/learning-paths/jsf/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
 (targeting different versions of JSF, Liferay Portal, etc.), there are several
 versions of the project's View Declaration Language (VDL) documentation for
 these tags: 
 
-**Liferay Faces 2.1:** <http://docs.liferay.com/faces/2.1/vdldoc/>
+**Liferay Faces 4.2:** <http://www.liferayfaces.org/doc/faces/4.2/vdldoc/alloy/tld-summary.html> 
 
-**Liferay Faces 3.0-legacy:** <http://docs.liferay.com/faces/3.0-legacy/vdldoc/>
-
-**Liferay Faces 3.0:** <http://docs.liferay.com/faces/3.0/vdldoc/>
+**Liferay Faces 3.2:** <http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/tld-summary.html> 
 
 **Liferay Faces 3.1:** <http://docs.liferay.com/faces/3.1/vdldoc/> 
 
-**Liferay Faces 3.2:** <http://docs.liferay.com/faces/3.2/vdldoc/> 
+**Liferay Faces 3.0:** <http://docs.liferay.com/faces/3.0/vdldoc/> 
 
-<!-- Re-add links to VDLs for version 4.2 when it is released. - Jim
-- The VDL documentation for the Liferay Faces 4.2 can be found at <http://docs.liferay.com/faces/4.2/vdldoc/>.
--->
+**Liferay Faces 3.0-legacy:** <http://docs.liferay.com/faces/3.0-legacy/vdldoc/> 
 
-To see a sample JSF portlet that uses Liferay Faces Alloy, check out the [JSF2
-Registration
-Portlet](https://github.com/liferay/liferay-faces/tree/3.1.3-ga4/demos/portal/jsf2-registration-portlet). 
+## Deprecated/Removed Tags [](id=deprecated-removed-tags)
 
-**Related Topics**
+The following tags have been deprecated in the Liferay Faces Alloy 3.2.5-ga6
+release and removed in the Liferay Faces Alloy 4.2.5-ga6 release: 
+
+| Deprecated/Removed Alloy (`aui` or `aui-cc`) Tag | Replacement `alloy` Tag |
+| :---: | :---: |
+| [`aui:button-row`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/button-row.html) | [`alloy:buttonRow`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/buttonRow.html) |
+| [`aui:col`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/col.html) | [`alloy:column`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/column.html) |
+| [`aui:convertLongList`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/convertLongList.html) | No replacement available |
+| [`aui:field`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/field.html) | [`alloy:field`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/field.html) |
+| [`aui:fieldset`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/fieldset.html) | [`alloy:fieldset`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/fieldset.html) |
+| [`aui:form`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/form.html) | [`alloy:form`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/form.html) |
+| [`aui:importConstants`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/importConstants.html) | [`alloy:loadConstants`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/loadConstants.html) |
+| [`aui:layout`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/layout.html) | [`alloy:panelGroup`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/panelGroup.html) |
+| [`aui:list`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/list.html) | [`alloy:dataList`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/dataList.html) |
+| [`aui:list-item`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/list-item.html) | [`alloy:dataItem`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/dataItem.html) |
+| [`aui:row`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/row.html) | [`alloy:row`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/row.html) |
+| [`aui:script`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/script.html) | [`alloy:outputScript`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/outputScript.html) |
+| [`aui:text-box-list`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/text-box-list.html) | No replacement available |
+| [`aui:text-box-list-item`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui/text-box-list-item.html) | No replacement available |
+| [`aui-cc:appendToCssClasses()`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui-cc/appendToCssClasses.fn.html) | No replacement available |
+| [`aui-cc:button`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui-cc/button.html) | [`alloy:commandButton`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/commandButton.html) |
+| [`aui-cc:input`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui-cc/input.html) | [`alloy:inputSecret`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/inputSecret.html), [`alloy:inputText`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/inputText.html), [`alloy:inputTextarea`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/inputTextarea.html), or [`alloy:selectBooleanCheckbox`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/selectBooleanCheckbox.html) |
+| [`aui-cc:message`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui-cc/message.html) | [`alloy:message`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/message.html) |
+| [`aui-cc:messages`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui-cc/messages.html) | [`alloy:messages`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/messages.html) |
+
+## Related Topics [](id=related-topics)
 
 [Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/tutorials/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+[Liferay Faces Portal UI Components](/develop/tutorials/-/knowledge_base/6-2/tutorials/liferay-faces-portal-ui-components)
+
+[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
