@@ -1,7 +1,7 @@
 # Summary [](id=summary-17)
 
 We've seen how good a fit Liferay Portal is for the enterprise. It can be scaled
-linearly to grow to whatever size you need to serve your users. Liferay Cloud 
+linearly to grow to whatever size you need to serve your users. Liferay Connected 
 Services lets you manage and monitor your Liferay instances from a single 
 interface. Clustering is also a snap, and Liferay harmonizes very well with 
 whatever environment you may have.
