@@ -19,7 +19,7 @@ Invoker* does just that!
 Liferay's JSON Web Service Invoker helps you optimize your use of JSON Web
 Services. In the following sections, we'll show you how. 
 
-## A Simple Invoker Call [](id=a-simple-invoker-call)
+### Simple Invoker Calls [](id=a-simple-invoker-call)
 
 The Invoker is accessible from the following fixed address:
 
@@ -53,6 +53,95 @@ The example Invoker calls functions exactly the same way as the following
 standard JSON Web Service call: 
 
     /user/get-user-by-id?userId=123&-param1
+
+Next, suppose that you're running Liferay locally on port `8080`. Consider the
+following example of a real Liferay JSON web service invoker call. Suppose that
+you're signed in to Liferay as the default admin user whose email address is
+`test@liferay.com` and whose user ID is `20127`. And suppose that the value of
+your `p_auth` authentication token is `htXjvt5d`. Then you can invoke the
+following URL to obtain a JSON representation of your user object:
+
+    http://localhost:8080/api/jsonws/invoke?cmd={%22/user/get-user-by-id%22:{%22userId%22:20172}}&p_auth=htXjvt5d
+
+This URL uses the following JSON map. Notice that you supplied it by using the
+`cmd` URL parameter:
+
+    {
+        "/user/get-user-by-id": {
+            "userId": 20172
+        }
+    }
+
+Notice in the URL that the double quotes are URL-encoded. If you're not sure
+what your user ID is, use the Dockbar to navigate to *My Account*. Your user ID
+is on the Details page. If you're not sure what the value of your `p_auth`
+authentication token is, navigate to
+[Liferay's JSON web services API page](http://localhost:8080/api/jsonws) and 
+click on any method in the list. The value of your `p_auth` token appears under
+the Execute heading along with any other parameters of the selected API method.
+
+You can use JSON syntax for supplying values for objects and arrays that you
+need to supply as parameters. To supply a value for an object, use curly
+brackets: `{` and `}`. To supply a value for an array, use square brackets: `[`
+and `]`. Suppose as before that you're signed in to Liferay as an admin user and
+that the value of your `p_auth` authentication token is `htXjvt5d`. Furthermore,
+suppose that two vocabularies have been created with vocabulary IDs of `20783`
+and `20784`. Here's a real Liferay JSON web service invoker example that
+demonstrates how to pass an array as a parameter:
+
+    http://localhost:8080/api/jsonws/invoke?cmd={%22/assetvocabulary/get-vocabularies%22:{%22vocabularyIds%22:[20783,20784]}}&p_auth=htXjvt5d
+
+This URL uses the following JSON map:
+
+    {
+        "/assetvocabulary/get-vocabularies": {
+            "vocabularyIds": [20783,20784]
+        }
+    }
+
+As before, the double quotes in the URL are URL-encoded. Also, the
+`vocabularyIds` parameter is an array, so its value is supplied as a JSON array.
+
+Finally, here's one more Liferay JSON web service invoker example that
+demonstrates how to pass an object containing an array as a parameter:
+
+    http://localhost:8080/api/jsonws/invoke?cmd={%22/user/add-user%22:{%22companyId%22:20127,%22autoPassword%22:false,%22password1%22:%22test%22,%22password2%22:%22test%22,%22autoScreenName%22:false,%22screenName%22:%22joe.bloggs%22,%22emailAddress%22:%22joe.bloggs@liferay.com%22,%22facebookId%22:0,%22openId%22:%22%22,%22locale%22:%22en_US%22,%22firstName%22:%22Joe%22,%22middleName%22:%22T%22,%22lastName%22:%22Bloggs%22,%22prefixId%22:0,%22suffixId%22:0,%22male%22:true,%22birthdayMonth%22:1,%22birthdayDay%22:1,%22birthdayYear%22:1970,%22jobTitle%22:%22Tester%22,%22groupIds%22:null,%22organizationIds%22:null,%22roleIds%22:null,%22userGroupIds%22:null,%22sendEmail%22:false,%22serviceContext%22:{%22assetTagNames%22:[%22test%22]}}}&p_auth=htXjvt5d
+
+This URL uses the following JSON map:
+
+    {
+        "/user/add-user": {
+            "companyId": 20127,
+            "autoPassword": false,
+            "password1": "test",
+            "password2": "test",
+            "autoScreenName": false,
+            "screenName": "joe.bloggs",
+            "emailAddress": "joe.bloggs@liferay.com",
+            "facebookId": 0,
+            "openId": "",
+            "locale": "en_US",
+            "firstName": "Joe",
+            "middleName": "T",
+            "lastName": "Bloggs",
+            "prefixId": 0,
+            "suffixId": 0,
+            "male": true,
+            "birthdayMonth": 1,
+            "birthdayDay": 1,
+            "birthdayYear": 1970,
+            "jobTitle": "Tester",
+            "groupIds": null,
+            "organizationIds": null,
+            "roleIds": null,
+            "userGroupIds": null,
+            "sendEmail": false,
+            "serviceContext": {"assetTagNames":["test"]}
+        }
+    }
+
+The `serviceContext` is the object containing an array in this example. It
+contains the array `assetTagNames`.
 
 Of course, the JSON Web Service Invoker handles calls to plugin methods as well:
 
