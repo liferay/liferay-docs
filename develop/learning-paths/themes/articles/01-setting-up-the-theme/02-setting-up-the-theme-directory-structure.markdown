@@ -1,5 +1,10 @@
 # Setting Up the Theme's Directory Structure
 
++$$$
+Note: This step assumes you've [downloaded and unzipped the resources](/documents/10184/581742/themes-learning-path-6.2.zip)
+needed to set up the theme. This was mentioned in the introduction to this step.
+$$$
+
 Your theme's directory structure should reflect the one below when it is 
 complete:
 
