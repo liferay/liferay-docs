@@ -9,7 +9,7 @@ tutorial.
 This tutorial covers how to access your exposed modules in your portlets. The
 `printer.es` module referenced in this tutorial has been written inside of the 
 Sequences Chart Portlet. You can view the Sequences Chart Portlet code in its 
-entirety [here](../../code/liferay-plugins-sdk-7.0.0/apps/sequences-chart-web).
+entirety [here]( https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-plugins-sdk-7.0.0/apps/sequences-chart-web).
 
 Follow the steps below to use your exposed modules in your portlets.
 

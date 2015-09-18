@@ -22,17 +22,18 @@ code.
 
 ## Using ES2015 Advanced Features in your Modules [](id=using-es2015-advanced-features-in-your-modules)
 
-In order to use the advanced es2015 features, such as generators, you will need 
-to import the `polyfill-babel` class. This class is exposed by another module 
+In order to use the advanced es2015 features, such as [generators](https://babeljs.io/docs/learn-es2015/#generators), 
+you will need to import the `polyfill-babel` class. This class is exposed by another module 
 that is included by default in Liferay 7, so you will just need to import it 
 into your current module to use it:
     
     `import polyfillBabel from 'polyfill-babel'`
 
-The Babel Polyfill emulates a full ES6 environment for you. Note that this is an 
-advanced feature and should be used at your own discretion, as it loads a large 
-amount of code. You can see what is polyfilled [here](https://github.com/zloirock/core-js#core-js) 
-if you are unsure whether to import the module.
+The [Babel Polyfill](http://babeljs.io/docs/usage/polyfill/) emulates a full ES6 
+environment for you. Note that this is an advanced feature and should be used at 
+your own discretion, as it loads a large amount of code. You can see what is 
+polyfilled [here](https://github.com/zloirock/core-js#core-js) if you are unsure 
+whether to import the module.
 
 Once you've completed writing your module, you'll need to expose it so that it 
 can be available to use in your other modules.

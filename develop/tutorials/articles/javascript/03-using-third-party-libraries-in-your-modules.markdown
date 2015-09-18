@@ -1,6 +1,6 @@
 # Using Third Party Libraries in Your JavaScript [](id=using-third-party-libraries-in-your-javascript)
 
-In addition to being able to use the new es2015 JavaScript syntax in your code, 
+In addition to being able to use the new ES2015 JavaScript syntax in your code, 
 you can now also use your favorite third party libraries with [Bower](http://bower.io/). 
 
 This tutorial covers how to properly configure your files and directory 
