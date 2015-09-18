@@ -6,7 +6,7 @@ Import-Package: \
 	*
 -dsannotations: *
 Private-Package: \
-	com.liferay.docs.exampleconfig
+	com.liferay.docs.exampleconfig.portlet
 -includeresource:\
 	META-INF/resources=src/main/resources/META-INF/resources
 -jsp: *.jsp,*.jspf
