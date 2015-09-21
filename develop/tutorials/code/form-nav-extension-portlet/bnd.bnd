@@ -1,0 +1,10 @@
+Bundle-Name: Form Nav Extension Portlet
+Bundle-SymbolicName: com.liferay.docs.formnavextensionportlet
+Bundle-Version: 1.0.0
+Include-Resource:\
+        classes,\
+        META-INF/resources=src/main/resources/META-INF/resources
+Private-Package: com.liferay.docs.formnavextensionportlet
+Require-Capability:\
+	osgi.extender;osgi.extender="jsp.taglib";uri="http://liferay.com/tld/ddm";version:Version="1.0.0"
+Web-ContextPath: /formnavextensionportlet
