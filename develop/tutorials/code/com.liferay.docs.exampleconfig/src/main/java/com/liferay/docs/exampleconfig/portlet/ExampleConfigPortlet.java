@@ -15,13 +15,22 @@
  */
 package com.liferay.docs.exampleconfig.portlet;
 
+import java.util.Map;
+
 import javax.portlet.Portlet;
 
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Modified;
 
+import com.liferay.docs.exampleconfig.configuration.ExampleConfiguration;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 
+import aQute.bnd.annotation.metatype.Configurable;
+
 @Component(
+	configurationPid =
+	"com.liferay.docs.exampleconfig.configuration.ExampleConfiguration",
 	immediate = true,
 	property = {
 		"com.liferay.portlet.display-category=category.sample",
@@ -34,5 +43,18 @@ import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 	service = Portlet.class
 )
 public class ExampleConfigPortlet extends MVCPortlet {
+	
+	public String getFavoriteColor(Map labels) {
+		return (String) labels.get(_exampleConfiguration.favoriteColor());
+	}
+
+	@Activate
+	@Modified
+	protected void activate(Map<Object, Object> properties) {
+		_exampleConfiguration = Configurable.createConfigurable(
+			ExampleConfiguration.class, properties);
+	}
+
+	private volatile ExampleConfiguration _exampleConfiguration;
 
 }
