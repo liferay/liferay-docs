@@ -152,9 +152,9 @@ configurations depending on the scope. That means having different
 configurations for a given service per portal instance or site. It's also very
 common to need different configurations for each portlet instance. Liferay 7
 provides an easy way to achieve this with little effort through a new framework
-called the Settings API.
+called the Module Configuration API.
 
-In order to use the Settings API you need to
+In order to use the Module Configuration API you need to
 
 1.  Declare the configuration interface by creating a `ConfigurationBeanDeclaration` class:
 
@@ -171,25 +171,31 @@ In order to use the Settings API you need to
 
 2.  Obtain the configuration using the following code: 
 
+        <!-- 
+        Maybe we should mention that we have two configuration APIs, the old one and the new one 
+        In this case we are using import com.liferay.portal.kernel.module.configuration.ConfigurationFactory
+        -Juergen
+        -->
+
         RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
-          _settingsFactory.getSettings(
+          _configurationFactory.getConfiguration(
              RSSPortletInstanceConfiguration.class,
              new PortletInstanceSettingsLocator(
                 themeDisplay.getLayout(), portletDisplay.getId()));
 
         RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
-          _settingsFactory.getPortletInstanceSettings(
+          _settingsFactory.getConfiguration(
              RSSPortletInstanceConfiguration.class,
              themeDisplay.getLayout(), portletDisplay.getId()));
 
-3.  In order to get the `SettingsFactory`, your class must have a method: 
+3.  In order to get the `ConfigurationFactory`, your class must have a method: 
 
         @Reference
-        protected void setSettingsFactory(SettingsFactory settingsFactory) {
-          _settingsFactory = settingsFactory;
+        protected void setConfigurationFactory(ConfigurationFactory configurationFactory) {
+          _configurationFactory = _configurationFactory;
         }
 
-### Accessing the Portlet Instance Settings through the PortletDisplay 
+### Accessing the Portlet Instance Configuration through the PortletDisplay 
 
 Often it’s necessary to access a portlet’s settings from its JSPs or from Java
 classes that are not OSGi components. To make it easier to read the settings in
@@ -206,12 +212,12 @@ containing them just by passing the configuration class.
 
 ### Reusing the same configuration class for different purposes 
 
-The settings service also allows reusing a single class for different
+The configuration service also allows reusing a single class for different
 configuration needs. In order to support this, you must create a class that
 maps the different scenarios to the class that will be used. Here is an example:
 
     @Component
-    public class RSSPortletInstanceSettingsIdMapping implements SettingsIdMapping {
+    public class RSSPortletInstanceConfigurationPidMapping implements ConfigurationPidMapping {
 
       @Override
       public Class<?> getConfigurationBeanClass() {
@@ -219,7 +225,7 @@ maps the different scenarios to the class that will be used. Here is an example:
       }
 
       @Override
-      public String getSettingsId() {
+      public String getConfigurationPid() {
          return RSSPortletKeys.RSS;
       }
 
@@ -231,4 +237,3 @@ up. -Rich -->
 ## Summary 
 
 <!-- Please summarize what the reader has learned. -Rich -->
-
