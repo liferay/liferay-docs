@@ -37,7 +37,7 @@ public class MyAppCompanySettingsFormNavigatorEntry
 
 	@Override
 	protected String getJspPath() {
-		return "/my_app.jsp";
+		return "/portal_settings/my_app.jsp";
 	}
 
 	@Override
