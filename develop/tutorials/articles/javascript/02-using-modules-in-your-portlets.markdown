@@ -1,59 +1,53 @@
 # Using ES2015 Modules in your Portlet [](id=using-es2015-modules-in-your-portlet)
 
-Once you've exposed your modules in your `bower.json` you can use them in your 
-portlets. This is relatively easy to do, thanks to the new `require` attribute 
-of the `<aui:script>` tag. You can learn how to expose your modules in 
-the [Preparing your JavaScript files for ES2015](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015) 
-tutorial. 
+Once you've [exposed your modules](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015)
+via your `bower.json` file, you can use them in your portlets. The `aui:script`
+tag's `require` attribute makes it easy. 
 
-This tutorial covers how to access your exposed modules in your portlets. The
-`printer.es` module referenced in this tutorial has been written inside of the 
-Sequences Chart Portlet. You can view the Sequences Chart Portlet code in its 
-entirety [here]( https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-plugins-sdk-7.0.0/apps/sequences-chart-web).
+This tutorial covers how to access in your portlets the modules you've exposed.
+The example module `printer.es` was written inside the
+[Sequences Chart Portlet]( https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-plugins-sdk-7.0.0/apps/sequences-chart-web).
 
 Follow the steps below to use your exposed modules in your portlets.
 
-1. Add the aui taglib declaration to your `view.jsp` if you haven't already: 
+1. Declare the `aui` taglib in a JSP in your view: 
 
         <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 
-2. Add an `<aui:script>` tag to the `view.jsp` of your portlet and set the 
-   `require` attribute to the relative path for your module. 
+2.  Add an `aui:script` tag to the JSP and set the `require` attribute to the
+    relative path for your module.  
 
-    The new `require` attribute will allow you to include your exposed modules 
-    in your JSP. The AMD loader will fetch the specified modules and other 
-    dependencies for you. For example the Sequences Chart Portlet has the 
-    following code in its `view.jsp`:
+    Since Liferay 7, the `require` attribute allows you to include your exposed
+    modules in your JSP. The AMD Loader fetches the specified module and its
+    dependencies. For example, the Sequences Chart Portlet's `view.jsp` includes
+    the module `printer.es`:
 
         <aui:script require="sequences-chart/js/printer.es">
-	    var SequencesPrinter = sequencesChartJsPrinterEs;
+            var SequencesPrinter = sequencesChartJsPrinterEs;
 
-	    var chartContainer = $('#<portlet:namespace />Chart')[0];
+            var chartContainer = $('#<portlet:namespace />Chart')[0];
 
-	    new SequencesPrinter(chartContainer).print();
+            new SequencesPrinter(chartContainer).print();
         </aui:script>
 
-    Note that references to the module within the script tag are named after the 
-    `require` value, camel-cased, and removed of all invalid characters. The 
-    Sequences Chart Portlet uses the following to refer to the `printer.es` 
-    module:
-    
-        var SequencesPrinter = sequencesChartJsPrinterEs;
+    References to the module within the script tag are named after the `require`
+    value, in camel-case and with all invalid characters removed. The
+    `printer.es` module's reference `sequencesChartJsPrinterEs` is derived from
+    the module's relative path value `sequences-chart/js/printer.es`. The value
+    is stripped of its dash and slash characters and converted to camel case. 
 
-3. Once your portlet is written, make sure to add a `bower.json` file to your 
-   portlet's root folder, with the name and version of your bundle so that it 
-   will be available. The Sequences Chart Portlet defines the following for the 
-   `bower.json`:
+    The `printer.es` module is made available by the following bundle definition
+    in the Sequences Chart Portlet's `bower.json` file:
 
         {
             "name": "sequences-chart",
             "version": "1.0.0"
         }
     
-As you can see, thanks to the `<aui:script>` `require` attribute, including your 
-modules in your Portlet is a piece of cake!
+Thanks to the `aui:script` tag and its `require` attribute, using your modules
+in your portlet is a piece of cake! 
 
-## Related Topics [](id=related-topics)
+**Related Topics**
 
 [Using Third Party Libraries in Your JavaScript](/develop/tutorials/-/knowledge_base/7-0/using-third-party-libraries-in-your-javascript)
 
