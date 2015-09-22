@@ -8,22 +8,22 @@ add new or modify existing configurations exactly how you'd like.
 
 ## Extending the Editor's Configuration
 
-To modify the editor's configuration, you need to create a module that has a
-component that implements the
+To modify the editor's configuration, create a module that has a component that
+implements the
 [`EditorConfigContributor`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.java)
-interface. By implementing this interface in your module, your module will
-provide a service to your portal that modifies the editors you'd like to change.
-A simple example of this is provided below.
+interface. When you implement this interface, your module will provide a service
+that modifies the editors you'd like to change. A simple example of this is
+provided below.
 
-1. Create a generic OSGi module using your favorite third party tool, or use the
-   [Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle).
+1.  Create a generic OSGi module using your favorite third party tool, or use the
+    [Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle).
 
-2. Create a unique package name in the module's `src` directory, and create a
-   new Java class in that package. The class should extend the
-   [`BaseEditorConfigContributor`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/BaseEditorConfigContributor.java)
-   class.
+2.  Create a unique package name in the module's `src` directory, and create a
+    new Java class in that package. The class should extend the
+    [`BaseEditorConfigContributor`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/BaseEditorConfigContributor.java)
+    class.
 
-3. Directly above the class's declaration, insert the following:
+3.  Directly above the class's declaration, insert a component annotation:
 
         @Component(
             property = {
@@ -33,13 +33,13 @@ A simple example of this is provided below.
             service = EditorConfigContributor.class
         )
 
-    This annotation declares the implementation class of the Component, and
+    This annotation declares the implementation class of the Component and
     specifies the Component's properties. You should implement the
     `EditorConfigContributor` interface for this scenario. The `property`
     element is blank in the code snippet above. You need to insert properties
     that distinguish the editor's name, editor's configuration key, and/or the
     portlet name where the editor resides. These three properties can be
-    specified independently, or in any variation with each other. You can find
+    specified independently or in any variation with each other. You can find
     out more about the available properties and how they should be used by
     reading the Javadoc provided in the
     [`EditorConfigContributor`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.java)
@@ -48,8 +48,8 @@ A simple example of this is provided below.
     <!-- Change the Javadoc link above to the Javadoc listed on
     docs.liferay.com, when 7.0 Javadoc is available. -Cody -->
 
-    The following is a sample of what the `@Component` annotation could look
-    like when modifying an editor's configuration:
+    The following code is a sample of what the `@Component` annotation could
+    look like when modifying an editor's configuration:
 
         @Component(
             property = {
@@ -61,16 +61,16 @@ A simple example of this is provided below.
             service = EditorConfigContributor.class
         )
 
-    This particular annotation declares that the following service will be
-    applied for the AlloyEditor and CKEditor identified by their `contentEditor`
-    configuration key. Two portlet names are specified, which means that the
-    service applies to all editors in those portlets. Lastly, the service
-    ranking is listed, which prioritizes this service over others that are
-    currently deployed in Portal.
+    This annotation declares that the following service will be applied for the
+    AlloyEditor and CKEditor identified by their `contentEditor` configuration
+    key. Two portlet names are specified, which means that the service applies
+    to all editors in those portlets. Lastly, the service ranking is listed,
+    which prioritizes this service over others that are currently deployed in
+    Portal.
 
-4. Now that you've specified which editor configurations you want to modify, you
-   need to specify what about them you'd like to change. Add the following
-   method to your new class:
+4.  Now that you've specified which editor configurations you want to modify, you
+    need to specify what about them you'd like to change. Add the following
+    method to your new class:
 
         @Override
         public void populateConfigJSONObject(
@@ -90,13 +90,13 @@ A simple example of this is provided below.
 
         JSONObject toolbars = jsonObject.getJSONObject("toolbars");
 
-6. Now that the `JSONObject` holds your editor's configuration, you can modify
-   the configuration. For instance, suppose you'd like to add a button to your
-   editor's toolbar. To complete this, you'd need to extract the *Add* buttons
-   out of your toolbar configuration object as a
-   [`JSONArray`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/json/JSONArray.java),
-   and then add the button to that `JSONArray`. For example, the following
-   would add a *Camera* button to the editor's toolbar:
+6.  Now that the `JSONObject` holds your editor's configuration, you can modify
+    the configuration. For instance, suppose you'd like to add a button to your
+    editor's toolbar. To complete this, you'd need to extract the *Add* buttons
+    out of your toolbar configuration object as a
+    [`JSONArray`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/json/JSONArray.java),
+    and then add the button to that `JSONArray`. For example, the following code 
+    would add a *Camera* button to the editor's toolbar:
 
         if (toolbars != null) {
             JSONObject toolbarAdd = toolbars.getJSONObject("add");
@@ -108,8 +108,8 @@ A simple example of this is provided below.
             }
         }
 
-    The configuration JSON object will be passed to the editor with the
-    modifications you've implemented in the `populateConfigJSONObject` method.
+    The configuration JSON object is passed to the editor with the modifications
+    you've implemented in the `populateConfigJSONObject` method.
 
 Your Java class is complete! The only thing left to do is generate the module's
 JAR file and copy it to your Portal's `osgi/modules` directory. Once the module
