@@ -1,4 +1,4 @@
-# Introduction [](id=introduction-0)
+# JavaScript [](id=javascript)
 
 Liferay 7.0 brings with it quite a few updates to the front-end development 
 tools. You can now organize and share your code in a more logical way using 
