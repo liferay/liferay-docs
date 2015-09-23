@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="build-common-node" xmlns:antelope="antlib:ise.antelope.tasks">
+	<macrodef name="download-node">
+		<sequential>
+			<if>
+				<and>
+					<os family="mac" />
+					<equals arg1="${sun.arch.data.model}" arg2="32" />
+				</and>
+				<then>
+					<propertycopy from="nodejs.url[osx32]" name="nodejs.url" />
+				</then>
+				<elseif>
+					<and>
+						<os family="mac" />
+						<equals arg1="${sun.arch.data.model}" arg2="64" />
+					</and>
+					<then>
+						<propertycopy from="nodejs.url[osx64]" name="nodejs.url" />
+					</then>
+				</elseif>
+				<elseif>
+					<and>
+						<os family="unix" />
+						<equals arg1="${sun.arch.data.model}" arg2="32" />
+					</and>
+					<then>
+						<propertycopy from="nodejs.url[linux32]" name="nodejs.url" />
+					</then>
+				</elseif>
+				<elseif>
+					<and>
+						<os family="unix" />
+						<equals arg1="${sun.arch.data.model}" arg2="64" />
+					</and>
+					<then>
+						<propertycopy from="nodejs.url[linux64]" name="nodejs.url" />
+					</then>
+				</elseif>
+				<elseif>
+					<and>
+						<os family="windows" />
+						<equals arg1="${sun.arch.data.model}" arg2="32" />
+					</and>
+					<then>
+						<propertycopy from="nodejs.url[windows32]" name="nodejs.url" />
+					</then>
+				</elseif>
+				<elseif>
+					<and>
+						<os family="windows" />
+						<equals arg1="${sun.arch.data.model}" arg2="64" />
+					</and>
+					<then>
+						<propertycopy from="nodejs.url[windows64]" name="nodejs.url" />
+					</then>
+				</elseif>
+			</if>
+
+			<if>
+				<not>
+					<isset property="nodejs.url" />
+				</not>
+				<then>
+					<fail>
+.
+
+Unable to automatically detect the current operating system and architecture.
+Please manually set the property "nodejs.url" in build.properties to the
+location of NodeJS. An example value for OSX on a 64 bit architecture is
+${nodejs.url[osx64]}.
+					</fail>
+				</then>
+			</if>
+
+			<if>
+				<not>
+					<available file="${sdk.tools.dir}/node-v${nodejs.version}" />
+				</not>
+				<then>
+					<antelope:stringutil string="${nodejs.url}" property="nodejs.file.beginindex">
+						<antelope:lastindexof string="/" />
+					</antelope:stringutil>
+
+					<math
+						datatype="int"
+						operand1="${nodejs.file.beginindex}"
+						operand2="1"
+						operation="+"
+						result="nodejs.file.beginindex"
+					/>
+
+					<antelope:stringutil string="${nodejs.url}" property="nodejs.file">
+						<antelope:substring beginindex="${nodejs.file.beginindex}" />
+					</antelope:stringutil>
+
+					<if>
+						<not>
+							<available file="${sdk.tools.dir}/${nodejs.file}" />
+						</not>
+						<then>
+							<mirrors-get dest="${sdk.tools.dir}/${nodejs.file}" src="${nodejs.url}" />
+						</then>
+					</if>
+
+					<if>
+						<contains string="${nodejs.file}" substring=".tar.gz" />
+						<then>
+							<exec executable="tar">
+								<arg line="xfz ${sdk.tools.dir}/${nodejs.file} -C ${sdk.tools.dir}" />
+							</exec>
+
+							<antelope:stringutil string="${nodejs.file}" property="nodejs.dir.endindex">
+								<antelope:lastindexof string=".tar.gz" />
+							</antelope:stringutil>
+
+							<antelope:stringutil string="${nodejs.file}" property="nodejs.dir">
+								<antelope:substring endindex="${nodejs.dir.endindex}" />
+							</antelope:stringutil>
+
+							<delete dir="${sdk.tools.dir}/node-v${nodejs.version}" />
+
+							<move file="${sdk.tools.dir}/${nodejs.dir}" tofile="${sdk.tools.dir}/node-v${nodejs.version}" />
+
+							<mkdir dir="${sdk.tools.dir}/node-v${nodejs.version}/node_modules" />
+						</then>
+						<else>
+							<move file="${sdk.tools.dir}/${nodejs.file}" todir="${sdk.tools.dir}/node-v${nodejs.version}" />
+						</else>
+					</if>
+
+					<if>
+						<os family="windows" />
+						<then>
+							<if>
+								<not>
+									<available file="${sdk.tools.dir}/npm-${nodejs.npm.version}.zip" />
+								</not>
+								<then>
+									<mirrors-get dest="${sdk.tools.dir}/npm-${nodejs.npm.version}.zip" src="${nodejs.npm.url}" />
+								</then>
+							</if>
+
+							<unzip
+								dest="${sdk.tools.dir}/node-v${nodejs.version}"
+								src="${sdk.tools.dir}/npm-${nodejs.npm.version}.zip"
+							/>
+						</then>
+					</if>
+
+					<node-execute
+						node.args="config set cache ${sdk.tools.dir}/node-v${nodejs.version}/.cache --global"
+						node.command="npm"
+						node.working.dir="${sdk.tools.dir}/node-v${nodejs.version}"
+					/>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="download-node-module">
+		<attribute name="node.module.name" />
+		<attribute name="node.module.version" />
+
+		<sequential>
+			<loadfile failonerror="false" property="package.json.content" srcFile="${sdk.tools.dir}/node-v${nodejs.version}/node_modules/@{node.module.name}/package.json" />
+
+			<if>
+				<not>
+					<contains string="${package.json.content}" substring="&quot;version&quot;: &quot;@{node.module.version}&quot;" />
+				</not>
+				<then>
+					<node-execute
+						node.args="install @{node.module.name}@&quot;@{node.module.version}&quot;"
+						node.command="npm"
+						node.working.dir="${sdk.tools.dir}/node-v${nodejs.version}"
+					/>
+				</then>
+			</if>
+
+			<var name="package.json.content" unset="true" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="node-execute">
+		<attribute default="" name="node.args" />
+		<attribute name="node.command" />
+		<attribute default="" name="node.command.args" />
+		<attribute default="${user.dir}" name="node.working.dir" />
+
+		<sequential>
+			<download-node />
+
+			<if>
+				<not>
+					<equals arg1="@{node.command.args}" arg2="" />
+				</not>
+				<then>
+					<echo>@{node.command.args}</echo>
+				</then>
+			</if>
+
+			<if>
+				<os family="unix" />
+				<then>
+					<exec dir="@{node.working.dir}" executable="${sdk.tools.dir}/node-v${nodejs.version}/bin/@{node.command}">
+						<arg line="@{node.command.args} @{node.args}" />
+					</exec>
+				</then>
+				<else>
+					<exec dir="@{node.working.dir}" executable="${sdk.tools.dir}/node-v${nodejs.version}/@{node.command}.cmd">
+						<arg line="@{node.command.args} @{node.args}" />
+					</exec>
+				</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="transpile-js">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<delete dir="@{module.dir}/.js-cache" failonerror="false" />
+
+			<mkdir dir="@{module.dir}/.js-cache" />
+
+			<copy
+				file="@{module.dir}/bower.json"
+				overwrite="true"
+				tofile="@{module.dir}/.js-cache/bower.json"
+			/>
+
+			<mkdir dir="@{module.dir}/tmp/transpile" />
+
+			<copy todir="@{module.dir}/tmp/transpile">
+				<fileset dir="@{module.dir}/src" id="transpile.fileset">
+					<include name="**/${transpile.file.pattern}" />
+				</fileset>
+			</copy>
+
+			<download-node-module
+				node.module.name="babel"
+				node.module.version="${nodejs.modules.version[babel]}"
+			/>
+
+			<download-node-module
+				node.module.name="lfr-amd-loader"
+				node.module.version="${nodejs.modules.version[lfr-amd-loader]}"
+			/>
+
+			<download-node-module
+				node.module.name="lfr-module-config-generator"
+				node.module.version="${nodejs.modules.version[lfr-module-config-generator]}"
+			/>
+
+			<pathconvert pathsep=" " property="transpile.files" setonempty="false" refid="transpile.fileset" >
+				<map from="@{module.dir}/src/" to="" />
+			</pathconvert>
+
+			<node-execute
+				node.command="node"
+				node.command.args="${sdk.tools.dir}/node-v${nodejs.version}/node_modules/babel/bin/babel/index.js --modules amd -d @{module.dir}/.js-cache ${transpile.files}"
+				node.working.dir="@{module.dir}/tmp/transpile"
+			/>
+
+			<var name="transpile.files" unset="true" />
+
+			<node-execute
+				node.command="node"
+				node.command.args="${sdk.tools.dir}/node-v${nodejs.version}/node_modules/lfr-module-config-generator/bin/index.js -c '' -e '' -f /_/g,- -i true -l -m @{module.dir}/.js-cache/bower.json -o @{module.dir}/classes/META-INF/config.json -r @{module.dir}/.js-cache/META-INF/resources @{module.dir}/.js-cache"
+				node.working.dir="${sdk.tools.dir}/node-v${nodejs.version}"
+			/>
+		</sequential>
+	</macrodef>
+</project>

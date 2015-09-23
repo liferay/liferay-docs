@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="layouttpl" basedir="." default="deploy">
+	<import file="../build-common-plugins.xml" />
+
+	<target name="create">
+		<property name="layouttpl.display.name" value="" />
+		<property name="layouttpl.name" value="" />
+
+		<gradle-execute task="createLayouttpl">
+			<arg value="--build-file=../sdk.gradle" />
+			<arg value="-PlayouttplDisplayName=${layouttpl.display.name}" />
+			<arg value="-PlayouttplName=${layouttpl.name}" />
+		</gradle-execute>
+	</target>
+</project>

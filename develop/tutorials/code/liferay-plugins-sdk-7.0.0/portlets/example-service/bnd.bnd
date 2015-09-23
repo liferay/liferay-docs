@@ -1,0 +1,4 @@
+Bundle-Name: Example Service
+Bundle-SymbolicName: com.liferay.docs.exampleservice
+Bundle-Version: 1.0.0
+Private-Package: com.liferay.docs.exampleservice
