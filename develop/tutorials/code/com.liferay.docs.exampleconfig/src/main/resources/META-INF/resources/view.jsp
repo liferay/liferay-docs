@@ -26,14 +26,14 @@
 
 <c:choose>
 	<c:when test="<%= noConfig %>">
-		<p>
+        <p>
             Please select use the portlet configuration to select a favorite color.
         </p>
 	</c:when>
 
 	<c:otherwise>
-		<p style="color: <%= favoriteColor %>">
-			Favorite color: <%= favoriteColor %>!
-		</p>
+        <p style="color: <%= favoriteColor %>">
+            Favorite color: <%= favoriteColor %>!
+        </p>
 	</c:otherwise>
 </c:choose>
