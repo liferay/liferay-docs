@@ -4,30 +4,27 @@ All of Liferay's functionality, including the functionality of its core
 portlets, is published in a layer of services. By modifying these services, you
 can modify Liferay's functionality without modifying the core, or core portlets,
 themselves. With Liferay 7, these services are declared as API providers, as
-evidenced by the `@ProviderType` annotation used by the service interfaces. To
-modify Liferay's services, you might be tempted to simply implement one of these
-service interfaces. Don't do it! Instead of implementing the service interfaces
-directly, extend the `-ServiceWrapper` class for the interface you want to
-modify. If a patch to an interface is made, Liferay engineers will be
-responsible for updating all of the necessary API providers, and your bundle, if
-it extends a wrapper, will be unaffected by the change. However, if you
-implement the interface directly, a patch to the API likely means your
-customization bundle will also need to be updated, or it will break.
+evidenced by the `@ProviderType` annotation used by the service interfaces.
+Liferay generates dummy wrapper classes for all its service interfaces. For
+example, `UserLocalServiceWrapper` is created as a wrapper for
+`UserLocalService`, a service interface for adding, removing, and retrieving
+user accounts.
+
+Instead of implementing the service interfaces directly, extend the
+`-ServiceWrapper` class for the interface you want to modify. The reason why
+becomes clear if you consider what happens when a patch to the interface is
+made. If you implemented the interface, you'd need to update your bundle to
+reflect the changes made by the patch. However, extending the wrapper class
+means you only interact with the methods you're overriding, and you don't need
+to know anything about the rest of the service. The necessary API providers will
+be updated with the patch, and your bundle (if it extends a service wrapper),
+will be unaffected by the change. 
 
 You can [publish your own services to Liferay's module framework](/develop/tutorials/-/knowledge_base/7-0/publishing-liferay-services),
 [invoke Liferay's services from your application](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services),
 or modify the behavior of Liferay's services. This tutorial teaches you how to
-create a bundle that modifies Liferay's services.
-
-Liferay generates dummy wrapper classes for all its service interfaces. For
-example, `UserLocalServiceWrapper` is created as a wrapper for
-`UserLocalService`, a service interface for adding, removing, and retrieving
-user accounts. If you extend the wrapper class, then alter the service's
-behavior, the customization won't break, despite any future patches to the
-interface. 
-
-This tutorial shows you how to modify a portal service by creating a bundle
-that publishes a `ServiceWrapper` service. 
+create a bundle that modifies Liferay's services. The process can be divided
+into three steps:
 
 1. Create and configure a project.
 2. Write a Java class that publishes a service wrapper.
