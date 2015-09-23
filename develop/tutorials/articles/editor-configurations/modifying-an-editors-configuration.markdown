@@ -125,3 +125,11 @@ Liferay supports several different types of WYSIWYG editors, which include
 
 Make sure to visit each editor's configuration API to learn what each editor
 offers for configuration settings.
+
+## Related Topics 
+
+[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor)
+
+[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
+
+[Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
