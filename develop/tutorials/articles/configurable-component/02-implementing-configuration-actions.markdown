@@ -22,9 +22,13 @@ allows custom configuration fields to be manipulated. To implement a
 configuration action, follow these steps:
 
 1. Create an interface to represent your configuration
-2. Reference your configuration from your application class
-3. Implement your configuration action class
-4. Implement your view layer of your application's configuration user interface
+2. Implement your application class and add a reference to your configuration in
+   your application class
+3. Implement your configuration action class and add a reference to your
+   configuration in your configuration action class
+4. Implement the user interface for configuring your application
+
+Let's get started.
 
 ## Creating a Configuration Interface
 
@@ -134,3 +138,273 @@ calling `super.doView` makes the configuration able to be read from the request
 by the application's JSPs.
 
 ## Implementing a Configuration Action
+
+To implement a configuration action, you should create a class that extends
+Liferay's `DefaultConfigurationAction` class. Then you need to add a reference
+to your configuration the same way that you added such a reference to your
+application class. Declare the configuration as a `volatile` member variable,
+decorate your configuration action class with the `@Component` annotation,
+specify the appropriate `configurationPid` in the `@Component` annotation, add
+an appropriately annotated `activate` method that instantiates the configuration
+variable, and add a public getter method for each configuration field.
+
+Next, you should specify `configurationPolicy = ConfigurationPolicy.OPTIONAL` in
+your class's `@Component` annotation. An optional configuration policy means
+that the component is created regardless of whether or not the configuration was
+set. You also need to specify the portlet to which your configuration action
+class applies. To do so, make the following specification in your class's
+`@Component` annotation:
+
+    property = {
+        "javax.portlet.name=com_liferay_docs_exampleconfig_portlet_ExampleConfigPortlet"
+    },
+
+Your component should be registered as a configuration action class so you
+should specify `service = ConfigurationAction.class` in your class's
+`@Component` annotation.
+
+Next, you should override the `processAction` method so that it reads a URL
+parameter from the action request, sets the value as a portlet preference, and
+invokes the `processAction` method of the `SettingsConfigurationAction` ancestor
+class. Finally, you should override the `include` method so that it sets the
+configuration as an attribute of the HTTP servlet request and then invokes the
+`include` method of the `BaseJSPSettingsConfigurationAction` class. Here's an
+example:
+
+    package com.liferay.docs.exampleconfig.action;
+
+    import java.util.Map;
+
+    import javax.portlet.ActionRequest;
+    import javax.portlet.ActionResponse;
+    import javax.portlet.PortletConfig;
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
+
+    import org.osgi.service.component.annotations.Activate;
+    import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.component.annotations.ConfigurationPolicy;
+    import org.osgi.service.component.annotations.Modified;
+
+    import com.liferay.docs.exampleconfig.configuration.ExampleConfiguration;
+    import com.liferay.portal.kernel.portlet.ConfigurationAction;
+    import com.liferay.portal.kernel.portlet.DefaultConfigurationAction;
+    import com.liferay.portal.kernel.util.ParamUtil;
+
+    import aQute.bnd.annotation.metatype.Configurable;
+
+    @Component(
+        configurationPid = "com.liferay.docs.exampleconfig.configuration.ExampleConfiguration",
+        configurationPolicy = ConfigurationPolicy.OPTIONAL,
+        immediate = true,
+        property = {
+            "javax.portlet.name=com_liferay_docs_exampleconfig_portlet_ExampleConfigPortlet"
+        },
+        service = ConfigurationAction.class
+    )
+    public class ExampleConfigurationAction extends DefaultConfigurationAction {
+            
+        @Override
+        public void processAction(
+                PortletConfig portletConfig, ActionRequest actionRequest,
+                ActionResponse actionResponse)
+            throws Exception {
+
+            String favoriteColor = ParamUtil.getString(actionRequest, "favoriteColor");
+            setPreference(actionRequest, "favoriteColor", favoriteColor);
+            
+            super.processAction(portletConfig, actionRequest, actionResponse);
+        }
+
+        @Override
+        public void include(
+            PortletConfig portletConfig, HttpServletRequest httpServletRequest,
+            HttpServletResponse httpServletResponse) throws Exception {
+
+            httpServletRequest.setAttribute(
+                ExampleConfiguration.class.getName(),
+                _exampleConfiguration);
+            
+            super.include(portletConfig, httpServletRequest, httpServletResponse);
+        }
+        
+        @Activate
+        @Modified
+        protected void activate(Map<Object, Object> properties) {
+            _exampleConfiguration = Configurable.createConfigurable(
+                ExampleConfiguration.class, properties);
+        }
+        
+        private volatile ExampleConfiguration _exampleConfiguration;
+
+    }
+
+Now that your configuration action class has been created, you're ready to
+create a user interface for selecting configuration options and submitting the
+selections.
+
+## Implementing the User Interface For Configuring Your Application
+
+When creating a JSP-based user interface, it's convenient to create an
+`init.jsp` page for your application. The `init.jsp` page should contain all of
+the imports, tag library declarations, and other page components are required by
+your other JSPs. Each of your other pages should import `init.jsp` so that you
+don't need to duplicate code. Liferay follows this convention.
+
+Here's an example `init.jsp` file:
+
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+
+    <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
+    <%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
+    <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+    <%@ page import="com.liferay.docs.exampleconfig.configuration.ExampleConfiguration" %>
+    <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
+    <%@ page import="com.liferay.portal.kernel.util.Validator" %>
+
+    <portlet:defineObjects />
+
+    <liferay-theme:defineObjects />
+
+    <%
+        ExampleConfiguration exampleConfiguration =
+            (ExampleConfiguration)
+            renderRequest.getAttribute(ExampleConfiguration.class.getName());
+
+        String favoriteColor = StringPool.BLANK;
+        
+        if (Validator.isNotNull(exampleConfiguration)) {
+            favoriteColor =
+                portletPreferences.getValue(
+                    "favoriteColor", exampleConfiguration.favoriteColor());
+        }
+    %>
+
+This JSP not only declares some tag libraries and imports some classes. It uses
+the `<portlet:defineObjects />` and `<liferay-theme:defineObjects />` tags to
+make certain variables available on the page. The scriptlet at the end of the
+file uses one of these variables, `renderRequest`, to get the configuration
+which was stored in the `renderRequest` by your portlet's `doView` method.
+Finally, the value of a specific field (`favoriteColor`) is read from the
+configuration.
+
+The default view of your application is provided by your application's
+`view.jsp`. Your `view.jsp` should import your `init.jsp` so that the same tag
+libraries, imports, and variables are available on the page. Here's an example
+`view.jsp` file:
+
+    <%@ include file="/init.jsp" %>
+
+    <p>
+        <liferay-ui:message key="com_liferay_docs_exampleconfig_portlet_ExampleConfigPortlet.caption"/>
+    </p>
+
+    <%
+        boolean noConfig = Validator.isNull(favoriteColor);
+    %>
+
+    <c:choose>
+        <c:when test="<%= noConfig %>">
+            <p>
+                Please select use the portlet configuration to select a favorite color.
+            </p>
+        </c:when>
+
+        <c:otherwise>
+            <p style="color: <%= favoriteColor %>">
+                Favorite color: <%= favoriteColor %>!
+            </p>
+        </c:otherwise>
+    </c:choose>
+
+This JSP simply checks whether or not the `favoriteColor` variable is empty. If
+it's empty, a message is displayed that tells the user that they need to select
+a favorite color in the portlet's configuration. If the `favoriteColor` variable
+is not empty, the name of the selected color is displayed in the selected color.
+Note: The value of the
+`com_liferay_docs_exampleconfig_portlet_ExampleConfigPortlet.caption` language
+key must be specified in your application's `Language.properties` file. The
+default location for this file is in the `content` package.
+
+The configuration user interface of your application is provided by your
+application's `configuration.jsp` file. This interface is displayed on the Setup
+tab when a user clicks on your application's gear icon and then selects
+*Configuration*. As previously discussed, your `configuration.jsp` should import
+your `init.jsp` file. Here's an example `configuration.jsp` file:
+
+    <%@ include file="/init.jsp" %>
+
+    <%@ page import="com.liferay.portal.kernel.util.Constants" %>
+
+    <liferay-portlet:actionURL portletConfiguration="<%= true %>"
+        var="configurationActionURL" />
+
+    <liferay-portlet:renderURL portletConfiguration="<%= true %>"
+        var="configurationRenderURL" />
+
+    <aui:form action="<%= configurationActionURL %>" method="post" name="fm">
+
+        <aui:input name="<%= Constants.CMD %>" type="hidden"
+            value="<%= Constants.UPDATE %>" />
+
+        <aui:input name="redirect" type="hidden"
+            value="<%= configurationRenderURL %>" />
+
+        <aui:fieldset>
+
+            <aui:select name="favoriteColor" label="Favorite Color"
+                value="<%= favoriteColor %>">
+                <aui:option value="indigo">Indigo</aui:option>
+                <aui:option value="blue">Blue</aui:option>
+                <aui:option value="green">Green</aui:option>
+                <aui:option value="yellow">Yellow</aui:option>
+                <aui:option value="orange">Orange</aui:option>
+                <aui:option value="red">Red</aui:option>
+            </aui:select>
+
+        </aui:fieldset>
+        <aui:button-row>
+            <aui:button type="submit"></aui:button>
+        </aui:button-row>
+    </aui:form>
+
+This JSP uses the `<liferay-portlet:actionURL />` and
+`<liferay-portlet:renderURL />` tags to construct two URLs in the variables
+`configurationActionURL` and `configurationRenderURL`. The JSP presents a simple
+form that allows the user to select a favorite color. When the user submits the
+form, the `configurationActionURL` is invoked and the application's
+`processAction` method is invoked with the `favoriteAction` included as a
+request parameter:
+
+    <aui:form action="<%= configurationActionURL %>" method="post" name="fm">
+
+If the request fails, the user is redirected to the configuration page:
+
+    <aui:input name="redirect" type="hidden"
+        value="<%= configurationRenderURL %>" />
+
+It's a best practice to supply a URL parameter named `cmd` (`Constants.CMD`
+equals `cmd`) whose value indicates the purpose of the request. In this example,
+the value of the `cmd` parameter is `update` (`Constants.CMD` equals `update`):
+
+    <aui:input name="<%= Constants.CMD %>" type="hidden"
+        value="<%= Constants.UPDATE %>" />
+
+Many Liferay applications read the value of the `cmd` parameter and perform some
+processing depending on its value.
+
+You can find a complete example project on Github here:
+[https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/com.liferay.docs.exampleconfig](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/com.liferay.docs.exampleconfig)
+
+To test this example project, deploy the application to Liferay, add it to a
+page, click on the gear icon, and select *Configuration*. Select a favorite
+color and click *Save*. To confirm that your selection was saved as a portlet
+configuration setting, look for the application to display a message like this:
+
+    Favorite color: blue!
+
+Excellent! Now you know how to create application configurations and how to
+create a mechanism to allow users to edit the configuration.
