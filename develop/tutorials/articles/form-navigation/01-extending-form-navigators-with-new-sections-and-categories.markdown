@@ -49,7 +49,7 @@ To add a new section entry to existing form navigation, follow these steps:
         boolean companyMyAppFeatureEnabled = GetterUtil.getBoolean(request.getAttribute(MyAppWebKeys.COMPANY_MY_APP_FEATURE_ENABLED));
         %>
 
-        <aui:input checked="<%= companyMyAppFeatureEnabled %>" label="Enable Feature1" name="myAppFeatureEnabled" type="checkbox" value="<%= companyMyAppFeatureEnabled %>" />
+        <aui:input checked="<%= companyMyAppFeatureEnabled %>" label="Enable Feature1" name="settings--myAppFeatureEnabled--" type="checkbox" value="<%= companyMyAppFeatureEnabled %>" />
 
 3.  At the heart of your form navigation extension is your Java implementation.
     To add a new section entry within an existing Liferay form navigator, 
