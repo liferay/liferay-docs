@@ -4,5 +4,4 @@ Bundle-Version: 1.0.0
 Include-Resource:\
         classes,\
         META-INF/resources=src/META-INF/resources
-Private-Package: com.liferay.docs.formnavextensionportlet
 Web-ContextPath: /formnavextensionportlet
