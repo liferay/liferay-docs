@@ -144,8 +144,16 @@ To add a new section entry to existing form navigation, follow these steps:
         }
 
 This class extends the `BaseJSPFormNavigatorEntry` base class. Make sure your
-class also extends it. The `BaseJSPFormNavigatorEntry` base class integrates the
-entry's JSP with the form navigator you target.
+class also extends it if you use JSP to render the form page. The
+`BaseJSPFormNavigatorEntry` base class integrates the entry's JSP with the form
+navigator you target. You can also use any other template language to render
+the form page as long as you render it in the implementation of the following
+method of `BaseJSPFormNavigatorEntry` interface:
+
+	public void include(
+			HttpServletRequest request, HttpServletResponse response)
+		throws IOException;
+
 
 Above the class declaration is an `@Component` annotation that registers the
 class in the OSGi registry, so the targeted form navigator can retrieve it. Make
