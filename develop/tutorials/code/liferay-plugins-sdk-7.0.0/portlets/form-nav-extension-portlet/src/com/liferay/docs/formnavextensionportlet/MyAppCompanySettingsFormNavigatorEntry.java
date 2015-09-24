@@ -2,12 +2,15 @@ package com.liferay.docs.formnavextensionportlet;
 
 import java.io.IOException;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.portlet.PortletPreferences;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.liferay.portal.kernel.util.ResourceBundleUtil;
+import com.liferay.portal.model.Company;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
@@ -19,11 +22,14 @@ import com.liferay.portal.kernel.util.PrefsPropsUtil;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.theme.ThemeDisplay;
 
-@Component(immediate = true, property = {"service.ranking:Integer=20"},
-	service = FormNavigatorEntry.class)
+@Component(
+	immediate = true,
+	property = {"service.ranking:Integer=20"},
+	service = FormNavigatorEntry.class
+)
 public class MyAppCompanySettingsFormNavigatorEntry 
-	extends BaseJSPFormNavigatorEntry<Object>
-		implements FormNavigatorEntry<Object> {
+	extends BaseJSPFormNavigatorEntry<Company>
+		implements FormNavigatorEntry<Company> {
 
 	@Override
 	public String getCategoryKey() {
@@ -47,31 +53,39 @@ public class MyAppCompanySettingsFormNavigatorEntry
 
 	@Override
 	public String getLabel(Locale locale) {
-		return "My App";
+		ResourceBundle resourceBundle = ResourceBundleUtil.getBundle(
+			"content.Language", locale, getClass());
+
+		return resourceBundle.getString("my-app");
 	}
 
 	@Override
 	public void include(HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
 
-		ThemeDisplay themeDisplay = (ThemeDisplay) request
-				.getAttribute(WebKeys.THEME_DISPLAY);
+		ThemeDisplay themeDisplay =
+			(ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
 
-		PortletPreferences companyPortletPreferences = PrefsPropsUtil
-				.getPreferences(themeDisplay.getCompanyId(), true);
+		PortletPreferences companyPortletPreferences =
+			PrefsPropsUtil.getPreferences(themeDisplay.getCompanyId(), true);
 
-		boolean companyMyAppFeatureEnabled = PrefsParamUtil
-				.getBoolean(companyPortletPreferences, request,
-						"myAppFeatureEnabled", true);
+		boolean companyMyAppFeatureEnabled =
+			PrefsParamUtil.getBoolean(
+				companyPortletPreferences, request, "myAppFeatureEnabled",
+				true);
 
-		request.setAttribute(MyAppWebKeys.COMPANY_MY_APP_FEATURE_ENABLED,
-				companyMyAppFeatureEnabled);
+		request.setAttribute(
+			MyAppWebKeys.COMPANY_MY_APP_FEATURE_ENABLED,
+			companyMyAppFeatureEnabled);
 
 		super.include(request, response);
 	}
 
 	@Override
-	@Reference(target = "(osgi.web.symbolicname=com.liferay.docs.formnavextensionportlet)", unbind = "-")
+	@Reference(
+		target = "(osgi.web.symbolicname=com.liferay.docs.formnavextensionportlet)",
+		unbind = "-"
+	)
 	public void setServletContext(ServletContext servletContext) {
 		super.setServletContext(servletContext);
 	}
