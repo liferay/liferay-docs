@@ -109,7 +109,10 @@ To add a new section entry to existing form navigation, follow these steps:
 
             @Override
             public String getLabel(Locale locale) {
-                return "My App";
+                ResourceBundle resourceBundle = ResourceBundleUtil.getBundle(
+                    "content.Language", locale, getClass());
+
+                return resourceBundle.getString("my-app");
             }
 
             @Override
