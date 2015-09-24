@@ -84,8 +84,8 @@ To add a new section entry to existing form navigation, follow these steps:
         @Component(immediate = true, property = {"service.ranking:Integer=20"},
             service = FormNavigatorEntry.class)
         public class MyAppCompanySettingsFormNavigatorEntry 
-            extends BaseJSPFormNavigatorEntry<Object>
-                implements FormNavigatorEntry<Object> {
+            extends BaseJSPFormNavigatorEntry<Company>
+                implements FormNavigatorEntry<Company> {
 
             @Override
             public String getCategoryKey() {
