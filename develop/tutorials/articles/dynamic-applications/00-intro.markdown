@@ -13,7 +13,7 @@ want to Blog, and you've installed your own custom-developed app for blogging
 instead of Liferay's, the portal can just use yours instead? 
 
 With Liferay Portal 7, you can do just that. You can request an app based on an
-entity and action type.  Processing the entity type and action, Liferay use an
+entity and action type. Processing the entity type and action, Liferay uses an
 available portlet that can handle the request. This increases the flexibility
 and modularity of using portlets in Liferay Portal.
 
