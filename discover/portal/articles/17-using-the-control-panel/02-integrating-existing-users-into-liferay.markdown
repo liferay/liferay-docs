@@ -785,3 +785,23 @@ Service Provider based login process, just navigate to the Liferay running on
 port 9080 and click *Sign In*, navigate to
 [http://localhost:9080/c/portal/login](http://localhost:9080/c/portal/login), or
 try to access a protected resource URL such as a Control Panel URL.
+
++$$$
+
+**Limitation:** The Liferay SAML plugin can only be used with a single virtual
+host. Technically, this means that in the SAML metadata for Liferay, only one
+binding can be added in this form:
+
+    <md:EntityDescriptor>
+    ...
+    <md:SPSSODescriptor>
+    ...
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://portal.domain.com/c/portal/saml/acs" index="1" isDefault="true" />
+    ...
+    </md:SPSSODescriptor>
+    </md:EntityDescriptor>
+
+$$$
+
+Great! Now you know how to configure Liferay either as a SAML identity provider
+or a service provider.
