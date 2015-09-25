@@ -1,4 +1,4 @@
-# Creating Bundles with Blade Tools
+# Creating Bundles with Blade Tools [](id=creating-bundles-with-blade-tools)
 
 Some folks just don't want to use Liferay IDE, or the Liferay Plugins SDK, to
 develop their plugins for Liferay, and that's fine. Where your code lives, and
@@ -24,7 +24,7 @@ file, and deploy the bundle to Liferay's module framework.
 This tutorial focuses only on two commands available with Blade Tools; the
 `blade create ...`  and `blade deploy ...  ` commands.
 
-## Using the Create Command
+## Using the Create Command [](id=using-the-create-command)
 
 At the time of this writing, typing *blade create* into a terminal produces this output:
 
@@ -114,7 +114,7 @@ becomes `MyJspPortletPortlet`, which is rather redundant, don't you think?
 In addition to the auto-generated files and directories, you get a `build.gradle`
 build script, along with the necessary `bnd.bnd` file.
 
-## Using the Deploy Command
+## Using the Deploy Command [](id=using-the-deploy-command)
 
 Once you have your portlet developed and built (`gradle build` if you use
 Gradle), deploy it to Liferay. With Blade Tools, you can take advantage of the
@@ -133,7 +133,7 @@ If Blade Tools doesn't meet your needs, consider using one of the BLADE
 repository project templates to manually create Liferay bundles. Check out our
 [tutorial on that next](LINK).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Installing Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-tools)
 

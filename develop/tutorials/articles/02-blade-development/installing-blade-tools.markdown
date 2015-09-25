@@ -1,4 +1,4 @@
-# Installing Blade Tools
+# Installing Blade Tools [](id=installing-blade-tools)
 
 There are two ways to install Blade Tools. You can clone the repository and
 build Blade Tools from source, or you can install them through the 
@@ -8,7 +8,7 @@ Either way, before downloading or building the Blade Tools, you need to install
 [JPM](http://jpm4j.org/#!/md/install). The exact process varies depending on
 your OS.
 
-## Using the Java Package Manager to Download Blade Tools
+## Using the Java Package Manager to Download Blade Tools [](id=using-the-java-package-manager-to-download-blade-tools)
 
 If you'd rather clone the repository and build the tools from source, skip to
 the next section.
@@ -56,7 +56,7 @@ installed correctly and on your path, you'll see the *MAIN OPTIONS* and
                                             project in Liferay IDE 
 
 
-## Installing Blade Tools from the Source Code
+## Installing Blade Tools from the Source Code [](id=installing-blade-tools-from-the-source-code)
 
 Instead of downloading the Blade Tools from JPM, you can download the repository
 and build the JAR locally. You first need to clone the [Blade Tools GitHub Repository](https://github.com/gamerson/blade.tools). 
@@ -104,7 +104,7 @@ by the *Available sub-commands* for the installed tools:
 Now you have Blade Tools installed, and you probably want to learn how to
 create projects using the tools. We have a [tutorial that shows just that](LINK).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Crerating a Simple bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
 

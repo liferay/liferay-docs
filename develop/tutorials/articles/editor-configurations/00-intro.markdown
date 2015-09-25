@@ -1,4 +1,4 @@
-# Editor Configurations
+# Editor Configurations [](id=editor-configurations)
 
 Often, developers writing apps on Liferay's platform need to customize the
 WYSIWYG editors that Liferay provides. Liferay 7 now allows you to do that in
