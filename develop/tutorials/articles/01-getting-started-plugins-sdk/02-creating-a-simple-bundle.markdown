@@ -72,7 +72,7 @@ simple bundle using the Plugins SDK.
     and `.project` files based on the contents of your project.
 
 9.  To turn your project into a simple bundle, you'll implement a
-    `[BundleActivator](https://osgi.org/javadoc/r5/core/org/osgi/framework/BundleActivator.html)`.
+    [`BundleActivator`](https://osgi.org/javadoc/r5/core/org/osgi/framework/BundleActivator.html).
     If your project does not have a `src` folder, create one and add it to your
     Eclipse build path. Right-click on your project's `src` folder and select
     *New* &rarr; *Package* and create a new package. For example, create a new
