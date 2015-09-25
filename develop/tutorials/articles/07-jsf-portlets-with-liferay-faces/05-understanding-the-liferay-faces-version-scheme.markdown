@@ -13,7 +13,7 @@ the newer version scheme.
 You'll learn about the version scheme supported for Liferay Faces releases GA6
 and prior first.
 
-## Liferay Faces Version Scheme for Releases Up to GA6
+## Liferay Faces Version Scheme for Releases Up to Liferay Faces GA6
 
 [Liferay
 Faces](http://www.liferay.com/community/liferay-projects/liferay-faces/overview)
@@ -88,7 +88,7 @@ With the knowledge of the Liferay Faces versioning scheme under your belt, you
 can now recognize what each version supports. Next, you'll learn about the
 version scheme supported by Liferay Faces after the GA6 release.
 
-## Liferay Faces Version Scheme for Releases After GA6
+## Liferay Faces Version Scheme for Releases After Liferay Faces GA6
 
 In this section, you'll learn about the versioning scheme for each component of
 Liferay Faces for releases following Liferay Faces GA6. Once you have the
