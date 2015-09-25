@@ -1,4 +1,4 @@
-# Developing a Liferay Theme
+# Developing a Liferay Theme [](id=developing-a-liferay-theme)
 
 As a developer, you want your site to communicate your ideas clearly and 
 effectively. You don't want the design of your site to inhibit users from

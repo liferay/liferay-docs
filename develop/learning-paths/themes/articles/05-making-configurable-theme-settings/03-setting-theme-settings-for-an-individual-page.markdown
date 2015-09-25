@@ -1,4 +1,4 @@
-# Setting Theme Settings for an Individual Page
+# Setting Theme Settings for an Individual Page [](id=setting-theme-settings-for-an-individual-page)
 
 For most pages, you'll set the default theme settings so they work for the
 majority of your site. For some pages, however, you may want settings different

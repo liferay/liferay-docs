@@ -1,4 +1,4 @@
-# The HTML Structure of portal_normal.ftl
+# The HTML Structure of portal_normal.ftl [](id=the-html-structure-of-portalnormal-ftl)
 
 The `portal_normal.ftl` file is a template through which all the portlets on a
 Liferay site are rendered. 

@@ -1,4 +1,4 @@
-# Setting Up the Theme's Directory Structure
+# Setting Up the Theme's Directory Structure [](id=setting-up-the-themes-directory-structure)
 
 +$$$
 Note: This step assumes you've [downloaded and unzipped the resources](/documents/10184/581742/themes-learning-path-6.2.zip)

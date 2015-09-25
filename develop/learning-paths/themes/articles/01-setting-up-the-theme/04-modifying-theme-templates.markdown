@@ -1,4 +1,4 @@
-# Modifying Theme Templates
+# Modifying Theme Templates [](id=modifying-theme-templates)
 
 In this section, you'll add some touches to `portal_normal.ftl` and
 `navigation.ftl` to match the finished mock up for the Lunar Resort.

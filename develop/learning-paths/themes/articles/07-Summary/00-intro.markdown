@@ -1,4 +1,4 @@
-# Summary
+# Summary [](id=summary)
 
 Congratulations! You've learned how to build a theme from start to finish. So
 what's next? Now that you've created a theme, you can publish it to Liferay's

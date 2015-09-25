@@ -1,4 +1,4 @@
-# Importing Resources for Your Theme
+# Importing Resources for Your Theme [](id=importing-resources-for-your-theme)
 
 You've created the theme for the Lunar Resort, but it's looking pretty empty at 
 the moment. You need some default content to go with it, so it looks nice when

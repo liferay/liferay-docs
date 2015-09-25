@@ -1,4 +1,4 @@
-# Leveraging Bootstrap and Font Awesome Icons in Your Theme
+# Leveraging Bootstrap and Font Awesome Icons in Your Theme [](id=leveraging-bootstrap-and-font-awesome-icons-in-your-theme)
 
 The puzzle pieces are falling into place. You've built the theme, imported 
 resources, and customized the look and feel of it with CSS. Now you'll learn how 

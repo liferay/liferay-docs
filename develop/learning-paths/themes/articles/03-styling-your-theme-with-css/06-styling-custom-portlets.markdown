@@ -1,4 +1,4 @@
-# Styling Custom Portlets
+# Styling Custom Portlets [](id=styling-custom-portlets)
 
 If you click the *Make Your Reservation* link, the site presents you with a
 reservation form, along with the Guestbook portlet from the [MVC Learning Path](/develop/learning-paths/mvc). 
@@ -86,7 +86,7 @@ Some additional styling has been added for the Guestbook portlet's title and
 search bar using the classes found in the browser's inspector. With the updates
 to the styling, the Guestbook portlet should look similar to the figure below:
 
-![Figure 1: The Guestbook portlet's styles now complement the theme.](../../images/guestbook-portlet-fin.png)
+![Figure 2: The Guestbook portlet's styles now complement the theme.](../../images/guestbook-portlet-fin.png)
 
 In the next section you'll learn how you can use Bootstrap markup and styles to
 give your theme's UI a consistent look.

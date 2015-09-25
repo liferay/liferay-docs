@@ -1,4 +1,4 @@
-# Creating a Theme Project
+# Creating a Theme Project [](id=creating-a-theme-project)
 
 The rest of this Learning Path assumes you've followed the instructions for
 setting up [Liferay IDE](/develop/learning-paths/mvc/-/knowledge_base/6-2/developing-apps-with-liferay-ide)

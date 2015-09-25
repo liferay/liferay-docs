@@ -1,4 +1,4 @@
-# Setting Up custom.css 
+# Setting Up custom.css [](id=setting-up-custom-css)
 
 Before you add the CSS for your theme, you'll need to complete some preliminary
 steps.

@@ -1,4 +1,4 @@
-# Styling the Content Div
+# Styling the Content Div [](id=styling-the-content-div)
 
 The Content `<div>` is used to position and set the dimensions for the theme's 
 content. Currently the Content `<div>` is pressed right up against the edge of 

@@ -1,4 +1,4 @@
-# Previewing Your Theme
+# Previewing Your Theme [](id=previewing-your-theme)
 
 To determine what changes need to be made, you can use Liferay's preview window 
 to see how the theme responds with the existing CSS styles. Locate the Dockbar 

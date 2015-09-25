@@ -1,4 +1,4 @@
-# Responding to Tablet and Phone Views
+# Responding to Tablet and Phone Views [](id=responding-to-tablet-and-phone-views)
 
 With the theme elements identified, you can now add the CSS to make them
 responsive for phones and tablets.

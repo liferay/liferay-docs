@@ -1,4 +1,4 @@
-# Making Your Theme Responsive
+# Making Your Theme Responsive [](id=making-your-theme-responsive)
 
 Designing a theme is a challenging process, especially when you take
 responsiveness into consideration. How will your theme look on a desktop

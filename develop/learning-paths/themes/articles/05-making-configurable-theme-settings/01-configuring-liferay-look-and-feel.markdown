@@ -1,4 +1,4 @@
-# Configuring liferay-look-and-feel.xml
+# Configuring liferay-look-and-feel.xml [](id=configuring-liferay-look-and-feel-xml)
 
 First, you'll need to identify the theme elements you want to make configurable.
 In the case of the Lunar Resort, you want to make the Breadcrumbs, Portlet

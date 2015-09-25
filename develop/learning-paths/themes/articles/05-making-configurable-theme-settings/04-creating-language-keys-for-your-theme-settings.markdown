@@ -1,4 +1,4 @@
-# Creating Language Keys for Your Theme Settings
+# Creating Language Keys for Your Theme Settings [](id=creating-language-keys-for-your-theme-settings)
 
 To create custom language keys, you must create a hook plugin to modify
 `language_en.properties`. Follow the steps below to create the hook:
