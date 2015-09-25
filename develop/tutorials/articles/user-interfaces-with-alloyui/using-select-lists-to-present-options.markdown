@@ -62,12 +62,19 @@ There are a couple of ways to retrieve a select list's selected option.
 Both are viable and achieve the same goal. One way does so within an
 [`aui:script`](https://docs.liferay.com/portal/6.2/taglibs/aui/select.html)
 element. The other way does so using JavaScript inside the portlet's
-`main.js` file. The sections that follow cover both techniques. 
+`main.js` file. Each approach has its benefits: the `aui:script` tag gives you 
+access to the server side state and its utilities and methods; `main.js` gives 
+you cacheability, a separation of concerns with your code, and is shareable 
+across all portlets. Generally, you should write as much of your JavaScript as 
+possible inside `main.js` so that the code can be cached. If, however, you 
+need an initialization point for your code or have to pass data from the
+server, you should write your JavaScript inside the `aui:script` tags. The 
+sections that follow cover both techniques.
 
 Up to this point, the select list has been shown as a stand-alone component.
 Since select lists are typically used in forms, this tutorial demonstrates
 implementing a fully functional select list in a form. Here's the example
-form JSP code: 
+form JSP code:
 
     <aui:form>
         <aui:fieldset>
