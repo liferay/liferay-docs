@@ -27,7 +27,7 @@ your `liferay-plugin-package.properties` file:
  
     This ensures that the resources will be imported into the site template by 
     default.
-    
+ 
 There you have it! As you can see, theme development is a multi-headed beast,
 but with careful planning and a thought out process you can tame it and develop 
 a well designed theme. 
