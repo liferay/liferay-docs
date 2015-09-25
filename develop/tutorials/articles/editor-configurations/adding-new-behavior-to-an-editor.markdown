@@ -27,10 +27,10 @@ extension point, you should follow these steps:
     immediately following editor initialization.
 
     Some examples of JS files that are injected into the CKEditor are
-    [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/html/editors/ckeditor_diffs/extension/creole_dialog_definition.js),
-    [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/html/editors/ckeditor_diffs/extension/creole_dialog_show.js),
+    [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/ckeditor_diffs/extension/creole_dialog_definition.js),
+    [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/ckeditor_diffs/extension/creole_dialog_show.js),
     and
-    [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/html/editors/ckeditor_diffs/extension/dialog_definition.js).
+    [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/ckeditor_diffs/extension/dialog_definition.js).
     These JS files are used by Liferay to redefine which fields show in
     different dialogs, depending on what the selected language (HTML, BBCode,
     Creole) supports. For example, Creole doesn't support background color in
