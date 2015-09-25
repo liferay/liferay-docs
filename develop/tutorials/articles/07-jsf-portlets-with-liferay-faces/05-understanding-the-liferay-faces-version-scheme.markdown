@@ -156,6 +156,12 @@ versioning scheme mastered, you can view several example configuration.
 |[2.0.x](https://github.com/liferay/liferay-faces-util/tree/2.0.x)|liferay-faces-util-2.0.0.jar|2.1|
 |[1.0.x](https://github.com/liferay/liferay-faces-util/tree/1.0.x)|liferay-faces-util-1.0.0.jar|1.2|
 
+Now that you know all about the Liferay Faces versioning scheme, you may be
+curious as to how these components interact with each other. Refer to the
+following figure to view the Liferay Faces dependency diagram.
+
+![Figure 1: The Liferay Faces dependency diagram helps visualize how components interact and depend on each other.](../../images/liferay-faces-dependency-diagram.png)
+
 Next, you can view some example configurations to see the new versioning scheme
 in action.
 
