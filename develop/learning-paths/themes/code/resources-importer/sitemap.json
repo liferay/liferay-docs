@@ -1,0 +1,127 @@
+{
+	"layoutTemplateId": "1_column",
+	"layouts": [
+		{
+			"name": "Welcome",
+			"title": "Welcome",
+			"friendlyURL": "/home",
+			"columns": [
+				[
+					"carousel.xml",
+					"Welcome to the Lunar Resort.html",
+					"Amenities.html",
+					"2 column description.html"
+				]
+			]
+			
+		},
+		{
+			"name": "About Us",
+			"title": "About Us",
+			"friendlyURL": "/about-us",
+			"columns": [
+				[
+					"About Us Info.html"
+				]
+			]
+		},
+		
+		{
+			"name": "Facilities",
+			"title": "Facilities",
+			"friendlyURL": "/facilities",
+			"columns":[
+				[
+					"Lunar Accomodations.html"
+				]
+			]
+		},
+		{
+			"name": "Activities",
+			"title": "Activities",
+			"friendlyURL": "/activities",
+			"columns":[
+				[
+					"Activities Info.html",
+					"Activities Links.html"
+				]
+			],
+			"layouts":[
+					{
+					"name": "Rover Racing",
+					"title": "Rover Racing",
+					"friendlyURL": "/rover-racing",
+					"columns": [
+						[
+							"Rover Racing Banner.html"
+						]
+					]
+					},
+					{
+					"name": "Lunar Golf",
+					"title": "Lunar Golf",
+					"friendlyURL": "/lunar-golf",
+					"columns": [
+						[
+							"Lunar Golf Article.html"
+						]
+					]
+					},
+					{
+					"name": "Lunar Spelunking",
+					"title": "Lunar Spelunking",
+					"friendlyURL": "/lunar-spelunking",
+					"columns": [
+						[
+							"Lunar Spelunking Banner.html"
+						]
+					]
+					}
+				]
+			},
+		{
+			"name": "Dining",
+			"title": "Dining",
+			"friendlyURL": "/dining",
+			"columns":[
+				[
+					"Dining.html",
+				]
+			]
+		},
+		{
+			"name": "Collaboration",
+			"title": "Collaboration",
+			"friendlyURL": "/collaboration",
+			"layoutTemplateId": "2_columns",
+			"columns": [
+				[
+					{
+					"portletId": "36"
+					}
+				],
+				[
+					{
+					"portletId": "115"
+					}
+				]
+			
+			]
+		},
+		{
+			"name": "Reservation",
+			"title": "Reservation",
+			"friendlyURL": "/reservation",
+			"hidden": "true",
+			"columns":[	
+				[
+					"Reservation Form.html",
+					{
+					"portletId": "guestbook_WAR_guestbookportlet"
+					}
+				]
+			]
+		
+		}
+	]
+}
