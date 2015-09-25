@@ -13,7 +13,7 @@ the newer version scheme.
 You'll learn about the version scheme supported for Liferay Faces releases GA6
 and prior first.
 
-## Liferay Faces Version Scheme for Releases Up to Liferay Faces GA6
+## Liferay Faces Version Scheme for Releases Up to Liferay Faces GA6 [](id=liferay-faces-version-scheme-for-releases-up-to-liferay-faces-ga6)
 
 [Liferay
 Faces](http://www.liferay.com/community/liferay-projects/liferay-faces/overview)
@@ -88,13 +88,13 @@ With the knowledge of the Liferay Faces versioning scheme under your belt, you
 can now recognize what each version supports. Next, you'll learn about the
 version scheme supported by Liferay Faces after the GA6 release.
 
-## Liferay Faces Version Scheme for Releases After Liferay Faces GA6
+## Liferay Faces Version Scheme for Releases After Liferay Faces GA6 [](id=liferay-faces-version-scheme-for-releases-after-liferay-faces-ga6)
 
 In this section, you'll learn about the versioning scheme for each component of
 Liferay Faces for releases following Liferay Faces GA6. Once you have the
 versioning scheme mastered, you can view several example configuration.
 
-### Liferay Faces Alloy
+### Liferay Faces Alloy [](id=liferay-faces-alloy)
 
 *Provides a suite of JSF components that utilize [AlloyUI](http://alloyui.com/).*
 
@@ -104,7 +104,7 @@ versioning scheme mastered, you can view several example configuration.
 |[2.0.x](https://github.com/liferay/liferay-faces-alloy/tree/2.0.x)|liferay-faces-alloy-2.0.0.jar|2.0.x|2.1+|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
 |1.0.x|N/A|1.0.x|N/A|*N/A (Not Applicable) since Liferay Faces Alloy has never been implemented for AlloyUI 1.0.x.*|
 
-### Liferay Faces Bridge
+### Liferay Faces Bridge [](id=liferay-faces-bridge)
 
 *Provides the ability to deploy JSF web applications as portlets within [Apache Pluto](https://portals.apache.org/pluto/), the reference implementation for JSR 286 (Portlet 2.0) and JSR 362 (Portlet 3.0).*
 
@@ -116,7 +116,7 @@ versioning scheme mastered, you can view several example configuration.
 |API: [2.0.x](https://github.com/liferay/liferay-faces-bridge-api/tree/2.0.x)<br/>IMPL: [2.0.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/2.0.x)|liferay-faces-bridge-api-2.0.0.jar<br/>liferay-faces-bridge-impl-2.0.0.jar|2.0|1.2|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329) (MR1)|*Includes support for Maintenance Release 1 (MR1).*|
 |1.0.x|N/A|1.0|1.2|[JSR 301](https://www.jcp.org/en/jsr/detail?id=301)|*N/A (Not Applicable) since Liferay Faces Bridge has never implemented JSR 301.*|
 
-### Liferay Faces Bridge Ext
+### Liferay Faces Bridge Ext [](id=liferay-faces-bridge-ext)
 
 *Extension to Liferay Faces Bridge that provides compatibility with [Liferay Portal](http://www.liferay.com/community/liferay-projects/liferay-portal/overview) and also takes advantage of Liferay-specific features such as friendly URLs.*
 
@@ -129,7 +129,7 @@ versioning scheme mastered, you can view several example configuration.
 |[2.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/2.0.x)|liferay-faces-bridge-ext-2.0.0.jar|6.2.x|3.0.x|2.0|2.1|
 |[1.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/1.0.x)|liferay-faces-bridge-ext-1.0.0.jar|6.2.x|2.0.x|2.0|1.2|
 
-### Liferay Faces Crystal
+### Liferay Faces Crystal [](id=liferay-faces-crystal)
 
 *Provides a suite of JSF components that utilize [metal.js and CrystalUI](http://http://metaljs.com/).*
 
@@ -137,7 +137,7 @@ versioning scheme mastered, you can view several example configuration.
 |------|----------------|---------|-------|---------------|
 |[master (1.0.x)](https://github.com/liferay/liferay-faces-crystal/tree/master)|liferay-faces-crystal-1.0.0.jar|1.0.x|2.1+|*CrystalUI 1.0.x is the version that comes bundled with Liferay Portal 7.0.*|
 
-### Liferay Faces Portal
+### Liferay Faces Portal [](id=liferay-faces-portal)
 
 *Provides a suite of JSF components that are based on the JSP tags provided by [Liferay Portal](http://www.liferay.com/community/liferay-projects/liferay-portal/overview).*
 
@@ -146,7 +146,7 @@ versioning scheme mastered, you can view several example configuration.
 |[master (2.0.x)](https://github.com/liferay/liferay-faces-portal/tree/master)|liferay-faces-portal-2.0.0.jar|7.0.x|2.1+|
 |[1.0.x](https://github.com/liferay/liferay-faces-portal/tree/1.0.x)|liferay-faces-portal-1.0.0.jar|6.2.x|2.1+|
 
-### Liferay Faces Util
+### Liferay Faces Util [](id=liferay-faces-util)
 
 *Library that contains general purpose JSF utilities to support many of the sub-projects that comprise Liferay Faces.*
 
@@ -165,9 +165,9 @@ following figure to view the Liferay Faces dependency diagram.
 Next, you can view some example configurations to see the new versioning scheme
 in action.
 
-## Example Configurations
+## Example Configurations [](id=example-configurations)
 
-### Liferay Portal 7.0: AlloyUI 3.0 / CrystalUI 1.0 / Portlet 2.0 / JSF 2.2
+### Liferay Portal 7.0: AlloyUI 3.0 / CrystalUI 1.0 / Portlet 2.0 / JSF 2.2 [](id=liferay-portal-7-0-alloyui-3-0--crystalui-1-0--portlet-2-0--jsf-2-2)
 
 	<dependencies>
 		<dependency>
@@ -197,7 +197,7 @@ in action.
 		</dependency>
 	</dependencies>
 
-### Liferay Portal 6.2: AlloyUI 2.0 / Portlet 2.0 / JSF 2.2
+### Liferay Portal 6.2: AlloyUI 2.0 / Portlet 2.0 / JSF 2.2 [](id=liferay-portal-6-2-alloyui-2-0--portlet-2-0--jsf-2-2)
 
 	<dependencies>
 		<dependency>
@@ -222,7 +222,7 @@ in action.
 		</dependency>
 	</dependencies>
 
-### Liferay Portal 6.2: AlloyUI 2.0 / Portlet 2.0 / JSF 2.1
+### Liferay Portal 6.2: AlloyUI 2.0 / Portlet 2.0 / JSF 2.1 [](id=liferay-portal-6-2-alloyui-2-0--portlet-2-0--jsf-2-1)
 
 	<dependencies>
 		<dependency>
@@ -247,7 +247,7 @@ in action.
 		</dependency>
 	</dependencies>
 
-### Apache Pluto 3.0: Portlet 3.0 / JSF 2.2
+### Apache Pluto 3.0: Portlet 3.0 / JSF 2.2 [](id=apache-pluto-3-0-portlet-3-0--jsf-2-2)
 
 	<dependencies>
 		<dependency>
@@ -257,7 +257,7 @@ in action.
 		</dependency>
 	</dependencies>
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating and Deploying JSF Portlets](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/creating-and-deploying-jsf-portlets)
 
