@@ -25,7 +25,7 @@ and  click the *View Raw* link.
 To add a new section entry to existing form navigation, follow these steps: 
 
 1.  Add to your project's `bnd.bnd` file a unique web context path for your
-    application. The path allows your Java classes to reference your form input
+    application. It allows your Java classes to reference your form input
     JSPs. Here's the web context path entry specified in the Form Nav Extension
     example portlet's `bnd.bnd` file:
 
@@ -33,37 +33,50 @@ To add a new section entry to existing form navigation, follow these steps:
 
 2.  Create a JSP that presents inputs for your app. The Form Nav Extension
     portlet's JSP provides a checkbox input to enable or disable My App's
-    feature in the portal:  
+    feature in the portal: 
 
-       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
         <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %><%@
         taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
-        <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %><%@
-        page import="com.liferay.docs.formnavextensionportlet.MyAppWebKeys" %>
+        <%@ page import="com.liferay.docs.formnavextensionportlet.MyAppWebKeys" %><%@
+        page import="com.liferay.portal.kernel.util.GetterUtil" %><%@
+        page import="com.liferay.portal.kernel.util.ResourceBundleUtil" %>
 
-        <h3>My App<h3>
+        <%@ page import="java.util.ResourceBundle" %>
 
         <%
         boolean companyMyAppFeatureEnabled = GetterUtil.getBoolean(request.getAttribute(MyAppWebKeys.COMPANY_MY_APP_FEATURE_ENABLED));
+
+        ResourceBundle resourceBundle = ResourceBundleUtil.getBundle("content.Language", request.getLocale(), getClass());
         %>
 
-        <aui:input checked="<%= companyMyAppFeatureEnabled %>" label="Enable Feature1" name="settings--myAppFeatureEnabled--" type="checkbox" value="<%= companyMyAppFeatureEnabled %>" />
+        <h3><liferay-ui:message key='<%= resourceBundle.getString("my-app-features") %>' /><h3>
+
+        <aui:input checked="<%= companyMyAppFeatureEnabled %>" label='<%= resourceBundle.getString("enable-my-app-feature") %>' name="settings--myAppFeatureEnabled--" type="checkbox" value="<%= companyMyAppFeatureEnabled %>" />
 
 3.  At the heart of your form navigation extension is your Java implementation.
     To add a new section entry within an existing Liferay form navigator, 
     create a Java class that  implements the
     [`FormNavigatorEntry`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorEntry.html) 
-    interface, for the class type you're form operates on. The example portlet's
-    Java class `MyAppCompanySettingsFormNavigatorEntry`, shown below, implements
-    the `FormNavigatorEntry` interface. Since the example form operates on a
-    portlet preference, the class simply implements the interface on `<Object>`. 
+    interface, for the class type on which the form navigator operates. The
+    example portlet's Java class `MyAppCompanySettingsFormNavigatorEntry`, shown
+    below, implements the `FormNavigatorEntry` interface. Since the example
+    implementation extends the Portal Settings form navigator which operates on
+    model class `Company`, it both extends the `BaseJSPFormNavigatorEntry` and
+    implements the `FormNavigatorEntry` interface, with respect to the `Company`
+    class. Hint: to find the name of the model class a form navigator operates
+    on, see what type of object is passed in as the `formModelBean` attribute
+    value for the
+    [`form-navigator`](http://docs.liferay.com/portal/7.0-a1/taglibs/liferay-ui/form-navigator.html)
+    tag in the respective Liferay JSP file. 
 
-        package com.liferay.docs.formnavextensionportlet;
+        package com.liferay.docs.formnavextensionportlet;                                      
 
         import java.io.IOException;
         import java.util.Locale;
+        import java.util.ResourceBundle;
 
         import javax.portlet.PortletPreferences;
         import javax.servlet.ServletContext;
@@ -78,11 +91,16 @@ To add a new section entry to existing form navigation, follow these steps:
         import com.liferay.portal.kernel.servlet.taglib.ui.FormNavigatorEntry;
         import com.liferay.portal.kernel.util.PrefsParamUtil;
         import com.liferay.portal.kernel.util.PrefsPropsUtil;
+        import com.liferay.portal.kernel.util.ResourceBundleUtil;
         import com.liferay.portal.kernel.util.WebKeys;
+        import com.liferay.portal.model.Company;
         import com.liferay.portal.theme.ThemeDisplay;
 
-        @Component(immediate = true, property = {"service.ranking:Integer=20"},
-            service = FormNavigatorEntry.class)
+        @Component(
+            immediate = true,
+            property = {"service.ranking:Integer=20"},
+            service = FormNavigatorEntry.class
+        )
         public class MyAppCompanySettingsFormNavigatorEntry 
             extends BaseJSPFormNavigatorEntry<Company>
                 implements FormNavigatorEntry<Company> {
@@ -119,51 +137,52 @@ To add a new section entry to existing form navigation, follow these steps:
             public void include(HttpServletRequest request, HttpServletResponse response)
                     throws IOException {
 
-                ThemeDisplay themeDisplay = (ThemeDisplay) request
-                    .getAttribute(WebKeys.THEME_DISPLAY);
+                ThemeDisplay themeDisplay =
+                    (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
 
-                PortletPreferences companyPortletPreferences = PrefsPropsUtil
-                    .getPreferences(themeDisplay.getCompanyId(), true);
+                PortletPreferences companyPortletPreferences =
+                    PrefsPropsUtil.getPreferences(themeDisplay.getCompanyId(), true);
 
-                boolean companyMyAppFeatureEnabled = PrefsParamUtil
-                    .getBoolean(companyPortletPreferences, request,
-                        "myAppFeatureEnabled", true);
+                boolean companyMyAppFeatureEnabled =
+                    PrefsParamUtil.getBoolean(
+                        companyPortletPreferences, request, "myAppFeatureEnabled",
+                        true);
 
-                request.setAttribute(MyAppWebKeys.COMPANY_MY_APP_FEATURE_ENABLED,
+                request.setAttribute(
+                    MyAppWebKeys.COMPANY_MY_APP_FEATURE_ENABLED,
                     companyMyAppFeatureEnabled);
 
                 super.include(request, response);
             }
 
             @Override
-            @Reference(target = "(osgi.web.symbolicname=com.liferay.docs.formnavextensionportlet)", unbind = "-")
+            @Reference(
+                target = "(osgi.web.symbolicname=com.liferay.docs.formnavextensionportlet)",
+                unbind = "-"
+            )
             public void setServletContext(ServletContext servletContext) {
                 super.setServletContext(servletContext);
             }
 
         }
 
-This class extends the `BaseJSPFormNavigatorEntry` base class. Make sure your
-class also extends it if you use JSP to render the form page. The
-`BaseJSPFormNavigatorEntry` base class integrates the entry's JSP with the form
-navigator you target. You can also use any other template language to render
-the form page as long as you render it in the implementation of the following
-method of `BaseJSPFormNavigatorEntry` interface:
+This class extends abstract base class
+[`BaseJSPFormNavigatorEntry`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/BaseJSPFormNavigatorEntry.html).
+Make sure your class also extends it if you use a JSP to render the form page.
+The `BaseJSPFormNavigatorEntry` base class integrates the entry's JSP with the
+form navigator you target. You can optionally use a template language to
+render the form page, as long as you render it in the implementation of
+`BaseJSPFormNavigatorEntry`'s `include` method. 
 
-	public void include(
-			HttpServletRequest request, HttpServletResponse response)
-		throws IOException;
-
-
-Above the class declaration is an `@Component` annotation that registers the
+Above the class declaration is a `@Component` annotation that registers the
 class in the OSGi registry, so the targeted form navigator can retrieve it. Make
 sure to specify the component annotation, set it for immediate activation, and
 declare it as publishing service type `FormNavigatorEntry.class`. You can
 optionally specify where to display your section entry among the category's
-existing entries. You do this by specifying a `service.ranking` OSGi property,
-set to an integer. The higher the entry's service ranking integer, relative to
-the rankings of the category's other entries, the higher the entry is listed in
-category in the form navigation.  
+existing entries. You do this by setting a `service.ranking` OSGi property to an
+integer. The higher the entry's service ranking integer, relative to the
+rankings of the category's other entries, the higher the entry is listed in
+category in the form navigation. 
 
 Next, you can implement the getter methods that identify the form navigator,
 category, and your entry's JSP, key, and label. In the `getCategoryKey` method
@@ -172,12 +191,13 @@ entry. The class
 [`FormNavigatorConstants`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
 specifies Liferay Portal's category IDs. To identify the form navigator you're
 extending, implement method `getFormNavigatorId` to return that form navigator's
-ID. Liferay Portal's form navigator IDs are specified also in the class
-`FormNavigatorConstants`. To map your entry class to your section entry's form
-input, implement method `getJspPath` to return the path to its JSP. Then
-implement a `getKey` method to return a key that uniquely identifies your entry
-within the form navigator. Lastly, implement the `getLabel` method to return a
-label for the navigation entry. 
+ID. The ID is specified as `id` attribute value in the Liferay JSP's
+`form-navigator` tag. The form navigator IDs used in Liferay Portal are
+specified in the class `FormNavigatorConstants`. To map your entry class to your
+section entry's form input, implement method `getJspPath` to return the path to
+its JSP. Then implement a `getKey` method to return a key that uniquely
+identifies your entry within the form navigator. Lastly, implement the
+`getLabel` method to return a label for the navigation entry. 
 
 To apply the section entry to your app, target its OSGi bundle for the servlet
 context. Add a `setServlectContext` method to invoke the parent's
@@ -202,24 +222,23 @@ the category is placed relative to the form navigator's other categories. Here's
 an annotation that specifies all these things:
 
     @Component(
-        immediate = true, property = {"service.ranking:Integer=20"},
+        immediate = true,
+        property = {"service.ranking:Integer=20"},
         service = FormNavigatorCategory.class
     )
 
 In your category implementation, you must also identify the targeted form
-navigator by returning its ID in method `getFormNavigatorId`. Values of
-Liferay's form navigator IDs are defined in the class
-[`FormNavigatorConstants.java`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html).
-Implement a `getKey` method to return a key that uniquely identifies your
-category within the form navigator. And implement the `getLabel` method to
-return a label for the navigation category. 
+navigator by returning its ID in method `getFormNavigatorId`. Implement a
+`getKey` method to return a key that uniquely identifies your category within
+the form navigator. And implement the `getLabel` method to return a label for
+the navigation category. 
 
 There you have it! You now know what it takes to extend Liferay form navigators
 with new categories and section entries.
 
 **Related Topics**
 
-<!-- TODO Add a link to the tutorial on imlplementing form navigation in a
+<!-- TODO Add a link to the tutorial on implementing form navigation in a
 custom portlet -->
 
 [Creating a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/creating-a-portlet-application)
