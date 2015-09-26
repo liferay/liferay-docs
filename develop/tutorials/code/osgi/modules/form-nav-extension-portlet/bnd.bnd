@@ -6,5 +6,4 @@ Include-Resource:\
         META-INF/resources=src/main/resources/META-INF/resources
 -jsp: *.jsp,*.jspf
 -plugin.jsp: com.liferay.ant.bnd.jsp.JspAnalyzerPlugin
-Private-Package: com.liferay.docs.formnavextensionportlet
 Web-ContextPath: /formnavextensionportlet
