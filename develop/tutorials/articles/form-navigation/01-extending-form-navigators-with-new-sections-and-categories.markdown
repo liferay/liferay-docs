@@ -14,12 +14,12 @@ custom forms, fill them in, and save the inputs.
 This tutorial demonstrates adding a new navigation section (entry) to an
 existing form navigator. It references source code from an example portlet
 called the Form Nav Extension portlet. You can find its complete project called
-[form-nav-extension-portlet](https://github.com/jhinkey/liferay-docs/tree/form-navigator/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/form-nav-extension-portlet),
+[form-nav-extension-portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/form-nav-extension-portlet),
 on GitHub. 
 
 You can also download the Form Nav Extension portlet's bundle
-`com.liferay.docs.formnavextensionportlet.jar`. To download it, go to its GitHub
-[page](https://github.com/jhinkey/liferay-docs/blob/form-navigator/develop/tutorials/code/osgi/modules/com.liferay.docs.formnavextensionportlet.jar)
+`form-nav-extension-portlet-1.0.jar`. To download it, go to its GitHub
+[page](https://github.com/liferay/liferay-docs/blob/master/develop/tutorials/code/osgi/modules/form-nav-extension-portlet-1.0.jar)
 and  click the *View Raw* link.
 
 To add a new section entry to existing form navigation, follow these steps: 
@@ -54,7 +54,7 @@ To add a new section entry to existing form navigation, follow these steps:
 3.  At the heart of your form navigation extension is your Java implementation.
     To add a new section entry within an existing Liferay form navigator, 
     create a Java class that  implements the
-    [`FormNavigatorEntry`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorEntry.java) 
+    [`FormNavigatorEntry`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorEntry.html) 
     interface, for the class type you're form operates on. The example portlet's
     Java class `MyAppCompanySettingsFormNavigatorEntry`, shown below, implements
     the `FormNavigatorEntry` interface. Since the example form operates on a
@@ -169,7 +169,7 @@ Next, you can implement the getter methods that identify the form navigator,
 category, and your entry's JSP, key, and label. In the `getCategoryKey` method
 you return the ID of the form navigator category in which to add your section
 entry. The class
-[`FormNavigatorConstants`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.java)
+[`FormNavigatorConstants`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
 specifies Liferay Portal's category IDs. To identify the form navigator you're
 extending, implement method `getFormNavigatorId` to return that form navigator's
 ID. Liferay Portal's form navigator IDs are specified also in the class
@@ -192,7 +192,7 @@ That's all there is to adding section entries to Liferay's form navigators.
 Adding categories to existing navigators is even easier. 
 
 To add a new category to an existing form navigator, you implement the
-[`FormNavigatorCategory`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorCategory.java)
+[`FormNavigatorCategory`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorCategory.html)
 interface. The class needs a `@Component` annotation similar to the one you
 specify for a section entry, except it must declare the category class by
 specifying the publishing service type `FormNavigatorCategory.class`. In the
@@ -209,7 +209,7 @@ an annotation that specifies all these things:
 In your category implementation, you must also identify the targeted form
 navigator by returning its ID in method `getFormNavigatorId`. Values of
 Liferay's form navigator IDs are defined in the class
-[`FormNavigatorConstants.java`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.java).
+[`FormNavigatorConstants.java`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html).
 Implement a `getKey` method to return a key that uniquely identifies your
 category within the form navigator. And implement the `getLabel` method to
 return a label for the navigation category. 
