@@ -1,11 +1,11 @@
 # Form Navigation [](id=form-navigation)
 
 Liferay's Form Navigator framework helps you split big forms into smaller forms
-called sections. Its `form-navigator` tag creates a navigation UI across these
-sections. It even lets you partition the section links using categories. On top
-of that, you can order the section links within each category. It's no surprise
-that Liferay Portal uses the Form Navigator framework with its most complex
-forms. 
+called sections. Its [`form-navigator`](http://docs.liferay.com/portal/7.0-a1/taglibs/liferay-ui/form-navigator.html)
+tag creates a navigation UI across these sections. It even lets you partition
+the section links using categories. On top of that, you can order the section
+links within each category. It's no surprise that Liferay Portal uses the Form
+Navigator framework with its most complex forms. 
 
 Liferay uses Form Navigator to divide forms for its portal settings, site
 settings, and organization settings. What's great is that you can connect your
