@@ -171,7 +171,7 @@ This class extends abstract base class
 Make sure your class also extends it if you use a JSP to render the form page.
 The `BaseJSPFormNavigatorEntry` base class integrates the entry's JSP with the
 form navigator you target. You can optionally use a template language to
-render the form page, as long as you render it in the implementation of
+render the form page, as long as you render it your implementation of
 `BaseJSPFormNavigatorEntry`'s `include` method. 
 
 Above the class declaration is a `@Component` annotation that registers the
