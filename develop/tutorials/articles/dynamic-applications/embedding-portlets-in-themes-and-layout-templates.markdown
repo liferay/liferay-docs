@@ -44,7 +44,8 @@ find the portlet that fits the theme's request.
 2. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. To follow naming conventions, name the class
    based on the entity type and action type, followed by *PortletProvider*
-   (e.g., `LanguageEntryViewPortletProvider`). The class should extend the
+   (e.g., `SiteNavigationLanguageEntryViewPortletProvider`). The class should
+   extend the
    [`BasePortletProvider`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/portlet/BasePortletProvider.java)
    class and implement the appropriate portlet provider interface based on the
    action you chose in your theme (e.g.,
@@ -75,11 +76,11 @@ find the portlet that fits the theme's request.
 
     A common use case is to implement the `getPortletId()` and
     `getPlid(ThemeDisplay)` methods. You can view the
-    [LanguageEntryViewPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/site-navigation/site-navigation-language-web/src/com/liferay/site/navigation/language/web/portlet/LanguageEntryViewPortletProvider.java)
+    [SiteNavigationLanguageEntryViewPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/site-navigation/site-navigation-language-web/src/com/liferay/site/navigation/language/web/portlet/SiteNavigationLanguageEntryViewPortletProvider.java)
     for an example of how these methods can be implemented to provide a portlet
     for embedding in a theme. This example module returns the portlet ID of the
     Language portlet specified in
-    [LanguagePortletKeys](https://github.com/liferay/liferay-portal/blob/master/modules/apps/site-navigation/site-navigation-language-web/src/com/liferay/site/navigation/language/web/constants/LanguagePortletKeys.java).
+    [SiteNavigationLanguagePortletKeys](https://github.com/liferay/liferay-portal/blob/master/modules/apps/site-navigation/site-navigation-language-web/src/com/liferay/site/navigation/language/web/constants/SiteNavigationLanguagePortletKeys.java).
     Furthermore, it returns the PLID, which is the ID that uniquely identifies a
     page used by your theme. By retrieving these, your theme will know which
     portlet to use, and which page to use it on.
