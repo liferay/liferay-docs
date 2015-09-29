@@ -135,6 +135,13 @@ the HTML directly.
 
 ![Figure 2.17: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../images/web-content-video.png)
 
+The WYSIWYG editor also offers an accessibility help menu with a set of 
+navigation instructions and keyboard shortcuts, so you can easily navigate
+and use the editor with ease. Press *option+0* on the keyboard to bring
+up the accessibility menu.
+
+![Figure 2.18: The accessibility help menu provides a set of instructions to help navigate and use the editor.](../images/accessibility-menu.png)
+
 You can integrate Liferay with external services to enable additional
 functionality. For example, if you navigate to the Control Panel, click on
 *Server Administration* and then on *External Services*, you can install and
@@ -159,7 +166,7 @@ You can also download the web content article in XML format by clicking the
 *Download* button. This button is available on the Edit Web Content screen,
 after you've created your web content article.
 
-![Figure 2.18: The *Download* button is only available for an article that has a structure and template.](../../images/web-content-download.png)
+![Figure 2.19: The *Download* button is only available for an article that has a structure and template.](../../images/web-content-download.png)
 
 An XML version of an article is essential when creating content for themes using
 the [Resources Importer](/participate/liferaypedia/-/wiki/Main/Resources+Importer).
@@ -180,7 +187,7 @@ $$$
 The right side of the New Web Content form provides options for customizing your
 web content.
 
-![Figure 2.19: New web content can be customized in various ways using the menu on the right.](../../images/wcm-menu.png)
+![Figure 2.20: New web content can be customized in various ways using the menu on the right.](../../images/wcm-menu.png)
 
 **Abstract:** lets you to create a brief summary of the web content. You can
 also pair the text with a small image.
@@ -264,7 +271,7 @@ category. You can connect your content to a Blogs Entry, Message Boards Message,
 Web Content, Calendar Event, Bookmarks Entry, Documents and Media Document, and
 a Wiki Page.
 
-![Figure 2.20: This blog entry has links to three Related Assets: one web content and two message board entries.](../../images/related-assets-link.png)
+![Figure 2.21: This blog entry has links to three Related Assets: one web content and two message board entries.](../../images/related-assets-link.png)
 
 You'll learn how to publish links to related assets using the Related Assets
 portlet in the
@@ -302,7 +309,7 @@ the Lunar Resort, it's time to display it. First, add the *Web Content Display*
 portlet to our Welcome page by selecting the *Add* button from the left palette
 and selecting the *Applications* tab.
 
-![Figure 2.21: Adding the Web Content Display Portlet](../../images/add-web-content-display.png)
+![Figure 2.22: Adding the Web Content Display Portlet](../../images/add-web-content-display.png)
 
 Once the portlet appears, drag it to the position on the page where you want
 your content to appear. You can have as many Web Content Display portlets on a
@@ -322,7 +329,7 @@ translation of your content that goes with your locale. To learn more about
 translating your content, visit the
 [Localization](/discover/portal/-/knowledge_base/6-2/localization) section.
 
-![Figure 2.22: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
+![Figure 2.23: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your portal, you can also
 enable document conversion for your content. This gives your users the ability
@@ -380,7 +387,7 @@ Content Display portlet, select the *Edit* button to the lower left of the
 portlet. This launches the WYSIWYG editor and from there you can make any
 necessary changes.
 
-![Figure 2.23: The *Edit*, *Select Web Content*, and *Add* buttons appear when hovering over their icons.](../../images/web-content-display-icons.png)
+![Figure 2.24: The *Edit*, *Select Web Content*, and *Add* buttons appear when hovering over their icons.](../../images/web-content-display-icons.png)
 
 When you publish updates to a web content that's already being displayed
 somewhere on your portal (e.g., in a Web Content Display portlet or an Asset
