@@ -1,4 +1,4 @@
-# Creating Bundles from Existing BLADE Templates
+# Creating Bundles from Existing BLADE Templates [](id=creating-bundles-from-existing-blade-templates)
 
 For developers not interested in developing their [Liferay modules in the
 [Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle),
@@ -28,14 +28,14 @@ Copy the project from the BLADE repository to your local directory.
 For demonstration, this tutorial assumes that you're using Gradle to build
 your bundles. 
 
-## Cloning the BLADE Repository
+## Cloning the BLADE Repository [](id=cloning-the-blade-repository)
 
 You need to clone the [BLADE GitHub repository](https://github.com/rotty3000/blade) 
 to have access to its template modules. New templates will continue to be added
 to the project by contributors, so update your local version of the repository
 regularly.
 
-## Copying the Template Module out of BLADE
+## Copying the Template Module out of BLADE [](id=copying-the-template-module-out-of-blade)
 
 Find the project you want to use as your template module. Start by choosing
 your build tool. At the time of this writing, you have three options: Gradle,
@@ -78,7 +78,7 @@ Once you find the proper template module, copy it from BLADE into your own
 directory. If you try to build the project after copying it, it won't work. You
 need to reconfigure the build script.
 
-## Reconfiguring the Build Script
+## Reconfiguring the Build Script [](id=reconfiguring-the-build-script)
 
 Looking at the `blade/gradle/blade.service.hook.user` project's `build.gradle`
 file quickly reveals why it won't build if you simply copy the BLADE module
@@ -207,7 +207,7 @@ As you develop the project and make it into something more beautiful than the
 simple template you copied out of BLADE, you'll probably need to revisit your
 build script.
 
-## Refactoring the BLADE Project
+## Refactoring the BLADE Project [](id=refactoring-the-blade-project)
 
 Once the module is copied and the build script reconfigured, it builds properly
 and can be deployed to Liferay's module framework. It still carries the BLADE
@@ -262,7 +262,7 @@ to a running Liferay module framework. Check out the
 tutorial on [creating bundles with Blade Tools](/develop/tutorials/-/knowledge_base/7-0/blade-tools-bundle-creation) 
 for more information.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Installing Blade Tools](/develop/tutorials/-/knowledge_base/7-0/blade-tools-bundle-creation)
 
