@@ -1,9 +1,9 @@
-# Beginning Android Development with the Liferay Mobile SDK [](id=beginning-android-development-with-the-liferay-mobile-sdk)
+# Beginning Android Development for Your Portal
 
-Getting started with the Liferay Mobile SDK for Android is a straightforward
-process. This series of Learning Path articles walks you through using the
-Liferay Mobile SDK to create a Guestbook Android app that interacts with the
-Guestbook portlet developed in the [Liferay MVC Learning Path](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development).
+Getting started with the Liferay Mobile SDK and Liferay Screens for Android is a 
+straightforward process. This series of Learning Path articles walks you through 
+using both to create a Guestbook Android app that interacts with the Guestbook 
+portlet developed in the [Liferay MVC Learning Path](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development).
 This screenshot shows how the initial Guestbook Android app should look when
 you're finished. 
 

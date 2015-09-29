@@ -1,12 +1,15 @@
-# Installing the Liferay Mobile SDK for Android [](id=installing-the-liferay-mobile-sdk-for-android)
+# Installing the Liferay Mobile SDK and Liferay Screens for Android
 
-You must install the Liferay Mobile SDK in your Android app so that it can
-interact with the Guestbook portlet. The Mobile SDK you built for the Guestbook
-portlet contains only the classes and methods required to call the portlet's
-remote services. You also need to install the Mobile SDK that contains the
-classes and methods required to call Liferay's built-in remote services. This
-article shows you how to do both. When you finish, you'll be ready to retrieve
-guestbooks and their entries from the portal.
+You must install the Guestbook Mobile SDK in your Android app so it can interact 
+with the Guestbook portlet. Note that this Mobile SDK contains only the classes 
+and methods required to call the portlet's remote services. To use Screenlets, 
+like Login Screenlet, you also need to install Liferay Screens. Installing 
+Screens also installs the Liferay Mobile SDK needed to call Liferay's built-in 
+remote services.
+
+This article shows you how to install the Guestbook Mobile SDK and Liferay 
+Screens. When you finish, you'll be ready to authenticate users and retrieve 
+guestbooks and entries from the portal.
 
 ## Installing the Guestbook Mobile SDK [](id=installing-the-guestbook-mobile-sdk)
 
@@ -17,11 +20,9 @@ The Mobile SDK Builder generated two separate JAR files in your
 
 2. `android/build/libs/liferay-android-sdk-6.2.0.22.jar`
 
-The first JAR file contains the classes and methods for calling the Guestbook
-portlet's remote services. The second contains the rest of the Mobile SDK. You
-don't actually need to install the second JAR file manually. You can instead add
-the Mobile SDK as a dependency in your project's build system, which then
-downloads and installs the Mobile SDK for you. However, you need to install the
+The first JAR file contains the Guestbook Mobile SDK. The second contains the 
+rest of the Liferay Mobile SDK. Because Screens includes the Liferay Mobile SDK, 
+you don't need to install the second JAR file. However, you need to install the
 first JAR file manually. To do so, copy the
 `liferay-guestbook-portlet-android-sdk-1.0.jar` file into your app's `app/libs`
 directory. (The default location for your Android app's directory is
