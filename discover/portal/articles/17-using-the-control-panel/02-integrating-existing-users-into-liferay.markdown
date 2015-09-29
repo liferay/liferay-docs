@@ -785,3 +785,68 @@ Service Provider based login process, just navigate to the Liferay running on
 port 9080 and click *Sign In*, navigate to
 [http://localhost:9080/c/portal/login](http://localhost:9080/c/portal/login), or
 try to access a protected resource URL such as a Control Panel URL.
+
++$$$
+
+**Limitation:** The Liferay SAML plugin can only be used with a single virtual
+host. Technically, this means that in the SAML metadata for Liferay, only one
+binding can be added in this form:
+
+    <md:EntityDescriptor>
+    ...
+    <md:SPSSODescriptor>
+    ...
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://portal.domain.com/c/portal/saml/acs" index="1" isDefault="true" />
+    ...
+    </md:SPSSODescriptor>
+    </md:EntityDescriptor>
+
+$$$
+
+### Setting Up Liferay as a SAML Service Provider in a Clustered Environment
+
+If you want to use Liferay's SAML 2.0 Provider EE plugin as a SSO solution for a
+clustered Liferay environment, follow the steps in this section. Before
+proceeding, make sure that the following assumptions apply to your scenario.
+
+Suppose that your clustered Liferay environment consists of multiple Liferay
+nodes that sit behind a load balancer. Your Liferay nodes could be Liferay
+Tomcat bundles, for example. Your load balancer could be software like Apache
+web server or hardware like F5 BIG-IP. Suppose further that you want want the
+nodes of your Liferay cluster to serve as SAML Service Providers. And suppose
+that you have a third-party participating as the SAML Identity Provider. (For
+testing purposes, you could create a separate Liferay instance to serve as the
+SAML IdP.)
+
+If your situation fits the scenario described above, follow these steps:
+
+1. Configure one node of your Liferay cluster as a SAML SP using the
+   instructions of the previous section.
+
+2. Ensure that this Liferay node is using the fully qualified name of the load
+   balancer (e.g., `FQN.LB.HOST`) as the value of the `web.server.host` property
+   in the node's `portal-ext.properties` file.
+
+        #
+        # Set the hostname that will be used when the portlet generates URLs.
+        # Leaving this blank will mean the host is derived from the servlet
+        # container.
+        #
+        web.server.host=FQN.LB.HOST
+
+
+3. Repeat steps 1 and 2 for each other Liferay node.
+
+4. Copy the `[Liferay Home]/data/keystore.jks` file from the first Liferay node
+   to each other Liferay node. This file is the Java keystore that's created by
+   the SAML 2.0 Provider EE plugin. The keystore contains the valid or
+   self-signed certificate managed by the SAML 2.0 EE Provider plugin.
+
+5. At this point, all of the Liferay nodes have the same SAML SP configuration
+   and each of them can respond to web requests and handle the SAML protocol. To
+   test your SSO solution, sign into Liferay via your load balancer, navigate to
+   a few pages of a few different sites, and then log out.
+
+Great! Now you know how to configure Liferay either as a SAML identity provider
+or a service provider. You also know how to configure the Liferay SAML in a
+clustered environment.
