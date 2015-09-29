@@ -109,7 +109,7 @@ versioning scheme mastered, you can view several example configurations.
 *Provides the ability to deploy JSF web applications as portlets within [Apache Pluto](https://portals.apache.org/pluto/), the reference implementation for JSR 286 (Portlet 2.0) and JSR 362 (Portlet 3.0).*
 
 |Branch|Example Artifacts|Portlet API|JSF API|JCP Specification|Additional Info|
-|------|-----------------|-----------|-------|-----------------|---------------|
+|------|-----------------|:-----------:|:-------:|:-----------------:|---------------|
 |API: [master (5.0.x)](https://github.com/liferay/liferay-faces-bridge-api/tree/master)<br/>IMPL: [5.0.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/master)|liferay-faces-bridge-api-5.0.0.jar<br/>liferay-faces-bridge-impl-5.0.0.jar|3.0|2.2|[JSR 378](https://www.jcp.org/en/jsr/detail?id=378)|*The Expert Group began work in September 2015 and the Specification is currently under development.*|
 |API: [4.0.x](https://github.com/liferay/liferay-faces-bridge-api/tree/4.0.x)<br/>IMPL: [4.0.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/4.0.x)|liferay-faces-bridge-api-4.0.0.jar<br/>liferay-faces-bridge-impl-4.0.0.jar|2.0|2.2|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329)|*Includes non-standard bridge extensions for JSF 2.2.*|
 |API: [3.0.x](https://github.com/liferay/liferay-faces-bridge-api/tree/3.0.x)<br/>IMPL: [3.0.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/3.0.x)|liferay-faces-bridge-api-3.0.0.jar<br/>liferay-faces-bridge-impl-3.0.0.jar|2.0|2.1|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329)|*Includes non-standard bridge extensions for JSF 2.1.*|
@@ -120,8 +120,8 @@ versioning scheme mastered, you can view several example configurations.
 
 *Extension to Liferay Faces Bridge that provides compatibility with [Liferay Portal](http://www.liferay.com/community/liferay-projects/liferay-portal/overview) and also takes advantage of Liferay-specific features such as friendly URLs.*
 
-|Branch           |Example Artifact                  |Liferay Portal API|Bridge API|Portlet API|JSF API|
-|-----------------|----------------------------------|------------------|----------|-----------|-------
+|Branch           |Example Artifact                  |&nbsp;&nbsp;Liferay Portal API&nbsp;&nbsp;|&nbsp;&nbsp;Bridge API&nbsp;&nbsp;|&nbsp;&nbsp;Portlet API&nbsp;&nbsp;|JSF API|
+|-----------------|------------------------------------|:--------------:|:----------:|:-----------:|:-------:|
 |*6.0.x (planned)*|*liferay-faces-bridge-ext-6.0.0.jar*|*7.1.x*         |*5.0.x*     |*3.0*        |*2.2*    |
 |[master (5.0.x)](https://github.com/liferay/liferay-faces-bridge-ext/tree/master)|liferay-faces-bridge-ext-5.0.0.jar|7.0.x|4.0.x|2.0|2.2|
 |[4.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/4.0.x)|liferay-faces-bridge-ext-4.0.0.jar|7.0.x|3.0.x|2.0|2.1|
@@ -133,16 +133,16 @@ versioning scheme mastered, you can view several example configurations.
 
 *Provides a suite of JSF components that utilize [metal.js and CrystalUI](http://http://metaljs.com/).*
 
-|Branch|Example Artifact|CrystalUI|JSF API|Additional Info|
-|------|----------------|---------|-------|---------------|
+|Branch|Example Artifact|&nbsp;&nbsp;CrystalUI&nbsp;&nbsp;|&nbsp;&nbsp;JSF API&nbsp;&nbsp;|Additional Info|
+|------|----------------|:---------:|:-------:|---------------|
 |[master (1.0.x)](https://github.com/liferay/liferay-faces-crystal/tree/master)|liferay-faces-crystal-1.0.0.jar|1.0.x|2.1+|*CrystalUI 1.0.x is the version that comes bundled with Liferay Portal 7.0.*|
 
 ### Liferay Faces Portal [](id=liferay-faces-portal)
 
 *Provides a suite of JSF components that are based on the JSP tags provided by [Liferay Portal](http://www.liferay.com/community/liferay-projects/liferay-portal/overview).*
 
-|Branch|Example Artifact|Liferay Portal API|JSF API|
-|------|----------------|------------------|-------|
+|Branch|Example Artifact|Liferay Portal API&nbsp;&nbsp;|&nbsp;&nbsp;JSF API|
+|------|----------------|:------------------:|:-------:|
 |[master (3.0.x)](https://github.com/liferay/liferay-faces-portal/tree/master)|liferay-faces-portal-3.0.0.jar|7.0.x|2.1+|
 |[2.0.x](https://github.com/liferay/liferay-faces-portal/tree/2.0.x)|liferay-faces-portal-2.0.0.jar|6.2.x|2.1+|
 |[1.0.x](https://github.com/liferay/liferay-faces-portal/tree/1.0.x)|liferay-faces-portal-1.0.0.jar|6.2.x|1.2|
@@ -151,8 +151,8 @@ versioning scheme mastered, you can view several example configurations.
 
 *Library that contains general purpose JSF utilities to support many of the sub-projects that comprise Liferay Faces.*
 
-|Branch|Example Artifact|JSF API|
-|------|----------------|-------|
+|Branch|Example Artifact|&nbsp;&nbsp;JSF API|
+|------|----------------|:-------:|
 |[master (3.0.x)](https://github.com/liferay/liferay-faces-util/tree/master)|liferay-faces-util-3.0.0.jar|2.2|
 |[2.0.x](https://github.com/liferay/liferay-faces-util/tree/2.0.x)|liferay-faces-util-2.0.0.jar|2.1|
 |[1.0.x](https://github.com/liferay/liferay-faces-util/tree/1.0.x)|liferay-faces-util-1.0.0.jar|1.2|
