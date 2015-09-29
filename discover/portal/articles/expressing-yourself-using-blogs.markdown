@@ -148,17 +148,37 @@ Now that everyone's able to post, let's look at how posts work.
 Now you're ready to begin adding blog entries. Click the *Add Blog Entry*
 button. The following data entry screen appears: 
 
-![Figure 9.4: After clicking *Add Blog Entry*, a new window appears with configuration options for your new blog entry.](../../images/05-new-blog-entry.png)
+![Figure 9.4: After clicking *Add Blog Entry*, a new window appears with configuration options for your new blog entry.](../images/05-new-blog-entry.png)
 
 There isn't much difference between this screen and any other data entry screen
-within Liferay Portal. You get a title, a way of scheduling when the entry is
-to appear, and a rich editor that allows you to format your entry the way you
-want, complete with embedded images, videos, and the like. Note also that as
-you type, the entry is automatically saved as a draft at periodic intervals.
-This gives you peace of mind in using the portlet from within your browser,
-since you won't lose your entry in the event of a browser crash or network
-interruption. You can also tag your entries using the same tagging mechanism
-found everywhere else in the portal.
+within Liferay Portal. You get a title, a subtitle, and an area to write your 
+content. You may be asking yourself, "where is the editor?" The Blogs Portlet 
+provides you with an editor that gives you a seamless writing experience, 
+displaying the editor when you need it, and hiding it out of view when you just 
+want to focus on writing your content.
+
+When you want to make an edit, highlight the text or content you wish to edit, 
+and the editor controls will pop-up. The editor controls are context specific, 
+so you only see the relevant controls you need to format your content:
+
+![Figure 9.5: After highlighting your content, the relevant formatting controls will appear.](../images/05-editor-controls.png)
+ 
+If you'd rather write in the native HTML, you can bring up the source view by 
+selecting the `</>` icon. You'll be presented with the single screen source code
+view. The source view gives you the option to toggle between night mode, a dark
+background with white type, and day mode, a white background with black type, by
+selecting the *Sun icon* or *Moon icon*. You can toggle fullscreen mode by 
+selecting the *fullscreen icon*. The expanded mode brings up dual views, 
+allowing you to edit the HTML source code and see the regular view update in 
+real time: 
+
+![Figure 9.6: The fullscreen view allows you to see your HTML changes update in real time.](../images/05-expanded-view.png)
+
+Note also that as you type, the entry is automatically saved as a draft at 
+periodic intervals. This gives you peace of mind in using the portlet from 
+within your browser, since you won't lose your entry in the event of a browser 
+crash or network interruption. You can also tag your entries using the same 
+tagging mechanism found everywhere else in the portal.
 
 The Blogs portlet also supports trackbacks and pingbacks. Trackbacks are
 special links that let you notify another site that you explicitly linked to 
@@ -202,7 +222,7 @@ list of entries, and now your entry is displayed. Here is what it looks like
 when the display template is set to *Full Content* and the maximum items to
 display is set to ten:
 
-![Figure 9.5: This sample blog entry gives you an idea of what new content and features are displayed on your page.](../../images/05-first-blog-entry-added.png)
+![Figure 9.7: This sample blog entry gives you an idea of what new content and features are displayed on your page.](../../images/05-first-blog-entry-added.png)
 
 You can see that in the summary view, you don't see the trackback/pingback
 link, and you only see the number of comments that have been added. If you were
@@ -235,7 +255,7 @@ If you click *Configuration* from the options button in the title bar of the
 portlet, the Blogs Aggregator's configuration page appears. From here, you can
 set several configuration options.
 
-![Figure 9.6: You can navigate to the Blogs Aggregator Configuration menu by selecting the *Options* gear from the portlet's title bar and selecting *Configuration*.](../../images/05-blogs-aggregator-configuration.png)
+![Figure 9.8: You can navigate to the Blogs Aggregator Configuration menu by selecting the *Options* gear from the portlet's title bar and selecting *Configuration*.](../../images/05-blogs-aggregator-configuration.png)
 
 **Selection Method:** select Users or Scope here. If you select Users, the
 Blogs Aggregator aggregates the entries of every blogger on your system. If you
@@ -277,10 +297,11 @@ Most of the time, the Blogs portlet is the only tool you'll need to manage your
 blog entries. If, however, you need to massively delete blog entries, the blogs
 administrator portlet is the perfect tool for you. 
 
-![Figure 9.7: The Blogs Administrator portlet lets you delete large sets of blog entries.](../../images/04-blogs-administrator.png)
+![Figure 9.9: The Blogs Administrator portlet lets you delete large sets of blog entries.](../../images/04-blogs-administrator.png)
 
 Note that it's only for batch processing of blog entries; for the full set of
 tools for managing blog entries, your best bet is to use the Blogs portlet.
 Next, let's look at Liferay's improved Calendar portlet available from Liferay
 Marketplace.
+
 
