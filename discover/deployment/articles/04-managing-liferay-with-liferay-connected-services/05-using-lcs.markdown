@@ -261,7 +261,18 @@ So why bother with environment tokens at all? Besides the benefit of simplifying
 the setup process for your users, using environment tokens is valuable in 
 auto-scaling environments where algorithms create and destroy servers 
 automatically. In this situation, having clients that configure themselves is 
-crucial. 
+crucial.
+
++$$$
+
+**Note**: In cloud environment, where an machine instance image is used to
+replicate new server nodes, it is expected that encapsulated portal instance is
+configured and ready to run. Portal Administrator should make sure that all
+portal properties (like `setup.wizard.enabled` property) that expect human
+interaction or could prevent automatic startup are set correctly or disabled
+(example `setup.wizard.enabled=false`) before making an permanent machine image.
+
+$$$
 
 There are two places in LCS where you can generate and access environment 
 tokens. If you read the previous sections of this article, then you already know 
