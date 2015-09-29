@@ -92,7 +92,7 @@ version scheme supported by Liferay Faces after the GA6 release.
 
 In this section, you'll learn about the versioning scheme for each component of
 Liferay Faces for releases following Liferay Faces GA6. Once you have the
-versioning scheme mastered, you can view several example configuration.
+versioning scheme mastered, you can view several example configurations.
 
 ### Liferay Faces Alloy [](id=liferay-faces-alloy)
 
@@ -102,7 +102,7 @@ versioning scheme mastered, you can view several example configuration.
 |------|----------------|-------|-------|---------------|
 |[master (3.0.x)](https://github.com/liferay/liferay-faces-alloy/tree/master)|liferay-faces-alloy-3.0.0.jar|3.0.x|2.1+|*AlloyUI 3.0.x is the version that comes bundled with Liferay Portal 7.0.*|
 |[2.0.x](https://github.com/liferay/liferay-faces-alloy/tree/2.0.x)|liferay-faces-alloy-2.0.0.jar|2.0.x|2.1+|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
-|1.0.x|N/A|1.0.x|N/A|*N/A (Not Applicable) since Liferay Faces Alloy has never been implemented for AlloyUI 1.0.x.*|
+|[1.0.x](https://github.com/liferay/liferay-faces-alloy/tree/1.0.x)|liferay-faces-alloy-1.0.0.jar|2.0.x|1.2|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
 
 ### Liferay Faces Bridge [](id=liferay-faces-bridge)
 
@@ -143,8 +143,9 @@ versioning scheme mastered, you can view several example configuration.
 
 |Branch|Example Artifact|Liferay Portal API|JSF API|
 |------|----------------|------------------|-------|
-|[master (2.0.x)](https://github.com/liferay/liferay-faces-portal/tree/master)|liferay-faces-portal-2.0.0.jar|7.0.x|2.1+|
-|[1.0.x](https://github.com/liferay/liferay-faces-portal/tree/1.0.x)|liferay-faces-portal-1.0.0.jar|6.2.x|2.1+|
+|[master (3.0.x)](https://github.com/liferay/liferay-faces-portal/tree/master)|liferay-faces-portal-3.0.0.jar|7.0.x|2.1+|
+|[2.0.x](https://github.com/liferay/liferay-faces-portal/tree/2.0.x)|liferay-faces-portal-2.0.0.jar|6.2.x|2.1+|
+|[1.0.x](https://github.com/liferay/liferay-faces-portal/tree/1.0.x)|liferay-faces-portal-1.0.0.jar|6.2.x|1.2|
 
 ### Liferay Faces Util [](id=liferay-faces-util)
 
