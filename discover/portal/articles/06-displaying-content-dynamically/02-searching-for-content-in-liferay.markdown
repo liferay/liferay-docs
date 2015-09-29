@@ -77,6 +77,29 @@ tool that allows users to include or not include specific types of assets in a
 search. However, the Search portlet does not return comments or attachments as
 search results.
 
+## Searching for Localized Web Content
+
+Liferay Portal supports localizing web content as well as searching for
+localized web content. Recall that to add a translation of a web content
+article, you need to edit the article, choose a language, and then add the
+translation and click *Save*. Here's how searching for localized content works
+in Liferay:
+
+- Web content articles whose default language matches the portal's default
+  language are searched.
+- Web content articles whose default language is `en_US` (American English) are
+  searched, regardless of the portal's default language.
+- If the language of a translation of an article matches the portal's default
+  language, the article is searched.
+- Any article with an `en_US` translation can be searched regardless of the
+  portal's default language.
+- A user's default language does not affect search results.
+
+Note: The latest approved version of a web content article is always the version
+that is searched. To change the current approved version of a web content
+article, edit the article, click on the *View History* button, click on the
+*Actions* button next to a version of the article, then click on *Expire*.
+
 ## Searching for Portal Content Using Facets [](id=searching-for-portal-content-using-facets)
 
 To get started using faceted search, drop the Search portlet on a page and
