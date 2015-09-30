@@ -4,11 +4,11 @@ Offline mode in Liferay Screens lets your apps function when connectivity is
 unavailable or intermittent. Even though the steady march of technology makes 
 connections more stable and prevalent, there are still plenty of places the 
 internet has trouble reaching. Areas with complex terrain, including cities with 
-large buildings, often lack stable connections. Remote areas typically don’t 
-have a connection at all. Using Screens’s offline mode in your apps gives your 
+large buildings, often lack stable connections. Remote areas typically don't 
+have a connection at all. Using Screens's offline mode in your apps gives your 
 users flexibility in these situations. 
 
-This tutorial shows you how to use offline mode in Screenlets. You’ll get 
+This tutorial shows you how to use offline mode in Screenlets. You'll get 
 started by learning about how Screens handles offline mode.
 
 ## Architecture of Offline Mode
@@ -44,7 +44,7 @@ With offline mode enabled, any Screenlet can persist information exchanged with
 the portal. You can also configure exactly how offline mode works with the 
 Screenlet you're using. You do this through *policies*.
 
-## Using Policies with Offline Mode
+### Using Policies with Offline Mode
 
 Policies configure how a Screenlet behaves when it sends or receives data. The 
 Screenlet adheres to the policy even if the data operation fails. Screenlets 
@@ -67,7 +67,7 @@ in the app's local cache.
 this fails, it then tries to use the local storage. This is the typical behavior 
 in apps where you want the latest information when there's a connection, but 
 also want to support a fallback mechanism when the connection is gone. Note that 
-your app may use outdated information when there’s no connection. In many cases, 
+your app may use outdated information when there's no connection. In many cases, 
 however, this is better than showing your users no information at all.
 
 - **cache-first:** The Screenlet first tries to use the local cache. If this 
@@ -88,5 +88,66 @@ scenarios for User Portrait Screenlet:
     - **remote-only:** The Screenlet always attempts to load the portrait from 
     the portal. If the request fails, the operation also fails.
     - **cache-only**: The Screenlet always attempts to load the portrait from 
-    the local cache. If the portrait doesn’t exist there, the operation also 
+    the local cache. If the portrait doesn't exist there, the operation also 
     fails.
+    - **remote-first:** The Screenlet first attempts to load the portrait from 
+    the portal. If the request succeeds, the portrait is stored in the local 
+    cache for later usage. If the request fails, the Screenlet tries to load the 
+    portrait from the local cache. If the local cache doesn't contain the 
+    portrait, then the image isn't loaded and the standard error handling code 
+    is called (call delegate, use default placeholder, etc...). 
+    - **cache-first:** The Screenlet first attempts to load the portrait from 
+    the local cache. If the portrait doesn't exist there, it's then requested 
+    from the server.
+
+- When submitting the portrait
+    - **remote-only:** The Screenlet first sends the new portrait to the portal. 
+    If the submission is successful, the portrait is also stored in the local 
+    cache. If the submission fails, the operation also fails.
+    - **cache-only**: The Screenlet only stores the portrait locally. The 
+    portrait may be loaded from the cache later, or synchronized with the 
+    portal.
+    - **remote-first:** The Screenlet first tries to send the new portrait to 
+    the portal. If this fails due to lack of network connectivity, the Screenlet 
+    stores the portrait in the local cache for later synchronization with the 
+    portal.
+    - **cache-first:** The screenlet first stores the new portrait locally, then 
+    sends it to the portal. If the submission fails, the portriat is still 
+    stored locally, but the send operation fails.
+
+### Understanding Synchronization
+
+When a Screenlet sends information to the portal, the data may also be stored in 
+the app's local cache. If the portal request fails, then the new content doesn't 
+reach the portal, resulting in the local and portal data being out-of-sync. In 
+this scenario, the app has the most recent content, while the portal has the old 
+content. The app's data is referred to as the *dirty version*, meaning it should 
+be synchronized with the portal as soon as possible. When the dirty version gets 
+synchronized with the portal, the dirty flag is removed from the local content.
+
+<!-- Insert diagram -->
+
+Note that things can get more complex. For example, when the remote version 
+changes while the local version is out-of-sync, the synchronization process 
+produces a conflict. The local version can't overwrite the remote one because 
+this causes data loss, and the remote version can't overwrite the local version 
+for the same reason. In this case, the developer needs to resolve the conflict 
+by choosing between the local or remote versions. 
+
+<!-- Insert diagram -->
+
+Synchronization conflicts have four possible resolutions:
+
+1. **Keep local version:** The remote version is overwritten with the local 
+version. This results in the local cache and the portal having the same version 
+(Version 2a in the above diagram).
+
+2. **Keep remote version:** The local version is overwritten with the remote 
+version. This results in the local cache and the portal having the same version 
+(Version 2b in the above diagram).
+
+3. **Discard:** The local version is removed and the remote version isn't 
+overwritten.
+
+4. **Ignore:** No data is changed, so the next synchronization event reproduces 
+the conflict.
