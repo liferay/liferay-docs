@@ -1,24 +1,27 @@
 # Extending Form Navigators with New Sections and Categories [](id=extending-form-navigators-with-new-sections-and-categories)
 
-Do you want to provide pages for configuring your app's global and site-specific
-settings? Would you like to extend Liferay's user or organization settings pages
-to add custom forms? Since Liferay 7.0, the
+Some data-centric applications require the creation of large data-entry forms.
+Examples abound in healthcare, transportation, pharmaceutical, or any other
+heavily regulated industry. For these applications, you need an easy way to
+section off your forms into easily navigable groups. 
+
+Since Liferay 7.0, the
 [Form Navigator](/participate/liferaypedia/-/wiki/Main/Form+Navigator)
-framework enables you to dynamically add new sections and section categories to
+framework enables you to add new sections and section categories dynamically to
 existing form navigation. The framework includes a well-described API and a
 powerful
 [`liferay-ui`](http://docs.liferay.com/portal/7.0-a1/taglibs/liferay-ui)
 tag called  [`form-navigator`](http://docs.liferay.com/portal/7.0-a1/taglibs/liferay-ui/form-navigator.html).
 It's easy to use and facilitates organizing large forms into sections of input
-and categories. Using form navigation, administrators can more easily find
-forms, fill them in, and save form input. 
+and categories. 
 
 ![Figure 1: The Form Navigator framework lets you add your app's configuration forms to existing form navigators, like the one used in Portal Settings.](../../images/form-navigator-portal-setting-extension.png)
 
-This tutorial demonstrates adding a new navigation section (entry) to an
-existing form navigator. It references source code from an example portlet
-called the Form Nav Extension portlet. On GitHub, you can find its complete
-project called
+Form Navigators can be used in two ways: customizing a Form Navigator that
+already exists in the portal, and creating your own Form Navigator for your
+application. This tutorial demonstrates customizing an existing form. It
+references source code from an example portlet called the Form Nav Extension
+portlet. On GitHub, you can find its complete project called
 [form-nav-extension-portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/form-nav-extension-portlet).
 You can also download the Form Nav Extension portlet's bundle
 `form-nav-extension-portlet-1.0.jar`. To download it, go to its GitHub
@@ -28,7 +31,7 @@ and  click the *View Raw* link.
 +$$$
 
 **Note**: Form navigator extensions implemented using portal properties and form
-navigation entry JSPs are deprecated, but still supported, in Liferay 7.0. All
+navigation entry JSPs are deprecated but still supported in Liferay 7.0. All
 new form navigator extensions should be implemented as this tutorial describes. 
 
 $$$
@@ -36,7 +39,7 @@ $$$
 To add a new section entry to existing form navigation, follow these steps: 
 
 1.  Add to your project's `bnd.bnd` file a unique web context path for your
-    application. It allows your Java classes to reference your form input JSPs.
+    application. It allows your Java classes to reference form input JSPs.
     Here's the web context path entry that's specified in the Form Nav Extension
     example portlet's `bnd.bnd` file:
 
@@ -48,12 +51,12 @@ To add a new section entry to existing form navigation, follow these steps:
 
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-        <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %><%@
-        taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+        <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
+        <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
-        <%@ page import="com.liferay.docs.formnavextensionportlet.MyAppWebKeys" %><%@
-        page import="com.liferay.portal.kernel.util.GetterUtil" %><%@
-        page import="com.liferay.portal.kernel.util.ResourceBundleUtil" %>
+        <%@ page import="com.liferay.docs.formnavextensionportlet.MyAppWebKeys" %>
+        <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
+        <%@ page import="com.liferay.portal.kernel.util.ResourceBundleUtil" %>
 
         <%@ page import="java.util.ResourceBundle" %>
 
@@ -68,16 +71,16 @@ To add a new section entry to existing form navigation, follow these steps:
         <aui:input checked="<%= companyMyAppFeatureEnabled %>" label='<%= resourceBundle.getString("enable-my-app-feature") %>' name="settings--myAppFeatureEnabled--" type="checkbox" value="<%= companyMyAppFeatureEnabled %>" />
 
 3.  At the heart of your form navigation extension is your Java implementation.
-    Create a Java class that  implements the
+    Create a Java class that implements the
     [`FormNavigatorEntry`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorEntry.html) 
-    interface, for the class type on which the form navigator operates. The
+    interface for the class type on which the form navigator operates. The
     example portlet's Java class `MyAppCompanySettingsFormNavigatorEntry` (shown
     below) implements the `FormNavigatorEntry` interface. Since it extends the
     Portal Settings form navigator which operates on model class `Company`, the
     `MyAppCompanySettingsFormNavigatorEntry` class both extends the
     `BaseJSPFormNavigatorEntry` and implements the `FormNavigatorEntry`
     interface, with respect to the `Company` class. Hint: to find the name of
-    the model class a form navigator operates on, see what type of object is
+    the model class a form navigator operates on, look for the object type that's
     passed in as the `formModelBean` attribute value for the
     [`form-navigator`](http://docs.liferay.com/portal/7.0-a1/taglibs/liferay-ui/form-navigator.html)
     tag in the respective Liferay JSP file. 
@@ -176,7 +179,7 @@ To add a new section entry to existing form navigation, follow these steps:
 
         }
 
-This class extends abstract base class
+This class extends the abstract base class
 [`BaseJSPFormNavigatorEntry`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/BaseJSPFormNavigatorEntry.html).
 If you use a JSP to render your form's page, make sure to extend
 `BaseJSPFormNavigatorEntry`. The `BaseJSPFormNavigatorEntry` base class
@@ -196,8 +199,8 @@ category's other entries, the higher the entry is listed in category in the form
 navigation. 
 
 Next, you can implement the getter methods that identify the form navigator,
-category, and your entry's JSP, key, and label. In the `getCategoryKey` method
-you return the ID of the form navigator category in which to add your section
+category, and your entry's JSP, key, and label. In the `getCategoryKey` method,
+you return the form navigator category ID where you're adding the section
 entry. The class
 [`FormNavigatorConstants`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
 specifies Liferay Portal's category IDs. To identify the form navigator you're
@@ -246,7 +249,7 @@ the navigation category.
 There you have it! You now know what it takes to extend Liferay form navigators
 with new section entries and categories.
 
-**Related Topics**
+## Related Topics
 
 <!-- TODO Add a link to the tutorial on implementing form navigation in a
 custom portlet -->
