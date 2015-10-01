@@ -159,7 +159,7 @@ and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 | `structureId` | `number` | The ID of a data definition in your Liferay site. To find the IDs for your data definitions, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left and click the *Manage Data Definitions* button. The ID of each data definition is in the ID column of the table. |
 | `groupId` | `number` | The ID of the site (group) where the record is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
 | `recordSetId` | `number` | A dynamic data list's ID. To find your dynamic data lists' IDs, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left. Each dynamic data list's ID is in the ID column of the table. |
-| `recordId` | `number` | The ID of the record you want to show. You can also allow the record's values to be edited. This ID can be obtained from other methods or delegates. |
+| `recordId` | `number` | The ID of the record you want to show. You can also allow the record's values to be edited. This ID can be obtained from other methods or listeners. |
 | `repositoryId` | `number` | The ID of the Documents and Media repository to upload to. If this value is `0`, the default repository for the site specified by `groupId` is used. |
 | `folderId` | `number` | The ID of the folder where Documents and Media files are uploaded. If this value is `0`, the root is used. |
 | `filePrefix` | `string` | The prefix to attach to the names of files uploaded to a Documents and Media repository. The upload date followed by the original file name is appended following the prefix. |
@@ -211,3 +211,25 @@ following methods:
 
 - `onDDLFormDocumentUploadFailed(DocumentField field, Exception e)`: Called when 
   a specified document field's upload fails.
+
+## Offline [](id=offline)
+
+This screenlet sopport offline mode in order to work under scenarios with bad connectivity.
+
+_When loading_ the form or record, these are the four policies supported:
+
+| Policy | What happens | When to use |
+|--------|-----------|---------------|
+| `REMOTE_ONLY` | The form or record will be loaded from the portal. If a connection issue happens, the screenlet will notify about the error through the listener as usual. If the portrait can be successfully loaded, the received data (record structure and data) is stored in the local cache for later usage.| Use this policy when you need to show always updated data and show nothing when there's no connection.|
+| `CACHE_ONLY` | The form or record will be loaded from the local cache. If it's not present, the screenlet will notify about the error through the listener as usual.| Use this policy when you need to show always local data without retrieving remote information under any circumstance.|
+| `REMOTE_FIRST` | The form or record will be requested to the remote portal. If it's received, it will be shown to the user and stored in the local cache for later usage. If a connection issue happens, then it will be retrieved from the local cache. If it doesn't exist there, the screenlet will notify about the error through the listener as usual.| When you need the most updated version if connected, but is accepted to show an outdated version when there's no connection.|
+| `CACHE_FIRST` | The form or record will be loaded from the local cache if exists. If it doesn't exist, then it will be requested to the portal as usual and will notify about the error in case of issue (even on connectivity errors).| When you want to save bandwidth and loading time in case you have a local (but probably outdated) version.|
+
+_When editing_ the record, these are the four policies supported:
+
+| Policy | What happens | When to use |
+|--------|-----------|---------------|
+| `REMOTE_ONLY` | The record will be sent to the portal at the moment. If a connection issue happens, the screenlet will notify about the error through the listener as usual, but the record data will be discarded. | Use this policy when you need to make sure the record is updated or added in the portal at the moment.|
+| `CACHE_ONLY` | The record will be stored in the local cache. | Use this policy when you need to save the data locally but you don't want to change the remote content (update or add record). |
+| `REMOTE_FIRST` | The record will be sent to the remote portal. If it's successfully sent, it will be also stored in the local cache for later usage. If a connection issue happens, then it will be stored in the local cache with the "dirty flag" enabled. This makes the record to be sent to the portal when the synchronization process runs.| Use this policy when you need to make sure the record will be sent to the portal, right at the moment or when the connection is restored. |
+| `CACHE_FIRST` | The record will be stored in local cache and then sent to the remote portal. If a connection issue happens, then it will be stored in the local cache with the "dirty flag" enabled. This makes the record to be sent to the portal when the synchronization process runs.| Use this policy when you need to make sure the record will be sent to the portal, right at the moment or when the connection is restored. The different between this policy and `REMOTE_FIRST` is the former will store record in the cache always, while the latter will store the record only in case of network error.|

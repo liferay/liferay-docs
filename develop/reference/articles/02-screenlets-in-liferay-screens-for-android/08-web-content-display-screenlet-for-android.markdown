@@ -65,3 +65,14 @@ implement the following methods:
 
 - `onWebContentFailure(WebContentDisplayScreenlet source, Exception e)`: Called 
   when an error occurs in the process. 
+
+## Offline [](id=offline)
+
+This screenlet sopport offline mode in order to work under scenarios with bad connectivity.
+
+| Policy | What happens | When to use |
+|--------|--------------|-------------|
+| `REMOTE_ONLY` | The web content will be loaded from the portal. If a connection issue happens, the screenlet will notify about the error through the listener as usual. If the web content can be successfully loaded, the received asserts are stored in the local cache for later usage.| Use this policy when you need to show always updated web contents and show nothing when there's no connection.|
+| `CACHE_ONLY` | The web content will be loaded from the local cache. If they're not present, the screenlet will notify about the error through the listener as usual.| Use this policy when you need to show always local web contents without retrieving remote information under any circumstance.|
+| `REMOTE_FIRST` | The web content will be requested to the remote portal. If it's received, it will be shown to the user and stored in the local cache for later usage. If a connection issue happens, then it will be retrieved from the local cache. If it doesn't exist there, the screenlet will notify about the error through the listener as usual. | When you need the most updated version if connected, but is accepted to show an outdated version when there's no connection.|
+| `CACHE_FIRST` | The web contents will be loaded from the local cache if exist. If they don't exist, then they will be requested to the portal as usual and will notify about the error in case of issue (even on connectivity errors).| When you want to save bandwidth and loading time in case you have a local (but probably outdated) version.|

@@ -96,3 +96,7 @@ email contains the new password or a password reset link.
 
 - `onForgotPasswordRequestFailure(Exception e)`: Called when an error occurs in 
 the process.
+
+## Offline [](id=offline)
+
+This screenlet doesn't support offline mode. It needs proper network connectivity to work.

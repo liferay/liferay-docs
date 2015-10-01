@@ -110,3 +110,8 @@ following methods:
 - `- onScreenletCredentialsLoaded:`: Called when the user credentials are 
   retrieved. Note that this only occurs when the Screenlet is used and stored 
   credentials are available.
+
+## Offline [](id=offline)
+
+This screenlet doesn't support offline mode. It needs proper network connectivity to work.
+However, if you need to automatically log users in (even when there's no connection active), you can use the `saveCredentials` attribute together with `SessionContext.loadSessionFromStore()` method.

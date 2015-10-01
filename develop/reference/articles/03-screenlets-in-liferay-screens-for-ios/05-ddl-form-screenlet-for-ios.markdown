@@ -167,3 +167,25 @@ following methods:
 
 - `- screenlet:onDocumentField:uploadError:`: Called when an error occurs in the 
   Documents and Media upload process. The `NSError` object describes the error.
+
+## Offline [](id=offline)
+
+This screenlet sopport offline mode in order to work under scenarios with bad connectivity.
+
+_When loading_ the form or record, these are the four policies supported:
+
+| Policy | What happens | When to use |
+|--------|-----------|---------------|
+| `remote-only` | The form or record will be loaded from the portal. If a connection issue happens, the screenlet will notify about the error through the delegate as usual. If the portrait can be successfully loaded, the received data (record structure and data) is stored in the local cache for later usage.| Use this policy when you need to show always updated data and show nothing when there's no connection.|
+| `cache-only` | The form or record will be loaded from the local cache. If it's not present, the screenlet will notify about the error through the delegate as usual.| Use this policy when you need to show always local data without retrieving remote information under any circumstance.|
+| `remote-first` | The form or record will be requested to the remote portal. If it's received, it will be shown to the user and stored in the local cache for later usage. If a connection issue happens, then it will be retrieved from the local cache. If it doesn't exist there, the screenlet will notify about the error through the delegate as usual.| When you need the most updated version if connected, but is accepted to show an outdated version when there's no connection.|
+| `cache-first` | The form or record will be loaded from the local cache if exists. If it doesn't exist, then it will be requested to the portal as usual and will notify about the error in case of issue (even on connectivity errors).| When you want to save bandwidth and loading time in case you have a local (but probably outdated) version.|
+
+_When editing_ the record, these are the four policies supported:
+
+| Policy | What happens | When to use |
+|--------|-----------|---------------|
+| `remote-only` | The record will be sent to the portal at the moment. If a connection issue happens, the screenlet will notify about the error through the delegate as usual, but the record data will be discarded. | Use this policy when you need to make sure the record is updated or added in the portal at the moment.|
+| `cache-only` | The record will be stored in the local cache. | Use this policy when you need to save the data locally but you don't want to change the remote content (update or add record). |
+| `remote-first` | The record will be sent to the remote portal. If it's successfully sent, it will be also stored in the local cache for later usage. If a connection issue happens, then it will be stored in the local cache with the "dirty flag" enabled. This makes the record to be sent to the portal when the synchronization process runs.| Use this policy when you need to make sure the record will be sent to the portal, right at the moment or when the connection is restored. |
+| `cache-first` | The record will be stored in local cache and then sent to the remote portal. If a connection issue happens, then it will be stored in the local cache with the "dirty flag" enabled. This makes the record to be sent to the portal when the synchronization process runs.| Use this policy when you need to make sure the record will be sent to the portal, right at the moment or when the connection is restored. The different between this policy and `remote-first` is the former will store record in the cache always, while the latter will store the record only in case of network error.|
