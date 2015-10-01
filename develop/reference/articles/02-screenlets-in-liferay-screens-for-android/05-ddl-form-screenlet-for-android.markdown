@@ -137,6 +137,31 @@ For more details, see the User Guide sections [Defining Data Types](/portal/-/kn
 [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists), 
 and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow). 
 
+## Offline [](id=offline)
+
+This Screenlet supports offline mode so it can function without a network 
+connection. 
+
+When loading the form or record, the Screenlet supports the following offline 
+mode policies:
+
+| Policy | What happens | When to use |
+|--------|-----------|---------------|
+| `REMOTE_ONLY` | The Screenlet loads the form or record from the portal. If a connection issue occurs, the Screenlet uses the listener to notify the developer about the error. If the Screenlet loads the form or record, it stores the received data (record structure and data) in the local cache for later use. | Use this policy when you always need to show updated data, and show nothing when there's no connection. |
+| `CACHE_ONLY` | The Screenlet loads the form or record from the local cache. If the form or record isn't there, the Screenlet uses the listener to notify the developer about the error. | Use this policy when you always need to show local data, without retrieving remote information under any circumstance. |
+| `REMOTE_FIRST` | The Screenlet requests the form or record from the portal. The Screenlet shows the record or form to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the form or record from the local cache. If the form or record doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
+| `CACHE_FIRST` | If the form or record exists in the local cache, the Screenlet loads it from there. If it doesn't exist there, the Screenlet requests it from the portal and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
+
+When editing the record, the Screenlet supports the following offline mode 
+policies:
+
+| Policy | What happens | When to use |
+|--------|-----------|---------------|
+| `REMOTE_ONLY` | The Screenlet sends the record to the portal. If a connection issue occurs, the Screenlet uses the listener to notify the developer about the error, but it also discards the record. | Use this policy to make sure the portal always has the most recent version of the record. |
+| `CACHE_ONLY` | The Screenlet stores the record in the local cache. | Use this policy when you need to save the data locally, but don't want to update the data in the portal (update or add record). |
+| `REMOTE_FIRST` | The Screenlet sends the record to the portal. If this succeeds, it also stores the record in the local cache for later usage. If a connection issue occurs, then Screenlet stores the record in the local cache with the *dirty flag* enabled. This causes the the synchronization process to send the record to the portal when it runs. | Use this policy when you need to make sure the Screenlet sends the record to the portal as soon as the connection is restored. |
+| `CACHE_FIRST` | The Screenlet stores the record in the local cache and then sends it to the remote portal. If a connection issue occurs, then Screenlet stores the record in the local cache with the *dirty flag* enabled. This causes the the synchronization process to send the record to the portal when it runs. | Use this policy when you need to make sure the Screenlet sends the record to the portal as soon as the connection is restored. Compared to `REMOTE_FIRST`, this policy always stores the record in the cache. The `REMOTE_FIRST` policy only stores the record in the event of a network error. |
+
 ## Required Attributes [](id=required-attributes)
 
 - `layoutId`
@@ -211,25 +236,3 @@ following methods:
 
 - `onDDLFormDocumentUploadFailed(DocumentField field, Exception e)`: Called when 
   a specified document field's upload fails.
-
-## Offline [](id=offline)
-
-This screenlet sopport offline mode in order to work under scenarios with bad connectivity.
-
-_When loading_ the form or record, these are the four policies supported:
-
-| Policy | What happens | When to use |
-|--------|-----------|---------------|
-| `REMOTE_ONLY` | The form or record will be loaded from the portal. If a connection issue happens, the screenlet will notify about the error through the listener as usual. If the portrait can be successfully loaded, the received data (record structure and data) is stored in the local cache for later usage.| Use this policy when you need to show always updated data and show nothing when there's no connection.|
-| `CACHE_ONLY` | The form or record will be loaded from the local cache. If it's not present, the screenlet will notify about the error through the listener as usual.| Use this policy when you need to show always local data without retrieving remote information under any circumstance.|
-| `REMOTE_FIRST` | The form or record will be requested to the remote portal. If it's received, it will be shown to the user and stored in the local cache for later usage. If a connection issue happens, then it will be retrieved from the local cache. If it doesn't exist there, the screenlet will notify about the error through the listener as usual.| When you need the most updated version if connected, but is accepted to show an outdated version when there's no connection.|
-| `CACHE_FIRST` | The form or record will be loaded from the local cache if exists. If it doesn't exist, then it will be requested to the portal as usual and will notify about the error in case of issue (even on connectivity errors).| When you want to save bandwidth and loading time in case you have a local (but probably outdated) version.|
-
-_When editing_ the record, these are the four policies supported:
-
-| Policy | What happens | When to use |
-|--------|-----------|---------------|
-| `REMOTE_ONLY` | The record will be sent to the portal at the moment. If a connection issue happens, the screenlet will notify about the error through the listener as usual, but the record data will be discarded. | Use this policy when you need to make sure the record is updated or added in the portal at the moment.|
-| `CACHE_ONLY` | The record will be stored in the local cache. | Use this policy when you need to save the data locally but you don't want to change the remote content (update or add record). |
-| `REMOTE_FIRST` | The record will be sent to the remote portal. If it's successfully sent, it will be also stored in the local cache for later usage. If a connection issue happens, then it will be stored in the local cache with the "dirty flag" enabled. This makes the record to be sent to the portal when the synchronization process runs.| Use this policy when you need to make sure the record will be sent to the portal, right at the moment or when the connection is restored. |
-| `CACHE_FIRST` | The record will be stored in local cache and then sent to the remote portal. If a connection issue happens, then it will be stored in the local cache with the "dirty flag" enabled. This makes the record to be sent to the portal when the synchronization process runs.| Use this policy when you need to make sure the record will be sent to the portal, right at the moment or when the connection is restored. The different between this policy and `REMOTE_FIRST` is the former will store record in the cache always, while the latter will store the record only in case of network error.|

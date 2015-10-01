@@ -80,6 +80,13 @@ used from Liferay Screens. When the app is created, copy the *Consumer Key* and
 
 ![Copy the Consumer Key and Consumer Secret from OAuth Admin in your portal.](../../images/screens-portal-oauth.png)
 
+## Offline [](id=offline)
+
+This Screenlet doesn't support offline mode. It requires network connectivity.
+If you need to automatically log in users, even when there's no network 
+connection, you can use the `saveCredentials` attribute together with the 
+`SessionContext.loadSessionFromStore()` method. 
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
@@ -110,8 +117,3 @@ following methods:
 - `- onScreenletCredentialsLoaded:`: Called when the user credentials are 
   retrieved. Note that this only occurs when the Screenlet is used and stored 
   credentials are available.
-
-## Offline [](id=offline)
-
-This screenlet doesn't support offline mode. It needs proper network connectivity to work.
-However, if you need to automatically log users in (even when there's no connection active), you can use the `saveCredentials` attribute together with `SessionContext.loadSessionFromStore()` method.

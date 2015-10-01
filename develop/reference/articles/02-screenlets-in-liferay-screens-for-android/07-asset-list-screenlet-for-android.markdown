@@ -73,6 +73,18 @@ sections of the User Guide for more details.
 Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
 must be installed to allow remote calls without the `userId`.
 
+## Offline [](id=offline)
+
+This Screenlet supports offline mode so it can function without a network 
+connection. 
+
+| Policy | What happens | When to use |
+|--------|--------------|-------------|
+| `REMOTE_ONLY` | The Screenlet loads the list from the portal. If a connection issue occurs, the Screenlet uses the listener to notify the developer about the error. If the Screenlet successfully loads the list, it stores the data in the local cache for later use. | Use this policy when you always need to show updated data, and show nothing when there's no connection. |
+| `CACHE_ONLY` | The Screenlet loads the list from the local cache. If the list isn't there, the Screenlet uses the listener to notify the developer about the error. | Use this policy when you always need to show local data, without retrieving remote information under any circumstance. |
+| `REMOTE_FIRST` | The Screenlet loads the list from the portal. If this succeeds, the Screenlet shows the list to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the list from the local cache. If the list doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
+| `CACHE_FIRST` | The Screenlet loads the list from the local cache. If the list isn't there, the Screenlet requests it from the portal and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
+
 ## Required Attributes [](id=required-attributes)
 
 - `layoutId`
@@ -111,14 +123,3 @@ and lets you implement the following methods:
 
 - `onListItemSelected(BaseListScreenlet source, AssetEntry entry)`: Called when 
   an item in the list is selected.
-
-## Offline [](id=offline)
-
-This screenlet sopport offline mode in order to work under scenarios with bad connectivity.
-
-| Policy | What happens | When to use |
-|--------|--------------|-------------|
-| `REMOTE_ONLY` | The list will be loaded from the portal. If a connection issue happens, the screenlet will notify about the error through the listener as usual. If the list can be successfully loaded, the received asserts are stored in the local cache for later usage.| Use this policy when you need to show always updated assets and show nothing when there's no connection.|
-| `CACHE_ONLY` | The list will be loaded from the local cache. If they're not present, the screenlet will notify about the error through the listener as usual.| Use this policy when you need to show always local assets without retrieving remote information under any circumstance.|
-| `REMOTE_FIRST` | The list will be requested to the remote portal. If it's received, it will be shown to the user and stored in the local cache for later usage. If a connection issue happens, then it will be retrieved from the local cache. If it doesn't exist there, the screenlet will notify about the error through the listener as usual. | When you need the most updated version if connected, but is accepted to show an outdated version when there's no connection.|
-| `CACHE_FIRST` | The assets will be loaded from the local cache if exist. If they don't exist, then they will be requested to the portal as usual and will notify about the error in case of issue (even on connectivity errors).| When you want to save bandwidth and loading time in case you have a local (but probably outdated) version.|

@@ -68,6 +68,10 @@ An anonymous request can be made without the user being logged in. However,
 authentication is needed to call the API. To allow this operation, the portal
 administrator should create a specific user with minimal permissions. 
 
+## Offline [](id=offline)
+
+This Screenlet doesn't support offline mode. It requires network connectivity.
+
 ## Required Attributes [](id=required-attributes)
 
 - `layoutId`
@@ -96,7 +100,3 @@ email contains the new password or a password reset link.
 
 - `onForgotPasswordRequestFailure(Exception e)`: Called when an error occurs in 
 the process.
-
-## Offline [](id=offline)
-
-This screenlet doesn't support offline mode. It needs proper network connectivity to work.

@@ -45,6 +45,10 @@ administrator should create a user with minimal permissions. To use
 `SignUpScreenlet`, you need to use that user in your layout. You should add that
 user's credentials to `server_context.xml`. 
 
+## Offline [](id=offline)
+
+This Screenlet doesn't support offline mode. It requires network connectivity. 
+
 ## Required Attributes [](id=required-attributes)
 
 - `layoutId`
@@ -74,7 +78,3 @@ methods:
   supported keys are the same as those in the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
 
 - `onSignUpFailure(Exception e)`: Called when an error occurs in the process.
-
-## Offline [](id=offline)
-
-This screenlet doesn't support offline mode. It needs proper network connectivity to work.

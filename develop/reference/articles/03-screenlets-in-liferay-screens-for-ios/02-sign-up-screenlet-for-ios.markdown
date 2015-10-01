@@ -45,6 +45,10 @@ Anonymous requests are unauthenticated requests. Authentication is needed,
 however, to call the API. To allow this operation, the portal administrator
 should create a specific user with minimal permissions.
 
+## Offline [](id=offline)
+
+This Screenlet doesn't support offline mode. It requires network connectivity.
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
@@ -72,7 +76,3 @@ The `SignUpScreenletDelegate` protocol lets you implement the following methods:
 
 - `- screenlet:onSignUpError:`: Called when an error occurs in the process. The 
   `NSError` object describes the error.
-
-## Offline [](id=offline)
-
-This screenlet doesn't support offline mode. It needs proper network connectivity to work.
