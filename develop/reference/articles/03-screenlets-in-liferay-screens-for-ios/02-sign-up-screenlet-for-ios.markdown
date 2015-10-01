@@ -72,3 +72,7 @@ The `SignUpScreenletDelegate` protocol lets you implement the following methods:
 
 - `- screenlet:onSignUpError:`: Called when an error occurs in the process. The 
   `NSError` object describes the error.
+
+## Offline [](id=offline)
+
+This screenlet doesn't support offline mode. It needs proper network connectivity to work.

@@ -74,3 +74,7 @@ methods:
   supported keys are the same as those in the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
 
 - `onSignUpFailure(Exception e)`: Called when an error occurs in the process.
+
+## Offline [](id=offline)
+
+This screenlet doesn't support offline mode. It needs proper network connectivity to work.
