@@ -120,3 +120,13 @@ the local cache and the portal will have the same version
 overwritten. 
 - `Ignore`:  gmdata is not changed, so the next synchronization will detect the 
 conflict again.
+
+## Related Topics
+
+[Architecture of Offline Mode in Liferay Screens](http://www.liferay.com/)
+
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)
+
+[Using Offline Mode in Android](http://www.liferay.com/)
+
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
