@@ -1,16 +1,3 @@
-# Using Offline Mode
-
-Offline mode in Liferay Screens lets your apps function when connectivity is 
-unavailable or intermittent. Even though the steady march of technology makes 
-connections more stable and prevalent, there are still plenty of places the 
-internet has trouble reaching. Areas with complex terrain, including cities with 
-large buildings, often lack stable connections. Remote areas typically don't 
-have a connection at all. Using Screens's offline mode in your apps gives your 
-users flexibility in these situations. 
-
-This tutorial shows you how to use offline mode in Screenlets. You'll get 
-started by learning about how Screens handles offline mode.
-
 # Architecture of Offline Mode in Liferay Screens
 
 Mobile users may encounter difficulty getting or maintaining a network 
@@ -33,7 +20,7 @@ Screenlets in Liferay Screens support the following phases:
 
 The following diagram summarizes these phases:
 
-<!-- Insert diagram -->
+![Figure 1: A Screenlet's basic phases when requesting and submitting data to the portal.](../../images/screens-offline-01.png)
 
 Note that not all Screenlets need to execute each phase. For example, Web 
 Content Display Screenlet only needs to retrieve and display portal content. 
@@ -47,7 +34,7 @@ coming from the portal. It stores this information in a local data store for use
 when there's no internet connection. The following diagram illustrates this, 
 with *Local cache* representing the local data store:
 
-<!-- Insert diagram -->
+![Figure 2: This is the same diagram as before, with the addition of the local cache for offline mode.](../../images/screens-offline-02.png)
 
 With offline mode enabled, any Screenlet can persist information exchanged with 
 the portal. You can also configure exactly how offline mode works with the 
@@ -132,51 +119,45 @@ Screenlet:
 ## Understanding Synchronization
 
 Synchronization can be a tricky problem to solve. What initially seems 
-straightforward quickly evolves into scenarios where you're not sure which data 
-to use. Having offline users complicates things further. The following diagram 
-illustrates the ideal synchronization scenario. In the first step, the Screenlet 
-retrieves the portal data (Version 1) and stores it locally. In the second step, 
-the user edits the local data to produce Version 2 of the data. In the third 
-step, the Screenlet overwrites the original portal data with Version 2. This 
-results in Version 2 being in sync between the Screenlet and the portal. 
+straightforward quickly evolves into scenarios where you're not sure which 
+version of the data to use. Having offline users complicates things further. The 
+following diagram illustrates how the Screenlet retrieves and stores portal 
+data. 
 
-<!-- Insert diagram -->
+![Figure 3: The Screenlet requests the resource from the portal and stores it in the app's local cache.](../../images/screens-offline-03.png)
 
-But what happens when the Screenlet can't send data to the portal? If this send 
-operation fails, then the new data can't reach the portal, resulting in the 
-local and portal data being out-of-sync. In this scenario, the app has the new 
-data while the portal has the old data. The app's data in this synchronization 
-state is called the *dirty version*. Put away your soap and washcloth. We don't 
-recommend giving your mobile device a bath. In this context, dirty means that 
-the data should be synchronized with the portal as soon as possible. When the 
-Screenlet synchronizes the dirty version with the portal, it removes the dirty 
-flag from the local data. 
+When a user edits the data in the app, the Screenlet needs to send the new data 
+to the portal. But what happens if the user is offline? In this case, the new 
+data can't reach the portal and the local and portal data are out-of-sync. In 
+this scenario, the app has the new data while the portal has the old data. The 
+app's data in this synchronization state is called the *dirty version*. Put away 
+your soap and washcloth. We don't recommend giving your mobile device a bath. In 
+this context, dirty means that the data should be synchronized with the portal 
+as soon as possible. When the Screenlet synchronizes the dirty version, it 
+removes the dirty flag from the local data. 
+
+![Figure 4: The updated data is said to be dirty when the Screenlet can't send it to the portal.](../../images/screens-offline-04.png)
+
+![Figure 5: The dirty flag is removed once synchronization completes.](../../images/screens-offline-05.png)
 
 Other synchronization states can also be complicated to deal with. For example, 
-portal data may change while out-of-sync with a Screenlet's local data. In this 
-situation, the synchronization process produces a conflict when it runs again. 
-To avoid data loss, the local data can't overwrite the portal data, and vice 
-versa. The developer needs to resolve this conflict by choosing the local data 
-or portal data. 
+portal data may change while out-of-sync with a Screenlet's local data. To avoid 
+data loss, the local data can't overwrite the portal data, and vice versa. In 
+this situation, the synchronization process produces a conflict when it runs. 
+The following diagram illustrates this.
 
-The following diagram shows how a conflict can arise when synchronizing data 
-between the portal and the local cache. Everything starts off fine, with Version 
-1 of the data in sync. The problems start, however, when that data is edited 
-independently in each location. This yields two versions of the same data: 
-Version 2a in the local cache, and Version 2b on the portal. As expected, 
-attempting to synchronize these versions produces a conflict.
+![Figure 6: Users have changed the data independently in the app and in the portal, causing a synchronization conflict.](../../images/screens-offline-06.png)
 
-<!-- Insert diagram -->
-
-Synchronization conflicts have four possible resolutions:
+The developer needs to resolve the conflict by choosing the local data or portal 
+data. Synchronization conflicts have four possible resolutions:
 
 1. **Keep the local version:** The Screenlet overwrites the portal data with the 
 local data. This results in the local cache and the portal having the same 
-version of the data (Version 2a in the above diagram).
+version of the data (Version 2 in the above diagram).
 
 2. **Keep remote version:** The Screenlet overwrites the local data with the 
 portal data. This results in the local cache and the portal having the same 
-version of the data (Version 2b in the above diagram).
+version of the data (Version 3 in the above diagram).
 
 3. **Discard:** The Screenlet removes the local data, and the portal data isn't 
 overwritten.
@@ -188,7 +169,9 @@ Great! Now that you know how offline mode works, you're ready to put it to use.
 
 ## Related Topics
 
-[Using Offline Mode](http://www.liferay.com/)
+[Using Offline Mode in Android](http://www.liferay.com/)
+
+[Using Offline Mode in iOS](http://www.liferay.com/)
 
 [Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
 
