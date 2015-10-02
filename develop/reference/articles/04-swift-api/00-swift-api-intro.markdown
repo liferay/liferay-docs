@@ -1,9 +1,9 @@
-# SyncManagerDelegate
+# SyncManagerDelegate [](id=syncmanagerdelegate)
 
 The `SyncManagerDelegate` class receives the events produced in the 
 synchronization process. This document describes the class's methods.
 
-## Methods
+## Methods [](id=methods)
 
 The following method is invoked when the synchronization process is started. The 
 number of items to be synch-ed will be passed.

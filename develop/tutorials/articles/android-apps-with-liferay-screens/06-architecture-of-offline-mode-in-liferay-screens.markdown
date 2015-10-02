@@ -1,4 +1,4 @@
-# Architecture of Offline Mode in Liferay Screens
+# Architecture of Offline Mode in Liferay Screens [](id=architecture-of-offline-mode-in-liferay-screens)
 
 Mobile users may encounter difficulty getting or maintaining a network 
 connection at certain locations or times of day. Using offline mode with 
@@ -9,7 +9,7 @@ may cause synchronization conflicts with the portal when they reconnect. By
 detailing how offline mode is implemented in Liferay Screens, this tutorial 
 makes sure you are aware of such difficulties and know how to handle them.
 
-## Understanding Offline Mode's Basics
+## Understanding Offline Mode's Basics [](id=understanding-offline-modes-basics)
 
 Screenlets in Liferay Screens support the following phases: 
 
@@ -40,7 +40,7 @@ With offline mode enabled, any Screenlet can persist information exchanged with
 the portal. You can also configure exactly how offline mode works with the 
 Screenlet you're using. You do this through *policies*.
 
-## Using Policies with Offline Mode
+## Using Policies with Offline Mode [](id=using-policies-with-offline-mode)
 
 Policies configure how a Screenlet behaves with offline mode when it sends or 
 receives data. The Screenlet adheres to the policy even if the data operation 
@@ -116,7 +116,7 @@ Screenlet:
     sends it to the portal. If the submission fails, the Screenlet still stores 
     the portrait locally, but the send operation fails.
 
-## Understanding Synchronization
+## Understanding Synchronization [](id=understanding-synchronization)
 
 Synchronization can be a tricky problem to solve. What initially seems 
 straightforward quickly evolves into scenarios where you're not sure which 
@@ -167,11 +167,11 @@ event reproduces the conflict.
 
 Great! Now that you know how offline mode works, you're ready to put it to use.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Using Offline Mode in Android](http://www.liferay.com/)
+[Using Offline Mode in Android](/develop/tutorials/-/knowledge_base/6-2/using-offline-mode-in-android)
 
-[Using Offline Mode in iOS](http://www.liferay.com/)
+[Using Offline Mode in iOS](/develop/tutorials/-/knowledge_base/6-2/using-offline-mode-in-ios)
 
 [Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
 
