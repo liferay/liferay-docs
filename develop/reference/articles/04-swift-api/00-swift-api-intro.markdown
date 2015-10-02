@@ -1,5 +1,10 @@
 # SyncManagerDelegate
 
+The `SyncManagerDelegate` class receives the events produced in the 
+synchronization process. This document describes the class's methods.
+
+## Methods
+
 The following method is invoked when the synchronization process is started. The 
 number of items to be synch-ed will be passed.
 
@@ -9,8 +14,6 @@ The following method is invoked when an item synchronization is about to start.
 
     syncManager(manager: SyncManager, onItemSyncScreenlet screenlet: String, 
         startKey: String, attributes: [String:AnyObject])
-
-This method's attributes are described as follows:
 
 - `screenlet`: the screenlet name that stored this cache element
 - `startKey`: the cache key where the item is stored
@@ -24,8 +27,6 @@ completed.
     syncManager(manager: SyncManager, onItemSyncScreenlet screenlet: String, 
         completedKey: String, attributes: [String:AnyObject])
 
-This method's attributes are described as follows: 
-
 - `screenlet`: the screenlet name that stored this cache element
 - `completedKey`: the cache key where the item is stored
 - `attributes`: some attributes stored together with the element. The specific 
@@ -36,8 +37,6 @@ The following method is invoked when an item synchronization is failed.
 
     syncManager(manager: SyncManager, onItemSyncScreenlet screenlet: String, 
         failedKey: String, attributes: [String:AnyObject], error: NSError)
-
-This method's attributes are described as follows:
 
 - `screenlet`: the screenlet name that stored this cache element
 - `failedKey`: the cache key where the item is stored
@@ -55,8 +54,6 @@ argument with the conflict action result.
         conflictedKey: String, remoteValue: AnyObject, localValue: AnyObject, 
         resolve: SyncConflictResolution -> ())
 
-This method's attributes are described as follows:
-
 - `screenlet`: the screenlet name that stored this cache element
 - `conflictedKey`: the cache key where the item is stored
 - `remoteValue`: the value stored in the server for the item being synchronized
@@ -70,7 +67,7 @@ Supported values for `resolve` are:
 the local cache and the portal will have the same version.
 - `UseLocal`: the local version will be overwritten with the remote one. Both 
 the local cache and the portal will have the same version
-- `Discard`: the local version will be removed and the remote one won’t be 
+- `Discard`: the local version will be removed and the remote one won't be 
 overwritten. 
 - `Ignore`:  gmdata is not changed, so the next synchronization will detect the 
 conflict again.

@@ -29,7 +29,7 @@ bit differently with offline mode. For specific details, see the
 Under some scenarios, values stored in the local cache need to be synchronized 
 with the portal ones. For that purpose you need to use the `SyncManager` class. 
 This class is responsible for sending the information stored in the local cache 
-that hasn’t been sent to the portal yet.
+that hasn't been sent to the portal yet.
 
 Use the following steps to start a synchronization process: 
 
@@ -37,15 +37,12 @@ Use the following steps to start a synchronization process:
 object in the constructor. You can get the current cache manager using 
 `SessionContext.currentCacheManager`. 
 
-2. Set the delegate property. This delegate object will receive the events 
-produced in the synchronization process. For more details on the delegate 
-methods, read the section below.
+2. Set the delegate property. This delegate object receives the events produced 
+in the synchronization process. For more details on the delegate's methods, see 
+[the API reference documentation for the `SyncManagerDelegate` class](http://www.liferay.com/).
 
 3. Make sure you keep a strong reference to the `SyncManager` object while the 
 process is running.
-
-For information on the `SyncManagerDelegate` class, see 
-[its API reference documentation](http://www.liferay.com/).
 
 ## Related Topics
 
