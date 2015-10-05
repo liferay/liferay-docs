@@ -1,4 +1,4 @@
-# Installing the Liferay Mobile SDK and Liferay Screens for Android
+# Installing the Mobile SDK and Liferay Screens for Android
 
 You must install the Guestbook Mobile SDK in your Android app so it can interact 
 with the Guestbook portlet. Note that this Mobile SDK contains only the classes 
