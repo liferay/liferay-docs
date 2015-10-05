@@ -4,15 +4,15 @@ Liferay's asset framework allows many different kinds of content to be created
 and published. Web content articles, blog entries, wiki articles, and documents
 are a few of the asset types that Liferay supports out of the box. Developers
 can also create custom asset types. For more information about Liferay's asset
-framework, please see the [Asset Framework]() tutorial. Liferay also supports
-web feeds in several different formats: Atom 1.0, RSS 2.0, and RSS 1.0. To learn
-how to manage RSS feeds in Liferay, please see the
-[Managing RSS Feeds in Liferay]() tutorial.
+framework, please see the [Asset Framework]() [not yet written] tutorial.
+Liferay also supports web feeds in several different formats: Atom 1.0, RSS 2.0,
+and RSS 1.0. To learn how to manage RSS feeds in Liferay, please see the
+[Managing RSS Feeds in Liferay]() [not yet written] tutorial.
 
 Liferay also includes a bundled Atom server and provides Atom collections for
 several portal entities including web content articles, blog entries, documents,
 document folders, and users. Liferay's Atom server implementation is based on
-[Apache Abdera](https://abdera.apache.org/). Abdera is intended to be a
+[Apache Abdera](https://abdera.apache.org). Abdera is intended to be a
 functionally-complete, high-performance implementation of the IETF Atom
 Syndication Format ([RFC 4287](http://www.ietf.org/rfc/rfc4287.txt)) and Atom
 Publishing Protocol ([RFC 5023](http://www.ietf.org/rfc/rfc5023.txt))
@@ -29,8 +29,8 @@ service documents is available at the following address:
 
     http://[server]:[port]/api/atom
 
-E.g., if you're running Liferay locally, navigate to this address to download
-Liferay's Atom service document:
+For example, if you're running Liferay locally, navigate to this address to
+download Liferay's Atom service document:
 
     http://localhost:8080/api/atom
 
@@ -78,22 +78,23 @@ convention. Each URL starts with the same base:
 
     http://[server]:[port]/api/atom
 
-Each of Liferay's Atom collections has a unique which become part of the URL:
+Each of Liferay's Atom collections has a unique name which becomes part of the
+URL:
 
     http://[server]:[port]/api/atom/[collection-name]
 
-E.g., if you're running Liferay locally, the URL for blogs is
+For example, if you're running Liferay locally, the URL for blogs is
 
     http://localhost:8080/api/atom/blogs
 
-Each Atom collection entry has its own ID which is unique in its collection
+Each Atom collection entry has its own ID, unique in its collection
 context. This ID is appended to the URL:
 
     http://[server]:[port]/api/atom/[collection-name]/[entry-id]
 
 The entry URL is used for all of the entry operations: view, update, and delete.
 
-Some collections are media-oriented and entries contain enclosed media content
+Some collections are media-oriented, and entries contain enclosed media content
 (e.g., images). To access media content, append `:media` after the entry ID:
 
     http://[server]:[port]/api/atom/[collection-name]/[entry-id]:media
@@ -102,12 +103,12 @@ The `atom` XML document is publicly available at this URL:
 
     http://[server]:[port]/api/atom
 
-All of the other URLs described in this section require authentication.
+All the other URLs described in this section require authentication.
 
 ## Authentication
 
 If you try to navigate to the URL of an Atom collection or entry without
-authenticating, your request will fail with the status code of *500: Internal
+authenticating, your request fails with the status code of *500: Internal
 Server Error*. For example, if you're running Liferay locally, try to navigate
 to the blogs collection URL in your browser:
 
@@ -124,18 +125,18 @@ that an exception occurred:
             at com.liferay.service.access.policy.SAPAccessControlPolicy.onServiceRemoteAccess(SAPAccessControlPolicy.java:155)
 
 In order for this kind of request to succeed, you need to authenticate. To
-authenticate, you need to include the appropriate header in your HTTP request.
+authenticate, you must include the appropriate header in your HTTP request.
 There are various tools that allow you to construct and send HTTP requests with
 custom headers. For example, you could use the
 [cURL](http://curl.haxx.se) command line tool or the Firefox
 [RESTClient](https://addons.mozilla.org/en-Us/firefox/addon/restclient) plugin.
 
-To use HTTP basic authentication, you first need to follow these steps:
+To use HTTP basic authentication, you must first follow these steps:
 
-1. Construct a string of the form `[username]:[password]`.
-2. Convert this string to use base 64 encoding.
-3. Finally, you need to construct a request header of the form `Authorization:
-   Basic [base-64-encoded-string]`.
+1.  Construct a string of the form `[username]:[password]`.
+2.  Convert this string to use base 64 encoding.
+3.  Finally, you need to construct a request header of the form `Authorization:
+    Basic [base-64-encoded-string]`.
 
 Suppose that you want to view Liferay's Blogs Atom collection using the
 `test@liferay.com` user whose password is `test`. Here's how you could
@@ -161,10 +162,10 @@ accomplish this using curl:
 
 Note that the HTTP basic authentication mechanism simply transmits credentials
 in base 64 encoding but provides no confidentiality via encryption or hashing.
-Thus, HTTP basic authentication is typically used alongside of SSL.
+Thus, HTTP basic authentication is typically used alongside SSL.
 
 Liferay's Atom collections not only allow entries to be read, but also to be
-published, edited, or deleted. Let's learn how to interact with Liferay's
+published, edited, or deleted. Next, you'll learn how to interact with Liferay's
 specific Atom collections in more detail.
 
 ## Liferay's Blogs Atom Collection
@@ -185,8 +186,8 @@ There are two different views for viewing blogs collections:
 - *Company blog entries* are displayed by default or if the `companyId` URL
   parameter is provided. Only `max` entries are displayed.
 
-E.g., if you're running Liferay locally, you can retrieve the first five blog
-entries from a site with a site ID of `20146` by using curl like this:
+For example, if you're running Liferay locally, you can retrieve the first five
+blog entries from a site with a site ID of `20146` by using curl like this:
 
     curl -v 'http://localhost:8080/api/atom/blogs?groupId=20146&page=1&max=5' -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0'
 
@@ -219,14 +220,14 @@ only one blog entry):
       </entry>
     </feed>
 
-This XML document can be read by any Atom feed reader and the blog entry or
+This XML document can be read by any Atom feed reader, and the blog entry or
 entries will be displayed correctly.
 
 ### Liferay Blogs Atom Client
 
 In addition to allowing entries to be read, Liferay's Blogs Atom collection
 allows entries to added, updated, or deleted. In this section, you'll learn how
-to create a client that can manipulate Liferay's blogs collection via the
+to create a client that can manipulate Liferay's blogs collection using the
 [AtomPub](https://en.wikipedia.org/wiki/Atom_%28standard%29) protocol. As
 mentioned before, Liferay's Atom server implementation is based on
 [Apache Abdera](https://abdera.apache.org). Abdera can also be used to create
@@ -242,7 +243,7 @@ In order to create an create an Atom client using Abdera, you should declare the
 
 For example, here's a code snippet that demonstrates how to add a new blog post
 to Liferay. To add a new blog post, an HTTP POST request must be used. Note that
-in this snippet, the `groupId` of the Liferay site within which to add the blog
+in this snippet, the `groupId` of the Liferay site where you're adding the blog
 post is hard-coded.
 
     Abdera abdera = new Abdera();
@@ -279,10 +280,10 @@ Here, `createRequestOptions` is a helper method defined like this:
 
 Next, here's a code snippet that demonstrates how to update an existing blog
 post in Liferay. To update a blog post, an HTTP PUT request must be used. Note
-that in this snippet, the `companyId` of the portal instance within which to
-find the blog post and the `entryId` of the blog post are hard-coded. When
-updating a blog entry (or any portal entry in an Atom collection), you have to
-specify the entry ID.
+that in this snippet, the `companyId` of the portal instance where the blog post
+can be found and the blog post's `entryId` are hard-coded. When updating a blog
+entry (or any portal entry in an Atom collection), you have to specify the entry
+ID.
 
     Abdera abdera = new Abdera();
     Entry entry = abdera.newEntry();
@@ -308,8 +309,8 @@ The same `createRequestOptions` helper method is used here.
 
 Lastly, here's a code snippet that demonstrates how to delete a blog post in
 Liferay. To delete a blog post, an HTTP DELETE request must be used. Note that
-in this snippet, the `companyId` of the portal instance within which to find the
-blog post and the `entryId` of the blog post are hard-coded.
+in this snippet, the `companyId` of the portal instance where the blog post
+exists and the blog post's `entryId` are hard-coded.
 
     Abdera abdera = new Abdera();
     AbderaClient client = new AbderaClient(abdera);
@@ -326,7 +327,7 @@ You can find the Atom client examples in this section in the
 To create a runnable JAR file of the Atom client including all of its
 dependencies, run `gradle shadowJar`.
 [Gradle Shadow](https://github.com/johnrengelman/shadow) provides an easy and
-efficient way to package the Atom client's dependencies alongside of the Atom
+efficient way to package the Atom client's dependencies alongside the Atom
 client code in a runnable JAR file. To run the client from the project
 directory, use one of the following commands:
 
@@ -336,11 +337,11 @@ directory, use one of the following commands:
 
 Before running the Atom client, however, make sure to update any hard-coded
 values (company ID, group ID, or entry ID) to match your portal's content. Then
-rebuild your Atom client JAR file. This Atom client isn't a real-world example
+rebuild your Atom client JAR file. This Atom client isn't a real-world example,
 but it does demonstrate how a real-world client could interact with Liferay's
-Atom collections. (A simple improvement to the Atom client would be to update it
+Atom collections. A simple improvement to the Atom client would be to update it
 so that values like company ID, group ID, and entry ID could be supplied as
-command line arguments instead of being hard-coded.)
+command line arguments instead of being hard-coded.
 
 Of course, Liferay's Blogs Atom collection isn't the only collection that you
 can interact with via a client. You can also create clients to interact with the
@@ -351,8 +352,8 @@ read-only.)
 ## Liferay's Web Content Atom Collection
 
 Just as with Blogs, Liferay's Web Content Atom collection can be listed using
-the Atom protocol. E.g., if you're running Liferay locally, the URL for web
-content is
+the Atom protocol. For example, if you're running Liferay locally, the URL for
+web content is
 
     http://localhost:8080/api/atom/web-content
 
@@ -360,17 +361,17 @@ This chart demonstrates how to interact with the web content collection:
 
 ![Atom Web Content Summary](../../images/atom-blogs-summary.png)
 
-There is only view for viewing web content:
+There is only one view for viewing web content:
 
-- *Group web content entries* are displayed if the `groupId` URL parameter is
-  provided. This view supports pagination via the `page` and `max` URL
-  parameters.
+*Group web content entries* are displayed if the `groupId` URL parameter is
+provided. This view supports pagination via the `page` and `max` URL
+parameters.
 
-Since there is only view, the `groupId` URL parameter must be appended to the
-URL.
+Since there is only one view, the `groupId` URL parameter must be appended to
+the URL.
 
-There is one optional parameter, `type`, that indicates the type of web content.
-By default its value is `general`. 
+<!-- There is one optional parameter, `type`, that indicates the type of web content.
+By default its value is `general`. -->
 
 Suppose you wanted to view a feed of all the web content articles belonging to a
 site with a `groupId` of `20146`. If you're running Liferay locally, you can do
@@ -401,13 +402,15 @@ Liferay returns an XML feed document like this:
         <summary type="text" />
         <title type="text">&lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;root available-locales="en_US" default-locale="en_US"&gt;&lt;Title language-id="en_US"&gt;Web Content Title&lt;/Title&gt;&lt;/root&gt;</title>
         <updated>2015-09-02T19:23:18.000Z</updated>
-        <content type="application/xml">&lt;?xml version="1.0"?&gt;
-     
-    &lt;root available-locales="en_US" default-locale="en_US"&gt;
-    	&lt;dynamic-element name="content" type="text_area" index-type="keyword" index="0" instance-id="byoi"&gt;
-    		&lt;dynamic-content language-id="en_US"&gt;&lt;![CDATA[Content]]&gt;&lt;/dynamic-content&gt;
-    	&lt;/dynamic-element&gt;
-    &lt;/root&gt;</content>
+        <content type="application/xml">&lt;?xml version="1.0"?>
+ 
+    <root available-locales="en_US" default-locale="en_US">
+    	<dynamic-element name="content" type="text_area" index-type="keyword"
+        index="0" instance-id="byoi">
+    		<dynamic-content
+            language-id="en_US"><![CDATA[Content]]></dynamic-content>
+    	</dynamic-element>
+    </root></content>
       </entry>
     </feed>
 
@@ -416,9 +419,10 @@ thus only one entry.
 
 Creating new Web Content articles via an Atom client is similar to creating new
 Blog posts. Note that entries created or updated using AtomPub have many
-attributes set by default: they never expire, never are reviewed, they are
-indexable, are already in the approved workflow status. Deleting web content
-articles via an Atom client works the same way as for deleting blog posts. 
+attributes set by default: they never expire, are never reviewed, and are
+indexable. If workflow has been enabled, however, it is executed normally.
+Deleting web content articles with an Atom client works the same way as for
+deleting blog posts. 
 
 ## Liferay's Documents and Media Files Atom Collection
 
@@ -484,15 +488,15 @@ In this example, there's only one file in the specified folder and thus only one
 entry. (The inclusion of the `respositoryId=20146` URL parameter means that the
 root folder of the site whose `groupId` is `20146` is specified.) 
 
-If you wanted to view a feed of all the documents inside of a specific
-(non-root) documents and media folder, you could do so with curl like this:
+If you wanted to view a feed of all the documents inside a specific (non-root)
+Documents and Media folder, you could do so with curl like this:
 
     curl -v 'http://localhost:8080/api/atom/files?folderId=21503' -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0'
 
 A file entry can be viewed either as an Atom entry (i.e., as Atom XML content)
 or as media (i.e., as binary content).
 
-- To view a file as an Atom entry, use a URL like this:
+-  To view a file as an Atom entry, use a URL like this:
 
         http://localhost:8080/api/atom/files/21519
 
@@ -522,20 +526,21 @@ for more information. In order to add, update, or delete files, the Abdera
 client uses the [Apache Commons HTTP Client](http://hc.apache.org/httpclient-3.x) 
 to send requests to Liferay.
 
-In order to create an create an Atom client using Abdera, you should declare the
-[abdera-client](http://search.maven.org/#artifactdetails|org.apache.abdera|abdera-client|1.1.2|bundle) as a dependency of your project.
+In order to create an Atom client using Abdera, you should declare the
+[abdera-client](http://search.maven.org/#artifactdetails|org.apache.abdera|abdera-client|1.1.2|bundle)
+as a dependency of your project.
 
 There are two ways to add new files to Liferay's Atom file collection:
 
-1. The first way to add a file is to submit an Atom XML document.
-2. The second way is to submit the file directly.
+1. Submit an Atom XML document.
+2. Submit the file directly.
 
-We'll demonstrate both ways.
+You'll learn both ways below.
 
 For example, here's a code snippet that demonstrates how to add a new image file
 to Liferay by submitting an Atom XML document. To add a new file, an HTTP POST
 request must be used. Note that in this snippet, the `groupId` of the Liferay
-site within which to add the file is hard-coded.
+site where you're adding the file is hard-coded.
 
     Abdera abdera = new Abdera();
     Factory factory = abdera.getFactory();
@@ -557,7 +562,10 @@ site within which to add the file is hard-coded.
 
     String filesUrl = "http://localhost:8080/api/atom/files";
 
+    // If you want to specify a non-root folder: 
     // ClientResponse response = client.post(filesUrl + "?folderId=21503", entry, options);
+
+    // If you want to specify the root folder: 
     ClientResponse response = client.post(filesUrl + "?repositoryId=20146", entry, options);
 
 Here, `createRequestOptions` is the same helper method that was defined earlier:
@@ -590,7 +598,10 @@ Liferay by submitting it directly:
 
     String filesUrl = "http://localhost:8080/api/atom/files";
 
+    // If you want to specify a non-root folder: 
     // ClientResponse response = client.post(filesUrl + "?folderId=21503", streamRequest, options);
+
+    // If you want to specify the root folder: 
     ClientResponse response = client.post(filesUrl + "?repositoryId=20146", streamRequest, options);
 
 Here's a code snippet that demonstrates how to update an image file by
@@ -674,7 +685,7 @@ The last Liferay Atom collection that supports adding, updating, and deleting en
 
 As with the other Liferay Atom collections that you've seen (Blogs, Web Content,
 and Documents and Media Files), Liferay's Documents and Media Folders Atom
-collection can be listed using the Atom protocol. E.g., if you're running
+collection can be listed using the Atom protocol. For example, if you're running
 Liferay locally, the URL for documents and media folders is
 
     http://localhost:8080/api/atom/folders
@@ -684,16 +695,15 @@ collection:
 
 ![Atom Documents and Media Folders Summary](../../images/atom-folders-summary.png)
 
-There is only view for viewing Documents and Media folders:
+There is only one view for viewing Documents and Media folders:
 
-- *Folder entries* are displayed if either the `parentFolderId` or the
-  `repositoryId` URL parameter is provided. This view lists all of the
-  subfolders of the specified parent folder. Either the `parentFolderId` or the
-  `repositoryId` parameter must be provided. Use the `repositoryId` parameter to
-  list subfolders of a root folder, otherwise use the `parentFolderId`
-  parameter.
+*Folder entries* are displayed if either the `parentFolderId` or the
+`repositoryId` URL parameter is provided. This view lists all the parent
+folder's subfolders. Either the `parentFolderId` or the `repositoryId` parameter
+must be provided. Use the `repositoryId` parameter to list subfolders of a root
+folder; otherwise use the `parentFolderId` parameter.
 
-Atom entries that represent folder do not contain content. Instead, they point
+Atom entries that represent folders do not contain content. Instead, they point
 to the Files Atom collections using the `src` attribute. Although folders do not
 contain content, the Abdera client requires that content be provided when
 creating or updating folders. You can just pass an empty string to satisfy this
@@ -734,7 +744,7 @@ Liferay returns an XML feed document like this:
     </feed>
 
 In this example, there's only one subfolder (named *My Folder*) of the root
-folder of the specified site and thus only one entry.
+folder in the specified site and thus only one entry.
 
 Creating, updating, and deleting Documents and Media folders via an Atom client
 is similar to creating new blog posts, web content articles, or documents and
