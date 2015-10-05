@@ -45,7 +45,8 @@ At the time of this writing, typing *blade create* into a terminal produces this
        [ -i, --ide <ide> ]        - The type of IDE metadata to create along side
                                     the new project.
        [ -p, --projectType <type> ] - The type of Liferay module to create. Valid
-                                    values are portlet, jspportlet, or service.
+                                    values are portlet, jspportlet, service, or
+                                    servicewrapper.
        [ -v, --version <version> ] - The version of Liferay to create the module
                                     for, by default its 7.0.0
 
@@ -53,14 +54,49 @@ The correct command syntax for creating a project is found under SYNOPSIS:
 
     create [options] [name] [service]
 
+To create a bundle that overrides one of Liferay's services, the `projectType`
+is `servicewrapper`. The command 
+
+    blade create -p servicewrapper -c UserLocalServiceOverride -d ~/Desktop com.liferay.docs.serviceoverride com.liferay.portal.service.UserLocalServiceWrapper
+
+creates a Gradle project named `com.liferay.docs.serviceoverride`on the user's
+desktop (use the `-b` option to change the project's build type, if desired). If
+you look at the Java class created for this project, you'll notice that the
+fully qualified class name you specified in the `service` argument was used in
+full (for example, `import com.liferay.portal.service.UserLocalServiceWrapper`)
+and also parsed into a shortened class name (for example, `extends
+UserLocalServiceWrapper`). Because of this, you must specify a fully qualified
+class name in the `service` argument of both `service` and `servicewrapper`
+project types. Here's the Java class generated from the above `create` command:
+
+    package com.liferay.docs.serviceoverride;
+
+    import com.liferay.portal.service.UserLocalServiceWrapper;
+    import com.liferay.portal.service.ServiceWrapper;
+    import org.osgi.service.component.annotations.Component;
+
+    @Component(
+        immediate = true,
+        property = {
+        },
+        service = ServiceWrapper.class
+    )
+    public class UserLocalServiceOverride extends UserLocalServiceWrapper {
+
+            public UserLocalServiceOverride() {
+                super(null);
+            }
+
+    }
+
 To create a bundle with a JSP Portlet, you could specify
 
     blade create --projectType "jspportlet" --classname "MyJsp" --dir . com.liferay.jspportlet Portlet
 
 The above command creates a JSP Portlet (`projectType`) with a component class
 called MyJspPortlet (`classname`), in the current directory (`dir`). The project
-`name` is `com.liferay.jspportlet`, and the `service` type we are creating is
-`Portlet`.
+`name` (and the package name) is `com.liferay.jspportlet`, and the `service`
+type we are creating is `Portlet`.
 
 Here's the class that's created based on the above command:
 
