@@ -2,13 +2,13 @@
 
 <!-- HOOK NEEDS IMPROVEMENT -->
 
-Needs change in businesses and organizations, so technology must adapt as well.
-Things that used to be done using manual processes are now done electronically.
-You may want your team to sign up on your web site for a holiday party. Maybe
-you need to put up a job posting board every fall, only allowing administrators
-to create new job posts. Maybe you'd like users to manage a notebook or To-Do
-list on their private pages. In these cases, you need custom sets of data, and
-your users need to add and access their information. 
+Business needs change, and technology must adapt to mee those needs.  Things
+that used to be done using manual processes are now done electronically.  You
+may want your team to sign up on your web site for a holiday party. Maybe you
+need to put up a job posting board every fall, only allowing administrators to
+create new job posts. Maybe you'd like users to manage a notebook or To-Do list
+on their private pages. In these cases, you need custom sets of data, and your
+users need to add and access their information. 
 
 In the past, you'd need to be a developer to accomplish any of this. Today, you
 can do it without writing a single line of code. Liferay's *Dynamic Data Lists*
