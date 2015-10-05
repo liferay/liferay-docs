@@ -755,6 +755,29 @@ you've already set up one Liferay instance as a SAML Identity Provider, use a
     - Metadata URL: http://localhost:8080/c/portal/saml/metadata (test this URL
       first)
 
+    **Important**: The SAML 2.0 Provider EE plugin supports using *either* a URL
+    to a SAML IdP metadata file *or* an actual (uploaded) SAML metadata XML
+    file. The value entered in the *Metadata URL* field will only be persisted
+    to the database when there is one entered metadata URL and there is no
+    specified metadata XML file. Otherwise, the portal keeps the original
+    metadata URL in the database. This behavior ensures that once a metadata URL
+    has been specified, there will always be a metadata URL saved in the
+    database. This way, if a portal administrator forgets the previously entered
+    metadata URL or its format, he or she can simply look at the displayed
+    metadata URL and either choose to modify the displayed metadata URL or to
+    overwrite the previously saved metadata URL by specifying a metadata XML
+    file.
+
+    Currently, the SAML 2.0 Provider EE plugin does not provide a way to "clear"
+    the SAML IdP metadata URL or metadata XML file fields using the Control
+    Panel UI. If you really need to clear these fields, it's possible (but not
+    recommended) to delete the contents of the SAML IdP metadata URL and
+    metadata XML file columns of the `SamlSpIdpConnection` table of Liferay's
+    database. (A way to "clear" the SAML IdP metadata URL or metadata XML file
+    fields using the Control Panel UI has been requested as a feature. You can
+    track the issue progress here:
+    [https://issues.liferay.com/browse/LPS-59199](https://issues.liferay.com/browse/LPS-59199)).
+
 6. Finally, after you've saved your certificate and private key information and
    configured an Identity Provider connection, check the *Enabled* box at the
    top of the General tab and click *Save*. Great! You've successfully set
