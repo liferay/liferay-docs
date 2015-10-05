@@ -83,6 +83,45 @@ following imports at the top of the file:
     import com.liferay.mobile.android.v62.guestbook.GuestbookService;
     import com.liferay.mobile.screens.auth.login.LoginScreenlet;
 
-If Android Studio recognizes these imports, then you installed Screens and the 
-Mobile SDKs correctly. Congratulations!. Now you're ready to use Login Screenlet 
-to implement portal authentication in your app. This is shown next. 
+If Android Studio recognizes these imports, then you're good to go! Next, 
+there's one final small but important detail to take care of: making sure your 
+app is pointed at the correct Liferay installation. 
+
+## Configuring Communication with Liferay
+
+For Screens to work properly with your app, you need to point it to your Liferay 
+Portal installation. You do this by adding a `server_context.xml` file in your 
+project's `res/values` directory. Create this file, and add the following code 
+to it:
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+
+        <!-- Change these values for your Liferay Portal installation -->
+
+        <string name="liferay_server">http://10.0.2.2:8080</string>
+
+        <integer name="liferay_company_id">10155</integer>
+        <integer name="liferay_group_id">10182</integer>
+
+    </resources>
+
+As the comment indicates, change the values to match those of your portal 
+installation. The server address `http://10.0.2.2:8080` is suitable for testing 
+with Android Studio's emulator, because it corresponds to `localhost:8080` 
+through the emulator. The portal you set up earlier should be running on 
+`localhost:8080`.
+
+The `liferay_company_id` is your portal instance's ID. You can find it in the 
+*Control Panel* &rarr; *Configuration* &rarr; *Portal Instances* menu. Your 
+portal's instance ID is in the *Instance ID* column. Copy and paste this value 
+from your portal to the `liferay_company_id` value in `server_context.xml`.
+
+The `liferay_group_id` is the ID of the site your app needs to communicate with. 
+Since the app needs to communicate with the Guestbook portlet, navigate to the 
+site you put the Guestbook portlet on. Then select 
+*Admin* &rarr; *Site Administration* &rarr; *Configuration* from the dockbar. 
+The site ID is listed on the *Site Settings* tab. Copy and paste this value 
+from your portal to the `liferay_group_id` value in `server_context.xml`.
+
+Awesome! Now you're ready to implement portal authentication in your app.
