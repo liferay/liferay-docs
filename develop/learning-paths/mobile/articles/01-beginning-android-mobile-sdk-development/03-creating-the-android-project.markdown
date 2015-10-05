@@ -53,38 +53,34 @@ with writing all the authentication code from scratch, when Android Studio
 offers to do most of it for me?" Don't worry; you don't need to write any such 
 code. You might now say, "Ha, you're funny! So I suppose I'll just create it 
 with magic then?" In a manner of speaking, yes. You'll use Liferay Screens to 
-insert Login Screenlet in a blank activity. Login Screenlet contains everything 
+insert Login Screenlet in an empty activity. Login Screenlet contains everything 
 your users need to authenticate with a Liferay Portal installation, including 
 the UI. Adding Login Screenlet to your app only takes about ten minutes. 
 Although this techically isn't magic, it's a bit magical. Now stop thinking 
 about magic, and return your attention to the wizard in Android Studio. Select 
-*Blank Activity*, and click *Next*.
+*Empty Activity*, and click *Next*.
 
 ![Figure 3: The third screen of Android Studio's Create New Project wizard lets you specify an activity for your app.](../../images/android-studio-new-project-03.png)
 
 The final screen of the New Project Wizard asks you to enter the activity's name 
-and the names of the activity's components. The fields in the wizard are 
-summarized here:
+and the name of its layout file. Accept the defaults, and click *Finish*.
 
-- *Activity Name*: The activity's class name.
-- *Layout Name*: The activity's layout name.
-- *Title*: The activity's name.
-- *Menu Resource Name*: The activity's menu resource file name.
+![Figure 4: The final screen of Android Studio's Create New Project wizard asks you to name your activity and its layout file.](../../images/android-studio-new-project-04.png)
 
-![Figure 4: The final screen of Android Studio's Create New Project wizard asks you to name your activity's components.](../../images/android-studio-new-project-04.png)
+A progress indicator appears that indicates that your project is building. 
+Android Studio then opens the project, with the activity's class and layout 
+files open. Click the `activity_main.xml` tab to view the layout file. This file 
+is open in *design view*. Design view gives you a preview of how Android renders 
+the layout in the app. It also contains graphical tools for constructing a UI 
+via drag and drop. Click the *Text* tab at the bottom of `activity_main.xml` to 
+show its *text view*. When you edit layout files in this Learning Path, you'll 
+do so in text view. 
 
-Accept the defaults in the wizard and click *Finish*. A progress indicator 
-appears that indicates that your project is building. Android Studio then opens 
-the project, with the main activity's layout (`activity_main.xml`) open in 
-*design view*. Design view gives you a preview of how a layout file is rendered 
-in the app. It also contains graphical tools for constructing a UI via drag and 
-drop. Click the *Text* tab at the bottom of `activity_main.xml` to show its 
-*text view*. When you edit layout files in this Learning Path, you'll do so in 
-text view. By default, the *project view* appears to the left of the open layout 
-file. It lets you access your project's source files. Most of the files you'll 
-be working with are in the `res/layout` and `java` directories. Your app's 
-layout files are contained in `res/layout`. The `java` directory contains your 
-app's Java source files. See the
+By default, the *project view* appears to the left of the open layout file. It 
+lets you access your project's source files. Most of the files you'll be working 
+with are in the `res/layout` and `java` directories. The `res/layout` directory 
+contains your app's layout files. The `java` directory contains your app's Java 
+source files. See the
 [Android Studio Overview](http://developer.android.com/tools/studio/index.html) 
 for more information on the project view.
 
