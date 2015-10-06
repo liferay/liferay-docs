@@ -76,7 +76,7 @@ policies:
 | `REMOTE_ONLY` | The Screenlet sends the user portrait to the portal. If a connection issue occurs, the Screenlet uses the listener to notify the developer about the error, but it also discards the new portrait. | Use this policy when you need to make sure portal always has the most recent version of the portrait. |
 | `CACHE_ONLY` | The Screenlet stores the user portrait in the local cache. | Use this policy when you need to save the portrait locally, but don't want to change the portrait in the portal. |
 | `REMOTE_FIRST` | The Screenlet sends the user portrait to the portal. If this succeeds, the Screenlet also stores the portrait in the local cache for later usage. If a connection issue occurs, the Screenlet stores the portrait in the local cache with the *dirty flag* enabled. This causes the portrait to be sent to the portal when the synchronization process runs. | Use this policy when you need to make sure the Screenlet sends the new portrait to the portal as soon as the connection is restored. |
-| `CACHE_FIRST` | The Screenlet stores the user portrait in the local cache and then sends it to the portal. If a connection issue occurs, the Screenlet stores the portrait in the local cache with the *dirty flag* enabled. This causes the portrait to be sent to the portal when the synchronization process runs. | Use this policy when you need to make sure the Screenlet sends the new portrait to the portal as soon as the connection is restored. Compared to `REMOTE_FIRST`, this policy always stores the portrait in the cache. The `REMOTE_FIRST` policy only stores the new image in the event of a network error. |
+| `CACHE_FIRST` | The Screenlet stores the user portrait in the local cache and then sends it to the portal. If a connection issue occurs, the Screenlet stores the portrait in the local cache with the *dirty flag* enabled. This causes the portrait to be sent to the portal when the synchronization process runs. | Use this policy when you need to make sure the Screenlet sends the new portrait to the portal as soon as the connection is restored. Compared to `REMOTE_FIRST`, this policy always stores the portrait in the cache. The `REMOTE_FIRST` policy only stores the new image in the cache in the event of a network error or a successful upload. |
 
 ## Required Attributes [](id=required-attributes)
 
@@ -93,7 +93,7 @@ policies:
 | `portraitId` | `number` | The ID of the portrait to load. This attribute is used if `userId` isn't specified. |
 | `uuid` | `string` | The `uuid` of the user whose portrait is being requested. This attribute is used if `userId` isn't specified. |
 | `editable` | `boolean` | Lets the user change the portrait image by taking a photo or selecting a gallery picture. |
-| `offlinePolicy` | `enum` | Configure the loading and saving behaviour in case of connectivity issues. For more details, read the "Offline" section below. |
+| `offlinePolicy` | `enum` | Configure the loading and saving behavior in case of connectivity issues. For more details, read the "Offline" section below. |
 
 ## Methods [](id=methods)
 
