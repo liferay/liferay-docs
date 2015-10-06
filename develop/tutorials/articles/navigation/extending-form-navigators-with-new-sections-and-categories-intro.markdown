@@ -243,7 +243,7 @@ Portal Setting category:
     import org.osgi.service.component.annotations.Component;
 
     /**
-     * @author Sergio González
+     * @author Sergio Gonzï¿½lez
      * @author Philip Jones
      */
     @Component(
