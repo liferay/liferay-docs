@@ -803,7 +803,7 @@ binding can be added in this form:
 
 $$$
 
-### Setting Up Liferay as a SAML Service Provider in a Clustered Environment
+### Setting Up Liferay as a SAML Service Provider in a Clustered Environment [](id=setting-up-liferay-as-a-saml-service-provider-in-a-clustered-environment)
 
 If you want to use Liferay's SAML 2.0 Provider EE plugin as a SSO solution for a
 clustered Liferay environment, follow the steps in this section. Before
