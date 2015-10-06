@@ -837,10 +837,24 @@ If your situation fits the scenario described above, follow these steps:
 
 3. Repeat steps 1 and 2 for each other Liferay node.
 
-4. Copy the `[Liferay Home]/data/keystore.jks` file from the first Liferay node
-   to each other Liferay node. This file is the Java keystore that's created by
-   the SAML 2.0 Provider EE plugin. The keystore contains the valid or
-   self-signed certificate managed by the SAML 2.0 EE Provider plugin.
+4. Copy the keystore file (`[Liferay Home]/data/keystore.jks`, by default) from
+   the first Liferay node to each other Liferay node. This file is the Java
+   keystore that's created by the SAML 2.0 Provider EE plugin. The keystore
+   contains the valid or self-signed certificate managed by the SAML 2.0 EE
+   Provider plugin.
+
+    Note: The keystore file and its default location can vary according to the
+    keystore manager defined by the `saml.keystore.manager.impl` property.
+    Here's the relevant section of the SAML 2.0 Provider EE plugin's
+    `portlet.properties` file:
+
+        #
+        # Set the name of a class that implements
+        # com.liferay.saml.credential.KeyStoreManager. This class is used to load and
+        # save the keystore.
+        #
+        #saml.keystore.manager.impl=com.liferay.saml.credential.DLKeyStoreManagerImpl
+        saml.keystore.manager.impl=com.liferay.saml.credential.FileSystemKeyStoreManagerImpl
 
 5. At this point, all of the Liferay nodes have the same SAML SP configuration
    and each of them can respond to web requests and handle the SAML protocol. To
