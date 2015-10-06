@@ -1,48 +1,16 @@
 # Retrieve and Display Guestbooks [](id=retrieve-and-display-guestbooks)
 
-Your first order of business is to retrieve the guestbooks from the portlet and
-display them in the app's navigation drawer. Recall that the app you created in
-the first series of articles contains a navigation drawer that slides out from
-the left side of the screen. Currently, it contains simple placeholders that are
-in dire need of replacement. 
+The app you created in the first series of articles contains a navigation drawer 
+that slides out from the left side of the screen. The drawer contains a list of 
+menu items typically found in navigation drawers.
 
-![Figure 1: The placeholders currently in the navigation drawer.](../../images/android-guestbook-first-run.png)
+![Figure 1: The placeholders currently in the navigation drawer.](../../images/android-guestbook-initial-drawer.png)
 
-Next, you'll use the Liferay Mobile SDK to call the Guestbook portlet's remote
-services and replace the placeholders with guestbooks. This is conceptually
-simple, but it's a bit more complex in practice. Not to worry! You'll be guided
-though each step in the process. First, you'll do some simple refactoring of
-your project. 
-
-## Refactoring [](id=refactoring)
-
-Before you call the Guestbook portlet's remote services, you should move your 
-project's activity and fragment classes into a new `activity` package. While 
-this isn't required for the app to function, it makes it simpler to find and 
-work with these classes as you add new ones. Perform these steps in Android
-Studio's project view: 
-
-1. Right-click on the package `com.liferay.docs.liferayguestbook` and select
-   *New* &rarr; *Package* in the context menu. In the dialog that appears, type
-   *activity* and click *OK*. 
-
-2. Right-click on the `MainActivity` class and select *Refactor* &rarr; *Move*
-   in the context menu. In the *Move* dialog that appears, make sure the radio
-   button for *To package* is selected, and then click the button to the right
-   that contains the ellipsis. Another dialog then appears that lets you select
-   the new package. In this dialog, expand *liferayguestbook*, click *activity*,
-   and then click *OK*. Back in the Move dialog, click *Refactor*.
-   
-    ![Figure 2: The *Refactor* &rarr; *Move* dialog in Android Studio. Clicking the button highlighted by the red box lets you choose the file's new package.](../../images/android-studio-refactor.png)
- 
-3. Repeat step 2 for the `NavigationDrawerFragment` class. The `MainActivity` 
-   and `NavigationDrawerFragment` classes should now be in the `activity` 
-   package you created in step 1.
-   
-    ![Figure 3: The classes are now in the `activity` package.](../../images/android-studio-after-refactor.png)
-
-Great! Now you'll be able to find these classes quickly as you add new files and 
-functionality to your app. Now it's time to get some guestbooks!
+You don't need any of these items for your app though. You'll instead use the 
+drawer to show the list of guestbooks. This is conceptually simple, but it's a 
+bit more complex in practice. Not to worry! You'll be guided though each step in 
+the process. First, you need to encapsulate the guestbooks that come back from 
+the Guestbook portlet. 
 
 ## Encapsulating Guestbooks [](id=encapsulating-guestbooks)
 
@@ -149,8 +117,8 @@ You should also note the `toString` method in this class. Since all it does is
 return a guestbook's name, it's very simple, but very important. To render
 objects in the drawer, Android calls `toString` on them. If `toString` isn't
 defined for the objects, strings with each object's full package path and
-internal ID are shown. In other words, illegible text is displayed if you don't
-define `toString` here. By defining `toString` to return the name of each
+internal ID are shown. In other words, Android displays illegible text if you 
+don't define `toString` here. By defining `toString` to return the name of each
 `GuestbookModel`, you're telling Android to show each guestbook's name in the
 drawer. 
 
@@ -158,25 +126,17 @@ Next, you'll write the code that retrieves guestbooks from the portlet.
 
 ## Getting Guestbooks [](id=getting-guestbooks)
 
-Before making the server call, you need to prepare the `MainActivity` class to 
-handle `GuestbookModel` objects. Add the following `_guestbooks` variable for 
-these objects: 
+Before making the server call, you need to prepare the `GuestbooksActivity` 
+class to handle `GuestbookModel` objects. Add the following `_guestbooks` 
+variable for these objects: 
 
     private List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
 
-Android Studio doesn't recognize `GuestbookModel` and marks it as an error 
-because you haven't imported it yet. To do so, first place your cursor in the 
-line of code containing `GuestbookModel`. Android Studio then displays a 
-notification telling you the keyboard combination to press to add the import. 
-Press it now. On Windows it's *Alt* + *Enter*, and on Mac it's 
-*Option* + *Return*. You need to remember this going forward. The rest of this 
-learning path assumes that you'll use this to organize any required imports.
+After adding this variable, add the following imports:
 
-Now create a getter method for the `_guestbooks` variable:
-
-    public List<GuestbookModel> getGuestbooksList() {
-        return _guestbooks;
-    }
+    import com.liferay.docs.liferayguestbook.model.GuestbookModel;
+    import java.util.ArrayList;
+    import java.util.List;
 
 You also need a way to refresh `_guestbooks` with the latest `GuestbookModel` 
 objects from the portlet. You'll do this with the `reloadGuestbooks` method. 
@@ -189,17 +149,17 @@ This method replaces any existing content in `_guestbooks` with the list of
     }
 
 You'll use `reloadGuestbooks` when the call to retrive guestbooks from the 
-portlet succeeds. A callback class is needed to make this call. 
+portlet succeeds. You need a callback class to make this call. 
 
 ### Creating a Callback Class [](id=creating-a-callback-class)
 
 Since Android doesn't allow network requests from its main UI thread, you have 
 to make them from another thread by creating a callback class that extends the 
-Mobile SDK's `GenericAsyncTaskCallback` class. See
+Mobile SDK's `GenericCallback` class. See
 [Android's documentation](http://developer.android.com/guide/components/processes-and-threads.html#Threads) 
 for more information on threading. At this point, you might be saying, "Oh no, 
 threading in mobile apps? That sounds complicated!" Fear not! The Mobile SDK's 
-`GenericAsyncTaskCallback` class hides much of the added complexity. 
+`GenericCallback` class hides much of the added complexity. 
 
 To create the callback class for retrieving guestbooks, first create a new 
 package called *callback* in `com.liferay.docs.liferayguestbook`. Then create a 
@@ -210,21 +170,21 @@ code in the class with this code:
 
     import android.widget.Toast;
 
-    import com.liferay.docs.liferayguestbook.activity.MainActivity;
-    import com.liferay.mobile.android.task.callback.typed.GenericAsyncTaskCallback;
+    import com.liferay.docs.liferayguestbook.GuestbooksActivity;
     import com.liferay.docs.liferayguestbook.model.GuestbookModel;
-
-    import java.util.ArrayList;
-    import java.util.List;
+    import com.liferay.mobile.android.callback.typed.GenericCallback;
 
     import org.json.JSONArray;
     import org.json.JSONObject;
 
-    public class GetGuestbooksCallback extends GenericAsyncTaskCallback<List<GuestbookModel>> {
+    import java.util.ArrayList;
+    import java.util.List;
 
-        private MainActivity _activity;
+    public class GetGuestbooksCallback extends GenericCallback<List<GuestbookModel>> {
 
-        public GetGuestbooksCallback(MainActivity activity) {
+        private GuestbooksActivity _activity;
+
+        public GetGuestbooksCallback(GuestbooksActivity activity) {
             _activity = activity;
         }
 
@@ -254,17 +214,16 @@ code in the class with this code:
 
             return guestbooks;
         }
-
     }
 
 So what's going on here? First, you should note that this class has a 
-`MainActivity` instance as its only variable. This is so it can refer results 
-back to the main activity, which runs in Android's main UI thread.
+`GuestbooksActivity` instance as its only variable. This is so it can refer 
+results back to the main activity, which runs in Android's main UI thread.
 `GetGuestbooksCallback`'s constructor thus does only one thing: it sets this
 variable. Next, the `onFailure` and `onSuccess` methods are overridden. As you 
 probably guessed, `onFailure` is called when the request fails, while `onSuccess` 
 is called when it succeeds. In this case, `onFailure` displays a toast message
-with the error. The `onSuccess` method calls the main activity's
+with the error. The `onSuccess` method calls the main activity's 
 `reloadGuestbooks` method. Last but not least is the overridden `transform` 
 method. This method puts all the guestbooks it receives from the portlet into a 
 `List` of `GuestbookModel` objects. It's this `List` that's fed to the 
@@ -277,256 +236,301 @@ portlet, you're ready to make the server call.
 
 ### Making the Server Call [](id=making-the-server-call)
 
-Calling the server requires that you specify the ID of the site you placed the 
-Guestbook portlet on. You can specify the site's ID in a constant. Create this 
-constant now as the following variable in the `MainActivity` class: 
-
-    public static final int SITE_ID = 10182;
-
-In your code, you should make sure the `SITE_ID` value matches the ID of the 
-site your Guestbook portlet is on. It's easy to look this up in your portal. Log 
-in to your Liferay installation and navigate to the site with the Guestbook 
-portlet. In the Dockbar (the bar at the top of the screen), click *Admin*
-&rarr; *Site Administration* &rarr; *Configuration*. The site ID is in the *Site
-Settings* section. It's highlighted by the red box in the following screenshot. 
-
-![Figure 4: The site ID is listed in the *Site Settings* section of the *Site Administration*'s *Configuration* menu.](../../images/site-id.png)
-
-Next, you need to define the method that calls the portlet to get the 
-guestbooks. Add this `getGuestbooks` method to `MainActivity`: 
+The Guestbook Mobile SDK contains the `GuestbookService` class you need to make 
+the server call. You need to call this class's `getGuestbooks` method with the 
+ID of the site that contains the Guestbook portlet. Do this now by adding the 
+following `getGuestbooks()` method to `GuestbooksActivity`: 
 
     protected void getGuestbooks() {
-        Session session = new SessionImpl("http://10.0.2.2:8080",
-                new BasicAuthentication("joebloggs@liferay.com", "test"));
-    
+        Session session = SessionContext.createSessionFromCurrentSession();
         GetGuestbooksCallback callback = new GetGuestbooksCallback(this);
         session.setCallback(callback);
-    
+
         GuestbookService service = new GuestbookService(session);
-    
         try {
-            service.getGuestbooks(SITE_ID);
+            service.getGuestbooks(LiferayServerContext.getGroupId());
         }
         catch (Exception e) {
             String message = "Couldn't get guestbooks " + e.getMessage();
-    
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
     }
 
-Since a portal session is required for the Mobile SDK to communicate with the 
-portal, the `getGuestbooks` method first creates a session with the user's 
-credentials. The session is created by using `SessionImpl` with the server's 
-address (for the Android emulator, `10.0.2.2:8080` is the same as 
-`localhost:8080`) and a `BasicAuthentication` object containing the user's 
-credentials. Be sure to change the user credentials here to match those of the 
-user you created when you set up your portal. A new instance of 
-`GetGuestbooksCallback` is then created and set as the session's callback. Next, 
-the session is used to create a `GuestbookService` instance. This lets you call 
-the Guestbook portlet's remote services, as is done in the `try` block by 
-`service.getGuestbooks(SITE_ID)`. The `getGuestbooks(siteId)` method is the 
-Guestbook portlet's remote service method that retrieves a site's guestbooks. 
+Since the Mobile SDK requires a portal session to communicate with the portal, 
+this method first uses `SessionContext.createSessionFromCurrentSession()` to 
+create a session from the pre-existing session in the app. You might now be 
+thinking, "Whoa there! I haven't created a session yet!" But actually, you have; 
+you just weren't aware of it. You created the session with Login Screenlet. 
+Successful authentication with Login Screenlet creates a session that you can 
+access with Screens's `SessionContext` class. Because you're counting on that 
+session, however, Login Screenlet *must* be used. 
 
-At this point, you might be thinking, "Hang on a minute. What good is an Android 
-app that has the user hardcoded in? It can only be used by one person!" You're 
-right. This implementation is most untenable. However, you don't need to worry 
-about it right now. It's done strictly for simplicity while you're developing 
-the app's main features. You can add a proper UI for portal authentication 
-later. 
+The `getGuestbooks()` method then creates a new `GetGuestbooksCallback` instance 
+and sets it as the session's callback. Next, the session is used to create a 
+`GuestbookService` instance. This lets you call the Guestbook portlet's remote 
+services, as is done in the `try` block by 
+`service.getGuestbooks(LiferayServerContext.getGroupId())`. The 
+`LiferayServerContext` class, another Screens class, lets you retrieve the 
+values you set in `server_context.xml`. It's used here to retrieve the group ID 
+(site ID) needed to make the server call. As you can see, using Login Screenlet 
+provides a great deal of flexibility, even when you don't need to use any other 
+Screenlets.
 
-Now you can call your new `getGuestbooks` method. Place the `getGuestbooks` call 
-in the `onCreate` method of `MainActivity`, following the call to 
-`setContentView(R.layout.activity_main)`. The `onCreate` method should now look 
-like this: 
+Now you can call your new `getGuestbooks()` method. Place the `getGuestbooks()` 
+call in the `onCreate` method of `GuestbooksActivity`, following the call to 
+`setContentView(R.layout.activity_guestbooks)`. The top of the `onCreate` method 
+should now look like this: 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_guestbooks);
         
         getGuestbooks();
-
-        mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
-
-        // Set up the drawer.
-        mNavigationDrawerFragment.setUp(
-                R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
+        
+        ...
     }
 
 As its name implies, an activity's `onCreate` method is called to start the 
 activity. This makes it a good place to make the portlet call that retrieves 
-guestbooks. The `onCreate` method is described further in Android's 
-[activity lifecycle documentation](http://developer.android.com/training/basics/activity-lifecycle/starting.html). 
+guestbooks. Android's 
+[activity lifecycle documentation](http://developer.android.com/training/basics/activity-lifecycle/starting.html) 
+further describes the `onCreate` method. 
 
 Awesome! Your app is now fully capable of retrieving the portlet's guestbooks. 
 Next, you'll display them in the app's UI.
 
 ## Displaying Guestbooks in the Drawer [](id=displaying-guestbooks-in-the-drawer)
 
-In the `NavigationDrawerFragment` class, the app displays a list of items in the 
-drawer by using a [`ListView`](http://developer.android.com/guide/topics/ui/layout/listview.html) 
-with an [adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews). 
-Specifically, an `ArrayAdapter` is used as the data source for the drawer's 
-`ListView`. Even though the `ListView` and `ArrayAdapter` are closely linked, 
-it's important to note that they serve different purposes. The `ListView` 
-is used to render the adapter's contents as a scrollable list. The `ArrayAdapter` 
-contains and renders each individual item for that list. This is all done in the 
-`onCreateView` method of the `NavigationDrawerFragment` class. Android Studio 
-generated this method for you when you created the project: 
+You should first modify the code that creates the app's Action Bar. Android 
+Studio created this code for you in the `GuestbooksActivity` class's `onCreate` 
+method:
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        mDrawerListView = (ListView) inflater.inflate(
-                R.layout.fragment_navigation_drawer, container, false);
-        mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                selectItem(position);
-            }
-        });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(
-                getActionBar().getThemedContext(),
-                android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1,
-                new String[]{
-                        "Section 1",
-                        "Section 2",
-                        "Section 3",
-                }));
-        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-        return mDrawerListView;
+    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+
+By default, the Action Bar displays the activity's name. You need it to display 
+the selected guestbook's name instead. To do this, you need the `ActionBar` and 
+`Toolbar` to be instance variables that you can refer to anywhere in the 
+activity. Add these variables to the `GuestbooksActivity` class now: 
+
+    private ActionBar actionBar;
+    private Toolbar toolbar;
+
+Although you can write the Action Bar initialization code in `onCreate`, you'll 
+write it here in a separate method. Add the following `initActionBar()` method:
+
+    private void initActionBar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
+        actionBar.setTitle("");
+
+        if (actionBar != null) {
+            actionBar.setHomeAsUpIndicator(R.drawable.liferay_icon);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
     }
 
-Before you change this method to display the list of guestbooks instead of the
-hardcoded `"Section *"` strings, read the existing code to understand how it
-works. The `onCreateView` method is part of the
-[fragment activity lifecycle](http://developer.android.com/guide/components/fragments.html#Creating).
-Specifically, `onCreateView` creates the fragment's UI. Here, it first
-*inflates* the `ListView` by calling `inflater.inflate` on the fragment's layout
-file `fragment_navigation_drawer.xml`. This file is represented by
-`R.layout.fragment_navigation_drawer`. You can think of this representation as
-an address the app uses to find the layout file. That's all fine and well, but
-why do XML files need air pumped into them? Fortunately, we're not talking about
-that kind of inflation; Liferay is fresh out of air pumps and pressure gauges.
-When an Android layout XML file is inflated, its XML is converted into Java code
-that the system uses to draw the UI. In this case,
-`fragment_navigation_drawer.xml` only contains a single `ListView`, so it can be
-cast to a `ListView` object following inflation. 
+Like the code in `onCreate`, this method also creates a `Toolbar` and sets it as 
+the Action Bar.  This code also, however, sets the Action Bar's title to an 
+empty string. This prevents the activity's title from showing in the Action Bar 
+before the guestbooks can be retrieved from the portal. Now you need to call 
+`initActionBar()` in `onCreate`. Place the call immediately above the 
+`getGuestbooks()` call. Then delete the original `Toolbar` initialization code 
+in `onCreate`; it's no longer needed since you included it in `initActionBar`. 
+The top of the `onCreate` method should now look like this:
 
-After this, a click listener for the list's items is created and set to the 
-`ListView`. This lets the app respond when the user taps an item in the drawer. 
-The click listener does this by calling the `selectItem` method with the 
-selected item's position in the list (for now, you don't need to worry about 
-what this method does). 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_guestbooks);
+        
+        initActionBar();
+        getGuestbooks();
 
-Next, the `ArrayAdapter` is created inside the `setAdapter` method. There are 
-two main things you should take note of in the `ArrayAdapter`. First is that it 
-uses the layout `simple_list_item_activated_1` to render each of its items. This 
-is one of Android's default layouts and is suitable in cases where each list 
-item is only a single string. Using a default layout also means that you don't 
-have to write your own layout file. Second is the array of hardcoded `"Section
-*"` strings. You'll replace this shortly. The `setAdapter` method sets the
-adapter to the `ListView`. The `onCreateView` method then finishes by setting 
-the currently selected list item in the UI and returning the `ListView`. 
+        ...
+    }
 
-+$$$
+Now you're ready to write the code that puts the guestbooks in the navigation 
+drawer. First, you need to put a 
+[`ListView`](http://developer.android.com/guide/topics/ui/layout/listview.html) 
+in the drawer's layout. You'll use this `ListView` to display the guestbooks. In 
+`activity_guestbooks.xml`, replace the existing 
+[`NavigationView`](https://developer.android.com/reference/android/support/design/widget/NavigationView.html) 
+with this one: 
 
-**Note:** You may have noticed that the code Android Studio generated in 
-`NavigationDrawerFragment` uses the deprecated class 
-[`ActionBarDrawerToggle`](https://developer.android.com/reference/android/support/v4/app/ActionBarDrawerToggle.html) 
-to create the navigation drawer. The preferred way to create a navigation drawer 
-is with the 
-[`NavigationView`](http://developer.android.com/reference/android/support/design/widget/NavigationView.html) 
-class, which is part of the new 
-[Android Design Support Library](http://android-developers.blogspot.com/2015/05/android-design-support-library.html). 
-A bug in `NavigationView`, however, requires you to use a workaround when 
-programmatically adding items to the drawer. For this reason, 
-`ActionBarDrawerToggle` is used in this Learning Path. 
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_guestbooks">
 
-$$$
+        <ListView
+            android:id="@+id/drawer_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:choiceMode="singleChoice" />
 
-Now that you understand the basics of how `onCreateView` works, you'll change it 
-to display guestbooks from the Guestbook portlet. Begin by declaring the 
-following variable and its accompanying getter method in the 
-`NavigationDrawerFragment` class: 
+    </android.support.design.widget.NavigationView>
 
+When compared to the `NavigationView` it replaced, this new `NavigationView` 
+contains the `ListView`, and lacks the `app:menu` attribute. This attribute 
+points to the menu resource file used to create the drawer's items. Since you'll 
+instead use the `ListView` to display the drawer's items (the guestbooks), you 
+don't need to use `app:menu`. 
+
+Now that you've specified the drawer's layout, you need to write the code that 
+controls the drawer. You'll do this in `GuestbooksActivity`. First, add the 
+following variables to this class:
+
+    private DrawerLayout drawer;
+    private ListView drawerListView;
     private ArrayAdapter _adapter;
-    ...
-    public ArrayAdapter getArrayAdapter() {
-        return _adapter;
-    }
 
-Next, replace `onCreateView` with the following code:
+As with the Action Bar, you'll initialize the drawer in its own method. Add 
+this method now:
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        mDrawerListView = (ListView) inflater.inflate(
-                R.layout.fragment_navigation_drawer, container, false);
-        mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                selectItem(position);
-            }
-        });
+    private void initDrawer() {
+        // drawer initialization
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, 
+                R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
         
+        // ListView initialization
+        drawerListView = (ListView) findViewById(R.id.drawer_list_view);
         _adapter = new ArrayAdapter<GuestbookModel>(
-                getActionBar().getThemedContext(),
+                this,
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                ((MainActivity)getActivity()).getGuestbooksList());
-        mDrawerListView.setAdapter(_adapter);
-        
-        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-        return mDrawerListView;
+                _guestbooks);
+        drawerListView.setAdapter(_adapter);
     }
 
-This method creates an `ArrayAdapter` of `GuestbookModel` objects by using the 
-`getGuestbooksList()` method you created earlier. This adapter is then set
-to the `ListView` in the drawer. The rest of `onCreateView` remains unchanged. 
+The `initDrawer` method's first few lines match the drawer initialization code 
+in `onCreate`. Delete this code in `onCreate`. You don't need it there since 
+you'll call it via `initDrawer` instead. The last part of `initDrawer` 
+initializes the drawer's `ListView` and creates an 
+[adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews) 
+for it. Note that `_guestbooks` is the last argument to the adapter's 
+constructor. This sets the list of guestbooks as the adapter's data source. The 
+`setAdapter` method then sets the adapter to the `ListView`.
 
-You now need to notify the adapter of any changes to its underlying data in the 
-`MainActivity` class. Because these changes occur when guestbooks are 
-successfully retrieved from the server, this is done in the `reloadGuestbooks` 
-method. Add the following line of code at the end of this method:
+In the `onCreate` method, place the call to `initDrawer()` immediately below the 
+`initActionBar` call. Also, because you want to use the same `DrawerLayout` 
+instance throughout the class, delete the line of code that creates a new 
+`DrawerLayout` in the `onBackPressed` method. 
 
-    mNavigationDrawerFragment.getArrayAdapter().notifyDataSetChanged();
+Now you're ready to set what happens when the user selects a guestbook in the 
+drawer. First, change the `GuestbooksActivity` class to implement 
+`AdapterView.OnItemClickListener` instead of 
+`NavigationView.OnNavigationItemSelectedListener`. Then delete the 
+`onNavigationItemSelected` method, and the `NavigationView` code at the end of 
+the `onCreate` method. Now you need to implement 
+`AdapterView.OnItemClickListener`. Do so now by adding the following 
+`onItemClick` method:
 
-Awesome! You're almost done! There's one final detail to address before running 
-the app. 
+    @Override
+    public void onItemClick(final AdapterView<?> parent, final View view, 
+        final int position, final long id) {
+        
+        drawerListView.setItemChecked(position, true);
+        GuestbookModel selectedGuestbook = _guestbooks.get(position);
+        actionBar.setTitle(selectedGuestbook.getName());
 
-## Giving Your App Network Access [](id=giving-your-app-network-access)
+        drawer.closeDrawers();
+    }
 
-By default, Android apps can't access network connections. This means that even 
-though your app is now capable of retrieving and displaying guestbooks from the 
-portlet, the Android system doesn't let it. No worries! Adding this permission
-is simple. Open your app's `AndroidManifest.xml` and put the following line of
-code above the opening `application` tag: 
+<!-- Explain this method -->
 
-    <uses-permission android:name="android.permission.INTERNET" />
+Now add the following code to the end of the `initDrawer` method:
 
-In short, the Android manifest file (`AndroidManifest.xml`) is where your app's 
-components are registered so they're recognized by the Android system. App 
-permissions are also placed in the manifest. You can find more information in 
-Android's [documentation on the manifest](http://developer.android.com/guide/topics/manifest/manifest-intro.html). 
-In most cases, Android Studio manages the manifest for you. For example,
-declarations for your app and its activity already appear in the manifest, even
-though you never put them there manually. Defining your app's permissions,
-however, is one case where you need to manually edit the manifest. Now that
-your app has network access, it's time to run it! 
+    drawerListView.setOnItemClickListener(this);
 
-## Running Your App [](id=running-your-app)
+Now add the following code to the end of the `reloadGuestbooks` method:
 
-Make sure that your portal is running and then run your app as you did before, 
-by clicking the green play button in Android Studio's toolbar. If the emulator 
-is already running, you're prompted to select it when your app deploys. With the 
-app now running in the emulator, open the drawer. Your guestbooks now appear in 
-the drawer! 
+    _adapter.notifyDataSetChanged();
 
-![Figure 5: The guestbooks from the Guestbook portlet now appear in the drawer.](../../images/android-guestbook-drawer-01.png)
+    GuestbookModel firstGuestbook = _guestbooks.get(0);
+    actionBar.setTitle(firstGuestbook.getName());
+
+Next, add the following code above the `return` statement in the 
+`onOptionsItemSelected` method:
+
+    if (id == android.R.id.home) {
+        drawer.openDrawer(GravityCompat.START);
+        return true;
+    }
+
+Because you're no longer using the menu containing the default navigation drawer 
+items, you can delete its resource file. Delete the file 
+`res/menu/activity_guestbooks_drawer.xml`.
+
+There's one more thing you need to take care of before launching the app again. 
+Open the layout file `nav_header_guestbooks.xml`. The parent `LinearLayout` has 
+a height of `160dp`, which corresponds to `@dimen/nav_header_height`. To prevent 
+the drawer header and guestbook list from overlapping, you must pad the drawer's 
+`ListView` by this value. Add the following to the `ListView` in 
+`activity_guestbooks.xml`, below the `android:layout_height` setting:
+
+    android:paddingTop="@dimen/nav_header_height"
+
+That's it! Run the app. After you log in, the app retrieves the guestbooks from 
+the portal and displays the first guestbook's name in the Action Bar.
+
+![Figure x: The app now displays the first guestbook's name in the Action Bar.](../../images/android-first-guestbook.png)
+
+Open the drawer to reveal the list of guestbooks. Select a different guestbook 
+from the drawer. The drawer then closes and the selected guestbook's name is 
+displayed in the Action Bar. Awesome! It works! There's a small issue, however, 
+with the drawer (besides being hideous). Its header displays *Android Studio* 
+and *android.studio@android.com*. You obviously don't want your users to see 
+this. 
+
+![Figure x: The header displays generic text by default.](../../images/android-guestbook-drawer-01.png)
+
+The two `TextView` elements in `nav_header_guestbooks.xml` use the 
+`android:text` attribute to hardcode this text. To remove the text, you could 
+delete the `TextView` elements. To show different static text, you could change 
+the `android:text` attributes' values. Using these `TextView` elements to show 
+the logged-in user's name and email address is a much better solution though. 
+Replace the `TextView` elements with the following code:
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:id="@+id/user_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/user_email" />
+
+The `TextView` elements no longer contain hardcoded text, and each now contains 
+a unique `android:id` value that you'll use to set the text dynamically. Next, 
+open `GuestbooksActivity` and place the following code in the `onCreate` method, 
+following the `getGuestbooks()` call:
+
+    User user = SessionContext.getLoggedUser();
+    TextView userNameText = (TextView) findViewById(R.id.user_name);
+    TextView userEmailText = (TextView) findViewById(R.id.user_email);
+    userNameText.setText("Welcome, " + user.getFirstName() + "!");
+    userEmailText.setText(user.getEmail());
+
+In this code, you use `SessionContext.getLoggedUser()` to return the logged-in 
+user as a Screens `User` object. This lets you use the `User` class's 
+`getFirstName()` and `getEmail()` methods, respectively, to obtain the user's 
+first name and email address. You then set these values as the text to the 
+respective `TextView` objects you specified in the previous step. 
+
+Run the app again and open the drawer after signing in. Although the drawer is 
+still ugly, at least it's now polite. 
+
+![Figure x: The navigation drawer now contains the logged-in user's name and email address.](../../images/android-guestbook-drawer-02.png)
 
 Great! Now you're ready to retrieve and display the guestbook entries. 
