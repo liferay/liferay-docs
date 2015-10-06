@@ -19,7 +19,7 @@ simple bundle using the Plugins SDK.
 
     This creates a project named `simple-bundle-portlet`.
 
-2 . Delete the `-portlet` suffix from your project's name. You don't need the
+2.  Delete the `-portlet` suffix from your project's name. You don't need the
     `-portlet` suffix since you're just creating a simple bundle, not a portlet. 
 
 3.  Also, delete your project's `docroot` folder. Even if you were creating a
@@ -72,7 +72,7 @@ simple bundle using the Plugins SDK.
     and `.project` files based on the contents of your project.
 
 9.  To turn your project into a simple bundle, you'll implement a
-    `[BundleActivator](https://osgi.org/javadoc/r5/core/org/osgi/framework/BundleActivator.html)`.
+    [`BundleActivator`](https://osgi.org/javadoc/r5/core/org/osgi/framework/BundleActivator.html).
     If your project does not have a `src` folder, create one and add it to your
     Eclipse build path. Right-click on your project's `src` folder and select
     *New* &rarr; *Package* and create a new package. For example, create a new
