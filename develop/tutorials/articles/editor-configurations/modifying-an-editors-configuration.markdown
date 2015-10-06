@@ -1,4 +1,4 @@
-# Modifying an Editor's Configuration
+# Modifying an Editor's Configuration [](id=modifying-an-editors-configuration)
 
 Liferay supports many different kinds of WYSIWYG editors that can be used in
 portlets to edit content. Depending on the content you're editing, you may want
@@ -6,7 +6,7 @@ to modify the editor to provide a better configuration for your needs. In this
 tutorial, you'll learn how to extend your Liferay supported WYSIWYG editor to
 add new or modify existing configurations exactly how you'd like.
 
-## Extending the Editor's Configuration
+## Extending the Editor's Configuration [](id=extending-the-editors-configuration)
 
 To modify the editor's configuration, create a module that has a component that
 implements the
@@ -126,7 +126,7 @@ Liferay supports several different types of WYSIWYG editors, which include
 Make sure to visit each editor's configuration API to learn what each editor
 offers for configuration settings.
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor)
 
