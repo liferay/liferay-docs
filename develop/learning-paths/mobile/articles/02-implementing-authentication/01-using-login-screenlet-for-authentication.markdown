@@ -88,11 +88,11 @@ code, you should now have the following additional imports in your
     import com.liferay.mobile.screens.context.User;
     import android.widget.Toast;
 
-You should also remove any unused imports. Now run the app. You can do this by 
-clicking the green *play* button in the toolbar, or selecting *Run 'app'* from 
-the *Run* menu. Unlock the emulator once it launches. Your app then 
-automatically opens to the Login Screenlet. Enter your credentials and click 
-*SIGN IN*. The toast message then pops up saying that the login succeeded. 
+You should also remove any unused imports. Now run the app by clicking the green 
+*play* button in the toolbar, or selecting *Run 'app'* from the *Run* menu. 
+Unlock the emulator once it launches. Your app then automatically opens to the 
+Login Screenlet. Enter your credentials and click *SIGN IN*. The toast message 
+then pops up saying that the login succeeded. 
 
 ![Figure 1: Login Screenlet successfully authenticated you with the portal.](../../images/android-login-screenlet-success.png)
 
@@ -104,19 +104,19 @@ added any other functionality yet. You'll fix this next.
 
 In project view, right click the package `com.liferay.docs.liferayguestbook` and 
 select *New* &rarr; *Activity* &rarr; *Navigation Drawer Activity* to launch the 
-New Android Activity wizard. This is the same wizard you used when creating an 
-empty activity during project creation. Name the activity `GuestbooksActivity`, 
-accept the default values for the remaining fields, and click *Finish*. After 
-Android Studio creates the activity, the `GuestbooksActivity` class and 
+New Android Activity wizard. This is the same wizard you used to create an empty 
+activity during project creation. Name the activity `GuestbooksActivity`, accept the 
+default values for the remaining fields, and click *Finish*. After Android 
+Studio creates the activity, the `GuestbooksActivity` class and 
 `content_guestbooks.xml` layout open in the editor. Close them. You don't need 
 to edit these files yet.
 
-Now you need for the app to open this new activity when login succeeds. You can 
+Now you need for the app to open this new activity when login succeeds. You'll 
 do this by using an *intent* in the `onLoginSuccess` method of `MainActivity`. 
 In short, Android intents are messaging objects that you can use to launch other 
 activities. For more information, see 
-[this guide on intents and intent filters in Android's documentation](http://developer.android.com/guide/components/intents-filters.html). 
-To launch the `GuestbooksActivity` when login succeeds, replace the contents of 
+[this guide on intents in Android's documentation](http://developer.android.com/guide/components/intents-filters.html). 
+To launch `GuestbooksActivity` when login succeeds, replace the contents of 
 `onLoginSuccess` with the following code: 
 
     Intent intent = new Intent(this, GuestbooksActivity.class);
@@ -128,12 +128,12 @@ import to `MainActivity`:
 
     import android.content.Intent;
 
-Now you're ready to see it in action! Run the app in the emulator and log in 
-when prompted. When login succeeds, the new activity opens. 
+Now you're ready to see the intent in action! Run the app in the emulator and 
+log in when prompted. When login succeeds, the new activity opens. 
 
 ![Figure 2: The app takes you to the new activity after you log in.](../../images/android-login-success-intent.png)
 
 Nice work! You've successfully implemented portal authentication in the Android 
-app. It didn't take you that long, either. All the app does, however, is log in 
-to the portal; it doesn't display any content from the portal. You'll take care 
-of this next.
+app. It didn't take you that long, either. All the app does though is log in to 
+the portal; it doesn't display any portal content. You'll take care of this 
+next.
