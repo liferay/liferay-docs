@@ -3,9 +3,9 @@
 Offline mode in Liferay Screens lets your apps function when connectivity is 
 unavailable or intermittent. Even though the steady march of technology makes 
 connections more stable and prevalent, there are still plenty of places the 
-internet has trouble reaching. Areas with complex terrain, including cities with 
+Internet has trouble reaching. Areas with complex terrain, including cities with 
 large buildings, often lack stable connections. Remote areas typically don't 
-have a connection at all. Using Screens's offline mode in your apps gives your 
+have connections at all. Using Screens's offline mode in your apps gives your 
 users flexibility in these situations. 
 
 This tutorial shows you how to use offline mode in Screenlets. For an 
@@ -16,9 +16,9 @@ these platforms differs.
 
 ## Configuring Screenlets for Offline Mode [](id=configuring-screenlets-for-offline-mode)
 
-If you want to enable the offline mode in any of your screenlets, you need to 
-configure the `offlinePolicy` attribute when inserting the Screenlet's XML in a 
-layout. This attribute can take four possible values:
+If you want to enable offline mode in any of your screenlets, you must configure
+the `offlinePolicy` attribute when inserting the Screenlet's XML in a layout.
+This attribute can take four possible values:
 
 - `REMOTE_ONLY`
 - `CACHE_ONLY`
@@ -57,7 +57,7 @@ This code registers the `CacheReceiver` and `CacheSyncService` components. The
 - When a connectivity change occurs (for example, when the network connection is 
 restored).
 - When Login Screenlet successfully completes the login.
-- When a specific `resyc` intent is broadcasted. In this case, use 
+- When a specific `resync` intent is broadcasted. In this case, use 
 `context.sendBroadcast(new Intent("com.liferay.mobile.screens.cache.resync"));`.
 
 The `CacheSyncService` performs the synchronization process when invoked from 
