@@ -78,7 +78,7 @@ used from Liferay Screens. When the app is created, copy the *Consumer Key* and
 ## Offline [](id=offline)
 
 This Screenlet doesn't support offline mode. It requires network connectivity.
-If you need to automatically log in users, even when there's no network 
+If you need to log in users automatically, even when there's no network 
 connection, you can use the `credentialsStore` attribute together with the 
 `SessionContext.loadSessionFromStore` method. 
 
