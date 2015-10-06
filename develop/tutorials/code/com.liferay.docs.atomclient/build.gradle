@@ -1,0 +1,31 @@
+// Declare the Gradle Shadow (https://github.com/johnrengelman/shadow) plugin so that you can create the Atom client as a runnable JAR file with all dependencies included
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '1.2.2'
+}
+
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.liferay.docs.atomclient.AtomClient'
+    }
+}
+
+// In this section, you declare where to find the dependencies of your project
+repositories {
+    jcenter()
+    maven {
+        url 'https://repository.liferay.com/nexus/content/repositories/liferay-snapshots-ce/'
+    }
+}
+
+// In this section, you declare the dependencies for your production and test code
+dependencies {
+    // The production code uses the SLF4J logging API at compile time
+    compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'com.liferay.portal:portal-service:7.0.0-SNAPSHOT'
+    compile 'org.apache.abdera:abdera-client:1.1.2'
+
+    testCompile 'junit:junit:4.12'
+}
