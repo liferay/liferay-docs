@@ -1,17 +1,19 @@
 # Creating Sites
 
-As stated in the [Building a site with Liferay Web Content](/discover/portal/-/knowledge_base/6-2/building-a-site-with-liferay-web-content)
-section, a site is a set of pages that can be used to publish content or
-applications. Sites can be independent or they can be associated with an
-organization and serve as the website for that organization. With Liferay, you
-can create as many different sites as you like within the context of a single
-portal.
+A site contains a set of pages that can be used to publish content or
+applications. By default, Liferay Portal starts with a single site that has a
+single page. You can build any website you wish out of this, complete with
+multi-nested page hierarchies. The site can stand independently or can be
+associated with an organization to serve as the website for that organization.
+Liferay's framework provides all the site-building tools you need to manage a
+successful site.
 
-You can use sites in Liferay to build many different kinds of websites. Whether
-you're building a large corporate website, a company intranet, or a small site
-designed to facilitate collaboration among team members, Liferay's framework
-provides all the tools you need. To support different kinds of collaboration and
-social scenarios, Liferay's sites provide three membership types:
+## Understanding Site Management
+
+Whether you're building a large corporate website or a small site designed to
+facilitate collaboration among team members, supporting different kinds of
+collaboration and social scenarios is a must. Liferay's sites provide three
+membership types:
 
 - Open: Users can become members of the site at any time. Users can join sites
 from the *My Sites* portlet.
@@ -32,22 +34,22 @@ Members of a site can be given additional privileges within the site by using
 Liferay's permission settings. It is also possible to assign different roles
 within the site to different members. This can be done through *site roles*
 which are defined equally for all sites or *teams* which are unique for each
-site.
+site. These concepts will be discussed later in the chapter.
 
-As of Liferay 6.2, sites can be organized hierarchically, just like
-organizations. The difference between sites and organizations, of course, is
-that sites are used to organize pages, content, application data, and users (via
-site memberships) whereas organizations are only used to group users. Content
-sharing is available for sites within the same hierarchy. For instance, if a
-parent site has a document called *Lunar Goals and Objectives* and would like
-for all its subsites to have a copy, the parent site's administrator can enable
-content sharing to automatically share the document with its subsites, instead
-of having to send each site the document individually. Also, content sharing
-privileges can be set to let every site administrator share content across sites
-they manage.
+Sites can also be organized hierarchically, just like organizations. The
+difference between sites and organizations, of course, is that sites are used to
+organize pages, content, application data, and users (via site memberships)
+whereas organizations are only used to group users. Content sharing is available
+for sites within the same hierarchy. For instance, if a parent site has a
+document called *Lunar Goals and Objectives* and would like for all its subsites
+to have a copy, the parent site's administrator can enable content sharing to
+automatically share the document with its subsites, instead of having to send
+each site the document individually. Also, content sharing privileges can be set
+to let every site administrator share content across sites they manage.
 
-Please refer to the Sites Admin Portlet section of Liferay's `portal.properties`
-file for a list of relevant configurable properties. For example, the
+Please refer to the [Sites Admin Portlet](https://docs.liferay.com/portal/7.0-a1/propertiesdoc/portal.properties.html#Sites&nbsp;Admin&nbsp;Portlet)
+section of Liferay's `portal.properties` file for a list of relevant
+configurable properties. For example, the
 `sites.content.sharing.with.children.enabled` property allows you to disable
 content sharing between sites and subsites, disable it by default while allowing
 site administrators to enable it per site, or to enable it by default while
@@ -105,7 +107,7 @@ a Sunsets site.
 
 Liferay always provides one default site, which is also known as the main site
 of the portal. This site does not have its own name but rather takes the name of
-the portal. By default the portal name is *liferay.com* but this value can be
+the portal. By default the portal name is *Liferay* but this value can be
 changed through the simple configuration of the setup wizard. The portal name
 can also be changed at any time through the Control Panel within *Portal
 Settings*.
