@@ -62,7 +62,7 @@ policies:
 | `borderWidth` | `number` | The size in pixels for the portrait's border. The default value is 1. Set this to `0` if you want to hide the border.|
 | `borderColor` | `UIColor` | The border's color. Use the system's transparent color to hide the border. |
 | `editable` | `boolean` | Lets the user change the portrait image by taking a photo or selecting a gallery picture. The default value is `false`. Portraits loaded with the `load(portraitId, uuid, male)` method aren't editable. |
-| `offlinePolicy` | `string` | Configure the loading and saving behaviour in case of connectivity issues. For more details, read the "Offline" section below. |
+| `offlinePolicy` | `string` | Configure the loading and saving behavior in case of connectivity issues. For more details, read the "Offline" section below. |
 
 ## Methods [](id=methods)
 
