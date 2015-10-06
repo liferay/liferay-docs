@@ -59,14 +59,23 @@ The Sites Directory portlet is a configurable portlet that can allow users to
 view a hierarchy of sites and subsites. It enables users to navigate to any of
 the displayed sites. To use this portlet to display site hierarchies, add it to
 a page, open its Configuration window, and under Display Style, select *List
-Hierarchy*. The Site Map portlet is another configurable portlet that's intended
+Hierarchy*. The My Sites Directory portlet is very similar to the Sites
+Directory portlet, except that it lists only the sites a user belongs to.
+
+The Site Map portlet is another configurable portlet that's intended
 to help users navigate among pages within a site. When configuring this portlet,
 a site administrator can select a root page and a display depth. Just as sites
 can be organized hierarchically, so can the pages within a site. The display
 depth of the Site Map portlet determines how many levels of nested pages to
 display.
 
-![Figure 2.3: The Site Directory portlet can allow users to navigate between sites organized hierarchically. The Site Map portlet can allow users to navigate among pages of site organized hierarchically.](../../images/site-directory-site-map.png)
+![Figure 1: The Sites Directory portlet can allow users to navigate between sites organized hierarchically. The Site Map portlet can allow users to navigate among pages of site organized hierarchically.](../../images/site-directory-site-map.png)
+
+Another useful administrative portlet is the Site Members portlet. This
+enables administrators to survey all the users, organizations, and user groups
+that reside in the site. Similarly, Liferay provides the Portal Directory
+portlet, which functions the same as the Site Members portlet, but globally
+scoped for all sites in the portal.
 
 Liferay's sites have two categories of pages called page sets. There are two
 kinds of page sets: public pages and private pages. A site can have only public
