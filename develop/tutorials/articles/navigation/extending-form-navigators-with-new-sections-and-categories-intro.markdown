@@ -453,10 +453,10 @@ target your servlet context to your bundle.
 If you're curious about what a working entry implementation looks like, check
 out the example entry class next. 
 
-## Example Form Navigator Entry Class
+## Example Form Navigator Entry Class [](id=example-form-navigator-entry-class)
 
- here's
-the Form Nav Extension portlet's entry class
+Inspecting an example implementation can help you work out details in your
+implementation. Here's the Form Nav Extension portlet's entry class
 `MyAppCompanySettingsFormNavigatorEntry`:
 
         package com.liferay.docs.formnavextensionportlet;                                      
