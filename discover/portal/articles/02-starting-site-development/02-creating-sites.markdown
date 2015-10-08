@@ -114,6 +114,9 @@ want to share. For example, those who enjoy taking pictures of landscapes could
 join a Landscapes site and those who enjoy taking pictures of sunsets could join
 a Sunsets site.
 
+<!-- Descibe how sites can share content with other sites here: LRDOCS-1770.
+-Cody -->
+
 Liferay always provides one default site, which is also known as the main site
 of the portal. This site does not have its own name but rather takes the name of
 the portal. By default the portal name is *Liferay* but this value can be
@@ -121,35 +124,39 @@ changed through the simple configuration of the setup wizard. The portal name
 can also be changed at any time through the Control Panel within *Portal
 Settings*.
 
-## Creating and Managing Sites [](id=creating-and-managing-sites)
+## Adding Sites
 
 Sites can be created through the Control Panel by a portal administrator.
 Liferay's Control Panel provides an administrative interface for managing your
-portal. There are four main sections of the Liferay's Control Panel: Users,
-Sites, Apps, and Configuration. In this section, we'll learn how to use the
-Control Panel to manage sites. In the next section, we'll learn about using the
-Control Panel to manage site templates and page templates. For information about
-the Apps, Users, and Configuration sections of the Control Panel, please see the
+portal. There are four main sections of the Liferay's Control Panel: Sites,
+Users, Apps, and Configuration. In this section, you'll learn how to use the
+Control Panel to manage sites. In a later section, you'll learn about using the
+Control Panel to manage site templates. Site templates allow portal
+administrators to create multiple sites with the same default set of pages and
+content. For information about the Apps, Users, and Configuration sections of
+the Control Panel, see the 
 [Leveraging the Liferay Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace),
 [User Management](/discover/portal/-/knowledge_base/6-2/user-management), and
 [Using the Control Panel](/discover/portal/-/knowledge_base/6-2/using-the-control-panel)
 sections, respectively.
 
+<!-- Replace links above, when available -Cody -->
+
 +$$$
 
-**Tip:** Prior to Liferay 6.2, the Control Panel included interfaces both for
-site administration and for portal administration. In Liferay 6.2, these
-interfaces have been separated. If you're signed in as an administrator, you can
-access the Liferay 6.2 Control Panel by clicking *Admin* &rarr; *Control Panel*.
-To manage a single site, navigate to the site by clicking on *My Sites* and
-clicking on the site's name. Then click on *Admin* &rarr; *Site Administration*.
-The Site Administration interface allows to configure site settings and manage
-the pages, content, and users of the site.
+**Tip:** If you're signed in as an administrator, you can access all sites by
+navigating to the Sites menu from the Control Panel. To manage a single site,
+navigate to the site by going to the Product Menu and clicking on *Sites*,
+selecting the left arrow button next to the current site you're viewing, and
+selecting the appropriate site name you'd like to manage. Once finished, the
+site administration options (i.e., Pages, Content, Users, etc.) for that site
+are available.
 
 $$$
 
-To add a site, click on *Sites* under the Sites section of the Control Panel and
-then click *Add*. If there is at least one site template available, a dropdown
+To add a site for the Lunar Resort portal, navigate to the Control Panel and
+select *Sites* &rarr; *Sites*. Then click the blue Add button at the bottom
+right of the page. If there is at least one site template available, a dropdown
 menu appears. Site templates provide a preconfigured set of pages, portlet
 applications, and content that can be used as the basis of a site's public or
 private page set. To create a site from scratch, select *Blank Site*. Otherwise,
@@ -162,16 +169,16 @@ creating a *Blank Site*.
 
 ![Figure 2.4: The New Site window aids in your new site development.](../../images/01-add-site-screen.png)
 
-**Name:** is the name of the site you wish to create.
+**Name:** names the site you wish to create.
 
 **Description:** describes the site's intended function.
 
 **Active:** determines whether a site is active or inactive. Inactive sites are
 inaccessible but can be activated whenever a site administrator wishes.
 
-**Membership Type:** can be open, restricted or private. An open site appears in
-the My Sites portlet and users can join and leave the site whenever they want. A
-restricted site is the same except users must request membership. A site
+**Membership Type:** can be open, restricted, or private. An open site appears
+in the My Sites portlet and users can join and leave the site whenever they
+want. A restricted site is the same except users must request membership. A site
 administrator must then explicitly grant or deny users' requests to join. A
 private site does not appear in the My Sites portlet and users must be added to
 it manually by a site administrator.
@@ -184,10 +191,10 @@ from restricted sites using the My Sites portlet. For organization sites, manual
 site membership management is disabled, by default. This causes organization
 members to be automatically assigned membership following the organization's
 membership policy. Also, because manual membership management is disabled for
-organization sites, by default, the *Users* section of *Site Administration* is
-unavailable. To activate the *Users* functionality for your organization site,
-you'll need to check *Allow Manual Membership Management* after creating the
-organization site by navigating to its *Site Settings* menu.
+organization sites, by default, the *Users* section of *Sites* is unavailable.
+To activate the *Users* functionality for your organization site, you'll need to
+check *Allow Manual Membership Management* after creating the organization site
+by navigating to its *Site Settings* menu.
 
 +$$$
 
@@ -198,31 +205,29 @@ organizations, and user groups. Using this information, the site membership
 policy can automatically assign members to the site. If your site will implement
 a membership policy, your site administrators can disallow manual membership
 management for their site. When the Allow Manual Membership Management option is
-disabled, the *Users* section of *Site Administration* (Site Memberships and
-Site Teams) is hidden, even from administrators.
+disabled, the *Users* section of *Sites* (Site Memberships and Site Teams) is
+hidden, even from administrators.
 
 $$$
 
-**Directory Indexing Enabled:** allows site administrators to browse the site's
-documents and media files and folders. For example, a site administrator of a
-site called *Lunar Resort* can browse documents at
-[http://localhost:8080/documents/lunar-resort](http://localhost:8080/documents/lunar-resort) if this option is enabled.
+<!-- **Directory Indexing Enabled:** allows site administrators to browse the
+site's documents and media files and folders. For example, a site administrator
+of a site called *Lunar Resort* can browse documents at
+[http://localhost:8080/documents/lunar-resort](http://localhost:8080/documents/lunar-resort)
+if this option is enabled. -->
 
 **Parent Site:** lets you select a parent site for the site that's being
-created. As of Liferay 6.2, sites can be organized hierarchically. Using
-hierarchical sites provides a simplified way to manage site memberships and site
-content sharing. For organizations that have attached sites, the organization
-hierarchy should match the site hierarchy. When you select a parent site, an
-additional option appears: *Limit membership to members of the parent site*. If
-this option is enabled, the site's membership policy performs a check so that
-you can only assign members to the current site if they're already members of
-the parent site.
+created. Sites can be organized hierarchically. Using hierarchical sites
+provides a simplified way to manage site memberships and site content sharing.
+For organizations that have attached sites, the organization hierarchy should
+match the site hierarchy. When you select a parent site, an additional option
+appears: *Limit membership to members of the parent site*. If this option is
+enabled, the site's membership policy performs a check so that you can only
+assign members to the current site if they're already members of the parent
+site.
 
-Once you've created a site, it appears in the Sites page of the Control Panel.
-Once the site has been created you can specify more details about the site using
-three categories: Basic Information, Search Engine Optimization, Advanced, and
-Miscellaneous. We'll go into more detail for your site's settings in the *Site
-Settings* section later in the chapter.
+<!-- Insert note about having to create pages before some sites are viewable:
+LRDOCS-1866. -Cody -->
 
 When creating a site from a site template, the initial form provides a new
 option that lets you decide if you want to copy the pages from the template as
@@ -231,7 +236,10 @@ template and changes to the site template propagate to any site based on it. A
 checkbox appears that allows users to unlink the site template if the user has
 permission to do so.
 
-Now that our new site is created, lets learn how to create and manage its pages.
+Once you've created a site, it appears in the Sites page of the Control Panel.
+Once the site has been created, you can click the site to specify more site
+settings using three categories: Basic Information, Advanced, and Miscellaneous.
+You'll learn more about your site's settings in the next section.
 
 ## Configuring Site Settings
 
