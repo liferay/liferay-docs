@@ -278,8 +278,8 @@ Screenlets.
 
 Now you can call your new `getGuestbooks()` method. Place the `getGuestbooks()` 
 call in the `onCreate` method of `GuestbooksActivity`, following the call to 
-`setContentView(R.layout.activity_guestbooks)`. The top of the `onCreate` method 
-should now look like this: 
+`setContentView(R.layout.activity_guestbooks)`. The first few lines of the 
+`onCreate` method should now look like this: 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -325,21 +325,16 @@ write it here in a separate method. Add the following `initActionBar()` method:
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
         actionBar.setTitle("");
-
-        if (actionBar != null) {
-            actionBar.setHomeAsUpIndicator(R.drawable.liferay_icon);
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
     }
 
 Like the code in `onCreate`, this method also creates a `Toolbar` and sets it as 
-the Action Bar.  This code also, however, sets the Action Bar's title to an 
-empty string. This prevents the activity's title from showing in the Action Bar 
-before the guestbooks can be retrieved from the portal. Now you need to call 
+the Action Bar. This code also, however, sets the Action Bar's title to an empty 
+string. This prevents the activity's title from showing in the Action Bar before 
+the guestbooks can be retrieved from the portal. Now you need to call 
 `initActionBar()` in `onCreate`. Place the call immediately above the 
 `getGuestbooks()` call. Then delete the original `Toolbar` initialization code 
 in `onCreate`; it's no longer needed since you included it in `initActionBar`. 
-The top of the `onCreate` method should now look like this:
+The first few lines of the `onCreate` method should now look like this:
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -430,10 +425,9 @@ Now you're ready to set what happens when the user selects a guestbook in the
 drawer. First, change the `GuestbooksActivity` class to implement 
 `AdapterView.OnItemClickListener` instead of 
 `NavigationView.OnNavigationItemSelectedListener`. Then delete the 
-`onNavigationItemSelected` method, and the `NavigationView` code at the end of 
-the `onCreate` method. Now you need to implement 
-`AdapterView.OnItemClickListener`. Do so now by adding the following 
-`onItemClick` method:
+`onNavigationItemSelected` method. You should also delete the `NavigationView` 
+code at the end of the `onCreate` method. Next, implement 
+`AdapterView.OnItemClickListener` by adding the following `onItemClick` method:
 
     @Override
     public void onItemClick(final AdapterView<?> parent, final View view, 
@@ -446,37 +440,50 @@ the `onCreate` method. Now you need to implement
         drawer.closeDrawers();
     }
 
-<!-- Explain this method -->
+Android calls this method when a user selects a guestbook in the drawer. This 
+method first marks the selected item in the UI. It then retrieves the selected 
+guestbook and displays that guestbook's name in the Action Bar. The method 
+finishes by closing the drawer.
 
-Now add the following code to the end of the `initDrawer` method:
+Although you've now set what happens when a user selects a guestbook, you still 
+need to set the drawer's `ListView` to listen for item clicks. Do this now by 
+adding the following code to the end of the `initDrawer` method:
 
     drawerListView.setOnItemClickListener(this);
 
-Now add the following code to the end of the `reloadGuestbooks` method:
+Great! Your app can now respond appropriately when a user selects a guestbook in 
+the drawer. But what happens when `GuestbooksActivity` first loads? The 
+`onCreate` method initializes the Action Bar and navigation drawer, and 
+retrieves the guestbooks from the portal. But the drawer remains closed until 
+the user opens it. Recall that in `initActionBar()`, you set the Action Bar to 
+display an empty string by default. The activity therefore opens with no content 
+and an empty Action Bar. This isn't very user friendly. You'll change this so 
+that the activity selects the first guestbook by default. Add the following code 
+to the end of the `reloadGuestbooks` method:
 
     _adapter.notifyDataSetChanged();
+    
+    drawerListView.performItemClick(drawerListView, 0, drawerListView.getItemIdAtPosition(0));
 
-    GuestbookModel firstGuestbook = _guestbooks.get(0);
-    actionBar.setTitle(firstGuestbook.getName());
+Recall that the Mobile SDK calls `reloadGuestbooks` when it successfully 
+retrieves guestbooks from the portal. The existing code in this method replaces 
+the current guestbook list with those retrieved from the portal. The code you 
+added here notifies the list adapter of this change, and performs an item click 
+on the first guestbook in the `ListView`. This item click triggers the 
+`onItemClick` method.
 
-Next, add the following code above the `return` statement in the 
-`onOptionsItemSelected` method:
-
-    if (id == android.R.id.home) {
-        drawer.openDrawer(GravityCompat.START);
-        return true;
-    }
-
-Because you're no longer using the menu containing the default navigation drawer 
-items, you can delete its resource file. Delete the file 
+Awesome! You're almost ready to run the app. But you need to do some cleanup 
+first. Because you're no longer using the menu resource file that defines the 
+default drawer items, you can delete it. Delete the file 
 `res/menu/activity_guestbooks_drawer.xml`.
 
-There's one more thing you need to take care of before launching the app again. 
-Open the layout file `nav_header_guestbooks.xml`. The parent `LinearLayout` has 
-a height of `160dp`, which corresponds to `@dimen/nav_header_height`. To prevent 
-the drawer header and guestbook list from overlapping, you must pad the drawer's 
-`ListView` by this value. Add the following to the `ListView` in 
-`activity_guestbooks.xml`, below the `android:layout_height` setting:
+There's one more thing you need to take care of before launching the app. Open 
+the layout file `nav_header_guestbooks.xml`. The parent `LinearLayout` has a 
+height of `160dp`. This value corresponds to `@dimen/nav_header_height`. To 
+prevent the drawer header and guestbook list from overlapping, you must pad the 
+top of the drawer's `ListView` by this value. Add the following to the 
+`ListView` in `activity_guestbooks.xml`, below the `android:layout_height` 
+setting:
 
     android:paddingTop="@dimen/nav_header_height"
 
@@ -486,20 +493,20 @@ the portal and displays the first guestbook's name in the Action Bar.
 ![Figure x: The app now displays the first guestbook's name in the Action Bar.](../../images/android-first-guestbook.png)
 
 Open the drawer to reveal the list of guestbooks. Select a different guestbook 
-from the drawer. The drawer then closes and the selected guestbook's name is 
-displayed in the Action Bar. Awesome! It works! There's a small issue, however, 
-with the drawer (besides being hideous). Its header displays *Android Studio* 
+from the drawer. The drawer then closes and the Action Bar displays the selected 
+guestbook's name. Awesome! It works! There's one small issue, however, with the 
+drawer (besides being hideous). Its header displays the text *Android Studio* 
 and *android.studio@android.com*. You obviously don't want your users to see 
 this. 
 
 ![Figure x: The header displays generic text by default.](../../images/android-guestbook-drawer-01.png)
 
 The two `TextView` elements in `nav_header_guestbooks.xml` use the 
-`android:text` attribute to hardcode this text. To remove the text, you could 
-delete the `TextView` elements. To show different static text, you could change 
-the `android:text` attributes' values. Using these `TextView` elements to show 
-the logged-in user's name and email address is a much better solution though. 
-Replace the `TextView` elements with the following code:
+`android:text` attribute to hardcode this text. To remove the text completely, 
+you could delete the `TextView` elements. To show different static text, you 
+could change the `android:text` attributes' values. Using these `TextView` 
+elements to show a personalized greeting is a much better solution though. 
+Replace the `TextView` elements with the following code: 
 
     <TextView android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -525,11 +532,11 @@ following the `getGuestbooks()` call:
 In this code, you use `SessionContext.getLoggedUser()` to return the logged-in 
 user as a Screens `User` object. This lets you use the `User` class's 
 `getFirstName()` and `getEmail()` methods, respectively, to obtain the user's 
-first name and email address. You then set these values as the text to the 
+first name and email address. You then set these values as the text for the 
 respective `TextView` objects you specified in the previous step. 
 
-Run the app again and open the drawer after signing in. Although the drawer is 
-still ugly, at least it's now polite. 
+Run the app again, and open the drawer after signing in. Although the drawer is 
+still ugly, it's at least polite now. 
 
 ![Figure x: The navigation drawer now contains the logged-in user's name and email address.](../../images/android-guestbook-drawer-02.png)
 
