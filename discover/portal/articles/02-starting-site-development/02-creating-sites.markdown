@@ -36,6 +36,19 @@ within the site to different members. This can be done through *site roles*
 which are defined equally for all sites or *teams* which are unique for each
 site. These concepts will be discussed later in the chapter.
 
+Liferay Portal separates site-scoped information from the Control Panel by placing
+it in the Sites menu. From Sites, you can select the specific site to work on.
+The Site Administration panel is available for your site, which includes Pages.
+Contents, Users, Configuration, and Publishing Tools.
+
+![Figure 2.11: Your site's content resides on the Site Administration page.](../../images/web-content-site-content.png)
+
+For details about Liferay's social collaboration suite, see the
+[Social Collaboration](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
+section.
+
+<!-- Replace link above. -Cody -->
+
 Sites can also be organized hierarchically, just like organizations. The
 difference between sites and organizations, of course, is that sites are used to
 organize pages, content, application data, and users (via site memberships)
@@ -489,8 +502,8 @@ The *Display Settings* option lets you configure the language options for your
 site. You have options to use the default language options or define a new
 default language.
 
-Now that you know how to configure sites, let's look at page templates and site
-templates.
+Now that you know how to configure sites, you'll learn how to customize your
+personal sites.
 
 # User Personal Sites [](id=user-personal-sites)
 
