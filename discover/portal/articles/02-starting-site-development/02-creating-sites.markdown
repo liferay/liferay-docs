@@ -210,12 +210,6 @@ hidden, even from administrators.
 
 $$$
 
-<!-- **Directory Indexing Enabled:** allows site administrators to browse the
-site's documents and media files and folders. For example, a site administrator
-of a site called *Lunar Resort* can browse documents at
-[http://localhost:8080/documents/lunar-resort](http://localhost:8080/documents/lunar-resort)
-if this option is enabled. -->
-
 **Parent Site:** lets you select a parent site for the site that's being
 created. Sites can be organized hierarchically. Using hierarchical sites
 provides a simplified way to manage site memberships and site content sharing.
@@ -243,60 +237,196 @@ You'll learn more about your site's settings in the next section.
 
 ## Configuring Site Settings
 
-As with Site Pages, you can access Site Settings by navigating to Site
-Administration and clicking *Site Settings* from the Configuration section on
-the left panel. You can also select the Site Administration sub-tab
-*Configuration* from the *Admin* drop-down.
+You can access Site Settings by navigating to *Sites* &rarr; *Configuration*
+&rarr; *Site Settings* from the Product Menu.
 
-![Figure 2.10: The Site Settings window offers a plethora of options for your site.](../../images/web-content-site-settings.png)
+![Figure 2.10: The Site Settings window offers a plethora of options for your site.](../../images/site-settings-overview.png)
 
-You'll find options to specify details and metadata about your site, set up
-friendly URLs and virtual hosts, configure search engine optimization settings,
-turn staging on or off and specify a Google Analytics ID. Let's take a closer
-look. 
+You'll find options to organize site content, manage site users, and improve
+your site's overall intelligence. You'll explore the Site Settings categories
+available, and simulate configuring those settings for your sample Lunar Resort
+site.
 
-**Details:** allows an administrator to change the description and membership
-type of a site and also to specify tags and categories for the site. The
-membership type can be set as open, restricted or private based on the privacy
-needs of the site. Users can join and leave an open site at will. To join a
-restricted site, a user has to be added by the site administrator. A user can
-also request to be added through the Sites section of the Control Panel. A
-private site is like a restricted site but doesn't appear in the Sites section
-of the Control Panel for users who aren't members. 
+### Organizing Site Content
 
-**Categorization:** allows you to apply categories and tags to the site.
+Organizing your site's content drastically improves the usability of your site
+for users. The Site Settings menu offers some configuration options that aid in
+your organizational goals.
 
-**Site URL:** Set a friendly URL and/or a virtual host for your site here. The
+#### Categorization
+
+You can explore ways to tag and categorize your site by clicking the
+*Categorization* tab. These tools help administrators organize the site and
+allows for users to easily find your site and its content through search and
+navigation. To take full advantage of tags and categories, you'll need to add
+pages with content to your site. For more information on using tags and
+categories, visit the [Tagging and Categorizing
+Content](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/tagging-and-categorizing-content)
+section.
+
+<!-- replace link above. -Cody -->
+
+#### Site Template
+
+The last tab listed under the Basic Information category is *Site Template*. If
+you created your Lunar Resort site as a Blank Site, you can safely ignore this
+section. If you did, however, create your site using a site template, this
+section displays information about the link between the site template and the
+site. Specifically, you can see which site template was used and whether or not
+it allows modifications to the pages inherited from it by site administrators.
+To learn more about site templates and how to create your own, see the 
+[Building Sites from Templates]() section.
+
+<!-- replace link above. -Cody -->
+
+#### Content Sharing
+
+If you select the *Content Sharing* tab from the Advanced sub-menu, you can
+configure whether sub-sites can display content from this site. Administrators
+of this site's sub-sites can use all structures, templates, categories,
+application display templates, etc. from this parent site. Even if you
+initially allowed content sharing between the parent site and its sub-sites,
+you're able to disable this option and immediately revoke content sharing from
+all sub-sites.
+
+#### Recycle Bin
+
+The *Recycle Bin* provides the option to enable/disable the Recycle Bin for your
+site. You can also regulate the age (in days) for which content is able to be
+stored in the Recycle Bin until it is permanently deleted. For a full
+explanation of the Recycle Bin, see the
+[Recyling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
+section.
+
+<!-- replace link above. -Cody -->
+
+#### Custom Fields
+
+*Custom Fields* lets you edit the custom fields you already have configured
+for the *Site* resource. If you don't have any custom fields configured for the
+Site resource, you can navigate to the Control Panel &rarr; *Custom Fields*
+located under the *Configuration* tab. For more information on Custom Fields,
+see the [Custom Fields](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/custom-fields)
+section.
+
+<!-- replace link above. -Cody -->
+
+#### Documents and Media
+
+The last tab that relates to organizing your site's content is *Documents and
+Media*. This lets you enable/disable Directory Indexing, which allows site
+administrators to browse your site's documents and media files and folders. For
+example, a site administrator of a site called *Lunar Resort* can browse
+documents at http://localhost:8080/documents/lunar-resort if this option is
+enabled.
+
+Now that you can organize your site's content using Site Settings, move on to
+the next section to learn how to manage site users.
+
+### Managing Site Users
+
+An always important job for site administrators is managing site users. There
+are configuration options in Site Settings that allow for easier user
+management.
+
+#### Details
+
+If you select the *Details* tab, you're provided the same menu you filled out
+when first creating your Lunar Resort site. This allows an administrator to
+change the description and membership type of a site. The membership type can be
+set as open, restricted or private based on the privacy needs of the site. Users
+can join and leave an open site at will. To join a restricted site, a user has
+to be added by the site administrator. A user can also request to be added
+through the Sites section of the Control Panel. A private site is like a
+restricted site but doesn't appear in the Sites section of the Control Panel for
+users who aren't members.
+
+You also have the ability to organize sites into hierarchies. At the bottom of
+the Details sub-section is the Parent Site section. This feature allows you to
+select the parent site for the site you're currently on. After selecting a
+parent site, you have a checkbox option to limit membership to members of the
+parent site.
+
+#### Default User Associations
+
+Once you have the basic details of your site saved, you can begin assigning your
+users to roles and teams. *Default User Associations* lets you configure site
+roles and teams that newly assigned site members will have by default. If you'd
+like to learn more about creating roles and/or teams, visit the
+[Roles and Permissions](/discover/portal/-/knowledge_base/6-2/roles-and-permissions)
+and
+[Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management)
+sections, respectively. 
+
+#### Ratings
+
+To allow your site's users to rate content in your site, you can use the
+*Ratings* option to select what ratings type to use for
+applications like Documents and Media, Web Content, Comments, etc. Ratings types
+include Stars, Likes, and Thumbs.
+
+<!-- Is there a link we can point to for this? Coordinate with Jim. -Cody -->
+
+#### Mentions
+
+The last configuration option in Site Settings related to managing users is
+*Mentions*. This option allows you to enable/disable the Mentioning
+functionality, which is used to *mention* (notify and/or draw attention to)
+friends and colleagues by entering the "@" character followed by their user
+name.
+
+<!-- Post official link, when available. Coordinate with Jim. -Cody
+https://github.com/jhinkey/liferay-docs/blob/9b2b0bb9cab477cf6d740bad558aed1e49c88ece/discover/portal/articles/liferay-utility-applications/mentioning-users.markdown
+-->
+
+Now that you're aware of your Site Settings abilities to improve User and
+Content management, you'll learn how to improve your site's overall intelligence
+using Site Settings.
+
+### Improving Site Intelligence
+
+Site Settings offers several miscellaneous configuration options that improve
+your site's usability, overall display, and data tracking. To make your Lunar
+Resort site smarter, explore and configure the options below.
+
+#### Site URL
+
+One of the most important aspects of your site is the simplicity of your site
+URLs. Long obscure site URLs are a hassle for users to deal with, and can
+negatively affect your site's probability of being featured by search engines.
+Having a human-readable friendly URL assists indexing bots and is critical to
+good search engine optimization. For the Lunar Resort site, you can select the
+*Site URL* tab to set a friendly URL and/or a virtual host. The
 *Friendly URL* option lets you manage the path to your site in the portal's URL.
 Friendly URLs are used for both public and private pages. For public pages, the
 friendly URL is appended to http://localhost:8080/web. For private pages, the
 friendly URL is appended to http://localhost:8080/group. Each friendly URL needs
-to be a unique name, of course. Having a human-readable friendly URL assists
-indexing bots and is critical to good search engine optimization. 
+to be a unique name, of course.
 
-For example, suppose you were creating a portal for a bank called the Best Bank.
-If you set the friendly URL of your portal's default site to /best-bank, the URL
-of your default site's public home page would change to
-http://localhost:8080/web/best-bank/home. If your portal's default site had
+For example, suppose you want to set a friendly URL for your Lunar Resort site.
+If you set the friendly URL of your portal's default site to /lunar-resort, the
+URL of your default site's public home page would change to
+http://localhost:8080/web/lunar-resort/home. If your portal's default site had
 private pages, the URL of the default private home page would change to
-http://localhost:8080/group/best-bank/home. 
+http://localhost:8080/group/lunar-resort/home.
 
 Note that if you're adding a friendly URL for your portal's home page, you
 should update your portal's Home URL field so that page requests to
 http://localhost:8080 redirect properly. To do this, navigate to the Portal
 Settings page of the Control Panel and find the Home URL field in the Navigation
-section. For our bank example, we would enter */web/best-bank/home* into the
-Home URL field. Once you've entered this setting, page requests to
+section. For the Lunar Resort example, you would enter */web/lunar-resort/home*
+into the Home URL field. Once you've entered this setting, page requests to
 localhost:8080 will redirect to the friendly URL of your portal's new homepage:
-http://localhost:8080/web/best-bank/home.
+http://localhost:8080/web/lunar-resort/home.
 
-*Virtual Hosts* make web navigation much easier for your users by connecting a
-domain name to a site. This tab allows you to define a domain name (i.e.,
-www.mycompany.com) for your site. This can be a full domain or a subdomain. This
-enables you to host a number of web sites as separate sites on one Liferay
+The other setting you can configure under the Site URL tab is *Virtual Hosts*,
+which makes web navigation much easier for your users by connecting a domain
+name to a site. This allows you to define a domain name (i.e.,
+www.lunar-resort.com) for your site. This can be a full domain or a subdomain.
+This enables you to host a number of web sites as separate sites on one Liferay
 server.
 
-For instance, if we set this up for the Lunar Resort's development network,
+For instance, if you set this up for the Lunar Resort's development network,
 users in that site could use *developers.lunar-resort.com* to get to their site,
 provided that the Lunar Resort portal's network administrators created the
 domain name and pointed it to the Liferay server.
@@ -306,89 +436,58 @@ portal's IP address first. Then enter *http://developers.lunar-resort.com* in
 the Virtual Host tab for the Developers site. This helps users quickly access
 their site without having to recall an extended URL.
 
-**Site Template:** If you've created the site from a site template, this section
-displays information about the link between the site template and the site.
-Specifically, you can see which site template was used and whether or not it
-allows modifications to the pages inherited from it by site administrators. If
-you're not using site templates for this site, you can safely ignore this
-section.
+#### Analytics
 
-**Sitemap:** lets you send a sitemap to some search engines so they can crawl
-your site. It uses the sitemap protocol, which is an industry standard. You can
-publish your site to Yahoo or Google and their web crawlers will use the sitemap
-to index your site. Liferay Portal makes this very simple for administrators by
-generating the sitemap XML for all public web sites.
+Analyzing site traffic is another huge advantage for site administrators that
+want to monitor what content is most popular. Liferay includes built-in support
+for Google Analytics, allowing administrators to make use of Google's tool set
+for analyzing site traffic data. When you sign up for Google Analytics, a
+snippet of code is provided which needs to be added to your web pages to allow
+Google's system to register the page hit. It can be a tedious process to add
+this code to every page on a site, especially if it's a large site and there is
+a lot of user-generated content.
 
-By selecting one of the search engine links, the sitemap will be sent to them.
-It's only necessary to do this once per site. The search engine crawler will
-periodically crawl the sitemap once you've made the initial request.
+This problem can be solved in Liferay by putting Google's code into a custom
+theme written specifically for the web site on which the portal is running.
+Doing this, however, requires a theme developer to make specific changes to the
+theme and it prevents users from using the many themes that are freely available
+for Liferay "out of the box."
 
-If you're interested in seeing what is being sent to the search engines, select
-the *Preview* link to see the generated XML.
+Because of this, support for Google Analytics has been built into Liferay, and
+can be turned on through a simple user interface. This allows Liferay
+administrators to make use of Google Analytics on a site by site basis and turn
+it on and off when needed. You can sign up for Google Analytics at the Google
+Analytics site here:
+[http://www.google.com/analytics](http://www.google.com/analytics).
 
-**Robots:** If you're using virtual hosting for this site, you can configure
-`robots.txt` rules for the domain. The Robots page gives you the option to
-configure your `robots.txt` for both public and private pages on a site. If you
-don't have Virtual Hosting set up, this tab is rather boring. 
+To enable Google Analytics support, navigate to *Site Administration* in the
+Control Panel, expand the *Configuration* area in menu at the left side of the
+screen, then click on *Site Settings*. Click on *Analytics* and you'll see a
+very simple form, pictured below. 
 
-**Default User Associations:** lets you configure site roles and teams that
-newly assigned site members will have by default. If you'd like to learn more
-about creating roles and/or teams, visit the
-[Roles and Permissions](/discover/portal/-/knowledge_base/6-2/roles-and-permissions)
-and
-[Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management)
-sections, respectively. 
+![Figure 3.32: Setting up Google Analytics for your site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.](../../images/maintaining-google-analytics.png)
 
-**Staging:** enables you to edit and revise a page behind the scenes, then
-publish changes to your site once they have been completed and reviewed. For a
-full explanation of Staging, see the
-[Staging Page Publication](/discover/portal/-/knowledge_base/6-2/staging-page-publication)
-section.
+Enter your Google Analytics ID (which should have been provided to you when you
+signed up for the service) in the field and click *Save*. All the pages in the
+site you selected will now have the Google Analytics code in them and will be
+tracked. 
 
-**Analytics:** allows you to integrate your pages with Google Analytics. Liferay
-provides seamless integration with Google Analytics, allowing you to place your
-ID in one place, then it will get inserted on every page. This enables you
-to focus your efforts on building the page, rather than remembering to put the
-code everywhere. Google Analytics is a free service which lets you do all kinds
-of traffic analysis on your site so you can see who visits, where visitors are
-from and what pages they most often visit. This helps you tweak your site so you
-can provide the most relevant content to your users.
+This is a fairly simple procedure, and it gives you the ability to take
+advantage of some great tools to help you visualize who's coming to your site
+and from where. 
 
-**Content Sharing:** lets you configure whether sub-sites can display content
-from this site. Even if you initially allowed content sharing between the parent
-site and its sub-sites, you're able to deselect this option and immediately
-revoke content sharing from all sub-sites.
+#### Maps
 
-**Recycle Bin:** provides the option to enable/disable the Recycle Bin for your
-site. You can also regulate the age (in days) for which content is able to be
-stored in the Recycle Bin until it is permanently deleted. For a full
-explanation of the Recycle Bin, see the
-[Recyling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
-section.
+**Under Contruction**
 
-**Custom Fields:** lets you edit the custom fields you already have configured
-for the *Site* resource. If you don't have any custom fields configured for the
-Site resource, you can navigate to the Control Panel &rarr; *Custom Fields*
-located under the *Configuration* tab.
+<!-- Jim's area. Good blog on this: https://www.liferay.com/web/juan.fernandez/blog/-/blogs/adding-geolocation-support-to-liferay-7-0
+-Cody -->
 
-**Display Settings:** lets you configure the language options for your site. You
-have options to use the default language options or define a new default
-language.
+#### Display Settings
 
-**Pages:** From Site Settings, click on *Public Pages* or *Private Pages* to
-manage some basic features of the pages on a site. If no pages have been defined
-yet, you can set site templates for the public or private pages. If pages
-already exist, links are provided to view them. You can also change the site's
-application adapter, which is a special type of hook plugin that customizes out
-of the box functionality for specific sites.
-
-**Site Hierarchy:** New to Liferay 6.2 is the ability to organize sites into
-hierarchies. At the bottom of the Site Settings page is the *Parent Site*
-section. This feature allows you to select the parent site for the site you're
-currently on. After selecting a parent site, you have a checkbox option to limit
-membership to members of the parent site. For more information on site
-hierarchies, navigate to the *Leveraging Liferay's Multi-site Capabilities*
-section.
+The *Display Settings* option lets you configure the language options for your
+site. You have options to use the default language options or define a new
+default language.
 
 Now that you know how to configure sites, let's look at page templates and site
 templates.
@@ -472,3 +571,4 @@ to receive personal sites, add the following properties to your
 Personal sites are a dynamic feature of Liferay Portal. They allow users to
 manage and customize their own pages and content on your portal. Next, let's
 look at how users can customize applications.
+
