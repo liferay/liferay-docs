@@ -186,6 +186,9 @@ creating a *Blank Site*.
 
 **Description:** describes the site's intended function.
 
+<!-- Mention that you can localize both Name and Description fields for your
+site: LRDOCS-1557. -Cody -->
+
 **Active:** determines whether a site is active or inactive. Inactive sites are
 inaccessible but can be activated whenever a site administrator wishes.
 
@@ -505,7 +508,7 @@ default language.
 Now that you know how to configure sites, you'll learn how to customize your
 personal sites.
 
-# User Personal Sites [](id=user-personal-sites)
+## User Personal Sites
 
 By default, newly created users in Liferay are each granted a personal site.
 Each user functions as the site administrator of his or her personal site.
@@ -555,21 +558,15 @@ customize the names of the default pages, the portlets that appear on the pages,
 the themes and layout templates of the default pages, and more. Please refer to
 the Default User Public Layouts and Default User Private Layouts sections of
 the `portal.properties` file for details. You can find an HTML version of the
-this file here: [http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
+this file here: [http://docs.liferay.com/portal/7.0-a1/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
 
 +$$$
 
-**Note:** Prior to Liferay 6.1, administrators could disallow users from being
-able to modify the pages and portlets of their personal sites by setting the
-following properties:
-
-`layout.user.public.layouts.modifiable=true`
-`layout.user.private.layouts.modifiable=true`
-    
-As of Liferay 6.1, this property is obsolete. However, you can customize the
-modifiable portions of personal sites through Liferay's permissions system by
-removing permissions from roles. To disallow all portal users from modifying
-something, remove the relevant permission from the User role.
+**Note:** By default, users are able to modify the pages and portlets of their
+personal sites. However, administrators can customize the modifiable portions of
+personal sites through Liferay's permissions system by removing permissions from
+roles. To disallow all portal users from modifying something, remove the
+relevant permission from the User role.
 
 $$$
 
@@ -582,6 +579,4 @@ to receive personal sites, add the following properties to your
     layout.user.private.layouts.power.user.required=true
     
 Personal sites are a dynamic feature of Liferay Portal. They allow users to
-manage and customize their own pages and content on your portal. Next, let's
-look at how users can customize applications.
-
+manage and customize their own pages and content on your portal.
