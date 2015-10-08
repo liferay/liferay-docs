@@ -71,7 +71,7 @@ link highlighted in a red box:
  
 Great! Now you're ready to test your Screens and Mobile SDK installations. 
 
-## Verifying the Mobile SDK Installation [](id=verifying-the-mobile-sdk-installation)
+## Verifying the Installations
 
 To check your Screens and Mobile SDK installations, first open your project's 
 `MainActivity` class in Android Studio. It's located in the `java` folder's 

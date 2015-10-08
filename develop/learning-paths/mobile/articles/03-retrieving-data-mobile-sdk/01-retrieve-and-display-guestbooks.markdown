@@ -1,16 +1,26 @@
 # Retrieve and Display Guestbooks [](id=retrieve-and-display-guestbooks)
 
-The app you created in the first series of articles contains a navigation drawer 
-that slides out from the left side of the screen. The drawer contains a list of 
-menu items typically found in navigation drawers.
+The `GuestbooksActivity` you created in the first series of articles in this 
+Learning Path contains a navigation drawer that slides out from the left side of 
+the screen. You used Android Studio's *Navigation Drawer Activity* template to 
+create this activity. Although this template created a functional navigation 
+drawer, there are parts of the drawer you don't need in this app. For example, 
+the drawer contains a list of menu items typically found in navigation drawers. 
+It's up to you to decide which menu items, if any, you want to use. In this app, 
+you don't need any of these menu items. You'll instead use the drawer to show 
+the list of guestbooks your app retrieves from the portal. This is conceptually 
+simple, but it's a bit more complex in practice. Not to worry! This article 
+guides you though each step in the process.
 
 ![Figure 1: The placeholders currently in the navigation drawer.](../../images/android-guestbook-initial-drawer.png)
 
-You don't need any of these items for your app though. You'll instead use the 
-drawer to show the list of guestbooks. This is conceptually simple, but it's a 
-bit more complex in practice. Not to worry! You'll be guided though each step in 
-the process. First, you need to encapsulate the guestbooks that come back from 
-the Guestbook portlet. 
+Before you can display the guestbooks, however, you need to retrieve them from 
+your portal. You'll do this with the Guestbooks Mobile SDK and Liferay Screens. 
+As you'll see, Screens includes some helper code that makes calling the Mobile 
+SDK very straightforward. 
+
+First, though, you need to be able to encapsulate the guestbooks that come back 
+from the Guestbook portlet. 
 
 ## Encapsulating Guestbooks [](id=encapsulating-guestbooks)
 
