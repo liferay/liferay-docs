@@ -1,4 +1,4 @@
-# Interacting with Liferay's Atom Collections
+# Interacting with Liferay's Atom Collections [](id=interacting-with-liferays-atom-collections)
 
 Liferay's asset framework allows many different kinds of content to be created
 and published. Web content articles, blog entries, wiki articles, and documents
@@ -18,7 +18,7 @@ Syndication Format ([RFC 4287](http://www.ietf.org/rfc/rfc4287.txt)) and Atom
 Publishing Protocol ([RFC 5023](http://www.ietf.org/rfc/rfc5023.txt))
 specifications. 
 
-## Atom Service Document
+## Atom Service Document [](id=atom-service-document)
 
 Liferay's Atom server allows third-party software to be used for reading or
 publishing content. The first step that must be taken by any third-party
@@ -71,7 +71,7 @@ listed in the `atom` XML document:
 
 - Users Atom collection
 
-## Atom URL Conventions
+## Atom URL Conventions [](id=atom-url-conventions)
 
 The URLs for Liferay's Atom collections and collection entries follow a simple
 convention. Each URL starts with the same base:
@@ -105,7 +105,7 @@ The `atom` XML document is publicly available at this URL:
 
 All the other URLs described in this section require authentication.
 
-## Authentication
+## Authentication [](id=authentication)
 
 If you try to navigate to the URL of an Atom collection or entry without
 authenticating, your request fails with the status code of *500: Internal
@@ -168,7 +168,7 @@ Liferay's Atom collections not only allow entries to be read, but also to be
 published, edited, or deleted. Next, you'll learn how to interact with Liferay's
 specific Atom collections in more detail.
 
-## Liferay's Blogs Atom Collection
+## Liferay's Blogs Atom Collection [](id=liferays-blogs-atom-collection)
 
 As demonstrated above, Liferay's Blogs Atom collection is located here:
 
@@ -223,7 +223,7 @@ only one blog entry):
 This XML document can be read by any Atom feed reader, and the blog entry or
 entries will be displayed correctly.
 
-### Liferay Blogs Atom Client
+### Liferay Blogs Atom Client [](id=liferay-blogs-atom-client)
 
 In addition to allowing entries to be read, Liferay's Blogs Atom collection
 allows entries to added, updated, or deleted. In this section, you'll learn how
@@ -349,7 +349,7 @@ Web Content Atom collection, the Documents and Media Files Atom collection, and
 the Documents and Media Folders Atom collection. (The Users Atom collection is
 read-only.)
 
-## Liferay's Web Content Atom Collection
+## Liferay's Web Content Atom Collection [](id=liferays-web-content-atom-collection)
 
 Just as with Blogs, Liferay's Web Content Atom collection can be listed using
 the Atom protocol. For example, if you're running Liferay locally, the URL for
@@ -424,7 +424,7 @@ indexable. If workflow has been enabled, however, it is executed normally.
 Deleting web content articles with an Atom client works the same way as for
 deleting blog posts. 
 
-## Liferay's Documents and Media Files Atom Collection
+## Liferay's Documents and Media Files Atom Collection [](id=liferays-documents-and-media-files-atom-collection)
 
 Liferay's Documents and Media Files Atom collection can be listed using the Atom
 protocol. If you're running Liferay locally, the base URL for files is
@@ -515,7 +515,7 @@ or as media (i.e., as binary content).
 Next, you'll learn how to create an Atom client to add, update, and delete
 Liferay documents.
 
-### Liferay Documents and Media Files Atom Client
+### Liferay Documents and Media Files Atom Client [](id=liferay-documents-and-media-files-atom-client)
 
 In this section, you'll learn how to create an [Abdera](https://abdera.apache.org)
 client that can add, update, and delete entries from Liferay's Documents and
@@ -681,7 +681,7 @@ ID could be supplied as command line arguments instead of being hard-coded.)
 
 The last Liferay Atom collection that supports adding, updating, and deleting entries via a client is the Documents and Media Folders Atom collection.
 
-## Liferay's Documents and Media Folders Atom Collection
+## Liferay's Documents and Media Folders Atom Collection [](id=liferays-documents-and-media-folders-atom-collection)
 
 As with the other Liferay Atom collections that you've seen (Blogs, Web Content,
 and Documents and Media Files), Liferay's Documents and Media Folders Atom
@@ -750,7 +750,7 @@ Creating, updating, and deleting Documents and Media folders via an Atom client
 is similar to creating new blog posts, web content articles, or documents and
 media files.
 
-## Liferay's Users Atom Collection
+## Liferay's Users Atom Collection [](id=liferays-users-atom-collection)
 
 Liferay's Users atom collection is read-only. There are several different
 collection views:
