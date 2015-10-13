@@ -73,24 +73,39 @@ respective descriptions.
 
 <!-- TODO: Replace page template link above. -Cody -->
 
-**Layout:** the pages we're usually talking about. They have a layout
-which you can drag and drop portlets into. Most of the pages you create will be
-layout pages.
+**Layout (Empty Page):** the default pages that are used. They have a layout which you
+can drag and drop portlets into. This page type creates an empty page with
+configurable column sizes.
+
+**Blog:** display content related to blogs. This is a specialized page dedicated
+to creating, editing, and view blogs.
+
+**Content Display Page:** are used to search available content, explore related
+content with tags, and browse content catagories. This is a specialized page
+dedicated to managing web content from a page.
+
+**Node:** exists as a container that holds child pages. These pages are not
+intended to hold content. Because the page holds no content and has no purpose
+but to hold other child pages, there is no friendly URL for this page. It also
+cannot serve as a landing page for a site.
 
 **Panel:** can have any number of portlets on them, as selected by an
 administrator, but only one will be displayed at a time. Users select which
 portlet they want to use from a menu on the left side of the page and the
 selected portlet takes up the entire page. 
 
+**Link to URL:** are redirects to any URL specified by an administrator.
+You can use URL pages to create links to pages belonging to other sites of your
+portal or to pages of an external site. Use URL pages cautiously since blind
+redirects create a poor user experience.
+
 **Embedded:** display content from another website inside of your portal.
 An administrator can set a URL from in the page management interface and that
 page will appear in the context and within the navigation of your Liferay
 portal.
 
-**Link to URL:** are just redirects to any URL specified by an administrator.
-You can use URL pages to create links to pages belonging to other sites of your
-portal or to pages of an external site. Use URL pages cautiously since blind
-redirects create a poor user experience.
+**Full Page Application:** creates a page with one column that displays a single
+full page application.
 
 **Link to a Page of This Site:** creates a portal page which functions as an
 immediate redirect to another page within the same site. You can select which
@@ -98,9 +113,8 @@ page to link to from a dropdown in the page management interface. You could use
 a *Link to a Page of This Site* to place a deeply nested page in the primary
 navigation menu of your site, for example.
 
-To use the Edit Page interface to modify an existing page, navigate to the left
-palette and select the *Edit* icon. Notice that it's not possible to add a new
-page. This is because you're only managing the current page.
+**Copy of a Page of This Site:** displays a copy of a pre-existing page in your
+portal.
 
 If you ever need to modify the page you've created for your site, you can
 revisit *Site Pages* and select the page to edit. You can also use the *Edit
