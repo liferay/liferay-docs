@@ -32,7 +32,7 @@ Screens apps on iOS 7 and above--Screens doesn't use iOS 8 APIs.
 
 Liferay Screens for iOS requires the following software: 
 
-- Xcode 6.3.x
+- Xcode 6.4.x
 - iOS 8 SDK
 - [CocoaPods](http://cocoapods.org) 0.36 or newer
 - [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
@@ -99,14 +99,17 @@ yet exist):
 
     platform :ios, '7.0'
 
-    pod 'MBProgressHUD'
-    pod 'SMXMLDocument'
-    pod 'UICKeyChainStore'
-    pod 'DTPickerPresenter'
-    pod 'TNRadioButtonGroup'
-    pod 'MDRadialProgress'
-    pod 'ODRefreshControl'
-    pod 'Liferay-iOS-SDK'
+    pod 'Liferay-iOS-SDK', '6.2.0.17'
+    pod 'Liferay-OAuth', '0.1.0'
+    pod 'MBProgressHUD', '0.9.1'
+    pod 'SMXMLDocument', '1.1'
+    pod 'ODRefreshControl', '1.2'
+    pod 'YapDatabase', '2.6.5'
+    pod 'KeychainAccess', '1.2.1'
+    pod 'CryptoSwift', '0.0.13'
+    pod 'DTPickerPresenter', '0.2.0'
+    pod 'TNRadioButtonGroup', '0.4'
+    pod 'MDRadialProgress', '1.3.2'
 
 In a terminal, navigate to your project's directory and execute 
 `pod install`. Once this completes, quit Xcode (if you have it open). To
@@ -127,19 +130,22 @@ XCTest). Here's a `Podfile` with a placeholder for a test target:
     platform :ios, '7.0'
 
     def import_pods
-        pod 'MBProgressHUD'
-        pod 'SMXMLDocument'
-        pod 'UICKeyChainStore'
-        pod 'DTPickerPresenter'
-        pod 'TNRadioButtonGroup'
-        pod 'MDRadialProgress'
-        pod 'ODRefreshControl'
-        pod 'Liferay-iOS-SDK'
+        pod 'Liferay-iOS-SDK', '6.2.0.17'
+        pod 'Liferay-OAuth', '0.1.0'
+        pod 'MBProgressHUD', '0.9.1'
+        pod 'SMXMLDocument', '1.1'
+        pod 'ODRefreshControl', '1.2'
+        pod 'YapDatabase', '2.6.5'
+        pod 'KeychainAccess', '1.2.1'
+        pod 'CryptoSwift', '0.0.13'
+        pod 'DTPickerPresenter', '0.2.0'
+        pod 'TNRadioButtonGroup', '0.4'
+        pod 'MDRadialProgress', '1.3.2'
     end
 
     import_pods
 
-    target :<<You Test Target Name Goes Here>> do
+    target :<<Your Test Target Name Goes Here>> do
         import_pods
     end
 
