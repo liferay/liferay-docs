@@ -47,7 +47,7 @@ For details about Liferay's social collaboration suite, see the
 [Social Collaboration](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
 section.
 
-<!-- Replace link above. -Cody -->
+<!-- TODO: Replace link above. -Cody -->
 
 Sites can also be organized hierarchically, just like organizations. The
 difference between sites and organizations, of course, is that sites are used to
@@ -127,8 +127,8 @@ want to share. For example, those who enjoy taking pictures of landscapes could
 join a Landscapes site and those who enjoy taking pictures of sunsets could join
 a Sunsets site.
 
-<!-- Descibe how sites can share content with other sites here: LRDOCS-1770.
--Cody -->
+<!-- TODO: Descibe how sites can share content with other sites here:
+LRDOCS-1770. -Cody -->
 
 Liferay always provides one default site, which is also known as the main site
 of the portal. This site does not have its own name but rather takes the name of
@@ -153,7 +153,7 @@ the Control Panel, see the
 [Using the Control Panel](/discover/portal/-/knowledge_base/6-2/using-the-control-panel)
 sections, respectively.
 
-<!-- Replace links above, when available -Cody -->
+<!-- TODO: Replace links above, when available -Cody -->
 
 +$$$
 
@@ -186,8 +186,8 @@ creating a *Blank Site*.
 
 **Description:** describes the site's intended function.
 
-<!-- Mention that you can localize both Name and Description fields for your
-site: LRDOCS-1557. -Cody -->
+<!-- TODO: Mention that you can localize both Name and Description fields for
+your site: LRDOCS-1557. -Cody -->
 
 **Active:** determines whether a site is active or inactive. Inactive sites are
 inaccessible but can be activated whenever a site administrator wishes.
@@ -236,8 +236,8 @@ enabled, the site's membership policy performs a check so that you can only
 assign members to the current site if they're already members of the parent
 site.
 
-<!-- Insert note about having to create pages before some sites are viewable:
-LRDOCS-1866. -Cody -->
+<!-- TODO: Insert note about having to create pages before some sites are
+viewable: LRDOCS-1866. -Cody -->
 
 When creating a site from a site template, the initial form provides a new
 option that lets you decide if you want to copy the pages from the template as
@@ -280,7 +280,7 @@ categories, visit the [Tagging and Categorizing
 Content](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/tagging-and-categorizing-content)
 section.
 
-<!-- replace link above. -Cody -->
+<!-- TODO: replace link above. -Cody -->
 
 #### Site Template
 
@@ -293,7 +293,7 @@ it allows modifications to the pages inherited from it by site administrators.
 To learn more about site templates and how to create your own, see the 
 [Building Sites from Templates]() section.
 
-<!-- replace link above. -Cody -->
+<!-- TODO: replace link above. -Cody -->
 
 #### Content Sharing
 
@@ -314,7 +314,7 @@ explanation of the Recycle Bin, see the
 [Recyling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
 section.
 
-<!-- replace link above. -Cody -->
+<!-- TODO: replace link above. -Cody -->
 
 #### Custom Fields
 
@@ -325,7 +325,7 @@ located under the *Configuration* tab. For more information on Custom Fields,
 see the [Custom Fields](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/custom-fields)
 section.
 
-<!-- replace link above. -Cody -->
+<!-- TODO: replace link above. -Cody -->
 
 #### Documents and Media
 
@@ -381,7 +381,8 @@ To allow your site's users to rate content in your site, you can use the
 applications like Documents and Media, Web Content, Comments, etc. Ratings types
 include Stars, Likes, and Thumbs.
 
-<!-- Is there a link we can point to for this? Coordinate with Jim. -Cody -->
+<!-- TODO Jim: Is there a link we can point to for this? Coordinate with Jim. -Cody
+-->
 
 #### Mentions
 
@@ -391,7 +392,7 @@ functionality, which is used to *mention* (notify and/or draw attention to)
 friends and colleagues by entering the "@" character followed by their user
 name.
 
-<!-- Post official link, when available. Coordinate with Jim. -Cody
+<!-- TODO Jim: Post official link, when available. Coordinate with Jim. -Cody
 https://github.com/jhinkey/liferay-docs/blob/9b2b0bb9cab477cf6d740bad558aed1e49c88ece/discover/portal/articles/liferay-utility-applications/mentioning-users.markdown
 -->
 
@@ -496,7 +497,8 @@ and from where.
 
 **Under Contruction**
 
-<!-- Jim's area. Good blog on this: https://www.liferay.com/web/juan.fernandez/blog/-/blogs/adding-geolocation-support-to-liferay-7-0
+<!-- TODO Jim: Jim's area. Good blog on this:
+https://www.liferay.com/web/juan.fernandez/blog/-/blogs/adding-geolocation-support-to-liferay-7-0
 -Cody -->
 
 #### Display Settings
@@ -508,7 +510,7 @@ default language.
 Now that you know how to configure sites, you'll learn how to customize your
 personal sites.
 
-## User Personal Sites
+## Customizing Personal Sites
 
 By default, newly created users in Liferay are each granted a personal site.
 Each user functions as the site administrator of his or her personal site.

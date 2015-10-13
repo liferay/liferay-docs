@@ -1,40 +1,38 @@
 # Creating and Managing Pages
 
-You have a few options for accessing and configuring your site's page editing
-interface. There are three interfaces to be aware of: *Site Pages*, *Page*, and
-*Edit Page*. These interfaces all deal with your site's pages, however, each
-interface is configurable in a different place and completes different
-objectives. 
+You've successfully created a site for your portal, but you may need to add new
+pages or edit existing pages. You have a few options for accessing and
+configuring your site's page editing interface. There are three interfaces to be
+aware of: *Site Pages*, *Page*, and *Edit Page*. These interfaces all deal with
+your site's pages, however, each interface is configurable in a different place
+and completes different objectives. 
 
-From the Site Administration page, your site pages can be accessed and
-configured. If you're already on your desired site, you can reach the Site
-Administration page by navigating to the *Admin* tab in the Dockbar and
-selecting *Site Administration*. If you're not currently on the site you'd like
-to edit, go to *My Sites* in the Dockbar and select your desired site. Once
-you're on the Site Administration page, select *Site Pages* (if necessary) under
-the Pages tab from the left panel. You can also use the *Pages* shortcut which
-is also listed under the Admin tab.
+From the Sites section of the Product Menu, your site pages can be accessed and
+configured. Navigate to the Product Menu &rarr; *Sites*. Locate the current
+site's name. If you're not currently on the site you'd like to edit, click the
+arrow next to your current site name in the Product Menu and select your desired
+site. Once you've selected your site, select *Site Pages* under the Pages tab
+from the left panel.
 
 ![Figure 2.5: The *Site Pages* interface allows you to edit your site pages as a whole.](../../images/04-managing-site-pages.png)
 
-To add new pages to your site, click the *Add* icon from the left palette and
+To add new pages to your site, click the *Add* icon from the bottom menu and
 select the *Page* tab. This is the *Page* interface, which offers a plethora of
 options for your new page including name, site layout, and site template.
 
 To manage the specific page of the site you've navigated to, click the *Edit*
-icon from the left palette. This will only edit the specific page you're
+icon from the bottom menu (gear). This will only edit the specific page you're
 currently on.
 
-![Figure 2.6: The *Edit Page* interface allows you to edit the current page you're on.](../../images/04-web-content-managing-single-page.png)
+![Figure 2.6: The *Edit Page* interface allows you to edit the current page you're on.](../../images/web-content-managing-single-page.png)
 
-*Site Pages* is an interface to view existing pages, create new pages, view
-pages and export or import pages using Liferay Archive (LAR) files. Note that
-you can switch between managing a set of pages and managing a single page using
-the left-hand side navigation menu. Click on *Public Pages* or *Private Pages*
-to manage the group or click on an individual page to manage just that one.
-Switching views like this changes the list of available tabs to the right. By
-default, liferay.com, which we renamed to lunar-resort.com, contains a single
-public page called *Welcome*.
+*Site Pages* is an interface to view existing pages, create new pages, and view
+pages. Note that you can switch between managing a set of pages and managing a
+single page using the left-hand side navigation menu. Click on *Public Pages* or
+*Private Pages* to manage the group or click on an individual page to manage
+just that one. Switching views like this changes the list of available tabs to
+the right. By default, liferay.com, which we renamed to lunar-resort.com,
+contains a single public page called *Welcome*.
 
 Liferay's page groups are always associated with sites. Even users' personal
 pages are part of their personal sites. All pages belong to one of two types of
@@ -45,11 +43,11 @@ means the private pages of an organization's site would only be viewable by
 site members and members of the organization. 
 
 Regardless of whether the pages are public or private, Liferay uses the same
-interface to manage them. Let's look at this interface more closely. 
+interface to manage them. You'll look at this interface more closely next. 
 
-### More Page Management Tools [](id=more-page-management-tools)
+## Creating Pages
 
-From the Site Pages interface in Site Administration, you can add a page to the
+From the Site Pages interface in the Sites menu, you can add a page to the
 site by clicking the *Add Page* button. Because *Public Pages* is selected on
 the left, clicking *Add Page* here adds a top level page next to the Welcome
 page. You can, however, nest pages as deeply as you like. To create a sub-page
@@ -64,12 +62,16 @@ the Recent Bloggers and Wiki portlets.
 When you create a new page, you can create either a blank page or a page
 prepopulated with portlets from a page template. When you're entering the name
 of the page, you can select from a list of page templates that are currently
-available. To view the pages once you add them, click the *View Pages* button.
+available. You can learn more about Page Templates and how to use them in the
+[Creating Pages from Templates]() 
+section. To view the pages once you add them, click the *View Pages* button.
 This is how you'd populate your pages with content and applications. This is
-covered in succeeding chapters. Page types include **Layout**, **Panel**,
-**Embedded**, **Link to URL**, and **Link to a Page of This Site**. By default,
-all pages are created as portlet pages but in some situations you might want to
-use one of the other options. 
+covered in succeeding chapters. By default, all pages are created as an empty
+page but in some situations, you might want to use one of the other options. You
+can take a look at all the page options you have below, along with their
+respective descriptions.
+
+<!-- TODO: Replace page template link above. -Cody -->
 
 **Layout:** the pages we're usually talking about. They have a layout
 which you can drag and drop portlets into. Most of the pages you create will be
@@ -100,90 +102,66 @@ To use the Edit Page interface to modify an existing page, navigate to the left
 palette and select the *Edit* icon. Notice that it's not possible to add a new
 page. This is because you're only managing the current page.
 
-Once you've created pages and populated them with content, Liferay provides a
-way for you to back them up to separate files. Let's see how that works. 
+If you ever need to modify the page you've created for your site, you can
+revisit *Site Pages* and select the page to edit. You can also use the *Edit
+Page* interface. It's not possible to add a new page from the Edit Page
+interface. This is because you're only managing the current page. To use the
+Edit Page interface to modify an existing page, navigate to the bottom menu and
+select the *Edit* icon. When configuring a specific page, you're given more
+options than if you're configuring a group of pages like Public Pages or Private
+Pages. These extended options for configuring specific pages are covered in the
+[Customizing Pages]()
+section. 
 
-#### Backing up and Restoring Pages [](id=backing-up-and-restoring-pages)
+<!-- TODO: Add link above, when available. -Cody -->
 
-Next to the *Add Page* button on the Site Pages screen, there are two buttons
-labeled *Export* and *Import*. The Export button allows you to export the your
-site's data as a single file, called a LAR (Liferay Archive) file. When
-importing data into a site, it's best to use a newly created site to avoid
-potential conflicts between the existing site data and the data about to be
-imported. When exporting site data, you can specify exactly what data should be
-included in the LAR:
+Now that you know the basics of adding site pages, you can start working on the
+Lunar Resort site. If you're not currently on the site you're interested in
+adding pages to, navigate to *Sites* in the Product Menu, select the left arrow
+button next to the current site name, and select the site you wish to edit.
 
-- Site pages (you can select exactly which ones)
-- Page settings
-- Theme
-- Theme settings
-- Logo
-- Application configurations
-- Application content
-- Archived setups
-- User preferences
+You'll use the *Community* page you created earlier in the section. Navigate to
+the *Add* button from the bottom menu and then
+select the *Page* tab. Once you select *New Page*, you're redirected to the
+Site Pages interface. Since you plan on editing the *Community* page, go ahead
+and select it from the navigation tree.
 
-Once you've created a LAR file, you can import it into a site on another Liferay
-server. The data included in the LAR file, including all the site pages, will
-be imported into the site. Exporting and importing LARs is a great way to take
-content from a site in one environment (say, a development or QA environment)
-and move it all in one shot to a site on another server. You can use LARs to
-import data onto production servers, but you should not make this a regular
-occurrence. If you want to regularly move pages from one server to another, you
-should use Liferay's staging environment, which we discuss in the
-[Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
-chapter.
+<!-- Confirm adding pages are done by redirecting to Site Pages, instead of
+being able to add page from *Add* -> *Page* -> *New Page*. (Above and below)
+-Cody -->
 
-LARs can be a good way to back up your site's content. You can export them to a
-specific location on your server which is backed up. If you ever have to restore
-your site, all you need to do is import the latest LAR file. However, please be
-careful! If there's any content that exists both in the LAR and in the site
-that's importing the data, there may be a conflict, and data could be
-corrupted.  If you'd like to restore a Liferay site using a LAR file, it's best
-to delete the site entirely, create a new site with the same name as the old
-one (i.e., re-create the site), and then import the LAR file into the new site.
-This way, there's no chance for there to be a data conflict.
+This screen's options should look familiar to you, but a brief list of options
+the Page interface allows you to complete are listed below:
 
-Liferay can handle some kinds of naming collisions when importing a LAR file
-into a site. For example, suppose you're importing a LAR file into a site and
-the LAR file has a page with a certain friendly URL. If an existing page in the
-site has the same friendly URL there will be a collision. Liferay resolves the
-collision by adding a number to the end of the friendly URL and incrementing
-until there's no collision. This behavior takes place for friendly URL
-translations as well. Similarly, if importing a LAR into a site causes a
-category name collision, Liferay renames the imported categories.
+- Give the name of the page
+- Hide the page from the theme navigation
+- Choose the page template
+- Link to another website
+- Link to another page in the current site
+- Copy an existing page
 
-+$$$
+When you select *Add Page* at the bottom of the menu, your new page will
+appear on the navigation menu of your site. You can drag the page names to their
+correct order as you see fit.
 
-**Note:** LAR files are version dependent. You can't import a LAR file that was
-exported from one version of Liferay into a Liferay server that's running a
-different version of Liferay. Also, note that periodically exporting LARs is
-*not* a complete backup solution; please refer to the
-[Backing up a Liferay Installation](/discover/deployment/-/knowledge_base/6-2/backing-up-a-liferay-installation)
-section for information on backing up Liferay.
+You can also create new pages from the Site Pages interface. Navigate to Site
+Administration &rarr; *Site Pages*. If you navigate to *Public Pages* or
+*Private Pages* on your site hierarchy, you'll notice the *Add Page* button,
+which we discussed earlier in the chapter. If you navigate to a specific site,
+you'll notice the *Add Child Page* button.
 
-$$$
+The *Add Child Page* lets you create child pages underneath the page you've
+selected. You can nest pages as deep as you like but for every page below the
+top level hierarchy you must provide navigation to it via a Navigation or
+Breadcrumb portlet, at least with most themes (including the default).
+Developers can create themes which have cascading menu bars which show the full
+hierarchy. Some examples of that are in Liferay's plugin repositories.
 
-Let's be good administrators and export a LAR file for backup purposes. Click on
-the *Export* button and then name the file `lunarresortv1.lar`. Use the check
-boxes to determine what you'd like to export. For this initial export, select
-everything. Note that if you select one of the *Choose* radio selectors or
-*Change* links, you're given checkboxes for options to choose. The applications'
-content can also be selected for export, including the Documents and Media
-Library, Message Boards, and Web Content assets. You can even export the theme
-you're using!
+You should be able to define and manage pages in Liferay at this point so next,
+you'll look at the options you have available for configuring your public or
+private pages as a whole.
 
-Once you click *Export*, your browser prompts you to save the file. Once you
-have the file, you can copy it to a backup location for safekeeping or import it
-into another installation of Liferay Portal. If you must rebuild or wish to
-revert back to this version of your site, you can import this file by clicking
-the *Import* button from the Site Pages dialog box, browsing to it and
-selecting it. 
-
-Next, we'll look at the options on the right side menu, starting with Look and
-Feel. 
-
-#### Customizing the Look and Feel of Site Pages [](id=customizing-the-look-and-feel-of-site-pages)
+### Customizing the Look and Feel of Site Pages
 
 When you open *Site Pages* from within Site Administration, it defaults to the
 Look and Feel tab. On this tab, you're presented with an interface that allows
@@ -213,16 +191,9 @@ There are a few more configurable settings for your theme. You can switch the
 bullet style between dots and arrows and you can choose whether or not to show
 portlet borders by default.
 
-Starting in Liferay 6.2, WAP related technologies have been deprecated. In
-particular, the ability to modify themes for regular browsers and mobile devices
+<!-- the ability to modify themes for regular browsers and mobile devices
 can now only be accomplished using Mobile Device Rules, which can be found in
-the right menu. You can learn more about using Mobile Device Rules in the
-[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/6-2/displaying-site-pages-to-mobile-devices)
-section. You can enable the WAP functionality for your portal's Look and Feel
-section by opening/creating your `portal-ext.properties` file in your
-`${LIFERAY_HOME}` directory and setting
-`mobile.device.styling.wap.enabled=true`. WAP functionality will be completely
-removed from Liferay in the next release.
+the right menu. -->
 
 The *CSS* section allows you to enter custom CSS that will also be served up by
 your theme. In this way, you can tweak a theme in real time by adding new styles
@@ -230,7 +201,7 @@ or overriding existing ones.
 
 The next option configures the logo that appears for your site. 
 
-#### Using a Custom Logo for a Site [](id=using-a-custom-logo-for-a-site)
+### Using a Custom Logo for a Site
 
 By default, the Liferay logo is used for your site pages' logo. If you want to
 use your own logo for a specific site, use the *Logo* tab. Adding a custom logo
@@ -248,11 +219,11 @@ disabled in *Portal Settings*. Removing the site name is not available for the
 default site -- only newly created sites and user pages have the option to have
 the name display. 
 
-#### JavaScript [](id=javascript)
+### Executing JavaScript in Site Pages
 
 If you click on *JavaScript* from the Site Pages interface for a page set
 (either Public Pages or Private Pages), you'll find a window where you can enter
-JavaScript code the will be executed at the bottom of every page in the site.
+JavaScript code that will be executed at the bottom of every page in the site.
 If your site's theme uses JavaScript (as is usually the case), it's best to add
 custom JavaScript code to the theme and *not* in this window. This way, all of
 your site's JavaScript code remains in one place.
@@ -265,7 +236,37 @@ and you can add some dynamic features to your site's pages.
 Next, let's look at an advanced feature of the Site Pages interface: merging the
 current site's pages with the pages of the default site.
 
-#### Advanced [](id=advanced)
+### Rendering Pages for Mobile Devices
+
+You can configure your page set for mobile devices by selecting the *Mobile
+Device Rules* option. The set up for this option is explained in the
+[Displaying Site Pages to Mobile Devices]()
+section.
+
+### Configuring Rules for Virtual Hosting
+
+If you're using virtual hosting for this site, you can configure `robots.txt`
+rules for the domain by selecting the *Robots* option. The Robots page gives you
+the option to configure your `robots.txt` for both public and private pages on a
+site. If you don't have Virtual Hosting set up, this tab is rather boring. 
+
+### Notifying Search Engines of Site Pages
+
+If you select the *Sitemap* option from the Site Pages interface for a page set,
+you can send a sitemap to some search engines so they can crawl your site. It
+uses the sitemap protocol, which is an industry standard. You can publish your
+site to Yahoo or Google and their web crawlers will use the sitemap to index
+your site. Liferay Portal makes this very simple for administrators by
+generating the sitemap XML for all public web sites.
+
+By selecting one of the search engine links, the sitemap will be sent to them.
+It's only necessary to do this once per site. The search engine crawler will
+periodically crawl the sitemap once you've made the initial request.
+
+If you're interested in seeing what is being sent to the search engines, select
+the *Preview* link to see the generated XML.
+
+<!-- ### Advanced
 
 If you click on *Advanced* from the Site Pages interface for a public page set,
 you'll find an option to merge the public pages of your portal's default site
@@ -302,68 +303,131 @@ site B, no additional pages appear in site B's navigation bar because site B
 does not have the *Merge default site's public pages* option enabled. And if the
 user navigates back to the default site, site B becomes the previous site, and,
 again, since site B does not have the *Merge default site's public pages* option
-enabled, no additional pages are added to the default site's navigation menu.
+enabled, no additional pages are added to the default site's navigation menu.-->
 
-Next, let's examine how to configure individual pages.
+Next, you'll learn how to add portlets to your site pages.
 
-### Changing Options for Individual Pages [](id=changing-options-for-individual-pages)
+## Adding Portlets to a Page
 
-When you use the *Edit Page* interface for a single page, some different options
-appear. Let's look at what these do. 
+As we discussed earlier, Liferay Portal pages are composed of portlets. All of
+your site's functionality, from blogs to shopping, is composed of portlets. Even
+static web content can be displayed through Web Content Display portlets. To add
+a portlet to a page, just click the *Add* button from the bottom menu and
+select the *Applications* tab. You can either browse through the categories of
+available portlets until you find the one you're looking for or you can search
+for portlets by name. Once you've found a portlet, click the *Add* button to add
+it the current page. Once it's been added to the page, you can drag it to a new
+position. Alternatively, you can drag the portlet directly from the Applications
+menu to a specific location on the page. Follow the steps below to add some
+Collaboration portlets to the Lunar Resort site.
 
-**Details:** lets you name the page for any localizations you need, set whether
-the page is hidden on the navigation menu, set an easy to remember, friendly URL
-for the page, and select the page type. Plus you can specify how portlets are
-arranged on a page. Choose from the available installed templates to modify the
-layout. It's very easy for developers to define custom layouts and add them to
-the list. This is covered more thoroughly in both the *Liferay Developer's
-Guide* and in [*Liferay in Action*](http://manning.com/sezov).
+1. From the bottom menu, select *Add* &rarr; *Applications*.
+2. In the menu that appears, expand the *Collaboration* category.
+3. Drag the *Blogs Aggregator* portlet off the Add Application window onto the
+   right column of our page.
+4. Next, drag the *Wiki* portlet to the *left column*.
 
-**SEO:** provides several means of optimizing the data the page provides to an
-indexer that's crawling the page. You can set the various meta tags for
-description, keywords and robots. There's also a separate Robots section that
-lets you tell indexing robots how frequently the page is updated and how it
-should be prioritized. If the page is localized, you can select a box to make
-Liferay generate canonical links by language. If you want to set some of these
-settings for the entire site, you can specify them from the Sitemaps and Robots
-tabs of the Manage Site Settings dialog box (see below).
+See how easy it is to add applications to your pages? You've added the Wiki
+portlet and Blogs Aggregator portlet to the Community page. 
 
-+$$$
+![Figure 2.12: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
 
-**Note:** In previous versions of Liferay, it was possible that a single page
-could be indexed multiple times. In Liferay 6.1, all URLs that direct to the
-same page will only create one entry in the index. Previously, the simple URL
-*http\://www.lunar-resort.com/web/guest/blog/-/blogs/themoon* and different
-versions of the URL which provided additional information about the referring
-page had different entries in the index. As of Liferay 6.1, each asset (web
-content article, blog entry, etc.) has a unique URL. From the search engine's
-point of view, this will make your pages rank higher since any references to
-variations of a specific URL will all be considered references to the same
-page.] 
+It's easy to make your pages look exactly the way you want them to. If the
+default layout options provided aren't enough, you can even develop your own.
+To find more information about developing custom layout templates, please refer
+to the [Creating a Layout Template Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-layout-template-project-in-the-plugins-sdk)
+tutorial. 
 
-$$$
+<!-- TODO: Replace link above. -Cody -->
 
-**Look and Feel:** lets you set a page-specific theme.
+Next, you'll examine how to customize individual pages.
 
-**JavaScript:** gives you the ability to paste custom JavaScript code to be
-executed on this page. 
+## Customizing Pages
 
-**Custom Fields:** If custom fields have been defined for pages (which can be
-done from the *Custom Fields* page of the Control Panel), they appear here.
-These are metadata about the page and can be anything you like, such as author
-or creation date. 
+When you decide to customize a single page, some different options that were not
+available when initially creating a page appear. Customizing a specific page can
+be done two ways; you can navigate to the site page and select the *Edit* button
+from the bottom menu, or you can navigate the the Site Pages interface from the
+Product Menu &rarr; *Sites* and select the specific page you'd like to edit from
+the navigation tree. There are three groups that the options for customizing a
+specific page can be defined under. You'll learn what each group offers for your
+site pages.
 
-**Advanced:** contains several optional features. You can set a query string to
-provide parameters to the page. This can become useful to web content templates,
-which you'll see in the next chapter. You can set a target for the page so that
-it either pops up in a particularly named window or appears in a frameset. And
-you can set an icon for the page that appears in the navigation menu. 
+### Managing Page Content
 
-**Mobile Device Rules:** allows you to apply rules for how this page should be
-rendered for various mobile devices. You can set these up in the *Mobile Device
-Rules* section of Site Administration. 
+Managing your page's content drastically improves your page's organization and
+user experience. The site page's configuration options offers some oppurtunities
+to organize page content for your Lunar Resort site.
 
-**Embedded Portlets:** only appears if you have embedded one or more portlets on
+#### Categorization
+
+You can explore ways to tag and categorize your page by clicking the
+*Categorization* tab. These tools help administrators organize the page and
+allows for users to easily find your page and its content through search and
+navigation. For more information on using tags and categories, visit the
+[Tagging and Categorizing Content](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/tagging-and-categorizing-content)
+section.
+
+<!-- TODO: replace link above. -Cody -->
+
+#### Custom Fields
+
+*Custom Fields* lets you edit the custom fields you already have configured for
+the *Page* resource. If you don't have any custom fields configured for the Page
+resource, you can navigate to the Control Panel &rarr; *Custom Fields* located
+under the *Configuration* tab. These are metadata about the page and can be
+anything you like, such as author or creation date. For more information on
+Custom Fields, see the
+[Custom Fields](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/custom-fields)
+section.
+
+<!-- TODO: replace link above. -Cody -->
+
+### Improving Page Usability
+
+One of the most important tasks for administrators is ensuring the user
+experience is easy and enjoyable. There are configuration options that aid in
+providing a seamless user experience for your site page.
+
+#### Details
+
+The first option you're given (and the default option selected when customizing
+an indiviual page) is *Details*. This option lets you name the page for any
+localizations you need, set whether the page is hidden on the navigation menu,
+set an easy to remember, friendly URL for the page, and select the page type.
+Plus you can specify how portlets are arranged on a page. Choose from the
+available installed templates to modify the layout. It's very easy for
+developers to define custom layouts and add them to the list. This is covered
+more thoroughly in the
+[Creating a Layout Template Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-layout-template-project-in-the-plugins-sdk)
+tutorial.
+
+<!-- TODO: Update tutorial link to 7.0, when available. -Cody -->
+
+#### Look and Feel
+
+The *Look and Feel* option lets you set a page-specific theme. You can inherit
+what you already have configured for your page sets' theme, or you can uniquely
+define them per page. You can see the Page Set's
+[Customizing the Look and Feel of Site Pages]()
+section for more details.
+
+<!-- TODO: replace link above. -Cody -->
+
+#### Mobile Device Rules
+
+This option allows you to apply rules for how this page should be rendered for
+various mobile devices. You can set these up in the *Mobile Device Rules*
+section in the Product Menu &rarr; *Sites* &rarr; *Configuration*. For more
+information about Mobile Device Rules and how to use them, see the
+[Displaying Site Pages to Mobile Devices]()
+section.
+
+<!-- TODO: replace link above. -Cody -->
+
+#### Embedded Portlets
+
+This option only appears if you have embedded one or more portlets on
 the page. To embed a portlet on a page, first look up its portlet name in
 Liferay's `WEB-INF/portlet-custom.xml` file. Portlet names in
 `portlet-custom.xml` are sometimes referred to as portlet IDs. What we usually
@@ -388,61 +452,182 @@ refreshed the page, only the embedded portlet will be visible.
 
 $$$
 
-**Customization Settings:** lets you mark specific sections of the page you want
-users to be able to customize.
+<!-- TODO: This is the way to do it for 6.2. I'm fairly certain this needs to be
+changed for 7.0. I'm in the process of contacting the WEM team for details on
+how this should be updated. -Cody -->
 
-Next, we'll run practice modifying page layouts!
+Liferay provides an alternative way to embed portlet on a page layout or theme
+programatically. If you're interested in learning more about this, visit the
+[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
+tutorial.
 
-### Modifying Page Layouts [](id=modifying-page-layouts)
+#### Customization Settings
 
-Page layouts allow you to arrange your pages so the content appears the way you
-want it to. Liferay comes with many layouts already defined. Developers can
-create more and they can be deployed to your portal for your use.
-
-To prepare for the portlets we'll soon be adding, let's change the layout of the
-Collaboration page. To access layouts, select the *Edit* icon from the left
-palette and click the *Details* tab (if necessary).
-
-Now, select the *2 Columns (70/30)* layout and click *Save*. Once saved, you'll
-return to the page and it'll seem as though nothing has happened. Once we start
-adding portlets, however, you'll notice the page is now equally divided into two
-columns. You can stack portlets on top of each other in these columns. There
-are, of course, more complicated layouts available and you can play around with
-them to get the layout you want.
-
-Sometimes a particular layout is *almost* what you want but not quite. In this
-case, use the Nested Portlets portlet to embed a layout inside another layout.
-This portlet is a container for other portlets. It lets you select from any of
-the layouts installed in Liferay, just like the layouts for a page. This gives
-you virtually unlimited options for laying out your pages.
-
-The next option we'll explore is page customizations. 
-
-### Page Customizations [](id=page-customizations)
-
-With page customizations, any user with the appropriate permissions can create
-personalized versions of any public page. Before users can create personalized
-versions of pages, customizations must first be enabled by an administrator.
-Administrators can activate or deactivate customizations for any row or column
-on any page. When users customize a page, they have the option to use either
-their version or the default version of a page. Users can't see alternate
-versions of pages other than their own.
-
-![Figure 2.9: During page customization, individual columns change colors to indicate whether they are selected or not.](../../images/04-web-content-personal-customization.png)
-
-To activate page customizations, click the *Edit Page* button from the left
-palette and select the *Customization Settings* tab. Then select *Show
-Customizable Sections* to view and modify sections on your page.
-
-When an administrator activates page customizations for a page, any portlets
-that are in a *Customizable* row or column can be moved around the page or
-removed from the page. Users can add new portlets of their own choosing to these
-columns of the page and can also customize portlet configurations. If at any
-time users determine they don't like their customizations, they can click *Reset
-My Customizations* to revert their pages back to the default. For more
-information about page customizations, please refer to the
-[Page Customizations](/discover/portal/-/knowledge_base/6-2/page-customizations)
+This configuration option lets you mark specific sections of the page you want
+users to be able to customize. You can learn more about page customizations in
+the [Personalizing Pages]()
 section.
+
+<!-- TODO: replace link above. -Cody -->
+
+### Enhancing Page Intelligence
+
+Your page's configuration options offers several oppurtunities to improve your
+page's data optimization and JavaScript, among others. To enhance your page's
+intelligence, configure the options described below.
+
+#### SEO
+
+*SEO* provides several means of optimizing the data the page provides to an
+indexer that's crawling the page. You can set the various meta tags for
+description, keywords and robots. There's also a separate Robots section that
+lets you tell indexing robots how frequently the page is updated and how it
+should be prioritized. If the page is localized, you can select a box to make
+Liferay generate canonical links by language. If you want to set some of these
+settings for the entire site, you can specify them from the Sitemaps and Robots
+tabs of the Manage Site Settings dialog box (see below).
+
+In previous versions of Liferay, it was possible that a single page
+could be indexed multiple times. In Liferay 6.1, all URLs that direct to the
+same page will only create one entry in the index. Previously, the simple URL
+*http\://www.lunar-resort.com/web/guest/blog/-/blogs/themoon* and different
+versions of the URL which provided additional information about the referring
+page had different entries in the index. In Liferay 7.0, each asset (web
+content article, blog entry, etc.) has a unique URL. From the search engine's
+point of view, this will make your pages rank higher since any references to
+variations of a specific URL will all be considered references to the same
+page.] 
+
+#### JavaScript
+
+If you click on *JavaScript*, you'll find a window where you can enter
+JavaScript code that will be executed at the bottom of your page.
+If your site's theme uses JavaScript (as is usually the case), it's best to add
+custom JavaScript code to the theme and *not* in this window. This way, all of
+your site's JavaScript code remains in one place.
+
+This configuration option is also available for page sets like Public Pages and
+Private Pages. Visit the
+[Executing JavaScript in Site Pages]()
+section for more information on doing this for page sets.
+
+<!-- TODO: replace link above. -Cody -->
+
+#### Advanced
+
+The *Advanced* option contains several optional features. You can set a query
+string to provide parameters to the page. This can become useful to web content
+templates, which you'll see in the next chapter. You can set a target for the
+page so that it either pops up in a particularly named window or appears in a
+frameset. And you can set an icon for the page that appears in the navigation
+menu.
+
+Next, you'll practice personalizing pages using page customizations!
+
+## Personalizing Pages
+
+Administrators can designate public pages or sections of public pages to be
+customizable. When a user visits such a page, a notification appears stating
+that the user can customize the page. Users can make customizations only in the
+sections of pages designated by administrators. Customizations are based on the
+rows and columns of a page layout. Page customizations are only visible to the
+user who made the customizations. By default, site members can make page
+customizations but non-site members and guests can't.
+
+To enable page customizations as an administrator, first navigate to the page
+you'd like to let site members modify. Then click on the *Edit* button at the
+left side of the page, expand the *Customization Settings* area, and click on
+the *Show Customizable Sections* button. 
+
+<!-- Not available at the current moment in 7.0. -Cody -->
+
+![Figure 8.1: To enable page customizations, click on the *Edit* button at the left side of the page, expand the *Customization Settings* area, and click on the *Show Customizable Sections* button.](../../images/page-customizations.png)
+
+Once you've clicked the *Show Customizable Sections* button, you'll see one or
+more red regions, depending on the layout template of your page. Check one or
+more of the *Customizable* boxes to allow site members to customize certain
+sections of the page. Regions that you've designated as customizable are colored
+green.
+
+![Figure 8.2: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../images/customizable-regions.png)
+
+When site members visit your customizable page, they'll see a notification
+saying, "You can customize this page." Site members can toggle between viewing
+their customized page and viewing the default page by clicking the *View Default
+Page* or *View My Customized Page* links just below the Dockbar. There's also a
+*Reset My Customizations* link that restores a user's customized page to the
+match the default page. This allows users to discard one set of customizations
+and start a new set without having to manually undo each customization that
+they'd previously made.
+
+Note that non-administrator site members can access the Add menu from the left
+side of the screen when viewing their customizable page even if they don't
+ordinarily have permission to view this menu. This allows them to add portlets
+to the sections of the page that they're allowed to customize. If they click
+*View Default Page*, the Add menu will disappear from the Dockbar since they're
+not allowed to modify the default page.
+
+![Figure 8.3: Non-administrator site members can customize their own versions of customizable pages but can't modify the default page.](../../images/default-customizable-page.png)
+
+Administrators of customizable pages have the same two views as site members:
+the *default page* view and the *customized page* view. Changes made to the
+*default page* affect all users, whereas changes made to the *customized page*
+affect only the administrator who made the changes. Changes made by
+administrators to non-customizable sections in the *default view* are
+immediately applied for all users. However, changes made by administrators to
+customizable sections do *not* overwrite users' customizations.
+
+Users can make two kinds of customizations to customizable regions. First, they
+can configure portlet applications within the customizable regions. Second, they
+can add portlets to or remove portlets from the customizable regions.
+
+The portal doesn't allow users to change a non-instanceable portlet's
+configuration inside a customizable region since those kinds of portlets are
+tied to the site to which they've been added. If this were allowed, the
+customization would affect all users, not just the one who customized the
+region. Therefore, changes to the portlet configuration in a customizable region
+are only possible for instanceable portlets, whose portlet configuration only
+affects that one user.
+
+For example, suppose that you, as an administrator, selected the right column of
+the Welcome page of the Lunar Resort site to be customizable. A member of the
+Lunar Resort site could take the following steps to make a personal
+customization of the Welcome page:
+
+1. Navigate to the Welcome homepage by clicking *Go To* &rarr; *Lunar Resort*
+   from the Dockbar.
+2. Remove the Hello World portlet from the right column of the page.
+3. Add the Language portlet to the right column of the page by clicking *Add*,
+   clicking on *Applications*, searching for *Language*, and clicking *Add* next
+   to its name.
+4. Configure the Language portlet by clicking on the gear icon and selecting
+   *Configuration* and then opening the *Display Style* dropdown menu and
+   choosing *Select Box*.
+
+The Language portlet is useful to have on your portal's homepage if you expect
+users who speak different languages to access your portal. Users can select
+their language in the Language portlet to view a translation of the portal into
+their native language. After closing the Configuration dialog box of the
+Language portlet, the customized Welcome page looks like this:
+
+![Figure 8.4: In this example, the user removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../images/customized-portal-homepage.png)
+
+<!-- This section needed updating for 6.2. The following two paragraphs'
+statements about the required permissions and roles seem to be obsolete. -->
+
+To allow users to customize a page, administrators must grant users permission
+to *Customize* pages under the Site section. This can be achieved by assigning
+permission to a role, then assigning this role to the appropriate users. For
+example, if we want any logged user to be able to customize our customizable
+pages, we could assign the *Customize* permission to the role *User*. If we want
+site members to be able to customize the customizable pages of their sites, we
+would accept the default setting. By default, the *Customize* permission is
+assigned to the role *Site Member*.
+
+In addition to granting the ability to customize portlet configurations, the
+*Customize* permission allows users to customize the look and feel of portlets
+and to import or export portlet settings. Next, let's look at how to use
+application display templates.
 
 ### Page Templates and Site Templates [](id=page-templates-and-site-templates)
 
@@ -459,80 +644,7 @@ and
 [Using Site Templates](/discover/portal/-/knowledge_base/6-2/using-site-templates)
 sections. 
 
-## Creating Pages [](id=creating-pages)
-
-There are a lot of other things you can do beyond placing portlets on a page. So
-let's start working on the Lunar Resort site. You can do this by going up to the
-Dockbar and clicking *My Sites* &rarr; *Lunar Resort*.
-
-We'll use the *Community* page you created earlier in the chapter. Navigate to
-the *Community* page and select the *Add* button from the left palette and then
-the *Page* tab.
-
-This screen's options should look familiar to you from previous sections, but
-let's briefly go through how to create a new page: 
-
-The Page interface allows you to:
-
-- Give the name of the page
-- Hide the page from the theme navigation
-- Choose the page template
-- Link to another website
-- Link to another page in the current site
-- Copy an existing page
-
-When you select *Add Page* at the bottom of the menu, your new page will
-appear on the navigation menu of your site. You can drag the page names to their
-correct order as you see fit.
-
-You can also create new pages from the Site Pages interface. Navigate to Site
-Administration &rarr; *Site Pages*. If you navigate to *Public Pages* or
-*Private Pages* on your site hierarchy, you'll notice the *Add Page* button,
-which we discussed earlier in the chapter. If you navigate to a specific site,
-you'll notice the *Add Child Page* button.
-
-The *Add Child Page* lets you create child pages underneath the page you've
-selected. You can nest pages as deep as you like but for every page below the
-top level hierarchy you must provide navigation to it via a Navigation or
-Breadcrumb portlet, at least with most themes (including the default).
-Developers can create themes which have cascading menu bars which show the full
-hierarchy. Some examples of that are in Liferay's plugin repositories.
-
-For now, click the back arrow. You should be able to define and manage pages in
-Liferay at this point so let's look at what you'd put on a page.
-
-### Adding Portlets to a Page [](id=adding-portlets-to-a-page)
-
-As we discussed earlier, Liferay Portal pages are composed of portlets. All of
-your site's functionality, from blogs to shopping, is composed of portlets. Even
-static web content can be displayed through Web Content Display portlets. To add
-a portlet to a page, just click the *Add* button from the left palette and
-select the *Applications* tab. You can either browse through the categories of
-available portlets until you find the one you're looking for or you can search
-for portlets by name. Once you've found a portlet, click the *Add* button to add
-it the current page. Once it's been added to the page, you can drag it to a new
-position. Alternatively, you can drag the portlet directly from the Applications
-menu to a specific location on the page. Let's add some portlets to the
-Collaboration page of the Lunar Resort site.
-
-1. From the left palette, select *Add* &rarr; *Applications*.
-2. In the menu that appears, expand the *Collaboration* category.
-3. Drag the *Blogs Aggregator* portlet off the Add Application window onto the
-   right column of our page.
-4. Next, drag the *Wiki* portlet to the *left column*.
-
-See how easy it is to add applications to your pages? We've added the Wiki
-portlet and Blogs Aggregator portlet to the Community page. 
-
-![Figure 2.12: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
-
-It's easy to make your pages look exactly the way you want them to. If the
-default layout options provided aren't enough, you can even develop your own.
-To find more information about developing custom layout templates, please refer
-to the [Creating a Layout Template Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-layout-template-project-in-the-plugins-sdk)
-tutorial. 
-
-### Page Permissions [](id=page-permissions)
+## Changing Page Permissions
 
 By default, public pages are just that: public. They can be viewed by anybody,
 logged in or not logged in. And private pages are really only private from
@@ -541,7 +653,7 @@ organization, that person can see all the private pages. You can, however,
 modify the permissions on individual pages in either page group so only certain
 users can view them.
 
-Let's say we wanted to create a page only for administrators to see. We can do
+Suppose you want to create a page only for administrators to see. You can do
 this with the following procedure:
 
 1. Go to the Dockbar and select *Admin* &rarr; *Site Administration*.
