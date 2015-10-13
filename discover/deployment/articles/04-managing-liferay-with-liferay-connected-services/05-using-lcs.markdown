@@ -265,12 +265,13 @@ crucial.
 
 +$$$
 
-**Note**: In cloud environment, where an machine instance image is used to
-replicate new server nodes, it is expected that encapsulated portal instance is
-configured and ready to run. Portal Administrator should make sure that all
-portal properties (like `setup.wizard.enabled` property) that expect human
-interaction or could prevent automatic startup are set correctly or disabled
-(example `setup.wizard.enabled=false`) before making an permanent machine image.
+**Note**: If your auto-scaling environment creates new server nodes from a 
+portal instance in a system image, that instance can't require human interaction 
+during setup. When creating such an image, you must change any portal property 
+settings that can prevent automatic portal setup. For example, Liferay's setup 
+wizard requires human interaction to set up the portal. You must therefore set 
+the portal's `setup.wizard.enabled` property to `false` if you want your 
+auto-scaling environment to create new server nodes from this portal.
 
 $$$
 
