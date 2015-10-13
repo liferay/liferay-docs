@@ -18,7 +18,7 @@ a sample project. It requires the following software:
 
 - Android Studio 1.0.2 or above.
 - Android SDK 4.0 (API Level 15) or above. Its [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
-  (v7:22.2.0) implements the
+  (v7:23.0.1) implements the
   [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
   and offers older devices a material look and feel.
 - [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases).
