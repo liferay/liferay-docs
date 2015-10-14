@@ -108,6 +108,13 @@ the HTML directly.
 
 ![Figure 2.17: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../images/web-content-video.png)
 
+The WYSIWYG editor also offers an accessibility help menu with a set of 
+navigation instructions and keyboard shortcuts, so you can easily navigate
+and use the editor with ease. Press *option+0* on the keyboard to bring
+up the accessibility menu.
+
+![Figure 2.18: The accessibility help menu provides a set of instructions to help navigate and use the editor.](../images/accessibility-menu.png)
+
 You can integrate Liferay with external services to enable additional
 functionality. For example, if you navigate to the Control Panel, click on
 *Server Administration* and then on *External Services*, you can install and
