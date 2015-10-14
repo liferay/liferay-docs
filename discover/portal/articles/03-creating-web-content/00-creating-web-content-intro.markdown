@@ -24,6 +24,44 @@ cart functionality, visitor polls, web forms, site collaboration tools and more.
 Everything is done with our collection of easy-to-use tools with familiar
 rich-text editors and an intuitive interface. 
 
+Liferay's WCM offers a host of features that makes managing the content of your
+site easier. A list is provided below of some of the tools that can be used with
+web content in Liferay. Some of these tools are covered in other chapters of the
+User's Guide, so links are provided if you're interested in using them to manage
+your site's web content.
+
+- **WYSIWYG Editor:** A complete HTML editor that allow you to modify fonts, add
+  color, insert images and much more.
+
+- **Structure Editor:** Easily add and remove fields you want available to
+  content creators and then dynamically move them around. This editor includes
+  an entire suite of form controls you can drag and drop onto your structure.
+
+- **Template Editor:** Import template script files that inform the system how
+  to display the content within the fields determined by the structure.
+
+- **Web Content Display:** A portlet that allows you place web content on a page
+  in your portal.
+
+- **Asset Publisher:** A portlet which can aggregate different types of content
+  together in one view. This portlet is covered in more detail in the
+  []() section.
+
+- **Scheduler:** Lets you schedule when content is reviewed, displayed and
+  removed. This feature is covered in more detail in the
+  []() section.
+
+- **Workflow Integration:** Run your content through an approval or review
+  process. This feature is covered in more detail in the
+  []() section.
+
+- **Staging:** Use a separate staging server or stage your content locally so
+  you can keep your changes separate from the live site. This feature is covered
+  in more detail in the
+  []() section.
+
+<!-- TODO: Replace links above with 7.0 links, when available. -Cody -->
+
 With Liferay's WCM, you have the ability to create, edit, stage, approve, and
 publish content with easy-to-learn yet powerful tools. Liferay's WCM streamlines
 the content creation process for end users. It's much faster to use Liferay's

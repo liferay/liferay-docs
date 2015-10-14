@@ -643,21 +643,6 @@ In addition to granting the ability to customize portlet configurations, the
 and to import or export portlet settings. Next, let's look at how to use
 application display templates.
 
-### Page Templates and Site Templates [](id=page-templates-and-site-templates)
-
-*Page Templates* and *Site Templates* are invaluable tools for building similar
-pages on larger portals. As you continue to add pages to sites in your portal,
-you'll notice repeatable patterns in the designs of those pages. Page templates
-enable you to preconfigure a single page and then apply it to any new page you
-create. Site templates allow you to do the same thing but on the scale of a
-site--if you have multiple sites that use a similar structure of pages, you can
-create a single site template and use it to create as many sites as desired. For
-more information on page templates and site templates, see the
-[Using Page Templates](/discover/portal/-/knowledge_base/6-2/using-page-templates)
-and
-[Using Site Templates](/discover/portal/-/knowledge_base/6-2/using-site-templates)
-sections. 
-
 ## Changing Page Permissions
 
 By default, public pages are just that: public. They can be viewed by anybody,
@@ -682,17 +667,14 @@ this with the following procedure:
 
 ![Figure 2.13: The Permissions offer a plethora of options for each role.](../../images/04-web-content-page-permissions.png)
 
-Congratulations! You've just changed the permissions for this page so only site
+Congratulations! You've changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.
 Other users, even members of this site, won't have permission to see it.
 
 Pages in Liferay are as flexible as pages you'd create manually without a
 portal. Using a point and click interface, you can define your site any way you
 want. You can create and remove pages, export and import them, set their
-layouts, define how they are indexed by search engines and more. You've also
-been introduced to Liferay's concept of sites. Again, using a point and click
-interface, you can create multiple web sites and define how users can access
-them, whether they are linked to a domain name and create all of their pages.
+layouts, define how they are indexed by search engines and more.
 
 You now understand how to manage pages in Liferay Portal. It's time to move on
 to adding content to those pages. Liferay's Web Content Management (WCM) is a
@@ -707,7 +689,8 @@ content on your site. Once you're familiar with portlets such as Web Content
 Display and Asset Publisher, your ability to manage an immense site with a large
 amount of content will simply amaze you.
 
-We'll be using Liferay's WCM to publish simple pieces of content, develop
-templates to define how content is to be displayed, set up a workflow for
-content to be approved, schedule when content is to be published and much, much
-more.
+You'll be using Liferay's Web Content Management system to publish simple pieces
+of content, develop templates to define how content is to be displayed, set up a
+workflow for content to be approved, schedule when content is to be published
+and much, much more. You'll learn about many of these features in the next
+section.

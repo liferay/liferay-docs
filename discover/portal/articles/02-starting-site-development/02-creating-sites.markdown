@@ -582,3 +582,8 @@ to receive personal sites, add the following properties to your
     
 Personal sites are a dynamic feature of Liferay Portal. They allow users to
 manage and customize their own pages and content on your portal.
+
+You've officially been introduced to Liferay's concept of sites. Using a point
+and click interface, you can create multiple web sites and define how users can
+access them, whether they are linked to a domain name, and create all of their
+pages. You can learn more about creating site pages in the next section.

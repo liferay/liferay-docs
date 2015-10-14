@@ -1,39 +1,11 @@
 # Publishing Basic Web Content
 
-Liferay's WCM offers a host of features that makes managing the content of your
-site easier:
-
-- **WYSIWYG Editor:** A complete HTML editor that allow you to modify fonts, add
-  color, insert images and much more.
-
-- **Structure Editor:** Easily add and remove fields you want available to
-  content creators and then dynamically move them around. This editor includes
-  an entire suite of form controls you can drag and drop onto your structure.
-
-- **Template Editor:** Import template script files that inform the system how
-  to display the content within the fields determined by the structure.
-
-- **Web Content Display:** A portlet that allows you place web content on a page
-  in your portal.
-
-- **Asset Publisher:** A portlet which can aggregate different types of content
-  together in one view.
-
-- **Scheduler:** Lets you schedule when content is reviewed, displayed and
-  removed.
-
-- **Workflow Integration:** Run your content through an approval or review
-  process.
-
-- **Staging:** Use a separate staging server or stage your content locally so
-  you can keep your changes separate from the live site. 
-
 Liferay's Web Content Management is a powerful and robust tool for creating and
-organizing content on your web site. Let's begin by examining some basic
+organizing content on your web site. You'll begin by examining some basic
 concepts involving sites and pages.
 
 As you'll see, Liferay's WCM is a full-featured solution for managing your web
-site. We'll start with an overview of what it has to offer and then we'll dive
+site. You'll start with an overview of what it has to offer and then you'll dive
 down into its features. Note that web content is just one kind of asset on
 Liferay. Other types of content (blog posts, wiki articles, message board posts,
 etc.) are also considered assets. Liferay provides a general framework for
@@ -41,6 +13,8 @@ handling assets that includes tags, categories, comments, ratings, and more.
 Please see the
 [Displaying Content Dynamically](/discover/portal/-/knowledge_base/6-2/displaying-content-dynamically)
 section for more information on Liferay's asset framework.
+
+<!-- TODO: Replace link above with 7.0 link, when available. -Cody -->
 
 ## Creating Web Content
 
@@ -402,8 +376,4 @@ Liferay's WCM, you'll want to use structures and templates found in the
 [Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
 chapter. Next, let's see how you can manage your content with an approval
 process called workflow.
-
-
-
-
 
