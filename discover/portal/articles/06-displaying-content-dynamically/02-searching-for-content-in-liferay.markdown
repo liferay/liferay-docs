@@ -77,7 +77,7 @@ tool that allows users to include or not include specific types of assets in a
 search. However, the Search portlet does not return comments or attachments as
 search results.
 
-## Searching for Localized Web Content
+## Searching for Localized Web Content [](id=searching-for-localized-web-content)
 
 Liferay Portal supports localizing web content as well as searching for
 localized web content. Recall that to add a translation of a web content
