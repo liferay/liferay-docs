@@ -18,17 +18,16 @@ section for more information on Liferay's asset framework.
 
 ## Creating Web Content
 
-As we've already discussed, content is the reason web sites exist. Liferay
-Portal has made it easier than ever to get content published to your site.
-Because Liferay Portal is so flexible, you can use basic authoring tools right
-away or take advantage of the more advanced features. It's adaptable to your
-needs.
+Content is the reason web sites exist. Liferay Portal has made it easier than
+ever to get content published to your site. Because Liferay Portal is so
+flexible, you can use basic authoring tools right away or take advantage of the
+more advanced features. It's adaptable to your needs.
 
-We'll begin by creating some simple content using Liferay's WYSIWYG editor. Then
-we'll publish it to the home page of the Lunar Resort's web site. This is a fast
-and straightforward process that demonstrates how easy it is to create and
-publish content on your Liferay Portal instance. Let's learn about the Web
-Content section in Site Administration so we can create and publish our first
+You'll begin by creating some simple content using Liferay's WYSIWYG editor.
+Then you'll publish it to the home page of the Lunar Resort's web site. This is
+a fast and straightforward process that demonstrates how easy it is to create
+and publish content on your Liferay Portal instance. You'll learn about the Web
+Content section in Site Administration so you can create and publish our first
 pieces of content.
 
 When you manage web content from the Site Administration page, you can select
@@ -43,12 +42,12 @@ to view, edit, or create content.
 ![Figure 2.14: You can choose where to create content by navigating to the Control Panel and selecting *Sites*.](../../images/sites-selector.png)
 
 Once you have the Lunar Resort site selected, click on the *Web Content* link in
-Site Administration. You'll see a folder structure containing all of the web
-content articles that exist in the currently selected scope (the Lunar Resort
-site). You can click *Add* &rarr; *Folder* to create a new folder. For sites
-with lots of content and web content articles, it can be very useful to use
-folders to group certain kinds of web content articles together. Click *Add*
-&rarr; *Basic Web Content* to create a new web content article.
+Site Administration under Content. You'll see a folder structure containing all
+of the web content articles that exist in the currently selected scope (the
+Lunar Resort site). You can click *Add* &rarr; *Folder* to create a new folder.
+For sites with lots of content and web content articles, it can be very useful
+to use folders to group certain kinds of web content articles together. Click
+*Add* &rarr; *Basic Web Content* to create a new web content article.
 
 ![Figure 2.15: Click *Add* &rarr; *Basic Web Content* to create a new simple web content article. To create a new web content article based on an existing web content structure, click *Add* and then click on the name of the structure you'd like to use.](../../images/web-content-add-menu.png)
 
