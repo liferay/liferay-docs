@@ -13,6 +13,19 @@ short list of events you can listen for:
 - A portlet export has failed
 - An entity export has succeeded
 
+The concept of listening for export/import and staging events sounds cool, but
+you may be curious as to why listening for certain events is useful. Liferay
+Portal uses this framework by default in several cases. For instance, Liferay
+clears the cache when a web content import process finishes. To accomplish this,
+the lifecycle listener framework listens for an event that specifies that a web
+content import process has completed. Once that event occurs, there is code that
+reacts on that event by automatically clearing the cache. You could implement
+this sort of functionality yourself for any Portal event. You can listen for a
+specific event, and then complete an action based on when that event occurs. For
+a list of events you can listen for during Export/Import and Staging processes,
+see
+[ExportImportLifecycleConstants](https://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portlet/exportimport/lifecycle/ExportImportLifecycleConstants.html).
+
 In this tutorial, you'll learn how to use the `ExportImportLifecycleListener`
 framework to listen for processes/events during the staging and export/import
 lifecycles.
