@@ -13,7 +13,7 @@ user accounts.
 Instead of implementing the service interfaces directly, extend the
 `-ServiceWrapper` class for the interface you want to modify. The reason why
 becomes clear if you consider what happens when a patch to the interface is
-made. If you implemented the interface, you'd need to update your bundle to
+made. If you implemented the interface, you'd need to update your module to
 reflect the changes made by the patch. However, extending the wrapper class
 means you only interact with the methods you're overriding, and you don't need
 to know anything about the rest of the service. The necessary API providers will
@@ -23,16 +23,15 @@ will be unaffected by the change.
 You can [publish your own services to Liferay's module framework](/develop/tutorials/-/knowledge_base/7-0/publishing-liferay-services),
 [invoke Liferay's services from your application](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services),
 or modify the behavior of Liferay's services. This tutorial teaches you how to
-create a bundle that modifies Liferay's services. The process can be divided
+create a module that modifies Liferay's services. The process can be divided
 into three steps:
 
-1. Create and configure a project.
+1. Create and configure a module.
 2. Write a Java class that publishes a service wrapper.
 3. Build and deploy your module.
 
 Start by creating a project that can be deployed to Liferay's module framework.
 
-<!-- Test with both SDK and BLADE approaches -->
 <!-- The 6.2 tutorial on hooks linked to the api docs to show what classes there
 are; add link when available -->
 
@@ -40,86 +39,57 @@ are; add link when available -->
 
 Before writing any code, you need to have a bundle configured. For a more
 detailed description of the process, refer to the tutorial on [Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle).
-Here's the brief version:
 
-1. Navigate to your Plugins SDK’s `portlets` folder in a terminal or
-command prompt. Run the `create.[sh|bat]` script to create a new portlet project
-by entering this command:
+<!-- Jesse is currently reworking the Creating a Simple Bundle Tutorial, so the above link might need to be updated in the near future -->
 
-        ./create.sh service-override-bundle "Serivce Override Bundle"
+Blade Tools contains a template for the exact type of module that's needed for
+overriding one of Liferay's service interfaces, so once you've [installed Blade
+Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-tools), creating
+a module to override Liferay's services is trivial. Just enter a `blade create`
+command that specifies the proper options, remembering specifically to specify
+the fully qualified class name for the Liferay service you want to override:
 
-    This creates a project named service-override-portlet. Modify to suit yoyour
-    needs.
+    blade create -p servicewrapper -c UserLocalServiceOverride -d directory/for/project/ com.liferay.docs.serviceoverride com.liferay.service.UserLocalServiceWrapper  
 
-2. Delete the `-portlet` suffix.
-
-3. Delete the project’s `docroot` folder.
-
-4. Create a new file in the root of the project called `bnd.bnd`. Add the
-    following contents to it:
-
-        Bundle-Name: Service Override Bundle
-        Bundle-SymbolicName: com.liferay.docs.serviceoverride
-        Bundle-Version: 1.0.0
-        Private-Package: com.liferay.docs.serviceoverride
-
-    Edit the entries to match your project’s name and package structure.  This
-    information is used to generate the `MANIFEST.MF` file that the OSGi
-    specification requires of bundles.
-
-5. Edit your project’s `ivy.xml` file. Remove the `-portlet` suffix from the
-`<info module=...` line. Replace the default dependencies with this one:
-
-        <dependency name="org.osgi.core" org="org.osgi" rev="5.0.0" />
-
-6. Edit your project’s `build.xml` file. Remove the `-portlet` suffix from the
-project name, then replace this import declaration
-
-        <import file="../build-common-portlet.xml" />
-
-    with this one:
-
-        <import file="../../build-common-osgi-plugin.xml" />
-
-7. Run the following command to download the Ivy dependencies required to build your bundle:
-
-        ant clean
-
-Now you're ready to import your project into Eclipse, or your favorite IDE. In
-Eclipse, click *File* &rarr; *New* &rarr; *Other* &rarr; *Java Project*.
-Uncheck the *Use default location* box and click *Browse*. Navigate to your
-project in your Plugins SDK and select it. Click *Finish*. Eclipse generates
-`.classpath` and `.project` files based on the contents of your project.
-
-At this point, you have a project that can be deployed to Liferay, but no Java
-code to make it worthwhile.
+The above command creates a Gradle module of type `servicewwrapper`. The new
+module is created in your local directory `directory/for/project` with a project
+name and Java package called `com.liferay.docs.serviceoverride` (the package is
+located in the `src/main` directory of the project's root). There's even a
+`UserLocalServiceOverride` class that's automatically created in the package.
+This particular example overrides Liferay's `UserLocalService` interface, but it
+does so by extending the `UserLocalServiceWrapper` class, as discussed above.
 
 ## Creating a Java Class to Override Liferay's Services
 
-First, create a `src` folder in the root of your project. If you're using
-Eclipse, add this folder to your build path.
-
-Next, create a package in the `src` folder (`com.liferay.docs.serviceoverride`).
-
-Create a class that extends a service's `-ServiceWrapper`. Here's an example
-class set up to override the methods in `UserLocalService`:
+Your module is ready for development. Open the Java class and you'll see that
+it's already set up according to the arguments and options provided in your
+`blade create` command:
 
     package com.liferay.docs.serviceoverride;
 
-    import com.liferay.portal.kernel.exception.PortalException;
-    import com.liferay.portal.model.User;
+    import com.liferay.service.UserLocalServiceWrapper;
     import com.liferay.portal.service.ServiceWrapper;
-    import com.liferay.portal.service.UserLocalServiceWrapper;
-
-    import java.util.Map;
-
     import org.osgi.service.component.annotations.Component;
-    @Component(service = ServiceWrapper.class)
+
+    @Component(
+        immediate = true,
+        property = {
+        },
+        service = ServiceWrapper.class
+    )
     public class UserLocalServiceOverride extends UserLocalServiceWrapper {
 
-        public UserLocalServiceOverride() {
-            super(null);
-        }
+            public UserLocalServiceOverride() {
+                super(null);
+            }
+
+    }
+
+There's nothing complicated about it. You're publishing a `ServiceWrapper` type
+service (`service=ServiceWrapper.class`). As mentioned previously, you should
+always extend the service interface wrapper as opposed to implementing the
+service interface itself. Other than that, there's already a class constructor,
+so you can just begin overriding the methods of the service. Here's an example:
 
         @Override
         public int authenticateByEmailAddress(long companyId, String emailAddress,
@@ -133,37 +103,97 @@ class set up to override the methods in `UserLocalService`:
                 headerMap, parameterMap, resultsMap);
         }
 
+With this example, you're overriding the `authenticateByEmailAddress()` method,
+but leveraging the existing functionality of the method by calling `return
+super.authenticateByEmailAddress()` at the end of the method. To run this
+example, add two import statements:
+
+    import com.liferay.portal.kernel.exception.PortalException;
+    java.util.Map;
+
+You could build and deploy this module right now and be on your way. But you've
+only seen how easy it is to get a `servicewrapper` type project created for
+Liferay. There was some behind the scenes configuration and dependency
+management that Blade Tools handled for you. 
+
+## Configuring a Module
+
+In the root of the module, there's a `bnd.bnd` file and `build.gradle` file.
+Open the `build.gradle` file first.
+
+    buildscript {
+        repositories {
+            ivy {
+                url 'https://bndtools.ci.cloudbees.com/job/bnd.master/719/artifact/dist/bundles'
+                layout 'pattern', {
+                    artifact '[module]/[artifact]-[revision].[ext]' /* OSGi repo pattern */
+                }
+            }
+        }
+        dependencies {
+            classpath 'biz.aQute.bnd:biz.aQute.bnd.gradle:3.0.0'
+        }
     }
 
-There's nothing complicated about it. You're publishing a `ServiceWrapper` type
-service (`service=ServiceWrapper.class`), declared inside the `@Component`
-annotation. As mentioned previously, you should always extend the service
-interface wrapper as opposed to implementing the service interface itself. Other
-than that, simply create a class constructor and begin overriding the methods of
-the service. This particular example demonstrates overriding the
-`authenticateByEmailAddress()` method, but leverages the existing functionality
-of the method by calling `return super.authenticateByEmailAddress()` at the end
-of the method. 
+    apply plugin: 'biz.aQute.bnd.builder'
+
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://repository.liferay.com/nexus/content/groups/public'
+        }
+    }
+
+    sourceCompatibility = 1.7
+    version = '1.0'
+
+    dependencies {
+        compile 'com.liferay.portal:portal-service:7.0.0-SNAPSHOT'
+        compile 'org.osgi:org.osgi.compendium:5.0.0'
+    }
+
+The repositories and dependencies of the `buildscript` are required for the
+building of your module, and some repositories and dependencies upon which your
+code depends are also declared. Take special note of the plugin that’s applied:
+`biz.aQute.bnd.builder`. This plugin is needed because the Gradle project created
+for you uses Bnd to configure the project without using a build environment
+based on a Bnd Workspace. 
+
+The information specified in the `bnd.bnd` file is used to generate the
+`MANIFEST.MF` file that the OSGi specification requires.
+
+    -dsannotations: *
+
+    Bundle-Version: 1.0.0.${tstamp}
+
+    Import-Package: \
+        com.liferay.portal.model;version='[7.0,7.1)',\
+        com.liferay.portal.service;version='[7.0,7.1)',\
+        *
+
+    Private-Package: com.liferay.docs.serviceoverride
+
+To use the OSGi annotations for Declarative Services, specify `-dsannotations:
+*`. Alternatively, specify `Service-Component: *` to use the Bnd annotations.
+You're importing any packages the contained package requires to run in the
+`Import-Package` declaration, and setting your Java package as a
+`Private-Package`. This is an instruction to Bnd that the package listed must be
+included in the JAR, but not exported.
 
 ## Building and Deploying the Project
 
-To build and deploy the project, make sure that you've configured your Plugins
-SDK with the location of your Liferay instance. You need a
-`build.[username].properties` file in your Plugins SDK with the following
-contents:
+To build and deploy the project, you need two commands (navigate to the
+project's root folder if you're not already there): 
+    
+    gradle build
 
-    app.server.parent.dir=[Liferay Home]
+and
 
-Replace `[Liferay Home]` with the path to your Liferay bundle.
+    blade deploy [Project Root]/build/libs/[Project Name].jar
 
-Deploy the bundle by opening a terminal or command prompt, navigating to the
-project's root folder, and running
+You should see a message in your console that looks like this:
 
-    ant clean deploy
-
-Liferay's log displays a message like this:
-
-    Module for /home/russell/Documents/code/bundles/master/deploy/com.liferay.docs.serviceoverride.jar copied successfully. Deployment will start in a few seconds.
+    Installed or updated bundle 336
 
 Use the Felix Gogo shell to verify that your bundle was installed into Liferay's
 module framework. If you're running Liferay locally, use
@@ -173,7 +203,7 @@ module framework. If you're running Liferay locally, use
 to enter Felix Gogo shell. Then, at the prompt, enter `lb`, which stands for
 *list bundles*.
 
-    328|Active     |    1|Service Override Bundle (1.0.0)
+    336|Active     |    1|com.liferay.docs.serviceoverride (1.0.0.201510151914)
 
 The above output means the bundle is active.
 
@@ -187,14 +217,7 @@ Following the steps from this tutorial, you can modify Liferay's behavior quite
 extensively. If one of Liferay's portlets doesn't suit your needs at all,
 however, and you think you have a better option that can be used inside Liferay
 (you want to install and use a different app for blogging, perhaps), check out
-our tutorial on [providing portlets to manage requests](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests).
-
-<!-- I'm creating blade.tools templates for ServiceWrapper projects. I'll complete this section once merged into blade.tools master
-## Creating the Project with Blade Tools
-
-If you're not sure what Blade Tools is, see the tutorial on [creating bundles with Blade Tools]() and the tutorial on [installing Blade Tools](). While the Blade Tools project doesn't have a fully-baked template for overriding services, you can generate most of what you need 
-
--->
+the tutorial on [providing portlets to manage requests](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests).
 
 ## Related Topics 
 
