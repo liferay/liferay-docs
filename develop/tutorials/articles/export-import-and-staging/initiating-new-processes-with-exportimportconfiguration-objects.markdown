@@ -4,7 +4,7 @@ The Staging and Export/Import features of Liferay are the building blocks for
 creating, managing, and publishing a site. These features can be accessed in
 your Portal's *Publishing Tools* menu. You can also, however, start these
 processes programatically. This lets you provide new interfaces or mimic the
-functionality of these features in your own application?
+functionality of these features in your own application.
 
 For example, suppose you want your custom OSGi application to have an export
 feature, which users could use to export content from their application as a LAR

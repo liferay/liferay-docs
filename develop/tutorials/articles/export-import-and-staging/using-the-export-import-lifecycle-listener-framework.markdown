@@ -47,7 +47,7 @@ Follow the steps below:
     Export/Import Lifecycle Listener framework:
     [`BaseExportImportLifecycleListener`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portlet/exportimport/lifecycle/BaseExportImportLifecycleListener.java)
     or
-   [`BaseProcessExportImportLifecycleListener`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portlet/exportimport/lifecycle/BaseProcessExportImportLifecycleListener.java).
+    [`BaseProcessExportImportLifecycleListener`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portlet/exportimport/lifecycle/BaseProcessExportImportLifecycleListener.java).
     To choose, you'll need to consider what parts of a lifecycle you want to
     listen for.
 
