@@ -16,7 +16,6 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.liferay.docs.liferayguestbook.callback.GetGuestbooksCallback;
@@ -25,7 +24,6 @@ import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.android.v62.guestbook.GuestbookService;
 import com.liferay.mobile.screens.context.LiferayServerContext;
 import com.liferay.mobile.screens.context.SessionContext;
-import com.liferay.mobile.screens.context.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,12 +46,6 @@ public class GuestbooksActivity extends AppCompatActivity
         initActionBar();
         initDrawer();
         getGuestbooks();
-
-        User user = SessionContext.getLoggedUser();
-        TextView userNameText = (TextView) findViewById(R.id.user_name);
-        TextView userEmailText = (TextView) findViewById(R.id.user_email);
-        userNameText.setText("Welcome, " + user.getFirstName() + "!");
-        userEmailText.setText(user.getEmail());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
