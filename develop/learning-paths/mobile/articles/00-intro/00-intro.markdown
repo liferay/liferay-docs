@@ -27,6 +27,6 @@ Guestbook portlet. The complete Guestbook portlet's `.war` package is provided
 for installation into your local Liferay instance. 
 
 Now that you know what you'll be doing here, it's time to move on to the first
-series of articles: Beginning Android Development with Liferay. This article 
-shows you how to set up a local Liferay instance and deploy the Guestbook 
-portlet. 
+series of articles: Beginning Android Development for Your Portal. These 
+articles walk you through the steps required to get started developing an 
+Android app that interacts with Liferay.
