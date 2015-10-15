@@ -500,7 +500,7 @@ setting:
 That's it! Run the app. After you log in, the app retrieves the guestbooks from 
 the portal and displays the first guestbook's name in the Action Bar.
 
-![Figure x: The app now displays the first guestbook's name in the Action Bar.](../../images/android-first-guestbook.png)
+![Figure 2: The app now displays the first guestbook's name in the Action Bar.](../../images/android-first-guestbook.png)
 
 Open the drawer to reveal the list of guestbooks. Select a different guestbook 
 from the drawer. The drawer then closes and the Action Bar displays the selected 
@@ -509,45 +509,18 @@ drawer (besides being hideous). Its header displays the text *Android Studio*
 and *android.studio@android.com*. You obviously don't want your users to see 
 this. 
 
-![Figure x: The header displays generic text by default.](../../images/android-guestbook-drawer-01.png)
+![Figure 3: The header displays generic text by default.](../../images/android-guestbook-drawer-01.png)
 
 The two `TextView` elements in `nav_header_guestbooks.xml` use the 
 `android:text` attribute to hardcode this text. To remove the text completely, 
-you could delete the `TextView` elements. To show different static text, you 
-could change the `android:text` attributes' values. Using these `TextView` 
-elements to show a personalized greeting is a much better solution though. 
-Replace the `TextView` elements with the following code: 
-
-    <TextView android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:id="@+id/user_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/user_email" />
-
-The `TextView` elements no longer contain hardcoded text, and each now contains 
-a unique `android:id` value that you'll use to set the text dynamically. Next, 
-open `GuestbooksActivity` and place the following code in the `onCreate` method, 
-following the `getGuestbooks()` call:
-
-    User user = SessionContext.getLoggedUser();
-    TextView userNameText = (TextView) findViewById(R.id.user_name);
-    TextView userEmailText = (TextView) findViewById(R.id.user_email);
-    userNameText.setText("Welcome, " + user.getFirstName() + "!");
-    userEmailText.setText(user.getEmail());
-
-In this code, you use `SessionContext.getLoggedUser()` to return the logged-in 
-user as a Screens `User` object. This lets you use the `User` class's 
-`getFirstName()` and `getEmail()` methods, respectively, to obtain the user's 
-first name and email address. You then set these values as the text for the 
-respective `TextView` objects you specified in the previous step. 
+you could delete the `TextView` elements. It's better though to show text that's 
+customized to your app. In the `TextView` elements, replace `"Android Studio"` 
+with `"Liferay Guestbook"`, and `"android.studio@android.com"` with 
+`"Welcome!"`.
 
 Run the app again, and open the drawer after signing in. Although the drawer is 
 still ugly, it's at least polite now. 
 
-![Figure x: The navigation drawer now contains the logged-in user's name and email address.](../../images/android-guestbook-drawer-02.png)
+![Figure 4: The navigation drawer now contains the app's name and a greeting.](../../images/android-guestbook-drawer-02.png)
 
 Great! Now you're ready to retrieve and display the guestbook entries. 
