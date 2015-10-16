@@ -418,4 +418,7 @@ displays the selected guestbook's entries.
 
 Congratulations! You've successfully built the Mobile SDK for the Guestbook 
 portlet and used it in conjunction with Liferay Screens to develop an Android 
-app that displays the portlet's entities. 
+app that displays the portlet's entities. But there's another way to develop the 
+same functionality: you can use Liferay Screens to create your own Screenlets 
+for the guestbooks and entries. The following sections in this Learning Path 
+show you how to do this. 
