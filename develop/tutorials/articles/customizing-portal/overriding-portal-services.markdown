@@ -1,24 +1,41 @@
 # Overriding Liferay's Services
 
-All of Liferay's functionality, including the functionality of its core
-portlets, is published in a layer of services. By modifying these services, you
-can modify Liferay's functionality without modifying the core, or core portlets,
-themselves. With Liferay 7, these services are declared as API providers, as
-evidenced by the `@ProviderType` annotation used by the service interfaces.
-Liferay generates dummy wrapper classes for all its service interfaces. For
-example, `UserLocalServiceWrapper` is created as a wrapper for
-`UserLocalService`, a service interface for adding, removing, and retrieving
-user accounts.
+Liferay does a lot of things, and Liferay's engineers have thought a lot about
+how that functionality should be implemented. There are ,however, occasions
+where you'll want to override Liferay's core functionality, or simply add to it.
+The possibilities for modifying Liferay are nearly endless, when you consider
+that all of Liferay's functionality is published in a layer of services that you
+can modify quite easily. For example, each time a `User` is added, you might
+want to add a `CalendarBooking` for their birth date (in other words, any time
+`UserLocalService.addUser` is called, you want to call
+`CalendarBookingLocalServiceUtil.addCalendarBooking()`). 
 
-Instead of implementing the service interfaces directly, extend the
-`-ServiceWrapper` class for the interface you want to modify. The reason why
-becomes clear if you consider what happens when a patch to the interface is
-made. If you implemented the interface, you'd need to update your module to
-reflect the changes made by the patch. However, extending the wrapper class
-means you only interact with the methods you're overriding, and you don't need
-to know anything about the rest of the service. The necessary API providers will
-be updated with the patch, and your bundle (if it extends a service wrapper),
-will be unaffected by the change. 
+Consider a more detailed scenario. Your company's crackpot design team has
+redesigned Liferay's Shopping portlet, and the development team now has to
+implement their whimsical plans; when adding a shopping category, your
+administrators will now be entering an Image URL for a shopping category image,
+and the image will be displayed when a user mouses over a product. You already
+know how to modify the View layer, and you're going to create a new Service
+Builder entity. The new entity, `ShoppingCategoryImage`, will need to be added
+each time a `ShoppingCategory` is added. There's a lot involved in this project,
+but at least one of your tasks in the back end will involve modifying Liferay's
+service, `ShoppingCategoryLocalService.addCategory()`, so that your new entity
+is added each time the service is called. You can accomplish this by extending
+the `ShoppingCategoryLocalServiceWrapper` and adding your functionality to it. 
+
+Liferay's services are declared as API providers, as evidenced by the
+`@ProviderType` annotation used by the service interfaces. Liferay generates
+dummy wrapper classes for all its service interfaces. For example,
+`UserLocalServiceWrapper` is created as a wrapper for `UserLocalService`, a
+service interface for adding, removing, and retrieving user accounts. Instead of
+implementing the service interfaces directly, extend the `-ServiceWrapper` class
+for the interface you want to modify. The reason why becomes clear if you
+consider what happens when a patch to the interface is made. If you implemented
+the interface, you'd need to update your module to reflect the changes made by
+the patch. However, extending the wrapper class means you only interact with the
+methods you're overriding, and you don't need to know anything about the rest of
+the service. The necessary API providers will be updated with the patch, and
+your bundle (if it extends a service wrapper), will be unaffected by the change. 
 
 You can [publish your own services to Liferay's module framework](/develop/tutorials/-/knowledge_base/7-0/publishing-liferay-services),
 [invoke Liferay's services from your application](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services),
