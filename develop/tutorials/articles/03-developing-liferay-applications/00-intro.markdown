@@ -19,11 +19,12 @@ extracted into modules and installed into Liferay's module framework.
 $$$
 
 Liferay 7 supports only one type of plugin: a module (a.k.a. bundle). Don't
-worry, Liferay 7 is backwards compatible with the older plugin types. You can
-deploy one of the older plugin types to Liferay, and it's automatically
-converted into to one or more modules that are installed into the module
-framework. Thus, there are two basic mechanisms that Liferay 7 supports for
-developing and deploying modules into its module framework:
+worry, Liferay 7 is backwards compatible with all of the older plugin types
+(except Ext plugins): portlets, layout templates, themes, hooks, and web
+plugins. You can deploy one of the older plugin types to Liferay, and it's
+automatically converted into to one or more modules that are installed into the
+module framework. Thus, there are two basic mechanisms that Liferay 7 supports
+for developing and deploying modules into its module framework:
 
 1. Create a Liferay 7 style plugin. A Liferay 7 style plugin is called a
    *module*. Architecturally, a module is a JAR file. When a module is deployed,
