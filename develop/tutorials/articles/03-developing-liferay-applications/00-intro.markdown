@@ -1,13 +1,14 @@
 # Introduction
 
-Liferay 7 introduces a new application development paradigm. Liferay plugins are
-no longer deployed to Liferay's application server or servlet container.
-Instead, they are deployed to Liferay's OSGi-based module framework. However,
-you need not be an OSGi expert to succeed as a Liferay 7 developer. You really
-only need to understand two concepts: *modules* and *components*.
+Liferay 7 introduces a new application development paradigm that encourages a
+modular approach. Liferay plugins are no longer deployed to Liferay's
+application server or servlet container. Instead, they are deployed to Liferay's
+OSGi-based module framework. However, you need not be an OSGi expert to succeed
+as a Liferay 7 developer. You really only need to understand two concepts:
+*modules* and *components*.
 
 - A *module* is the one and only type of Liferay 7 plugin. Architecturally, a
-  module is a `.jar` file that contains Liferay-specific resources and metadata.
+  module is a JAR file that contains Liferay-specific resources and metadata.
   Liferay applications usually consist of at least two or three modules. Note
   that modules are called
   *[bundles](https://en.wikipedia.org/wiki/OSGi#Bundles)* in the OSGi world. A
@@ -32,7 +33,8 @@ $$$
 
 Liferay's new development model gives developers more flexibility than before.
 All components are loosely coupled. The lifecycle of modules and components is
-managed by Liferay's OSGi-based module framework. 
+managed by Liferay's OSGi-based module framework. Liferay 7 applications should
+be designed as a compilation of lightweight components.
 
 The flexibility doesn't end there, though. Previously, Liferay development had
 to be done using Liferay's Plugins SDK. This is no longer the case. Liferay
