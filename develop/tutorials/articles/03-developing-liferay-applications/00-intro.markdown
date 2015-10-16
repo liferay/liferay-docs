@@ -1,18 +1,56 @@
 # Introduction
 
-Liferay 7 introduces a new application development paradigm that encourages a
-modular approach. Liferay plugins are no longer deployed to Liferay's
-application server or servlet container. Instead, they are deployed to Liferay's
-OSGi-based module framework. However, you need not be an OSGi expert to succeed
-as a Liferay 7 developer. You really only need to understand two concepts:
-*modules* and *components*.
+At a basic level, Liferay Portal is a web application that runs on a Java EE
+application server or servlet container. In Liferay 6.2 and prior versions,
+Liferay plugins were deployed as separate web applications. Thus, both Liferay
+and its plugins were installed alongside each other in the running application
+server or servlet container. However, Liferay 7 includes an OSGi-based module
+framework to which plugins are deployed.
+
++$$$
+
+**Note:** Liferay 6.2 included a module framework that provided limited
+functionality. In Liferay 6.2, although plugins *could* be developed and
+installed as modules, this method was not recommended or supported. Liferay 7
+includes a more mature module framework and encourages the development of
+plugins as modules. Moreover, much of Liferay's core functionality has been
+extracted into modules and installed into Liferay's module framework.
+
+$$$
+
+Liferay 7 supports only one type of plugin: a module (a.k.a. bundle). Don't
+worry, Liferay 7 is backwards compatible with the older plugin types. You can
+deploy one of the older plugin types to Liferay, and it's automatically
+converted into to one or more modules that are installed into the module
+framework. Thus, there are two basic mechanisms that Liferay 7 supports for
+developing and deploying modules into its module framework:
+
+1. Create a Liferay 7 style plugin. A Liferay 7 style plugin is called a
+   *module*. Architecturally, a module is a JAR file. When a module is deployed,
+   Liferay installs the module into its module framework. Liferay modules are
+   *only* supported by Liferay's module framework. This is the recommended
+   approach for new application development.
+
+2. Create a traditional Liferay 6.2 style plugin. Architecturally, a 6.2 style
+   plugin is a WAR file. This is the output of the traditional Liferay Plugins
+   SDK. This approach is still fully supported and allows for backwards
+   compatibility. When a 6.2 style plugin is deployed, Liferay converts the WAR
+   file into one or more modules which are deployed into Liferay's module
+   framework. This approach represents the path of least resistance for
+   delivering existing plugins to Liferay 7.
+
+If you want to develop a Liferay 6.2 style plugin, please see the
+[Liferay 6.2 tutorials](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/tutorials).
+If you want to develop a Liferay 7 style plugin, read on! You're in the right
+place. You need not be familiar with OSGi to create applications for Liferay 7.
+You really only need to understand two concepts: *modules* and *components*.
 
 - A *module* is the one and only type of Liferay 7 plugin. Architecturally, a
-  module is a JAR file that contains Liferay-specific resources and metadata.
-  Liferay applications usually consist of at least two or three modules. Note
-  that modules are called
-  *[bundles](https://en.wikipedia.org/wiki/OSGi#Bundles)* in the OSGi world. A
-  module can contain one or more components. 
+  module is simply a group of Java classes, additional resources (optionally),
+  and a `MANIFEST.MF` file, packaged together as a JAR file. Liferay
+  applications usually consist of at least two or three modules. Note that
+  modules are called *[bundles](https://en.wikipedia.org/wiki/OSGi#Bundles)* in
+  the OSGi world. A module can contain one or more components. 
 - Conceptually, a *component* is just an implementation of an interface. In
   Liferay, a component is typically a [Declarative Services
   component](http://wiki.osgi.org/wiki/Declarative_Services). This means that
@@ -56,3 +94,4 @@ support both traditional Liferay development and development using the new
 model. 
 
 Read on to learn how to create modules for Liferay Portal. 
+
