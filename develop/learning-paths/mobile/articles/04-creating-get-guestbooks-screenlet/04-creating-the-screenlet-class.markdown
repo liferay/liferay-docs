@@ -247,5 +247,5 @@ following code:
 
     ((GetGuestbooksScreenlet) getParent()).onItemClicked(_guestbooks.get(position));
 
-Fantastic work! You finished the Get Guestbooks Screenlet! Now you can use it 
-the same way you would use any other Screenlet. This is shown next.
+Fantastic work! You finished the Get Guestbooks Screenlet! Now you need to 
+create the Get Entries Screenlet. This is shown next.
