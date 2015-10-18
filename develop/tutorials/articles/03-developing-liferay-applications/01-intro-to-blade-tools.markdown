@@ -1,4 +1,4 @@
-# Installing Blade Tools [](id=installing-blade-tools)
+# Introduction to Blade Tools [](id=installing-blade-tools)
 
 [Blade Tools](https://github.com/gamerson/blade.tools) provides the easiest way
 for Liferay developers to create new Liferay modules. Although the Plugins SDK
@@ -88,6 +88,54 @@ and *Available sub-commands* for the installed tools:
 
 Now you have Blade Tools installed, you probably want to create new Liferay
 module projects. To learn how, proceed to the next tutorial.
+
+## Using the Blade Create Command
+
+To learn how to use the Blade `create` command, enter *blade create* into a
+terminal. At the time of this writing, typing *blade create* into a terminal
+produces this output:
+
+    NAME
+      create                      - Creates a new Liferay module project.
+
+    SYNOPSIS
+       create [options] <name> <[service]>
+
+    OPTIONS
+
+       [ -b, --build <build> ]    - The build type of project to create. Valid
+                                    values are maven or gradle. Default: gradle
+       [ -c, --classname <string> ] - If a class is generated in the project,
+                                    provide the name of the class to be generated.
+                                    If not provided defaults to Project name.
+       [ -d, --dir <file> ]       - The directory where to create the new project.
+       [ -i, --ide <ide> ]        - The type of IDE metadata to create along side
+                                    the new project.
+       [ -p, --projectType <type> ] - The type of Liferay module to create. Valid
+                                    values are portlet, jspportlet, service, or
+                                    servicewrapper.
+       [ -v, --version <version> ] - The version of Liferay to create the module
+                                    for, by default its 7.0.0
+
+The correct command syntax for creating a project is found under SYNOPSIS:
+
+    create [options] [name] [service]
+
+For more information about creating Liferay module projects with Blade Tools,
+please see the [Creating Liferay Applications]() and
+[Customizing Liferay Services]() tutorials.
+
+## Using the Blade Deploy Command
+
+To use the Blade `deploy` command, you must first have built a module to deploy.
+See the [Creating Liferay Applications]() and
+[Customizing Liferay Services]() tutorials to learn how to create a module. Once
+you've built a module, just use the following command to deploy it to Liferay:
+
+    blade deploy [path to JAR file]
+
+Blade Tools knows how to detect a locally running Liferay instance and
+automatically deploy your module to Liferay.
 
 ## Related Topics [](id=related-topics)
 
