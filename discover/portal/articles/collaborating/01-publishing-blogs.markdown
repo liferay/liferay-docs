@@ -1,4 +1,4 @@
-# Expressing Yourself Using Blogs [](id=expressing-yourself-using-blogs)
+# Publishing Blogs
 
 The word *Blog* is an apostrophe-less contraction of the two words *web* and
 *log*. Blogs were first popularized by web sites such as
@@ -22,20 +22,20 @@ somebody will read it.
 ![Figure 9.1: Slashdot was one of the first blogs on the Internet.](../../images/05-slashdot.jpg)
 
 Liferay Portal has a Blogs portlet which allows you to provide a blogging
-service to users of your web site. In fact, Liferay extensively uses the Blogs
+service to your site's users. Liferay extensively uses the Blogs
 portlet on
 [http://www.liferay.com/community/blogs](http://www.liferay.com/community/blogs)
 to provide community members and employees with blogs of their own. In addition
 to the Blogs portlet, there's also a Blogs Aggregator portlet which can take
-entries from multiple users' blogs and put them all in one larger list. We will
-go over how to use both of these portlets to create a blogging site for your
+entries from multiple users' blogs and put them all in one larger list. You'll
+learn how to use both of these portlets to create a blogging site for your
 users.
 
-## The Blogs Portlet [](id=the-blogs-portlet)
+## Adding Blog Entries
 
+You can add blog entries using the Blogs portlet. 
 The Blogs portlet is available from the *Collaboration* section of the *Add
-&rarr; Applications* menu. Notice that it is an instanceable portlet, meaning
-that it supports scopes. This allows you to use the Blogs portlet to create a
+&rarr; Applications* menu. Since it supports scopes, you can use it to create a
 shared blog to build a site like Slashdot or to create multiple personal blogs
 to build a site like [http://blogger.com](http://blogger.com). What's the
 difference? Adding the Blogs portlet to a site page creates a shared blog for
@@ -44,111 +44,11 @@ user's personal site creates a blog just for that user. The Blogs portlet works
 the same way in both cases. And of course, you can change the Blog portlet's
 scope to have different blogs on different pages in the same site.
 
-![Figure 9.2: The initial view of the Blogs portlet.](../../images/05-initial-view-blogs-portlet.png)
+When you first add the portlet to a page, it has no entries, so the portlet is
+empty. To add an entry, click the *Add Blog Entry* button. The following data
+entry screen appears: 
 
-By default, the Blogs portlet displays the latest entry in its entirety. When
-you first add the portlet to a page, it has no entries, so the portlet is
-empty. There are several display options to let you configure it to look the
-way you want it to look. Before we start adding entries, let's configure the
-portlet so that it displays entries the way you want them.
-
-### Configuring the Blogs Portlet [](id=configuring-the-blogs-portlet)
-
-The Blogs portlet is easy to configure. Click on the *Options* icon in the
-portlet's title bar and select *Configuration*. Beneath the Setup tab, there is
-another row of options.
-
-**Display Settings:** changes various display options for the Blogs portlet. To
-choose the right settings, you should think about the best way to display your
-entries as well as how you want users to interact with bloggers.
-
-- *Maximum Items to Display:* choose the total number of blog entries to display
-on the initial page. You can select up to one hundred to be displayed.
-
-- *Display Template:* choose between *Full Content*, *Abstract*, or *Title*.
-Setting this to Abstract shows the abstract, or if there isn't one, only the
-first 30 words of your blog entries, with a Read More link at the bottom of
-each that expands to the whole entry. To learn how to customize your own display
-templates visit the *Using application display templates* section of the
-*Personalization and Customization* chapter.
-
-- *Enable Flags:* flag content as inappropriate and send an email to the
-administrators.
-
-- *Enable Related Assets:* select related content from other portlets to pull
-into their blog entry for readers to view.
-
-- *Enable Ratings:* lets readers rate your blog entries from one to five stars.
-
-- *Enable Comments:* lets readers comment on your blog entries.
-
-- *Enable Comment Ratings:* lets readers rate the comments which are posted to
-your blog entries.
-
-- *Enable Social Bookmarks:* lets users tweet, Facebook like, or +1 (Google
-Plus) about blog posts. You can edit which social bookmarks are available in the
-*Social Bookmarks* section of the Configuration menu.
-
-- *Display Style:* select a simple, vertical, or horizontal display style for
-your blog posts.
-
-- *Display Position:* choose a top or bottom position for your blog posts.
-
-- *Social Bookmarks:* choose social bookmarks to enable for blog posts, which
-includes Twitter, Facebook, and plusone (Google Plus).
-
-![Figure 9.3: The Blogs portlet's *Configuration* menu offers a plethora of display settings.](../../images/05-blogs-configuration.png)
-
-**Email From:** defines the *From* field in the email messages that users
-receive from the Blogs portlet.
-
-**Entry Added Email:** defines a subject and body for the emails sent out when
-a new Blog entry has been added.
-
-**Entry Updated Email:** defines a subject and body for the emails sent out
-when a new Blog entry has been updated.
-
-**RSS:** choose how blogs are displayed to RSS readers. Here, you can choose
-how you want your blog entries to be published as feeds to readers and outside
-web sites.
-
-- *Maximum Items to Display:* choose the total number of RSS feeds to display on
-the initial page. You can choose up to one hundred to be displayed.
-
-- *Display Style:* choose between *Full Content*, *Abstract*, and *Title*. These
-options work just like the ones above for blog entries.
-
-- *Format:* choose which format you want to deliver your blogs: Atom 1.0, RSS
-1.0, or RSS 2.0.
-
-Now that you have the Blogs portlet looking the way you want it, you'll want to
-review permissions for it--especially if you're working on a shared blog. 
-
-### Permissions [](id=permissions)
-
-If you have a personal blog, the default permissions should work well for you.
-If you have a shared blog, you may want to modify the permissions on the blog.
-The default settings make it so only the owner of the site to which the portlet
-has been added is able to add entries. This, of course, is great if the Blogs
-portlet has been added to a user's personal pages, but doesn't work so well for
-a shared blog. But don't worry: it's easy to share a blog with multiple users.
-
-First, create a role for your bloggers and add them to the role (roles are
-covered in chapter 13). Next, click the *Permissions* button on the
-Blogs portlet. A list of both portal and site roles is displayed, and currently
-only the owner is checked. Check off any other role or team that should have
-the ability to add blog entries, and then click *Save*. Once this is done,
-users in the roles or teams that you selected are able to post to the shared
-blog. 
-
-Now that everyone's able to post, let's look at how posts work. 
-
-### Adding Blog Entries [](id=adding-blog-entries)
-
-Now you're ready to begin adding blog entries. Click the *Add Blog Entry*
-button. The following data entry screen appears: 
-
-![Figure 9.4: After clicking *Add Blog Entry*, a new window appears with configuration options for your new blog entry.](../images/05-new-blog-entry.png)
+![Figure x: After clicking *Add Blog Entry*, a new window appears to edit your new blog entry.](../../images/blogs-new-blog-entry.png)
 
 There isn't much difference between this screen and any other data entry screen
 within Liferay Portal. You get a title, a subtitle, and an area to write your 
@@ -161,8 +61,8 @@ When you want to make an edit, highlight the text or content you wish to edit,
 and the editor controls will pop-up. The editor controls are context specific, 
 so you only see the relevant controls you need to format your content:
 
-![Figure 9.5: After highlighting your content, the relevant formatting controls will appear.](../images/05-editor-controls.png)
- 
+![Figure 9.5: If you highlight text, editor controls appear for you to format that text.](../../images/blogs-editor-controls.png)
+
 If you'd rather write in the native HTML, you can bring up the source view by 
 selecting the `</>` icon. You'll be presented with the single screen source code
 view. The source view gives you the option to toggle between night mode, a dark
@@ -172,7 +72,7 @@ selecting the *fullscreen icon*. The expanded mode brings up dual views,
 allowing you to edit the HTML source code and see the regular view update in 
 real time: 
 
-![Figure 9.6: The fullscreen view allows you to see your HTML changes update in real time.](../images/05-expanded-view.png)
+![Figure 9.6: The fullscreen view allows you to see your HTML changes update in real time.](../../images/05-expanded-view.png)
 
 Note also that as you type, the entry is automatically saved as a draft at 
 periodic intervals. This gives you peace of mind in using the portlet from 
@@ -222,7 +122,7 @@ list of entries, and now your entry is displayed. Here is what it looks like
 when the display template is set to *Full Content* and the maximum items to
 display is set to ten:
 
-![Figure 9.7: This sample blog entry gives you an idea of what new content and features are displayed on your page.](../../images/05-first-blog-entry-added.png)
+<!--  9.7: This sample blog entry gives you an idea of what new content and features are displayed on your page.](../../images/05-first-blog-entry-added.png) -->
 
 You can see that in the summary view, you don't see the trackback/pingback
 link, and you only see the number of comments that have been added. If you were
@@ -237,6 +137,104 @@ further traffic to your site. As you can see, the Blogs portlet is a
 full-featured blogging application that gives you and your users the ability to
 enter the blogosphere with an application that supports anything a blogger
 needs.
+
+<!-- TODO transition -->
+
+### Configuring the Blogs Portlet [](id=configuring-the-blogs-portlet)
+
+By default, the Blogs portlet displays the abstract and image of the latest entries. 
+There are several display options to let you configure it to look the
+way you want it to look. Before we start adding entries, let's configure the
+portlet so that it displays entries the way you want them.
+
+The Blogs portlet is easy to configure. Click on the *Options* icon in the
+portlet's title bar and select *Configuration*. Beneath the Setup tab, there is
+another row of options.
+
+**Display Settings:** changes various display options for the Blogs portlet. To
+choose the right settings, you should think about the best way to display your
+entries as well as how you want users to interact with bloggers.
+
+- *Maximum Items to Display:* choose the total number of blog entries to display
+on the initial page. You can select up to one hundred to be displayed.
+
+- *Display Template:* choose between *Full Content*, *Abstract*, or *Title*.
+Setting this to Abstract shows the abstract, or if there isn't one, only the
+first 30 words of your blog entries, with a Read More link at the bottom of
+each that expands to the whole entry. To learn how to customize your own display
+templates visit the *Using application display templates* section of the
+*Personalization and Customization* chapter.
+
+- *Enable Flags:* flag content as inappropriate and send an email to the
+administrators.
+
+- *Enable Related Assets:* select related content from other portlets to pull
+into their blog entry for readers to view.
+
+- *Enable Ratings:* lets readers rate your blog entries from one to five stars.
+
+- *Enable Comments:* lets readers comment on your blog entries.
+
+- *Enable Comment Ratings:* lets readers rate the comments which are posted to
+your blog entries.
+
+- *Enable Social Bookmarks:* lets users tweet, Facebook like, or +1 (Google
+Plus) about blog posts. You can edit which social bookmarks are available in the
+*Social Bookmarks* section of the Configuration menu.
+
+- *Display Style:* select a menu, simple, vertical, or horizontal display style for
+your blog posts.
+
+- *Display Position:* choose a top or bottom position for your blog posts.
+
+- *Social Bookmarks:* choose social bookmarks to enable for blog posts, which
+includes Twitter, Facebook, and Google Plus.
+
+<!--  9.3: The Blogs portlet's *Configuration* menu offers a plethora of display settings.](../../images/05-blogs-configuration.png)-->
+
+**Email From:** defines the *From* field in the email messages that users
+receive from the Blogs portlet.
+
+**Entry Added Email:** defines a subject and body for the emails sent out when
+a new Blog entry has been added.
+
+**Entry Updated Email:** defines a subject and body for the emails sent out
+when a new Blog entry has been updated.
+
+**RSS:** choose how blogs are displayed to RSS readers. Here, you can choose
+how you want your blog entries to be published as feeds to readers and outside
+web sites.
+
+- *Maximum Items to Display:* choose the total number of RSS feeds to display on
+the initial page. You can choose up to one hundred to be displayed.
+
+- *Display Style:* choose between *Full Content*, *Abstract*, and *Title*. These
+options work just like the ones above for blog entries.
+
+- *Format:* choose which format you want to deliver your blogs: Atom 1.0, RSS
+1.0, or RSS 2.0.
+
+Now that you have the Blogs portlet looking the way you want it, you'll want to
+review permissions for it--especially if you're working on a shared blog. 
+
+### Permissions [](id=permissions)
+
+If you have a personal blog, the default permissions should work well for you.
+If you have a shared blog, you may want to modify the permissions on the blog.
+The default settings make it so only the owner of the site to which the portlet
+has been added is able to add entries. This, of course, is great if the Blogs
+portlet has been added to a user's personal pages, but doesn't work so well for
+a shared blog. But don't worry: it's easy to share a blog with multiple users.
+
+First, create a role for your bloggers and add them to the role (roles are
+covered in chapter 13). Next, click the *Permissions* button on the
+Blogs portlet. A list of both portal and site roles is displayed, and currently
+only the owner is checked. Check off any other role or team that should have
+the ability to add blog entries, and then click *Save*. Once this is done,
+users in the roles or teams that you selected are able to post to the shared
+blog. 
+
+Now everyone can post. <!-- TODO add tranistion -->
 
 Of course, Liferay is a portal, and as a portal, it excels at aggregating
 information from multiple places. For that reason, it also includes the Blogs
@@ -255,7 +253,7 @@ If you click *Configuration* from the options button in the title bar of the
 portlet, the Blogs Aggregator's configuration page appears. From here, you can
 set several configuration options.
 
-![Figure 9.8: You can navigate to the Blogs Aggregator Configuration menu by selecting the *Options* gear from the portlet's title bar and selecting *Configuration*.](../../images/05-blogs-aggregator-configuration.png)
+<!--  9.8: You can navigate to the Blogs Aggregator Configuration menu by selecting the *Options* gear from the portlet's title bar and selecting *Configuration*.](../../images/05-blogs-aggregator-configuration.png) -->
 
 **Selection Method:** select Users or Scope here. If you select Users, the
 Blogs Aggregator aggregates the entries of every blogger on your system. If you
@@ -297,7 +295,7 @@ Most of the time, the Blogs portlet is the only tool you'll need to manage your
 blog entries. If, however, you need to massively delete blog entries, the blogs
 administrator portlet is the perfect tool for you. 
 
-![Figure 9.9: The Blogs Administrator portlet lets you delete large sets of blog entries.](../../images/04-blogs-administrator.png)
+<!-- 9.9: The Blogs Administrator portlet lets you delete large sets of blog entries.](../../images/04-blogs-administrator.png) -->
 
 Note that it's only for batch processing of blog entries; for the full set of
 tools for managing blog entries, your best bet is to use the Blogs portlet.
