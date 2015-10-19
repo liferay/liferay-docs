@@ -1,0 +1,276 @@
+# Using the Staging Environment
+
+After enabling staging (either Local Live or Remote Live) for a site, you'll
+notice a colored bar with some new menus on the Dockbar when you navigate to
+the site. These new menus help us manage staged pages. You'll also notice that
+most of your page management options have been removed, because now you can't
+directly edit live pages. You now must use the staging environment to make
+changes. Click on the *Staging* button to view the staged area. Your
+management options are restored and you can access some new options related to
+staging. If you're following along with the Lunar Resort example, navigate back
+to the News and Events page and click on *Staging* to get your page editing
+capabilities back.
+
+![Figure 3.22: You can see the new staging options added to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+
+Add the Bookmarks portlet and then click on *Live* from the Dockbar. Notice that
+the Bookmarks portlet isn't there. That's because you've staged a change to the
+page but haven't published that change yet to the live site. Go back to the
+staged page and click on the *Staging* drop-down menu to look at the options you
+have available. From here you have many options to choose from to help in your
+staging conquest.
+
+**Manage Site Pages Variations:** allows you to work in parallel on multiple
+versions of a staged site page. We'll explain this later.
+
+**Manage Page Variations:** allows you to work in parallel on multiple versions
+of a staged page. We'll explain this later.
+
+**Undo/Redo:** allows you to step back/forward through recent changes to a page,
+which can save you the time of manually adding or removing portlets if you make
+a mistake.
+
+**History:** shows you the list of revisions of the page, based on publication
+dates. You can go to any change in the revision history and see how the pages
+looked at that point.
+
+**Mark as Ready for Publication:** After you're done making changes to the
+staged page, click this button. The status of the page changes from *Draft* to
+*Ready for Publication* and any changes you've made can be published to the Live
+Site. When you publish a page to live, only the version which was *Marked as
+Ready for Publication* is published.
+
+The *Publish to Live* button gives you the option to publish to Live *Now* or
+*Schedule* a publication to Live.
+
+**Now:** immediately pushes any changes to the Live Site.
+
+**Schedule:** lets you set a specific date to publish or to set up recurring
+publishing. You could use this, for example, to publish all changes made during
+the week every Monday morning without any further intervention.
+
+The *Publish to Live* button also gives you options to select pages,
+applications, content, and permissions. Furthermore, you're given the *Current
+and Previous* and *Scheduled* tabs. The *Current and Previous* tab lets you view
+past publications along with their authors and create/completion dates. The
+*Scheduled* tab lets you view what publication processes are scheduled for
+publishing.
+
+**Pages** gives you the option to choose which pages to include when you
+publish. You can see the default settings in the gray text below the header.
+Click the *Change* button to configure these options to suite your needs.
+
+**Application Configuration** allows you to select which applications you want
+to publish. Select the *Choose Applications* radio button to configure
+the applications and settings to be published.
+
+**Content** allows you to configure the content to be published. Clicking the 
+*select* option under All Content allows you to delete the portlet metadata
+before publishing. Clicking the *Choose Content* option lets you filter the
+content to be published, based mainly on the date range and content type. There
+are other filtering sub-options for certain content types. Next, you'll
+look at these content filtering options.
+
+The *Date Range* feature provides you with another way to select specific
+content to publish. Specifying a date range allows you to choose content to
+publish based on when it was created or last modified. You can change the date
+range by clicking the *Change* button next to it. You have several options to
+choose from:
+
+**All:** publishes content regardless of its creation or last modification date.
+
+**From Last Publish Date:** publishes content that was created or modified since
+the last publish date. This is the default option.
+
+**Date Range:** publishes content based on a specified date range. You can set a
+start and end date/time window. The content created or modified within that
+window of time is published.
+
+**Last:** publishes content based on a set amount of time since the current
+time.  For example, you can set the date range to the past 48 hours,
+starting from the current time.
+
+Under the *Date Range* section, you have a section that shows the different
+types of content that can be published. This list is populated based on the
+provided date range. For example, if at least one article has been created or
+modified in the given date range, a Web Content section appears in the list,
+and the number of articles is shown next to the Web Content label.
+Otherwise, the Web Content section is absent.
+
+*Categories* and *OpenSocial Gadget Publisher* content types are not dependent
+on the date range, and are always shown in the list.
+
+Unchecking the checkbox next to a certain content type excludes it from the
+current publication to Live.
+
+Some of the content types in the list, like Web Content and Documents and Media,
+have further filtering options related to them. For instance, when the Web
+Content section is present and checked, it shows a comma-separated list of
+related items to be published, including the articles themselves. A sample list
+of related items for web content might look like this: *Web Content(12),
+Structures(3), Referenced Content, Version History*. You can remove items by
+clicking the *Change* button next to the list.
+
+*Referenced Content* is represented by the Documents and Media files included in
+web content articles. Documents and Media content gets referenced when a user
+uses the editor to insert an image or if the article is based on a structure
+that has a field of the *Documents and Media* type. 
+
+Web content tends to be frequently updated, often more so than other kinds of
+content. Sometimes this can result in high numbers of versions, into the
+hundreds. This makes it take a long time to publish these articles. Liferay
+addresses this issue by allowing you to choose whether or not to publish the
+*Version History*, or the past versions of the web content articles to be
+published. If you disable this option, only the last **approved** version of
+each web content article is published to Live. This can significantly speed up
+the publication process.
+
+![Figure 3.23: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+
+You can set this option globally. There is a portal property,
+`journal.publish.version.history.by.default`, that sets the default behavior.
+The default value is `true`, so site administrators must manually uncheck the
+*Version History* box to publish only the latest approved version of web content
+articles. To change the default behavior, change the property to `false` in your
+`portal-ext.properties` file. 
+
+When the *Documents and Media* section is present (because at least one document
+has been created or modified in the provided date range), you can disable the
+transfer to live of the previews and thumbnails associated with the documents to
+be published. This can also speed up publication time.
+
+**Permissions** allows you to include permissions for the pages and portlets
+when the changes are published.
+
+Now that you have an idea of the available staging options, click *Mark as Ready
+for Publication*, and then click *Publish to Live* &rarr; *Now*. Select
+*Publish* to publish your Bookmarks portlet to the live site.
+
+Content publication can be also controlled using staging. Bookmarks are staged
+by default (this can be changed in Staging Configuration). If you create a
+bookmark in the staged site, it isn't visible in the live site until you publish
+it to the live site. If workflow is enabled for any new resource, the resource
+needs to go through the workflow process before it can be published to the live
+site.
+
+![Figure 3.24: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+
+One of the most powerful features of staging is page variations. Let's see how
+to use them to create multiple different variations of your site's pages for
+different purposes.
+
+## Using Site Pages Variations
+
+Let's say you're working on a product-oriented site where you'll have several
+major changes to a page or a set of pages over a short period of time. Also you
+need to be working on multiple versions of the site at the same time to ensure
+everything has been properly reviewed before it goes live. With staging in
+Liferay 6.2 you can do this using *Page Variations*.
+
+For example, you can create several page variations, enabling the marketing team
+to give your site a completely different look and feel for Christmas. At the
+same time, the product management team can work on a different version that will
+be published the day after Christmas for the launching of a new product.
+Additionally, the product management team is considering two different ideas for
+the home page of the site, so they can create several page variations of the
+home page inside their product launch site.
+
+Variations only affect pages and not the content, which means all the existing
+content in your staging site is shared by all your variations. In different site
+page variations you can have different logos, different look and feel for your
+pages, different applications on these pages, different configuration of these
+applications and even different pages. One page can exist in just one site page
+variation or in several of them.
+
+By default, we only have one site page variation which is called *Main
+Variation*. To create a new one, use the dropdown next to the *Staging* link
+and click on *Manage Site Pages Variations*. This brings you to a list of the
+existing site page variations for your site. Click *Add Site Pages Variation* to
+create a new one. From the *Add Site Pages Variation* screen, you can set a
+Name, Description, and also set your new variation to copy the content from an
+existing variation. There are several options to choose in this selector.
+
+**All Site Pages Variations:** creates a new variation that contains the last
+version marked as ready for publication from any single page existing in any
+other variation.
+
+**None (Empty Site Pages Variation):** creates a new, empty variation.
+
+**Main Variation:** creates a new site page variation that contains only the
+last version of all the pages that exist in this variation. The current
+variation must be marked as ready for publication.
+
+You are also able to rename any variation. For example, edit the Main Variation
+and change its name to something that makes more sense in your site, such as
+*Basic*, *Master*, *Regular* and create a variation for Christmas.
+
+You can switch between different variations by clicking on them from the staging
+menu bar. It's also possible to set permissions on each variation, so certain
+users have access to manage some, but not all variations.
+
+You can now go to the home page of your Christmas variation and change the logo,
+apply a new theme, move portlets around, change the order of the pages and
+configure different portlets. The other variations won't be affected. You can
+even delete existing pages or add new ones (remember to *Mark as Ready for
+Publication* when you are finished with your changes).
+
+When you delete a page, it is deleted only in the current variation. The same
+happens when you add a new page. If you try to access a page which was deleted
+in the current variation, Liferay informs you this page is not *enabled* in this
+variation and you must enable it. To enable it, navigate to the *Site
+Administration* &rarr; *Pages* &rarr; *Site Pages* screen. Here all the existing
+pages for all the variations are shown in a tree. Pages not enabled for the
+current variation are shown in a lighter color. You can also access Staging
+options from the Site Pages screen by clicking the *Staging* drop-down menu
+located above the pages tree.
+
+To publish a variation to the live site, click on *Publish to Live* &rarr;
+*Publish* in the dropdown next to the variation name. Publications can also be
+scheduled independently for different variations. For example, you could have a
+variation called *Mondays* which is published to the live site every Monday and
+another one called *Day 1* which is published to the live site every first day
+of each month.
+
+You can also have variations for a single page inside a site page variation,
+which allows you to work in parallel in different versions of a page. For
+example, you might work on two different proposals for the design of the home
+page for the Christmas variation. These page variations only exist inside a site
+Page variation.
+
+To create a new page variation, click *Manage Page Variations* on the staging
+toolbar. This brings you to a list of existing page variations for the current
+page (by default, there is only one called *Main Variation*). You can create
+more or rename the existing one. You can switch between different page
+variations using the toolbar containing the page variations below the site pages
+variations toolbar. When you decide which page variation should be published,
+mark it as *Ready for Publication*. Only one page variation can be marked as
+ready for publication and that is the one that gets published to the live site.
+
+For example, we could create a page variation called Thanksgiving for the News
+and Events page inside of the Christmas variation and another one called
+Christmas Day to display different content on those particular days.
+
+![Figure 3.25: This is an example of a Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+
+Another powerful feature is the possibility of *merging* Site Pages Variations.
+To merge two Site Pages Variations, you need to go to the Manage Site Pages
+Variations screen. From there, click on *Merge* on the Site Pages Variation you
+want to use as the base. You will be asked to choose the Site Pages Variation to
+merge on top of it. Merging works in the following way:
+
+* New pages that don't exist in the base Variation, will be added.
+* If a page exists in both Site Pages variations, and at least one version of
+the page was marked as ready for publication, then the latest version marked as
+ready will be added as a new Page Variation in the target page of the base
+Variation. (Note that older versions or page variations not marked as ready for
+publication won't be copied. However, merge can be executed as many times as
+needed and will create the needed pages variations in the appropriate page of
+the base Site Pages Variation).
+* Merging does not affect content nor will overwrite anything in the base
+Variation, it will just add more versions, pages and page variations as needed.
+
+You can enable staging on an individual site basis, depending on your needs.
+This makes it easy to put strict controls in place for your public web site,
+while opening things up for individual sites that don't need such strict
+controls. Liferay's staging environment is extremely easy to use and makes
+maintaining a content-rich web site a snap.
