@@ -9,8 +9,10 @@ obtained the Blade Tools JAR, you can install Blade Tools through the [Java
 Package Manager](http://jpm4j.org) (JPM). 
 
 1. Your first step is to install [JPM](http://jpm4j.org/#!/md/install). The
-   exact installation process depends on your operating system. You need to
-   install JPM regardless of whether you want to build or download Blade Tools. 
+   exact installation process depends on your operating system.
+
+You need to install JPM regardless of whether you want to build or download
+Blade Tools. 
 
 ## Using the Java Package Manager to Download Blade Tools [](id=using-the-java-package-manager-to-download-blade-tools)
 
@@ -19,22 +21,23 @@ the next section.
 
 2. After you have installed JPM, download the `blade.jar` file:
    [https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/blade.cli/generated/distributions/executable/blade.jar](https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/blade.cli/generated/distributions/executable/blade.jar).
-   Blade Tools contains multiple tools. At the time of this writing, only the
-   Blade command line interface (CLI) tool is available. The Blade CLI tool is
-   included in the `blade.jar` file that you downloaded. Other tools, such as a
-   plugin migration tool (for migrating plugins from a 6.2 Plugins SDK to a 7.0
-   module), are currently being developed.
+
+    Blade Tools contains multiple tools. At the time of this writing, only the
+    Blade command line interface (CLI) tool is available. The Blade CLI tool is
+    included in the `blade.jar` file that you downloaded. Other tools, such as a
+    plugin migration tool (for migrating plugins from a 6.2 Plugins SDK to a 7.0
+    module), are currently being developed.
 
 3. Next, install the downloaded JAR:
 
         (sudo) jpm install -fl [Downloads Directory]/blade.jar
 
-    Skip the next section to learn how to verify your installation.
+Skip over the next section to learn how to verify your installation.
 
 ## Installing Blade Tools from the Source Code [](id=installing-blade-tools-from-the-source-code)
 
-Instead of downloading the Blade Tools JAR, you can download the Blade
-Tools repository and build the JAR locally.
+Instead of downloading the Blade Tools JAR, you can clone the Blade Tools
+repository and build the JAR locally.
 
 2. First, clone the [Blade Tools](https://github.com/gamerson/blade.tools)
    repository.
@@ -50,12 +53,12 @@ Tools repository and build the JAR locally.
 
         (sudo) jpm install -fl blade.cli/generated/distributions/executable/blade.jar
 
-    Proceed to the next section to learn how to verify your installation.
+Proceed to the next section to learn how to verify your installation.
 
 ## Verifying Your Blade Tools Installation
 
 To check that Blade Tools is installed, make sure that the `blade` executable is
-available on your system path. Test its usage by entering `blade` into the
+available on your system path. Test its usage by entering `blade` into a
 terminal. If Blade Tools is installed correctly, you'll see the *MAIN OPTIONS*
 and *Available sub-commands* for the installed tools:
 
@@ -86,8 +89,8 @@ and *Available sub-commands* for the installed tools:
       open                        -         Opens or imports a file or
                                             project in Liferay IDE 
 
-Now you have Blade Tools installed, you probably want to create new Liferay
-module projects. To learn how, proceed to the next tutorial.
+Now that you have Blade Tools installed, you should learn about its two most
+commonly used commands: `blade create` and `blade deploy`.
 
 ## Using the Blade Create Command
 
@@ -136,6 +139,9 @@ you've built a module, just use the following command to deploy it to Liferay:
 
 Blade Tools knows how to detect a locally running Liferay instance and
 automatically deploy your module to Liferay.
+
+To learn how to create new Liferay module projects, proceed to the [next]()
+tutorial.
 
 ## Related Topics [](id=related-topics)
 
