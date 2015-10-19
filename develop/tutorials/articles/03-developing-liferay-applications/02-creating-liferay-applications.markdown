@@ -1,6 +1,6 @@
 # Creating Liferay Applications
 
-Blade Tools allows you to very easily create Liferay Applications. In this
+Blade Tools allows you to very easily create Liferay applications. In this
 tutorial, you'll learn how. If you haven't yet installed Blade
 Tools, please refer to the [Introduction to Blade Tools](need link) tutorial.
 Blade Tools provides project templates for creating certain types of Liferay
@@ -158,7 +158,7 @@ Your project also includes generated `bnd.bnd` and `build.gradle` files. The
 `bnd.bnd` is used to generated the `MANIFEST.MF` file that ends up in the JAR
 file that's produced when you build your project. For more information about
 `bnd.bnd`, see [http://aqute.biz/Code/bnd](http://aqute.biz/Code/bnd). The
-generated `build.gradle` file contains all of your project's dependencies.
+generated `build.gradle` file specifies all of your project's dependencies.
 
 To build your project, simply navigate to your project's root directory and run
 `gradle build`. The JAR file representing your portlet module is produced in
