@@ -1,4 +1,4 @@
-# Installing the Mobile SDK and Liferay Screens for Android
+# Installing the Guestbook Mobile SDK and Liferay Screens for Android
 
 You must install the Guestbook Mobile SDK in your Android app so it can interact 
 with the Guestbook portlet. Note that this Mobile SDK contains only the classes 
@@ -20,20 +20,20 @@ The Mobile SDK Builder generated two separate JAR files in your
 2. `android/build/libs/liferay-android-sdk-6.2.0.22.jar`
 
 The first JAR file contains the Guestbook Mobile SDK. The second JAR file 
-contains the rest of the Liferay Mobile SDK. Because Screens includes the 
-Liferay Mobile SDK, you don't need to install the second JAR file. You do, 
-however, need to manually install the first JAR file. To do so, copy the
-`liferay-guestbook-portlet-android-sdk-1.0.jar` file into your app's `app/libs`
-directory (the default location for your Android app's directory is
+contains the rest of the Liferay Mobile SDK. Because Screens also includes the 
+rest of the Liferay Mobile SDK, you don't need to install the second JAR file. 
+You do, however, need to manually install the first JAR file. To do so, copy 
+`liferay-guestbook-portlet-android-sdk-1.0.jar` into your app's `app/libs` 
+directory (the default location for your Android app's directory is 
 `AndroidStudioProjects/LiferayGuestbook`). That's it! Next, you'll install 
 Liferay Screens. 
 
 ## Installing Liferay Screens
 
-To add Liferay Screens, which also includes the Liferay Mobile SDK, you need to 
-edit your app's `build.gradle` file. Android Studio uses Gradle as its build 
-system. Note that your project has two `build.gradle` files: one for the 
-project, and another for the app module. You can find them under *Gradle 
+To install Liferay Screens, which also includes the rest of the Liferay Mobile 
+SDK, you need to edit your app's `build.gradle` file. Android Studio uses Gradle 
+as its build system. Note that your project has two `build.gradle` files: one 
+for the project, and another for the app module. You can find them under *Gradle 
 Scripts* in Android Studio's project view. The app module's `build.gradle` file 
 is highlighted in this screenshot: 
 
@@ -112,16 +112,16 @@ with Android Studio's emulator, because it corresponds to `localhost:8080`
 through the emulator. The portal you set up earlier should be running on 
 `localhost:8080`.
 
-The `liferay_company_id` is your portal instance's ID. You can find it in the 
-*Control Panel* &rarr; *Configuration* &rarr; *Portal Instances* menu. Your 
+The `liferay_company_id` value is your portal instance's ID. You can find it in 
+the *Control Panel* &rarr; *Configuration* &rarr; *Portal Instances* menu. Your 
 portal's instance ID is in the *Instance ID* column. Copy and paste this value 
 from your portal to the `liferay_company_id` value in `server_context.xml`.
 
-The `liferay_group_id` is the ID of the site your app needs to communicate with. 
-Since the app needs to communicate with the Guestbook portlet, navigate to the 
-site you put the Guestbook portlet on. Then select 
+The `liferay_group_id` value is the ID of the site your app needs to communicate 
+with. Since the app needs to communicate with the Guestbook portlet, navigate to 
+the site you put the Guestbook portlet on. Then select 
 *Admin* &rarr; *Site Administration* &rarr; *Configuration* from the dockbar. 
 The site ID is listed on the *Site Settings* tab. Copy and paste this value 
 from your portal to the `liferay_group_id` value in `server_context.xml`.
 
-Awesome! Now you're ready to implement portal authentication in your app.
+Awesome! Now you're ready to implement portal authentication in your app. 

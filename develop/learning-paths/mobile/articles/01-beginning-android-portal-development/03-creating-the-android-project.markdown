@@ -1,11 +1,10 @@
 # Creating the Android Project [](id=creating-the-android-project)
 
-Now that you've built the Liferay Mobile SDK for the Guestbook portlet, you're 
-ready to create the Guestbook Android app. This article walks you through the 
-steps required to create the app and install the Mobile SDK in it. After this, 
-you'll be ready to leverage the service classes the Mobile SDK Builder generated 
-for the Guestbook portlet. First though, you should make sure you've installed 
-Android's development tools. 
+Now that you've built the Guestbook Mobile SDK, you're ready to create the 
+Guestbook Android app. This article walks you through the steps required to 
+create the app's project in Android Studio. After this, you'll be ready to 
+install the Guestbook Mobile SDK and Liferay Screens. First though, you should 
+make sure you've installed Android's development tools. 
 
 ## Installing Android Studio [](id=installing-android-studio)
 
@@ -40,9 +39,9 @@ minimum Android SDK. Make sure that only the *Phone and Tablet* checkbox is
 selected. In the *Minimum SDK* menu, select *API 15: Android 4.0.3
 (IceCreamSandwich)*. Android Studio provides you with an estimate of the
 percentage of devices active on the Google Play store that can run the selected
-API level. You can view a graphical representation of these estimates by
-clicking on the *Help me choose* link in the text below the Minimum 
-SDK menu. Click *Next* when you're finished. 
+API level. You can view a graphical representation of these estimates by 
+clicking on the *Help me choose* link in the text below the Minimum SDK menu. 
+Click *Next* when you're finished. 
 
 ![Figure 2: The second screen of Android Studio's Create New Project wizard lets you select your app's form factors and minimum Android API level.](../../images/android-studio-new-project-02.png)
 
@@ -53,12 +52,14 @@ with writing all the authentication code from scratch, when Android Studio
 offers to do most of it for me?" Don't worry; you don't need to write any such 
 code. You might now say, "Ha, you're funny! So I suppose I'll just create it 
 with magic then?" In a manner of speaking, yes. You'll use Liferay Screens to 
-insert Login Screenlet in an empty activity. Login Screenlet contains everything 
-your users need to authenticate with a Liferay Portal installation, including 
-the UI. Adding Login Screenlet to your app only takes about ten minutes. 
-Although this techically isn't magic, it's a bit magical. Now stop thinking 
-about magic, and return your attention to the wizard in Android Studio. Select 
-*Empty Activity*, and click *Next*.
+insert 
+[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android) 
+in an empty activity. Login Screenlet contains everything your users need to 
+authenticate with a Liferay Portal installation, including the UI. Adding Login 
+Screenlet to your app only takes about ten minutes. Although this techically 
+isn't magic, it's a bit magical. Now stop thinking about magic, and return your 
+attention to the wizard in Android Studio. Select *Empty Activity*, and click 
+*Next*.
 
 ![Figure 3: The third screen of Android Studio's Create New Project wizard lets you specify an activity for your app.](../../images/android-studio-new-project-03.png)
 
@@ -67,14 +68,14 @@ and the name of its layout file. Accept the defaults, and click *Finish*.
 
 ![Figure 4: The final screen of Android Studio's Create New Project wizard asks you to name your activity and its layout file.](../../images/android-studio-new-project-04.png)
 
-A progress indicator appears that indicates that your project is building. 
-Android Studio then opens the project, with the activity's class and layout 
-files open. Click the `activity_main.xml` tab to view the layout file. This file 
-is open in *design view*. Design view gives you a preview of how Android renders 
-the layout in the app. It also contains graphical tools for constructing a UI 
-via drag and drop. Click the *Text* tab at the bottom of `activity_main.xml` to 
-show its *text view*. When you edit layout files in this Learning Path, you'll 
-do so in text view. 
+A progress indicator appears that indicates your project is building. Android 
+Studio then opens the project, with the activity's class and layout files open. 
+Click the `activity_main.xml` tab to view the layout file. This file is open in 
+*design view*. Design view gives you a preview of how Android renders the layout 
+in the app. It also contains graphical tools for constructing a UI via drag and 
+drop. Click the *Text* tab at the bottom of `activity_main.xml` to show its 
+*text view*. When you edit layout files in this Learning Path, you'll do so in 
+text view. 
 
 By default, the *project view* appears to the left of the open layout file. It 
 lets you access your project's source files. Most of the files you'll be working 
@@ -87,5 +88,5 @@ for more information on the project view.
 ![Figure 5: Project view in Android Studio.](../../images/android-studio-project-view.png)
 
 Well done! You've successfully created the initial Guestbook app and know how to 
-access its files in Android Studio. Now it's time to put the Liferay Mobile SDK 
-and Liferay Screens to work! 
+access its files in Android Studio. Now it's time to put the Guestbook Mobile 
+SDK and Liferay Screens to work! 

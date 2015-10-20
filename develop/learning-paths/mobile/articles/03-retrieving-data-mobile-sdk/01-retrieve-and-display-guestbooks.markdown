@@ -26,11 +26,10 @@ from the Guestbook portlet.
 
 To efficiently work with guestbooks in your app, you need a way of encapsulating 
 them. This lets you refer to common guestbook objects throughout your code. 
-First, create a new package called *model* inside the 
-`com.liferay.docs.liferayguestbook` package. Right-click on the new `model`
-package and select *New* &rarr; *Java Class* in the context menu. In the dialog
-that appears, name the class *GuestbookModel* and click *OK*. The new class then
-opens in Android Studio. Replace its contents with the following code:
+First, create a new package called `model` inside the 
+`com.liferay.docs.liferayguestbook` package. Inside this new `model` package, 
+create a new class called `GuestbookModel`. Replace the `GuestbookModel` class's 
+contents with the following code: 
 
     package com.liferay.docs.liferayguestbook.model;
 
@@ -118,7 +117,7 @@ objects in the portlet. It does so by retrieving `Guestbook` parameters from
 the `JSONObject` returned by the Mobile SDK's remote service calls. This is done 
 in the constructor by the `getLong` and `getString` methods. To see how the 
 `Guestbook` parameters are defined in the portlet, see the 
-[Liferay MVC Learning Path article on Service Builder](/develop/learning-paths/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
+[Liferay MVC Learning Path article on Service Builder](/develop/learning-paths/mvc/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
 For now, the only parameters you really need in this class are `guestbookId` and 
 `name`. However, you'll need the rest later. It's simpler to add support for all
 of them now. 
@@ -172,7 +171,7 @@ threading in mobile apps? That sounds complicated!" Fear not! The Mobile SDK's
 `GenericCallback` class hides much of the added complexity. 
 
 To create the callback class for retrieving guestbooks, first create a new 
-package called *callback* in `com.liferay.docs.liferayguestbook`. Then create a 
+package called `callback` in `com.liferay.docs.liferayguestbook`. Then create a 
 new class in the `callback` package called `GetGuestbooksCallback`. Replace the 
 code in the class with this code: 
 
@@ -228,12 +227,12 @@ code in the class with this code:
 
 So what's going on here? First, you should note that this class has a 
 `GuestbooksActivity` instance as its only variable. This is so it can refer 
-results back to the main activity, which runs in Android's main UI thread.
+results back to `GuestbooksActivity`, which runs in Android's main UI thread.
 `GetGuestbooksCallback`'s constructor thus does only one thing: it sets this
 variable. Next, the `onFailure` and `onSuccess` methods are overridden. As you 
 probably guessed, `onFailure` is called when the request fails, while `onSuccess` 
-is called when it succeeds. In this case, `onFailure` displays a toast message
-with the error. The `onSuccess` method calls the main activity's 
+is called when it succeeds. In this example, `onFailure` displays a toast 
+message with the error. The `onSuccess` method calls the main activity's 
 `reloadGuestbooks` method. Last but not least is the overridden `transform` 
 method. This method puts all the guestbooks it receives from the portlet into a 
 `List` of `GuestbookModel` objects. It's this `List` that's fed to the 
@@ -270,10 +269,9 @@ Since the Mobile SDK requires a portal session to communicate with the portal,
 this method first uses `SessionContext.createSessionFromCurrentSession()` to 
 create a session from the pre-existing session in the app. You might now be 
 thinking, "Whoa there! I haven't created a session yet!" But actually, you have; 
-you just weren't aware of it. You created the session with Login Screenlet. 
-Successful authentication with Login Screenlet creates a session that you can 
-access with Screens's `SessionContext` class. Because you're counting on that 
-session, however, Login Screenlet *must* be used. 
+you just didn't know it. Successful authentication with Login Screenlet creates 
+a session that you can access with Screens's `SessionContext` class. Because 
+you're counting on that session, however, Login Screenlet *must* be used. 
 
 The `getGuestbooks()` method then creates a new `GetGuestbooksCallback` instance 
 and sets it as the session's callback. Next, the session is used to create a 
