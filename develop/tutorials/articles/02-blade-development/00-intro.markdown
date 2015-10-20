@@ -1,4 +1,4 @@
-# Creating Liferay Plugins/Bundles in the BLADE Environment
+# Creating Liferay Plugins/Bundles in the BLADE Environment [](id=creating-liferay-plugins-bundles-in-the-blade-environment)
 
 Developing plugins for Liferay 7 is different than for previous versions of
 Liferay. The old development paradigm had you deploying your plugins to the
@@ -26,7 +26,7 @@ projects are templates that demonstrate Liferay 7's integration points. You can
 develop inside the BLADE project environment itself or use it to create
 standalone projects.
 
-## Project Templates
+## Project Templates [](id=project-templates)
 
 The projects are categorized based on the build tools supported.
 
@@ -42,7 +42,7 @@ The projects are categorized based on the build tools supported.
 The projects also demonstrate how to use various frameworks like Blueprint,
 Declarative Services (DS), and the OSGi API.
 
-## Creating Bundles with BLADE
+## Creating Bundles with BLADE [](id=creating-bundles-with-blade)
 
 There are two approaches you can take when using the BLADE project to develop
 and build your plugins. You can copy existing projects from the BLADE
@@ -52,7 +52,7 @@ our tutorial on manually creating projects from BLADE templates. The other
 approach is to install the command line BLADE Tools to build plugins from
 scratch. The first step in this case is to [install Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-tools).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Install BLADE Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-tools)
 

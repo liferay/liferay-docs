@@ -1,4 +1,4 @@
-# Creating Bundles with Blade Tools
+# Creating Bundles with Blade Tools [](id=creating-bundles-with-blade-tools)
 
 Some folks just don't want to use Liferay IDE, or the Liferay Plugins SDK, to
 develop their plugins for Liferay, and that's fine. Where your code lives, and
@@ -22,9 +22,9 @@ annotation. After that, you just develop as you would normally, build the JAR
 file, and deploy the bundle to Liferay's module framework.
 
 This tutorial focuses only on two commands available with Blade Tools; the
-`blade create ...`  and `blade deploy ...  ` commands.
+`blade create ...`  and `blade deploy ...` commands.
 
-## Using the Create Command
+## Using the Create Command [](id=using-the-create-command)
 
 At the time of this writing, typing *blade create* into a terminal produces this output:
 
@@ -44,7 +44,9 @@ At the time of this writing, typing *blade create* into a terminal produces this
        [ -d, --dir <file> ]       - The directory where to create the new project.
        [ -i, --ide <ide> ]        - The type of IDE metadata to create along side
                                     the new project.
-       [ -p, --projectType <type> ] - The type of Liferay module to create. 
+       [ -p, --projectType <type> ] - The type of Liferay module to create. Valid
+                                    values are portlet, jspportlet, service, or
+                                    servicewrapper.
        [ -v, --version <version> ] - The version of Liferay to create the module
                                     for, by default its 7.0.0
 
@@ -52,14 +54,49 @@ The correct command syntax for creating a project is found under SYNOPSIS:
 
     create [options] [name] [service]
 
+To create a bundle that overrides one of Liferay's services, the `projectType`
+is `servicewrapper`. The command 
+
+    blade create -p servicewrapper -c UserLocalServiceOverride -d ~/Desktop com.liferay.docs.serviceoverride com.liferay.portal.service.UserLocalServiceWrapper
+
+creates a Gradle project named `com.liferay.docs.serviceoverride`on the user's
+desktop (use the `-b` option to change the project's build type, if desired). If
+you look at the Java class created for this project, you'll notice that the
+fully qualified class name you specified in the `service` argument was used in
+full (for example, `import com.liferay.portal.service.UserLocalServiceWrapper`)
+and also parsed into a shortened class name (for example, `extends
+UserLocalServiceWrapper`). Because of this, you must specify a fully qualified
+class name in the `service` argument of both `service` and `servicewrapper`
+project types. Here's the Java class generated from the above `create` command:
+
+    package com.liferay.docs.serviceoverride;
+
+    import com.liferay.portal.service.UserLocalServiceWrapper;
+    import com.liferay.portal.service.ServiceWrapper;
+    import org.osgi.service.component.annotations.Component;
+
+    @Component(
+        immediate = true,
+        property = {
+        },
+        service = ServiceWrapper.class
+    )
+    public class UserLocalServiceOverride extends UserLocalServiceWrapper {
+
+            public UserLocalServiceOverride() {
+                super(null);
+            }
+
+    }
+
 To create a bundle with a JSP Portlet, you could specify
 
     blade create --projectType "jspportlet" --classname "MyJsp" --dir . com.liferay.jspportlet Portlet
 
 The above command creates a JSP Portlet (`projectType`) with a component class
 called MyJspPortlet (`classname`), in the current directory (`dir`). The project
-`name` is `com.liferay.jspportlet`, and the `service` type we are creating is
-`Portlet`.
+`name` (and the package name) is `com.liferay.jspportlet`, and the `service`
+type we are creating is `Portlet`.
 
 Here's the class that's created based on the above command:
 
@@ -114,7 +151,7 @@ becomes `MyJspPortletPortlet`, which is rather redundant, don't you think?
 In addition to the auto-generated files and directories, you get a `build.gradle`
 build script, along with the necessary `bnd.bnd` file.
 
-## Using the Deploy Command
+## Using the Deploy Command [](id=using-the-deploy-command)
 
 Once you have your portlet developed and built (`gradle build` if you use
 Gradle), deploy it to Liferay. With Blade Tools, you can take advantage of the
@@ -131,9 +168,9 @@ active.
 
 If Blade Tools doesn't meet your needs, consider using one of the BLADE
 repository project templates to manually create Liferay bundles. Check out our
-[tutorial on that next](LINK).
+[tutorial on that next](/develop/tutorials/-/knowledge_base/7-0/blade-manual-bundle-creation).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Installing Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-tools)
 
