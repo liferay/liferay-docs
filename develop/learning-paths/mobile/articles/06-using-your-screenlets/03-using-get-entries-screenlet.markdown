@@ -51,3 +51,87 @@ Next, you need to implement the Screenlet's `GetEntriesListener` interface in
 
 ## Implementing the Screenlet's Listener
 
+First, change the class declaration to implement the `GetEntriesListener` 
+interface. The class declaration should now look like this:
+
+    public class EntriesFragment extends Fragment implements GetEntriesListener {...
+
+Android Studio marks this class declaration as an error, because you haven't 
+implemented the listener's methods yet. Do so now by adding the following 
+methods to the class, below the `onCreateView` method: 
+
+    @Override
+    public void onGetEntriesSuccess(List<EntryModel> entries) {
+    }
+
+    @Override
+    public void onGetEntriesFailure(Exception e) {
+        Toast.makeText(getActivity(), "Couldn't get entries " + e.getMessage(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onItemClicked(final EntryModel entry) {
+    }
+
+Note the `onGetEntriesSuccess` and `onItemClicked` methods are empty. You don't 
+need to do anything in `onGetEntriesSuccess` because the Screenlet's View 
+already displays the entries. You could put a Toast or log message in this 
+method to indicate success, but this isn't required. The `onItemClicked` 
+implementation exists to let the app respond when the user selects an entry in 
+the UI. For example, you may want to navigate to an activity or fragment that 
+displays additional detail about the selected entry. The app doesn't yet, 
+however, contain such an activity or fragment. For now, you can leave 
+`onItemClicked` empty. 
+
+Now you're ready to register `EntriesFragment` as the Screenlet's listener, and 
+set the Screenlet's guestbook ID. To do both, you need to get a reference to the 
+Screenlet. Once you have this reference, you can call the Screenlet's 
+`setListener` and `setGuestbookId` methods. Do this now by inserting the 
+following code immediately above the `return` in the `onCreateView` method: 
+
+    GetEntriesScreenlet getEntriesScreenlet = 
+        (GetEntriesScreenlet) view.findViewById(R.id.getentries_screenlet);
+    getEntriesScreenlet.setListener(this);
+    getEntriesScreenlet.setGuestbookId(_guestbookId);
+
+Awesome! Now you're ready to put this fragment to use.
+
+## Adding the Fragment to the Activity
+
+When you used the Guestbook Mobile SDK to display entries, you did so with a 
+[fragment transaction](http://developer.android.com/guide/components/fragments.html#Transactions). 
+You'll do the same thing here. Since you need to display the selected 
+guestbook's entries, you need to perform the fragment transaction in the 
+`onItemClicked` method of `GuestbooksActivity`. Currently, `onItemClicked` 
+changes the Action Bar's title to the selected guestbook and then closes the 
+drawer. Now you'll add `EntriesFragment` to this method via a fragment 
+transaction. Replace the `onItemClicked` method in `GuestbooksActivity` with the 
+following code: 
+
+    @Override
+    public void onItemClicked(final GuestbookModel guestbook) {
+        actionBar.setTitle(guestbook.getName());
+
+        EntriesFragment entriesFragment = EntriesFragment.newInstance(guestbook.getGuestbookId());
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, entriesFragment);
+        transaction.commit();
+
+        drawer.closeDrawers();
+    }
+
+In addition to the same `setTitle` and `closeDrawers` calls, `onItemClicked` now 
+contains the fragment transaction. Note that this fragment transaction is 
+identical to the one you used earlier in this Learning Path. The transaction 
+itself is the same, regardless of where in the activity it occurs. You even use 
+the same fragment container. 
+
+Great job! You're finished! Run the app in the emulator and log in with your 
+credentials. Your app now uses the Get Guestbooks and Get Entries Screenlets to 
+show the same guestbooks and entries as the Guestbook portlet. 
+
+![Figure 1: Get Entries Screenlet displays guestbook entries in your app.](../../images/android-guestbooks-entries-screenlets)
+
+Congratulations! Now you know how to use the Mobile SDK and Liferay Screens. You 
+even know how to display content from a custom portlet by writing your own 
+Screenlets. 
