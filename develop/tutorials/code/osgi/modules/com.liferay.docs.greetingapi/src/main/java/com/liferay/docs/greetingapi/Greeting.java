@@ -1,6 +1,6 @@
 package com.liferay.docs.greetingapi;
 
-public interface GreetingAPI {
+public interface Greeting {
 
 	public void greet(String name);
 
