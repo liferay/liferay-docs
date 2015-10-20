@@ -1,27 +1,26 @@
 # Overriding Liferay's Services
 
 Liferay does a lot of things, and Liferay's engineers have thought a lot about
-how that functionality should be implemented. There are ,however, occasions
+how that functionality should be implemented. There are, however, occasions
 where you'll want to override Liferay's core functionality, or simply add to it.
 The possibilities for modifying Liferay are nearly endless, when you consider
 that all of Liferay's functionality is published in a layer of services that you
 can modify quite easily. For example, each time a `User` is added, you might
-want to add a `CalendarBooking` for their birth date (in other words, any time
-`UserLocalService.addUser` is called, you want to call
+want to add a `CalendarBooking` for his or her birth date (in other words, any
+time `UserLocalService.addUser` is called, you'd call
 `CalendarBookingLocalServiceUtil.addCalendarBooking()`). 
 
-Consider a more detailed scenario. Your company's crackpot design team has
+Consider a more detailed scenario. Your company's ambitious design team has
 redesigned Liferay's Shopping portlet, and the development team now has to
-implement their whimsical plans; when adding a shopping category, your
-administrators will now be entering an Image URL for a shopping category image,
-and the image will be displayed when a user mouses over a product. You already
-know how to modify the View layer, and you're going to create a new Service
-Builder entity. The new entity, `ShoppingCategoryImage`, will need to be added
-each time a `ShoppingCategory` is added. There's a lot involved in this project,
-but at least one of your tasks in the back end will involve modifying Liferay's
-service, `ShoppingCategoryLocalService.addCategory()`, so that your new entity
-is added each time the service is called. You can accomplish this by extending
-the `ShoppingCategoryLocalServiceWrapper` and adding your functionality to it. 
+implement their whimsical plans. When adding a shopping category, your
+administrators must now enter an Image URL for a shopping category image,
+and the image should be displayed when a user mouses over a product. You already
+know how to modify the View layer, and you need a new Service Builder entity to
+deal with it: `ShoppingCategoryImage`. This must be added every time you add 
+a `ShoppingCategory`. Adding the image whenever the category is added requires
+modifying a service method, `ShoppingCategoryLocalService.addCategory()`. You
+can accomplish this by extending the `ShoppingCategoryLocalServiceWrapper` and
+adding your functionality to it. 
 
 Liferay's services are declared as API providers, as evidenced by the
 `@ProviderType` annotation used by the service interfaces. Liferay generates
@@ -34,8 +33,9 @@ consider what happens when a patch to the interface is made. If you implemented
 the interface, you'd need to update your module to reflect the changes made by
 the patch. However, extending the wrapper class means you only interact with the
 methods you're overriding, and you don't need to know anything about the rest of
-the service. The necessary API providers will be updated with the patch, and
-your bundle (if it extends a service wrapper), will be unaffected by the change. 
+the service. If the API is patched, the API providers are updated with the
+patch, and your bundle (if it extends a service wrapper), is unaffected by
+the change. 
 
 You can [publish your own services to Liferay's module framework](/develop/tutorials/-/knowledge_base/7-0/publishing-liferay-services),
 [invoke Liferay's services from your application](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services),
@@ -43,9 +43,9 @@ or modify the behavior of Liferay's services. This tutorial teaches you how to
 create a module that modifies Liferay's services. The process can be divided
 into three steps:
 
-1. Create and configure a module.
-2. Write a Java class that publishes a service wrapper.
-3. Build and deploy your module.
+1.  Create and configure a module.
+2.  Write a Java class that publishes a service wrapper.
+3.  Build and deploy your module.
 
 Start by creating a project that can be deployed to Liferay's module framework.
 
@@ -54,27 +54,28 @@ are; add link when available -->
 
 ## Creating and Configuring a Project
 
-Before writing any code, you need to have a bundle configured. For a more
+Before writing any code, you need to have a module configured. For a more
 detailed description of the process, refer to the tutorial on [Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle).
 
 <!-- Jesse is currently reworking the Creating a Simple Bundle Tutorial, so the above link might need to be updated in the near future -->
 
+<!-- Yes, and there is no bundle. There are only modules. :) -Rich -->
+
 Blade Tools contains a template for the exact type of module that's needed for
-overriding one of Liferay's service interfaces, so once you've [installed Blade
-Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-tools), creating
+overriding one of Liferay's service interfaces, so once you've [installed Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-tools), creating
 a module to override Liferay's services is trivial. Just enter a `blade create`
 command that specifies the proper options, remembering specifically to specify
 the fully qualified class name for the Liferay service you want to override:
 
-    blade create -p servicewrapper -c UserLocalServiceOverride -d directory/for/project/ com.liferay.docs.serviceoverride com.liferay.service.UserLocalServiceWrapper  
+    blade create servicewrapper -c UserLocalServiceOverride com.liferay.docs.serviceoverride com.liferay.portal.service.UserLocalServiceWrapper
 
-The above command creates a Gradle module of type `servicewwrapper`. The new
-module is created in your local directory `directory/for/project` with a project
-name and Java package called `com.liferay.docs.serviceoverride` (the package is
-located in the `src/main` directory of the project's root). There's even a
-`UserLocalServiceOverride` class that's automatically created in the package.
-This particular example overrides Liferay's `UserLocalService` interface, but it
-does so by extending the `UserLocalServiceWrapper` class, as discussed above.
+The above command creates a Gradle module of type `servicewrapper`. The new
+module is created with a project name and Java package called
+`com.liferay.docs.serviceoverride` (the package is located in the `src/main`
+directory of the project's root). There's even a `UserLocalServiceOverride`
+class that's automatically created in the package.  This example overrides
+Liferay's `UserLocalService` interface, but it does so by extending the
+`UserLocalServiceWrapper` class, as discussed above.
 
 ## Creating a Java Class to Override Liferay's Services
 
@@ -120,7 +121,7 @@ so you can just begin overriding the methods of the service. Here's an example:
                 headerMap, parameterMap, resultsMap);
         }
 
-With this example, you're overriding the `authenticateByEmailAddress()` method,
+With this example, you're overriding the `authenticateByEmailAddress()` method
 but leveraging the existing functionality of the method by calling `return
 super.authenticateByEmailAddress()` at the end of the method. To run this
 example, add two import statements:
@@ -170,8 +171,8 @@ Open the `build.gradle` file first.
     }
 
 The repositories and dependencies of the `buildscript` are required for the
-building of your module, and some repositories and dependencies upon which your
-code depends are also declared. Take special note of the plugin that’s applied:
+building of your module, and some repositories and dependencies your code
+depends on are also declared. Take special note of the plugin that’s applied:
 `biz.aQute.bnd.builder`. This plugin is needed because the Gradle project created
 for you uses Bnd to configure the project without using a build environment
 based on a Bnd Workspace. 
@@ -193,7 +194,7 @@ The information specified in the `bnd.bnd` file is used to generate the
 To use the OSGi annotations for Declarative Services, specify `-dsannotations:
 *`. Alternatively, specify `Service-Component: *` to use the Bnd annotations.
 You're importing any packages the contained package requires to run in the
-`Import-Package` declaration, and setting your Java package as a
+`Import-Package` declaration and setting your Java package as a
 `Private-Package`. This is an instruction to Bnd that the package listed must be
 included in the JAR, but not exported.
 
@@ -217,7 +218,7 @@ module framework. If you're running Liferay locally, use
 
     telnet localhost 11311
 
-to enter Felix Gogo shell. Then, at the prompt, enter `lb`, which stands for
+to enter Felix Gogo shell. Then at the prompt enter `lb`, which stands for
 *list bundles*.
 
     336|Active     |    1|com.liferay.docs.serviceoverride (1.0.0.201510151914)
@@ -230,7 +231,7 @@ the portal. Check Liferay's log and you'll see
 
     Authenticating user by email address test@liferay.com
 
-Following the steps from this tutorial, you can modify Liferay's behavior quite
+By following the steps from this tutorial, you can modify Liferay's behavior quite
 extensively. If one of Liferay's portlets doesn't suit your needs at all,
 however, and you think you have a better option that can be used inside Liferay
 (you want to install and use a different app for blogging, perhaps), check out
