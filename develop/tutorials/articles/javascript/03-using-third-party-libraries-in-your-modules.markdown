@@ -4,10 +4,9 @@ In addition to being able to use the new ES2015 JavaScript syntax in your code,
 you can now use your favorite third party libraries with the help of the
 [Bower](http://bower.io/) package manager.
 
-This tutorial walks you through installing components, configuring your bundle's
-component dependencies, and using components. Code from the
-[Sequences Explorer Portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-plugins-sdk-7.0.0/apps/sequences-explorer-web)
-is used as in the examples. 
+This tutorial walks you through installing and using components, and configuring 
+your module's component dependencies. Code from the [Sequences Explorer Portlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-plugins-sdk-7.0.0/apps/sequences-explorer-web)
+is used in the examples. 
 
 ## Installing a Third Party Component [](id=installing-a-third-party-component)
 
@@ -15,8 +14,8 @@ Before you can use your third party components in your JavaScript, you must
 
 1.  Using Bowser, install your component package. 
 
-2.  Create a `bnd.bnd` file, if you haven't already, in your bundle's root
-    folder. Include your bundle's `bower.json` file and classes folder as
+2.  Create a `bnd.bnd` file, if you haven't already, in your module's root
+    folder. Include your module's `bower.json` file and classes folder as
     resources. As an example, here are the contents of the Sequences Explorer
     Portlet's `bnd.bnd` file: 
 
@@ -28,7 +27,7 @@ Before you can use your third party components in your JavaScript, you must
             classes
 
 Next, you must implement in your `build.gradle` file the means to add the
-downloaded component library files to your bundle. 
+downloaded component library files to your module. 
 
 ## Configuring Your build.gradle File [](id=configuring-your-build-gradle-file)
 
@@ -87,7 +86,7 @@ First consider the task declarations.
     task dragulaInstall(type: Copy)
     
 They declare the build process's main tasks. The `dragulaInstall` task installs
-the Dragula library to the bundle. You can declare a similar task to install a
+the Dragula library to the module. You can declare a similar task to install a
 different library. 
 
     downloadBower {
@@ -105,7 +104,7 @@ tasks.
     }
 
 The `bowerInstall` task downloads and installs to the module's
-`bower_components` folder any dependency components specified by the bundle's
+`bower_components` folder any dependency components specified by the module's
 `bower.json` file. The next section explains how to configure dependencies. 
 
     dragulaInstall {
@@ -117,7 +116,7 @@ The `bowerInstall` task downloads and installs to the module's
 
 This `dragulaInstall` task copies the Dragula library files to the
 `classes/META-INF/resources`, so they're bundled with the application. You can
-create a similar task to copy a library into your bundle. 
+create a similar task to copy a library into your module. 
 
     configJSModules {
 	dependsOn dragulaInstall
@@ -134,7 +133,7 @@ third party library modules, you can setup a `bower.json` file.
 ## Configuring Component Dependencies in a bower.json File [](id=configuring-component-dependencies-in-a-bower-json-file)
 
 Bower installs packages based on a `bower.json` metadata file. To use a third
-party library module in your bundle, you must specify it as a dependency in a
+party library module in your module, you must specify it as a dependency in a
 `bower.json` file. Since the Sequences Explorer Portlet uses Dragula to allow
 users to drag and drop table entries, its `bower.json` file specifies a
 depencency on the [Dragula.js](http://bevacqua.github.io/dragula/) module: 

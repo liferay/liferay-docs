@@ -15,7 +15,7 @@ Follow the steps below to use your exposed modules in your portlets.
         <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 
 2.  Add an `aui:script` tag to the JSP and set the `require` attribute to the
-    relative path for your module.  
+    relative path for your module.
 
     Since Liferay 7, the `require` attribute allows you to include your exposed
     modules in your JSP. The AMD Loader fetches the specified module and its

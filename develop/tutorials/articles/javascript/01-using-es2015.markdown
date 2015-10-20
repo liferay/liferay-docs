@@ -2,8 +2,8 @@
 
 You can now write JavaScript that adheres to the new ECMAScript 2015 (ES2015)
 syntax, leverage ES2015 advanced features in your modules, and publish them. To
-do these things, you need make only minor adjustments to your JavaScript files and
-projects. 
+do these things, you need make only minor adjustments to your JavaScript files 
+and projects. 
 
 To use the ES2015 syntax in a JavaScript file, add the extension `.es` to its
 name. For example, you rename file `filename.js` to `filename.es.js`. The
@@ -34,9 +34,9 @@ module, for example, specifies the following values in its `bower.json` file:
         "version": "1.0.0"
     }
 
-The Module Config Generator creates the module bundle based on this information.
-There you have it! In just a few steps you can prepare your module to leverage
-the latest JavaScript standard features and publish it. 
+The Module Config Generator creates the module based on this information. There 
+you have it! In just a few steps you can prepare your module to leverage the 
+latest JavaScript standard features and publish it. 
 
 **Related Topics**
 
