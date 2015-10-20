@@ -130,7 +130,7 @@ Great job! You're finished! Run the app in the emulator and log in with your
 credentials. Your app now uses the Get Guestbooks and Get Entries Screenlets to 
 show the same guestbooks and entries as the Guestbook portlet. 
 
-![Figure 1: Get Entries Screenlet displays guestbook entries in your app.](../../images/android-guestbooks-entries-screenlets)
+![Figure 1: Get Entries Screenlet displays guestbook entries in your app.](../../images/android-guestbooks-entries-screenlets.png)
 
 Congratulations! Now you know how to use the Mobile SDK and Liferay Screens. You 
 even know how to display content from a custom portlet by writing your own 
