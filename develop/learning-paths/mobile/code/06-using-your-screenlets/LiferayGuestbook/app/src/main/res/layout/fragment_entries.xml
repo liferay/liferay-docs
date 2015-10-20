@@ -1,0 +1,7 @@
+<com.liferay.docs.getentriesscreenlet.GetEntriesScreenlet
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:liferay="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/getentries_screenlet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    liferay:layoutId="@layout/entries_default"/>
