@@ -1,116 +1,109 @@
-# Publishing Liferay Services [](id=publishing-liferay-services)
+# Creating Liferay Components
 
-To publish a service to Liferay, the service must be registered in Liferay's
-module framework. The easiest way to do this is to create them as [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
-components. When publishing services to Liferay, it's a best practice to package
-your service API and service implementation as separate bundles. If you're
-creating a service client, the client should also be packaged as a separate
-bundle. Since Liferay follows this practice, most modularized Liferay
-applications consist of at least two or three bundles. In this tutorial, you'll
-learn how to create a service API bundle, a service implementation bundle, and a
-service client bundle. The service client takes the form of a command that is
-invoked from Liferay's Felix Gogo shell. You can find the code referenced by
-this tutorial in complete projects on Github here:
-[https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets](https://github.com/jrao/liferay-docs/tree/liferay7-development-tutorials/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets). The specific projects referenced by this tutorial are `example-api`, `example-service`, and `example-command`.
+As explained in the [Introduction]() tutorial, you need to understand two
+concepts in order to succeed as a Liferay 7 developer: *modules* and
+*components*. A module is the one and only type of Liferay 7 plugin. A component
+is a Java class that's decorated with the `@Component` annotation that
+implements a specified interface. Components are registered in Liferay's module
+framework. For example, the [Creating Liferay Applications]() tutorial explains
+how to create a portlet application as a module. To do so, you simply need to
+create a module project and create a component class in that module that
+implements the `Portlet` interface.
 
-## Creating a Service API Bundle [](id=creating-a-service-api-bundle)
+Liferay components are typically created as
+[Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
+components. When creating Liferay components, it's a best practice to package
+your interface and implementation as separate modules. If you're creating a
+client, the client should also be packaged as a separate module. Since Liferay
+follows this practice, most modularized Liferay applications consist of at least
+two or three modules. In this tutorial, you'll learn how to create an API
+module, an implementation module (a.k.a. service module), and a client module.
+The client takes the form of a command that is invoked from Liferay's Felix Gogo
+shell. You can find the code referenced by this tutorial in complete projects on
+Github here: [](). The specific projects referenced by this tutorial are
+`com.liferay.docs.greetingapi`, `com.liferay.docs.greetingimpl`, and
+`com.liferay.docs.greetingimpl`.
 
-Follow the steps below to create a service bundle. These steps are similar to
-the ones explained in the [Creating a Simple Bundle]() tutorial. To
-create a service API bundle, however, you don't need to create a bundle
-activator. 
+## Creating an API Module
 
-1.  Navigate to your Plugins SDK's `portlets` folder in a terminal or command
-    prompt and run the `create.[sh|bat]` script to create a new project. E.g.,
-    enter this command:
+Follow the steps below to create an API module. At the time of this writing,
+Blade Tools does not provide an API module template. Nevertheless, it's easy
+enough to adapt the output of the service module template to create an API
+module.
 
-        ./create.sh example-api "Example API"
+To create a module, run a command like the following:
 
-2.  Since you're not creating a portlet application, delete the `-portlet` suffix
-    from your project's name.
+    blade create -p "service" -c "Greeting" -d . com.liferay.docs.greetingapi Object
 
-3.  Delete the `docroot` folder from your project. That folder is a legacy folder
-    from the traditional (prior to Liferay 7) way of creating Liferay portlet
-    applications.
+(The last argument, `Object`, is required. This argument specifies the interface
+implemented by your component. Since you're creating an API module, you're not
+creating a component class at all. Thus, the value of the argument doesn't
+matter.)
 
-4.  Create a `bnd.bnd` file in your project and the following contents:
+Running this command creates a project with the following directory structure:
 
-        Bundle-Name: Example API
-        Bundle-SymbolicName: com.liferay.docs.exampleapi
-        Bundle-Version: 1.0.0
-        Export-Package: com.liferay.docs.exampleapi
+- `com.liferay.docs.greetingapi`
+    - `src`
+        - `main`
+            - `java`
+                - `com/liferay/docs/greetingapi`
+                    - `Greeting.java`
+    - `bnd.bnd`
+    - `build.gradle`
 
-    Of course, edit the entries to match your project's name and package
-    structure.
+Since you want to create an API module, not a service module, you need to modify
+the generated `Greeting.java` file and the generated `bnd.bnd` file.
 
-5.  Open your project's `ivy.xml` file. Remove the `-portlet` suffix from the
-    line in which it appears. Then remove the default dependencies and replace
-    them with this one:
+First of all, since you're creating an API, your `Greeting.java` file should be
+an interface. Edit it so that it looks like this:
 
-        <dependency name="org.osgi.core" org="org.osgi" rev="5.0.0" />
+    package com.liferay.docs.greetingapi;
 
-    To create a service API bundle, all you need is the OSGi core.
+    public interface Greeting {
 
-6.  Open your project's `build.xml` file. Remove the `-portlet` suffix from the
-    project name. Then replace this import declaration
-
-        <import file="../build-common-portlet.xml" />
-
-    with this one:
-
-        <import file="../../build-common-osgi-plugin.xml" />
-
-7.  Run the following command to download the dependencies required to build a
-    bundle:
-
-        ant clean
-
-8.  Now you're ready to import your project into Eclipse. Open Eclipse and click
-    *File* &rarr; *New* &rarr; *Other* &rarr; *Java Project*. Uncheck the *Use
-    default location* box and click *Browse*. Navigate to your project in your
-    Plugins SDK and select it. Eclipse generates `.classpath` and `.project`
-    files based on the contents of your project.
-
-9.  To create a service API, you only need to create an interface. If your
-    project does not have a `src` folder, create one and add it to your Eclipse
-    build path. Right-click on your project's `src` folder and select *New*
-    &rarr; *Package* and create a new package. For example, create a new package
-    called `com.liferay.docs.exampleapi`. Then right-click on your new package
-    and select *New* &rarr; *Interface*. Enter a name for the interface, e.g.,
-    *Greeting*. Replace its default contents with the following code:
-
-        package com.liferay.docs.exampleapi;
-
-        public interface Greeting {
-                
             public void greet(String name);
 
-        }
+    }
 
-    Of course, replace the package declaration with your package.
+Notice that there's no `@Component` annotation on this interface. Your
+`Greeting` interface is not implementing an interface, it *is* an interface.
 
-10.  That's it! Make sure your Plugins SDK's `build.[username].properties` file
-     is correctly configured with the location of your Liferay instance, then
-     deploy your bundle with the following command:
+Next, edit your `com.liferay.docs.greetingapi` module's `bnd.bnd` file so that
+it looks like this:
 
-        ant clean deploy
+    Bundle-Name: Greeting API
+    Bundle-SymbolicName: com.liferay.docs.greetingapi
+    Bundle-Version: 1.0.0.${tstamp}
+    Export-Package: com.liferay.docs.greetingapi
 
-     After deploying your bundle, use Liferay's Felix Gogo shell or Felix Web
-     Console to check that your bundle was installed into Liferay's module
-     framework. If you have any questions about configuring your Plugins SDK's
-     `build.[username].properties` file or about Liferay's Felix Gogo shell or
-     Web Console, please refer to the [Creating a Simple Bundle]() tutorial.
- 
-Since you've only published an interface, there's not much else to test at this
-point. Next, you'll implement the interface in a separate bundle to provide some
-functionality.
+You don't need the `dsannotations: *` line since you're not creating a component
+in your module, you're only creating an interface. You also don't need the
+following lines since you're not invoking any Liferay services:
 
-## Creating a Service Implementation Bundle [](id=creating-a-service-implementation-bundle)
+    Import-Package: \
+            com.liferay.portal.model;version='[7.0,7.1)',\
+            com.liferay.portal.service;version='[7.0,7.1)',\
+            *
 
-Now that you've created a service API bundle, it's time to create a service
-implementation bundle. This bundle contains an implementation of the
-interface provided by your service API bundle. To create a service
-implementation bundle, follow these steps:
+You need the `Export-Package: com.liferay.docs.greetingapi` line since the
+package with the `Greeting` interface must be available to other modules.
+
+To build your project, run `gradle build` from your project's root directory. To
+deploy it, run `blade deploy build/libs/com.liferay.docs.greetingapi-1.0.jar`.
+
+Since you've only published an interface, there's not much to test at this
+point. Next, you'll implement the `Greeting` interface in a separate module.
+
+## Creating an Implementation Module
+
+Now that you've created an API module, it's time to create a implementation
+module. This module will contain a component class that implements the interface
+provided by your API module. To create an implementation module, run a command
+like the following:
+
+    blade create -p "service" -c "GreetingImpl" -d . com.liferay.docs.greetingimpl com.liferay.docs.Greeting
+
+-------
 
 1.  Navigate to your Plugins SDK's `portlets` folder in a terminal or command
     prompt and run the `create.[sh|bat]` script to create a new project. E.g.,
