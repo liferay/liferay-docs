@@ -16,7 +16,9 @@ components. When creating Liferay components, it's a best practice to package
 your interface and implementation as separate modules. If you're creating a
 client, the client should also be packaged as a separate module. Since Liferay
 follows this practice, most modularized Liferay applications consist of at least
-two or three modules. In this tutorial, you'll learn how to create an API
+two or three modules. E.g., the Liferay Polls application consists of the
+`polls-api`, `polls-service`, and `polls-web` modules. (There's also a
+`polls-test` module.) In this tutorial, you'll learn how to create an API
 module, an implementation module (a.k.a. service module), and a client module.
 The client takes the form of a command that is invoked from Liferay's Felix Gogo
 shell. You can find the code referenced by this tutorial in complete projects on
@@ -26,21 +28,22 @@ Github here: [](). The specific projects referenced by this tutorial are
 
 ## Creating an API Module
 
-Follow the steps below to create an API module. At the time of this writing,
-Blade Tools does not provide an API module template. Nevertheless, it's easy
-enough to adapt the output of the service module template to create an API
-module.
+At the time of this writing, Blade Tools does not provide an API module
+template. Nevertheless, it's easy enough to adapt the output of the service
+module template to create an API module.
 
 To create a module, run a command like the following:
 
-    blade create -p "service" -c "Greeting" -d . com.liferay.docs.greetingapi Object
+    blade create -p "service" -c "Greeting" -d . com.liferay.docs.greetingapi java.lang.Object
 
-(The last argument, `Object`, is required. This argument specifies the interface
-implemented by your component. Since you're creating an API module, you're not
-creating a component class at all. Thus, the value of the argument doesn't
-matter.)
+(The last argument, `java.lang.Object`, is required. This argument specifies the
+interface implemented by your component. Since you're creating an API module,
+you're not creating a component class at all. Thus, the value of the argument
+doesn't matter. You'll delete the `@Component` annotation in which this argument
+is used.)
 
-Running this command creates a project with the following directory structure:
+Running the command above creates a project with the following directory
+structure:
 
 - `com.liferay.docs.greetingapi`
     - `src`
@@ -81,12 +84,12 @@ in your module, you're only creating an interface. You also don't need the
 following lines since you're not invoking any Liferay services:
 
     Import-Package: \
-            com.liferay.portal.model;version='[7.0,7.1)',\
-            com.liferay.portal.service;version='[7.0,7.1)',\
-            *
+        com.liferay.portal.model;version='[7.0,7.1)',\
+        com.liferay.portal.service;version='[7.0,7.1)',\
+        *
 
 You need the `Export-Package: com.liferay.docs.greetingapi` line since the
-package with the `Greeting` interface must be available to other modules.
+package with the `Greeting` interface must be made available to other modules.
 
 To build your project, run `gradle build` from your project's root directory. To
 deploy it, run `blade deploy build/libs/com.liferay.docs.greetingapi-1.0.jar`.
@@ -98,347 +101,242 @@ point. Next, you'll implement the `Greeting` interface in a separate module.
 
 Now that you've created an API module, it's time to create a implementation
 module. This module will contain a component class that implements the interface
-provided by your API module. To create an implementation module, run a command
-like the following:
+provided by your API module. Implementation modules are sometimes called service
+modules since they provide implementations of OSGi services. To create an
+implementation module, run a command like the following:
 
     blade create -p "service" -c "GreetingImpl" -d . com.liferay.docs.greetingimpl com.liferay.docs.Greeting
 
--------
+Running this command creates a project with the following directory structure:
 
-1.  Navigate to your Plugins SDK's `portlets` folder in a terminal or command
-    prompt and run the `create.[sh|bat]` script to create a new project. E.g.,
-    enter this command:
+- `com.liferay.docs.greetingimpl`
+    - `src`
+        - `main`
+            - `java`
+                - `com/liferay/docs/greetingimpl`
+                    - `GreetingImpl.java`
+    - `bnd.bnd`
+    - `build.gradle`
 
-        ./create.sh example-service "Example Service"
+Since you're creating an implementation module (a.k.a. service module), not an
+API module, the generated files are much closer to what you actually need.
 
-2.  Since you're not creating a portlet application, delete the `-portlet` suffix
-    from your project's name.
+First, you need to modify the generated `GreetingImpl.java` file so that it
+implements the `Greeting` interface. Edit your `GreetingImpl.java` file so that
+it looks like this:
 
-3.  Delete the `docroot` folder from your project. That folder is a legacy folder
-    from the traditional (prior to Liferay 7) way of creating Liferay portlet
-    applications.
+    package com.liferay.docs.greetingimpl;
 
-4.  Create a `bnd.bnd` file in your project and the following contents:
+    import com.liferay.docs.greetingapi.Greeting;
 
-        Bundle-Name: Example Service
-        Bundle-SymbolicName: com.liferay.docs.exampleservice
-        Bundle-Version: 1.0.0
-        Private-Package: com.liferay.docs.exampleservice
+    import org.osgi.service.component.annotations.Component;
 
-    Of course, edit the entries to match your project's name and package
-    structure. Note that you're using a `Private-Package` directive in your
-    `bnd.bnd` file and not an `Export-Package` directive. The
-    `com.liferay.docs.exampleapi` package needed to be exported (so that your
-    service implementation bundle can import it) but the
-    `com.liferay.docs.exampleservice` bundle does not need to be exported.
+    @Component(
+        immediate = true,
+        property = {
+        },
+        service = Greeting.class
+    )
+    public class GreetingImpl implements Greeting {
 
-    <!-- Why? -Rich -->
-
-5.  Open your project's `ivy.xml` file. Remove the `-portlet` suffix from the
-    line in which it appears. Then remove the default dependencies and replace
-    them with these ones:
-
-        <dependency name="org.osgi.core" org="org.osgi" rev="5.0.0" />
-        <dependency name="org.osgi.compendium" org="org.osgi" rev="5.0.0" />
-
-    To create a service implementation bundle, you need the OSGi core, the OSGi
-    compendium, and the service API bundle. The OSGi compendium JAR provides the
-    `@Component` annotation that you'll use to publish your service as a
-    [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
-    component. Since you haven't published your service API bundle to Maven
-    Central, you need to add it as a local
-    [Ivy](http://ant.apache.org/ivy) dependency. Alternatively, you can simply
-    copy your service API JAR file to your project's `lib` folder and add it to
-    your Eclipse build path (after you import your project into Eclipse).
-
-6.  Open your project's `build.xml` file. Remove the `-portlet` suffix from the
-    project name. Then replace this import declaration
-
-        <import file="../build-common-portlet.xml" />
-
-    with this one:
-
-        <import file="../../build-common-osgi-plugin.xml" />
-
-7.  Run the following command to download the Ivy dependencies required to build
-    your bundle:
-
-        ant clean
-
-8.  Now you're ready to import your project into Eclipse. Open Eclipse and click
-    *File* &rarr; *New* &rarr; *Other* &rarr; *Java Project*. Uncheck the *Use
-    default location* box and click *Browse*. Navigate to your project in your
-    Plugins SDK and select it. Eclipse generates `.classpath` and `.project`
-    files based on the contents of your project.
-
-    Check to see if the service API JAR file that you copied to your project's
-    `lib` folder has been added to your Eclipse build path. If it hasn't been,
-    add it now.
-
-9.  To create a service implementation, you need to implement the interface
-    provided by the service API. If your project does not have a `src` folder,
-    create one and add it to Eclipse's build path. Right-click on your project's
-    `src` folder and select *New* &rarr; *Package* and create a new package.
-    For example, create a new package called `com.liferay.docs.exampleservice`.
-    Then right-click on your new package and select *New* &rarr; *Class*. Enter
-    a name for the class, e.g., *GreetingImpl*. Replace its default contents
-    with the following code:
-
-        package com.liferay.docs.exampleservice;
-
-        import org.osgi.service.component.annotations.Component;
-
-        import com.liferay.docs.exampleapi.Greeting;
-
-        @Component(immediate=true)
-        public class GreetingImpl implements Greeting {
-
-                @Override
-                public void greet(String name) {
-                        System.out.println("Hello " + name + "!");
-                }
-
+        @Override
+        public void greet(String name) {
+            System.out.println("Hello " + name + "!");
         }
 
-    Of course, replace the package declaration with your package. The
-    `@Component` annotation on your service implementation class marks your
-    class as a
-    [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services) 
-    component. Your class is registered in Liferay's module framework under the
-    name of the interface it implements, i.e. the interface published by your
-    service API bundle. Specifying `immediate=true` inside the `@Component`
-    annotation causes Liferay's module framework to load the service
-    implementation right away. By default, Liferay's module framework uses a
-    lazy-loading strategy. If this strategy were used, the service
-    implementation wouldn't load until it was needed.
+    }
 
-    Recall that you used a `Private-Package` declaration and not an
-    `Import-Package` declaration in your project's `bnd.bnd` file. You might be
-    wondering how your service can be invoked if it's not included in an
-    exported package. In Liferay's module framework, *packages* must be exported
-    in order for other bundles to import them. However, any *service* that's
-    registered in Liferay's module framework can be consumed from any bundle. To
-    learn how to consume Liferay services, please see the
-    [Consuming Liferay Services]() tutorial.
+The `@Component` annotation indicates that your class defines a
+[Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
+component. The `service = Greeting.class` line indicates that your class will be
+registered under the `Greeting` interface.
 
-10.  That's it! Make sure your Plugins SDK's `build.[username].properties` file
-     points correctly to your Liferay instance, and deploy your bundle with the
-     following command:
+Next, edit the generated `bnd.bnd` file so that it looks like this:
 
-        ant clean deploy
+    -dsannotations: *
+    Bundle-Name: Greeting Impl
+    Bundle-SymbolicName: com.liferay.docs.greetingimpl
+    Bundle-Version: 1.0.0.${tstamp}
+    Private-Package: com.liferay.docs.greetingimpl
 
-     After deploying your bundle, use Liferay's Felix Gogo shell or Felix Web
-     Console to check that your bundle was installed into Liferay's module
-     framework. If you have any questions about configuring your Plugins SDK's
-     `build.[username].properties` file or about Liferay's Felix Gogo shell or
-     Web Console, please refer to the [Creating a Simple Bundle]() tutorial.
+Your implementation module needs access to your API module in order to compile.
+Create a `lib` folder inside of the root directory of your
+`com.liferay.docs.greetingimpl` project. Copy your API module (the
+`com.liferay.docs.greetingapi-1.0.jar` file) to your implementation module's new
+`lib` folder.
 
-Now you've implemented the interface published by your service API bundle but
-you still need a client to invoke the service. Next, you'll create such a
-client.
+Next, open your implementation module's `build.gradle` file. Add the following
+line inside of the `dependencies {...}` block:
 
-## Creating a Service Client Bundle [](id=creating-a-service-client-bundle)
+    compile files('lib/com.liferay.docs.greetingapi-1.0.jar')
+
+To build your project, run `gradle build` from your project's root directory. To
+deploy it, run `blade deploy build/libs/com.liferay.docs.greetingimpl-1.0.jar`.
+
+Now you've published an implementation of your `Greeting` interface. However,
+you still need to provide a way for your implementation to be invoked. Next,
+you'll create a client that does just that.
+
+## Creating a Client Module
 
 The service client that you'll create takes the form of a command which can be
-invoked from Liferay's Felix Gogo shell. This command invokes the service
-that you registered in the previous section. Follow these steps to create the
-command to invoke your service:
+invoked from Liferay's Felix Gogo shell. This command invokes the implementation
+that you created in the previous section.
 
-1.  Navigate to your Plugins SDK's `portlets` folder in a terminal or command
-    prompt and run the `create.[sh|bat]` script to create a new project. E.g.,
-    enter this command:
+To create a client module, run a command like the following:
 
-        ./create.sh example-command "Example Command"
+    blade create -p "service" -c "GreetingCommand" -d . com.liferay.docs.greetingcommand java.lang.Object
 
-2.  Since you're not creating a portlet application, delete the `-portlet` suffix
-    from your project's name.
+Running this command creates a project with the following directory structure:
 
-3.  Delete the `docroot` folder from your project. That folder is a legacy folder
-    from the traditional (prior to Liferay 7) way of creating Liferay portlet
-    applications.
+- `com.liferay.docs.greetingcommand`
+    - `src`
+        - `main`
+            - `java`
+                - `com/liferay/docs/greetingcommand`
+                    - `GreetingCommand.java`
+    - `bnd.bnd`
+    - `build.gradle`
 
-4.  Create a `bnd.bnd` file in your project and the following contents:
+The last argument of the command you used to generate your client module was
+`java.lang.Object`. This argument specifies the name of the class or interface
+under which your component should be registered in Liferay's module framework.
+Your `GreetingCommand` class does not need to be registered under a specific
+name. Thus, the `java.lang.Object` value is really just a dummy value.
 
-        Bundle-Name: Example Command
-        Bundle-SymbolicName: com.liferay.docs.examplecommand
-        Bundle-Version: 1.0.0
-        Private-Package: com.liferay.docs.examplecommand
+You need to modify the generated `GreetingCommand.java` file so that it obtains
+an implementation of the `Greeting` interface from Liferay's module framework
+and saves it as an instance variable. You also need to implement a `greet`
+method that's invoked when the `greet` command is executed. Edit your
+`GreetingCommand.java` file so that it looks like this:
 
-    Of course, edit the entries to match your project's name and package
-    structure. Recall that you did not need to export the
-    `com.liferay.docs.exampleservice` package of your service implementation
-    bundle since you used
-    [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
-    to register your service in Liferay's module framework. Similarly, you don't
-    need to export the `com.liferay.docs.examplecommand` package that you'll
-    create since you'll register your command as a service.
+    package com.liferay.docs.greetingcommand;
 
-5.  Open your project's `ivy.xml` file. Remove the `-portlet` suffix from the
-    line in which it appears. Then remove the default dependencies and replace
-    them with these ones:
+    import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.component.annotations.Reference;
 
-        <dependency name="org.osgi.core" org="org.osgi" rev="5.0.0" />
-        <dependency name="org.osgi.compendium" org="org.osgi" rev="5.0.0" />
+    import com.liferay.docs.greetingapi.Greeting;
 
-    To create a service client bundle, you need the OSGi core, the OSGi
-    compendium, the service API bundle, and the service implementation bundle.
-    The OSGi compendium JAR provides the `@Component` annotation that you'll use
-    to publish your service as a [Declarative
-    Services](http://wiki.osgi.org/wiki/Declarative_Services) component. Since
-    you haven't published your service API or service implementation bundles to
-    Maven Central, you need to add them as local
-    [Ivy](http://ant.apache.org/ivy) dependencies. Alternatively, you can simply
-    copy your service API and service implementation JAR files to your project's
-    `lib` folder and add them to your Eclipse build path (after you import your
-    project into Eclipse).
-
-6.  Open your project's `build.xml` file. Remove the `-portlet` suffix from the
-    project name. Then replace this import declaration
-
-        <import file="../build-common-portlet.xml" />
-
-    with this one:
-
-        <import file="../../build-common-osgi-plugin.xml" />
-
-7.  Run the following command to download the Ivy dependencies required to build
-    your bundle:
-
-        ant clean
-
-8.  Now you're ready to import your project into Eclipse. Open Eclipse and click
-    *File* &rarr; *New* &rarr; *Other* &rarr; *Java Project*. Uncheck the *Use
-    default location* box and click *Browse*. Navigate to your project in your
-    Plugins SDK and select it. Eclipse generates `.classpath` and `.project`
-    files based on the contents of your project.
-
-    If you copied the service API and service implementation JAR files to your
-    project's `lib` folder, check to see if they have been added to your Eclipse
-    build path. If they haven't been, add them now.
-
-9.  Now it's time to create the class to implement your command. If your project
-    does not have a `src` folder, create one and add it to Eclipse's build path.
-    Right-click on your project's `src` folder and select *New* &rarr; *Package*
-    and create a new package. For example, create a new package called
-    `com.liferay.docs.exampleservice`. Then right-click on your new package and
-    select *New* &rarr; *Class*. Enter a name for the class; e.g.,
-    `GreetingCommand`. Replace its default contents with the following code:
-
-        package com.liferay.docs.examplecommand;
-
-        import org.osgi.service.component.annotations.Component;
-        import org.osgi.service.component.annotations.Reference;
-
-        import com.liferay.docs.exampleapi.Greeting;
-
-        @Component(
-                property = {
-                        "osgi.command.scope=example",
-                        "osgi.command.function=greet"
-                },
-                service = Object.class
-        )
-        public class GreetingCommand {
-                
-                public void greet(String name) {
-                    Greeting greeting = getGreeting();
-                    
-                    greeting.greet(name);
-                }
-                
-                public Greeting getGreeting() {
-                    return _greeting;
-                }
-                
-                @Reference
-                public void setGreeting(Greeting greeting) {
-                    _greeting = greeting;
-                }
-                
-                private Greeting _greeting;
-
-        }
-
-    Of course, replace the package declaration with your package. The
-    `@Component` annotation on your service implementation class marks your
-    class as a
-    [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services) 
-    component. The `osgi.command.scope=example` and
-    `osgi.command.function=greet` properties indicate that you're creating a
-    command called `greet` in a scope called `example`. In other words, you're
-    creating a command whose full name is `example:greet`. In the example above,
-    your `GreetingCommand` class does not implement an interface but the
-    [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
-    framework requires your class to be registered under an interface name.
-    Thus, you set `service = Object.class` in the `@Component` annotation as a
-    dummy setting to satisfy this requirement.
-
-    Since you specified `osgi.command.function=greet` in the `@Component`
-    annotation, your class must have a method named `greet`. Thus, you have this
-    method:
+    @Component(
+        immediate = true,
+        property = {
+            "osgi.command.scope=greet",
+            "osgi.command.function=greet"
+        },
+        service = Object.class
+    )
+    public class GreetingCommand {
 
         public void greet(String name) {
             Greeting greeting = getGreeting();
-            
+
             greeting.greet(name);
         }
 
-    But how does this `greet` method work? It obtains an instance of the
-    `Greeting` service and invokes its `greet` method, passing in the `name`
-    parameter. How is an instance of the `Greeting` service obtained? The
-    `GreetingCommand` class declares a private service bean, `_greeting` of
-    type `Greeting`, the type of the service registered by the service
-    implementation bundle. The `GreetingCommand` class also provides public
-    getter and setter methods for the service bean. Moreover, the setter method
-    is decorated with the `@Reference` annotation which tells the
-    [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
-    framework to instantiate the service bean with a service retrieved from 
-     the module framework's service registry. To learn more about consuming
-     Liferay services, please refer to the
-    [Consuming Liferay Services]() tutorial. The `GreetingCommand` class's
-    `greet` method calls the public getter method of the private `_greeting`
-    instance variable.
+        public Greeting getGreeting() {
+            return _greeting;
+        }
 
-10.  That's it! Make sure your Plugins SDK's `build.[username].properties` file
-     is correctly configured with the location of your Liferay instance, then
-     deploy your bundle with the following command:
+        @Reference
+        public void setGreeting(Greeting greeting) {
+            _greeting = greeting;
+        }
 
-        ant clean deploy
+        private Greeting _greeting;
 
-     After deploying your bundle, use Liferay's Felix Gogo shell or Felix Web
-     Console to check that your bundle was installed into Liferay's module
-     framework. If you have any questions about configuring your Plugins SDK's
-     `build.[username].properties` file or about Liferay's Felix Gogo shell or
-     Web Console, please refer to the [Creating a Simple Bundle]() tutorial.
+    }
 
-11.  Once your service command bundle has been deployed, access Liferay's Felix
-     Gogo command shell. Enter the `help` command and check that your command is
-     available. You should see an entry in the list like this:
+The `@Component` annotation on your service implementation class marks your
+class as a
+[Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services) 
+component. The `osgi.command.scope=greet` and `osgi.command.function=greet`
+properties indicate that you're creating a command called `greet` in a scope
+called `greet`. In other words, you're creating a command whose full name is
+`greet:greet`. In the example above, your `GreetingCommand` class does not
+implement an interface but the
+[Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
+framework requires your class to be registered under an interface or class name.
+Thus, you set `service = Object.class` in the `@Component` annotation as a dummy
+setting to satisfy this requirement.
 
-        example:greet
+Since you specified `osgi.command.function=greet` in the `@Component`
+annotation, your class must have a method named `greet`. Thus, you have this
+method:
 
-     Try out the `greet` command by entering `greet` (or `example:greet` if
-     you want use the long way). You should see a result like this:
+    public void greet(String name) {
+        Greeting greeting = getGreeting();
+        
+        greeting.greet(name);
+    }
 
-        g! greet
-        gogo: IllegalArgumentException: Cannot coerce greet() to any of [(String)]
+But how does this `greet` method work? It obtains an instance of the `Greeting`
+OSGi service and invokes its `greet` method, passing in the `name` parameter.
+How is an instance of the `Greeting` OSGi service obtained? The
+`GreetingCommand` class declares a private service bean, `_greeting` of type
+`Greeting`, the type of the OSGi service registered by the implementation
+module. The `GreetingCommand` class also provides public getter and setter
+methods for the service bean. Moreover, the setter method is decorated with the
+`@Reference` annotation which tells Liferay's module framework to instantiate
+the service bean with a service retrieved from the module framework's service
+registry. The type `GreetingImpl` is used since it's the only class registered
+under the `Greeting` interface. The `GreetingCommand` class's `greet` method
+calls the public getter method of the private `_greeting` instance variable.
 
-     Uh oh. What went wrong? That's right, your greet command needs a string
-     argument. Try invoking your `greet` command with a string argument. E.g.,
-     enter `greet Bob` or `greet "Joe Bloggs"`. You should see a result like
-     this:
+Note: The explanation above provides an example of how to consume OSGi services
+that were published using components. To learn about consuming Liferay
+services, please refer to the [Consuming Liferay Services]() tutorial. 
 
-        g! greet Bob
-        Hello Bob!
+Next, edit the generated `bnd.bnd` file so that it looks like this:
 
-     or
+    -dsannotations: *
+    Bundle-Name: Greeting Command
+    Bundle-SymbolicName: com.liferay.docs.greetingcommand
+    Bundle-Version: 1.0.0.${tstamp}
+    Private-Package: com.liferay.docs.greetingcommand
 
-        g! greet "Joe Bloggs"
-        Hello Joe Bloggs!
+Your client module also needs access to your API module in order to compile.
+Create a `lib` folder inside of the root directory of your
+`com.liferay.docs.greetingcommand` project. Copy your API module (the
+`com.liferay.docs.greetingapi-1.0.jar` file) to your client module's new `lib`
+folder.
 
-Great! You've learned how to create service API, service implementation, and
-service client bundles. You've also learned how to create a specific kind of
-service client bundle: the kind that be invoked from Liferay's Felix Gogo shell.
+Next, open your implementation module's `build.gradle` file. Add the following
+line inside of the `dependencies {...}` block:
+
+    compile files('lib/com.liferay.docs.greetingapi-1.0.jar')
+
+To build your project, run `gradle build` from your project's root directory. To
+deploy it, run `blade deploy
+build/libs/com.liferay.docs.greetingcommand-1.0.jar`.
+
+Once your service command bundle has been deployed, open a new terminal and
+access Liferay's Felix Gogo command shell by running `telnet localhost 11311`.
+Enter the `help` command and check that your command is available. You should
+see an entry in the list like this:
+
+    greet:greet
+
+Try out the `greet` command by entering `greet` (or `greet:greet` if you want
+use the full name of the command). You should see a result like this:
+
+    g! greet
+    gogo: IllegalArgumentException: Cannot coerce greet() to any of [(String)]
+
+Uh oh. What went wrong? That's right, your greet command needs a string
+argument. Try invoking your `greet` command with a string argument. E.g., enter
+`greet Bob` or `greet "Joe Bloggs"`. You should see a result like this:
+
+    g! greet Bob
+    Hello Bob!
+
+or
+
+    g! greet "Joe Bloggs"
+    Hello Joe Bloggs!
+
+Great! You've learned how to create API, implementation, and client bundles.
+You've also learned how to create a specific kind of client bundle: the kind
+that be invoked from Liferay's Felix Gogo shell.
 
 ## Related Topics [](id=related-topics)
 
