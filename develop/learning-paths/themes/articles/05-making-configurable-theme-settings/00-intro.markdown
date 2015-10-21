@@ -1,4 +1,4 @@
-# Making configurable theme settings [](id=making-configurable-theme-settings)
+# Making Configurable Theme Settings [](id=making-configurable-theme-settings)
 
 Theme settings allow you to give Administrators control over the elements of 
 the page without having to touch any of the code directly.
