@@ -42,7 +42,7 @@ for the Resources Importer.
 
 Your theme should look like the image below:
 
-![Figure 1: The Resources Importer .](../../images/resources-importer-fin-theme.png)
+![Figure 1: The Resources Importer adds pages and content to your site.](../../images/resources-importer-fin-theme.png)
 
 As you can see the Resources Importer is not too complicated once you break down
 the individual pieces, and it serves as an effective way to stage your theme 
