@@ -16,13 +16,13 @@ organize the files for the Lunar Resort:
     - `docroot/WEB-INF/src/`
         - `resources-importer/`
             - `document_library/`
-                -`documents/`
-                        - (documents and media files)
+                - `documents/`
+                    - (documents and media files)
             - `journal/`
-                -`articles`
-                        - (web content articles)
-                -`structures/`
-                -`templates/`
+                - `articles/`
+                    - (web content articles)
+                - `structures/`
+                - `templates/`
  
 The theme's resources are organized into documents and media files and web
 content articles. Structures and templates are given their own folders inside 
@@ -49,12 +49,12 @@ directory for the carousel matches the following structure:
     - `articles/`
         - `carousel/`
             - `carousel.xml`
-            - (more web content articles)
+        - (more web content articles)
     - `structures/`
-        -`carousel.xml`
+        - `carousel.xml`
     - `templates/`
-        -`carousel/`
-            -`carousel.vm`
+        - `carousel/`
+            - `carousel.vm`
 
 It's important that you create the file structure this way so the web content 
 is recognized.
