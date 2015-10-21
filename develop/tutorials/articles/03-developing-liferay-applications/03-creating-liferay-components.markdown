@@ -309,7 +309,7 @@ To build your project, run `gradle build` from your project's root directory. To
 deploy it, run `blade deploy
 build/libs/com.liferay.docs.greetingcommand-1.0.jar`.
 
-Once your service command bundle has been deployed, open a new terminal and
+Once your service command module has been deployed, open a new terminal and
 access Liferay's Felix Gogo command shell by running `telnet localhost 11311`.
 Enter the `help` command and check that your command is available. You should
 see an entry in the list like this:
@@ -334,8 +334,8 @@ or
     g! greet "Joe Bloggs"
     Hello Joe Bloggs!
 
-Great! You've learned how to create API, implementation, and client bundles.
-You've also learned how to create a specific kind of client bundle: the kind
+Great! You've learned how to create API, implementation, and client modules.
+You've also learned how to create a specific kind of client module: the kind
 that be invoked from Liferay's Felix Gogo shell.
 
 ## Related Topics [](id=related-topics)
