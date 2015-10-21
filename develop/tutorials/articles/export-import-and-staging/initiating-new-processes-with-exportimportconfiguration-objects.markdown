@@ -6,10 +6,10 @@ your Portal's *Publishing Tools* menu. You can also, however, start these
 processes programatically. This lets you provide new interfaces or mimic the
 functionality of these features in your own application.
 
-For example, suppose you want your custom OSGi application to have an export
-feature, which users could use to export content from their application as a LAR
-file. To offer this feature, you'd need to call services offered by the
-`ExportImportService` interface. All of the methods in this interface require an
+For example, suppose you want your application to have an export feature, which
+could be used to export content from the application as a LAR file. To offer
+this feature, you'd need to call services offered by the `ExportImportService`
+interface. All the methods in this interface require an
 `ExportImportConfiguration` object, which is a controller object that contains
 many parameters and settings that are required during the exportation process of
 content from Liferay. The `ExportImportConfiguration` is essential to the export
