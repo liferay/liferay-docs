@@ -28,5 +28,4 @@ dependencies {
 	compile 'com.liferay.portal:portal-service:7.0.0-SNAPSHOT'
 	compile 'org.osgi:org.osgi.compendium:5.0.0'
 	compile files('lib/com.liferay.docs.greetingapi-1.0.jar')
-	compile files('lib/com.liferay.docs.greetingimpl-1.0.jar')
 }
