@@ -49,7 +49,7 @@ called `GetGuestbooksEvent`. Replace the class's code with the following:
 
     }
 
-In the constructors, the first argument is `targetScreenletId`. The 
+The first argument to the constructors is `targetScreenletId`. The 
 `targetScreenletId` makes sure events are aimed at the correct Screenlet. The 
 second argument to each constructor indicates the constructor's purpose. The 
 Screenlet uses `GetGuestbooksEvent(int targetScreenletId, Exception e)` when the 
@@ -60,7 +60,7 @@ when the server call succeeds. In either case, the resulting
 in the Screenlet. The event class's `getGuestbooks` method lets you retrieve the 
 guestbooks, if any, from the event object. 
 
-Next, you'll use this new event class to create a callback class. 
+Next, you'll create a callback class that uses this event class. 
 
 ## Creating the Callback Class
 
@@ -70,7 +70,7 @@ to make network requests asynchronously from another thread. You need to do the
 same thing in Screenlets. First, create a new package called 
 `interactor` in the `getguestbooksscreenlet` package. Then create a new class 
 called `GetGuestbooksCallback` inside the `interactor` package. Replace 
-its code with the following:
+its code with the following: 
 
     package com.liferay.docs.getguestbooksscreenlet.interactor;
 
@@ -123,7 +123,7 @@ the complexity of asynchronous calls in Android. Following the simple
 constructor, there are two `createEvent` methods for creating the respective 
 `GetGuestbookEvent` objects you defined in the event class. The callback class 
 finishes with the `transform` method. The `transform` method here is identical 
-to the one you created in the previous callback class: it transforms the 
+to the one you created when you used the Mobile SDK directly: it transforms the 
 `JSONArray` of `JSONObject` objects returned from the server into an `ArrayList` 
 of `GuestbookModel` objects. 
 
@@ -135,8 +135,8 @@ the Screenlet's actions.
 The listener interface defines the methods needed by the Screenlet class to 
 notify the app of the Screenlet's behavior. This lets the app developer respond 
 to the Screenlet's actions. Create the `GetGuestbooksListener` interface now in 
-the `getguestbooksscreenlet` package. Replace the new interface's contents with 
-the following code: 
+the `getguestbooksscreenlet` package. Replace the interface's contents with the 
+following code: 
 
     package com.liferay.docs.getguestbooksscreenlet;
 
@@ -240,9 +240,9 @@ from a site. This method is almost identical to the
 [`getGuestbooks` method you created when using the Guestbook Mobile SDK directly](http://www.liferay.com/). 
 Despite minor differences, it does the same thing. 
 
-The `GetGuestbooksInteractorImpl` finishes with the `onEvent` method. This 
+The `GetGuestbooksInteractorImpl` class finishes with the `onEvent` method. This 
 method processes the event that contains the service call's results. The 
 listener then notifies the Screenlet class of the results. 
 
 Nice work! You now have the classes required to call the Guestbook portlet. 
-Next, you'll create the Screenlet class.
+Next, you'll create the Screenlet class. 

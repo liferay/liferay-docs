@@ -271,7 +271,7 @@ create a session from the pre-existing session in the app. You might now be
 thinking, "Whoa there! I haven't created a session yet!" But actually, you have; 
 you just didn't know it. Successful authentication with Login Screenlet creates 
 a session that you can access with Screens's `SessionContext` class. Because 
-you're counting on that session, however, Login Screenlet *must* be used. 
+you're counting on that session, however, you *must* use Login Screenlet. 
 
 The `getGuestbooks()` method then creates a new `GetGuestbooksCallback` instance 
 and sets it as the session's callback. Next, the session is used to create a 
@@ -299,34 +299,35 @@ call in the `onCreate` method of `GuestbooksActivity`, following the call to
         ...
     }
 
-As its name implies, an activity's `onCreate` method is called to start the 
-activity. This makes it a good place to make the portlet call that retrieves 
-guestbooks. Android's 
+Android calls the activity's `onCreate` method to start the activity. This makes 
+`onCreate` an ideal place to make the portlet call that retrieves guestbooks. 
+Android's 
 [activity lifecycle documentation](http://developer.android.com/training/basics/activity-lifecycle/starting.html) 
-further describes the `onCreate` method. 
+describes the `onCreate` method in more detail. 
 
-Awesome! Your app is now fully capable of retrieving the portlet's guestbooks. 
-Next, you'll display them in the app's UI.
+Awesome! Your app can now retrieve the Guestbook portlet's guestbooks. Next, 
+you'll display them in the app's UI. 
 
 ## Displaying Guestbooks in the Drawer [](id=displaying-guestbooks-in-the-drawer)
 
-You should first modify the code that creates the app's Action Bar. Android 
-Studio created this code for you in the `GuestbooksActivity` class's `onCreate` 
-method:
+By default, the Action Bar displays the activity's name. You need it to display 
+the selected guestbook's name instead. You'll do this by modifying the code that 
+creates the app's Action Bar. Android Studio created this code for you in the 
+`GuestbooksActivity` class's `onCreate` method:
 
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-By default, the Action Bar displays the activity's name. You need it to display 
-the selected guestbook's name instead. To do this, you need the `ActionBar` and 
-`Toolbar` to be instance variables that you can refer to anywhere in the 
-activity. Add these variables to the `GuestbooksActivity` class now: 
+First, you need the `ActionBar` and `Toolbar` to be instance variables that you 
+can refer to anywhere in the activity. Add these variables to the 
+`GuestbooksActivity` class now: 
 
     private ActionBar actionBar;
     private Toolbar toolbar;
 
-Although you can write the Action Bar initialization code in `onCreate`, you'll 
-write it here in a separate method. Add the following `initActionBar()` method:
+Although you can modify the Action Bar initialization code in `onCreate`, you'll 
+write it here in a separate method. Add the following `initActionBar()` method 
+to `GuestbooksActivity`: 
 
     private void initActionBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -336,13 +337,13 @@ write it here in a separate method. Add the following `initActionBar()` method:
     }
 
 Like the code in `onCreate`, this method also creates a `Toolbar` and sets it as 
-the Action Bar. This code also, however, sets the Action Bar's title to an empty 
-string. This prevents the activity's title from showing in the Action Bar before 
-the guestbooks can be retrieved from the portal. Now you need to call 
-`initActionBar()` in `onCreate`. Place the call immediately above the 
-`getGuestbooks()` call. Then delete the original `Toolbar` initialization code 
-in `onCreate`; it's no longer needed since you included it in `initActionBar`. 
-The first few lines of the `onCreate` method should now look like this:
+the Action Bar. This code also sets the Action Bar's title to an empty string. 
+This prevents the activity's title from showing in the Action Bar before the app
+can retrieve guestbooks from the portal. Now you need to call `initActionBar()` 
+in `onCreate`. Place the call immediately above the `getGuestbooks()` call. Then 
+delete the original `Toolbar` initialization code in `onCreate`; it's no longer 
+needed since you included it in `initActionBar`. The first few lines of the 
+`onCreate` method should now look like this: 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -416,9 +417,9 @@ this method now:
     }
 
 The `initDrawer` method's first few lines match the drawer initialization code 
-in `onCreate`. Delete this code in `onCreate`. You don't need it there since 
-you'll call it via `initDrawer` instead. The last part of `initDrawer` 
-initializes the drawer's `ListView` and creates an 
+in `onCreate`. You should therefore delete this code in `onCreate`. You don't 
+need it there since you call it via `initDrawer` instead. The last part of 
+`initDrawer` initializes the drawer's `ListView` and creates an 
 [adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews) 
 for it. Note that `_guestbooks` is the last argument to the adapter's 
 constructor. This sets the list of guestbooks as the adapter's data source. The 
@@ -453,32 +454,29 @@ method first marks the selected item in the UI. It then retrieves the selected
 guestbook and displays that guestbook's name in the Action Bar. The method 
 finishes by closing the drawer.
 
-Although you've now set what happens when a user selects a guestbook, you still 
-need to set the drawer's `ListView` to listen for item clicks. Do this now by 
-adding the following code to the end of the `initDrawer` method:
+Next, you need to set the drawer's `ListView` to listen for item clicks. Do this 
+now by adding the following code to the end of the `initDrawer` method:
 
     drawerListView.setOnItemClickListener(this);
 
 Great! Your app can now respond appropriately when a user selects a guestbook in 
-the drawer. But what happens when `GuestbooksActivity` first loads? The 
-`onCreate` method initializes the Action Bar and navigation drawer, and 
-retrieves the guestbooks from the portal. But the drawer remains closed until 
-the user opens it. Recall that in `initActionBar()`, you set the Action Bar to 
-display an empty string by default. The activity therefore opens with no content 
-and an empty Action Bar. This isn't very user friendly. You'll change this so 
-that the activity selects the first guestbook by default. Add the following code 
-to the end of the `reloadGuestbooks` method:
+the drawer. When `GuestbooksActivity` first loads, however, the drawer is closed 
+until the user opens it. Recall that in `initActionBar()` you set the Action Bar 
+to display an empty string by default. The activity therefore opens with no 
+content and an empty Action Bar. This isn't very user friendly. You'll change 
+this so that the activity selects the first guestbook by default. Recall that 
+the Mobile SDK calls `reloadGuestbooks` when it successfully retrieves 
+guestbooks from the portal. The existing code in this method replaces the 
+current guestbook list with those retrieved from the portal. Add the following 
+code to the end of the `reloadGuestbooks` method:
 
     _adapter.notifyDataSetChanged();
     
     drawerListView.performItemClick(drawerListView, 0, drawerListView.getItemIdAtPosition(0));
 
-Recall that the Mobile SDK calls `reloadGuestbooks` when it successfully 
-retrieves guestbooks from the portal. The existing code in this method replaces 
-the current guestbook list with those retrieved from the portal. The code you 
-added here notifies the list adapter of this change, and performs an item click 
-on the first guestbook in the `ListView`. This item click triggers the 
-`onItemClick` method.
+This code notifies the list adapter of any changed data, and then performs an 
+item click on the first guestbook in the `ListView`. This item click triggers 
+the `onItemClick` method. 
 
 Awesome! You're almost ready to run the app. But you need to do some cleanup 
 first. Because you're no longer using the menu resource file that defines the 
@@ -512,7 +510,7 @@ this.
 The two `TextView` elements in `nav_header_guestbooks.xml` use the 
 `android:text` attribute to hardcode this text. To remove the text completely, 
 you could delete the `TextView` elements. It's better though to show text that's 
-customized to your app. In the `TextView` elements, replace `"Android Studio"` 
+relevant to your app. In the `TextView` elements, replace `"Android Studio"` 
 with `"Liferay Guestbook"`, and `"android.studio@android.com"` with 
 `"Welcome!"`.
 
