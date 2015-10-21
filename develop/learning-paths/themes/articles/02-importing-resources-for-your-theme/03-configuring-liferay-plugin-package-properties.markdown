@@ -30,7 +30,8 @@ for the Resources Importer.
  
 3.  Uncomment the following code and save the file:
 
-        required-deployment-contexts=\resources-importer-web
+        required-deployment-contexts=\
+            resources-importer-web
 
     This requires the resources-importer-web plugin to be installed in order for 
     the theme to be deployed. If the *resources-importer-web* is not installed, 
