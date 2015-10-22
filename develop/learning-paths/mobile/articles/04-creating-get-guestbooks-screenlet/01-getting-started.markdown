@@ -1,4 +1,4 @@
-# Getting Started with the Get Guestbooks Screenlet
+# Getting Started with the Get Guestbooks Screenlet [](id=getting-started-with-the-get-guestbooks-screenlet)
 
 Before creating a Screenlet, you need to know where you'll use it. If you only 
 plan to use it in one app, then you can create it in that app's project. If you 
@@ -21,7 +21,7 @@ folder in project view.
 
 Now you're ready to get started on the Screenlet itself.
 
-## Encapsulating Guestbooks
+## Encapsulating Guestbooks [](id=encapsulating-guestbooks)
 
 As you did when you used the Guestbook Mobile SDK directly, you need to 
 encapsulate Guestbooks retrieved from the portlet. You can even reuse the 

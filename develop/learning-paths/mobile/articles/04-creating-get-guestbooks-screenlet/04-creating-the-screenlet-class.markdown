@@ -1,4 +1,4 @@
-# Creating the Screenlet Class
+# Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 App developers primarily interact with the Screenlet class when using a 
 Screenlet in their app. The Screenlet class can contain attributes for 
@@ -11,7 +11,7 @@ Guestbooks Screenlet. Don't worry, we promise you won't get a speeding ticket
 while you're eating your sandwich. And no, we're not done with ham-fisted puns 
 yet. 
 
-## Defining Screenlet Attributes
+## Defining Screenlet Attributes [](id=defining-screenlet-attributes)
 
 Before creating the Screenlet class, you should define its attributes. These are 
 the `liferay` attributes the app developer can set when inserting the 
@@ -59,7 +59,7 @@ retrieves guestbooks from the server, or waits for a user action to do so.
 Now that you understand what these attributes do, you're ready to write the 
 Screenlet class.
 
-## Creating the Screenlet Class
+## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 Create a new class called `GetGuestbooksScreenlet` inside the 
 `getguestbooksscreenlet` package. Change the class declaration to extend 

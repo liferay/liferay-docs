@@ -1,4 +1,4 @@
-# Creating Get Guestbooks Screenlet
+# Creating Get Guestbooks Screenlet [](id=creating-get-guestbooks-screenlet)
 
 The app you created in this Learning Path's previous sections calls the 
 Guestbook portlet's remote services via the Guestbook Mobile SDK. You made these 

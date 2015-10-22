@@ -1,4 +1,4 @@
-# Creating Get Entries Screenlet
+# Creating Get Entries Screenlet [](id=creating-get-entries-screenlet)
 
 In this Learning Path's previous section, you created the Get Guestbooks 
 Screenlet. You still need a way, however, to retrieve and display each 

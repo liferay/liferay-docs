@@ -1,4 +1,4 @@
-# Refactoring the Liferay Guestbook App
+# Refactoring the Liferay Guestbook App [](id=refactoring-the-liferay-guestbook-app)
 
 Before you can use your shiny new Screenlets, you need to remove the code you 
 wrote earlier that relies on the Guestbook Mobile SDK. Fortunately, this is a 

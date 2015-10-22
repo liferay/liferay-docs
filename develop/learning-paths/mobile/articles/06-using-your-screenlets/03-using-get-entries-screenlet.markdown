@@ -1,4 +1,4 @@
-# Using Get Entries Screenlet
+# Using Get Entries Screenlet [](id=using-get-entries-screenlet)
 
 You'll use Get Entries Screenlet by following the same basic steps as the 
 previous article: insert the Screenlet XML in an activity or fragment layout, 
@@ -6,7 +6,7 @@ and then implement the Screenlet's listener in the activity or fragment class.
 The following steps show you how to use Get Entries Screenlet in 
 `EntriesFragment`.
 
-## Inserting the Screenlet in the Layout
+## Inserting the Screenlet in the Layout [](id=inserting-the-screenlet-in-the-layout)
 
 When you used the Guestbook Mobile SDK directly, you didn't need to create a 
 layout file for `EntriesFragment`. This was because `EntriesFragment` extended 
@@ -49,7 +49,7 @@ the `"guestbookId"` value from the bundle arguments, and returns the Android
 Next, you need to implement the Screenlet's `GetEntriesListener` interface in 
 `EntriesFragment`. 
 
-## Implementing the Screenlet's Listener
+## Implementing the Screenlet's Listener [](id=implementing-the-screenlets-listener)
 
 First, change the class declaration of `EntriesFragment` to implement the 
 `GetEntriesListener` interface. The class declaration should now look like this: 
@@ -96,7 +96,7 @@ following code immediately above the `return` in the `onCreateView` method:
 
 Awesome! Now you're ready to put this fragment to use.
 
-## Adding the Fragment to the Activity
+## Adding the Fragment to the Activity [](id=adding-the-fragment-to-the-activity)
 
 When you used the Guestbook Mobile SDK to display entries, you did so with a 
 [fragment transaction](http://developer.android.com/guide/components/fragments.html#Transactions). 

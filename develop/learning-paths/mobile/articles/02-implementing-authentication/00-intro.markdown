@@ -1,4 +1,4 @@
-# Implementing Authentication
+# Implementing Authentication [](id=implementing-authentication)
 
 Now that your project is ready for Liferay Screens, you're ready to implement 
 portal authentication in your app. Your app's users need to be able to log in to 

@@ -1,4 +1,4 @@
-# Creating the Get Guestbook Screenlet's Server Calls
+# Creating the Get Guestbook Screenlet's Server Calls [](id=creating-the-get-guestbook-screenlets-server-calls)
 
 For the Get Guestbooks Screenlet to work, it needs to call the Guestbook 
 portlet's remote service that returns the guestbooks. In Screenlets, server 
@@ -9,7 +9,7 @@ components make up an interactor: an event, a callback, the interactor interface
 and its implementation, and a listener. This article shows you how to create 
 each. First, you'll create the event. 
 
-## Creating the Event Class
+## Creating the Event Class [](id=creating-the-event-class)
 
 Screens uses the 
 [EventBus](https://github.com/greenrobot/EventBus)
@@ -62,7 +62,7 @@ guestbooks, if any, from the event object.
 
 Next, you'll create a callback class that uses this event class. 
 
-## Creating the Callback Class
+## Creating the Callback Class [](id=creating-the-callback-class)
 
 When you used the Guestbook Mobile SDK directly, you 
 [created a callback class](http://www.liferay.com/) 
@@ -130,7 +130,7 @@ of `GuestbookModel` objects.
 Next, you need to create the listener interface you'll use to notify the app of 
 the Screenlet's actions. 
 
-## Creating the Listener
+## Creating the Listener [](id=creating-the-listener)
 
 The listener interface defines the methods needed by the Screenlet class to 
 notify the app of the Screenlet's behavior. This lets the app developer respond 
@@ -157,7 +157,7 @@ Guestbooks, respectively. The `onItemClicked` method lets the implementing class
 respond when the user clicks a guestbook in the `ListView`. Now you can use this 
 listener to create and implement the interactor interface. 
 
-## Creating and Implementing the Interactor Interface
+## Creating and Implementing the Interactor Interface [](id=creating-and-implementing-the-interactor-interface)
 
 Since you've implemented the framework needed to call the server, you now need 
 to create and implement the interactor interface that makes the server call. In 

@@ -1,4 +1,4 @@
-# Using Get Guestbooks Screenlet
+# Using Get Guestbooks Screenlet [](id=using-get-guestbooks-screenlet)
 
 The basic steps for using Get Guestbooks Screenlet are the same as those for 
 using any other Screenlet. Recall that you use a Screenlet by placing it in the 
@@ -6,7 +6,7 @@ activity or fragment where you want it to appear. You'll use Get Guestbooks
 Screenlet by inserting it in `GuestbooksActivity`. The following steps 
 illustrate this.
 
-## Inserting the Screenlet in the Layout
+## Inserting the Screenlet in the Layout [](id=inserting-the-screenlet-in-the-layout)
 
 When you used the Guestbook Mobile SDK directly, you displayed the guestbooks by 
 placing a `ListView` inside the `NavigationView` of `activity_guestbooks.xml`. 
@@ -30,7 +30,7 @@ the Screenlet.
 Next, you need to implement the Screenlet's `GetGuestbooksListener` interface in 
 `GuestbooksActivity`.
 
-## Implementing the Screenlet's Listener
+## Implementing the Screenlet's Listener [](id=implementing-the-screenlets-listener)
 
 To use a Screenlet, you must implement its listener methods. Note, however, that 
 what you do in these methods depends on how you want the Screenlet to function 

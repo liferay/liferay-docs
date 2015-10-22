@@ -1,4 +1,4 @@
-# Creating the Get Entries Screenlet's UI
+# Creating the Get Entries Screenlet's UI [](id=creating-the-get-entries-screenlets-ui)
 
 Once you have the `EntryModel` class, you can create the Screenlet's UI. Recall 
 that in Liferay Screens for Android, you create a Screenlet's UI by implementing 
@@ -7,7 +7,7 @@ Before creating these components, however, you should create a new package for
 them. Get started by creating a new package named `view` inside the 
 `getentriesscreenlet` package.
 
-## Creating the View Model Interface
+## Creating the View Model Interface [](id=creating-the-view-model-interface)
 
 First, you need to create the Screenlet's View Model interface. You'll implement 
 this interface when creating the View class. The View Model interface defines 
@@ -35,7 +35,7 @@ and then make some modifications.
 
 Now you're ready to create the View's layout XML. 
 
-## Creating the View's Layout
+## Creating the View's Layout [](id=creating-the-views-layout)
 
 Every View in Screens for Android requires a layout XML. In your app's 
 `res/layout` directory, create the layout file `entries_default.xml`. Replace 
@@ -54,7 +54,7 @@ This layout serves the same purpose in Get Entries Screenlet as
 `guestbooks_default.xml` serves in Get Guestbooks Screenlet. Also, note that the 
 `GetEntriesView` class doesn't exist yet. You'll create it next. 
 
-## Creating the View Class
+## Creating the View Class [](id=creating-the-view-class)
 
 Create the `GetEntriesView` class inside the `view` package. Replace the class's 
 contents with the following code: 

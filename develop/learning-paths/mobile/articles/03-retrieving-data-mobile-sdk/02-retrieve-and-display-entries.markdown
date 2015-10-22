@@ -208,7 +208,7 @@ with the latest guestbooks returned from the server. The `reloadEntries` method
 does the same for entries. The callback class you'll write next calls 
 `reloadEntries` when the server call succeeds.
 
-### Creating a Callback Class
+### Creating a Callback Class [](id=creating-a-callback-class)
 
 Recall that you needed a callback class to retrieve guestbooks asynchronously 
 from the Guestbook portlet. You need an analogous callback class for retrieving 

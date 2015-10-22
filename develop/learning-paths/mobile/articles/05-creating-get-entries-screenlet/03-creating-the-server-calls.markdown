@@ -1,4 +1,4 @@
-# Creating the Get Entries Screenlet's Server Calls
+# Creating the Get Entries Screenlet's Server Calls [](id=creating-the-get-entries-screenlets-server-calls)
 
 To retrieve a guestbook's entries from the Guestbooks portlet, you need to call 
 the portlet's remote service that returns the entries. As with Get Guestbooks 
@@ -13,7 +13,7 @@ these components in detail. For such an explanation, see
 
 First, you'll create the event class. 
 
-## Creating the Event Class
+## Creating the Event Class [](id=creating-the-event-class)
 
 Recall that Screens uses 
 [EventBus](https://github.com/greenrobot/EventBus) 
@@ -51,7 +51,7 @@ the class's contents with the following code:
 
 Next, you'll create the callback class. 
 
-## Creating the Callback Class
+## Creating the Callback Class [](id=creating-the-callback-class)
 
 Recall that you need to make server calls via a callback class because Android 
 doesn't allow network requests on the main UI thread. First, create a new 
@@ -106,7 +106,7 @@ class's contents with the following code:
 
 Now you need to create the interactor's listener interface.
 
-## Creating the Listener
+## Creating the Listener [](id=creating-the-listener)
 
 Listeners communicate the Screenlet's behavior to the app. The listener 
 interface therefore needs to define the methods that do this. Create the 
@@ -128,7 +128,7 @@ interface's contents with the following code:
 
 Next, you need to create and implement the interactor interface.
 
-## Creating and Implementing the Interactor Interface
+## Creating and Implementing the Interactor Interface [](id=creating-and-implementing-the-interactor-interface)
 
 The interactor interface and its implementation define and implement the methods 
 used to make the server call. In the `interactor` package, create an interface 

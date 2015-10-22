@@ -1,4 +1,4 @@
-# Installing the Guestbook Mobile SDK and Liferay Screens for Android
+# Installing the Guestbook Mobile SDK and Liferay Screens for Android [](id=installing-the-guestbook-mobile-sdk-and-liferay-screens-for-android)
 
 You must install the Guestbook Mobile SDK in your Android app so it can interact 
 with the Guestbook portlet. Note that this Mobile SDK contains only the classes 
@@ -28,7 +28,7 @@ directory (the default location for your Android app's directory is
 `AndroidStudioProjects/LiferayGuestbook`). That's it! Next, you'll install 
 Liferay Screens. 
 
-## Installing Liferay Screens
+## Installing Liferay Screens [](id=installing-liferay-screens)
 
 To install Liferay Screens, which also includes the rest of the Liferay Mobile 
 SDK, you need to edit your app's `build.gradle` file. Android Studio uses Gradle 
@@ -71,7 +71,7 @@ link highlighted in a red box:
  
 Great! Now you're ready to test your Screens and Mobile SDK installations. 
 
-## Verifying the Installations
+## Verifying the Installations [](id=verifying-the-installations)
 
 To check your Screens and Mobile SDK installations, first open your project's 
 `MainActivity` class in Android Studio. It's located in the `java` folder's 
@@ -87,7 +87,7 @@ If Android Studio recognizes these imports, then you're good to go! Next,
 there's one final small but important detail to take care of: making sure your 
 app is pointed at the correct Liferay installation. 
 
-## Configuring Communication with Liferay
+## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
 
 For Screens to work properly with your app, you need to point it to your Liferay 
 Portal installation. You do this by adding a `server_context.xml` file in your 

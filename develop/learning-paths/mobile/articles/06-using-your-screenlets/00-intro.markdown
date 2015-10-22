@@ -1,4 +1,4 @@
-# Using the Get Guestbooks and Get Entries Screenlets
+# Using the Get Guestbooks and Get Entries Screenlets [](id=using-the-get-guestbooks-and-get-entries-screenlets)
 
 Now that you have the Get Guestbooks and Get Entries Screenlets, you're ready to 
 put them to work. As you'll see, using these Screenlets isn't much more 

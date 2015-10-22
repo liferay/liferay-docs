@@ -1,4 +1,4 @@
-# Creating the Screenlet Class
+# Creating the Screenlet Class [](id=creating-the-screenlet-class-0)
 
 Recall that app developers primarily interact with the Screenlet class when 
 using a Screenlet in their app. You therefore need to make sure the Screenlet 
@@ -12,7 +12,7 @@ rest of the class, see
 
 You'll get started here by defining the attributes the Screenlet class needs. 
 
-## Defining Screenlet Attributes
+## Defining Screenlet Attributes [](id=defining-screenlet-attributes)
 
 In Get Guestbooks Screenlet, you defined the `layoutId`, `groupId`, and 
 `autoLoad` attributes. You'll define the same attributes for Get Entries 
@@ -30,7 +30,7 @@ directory. Replace the file's contents with the following code:
 
 Next, you'll use these attributes in the Screenlet class.
 
-## Creating the Screenlet Class
+## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 Create a new class called `GetEntriesScreenlet` inside the `getentriesscreenlet` 
 package. Replace this class's contents with the following code:
