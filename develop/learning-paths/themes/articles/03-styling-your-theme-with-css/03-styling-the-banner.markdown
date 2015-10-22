@@ -117,8 +117,9 @@ is the first thing users see when they visit your site.
 The navigation has been formatted in a list and spaced further down from the
 logo. It has also been placed in a red bar to match the color of the logo. To
 further relate the navigation's color to the rest of the theme, the navigation
-items have been given a blue background when active and on hover. Your theme
-should now look like the following figure:
+items have been given a blue background when active and on hover. At the moment, 
+the links in the `Activities` drop-down are hidden by the carousel. This will be 
+fixed in the next section. Your theme should now look like the following figure:
 
 ![Figure 1: The updated navigation bar brings the banner together and completes the header.](../../images/css-banner.png)
 

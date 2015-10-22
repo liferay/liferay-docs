@@ -41,6 +41,8 @@ ${theme.include(body_top_include)}
 			<h2 class="page-title">
 				<span>${the_title}</span>
 			</h2>
+			<#else>
+			<h2 class="no-page-title"/>
 			</#if>
 		</div>
 

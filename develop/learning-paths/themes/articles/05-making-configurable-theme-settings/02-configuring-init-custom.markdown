@@ -31,10 +31,14 @@ In this section you'll add the logic to the theme settings.
             <h2 class="page-title">
                 <span>${the_title}</span>
             </h2>
+        <#else>
+            <h2 class="no-page-title"/>
         </#if>
 
     Now if `show_page_title` is set to `true`, the `<h2>` *page-title* element
-    is rendered, and if it is `false`, the element is not rendered.
+    is rendered, and if it is `false`, the element is not rendered, and instead 
+    an empty element is added. The `no-page-title` class will be used for 
+    additional styling, when the theme is made responsive.
 
 3.  Find `<nav id="breadcrumbs"><@liferay.breadcrumbs /></nav>` and add the
     condition to it:

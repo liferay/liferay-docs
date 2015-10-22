@@ -394,7 +394,7 @@ html {
 			    position: relative;
 			        &.open {
 				        display: block;
-				        margin-top: 5px;
+				        margin-top: 0;
 
 				        .navbar-inner {
 					        @include border-radius(3px);
@@ -666,10 +666,13 @@ html {
 	                .page-title{
 	                    padding-top:20px;
 	                }
+	                .no-page-title{
+	                    padding-top:60px;
+	                }
 	            }
 	
 	            #navigation.open{
-	                margin-top:-178px;
+	                margin-top:-184px;
 	            }
             }
 
