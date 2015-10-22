@@ -1,10 +1,10 @@
 # Using Get Entries Screenlet
 
-You'll use Get Entries Screenlet by following the same basic steps as you did in 
-the previous article to use Get Guestbooks Screenlet: insert the Screenlet XML 
-in an activity or fragment layout, and then configure the activity or fragment 
-class to listen for the Screenlet's events. The following steps show you how to 
-use Get Entries Screenlet in `EntriesFragment`.
+You'll use Get Entries Screenlet by following the same basic steps as the 
+previous article: insert the Screenlet XML in an activity or fragment layout, 
+and then implement the Screenlet's listener in the activity or fragment class. 
+The following steps show you how to use Get Entries Screenlet in 
+`EntriesFragment`.
 
 ## Inserting the Screenlet in the Layout
 
@@ -47,18 +47,18 @@ the `"guestbookId"` value from the bundle arguments, and returns the Android
 `View` object. 
 
 Next, you need to implement the Screenlet's `GetEntriesListener` interface in 
-`EntriesFragment`.
+`EntriesFragment`. 
 
 ## Implementing the Screenlet's Listener
 
-First, change the class declaration to implement the `GetEntriesListener` 
-interface. The class declaration should now look like this:
+First, change the class declaration of `EntriesFragment` to implement the 
+`GetEntriesListener` interface. The class declaration should now look like this: 
 
     public class EntriesFragment extends Fragment implements GetEntriesListener {...
 
 Android Studio marks this class declaration as an error, because you haven't 
 implemented the listener's methods yet. Do so now by adding the following 
-methods to the class, below the `onCreateView` method: 
+methods to the class: 
 
     @Override
     public void onGetEntriesSuccess(List<EntryModel> entries) {

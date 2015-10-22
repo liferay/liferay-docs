@@ -3,7 +3,7 @@
 Now that you have the Get Guestbooks and Get Entries Screenlets, you're ready to 
 put them to work. As you'll see, using these Screenlets isn't much more 
 difficult than using Login Screenlet. This an advantage of using Screenlets: it 
-typically only takes a few minutes to get them up and running. They also 
+typically takes only a few minutes to get them up and running. They also 
 integrate seamlessly with the rest of your app's UI.
 
 Since you're using these Screenlets in the same app you developed earlier in 

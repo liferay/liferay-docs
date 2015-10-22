@@ -1,17 +1,17 @@
 # Creating the Get Entries Screenlet's UI
 
-You can create the Screenlet's UI once you have the `EntryModel` class. Recall 
-that in Liferay Screens for Android, you implement Views to create Screenlet 
-UIs. A View Model interface, layout XML, and View class comprise a View. Before 
-creating these components, however, you should create a new package for them. 
-Get started by creating a new package named `view` inside the 
+Once you have the `EntryModel` class, you can create the Screenlet's UI. Recall 
+that in Liferay Screens for Android, you create a Screenlet's UI by implementing 
+a View. A View Model interface, layout XML, and View class comprise a View. 
+Before creating these components, however, you should create a new package for 
+them. Get started by creating a new package named `view` inside the 
 `getentriesscreenlet` package.
 
 ## Creating the View Model Interface
 
-First, create the Screenlet's View Model interface. You'll implement this 
-interface when creating the View class. The View Model interface defines the 
-methods the View class needs to control the UI. Create the interface 
+First, you need to create the Screenlet's View Model interface. You'll implement 
+this interface when creating the View class. The View Model interface defines 
+the methods the View class needs to control the UI. Create the interface 
 `GetEntriesViewModel` inside the `view` package. Replace its contents with the 
 following code:
 
@@ -27,13 +27,13 @@ following code:
         void showFinishOperation(String userAction, List<EntryModel> entries);
     }
 
-Compare this to `GetGuestbooksViewModel`. It's almost identical! You could've 
-created it by pasting in `GetGuestbooksViewModel`, and then running a find and 
-replace for `Guestbook`, `Guestbooks`, and `guestbooks`. Keep this in mind when 
-developing your own Screenlets. Don't be afraid to reuse code you already wrote 
-and then make some modifications.
+Compare this interface to `GetGuestbooksViewModel`. It's almost identical! You 
+could've created it by pasting in `GetGuestbooksViewModel`, and then running a 
+find and replace for `Guestbook`, `Guestbooks`, and `guestbooks`. Keep this in 
+mind when developing your own Screenlets. Don't be afraid to reuse existing code 
+and then make some modifications. 
 
-Now you're ready to implement the View's layout XML. 
+Now you're ready to create the View's layout XML. 
 
 ## Creating the View's Layout
 
@@ -148,11 +148,12 @@ contents with the following code:
         }
     }
 
-This view class works almost exactly like the Get Guestbook Screenlet's View 
-class. Besides using `EntryModel` instead of `GuestbookModel`, the `ListView` 
+This view class works almost exactly like Get Guestbook Screenlet's View class. 
+Besides using `EntryModel` instead of `GuestbookModel`, the `ListView` 
 adapter is the only difference. The adapter in `GetEntriesView` displays the 
-entry and the name of the person that left it. It's the same adapter you used to 
-display entries when using the Guestbook Mobile SDK directly in the app.
+entry and the name of the person who left the entry. It's the same adapter you 
+used to display entries when you used the Guestbook Mobile SDK directly in the 
+app.
 
 Great! You've successfully created the Get Entries Screenlet's View class. Next, 
 you'll create the server calls the Screenlet needs to retrieve the entries. 

@@ -9,9 +9,10 @@ illustrate this.
 ## Inserting the Screenlet in the Layout
 
 When you used the Guestbook Mobile SDK directly, you displayed the guestbooks by 
-placing a `ListView` in the `NavigationView` of `activity_guestbooks.xml`. Since 
-your Screenlet's View already contains a `ListView`, you no longer need the one 
-in this file. Replace it with the following code:
+placing a `ListView` inside the `NavigationView` of `activity_guestbooks.xml`. 
+Since your Screenlet's View already contains a `ListView`, you no longer need 
+the one in `activity_guestbooks.xml`. Replace the `ListView` in 
+`activity_guestbooks.xml` with the following code:
 
     <com.liferay.docs.getguestbooksscreenlet.GetGuestbooksScreenlet
         android:id="@+id/getguestbooks_screenlet"
@@ -59,16 +60,16 @@ listener's methods. Do so now by adding these methods:
         Toast.makeText(this, "Couldn't get guestbooks " + e.getMessage(), Toast.LENGTH_LONG).show();
     }
 
-Recall that the Screenlet calls `onItemClicked` when the user selects a 
-guestbook from the list. You therefore use this method to set the Action Bar's 
-title to the selected guestbook's name, and then close the drawer. Also recall 
-that the Screenlet calls `onGetGuestbooksSuccess` when guestbooks successfully 
-return from the server. Here, you use this method to call `onItemClicked` to 
+Recall that the Screenlet calls `onItemClicked` when a guestbook is selected 
+from the list. You therefore use this method to set the Action Bar's title to 
+the selected guestbook's name, and then close the drawer. Also, recall that the 
+Screenlet calls `onGetGuestbooksSuccess` when guestbooks successfully return 
+from the server. Here, you use this method to call `onItemClicked` to 
 programmatically select the first guestbook. Because the drawer is initially 
-hidden from view, this ensures that the app displays content when the app first 
-launches. If the Screenlet fails to retrieve guestbooks from the server, it 
-calls `onGetGuestbooksFailure`. You therefore use this method to display the 
-error message to the user. 
+hidden from view, this ensures that the app displays content on first launch. If 
+the Screenlet fails to retrieve guestbooks from the server, it calls 
+`onGetGuestbooksFailure`. You therefore use this method to display the error 
+message to the user. 
 
 Now that you've implemented the listener's methods, you need to set 
 `GuestbooksActivity` as the listener. This is where the id 
@@ -80,7 +81,7 @@ following code to the end of the activity's `onCreate` method:
     getGuestbooksScreenlet.setListener(this);
 
 This code first gets a reference to `GetGuestbooksScreenlet`, and then sets the 
-current `GuestbooksActivity` instance as its listener. 
+current `GuestbooksActivity` instance as the Screenlet's listener. 
 
 Great! That's it! Now you're ready to use Get Entries Screenlet. The next 
 article shows you how to do this.

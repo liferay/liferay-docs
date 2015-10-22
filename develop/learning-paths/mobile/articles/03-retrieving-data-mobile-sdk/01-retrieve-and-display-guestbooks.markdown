@@ -157,7 +157,7 @@ This method replaces any existing content in `_guestbooks` with the list of
         _guestbooks.addAll(guestbooks);
     }
 
-You'll use `reloadGuestbooks` when the call to retrive guestbooks from the 
+You'll use `reloadGuestbooks` when the call to retrieve guestbooks from the 
 portlet succeeds. You need a callback class to make this call. 
 
 ### Creating a Callback Class [](id=creating-a-callback-class)

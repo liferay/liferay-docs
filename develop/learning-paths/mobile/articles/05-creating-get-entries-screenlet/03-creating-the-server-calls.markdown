@@ -2,19 +2,26 @@
 
 To retrieve a guestbook's entries from the Guestbooks portlet, you need to call 
 the portlet's remote service that returns the entries. As with Get Guestbooks 
-Screenlet, you'll do this by creating interactor. Recall that the following 
-components make up an interactor: an event, a callback, the interactor interface 
-and its implementation, and a listener. This article shows you how to create 
-each for the Get Entries Screenlet. You'll create the event first.
+Screenlet, you'll do this in Get Entries Screenlet by creating an interactor. 
+Recall that the following components make up an interactor: an event, a 
+callback, the interactor interface and its implementation, and a listener. This 
+article shows you how to create each for the Get Entries Screenlet. The 
+components you create here are almost identical to the analogous components you 
+created for Get Guestbooks Screenlet. Therefore, this article doesn't explain 
+these components in detail. For such an explanation, see 
+[the article on creating the Get Guestbooks Screenlet's server calls](http://www.liferay.com/).
+
+First, you'll create the event class. 
 
 ## Creating the Event Class
 
-Remember that Screens uses 
+Recall that Screens uses 
 [EventBus](https://github.com/greenrobot/EventBus) 
-to handle communication within Screenlets. Create a new package called `event` 
-inside the `getentriesscreenlet` package. Then create a new class called 
-`GetEntriesEvent` inside the `event` package. Replace the class's contents with 
-the following code: 
+to handle communication within Screenlets. Since the Screenlet needs to handle 
+`EntryModel` objects, you need to create an event class that can as well. Create 
+a new package called `event` inside the `getentriesscreenlet` package. Then 
+create a new class called `GetEntriesEvent` inside the `event` package. Replace 
+the class's contents with the following code: 
 
     package com.liferay.docs.getentriesscreenlet.event;
 
@@ -42,11 +49,11 @@ the following code:
         }
     }
 
-Next, you'll create the callback class.
+Next, you'll create the callback class. 
 
 ## Creating the Callback Class
 
-Recall that you need to make server calls with a callback class because Android 
+Recall that you need to make server calls via a callback class because Android 
 doesn't allow network requests on the main UI thread. First, create a new 
 package called `interactor` in the `getentriesscreenlet` package. Then create a 
 new class called `GetEntriesCallback` in the `interactor` package. Replace the 
@@ -191,7 +198,7 @@ Replace its contents with the following code:
 
 This implementation retrieves the entries by passing `groupId` and `guestbookId` 
 to the remote service's `getEntries` method. Otherwise, 
-`GetEntriesInteractorImpl` is very similar to `GetGuestbooksInteractorImpl`.
+`GetEntriesInteractorImpl` is almost identical to `GetGuestbooksInteractorImpl`. 
 
 Nicely done! Now that Get Entries Screenlet has an interactor, you need to 
-create the Screenlet class. The next article shows you how to do this.
+create the Screenlet class. The next article shows you how to do this. 

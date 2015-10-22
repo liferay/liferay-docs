@@ -1,7 +1,7 @@
 # Refactoring the Liferay Guestbook App
 
 Before you can use your shiny new Screenlets, you need to remove the code you 
-wrote earlier with the Guestbook Mobile SDK. Fortunately, this is a 
+wrote earlier that relies on the Guestbook Mobile SDK. Fortunately, this is a 
 straightforward task. 
 
 First, open `GuestbooksActivity` and replace its contents with the following 
@@ -93,7 +93,14 @@ code:
         }
     }
 
-Next, open `EntriesFragment` and replace its contents with the following code:
+This is the same code you wrote earlier in `GuestbooksActivity`, except that it 
+no longer leverages the Guestbook Mobile SDK. Specifically, it doesn't contain 
+the `getGuestbooks` or `reloadGuestbooks` methods. It also doesn't contain a 
+`ListView`, an adapter, or an `AdapterView.onItemClickListener` implementation. 
+You don't need these things directly in the activity because you've added the 
+underlying functionality to Get Guestbooks Screenlet. 
+
+Next, open `EntriesFragment` and replace its contents with the following code: 
 
     package com.liferay.docs.liferayguestbook;
 
@@ -125,9 +132,15 @@ Next, open `EntriesFragment` and replace its contents with the following code:
         }
     }
 
-Next, you need to delete the remaining Guestbook Mobile SDK code. Delete the 
+Like `GuestbooksActivity`, this fragment no longer leverages the Guestbook 
+Mobile SDK. It no longer contains the `getEntries` or `reloadEntries` methods. 
+It also no longer extends `ListFragment`, because it doesn't need an implicit 
+`ListView` object. It therefore doesn't need an adapter either. You added all 
+this functionality to Get Entries Screenlet.
+
+Now you can delete the remaining Guestbook Mobile SDK code. Delete the 
 `callback` and `model` packages inside the `liferayguestbook` package. In 
-Android Studio's project view, your app should now look like this:
+Android Studio's project view, your app should now look like this: 
 
 ![Figure 1: After refactoring, your app's project should look like this.](../../images/android-guestbook-screenlet-refactor.png)
 

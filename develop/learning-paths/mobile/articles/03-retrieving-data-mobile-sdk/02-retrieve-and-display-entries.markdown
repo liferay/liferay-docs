@@ -211,7 +211,7 @@ does the same for entries. The callback class you'll write next calls
 ### Creating a Callback Class
 
 Recall that you needed a callback class to retrieve guestbooks asynchronously 
-from the Guestbook portlet. You need an analagous callback class for retrieving 
+from the Guestbook portlet. You need an analogous callback class for retrieving 
 entries. In the `callback` package, create the `GetEntriesCallback` class. 
 Replace its contents with the following code:
 

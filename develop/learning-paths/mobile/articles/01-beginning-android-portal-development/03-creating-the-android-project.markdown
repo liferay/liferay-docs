@@ -56,7 +56,7 @@ insert
 [Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android) 
 in an empty activity. Login Screenlet contains everything your users need to 
 authenticate with a Liferay Portal installation, including the UI. Adding Login 
-Screenlet to your app only takes about ten minutes. Although this techically 
+Screenlet to your app only takes about ten minutes. Although this technically 
 isn't magic, it's a bit magical. Now stop thinking about magic, and return your 
 attention to the wizard in Android Studio. Select *Empty Activity*, and click 
 *Next*.

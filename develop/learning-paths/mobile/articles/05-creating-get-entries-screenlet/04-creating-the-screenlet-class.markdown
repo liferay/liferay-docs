@@ -2,16 +2,20 @@
 
 Recall that app developers primarily interact with the Screenlet class when 
 using a Screenlet in their app. You therefore need to make sure the Screenlet 
-class contains all the attributes and methods the app developer needs. You'll 
-create the `GetEntriesScreenlet` class to be very similar to the 
-`GetGuestbooksScreenlet` class. The `GetEntriesScreenlet` class, however, needs 
-a `guestbookId` for retrieiving guestbook entries. You'll get started by 
-defining the attributes needed in the Screenlet class.
+class contains all the attributes and methods the app developer needs. The 
+`GetEntriesScreenlet` class you create here is almost identical to the 
+`GetGuestbooksScreenlet` class. Therefore, this article doesn't explain 
+`GetEntriesScreenlet` in detail. This article does, however, explain the 
+additional needs of `GetEntriesScreenlet`. For a detailed explanation of the 
+rest of the class, see 
+[the article on creating `GetGuestbooksScreenlet`](http://www.liferay.com/). 
+
+You'll get started here by defining the attributes the Screenlet class needs. 
 
 ## Defining Screenlet Attributes
 
-In the Get Guestbooks Screenlet, you defined the `layoutId`, `groupId`, and 
-`autoLoad` attributes. You'll define the same attributes for the Get Entries 
+In Get Guestbooks Screenlet, you defined the `layoutId`, `groupId`, and 
+`autoLoad` attributes. You'll define the same attributes for Get Entries 
 Screenlet. Create the file `entries_attrs.xml` in your app's `res/values` 
 directory. Replace the file's contents with the following code:
 
@@ -163,12 +167,12 @@ package. Replace this class's contents with the following code:
     }
 
 With a few small but important differences, this is the `GetGuestbooksScreenlet` 
-code, adapted for entries. Note that `GetEntriesScreenlet` contains a 
+code adapted for entries. Note that `GetEntriesScreenlet` contains a 
 `_guestbookId` variable for defining the guestbook the Screenlet retrieves 
 entries from. The public methods `getGuestbookId` and `setGuestbookId`, 
 respectively, get and set `_guestbookId`. An app developer can call these 
-methods in the activity or fragment class containing the Screenlet. The 
-`GetEntriesScreenlet` class's `onUserAction` method then calls the interactor's 
+methods in the activity or fragment class that contains the Screenlet. The 
+`GetEntriesScreenlet` class's `onUserAction` method calls the interactor's 
 `getEntries` method with `_guestbookId`. 
 
 Great! You finished the `GetEntriesScreenlet` class! There's one more thing to 
@@ -186,5 +190,5 @@ as follows:
     }
 
 That's it! Now you're ready to use the Get Entries Screenlet alongside the Get 
-Guestbooks Screenlet. The follwing articles conclude with both Screenlets 
+Guestbooks Screenlet. The following articles conclude with both Screenlets 
 working together in harmony. 
