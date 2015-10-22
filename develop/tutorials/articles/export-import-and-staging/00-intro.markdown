@@ -5,11 +5,25 @@ page publication and manage content. The Export/Import feature lets users export
 content as a LAR file from Portal and import external content into Portal.
 Providing the export feature in your application allows users the flexibility of
 exporting content they've created in your application to other places, such as
-another portal instance. The import feature can be used to ingest a LAR file
-that was exported from an external source. The Export/Import feature adds
-another dimension to your application by bestowing the powers to produce
-reusable content and ingest content from other places. To learn more about using
-the Export/Import feature, visit the
+another portal instance, or to save the content for a later use. The import
+feature can be used to ingest a LAR file that was exported from Portal.
+
+For instance, suppose you're managing an online education course using Liferay
+Portal. Because of the nature of an online course, the site's data (grades,
+assignments, etc.) is purged every term to make way for new incoming students.
+In a scenario like this, there is a specific need to frequently store a complete
+record of all data given during a course. The institution offering the course
+must usually keep records of the course's data for a minimum number of years. To
+abide by these requirements, having a gradebook application with an
+export/import feature would fulfill the need for clearing the application's data
+for a new semester, but saving the previous class's work. You could simply
+export the grades of the students as a LAR file, and save it outside course's
+site. If the grades ever needed to be accessed again, you could import the LAR
+and view the student records.
+
+The Export/Import feature adds another dimension to your application by
+bestowing the powers to produce reusable content and ingest content from other
+places. To learn more about using the Export/Import feature, visit the
 [Export/Import](/discover/portal/-/knowledge_base/6-2/export-import) section of
 the User Guide.
 
