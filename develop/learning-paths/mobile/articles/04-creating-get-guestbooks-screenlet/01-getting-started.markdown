@@ -29,6 +29,6 @@ existing `GuestbookModel` class. In Android Studio's project view, copy
 `GuestbookModel` and paste it in the `getguestbooksscreenlet` package. In the 
 *Copy Class* dialogue that appears, accept the defaults and click *OK*. If you 
 need a review of how `GuestbookModel` works, see 
-[this Learning Path article](http://www.liferay.com/).
+[this Learning Path article](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-guestbooks#encapsulating-guestbooks).
 
 Next, you need to create the Screenlet's UI.

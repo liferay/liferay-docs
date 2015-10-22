@@ -65,7 +65,7 @@ Next, you'll create a callback class that uses this event class.
 ## Creating the Callback Class [](id=creating-the-callback-class)
 
 When you used the Guestbook Mobile SDK directly, you 
-[created a callback class](http://www.liferay.com/) 
+[created a callback class](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-guestbooks#creating-a-callback-class) 
 to make network requests asynchronously from another thread. You need to do the 
 same thing in Screenlets. First, create a new package called 
 `interactor` in the `getguestbooksscreenlet` package. Then create a new class 
@@ -237,7 +237,7 @@ constructor as its only constructor.
 
 As mentioned before, the `getGuestbooks` method retrieves all the guestbooks 
 from a site. This method is almost identical to the 
-[`getGuestbooks` method you created when using the Guestbook Mobile SDK directly](http://www.liferay.com/). 
+[`getGuestbooks` method you created when using the Guestbook Mobile SDK directly](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-guestbooks#making-the-server-call). 
 Despite minor differences, it does the same thing. 
 
 The `GetGuestbooksInteractorImpl` class finishes with the `onEvent` method. This 

@@ -8,7 +8,7 @@ class contains all the attributes and methods the app developer needs. The
 `GetEntriesScreenlet` in detail. This article does, however, explain the 
 additional needs of `GetEntriesScreenlet`. For a detailed explanation of the 
 rest of the class, see 
-[the article on creating `GetGuestbooksScreenlet`](http://www.liferay.com/). 
+[the article on creating `GetGuestbooksScreenlet`](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-screenlet-class). 
 
 You'll get started here by defining the attributes the Screenlet class needs. 
 

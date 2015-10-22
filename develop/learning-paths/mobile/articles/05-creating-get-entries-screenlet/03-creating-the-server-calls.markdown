@@ -9,7 +9,7 @@ article shows you how to create each for the Get Entries Screenlet. The
 components you create here are almost identical to the analogous components you 
 created for Get Guestbooks Screenlet. Therefore, this article doesn't explain 
 these components in detail. For such an explanation, see 
-[the article on creating the Get Guestbooks Screenlet's server calls](http://www.liferay.com/).
+[the article on creating the Get Guestbooks Screenlet's server calls](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-guestbook-screenlets-server-calls).
 
 First, you'll create the event class. 
 

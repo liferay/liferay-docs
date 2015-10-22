@@ -115,7 +115,7 @@ Next, add the `GetGuestbooksView` class's constructors as follows:
     }
 
 The adapter in the last constructor should look familiar: 
-[it's effectively the same one you used earlier](http://www.liferay.com/). 
+[it's effectively the same one you used earlier](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-guestbooks#displaying-guestbooks-in-the-drawer). 
 After setting the adapter to the implicit `ListView`, the constructor finishes 
 by using the `AdapterView` class's `setOnItemClickListener` method to set 
 `GetGuestbooksView` as the `ListView`'s click listener. 
