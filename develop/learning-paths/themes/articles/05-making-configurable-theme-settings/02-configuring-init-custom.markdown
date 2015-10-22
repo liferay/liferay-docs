@@ -14,7 +14,7 @@ In this section you'll add the logic to the theme settings.
     The code you just added assigns Freemarker variables to the theme settings
     using the `#assign` declaration. The theme settings are accessed by their
     `key` that was assigned in `liferay-look-and-feel.xml`, using the following
-    code: `getterUtil.getBoolean(theme_settings[key]!)`. Note that
+    code: `getterUtil.getBoolean(theme_settings[key])`. Note that
     `portlet-setup-show-borders-default` is not assigned a variable because it
     is a default theme setting that already exists. Next you'll need to set the
     condition to display the theme elements in `portal_normal.ftl`.
