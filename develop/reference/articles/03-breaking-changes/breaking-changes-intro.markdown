@@ -865,7 +865,7 @@ of reserved screen names.
 #### What changed? [](id=what-changed-22)
 
 Previous to Liferay 7, several methods of `UserLocalService` and `UserService`
-could throw a `ReservedUserEmailAddressException` when a user set an email 
+could throw a `ReservedUserEmailAddressException` when a user set an email
 address that was not allowed. That exception has been deprecated and replaced
 with `UserEmailAddressException.MustNotUseCompanyMx`,
 `UserEmailAddressException.MustNotBePOP3User`, and
@@ -967,8 +967,8 @@ All operations that used the `Fields` class have been removed from the
 
 #### Who is affected? [](id=who-is-affected-25)
 
-This affects developers who have written code that directly calls these 
-operations. 
+This affects developers who have written code that directly calls these
+operations.
 
 #### How should I update my code? [](id=how-should-i-update-my-code-25)
 
@@ -977,7 +977,7 @@ You should update your code to use the `DDMFormValues` class instead of the
 
 #### Why was this change made? [](id=why-was-this-change-made-25)
 
-This change has been made due to the deprecation of the `Fields` class. 
+This change has been made due to the deprecation of the `Fields` class.
 
 ---------------------------------------
 
@@ -1063,7 +1063,7 @@ called `resourceClassNameId`.
 
 #### Who is affected? [](id=who-is-affected-28)
 
-This affects developers who have direct calls to the `DDMTemplateService` or 
+This affects developers who have direct calls to the `DDMTemplateService` or
 `DDMTemplateLocalService`.
 
 #### How should I update my code? [](id=how-should-i-update-my-code-28)
@@ -1198,7 +1198,7 @@ the `ScreenNameValidator` interface.
 
 You should implement the new methods introduced in the interface.
 
-- `getDescription(Locale)`: returns a description of what the screen name 
+- `getDescription(Locale)`: returns a description of what the screen name
 validator validates.
 
 - `getJSValidation()`: returns the JavaScript input validator on the client
@@ -1206,7 +1206,7 @@ side.
 
 #### Why was this change made? [](id=why-was-this-change-made-32)
 
-Previous to Liferay 7, validation for user screen name characters was hard-coded 
+Previous to Liferay 7, validation for user screen name characters was hard-coded
 in `UserLocalService`. A new portal property named
 `users.screen.name.special.characters` has been added to provide configurability
 of special characters allowed in screen names.
@@ -1257,7 +1257,7 @@ code.
 The API for adding tags, categories, and vocabularies now requires passing the
 `groupId` parameter. Previously, it had to be included in the `ServiceContext`
 parameter passed to the method.
- 
+
 #### Who is affected? [](id=who-is-affected-34)
 
 This affects developers who have direct calls to the following methods:
@@ -1498,7 +1498,7 @@ their code.
 While the old classes remain for backwards-compatibility, they are being
 deprecated. You're encouraged to use the new pattern of inner classes for
 exceptions wherever possible. For example, instead of using
-`ContactFirstNameExeception`, use `ContactNameException.MustHaveFirstName`. 
+`ContactFirstNameExeception`, use `ContactNameException.MustHaveFirstName`.
 
 #### Why was this change made? [](id=why-was-this-change-made-40)
 
@@ -1537,7 +1537,7 @@ Portal property `USERS_LAST_NAME_REQUIRED` didn't support the multicultural user
 name configurations introduced in LPS-48406. Language property files (e.g.,
 `language.properties`) now support these configurations. Control of all user
 name configuration, except with regards to first name, is relegated to language
-property files. First name is required and always present. 
+property files. First name is required and always present.
 
 ---------------------------------------
 
@@ -1560,7 +1560,7 @@ This affects anyone who uses those methods.
 
 The removed methods were generic and had long signatures with optional
 parameters. They now have one specialized version per parameter and are
-in the `RepositoryProvider` service. 
+in the `RepositoryProvider` service.
 
 **Example**
 
@@ -1690,13 +1690,13 @@ bypass the permission system by providing customized `className`, `classPK`, or
 
 #### What changed? [](id=what-changed-46)
 
-Method `Indexer.addRelatedEntryFields(Document, Object)` has been moved into 
+Method `Indexer.addRelatedEntryFields(Document, Object)` has been moved into
 `RelatedEntryIndexer`.
 
 `Indexer.reindexDDMStructures(List<Long>)` has been moved into
 `DDMStructureIndexer`.
 
-`Indexer.getQueryString(SearchContext, Query)` has been removed, in favor of 
+`Indexer.getQueryString(SearchContext, Query)` has been removed, in favor of
 calling `SearchEngineUtil.getQueryString(SearchContext, Query)`
 
 #### Who is affected? [](id=who-is-affected-46)
@@ -1706,7 +1706,7 @@ that implements the interface methods.
 
 #### How should I update my code? [](id=how-should-i-update-my-code-46)
 
-Any code implementing `Indexer.addRelatedEntryFields(...)` should implement the 
+Any code implementing `Indexer.addRelatedEntryFields(...)` should implement the
 `RelatedEntryIndexer` interface.
 
 Any code calling `Indexer.addRelatedEntryFields(...)` should determine first if
@@ -1725,11 +1725,11 @@ New code:
         relatedEntryIndexer.addRelatedEntryFields(...);
     }
 
-Any code implementing `Indexer.reindexDDMStructures(...)` should implement the 
+Any code implementing `Indexer.reindexDDMStructures(...)` should implement the
 `DDMStructureIndexer` interface.
 
 Any code calling `Indexer.reindexDDMStructures(...)` should determine first if
-the `Indexer` is an instance of `DDMStructureIndexer`. 
+the `Indexer` is an instance of `DDMStructureIndexer`.
 
 Old code:
 
@@ -1744,8 +1744,8 @@ New code:
         ddmStructureIndexer.reindexDDMStructures(...);
     }
 
-Any code calling Indexer.getQueryString(...) should call 
-SearchEngineUtil.getQueryString(...)
+Any code calling `Indexer.getQueryString(...)` should call
+`SearchEngineUtil.getQueryString(...)`.
 
 Old code:
 
