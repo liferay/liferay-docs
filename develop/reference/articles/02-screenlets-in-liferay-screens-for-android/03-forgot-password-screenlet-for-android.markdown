@@ -68,6 +68,10 @@ An anonymous request can be made without the user being logged in. However,
 authentication is needed to call the API. To allow this operation, the portal
 administrator should create a specific user with minimal permissions. 
 
+## Offline [](id=offline)
+
+This Screenlet doesn't support offline mode. It requires network connectivity.
+
 ## Required Attributes [](id=required-attributes)
 
 - `layoutId`

@@ -755,6 +755,29 @@ you've already set up one Liferay instance as a SAML Identity Provider, use a
     - Metadata URL: http://localhost:8080/c/portal/saml/metadata (test this URL
       first)
 
+    **Important**: The SAML 2.0 Provider EE plugin supports using *either* a URL
+    to a SAML IdP metadata file *or* an actual (uploaded) SAML metadata XML
+    file. The value entered in the *Metadata URL* field will only be persisted
+    to the database when there is one entered metadata URL and there is no
+    specified metadata XML file. Otherwise, the portal keeps the original
+    metadata URL in the database. This behavior ensures that once a metadata URL
+    has been specified, there will always be a metadata URL saved in the
+    database. This way, if a portal administrator forgets the previously entered
+    metadata URL or its format, he or she can simply look at the displayed
+    metadata URL and either choose to modify the displayed metadata URL or to
+    overwrite the previously saved metadata URL by specifying a metadata XML
+    file.
+
+    Currently, the SAML 2.0 Provider EE plugin does not provide a way to "clear"
+    the SAML IdP metadata URL or metadata XML file fields using the Control
+    Panel UI. If you really need to clear these fields, it's possible (but not
+    recommended) to delete the contents of the SAML IdP metadata URL and
+    metadata XML file columns of the `SamlSpIdpConnection` table of Liferay's
+    database. (A way to "clear" the SAML IdP metadata URL or metadata XML file
+    fields using the Control Panel UI has been requested as a feature. You can
+    track the issue progress here:
+    [https://issues.liferay.com/browse/LPS-59199](https://issues.liferay.com/browse/LPS-59199)).
+
 6. Finally, after you've saved your certificate and private key information and
    configured an Identity Provider connection, check the *Enabled* box at the
    top of the General tab and click *Save*. Great! You've successfully set
@@ -785,3 +808,82 @@ Service Provider based login process, just navigate to the Liferay running on
 port 9080 and click *Sign In*, navigate to
 [http://localhost:9080/c/portal/login](http://localhost:9080/c/portal/login), or
 try to access a protected resource URL such as a Control Panel URL.
+
++$$$
+
+**Limitation:** The Liferay SAML plugin can only be used with a single virtual
+host. Technically, this means that in the SAML metadata for Liferay, only one
+binding can be added in this form:
+
+    <md:EntityDescriptor>
+    ...
+    <md:SPSSODescriptor>
+    ...
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://portal.domain.com/c/portal/saml/acs" index="1" isDefault="true" />
+    ...
+    </md:SPSSODescriptor>
+    </md:EntityDescriptor>
+
+$$$
+
+### Setting Up Liferay as a SAML Service Provider in a Clustered Environment [](id=setting-up-liferay-as-a-saml-service-provider-in-a-clustered-environment)
+
+If you want to use Liferay's SAML 2.0 Provider EE plugin as a SSO solution for a
+clustered Liferay environment, follow the steps in this section. Before
+proceeding, make sure that the following assumptions apply to your scenario.
+
+Suppose that your clustered Liferay environment consists of multiple Liferay
+nodes that sit behind a load balancer. Your Liferay nodes could be Liferay
+Tomcat bundles, for example. Your load balancer could be software like Apache
+web server or hardware like F5 BIG-IP. Suppose further that you want want the
+nodes of your Liferay cluster to serve as SAML Service Providers. And suppose
+that you have a third-party participating as the SAML Identity Provider. (For
+testing purposes, you could create a separate Liferay instance to serve as the
+SAML IdP.)
+
+If your situation fits the scenario described above, follow these steps:
+
+1. Configure one node of your Liferay cluster as a SAML SP using the
+   instructions of the previous section.
+
+2. Ensure that this Liferay node is using the fully qualified name of the load
+   balancer (e.g., `FQN.LB.HOST`) as the value of the `web.server.host` property
+   in the node's `portal-ext.properties` file.
+
+        #
+        # Set the hostname that will be used when the portlet generates URLs.
+        # Leaving this blank will mean the host is derived from the servlet
+        # container.
+        #
+        web.server.host=FQN.LB.HOST
+
+
+3. Repeat steps 1 and 2 for each other Liferay node.
+
+4. Copy the keystore file (`[Liferay Home]/data/keystore.jks`, by default) from
+   the first Liferay node to each other Liferay node. This file is the Java
+   keystore that's created by the SAML 2.0 Provider EE plugin. The keystore
+   contains the valid or self-signed certificate managed by the SAML 2.0 EE
+   Provider plugin.
+
+    Note: The keystore file and its default location can vary according to the
+    keystore manager defined by the `saml.keystore.manager.impl` property.
+    Here's the relevant section of the SAML 2.0 Provider EE plugin's
+    `portlet.properties` file:
+
+        #
+        # Set the name of a class that implements
+        # com.liferay.saml.credential.KeyStoreManager. This class is used to load and
+        # save the keystore.
+        #
+        #saml.keystore.manager.impl=com.liferay.saml.credential.DLKeyStoreManagerImpl
+        saml.keystore.manager.impl=com.liferay.saml.credential.FileSystemKeyStoreManagerImpl
+
+5. At this point, all of the Liferay nodes have the same SAML SP configuration
+   and each of them can respond to web requests and handle the SAML protocol. To
+   test your SSO solution, sign into Liferay via your load balancer, navigate to
+   a few pages of a few different sites, and then log out.
+
+Great! Now you know how to configure Liferay either as a SAML identity provider
+or a service provider. You also know how to configure the Liferay SAML in a
+clustered environment.

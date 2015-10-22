@@ -2,7 +2,7 @@
 
 ## Requirements [](id=requirements)
 
-- XCode 6.3.x
+- XCode 6.4.x
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
 - [OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 
@@ -79,6 +79,13 @@ used from Liferay Screens. When the app is created, copy the *Consumer Key* and
 *Consumer Secret* values for later use in `LoginScreenlet`.
 
 ![Copy the Consumer Key and Consumer Secret from OAuth Admin in your portal.](../../images/screens-portal-oauth.png)
+
+## Offline [](id=offline)
+
+This Screenlet doesn't support offline mode. It requires network connectivity.
+If you need to log in users automatically, even when there's no network 
+connection, you can use the `saveCredentials` attribute together with the 
+`SessionContext.loadSessionFromStore()` method. 
 
 ## Attributes [](id=attributes)
 

@@ -810,12 +810,12 @@ Liferay's source code. In either place, you'll find the files in the
 `portal-impl.jar` file, which is in Liferay's `WEB-INF/lib` folder. The files
 you want are `hibernate-clustered.xml`, `liferay-single-vm.xml`, and
 `liferay-multi-vm-clustered.xml`, and they'll be in the `/ehcache` folder in
-this `.jar`. Once you have these, make a subfolder of the `docroot` folder in
-your project. Place the files you extracted into this folder and then specify
-this folder in the properties above. 
+this `.jar`. Once you have these, make a subfolder of the `docroot/WEB-INF/src`
+folder in your project. Place the files you extracted into this folder and then
+specify this folder in the properties above. 
 
 For example, if you created a folder called `custom_cache` in your project's
-`docroot` folder, you'd copy the three XML configuration files
+`docroot/WEB-INF/src` folder, you'd copy the three XML configuration files
 (`hibernate-clustered.xml`, `liferay-single-vm.xml`, and
 `liferay-multi-vm-clustered.xml`) there. Then you'd edit your
 `portlet.properties` and specify your configuration files in the three

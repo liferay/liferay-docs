@@ -45,6 +45,10 @@ administrator should create a user with minimal permissions. To use
 `SignUpScreenlet`, you need to use that user in your layout. You should add that
 user's credentials to `server_context.xml`. 
 
+## Offline [](id=offline)
+
+This Screenlet doesn't support offline mode. It requires network connectivity. 
+
 ## Required Attributes [](id=required-attributes)
 
 - `layoutId`

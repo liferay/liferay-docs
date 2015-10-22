@@ -2,7 +2,7 @@
 
 ## Requirements [](id=requirements)
 
-- XCode 6.3.x
+- XCode 6.4.x
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
 
@@ -30,6 +30,31 @@ the user doesn't have a portrait configured, a placeholder image is shown.
 
 None
 
+## Offline [](id=offline)
+
+This Screenlet supports offline mode so it can function without a network 
+connection. 
+
+When loading the portrait, the Screenlet supports the following offline mode 
+policies:
+
+| Policy | What happens | When to use |
+|--------|-----------|---------------|
+| `remote-only` | The Screenlet loads the user portrait from the portal. If a connection issue occurs, the Screenlet uses the delegate to notify the developer about the error. If the Screenlet loads the portrait, it stores the received image in the local cache for later use. | Use this policy when you always need to show updated portraits, and show the default placeholder when there's no connection. |
+| `cache-only` | The Screenlet loads the user portrait from the local cache. If the portrait isn't there, the Screenlet uses the delegate to notify the developer about the error. | Use this policy to show local portraits, without retrieving remote information under any circumstance. |
+| `remote-first` | The Screenlet loads the user portrait from the portal. The Screenlet displays the portrait to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the portrait from the local cache. If the portrait doesn't exist there, the Screenlet uses the delegate to notify the developer about the error. | Use this policy to show the most recent portrait when connected, but show a potentially outdated version when there's no connection. |
+| `cache-first` | If the portrait exists in the local cache, the Screenlet loads it from there. If it doesn't exist there, the Screenlet requests the portrait from the portal and uses the delegate to notify the developer about any connection errors. | Use this policy to save bandwidth and loading time in the event a local (but probably outdated) portrait exists. |
+
+When editing the portrait, the Screenlet supports the following offline mode 
+policies:
+
+| Policy | What happens | When to use |
+|--------|-----------|---------------|
+| `remote-only` | The Screenlet sends the user portrait to the portal. If a connection issue occurs, the Screenlet uses the delegate to notify the developer about the error, but it also discards the new portrait. | Use this policy when you need to make sure portal always has the most recent version of the portrait. |
+| `cache-only` | The Screenlet stores the user portrait in the local cache. | Use this policy when you need to save the portrait locally, but don't want to change the portrait in the portal. |
+| `remote-first` | The Screenlet sends the user portrait to the portal. If this succeeds, the Screenlet also stores the portrait in the local cache for later usage. If a connection issue occurs, the Screenlet stores the portrait in the local cache with the *dirty flag* enabled. This causes the portrait to be sent to the portal when the synchronization process runs. | Use this policy when you need to make sure the Screenlet sends the new portrait to the portal as soon as the connection is restored. |
+| `cache-first` | The Screenlet stores the user portrait in the local cache and then sends it to the portal. If a connection issue occurs, the Screenlet stores the portrait in the local cache with the *dirty flag* enabled. This causes the portrait to be sent to the portal when the synchronization process runs. | Use this policy when you need to make sure the Screenlet sends the new portrait to the portal as soon as the connection is restored. Compared to `remote-first`, this policy always stores the portrait in the cache. The `remote-first` policy only stores the new image in the event of a network error. |
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
@@ -37,6 +62,7 @@ None
 | `borderWidth` | `number` | The size in pixels for the portrait's border. The default value is 1. Set this to `0` if you want to hide the border.|
 | `borderColor` | `UIColor` | The border's color. Use the system's transparent color to hide the border. |
 | `editable` | `boolean` | Lets the user change the portrait image by taking a photo or selecting a gallery picture. The default value is `false`. Portraits loaded with the `load(portraitId, uuid, male)` method aren't editable. |
+| `offlinePolicy` | `string` | Configure the loading and saving behavior in case of connectivity issues. For more details, read the "Offline" section below. |
 
 ## Methods [](id=methods)
 

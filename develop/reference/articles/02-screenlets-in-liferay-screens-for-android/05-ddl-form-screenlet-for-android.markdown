@@ -6,6 +6,10 @@
 
 - Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 CE or EE
+- Liferay Screens Compatibility Plugin (
+  [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+  [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
+  depending on your portal edition). 
 
 ## Compatibility [](id=compatibility)
 
@@ -137,6 +141,31 @@ For more details, see the User Guide sections [Defining Data Types](/portal/-/kn
 [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists), 
 and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow). 
 
+## Offline [](id=offline)
+
+This Screenlet supports offline mode so it can function without a network 
+connection. 
+
+When loading the form or record, the Screenlet supports the following offline 
+mode policies:
+
+| Policy | What happens | When to use |
+|--------|-----------|---------------|
+| `REMOTE_ONLY` | The Screenlet loads the form or record from the portal. If a connection issue occurs, the Screenlet uses the listener to notify the developer about the error. If the Screenlet loads the form or record, it stores the received data (record structure and data) in the local cache for later use. | Use this policy when you always need to show updated data, and show nothing when there's no connection. |
+| `CACHE_ONLY` | The Screenlet loads the form or record from the local cache. If the form or record isn't there, the Screenlet uses the listener to notify the developer about the error. | Use this policy when you always need to show local data, without retrieving remote information under any circumstance. |
+| `REMOTE_FIRST` | The Screenlet requests the form or record from the portal. The Screenlet shows the record or form to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the form or record from the local cache. If the form or record doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
+| `CACHE_FIRST` | If the form or record exists in the local cache, the Screenlet loads it from there. If it doesn't exist there, the Screenlet requests it from the portal and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
+
+When editing the record, the Screenlet supports the following offline mode 
+policies:
+
+| Policy | What happens | When to use |
+|--------|-----------|---------------|
+| `REMOTE_ONLY` | The Screenlet sends the record to the portal. If a connection issue occurs, the Screenlet uses the listener to notify the developer about the error, but it also discards the record. | Use this policy to make sure the portal always has the most recent version of the record. |
+| `CACHE_ONLY` | The Screenlet stores the record in the local cache. | Use this policy when you need to save the data locally, but don't want to update the data in the portal (update or add record). |
+| `REMOTE_FIRST` | The Screenlet sends the record to the portal. If this succeeds, it also stores the record in the local cache for later usage. If a connection issue occurs, then Screenlet stores the record in the local cache with the *dirty flag* enabled. This causes the the synchronization process to send the record to the portal when it runs. | Use this policy when you need to make sure the Screenlet sends the record to the portal as soon as the connection is restored. |
+| `CACHE_FIRST` | The Screenlet stores the record in the local cache and then sends it to the remote portal. If a connection issue occurs, then Screenlet stores the record in the local cache with the *dirty flag* enabled. This causes the the synchronization process to send the record to the portal when it runs. | Use this policy when you need to make sure the Screenlet sends the record to the portal as soon as the connection is restored. Compared to `REMOTE_FIRST`, this policy always stores the record in the cache. The `REMOTE_FIRST` policy only stores the record in the event of a network error. |
+
 ## Required Attributes [](id=required-attributes)
 
 - `layoutId`
@@ -159,7 +188,7 @@ and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
 | `structureId` | `number` | The ID of a data definition in your Liferay site. To find the IDs for your data definitions, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left and click the *Manage Data Definitions* button. The ID of each data definition is in the ID column of the table. |
 | `groupId` | `number` | The ID of the site (group) where the record is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
 | `recordSetId` | `number` | A dynamic data list's ID. To find your dynamic data lists' IDs, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left. Each dynamic data list's ID is in the ID column of the table. |
-| `recordId` | `number` | The ID of the record you want to show. You can also allow the record's values to be edited. This ID can be obtained from other methods or delegates. |
+| `recordId` | `number` | The ID of the record you want to show. You can also allow the record's values to be edited. This ID can be obtained from other methods or listeners. |
 | `repositoryId` | `number` | The ID of the Documents and Media repository to upload to. If this value is `0`, the default repository for the site specified by `groupId` is used. |
 | `folderId` | `number` | The ID of the folder where Documents and Media files are uploaded. If this value is `0`, the root is used. |
 | `filePrefix` | `string` | The prefix to attach to the names of files uploaded to a Documents and Media repository. The upload date followed by the original file name is appended following the prefix. |

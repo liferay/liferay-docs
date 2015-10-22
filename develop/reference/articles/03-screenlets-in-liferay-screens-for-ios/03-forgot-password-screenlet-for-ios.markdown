@@ -2,7 +2,7 @@
 
 ## Requirements [](id=requirements)
 
-- XCode 6.3.x
+- XCode 6.4.x
 - iOS 8 SDK
 - Liferay Portal 6.2 CE or EE
 - Liferay Screens Compatibility Plugin (
@@ -67,6 +67,10 @@ section of the User Guide.
 An anonymous request can be made without the user being logged in. However, 
 authentication is needed to call the API. To allow this operation, the portal
 administrator should create a specific user with minimal permissions.
+
+## Offline [](id=offline)
+
+This Screenlet doesn't support offline mode. It requires network connectivity.
 
 ## Attributes [](id=attributes)
 
