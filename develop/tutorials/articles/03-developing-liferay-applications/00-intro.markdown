@@ -4,8 +4,10 @@ At a basic level, Liferay Portal is a web application that runs on a Java EE
 application server or servlet container. In Liferay 6.2 and prior versions,
 Liferay plugins were deployed as separate web applications. Thus, both Liferay
 and its plugins were installed alongside each other in the running application
-server or servlet container. However, Liferay 7 includes an OSGi-based module
-framework to which plugins are deployed.
+server or servlet container. However, Liferay 7 introduces a major improvement:
+Liferay now includes an OSGi-based module framework to which plugins are
+deployed. Liferay's module framework makes it easier than ever for developers to
+create Liferay applications and to customize Liferay!
 
 +$$$
 
@@ -17,6 +19,19 @@ plugins as modules. Moreover, much of Liferay's core functionality has been
 extracted into modules and installed into Liferay's module framework.
 
 $$$
+
+As a developer, you benefit from Liferay's module framework in many ways. First
+of all, using a module framework makes it easier than ever to manage
+dependencies. Individual modules export code at the package level for use by
+other modules. Furthermore, Liferay's module framework includes a service
+registry. Modules interact by means of OSGi services. Liferay's module framework
+also dynamically manages the lifecycle of its installed modules. Modules can be
+installed, started, updated, stopped, and uninstalled while Liferay is running.
+This makes it very easy for Liferay developers to update their plugins and check
+to see if they produce the desired effect in Liferay. These are only a few of
+the benefits provided by Liferay's module framework. To learn more about the
+benefits provided by Liferay's module framework, please refer to this article:
+[http://www.osgi.org/Technology/WhyOSGi](http://www.osgi.org/Technology/WhyOSGi).
 
 Liferay 7 supports only one type of plugin: a module (a.k.a. bundle). Don't
 worry, Liferay 7 is backwards compatible with all of the older plugin types
@@ -54,8 +69,8 @@ You only need to understand two concepts: *modules* and *components*.
   the OSGi world. A module can contain one or more components. 
 - Conceptually, a *component* is just an implementation of an interface. In
   Liferay, a component is typically a
-  [Declarative Services component](http://wiki.osgi.org/wiki/Declarative_Services).
-  This means that it's a Java class that's decorated with the
+  [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
+  component. This means that it's a Java class that's decorated with the
   `org.osgi.service.component.annotations.Component` annotation. The interface
   implemented by the component class is specified by the value of the `service`
   attribute of the annotation. A component lives within a module.
