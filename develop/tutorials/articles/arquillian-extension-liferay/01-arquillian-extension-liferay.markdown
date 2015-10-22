@@ -16,23 +16,28 @@ environment:
 - JUnit 4.12
 
 To set up a testing environment like the one used by the Arquillian Extension
-for Liferay Example, you need to configure your Liferay Tomcat server:
+for Liferay Example, you need to configure your Liferay Tomcat server. This
+takes only two steps: 
 
 1. Enable and configure JMX in Tomcat
 2. Install and configure the Tomcat Manager
+
+Read on to learn how to get your testing environment working. 
 
 ## Enable and Configure JMX in Tomcat
 
 You can follow this [guide](https://tomcat.apache.org/tomcat-7.0-doc/monitoring.html#Enabling_JMX_Remote) to enable your JMX congifuration in Tomcat.
 
-Here's an example of a `setenv.sh` file that enables JMX in a Tomcat on the port
-8099 without authentication:
+Here's an example of a `setenv.sh` file that enables JMX in Tomcat on port 8099
+without authentication:
 
     CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
     JMX_OPTS="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=8099 -Dcom.sun.management.jmxremote.ssl=false"
 
     CATALINA_OPTS="${CATALINA_OPTS} ${JMX_OPTS}"
+
+You can customize your `setenv.sh` in a similar way. 
 
 ## Install and Configure the Tomcat Manager
 
