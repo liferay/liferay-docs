@@ -2441,3 +2441,63 @@ applications are displayed. This concept conflicts with the idea of returning a
 site called Control Panel in the Sites API.
 
 ---------------------------------------
+
+### Removed All References to Windows Live Messenger [](id=removed-all-references-to-windows-live-messenger)
+- **Date:** 2015-Oct-15
+- **JIRA Ticket:** LPS-30883
+
+#### What changed? [](id=what-changed-68)
+
+All references to the `msnSn` column in the Contacts table have been removed
+from portal. All references to Windows Live Messenger have been removed from
+properties, tests, classes, and the frontend. Also, the `getMsnSn` and
+`setMsnSn` methods have been removed from the `Contact` and `LDAPUser` models.
+
+The following classes have been removed:
+
+- `MSNConnector`
+- `MSNMessageAdapter`
+
+The following constants have been removed:
+
+- `CalEventConstants.REMIND_BY_MSN`
+- `ContactConverterKeys.MSN_SN`
+- `PropsKeys.MSN_LOGIN`
+- `PropsKeys.MSN_PASSWORD`
+
+The following methods have been removed:
+
+- `Contact.getMsnSn`
+- `Contact.setMsnSn`
+- `LDAPUser.getMsnSn`
+- `LDAPUser.setMsnSn`
+
+The following methods have been changed:
+
+- `AdminUtil.updateUser`
+- `ContactLocalServiceUtil.addContact`
+- `ContactLocalServiceUtil.updateContact`
+- `UserLocalServiceUtil.addContact`
+- `UserLocalServiceUtil.updateContact`
+- `UserLocalServiceUtil.updateUser`
+- `UserServiceUtil.updateUser`
+
+#### Who is affected? [](id=who-is-affected-68)
+
+This affects developers who use any of the classes, constants, or methods listed
+above.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-68)
+
+When updating or adding a user or contact using one of the changed methods
+above, remove the `msnSn` argument from the method call. If you are using one of
+the removed items above, you should remove all references to them from your code
+and look for alternatives, if necessary. Lastly, remove any references to the
+`msnSN` column in the Contacts table from your SQL queries.
+
+#### Why was this change made? [](id=why-was-this-change-made-68)
+
+Since Microsoft dropped support for Windows Live Messenger, Liferay will no
+longer continue to support it.
+
+---------------------------------------
