@@ -1,4 +1,4 @@
-# Invoking Liferay Services From a Script
+# Invoking Liferay Services From Scripts
 
 In many cases, you'll want to invoke one or more of Liferay's many services.
 This is possible from each of the supported scripting languages. Of course, the
