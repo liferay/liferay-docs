@@ -23,7 +23,8 @@ run properly in a production environment. Follow these steps to configure your
 
 2. Uncomment the `required-deployment-contexts`:
 
-        required-deployment-contexts=\resources-importer-web
+        required-deployment-contexts=\
+            resources-importer-web
 
 3.  Remove the following code from the file:
 
