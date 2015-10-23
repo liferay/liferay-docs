@@ -1,7 +1,8 @@
 # Using BLADE to Create Modules
 
 [Blade Tools](https://github.com/gamerson/blade.tools) is Liferay's recommended
-tool for developing Liferay modules. See the [Introduction to Blade Tools]()
+tool for developing Liferay modules. See the
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
 tutorial and the other tutorials in this section to learn how to use Blade
 Tools. At the time of this writing, Blade Tools contains only a few project
 templates. Eventually, many more project templates will be added to
@@ -27,7 +28,7 @@ demonstrate how to accomplish these tasks and many more. The
 Maven, and Bndtools versions. Once you've chosen a project, find the version of
 that project in the directory that corresponds to your preferred build tool. For
 example, if you want to override a Liferay service and you want your project to
-be Gradle-based, navigate to the BLADE Gradle directory and find the
+be Gradle-based, navigate to the `blade/gradle` directory and find the
 `blade.service.hook.user` project. Copy the project from the BLADE repository to
 a local directory that will serve as the root directory for your new project.
 
@@ -209,7 +210,7 @@ the BLADE project. As you develop your project into something more substantial
 than the simple example that you copied out of BLADE, might need to update your
 build script. For example, you might need to declare some new dependencies.
 
-## Refactoring Your Project [](id=refactoring-the-blade-project)
+## Refactoring Your Project
 
 Once you've copied your module project and reconfigured your build script, your
 project should build successfully. You should be able to deploy it to Liferay's
@@ -266,10 +267,14 @@ framework. Check out the
 [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/blade-tools-bundle-creation)
 tutorial and the other tutorials in this section for more information.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Installing Blade Tools](/develop/tutorials/-/knowledge_base/7-0/blade-tools-bundle-creation)
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
 
-[Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
+[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 
-[Dynamic Applications](/develop/tutorials/-/knowledge_base/7-0/dynamic-applications)
+[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+
+[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services)
+
+[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)

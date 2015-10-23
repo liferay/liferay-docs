@@ -12,7 +12,7 @@ object and you want a value for the custom field to be saved whenever the
 `addUser` or `updateUser` methods of Liferay's API are called. Or maybe you
 simply want to add some additional logging functionality to some of Liferay's
 APIs. Whatever your case may be, Liferay's service wrappers provide easy-to-use
-extension points for customize Liferay's services.
+extension points for customizing Liferay's services.
 
 To create a module that overrides one of Liferay's services, use the
 `servicewrapper` project type. Use this command 
@@ -78,7 +78,8 @@ The bottom line is that when using `blade create` to create a service wrapper
 project, you must specify a fully qualified class name as the `service`
 argument. (This is also true when using `blade create` to create a service
 project.) For information about creating service projects, please see the
-[Not yet written]() tutorial.
+[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+tutorial.
 
 The generated `UserLocalServiceOverride` class does not actually customize any
 Liferay service. Before you can test that your service wrapper module actually
@@ -135,3 +136,15 @@ of the Control Panel. Confirm that your customizations of Liferay's user service
 methods have taken effect by checking Liferay's log for the print statements
 that you added. Congratulations! You've created and deployed a Liferay 7 service
 wrapper module!
+
+## Related Topics
+
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+
+[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
+
+[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+
+[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
+
+[Using BLADE to Create Modules](/develop/tutorials/-/knowledge_base/7-0/using-blade-to-create-modules)

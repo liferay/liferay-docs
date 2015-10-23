@@ -1,14 +1,16 @@
 # Creating Liferay Components
 
-As explained in the [Introduction]() tutorial, you need to understand two
-concepts in order to succeed as a Liferay 7 developer: *modules* and
-*components*. A module is the one and only type of Liferay 7 plugin. A component
-is a Java class that's decorated with the `@Component` annotation that
-implements a specified interface. Components are registered in Liferay's module
-framework. For example, the [Creating Liferay Applications]() tutorial explains
-how to create a portlet application as a module. To do so, you simply need to
-create a module project and create a component class in that module that
-implements the `Portlet` interface.
+As explained in the
+[Introduction to Liferay Development](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development)
+tutorial, you need to understand two concepts in order to succeed as a Liferay 7
+developer: *modules* and *components*. A module is the one and only type of
+Liferay 7 plugin. A component is a Java class that's decorated with the
+`@Component` annotation that implements a specified interface. Components are
+registered in Liferay's module framework. For example, the
+[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
+tutorial explains how to create a portlet application as a module. To do so, you
+simply need to create a module project and create a component class in that
+module that implements the `Portlet` interface.
 
 Liferay components are typically created as
 [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
@@ -18,11 +20,13 @@ client, the client should also be packaged as a separate module. Since Liferay
 follows this practice, most modularized Liferay applications consist of at least
 two or three modules. E.g., the Liferay Polls application consists of the
 `polls-api`, `polls-service`, and `polls-web` modules. (There's also a
-`polls-test` module.) In this tutorial, you'll learn how to create an API
-module, an implementation module (a.k.a. service module), and a client module.
-The client takes the form of a command that is invoked from Liferay's Felix Gogo
-shell. You can find the code referenced by this tutorial in complete projects on
-Github here: [](). The specific projects referenced by this tutorial are
+`polls-test` module.)
+
+In this tutorial, you'll learn how to create an API module, an implementation
+module (a.k.a. service module), and a client module. The client takes the form
+of a command that can be invoked from Liferay's Felix Gogo shell. You can find
+the code referenced by this tutorial in complete projects on Github here: [https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules).
+The specific projects referenced by this tutorial are
 `com.liferay.docs.greetingapi`, `com.liferay.docs.greetingimpl`, and
 `com.liferay.docs.greetingimpl`.
 
@@ -284,7 +288,9 @@ calls the public getter method of the private `_greeting` instance variable.
 
 Note: The explanation above provides an example of how to consume OSGi services
 that were published using components. To learn about consuming Liferay
-services, please refer to the [Consuming Liferay Services]() tutorial. 
+services, please refer to the
+[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
+tutorial. 
 
 Next, edit the generated `bnd.bnd` file so that it looks like this:
 
@@ -340,8 +346,12 @@ that be invoked from Liferay's Felix Gogo shell.
 
 ## Related Topics [](id=related-topics)
 
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+
+[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
+
+[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services)
+
 [Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
 
-[Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
-
-[Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
+[Using BLADE to Create Modules](/develop/tutorials/-/knowledge_base/7-0/using-blade-to-create-modules)

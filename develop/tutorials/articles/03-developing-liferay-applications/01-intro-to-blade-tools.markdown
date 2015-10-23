@@ -1,12 +1,12 @@
-# Introduction to Blade Tools [](id=installing-blade-tools)
+# Introduction to Blade Tools
 
 [Blade Tools](https://github.com/gamerson/blade.tools) provides the easiest way
 for Liferay developers to create new Liferay modules. Although the Plugins SDK
 is also supported, Blade Tools is Liferay's recommended tool. There are two ways
 to obtain Blade Tools. You can clone the repository and build the Blade Tools
-JAR from source, or you can simply download the Blade Tools JAR. Once you've
-obtained the Blade Tools JAR, you can install Blade Tools through the [Java
-Package Manager](http://jpm4j.org) (JPM). 
+JAR from source or you can simply download it. Once you've obtained the Blade
+Tools JAR, you can install Blade Tools through the
+[Java Package Manager](http://jpm4j.org) (JPM). 
 
 1. Your first step is to install [JPM](http://jpm4j.org/#!/md/install). The
    exact installation process depends on your operating system.
@@ -14,7 +14,7 @@ Package Manager](http://jpm4j.org) (JPM).
 You need to install JPM regardless of whether you want to build or download
 Blade Tools. 
 
-## Using the Java Package Manager to Download Blade Tools [](id=using-the-java-package-manager-to-download-blade-tools)
+## Using the Java Package Manager to Download Blade Tools
 
 If you'd like to clone the repository and build Blade Tools from source, skip to
 the next section.
@@ -34,7 +34,7 @@ the next section.
 
 Skip over the next section to learn how to verify your installation.
 
-## Installing Blade Tools from the Source Code [](id=installing-blade-tools-from-the-source-code)
+## Installing Blade Tools from the Source Code
 
 Instead of downloading the Blade Tools JAR, you can clone the Blade Tools
 repository and build the JAR locally.
@@ -124,27 +124,37 @@ The correct command syntax for creating a project is found under SYNOPSIS:
 
     create [options] [name] [service]
 
-For more information about creating Liferay module projects with Blade Tools,
-please see the [Creating Liferay Applications]() and
-[Customizing Liferay Services]() tutorials.
+For more information about creating specific kinds of Liferay module projects
+with Blade Tools, please see the
+[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications),
+[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components), and
+[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services)
+tutorials.
 
 ## Using the Blade Deploy Command
 
 To use the Blade `deploy` command, you must first have built a module to deploy.
-See the [Creating Liferay Applications]() and
-[Customizing Liferay Services]() tutorials to learn how to create a module. Once
-you've built a module, just use the following command to deploy it to Liferay:
+See the tutorials mentioned above for more information about creating module
+projects. Once you've built a module, just use the following command to deploy
+it to Liferay:
 
     blade deploy [path to JAR file]
 
 Blade Tools knows how to detect a locally running Liferay instance and
 automatically deploy your module to Liferay.
 
-To learn how to create new Liferay module projects, proceed to the [next]()
+To learn how to create new Liferay module projects, proceed to the
+[next](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 tutorial.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Crerating a Simple bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
+[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 
-[Using JSPs in a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/using-jsps-in-a-portlet-application)
+[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+
+[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services)
+
+[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
+
+[Using BLADE to Create Modules](/develop/tutorials/-/knowledge_base/7-0/using-blade-to-create-modules)

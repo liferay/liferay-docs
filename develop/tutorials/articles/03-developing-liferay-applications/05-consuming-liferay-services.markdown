@@ -1,4 +1,4 @@
-# Consuming Liferay Services [](id=consuming-liferay-services)
+# Consuming Liferay Services
 
 Liferay's services are registered as components in Liferay's module framework.
 They are created using the
@@ -8,35 +8,36 @@ but it can behave like one. The declarative services component model makes it
 easy to publish and consume OSGi services from Liferay's module framework. In
 this tutorial, you'll learn how to invoke Liferay services (from the core or
 from modules) from your application. You can find the code referenced by this
-tutorial in a complete project on Github here: []().
+tutorial in a complete project on Github here:
+[https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/com.liferay.docs.exampleserviceconsumerportlet](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/com.liferay.docs.exampleserviceconsumerportlet).
 
 To invoke a service from your application, follow these steps:
 
-1.  Add any required dependencies. You need to add the module that provides the
-    service you want to invoke, and you need to resolve its dependencies.
+1. Add any required dependencies. You need to add the module that provides the
+   service you want to invoke, and you need to resolve its dependencies.
 
-2.  Determine which class or classes in your project need to invoke the service.
-    In each chosen class, declare the service as a member variable and generate
-    getter and setter methods for the service.
+2. Determine which class or classes in your project need to invoke the service.
+   In each chosen class, declare the service as a member variable and generate
+   getter and setter methods for the service.
 
-3.  Annotate the service's setter method with the `@Reference` annotation:
-    `org.osgi.service.component.annotations.Reference`. This annotation is
-    provided by the `org.osgi.compendium.jar`.
+3. Annotate the service's setter method with the `@Reference` annotation:
+   `org.osgi.service.component.annotations.Reference`. This annotation is
+   provided by the `org.osgi.compendium.jar`.
 
-4.  Use the service's getter method to obtain a service bean. Then invoke the
-    service.
+4. Use the service's getter method to obtain a service bean. Then invoke the
+   service.
 
-5.  (Optional) Display the result of your service invocation. If you're
-    developing a portlet application, an easy way to display a result is to add
-    it to the `PortletRequest` object as an attribute which can be retrieved by a
-    JSP.
+5. (Optional) Display the result of your service invocation. If you're
+   developing a portlet application, an easy way to display a result is to add
+   it to the `PortletRequest` object as an attribute which can be retrieved by a
+   JSP.
 
 Suppose you need to invoke two Liferay services, `UserLocalService` and
 `BookmarksFolderLocalService`. `UserLocalService` is a core Liferay service
 whereas `BookmarksFolderLocalService` is provided by a module. Let's take these
 services as examples and follow the steps specified above.
 
-## Add Required Dependencies [](id=add-required-dependencies)
+## Add Required Dependencies
 
 `UserLocalService` is provided by Liferay's `portal-service.jar` file, so make
 sure that it's declared as a dependency in your project's build file. If you
@@ -53,7 +54,7 @@ declared as a dependency. To add this JAR as a dependency, open your project's
 
     compile 'com.liferay:com.liferay.bookmarks.api:1.0.0-SNAPSHOT
 
-## Declare the Service Beans and Their Getters and Setters [](id=declare-the-service-beans-and-their-getters-and-setters)
+## Declare the Service Beans and Their Getters and Setters
 
 We'll assume that you're developing a portlet application and you want to
 declare the `UserLocalService` and `BookmarksFolderLocalService` beans in your
@@ -82,7 +83,7 @@ And you should generate getter and setter methods like this:
         _userLocalService = userLocalService;
     }
 
-## Add the @Reference Annotations [](id=add-the-reference-annotations)
+## Add the @Reference Annotations
 
 Add the `@Reference` annotation to the setter methods:
 
@@ -98,7 +99,7 @@ Add the `@Reference` annotation to the setter methods:
         _userLocalService = userLocalService;
     }
 
-## Obtain the Service Beans and Invoke the Services [](id=obtain-the-service-beans-and-invoke-the-services)
+## Obtain the Service Beans and Invoke the Services
 
 In this example, you obtain service instances and invoke the services from the
 portlet's `render` method. But you can do this from any method in the class
@@ -108,7 +109,7 @@ where you've declared the service beans and their getters and setters:
     int bookmarksFolderCount =
         getBookmarksFolderLocalService().getBookmarksFoldersCount();
 
-## (Optional) Display the Results of Your Service Invocations [](id=optional-display-the-results-of-your-service-invocations)
+## (Optional) Display the Results of Your Service Invocations
 
 It's not necessary to display the results of your service invocations. However,
 if you want to do so, using request attributes is an easy way to make the
@@ -220,10 +221,14 @@ Great! Now you've seen how easy the
 [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services) component 
 model makes invoking services in Liferay.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/creating-a-portlet-application)
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
 
-[Using JSPs in a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/using-jsps-in-a-portlet-application)
+[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 
-[Publishing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/publishing-liferay-services)
+[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+
+[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services)
+
+[Using BLADE to Create Modules](/develop/tutorials/-/knowledge_base/7-0/using-blade-to-create-modules)

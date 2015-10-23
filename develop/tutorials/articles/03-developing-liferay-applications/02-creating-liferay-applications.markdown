@@ -2,7 +2,7 @@
 
 Blade Tools allows you to very easily create Liferay applications. In this
 tutorial, you'll learn how. If you haven't yet installed Blade
-Tools, please refer to the [Introduction to Blade Tools](need link) tutorial.
+Tools, please refer to the [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools) tutorial.
 Blade Tools provides project templates for creating certain types of Liferay
 modules. At the time of this writing, the available templates include portlets,
 JSP portlets, services, and service wrappers. When creating a new module
@@ -185,3 +185,15 @@ was installed: Open a terminal and enter `telnet localhost 11311`. Then enter
 Finally, log into your portal. Add your portlet to a page and confirm that it
 works correctly. Congratulations! You've created and deployed a Liferay 7 style
 application!
+
+## Related Topics
+
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+
+[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+
+[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services)
+
+[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
+
+[Using BLADE to Create Modules](/develop/tutorials/-/knowledge_base/7-0/using-blade-to-create-modules)

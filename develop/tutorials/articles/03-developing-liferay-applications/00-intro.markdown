@@ -1,4 +1,4 @@
-# Introduction
+# Introduction To Liferay Development
 
 At a basic level, Liferay Portal is a web application that runs on a Java EE
 application server or servlet container. In Liferay 6.2 and prior versions,
@@ -108,5 +108,4 @@ create Liferay 7 modules. It has been updated for the Liferay 7 release to
 support both traditional Liferay development and development using the new
 model. 
 
-Read on to learn how to create modules for Liferay Portal. 
-
+Read on to learn how to create modules for Liferay Portal!
