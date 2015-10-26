@@ -1,7 +1,7 @@
 # Using Liferay's Script Engine
 
 Liferay provides a robust script engine that can be used to execute scripts in
-Beanshell, Javascript, Groovy, Python, and Ruby. Liferay's script engine was
+Beanshell, JavaScript, Groovy, Python, and Ruby. Liferay's script engine was
 originally developed to allow developers to write portlets in languages other
 than Java such as PHP, Groovy, Ruby, and Python. Since then, the script engine
 has been extended to do much more. For example, when Liferay's workflow
