@@ -106,7 +106,7 @@ switch from the WYSIWYG view by clicking the *Source* button. From the Source
 view, you can view the HTML content of your web content. If you wish, can edit
 the HTML directly.
 
-![Figure 2.17: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../images/web-content-video.png)
+![Figure 2.17: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Services* section of the Control Panel, you can add audio and video to your web content!](../../images/web-content-video.png)
 
 The WYSIWYG editor also offers an accessibility help menu with a set of 
 navigation instructions and keyboard shortcuts, so you can easily navigate
@@ -203,6 +203,69 @@ Imagine you have 100 sports articles and 100 tech articles. In previous versions
 of Liferay you'd need to create a page for each article to show it. Now with
 only one sports page and one tech page, you can show all articles in one place
 in a consistent fashion.
+
+Before you display your web content, you'll learn how to localize it to cater to
+different language speaking users.
+
+### Localizing Web Content
+
+When you create a new piece of Web Content, you have the ability to choose a
+default language. If you click *Change*, you can select your default language
+from a large number of languages Liferay supports. Before you can create a
+translation, you must finish creating the content in your default language and
+save it. Once you've done that, editing the content provides you with the option
+to *Add Translation*.
+
+![Figure 3.17: You have many translation languages to choose from for your web content.](../../images/04-web-content-translation.png)
+
+After you click *Add Translation*, you can select a language by scrolling
+through the list or by entering the language you want to use in the search box.
+When you select a language, a new window opens within your browser enabling you
+to translate the original web content into the selected language. Once you are
+done with the translation, click *Save* and the translation is added to the list
+of *Available Translations*.
+
+![Figure 3.18: After typing your translated text, you can summarize the translation in the *Abstract* section.](../../images/04-web-content-translation-2.png)
+
+You can modify the language translation list by inserting `locales.enabled=`
+followed by your preferred languages in your `portal-ext.properties` file. For
+example, `locales.enabled=ar_SA,nl_NL,hi_IN` offers *Arabic (Saudi Arabia)*,
+*Dutch (Netherlands)*, and *Hindi (India)*.
+
++$$$
+
+**Warning:** If you switch your site's default language (e.g., via friendly
+URL), but do not have the necessary translations for localizable fields, your
+site's language values will be used from the old default language. Therefore,
+you should change the default language of your site *only* when you have
+translated values for all localizable entities. Otherwise, you may not be in
+control of what language is displayed in the portal.
+
+$$$
+
+The ability to completely delete a translation in one step has also been added.
+Instead of simply disabling a translation or having to go through a multistep
+process to remove it, you can now simply open the translation you don't want and
+click *Remove Translation*.
+
+When you create a new web content structure, each field you create has a
+*Localizable* checkbox displayed next to it. This enables you to control what
+can and can't be changed in the translation process. For example, if you don't
+want images or content titles to be changed when the content is translated, you
+can make sure those fields aren't listed as localizable. When you follow the
+steps above to localize content, only fields within the structure that had the
+*Localizable* box checked appear within the translation window.
+
++$$$
+
+**Note:** The Localizable checkbox was removed for 6.2 CE GA1 and GA2, and 6.2
+EE GA1, SP1, and SP2. However, the Localizable checkbox is now available for
+Liferay following these versions for web content structure fields. You can view
+[LPS-33161](https://issues.liferay.com/browse/LPS-33161) for more details.
+
+$$$
+
+Next, you'll begin creating a display page to show your web content.
 
 ### Creating a Display Page
 
@@ -349,15 +412,11 @@ content and not where the content will later be displayed. Liferay WCM supports
 both processes. 
 
 Editing content that's already been published is just as easy as creating new
-content is. You'll use the same exact tools. 
-
-<!-- Incorporate text below into this section. -Cody -->
-
-Once the content is displayed--whether you've selected content or created it in
-the Web Content Display portlet--you can edit the content directly from the Web
-Content Display portlet or from the Control Panel. To edit it from the Web
-Content Display portlet, select the *Edit* button to the lower left of the
-portlet. This launches the WYSIWYG editor and from there you can make any
+content is. Once the content is displayed--whether you've selected content or
+created it in the Web Content Display portlet--you can edit the content directly
+from the Web Content Display portlet or from the Control Panel. To edit it from
+the Web Content Display portlet, select the *Edit* button to the lower left of
+the portlet. This launches the WYSIWYG editor and from there you can make any
 necessary changes.
 
 ![Figure 2.23: The *Edit*, *Select Web Content*, and *Add* buttons appear when hovering over their icons.](../../images/web-content-display-icons.png)
@@ -365,16 +424,23 @@ necessary changes.
 When you publish updates to a web content that's already being displayed
 somewhere on your portal (e.g., in a Web Content Display portlet or an Asset
 Publisher portlet), the content is immediately updated (unless, of course, you
-have a workflow enabled, which we'll discuss below). It makes no difference
-whether you edit it from a Web Content Display portlet, from the Asset
-Publisher, or from the Site Administration interface.
+have a workflow enabled, which is discussed in greater detail in the
+[Using Workflow]()
+section). It makes no difference whether you edit it from a Web Content Display
+portlet, from the Asset Publisher, or from the Site Administration interface.
 
-Note: if you want to view your page the way your users will see it (i.e.,
+<!-- TODO: Update link above for 7.0. -Cody -->
+
++$$$ 
+
+**Note:** If you want to view your page the way your users will see it (i.e.,
 without all those portlet controls and icons), go up to the left palette and
 select the *Edit Controls* icon. This makes all those extra controls you see as
 a portal administrator disappear. You'll also notice the green "eye" transforms
 into an orange "eye". If you need to use those controls again, just select *Edit
 Controls* to return to the original format.
+
+$$$
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
@@ -383,3 +449,4 @@ Liferay's WCM, you'll want to use structures and templates found in the
 chapter. Next, let's see how you can manage your content with an approval
 process called workflow.
 
+<!-- TODO: Update link above for 7.0. -Cody -->
