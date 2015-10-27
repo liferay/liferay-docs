@@ -1,7 +1,5 @@
 # Creating Data Definitions
 
-<!-- Creating Your Own Data Definitions is my proposed title for this section -->
-
 To expand and extend the social capabilities of your site, build a
 new, radical platform on Liferay: custom-built lists that users can share and
 collaborate on with their friends (or enemies, depending on their Social
