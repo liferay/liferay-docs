@@ -8,8 +8,25 @@ utilities of the following components:
 |----------------------|--------------------------------|--------------------------------|
 | Background Tasks     | `BackgroundTask`               | portal-background-task-api     |
 |                      |                                | portal-background-task-service |
-| Lock                 | `Lock`                         | portal-lock-api                |
-|                      |                                | portal-lock-service            |
+| Bookmarks            | `BookmarksEntry`               | bookmarks-api                  |
+|                      | `BookmarksFolder`              | bookmarks-service              |
+| Calendar             | `Calendar`                     | calendar-api                   |
+|                      | `CalendarBooking`              | calendar-service               |
+|                      | `CalendarImporter`             |                                |
+|                      | `CalendarNotificationTemplate` |                                |
+|                      | `CalendarResource`             |                                |
+| Dynamic Data Lists   | `DDLRecord`                    | dynamic-data-lists-api         |
+|                      | `DDLRecordSet`                 | dynamic-data-lists-service     |
+|                      | `DDLRecordVersion`             |                                |
+| Dynamic Data Mapping | `DDMContent`                   | dynamic-data-mapping-api       |
+|                      | `DDMStructure`                 | dynamic-data-mapping-service   |
+|                      | `DDMStorageLink`               |                                |
+|                      | `DDMStructureLayout`           |                                |
+|                      | `DDMStructureLink`             |                                |
+|                      | `DDMStructureVersion`          |                                |
+|                      | `DDMTemplate`                  |                                |
+|                      | `DDMTemplateLink`              |                                |
+|                      | `DDMTemplateVersion`           |                                |
 | Kaleo                | `KaleoAction`                  | portal-workflow-kaleo-api      |
 |                      | `KaleoCondition`               | portal-workflow-kaleo-service  |
 |                      | `KaleoDefinition`              |                                |
@@ -26,35 +43,19 @@ utilities of the following components:
 |                      | `KaleoTimer`                   |                                |
 |                      | `KaleoTimerInstanceToken`      |                                |
 |                      | `KaleoTransistion`             |                                |
-| Dynamic Data Mapping | `DDMContent`                   | dynamic-data-mapping-api       |
-|                      | `DDMStructure`                 | dynamic-data-mapping-service   |
-|                      | `DDMStorageLink`               |                                |
-|                      | `DDMStructureLayout`           |                                |
-|                      | `DDMStructureLink`             |                                |
-|                      | `DDMStructureVersion`          |                                |
-|                      | `DDMTemplate`                  |                                |
-|                      | `DDMTemplateLink`              |                                |
-|                      | `DDMTemplateVersion`           |                                |
-| Dynamic Data Lists   | `DDLRecord`                    | dynamic-data-lists-api         |
-|                      | `DDLRecordSet`                 | dynamic-data-lists-service     |
-|                      | `DDLRecordVersion`             |                                |
-| Mobile Device Rules  | `MDRAction`                    | mobile-device-rules-api        |
-|                      | `MDRRule`                      | mobile-device-rules-service    |
-|                      | `MDRRuleGroup`                 |                                |
-|                      | `MDRRuleGroupInstance`         |                                |
-| Web Content          | `JournalArticle`               | journal-api                    |
-|                      | `JournalFolder`                | journal-service                |
-|                      | `JournalArticleImage`          |                                |
-|                      | `JournalFeed`                  |                                |
-| Calendar             | `Calendar`                     | calendar-api                   |
-|                      | `CalendarBooking`              | calendar-service               |
-|                      | `CalendarImporter`             |                                |
-|                      | `CalendarNotificationTemplate` |                                |
-|                      | `CalendarResource`             |                                |
+| Lock                 | `Lock`                         | portal-lock-api                |
+|                      |                                | portal-lock-service            |
 | Marketplace          | `App`                          | marketplace-api                |
 |                      | `Module`                       | marketplace-service            |
 | Microblogs           | `MicroblogsEntry`              | microblogs-api                 |
 |                      |                                | microblogs-service             |
+| Mobile Device Rules  | `MDRAction`                    | mobile-device-rules-api        |
+|                      | `MDRRule`                      | mobile-device-rules-service    |
+|                      | `MDRRuleGroup`                 |                                |
+|                      | `MDRRuleGroupInstance`         |                                |
+| Polls                | `PollsChoice`                  | polls-api                      |
+|                      | `PollsQuestion`                | polls-service                  |
+|                      | `PollsVote`                    |                                |
 | Shopping Cart        | `ShoppingCart`                 | shopping-api                   |
 |                      | `ShoppingCategory`             | shopping-service               |
 |                      | `ShoppingCoupon`               |                                |
@@ -65,11 +66,10 @@ utilities of the following components:
 | Social Networking    | `MeetupsEntry`                 | social-networking-api          |
 |                      | `MeetupsRegistration`          | social-networking-service      |
 |                      | `WallEntry`                    |                                |
-| Bookmarks            | `BookmarksEntry`               | bookmarks-api                  |
-|                      | `BookmarksFolder`              | bookmarks-service              |
-| Polls                | `PollsChoice`                  | polls-api                      |
-|                      | `PollsQuestion`                | polls-service                  |
-|                      | `PollsVote`                    |                                |
+| Web Content          | `JournalArticle`               | journal-api                    |
+|                      | `JournalFolder`                | journal-service                |
+|                      | `JournalArticleImage`          |                                |
+|                      | `JournalFeed`                  |                                |
 | Wiki                 | `WikiNode`                     | wiki-api                       |
 |                      | `WikiPage`                     | wiki-service                   |
 
