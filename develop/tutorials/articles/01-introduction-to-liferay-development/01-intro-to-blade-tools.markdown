@@ -1,15 +1,15 @@
 # Introduction to Blade Tools
 
-[Blade Tools](https://github.com/gamerson/blade.tools) provides the easiest way
+The [Blade Tools](https://github.com/gamerson/blade.tools) are the easiest way
 for Liferay developers to create new Liferay modules. Although the Plugins SDK
-is also supported, Blade Tools is Liferay's recommended tool. There are two ways
-to obtain Blade Tools. You can clone the repository and build the Blade Tools
-JAR from source or you can simply download it. Once you've obtained the Blade
-Tools JAR, you can install Blade Tools through the
-[Java Package Manager](http://jpm4j.org) (JPM). 
+is also supported, Blade Tools let you create projects that can be used with any
+IDE or development environment. There are two ways to obtain Blade Tools. You
+can clone the repository and build the Blade Tools JAR from source or you can
+simply download it. Once you've obtained the Blade Tools JAR, you can install
+Blade Tools through the [Java Package Manager](http://jpm4j.org) (JPM). 
 
-1. Your first step is to install [JPM](http://jpm4j.org/#!/md/install). The
-   exact installation process depends on your operating system.
+Blade Tools are packaged using [JPM](http://jpm4j.org/#!/md/install). The exact
+installation process depends on your operating system.
 
 You need to install JPM regardless of whether you want to build or download
 Blade Tools. 
@@ -19,16 +19,17 @@ Blade Tools.
 If you'd like to clone the repository and build Blade Tools from source, skip to
 the next section.
 
-2. After you have installed JPM, download the `blade.jar` file:
-   [https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/blade.cli/generated/distributions/executable/blade.jar](https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/blade.cli/generated/distributions/executable/blade.jar).
+1.  After you have installed JPM, download the `blade.jar` file:
+    [https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/blade.cli/generated/distributions/executable/blade.jar](https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/blade.cli/generated/distributions/executable/blade.jar).
 
-    Blade Tools contains multiple tools. At the time of this writing, only the
-    Blade command line interface (CLI) tool is available. The Blade CLI tool is
-    included in the `blade.jar` file that you downloaded. Other tools, such as a
-    plugin migration tool (for migrating plugins from a 6.2 Plugins SDK to a 7.0
-    module), are currently being developed.
+    Blade Tools is still under development. Two tools are currently available:
+    the CLI and the migration tool. The Blade CLI tool is included in the
+    `blade.jar` file that you downloaded. Other tools, such as a plugin
+    migration tool (for migrating plugins from a 6.2 Plugins SDK to a 7.0
+    module), are
+    [/developer/tutorials/-/knowledge_base/7-0/migrating-legacy-applications-to-new-plugins-sdk](covered in another tutorial).
 
-3. Next, install the downloaded JAR:
+2.  Next, install the downloaded JAR:
 
         (sudo) jpm install -fl [Downloads Directory]/blade.jar
 
@@ -36,20 +37,19 @@ Skip over the next section to learn how to verify your installation.
 
 ## Installing Blade Tools from the Source Code
 
-Instead of downloading the Blade Tools JAR, you can clone the Blade Tools
-repository and build the JAR locally.
+Since Blade Tools are still under development, you may want to keep up with the
+latest changes. You can clone the Blade Tools repository and build the JAR
+locally.
 
-2. First, clone the [Blade Tools](https://github.com/gamerson/blade.tools)
-   repository.
+1.  Clone the [Blade Tools](https://github.com/gamerson/blade.tools) repository.
 
-3. Once you have the repository cloned down to your local machine, open your
-   terminal and execute
+2.  Open your terminal and execute
 
         gradle build export.blade
 
     to build the Blade Tools JAR.
 
-4. Next, use JPM to install the JAR:
+3.  Use JPM to install the JAR:
 
         (sudo) jpm install -fl blade.cli/generated/distributions/executable/blade.jar
 
@@ -98,29 +98,18 @@ To learn how to use the Blade `create` command, enter *blade create* into a
 terminal. At the time of this writing, typing *blade create* into a terminal
 produces this output:
 
-    NAME
-      create                      - Creates a new Liferay module project.
+    Available sub-commands: 
 
-    SYNOPSIS
-       create [options] <name> <[service]>
+      jspportlet                  -         Use mvcportlet with jsps template
+                                            for new project 
+      portlet                     -         Use basic portlet template for
+                                            new project 
+      service                     -         Creates a project with a single
+                                            service component 
+      servicewrapper              -         Creates a project with a single
+                                            service wrapper component
 
-    OPTIONS
-
-       [ -b, --build <build> ]    - The build type of project to create. Valid
-                                    values are maven or gradle. Default: gradle
-       [ -c, --classname <string> ] - If a class is generated in the project,
-                                    provide the name of the class to be generated.
-                                    If not provided defaults to Project name.
-       [ -d, --dir <file> ]       - The directory where to create the new project.
-       [ -i, --ide <ide> ]        - The type of IDE metadata to create along side
-                                    the new project.
-       [ -p, --projectType <type> ] - The type of Liferay module to create. Valid
-                                    values are portlet, jspportlet, service, or
-                                    servicewrapper.
-       [ -v, --version <version> ] - The version of Liferay to create the module
-                                    for, by default its 7.0.0
-
-The correct command syntax for creating a project is found under SYNOPSIS:
+The correct command syntax for creating a project is 
 
     create [options] [name] [service]
 
@@ -135,8 +124,8 @@ tutorials.
 
 To use the Blade `deploy` command, you must first have built a module to deploy.
 See the tutorials mentioned above for more information about creating module
-projects. Once you've built a module, just use the following command to deploy
-it to Liferay:
+projects. Once you've built a module, use the following command to deploy it to
+Liferay:
 
     blade deploy [path to JAR file]
 
