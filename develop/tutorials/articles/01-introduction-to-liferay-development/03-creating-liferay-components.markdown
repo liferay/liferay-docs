@@ -38,13 +38,13 @@ module template to create an API module.
 
 To create a module, run a command like the following:
 
-    blade create -p "service" -c "Greeting" -d . com.liferay.docs.greetingapi java.lang.Object
+    blade create service -c Greeting com.liferay.docs.greetingapi java.lang.Object
 
-(The last argument, `java.lang.Object`, is required. This argument specifies the
-interface implemented by your component. Since you're creating an API module,
-you're not creating a component class at all. Thus, the value of the argument
-doesn't matter. You'll delete the `@Component` annotation in which this argument
-is used.)
+Note that the last argument is required. This argument specifies the interface
+implemented by your component class. Since you're creating an API module, you're
+not creating a component class at all. Thus, the value of the argument,
+`java.lang.Object`, doesn't matter. You'll delete the `@Component` annotation in
+which this argument is used.
 
 Running the command above creates a project with the following directory
 structure:
@@ -109,7 +109,7 @@ provided by your API module. Implementation modules are sometimes called service
 modules since they provide implementations of OSGi services. To create an
 implementation module, run a command like the following:
 
-    blade create -p "service" -c "GreetingImpl" -d . com.liferay.docs.greetingimpl com.liferay.docs.Greeting
+    blade create service -c GreetingImpl com.liferay.docs.greetingimpl com.liferay.docs.Greeting
 
 Running this command creates a project with the following directory structure:
 
@@ -123,7 +123,8 @@ Running this command creates a project with the following directory structure:
     - `build.gradle`
 
 Since you're creating an implementation module (a.k.a. service module), not an
-API module, the generated files are much closer to what you actually need.
+API module, the contents of the generated class is much closer to what you
+actually need.
 
 First, you need to modify the generated `GreetingImpl.java` file so that it
 implements the `Greeting` interface. Edit your `GreetingImpl.java` file so that
@@ -189,7 +190,7 @@ that you created in the previous section.
 
 To create a client module, run a command like the following:
 
-    blade create -p "service" -c "GreetingCommand" -d . com.liferay.docs.greetingcommand java.lang.Object
+    blade create service -c GreetingCommand com.liferay.docs.greetingcommand java.lang.Object
 
 Running this command creates a project with the following directory structure:
 
