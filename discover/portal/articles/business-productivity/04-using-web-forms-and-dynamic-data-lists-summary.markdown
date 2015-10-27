@@ -15,5 +15,5 @@ With the ability to create dynamic sets of data and customize both the data
 display as well as the entry, the possible combinations are limitless. Dynamic
 Data Lists can be viewed as a way to deliver small-scale applications that
 display desired information quickly. Whether you're building a site like
-`list.it` or a real estate listing service, you'll find the limitless power of
+`list.it` or a real estate listing service, you'll find the power of
 dynamic data lists enticing, easy to use, and above all, empowering.
