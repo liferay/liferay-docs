@@ -77,7 +77,7 @@ thing you should enter is a name for the definition, and a description, which is
 in the *Details* section. Call the new data definition *Volunteer
 Sign-Up*. When creating a new data definition, you have a palette of fields to
 choose from and a blank canvas where you'll drop the fields you want. If you've
-created or edited [web content structures](LINK), the interface will look
+created or edited web content structures, the interface will look
 familiar. You have several different data types that can be used in your
 data definition:
 
@@ -144,7 +144,7 @@ wrench icon in the upper-right corner of the field,or by clicking the *Settings*
 tab when the field is selected:
 
 The *Type* setting can't be edited, but can be referenced from a 
-[display template](LINK). It lists the type of field placed in the definition,
+display template. It lists the type of field placed in the definition,
 and is available to reference from a display template.
 
 Edit the *Field Label* to set the text that's displayed with the field.
@@ -219,7 +219,7 @@ After you've saved your data definition, Liferay provides a WebDAV URL and a
 static URL. These values access the XML source of your data definition. To
 obtain these values, return to your data definition after it has been saved. To
 learn more about WebDAV or if you'd like to see WebDAV in action, see 
-[the article on WebDAV access](LINK).
+the article on WebDAV access.
 
 ![Figure 7: New data definitions are assigned a WebDAV URL and a static URL. After saving the definition, open the definition again (select *Manage Data Definitions* form the DDL portlet's configuration menu) to view the URLs. ](../../images/ddl-def-urls.png)
 

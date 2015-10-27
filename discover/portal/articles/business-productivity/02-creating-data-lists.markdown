@@ -7,7 +7,7 @@ point. -->
 
 Building out new lists is similar to creating new web content articles. Just as
 you can create new Web Content Structures to control the input of a particular
-type of web content, you can use [Data List Definitions](LINK) to control the
+type of web content, you can use Data List Definitions to control the
 input of new list types. Similarly, just as you create a new piece of web
 content, selecting the Structure you would like to use with it, `list.it` users
 (we'll call them *Listies*) choose the Definition they want to use when creating
@@ -138,7 +138,7 @@ that. Just navigate to whichever page you want and add the portlet. It works
 much like the Web Content Display portlet. You can select a list for display,
 add a list, or edit the currently displayed list. You can also add a *Form
 Template* or a *Display Template* to modify the appearance of your lists. This
-will be covered in the [next article](LINK).
+will be covered in the next article.
 
 Open the Dynamic Display Portlet's configuration menu (click the vertical
 ellipsis icon in the title bar of the portlet and click *Configuration*). From
@@ -155,8 +155,9 @@ in a standard spreadsheet program.
 
 ![Figure 6: The Dynamic Data List Display portlet allows users to view the records belong to a list in either a standard or a spreadsheet view. This figure shows the spreadsheet view.](../../images/ddl-spreadsheet-view.png)
 
-As useful as the default display is, and it's certainly useful for to do lists
-and memo notes, it can be an awkward way to ask volunteers to sign up. In
-fact, any time I want other Listies to interact with my lists and contribute
-responses, I really just want a simple form to show them. They don't need to see
-the list of responses. 
+As useful as the default display is, and it's certainly useful for data lists
+like to do lists and memo notes, it can be an awkward way to ask volunteers to
+sign up. In fact, any time I want other Listies to interact with my lists and
+contribute responses, I want a simple form to show them. They don't need to see
+the entirety of the data that other users have entered, either, though a simple
+display of some of the information might be necessary.
