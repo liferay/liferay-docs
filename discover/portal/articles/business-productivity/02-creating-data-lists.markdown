@@ -58,14 +58,11 @@ But how will the data list appear on a page? How will my awesome, new Volunteer
 Sign-Up sheet or that boring Jobs Listing look? The answers to these pressing,
 burning questions bring us to the display side of the equation.
 
-<!-- What job listing? And we should probably remove the Mecca reference for a
-variety of reasons -->
-
-<!-- DDL Forms appears to be gone from plugins, and is incorporated into the
+<!-- DDL Forms is gone from plugins, and is incorporated into the
 core under dynamic-data-lists-form-web/, though I haven't been able to replicate
-the functionality. One of my Bus. Prod. team members says that the Forms Portlet
+the functionality perfectly. One of my Bus. Prod. team members says that the Forms Portlet
 might be intended to do all of this now, though it is lacking in my
-opinion. Many of the data types are not [yet?] available in the forms portlet
+opinion. Many of the data types are not yet available in the forms portlet
 (in fact, only radio, select, text, and checkbox are currently there), for
 instance. -->
 
@@ -158,8 +155,8 @@ in a standard spreadsheet program.
 
 ![Figure 6: The Dynamic Data List Display portlet allows users to view the records belong to a list in either a standard or a spreadsheet view. This figure shows the spreadsheet view.](../../images/ddl-spreadsheet-view.png)
 
-As useful as the default display is, and it's certainly useful for my to do list
-and my memo notes, it can be an awkward way to ask my volunteers to sign up. In
+As useful as the default display is, and it's certainly useful for to do lists
+and memo notes, it can be an awkward way to ask volunteers to sign up. In
 fact, any time I want other Listies to interact with my lists and contribute
 responses, I really just want a simple form to show them. They don't need to see
 the list of responses. 
