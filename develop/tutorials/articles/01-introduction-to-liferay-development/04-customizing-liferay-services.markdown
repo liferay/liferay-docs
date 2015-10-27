@@ -17,14 +17,12 @@ extension points for customizing Liferay's services.
 To create a module that overrides one of Liferay's services, use the
 `servicewrapper` project type. Use this command 
 
-    blade create -p servicewrapper -c UserLocalServiceOverride -d . com.liferay.docs.serviceoverride com.liferay.portal.service.UserLocalServiceWrapper
+    blade create servicewrapper -c UserLocalServiceOverride com.liferay.docs.serviceoverride com.liferay.portal.service.UserLocalServiceWrapper
 
 to create a Gradle-based service wrapper module project named
-`com.liferay.docs.serviceoverride` in your current directory. `-p
-servicewrapper` specifies that you're creating a service wrapper project. `-c
+`com.liferay.docs.serviceoverride` in your current directory. `-c
 UserLocalServiceOverride` specifies the name of the component class that you're
-creating. `-d .` specifies that you're creating the project in your current
-working directory. The `com.liferay.docs.serviceoverride` specifies both the
+creating. The `com.liferay.docs.serviceoverride` argument specifies both the
 name of the project to be created and the package in which your component class
 is to be created. The `com.liferay.portal.service.UserLocalServiceWrapper`
 argument specifies the specific type of service wrapper that your component

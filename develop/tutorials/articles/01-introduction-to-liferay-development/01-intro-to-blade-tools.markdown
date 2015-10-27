@@ -83,11 +83,15 @@ and *Available sub-commands* for the installed tools:
     Available sub-commands: 
 
       create                      -         Creates a new Liferay module
-                                            project. 
-      deploy                      -         Deploys a bundle to Liferay 7 
-      migrate                     -
+                                            project from several available
+                                            templates. 
+      deploy                      -         Deploys a bundle to Liferay
+                                            module framework 
+      migrate                     -         Run migration tool on project
+                                            sources to generate a report of
+                                            problems that needs to be fixed 
       open                        -         Opens or imports a file or
-                                            project in Liferay IDE 
+                                            project in Liferay IDE
 
 Now that you have Blade Tools installed, you should learn about its two most
 commonly used commands: `blade create` and `blade deploy`.
@@ -95,10 +99,8 @@ commonly used commands: `blade create` and `blade deploy`.
 ## Using the Blade Create Command
 
 To learn how to use the Blade `create` command, enter *blade create* into a
-terminal. At the time of this writing, typing *blade create* into a terminal
+terminal. At the time of this writing, entering *blade create* into a terminal
 produces this output:
-
-    Available sub-commands: 
 
       jspportlet                  -         Use mvcportlet with jsps template
                                             for new project 
@@ -109,9 +111,22 @@ produces this output:
       servicewrapper              -         Creates a project with a single
                                             service wrapper component
 
-The correct command syntax for creating a project is 
+Note that in this context, the term 'service' refers to an OSGi service, not to
+a Liferay API. To find the correct command syntax for creating a specific type
+of project, enter *blade create [project type]*. E.g., entering *blade create
+service* produces this output:
 
-    create [options] [name] [service]
+    NAME
+      service                     - 
+
+    SYNOPSIS
+       service [options] <name> <[service]>
+
+    OPTIONS
+
+       [ -c, --classname <string> ] - If a class is generated in the project,
+                                    provide the name of the class to be generated.
+                                    If not provided defaults to Project name.
 
 For more information about creating specific kinds of Liferay module projects
 with Blade Tools, please see the
