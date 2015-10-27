@@ -3,30 +3,24 @@
 The
 [Arquillian Extension Liferay Example](https://github.com/arquillian/arquillian-extension-liferay/blob/master/arquillian-extension-liferay-example)
 project demonstrates how to use the Arquillian Liferay Extension. In this
-tutorial, you'll use this project to learn how the Arquillian Extension for
-Liferay works and how to use it in your own projects.
+tutorial, you'll use the example project to learn how the Arquillian Extension
+for Liferay works and how to use it in your own projects.
 
 The Arquillian Extension Liferay Example project is executed in the following
 environment:
 
 - Tomcat Server 7.0.62
     - JMX enabled and configured
-    - Tomcat Manager installed and configured
 - Liferay 7.0.0
 - JUnit 4.12
 
 To set up a testing environment like the one used by the Arquillian Extension
-for Liferay Example, you need to configure your Liferay Tomcat server. This
-takes only two steps: 
-
-1. Enable and configure JMX in Tomcat
-2. Install and configure the Tomcat Manager
-
-Read on to learn how to get your testing environment working. 
+for Liferay Example, you need to enable and configure JMX in your Liferay Tomcat
+server.
 
 ## Enable and Configure JMX in Tomcat
 
-You can follow this [guide](https://tomcat.apache.org/tomcat-7.0-doc/monitoring.html#Enabling_JMX_Remote) to enable your JMX congifuration in Tomcat.
+You can follow this [guide](https://tomcat.apache.org/tomcat-7.0-doc/monitoring.html#Enabling_JMX_Remote) to enable your JMX configuration in Tomcat.
 
 Here's an example of a `setenv.sh` file that enables JMX in Tomcat on port 8099
 without authentication:
@@ -39,33 +33,250 @@ without authentication:
 
 You can customize your `setenv.sh` in a similar way. 
 
-## Install and Configure the Tomcat Manager
+## Creating a Liferay Portlet for Testing
 
-You can follow this [guide] (https://tomcat.apache.org/tomcat-7.0-doc/manager-howto.html#Introduction) to configure the Tomcat Manager.
+You need a Liferay portlet project that can be used for testing. Follow these
+steps to create a Liferay portlet project using Maven.
 
-The Tomcat Manager is installed by default on context path `/manager`. Here's an
-example `tomcat-users.xml` file that goes in Tomcat's `conf` folder:
+1. Add Liferay, portlet, and OSGi dependencies to your project's `pom.xml` file:
 
-    <?xml version="1.0" encoding="utf-8" standalone="no"?>
-    <tomcat-users>
-        <role rolename="tomcat"/>
-        <role rolename="manager-gui"/>
-        <role rolename="manager-script"/>
-        <role rolename="manager-jmx"/>
-        <role rolename="manager-status"/>
-        <user password="tomcat" roles="tomcat,manager-gui,manager-script,manager-jmx,manager-status" username="tomcat"/>
-    </tomcat-users>
+        ...
+            <dependencies>
+            ....
+                <dependency>
+                    <groupId>com.liferay.portal</groupId>
+                    <artifactId>portal-service</artifactId>
+                    <version>${liferay.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>com.liferay.portal</groupId>
+                    <artifactId>util-bridges</artifactId>
+                    <version>${liferay.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>com.liferay.portal</groupId>
+                    <artifactId>util-taglib</artifactId>
+                    <version>${liferay.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>com.liferay.portal</groupId>
+                    <artifactId>util-java</artifactId>
+                    <version>${liferay.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.osgi</groupId>
+                    <artifactId>org.osgi.core</artifactId>
+                    <version>${osgi.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>javax.portlet</groupId>
+                    <artifactId>portlet-api</artifactId>
+                    <version>2.0</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>javax.servlet-api</artifactId>
+                    <version>3.0.1</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>javax.servlet.jsp</groupId>
+                    <artifactId>jsp-api</artifactId>
+                    <version>2.0</version>
+                    <scope>provided</scope>
+                </dependency>
+                ....
+            </dependencies>
+        ...
 
-In the above example, you can see that a Tomcat user is defined with the
-username `tomcat` and the password `tomcat`. This user has the roles `tomcat`,
-`manager-gui`, `manager-script`, `manager-jmx`, `manager-status`. These roles
-are required to execute Arquillian tests using the Arquillian Liferay Extension.
+2. Create an OSGi service. This OSGi service is just an example that you'll use
+   for testing purposes. It's a simple service that adds two numbers.
 
-By default, this extension requires that the username and password are both
-`tomcat`. This behaviour can be configured in a custom `arquilliam.xml` file.
-You can see how to configure the custom extension properties in another tutorial.
+    First, create a new interface:
+
+        package org.arquillian.liferay.sample.service;
+
+        public interface SampleService {
+
+            public int add(int a, int b);
+
+        }
+
+    Next, create an implementation for the interface:
+
+        package org.arquillian.liferay.sample.service;
+
+        import org.osgi.service.component.annotations.Component;
+
+        @Component(immediate = true, service = SampleService.class)
+        public class SampleServiceImpl implements SampleService {
+
+            @Override
+            public int add(int a, int b) {
+                return a + b;
+            }
+
+        }
+
+3. Create a Liferay MVC portlet. This portlet will call the service defined in
+   the previous step:
+
+        package org.arquillian.liferay.sample.portlet;
+
+        import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+        import com.liferay.portal.kernel.util.ParamUtil;
+        import com.liferay.portal.kernel.util.WebKeys;
+        import com.liferay.portal.theme.ThemeDisplay;
+        import com.liferay.portlet.PortletURLFactoryUtil;
+
+        import javax.portlet.ActionRequest;
+        import javax.portlet.ActionResponse;
+        import javax.portlet.Portlet;
+        import javax.portlet.PortletRequest;
+        import javax.portlet.PortletURL;
+
+        import org.arquillian.liferay.sample.service.SampleService;
+
+        import org.osgi.service.component.annotations.Component;
+        import org.osgi.service.component.annotations.Reference;
+
+        @Component(
+            property = {
+                "com.liferay.portlet.display-category=category.sample",
+                "com.liferay.portlet.instanceable=false",
+                "javax.portlet.display-name=Arquillian Sample Portlet",
+                "javax.portlet.init-param.template-path=/",
+                "javax.portlet.init-param.view-template=/view.jsp",
+                "javax.portlet.name=arquillian_sample_portlet",
+                "javax.portlet.resource-bundle=content.Language",
+                "javax.portlet.security-role-ref=power-user,user"
+            },
+            service = Portlet.class
+        )
+        public class SamplePortlet extends MVCPortlet {
+
+            public void add(ActionRequest actionRequest, ActionResponse actionResponse)
+                throws Exception {
+
+                ThemeDisplay themeDisplay = (ThemeDisplay)actionRequest.getAttribute(
+                    WebKeys.THEME_DISPLAY);
+
+                int firstParameter = ParamUtil.getInteger(
+                    actionRequest, "firstParameter");
+                int secondParameter = ParamUtil.getInteger(
+                    actionRequest, "secondParameter");
+
+                int result = _sampleService.add(firstParameter, secondParameter);
+
+                PortletURL portletURL = PortletURLFactoryUtil.create(
+                    actionRequest, "arquillian_sample_portlet", themeDisplay.getPlid(),
+                    PortletRequest.RENDER_PHASE);
+
+                portletURL.setParameter(
+                    "firstParameter", String.valueOf(firstParameter));
+                portletURL.setParameter(
+                    "secondParameter", String.valueOf(secondParameter));
+                portletURL.setParameter("result", String.valueOf(result));
+
+                actionRequest.setAttribute(WebKeys.REDIRECT, portletURL.toString());
+            }
+
+            @Reference(unbind = "-")
+            public void setSampleService(SampleService sampleService) {
+                _sampleService = sampleService;
+            }
+
+            private SampleService _sampleService;
+
+        }
+
+    This portlet needs a `view.jsp` file:
+
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+        <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+
+        <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %><%@
+        taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %><%@
+        taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %><%@
+        taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+
+        <portlet:defineObjects />
+
+        <liferay-theme:defineObjects />
+
+        <%
+        int firstParameter = ParamUtil.getInteger(request, "firstParameter", 1);
+        int secondParameter = ParamUtil.getInteger(request, "secondParameter", 1);
+        int result = ParamUtil.getInteger(request, "result");
+        %>
+
+        <portlet:actionURL name="add" var="portletURL" />
+
+        <p>
+            <b>Sample Portlet is working!</b>
+        </p>
+
+        <aui:form action="<%= portletURL %>" method="post" name="fm">
+
+            <aui:input inlineField="<%= true %>" label="" name="firstParameter" size="4" type="int" value="<%= firstParameter %>" />
+            <span> + </span>
+            <aui:input inlineField="<%= true %>" label="" name="secondParameter" size="4" type="int" value="<%= secondParameter %>" />
+            <span> = </span>
+            <span class="result"><%= result %></span>
+
+            <aui:button type="submit" value="add" />
+        </aui:form>
+
+4. Next, you need to create a `bnd.bnd` file for deployment. Your tests will use
+   [Bnd](http://aqute.biz/Code/bnd) to create the artifact to be deployed so you
+   need to add this Maven dependency to your project's `pom.xml` file:
+
+        ...
+        <dependencies>
+            ...
+            <dependency>
+                <groupId>org.jboss.shrinkwrap.osgi</groupId>
+                <artifactId>shrinkwrap-osgi</artifactId>
+                <version>1.0.0-alpha-1</version>
+                <scope>test</scope>
+            </dependency>
+            ...
+        </dependencies>
+        ...
+
+    And, of course, you need to create a `bnd-basic-portlet-test.bnd` file:
+
+        Bundle-Name: Basic Portlet Test
+        Bundle-SymbolicName: org.arquillian.liferay.sample
+        Bundle-Version: 1.0.0
+        Export-Package: org.arquillian.liferay.sample
+        Include-Resource:\
+            target/classes,\
+            META-INF/resources=src/main/resources/META-INF/resources
+
+        Require-Capability:\
+         osgi.extender;filter:="(&(osgi.extender=jsp.taglib)(uri=http://java.sun.com/portlet_2_0))",\
+         osgi.extender;filter:="(&(osgi.extender=jsp.taglib)(uri=http://liferay.com/tld/aui))",\
+         osgi.extender;filter:="(&(osgi.extender=jsp.taglib)(uri=http://liferay.com/tld/portlet))",\
+         osgi.extender;filter:="(&(osgi.extender=jsp.taglib)(uri=http://liferay.com/tld/theme))",\
+         osgi.extender;filter:="(&(osgi.extender=jsp.taglib)(uri=http://liferay.com/tld/ui))",\
+         osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+
+        -dsannotations: *
+
+    That's it! Your Liferay portlet is complete!
 
 ## Create a Simple Test in Liferay with the Arquillian Liferay Extension
+
+Now that you've configured JMX in Tomcat and created a portlet project, you're
+ready to create Liferay tests with the Arquillian Liferay Extension.
 
 1. Add dependencies to your `pom.xml` file:
 
@@ -93,48 +304,56 @@ You can see how to configure the custom extension properties in another tutorial
         </dependencies>
         ...
 
-2. Create a simple test class using the Arquillian Extension.
+2. Create simple integration tests using the Arquillian Liferay Extension.
 
         package org.arquillian.liferay.test;
 
-        import java.io.InputStream;
+        import com.liferay.portal.kernel.exception.PortalException;
+
+        import java.io.File;
+        import java.io.IOException;
+
+        import org.arquillian.container.liferay.remote.enricher.Inject;
+        import org.arquillian.liferay.sample.service.SampleService;
+
         import org.jboss.arquillian.container.test.api.Deployment;
         import org.jboss.arquillian.junit.Arquillian;
-
-        import org.jboss.osgi.metadata.OSGiManifestBuilder;
         import org.jboss.shrinkwrap.api.ShrinkWrap;
-        import org.jboss.shrinkwrap.api.asset.Asset;
         import org.jboss.shrinkwrap.api.spec.JavaArchive;
+        import org.jboss.shrinkwrap.osgi.api.BndProjectBuilder;
+
+        import org.junit.Assert;
         import org.junit.Test;
         import org.junit.runner.RunWith;
 
         @RunWith(Arquillian.class)
-        public class SimpleTest {
+        public class BasicPortletIntegrationTest {
 
-                @Deployment
-                public static JavaArchive create() {
-                        final JavaArchive archive = ShrinkWrap.create(JavaArchive.class, "bundle.jar");
+            @Deployment
+            public static JavaArchive create() {
+                BndProjectBuilder bndProjectBuilder = ShrinkWrap.create(
+                    BndProjectBuilder.class);
 
-                        archive.setManifest(new Asset() {
-                                @Override
-                                public InputStream openStream() {
-                                        OSGiManifestBuilder builder = OSGiManifestBuilder.newInstance();
-                                        builder.addBundleSymbolicName(archive.getName());
-                                        builder.addBundleManifestVersion(2);
-                                        return builder.openStream();
-                                }
-                        });
-                        return archive;
-                }
+                bndProjectBuilder.setBndFile(new File("bnd-basic-portlet-test.bnd"));
 
-                @Test
-                public void test() {
-                        System.out.println("Example of test executed in Liferay");
-                }
+                bndProjectBuilder.generateManifest(true);
+
+                return bndProjectBuilder.as(JavaArchive.class);
+            }
+
+            @Test
+            public void testAdd() throws IOException, PortalException {
+                int result = _sampleService.add(1, 3);
+
+                Assert.assertEquals(4, result);
+            }
+
+            @Inject
+            private SampleService _sampleService;
 
         }
 
-## Create a Functional Test in Liferay with the Arquillian Liferay Extension
+## Create Simple Functional Tests Using the Arquillian Liferay Extension
 
 To create a functional test in Liferay with the Arquillian Liferay Extension,
 follow this
@@ -201,15 +420,28 @@ follow this
 
         </arquillian>
 
-4. Create a `SignIn` test:
+4. Create a portlet functional test:
 
-        import java.net.MalformedURLException;
+        package org.arquillian.liferay.test;
+
+        import com.liferay.portal.kernel.exception.PortalException;
+
+        import java.io.File;
+        import java.io.IOException;
+
         import java.net.URL;
 
+        import org.arquillian.container.liferay.remote.enricher.Inject;
+        import org.arquillian.liferay.installportlet.annotation.InstallPortlet;
+        import org.arquillian.liferay.sample.service.SampleService;
+
+        import org.jboss.arquillian.container.test.api.Deployment;
         import org.jboss.arquillian.container.test.api.RunAsClient;
         import org.jboss.arquillian.drone.api.annotation.Drone;
         import org.jboss.arquillian.junit.Arquillian;
-        import org.jboss.arquillian.test.api.ArquillianResource;
+        import org.jboss.shrinkwrap.api.ShrinkWrap;
+        import org.jboss.shrinkwrap.api.spec.JavaArchive;
+        import org.jboss.shrinkwrap.osgi.api.BndProjectBuilder;
 
         import org.junit.Assert;
         import org.junit.Test;
@@ -220,49 +452,73 @@ follow this
         import org.openqa.selenium.WebElement;
         import org.openqa.selenium.support.FindBy;
 
+        /**
+         * @author Cristina González
+         */
         @RunAsClient
         @RunWith(Arquillian.class)
-        public class BasicFunctionalTest {
+        public class BasicPortletFunctionalTest {
 
-                @Test
-                public void testSignIn(@ArquillianResource URL url)
-                        throws MalformedURLException {
+            @Deployment
+            public static JavaArchive create() {
+                BndProjectBuilder bndProjectBuilder = ShrinkWrap.create(
+                    BndProjectBuilder.class);
 
-                        Assert.assertNotNull(url);
+                bndProjectBuilder.setBndFile(new File("bnd-basic-portlet-test.bnd"));
 
-                        Assert.assertNotNull(browser);
+                bndProjectBuilder.generateManifest(true);
 
-                        browser.get(url.toExternalForm());
+                return bndProjectBuilder.as(JavaArchive.class);
+            }
 
-                        Assert.assertNotNull(signIn);
-                        Assert.assertNotNull(login);
-                        Assert.assertNotNull(password);
+            @Test
+            public void testAdd() throws IOException, PortalException {
+                browser.get(_portlerURL.toExternalForm());
 
-                        login.clear();
+                firstParamter.clear();
 
-                        login.sendKeys("test@liferay.com");
+                firstParamter.sendKeys("2");
 
-                        password.sendKeys("test");
+                secondParameter.clear();
 
-                        signIn.click();
+                secondParameter.sendKeys("3");
 
-                        String bodyText = browser.findElement(By.tagName("body")).getText();
+                add.click();
 
-                        Assert.assertTrue(
-                                "SignIn has failed", bodyText.contains("Terms of Use"));
-                }
+                Assert.assertEquals("5", result.getText());
+            }
 
-                @Drone
-                private WebDriver browser;
+            @Test
+            public void testInstallPortlet() throws IOException, PortalException {
+                browser.get(_portlerURL.toExternalForm());
 
-                @FindBy(css = "input[id$='_login']")
-                private WebElement login;
+                String bodyText = browser.findElement(By.tagName("body")).getText();
 
-                @FindBy(css = "input[id$='_password']")
-                private WebElement password;
+                Assert.assertTrue(
+                    "The portlet is not well deployed",
+                    bodyText.contains("Sample Portlet is working!"));
+            }
 
-                @FindBy(css = "button[type=submit]")
-                private WebElement signIn;
+            @InstallPortlet(name ="arquillian_sample_portlet")
+            private URL _portlerURL;
+
+            @Inject
+            private SampleService _sampleService;
+
+            @FindBy(css = "button[type=submit]")
+            private WebElement add;
+
+            @Drone
+            private WebDriver browser;
+
+            @FindBy(css = "input[id$='firstParameter']")
+            private WebElement firstParamter;
+
+            @FindBy(css = "span[class='result']")
+            private WebElement result;
+
+            @FindBy(css = "input[id$='secondParameter']")
+            private WebElement secondParameter;
 
         }
 
