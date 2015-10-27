@@ -27,22 +27,21 @@ Liferay module.
 To create a JSP portlet application as a module, use a command like the
 following:
 
-    blade create --projectType "jspportlet" --classname "MyJsp" --dir . com.liferay.docs.jspportlet Portlet
+    blade create jspportlet com.liferay.docs.jspportlet
 
-The command above creates a JSP Portlet (`--projectType`) with a component class
-named `MyJspPortlet` (`--classname`), in the current directory (`--dir`). The
-project `name` (and the package name) is `com.liferay.jspportlet`, and the
-`service` type we are creating is `Portlet`. Here, 'service' means an OSGi
-service, not a Liferay API. Another way to say 'service type' would be to say
-'component type'.
+The command above creates a JSP portlet project in the current directory.
+`com.liferay.jspportlet` is used both as the project name and as the name of the
+package in which your portlet component class is created. Notice that when
+creating a JSP portlet, the string 'Portlet' is appended to the project name.
+Thus, the name of the generated class was `Com.liferay.docs.jspportletPortlet`,
+and not `Com.liferay.docs.jspportlet`. Since neither of these class names is
+suitable, you should rename the generated class. E.g., you could rename it to
+`MyJspPortlet.java`. Note that in that class, you're creating a service of type
+`Portlet`. Here, 'service' means an OSGi service, not a Liferay API. Another way
+to say 'service type' is to say 'component type'.
 
-Note that you can abbreviate the command above by using the short forms of the
-options:
-
-    blade create -p "jspportlet" -c "MyJsp" -d . com.liferay.docs.jspportlet Portlet
-
-Running the command above creates a project with the following directory
-structure:
+After running the command above and renaming the generated class, your project's
+directory structure looks like this:
 
 - `com.liferay.docs.jspportlet`
     - `src`
@@ -60,7 +59,7 @@ structure:
     - `bnd.bnd`
     - `build.gradle`
 
-Here's the Java class that's created by the command above:
+Here's the generated Java class, after renaming:
 
     package com.liferay.docs.jspportlet;
 
@@ -86,13 +85,9 @@ Here's the Java class that's created by the command above:
 
     }
 
-Notice that when creating a JSP portlet, the string 'Portlet' is appended to the
-string that you specify with the `--classpath` or `-c` option. Thus, the
-resulting name of your class was `MyJspPortlet`, and not just `MyJsp`.
-
-Notice also that this class is decorated with the `@Component` annotation. All
-of the necessary properties are configured. The line `service = Portlet.class`
-means that your class represents a portlet component. In other words, your class
+Notice that this class is decorated with the `@Component` annotation. All of the
+necessary properties are configured. The line `service = Portlet.class` means
+that your class represents a portlet component. In other words, your class
 provides an implementation of the `Portlet` interface.
 
 Notice further that your project does not contain any configuration files like
