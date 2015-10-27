@@ -182,12 +182,17 @@ creating a *Blank Site*.
 
 ![Figure 2.4: The New Site window aids in your new site development.](../../images/01-add-site-screen.png)
 
-**Name:** names the site you wish to create.
+**Name:** names the site you wish to create. You also have the option to
+translate the name for many different languages. This can be done by selecting
+the language flag under the Name field, and inserting the name in the selected
+language. Liferay saves the name translation for each language, and displays
+the translated site name when that specific language is selected for Portal. If
+a name translation is not provided, the default Portal language's name is
+displayed.
 
-**Description:** describes the site's intended function.
-
-<!-- TODO: Mention that you can localize both Name and Description fields for
-your site: LRDOCS-1557. -Cody -->
+**Description:** describes the site's intended function. The description can
+also be translated to other languages; see the Name description for more
+information on translating the site's description.
 
 **Active:** determines whether a site is active or inactive. Inactive sites are
 inaccessible but can be activated whenever a site administrator wishes.
