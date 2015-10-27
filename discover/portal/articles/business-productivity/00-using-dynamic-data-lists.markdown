@@ -1,8 +1,6 @@
-# Using Dynamic Data Lists
+# Creating Simple Applications
 
-<!-- HOOK NEEDS IMPROVEMENT -->
-
-Business needs change, and technology must adapt to mee those needs.  Things
+Business needs change, and technology must adapt to meet those needs. Things
 that used to be done using manual processes are now done electronically.  You
 may want your team to sign up on your web site for a holiday party. Maybe you
 need to put up a job posting board every fall, only allowing administrators to
@@ -17,8 +15,6 @@ types. Data Lists are flexible enough to handle all types of data, and you
 don't have to write any code. Simply put, Liferay gives you the power to perform
 the following actions:
 
-<!-- Define your own data definitions -->
-
 - Create new lists from data definitions you build yourself
 
 - Create new lists from predefined definitions
@@ -29,7 +25,7 @@ the following actions:
 
 - Integrate lists into Workflow 
 
-All of this capability can be easily distilled into two concepts: data defining
+All of this capability is summarized in two concepts: data defining
 and data displaying. These data lists are dynamic for a reason: they are
 flexible and powerful. From collecting simple input from the user ("Did you find
 what you were looking for?") to developing an entire data entry system for real
