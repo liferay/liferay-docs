@@ -1,26 +1,33 @@
 # Publishing Blogs
 
-The word *Blog* is an apostrophe-less contraction of the two words *web* and
-*log*. Blogs were first popularized by web sites such as
-[Slashdot](http://slashdot.org), which have the format of a running list of
-entries to which users could attach comments. Over time, more and more sites
-such as Digg, del.icio.us, and Newsvine adopted the format, empowering users to
-share their opinions and generating lively discussions.
+With blogs being a mainstay of our online experience, blog administrators and
+authors have come to expect feature-rich environments for managing blogs and
+publishing blog entries. Bloggers expect not only a powerful editor that allows
+them to insert images, mark up text, and format content, but they also want an
+authoring experience that's pleasurable—like the hot personalized beverages they
+sip as they admire their most recent post. Blog admins demand an intuitive
+environment that facilitates configuring blog instances and managing blog
+entries quickly and easily. 
 
-Over the course of time, blogging sites and applications began to appear, such
-as blogger.com, blogspot.com. TypePad, WordPress, and Web Roller. These
-applications allow *individuals* to run their own web sites in the same format:
-a running list of short articles to which readers who are registered with the
-site can attach threaded comments. People who run a blog are called *bloggers*,
-and sometimes they build a whole community of readers who are interested in
-their blog posts. Anyone can have a blog, in fact, there are several famous
-people who run their own blogs. It gives people an outlet for self-expression
-that they would not otherwise have, and the ubiquity and wide reach of the
-Internet ensures that if you have something important and interesting to say,
-somebody will read it.
+Liferay's blog entry editor delivers the features you expect in an elegant,
+in-context manner. When you highlight your blog entries content, formatting
+controls appear above the text. A complete set of WYSIWYG controls are at your
+disposal. You can, of course, switch from regular mode to source mode, in which
+you can edit an entry's raw HTML content. Source mode let's you choose edit the
+code with white type on a dark background or black type on a light background.
+In addition, you can go full screen with the editor to focus on editing your
+post and minimize distractions. Liferay's blogs editor is all about enabling you
+to create terrific blog entries. 
 
-![Figure 9.1: Slashdot was one of the first blogs on the Internet.](../../images/05-slashdot.jpg)
+Lastly, Liferay Blogs empowers you to show off your blogs in attractive
+displays. You can leverage Liferay's built-in display templates or create your
+own Application Display Templates (ADTs). To draw readers to your blog entries
+you can add cover images to them. Perhaps you can't judge a book by it's cover,
+but you surely can draw readers to your blog entry with an enticing cover image!
 
+By now you may be chomping at the bit to start blogging, so let's do just that.
+
+<!--
 Liferay Portal has a Blogs portlet which allows you to provide a blogging
 service to your site's users. Liferay extensively uses the Blogs
 portlet on
@@ -30,8 +37,11 @@ to the Blogs portlet, there's also a Blogs Aggregator portlet which can take
 entries from multiple users' blogs and put them all in one larger list. You'll
 learn how to use both of these portlets to create a blogging site for your
 users.
+-->
 
 ## Adding Blog Entries
+
+<!-- Start - add a blog portlet to a page -->
 
 You can add blog entries using the Blogs portlet. 
 The Blogs portlet is available from the *Collaboration* section of the *Add
@@ -43,6 +53,8 @@ members of the site that the page belongs to. Adding the Blogs portlet to a
 user's personal site creates a blog just for that user. The Blogs portlet works
 the same way in both cases. And of course, you can change the Blog portlet's
 scope to have different blogs on different pages in the same site.
+
+<!-- Start - creating a blog entry -->
 
 When you first add the portlet to a page, it has no entries, so the portlet is
 empty. To add an entry, click the *Add Blog Entry* button. The following data
@@ -74,11 +86,15 @@ real time:
 
 ![Figure 9.6: The fullscreen view allows you to see your HTML changes update in real time.](../../images/05-expanded-view.png)
 
+<!-- Is it true that blog is saved automatically as a draft? -->
+
 Note also that as you type, the entry is automatically saved as a draft at 
 periodic intervals. This gives you peace of mind in using the portlet from 
 within your browser, since you won't lose your entry in the event of a browser 
 crash or network interruption. You can also tag your entries using the same 
 tagging mechanism found everywhere else in the portal.
+
+<!-- - Start - trackbacks and pingbacks --> 
 
 The Blogs portlet also supports trackbacks and pingbacks. Trackbacks are
 special links that let you notify another site that you explicitly linked to 
@@ -103,6 +119,8 @@ to notify that site that you linked to it. Similarly, if someone links to your
 blog entry, Liferay can receive a pingback from that person's site and record
 the link.
 
+<!-- End - trackbacks and pingbacks --> 
+
 You can enter a description of your post beneath the Abstract heading, and this
 can be used by the Abstract display style. Below this is the Categorization
 heading, where you can attach tags and/or categories to your blog entry. You
@@ -117,12 +135,16 @@ might want to write a blog entry talking about a particular discussion that
 happened on the forums. To link those two assets together, select the forum
 thread under Related Assets. 
 
+<!-- End - creating a blog entry -->
+
 Once you've finished your blog entry, click *Publish*. You'll go back to the
 list of entries, and now your entry is displayed. Here is what it looks like
 when the display template is set to *Full Content* and the maximum items to
 display is set to ten:
 
 <!--  9.7: This sample blog entry gives you an idea of what new content and features are displayed on your page.](../../images/05-first-blog-entry-added.png) -->
+
+<!-- Start - What does the blog entry look like in the Blogs portlet? -->
 
 You can see that in the summary view, you don't see the trackback/pingback
 link, and you only see the number of comments that have been added. If you were
@@ -138,13 +160,17 @@ full-featured blogging application that gives you and your users the ability to
 enter the blogosphere with an application that supports anything a blogger
 needs.
 
+<!-- End - What does the blog entry look like in the Blogs portlet? -->
+
 <!-- TODO transition -->
+
+<!-- TODO Decide whether to go into depth (or how much) on Blogs portlet config -->
 
 ### Configuring the Blogs Portlet [](id=configuring-the-blogs-portlet)
 
 By default, the Blogs portlet displays the abstract and image of the latest entries. 
 There are several display options to let you configure it to look the
-way you want it to look. Before we start adding entries, let's configure the
+way you want it to look. Before we start adding more entries, let's configure the
 portlet so that it displays entries the way you want them.
 
 The Blogs portlet is easy to configure. Click on the *Options* icon in the
