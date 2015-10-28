@@ -14,12 +14,12 @@ starting point for your own project.
 
 Follow these simple steps to create a project based on a BLADE project example.
 
-1. Clone the BLADE repository to gain access to latest example projects.
-2. Choose a BLADE project to serve as a starting point for your project and copy
-   your chosen BLADE project from the BLADE repository.
-3. Reconfigure the build file of the copied project.
-4. Refactor the copied project's name, package names, and class names.
-5. Customize the copied project's code to meet your needs.
+1.  Clone the BLADE repository to gain access to latest example projects.
+2.  Choose a BLADE project to serve as a starting point for your project and copy
+    your chosen BLADE project from the BLADE repository.
+3.  Reconfigure the build file of the copied project.
+4.  Refactor the copied project's name, package names, and class names.
+5.  Customize the copied project's code to meet your needs.
 
 Do you want to override one of Liferay's Struts actions? Create an indexer
 post-processor? Create a portlet filter? There are BLADE project examples that
@@ -78,7 +78,7 @@ examples are still being added to the repository, so don't rely on this static
 list. If you don't see a BLADE module type that fits your need listed above,
 check the [BLADE](https://github.com/rotty3000/blade) repository.
 
-Once you find a suitable example project, copy it from BLADE to a new directory.
+Once you find a suitable example project, copy it from BLADE to a new folder.
 If you try to build the project after copying it, it won't work. You need to
 reconfigure the build file.
 
@@ -165,7 +165,7 @@ parent build file from the BLADE project with the module's build file. For the
 contents of the parent build file into the module's `gradle.build` file to
 start. Once you have the combined the build files, start paring the resulting
 build file down to the bare essentials. The build file for the
-`blade.service.hook.user` module is easily boiled down to something like this:
+`blade.service.hook.user` module is easily boiled down to this:
 
     buildscript {
         repositories {
@@ -207,19 +207,19 @@ creation.
 If you run `gradle build` now, your project builds successfully. Of course, you
 can edit your build script however you like. Flexibility is one of the goals of
 the BLADE project. As you develop your project into something more substantial
-than the simple example that you copied out of BLADE, might need to update your
-build script. For example, you might need to declare some new dependencies.
+than the simple example that you copied out of BLADE, you might need to update
+your build script. For example, you might need to declare some new dependencies.
 
 ## Refactoring Your Project
 
 Once you've copied your module project and reconfigured your build script, your
 project should build successfully. You should be able to deploy it to Liferay's
-module framework. However, your project still carries the BLADE project name,
+module framework. Your project, however, still carries the BLADE project name,
 package and class names, and directory structure. You need to refactor these
 aspects of your project.
 
 For example, if you copied the `blade.service.hook.user` project and you want to
-change its name to `com.liferay.docs.serviceoverride`, with a class called
+change its name to `com.liferay.docs.serviceoverride`, containing a class called
 `UserLocalServiceExtender`, you'd follow these steps:
 
 1. Rename the project. The current name is `blade.service.hook.user`. Change the
@@ -256,8 +256,7 @@ After following the steps above, the top of the `UserLocalServiceExtender`
 
 It's that easy! At this point your module project is appropriately configured
 and renamed. You're ready to code it to suit your needs. You can either delete
-the existing code and start from scratch or you can simply modify it where
-needed.
+the existing code and start from scratch or you can modify it where needed.
 
 If you dislike the idea of taking an existing example project and manually
 reconfiguring it, consider using Blade Tools. Blade Tools is a command line

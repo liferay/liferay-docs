@@ -3,7 +3,7 @@
 Liferay's services are registered as components in Liferay's module framework.
 They are created using the
 [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
-component model. Declarative Services isn't exactly a dependency injection tool
+component model. Declarative Services isn't exactly a dependency injection tool,
 but it can behave like one. The declarative services component model makes it
 easy to publish and consume OSGi services from Liferay's module framework. In
 this tutorial, you'll learn how to invoke Liferay services (from the core or
@@ -13,24 +13,24 @@ tutorial in a complete project on Github here:
 
 To invoke a service from your application, follow these steps:
 
-1. Add any required dependencies. You need to add the module that provides the
-   service you want to invoke, and you need to resolve its dependencies.
+1.  Add any required dependencies. You need to add the module that provides the
+    service you want to invoke, and you need to resolve its dependencies.
 
-2. Determine which class or classes in your project need to invoke the service.
-   In each chosen class, declare the service as a member variable and generate
-   getter and setter methods for the service.
+2.  Determine which class or classes in your project need to invoke the service.
+    In each chosen class, declare the service as a member variable and generate
+    getter and setter methods for the service.
 
-3. Annotate the service's setter method with the `@Reference` annotation:
-   `org.osgi.service.component.annotations.Reference`. This annotation is
-   provided by the `org.osgi.compendium.jar`.
+3.  Annotate the service's setter method with the `@Reference` annotation:
+    `org.osgi.service.component.annotations.Reference`. This annotation is
+    provided by the `org.osgi.compendium.jar`.
 
-4. Use the service's getter method to obtain a service bean. Then invoke the
-   service.
+4.  Use the service's getter method to obtain a service bean. Then invoke the
+    service.
 
-5. (Optional) Display the result of your service invocation. If you're
-   developing a portlet application, an easy way to display a result is to add
-   it to the `PortletRequest` object as an attribute which can be retrieved by a
-   JSP.
+5.  (Optional) Display the result of your service invocation. If you're
+    developing a portlet application, an easy way to display a result is to add
+    it to the `PortletRequest` object as an attribute which can be retrieved by a
+    JSP.
 
 Suppose you need to invoke two Liferay services, `UserLocalService` and
 `BookmarksFolderLocalService`. `UserLocalService` is a core Liferay service
@@ -111,10 +111,9 @@ where you've declared the service beans and their getters and setters:
 
 ## (Optional) Display the Results of Your Service Invocations
 
-It's not necessary to display the results of your service invocations. However,
-if you want to do so, using request attributes is an easy way to make the
-service invocation results available to a JSP. Simply assign the results of your
-service invocations as attributes of the request object:
+If you want to send the results of your service invocations to the view layer of
+your application, you can do this using request attributes. Assign the
+results of your service invocations as attributes of the request object:
 
     request.setAttribute("userCount", userCount);
     request.setAttribute("bookmarksFolderCount", bookmarksFolderCount);
