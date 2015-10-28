@@ -1,34 +1,34 @@
 # Customizing Liferay Services
 
 Blade Tools provides templates for creating modules for customizing Liferay
-services. Service wrappers allow Liferay services to be easily customized. In
+services. Service wrappers make it easy to cusotmize Liferay services. In
 this tutorial, you'll learn how to create service wrapper modules. If you
 haven't yet installed Blade Tools, please refer to the
-[Introduction to Blade Tools](need link) tutorial.
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools) tutorial.
 
 Why might you need to customize Liferay services? Perhaps you've added a custom
-field (`Expando` is the back-end term for a custom field) to Liferay's `User`
-object and you want a value for the custom field to be saved whenever the
+field to Liferay's `User` object and you want its value to be saved whenever the
 `addUser` or `updateUser` methods of Liferay's API are called. Or maybe you
-simply want to add some additional logging functionality to some of Liferay's
-APIs. Whatever your case may be, Liferay's service wrappers provide easy-to-use
+want to add some additional logging functionality to some of Liferay's APIs.
+Whatever your case may be, Liferay's service wrappers provide easy-to-use
 extension points for customizing Liferay's services.
 
 To create a module that overrides one of Liferay's services, use the
-`servicewrapper` project type. Use this command 
+`servicewrapper` project type. For example, use the below command to create a
+Gradle-based service wrapper project that overrides Liferay's
+`UserLocalService`: 
 
     blade create servicewrapper -c UserLocalServiceOverride com.liferay.docs.serviceoverride com.liferay.portal.service.UserLocalServiceWrapper
 
-to create a Gradle-based service wrapper module project named
-`com.liferay.docs.serviceoverride` in your current directory. `-c
-UserLocalServiceOverride` specifies the name of the component class that you're
-creating. The `com.liferay.docs.serviceoverride` argument specifies both the
-name of the project to be created and the package in which your component class
-is to be created. The `com.liferay.portal.service.UserLocalServiceWrapper`
-argument specifies the specific type of service wrapper that your component
-class should extend. 
+This creates a project called `com.liferay.docs.serviceoverride` in your current
+folder. `-c UserLocalServiceOverride` specifies the name of the component class
+that you're creating. The `com.liferay.docs.serviceoverride` argument specifies
+both the name of the project to be created and the package in which your
+component class is to be created. The
+`com.liferay.portal.service.UserLocalServiceWrapper` argument specifies the
+specific type of service wrapper that your component class should extend. 
 
-Here's the project structure that's created by the `create` command above:
+Here's the project structure: 
 
 - `com.liferay.docs.serviceoverride`
     - `src`
@@ -61,9 +61,9 @@ Here's the `UserLocalServiceOverride` class that's generated:
 
     }
 
-Notice that you must specify the fully qualified class name of the specific
-service wrapper class that you want to extend. The `service` argument was used
-in full in this import statement:
+Notice that you must specify the fully qualified class name of the service
+wrapper class that you want to extend. The `service` argument was used in full
+in this import statement:
 
     import com.liferay.portal.service.UserLocalServiceWrapper
 
@@ -107,10 +107,10 @@ Each of these methods overrides a Liferay service method. These implementations
 merely add a few print statements that are executed before the original service
 implementations are invoked.
 
-Now you're ready to build your project. Simply navigate to your project's root
-directory and run `gradle build`. The JAR file representing your portlet module
-is produced in your project's `build/libs` directory. If you followed the
-example in this tutorial, it should be called
+Now you're ready to build your project. Navigate to your project's root folder
+and run `gradle build`. The JAR file representing your portlet module is
+produced in your project's `build/libs` directory. If you followed the example
+in this tutorial, it should be called
 `com.liferay.docs.serviceoverride-1.0.jar`.
 
 To deploy your project, run this command from your project's root directory:

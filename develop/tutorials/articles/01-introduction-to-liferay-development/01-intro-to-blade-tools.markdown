@@ -27,7 +27,7 @@ the next section.
     `blade.jar` file that you downloaded. Other tools, such as a plugin
     migration tool (for migrating plugins from a 6.2 Plugins SDK to a 7.0
     module), are
-    [/developer/tutorials/-/knowledge_base/7-0/migrating-legacy-applications-to-new-plugins-sdk](covered in another tutorial).
+    [/develop/tutorials/-/knowledge_base/7-0/migrating-legacy-applications-to-new-plugins-sdk](covered in another tutorial).
 
 2.  Next, install the downloaded JAR:
 
