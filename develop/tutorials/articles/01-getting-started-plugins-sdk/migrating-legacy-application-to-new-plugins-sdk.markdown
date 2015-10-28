@@ -40,7 +40,7 @@ below to begin the migration process:
     you can skip to step 6.
 
     To check if your legacy application needs updates, run `ant compile` from
-    your plugin's root folder. The compliation process will throw errors if any
+    your plugin's root folder. The compilation process will throw errors if any
     dependencies/imports are incorrect.
 
     <!-- Check the reference doc link above and verify that the header ID has
@@ -86,7 +86,7 @@ below to begin the migration process:
 6.  Open your application's `liferay-plugin-package.properties` file and update
     the `liferay-versions` property to include Liferay 7.0.
 
-7.  Once you think you've satified your plugin's dependencies/imports, run `ant
+7.  Once you think you've satisfied your plugin's dependencies/imports, run `ant
     compile`. If your plugin compiles successfully, you've addressed the
     necessary updates.
 
@@ -132,5 +132,5 @@ the plugin not to work (i.e. services were not properly resolved). The only way
 for the legacy WAR to work is to copy the WAR into the `/osgi/modules` folder.
 Check and see if/when deploy folder will support 7.0 WARs. -Cody -->
 
-Awesome! You've converted your your legacy application to a 7.0 WAR-style
+Awesome! You've converted your legacy application to a 7.0 WAR-style
 application!
