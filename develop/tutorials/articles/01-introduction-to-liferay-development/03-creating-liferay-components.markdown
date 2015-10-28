@@ -109,7 +109,7 @@ provided by your API module. Implementation modules are sometimes called service
 modules since they provide implementations of OSGi services. To create an
 implementation module, run a command like this one:
 
-    blade create service -c GreetingImpl com.liferay.docs.greetingimpl com.liferay.docs.Greeting
+    blade create service -c GreetingImpl com.liferay.docs.greetingimpl com.liferay.docs.greetingapi.Greeting
 
 Running this command creates a project with the following directory structure:
 
@@ -165,14 +165,10 @@ Next, edit the generated `bnd.bnd` file so that it looks like this:
     Private-Package: com.liferay.docs.greetingimpl
 
 Your implementation module needs access to your API module in order to compile.
-Create a `lib` folder in the root folder of your `com.liferay.docs.greetingimpl`
-project. Copy your API module (the `com.liferay.docs.greetingapi-1.0.jar` file)
-to your implementation module's new `lib` folder.
+Open your implementation module's `build.gradle` file. Add the following
+line to the top of the `dependencies {...}` block:
 
-Next, open your implementation module's `build.gradle` file. Add the following
-line inside the `dependencies {...}` block:
-
-    compile files('lib/com.liferay.docs.greetingapi-1.0.jar')
+    compile project (':com.liferay.docs.greetingapi')
 
 To build your project, run `gradle build` from your project's root directory. To
 deploy it, run `blade deploy build/libs/com.liferay.docs.greetingimpl-1.0.jar`.
@@ -301,15 +297,10 @@ Next, edit the generated `bnd.bnd` file so that it looks like this:
     Private-Package: com.liferay.docs.greetingcommand
 
 Your client module also needs access to your API module in order to compile.
-Create a `lib` folder in the root folder of your
-`com.liferay.docs.greetingcommand` project. Copy your API module (the
-`com.liferay.docs.greetingapi-1.0.jar` file) to your client module's new `lib`
-folder.
+Open your implementation module's `build.gradle` file. Add the following
+line to the top of the `dependencies {...}` block:
 
-Next, open your implementation module's `build.gradle` file. Add the following
-line in the `dependencies {...}` block:
-
-    compile files('lib/com.liferay.docs.greetingapi-1.0.jar')
+    compile project (':com.liferay.docs.greetingapi')
 
 To build your project, run `gradle build` from your project's root directory. To
 deploy it, run `blade deploy
