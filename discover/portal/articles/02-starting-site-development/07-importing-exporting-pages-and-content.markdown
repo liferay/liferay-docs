@@ -3,7 +3,7 @@
 Liferay's Export/Import feature gives you the power to backup and restore your
 site's pages and content. The export feature grants users the flexibility of
 exporting a page or portlet-specific content they've created as a LAR (Liferay
-archive) file to other portal instances, or to save it for a later use. The
+Archive) file to other portal instances, or to save it for a later use. The
 import feature can be used to ingest the LAR file you exported from Portal,
 which restores the work you previously exported.
 
@@ -23,13 +23,14 @@ first thing you'll learn is using the Export/Import tool for pages.
 
 ## Backing Up and Restoring Pages
 
-Next to the *Add Page* button on the Site Pages screen, there are two buttons
-labeled *Export* and *Import*. The Export button allows you to export the your
-site's data as a single file, called a LAR (Liferay Archive) file. When
-importing data into a site, it's best to use a newly created site to avoid
-potential conflicts between the existing site data and the data about to be
-imported. When exporting site data, you can specify exactly what data should be
-included in the LAR:
+In the Sites tab of the Product Menu, there is an option called *Publishing
+Tools*, which is where the *Export/Import* features reside for pages. If you
+click on *Export/Import*, you are presented two buttons labeled *Export* and
+*Import*, which can be used for your public or private pages. The Export button
+allows you to export your site's data as a single LAR file. When importing data
+into a site, it's best to use a newly created site to avoid potential conflicts
+between the existing site data and the data about to be imported. When exporting
+site data, you can specify exactly what data should be included in the LAR:
 
 - Site pages (you can select exactly which ones)
 - Page settings
@@ -82,21 +83,47 @@ section for information on backing up Liferay.
 
 $$$
 
-Let's be good administrators and export a LAR file for backup purposes. Click on
-the *Export* button and then name the file `lunarresortv1.lar`. Use the check
-boxes to determine what you'd like to export. For this initial export, select
-everything. Note that if you select one of the *Choose* radio selectors or
-*Change* links, you're given checkboxes for options to choose. The applications'
-content can also be selected for export, including the Documents and Media
-Library, Message Boards, and Web Content assets. You can even export the theme
-you're using!
+Next, you'll simulate being a good administrator and exporting a LAR file for
+backup purposes. Click on the *Export* button and then name the file
+`lunarresortv1.lar`. Use the check boxes to determine what you'd like to export.
+For this initial export, select everything. Note that if you select one of the
+*Choose* radio selectors or *Change* links, you're given checkboxes for options
+to choose. The applications' content can also be selected for export, including
+the Documents and Media Library, Message Boards, and Web Content assets. You can
+even export the theme you're using!
 
-Once you click *Export*, your browser prompts you to save the file. Once you
-have the file, you can copy it to a backup location for safekeeping or import it
-into another installation of Liferay Portal. If you must rebuild or wish to
-revert back to this version of your site, you can import this file by clicking
-the *Import* button from the Site Pages dialog box, browsing to it and
-selecting it. 
+Once you click *Export*, the menu automatically switches to the *Current and
+Previous* tab, where you'll see the status of your exported LAR file. You can
+select the link under *Download* to download the export to your local machine.
+Once you have the file, you can copy it to a backup location for safekeeping or
+import it into another installation of Liferay Portal. If you must rebuild or
+wish to revert back to this version of your site, you can import this file by
+clicking the *Import* button from the Site Pages dialog box, browsing to it, and
+selecting it.
+
+Other options you may have noticed when you were configuring your export
+configuration were the *Custom* and *Export Templates* tabs. The exercise you
+completed previously was in the *Custom* tab. This tab lets you configure a
+custom export, which gives you the flexibility to include as much, or as little,
+as you'd like in your exported LAR file. The *Export Templates* tab allows you
+to create a template that saves the custom options you can select to export.
+This streamlines the process of exporting pages.
+
+![Figure 1: You can configure your export options manually, or via an export template.](../../images/export-page-templates.png)
+
+If you export pages frequently and usually select the same options to export,
+the task of selecting options repeatedly can become tedious. With export
+templates, you can select a custom template and immediately export with the
+options you configured.
+
+To create an export template, select the *Export Templates* tab and click *New*.
+Assign the template a name and description, and then fill out the configuration
+options as you would during a custom export process. Once you've saved your
+export template, it is available to use from the *Export Templates* tab. To use
+the template, click the Up arrow button next to the template. This automatically
+fills the fields and options for exporting pages and their content. Once you
+click *Export* to confirm the configuration settings, your LAR file is
+generated.
 
 Next, you'll learn how to export and import portlet content.
 
