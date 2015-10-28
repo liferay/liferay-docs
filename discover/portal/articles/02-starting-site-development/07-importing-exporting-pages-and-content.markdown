@@ -1,8 +1,8 @@
 # Importing/Exporting Pages and Content
 
 Liferay's Export/Import feature gives you the power to backup and restore your
-site's pages and content. The export feature grants users the flexibility of
-exporting a page or portlet-specific content they've created as a LAR (Liferay
+site and portlet data. The export feature grants users the flexibility of
+exporting site or portlet-specific content they've created as a LAR (Liferay
 Archive) file to other portal instances, or to save it for a later use. The
 import feature can be used to ingest the LAR file you exported from Portal,
 which restores the work you previously exported.
@@ -17,9 +17,9 @@ year, you can export the page as a LAR file and save it outside your site. Then
 when the holiday season approaches the following year, you can import the page,
 make some minor tweaks, and publish it with little effort.
 
-There are two primary places Export/Import is used: pages and portlet content.
-In this section, you'll learn how to export and import both kinds of assets. The
-first thing you'll learn is using the Export/Import tool for pages.
+There are two primary places Export/Import is used: sites and portlets. In this
+section, you'll learn how to export and import content for both entities. The
+first thing you'll learn is using the Export/Import tool for sites.
 
 ## Backing Up and Restoring Pages
 
@@ -99,7 +99,8 @@ Once you have the file, you can copy it to a backup location for safekeeping or
 import it into another installation of Liferay Portal. If you must rebuild or
 wish to revert back to this version of your site, you can import this file by
 clicking the *Import* button from the Site Pages dialog box, browsing to it, and
-selecting it.
+selecting it. You also have the option of dragging a LAR file inside the dotted
+area, which also executes the import process.
 
 Other options you may have noticed when you were configuring your export
 configuration were the *Custom* and *Export Templates* tabs. The exercise you
@@ -129,30 +130,34 @@ Next, you'll learn how to export and import portlet content.
 
 ## Importing/Exporting Portlet Content
 
-<!-- This section needs heavy editing. -Cody -->
+There are times when you want to export/import specific content created from a
+portlet, and not deal with site data at all. Many Liferay portlets allow you to
+export or import their portlet data indiviually. These include many of Liferay's
+collaborative applications, such as the Blogs, Wiki, and Message Boards
+portlets. To export or import portlet data, click on the Options icon (vertical
+ellipsis) of your portlet and select *Export/Import*. Exporting portlet data
+produces a `.lar` file that you can save and import into another portlet
+application of the same type. To import portlet data, you must select a `.lar`
+file. Be careful not to confuse portlet-specific `.lar` files with site-specific
+`.lar` files. See the previous section for a discussion of exporting and
+importing site page data.
 
-Some Liferay portlets allow you to export or import portlet data. These include
-many of Liferay's collaborative applications, such as the Blogs, Wiki, and
-Message Boards portlets. To export or import portlet data, click on the gear
-icon of your portlet and select *Export/Import*. Exporting portlet data produces
-a `.lar` file that you can save and import into another portlet application of
-the same type. To import portlet data, you must select a `.lar` file. Be careful
-not to confuse portlet-specific `.lar` files with site-specific `.lar` files.
-See the section on [Creating and Managing Pages](discover/portal/-/knowledge_base/6-2/leveraging-liferays-multi-site-capabilities#creating-and-managing-pages) 
-for a discussion of exporting and importing site page data. 
+![Figure 2: You can access the *Export/Import* feature for a portlet by selecting its Options menu.](../../images/portlet-export-import-feature.png)
 
 Let's explore the export process for portlets first.
 
-![Figure 4.7: When exporting portlet data, you can choose what content to include.](../../images/portlet-export.png)
+First, you can choose to export your application's configuration settings. This
+export your customized settings that you've configured from your application's
+*Options* &rarr; *Configuration* menu.
 
-First, you can select a *Date Range* of content that you'd like to export.
+Next, you can select a *Date Range* of content that you'd like to export.
 Content that has been added to your portlet within your specified date range is
 included in the `.lar` file. You also have options of choosing *All* dates or
 just the most recently added content, or *Last*.
 
-Next, by checking the *Content* box, you can choose specific content you'd like
-to export. When you check the *Content* box, more options appear, allowing you
-to choose specific kinds of metadata to include. For example, if you have a wiki
+By checking the *Content* box, you can choose specific content you'd like to
+export. When you check the *Content* box, more options appear, allowing you to
+choose specific kinds of metadata to include. For example, if you have a wiki
 page with referenced content that you don't wish to include, you can simply
 check the *Wiki Pages* checkbox and uncheck the *Referenced Content* checkbox.
 Another option in the Content section of the Export/Import window is the
@@ -168,7 +173,7 @@ portlet's permissions but not the permissions assigned to roles. After you've
 exported your portlet's data, switch to the *Current and Previous* tab to view
 ongoing export processes and the history of past exports.
 
-![Figure 4.8: When importing portlet data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../images/portlet-import.png)
+![Figure 3: When importing portlet data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../images/import-menu.png)
 
 To import portlet data, you can select the LAR using your file explorer or by
 dragging and dropping the file between the dotted lines. After selecting the LAR
@@ -194,5 +199,8 @@ new entries within the current site every time the LAR is imported.
 possible. Use the current user as author if the original one is not found.
 * *Use the Current User as Author*: Assign the current user as the author of all
 imported content.
+
+Once you've selected the appropriate options, select *Import*, and your
+portlet's data is imported and ready for use.
 
 Next, you'll discuss creating site teams.
