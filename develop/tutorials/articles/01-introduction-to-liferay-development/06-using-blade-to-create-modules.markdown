@@ -1,4 +1,4 @@
-# Using BLADE to Create Modules
+# Using BLADE to Create Modules [](id=using-blade-to-create-modules)
 
 [Blade Tools](https://github.com/gamerson/blade.tools) is Liferay's recommended
 tool for developing Liferay modules. See the
@@ -32,14 +32,14 @@ be Gradle-based, navigate to the `blade/gradle` directory and find the
 `blade.service.hook.user` project. Copy the project from the BLADE repository to
 a local directory that will serve as the root directory for your new project.
 
-## Cloning the BLADE Repository
+## Cloning the BLADE Repository [](id=cloning-the-blade-repository)
 
 You need to clone the [BLADE](https://github.com/rotty3000/blade) repository to
 gain access to its example projects. At the time of this writing, new examples
 continue to be added to the project by contributors. Make sure to regularly
 update your local copy of the repository.
 
-## Copying a Project out of BLADE
+## Copying a Project out of BLADE [](id=copying-a-project-out-of-blade)
 
 Find a project that you want to use as a starting point for your project. Start
 by choosing your build tool. You have three options: Gradle, Maven, or Bndtools.
@@ -82,7 +82,7 @@ Once you find a suitable example project, copy it from BLADE to a new folder.
 If you try to build the project after copying it, it won't work. You need to
 reconfigure the build file.
 
-## Reconfiguring the Build File
+## Reconfiguring the Build File [](id=reconfiguring-the-build-file)
 
 Looking at the `blade/gradle/blade.service.hook.user` project's `build.gradle`
 file quickly reveals why it won't build if you simply copy the BLADE module to a
@@ -210,7 +210,7 @@ the BLADE project. As you develop your project into something more substantial
 than the simple example that you copied out of BLADE, you might need to update
 your build script. For example, you might need to declare some new dependencies.
 
-## Refactoring Your Project
+## Refactoring Your Project [](id=refactoring-your-project)
 
 Once you've copied your module project and reconfigured your build script, your
 project should build successfully. You should be able to deploy it to Liferay's
@@ -266,7 +266,7 @@ framework. Check out the
 [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/blade-tools-bundle-creation)
 tutorial and the other tutorials in this section for more information.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
 

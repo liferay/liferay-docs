@@ -1,4 +1,4 @@
-# Creating Liferay Components
+# Creating Liferay Components [](id=creating-liferay-components)
 
 As explained in the
 [Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development)
@@ -30,7 +30,7 @@ The specific projects referenced by this tutorial are
 `com.liferay.docs.greetingapi`, `com.liferay.docs.greetingimpl`, and
 `com.liferay.docs.greetingimpl`.
 
-## Creating an API Module
+## Creating an API Module [](id=creating-an-api-module)
 
 At the time of this writing, Blade Tools does not provide an API module
 template. Nevertheless, it's easy enough to adapt the output of the service
@@ -101,7 +101,7 @@ deploy it, run `blade deploy build/libs/com.liferay.docs.greetingapi-1.0.jar`.
 Since you've only published an interface, there's not much to test at this
 point. Next, you'll implement the `Greeting` interface in a separate module.
 
-## Creating an Implementation Module
+## Creating an Implementation Module [](id=creating-an-implementation-module)
 
 Now that you've created an API module, it's time to create a implementation
 module. This module will contain a component class that implements the interface
@@ -177,7 +177,7 @@ Now you've published an implementation of your `Greeting` interface. To finish,
 you must still provide a way for your implementation to be invoked. Next, you'll
 create a client that does just that.
 
-## Creating a Client Module
+## Creating a Client Module [](id=creating-a-client-module)
 
 The service client that you'll create takes the form of a command which can be
 invoked from Liferay's Felix Gogo shell. This command invokes the implementation

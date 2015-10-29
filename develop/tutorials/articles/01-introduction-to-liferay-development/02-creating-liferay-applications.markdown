@@ -1,4 +1,4 @@
-# Creating Liferay Applications
+# Creating Liferay Applications [](id=creating-liferay-applications)
 
 Blade Tools allows you to very easily create Liferay applications. In this
 tutorial, you'll learn how. If you haven't yet installed Blade
@@ -180,7 +180,7 @@ Finally, log into your portal. Add your portlet to a page and confirm that it
 works correctly. Congratulations! You've created and deployed a Liferay 7 style
 application!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
 

@@ -1,4 +1,4 @@
-# Introduction to Blade Tools
+# Introduction to Blade Tools [](id=introduction-to-blade-tools)
 
 The [Blade Tools](https://github.com/gamerson/blade.tools) are the easiest way
 for Liferay developers to create new Liferay modules. Although the Plugins SDK
@@ -14,7 +14,7 @@ installation process depends on your operating system.
 You need to install JPM regardless of whether you want to build or download
 Blade Tools. 
 
-## Using the Java Package Manager to Download Blade Tools
+## Using the Java Package Manager to Download Blade Tools [](id=using-the-java-package-manager-to-download-blade-tools)
 
 If you'd like to clone the repository and build Blade Tools from source, skip to
 the next section.
@@ -35,7 +35,7 @@ the next section.
 
 Skip over the next section to learn how to verify your installation.
 
-## Installing Blade Tools from the Source Code
+## Installing Blade Tools from the Source Code [](id=installing-blade-tools-from-the-source-code)
 
 Since Blade Tools are still under development, you may want to keep up with the
 latest changes. You can clone the Blade Tools repository and build the JAR
@@ -55,7 +55,7 @@ locally.
 
 Proceed to the next section to learn how to verify your installation.
 
-## Verifying Your Blade Tools Installation
+## Verifying Your Blade Tools Installation [](id=verifying-your-blade-tools-installation)
 
 To check that Blade Tools is installed, make sure that the `blade` executable is
 available on your system path. Test its usage by entering `blade` into a
@@ -96,7 +96,7 @@ and *Available sub-commands* for the installed tools:
 Now that you have Blade Tools installed, you should learn about its two most
 commonly used commands: `blade create` and `blade deploy`.
 
-## Using the Blade Create Command
+## Using the Blade Create Command [](id=using-the-blade-create-command)
 
 To learn how to use the Blade `create` command, enter *blade create* into a
 terminal. At the time of this writing, entering *blade create* into a terminal
@@ -135,7 +135,7 @@ with Blade Tools, please see the
 [Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services)
 tutorials.
 
-## Using the Blade Deploy Command
+## Using the Blade Deploy Command [](id=using-the-blade-deploy-command)
 
 To use the Blade `deploy` command, you must first have built a module to deploy.
 See the tutorials mentioned above for more information about creating module
@@ -151,7 +151,7 @@ To learn how to create new Liferay module projects, proceed to the
 [next](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 tutorial.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 

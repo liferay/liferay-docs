@@ -1,4 +1,4 @@
-# Understanding Liferay's Module Framework
+# Understanding Liferay's Module Framework [](id=understanding-liferays-module-framework)
 
 At a basic level, Liferay Portal is a web application that runs on a Java EE
 application server or servlet container. In Liferay 6.2 and prior versions,
