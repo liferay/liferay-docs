@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        ivy {
+            url 'https://bndtools.ci.cloudbees.com/job/bnd.master/719/artifact/dist/bundles'
+            layout 'pattern', {
+                artifact '[module]/[artifact]-[revision].[ext]' /* OSGi repo pattern */
+            }
+        }
+		mavenCentral()
+		maven {
+			url 'https://repository.liferay.com/nexus/content/repositories/liferay-snapshots-ce/'
+		}
+    }
+    dependencies {
+        classpath 'biz.aQute.bnd:biz.aQute.bnd.gradle:3.0.0'
+		classpath 'com.liferay:com.liferay.ant.bnd:1.0.9'
+    }
+}
+
+apply plugin: 'biz.aQute.bnd.builder'
+sourceCompatibility = 1.7
+version='1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repository.liferay.com/nexus/content/repositories/liferay-snapshots-ce/'
+    }
+}
+
+dependencies {
+    compile 'org.osgi:org.osgi.core:6.0.0'
+    compile 'org.osgi:org.osgi.compendium:5.0.0'
+    compile 'biz.aQute.bnd:biz.aQute.bnd.annotation:2.4.0'
+    compile 'javax.portlet:portlet-api:2.0'
+    compile 'javax.servlet:servlet-api:2.5'
+    compile 'com.liferay.portal:portal-service:7.0.0-SNAPSHOT'
+    compile 'com.liferay.portal:util-bridges:7.0.0-SNAPSHOT'
+    compile 'com.liferay.portal:util-taglib:7.0.0-SNAPSHOT'
+    compile 'com.liferay.portal:util-java:7.0.0-SNAPSHOT'
+    compile 'org.slf4j:slf4j-api:1.7.7'
+    compile 'org.slf4j:slf4j-simple:1.7.7'
+}
