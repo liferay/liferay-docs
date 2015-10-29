@@ -23,10 +23,22 @@ initially implement the example in Java pseudo-code:
     }
 
     ...
-    
- 
+
+Remember that Liferay's script engine only supports Groovy by default. If you
+want to try out the non-Groovy examples below, you need to install the
+appropriate modules:
+
+- `portal-scripting-groovy` (installed by default)
+- `portal-scripting-beanshell` (available from Liferay Marketplace)
+- `portal-scripting-javascript` (available from Liferay Marketplace)
+- `portal-scripting-python` (available from Liferay Marketplace)
+- `portal-scripting-ruby` (available from Liferay Marketplace)
+
+These modules are all freely available on
+[Liferay Marketplace](www.liferay.com/marketplace).
+
 First, let's see how this would work in Beanshell, which is very similar to
-Java. 
+Java.
  
 ## Beanshell
 
