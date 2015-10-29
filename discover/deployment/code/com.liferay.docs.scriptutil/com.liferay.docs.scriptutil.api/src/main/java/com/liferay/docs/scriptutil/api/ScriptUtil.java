@@ -2,8 +2,8 @@ package com.liferay.docs.scriptutil.api;
 
 public interface ScriptUtil {
 	
-	public String operationOne(); 
+	public String operationOne();
 
-    public String operationTwo(String name);	
+	public String operationTwo(String name);
 
 }
