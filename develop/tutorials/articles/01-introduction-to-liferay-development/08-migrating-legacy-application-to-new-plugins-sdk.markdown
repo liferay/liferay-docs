@@ -24,12 +24,97 @@ plugins and use them in Liferay 7.0 just as you've used them in previous
 versions.
 
 In this tutorial, you'll learn how to migrate a legacy application to Liferay
-7.0 as a WAR-style application using the Plugins SDK. Follow the instructions
-below to begin the migration process:
+7.0 as a WAR-style application using Blade Tools. If you have not yet installed
+Blade Tools, visit the
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+tutorial for more information. Blade Tools offers a `migrate` command, which
+prints out a checklist of outdated references to address regarding the specified
+legacy application. For instance, if your application has an outdated API
+reference that should be updated to use the new Liferay Portal 7.0 API, the
+migration tool highlights the problem, and prints it in a report. You can use
+this report as a checklist of things to address in your application before it's
+Liferay Portal 7.0 compatible. The migration tool scans your application for
+[breaking changes](/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0)
+and
+[migrated services](/develop/reference/-/knowledge_base/7-0/calling-migrated-services-from-legacy-plugins)
+for Liferay Portal 7.0.
+You can visit the provided links of these two reference documents for more
+information on what the migration tool is scanning for in your application, and
+why these changes were made in Liferay Portal.
 
-1.  Copy your application from your old Plugins SDK to a new 7.0 Plugins SDK.
-    You can download a new 7.0 Plugins SDK from
-    [SourceForge](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/).
+Before you can use the migration tool, you'll need to copy your legacy
+application from your old Plugins SDK to a new 7.0 Plugins SDK. The migration
+tool will only work from a 7.0 version of the Plugins SDK. You can download a
+new 7.0 Plugins SDK from
+[SourceForge](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/).
+
+There are several options the migration tool allows for you to specify. The only
+mandatory attribute is your application's project location. To make it simple,
+open a command prompt and navigate to the directory where your legacy
+application resides in the 7.0 Plugins SDK. For instance, if you're migrating a
+portlet, navigate to the `[PLUGINS_SDK_7.0]/portlets` directory.
+
+Now that your ready to easily specify your application's directory, run `blade
+migrate` to find the correct syntax and available options you can specify. The
+migration tool expects the following syntax:
+
+    blade migrate [options] <projectDir> <[reportFile]>
+
+Since the project directory is the only parameter required, you could run
+something like the following to generate output:
+
+    blade migrate my-jsp-portlet
+
+In addition, there are two optional parameters you can specify:
+
+    - `-d` or `-detailed` :  determines if the report format is short or long
+    - `-f` or `--format` : defines the format of the output file. The following
+    formats are supported, which should immediately follow this parameter: text,
+    html, and xml.
+
+If you specify the format parameter, you must also specify an output file (with
+file extension), which should be given at the very end of the command. Likewise,
+the output file will not correctly generate if you haven't specified a format.
+An example of a detailed report exported to an output file would look like this:
+
+    blade migrate -d -f html my-jsp-portlet output.html
+
+For an example of an undetailed and unformatted report generated for an example
+legacy application, refer to the following output:
+
+    _____________________________________________________________________________________________________________________________________________________________
+    | Title                                                                                                | Type      | File                             | Line|
+    |===========================================================================================================================================================|
+    1. | copy-request-parameters init-param default value change                                           | java      | MyJSPPortlet.java                | 36  |
+    2. | copy-request-parameters init-param default value change                                           | java      | ModerationPortlet.java           | 59  |
+    3. | liferay-versions key in Liferay Plugin Packages Properties                                        | properties| liferay-plugin-package.properties| 11  |
+    4. | Moved MVCPortlet, ActionCommand and ActionCommandCache from util-bridges.jar to portal-service.jar| java      | MyJSPPortlet.java                | 26  |
+    5. | Moved MVCPortlet, ActionCommand and ActionCommandCache from util-bridges.jar to portal-service.jar| java      | ModerationPortlet.java           | 46  |
+    6. | The build-service task must be executed to regenerate code                                        | xml       | service.xml                      | 1   |
+
+If you had supplied all the optional parameters, as was described previously,
+the titles would have additional explanatory text, and the output would be
+generated in the output file you specified. The detailed parameter does not
+supply all the text available for each required change; for complete
+documentation on each required update, visit the
+
+[breaking changes](/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0)
+and
+[migrated services](/develop/reference/-/knowledge_base/7-0/calling-migrated-services-from-legacy-plugins)
+documents.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 2.  Use this [reference document](/develop/reference/-/knowledge_base/7-0/calling-migrated-services-from-legacy-plugins)
     to find classes that were exposed as Liferay Portal API in 6.2, but have
@@ -133,3 +218,5 @@ Check and see if/when deploy folder will support 7.0 WARs. -Cody -->
 
 Awesome! You've converted your legacy application to a 7.0 WAR-style
 application!
+
+## Related Topics
