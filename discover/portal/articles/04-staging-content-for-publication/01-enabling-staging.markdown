@@ -4,9 +4,11 @@ Liferay provides site administrators with two different ways to set up staging:
 Local Live and Remote Live. With Local Live staging, both your staging
 environment and your live environment are hosted on the same server. When Local
 Live staging is enabled for a site, a clone of the site is created containing
-copies of all of the site's existing pages. Portlet data is also copied,
-depending on which portlets are selected when staging is enabled. The cloned
-site becomes the staging environment and the original site becomes the live
+copies of all of the site's existing pages. Typically, this means the staging
+and live enviornments share the same JVM, database, portlet data (depending on
+which portlets are selected when staging is enabled), and setup configurations,
+such as the properties set in the `portal-ext.properties` file. The cloned site
+becomes the staging environment and the original site becomes the live
 environment.
 
 When Remote Live staging is enabled for a site, a connection is established
@@ -51,7 +53,35 @@ site. Enabling Local Live staging is easy. Just select *Local Live* and decide
 whether you'd like to enable page versioning. You can enable page versioning on
 a site's public pages, private pages, both, or neither. Page versioning allows
 you to work in parallel on different versions of pages and maintains a history
-of all page modifications. We discuss page versioning in more detail below.
+of all page modifications. You'll learn about page versioning in more detail
+below.
+
+To get some hands-on experience with enabling Local Live staging, you can
+complete a brief example which creates a Local Live staging environment for the
+Lunar Resort home page. Before beginning, you'll need to add a new page. Click
+*Add &rarr; Page* from the left side menu in the default site and name the new
+page *News and Events*. Next, click *News and Events* to view the page. Then add
+the Alerts and Announcements portlets to the News and Events page.
+
+When you activate staging Local Live staging, Liferay creates a clone of your
+site. This clone became the staging environment. Because of this, we recommend
+only activating staging on new, clean sites. Having a few pages and some
+portlets (like those of the example site we've created) is no big deal. However,
+if you have already created a large amount of content you might not be able to
+enable staging on that site. Also, if you intend to use page versioning to track
+the history of updates to your site, we recommend that you enable it as early as
+possible, *before* your site has many pages and lots of content. Your site's
+update history won't be saved until you enable page versioning. Page versioning
+requires staging (either Local Live or Remote Live) to be enabled.
+
+Now you're ready to activate staging for this site. Go to *Admin* &rarr; *Site
+Administration* &rarr; *Configuration* &rarr; *Site Settings* and select 
+*Staging* from under the *Advanced* heading. We'll assume you don't have a 
+separate staging server, so select the *Local Live* staging type. If you do have
+a separate server to use for staging, follow the instructions in the previous
+section for configuring it and your local server for remote staging. Either
+way, once you make a selection (either *Local Live* or *Remote Live*), more
+options become available for page versioning and staged portlets.
 
 ## Enabling Remote Live Staging
 
@@ -162,6 +192,9 @@ remote staging server:
 You can check this issue to see if it's been resolved and to find out which
 versions of Liferay it affects.
 
+<!-- Check into this issue, and find out if there is still a 2G limit for data
+publishing. -Cody -->
+
 $$$
 
 That's all you need to do to enable Remote Live Staging! Note that if you fail
@@ -190,55 +223,26 @@ Marketplace, makes this easy.
 Next, you'll learn how to configure your portal to use IPv6 addresses for
 Remote Live Staging. 
 
-### Validating IPv6 Addresses
++$$$
 
-If your portal is set up to validate IPv6 addresses, you'll need to configure
-your Remote Live Connection Settings. Restart your Liferay instance and navigate
-back to the Staging page. Select the *Remote Live* radio selector and specify
-the fields for your remote site. The *Remote Host/IP* field should match the
-host you specified as your `tunnel.servlet.hosts.allowed` property in the
-`portal-ext.properties` file (e.g., *[0:0:0:0:0:0:0:1]*). Make sure to include
-the brackets. Fill in the rest of the information relevant to your site and
-click *Save*. 
+**Important:** If your portal is set up to validate IPv6 addresses, you'll need
+to configure your Remote Live Connection Settings. Restart your Liferay instance
+and navigate back to the Staging page. Select the *Remote Live* radio selector
+and specify the fields for your remote site. The *Remote Host/IP* field should
+match the host you specified as your `tunnel.servlet.hosts.allowed` property in
+the `portal-ext.properties` file (e.g., *[0:0:0:0:0:0:0:1]*). Make sure to
+include the brackets. Fill in the rest of the information relevant to your site
+and click *Save*. 
 
 To check if the remote site is running on an IPv6 address, add a new portlet to
 the staged site, and then select *Staging* &rarr; *Publish to Remote Live* from
 the Dockbar. The changes are published to your remote staged site. 
 
-Your portal instance now validates the IPv6 address you specified for your
-remote live site. Great job! 
+$$$
 
-Next, you'll learn how to enable local live staging.
+Next, you'll learn how to enable page versioning and staged portlets.
 
-### Example: Enabling Local Live Staging
-
-Let's create a Local Live staging environment for the Lunar Resort home page. Before
-we begin, let's add a new page. Click *Add &rarr; Page* from the left side menu
-in the default site and name the new page *News and Events*. Next, click *News
-and Events* to view the page. Then add the Alerts and Announcements portlets to
-the News and Events page.
-
-When you activate staging Local Live staging, Liferay creates a clone of your
-site. This clone became the staging environment. Because of this, we recommend
-only activating staging on new, clean sites. Having a few pages and some
-portlets (like those of the example site we've created) is no big deal. However,
-if you have already created a large amount of content you might not be able to
-enable staging on that site. Also, if you intend to use page versioning to track
-the history of updates to your site, we recommend that you enable it as early as
-possible, *before* your site has many pages and lots of content. Your site's
-update history won't be saved until you enable page versioning. Page versioning
-requires staging (either Local Live or Remote Live) to be enabled.
-
-Now you're ready to activate staging for this site. Go to *Admin* &rarr; *Site
-Administration* &rarr; *Configuration* &rarr; *Site Settings* and select 
-*Staging* from under the *Advanced* heading. We'll assume you don't have a 
-separate staging server, so select the *Local Live* staging type. If you do have
-a separate server to use for staging, follow the instructions in the previous
-section for configuring it and your local server for remote staging. Either
-way, once you make a selection (either *Local Live* or *Remote Live*), more
-options become available for page versioning and staged portlets.
-
-## Enabling Page Versioning and Staged Portlets
+## Enabling Page Versioning and Staged Content
 
 Enabling page versioning for a site allows site administrators to work in
 parallel on multiple versions of the site's pages. Page versioning also
@@ -251,19 +255,75 @@ Lunar Resort site and then click *Save*.
 
 ![Figure 3.21: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
 
-Before you activate staging, you can choose which portlets' data should be
-copied to staging. We'll cover many of the collaboration portlets listed under
-the Staged Portlets heading when we come to the
+Choosing content to be staged may sound self-explanatory, but content must have
+specific attributes in Liferay Portal to use it in a staged environment. Content
+or an entity should be site-scoped, so they are always part of a site;
+otherwise, they are not eligible for staging. Liferay Portal supports the
+following content groups for staging, by default:
+
+- Application Display Templates
+- Blogs
+- Bookmarks
+- Calendar
+- Documents and Media
+- Dynamic Data Lists
+- Message Boards
+- Mobile Device Families
+- Polls
+- Shopping
+- Web Content
+- Wiki
+
+Before you activate staging, you can choose which of these applications' data
+you'd like to copy to staging. You'll learn about many of the collaboration
+portlets listed under the Staged Portlets heading when we come to the
 [Collaboration Suite](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
 chapter. For now, you just need to be aware that you can enable or disable
-staging for any of these portlets. Why might you want to enable staging for some
-portlet types but not others? In the case of collaborative portlets, you
-probably *don't* want to enable staging since such portlets are designed for
+staging for any of these applications. Why might you want to enable staging for some
+application types but not others? In the case of collaborative portlets, you
+probably *don't* want to enable staging since such applications are designed for
 user interaction. If their content were staged, you'd have to manually publish
 your site whenever somebody posted a message on the message boards to make that
 message appear on the live site. Generally, you'll want web content to be staged
 because end users aren't creating that kind of content--web content is the stuff
-you publish to your site. But portlets like the Message Boards or Wiki would
-likely benefit from *not* being staged. Notice which portlets are marked for
+you publish to your site. But applications like the Message Boards or Wiki would
+likely benefit from *not* being staged. Notice which applications are marked for
 staging by default: if you enable staging and accept the defaults, staging is
 *not* enabled for the collaborative portlets.
+
+The listed applications, or content groups, contain one or more specific entity.
+For example, selecting the Web Content application does not mean you're only
+selecting web content itself, but also web content folders.
+
+<!---->
+
+Certain content types can be linked together, they can reference each other on
+different levels. One the several responsibilities of staging is to discover and
+maintain these references when publishing and watch over data integrity.
+
+This list of content groups are supported by default in the portal. This does
+not mean though it cannot be extended, developers can write plugins supporting
+entities like these, and they can write the proper data handler to support
+staging too.
+
+A site’s content is always a candidate for publication and it is definitely
+subject of the staging and part of the publishing process. Site administrators
+and content creators have control over the process on different level: staging
+can be enabled for a content group and also a content group can be selected for
+publication.
+
+Special content types
+
+Besides the normal content the portal also operates with several special content
+types such as pages or users. There are no general rule for these special
+content on how they are handled in staging, it varies by the content type. One
+of the most important special content type is the page, which is also part of
+the site and can reference other content types, but also in a special way. The
+page references portlets and publishing a page will also imply publishing it’s
+portlets.
+
+The content gives the backbone of the site, however the content by themselves
+useless. In case we need business logic around them, or we want to display to
+the end user we will need portlets as the next building block for our site.
+
+<!---->

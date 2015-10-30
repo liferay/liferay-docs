@@ -1,11 +1,19 @@
 # Staging Content for Publication
 
+Today's enterprises are generating an enormous amount of content for their
+users. Many of articles and images are created daily in order to provide
+information to users. Liferay Portal provides advanced publishing tools to make
+the content easily and reliably available for users.
+
 Staging is an important feature of Liferay WCM. The concept of staging is a
 simple one: you can modify your site behind the scenes and then publish all your
 updates in one shot. You don't want users seeing your web site change before
 their eyes as you're modifying it, do you? Liferay's staging environment allows
-you to make changes to your site in a specialized *staging area*. When you're
-finished, you can publish all your site changes at once.
+you to make changes to your site in a specialized *staging area*, which is
+linked to a production environment. Typically the staging site has a more
+limited audience (e.g., content editors, site administratros, etc.) while the
+production environment is accessible for most users. When you're finished, you
+can publish all your site changes at once.
 
 Site administrators can set up their staging enviroments locally or remotely.
 With Local live staging, your staging environment and live environment are
@@ -19,4 +27,4 @@ Local Live and Remote Live staging and allows site administrators to create
 multiple variations of staged pages. This allows several different versions of
 sites and pages to be developed at the same time. Variations can be created,
 merged, and published using a Git-like versioning system. In the next section,
-you'll jump in to see how to use staging.
+you'll jump in to see how to enable staging.

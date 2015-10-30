@@ -161,7 +161,7 @@ correct order as you see fit.
 You can also create new pages from the Site Pages interface. Navigate to Site
 Administration &rarr; *Site Pages*. If you navigate to *Public Pages* or
 *Private Pages* on your site hierarchy, you'll notice the *Add Page* button,
-which we discussed earlier in the chapter. If you navigate to a specific site,
+which we discussed earlier in the chapter. If you navigate to a specific page,
 you'll notice the *Add Child Page* button.
 
 The *Add Child Page* lets you create child pages underneath the page you've
@@ -257,6 +257,8 @@ Device Rules* option. The set up for this option is explained in the
 [Displaying Site Pages to Mobile Devices]()
 section.
 
+<!-- Replace link above with 7.0 link. -Cody -->
+
 ### Configuring Rules for Virtual Hosting
 
 If you're using virtual hosting for this site, you can configure `robots.txt`
@@ -280,7 +282,12 @@ periodically crawl the sitemap once you've made the initial request.
 If you're interested in seeing what is being sent to the search engines, select
 the *Preview* link to see the generated XML.
 
-<!-- ### Advanced
+<!-- The below is commented out because the "Advanced" option is no longer
+available from the Site Pages interface. I'll keep this commented out until UI
+is stable and we can safely remove this text. -Cody
+
+
+### Advanced
 
 If you click on *Advanced* from the Site Pages interface for a public page set,
 you'll find an option to merge the public pages of your portal's default site
