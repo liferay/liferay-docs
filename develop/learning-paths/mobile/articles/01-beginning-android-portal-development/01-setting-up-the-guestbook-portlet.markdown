@@ -3,17 +3,15 @@
 You need to set up a few things before you can begin developing the Guestbook 
 app for Android. You'll take the following steps:
 
-1. Install the Java Development Kit (JDK) version 7. 
-2. Install and Configure a Local Liferay bundle. 
-3. Deploy the Guestbook Portlet to the Local Liferay Instance. 
+1.  Install the Java Development Kit (JDK) version 7. 
+2.  Install and Configure a Local Liferay bundle. 
+3.  Deploy the Guestbook Portlet to the Local Liferay Instance. 
 
 ## Installing the JDK [](id=installing-the-jdk)
 
-To run Liferay and develop Android apps, you need to have JDK 7 installed. 
-While it's possible to run Liferay on Windows with the Java Runtime Environment 
-(JRE) instead, the JDK is required to run Liferay on other operating systems. 
-More importantly, the JDK is required on all operating systems to develop 
-Android apps. You can download and install the Java SE JDK from the Java 
+To run Liferay and develop Android apps, you need to have JDK 7 installed.  The
+JDK is required on all operating systems to develop Android apps. You can
+download and install the Java SE JDK from the Java
 [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 
 page. This page also has links to the JDK installation instructions.
 
@@ -28,7 +26,7 @@ and specific Liferay release. For example, if you downloaded Liferay Portal 6.2
 CE GA3 and unzipped it to a `bundles` directory on your machine, the path of
 that bundle's Liferay Home directory is:
 
-    bundles/liferay-portal-6.2-ce-ga3
+    bundles/liferay-portal-6.2-ce-ga4
 
 Now you're ready to start Liferay! Start the bundle as described in the link
 above. If you're on Mac or Linux you should also run `tail -f
@@ -57,9 +55,8 @@ to the Liferay installation you just set up.
 
 ## Deploying the Guestbook Portlet [](id=deploying-the-guestbook-portlet)
 
-<!-- Replace link once .war file is on LDN -->
 Now that your portal is set up, you can deploy the Guestbook portlet to it. 
-Download the Guestbook portlet's `.war` package from [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/learning-paths/mobile/code) 
+Download the Guestbook portlet's `.war` package from [here](https://dev.liferay.com/documents/10184/581742/guestbook-portlet.war) 
 and place it in the `[Liferay Home]/deploy` directory. You should see messages 
 in your console indicating that the Guestbook portlet has been successfully 
 deployed. On your portal's default site, click the + icon on the left side 
