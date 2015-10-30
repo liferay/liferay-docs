@@ -79,8 +79,9 @@ content a little breathing room.
     *Welcome* page and removes the portlet icons from the bordered portlets.
 
     The carousel has been given some styling as well. It's been centered and
-    some spacing has been added between the breadcrumbs and the carousel. Save
-    the file and navigate to the *Welcome* page.
+    some spacing has been added between the breadcrumbs and the carousel. The 
+    carousel has also been given a `z-index` of `0`, so the navigation shows 
+    above it. Save the file and navigate to the *Welcome* page.
 
 6.  Save the file and refresh the browser. Sometimes, you may need to redeploy
     the theme. 

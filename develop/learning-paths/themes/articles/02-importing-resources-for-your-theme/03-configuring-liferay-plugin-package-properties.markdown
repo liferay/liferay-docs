@@ -30,7 +30,8 @@ for the Resources Importer.
  
 3.  Uncomment the following code and save the file:
 
-        required-deployment-contexts=\resources-importer-web
+        required-deployment-contexts=\
+            resources-importer-web
 
     This requires the resources-importer-web plugin to be installed in order for 
     the theme to be deployed. If the *resources-importer-web* is not installed, 
@@ -41,7 +42,23 @@ for the Resources Importer.
 
 Your theme should look like the image below:
 
-![Figure 1: The Resources Importer .](../../images/resources-importer-fin-theme.png)
+![Figure 1: The Resources Importer adds pages and content to your site.](../../images/resources-importer-fin-theme.png)
+
+Now that your theme has these initial pages and content, you can disable the
+Resources Importer. If you don't do this, the pages, web content, and documents 
+will be reimported unnecessarily and asset reference issues can occur when you 
+redeploy your theme. To disable the Resources Importer follow these steps: 
+
+1.  Comment out the following properties from the
+    `liferay-plugin-package.properties` file:
+
+        required-deployment-contexts=\
+            resources-importer-web
+
+        resources-importer-target-class-name=com.liferay.portal.model.Group
+        resources-importer-target-value=Guest
+
+Your theme project is ready for more development. 
 
 As you can see the Resources Importer is not too complicated once you break down
 the individual pieces, and it serves as an effective way to stage your theme 

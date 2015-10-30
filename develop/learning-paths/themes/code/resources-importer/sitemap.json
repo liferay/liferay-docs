@@ -25,7 +25,6 @@
 				]
 			]
 		},
-		
 		{
 			"name": "Facilities",
 			"title": "Facilities",
@@ -76,9 +75,9 @@
 							"Lunar Spelunking Banner.html"
 						]
 					]
-					}
-				]
-			},
+				}
+			]
+		},
 		{
 			"name": "Dining",
 			"title": "Dining",
