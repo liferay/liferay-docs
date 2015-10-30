@@ -1,12 +1,11 @@
-# Migrating Legacy Application to New Plugins SDK
+# Migrating Legacy Applications to New Plugins SDK
 
 With the new modularity focus for Liferay 7.0, many of Liferay's applications
-have migrated to OSGi modules. Although Liferay 7.0 has modularized most of its
+have migrated to OSGi modules. Although Liferay 7.0 has made most of its
 components to fit the modular vision, it has also remained backwards compatible
 for WAR-style applications that are created using the Plugins SDK. Therefore,
-both module and WAR-style applications are supported in Liferay 7.0. As an
-overview on this topic, you have two routes you can take for updating your
-applications for Liferay 7.0:
+both module and WAR-style applications are supported in Liferay 7.0. There are
+two routes to take for updating your applications for Liferay 7.0:
 
 - Transform your legacy applications to OSGi modules.
 - Keep your applications as legacy WAR-style applications generated from the
@@ -24,7 +23,7 @@ applications to OSGi modules. You can, however, keep your legacy WAR-style
 plugins and use them in Liferay 7.0 just as you've used them in previous
 versions.
 
-In this tutorial, you'll learn how to migrate your legacy application to Liferay
+In this tutorial, you'll learn how to migrate a legacy application to Liferay
 7.0 as a WAR-style application using the Plugins SDK. Follow the instructions
 below to begin the migration process:
 
@@ -32,7 +31,7 @@ below to begin the migration process:
     You can download a new 7.0 Plugins SDK from
     [SourceForge](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/).
 
-2.  Use the following [reference document](/develop/reference/-/knowledge_base/7-0/calling-migrated-services-from-legacy-plugins)
+2.  Use this [reference document](/develop/reference/-/knowledge_base/7-0/calling-migrated-services-from-legacy-plugins)
     to find classes that were exposed as Liferay Portal API in 6.2, but have
     been moved into separate modules for Liferay Portal 7.0. Make a note of any
     APIs that your legacy plugin is consuming from this list. If your legacy
@@ -45,7 +44,7 @@ below to begin the migration process:
 
     <!-- Check the reference doc link above and verify that the header ID has
     not changed. The reference doc had not been reviewed/published during the
-    writing of this article, and the link may have changed. --Cody -->
+    writing of this article, and the link may have changed. -Cody -->
 
 3.  Resolve your application's dependencies with other modules by adding the
     required libraries to your application's `ivy.xml` file. Within the
