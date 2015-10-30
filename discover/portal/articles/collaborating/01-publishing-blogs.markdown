@@ -1,4 +1,4 @@
-# Publishing Blogs
+# Publishing Blogs [](id=publishing-blogs)
 
 Since blogs are a mainstay on the web, bloggers and blog administrators expect
 feature-rich environments for publishing blogs. Bloggers expect not only a
@@ -27,7 +27,7 @@ enticing cover image!
 By now you're probably chomping at the bit to start blogging, right?! Let's get
 started. 
 
-## Adding Blog Entries
+## Adding Blog Entries [](id=adding-blog-entries)
 
 Each site comes with a built-in blog instance. So let's explore adding an entry
 to your site's blog. The Blogs Administration portlet provides the best place to
@@ -175,7 +175,7 @@ Congratulations on creating your blog entry! Before displaying it on your site's
 pages, let's look at how you can manage blog entries from Blogs
 Administration. 
 
-## Managing Blog Entries
+## Managing Blog Entries [](id=managing-blog-entries)
 
 Blogs Adminstration helps bloggers and blog administrators manage blog entries.
 *Search* finds entries that match the keywords you enter. The *Order by*
@@ -251,7 +251,7 @@ You've now created a blog entry and learned how to manage blog entries and
 permissions. Next, you'll learn how to use the Blogs and Blogs Aggregator
 portlets to display blog entries the way you want them. 
 
-## Displaying Blogs
+## Displaying Blogs [](id=displaying-blogs)
 
 The Blogs portlet is available from the *Collaboration* section of the *Add
 &rarr; Applications* menu. Since it supports scopes, you can use it to create a
@@ -359,7 +359,7 @@ information from multiple places. For that reason, it also includes the Blogs
 Aggregator portlet so that you can "bubble up" blog entries from multiple users
 and highlight them on your site. Let's look next at how that works. 
 
-## Aggregating Blogs
+## Aggregating Blogs [](id=aggregating-blogs)
 
 You can set up a whole web site devoted just to blogging if you wish. The Blogs
 Aggregator portlet allows you to publish entries from multiple bloggers on one
