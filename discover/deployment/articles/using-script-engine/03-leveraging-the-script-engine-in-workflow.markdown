@@ -118,3 +118,11 @@ consequences of poorly, or maliciously, written scripts inside of a workflow
 definition. For more information on creating workflow definitions with Kaleo
 workflow, see Liferay's
 [workflow documentation (not yet written)]().
+
+## Related Topics
+
+[Invoking Liferay Services From Scripts](/discover/deployment/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
+
+[Running Scripts From the Script Console](/discover/deployment/-/knowledge_base/7-0/running-scripts-from-the-script-console)
+
+[Using Custom Java Tools in the Script Engine](/discover/deployment/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine)

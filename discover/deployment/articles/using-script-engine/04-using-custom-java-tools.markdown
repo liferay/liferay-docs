@@ -217,3 +217,11 @@ work. Furthermore, you should always be prepared for a runtime exception to
 occur. For example, if one or more modules are uninstalled while a script is
 running, various OSGi services could become unavailable during the execution of
 the script.
+
+## Related Topics
+
+[Invoking Liferay Services From Scripts](/discover/deployment/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
+
+[Running Scripts From the Script Console](/discover/deployment/-/knowledge_base/7-0/running-scripts-from-the-script-console)
+
+[Leveraging the Script Engine in Workflow](/discover/deployment/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)

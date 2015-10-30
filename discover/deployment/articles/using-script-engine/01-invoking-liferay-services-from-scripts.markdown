@@ -137,3 +137,11 @@ implemented with the following code:
 As you can see, Liferay's services can be accessed from any of these languages.
 Next, let's look at some practical examples of how you can use Liferay's script
 engine.
+
+## Related Topics
+
+[Running Scripts From the Script Console](/discover/deployment/-/knowledge_base/7-0/running-scripts-from-the-script-console)
+
+[Leveraging the Script Engine in Workflow](/discover/deployment/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)
+
+[Using Custom Java Tools in the Script Engine](/discover/deployment/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine)

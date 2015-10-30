@@ -1,4 +1,4 @@
-# Running Scripts from the Script Console
+# Running Scripts From the Script Console
 
 To see a very simple example of the script console in action, log into the
 portal as an administrator and navigate to the *Control Panel* &rarr; *Server
@@ -259,3 +259,11 @@ because of all the other information there.
 
 Of course, Liferay's script engine has uses beyond the script console. Next,
 you'll learn how to leverage Liferay's script engine for designing workflows.
+
+## Related Topics
+
+[Invoking Liferay Services From Scripts](/discover/deployment/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
+
+[Leveraging the Script Engine in Workflow](/discover/deployment/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)
+
+[Using Custom Java Tools in the Script Engine](/discover/deployment/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine)
