@@ -70,31 +70,31 @@ happened. Obviously, the build completed successfully, but other than that it
 doesn't tell you much. What happened is this: the Mobile SDK Builder generated 
 the source classes you'll use in your Android app to interact with your Liferay 
 installation's Guestbook portlet. You can find these source classes in the 
-following directory of your `liferay-mobile-sdk-android-6.2.0.22` directory: 
+following folder in the mobile SDK: 
 
     modules/guestbook-portlet/android/src/gen/java
 
 You should also note that the source classes are in the package path you 
-specified during the build, with an additional directory that denotes the 
+specified during the build, with an additional folder that denotes the 
 Liferay version. Therefore, the full path to the generated source classes is:
 
     modules/guestbook-portlet/android/src/gen/java/com/liferay/mobile/android/v62
 
-This directory has two subdirectories that correspond to each entity in the 
+This folder has two subfolders that correspond to each entity in the 
 Guestbook portlet: `guestbook` and `entry`. In them, you'll find the respective 
 source class for each, `EntryService.java` and `GuestbookService.java`. There's 
 one last thing to do before you can use these classes in your Android app: put
 them in a `jar` file. 
 
-To do this, navigate to the `modules/guestbook-portlet` directory on the command 
+To do this, navigate to the `modules/guestbook-portlet` folder on the command 
 line and run `../../gradlew jar`. This command does two things: 
 
-1. Generates a `jar` file with the Guestbook portlet's service classes. This is
-   in `modules/guestbook-portlet/build/libs`. From here forward, this Learning 
-   Path refers to this as the Guestbook Mobile SDK. 
+1.  Generates a `jar` file with the Guestbook portlet's service classes. This is
+    in `modules/guestbook-portlet/build/libs`. From here forward, this Learning 
+    Path refers to this as the Guestbook Mobile SDK. 
 
-2. Generates a `jar` file for use in calling Liferay's built-in remote services. 
-   This is in `liferay-mobile-sdk-android-6.2.0.22/android/build/libs`. 
+2.  Generates a `jar` file for use in calling Liferay's built-in remote services. 
+    This is in `liferay-mobile-sdk-android-6.2.0.22/android/build/libs`. 
 
 Congratulations! You just built the Guestbook Mobile SDK. Now that's an 
 accomplishment worthy of writing down in a guestbook! All you need next is an 
