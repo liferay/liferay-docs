@@ -8,10 +8,10 @@ developed in the
 
 This section of the Learning Path covers the following topics:
 
-1. Setting up the Guestbook portlet
-2. Building the Guestbook Mobile SDK
-3. Creating the Android project
-4. Installing the Guestbook Mobile SDK and Liferay Screens in the Android 
-project
+1.  Setting up the Guestbook portlet
+2.  Building the Guestbook Mobile SDK
+3.  Creating the Android project
+4.  Installing the Guestbook Mobile SDK and Liferay Screens in the Android 
+    project
 
 When you finish, you'll be ready to start developing the app.
