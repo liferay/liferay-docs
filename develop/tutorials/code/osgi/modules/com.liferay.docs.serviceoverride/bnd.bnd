@@ -1,0 +1,10 @@
+-dsannotations: *
+
+Bundle-Version: 1.0.0.${tstamp}
+
+Import-Package: \
+	com.liferay.portal.model;version='[7.0,7.1)',\
+	com.liferay.portal.service;version='[7.0,7.1)',\
+	*
+
+Private-Package: com.liferay.docs.serviceoverride
