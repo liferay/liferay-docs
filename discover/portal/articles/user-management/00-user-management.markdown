@@ -32,6 +32,9 @@ it's tough to wrap your head around it all. Maybe a limerick can help:
 *And set them some goals*<br />
 *Made* ***Password Policies*** *that can't be duped*
 
+Password Policies were bold
+Then Monitored employee User sessions to Snoop 
+
 <!-- Work Monitoring into the limerick -->
 
 ![Figure 2: The Users section of the Control Panel. This screenshot shows a
@@ -40,3 +43,28 @@ installed.](../../images/usrmgmt-users.png)
 
 Begin exploring Liferay’s User Management functionality by reading the Users and
 Organizations article. 
+
+
+<!-- The above is more an intro to the Control Panel. Some of the Users intro stuff
+should be moved here.
+
+The Users section of the Control Panel is used for most administrative tasks
+involving user management. There, you’ll find an interface for the creation and
+maintenance of the following portal entities: users, organizations, user groups,
+and roles. 
+
+Managing sites, teams, site templates, and page templates is covered in detail
+elsewhere. Remember that it’s possible and sometimes simpler to use sites, site
+memberships, and teams to organize users and manage permissions than it is to
+use organizations, user groups, and custom roles.
+
+As a portal administrator, you’ll use the Users section of the Control Panel to
+create users, organizations, and user groups, implement security via roles and
+permissions, and administer your users. Note that only users with the
+administrator role, which is a portal scoped role, have permission to view the
+Control Panel. You can, of course, grant permissions to view one or more
+sections, such as the Users section, to custom roles.
+-->
+<!-- Perhaps make a table showing similarities and differences between the
+parallel sites vs. portal-wide user functionality
+-->
