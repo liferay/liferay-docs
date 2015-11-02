@@ -199,7 +199,7 @@ be easily added:
 
 **Question:** designed for discussions in a format of questions and answers.
 
-![Figure 9.17: You have several options when creating a Message Boards Category.](../../images/05-editing-message-board-category.png)
+Figure 9.17: You have several options when creating a Message Boards Category.05-editing-message-board-category.png
 
 You can add as many categories to your message boards as you wish. As we saw
 above, categories can have subcategories. You can add any number of top-level
@@ -400,7 +400,7 @@ select the correct version when downloading and installing the app. Once
 installed, the Message Boards Subscription Manager appears in the Configuration
 section of Site Administration.
 
-![Figure 9.18: To make sure that the Message Boards Subscription Manager was successfully installed, look for the *Message Boards Subscription Manager* entry in the Configuration section of Site Administration.](../../images/message-boards-subscription-manager-control-panel.png)
+Figure 9.18: To make sure that the Message Boards Subscription Manager was successfully installed, look for the *Message Boards Subscription Manager* entry in the Configuration section of Site Administration.message-boards-subscription-manager-control-panel.png
 
 The subscription manager allows managing the subscriptions of both the
 site-scoped message board and the subscriptions of any page-scoped message
@@ -413,7 +413,7 @@ category's threads in a new browser tab. Click *Actions* &rarr; *Manage
 Subscriptions* to view a list of users which can be subscribed or unsubscribed
 from the message board category.
 
-![Figure 9.19: The Message Board Subscription Manager allows site administrators to subscribe or unsubscribe selected users from any category within their site's message board.](../../images/message-boards-subscription-manager.png)
+Figure 9.19: The Message Board Subscription Manager allows site administrators to subscribe or unsubscribe selected users from any category within their site's message board.message-boards-subscription-manager.png
 
 Click on the *Subscribe* or *Unsubscribe* links next to a user's name to
 subscribe or unsubscribe the user from the selected message board category.
@@ -466,14 +466,14 @@ message boards. Besides this, many users of message boards are familiar with
 BBCode and are used to it, and the editor that is provided for Liferay's
 Message Boards portlet makes it very easy to use.
 
-![Figure 9.20: The *Follow the moon* message board post gives you an idea of what it takes to add a message board message.](../../images/05-editing-message-board-post.png)
+Figure 9.20: The *Follow the moon* message board post gives you an idea of what it takes to add a message board message.05-editing-message-board-post.png
 
 The message boards editor is quite rich. It supports bold, italicized,
 underlined, and crossed-out text, links, images, colors, lists, tables,
 alignments, quotation blocks, code blocks, different fonts and font sizes, and
 more. There are even a bunch of smiley faces that you can use.
 
-![Figure 9.21: Liferay's dynamic editor even includes a wide range of smiley faces!](../../images/05-emoticons.png)
+Figure 9.21: Liferay's dynamic editor even includes a wide range of smiley faces!05-emoticons.png
 
 Users who have Moderator access to the board can modify the priority of
 messages. You can also use the editor to quote from messages that you are
@@ -523,7 +523,7 @@ until you find the Message Boards portlet and then click on it. You will then
 see a screen which allows you to configure the various permissions on the
 portlet.
 
-![Figure 9.22: Defining Permissions for the Message Board Administrators can be done by navigating to *Actions &rarr; Define Permissions*.](../../images/05-defining-permissions-message-board-admin-role.png)
+Figure 9.22: Defining Permissions for the Message Board Administrators can be done by navigating to *Actions &rarr; Define Permissions*.05-defining-permissions-message-board-admin-role.png
 
 Select the permissions you would like message board administrators to have and
 then click *Save*. You can add users to this role and they will inherit the
