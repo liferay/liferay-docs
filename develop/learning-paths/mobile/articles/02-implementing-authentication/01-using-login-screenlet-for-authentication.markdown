@@ -1,10 +1,10 @@
 # Using Login Screenlet for Authentication [](id=using-login-screenlet-for-authentication)
 
 For the app to retrieve data from the guestbook portlet, the app's user must 
-first authenticate with the portal. Authenticating with the Liferay Mobile SDK 
-is possible but it takes time to implement. Implementing authentication with 
-Liferay Screens takes about ten minutes. In this article, you'll use Login 
-Screenlet to implement authentication in your app. 
+first authenticate to the portal. You can authenticate using the Liferay Mobile
+SDK, but it takes time to implement. Authenticating using Liferay Screens takes
+about ten minutes. In this article, you'll use the Login Screenlet to implement
+authentication in your app. 
 
 ## Adding Login Screenlet to the App [](id=adding-login-screenlet-to-the-app)
 
@@ -20,8 +20,8 @@ you created the project. Insert the following code in its place:
         liferay:layoutId="@layout/login_default"
         />
 
-When prompted by Android Studio, add the following XML namespace to the top of 
-the file:
+When prompted by Android Studio, add the following XML namespace to the
+`<RelativeLayout>` tag:
 
     xmlns:liferay="http://schemas.android.com/apk/res-auto"
 
@@ -63,6 +63,10 @@ Implementing `LoginListener` requires you to implement two methods:
     public void onLoginFailure(Exception e) {
         Toast.makeText(this, "Couldn't log in " + e.getMessage(), Toast.LENGTH_LONG).show();
     }
+
+When you paste in these methods, you'll need to add the imports
+`com.liferay.mobile.screens.auth.login.LoginListener` and
+`com.liferay.mobile.screens.context.User`. 
 
 These are listener methods called, respectively, when login succeeds or fails. 
 Using them lets your app respond to events that occur in the Screenlet. For the 
