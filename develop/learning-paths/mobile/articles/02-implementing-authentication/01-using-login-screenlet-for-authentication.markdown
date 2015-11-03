@@ -119,7 +119,7 @@ Studio creates the activity, the `GuestbooksActivity` class and
 to edit these files yet.
 
 Now you need for the app to open this new activity when login succeeds. You'll 
-do this by using an *intent* in the `onLoginSuccess` method of `MainActivity`. 
+do this by using an *intent* in `MainActivity`'s `onLoginSuccess` method. 
 In short, Android intents are messaging objects that you can use to launch other 
 activities. For more information, see 
 [this guide on intents in Android's documentation](http://developer.android.com/guide/components/intents-filters.html). 
@@ -141,6 +141,6 @@ log in when prompted. When login succeeds, the new activity opens.
 ![Figure 2: The app takes you to the new activity after you log in.](../../images/android-login-success-intent.png)
 
 Nice work! You've successfully implemented portal authentication in the Android 
-app. It didn't take you that long, either. All the app does though is log in to 
-the portal; it doesn't display any portal content. You'll take care of this 
+app. It didn't take you that long, either. You've only got signing in working so
+far, though; it doesn't display any portal content. You'll take care of this 
 next.
