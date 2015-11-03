@@ -1,4 +1,4 @@
-# Discuss, Ask, and Answer Using the Message Boards [](id=discuss-ask-and-answer-using-the-message-boards)
+#  Creating Forums with Message Boards
 
 Liferay's Message Boards portlet is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of
@@ -17,13 +17,37 @@ site while Liferay does the integration work for you.
 
 The Message Boards portlet offers many configuration options. They are
 straightforward to use and are the reason why this portlet is a full-featured
-forum application for your web site. To get started, add a Message Boards
-portlet to your site. Once it is added, click the *Options* icon in the
-portlet's title bar and click *Configuration*. There are two rows of tabs. The
-first tab in the top row is titled *Setup*. This is where you can configure the
-application the way you want it to behave on your site.
+forum application for your site. Let's create a Message Board. 
 
-## General [](id=general)
+## Creating Message Boards
+
+A Liferay portal instance, site, or page can have a Message Board. Sites include
+a regular site, an Organization site, or a user's profile site or dashboard
+site. The Message Boards Administration portlet lets you access all the options
+to configure a Message Board. Each portal and site has a Message Board instance
+built-in. If you want to work with a Message Board scoped to a page, you must
+first add the Message Board portlet to that page and set its scope to the page. 
+
+To scope a Message Board to a page, first add a Message Boards portlet to the
+page. Then click the portlet's *Configuration* icon and select the *Scope*
+tab. From the *Scope* dropdown list, select the option with page's name, or *+
+PageName (Create New)*, if the scope hasn't been created already.
+
+Your Message Board is now available to work with in Message Boards
+Administration. First, navigate in the *Product Menu* to the *Content* option
+for your site. The scope label shows in darkened font below the *Content*
+header. The initial scope label is *Default Scope*, which is the site's scope.
+To switch to a particular page scope, click the *Gear* icon to list the
+available scopes, and select the scope with the page's name. Finally, select
+*Message Boards*. The Message Boards Administration portlet appears. 
+
+Initially, your Message Board has no threads; and that's good, because you need
+to configure it for your site. Click the *Options* icon in the portlet's title
+bar and click *Configuration*. There are two rows of tabs. The first tab in the
+top row is titled *Setup*. This is where you can configure the Message Board the
+way you want it to behave.
+
+### General Setup
 
 The first tab beneath *Setup* is labeled *General*. Here, you can enable
 anonymous posting, subscribe by default, flags, ratings, and thread as question
@@ -69,51 +93,48 @@ mark as question box in the new thread window. Threads marked as questions
 display the flag "waiting for an answer." Subsequent replies to the original
 message can be marked as an answer.
 
-Lastly, you can set the amount of time a post is displayed on the portlet's 
+Lastly, you can set the amount of time a post is displayed on the Message Board's 
 *Recent Posts* tab until it is taken away. You have options of 24 hours, 7 days, 
 30 days, and 365 days. After the time has passed, the post is removed from 
 *Recent Posts*. However, the post itself isn't deleted. It remains accessible 
 elsewhere on the message board.
 
-## Email From [](id=email-from)
+### Email Setup
 
-This tab allows you to configure the name and email address from which message
-board email notifications are sent. The default name and email address are those
-of the default administrator account: The name is `Test Test` and the email
-address is `test@liferay.com`. Make sure to update this email address to a valid
-one that can be dedicated to notifications.
+**Email From** - This tab allows you to configure the name and email address
+from which message board email notifications are sent. The default name and
+email address are those of the default administrator account: The name is `Test
+Test` and the email address is `test@liferay.com`. Make sure to update this
+email address to a valid one that can be dedicated to notifications.
 
-## Message Added Email [](id=message-added-email)
+**Message Added Email** - This tab allows you to customize the email message
+that users receive when a message is added to a topic to which they are
+subscribed. 
 
-This tab allows you to customize the email message that users receive when a
-message is added to a topic to which they are subscribed.
+-   *Enabled:* allows you to turn on the automatic emails to subscribed
+	users. Uncheck the box to disable the message added emails.
 
-**Enabled:** allows you to turn on the automatic emails to subscribed users.
-Uncheck the box to disable the message added emails.
+-   *Subject:* lets you choose a prefix to be prepended to the subject
+	line of the email. This is usually done so that users can set up message
+	filters to filter the notifications to a specific folder in their email
+	clients.
 
-**Subject:** lets you choose a prefix to be prepended to the subject
-line of the email. This is usually done so that users can set up message
-filters to filter the notifications to a specific folder in their email
-clients.
+-   *Body:* allows you to write some content that should appear in the body
+	of the email.
 
-**Body:** allows you to write some content that should appear in the body of
-the email.
+-   *Signature:* lets you add some content to appear as the signature of the
+	email.
 
-**Signature:** lets you add some content to appear as the signature of the
-email.
+-   *Definition of Terms* This section defines certain variables which you
+	can use in the fields above to customize the email message. Some of
+	these variables are for the message board category name, the site name,
+	and more. 
 
-Below the fields is a section called *Definition of Terms* which defines
-certain variables which you can use in the fields above to customize the email
-message. Some of these variables are for the message board category name, the
-site name, and more.
+**Message Updated Email** - The Message Updated Email tab is identical to
+    the Message Added Email tab, except it defines the email message that users
+    receive whenever a topic is updated.
 
-## Message Updated Email [](id=message-updated-email)
-
-The Message Updated Email tab is identical to the Message Added Email tab,
-except it defines the email message that users receive whenever a topic is
-updated.
-
-## Thread Priorities [](id=thread-priorities)
+### Thread Priorities [](id=thread-priorities)
 
 You can define custom priorities for message threads on this tab. These allow
 administrators to tag certain threads with certain priorities in order to
@@ -126,7 +147,7 @@ There is also a field on this form that allows you to select a localized
 language for your priorities. If you need to do this, you can select the
 language from the selection box.
 
-## User Ranks [](id=user-ranks)
+### User Ranks [](id=user-ranks)
 
 On this tab, users can be ranked according to the number of messages they have
 posted. You can set up custom ranks here. Defaults have been provided for you,
@@ -161,7 +182,7 @@ rank.
 As with thread priorities, on this tab you can define whether your ranks are
 localized in a particular language.
 
-## RSS [](id=rss)
+### RSS [](id=rss)
 
 Message board threads can be published as RSS feeds. This tab allows you to
 enable/disale RSS subscriptions and define how the feeds are generated.
@@ -174,9 +195,9 @@ an abstract, or just the title of a thread.
 
 **Format:** allows you to choose the format: RSS 1.0, RSS 2.0, or Atom 1.0.
 
-## Permissions [](id=permissions)
+### Message Board Permissions [](id=permissions)
 
-The default page that the Message Boards portlet displays has three buttons on
+The default page that the Message Boards Administration portlet displays has three buttons on
 it. Click the one labeled *Permissions*. This allows you to define which roles
 have the ability to add a category of threads or to ban abusive users from the
 message boards. Select the roles and permissions you want to configure and then
@@ -269,7 +290,7 @@ notifications. By default the following line is set in your portal properties:
 This property creates a special MX (mail exchange) subdomain to receive all
 portal-related email (e.g., events.liferay.com). If you don't want to use the
 subdomain approach, you can unset this value to tell Liferay to use the *Email
-From* address specified in the portlet preferences to receive message board
+From* address specified in the Message Board's configuration to receive message board
 notification email replies. For example, the *Email From* address could be set
 to *replies\@liferay.com*.
 
@@ -448,7 +469,7 @@ has a list of who the top posters to your message boards are. The Banned Users
 tab shows all of the users who have been banned from posting on the message
 boards.
 
-## Posting New Threads [](id=posting-new-threads)
+### Posting New Threads [](id=posting-new-threads)
 
 To post a new thread simply select the *Post New Thread* button. You will see a
 message editing form. The body field on this form is different from that of the
@@ -474,6 +495,8 @@ alignments, quotation blocks, code blocks, different fonts and font sizes, and
 more. There are even a bunch of smiley faces that you can use.
 
 Figure 9.21: Liferay's dynamic editor even includes a wide range of smiley faces!05-emoticons.png
+
+### Participating in Message Board Threads
 
 Users who have Moderator access to the board can modify the priority of
 messages. You can also use the editor to quote from messages that you are
@@ -504,7 +527,7 @@ management features. Posts on the message board show users' pictures if they
 have uploaded one for themselves, as well as the dates that users created an ID
 on your site.
 
-## Message Board Administrative Functions [](id=message-board-administrative-functions)
+## Managing Message Boards
 
 The Message Boards portlet provides for the day to day administration of the
 message threads. You may wish to separate this function out by a role, and then
@@ -568,7 +591,7 @@ User*. Click this link to ban the user from the message boards.
 
 If after taking this action the user apologizes and agrees to stop his or her
 abusive behavior, you can choose to reinstate the user. To do this, click the
-*Banned Users* tab at the top of the Message Boards portlet. This will show a
+*Banned Users* tab at the top of the Message Board. This will show a
 list of all banned users. Find the user in the list and select *Unban this
 User*.
 
