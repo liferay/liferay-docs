@@ -104,8 +104,9 @@ documents.
 
 You may have noticed that some of your updated imports show errors stating that
 they do not exist. This is because many of the updated APIs have been migrated
-to independent modules, and your application is not aware of them. To fix these
-dependency issues, follow the instructions below.
+to independent modules, and your application is not aware of them. You'll fix
+these dependency issues in the instructions below. Then you'll generate your
+application's WAR file and deploy it to a Liferay Portal 7.0 instance.
 
 1.  Use this [reference document](/develop/reference/-/knowledge_base/7-0/calling-migrated-services-from-legacy-plugins)
     to find classes that were exposed as Liferay Portal API in 6.2, but have
