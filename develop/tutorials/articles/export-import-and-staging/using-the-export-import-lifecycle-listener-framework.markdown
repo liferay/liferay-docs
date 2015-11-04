@@ -14,16 +14,23 @@ short list of events you can listen for:
 - An entity export has succeeded
 
 The concept of listening for export/import and staging events sounds cool, but
-you may be curious as to why listening for certain events is useful. Liferay
-Portal uses this framework by default in several cases. For instance, Liferay
-clears the cache when a web content import process finishes. To accomplish this,
-the lifecycle listener framework listens for an event that specifies that a web
-content import process has completed. Once that event occurs, there is code that
-reacts on that event by automatically clearing the cache. You could implement
-this sort of functionality yourself for any Portal event. You can listen for a
-specific event, and then complete an action based on when that event occurs. For
-a list of events you can listen for during Export/Import and Staging processes,
-see
+you may be curious as to why listening for certain events is useful. The ability
+to react upon events supplies you with much more knowledge about your
+application's state. By having more knowledge over how your application is
+running, you have more power over how it performs. Suppose you'd like a detailed
+log of when certain events occur during an import process. You could configure a
+listener to listen for certain import events you're interested in, and print
+information about those events to your console when they occur.
+
+Liferay Portal uses this framework by default in several cases. For instance,
+Liferay clears the cache when a web content import process finishes. To
+accomplish this, the lifecycle listener framework listens for an event that
+specifies that a web content import process has completed. Once that event
+occurs, there is code that reacts on that event by automatically clearing the
+cache. You could implement this sort of functionality yourself for any Portal
+event. You can listen for a specific event, and then complete an action based on
+when that event occurs. For a list of events you can listen for during
+Export/Import and Staging processes, see
 [ExportImportLifecycleConstants](https://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portlet/exportimport/lifecycle/ExportImportLifecycleConstants.html).
 
 In this tutorial, you'll learn how to use the `ExportImportLifecycleListener`

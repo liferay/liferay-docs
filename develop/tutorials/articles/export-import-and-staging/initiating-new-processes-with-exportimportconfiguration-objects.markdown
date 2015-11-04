@@ -6,35 +6,47 @@ your Portal's *Publishing Tools* menu. You can also, however, start these
 processes programatically. This lets you provide new interfaces or mimic the
 functionality of these features in your own application.
 
-For example, suppose you want your application to have an export feature, which
-could be used to export content from the application as a LAR file. To offer
-this feature, you'd need to call services offered by the `ExportImportService`
-interface. All the methods in this interface require an
-`ExportImportConfiguration` object, which is a controller object that contains
-many parameters and settings that are required during the exportation process of
-content from Liferay. The `ExportImportConfiguration` is essential to the export
-functionality of your custom application. Liferay provides a way to generate
-these configuration objects, so you can easily pass them in your service
-methods.
+Providing the ability to stage your application's assets makes using your
+application much more site administrator-friendly. Your new assets no longer
+have to be saved somewhere off-site until they're ready to be published. You can
+publish them to a staging environment, test out their look-and-feel, and save
+them to a page. Once the time is right for publishing, you can publish your
+application's assets to the live site with one mouse click. The export/import
+feature offers similar conveniences; if you want to export your application's
+assets to use in another place, or you need to clear your application, but save
+its data, you can implement the export feature. Implementing the import feature
+allows for your assets/data to be imported back into your application.
 
-In this tutorial, you'll learn about the `ExportImportConfiguration` framework
-and how you can take advantage of provided services and factories to create
-these controller obects. Once they're created, you can easily fulfill your
-export/import and staging needs.
+Both the export/import and staging features can be easily implemented in your
+custom application. To initiate a export/import or staging process, you'll need
+to pass in an `ExportImportConfiguration` object. This object encapsulates many
+parameters and settings that are required during the exportation/importation
+process of content from/to Liferay. Having one single object with all your
+necessary data makes executing these frameworks quick and easy.
 
-You can initiate a new export/import or staging process by creating an
-`ExportImportConfiguration` object. This object serves as the controller object,
-which sets up the export/import or staging process. The
-`ExportImportConfiguration` object contains a large set of parameters and
-settings that are processed during export/import and staging. Liferay provides
-an extensive amount of services that can be called to initiate various
-export/import or staging processes, and many of these services use the
-`ExportImportConfiguration` object.
+For example, suppose you want your custom OSGi application to have an export
+feature, which users could use to export content from their application as a LAR
+file. To offer this feature, you'd need to call services offered by the
+`ExportImportService` interface. All of the methods in this interface require an
+`ExportImportConfiguration` object, which is a controller object that
+encapsulates many parameters and settings that are required during the
+exportation process of content from Liferay. Liferay provides an extensive
+amount of services that can be called to initiate various export/import or
+staging processes, and many of these services use the
+`ExportImportConfiguration` object. Therefore, the `ExportImportConfiguration`
+object is essential to the export functionality of your custom application.
+Liferay provides a way to generate these configuration objects, so you can
+easily pass them in your service methods.
 
 It's also important to know that a `ExportImportConfiguration` is a Portal
 entity, similar to `User` or `Group`. This means that the
 `ExportImportConfiguration` framework offers local and remote services, models,
 persistence classes, etc.
+
+In this tutorial, you'll learn about the `ExportImportConfiguration` framework
+and how you can take advantage of provided services and factories to create
+these controller obects. Once they're created, you can easily fulfill your
+export/import and staging needs.
 
 Next, you'll create an `ExportImportConfiguration` object and use it to initiate
 your custom export/import or staging process.
