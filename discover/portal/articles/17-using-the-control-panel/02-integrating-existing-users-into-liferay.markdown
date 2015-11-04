@@ -871,10 +871,10 @@ you've already set up one Liferay instance as a SAML Identity Provider, use a
    Liferay up as a SAML Service Provider!
 
 Note that the SAML Service Provider session is tied to the normal session on
-the application server. Session expiration on the application server does not
-terminate the session on the Service Provider. It does not initiate single
-logout. If you'd like to configure Liferay's SAML Service Provider Settings,
-navigate to the Service Provider tab of the SAML Admin Control Panel portlet.
+the application server. Session expiration on the application server terminates
+the session on the Service Provider but does not initiate single logout. If
+you'd like to configure Liferay's SAML Service Provider Settings, navigate to
+the Service Provider tab of the SAML Admin Control Panel portlet.
 
 The Service Provider tab includes these options:
 
@@ -937,13 +937,11 @@ Available Liferay attributes are: `emailAddress`, `screenName`, `firstName`,
 
 +$$$
 
-**Note:**
-
-The previous two sections explained how to use the SAML 2.0 Provider EE
-plugin's Control Panel interface to configure Liferay as an Identity Provider
-or as a Service Provider. Such configurations should only be made through the
-SAML Control Panel interface and not via properties. Some features of the SAML
-2.0 Provider EE plugin are not available as properties.
+**Note:** The previous two sections explained how to use the SAML 2.0 Provider
+EE plugin's Control Panel interface to configure Liferay as an Identity
+Provider or as a Service Provider. Such configurations should only be made
+through the SAML Control Panel interface and not via properties. Some features
+of the SAML 2.0 Provider EE plugin are not available as properties.
 
 $$$
 
@@ -980,15 +978,21 @@ $$$
 
 For reference, here are a few important SAML URLs.
 
-For a Liferay instance that has been configured as an Identity Provider, this
-URL is the default location of Liferay's metadata XML file:
+This URL is the default location of Liferay's metadata XML file:
 
-    [host]:[port]/c/portal/saml/metadata 
+    [host]:[port]/c/portal/saml/metadata
+
+Note that when configuring SAML for Liferay, no importing of SAML certificates
+is required. Liferay reads certificates from the SAML metadata XML file. If you
+want a third-party application like Salesforce to read a Liferay SAML
+certificate, you can export the Liferay certificate from the keystore. The
+default keystore file is `[Liferay Home]/data/keystore.jks`. The exported
+certificate can be imported by a third-party application like Salesforce.
 
 With the URL below, you can trigger an Identity Provider initiated SSO. The
-`entityId` parameter is the entity ID of the Service Provider you want to log in
-to. The `RelayState` parameter is optional. It specifies a landing page on the
-Service Provider.
+`entityId` parameter is the entity ID of the Service Provider you want to log
+in to. The `RelayState` parameter is optional. It specifies a landing page on
+the Service Provider.
 
     [host]:[port]/c/portal/saml/sso?entityId=[SP entity id]&RelayState=[landing page on SP]
 
