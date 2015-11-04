@@ -1,0 +1,4 @@
+Bundle-Name: Greeting API
+Bundle-SymbolicName: com.liferay.docs.greetingapi
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: com.liferay.docs.greetingapi
