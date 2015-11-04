@@ -2294,7 +2294,8 @@ this tag.
 #### How should I update my code? [](id=how-should-i-update-my-code-63)
 
 Embedding another portlet is only supported from a template. You should embed
-the portlet by passing its name in a call to `theme.runtime`.
+the portlet by passing its name in a call to `theme.runtime` or using the right
+tag in FreeMarker.
 
 **Example**
 
@@ -2304,7 +2305,9 @@ In Velocity:
 
 In FreeMarker:
 
-    ${theme.runtime("145")
+    <#assign liferay_portlet = PortalJspTagLibs["/WEB-INF/tld/liferay-portlet-ext.tld"] />
+
+    <@liferay_portlet["runtime"] portletName="145" />
 
 #### Why was this change made? [](id=why-was-this-change-made-63)
 
@@ -2442,6 +2445,44 @@ site called Control Panel in the Sites API.
 
 ---------------------------------------
 
+### Changed Exception Thrown by Documents and Media Services When Duplicate Files are Found [](id=changed-exception-thrown-by-documents-and-media-services-when-duplicate-fil)
+- **Date:** 2015-Sep-24
+- **JIRA Ticket:** LPS-53819
+
+#### What changed? [](id=what-changed-68a)
+
+When a duplicate file entry is found by Documents and Media (D&M) services, a
+`DuplicateFileEntryException` will be thrown. Previously, the exception
+`DuplicateFileException` was used.
+
+The `DuplicateFileException` is now raised only by `Store`
+implementations.
+
+#### Who is affected? [](id=who-is-affected-68a)
+
+Any caller of the `addFileEntry` methods in `DLApp` and `DLFileEntry`
+local and remote services is affected.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-68a)
+
+Change the exception type from `DuplicateFileException` to
+`DuplicateFileEntryException` in `try-catch` blocks surrounding calls
+to D&M services.
+
+#### Why was this change made? [](id=why-was-this-change-made-68a)
+
+The `DuplicateFileException` exception was used in two different
+contexts:
+- When creating a new file through D&M and a row in the database
+already existed for a file entry with the same title.
+- When the stores tried to save a file and the underlying storage unit
+(a file in the case of `FileSystemStore`) already existed.
+
+This made it impossible to detect and recover from store corruption
+issues, as they were undifferentiable from other errors.
+
+---------------------------------------
+
 ### Removed All References to Windows Live Messenger [](id=removed-all-references-to-windows-live-messenger)
 - **Date:** 2015-Oct-15
 - **JIRA Ticket:** LPS-30883
@@ -2502,11 +2543,11 @@ longer continue to support it.
 
 ---------------------------------------
 
-### Removed Support for AIM, ICQ, MySpace, and Yahoo Messenger
+### Removed Support for AIM, ICQ, MySpace, and Yahoo Messenger [](id=removed-support-for-aim-icq-myspace-and-yahoo-messenger)
 - **Date:** 2015-Oct-22
 - **JIRA Ticket:** LPS-59716
 
-#### What changed?
+#### What changed? [](id=what-changed-69)
 
 Liferay no longer supports integration with MySpace and AIM, ICQ, and Yahoo
 Messenger instant messaging services. The corresponding `aimSn`, `icqSn`,
@@ -2561,12 +2602,12 @@ The following portal properties have been removed:
 - `ym.login`
 - `ym.password`
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-69)
 
 This affects developers who use any of the classes, constants, methods, or
 properties listed above.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-69)
 
 When updating or adding a user or contact using one of the changed methods
 above, remove the `aimSn`, `icqSn`, `mySpaceSn`, and `ymSn` arguments from the
@@ -2578,18 +2619,18 @@ columns `aimSn`, `icqSn`, `mySpaceSn`, and `ymSn`.
 Also, a reference to any one of the removed portal properties above no longer
 returns a value.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-69)
 
 The services removed in this change are no longer popular enough to merit
 continued support.
 
 ---------------------------------------
 
-### Removed All Methods from SchedulerEngineHelper that Explicitly Schedule Jobs Using SchedulerEntry or Specify MessageListener Class Names
+### Removed All Methods from SchedulerEngineHelper that Explicitly Schedule Jobs Using SchedulerEntry or Specify MessageListener Class Names [](id=removed-all-methods-from-schedulerenginehelper-that-explicitly-schedule-job)
 - **Date:** 2015-Oct-29
 - **JIRA Ticket:** LPS-59681
 
-#### What changed?
+#### What changed? [](id=what-changed-70)
 
 The following methods were removed from `SchedulerEngine`:
 
@@ -2597,12 +2638,12 @@ The following methods were removed from `SchedulerEngine`:
 - `SchedulerEngineHelper.addJob(Trigger, StorageType, String, String, Object, String, String, int)`
 - `SchedulerEngineHelper.schedule(SchedulerEntry, StorageType, String, int)`
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-70)
 
 This affects developers that use the above methods to schedule jobs into the
 `SchedulerEngine`.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-70)
 
 You should update your code to call one of these methods:
 
@@ -2618,7 +2659,7 @@ should follow these steps:
     register your `SchedulerEventMessageListener`.
 
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-70)
 
 The deleted methods provided facilities that aren't compatible with using
 declarative services in an OSGI container. The new approach allows for proper
