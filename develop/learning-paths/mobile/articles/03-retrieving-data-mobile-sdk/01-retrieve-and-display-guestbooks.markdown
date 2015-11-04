@@ -119,8 +119,8 @@ in the constructor by the `getLong` and `getString` methods. To see how the
 `Guestbook` parameters are defined in the portlet, see the 
 [Liferay MVC Learning Path article on Service Builder](/develop/learning-paths/mvc/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
 For now, the only parameters you really need in this class are `guestbookId` and 
-`name`. However, you'll need the rest later. It's simpler to add support for all
-of them now. 
+`name`. Since, however, you'll need the rest later, it's simpler to add support
+for all of them now. 
 
 You should also note the `toString` method in this class. Since all it does is
 return a guestbook's name, it's very simple, but very important. To render
@@ -271,7 +271,7 @@ create a session from the pre-existing session in the app. You might now be
 thinking, "Whoa there! I haven't created a session yet!" But actually, you have; 
 you just didn't know it. Successful authentication with Login Screenlet creates 
 a session that you can access with Screens's `SessionContext` class. Because 
-you're counting on that session, however, you *must* use Login Screenlet. 
+you're counting on that session, however, you *must* use the Login Screenlet. 
 
 The `getGuestbooks()` method then creates a new `GetGuestbooksCallback` instance 
 and sets it as the session's callback. Next, the session is used to create a 
@@ -280,9 +280,9 @@ services, as is done in the `try` block by
 `service.getGuestbooks(LiferayServerContext.getGroupId())`. The 
 `LiferayServerContext` class, another Screens class, lets you retrieve the 
 values you set in `server_context.xml`. It's used here to retrieve the group ID 
-(site ID) needed to make the server call. As you can see, using Login Screenlet 
-provides a great deal of flexibility, even when you don't need to use any other 
-Screenlets.
+(site ID) needed to make the server call. As you can see, using the Login
+Screenlet provides a great deal of flexibility, even when you don't need to use
+any other Screenlets.
 
 Now you can call your new `getGuestbooks()` method. Place the `getGuestbooks()` 
 call in the `onCreate` method of `GuestbooksActivity`, following the call to 
@@ -339,11 +339,13 @@ to `GuestbooksActivity`:
 Like the code in `onCreate`, this method also creates a `Toolbar` and sets it as 
 the Action Bar. This code also sets the Action Bar's title to an empty string. 
 This prevents the activity's title from showing in the Action Bar before the app
-can retrieve guestbooks from the portal. Now you need to call `initActionBar()` 
-in `onCreate`. Place the call immediately above the `getGuestbooks()` call. Then 
-delete the original `Toolbar` initialization code in `onCreate`; it's no longer 
-needed since you included it in `initActionBar`. The first few lines of the 
-`onCreate` method should now look like this: 
+can retrieve guestbooks from the portal. 
+
+Now you need to call `initActionBar()` in `onCreate`. Place the call immediately
+above the `getGuestbooks()` call. Then delete the original `Toolbar`
+initialization code in `onCreate`; it's no longer needed since you included it
+in `initActionBar`. The first few lines of the `onCreate` method should now look
+like this: 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -416,6 +418,9 @@ this method now:
         drawerListView.setAdapter(_adapter);
     }
 
+<!-- There is no R.id.drawer_list_view. I substituted drawer_list, and it seems
+to work except I get an additional menu item called Android Studio.  -Rich -->
+
 The `initDrawer` method's first few lines match the drawer initialization code 
 in `onCreate`. You should therefore delete this code in `onCreate`. You don't 
 need it there since you call it via `initDrawer` instead. The last part of 
@@ -487,11 +492,13 @@ There's one more thing you need to take care of before launching the app. Open
 the layout file `nav_header_guestbooks.xml`. The parent `LinearLayout` has a 
 height of `160dp`. This value corresponds to `@dimen/nav_header_height`. To 
 prevent the drawer header and guestbook list from overlapping, you must pad the 
-top of the drawer's `ListView` by this value. Add the following to the 
+top of the drawer's `ListView` by this value. Add the following code to the 
 `ListView` in `activity_guestbooks.xml`, below the `android:layout_height` 
 setting:
 
     android:paddingTop="@dimen/nav_header_height"
+
+<!-- There is no ListView in this file. -Rich -->
 
 That's it! Run the app. After you log in, the app retrieves the guestbooks from 
 the portal and displays the first guestbook's name in the Action Bar.
