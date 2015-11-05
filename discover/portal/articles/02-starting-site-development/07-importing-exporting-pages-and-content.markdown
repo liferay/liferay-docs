@@ -128,4 +128,4 @@ fills the fields and options for exporting pages and their content. Once you
 click *Export* to confirm the configuration settings, your LAR file is
 generated.
 
-Next, you'll discuss creating site teams..
+Next, you'll discuss creating site teams.

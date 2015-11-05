@@ -279,51 +279,86 @@ you'd like to copy to staging. You'll learn about many of the collaboration
 portlets listed under the Staged Portlets heading when we come to the
 [Collaboration Suite](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
 chapter. For now, you just need to be aware that you can enable or disable
-staging for any of these applications. Why might you want to enable staging for some
-application types but not others? In the case of collaborative portlets, you
-probably *don't* want to enable staging since such applications are designed for
-user interaction. If their content were staged, you'd have to manually publish
-your site whenever somebody posted a message on the message boards to make that
-message appear on the live site. Generally, you'll want web content to be staged
-because end users aren't creating that kind of content--web content is the stuff
-you publish to your site. But applications like the Message Boards or Wiki would
-likely benefit from *not* being staged. Notice which applications are marked for
-staging by default: if you enable staging and accept the defaults, staging is
-*not* enabled for the collaborative portlets.
+staging for any of these applications. Why might you want to enable staging for
+some application types but not others? In the case of collaborative portlets,
+you probably *don't* want to enable staging since such applications are designed
+for user interaction. If their content were staged, you'd have to manually
+publish your site whenever somebody posted a message on the message boards to
+make that message appear on the live site. Generally, you'll want web content to
+be staged because end users aren't creating that kind of content--web content is
+the stuff you publish to your site. But applications like the Message Boards or
+Wiki would likely benefit from *not* being staged. Notice which applications are
+marked for staging by default: if you enable staging and accept the defaults,
+staging is *not* enabled for the collaborative portlets.
 
-The listed applications, or content groups, contain one or more specific entity.
-For example, selecting the Web Content application does not mean you're only
-selecting web content itself, but also web content folders.
+The listed applications, or content groups, contain one or more specific
+entities. For example, selecting the Web Content application does not mean
+you're only selecting web content itself, but also web content folders.
 
-<!---->
+Certain content types can be linked together and can reference each other on
+different levels. One of the responsibilities of staging is to discover and
+maintain these references when publishing. Site administrators and content
+creators have control over the process on different levels: staging can be
+enabled for a content group and a content group can be selected for publication.
 
-Certain content types can be linked together, they can reference each other on
-different levels. One the several responsibilities of staging is to discover and
-maintain these references when publishing and watch over data integrity.
+Besides managing the portlet-specific content, the portal also operates with
+several special content types such as pages or users. For instance, pages are a
+part of the site and can reference other content types, but in a special
+way. The page references portlets, which means publishing a page also implies
+publishing its portlets.
 
-This list of content groups are supported by default in the portal. This does
-not mean though it cannot be extended, developers can write plugins supporting
-entities like these, and they can write the proper data handler to support
-staging too.
+The content gives the backbone of the site; however, content alone is useless.
+To display content to the end user, you'll need portlets as the building blocks
+for your site.
 
-A site’s content is always a candidate for publication and it is definitely
-subject of the staging and part of the publishing process. Site administrators
-and content creators have control over the process on different level: staging
-can be enabled for a content group and also a content group can be selected for
-publication.
+Before you begin exploring the Staging UI, it's important to understand the
+publishing process for Staging, and making informed decisions so you use the
+staging environment efficiently and effectively.
 
-Special content types
+## Publishing Staged Content Efficiently
 
-Besides the normal content the portal also operates with several special content
-types such as pages or users. There are no general rule for these special
-content on how they are handled in staging, it varies by the content type. One
-of the most important special content type is the page, which is also part of
-the site and can reference other content types, but also in a special way. The
-page references portlets and publishing a page will also imply publishing it’s
-portlets.
+Now that you have a firm grasp on how staging works, you'll dive deeper into the
+publication process and some prerequisites you should follow before publishing.
+By understanding how the process works, you can make smart and informed
+decisions about how you want to publish your site's content.
 
-The content gives the backbone of the site, however the content by themselves
-useless. In case we need business logic around them, or we want to display to
-the end user we will need portlets as the next building block for our site.
+### Understanding the Publication Process
 
-<!---->
+In simple terms, publication is the process where all content, referenced
+content, portlets and their preferences, pages, users, etc. is transferred from
+the staging scope to the live site. If you've enabled remote staging, this
+process involves network communication with another remote site. From a low
+level perspective, staging is an equivalence relation where entities are being
+mirrored to a different location. From a high level perspective, you can think
+of the staging publication process in three phases: export, validation, and
+import. These parts are executed sequentially.
+
+During the export phase, the publication configuration is processed, which
+defines the site's contents and portlets. This phase also gathers the obligatory
+referenced entities that will be required on the live site. Then everything
+according to the publication parameters has been processed into the portal's own
+file format, and that file has been stored locally or transferred to the remote
+live portal instance.
+
+Next, the validation phase determines if it's possible to start the import
+process. This phase verifies the file's version and its integrity, checks for
+additional system information like language settings, and validates there is no
+missing content.
+
+Lastly, the import phase makes any necessary updates or additions to the site's
+content, layouts, and portlets according to the publishing parameters. If
+everything is verified and correct, the staged content is published to your live
+site.
+
+A crucial factor for successfully publishing staged content is data integrity.
+If anything is not successfully verified during the publication process, all
+staged data is saved, and the orginal state of the site is restored, discarding
+the current publication. This is a necessary action to safeguard against
+publishing incomplete information, which could break an otherwise well-designed
+live site.
+
+Next, you'll learn about staging best practices and prerequisites to follow for
+a seamless staging experience.
+
+### Planning Ahead for Staging
+
