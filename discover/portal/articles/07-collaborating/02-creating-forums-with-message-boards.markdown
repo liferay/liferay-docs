@@ -1,111 +1,119 @@
 #  Creating Forums with Message Boards
 
-Liferay's Message Boards portlet is a state of the art forum application
-similar to many forums in which you may have participated. The difference, of
-course, is that Liferay's message boards can inherit the abilities of the
-Liferay development platform to provide an integrated experience that others
-cannot match.
+Liferay's Message Boards is a state of the art forum application similar to many
+forums in which you may have participated. The difference, of course, is that
+Liferay's message boards can inherit the abilities of the Liferay development
+platform to provide an integrated experience that others cannot match.
 
 There are countless web sites out there where it is clearly evident that there
 is no link whatsoever between the main site and the message boards. In some
 cases, users are even required to register twice: once for the main site and
 once for the message boards. Sometimes it is three times: for the site, for the
 message boards, and for the shopping cart. By providing a message boards
-portlet along with all of the other applications, Liferay provides a unique,
+application along with all of the other applications, Liferay provides a unique,
 integrated approach to building web sites. You can concentrate on building your
 site while Liferay does the integration work for you.
 
-The Message Boards portlet offers many configuration options. They are
-straightforward to use and are the reason why this portlet is a full-featured
-forum application for your site. Let's create a Message Board. 
+Message Boards offers many configuration options. They are straightforward to
+use and are the reason why it's a full-featured forum application for your site.
+Let's create a Message Board. 
 
 ## Creating Message Boards
 
-A Liferay portal instance, site, or page can have a Message Board. Sites include
-a regular site, an Organization site, or a user's profile site or dashboard
-site. The Message Boards Administration portlet lets you access all the options
-to configure a Message Board. Each portal and site has a Message Board instance
-built-in. If you want to work with a Message Board scoped to a page, you must
-first add the Message Board portlet to that page and set its scope to the page. 
+You can create a Message Board instance for a portal instance, a site, or page.
+A portal's Message Board can be used on any of its pages. A Message board
+can be scoped to a site, including a regular site, an Organization's site, or a
+user's profile site or dashboard site. From the Blogs interface in the Product
+Menu, you access all the options to administer Message Boards. Each portal and
+site has a Message Board instance built-in. If you want to work with a Message
+Board scoped to a page, you must create the page scope from a Message Boards
+application on that page.
 
-To scope a Message Board to a page, first add a Message Boards portlet to the
-page. Then click the portlet's *Configuration* icon and select the *Scope*
-tab. From the *Scope* dropdown list, select the option with page's name, or *+
-PageName (Create New)*, if the scope hasn't been created already.
+To scope a Message Board to a page, first add a Message Boards application to
+the page. Then click the app's *Configuration* icon and select *Scope*, to list
+the available scopes. Select the scope with page's name, or *+ PageName (Create
+New)*, if the scope hasn't been created already. Your Message Board is now
+scoped to the page and available to work with in Site Administration. 
 
-Your Message Board is now available to work with in Message Boards
-Administration. First, navigate in the *Product Menu* to the *Content* option
-for your site. The scope label shows in darkened font below the *Content*
-header. The initial scope label is *Default Scope*, which is the site's scope.
-To switch to a particular page scope, click the *Gear* icon to list the
-available scopes, and select the scope with the page's name. Finally, select
-*Message Boards*. The Message Boards Administration portlet appears. 
+To administer a Message Board, open the *Product Menu* and navigate the
+*Content* section for your site or global scope. If a site has one or more page
+scopes, its current scope shows in darkened font below the *Content* header.
+*Default Scope* is the site's scope. To switch to a particular page scope, click
+the *Gear* icon to list the available scopes, and select the scope with the
+page's name. Finally, select *Message Boards* from under the *Content* heading.
+The Message Boards administration screen appears. 
 
-Initially, your Message Board has no threads; and that's good, because you need
-to configure it for your site. Click the *Options* icon in the portlet's title
-bar and click *Configuration*. There are two rows of tabs. The first tab in the
-top row is titled *Setup*. This is where you can configure the Message Board the
-way you want it to behave.
+![Figure 1: A Message Board starts empty, ready for you to configure for your purposes.](../../images/message-boards-administration.png)
+
+Initially, a Message Board has no categories or threads; and that's good,
+because you need to configure it for your purposes. In the Message Boards tool
+bar, navigate to *Options &rarr; Configuration*, to bring up the configuration
+screen. This is where you can configure Message Boards for the behavior you
+want. 
 
 ### General Setup
 
-The first tab beneath *Setup* is labeled *General*. Here, you can enable
-anonymous posting, subscribe by default, flags, ratings, and thread as question
-by default. You can also choose whether you want the message format to be BBcode
-or HTML and choose how long posts display on the message board. Anonymous
-posting, subscribe by default, flags, and ratings are selected by default and
-the default message format is BBcode.
+From the *General* configuration section, you can enable anonymous posting,
+subscribe by default, flags, ratings, and thread as question by default. You can
+also choose whether to use BBCode or HTML as your message format. You can also
+choose how long posts display on the message board. Anonymous posting, subscribe
+by default, flags, and ratings are selected by default and the default message
+format is BBCode. 
 
-Enabling *Allow Anonymous Posting* allows users without an account on the system
-to post messages to your message boards. Whether or not you you'll want to do
-this depends on the type of community you are building. Allowing anonymous
-posting opens your site to anyone who might want to spam your forums with
-unwanted or off topic advertising messages. For this reason, most of those who
-implement message boards turn anonymous posting off by unchecking this box.
+Enabling *Allow Anonymous Posting* allows guest users to post messages to your
+message boards. Whether or not you should do this depends on the type of
+community you are building. Allowing anonymous posting opens your site to anyone
+who might want to spam your forums with unwanted or off topic advertising
+messages. For this reason, most message boards administrators turn anonymous
+posting off by unchecking this box.
 
 Enabling the *Subscribe by Default* option automatically subscribes users to
 threads they participate in. Whenever a message in a thread is added or updated,
 Liferay sends a notification email to each user who is subscribed to the thread. 
 
 You can set the *Message Format* to either BBCode or HTML. This determines the
-markup language of users' actual message board posts. Different WYSIWYG editors
-are presented to users depending on which option is enabled. Both editors have a
-*Source* button which allows users to view the underlying BBCode or HTML of a
-message. Users can compose messages using either the WYSIWYG or Source view and
-can switch between views during message composition by clicking on the *Source*
+markup language of users' actual message board posts. The type of WYSIWYG editor
+presented to users depends on which option is enabled. Both editors have a
+*Source* button which lets users view a message's underlying BBCode or HTML.
+Users can compose messages using either the WYSIWYG or Source view and can
+switch between views during message composition by clicking on the *Source*
 button.
 
-Enabling *Enable Flags* allows your users to flag content which they consider to
-be objectionable. If you are allowing anonymous posting, you might use flags in
+Enabling *Enable Flags* lets users flag content which they consider to be
+objectionable. If you are allowing anonymous posting, you might use flags in
 combination with it if you have someone administering your message boards on a
 day-to-day basis. That way, any unwanted messages can be flagged by your
 community, and you can review those flagged messages and take whatever action is
 necessary. Using flags is also a good practice even if you're not allowing
 anonymous posting.
 
-Enabling *Enable Ratings* enables your users to give certain posts a score. This
-score is used by Liferay Portal's social activity system to rank your site
-members by how helpful their contributions are. You can read more about social
-activity later in this chapter and in chapter 9.
+Enabling *Enable Ratings* lets users score posts. This score is used by
+Liferay's social activity system to rank your site members by how helpful their
+contributions are. You can read more about social activity in the *Measuring
+Social Activity* section.
 
 Enabling the *Thread as Question by Default* option automatically checks the
 mark as question box in the new thread window. Threads marked as questions
 display the flag "waiting for an answer." Subsequent replies to the original
 message can be marked as an answer.
 
-Lastly, you can set the amount of time a post is displayed on the Message Board's 
-*Recent Posts* tab until it is taken away. You have options of 24 hours, 7 days, 
-30 days, and 365 days. After the time has passed, the post is removed from 
-*Recent Posts*. However, the post itself isn't deleted. It remains accessible 
-elsewhere on the message board.
+Lastly, you can set the amount of time a post is displayed on the Message
+Board's *Recent Posts* tab until it is taken away. You have options of 24 hours,
+7 days, 30 days, and 365 days. After the time has passed, the post is removed
+from *Recent Posts*. However, the post itself isn't deleted. It remains
+accessible everywhere else in the message board.
 
 ### Email Setup
 
+Message Boards provides options for configuring the email sender and specifying
+the mail message to use when someone posts a new Message Board thread or 
+
 **Email From** - This tab allows you to configure the name and email address
 from which message board email notifications are sent. The default name and
-email address are those of the default administrator account: The name is `Test
-Test` and the email address is `test@liferay.com`. Make sure to update this
-email address to a valid one that can be dedicated to notifications.
+email address are those of the default administrator account (e.g., `Test Test`
+and the email address is `test@liferay.com`) you configured in the Basic
+Configuration Wizard. Make sure to update this email address to a valid one that
+can be dedicated to notifications.
 
 **Message Added Email** - This tab allows you to customize the email message
 that users receive when a message is added to a topic to which they are
@@ -132,20 +140,21 @@ subscribed.
 
 **Message Updated Email** - The Message Updated Email tab is identical to
     the Message Added Email tab, except it defines the email message that users
-    receive whenever a topic is updated.
+    receive whenever a message is updated.
+    
+Next, you can specify priority classifications for message threads. 
 
 ### Thread Priorities [](id=thread-priorities)
 
-You can define custom priorities for message threads on this tab. These allow
-administrators to tag certain threads with certain priorities in order to
-highlight them for users. By default, three priorities are defined: Urgent,
-Sticky, and Announcement. To define a thread priority, enter its name, a URL to
-the image icon that represents it, and a priority number which denotes the
-order in which that priority should appear.
+You can define custom priorities for message threads on this tab. This allows
+privileged roles to tag a thread with certain priority in order to highlight it
+for users. By default, three priorities are defined: Urgent, Sticky, and
+Announcement. To define a thread priority, enter its name, a URL to the image
+icon that represents it, and a priority number which denotes the order in which
+that priority should appear.
 
-There is also a field on this form that allows you to select a localized
-language for your priorities. If you need to do this, you can select the
-language from the selection box.
+The localized language field lets you name the priorities in each locale. You
+select the locale, update the priority names for it, and save your updates. 
 
 ### User Ranks [](id=user-ranks)
 
@@ -179,13 +188,13 @@ organization role, a regular role, or is in a user group called *Message Boards
 Administrator*, or anyone who is the organization owner gets the moderator
 rank.
 
-As with thread priorities, on this tab you can define whether your ranks are
-localized in a particular language.
+As with thread priority names, the *Localized Language* field lets you localize
+rank names. 
 
 ### RSS [](id=rss)
 
 Message board threads can be published as RSS feeds. This tab allows you to
-enable/disale RSS subscriptions and define how the feeds are generated.
+enable/disable RSS subscriptions and define how the feeds are generated.
 
 **Maximum Items to Display:** lets you select the number of items to display in
 the feed.
@@ -195,19 +204,48 @@ an abstract, or just the title of a thread.
 
 **Format:** allows you to choose the format: RSS 1.0, RSS 2.0, or Atom 1.0.
 
+Since you've configured the Message Boards application, you can define
+permissions for it. 
+
 ### Message Board Permissions [](id=permissions)
 
-The default page that the Message Boards Administration portlet displays has three buttons on
-it. Click the one labeled *Permissions*. This allows you to define which roles
-have the ability to add a category of threads or to ban abusive users from the
-message boards. Select the roles and permissions you want to configure and then
-click *Save*.
+To edit Message Boards permissions, click the *Permissions* button. The
+permissions screen allows you to grant and revoke a role's ability to access
+parts of the application and perform particular actions. 
+
+The permissions enable a role to perform the following actions. 
+
+**Lock Thread:** Stop any further additions or modifications to a a thread's
+messages. 
+
+**Subscribe:** Enlist yourself to receive notifications on new and modified
+posts. 
+
+**Reply to Message:** Respond to an existing message. 
+
+**Add File:** The user can attach a file to his message. 
+
+**Permissions:** View and modify permissions.
+
+**Add Message:** Post a new thread.
+
+**View:** View all the contents of message threads. 
+
+**Add Category:** Add a new category to the Message Boards.
+
+**Update Thread Priority:** Modify a thread's priority. 
+
+**Ban User:** Forbid a user from participating in the Message Boards.
+
+**Move Thread:** Move a thread to a different category or subcategory. 
+
+Configure the roles with the permissions you want and *Save* your changes. 
 
 ## Adding Categories [](id=adding-categories)
 
 You are now ready to add categories to your message boards. Click the *Add
-Category* button. Enter a name
-for the category and a description of the category.
+Category* button. Enter a name for the category and a description of the
+category.
 
 Categories can have different display styles. The available categories must be
 set in portal property `message.boards.category.display.styles` and the default
