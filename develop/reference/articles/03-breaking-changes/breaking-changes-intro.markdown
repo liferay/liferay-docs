@@ -1997,11 +1997,11 @@ configure any editor in Liferay Portal in a coherent and extensible way.
 
 ---------------------------------------
 
-### Renamed ActionCommand Classes Used in the MVCPortlet Framework
+### Renamed ActionCommand Classes Used in the MVCPortlet Framework [](id=renamed-actioncommand-classes-used-in-the-mvcportlet-framework)
 - **Date:** 2015-Jun-16
 - **JIRA Ticket:** LPS-56372
 
-#### What changed?
+#### What changed? [](id=what-changed-54a)
 
 The classes located in the `com.liferay.portal.kernel.portlet.bridges.mvc`
 package have been renamed to include the *MVC* prefix.
@@ -2032,38 +2032,38 @@ The code snippet below shows the new property in its context.
         service = MVCActionCommand.class
     )
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-54a)
 
 This affects any Java code calling the `ActionCommand` classes used in the
 `MVCPortlet` framework.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-54a)
 
 You should update the old `ActionCommand` class names with the new *MVC* prefix.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-54a)
 
 This change adds consistency to the MVC framework, and makes it self-explanatory
 what classes should be used for the MVC portlet.
 
 ---------------------------------------
 
-### Extended MVC Framework to Use Same Key for Registering ActionURL and ResourceURL
+### Extended MVC Framework to Use Same Key for Registering ActionURL and ResourceURL [](id=extended-mvc-framework-to-use-same-key-for-registering-actionurl-and-resour)
 - **Date:** 2015-Jun-16
 - **JIRA Ticket:** LPS-56372
 
-#### What changed?
+#### What changed? [](id=what-changed-55a)
 
 Previously, a single `ActionCommand` was valid for both `ActionURL` and
 `ResourceURL`. Now you must distinguish both an `ActionURL` and `ResourceURL` as
 different actions, which means you can register both with the same key.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-55a)
 
 This affects developers that were using the `ActionCommand` for `actionURL`s and
 `resourceURL`s.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-55a)
 
 You should replace the `ActionCommand`s used for `actionURL`s and `resourceURL`s
 to use `MVCActionCommand` and `MVCResourceCommand`, respectively. For example,
@@ -2083,7 +2083,7 @@ New Code:
         <portlet:param name="recordSetId" value="<%= String.valueOf(recordSet.getRecordSetId()) %>" />
     </liferay-portlet:resourceURL>
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-55a)
 
 This change was made to extend the MVC framework to have better support for
 `actionURL`s and `resourceURL`s.
