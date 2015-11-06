@@ -215,7 +215,7 @@ parts of the application and perform particular actions.
 
 The permissions enable a role to perform the following actions. 
 
-**Lock Thread:** Stop any further additions or modifications to a a thread's
+**Lock Thread:** Stop any further additions or modifications to a thread's
 messages. 
 
 **Subscribe:** Enlist yourself to receive notifications on new and modified
@@ -248,49 +248,87 @@ Category* button. Enter a name for the category and a description of the
 category.
 
 Categories can have different display styles. The available categories must be
-set in portal property `message.boards.category.display.styles` and the default
-category in `message.boards.category.display.styles.default`. When creating a
-new category, you can select the display style you like for that category. By
-default, Liferay provides two predefined display styles, although many more can
-be easily added:
+set in [portal property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Message%20Boards%20Portlet)
+`message.boards.category.display.styles` and the default category in
+`message.boards.category.display.styles.default`. When creating a new category,
+you can select the display style you like for that category. By default, Liferay
+provides two predefined display styles, although many more can be easily added:
 
 **Default:** classic display style for general purpose and discussions.
 
 **Question:** designed for discussions in a format of questions and answers.
 
-Figure 9.17: You have several options when creating a Message Boards Category.05-editing-message-board-category.png
+![Figure x: You have several options when creating a Message Boards Category.](../../images/message-boards-add-category.png)
 
-You can add as many categories to your message boards as you wish. As we saw
-above, categories can have subcategories. You can add any number of top-level
+The Permissions section provides a selector for quickly choosing who can view
+the category and a link to a table that presents the category's other permission
+options. The *Viewable by* selector lets you choose from the following values to
+determine who can view the category: Anyone (Guest Role), Site Members, or
+Owner. 
+
+To show more permission options, click *More Options*. A table appears with the
+rest of the category's permissions: 
+
+**Lock Thread:** Stop any further additions or modifications to a thread's
+messages. 
+
+**Add Subcategory:** Add a new category within this category. 
+
+**Update:** Edit the category.
+
+**Subscribe:** Enlist yourself to receive notifications on new and modified
+posts. 
+
+**Reply to Message:** Respond to existing messages. 
+
+**Add File:** Attach a file to any of your messages. 
+
+**Permissions:** View and modify permissions. 
+
+**Delete:** Remove the category. 
+
+**Add Message:** Post a new thread.
+
+**Update Thread Priority:** Modify a thread's priority. 
+
+**Move Thread:** Move a thread to a different category or subcategory. 
+
+After you've created a category, you can revisit its permission options by
+clicking the category's *Permissions* action. 
+
+The form also lets you enable the mailing list function. If don't want to add a
+mailing list to the category you're creating, you can save your changes now. You
+can always edit an existing category to add, edit, or remove a mailing list. The
+next section explains user subscriptions and mailing lists. 
+
+You can add as many categories to your message boards as you wish. And
+categories can have subcategories. You can add any number of top-level
 categories to a message board. You can also edit any category and add
 subcategories to an unlimited level. For usability reasons, you don't want to
 nest your categories too deep, or your users will have trouble finding them. You
 can always add more categories as your message boards grow. Finally, each
 category can have any number of threads.
 
-At the bottom of the form for creating or editing a message board category is a
-check box for enabling the mailing list function. If don't want to add a mailing
-list to the category you're creating, click *Save* now. You can always edit an
-existing category to add, edit, or remove a mailing list.
+Also, you may move a category or merge a category's threads with a different
+Parent Category. To bring up the the Move screen, select category's *Move*
+action. You can select a different Parent Category, optionally select the *Merge
+with Parent Category* check box, and click *Move*. 
 
-Also, you may merge with a Parent Category by navigating to a category's
-*Actions* &rarr; *Move* button. From this window, you can enable the *Merge with
-Parent Category* check box and click the *Select* button to choose the parent
-category.
+As you add categories to a message board, they're listed on the message board's
+home. The list displays the names of the categories and the numbers of
+subcategories, threads, and posts in each one. To add a subcategory to category,
+click on the category's name in the list and then click the *Add Subcategory*
+button. The form for adding a subcategory appears and is populated, by default,
+with the properties of the parent category. This includes the parent category's
+display style (Default or Question) and mailing list configuration. Of course,
+you can change the display style or mailing list configuration of a subcategory
+just as with any category. The *Add Subcategory* form and the *Add Category*
+form are the same. 
 
-Once one or more categories have been added to a message board, they appear in a
-list on the message board's home. The list displays the names of the categories
-and the numbers of subcategories, threads, and posts in each one. To add a
-subcategory to category, click on the category's name in the list and then click
-the *Add Subcategory* button. By default, when you click the *Add Subcategory*
-button, the form for adding a subcategory is populated with the properties of
-the parent category. This includes the parent category's display style (Default
-or Question) and mailing list configuration. Of course, you can change the
-display style or mailing list configuration of a subcategory just as with a new
-category.
+![Figure x: Categories help you organize threads so you users can find threads on topics that interest them.](../../images/message-boards-home.png)
 
-Liferay's Message Boards portlet supports two different mechanisms for sending
-email notifications: user subscriptions and mailing lists. Let's discuss user
+Liferay's Message Boards support two different mechanisms for sending email
+notifications: user subscriptions and mailing lists. Let's discuss user
 subscriptions first and then mailing lists.
 
 ## User Subscriptions and Mailing Lists [](id=user-subscriptions-and-mailing-lists)
@@ -298,13 +336,13 @@ subscriptions first and then mailing lists.
 The first mechanism Liferay uses for sending email notifications is user
 subscriptions. Users can subscribe to particular categories and threads. Liferay
 uses the message board's configured *Email From* address to send email
-notifications to subscribed users whenever a new post is created or an existing
+notifications to subscribed users, whenever a new post is created or an existing
 post is updated. Liferay can import email replies to message board notifications
-directly into the message board. This is a very useful features since it
-allows users to interact on the message board via email without needing to log
-in to the portal and view the message board page directly. However, this feature
-is not enabled by default. To enable this feature, add the following line to
-your `portal-ext.properties` file:
+directly into the message board. This is a very useful features since it allows
+users to interact on the message board via email, without needing to log in to
+the portal and view the message board page directly. This feature is, however,
+disabled by default. To enable it, add the following line to your
+`portal-ext.properties` file:
 
     pop.server.notifications.enabled=true
 
@@ -314,23 +352,24 @@ is read by Liferay, the reply is posted to the message board and then deleted
 from the mail server. Deleting the message from the mail server is the POP
 protocol's default behavior and Liferay assumes that your POP mail server
 behaves this way. Most POP clients offer an option to leave mail on the mail
-server after it's been downloaded but you shouldn't exercise this option. If you
-configure mail to be left on the mail server, Liferay will repeatedly send
+server after it's been downloaded, but you shouldn't exercise this option. If
+you configure mail to be left on the mail server, Liferay will repeatedly send
 copies of each retained message along with each new email notification that's
 sent to subscribed users.
 
 When enabling message boards to import replies to email notifications, you
-should decide whether or not you want to you a mail server subdomain to handle
-notifications. By default the following line is set in your portal properties:
+should decide whether or not you want to use a mail server subdomain to handle
+notifications. By default the following property setting is specified in the
+portal properties:
 
     pop.server.subdomain=events
 
 This property creates a special MX (mail exchange) subdomain to receive all
 portal-related email (e.g., events.liferay.com). If you don't want to use the
 subdomain approach, you can unset this value to tell Liferay to use the *Email
-From* address specified in the Message Board's configuration to receive message board
-notification email replies. For example, the *Email From* address could be set
-to *replies\@liferay.com*.
+From* address, specified in the Message Board's configuration, to receive
+message board notification email replies. For example, the *Email From* address
+could be set to *replies\@liferay.com*.
 
 If you don't want to use a mail server subdomain, add the following line to your
 `portal-ext.properties` file:
@@ -343,12 +382,12 @@ message ID. If you keep the `pop.server.subdomain=events` default, the email
 notification address takes the following form:
 *mb.[category_id][message_id]@events.liferay.com*. In this case, Liferay parses
 the email address to find the category and message ID. Parsing the email address
-is safer than parsing message headers since different email clients treat
+is safer than parsing message headers, since different email clients treat
 message headers differently. This is why the `events` subdomain is enabled by
 default.
 
 Additionally, you can configure the interval on which the
-POPNotificationListener runs. The value is set in one minute increments. The
+`POPNotificationListener` runs. The value is set in one minute increments. The
 default setting is to check for new mail every minute, but you can set it to
 whatever you like:
 
@@ -357,7 +396,7 @@ whatever you like:
 The second mechanism Liferay uses for sending email notifications is mailing
 lists. Any category in a Liferay message board can have its own mailing list.
 Liferay's mailing list mechanism, unlike its user subscription mechanism,
-supports both the POP and the IMAP protocols. POP is the default protocol but
+supports both the POP and the IMAP protocols. POP is the default protocol, but
 each message board's mailing list is configured independently. If you choose the
 IMAP protocol for a category's mailing list, make sure to configure the IMAP
 inbox to delete messages as they are pulled by the email client that sends
@@ -401,7 +440,7 @@ email account and Liferay copies the messages to the message board.
 receive the messages.
 
 Next, there are two sections: *Incoming* and *Outgoing*. These define the mail
-settings for receiving mail and for sending mail. The Incoming tab has the
+settings for receiving mail and for sending mail. The Incoming section has the
 following options:
 
 **Protocol:** lets you select POP or IMAP.
@@ -418,7 +457,7 @@ your server supports it.
 
 **Password:** lets you enter the password for the account on the server.
 
-**Read Interval (Minutes):** allows you to specify how often Liferay will poll
+**Read Interval (Minutes):** allows you to specify how often Liferay polls
 the server looking for new messages to post to the message board.
 
 The Outgoing section has the following options:
@@ -426,27 +465,29 @@ The Outgoing section has the following options:
 **Email Address:** lets you enter the email address that messages from this
 category should come from. If you want your users to be able to reply to the
 categories using email, this should be the same address configured on the
-*Incoming* tab.
+*Incoming* section.
 
 **Use Custom Outgoing Server:** allows you to use a different mail server than
 the one that is configured for the portal. If you check this box, more options
-appear.
+appear:
 
-**Server Name:** lets you enter the host name of the SMTP mail server you are
+- **Server Name:** lets you enter the host name of the SMTP mail server you are
 using.
 
-**Server Port:** allows you to specify the port on which your mail service is
+- **Server Port:** allows you to specify the port on which your mail service is
 running.
 
-**Use a Secure Network Connection:** allows you to use an encrypted connection
+- **Use a Secure Network Connection:** allows you to use an encrypted connection
 if your server supports it.
 
-**User Name:** lets you enter the login name on the mail server.
+- **User Name:** lets you enter the login name on the mail server.
 
-**Password:** lets you enter the password for the account on the mail server.
+- **Password:** lets you enter the password for the account on the mail server.
 
 When you're finished configuring the mailing list for your category, click
 *Save*. 
+
+<!-- TODO Add a transition to this app's documentation. Jim -->
 
 ## Managing User Subscriptions with the Message Boards Subscription Manager [](id=managing-user-subscriptions-with-the-message-boards-subscription-manager)
 
@@ -484,22 +525,25 @@ sure that certain users receive emails from important message board categories.
 
 ## Using the Message Boards [](id=using-the-message-boards)
 
-Upon seeing Liferay's Message Boards portlet, your users will immediately
-recognize that the interface is similar to many other implementations they've
-seen before. Message boards are nothing new to the Internet, and many people
-have been using them for quite a long time. For that reason, Liferay's message
-boards will seem very familiar to your users.
+You can add the Message Boards application from the *Add* menu's *Collaboration*
+section to a page. Users will immediately recognize that the interface is
+similar to many other implementations they've seen before. Message boards are
+nothing new to the Internet, and many people have been using them for quite a
+long time. In any case, it can't hurt to explore how to use Liferay Message
+Boards and discover all of its features. 
+
+![Figure x: The Message Boards application lets you explore its categories, interact with message threads, and post new messages.](../../images/message-boards-category-threads.png)
 
 Threads can be viewed in many ways. At the top of the portlet is a set of tabs:
-*Recent posts*, *My Posts*, *My Subscriptions*, and for administrative users,
-*Statistics* and *Banned Users*. The Recent Posts tab shows all posts from all
-categories by date, so you can keep up on all the most recent discussions in
-the message boards. The My Posts tab shows all of the posts for the user that
-is currently logged in. This is a convenient way to get back to a previous
-conversation in order to retrieve some pertinent information. The My
-Subscriptions tab allows a user to manage thread subscriptions. If you lose
-interest in a particular topic, you may want to visit this tab and unsubscribe
-from a thread.
+*Message Boards Home*, *Recent posts*, *My Posts*, *My Subscriptions*, and for
+administrative users, *Statistics* and *Banned Users*. The Recent Posts tab
+shows all posts from all categories by date, so you can keep up on all the most
+recent discussions in the message boards. The My Posts tab shows all of the
+user's posts. It provides a convenient interface for revisiting previous
+conversations in order to retrieve pertinent information. The My Subscriptions
+tab allows the user to manage thread subscriptions. If you lose interest in a
+particular topic, you may want to visit this tab and unsubscribe from a category
+or thread. 
 
 For administrators, the Statistics tab shows the number of categories, the
 number of posts, and the number of participants in your message boards. It also
@@ -509,88 +553,110 @@ boards.
 
 ### Posting New Threads [](id=posting-new-threads)
 
-To post a new thread simply select the *Post New Thread* button. You will see a
-message editing form. The body field on this form is different from that of the
-other portlets in Liferay. The reason for this is to support *BBCode*, which is
-a standard form of markup used in many message board products. Before BBCode
-was invented, many message board products would allow users to enter HTML to
-format their messages. This, however, enabled attackers to insert malicious
-code into the message board. BBCode was invented to provide users a way of
-formatting their messages without allowing them to enter HTML. Similarly,
-Liferay supports BBCode in the message boards portlet because the other
-editor--which is used for the Content Management System, the Blogs portlet, and
-other portlets--produces HTML. This is appropriate for those other portlets, as
-they are only used by privileged users, but it is not appropriate for the
-message boards. Besides this, many users of message boards are familiar with
-BBCode and are used to it, and the editor that is provided for Liferay's
-Message Boards portlet makes it very easy to use.
+To post a new thread click the *Post New Thread* button. A message editing form
+appears. The body field on this form is different from that of the other
+portlets in Liferay. The reason for this is to support *BBCode*, which is a
+standard form of markup used in many message board products. Before BBCode was
+invented, many message board products would allow users to enter HTML to format
+their messages. This, however, enabled attackers to insert malicious code into
+the message board. BBCode was invented to provide users a way of formatting
+their messages without allowing them to enter HTML. Similarly, Liferay supports
+BBCode in the message boards portlet because the other editor--which is used for
+the Content Management System, the Blogs portlet, and other portlets--produces
+HTML. This is appropriate for those other portlets, as they are only used by
+privileged users, but it is not appropriate for the message boards. Besides
+this, many users of message boards are familiar with BBCode and are used to it,
+and the editor that is provided for Liferay's Message Boards portlet makes it
+very easy to use. 
 
-Figure 9.20: The *Follow the moon* message board post gives you an idea of what it takes to add a message board message.05-editing-message-board-post.png
+![Figure x: Here's the form for adding a new message.](../../images/message-boards-add-message.png)
 
-The message boards editor is quite rich. It supports bold, italicized,
+Message Boards uses a rich-text editor. It supports bold, italicized,
 underlined, and crossed-out text, links, images, colors, lists, tables,
 alignments, quotation blocks, code blocks, different fonts and font sizes, and
 more. There are even a bunch of smiley faces that you can use.
 
-Figure 9.21: Liferay's dynamic editor even includes a wide range of smiley faces!05-emoticons.png
+After entering the message's *Subject*, the user can specify options that
+message board permits. The options include marking the message as a question,
+posting anonymously, subscribing to the message thread, assigning the message a
+pre-defined priority, and allowing pingbacks to the message. 
+
+The user can also specify permissions. The message can be set to be viewable by
+a particular role. And the following additional permissions can be set on the
+message:
+
+**Update:** Edit the message. 
+
+**Subscribe:** Receive notifications of updates to the message and its thread. 
+
+**Permissions:** Grant/revoke permissions for the message. 
+
+**Delete:** Remove the message. 
+
+**View:** View the message. 
+
+A permissions icon appears above each posted message. You can revisit the above
+permissions by clicking the permissions icon.
+
+You can also attach files (e.g., images) to your message, categorize it, and
+relate it to other assets.
+
+When you're done editing and configuring your message, you can preview it, and
+save it as a draft or publish it. Once it's published, it's listed along with
+the other threads in its Category. 
 
 ### Participating in Message Board Threads
 
-Users who have Moderator access to the board can modify the priority of
-messages. You can also use the editor to quote from messages that you are
+You can also use the editor to quote from messages that you are
 replying to, to insert emoticons, to add preformatted text, and more. Messages
 that are posted to the message boards are shown by default in a threaded view
 so that replies are attached to the proper parent message. This makes it easy
 to follow along with conversations.
 
+![Figure x: You'll find it easy and fun following threads in Message Boards.](../../images/message-boards-participate-in-threads.png)
+
 When viewing a message board thread, users are given several options. At the top
-right of the thread are three icons, allowing users to view threads in a
-combination view, flat view, or tree view. A combination view shows the threads
-at the top as subjects only, with the flat view underneath. A flat view shows
-all of the messages in the order in which they are posted. A tree view shows all
-of the messages in a threaded view, so that replies are next to the messages
-they are replying to.
+right of the thread are icons, allowing users to view threads in a combination
+view, flat view, or tree view. A combination view shows the threads at the top
+as subjects only, with the flat view underneath. A flat view shows all of the
+messages in the order in which they are posted. A tree view shows all of the
+messages in a threaded view, so that replies are next to the messages they are
+replying to.
 
-When viewing a thread, users can click links allowing them to post a new
-thread, subscribe to the thread they are viewing, or if they have
-administrative access, lock a thread or move a thread to another category.
-Subscribing to a thread causes Liferay to send the user an email whenever a new
-message is posted to the thread. If you have enabled the mailing list feature
-for the category in which the thread resides, users can simply reply to these
-messages in order to post back to the thread, without having to visit your
-site.
+In the message boards, users can post a new thread, subscribe to the thread
+they're viewing, or if they have administrative access, lock a thread or move a
+thread to another category. Subscribing to a thread causes Liferay to send the
+user an email whenever a new message is posted to the thread. If you have
+enabled the mailing list feature for the category in which the thread resides,
+users can simply reply to these messages in order to post back to the thread,
+without having to visit your site.
 
-The Message Boards portlet is also highly integrated with Liferay's user
-management features. Posts on the message board show users' pictures if they
-have uploaded one for themselves, as well as the dates that users created an ID
-on your site.
+Message Boards is also highly integrated with Liferay's user management
+features. Posts on the message board show a user's profile picture as well as
+the date the user joined the site. 
 
 ## Managing Message Boards
 
-The Message Boards portlet provides for the day to day administration of the
-message threads. You may wish to separate this function out by a role, and then
-delegate that role to one or more of your users. That would free you up to
-concentrate on other areas of your web site. To do this, you can create a role
+Message Boards in Site Administration facilitates day to day thread
+administration. You may wish to separate this function out by a role, and then
+delegate that role to one or more users. That would free you up to concentrate
+on other areas of your site. To do this, you can, for example, create a role
 called Message Board Administrator. This role can be scoped by the portal, an
-organization, or a site. If you have a portal scoped role, members of this role
-will be able to administer any Message Boards portlet in the portal. If it is
-an organization or site scoped role, members of this role will be able to
-administer a Message Boards portlet in only the organization or site which
-assigned the role to them.
+organization, or a site. If you create a portal-scoped role, members of this
+role will be able to administer Message Boards throughout the portal. If it is
+an organization or site-scoped role, members of this role will be able to
+administer a Message Boards portlet in only that organization or site. 
 
-Go to the Control Panel and create this role. Once it is created, click *Actions
-&rarr; Define Permissions*. Click the *Content* drop-down list. Browse the list
-until you find the Message Boards portlet and then click on it. You will then
-see a screen which allows you to configure the various permissions on the
-portlet.
-
-Figure 9.22: Defining Permissions for the Message Board Administrators can be done by navigating to *Actions &rarr; Define Permissions*.05-defining-permissions-message-board-admin-role.png
+You can create such a role from the Control Panel. To define the role's
+permissions, click its *Define Permissions* action and navigate to *Site
+Administration &rarr; Content &rarr; Message Boards*. A screen appears that
+allows you to configure the various Message Boards permissions. 
 
 Select the permissions you would like message board administrators to have and
-then click *Save*. You can add users to this role and they will inherit the
-permissions. Message Board administrators can perform all of the functions we
-have already presented, including creating and deleting categories and posting
-threads. In addition to these, a number of other functions are available.
+save them. You can add users to this role. Message Board administrators can
+perform all the message board functions already presented, including creating
+and deleting categories and posting threads. In addition to these, a number of
+other functions are available. 
 
 ### Moving Threads [](id=moving-threads)
 
