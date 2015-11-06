@@ -1,4 +1,4 @@
-## Using the Felix Web Console
+## Using the Felix Web Console [](id=using-the-felix-web-console)
 
 An alternative way of interacting with Liferay's module framework is via the
 Felix Web Console. To access Liferay's Felix Web Console if you're running
