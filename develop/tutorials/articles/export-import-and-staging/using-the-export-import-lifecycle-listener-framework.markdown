@@ -14,24 +14,28 @@ short list of events you can listen for:
 - An entity export has succeeded
 
 The concept of listening for export/import and staging events sounds cool, but
-you may be curious as to why listening for certain events is useful. The ability
-to react upon events supplies you with much more knowledge about your
-application's state. By having more knowledge over how your application is
-running, you have more power over how it performs. Suppose you'd like a detailed
-log of when certain events occur during an import process. You could configure a
-listener to listen for certain import events you're interested in, and print
-information about those events to your console when they occur.
+you may be curious as to why listening for certain events is useful. Listening
+for events can help you know more about your application's state. Suppose you'd
+like a detailed log of when certain events occur during an import process. You
+could configure a listener to listen for certain import events you're interested
+in and print information about those events to your console when they occur.
 
 Liferay Portal uses this framework by default in several cases. For instance,
 Liferay clears the cache when a web content import process finishes. To
 accomplish this, the lifecycle listener framework listens for an event that
 specifies that a web content import process has completed. Once that event
-occurs, there is code that reacts on that event by automatically clearing the
-cache. You could implement this sort of functionality yourself for any Portal
-event. You can listen for a specific event, and then complete an action based on
-when that event occurs. For a list of events you can listen for during
-Export/Import and Staging processes, see
+occurs, there is an event listener that automatically clears the cache. You
+could implement this sort of functionality yourself for any Portal event. You
+can listen for a specific event and then complete an action based on when that
+event occurs. For a list of events you can listen for during Export/Import and
+Staging processes, see
 [ExportImportLifecycleConstants](https://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portlet/exportimport/lifecycle/ExportImportLifecycleConstants.html).
+
+Some definitions are in order: 
+
+**Events** are particular actions that occur during processing. 
+
+**Processes** are longer running groups of events. 
 
 In this tutorial, you'll learn how to use the `ExportImportLifecycleListener`
 framework to listen for processes/events during the staging and export/import
@@ -42,10 +46,9 @@ lifecycles.
 To begin creating your lifecycle listener, you must create a module.
 Follow the steps below:
 
-1.  Create a generic OSGi module using your favorite third party tool, or use the
-[Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle).
+1.  [Create a generic OSGi module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components) using your favorite tool. 
 
-2.  Create a unique package name in the module's `src` directory, and create a
+2.  Create a unique package name in the module's `src` directory and create a
     new Java class in that package. To follow naming conventions, begin the class
     name with the entity or action name you're processing, followed by
     *ExportImportLifecycleListener* (e.g., `LoggerExportImportLifecycleListener`).
@@ -70,7 +73,8 @@ Follow the steps below:
 
 4.  Directly above the class's declaration, insert the following annotation:
 
-        @Component(immediate = true, service = ExportImportLifecycleListener.class)
+        @Component(immediate = true, 
+                    service = ExportImportLifecycleListener.class)
 
     This annotation declares the implementation class of the component and
     specifies that the portal should start the module immediately. 
@@ -100,7 +104,7 @@ example, when a layout export starts, succeeds, or fails, logging information
 directly related to that event is printed. In summary, the
 `LoggerExportImportLifecycleListener` uses the lifecycle listener framework to
 print messages to the log when an export/import event occurs. Other good
-examples for event lifecycle listeners are
+examples of event lifecycle listeners are
 [`CacheExportImportLifecycleListener`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/export-import/export-import-service/src/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.java)
 and [`JournalCacheExportImportLifecycleListener`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/journal/journal-web/src/com/liferay/journal/web/lar/lifecycle/JournalCacheExportImportLifecycleListener.java).
 

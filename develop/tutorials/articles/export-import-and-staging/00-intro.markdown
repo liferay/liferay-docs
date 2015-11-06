@@ -1,46 +1,44 @@
 # Export/Import and Staging
 
-Liferay's Export/Import and Staging features give users the power to plan
-page publication and manage content. The Export/Import feature lets users export
-content as a LAR file from Portal and import external content into Portal.
-Providing the export feature in your application allows users the flexibility of
-exporting content they've created in your application to other places, such as
-another portal instance, or to save the content for a later use. The import
-feature can be used to ingest a LAR file that was exported from Portal.
+Liferay's Export/Import and Staging features give users the power to plan page
+publication and manage content. The Export/Import feature lets users export
+content from the Portal and import external content into the Portal. Providing
+the export feature in your application allows users the flexibility of exporting
+content they've created in your application to other places, such as another
+portal instance, or to save the content for a later use. Import does the
+opposite: it brings the data from a LAR file into your portal.
 
 For instance, suppose you're managing an online education course using Liferay
 Portal. Because of the nature of an online course, the site's data (grades,
 assignments, etc.) is purged every semester to make way for new incoming
-students. In a scenario like this, there is a specific need to frequently store
-a complete record of all data given during a course; the institution offering
+students. In a scenario like this, there is a need frequently to store
+a complete record of all data given during a course. The institution offering
 the course must usually keep records of the course's data for a minimum number
 of years. To abide by these requirements, having a gradebook application with an
-export/import feature would fulfill the need for clearing the application's data
-for a new semester, but saving the previous class's work. You could simply
-export the grades of the students as a LAR file, and save it outside the
-course's site. If the grades ever needed to be accessed again, you could import
-the LAR and view the student records.
+export/import feature would allow you to clear the application's data for a new
+semester, but save the previous class's work. You could export the students'
+grades as a LAR file and save it outside the course's site. If the grades ever
+needed to be accessed again, you could import the LAR and view the student
+records.
 
 The Export/Import feature adds another dimension to your application by
-bestowing the powers to produce reusable content and ingest content from other
-places. To learn more about using the Export/Import feature, visit the
+letting you produce reusable content and import content from other places. To
+learn more about using the Export/Import feature, visit the
 [Export/Import](/discover/portal/-/knowledge_base/6-2/export-import) section of
 the User Guide.
 
 <!-- Update section to 7.0 version, when available. -Cody -->
 
-Staging lets site administrators modify their sites behind the scenes and
-publish all their updates in one fell swoop. You can develop your application to
-work with Liferay's Staging environment, which adds many conveniences during
-publishing. If your application can be staged, its contents can be modified
-while also staying out of the limelight of your live site until it's ready.
+Staging lets you change your site behind the scenes without affecting the live
+site, and then you can publish all the changes in one fell swoop. If you include
+staging support in your application, your users can stage its content until it's
+ready.
 
 For example, if you have an application that provides information intended only
-during a specific holiday, having it compatible with the Staging environment
-allows you to save your application's assets specific for that holiday, and have
-them only reside in the Staging environment until they're ready for publishing.
-To learn more about Staging, visit the
-[Staging Page Publication](/discover/portal/-/knowledge_base/6-2/staging-page-publication)
+during a specific holiday, supporting the Staging environment lets users save
+your application's assets specific for that holiday. They'll reside
+in the Staging environment until they're ready for publishing. To learn more
+about Staging, visit the [Staging Page Publication](/discover/portal/-/knowledge_base/6-2/staging-page-publication)
 chapter.
 
 <!-- Update section to 7.0 version, when available. -Cody -->
