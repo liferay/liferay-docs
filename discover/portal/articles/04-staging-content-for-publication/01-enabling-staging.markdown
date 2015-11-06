@@ -274,6 +274,56 @@ following content groups for staging, by default:
 - Web Content
 - Wiki
 
+<!-- Below content is additional info that we can add for each supported
+portlet. These will need to be incorporated into the list above, once we can
+explain more about the other supported portlets, as well. -Cody
+
+- Blogs
+    - *Referenced content:* see web content for details
+- Web Content
+    - *Referenced content:* web content can reference different other entities in
+    the Liferay portal. Structures, templates for the most obvious examples, but
+    it can reference images too from the portal’s document library. Staging can
+    exclude some of these content during publication or export to speed up the
+    process. These references although will be validated during the publish
+    process or an import so the images has to be published or imported first.
+    - *Version history:* The portal keeps a version history of the web content
+    articles. In some cases these versions are needed if the latest version gets
+    expired, and for example the latest version is not visible to the end users
+    yet. But if the version history is not utilized it can be turned off for
+    publishing thus making the process faster.
+- Documents and Media
+    - *Previews and Thumbnails:* previews and thumbnails are automatically
+    generated on the portal instance. Although they can be published to the live
+    site as well, we should be careful about this option. Imagine a scenario
+    where a site has approximately 4000 images or documents. If the previews and
+    thumbnails are turned on this could end up in 28000 physical files on the
+    disk. If staging is set up to publish the previews and thumbnails this would
+    mean that instead of taking care of the 4000 images it will process 7 times
+    more files! If we still want to use the previews on our live environment we
+    can set up that Liferay instance to generate them automatically. It depends
+    on our environment if we can use the publishing of the previews and
+    thumbnails. Publishing them is an IO heavy operation, and also we have to
+    transfer the LAR file over the network if we use remote staging. If we
+    decide to generate them on the live site we have to take into consideration
+    that this will take some time on the live server and this is also a CPU
+    intense operation as well.
+- Generic options
+    - *Comments:* The portal has the ability to provide a commenting framework
+    for several entities such as Web Content Articles, or Blog entries. These
+    comments are associated with that specific entity and upon publishing if we
+    use the comments functionality we need to query up and put them into the LAR
+    file too. Although if we are not using it or we are not planning to use them
+    we can safely turn this publishing option off to save several DB queries or
+    cache hits, eventually making the process faster.
+    - *Ratings:* For this option the same behavior applies as for the comments
+    - *Deletions:* Staging is gathering deletions (including trashed entities) in
+    a site. These deletions can be published to clean up the live site. If it’s
+    not a problem to have lingering data on the live, or it is going to be
+    processed later, this can be turned off as well to save execution time
+    during the process.
+-->
+
 Before you activate staging, you can choose which of these applications' data
 you'd like to copy to staging. You'll learn about many of the collaboration
 portlets listed under the Staged Portlets heading when we come to the
@@ -362,3 +412,43 @@ a seamless staging experience.
 
 ### Planning Ahead for Staging
 
+Staging is a complex subsystem of Liferay Portal that is designed to be flexible
+and scalable. Before advanced users and administators begin using it for their
+site, it's important to plan ahead and remember a few tips for a seamless
+process. There are several factors to evaluate.
+
+The most obvious factor is the content itself, including its amount, type, and
+structure. Depending on the content you'd like to use in your site, you can turn
+on staging for only the necessary content types, and leave others turned off to
+avoid unnecessary work. Publication can also be configured to publish only
+certail types of content.
+
+The next factor to consider is the hardware environment. You should plan your
+enviornment according to the content types you're using. If you site operates on
+large images and video files, you should contemplate whether to use a shared
+network drive. For example, storing many large images in the Document Library
+usually requires for a faster network or local storage. If you're dealing with
+web content, however, these are usually smaller and take up very little disk
+space.
+
+Lastly, the third major factor is possible customizations and custom logic for
+your staging environment. Your organization's business logic is most likely
+implemented in a portlet, and if you want to support staging for that portlet,
+you'll need to write some code to accomplish this. You can also consider
+changing default UI settings by writing new JSP code, if you want your staging
+environment's look and feel to change.
+
+Once you've finished planning for your site, it is advised to turn on staging at
+the very beginning of the site creation process. This allows the site creator to
+avoid waiting for huge publications that can take long periods to execute.
+Taking smaller steps throughout the publication process forms an iterative
+creative process as the site is built from the groud up, where content creators
+can publish their changes immediately with no long wait times.
+
+A few prerequisites to follow for staging are listed below:
+
+- 4 GB of memory with 512 MB permgen
+- 20 MB/s transfer rate minimum (disk)
+
+Now that you know how the staging environment works and how to enable it for
+your site, you'll begin using it in the next section.
