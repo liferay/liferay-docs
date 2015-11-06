@@ -18,36 +18,6 @@ enabled for your portal, you can also view all of the live portal sessions of
 your users from this area of the Control Panel. If the Audit plugins have been
 installed from Liferay Marketplace, the Audit section also appears.
 
-<!-- Previous paragraph, make sure the monitoring and audit information is true
-still. -->
-
-In this set of articles you’ll learn about managing users. While you could probably get
-pretty far into learning about Managing Users in Liferay just by perusing the
-Control Panel, there's so much User Management functionality in Liferay that
-it's tough to wrap your head around it all. Maybe a limerick can help:
-
-*There's a company in Spain that makes Hula Hoops*<br />
-*They placed* ***Users*** *in* ***Organizations*** *and* ***User Groups***<br />
-*They assigned them their* ***Roles***<br />
-*And set them some goals*<br />
-*Made* ***Password Policies*** *that can't be duped*
-
-Password Policies were bold
-Then Monitored employee User sessions to Snoop 
-
-<!-- Work Monitoring into the limerick -->
-
-![Figure 2: The Users section of the Control Panel. This screenshot shows a
-portal that doesn't have the EE Audit plugin
-installed.](../../images/usrmgmt-users.png)
-
-Begin exploring Liferay’s User Management functionality by reading the Users and
-Organizations article. 
-
-
-<!-- The above is more an intro to the Control Panel. Some of the Users intro stuff
-should be moved here.
-
 The Users section of the Control Panel is used for most administrative tasks
 involving user management. There, you’ll find an interface for the creation and
 maintenance of the following portal entities: users, organizations, user groups,
@@ -60,11 +30,32 @@ use organizations, user groups, and custom roles.
 
 As a portal administrator, you’ll use the Users section of the Control Panel to
 create users, organizations, and user groups, implement security via roles and
-permissions, and administer your users. Note that only users with the
-administrator role, which is a portal scoped role, have permission to view the
-Control Panel. You can, of course, grant permissions to view one or more
-sections, such as the Users section, to custom roles.
--->
+permissions, and administer your users. Only users with the administrator role,
+which is a portal scoped role, have permission to view the Control Panel. You
+can, however, grant permissions to view the Control Panel to existing or custom
+roles.
+
+In this set of articles you’ll learn about managing users. While you could
+probably get started learning about managing users in Liferay just by perusing
+the Control Panel, there's so much User Management functionality in Liferay that
+it's tough to wrap your head around it all. Maybe a limerick can help:
+
+*There's a company in Spain that makes Hula Hoops*<br />
+*They placed* ***Users*** *in* ***Organizations*** *and* ***User Groups***<br />
+*They assigned them their* ***Roles***<br />
+*And set them some goals*<br />
+*Made* ***Password Policies*** *that can't be duped.*
+
+<!-- Work Monitoring into the limerick? Delete the limerick and fire its author?
+You be the judge. -->
+
+![Figure 2: The Users section of the Control Panel. This screenshot shows a
+portal that doesn't have the EE Audit plugin
+installed.](../../images/usrmgmt-users.png)
+
+Begin exploring Liferay’s User Management functionality by reading about
+adding and editing users. 
+
 <!-- Perhaps make a table showing similarities and differences between the
 parallel sites vs. portal-wide user functionality
 -->
