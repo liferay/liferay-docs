@@ -383,7 +383,7 @@ Below is the template script for this structure. It is written in FreeMarker:
 
     <#assign renderUrlMax = request["render-url-maximized"]>
     <#assign namespace = request["portlet-namespace"]>
-    <#assign readmore = request.parameters?is_hash && getterUtil.getBoolean(request.parameters.read_more, false)>
+    <#assign readmore = request.parameters?is_hash && request.parameters.read_more?? && getterUtil.getBoolean(request.parameters.read_more?first, false)>
     <h1>${title.getData()}</h1>
     <#if readmore>
     <p>${abstract.getData()}</p>
