@@ -1,4 +1,4 @@
-#  Creating Forums with Message Boards
+#  Creating Forums with Message Boards [](id=creating-forums-with-message-boards)
 
 Liferay's Message Boards is a state of the art forum application similar to many
 forums in which you may have participated. The difference, of course, is that
@@ -18,7 +18,7 @@ Message Boards offers many configuration options. They are straightforward to
 use and are the reason why it's a full-featured forum application for your site.
 Let's create a Message Board. 
 
-## Creating Message Boards
+## Creating Message Boards [](id=creating-message-boards)
 
 You can create a Message Board instance for a portal instance, a site, or page.
 A portal's Message Board can be used on any of its pages. A Message board
@@ -51,7 +51,7 @@ bar, navigate to *Options &rarr; Configuration*, to bring up the configuration
 screen. This is where you can configure Message Boards for the behavior you
 want. 
 
-### General Setup
+### General Setup [](id=general-setup)
 
 From the *General* configuration section, you can enable anonymous posting,
 subscribe by default, flags, ratings, and thread as question by default. You can
@@ -103,7 +103,7 @@ Board's *Recent Posts* tab until it is taken away. You have options of 24 hours,
 from *Recent Posts*. However, the post itself isn't deleted. It remains
 accessible everywhere else in the message board.
 
-### Email Setup
+### Email Setup [](id=email-setup)
 
 Message Boards provides options for configuring the email sender and specifying
 the mail message to use when someone posts a new Message Board thread or 
@@ -209,7 +209,7 @@ permissions for it.
 
 ### Message Board Permissions [](id=permissions)
 
-To edit Message Boards permissions, click the *Permissions* button. The
+To edit message board permissions, click the *Permissions* button. The
 permissions screen allows you to grant and revoke a role's ability to access
 parts of the application and perform particular actions. 
 
@@ -231,11 +231,11 @@ posts.
 
 **View:** View all the contents of message threads. 
 
-**Add Category:** Add a new category to the Message Boards.
+**Add Category:** Add a new category to the message board.
 
 **Update Thread Priority:** Modify a thread's priority. 
 
-**Ban User:** Forbid a user from participating in the Message Boards.
+**Ban User:** Forbid a user from participating in the message board.
 
 **Move Thread:** Move a thread to a different category or subcategory. 
 
@@ -258,7 +258,7 @@ provides two predefined display styles, although many more can be easily added:
 
 **Question:** designed for discussions in a format of questions and answers.
 
-![Figure x: You have several options when creating a Message Boards Category.](../../images/message-boards-add-category.png)
+![Figure x: You have several options when creating a message board category.](../../images/message-boards-add-category.png)
 
 The Permissions section provides a selector for quickly choosing who can view
 the category and a link to a table that presents the category's other permission
@@ -327,7 +327,7 @@ form are the same.
 
 ![Figure x: Categories help you organize threads so you users can find threads on topics that interest them.](../../images/message-boards-home.png)
 
-Liferay's Message Boards support two different mechanisms for sending email
+Liferay's Message Boards supports two different mechanisms for sending email
 notifications: user subscriptions and mailing lists. Let's discuss user
 subscriptions first and then mailing lists.
 
@@ -338,7 +338,7 @@ subscriptions. Users can subscribe to particular categories and threads. Liferay
 uses the message board's configured *Email From* address to send email
 notifications to subscribed users, whenever a new post is created or an existing
 post is updated. Liferay can import email replies to message board notifications
-directly into the message board. This is a very useful features since it allows
+directly into the message board. This is a very useful feature since it allows
 users to interact on the message board via email, without needing to log in to
 the portal and view the message board page directly. This feature is, however,
 disabled by default. To enable it, add the following line to your
@@ -525,8 +525,8 @@ sure that certain users receive emails from important message board categories.
 
 ## Using the Message Boards [](id=using-the-message-boards)
 
-You can add the Message Boards application from the *Add* menu's *Collaboration*
-section to a page. Users will immediately recognize that the interface is
+You can add the Message Boards application to a page from the *Add* menu's
+*Collaboration* section. Users will immediately recognize that the interface is
 similar to many other implementations they've seen before. Message boards are
 nothing new to the Internet, and many people have been using them for quite a
 long time. In any case, it can't hurt to explore how to use Liferay Message
@@ -566,10 +566,8 @@ the Content Management System, the Blogs portlet, and other portlets--produces
 HTML. This is appropriate for those other portlets, as they are only used by
 privileged users, but it is not appropriate for the message boards. Besides
 this, many users of message boards are familiar with BBCode and are used to it,
-and the editor that is provided for Liferay's Message Boards portlet makes it
+and the editor that is provided for Liferay's Message Boards application makes it
 very easy to use. 
-
-![Figure x: Here's the form for adding a new message.](../../images/message-boards-add-message.png)
 
 Message Boards uses a rich-text editor. It supports bold, italicized,
 underlined, and crossed-out text, links, images, colors, lists, tables,
@@ -598,46 +596,60 @@ message:
 A permissions icon appears above each posted message. You can revisit the above
 permissions by clicking the permissions icon.
 
-You can also attach files (e.g., images) to your message, categorize it, and
-relate it to other assets.
+You can also attach files (e.g., images) to your message, categorize it, tag it,
+and relate it to other assets. 
 
 When you're done editing and configuring your message, you can preview it, and
 save it as a draft or publish it. Once it's published, it's listed along with
-the other threads in its Category. 
+the other threads in the Category. 
 
-### Participating in Message Board Threads
+### Participating in Message Board Threads [](id=participating-in-message-board-threads)
 
-You can also use the editor to quote from messages that you are
-replying to, to insert emoticons, to add preformatted text, and more. Messages
-that are posted to the message boards are shown by default in a threaded view
-so that replies are attached to the proper parent message. This makes it easy
-to follow along with conversations.
+To find message board threads that interest you, browse a message board's
+categories or Recent Posts. You can view a category's thread listing by clicking
+on the category's name. From within a category screen, you can subscribe to an
+RSS feed and/or emails that inform you about thread activities in that category.
+Similar to a category's screen, Recent Posts lists threads too, except their the
+latest threads across all the categories.
 
-![Figure x: You'll find it easy and fun following threads in Message Boards.](../../images/message-boards-participate-in-threads.png)
-
-When viewing a message board thread, users are given several options. At the top
-right of the thread are icons, allowing users to view threads in a combination
-view, flat view, or tree view. A combination view shows the threads at the top
-as subjects only, with the flat view underneath. A flat view shows all of the
-messages in the order in which they are posted. A tree view shows all of the
-messages in a threaded view, so that replies are next to the messages they are
-replying to.
-
-In the message boards, users can post a new thread, subscribe to the thread
-they're viewing, or if they have administrative access, lock a thread or move a
-thread to another category. Subscribing to a thread causes Liferay to send the
-user an email whenever a new message is posted to the thread. If you have
-enabled the mailing list feature for the category in which the thread resides,
-users can simply reply to these messages in order to post back to the thread,
-without having to visit your site.
+You can click on a message thread to view it. Messages are shown by default in a
+threaded view so that replies are attached to the proper parent message. This
+makes it easy to follow along with conversations. Icons at the top of the thread
+allow users to view threads in a combination view, flat view, or tree view. A
+combination view shows the threads at the top as subjects only, with the flat
+view underneath. A flat view shows all of the messages in the order in which
+they are posted. A tree view shows all of the messages in a threaded view, so
+that replies are next to the messages they are replying to. 
 
 Message Boards is also highly integrated with Liferay's user management
 features. Posts on the message board show a user's profile picture as well as
 the date the user joined the site. 
 
-## Managing Message Boards
+![Figure x: You'll find it easy and fun following threads in message boards.](../../images/message-boards-participate-in-threads.png)
 
-Message Boards in Site Administration facilitates day to day thread
+Subscribing to a thread causes Liferay to send the user an email whenever a new
+message is posted to the thread. If you have enabled the mailing list feature
+for the category in which the thread resides, users can simply reply to these
+messages in order to post back to the thread, without having to visit your site.
+
+Most threads get more interesting as users reply to them. You can start creating
+a response by clicking one of the following buttons: *Reply*, *Reply with
+Quote*, or *Quick Reply*. The *Reply* screen includes the same rich-text editor
+and options that you use for posting new messages. If you want to include text
+from the original message, click *Reply with Quote*. If you only need the
+rich-text editor to generate your reponse and don't need any other message
+options, click *Quick Reply*. The editor lets you insert emoticons, add
+preformatted text, and more. 
+
+In addition to replying to a message, you can rate it or flag it as
+objectionable. A message board moderator can evaluate flagged messages and
+decide how to handle the messages and their authors. This provides an
+appropriate segue into the next topic: managing message boards. 
+
+## Managing Message Boards [](id=managing-message-boards)
+
+Message boards are powerful, but can become unweildy if left unmanaged. The
+Message Boards interface in Site Administration facilitates day to day thread
 administration. You may wish to separate this function out by a role, and then
 delegate that role to one or more users. That would free you up to concentrate
 on other areas of your site. To do this, you can, for example, create a role
@@ -645,7 +657,7 @@ called Message Board Administrator. This role can be scoped by the portal, an
 organization, or a site. If you create a portal-scoped role, members of this
 role will be able to administer Message Boards throughout the portal. If it is
 an organization or site-scoped role, members of this role will be able to
-administer a Message Boards portlet in only that organization or site. 
+administer a Message Boards application in only that organization or site. 
 
 You can create such a role from the Control Panel. To define the role's
 permissions, click its *Define Permissions* action and navigate to *Site
@@ -657,6 +669,11 @@ save them. You can add users to this role. Message Board administrators can
 perform all the message board functions already presented, including creating
 and deleting categories and posting threads. In addition to these, a number of
 other functions are available. 
+
+### Locking Threads [](id=locking-threads)
+
+You may encounter threads that you think should be preserved, but stoppped. You
+can halt activity on a thread by clicking *Lock Thread*. 
 
 ### Moving Threads [](id=moving-threads)
 
@@ -713,7 +730,9 @@ an explanation post to the split thread. Click *OK* to split the thread.
 Administrative users can edit anyone's posts, not just their own. Sometimes
 users will post links to copyrighted material or unsuitable pictures. You can
 edit these posts, which allows you to redact information that should not be
-posted or to censor profanity that is not allowed on your message boards.
+posted or to censor profanity that is not allowed on your message boards. You
+can also update the thread's priority or mark a reply as an answer to a
+thread's question. 
 
 ### Permissions [](id=permissions-0)
 
@@ -726,3 +745,15 @@ can be used, for example, to allow some privileged users to post on a certain
 thread, while others are only allowed to view it. Other combinations of the
 above permissions are also possible. Next, let's discuss Liferay's Wiki
 portlet.
+
+That wraps up the basics on managing message boards.  
+
+## Summary [](id=summary)
+
+As you've discoved, Liferay's Message Boards provides full-featured forums for
+users to ask questions, discuss topics, and share small amounts of information.
+Message boards help to build strong site communities. But as your site's
+community gathers more information on topics or procedures relevant to users,
+you'll want to provide a means to collaborate on that information. Liferay's
+Wiki is a terrific application for working with other users to share hierarchies
+of information. 
