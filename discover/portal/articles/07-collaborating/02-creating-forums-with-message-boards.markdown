@@ -487,41 +487,8 @@ if your server supports it.
 When you're finished configuring the mailing list for your category, click
 *Save*. 
 
-<!-- TODO Add a transition to this app's documentation. Jim -->
-
-## Managing User Subscriptions with the Message Boards Subscription Manager [](id=managing-user-subscriptions-with-the-message-boards-subscription-manager)
-
-The Message Boards Subscription Manager is available as an app from Liferay
-Marketplace. It allows site administrators to manage the subscriptions of their
-site's message board. Without the Message Boards Subscription Manager, users
-must manage their own message board subscriptions. The Message Boards
-Subscription Manager is available for both Liferay CE and EE--make sure to
-select the correct version when downloading and installing the app. Once
-installed, the Message Boards Subscription Manager appears in the Configuration
-section of Site Administration.
-
-Figure 9.18: To make sure that the Message Boards Subscription Manager was successfully installed, look for the *Message Boards Subscription Manager* entry in the Configuration section of Site Administration.message-boards-subscription-manager-control-panel.png
-
-The subscription manager allows managing the subscriptions of both the
-site-scoped message board and the subscriptions of any page-scoped message
-boards that may exist within the site. To access the Message Boards Subscription
-Manager, navigate to your site's Site Administration page, select
-*Configuration*, and click on *Message Boards Subscription Manager*. You'll see
-a list of the categories that have been created within your site's site-scoped
-message board. Click *Actions* &rarr; *View* next to a category to view the
-category's threads in a new browser tab. Click *Actions* &rarr; *Manage
-Subscriptions* to view a list of users which can be subscribed or unsubscribed
-from the message board category.
-
-Figure 9.19: The Message Board Subscription Manager allows site administrators to subscribe or unsubscribe selected users from any category within their site's message board.message-boards-subscription-manager.png
-
-Click on the *Subscribe* or *Unsubscribe* links next to a user's name to
-subscribe or unsubscribe the user from the selected message board category.
-Alternatively, you can use the checkboxes to select a group of users and use the
-*Subscribe* or *Unsubscribe* buttons above the list of users to subscribe or
-unsubscribe a number of users at once. The Message Boards Subscription Manager
-is easy to use but it's a great tool for site administrators who need to make
-sure that certain users receive emails from important message board categories.
+Now that you've created message boards and message board categories, you can
+explore posting messages to them and interacting with other user's threads. 
 
 ## Using the Message Boards [](id=using-the-message-boards)
 
