@@ -39,12 +39,12 @@ and
 [migrated services](/develop/reference/-/knowledge_base/7-0/calling-migrated-services-from-legacy-plugins)
 for Liferay Portal 7.0.
 You can visit the provided links of these two reference documents for more
-information on what the migration tool is scanning for in your application and
+information on what the migration tool is scanning for in your application, and
 why these changes were made in Liferay Portal.
 
 Before you can use the migration tool, you'll need to copy your legacy
 application from your old Plugins SDK to a new 7.0 Plugins SDK. The migration
-tool will only work with a 7.0 version of the Plugins SDK. You can download a
+tool will only work from a 7.0 version of the Plugins SDK. You can download a
 new 7.0 Plugins SDK from
 [SourceForge](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/).
 
@@ -54,23 +54,23 @@ open a command prompt and navigate to the directory where your legacy
 application resides in the 7.0 Plugins SDK. For instance, if you're migrating a
 portlet, navigate to the `[PLUGINS_SDK_7.0]/portlets` directory.
 
-Now that you're ready to easily specify your application's directory, run `blade
+Now that your ready to easily specify your application's directory, run `blade
 migrate` to find the correct syntax and available options you can specify. The
 migration tool expects the following syntax:
 
     blade migrate [options] <projectDir> <[reportFile]>
 
 Since the project directory is the only parameter required, you could run
-something like the following to generate a report:
+something like the following to generate output:
 
     blade migrate my-jsp-portlet
 
 In addition, there are two optional parameters you can specify:
 
-- `-d` or `--detailed` :  determines if the report format is short or long.
-- `-f` or `--format` : defines the format of the output file. The following
-formats are supported, which should immediately follow this parameter: `text`,
-`html`, and `xml`.
+    - `-d` or `-detailed` :  determines if the report format is short or long
+    - `-f` or `--format` : defines the format of the output file. The following
+    formats are supported, which should immediately follow this parameter: text,
+    html, and xml.
 
 If you specify the format parameter, you must also specify an output file (with
 file extension), which should be given at the very end of the command. Likewise,
@@ -92,27 +92,46 @@ legacy application, refer to the following output:
     5. | Moved MVCPortlet, ActionCommand and ActionCommandCache from util-bridges.jar to portal-service.jar| java      | ModerationPortlet.java           | 46  |
     6. | The build-service task must be executed to regenerate code                                        | xml       | service.xml                      | 1   |
 
-If you supplied all the optional parameters, as was described previously, the
-titles would have additional explanatory text and the output would be generated
-in the output file you specified. The detailed parameter does not supply all the
-text available for each required change; for complete documentation on each
-required update, visit the
+If you had supplied all the optional parameters, as was described previously,
+the titles would have additional explanatory text, and the output would be
+generated in the output file you specified. The detailed parameter does not
+supply all the text available for each required change; for complete
+documentation on each required update, visit the
+
 [breaking changes](/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0)
 and
 [migrated services](/develop/reference/-/knowledge_base/7-0/calling-migrated-services-from-legacy-plugins)
 documents.
 
-You may have noticed that some of your updated imports show errors stating that
-they do not exist. This is because many of the updated APIs have been migrated
-to independent modules, and your application is not aware of them. To fix these
-dependency issues, follow the instructions below.
 
-1.  Use this [reference document](/develop/reference/-/knowledge_base/7-0/calling-migrated-services-from-legacy-plugins)
+
+
+
+
+
+
+
+
+
+
+
+
+2.  Use this [reference document](/develop/reference/-/knowledge_base/7-0/calling-migrated-services-from-legacy-plugins)
     to find classes that were exposed as Liferay Portal API in 6.2, but have
     been moved into separate modules for Liferay Portal 7.0. Make a note of any
-    APIs that your legacy plugin is consuming from this list.
+    APIs that your legacy plugin is consuming from this list. If your legacy
+    plugin does not use any of the services listed in the reference document,
+    you can skip to step 6.
 
-2.  Resolve your application's dependencies with other modules by adding the
+    To check if your legacy application needs updates, run `ant compile` from
+    your plugin's root folder. The compilation process will throw errors if any
+    dependencies/imports are incorrect.
+
+    <!-- Check the reference doc link above and verify that the header ID has
+    not changed. The reference doc had not been reviewed/published during the
+    writing of this article, and the link may have changed. -Cody -->
+
+3.  Resolve your application's dependencies with other modules by adding the
     required libraries to your application's `ivy.xml` file. Within the
     `<dependencies>` tag, you'll need to define the module `<dependency>` that
     your application relies on. For example, suppose your application is using a
@@ -128,7 +147,7 @@ dependency issues, follow the instructions below.
     [`ivy.xml`](https://github.com/liferay/liferay-plugins/blob/master/portlets/knowledge-base-portlet/ivy.xml)
     file of the Knowledge Base portlet for an example.
 
-3.  Run `ant clean` from your application's root folder. This command triggers
+4.  Run `ant clean` from your application's root folder. This command triggers
     the download process for the necessary JAR files that your application can
     reference in the `WEB-INF/lib` folder. If you were already using an
     `ivy.xml` file, `ant clean` may not generate the necessary JARs you defined
@@ -136,14 +155,29 @@ dependency issues, follow the instructions below.
     `ivy.xml` file, delete the `ivy.xml.MD5` file from your root folder and
     retry `ant clean`.
 
-4.  Once you think you've satisfied your plugin's dependencies/imports, run `ant
+5.  Refactor your imports so they match the new package names residing in the
+    modules. For example, if one of your application's classes imports the
+    `WikiPage` class, you would need to update the import from:
+
+        import com.liferay.portlet.wiki.model.WikiPage;
+
+    to:
+
+        import com.liferay.wiki.model.WikiPage;
+
+    Make sure to check other files for imports and references, like JSP files.
+
+6.  Open your application's `liferay-plugin-package.properties` file and update
+    the `liferay-versions` property to include Liferay 7.0.
+
+7.  Once you think you've satisfied your plugin's dependencies/imports, run `ant
     compile`. If your plugin compiles successfully, you've addressed the
     necessary updates.
 
-5.  Run `ant war` to generate your application's deployable WAR file. The WAR
+8.  Run `ant war` to generate your application's deployable WAR file. The WAR
     file is available in the Plugins SDK's `/dist` folder.
 
-6.  Before deploying your WAR file to a Liferay Portal 7.0 instance, remove the
+9.  Before deploying your WAR file to a Liferay Portal 7.0 instance, remove the
     JARs that were generated in your WAR's `/lib` folder. Recall that you added
     dependencies in your `ivy.xml` file, which downloaded JAR files that were
     necessary for your application to compile. Now that your application has
@@ -163,7 +197,7 @@ dependency issues, follow the instructions below.
     installed in Portal. If they are not removed, identical JARs would exist in
     two different classloaders, which would throw class cast exceptions.
 
-7. Copy your application's WAR file into your portal instance's
+10. Copy your application's WAR file into your portal instance's
     `/osgi/modules` directory. Your application is now available from the OSGi
     console. To check if your application was deployed and installed
     successfully, open a command prompt and run `telnet localhost 11311` and
