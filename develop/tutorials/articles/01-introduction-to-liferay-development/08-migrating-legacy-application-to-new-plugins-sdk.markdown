@@ -7,7 +7,7 @@ for WAR-style applications that are created using the Plugins SDK. Therefore,
 both module and WAR-style applications are supported in Liferay 7.0. There are
 two routes to take for updating your applications for Liferay 7.0:
 
-- Transform your legacy applications to OSGi modules.
+- Convert your legacy applications to OSGi modules.
 - Keep your applications as legacy WAR-style applications generated from the
   Plugins SDK, and consume the API from the new Liferay modules.
 
@@ -41,10 +41,6 @@ below to begin the migration process:
     To check if your legacy application needs updates, run `ant compile` from
     your plugin's root folder. The compilation process will throw errors if any
     dependencies/imports are incorrect.
-
-    <!-- Check the reference doc link above and verify that the header ID has
-    not changed. The reference doc had not been reviewed/published during the
-    writing of this article, and the link may have changed. -Cody -->
 
 3.  Resolve your application's dependencies with other modules by adding the
     required libraries to your application's `ivy.xml` file. Within the
