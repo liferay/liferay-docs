@@ -1,4 +1,4 @@
-# Migrating Legacy Applications to New Plugins SDK [](id=migrating-legacy-applications-to-new-plugins-sdk)
+# Migrating Legacy Applications to New Plugins SDK
 
 With the new modularity focus for Liferay 7.0, many of Liferay's applications
 have migrated to OSGi modules. Although Liferay 7.0 has made most of its
@@ -186,10 +186,4 @@ Check and see if/when deploy folder will support 7.0 WARs. -Cody -->
 Awesome! You've converted your legacy application to a 7.0 WAR-style
 application!
 
-## Related Topics [](id=related-topics)
-
-[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
-
-[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
-
-[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services)
+## Related Topics
