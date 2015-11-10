@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<ivy-module
+	version="2.0"
+	xmlns:m2="http://ant.apache.org/ivy/maven"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd"
+>
+	<info module="form-nav-portlet" organisation="com.liferay">
+		<extends extendType="configurations,description,info" location="${sdk.dir}/ivy.xml" module="com.liferay.sdk" organisation="com.liferay" revision="latest.integration" />
+	</info>
+
+	<dependencies defaultconf="default">
+		<dependency name="org.osgi.core" org="org.osgi" rev="5.0.0" />
+		<dependency name="org.osgi.compendium" org="org.osgi" rev="5.0.0" />
+		<dependency name="portal-service" org="com.liferay.portal" rev="7.0.0-SNAPSHOT"/>
+		<dependency name="portlet-api" org="javax.portlet" rev="2.0" />
+		<dependency name="servlet-api" org="javax.servlet" rev="2.4"/>
+		<dependency name="jsp-api" org="javax.servlet.jsp" rev="2.1" />
+	</dependencies>
+</ivy-module>

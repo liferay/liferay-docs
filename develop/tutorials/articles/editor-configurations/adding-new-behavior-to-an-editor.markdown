@@ -1,4 +1,4 @@
-# Adding New Behavior to an Editor
+# Adding New Behavior to an Editor [](id=adding-new-behavior-to-an-editor)
 
 With the support of several kinds of WYSIWYG editors, Liferay gives you many
 options to support your users' editing needs. Sometimes, however, you can't get
@@ -13,7 +13,7 @@ editor instantiation to configure/change the editor.
 In this tutorial, you'll learn how to use the JavaScript extension point in your
 Liferay supported WYSIWYG editor.
 
-## Injecting JavaScript into a WYSIWYG Editor
+## Injecting JavaScript into a WYSIWYG Editor [](id=injecting-javascript-into-a-wysiwyg-editor)
 
 The `liferay-util:dynamic-include` extension point is available in the JSP files
 of Liferay's configurable editors. This extension point serves as the gateway
@@ -27,10 +27,10 @@ extension point, you should follow these steps:
     immediately following editor initialization.
 
     Some examples of JS files that are injected into the CKEditor are
-    [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/html/editors/ckeditor_diffs/extension/creole_dialog_definition.js),
-    [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/html/editors/ckeditor_diffs/extension/creole_dialog_show.js),
+    [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/ckeditor_diffs/extension/creole_dialog_definition.js),
+    [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/ckeditor_diffs/extension/creole_dialog_show.js),
     and
-    [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/html/editors/ckeditor_diffs/extension/dialog_definition.js).
+    [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/ckeditor_diffs/extension/dialog_definition.js).
     These JS files are used by Liferay to redefine which fields show in
     different dialogs, depending on what the selected language (HTML, BBCode,
     Creole) supports. For example, Creole doesn't support background color in
@@ -125,7 +125,7 @@ That's it! The JS code that you created is now injected into the editor instance
 you've specified. You're now able to use JavaScript to add new behavior to your
 Liferay supported WYSIWYG editor!
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Modifying an Editor's Configuration](/develop/tutorials/-/knowledge_base/7-0/modifying-an-editors-configuration)
 
