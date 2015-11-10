@@ -53,17 +53,16 @@ of this tab, with a drop-down arrow that lets you switch between projects if you
 have more than one. You can also switch between projects from the user menu at 
 the top right of the Dockbar. The project view provides you with an overview of 
 your LCS project, including fix packs, alerts, environments, and servers. Fix 
-packs are displayed prominently in a table in the middle of the page. Note that 
-the status, environment, server, and location are listed for each fix pack. If 
-the fix pack is available, you can download it by clicking the *Download* icon
-to its right. You can download several fix packs at once by checking the
-checkbox to the left of each and then clicking the *Download* button above the
-Fix Packs table. Once a fix pack is finished downloading, an alert appears in
-the Alerts table below the Fix Packs table. This notification tells you the
-download is finished and to restart your server. Restarting your server
-installs any downloaded fix packs. Note that you must start your server with
-the privileges required to write to the disk location where patches are stored
-and processed (the `patching-tool` folder). 
+packs are displayed prominently in a table. Note that the status, environment, 
+server, and location are listed for each fix pack. If the fix pack is available, 
+you can download it by clicking the *Download* icon to its right. You can 
+download several fix packs at once by checking the checkbox to the left of each 
+and then clicking the *Download* button above the Fix Packs table. Once a fix 
+pack is finished downloading, an alert appears in the Alerts table. This alert 
+tells you the download is finished and to restart your server. Restarting your 
+server installs any downloaded fix packs. Note that you must start your server 
+with the privileges required to write to the disk location where patches are 
+stored and processed (the `patching-tool` folder). 
 
 But what about using LCS to install fix packs across a cluster? Just follow the 
 same procedure! LCS downloads and installs fix packs simultaneously across all 
@@ -74,20 +73,20 @@ nodes--you don't have to handle each one individually.
 In addition to displaying fix pack messages, the Alerts table also displays 
 many other kinds of messages. For example, an alert appears whenever a 
 server is offline. Other alerts appear when monitoring is unavailable, the 
-patching tool is unavailable, or other issues are detected.
+patching tool is unavailable, or LCS detects other issues.
 
-To the left of the fix packs and alerts are the environments in your project. 
-You can also create new environments here by clicking the Add Environment tab. 
-Note that the icon to the left of each environment differs depending on the 
-environment's type and status. In fact, the icon's color and type tells you 
-something about that environment:
+LCS lists the environments in your project on the left side of the screen. You 
+can also create new environments here by clicking the Add Environment tab. Note 
+that the icon to the left of each environment differs depending on the 
+environment's type and status. The icon's color and type tells you something 
+about that environment:
 
-- **Red icon:** Indicates that there is some sort of problem or issue with one or 
-  more servers in that environment.
+- **Red icon:** Indicates a problem or issue with one or more servers in that 
+  environment.
 - **Green icon:** Indicates that the servers in that environment are operating 
   properly.
-- **Icon with a circle:** Indicates that the servers in that environment are in a 
-  cluster.
+- **Icon with a circle:** Indicates that the servers in that environment are in 
+  a cluster.
 
 If an environment has fix packs available, a badge icon to its right indicates 
 how many. You can get more information about a specific environment by clicking 
@@ -96,58 +95,68 @@ it. This takes you to the environment view.
 ## Using the Environment View [](id=using-the-environment-view)
 
 Clicking an environment on the left-hand side of the project view takes you to 
-the environment view. The environment view, as its name implies, gives you more 
-information about an environment in your LCS project. As with the project view, 
-fix packs and alerts are displayed on the center of the screen. In fact, they 
-behave exactly the same here as they do in the project view. The only difference 
-is that they show fix packs and alerts for the environment instead of the 
-project as a whole. Located above the Fix Packs table, the Environment Details 
-button lets you edit or delete the environment. You can also use it to generate 
-and view *environment tokens* that allow automatic configuration of LCS clients. 
-See the section below for more information on environment tokens. To the left of 
-the Fix Packs table is the list of servers in the environment. Clicking on a 
-server takes you to its server view. You can also create a new server in the 
-environment by clicking the *Add Server* tab. It's important to note that this 
-doesn't directly add a server in the environment. Instead, you're presented with 
-a screen that lets you download the LCS client for the new server's version and 
-edition. Once you download the client, you're given instructions for registering
-the server with LCS.
+the environment view. The environment view lets you manage an environment in 
+your LCS project. The UI is segmented into two parts: Overview, and Automatic 
+Registration. You can switch between them by clicking their buttons at the top 
+of the UI. When you enter environment view, Overview is selected by default. The 
+Overview displays basic information about the environment, along with fix packs 
+and alerts. As with the project view, fix packs and alerts are displayed in 
+tables. These tables behave exactly the same here as they do in the project 
+view. The only difference is that they show fix packs and alerts for the 
+environment instead of the whole project. The Environment table displays details 
+about the environment, such as its name, description, and location. You can edit 
+these fields by clicking the blue pencil icon next to each. You can also delete 
+the environment by clicking the Delete button below the Environment table. 
+Clicking the Automatic Registration button lets you generate and view 
+*environment tokens* that allow automatic configuration of LCS clients. See the 
+section below for more information on environment tokens. 
 
 ![Figure 4.14: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
+On the left side of the screen, in either Overview or Automatic Registration, 
+environment view displays a list of the environment's servers. Clicking on a 
+server takes you to its server view. 
+
 ## Using the Server View [](id=using-the-server-view)
 
-The server view provides you with detailed information about a server, including 
+The server view provides detailed information about a server, including 
 statistics and performance metrics. You can get to the server view by clicking a
 server in the environment view or by clicking a server in the Fix Packs or 
-Alerts tables. Fix packs and alerts are the first thing you see when you enter 
-server view. While the Alerts table functions the same as it does in the other 
-views, the Fix Packs table behaves a bit differently. Fix packs are broken down 
-into those that are available for installation and those that are already 
-installed. You can access these through the Available and Installed tabs at 
-the top of the fix packs table. 
+Alerts tables. Server view is segmented into five parts: 
 
-![Figure 4.15: The LCS server view shows an overview of a server registered with LCS.](../../images/lcs-server-view.png)
+- **Page Analytics**: Displays metrics on page views and load times.
+- **Snapshot Metrics**: Displays application, JVM, and server metrics.
+- **Overview**: Displays basic server information, available fix packs, and 
+  alerts.
+- **Details**: Displays general information about your Liferay installation, 
+  Java version, and hardware.
+- **Portal Properties**: Displays your portal's properties and their settings.
 
-Above the Fix Packs table is the Notifications button. Clicking it provides a 
-list of notifications generated for the server. So how do notifications differ 
-from alerts? Fantastic question! LCS notifications are sent via email. Thus,
-they're an active form of notification. Alerts are passive, only appearing in
-the Alerts table of a project, environment, or server. Also, notifications are
-disabled by default. Configuring them is covered later in the section on
-notifications. 
+You can switch between these by clicking their buttons across the top of the UI. 
+Page Analytics is the first thing you see when you enter server view. Page 
+Analytics shows page views and load times for the selected time period. You can 
+select a different time period in the *Period* and *Ending At* fields. By 
+default, load times and page views for all pages are plotted against time in 
+separate graphs. Below these graphs, a table displays summary statistics of 
+these data over the same time period, for each page. If you click a page in the 
+table, the graphs change to plot the data for just that page. If you can't 
+find the page you're looking for, you can search for it in the *Search* box at 
+the top of the table. To plot data for all pages again, click the *All Pages* 
+link next to the *Search* box.
 
-To view metrics and statistics of your server's performance, click the *Metrics* 
-button near the top of the page. The metrics are broken down into three main 
-categories: *Application*, *JVM*, and *Server*. Application is selected by 
-default when you click the Metrics button. 
+![Figure x: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics.png)
 
-The Application category also has three other categories: *Pages*, 
-*Portlets*, and *Cache*. Pages lists the frequency that specific pages 
-load, along with their average load time. Portlets lists the same statistics, 
-but for specific portlets in your server. The Cache category lists Liferay 
-Single VM metrics and Hibernate metrics. In the following screenshot, the 
-statistics in the Portlets category are shown.
+To view other metrics and statistics of your server's performance, click the 
+*Snapshot Metrics* button near the top of the page. These metrics are broken 
+down into three main categories: *Application*, *JVM*, and *Server*. Application 
+is selected by default when you click the Snapshot Metrics button. 
+
+The Application category also has three other categories: *Pages*, *Portlets*, 
+and *Cache*. Pages lists the frequency that specific pages load, along with 
+their average load time. Portlets lists the same statistics, but for specific 
+portlets in your server. The Cache category lists Liferay Single VM metrics and 
+Hibernate metrics. The following screenshot shows the statistics in the Portlets 
+category.
 
 ![Figure 4.16: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
 
@@ -168,17 +177,41 @@ connection pools.
 
 ![Figure 4.18: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
-You can view the settings for a server by clicking on the *Server Details* 
-button, which is to the right of the Metrics button. The first tab under the 
-Server Details button is Server Settings. This lets you view or edit your 
-server's name, description, location, and environment. Click the *pencil icon*
-to the right of each field to edit it. You can also unregister your server from 
-LCS. The second tab under the Server Details button is Server Properties. This 
-provides general information about your Liferay installation and hardware. This 
-information is useful to the Liferay support team in the event that you need 
-their assistance. 
+To view fix packs, alerts, and your server's basic information, click the 
+*Overview* button near the top of the page. Although the Alerts table functions 
+the same as it does in the other views, the Fix Packs table behaves a bit 
+differently. Fix packs are broken down into those that are available for 
+installation and those that are already installed. You can access these through 
+the Available and Installed tabs at the top of the fix packs table. The Server 
+table lists your server's name, description, and location. You can edit these 
+values by clicking the pencil icon next to each. You can also move the server to 
+a different environment by selecting the environment from the *Move to 
+Environment* selector. If you no longer want the server in LCS, click the 
+*Unregister* button to remove it. Note that this doesn't alter your actual 
+server; it just removes it from your LCS project.
 
-![Figure 4.19: You can view and edit the details of your server registered with LCS.](../../images/lcs-server-details-settings.png)
+![Figure 4.15: The LCS server Overview lets you view and edit the basic information of a server registered with LCS.](../../images/lcs-server-overview.png)
+
+To view general information about your Liferay installation, click the *Details* 
+button near the top of the screen. There are three tabs here: *Software*, 
+*Java*, and *Hardware*. Each shows information, respectively, about your Liferay 
+installation, Java installation, and hardware. This information is useful to the 
+Liferay support team in the event that you need their assistance. 
+
+![Figure x: Clicking the Details button shows information about your Liferay installation's software and hardware.](../../images/lcs-server-details.png)
+
+LCS also lets you view your portal's property values. To do so, click the 
+*Portal Properties* button near the top of the page. The portal properties and 
+their values are shown in a searchable table. This gives you a convenient 
+display for seeing exactly what your portal properties are set to. By checking 
+only the *Show Default Values* checkbox, the table shows only the portal's 
+default property values. By checking only the *Show Custom Values* checkbox, the 
+table shows only the portal property values that differ from default. For 
+example, if you change a property setting via a `portal-ext.properties` file, 
+that setting then appears in the Portal Properties table when the *Show Custom 
+Values* checkbox is checked.
+
+![Figure x: With only the *Show Custom Values* checkbox checked, this table shows only the portal property values that differ from default.](../../images/lcs-server-portal-properties.png)
 
 As you can see, the LCS Dashboard is a powerful tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 
@@ -187,11 +220,16 @@ are running. Next, you'll learn how to configure notifications in LCS.
 ## Configuring LCS Notifications [](id=configuring-lcs-notifications)
 
 LCS can be configured to send you notification emails when specific events occur 
-in your projects. LCS notifications are configured by adding *rules*. The rules 
-define what events trigger a notification. To access notification settings, 
-click *Notifications* from the user menu in the upper-right corner of LCS. 
-You're presented with the *Add Rule* button and a table that lists any existing
-rules. There are no rules by default. Click *Add Rule* to define one. 
+in your projects. So how do notifications differ from alerts? Fantastic 
+question! LCS notifications are sent via email. Thus, they're an active form of 
+notification. Alerts are passive, only appearing in the Alerts table of a 
+project, environment, or server. Also, notifications are disabled by default. 
+
+LCS notifications are configured by adding *rules*. The rules define what events 
+trigger a notification. To access notification settings, click *Notifications* 
+from the user menu in the upper-right corner of LCS. You're presented with the 
+*Add Rule* button and a table that lists any existing rules. There are no rules 
+by default. Click *Add Rule* to define one. 
 
 ![Figure 4.20: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
 
@@ -278,10 +316,10 @@ $$$
 There are two places in LCS where you can generate and access environment 
 tokens. If you read the previous sections of this article, then you already know 
 one: the environment view. Navigate to an environment in LCS and click the 
-*Environment Details* button. In environment details, click the *Subscriptions* 
-tab. From here you can manage the environment's token. 
+*Automatic Registration* button. From here you can manage the environment's 
+token. 
 
-![Figure 4.24: The Subscriptions tab in Environment Details shows the token for only that environment.](../../images/lcs-environment-view-subscriptions.png)
+![Figure 4.24: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../images/lcs-environment-token.png)
 
 By default, there's no existing token. A table appears that contains only a 
 *Generate* button. Click it to generate a token for the environment. The new 
@@ -289,13 +327,13 @@ token then appears in the table with information on who generated it and when.
 There's also an Actions button next to it for downloading or regenerating the
 token. 
 
-You can also access environment tokens from the Subscriptions tab on the left 
-side of LCS. Clicking the *Subscriptions* tab here shows the tokens for all the 
-environments in your project. This provides a central location to manage all 
-your environment tokens. Otherwise, the UI for managing them is exactly the 
-same. 
+You can also access environment tokens from the Connection tab on the left side 
+of LCS. Click the *Connection* tab here, and then click the *Automatic 
+Registration* button. The table shows the tokens for all the environments in 
+your project. This provides a central location to manage all your environment 
+tokens. Otherwise, the UI for managing them is exactly the same. 
 
-![Figure 4.25: The Subscriptions tab on the left lets you manage the environment tokens for your entire project.](../../images/lcs-subscriptions.png)
+![Figure 4.25: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images/lcs-environment-token-02.png)
 
 Once you have an environment token, use the following steps to register a
 previously unregistered Liferay instance with LCS:
