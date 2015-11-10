@@ -83,7 +83,17 @@ below to begin the migration process:
 
 7.  Once you think you've satisfied your plugin's dependencies/imports, run `ant
     compile`. If your plugin compiles successfully, you've addressed the
-    necessary updates.
+    necessary updates. There are
+    [breaking changes](/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0)
+    that could cause your application to fail during compilation. If you have
+    compilation errors that are unrelated to the migrated services in modules,
+    search the breaking changes document for potential causes. There is a
+    migration tool that will be able to check your application for breaking
+    changes automatically, but this tool is still in development and not
+    available at this time.
+
+    <!-- The above statement will need to be removed about breaking changes when
+    the migration tool is ready to document. -Cody -->
 
 8.  Run `ant war` to generate your application's deployable WAR file. The WAR
     file is available in the Plugins SDK's `/dist` folder.
