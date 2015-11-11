@@ -35,17 +35,128 @@ exception of the following non-sensitive properties:
     portal.jaas.strict.password
     login.create.account.allow.custom.password
 
-Now that you know what information is stored on the LCS servers, it's time to 
-get to the heart of LCS: the Dashboard. 
+Now that you know what information is stored on the LCS servers, you're ready to 
+learn how to manage your LCS projects. This includes renaming and creating 
+projects, as well as requesting access to projects you don't administer. You'll 
+also learn how to manage the users in your LCS project and assign them to the 
+correct LCS roles. 
 
-The LCS Dashboard lets you view and manage your project, environments, and
-servers. If you're not already at the Dashboard, click it near the upper
-left-hand corner of your LCS site. Clicking *Dashboard* takes you to the
-project view. From there, you can get to the environment view and the server
-view. Each of these views gives you a different look into certain aspects of
-your LCS project. You'll start with the project view.
+## Managing Your LCS Projects
 
-## Using the Project View [](id=using-the-project-view)
+Each environment and server in LCS is part of an LCS project. LCS provides a 
+simple UI for managing these projects. To access this UI, log in to LCS and then 
+select *Manage Projects* from your user menu in the dockbar. The following 
+screenshot illustrates this.
+
+![Figure x: To manage your LCS projects, select *Manage Projects* from the user menu in LCS.](../../images/lcs-user-menu-manage-projects.png)
+
+The *My Projects* tab is shown first, and shows a table that lists each of your 
+LCS projects. This table also lists the administrator's email address for each 
+project. If you're the administrator of a project, you can edit its name by 
+clicking the blue pencil icon next to it in the table. You can also create a new 
+project by clicking the *Create Project* button below the table. The following 
+screenshot shows the My Projects tab.
+
+![Figure x: The My Projects tab lists your LCS projects and lets you create new ones.](../../images/lcs-my-projects.png)
+
+The *Unlinked* tab shows your Liferay projects that aren't connected with LCS. 
+<!-- What does Unlinked mean here? -->
+The *Pending* tab shows the LCS projects you've requested access to. If you 
+request access to an LCS project, but the administrator hasn't yet granted your 
+request, the project appears in the Pending tab. The *Company* tab shows a table 
+with a list of the LCS projects associated with the domain of your email 
+address. This is typically the company your email address is associated with. 
+For example, if your email address is `joebloggs@janesblogfactory.com`, the 
+Company tab presents you with a list of existing projects registered to users 
+with the `@janesblogfactory.com` domain. The table also lists the administrator 
+email address and a *Request Access* link for each project. This lets you 
+quickly and easily join the LCS projects that are associated with your company. 
+The following screenshot shows the Company tab (the administrator email 
+addresses have been masked).
+
+![Figure x: The Company tab lets you find other LCS projects associated with the domain of your email address.](../../images/lcs-company-projects.png)
+
+So what exactly can an LCS Administrator do? Why did you mask out their email 
+addresses in the previous screenshots? These are fantastic questions! The LCS 
+Administrator role is very powerful (that's why their email addresses are masked 
+in the screenshots). LCS Administrators can assign roles to the rest of the 
+users in their project. Each LCS user needs to have an assigned role. The 
+following roles are available: 
+
+- LCS Administrator: All LCS functionality is available to administrators. This 
+  is the only role that can manage the roles of other users.
+- LCS Environment Manager: All LCS functionality is available in the scope of 
+  an environment, with the exception of managing other users.
+- LCS Environment Viewer: Has read-only access in the scope of an environment.
+
+You should note that each of these LCS roles assume that the user already has 
+the LCS User role in his or her Liferay.com account. The LCS User role is
+granted automatically the first time the user enters their LCS account. The
+actions that can be performed by each of the LCS roles are detailed in the below
+permissions matrix. 
+
+**LCS Permissions Matrix**
+
+Action | &nbsp;LCS Administrator | &nbsp;LCS Environment Manager | &nbsp;LCS Environment Viewer |
+------ | ----------------------- | ----------------------------- | ---------------------------- |
+Access LCS | true | true | true |
+Access Any Environment | true | false | false |
+Access a Particular Environment | true | true | true |
+Manage Users in Any Environment | true | false | false |
+Manage Users in a Particular Environment | true | true | false |
+Invite Users to LCS | true | false | false |
+Create and Delete Environments | true | false | false |
+Edit Any Environment | true | false | false |
+Edit a Particular Environment | true | true | false |
+Server Registration in Any Environment | true | false | false |
+Server Registration in a Particular Environment | true | true | false |
+Install Fix Packs in Any Environment | true | false | false |
+Install Fix Packs in a Particular Environment | true | true | false |
+
+Now that you know what roles are available in an LCS project, and what they do, 
+you're ready to learn how to manage the users in LCS projects.
+
+### Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
+
+The Users section of LCS is where you manage the LCS users that are part of your 
+project. It's here that you can grant or revoke LCS roles or invite others that 
+aren't yet part of your project. To manage users, first click the *Users* tab 
+just below the Dashboard tab on the upper-left of your screen. You're presented 
+with a table of the users in your project. To the right of each is the Manage 
+button. Clicking *Manage* lets you assign or revoke LCS roles for that user. 
+
+![Figure 4.21: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
+
+To invite external users to your project, click the *Invite* button. Here you
+can invite anyone with a valid email address. You can also search for
+Liferay.com users to invite. Once you choose some users, the *Role* selection
+box lets you preassign LCS roles for when they accept your invitation. You can
+also use the Environment selection box to preassign them to an environment in
+your project.
+
+![Figure 4.22: You can invite users to your LCS project and even preassign them roles.](../../images/lcs-invite-users.png)
+
+To view sent invitations, click the *Invitations* tab. A table displays
+invitations, listing invited users' email addresses along with who invited them
+and the date that the invitation was sent. The table also shoes the preassigned
+LCS role and environment. You can cancel an invitation by clicking *Cancel* in 
+the Action column of the invitation. 
+
+![Figure 4.23: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
+
+Great! Now you know how to manage your LCS projects and the users in them. Now 
+it's time to get to the heart of LCS: the Dashboard.
+
+## Using the Dashboard
+
+The LCS Dashboard lets you view and manage a project's environments and servers. 
+If you're not already at the Dashboard, click it near the upper left-hand corner 
+of your LCS site. Clicking *Dashboard* takes you to the project view. From 
+there, you can get to the environment view and the server view. Each of these 
+views gives you a different look into certain aspects of your LCS project. 
+You'll start with the project view. 
+
+### Using the Project View [](id=using-the-project-view)
 
 You can get to the project view at any time by clicking the *Dashboard* tab near 
 the upper left-hand corner of your LCS site. The project is listed to the right 
@@ -92,7 +203,7 @@ If an environment has fix packs available, a badge icon to its right indicates
 how many. You can get more information about a specific environment by clicking 
 it. This takes you to the environment view.
 
-## Using the Environment View [](id=using-the-environment-view)
+### Using the Environment View [](id=using-the-environment-view)
 
 Clicking an environment on the left-hand side of the project view takes you to 
 the environment view. The environment view lets you manage an environment in 
@@ -117,7 +228,7 @@ On the left side of the screen, in either Overview or Automatic Registration,
 environment view displays a list of the environment's servers. Clicking on a 
 server takes you to its server view. 
 
-## Using the Server View [](id=using-the-server-view)
+### Using the Server View [](id=using-the-server-view)
 
 The server view provides detailed information about a server, including 
 statistics and performance metrics. You can get to the server view by clicking a
@@ -248,34 +359,6 @@ an Actions button that lets you edit or delete it.
 
 Great! Now you know how to set notification rules in LCS. The next section shows 
 you how to manage your project's users. 
-
-## Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
-
-The Users section of LCS is where you manage the LCS users that are part of your 
-project. It's here that you can grant or revoke LCS roles or invite others that 
-aren't yet part of your project. To manage users, first click the *Users* tab 
-just below the Dashboard tab on the upper-left of your screen. You're presented 
-with a table of the users in your project. To the right of each is the Manage 
-button. Clicking *Manage* lets you assign or revoke LCS roles for that user. 
-
-![Figure 4.21: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
-
-To invite external users to your project, click the *Invite* button. Here you
-can invite anyone with a valid email address. You can also search for
-Liferay.com users to invite. Once you choose some users, the *Role* selection
-box lets you preassign LCS roles for when they accept your invitation. You can
-also use the Environment selection box to preassign them to an environment in
-your project.
-
-![Figure 4.22: You can invite users to your LCS project and even preassign them roles.](../../images/lcs-invite-users.png)
-
-To view sent invitations, click the *Invitations* tab. A table displays
-invitations, listing invited users' email addresses along with who invited them
-and the date that the invitation was sent. The table also shoes the preassigned
-LCS role and environment. You can cancel an invitation by clicking *Cancel* in 
-the Action column of the invitation. 
-
-![Figure 4.23: The Invitations tab lets administrators view and cancel invitations.](../../images/lcs-invitations.png)
 
 ## Using Environment Tokens [](id=using-environment-tokens)
 
