@@ -358,7 +358,8 @@ rule. It then appears in a table along with any other existing rules. Each has
 an Actions button that lets you edit or delete it. 
 
 Great! Now you know how to set notification rules in LCS. The next section shows 
-you how to manage your project's users. 
+you how to use environment tokens to automatically register Liferay instances 
+with LCS. 
 
 ## Using Environment Tokens [](id=using-environment-tokens)
 
