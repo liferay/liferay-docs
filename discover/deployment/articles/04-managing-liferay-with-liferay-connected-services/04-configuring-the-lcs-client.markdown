@@ -8,27 +8,29 @@ within your Liferay instance.
 
 ## Downloading the LCS Client [](id=downloading-the-lcs-client)
 
-There are multiple places in LCS where you can download the LCS client. This 
-ensures that you have quick access whenever you need the client. The first and 
-most prominent download location is presented after you sign in to LCS on 
-[https://lcs.liferay.com](https://lcs.liferay.com). Choose your portal version 
-and edition on the Welcome screen and then click *Download*. In the following 
-screenshot, Liferay Portal 6.2 EE is selected. 
+To use LCS, you must have an account at
+[Liferay.com](http://www.liferay.com/). When you first log in to 
+[LCS](https://lcs.liferay.com), the Welcome screen prompts you to download the 
+client. Choose your portal version and edition on the Welcome screen and then 
+click *Download*. The following screenshot shows this screen with Liferay Portal 
+6.2 EE selected. 
 
-![Figure 4.4: You can download the LCS client from the LCS Welcome screen.](../../images/lcs-welcome-client-download.png)
+![Figure 4.4: When you first log in to LCS, you can download the LCS client from the Welcome screen.](../../images/lcs-welcome-client-download.png)
 
-You can also download the LCS client from the *Connection* tab inside LCS. When 
-you click the *Connection* tab, the *Client Downloads* button is automatically 
-selected. This presents the same screen as earlier, in which you can download 
-the client. The following screenshot shows this: 
+Note that you'll only see the Welcome screen the first time you log in to LCS. 
+If you need to download the client again later, you can do so from the 
+*Connection* tab inside LCS. When you click the *Connection* tab, the 
+*Client Downloads* button is automatically selected. This presents the same 
+screen as earlier, in which you can download the client. The following 
+screenshot shows this: 
 
 ![Figure x: You can also download the LCS client from the Connection tab inside of LCS.](../../images/lcs-client-download-connection.png)
 
 Super! Now you know all the places where you can download the LCS client. Before 
 you deploy it though, there are a few other things you should check. If you 
 connect to the web through a proxy or need to fine-tune how the client connects 
-to LCS, proceed to the next section. Otherwise, you can skip to the final 
-section in this article for instructions on registering the client with LCS. 
+to LCS, proceed to the next section. Otherwise, you can skip this section and 
+move on to the section on registering the client with LCS. 
 
 ## Preconfiguring the LCS Client [](id=preconfiguring-the-lcs-client)
 
@@ -105,13 +107,18 @@ to the LCS website. Log in with your credentials and then click *Grant Access*.
 Next, you need to register your server with LCS by filling out the following 
 fields:
 
-1. Connected Services Project: Choose your project from the menu. 
+1. Connected Services Project: Choose an existing LCS project from the menu. If 
+   you don't yet have an LCS project, you can use the default *My LCS Project* 
+   that LCS creates for you (you can change this project's name later). 
 
-2. Environment: Select an environment from the menu or create a new one by
-   clicking the *Add New Environment* button. An environment should be a logical
-   group of servers. A group of development servers or a cluster are good 
-   examples of environments. If you elect to create a new environment, a popup 
-   asks you to enter its *Name*, *Location*, and *Description*.
+2. Environment: An environment should be a logical group of servers. A group of 
+   development servers or a cluster are good examples of environments. Select an 
+   existing environment from the menu, or create a new one by clicking the *Add 
+   New Environment* button. If you don't yet have an environment, you can use 
+   the default *My Environment* that LCS creates for you (you can change this 
+   environment's name later). If you elect to create a new environment, a popup 
+   asks you to enter the new environment's *Name*, *Location*, and 
+   *Description*. 
 
     ![Figure 4.9: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
 
@@ -143,30 +150,26 @@ displayed. Here's a description of what's displayed:
   connection with LCS. This regular communication keeps the client's LCS 
   connection alive, even when there's nothing else to report. The value is 
   listed in hours, minutes, and then seconds. For example, if this value is 
-  `00:01:00`, the client communicates with LCS once every minute. 
+  `00:01:00`, the client communicates with LCS once every minute. This article's 
+  previous section contains instructions for changing the heartbeat interval.
 - **Message Task Interval:** The interval at which the client checks LCS for new 
   messages. For example, LCS messages are used to instruct the client to 
-  download new fix packs.
+  download new fix packs. Currently, this interval is fixed and can't be 
+  changed. 
 - **Metrics Task Interval:** The interval at which server statistics and metrics 
-  are sent to LCS.
+  are sent to LCS. Currently, this interval is fixed and can't be changed. 
 - **Last Message Received:** The time the latest message was received from LCS.
 - **Connection Uptime:** The duration of the client's connection with LCS.
-- **Project Home:** This link takes you to this server's registered 
-  project.
-- **Environment:** This link takes you to this server's registered 
-  environment.
+- **Project Home:** This link takes you to this server's registered LCS project. 
+  The project home in LCS is also called the *dashboard*.
+- **Environment:** This link takes you to this server's registered environment.
 - **Server Dashboard:** This link takes you to the server on LCS.
 - **Disconnect:** Disconnects this Liferay instance from LCS.
-- **Reset Credentials:** Removes the authorizing account from registration with LCS. 
-  It's important to note that your credentials are not human readable in the 
-  portal instance. This is because OAuth, which uses tokens, is used for 
-  authentication.
+- **Reset Credentials:** Removes the authorizing account from registration with 
+  LCS. Note that your credentials are not human readable in the portal instance. 
+  This is because OAuth, which uses tokens, is used for authentication. 
 
 ![Figure 4.12: The server is connected to LCS.](../../images/lcs-server-connected.png)
-
-This article's previous section contains instructions for changing the heartbeat 
-interval. Currently, the message and metrics task intervals are fixed and cannot 
-be changed. 
 
 Awesome! Now that you've registered your server with your LCS account, you can 
 dig in to the features of LCS. 
