@@ -1,4 +1,4 @@
-# Using the Export/Import Lifecycle Listener Framework
+# Using the Export/Import Lifecycle Listener Framework [](id=using-the-export-import-lifecycle-listener-framework)
 
 The `ExportImportLifecycleListener` framework allows developers to write code
 that listens for certain staging or export/import events during the publication
@@ -41,7 +41,7 @@ In this tutorial, you'll learn how to use the `ExportImportLifecycleListener`
 framework to listen for processes/events during the staging and export/import
 lifecycles.
 
-## Listening to Lifecycle Events
+## Listening to Lifecycle Events [](id=listening-to-lifecycle-events)
 
 To begin creating your lifecycle listener, you must create a module.
 Follow the steps below:
