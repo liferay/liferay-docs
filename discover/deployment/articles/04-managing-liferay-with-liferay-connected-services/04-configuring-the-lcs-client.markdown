@@ -17,21 +17,12 @@ screenshot, Liferay Portal 6.2 EE is selected.
 
 ![Figure 4.4: You can download the LCS client from the LCS Welcome screen.](../../images/lcs-welcome-client-download.png)
 
-The LCS client is also available for download from the User menu in your LCS 
-account's Dockbar. To download it from here, click your name in the top-right 
-corner of your LCS account and then click *Downloads* in the menu that 
-appears. This is shown in the following screenshot. You then see a screen
-similar to the Welcome screen, where you select your portal's version, edition, 
-and then click *Download*. 
+You can also download the LCS client from the *Connection* tab inside LCS. When 
+you click the *Connection* tab, the *Client Downloads* button is automatically 
+selected. This presents the same screen as earlier, in which you can download 
+the client. The following screenshot shows this: 
 
-![Figure 4.5: You can also download the LCS client from the User menu in your LCS account's Dockbar.](../../images/lcs-user-menu-client-download.png)
-
-There's one final place where you can download the LCS client: when creating a 
-new server in an environment. When you click the *Add Server* tab in an 
-environment, you're presented with a screen similar to the Welcome screen. 
-Select your portal's version and edition, and then click *Download*.
-
-![Figure 4.6: Adding a new server in an environment also presents you with the LCS client download screen.](../../images/lcs-add-server-client-download.png)
+![Figure x: You can also download the LCS client from the Connection tab inside of LCS.](../../images/lcs-client-download-connection.png)
 
 Super! Now you know all the places where you can download the LCS client. Before 
 you deploy it though, there are a few other things you should check. If you 
