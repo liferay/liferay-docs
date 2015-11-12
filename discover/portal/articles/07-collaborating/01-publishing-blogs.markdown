@@ -125,8 +125,6 @@ might want to write a blog entry talking about a discussion that happened on the
 forums. To link those two assets together, select the forum thread under Related
 Assets. 
 
-<!-- I thought Sergio said they were removing support for pingbacks? -Rich -->
-
 Blog entries also support *pingbacks*. Pingbacks are XML-RPC requests that are
 automatically sent when you link to another site. If you link to another site in
 your blog entry, Liferay sends a pingback to the other site to notify that site
