@@ -172,13 +172,13 @@ when a new blog entry has been updated.
 
 **RSS:** choose how blogs are displayed to RSS readers. 
 
-**Maximum Items to Display:** choose the total number of RSS feeds entries to
+- **Maximum Items to Display:** choose the total number of RSS feeds entries to
 display on the initial page. You can choose up to one hundred to be displayed.
 
-**Display Style:** choose between *Full Content*, *Abstract*, and *Title*. These
+- **Display Style:** choose between *Full Content*, *Abstract*, and *Title*. These
 options work just like the ones above for blog entries.
 
-**Format:** choose which format you want to deliver your blogs: Atom 1.0, RSS
+- **Format:** choose which format you want to deliver your blogs: Atom 1.0, RSS
 1.0, or RSS 2.0.
 
 <!-- I believe the Atom format is being discontinued. Jesse wrote a tutorial on
@@ -246,13 +246,12 @@ traffic to your site.
 
 By default, the Blogs application displays the abstract and image of the latest
 entries. There are several display options that let you configure the listing to
-look the way you want. To configure the application, click the *Options* icon
-in the app's title bar and select *Configuration*. The *Display Settings* are in
-the Setup tab. 
+look the way you want. To configure the application, click the *Options* icon in
+the app's title bar and select *Configuration*. The *Display Settings* are in
+the Setup tab. To choose the right settings, you should think about the best way
+to display your entries as well as how you want users to interact with bloggers. 
 
-**Display Settings:** changes various display options for the Blogs application.
-To choose the right settings, you should think about the best way to display
-your entries as well as how you want users to interact with bloggers.
+Here are the Display Settings:
 
 **Maximum Items to Display:** choose the total number of blog entries to display
 on the initial page. You can select up to 75 to display at once.
@@ -345,12 +344,12 @@ displays.
 This lets users subscribe to an aggregate feed of all your bloggers. Below this
 checkbox, you can configure how you want the RSS Feed displayed:
 
-**Maximum Items to Display:** select maximum number of RSS items to display.
+- **Maximum Items to Display:** select maximum number of RSS items to display.
 
-**Display Style:** select from several different styles for displaying RSS
+- **Display Style:** select from several different styles for displaying RSS
 feeds: *Abstract*, *Full Content*, and *Title*.
 
-**Format:** select which web feed language to use for your feed, which
+- **Format:** select which web feed language to use for your feed, which
 includes *Atom 1.0*, *RSS 1.0*, or *RSS 2.0*.
 
 <!-- Again, we should check with Sergio about Atom feeds. -Rich --> 
