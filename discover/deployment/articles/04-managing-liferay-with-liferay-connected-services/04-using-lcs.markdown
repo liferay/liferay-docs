@@ -287,8 +287,8 @@ Perm Gen.
 
 ![Figure 4.19: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
 
-Server is the third category in the Application category. The Server category
-shows additional information about how your server is running. For example, a
+Server is the third category in Snapshot Metrics. The Server category shows 
+additional information about how your server is running. For example, a 
 horizontal bar graph shows the number of current threads running on your server. 
 Similarly, horizontal bar graphs are used to represent the JDBC connection 
 pools. 
