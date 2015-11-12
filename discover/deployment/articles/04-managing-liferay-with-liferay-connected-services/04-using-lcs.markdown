@@ -41,7 +41,7 @@ projects, as well as requesting membership to projects you don't administer.
 You'll also learn how to manage the users in your LCS project and assign them to 
 the correct LCS roles. 
 
-## Managing Your LCS Projects
+## Managing Your LCS Projects [](id=managing-your-lcs-projects)
 
 Each environment and server in LCS is part of an LCS project. LCS provides a 
 simple UI for managing these projects. To access this UI, log in to LCS and then 
@@ -151,7 +151,7 @@ the Action column of the invitation.
 Great! Now you know how to manage your LCS projects and the users in them. Now 
 it's time to get to the heart of LCS: the Dashboard.
 
-## Using the Dashboard
+## Using the Dashboard [](id=using-the-dashboard)
 
 The LCS Dashboard lets you view and manage a project's environments and servers. 
 If you're not already at the Dashboard, click it near the upper left-hand corner 
