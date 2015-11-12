@@ -60,11 +60,14 @@ screenshot shows the My Projects tab.
 ![Figure x: The My Projects tab lists your LCS projects and lets you create new ones.](../../images/lcs-my-projects.png)
 
 The *Unlinked* tab shows your Liferay projects that aren't connected with LCS. 
-<!-- What does Unlinked mean here? -->
-The *Pending* tab shows the LCS projects you've requested access to. If you 
-request access to an LCS project, but the administrator hasn't yet granted your 
-request, the project appears in the Pending tab. The *Company* tab shows a table 
-with a list of the LCS projects associated with the domain of your email 
+For example, if you've submitted an app on Liferay Marketplace, then it's a 
+project associated with your Liferay account. In this sense, a Liferay project 
+is an umbrella Liferay concept that can span over many different Liferay 
+products. The Unlinked tab gives you the opportunity to connect those projects 
+to LCS. The *Pending* tab shows the LCS projects you've requested access to. If 
+you request access to an LCS project, but the administrator hasn't yet granted 
+your request, the project appears in the Pending tab. The *Company* tab shows a 
+table with a list of the LCS projects associated with the domain of your email 
 address. This is typically the company your email address is associated with. 
 For example, if your email address is `joebloggs@janesblogfactory.com`, the 
 Company tab presents you with a list of existing projects registered to users 
@@ -169,11 +172,11 @@ server, and location are listed for each fix pack. If the fix pack is available,
 you can download it by clicking the *Download* icon to its right. You can 
 download several fix packs at once by checking the checkbox to the left of each 
 and then clicking the *Download* button above the Fix Packs table. Once a fix 
-pack is finished downloading, an alert appears in the Alerts table. This alert 
-tells you the download is finished and to restart your server. Restarting your 
-server installs any downloaded fix packs. Note that you must start your server 
-with the privileges required to write to the disk location where patches are 
-stored and processed (the `patching-tool` folder). 
+pack download completes, an alert appears in the Alerts table. This alert tells 
+you the download is finished and to restart your server. Restarting your server 
+installs any downloaded fix packs. Note that you must start your server with the 
+privileges required to write to the disk location where patches are stored and 
+processed (the `patching-tool` folder). 
 
 But what about using LCS to install fix packs across a cluster? Just follow the 
 same procedure! LCS downloads and installs fix packs simultaneously across all 
@@ -184,7 +187,10 @@ nodes--you don't have to handle each one individually.
 In addition to displaying fix pack messages, the Alerts table also displays 
 many other kinds of messages. For example, an alert appears whenever a 
 server is offline. Other alerts appear when monitoring is unavailable, the 
-patching tool is unavailable, or LCS detects other issues.
+patching tool is unavailable, or LCS detects other issues. Note that the Alerts 
+table only appears when there are alerts to display. If there aren't any alerts, 
+then a status message appears indicating that all the servers in your project 
+are online and connected to LCS.
 
 LCS lists the environments in your project on the left side of the screen. You 
 can also create new environments here by clicking the Add Environment tab. Note 
