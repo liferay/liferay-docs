@@ -26,11 +26,11 @@ screenshot shows this:
 
 ![Figure x: You can also download the LCS client from the Connection tab inside of LCS.](../../images/lcs-client-download-connection.png)
 
-Super! Now you know all the places where you can download the LCS client. Before 
-you deploy it though, there are a few other things you should check. If you 
-connect to the web through a proxy or need to fine-tune how the client connects 
-to LCS, proceed to the next section. Otherwise, you can skip this section and 
-move on to the section on registering the client with LCS. 
+Super! Now you know where to get the LCS client. Before you deploy it though, 
+there are a few other things you should check. If you connect to the web through 
+a proxy or need to fine-tune how the client connects to LCS, proceed to the next 
+section. Otherwise, you can skip this section and move on to the section on 
+registering the client with LCS. 
 
 ## Preconfiguring the LCS Client [](id=preconfiguring-the-lcs-client)
 

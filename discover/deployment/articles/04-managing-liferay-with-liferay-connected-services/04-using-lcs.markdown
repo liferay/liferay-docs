@@ -37,9 +37,9 @@ exception of the following non-sensitive properties:
 
 Now that you know what information is stored on the LCS servers, you're ready to 
 learn how to manage your LCS projects. This includes renaming and creating 
-projects, as well as requesting access to projects you don't administer. You'll 
-also learn how to manage the users in your LCS project and assign them to the 
-correct LCS roles. 
+projects, as well as requesting membership to projects you don't administer. 
+You'll also learn how to manage the users in your LCS project and assign them to 
+the correct LCS roles. 
 
 ## Managing Your LCS Projects
 
@@ -61,40 +61,41 @@ screenshot shows the My Projects tab.
 
 The *Unlinked* tab shows your Liferay projects that aren't connected with LCS. 
 For example, if you've submitted an app on Liferay Marketplace, then it's a 
-project associated with your Liferay account. In this sense, a Liferay project 
-is an umbrella Liferay concept that can span over many different Liferay 
-products. The Unlinked tab gives you the opportunity to connect those projects 
-to LCS. The *Pending* tab shows the LCS projects you've requested access to. If 
-you request access to an LCS project, but the administrator hasn't yet granted 
-your request, the project appears in the Pending tab. The *Company* tab shows a 
-table with a list of the LCS projects associated with the domain of your email 
+Liferay project associated with your Liferay account. A Liferay project is an 
+umbrella Liferay concept and can span over many different Liferay products. The 
+Unlinked tab gives you the opportunity to connect those projects to LCS. The 
+*Pending* tab shows the existing LCS projects you've requested access to. If you 
+request access to an LCS project, but the administrator hasn't yet granted your 
+request, the project appears in the Pending tab. The *Company* tab shows a table 
+with a list of the LCS projects associated with the domain of your email 
 address. This is typically the company your email address is associated with. 
 For example, if your email address is `joebloggs@janesblogfactory.com`, the 
-Company tab presents you with a list of existing projects registered to users 
-with the `@janesblogfactory.com` domain. The table also lists the administrator 
-email address and a *Request Access* link for each project. This lets you 
-quickly and easily join the LCS projects that are associated with your company. 
-The following screenshot shows the Company tab (the administrator email 
+Company tab presents you with a list of existing LCS projects registered to 
+users with the `@janesblogfactory.com` domain. The table also lists the 
+administrator email address and a *Request Access* link for each project. This 
+lets you quickly and easily join the LCS projects that are associated with your 
+company. The following screenshot shows the Company tab (the administrator email 
 addresses have been masked).
 
 ![Figure x: The Company tab lets you find other LCS projects associated with the domain of your email address.](../../images/lcs-company-projects.png)
 
-So what exactly can an LCS Administrator do? Why did you mask out their email 
-addresses in the previous screenshots? These are fantastic questions! The LCS 
+So what can an LCS Administrator do? Why did you mask out their email addresses 
+in the previous screenshots? These are fantastic questions! The LCS 
 Administrator role is very powerful (that's why their email addresses are masked 
-in the screenshots). LCS Administrators can assign roles to the rest of the 
-users in their project. Each LCS user needs to have an assigned role. The 
-following roles are available: 
+in the screenshots). LCS Administrators can assign LCS roles to the rest of the 
+users in their project. Each LCS user must have an assigned role. The following 
+roles are available: 
 
-- LCS Administrator: All LCS functionality is available to administrators. This 
-  is the only role that can manage the roles of other users.
-- LCS Environment Manager: All LCS functionality is available in the scope of 
-  an environment, with the exception of managing other users.
-- LCS Environment Viewer: Has read-only access in the scope of an environment.
+- **LCS Administrator:** All LCS functionality is available to administrators. 
+  This is the only role that can manage the roles of other users. 
+- **LCS Environment Manager:** All LCS functionality is available in the scope 
+  of an environment, with the exception of managing other users. 
+- **LCS Environment Viewer:** Has read-only access in the scope of an 
+  environment.
 
 You should note that each of these LCS roles assume that the user already has 
-the LCS User role in his or her Liferay.com account. The LCS User role is
-granted automatically the first time the user enters their LCS account. The
+the LCS User role in his or her Liferay.com account. The LCS User role is 
+granted automatically the first time the user enters their LCS account. The 
 actions that can be performed by each of the LCS roles are detailed in the below
 permissions matrix. 
 
@@ -180,7 +181,7 @@ processed (the `patching-tool` folder).
 
 But what about using LCS to install fix packs across a cluster? Just follow the 
 same procedure! LCS downloads and installs fix packs simultaneously across all 
-nodes--you don't have to handle each one individually. 
+nodes--you don't have to handle each separately. 
 
 ![Figure 4.13: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
 
@@ -241,13 +242,13 @@ statistics and performance metrics. You can get to the server view by clicking a
 server in the environment view or by clicking a server in the Fix Packs or 
 Alerts tables. Server view is segmented into five parts: 
 
-- **Page Analytics**: Displays metrics on page views and load times.
-- **Snapshot Metrics**: Displays application, JVM, and server metrics.
-- **Overview**: Displays basic server information, available fix packs, and 
+- **Page Analytics:** Displays metrics on page views and load times.
+- **Snapshot Metrics:** Displays application, JVM, and server metrics.
+- **Overview:** Displays basic server information, available fix packs, and 
   alerts.
-- **Details**: Displays general information about your Liferay installation, 
+- **Details:** Displays general information about your Liferay installation, 
   Java version, and hardware.
-- **Portal Properties**: Displays your portal's properties and their settings.
+- **Portal Properties:** Displays your portal's properties and their settings.
 
 You can switch between these by clicking their buttons across the top of the UI. 
 Page Analytics is the first thing you see when you enter server view. Page 
@@ -288,9 +289,9 @@ Perm Gen.
 
 Server is the third category in the Application category. The Server category
 shows additional information about how your server is running. For example, a
-horizontal bar graph shows the number of current threads that are running on
-your server. Similarly, horizontal bar graphs are used to represent the JDBC
-connection pools.
+horizontal bar graph shows the number of current threads running on your server. 
+Similarly, horizontal bar graphs are used to represent the JDBC connection 
+pools. 
 
 ![Figure 4.18: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
@@ -310,23 +311,24 @@ server; it just removes it from your LCS project.
 ![Figure 4.15: The LCS server Overview lets you view and edit the basic information of a server registered with LCS.](../../images/lcs-server-overview.png)
 
 To view general information about your Liferay installation, click the *Details* 
-button near the top of the screen. There are three tabs here: *Software*, 
-*Java*, and *Hardware*. Each shows information, respectively, about your Liferay 
-installation, Java installation, and hardware. This information is useful to the 
-Liferay support team in the event that you need their assistance. 
+button near the top of the screen. There are three tabs under Details: 
+*Software*, *Java*, and *Hardware*. Each shows information, respectively, about 
+your Liferay installation, Java installation, and hardware. This information is 
+useful to the Liferay support team in the event that you need their assistance. 
 
 ![Figure x: Clicking the Details button shows information about your Liferay installation's software and hardware.](../../images/lcs-server-details.png)
 
 LCS also lets you view your portal's property values. To do so, click the 
-*Portal Properties* button near the top of the page. The portal properties and 
-their values are shown in a searchable table. This gives you a convenient 
+*Portal Properties* button near the top of the page. Your portal's properties 
+and their values are shown in a searchable table. This gives you a convenient 
 display for seeing exactly what your portal properties are set to. By checking 
 only the *Show Default Values* checkbox, the table shows only the portal's 
 default property values. By checking only the *Show Custom Values* checkbox, the 
 table shows only the portal property values that differ from default. For 
 example, if you change a property setting via a `portal-ext.properties` file, 
 that setting then appears in the Portal Properties table when the *Show Custom 
-Values* checkbox is checked.
+Values* checkbox is checked. To show both default and custom property values, 
+check both checkboxes.
 
 ![Figure x: With only the *Show Custom Values* checkbox checked, this table shows only the portal property values that differ from default.](../../images/lcs-server-portal-properties.png)
 
