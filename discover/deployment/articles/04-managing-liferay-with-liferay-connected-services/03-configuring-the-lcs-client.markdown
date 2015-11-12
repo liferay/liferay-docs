@@ -15,7 +15,7 @@ client. Choose your portal version and edition on the Welcome screen and then
 click *Download*. The following screenshot shows this screen with Liferay Portal 
 6.2 EE selected. 
 
-![Figure 4.4: When you first log in to LCS, you can download the LCS client from the Welcome screen.](../../images/lcs-welcome-client-download.png)
+![Figure 4.1: When you first log in to LCS, you can download the LCS client from the Welcome screen.](../../images/lcs-welcome-client-download.png)
 
 Note that you'll only see the Welcome screen the first time you log in to LCS. 
 If you need to download the client again later, you can do so from the 
@@ -24,7 +24,7 @@ If you need to download the client again later, you can do so from the
 screen as earlier, in which you can download the client. The following 
 screenshot shows this: 
 
-![Figure x: You can also download the LCS client from the Connection tab inside of LCS.](../../images/lcs-client-download-connection.png)
+![Figure 4.2: You can also download the LCS client from the Connection tab inside of LCS.](../../images/lcs-client-download-connection.png)
 
 Super! Now you know where to get the LCS client. Before you deploy it though, 
 there are a few other things you should check. If you connect to the web through 
@@ -97,12 +97,12 @@ Once you deploy the LCS client, you're ready to register your server with LCS.
 Access the client by clicking on *Liferay Connected Services* under the *Apps* 
 section of the *Control Panel*. 
 
-![Figure 4.7: LCS appears in your Control Panel as Liferay Connected Services, in the Apps section.](../../images/lcs-post-install-01.png)
+![Figure 4.3: LCS appears in your Control Panel as Liferay Connected Services, in the Apps section.](../../images/lcs-post-install-01.png)
 
 After clicking *Authorize Access* on the screen that appears, you are then taken 
 to the LCS website. Log in with your credentials and then click *Grant Access*.
 
-![Figure 4.8: The LCS client requires access to your LCS account.](../../images/lcs-auth-access.png)
+![Figure 4.4: The LCS client requires access to your LCS account.](../../images/lcs-auth-access.png)
 
 Next, you need to register your server with LCS by filling out the following 
 fields:
@@ -120,7 +120,7 @@ fields:
    asks you to enter the new environment's *Name*, *Location*, and 
    *Description*. 
 
-    ![Figure 4.9: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
+    ![Figure 4.5: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
 
 3. Server Name: Give your server a name that you can use to distinguish it in 
    your LCS account.
@@ -132,7 +132,7 @@ fields:
    server. You can use this field to help differentiate the servers you are 
    managing using LCS.
 
-![Figure 4.10: The server registration screen.](../../images/lcs-register-server.png)
+![Figure 4.6: The server registration screen.](../../images/lcs-register-server.png)
 
 Upon clicking *Register*, your LCS client shows your connection status. Note 
 that it can take up to 10 or 20 seconds to perform the initial handshake and 
@@ -141,7 +141,7 @@ status after 20 seconds, try refreshing the page. If you see a red symbol
 indicating no data is being transmitted, please contact the Liferay team for 
 support. 
 
-![Figure 4.11: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
+![Figure 4.7: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
 
 Once a successful connection is established, some statistics and links are
 displayed. Here's a description of what's displayed:
@@ -169,7 +169,7 @@ displayed. Here's a description of what's displayed:
   LCS. Note that your credentials are not human readable in the portal instance. 
   This is because OAuth, which uses tokens, is used for authentication. 
 
-![Figure 4.12: The server is connected to LCS.](../../images/lcs-server-connected.png)
+![Figure 4.8: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
 Awesome! Now that you've registered your server with your LCS account, you can 
 dig in to the features of LCS. 
