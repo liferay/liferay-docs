@@ -11,9 +11,9 @@ Its editor delivers features you'd expect, in an elegant in-context manner. It
 has a complete set of WYSIWYG controls that appear where and when you need them.
 You can stay in this easy-to-use mode or switch to source mode to edit your
 content's HTML code. In source mode, you can work with light text on a dark
-background or dark text on a light background. To cap things off, you can do
-fullscreen editing to minimize distractions as your create your posts. You'll
-have a satisfying experience creating awesome blog posts. 
+background or dark text on a light background. To cap things off, you can
+enlarge the HTML editor window to minimize distractions as your create your
+posts. You'll have a satisfying experience creating awesome blog posts. 
 
 Lastly, Liferay Blogs empowers you to show off your blogs using powerful display
 apps. You can leverage Liferay's built-in display templates or create your own,
@@ -30,9 +30,10 @@ started.
 
 Each site comes with a built-in blog instance. So let's explore adding an entry
 to your site's blog. In Site Administration, the Blogs entry provides the best
-place to draft blogs. Go to the Product Menu &rarr; *Sites* &rarr; *\[Site
-Name\]* &rarr; *Content* &rarr; *Blogs*. The *Entries* screen appears, listing
-the site's blog entries. 
+place to draft blogs. Click the Product Menu icon
+(![Product Menu](../../images/menu-icon.png)) to open the Product menu. Then
+navigate to *Sites* &rarr; *\[Site Name\]* &rarr; *Content* &rarr; *Blogs*. The
+*Entries* screen appears, listing the site's blog entries. 
 
 Click the *Add Blog Entry* icon (![Add Blog Entry](../../images/add-icon.png))
 to bring up the blog entry editor. 
@@ -75,25 +76,25 @@ moon icon and sun icon let you switch between a dark theme and a light theme.
 The built-in syntax coloring helps you identify HTML elements, regardless of the
 mode you're using. 
 
-If you prefer to work in distraction-free mode, we've got you covered. You can
-switch to fullscreen mode by selecting the *Fullscreen* icon
-(![Enlarge](../../images/enlarge-icon.png)). The *Edit Content* window appears,
-taking up the entire browser screen. The first icons above the editor allow you
-to arrange the HTML editor and rendered content area, horizontally or
-vertically. These dual views allow you to edit the HTML source and render it in
-real time. The last icon at the top of the content editor lets you toggle hiding
-the content rendering area, so you can use the entire browser space to work on
-the HTML code. Fullscreen view can really help you stay "in the zone" as you
-create awesome blog entries. 
+If you want to minimize distractions as you edit your blog entry's HTML code,
+we've got you covered. You can click the *Enlarge* icon
+(![Enlarge](../../images/enlarge-icon.png)) to open the HTML editor in a
+full-size *Edit Content* window. The first icons above the editor allow you to
+arrange the HTML editor and rendered content area, horizontally or vertically.
+These dual views allow you to edit the HTML source and render it in real time.
+The last icon at the top of the content editor lets you toggle hiding the
+content rendering area, so you can use the entire browser space to work on the
+HTML code. The enlarged HTML editor can really help you stay "in the zone" as
+you create awesome blog entries. 
 
-![Figure 2: Fullscreen view helps you minimize screen clutter and render HTML changes in real time.](../../images/blogs-full-screen-editor.png)
+![Figure 2: The enlarged source editor helps you minimize screen clutter and render changes in real time.](../../images/blogs-full-screen-editor.png)
 
 Every 25 seconds, the entry you're editing is automatically saved as a draft, so
 a browser crash or network interruption won't cause you to lose your entry. You
-can exit the fullscreen view by clicking *Done* (which saves your content)
-or clicking *Cancel* to abandon any changes since the last auto-save. From
-the normal sized source view, you can click the *abc* icon to switch back to
-the WYSIWYG editor. 
+can exit the enlarged editor by clicking *Done* (which saves your content) or
+clicking *Cancel* to abandon any changes since the last auto-save. From the
+normal sized source view, you can click the *abc* icon to switch back to the
+WYSIWYG editor. 
 
 You've learned all the ins and outs of the content editor. Next, you'll learn
 how to specify your blog entry's other characteristics. 
@@ -158,7 +159,7 @@ icon (![Actions](../../images/actions-icon.png)) to edit the entry, configure
 its permissions, or move it to the Recycle Bin. You can select the *All*
 checkbox to select all entries or select an entry's individual check box, and
 click the trash icon to move them into the Recycle Bin. Under the *Images* tab
-you can view individual entries and delete them individually or in a batch. 
+you can view individual images and delete them individually or in a batch. 
 
 The *Options* icon (![Options](../../images/options-icon.png)) at the top of
 Blogs lets you configure permissions and notifications, or import/export the
