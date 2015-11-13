@@ -388,7 +388,7 @@ application, except that it shows entries from multiple blogs.
 
 ![Figure 6: The Blogs Aggregator lets you display blog entries authored by multiple authors from different sites.](../../images/blogs-blog-aggregator.png)
 
-## Summary
+## Summary [](id=summary)
 
 Throughout this section, you've learned how to create blog posts in a powerful
 no-nonsense editor, manage blog instances and blog entries, and display blogs
