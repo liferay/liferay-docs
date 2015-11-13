@@ -2,8 +2,7 @@
 
 You've probably heard the term *modularity* discussed quite frequently in
 relation to Liferay 7.0. With Liferay 7.0 transforming into a modular platform,
-components that Liferay uses will be mostly in the form of modules. For example,
-many of the components that you're used to seeing in Liferay are now
+components that Liferay uses will be mostly in the form of
 [modules](https://github.com/liferay/liferay-portal/tree/master/modules/apps).
 
 A module doesn't use the traditional Liferay application structure from previous
@@ -12,7 +11,12 @@ learn about in this tutorial. You, however, are not required to follow
 Liferay's standard application structure; you have the freedom to structure your
 application's modules however you wish.
 
-The options you have for upgrading your application to Liferay 7.0 is discussed
+A module in Liferay is very similar to a standard Java application with some
+additional metadata and annotations. The annotations replace the need for XML
+file descriptors in the application and are easier to manage since everything is
+in one place.
+
+The options you have for upgrading your application to Liferay 7.0 are discussed
 briefly in the
 [Migrating Legacy Applications to New Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/migrating-legacy-applications-to-new-plugins-sdk)
 tutorial. Because Liferay 7.0 maintains backwards compatibility, you have the
@@ -32,7 +36,7 @@ however, not required.
 Converting your legacy application to modules is not always the right choice. In
 some scenarios, it could make sense to stick with your traditional WAR model.
 Below, you'll learn some important tips to help you make your decision on
-whether converting your legacy application to modules is the right decision.
+whether to convert your legacy application to modules.
 
 **When to convert?**
 
@@ -43,34 +47,40 @@ productivity and the agility to release more frequently.
 - If your plugin has reusable parts that you'd like to consume from elsewhere.
 For instance, suppose you have business logic that you're reusing in multiple
 different projects. As opposed to copying that code into several different WARs
-and deploying that to different customers, you can make those code parts into
-modules and consume those services from one single module.
+and deploying that to different customers, you can convert it to modules and
+consume those services from one single module.
 
 **When to not convert?**
 
 - You have a portlet that's using JSR-168/286 compatibility and you still want
 to be able to deploy that into another portlet container. If you want to retain
 that compatibility, it is recommended to stay with the traditional WAR model.
-- You're using a complex legacy web framework that is really tied to the Java EE
-programming model, and the amount of work necessary to make that work with OSGi
-is more than you feel is necessary or warranted.
-- If your plugin interacts with the app server. By distancing applications from
-the app server, it means that they are much more portable because you can remove
-a lot of contingent code that does different behaviors based on the app server.
-This also unifies the classloading model because different app servers have
-different classloaders models, so it's very difficult to manage plugins and
-decide how their classloading is going to work.
-- If your legacy application's original intent was to have limited-lifetime,
-there may not be a good reason to convert.
+- You're using a complex legacy web framework that is heavily tied to the Java
+EE programming model, and the amount of work necessary to make that work with
+OSGi is more than you feel is necessary or warranted.
+- If your plugin interacts with the app server. Module-based applications are
+not as portable when they directly interact with the app server.
+- If your legacy application's original intent was to have a limited-lifetime.
 
-Your decision to convert to modules utimately comes down to benefits vs. costs.
+Your decision to convert to modules ultimately comes down to benefits vs. costs.
 Obviously, the time to convert your legacy application is a cost. Likewise,
-there are many benefits to managing your legacy application as modules. Large
-applications can be split into many smaller, easy to manage modules, which
-allows for a much better release process. You can fix bugs in sub-modules
-without affecting the entire application. Other benefits include being able to
-have an incremental release cycle and the ability to update modules
-independently.
+there are many benefits to managing your legacy application as modules.
+
+A large application can be split into many small independent, easy to manage
+components. These small components also allow for incremental release cycles. In
+multi-module projects, this also means a certain component can be updated
+independently. For instance if a JSP is changed due to a security issue, the web
+(client) module can be updated but the persistence modules can remain unchanged.
+For Liferay. this could mean applications that used to have to wait for new
+Liferay releases could see independent releases between Liferay versions.
+
+Module dependencies are explicitly listed within the module and will refuse to
+run unless all dependencies are met, thus eliminating obscure run time errors.
+Another common deployment issue is multiple versions of the same library in an
+environment. It is possible for the class loader to merge classes from multiple
+versions of a library, leading to very hard to troubleshoot and obscure
+problems. Module versions can be stated explicitly in the dependency,
+eliminating these types of issues.
 
 Now that you have some ammunition to make an informed decision on what's best
 for your particular scenario, you'll learn how to convert your legacy WAR
@@ -88,7 +98,7 @@ The first thing you'll do is create your application's parent directory and
 directory structure for your application's client *web* module. This module
 holds your application's portlet classes and is responsible for its UI. This
 tutorial will assume the Maven model, although any directory set up is
-perimissible.
+permissible.
 
 1. Create the parent directory for your application. This parent directory is
 home for your application's independent modules and configuration files. This
@@ -117,7 +127,7 @@ by visiting their respective tutorials.
     folder. You'll insert your legacy application's Java code and JSPs, so the
     generated default code is not necessary.
 
-    The current directory structure for you application's *-web module is listed
+    The current directory structure for you application's \*-web module is listed
     below:
 
     - `tasks`
@@ -153,7 +163,7 @@ are not available in the container, your module will be unavailable. Therefore,
 your dependencies are not bundled with your module, but instead, they'll be
 available from the OSGi container.
 
-<!-- Check step 4 explanation for accuracy. -Cody -->
+    <!-- Check step 4 explanation for accuracy. -Cody -->
 
 5. Copy your legacy application's JSP files into the
 `/src/main/resources/META-INF/resources` directory. In most cases. all of your
@@ -247,7 +257,7 @@ implementation logic. You'll learn about how to create these modules next.
 
 If you've continued to this section, you're converting a legacy application that
 offers its own API and uses Service Builder. In this section, you'll create the
-API module (*-api) and implementation module (*-service). The API module holds
+API module (\*-api) and implementation module (\*-service). The API module holds
 your application's Service Builder generated API and the implementation module
 holds your application's Service Builder implementation. Before you begin
 creating the API and implementation modules, you'll need to configure your
@@ -292,8 +302,8 @@ directory structure should resemble the following:
 2. Copy your legacy application's `service.xml` file and paste it into the
 implementation module's root directory (e.g., `tasks/tasks-service`). 
 
-3. Edit the `bnd.bnd` file to fit your implementation module. For examples, see
-the `export-import-service`'s
+3. Edit the `bnd.bnd` file to fit your implementation module. For examples of
+implementation module BND files, see the `export-import-service`'s
 [`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/export-import/export-import-service/bnd.bnd)
 and the `wiki-service`'s
 [`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/wiki/wiki-service/bnd.bnd).
@@ -316,9 +326,9 @@ to use Service Builder.
 
         apply plugin: "com.liferay.portal.tools.service.builder"
 
-5. Now that the Service Builder plugin is configured, create a `buildService{}`
-block. This configures how Service Builder runs for your project. You can view
-an example below for a `tasks` project:
+5. Now that the Service Builder plugin is configured, create a
+`buildService{...}` block. This configures how Service Builder runs for your
+project. You can view an example below for a `tasks` project:
 
         buildService {
             apiDirName = "../tasks-api/src/main/java"
@@ -344,10 +354,10 @@ an example below for a `tasks` project:
 6. You're now able to use Service Builder to generate your APIs. Open a terminal
 and navigate to your root project folder. Then run `gradle buildService`.
 
-    Your `service.xml` file's conifugration is used to generate your
+    Your `service.xml` file's configuration is used to generate your
     application's API and implementation classes in their respective modules.
     You've also generated other custom files (e.g., SQL, Spring, etc.),
-    depending on your `buildService` configuration.
+    depending on your `buildService {...)` block's configuration.
 
 7. Now that you've run Service Builder, continue copying custom classes into
 your implementation module. There is a table listed below highlighting popular
@@ -355,17 +365,17 @@ legacy classes and packages and where they should be placed in your module. This
 table is intended to aid in the organization of your classes and configuration
 files; however, remember to follow the organizational methodologies that make
 the most sense for your application. One size does not fit all with your
-modules' organizational scheme.
+modules' directory scheme.
 
-    | Source | Destination |
-    |--------|-------------|
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.model.impl/TasksEntryImpl.java` | `tasks.service/src/main/java/com.liferay.tasks.model.impl` | 
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.impl` | `tasks.service/src/main/java` |
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.permission` | `tasks.service/src/main/java` |
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.persistence.impl/TasksEntryFinderImpl.java` | `tasks.service/src/main/java/com.liferay.tasks.service.persistence.impl` |
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.social` | `tasks.service/src/main/java` |
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.util` | `tasks.service/src/main/java` |
-    | `tasks-portlet/docroot/WEB-INF/src/custom-sql` | `tasks.service/src/main/resources/META-INF` |
+    | Legacy Package | Module Package |
+    |----------------|----------------|
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.model.impl` | `tasks.service/src/main/java/com.liferay.tasks.model.impl` | 
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.impl` | `tasks.service/src/main/java/com.liferay.tasks.service.impl` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.permission` | `tasks.service/src/main/java/com.liferay.tasks.service.permission` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.persistence.impl` | `tasks.service/src/main/java/com.liferay.tasks.service.persistence.impl` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.social` | `tasks.service/src/main/java/com.liferay.tasks.social` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.util` | `tasks.service/src/main/java/com.liferay.tasks.util` |
+    | `tasks-portlet/docroot/WEB-INF/src/custom-sql` | `tasks.service/src/main/resources/META-INF/custom-sql` |
 
 8. Once you've copied all of your custom classes over, run `gradle buildService`
 again to generate the remaining services.
@@ -381,7 +391,7 @@ implementation module requires the API module. Open your client module's
         compile  project(':tasks.service')
     }
 
-To declare your implemenation module's dependency, open its `build.gradle` file
+To declare your implementation module's dependency, open its `build.gradle` file
 and add the following:
 
     dependencies {
@@ -397,9 +407,9 @@ information for now, and edit it later for your own application, if necessary:
 `version='1.0.0'`.
 
 Excellent! You've successfully generated your application's services using
-Service Builder. They now correctly reside in modules, and can be deployed to
-Liferay 7.0. If you'd like to learn more information about creating
-implementation and API modules from scratch, visit the
+Service Builder. They now reside in modules, and can be deployed to Liferay 7.0.
+If you'd like to learn more information about creating implementation and API
+modules from scratch, visit the
 [Creating an Implementation Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-an-implementation-module)
 and
 [Creating an API Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-an-api-module),
@@ -407,11 +417,11 @@ respectively.
 
 Now it's time to build your modules and deploy them to your Liferay 7.0
 instance. To build your project, run `gradle build` from your project's root
-directory. Once your project successfully builds, you can check any of your
-module's `/build/libs` directory. There should be an existing JAR file, which is
+directory. Once your project successfully builds, check any of your modules'
+`/build/libs` directory. There should be a newly generated JAR file, which is
 the file you'll need to deploy to Liferay. You can deploy each JAR by running:
 
-    `blade deploy path/to/JAR/file`
+    blade deploy path/to/JAR/file
 
 +$$$
 
@@ -432,12 +442,12 @@ look like the figure below.
 ![Figure 1: Once you've connected to your Liferay instance in your Gogo shell prompt, run *lb* to list your new converted modules.](../../images/deploy-converted-modules.png)
 
 This tutorial guided you with converting your legacy application to modules for
-Liferay 7.0. You first created a client (*-web) module, that holds your
-applications portlet classes and UI. Then you created your implemenation module
-and generated your application's services using Service Builder. Next, you
-wired your modules together by declaring their dependencies on one another.
-Lastly, you built your modules and deployed them to your Liferay instance. Great
-job!
+Liferay 7.0. You first created a client (\*-web) module that holds your
+application's portlet classes and UI. Then you created your implementation
+module and generated your application's services and the API module using
+Service Builder. Next, you wired your modules together by declaring their
+dependencies on one another. Lastly, you built your modules and deployed them to
+your Liferay instance. Great job!
 
 ## Related Topics [](id=related-topics)
 
