@@ -344,10 +344,31 @@ an example below for a `tasks` project:
 6. You're now able to use Service Builder to generate your APIs. Open a terminal
 and navigate to your root project folder. Then run `gradle buildService`.
 
-Your `service.xml` file's conifugration is used to generate your application's
-API and implementation classes in their respective modules. You've also
-generated other custom files (e.g., SQL, Spring, etc.), depending on your
-`buildService` configuration.
+    Your `service.xml` file's conifugration is used to generate your
+    application's API and implementation classes in their respective modules.
+    You've also generated other custom files (e.g., SQL, Spring, etc.),
+    depending on your `buildService` configuration.
+
+7. Now that you've run Service Builder, continue copying custom classes into
+your implementation module. There is a table listed below highlighting popular
+legacy classes and packages and where they should be placed in your module. This
+table is intended to aid in the organization of your classes and configuration
+files; however, remember to follow the organizational methodologies that make
+the most sense for your application. One size does not fit all with your
+modules' organizational scheme.
+
+    | Source | Destination |
+    |--------|-------------|
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.model.impl/TasksEntryImpl.java` | `tasks.service/src/main/java/com.liferay.tasks.model.impl` | 
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.impl` | `tasks.service/src/main/java` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.permission` | `tasks.service/src/main/java` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.persistence.impl/TasksEntryFinderImpl.java` | `tasks.service/src/main/java/com.liferay.tasks.service.persistence.impl` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.social` | `tasks.service/src/main/java` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.util` | `tasks.service/src/main/java` |
+    | `tasks-portlet/docroot/WEB-INF/src/custom-sql` | `tasks.service/src/main/resources/META-INF` |
+
+8. Once you've copied all of your custom classes over, run `gradle buildService`
+again to generate the remaining services.
 
 Now that your services are generated, you'll need to wire up your modules so
 they can reference each other when deployed to the OSGi container. This tutorial
@@ -384,12 +405,39 @@ and
 [Creating an API Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-an-api-module),
 respectively.
 
+Now it's time to build your modules and deploy them to your Liferay 7.0
+instance. To build your project, run `gradle build` from your project's root
+directory. Once your project successfully builds, you can check any of your
+module's `/build/libs` directory. There should be an existing JAR file, which is
+the file you'll need to deploy to Liferay. You can deploy each JAR by running:
+
+    `blade deploy path/to/JAR/file`
+
++$$$
+
+**Note:** If you deploy your modules out of order, you may receive error
+messages. For instance, if you try deploying your client module first, you'll
+receive errors because it relies on the implementation and API modules. Once
+each module's dependencies are met, they will successfully be deployed for use
+in Liferay. For more information on checking each module's dependencies, visit
+the
+[Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+article.
+
+$$$
+
+Once you've successfully deployed your modules, your Gogo shell prompt should
+look like the figure below.
+
+![Figure 1: Once you've connected to your Liferay instance in your Gogo shell prompt, run *lb* to list your new converted modules.](../../images/deploy-converted-modules.png)
+
 This tutorial guided you with converting your legacy application to modules for
 Liferay 7.0. You first created a client (*-web) module, that holds your
 applications portlet classes and UI. Then you created your implemenation module
-and generated your application's services using Service Builder. Lastly, you
-wired your modules together by declaring their dependencies on one another. Your
-legacy application is now ready for deployment in Liferay 7.0!
+and generated your application's services using Service Builder. Next, you
+wired your modules together by declaring their dependencies on one another.
+Lastly, you built your modules and deployed them to your Liferay instance. Great
+job!
 
 ## Related Topics [](id=related-topics)
 
