@@ -100,22 +100,22 @@ holds your application's portlet classes and is responsible for its UI. This
 tutorial will assume the Maven model, although any directory set up is
 permissible.
 
-1. Create the parent directory for your application. This parent directory is
-home for your application's independent modules and configuration files. This
-tutorial will initially set up one module in this parent directory, but,
-depending on the size of your application, you could have multiple modules
-within the parent directory. For example, if your application's name is *Tasks*,
-then your parent directory could be *tasks*.
+1.  Create the parent directory for your application. This parent directory is
+    home for your application's independent modules and configuration files.
+    This tutorial will initially set up one module in this parent directory,
+    but, depending on the size of your application, you could have multiple
+    modules within the parent directory. For example, if your application's name
+    is *Tasks*, then your parent directory could be *tasks*.
 
-2. Create the directory structure skeleton for your client module. You can do
-this automatically by using Blade Tools. You can learn how to install Blade
-Tools by visiting the
-[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
-and you can view examples of
-[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
-and
-[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
-by visiting their respective tutorials.
+2.  Create the directory structure skeleton for your client module. You can do
+    this automatically by using Blade Tools. You can learn how to install Blade
+    Tools by visiting the
+    [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+    and you can view examples of
+    [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
+    and
+    [Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+    by visiting their respective tutorials.
 
     Navigate to your parent directory (e.g., `tasks`) and run the following
     blade command to generate a generic module structure:
@@ -143,44 +143,47 @@ by visiting their respective tutorials.
             - `bnd.bnd`
             - `build.gradle`
 
-3. Open the `bnd.bnd` file. This is used to generate your module's `MANIFEST.MF`
-file that is generated when you build your project. Edit your module's `bnd.bnd`
-file to fit your application. For more information about `bnd.bnd`, visit
-[http://www.aqute.biz/Bnd/Bnd](http://www.aqute.biz/Bnd/Bnd). You can view the
-`dictionary-web`'s
-[`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/dictionary/dictionary-web/bnd.bnd)
-for a simple example, or the `journal-web`'s
-[`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/journal/journal-web/bnd.bnd)
-for a more advanced example.
+3.  Open the `bnd.bnd` file. This is used to generate your module's `MANIFEST.MF`
+    file that is generated when you build your project. Edit your module's
+    `bnd.bnd` file to fit your application. For more information about
+    `bnd.bnd`, visit
+    [http://www.aqute.biz/Bnd/Bnd](http://www.aqute.biz/Bnd/Bnd). You can view
+    the `dictionary-web`'s
+    [`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/dictionary/dictionary-web/bnd.bnd)
+    for a simple example, or the `journal-web`'s
+    [`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/journal/journal-web/bnd.bnd)
+    for a more advanced example.
 
-4. Open the `build.gradle` file. This is used to specify all your module's
-dependencies. The `build.gradle` file that was generated for you is
-pre-populated with content and default dependencies related to OSGi and Liferay
-Portal. In the `dependencies {...}` block, you'll need to add the client
-module's dependencies. When deploying your module into the OSGi container, OSGi
-checks if the dependencies are available in the container. If the dependencies
-are not available in the container, your module will be unavailable. Therefore,
-your dependencies are not bundled with your module, but instead, they'll be
-available from the OSGi container.
+4.  Open the `build.gradle` file. This is used to specify all your module's
+    dependencies. The `build.gradle` file that was generated for you is
+    pre-populated with content and default dependencies related to OSGi and
+    Liferay Portal. In the `dependencies {...}` block, you'll need to add the
+    client module's dependencies. When deploying your module into the OSGi
+    container, OSGi checks if the dependencies are available in the container.
+    If the dependencies are not available in the container, your module will be
+    unavailable. Therefore, your dependencies are not bundled with your module,
+    but instead, they'll be available from the OSGi container.
 
     <!-- Check step 4 explanation for accuracy. -Cody -->
 
-5. Copy your legacy application's JSP files into the
-`/src/main/resources/META-INF/resources` directory. In most cases. all of your
-JSP files should reside in the client module.
+5.  Copy your legacy application's JSP files into the
+    `/src/main/resources/META-INF/resources` directory. In most cases. all of
+    your JSP files should reside in the client module.
 
-6. Your next task is to copy your portlet classes, non-service classes, and
-non-implementation classes into your client module. Before you do this, create
-your directory package structure inside the `/src/main/java` directory. For
-instance, if you want your class' package name to be `com.liferay.tasks.web`,
-your class' directory would be `/src/main/java/com/liferay/tasks/web`. Copy your
-portlet classes into their respective directories and ensure their package names
-within the class are specified correctly. Your client module can hold one class
-or many classes, depending on how large your application is. It's a good
-practice to organize your classes into sub-folders of the main package, to
-easily manage your Java classes. You can view the
-[journal-web](https://github.com/liferay/liferay-portal/tree/master/modules/apps/journal/journal-web/src/main/java/com/liferay/journal/web)
-module for an example of a client module holding many different Java classes.
+6.  Your next task is to copy your portlet classes, non-service classes, and
+    non-implementation classes into your client module. Before you do this,
+    create your directory package structure inside the `/src/main/java`
+    directory. For instance, if you want your class' package name to be
+    `com.liferay.tasks.web`, your class' directory would be
+    `/src/main/java/com/liferay/tasks/web`. Copy your portlet classes into their
+    respective directories and ensure their package names within the class are
+    specified correctly. Your client module can hold one class or many classes,
+    depending on how large your application is. It's a good practice to organize
+    your classes into sub-folders of the main package, to easily manage your
+    Java classes. You can view the
+    [journal-web](https://github.com/liferay/liferay-portal/tree/master/modules/apps/journal/journal-web/src/main/java/com/liferay/journal/web)
+    module for an example of a client module holding many different Java
+    classes.
 
     +$$$
 
@@ -190,12 +193,12 @@ module for an example of a client module holding many different Java classes.
 
     $$$
 
-7. Now that you have the necessary classes in your client module, you'll need to
-edit these classes to be compliant with OSGi. You'll need to choose a component
-framework to work with, which is the key to harnessing the power of OSGi.
-Liferay uses Declarative Services, so this tutorial will assume the use of this
-framework. You can, however, choose the component framework you are most
-comfortable with in Liferay.
+7.  Now that you have the necessary classes in your client module, you'll need to
+    edit these classes to be compliant with OSGi. You'll need to choose a
+    component framework to work with, which is the key to harnessing the power
+    of OSGi. Liferay uses Declarative Services, so this tutorial will assume the
+    use of this framework. You can, however, choose the component framework you
+    are most comfortable with in Liferay.
 
     Review your legacy application's XML files and migrate the configuration and
     metadata information to the portlet class as properties. You can do this by
@@ -224,15 +227,15 @@ comfortable with in Liferay.
         )
         public class TasksPortlet extends MVCPortlet {
 
-8. Convert all references of the `portletId` (e.g., `58_INSTANCE_4gtH`) to the
-class name of the portlet, replacing all periods with underscores
-(e.g., `com_liferay_web_proxy_portlet_WebProxyPortlet`).
+8.  Convert all references of the `portletId` (e.g., `58_INSTANCE_4gtH`) to the
+    class name of the portlet, replacing all periods with underscores (e.g.,
+    `com_liferay_web_proxy_portlet_WebProxyPortlet`).
 
-9. If your legacy application has resource actions, you'll need to migrate those
-into your client module. Create the
-`/src/main/resources/resource-actions/default.xml` file, and copy your resource
-actions there. Make sure to create the `src/portlet.properties` file and add the
-following property:
+9.  If your legacy application has resource actions, you'll need to migrate those
+    into your client module. Create the
+    `/src/main/resources/resource-actions/default.xml` file, and copy your
+    resource actions there. Make sure to create the `src/portlet.properties`
+    file and add the following property:
 
         resource.actions.configs=resource-actions/default.xml
 
@@ -240,16 +243,34 @@ following property:
     [`default.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/directory/directory-web/src/main/resources/resource-actions/default.xml)
     file.
 
-10. Add any language keys that your application uses to the
-`src/main/resources/content/Language.properties` file. You should only include
-the language keys that are unique to your application. Your application will
-use the default language keys in Liferay when it is deployed.
+10.  Add any language keys that your application uses to the
+    `src/main/resources/content/Language.properties` file. You should only
+    include the language keys that are unique to your application. Your
+    application will use the default language keys in Liferay when it is
+    deployed.
 
 Awesome! You've successfully created your application's client module! If you'd
 like to learn more about the client module, and how to create one from scratch,
 visit the
 [Creating a Client Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-a-client-module)
-section. Many applications only have the client module. Larger, more complex
+section.
+
+For a quick reference guide, you can view the table below, which summarizes the
+migration process of many of your legacy application's directories, packages,
+and files. This is a sample table for a fictitious *tasks* applications.
+
+    | Legacy Package | Module Package |
+    |----------------|----------------|
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.asset` | `tasks.web/src/main/java/com.liferay.tasks.asset` | 
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.portlet` | `tasks.web/src/main/java/com.liferay.tasks.portlet` |
+    | `tasks-portlet/docroot/WEB-INF/src/content` | `tasks.web/src/main/resources/content` |
+    | `tasks-portlet/docroot/WEB-INF/src/resource-actions` | `tasks.web/src/main/resources/resource-actions` |
+    | `tasks-portlet/docroot/WEB-INF/src/portlet.properties` | `tasks.web/src/main/resources/portlet.properties` |
+    | `tasks-portlet/docroot/init.jsp` | `tasks.web/src/main/resources/META-INF/resources/init.jsp` |
+    | `tasks-portlet/docroot/tasks` | `tasks.web/src/main/resources/META-INF/resources/tasks` |
+    | `tasks-portlet/docroot/upcoming_tasks` | `tasks.web/src/main/resources/META-INF/resources/upcoming_tasks` |
+
+Many applications only have the client module. Larger, more complex
 modules, however, require additional modules to hold their service and
 implementation logic. You'll learn about how to create these modules next.
 
@@ -285,11 +306,11 @@ name. This logic makes your root project directory aware of the modules listed.
 Now that your root project directory is configured, you'll create the API and
 implementation modules.
 
-1. Repeat step 2 from the previous section, except name the module
-`[APPLICATION_NAME]-service`. In addition to the directory deletions covered in
-step 2, you should also delete the `/src/main/resources` directory. This
-directory will be regenerated by Service Builder. Your implementation module's
-directory structure should resemble the following:
+1.  Repeat step 2 from the previous section, except name the module
+    `[APPLICATION_NAME]-service`. In addition to the directory deletions covered
+    in step 2, you should also delete the `/src/main/resources` directory. This
+    directory will be regenerated by Service Builder. Your implementation
+    module's directory structure should resemble the following:
 
         - `tasks`
             - `tasks-service`
@@ -299,20 +320,20 @@ directory structure should resemble the following:
                 - `bnd.bnd`
                 - `build.gradle`
 
-2. Copy your legacy application's `service.xml` file and paste it into the
-implementation module's root directory (e.g., `tasks/tasks-service`). 
+2.  Copy your legacy application's `service.xml` file and paste it into the
+    implementation module's root directory (e.g., `tasks/tasks-service`). 
 
-3. Edit the `bnd.bnd` file to fit your implementation module. For examples of
-implementation module BND files, see the `export-import-service`'s
-[`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/export-import/export-import-service/bnd.bnd)
-and the `wiki-service`'s
-[`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/wiki/wiki-service/bnd.bnd).
+3.  Edit the `bnd.bnd` file to fit your implementation module. For examples of
+    implementation module BND files, see the `export-import-service`'s
+    [`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/export-import/export-import-service/bnd.bnd)
+    and the `wiki-service`'s
+    [`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/wiki/wiki-service/bnd.bnd).
 
-4. Open your implementation module's `build.gradle` file. You'll need to
-configure this file to use Service Builder. As you learned about the root
-folder's `build.gradle` file, the sky is the limit for how you'd like your
-module's build file configured. This tutorial will only configure the build file
-to use Service Builder.
+4.  Open your implementation module's `build.gradle` file. You'll need to
+    configure this file to use Service Builder. As you learned about the root
+    folder's `build.gradle` file, the sky is the limit for how you'd like your
+    module's build file configured. This tutorial will only configure the build
+    file to use Service Builder.
 
     First, add the classpath declaration for Service Builder as a dependency
     inside the `buildscript{...}` block:
@@ -326,9 +347,9 @@ to use Service Builder.
 
         apply plugin: "com.liferay.portal.tools.service.builder"
 
-5. Now that the Service Builder plugin is configured, create a
-`buildService{...}` block. This configures how Service Builder runs for your
-project. You can view an example below for a `tasks` project:
+5.  Now that the Service Builder plugin is configured, create a
+   `buildService{...}` block. This configures how Service Builder runs for your
+   project. You can view an example below for a `tasks` project:
 
         buildService {
             apiDirName = "../tasks-api/src/main/java"
@@ -351,21 +372,22 @@ project. You can view an example below for a `tasks` project:
     [APPLICATION_NAME]-api module. When you run Service Builder, your generated
     APIs will reside in the API module.
 
-6. You're now able to use Service Builder to generate your APIs. Open a terminal
-and navigate to your root project folder. Then run `gradle buildService`.
+6.  You're now able to use Service Builder to generate your APIs. Open a
+    terminal and navigate to your root project folder. Then run `gradle
+    buildService`.
 
     Your `service.xml` file's configuration is used to generate your
     application's API and implementation classes in their respective modules.
     You've also generated other custom files (e.g., SQL, Spring, etc.),
     depending on your `buildService {...)` block's configuration.
 
-7. Now that you've run Service Builder, continue copying custom classes into
-your implementation module. There is a table listed below highlighting popular
-legacy classes and packages and where they should be placed in your module. This
-table is intended to aid in the organization of your classes and configuration
-files; however, remember to follow the organizational methodologies that make
-the most sense for your application. One size does not fit all with your
-modules' directory scheme.
+7.  Now that you've run Service Builder, continue copying custom classes into
+    your implementation module. There is a table listed below highlighting
+    popular legacy classes and packages and where they should be placed in your
+    module. This table is intended to aid in the organization of your classes
+    and configuration files; however, remember to follow the organizational
+    methodologies that make the most sense for your application. One size does
+    not fit all with your modules' directory scheme.
 
     | Legacy Package | Module Package |
     |----------------|----------------|
@@ -377,8 +399,8 @@ modules' directory scheme.
     | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.util` | `tasks.service/src/main/java/com.liferay.tasks.util` |
     | `tasks-portlet/docroot/WEB-INF/src/custom-sql` | `tasks.service/src/main/resources/META-INF/custom-sql` |
 
-8. Once you've copied all of your custom classes over, run `gradle buildService`
-again to generate the remaining services.
+8.  Once you've copied all of your custom classes over, run `gradle
+    buildService` again to generate the remaining services.
 
 Now that your services are generated, you'll need to wire up your modules so
 they can reference each other when deployed to the OSGi container. This tutorial
