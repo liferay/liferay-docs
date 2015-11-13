@@ -12,7 +12,7 @@ has a complete set of WYSIWYG controls that appear where and when you need them.
 You can stay in this easy-to-use mode or switch to source mode to edit your
 content's HTML code. In source mode, you can work with light text on a dark
 background or dark text on a light background. To cap things off, you can
-enlarge the HTML editor window to minimize distractions as your create your
+enlarge the HTML editor window to minimize distractions as you create your
 posts. You'll have a satisfying experience creating awesome blog posts. 
 
 Lastly, Liferay Blogs empowers you to show off your blogs using powerful display
@@ -31,7 +31,7 @@ started.
 Each site comes with a built-in blog instance. So let's explore adding an entry
 to your site's blog. In Site Administration, the Blogs entry provides the best
 place to draft blogs. Click the Product Menu icon
-(![Product Menu](../../images/menu-icon.png)) to open the Product menu. Then
+(![Product Menu](../../images/menu-icon.png)) to open the Product Menu. Then
 navigate to *Sites* &rarr; *\[Site Name\]* &rarr; *Content* &rarr; *Blogs*. The
 *Entries* screen appears, listing the site's blog entries. 
 
