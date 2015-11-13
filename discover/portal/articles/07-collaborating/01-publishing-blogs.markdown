@@ -181,9 +181,6 @@ options work just like the ones above for blog entries.
 - **Format:** choose which format you want to deliver your blogs: Atom 1.0, RSS
 1.0, or RSS 2.0.
 
-<!-- I believe the Atom format is being discontinued. Jesse wrote a tutorial on
-it that we had to remove. Please confirm this with Sergio. -Rich -->
-
 You've learned how to create blog entries and manage them. It's time to consider
 blog security. For example, who is allowed to view the different blog instances
 and who is allowed to add blog entries?
@@ -294,10 +291,11 @@ Here are descriptions for the other Blogs Configuration tabs:
 
 **Permissions:** shows Liferay's permissions dialog for the Blogs application.
 
-**Communication:** presents the application's public render parameters that you
-can manage for communication across applications. 
-
-<!-- Not sure what the above even means. -Rich -->
+**Communication:** lists public render parameters the application makes
+accessible to other applications on the page. The applications can communicate
+via these parameters. For each shared parameter, you can specify whether to
+allow communication via the parameter and select which incoming parameter can
+populate it. 
 
 **Sharing:** lets you embed the application instance as a widget on on any
 website, Facebook, or Netvibes, or as an OpenSocial Gadget.
@@ -350,9 +348,7 @@ checkbox, you can configure how you want the RSS Feed displayed:
 feeds: *Abstract*, *Full Content*, and *Title*.
 
 - **Format:** select which web feed language to use for your feed, which
-includes *Atom 1.0*, *RSS 1.0*, or *RSS 2.0*.
-
-<!-- Again, we should check with Sergio about Atom feeds. -Rich --> 
+includes *Atom 1.0*, *RSS 1.0*, or *RSS 2.0*. 
 
 **Show Tags:** for each entry, displays all the tags associated with the blogs.
 
@@ -367,10 +363,11 @@ Here are descriptions for the other Blogs Aggregator's Configuration screens:
 
 <!-- TODO - Revisit the permission Access in Control Panel. It's currently grayed out. - Jim --> 
 
-**Communication:** presents the application's public render parameters that you
-can manage for communication across applications.
-
-<!-- I have no idea what the above means. -Rich -->
+**Communication:** lists public render parameters the application makes
+accessible to other applications on the page. The applications can communicate
+via these parameters. For each shared parameter, you can specify whether to
+allow communication via the parameter and select which incoming parameter can
+populate it. 
 
 **Sharing:** lets you embed the application instance as a widget on on any
 website, Facebook, or Netvibes, or as an OpenSocial Gadget.
