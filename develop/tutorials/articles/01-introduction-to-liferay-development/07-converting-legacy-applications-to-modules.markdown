@@ -259,16 +259,16 @@ For a quick reference guide, you can view the table below, which summarizes the
 migration process of many of your legacy application's directories, packages,
 and files. This is a sample table for a fictitious *tasks* applications.
 
-    | Legacy Package | Module Package |
-    |----------------|----------------|
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.asset` | `tasks.web/src/main/java/com.liferay.tasks.asset` | 
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.portlet` | `tasks.web/src/main/java/com.liferay.tasks.portlet` |
-    | `tasks-portlet/docroot/WEB-INF/src/content` | `tasks.web/src/main/resources/content` |
-    | `tasks-portlet/docroot/WEB-INF/src/resource-actions` | `tasks.web/src/main/resources/resource-actions` |
-    | `tasks-portlet/docroot/WEB-INF/src/portlet.properties` | `tasks.web/src/main/resources/portlet.properties` |
-    | `tasks-portlet/docroot/init.jsp` | `tasks.web/src/main/resources/META-INF/resources/init.jsp` |
-    | `tasks-portlet/docroot/tasks` | `tasks.web/src/main/resources/META-INF/resources/tasks` |
-    | `tasks-portlet/docroot/upcoming_tasks` | `tasks.web/src/main/resources/META-INF/resources/upcoming_tasks` |
+| Legacy Package | Module Package |
+|----------------|----------------|
+| `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.asset` | `tasks.web/src/main/java/com.liferay.tasks.asset` | 
+| `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.portlet` | `tasks.web/src/main/java/com.liferay.tasks.portlet` |
+| `tasks-portlet/docroot/WEB-INF/src/content` | `tasks.web/src/main/resources/content` |
+| `tasks-portlet/docroot/WEB-INF/src/resource-actions` | `tasks.web/src/main/resources/resource-actions` |
+| `tasks-portlet/docroot/WEB-INF/src/portlet.properties` | `tasks.web/src/main/resources/portlet.properties` |
+| `tasks-portlet/docroot/init.jsp` | `tasks.web/src/main/resources/META-INF/resources/init.jsp` |
+| `tasks-portlet/docroot/tasks` | `tasks.web/src/main/resources/META-INF/resources/tasks` |
+| `tasks-portlet/docroot/upcoming_tasks` | `tasks.web/src/main/resources/META-INF/resources/upcoming_tasks` |
 
 Many applications only have the client module. Larger, more complex
 modules, however, require additional modules to hold their service and
