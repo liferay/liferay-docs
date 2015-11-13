@@ -51,12 +51,11 @@ Go ahead and enter text in the *Content* area. If you highlight text, controls
 appear. These controls let you style the text or convert it to a link or a
 tweet to share your blog post on Twitter. 
 
-Whenever you park your cursor in the content area, the *Add* icon
-(![Add](../../images/add-content-icon.png)) appears. If you click on it, it
-shows controls for inserting an image, table, or horizontal line
-(![Controls](../../images/content-insert-controls-icon.png)). To insert an
-image, click the icon that depicts the mountain silhouette. The image file
-selector screen appears. It lets you choose an existing image uploaded to
+Whenever you park your cursor in the content area, the *Add* icon (`+`) appears.
+If you click on it, it shows controls for inserting an image, table, or
+horizontal line (![Controls](../../images/content-insert-controls-icon.png)). To
+insert an image, click the icon that depicts the mountain silhouette. The image
+file selector screen appears. It lets you choose an existing image uploaded to
 Documents and Media, or it lets you upload a new image. You can also
 drag-and-drop image files into the content area. After you've added the image to
 the blog entry, clicking on the image brings up controls for justifying it to
@@ -69,12 +68,11 @@ add rows, columns, and cells.
 
 Now you're familiar with the editor's regular mode. If you'd rather work with
 the content's HTML code, you can. To switch the editor to source view, select
-the *Source* icon (![Source](../../images/source-icon.png)). Note that an *abc*
-icon (![ABC](../../images/abc-icon.png)) for regular mode appears, giving you
-the option to switch back to regular view. To satisfy your eyes, source view's
-moon icon and sun icon let you switch between a dark theme and a light theme.
-The built-in syntax coloring helps you identify HTML elements, regardless of the
-mode you're using. 
+the *Source* icon (`</>`). Note that an *abc* icon for regular mode appears,
+giving you the option to switch back to regular view. To satisfy your eyes,
+source view's moon icon and sun icon let you switch between a dark theme and a
+light theme. The built-in syntax coloring helps you identify HTML elements,
+regardless of the mode you're using. 
 
 If you want to minimize distractions as you edit your blog entry's HTML code,
 we've got you covered. You can click the *Enlarge* icon
