@@ -189,6 +189,30 @@ This causes Pandoc to create the following, easily styled markup:
 	
 We've duplicated this behavior in the Pegdown parser that we've implemented. 
 
+### Inline Images / Icon Images
+
+An icon's image helps the reader identify the icon in the UI. To use an existing
+icon snapshot, check a document's `images/` folder for files ending in *-icon.png*.
+Follow these steps
+to include an icon image inline in your article's Markdown text:
+
+1. Take a snapshot of the icon, if one doesn't already exist in the document's
+`images/` folder. Please save the snapshot to the `images/` folder and end its name with
+`-icon.png`. 
+2. Crop the image to remove unrelated content from around the icon.
+3. Resize the image's height to no greater than 20 pixels. **Important:** Make sure to keep the
+aspect ratio. 
+4. In the Markdown text, include the icon image in parentheses.
+
+Inline icon image example Markdown:
+
+    Click the *Add Blog Entry* icon (![Add Blog Entry](../../images/add-icon.png))
+    to bring up the blog entry editor.
+
+Result shown in a Knowledge Base article:
+
+![Inline icon image](images/render-icon-image-inline.png)
+
 ### Right Arrows 
 
 We are in the habit of using right arrows to denote a series of things a user
