@@ -191,10 +191,14 @@ We've duplicated this behavior in the Pegdown parser that we've implemented.
 
 ### Inline Images / Icon Images
 
-An icon's image helps the reader identify the icon in the UI. Follow these steps
+An icon's image helps the reader identify the icon in the UI. To use an existing
+icon snapshot, check a document's `images/` folder for files ending in *-icon.png*.
+Follow these steps
 to include an icon image inline in your article's Markdown text:
 
-1. Take a snapshot of the icon.
+1. Take a snapshot of the icon, if one doesn't already exist in the document's
+`images/` folder. Please save the snapshot to the `images/` folder and end its name with
+`-icon.png`. 
 2. Crop the image to remove unrelated content from around the icon.
 3. Resize the image's height to no greater than 20 pixels. **Important:** Make sure to keep the
 aspect ratio. 
