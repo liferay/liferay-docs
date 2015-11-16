@@ -192,12 +192,12 @@ We've duplicated this behavior in the Pegdown parser that we've implemented.
 ### Inline Images / Icon Images
 
 An icon's image helps the reader identify the icon in the UI. Follow these steps
-to include a icon image inline in your article's Markdown text:
+to include an icon image inline in your article's Markdown text:
 
 1. Take a snapshot of the icon.
 2. Crop the image to remove unrelated content from around the icon.
 3. Resize the image's height to no greater than 20 pixels. **Important:** Make sure to keep the
-aspect ration. 
+aspect ratio. 
 4. In the Markdown text, include the icon image in parentheses.
 
 Inline icon image example Markdown:
@@ -205,7 +205,7 @@ Inline icon image example Markdown:
     Click the *Add Blog Entry* icon (![Add Blog Entry](../../images/add-icon.png))
     to bring up the blog entry editor.
 
-Result:
+Result shown in a Knowledge Base article:
 
 ![Inline icon image](images/render-icon-image-inline.png)
 
