@@ -9,9 +9,9 @@ article.
 
 ![Figure x: Identity Provider Initiated SSO](../../images/idp-initiated-sso.png)
 
-1. A IdP initiated SSO is a SSO request sent directly to the IdP by the user's
-   browser. For situations where Liferay is configured to serve as the IdP, the
-   IdP initiated SSO URL
+1. A IdP initiated SSO request is a SSO request sent directly to the IdP by the
+   user's browser. For situations where Liferay is configured to serve as the
+   IdP, the IdP initiated SSO URL
     - Must specify the path as `/c/portal/saml/sso`.
     - Must include the `entityId` parameter which is the identifier to a
       previously configured Service Provider Connection (SPC).
@@ -32,25 +32,25 @@ article.
 
 4. The IdP sends the response to the Assertion Consumer Service URL as
    configured in the SPC. (Note: the Assertion Consumer Service URL is
-   generally imported as part of the SAML Metadata XML provided by the SP.) The
+   generally imported as part of the SAML metadata XML provided by the SP.) The
    SAML Response may be sent via HTTP-POST or HTTP-Redirect. This is again
-   specified in the SAML Metadata XML. HTTP-POST is the preferred method to
+   specified in the SAML metadata XML. HTTP-POST is the preferred method to
    reduce the risk that the URL is too long for a browser to handle. If using
    HTTP-POST, the request contains two parameters:
     - the `SAMLResponse`
     - the `RelayState`
 
 5. The SP validates and processes the SAML Response. Liferay's SAML solution
-   requires SAMLResponse messages to be signed. This signature process ensures
-   proper identification for the IdP and prevents potential SAML Response
-   spoofing.
-    - If one Liferay Portal is serving as the IdP and another is serving as
-      the SP, make sure the proper certificates are used. The SAML Metadata
-      XML imported into the Liferay SP should contain the proper
-      certificate of the Liferay IdP.
-    - If Liferay is serving as the IdP and another application as the SP,
-      make sure to export the certificate from the Liferay IdP and import
-      it into the SP's certificate store.
+   requires `SAMLResponse` messages to be signed. This signature process
+   ensures proper identification for the IdP and prevents potential SAML
+   Response spoofing.
+    - If one Liferay Portal is serving as the IdP and another is serving as the
+      SP, make sure the proper certificates are used. The SAML metadata XML
+      imported into the Liferay SP should contain the proper certificate of the
+      Liferay IdP.
+    - If Liferay is serving as the IdP and another application as the SP, make
+      sure to export the certificate from the Liferay IdP and import it into
+      the SP's certificate store.
 
 6. The User is redirected either to the `RelayState` (if specified) or home
    page of the SP (if no `RelayState` is provided).
@@ -84,7 +84,7 @@ article.
    as the SP, the `LogoutResponse` is delivered using either HTTP-Post,
    HTTP-Redirect, or direct response to SOAP request. HTTP-Post binding is
    preferred but in its absence, HTTP-Redirect will be used. SOAP is only used
-   to respond to `LogoutRequest` over SOAP binding.
+   to respond to the `LogoutRequest` over SOAP binding.
 
 4. The IdP sends a SAML `LogoutRequest` to the SP using either HTTP-Post,
    HTTP-Redirect, or SOAP binding.
@@ -120,8 +120,8 @@ article.
 3. If the user doesn't have an active session or if `ForceAuthn` was requested
    by the SP, the user is asked to authenticate by providing their credentials.
    When Liferay is configured as the IdP, Liferay hands over the authentication
-   to Liferay Login portlet. Liferay decodes and verifies the `AuthnRequest`
-   before requesting the user to authenticate.
+   to the Liferay Login portlet. Liferay decodes and verifies the
+   `AuthnRequest` before requesting the user to authenticate.
 
 4. Once the user is signed on, a SAML Response is constructed, sent to the
    Assertion Consumer Service URL of the SP, and verified.
