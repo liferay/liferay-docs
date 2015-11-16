@@ -164,7 +164,7 @@ portlet data will be exported or imported, keeping their hierarchy.
 information to use.](../../images/portlet-import.png)
 
 When you import portlet data, only the data types you select will be
-overwriten. If you'd like to import portlet data, you have to select a `.lar`
+overwritten. If you'd like to import portlet data, you have to select a `.lar`
 file. You can import any items that were included when your `.lar` file was
 created. Note that user preferences can only be successfully imported when the
 user UUIDs match. Additionally, you can import any archived setups into your
@@ -173,6 +173,37 @@ configurations and to switch between them. We discuss archived setups below. If
 you check the *Delete portlet data before importing* box, *all* data created by
 the portlets will be deleted just before the import process. Be careful, some
 portlets on others pages may be referencing this data.
+
++$$$
+
+**Note:** To prevent malicious code from being imported into your portal,
+Liferay restricts external classes from being serialized/deserialized. If you
+need a class serialized/deserialized during the import of a LAR, you must
+manually list its fully qualified class name in your `portal-ext.properties`
+file using the `staging.xstream.class.whitelist` property.
+
+Developers of custom portlets that support export/import must enlist their
+classes either in `portal-ext.properties` or in the given plugin by creating a
+`portal.properties` file with the proper settings and a `liferay-hook.xml` that
+contains a `<portal-properties>` element to let the deploy framework recognize
+and merge the property configuration with the default ones.
+
+First, to enable checking XStream class serialization security permissions, you
+must set `staging.xstream.security.enabled=true`. Then you can list your fully
+qualified class names allowed to be serialized/deserialized during export/import
+and staging processes using the `staging.xstream.class.whitelist` property. This
+list can be empty since the portal default entities are being added
+automatically. The following classes are used by default:
+
+- TestClass1
+- TestClass2
+
+Any class that is not whitelisted either through the portal property or by
+default generates a `com.thoughtworks.xstream.security.ForbiddenClassException`
+during the import phase. Thus, if you encounter such an error, you need to add
+the fully qualifed class name to your `portal-ext.properties` file.
+
+$$$
 
 Next, let's discuss the concept of a portlet's scope.
 
