@@ -127,8 +127,8 @@ permissible.
     folder. You'll insert your legacy application's Java code and JSPs, so the
     generated default code is not necessary.
 
-    The current directory structure for you application's \*-web module is listed
-    below:
+    The current directory structure for your application's \*-web module is
+    listed below:
 
     - `tasks`
         - `tasks-web`
