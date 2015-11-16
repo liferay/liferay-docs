@@ -2760,27 +2760,27 @@ injection of dependencies into scheduled event message listeners.
 
 ---------------------------------------
 
-### Removed the asset.publisher.query.form.configuration Property
+### Removed the asset.publisher.query.form.configuration Property [](id=removed-the-asset-publisher-query-form-configuration-property)
 - **Date:** 2015-Nov-03
 - **JIRA Ticket:** LPS-60119
 
-#### What changed?
+#### What changed? [](id=what-changed-71)
 
 The `asset.publisher.query.form.configuration` property has been removed
 from `portal.properties`.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-71)
 
 This affects any hook that uses the `asset.publisher.query.form.configuration`
 property.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-71)
 
 If you are using this property to generate the UI for an Asset Entry Query
 Processor, your Asset Entry Query Processor must now implement the `include`
 method to generate the UI.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-71)
 
 This change was made as a part of the ongoing strategy to modularize Liferay
 Portal.
