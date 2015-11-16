@@ -11,9 +11,9 @@ Its editor delivers features you'd expect, in an elegant in-context manner. It
 has a complete set of WYSIWYG controls that appear where and when you need them.
 You can stay in this easy-to-use mode or switch to source mode to edit your
 content's HTML code. In source mode, you can work with light text on a dark
-background or dark text on a light background. To cap things off, you can
-enlarge the HTML editor window to minimize distractions as you create your
-posts. You'll have a satisfying experience creating awesome blog posts. 
+background or dark text on a light background. To cap things off, you can open
+the dual screen HTML editor to see your code rendered in real time. You'll have
+a satisfying experience creating awesome blog posts. 
 
 Lastly, Liferay Blogs empowers you to show off your blogs using powerful display
 apps. You can leverage Liferay's built-in display templates or create your own,
@@ -74,16 +74,13 @@ source view's moon icon and sun icon let you switch between a dark theme and a
 light theme. The built-in syntax coloring helps you identify HTML elements,
 regardless of the mode you're using. 
 
-If you want to minimize distractions as you edit your blog entry's HTML code,
-we've got you covered. You can click the *Enlarge* icon
-(![Enlarge](../../images/enlarge-icon.png)) to open the HTML editor in a
-full-size *Edit Content* window. The first icons above the editor allow you to
-arrange the HTML editor and rendered content area, horizontally or vertically.
-These dual views allow you to edit the HTML source and render it in real time.
-The last icon at the top of the content editor lets you toggle hiding the
-content rendering area, so you can use the entire browser space to work on the
-HTML code. The enlarged HTML editor can really help you stay "in the zone" as
-you create awesome blog entries. 
+You can even work in a dual pane view that shows your HTML code on the left and
+a preview pane on the right. To open this view, click the *Enlarge* icon
+(![Enlarge](../../images/enlarge-icon.png)). You can arrange the HTML and
+preview panes, horizontally or vertically. You can also hide the preview pane,
+so the HTML editor takes up the entire window space. No matter how you want to
+use the HTML editor, it can really help you stay "in the zone" as you create
+awesome blog entries. 
 
 ![Figure 2: The enlarged source editor helps you minimize screen clutter and render changes in real time.](../../images/blogs-full-screen-editor.png)
 
