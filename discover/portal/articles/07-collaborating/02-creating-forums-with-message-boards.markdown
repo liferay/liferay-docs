@@ -37,9 +37,9 @@ the page. Then click the app's *Options* icon
 message board is now scoped to the page and available to work with in Site
 Administration. 
 
-To administer a message board, open the *Product Menu* and navigate the
-*Content* section for your site or global scope. The Message Boards
-administration screen appears. 
+To administer a message board, open the *Product Menu*
+(![Product Menu](../../images.menu-icon.png)) and navigate the *Content* section
+for your site or global scope. The Message Boards administration screen appears. 
 
 +$$$
 
