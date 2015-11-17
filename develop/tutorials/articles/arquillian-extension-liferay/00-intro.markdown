@@ -1,6 +1,6 @@
 # Arquillian Extension for Liferay
 
-[Arquillian](http://arquillian.org) is a extensible Java testing platform that's
+[Arquillian](http://arquillian.org) is an extensible Java testing platform that's
 designed to make integration testing easy. Arquillian manages the lifecycle of
 setting up, starting, or connecting to a container (e.g., Tomcat), packaging
 your test cases and any dependent classes or resources, deploying them to the

@@ -9,10 +9,10 @@ for Liferay works and how to use it in your own projects.
 The Arquillian Extension Liferay Example project is executed in the following
 environment:
 
-- Tomcat Server 7.0.62
+- Tomcat Server 
     - JMX enabled and configured
-- Liferay 7.0.0
-- JUnit 4.12
+- Liferay 7
+- JUnit 
 
 To set up a testing environment like the one used by the Arquillian Extension
 for Liferay Example, you need to enable and configure JMX in your Liferay Tomcat
@@ -37,6 +37,10 @@ You can customize your `setenv.sh` in a similar way.
 
 You need a Liferay portlet project that can be used for testing. Follow these
 steps to create a Liferay portlet project using Maven.
+
+<!-- I've told Greg that we are standardizing with him on Gradle. This should be
+changed so it's a Gradle example, not a Maven example. It's our job to convert
+what the developers give us into a consistent message. -Rich -->
 
 1. Add Liferay, portlet, and OSGi dependencies to your project's `pom.xml` file:
 
@@ -95,8 +99,8 @@ steps to create a Liferay portlet project using Maven.
             </dependencies>
         ...
 
-2. Create an OSGi service. This OSGi service is just an example that you'll use
-   for testing purposes. It's a simple service that adds two numbers.
+2.  Create an OSGi service. This OSGi service is just an example that you'll use
+    for testing purposes. It's a simple service that adds two numbers.
 
     First, create a new interface:
 
@@ -124,8 +128,8 @@ steps to create a Liferay portlet project using Maven.
 
         }
 
-3. Create a Liferay MVC portlet. This portlet will call the service defined in
-   the previous step:
+3.  Create a Liferay MVC portlet. This portlet will call the service defined in
+    the previous step:
 
         package org.arquillian.liferay.sample.portlet;
 
@@ -234,9 +238,12 @@ steps to create a Liferay portlet project using Maven.
             <aui:button type="submit" value="add" />
         </aui:form>
 
-4. Next, you need to create a `bnd.bnd` file for deployment. Your tests will use
-   [Bnd](http://aqute.biz/Code/bnd) to create the artifact to be deployed so you
-   need to add this Maven dependency to your project's `pom.xml` file:
+4.  Next, create a `bnd.bnd` file for deployment. Your tests will use
+    [Bnd](http://aqute.biz/Code/bnd) to create the artifact to be deployed, so
+    add this Maven dependency to your project's `pom.xml` file:
+
+    <!-- Again, this should be Gradle, regardless of what the developer gave us.
+    -Rich -->
 
         ...
         <dependencies>
@@ -251,7 +258,7 @@ steps to create a Liferay portlet project using Maven.
         </dependencies>
         ...
 
-    And, of course, you need to create a `bnd-basic-portlet-test.bnd` file:
+    And, of course, you must create a `bnd-basic-portlet-test.bnd` file:
 
         Bundle-Name: Basic Portlet Test
         Bundle-SymbolicName: org.arquillian.liferay.sample
@@ -278,7 +285,7 @@ steps to create a Liferay portlet project using Maven.
 Now that you've configured JMX in Tomcat and created a portlet project, you're
 ready to create Liferay tests with the Arquillian Liferay Extension.
 
-1. Add dependencies to your `pom.xml` file:
+1.  Add dependencies to your `pom.xml` file:
 
         ...
         <dependencies>
@@ -304,7 +311,7 @@ ready to create Liferay tests with the Arquillian Liferay Extension.
         </dependencies>
         ...
 
-2. Create simple integration tests using the Arquillian Liferay Extension.
+2.  Create simple integration tests using the Arquillian Liferay Extension.
 
         package org.arquillian.liferay.test;
 
@@ -359,10 +366,7 @@ To create a functional test in Liferay with the Arquillian Liferay Extension,
 follow this
 [guide](http://arquillian.org/guides/functional_testing_using_graphene/).
 
-1. Add dependencies to `pom.xml`.
-
-    First of all, you need to configure the `pom.xml` file to add the
-    `graphene-webdriver` dependencies:
+1.  Add dependencies to `pom.xml`:
 
         ...
         <dependencies>
@@ -378,7 +382,7 @@ follow this
         </dependencies>
         ...	
 
-2. Add a easy way to execute tests between different browsers.
+2.  Add a easy way to execute tests between different browsers.
 
     In your `pom.xml` file, create a profile for each desired browser:
 
@@ -405,9 +409,9 @@ follow this
             ...
         </profiles>
 
-3. Next, you need to set up `arquillian.xml` in order to change the Arquillian
-   settings for browser selection. Add the following to your project's
-   `arquillian.xml` file in the `src/test/resources` directory.
+3.  Next, you need to set up `arquillian.xml` in order to change the Arquillian
+    settings for browser selection. Add the following to your project's
+    `arquillian.xml` file in the `src/test/resources` directory.
 
         <?xml version="1.0" encoding="UTF-8"?>
         <arquillian xmlns="http://jboss.org/schema/arquillian"
@@ -420,7 +424,7 @@ follow this
 
         </arquillian>
 
-4. Create a portlet functional test:
+4.  Create a portlet functional test:
 
         package org.arquillian.liferay.test;
 
@@ -522,7 +526,7 @@ follow this
 
         }
 
-5. Configure the `ArquillianResource`:
+5.  Configure the `ArquillianResource`:
 
     If you want to inject the URL of the container using the annotation
     `@ArquillianResource`, you can use one of these solutions (if you are using
