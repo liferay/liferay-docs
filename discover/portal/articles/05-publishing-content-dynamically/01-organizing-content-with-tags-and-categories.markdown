@@ -9,7 +9,18 @@ form when creating or editing an asset, you'll find an interface for adding tags
 and categories. If no categories are available to be added to the asset (e.g.,
 if no categories have been created), the Categories heading won't appear.
 
-![Figure 1: Here, the Web Content Display portlet's form for categorizing a new web content instance doesn't include a Categories heading since no categories have been created.](../../images/04-web-content-categorization.png)
+![Figure 1: Here, the Web Content application's form for categorizing a new web content instance includes a Categories heading since categories exist.](../../images/web-content-categorization.png)
+
++$$$
+
+**Note:** You'll notice in figure 1 above that there is also a *Priority* field
+for web content. This field is not related to categories and tags, but rather,
+specifies the order in which the web content article is listed when displayed in
+the Asset Publisher. To learn more about the Asset Publisher, see the
+[Publishing Assets](/discover/portal/-/knowledge_base/7-0/publishing-assets)
+section.
+
+$$$
 
 The Product Menu (![Product Menu](../../images/menu-icon.png)) contains
 interfaces for managing tags and categories for each site in the portal.
@@ -34,13 +45,13 @@ create or edit.
 
 While regular users can, by default, create new tags by applying them to any
 assets that they have permission to create or edit, only site administrators can
-access the *Tags* portlet in the Content section of the Site Administration area
-of the Product Menu. Here, site administrators can create new tags and edit any
-existing site tags. To create tags in Site Administration, visit the site for
-which you want to create tags and then click *Content *&rarr; *Tags*. From this
-screen, you can view existing tags and create new ones. To create a new tag,
-click the *Add Tag* icon (![Add Tag](../../images/add-icon.png)) and enter a
-name for the tag.
+access the *Tags* application in the Content section of the Site Administration
+area of the Product Menu. Here, site administrators can create new tags and edit
+any existing site tags. To create tags in Site Administration, visit the site
+for which you want to create tags and then click *Content *&rarr; *Tags*. From
+this screen, you can view existing tags and create new ones. To create a new
+tag, click the *Add Tag* icon (![Add Tag](../../images/add-icon.png)) and enter
+a name for the tag.
 
 ![Figure 2: The Add Tag interface is very simple, only requiring the name of your tag.](../../images/new-tag-interface.png)
 
@@ -60,9 +71,9 @@ seek.
 
 Adding vocabularies and categories is similar to adding tags. Visit the site for
 which you want to create categories and then click *Content* &rarr; *Categories*
-to view the Categories administration portlet.
+to view the Categories application.
 
-![Figure 3: When managing a site's content, click on *Categories* and then on *Add Vocabulary* to create a new vocabulary. By default, a vocabulary called *Topic* already exists. When adding new categories, make sure you're adding them to the correct vocabulary.](../../images/add-category.png)
+![Figure 3: After adding new vocabularies, you'll notice your vocabularies indicate the amount of categories existing beneath them.](../../images/vocabulary-list.png)
 
 Clicking on a vocabulary displays any categories that have been created under
 that vocabulary. To create a new vocabulary, click on the *Add Vocabulary*
@@ -103,36 +114,35 @@ categories. To nest categories, select the *Actions* button for the category
 you'd like to be the parent category. Then select *Add Subcategory*, which adds
 a child category to the selected parent.
 
-After you have created a hierarchy of categories, your content creators will
-have them available to apply to content that they create. Click on *Web Content*
-in the Content section of the Site Administration area the Control Panel and
-click *Add* &rarr; *Basic Web Content*. Click on *Categorization* from the
-right-side menu and click *Select* on the vocabulary you'd like to apply. A
-dialog box appears with your categories. Select any relevant categories by
-checking the box next to them, and they'll be applied to the content.
+After you've created a hierarchy of categories, your content creators will have
+them available to apply to content that they create. Click on *Web Content* in
+the Content section of Site Administration and click *Add* &rarr; *Basic Web
+Content*. Click on *Categorization* from the right-side menu and click *Select*
+on the vocabulary you'd like to apply. A dialog box appears with your
+categories. Select any relevant categories by checking the box next to them, and
+they'll be applied to the content.
 
-Liferay 6.1 added several new features to vocabularies and categories. We
-mentioned a few of these already when we were discussing the *Allow Multiple
-Categories* and *Required* checkboxes for vocabularies and categories. The three
-new features are targeted vocabularies, single/multi-valued vocabularies, and
+There are a few other cool features for vocabularies and categories. A few of
+them were mentioned already when the *Allow Multiple Categories* and *Required*
+checkboxes for vocabularies and categories were discussed. The three new
+features are targeted vocabularies, single/multi-valued vocabularies, and
 separated widgets for every vocabulary.
 
 ### Targeted Vocabularies
 
 Targeted Vocabularies allow you to decide which vocabularies can be applied to
 an asset type and which vocabularies are required for an asset type. To
-configure these settings, go to the categories administration portlet in the
-Control Panel and mouse over the vocabulary in the list until you see the edit
+configure these settings, go to the Categories application in Site
+Administration and mouse over the vocabulary in the list until you see the edit
 icon to the right. Select the icon to reveal a dialog box like the one below.
 
-![Figure 6.4: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
+![Figure 4: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
 
 The default value for *Associated Asset Types* is *All Asset Types*. You can
 fine tune your choices by using the *+* and *-* buttons, which narrows the scope
 of the vocabulary to specific assets. In the screenshot above, notice that the
-vocabulary is configured to be available for Web Content instances and Blog
-entries, but it is not required. It is mandatory, however, for Documents and
-Media files.
+vocabulary is configured to be available for Web Content articles and Blog
+entries, but it is not required. It is mandatory, however, for Bookmark entries.
 
 ### Single and Multi-valued Vocabularies
 
@@ -141,12 +151,12 @@ vocabulary to apply to an asset. If a vocabulary is single-valued you can only
 choose one. If it allows more, you can choose several categories from the
 vocabulary to apply to an asset.
 
-![Figure 6.5: Multi-valued vocabularies allow multiple categories from the vocabulary to be applied to an asset. Single-valued vocabularies only allow one category from the vocabulary to be applied. Here, the *Cinema* and *Music* categories are selected to be applied but the *Sports* category is not.](../../images/multi-valued-vocabularies.png)
+![Figure 5: Multi-valued vocabularies allow multiple categories from the vocabulary to be applied to an asset. Single-valued vocabularies only allow one category from the vocabulary to be applied. Here, the *Dining* and *Nightlife* categories are selected to be applied but the *Scenic Adventures* category is not.](../../images/multi-valued-vocabularies.png)
 
 You can configure the single-valued or multi-valued status of a vocabulary
-through the categories administration portlet. Edit a vocabulary and deselect
-the *Allow Multiple Categories* checkbox to create a single-valued vocabulary.
-Use the default option to create a multi-valued vocabulary.
+through the Categories application. Edit a vocabulary and deselect the *Allow
+Multiple Categories* checkbox to create a single-valued vocabulary. Use the
+default option to create a multi-valued vocabulary.
 
 ### Separated Widgets
 
@@ -155,8 +165,8 @@ own separated widget. These widgets appear in the Categorization section of the
 form for editing an asset and they allow users to easily select appropriate
 categories for that asset.
 
-![Figure 6.6: Vocabularies have their own widgets, making it easy to select available categories.](../../images/separated-widgets.png)
+![Figure 6: Vocabularies have their own widgets, making it easy to select available categories.](../../images/separated-widgets.png)
 
 It's important to use tags and categories with all your content, so that content
-is easier for users to find. Let's look at one of the ways users will make use
-of tags and categories: searching for content. 
+is easier for users to find. Now that your content is categorized and tagged,
+you'll learn how to define content relationships next.
