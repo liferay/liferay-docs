@@ -1,10 +1,11 @@
 # Using Login Screenlet for Authentication [](id=using-login-screenlet-for-authentication)
 
 For the app to retrieve data from the guestbook portlet, the app's user must 
-first authenticate to the portal. You can authenticate using the Liferay Mobile
-SDK, but it takes time to implement. Authenticating using Liferay Screens takes
-about ten minutes. In this article, you'll use the Login Screenlet to implement
-authentication in your app. 
+first authenticate to the portal. The other features you'll develop in your app 
+depend on successful portal authentication. You can authenticate using the 
+Liferay Mobile SDK, but it takes time to implement. Authenticating using Liferay 
+Screens takes about ten minutes. In this article, you'll use the Login Screenlet 
+to implement authentication in your app. 
 
 ## Adding Login Screenlet to the App [](id=adding-login-screenlet-to-the-app)
 
@@ -109,17 +110,8 @@ functionality yet. You'll fix this next.
 
 ## Navigating from Login Screenlet [](id=navigating-from-login-screenlet)
 
-In project view, right click the package `com.liferay.docs.liferayguestbook` and 
-select *New* &rarr; *Activity* &rarr; *Navigation Drawer Activity* to launch the 
-New Android Activity wizard. This is the same wizard you used to create an empty 
-activity during project creation. Name the activity `GuestbooksActivity`, accept the 
-default values for the remaining fields, and click *Finish*. After Android 
-Studio creates the activity, the `GuestbooksActivity` class and 
-`content_guestbooks.xml` layout open in the editor. Close them. You don't need 
-to edit these files yet.
-
-Now you need for the app to open this new activity when login succeeds. You'll 
-do this by using an *intent* in `MainActivity`'s `onLoginSuccess` method. 
+Now you need for the app to open `GuestbooksActivity` when login succeeds. 
+You'll do this by using an *intent* in `MainActivity`'s `onLoginSuccess` method. 
 In short, Android intents are messaging objects that you can use to launch other 
 activities. For more information, see 
 [this guide on intents in Android's documentation](http://developer.android.com/guide/components/intents-filters.html). 
@@ -141,6 +133,6 @@ log in when prompted. When login succeeds, the new activity opens.
 ![Figure 2: The app takes you to the new activity after you log in.](../../images/android-login-success-intent.png)
 
 Nice work! You've successfully implemented portal authentication in the Android 
-app. It didn't take you that long, either. You've only got signing in working so
+app. It didn't take you that long, either. You only have signing in working so
 far, though; it doesn't display any portal content. You'll take care of this 
 next.
