@@ -128,11 +128,13 @@ import to `MainActivity`:
     import android.content.Intent;
 
 Now you're ready to see the intent in action! Run the app in the emulator and 
-log in when prompted. When login succeeds, the new activity opens. 
+log in when prompted. When login succeeds, the `GuestbooksActivity` opens. 
 
 ![Figure 2: The app takes you to the new activity after you log in.](../../images/android-login-success-intent.png)
 
 Nice work! You've successfully implemented portal authentication in the Android 
 app. It didn't take you that long, either. You only have signing in working so
 far, though; it doesn't display any portal content. You'll take care of this 
-next.
+shortly. First, however, you need to understand the components that comprise 
+`GuestbooksActivity`. The next article walks you through this activity's 
+structure. 
