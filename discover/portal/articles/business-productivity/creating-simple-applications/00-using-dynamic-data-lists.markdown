@@ -1,9 +1,9 @@
 # Creating Simple Applications
 
 Business needs change, and technology must adapt to meet those needs. Things
-that used to be done using manual processes are now done electronically.  You
+that used to be done using manual processes are now done electronically. You
 may want your team to sign up on your web site for a holiday party. Maybe you
-need to put up a job posting board every fall, only allowing administrators to
+need to put up a job posting board every fall, where only administrators can
 create new job posts. Maybe you'd like users to manage a notebook or To-Do list
 on their private pages. In these cases, you need custom sets of data, and your
 users need to add and access their information. 
@@ -31,4 +31,4 @@ flexible and powerful. From collecting simple input from the user ("Did you find
 what you were looking for?") to developing an entire data entry system for real
 estate listings, Dynamic Data Lists have your use case covered. Combined with
 the flexibility provided through templates and the power of languages like
-Velocity, entire applications can be built in a short time.
+Freemarker, entire applications can be built in a short time.

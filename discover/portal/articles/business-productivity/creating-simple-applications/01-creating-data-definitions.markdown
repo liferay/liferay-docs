@@ -1,34 +1,34 @@
 # Creating Data Definitions
 
-To expand and extend the social capabilities of your site, build a
-new, radical platform on Liferay: custom-built lists that users can share and
-collaborate on with their friends (or enemies, depending on their Social
-Relation type). Marketing has come up with a great name for our new service:
-`list.it`. Our beautiful `list.it` dashboard will give users the power to
-generate their own lists, see the lists of their friends and tally the results
-of certain types of lists (surveys, anyone?). Liferay makes this as simple as
-throwing some Dynamic Data List Display and Form portlets on the public and
-private pages of users' personal sites.
+To expand and extend the social capabilities of your site, you've come up with a
+great idea: give your users custom-built lists that they can share with their
+friends (or enemies, depending on their Social Relation type). Marketing has
+come up with a great name for your new service: `list.it`. Your beautiful
+`list.it` dashboard will give users the power to generate their own lists, see
+their friends' lists, and tally the results of certain types of lists
+(surveys, anyone?). Liferay makes this as simple as throwing some Dynamic Data
+List Display and Form portlets on the public and private pages of users'
+personal sites.
 
-When new users log in to `list.it`, they are going to want to build a few lists
-for themselves. Chances are, many of the lists they would want to create--to do
-lists, shopping lists and memos come to mind--are already defined in the portal.
-All the user has to do is create a new list, choose the predefined data type,
-and have at it! The data definitions that ship with the portal's default site
-include *To Do*, *Meeting Minutes*, *Issues Tracking*, *Inventory*, *Events*,
-and *Contacts*. Use these definitions on their own to generate new data lists or
-tweak them to fit your use case. 
+When new users log in to `list.it`, you want to make it easy for them to build
+lists. To this end, you've pre-defined some common ones--to do lists, shopping
+lists, and memos. To create one of these, all the user has to do is create a new
+list, choose the predefined data type, and have at it! The data definitions
+that ship with the portal's default site include *To Do*, *Meeting Minutes*,
+*Issues Tracking*, *Inventory*, *Events*, and *Contacts*. Users can use these
+definitions on their own to generate new data lists or tweak them to fit their
+needs. 
 
 ![Figure 1: The portal ships with several commonly used predefined data definitions that your lists can be built onto. You can also add your own data definitions, or modify the existing ones.](../../images/ddl-definitions.png)
 
-If none of the built-in data definitions suit your needs, create your own
-data definition. Maybe you want to allow `list.it` users (who would probably
-call themselves "list-ers" or "list-ies") to create their own data types for
-lists they create. In this case, they need to have complete access to the
-content of their private user site where they can create a new data type.
+If none of the built-in data definitions are suitable, users can create their
+own definitions. If you want to allow `list.it` users (who would probably call
+themselves "list-ers" or "list-ies") to create their own data types for lists
+they create, they must have complete access to the content of their private user
+sites where they can create a new data type.
 
 Using data lists to outline a new data model is as simple as point and click.
-You now have a `list.it` account and have been dying to bug your friends and
+Say you now have a `list.it` account. You've been dying to bug your friends and
 family to sign up for "volunteer" work: helping you move into a new apartment.
 Using an intuitive visual editor, you can quickly draw up the skeleton for that
 volunteer list in minutes. Since data lists exemplify a unique type of content
@@ -42,9 +42,10 @@ Russ in October 2015 -->
 
 ## Managing Data Definitions
 
-From a site's Dynamic Data Lists portlet (accessed through the Product Menu),
+From a site's Dynamic Data Lists application (accessed through the Product Menu),
 you can either add a new dynamic data list from an existing data type or you can
-click *Manage Data Definitions* to add or edit data definitions.
+click *Manage Data Definitions* from the action button to add or edit data
+definitions.
 
 ![Figure 3: You can manage the portal's data definitions.](../../images/ddl-config-menu.png)
 
