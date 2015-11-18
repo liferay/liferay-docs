@@ -1,0 +1,9 @@
+Bundle-Name: Form Nav Extension Portlet
+Bundle-SymbolicName: com.liferay.docs.formnavextensionportlet
+Bundle-Version: 1.0.0
+Include-Resource:\
+        classes,\
+        META-INF/resources=src/main/resources/META-INF/resources
+-jsp: *.jsp,*.jspf
+-plugin.jsp: com.liferay.ant.bnd.jsp.JspAnalyzerPlugin
+Web-ContextPath: /formnavextensionportlet

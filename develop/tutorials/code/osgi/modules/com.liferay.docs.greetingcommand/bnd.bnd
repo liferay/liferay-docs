@@ -1,0 +1,5 @@
+-dsannotations: *
+Bundle-Name: Greeting Command
+Bundle-SymbolicName: com.liferay.docs.greetingcommand
+Bundle-Version: 1.0.0.${tstamp}
+Private-Package: com.liferay.docs.greetingcommand
