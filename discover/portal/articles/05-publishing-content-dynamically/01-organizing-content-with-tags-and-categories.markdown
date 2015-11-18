@@ -42,27 +42,7 @@ screen, you can view existing tags and create new ones. To create a new tag,
 click the *Add Tag* icon (![Add Tag](../../images/add-icon.png)) and enter a
 name for the tag.
 
-You can also customize a tag's permissions and properties. This configuration,
-however, must be done by a server administrator. To implement this
-configuration, add a `portal-ext.properties` file to your Liferay Home directory
-with the following contents and then restart the server:
-
-	asset.tag.permissions.enabled=true
-	asset.tag.properties.enabled=true
-
-Once this is done, you can change the permissions on a tag to make it viewable
-by guests, site members, or owner. You can also assign other permissions for
-managing tags, including permission to delete the tag, edit the tag, or edit the
-tag's permissions. You can also add properties to a tag. Properties are a way to
-add information to specific tags. You can think of tag properties as tags for
-your tags. Structurally, tag properties are key-value pairs associated with
-specific tags that provide information about the tags.
-
-![Figure 2: The Add Tag interface with editing of tag properties and permissions enabled. When managing a site's content, click on *Tags* and then *Add Tag* to create a new tag. The Add Tag interface allows you to enter a name for the tag, define permissions for the tag, and add properties to the tag.](../../images/05-add-tag.png)
-
-<!-- Not able to get properties listed above to produce this image for Liferay
-7. I've contacted Julio about this, and hope to find a solution for this soon.
--Cody -->
+![Figure 2: The Add Tag interface is very simple, only requiring the name of your tag.](../../images/new-tag-interface.png)
 
 Tags are not the only portal-wide mechanism for describing content: you can also
 use categories.
@@ -82,7 +62,7 @@ Adding vocabularies and categories is similar to adding tags. Visit the site for
 which you want to create categories and then click *Content* &rarr; *Categories*
 to view the Categories administration portlet.
 
-![Figure 6.3: When managing a site's content, click on *Categories* and then on *Add Vocabulary* to create a new vocabulary. By default, a vocabulary called *Topic* already exists. When adding new categories, make sure you're adding them to the correct vocabulary.](../../images/add-category.png)
+![Figure 3: When managing a site's content, click on *Categories* and then on *Add Vocabulary* to create a new vocabulary. By default, a vocabulary called *Topic* already exists. When adding new categories, make sure you're adding them to the correct vocabulary.](../../images/add-category.png)
 
 Clicking on a vocabulary displays any categories that have been created under
 that vocabulary. To create a new vocabulary, click on the *Add Vocabulary*
@@ -111,15 +91,11 @@ description. Just as with tags, you can configure the permissions
 of the category, choosing which roles (guest, site member, owner) can view the
 category, apply it to an asset, delete it, update it, or configure its
 permissions. By default, categories are viewable by guests and site members can
-apply categories to assets. Also, you can add properties to categories, just as
-with tags. Category properties are a way to add information to specific
-categories. You can think of category properties as tags for your categories.
-Structurally, category properties are just like tag properties: they are
-key-value pairs associated with specific categories that provide information
-about the categories.
-
-<!-- Above reference to tag properties is pending the answer to whether this is
-possible for tags in Liferay 7. -Cody -->
+apply categories to assets. Also, you can add properties to categories. Category
+properties are a way to add information to specific categories. You can think of
+category properties as tags for your categories. Structurally, category
+properties are just like tag properties: they are key-value pairs associated
+with specific categories that provide information about the categories.
 
 Once you have created some vocabularies and categories, you can take advantage
 of the full capabilities of categories by creating a nested hierarchy of
