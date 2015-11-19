@@ -55,10 +55,10 @@ Whenever you park your cursor in the content area, the *Add* icon (`+`) appears.
 If you click on it, it shows controls for inserting an image, table, or
 horizontal line (![Controls](../../images/content-insert-controls-icon.png)). To
 insert an image, click the icon that depicts the mountain silhouette. The image
-file selector screen appears. It lets you choose an existing image upload a new
-one. You can also drag-and-drop image files into the content area. After you've
-added the image to the blog entry, clicking it brings up controls for justifying
-it to the right or left side of the article. 
+file selector screen appears. It lets you choose an existing image or upload a
+new one. You can also drag-and-drop image files into the content area. After
+you've added the image to the blog entry, clicking it brings up controls for
+justifying it to the right or left side of the article. 
 
 You can also insert a table with as many rows and columns as you like. If you
 click inside the table, table editing controls appear. They let you designate
