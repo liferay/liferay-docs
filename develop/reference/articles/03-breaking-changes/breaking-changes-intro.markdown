@@ -1997,6 +1997,99 @@ configure any editor in Liferay Portal in a coherent and extensible way.
 
 ---------------------------------------
 
+### Renamed ActionCommand Classes Used in the MVCPortlet Framework [](id=renamed-actioncommand-classes-used-in-the-mvcportlet-framework)
+- **Date:** 2015-Jun-16
+- **JIRA Ticket:** LPS-56372
+
+#### What changed? [](id=what-changed-54a)
+
+The classes located in the `com.liferay.portal.kernel.portlet.bridges.mvc`
+package have been renamed to include the *MVC* prefix.
+
+Old Classes:
+
+- `BaseActionCommand`
+- `BaseTransactionalActionCommand`
+- `ActionCommand`
+- `ActionCommandCache`
+
+New Classes:
+
+- `BaseMVCActionCommand`
+- `BaseMVCTransactionalActionCommand`
+- `MVCActionCommand`
+- `MVCActionCommandCache`
+
+Also, the property `action.command.name` has been renamed to `mvc.command.name`.
+The code snippet below shows the new property in its context.
+
+    @Component(
+        immediate = true,
+        property = {
+                "javax.portlet.name=" + InvitationPortletKeys.INVITATION,
+                "mvc.command.name=view"
+        },
+        service = MVCActionCommand.class
+    )
+
+#### Who is affected? [](id=who-is-affected-54a)
+
+This affects any Java code calling the `ActionCommand` classes used in the
+`MVCPortlet` framework.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-54a)
+
+You should update the old `ActionCommand` class names with the new *MVC* prefix.
+
+#### Why was this change made? [](id=why-was-this-change-made-54a)
+
+This change adds consistency to the MVC framework, and makes it self-explanatory
+what classes should be used for the MVC portlet.
+
+---------------------------------------
+
+### Extended MVC Framework to Use Same Key for Registering ActionURL and ResourceURL [](id=extended-mvc-framework-to-use-same-key-for-registering-actionurl-and-resour)
+- **Date:** 2015-Jun-16
+- **JIRA Ticket:** LPS-56372
+
+#### What changed? [](id=what-changed-55a)
+
+Previously, a single `ActionCommand` was valid for both `ActionURL` and
+`ResourceURL`. Now you must distinguish both an `ActionURL` and `ResourceURL` as
+different actions, which means you can register both with the same key.
+
+#### Who is affected? [](id=who-is-affected-55a)
+
+This affects developers that were using the `ActionCommand` for `actionURL`s and
+`resourceURL`s.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-55a)
+
+You should replace the `ActionCommand`s used for `actionURL`s and `resourceURL`s
+to use `MVCActionCommand` and `MVCResourceCommand`, respectively. For example,
+for the new `MVCResourceCommand`, you'll need to use the `resourceID` of the
+`resourceURL` instead of using `ActionRequest.ACTION_NAME`.
+
+Old Code:
+
+    <liferay-portlet:resourceURL copyCurrentRenderParameters="<%= false %>" var="exportRecordSetURL">
+        <portlet:param name="<%= ActionRequest.ACTION_NAME %>" value="exportRecordSet" />
+        <portlet:param name="recordSetId" value="<%= String.valueOf(recordSet.getRecordSetId()) %>" />
+    </liferay-portlet:resourceURL>
+
+New Code:
+
+    <liferay-portlet:resourceURL copyCurrentRenderParameters="<%= false %>" id="exportRecordSet" var="exportRecordSetURL">
+        <portlet:param name="recordSetId" value="<%= String.valueOf(recordSet.getRecordSetId()) %>" />
+    </liferay-portlet:resourceURL>
+
+#### Why was this change made? [](id=why-was-this-change-made-55a)
+
+This change was made to extend the MVC framework to have better support for
+`actionURL`s and `resourceURL`s.
+
+---------------------------------------
+
 ### Removed the liferay-ui:journal-article Tag [](id=removed-the-liferay-uijournal-article-tag)
 - **Date:** 2015-Jun-29
 - **JIRA Ticket:** LPS-56383
@@ -2666,3 +2759,28 @@ declarative services in an OSGI container. The new approach allows for proper
 injection of dependencies into scheduled event message listeners.
 
 ---------------------------------------
+
+### Removed the asset.publisher.query.form.configuration Property [](id=removed-the-asset-publisher-query-form-configuration-property)
+- **Date:** 2015-Nov-03
+- **JIRA Ticket:** LPS-60119
+
+#### What changed? [](id=what-changed-71)
+
+The `asset.publisher.query.form.configuration` property has been removed
+from `portal.properties`.
+
+#### Who is affected? [](id=who-is-affected-71)
+
+This affects any hook that uses the `asset.publisher.query.form.configuration`
+property.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-71)
+
+If you are using this property to generate the UI for an Asset Entry Query
+Processor, your Asset Entry Query Processor must now implement the `include`
+method to generate the UI.
+
+#### Why was this change made? [](id=why-was-this-change-made-71)
+
+This change was made as a part of the ongoing strategy to modularize Liferay
+Portal.

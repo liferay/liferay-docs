@@ -20,14 +20,14 @@ If you'd like to clone the repository and build Blade Tools from source, skip to
 the next section.
 
 1.  After you have installed JPM, download the `blade.jar` file:
-    [https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/blade.cli/generated/distributions/executable/blade.jar](https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/blade.cli/generated/distributions/executable/blade.jar).
+    [https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/distributions/executable/blade.jar](https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/distributions/executable/blade.jar).
 
     Blade Tools is still under development. Two tools are currently available:
     the CLI and the migration tool. The Blade CLI tool is included in the
     `blade.jar` file that you downloaded. Other tools, such as a plugin
     migration tool (for migrating plugins from a 6.2 Plugins SDK to a 7.0
     module), are
-    [/develop/tutorials/-/knowledge_base/7-0/migrating-legacy-applications-to-new-plugins-sdk](covered in another tutorial).
+    [covered in another tutorial](/develop/tutorials/-/knowledge_base/7-0/migrating-legacy-applications-to-new-plugins-sdk).
 
 2.  Next, install the downloaded JAR:
 
