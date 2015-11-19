@@ -1,35 +1,43 @@
 # Retrieve and Display Guestbooks [](id=retrieve-and-display-guestbooks)
 
-The `GuestbooksActivity` you created in the first series of articles in this 
-Learning Path contains a navigation drawer that slides out from the left side of 
-the screen. You used Android Studio's *Navigation Drawer Activity* template to 
-create this activity. Although this template created a functional navigation 
-drawer, there are parts of the drawer you don't need in this app. For example, 
-the drawer contains a list of menu items typically found in navigation drawers. 
-It's up to you to decide which menu items, if any, you want to use. In this app, 
-you don't need any of these menu items. You'll instead use the drawer to show 
-the list of guestbooks your app retrieves from the portal. This is conceptually 
-simple, but it's a bit more complex in practice. Not to worry! This article 
-guides you though each step in the process.
+Now that you know this app's basic structure, and also know the basics of making 
+calls with the Guestbooks Mobile SDK, you're ready to retrieve and display 
+guestbooks in the app. Recall that the `GuestbooksActivity` you created earlier 
+contains a navigation drawer that slides out from the left side of the screen. 
+Currently, the drawer contains some simple placeholder content. You'll instead 
+use the drawer to show the list of guestbooks your app retrieves from the 
+portal. This is conceptually simple, but it's a bit more complex in practice. 
+Not to worry! This article guides you though each step in the process.
 
 ![Figure 1: The placeholders currently in the navigation drawer.](../../images/android-guestbook-initial-drawer.png)
 
-Before you can display the guestbooks, however, you need to retrieve them from 
-your portal. You'll do this with the Guestbooks Mobile SDK and Liferay Screens. 
-As you'll see, Screens includes some helper code that makes calling the Mobile 
-SDK very straightforward. 
+To retrieve and display guestbooks in the app, you'll follow these steps:
 
-First, though, you need to be able to encapsulate the guestbooks that come back 
-from the Guestbook portlet. 
+1. Create the model class for the guestbooks. You need this class so you can 
+   transform the JSON received from the portlet into guestbook model objects 
+   that you can work with in the app. 
+   
+2. Prepare the `GuestbooksActivity` class to receive guestbook model objects.
 
-## Encapsulating Guestbooks [](id=encapsulating-guestbooks)
+3. Create a callback class that makes the service call asynchronously in a 
+   background thread, transforms the JSON results into guestbook model objects, 
+   and then sends those objects back to `GuestbooksActivity`.
 
-To efficiently work with guestbooks in your app, you need a way of encapsulating 
-them. This lets you refer to common guestbook objects throughout your code. 
-First, create a new package called `model` inside the 
-`com.liferay.docs.liferayguestbook` package. Inside this new `model` package, 
-create a new class called `GuestbookModel`. Replace the `GuestbookModel` class's 
-contents with the following code: 
+4. Make the service call from `GuestbooksActivity`, using the callback class.
+
+5. Display the guestbooks in the navigation drawer. And declare victory!
+
+You'll get started with the first step, creating the model class for guestbooks.
+
+## Creating the Model Class for Guestbooks
+
+The Guestbook Mobile SDK returns guestbooks from the portlet in a `JSONArray` 
+that contains each guestbook in a `JSONObject`. To efficiently work with these 
+guestbooks in your app, you need a way of transforming them into proper 
+guestbook objects. You'll do this via a model class. First, create a new package 
+called `model` inside the `com.liferay.docs.liferayguestbook` package. Inside 
+this new `model` package, create a new class called `GuestbookModel`. Replace 
+the `GuestbookModel` class's contents with the following code: 
 
     package com.liferay.docs.liferayguestbook.model;
 
@@ -124,20 +132,23 @@ for all of them now.
 
 You should also note the `toString` method in this class. Since all it does is
 return a guestbook's name, it's very simple, but very important. To render
-objects in the drawer, Android calls `toString` on them. If `toString` isn't
-defined for the objects, strings with each object's full package path and
-internal ID are shown. In other words, Android displays illegible text if you 
-don't define `toString` here. By defining `toString` to return the name of each
-`GuestbookModel`, you're telling Android to show each guestbook's name in the
-drawer. 
+objects in the navigation drawer, Android calls `toString` on them. If 
+`toString` isn't defined for the objects, strings with each object's full 
+package path and internal ID are shown. In other words, Android displays 
+illegible text if you don't define `toString` here. By defining `toString` to 
+return the name of each `GuestbookModel`, you're telling Android to show each 
+guestbook's name in the drawer. 
 
 Next, you'll write the code that retrieves guestbooks from the portlet. 
 
-## Getting Guestbooks [](id=getting-guestbooks)
+## Preparing GuestbooksActivity for Guestbooks
 
 Before making the server call, you need to prepare the `GuestbooksActivity` 
-class to handle `GuestbookModel` objects. Add the following `_guestbooks` 
-variable for these objects: 
+class to handle `GuestbookModel` objects. Specifically, you need to give the 
+callback class you'll create in a moment a way to pass `GuestbookModel` objects 
+to `GuestbooksActivity`. 
+
+First, add the following `_guestbooks` variable for these objects: 
 
     private List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
 
@@ -147,20 +158,19 @@ After adding this variable, add the following imports:
     import java.util.ArrayList;
     import java.util.List;
 
-You also need a way to refresh `_guestbooks` with the latest `GuestbookModel` 
-objects from the portlet. You'll do this with the `reloadGuestbooks` method. 
-This method replaces any existing content in `_guestbooks` with the list of 
-`GuestbookModel` objects supplied to it. Add it as shown here: 
+Next, add the following `reloadGuestbooks` method:
 
     public void reloadGuestbooks(List<GuestbookModel> guestbooks) {
         _guestbooks.clear();
         _guestbooks.addAll(guestbooks);
     }
 
-You'll use `reloadGuestbooks` when the call to retrieve guestbooks from the 
-portlet succeeds. You need a callback class to make this call. 
+This method replaces any existing content in `_guestbooks` with the list of 
+`GuestbookModel` objects supplied to it. You'll use `reloadGuestbooks` in the 
+callback class to pass the `GuestbookModel` objects to `GuestbooksActivity`. Now 
+you're ready to create this callback class. 
 
-### Creating a Callback Class [](id=creating-a-callback-class)
+## Creating a Callback Class [](id=creating-a-callback-class)
 
 Since Android doesn't allow network requests from its main UI thread, you have 
 to make them from another thread by creating a callback class that extends the 
@@ -230,25 +240,32 @@ So what's going on here? First, you should note that this class has a
 results back to `GuestbooksActivity`, which runs in Android's main UI thread.
 `GetGuestbooksCallback`'s constructor thus does only one thing: it sets this
 variable. Next, the `onFailure` and `onSuccess` methods are overridden. As you 
-probably guessed, `onFailure` is called when the request fails, while `onSuccess` 
-is called when it succeeds. In this example, `onFailure` displays a toast 
-message with the error. The `onSuccess` method calls the main activity's 
-`reloadGuestbooks` method. Last but not least is the overridden `transform` 
-method. This method puts all the guestbooks it receives from the portlet into a 
-`List` of `GuestbookModel` objects. It's this `List` that's fed to the 
-`onSuccess` method. You're probably starting to see that `reloadGuestbooks` is 
-an important method. It receives guestbooks for processing in the app's main UI 
-thread. 
+probably guessed, `onFailure` is called when the request fails, while 
+`onSuccess` is called when it succeeds. In this example, `onFailure` displays a 
+toast message with the error. The `onSuccess` method sends the guestbooks to 
+`GuestbooksActivity` by calling the activity's `reloadGuestbooks` method. Last 
+but not least is the overridden `transform` method. Because the guestbooks 
+initially come back from the portlet as JSON, you need this `transform` method 
+to convert them into a `List` of `GuestbookModel` objects. It's this `List` 
+that's fed to the `onSuccess` method. You're probably starting to see that 
+`reloadGuestbooks` is an important method. It receives guestbooks for processing 
+in the app's main UI thread. 
 
 Now that you have everything you need to retrieve guestbooks from the Guestbook 
 portlet, you're ready to make the server call.
 
-### Making the Server Call [](id=making-the-server-call)
+## Making the Server Call [](id=making-the-server-call)
 
-The Guestbook Mobile SDK contains the `GuestbookService` class you need to make 
-the server call. You need to call this class's `getGuestbooks` method with the 
-ID of the site that contains the Guestbook portlet. Do this now by adding the 
-following `getGuestbooks()` method to `GuestbooksActivity`: 
+You must make the server call by using an instance of the Guestbook Mobile SDK 
+service that contains the service method you want to call. To get the 
+guestbooks, you'll create a `GuestbookService` instance and then call its 
+`getGuestbooks` method. You must create this service instance by using an 
+authenticated session that has a callback set to it. The previous article 
+describes the basics of this. Now it's time to get specific!
+
+Although the callback class routes the call asynchronously through a background 
+thread, you can issue the call from `GuestbooksActivity`. Add the following 
+`getGuestbooks()` method to `GuestbooksActivity`: 
 
     protected void getGuestbooks() {
         Session session = SessionContext.createSessionFromCurrentSession();
@@ -265,24 +282,23 @@ following `getGuestbooks()` method to `GuestbooksActivity`:
         }
     }
 
-Since the Mobile SDK requires a portal session to communicate with the portal, 
-this method first uses `SessionContext.createSessionFromCurrentSession()` to 
+Since the Mobile SDK requires an authenticated session to communicate with the 
+portal, you first use `SessionContext.createSessionFromCurrentSession()` to 
 create a session from the pre-existing session in the app. You might now be 
 thinking, "Whoa there! I haven't created a session yet!" But actually, you have; 
 you just didn't know it. Successful authentication with Login Screenlet creates 
 a session that you can access with Screens's `SessionContext` class. Because 
 you're counting on that session, however, you *must* use the Login Screenlet. 
 
-The `getGuestbooks()` method then creates a new `GetGuestbooksCallback` instance 
-and sets it as the session's callback. Next, the session is used to create a 
-`GuestbookService` instance. This lets you call the Guestbook portlet's remote 
-services, as is done in the `try` block by 
-`service.getGuestbooks(LiferayServerContext.getGroupId())`. The 
-`LiferayServerContext` class, another Screens class, lets you retrieve the 
-values you set in `server_context.xml`. It's used here to retrieve the group ID 
-(site ID) needed to make the server call. As you can see, using the Login
-Screenlet provides a great deal of flexibility, even when you don't need to use
-any other Screenlets.
+You then create a new `GetGuestbooksCallback` instance and set it as the 
+session's callback. This ensures that any service calls made with the session go 
+through the callback. Next, you use the session to create a `GuestbookService` 
+instance. In the `try` block, you then call the service's `getGuestbooks` method 
+with the group ID (site ID) of the site you want to retrieve guestbooks from. 
+You get the group ID from the `LiferayServerContext` class, another Screens 
+class, that lets you retrieve the values you set in `server_context.xml`. As you 
+can see, using the Login Screenlet provides a great deal of flexibility, even 
+when you don't need to use any other Screenlets. 
 
 Now you can call your new `getGuestbooks()` method. Place the `getGuestbooks()` 
 call in the `onCreate` method of `GuestbooksActivity`, following the call to 
@@ -300,8 +316,7 @@ call in the `onCreate` method of `GuestbooksActivity`, following the call to
     }
 
 Android calls the activity's `onCreate` method to start the activity. This makes 
-`onCreate` an ideal place to make the portlet call that retrieves guestbooks. 
-Android's 
+`onCreate` an ideal place to make the call to retrieve guestbooks. Android's 
 [activity lifecycle documentation](http://developer.android.com/training/basics/activity-lifecycle/starting.html) 
 describes the `onCreate` method in more detail. 
 
@@ -310,10 +325,17 @@ you'll display them in the app's UI.
 
 ## Displaying Guestbooks in the Drawer [](id=displaying-guestbooks-in-the-drawer)
 
-By default, the Action Bar displays the activity's name. You need it to display 
-the selected guestbook's name instead. You'll do this by modifying the code that 
-creates the app's Action Bar. Android Studio created this code for you in the 
-`GuestbooksActivity` class's `onCreate` method:
+Now that you've made the server call, you're ready to display the guestbooks in 
+the navigation drawer. You also need to make sure that the drawer closes when a 
+guestbook is selected in it, and that the activity's Action Bar displays that 
+guestbook's name. Also, the first guestbook should be selected automatically 
+when the activity first launches. You'll begin by setting the Action Bar to 
+display the selected guestbook's name. 
+
+By default, the Action Bar displays the activity's name. You'll change it to 
+display the selected guestbook's name by modifying the code that creates the 
+activity's Action Bar. Android Studio created this code for you in the 
+`GuestbooksActivity` class's `onCreate` method: 
 
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
@@ -388,16 +410,16 @@ points to the menu resource file used to create the drawer's items. Since you'll
 instead use the `ListView` to display the drawer's items (the guestbooks), you 
 don't need to use `app:menu`. 
 
-Now that you've specified the drawer's layout, you need to write the code that 
+Now that you've defined the drawer's layout, you need to write the code that 
 controls the drawer. You'll do this in `GuestbooksActivity`. First, add the 
-following variables to this class:
+following variables to this class: 
 
     private DrawerLayout drawer;
     private ListView drawerListView;
     private ArrayAdapter _adapter;
 
 As with the Action Bar, you'll initialize the drawer in its own method. Add 
-this method now:
+this method now: 
 
     private void initDrawer() {
         // drawer initialization
@@ -409,7 +431,7 @@ this method now:
         toggle.syncState();
         
         // ListView initialization
-        drawerListView = (ListView) findViewById(R.id.drawer_list_view);
+        drawerListView = (ListView) findViewById(R.id.drawer_list);
         _adapter = new ArrayAdapter<GuestbookModel>(
                 this,
                 android.R.layout.simple_list_item_activated_1,
@@ -417,9 +439,6 @@ this method now:
                 _guestbooks);
         drawerListView.setAdapter(_adapter);
     }
-
-<!-- There is no R.id.drawer_list_view. I substituted drawer_list, and it seems
-to work except I get an additional menu item called Android Studio.  -Rich -->
 
 The `initDrawer` method's first few lines match the drawer initialization code 
 in `onCreate`. You should therefore delete this code in `onCreate`. You don't 
@@ -454,7 +473,7 @@ code at the end of the `onCreate` method. Next, implement
         drawer.closeDrawers();
     }
 
-Android calls this method when a user selects a guestbook in the drawer. This 
+Android calls `onItemClick` when a user selects a guestbook in the drawer. This 
 method first marks the selected item in the UI. It then retrieves the selected 
 guestbook and displays that guestbook's name in the Action Bar. The method 
 finishes by closing the drawer.
@@ -470,10 +489,11 @@ until the user opens it. Recall that in `initActionBar()` you set the Action Bar
 to display an empty string by default. The activity therefore opens with no 
 content and an empty Action Bar. This isn't very user friendly. You'll change 
 this so that the activity selects the first guestbook by default. Recall that 
-the Mobile SDK calls `reloadGuestbooks` when it successfully retrieves 
-guestbooks from the portal. The existing code in this method replaces the 
-current guestbook list with those retrieved from the portal. Add the following 
-code to the end of the `reloadGuestbooks` method:
+the callback class calls `reloadGuestbooks` when the service call succeeds. The 
+existing code in this method replaces the current guestbook list with those 
+retrieved from the portal. You can also use `reloadGuestbooks` to automatically 
+select the first guestbook in the list. Add the following code to the end of the 
+`reloadGuestbooks` method: 
 
     _adapter.notifyDataSetChanged();
     
@@ -484,8 +504,8 @@ item click on the first guestbook in the `ListView`. This item click triggers
 the `onItemClick` method. 
 
 Awesome! You're almost ready to run the app. But you need to do some cleanup 
-first. Because you're no longer using the menu resource file that defines the 
-default drawer items, you can delete it. Delete the file 
+first. Because you're no longer using the menu resource file that defined the 
+placeholder drawer items, you can delete it. Delete the file 
 `res/menu/activity_guestbooks_drawer.xml`.
 
 There's one more thing you need to take care of before launching the app. Open 
@@ -497,8 +517,6 @@ top of the drawer's `ListView` by this value. Add the following code to the
 setting:
 
     android:paddingTop="@dimen/nav_header_height"
-
-<!-- There is no ListView in this file. -Rich -->
 
 That's it! Run the app. After you log in, the app retrieves the guestbooks from 
 the portal and displays the first guestbook's name in the Action Bar.
