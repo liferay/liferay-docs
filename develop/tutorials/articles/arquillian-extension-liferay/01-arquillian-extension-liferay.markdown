@@ -9,10 +9,10 @@ for Liferay works and how to use it in your own projects.
 The Arquillian Extension Liferay Example project is executed in the following
 environment:
 
-- Tomcat Server 
+- Tomcat Server
     - JMX enabled and configured
 - Liferay 7
-- JUnit 
+- JUnit
 
 To set up a testing environment like the one used by the Arquillian Extension
 for Liferay Example, you need to enable and configure JMX in your Liferay Tomcat
@@ -31,16 +31,15 @@ without authentication:
 
     CATALINA_OPTS="${CATALINA_OPTS} ${JMX_OPTS}"
 
-You can customize your `setenv.sh` in a similar way. 
+You can customize your `setenv.sh` in a similar way.
 
 ## Creating a Liferay Portlet for Testing
 
-You need a Liferay portlet project that can be used for testing. Follow these
-steps to create a Liferay portlet project using Maven.
+You need a Liferay portlet project that can be used for testing. You can use
+your preferred build tool. For example, either Gradle or Maven can be used.
+Follow these steps to create a Liferay portlet project using Maven.
 
-<!-- I've told Greg that we are standardizing with him on Gradle. This should be
-changed so it's a Gradle example, not a Maven example. It's our job to convert
-what the developers give us into a consistent message. -Rich -->
+<!-- Gradle example coming soon. -Jesse -->
 
 1. Add Liferay, portlet, and OSGi dependencies to your project's `pom.xml` file:
 
@@ -241,9 +240,6 @@ what the developers give us into a consistent message. -Rich -->
 4.  Next, create a `bnd.bnd` file for deployment. Your tests will use
     [Bnd](http://aqute.biz/Code/bnd) to create the artifact to be deployed, so
     add this Maven dependency to your project's `pom.xml` file:
-
-    <!-- Again, this should be Gradle, regardless of what the developer gave us.
-    -Rich -->
 
         ...
         <dependencies>
@@ -528,9 +524,9 @@ follow this
 
 5.  Configure the `ArquillianResource`:
 
-    If you want to inject the URL of the container using the annotation
-    `@ArquillianResource`, you can use one of these solutions (if you are using
-    the Arquillian Liferay Extension):
+    If you want to inject the URL of the container (e.g., Tomcat) using the
+    annotation `@ArquillianResource`, you can use one of these solutions (if
+    you are using the Arquillian Liferay Extension):
 
     1. Create a deployment method in your test class.
     2. Configure Arquillian using the graphene url property (via
@@ -546,6 +542,60 @@ follow this
                 </extension>
                 ...
         </arquillian>
+
+## Create a Jacoco Profile
+
+[JaCoCo](http://eclemma.org/jacoco/) is a code coverage library for Java.
+
+1.  Create a new Maven profile called `jacoco` that configures the plugin
+    `jacoco-maven-plugin` with the dependencies `org.jacoco.core` and
+    `arquillian-jacoco`:
+
+        ...
+        <profile>
+            <id>jacoco</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>org.jacoco.core</artifactId>
+                    <version>0.7.4.201502262128</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.jboss.arquillian.extension</groupId>
+                    <artifactId>arquillian-jacoco</artifactId>
+                    <version>1.0.0.Alpha8</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>0.7.4.201502262128</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>report</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+2.  Generate a Jacoco report in HTML:
+
+        mvn test -Pjavacoc jacoco:report
 
 ## Running Tests with the Liferay Arquillian Extension
 
