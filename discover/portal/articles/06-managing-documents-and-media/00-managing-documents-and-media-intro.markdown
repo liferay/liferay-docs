@@ -10,4 +10,6 @@ library include customizable document types and metadata sets, automatic
 document preview generation, and support for mounting multiple external
 repositories. The new document types and metadata sets are an addition to, not a
 replacement for, the portal's system of tags and categories. Let's start
-exploring how to use the Documents and Media portlet.
+exploring how to publish files.
+
+<!-- TODO Also mention Sync. - Jim -->
