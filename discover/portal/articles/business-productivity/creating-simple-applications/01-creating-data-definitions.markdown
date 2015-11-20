@@ -1,6 +1,74 @@
 # Creating Data Definitions
 
-To expand and extend the social capabilities of your site, you've come up with a
+Imagine this: The Lunar Resort is becoming a popular destination. The Recreation
+Department's offerings (hiking, lunar golf, rover races, and more) are very
+popular with the adventurous guests, and it's becoming difficult for Recreation
+Department employees to keep up with demand. An unexpected number of
+participants in a lunar hike makes it so that the Lunar Sherpa (hiking guide)
+has to scramble to find enough space suits for all the guests involved, and the
+kitchen staff needs to rummage up more food at the last minute so that the
+hikers have enough to eat. The lack of efficiency could be dangerous, and cost
+the resort much needed revenue if guests are unhappy with the experience.  The
+resort needs a way for guests to sign up for events ahead of time. If you're
+thinking that means you need to hire developers to build you an app, you're
+wrong! Liferay gives you, the administrator (or anyone with the proper
+permissions), the power to build a simple list app using the Dynamic Data Lists
+application, with no coding involved.
+
+The Lunar Resort has a public site for guests. On that site, there's a page
+called *Activities Sign-Up*, where guests can sign up for activities led by the
+Recreation Department, or for the upcoming Lunar Luau, a Hawaiian themed dinner
+party on the Moon! It's important to know which guests are attending which
+activities, since any lunar activity requires special equipment, considerations, and
+preparation. You need to do two things:
+
+1.  Provide guests with sign-up forms.
+2.  Access the guest lists to view the entries. 
+
+<!-- Forms portlet will either replace or be an integral part of this process,
+just not yet ready to do everything that's needed (not all field types
+supported, no way to display the entries on the page). They will at least be
+used to create the form templates, when ready. -->
+
+These are basically simple applications, that take user input and store the
+data somewhere. While you don't need to be a developer to make this
+happen, you do need to be familiar with data definitions, data lists, and
+templates. You probably also need a [user group](LINK TO USER GROUPS) of
+List Creators (that's boring; maybe they should be called "listers", or
+"listies") who have permission to create lists and access the entries. 
+
+When list creators sign in to the Lunar Resort portal, you want to make it easy
+for them to build lists. To this end, you'll provide one or more data definitions
+that should suit most of their list making needs. Not everyone needs to be an
+expert in Dynamic Data Lists (but you do, so keep reading). 
+
+What are these data definitions you've been hearing about? They're just
+collections of different field types, configured in a certain way, to guide
+users in providing data for your lists. All lists are backed by a data
+definition, so this is the place to start in building a list app. An exhaustive
+discussion of the field types available and their configuration options is found
+at the end of this article. Next, get started creating data definitions.
+
+## Creating Data Definitions
+
+Create some data definitions and set your list creators to
+work.
+
+1.  Make sure you're logged in as an administrator, then open the product menu
+and click *Sites*. Select the site (Lunar Resort, if you're following along with
+the example site) where you want to create data definitions. You're now in the
+Site Administration section of the Product Menu, and your site is selected.
+Click *Content* &rarr; *Dynamic Data Lists*.
+
+![Figure 2: You can manage dynamic data lists from the *Sites* &rarr; *Content* section of the Product Menu.](../../images/ddl-product-menu.png)
+
+2.  To create a data definition, find the icon (![Configuration
+Menu](../../images/vertical-ellipse.png))Dynamic Data List
+configuration menu
+
+
+
+<!-- To expand and extend the social capabilities of your site, you've come up with a
 great idea: give your users custom-built lists that they can share with their
 friends (or enemies, depending on their Social Relation type). Marketing has
 come up with a great name for your new service: `list.it`. Your beautiful
@@ -11,7 +79,7 @@ List Display and Form portlets on the public and private pages of users'
 personal sites.
 
 When new users log in to `list.it`, you want to make it easy for them to build
-lists. To this end, you've pre-defined some common ones--to do lists, shopping
+lists. To this end, you've pre-defined some common ones-to do lists, shopping
 lists, and memos. To create one of these, all the user has to do is create a new
 list, choose the predefined data type, and have at it! The data definitions
 that ship with the portal's default site include *To Do*, *Meeting Minutes*,
@@ -19,8 +87,10 @@ that ship with the portal's default site include *To Do*, *Meeting Minutes*,
 definitions on their own to generate new data lists or tweak them to fit their
 needs. 
 
-![Figure 1: The portal ships with several commonly used predefined data definitions that your lists can be built onto. You can also add your own data definitions, or modify the existing ones.](../../images/ddl-definitions.png)
+-->
 
+![Figure 1: The portal ships with several commonly used predefined data definitions that your lists can be built onto. You can also add your own data definitions, or modify the existing ones.](../../images/ddl-definitions.png)
+<!--
 If none of the built-in data definitions are suitable, users can create their
 own definitions. If you want to allow `list.it` users (who would probably call
 themselves "list-ers" or "list-ies") to create their own data types for lists
@@ -34,11 +104,25 @@ Using an intuitive visual editor, you can quickly draw up the skeleton for that
 volunteer list in minutes. Since data lists exemplify a unique type of content
 for your site, you'll find the Dynamic Data Lists application in the *Sites*
 section of the Product Menu, under *Content*. 
-
-![Figure 2: You can manage dynamic data lists from the *Sites* &rarr; *Content* section of the Product Menu.](../../images/ddl-product-menu.png)
+-->
 
 <!-- Product menu screenshot has high likelihood of needing to be updated says
 Russ in October 2015 -->
+
+
+
+
+
+Liferay ships with
+several deafult definitions that can be used to create lists. To create a list
+from one of these, all the user has to do is create a new list, choose the
+predefined data type, and have at it! The data definitions that ship with the
+portal's default site include *To Do*, *Meeting Minutes*, *Issues Tracking*,
+*Inventory*, *Events*, and *Contacts*. Users can use these definitions on their
+own to generate new data lists or tweak them to fit their needs. 
+
+<!-- The bove paragraph contains too much info for our use case. We're not using
+a pre-fefined list so move to the end? -->
 
 ## Managing Data Definitions
 
