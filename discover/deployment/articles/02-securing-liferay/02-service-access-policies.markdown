@@ -26,7 +26,7 @@ invoke a Liferay web service via the JSON web services API page or via
 JavaScript using `Liferay.Service(...)`. If Liferay cannot associate the
 caller's authentication token with a portal user, the web service invocation
 request fails.
- 
+
 **User permission layer:** Properly implemented web services have permission
 checks. The user invoking a web service must have the appropriate Liferay
 permissions to invoke the service.
