@@ -29,7 +29,7 @@ To retrieve and display guestbooks in the app, you'll follow these steps:
 
 You'll get started with the first step, creating the model class for guestbooks.
 
-## Creating the Model Class for Guestbooks
+## Creating the Model Class for Guestbooks [](id=creating-the-model-class-for-guestbooks)
 
 The Guestbook Mobile SDK returns guestbooks from the portlet in a `JSONArray` 
 that contains each guestbook in a `JSONObject`. To efficiently work with these 
@@ -141,7 +141,7 @@ guestbook's name in the drawer.
 
 Next, you'll write the code that retrieves guestbooks from the portlet. 
 
-## Preparing GuestbooksActivity for Guestbooks
+## Preparing GuestbooksActivity for Guestbooks [](id=preparing-guestbooksactivity-for-guestbooks)
 
 Before making the server call, you need to prepare the `GuestbooksActivity` 
 class to handle `GuestbookModel` objects. Specifically, you need to give the 

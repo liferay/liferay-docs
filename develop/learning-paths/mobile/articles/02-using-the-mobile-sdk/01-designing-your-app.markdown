@@ -1,4 +1,4 @@
-# Understanding the App's Design
+# Understanding the App's Design [](id=understanding-the-apps-design)
 
 As a developer, you know that developing any kind of app without an overall 
 design goal and plan to implement it is a recipe for disaster. The same is true 

@@ -1,4 +1,4 @@
-# Understanding Mobile SDK Calls
+# Understanding Mobile SDK Calls [](id=understanding-mobile-sdk-calls)
 
 Before making Mobile SDK calls, whether they're calls made with the Liferay 
 Mobile SDK or a custom Mobile SDK that you built, you must understand how the 

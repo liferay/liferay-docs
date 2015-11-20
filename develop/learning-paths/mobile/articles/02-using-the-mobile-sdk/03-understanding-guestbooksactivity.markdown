@@ -1,4 +1,4 @@
-# Understanding GuestbooksActivity's UI
+# Understanding GuestbooksActivity's UI [](id=understanding-guestbooksactivitys-ui)
 
 You used Android Studio's Navigation Drawer Activity template to create 
 `GuestbooksActivity`. Any activity produced by this template contains a 
@@ -8,7 +8,7 @@ placeholder content that you'll later replace with dynamic portal content.
 Before doing so, you need to know where the placeholder content exists in the 
 project's structure, and how the app displays it. This article shows you this.
 
-## Understanding the Activity's Layout File
+## Understanding the Activity's Layout File [](id=understanding-the-activitys-layout-file)
 
 First, open `GuestbooksActivity`'s layout file, 
 `res/layout/activity_guestbooks.xml`. This file should look something like this:
@@ -60,7 +60,7 @@ activity's UI.
 The activity's main content also contains a toolbar, some text, and a floating 
 action button. Next, you'll see how these are defined.
 
-## Understanding the Activity's Main Content Layout
+## Understanding the Activity's Main Content Layout [](id=understanding-the-activitys-main-content-layout)
 
 Open `app_bar_guestbooks.xml` so you can see how it defines the activity's main 
 content. This file should look something like this: 

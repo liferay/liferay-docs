@@ -37,7 +37,7 @@ The steps you'll follow for retrieving and displaying entries are listed here:
 As you did when you retrieved guestbooks from the portlet, you'll begin here by 
 creating a model class for the JSON returned from the portlet. 
 
-## Creating the Model Class for Entries
+## Creating the Model Class for Entries [](id=creating-the-model-class-for-entries)
 
 As with guestbooks, the Guestbook Mobile SDK returns entries from the portlet in 
 a `JSONArray` that contains each entry in a `JSONObject`. You need to convert 
@@ -150,7 +150,7 @@ Besides working with entries instead of guestbooks, this class works the same as
 `GuestbookModel`. Now that your `EntryModel` class exists, you can create the 
 fragment you'll use to display the entries.
 
-## Creating a Fragment for the Entries
+## Creating a Fragment for the Entries [](id=creating-a-fragment-for-the-entries)
 
 Using a fragment to display entries lets you swap out `GuestbookActivity`'s 
 contents without recreating the entire activity from scratch each time the user 
@@ -346,7 +346,7 @@ for more information.
 Awesome! Now that your app retrieves guestbook entries from the portlet, you can 
 display them in your app's UI. 
 
-## Displaying Entries
+## Displaying Entries [](id=displaying-entries)
 
 To display entries, you need to add them to `EntriesFragment` and then add the 
 fragment to `GuestbooksActivity`. Recall that because `EntriesFragment` extends 

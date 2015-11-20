@@ -1,4 +1,4 @@
-# Using the Mobile SDK
+# Using the Mobile SDK [](id=using-the-mobile-sdk)
 
 If you followed along with the previous series of articles in this Learning 
 Path, you should have a Liferay installation with a Guestbook portlet that 
