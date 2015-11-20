@@ -5,24 +5,45 @@ Android app that retrieves and displays guestbooks from the
 [MVC Learning Path's](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development) 
 Guestbook portlet. But that's all your app does. Tapping a guestbook in the 
 navigation drawer doesn't do anything besides close the drawer to show the 
-action bar and an empty screen. 
+Action Bar and an empty screen. 
 
 ![Figure 1: Guestbook entries aren't showing yet in the app.](../../images/android-first-guestbook.png)
 
 This article walks you through the steps required to retrieve and display 
-guestbook entries from the portal. As you did to display guestbooks, you'll use 
-`ListView` to display entries in a list. You'll also retrieve entries using the 
-same basic steps you used to retrieve guestbooks. Therefore, this article 
-doesn't explain the concepts behind these steps in detail. Refer to the previous 
-article if you need this detail. As you did when you wrote the code to retrieve 
-guestbooks from the portal, you'll begin here by encapsulating the data returned 
-from the portal. 
+guestbook entries from the Guestbook portlet. These steps are almost the same as 
+those in the previous article for retrieving and displaying guestbooks. The only 
+real difference, besides getting entries instead of guestbooks, is that you'll 
+display the results in a fragment instead of the navigation drawer. When a 
+guestbook is selected in the drawer, you'll perform a fragment transaction to 
+replace any entries currently displayed in the fragment with the selected 
+guestbook's entries. 
 
-## Encapsulating Entries [](id=encapsulating-entries)
+The steps you'll follow for retrieving and displaying entries are listed here:
 
-As with guestbooks, entries retrieved from the portal should be encapsulated in 
-your app. Create the `EntryModel` class in your app's `model` package. Replace 
-its contents with the following code: 
+1. Create a model class for the entries. As with guestbooks, you need a model 
+   class to transform the JSON received from the portlet into entry model 
+   objects that you can work with in your app.
+
+2. Create a fragment for displaying the entries. 
+
+3. Create a callback class. You'll use this class to make the service call 
+   asynchronously from a background thread, since Android doesn't allow network 
+   requests from its main UI thread.
+
+4. Make the service call from the fragment, using the callback class.
+
+5. Display the entries in the fragment.
+
+As you did when you retrieved guestbooks from the portlet, you'll begin here by 
+creating a model class for the JSON returned from the portlet. 
+
+## Creating the Model Class for Entries
+
+As with guestbooks, the Guestbook Mobile SDK returns entries from the portlet in 
+a `JSONArray` that contains each entry in a `JSONObject`. You need to convert 
+these entries into proper entry model objects so you can work with them 
+efficiently in your app. Create the `EntryModel` class in your app's `model` 
+package. Replace its contents with the following code: 
 
     package com.liferay.docs.liferayguestbook.model;
 
@@ -125,19 +146,18 @@ its contents with the following code:
         }
     }
 
-Now that your `EntryModel` class exists, you can write the code that retrieves 
-guestbook entries from the portlet.
+Besides working with entries instead of guestbooks, this class works the same as 
+`GuestbookModel`. Now that your `EntryModel` class exists, you can create the 
+fragment you'll use to display the entries.
 
-## Getting Entries [](id=getting-entries)
+## Creating a Fragment for the Entries
 
-Before making the server call, you need to create the 
-[fragment](http://developer.android.com/guide/components/fragments.html) 
-you'll use to display the entries in `GuestbooksActivity`. Using a fragment lets 
-you swap out the activity's contents without recreating the activity from 
-scratch each time the user selects a guestbook. Right click the 
+Using a fragment to display entries lets you swap out `GuestbookActivity`'s 
+contents without recreating the entire activity from scratch each time the user 
+selects a guestbook. Now you'll create this fragment. Right click the 
 `com.liferay.docs.liferayguestbook` package and select 
 *New* &rarr; *Fragment* &rarr; *Fragment (Blank)*. In the wizard, uncheck all 
-the checkboxes, name the fragment *EntriesFragment*, and then click *Finish*. 
+the checkboxes, name the fragment `EntriesFragment`, and then click *Finish*. 
 The following screenshot illustrates this:
 
 ![Figure 2: Create a new blank fragment for the entries.](../../images/android-create-fragment.png)
@@ -189,31 +209,37 @@ Replace the fragment's contents with the following code:
 
 By extending `ListFragment`, the `EntriesFragment` class contains an implicit 
 `ListView` that you'll use to display the entries. This means that you don't 
-have to define a `ListView` in a layout file. For its variables, the 
-`EntriesFragment` class requires the `_guestbookId` variable so it can retrieve 
-the corresponding guestbook's entries. The class also requires the `entries` 
-variable so it can hold those entries. If you've dealt with Android fragments 
-before, then you're probably familiar with the empty constructor and 
-`newInstance` method. When the screen orientation changes or the user switches 
-apps, Android needs a way to restore the fragment. Instead of recreating the 
-fragment from scratch, the `newInstance` method lets Android restore it with the 
-proper `guestbookId`. The `onCreate` method sets the fragment's `_guestbookId` 
-value by using the bundle arguments set in `newInstance`. See 
+have to define a `ListView` in a layout file, as you did when displaying 
+guestbooks in the drawer. For its variables, the `EntriesFragment` class 
+requires the `_guestbookId` variable so it can retrieve the corresponding 
+guestbook's entries. The class also requires the `entries` variable so it can 
+hold those entries. 
+
+If you have experience with Android fragments, then you're probably familiar 
+with the empty constructor and `newInstance` method. When the screen orientation 
+changes or the user switches apps, Android needs a way to restore the fragment. 
+Instead of recreating the fragment from scratch, the `newInstance` method lets 
+Android restore it with the proper `guestbookId`. The `onCreate` method sets the 
+fragment's `_guestbookId` by using the bundle arguments set in `newInstance`. 
+See 
 [this blog post](http://www.androiddesignpatterns.com/2012/05/using-newinstance-to-instantiate.html) 
 for more information on using a `newInstance` method to manage fragments. 
 
-The final method in `EntriesFragment` is `reloadEntries`. Recall that the 
-`reloadGuestbooks` method in `GuestbooksActivity` refreshes the guestbook list 
-with the latest guestbooks returned from the server. The `reloadEntries` method 
-does the same for entries. The callback class you'll write next calls 
-`reloadEntries` when the server call succeeds.
+The final method in `EntriesFragment` is `reloadEntries`. Recall that when 
+getting guestbooks, `GetGuestbooksCallback` calls the `reloadGuestbooks` method 
+of `GuestbooksActivity`. This is how the callback sends the guestbooks to the 
+activity. The `reloadEntries` method in `EntriesFragment` serves the analagous 
+purpose for entries: the callback needs it to send the entries to the fragment. 
+Next, you'll create this callback. 
 
-### Creating a Callback Class [](id=creating-a-callback-class)
+## Creating a Callback Class [](id=creating-a-callback-class)
 
-Recall that you needed a callback class to retrieve guestbooks asynchronously 
-from the Guestbook portlet. You need an analogous callback class for retrieving 
-entries. In the `callback` package, create the `GetEntriesCallback` class. 
-Replace its contents with the following code:
+Recall that when you retrieved guestbooks, you needed a callback class to route 
+the call asynchronously through a background thread. This callback class also 
+received the guestbooks as JSON, transformed them into `GuestbookModel` objects, 
+and then passed them to `GuestbooksActivity`. You need an analogous callback 
+class for retrieving entries. In the `callback` package, create the 
+`GetEntriesCallback` class. Replace its contents with the following code:
 
     package com.liferay.docs.liferayguestbook.callback;
 
@@ -266,19 +292,20 @@ Replace its contents with the following code:
         }
     }
 
-Besides using entries instead of guestbooks, this class works the same as 
-`GetGuestbooksCallback`. See the previous article for details on how this class 
-works. 
+Besides using entries instead of guestbooks, and `EntriesFragment` instead of 
+`GuestbooksActivity`, this class works the same as `GetGuestbooksCallback`. See 
+the previous article for details on how this class works. 
 
 Great! Your app now contains the basic infrastructure it needs to retrieve 
 guestbook entries. You're ready to make the server call. 
 
-### Making the Server Call [](id=making-the-server-call)
+## Making the Server Call [](id=making-the-server-call)
 
-Next, you need a method for making the call that retrieves the portlet's 
-entries. Recall that you retrieved guestbooks with the `getGuestbooks` method. 
-You'll retrieve entries similarly with the `getEntries` method. Add it to the 
-`EntriesFragment` class as follows: 
+In your `EntriesFragment` class, you need a method for making the call that 
+retrieves the portlet's entries. Recall that you retrieved guestbooks with the 
+`getGuestbooks` method in `GuestbooksActivity`. You'll retrieve entries 
+similarly by creating a `getEntries` method in `EntriesFragment`. Add this 
+method to the `EntriesFragment` class as follows: 
 
     protected void getEntries(long guestbookId) {
         Session session = SessionContext.createSessionFromCurrentSession();
@@ -297,8 +324,8 @@ You'll retrieve entries similarly with the `getEntries` method. Add it to the
 
 Like the `getGuestbooks` method, `getEntries` gets the current session, sets the 
 session's callback, creates a service object, and then makes the server call. 
-The only difference is that `getEntries` takes a guestbook's ID as a parameter, 
-which it then uses to request the corresponding guestbook's entries. 
+The only significant difference is that `getEntries` takes a guestbook's ID as a 
+parameter. It needs this to request the corresponding guestbook's entries. 
 
 Now you're ready to put `getEntries` to work! Do so now by adding the following 
 `onActivityCreated` method to `EntriesFragment`: 
@@ -317,13 +344,20 @@ Android's
 for more information.
 
 Awesome! Now that your app retrieves guestbook entries from the portlet, you can 
-display them in the UI. 
+display them in your app's UI. 
 
-## Displaying Entries [](id=displaying-entries)
+## Displaying Entries
 
-Since you're using `ListView` to display the entries in the UI, you need to 
-create a variable for holding the adapter. Add it to `EntriesFragment` as shown 
-here: 
+To display entries, you need to add them to `EntriesFragment` and then add the 
+fragment to `GuestbooksActivity`. Recall that because `EntriesFragment` extends 
+`ListFragment`, it contains an implicit `ListView` object. You'll use this 
+`ListView` to display the entries. You must, however, create an adapter to use 
+with the `ListView`. After creating this adapter and setting it to the 
+`ListView`, you'll add the fragment to `GuestbooksActivity` via a fragment 
+container and a fragment transaction. 
+
+First, you must create a variable for the adapter. Add it to `EntriesFragment` 
+as follows: 
 
     private ArrayAdapter _adapter;
 
@@ -354,39 +388,38 @@ the `onActivityCreated` method, above the `getEntries` call:
         
     setListAdapter(_adapter);
 
-This adapter uses the default layout `simple_list_item_2`. Recall that you used 
-the default layout `simple_list_item_1` for each guestbook in the drawer. That 
-layout is sufficient for showing guestbook names because it displays a single 
-string for each list item. However, each entry needs to display two strings: the 
-message, and the name of the person who left it. This is where 
-`simple_list_item_2` comes in; it lets you display two strings for each list 
-item. 
+This adapter has significantly more code than the guestbooks adapter. This is 
+because the entries adapter uses the default layout `simple_list_item_2`. Recall 
+that the guestbooks adapter uses the default layout `simple_list_item_1`. This 
+layout is sufficient for showing guestbook names because it displays only a 
+single string for each list item. Each entry, however, should display two 
+strings: the entry's message, and the name of the person who left it. The 
+`simple_list_item_2` layout lets you display these strings, because it displays 
+two strings for each list item. You need to tell it what two strings to display, 
+though. This is why you override the `getView` method. After using 
+`findViewById` to retrieve the `simple_list_item_2` layout's two strings, you 
+use `setText` to set the strings' content to an entry's message and name. You 
+then use the `setTypeface` and `setTextSize` methods, respectively, to format 
+the entry's message in bold and shrink the name. You finish by using 
+`setListAdapter` to set the adapter to `EntriesFragment`'s implicit `ListView`. 
 
-The `getView` method is overridden so that you can tell `simple_list_item_2` 
-what two strings to display. After using `findViewById` to retrieve the layout's 
-two strings, `setText` is used to set their content to an entry's message and 
-name. The `setTypeface` and `setTextSize` methods are then used to format the 
-message in bold and shrink the name, respectively. You then use the 
-`setListAdapter` method to set the adapter to the default `ListView` of 
-`EntriesFragment`.
-
-Like the guestbooks adapter, the entries adapter's contents also need to refresh 
-following a successful server call. To do so, add the following code at the end 
-of the `reloadEntries` method: 
+Like the guestbooks adapter, you also need to refresh the entries adapter's 
+contents following a successful server call. To do so, add the following code at 
+the end of the `reloadEntries` method: 
 
     _adapter.notifyDataSetChanged();
 
-Now that your `EntriesFragment` class can properly place entries in a 
-`ListView`, you're ready to integrate it with `GuestbooksActivity`. First, you 
-need to put a fragment container in the layout you want the fragment to appear 
-in. In short, a fragment container is a layout used to hold a fragment. For more 
-information, see 
+Now that `EntriesFragment` can put entries in its `ListView`, you're ready to 
+add the fragment to `GuestbooksActivity`. First, you need to put a fragment 
+container in the layout you want the fragment to appear in. In short, a fragment 
+container is a layout used to hold a fragment. For more information, see 
 [Android's documentation on adding fragments at runtime](http://developer.android.com/training/basics/fragments/fragment-ui.html#AddAtRuntime). 
 Since you want the entries to appear in `GuestbooksActivity`, your first thought 
 might be to put the fragment container directly in `activity_guestbooks.xml`. 
-Don't do this. The Navigation Drawer template in Android Studio created the 
-layout `content_guestbooks.xml` to hold the activity's content. Open this file 
-and place the following fragment container inside the `RelativeLayout`: 
+Don't do this. Recall that the Navigation Drawer Activity template in Android 
+Studio created the layout `content_guestbooks.xml` to hold the activity's main 
+body content. Open `content_guestbooks.xml` and place the following fragment 
+container inside the `RelativeLayout`: 
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -404,8 +437,8 @@ immediately above `drawer.closeDrawers()`:
     transaction.replace(R.id.fragment_container, entriesFragment);
     transaction.commit();
 
-This code uses `newInstance` to create a new `EntriesFragment` instance that 
-contains the selected guestbook's ID. A 
+You use `newInstance` to create a new `EntriesFragment` instance that contains 
+the selected guestbook's ID. A 
 [fragment transaction](http://developer.android.com/guide/components/fragments.html#Transactions) 
 then adds this fragment to the fragment container.
 
