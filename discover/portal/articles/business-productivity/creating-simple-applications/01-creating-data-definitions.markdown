@@ -55,16 +55,71 @@ Create some data definitions and set your list creators to
 work.
 
 1.  Make sure you're logged in as an administrator, then open the product menu
-and click *Sites*. Select the site (Lunar Resort, if you're following along with
-the example site) where you want to create data definitions. You're now in the
-Site Administration section of the Product Menu, and your site is selected.
+and click *Sites*. Select the site where you want to create data definitions
+(Lunar Resort, if you're following along with the example site). You're now in
+the Site Administration section of the Product Menu, and your site is selected.
 Click *Content* &rarr; *Dynamic Data Lists*.
 
-![Figure 2: You can manage dynamic data lists from the *Sites* &rarr; *Content* section of the Product Menu.](../../images/ddl-product-menu.png)
+    ![Figure 1: You can manage dynamic data lists from the *Sites* &rarr;
+*Content* section of the Product Menu.](../../../images/ddl-product-menu.png)
 
 2.  To create a data definition, find the icon (![Configuration
-Menu](../../images/vertical-ellipse.png))Dynamic Data List
-configuration menu
+Menu](../../../images/options-icon.png)) for the Dynamic Data List
+configuration menu. Click on it and select *Manage Data Definitions*. The Data
+Definitions window appears, where you can access existing definitions or create
+a new one.
+
+    ![Figure 1: The portal ships with several commonly used predefined data
+definitions that your lists can be built onto. You can also add your own data
+definitions, or modify the existing ones.](../../../images/ddl-definitions.png)
+
+3.  Click the *Add* icon (![Add Icon](../../../images/add-icon.png)) to add a
+new Data Definition. 
+
+4.  Fill out the title and description fields. Since this definition will be
+used for multiple lists (because there are multiple activities the resort needs
+lists for), name it *Activity Entry*. A good description might be *This
+definition should cover most use cases on the Activities Sign-Up page. Modify
+the templates to suit your specific needs.*
+
+    Below the Description field, there's a Parent Data Definition selector. This
+definition won't use any of the pre-defined ones as a parent, so leave it blank
+and check out the data definition designer. The View tab is displayed by
+default, and that's where you'll probably do most of your work.
+
+    ![Figure 5: You can add and configure fields to form a custom list
+definition.](../../../images/ddl-data-definition-designer.png)
+
+5.  To start drag a Text field from the Fields tab onto the canvas. This will eventually
+become a required field called Full Name. Below the Text field, drop a Radio field.
+Drop four Boolean fields, and finish this section with a Select field. While
+doing this you might have noticed you can nest fields below each other. Nest all
+the fields below the Text field.
+
+    ![Figure 5: Fields can be nested below other fields.
+definition.](../../../images/ddl-fields-added.png)
+
+6.  Before adding more fields, configure the current ones. Click on the Text
+field and then click on the wrench icon
+(![Configure DDL Field Icon](../../../images/configure-ddl-field-icon.png)).
+Alternatively, click on the field and then click the Settings tab.
+
+    ![Figure 5: Fields can be configured in a variety of ways.](../../../images/ddl-configure-field.png)
+
+7.  Double click the Field Label and change it to *Full Name*. Click Save.
+
+    ![Figure 5: You can add and configure fields to form a custom list
+definition.](../../../images/ddl-field-label-edit.png)
+
+8.  Double click the Required setting and change it to *Yes*, then click Save.
+
+    ![Figure 5: You can add and configure fields to form a custom list
+definition.](../../../images/ddl-field-required.png)
+
+9. 
+
+
+
 
 
 
@@ -89,7 +144,6 @@ needs.
 
 -->
 
-![Figure 1: The portal ships with several commonly used predefined data definitions that your lists can be built onto. You can also add your own data definitions, or modify the existing ones.](../../images/ddl-definitions.png)
 <!--
 If none of the built-in data definitions are suitable, users can create their
 own definitions. If you want to allow `list.it` users (who would probably call
@@ -109,20 +163,16 @@ section of the Product Menu, under *Content*.
 <!-- Product menu screenshot has high likelihood of needing to be updated says
 Russ in October 2015 -->
 
-
-
-
-
-Liferay ships with
+<!--Liferay ships with
 several deafult definitions that can be used to create lists. To create a list
 from one of these, all the user has to do is create a new list, choose the
 predefined data type, and have at it! The data definitions that ship with the
 portal's default site include *To Do*, *Meeting Minutes*, *Issues Tracking*,
 *Inventory*, *Events*, and *Contacts*. Users can use these definitions on their
 own to generate new data lists or tweak them to fit their needs. 
-
-<!-- The bove paragraph contains too much info for our use case. We're not using
-a pre-fefined list so move to the end? -->
+-->
+<!-- The above paragraph contains too much info for our use case. We're not using
+a pre-defined list so move to the end? -->
 
 ## Managing Data Definitions
 
@@ -206,7 +256,6 @@ multiple selections.
 
 *Text Box* fields are larger text areas for longer text input.
 
-![Figure 5: You can add and configure fields to form a custom list definition.](../../images/ddl-data-definition-create.png)
 
 Using the screenshot field descriptions above, configure the data types you need
 for the Volunteer Sign-Up data definition. Use a *Text* type for the name.
