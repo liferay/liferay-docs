@@ -1,10 +1,19 @@
 # Creating the Get Guestbook Screenlet's UI [](id=creating-the-get-guestbook-screenlets-ui)
 
-In Liferay Screens for Android, Screenlet UIs are called Views. You'll create 
-the Get Guestbook Screenlet's View in its own package inside the 
+In Liferay Screens for Android, Screenlet UIs are called Views. Every Screenlet 
+must have a View. In this article, you'll create the Get Guestbook Screenlet's 
+View by following these steps:
+
+1. Create the View Model interface.
+
+2. Create the View's layout.
+
+3. Create the View class.
+
+You'll create the Get Guestbook Screenlet's View in its own package inside the 
 `getguestbooksscreenlet` package. Get started by creating a new package named 
 *view* inside the `getguestbooksscreenlet` package. Now you're ready to create 
-the *View Model* interface.
+the View Model interface.
 
 ## Creating the View Model Interface [](id=creating-the-view-model-interface)
 
