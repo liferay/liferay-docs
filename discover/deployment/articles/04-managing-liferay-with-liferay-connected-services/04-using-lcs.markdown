@@ -7,6 +7,35 @@ instance. If you're not already there, log in with your account on
 view server metrics, manage environments, invite external users to your project, 
 and more. 
 
+This article's following sections each detail one or more of the features 
+available in LCS: 
+
+- [**What LCS Stores About Your Liferay Servers:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#what-lcs-stores-about-your-liferay-servers)
+  For LCS to work, the LCS servers must store certain information about your 
+  Liferay servers. Sensitive data, however, isn't stored on the LCS servers. 
+  Learn exactly what data LCS does and doesn't store. 
+
+- [**Managing Your LCS Projects:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-your-lcs-projects)
+  Learn how to create and request access to LCS projects, how LCS roles work, 
+  and how to manage LCS users. 
+
+- [**Using the Dashboard:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-the-dashboard)
+  Learn how to manage projects, environments, and servers in LCS. This includes 
+  applying fix packs, monitoring server status, viewing server metrics, and 
+  more. 
+
+- [**Configuring LCS Notifications:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#configuring-lcs-notifications)
+  Learn how to configure LCS to send you notification emails when specific 
+  events occur in your LCS projects.
+
+- [**Using Environment Tokens:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens)
+  Learn how to use environment tokens to automatically register your Liferay 
+  servers with LCS. This is crucial in auto-scaling environments. 
+
+First, you'll learn what information LCS stores about your Liferay servers.
+
+## What LCS Stores About Your Liferay Servers [](id=what-lcs-stores-about-your-liferay-servers)
+
 At this point, you might be wondering what information about your servers is 
 stored on the LCS servers. Great question! In order to offer the best service 
 possible, we store the following information about your servers: patches
