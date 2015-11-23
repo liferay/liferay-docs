@@ -30,10 +30,10 @@ Also, you should take note of a few key terms used throughout this guide:
 
 As you go through this guide, you'll cover the following sections on LCS:
 
-- Portal Preconfiguration (Liferay 6.1 GA3 only)
-- Patching Tool Configuration (EE only)
-- LCS Client Configuration
-- Using LCS
+- [Portal Preconfiguration (Liferay 6.1 GA3 only)](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services#preconfiguring-your-portal-for-lcs)
+- [Patching Tool Configuration (EE only)](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services#configuring-the-patching-tool)
+- [LCS Client Configuration](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services#configuring-the-lcs-client)
+- [Using LCS](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services#using-lcs)
 
 You'll get started with a few configuration steps that are required to use LCS 
 with your Liferay portal instances.
@@ -142,7 +142,7 @@ to LCS and provides a simple UI for managing that connection. You can also use
 the LCS client to directly access your LCS project, environment, and server from 
 within your Liferay instance. 
 
-## Downloading the LCS Client [](id=downloading-the-lcs-client)
+### Downloading the LCS Client [](id=downloading-the-lcs-client)
 
 To use LCS, you must have an account at
 [Liferay.com](http://www.liferay.com/). When you first log in to 
@@ -168,7 +168,7 @@ a proxy or need to fine-tune how the client connects to LCS, proceed to the next
 section. Otherwise, you can skip this section and move on to the section on 
 registering the client with LCS. 
 
-## Preconfiguring the LCS Client [](id=preconfiguring-the-lcs-client)
+### Preconfiguring the LCS Client [](id=preconfiguring-the-lcs-client)
 
 In most cases, deploying and configuring the LCS client is simple. If, however,
 you connect to the web through a proxy, or you want to change how the client 
@@ -227,7 +227,7 @@ settings. The values are specified in milliseconds.
 
 Great! Now you're ready to deploy the client and register your portal with LCS.
 
-## Registering the Client with LCS [](id=registering-the-client-with-lcs)
+### Registering the Client with LCS [](id=registering-the-client-with-lcs)
 
 Once you deploy the LCS client, you're ready to register your server with LCS. 
 Access the client by clicking on *Liferay Connected Services* under the *Apps* 
@@ -319,6 +319,35 @@ instance. If you're not already there, log in with your account on
 [lcs.liferay.com](https://lcs.liferay.com). This is where you'll apply updates, 
 view server metrics, manage environments, invite external users to your project, 
 and more. 
+
+This article's following sections each detail one or more of the features 
+available in LCS: 
+
+- [**What LCS Stores About Your Liferay Servers:**](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services#what-lcs-stores-about-your-liferay-servers)
+  For LCS to work, the LCS servers must store certain information about your 
+  Liferay servers. Sensitive data, however, isn't stored on the LCS servers. 
+  Learn exactly what data LCS does and doesn't store. 
+
+- [**Managing Your LCS Projects:**](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services#managing-your-lcs-projects)
+  Learn how to create and request access to LCS projects, how LCS roles work, 
+  and how to manage LCS users. 
+
+- [**Using the Dashboard:**](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services#using-the-dashboard)
+  Learn how to manage projects, environments, and servers in LCS. This includes 
+  applying fix packs, monitoring server status, viewing server metrics, and 
+  more. 
+
+- [**Configuring LCS Notifications:**](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services#configuring-lcs-notifications)
+  Learn how to configure LCS to send you notification emails when specific 
+  events occur in your LCS projects.
+
+- [**Using Environment Tokens:**](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services#using-environment-tokens)
+  Learn how to use environment tokens to automatically register your Liferay 
+  servers with LCS. This is crucial in auto-scaling environments. 
+
+First, you'll learn what information LCS stores about your Liferay servers.
+
+### What LCS Stores About Your Liferay Servers [](id=what-lcs-stores-about-your-liferay-servers)
 
 At this point, you might be wondering what information about your servers is 
 stored on the LCS servers. Great question! In order to offer the best service 
