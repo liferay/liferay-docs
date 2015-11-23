@@ -19,10 +19,19 @@ This lets you quickly change a Screenlet's appearance without affecting its
 functionality. In summary, Screenlets are pretty much the greatest thing since 
 sliced bread. Now it's time to make a sandwich. 
 
-This section of the Learning Path walks you through creating the Get Guestbooks 
-Screenlet. You'll use the following steps to create this Screenlet:
+In the sections that follow, you'll create Screenlets that retrieve and display 
+guestbooks and entries: the Get Guestbooks Screenlet and the Get Entries 
+Screenlet. You'll then change the app to use these Screenlets instead of 
+directly using the Guestbook Mobile SDK. Because you can insert Screenlets into 
+existing UIs, you won't need to redesign the app. You can insert Get Guestbooks 
+Screenlet into `GuestbookActivity`'s navigation drawer, and Get Entries 
+Screenlet into `EntriesFragment`. When you finish, you'll have an app that uses 
+modularity via Screenlets to present the Guestbook portlet's contents. 
 
-1. Getting started: creating the Screenlet's package, and guestbook model class.
+This section of the Learning Path shows you how to create the Get Guestbooks 
+Screenlet. You'll use the following steps to create the Screenlet: 
+
+1. Getting started: creating the Screenlet's package, and model class.
 
 2. Creating the Screenlet's UI (its View).
 
@@ -32,12 +41,12 @@ Screenlet. You'll use the following steps to create this Screenlet:
 4. Creating the Screenlet class.
 
 Before beginning, you should read the tutorial 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android) 
+[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android). 
 It explains the components that constitute a Screenlet, and how they relate to 
 one another. You should also read the tutorial 
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets). 
-You'll follow the same basic steps in this section of the Learning Path, plus a 
-few additional steps specific to the Get Guestbooks Screenlet. If you get 
+This section of the Learning Path follows the same basic steps as this tutorial, 
+plus a few additional steps specific to the Get Guestbooks Screenlet. If you get 
 confused or stuck while creating the Screenlet, refer to the finished app that 
 contains the Screenlet code 
 [here in GitHub](https://github.com/ngaskill/liferay-docs/tree/LRDOCS-1816-android-lp/develop/learning-paths/mobile/code/06-using-your-screenlets/LiferayGuestbook). 
