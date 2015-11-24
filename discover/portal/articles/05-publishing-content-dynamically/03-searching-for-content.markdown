@@ -1,45 +1,45 @@
 # Searching for Content
 
-To stay organized, I (RS) used to use a paper-based planner. It had different
-sections for various areas of my life. Its initial incarnation came from a
-commercial company, but over the years I tweaked it into something that worked
-for me. This final version (before I went digital) had different tabs for
-different areas of my life that I wanted to keep track of: daily items like
-tasks, notes, a spiritual section, and agenda pages that kept track of things I
-needed to go over with specific people. A planning section had tabs for
-projects, family, future items, and reference. 
+To stay organized, many people used to use a paper-based planner. It had
+different sections for various areas of their lives, which included daily items
+like tasks, notes, a spiritual section, and agenda pages that kept track of
+things the person needed to go over with specific people. A planning section had
+tabs for projects, family, future items, and reference. 
 
 Of course, since this was paper-based, it had its limitations. It was kind of
-hard to find stuff. Did I put the note I'd written about that new toy my
-daughter wanted in the notes section or in the family section? Or maybe it was
-on my *While Out* list, so I would remember to buy it before her birthday? 
+hard to find stuff. Did you put the note about buying your daughter that special
+birthday gift in the notes section or in the family section? Or maybe it was on
+your *While Out* list, so you'd remember to buy it before her birthday? 
 
 Liferay content can be like this. That important information you remember
 seeing--was it in a wiki article, a message boards post, or web content? Did you
 remember to tag it? If you don't have this kind of information, browsing to the
 content you're looking for could be difficult. Thankfully, Liferay includes a
 powerful, faceted search function. You can access this function through the
-Search portlet, which lets you drill down through the different types of
-content, tags, and categories to refine your search. Let's look at the search
-features Liferay provides for specific kinds of content and then examine how to
-use Liferay's faceted search.
+Search application, which lets you drill down through the different types of
+content, tags, and categories to refine your search. Next, you'll look at the
+search features Liferay provides for specific kinds of content and then examine
+how to use Liferay's faceted search.
 
-## Searching for Specific Types of Content [](id=searching-for-specific-types-of-content)
+## Searching for Specific Types of Content
 
-Liferay provides several applications that allow users and administrators to
-search for content. First, there's the Search portlet. The Search portlet can be
-placed on a page to allow users to search for assets of any type. We'll learn how
-to use the Search portlet when we discuss Liferay's faceted search feature in
-the next section. There's also a Web Content Search portlet. This portlet can be
-placed on a page to allow users to search for web content instances. Users can't
-use the Web Content Search portlet to search for other kinds of content.
-However, the Blogs, Wiki, Message Boards, Documents and Media, and Web Content
-portlets all provide search bars that allow users to search among the specific
-types of assets with which these portlets allow users to interact. Note that all
-of these portlets are accessible from the Control Panel. They can also, except
-for the Web Content portlet, be placed on portal pages for end-users to use. The
-Web Content portlet is not designed for end users; it's intended for
-administrative use only.
+Liferay provides several applications that let users and administrators search
+for content. First, there's the Search application, which can be placed on a
+page to let users search for web content instances. The Search application only
+searches for web content. However, the Blogs, Wiki, Message Boards, and
+Documents and Media applications all provide search bars that let users search
+among the specific types of assets with which these applications allow users to
+interact. Note that all of these applications are accessible from Site
+Administration in the Product Menu. They can also be placed on portal pages for
+end-users to use. The Web Content application in the Product Menu's Site
+Administration section also has a built-in search bar, which allows for web
+content search. Because this application is only designed for administrative
+use (and is not available to add to a page), the Search application is available
+to allow non-adminstrative users to search for web content.
+
+<!-- At current time, Wiki did not have search bar in Site Admin. This is most
+likely due to it not being "Lexiconified" yet, but double check this before
+final publishing. -Cody -->
 
 +$$$
 
@@ -49,12 +49,20 @@ the Search portlet, which will be configured to only search for web content.
 
 $$$
 
+<!-- The Web Content Search portlet is still available in current builds of
+Liferay 7.0. I've contacted Julio to find out why it's still there and if it's
+still planned for removal. He indicated they did not have time to remove it, but
+are planning to have it disabled by default. The plan will be to completely
+remove it for version 7.1. Once plan is finalized, this section will need to be
+updated. A ticket (LRDOCS-) has been filed to edit this content, when finalized.
+-Cody -->
+
 In order for content to be searchable, it must first be indexed. Liferay uses
 Lucene for indexing and searching for content. Please refer to the Lucene
 section of the portal properties file if you'd like to customize Liferay's
 indexing and search behavior. By default, Liferay indexes blog posts, wiki
-articles, and message board posts, Documents and Media files' descriptions, and
-web content instances. If a Documents and Media file is a text file, the file's
+articles, message board posts, Documents and Media files' descriptions, and web
+content instances. If a Documents and Media file is a text file, the file's
 content is indexed as well. Comments on blog posts, wiki articles, and Documents
 and Media files and text file attachments to wiki articles and message board
 posts are also indexed. Liferay automatically indexes content as it's added to
@@ -62,22 +70,22 @@ the portal.
 
 If you'd like to search among assets of a specific type and you'd like to
 include comments and attachments in your search, use the search bar of the
-appropriate portlet. For example, if you'd like to search for the term *Liferay*
-among wiki articles, enter the term *Liferay* into the Wiki portlet's search
-bar. 
+appropriate application. For example, if you'd like to search for the term
+*Lunar Resort* among wiki articles, enter the term *Lunar Resort* into the Wiki
+application's search bar. 
 
-![Figure 6.7: When using the Wiki portlet's search bar to search for *Liferay*, wiki articles, comments, and attachments containing the word *Liferay* are returned.](../../images/wiki-search.png)
+![Figure 1: When using the Wiki application's search bar to search for *Lunar Resort*, wiki articles, comments, and attachments containing the words *Lunar* or *Resort* are returned.](../../images/wiki-search.png)
 
-Wiki articles, comments, and text file attachments containing the word *Liferay*
-are returned as search results. The search results clearly show whether an
-individual search result is a wiki article, a comment, or an attachment. In the
-next section, we'll see how the Search portlet can be used to search through
-multiple types of content on Liferay. Its faceted search feature is a powerful
-tool that allows users to include or not include specific types of assets in a
-search. However, the Search portlet does not return comments or attachments as
-search results.
+Wiki articles, comments, and text file attachments containing the word *Lunar*
+or *Resort* are returned as search results. The search results clearly show
+whether an individual search result is a wiki article, a comment, or an
+attachment. In the next section, you'll see how the Search application can be
+used to search through web content on Liferay. Its faceted search
+feature is a powerful tool that allows users to include or not include specific
+types of assets in a search. However, the Search portlet does not return
+comments or attachments as search results.
 
-## Searching for Localized Web Content [](id=searching-for-localized-web-content)
+## Searching for Localized Web Content
 
 Liferay Portal supports localizing web content as well as searching for
 localized web content. Recall that to add a translation of a web content
@@ -88,32 +96,38 @@ in Liferay:
 - Web content articles whose default language matches the portal's default
   language are searched.
 - Web content articles whose default language is `en_US` (American English) are
-  searched, regardless of the portal's default language.
-- If the language of a translation of an article matches the portal's default
+  searched, regardless of Liferay's default language.
+- If the language of a translation of an article matches Liferay's default
   language, the article is searched.
-- Any article with an `en_US` translation can be searched regardless of the
-  portal's default language.
+- Any article with an `en_US` translation can be searched regardless of
+  Liferay's default language.
 - A user's default language does not affect search results.
 
-Note: The latest approved version of a web content article is always the version
-that is searched. To change the current approved version of a web content
-article, edit the article, click on the *View History* button, click on the
-*Actions* button next to a version of the article, then click on *Expire*.
++$$$
 
-## Searching for Portal Content Using Facets [](id=searching-for-portal-content-using-facets)
+**Note:** The latest approved version of a web content article is always the
+version that is searched. To change the current approved version of a web
+content article, edit the article, click on the *View History* button, click on
+the *Actions* button next to a version of the article, then click on *Expire*.
 
-To get started using faceted search, drop the Search portlet on a page and
+$$$
+
+Next you'll learn about searching content in Liferay using facets.
+
+## Searching for Content Using Facets
+
+To get started using faceted search, drop the Search application on a page and
 search for something. You'll see a page with results on the right and a
 collection of *facets* on the left. 
 
-![Figure 6.8: The first set of facets is content types. You can drill down to specific types of content that contain the search terms you entered.](../../images/faceted-search-1.png)
+![Figure 2: The first set of facets is content types. You can drill down to specific types of content that contain the search terms you entered.](../../images/faceted-search.png)
 
-Facets allow users of the Search portlet to select criteria with which to filter
-search results. A facet is a combination of the information about a specific
-indexed field, its terms, and their frequency. Facets are typically named by the
-field in question. From the Search portlet's Configuration window,
-administrators can configure the facets available to users for filtering search
-results. The default facets include the following:
+Facets allow users of the Search application to select criteria with which to
+filter search results. A facet is a combination of the information about a
+specific indexed field, its terms, and their frequency. Facets are typically
+named by the field in question. From the Search application's Configuration
+window, administrators can configure the facets available to users for filtering
+search results. The default facets include the following:
 
 - Site
 - Asset type
@@ -123,48 +137,50 @@ results. The default facets include the following:
 - User
 - Modified time range
 
-For example, after searching for a certain term in the Search portlet, clicking
-on a specific site filters the search results to only display assets within the
-specified site. Clicking on a specific user filters the search results to only
-display assets added by the specified user. The frequency with which the term
-was found for each facet is listed in parentheses after the facet. It may jog
-your memory to see that the term you searched for appears in a blog entry, and
-that may be all you need to find what you were looking for. If, however, your
-memory is more foggy than that, or you're searching for something you're not
-sure is actually there, then the asset tags or asset categories facets may be
-more helpful to you. 
+For example, after searching for a certain term in the Search application,
+clicking on a specific site filters the search results to only display assets
+within the specified site. Clicking on a specific user filters the search
+results to only display assets added by the specified user. The frequency with
+which the term was found for each facet is listed in parentheses after the
+facet. It may jog your memory to see that the term you searched for appears in a
+blog entry, and that may be all you need to find what you were looking for. If,
+however, your memory is more foggy than that, or you're searching for something
+you're not sure is actually there, then the asset tags or asset categories
+facets may be more helpful to you.
 
-![Figure 6.9: Asset tag facets let you see how many assets contain the terms for which you searched *and* contain certain tags. Click on a specific tag to narrow down the list of search results to those to which the tag has been applied.](../../images/faceted-search-2.png)
+![Figure 3: Asset tag facets let you see how many assets contain the terms for which you searched *and* contain certain tags. Click on a specific tag to narrow down the list of search results to those to which the tag has been applied.](../../images/faceted-search-tags.png)
 
 For example, if you searched for a wireless phone, you might be more interested
 in content that has your search terms in it *and* has also been tagged by users.
 One or more tags might help you to find what you're looking for. Note that the
 number of tags that appear is configurable: by default it's 10, but there could
-be many more as a result of a particular search. We'll look at the configuration
-options later in the chapter. For now, let's learn how to drill down to narrow
+be many more as a result of a particular search. You'll look at the configuration
+options later in this section. For now, you'll learn how to drill down to narrow
 search results. 
 
 To drill down into the search, click on a facet to add it to the filter list.
 The results to the right are refined by the selected facets. 
 
-![Figure 6.10: Drilling down creates a list of what you selected at the top of the screen.](../../images/05-faceted-search-drill-down-1.png)
+![Figure 4: Drilling down creates a list of what you selected at the top of the screen.](../../images/faceted-search-drill-down-1.png)
 
-Here, we've refined the search to only show documents. We've also selected one
-of the tags, *cool*, to refine the search. The facets we've selected, *Document*
-and *cool*, appear in a list at the top, and there's a red "X" next to it that
-lets us remove it from our filter as we work to refile our search.  Suppose that
-the two facets we selected weren't enough to filter our search into a small
-enough list to sort through. In this case, we could further refine the search by
-selecting another facet, as below. 
+In the figure above, the search is refined to only show wiki pages. The
+*Liferay* site is also selected, to refine the search. The facets that are
+selected, *Liferay* and *Wiki Page*, appear in a list at the top, and there's a
+blue "X" next to them that lets you remove it from the filter as you work to
+refile your search. Suppose that the two facets selected weren't enough to
+filter the search into a small enough list to sort through. In this case, you
+could further refine the search by selecting another facet, as below. 
 
-![Figure 6.11: Selecting another facet further refines the search.](../../images/05-faceted-search-drill-down-2.png)
+![Figure 5: Selecting another facet further refines the search.](../../images/faceted-search-drill-down-2.png)
 
-Now we've also selected the *Music* category, which reduces the list of search
+Now the *bear* category is also selected, which reduces the list of search
 hits on the right. In this way, you can interactively tweak the search results
 to narrow them down, making it easier to find that proverbial needle within the
 haystack. 
 
-### Asset Types [](id=asset-types)
+<!-- left off here -->
+
+### Asset Types
 
 Searching can only be done on assets. As has already been described in this
 chapter, just about any entity in the portal is an asset and can be indexed and
@@ -203,7 +219,7 @@ created as non-visible assets. Instead of displaying users in the Asset
 Publisher, Liferay uses the `displayURL` of each user as the link from a list of
 search results.
 
-### Asset Tags [](id=asset-tags)
+### Asset Tags
 
 If tags have been applied to any asset that appears in the result set, it may
 be displayed in the Asset Tag facet. Tags are handled in a similar way to how
@@ -212,7 +228,7 @@ the 10 tags listed, but the default configuration for this facet is to show the
 top 10 most frequent terms. As with asset types, this can be modified by
 setting the `max terms` property.
 
-### Asset Categories [](id=asset-categories)
+### Asset Categories
 
 If categories have been applied to any asset that appears in the result set,
 they may be displayed in the Asset Categories facet. Asset categories work just
@@ -221,7 +237,7 @@ listed in the search by setting the `max terms` property.
 
 Let's move on to advanced searching. 
 
-## Advanced Searching [](id=advanced-searching)
+### Advanced Searching
 
 The Search portlet's search box is deceptively simple. Though you have only a
 single field for search, there's a search syntax inherited from
@@ -284,12 +300,12 @@ above.
 
 Next, we'll look at how the Search portlet can be configured. 
 
-## Setting Search Options [](id=setting-search-options)
+## Setting Options for Detailed Search Results
 
 As with Liferay's other portlets, you can configure the Search portlet via the
 configuration screen, which looks like the below illustration. 
 
-![Figure 6.12: Basic search configuration is pretty straightforward.](../../images/05-faceted-search-configuration.png)
+<!--[Figure 6.12: Basic search configuration is pretty straightforward.](../../images/05-faceted-search-configuration.png)-->
 
 **Display Asset Type Facet:** Toggles whether the Asset Type facet appears. 
 

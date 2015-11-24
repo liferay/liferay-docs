@@ -1,7 +1,7 @@
 # Organizing Content with Tags and Categories
 
 Tags and categories are two important tools you can use to help organize
-information in your portal. These tools help users to easily find the content
+information in Liferay. These tools help users to easily find the content
 they're looking for through search or navigation. Tagging and categorizing
 assets is easy. You can tag or categorize an asset at creation time or when
 editing an existing asset. If you click on the *Categorization* section of the
@@ -23,16 +23,16 @@ section.
 $$$
 
 The Product Menu (![Product Menu](../../images/menu-icon.png)) contains
-interfaces for managing tags and categories for each site in the portal.
-Navigate to *Sites* &rarr; *[Site Name]* &rarr; *Content* in the Product Menu,
-and you'll find the *Tags* and *Categories* options. These options can be used
-to manage all your site's tags and categories. It is important that you both tag
-and categorize your content when you enter it. You'll take a closer look at tags
-and categories next.
+interfaces for managing tags and categories for each site in Liferay. Navigate
+to *Sites* &rarr; *[Site Name]* &rarr; *Content* in the Product Menu, and you'll
+find the *Tags* and *Categories* options. These options can be used to manage
+all your site's tags and categories. It is important that you both tag and
+categorize your content when you enter it. You'll take a closer look at tags and
+categories next.
 
 ## Tagging Content
 
-Tags are an important tool that can help organize information in your portal and
+Tags are an important tool that can help organize information in Liferay and
 make it easier for users to find the content that they're interested in. Tags
 are words or phrases that you can attach to any content on the website. Tagging
 content makes your search results more accurate and enables you to use tools
@@ -68,6 +68,16 @@ administrators to organize content in a more official, hierarchical structure.
 You can think of tags like the index of a book and categories like its table of
 contents. Both serve the same purpose: to help users find the information they
 seek.
+
++$$$
+
+**Note:** In previous versions of Liferay, you could specify web content types
+via `portal.properties`. In Liferay 7.0, web content types are no longer used
+and have been replaced by vocabularies. Vocabularies allow users to filter their
+web content articles by category instead, which lets you filter your content
+using the Asset Publisher and faceted search.
+
+$$$
 
 Adding vocabularies and categories is similar to adding tags. Visit the site for
 which you want to create categories and then click *Content* &rarr; *Categories*

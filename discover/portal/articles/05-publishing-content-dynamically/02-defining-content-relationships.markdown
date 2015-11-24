@@ -1,23 +1,24 @@
 # Defining Content Relationships
 
-Related Assets was a feature introduced in Liferay 6.1 that enables you to
-connect an asset to other assets within the same site or to global assets, even
-if they don't share any tags and aren't in the same category. We've already seen
-that you can show related assets within the display for a specific asset, and
-with the Related Assets portlet you can show links to any assets which are
-related to content displayed on that page.
+Related Assets is a feature that enables you to connect an asset to other assets
+within the same site or to global assets, even if they don't share any tags and
+aren't in the same category. You've already seen that you can show related
+assets within the display for a specific asset, and with the Related Assets
+application you can show links to any assets which are related to content
+displayed on that page.
 
-The Related Assets portlet is based on the Asset Publisher and possesses
-essentially the same interface with one key difference. The Asset publisher
-displays any content that meets the criteria selected in the portlet
-configuration. The Related Assets portlet only displays content that meets the
-criteria, and also is listed as a related asset for a piece of content that is
-currently published on the page where it is placed. Let's take a look at the
-Related Assets portlet.
+The Related Assets application is based on the
+[Asset Publisher](/discover/portal/-/knowledge_base/7-0/publishing-assets)
+and possesses essentially the same interface with one key difference. The Asset
+Publisher displays any content that meets the criteria selected in the
+application's configuration. The Related Assets application only displays
+content that meets the criteria, and also is listed as a related asset for a
+piece of content that is currently published on the page where it is placed.
+You'll take a closer look at the Related Assets application next.
 
-As a prerequisite for the Related Assets portlet to display related assets, you
-have to configure it to show the content you want displayed. To do this, go to
-the Asset Publisher portlet and select the *gear* icon in the upper right
+As a prerequisite for the Related Assets application to display related assets,
+you have to configure it to show the content you want displayed. To do this, go
+to the Asset Publisher portlet and select the *gear* icon in the upper right
 corner of the portlet. Under the *Setup* tab, set type of asset(s) to display
 using the *Asset Type* menu. The default value is set to *Any*. You can narrow
 the scope of the portlet to display any single category of asset type or select
