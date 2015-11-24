@@ -17,21 +17,20 @@ for a discussion of exporting and importing site page data.
 **Note:** To prevent malicious code from being imported into your portal,
 Liferay restricts external classes from being serialized/deserialized. If you
 need a class serialized/deserialized during the import of a LAR, you must
-manually list its fully qualified class name in your `portal-ext.properties`
-file using the `staging.xstream.class.whitelist` property.
+whitelist that class. 
 
-Developers of custom portlets that support export/import must enlist their
-classes either in `portal-ext.properties` or in the given plugin by creating a
-`portal.properties` file with the proper settings and a `liferay-hook.xml` that
-contains a `<portal-properties>` element to let the deploy framework recognize
-and merge the property configuration with the default ones.
+You can list your classes in `portal-ext.properties` or in the given plugin by
+creating a `portal.properties` file with the proper settings and a
+`liferay-hook.xml` that contains a `<portal-properties>` element to let the
+deploy framework recognize and merge the property configuration with the default
+ones.
 
 First, to enable checking XStream class serialization security permissions, you
 must set `staging.xstream.security.enabled=true`. Then you can list your fully
 qualified class names allowed to be serialized/deserialized during export/import
 and staging processes using the `staging.xstream.class.whitelist` property. This
-list can be empty since the portal default entities are being added
-automatically. The following list are types allowed by default:
+list can be empty since the portal default entities are added already. The
+following list are types allowed by default:
 
 - Primitive types as a
 `com.thoughtworks.xstream.security.PrimitiveTypePermission`. See the following
@@ -48,7 +47,7 @@ for the full list of primitives.
     - `java.lang.String`
     - `java.sql.Time`
     - `java.sql.Timestamp`
-    
+ 
 Types defined in the `staging.xstream.class.whitelist` portal property are
 passed as an `ExplicitTypePermission`.
 
@@ -71,7 +70,7 @@ passed as an `ExplicitTypePermission`.
 Any class that is not whitelisted either through the portal property or by
 default generates a `com.thoughtworks.xstream.security.ForbiddenClassException`
 during the import phase. Thus, if you encounter such an error, you need to add
-the fully qualifed class name to your `portal-ext.properties` file.
+the fully qualified class name to your `portal-ext.properties` file.
 
 $$$
 
