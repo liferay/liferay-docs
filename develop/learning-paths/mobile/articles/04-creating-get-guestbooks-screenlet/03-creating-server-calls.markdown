@@ -1,13 +1,30 @@
 # Creating the Get Guestbook Screenlet's Server Calls [](id=creating-the-get-guestbook-screenlets-server-calls)
 
 For the Get Guestbooks Screenlet to work, it needs to call the Guestbook 
-portlet's remote service that returns the guestbooks. In Screenlets, server 
-calls are handled by *interactors*. A Screenlet needs an interactor for each 
-server call that it makes. Since the Get Guestbooks Screenlet needs to make one 
-server call to retrieve the guestbooks, it needs one interactor. The following 
-components make up an interactor: an event, a callback, the interactor interface 
-and its implementation, and a listener. This article shows you how to create 
-each. First, you'll create the event. 
+portlet's remote service that returns the guestbooks. You called the same 
+service when you used the Guestbook Mobile SDK directly. The Screenlet must 
+therefore call the service in a similar manner. It must use the same Guestbook 
+Mobile SDK, and make the service call via a callback class. That's where the 
+similarities end, though. 
+
+Screenlets use *interactors* to make server calls. A Screenlet needs an 
+interactor for each server call that it makes. Since the Get Guestbooks 
+Screenlet needs to make one server call to retrieve the guestbooks, it needs one 
+interactor. The following components make up an interactor: an event, a 
+callback, the interactor interface and its implementation, and a listener. This 
+article shows you how to create each. 
+
+You'll create the interactor by using the following steps:
+
+1. Create the event class.
+
+2. Create the callback class.
+
+3. Create the listener.
+
+4. Create and implement the interactor interface.
+
+First, you'll create the event. 
 
 ## Creating the Event Class [](id=creating-the-event-class)
 
