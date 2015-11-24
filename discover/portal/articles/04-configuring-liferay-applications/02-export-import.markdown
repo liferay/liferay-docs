@@ -12,6 +12,68 @@ not to confuse portlet-specific `.lar` files with site-specific `.lar` files.
 See the section on [Creating and Managing Pages](discover/portal/-/knowledge_base/6-2/leveraging-liferays-multi-site-capabilities#creating-and-managing-pages) 
 for a discussion of exporting and importing site page data. 
 
++$$$
+
+**Note:** To prevent malicious code from being imported into your portal,
+Liferay restricts external classes from being serialized/deserialized. If you
+need a class serialized/deserialized during the import of a LAR, you must
+whitelist that class. 
+
+You can list your classes in `portal-ext.properties` or in the given plugin by
+creating a `portal.properties` file with the proper settings and a
+`liferay-hook.xml` that contains a `<portal-properties>` element to let the
+deploy framework recognize and merge the property configuration with the default
+ones.
+
+First, to enable checking XStream class serialization security permissions, you
+must set `staging.xstream.security.enabled=true`. Then you can list your fully
+qualified class names allowed to be serialized/deserialized during export/import
+and staging processes using the `staging.xstream.class.whitelist` property. This
+list can be empty since the portal default entities are added already. The
+following list are types allowed by default:
+
+- Primitive types as a
+`com.thoughtworks.xstream.security.PrimitiveTypePermission`. See the following
+[class](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/core/util/Primitives.java)
+for the full list of primitives.
+- Allowed types as a
+[`com.thoughtworks.xstream.security.ExplicitTypePermission`](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/security/ExplicitTypePermission.java):
+    - `byte[]`
+    - `java.util.Date`
+    - `com.liferay.portlet.dynamicdatamapping.storage.Field`
+    - `com.liferay.portlet.dynamicdatamapping.storage.Fields`
+    - `java.io.InputStream`
+    - `java.util.Locale`
+    - `java.lang.String`
+    - `java.sql.Time`
+    - `java.sql.Timestamp`
+ 
+Types defined in the `staging.xstream.class.whitelist` portal property are
+passed as an `ExplicitTypePermission`.
+
+- Allowed types as a
+[`com.thoughtworks.xstream.security.WildcardTypePermission`](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/security/WildcardTypePermission.java):
+    - `com.liferay.portal.model.*`
+    - `com.liferay.portal.model.impl.*`
+    - `com.thoughtworks.xstream.mapper.DynamicProxyMapper*`
+- Allowed type hierarchies each defined as a
+[`com.thoughtworks.xstream.security.TypeHierarchyPermission`](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/security/TypeHierarchyPermission.java):
+    - `com.liferay.portlet.asset.model.AssetLink`
+    - `com.liferay.portlet.asset.model.AssetTag`
+    - `java.util.List`
+    - `com.liferay.portal.model.Lock`
+    - `java.util.Map`
+    - `com.liferay.portal.model.OrgLabor`
+    - `com.liferay.portlet.ratings.model.RatingsEntry`
+    - `com.liferay.portal.model.StagedModel`
+
+Any class that is not whitelisted either through the portal property or by
+default generates a `com.thoughtworks.xstream.security.ForbiddenClassException`
+during the import phase. Thus, if you encounter such an error, you need to add
+the fully qualified class name to your `portal-ext.properties` file.
+
+$$$
+
 Let's explore the export process for portlets first.
 
 ![Figure 4.7: When exporting portlet data, you can choose what content to include.](../../images/portlet-export.png)
