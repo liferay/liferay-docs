@@ -179,21 +179,20 @@ portlets on others pages may be referencing this data.
 **Note:** To prevent malicious code from being imported into your portal,
 Liferay restricts external classes from being serialized/deserialized. If you
 need a class serialized/deserialized during the import of a LAR, you must
-manually list its fully qualified class name in your `portal-ext.properties`
-file using the `staging.xstream.class.whitelist` property.
+whitelist that class. 
 
-Developers of custom portlets that support export/import must enlist their
-classes either in `portal-ext.properties` or in the given plugin by creating a
-`portal.properties` file with the proper settings and a `liferay-hook.xml` that
-contains a `<portal-properties>` element to let the deploy framework recognize
-and merge the property configuration with the default ones.
+You can list your classes in `portal-ext.properties` or in the given plugin by
+creating a `portal.properties` file with the proper settings and a
+`liferay-hook.xml` that contains a `<portal-properties>` element to let the
+deploy framework recognize and merge the property configuration with the default
+ones.
 
 First, to enable checking XStream class serialization security permissions, you
 must set `staging.xstream.security.enabled=true`. Then you can list your fully
 qualified class names allowed to be serialized/deserialized during export/import
 and staging processes using the `staging.xstream.class.whitelist` property. This
-list can be empty since the portal default entities are being added
-automatically. The following classes are used by default:
+list can be empty since the portal default entities are added already. The
+following list are types allowed by default:
 
 - Primitive types as a
 `com.thoughtworks.xstream.security.PrimitiveTypePermission`. See the following
@@ -210,50 +209,30 @@ for the full list of primitives.
     - `java.lang.String`
     - `java.sql.Time`
     - `java.sql.Timestamp`
-
+ 
 Types defined in the `staging.xstream.class.whitelist` portal property are
 passed as an `ExplicitTypePermission`.
 
 - Allowed types as a
 [`com.thoughtworks.xstream.security.WildcardTypePermission`](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/security/WildcardTypePermission.java):
-    - `com.liferay.knowledgebase.model.impl.*`
-    - `com.liferay.opensocial.model.impl.*`
     - `com.liferay.portal.model.*`
     - `com.liferay.portal.model.impl.*`
-    - `com.liferay.portlet.asset.model.impl.*`
-    - `com.liferay.portlet.blogs.model.impl.*`
-    - `com.liferay.portlet.bookmarks.model.impl.*`
-    - `com.liferay.portlet.calendar.model.impl.*`
-    - `com.liferay.portlet.documentlibrary.model.impl.*`
-    - `com.liferay.portlet.dynamicdatalists.model.impl.*`
-    - `com.liferay.portlet.dynamicdatamapping.model.impl.*`
-    - `com.liferay.portlet.journal.model.impl.*`
-    - `com.liferay.portlet.messageboards.model.impl.*`
-    - `com.liferay.portlet.mobiledevicerules.model.impl.*`
-    - `com.liferay.portlet.polls.model.impl.*`
-    - `com.liferay.portlet.wiki.model.impl.*`
-    - `com.liferay.reports.model.impl.*`
-    - `com.liferay.wsrp.model.impl.*`
     - `com.thoughtworks.xstream.mapper.DynamicProxyMapper*`
 - Allowed type hierarchies each defined as a
 [`com.thoughtworks.xstream.security.TypeHierarchyPermission`](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/security/TypeHierarchyPermission.java):
-    - `com.liferay.portal.kernel.xml.Node`
-    - `com.liferay.portal.kernel.xml.QName`
-    - `org.dom4j.DocumentFactory`
-    - `org.dom4j.Node`
-    - `org.dom4j.QName`
-    - `java.text.Format`
-    - `com.liferay.portal.kernel.repository.model.FileEntry`
-    - `com.liferay.portal.kernel.repository.model.FileVersion`
-    - `com.liferay.portal.kernel.repository.model.Folder`
+    - `com.liferay.portlet.asset.model.AssetLink`
+    - `com.liferay.portlet.asset.model.AssetTag`
     - `java.util.List`
+    - `com.liferay.portal.model.Lock`
     - `java.util.Map`
-    - `java.util.TimeZone`
+    - `com.liferay.portal.model.OrgLabor`
+    - `com.liferay.portlet.ratings.model.RatingsEntry`
+    - `com.liferay.portal.model.StagedModel`
 
 Any class that is not whitelisted either through the portal property or by
 default generates a `com.thoughtworks.xstream.security.ForbiddenClassException`
 during the import phase. Thus, if you encounter such an error, you need to add
-the fully qualifed class name to your `portal-ext.properties` file.
+the fully qualified class name to your `portal-ext.properties` file.
 
 $$$
 
