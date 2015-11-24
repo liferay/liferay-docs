@@ -195,8 +195,60 @@ and staging processes using the `staging.xstream.class.whitelist` property. This
 list can be empty since the portal default entities are being added
 automatically. The following classes are used by default:
 
-- TestClass1
-- TestClass2
+- Primitive types as a
+`com.thoughtworks.xstream.security.PrimitiveTypePermission`. See the following
+[class](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/core/util/Primitives.java)
+for the full list of primitives.
+- Allowed types as a
+[`com.thoughtworks.xstream.security.ExplicitTypePermission`](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/security/ExplicitTypePermission.java):
+    - `byte[]`
+    - `java.util.Date`
+    - `com.liferay.portlet.dynamicdatamapping.storage.Field`
+    - `com.liferay.portlet.dynamicdatamapping.storage.Fields`
+    - `java.io.InputStream`
+    - `java.util.Locale`
+    - `java.lang.String`
+    - `java.sql.Time`
+    - `java.sql.Timestamp`
+
+Types defined in the `staging.xstream.class.whitelist` portal property are
+passed as an `ExplicitTypePermission`.
+
+- Allowed types as a
+[`com.thoughtworks.xstream.security.WildcardTypePermission`](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/security/WildcardTypePermission.java):
+    - `com.liferay.knowledgebase.model.impl.*`
+    - `com.liferay.opensocial.model.impl.*`
+    - `com.liferay.portal.model.*`
+    - `com.liferay.portal.model.impl.*`
+    - `com.liferay.portlet.asset.model.impl.*`
+    - `com.liferay.portlet.blogs.model.impl.*`
+    - `com.liferay.portlet.bookmarks.model.impl.*`
+    - `com.liferay.portlet.calendar.model.impl.*`
+    - `com.liferay.portlet.documentlibrary.model.impl.*`
+    - `com.liferay.portlet.dynamicdatalists.model.impl.*`
+    - `com.liferay.portlet.dynamicdatamapping.model.impl.*`
+    - `com.liferay.portlet.journal.model.impl.*`
+    - `com.liferay.portlet.messageboards.model.impl.*`
+    - `com.liferay.portlet.mobiledevicerules.model.impl.*`
+    - `com.liferay.portlet.polls.model.impl.*`
+    - `com.liferay.portlet.wiki.model.impl.*`
+    - `com.liferay.reports.model.impl.*`
+    - `com.liferay.wsrp.model.impl.*`
+    - `com.thoughtworks.xstream.mapper.DynamicProxyMapper*`
+- Allowed type hierarchies each defined as a
+[`com.thoughtworks.xstream.security.TypeHierarchyPermission`](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/security/TypeHierarchyPermission.java):
+    - `com.liferay.portal.kernel.xml.Node`
+    - `com.liferay.portal.kernel.xml.QName`
+    - `org.dom4j.DocumentFactory`
+    - `org.dom4j.Node`
+    - `org.dom4j.QName`
+    - `java.text.Format`
+    - `com.liferay.portal.kernel.repository.model.FileEntry`
+    - `com.liferay.portal.kernel.repository.model.FileVersion`
+    - `com.liferay.portal.kernel.repository.model.Folder`
+    - `java.util.List`
+    - `java.util.Map`
+    - `java.util.TimeZone`
 
 Any class that is not whitelisted either through the portal property or by
 default generates a `com.thoughtworks.xstream.security.ForbiddenClassException`
