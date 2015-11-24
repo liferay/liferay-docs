@@ -18,7 +18,7 @@ kinds of things.
 This chapter explains how to configure Liferay for a number of advanced
 scenarios, such as
 
-- Managing Liferay with Liferay Cloud Services
+- Managing Liferay with Liferay Connected Services
 
 - Clustering 
 
