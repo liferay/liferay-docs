@@ -1,4 +1,4 @@
-# Arquillian Extension for Liferay Example
+# Arquillian Extension for Liferay Example [](id=arquillian-extension-for-liferay-example)
 
 The
 [Arquillian Extension Liferay Example](https://github.com/arquillian/arquillian-extension-liferay/blob/master/arquillian-extension-liferay-example)
@@ -18,7 +18,7 @@ To set up a testing environment like the one used by the Arquillian Extension
 for Liferay Example, you need to enable and configure JMX in your Liferay Tomcat
 server.
 
-## Enable and Configure JMX in Tomcat
+## Enable and Configure JMX in Tomcat [](id=enable-and-configure-jmx-in-tomcat)
 
 You can follow this [guide](https://tomcat.apache.org/tomcat-7.0-doc/monitoring.html#Enabling_JMX_Remote) to enable your JMX configuration in Tomcat.
 
@@ -33,7 +33,7 @@ without authentication:
 
 You can customize your `setenv.sh` in a similar way.
 
-## Creating a Liferay Portlet for Testing
+## Creating a Liferay Portlet for Testing [](id=creating-a-liferay-portlet-for-testing)
 
 You need a Liferay portlet project that can be used for testing. You can use
 your preferred build tool. For example, either Gradle or Maven can be used.
@@ -276,7 +276,7 @@ Follow these steps to create a Liferay portlet project using Maven.
 
     That's it! Your Liferay portlet is complete!
 
-## Create a Simple Test in Liferay with the Arquillian Liferay Extension
+## Create a Simple Test in Liferay with the Arquillian Liferay Extension [](id=create-a-simple-test-in-liferay-with-the-arquillian-liferay-extension)
 
 Now that you've configured JMX in Tomcat and created a portlet project, you're
 ready to create Liferay tests with the Arquillian Liferay Extension.
@@ -356,7 +356,7 @@ ready to create Liferay tests with the Arquillian Liferay Extension.
 
         }
 
-## Create Simple Functional Tests Using the Arquillian Liferay Extension
+## Create Simple Functional Tests Using the Arquillian Liferay Extension [](id=create-simple-functional-tests-using-the-arquillian-liferay-extension)
 
 To create a functional test in Liferay with the Arquillian Liferay Extension,
 follow this
@@ -543,7 +543,7 @@ follow this
                 ...
         </arquillian>
 
-## Create a Jacoco Profile
+## Create a Jacoco Profile [](id=create-a-jacoco-profile)
 
 [JaCoCo](http://eclemma.org/jacoco/) is a code coverage library for Java.
 
@@ -597,7 +597,7 @@ follow this
 
         mvn test -Pjavacoc jacoco:report
 
-## Running Tests with the Liferay Arquillian Extension
+## Running Tests with the Liferay Arquillian Extension [](id=running-tests-with-the-liferay-arquillian-extension)
 
 That's it! If you've download the
 [Arquillian Liferay Extension Example](https://github.com/arquillian/arquillian-extension-liferay/tree/master/arquillian-extension-liferay-example),
