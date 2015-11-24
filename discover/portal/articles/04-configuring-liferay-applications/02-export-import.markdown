@@ -31,10 +31,42 @@ must set `staging.xstream.security.enabled=true`. Then you can list your fully
 qualified class names allowed to be serialized/deserialized during export/import
 and staging processes using the `staging.xstream.class.whitelist` property. This
 list can be empty since the portal default entities are being added
-automatically. The following classes are used by default:
+automatically. The following list are types allowed by default:
 
-- TestClass1
-- TestClass2
+- Primitive types as a
+`com.thoughtworks.xstream.security.PrimitiveTypePermission`. See the following
+[class](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/core/util/Primitives.java)
+for the full list of primitives.
+- Allowed types as a
+[`com.thoughtworks.xstream.security.ExplicitTypePermission`](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/security/ExplicitTypePermission.java):
+    - `byte[]`
+    - `java.util.Date`
+    - `com.liferay.portlet.dynamicdatamapping.storage.Field`
+    - `com.liferay.portlet.dynamicdatamapping.storage.Fields`
+    - `java.io.InputStream`
+    - `java.util.Locale`
+    - `java.lang.String`
+    - `java.sql.Time`
+    - `java.sql.Timestamp`
+    
+Types defined in the `staging.xstream.class.whitelist` portal property are
+passed as an `ExplicitTypePermission`.
+
+- Allowed types as a
+[`com.thoughtworks.xstream.security.WildcardTypePermission`](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/security/WildcardTypePermission.java):
+    - `com.liferay.portal.model.*`
+    - `com.liferay.portal.model.impl.*`
+    - `com.thoughtworks.xstream.mapper.DynamicProxyMapper*`
+- Allowed type hierarchies each defined as a
+[`com.thoughtworks.xstream.security.TypeHierarchyPermission`](https://github.com/x-stream/xstream/blob/XSTREAM_1_4_7/xstream/src/java/com/thoughtworks/xstream/security/TypeHierarchyPermission.java):
+    - `com.liferay.portlet.asset.model.AssetLink`
+    - `com.liferay.portlet.asset.model.AssetTag`
+    - `java.util.List`
+    - `com.liferay.portal.model.Lock`
+    - `java.util.Map`
+    - `com.liferay.portal.model.OrgLabor`
+    - `com.liferay.portlet.ratings.model.RatingsEntry`
+    - `com.liferay.portal.model.StagedModel`
 
 Any class that is not whitelisted either through the portal property or by
 default generates a `com.thoughtworks.xstream.security.ForbiddenClassException`
