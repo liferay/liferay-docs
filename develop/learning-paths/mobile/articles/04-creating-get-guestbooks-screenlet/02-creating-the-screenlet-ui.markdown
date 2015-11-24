@@ -17,9 +17,14 @@ the View Model interface.
 
 ## Creating the View Model Interface [](id=creating-the-view-model-interface)
 
-The first thing you should do when creating a Screenlet's View is create its 
+The first thing you should do when creating any Screenlet's View is create its 
 View Model interface. This interface defines the methods the View class needs to 
 control the UI. You'll implement this interface when creating the View class. 
+The Get Guestbooks Screenlet's UI is simple. It doesn't need *any* control 
+elements, such as sliders, text boxes, buttons, or the like. It only needs to 
+display a guestbook list. Its view model interface therefore only needs to 
+define a single method for this purpose. You'll handle list item selections 
+separately, by implementing `AdapterView.OnItemClickListener` in the view class. 
 
 Create the `GetGuestbooksViewModel` interface in the `view` package. When the 
 interface opens in the editor, change its declaration to extend 
@@ -28,17 +33,27 @@ The interface's declaration should now look like this:
 
     public interface GetGuestbooksViewModel extends BaseViewModel {...
 
-Now add the signatures of any methods needed by the Screenlet's view class. The 
-Get Guestbooks Screenlet only needs one. Add it to the View Model interface now: 
+This also requires that you add the following import for `BaseViewModel`:
+
+    import com.liferay.mobile.screens.base.view.BaseViewModel;
+
+Now add the following method signature: 
 
     void showFinishOperation(String userAction, List<GuestbookModel> guestbooks);
 
-You'll use this method to refresh the list of guestbooks displayed by the 
-Screenlet. Also, check to make sure that you have the following imports in the 
-interface. If you don't, add them now: 
+You'll use this method in the view class to refresh the list of guestbooks 
+displayed by the Screenlet. The Screenlet calls it with the list of guestbooks 
+retrieved from the server when the given user action, represented by 
+`userAction`, occurs. You might now be thinking, "Hold up! You just told me that 
+this Screenlet's UI only displays a guestbook list, and that I'll handle list 
+item selections separately. What other actions are there for the user to take?" 
+This is an astute observation. The only other action a user can take, and the 
+one that you're accounting for here, is loading the Screenlet. 
+
+The `showFinishOperation` method requires that you add the following imports to 
+the interface. If you haven't added them already, do so now:
 
     import com.liferay.docs.getguestbooksscreenlet.GuestbookModel;
-    import com.liferay.mobile.screens.base.view.BaseViewModel;
     import java.util.List;
 
 +$$$
