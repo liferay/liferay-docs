@@ -2784,3 +2784,94 @@ method to generate the UI.
 
 This change was made as a part of the ongoing strategy to modularize Liferay
 Portal.
+
+---------------------------------------
+
+### Removed Hover and Alternate Style Features of Search Container Tag [](id=removed-hover-and-alternate-style-features-of-search-container-tag)
+- **Date:** 2015-Nov-03
+- **JIRA Ticket:** LPS-58854
+
+#### What changed? [](id=what-changed-72)
+
+The following attributes and methods have been removed:
+
+- The attribute `hover` of the `liferay-ui:search-container` tag.
+- The method `isHover()` of the `SearchContainerTag` class.
+- The attributes `classNameHover`, `hover`, `rowClassNameAlternate`,
+`rowClassNameAlternateHover`, `rowClassNameBody`, `rowClassNameBodyHover` of the
+`liferay-search-container` JavaScript module.
+
+#### Who is affected? [](id=who-is-affected-72)
+
+This affects developers that use the `hover` attribute of the
+`liferay-ui:search-container` tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-72)
+
+You should update your code changing the CSS selector that defines how rows look
+on hover to use the `:hover` and `:nth-of-type` CSS pseudo selectors instead.
+
+#### Why was this change made? [](id=why-was-this-change-made-72)
+
+Browsers support better ways to style content on hover in a way that doesn't
+penalize performance. Therefore, this change was made to increase the
+performance of hovering over content in Liferay.
+
+---------------------------------------
+
+### Removed AppViewMove and AppViewSelect JavaScript Modules [](id=removed-appviewmove-and-appviewselect-javascript-modules)
+- **Date:** 2015-Nov-03
+- **JIRA Ticket:** LPS-58854
+
+#### What changed? [](id=what-changed-73)
+
+The JavaScript modules `AppViewMove` and `AppViewSelect` have been removed.
+
+#### Who is affected? [](id=who-is-affected-73)
+
+This affects developers that use these modules to configure *select* and *move*
+actions inside their applications.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-73)
+
+If you are using any of these modules, you can make use of the following
+`SearchContainer` APIs:
+
+- Listen to the `rowToggled` event of the search container to be notified about
+changes to the search container state.
+- Configure your search container *move* options creating a `RowMover` and
+define the allowed *move* targets and associated actions.
+- Use the `registerAction` method of the search container to execute your *move*
+logic when the user completes a *move* action.
+
+#### Why was this change made? [](id=why-was-this-change-made-73)
+
+The removed JavaScript modules contained too much logic and were difficult to
+decipher. It was also difficult to add this to an existing app. With this
+change, every app using a search container can use this functionality much
+easier.
+
+---------------------------------------
+
+### Removed the mergeLayoutTags Preference from Asset Publisher [](id=removed-the-mergelayouttags-preference-from-asset-publisher)
+- **Date:** 2015-Nov-20
+- **JIRA Ticket:** LPS-60677
+
+#### What changed? [](id=what-changed-74)
+
+The `mergeLayoutTags` preference has been removed from the Asset Publisher.
+
+#### Who is affected? [](id=who-is-affected-74)
+
+This affects any Asset Publisher portlet that uses this preference.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-74)
+
+There is nothing to update since this functionality is no longer used.
+
+#### Why was this change made? [](id=why-was-this-change-made-74)
+
+In previous versions of Liferay, some applications such as Blogs and Wiki shared
+the tags of their entries within the page. The Asset Publisher was able to use
+them to show other assets with the same tags. This functionality has changed, so
+the preference is no longer used.
