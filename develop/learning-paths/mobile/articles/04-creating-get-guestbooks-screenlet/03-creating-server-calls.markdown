@@ -1,11 +1,13 @@
-# Creating the Get Guestbook Screenlet's Server Calls [](id=creating-the-get-guestbook-screenlets-server-calls)
+# Creating the Get Guestbook Screenlet's Server Call [](id=creating-the-get-guestbook-screenlets-server-call)
 
-For the Get Guestbooks Screenlet to work, it needs to call the Guestbook 
-portlet's remote service that returns the guestbooks. You called the same 
-service when you used the Guestbook Mobile SDK directly. The Screenlet must 
-therefore call the service in a similar manner. It must use the same Guestbook 
-Mobile SDK, and make the service call via a callback class. That's where the 
-similarities end, though. 
+There are some similarities between server calls made by a Screenlet and those 
+made by the Mobile SDK in an activity or fragment. This is because Screenlets 
+also use the Mobile SDK to make server calls. For example, the Get Guestbooks 
+Screenlet must use the Guestbook Mobile SDK to make the server call that gets 
+guestbooks. When you 
+[used the Guestbook Mobile SDK to make the server call from `GuestbooksActivity`](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-guestbooks), 
+you made the call via a callback class. The Get Guestbooks Screenlet must also 
+make the call via a callback class. That's where the similarities end, though. 
 
 Screenlets use *interactors* to make server calls. A Screenlet needs an 
 interactor for each server call that it makes. Since the Get Guestbooks 
