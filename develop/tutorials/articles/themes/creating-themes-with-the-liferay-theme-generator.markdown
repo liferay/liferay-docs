@@ -22,6 +22,11 @@ Studio to be installed. You can read more at the following links:
 
 [Visual Studio Setup](https://github.com/nodejs/node-gyp/wiki/Visual-Studio-2010-Setup)
 
+<!-- The *Visual Studio Setup* link is for setting up VS 2010. The instructions
+for installing node-gyp appear to require either VS 2013 or VS 2015. Should we
+update the VS setup instruction to be compatible with what is required for
+node-gyp? -Cody -->
+
 Alternatively you can use the Ruby based version of Sass. In order to use that 
 version of Sass, you'll need to install Ruby with the Ruby Installer, and 
 install the Sass and Compass gems from the command line using the following 
@@ -102,6 +107,22 @@ Follow the steps below to create a 7.0 theme using the default theme generator:
     Therefore, make sure you select *No* when asked if you would like Compass
     support.
 
+<!-- In the note at the beginning of this tutorial (for Windows usage), the
+following was stated:
+
+    "When the generator asks you if you need Compass support, type "Y". This
+    will bypass node-gyp completely, and use the Ruby versions of Sass and
+    Compass."
+
+Step 3 says that we should say "No" because we're basing our theme off the
+styled theme. What if we want to use Compass support? 
+
+For the record, indicating both "Y" and "N" worked for me (on Windows). I
+configured both ways (node-gyp and Compass) -Cody -->
+
+<!-- I also had to enter the path to my app server directory and deploy
+directory. Maybe this should be added as a step 4? -Cody -->
+
 The generator will create a new theme in your current directory that inherits 
 styles from [liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled) 
 theme. Note that the base theme you wish to use can be changed after the theme
@@ -132,6 +153,12 @@ When your theme was generated, a `gulpfile.js` file was included that gives you
 access to multiple gulp tasks.
 
 Here's a list of gulp tasks available for the theme generator:
+
+<!-- It may be useful to mention that users should navigate to their new theme
+before running the gulp tasks below. This seems obvious, but I remember feedback
+from the old Maven tutorials I wrote, and the #1 problem I noticed on the forums
+was that developers were not navigating to their newly created project before
+running the highlighted commands. :-) -Cody -->
 
 **build:** generates the base theme files, compiles sass into css, and zips all 
 theme files into a `.war` file, ready to be deployed to a Liferay server. Run
