@@ -1,8 +1,8 @@
 # Converting Legacy Applications to Modules
 
-You've probably heard the term *modularity* discussed quite frequently in
-relation to Liferay 7.0. With Liferay 7.0 transforming into a modular platform,
-components that Liferay uses will be mostly in the form of
+You've probably heard the term *modularity* discussed frequently in relation to
+Liferay 7.0. With Liferay 7.0 transforming into a modular platform, components
+that Liferay uses will be mostly in the form of
 [modules](https://github.com/liferay/liferay-portal/tree/master/modules/apps).
 
 A module doesn't use the traditional Liferay application structure from previous
@@ -22,8 +22,8 @@ briefly in the
 tutorial. Because Liferay 7.0 maintains backwards compatibility, you have the
 option to keep your legacy application as a WAR-style application or convert
 your application into modules. Before you begin following the steps in this
-tutorial to convert your application into modules, you'll consider expert
-recommendations for if and when to convert your legacy application.
+tutorial to convert your application into modules, you'll want to consider the
+recommendations provided for if and when to convert your legacy application.
 
 Before you begin converting your legacy application into modules, it is
 recommended that you first migrate your legacy plugin to a Liferay 7.0
@@ -52,15 +52,15 @@ consume those services from one single module.
 
 **When to not convert?**
 
-- You have a portlet that's using JSR-168/286 compatibility and you still want
-to be able to deploy that into another portlet container. If you want to retain
-that compatibility, it is recommended to stay with the traditional WAR model.
+- You have a portlet that's JSR-168/286 compatible and you still want to be able
+to deploy it into another portlet container. If you want to retain that
+compatibility, it is recommended to stay with the traditional WAR model.
 - You're using a complex legacy web framework that is heavily tied to the Java
 EE programming model, and the amount of work necessary to make that work with
 OSGi is more than you feel is necessary or warranted.
 - If your plugin interacts with the app server. Module-based applications are
 not as portable when they directly interact with the app server.
-- If your legacy application's original intent was to have a limited-lifetime.
+- If your legacy application's original intent is to have a limited-lifetime.
 
 Your decision to convert to modules ultimately comes down to benefits vs. costs.
 Obviously, the time to convert your legacy application is a cost. Likewise,
@@ -69,28 +69,28 @@ there are many benefits to managing your legacy application as modules.
 A large application can be split into many small independent, easy to manage
 components. These small components also allow for incremental release cycles. In
 multi-module projects, this also means a certain component can be updated
-independently. For instance if a JSP is changed due to a security issue, the web
-(client) module can be updated but the persistence modules can remain unchanged.
-For Liferay. this could mean applications that used to have to wait for new
-Liferay releases could see independent releases between Liferay versions.
+independently. For instance, if a JSP is changed due to a security issue, the
+web (client) module can be updated, but the persistence modules can remain
+unchanged. This could mean applications that usually had to wait for new Liferay
+releases could see independent releases between Liferay versions.
 
 Module dependencies are explicitly listed within the module and will refuse to
 run unless all dependencies are met, thus eliminating obscure run time errors.
-Another common deployment issue is multiple versions of the same library in an
-environment. It is possible for the class loader to merge classes from multiple
-versions of a library, leading to very hard to troubleshoot and obscure
+Another common deployment issue for legacy applications was multiple versions of
+the same library in an environment. The class loader would merge classes from
+multiple versions of a library, leading to very hard to troubleshoot and obscure
 problems. Module versions can be stated explicitly in the dependency,
 eliminating these types of issues.
 
 Now that you have some ammunition to make an informed decision on what's best
-for your particular scenario, you'll learn how to convert your legacy WAR
+for your particular situation, you'll learn how to convert your legacy WAR
 application into modules. Before getting started, it's important to reiterate
 that the module structure shown in this tutorial is just one of many ways for
 structuring your application's modules. It's also important to remember that
 applications come in all different shapes and sizes. There may be special
 actions that some applications require. This tutorial will provide the general
 process for converting to modules using Liferay's module structure. The first
-thing you'll do is create your application's client module.
+thing you'll do is create your application's web (client) module.
 
 ## Converting Your Legacy Application's Portlet Classes and UI
 
@@ -164,10 +164,8 @@ permissible.
     unavailable. Therefore, your dependencies are not bundled with your module,
     but instead, they'll be available from the OSGi container.
 
-    <!-- Check step 4 explanation for accuracy. -Cody -->
-
 5.  Copy your legacy application's JSP files into the
-    `/src/main/resources/META-INF/resources` directory. In most cases. all of
+    `/src/main/resources/META-INF/resources` directory. In most cases, all of
     your JSP files should reside in the client module.
 
 6.  Your next task is to copy your portlet classes, non-service classes, and
@@ -193,8 +191,8 @@ permissible.
 
     $$$
 
-7.  Now that you have the necessary classes in your client module, you'll need to
-    edit these classes to be compliant with OSGi. You'll need to choose a
+7.  Now that you have the necessary classes in your client module, you'll need
+    to edit these classes to be compliant with OSGi. You'll need to choose a
     component framework to work with, which is the key to harnessing the power
     of OSGi. Liferay uses Declarative Services, so this tutorial will assume the
     use of this framework. You can, however, choose the component framework you
@@ -231,8 +229,8 @@ permissible.
     class name of the portlet, replacing all periods with underscores (e.g.,
     `com_liferay_web_proxy_portlet_WebProxyPortlet`).
 
-9.  If your legacy application has resource actions, you'll need to migrate those
-    into your client module. Create the
+9.  If your legacy application has resource actions, you'll need to migrate
+    those into your client module. Create the
     `/src/main/resources/resource-actions/default.xml` file, and copy your
     resource actions there. Make sure to create the `src/portlet.properties`
     file and add the following property:
@@ -420,7 +418,7 @@ and add the following:
         compile  project(':tasks.api')
     }
 
-Lastly, add the BND file to your new API module, so it can be recognized by the
+Lastly, add the BND file to your new API module so it can be recognized by the
 OSGi container as a module. For an example BND file used in an API module, see
 the export-import module's
 [`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/export-import/export-import-api/bnd.bnd).
