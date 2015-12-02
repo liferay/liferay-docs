@@ -1,10 +1,14 @@
 # Using Get Entries Screenlet [](id=using-get-entries-screenlet)
 
-You'll use Get Entries Screenlet by following the same basic steps as the 
+You can use Get Entries Screenlet by following the same basic steps as the 
 previous article: insert the Screenlet XML in an activity or fragment layout, 
 and then implement the Screenlet's listener in the activity or fragment class. 
-The following steps show you how to use Get Entries Screenlet in 
-`EntriesFragment`.
+In this article, you'll follow these steps to insert Get Entries Screenlet in 
+`EntriesFragment`. You must also use a 
+[fragment transaction](http://developer.android.com/guide/components/fragments.html#Transactions) 
+to display `EntriesFragment` in `GuestbooksActivity`. 
+
+First, though, you need to create a layout file for `EntriesFragment`.
 
 ## Inserting the Screenlet in the Layout [](id=inserting-the-screenlet-in-the-layout)
 
@@ -46,17 +50,19 @@ This method inflates the `fragment_entries.xml` layout, sets `_guestbookId` to
 the `"guestbookId"` value from the bundle arguments, and returns the Android 
 `View` object. 
 
-Next, you need to implement the Screenlet's `GetEntriesListener` interface in 
-`EntriesFragment`. 
+Next, you need to implement the Screenlet's listener. 
 
 ## Implementing the Screenlet's Listener [](id=implementing-the-screenlets-listener)
 
-First, change the class declaration of `EntriesFragment` to implement the 
-`GetEntriesListener` interface. The class declaration should now look like this: 
+Recall that to use a Screenlet, you must implement its listener. You'll do this 
+for Get Entries Screenlet by implementing `GetEntriesListener` in 
+`EntriesFragment`. First, change `EntriesFragment`'s class declaration to 
+implement the `GetEntriesListener` interface. The class declaration should now 
+look like this: 
 
     public class EntriesFragment extends Fragment implements GetEntriesListener {...
 
-Android Studio marks this class declaration as an error, because you haven't 
+Android Studio marks this class declaration as an error because you haven't 
 implemented the listener's methods yet. Do so now by adding the following 
 methods to the class: 
 
@@ -75,19 +81,29 @@ methods to the class:
 
 Note the `onGetEntriesSuccess` and `onItemClicked` methods are empty. You don't 
 need to do anything in `onGetEntriesSuccess` because the Screenlet's View 
-already displays the entries. You could put a Toast or log message in this 
-method to indicate success, but this isn't required. The `onItemClicked` 
-implementation exists to let the app respond when the user selects an entry in 
-the UI. For example, you may want to navigate to an activity or fragment that 
-displays additional detail about the selected entry. The app doesn't yet, 
-however, contain such an activity or fragment. For now, you can leave 
-`onItemClicked` empty. 
+already displays the entries without any other action required from the app 
+developer. You could put a Toast or log message in this method to indicate 
+success, but it isn't required. The `onItemClicked` implementation exists to let 
+the app respond when the user selects an entry in the UI. For example, you may 
+want to navigate to an activity or fragment that displays additional detail 
+about the selected entry. The app doesn't yet, however, contain such an activity 
+or fragment. For now, you can leave `onItemClicked` empty. The 
+`onGetEntriesFailure` method is the only listener implementation that does 
+something: it displays the error message to the user when the Screenlet fails to 
+retrieve entries. 
 
-Now you're ready to register `EntriesFragment` as the Screenlet's listener, and 
-set the Screenlet's guestbook ID. To do both, you need to get a reference to the 
-Screenlet. Once you have this reference, you can call the Screenlet's 
-`setListener` and `setGuestbookId` methods. Do this now by inserting the 
-following code immediately above the `return` in the `onCreateView` method: 
+Now you're ready to register `EntriesFragment` as the Screenlet's listener. 
+You'll do this the same way you registered `GuestbooksActivity` as the Get 
+Guestbooks Screenlet's listener in the previous article. After doing this, 
+however, there's one additional step you need to take. You need to set Get 
+Entries Screenlet's guestbook ID. The Screenlet needs this so it knows what 
+guestbook to retrieve entries from. 
+
+To register `EntriesFragment` as the Screenlet's listener, and set the 
+Screenlet's guestbook ID, you need to get a reference to the Screenlet. Once you 
+have this reference, you can call the Screenlet's `setListener` and 
+`setGuestbookId` methods. Do this now by inserting the following code 
+immediately above the `return` in the `onCreateView` method: 
 
     GetEntriesScreenlet getEntriesScreenlet = 
         (GetEntriesScreenlet) view.findViewById(R.id.getentries_screenlet);

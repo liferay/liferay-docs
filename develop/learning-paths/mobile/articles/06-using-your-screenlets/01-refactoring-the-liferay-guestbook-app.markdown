@@ -2,7 +2,11 @@
 
 Before you can use your shiny new Screenlets, you need to remove the code you 
 wrote earlier that relies on the Guestbook Mobile SDK. Fortunately, this is a 
-straightforward task. 
+straightforward task. In this article, you'll remove the Guestbook Mobile SDK 
+code from `GuestbooksActivity` and `EntriesFragment`. You'll also delete the 
+`callback` and `model` packages inside the `liferayguestbook` package. You don't 
+need this code anymore, because you've implemented the same functionality in the 
+Screenlets. 
 
 First, open `GuestbooksActivity` and replace its contents with the following 
 code:
@@ -98,7 +102,7 @@ no longer leverages the Guestbook Mobile SDK. Specifically, it doesn't contain
 the `getGuestbooks` or `reloadGuestbooks` methods. It also doesn't contain a 
 `ListView`, an adapter, or an `AdapterView.onItemClickListener` implementation. 
 You don't need these things directly in the activity because you've added the 
-underlying functionality to Get Guestbooks Screenlet. 
+same functionality to the Get Guestbooks Screenlet. 
 
 Next, open `EntriesFragment` and replace its contents with the following code: 
 
