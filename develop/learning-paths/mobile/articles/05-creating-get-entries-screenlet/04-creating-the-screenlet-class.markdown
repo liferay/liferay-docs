@@ -3,11 +3,21 @@
 Recall that app developers primarily interact with the Screenlet class when 
 using a Screenlet in their app. You therefore need to make sure the Screenlet 
 class contains all the attributes and methods the app developer needs. The 
-`GetEntriesScreenlet` class you create here is almost identical to the 
-`GetGuestbooksScreenlet` class. Therefore, this article doesn't explain 
-`GetEntriesScreenlet` in detail. This article does, however, explain the 
-additional needs of `GetEntriesScreenlet`. For a detailed explanation of the 
-rest of the class, see 
+`GetEntriesScreenlet` class you'll create in this article is almost identical to 
+the `GetGuestbooksScreenlet` class. You can therefore create it with the same 
+sequence of steps:
+
+1. Define the Screenlet's attributes. These are the XML attributes the app 
+   developer can set when inserting the Screenlet's XML. These attributes 
+   control aspects of the Screenlet's behavior. 
+
+2. Create the Screenlet class. This class implements the Screenlet's 
+   functionality defined in the View, listener, and interactor. It also reads 
+   the attribute values and configures the Screenlet accordingly. 
+
+Because of this similarity, this article doesn't explain all of 
+`GetEntriesScreenlet` in detail. Instead, focus is placed on the code unique to 
+`GetEntriesScreenlet`. For a detailed explanation of the rest of the class, see 
 [the article on creating `GetGuestbooksScreenlet`](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-screenlet-class). 
 
 You'll get started here by defining the attributes the Screenlet class needs. 
@@ -15,9 +25,9 @@ You'll get started here by defining the attributes the Screenlet class needs.
 ## Defining Screenlet Attributes [](id=defining-screenlet-attributes)
 
 In Get Guestbooks Screenlet, you defined the `layoutId`, `groupId`, and 
-`autoLoad` attributes. You'll define the same attributes for Get Entries 
-Screenlet. Create the file `entries_attrs.xml` in your app's `res/values` 
-directory. Replace the file's contents with the following code:
+`autoLoad` attributes. You need the same attributes for Get Entries Screenlet. 
+Create the file `entries_attrs.xml` in your app's `res/values` directory. 
+Replace the file's contents with the following code:
 
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
@@ -166,12 +176,12 @@ package. Replace this class's contents with the following code:
         }
     }
 
-With a few small but important differences, this is the `GetGuestbooksScreenlet` 
-code adapted for entries. Note that `GetEntriesScreenlet` contains a 
-`_guestbookId` variable for defining the guestbook the Screenlet retrieves 
+This is essentially the `GetGuestbooksScreenlet` code, adapted for entries. The 
+only other difference is the `_guestbookId` variable and the code that uses it. 
+This variable is required to define the guestbook the Screenlet retrieves 
 entries from. The public methods `getGuestbookId` and `setGuestbookId`, 
 respectively, get and set `_guestbookId`. An app developer can call these 
-methods in the activity or fragment class that contains the Screenlet. The 
+methods in the activity or fragment class they use the Screenlet in. The 
 `GetEntriesScreenlet` class's `onUserAction` method calls the interactor's 
 `getEntries` method with `_guestbookId`. 
 

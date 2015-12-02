@@ -47,7 +47,7 @@ than `JSONObject` or `JSONArray`. Becuase the Get Guestbooks Screenlet must
 communicate `GuestbookModel` objects, you must create an event class capable of 
 doing so. 
 
-In Android Studio, create a new package called *event* inside the 
+In Android Studio, create a new package called `event` inside the 
 `getguestbooksscreenlet` package. Inside the `event` package, create a new class 
 called `GetGuestbooksEvent`. Replace the class's code with the following: 
 

@@ -1,11 +1,26 @@
 # Creating the Get Entries Screenlet's UI [](id=creating-the-get-entries-screenlets-ui)
 
-Once you have the `EntryModel` class, you can create the Screenlet's UI. Recall 
-that in Liferay Screens for Android, you create a Screenlet's UI by implementing 
-a View. A View Model interface, layout XML, and View class comprise a View. 
-Before creating these components, however, you should create a new package for 
-them. Get started by creating a new package named `view` inside the 
-`getentriesscreenlet` package.
+Once you have the model class for entries, you can create the Screenlet's UI. 
+Recall that in Liferay Screens for Android, you create a Screenlet's UI by 
+implementing a View. A View Model interface, layout XML, and View class comprise 
+a View. In this article, you'll create Get Entries Screenlet's View by using the 
+same set of steps you used to create Get Guestbooks Screenlet's View:
+
+1. Create the View Model interface.
+
+2. Create the View's layout XML.
+
+3. Create the View class.
+
+As you create these components, you'll notice that they share a great deal of 
+code with the corresponding components in Get Guestbooks Screenlet's View. The 
+biggest difference between these Screenlets' Views is that one displays 
+guestbooks and the other displays entries. The mechanisms they use to display 
+their data, however, are almost identical. 
+
+To get started, create a new package named `view` inside the 
+`getentriesscreenlet` package. You'll first create the View Model interface 
+inside this new `view` package. 
 
 ## Creating the View Model Interface [](id=creating-the-view-model-interface)
 
@@ -56,8 +71,10 @@ This layout serves the same purpose in Get Entries Screenlet as
 
 ## Creating the View Class [](id=creating-the-view-class)
 
-Create the `GetEntriesView` class inside the `view` package. Replace the class's 
-contents with the following code: 
+Recall that a Screenlet's View class forms the core of the Screenlet's UI. The 
+View class renders the UI, handles user interactions, and communicates with the 
+Screenlet class. Create the `GetEntriesView` class inside the `view` package. 
+Replace the class's contents with the following code: 
 
     package com.liferay.docs.getentriesscreenlet.view;
 
@@ -148,12 +165,13 @@ contents with the following code:
         }
     }
 
-This view class works almost exactly like Get Guestbook Screenlet's View class. 
-Besides using `EntryModel` instead of `GuestbookModel`, the `ListView` 
-adapter is the only difference. The adapter in `GetEntriesView` displays the 
-entry and the name of the person who left the entry. It's the same adapter you 
-used to display entries when you used the Guestbook Mobile SDK directly in the 
-app.
+This view class works almost exactly like 
+[Get Guestbook Screenlet's View class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-guestbook-screenlets-ui#creating-the-view-class). 
+Besides using `EntryModel` instead of `GuestbookModel`, the `ListView` adapter 
+is the only difference. The adapter in `GetEntriesView` displays the entry and 
+the name of the person who left the entry. It's the same adapter you used to 
+display entries when you used the Guestbook Mobile SDK directly in 
+`EntriesFragment`. 
 
 Great! You've successfully created the Get Entries Screenlet's View class. Next, 
 you'll create the server calls the Screenlet needs to retrieve the entries. 

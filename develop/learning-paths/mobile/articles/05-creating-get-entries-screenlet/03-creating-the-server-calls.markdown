@@ -5,10 +5,22 @@ the portlet's remote service that returns the entries. As with Get Guestbooks
 Screenlet, you'll do this in Get Entries Screenlet by creating an interactor. 
 Recall that the following components make up an interactor: an event, a 
 callback, the interactor interface and its implementation, and a listener. This 
-article shows you how to create each for the Get Entries Screenlet. The 
-components you create here are almost identical to the analogous components you 
-created for Get Guestbooks Screenlet. Therefore, this article doesn't explain 
-these components in detail. For such an explanation, see 
+article shows you how to create each for the Get Entries Screenlet. You'll 
+create the interactor by using the following steps: 
+
+1. Create the event class.
+
+2. Create the callback class.
+
+3. Create the listener.
+
+4. Create and implement the interactor interface.
+
+This sequence of steps is identical to the one you followed when you created the 
+Get Guestbooks Screenlet's interactor. Likewise, the components you create here 
+are almost identical to the analogous components you created for Get Guestbooks 
+Screenlet. Therefore, this article only explains the parts unique to Get Entries 
+Screenlet. For a detailed explanation of each component, see 
 [the article on creating the Get Guestbooks Screenlet's server calls](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-guestbook-screenlets-server-calls).
 
 First, you'll create the event class. 
