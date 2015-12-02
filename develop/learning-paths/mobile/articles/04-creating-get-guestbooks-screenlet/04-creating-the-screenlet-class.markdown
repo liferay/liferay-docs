@@ -272,6 +272,7 @@ following code:
 
     ((GetGuestbooksScreenlet) getParent()).onItemClicked(_guestbooks.get(position));
 
-Fantastic work! You finished the Get Guestbooks Screenlet! Now you need to 
-create the Get Entries Screenlet. This Learning Path's next section shows you 
-how to do this. 
+Fantastic work! You finished the Get Guestbooks Screenlet! It only gets and 
+displays guestbooks, though. To have a feature-rich app that also gets and 
+displays entries, you need to create the Get Entries Screenlet. This Learning 
+Path's next section shows you how to do this. 
