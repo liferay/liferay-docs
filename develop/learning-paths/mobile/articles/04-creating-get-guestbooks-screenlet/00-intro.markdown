@@ -31,14 +31,16 @@ modularity via Screenlets to present the Guestbook portlet's contents.
 This section of the Learning Path shows you how to create the Get Guestbooks 
 Screenlet. You'll use the following steps to create the Screenlet: 
 
-1. Getting started: creating the Screenlet's package, and model class.
+1. Getting started: creating the Screenlet's package, and model class. 
 
-2. Creating the Screenlet's UI (its View).
+2. Creating the Screenlet's UI (its View). 
 
-3. Creating the Screenlet's server calls. This includes the Screenlet's event, 
-   callback, listener, and interactor.
+3. Creating the Screenlet's server call. Screenlets use *interactors* to make 
+   server calls. The following components make up an interactor: an event, a 
+   callback, a listener, and the interactor interface and its implementation. 
 
-4. Creating the Screenlet class.
+4. Creating the Screenlet class. The Screenlet class governs the Screenlet's 
+   behavior. 
 
 Before beginning, you should read the tutorial 
 [Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android). 

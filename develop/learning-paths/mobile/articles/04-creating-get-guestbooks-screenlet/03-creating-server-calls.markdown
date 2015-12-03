@@ -18,13 +18,20 @@ article shows you how to create each.
 
 You'll create the interactor by using the following steps:
 
-1. Create the event class.
+1. Create the event class. This class handles communication between the 
+   Screenlet's components.
 
-2. Create the callback class.
+2. Create the callback class. Because Android doesn't allow network requests on 
+   its main UI thread, the callback class is required to route the server call 
+   asynchronously through a background thread.
 
-3. Create the listener.
+3. Create the listener. This defines the methods that the app developer needs to 
+   respond to the Screenlet's behavior
 
-4. Create and implement the interactor interface.
+4. Create and implement the interactor interface. This defines and implements 
+   the method that makes the server call. The implementation must also process 
+   the event object that contains the call's results, and then notify the 
+   listener of those results. 
 
 First, you'll create the event. 
 

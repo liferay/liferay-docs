@@ -4,11 +4,13 @@ In Liferay Screens for Android, Screenlet UIs are called Views. Every Screenlet
 must have a View. In this article, you'll create the Get Guestbook Screenlet's 
 View by following these steps:
 
-1. Create the View Model interface.
+1. Create the View Model interface. This interface defines the methods the View 
+   class needs to control the UI.
 
-2. Create the View's layout XML.
+2. Create the View's layout XML. This layout defines the Screenlet's UI.
 
-3. Create the View class.
+3. Create the View class. This class renders the UI, handles user interactions, 
+   and communicates with the Screenlet class.
 
 You'll create the Get Guestbook Screenlet's View in its own package inside the 
 `getguestbooksscreenlet` package. Get started by creating a new package named 
