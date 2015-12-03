@@ -21,12 +21,15 @@ sliced bread. Now it's time to make a sandwich.
 
 In the sections that follow, you'll create Screenlets that retrieve and display 
 guestbooks and entries: the Get Guestbooks Screenlet and the Get Entries 
-Screenlet. You'll then change the app to use these Screenlets instead of 
-directly using the Guestbook Mobile SDK. Because you can insert Screenlets into 
-existing UIs, you won't need to redesign the app. You can insert Get Guestbooks 
-Screenlet into `GuestbookActivity`'s navigation drawer, and Get Entries 
-Screenlet into `EntriesFragment`. When you finish, you'll have an app that uses 
-modularity via Screenlets to present the Guestbook portlet's contents. 
+Screenlet. You'll then change the app to use these Screenlets instead of using 
+the Guestbook Mobile SDK directly in the app's activity and fragment code. 
+Because you can insert Screenlets into existing UIs, you won't need to redesign 
+the app. You can insert Get Guestbooks Screenlet into `GuestbookActivity`'s 
+navigation drawer, and Get Entries Screenlet into `EntriesFragment`. When you 
+finish, you'll have an app that uses modularity via Screenlets to present the 
+Guestbook portlet's contents. The following screenshot illustrates this.
+
+![Figure 1: Besides using Screenlets to retrieve and display guestbooks and entries, the app's design is unchanged.](../../images/android-app-design-screenlets.png)
 
 This section of the Learning Path shows you how to create the Get Guestbooks 
 Screenlet. You'll use the following steps to create the Screenlet: 
