@@ -97,13 +97,11 @@ You'll do this the same way you registered `GuestbooksActivity` as the Get
 Guestbooks Screenlet's listener in the previous article. After doing this, 
 however, there's one additional step you need to take. You need to set Get 
 Entries Screenlet's guestbook ID. The Screenlet needs this so it knows what 
-guestbook to retrieve entries from. 
-
-To register `EntriesFragment` as the Screenlet's listener, and set the 
-Screenlet's guestbook ID, you need to get a reference to the Screenlet. Once you 
-have this reference, you can call the Screenlet's `setListener` and 
-`setGuestbookId` methods. Do this now by inserting the following code 
-immediately above the `return` in the `onCreateView` method: 
+guestbook to retrieve entries from. To register `EntriesFragment` as the 
+Screenlet's listener, and set the Screenlet's guestbook ID, you need to get a 
+reference to the Screenlet. Once you have this reference, you can call the 
+Screenlet's `setListener` and `setGuestbookId` methods. Do this now by inserting 
+the following code immediately above the `return` in the `onCreateView` method: 
 
     GetEntriesScreenlet getEntriesScreenlet = 
         (GetEntriesScreenlet) view.findViewById(R.id.getentries_screenlet);
@@ -114,15 +112,16 @@ Awesome! Now you're ready to put this fragment to use.
 
 ## Adding the Fragment to the Activity [](id=adding-the-fragment-to-the-activity)
 
-When you used the Guestbook Mobile SDK to display entries, you did so with a 
+When you used the Guestbook Mobile SDK directly in the fragment, you displayed 
+the entries in the activity by using a 
 [fragment transaction](http://developer.android.com/guide/components/fragments.html#Transactions). 
 You'll do the same thing here. Since you need to display the selected 
-guestbook's entries, you need to perform the fragment transaction in the 
-`onItemClicked` method of `GuestbooksActivity`. Currently, `onItemClicked` 
-changes the Action Bar's title to the selected guestbook and then closes the 
-drawer. Now you'll add `EntriesFragment` to this method via a fragment 
-transaction. Replace the `onItemClicked` method in `GuestbooksActivity` with the 
-following code: 
+guestbook's entries, you must perform the fragment transaction in the 
+`onItemClicked` method of `GuestbooksActivity`. Currently, `onItemClicked` only 
+changes the Action Bar's title to the selected guestbook's name and then closes 
+the navigation drawer. Now you'll add `EntriesFragment` to this method via a 
+fragment transaction. Replace the `onItemClicked` method in `GuestbooksActivity` 
+with the following code: 
 
     @Override
     public void onItemClicked(final GuestbookModel guestbook) {
@@ -138,9 +137,8 @@ following code:
 
 In addition to the same `setTitle` and `closeDrawers` calls, `onItemClicked` now 
 contains the fragment transaction. Note that this fragment transaction is 
-identical to the one you used earlier in this Learning Path. The transaction 
-itself is the same, regardless of where in the activity it occurs. You even use 
-the same fragment container. 
+identical to the one you used earlier in this Learning Path. You even use the 
+same fragment container. 
 
 Great job! You're finished! Run the app in the emulator and log in with your 
 credentials. Your app now uses the Get Guestbooks and Get Entries Screenlets to 
@@ -150,4 +148,9 @@ show the same guestbooks and entries as the Guestbook portlet.
 
 Congratulations! Now you know how to use the Mobile SDK and Liferay Screens. You 
 even know how to display content from a custom portlet by writing your own 
-Screenlets. 
+Screenlets. This opens up a world of possibilities for developing your own apps. 
+Although you learned a great deal in this Learning Path, there's still more. You 
+can customize your Screenlet's appearance, package it for redistribution, and 
+even configure it to recieve push notifications. These topics, and more, are 
+covered in 
+[the tutorials on Android apps with Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/android-apps-with-liferay-screens). 
