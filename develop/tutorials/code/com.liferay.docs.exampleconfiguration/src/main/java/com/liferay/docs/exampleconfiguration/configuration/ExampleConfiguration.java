@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.liferay.docs.exampleconfig.configuration;
+package com.liferay.docs.exampleconfiguration.configuration;
 
 import aQute.bnd.annotation.metatype.Meta;
 
-@Meta.OCD(id = "com.liferay.docs.exampleconfig.configuration.ExampleConfiguration")
+@Meta.OCD(id = "com.liferay.docs.exampleconfiguration.configuration.ExampleConfiguration")
 public interface ExampleConfiguration {
 
 	@Meta.AD(required = false)

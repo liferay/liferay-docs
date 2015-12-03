@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.liferay.docs.exampleconfig.action;
+package com.liferay.docs.exampleconfiguration.action;
 
 import java.util.Map;
 
@@ -28,7 +28,7 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Modified;
 
-import com.liferay.docs.exampleconfig.configuration.ExampleConfiguration;
+import com.liferay.docs.exampleconfiguration.configuration.ExampleConfiguration;
 import com.liferay.portal.kernel.portlet.ConfigurationAction;
 import com.liferay.portal.kernel.portlet.DefaultConfigurationAction;
 import com.liferay.portal.kernel.util.ParamUtil;
@@ -45,7 +45,7 @@ import aQute.bnd.annotation.metatype.Configurable;
 	service = ConfigurationAction.class
 )
 public class ExampleConfigurationAction extends DefaultConfigurationAction {
-	
+
 	@Override
 	public void processAction(
 			PortletConfig portletConfig, ActionRequest actionRequest,
@@ -54,7 +54,7 @@ public class ExampleConfigurationAction extends DefaultConfigurationAction {
 
 		String favoriteColor = ParamUtil.getString(actionRequest, "favoriteColor");
 		setPreference(actionRequest, "favoriteColor", favoriteColor);
-		
+
 		super.processAction(portletConfig, actionRequest, actionResponse);
 	}
 
@@ -66,17 +66,17 @@ public class ExampleConfigurationAction extends DefaultConfigurationAction {
 		httpServletRequest.setAttribute(
 			ExampleConfiguration.class.getName(),
 			_exampleConfiguration);
-		
+
 		super.include(portletConfig, httpServletRequest, httpServletResponse);
 	}
-	
+
 	@Activate
 	@Modified
 	protected void activate(Map<Object, Object> properties) {
 		_exampleConfiguration = Configurable.createConfigurable(
 			ExampleConfiguration.class, properties);
 	}
-	
+
 	private volatile ExampleConfiguration _exampleConfiguration;
 
 }

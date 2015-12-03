@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.liferay.docs.exampleconfig.portlet;
+package com.liferay.docs.exampleconfiguration.portlet;
 
 import java.io.IOException;
 import java.util.Map;
@@ -27,14 +27,14 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Modified;
 
-import com.liferay.docs.exampleconfig.configuration.ExampleConfiguration;
+import com.liferay.docs.exampleconfiguration.configuration.ExampleConfiguration;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 
 import aQute.bnd.annotation.metatype.Configurable;
 
 @Component(
 	configurationPid =
-	"com.liferay.docs.exampleconfig.configuration.ExampleConfiguration",
+	"com.liferay.docs.exampleconfiguration.configuration.ExampleConfiguration",
 	immediate = true,
 	property = {
 		"com.liferay.portlet.display-category=category.sample",
@@ -46,8 +46,8 @@ import aQute.bnd.annotation.metatype.Configurable;
 	},
 	service = Portlet.class
 )
-public class ExampleConfigPortlet extends MVCPortlet {
-	
+public class ExampleConfigurationPortlet extends MVCPortlet {
+
 	@Override
 	public void doView(RenderRequest renderRequest,
 		RenderResponse renderResponse) throws IOException, PortletException {
@@ -58,7 +58,7 @@ public class ExampleConfigPortlet extends MVCPortlet {
 
 		super.doView(renderRequest, renderResponse);
 	}
-	
+
 	public String getFavoriteColor(Map labels) {
 		return (String) labels.get(_exampleConfiguration.favoriteColor());
 	}
