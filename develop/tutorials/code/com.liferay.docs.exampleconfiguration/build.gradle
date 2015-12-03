@@ -1,7 +1,7 @@
 buildscript {
     repositories {
         ivy {
-            url 'https://bndtools.ci.cloudbees.com/job/bnd.master/719/artifact/dist/bundles'
+            url 'https://bndtools.ci.cloudbees.com/job/bnd.master/lastSuccessfulBuild/artifact/dist/bundles'
             layout 'pattern', {
                 artifact '[module]/[artifact]-[revision].[ext]' /* OSGi repo pattern */
             }
@@ -40,4 +40,8 @@ dependencies {
     compile 'com.liferay.portal:util-java:7.0.0-SNAPSHOT'
     compile 'org.slf4j:slf4j-api:1.7.7'
     compile 'org.slf4j:slf4j-simple:1.7.7'
+}
+
+task wrapper(type:Wrapper){
+    gradleVersion = '2.4'
 }
