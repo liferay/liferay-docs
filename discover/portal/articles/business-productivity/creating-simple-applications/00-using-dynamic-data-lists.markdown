@@ -23,7 +23,7 @@ the following actions:
 
 - Customize the output format
 
-- Integrate lists into Workflow 
+<!--- Integrate lists into Workflow -->
 
 All of this capability is summarized in two concepts: data defining
 and data displaying. These data lists are dynamic for a reason: they are
@@ -31,4 +31,4 @@ flexible and powerful. From collecting simple input from the user ("Did you find
 what you were looking for?") to developing an entire data entry system for real
 estate listings, Dynamic Data Lists have your use case covered. Combined with
 the flexibility provided through templates and the power of languages like
-Freemarker, entire applications can be built in a short time.
+FreeMarker, entire applications can be built in a short time.
