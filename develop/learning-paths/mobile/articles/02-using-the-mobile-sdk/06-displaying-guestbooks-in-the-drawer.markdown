@@ -1,4 +1,4 @@
-# Displaying Guestbooks in the Drawer [](id=displaying-guestbooks-in-the-drawer)
+# Displaying Guestbooks
 
 Recall that the `GuestbooksActivity` you created earlier contains a navigation 
 drawer that slides out from the left side of the screen. Now that you've made 
