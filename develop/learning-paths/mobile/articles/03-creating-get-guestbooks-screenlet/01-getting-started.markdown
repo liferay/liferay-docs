@@ -21,7 +21,7 @@ and reopen the *java* folder in project view.
 
 Now you're ready to get started on the Screenlet itself.
 
-## Creating the Model Class for Guestbooks
+## Creating the Model Class for Guestbooks [](id=creating-the-model-class-for-guestbooks)
 
 Although you'll retrieve guestbooks by using the Screenlet, the Screenlet must 
 use the same Guestbook Mobile SDK you built earlier to call the Guestbook 
@@ -31,6 +31,6 @@ can reuse the existing `GuestbookModel` class. In Android Studio's project view,
 copy `GuestbookModel` and paste it in the `getguestbooksscreenlet` package. In 
 the *Copy Class* dialogue that appears, accept the defaults and click *OK*. If 
 you need a review of how `GuestbookModel` works, see 
-[this Learning Path article](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-guestbooks#creating-the-model-class-for-guestbooks).
+[this Learning Path article](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieving-guestbooks#creating-the-model-class-for-guestbooks).
 
 Next, you need to create the Screenlet's UI.

@@ -5,7 +5,7 @@ made by the Mobile SDK in an activity or fragment. This is because Screenlets
 also use the Mobile SDK to make server calls. For example, the Get Guestbooks 
 Screenlet must use the Guestbook Mobile SDK to make the server call that gets 
 guestbooks. When you 
-[used the Guestbook Mobile SDK to make the server call from `GuestbooksActivity`](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-guestbooks), 
+[used the Guestbook Mobile SDK to make the server call from `GuestbooksActivity`](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieving-guestbooks), 
 you made the call via a callback class. The Get Guestbooks Screenlet must also 
 make the call via a callback class. That's where the similarities end, though. 
 
@@ -101,7 +101,7 @@ Next, you'll create a callback class that uses this event class.
 ## Creating the Callback Class [](id=creating-the-callback-class)
 
 When you used the Guestbook Mobile SDK directly in an activity or fragment, you 
-[created a callback class](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-guestbooks#creating-a-callback-class) 
+[created a callback class](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieving-guestbooks#creating-a-callback-class) 
 to route network requests asynchronously through another thread. You did this 
 because Android doesn't allow network requests from the main UI thread. You also 
 need to use a callback class in Screenlets.
@@ -283,7 +283,7 @@ constructor as its only constructor.
 
 As mentioned before, the `getGuestbooks` method retrieves all the guestbooks 
 from a site. This method is almost identical to the 
-[`getGuestbooks` method you created earlier in this Learning Path](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-guestbooks#making-the-server-call). 
+[`getGuestbooks` method you created earlier in this Learning Path](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieving-guestbooks#making-the-server-call). 
 Despite minor differences, this method does the same thing. 
 
 The `GetGuestbooksInteractorImpl` class finishes with the `onEvent` method. This 

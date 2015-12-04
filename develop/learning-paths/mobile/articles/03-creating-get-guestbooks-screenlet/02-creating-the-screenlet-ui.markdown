@@ -76,7 +76,7 @@ $$$
 
 Awesome! Now you're ready to create the View's layout XML.
 
-## Creating the View's Layout XML
+## Creating the View's Layout XML [](id=creating-the-views-layout-xml)
 
 Before creating the View class, you should create the View's layout XML. This 
 defines the Screenlet's UI. Create the file `guestbooks_default.xml` in the 
@@ -106,7 +106,7 @@ as content for the layout XML you just created. This is why you didn't need to
 put any other content in the layout. You'll use the `ListView` in the View class 
 to display the guestbooks programmatically. Note that this is similar to what 
 you did in 
-[`EntriesFragment` in this Learning Path's previous section](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-entries#creating-a-fragment-for-the-entries): 
+[`EntriesFragment` in this Learning Path's previous section](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieving-guestbook-entries#creating-a-fragment-for-the-entries): 
 by extending `ListFragment`, you gained an implicit `ListView` that you used to 
 display entries programmatically in a list.
 
@@ -172,7 +172,7 @@ click listener. Add the following constructors to the `GetGuestbooksView` class:
     }
 
 The adapter in the last constructor should look familiar: 
-[it's effectively the same one you used earlier](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-guestbooks#displaying-guestbooks-in-the-drawer). 
+[it's effectively the same one you used earlier](/develop/learning-paths/mobile/-/knowledge_base/6-2/displaying-guestbooks). 
 It displays a single line of text for each list item by using the built-in 
 Android layout `simple_list_item_activated_1`. After setting the adapter to the 
 implicit `ListView`, the constructor finishes by using the `AdapterView` class's 
@@ -212,7 +212,7 @@ as a parameter, in the `GetGuestbooksViewModel` interface. In this method's
 implementation, you must refresh the list of guestbooks in `_guestbooks` and 
 notify the `ListView`'s adapter of the change. You'll do this the same way you 
 did in the `reloadGuestbooks` method when you 
-[used the Mobile SDK to retrieve and display guestbooks](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieve-and-display-guestbooks). 
+[used the Mobile SDK to retrieve guestbooks](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieving-guestbooks). 
 If the operation to retrieve guestbooks fails, you should use the 
 `showFailedOperation` method to log and display the error to the user. You 
 can do this with Screens's `LiferayLogger` and `LiferayCrouton` helper classes. 

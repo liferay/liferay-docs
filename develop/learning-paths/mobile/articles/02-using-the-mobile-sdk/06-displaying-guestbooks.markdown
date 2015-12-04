@@ -1,4 +1,4 @@
-# Displaying Guestbooks
+# Displaying Guestbooks [](id=displaying-guestbooks)
 
 Recall that the `GuestbooksActivity` you created earlier contains a navigation 
 drawer that slides out from the left side of the screen. Now that you've made 
@@ -28,7 +28,7 @@ This article guides you though each step in the process.
 
 You'll begin by initializing the Action Bar. 
 
-## Initializing the Action Bar
+## Initializing the Action Bar [](id=initializing-the-action-bar)
 
 By default, the Action Bar displays the activity's name. You'll change it to 
 display the selected guestbook's name by modifying the code that creates the 
@@ -81,7 +81,7 @@ like this:
 Now you're ready to write the code that puts the guestbooks in the navigation 
 drawer.
 
-## Putting Guestbooks in the Navigation Drawer
+## Putting Guestbooks in the Navigation Drawer [](id=putting-guestbooks-in-the-navigation-drawer)
 
 To put the guestbooks in the navigation drawer, you must first put a 
 [`ListView`](http://developer.android.com/guide/topics/ui/layout/listview.html) 
@@ -183,7 +183,7 @@ class, delete the line of code that creates a new `DrawerLayout` in the
 Great! Your app can now display guestbooks in the drawer. Now you're ready to 
 set what happens when a guestbook is selected in the drawer. 
 
-## Enabling Guestbook Selection in the Navigation Drawer
+## Enabling Guestbook Selection in the Navigation Drawer [](id=enabling-guestbook-selection-in-the-navigation-drawer)
 
 To enable guestbook selection in the drawer, first change the 
 `GuestbooksActivity` class to implement `AdapterView.OnItemClickListener` 
@@ -362,7 +362,7 @@ like:
 You're almost ready to run the app. Next, you'll tie up some loose ends in the 
 navigation drawer's UI. 
 
-## Customizing the Navigation Drawer
+## Customizing the Navigation Drawer [](id=customizing-the-navigation-drawer)
 
 Before basking in the glory of your accomplishment, you need to do some cleanup 
 and customize the navigation drawer's appearance. Because you're no longer using 

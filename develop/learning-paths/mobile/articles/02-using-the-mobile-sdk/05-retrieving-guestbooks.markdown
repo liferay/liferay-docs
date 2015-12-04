@@ -1,4 +1,4 @@
-# Retrieving Guestbooks
+# Retrieving Guestbooks [](id=retrieving-guestbooks)
 
 Now that you know this app's basic structure, and also know the basics of making 
 calls with the Guestbooks Mobile SDK, you're ready to retrieve guestbooks from 

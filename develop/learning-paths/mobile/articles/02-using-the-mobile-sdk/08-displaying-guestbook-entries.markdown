@@ -1,4 +1,4 @@
-# Displaying Guestbook Entries
+# Displaying Guestbook Entries [](id=displaying-guestbook-entries)
 
 To display entries, you need to perform the following two steps: 
 
@@ -12,7 +12,7 @@ To display entries, you need to perform the following two steps:
 
 You'll get started by creating the adapter. 
 
-## Creating the Adapter
+## Creating the Adapter [](id=creating-the-adapter)
 
 First, you must create a variable for the adapter. Add it to `EntriesFragment` 
 as follows: 
@@ -149,7 +149,7 @@ to make sure it looks like this:
 Next, you'll display the entries by adding `EntriesFragment` to 
 `GuestbooksActivity`. 
 
-## Adding EntriesFragment to GuestbooksActivity
+## Adding EntriesFragment to GuestbooksActivity [](id=adding-entriesfragment-to-guestbooksactivity)
 
 Now that `EntriesFragment` can put entries in its `ListView`, you're ready to 
 add the fragment to `GuestbooksActivity`. First, you need to put a fragment 

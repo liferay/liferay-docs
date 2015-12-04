@@ -1,4 +1,4 @@
-# Retrieving Guestbook Entries
+# Retrieving Guestbook Entries [](id=retrieving-guestbook-entries)
 
 If you completed the previous articles in this Learning Path, then you have an
 Android app that retrieves and displays guestbooks from the 
