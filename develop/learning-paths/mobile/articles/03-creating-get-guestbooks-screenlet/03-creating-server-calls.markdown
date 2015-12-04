@@ -50,7 +50,7 @@ Screenlets. These classes extend the abstract class
 [`BasicEvent`](https://github.com/liferay/liferay-screens/blob/1.2.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/BasicEvent.java).
 Likewise, you can create your own event classes by extending `BasicEvent`. You 
 should create your own event classes when you must communicate objects other 
-than `JSONObject` or `JSONArray`. Becuase the Get Guestbooks Screenlet must 
+than `JSONObject` or `JSONArray`. Because the Get Guestbooks Screenlet must 
 communicate `GuestbookModel` objects, you must create an event class capable of 
 doing so. 
 

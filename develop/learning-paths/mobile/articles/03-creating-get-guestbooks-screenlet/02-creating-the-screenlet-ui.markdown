@@ -27,7 +27,7 @@ contains getter and setter methods for the Add Bookmark Screenlet's `url` and
 `title` attributes. Since that Screenlet needs to add a bookmark to Liferay's 
 Bookmarks portlet, its View needs those methods so it can get and set the 
 bookmark's URL and title from the UI. The Screenlet's View class then implements 
-those methods. You need to define an analagous View Model interface for the Get 
+those methods. You need to define an analogous View Model interface for the Get 
 Guestbooks Screenlet. 
 
 So what methods should be defined by the Get Guestbooks Screenlet's View Model 

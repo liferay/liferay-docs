@@ -151,6 +151,6 @@ even know how to display content from a custom portlet by writing your own
 Screenlets. This opens up a world of possibilities for developing your own apps. 
 Although you learned a great deal in this Learning Path, there's still more. You 
 can customize your Screenlet's appearance, package it for redistribution, and 
-even configure it to recieve push notifications. These topics, and more, are 
+even configure it to receive push notifications. These topics, and more, are 
 covered in 
 [the tutorials on Android apps with Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/android-apps-with-liferay-screens). 

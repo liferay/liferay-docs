@@ -1,7 +1,7 @@
 # Getting Started with Get Entries Screenlet [](id=getting-started-with-get-entries-screenlet)
 
 Like Get Guestbooks Screenlet, you'll create Get Entries Screenlet in a new 
-package inside your app's project. You'll do this becuase you don't need to 
+package inside your app's project. You'll do this because you don't need to 
 redistribute the Screenlet. Get started by creating the package 
 `com.liferay.docs.getentriesscreenlet`. Once you have this package, you're ready 
 to start writing the Screenlet. 
