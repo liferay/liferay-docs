@@ -107,7 +107,7 @@ additional points for consideration.
 ## Additional Model Listener Considerations [](id=additional-model-listener-considerations)
 
 If you look into the *Value Object* section of Liferay's
-[`portal.propertties`](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Value%20Object)
+[`portal.properties`](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Value%20Object)
 file, you'll see that there's already a `UserListener` class. Among other
 things, it includes logic for exporting users to an LDAP directory. Adding
 another model listener on the `User` entity doesn't override the portal's

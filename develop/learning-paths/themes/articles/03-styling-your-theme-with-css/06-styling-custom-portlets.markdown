@@ -30,7 +30,7 @@ section, but to keep things organized, you should place the styling in
 
         /*---------Guestbook Portlet Styles------------*/
         .guestbook-portlet {
-            background-color: #DF5946;
+            background-color: $themeMainColor;
             border: 2px solid #50A2F6;
             border-radius: 25px;
             color: #FFF;
@@ -59,7 +59,8 @@ section, but to keep things organized, you should place the styling in
     elements for each of the columns in the rows. Now you can add the styles to
     update the table.
 
-3. Add the following code below the `color: #FFF;` style and save the file:
+3.  Add the following code for the guestbook below the `padding: 30px;` style and
+    save the file:
 
         .table {
             th {

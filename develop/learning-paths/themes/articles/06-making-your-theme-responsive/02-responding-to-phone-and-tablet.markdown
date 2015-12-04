@@ -329,10 +329,13 @@ responsive for phones and tablets.
                             .page-title{
                                 padding-top:20px;
                             }
+                            .no-page-title{
+                                padding-top:60px;
+                            }
                         }
 
                         #navigation.open{
-                            margin-top:-178px;
+                            margin-top:-184px;
                         }
                     }
 

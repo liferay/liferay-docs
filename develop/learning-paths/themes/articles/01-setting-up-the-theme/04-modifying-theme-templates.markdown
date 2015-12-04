@@ -6,7 +6,7 @@ In this section, you'll add some touches to `portal_normal.ftl` and
 1.  Open `portal_normal.ftl` and find the `<body class="${css_class}">` and 
     replace it with the following code:
    
-       <body class="${css_class} dockbar-split">
+        <body class="${css_class} dockbar-split">
  
     Your theme now has the modern dockbar that's in Liferay's Classic theme.
 

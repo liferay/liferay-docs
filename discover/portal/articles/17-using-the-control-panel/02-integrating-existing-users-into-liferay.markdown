@@ -588,8 +588,7 @@ Provider.
 
 ### Setting up Liferay as a SAML Identity Provider [](id=setting-up-liferay-as-a-saml-identity-provider)
 
-In order to set Liferay up to act as a SAML Identity Provider, follow these
-steps:
+To set Liferay up to act as a SAML Identity Provider, follow these steps:
 
 1. Install the SAML 2.0 Provider EE app, either via the Control Panel's
    Marketplace interface or manually. To confirm that the plugin was
@@ -602,9 +601,9 @@ steps:
 
 2. To begin configuring Liferay to use SAML, you need to select a SAML role
    for Liferay and you need to choose an entity ID.
-   
+
     ![Figure x: Select a SAML role for Liferay and enter an entity ID.](../../images/saml-initial-config.png)
- 
+
     The SAML role can be set to Identity Provider or Service Provider.
     Select the *Identity Provider* SAML role. A single Liferay instance can
     serve as an identity provider or as a service provider, but not both.
@@ -636,8 +635,8 @@ steps:
         saml.keystore.manager.impl=com.liferay.saml.credential.FileSystemKeyStoreManagerImpl
 
     This portlet property means that the keystore will be created in the
-    filesystem.  The default location is the `[Liferay Home]/data` directory.
-    However, this portlet property can be changed: 
+    filesystem. The default location is the `[Liferay Home]/data` directory.
+    However, this portlet property can be changed:
 
         saml.keystore.manager.impl=com.liferay.saml.credential.DLKeystoreManagerImpl
 
@@ -660,7 +659,7 @@ steps:
    the password.
 
     ![Figure x: The General tab of the SAML Admin portlet displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](../../images/saml-keystore-info.png)
- 
+
     Also, notice that additional options appear in the SAML Admin Control Panel
     portlet. There are three tabs:
 
@@ -679,24 +678,109 @@ steps:
 5. Finally, after you've saved your certificate and private key information,
    check the *Enabled* box at the top of the General tab and click *Save*.
    Great! You've successfully set Liferay up as a SAML Identity Provider!
- 
-To configure Liferay's SAML Identity Provider Settings, navigate to the Identity
-Provider tab of the SAML Admin Control Panel portlet. Of course, setting up
-Liferay as a SAML Identity Provider is only useful if you can connect to one or
-more SAML Service Providers. Navigate to the Service Provider Connections tab of
-the SAML Admin Control Panel portlet and click on the *Add Service Provider*
-button to add a SAML Service Provider. Right now, we don't have one to add but
-next, we'll learn how to set Liferay up as a SAML Service Provider.
 
-After you've set up another Liferay instance as a Service Provider, you can come
-back to this Liferay instance's Control Panel and add the Service Provider:
-*Control Panel* &rarr; *SAML Admin* &rarr; *Service Provider Connections* &rarr;
-*Add Service Provider*.
+To configure Liferay's SAML Identity Provider Settings, navigate to the Identity
+Provider tab of the SAML Admin Control Panel entry.
+
+The Identity Provider tab includes these options:
+
+**Sign Metadata:** When this box is checked, the metadata XML file that's
+produced is signed.
+
+**SSL Required:** When this box is checked, any SAML messages that are *not*
+sent over SSL are rejected. This does not affect how URLs are generated.
+
+**Authn Request Signature Required:** When this box is checked, each Authn
+Request must be signed by the sending Service Provider. In most cases, this
+should be enabled. 
+
+**Session Maximum Age:** Specify the maximum duration of the SAML SSO session
+in seconds. If this property is not set or is set to `0`, the SSO session has an
+unlimited duration. The SSO session maximum duration can be longer than the
+portal session maximum duration. If the portal session expires before the SSO
+session expires, the user is automatically logged back in to the portal.  SSO
+session expiration does not trigger a single logout from all service providers.
+You can use the session maximum age, for example, to force users to sign in
+again after a certain period of time.
+
+**Session Timeout:** Specify the maximum idle time of the SAML SSO session.
+Even if the session maximum age is unlimited, the SSO session expires whenever
+the user's idle time reaches the limit set by the session timeout property.
+
+**Service Provider Defaults:** The options in this section set defaults that
+are used when adding new service provider connections.
+
+Of course, setting up Liferay as a SAML Identity Provider is only useful if you
+can connect to one or more SAML Service Providers. Navigate to the Service
+Provider Connections tab of the SAML Admin Control Panel entry and click 
+the *Add Service Provider* button to add a SAML Service Provider.
+
+The New Service Provider page includes these options:
+
+**Name:** The name of the Service Provider with which to connect.
+
+**Entity ID:** The Service Provider's entity ID. This value must match the
+entity ID declared in the Service Provider metadata.
+
+**Enabled:** When this box is checked, the Service Provider connection is
+active.
+
+**Assertion Lifetime:** Defines the number of seconds after which the SAML
+assertion issued by the Identity Provider should be considered expired.
+
+**Metadata:** You can either provide a URL to the Service Provider metadata XML
+file or you can manually upload the Service Provider metadata XML file. If you
+provide a URL, the XML file is automatically retrieved and periodically
+polled for updates. The update interval can be configured in
+`portlet.properties` with the `saml.metadata.refresh.interval` property which
+specifies a number of seconds. If fetching the metadata XML file by URL fails,
+you won't be able to enable the Service Provider connection. If the Identity
+Provider server cannot access the metadata via URL, you can upload the XML file
+manually. In this case, the metadata XML file is not automatically updated.
+
+**Name Identifier Format:** This selector lets you choose the Name Identifier
+Format used in the SAML Response. This should be set according to what the
+Service Provider expects to receive. For Liferay Service Providers, any
+selection other than email address indicates that the Name Identifier refers to
+screen name. The formats don't have any special meaning to Liferay Identity
+Providers. The NameID value is defined by the Name Identifier attribute. (See
+the next option.)
+
+**Name Identifier Attribute Name:** This specifies which attribute of the
+Liferay `User` object to use as the NameID value. Possible values include
+`emailAddress`, `screenName` and `uuid`. Additionally, you can prefix the name
+with `static:` or `expando:`. If you use the prefix `static`, the value is
+whatever comes after `static:`. If you use the prefix `expando`, the value is
+whatever custom field is specified after `expando:`. For example, `expando:SSN`
+would look up the `User` custom field with the name `SSN`.
+
+**Attributes Namespace Enabled:** When this box is checked, the attribute names
+are namespaced like this:
+
+    urn:liferay:user:expando:
+    urn:liferay:user:
+    urn:liferay:groups:
+    urn:liferay:organizationRole:
+    urn:liferay:organization:
+    urn:liferay:roles:
+    urn:liferay:siteRole:
+    urn:liferay:userGroupRole:
+    urn:liferay:userGroups:
+
+Note that the full namespace depends on the attribute name. The namespaces are
+useful, for example, when you have an Expando attribute that might otherwise
+create an attribute with the same name as some other attribute.
+
+If you don't have a Service Provider to add right now, that's fine. In the next
+section, you'll learn how to set Liferay up as a SAML Service Provider. After
+you've set up another Liferay instance as a Service Provider, you can come back
+to this Liferay instance and add the Service Provider: *Control Panel* &rarr;
+*SAML Admin* &rarr; *Service Provider Connections* &rarr; *Add Service
+Provider*.
 
 ### Setting up Liferay as a SAML Service Provider [](id=setting-up-liferay-as-a-saml-service-provider)
 
-In order to set Liferay up to act as a SAML Service Provider, use the following
-steps. Many of the steps are similar to the ones for setting Liferay up to act
+Many of these steps are similar to the ones for setting Liferay up to act
 as a SAML Identity Provider. A single Liferay instance can be configured as a
 SAML Identify Provider *or* as a SAML Service Provider but not as both. If
 you've already set up one Liferay instance as a SAML Identity Provider, use a
@@ -707,7 +791,7 @@ you've already set up one Liferay instance as a SAML Identity Provider, use a
    successfully deployed, look for the *SAML Admin* entry in the Configuration
    section of the Control Panel.
 
-2. To begin configuring the Liferay to use SAML, you need to select a SAML role
+2. To begin configuring the Liferay to use SAML, you must select a SAML role
    for Liferay and you need to choose an entity ID. The SAML role can be set to
    Identity Provider or Service Provider. Select the *Service Provider*
    SAML role. Enter *liferaysamlsp* if you're setting up an example Liferay
@@ -716,7 +800,7 @@ you've already set up one Liferay instance as a SAML Identity Provider, use a
 
 3. The Certificate and Private Key section allows you to enter information that
    will be used to create a keystore for SAML. Enter the following information:
-    
+
     - Your common name (your first and last name)
     - The name of your organization
     - The name of your organizational unit
@@ -783,17 +867,78 @@ you've already set up one Liferay instance as a SAML Identity Provider, use a
    top of the General tab and click *Save*. Great! You've successfully set
    Liferay up as a SAML Service Provider!
 
-If you'd like to configure Liferay's SAML Service Provider Settings, navigate to
+Note that the SAML Service Provider session is tied to the normal session on
+the application server. Session expiration on the application server terminates
+the session on the Service Provider but does not initiate single logout. If
+you'd like to configure Liferay's SAML Service Provider Settings, navigate to
 the Service Provider tab of the SAML Admin Control Panel portlet.
+
+The Service Provider tab includes these options:
+
+**Assertion Signature Required:** When this box is checked, SAML assertions
+must be individually signed in addition to the entire SAML message.
+
+**Clock Skew:** Clock skew is a tolerance in milliseconds used by the Service
+Provider for verifying expiration of messages and assertions. This can be used
+to mitigate time differences between the clocks of the Identity Provider and
+the Service Provider. This usually only matters when assertions have been made
+to expire very quickly.
+
+**LDAP Import Enabled:** When this box is checked, user information is imported
+from the configured LDAP connection based on the resolved NameID. LDAP
+connections can be configured from Portal Settings.
+
+**Sign Authn Requests:** When this box is checked, the AuthnRequest is signed
+even if the Identity Provider metadata indicates that it's not required.
+
+**Sign Metadata:** When this box is checked, the metadata XML file is signed.
+
+**SSL Required:** When this box is checked, any SAML messages that are not sent
+over HTTPS are rejected. This does not affect how URLs are generated.
+
+The Identity Provider page includes these options:
+
+**Name:** The name of the Identity Provider with which to connect.
+
+**Entity ID:** The entity ID of the Identity Provider. This value must match
+the entity ID declared in the Identity Provider metadata.
+
+**Clock Skew:** Clock skew is a tolerance in milliseconds used by the Service
+Provider for verifying expiration of messages and assertions. This can be used
+to mitigate time differences between the clocks of the Identity Provider and
+the Service Provider. This usually only matters when assertions have been made
+to expire very quickly.
+
+**Force Authn:** When this box is checked, the Service Provider asks the
+Identity Provider to re-authenticate the user before verifying the user.
+
+**Metadata:** You can either provide a URL to the Identity Provider metadata
+XML file or you can manually upload the Identity Provider metadata XML file. If
+you provide a URL, the XML file is automatically retrieved and periodically
+polled for updates. The update interval can be configured in
+`portlet.properties` with the `saml.metadata.refresh.interval` property which
+specifies a number of seconds. If fetching the metadata XML file by URL fails,
+you won't be able to enable the Identity Provider connection. If the metadata
+is inaccessible via URL, you can upload the XML file manually. In this case,
+the metadata XML file is not automatically updated.
+
+**Attribute Mapping:** The attribute mapping is done from the attribute name or
+friendly name in the SAML Response to the Liferay attribute name. For example,
+if you want to map a response attribute named `mail` to the Liferay attribute
+`emailAddress`, you'd enter the following mapping:
+
+    mail=emailAddress
+
+Available Liferay attributes are: `emailAddress`, `screenName`, `firstName`,
+`lastName`, `modifiedDate`, and `uuid`.
 
 +$$$
 
-**Note:** The previous two sections explained how to use the SAML portlet's
-Control Panel interface to configure Liferay as an Identity Provider and as a
-Service Provider. It's possible to configure Liferay as an Identity Provider or
-as a Service Provider entirely through the `portal-ext.properties` file.
-We recommend, however, using the Control Panel SAML interface because it
-specifies required fields and validates some fields.
+**Note:** The previous two sections explained how to use the SAML 2.0 Provider
+EE plugin's Control Panel interface to configure Liferay as an Identity
+Provider or as a Service Provider. Such configurations should only be made
+through the SAML Control Panel interface and not via properties. Some features
+of the SAML 2.0 Provider EE plugin are not available as properties.
 
 $$$
 
@@ -825,6 +970,28 @@ binding can be added in this form:
     </md:EntityDescriptor>
 
 $$$
+
+### Important SAML URLs [](id=important-saml-urls)
+
+For reference, here are a few important SAML URLs.
+
+This URL is the default location of Liferay's metadata XML file:
+
+    [host]:[port]/c/portal/saml/metadata
+
+Note that when configuring SAML for Liferay, no importing of SAML certificates
+is required. Liferay reads certificates from the SAML metadata XML file. If you
+want a third-party application like Salesforce to read a Liferay SAML
+certificate, you can export the Liferay certificate from the keystore. The
+default keystore file is `[Liferay Home]/data/keystore.jks`. The exported
+certificate can be imported by a third-party application like Salesforce.
+
+With the URL below, you can trigger an Identity Provider initiated SSO. The
+`entityId` parameter is the entity ID of the Service Provider you want to log
+in to. The `RelayState` parameter is optional. It specifies a landing page on
+the Service Provider.
+
+    [host]:[port]/c/portal/saml/sso?entityId=[SP entity id]&RelayState=[landing page on SP]
 
 ### Setting Up Liferay as a SAML Service Provider in a Clustered Environment [](id=setting-up-liferay-as-a-saml-service-provider-in-a-clustered-environment)
 

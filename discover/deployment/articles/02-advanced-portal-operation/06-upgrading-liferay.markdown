@@ -170,6 +170,13 @@ property for your installation, you'd use the `FileSystemHook` property above.
 If you customized the property, you should know which one you used, and it is
 likely already in your `portal-ext.properties` file. 
 
+If you're using the `FileSystemHook`, you should also specify the image root
+directory in your `portal-ext.properties` file. This enables the
+`FileSystemHook` to allow data migration from other hooks. Here is the default
+property setting: 
+
+    image.hook.file.system.root.dir=${liferay.home}/data/images
+
 The third thing you need to do to prepare for your upgrade is to review the new
 property defaults. 
 
