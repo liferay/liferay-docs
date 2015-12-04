@@ -1,17 +1,21 @@
 # Understanding GuestbooksActivity's UI [](id=understanding-guestbooksactivitys-ui)
 
 You used Android Studio's Navigation Drawer Activity template to create 
-`GuestbooksActivity`. Any activity produced by this template contains a 
-navigation drawer and all the components needed by the activity. This includes 
+`GuestbooksActivity`. Any activity created by this template contains a 
+navigation drawer and all the components the activity needs. This includes 
 the layout files that display content. Currently, these files contain simple 
 placeholder content that you'll later replace with dynamic portal content. 
-Before doing so, you need to know where the placeholder content exists in the 
-project's structure, and how the app displays it. This article shows you this.
+Before doing so, you should know where the placeholder content exists in the 
+project's structure, and how the app displays it. 
+
+The app's UI is defined by three layout files: `activity_guestbooks.xml`, 
+`app_bar_guestbooks.xml`, `content_guestbooks.xml`. This article shows you how 
+these layouts combine to display the app's content.
 
 ## Understanding the Activity's Layout File [](id=understanding-the-activitys-layout-file)
 
-First, open `GuestbooksActivity`'s layout file, 
-`res/layout/activity_guestbooks.xml`. This file should look something like this:
+First, open `GuestbooksActivity`'s layout file, `activity_guestbooks.xml`. This 
+file should look something like this:
 
     <?xml version="1.0" encoding="utf-8"?>
     <android.support.v4.widget.DrawerLayout 
@@ -41,24 +45,22 @@ First, open `GuestbooksActivity`'s layout file,
 
 This is a small amount of code considering everything that's in 
 `GuestbooksActivity`. The `NavigationView` and parent `DrawerLayout` define the 
-navigation drawer. In turn, two attributes in `NavigationView` define the 
-drawer's contents: `app:headerLayout` and `app:menu`. The `app:headerLayout` 
-setting `"@layout/nav_header_guestbooks"` specifies that the layout defined in 
+navigation drawer. Two attributes in `NavigationView` define the drawer's 
+contents: `app:headerLayout` and `app:menu`. The `app:headerLayout` setting 
+`"@layout/nav_header_guestbooks"` specifies that the layout defined in 
 `res/layout/nav_header_guestbooks.xml` is used to render the drawer's header 
 section. The `app:menu` setting `"@menu/activity_guestbooks_drawer"` specifies 
 that the menu defined in `res/menu/activity_guestbooks_drawer.xml` is used to 
-create the drawer's items. 
-
-Above the `NavigationView` in `activity_guestbooks.xml`, the `include` statement 
-adds the layout defined in `res/layout/app_bar_guestbooks.xml` as the activity's 
-main content (the content shown when the navigation drawer is closed). The 
-following diagram illustrates how `activity_guestbooks.xml` maps to the 
-activity's UI. 
+create the drawer's items. Above the `NavigationView`, the `include` statement 
+adds the layout defined in `app_bar_guestbooks.xml` as the activity's main 
+content (the content shown when the navigation drawer is closed). The following 
+diagram illustrates how `activity_guestbooks.xml` maps to the UI. 
 
 ![Figure 1: The layout `activity_guestbooks.xml` defines the app's main UI components.](../../images/android-activity-guestbooks.png)
 
-The activity's main content also contains a toolbar, some text, and a floating 
-action button. Next, you'll see how these are defined.
+The activity's main content also contains a toolbar, some text, and a 
+[floating action button](https://www.google.com/design/spec/components/buttons-floating-action-button.html). 
+Next, you'll see how these are defined. 
 
 ## Understanding the Activity's Main Content Layout [](id=understanding-the-activitys-main-content-layout)
 
@@ -101,12 +103,12 @@ content. This file should look something like this:
 
     </android.support.design.widget.CoordinatorLayout>
 
-The `AppBarLayout` and `Toolbar` define the Toolbar that appears at the top of 
-the activity. Following the Toolbar definition, the `include` statement adds the 
-layout `res/layout/content_guestbooks.xml` to the `app_bar_guestbooks` layout. 
-The `content_guestbooks` layout defines the content displayed in the body of the 
-activity, below the Toolbar. Right now, it only displays the text "Hello World!" 
-Now open `content_guestbooks.xml`. Its contents should look something like this:
+The `AppBarLayout` and `Toolbar` elements define the Toolbar that appears at the 
+top of the activity. Following the Toolbar definition, the `include` statement 
+adds the layout `content_guestbooks.xml` to the `app_bar_guestbooks` layout. The 
+`content_guestbooks` layout defines the content displayed in the activity's body 
+(below the Toolbar). Right now, it only displays the text "Hello World!" Now 
+open `content_guestbooks.xml`. Its contents should look something like this: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <RelativeLayout 
@@ -133,15 +135,16 @@ Now open `content_guestbooks.xml`. Its contents should look something like this:
 You can see that the `TextView` defines the "Hello World!" text. Anything you 
 define in this layout becomes the activity's main body content. Later, you'll 
 return to `content_guestbooks.xml` to display the guestbook entries retrieved 
-from the Guestbook portlet.
+from the Guestbook portlet. 
 
 Now return to `app_bar_guestbooks.xml`. This layout concludes by using 
 `FloatingActionButton` to define the floating action button. Pressing this 
-button in the app slides a snackbar containing placeholder content up from the 
-bottom of the screen. Although you won't do anything with the floating action 
-button in this Learning Path, you'll leave it in place. When you finish the app, 
-you may wish to add functionality to this button as a test of your Liferay 
-mobile development chops. 
+button in the app slides a 
+[snackbar](https://www.google.com/design/spec/components/snackbars-toasts.html) 
+containing placeholder content up from the bottom of the screen. Although you 
+won't do anything with the floating action button in this Learning Path, you'll 
+leave it in place. When you finish the app, you may wish to test your Liferay 
+mobile development chops by adding functionality to this button. 
 
 The following figure illustrates how the layout defined in 
 `app_bar_guestbooks.xml` maps to the activity's UI. On the left, this figure 
@@ -151,7 +154,6 @@ each points to its rendering on the right.
 ![Figure 2: The layout `app_bar_guestbooks.xml` defines the activity's main content.](../../images/android-app-bar-guestbooks.png)
 
 Awesome! Now you know which layout files in the project define 
-`GuestbookActivity`'s UI. You also know the exact UI components these files 
-define. Now you're ready to get the data from the Guestbook portlet that you 
-want to display in your app. Next, you'll learn how to do this with the 
-Guestbook Mobile SDK you built.
+`GuestbookActivity`'s UI. You also know the exact UI components defined in these 
+files. Next, you'll learn how to retrieve and display data from the Guestbook 
+portlet. You'll do this by using the Guestbook Mobile SDK you built earlier. 

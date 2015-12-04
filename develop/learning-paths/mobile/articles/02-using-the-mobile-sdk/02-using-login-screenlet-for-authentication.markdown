@@ -17,7 +17,7 @@ To use any Screenlet, you must follow two basic steps:
 2. Implement the Screenlet's listener in the activity or fragment class.
 
 In this app, you'll use Login Screenlet in `MainActivity`. This means you must 
-insert the Screenlet's XML in `MainActivity`'s layout `activity_main.xml`. 
+insert the Screenlet's XML in `MainActivity`'s layout, `activity_main.xml`. 
 You'll then implement the Screenlet's listener, `LoginListener`, in the 
 `MainActivity` class. 
 
@@ -32,8 +32,8 @@ Studio when you created the project. Insert Login Screenlet's XML in its place:
         liferay:layoutId="@layout/login_default"
         />
 
-When prompted by Android Studio, add the following XML namespace to the
-`<RelativeLayout>` tag:
+When prompted by Android Studio, add the following XML namespace to the 
+`<RelativeLayout>` tag: 
 
     xmlns:liferay="http://schemas.android.com/apk/res-auto"
 
@@ -123,7 +123,7 @@ functionality yet. You'll fix this next.
 ## Navigating from Login Screenlet [](id=navigating-from-login-screenlet)
 
 Now you need for the app to open `GuestbooksActivity` when login succeeds. 
-You'll do this by using an *intent* in `MainActivity`'s `onLoginSuccess` method. 
+You'll do this by using an intent in `MainActivity`'s `onLoginSuccess` method. 
 In short, Android intents are messaging objects that you can use to launch other 
 activities. For more information, see 
 [this guide on intents in Android's documentation](http://developer.android.com/guide/components/intents-filters.html). 

@@ -2,8 +2,8 @@
 
 As a developer, you know that developing any kind of app without an overall 
 design goal and plan to implement it is a recipe for disaster. The same is true 
-when developing Android apps. The Liferay Guestbook app you're developing here 
-needs a straightforward way to do three things: 
+when developing Android apps. The Liferay Guestbook app you develop in this 
+Learning Path needs a straightforward way to do three things: 
 
 1. Authenticate users
 
@@ -11,16 +11,15 @@ needs a straightforward way to do three things:
 
 3. Display entries
 
-Since you'll use Login Screenlet to authenticate users, all you need to do is 
-insert and configure it in your app. Login Screenlet comes complete with its own 
-UI. You must, however, create the UI for displaying guestbooks and entries from 
-scratch. What sort of UI would be best for this? Of course, the *best* UI for 
-any purpose is a matter of opinion. A good choice for displaying entries is to 
-automatically display a list of the first guestbook's entries after the user 
-authenticates. This is similar to the Guestbook portlet's design: it shows a 
-list of the first guestbook's entries by default. When the user selects a 
-different guestbook, you can then use the same UI to show the selected 
-guestbook's entries instead. 
+To authenticate users, all you need to do is insert and configure Login 
+Screenlet in your app. Login Screenlet comes complete with its own UI. You must, 
+however, create the UI for displaying guestbooks and entries. What sort of UI 
+would be best for this? Of course, the *best* UI for any purpose is a matter of 
+opinion. A good choice for displaying entries is to automatically display a list 
+of the first guestbook's entries after the user authenticates. This is similar 
+to the Guestbook portlet's design: it shows a list of the first guestbook's 
+entries by default. When the user selects a different guestbook, you can then 
+use the same UI to show the selected guestbook's entries instead. 
 
 ![Figure 1: By default, the first guestbook in the portlet is selected.](../../images/guestbook-portlet.png)
 
@@ -29,12 +28,11 @@ are many ways to do this, but using a navigation drawer that slides out from the
 left side of the screen is a good choice. A navigation drawer is easily hidden, 
 which saves you screen space, and is a common Android UI element. 
 
-Awesome! You've got a basic UI design down, but where should you create all 
-this? The app only contains one empty activity: `MainActivity`. You'll use this 
-activity for authentication with Login Screenlet. To implement the rest of the 
-UI you'll need to create an additional activity and a fragment: 
-`GuestbooksActivity` and `EntriesFragment`. You'll create the activity in a 
-moment. 
+Awesome! You now have a basic UI design. But where should you create it? The app 
+only contains one empty activity: `MainActivity`. You'll use this activity for 
+authentication with Login Screenlet. To implement the rest of the UI, you'll 
+need to create an additional activity and a fragment: `GuestbooksActivity` and 
+`EntriesFragment`. You'll create the activity in a moment. 
 
 The following diagram shows the three different screens of the app's UI. Each 
 activity and fragment is labeled, along with Login Screenlet and the navigation 
@@ -42,17 +40,15 @@ drawer.
 
 ![Figure 2: The Liferay Guestbook app's design uses two activities and a fragment.](../../images/android-app-design.png)
 
-The arrows in the diagram illustrate how the user moves between the screens in 
-the UI. After sign in, the user transitions to `GuestbooksActivity`. This 
-activity uses `EntriesFragment` to display the selected guestbook's entries (the 
-first guestbook is selected by default). Pressing the three horizontal lines at 
-the top-left of this screen opens the navigation drawer, from which the user can 
+The arrows in the diagram show how the user moves between the screens in the UI. 
+After sign in, the user transitions to `GuestbooksActivity`. This activity uses 
+`EntriesFragment` to display the selected guestbook's entries (the first 
+guestbook is selected by default). Pressing the three horizontal lines at the 
+top-left of this screen opens the navigation drawer, from which the user can 
 select a different guestbook. Selecting a guestbook closes the drawer to reveal 
-that guestbook's entries. 
-
-Also note that only one activity, `GuestbooksActivity`, is needed to display 
-guestbooks and entries. The navigation drawer and `EntriesFragment` are part of 
-`GuestbooksActivity`. 
+that guestbook's entries. Note that you only need one activity, 
+`GuestbooksActivity`, to display guestbooks and entries. The navigation drawer 
+and `EntriesFragment` are part of this activity. 
 
 Now you're ready to create `GuestbooksActivity`. Fortunately, Android Studio has 
 a template for creating an activity that already contains a navigation drawer. 
@@ -65,6 +61,6 @@ Studio creates the activity, the `GuestbooksActivity` class and
 `content_guestbooks.xml` layout open in the editor. Close them. You don't need 
 to edit these files yet. 
 
-Great! Now you understand the Liferay Guestbook app's basic design, and have the 
-framework in place to implement its UI and features. You'll begin by 
+Great! Now you understand the Liferay Guestbook app's basic design. You also 
+have the framework in place to implement its UI and features. You'll begin by 
 authenticating users. 

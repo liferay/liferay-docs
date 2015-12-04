@@ -4,10 +4,10 @@ Now that you know this app's basic structure, and also know the basics of making
 calls with the Guestbooks Mobile SDK, you're ready to retrieve and display 
 guestbooks in the app. Recall that the `GuestbooksActivity` you created earlier 
 contains a navigation drawer that slides out from the left side of the screen. 
-Currently, the drawer contains some simple placeholder content. You'll instead 
-use the drawer to show the list of guestbooks your app retrieves from the 
-portal. This is conceptually simple, but it's a bit more complex in practice. 
-Not to worry! This article guides you though each step in the process.
+Currently, the drawer contains some simple placeholder content. You'll use the 
+drawer to instead show the list of guestbooks your app retrieves from the 
+portal. This is conceptually simple, but a bit more complex in practice. Not to 
+worry! This article guides you though each step in the process. 
 
 ![Figure 1: The placeholders currently in the navigation drawer.](../../images/android-guestbook-initial-drawer.png)
 
@@ -25,7 +25,7 @@ To retrieve and display guestbooks in the app, you'll follow these steps:
 
 4. Make the service call from `GuestbooksActivity`, using the callback class.
 
-5. Display the guestbooks in the navigation drawer. And declare victory!
+5. Display the guestbooks in the navigation drawer.
 
 You'll get started with the first step, creating the model class for guestbooks.
 
@@ -120,26 +120,26 @@ the `GuestbookModel` class's contents with the following code:
         }
     }
 
-This class creates `GuestbookModel` objects that effectively mirror `Guestbook` 
-objects in the portlet. It does so by retrieving `Guestbook` parameters from 
-the `JSONObject` returned by the Mobile SDK's remote service calls. This is done 
-in the constructor by the `getLong` and `getString` methods. To see how the 
-`Guestbook` parameters are defined in the portlet, see the 
+This class creates `GuestbookModel` objects that effectively represent 
+`Guestbook` objects in the portlet. It does so by retrieving `Guestbook` 
+parameters from the `JSONObject` returned by the Mobile SDK's remote service 
+calls. The constructor does this by using the `getLong` and `getString` methods. 
+To see how the `Guestbook` parameters are defined in the portlet, see the 
 [Liferay MVC Learning Path article on Service Builder](/develop/learning-paths/mvc/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
 For now, the only parameters you really need in this class are `guestbookId` and 
-`name`. Since, however, you'll need the rest later, it's simpler to add support
-for all of them now. 
+`name`. Because you might need the rest later, however, it's simpler to add 
+support for all of them now. 
 
-You should also note the `toString` method in this class. Since all it does is
-return a guestbook's name, it's very simple, but very important. To render
-objects in the navigation drawer, Android calls `toString` on them. If 
-`toString` isn't defined for the objects, strings with each object's full 
-package path and internal ID are shown. In other words, Android displays 
-illegible text if you don't define `toString` here. By defining `toString` to 
-return the name of each `GuestbookModel`, you're telling Android to show each 
-guestbook's name in the drawer. 
+You should also note the `toString` method in this class. It's very simple; it 
+only returns a guestbook's name. It's very important, though. Android calls 
+`toString` to render objects in the navigation drawer. If `toString` isn't 
+defined for the objects, the drawer shows strings with each object's full 
+package path and internal ID. In other words, Android displays illegible text if 
+you don't define `toString` here. By defining `toString` to return each 
+`GuestbookModel`'s name, you telling Android to show each guestbook's name in 
+the drawer. 
 
-Next, you'll write the code that retrieves guestbooks from the portlet. 
+Next, you'll prepare `GuestbooksActivity` to recieve `GuestbookModel` objects. 
 
 ## Preparing GuestbooksActivity for Guestbooks [](id=preparing-guestbooksactivity-for-guestbooks)
 
@@ -172,9 +172,11 @@ you're ready to create this callback class.
 
 ## Creating a Callback Class [](id=creating-a-callback-class)
 
-Since Android doesn't allow network requests from its main UI thread, you have 
-to make them from another thread by creating a callback class that extends the 
-Mobile SDK's `GenericCallback` class. See
+Since Android doesn't allow network requests from its main UI thread, you must 
+make them from another thread by creating a callback class that extends the 
+Mobile SDK's 
+[`GenericCallback`](https://github.com/liferay/liferay-mobile-sdk/blob/master/android/src/main/java/com/liferay/mobile/android/callback/typed/GenericCallback.java) 
+class. See 
 [Android's documentation](http://developer.android.com/guide/components/processes-and-threads.html#Threads) 
 for more information on threading. At this point, you might be saying, "Oh no, 
 threading in mobile apps? That sounds complicated!" Fear not! The Mobile SDK's 
@@ -235,24 +237,24 @@ code in the class with this code:
         }
     }
 
-So what's going on here? First, you should note that this class has a 
-`GuestbooksActivity` instance as its only variable. This is so it can refer 
-results back to `GuestbooksActivity`, which runs in Android's main UI thread.
-`GetGuestbooksCallback`'s constructor thus does only one thing: it sets this
-variable. Next, the `onFailure` and `onSuccess` methods are overridden. As you 
-probably guessed, `onFailure` is called when the request fails, while 
-`onSuccess` is called when it succeeds. In this example, `onFailure` displays a 
-toast message with the error. The `onSuccess` method sends the guestbooks to 
-`GuestbooksActivity` by calling the activity's `reloadGuestbooks` method. Last 
-but not least is the overridden `transform` method. Because the guestbooks 
-initially come back from the portlet as JSON, you need this `transform` method 
-to convert them into a `List` of `GuestbookModel` objects. It's this `List` 
-that's fed to the `onSuccess` method. You're probably starting to see that 
-`reloadGuestbooks` is an important method. It receives guestbooks for processing 
-in the app's main UI thread. 
+This class is small, but it does a great deal. First, you should note that this 
+class has a `GuestbooksActivity` instance as its only variable. This is so it 
+can refer results back to `GuestbooksActivity`, which runs in Android's main UI 
+thread. The `GetGuestbooksCallback`'s constructor thus does only one thing: it 
+sets this variable. Next, the `onFailure` and `onSuccess` methods are 
+overridden. As you probably guessed, `onFailure` is called when the request 
+fails, while `onSuccess` is called when it succeeds. In this example, 
+`onFailure` displays a toast message with the error. The `onSuccess` method 
+sends the guestbooks to `GuestbooksActivity` by calling the activity's 
+`reloadGuestbooks` method. Last but not least is the overridden `transform` 
+method. Because guestbooks initially come back from the portlet as JSON, you 
+need this `transform` method to convert them into a `List` of `GuestbookModel` 
+objects. It's this `List` that's fed to the `onSuccess` method. You're probably 
+starting to see that `reloadGuestbooks` is an important method. It receives 
+guestbooks for processing in the app's main UI thread. 
 
 Now that you have everything you need to retrieve guestbooks from the Guestbook 
-portlet, you're ready to make the server call.
+portlet, you're ready to make the server call. 
 
 ## Making the Server Call [](id=making-the-server-call)
 
@@ -261,10 +263,10 @@ service that contains the service method you want to call. To get the
 guestbooks, you'll create a `GuestbookService` instance and then call its 
 `getGuestbooks` method. You must create this service instance by using an 
 authenticated session that has a callback set to it. The previous article 
-describes the basics of this. Now it's time to get specific!
+describes the basics of this. Now it's time to get specific! 
 
 Although the callback class routes the call asynchronously through a background 
-thread, you can issue the call from `GuestbooksActivity`. Add the following 
+thread, you still issue the call from `GuestbooksActivity`. Add the following 
 `getGuestbooks()` method to `GuestbooksActivity`: 
 
     protected void getGuestbooks() {
@@ -442,7 +444,7 @@ this method now:
 
 The `initDrawer` method's first few lines match the drawer initialization code 
 in `onCreate`. You should therefore delete this code in `onCreate`. You don't 
-need it there since you call it via `initDrawer` instead. The last part of 
+need it there since you call it in `initDrawer` instead. The last part of 
 `initDrawer` initializes the drawer's `ListView` and creates an 
 [adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews) 
 for it. Note that `_guestbooks` is the last argument to the adapter's 
