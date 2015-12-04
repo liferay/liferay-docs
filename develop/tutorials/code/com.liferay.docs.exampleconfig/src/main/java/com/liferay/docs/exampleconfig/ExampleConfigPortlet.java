@@ -17,7 +17,7 @@ import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import aQute.bnd.annotation.metatype.Configurable;
 
 @Component(
-	configurationPid = "com.foo.bar.MyAppConfiguration",
+	configurationPid = "com.liferay.docs.exampleconfig.ExampleConfiguration",
 	immediate = true,
 	property = {
 		"com.liferay.portlet.display-category=category.sample",
