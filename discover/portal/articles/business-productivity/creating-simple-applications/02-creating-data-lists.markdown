@@ -1,98 +1,66 @@
+<!-- Update Screen shots to Lunar Resort example -->
+
 # Creating Data Lists
 
-<!-- I need to find out what the use case for DDL is supposed to be. It seems to
-be changing with the introduction of the new forms portlet and the removal of
-the DDL Forms portlet, but not all of the old behavior can be replicated at this
-point. -->
+To create list applications, it's not enough to just create data definitions, as
+you read about in the last article. Although the definitions are the central
+component to your simple list application, controlling the data that can be
+entered by users, you need to create a Dynamic Data List that uses the data
+definition. Very simply, data lists create boundaries around the records
+entered. For example, if you use the Activity Entry definition created in the
+last article to create a Lunar Rover Race Sign-Up list, the records are stored
+for you, even if someone else uses the same data definition to back their Lunar
+Hike Sign-Up list. You can display both sign-up forms on the same page, backed
+by the same data definition, and safely keep your records from being mixed up.
 
 Building out new lists is similar to creating new web content articles. Just as
 you can create new Web Content Structures to control the input of a particular
-type of web content, you can use Data List Definitions to control the
-input of new list types. Similarly, just as you create a new piece of web
-content, selecting the Structure you would like to use with it, `list.it` users
-(we'll call them *Listies*) choose the Definition they want to use when creating
+type of web content, you can use Data List Definitions to control the input of
+new list types. Similarly, just as you create a new piece of web content,
+selecting the Structure you would like to use with it, Lunar Resort site members
+with the proper permissions choose the Definition they want to use when creating
 a new list. Now that a data definition is in place, all that remains is to
 create a new data list to capture the information we're going after. This is the
 easiest step in creating the list, with only a few clicks between a data
 definition and robust data entry and delivery.
 
-To create a new volunteer list with the "Volunteer Sign-Up" definition:
+To create a new sign-up form and list for a lunar rover race:
 
-1. From the Product Menu, click on *Sites* &rarr; *Content* and then on *Dynamic Data
-   Lists*.
+1. From the Product Menu, select the Site you want to create Dynamic Data Lists
+in (the Lunar Resort if you're following the example), then click on *Content*
+&rarr; *Dynamic Data Lists*.
 
-    ![Figure 1: Find the Dynamic Data Lists application by clicking *Sites* &rarr;
-    *Content* from the Product Menu](../../images/ddl-product-menu.png)
+    ![Figure 1: Find the Dynamic Data Lists application by opening the *Content*
+section of the Product Menu. Make sure you're in the proper site
+context.](../../../images/ddl-product-menu.png)
 
-2. Click on *Add* to create a new list based on a data definition, which in our
-   case is the volunteer sign-up.
+2. Click the *Add* button (![Add Icon](../../../images/add-icon.png)) to create a new list based on a data definition.
 
-    ![Figure 2: Add a list to the Dynamic Data Lists application by clicking the
-    *Add* button.](../../images/add-button.png)
-
-3. Give the data list a name, like *Spring Move-In Sign Up*, and a description to
+3. Give the data list a name, like *Lunar Rover Race Sign-Up*, and a description to
    assist administrative users in the future.
 
 4. Last and most importantly, click *Select* under the *Data Definition*
    section--this is where you set the data model that drives this list.
 
-5. Choose the *Volunteer Sign-Up* data definition you created, then click
-   *Save*.
+    Choose the *Activity Entry* data definition you created, then click
+    *Save*.
 
-    ![Figure 3: Give your list a name, a description, and select a data
-    definition for the list.](../../images/ddl-add-list.png)
+    ![Figure 2: Give your list a name, a description, and select a data
+    definition for the list.](../../../images/ddl-add-list.png)
 
-Now that you've created your brand new volunteer list, you can pester everyone
-you know to sign up. But what would it look like for them to add an entry to
-this list? The layout of the data definition you previously created (or
-selected) defines the default layout of the form as well.
+Now that you've created your brand new sign-up, get the word out for guests to
+sign up. But what would it look like for them to add an entry to this list? The
+layout of the data definition you previously created (or selected) defines the
+default layout of the form as well. You just need to add a Data List Display
+portlet to a page, and set the permissions on the list so guests can add
+records.
 
-![Figure 4: You can enter a new data record directly form the Dynamic Data Lists
-portlet by clicking on *Sites* &rarr; *Content* from the from the Product Menu,
+![Figure 3: You can enter a new data record directly form the Dynamic Data Lists
+portlet by clicking on *Content* &rarr; *Dynamic data Lists* from the from the Product Menu,
 clicking the list you want to add a record for, then click the *Add* button.
 Alternatively, you can add the Dynamic Data List Display portlet to a page and
 configure it to allow users to submit new data
-records.](../../images/ddl-form-template.png)
-
-But how will the data list appear on a page? How will my awesome, new Volunteer
-Sign-Up sheet or that boring Jobs Listing look? The answers to these pressing,
-burning questions bring us to the display side of the equation.
-
-<!-- DDL Forms is gone from plugins, and is incorporated into the
-core under dynamic-data-lists-form-web/, though I haven't been able to replicate
-the functionality perfectly. One of my Bus. Prod. team members says that the Forms Portlet
-might be intended to do all of this now, though it is lacking in my
-opinion. Many of the data types are not yet available in the forms portlet
-(in fact, only radio, select, text, and checkbox are currently there), for
-instance. -->
-
-<!-- ## Using Data List Forms
-
-Place the Dynamic Data List Display portlet on a page to let your users fill out
-the forms you create. This portlet is tailored to entering new records. When you
-deploy that data list for your users to sign up for a retreat, or your family
-members to volunteer to help you move, using the display portlet allows you to
-simplify the sign-up process and hide the contents of the list.
-
-The Dynamic Data List Form portlet is not a core Liferay portlet like the Web
-Content Display portlet. However, it's freely available on [Liferay Marketplace](http://www.liferay.com/marketplace). Just search for and install
-the Dynamic Data List Form (or Dynamic Data List Form EE) portlet. Using the
-Dynamic Data List Form is similar to using the Web Content Display portlet: just
-set it up, point it to a list (either existing or new) and let it go. This is
-very easy to do. 
-
-To display a list inside the portlet, add the Dynamic Data List Form portlet to
-a page: Click the *Add* button on the left side of the screen, click on
-*Applications*, search for *Dynamic Data List Form*, then click *Add* next to
-its name. With the portlet on the page, click on the *Select List* gear icon.
-This opens a configuration popup, where you can select a list to use for the
-form entries. When configuring the portlet, make sure to check the *Allow
-Multiple Submissions* box if you'd like users to be able to add multiple records
-for a list. If this box is not checked, once a user fills out an entry, the
-portlet displays a message stating that a record has already been submitted. If
-the *Allow Multiple Submissions* box is checked, each time a user visits your
-page with the Sign-Up form, the Dynamic Data List Form portlet presents them
-with a form to fill out.
+records.](../../../images/ddl-displayportlet-add.png)
 
 +$$$
 
@@ -105,34 +73,31 @@ with a form to fill out.
 
 $$$
 
-Once records have been submitted for lists, you can publish the lists anywhere
-in your portal. Read on to find out more about that. 
--->
+But how will the list of entries appear on a page? Whether its the awesome, new Lunar
+Rover Race Sign-Up sheet or that boring Jobs Listing, the display side of the
+equation is very important. 
 
 ## Using Default Displays
 
 Lists are published in the portal through the Dynamic Data List Display portlet.
-If Listies don't customize the display, their lists use the default display
+If list creators don't customize the display, their lists use the default display
 template.
 
-![Figure 5: The default data list display in the Control Panel shows the list's
+![Figure 4: The default data list display in the Control Panel shows the list's
 records and allows record to added, edited, or removed (assuming the user has
-the correct permissions).](../../images/ddl-default-display.png)
+the correct permissions).](../../../images/ddl-default-display.png)
 
 The default display template isn't exciting, but it allows users to see the
 list's contents, and if they have permission, to add and/or edit list items.
 This type of interaction is used for display-only lists that the user chooses to
 expose to others, or for the user's own private lists. But you can improve the
 display. You can show the data in a spreadsheet, so you can view the responses
-to your Volunteer Sign-Up in a comfortable, easy-to-read format. The Dynamic
+to your Lunar Rover Race Sign-Up in a comfortable, easy-to-read format. The Dynamic
 Data List Display portlet provides an easy way for a user (such as a member of a
 site) to interact with whatever list is active and available.
 
-<!-- I want to recommend the Forms Portlet for creating better looking forms for
-users, but it's not really going to serve a similar purpose at the moment -->
-
-While it's possible to ask everyone to contribute to the data list within the
-control panel, it's simpler if the list is accessed from a public or private
+While it's possible to ask everyone to contribute to the data list in the
+control panel, it's simpler if the list is placed on a public or private
 page in your site. Liferay's Dynamic Data List Display portlet lets you do just
 that. Just navigate to whichever page you want and add the portlet. It works
 much like the Web Content Display portlet. You can select a list for display,
@@ -140,24 +105,27 @@ add a list, or edit the currently displayed list. You can also add a *Form
 Template* or a *Display Template* to modify the appearance of your lists. This
 will be covered in the next article.
 
-Open the Dynamic Display Portlet's configuration menu (click the vertical
-ellipsis icon in the title bar of the portlet and click *Configuration*). From
-this menu, you can select the list to display and configure it how you like. You
-can select a different Display or Form Template, or choose whether the list
-appears as *Editable* and whether to use the *Spreadsheet View*. Checking
-*Editable* allows users that have permission to add new entries to the list.  By
-default, this is enabled, but administrators are the only ones with add
-permission. To grant access to other users, edit the permissions on the list
-you'd like to grant access to, and grant the `Add Record` permission. Choosing
-to use the *Spreadsheet View* displays the list in a dynamic spreadsheet view.
-This allows users with permission to interact with the list in the same way as
-in a standard spreadsheet program.
+Open the Dynamic Display Portlet's configuration menu by clicking the Actions
+button (![Configuration Menu](../../../images/options-icon.png)) and then
+clicking *Configuration*. From this menu, you can select the list to display and
+configure it how you like. You can select a different Display or Form Template,
+or choose whether the list appears as *Editable* and whether to use the
+*Spreadsheet View*. Checking *Editable* allows users that have permission to add
+new entries to the list.  By default, this is enabled, but administrators are
+the only ones with add permission. To grant access to other users, edit the
+permissions on the list you'd like to grant access to, and grant the `Add
+Record` permission. Choosing to use the *Spreadsheet View* displays the list in
+a dynamic spreadsheet view.  This allows users with permission to interact with
+the list in the same way as in a standard spreadsheet program.
 
-![Figure 6: The Dynamic Data List Display portlet allows users to view the records belong to a list in either a standard or a spreadsheet view. This figure shows the spreadsheet view.](../../images/ddl-spreadsheet-view.png)
+![Figure 5: The Dynamic Data List Display portlet allows users to view the
+records belong to a list in either a standard or a spreadsheet view. This figure
+shows the spreadsheet view.](../../../images/ddl-spreadsheet-view.png)
 
 As useful as the default display is, and it's certainly useful for data lists
-like to do lists and memo notes, it can be an awkward way to ask volunteers to
-sign up. In fact, any time I want other Listies to interact with my lists and
-contribute responses, I want a simple form to show them. They don't need to see
-the entirety of the data that other users have entered, either, though a simple
-display of some of the information might be necessary.
+like to do lists and memo notes, it can be an awkward way to ask Lunar Resort
+guests to sign up for activities. Almost any time you want users to
+interact with lists and contribute responses, you'll want a simple form to show
+them, and you won't want to display all of the data that gets stored for each list
+entry. Next, learn how to leverage template editors to control the display of
+your forms and lists.

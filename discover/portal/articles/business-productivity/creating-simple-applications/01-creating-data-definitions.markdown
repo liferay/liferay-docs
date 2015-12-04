@@ -1,3 +1,5 @@
+<!-- Renumber figures, numbers and captions. -->
+
 # Creating Data Definitions
 
 Imagine this: The Lunar Resort is becoming a popular destination. The Recreation
@@ -33,32 +35,34 @@ used to create the form templates, when ready. -->
 These are basically simple applications, that take user input and store the
 data somewhere. While you don't need to be a developer to make this
 happen, you do need to be familiar with data definitions, data lists, and
-templates. You probably also need a [user group](LINK TO USER GROUPS) of
-List Creators (that's boring; maybe they should be called "listers", or
-"listies") who have permission to create lists and access the entries. 
+templates. You probably also need a user group<!--LINK--> of
+List Creators who have permission to create lists and access the entries. 
 
 When list creators sign in to the Lunar Resort portal, you want to make it easy
 for them to build lists. To this end, you'll provide one or more data definitions
 that should suit most of their list making needs. Not everyone needs to be an
 expert in Dynamic Data Lists (but you do, so keep reading). 
 
-What are these data definitions you've been hearing about? They're just
-collections of different field types, configured in a certain way, to guide
-users in providing data for your lists. All lists are backed by a data
-definition, so this is the place to start in building a list app. An exhaustive
-discussion of the field types available and their configuration options is found
-at the end of this article. Next, get started creating data definitions.
+What are these data definitions? They're just collections of different field
+types, configured in a certain way, to guide users in providing data for your
+lists. All lists are backed by a data definition, so this is the place to start
+in building a list app. An exhaustive discussion of the field types available
+and their configuration options is found at the end of this article. Next, get
+started creating data definitions.
 
 ## Creating Data Definitions
 
-Create some data definitions and set your list creators to
-work.
+The Lunar Resort List creators can't post and manage lists unless you give them
+some useful definitions. You can, of course, delegate the data definition
+responsibilities to the list creators, if you want. The following directions
+apply to whoever has the permissions to access the DDL application. Create some
+data definitions and set your list creators to work.
 
 1.  Make sure you're logged in as an administrator, then open the product menu
 and click *Sites*. Select the site where you want to create data definitions
-(Lunar Resort, if you're following along with the example site). You're now in
-the Site Administration section of the Product Menu, and your site is selected.
-Click *Content* &rarr; *Dynamic Data Lists*.
+(for example, the Lunar Resort site). You're now in the Site Administration
+section of the Product Menu, and your site is selected. Click *Content* &rarr;
+*Dynamic Data Lists*.
 
     ![Figure 1: You can manage dynamic data lists from the *Sites* &rarr;
 *Content* section of the Product Menu.](../../../images/ddl-product-menu.png)
@@ -67,154 +71,237 @@ Click *Content* &rarr; *Dynamic Data Lists*.
 Menu](../../../images/options-icon.png)) for the Dynamic Data List
 configuration menu. Click on it and select *Manage Data Definitions*. The Data
 Definitions window appears, where you can access existing definitions or create
-a new one.
+new ones.
 
     ![Figure 1: The portal ships with several commonly used predefined data
-definitions that your lists can be built onto. You can also add your own data
-definitions, or modify the existing ones.](../../../images/ddl-definitions.png)
+definitions that  can be used as is or modified to build your lists. You can also add your own data definitions.](../../../images/ddl-definitions.png)
 
 3.  Click the *Add* icon (![Add Icon](../../../images/add-icon.png)) to add a
 new Data Definition. 
 
-4.  Fill out the title and description fields. Since this definition will be
+4.  Fill out the Title and Description fields. Since this definition will be
 used for multiple lists (because there are multiple activities the resort needs
-lists for), name it *Activity Entry*. A good description might be *This
-definition should cover most use cases on the Activities Sign-Up page. Modify
-the templates to suit your specific needs.*
+lists for), name it *Activity Entry*. Beware that the Title you give the data
+definition will appear to portal users who are adding a record to your list.
+There will be a button that users click to *Add a [Definition Title]*. A good description
+might be *This definition should cover most use cases on the Activities Sign-Up
+page. Modify the templates to suit your specific needs.*
 
-    Below the Description field, there's a Parent Data Definition selector. This
-definition won't use any of the pre-defined ones as a parent, so leave it blank
-and check out the data definition designer. The View tab is displayed by
-default, and that's where you'll probably do most of your work.
+    Below the Description field, there's a Parent Data Definition selector. The
+Activity Entry definition won't use any of the pre-configured definitions as a
+parent, so leave it blank and scroll down to the data definition designer. The
+*View* tab is displayed by default, and that's where you'll probably do most of
+your work. You can, however, click *Source* mode to manually customizing a
+definition's XML file. This method is likely to be useful for more experienced
+users and developers.
 
     ![Figure 5: You can add and configure fields to form a custom list
 definition.](../../../images/ddl-data-definition-designer.png)
 
-5.  To start drag a Text field from the Fields tab onto the canvas. This will eventually
-become a required field called Full Name. Below the Text field, drop a Radio field.
-Drop four Boolean fields, and finish this section with a Select field. While
-doing this you might have noticed you can nest fields below each other. Nest all
-the fields below the Text field.
+5.  To start, drag a Text field from the Fields tab (in View mode) onto the
+canvas. This will eventually become a required field called Full Name. Below the
+Text field, drop a Radio field. Drop four Boolean fields, and finish this
+section with a Select field. While doing this you might have noticed you can
+nest fields below each other. Nest all the fields you just added below the Text field.
 
-    ![Figure 5: Fields can be nested below other fields.
-definition.](../../../images/ddl-fields-added.png)
+    ![Figure 5: Fields can be nested below other fields.](../../../images/ddl-fields-added.png)
+
+    +$$$
+
+    **NOTE:** When you nest fields, they will not appear when the list entries
+    are displayed with the default display template. For more information about
+    templates, see the article on 
+    [Creating Custom Displays](/discover/portal/-/knowledge_base/7-0/creating-custom-displays).
+
+    $$$
 
 6.  Before adding more fields, configure the current ones. Click on the Text
-field and then click on the wrench icon
-(![Configure DDL Field Icon](../../../images/configure-ddl-field-icon.png)).
-Alternatively, click on the field and then click the Settings tab.
+field and then click on the wrench icon (![Configure DDL Field Icon](../../../images/configure-ddl-field-icon.png)). Alternatively, click on the field and then click the 
+Settings tab.
 
     ![Figure 5: Fields can be configured in a variety of ways.](../../../images/ddl-configure-field.png)
 
-7.  Double click the Field Label and change it to *Full Name*. Click Save.
+    -  Double click the Field Label and change it to *Full Name*. Click Save.
 
     ![Figure 5: You can add and configure fields to form a custom list
 definition.](../../../images/ddl-field-label-edit.png)
 
-8.  Double click the Required setting and change it to *Yes*, then click Save.
+    -  Double click the Required setting and change it to *Yes*, then click Save.
 
     ![Figure 5: You can add and configure fields to form a custom list
 definition.](../../../images/ddl-field-required.png)
 
-9. 
+9.  Next, configure the Radio field.
 
+    -  Change the Field Label to *Sex*. 
 
+    -  Configure the field Options to be *Male* and *Female*, and feel free to
+       set the values for the options to *male* and *female*. Only the Options
+       will be displayed to users. Remove the unused Option.
 
+    ![Figure 5: You can add and configure fields to form a custom list
+definition.](../../../images/ddl-options-edit.png)
 
+12.  Now create and configure DDL data definition fields to make the definition
+look like this image: 
 
+    ![Figure 5: You can add and configure fields to form a custom list
+definition.](../../../images/ddl-name-and-more.png)
 
-<!-- To expand and extend the social capabilities of your site, you've come up with a
-great idea: give your users custom-built lists that they can share with their
-friends (or enemies, depending on their Social Relation type). Marketing has
-come up with a great name for your new service: `list.it`. Your beautiful
-`list.it` dashboard will give users the power to generate their own lists, see
-their friends' lists, and tally the results of certain types of lists
-(surveys, anyone?). Liferay makes this as simple as throwing some Dynamic Data
-List Display and Form portlets on the public and private pages of users'
-personal sites.
+    - The options for the Select field  wtih the label *How fit are you?* should be *Fit as a
+      fiddle!*, *Moderately fit, I think.*, and *Bring extra oxygen.*
 
-When new users log in to `list.it`, you want to make it easy for them to build
-lists. To this end, you've pre-defined some common ones-to do lists, shopping
-lists, and memos. To create one of these, all the user has to do is create a new
-list, choose the predefined data type, and have at it! The data definitions
-that ship with the portal's default site include *To Do*, *Meeting Minutes*,
-*Issues Tracking*, *Inventory*, *Events*, and *Contacts*. Users can use these
-definitions on their own to generate new data lists or tweak them to fit their
-needs. 
+13.  That's a good start to the form. To make sure all Activity Sign-Up use
+cases are covered, add the following fields to the data definition:
 
--->
+    -  Documents and Media field called *Profile Picture*.
+    -  A Radio field called *Preferred Rover Style* with these options:
+        -  *Uranus (light blue)*
+        -  *Jupiter (orange and white)*
+        -  *Mars (red)*
+    -  A Geolocation field with the label *Tell other guests where you're from.
+       Optional.*
+    -  A Text Box field with the label *Tell us something about yourself.*
 
-<!--
-If none of the built-in data definitions are suitable, users can create their
-own definitions. If you want to allow `list.it` users (who would probably call
-themselves "list-ers" or "list-ies") to create their own data types for lists
-they create, they must have complete access to the content of their private user
-sites where they can create a new data type.
+    ![Figure 5: You can add and configure fields to form a custom list
+definition.](../../../images/ddl-additional-fields.png)
 
-Using data lists to outline a new data model is as simple as point and click.
-Say you now have a `list.it` account. You've been dying to bug your friends and
-family to sign up for "volunteer" work: helping you move into a new apartment.
-Using an intuitive visual editor, you can quickly draw up the skeleton for that
-volunteer list in minutes. Since data lists exemplify a unique type of content
-for your site, you'll find the Dynamic Data Lists application in the *Sites*
-section of the Product Menu, under *Content*. 
--->
+14.  Once you finish adding and configuring fields, click Save.
 
-<!-- Product menu screenshot has high likelihood of needing to be updated says
-Russ in October 2015 -->
+Your new data definition will now appear in a list with all of the
+pre-configured definitions. 
 
-<!--Liferay ships with
-several deafult definitions that can be used to create lists. To create a list
-from one of these, all the user has to do is create a new list, choose the
-predefined data type, and have at it! The data definitions that ship with the
-portal's default site include *To Do*, *Meeting Minutes*, *Issues Tracking*,
-*Inventory*, *Events*, and *Contacts*. Users can use these definitions on their
-own to generate new data lists or tweak them to fit their needs. 
--->
-<!-- The above paragraph contains too much info for our use case. We're not using
-a pre-defined list so move to the end? -->
+![Figure 5: You can add and configure fields to form a custom list
+definition.](../../../images/ddl-data-definitions.png)
+
+If you click on the newly created definition (or any definition, for that
+matter), you'll notice that you have access to both a WebDAV URL and a
+static URL, which are used to access the XML source of the data definition. To
+learn more about WebDAV or if you'd like to see WebDAV in action, see 
+the article on [WebDAV access](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
+<!--Make link to 7-0 when ready-->.
+
+### Using a Parent Definition
+
+Though it wasn't necessary for the use case presented above, data definitions
+also have the capability of inheriting characteristics from other definitions.
+When a parent data definition is configured, the child definition inherits the
+parent's fields and settings. Using this feature is helpful when you want to
+make a similar data definition to one that's already created. For instance, if
+you'd like to create an advanced sign-up sheet in addition to a regular sign-up
+sheet, you can simply inherit the characteristics of the regular sheet and only
+add the additional fields necessary for the advanced sheet. When the advanced
+sheet is configured, it will display its parent's fields in addition to its own
+fields.
+
+If you wanted the Sales Department to fill out a form to help keep inventory of
+the Lunar Resort store's items, you could build a list based on the Inventory
+Definition that comes shipped with Liferay. It has some useful fields already
+configured, but the existing Inventory data definition isn't enough. You want to
+give Lunar Resort employees a chance to rate the popularity of each item they're
+filling out the Inventory form for. Just create a new definition, define the
+Inventory definition as a Parent, and add the fields you need.
+
+![Figure 4: You can create a child definition to add new fields to a
+pre-existing one.](../../../images/ddl-inventory-record-def.png)
+
+When you create a list (you can call it Inventory List) based on the new
+definition (probably called something like Inventory Record), it will include
+the fields you added and the fields of the existing definition. This way,
+whoever is in charge of maintaining the Inventory definition gets the
+information they want, and you get the information you want.
+
+![Figure 4: You can create a child definition to add new fields to a
+pre-existing one.](../../../images/ddl-parent-def-list.png)
+Your definition now lives with all the pre-configured ones. There are
+several things you can do with these existing definitions, including deleting
+them, editing them, and copying them.
 
 ## Managing Data Definitions
 
 From a site's Dynamic Data Lists application (accessed through the Product Menu),
 you can either add a new dynamic data list from an existing data type or you can
-click *Manage Data Definitions* from the action button to add or edit data
+click *Manage Data Definitions* from the Actions button to add or edit data
 definitions.
 
-![Figure 3: You can manage the portal's data definitions.](../../images/ddl-config-menu.png)
+![Figure 3: You can manage the portal's data definitions.](../../../images/ddl-config-menu.png)
 
-<!-- Is it even worth mentioning DDM structures to portal users? -->
+There are several data definition management actions you can perform. Of course,
+you can edit a data definition, but you can also configure its permissions,
+manage its templates, copy it, or delete it.
 
-Liferay 6.2 introduced the ability to *Copy* the DDM structures associated with
-an existing data definition. You can access the Copy button by navigating to
-*Manage Data Definitions* and clicking the *Actions* button (the icon is a
-vertical ellipsis). Select *Copy* from the actions menu. The Copy menu opens,
-and includes options for copying the form and display templates associated with
-the data definition. You'll learn how to manage and create new form and display
-templates later. When you're finished, the copied data definition can be
-accessed in the *Manage Data Definitions* menu. The Copy feature lets you create
-new data definitions based on existing ones.
+![Figure 4: You can copy an existing data definition, manage its templates, and more.](../../../images/ddl-copy-definition.png)
 
-<!-- I only see DDM structures (in the database) that appear to be linked to
-these data definitions. DDM templates are the actual data types, like text area,
-select, etc. -->
+If you edit a data definition that has references (from your lists or
+templates), you'll need to account for that, by editing the template, for
+instance.
 
-![Figure 4: You can copy an existing data definition's DDM structures and templates.](../../images/ddl-copy-definition.png)
+![Figure 4: You can copy an existing data definition, manage its templates, and
+more.](../../../images/ddl-edit-definition-warning.png)
 
-## Creating New Data Definitions
+### Copying Data Definitions 
 
-If you want to use a new data type, you need to create a definition for it.
-Open the Dynamic Data Lists portlet from the Product Menu's *Sites* &rarr;
-*Content* section. Open the portlet's configuration menu by clicking the
-vertical ellipsis icon at the top right-hand corner of the page. Select *Manage
-Data Definitions*, then click the *Add* button (the plus symbol). The first
-thing you should enter is a name for the definition, and a description, which is
-in the *Details* section. Call the new data definition *Volunteer
-Sign-Up*. When creating a new data definition, you have a palette of fields to
-choose from and a blank canvas where you'll drop the fields you want. If you've
-created or edited web content structures, the interface will look
-familiar. You have several different data types that can be used in your
-data definition:
+Liferay 6.2 introduced the ability to *Copy* the DDM structures and templates
+associated with an existing data definition. You can access the Copy button by
+navigating to *Manage Data Definitions* and clicking the *Actions* button (the
+icon is a vertical ellipsis). Select *Copy* from the actions menu. The Copy menu
+opens, and includes options for copying the form and display templates
+associated with the data definition. You'll learn how to manage and create new
+form and display templates later. When you're finished, the copied data
+definition can be accessed in the *Manage Data Definitions* menu. The Copy
+feature lets you create new data definitions based on existing ones. In one
+action you can copy a data definition with its templates, and then you can
+modify it to suit your needs. You can, of course, edit any definition in
+the portal, but if you copy a definition instead, you'll still have
+access to the original.
+
+![Figure 4: You can copy an existing data definition's DDM structures and
+templates.](../../../images/ddl-copy-definition.png)
+
+From the actions menu for a data definition, you can also configure its permissions.
+
+### Data Definition Permissions
+
+From a data definition's Actions menu, you can select Permissions to configure
+the permissions for a particular data definition. Note that these permissions
+are for an individual definition accessed through the DDL application in Site
+Administration (from the Product Menu, go to *Sites* &rarr; *Content* &rarr;
+*Dynamic Data Lists*). For example, by default a Site Member can View the
+Activity Entry Data Definition. Any Site Member who was also assigned a role
+that can access the DDL application and its data definitions would see this
+definition listed in the Manage Data Definitions list. If you don't want this,
+just deselect View for Site Member, and these users won't see your data
+definition listed with the others.
+
+![Figure 4: You can copy an existing data definition's DDM structures and
+templates.](../../../images/ddl-definition-permissions.png)
+
+You can manage a data definition's templates as well.
+
+### Managing a Data Definition's Templates
+
+Manage a data definition's templates by clicking Manage Templates from a data
+definition's actions menu (click the ![Configuration
+Menu](../../../images/options-icon.png) icon). 
+
+![Figure 4: You can copy an existing data definition's DDM structures and
+templates.](../../../images/ddl-definition-manage-templates.png)
+
+You can copy templates if you want to create a new template that's similar to an
+existing one, or you can edit them directly. You can also configure permissions
+for a template, and delete templates. All of these are accomplished by clicking
+the actions button for a template. For more information see the article on
+[Creating Custom
+Displays](/discover/portal/-/knowledge_base/7-0/creating-custom-displays).
+
+## Configuring Data Definition Fields
+
+You already know how to create data definitions, and if you created the example
+definition, you've added and configured some of the field types that can be used
+in your definitions. But there's more to know about the field types and
+their configuration options. 
+
+There are many different types of fields to choose from when creating data definitions:
 
 *Boolean* fields present a checkbox to the user and stores either a `true`
 (checked) or `false` (unchecked) based on state.
@@ -256,23 +343,13 @@ multiple selections.
 
 *Text Box* fields are larger text areas for longer text input.
 
+If you're in the Dynamic Data List's Add Data Definition section, you add these
+fields to a definition by dragging them from the palette on the left to
+the work area on the right.
 
-Using the screenshot field descriptions above, configure the data types you need
-for the Volunteer Sign-Up data definition. Use a *Text* type for the name.
-Require your friends and family to choose the tasks they'd like to help with by
-configuring a *Select* field to list the available tasks. Adding a required
-*Date* field is smart, because then you'll know that each volunteer has the
-correct date. Don't forget a *Documents and Media* field so users can upload
-their image. After all, how much more official-feeling and fun is it if you can
-print out some nifty badges? Make sure you add a *Geolocation* field so you know
-where your helpers are coming from (that way you can check with the municipal
-authorities on the day of your move to ensure there won't be any travel delays
-for your volunteers). To add these fields, drag them from the palette on the
-left to the work area on the right.
-
-You can also customize the appearance of the input fields and provide helpful
+You can also customize the appearance of input fields and provide helpful
 tips and hints for those entering data. Some data types have specific
-configuration options but all have some in common. The following properties can
+configuration options but all have some in common. Field properties can
 be edited in several ways: by double-clicking on the field, by clicking the
 wrench icon in the upper-right corner of the field,or by clicking the *Settings*
 tab when the field is selected:
@@ -323,7 +400,9 @@ Setting the field's *Options* changes the options available for selection.
 You're able to add and remove options as well as edit each individual option's
 display name and value (only available for Radio and Select fields).
 
-![Figure 6: The properties of a definition's data fields are configurable. For example, add and edit options for the *Task* Select field drop-down menu on the Volunteer Sign-Up form.](../../images/ddl-data-def-properties.png)
+![Figure 6: The properties of a definition's data fields are configurable. For
+example, add and edit options for the *Task* Select field drop-down menu on the
+Volunteer Sign-Up form.](../../../images/ddl-data-def-properties.png)
 
 In addition to dragging the fields around on the canvas, you can stack inputs
 within inputs by dragging a field within another field. You can organize your
@@ -331,41 +410,10 @@ data into unlimited levels of hierarchy, creating a clear, logical data model.
 There is also a duplicate button on each field (the button with the plus symbol
 icon), allowing you to easily clone any field as many times as you need.
 
-![Figure 7: Configure data fields by clicking the wrench icon, duplicate fields with the add button (the plus symbol icon), or delete them using the delete button (the trash can icon).](../../images/ddl-def-duplicate-field.png)
+![Figure 7: Configure data fields by clicking the wrench icon, duplicate fields
+with the add button (the plus symbol icon), or delete them using the delete
+button (the trash can icon).](../../../images/ddl-def-duplicate-field.png)
 
-The graphical interface is intuitive and easy to use, but you can also edit your
-data definition by switching to *Source* mode and manually customizing its XML
-file. You'll notice by default the *View* mode is selected. Click the *Source*
-tab to switch to Source mode. This method is likely to be useful for more
-experienced users and developers.
+Once you have a data definition, you and your list creators can use it to start
+creating lists for users to fill out.
 
-Data definitions also have the capability of inheriting characteristics from
-other definitions. When a parent data definition is configured, the child
-definition inherits the parent's fields and settings. Using this feature is
-helpful when you want to make a similar data definition to one that's already
-created. For instance, if you'd like to create an advanced sign-up sheet in
-addition to a regular sign-up sheet, you can simply inherit the characteristics
-of the regular sheet and only add the additional fields necessary for the
-advanced sheet. When the advanced sheet is configured, it will display its
-parent's fields in addition to its own fields.
-
-After you've saved your data definition, Liferay provides a WebDAV URL and a
-static URL. These values access the XML source of your data definition. To
-obtain these values, return to your data definition after it has been saved. To
-learn more about WebDAV or if you'd like to see WebDAV in action, see 
-the article on WebDAV access.
-
-![Figure 7: New data definitions are assigned a WebDAV URL and a static URL. After saving the definition, open the definition again (select *Manage Data Definitions* form the DDL portlet's configuration menu) to view the URLs. ](../../images/ddl-def-urls.png)
-
-Data definitions are easy to create with the DDL portlet's graphical interface.
-Using this information, users of `list.it` can get rolling
-with an unlimited array of custom types. Plus, you can always come back and
-change your form. If you find you needed to add some more information, simply
-come back to the data definition and fix it. All your data lists that use it are
-then instantly updated with the new or changed fields. 
-
-<!-- list.it? Should we stick with that? Are we mixing it up too much with the
-Volunteer Sign-Up stuff? -->
-
-All that's left to do is build a new data list and cajole your users into
-filling it out.
