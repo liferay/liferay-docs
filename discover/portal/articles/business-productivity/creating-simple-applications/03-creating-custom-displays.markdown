@@ -65,8 +65,8 @@ If there are any templates for the definition, you'll see them listed. To edit,
 copy, delete, or configure permissions for the definition, open its Actions
 menu by clicking the vertical ellipsis icon.
 
-![Figure 2: Manage and create display and form templates to change the display of forms and
-lists.](../../../images/ddl-template-window.png)
+![Figure 2: Manage all the templates for a data definition from the Manage Data
+Definitions section of the Dynamic Data Lists Portlet.](../../../images/ddl-template-window.png)
 
 If no templates have been created for a definition, you can create new ones. See
 the next sections on Creating Form Templates and Creating Display Templates for
@@ -115,8 +115,8 @@ Portlet:
    window and click it to create a new template. Make sure you're signed
    in as a user with permission to create templates.
 
-![Figure 2: Add display and form templates directly from the Dynamic Data Lists
-portlet.](../../../images/ddl-display-add-template.png)
+![Figure 4: Add display and form templates directly from the Dynamic Data Lists
+Display portlet.](../../../images/ddl-display-add-template.png)
 
 With Form Templates, can use one data model that encompasses the maximum
 information you might need, then quickly produce form templates that make it
@@ -154,8 +154,8 @@ From the Dynamic Data List Display portlet:
    window and click it to create a new template. Make sure you're signed
    in as a user with permission to create templates.
 
-![Figure 4: Add display and form templates directly from the Dynamic Data Lists
-portlet.](../../../images/ddl-display-add-template.png)
+![Figure 5: Add display and form templates directly from the Dynamic Data Lists
+Display portlet.](../../../images/ddl-display-add-template.png)
 
 From the Product Menu:
 
@@ -169,7 +169,7 @@ From the Product Menu:
 
 - Now click the Add button and choose *Add Display Template*.
 
-![Figure 1: Add display and form templates to change the display of forms and
+![Figure 6: Add display and form templates to change the display of forms and
 lists.](../../../images/ddl-add-template.png)
 
 Fill out the form with a name and a description. Next, choose whether to use
@@ -180,7 +180,7 @@ your template.
 <!-- Is it okay to link to these docs? Some Portal users might not know how to use a
 template language -->
 
-![Figure 5: Give your Display templates a name, description, and choose whether
+![Figure 7: Give your Display templates a name, description, and choose whether
 to use FreeMarker or Velocity in your template. ](../../../images/ddl-display-template-details.png)
 
 Once you choose the script language, you can upload a template file or use the
@@ -194,7 +194,7 @@ In a FreeMarker template, it can be invoked by typing *${* which opens a
 drop-down menu of common variables. Upon selecting one of the variables, the
 editor inserts the variable into your display template code.
 
-![Figure 6: Upload an existing template, or create one using the template
+![Figure 8: Upload an existing template, or create one using the template
 editor.](../../../images/ddl-display-template-script.png)
 
 
@@ -280,7 +280,7 @@ formatted list of all the data records, but you won't. It will spit out
 everything in the database for the given data definition, which is ugly and
 practically useless.
 
-![Figure 7: It's not useful to simply get the data records and display them
+![Figure 9: It's not useful to simply get the data records and display them
 in their raw form.](../../../images/ddl-display-unfinished.png)
 
 You're getting closer to having a coherent display template. There's just a
@@ -332,7 +332,7 @@ Now save the display template. If you've added a list to a DDL display portlet
 already, configure it to use the new Display Template, add a record, and see how
 it looks.
 
-![Figure 8: This display template provides a list of guests attending the event
+![Figure 10: This display template provides a list of guests attending the event
 and an interesting fact about each guest.](../../../images/ddl-display-template1.png)
 
 That gives you a simple, clean display of only the form data that you want your
@@ -380,8 +380,9 @@ Since that was so simple and fun, what if you wanted to display the *Full Name*,
     </#if>
 
 
-![Figure 9: This display template shows the Full Name field, a small version of
-the image uploaded as a Profile Picture, and the .](../../../images/ddl-display-template.png)
+![Figure 11: This display template shows the *Full Name* field, a small version of
+the image uploaded as a *Profile Picture*, and the *Tell us an interesting...*
+field.](../../../images/ddl-display-template.png)
 
 As you can see, using the template editor's functionality to access a Data
 Definition's records and fields is easy, and you can assemble a display template
@@ -463,9 +464,8 @@ your own simple applications. Using Liferay's Dynamic Data Lists portlet, the
 Dynamic Data List Display portlet, and the flexible power of data structures and
 templates, you can create list-based applications in Liferay very quickly. 
 
-<!-- COMPLETE THIS WHEN FORMS IS MORE STABLE. It might not be enough to just create a list and display a form, though.  You
-might need integration with review processes, called workflows, in Liferay. Read
-the next article to find out how workflow integrates smoothly with Dynamic Data
-Lists.
-
-<!-- Creating a separate article for workflow forms. This is getting long. -->
+<!-- THE NEXT ARTICLE IS ALMOST ALL ABOUT KALEO FORMS SO WAIT ON IT. It might
+not be enough to just create a list and display a form, though.  You might need
+integration with review processes, called workflows, in Liferay. Read the next
+article to find out how workflow integrates smoothly with Dynamic Data Lists.
+-->

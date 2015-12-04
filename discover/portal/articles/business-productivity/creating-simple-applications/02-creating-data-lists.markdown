@@ -55,7 +55,7 @@ default layout of the form as well. You just need to add a Data List Display
 portlet to a page, and set the permissions on the list so guests can add
 records.
 
-![Figure 3: You can enter a new data record directly form the Dynamic Data Lists
+![Figure 3: You can enter a new data record directly from the Dynamic Data Lists
 portlet by clicking on *Content* &rarr; *Dynamic data Lists* from the from the Product Menu,
 clicking the list you want to add a record for, then click the *Add* button.
 Alternatively, you can add the Dynamic Data List Display portlet to a page and
