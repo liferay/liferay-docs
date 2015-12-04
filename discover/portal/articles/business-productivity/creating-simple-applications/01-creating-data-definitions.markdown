@@ -73,7 +73,7 @@ configuration menu. Click on it and select *Manage Data Definitions*. The Data
 Definitions window appears, where you can access existing definitions or create
 new ones.
 
-    ![Figure 1: The portal ships with several commonly used predefined data
+    ![Figure 2: The portal ships with several commonly used predefined data
 definitions that  can be used as is or modified to build your lists. You can also add your own data definitions.](../../../images/ddl-definitions.png)
 
 3.  Click the *Add* icon (![Add Icon](../../../images/add-icon.png)) to add a
@@ -95,7 +95,7 @@ your work. You can, however, click *Source* mode to manually customizing a
 definition's XML file. This method is likely to be useful for more experienced
 users and developers.
 
-    ![Figure 5: You can add and configure fields to form a custom list
+    ![Figure 3: You can add and configure fields to form a custom list
 definition.](../../../images/ddl-data-definition-designer.png)
 
 5.  To start, drag a Text field from the Fields tab (in View mode) onto the
@@ -104,7 +104,7 @@ Text field, drop a Radio field. Drop four Boolean fields, and finish this
 section with a Select field. While doing this you might have noticed you can
 nest fields below each other. Nest all the fields you just added below the Text field.
 
-    ![Figure 5: Fields can be nested below other fields.](../../../images/ddl-fields-added.png)
+    ![Figure 4: Fields can be nested below other fields.](../../../images/ddl-fields-added.png)
 
     +$$$
 
@@ -123,12 +123,12 @@ Settings tab.
 
     -  Double click the Field Label and change it to *Full Name*. Click Save.
 
-    ![Figure 5: You can add and configure fields to form a custom list
+    ![Figure 6: You can add and configure fields to form a custom list
 definition.](../../../images/ddl-field-label-edit.png)
 
     -  Double click the Required setting and change it to *Yes*, then click Save.
 
-    ![Figure 5: You can add and configure fields to form a custom list
+    ![Figure 7: You can add and configure fields to form a custom list
 definition.](../../../images/ddl-field-required.png)
 
 9.  Next, configure the Radio field.
@@ -139,13 +139,13 @@ definition.](../../../images/ddl-field-required.png)
        set the values for the options to *male* and *female*. Only the Options
        will be displayed to users. Remove the unused Option.
 
-    ![Figure 5: You can add and configure fields to form a custom list
+    ![Figure 8: You can add and configure fields to form a custom list
 definition.](../../../images/ddl-options-edit.png)
 
 12.  Now create and configure DDL data definition fields to make the definition
 look like this image: 
 
-    ![Figure 5: You can add and configure fields to form a custom list
+    ![Figure 9: You can add and configure fields to form a custom list
 definition.](../../../images/ddl-name-and-more.png)
 
     - The options for the Select field  wtih the label *How fit are you?* should be *Fit as a
@@ -163,7 +163,7 @@ cases are covered, add the following fields to the data definition:
        Optional.*
     -  A Text Box field with the label *Tell us something about yourself.*
 
-    ![Figure 5: You can add and configure fields to form a custom list
+    ![Figure 10: You can add and configure fields to form a custom list
 definition.](../../../images/ddl-additional-fields.png)
 
 14.  Once you finish adding and configuring fields, click Save.
@@ -171,7 +171,7 @@ definition.](../../../images/ddl-additional-fields.png)
 Your new data definition will now appear in a list with all of the
 pre-configured definitions. 
 
-![Figure 5: You can add and configure fields to form a custom list
+![Figure 11: You can add and configure fields to form a custom list
 definition.](../../../images/ddl-data-definitions.png)
 
 If you click on the newly created definition (or any definition, for that
@@ -202,7 +202,7 @@ give Lunar Resort employees a chance to rate the popularity of each item they're
 filling out the Inventory form for. Just create a new definition, define the
 Inventory definition as a Parent, and add the fields you need.
 
-![Figure 4: You can create a child definition to add new fields to a
+![Figure 12: You can create a child definition to add new fields to a
 pre-existing one.](../../../images/ddl-inventory-record-def.png)
 
 When you create a list (you can call it Inventory List) based on the new
@@ -211,7 +211,7 @@ the fields you added and the fields of the existing definition. This way,
 whoever is in charge of maintaining the Inventory definition gets the
 information they want, and you get the information you want.
 
-![Figure 4: You can create a child definition to add new fields to a
+![Figure 13: You can create a child definition to add new fields to a
 pre-existing one.](../../../images/ddl-parent-def-list.png)
 Your definition now lives with all the pre-configured ones. There are
 several things you can do with these existing definitions, including deleting
@@ -224,19 +224,19 @@ you can either add a new dynamic data list from an existing data type or you can
 click *Manage Data Definitions* from the Actions button to add or edit data
 definitions.
 
-![Figure 3: You can manage the portal's data definitions.](../../../images/ddl-config-menu.png)
+![Figure 14: You can manage the portal's data definitions.](../../../images/ddl-config-menu.png)
 
 There are several data definition management actions you can perform. Of course,
 you can edit a data definition, but you can also configure its permissions,
 manage its templates, copy it, or delete it.
 
-![Figure 4: You can copy an existing data definition, manage its templates, and more.](../../../images/ddl-copy-definition.png)
+![Figure 15: You can copy an existing data definition, manage its templates, and more.](../../../images/ddl-copy-definition.png)
 
 If you edit a data definition that has references (from your lists or
 templates), you'll need to account for that, by editing the template, for
 instance.
 
-![Figure 4: You can copy an existing data definition, manage its templates, and
+![Figure 16: You can copy an existing data definition, manage its templates, and
 more.](../../../images/ddl-edit-definition-warning.png)
 
 ### Copying Data Definitions 
@@ -255,7 +255,7 @@ modify it to suit your needs. You can, of course, edit any definition in
 the portal, but if you copy a definition instead, you'll still have
 access to the original.
 
-![Figure 4: You can copy an existing data definition's DDM structures and
+![Figure 17: You can copy an existing data definition's DDM structures and
 templates.](../../../images/ddl-copy-definition.png)
 
 From the actions menu for a data definition, you can also configure its permissions.
@@ -273,7 +273,7 @@ definition listed in the Manage Data Definitions list. If you don't want this,
 just deselect View for Site Member, and these users won't see your data
 definition listed with the others.
 
-![Figure 4: You can copy an existing data definition's DDM structures and
+![Figure 18: You can copy an existing data definition's DDM structures and
 templates.](../../../images/ddl-definition-permissions.png)
 
 You can manage a data definition's templates as well.
@@ -284,7 +284,7 @@ Manage a data definition's templates by clicking Manage Templates from a data
 definition's actions menu (click the ![Configuration
 Menu](../../../images/options-icon.png) icon). 
 
-![Figure 4: You can copy an existing data definition's DDM structures and
+![Figure 19: You can copy an existing data definition's DDM structures and
 templates.](../../../images/ddl-definition-manage-templates.png)
 
 You can copy templates if you want to create a new template that's similar to an
@@ -400,9 +400,9 @@ Setting the field's *Options* changes the options available for selection.
 You're able to add and remove options as well as edit each individual option's
 display name and value (only available for Radio and Select fields).
 
-![Figure 6: The properties of a definition's data fields are configurable. For
-example, add and edit options for the *Task* Select field drop-down menu on the
-Volunteer Sign-Up form.](../../../images/ddl-data-def-properties.png)
+![Figure 20: The properties of a definition's data fields are configurable. For
+example, add and edit options for the *How fit are you?* Select field drop-down
+menu on the Activity Entry form.](../../../images/ddl-data-def-properties.png)
 
 In addition to dragging the fields around on the canvas, you can stack inputs
 within inputs by dragging a field within another field. You can organize your
@@ -410,7 +410,7 @@ data into unlimited levels of hierarchy, creating a clear, logical data model.
 There is also a duplicate button on each field (the button with the plus symbol
 icon), allowing you to easily clone any field as many times as you need.
 
-![Figure 7: Configure data fields by clicking the wrench icon, duplicate fields
+![Figure 21: Configure data fields by clicking the wrench icon, duplicate fields
 with the add button (the plus symbol icon), or delete them using the delete
 button (the trash can icon).](../../../images/ddl-def-duplicate-field.png)
 
