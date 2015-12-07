@@ -47,7 +47,7 @@ level (on the same level as the `android` element):
 
 Next, add the following line of code inside the `dependencies` element: 
 
-    compile 'com.liferay.mobile:liferay-screens:+'
+    compile 'com.liferay.mobile:liferay-screens:1.2.4'
 
 Finally, add these lines just after the closing `buildTypes` brace: 
 
