@@ -1,4 +1,4 @@
-# Converting Legacy Applications to Modules
+# Converting Legacy Applications to Modules [](id=converting-legacy-applications-to-modules)
 
 You've probably heard the term *modularity* discussed frequently in relation to
 Liferay 7.0. With Liferay 7.0 transforming into a modular platform, components
@@ -93,7 +93,7 @@ process for converting to modules using Liferay's module structure.
 
 The first thing you'll do is create your application's web (client) module.
 
-## Converting Your Legacy Application's Portlet Classes and UI
+## Converting Your Legacy Application's Portlet Classes and UI [](id=converting-your-legacy-applications-portlet-classes-and-ui)
 
 The first thing you'll do is create your application's parent directory and
 directory structure for your application's client *web* module. This module
@@ -308,7 +308,7 @@ Many applications only have the client module. Larger, more complex
 modules, however, require additional modules to hold their service and
 implementation logic. You'll learn about how to create these modules next.
 
-## Converting Your Legacy Application's API and Service Builder Implementation
+## Converting Your Legacy Application's API and Service Builder Implementation [](id=converting-your-legacy-applications-api-and-service-builder-implementation)
 
 If you've continued to this section, you're converting a legacy application that
 offers its own API and uses Service Builder. You should have already generated
@@ -416,7 +416,7 @@ and
 [Creating an API Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-an-api-module),
 respectively.
 
-## Building Your Module JARs for Deployment
+## Building Your Module JARs for Deployment [](id=building-your-module-jars-for-deployment)
 
 Now it's time to build your modules and deploy them to your Liferay 7.0
 instance. To build your project, run `gradle build` from your project's root
