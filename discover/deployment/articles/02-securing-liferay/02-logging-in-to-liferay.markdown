@@ -62,7 +62,6 @@ impaired users to pass the test. To configure Liferay to use reCAPTCHA,
 navigate to the Control Panel, then click on *System* &rarr; *Server
 Administration* &rarr; *CAPTCHA*.
 
-
 The security requirements of some web portals require that all user accounts be
 created by administrators. Liferay supports this use case by allowing the
 *Create Account* to be removed. To prevent guest users from creating new user
