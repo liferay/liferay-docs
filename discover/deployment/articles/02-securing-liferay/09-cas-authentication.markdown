@@ -1,4 +1,4 @@
-# Authentication: Central Authentication Service (CAS)
+# CAS (Central Authentication Service) Single Sign On Authentication
 
 CAS is an authentication system originally created at Yale University. It is a
 widely used open source single sign-on solution and was the first SSO product

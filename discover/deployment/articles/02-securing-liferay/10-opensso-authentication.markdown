@@ -1,4 +1,4 @@
-# Authentication: OpenSSO
+# OpenSSO Single Sign On Authentication
 
 OpenSSO is an open source single sign-on solution that comes from the code base
 of Sun's System Access Manager product. Liferay integrates with OpenSSO,
