@@ -196,7 +196,7 @@ the Maven model, although any directory set up is permissible.
 
 5.  Open the `build.gradle` file. This is used to specify all your module's
     dependencies. The `build.gradle` file that was generated for you is
-    pre-populated with content and default dependencies related to OSGi and
+    prepopulated with content and default dependencies related to OSGi and
     Liferay Portal. In the `dependencies {...}` block, you'll need to add the
     client module's dependencies. When deploying your module into the OSGi
     container, OSGi checks if the dependencies are available in the container.
@@ -319,9 +319,9 @@ implementation module holds your application's Service Builder implementation.
 
 Before you begin editing the API and implementation modules, you'll need to
 configure your root project (e.g., `tasks`) to recognize the multiple modules
-residing there. A multiproject must have a `settings.gradle` file in the root
+residing there. A multi-project must have a `settings.gradle` file in the root
 project, for building purposes. Luckily, when you generated your project using
-blade, the `settings.gradle` file was inserted and pre-configured for your
+blade, the `settings.gradle` file was inserted and preconfigured for your
 application's modules. 
 
 Since your root project directory is ready to go, you'll learn how to use
@@ -384,13 +384,13 @@ Service Builder to generate your application's services next.
 
     | Legacy Package | Module Package |
     |----------------|----------------|
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.model.impl` | `tasks.service/src/main/java/com.liferay.tasks.model.impl` | 
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.impl` | `tasks.service/src/main/java/com.liferay.tasks.service.impl` |
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.permission` | `tasks.service/src/main/java/com.liferay.tasks.service.permission` |
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.persistence.impl` | `tasks.service/src/main/java/com.liferay.tasks.service.persistence.impl` |
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.social` | `tasks.service/src/main/java/com.liferay.tasks.social` |
-    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.util` | `tasks.service/src/main/java/com.liferay.tasks.util` |
-    | `tasks-portlet/docroot/WEB-INF/src/custom-sql` | `tasks.service/src/main/resources/META-INF/custom-sql` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.model.impl` | `tasks-service/src/main/java/com.liferay.tasks.model.impl` | 
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.impl` | `tasks-service/src/main/java/com.liferay.tasks.service.impl` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.permission` | `tasks-service/src/main/java/com.liferay.tasks.service.permission` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.service.persistence.impl` | `tasks-service/src/main/java/com.liferay.tasks.service.persistence.impl` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.social` | `tasks-service/src/main/java/com.liferay.tasks.social` |
+    | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.util` | `tasks-service/src/main/java/com.liferay.tasks.util` |
+    | `tasks-portlet/docroot/WEB-INF/src/custom-sql` | `tasks-service/src/main/resources/META-INF/custom-sql` |
 
 8.  Once you've copied all of your custom classes over, run `gradle
     buildService` again to generate the remaining services.
@@ -430,8 +430,8 @@ the `portal-service-7.0.0-SNAPSHOT` JAR being out-of-date. To work around this
 issue, build [liferay-portal](https://github.com/liferay/liferay-portal) from
 source (i.e., run `ant all` in the `liferay-portal` root directory) and then
 copy the `liferay-portal/portal-service/portal-service.jar` file to your
-project's `test/lib` folder. You must create this `lib` folder. Then replace the
-following line in all your module's `build.gradle` files:
+project's `lib` folder (e.g., `tasks/lib`). You must create this `lib` folder.
+Then replace the following line in all your module's `build.gradle` files:
 
     compile 'com.liferay.portal:portal-service:7.0.0-SNAPSHOT'
 
