@@ -420,10 +420,35 @@ respectively.
 
 Now it's time to build your modules and deploy them to your Liferay 7.0
 instance. To build your project, run `gradle build` from your project's root
-directory. Once your project successfully builds, check all of your modules'
-`/build/libs` directories. There should be a newly generated JAR file in each,
-which is the file you'll need to deploy to Liferay. You can deploy each JAR by
-running:
+directory.
+
++$$$
+
+**Note:** At the time of this writing, there are some compile errors you'll
+receive when running `gradle build`. These compilation errors are caused from
+the `portal-service-7.0.0-SNAPSHOT` JAR being out-of-date. To work around this
+issue, build [liferay-portal](https://github.com/liferay/liferay-portal) from
+source (i.e., run `ant all` in the `liferay-portal` root directory) and then
+copy the `liferay-portal/portal-service/portal-service.jar` file to your
+project's `test/lib` folder. You must create this `lib` folder. Then replace the
+following line in all your module's `build.gradle` files:
+
+    compile 'com.liferay.portal:portal-service:7.0.0-SNAPSHOT'
+
+with this one:
+
+    compile files('../lib/portal-service.jar')
+
+Also, in your API module's `build.gradle` file, you'll need to add the following
+line within your `dependencies {}` block:
+
+    compile 'com.liferay:com.liferay.osgi.util:2.0.4'
+
+$$$
+
+Once your project successfully builds, check all of your modules' `/build/libs`
+directories. There should be a newly generated JAR file in each, which is the
+file you'll need to deploy to Liferay. You can deploy each JAR by running:
 
     blade deploy path/to/JAR/file
 
