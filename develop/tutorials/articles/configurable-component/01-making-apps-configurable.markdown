@@ -48,14 +48,14 @@ can have:
 
 That's it for now. You are ready to get started with some code. If you already
 had a portlet or service that was configurable using the traditional mechanisms
-of Liferay 6.2 and before, you might also want to read
-[How to change your portlets and services to use the new Configuration API](https://docs.google.com/a/liferay.com/document/d/1o6U0fqsUv9WSJTLQmSytMMcW2exUwWclZPQ5A3vUKwc/edit#)[](https://docs.google.com/a/liferay.com/document/d/1o6U0fqsUv9WSJTLQmSytMMcW2exUwWclZPQ5A3vUKwc/edit#). 
+of Liferay 6.2 and before, you might also want to read the
+[How to change your portlets and services to use the new Configuration API (not yet written)]() tutorial.
 
 ## Making Your Application Configurable
 
 Now you'll see the minimum amount of code you need to write to make your
-application configurable the Liferay 7 way. The System scope is covered first
-(refer to the previous section if you don't know what that means).
+application configurable the Liferay 7 way. First, you'll learn how to create a
+configuration at the system scope.
 
 The first step is to create a Java interface to represent the configuration and
 its default values. The reason for using a Java interface is that it allows for
@@ -290,18 +290,6 @@ interface. If you go to *System* &rarr; *System Settings* &rarr; *Other* and
 click on the *Example configuration* link, you can find the `Favorite color`
 setting and change its value. Your application's JSP will reflect this update
 when you refresh the page.
-<!--
-This is currently not working. If you try to update the Favorite color field,
-you'll get an exception like this:
-
-20:48:30,455 ERROR [http-bio-8080-exec-6][render_portlet_jsp:131] null
-java.sql.SQLFeatureNotSupportedException: Updates are not supported
-
-This appears to be happening for all of the configurations available in System
-Settings. I.e., this appears to be a portal problem, not a plugin problem.
-
--Jesse
--->
 
 ## Categorizing the Configuration
 
@@ -309,7 +297,7 @@ Since it's now very easy to make any application or service configurable, there
 are already lots of configuration options in Liferay by default. If you've
 deployed custom applications and services to your portal, there will be even
 more. To make it easier for portal administrators to find the right
-configuration options, we have provided a mechanism for developers to specify a
+configuration options, Liferay provides a mechanism for developers to specify a
 category in which the configuration will be shown in the auto-generated System
 Settings UI in the Control Panel.
 
@@ -344,9 +332,9 @@ The fully qualified class name of the `@ConfigAdmin` class is
 
 When an application is deployed to Liferay, it's common to need different
 configurations depending on the scope. That means having different
-configurations for a given service per portal instance or per site. It's also
-very common to need different configurations for each portlet instance. Liferay
-7 provides an easy way to achieve this with little effort through a new
+configurations for a given application per portal instance or per site. It's
+also very common to need different configurations for each portlet instance.
+Liferay 7 provides an easy way to achieve this with little effort through a new
 framework called the Module Configuration API.
 
 In order to use the Module Configuration API, you need to
@@ -450,4 +438,7 @@ in different scenarios.
 Excellent! In this tutorial, you've learned how to make your applications
 configurable. Creating a simple configuration interface allows Liferay to
 auto-generate a configuration UI that's accessible via System Settings in the
-Control Panel. You've also learned how to categorize your configurations within System Settings, how read configuration settings in your application at runtime, how to support different configurations at different scopes, 
+Control Panel. You've also learned how to categorize your configurations within
+System Settings, how read configuration settings in your application at
+runtime, how to support different configurations at different scopes, and how
+to reuse the same configuration class for different scenarios.
