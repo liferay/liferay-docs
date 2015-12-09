@@ -196,14 +196,17 @@ the upper left-hand corner of your LCS site. The project is listed to the right
 of this tab, with a drop-down arrow that lets you switch between projects if you 
 have more than one. You can also switch between projects from the user menu at 
 the top right of the Dockbar. The project view provides you with an overview of 
-your LCS project, including fix packs, alerts, environments, and servers. Fix 
-packs are displayed prominently in a table. Note that the status, environment, 
-server, and location are listed for each fix pack. If the fix pack is available, 
-you can download it by clicking the *Download* icon to its right. You can 
-download several fix packs at once by checking the checkbox to the left of each 
-and then clicking the *Download* button above the Fix Packs table. Once a fix 
-pack download completes, an alert appears in the Alerts table. This alert tells 
-you the download is finished and to restart your server. Restarting your server 
+your LCS project, including available fix packs, alerts, environments, and 
+servers. Fix packs, if available for your servers, are displayed prominently in 
+the Fix Packs table. Note that this table doesn't appear at all if your servers 
+have no available fix packs. The Fix Packs table lists the status, environment, 
+server, and location for each fix pack. If a server with an available fix pack 
+is running, a *Download* column also appears in the table. You can download the 
+fix pack by clicking its *Download* icon in that column. You can download 
+several fix packs at once by checking the checkbox to the left of each and then 
+clicking the *Download* button above the Fix Packs table. Once a fix pack 
+download completes, an alert appears in the Alerts table. This alert tells you 
+the download is finished and to restart your server. Restarting your server 
 installs any downloaded fix packs. Note that you must start your server with the 
 privileges required to write to the disk location where patches are stored and 
 processed (the `patching-tool` folder). 
