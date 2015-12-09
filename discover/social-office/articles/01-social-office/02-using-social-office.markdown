@@ -192,7 +192,8 @@ to date with various kinds of portal activity:
 The Announcements portlet lets you broadcast important information to different
 groups of users. Each announcement can be created in a specific scope so that
 you can manage which announcements are sent to which users. For more information
-about using the Announcements portlet, please refer to the Liferay [User Guide](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/sending-alerts-and-announcements-in-you-liferay-portal-6-2-user-guide-08-en).
+about using the Announcements portlet, please refer to the 
+[Liferay User Guide](/discover/portal/-/knowledge_base/6-2/sending-alerts-and-announcements-in-your-portal).
 In Social Office, announcements created with the priority *Important* are
 displayed in red while announcements with the *Normal* priority are displayed in
 yellow. The default scoping of the displayed announcements in Social Office
@@ -428,7 +429,7 @@ Social Office provides a private document library to each Social Office user.
 Users can navigate to it by clicking the *My Documents* link in the Dashboard
 navigation menu. The Documents and Media portlet on the My Documents page is
 exactly the same as the standard Documents and Media portlet that ships with
-Liferay Portal. Please refer to [Liferay's User Guide](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/document-manageme-6) for
+Liferay Portal. Please refer to the [Liferay User Guide](/discover/portal/-/knowledge_base/6-2/document-management) for
 information about document management.
 
 ![Figure 1.12: The Documents and Media portlet on the My Documents page is exactly the same as the standard Documents and Media portlet that ships with Liferay Portal. To optimize the Social Office user experience, set up your users with Liferay Sync.](../../images/so-document-library.png)
@@ -441,7 +442,7 @@ simplify the way they access their document repositories by installing Liferay
 Sync. Liferay Sync allows users to view and edit documents offline using their 
 regular desktop or mobile environments. Users' documents are synced with your 
 Liferay server at periodic intervals. You can read more about Liferay Sync in 
-Liferay's User Guide here: [Liferay Sync](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen04-liferay-sync-0).
+Liferay's User Guide here: [Liferay Sync](/discover/portal/-/knowledge_base/6-2/administering-liferay-sync).
 
 ### The Tasks Portlet [](id=the-tasks-portlet)
 
@@ -602,7 +603,7 @@ your site. It's really just a WYSIWYG portlet with its title changed to
 *Welcome*. Click on the gear icon of the portlet and then select *Configuration* 
 to bring up the WYSIWYG editor. This is the same powerful editor that appears in 
 Liferay Portal. You can read about it in the user guide 
-[section on managing content](http://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/features-of-liferays-wcm-liferay-portal-6-2-user-guide-02-en).
+[section on managing content](/discover/portal/-/knowledge_base/6-2/features-of-liferays-wcm).
 
 The Calendar, Documents, Forums, Blogs, and Wiki pages contain portlet
 applications that are automatically scoped for the site. This means that these
@@ -611,8 +612,7 @@ members. So, while each Social Office member receives a personal Calendar
 application and Documents and Media library on his or her personal site, site
 members share Calendar applications and Documents and Media libraries for each
 site they belong to. For more information about these applications, please refer
-to Liferay's user guide, *Using Liferay Portal*, available at
-[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). 
+to the [Liferay User Guide](/discover/portal/-/knowledge_base/6-2/what-is-liferay). 
 
 ![Figure 1.18: Social Office's sites come with pre-built pages and applications that facilitate team-based collaboration.](../../images/social-office-site.png)
 
