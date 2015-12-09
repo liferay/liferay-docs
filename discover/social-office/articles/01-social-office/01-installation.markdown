@@ -113,8 +113,7 @@ do. For a Tomcat bundle, just navigate to
 `<Liferay Home>/tomcat-<version>/webapps` and remove the `seven-cogs-hook` 
 folder. For other application server bundles, navigate to the directory where 
 web applications are installed and remove the `seven-cogs-hook` folder. Please 
-refer to chapter 11 of Using Liferay Portal at
-[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/installing-liferay-on-an-existing-application-server)
+refer to [Using Liferay Portal](/discover/portal/-/knowledge_base/6-1/installing-liferay-on-an-existing-application-server)
 if you're not sure where the web applications directory is on your application
 server.
 

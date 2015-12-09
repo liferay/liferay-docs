@@ -2,9 +2,8 @@
 
 Social Office 1.5b runs on Liferay Portal 5.2.7. If you're running Social Office
 1.5b and you'd like to upgrade to 2.0, you first need to upgrade your portal to
-version 6.1.1 CE. Please see the Upgrading Liferay section in chapter 17 of
-Liferay's User Guide for details about Liferay's upgrade process:
-[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
+version 6.1.1 CE. Please see [Upgrading Liferay](/discover/portal/-/knowledge_base/6-1/upgrading-liferay)
+for details about Liferay's upgrade process.
 Before starting the following Social Office upgrade process, make sure you've
 already upgraded your portal to version 6.1.1 CE, and backed up your old
 `portal-ext.properties` file, data folder, and database.

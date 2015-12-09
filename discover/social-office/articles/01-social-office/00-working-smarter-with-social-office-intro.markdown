@@ -49,8 +49,9 @@ Liferay Portal using Social Office. From installing Social Office to introducing
 you to its entire feature set, we'll discuss all of the things you can do with
 Social Office to help your team. We hope you'll use it as a tool to get Social
 Office up, running, and integrated into your enterprise. You can find much more
-information about installation and administration in *Using Liferay Portal*
-[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide).
+information about installation and administration in
+[Using Liferay Portal](/discover/portal/-/knowledge_base/6-1/what-is-liferay).
+
 
 If you need any assistance beyond what's covered in this book, Liferay, Inc.
 offers training, consulting, and support services to fill any need that you

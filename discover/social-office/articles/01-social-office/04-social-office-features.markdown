@@ -204,7 +204,7 @@ navigation menu. The Documents and Media portlet on the My Documents page is
 exactly the same as the standard Documents and Media portlet that ships with
 Liferay Portal. Please refer to chapter 4 of Liferay's User Guide for
 information about document management: [Document
-Management](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/documents-and-med-1)
+Management](/discover/portal/-/knowledge_base/6-1/document-management)
 
 ![Figure 1.17: The Documents and Media portlet on the My Documents page is
 exactly the same as the standard Documents and Media portlet that ships with
@@ -219,8 +219,7 @@ users can simplify the way they access their document repositories by installing
 Liferay Sync. Liferay Sync allows users to view and edit documents offline using
 their regular desktop or mobile environments. Users' documents are synced with
 your Liferay server at periodic intervals. You can read more about Liferay Sync
-in chapter 4 of Liferay's User Guide here: [Liferay
-Sync](https://www.liferay.com/documentation/liferay-portal/6.1/user-guide/-/ai/lp-6-1-ugen04-liferay-sync-0).
+in Liferay's User Guide here: [Liferay Sync](/discover/portal/-/knowledge_base/6-1/liferay-sync).
 
 The Tasks system allows you and your team members to keep track of different
 tasks that you're working on. Tasks related to specific projects can be tagged
@@ -360,8 +359,7 @@ members. So, while each Social Office member receives a personal Calendar
 application and Documents and Media library on his or her personal site, site
 members share Calendar applications and Documents and Media libraries for each
 site they belong to. For more information about these applications, please refer
-to Liferay's user guide, *Using Liferay Portal*, available at
-[http://www.liferay.com/documentation/liferay-portal/6.1/user-guide](http://www.liferay.com/documentation/liferay-portal/6.1/user-guide). 
+to Liferay's user guide, [Using Liferay Portal](/discover/portal/-/knowledge_base/6-1/what-is-liferay).
 
 ![Figure 1.23: Social Office's sites come with pre-build pages and applications
 that facilitate team-based collaboration.](../../images/social-office-site.png)
