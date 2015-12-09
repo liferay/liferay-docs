@@ -2875,3 +2875,167 @@ In previous versions of Liferay, some applications such as Blogs and Wiki shared
 the tags of their entries within the page. The Asset Publisher was able to use
 them to show other assets with the same tags. This functionality has changed, so
 the preference is no longer used.
+
+---------------------------------------
+
+### Removed Software Catalog Portlet and Services
+- **Date:** 2015-Nov-21
+- **JIRA Ticket:** LPS-60705
+
+#### What changed?
+
+The Software Catalog portlet and its associated services are no longer part
+of Liferay's source code or binaries.
+
+#### Who is affected?
+
+This affects portals which were making use of the Software Catalog portlet to
+manage a catalog of their software. Developers who were making use of the
+software catalog services from their custom code are also affected.
+
+#### How should I update my code?
+
+There is no direct replacement for invocations to the Software Catalog services.
+In cases where it is really needed, it is possible to obtain the code from a
+previous release and include it in the custom product (subject to licensing).
+
+#### Why was this change made?
+
+The Software Catalog was developed to implement the very first versions of what
+later become Liferay's Marketplace. It was later replaced and has not been used
+by Liferay since then. It has also been used minimally outside of Liferay. The
+decision was made to remove it so Liferay could be more lightweight and free
+time to focus on other areas of the product that add more value.
+
+---------------------------------------
+
+### Removed the getPageOrderByComparator Method from WikiUtil
+- **Date:** 2015-Dec-01
+- **JIRA Ticket:** LPS-60843
+
+#### What changed?
+
+The `getPageOrderByComparator` method has been removed from `WikiUtil`.
+
+#### Who is affected?
+
+This affects developers that use this method in their code.
+
+#### How should I update my code?
+
+You should update your code to invoke
+`WikiPortletUtil.getPageOrderByComparator(String, String)`.
+
+#### Why was this change made?
+
+As part of the modularization efforts it has been considered that that this
+logic belongs to wiki-web module.
+
+---------------------------------------
+
+### Custom AUI Validators Are No Longer Implicitly Required
+- **Date:** 2015-Dec-02
+- **JIRA Ticket:** LPS-60995
+
+#### What changed?
+
+The AUI Validator tag no longer forces custom validators (e.g., `name="custom"`)
+to be required, and are now optional by default.
+
+#### Who is affected?
+
+This affects developers using custom validators, especially ones who relied on
+the field being implicitly required via the custom validator.
+
+#### How should I update my code?
+
+There are several cases where you should update your code to compensate for this
+change. First, blank value checking is no longer necessary, so places where
+blank values are checked should be updated.
+
+Old Code:
+
+    return !val || val != A.one('#<portlet:namespace />publicVirtualHost').val();
+
+New Code:
+
+    return val != A.one('#<portlet:namespace />publicVirtualHost').val();
+
+Also, instead of using custom validators to determine if a field is required,
+you should now use a conditional `required` validator.
+
+Old Code:
+
+    <aui:validator errorMessage="you-must-specify-a-file-or-a-title" name="custom">
+        function(val, fieldNode, ruleValue) {
+            return !!val || !!A.one('#<portlet:namespace />file').val();
+    }
+
+New Code:
+
+    <aui:validator errorMessage="you-must-specify-a-file-or-a-title" name="required">
+        function(fieldNode) {
+            return !A.one('#<portlet:namespace />file').val();
+    }
+
+Lastly, custom validators that assumed validation would always run must now
+explicitly pass the `required` validator. This is done by passing in the
+`<aui:validator name="required" />` element. The `<aui:input>` tag listed below
+is an example of how to explicity pass the `required` validator:
+
+    <aui:input name="vowelsOnly">
+        <aui:validator errorMessage="must-contain-only-the-following-characters" name="custom">
+            function(val, fieldNode, ruleValue) {
+                var allowedCharacters = 'aeiouy';
+                var regex = new RegExp('[^' + allowedCharacters + ']');
+
+                return !regex.test(val);
+            }
+        </aui:validator>
+        <aui:validator name="required" />
+    </aui:input>
+
+#### Why was this change made?
+
+A custom validator caused the field to be implicitly required. This meant that
+all validators for the field would be evaluated. This created a condition where
+you could not combine custom validators with another validator for an optional
+field.
+
+For example, imagine an optional field which has an email validator, plus a
+custom validator which checks for email addresses within a specific domain
+(e.g., `example.com`). There was no way for this optional field to pass
+validation. Even if you handled blank values in your custom validator, that
+blank value would fail the email validator.
+
+This change requires most custom validators to be refactored, but allows greater
+flexibility for all developers.
+
+---------------------------------------
+
+### Moved Recycle Bin logic into a new `DLTrashService` interface
+- **Date:** 2015-Dec-02
+- **JIRA Ticket:** LPS-60810
+
+#### What changed?
+
+All Recycle Bin logic in Documents and Media services was moved from
+`DLAppService` into the new `DLTrashService` service interface. All moved
+methods have the same name and signatures.
+
+#### Who is affected?
+
+This affects any local or remote caller of `DLAppService`.
+
+#### How should I update my code?
+
+As all methods have been simply moved into the new service, calling the
+equivalent method on `DLTrashService` suffices.
+
+#### Why was this change made?
+
+Documents and Media services have complex interdependencies that result in
+circular dependencies. Until now, `DLAppService` was responsible for exposing
+the Recycle Bin logic, delegating it to other components. The problem was, the
+components depended on `DLAppService` to implement their logic. Extracting the
+services from `DLAppService` was the only sensible solution to this circularity.
