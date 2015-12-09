@@ -31,10 +31,10 @@ Also, you should take note of a few key terms used throughout this guide:
 
 As you go through this guide, you'll cover the following sections on LCS:
 
-- LCS Account Setup
 - Portal Preconfiguration (Liferay 6.1 GA3 only)
 - Patching Tool Configuration (EE only)
 - LCS Client Configuration
 - Using LCS
 
-Next, you'll get started by setting up your LCS account.
+You'll get started with a few configuration steps that are required to use LCS 
+with your Liferay portal instances.
