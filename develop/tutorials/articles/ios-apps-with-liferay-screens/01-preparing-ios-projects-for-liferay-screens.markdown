@@ -63,7 +63,7 @@ Your final `Podfile` should look like this:
     
     # the rest of your Podfile
 
-You can also use [this `Podfile`](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Samples/Showcase-swift/Podfile) 
+You can also use [this `Podfile`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Showcase-swift/Podfile) 
 as a template.
 
 Next, in your terminal, install Liferay Screens by executing `pod install` from
@@ -193,7 +193,7 @@ Screens uses a property list (`.plist`) file to access your Liferay instance.
 It must include the server's URL, the portal's company ID, and the site's group
 ID. Create a `liferay-server-context.plist` file and specify values required for 
 communicating with your Liferay instance. As an example, refer to
-[`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Framework/Core/Resources/liferay-server-context-sample.plist). 
+[`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Resources/liferay-server-context-sample.plist). 
 
 ![Figure 8: Here's a property list file, called `liferay-context.plist`.](../../images/screens-ios-liferay-context.png)
 
