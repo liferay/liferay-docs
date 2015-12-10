@@ -4,7 +4,7 @@
 
 ## Requirements [](id=requirements)
 
-- Xcode 6.4.x
+- Xcode 7.2
 - iOS 9 SDK
 - Liferay Portal 6.2 CE or EE
 - Liferay Screens Compatibility Plugin (

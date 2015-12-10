@@ -32,7 +32,7 @@ Screens apps on iOS 7 and above--Screens doesn't use iOS 8 APIs.
 
 Liferay Screens for iOS requires the following software: 
 
-- Xcode 6.4.x
+- Xcode 7.2
 - iOS 9 SDK
 - [CocoaPods](http://cocoapods.org) 0.36 or newer
 - [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
