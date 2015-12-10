@@ -39,10 +39,5 @@ property makes Liferay completely undeploy a plugin before deploying a new
 version of the plugin. If you don't set `hot.undeploy.on.redeploy=true` before
 upgrading, the upgrade might not correctly handle activities. Setting
 `hot.undeploy.on.redeploy=true` ensures that activities are handled correctly.
-See the following issues for more details:
-
-[SOS-2158](https://issues.liferay.com/browse/SOS-2158)
-[SOS-2159](https://issues.liferay.com/browse/SOS-2159)
-[SOS-2160](https://issues.liferay.com/browse/SOS-2160)
 
 After installing the new version of Social Office, you're all set!
