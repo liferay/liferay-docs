@@ -5,10 +5,10 @@ different configuration options that your application should support. It's also
 important to think about how users should be able to access your application's
 configuration interface. Liferay supports a flexible mechanism for configuring
 applications. You can read about it in the
-[Making Your Applications Configurable]() tutorial. In this tutorial, you'll
-learn to implement a configuration action for your application. The
-configuration action is invoked when a user clicks on the gear icon of a Liferay
-application and selects *Configuration*.
+[Making Your Applications Configurable (not yet written)]() tutorial. In this
+tutorial, you'll learn to implement a configuration action for your
+application. The configuration action is invoked when a user clicks on the gear
+icon of a Liferay application and selects *Configuration*.
 
 ![When a user clicks on a Liferay application's gear icon and selects *Configuration*, the application's configuration action is invoked.](../../images/gear-configuration.png)
 
@@ -56,6 +56,17 @@ about the `Meta.OCD` and `Meta.AD` annotations, please see the
         public String favoriteColor();
 
     }
+
+Add the following line to your project's `bnd.bnd` file:
+
+    -metatype: *
+
+This line lets bnd use your configuration interface to generate an XML
+configuration file. This lets Liferay auto-generate a UI for your configuration
+in the System Settings area of the Control Panel. However, it's sometimes
+preferable for users to be able to access your configuration directly from the
+portlet without having to go to the Control Panel. In this tutorial, you'll
+learn how to facilitate this.
 
 This sample configuration contains a single string field called `favoriteColor`.
 
@@ -203,7 +214,7 @@ example:
         service = ConfigurationAction.class
     )
     public class ExampleConfigurationAction extends DefaultConfigurationAction {
-            
+
         @Override
         public void processAction(
                 PortletConfig portletConfig, ActionRequest actionRequest,
@@ -212,7 +223,7 @@ example:
 
             String favoriteColor = ParamUtil.getString(actionRequest, "favoriteColor");
             setPreference(actionRequest, "favoriteColor", favoriteColor);
-            
+
             super.processAction(portletConfig, actionRequest, actionResponse);
         }
 
@@ -224,17 +235,17 @@ example:
             httpServletRequest.setAttribute(
                 ExampleConfiguration.class.getName(),
                 _exampleConfiguration);
-            
+
             super.include(portletConfig, httpServletRequest, httpServletResponse);
         }
-        
+
         @Activate
         @Modified
         protected void activate(Map<Object, Object> properties) {
             _exampleConfiguration = Configurable.createConfigurable(
                 ExampleConfiguration.class, properties);
         }
-        
+
         private volatile ExampleConfiguration _exampleConfiguration;
 
     }
@@ -397,7 +408,7 @@ Many Liferay applications read the value of the `cmd` parameter and perform some
 processing depending on its value.
 
 You can find a complete example project on Github here:
-[https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/com.liferay.docs.exampleconfig](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/com.liferay.docs.exampleconfig)
+[(not yet written)]()
 
 To test this example project, deploy the application to Liferay, add it to a
 page, click on the gear icon, and select *Configuration*. Select a favorite
