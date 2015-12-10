@@ -34,7 +34,7 @@ Note that user credentials and attributes can be stored in an app's data store
 currently the only data store implemented. However, new and more secure data 
 stores will be added in the future. Stored user credentials can be used to 
 automatically log the user in to subsequent sessions. To do this, you can use 
-the method `SessionContext.loadSessionFromStore()`.
+the method `SessionContext.loadStoredCredentials()`.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kEZEahTzuck" frameborder="0" allowfullscreen></iframe>
 
@@ -79,8 +79,8 @@ used from Liferay Screens. When the app is created, copy the *Consumer Key* and
 
 This Screenlet doesn't support offline mode. It requires network connectivity.
 If you need to log in users automatically, even when there's no network 
-connection, you can use the `credentialsStore` attribute together with the 
-`SessionContext.loadSessionFromStore` method. 
+connection, you can use the `credentialsStorage` attribute together with the 
+`SessionContext.loadStoredCredentials` method. 
 
 ## Required Attributes [](id=required-attributes)
 
@@ -93,7 +93,7 @@ connection, you can use the `credentialsStore` attribute together with the
 | `layoutId` | `@layout` | The layout to use to show the View. |
 | `companyId` | `number` | When set, a user in the specified company is authenticated. If set to `0`, the company specified in `LiferayServerContext` is used. |
 | `basicAuthMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. The default value is `email`. |
-| `credentialsStore ` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
+| `credentialsStorage ` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
 | `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to used in OAuth authentication. Leave this empty if you want to use Basic authentication. |
 | `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to use in OAuth authentication. Leave this empty if you want to use Basic authentication. |
 

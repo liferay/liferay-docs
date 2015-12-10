@@ -70,7 +70,7 @@ policies:
 |-----------|-----------|-------------| 
 |  `loadLoggedUserPortrait()` | `boolean` | Starts the request to load the currently logged in user's portrait image (see the `SessionContext` class). |
 |  `load(userId)` | `boolean` | Starts the request to load the specified user's portrait image. |
-|  `load(portraitId, uuid, male)` | `boolean` | Starts the request to load the portrait image using the specified user's data. The parameters `portraitId` and `uuid` can be retrieved by using the `SessionContext.userAttribute()` method. |
+|  `load(portraitId, uuid, male)` | `boolean` | Starts the request to load the portrait image using the specified user's data. The parameters `portraitId` and `uuid` can be retrieved by using the `SessionContext.userAttributes()` method. |
 |  `load(companyId, emailAddress)` | `boolean` | Starts the request to load the portrait image using the user's email address. |
 |  `load(companyId, screenName)` | `boolean` | Starts the request to load the portrait image using the user's screen name. |
 

@@ -98,7 +98,7 @@ calls a Liferay instance's remote services in a type-safe and transparent way.
 a singleton class that holds the logged in user's session. Apps can use an
 implicit login, invisible to the user, or a login that relies on explicit user
 input to create the session. User logins can be implemented with the
-[Login Screenlet](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android).
+[Login Screenlet](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android). It is explained in detail [here](/develop/tutorials/-/knowledge_base/6-2/accessing-liferay-session-and-logged-user).
 
 [**LiferayServerContext:**](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/context/LiferayServerContext.java)
 a singleton object that holds server configuration parameters. It's loaded from

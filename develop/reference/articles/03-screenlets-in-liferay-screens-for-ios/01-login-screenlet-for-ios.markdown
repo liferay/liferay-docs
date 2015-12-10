@@ -33,7 +33,7 @@ attributes.
 Note that user credentials and attributes can be stored securely in the keychain 
 (see the `saveCredentials` attribute). Stored user credentials can be used to 
 automatically log the user in to subsequent sessions. To do this, you can use 
-the method `SessionContext.loadSessionFromStore()` method.
+the method `SessionContext.loadStoredCredentials()` method.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XivMMLBqH9E" frameborder="0" allowfullscreen></iframe>
 
@@ -85,13 +85,13 @@ used from Liferay Screens. When the app is created, copy the *Consumer Key* and
 This Screenlet doesn't support offline mode. It requires network connectivity.
 If you need to log in users automatically, even when there's no network 
 connection, you can use the `saveCredentials` attribute together with the 
-`SessionContext.loadSessionFromStore()` method. 
+`SessionContext.loadStoredCredentials()` method. 
 
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `saveCredentials` | `boolean` | When set, the user credentials and attributes are stored securely in the keychain. This information can then be loaded in subsequent sessions by calling the `SessionContext.loadSessionFromStore()` method. |
+| `saveCredentials` | `boolean` | When set, the user credentials and attributes are stored securely in the keychain. This information can then be loaded in subsequent sessions by calling the `SessionContext.loadStoredCredentials()` method. |
 | `companyId` | `number` | When set, authentication is done for a user in the specified company. If the value is `0`, the company specified in `LiferayServerContext` is used. |
 | `basicAuthMethod` | `string` | Specifies the authentication method to use. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. |
 | `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to used in OAuth authentication. Leave this empty if you want to use Basic authentication. |

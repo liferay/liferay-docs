@@ -92,7 +92,7 @@ child classes should overwrite.
 a singleton object that holds the logged in user's session. Apps can use an
 implicit login, invisible to the user, or a login that relies on explicit user
 input to create the session. User logins can be implemented with the
-[Login Screenlet](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-ios).
+[Login Screenlet](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-ios). It is explained in detail [here](/develop/tutorials/-/knowledge_base/6-2/accessing-liferay-session-and-logged-user).
 
 [**LiferayServerContext**](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Framework/Core/Context/LiferayServerContext.swift):
 a singleton object that holds server configuration parameters. It's loaded from
