@@ -60,8 +60,7 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
 | `layoutId` | `@layout` | The layout used to show the View.|
-| `anonymousApiUserName` | `string` | The user's name, email address, or ID to
-use for authenticating the request. The portal's authentication method defines which of these is used. |
+| `anonymousApiUserName` | `string` | The user's name, email address, or ID to use for authenticating the request. The portal's authentication method defines which of these is used. |
 | `anoymousApiPassword` | `string` | The password used to authenticate the request. |
 | `companyId` | `number` | When set, a user in the specified company is authenticated. If set to `0`, the company specified in `LiferayServerContext` is used. |
 | `autoLogin` | `boolean` | Sets whether the user is logged in automatically after a successful sign up. |
