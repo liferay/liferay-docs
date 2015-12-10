@@ -2,8 +2,8 @@
 
 ## Requirements [](id=requirements)
 
-- XCode 6.4.x
-- iOS 8 SDK
+- Xcode 7.2
+- iOS 9 SDK
 - Liferay Portal 6.2 CE or EE
 
 ## Compatibility [](id=compatibility)
