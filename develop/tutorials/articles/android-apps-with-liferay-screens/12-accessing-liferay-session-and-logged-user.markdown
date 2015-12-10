@@ -1,4 +1,4 @@
-# Accessing the Liferay Session and User Attributes [](id=accessing-the-liferay-session-and-user-attributes)
+# Accessing the Liferay Session in Android [](id=accessing-the-liferay-session-in-android)
 
 A session is a conversation state between the client and server. It typically 
 consists of multiple requests and responses between the two. To facilitate this 
