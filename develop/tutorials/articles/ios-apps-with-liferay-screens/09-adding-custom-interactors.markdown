@@ -1,43 +1,54 @@
-# Adding custom interactors [](id=adding-custom-interactors)
+# Adding Custom Interactors to iOS Screenlets
 
-If you want to use a different backend and reuse the view and appearance of a screenlet, *custom interactors* is the way to go.
+Interactors are Screenlet components that implement server communication for a 
+specific use case. For example, the Login Screenlet's interactor calls the 
+Liferay Mobile SDK service that authenticates a user to the portal. Similarly, 
+the interactor for 
+[the Add Bookmark Screenlet](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets) 
+calls the Liferay Mobile SDK service that adds a bookmark to the Bookmarks 
+portlet. 
 
-Liferay Screens supports plugging a different interactor and provide a custom logic or network code to access the information. You have to implement the interface of the interactor and pass it to the screenlet you want to override.
+That's all fine and well, but what if you want to customize a Screenlet's server 
+call? What if you want to use a different back-end with a Screenlet? No problem! 
+You can implement a custom interactor for the Screenlet. You can plug in a 
+different interactor that makes its server call by using custom logic or network 
+code. To do this, you must implement the current interactor's interface and then 
+pass it to the Screenlet you want to override. 
 
-We'll see a guide step by step overriding our `LoginScreenlet` to provide a test interactor that always logs the same user without password.
+In this tutorial, you'll see an example interactor that overrides the Login 
+Screenlet to always log in the same user, without a password.
 
+## Implementing a Custom Interactor
 
-## How to implement a Custom Interactor [](id=implement-custom-interactor)
+1. Implement your custom interactor. You must inherit 
+   `ServerOperationInteractor`, as shown here:
 
-1. Implement your custom interactor 
+        class LoginCustomInteractor: ServerOperationInteractor {
 
-	You just have to inherite `ServerOperationInteractor`, like this:
+            override func createOperation() -> GetUserBaseOperation {
 
-	```swift
-	
-	
-	class LoginCustomInteractor: ServerOperationInteractor {
+                ...
 
-		override func createOperation() -> GetUserBaseOperation {
-			
-			...
+                return operation!
+            }
 
-			return operation!
-		}
+        }
 
-	}
+2. Implement the optional protocol that receives a `customInteractorForAction`, 
+   and return your own interactor:
 
-	
-	
-	```
+        func screenlet(screenlet: BaseScreenlet, customInteractorForAction: String, 
+            withSender: AnyObject?) -> Interactor? {
 
-2. Implement the optional protocol that receives a `customInteractorForAction` and return your own interactor
+            let interactor = LoginCustomInteractor()
 
-	```swift
-	func screenlet(screenlet: BaseScreenlet, customInteractorForAction: String, withSender: AnyObject?) -> Interactor? {
-		
-		let interactor = LoginCustomInteractor()
-	
-		return interactor
-	}
-	```
+            return interactor
+        }
+
+Great! Now you know how to implement custom interactors for iOS Screenlets.
+
+## Related Topics
+
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
