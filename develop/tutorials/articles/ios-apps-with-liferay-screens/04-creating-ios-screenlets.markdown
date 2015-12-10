@@ -149,7 +149,7 @@ Follow these steps to create your Screenlet:
             private var session: NSURLSession?
 
             override public func start() -> Bool {
-                let viewModel = self.screenlet.screenletView as! AddBookmarkViewModel
+                let viewModel = self.screenlet!.screenletView as! AddBookmarkViewModel
 
                 if let URL = NSURL(string: viewModel.URL!) {
 
@@ -208,7 +208,7 @@ Follow these steps to create your Screenlet:
             public var resultBookmarkInfo: [String:AnyObject]?
 
             override public func start() -> Bool {
-                let viewModel = self.screenlet.screenletView as! AddBookmarkViewModel
+                let viewModel = self.screenlet!.screenletView as! AddBookmarkViewModel
 
                 if let URL = viewModel.URL {
                     let session = SessionContext.createSessionFromCurrentSession()
@@ -217,17 +217,19 @@ Follow these steps to create your Screenlet:
                     // Use MobileSDK's services to send the bookmark to the portal
                     let service = LRBookmarksEntryService_v62(session: session)
 
-                    var error: NSError? = nil
+                    do {
+                        try service.addEntryWithGroupId(LiferayServerContext.groupId,
+                        folderId: 0,
+                        name: viewModel.title,
+                        url: URL,
+                        description: "Added from Liferay Screens",
+                        serviceContext: nil)
 
-                    service.addEntryWithGroupId(LiferayServerContext.groupId,
-                            folderId: 0,
-                            name: viewModel.title,
-                            url: viewModel.URL,
-                            description: "Added from Liferay Screens",
-                            serviceContext: nil,
-                            error: &error)
-
-                    return (error == nil)
+                        return true
+                    }
+                    catch {
+                        return false
+                    }
                 }
 
                 return false
@@ -280,7 +282,7 @@ Follow these steps to create your Screenlet:
 
         class AddBookmarkScreenlet: BaseScreenlet {
 
-            override public func createInteractor(#name: String?, sender: AnyObject?) -> Interactor? {
+            override public func createInteractor(name name: String?, sender: AnyObject?) -> Interactor? {
                 switch name! {
                 case "get-title":
                     return createGetTitleInteractor()
@@ -297,7 +299,9 @@ Follow these steps to create your Screenlet:
                 let interactor = GetSiteTitleInteractor(screenlet: self)
 
                 // This shows the standard activity indicator in the screen...
-                self.showHUDWithMessage("Getting site title...", details: nil)
+                self.showHUDWithMessage("Getting site title...", 
+                    closeMode: .Autoclose,
+                    spinnerMode: .IndeterminateSpinner)
 
                 interactor.onSuccess = {
                     self.hideHUD()
@@ -308,8 +312,7 @@ Follow these steps to create your Screenlet:
 
                 interactor.onFailure = { err in
                     self.showHUDWithMessage("An error occurred retrieving the title",
-                        details: nil,
-                        closeMode: .ManualClose(true),
+                        closeMode: .ManualClose_TouchClosable,
                         spinnerMode: .NoSpinner)
                 }
 
@@ -319,16 +322,19 @@ Follow these steps to create your Screenlet:
             private func createAddBookmarkInteractor() -> LiferayAddBookmarkInteractor {
                 let interactor = LiferayAddBookmarkInteractor(screenlet: self)
 
-                self.showHUDWithMessage("Saving bookmark...", details: nil)
+                self.showHUDWithMessage("Saving bookmark...",
+                    closeMode: .Autoclose,
+                    spinnerMode: .IndeterminateSpinner)
 
                 interactor.onSuccess = {
-                    self.hideHUDWithMessage("Bookmark saved!")
+                    self.hideHUDWithMessage("Bookmark saved!"
+                        closeMode: .Autoclose_TouchClosable,
+                        spinnerMode: .NoSpinner)
                 }
 
                 interactor.onFailure = { e in
                     self.showHUDWithMessage("An error occurred saving the bookmark",
-                        details: nil,
-                        closeMode: .ManualClose(true),
+                        closeMode: .ManualClose_TouchClosable,
                         spinnerMode: .NoSpinner)
                 }
 
