@@ -2,8 +2,8 @@
 
 ## Requirements [](id=requirements)
 
-- XCode 6.3.x
-- iOS 8 SDK
+- XCode 6.4.x
+- iOS 9 SDK 
 - Liferay Portal 6.2 CE or EE
 - Liferay Screens Compatibility Plugin (
   [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
@@ -80,7 +80,8 @@ sections of the User Guide for more details.
 | `firstPageSize` | `number` | The number of items retrieved from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items retrieved from the server for display on the second and subsequent pages. The default value is `25`. |
 | `groupId` | `number` | The ID of the site (group) where the asset is stored. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
-| `classNameId` | `number` | The ID of the asset's class name. Use values from the `AssetClassNameId` enumeration or the `classname_` database table. |
+| `classNameId` | `number` | The ID of the asset's class name. Use values from the `AssetClassNameId` class or the portal's `classname_` database table. |
+| `customEntryQuery` | `Dictionary` | The set of keys (string) and values (string or number) to be used in the [AssetEntryQuery object](/portal/6.2/javadocs/com/liferay/portlet/asset/service/persistence/AssetEntryQuery.html). These values will filter the assets returned by the portal.|
 
 ## Methods [](id=methods)
 
@@ -90,16 +91,10 @@ sections of the User Guide for more details.
 
 ## Delegate [](id=delegate)
 
-The `AssetListScreenlet` delegates some events to an object that conforms to the 
-`AssetListScreenletDelegate` protocol. This protocol lets you implement the 
-following methods: 
+The `AssetListScreenlet` delegates some events to an object that conforms to the `AssetListScreenletDelegate` protocol. This protocol lets you implement the following methods: 
 
-- `- screenlet:onAssetListResponseEntries:`: Called when a page of assets is 
-  received. Note that this method may be called more than once; one call for 
-  each page received.
+- `- screenlet:onAssetListResponseEntries:`: Called when a page of assets is received. Note that this method may be called more than once; one call for each page received.
 
-- `- screenlet:onAssetListError:`: Called when an error occurs in the process. 
-  The `NSError` object describes the error.
+- `- screenlet:onAssetListError:`: Called when an error occurs in the process. The `NSError` object describes the error.
 
-- `- screenlet:onAssetSelectedEntry:`: Called when an item in the list is 
-  selected.
+- `- screenlet:onAssetSelectedEntry:`: Called when an item in the list is selected.
