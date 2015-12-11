@@ -148,7 +148,7 @@ You can find this example's complete code
 
 4. In the activity or fragment you're using the Screenlet in, implement 
    `CustomInteractorListener`. You must also reference your new custom 
-   interactor and connect it to the screenlet: 
+   interactor and connect it to the Screenlet: 
 
         _screenlet.setCustomInteractorListener(this);
 
