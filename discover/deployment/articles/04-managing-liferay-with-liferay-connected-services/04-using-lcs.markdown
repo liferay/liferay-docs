@@ -285,14 +285,25 @@ Alerts tables. Server view is segmented into five parts:
 You can switch between these by clicking their buttons across the top of the UI. 
 Page Analytics is the first thing you see when you enter server view. Page 
 Analytics shows page views and load times for the selected time period. You can 
-select a different time period in the *Period* and *Ending At* fields. By 
-default, load times and page views for all pages are plotted against time in 
+select a different time period in the *Period* and *Ending At* fields. The 
+arrows next to the *Ending At* field move the selected time period up or down, 
+respectively, by one period. For example, if you select *One Hour* in the 
+*Period* field, then pressing the right arrow next to *Ending At* moves the 
+selected time period up by one hour. Note that at the beginning of the current 
+time period, it can take up to 15 minutes for data to become available. 
+
+By default, load times and page views for all pages are plotted against time in 
 separate graphs. Below these graphs, a table displays summary statistics of 
 these data over the same time period, for each page. If you click a page in the 
 table, the graphs change to plot the data for just that page. If you can't 
 find the page you're looking for, you can search for it in the *Search* box at 
 the top of the table. To plot data for all pages again, click the *All Pages* 
-link next to the *Search* box.
+row at the bottom of the table. 
+
+Load times are also color coded to indicate speed. The *Load Times* graph's 
+background is red for values above 3,000 ms, orange for values from 2,000 to 
+3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
+all load times greater than 3,000 ms in red text. 
 
 ![Figure 4.17: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics.png)
 
