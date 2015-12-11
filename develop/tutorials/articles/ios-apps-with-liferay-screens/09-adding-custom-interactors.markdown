@@ -13,7 +13,8 @@ call? What if you want to use a different back-end with a Screenlet? No problem!
 You can implement a custom interactor for the Screenlet. You can plug in a 
 different interactor that makes its server call by using custom logic or network 
 code. To do this, you must implement the current interactor's interface and then 
-pass it to the Screenlet you want to override. 
+pass it to the Screenlet you want to override. You should do this inside your 
+app's code. 
 
 In this tutorial, you'll see an example interactor that overrides the Login 
 Screenlet to always log in the same user, without a password.

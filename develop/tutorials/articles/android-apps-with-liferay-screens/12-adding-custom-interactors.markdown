@@ -19,7 +19,7 @@ app's code, either in an inner class or a separate class.
 In this tutorial, you'll see an example interactor that overrides the Login 
 Screenlet to always log in the same user, without a password. You can find the 
 complete code in the 
-[test-app on GitHub.](https://github.com/liferay/liferay-screens/blob/develop/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/CustomInteractorActivity.java).
+[test-app on GitHub.](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/CustomInteractorActivity.java).
 Note that this example implements the custom interactor in an inner class of an 
 activity. 
 
