@@ -139,17 +139,17 @@ on the vocabulary you'd like to apply. A dialog box appears with your
 categories. Select any relevant categories by checking the box next to them, and
 they'll be applied to the content.
 
-Suppose you're running a Lunar Resort shop called Lunar Fireworks, and you have
+Suppose you're running a Lunar Resort shop called Lunar Fireworks and you have
 many web content articles describing the colors and types of fireworks you
-provide. The abundance of your articles is overwhelming, and as your shop grows,
+offer. The abundance of your articles is overwhelming, and as your shop grows,
 so too does the web content articles you're required to manage. You've decided
-to categorize your web content based on the color and type of firework. Navigate
-to Site Administration &rarr; *Content* &rarr; *Categories* and create
-vocabularies *Type* and *Color*. Make sure both vocabularies are only used for
-web content articles by clicking the *Associated Asset Types* dropdown and
-selecting *Web Content Article*. Create categories *Fire* and *Smoke* for the
-Type vocabulary and *Red*, *Yellow*, and *Blue* categories for the Color
-vocabulary.
+to categorize your web content based on the color and type of firework, so the
+articles are easier to manage. Navigate to Site Administration &rarr; *Content*
+&rarr; *Categories* and create vocabularies *Type* and *Color*. Make sure both
+vocabularies are only used for web content articles by clicking the *Associated
+Asset Types* dropdown and selecting *Web Content Article*. Create categories
+*Fire* and *Smoke* for the Type vocabulary and *Red*, *Yellow*, and *Blue*
+categories for the Color vocabulary.
 
 Now navigate to *Content* &rarr; *Web Content* in Site Administration and create
 an article called *Red Rocket*. This is your best selling product, so make sure

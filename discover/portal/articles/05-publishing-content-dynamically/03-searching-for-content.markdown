@@ -54,8 +54,8 @@ Liferay 7.0. I've contacted Julio to find out why it's still there and if it's
 still planned for removal. He indicated they did not have time to remove it, but
 are planning to have it disabled by default. The plan will be to completely
 remove it for version 7.1. Once plan is finalized, this section will need to be
-updated. A ticket (LRDOCS-) has been filed to edit this content, when finalized.
--Cody -->
+updated. A ticket (LRDOCS-2094) has been filed to edit this content, when
+finalized. -Cody -->
 
 In order for content to be searchable, it must first be indexed. Liferay uses
 Lucene for indexing and searching for content. Please refer to the Lucene
@@ -208,8 +208,6 @@ following portal properties:
     layout.user.public.layouts.auto.create=false
     layout.user.public.layouts.power.user.required=true
 
-<!-- Check how to use these properties from Julio. -Cody -->
-
 The technical reason for this behavior is that although an `AssetEntry` object
 is created for each `User` object, the `AssetEntries` objects of users are
 created as non-visible assets. Instead of displaying users in the Asset
@@ -223,17 +221,15 @@ be displayed in the Asset Tag facet. Tags are handled in a similar way to how
 asset types are handled: not all tags may appear. There may be many more than
 the 10 tags listed, but the default configuration for this facet is to show the
 top 10 most frequent terms. As with asset types, this can be modified by
-setting the `max terms` property.
-
-<!-- Another mentioned property above and below: "max terms". Check how to do
-this for 7.0. -Cody -->
+setting the `Max Terms` property, which is described later in this section.
 
 ### Asset Categories
 
 If categories have been applied to any asset that appears in the result set,
 they may be displayed in the Asset Categories facet. Asset categories work just
 like asset tags. As with asset tags, you can modify the number of categories
-listed in the search by setting the `max terms` property.
+listed in the search by setting the `Max Terms` property, which is described
+later in this section.
 
 You'll learn about advanced searching next. 
 
