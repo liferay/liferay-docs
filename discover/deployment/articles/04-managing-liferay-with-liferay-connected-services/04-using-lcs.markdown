@@ -384,15 +384,18 @@ by default. Click *Add Rule* to define one.
 
 ![Figure 4.24: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
 
-First specify the project, environment, and server that the notification rule 
-applies to. Note that you have the option of selecting all environments and 
-servers in a project. Then check the checkbox for each event that you want to 
-trigger an email notification. For example, the notification rule in the 
-illustration above tells LCS to send you an email whenever any server in any of 
-the project's environments goes offline. This includes crashes and normal 
-shutdown events. Click *Save* when you're done defining the notification rule. 
-It then appears in a table along with any other existing rules. Each has an 
-Actions button that lets you edit or delete it. 
+First specify the project, environment, and server for the notification. Note
+that you have the option of selecting all environments and servers in a
+project. Then check the checkbox for each event that you want to trigger an
+email notification. For example, the notification rule in the illustration
+above tells LCS to send you an email whenever any server in any of the
+project's environments unexpectedly goes offline. You should note that this
+differs from normal shutdown events, which don't trigger email notifications.
+During normal server shutdown, the server communicates this status to LCS. An
+email notification is only generated when the connection with the server is 
+abruptly terminated. Click *Save* when you're done defining the notification 
+rule. It then appears in a table along with any other existing rules. Each has 
+an Actions button that lets you edit or delete it. 
 
 Great! Now you know how to set notification rules in LCS. The next section shows 
 you how to use environment tokens to automatically register Liferay instances 
