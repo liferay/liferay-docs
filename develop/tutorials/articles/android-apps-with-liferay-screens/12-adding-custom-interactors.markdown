@@ -1,4 +1,4 @@
-# Adding Custom Interactors to Android Screenlets
+# Adding Custom Interactors to Android Screenlets [](id=adding-custom-interactors-to-android-screenlets)
 
 Interactors are Screenlet components that implement server communication for a 
 specific use case. For example, the Login Screenlet's interactor calls the 
@@ -23,7 +23,7 @@ complete code in the
 Note that this example implements the custom interactor in an inner class of an 
 activity. 
 
-## Implementing a Custom Interactor
+## Implementing a Custom Interactor [](id=implementing-a-custom-interactor)
 
 1. Implement your custom interactor. You must inherit the original interactor's 
    interface, as shown here: 
@@ -66,7 +66,7 @@ Great! Now you know how to implement custom interactors for Android Screenlets.
 The next example builds on this by showing you how to access non-Liferay 
 backends with a custom interactor.
 
-## Using Custom Interactors to Access Other Backends
+## Using Custom Interactors to Access Other Backends [](id=using-custom-interactors-to-access-other-backends)
 
 Custom interactors are also capable of communicating with non-Liferay backends. 
 The following example illustrates this by creating a custom interactor for the 
@@ -160,7 +160,7 @@ You can find this example's complete code
 Awesome! Now you know how to create a custom interactor that can communicate 
 with a non-Liferay backend. This opens up even more possibilities for your apps. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
 

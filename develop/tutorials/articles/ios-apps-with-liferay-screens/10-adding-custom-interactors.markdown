@@ -1,4 +1,4 @@
-# Adding Custom Interactors to iOS Screenlets
+# Adding Custom Interactors to iOS Screenlets [](id=adding-custom-interactors-to-ios-screenlets)
 
 Interactors are Screenlet components that implement server communication for a 
 specific use case. For example, the Login Screenlet's interactor calls the 
@@ -19,7 +19,7 @@ app's code.
 In this tutorial, you'll see an example interactor that overrides the Login 
 Screenlet to always log in the same user, without a password.
 
-## Implementing a Custom Interactor
+## Implementing a Custom Interactor [](id=implementing-a-custom-interactor)
 
 1. Implement your custom interactor. You must inherit 
    `ServerOperationInteractor`, as shown here:
@@ -48,7 +48,7 @@ Screenlet to always log in the same user, without a password.
 
 Great! Now you know how to implement custom interactors for iOS Screenlets.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 
