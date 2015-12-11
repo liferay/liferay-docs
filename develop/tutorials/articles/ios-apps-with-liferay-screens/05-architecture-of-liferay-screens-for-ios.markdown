@@ -86,8 +86,9 @@ that child classes should overwrite.
 the base class for all Screenlet View classes. Its child classes belong to the
 Theme layer. View classes use standard XIB files to render a UI and then update
 it when the data changes. `BaseScreenletView` contains template methods that
-child classes should overwrite.
-Note you can access the parent screenlet from this class you will be able to read screenlet's properties or call its methods when you develop your own themes.
+child classes should overwrite. When developing your own Theme from a parent 
+Theme, you can read the Screenlet's properties or call its methods from this 
+class. 
 
 [**SessionContext**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Context/SessionContext.swift):
 a singleton object that holds the logged in user's session. Apps can use an

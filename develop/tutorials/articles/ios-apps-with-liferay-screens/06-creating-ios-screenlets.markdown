@@ -38,8 +38,13 @@ Follow these steps to create your Screenlet:
 
 1.  In Xcode, create a new XIB file and construct your Screenlet's UI with
     Interface Builder. Make sure to use a `restorationIdentifier` property to
-    assign a unique restoration ID to each UI component that triggers an action. If the action to be triggered only needs to change UI state (that is: change components properties), then you can associate that component's event to an IBAction method as usual. Actions using `restorationIdentifier` are intented to be used by actions that need an Interactor (i.e. to send or request information from a datastore, like Liferay Portal, any other backend or even a local database)
-
+    assign a unique restoration ID to each UI component that triggers an action. 
+    If the action only needs to change the UI's state (that is, change the 
+    component's properties), then you can associate that component's event to an 
+    `IBAction` method as usual. Actions using `restorationIdentifier` are 
+    intended for use by actions that need an Interactor (such as actions that 
+    make server requests or retrieve data from a database). 
+    
     For example, the Add Bookmark Screenlet's XIB file
     [`AddBookmarkView_default.xib`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/AddBookmark-screenlet/LiferayScreensAddBookmarkScreenletSample/AddBookmarkScreenlet/AddBookmarkView_default.xib)
     specifies text box fields for a bookmark's URL and title, a button (with

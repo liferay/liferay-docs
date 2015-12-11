@@ -81,8 +81,9 @@ View with operation results. Classes that extend it can override its
 
 **Screenlet View:** implements the Screenlet's UI. It's instantiated by the
 Screenlet's `createScreenletView` method. It renders a specific UI using
-standard layout files and updates the UI with data changes.
-Note you can access the parent screenlet from this class you will be able to read screenlet's properties or call its methods when you develop your own themes.
+standard layout files and updates the UI with data changes. When developing your 
+own Views that extend a parent View, you can read the parent Screenlet's 
+properties or call its methods from this class. 
 
 [**InteractorAsyncTaskCallback:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/InteractorAsyncTaskCallback.java)
 receives asynchronous responses from the Liferay Mobile SDK's `AsyncTask` class.
