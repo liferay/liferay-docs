@@ -13,12 +13,15 @@ call? What if you want to use a different back-end with a Screenlet? No problem!
 You can implement a custom interactor for the Screenlet. You can plug in a 
 different interactor that makes its server call by using custom logic or network 
 code. To do this, you must implement the current interactor's interface and then 
-pass it to the Screenlet you want to override. 
+pass it to the Screenlet you want to override. You should do this inside your 
+app's code, either in an inner class or a separate class. 
 
 In this tutorial, you'll see an example interactor that overrides the Login 
 Screenlet to always log in the same user, without a password. You can find the 
 complete code in the 
 [test-app on GitHub.](https://github.com/liferay/liferay-screens/blob/develop/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/CustomInteractorActivity.java).
+Note that this example implements the custom interactor in an inner class of an 
+activity. 
 
 ## Implementing a Custom Interactor
 
@@ -59,111 +62,103 @@ complete code in the
             return new CustomLoginInteractor(_loginScreenlet.getScreenletId());
         }
 
-Great! Now you know how to implement custom interactors for Android Screenlets.
+Great! Now you know how to implement custom interactors for Android Screenlets. 
+The next example builds on this by showing you how to access non-Liferay 
+backends with a custom interactor.
 
-## Using Custom Interactors to access other backends
+## Using Custom Interactors to Access Other Backends
 
-A common use case for creating a custom interactor is to allow Liferay Screens to communicate with other backend services. 
+Custom interactors are also capable of communicating with non-Liferay backends. 
+The following example illustrates this by creating a custom interactor for the 
+[AddBookmark Screenlet](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets) 
+that can store bookmarks at 
+[Delicious](https://delicious.com). 
+You can find this example's complete code 
+[at this gist](https://gist.github.com/nhpatt/7cbeb0df6f39ec8a9176). 
 
-To showcase this use case we are going to show how to connect with the [delicious](https://delicious.com) backend, a service used to store bookmarks. The full code is available at this [gist](https://gist.github.com/nhpatt/7cbeb0df6f39ec8a9176).
+1. Create a new custom interactor. This interactor inherits 
+   `BaseRemoteInteractor`, the base class of all interactors, with 
+   `AddBookmarkListener` as a type parameter. It also implements the 
+   `AddBookmarkInteractor` class. The base code for this new interactor is 
+   shown here: 
 
-1. Create a new custom interactor
+        public class AddDeliciousInteractorImpl extends BaseRemoteInteractor<AddBookmarkListener>
+            implements AddBookmarkInteractor {
 
-	We want to add another backend to the [AddBookmark Screenlet](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets) we did as example of creating your own screenlet.
-	
-	Our new interactor will inherit the base class of all interactors, `BaseRemoteInteractor`, implement the Add Bookmark interactor class `AddBookmarkInteractor` and use the `AddBookmarkListener`.
-	
-	The base code for our new interactor is this:
-	
-	```java
-	
-	public class AddDeliciousInteractorImpl
-		extends BaseRemoteInteractor<AddBookmarkListener>
-		implements AddBookmarkInteractor {
+            public AddDeliciousInteractorImpl(int targetScreenletId) {
+                super(targetScreenletId);
+            }
 
-		public AddDeliciousInteractorImpl(int targetScreenletId) {
-			super(targetScreenletId);
-		}
-	
-		public void addBookmark(final String url, final String title, long folderId) throws Exception {
-		...
-		}
-	}
-	
-	```
-	
-2. Implement our custom logic
+            public void addBookmark(final String url, final String title, long folderId) throws Exception {
+                ...
+            }
+        }
 
-	Then we have to implement the code for accessing our backend and inserting a new bookmark with the delicious API. An example code is the following:
+2. Implement your custom logic. In this example, you must implement the code for 
+   accessing Delicious and inserting a new bookmark with the Delicious API. You 
+   can use the 
+   [OkHttp library](http://square.github.io/okhttp/) 
+   to pass the API your bookmark's URL and description. The following code shows 
+   this: 
 	
-	```java
-	
-	new Thread(new Runnable() {
-			@Override
-			public void run() {
-				try {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
 
-					Headers headers = Headers.of("Authorization", "Bearer _OAUTH_TOKEN_");
+                    Headers headers = Headers.of("Authorization", "Bearer _OAUTH_TOKEN_");
 
-					OkHttpClient client = new OkHttpClient();
+                    OkHttpClient client = new OkHttpClient();
 
-					Request add = new Request.Builder()
-						.url("https://api.del.icio.us/api/v1/posts/add?url=" + url + "&description=" + title)
-						.headers(headers)
-						.build();
+                    Request add = new Request.Builder()
+                        .url("https://api.del.icio.us/api/v1/posts/add?url=" + url + "&description=" + title)
+                        .headers(headers)
+                        .build();
 
-					com.squareup.okhttp.Response response = client.newCall(get).execute();
+                    com.squareup.okhttp.Response response = client.newCall(get).execute();
 
-					String text = response.body().string();
+                    String text = response.body().string();
 
-					...
+                    ...
 
-				}
-				catch (IOException e) {
-					LiferayLogger.e("Error sending", e);
-					
-					...
-				}
-			}
-		}).start();
-	
-	
-	```
-	
-	We use OkHttp library for calling the API passing our url and description.
-	
-3. Notify and listen the results
+                }
+                catch (IOException e) {
+                    LiferayLogger.e("Error sending", e);
+                    ...
+                }
+            }
+        }).start();
 
-	We want to use the `EventBusUtil` class to notify the results (or the exception obtained) and allow other classes to listen the event.
-	
-	So we just post an event if everything has finished correctly or an exception if it failed. In the more detailed example we've created a custom class to model the result of the operation.
-	
-	```java
-	
-		EventBusUtil.post(text);
-		
-		...
-		
-		public void onEvent(String text) {
-			getListener().onAddBookmarkSuccess();
-		}
-	}
-	
-	```
-4. Wire the new interactor with the screenlet
+3. Notify your app of the results. You should use the `EventBusUtil` class to 
+   post an event for this. Use the event to let other classes listen for the 
+   event. The following code uses `EventBusUtil.post(text)` to post the event, 
+   and the `onEvent` method to notify the listener:
 
-	The last step is reference our new Custom Interactor and wire it with the screenlet. We just have to implement the `CustomInteractorListener`:
-	
-	```java
-	
-	_screenlet.setCustomInteractorListener(this);
-	
-	@Override
-	public Interactor createInteractor(String actionName) {
-		return new AddDeliciousInteractorImpl(_screenlet.getScreenletId());
-	}
-	
-	```
+        EventBusUtil.post(text);
+
+        ...
+
+        public void onEvent(String text) {
+            getListener().onAddBookmarkSuccess();
+        }
+
+    Note that the code in 
+    [the gist](https://gist.github.com/nhpatt/7cbeb0df6f39ec8a9176) 
+    uses the custom `BookmarkAdded` class to model the operation's results. 
+
+4. In the activity or fragment you're using the Screenlet in, implement 
+   `CustomInteractorListener`. You must also reference your new custom 
+   interactor and connect it to the screenlet: 
+
+        _screenlet.setCustomInteractorListener(this);
+
+        @Override
+        public Interactor createInteractor(String actionName) {
+            return new AddDeliciousInteractorImpl(_screenlet.getScreenletId());
+        }
+
+Awesome! Now you know how to create a custom interactor that can communicate 
+with a non-Liferay backend. This opens up even more possibilities for your apps. 
 
 ## Related Topics
 
