@@ -190,6 +190,9 @@ Multiple Documents screen stays active, ready for you to add more files. When
 you're done adding files, click the Back icon
 (![Back](../../images/back-icon.png)) at the top of the screen. You're taken
 back to the folder you're adding files to. 
+<!-- For categorization and tags, link to  
+Reference Publishing Content Dynamically > Organization Content with Tags and
+Categories -->
 
 ![Figure x: Documents and Media's lists files using several display styles: icon (as shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../images/dm-images-in-admin.png)
 
@@ -236,75 +239,129 @@ the X is for cancelling file checkout, the secured lock is for file check-in,
 the unsecured lock is for file check-out, the crossed arrows are for moving the
 files, and the trash can is for moving files to the Recycle Bin. You move
 selected files to a subfolder via drag and drop. File check-out and check-in is
-explained later in *Collaborating on Files*.
+explained later in
+[Collaborating on Files](/discover/portal/-/knowledge_base/7-0/publishing-files#collaborating-on-files).
 
 ![Figure x: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../images/dm-file-entry-details.png)
 
-To open its file entry view, click the file's name. In the center of this view
-are the file's icon, name, author, creation timestamp, and rating. You can rate
-the file too. If you're Liferay installation has a plugin that lets you preview
-the file type, then a preview image of the file shows below the file's core
-details. The comments area is at the bottom of the screen. It lets you comment
-on the file, subscribe to comments, and reply to comments.
+To open its file entry view, click the file's name. The screen's central viewing
+area displays a preview image of the file. If the file is an image file, its
+image is displayed. If a preview plugin for the file type is installed, the
+plugin displays an image (e.g., the opening scene of a video file or a
+presentation's first slide) for the file. If there are no preview plugins for
+the file, Liferay displays a generic image based on the file's type. Let's take
+a moment and consider file preview plugins and some of the powerful features
+they offer. 
 
-More file details are listed beside the main viewing area. The top portion of
-this area lists the file's version number, status, modification timestamp, and
-name of the user who last modified it. Next are links to download the file and
-links to show its URL and WebDAV URL. You can specify the WebDAV URL as the file
-name when opening the document from Microsoft Office. The next section lists any
-and all metadata that's been extracted automatically from the file. Depending on
-your file's type and the metadata written with the file, you can find out all
-kinds of details. In the case of audio or video files, their duration is
-displayed. The *Version History* section lists the different versions of the
-file and lets you view and download specific versions.
+Whenever possible, Liferay generates previews of documents added to the Document
+Library. Out of the box, Liferay only ships with Java-based APIs to generate
+previews for documents. The only tool available that is 100% Java and has a
+compatible license to be distributed with Liferay is PDFBox. If you upload a PDF
+file to the Documents and Media portlet, Liferay generates a preview for the PDF
+in a separate thread. This process may last only a few seconds for a small file.
+The larger the file, the longer it takes.
 
-A file's actions are listed at the top of its file entry screen. Here are the
+While a default implementation of image generation for document previews and
+thumbnails is provided via PDFBox, you'll need to install and configure some
+additional tools to harness the full power of Liferay's Documents and Media
+library. These tools include [*OpenOffice*](http://www.openoffice.org) or
+[*LibreOffice*](http://www.libreoffice.org),
+[*ImageMagick*](http://www.imagemagick.org), which requires
+[*Ghostscript*](http://www.ghostscript.com), and
+[*Xuggler*](http://www.xuggle.com/xuggler). With these tools installed and
+configured, Documents and Media content is displayed using a customized viewer
+depending on the type of content. Configuring Liferay to use OpenOffice or
+LibreOffice in server mode allows you to generate thumbnails and previews for
+supported file types (.pdf, .docx, .odt, .ppt, .odp, etc.), lets you view
+documents in your browser, and lets you convert documents. ImageMagick allows
+for faster and higher-quality previews and conversions. Xuggler allows for audio
+and video previews, lets you play audio and video files in your browser, and
+extracts thumbnails from video files. Please see [Configuring
+Liferay](/discover/portal/-/knowledge_base/7-0/configuring-liferay) for how to
+use these tools.
+
+You can view a document with a customized viewer that allows you to navigate
+through the different pages of the document and read its content. In addition,
+you can view a multimedia document (audio or video) and play it online. If the
+browser supports HTML5, it uses the native player of the browser. Otherwise it
+falls back to a Flash player.
+
+<!--Figure : You can watch a video clip or even view a slideshow inside Liferay's
+Documents and Media portlet.-->
+
+Document previews are powerful and help users browse media more successfully to
+find what they're looking for. 
+
+Above the file viewing area are the file's icon and the file entry's name,
+author, upload timestamp, and rating. You can rate the file too. The comments
+area below the file viewing area lets you comment on the file, subscribe to
+comments, and reply to comments.
+
+A file's actions are listed at the top of the file entry screen. Here are the
 file actions:
 
-- **Download**: Downloads the file to your device.
+**Download**: Downloads the file to your device.
 
-- **Edit**: Lets you modify the file's name, description, document type, categorization,
+**Edit**: Lets you modify the file's name, description, document type, categorization,
 and related assets. You can even upload a new file to replace it. Note, modifying the file
-increments its version. 
+increments its version. <!-- Link to  link to  
+Reference Publishing Content Dynamically > Defining Content Relationships -->
 
-- **Move**: Relocate the file to a different parent folder. 
+**Move**: Relocate the file to a different parent folder. 
 
-- **Checkout/Checkin**: Prevents others from modifying the document while you
+**Checkout/Checkin**: Prevents others from modifying the document while you
 are working. Other users can still view the current version of the document if
 they have permission. You can check the document back in when you're done working. 
 
-- **Permissions**: Lets you specify which actions each role can perform on the
-file. You can granted a role permission to perform the following actions:
+**Permissions**: Lets you specify which actions each role can perform on the
+file. You can granted a role permission to perform the following actions.
 
-    - **Update**: Allows the role to edit, checkout, and checkin the file. 
+- **Update**: Allows the role to edit, checkout, and checkin the file.
 
-    - **Override Checkout**: Checkout the file, revoking the file's currrent
-    checkout if it is checked out. 
+- **Override Checkout**: Checkout the file, revoking the file's currrent
+checkout if it is checked out.
 
-    - **Permissions**: View and configure this file's permissions. 
+- **Permissions**: View and configure this file's permissions.
 
-    - **Delete**: Move the file to the Recycle Bin. 
+- **Delete**: Move the file to the Recycle Bin.
 
-    - **View**: View the file. 
+- **View**: View the file.
 
-    - **Update Discussion**: Edit another user's comment on the file. 
+- **Update Discussion**: Edit another user's comment on the file.
 
-    - **Delete Discussion**: Delete any comments on the file. 
+- **Delete Discussion**: Delete any comments on the file.
 
-    - **Add Discussion**: Comment on the file. 
+- **Add Discussion**: Comment on the file. 
 
 - **Move to the Recycle Bin**: Removes the file from the Documents and Media
 library to the Recycle Bin. 
 
-As you can see, Documents and Media lets you manage media
-how you like.
+File entry details are listed beside the file entry's main viewing area. The top portion of
+this area lists the file's version number, status, modification timestamp, and
+name of the user who last modified it. Next are links to download the file and
+links to show its URL and WebDAV URL. You can specify the WebDAV URL as the file
+name when opening the document from Microsoft Office.
+
+The section *Automatically Extracted Metadata* lists any and all metadata that's
+been extracted automatically from the file. When adding new documents or viewing
+existing documents, a process is triggered automatically that extracts the
+file's metadata. The library used by this process is TIKA and it's already
+included in Liferay out of the box. Depending on your file's type and the
+metadata written with the file, you can find out all kinds of details. In the
+case of audio or video files, their duration is displayed. The *Version History*
+section lists the different versions of the file and lets you view and download
+specific versions.
 
 Let's review what you've done so far. First, you created a role to manage a
 specific set of files for your site. You assigned users to the role and created
 a Documents and Media folder for them to add and organize files. Then as a
 member of the role, you added folders and files to the Documents and Media
 library. And just now, you viewed individual file entry information and actions.
-Next, let's consider how to display image files on site pages. 
+Next, let's consider how to display files on site pages. 
+
+## Displaying Files
+
+TODO - Intro
 
 Here are some ways of you can display your image files:
 
@@ -346,14 +403,21 @@ section provides checkboxes to enable showing each file's actions, file search,
 and the file filters. File search is enabled by default. The settings also let
 you set the maximum number of file entries to display per page. And lastly, you
 can select display styles (e.g., Icon, Descriptive, and List) to make available
-to the app's users. The Icon display style is selected by default. The Folders
-Listing section lets you select a Document Library folder to serve as the root
-folder from which to display files.
+to the app's users. The Icon display style is selected by default.
+
+The Folders Listing section lets you select a Document Library folder to serve as
+the root folder from which to display files. The root folder is the
+highest-level folder that's accessible from the Documents and Media portlet. For
+example, suppose you created a folder called *My Documents* in the Documents and
+Media portlet's default Home folder. If you set the My Documents folder to be
+your portlet's new root folder, the original Home folder would no longer be
+accessible.
 
 The last two Display Settings tab's sections are the Entries Listing for List
 Display Style section and Ratings section. The former section allows you to
 select fields to show for each file, if the app's user selects the List display
 style. The Ratings section lets you enable ratings and comments.
+<!-- Explain more about and at least link to sections on ratings and comments? -->
 
 Here are descriptions for the Documents and Media app's other configuration tabs:
 
@@ -382,6 +446,9 @@ To save your settings, click *Save*. The Documents and Media app now shows all
 of the Smith's files. This app enables the Lunar Resort media team to act on
 individual files. If Mrs. Smith likes particular files, the staff member can
 download them locally and add notes about the file in the file entry's comments.
+
+<!--Consider showing figure of the DM app with images and videos. Install
+Xuggler to show off the video cover image too.-->
 
 The Documents and Media app is great for working with files individually, but
 the Media Gallery has slideshow features built in. Plus, it lets you download a
@@ -422,33 +489,33 @@ price.
 
 Here's a complete listing of the folder actions available in the Media Gallery:
 
-- **Download**: Downloads an archive of the files to your device.
+**Download**: Downloads an archive of the files to your device.
 
-- **Edit**: Lets you modify the folder's name, description, document type, and
+**Edit**: Lets you modify the folder's name, description, document type, and
 workflow restrictions
 
-- **Move**: Relocates the folder to a different parent folder. 
+**Move**: Relocates the folder to a different parent folder. 
 
-- **Permissions**: Lets you specify which actions each role can perform on the
+**Permissions**: Lets you specify which actions each role can perform on the
 folder. 
 
-- **Add Subfolder**: Creates a folder within this folder.
+**Add Subfolder**: Creates a folder within this folder.
 
-- **Add File Entry**: Lets you upload a file to the folder as a new file entry.
+**Add File Entry**: Lets you upload a file to the folder as a new file entry.
 
-- **Multiple Media**: Allows you to upload several files at once.
+**Multiple Media**: Allows you to upload several files at once.
 
-- **View Slide Show**: Opens a window that shows the files in actual size in a
+**View Slide Show**: Opens a window that shows the files in actual size in a
 slide show on your device. 
 
-- **Add Shortcut**: Enables you to create a shortcut (link) to any Documents and
+**Add Shortcut**: Enables you to create a shortcut (link) to any Documents and
 Media file the user is authorized to view. You can set permissions on the
 shortcut to specify who can access the original document through the shortcut.
 
-- **Access from Desktop**: Makes the folder available to work with from a
+**Access from Desktop**: Makes the folder available to work with from a
 Windows desktop.
 
-- **Move to the Recycle Bin**: Removes the file from the Documents and Media
+**Move to the Recycle Bin**: Removes the file from the Documents and Media
 library to the Recycle Bin. 
 
 The Documents and Media app and Media Gallery are now at your disposal to show
@@ -469,10 +536,20 @@ TODO - Things to do or include:
 
 - Collaborate on a newsletter (.docx) of activities for the upcoming season. 
 
+- Mention the Related Assets field for the file entry.
+
+- Explain file update checkbox *Customize the Version Number Increment and
+Describe My Changes*
+
+- Explain Document type restrictions and workflow per folder (see 
+https://github.com/liferay/liferay-docs/blob/6.2.x/discover/portal/articles/05-document-management/06-automatic-previews-and-metadata.markdown#document-type-restrictions-and-workflow-per-folder-
+
 - Show Subscription email configuration (collab)
 
 - Demonstrate aspects of the File menu - Download, Edit, Checkout, Checkin, major/minor versions (collab)
 
-- Access DM files from Desktop. Explain this compares with checkout checkin.
+- Access DM files from Desktop. WebDAV. Explain this compares with checkout
+checkin. See
+https://github.com/liferay/liferay-docs/blob/6.2.x/discover/portal/articles/05-document-management/06-automatic-previews-and-metadata.markdown#webdav-access- 
 
 
