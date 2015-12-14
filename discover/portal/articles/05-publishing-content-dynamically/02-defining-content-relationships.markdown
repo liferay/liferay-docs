@@ -57,11 +57,12 @@ Now that those assets are created, you'll want to relate the blog entry and
 photo to your web content article. Navigate to your article in Site
 Administration &rarr; *Content* &rarr; *Web Content*.
 
-You've now defined relationship with your three assets. Click the *Add* icon ()
-at the top of your page in the Control Menu and select *Applications* and add
-the Related Assets and Asset Publisher applications to the page. Wait a minute;
-there aren't any assets displayed in the related assets application. Why? You
-cannot see any related assets until you select an asset in the Asset Publisher.
+You've now defined relationship with your three assets. Click the *Add* icon
+(![Add](../../images/icon-control-menu-add.png)) at the top of your page in the
+Control Menu and select *Applications* and add the Related Assets and Asset
+Publisher applications to the page. Wait a minute; there aren't any assets
+displayed in the related assets application. Why? You cannot see any related
+assets until you select an asset in the Asset Publisher.
 
 ![Figure 1: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets application. In the screenshot, we renamed the three Related Assets portlets on the left and updated their configurations.](../../images/related-assets-app-1.png)
 

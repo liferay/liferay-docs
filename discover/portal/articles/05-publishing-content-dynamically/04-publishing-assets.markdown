@@ -1,62 +1,64 @@
 # Publishing Assets
 
-As we create web content, it's important to keep in mind that to Liferay, the
+As you create web content, it's important to keep in mind that to Liferay, the
 pieces of content are assets, just like message board entries and blog posts.
 This allows you to publish different kinds of content using Liferay's Asset
 Publisher. You can use the Asset Publisher to publish a mixed group of various
 kinds of assets such as images, documents, blogs, and of course, web content.
 This helps in creating a more dynamic web site: you can place user-created wiki
 entries, blog posts, or message board messages in context with your content.
-Let's examine some of its features.
+You'll examine some of the Asset Publisher's features next.
 
-## Querying for Content [](id=querying-for-content)
+## Querying for Content
 
-The Asset Publisher portlet is a highly configurable application that lets you
-query for mixed types of content on the fly. By giving you the ability to
-control what and how content is displayed from one location, the Asset Publisher
-helps you to "bubble up" the most relevant content to your users.
+The Asset Publisher is a highly configurable application that lets you query for
+mixed types of content on the fly. By giving you the ability to control what and
+how content is displayed from one location, the Asset Publisher helps you to
+"bubble up" the most relevant content to your users.
 
-To get to all the portlet's options, click the *Options* button in the portlet's
-menu (the gear icon). On the Setup tab, you can configure the Asset Publisher's
-settings from the following three areas:
+To get to all the application's options, click the *Options* icon
+(![Options](../../images/icon-options.png)) in the application's menu. If you
+click the *Configuration* option and then *Setup* (if necessary), you can
+configure the Asset Publisher's settings from the following three areas:
 
 - Asset Selection
 - Display Settings
 - Subscriptions
 
 Asset Selection allows you to configure which assets are displayed. You can set
-asset selection to either *dynamic* or *manual*. With dynamic asset selection,
+asset selection to either *Dynamic* or *Manual*. With dynamic asset selection,
 assets are automatically displayed based on certain rules or filters. For
 example, you can set the Asset Publisher to display only assets of a certain
 type or assets to which certain tags or categories have been applied. With
 manual asset selection, the Asset Publisher only displays assets that have been
 explicitly selected by an administrator.
 
-The Asset Publisher supports a scope that restricts both manual and dynamic
+The Asset Publisher supports a scope that restricts both dynamic and manual
 asset selection. The Asset Publisher can only display assets from its configured
 scope. By default, the Asset Publisher portlet is scoped to the site of the page
-to which it was added. However, you can customize the scope from the Asset
+to which it was added. You can, however, customize the scope from the Asset
 Selection section of the Asset Publisher configuration window. To extend your
 Asset Publisher's scope, click *Select* under Scope and choose either *Global*
-to add the global scope or *Other Site...* to add the scope of anther site.
+to add the global scope, *Pages...* to add the scope to specific pages, or
+*Other Site...* to add the scope of anther site.
 
 The Display Settings section of the Asset Publisher configuration window lets
 administrators customize many details that determine how content is displayed.
 The Subscription section allows administrators to enable, disable, or configure
-email subscriptions and RSS subscriptions. In the following sections, we'll
+email subscriptions and RSS subscriptions. In the following sections, you'll
 explore the available configurations for the Asset Selection, Display Settings,
-and Subscriptions sections of the Asset Publisher's configuration window. Let's
+and Subscriptions sections of the Asset Publisher's configuration window. You'll
 start by learning how select content manually. You'll see that it's very similar
-to using the Web Content Display portlet except that you can select assets of
-any type, not just web content instances.
+to using the Web Content Display application except that you can select assets
+of any type, not just web content instances.
 
-### Selecting Assets Manually [](id=selecting-assets-manually)
+### Selecting Assets Manually
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
 the Asset Publisher that you want to select content manually. You can configure
 multiple scopes, including the global scope, from which to select assets.
 
-![Figure 6.13: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display portlet except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that available to be displayed in the Asset Publisher.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 1: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display portlet except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that available to be displayed in the Asset Publisher.](../../images/04-web-content-asset-publisher-manual.png)
 
 When selecting assets manually, you'll see a list of configured scopes under the
 Scope heading. Click the red "X" button at the right to remove a scope from the
@@ -93,7 +95,7 @@ different scopes, it can be time-consuming to periodically update the assets
 that should be displayed. It's often more convenient to use the Asset Publisher
 to select content dynamically.
 
-### Selecting Assets Dynamically [](id=selecting-assets-dynamically)
+### Selecting Assets Dynamically
 
 The Asset Publisher's default behavior is to select assets dynamically according
 a set of customizable rules. These rules can be stacked on top of each other so
@@ -116,7 +118,7 @@ of multiple types.
 choose whether the content must contain or must not contain any or all of the
 tags or categories that you enter.
 
-![Figure 6.14: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
+![Figure 2: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
 
 Once you've set up your filter rules for dynamically selecting content, you can
 decide how the content will be displayed.
@@ -166,7 +168,7 @@ Note that grouping and ordering rules are only one mechanism to control how your
 content will be displayed. You can refine the display through many other display
 settings which we'll examine next.
 
-## Configuring Display Settings [](id=configuring-display-settings)
+## Configuring Display Settings
 
 Open the *Display Settings* subtab of the Setup tab of the Asset Publisher's
 Configuration window. Here, you can configure many more settings that control
@@ -310,7 +312,7 @@ saving your configuration, the Asset Publisher displays tags and categories for
 each displayed asset. Then users can click on the tags and categories to
 manually filter the displayed assets.
 
-![Figure 6.15: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../images/available-metadata-fields.png)
+![Figure 3: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../images/available-metadata-fields.png)
 
 The Display Settings section of the Asset Publisher has numerous options to help
 you configure how your content selections are displayed to your users. Even
@@ -319,7 +321,7 @@ adjust the ones that apply to your situation. You'll want to use the Asset
 Publisher to query for different kinds of assets in the portal that contain
 relevant information for your users.
 
-## Configuring Asset Publisher Subscriptions [](id=configuring-asset-publisher-subscriptions)
+## Configuring Asset Publisher Subscriptions
 
 The Asset Publisher portlet supports two kinds of subscriptions: RSS
 subscriptions and email subscriptions. To enable subscriptions, open the Asset
@@ -335,7 +337,7 @@ Enabling RSS subscription creates an RSS feed containing links to all of the
 assets that the Asset Publisher is configured to display. A link to this RSS
 feed appears in at the bottom of the Asset Publisher portlet.
 
-![Figure 6.16: When RSS subscriptions have been enabled for an Asset Publisher portlet, a link to the Asset Publisher's RSS feed appears. Users can subscribe to the Asset Publisher's RSS feed using their preferred RSS reader.](../../images/asset-publisher-rss.png)
+![Figure 4: When RSS subscriptions have been enabled for an Asset Publisher portlet, a link to the Asset Publisher's RSS feed appears. Users can subscribe to the Asset Publisher's RSS feed using their preferred RSS reader.](../../images/asset-publisher-rss.png)
 
 Enabling email subscription adds a *Subscribe* link to the Asset Publisher.
 Users wishing to be notified of newly published assets can click on this link to
@@ -359,7 +361,7 @@ to your `portal-ext.properties` file and change the number:
 Next, we'll look at Display Pages, an addition to the asset framework introduced
 by Liferay 6.1.
 
-## Content Display Pages [](id=content-display-pages)
+## Content Display Pages
 
 If you've been using Liferay for a while, you might have noticed something about
 how Liferay handles web content--content is never tied directly to a page. While
@@ -404,7 +406,7 @@ Display portlet. Click the *Add Web Content* button, enter a title and some
 content, click on *Display Page* at the right, and select the Display Page you
 just created. Then click *Publish*.
 
-![Figure 6.17: You can select a display page for a web content instance when creating or editing one.](../../images/04-web-content-display-page.png)
+![Figure 5: You can select a display page for a web content instance when creating or editing one.](../../images/04-web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, click the *Read
 More* link to display the full content. Notice that the canonical URL for
@@ -416,6 +418,6 @@ a configured Asset Publisher portlet but also a Tags Navigation, a Categories
 Navigation, and a Search portlet. These tools help users to quickly identify
 relevant content.
 
-![Figure 6.18: The Canonical URL](../../images/04-web-content-canonical-url.png)
+![Figure 6: The Canonical URL](../../images/04-web-content-canonical-url.png)
 
-Next, let's learn about another new feature introduced by Liferay 6.1.
+Next, you'll learn about publishing RSS feeds.
