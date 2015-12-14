@@ -31,14 +31,14 @@ page.
 
 To scope a message board to a page, first add the Message Boards application to
 the page. Then click the app's *Options* icon
-(![Options](../../images/gear-icon.png)), select *Configuration*, and select the
+(![Options](../../images/icon-gear.png)), select *Configuration*, and select the
 *Scope* tab, to list the available scopes. Select the scope with page's name, or
 *+ PageName (Create New)*, if the scope hasn't been created already. Your
 message board is now scoped to the page and available to work with in Site
 Administration. 
 
 To administer a message board, open the *Product Menu*
-(![Product Menu](../../images/menu-icon.png)) and navigate the *Content* section
+(![Product Menu](../../images/icon-menu.png)) and navigate the *Content* section
 for your site or global scope. The Message Boards administration screen appears. 
 
 +$$$
@@ -56,7 +56,7 @@ $$$
 Initially, a message board has no categories or threads; and that's good,
 because you need to configure it for your purposes. To open the message board's
 configuration screen, click the message board's *Options* icon
-(![Options](../../images/options-icon.png)) and select *Configuration*. From the
+(![Options](../../images/icon-options.png)) and select *Configuration*. From the
 Configuration tabs, you can configure the message board for the behavior you
 want. 
 
@@ -306,7 +306,7 @@ posts.
 
 After you've created a category, you can revisit its permission options by
 clicking the category's *Actions* icon
-(![Actions](../../images/action-triangle-icon.png)) and selecting *Permissions*. 
+(![Actions](../../images/icon-action-triangle.png)) and selecting *Permissions*. 
 
 The form also lets you enable the mailing list function. If don't want to add a
 mailing list to the category you're creating, you can save your changes now. You
@@ -659,7 +659,7 @@ can halt activity on a thread by clicking *Lock Thread*.
 Many times a user will post a thread in the wrong category. Administrators may
 in this case want to move a thread to the proper category. This is very easy to
 do. You can select the *Actions* menu
-(![Actions](../../images/action-triangle-icon.png)) to the right of the thread
+(![Actions](../../images/icon-action-triangle.png)) to the right of the thread
 and choose *Move*. Or, if you are already viewing the thread and you have
 administrative access, there is a link at the top of the thread labeled *Move
 Thread*. Click this link. You will be presented with a simple form which allows
