@@ -55,11 +55,10 @@ Whenever you park your cursor in the content area, the *Add* icon (`+`) appears.
 If you click on it, it shows controls for inserting an image, table, or
 horizontal line (![Controls](../../images/icon-content-insert-controls.png)). To
 insert an image, click the icon that depicts the mountain silhouette. The image
-file selector screen appears. It lets you choose an existing image uploaded to
-Documents and Media, or it lets you upload a new image. You can also
-drag-and-drop image files into the content area. After you've added the image to
-the blog entry, clicking on the image brings up controls for justifying it to
-the right or left side of the article. 
+file selector screen appears. It lets you choose an existing image upload a new
+one. You can also drag-and-drop image files into the content area. After you've
+added the image to the blog entry, clicking it brings up controls for justifying
+it to the right or left side of the article. 
 
 You can also insert a table with as many rows and columns as you like. If you
 click inside the table, table editing controls appear. They let you designate
@@ -76,8 +75,8 @@ regardless of the mode you're using.
 
 You can even work in a dual pane view that shows your HTML code on the left and
 a preview pane on the right. To open this view, click the *Enlarge* icon
-(![Enlarge](../../images/icon-enlarge.png)). You can arrange the HTML and
-preview panes, horizontally or vertically. You can also hide the preview pane,
+(![Enlarge](../../images/enlarge-icon.png)). You can arrange the HTML and
+preview panes horizontally or vertically. You can also hide the preview pane,
 so the HTML editor takes up the entire window space. No matter how you want to
 use the HTML editor, it can really help you stay "in the zone" as you create
 awesome blog entries. 
@@ -88,7 +87,7 @@ Every 25 seconds, the entry you're editing is automatically saved as a draft, so
 a browser crash or network interruption won't cause you to lose your entry. You
 can exit the enlarged editor by clicking *Done* (which saves your content) or
 clicking *Cancel* to abandon any changes since the last auto-save. From the
-normal sized source view, you can click the *abc* icon to switch back to the
+normal-sized source view, you can click the *abc* icon to switch back to the
 WYSIWYG editor. 
 
 You've learned all the ins and outs of the content editor. Next, you'll learn
@@ -290,10 +289,10 @@ Here are descriptions for the other Blogs Configuration tabs:
 
 **Permissions:** shows Liferay's permissions dialog for the Blogs application.
 
-**Communication:** lists public render parameters the application makes
-accessible to other applications on the page. The applications can communicate
-via these parameters. For each shared parameter, you can specify whether to
-allow communication via the parameter and select which incoming parameter can
+**Communication:** lists public render parameters the application publishes to
+other applications on the page. Other applications can read these and take
+actions based on them. For each shared parameter, you can specify whether to
+allow communication using the parameter and select which incoming parameter can
 populate it. 
 
 **Sharing:** lets you embed the application instance as a widget on on any
@@ -362,10 +361,10 @@ Here are descriptions for the other Blogs Aggregator's Configuration screens:
 
 <!-- TODO - Revisit the permission Access in Control Panel. It's currently grayed out. - Jim --> 
 
-**Communication:** lists public render parameters the application makes
-accessible to other applications on the page. The applications can communicate
-via these parameters. For each shared parameter, you can specify whether to
-allow communication via the parameter and select which incoming parameter can
+**Communication:** lists public render parameters the application publishes to
+other applications on the page. Other applications can read these and take
+actions based on them. For each shared parameter, you can specify whether to
+allow communication using the parameter and select which incoming parameter can
 populate it. 
 
 **Sharing:** lets you embed the application instance as a widget on on any
