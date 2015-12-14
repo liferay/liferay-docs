@@ -33,12 +33,12 @@ roles, permissions, and folders in Documents and Media.
 Since the Lunar Resort's *Souvenir and Memorabilia* staff members must be able
 to upload and organize guest photos and videos, let's enable a role for those
 purposes. Sign in as the Liferay admin and open the the *Product Menu*
-(![Product Menu](../../images/menu-icon.png)). Then navigate to *Control Panel
+(![Product Menu](../../images/icon-menu.png)). Then navigate to *Control Panel
 &rarr; Users &rarr; Roles*. If the staff group is a part of an Organization, and
 that organization has a site, create an Organization Role. Otherwise, create it
 as a Site Role. Name the role *Resort Guest Media Manager*. Once you've created
 it, click the role's Actions icon
-(![Actions](../../images/action-triangle-icon.png)) and select *Define
+(![Actions](../../images/icon-action-triangle.png)) and select *Define
 Permissions*. The *Roles* screen appears, showing the *Define Permissions* tab.
 In that tab, navigate to *Site Administration &rarr; Content &rarr; Documents
 and Media*, select . *Access in Site Administration* from the *General
@@ -66,7 +66,7 @@ add files and folders to the library, they're listed here.
 
 ![Figure x: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload all kinds of documents to the library.](../../images/dm-admin-with-prod-menu-and-add-menu.png)
 
-Click the Add icon (![Add](../../images/add-icon.png)) to show what you can add
+Click the Add icon (![Add](../../images/icon-add.png)) to show what you can add
 to the Document Library. You can add documents, folders, and shortcuts just like
 on your local file system. You can even add access to an entirely different
 repository. Here are the Add menu's options:
@@ -119,7 +119,7 @@ to finish creating the folder.
 
 Since we only want the *Resort Guest Media Manager* role to manage files in the
 *Resort Guest Media* folder, we must fine tune the folder's permissions. Click
-on the folder's *Actions* icon (![Actions](../../images/actions-icon.png)) and
+on the folder's *Actions* icon (![Actions](../../images/icon-actions.png)) and
 select the *Permissions* action. The Permissions window appears.
 
 The folder permissions enable a role to perform the following actions:
@@ -188,7 +188,7 @@ permissions by clicking the *More Options* link and deselecting all the
 permissions. When you're ready to upload the files, click *Publish*. The Add
 Multiple Documents screen stays active, ready for you to add more files. When
 you're done adding files, click the Back icon
-(![Back](../../images/back-icon.png)) at the top of the screen. You're taken
+(![Back](../../images/icon-back.png)) at the top of the screen. You're taken
 back to the folder you're adding files to. 
 <!-- For categorization and tags, link to  
 Reference Publishing Content Dynamically > Organization Content with Tags and
@@ -211,7 +211,7 @@ styles provide the same functionality, but provide a different look and are
 displayed in rows. 
 
 To see the current folder's details click the *Information* icon
-(![**i**](../../images/information-icon.png)). An area with the folder's name
+(![**i**](../../images/icon-information.png)). An area with the folder's name
 appears. It shows the number of items in the folder. It also shows a *Subscribe*
 icon that you can click to get notifications about files added to or modified in
 the folder. Lastly, the Actions icon lists actions you can perform on the
@@ -393,7 +393,7 @@ files by default. The app lets you browse, add, and act on files just as you do
 in Site Administration. Since we want to focus on the Smith's files, let's
 configure the app to show only files from the *Smith Party* Document Library
 folder. Click the Documents and Media app's Options icon
-(![Options](../../images/app-options-icon.png)) and select *Configuration*. The
+(![Options](../../images/icon-app-options.png)) and select *Configuration*. The
 Configuration window appears and shows the *Setup* tab's sub-tab *Display
 Settings*.
 
@@ -480,7 +480,7 @@ off images. Click the X to close the slideshow window and return to the page.
 
 ![Figure x: The Media Gallery's slideshow provides a nice way to view your images.](../../images/dm-media-gallery-slideshow.png)
 
-Clicking the folder's Actions icon (![Actions](../../images/actions-icon.png))
+Clicking the folder's Actions icon (![Actions](../../images/icon-actions.png))
 lists actions you can perform with respect to the folder. For the Lunar Resort
 media team, the *Download* option is very useful. It creates an archive of the
 folder's files and dowloads them to your machine. The media staff burns a copy
