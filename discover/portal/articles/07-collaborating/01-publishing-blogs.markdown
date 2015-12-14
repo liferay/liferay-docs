@@ -31,11 +31,11 @@ started.
 Each site comes with a built-in blog instance. So let's explore adding an entry
 to your site's blog. In Site Administration, the Blogs entry provides the best
 place to draft blogs. Click the Product Menu icon
-(![Product Menu](../../images/menu-icon.png)) to open the Product Menu. Then
+(![Product Menu](../../images/icon-menu.png)) to open the Product Menu. Then
 navigate to *Sites* &rarr; *\[Site Name\]* &rarr; *Content* &rarr; *Blogs*. The
 *Entries* screen appears, listing the site's blog entries. 
 
-Click the *Add Blog Entry* icon (![Add Blog Entry](../../images/add-icon.png))
+Click the *Add Blog Entry* icon (![Add Blog Entry](../../images/icon-add.png))
 to bring up the blog entry editor. 
 
 ![Figure 1: This screenshot highlights the blog entry editor's controls for formatting text, justifying images, and editing tables.](../../images/blogs-blogs-entry-mars.png)
@@ -53,7 +53,7 @@ tweet to share your blog post on Twitter.
 
 Whenever you park your cursor in the content area, the *Add* icon (`+`) appears.
 If you click on it, it shows controls for inserting an image, table, or
-horizontal line (![Controls](../../images/content-insert-controls-icon.png)). To
+horizontal line (![Controls](../../images/icon-content-insert-controls.png)). To
 insert an image, click the icon that depicts the mountain silhouette. The image
 file selector screen appears. It lets you choose an existing image or upload a
 new one. You can also drag-and-drop image files into the content area. After
@@ -76,7 +76,7 @@ regardless of the mode you're using.
 You can even work in a dual pane view that shows your HTML code on the left and
 a preview pane on the right. To open this view, click the *Enlarge* icon
 (![Enlarge](../../images/enlarge-icon.png)). You can arrange the HTML and
-preview panes horizontally or vertically. You can also hide the preview pane
+preview panes horizontally or vertically. You can also hide the preview pane,
 so the HTML editor takes up the entire window space. No matter how you want to
 use the HTML editor, it can really help you stay "in the zone" as you create
 awesome blog entries. 
@@ -102,9 +102,9 @@ choose an existing image in the blog, an image file from Documents and Media, or
 an image outside the portal. You can browse to an image file and upload it.
 After you set the entry's cover image, you can add a caption to it. And if you
 want to select a different image, you can click the *Change* icon
-(![Change](../../images/change-icon.png)) to bring up the image selector again.
+(![Change](../../images/icon-change.png)) to bring up the image selector again.
 
-Clicking the *Configuration* icon (![Gear](../../images/gear-icon.png)) at the
+Clicking the *Configuration* icon (![Gear](../../images/icon-gear.png)) at the
 top of the entry editor lets you configure the blog entry. You can set a
 particular Display Date for the entry, choose a 400 character text-only abstract
 or a custom abstract containing a thumbnail image and a manually written
@@ -149,13 +149,13 @@ and entry information, or displaying the entries in a table. Working with
 existing blog entries has never been easier! 
 
 You can manage entries individually or in a batch. Each entry has an *Actions*
-icon (![Actions](../../images/actions-icon.png)) to edit the entry, configure
+icon (![Actions](../../images/icon-actions.png)) to edit the entry, configure
 its permissions, or move it to the Recycle Bin. You can select the *All*
 checkbox to select all entries or select an entry's individual check box, and
 click the trash icon to move them into the Recycle Bin. Under the *Images* tab
 you can view individual images and delete them individually or in a batch. 
 
-The *Options* icon (![Options](../../images/options-icon.png)) at the top of
+The *Options* icon (![Options](../../images/icon-options.png)) at the top of
 Blogs lets you configure permissions and notifications, or import/export the
 blog. Here are the blog instance Configuration options:
 
