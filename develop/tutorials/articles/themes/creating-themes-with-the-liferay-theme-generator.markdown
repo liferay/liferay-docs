@@ -67,16 +67,16 @@ Follow these steps to install the generator and its dependencies:
     package manager that you will use to install the generator and its
     dependencies.
 
-2. Still inside the terminal, run the following command to install 
-   the generator:
+2. Run `npm install -g yo gulp` to install the [Yeoman](http://yeoman.io/) 
+   and [gulp](https://www.npmjs.com/package/gulp) global dependencies.    
 
-        npm install -g generator-liferay-theme
-
-    Once the generator finishes installing, you can install the dependencies 
+    Once the dependencies finish installing, you can install the generator 
     next.
-
-3. Run `npm install -g yo gulp` to install the [Yeoman](http://yeoman.io/) 
-   and [gulp](https://www.npmjs.com/package/gulp) global dependencies.
+   
+3. Still inside the terminal, run the following command to install 
+   the generator:
+   
+        npm install -g generator-liferay-theme
 
 Now that the generator and dependencies are installed, you can learn how to use
 the generator next.
@@ -85,10 +85,12 @@ the generator next.
 
 When you installed the Liferay Theme Generator, you also installed two
 sub-generators with it: a themelet creator, and a theme importer. For the
-purposes of this tutorial, the focus will be on the default theme generator. To
-learn how to use the generator to create themelets and import themes, you can
-read the Extending your Theme Using Themelets tutorial and the Importing and 
+purposes of this tutorial, the focus will be on the default theme generator. 
+<!--To learn how to use the generator to create themelets and import themes, you 
+can read the Extending your Theme Using Themelets tutorial and the Importing and 
 Upgrading Themes tutorials.
+
+Need to add back once the tutorials are live-->
 
 Follow the steps below to create a 7.0 theme using the default theme generator:
 
@@ -99,13 +101,20 @@ Follow the steps below to create a 7.0 theme using the default theme generator:
 
         yo liferay-theme
 
-3. Enter a name and themeId for your theme, choose *7.0* for the version, choose
-   a template language, and enter *No* for Compass support.
+3. Enter a name and themeId for your theme, choose *7.0* for the version, and 
+   choose a template language.
+   
+4. Enter *No* to decline Compass support, or *Yes* if you installed the Ruby 
+   based version of Sass on Windows.
 
-    Note that you don't need the Compass support because the theme is based off
-    of the styled theme. The base styled theme uses lib-sass/bourbon instead.
-    Therefore, make sure you select *No* when asked if you would like Compass
-    support.
+    Note that your theme is based off of the styled theme by default, and uses 
+    lib-sass/bourbon instead of Compass. If, however, you installed the **Ruby
+    version of Sass** at the beginning of this tutorial, your theme **will 
+    require Compass support**.
+    
+5. Finally, enter the path to your app server's directory. The information you
+   provide is added to the `liferay-theme.json` in your theme's root directory.
+   you can change the path in that file if your app server changes.
 
 <!-- In the note at the beginning of this tutorial (for Windows usage), the
 following was stated:
@@ -119,9 +128,6 @@ styled theme. What if we want to use Compass support?
 
 For the record, indicating both "Y" and "N" worked for me (on Windows). I
 configured both ways (node-gyp and Compass) -Cody -->
-
-<!-- I also had to enter the path to my app server directory and deploy
-directory. Maybe this should be added as a step 4? -Cody -->
 
 The generator will create a new theme in your current directory that inherits 
 styles from [liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled) 
@@ -150,15 +156,10 @@ your theme.
 ## Gulp Theme Tasks
 
 When your theme was generated, a `gulpfile.js` file was included that gives you
-access to multiple gulp tasks.
+access to multiple gulp tasks. Note that you will have to navigate to your
+theme's root directory in order to run the gulp tasks covered below.
 
 Here's a list of gulp tasks available for the theme generator:
-
-<!-- It may be useful to mention that users should navigate to their new theme
-before running the gulp tasks below. This seems obvious, but I remember feedback
-from the old Maven tutorials I wrote, and the #1 problem I noticed on the forums
-was that developers were not navigating to their newly created project before
-running the highlighted commands. :-) -Cody -->
 
 **build:** generates the base theme files, compiles sass into css, and zips all 
 theme files into a `.war` file, ready to be deployed to a Liferay server. Run
@@ -192,10 +193,19 @@ After invoking the `watch` task, every time you save any changes to a file in
 your theme, it compiles (if applicable) and copies it directly to your app
 server.
 
++$$$
+
+**Note:** In order for the `watch` task to work, you must have [Developer Mode](/develop/tutorials/-/knowledge_base/6-2/using-developer-mode-with-themes) 
+enabled.
+<!--Update link to 7.0 URL once it's updated-->
+$$$
+
 There you have it! Now go make some great designs.
 
+<!--Readd links once tutorials are submitted
 ## Related Topics
 
 [Extending Your Theme with Themelets](/develop/tutorials/-/knowledge_base/7-0/extending-your-theme-with-themelets)
  
 [Importing and Upgrading Themes with the Theme Generator](/develop/tutorials/-/knowledge_base/7-0/importing-and-upgrading-themes-with-the-generator)
+-->
