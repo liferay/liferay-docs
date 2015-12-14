@@ -31,11 +31,11 @@ started.
 Each site comes with a built-in blog instance. So let's explore adding an entry
 to your site's blog. In Site Administration, the Blogs entry provides the best
 place to draft blogs. Click the Product Menu icon
-(![Product Menu](../../images/menu-icon.png)) to open the Product Menu. Then
+(![Product Menu](../../images/icon-menu.png)) to open the Product Menu. Then
 navigate to *Sites* &rarr; *\[Site Name\]* &rarr; *Content* &rarr; *Blogs*. The
 *Entries* screen appears, listing the site's blog entries. 
 
-Click the *Add Blog Entry* icon (![Add Blog Entry](../../images/add-icon.png))
+Click the *Add Blog Entry* icon (![Add Blog Entry](../../images/icon-add.png))
 to bring up the blog entry editor. 
 
 ![Figure 1: This screenshot highlights the blog entry editor's controls for formatting text, justifying images, and editing tables.](../../images/blogs-blogs-entry-mars.png)
@@ -53,13 +53,12 @@ tweet to share your blog post on Twitter.
 
 Whenever you park your cursor in the content area, the *Add* icon (`+`) appears.
 If you click on it, it shows controls for inserting an image, table, or
-horizontal line (![Controls](../../images/content-insert-controls-icon.png)). To
+horizontal line (![Controls](../../images/icon-content-insert-controls.png)). To
 insert an image, click the icon that depicts the mountain silhouette. The image
-file selector screen appears. It lets you choose an existing image uploaded to
-Documents and Media, or it lets you upload a new image. You can also
-drag-and-drop image files into the content area. After you've added the image to
-the blog entry, clicking on the image brings up controls for justifying it to
-the right or left side of the article. 
+file selector screen appears. It lets you choose an existing image upload a new
+one. You can also drag-and-drop image files into the content area. After you've
+added the image to the blog entry, clicking it brings up controls for justifying
+it to the right or left side of the article. 
 
 You can also insert a table with as many rows and columns as you like. If you
 click inside the table, table editing controls appear. They let you designate
@@ -77,7 +76,7 @@ regardless of the mode you're using.
 You can even work in a dual pane view that shows your HTML code on the left and
 a preview pane on the right. To open this view, click the *Enlarge* icon
 (![Enlarge](../../images/enlarge-icon.png)). You can arrange the HTML and
-preview panes, horizontally or vertically. You can also hide the preview pane,
+preview panes horizontally or vertically. You can also hide the preview pane,
 so the HTML editor takes up the entire window space. No matter how you want to
 use the HTML editor, it can really help you stay "in the zone" as you create
 awesome blog entries. 
@@ -88,7 +87,7 @@ Every 25 seconds, the entry you're editing is automatically saved as a draft, so
 a browser crash or network interruption won't cause you to lose your entry. You
 can exit the enlarged editor by clicking *Done* (which saves your content) or
 clicking *Cancel* to abandon any changes since the last auto-save. From the
-normal sized source view, you can click the *abc* icon to switch back to the
+normal-sized source view, you can click the *abc* icon to switch back to the
 WYSIWYG editor. 
 
 You've learned all the ins and outs of the content editor. Next, you'll learn
@@ -103,9 +102,9 @@ choose an existing image in the blog, an image file from Documents and Media, or
 an image outside the portal. You can browse to an image file and upload it.
 After you set the entry's cover image, you can add a caption to it. And if you
 want to select a different image, you can click the *Change* icon
-(![Change](../../images/change-icon.png)) to bring up the image selector again.
+(![Change](../../images/icon-change.png)) to bring up the image selector again.
 
-Clicking the *Configuration* icon (![Gear](../../images/gear-icon.png)) at the
+Clicking the *Configuration* icon (![Gear](../../images/icon-gear.png)) at the
 top of the entry editor lets you configure the blog entry. You can set a
 particular Display Date for the entry, choose a 400 character text-only abstract
 or a custom abstract containing a thumbnail image and a manually written
@@ -150,13 +149,13 @@ and entry information, or displaying the entries in a table. Working with
 existing blog entries has never been easier! 
 
 You can manage entries individually or in a batch. Each entry has an *Actions*
-icon (![Actions](../../images/actions-icon.png)) to edit the entry, configure
+icon (![Actions](../../images/icon-actions.png)) to edit the entry, configure
 its permissions, or move it to the Recycle Bin. You can select the *All*
 checkbox to select all entries or select an entry's individual check box, and
 click the trash icon to move them into the Recycle Bin. Under the *Images* tab
 you can view individual images and delete them individually or in a batch. 
 
-The *Options* icon (![Options](../../images/options-icon.png)) at the top of
+The *Options* icon (![Options](../../images/icon-options.png)) at the top of
 Blogs lets you configure permissions and notifications, or import/export the
 blog. Here are the blog instance Configuration options:
 
@@ -290,10 +289,10 @@ Here are descriptions for the other Blogs Configuration tabs:
 
 **Permissions:** shows Liferay's permissions dialog for the Blogs application.
 
-**Communication:** lists public render parameters the application makes
-accessible to other applications on the page. The applications can communicate
-via these parameters. For each shared parameter, you can specify whether to
-allow communication via the parameter and select which incoming parameter can
+**Communication:** lists public render parameters the application publishes to
+other applications on the page. Other applications can read these and take
+actions based on them. For each shared parameter, you can specify whether to
+allow communication using the parameter and select which incoming parameter can
 populate it. 
 
 **Sharing:** lets you embed the application instance as a widget on on any
@@ -362,10 +361,10 @@ Here are descriptions for the other Blogs Aggregator's Configuration screens:
 
 <!-- TODO - Revisit the permission Access in Control Panel. It's currently grayed out. - Jim --> 
 
-**Communication:** lists public render parameters the application makes
-accessible to other applications on the page. The applications can communicate
-via these parameters. For each shared parameter, you can specify whether to
-allow communication via the parameter and select which incoming parameter can
+**Communication:** lists public render parameters the application publishes to
+other applications on the page. Other applications can read these and take
+actions based on them. For each shared parameter, you can specify whether to
+allow communication using the parameter and select which incoming parameter can
 populate it. 
 
 **Sharing:** lets you embed the application instance as a widget on on any

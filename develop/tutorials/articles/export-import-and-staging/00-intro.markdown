@@ -1,4 +1,4 @@
-# Export/Import and Staging
+# Export/Import and Staging [](id=export-import-and-staging)
 
 Liferay's Export/Import and Staging features give users the power to plan page
 publication and manage content. The Export/Import feature lets users export
