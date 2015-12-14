@@ -1,7 +1,7 @@
 # Customizing Liferay Services [](id=customizing-liferay-services)
 
 Blade Tools provides templates for creating modules for customizing Liferay
-services. Service wrappers make it easy to cusotmize Liferay services. In
+services. Service wrappers make it easy to customize Liferay services. In
 this tutorial, you'll learn how to create service wrapper modules. If you
 haven't yet installed Blade Tools, please refer to the
 [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools) tutorial.
@@ -70,7 +70,7 @@ in this import statement:
 This import statement, in turn, allowed the short form of the service wrapper
 class name to be used in the class declaration of your component class:
 
-    public class UserLocalServiceOverride extends UserLocalServiceWrapper`
+    public class UserLocalServiceOverride extends UserLocalServiceWrapper
 
 The bottom line is that when using `blade create` to create a service wrapper
 project, you must specify a fully qualified class name as the `service`
