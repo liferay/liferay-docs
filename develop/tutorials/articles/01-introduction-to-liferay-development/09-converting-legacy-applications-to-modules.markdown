@@ -3,7 +3,7 @@
 You've probably heard the term *modularity* discussed frequently in relation to
 Liferay 7.0. With Liferay 7.0 transforming into a modular platform, Liferay
 applications will be composed of one or more
-[modules](https://github.com/liferay/liferay-portal/tree/master/modules/apps).
+[modules](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module).
 
 A module doesn't use the traditional Liferay application structure from previous
 versions. Liferay is following a different structure for modules that you'll
