@@ -54,14 +54,15 @@ of any type, not just web content instances.
 
 ### Selecting Assets Manually
 
-By selecting *Manual* from the select box beneath *Asset Selection*, you tell
-the Asset Publisher that you want to select content manually. You can configure
-multiple scopes, including the global scope, from which to select assets.
+By selecting *Manual* from the select box beneath *Asset Selection*, you're
+telling the Asset Publisher that you want to select content manually. You can
+configure multiple scopes, including the global scope, from which to select
+assets.
 
-![Figure 1: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display portlet except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that available to be displayed in the Asset Publisher.](../../images/04-web-content-asset-publisher-manual.png)
+![Figure 1: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display application except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that are available to be displayed in the Asset Publisher.](../../images/web-content-asset-publisher-manual.png)
 
 When selecting assets manually, you'll see a list of configured scopes under the
-Scope heading. Click the red "X" button at the right to remove a scope from the
+Scope heading. Click the "X" button at the right to remove a scope from the
 list. Click the *Select* button to add additional scopes to the Asset
 Publisher's configuration. After you've added a scope, a new Select button
 appears under the Asset Entries heading. A list of assets selected for display
@@ -69,15 +70,22 @@ appears in the Asset Entries section. You can select assets to be displayed by
 clicking on the appropriate *Select* button. One button appears for each
 configured scope. By default, the available asset types include the following:
 
-- Documents Folder
-- Bookmarks Folder
 - Blogs Entry
-- Message Boards Message
-- Web Content Instance
 - Bookmarks Entry
-- Wiki Page
-- Document
+- Bookmarks Folder
+- Calendar Event
+- Basic Document
+- Google Docs
+- Contract
+- Marketing Banner
+- Online Training
+- Sales Presentation
+- Documents Folder 
+- Dynamic Data Lists Record
+- Message Boards Message
+- Basic Web Content
 - Web Content Folder
+- Wiki Page
 
 You can select any number of assets to be displayed. Note, however, that there's
 a display setting called *Number of Items to Display* that determines the
@@ -85,12 +93,12 @@ maximum number of items to display (or, if pagination is enabled, the maximum
 number of items to display per page). The Asset Publisher enables you to mix and
 match different asset types in the same interface. When you're done selecting
 items to display, click *Save*. Any selected assets are added to the list of
-assets that are displayed by the portlet. Once you have your content selected,
-you can configure the display types to configure how the content appears. We'll
-discuss the display settings in more detail after we finish discussing how to
-select assets for display. 
+assets that are displayed by the application. Once you have your content
+selected, you can configure the display types to configure how the content
+appears. We'll discuss the display settings in more detail after we finish
+discussing how to select assets for display. 
 
-While manual Asset selection allows you to select assets of various types from
+While manual asset selection allows you to select assets of various types from
 different scopes, it can be time-consuming to periodically update the assets
 that should be displayed. It's often more convenient to use the Asset Publisher
 to select content dynamically.
@@ -114,17 +122,25 @@ if they belong to a configured scope.
 specific type, such as only web content, only wiki entries, or any combination
 of multiple types.
 
-**Filter Rules:** Add as many filters on tags or categories as you like. You can
+**Filter:** Add as many filters on tags or categories as you like. You can
 choose whether the content must contain or must not contain any or all of the
 tags or categories that you enter.
 
-![Figure 2: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/04-web-content-asset-publisher-filter.png)
+![Figure 2: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/web-content-asset-publisher-filter.png)
 
 Once you've set up your filter rules for dynamically selecting content, you can
 decide how the content will be displayed.
 
-<!-- TODO: Discuss how to use the CUSTOM USER ATTRIBUTES section of the dynamic
-asset selection configuration window of the Asset Publisher. -->
+You can configure the Asset Publisher to display assets that only match the
+custom user profile attributes. This setting retrieves assets that have matching
+categorization. These categories must be from the global context. For example,
+suppose a user had a custom field called *Location* with the type *Text*. Also
+assume the user's location attribute is set to *Moon*. You could create a
+vocabulary called *Location* and a category for the Location vocabulary called
+*Moon*. Then you could categorize content with *Moon* in the *Location*
+vocabulary. With this organizational setup, adding an Asset Publisher and
+specifying *Location* as the Asset Publisher's custom user attribute would only
+display content that had been categorized as *Moon*. Pretty cool, right?
 
 You can order the content returned by the filters by title, create date,
 modified date, publication date, etc. in ascending or descending order. For
