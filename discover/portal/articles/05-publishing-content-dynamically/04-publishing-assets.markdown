@@ -201,22 +201,22 @@ template to customize how the Asset Publisher displays assets. Liferay creates
 the following display templates for each newly created site, including the
 default site:
 
-- Abstracts: This display template shows the first 200-500 characters of the
+- *Abstracts:* This display template shows the first 200-500 characters of the
   content, defined by the **Abstract Length** field. This is the default display
   template of the Asset Publisher.
-- Table: This display template displays the content in an HTML table which can
+- *Table:* This display template displays the content in an HTML table which can
   be styled by a theme developer.
-- Title List: This display template displays the content's title as defined by
+- *Title List:* This display template displays the content's title as defined by
   the user who entered it.
-- Full Content: This display template displays the entire content of the entry.
+- *Full Content:* This display template displays the entire content of the entry.
 
-    There's also the Rich Summary and Map display templates that belong to the
-    global scope. The Rich Summary template provides a summary view of each
+    There's also the *Rich Summary* and *Map* display templates that belong to
+    the global scope. The Rich Summary template provides a summary view of each
     asset along with a *Read More* link to the article's full content. The Map
     template displays geolocalized assets in a map.
 
-**Abstract Length**: Here, you can select the number of characters to display
-for abstracts. The default is `200`.
+**Abstract Length**: This selector lets you select the number of characters to
+display for abstracts. The default is `200`.
 
 **Asset Link Behavior:** The default value is *Show Full Content*. With this
 value selected, when the link to an asset is clicked, the full asset is
@@ -242,9 +242,9 @@ you to the full instance.
 
 $$$
 
-**Number of Items to Display**: Here, you can select the maximum number of
-assets that can be displayed by the Asset Publisher. If pagination, however, is
-enabled, there's no limit to the number of of assets that the Asset Publisher
+**Number of Items to Display**: This selector lets you select the maximum number
+of assets that can be displayed by the Asset Publisher. If pagination, however,
+is enabled, there's no limit to the number of of assets that the Asset Publisher
 can display. So with pagination enabled, this number represents the maximum
 number of assets that can be displayed per page.
 
