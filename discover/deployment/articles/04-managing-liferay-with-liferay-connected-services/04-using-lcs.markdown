@@ -74,7 +74,7 @@ the correct LCS roles.
 
 Each environment and server in LCS is part of an LCS project. LCS provides a 
 simple UI for managing these projects. To access this UI, log in to LCS and then 
-select *Manage Projects* from your user menu in the dockbar. The following 
+select *Manage Projects* from your user menu in the Dockbar. The following 
 screenshot illustrates this.
 
 ![Figure 4.9: To manage your LCS projects, select *Manage Projects* from the user menu in LCS.](../../images/lcs-user-menu-manage-projects.png)
