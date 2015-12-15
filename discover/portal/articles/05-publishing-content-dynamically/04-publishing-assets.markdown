@@ -142,17 +142,7 @@ vocabulary. With this organizational setup, adding an Asset Publisher and
 specifying *Location* as the Asset Publisher's custom user attribute would only
 display content that had been categorized as *Moon*. Pretty cool, right?
 
-You can order the content returned by the filters by title, create date,
-modified date, publication date, etc. in ascending or descending order. For
-instance, suppose you have a series of "How To" articles that you want displayed
-in descending order based on whether the article was tagged with the *hammer*
-tag. Or, suppose you want a series of video captures to display in ascending
-order based on a category called *birds*. For these use cases, you can configure
-the ordering and grouping settings. You can also group by *Asset*, *Type* or
-*Vocabularies*. Vocabularies are groups of categories defined by administrators
-in the *Categories* section of the Control Panel.
-
-The *Ordering and Grouping* section of the Asset Publisher allows you to
+The *Ordering and Grouping* section of the Asset Publisher lets you
 precisely control how content is ordered and grouped when displayed. You can
 order the assets displayed by Asset Publisher in ascending or descending order
 by the following attributes:
@@ -163,6 +153,13 @@ by the following attributes:
 - Publish Date
 - Expiration Date
 - Priority
+- Date
+
+For instance, suppose you have a series of "How To" articles that you want
+displayed in descending order based on whether the article was tagged with the
+*hammer* tag. Or, suppose you want a series of video captures to display in
+ascending order based on a category called *birds*. For these use cases, you can
+configure the ordering and grouping settings.
 
 You can also configure a second ordering. The second ordering would be applied
 to any assets for which the first ordering wasn't sufficient. For example,
@@ -182,7 +179,7 @@ group of assets.
 
 Note that grouping and ordering rules are only one mechanism to control how your
 content will be displayed. You can refine the display through many other display
-settings which we'll examine next.
+settings which you'll examine next.
 
 ## Configuring Display Settings
 
@@ -193,11 +190,11 @@ displays content. The Display Settings section gives you precise control over
 the display of your assets. There are many options available to configure how
 you want your content to appear. Many of these, such as printing, flags,
 ratings, comments, comment ratings, and social bookmarks work the same way they
-do in the Web Content Display portlet.
+do in the Web Content Display application.
 
 **Show Add Content Button**: When checked, this checkbox adds an *Add New*
-button that allows users to add new assets directly from the Asset Publisher
-portlet. This is checked by default.
+button that lets users add new assets directly from the Asset Publisher
+application. This is checked by default.
 
 **Display Template**: This selector lets you choose an application display
 template to customize how the Asset Publisher displays assets. Liferay creates
@@ -213,9 +210,10 @@ default site:
   the user who entered it.
 - Full Content: This display template displays the entire content of the entry.
 
-    There's also a Rich Summary display template that belongs to the global
-    scope. This template provides a summary view of each asset along with a
-    *Read More* link to the article's full content.
+    There's also the Rich Summary and Map display templates that belong to the
+    global scope. The Rich Summary template provides a summary view of each
+    asset along with a *Read More* link to the article's full content. The Map
+    template displays geolocalized assets in a map.
 
 **Abstract Length**: Here, you can select the number of characters to display
 for abstracts. The default is `200`.
@@ -223,29 +221,29 @@ for abstracts. The default is `200`.
 **Asset Link Behavior:** The default value is *Show Full Content*. With this
 value selected, when the link to an asset is clicked, the full asset is
 displayed in the current Asset Publisher. (There's also a *View in Context* link
-that shows the article in the Wiki page's Wiki portlet.) If the value *View in a
-Context* is selected, clicking on an asset causes that asset to be displayed in
-the portlet to which the asset belongs. For example, a blog entry would be
-displayed in the Blogs portlet where it was created. Likewise, a forum post
-would be displayed in the Message Boards portlet where it was created.
-Similarly, a generic web content instance would be displayed in the Asset
-Publisher of its configured display page. See the section below on display pages
-for more information.
+that shows the article in the Wiki page's Wiki application.) If the value *View
+in a Context* is selected, clicking on an asset causes that asset to be
+displayed in the application to which the asset belongs. For example, a blog
+entry would be displayed in the Blogs application where it was created.
+Likewise, a forum post would be displayed in the Message Boards application
+where it was created. Similarly, a generic web content instance would be
+displayed in the Asset Publisher of its configured display page. See the section
+below on display pages for more information.
 
 +$$$
 
-**Tip:** When the Asset Publisher displays web
- content instances that have an associated small image, the small image becomes a
- link to the full instance.  To use this feature, add or edit a web content
- instance that the Asset Publisher should display. Before clicking *Publish*,
- click on *Abstracts*, flag *Small Image*, and upload an image.  Then click
- *Publish*. Once your web content instance appears in the Asset Publisher's list,
- clicking the small image takes you to the full instance.
+**Tip:** When the Asset Publisher displays web content instances that have an
+associated small image, the small image becomes a link to the full instance. To
+use this feature, add or edit a web content instance that the Asset Publisher
+should display. Before clicking *Publish*, click on *Abstracts*, flag *Small
+Image*, and upload an image. Then click *Publish*. Once your web content
+instance appears in the Asset Publisher's list, clicking the small image takes
+you to the full instance.
 
 $$$
 
 **Number of Items to Display**: Here, you can select the maximum number of
-assets that can be displayed by the Asset Publisher. However, if pagination is
+assets that can be displayed by the Asset Publisher. If pagination, however, is
 enabled, there's no limit to the number of of assets that the Asset Publisher
 can display. So with pagination enabled, this number represents the maximum
 number of assets that can be displayed per page.
@@ -254,14 +252,14 @@ number of assets that can be displayed per page.
 pagination set to *None*, the Asset Publisher displays at most the number of
 assets specified in the **Number of Items to Display** property. Setting the
 pagination type to *Simple* adds *Previous* and *Next* buttons that enable the
-user to browse through "pages" of assets in the Asset Publisher. Setting the
+user to browse through pages of assets in the Asset Publisher. Setting the
 pagination type to *Regular* adds more options and information including *First*
 and *Last* buttons, a dropdown selector for pages, the number of items per page,
 and the total number of results (assets being displayed).
 
-<!-- TODO 
-**Show Metadata Descriptions**:
--->
+**Show Metadata Descriptions:** This enables Metadata descriptions such as
+*Content Related to...* or *Content with tag...* to be displayed with the
+published assets.
 
 **Show Available Locales:** Since content can be localized, you can have
 different versions of it based on locale. Enabling this option shows the locales
@@ -288,45 +286,42 @@ content to one of several formats:
     for information on setting up Liferay's OpenOffice/LibreOffice document
     conversion functionality.
 
+    <!-- Update link above when available for 7.0. -Cody -->
+
 **Enable ...**: The Asset Publisher's Display Settings allow you to
 enable/disable the following options for displayed assets:
 
 - Print
 - Flags
-- Related assets
+- Related Assets
 - Ratings
 - Comments
-- Comment ratings
-- Social bookmarks
+- Comment Ratings
+- Social Bookmarks
 
-    Enabling the Print option adds a *Print* link to the full view of an asset
-    displayed in the Asset Publisher. Clicking *Print* opens a new browser
-    window with a print view of the asset. Enabling flags, related assets,
-    ratings, comments, comment ratings, or social bookmarks add links to the
-    corresponding social features to the view full of the asset in the Asset
-    Publisher.
+Enabling the Print option adds a *Print* link to the full view of an asset
+displayed in the Asset Publisher. Clicking *Print* opens a new browser window
+with a print view of the asset. Enabling flags, related assets, ratings,
+comments, comment ratings, or social bookmarks add links to the corresponding
+social features to the view full of the asset in the Asset Publisher.
 
 +$$$
 
-**Tip:** An alternate way to add comments
-     and ratings to a page is through the *Page Comments* and *Page Ratings*
-     portlets.  Just add the portlets in the appropriate location near the asset
-     you'd like to have feedback for. Note that starting in Liferay 6.2, these
-     portlets can no longer be exported.
+**Tip:** An alternate way to add comments and ratings to a page is through the
+*Page Comments* and *Page Ratings* applications. Just add the applications in the
+appropriate location near the asset you'd like to have feedback for.
      
 $$$
 
-<!-- TODO
-**Display Style**:
+When enabling social bookmarks, you're given sub-options to edit the display
+style of your social bookmarks and whether they are listed at the top or bottom
+of the Asset Publisher.
 
-**Display Position**:
--->
-
-**Show Metadata:** Allows you to select various metadata types to be displayed
-(see below). For example, you can select tags and categories for display. Upon
-saving your configuration, the Asset Publisher displays tags and categories for
-each displayed asset. Then users can click on the tags and categories to
-manually filter the displayed assets.
+**Show Metadata:** Lets you select various metadata types to be displayed (see
+below). For example, you can select tags and categories for display. Upon saving
+your configuration, the Asset Publisher displays tags and categories for each
+displayed asset. Then users can click on the tags and categories to manually
+filter the displayed assets.
 
 ![Figure 3: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../images/available-metadata-fields.png)
 
@@ -339,27 +334,25 @@ relevant information for your users.
 
 ## Configuring Asset Publisher Subscriptions
 
-The Asset Publisher portlet supports two kinds of subscriptions: RSS
-subscriptions and email subscriptions. To enable subscriptions, open the Asset
-Publisher's configuration window (click on the gear icon and select
-*Configuration*). In the configuration window, open the Subscriptions tab of the
-Setup tab. There are two options:
+The Asset Publisher application supports two kinds of subscriptions: RSS
+subscriptions and email subscriptions. To enable subscriptions, click the Asset
+Publisher's Options icon and select *Configuration*. In the configuration
+window, open the Subscriptions tab of the Setup tab. There are two options:
+*Enable RSS Subscription* and *Enable Email Subscription*.
 
-**Enable RSS Subscription**
-
-**Enable Email Subscription**
-
-Enabling RSS subscription creates an RSS feed containing links to all of the
+Enabling RSS Subscription creates an RSS feed containing links to all of the
 assets that the Asset Publisher is configured to display. A link to this RSS
-feed appears in at the bottom of the Asset Publisher portlet.
+feed appears at the bottom of the Asset Publisher application.
 
-![Figure 4: When RSS subscriptions have been enabled for an Asset Publisher portlet, a link to the Asset Publisher's RSS feed appears. Users can subscribe to the Asset Publisher's RSS feed using their preferred RSS reader.](../../images/asset-publisher-rss.png)
+![Figure 4: When RSS subscriptions have been enabled for an Asset Publisher application, a link to the Asset Publisher's RSS feed appears. Users can subscribe to the Asset Publisher's RSS feed using their preferred RSS reader.](../../images/asset-publisher-rss.png)
 
-Enabling email subscription adds a *Subscribe* link to the Asset Publisher.
+Enabling Email Subscription adds a *Subscribe* link to the Asset Publisher.
 Users wishing to be notified of newly published assets can click on this link to
 be added to the subscription list. Liferay periodically checks for new assets
 and sends emails to subscribed users informing them about the new assets. By
-default, Liferay performs this check every twenty-four hours but this can be
+default, Liferay performs this check every twenty-four hours.
+
+<!-- but this can be
 customized by adding the following property to your `portal-ext.properties` file
 and changing the number:
 
@@ -374,8 +367,15 @@ to your `portal-ext.properties` file and change the number:
 
     asset.publisher.dynamic.subscription.limit=20
 
-Next, we'll look at Display Pages, an addition to the asset framework introduced
-by Liferay 6.1.
+-----
+
+This info needs to be updated once available. These properties are no longer in
+portal.properties, but they are not available in System Settings either. Once
+they're available, we'll need to document how to change these settings. -Cody
+
+-->
+
+Next, you'll look at Display Pages.
 
 ## Content Display Pages
 
@@ -387,7 +387,7 @@ don't have a static URL for any web content, which is bad for search engine
 optimization.
 
 As an improvement, Liferay introduced the concept of *display pages* and
-*canonical URLs*. Each web content entry on the portal has a canonical URL,
+*canonical URLs*. Each web content entry in Liferay has a canonical URL,
 which is the official location of the content that is referenced any time the
 content is displayed. A display page can be any page with an asset publisher
 configured to display any content associated with the page. When adding or
@@ -397,43 +397,43 @@ a configured asset publisher are available for selection.
 To create a display page, you can create a page yourself, add an Asset Publisher
 portlet and configure it yourself. Alternatively, you can use the *Content
 Display Page* page template included with Liferay. If you're creating a Display
-Page manually, once you've added an Asset Publisher portlet to the page, open
-its configuration window. Then check the *Set as the Default Asset Publisher for
-This Page* box. Also, for its display settings, set the Display Style to
-*Abstracts* and the Asset Link Behavior to *View in Context*.
+Page manually, once you've added an Asset Publisher application to the page,
+open its configuration window. Then check the *Set as the Default Asset
+Publisher for This Page* box. Also, for its display settings, set the Display
+Style to *Abstracts* and the Asset Link Behavior to *View in Context*.
 
 +$$$
 
-**Note:** Web content linked in the Asset
- Publisher can be viewed by clicking their asset links. With the *View in
-Context* behavior checked, the link displays the Web Content in its
-configured display page. If the web content does not have a configured display
-page, it is displayed in the web content display portlet to which the
-asset belongs.
+**Note:** Web content linked in the Asset Publisher can be viewed by clicking
+their asset links. With the *View in Context* behavior checked, the link
+displays the web content in its configured display page. If the web content does
+not have a configured display page, it is displayed in the Web Content Display
+application to which the asset belongs.
 
 $$$
 
-You may now be thinking, "Wait, you just told me that each Web Content item has
+You may now be thinking, "Wait, you just told me that each web content item has
 its own URL, and that this is somehow related to pages where we display a whole
 bunch of content on the same page?" That's right. Just watch--create a display
-page called *My Web Content Display Page* somewhere on your portal, using the
-*Content Display Page* template. Now, on a different page, add a Web Content
-Display portlet. Click the *Add Web Content* button, enter a title and some
-content, click on *Display Page* at the right, and select the Display Page you
-just created. Then click *Publish*.
+page called *My Web Content Display Page* somewhere in Liferay using the
+*Content Display Page* template. Make sure the *Automatically apply changes done
+to the page template...* checkbox is unchecked. Now, on a different page, add a
+Web Content Display application. Click the *Add* button, enter a
+title and some content, click on *Display Page* at the right, and select the
+Display Page you just created. Then click *Publish*.
 
-![Figure 5: You can select a display page for a web content instance when creating or editing one.](../../images/04-web-content-display-page.png)
+![Figure 5: You can select a display page for a web content instance when creating or editing one.](../../images/web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, click the *Read
 More* link to display the full content. Notice that the canonical URL for
 content appears in your browser's address bar. If you create your own custom
-display page, any additional portlets that you place on the page are displayed
-along with the content when you access it via the canonical URL. If you used the
-*Content Display Page* page template for your display page, it not only features
-a configured Asset Publisher portlet but also a Tags Navigation, a Categories
-Navigation, and a Search portlet. These tools help users to quickly identify
-relevant content.
+display page, any additional applications that you place on the page are
+displayed along with the content when you access it via the canonical URL. If
+you used the *Content Display Page* page template for your display page, it not
+only features a configured Asset Publisher application but also a Tags
+Navigation, a Categories Navigation, and a Search application. These tools help
+users to quickly identify relevant content.
 
-![Figure 6: The Canonical URL](../../images/04-web-content-canonical-url.png)
+![Figure 6: A canonical URL for a *Lunar Resort Information* page would look similar to this screenshot.](../../images/web-content-canonical-url.png)
 
 Next, you'll learn about publishing RSS feeds.
