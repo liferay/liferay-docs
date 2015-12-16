@@ -1,7 +1,7 @@
 # Creating Sites
 
 A site contains a set of pages that can be used to publish content or
-applications. By default, Liferay Portal starts with a single site that has a
+applications. By default, Liferay starts with a single site that has a
 single page. You can build any website you wish out of this, complete with
 multi-nested page hierarchies. The site can stand independently or can be
 associated with an organization to serve as the website for that organization.
@@ -15,16 +15,16 @@ facilitate collaboration among team members, supporting different kinds of
 collaboration and social scenarios is a must. Liferay's sites provide three
 membership types:
 
-- Open: Users can become members of the site at any time. Users can join sites
-from the *My Sites* portlet.
+- **Open:** Users can become members of the site at any time. Users can join
+sites from the *My Sites* application.
 
-- Restricted: Users can request site membership but site administrators must
+- **Restricted:** Users can request site membership but site administrators must
 approve requests in order for users to become members. Requests can be made from
-the *My Sites* portlet.
+the *My Sites* application.
 
-- Private: Users are not allowed to join the site or request site membership.
-Private sites don't appear in the *My Sites* portlet. Site administrators can
-still manually select users and assign them as site members.
+- **Private:** Users are not allowed to join the site or request site
+membership. Private sites don't appear in the *My Sites* application. Site
+administrators can still manually select users and assign them as site members.
 
 In addition to these memberships, when a site is associated with an
 organization, all the users of that organization are automatically considered
@@ -32,16 +32,16 @@ members of the site.
 
 Members of a site can be given additional privileges within the site by using
 Liferay's permission settings. It is also possible to assign different roles
-within the site to different members. This can be done through *site roles*
+within the site to different members. This can be done through *site roles*,
 which are defined equally for all sites or *teams* which are unique for each
 site. These concepts will be discussed later in the chapter.
 
-Liferay Portal separates site-scoped information from the Control Panel by placing
-it in the Sites menu. From Sites, you can select the specific site to work on.
-The Site Administration panel is available for your site, which includes Pages.
-Contents, Users, Configuration, and Publishing Tools.
+Liferay separates site-scoped information from the Control Panel by placing it
+in the Sites menu. From this menu, you can select the specific site to work on.
+The Site Administration panel is available for your site, which includes Pages,
+Content, Users, Configuration, and Publishing Tools.
 
-![Figure 2.11: Your site's content resides on the Site Administration page.](../../images/web-content-site-content.png)
+![Figure 1: Your site's content resides on the Site Administration page.](../../images/web-content-site-content.png)
 
 For details about Liferay's social collaboration suite, see the
 [Social Collaboration](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
@@ -58,9 +58,11 @@ document called *Lunar Goals and Objectives* and would like for all its subsites
 to have a copy, the parent site's administrator can enable content sharing to
 automatically share the document with its subsites, instead of having to send
 each site the document individually. Also, content sharing privileges can be set
-to let every site administrator share content across sites they manage.
+to let every site administrator share content across sites they manage. Some
+examples of content you can share across site include web content structures and
+templates, categories, application display templates, etc.
 
-Please refer to the [Sites Admin Portlet](https://docs.liferay.com/portal/7.0-a1/propertiesdoc/portal.properties.html#Sites&nbsp;Admin&nbsp;Portlet)
+Please refer to the [Sites Admin Portlet](https://docs.liferay.com/portal/7.0-a5/propertiesdoc/portal.properties.html#Sites%20Admin%20Portlet)
 section of Liferay's `portal.properties` file for a list of relevant
 configurable properties. For example, the
 `sites.content.sharing.with.children.enabled` property allows you to disable
@@ -68,34 +70,33 @@ content sharing between sites and subsites, disable it by default while allowing
 site administrators to enable it per site, or to enable it by default while
 allowing administrators to disable it per site.
 
-The Sites Directory portlet is a configurable portlet that can allow users to
+The Sites Directory application is a configurable app that can allow users to
 view a hierarchy of sites and subsites. It enables users to navigate to any of
-the displayed sites. To use this portlet to display site hierarchies, add it to
+the displayed sites. To use this app to display site hierarchies, add it to
 a page, open its Configuration window, and under Display Style, select *List
-Hierarchy*. The My Sites Directory portlet is very similar to the Sites
-Directory portlet, except that it lists only the sites a user belongs to.
+Hierarchy*. The My Sites Directory application is very similar to the Sites
+Directory application, except that it lists only the sites a user belongs to.
 
-The Site Map portlet is another configurable portlet that's intended
-to help users navigate among pages within a site. When configuring this portlet,
-a site administrator can select a root page and a display depth. Just as sites
-can be organized hierarchically, so can the pages within a site. The display
-depth of the Site Map portlet determines how many levels of nested pages to
-display.
+The Site Map application is another configurable app that's intended to help
+users navigate among pages within a site. When configuring this app, a site
+administrator can select a root page and a display depth. Just as sites can be
+organized hierarchically, so can the pages within a site. The display depth of
+the Site Map application determines how many levels of nested pages to display.
 
-![Figure 1: The Sites Directory portlet can allow users to navigate between sites organized hierarchically. The Site Map portlet can allow users to navigate among pages of site organized hierarchically.](../../images/site-directory-site-map.png)
+![Figure 2: The Sites Directory application lets users navigate between sites organized hierarchically. The Site Map application lets users navigate among pages of a site organized hierarchically.](../../images/site-directory-site-map.png)
 
-Another useful administrative portlet is the Site Members portlet. This
+Another useful administrative portlet is the Site Members application. This
 enables administrators to survey all the users, organizations, and user groups
 that reside in the site. Similarly, Liferay provides the Portal Directory
-portlet, which functions the same as the Site Members portlet, but globally
+application, which functions the same as the Site Members app, but globally
 scoped for all sites in the portal.
 
 Liferay's sites have two categories of pages called page sets. There are two
 kinds of page sets: public pages and private pages. A site can have only public
-pages, only private pages or both. Private pages can only be accessed by site
+pages, only private pages, or both. Private pages can only be accessed by site
 members. Public pages can be accessed by anyone, including users who haven't
 logged in. It's possible to restrict access to pages at the page set level or at
-the level of individual pages through the permission system. Public pages and
+the level of individual pages through the permissions system. Public pages and
 private pages have different URLs and can have different content, applications,
 themes, and layouts.
 
@@ -122,13 +123,10 @@ $$$
 
 For other kinds of web sites, you may want to use independent sites to bring
 users together who share a common interest. If you were building a photo sharing
-web site, you might have independent sites based on the types of photos people
+website, you might have independent sites based on the types of photos people
 want to share. For example, those who enjoy taking pictures of landscapes could
 join a Landscapes site and those who enjoy taking pictures of sunsets could join
 a Sunsets site.
-
-<!-- TODO: Descibe how sites can share content with other sites here:
-LRDOCS-1770. -Cody -->
 
 Liferay always provides one default site, which is also known as the main site
 of the portal. This site does not have its own name but rather takes the name of
@@ -159,8 +157,8 @@ sections, respectively.
 
 **Tip:** If you're signed in as an administrator, you can access all sites by
 navigating to the Sites menu from the Control Panel. To manage a single site,
-navigate to the site by going to the Product Menu and clicking on *Sites*,
-selecting the left arrow button next to the current site you're viewing, and
+navigate to the site by going to the Product Menu and clicking the Compass icon
+(![Compass](../../images/icon-compass.png)) from the sites dropdown menu and
 selecting the appropriate site name you'd like to manage. Once finished, the
 site administration options (i.e., Pages, Content, Users, etc.) for that site
 are available.
@@ -168,26 +166,26 @@ are available.
 $$$
 
 To add a site for the Lunar Resort portal, navigate to the Control Panel and
-select *Sites* &rarr; *Sites*. Then click the blue Add button at the bottom
-right of the page. If there is at least one site template available, a dropdown
-menu appears. Site templates provide a preconfigured set of pages, portlet
-applications, and content that can be used as the basis of a site's public or
-private page set. To create a site from scratch, select *Blank Site*. Otherwise,
-select the name of the site template you'd like to use. If you opt to create a
-site from a site template, you have to choose whether to copy the site
-template's pages as your new site's public or private page set. If other site
-templates are created, they will appear in the Add menu as they become
-available. The following figure shows the form that needs to be filled when
-creating a *Blank Site*.
+select *Sites* &rarr; *Sites*. Then click the Add icon (![Add Site](../../images/icon-add.png))
+at the bottom right of the page. If there is at least one site template
+available, a dropdown menu appears. Site templates provide a preconfigured set
+of pages, portlet applications, and content that can be used as the basis of a
+site's public or private page set. To create a site from scratch, select *Blank
+Site*. Otherwise, select the name of the site template you'd like to use. If you
+opt to create a site from a site template, you have to choose whether to copy
+the site template's pages as your new site's public or private page set. If
+other site templates are created, they will appear in the Add menu as they
+become available. The following figure shows the form that needs to be filled
+when creating a *Blank Site*.
 
-![Figure 2.4: The New Site window aids in your new site development.](../../images/01-add-site-screen.png)
+![Figure 3: The New Site window aids in your new site development.](../../images/add-site-screen.png)
 
 **Name:** names the site you wish to create. You also have the option to
 translate the name for many different languages. This can be done by selecting
 the language flag under the Name field, and inserting the name in the selected
-language. Liferay saves the name translation for each language, and displays
-the translated site name when that specific language is selected for Portal. If
-a name translation is not provided, the default Portal language's name is
+language. Liferay saves the name translation for each language and displays the
+translated site name when that specific language is selected for the portal. If
+a name translation is not provided, the default portal language's name is
 displayed.
 
 **Description:** describes the site's intended function. The description can
@@ -198,17 +196,17 @@ information on translating the site's description.
 inaccessible but can be activated whenever a site administrator wishes.
 
 **Membership Type:** can be open, restricted, or private. An open site appears
-in the My Sites portlet and users can join and leave the site whenever they
-want. A restricted site is the same except users must request membership. A site
+in the My Sites app and users can join and leave the site whenever they want. A
+restricted site is the same except users must request membership. A site
 administrator must then explicitly grant or deny users' requests to join. A
-private site does not appear in the My Sites portlet and users must be added to
-it manually by a site administrator.
+private site does not appear in the My Sites app and users must be added to it
+manually by a site administrator.
 
 **Allow Manual Membership Management:** determines whether to allow or disallow
 users to be manually added or removed from the site. By default, manual site
 membership management is enabled. This allows administrators to manually assign
 users to the site. It also allows users to join open sites or request membership
-from restricted sites using the My Sites portlet. For organization sites, manual
+from restricted sites using the My Sites app. For organization sites, manual
 site membership management is disabled, by default. This causes organization
 members to be automatically assigned membership following the organization's
 membership policy. Also, because manual membership management is disabled for
@@ -248,20 +246,20 @@ When creating a site from a site template, the initial form provides a new
 option that lets you decide if you want to copy the pages from the template as
 public pages or as private pages. By default, the site is linked to the site
 template and changes to the site template propagate to any site based on it. A
-checkbox appears that allows users to unlink the site template if the user has
+checkbox appears that lets users unlink the site template if the user has
 permission to do so.
 
 Once you've created a site, it appears in the Sites page of the Control Panel.
 Once the site has been created, you can click the site to specify more site
-settings using three categories: Basic Information, Advanced, and Miscellaneous.
-You'll learn more about your site's settings in the next section.
+settings using three categories: Basic Information, Advanced, Social, and
+Miscellaneous. You'll learn more about your site's settings in the next section.
 
 ## Configuring Site Settings
 
 You can access Site Settings by navigating to *Sites* &rarr; *Configuration*
 &rarr; *Site Settings* from the Product Menu.
 
-![Figure 2.10: The Site Settings window offers a plethora of options for your site.](../../images/site-settings-overview.png)
+![Figure 4: The Site Settings window offers a plethora of options for your site.](../../images/site-settings-overview.png)
 
 You'll find options to organize site content, manage site users, and improve
 your site's overall intelligence. You'll explore the Site Settings categories
@@ -487,7 +485,7 @@ Control Panel, expand the *Configuration* area in menu at the left side of the
 screen, then click on *Site Settings*. Click on *Analytics* and you'll see a
 very simple form, pictured below. 
 
-![Figure 3.32: Setting up Google Analytics for your site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.](../../images/maintaining-google-analytics.png)
+![Figure 5: Setting up Google Analytics for your site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.](../../images/maintaining-google-analytics.png)
 
 Enter your Google Analytics ID (which should have been provided to you when you
 signed up for the service) in the field and click *Save*. All the pages in the
