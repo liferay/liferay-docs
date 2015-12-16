@@ -1,4 +1,4 @@
-# Organizing Content with Tags and Categories
+# Organizing Content with Tags and Categories [](id=organizing-content-with-tags-and-categories)
 
 Tags and categories are two important tools you can use to help organize
 information in Liferay. These tools help users to easily find the content
@@ -30,7 +30,7 @@ all your site's tags and categories. It is important that you both tag and
 categorize your content when you enter it. You'll take a closer look at tags and
 categories next.
 
-## Tagging Content
+## Tagging Content [](id=tagging-content)
 
 Tags are an important tool that can help organize information in Liferay and
 make it easier for users to find the content that they're interested in. Tags
@@ -65,7 +65,7 @@ referenced anywhere in Liferay.
 Tags are not the only portal-wide mechanism for describing content: you can also
 use categories.
 
-## Defining Categories for Content
+## Defining Categories for Content [](id=defining-categories-for-content)
 
 Categories are similar in concept to tags, but are designed for use by
 administrators, not regular users. Hierarchies of categories can be created, and
@@ -166,7 +166,7 @@ checkboxes for vocabularies and categories were discussed. The three new
 features are targeted vocabularies, single/multi-valued vocabularies, and
 separated widgets for every vocabulary.
 
-### Targeted Vocabularies
+### Targeted Vocabularies [](id=targeted-vocabularies)
 
 Targeted Vocabularies allow you to decide which vocabularies can be applied to
 an asset type and which vocabularies are required for an asset type. To
@@ -182,7 +182,7 @@ of the vocabulary to specific assets. In the screenshot above, notice that the
 vocabulary is configured to be available for Web Content articles and Blog
 entries, but it is not required. It is mandatory, however, for Bookmark entries.
 
-### Single and Multi-valued Vocabularies
+### Single and Multi-valued Vocabularies [](id=single-and-multi-valued-vocabularies)
 
 You can also decide if users can choose one or more categories from the same
 vocabulary to apply to an asset. If a vocabulary is single-valued you can only
@@ -196,7 +196,7 @@ through the Categories application. Edit a vocabulary and deselect the *Allow
 Multiple Categories* checkbox to create a single-valued vocabulary. Use the
 default option to create a multi-valued vocabulary.
 
-### Separated Widgets
+### Separated Widgets [](id=separated-widgets)
 
 A third feature of vocabularies and categories is that every vocabulary has its
 own separated widget. These widgets appear in the Categorization section of the

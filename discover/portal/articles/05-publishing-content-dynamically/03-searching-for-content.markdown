@@ -1,4 +1,4 @@
-# Searching for Content
+# Searching for Content [](id=searching-for-content)
 
 To stay organized, many people used to use a paper-based planner. It had
 different sections for various areas of their lives, which included daily items
@@ -21,7 +21,7 @@ content, tags, and categories to refine your search. Next, you'll look at the
 search features Liferay provides for specific kinds of content and then examine
 how to use Liferay's faceted search.
 
-## Searching for Specific Types of Content
+## Searching for Specific Types of Content [](id=searching-for-specific-types-of-content)
 
 Liferay provides several applications that let users and administrators search
 for content. First, there's the Search application, which can be placed on a
@@ -85,7 +85,7 @@ feature is a powerful tool that allows users to include or not include specific
 types of assets in a search. However, the Search portlet does not return
 comments or attachments as search results.
 
-## Searching for Localized Web Content
+## Searching for Localized Web Content [](id=searching-for-localized-web-content)
 
 Liferay Portal supports localizing web content as well as searching for
 localized web content. Recall that to add a translation of a web content
@@ -114,7 +114,7 @@ $$$
 
 Next you'll learn about searching content in Liferay using facets.
 
-## Searching for Content Using Facets
+## Searching for Content Using Facets [](id=searching-for-content-using-facets)
 
 To get started using faceted search, drop the Search application on a page and
 search for something. You'll see a page with results on the right and a
@@ -178,7 +178,7 @@ hits on the right. In this way, you can interactively tweak the search results
 to narrow them down, making it easier to find that proverbial needle within the
 haystack. 
 
-### Asset Types
+### Asset Types [](id=asset-types)
 
 Searching can only be done on assets. As has already been described in this
 chapter, just about any entity in Liferay is an asset and can be indexed and
@@ -214,7 +214,7 @@ created as non-visible assets. Instead of displaying users in the Asset
 Publisher, Liferay uses the `displayURL` of each user as the link from a list of
 search results.
 
-### Asset Tags
+### Asset Tags [](id=asset-tags)
 
 If tags have been applied to any asset that appears in the result set, it may
 be displayed in the Asset Tag facet. Tags are handled in a similar way to how
@@ -223,7 +223,7 @@ the 10 tags listed, but the default configuration for this facet is to show the
 top 10 most frequent terms. As with asset types, this can be modified by
 setting the `Max Terms` property, which is described later in this section.
 
-### Asset Categories
+### Asset Categories [](id=asset-categories)
 
 If categories have been applied to any asset that appears in the result set,
 they may be displayed in the Asset Categories facet. Asset categories work just
@@ -233,7 +233,7 @@ later in this section.
 
 You'll learn about advanced searching next. 
 
-### Advanced Searching
+### Advanced Searching [](id=advanced-searching)
 
 The Search application's search box is deceptively simple. Though you have only
 a single field for search, there's a search syntax inherited from
@@ -296,7 +296,7 @@ above.
 
 Next, you'll look at how the Search application can be configured. 
 
-## Setting Options for Detailed Search Results
+## Setting Options for Detailed Search Results [](id=setting-options-for-detailed-search-results)
 
 As with Liferay's other applications, you can configure the Search application
 via the configuration screen, which looks like the below illustration. 

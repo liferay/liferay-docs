@@ -1,4 +1,4 @@
-# Publishing RSS Feeds
+# Publishing RSS Feeds [](id=publishing-rss-feeds)
 
 RSS is a family of web feed formats used to publish frequently updated works
 such as blog entries and news articles. RSS allows users to stay up-to-date with
@@ -12,7 +12,7 @@ site. Many RSS readers are available today, including web-based readers, ones
 for the Windows, Mac, and Linux platforms, and ones for mobile devices. You'll
 see how to create RSS feeds in Liferay next.
 
-## Configuring RSS Feeds
+## Configuring RSS Feeds [](id=configuring-rss-feeds)
 
 To manage a Liferay site's RSS feeds, navigate to the Site Administration &rarr;
 Content page of your site and click *Web Content*. Site administrators can use
@@ -102,7 +102,7 @@ set to `true`. If you keep the default, RSS enabled, you can make several other
 RSS property customizations. Please refer to the RSS section of your
 `portal.properties` file for details.
 
-## Using the RSS Feeds Application
+## Using the RSS Feeds Application [](id=using-the-rss-feeds-application)
 
 The RSS application lets you display any number of RSS feeds and configure how
 they are displayed. If you're looking for a web-based RSS reader, look no

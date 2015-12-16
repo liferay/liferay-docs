@@ -1,4 +1,4 @@
-# Defining Content Relationships
+# Defining Content Relationships [](id=defining-content-relationships)
 
 Related Assets is a feature that enables you to connect an asset to other assets
 within the same site or to global assets, even if they don't share any tags and

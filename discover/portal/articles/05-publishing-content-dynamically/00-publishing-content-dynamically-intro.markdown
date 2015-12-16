@@ -1,4 +1,4 @@
-# Publishing Content Dynamically
+# Publishing Content Dynamically [](id=publishing-content-dynamically)
 
 Any type of content in Liferay is considered an asset. In the 
 [Creating Web Content(/discover/portal/-/knowledge_base/7-0/creating-web-content)
