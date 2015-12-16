@@ -22,7 +22,7 @@ section.
 
 $$$
 
-The Product Menu (![Product Menu](../../images/menu-icon.png)) contains
+The Product Menu (![Product Menu](../../images/icon-menu.png)) contains
 interfaces for managing tags and categories for each site in Liferay. Navigate
 to *Sites* &rarr; *[Site Name]* &rarr; *Content* in the Product Menu, and you'll
 find the *Tags* and *Categories* options. These options can be used to manage
@@ -50,7 +50,7 @@ area of the Product Menu. Here, site administrators can create new tags and edit
 any existing site tags. To create tags in Site Administration, visit the site
 for which you want to create tags and then click *Content *&rarr; *Tags*. From
 this screen, you can view existing tags and create new ones. To create a new
-tag, click the *Add Tag* icon (![Add Tag](../../images/add-icon.png)) and enter
+tag, click the *Add Tag* icon (![Add Tag](../../images/icon-add.png)) and enter
 a name for the tag.
 
 ![Figure 2: The Add Tag interface is very simple, only requiring the name of your tag.](../../images/new-tag-interface.png)
@@ -94,7 +94,7 @@ to view the Categories application.
 
 Clicking on a vocabulary displays any categories that have been created under
 that vocabulary. To create a new vocabulary, click on the *Add Vocabulary*
-button (![Add Vocabulary](../../images/add-icon.png)). Enter a name and,
+button (![Add Vocabulary](../../images/icon-add.png)). Enter a name and,
 optionally, a description. By default, the *Allow Multiple Categories* option is
 enabled. This allows multiple categories from the vocabulary to be applied to an
 asset. If the box is disabled, only one category from the vocabulary can be
@@ -111,9 +111,9 @@ Creating new categories is similar to creating new tags except that categories
 must be added to an existing vocabulary and they can only be created by site
 administrators. Once created, however, regular users can apply categories to any
 assets they have permission to create or edit. To create a new category, click
-the *Add Category* icon (![Add Category](../../images/add-icon.png)) if you're
+the *Add Category* icon (![Add Category](../../images/icon-add.png)) if you're
 already viewing a vocabulary, or you can select the *Actions* button
-(![Actions](../../images/actions-icon.png)) next to an existing vocabulary and
+(![Actions](../../images/icon-actions.png)) next to an existing vocabulary and
 select *Add Category*. Enter a name for the new category and, optionally, a
 description. Just as with tags, you can configure the permissions
 of the category, choosing which roles (guest, site member, owner) can view the

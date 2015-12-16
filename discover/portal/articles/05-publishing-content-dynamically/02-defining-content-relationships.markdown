@@ -17,7 +17,7 @@ asset of the asset selected in the Asset Publisher. You can configure what
 content relationships to display, if you prefer not to show every related asset
 for the selected asset. To do this, go to
 the Related Assets portlet and select the *Options* icon
-(![Options](../../images/options-icon.png)) in the upper right corner of the
+(![Options](../../images/icon-options.png)) in the upper right corner of the
 portlet and click *Configuration*. Under the *Setup* &rarr; *Asset Selection*
 tab, set the type of asset(s) to display using the *Asset Type* menu. The
 default value is set to *Any*. You can narrow the scope of the portlet to
