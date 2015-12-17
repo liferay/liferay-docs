@@ -41,7 +41,7 @@ in the Sites menu. From this menu, you can select the specific site to work on.
 The Site Administration panel is available for your site, which includes Pages,
 Content, Users, Configuration, and Publishing Tools.
 
-![Figure 1: Your site's content resides on the Site Administration page.](../../images/web-content-site-content.png)
+![Figure 1: Your site's content resides in the Site Administration menu.](../../images/web-content-site-content.png)
 
 For details about Liferay's social collaboration suite, see the
 [Social Collaboration](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
@@ -265,8 +265,8 @@ Miscellaneous. You'll learn more about your site's settings in the next section.
 
 ## Configuring Site Settings
 
-You can access Site Settings by navigating to *Sites* &rarr; *Configuration*
-&rarr; *Site Settings* from the Product Menu.
+You can access Site Settings by navigating to the Site Administation dropdown
+menu and selecting *Configuration* &rarr; *Site Settings*.
 
 ![Figure 4: The Site Settings window offers a plethora of options for your site.](../../images/site-settings-overview.png)
 
@@ -288,8 +288,8 @@ You can explore ways to tag and categorize your site by clicking the
 allows for users to easily find your site and its content through search and
 navigation. To take full advantage of tags and categories, you'll need to add
 pages with content to your site. For more information on using tags and
-categories, visit the [Tagging and Categorizing
-Content](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/tagging-and-categorizing-content)
+categories, visit the
+[Tagging and Categorizing Content](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/tagging-and-categorizing-content)
 section.
 
 <!-- TODO: replace link above. -Cody -->
@@ -320,7 +320,7 @@ all sub-sites.
 #### Recycle Bin
 
 The *Recycle Bin* provides the option to enable/disable the Recycle Bin for your
-site. You can also regulate the age (in days) for which content is able to be
+site. You can also regulate the age (in minutes) for which content is able to be
 stored in the Recycle Bin until it is permanently deleted. For a full
 explanation of the Recycle Bin, see the
 [Recyling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
@@ -362,9 +362,9 @@ management.
 If you select the *Details* tab, you're provided the same menu you filled out
 when first creating your Lunar Resort site. This allows an administrator to
 change the description and membership type of a site. The membership type can be
-set as open, restricted or private based on the privacy needs of the site. Users
-can join and leave an open site at will. To join a restricted site, a user has
-to be added by the site administrator. A user can also request to be added
+set as open, restricted, or private based on the privacy needs of the site.
+Users can join and leave an open site at will. To join a restricted site, a user
+has to be added by the site administrator. A user can also request to be added
 through the Sites section of the Control Panel. A private site is like a
 restricted site but doesn't appear in the Sites section of the Control Panel for
 users who aren't members.
@@ -386,14 +386,16 @@ and
 [Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management)
 sections, respectively. 
 
+<!-- TODO: replace links above. -Cody -->
+
 #### Ratings
 
 To allow your site's users to rate content in your site, you can use the
-*Ratings* option to select what ratings type to use for
-applications like Documents and Media, Web Content, Comments, etc. Ratings types
-include Stars, Likes, and Thumbs.
+*Ratings* option to select what ratings type to use for applications like
+Documents and Media, Web Content, Comments, etc. Ratings types include Stars,
+Likes, and Thumbs.
 
-<!-- TODO Jim: Is there a link we can point to for this? Coordinate with Jim. -Cody
+<!-- TODO Is there a link we can point to for this? Coordinate with Jim. -Cody
 -->
 
 #### Mentions
@@ -441,11 +443,12 @@ http://localhost:8080/group/lunar-resort/home.
 
 Note that if you're adding a friendly URL for your portal's home page, you
 should update your portal's Home URL field so that page requests to
-http://localhost:8080 redirect properly. To do this, navigate to the Portal
-Settings page of the Control Panel and find the Home URL field in the Navigation
-section. For the Lunar Resort example, you would enter */web/lunar-resort/home*
-into the Home URL field. Once you've entered this setting, page requests to
-localhost:8080 will redirect to the friendly URL of your portal's new homepage:
+http://localhost:8080 redirect properly. To do this, navigate to the
+*Configuration* &rarr; *Portal Settings* page of the Control Panel and find the
+Home URL field in the Navigation section. For the Lunar Resort example, you
+would enter */web/lunar-resort/home* into the Home URL field. Once you've
+entered this setting, page requests to localhost:8080 will redirect to the
+friendly URL of your portal's new homepage:
 http://localhost:8080/web/lunar-resort/home.
 
 The other setting you can configure under the Site URL tab is *Virtual Hosts*,
@@ -477,10 +480,10 @@ this code to every page on a site, especially if it's a large site and there is
 a lot of user-generated content.
 
 This problem can be solved in Liferay by putting Google's code into a custom
-theme written specifically for the web site on which the portal is running.
-Doing this, however, requires a theme developer to make specific changes to the
-theme and it prevents users from using the many themes that are freely available
-for Liferay "out of the box."
+theme written specifically for the web site on which Liferay is running. Doing
+this, however, requires a theme developer to make specific changes to the theme
+and it prevents users from using the many themes that are freely available for
+Liferay "out of the box."
 
 Because of this, support for Google Analytics has been built into Liferay, and
 can be turned on through a simple user interface. This allows Liferay
@@ -489,10 +492,8 @@ it on and off when needed. You can sign up for Google Analytics at the Google
 Analytics site here:
 [http://www.google.com/analytics](http://www.google.com/analytics).
 
-To enable Google Analytics support, navigate to *Site Administration* in the
-Control Panel, expand the *Configuration* area in menu at the left side of the
-screen, then click on *Site Settings*. Click on *Analytics* and you'll see a
-very simple form, pictured below. 
+To enable Google Analytics support, navigate to the *Analytics* tab in Site
+Settings, which loads a very simple form, pictured below.
 
 ![Figure 5: Setting up Google Analytics for your site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.](../../images/maintaining-google-analytics.png)
 
@@ -507,7 +508,7 @@ and from where.
 
 #### Maps
 
-**Under Contruction**
+*Under Contruction*
 
 <!-- TODO Jim: Jim's area. Good blog on this:
 https://www.liferay.com/web/juan.fernandez/blog/-/blogs/adding-geolocation-support-to-liferay-7-0
@@ -540,7 +541,7 @@ properties to your `portal-ext.properties` file:
 
     layout.user.public.layouts.enabled=false
     layout.user.private.layouts.enabled=false
-    
+
 +$$$
 
 **Note:** The public and private page sets of personal sites are handled
@@ -561,26 +562,28 @@ is the default. Then add the following properties to your
 
     layout.user.public.layouts.auto.create=false
     layout.user.private.layouts.auto.create=false
-    
+
 If the properties `layout.user.public.layouts.enabled`,
 `layout.user.private.layouts.enabled`, `layout.user.public.layouts.auto.create`,
 and `layout.user.private.layouts.auto.create` are all set to `true`, which is
 the default, then users will have personal sites and public and private pages
-will be automatically created for new users. There are number of portal
+will be automatically created for new users. There are a number of portal
 properties you can use to customize the automatically created pages. You can
-customize the names of the default pages, the portlets that appear on the pages,
+customize the names of the default pages, the applications that appear on the pages,
 the themes and layout templates of the default pages, and more. Please refer to
-the Default User Public Layouts and Default User Private Layouts sections of
-the `portal.properties` file for details. You can find an HTML version of the
-this file here: [http://docs.liferay.com/portal/7.0-a1/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
+the
+[Default User Public Layouts](https://docs.liferay.com/portal/7.0-a5/propertiesdoc/portal.properties.html#Default%20User%20Public%20Layouts)
+and
+[Default User Private Layouts](https://docs.liferay.com/portal/7.0-a5/propertiesdoc/portal.properties.html#Default%20User%20Private%20Layouts)
+sections of the `portal.properties` file for details.
 
 +$$$
 
-**Note:** By default, users are able to modify the pages and portlets of their
-personal sites. However, administrators can customize the modifiable portions of
-personal sites through Liferay's permissions system by removing permissions from
-roles. To disallow all portal users from modifying something, remove the
-relevant permission from the User role.
+**Note:** By default, users are able to modify the pages and applications of
+their personal sites. Administrators, however, can customize the modifiable
+portions of personal sites through Liferay's permissions system by removing
+permissions from roles. To disallow all Liferay users from modifying something,
+remove the relevant permission from the User role.
 
 $$$
 
@@ -591,9 +594,9 @@ to receive personal sites, add the following properties to your
 
     layout.user.public.layouts.power.user.required=true
     layout.user.private.layouts.power.user.required=true
-    
-Personal sites are a dynamic feature of Liferay Portal. They allow users to
-manage and customize their own pages and content on your portal.
+
+Personal sites are a dynamic feature of Liferay. They allow users to manage and
+customize their own pages and content on your portal.
 
 You've officially been introduced to Liferay's concept of sites. Using a point
 and click interface, you can create multiple web sites and define how users can
