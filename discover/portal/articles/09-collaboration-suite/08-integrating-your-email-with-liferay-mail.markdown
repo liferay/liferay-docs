@@ -10,7 +10,7 @@ The Mail portlet is distributed with the Liferay bundles, but is not included
 as part of the `.war` distribution, as it is a separate plugin. If you
 installed the Liferay `.war` manually on your application server, you can
 install the Mail portlet by accessing Liferay Marketplace. You can go to
-Marketplace by navigating the the Control Panel and clicking *Store* under the
+Marketplace by navigating the Control Panel and clicking *Store* under the
 *Apps* heading. You can learn more about Marketplace and how to
 purchase/download an app in the *Liferay Marketplace* chapter.
 

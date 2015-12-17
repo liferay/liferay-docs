@@ -408,4 +408,4 @@ when a guestbook is selected in the drawer.
 ![Figure 2: The entries for the selected guestbook now display in your app.](../../images/android-guestbook-entries.png)
 
 Congratulations! You've successfully built the Liferay Mobile SDK and used it in 
-an Android app to to retrieve and display a custom portlet's entities. 
+an Android app to retrieve and display a custom portlet's entities. 

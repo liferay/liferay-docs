@@ -59,7 +59,7 @@ plugins. Here's how to download and install *Kaleo Forms EE*:
 that's used *within* Liferay Portal. It's used to design workflow configuration
 and is described in the [Kaleo Forms: Defining Business Processes](/discover/portal/-/knowledge_base/6-2/kaleo-forms-defining-business-processes)
 chapter of *Discover* &rarr; *Portal*. Refer to the [Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow)
-chapter of of *Discover* &rarr; *Portal* if you're unfamiliar with basic Kaleo workflow
+chapter of *Discover* &rarr; *Portal* if you're unfamiliar with basic Kaleo workflow
 concepts or want to know how to design your workflow within Liferay Portal. 
 
 $$$
@@ -71,7 +71,7 @@ and password of a Portal Administrator in your server's settings.
 
 1. Stop your 6.2 server.
 
-2. Open the the server's configuration editor by double-clicking the server from
+2. Open the server's configuration editor by double-clicking the server from
 within the Servers view in Studio.
 
 3. In the configuration editor under Liferay Settings add your portal admin
