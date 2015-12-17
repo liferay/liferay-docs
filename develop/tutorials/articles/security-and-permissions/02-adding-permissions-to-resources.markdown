@@ -78,17 +78,17 @@ $$$
 You can add permissions to your custom portlets using four easy steps (also
 known as *DRAC*): 
 
-1. **D**efine all resources and their permissions. This is the step presented 
+1. <b>D</b>efine all resources and their permissions. This is the step presented 
    in this tutorial.
 
-2. **R**egister all defined resources in the permissions system. This is also
+2. <b>R</b>egister all defined resources in the permissions system. This is also
    known as *adding resources*. This step is discussed in the tutorial 
    [Adding and Deleting Resources](/tutorials/-/knowledge_base/adding-and-deleting-resources).
 
-3. **A**ssociate the necessary permissions with resources. This step is 
+3. <b>A</b>ssociate the necessary permissions with resources. This step is 
    discussed in the tutorial [Exposing the Permission Interface to Users](/tutorials/-/knowledge_base/exposing-the-permission-interface-to-users).
 
-4. **C**heck permission before returning resources. This step is described in 
+4. <b>C</b>heck permission before returning resources. This step is described in 
    the tutorial [Checking Permissions](/tutorials/-/knowledge_base/checking-permissions).
  
 ## Define All Resources and Permissions [](id=define-all-resources-and-permissions)
