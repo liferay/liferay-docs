@@ -2,17 +2,17 @@
 
 For the app to retrieve data from the guestbook portlet, the app's user must 
 first authenticate to the portal. The other features you'll develop in your app 
-depend on successful portal authentication. You can authenticate using the 
-Liferay Mobile SDK, but it takes time to implement. Authenticating using Liferay 
-Screens takes about ten minutes. In this article, you'll use the Login Screenlet 
-to implement authentication in your app. 
+depend on successful portal authentication. You can implement authentication
+using the Liferay Mobile SDK, but it takes time to write. Authenticating
+using Liferay Screens takes about ten minutes. In this article, you'll use the
+Login Screenlet to implement authentication in your app. 
 
 ## Adding Login Screenlet to the App [](id=adding-login-screenlet-to-the-app)
 
 To use any Screenlet, you must follow two basic steps:
 
-1. Insert the Screenlet's XML in the layout of the activity or fragment that you 
-   want the Screenlet to appear in. 
+1. Insert the Screenlet's XML in the layout of the activity or fragment where you 
+   want the Screenlet to appear. 
 
 2. Implement the Screenlet's listener in the activity or fragment class.
 
@@ -110,9 +110,10 @@ code, you should now have the following additional imports in your
 
 You should also remove any unused imports. Now run the app by clicking the green 
 *play* button in the toolbar, or by selecting *Run 'app'* from the *Run* menu. 
-Unlock the emulator once it launches. Your app then automatically opens to the 
-Login Screenlet. Enter your credentials and click *SIGN IN*. The toast message 
-then pops up saying that the login succeeded. 
+If you've never run an emulator, you'll have to go through the process of
+choosing and installing one. Unlock the emulator once it launches. Your app then
+automatically opens to the Login Screenlet. Enter your credentials and click
+*SIGN IN*. The toast message then pops up saying that the login succeeded. 
 
 ![Figure 1: Login Screenlet successfully authenticated you with the portal.](../../images/android-login-screenlet-success.png)
 
@@ -146,7 +147,7 @@ log in when prompted. When login succeeds, the `GuestbooksActivity` opens.
 
 Nice work! You've successfully implemented portal authentication in the Android 
 app. It didn't take you that long, either. You only have signing in working so
-far, though; it doesn't display any portal content. You'll take care of this 
-shortly. First, however, you need to understand the components that comprise 
-`GuestbooksActivity`. The next article walks you through this activity's 
+far, though; it doesn't display any portal content. You'll add this shortly.
+First, however, you need to understand the components that comprise
+`GuestbooksActivity`. The next article walks you through this activity's
 structure. 
