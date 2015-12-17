@@ -239,8 +239,17 @@ enabled, the site's membership policy performs a check so that you can only
 assign members to the current site if they're already members of the parent
 site.
 
-<!-- TODO: Insert note about having to create pages before some sites are
-viewable: LRDOCS-1866. -Cody -->
+When creating a blank site or organization site, the site is not immediately
+viewable from the Sites dropdown (compass icon in Site Administration). This is
+because sites without a page are impossible to view. Therfore, before you can
+view your site, you must first create a page for it. To add a page for your
+temporarily invisible site, navigate to the Control Panel &rarr; *Sites* &rarr;
+*Sites* and select the *Actions* icon (![Actions](../../images/icon-actions.png))
+and then *Site Administration*. Now your site is selected in the Sites dropdown
+menu, and you can proceed with adding your site's first page. For more
+information about adding pages, see the
+[Creating and Managing Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages)
+section.
 
 When creating a site from a site template, the initial form provides a new
 option that lets you decide if you want to copy the pages from the template as
