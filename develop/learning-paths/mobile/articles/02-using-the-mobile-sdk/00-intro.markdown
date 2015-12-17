@@ -20,5 +20,5 @@ You'll develop this app by following these steps:
 
 4. Retrieve and Display Entries.
 
-This Learning Path's next article takes you through the first step by explaining 
-the app's design. 
+Next, you'll learn how the app is designed, so you can use it as a pattern for
+your own apps. 
