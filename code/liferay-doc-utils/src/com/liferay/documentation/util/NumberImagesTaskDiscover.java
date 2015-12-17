@@ -33,8 +33,6 @@ public class NumberImagesTaskDiscover extends Task {
 					throw new BuildException("FAILURE - no markdown files found in " + subDir.getAbsolutePath());
 				}
 				
-				int figNum = 1;
-				
 				// Process each file
 				for (int i = 0; i < files.length; i++) {
 					String filename = files[i];
@@ -47,7 +45,7 @@ public class NumberImagesTaskDiscover extends Task {
 					
 					try {
 						ResetImagesDiscover.resetImages(filepath);
-						figNum = NumberImagesDiscover.numberImages(filepath, figNum);
+						NumberImagesDiscover.numberImages(filepath);
 					} catch (IOException e) {
 						throw new BuildException(e.getLocalizedMessage());
 					}
