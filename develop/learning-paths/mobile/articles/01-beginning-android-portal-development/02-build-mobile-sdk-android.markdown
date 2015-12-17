@@ -4,13 +4,12 @@ Once you've deployed the Guestbook portlet to your Liferay instance, you're
 ready to build the Liferay Mobile SDK. You might be asking yourself, "Why do I 
 have to build it? Can't I just use the pre-built Mobile SDK that Liferay already 
 provides?" Fantastic question! The reason is that the pre-built Mobile SDK 
-provided by Liferay only includes classes for calling the remote services of 
+provided by Liferay includes only classes for calling the remote services of 
 Liferay's *core* portlets. Core portlets are the portlets included with every 
 Liferay installation (also referred to as *out-of-the-box* portlets). Since 
-you'll be calling the remote services of the Guestbook portlet developed in 
-the [Liferay MVC Learning Path](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development), 
-you have to build the Mobile SDK. This is the case with any non-core portlet: 
-you must build the Liferay Mobile SDK if you want to use it to call your 
+you'll be calling the [Guestbook portlet's](/develop/learning-paths/-/knowledge_base/6-2/beginning-liferay-development) remote services, 
+you have to build the Mobile SDK. This is the case with any non-core portlet:
+you must build the Liferay Mobile SDK if you want to use it to call your
 portlet's remote services. Now it's time to get building! 
 
 ## Building the Mobile SDK [](id=building-the-mobile-sdk)
@@ -20,14 +19,13 @@ portlet's remote services, those services must be available and accompanied by a
 Web Service Deployment Descriptor (WSDD). To learn how the Guestbook portlet's
 remote services and WSDD were generated, please see 
 [Creating Web Services for Your Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/creating-web-services-for-your-application).
-Since web services have already been generated for the Guestbook portlet that
-you're using in this learning path, you don't need to take this
-step here. Just remember that you need to generate web services when developing
-your own portlets.
+Since the Guestbook application's web services have already been generated, you
+don't need to take this step here. Just remember that you need to generate web
+services when developing your own applications.
 
 To build the Mobile SDK, you first need to download its source code. You can do 
 so by clicking [this link](https://github.com/liferay/liferay-mobile-sdk/archive/android-6.2.0.22.zip). 
-Unzip the ZIP file to a location on your machine where you want the Mobile SDK 
+Unzip the file to a location on your machine where you want the Mobile SDK 
 to reside. This is purely personal preference; it works the same regardless of 
 where it is. Once unzipped, the source code for this version of the Mobile SDK 
 is in the `liferay-mobile-sdk-android-6.2.0.22` folder. Now you're ready to 

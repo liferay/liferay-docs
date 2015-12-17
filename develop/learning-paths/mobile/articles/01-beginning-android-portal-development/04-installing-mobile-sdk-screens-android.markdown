@@ -2,10 +2,9 @@
 
 You must install the Guestbook Mobile SDK in your Android app so it can interact 
 with the Guestbook portlet. Note that this Mobile SDK contains only the classes 
-and methods required to call the portlet's remote services. To use Screenlets, 
-like Login Screenlet, you also need to install Liferay Screens. What's nice is
-that installing Screens also installs the related Liferay Mobile SDK, so you can
-do it all in one shot. 
+and methods required to call the portlet's remote services. To use Screenlets,
+you also need to install Liferay Screens. What's nice is that installing Screens
+also installs the related Liferay Mobile SDK, so you can do it all in one shot. 
 
 Next you'll learn how to install the Guestbook Mobile SDK and Liferay Screens.
 When you finish, you'll be ready to start developing the app. 
@@ -38,23 +37,23 @@ app module's `build.gradle` file is highlighted in this screenshot:
 
 ![Figure 1: The app module's `build.gradle` file.](../../images/android-build-gradle-app-module.png)
 
-In the app module's `build.gradle` file, add the following code on the first 
-level (on the same level as the `android` element): 
-
-    repositories {
-      jcenter()
-    }
-
-Next, add the following line of code inside the `dependencies` element: 
-
-    compile 'com.liferay.mobile:liferay-screens:1.2.4'
-
-Finally, add these lines just after the closing `buildTypes` brace: 
+In the app module's `build.gradle` file, add these lines just after the closing `buildTypes` brace: 
 
     packagingOptions {
       exclude 'META-INF/LICENSE'
       exclude 'META-INF/NOTICE'
     }
+
+Next, add the following code on the first level (on the same level as the
+`android` element): 
+
+    repositories {
+      jcenter()
+    }
+
+Finally, add the following line of code inside the `dependencies` element: 
+
+    compile 'com.liferay.mobile:liferay-screens:1.2.4'
 
 If you're unsure of where to add the above lines, please see the figure below. 
 

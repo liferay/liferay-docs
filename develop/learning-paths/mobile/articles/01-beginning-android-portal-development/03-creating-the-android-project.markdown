@@ -25,8 +25,8 @@ app!
 
 When you start Android Studio, a welcome screen with a Quick Start menu appears.
 Click on *Start a new Android Studio project* in the Quick Start menu. Android
-Studio's *Create New Project* wizard launches and asks you to fill in the
-*Application name*, *Company Domain*, and *Project location*. Enter *Liferay
+Studio's Create New Project wizard launches and asks you to fill in the
+Application name, Company Domain, and Project location. Enter *Liferay
 Guestbook* as the Application name and *docs.liferay.com* as the Company Domain.
 These fields are used to fill in your app's *Package name* and
 *Project location* automatically. For location, choose a location on your system
@@ -40,7 +40,7 @@ selected. In the *Minimum SDK* menu, select *API 15: Android 4.0.3
 (IceCreamSandwich)*. Android Studio provides you with an estimate of the
 percentage of devices active on the Google Play store that can run the selected
 API level. You can view a graphical representation of these estimates by 
-clicking on the *Help me choose* link in the text below the Minimum SDK menu. 
+clicking the *Help me choose* link in the text below the Minimum SDK menu. 
 Click *Next* when you're finished. 
 
 ![Figure 2: The second screen of Android Studio's Create New Project wizard lets you select your app's form factors and minimum Android API level.](../../images/android-studio-new-project-02.png)
@@ -72,16 +72,16 @@ and the name of its layout file. Accept the defaults and click *Finish*.
 A progress indicator appears that indicates your project is building. Android 
 Studio then opens the project with the activity's class and layout ready to edit. 
 Click the `activity_main.xml` tab to view the layout file. This file is open in 
-*design view*. Design view gives you a preview of how Android renders the layout 
+Design View. Design view gives you a preview of how Android renders the layout 
 in the app. It also contains graphical tools for constructing a UI via drag and 
 drop. Click the *Text* tab at the bottom of `activity_main.xml` to show its 
-*text view*. When you edit layout files in this Learning Path, you'll do so in 
-text view. 
+Text View. When you edit layout files in this Learning Path, you'll do so in 
+Text View. 
 
-By default, the *project view* appears to the left of the open layout file. It 
-lets you access your project's source files. Most of the files you'll be working 
-with are in the `res/layout` and `java` directories. The `res/layout` directory 
-contains your app's layout files. The `java` directory contains your app's Java 
+By default, the Project View appears to the left of the open layout file. It 
+lets you access your project's source files. Most of the files you'll work with
+are in the `res/layout` and `java` directories. The `res/layout` directory
+contains your app's layout files. The `java` directory contains your app's Java
 source files. See the
 [Android Studio Overview](http://developer.android.com/tools/studio/index.html) 
 for more information on the project view.
