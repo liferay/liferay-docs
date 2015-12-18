@@ -16,11 +16,11 @@ that modifies the editors you'd like to change. A simple example of this is
 provided below.
 
 1.  Create a generic OSGi module using your favorite third party tool, or use the
-    [Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle).
+    [Blade Tools](/develop/tutorials/-/knowledge_base/7-0/using-blade-to-create-modules).
 
 2.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. The class should extend the
-    [`BaseEditorConfigContributor`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/BaseEditorConfigContributor.java)
+    [BaseEditorConfigContributor](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/BaseEditorConfigContributor.java)
     class.
 
 3.  Directly above the class's declaration, insert a component annotation:
@@ -42,7 +42,7 @@ provided below.
     specified independently or in any variation with each other. You can find
     out more about the available properties and how they should be used by
     reading the Javadoc provided in the
-    [`EditorConfigContributor`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.java)
+    [EditorConfigContributor](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.java)
     interface.
 
     <!-- Change the Javadoc link above to the Javadoc listed on
@@ -84,7 +84,7 @@ provided below.
     you'll do next.
 
 5.  In the `populateConfigJSONObject` method, you need to instantiate a
-    [`JSONObject`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/json/JSONObject.java)
+    [JSONObject](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/json/JSONObject.java)
     that holds the current configuration of the editor. For instance, you could
     do something like this:
 
@@ -94,7 +94,7 @@ provided below.
     the configuration. For instance, suppose you'd like to add a button to your
     editor's toolbar. To complete this, you'd need to extract the *Add* buttons
     out of your toolbar configuration object as a
-    [`JSONArray`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/json/JSONArray.java),
+    [JSONArray](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/json/JSONArray.java),
     and then add the button to that `JSONArray`. For example, the following code 
     would add a *Camera* button to the editor's toolbar:
 
