@@ -6,16 +6,16 @@ navigation drawer and all the components the activity needs. This includes
 the layout files that display content. Currently, these files contain simple 
 placeholder content that you'll later replace with dynamic portal content. 
 Before doing so, you should know where the placeholder content exists in the 
-project's structure, and how the app displays it. 
+project's structure and how the app displays it. 
 
 The app's UI is defined by three layout files: `activity_guestbooks.xml`, 
-`app_bar_guestbooks.xml`, `content_guestbooks.xml`. This article shows you how 
-these layouts combine to display the app's content.
+`app_bar_guestbooks.xml`, `content_guestbooks.xml`. These layouts combine to
+display the app's content.
 
 ## Understanding the Activity's Layout File [](id=understanding-the-activitys-layout-file)
 
 First, open `GuestbooksActivity`'s layout file, `activity_guestbooks.xml`. This 
-file should look something like this:
+file should look similar to this one:
 
     <?xml version="1.0" encoding="utf-8"?>
     <android.support.v4.widget.DrawerLayout 
@@ -65,7 +65,7 @@ Next, you'll see how these are defined.
 ## Understanding the Activity's Main Content Layout [](id=understanding-the-activitys-main-content-layout)
 
 Open `app_bar_guestbooks.xml` so you can see how it defines the activity's main 
-content. This file should look something like this: 
+content. This file should look similar to this: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <android.support.design.widget.CoordinatorLayout
@@ -108,7 +108,7 @@ top of the activity. Following the Toolbar definition, the `include` statement
 adds the layout `content_guestbooks.xml` to the `app_bar_guestbooks` layout. The 
 `content_guestbooks` layout defines the content displayed in the activity's body 
 (below the Toolbar). Right now, it only displays the text "Hello World!" Now 
-open `content_guestbooks.xml`. Its contents should look something like this: 
+open `content_guestbooks.xml`. Its contents should look like this: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <RelativeLayout 
