@@ -289,7 +289,7 @@ allows for users to easily find your site and its content through search and
 navigation. To take full advantage of tags and categories, you'll need to add
 pages with content to your site. For more information on using tags and
 categories, visit the
-[Tagging and Categorizing Content](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/tagging-and-categorizing-content)
+[Organizing Content with Tags and Categories](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 section.
 
 <!-- TODO: replace link above. -Cody -->
