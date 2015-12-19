@@ -530,26 +530,162 @@ Documents and Media.
 
 ## Collaborating on Files
 
-TODO - Things to do or include:
+<!-- 
+Benefits
 
-- Use the DM app
+The authors can all view the same document live on Liferay. Saved changes to the document increments its version. You view a document's history and view
+previous versions. You can reinstate the content of a previous version of the document as the new version.
 
-- Collaborate on a newsletter (.docx) of activities for the upcoming season. 
+Why not use some other online drive?
 
-- Mention the Related Assets field for the file entry.
+You can leverage the permissions you've already established in Liferay.
+You can conveniently maintain documents and publish them all from Liferay.
 
+-->
+
+<!--
+Example:
+
+ Collaborate on a newsletter (.docx) of activities for the upcoming season. The
+doc will reside in the Recreation Department organization's site.
+
+Actors:
+	- Tenzing Liferay contributes using the web interface.
+	- Wilma Carwin uses her native desktop to access and work on the newsletter
+	- Chip Shot is the first to enter his team's activities. He checks on the latest
+	versions of the doc as he's curious of how his writeup compares to those of
+	the other leads. He even tweaks it to make a minor version change.
+
+Example Flow:
+Org Admin
+- creates org role Recreation Leads
+- configures the email subscriptions. Show Subscription email configuration (collab)
+
+Make sure to include:
+- Mention Related Assets field for the file entry.
 - Explain file update checkbox *Customize the Version Number Increment and
 Describe My Changes*
-
 - Explain Document type restrictions and workflow per folder (see 
 https://github.com/liferay/liferay-docs/blob/6.2.x/discover/portal/articles/05-document-management/06-automatic-previews-and-metadata.markdown#document-type-restrictions-and-workflow-per-folder-
 
-- Show Subscription email configuration (collab)
+-->
 
-- Demonstrate aspects of the File menu - Download, Edit, Checkout, Checkin, major/minor versions (collab)
+Not only does Liferay's Documents and Media enable you to publish files easily,
+but it also provides a terrific environment for collaborating on documents.
+There are many common collaboration scenarios. For example, you might have a
+spreadsheet that you and your peers need to populate, or perhaps a proposal that
+you and other stakeholders must produce. Or you may be asked to review and edit
+a document. All these cases involve multi-author documents and they require an
+environment that helps manage document changes. Liferay's Documents and Media
+provides these capabilities. 
 
-- Access DM files from Desktop. WebDAV. Explain this compares with checkout
-checkin. See
-https://github.com/liferay/liferay-docs/blob/6.2.x/discover/portal/articles/05-document-management/06-automatic-previews-and-metadata.markdown#webdav-access- 
+Liferay's document management apps support accessing apps on different kinds of
+devices and and environments. Not only can you access documents from your site
+via your browser, but you can also access them from your native file browser and
+use Liferay Sync to access them from your tablet or mobile device. And Liferay
+Sync makes sure you're you can access the latest document versions. 
+
+To demonstrate using these features, we'll walk through how Lunar Resort
+Recreation Department members collaborate on an important document: the Lunar
+Resort's upcoming activiters newsletter. Representatives from each activity
+group must contribute content to entice resort guests to sign up for activities.
+Staff members involved include Chip Shot (golf insructor), Wilma Carwin (lunar
+rover race instructor), and Tenzing Liferay (lunar sherpa). Each of them use
+different devices and bring their own style and attitude to the collaboration.
+So perhaps you'll be able to relate to their effort.
+
+Before the leads can start working on the newsletter, the department director
+(who's associated with the organization's content administrator Role) creates a
+folder called *Newsletters* in the organization's document library. Open your
+favorite document editor, enter the title "Upcoming Lunar Activities", and save
+the document giving it the file name `upcoming-activities.docx`. Upload the file
+to the document library and enable the leads to edit the file by associating
+them with Role that you grant permission to edit the file. To enable the
+activity leads to access the newsletter from the department's private
+Organization Site, add a Documents and Media app to its home page. Then turn on
+the *Show actions* display option in the app's configuration window. Make sure
+to assign the leads a role with permissions to access the folder. The leads can
+now access the *Newsletters* folder and the initial document from Documents and
+Media on Recreation Department's private home page. 
+
+Tenzing Liferay, the resort's veteran lunar sherpa, is as agile online as he is
+on the mountainside. He likes to get his work done well, but quickly. When he
+works on files in the department's document library, he prefers to check them
+out from within the web interface and download them to his computer to work on
+them. Let's follow Tenzing on his adventure editting the newsletter. 
+
+### Creating New File Versions
 
 
+<!-- introduce benefits of checkin/checkout and versioning -->
+
+<!-- Demonstrate the editing iterations Tenzing goes through
+
+- checkout
+- show what the file entry view looks like when it's checked out
+- download.
+- Something comes up, so undo checkout
+- checkout again
+- download, edit, save. Doesn't affect the online version.
+- upload or check-in file.
+
+Check-in/ check-out prevents authors from accidentally overwriting another author's changes.
+-->
+
+
+Race instructor Wilma Carwin updates the newsletter in a different manner. Wilma
+doesn't care much for high tech. The only online device she uses is the
+workstation in the garage office. She only uses it when she has to; otherwise
+she'd rather be behind the wheel of a rover doing donuts in the dirt and banking
+turns off the canyon walls. Fortunately for Wilma, the resort IT team mapped the
+rec department's document library to a network drive on her workstation. This
+lets her edit documents without having to meddle with the Lunar Resort site.
+It's worth explaining how they integrated her file manager with the document
+library. 
+
+### Desktop Access to Documents and Media
+
+You can access the Document Library from your computer's file manager via
+WebDAV. WebDAV stands for Web-based Distributed Authoring and Versioning. It's a
+set of methods based on HTTP that allows users to create, edit, move, or delete
+files stored on web servers. WebDAV is supported by most major operating systems
+and desktop environments, including Linux (both KDE and GNOME), Mac OS, and
+Windows.
+
+At the Lunar Resort, Activity Department members use WebDAV to access their
+Document Library. WebDAV provides an alternative way to do this using a file
+manager instead of a web browser. To access the Document Library folder from
+your file browser, you need to use log in credentials for the portal and the
+WebDAV URL of the folder you'd like to access.
+
+Navigate to the Documents and Media app hosting the folder you'd like to access.
+Click on the folder's Actions icon ![Actions](../../images/icon-actions.png) and
+select *Access from Desktop*.
+
+![Figure x: Select *Access from Desktop* to get the the folder's WebDAV URL.](../../images/dm-access-from-desktop-action.png)
+
+Copy the WebDAV URL. On Windows, map a network drive drive to the WebDAV URL.
+Enter your Liferay credentials when you're prompted for them. The document
+library folder appears in the network drive. From your file browser, you can now
+add, edit, move, or delete files in this folder.
+
+On Mac OS X, select *Go* &rarr; *Connect to Server* in Finder. Then enter the
+WebDAV URL of the folder you'd like to access in the Server Address field, click
+*Connect* and you should be prompted for your Liferay credentials.
+
+On Linux, you must slightly modify the WebDAV URL of your folder in your file
+manager. For KDE's Dolphin, change the URL's protocol so that it says
+`webdav://` instead of `http://`. For GNOME's Nautilus, change the URL's
+protocol so that it says `dav://` instead of `http://`. Then press *Enter* and
+you're prompted for your Liferay credentials.
+
+Note that Liferay increments the version numbers of files edited and uploaded
+via WebDAV so you don't have to worry that using your file manager will bypass
+the functionality of Liferay's web interface. 
+
+Lunar rover race instructor Wilma Carwin doesn't mind editing her Documents and
+Media files from her computer's file manager, because it's convenient and
+easiest for her. She opens the document `upcoming-activites.docx` and adds news
+about various types of rover racing lessons offered and the upcoming Lunar Grand
+Prix. She saves the file and closes it. Voila! She's done her part collaborating
+on the newsletter. 
