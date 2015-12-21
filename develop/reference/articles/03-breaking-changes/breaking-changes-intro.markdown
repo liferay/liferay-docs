@@ -2878,6 +2878,33 @@ the preference is no longer used.
 
 ---------------------------------------
 
+### Removed the liferay-ui:navigation Tag and Replaced with liferay-site-navigation:navigation Tag
+- **Date:** 2015-Nov-20
+- **JIRA Ticket:** LPS-60328
+
+#### What changed?
+
+The `liferay-ui:navigation` tag has been removed and replaced with the
+`liferay-site-navigation:navigation` tag.
+
+#### Who is affected?
+
+Plugins or templates that are using the `liferay-ui:navigation` tag need to
+update their usage of the tag.
+
+#### How should I update my code?
+
+You should import the `liferay-site-navigation` tag library (if necessary) and
+update the tag namespace from `liferay-ui:navigation` to
+`liferay-site-navigation:navigation`.
+
+#### Why was this change made?
+
+This change was made as a part of the ongoing strategy to modularize Liferay
+Portal by means of an OSGi container.
+
+---------------------------------------
+
 ### Removed Software Catalog Portlet and Services
 - **Date:** 2015-Nov-21
 - **JIRA Ticket:** LPS-60705
@@ -3013,7 +3040,7 @@ flexibility for all developers.
 
 ---------------------------------------
 
-### Moved Recycle Bin logic into a new `DLTrashService` interface
+### Moved Recycle Bin Logic Into a New DLTrashService Interface
 - **Date:** 2015-Dec-02
 - **JIRA Ticket:** LPS-60810
 
