@@ -19,6 +19,17 @@ Liferay:
 - JCRStore (Java Content Repository)
 - S3Store (Amazon Simple Storage)
 
++$$$
+
+**Warning:** If a database transaction rollback occurs in a Document Library
+that uses a file system based store, file system changes that have occurred
+since the start of the transaction won't be reversed. Inconsistencies between
+Document Library files and those in the file system store can occur and may
+require manual synchronization. All stores except DBStore are vulnerable to this
+limitation.
+
+$$$
+
 For example, you can store documents and media files in your Liferay instance's
 database using DBStore. To enable DStore, add the following line to your
 `portal-ext.properties` file:
@@ -27,7 +38,8 @@ database using DBStore. To enable DStore, add the following line to your
 
 Remember to restart your Liferay server after updating your
 `portal-ext.properties` file in order for your customizations to take effect.
-Please refer to the Document Library Portlet section of your `portal.properties`
-file to find a complete list of supported customizations. You can customize
-features such as the maximum allowed size of documents and media files, the list
-of allowed file extensions, which types of files should be indexed, etc.
+Please refer to the [Document Library Portlet](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Document%20Library%20Portlet)
+section of your `portal.properties` file to find a complete list of supported
+customizations. You can customize features such as the maximum allowed size of
+documents and media files, the list of allowed file extensions, which types of
+files should be indexed, etc.
