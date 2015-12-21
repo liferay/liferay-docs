@@ -2878,55 +2878,55 @@ the preference is no longer used.
 
 ---------------------------------------
 
-### Removed the liferay-ui:navigation Tag and Replaced with liferay-site-navigation:navigation Tag
+### Removed the liferay-ui:navigation Tag and Replaced with liferay-site-navigation:navigation Tag [](id=removed-the-liferay-uinavigation-tag-and-replaced-with-liferay-site-navigat)
 - **Date:** 2015-Nov-20
 - **JIRA Ticket:** LPS-60328
 
-#### What changed?
+#### What changed? [](id=what-changed-75)
 
 The `liferay-ui:navigation` tag has been removed and replaced with the
 `liferay-site-navigation:navigation` tag.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-75)
 
 Plugins or templates that are using the `liferay-ui:navigation` tag need to
 update their usage of the tag.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-75)
 
 You should import the `liferay-site-navigation` tag library (if necessary) and
 update the tag namespace from `liferay-ui:navigation` to
 `liferay-site-navigation:navigation`.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-75)
 
 This change was made as a part of the ongoing strategy to modularize Liferay
 Portal by means of an OSGi container.
 
 ---------------------------------------
 
-### Removed Software Catalog Portlet and Services
+### Removed Software Catalog Portlet and Services [](id=removed-software-catalog-portlet-and-services)
 - **Date:** 2015-Nov-21
 - **JIRA Ticket:** LPS-60705
 
-#### What changed?
+#### What changed? [](id=what-changed-76)
 
 The Software Catalog portlet and its associated services are no longer part
 of Liferay's source code or binaries.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-76)
 
 This affects portals which were making use of the Software Catalog portlet to
 manage a catalog of their software. Developers who were making use of the
 software catalog services from their custom code are also affected.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-76)
 
 There is no direct replacement for invocations to the Software Catalog services.
 In cases where it is really needed, it is possible to obtain the code from a
 previous release and include it in the custom product (subject to licensing).
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-76)
 
 The Software Catalog was developed to implement the very first versions of what
 later become Liferay's Marketplace. It was later replaced and has not been used
@@ -2936,45 +2936,45 @@ time to focus on other areas of the product that add more value.
 
 ---------------------------------------
 
-### Removed the getPageOrderByComparator Method from WikiUtil
+### Removed the getPageOrderByComparator Method from WikiUtil [](id=removed-the-getpageorderbycomparator-method-from-wikiutil)
 - **Date:** 2015-Dec-01
 - **JIRA Ticket:** LPS-60843
 
-#### What changed?
+#### What changed? [](id=what-changed-77)
 
 The `getPageOrderByComparator` method has been removed from `WikiUtil`.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-77)
 
 This affects developers that use this method in their code.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-77)
 
 You should update your code to invoke
 `WikiPortletUtil.getPageOrderByComparator(String, String)`.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-77)
 
 As part of the modularization efforts it has been considered that that this
 logic belongs to wiki-web module.
 
 ---------------------------------------
 
-### Custom AUI Validators Are No Longer Implicitly Required
+### Custom AUI Validators Are No Longer Implicitly Required [](id=custom-aui-validators-are-no-longer-implicitly-required)
 - **Date:** 2015-Dec-02
 - **JIRA Ticket:** LPS-60995
 
-#### What changed?
+#### What changed? [](id=what-changed-78)
 
 The AUI Validator tag no longer forces custom validators (e.g., `name="custom"`)
 to be required, and are now optional by default.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-78)
 
 This affects developers using custom validators, especially ones who relied on
 the field being implicitly required via the custom validator.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-78)
 
 There are several cases where you should update your code to compensate for this
 change. First, blank value checking is no longer necessary, so places where
@@ -3022,7 +3022,7 @@ is an example of how to explicity pass the `required` validator:
         <aui:validator name="required" />
     </aui:input>
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-78)
 
 A custom validator caused the field to be implicitly required. This meant that
 all validators for the field would be evaluated. This created a condition where
@@ -3040,26 +3040,26 @@ flexibility for all developers.
 
 ---------------------------------------
 
-### Moved Recycle Bin Logic Into a New DLTrashService Interface
+### Moved Recycle Bin Logic Into a New DLTrashService Interface [](id=moved-recycle-bin-logic-into-a-new-dltrashservice-interface)
 - **Date:** 2015-Dec-02
 - **JIRA Ticket:** LPS-60810
 
-#### What changed?
+#### What changed? [](id=what-changed-79)
 
 All Recycle Bin logic in Documents and Media services was moved from
 `DLAppService` into the new `DLTrashService` service interface. All moved
 methods have the same name and signatures.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-79)
 
 This affects any local or remote caller of `DLAppService`.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-79)
 
 As all methods have been simply moved into the new service, calling the
 equivalent method on `DLTrashService` suffices.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-79)
 
 Documents and Media services have complex interdependencies that result in
 circular dependencies. Until now, `DLAppService` was responsible for exposing
