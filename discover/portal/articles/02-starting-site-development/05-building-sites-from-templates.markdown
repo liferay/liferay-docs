@@ -27,17 +27,18 @@ and then *Manage*. You're provided a left menu which contains the *Pages*,
 *Content*, and *Configuration* sections for each site. By default, the Manage
 Interface begins with the template's *Pages*. From here, you can add or remove
 pages from a site template or select themes and layout templates to apply to the
-site template. Click on a specific page's gear icon (![Page
-Gear](../../images/icon-page-gear.png)) from the left menu if you'd like to
-select a different theme or layout template for that page. To edit the pages
-themselves, click the page link from the left menu. You can add specific
-applications to each page of a site template and configure the preferences of
-each app. Each page can have any theme, any layout template, and any number of
-applications, just like a page of a regular site. As with site pages, you can
-organize the pages of a site template into hierarchies. When you create a site
-using a site template, the configuration of pages and apps is copied from
-the template to the site. By default, all changes made to the site template are
-automatically copied to sites based on that template.
+site template. Click on a specific page's gear icon
+(![Page Gear](../../images/icon-page-gear.png)) from the left menu if you'd like
+to select a different theme or layout template for that page, or manage any of
+the page's extensive settings. To edit the pages themselves, click the page link
+from the left menu. You can add specific applications to each page of a site
+template and configure the preferences of each app. Each page can have any
+theme, any layout template, and any number of applications, just like a page of
+a regular site. As with site pages, you can organize the pages of a site
+template into hierarchies. When you create a site using a site template, the
+configuration of pages and apps is copied from the template to the site. By
+default, all changes made to the site template are automatically copied to sites
+based on that template.
 
 +$$$
 
@@ -209,7 +210,8 @@ preferences. When merging site template and site changes (e.g., when resetting),
 app preferences are copied from site template apps to site apps. Only global app
 preferences or local app preferences which don't refer to IDs are overwritten.
 
-<!-- Left off here. -->
+<!-- Need to review from here down. I need to figure how how to receive the
+merge fail error so I can take a screenshot for Figure 4. -Cody -->
 
 In some cases, merging site template and site changes fails. For example, if
 pages from a site template cannot be propagated because their friendly URLs are
@@ -261,3 +263,25 @@ administrator adds, removes, or deletes some categories, however, such changes
 
 Now that we've learned how site templates work, let's discuss how to use page
 templates. 
+
+## Sharing Site Templates
+
+If you want to export a site that uses site or page templates to a different
+environment (through a LAR file or remote publication), the templates must be
+exported and imported manually in advance or the import will fail.
+
+To export a Site using a Site Template, use the following process:
+
+1. Go to *Control Panel* &rarr; *Site Templates* and click *Actions* &rarr;
+*Manage* for the Site Template your site is using.
+2. Click *Export* to obtain a LAR file with the content of the Site Template. Be
+sure to choose the applications and data you want exported.
+3. In your target environment, go to *Control Panel* &rarr; *Site Templates* and
+create a new Site Template.
+4. Click *Actions* &rarr; *Manage Pages* for that Site Template and then click
+*Import*.
+5. Upload the LAR file containing your site template's content.
+
+Now the site can be exported and imported normally to this new environment.
+
+In the next section, you'll learn about page templates.
