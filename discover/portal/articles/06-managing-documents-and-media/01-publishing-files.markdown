@@ -1,10 +1,14 @@
 # Publishing Files
 
-TODO - Chapter intro
+As you create sites, you'll probably want store files on the site and share
+them. You can manage them in the Documents and Media library (Document Library).
+To use documents where they're relavent, Liferay lets you use global, site
+scoped, and page scoped Document Library instances. In this chapter, you'll
+learn how to add files to a Document Library, display them in a site, and
+collaborate on a file with other users. Let's get the ball rolling by adding
+files to a Document Libary. 
 
-## Adding and Organizing Files
-
-TODO - Update this section's images. They're currently just filler.
+## Adding Files
 
 The Lunar Resort photographers take lots of photos and video footage of resort
 guests having the time of their lives. As a courtesy to the guests the staff
@@ -116,6 +120,20 @@ permissions. By default, site members are able to add files to the folder and
 subscribe to changes in the folder's files. Deselect all of these checkboxes, as
 we only want resort media managers to modify this folder's files. Click *Save*
 to finish creating the folder.
+
+You can force users to add only certain document types to a folder. By default,
+child folders inherit the restrictions of their parent folder. You can change
+this behavior by editing the folder and selecting the allowed document types.
+
+If workflow is enabled, you can specify different workflow definitions per
+folder. Furthermore, you can specify different workflow definitions per document
+type and per folder. You can set this by editing the folder. 
+
+[Figure x: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../images/dm-doc-type-restrictions-and-workflow.png)
+
+Document types are a powerful way to enforce rules for documents uploaded by
+users. For our example, we'll keep the default supported document types and
+workflow settings. 
 
 Since we only want the *Resort Guest Media Manager* role to manage files in the
 *Resort Guest Media* folder, we must fine tune the folder's permissions. Click
@@ -302,10 +320,10 @@ file actions:
 
 **Download**: Downloads the file to your device.
 
-**Edit**: Lets you modify the file's name, description, document type, categorization,
-and related assets. You can even upload a new file to replace it. Note, modifying the file
-increments its version. <!-- Link to  link to  
-Reference Publishing Content Dynamically > Defining Content Relationships -->
+**Edit**: Lets you modify the file's name, description, document type,
+categorization, and [related assets](/discover/portal/-/knowledge_base/7-0/publishing-content-dyanmically).
+You can even upload a new file to replace it. Note, modifying the file
+increments its version. 
 
 **Move**: Relocate the file to a different parent folder. 
 
@@ -361,9 +379,9 @@ Next, let's consider how to display files on site pages.
 
 ## Displaying Files
 
-TODO - Intro
-
-Here are some ways of you can display your image files:
+Once you've uploaded image files and videos to your Document Library, you'll
+probably want to display them in your site. Here are some ways of you can
+display your image files:
 
 - Insert them in an asset, like a Web Content article or Blogs Entry
 - Use the Asset Publisher
@@ -416,8 +434,8 @@ accessible.
 The last two Display Settings tab's sections are the Entries Listing for List
 Display Style section and Ratings section. The former section allows you to
 select fields to show for each file, if the app's user selects the List display
-style. The Ratings section lets you enable ratings and comments.
-<!-- Explain more about and at least link to sections on ratings and comments? -->
+style. The Ratings section lets you enable users to rate files and comment on
+them.
 
 Here are descriptions for the Documents and Media app's other configuration tabs:
 
@@ -530,46 +548,6 @@ Documents and Media.
 
 ## Collaborating on Files
 
-<!-- 
-Benefits
-
-The authors can all view the same document live on Liferay. Saved changes to the document increments its version. You view a document's history and view
-previous versions. You can reinstate the content of a previous version of the document as the new version.
-
-Why not use some other online drive?
-
-You can leverage the permissions you've already established in Liferay.
-You can conveniently maintain documents and publish them all from Liferay.
-
--->
-
-<!--
-Example:
-
- Collaborate on a newsletter (.docx) of activities for the upcoming season. The
-doc will reside in the Recreation Department organization's site.
-
-Actors:
-	- Tenzing Liferay contributes using the web interface.
-	- Wilma Carwin uses her native desktop to access and work on the newsletter
-	- Chip Shot is the first to enter his team's activities. He checks on the latest
-	versions of the doc as he's curious of how his writeup compares to those of
-	the other leads. He even tweaks it to make a minor version change.
-
-Example Flow:
-Org Admin
-- creates org role Recreation Leads
-- configures the email subscriptions. Show Subscription email configuration (collab)
-
-Make sure to include:
-- Mention Related Assets field for the file entry.
-- Explain file update checkbox *Customize the Version Number Increment and
-Describe My Changes*
-- Explain Document type restrictions and workflow per folder (see 
-https://github.com/liferay/liferay-docs/blob/6.2.x/discover/portal/articles/05-document-management/06-automatic-previews-and-metadata.markdown#document-type-restrictions-and-workflow-per-folder-
-
--->
-
 Not only does Liferay's Documents and Media enable you to publish files easily,
 but it also provides a terrific environment for collaborating on documents.
 There are many common collaboration scenarios. For example, you might have a
@@ -590,7 +568,7 @@ Recreation Department members collaborate on an important document: the Lunar
 Resort's upcoming activiters newsletter. Representatives from each activity
 group must contribute content to entice resort guests to sign up for activities.
 Staff members involved include Chip Shot (golf insructor), Wilma Carwin (lunar
-rover race instructor), and Tenzing Liferay (lunar sherpa). Each of them use
+rover race instructor), and Tenzing Nepal (lunar sherpa). Each of them use
 different devices and bring their own style and attitude to the collaboration.
 So perhaps you'll be able to relate to their effort.
 
@@ -608,28 +586,82 @@ to assign the leads a role with permissions to access the folder. The leads can
 now access the *Newsletters* folder and the initial document from Documents and
 Media on Recreation Department's private home page. 
 
-Tenzing Liferay, the resort's veteran lunar sherpa, is as agile online as he is
-on the mountainside. He likes to get his work done well, but quickly. When he
-works on files in the department's document library, he prefers to check them
-out from within the web interface and download them to his computer to work on
-them. Let's follow Tenzing on his adventure editting the newsletter. 
+Tenzing Nepal, the resort's veteran lunar sherpa, is as agile online as he is
+on a mountainside. He often edits his documents accross several versions so they
+read just as he likes them. He prefers to check documents out from within the
+web interface and download them to his computer to work on them. Let's follow
+Tenzing as he produces multiple newsletter versions. 
 
 ### Creating New File Versions
 
+To prevent other users from accicentally overwriting changes you're making to a
+document, the Document Library allows you to *checkout* the document. The user
+who checks out a file is the only user who can checkin changes to the file.
+Checking in a file produces a new file version. 
 
-<!-- introduce benefits of checkin/checkout and versioning -->
+Tenzing Nepal is the first resort instructor to edit the activities newsletter.
+Inside the Documents and Media app, he selects the `upcoming-activities.docx` file's
+*Checkout* action. Upon checkout, the file's status is *Draft*. 
+While Tenzing has the file checked out, he's the sole editor; all
+other users must wait until after he's checked in the file to edit it. While he
+has the file checked out, he can download it, edit which file it's refering to,
+move it to another Document Library folder, check it in, or cancel checkout.
+Tenzing proceeds with the next step towards contributing to the file.
 
-<!-- Demonstrate the editing iterations Tenzing goes through
+Unless [Liferay Sync](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop)
+makes or a local drive mapped to the file's WebDAV (explained in the next
+section) URL, you typically follow the basic workflow below to edit a Document
+Library file from your machine:
 
-- checkout
-- show what the file entry view looks like when it's checked out
-- download.
-- Something comes up, so undo checkout
-- checkout again
-- download, edit, save. Doesn't affect the online version.
-- upload or check-in file.
+1. Checkout the file.
+2. Download it.
+3. Edit the file locally.
+4. From the file's Edit screen in Documents and Media, browse to and select the
+local file.
+5. Check in the file.
 
-Check-in/ check-out prevents authors from accidentally overwriting another author's changes.
+Let's continue as Tenzing, following the above worklow. You've already checked
+out the file (1). Now download the file to your machine by clicking the
+*Download* action (2). Then open the file in your favorite document editor, add
+information on the upcoming Lunar hikes, and saves your changes (3). You're now
+ready to apply the changes to file in Documents and Media.
+
+In the file entry's screen in Documents and Media, click on the *Edit* action.
+Then click *Browse*, navigate to the copy of the `upcoming-activities.docx` file
+you edited on your desktop, and select it. Then click the *Save and Check In*
+button and the *Describe Your Changes* screen appears. This screen allows you to
+specify whether to apply a major or minor (default) version increment and
+describe your changes. For example, if a file's current version is 1.0, the
+file's next minor version is 1.1 and next major version would be 2.0. To
+increment the file to a new *Major Version*, select the *Changes Create a Major
+Version* checkbox. Your changes will otherwise result in a new Minor Version. In
+the *Change Log* field, you can describe your changes. To check in the file and
+apply the version increment, click *Save*.
+
+Select the *Changes Create a Major Version* checkbox, describe your changes, and
+click *Save*. The file's major version number is incremented and its status is
+now *Approved*.
+
++$$$
+
+**Note**: If you *Edit* a file without checking it out, the Edit screen displays
+a checkbox *Customize the Version Number Increment and Describe My Changes*. For
+your file edit, if you want to select between major/minor version types and/or
+want to enter a change log then select the checkbox. On clicking *Publish*, the
+*Describe Your Changes* screen appears so you can specify your change's version
+increment type and description.
+
+$$$
+
+Since the file is checked in, any user can check it out. Tenzing realizes there
+are some minor details he wants to add. As Tenzing, checkout the file once
+again. Download the file locally, make the changes (any changes you like), and
+save the local file. Then edit the file in Documents in Media, browse to your
+local file, and click *Save and Check In*. This time, leave the major version
+selection unchecked, describe your changes, and click *Save*. The file entry's
+minor version number is incremented.
+
+<!-- Explain the Version History table 
 -->
 
 
@@ -687,5 +719,13 @@ Lunar rover race instructor Wilma Carwin doesn't mind editing her Documents and
 Media files from her computer's file manager, because it's convenient and
 easiest for her. She opens the document `upcoming-activites.docx` and adds news
 about various types of rover racing lessons offered and the upcoming Lunar Grand
-Prix. She saves the file and closes it. Voila! She's done her part collaborating
+Prix. She saves the file and closes it. The file in Documents and Media is now
+"Approved" and its minor version is incremented. Voila! She's done her part collaborating
 on the newsletter. 
+
+<!--
+Make sure to include:
+
+- Email configuration
+
+-->
