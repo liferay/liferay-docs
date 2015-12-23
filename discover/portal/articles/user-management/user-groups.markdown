@@ -1,59 +1,3 @@
-<!-- More dramatic intro: You have twelve users
-that need to share some functionality. They're from different departments, so
-their organization membership doesn't help you centralize their configuration.
-They all need certain shared pages on their user personal sites, they need to be
-assigned to a new role you created, and they need to all be members of a certain
-site. One way of doing that requires a lot of clicks, and you'd better not miss
-a user. 
-
-1.  Assigning users to a site manually.
-    
-    - Find each user in the site membership UI, and add them to the site. ***12 separate
-      actions***
-
-2.  Assigning users to a role manually
-
-    - Find each user in the Roles UI, and assign them individually. ***12
-      separate actions***
-
-3.  Giving all the users the same page in their personal page set.
-
-    - Go to each user's personal s This page cannot be deleted and cannot have child pages because it is associated to a site template. ite separately, and add the page template (if
-      you're smart you'll at least have a page template defined for the purpose)
-for each use individually. ***12 separate actions***
-
-Instead, you could create a user group, add all the users to the user group
-(yeah, you need to do this manually, so ***12 separate actions**). Then
-everything else is done in one action. Assign the user group to the site, assign
-the user group to the role, and assign the user group pages the site template.
-And what happens if you forget to add a user, or somebody quits suddenly? Just
-remove or add them from the user group and all the other actions that rely on
-their user group membership are rolled back seamlessly. None of this error-prone
-manual fiddling.
-
-
-Go to the site membership UI. Click Add
-to assign users to the site. Carefully scroll through the available users and
-select those you need to add as members (this requires many clicks, and you
-might miss someone who should have been added). Then go to Roles, and find the
-same users again, this time to assign them to  new List Creator role (many more
-clicks, more opportunities for error). Phew, that must be it right? No, Now go
-add a site template, with whatever pages and applications you need all the users
-you added to the site above to have access to. Once that's complete, add the
-site template to the user's personal pages
-
-Did you know that medical researchers no longer think Carpal Tunnel Syndrome is
-an overuse injury? So don't worry, if you've been manually managing the same
-group of users over and over again, it probably isn't the cause for your CTS.
-No, you can blame your parents for your CTS, since it looks like it's mostly
-caused by genetic factors. Still, you don't like extra work, right?  No, you
-don't. You'd rather be watching the videos form the last Liferay Symposium. So,
-if you find yourself needing to manage a group of users that aren't already
-grouped together in an organization, consider making a user group to consolidate
-your efforts and make your life easier.
-
--->
-
 # User Groups
 
 A User Group is a group of users. Were you hoping for a more
@@ -63,19 +7,16 @@ collects users that don't fit together outside of the specific function that the
 user group was formed to fulfill. That's really all it is. Of course, this is
 Liferay, so there's a ton of flexibility built in to user groups, and they're
 integrated with Roles, Sites, Site Templates, Permissions, and, of course Users.
-Because of that, there are a lot of places in Liferay where you can interact
+Because of that, there are a lot of different places where you can interact
 with user groups, and there's more than one use case they can fulfill. In this
 article you'll learn how to work with user groups to serve the most
 common use cases. 
 
-<!-- Pick the best combination of the above intro and below info -->
-
-A User Group is a collection of users who don't share an obvious hierarchical
-attribute. They allow portal administrators to create groups of users that
-traverse hierarchical boundaries. Users can be assigned to multiple user groups.
-For example, consider The Lunar Resort. It's hierarchically divided into the
-Physical Plant Department, the Recreation Department, and the Sales Department.
-The Lunar Resort's department-driven structure is modeled using
+User groups allow portal administrators to create groups of users that traverse
+hierarchical boundaries. For example, consider The Lunar Resort. It's
+hierarchically divided into the Physical Plant Department, the Recreation
+Department, and the Sales Department. The Lunar Resort's department-driven
+structure is modeled using
 [organizations](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel)<!--Link
 to 7-0 docs on organizations-->. If there are functions needed in The Lunar
 Resort public or private sites that can't be divided up according to the
