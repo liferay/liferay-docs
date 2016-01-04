@@ -129,7 +129,7 @@ If workflow is enabled, you can specify different workflow definitions per
 folder. Furthermore, you can specify different workflow definitions per document
 type and per folder. You can set this by editing the folder. 
 
-[Figure x: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../images/dm-doc-type-restrictions-and-workflow.png)
+![Figure x: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../images/dm-doc-type-restrictions-and-workflow.png)
 
 Document types are a powerful way to enforce rules for documents uploaded by
 users. For our example, we'll keep the default supported document types and
