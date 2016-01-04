@@ -1,13 +1,11 @@
 # Understanding Mobile SDK Calls [](id=understanding-mobile-sdk-calls)
 
-Before making Mobile SDK calls, whether you make them with the Liferay Mobile 
-SDK or a custom Mobile SDK that you built, you must understand how they work. 
-This knowledge is crucial to make these calls properly and handle their results 
-in your app. To call the Guestbook portlet's remote services, you must use the 
-Guestbook Mobile SDK you built and installed earlier. This Mobile SDK contains 
-the services required to call the Guestbook portlet's remote services. The 
-following diagram illustrates how you'll make and process calls with the 
-Guestbook Mobile SDK. 
+When you make SDK calls, you must understand how they work. This knowledge is
+crucial to make these calls properly and handle their results in your app. To
+call the Guestbook portlet's remote services, you must use the Guestbook Mobile
+SDK you built and installed earlier. This Mobile SDK contains the services
+required to call the Guestbook portlet's remote services. The following diagram
+illustrates how you'll make and process calls with the Guestbook Mobile SDK. 
 
 ![Figure 1: A call made with the Guestbook Mobile SDK requires that you create a Mobile SDK service instance, use it to call the Liferay service, transform the resulting JSON into model objects, and pass those model objects back to the activity or fragment that issued the original call.](../../images/android-mobile-sdk.png)
 
