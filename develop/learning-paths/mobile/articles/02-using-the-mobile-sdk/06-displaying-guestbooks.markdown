@@ -24,7 +24,7 @@ following steps:
 4. Customize the navigation drawer.
 
 This is conceptually simple, but a bit more complex in practice. Not to worry! 
-This article guides you though each step in the process. 
+You'll be guided though each step in the process. 
 
 You'll begin by initializing the Action Bar. 
 
@@ -227,15 +227,15 @@ to display an empty string by default. The activity therefore opens with no
 content and an empty Action Bar. This isn't very user friendly. You'll change 
 this so that the activity selects the first guestbook by default. Recall that 
 the callback class calls `reloadGuestbooks` when the service call succeeds. The 
-existing code in this method replaces the current guestbook list with those 
-retrieved from the portal. You can also use `reloadGuestbooks` to automatically 
-select the first guestbook in the list. Add the following code to the end of the 
-`reloadGuestbooks` method: 
+existing code in this method replaces the current guestbook list with those
+retrieved from the portal. You can also use `reloadGuestbooks` to select the
+first guestbook in the list automatically. Add the following code to the end of
+the `reloadGuestbooks` method: 
 
     _adapter.notifyDataSetChanged();
     drawerListView.performItemClick(drawerListView, 0, drawerListView.getItemIdAtPosition(0));
 
-This code notifies the `ListView`'s adapter of any changed data, and then 
+This code notifies the `ListView`'s adapter of any changed data and then 
 performs an item click on the first guestbook. This item click triggers the 
 `onItemClick` method. 
 
