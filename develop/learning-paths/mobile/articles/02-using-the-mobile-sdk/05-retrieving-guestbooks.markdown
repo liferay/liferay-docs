@@ -1,32 +1,32 @@
 # Retrieving Guestbooks [](id=retrieving-guestbooks)
 
-Now that you know this app's basic structure, and also know the basics of making 
-calls with the Guestbooks Mobile SDK, you're ready to retrieve guestbooks from 
-the server. To retrieve guestbooks in the app, you'll follow these steps:
+Now that you know this app's basic structure and the basics of making calls with
+the Guestbooks Mobile SDK, you're ready to retrieve guestbooks from the server.
+To retrieve guestbooks in the app, you'll follow these steps:
 
 1. Create the model class for the guestbooks. You need this class so you can 
    transform the JSON received from the portlet into guestbook model objects 
    that you can work with in the app. 
-   
+ 
 2. Prepare the `GuestbooksActivity` class to receive guestbook model objects.
 
 3. Create a callback class that makes the service call asynchronously in a 
    background thread, transforms the JSON results into guestbook model objects, 
    and then sends those objects back to `GuestbooksActivity`.
 
-4. Make the service call from `GuestbooksActivity`, using the callback class.
+4. Using the callback class, make the service call from `GuestbooksActivity`. 
 
 You'll get started with the first step, creating the model class for guestbooks.
 
 ## Creating the Model Class for Guestbooks [](id=creating-the-model-class-for-guestbooks)
 
 The Guestbook Mobile SDK returns guestbooks from the portlet in a `JSONArray` 
-that contains each guestbook in a `JSONObject`. To efficiently work with these 
-guestbooks in your app, you need a way of transforming them into proper 
-guestbook objects. You'll do this via a model class. First, create a new package 
-called `model` inside the `com.liferay.docs.liferayguestbook` package. Inside 
-this new `model` package, create a new class called `GuestbookModel`. Replace 
-the `GuestbookModel` class's contents with the following code: 
+that contains each guestbook in a `JSONObject`. To work efficiently with these 
+guestbooks, you need a way of transforming them into proper guestbook objects.
+You'll do this via a model class. First, create a new package called `model`
+inside the `com.liferay.docs.liferayguestbook` package. Inside this new `model`
+package, create a new class called `GuestbookModel`. Replace the
+`GuestbookModel` class's contents with the following code: 
 
     package com.liferay.docs.liferayguestbook.model;
 
@@ -116,16 +116,16 @@ calls. The constructor does this by using the `getLong` and `getString` methods.
 To see how the `Guestbook` parameters are defined in the portlet, see the 
 [Liferay MVC Learning Path article on Service Builder](/develop/learning-paths/mvc/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
 For now, the only parameters you really need in this class are `guestbookId` and 
-`name`. Because you might need the rest later, however, it's simpler to add 
+`name`. Because you might need the rest later, however, it's best to add 
 support for all of them now. 
 
-You should also note the `toString` method in this class. It's very simple; it 
-only returns a guestbook's name. It's very important, though. Android calls 
-`toString` to render objects in the navigation drawer. If `toString` isn't 
-defined for the objects, the drawer shows strings with each object's full 
-package path and internal ID. In other words, Android displays illegible text if 
-you don't define `toString` here. By defining `toString` to return each 
-`GuestbookModel`'s name, you telling Android to show each guestbook's name in 
+You should also note the `toString` method in this class. It's very simple; it
+only returns a guestbook's name. It's very important, though. Android calls
+`toString` to render objects in the navigation drawer. If `toString` isn't
+defined for an object, the drawer shows strings with the object's full package
+path and internal ID. In other words, Android displays illegible text if you
+don't define `toString` here. By defining `toString` to return each
+`GuestbookModel`'s name, you're telling Android to show each guestbook's name in
 the drawer. 
 
 Next, you'll prepare `GuestbooksActivity` to recieve `GuestbookModel` objects. 
@@ -137,7 +137,7 @@ class to handle `GuestbookModel` objects. Specifically, you need to give the
 callback class you'll create in a moment a way to pass `GuestbookModel` objects 
 to `GuestbooksActivity`. 
 
-First, add the following `_guestbooks` variable for these objects: 
+First, add a `_guestbooks` variable for these objects: 
 
     private List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
 
@@ -286,8 +286,8 @@ session's callback. This ensures that any service calls made with the session go
 through the callback. Next, you use the session to create a `GuestbookService` 
 instance. In the `try` block, you then call the service's `getGuestbooks` method 
 with the group ID (site ID) of the site you want to retrieve guestbooks from. 
-You get the group ID from the `LiferayServerContext` class, another Screens 
-class, that lets you retrieve the values you set in `server_context.xml`. As you 
+You get the group ID from the `LiferayServerContext` class--another Screens 
+class--that lets you retrieve the values you set in `server_context.xml`. As you 
 can see, using the Login Screenlet provides a great deal of flexibility, even 
 when you don't need to use any other Screenlets. 
 
