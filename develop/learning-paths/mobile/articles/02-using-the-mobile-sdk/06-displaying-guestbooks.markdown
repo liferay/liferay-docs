@@ -38,9 +38,9 @@ activity's Action Bar. Android Studio created this code for you in the
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-First, you need the `ActionBar` and `Toolbar` to be instance variables that you 
-can refer to anywhere in the activity. Add these variables to the 
-`GuestbooksActivity` class now: 
+First, remove these two lines. You need the `ActionBar` and `Toolbar` to be
+instance variables that you can refer to anywhere in the activity. Add these
+variables to the `GuestbooksActivity` class now: 
 
     private ActionBar actionBar;
     private Toolbar toolbar;
@@ -62,10 +62,8 @@ This prevents the activity's title from showing in the Action Bar before the app
 can retrieve guestbooks from the portal. 
 
 Now you need to call `initActionBar()` in `onCreate`. Place the call immediately
-above the `getGuestbooks()` call. Then delete the original `Toolbar`
-initialization code in `onCreate`; it's no longer needed since you included it
-in `initActionBar`. The first few lines of the `onCreate` method should now look
-like this: 
+above the `getGuestbooks()` call. The first few lines of the `onCreate` method
+should now look like this: 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
