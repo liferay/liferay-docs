@@ -1,27 +1,41 @@
 # Publishing Files
 
 As you create sites, you'll probably want to share files on them. Liferay's
-Documents and Media library (Document Library) let's you manage and access all
-kinds of files on your sites. Pictures, videos, spreadsheets, and slide
-presentations are some common examples. Library instances can be scoped to a
-portal, site, or page, so you can store and publish files where their relevant.
-In this chapter, you'll learn how to add files to a Document Library, display
-them in a site, and collaborate on a file with other users. Let's get the ball
-rolling by adding files to a Document Libary.
+Documents and Media library (Document Library) let's you upload and publish all
+kinds of files on your sites. Pictures, videos, spreadsheets, slide
+presentations and more can be stored in and shared from the Document Library.
+Library instances can be scoped to a portal, site, or page, so you can work with
+files where their relevant.
+
+In this chapter, you'll learn how to add files, display them, and collaborate on
+them. You can upload all kinds of files to the Document Library it even allows
+for custom file types. Users can browse and view files from the Documents and
+Media app or from the Media Gallery. You'll learn how to use both apps. And
+lastly, you'll learn how to collaborate on files from within several
+environments, including your browser, local desktop, and mobile device. We've
+pulled out all the stops to make online file management as easy as possible.
+Let's get the ball rolling by adding files to a Document Libary.
 
 ## Adding Files
 
-To demonstrate how to add files, we'll use the Lunar Resort. The resort
-photographers take lots of photos and video footage of resort guests having the
-time of their lives. As a courtesy to the guests the staff stores each party's
-photos and videos on the resrot site and shares them with the parties. At first,
-you might think "How does a resort sharing of pictures and videos relate to me
-and my site?" Well, even if your company isn't in the tourism business, it
-probably has similar requirements for managing and publishing files. One common
-need is the ability to enable specific groups of users to store, organize, and
-share files. And no matter what kinds of files you work with, the fundamentals
-of granting file operation permissions is the same. Let's explore how to do this
-for the Lunar Resort.
+There are several reasons why you might want to upload files to your site. You
+might want to share photos and video files or embed them in web content. Or you
+might simply want to back them up from your device to your site. You may have
+important documents that you want to share with other users. And you might want
+to collaborate on documents with other users. All of these examples include
+first uploading a file to your site.
+
+To demonstrate adding files to a Document Library, we'll use the Lunar Resort.
+Resort photographers take lots of photos and video footage of resort guests
+having the time of their lives. As a courtesy to the guests the staff stores
+each party's photos and videos on the resrot site and shares them with the
+parties. At first, you might think "How does a resort sharing of pictures and
+videos relate to me and my site?" Well, even if your company isn't in the
+tourism business, it probably has similar requirements for managing and
+publishing files. One common need is the ability to enable specific groups of
+users to store, organize, and share files. And no matter what kinds of files you
+work with, the fundamentals of granting file operation permissions is the same.
+Let's explore how to do this for the Lunar Resort.
 
 The Lunar Resort needs to manage carefully who can add, view, and update groups
 of files. The resort stores in their Documents and Media libraries all kinds of
@@ -92,6 +106,9 @@ how to add a repository.
 default document type, "Basic Document," to apply to. By default, basic
 documents are not described by any metadata sets.
 
+<!-- **Google Docs**:
+-->
+
 The remaining items in the Add menu are default document types that are each
 described by a unique metadata set. When you add a document belonging to a
 specific document type, you're presented with a form to not only specify the
@@ -114,19 +131,19 @@ Let's continue with our example and create folders to organize the Lunar Resort
 guest photos and videos that we'll upload. From the Add menu, select *Folder*.
 The new folder form appears. Since the folder is for storing Lunar Resort guest
 media, name the folder *Resort Guest Media*. You can optionally describe the
-folder. The folder is initially viewable by site members, but we'll change that
-after we create it. Click the *More Options* link to show checkboxes for more
-permissions. By default, site members are able to add files to the folder and
-subscribe to the file changes in the folder. Deselect all of these checkboxes,
-as we only want resort media managers to modify the folder's files. Click *Save*
-to finish creating the folder.
+folder. Initially anyone can view the folder, but we'll change that after we
+create it. Expand the *Permissions* section link to show checkboxes for more
+permissions. By default, site members are able to add files, subfolders, and
+shortcuts and subscribe to changes to the folder's files. Deselect all of these
+checkboxes, as we only want resort media managers to modify the folder's files.
+Click *Save* to finish creating the folder. 
 
 Note that you can force users to add only certain document types to a folder. By
 default, child folders inherit the restrictions of their parent folder. You can
 change this behavior by editing the folder and selecting the allowed document
 types.
 
-If workflow is enabled, you can specify different workflow definitions per
+If workflow is enabled for the Document Library, you can specify different workflow definitions per
 folder. Furthermore, you can specify different workflow definitions per document
 type and per folder. You can set this by editing the folder. 
 
@@ -135,10 +152,11 @@ type and per folder. You can set this by editing the folder.
 Document types are a powerful way to enforce rules for documents. For our
 example, we'll keep the default supported document types and workflow settings.
 
-Since we only want the *Resort Guest Media Manager* role to manage files in the
-*Resort Guest Media* folder, we must fine tune the folder's permissions. Click
-on the folder's *Actions* icon (![Actions](../../images/icon-actions.png)) and
-select the *Permissions* action. The Permissions window appears.
+You've created a folder named *Resort Guest Media*. You can now specify its
+permissions. Since we only want the *Resort Guest Media Manager* role to manage
+files in the folder, we must fine tune the folder's permissions. Click on the
+folder's *Actions* icon (![Actions](../../images/icon-actions.png)) and select
+the *Permissions* action. The Permissions window appears.
 
 The folder permissions enable a role to perform the following actions:
 
@@ -168,24 +186,34 @@ permissions from all the other roles, and click *Save*. Users assigned to the
 role are now the only non-admin users who can upload and manage media files in
 the folder.
 
+You've created the *Resort Guest Media* folder and set appropriate permissions
+for it. While you're signed in as the admin user, click on Documents and Media's
+Options icon (![Options](../../images/icon-app-options.png)) and select
+*Configuration*. From here you can specify the email sender and email templates
+for email sent to Document Library folder subscribers. If you want to keep the
+defaults, close the *Configuration* window.
+
 Now, sign in as a *Resort Guest Media Manager* role user. Since Snappy, the
 Lunar Resort's photographer, belongs to this role, we'll sign in as her. To open
 the folder, go to *Documents and Media* in Site Administration, navigate to the
 *Resort Guest Media* folder, and click the folder's name. The folder provides a
 workspace for role members to manage files and subfolders.
 
-Snappy has plenty of pictures of guests Mr. and Mrs. Smith on her local file
-system. To separate the Smith's files from those of other guests, we'll create a
-subfolder named *Smith Party*. To create it, click the Add icon, and select the
+Snappy has plenty of pictures of guests Mr. and Mrs. Spacey on her local file
+system. To separate the Spacey's files from those of other guests, we'll create a
+subfolder named *Spacey Party*. To create it, click the Add icon, and select the
 *Subfolder* action. In the *New Folder* form that appears, name the folder
-*Smith Party* and describe the folder's purpose (e.g., "The Smith's photos from
+*Spacey Party* and describe the folder's purpose (e.g., "The Spacey's photos from
 their visit to the Lunar Resort on some-date"). Click the *More Options* link
 and deselect all the permissions within it, as we only want media managers to be
 able to edit the folder. *Save* the new subfolder. You're returned to the folder
-*Resort Guest Media*, which now lists your new subfolder *Smith Party*. Navigate
+*Resort Guest Media*, which now lists your new subfolder *Spacey Party*. Navigate
 into the subfolder. The Document and Media library's navigation breadcrumbs
-shows your folder's path: *Home &rarr; Resort Guest Media &rarr;Smith Party*.
-Next, let's add the Smith's photos to the folder.
+shows your folder's path: *Home &rarr; Resort Guest Media &rarr;Spacey Party*.
+
+In your Document Library's *Resort Guest Media* folder, you've created a
+subfolder named *Spacey Party*. Next, let's add the Spacey's photos to the
+subfolder.
 
 There are a few different ways you can add image files, or any file for that
 matter. You can add them one at a time or add multiple files simultaneously.
@@ -210,9 +238,12 @@ back to the folder you're adding files to.
 
 ![Figure x: Documents and Media's lists files using several display styles: icon (as shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../images/dm-images-in-admin.png)
 
-Documents and Media lists your folder's files. They're displayed using icons, by
-default. You can select either icon, descriptive, or list display style; they're
-shown here from left to right: ![Display
+Documents and Media lists your current folder's subfolders and file entries. A
+file entry is the Document Library's representation of a file. It wraps the file
+to better leverage it within Liferay and to associate additional information and
+metadata with the file. File entries are displayed using icons, by default. You
+can select either icon, descriptive, or list display style; they're shown here
+from left to right: ![Display
 Styles](../../images/list-view-display-styles.png). The icon display style shows
 a file as a cover image. If the file is an image type file, the image is used as
 the file entry's cover image. If the file isn't an image, Documents and Media
@@ -226,18 +257,21 @@ styles provide the same functionality, but display the file entries in rows.
 To see the current folder's details click the *Information* icon
 (![**i**](../../images/icon-information.png)). An area with the folder's name
 appears. It shows the number of items in the folder. It also shows a *Subscribe*
-icon that you can click on to get notifications about files added to or modified
-in the folder. Lastly, the Actions icon lists actions you can perform on the
-current folder.
+icon ![Subscribe](../../images/icon-subscribe.png) you can select to get
+notifications about files added to or modified in the folder. Lastly, the
+Actions icon lists actions you can perform on the current folder. Above the
+Information icon and Display Styles is a *Search* that enables you to find files
+by keywords.
 
-The tab bar at the top of Documents and Media's view provides filters. *Folders*
-lists the folders and files in Home, *Recent* shows the most recently modified
-files, *Mine* lists all the current user's files (no matter their folder), and
-*Document Types* filters on files of the selected document type. The *Search*
-field next to the filters enables you to find files by keywords. If a Document
-Library contains more documents than it can display at once, you can use the
-navigation tool at the bottom of the app's window to either switch your view to
-another page or configure the page to display more documents per page.
+On the other side of the *Folders* tab also in the top area are several icons
+for filtering on folders and files. The *All* option (default) shows all of the
+current folder's immediate subfolders and files. The *Recent* filter shows the
+most recently modified files, *Mine* lists all the current user's files (no
+matter their folder), and *Document Types* filters on files of the selected
+document type. If a Document Library contains more documents than it can display
+at once, you can use the navigation tool at the bottom of the app's window to
+either switch your view to another page or configure the page to display more
+documents per page.
 
 Just above the file list, the *Order by* selector lets you select criteria for
 ordering the files and folders. You can order them by creation date, title,
@@ -245,26 +279,26 @@ number of downloads, modification date (default), or size. The up and down
 arrows let you arrange them in ascending or descending order.
 
 From the list view, Documents and Media lets you act on one or more files at
-once. When you select the *All* checkbox, next to the *Order by* selector, the
-following action icons appear: ![Action
-Icons](../../images/dm-action-icons.png). Describing them from left to right,
-the X is for cancelling file checkout, the secured lock is for file check-in,
-the unsecured lock is for file check-out, the crossed arrows are for moving the
-files, and the trash can is for moving files to the Recycle Bin. You move
-selected files to a subfolder via drag and drop. File check-out and check-in is
-explained later in [Collaborating on
+once. When you select a checkbox for one or more files, the following action
+icons appear: ![Action Icons](../../images/dm-action-icons.png). Describing them
+from left to right, the X is for cancelling file checkout, the secured lock is
+for file check-in, the unsecured lock is for file check-out, the arrows are for
+moving the files, and the trash can is for moving files to the Recycle Bin. You
+can also move selected files to a subfolder via drag and drop. File check-out
+and check-in is explained later in [Collaborating on
 Files](/discover/portal/-/knowledge_base/7-0/publishing-files#collaborating-on-files).
 
 ![Figure x: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../images/dm-file-entry-details.png)
 
-To open its file entry view, click the file's name. The screen's central viewing
-area displays a preview image of the file. If the file is an image file, its
-image is displayed. If a preview plugin for the file type is installed, the
-plugin displays an image (e.g., the opening scene of a video file or a
-presentation's first slide) for the file. If there are no preview plugins for
-the file, Liferay displays a generic image based on the file's type. Let's take
-a moment and consider file preview plugins and some of the powerful features
-they offer. 
+You've added several files to the *Spacey Party* folder. In the Document Library,
+each file has a file entry view. To open its file entry view, click the file's
+name. The screen's central viewing area displays a preview image of the file. If
+the file is an image file, its image is displayed. If a preview plugin for the
+file type is installed, the plugin displays an image (e.g., the opening scene of
+a video file or a presentation's first slide) for the file. If there are no
+preview plugins for the file, Liferay displays a generic image based on the
+file's type. Let's take a moment and consider file preview plugins and some of
+the powerful features they offer. 
 
 Whenever possible, Liferay generates previews of documents added to the Document
 Library. Out of the box, Liferay only ships with Java-based APIs to generate
@@ -289,7 +323,9 @@ supported file types (.pdf, .docx, .odt, .ppt, .odp, etc.), lets you view
 documents in your browser, and lets you convert documents. ImageMagick allows
 for faster and higher-quality previews and conversions. Xuggler allows for audio
 and video previews, lets you play audio and video files in your browser, and
-extracts thumbnails from video files. To learn how to use these tools, refer to
+extracts thumbnails from video files. You can configure the tools via portal
+properties you can set in the Control Panel's Server Administration screen or in
+a `portal-ext.properties` file. To learn how to use these tools, refer to
 [Configuring
 Liferay](/discover/portal/-/knowledge_base/7-0/configuring-liferay).
 
@@ -299,8 +335,7 @@ you can view a multimedia document (audio or video) and play it online. If the
 browser supports HTML5, it uses the browser's native player. Otherwise it falls
 back to a Flash player.
 
-<!--Figure : You can watch a video clip or even view a slideshow inside Liferay's
-Documents and Media app.-->
+![Figure x: By leveraging services like Xuggler and ImageMagick, you can watch a video clip or even view a slideshow inside Liferay's Documents and Media app.](../../images/dm-file-entry-video-preview.png)
 
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for.
@@ -362,16 +397,19 @@ existing documents, a process is triggered automatically that extracts the
 file's metadata. The library used by this process is TIKA and it's already
 included in Liferay out of the box. Depending on your file's type and the
 metadata written with the file, you can find out all kinds of details. In the
-case of audio or video files, their duration is displayed. The *Version History*
-section lists the different versions of the file and lets you view and download
-specific versions.
+case of audio or video files, their duration is displayed.
+
+The *Version History* section lists the different versions of the file and lets
+you view, download, remove, and revert to specific file versions. File version
+history actions are explained later in the section *Collaborating on Files*.
 
 Let's review what you've done so far. First, you created a role to manage a
 specific set of files for your site. You assigned users to the role and created
-a Documents and Media folder for them to add and organize files. Then as a
-member of the role, you added a subfolder and files to the Documents and Media
-library. And just now, you viewed individual file entry information and actions.
-Next, let's consider how to display files on site pages.
+a Documents and Media folder named *Resort Guest Media* for them to add and
+organize files. Then as a member of the role, you added a subfolder named *Spacey
+Party* and added files to it. And just now, you viewed individual file entry
+information and actions. Next, let's consider how to display files on site
+pages.
 
 ## Displaying Files
 
@@ -398,14 +436,14 @@ starts with a Documents and Media app and has a Media Gallery app below it. The
 Documents and Media app shows thumbnail images of all the files and makes them
 accessible for download. The Media Gallery comes with slideshow capabilities and
 enables the staff member to download an archive of the folder's files. Let's
-create a media page for the Smiths and add these apps to it.
+create a media page for the Spaceys and add these apps to it.
 
-Add a page with a one column layout and name it *Smith Party*. Then, add the
+Add a page with a one column layout and name it *Spacey Party*. Then, add the
 *Documents and Media* application to the page. It's in the *Content Management*
 section of the *Applications* menu. The Documents and Media app shows your Home
 folder's files by default. The app lets you browse, add, and act on files just
-as you do in Site Administration. Since we want to focus on the Smith's files,
-let's configure the app to show files from the *Smith Party* Document Library
+as you do in Site Administration. Since we want to focus on the Spacey's files,
+let's configure the app to show files from the *Spacey Party* Document Library
 folder. Click the Documents and Media app's Options icon
 (![Options](../../images/icon-app-options.png)) and select *Configuration*. The
 Configuration window appears and shows the *Setup* tab's sub-tab *Display
@@ -453,14 +491,11 @@ application to display.
 While we're in the Configuration window there are a couple things we should do.
 First select the *Display Settings* tab. To enable the media team role member to
 act on the files, select the *Show Actions* checkbox. Since we only want to show
-the Smith's files, click *Select* to browse and select the *Smith Party* folder.
+the Spacey's files, click *Select* to browse and select the *Spacey Party* folder.
 To save your settings, click *Save*. The Documents and Media app now shows all
-of the Smith's files. This app enables the Lunar Resort media team to act on
-individual files. If Mrs. Smith likes particular files, the staff member can
+of the Spacey's files. This app enables the Lunar Resort media team to act on
+individual files. If Mrs. Spacey likes particular files, the staff member can
 download them locally and add notes in each file entry's comments.
-
-<!--Consider showing figure of the DM app with images and videos. Install
-Xuggler to show off the video cover image too.-->
 
 The Documents and Media app is great for working with files individually, but
 the Media Gallery has slideshow features built in. Plus, it lets you download a
@@ -481,10 +516,10 @@ scope, a Global scope administrator must grant the role permission to view the
 template. The Media Gallery also has configuration tabs for communication,
 permissions, preferences, and scope. In the app's Display Settings, select
 checkboxes *Show Actions* and *Show Folder Menu*. In the *Folder Settings*
-section, select the *Smith Party* folder as the app's root folder and click
+section, select the *Spacey Party* folder as the app's root folder and click
 *Save*.
 
-The Smith Party image file thumbnails display in the Media Gallery. When you
+The Spacey Party image file thumbnails display in the Media Gallery. When you
 click on a file's thumbnail, a slideshow appears showing the selected image. The
 window lists thumbnails of the folder's other images below the image that's
 currently shown. And the slideshow continues until you either click pause or
@@ -531,25 +566,24 @@ desktop environment.
 **Move to the Recycle Bin**: Removes the file from the Documents and Media
 library to the Recycle Bin. 
 
-The Documents and Media app and Media Gallery are now at your disposal to show
+The Documents and Media app and Media Gallery are at your service to show
 off your Document Library files. The Lunar Resort's Souvenir and Memorabilia
 group enjoys patron reactions to the great pics and videos that Snappy takes of
 them. And the salespeople are more than happy to plaster the pictures onto
 clothing and accessories to make a handsome commision. 
 
-Next, we'll step out of the Souvenir and Memorabilia group and step into a
-different realm of the Lunar Resort, to demonstrate collaborating on files in
-Documents and Media.
+Next, we'll step out of the Lunar Resort's Souvenir and Memorabilia group and
+Document Library file collaboration.
 
 ## Collaborating on Files
 
 Not only does Liferay's Documents and Media enable you to publish files easily,
 but it also provides a terrific environment for collaborating on documents.
 There are many common collaboration scenarios. For example, you might have a
-spreadsheet that you and your peers need to populate, or perhaps a proposal that
-you and other stakeholders must produce. Or you may be asked to review and edit
-a document. All these cases involve multi-author documents and they require an
-environment that helps manage document changes. Liferay's Documents and Media
+spreadsheet that you and your peers need to populate, or a proposal that you and
+other stakeholders must produce. You might be asked to review and edit a
+document. All these cases involve multiple users modifying documents and require
+an environment that helps manage document changes. Liferay's Documents and Media
 provides these capabilities. 
 
 Liferay's document management apps support accessing apps on different kinds of
@@ -558,34 +592,40 @@ via your browser, but you can also access them from your native file browser and
 use Liferay Sync to access them from your tablet or mobile device. And Liferay
 Sync makes sure you're you can access the latest document versions. 
 
-To demonstrate using these features, we'll walk through how Lunar Resort
-Recreation Department members collaborate on an important document: the Lunar
-Resort's upcoming activiters newsletter. Representatives from each activity
+To demonstrate using these features, we'll join the Lunar Resort
+Recreation Department members collaboration on an important document: the Lunar
+Resort's upcoming activiters newsletter. Resort representatives from each activity
 group must contribute content to entice resort guests to sign up for activities.
 Staff members involved include Chip Shot (golf insructor), Wilma Carwin (lunar
 rover race instructor), and Tenzing Nepal (lunar sherpa). Each of them use
 different devices and bring their own style and attitude to the collaboration.
 So perhaps you'll be able to relate to their effort.
 
-Before the leads can start working on the newsletter, the department director
-(who's associated with the organization's content administrator Role) creates a
-folder called *Newsletters* in the organization's document library. Open your
-favorite document editor, enter the title "Upcoming Lunar Activities", and save
-the document giving it the file name `upcoming-activities.docx`. Upload the file
-to the document library and enable the leads to edit the file by associating
-them with Role that you grant permission to edit the file. To enable the
-activity leads to access the newsletter from the department's private
+Before the group leads can start working on the newsletter, the department
+director (who's associated with the organization's content administrator Role)
+creates a folder called *Newsletters* in the organization's document library. To
+follow along with the example, create the *Newsletters* folder in an
+organization's document library on your site. This folder will hold all of the department's
+newsletters.
+
+Next, open your favorite document editor, enter the title "Upcoming Lunar
+Activities", and save the document as `upcoming-activities.docx`. Upload the
+file to the document library and enable the leads to edit the file by
+associating them with Role that you grant permission to edit the file. To enable
+the activity leads to access the newsletter from the department's private
 Organization Site, add a Documents and Media app to its home page. Then turn on
 the *Show actions* display option in the app's configuration window. Make sure
-to assign the leads a role with permissions to access the folder. The leads can
-now access the *Newsletters* folder and the initial document from Documents and
-Media on Recreation Department's private home page. 
+to assign the leads a role with permissions to access the folder. From the
+Documents and Media app on Recreation Department's private home page, the leads
+can now access the *Newsletters* folder and the initial document. The
+newsletter's next collaborator will be Tenzing Nepal, the resort's veteran lunar
+sherpa.
 
-Tenzing Nepal, the resort's veteran lunar sherpa, is as agile online as he is
-on a mountainside. He often edits his documents accross several versions so they
-read just as he likes them. He prefers to check documents out from within the
-web interface and download them to his computer to work on them. Let's follow
-Tenzing as he produces multiple newsletter versions. 
+Tenzing is as agile online as he is on a mountainside. He often edits his
+documents across several versions so they read just as he likes them. He prefers
+to check documents out from within the web interface and download them to his
+computer to work on them. Let's follow Tenzing as he produces multiple versions
+of the newsletter. 
 
 ### Creating New File Versions
 
@@ -595,80 +635,99 @@ who checks out a file is the only user who can checkin changes to the file.
 Checking in a file produces a new file version. 
 
 Tenzing Nepal is the first resort instructor to edit the activities newsletter.
-Inside the Documents and Media app, he selects the `upcoming-activities.docx` file's
-*Checkout* action. Upon checkout, the file's status is *Draft*. 
-While Tenzing has the file checked out, he's the sole editor; all
-other users must wait until after he's checked in the file to edit it. While he
-has the file checked out, he can download it, edit which file it's refering to,
-move it to another Document Library folder, check it in, or cancel checkout.
-Tenzing proceeds with the next step towards contributing to the file.
+You can imitate Tenzing's actions or follow along as you create new versions of
+your own files. Inside the Documents and Media app, select the
+`upcoming-activities.docx` file's *Checkout* action. Upon checkout, the file's
+status is *Draft*. While the file is checked out, you're the sole editor; all
+other users must wait until after you've checked in the file to edit it. While
+you have the file checked out, you can download it, replace the file entry's
+file, move the file entry to another Document Library folder, check it in, or
+cancel checkout. Tenzing proceeds with the next step towards contributing to the
+file.
 
-Unless [Liferay Sync](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop)
-makes or a local drive mapped to the file's WebDAV (explained in the next
-section) URL, you typically follow the basic workflow below to edit a Document
-Library file from your machine:
+Unless you're using [Liferay Sync](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop)
+or a local drive mapped to the file's WebDAV (explained in the next section)
+URL, you'll typically follow the basic workflow below to edit a Document Library
+file from your machine:
 
-1. Checkout the file.
-2. Download it.
+1. **Checkout** the file.
+2. **Download** the file and edit it locally.
 3. Edit the file locally.
 4. From the file's Edit screen in Documents and Media, browse to and select the
-local file.
+local file. Save and Checkin
 5. Check in the file.
 
-Let's continue as Tenzing, following the above worklow. You've already checked
-out the file (1). Now download the file to your machine by clicking the
-*Download* action (2). Then open the file in your favorite document editor, add
-information on the upcoming Lunar hikes, and saves your changes (3). You're now
+Let's continue as Tenzing, following the above worklow. (1) You've already
+checked out the file. (2) Download the file to your machine by clicking the
+*Download* action. (3) Then open the file in your favorite document editor, add
+information on the upcoming Lunar hikes, and saves your changes. You're now
 ready to apply the changes to file in Documents and Media.
 
 In the file entry's screen in Documents and Media, click on the *Edit* action.
 Then click *Browse*, navigate to the copy of the `upcoming-activities.docx` file
 you edited on your desktop, and select it. Then click the *Save and Check In*
 button and the *Describe Your Changes* screen appears. This screen allows you to
-specify whether to apply a major or minor (default) version increment and
-describe your changes. For example, if a file's current version is 1.0, the
-file's next minor version is 1.1 and next major version would be 2.0. To
-increment the file to a new *Major Version*, select the *Changes Create a Major
-Version* checkbox. Your changes will otherwise result in a new Minor Version. In
-the *Change Log* field, you can describe your changes. To check in the file and
-apply the version increment, click *Save*.
+describe your changes and specify whether to apply a major or minor version
+increment (default). For example, if a file's current version is 1.0, the file's
+next minor version is 1.1 and next major version would be 2.0. To increment the
+file to a new *Major Version*, you must select the *Changes Create a Major
+Version* checkbox. Your changes will otherwise result in a new Minor Version.
 
-Select the *Changes Create a Major Version* checkbox, describe your changes, and
-click *Save*. The file's major version number is incremented and its status is
-now *Approved*.
+Select the *Changes Create a Major Version* checkbox, describe your changes in
+the *Change Log* field, and click *Save*. The file's major version number is
+incremented and its status is now *Approved*.
 
 +$$$
 
 **Note**: If you *Edit* a file without checking it out, the Edit screen displays
 a checkbox *Customize the Version Number Increment and Describe My Changes*. For
-your file edit, if you want to select between major/minor version types and/or
-want to enter a change log then select the checkbox. On clicking *Publish*, the
-*Describe Your Changes* screen appears so you can specify your change's version
-increment type and description.
+your file modification, if you want to select between major/minor version types
+and/or want to enter a change log then select the checkbox. On clicking
+*Publish*, the *Describe Your Changes* screen appears so you can specify your
+change's version increment type and description.
 
 $$$
 
-Since the file is checked in, any user can check it out. Tenzing realizes there
-are some minor details he wants to add. As Tenzing, checkout the file once
+Since the file is checked in, any user can now check it out. Tenzing realizes
+there are some minor details he wants to add. As Tenzing, checkout the file once
 again. Download the file locally, make the changes (any changes you like), and
-save the local file. Then edit the file in Documents in Media, browse to your
-local file, and click *Save and Check In*. This time, leave the major version
-selection unchecked, describe your changes, and click *Save*. The file entry's
-minor version number is incremented.
+save the local file. Then edit the file entry in Documents in Media, browse to
+and select your local file, and click *Save and Check In*. This time, leave the
+major version selection unchecked and click *Save*. The file is checked in and
+it's minor version number is incremented. 
 
-<!-- Explain the Version History table 
--->
+![Figure x: No file is "written in stone". Version history actions let you inspect, delete, and reinstate file versions.](../../images/dm-file-version-actions.png)
 
+In the file entry's screen, the *Version History* table lists the versions of
+the file. The department director created version 1.0, Tenzing created major
+version 2.0, and Tenzing also created minor version 2.1. Each file version has
+an Actions icon ([Actions](../../images/icon-dm-file-version-actions.png). You
+can perform the following actions on each file version that's been checked in
+and approved (if no workflow is associated with a folder, the file's approved on
+checkin):
 
-Race instructor Wilma Carwin updates the newsletter in a different manner. Wilma
-doesn't care much for high tech. The only online device she uses is the
-workstation in the garage office. She only uses it when she has to; otherwise
-she'd rather be behind the wheel of a rover doing donuts in the dirt and banking
-turns off the canyon walls. Fortunately for Wilma, the resort IT team mapped the
-rec department's document library to a network drive on her workstation. This
-lets her edit documents without having to meddle with the Lunar Resort site.
-It's worth explaining how they integrated her file manager with the document
-library. 
+**Download**: Download the version of the file to your machine.
+
+**View**: View the file entry screen for the version of the file.
+
+**Revert**: Check in a new major version of the file based on that file version.
+
+**Delete Version**: Remove the file version from the Document Library. All other
+file versions remain intact.
+
+You've used the basic Document Library workflow to edit files locally and upload
+them to create new file versions of the newsletter. Next up is accessing
+documents from your desktop file manager. To demonstrate this, you'll step into
+the shoes of lunar rover race instructor Wilma Carwin.
+
+Wilma updates the newsletter in a different manner. She doesn't care much for
+high tech. The only online device she uses is the workstation in the garage
+office. Wilma only uses it when she has to; otherwise she'd rather be behind the
+wheel of a rover doing donuts in the dirt and banking turns off the canyon
+walls. Fortunately for Wilma, the resort IT team mapped the rec department's
+document library to a network drive on her workstation. This lets her edit
+documents without having to meddle with the Lunar Resort site. It's worth
+explaining how they integrated her file manager with the document library. 
 
 ### Desktop Access to Documents and Media
 
@@ -715,12 +774,48 @@ Media files from her computer's file manager, because it's convenient and
 easiest for her. She opens the document `upcoming-activites.docx` and adds news
 about various types of rover racing lessons offered and the upcoming Lunar Grand
 Prix. She saves the file and closes it. The file in Documents and Media is now
-"Approved" and its minor version is incremented. Voila! She's done her part collaborating
-on the newsletter. 
+"Approved" and its minor version is incremented. Voila! She's done her part
+collaborating on the newsletter.
 
-<!--
-Make sure to include:
+Following Wilma Carwin's demonstration, you've learned how to map your local file
+manager to a Document Library folder and collaborate on files from your desktop
+environment. 
 
-- Email configuration
+<!-- Section: Linking to Google Docs
 
+See https://github.com/izaera/liferay-docs/blob/google-docs/discover/new-articles/google-docs.markdown
+
+Use Liferay URL at start of all URLs, including the start of one ending in
+/oauth2callback
+
+dm-google-apps-settings.png
+
+Google Drive tells you if you need permission and helps you request it for your
+Google user.
+
+Edit in Google Docs
+Edit
+Move
+Permissions
+Move to Recycle Bin
+
+Details
+Status - Approved
+Last updated by <user>
+<Timestamp>
 -->
+
+## Summary
+
+You've learned the fundamentals of uploading, managing, and collaborating on
+files in your sites. The Document Library integrates each file into Liferay,
+allowing you to apply permissions, workflows, and rich metadata. And it provides
+a version control system for managing document progress. You displayed image
+files on pages using the Media Gallery and Documents and Media apps. And you've
+mastered checking out and checking in new file versions using the basic
+download/upload technique and by mapping your local file manager to the Document
+Library, for seemless file editing. Congratulations on your document management
+accomplishements!
+
+Now that we know the basic functionality of the Documents and Media portlet,
+let's explore using document types and metadata.
