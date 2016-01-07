@@ -82,7 +82,7 @@ in for your site. The Documents and Media screen appears and displays the
 Documents and Media library's *Home* folder (the library's root folder). As you
 add files and folders to the library, they're listed here.
 
-![Figure x: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload all kinds of documents to the library.](../../images/dm-admin-add-menu.png)
+![Figure 1: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload all kinds of documents to the library.](../../images/dm-admin-add-menu.png)
 
 Click the Add icon (![Add](../../images/icon-add.png)) to show what you can add
 to the Document Library. You can add documents, folders, and shortcuts the same as you do
@@ -95,7 +95,7 @@ repository. Here are the Add menu's options:
 You can set permissions on the shortcut to specify who can access the original
 document through the shortcut.
 
-**Repository**: Allows you to add an entirely new repository to your Document
+**Repository**: allows you to add an entirely new repository to your Document
 Library. Refer to the [Repostory
 Types](/discover/portal/-/knowledge_base/7-0/repository-types) section to learn
 how to add a repository. 
@@ -106,8 +106,8 @@ how to add a repository.
 default document type, "Basic Document," to apply to. By default, basic
 documents are not described by any metadata sets.
 
-<!-- **Google Docs**:
--->
+**Google Docs**: lets you create a file entry that links to a Google document.
+The section *Accessing Google Docs* explains how to use this feature.
 
 The remaining items in the Add menu are default document types that are each
 described by a unique metadata set. When you add a document belonging to a
@@ -147,7 +147,7 @@ If workflow is enabled for the Document Library, you can specify different workf
 folder. Furthermore, you can specify different workflow definitions per document
 type and per folder. You can set this by editing the folder. 
 
-![Figure x: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../images/dm-doc-type-restrictions-and-workflow.png)
+![Figure 2: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../images/dm-doc-type-restrictions-and-workflow.png)
 
 Document types are a powerful way to enforce rules for documents. For our
 example, we'll keep the default supported document types and workflow settings.
@@ -236,7 +236,7 @@ you're done adding files, click the Back icon
 (![Back](../../images/icon-back.png)) at the top of the screen. You're taken
 back to the folder you're adding files to. 
 
-![Figure x: Documents and Media's lists files using several display styles: icon (as shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../images/dm-images-in-admin.png)
+![Figure 3: Documents and Media's lists files using several display styles: icon (as shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../images/dm-images-in-admin.png)
 
 Documents and Media lists your current folder's subfolders and file entries. A
 file entry is the Document Library's representation of a file. It wraps the file
@@ -288,7 +288,7 @@ can also move selected files to a subfolder via drag and drop. File check-out
 and check-in is explained later in [Collaborating on
 Files](/discover/portal/-/knowledge_base/7-0/publishing-files#collaborating-on-files).
 
-![Figure x: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../images/dm-file-entry-details.png)
+![Figure 4: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../images/dm-file-entry-details.png)
 
 You've added several files to the *Spacey Party* folder. In the Document Library,
 each file has a file entry view. To open its file entry view, click the file's
@@ -335,7 +335,7 @@ you can view a multimedia document (audio or video) and play it online. If the
 browser supports HTML5, it uses the browser's native player. Otherwise it falls
 back to a Flash player.
 
-![Figure x: By leveraging services like Xuggler and ImageMagick, you can watch a video clip or even view a slideshow inside Liferay's Documents and Media app.](../../images/dm-file-entry-video-preview.png)
+![Figure 5: By leveraging services like Xuggler and ImageMagick, you can watch a video clip or even view a slideshow inside Liferay's Documents and Media app.](../../images/dm-file-entry-video-preview.png)
 
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for.
@@ -408,8 +408,120 @@ specific set of files for your site. You assigned users to the role and created
 a Documents and Media folder named *Resort Guest Media* for them to add and
 organize files. Then as a member of the role, you added a subfolder named *Spacey
 Party* and added files to it. And just now, you viewed individual file entry
-information and actions. Next, let's consider how to display files on site
-pages.
+information and actions. Next, let's explore how you can access Google documents
+from your document libraries.
+
+## Accessing Google Docs
+
+The Document Library not only lets you upload files but also allows you to
+access files stored in Google applications, such as Google Drive and Google
+Photos. This integration with Google and other external repositories enables you
+to access all of your documents from your Liferay sites. 
+
+As a Liferay administrator, you must configure your Liferay instance's access to
+Google's API Picker. Liferay calls on it to access files stored in Google's
+apps. Your Liferay instance must use a unique API keys and client ID to invoke
+the Google API Picker. The API key is used for accessing public data and the
+client ID is for authenticating and authorizing user access to non-public data.
+You must use a Google developer project to access the API picker using an API
+key and client ID. The three basic steps are as follows:
+
+- **Step 1: Enable the Google API Picker**
+
+- **Step 2: Create Credentials**
+
+- **Step 3: Configure Liferay's Google Apps Settings**
+
+Let's start by enabling the Google API Picker in a Google developer project. 
+
+### Step 1: Enable the Google API Picker
+
+Liferay uses the *Google API Picker* to access files in Google. 
+
+1. Create a Google account (or use an existing one). 
+
+2. Open the Google Developer Console at <https://console.developers.google.com>.
+
+3. Create a new project (or use an existing one). 
+
+4. In the console's product and services menu, click on the API Manager. An
+overview screen lists the Google APIs. 
+
+5. In the list of Google APIs, find the *Google API Picker* and enable it.
+Liferay uses the API to access Google documents. 
+
+Next we'll create credentials to use with the Google API. 
+
+### Step 2: Create Credentials
+
+1. In the API Manager navigation, click on *Credentials*. 
+
+2. Create a new OAuth client ID for a *Web application*. Specify the following appributes:
+    -   **Name**: `Google Docs Hook`
+    -   **Authorized JavaScript origins**: `<liferay-instance-URL>` (for
+        example, `http://localhost:8080` for development machines) 
+    -   **Authorized redirect URIs**: `<liferay-instance-URL>/oath2callback`
+
+3. Create a new API key of type *Browser key*. Specify your Liferay instance's
+URL in the field listing sites from which your Google project should accept
+requests.
+
+Your new OAuth client ID and public API access key are listed in your Google
+project's credentials. Keep the credentials screen open so you can easily
+reference these values as you specify them in Liferay. All that's left is to
+enter the API key and client ID into your Liferay instance's Google Apps
+configuration. 
+
+### Step 3: Configure Liferay's Google Apps Settings
+
+To call Google's APIs, you must configure your Liferay instance with your Google
+project's OAuth client ID and public API access key. 
+
+1. From Liferay's *Control Panel*, navigate to *Configuration &rarr;
+Instance Settings*.
+
+2. Click on the *Miscellaneous* tab and expand the *Google Apps*
+section.
+
+3. In the Google Apps section, enter your Google project's public API access API
+key as the *Google Apps API Key* value.
+
+4. Enter the Google project's OAuth client ID as the *Google Client ID* value. 
+
+5. *Save* your changes. 
+
+Your Liferay instance is ready to access Google documents from the Document
+Library. 
+
+### Linking to Google Docs
+
+In your Document Library, you can create file entries that link to Google
+documents, such as files stored in Google Drive or photos saved to Google. To
+link to a Google doc in Documents and Media, click the Add icon
+(![Add](../../images/icon-add.png)) and select *Google Docs*. The *New Google
+Docs* screen appears. 
+
+The Google docs edit screen is similar to the edit screen for basic documents,
+except for file selection. Clicking on the *Select File* button for Google
+Docs brings up Google's file picker. It lets you select files from your Google
+Drive or your photos. Select the Google file you want to link to and click
+*Publish*. 
+
+![Figure 6: You can select files from Google Drive or your photos.](../../images/dm-google-select-a-file.png)
+
+A new file entry appears for the Google document you linked to. You can view the
+file entry as you would any file entry. Contents of the Google doc shows in the
+file entry preview pane. To edit the doc, click on the button *Edit
+in Google Docs*. If you own the Google doc, or if you've already been granted
+permission to access it, a new browser tab opens to the document in the Google
+application. A window appears otherwise, that lets you request permission to
+access the document. 
+
+![Figure 7: The Google doc file entry view comes with an action to edit the doc and displays file entry information.](../../images/dm-google-doc-file-entry.png)
+
+You now know how to access Google docs from your document libraries. Next, let's
+pick up with our Lunar Resort guest photos example as we consider how to display
+files on site pages. 
 
 ## Displaying Files
 
@@ -526,7 +638,7 @@ currently shown. And the slideshow continues until you either click pause or
 view the folder's last image. The slideshow feature provides a nice way to show
 off images. Click the X to close the slideshow window and return to the page. 
 
-![Figure x: The Media Gallery's slideshow provides a nice way to view images.](../../images/dm-media-gallery-slideshow.png)
+![Figure 8: The Media Gallery's slideshow provides a nice way to view images.](../../images/dm-media-gallery-slideshow.png)
 
 Clicking the folder's Actions icon (![Actions](../../images/icon-actions.png))
 lists actions you can perform with respect to the folder. For the Lunar Resort
@@ -696,7 +808,7 @@ and select your local file, and click *Save and Check In*. This time, leave the
 major version selection unchecked and click *Save*. The file is checked in and
 it's minor version number is incremented. 
 
-![Figure x: No file is "written in stone". Version history actions let you inspect, delete, and reinstate file versions.](../../images/dm-file-version-actions.png)
+![Figure 9: No file is "written in stone". Version history actions let you inspect, delete, and reinstate file versions.](../../images/dm-file-version-actions.png)
 
 In the file entry's screen, the *Version History* table lists the versions of
 the file. The department director created version 1.0, Tenzing created major
@@ -748,7 +860,7 @@ Navigate to the Documents and Media app hosting the folder you'd like to access.
 Click on the folder's Actions icon ![Actions](../../images/icon-actions.png) and
 select *Access from Desktop*.
 
-![Figure x: Select *Access from Desktop* to get the the folder's WebDAV URL.](../../images/dm-access-from-desktop-action.png)
+![Figure 10: Select *Access from Desktop* to get the the folder's WebDAV URL.](../../images/dm-access-from-desktop-action.png)
 
 Copy the WebDAV URL. On Windows, map a network drive drive to the WebDAV URL.
 Enter your Liferay credentials when you're prompted for them. The document
@@ -780,30 +892,6 @@ collaborating on the newsletter.
 Following Wilma Carwin's demonstration, you've learned how to map your local file
 manager to a Document Library folder and collaborate on files from your desktop
 environment. 
-
-<!-- Section: Linking to Google Docs
-
-See https://github.com/izaera/liferay-docs/blob/google-docs/discover/new-articles/google-docs.markdown
-
-Use Liferay URL at start of all URLs, including the start of one ending in
-/oauth2callback
-
-dm-google-apps-settings.png
-
-Google Drive tells you if you need permission and helps you request it for your
-Google user.
-
-Edit in Google Docs
-Edit
-Move
-Permissions
-Move to Recycle Bin
-
-Details
-Status - Approved
-Last updated by <user>
-<Timestamp>
--->
 
 ## Summary
 
