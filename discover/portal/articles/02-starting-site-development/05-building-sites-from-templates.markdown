@@ -224,7 +224,7 @@ away your conflict, navigate to your site's *Site Administration* &rarr;
 *Configuration* &rarr; *Site Settings* and click the *Reset and Propagate*
 button.
 
-![Figure 4: You can reset and propagate the merge fail count by navigationg to *Site Settings*.](../../images/reset-and-propagate.png)
+![Figure 4: This type of warning is given when there are friendly URL conflicts with site template pages.](../../images/friendly-url-propagation-failure.png)
 
 The *Reset and Propagate* button resets the merge fail count and attempts to
 propagate your site changes again. This process gives the portal administrator
@@ -232,37 +232,37 @@ the opportunity to detect and fix a merge fail, when problems arise. This
 helpful process can also be done with page template merges, which follows
 similar steps.
 
-Site administrators can also add data to site template portlets. For example,
-site template administrators can add the Wiki portlet to a site template page
-and use the Wiki to create lots of articles. When a portal administrator creates
-a site from a site template, data is copied from the site template's portlets to
-the site's portlets. The preferences of the site's portlets are updated with the
+Site administrators can also add data to site template applications. For
+example, site template administrators can add the Wiki app to a site template
+page and use the Wiki to create lots of articles. When a portal administrator
+creates a site from a site template, data is copied from the site template's
+apps to the site's apps. The preferences of the site's apps are updated with the
 IDs of the copied data. For example, if a site is created from a site template
-that has a Wiki portlet with lots of wiki articles, the wiki articles are copied
-from the site template's scope to the site's scope and site's Wiki portlet is
+that has a Wiki app with lots of wiki articles, the wiki articles are copied
+from the site template's scope to the site's scope and the site's Wiki app is
 updated with the IDs of the copied wiki articles.
 
 +$$$
 
-**Important:** Portlet data, related resources, and permissions on resources
-are only copied from a site template to a site when that site is *first* created
+**Important:** App data, related resources, and permissions on resources are
+only copied from a site template to a site when that site is *first* created
 based on the template. No changes made in a a template's portlet data, related
-resources, or permissions are propagated to the site after the site is
-created. Neither are such changes propagated to a site by *Reset* or *Reset and
-Propagate* features. 
+resources, or permissions are propagated to the site after the site is created.
+Neither are such changes propagated to a site by the *Reset* or *Reset and
+Propagate* features.
 
 $$$
 
 For example, consider a site template administrator who includes a Message
-Boards portlet as part of a site template. She even creates Message Board
+Boards app as part of a site template. She even creates Message Board
 categories and configures permissions over the actions of the categories. The
-first time a site is created based on the site template, the categories (portlet
+first time a site is created based on the site template, the categories (app
 data) and related permissions are copied to the site. If the site template
 administrator adds, removes, or deletes some categories, however, such changes
 *aren't* propagated to the site. 
 
-Now that we've learned how site templates work, let's discuss how to use page
-templates. 
+Now that you've learned how site templates work, you'll discuss how to share
+site templates. 
 
 ## Sharing Site Templates
 
@@ -272,15 +272,18 @@ exported and imported manually in advance or the import will fail.
 
 To export a Site using a Site Template, use the following process:
 
-1. Go to *Control Panel* &rarr; *Site Templates* and click *Actions* &rarr;
-*Manage* for the Site Template your site is using.
-2. Click *Export* to obtain a LAR file with the content of the Site Template. Be
-sure to choose the applications and data you want exported.
-3. In your target environment, go to *Control Panel* &rarr; *Site Templates* and
-create a new Site Template.
-4. Click *Actions* &rarr; *Manage Pages* for that Site Template and then click
-*Import*.
-5. Upload the LAR file containing your site template's content.
+1. Go to the *Control Panel* &rarr; *Sites* &rarr; *Site Templates* menu.
+
+2. Click the *Actions* icon (![Actions](../../images/icon-actions.png)) and then
+   *Export* for the site template your site is using. You'll use the *Export*
+   screen to obtain a LAR file with the content of the site template. Be sure to
+   choose the applications and data you want exported.
+
+3. In your target environment, go to *Control Panel* &rarr; *Sites* &rarr; *Site
+   Templates* and create a new site template.
+
+4. Click *Actions* &rarr; *Import* for that site template and upload the LAR
+   file containing your site template's content.
 
 Now the site can be exported and imported normally to this new environment.
 
