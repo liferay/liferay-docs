@@ -1,20 +1,19 @@
 # Retrieving Guestbook Entries [](id=retrieving-guestbook-entries)
 
-If you completed the previous articles in this Learning Path, then you have an
-Android app that retrieves and displays guestbooks from the 
-[MVC Learning Path's](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development) 
+So far, you have an Android app that retrieves and displays guestbooks from
+the [MVC Learning Path's](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development) 
 Guestbook portlet. But that's all your app does. Tapping a guestbook in the 
 navigation drawer doesn't do anything besides close the drawer to show the 
 Action Bar and an empty screen. 
 
 ![Figure 1: Guestbook entries aren't showing yet in the app.](../../images/android-first-guestbook.png)
 
-This article walks you through the steps required to retrieve guestbook entries 
-from the Guestbook portlet. These steps are almost the same as those you used to 
-retrieve guestbooks. The only real difference, besides getting entries instead 
-of guestbooks, is that you'll use a fragment instead of an activity. 
+Next, you'll learn the steps required to retrieve guestbook entries from the
+Guestbook portlet. These steps are almost the same as those you used to retrieve
+guestbooks. The only real difference, besides getting entries instead of
+guestbooks, is that you'll use a fragment instead of an activity. 
 
-The steps you'll follow in this article to retrieve entries are listed here: 
+The steps you'll follow to retrieve entries are listed here: 
 
 1. Create a model class for the entries. As with guestbooks, you need a model 
    class to transform the JSON received from the portlet into entry model 
@@ -285,9 +284,9 @@ class for retrieving entries. In the `callback` package, create the
         }
     }
 
-Besides using entries instead of guestbooks, and `EntriesFragment` instead of 
+Besides using entries instead of guestbooks and `EntriesFragment` instead of 
 `GuestbooksActivity`, this class works the same as `GetGuestbooksCallback`. See 
-[the article on retrieving guestbooks](www.liferay.com) 
+[the article on retrieving guestbooks](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieving-guestbooks#creating-a-callback-class) 
 for details on how this class works. 
 
 Great! Your app now contains the basic infrastructure it needs to retrieve 
@@ -300,7 +299,7 @@ In your `EntriesFragment` class, you need a method for making the call to
 retrieve the portlet's entries. Recall that you retrieved guestbooks with the 
 `getGuestbooks` method in `GuestbooksActivity`. You'll retrieve entries 
 similarly by creating a `getEntries` method in `EntriesFragment`. Add this 
-method to the `EntriesFragment` class as follows: 
+method to the `EntriesFragment` class: 
 
     protected void getEntries(long guestbookId) {
         Session session = SessionContext.createSessionFromCurrentSession();
