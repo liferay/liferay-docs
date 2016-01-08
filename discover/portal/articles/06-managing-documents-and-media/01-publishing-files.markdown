@@ -4,8 +4,8 @@ As you create sites, you'll probably want to share files on them. Liferay's
 Documents and Media library (Document Library) let's you upload and publish all
 kinds of files on your sites. Pictures, videos, spreadsheets, slide
 presentations and more can be stored in and shared from the Document Library.
-Library instances can be scoped to a portal, site, or page, so you can work with
-files where their relevant.
+Library instances can be scoped to a Liferay instance, site, or page, so you can
+work with files where their relevant.
 
 In this chapter, you'll learn how to add files, display them, and collaborate on
 them. You can upload all kinds of files to the Document Library it even allows
@@ -60,11 +60,12 @@ click the role's Actions icon
 (![Actions](../../images/icon-action-triangle.png)) and select *Define
 Permissions*. The *Roles* screen appears, showing the *Define Permissions* tab.
 In that tab, navigate to *Site Administration &rarr; Content &rarr; Documents
-and Media*, select . *Access in Site Administration* from the *General
+and Media*, select *Access in Site Administration* from the *General
 Permissions* section, and click *Save*. This role will manage your special set
 of media files. Once you've created the role, assign it to the users who manage
-the media. Snappy (username: *snappy*) is the Lunar Resort's trigger-happy
-photographer. We assigned her to the role.
+the media. Snappy Fingers (username: *snappy*) is the Lunar Resort's
+trigger-happy photographer. We assigned her to the *Resort Guest Media Manager*
+role.
 
 +$$$
 
@@ -73,14 +74,16 @@ Permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions).
 
 $$$
 
-You've created your specialized role and assigned users to it. Next, you need a
-location in the Documents and Media library for that role to manage Lunar Resort
-guest media. A Documents and Media folder fits the bill. In the folder we create
-the role will add, organize, and share the files. First, open the Product Menu,
-click on your site's name, and navigate to *Content &rarr; Documents and Media*
-in for your site. The Documents and Media screen appears and displays the
-Documents and Media library's *Home* folder (the library's root folder). As you
-add files and folders to the library, they're listed here.
+You've created your specialized role and assigned users to it. In the Documents
+and Media library, you need a place for that role to manage Lunar Resort guest
+media. A Documents and Media folder fits the bill. In the folder we'll create the
+role will add, organize, and share the files. Let's navigate into your site's
+Documents and Media library. 
+
+Open the Product Menu, click on your site's name, and navigate to *Content
+&rarr; Documents and Media* in for your site. The Documents and Media screen
+appears and displays the Documents and Media library's *Home* (the library's
+root folder). As you add files and folders to the library, they're listed here.
 
 ![Figure 1: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload all kinds of documents to the library.](../../images/dm-admin-add-menu.png)
 
@@ -128,24 +131,24 @@ metadata fields associated with the document type to your document. On selecting
 a document type, you're prompted to fill out the fields associated with it.
 
 Let's continue with our example and create folders to organize the Lunar Resort
-guest photos and videos that we'll upload. From the Add menu, select *Folder*.
-The new folder form appears. Since the folder is for storing Lunar Resort guest
-media, name the folder *Resort Guest Media*. You can optionally describe the
-folder. Initially anyone can view the folder, but we'll change that after we
-create it. Expand the *Permissions* section link to show checkboxes for more
-permissions. By default, site members are able to add files, subfolders, and
-shortcuts and subscribe to changes to the folder's files. Deselect all of these
-checkboxes, as we only want resort media managers to modify the folder's files.
-Click *Save* to finish creating the folder. 
+guest photos and videos that we'll upload. From the document library's Add menu,
+select *Folder*. The new folder form appears. Since the folder is for storing
+Lunar Resort guest media, name the folder *Resort Guest Media*. You can
+optionally describe the folder. Initially anyone can view the folder, but we'll
+change that after we create it. Expand the *Permissions* section. By default,
+site members are able to add files, subfolders, and shortcuts and subscribe to
+changes to the folder's files. Click the *More Options* link and deselect all of
+these checkboxes, as we only want resort media managers to modify the folder's
+files. Click *Save* to finish creating the folder. 
 
-Note that you can force users to add only certain document types to a folder. By
-default, child folders inherit the restrictions of their parent folder. You can
-change this behavior by editing the folder and selecting the allowed document
-types.
+Document type restrictions and workflow definitions can be associated with each
+folder. Child folders inherit their parent folder's document type restrictions,
+by default. If workflow is enabled for the Document Library, you can specify
+workflow definitions per folder and document type. You can specify a folder's
+document type restrictions and workflow definitions from the folder's edit
+screen, after the folder's been created.
 
-If workflow is enabled for the Document Library, you can specify different workflow definitions per
-folder. Furthermore, you can specify different workflow definitions per document
-type and per folder. You can set this by editing the folder. 
+
 
 ![Figure 2: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../images/dm-doc-type-restrictions-and-workflow.png)
 
@@ -853,8 +856,8 @@ Windows.
 At the Lunar Resort, Activity Department members use WebDAV to access their
 Document Library. WebDAV provides an alternative way to do this using a file
 manager instead of a web browser. To access the Document Library folder from
-your file browser, you need to use log in credentials for the portal and the
-WebDAV URL of the folder you'd like to access.
+your file browser, you need to use log in credentials for the Liferay instance
+and the WebDAV URL of the folder you'd like to access.
 
 Navigate to the Documents and Media app hosting the folder you'd like to access.
 Click on the folder's Actions icon ![Actions](../../images/icon-actions.png) and
