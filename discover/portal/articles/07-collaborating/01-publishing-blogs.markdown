@@ -29,23 +29,23 @@ started.
 ## Adding Blog Entries [](id=adding-blog-entries)
 
 Each site comes with a built-in blog instance. So let's explore adding an entry
-to your site's blog. In Site Administration, the Blogs entry provides the best
+to your site's blog. In Site Administration, the Blogs app provides the best
 place to draft blogs. Click the Product Menu icon
 (![Product Menu](../../images/icon-menu.png)) to open the Product Menu. Then
 navigate to *Sites* &rarr; *\[Site Name\]* &rarr; *Content* &rarr; *Blogs*. The
 *Entries* screen appears, listing the site's blog entries. 
 
-Click the *Add Blog Entry* icon (![Add Blog Entry](../../images/icon-add.png))
-to bring up the blog entry editor. 
+Click the *Add* icon (![Add](../../images/icon-add.png)) to bring up the blog
+entry screen. 
 
 ![Figure 1: This screenshot highlights the blog entry editor's controls for formatting text, justifying images, and editing tables.](../../images/blogs-blogs-entry-mars.png)
 
-The editor's initial screen presents fields to set a cover image, title, and
-subtitle, and an area for creating the entry's content. You may be asking
-yourself, "Where are the editor's controls?" The editor gives you a seamless
-writing experience, displaying controls when you need them and hiding them from
-view when you don't need them. This keeps your canvas uncluttered, so you can
-focus on writing. As you create content, context-specific controls appear. 
+The screen presents fields to set a cover image, title, and subtitle, and an
+area for creating the entry's content. You may be asking yourself, "Where are
+the content editor's controls?" The editor gives you a seamless writing experience,
+displaying controls when you need them and hiding them from view when you don't
+need them. This keeps your canvas uncluttered, so you can focus on writing. As
+you create content, context-specific controls appear. 
 
 Go ahead and enter text in the *Content* area. If you highlight text, controls
 appear. These controls let you style the text or convert it to a link or a
@@ -67,15 +67,16 @@ add rows, columns, and cells.
 
 Now you're familiar with the editor's regular mode. If you'd rather work with
 the content's HTML code, you can. To switch the editor to source view, select
-the *Source* icon (`</>`). Note that an *abc* icon for regular mode appears,
-giving you the option to switch back to regular view. To satisfy your eyes,
-source view's moon icon and sun icon let you switch between a dark theme and a
-light theme. The built-in syntax coloring helps you identify HTML elements,
-regardless of the mode you're using. 
+the *Source* icon (`</>`). Note that a *Roller* icon
+(![Roller](../../images/icon-roller.png)) for regular mode appears, giving you
+the option to switch back to regular view. To satisfy your eyes, source view's
+moon icon and sun icon let you switch between a dark theme and a light theme.
+The built-in syntax coloring helps you identify HTML elements, regardless of the
+mode you're using. 
 
 You can even work in a dual pane view that shows your HTML code on the left and
 a preview pane on the right. To open this view, click the *Enlarge* icon
-(![Enlarge](../../images/enlarge-icon.png)). You can arrange the HTML and
+(![Enlarge](../../images/icon-enlarge.png)). You can arrange the HTML and
 preview panes horizontally or vertically. You can also hide the preview pane,
 so the HTML editor takes up the entire window space. No matter how you want to
 use the HTML editor, it can really help you stay "in the zone" as you create
@@ -99,9 +100,9 @@ your entry's purpose and is designed to attract readers. You can drag and drop
 onto this field any image you like. As an alternative to dragging and dropping
 an image, you can click the *Select File* button to use the image selector to
 choose an existing image in the blog, an image file from Documents and Media, or
-an image outside the portal. You can browse to an image file and upload it.
-After you set the entry's cover image, you can add a caption to it. And if you
-want to select a different image, you can click the *Change* icon
+an image outside the Liferay instance. You can browse to an image file and
+upload it. After you set the entry's cover image, you can add a caption to it.
+And if you want to select a different image, you can click the *Change* icon
 (![Change](../../images/icon-change.png)) to bring up the image selector again.
 
 Clicking the *Configuration* icon (![Gear](../../images/icon-gear.png)) at the
@@ -118,10 +119,10 @@ to another column on your blogs page, which lets users browse blog entries by
 tag. 
 
 Below this is the Related Assets heading. If there's some other content in the
-portal that's related to your entry, you can choose it here. For example, you
-might want to write a blog entry talking about a discussion that happened on the
-forums. To link those two assets together, select the forum thread under Related
-Assets. 
+Liferay instance that's related to your entry, you can choose it here. For
+example, you might want to write a blog entry talking about a discussion that
+happened on the forums. To link those two assets together, select the forum
+thread under Related Assets. 
 
 Blog entries also support *pingbacks*. Pingbacks are XML-RPC requests that are
 automatically sent when you link to another site. If you link to another site in
@@ -194,12 +195,12 @@ users.
 First, create a
 [role](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) for your
 bloggers and add them to the role. Next, in Blogs, click *Options* &rarr;
-*Permissions*. A list of both portal and site roles is displayed, and currently
-only the owner is checked for the *Add Entry* permission. Mark any other
-role or team that should be able to add blog entries and then click *Save*.
-Once this is done, users in the roles or teams that you selected are able to
-post to the shared blog. You can also grant roles and teams the ability to
-subscribe to blog updates. 
+*Permissions*. A list of both instance and site roles is displayed, and
+currently only the owner is checked for the *Add Entry* permission. Mark any
+other role or team that should be able to add blog entries and then click
+*Save*. Once this is done, users in the roles or teams that you selected are
+able to post to the shared blog. You can also grant roles and teams the ability
+to subscribe to blog updates. 
 
 From within the Control Panel, you can configure all the permissions for Blogs.
 Permissions for the Blogs and Blogs Aggregator applications are covered next.
