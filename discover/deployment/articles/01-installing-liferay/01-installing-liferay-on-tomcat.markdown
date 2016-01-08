@@ -182,12 +182,147 @@ servlet container.
                    connectionTimeout="20000"
                    redirectPort="8443" URIEncoding="UTF-8" />
 
-6. If you're on Unix or Linux, navigate to your `$TOMCAT_HOME/bin` folder and
-   run the following command
+6. If you're on Unix, Linux, or Mac OS, navigate to your `$TOMCAT_HOME/bin`
+   folder and run the following command
 
         chmod a+x *.sh
 
     This command makes the shell scripts in this folder executable.
+
+## Tomcat Database Configuration
+
+The easiest way to handle your database configuration is to let Liferay manage
+your data source. If you want to use Liferay's built-in data source, you can
+skip this section. When you first Liferay, you can enter the required database
+configuration information on the Basic Configuration page.
+
+If you want Tomcat to manage your data source, use this procedure:
+
+1. Make sure your database server is installed and working. If it's installed
+   on a different machine, make sure it's accessible from your Liferay machine.
+
+2. Add your data source as a resource in the context of your web application
+   specified in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`:
+
+        <Context...>
+            <Resource
+                name="jdbc/LiferayPool"
+                auth="Container"
+                type="javax.sql.DataSource"
+                driverClassName="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+                username="root"
+                password="root"
+                maxActive="100"
+                maxIdle="30"
+                maxWait="10000"
+            />
+        </Context>
+
+Note that the above resource definition assumes your database name is
+*lportal*, that you're using MySQL, and that your MySQL username and password
+are both *root*. You'll have to update these values with your own database name
+and credentials.
+
+Your Tomcat managed data source is now configured. Next is your mail session.
+
+## Tomcat Mail Configuration
+
+As with database configuration, the easiest way to handle mail configuration is
+to let Liferay handle your mail session. If you want to use Liferay's built-in
+mail session, skip this section and use Liferay's Control Panel to configure a
+mail server after Liferay has been installed and started.
+
+If you want to manage your mail session with Tomcat, use these instructions:
+
+To create a mail session bound to `mail/MailSession`, edit `$TOMCAT_
+HOME/conf/Catalina/localhost/ROOT.xml` and configure your mail session. Make
+sure to replace the example mail session values with your own.
+
+    <Context...>
+        <Resource
+            name="mail/MailSession"
+            auth="Container"
+            type="javax.mail.Session"
+            mail.pop3.host="pop.gmail.com"
+            mail.pop3.port="110"
+            mail.smtp.host="smtp.gmail.com"
+            mail.smtp.port="465"
+            mail.smtp.user="user"
+            mail.smtp.password="password"
+            mail.smtp.auth="true"
+            mail.smtp.starttls.enable="true"
+            mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+            mail.imap.host="imap.gmail.com"
+            mail.imap.port="993"
+            mail.transport.protocol="smtp"
+            mail.store.protocol="imap"
+        />
+    </Context>
+
+Your mail session is configured. Next, you'll make sure Liferay can 
+access your mail session and database.
+
+## Configuring Tomcat-managed Database and Mail Sessions
+
+In this section, you'll specify appropriate properties for connecting to your
+database and mail session.
+
+1. If you will use *Liferay Portal* to manage your data source, simply follow
+   the instructions on the Basic Configuration page that appears when you first
+   start Liferay.
+
+    If you are using *Tomcat* to manage your data source, add the following
+    line to your `portal-ext.properties` file in your *Liferay Home* folder to
+    specify your data source:
+
+        jdbc.default.jndi.name=jdbc/LiferayPool
+
+2. If you will use *Liferay Portal* to manage your mail session, you can
+   configure the mail session once Liferay has started. That is, after starting
+   your portal as described in the *Deploying Liferay* section, go to *Control
+   Panel &rarr; Server Administration &rarr; Mail* and enter the information
+   required to configure your mail session.
+
+    If you are using *Tomcat* to manage your mail session, add the following
+    configuration to your `portal-ext.properties` file to reference that mail
+    session:
+
+        mail.session.jndi.name=mail/MailSession
+
+It's just that easy! Before you deploy Liferay Portal, you should configure
+Portal Access Control Language (PACL) with Liferay on Tomcat.
+
+## Enabling PACL
+
+To enable PACL, you need to enable Tomcat's security manager. You already added
+the required permissions to the Tomcat policy configuration file,
+`catalina.policy`.
+
+- Edit your `$TOMCAT_HOME/bin/setenv.sh` (if on Linux, Unix, or Mac OS) or
+  `setenv.bat` (if on Windows) and enable the security manager by inserting the
+  following code into the `CATALINA_OPTS` variable (inside the quotation
+  marks):
+
+    `-Djava.security.manager -Djava.security.policy=$CATALINA_BASE/conf/catalina.policy`
+
+- Check that your `$TOMCAT_HOME/conf/catalina.policy` file specifies the
+  required permissions (you should have already addressed this in the
+  Configuring Tomcat section):
+
+        grant {
+            permission java.security.AllPermission;
+        };
+
+To enable the security manager on Tomcat, the server must be started with the
+`-security` command line option. Shut down your Tomcat instance and restart it
+with the following command:
+
+    ./startup.sh -security
+
+Tomcat reports the message `Using Security Manager` to your terminal.
+
+Now you have PACL enabled and configured for your portal.
 
 ## Deploying Liferay
 
