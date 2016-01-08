@@ -1,6 +1,6 @@
 # Displaying Guestbook Entries [](id=displaying-guestbook-entries)
 
-To display entries, you need to perform the following two steps: 
+To display entries, you need to perform two steps: 
 
 1. Create an adapter for displaying the entries in `EntriesFragment`'s 
    `ListView`. Recall that because `EntriesFragment` extends `ListFragment`, it 
@@ -43,7 +43,7 @@ the `onActivityCreated` method, above the `getEntries` call:
                 return view;
             }
         };
-        
+ 
     setListAdapter(_adapter);
 
 This adapter has significantly more code than the guestbooks adapter. This is 
@@ -51,8 +51,8 @@ because the entries adapter uses the default layout `simple_list_item_2`. Recall
 that the guestbooks adapter uses the default layout `simple_list_item_1`. This 
 layout is sufficient for showing guestbook names because it displays only a 
 single string for each list item. Each entry, however, should display two 
-strings: the entry's message, and the name of the person who left it. The 
-`simple_list_item_2` layout lets you display these strings, because it displays 
+strings: the entry's message and the name of the person who left it. The 
+`simple_list_item_2` layout lets you display these strings, because it can show 
 two strings for each list item. You need to tell it what two strings to display, 
 though. This is why you override the `getView` method. After using 
 `findViewById` to retrieve the `simple_list_item_2` layout's two strings, you 
@@ -153,9 +153,9 @@ Next, you'll display the entries by adding `EntriesFragment` to
 
 Now that `EntriesFragment` can put entries in its `ListView`, you're ready to 
 add the fragment to `GuestbooksActivity`. First, you need to put a fragment 
-container in the layout you want the fragment to appear in. In short, a fragment 
-container is a layout used to hold a fragment. For more information, see 
-[Android's documentation on adding fragments at runtime](http://developer.android.com/training/basics/fragments/fragment-ui.html#AddAtRuntime). 
+container in the layout where you want the fragment to appear. In short, a
+fragment container is a layout used to hold a fragment. For more information,
+see [Android's documentation on adding fragments at runtime](http://developer.android.com/training/basics/fragments/fragment-ui.html#AddAtRuntime). 
 Since you want the entries to appear in `GuestbooksActivity`, your first thought 
 might be to put the fragment container directly in `activity_guestbooks.xml`. 
 Don't do this. Recall that the Navigation Drawer Activity template in Android 
