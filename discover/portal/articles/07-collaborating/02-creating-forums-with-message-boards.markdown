@@ -20,34 +20,33 @@ Let's create a message board.
 
 ## Creating Message Boards [](id=creating-message-boards)
 
-You can create a message board instance for a portal instance, a site, or page.
-A portal's message board can be used on any of its pages. A message board can be
-scoped to a site, including a regular site, an organization's site, or a user's
-profile site or dashboard site. Message Boards in Site Administration lets you
-administer all of a message board's options. Each portal and site has a message
-board instance built-in. If you want to work with a message board scoped to a
-page, you must create the page scope from a Message Boards application on that
-page. 
+You can create a message board instance for a Liferay instance, a site, or page.
+An instance's message board can be used on any of its pages. A message board can
+be scoped to a site, including a regular site, an organization's site, or a
+user's profile site or dashboard site. Message Boards in Site Administration
+lets you administer all of a message board's options. Each Liferay instance and
+site has a message board instance built-in. If you want to work with a message
+board scoped to a page, you must create the page scope from a Message Boards
+application on that page. 
 
 To scope a message board to a page, first add the Message Boards application to
 the page. Then click the app's *Options* icon
-(![Options](../../images/icon-gear.png)), select *Configuration*, and select the
+(![Options](../../images/icon-app-options.png)), select *Configuration*, and select the
 *Scope* tab, to list the available scopes. Select the scope with page's name, or
-*+ PageName (Create New)*, if the scope hasn't been created already. Your
+*PageName (Create New)*, if the scope hasn't been created already. Your
 message board is now scoped to the page and available to work with in Site
 Administration. 
 
-To administer a message board, open the *Product Menu*
-(![Product Menu](../../images/icon-menu.png)) and navigate the *Content* section
-for your site or global scope. The Message Boards administration screen appears. 
+To administer a message board, open the *Product Menu* (![Product
+Menu](../../images/icon-menu.png)) and navigate the *Content* section for your
+site, page, or global scope. The Message Boards administration screen appears. 
 
 +$$$
 
-**Note**: If a site has one or more page scopes, its current scope shows in
-darkened font below the *Content* header. *Default Scope* is the site's scope.
-To switch to a particular page scope, click the *Gear* icon to list the
-available scopes, and select the scope with the page's name. Finally, select
-*Message Boards* from under the *Content* heading. 
+**Note**: To administer a message board for a particular page scope, click the
+*Compass* icon (![Compass](../../images/icon-compass.png)) to list the available
+scopes, and select the scope with the page's name. Finally, select *Message
+Boards* from under the *Content* heading.
 
 $$$
 
@@ -170,13 +169,13 @@ going from zero messages all the way up to one thousand.
 
 In addition to ranks, you can also choose labels for certain users to have
 displayed in their profiles as shown by the Message Boards application. The
-labels correspond to memberships the users have in your portal. Below are
-examples of using the label *Moderator*. The Moderator label in this
-configuration is applied for anyone who is a part of any of the Message Boards
-Administrator groups: the site role, the organization, the organization role,
-the regular role, or the user group. Of course, you probably wouldn't want to
-create a role, organization, organization role, site role, and user group all
-with the same name in your portal, but you get the idea. 
+labels correspond to memberships the users have in Liferay. Below are examples
+of using the label *Moderator*. The Moderator label in this configuration is
+applied for anyone who is a part of any of the Message Boards Administrator
+groups: the site role, the organization, the organization role, the regular
+role, or the user group. Of course, you probably wouldn't want to create a role,
+organization, organization role, site role, and user group all with the same
+name in your portal, but you get the idea. 
 
     Moderator=organization:Message Boards Administrator
 
@@ -254,9 +253,9 @@ focus on adding categories for message board threads.
 
 ## Adding Categories [](id=adding-categories)
 
-You are now ready to add categories to your message boards. Click the *Add
-Category* button. Enter a name for the category and a description of the
-category. 
+You are now ready to add categories to your message boards. Click the *Add* icon
+(![Add](../../images/icon-add.png)) and select *Category* button. Enter a name for the
+category and a description of the category. 
 
 Categories can have different display styles. The available categories must be
 set in [portal property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Message%20Boards%20Portlet)
@@ -306,7 +305,7 @@ posts.
 
 After you've created a category, you can revisit its permission options by
 clicking the category's *Actions* icon
-(![Actions](../../images/icon-action-triangle.png)) and selecting *Permissions*. 
+(![Actions](../../images/icon-actions.png)) and selecting *Permissions*. 
 
 The form also lets you enable the mailing list function. If don't want to add a
 mailing list to the category you're creating, you can save your changes now. You
@@ -329,13 +328,13 @@ with Parent Category* check box, and click *Move*.
 As you add categories to a message board, they're listed on the message board's
 home. The list displays the names of the categories and the numbers of
 subcategories, threads, and posts in each one. To add a subcategory to category,
-click on the category's name in the list and then click the *Add Subcategory*
-button. The form for adding a subcategory appears and is populated, by default,
-with the properties of the parent category. This includes the parent category's
-display style (Default or Question) and mailing list configuration. Of course,
-you can change the display style or mailing list configuration of a subcategory
-just as with any category. The *Add Subcategory* form and the *Add Category*
-form are the same. 
+click on the category's name in the list and then click the *Add* icon and
+select *Subcategory*. The form for adding a subcategory appears and is
+populated, by default, with the properties of the parent category. This includes
+the parent category's display style (Default or Question) and mailing list
+configuration. Of course, you can change the display style or mailing list
+configuration of a subcategory just as with any category. The *Add Subcategory*
+form and the *Add Category* form are the same. 
 
 ![Figure 3: Categories help you organize threads so users can find topical threads that interest them.](../../images/message-boards-home.png)
 
@@ -352,7 +351,7 @@ notifications to subscribed users, whenever a new post is created or an existing
 post is updated. Liferay can import email replies to message board notifications
 directly into the message board. This is a very useful feature since it allows
 users to interact on the message board via email, without needing to log in to
-the portal and view the message board page directly. This feature is, however,
+Liferay and view the message board page directly. This feature is, however,
 disabled by default. To enable it, add the following line to your
 `portal-ext.properties` file: 
 
@@ -480,8 +479,8 @@ categories using email, this should be the same address configured on the
 *Incoming* section. 
 
 **Use Custom Outgoing Server:** allows you to use a different mail server than
-the one that is configured for the portal. If you check this box, more options
-appear: 
+the one that is configured for the Liferay instance. If you check this box, more
+options appear: 
 
 -   **Server Name:** lets you enter the host name of the SMTP mail server you are
     using. 
@@ -505,12 +504,13 @@ explore posting messages to them and interacting with other user's threads.
 
 ## Using the Message Boards [](id=using-the-message-boards)
 
-You can add the Message Boards application to a page from the *Add* menu's
-*Collaboration* section. Users will immediately recognize that the interface is
-similar to many other implementations they've seen before. Message boards are
-nothing new to the Internet, and many people have been using them for quite a
-long time. In any case, it can't hurt to explore how to use Liferay Message
-Boards and discover all of its features. 
+You can add the Message Boards application to a page from the *Add*
+(![Add](../../images/icon-control-menu-add.png) menu's *Collaboration* section.
+Users will immediately recognize that the interface is similar to many other
+implementations they've seen before. Message boards are nothing new to the
+Internet, and many people have been using them for quite a long time. In any
+case, it can't hurt to explore how to use Liferay Message Boards and discover
+all of its features. 
 
 ![Figure 4: The Message Boards application lets you explore its categories, interact with message threads, and post new messages.](../../images/message-boards-category-threads.png)
 
@@ -532,7 +532,10 @@ all of the users who have been banned from posting on the message boards.
 
 ### Posting New Threads [](id=posting-new-threads)
 
-To post a new thread click the *Post New Thread* button. A message editing form
+To post a new thread click the Add icon
+(![Add](../../images/icon-portlet-add-control.png) in the app or
+![Add](../../images/icon-add.png) in Site Administration) and select *Thread*. A
+message editing form 
 appears. The body field on this form is different from that of the other Liferay
 applications. The reason for this is to support *BBCode*, which is a standard
 form of markup used in many message board products. Before BBCode was invented,
@@ -632,11 +635,12 @@ Message Boards in Site Administration facilitates day to day thread
 administration. You may wish to separate this function out by a role, and then
 delegate that role to one or more users. That would free you up to concentrate
 on other areas of your site. To do this, you can, for example, create a role
-called Message Board Administrator. This role can be scoped by the portal, an
-organization, or a site. If you create a portal-scoped role, members of this
-role will be able to administer Message Boards throughout the portal. If it is
-an organization or site-scoped role, members of this role will be able to
-administer a Message Boards application in only that organization or site. 
+called *Message Board Administrator*. This role can be scoped to the Liferay
+instance, an organization, or a site. If you create an instance-scoped role,
+members of this role will be able to administer Message Boards throughout
+Liferay. If it is an organization or site-scoped role, members of this role will
+be able to administer a Message Boards application in only that organization or
+site. 
 
 You can create such a role from the Control Panel. To define the role's
 permissions, click its *Define Permissions* action and navigate to *Site
@@ -659,14 +663,14 @@ can halt activity on a thread by clicking *Lock Thread*.
 Many times a user will post a thread in the wrong category. Administrators may
 in this case want to move a thread to the proper category. This is very easy to
 do. You can select the *Actions* menu
-(![Actions](../../images/icon-action-triangle.png)) to the right of the thread
-and choose *Move*. Or, if you are already viewing the thread and you have
+(![Actions](../../images/icon-actions.png)) to the right of the thread and
+choose *Move*. Or, if you are already viewing the thread and you have
 administrative access, there is a link at the top of the thread labeled *Move
 Thread*. Click this link. You will be presented with a simple form which allows
 you to select a category to which to move the thread and a check box which
 allows you to post a message explaining why the thread was moved. This message
 will be posted as a reply to the thread you are moving. When finished, click the
-*Move Thread* button and the thread will be moved. 
+*Move Thread* button and the thread will be moved.
 
 ### Deleting Threads [](id=deleting-threads)
 
