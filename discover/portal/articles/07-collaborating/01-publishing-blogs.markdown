@@ -301,7 +301,7 @@ website, Facebook, or Netvibes, or as an OpenSocial Gadget.
 
 **Scope:** lets you specify the blog instance the application displays: the
 current site's blog (default), global blog, or page blog. If the page doesn't
-already have a blog instance, you can select scope option *+ \[Page Name\]
+already have a blog instance, you can select scope option *\[Page Name\]
 \(Create New\)* to create a page-scoped blog instance for the Blogs application
 to display. 
 
@@ -315,7 +315,8 @@ works.
 You can set up a whole web site devoted just to blogging if you wish. The Blogs
 Aggregator lets you publish entries from multiple bloggers on one page, giving
 further visibility to blog entries. You can add it to a page from the
-*Collaboration* category in the *Add &rarr; Applications* menu. 
+*Collaboration* category in the *Add*
+(![Add](../../images/icon-control-menu-add.png)) *&rarr; Applications* menu. 
 
 If you click *Configuration* from the options button in the app's title bar, the
 Blogs Aggregator's configuration page appears. From here, you can set its
@@ -373,7 +374,7 @@ website, Facebook, or Netvibes, or as an OpenSocial Gadget.
 
 **Scope:** lets you specify the blog instance the application displays: the
 current site's blog (default), global blog, or the page's. If the page doesn't
-already have a blog instance, you can select scope option *+ \[Page Name\]
+already have a blog instance, you can select scope option *\[Page Name\]
 \(Create New\)* to create a page-scoped blog instance and set the Blogs app to
 display it.
 
