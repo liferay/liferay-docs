@@ -57,7 +57,7 @@ Menu](../../images/icon-menu.png)). Then navigate to *Control Panel &rarr; Users
 organization has a site, create an Organization Role. Otherwise, create it as a
 Site Role. Name the role *Resort Guest Media Manager*. Once you've created it,
 click the role's Actions icon
-(![Actions](../../images/icon-action-triangle.png)) and select *Define
+(![Actions](../../images/icon-actions.png)) and select *Define
 Permissions*. The *Roles* screen appears, showing the *Define Permissions* tab.
 In that tab, navigate to *Site Administration &rarr; Content &rarr; Documents
 and Media*, select *Access in Site Administration* from the *General
