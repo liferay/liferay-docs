@@ -16,11 +16,9 @@ guaranteed to work on all platforms/environments.
 Unfortunately, there can be some minor headaches when using the generator on
 Windows. The main reason is because, by default, the generator uses node-sass,
 which requires node-gyp to run. Furthermore, node-gyp requires Python and Visual
-Studio to be installed. You can read more at the following links:
+Studio to be installed. You can read more at the following link:
 
-[node-gyp Installation](https://github.com/nodejs/node-gyp#installation) 
-
-[Visual Studio Setup](https://github.com/nodejs/node-gyp/wiki/Visual-Studio-2010-Setup)
+[node-gyp Installation](https://github.com/nodejs/node-gyp#installation)
 
 <!-- The *Visual Studio Setup* link is for setting up VS 2010. The instructions
 for installing node-gyp appear to require either VS 2013 or VS 2015. Should we
@@ -28,8 +26,8 @@ update the VS setup instruction to be compatible with what is required for
 node-gyp? -Cody -->
 
 Alternatively you can use the Ruby based version of Sass. In order to use that 
-version of Sass, you'll need to install Ruby with the Ruby Installer, and 
-install the Sass and Compass gems from the command line using the following 
+version of Sass, you'll need to install Ruby with the [Ruby Installer](http://rubyinstaller.org/), 
+and install the Sass and Compass gems from the command line using the following 
 command: 
 
     gem install sass compass
@@ -166,8 +164,26 @@ theme files into a `.war` file, ready to be deployed to a Liferay server. Run
 using `gulp build` in your theme's root directory.
 
 **Deploy:** initally runs the `build` task, and once the `.war` file has been
-created, it deploys to the specified app server. Invoke this using `gulp deploy`
-in your theme's root directory.
+created, it deploys to the specified local app server. Invoke this using 
+`gulp deploy` in your theme's root directory.
+
+If you want to deploy to a live site, use the `--live` flag to deploy to a
+remote server. Invoke this using `gulp deploy --live` in your theme's root 
+directory.
+
+Note that the specified server must have the [server-manager-web](https://github.com/liferay/liferay-plugins/tree/master/webs/server-manager-web) 
+plugin deployed. The `--live` flag will deploy to the remote server specified in 
+the `init` task.
+
+If you want to deploy to a different server without changing the default server 
+specified in `init`, you may use the `--url` flag.
+
+`gulp deploy --live --url http://some-host.com`
+
+You may also specify your login credentials using the `-u`/`--username` and 
+`-p`/`--password` flags.
+
+`gulp deploy --live -u test@liferay.com -p test`
 
 **Extend:** allows you to specify what base theme to extend from. By default,
 themes created with the [theme generator](https://github.com/liferay/generator-liferay-theme) 
@@ -182,6 +198,9 @@ modules on npm.
 Once it gives you the options and you make your selection, it will add any
 selected modules to your `package.json` under dependencies and run `npm
 install`.
+
+**Init:** Prompts user for local and remote appserver information used for
+deployment purposes.
 
 **Status:** Displays what base theme/themelets your theme is extending. Invoked
 with `gulp status` in your theme's root directory.
