@@ -1,7 +1,7 @@
 # Creating Get Guestbooks Screenlet [](id=creating-get-guestbooks-screenlet)
 
 The app you created in this Learning Path's previous section calls the Guestbook 
-portlet's remote services, and displays the results, from the app's activity and 
+portlet's remote services and displays the results, using the app's activity and 
 fragment code. Although this works, it isn't very modular. In other words, the 
 code that retrieves and displays data from the Guestbook portlet isn't separate 
 from the rest of the app's code. This tight coupling could cause issues if you 
@@ -19,7 +19,7 @@ This lets you quickly change a Screenlet's appearance without affecting its
 functionality. In summary, Screenlets are pretty much the greatest thing since 
 sliced bread. Now it's time to make a sandwich. 
 
-In the sections that follow, you'll create Screenlets that retrieve and display 
+In the parts that follow, you'll create Screenlets that retrieve and display 
 guestbooks and entries: the Get Guestbooks Screenlet and the Get Entries 
 Screenlet. You'll then change the app to use these Screenlets instead of using 
 the Guestbook Mobile SDK directly in the app's activity and fragment code. 
@@ -31,16 +31,15 @@ Guestbook portlet's contents. The following screenshot illustrates this.
 
 ![Figure 1: Besides using Screenlets to retrieve and display guestbooks and entries, the app's design is unchanged.](../../images/android-app-design-screenlets.png)
 
-This section of the Learning Path shows you how to create the Get Guestbooks 
-Screenlet. You'll use the following steps to create the Screenlet: 
+Next, you'll learn how to create the Get Guestbooks Screenlet by following these
+steps: 
 
-1. Getting started: creating the Screenlet's package, and model class. 
+1. Getting started: creating the Screenlet's package and model class. 
 
 2. Creating the Screenlet's UI (its View). 
 
 3. Creating the Screenlet's server call. Screenlets use *interactors* to make 
-   server calls. The following components make up an interactor: an event, a 
-   callback, a listener, and the interactor interface and its implementation. 
+   server calls. 
 
 4. Creating the Screenlet class. The Screenlet class governs the Screenlet's 
    behavior. 
@@ -54,5 +53,4 @@ This section of the Learning Path follows the same basic steps as this tutorial,
 plus a few additional steps specific to the Get Guestbooks Screenlet. If you get 
 confused or stuck while creating the Screenlet, refer to the finished app that 
 contains the Screenlet code 
-[here in GitHub](https://github.com/ngaskill/liferay-docs/tree/LRDOCS-1816-android-lp/develop/learning-paths/mobile/code/06-using-your-screenlets/LiferayGuestbook). 
-<!-- Change this link once the app gets merged in to 6.2.x -->
+[here in GitHub](https://github.com/liferay/liferay-docs/develop/learning-paths/mobile/code/06-using-your-screenlets/LiferayGuestbook). 

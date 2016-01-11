@@ -23,7 +23,7 @@ Now you're ready to get started on the Screenlet itself.
 
 ## Creating the Model Class for Guestbooks [](id=creating-the-model-class-for-guestbooks)
 
-Although you'll retrieve guestbooks by using the Screenlet, the Screenlet must 
+Although you'll use the Screenlet to retrieve guestbooks, the Screenlet must 
 use the same Guestbook Mobile SDK you built earlier to call the Guestbook 
 portlet. Thus, the Screenlet needs a model class that can transform the JSON 
 containing the guestbooks into proper guestbook model objects. Fortunately, you 
