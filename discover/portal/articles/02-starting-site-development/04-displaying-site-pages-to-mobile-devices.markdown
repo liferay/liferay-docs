@@ -1,11 +1,11 @@
 # Displaying Site Pages to Mobile Devices
 
-Mobile device families allow you to configure sets of rules to alter the
-behavior of the portal based on the device being used to access Liferay. The
-proportion of mobile device users browsing the web has been steadily increasing,
-so it's important to be able to handle different kinds of devices appropriately.
-For instance, you can configure the look and feel of Liferay pages accessed by
-smartphone or tablet users differently from those accessed by PC users.
+Mobile device families let you configure sets of rules to alter the behavior of
+Liferay based on the device being used to access it. The proportion of mobile
+device users browsing the web has been steadily increasing, so it's important to
+be able to handle different kinds of devices appropriately. For instance, you
+can configure the look and feel of Liferay pages accessed by smartphone or
+tablet users differently from those accessed by PC users.
 
 Both sites and individual pages can be configured with any number of mobile
 device families. A family is designed to describe a group of devices. It can
@@ -20,7 +20,7 @@ characteristics of the device. While some of the characteristics are provided by
 the device, most are not. For this reason, there are databases that contain
 information about thousands of devices. These databases make it possible to
 learn every detail about a device from the device type, which is included in
-each request sent to the portal. Liferay's Mobile Device Rules can connect to
+each request sent to Liferay. Liferay's Mobile Device Rules can connect to
 device databases so that you can use their device characteristics in your rules. 
 
 Among the applications available on Liferay Marketplace, you can find the Device
@@ -29,20 +29,22 @@ integration with WURFL, an open source database licensed with the AGPLv3
 license. Commercial licenses are also available. It's also possible to develop
 plugins that integrate with other device databases. Even if you don't have a
 device database, you can still set up mobile device rules. They won't, however,
-be effective until a database is deployed, because the portal won't have enough
+be effective until a database is deployed, because Liferay won't have enough
 information about the devices being used to make page requests.
 
 To configure mobile device rules, you must install the Device Recognition
 Provider EE application on your instance of Liferay Portal EE. This app uses the
 WURFL database to enable Liferay to detect which mobile device or operating
 system is being used for any given request. To install the app, navigate to the
-Store section of the Control Panel, located under the Marketplace heading. Click
-on the *Utility* section and then on *See All*. Search for the Device
-Recognition Provider EE application and click on it. Finally, click on the price
-tag to begin purchasing the app. Once you've acquired the app, you need to
-download and install it. To do so, navigate to the Purchased section of the
-Control Panel, find your Device Recognition Provider EE app, and click on
-*Download* and then *Install*.
+*Apps* &rarr; *Store* section of the Control Panel. Once you've signed in to
+Marketplace, search for the Device Recognition Provider EE application and click
+on it. Finally, click on the price tag to begin purchasing the app. Once you've
+acquired the app, you need to download and install it. To do so, navigate to the
+Purchased section of the Control Panel, find your Device Recognition Provider EE
+app, and click on *Download* and then *Install*.
+
+<!-- Left off here until I can get 7.0 version of Device Recognition Provider EE
+application to test. -Cody -->
 
 +$$$
 
@@ -54,9 +56,9 @@ to WURFL manually by downloading the SLF4J distribution from
 [http://www.slf4j.org/download.html](http://www.slf4j.org/download.html),
 unzipping the resulting file, copying `slf4j-log4j12-<version>.jar` to
 `[WEB_APP_HOME]/wurfl-web/WEB-INF/lib` folder, and restarting your Liferay
-instance. On some application servers, you'll need to add this .jar file to the
-`wurfl-web.war` file first (in the directory noted above) before deploying the
-file to your server. 
+instance. On some application servers, you'll need to add this `.jar` file to
+the `wurfl-web.war` file first (in the directory noted above) before deploying
+the file to your server.
 
 $$$
 
