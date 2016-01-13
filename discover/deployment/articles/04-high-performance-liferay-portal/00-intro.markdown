@@ -1,3 +1,0 @@
-# Placeholder intro. [](id=placeholder-intro-1)
-
-This is a placeholder. The real intro will be written soon. 
