@@ -1,4 +1,4 @@
-# Upgrading to Liferay 7
+# Upgrading to Liferay 7 [](id=upgrading-to-liferay-7)
 
 In this article, you'll learn how to upgrade to Liferay 7. Please see the
 [Upgrading to Liferay 6.2](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
@@ -15,7 +15,7 @@ during the upgrade process. Once you have upgraded your portal, remove this
 property or set it to `false` so that you can index all objects from Liferay's
 Control Panel.
 
-## Running an Upgrade Manually
+## Running an Upgrade Manually [](id=running-an-upgrade-manually)
 
 All Liferay servers must be shut down before performing an upgrade.
 
@@ -58,7 +58,7 @@ core. It also runs the upgrades for each of the installed modules if they are
 in automatic mode. If the modules are not in automatic mode, they can be
 upgraded individually as explained below.
 
-## Upgrading Modules Individually
+## Upgrading Modules Individually [](id=upgrading-modules-individually)
 
 You can specify that the portal should just upgrade the core and not the
 modules by adding a file called

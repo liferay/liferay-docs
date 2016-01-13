@@ -1,4 +1,4 @@
-## Maintaining Liferay
+# Maintaining Liferay [](id=maintaining-liferay)
 
 In this section, you'll about how to maintain a Liferay installation. You'll
 learn how to back up a Liferay installation, how to patch a Liferay

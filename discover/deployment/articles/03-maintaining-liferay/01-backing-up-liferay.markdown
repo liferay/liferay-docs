@@ -1,4 +1,4 @@
-# Backing up a Liferay Installation
+# Backing up a Liferay Installation [](id=backing-up-a-liferay-installation)
 
 Once you have an installation of Liferay Portal running, you should implement a
 comprehensive backup plan. You'll be very thanking for your backup procedures
@@ -7,7 +7,7 @@ different from any other Java web application that might be running on your
 application server. Nevertheless, there are some specific components you should
 include in your backup plan.
 
-## Backing up Source Code
+## Backing up Source Code [](id=backing-up-source-code)
 
 If you have extended Liferay or have written any plugins, they should be stored
 in a source code repository such as Git, Subversion, or CVS, unless you're
@@ -20,7 +20,7 @@ important to include source code in a Liferay backup plan.
 Next, let's examine the items that need to be backed up in your Liferay
 installation.
 
-## Backing up Liferay's File System
+## Backing up Liferay's File System [](id=backing-up-liferays-file-system)
 
 Liferay's properties configuration files, such as
 `portal-setup-wizard.properties` and `portal-ext.properties`, are stored in the
@@ -63,7 +63,7 @@ files, you should also back up this location.
 That covers the file system locations used by Liferay. Next, let's discuss how
 to back up Liferay's database.
 
-## Backing up Liferay's Database
+## Backing up Liferay's Database [](id=backing-up-liferays-database)
 
 Liferay's database is the central repository for all of the portal's
 information. It's the most important component that needs to be backed up. You
