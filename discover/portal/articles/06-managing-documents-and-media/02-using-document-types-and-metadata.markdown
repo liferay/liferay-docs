@@ -1,4 +1,4 @@
-# Document Types and Metadata Sets [](id=document-types-and-metadata-sets)
+# Using Document Types and Metadata Sets
 
 When a user assigns a document type to a document, the user is required to fill
 out the fields defined by the metadata set of the document type. This encourages
@@ -12,7 +12,7 @@ portlet to search for these terms. Document types and metadata sets are
 accessible from the *Manage* button at the top of the Documents and Media
 portlet window.
 
-![Figure 5.3: Navigate to the Document Types Dialog Box by clicking *Manage* &rarr; *Document Types*.](../../images/05-document-types.png)
+![Figure 1: Navigate to the Document Types Dialog Box by clicking *Manage* &rarr; *Document Types*.](../../images/05-document-types.png)
 
 You can add a new document type using the Add button at the top of the dialog
 box. To do so, you need to define one or more metadata sets to associate with
@@ -42,7 +42,7 @@ window. A metadata set consists of a group of fields. If you click the *Add*
 button, you can use same UI for defining a metadata set that you used in the Add
 Document Type window.
 
-![Figure 5.4: Adding a New Metadata Set is easier than ever with Liferay's advanced editor.](../../images/05-new-metadata-set.png)
+![Figure 2: Adding a New Metadata Set is easier than ever with Liferay's advanced editor.](../../images/05-new-metadata-set.png)
 
 <!-- Needs to be replaced for 6.2 -->
 <!-- Editor had icons missing during image updating cycle -->
