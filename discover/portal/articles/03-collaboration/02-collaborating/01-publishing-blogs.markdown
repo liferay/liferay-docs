@@ -1,13 +1,12 @@
 # Publishing Blogs [](id=publishing-blogs)
 
 Since blogs are a mainstay on the web, bloggers and blog administrators expect
-feature-rich environments for publishing blogs. Bloggers expect not only a
-powerful editor that allows them to create terrific content, but also a
-pleasurable authoring experience. Blog admins demand an intuitive environment
-that facilitates configuring blog instances and managing blog entries
-efficiently. Liferay's Blogs meets these demands. 
+feature-rich environments for publishing blogs. They want both a powerful
+editor and a pleasurable authoring experience. Blog admins demand an intuitive
+environment that facilitates configuring blog instances and managing blog
+entries efficiently. Liferay's Blogs meets these demands. 
 
-Its editor delivers features you'd expect, in an elegant in-context manner. It
+Its editor delivers features you'd expect in an elegant in-context manner. It
 has a complete set of WYSIWYG controls that appear where and when you need them.
 You can stay in this easy-to-use mode or switch to source mode to edit your
 content's HTML code. In source mode, you can work with light text on a dark
@@ -18,17 +17,17 @@ a satisfying experience creating awesome blog posts.
 Lastly, Liferay Blogs empowers you to show off your blogs using powerful display
 apps. You can leverage Liferay's built-in display templates or create your own,
 to present blogs the way you like them. And you can now add a beautiful cover
-image to each of your blog entries. They're like album covers for your posts.
-Let's face it--you might not be able to judge a book by its cover, but you're
-more likely to draw readers to your blog entry by decorating it with an enticing
-cover image! 
+image to each of your blog entries, like album covers for your posts. Let's face
+it--you might not be able to judge a book by its cover, but you're more likely
+to draw readers to your blog entry by decorating it with an enticing cover
+image! 
 
 By now you're probably chomping at the bit to start blogging, right? Let's get
 started. 
 
 ## Adding Blog Entries [](id=adding-blog-entries)
 
-Each site comes with a built-in blog instance. So let's explore adding an entry
+Each site comes with a built-in blog instance, so let's explore adding an entry
 to your site's blog. In Site Administration, the Blogs app provides the best
 place to draft blogs. Click the Product Menu icon
 (![Product Menu](../../images/icon-menu.png)) to open the Product Menu. Then
