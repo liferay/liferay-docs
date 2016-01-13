@@ -1,4 +1,4 @@
-# Using Web Services for Remote Portlets (WSRP)
+# Using Web Services for Remote Portlets (WSRP) [](id=using-web-services-for-remote-portlets-wsrp)
 
 The Web Services for Remote Portlets (WSRP) specification defines a web service
 interface for accessing and interacting with presentation-oriented web services
@@ -22,7 +22,7 @@ presents it to the user in a portlet window.
 Below, you'll see how the components interact with each other. So without
 further ado, let's explore WSRP in Liferay!
 
-## WSRP with Liferay
+## WSRP with Liferay [](id=wsrp-with-liferay)
 
 Liferay provides a deployable WSRP portlet that supports the 1.0 and 2.0
 specifications. The portlet is available from Liferay Marketplace as a CE or EE
@@ -121,7 +121,7 @@ portal.
 
 Next, you'll learn how to create custom remote portlets.
 
-## Creating Custom Remote Portlets
+## Creating Custom Remote Portlets [](id=creating-custom-remote-portlets)
 
 With the demand for dynamic portlets by end users, sometimes a finite,
 pre-selected list of remote portlets isn't enough. Because of this, Liferay
