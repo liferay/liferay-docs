@@ -11,45 +11,58 @@ Liferay. Other types of content (blog posts, wiki articles, message board posts,
 etc.) are also considered assets. Liferay provides a general framework for
 handling assets that includes tags, categories, comments, ratings, and more.
 Please see the
-[Displaying Content Dynamically](/discover/portal/-/knowledge_base/6-2/displaying-content-dynamically)
+[Publishing Content Dynamically](/discover/portal/-/knowledge_base/7-0/publishing-content-dynamically)
 section for more information on Liferay's asset framework.
-
-<!-- TODO: Replace link above with 7.0 link, when available. -Cody -->
 
 ## Creating Web Content
 
-Content is the reason web sites exist. Liferay Portal has made it easier than
-ever to get content published to your site. Because Liferay Portal is so
-flexible, you can use basic authoring tools right away or take advantage of the
-more advanced features. It's adaptable to your needs.
+Content is the reason web sites exist. Liferay has made it easier than ever to
+get content published to your site. Because Liferay is so flexible, you can use
+basic authoring tools right away or take advantage of the more advanced
+features. It's adaptable to your needs.
 
 You'll begin by creating some simple content using Liferay's WYSIWYG editor.
 Then you'll publish it to the home page of the Lunar Resort's web site. This is
 a fast and straightforward process that demonstrates how easy it is to create
-and publish content on your Liferay Portal instance. You'll learn about the Web
-Content section in Site Administration so you can create and publish our first
-pieces of content.
+and publish content on your Liferay instance. You'll learn about the Web Content
+section in Site Administration so you can create and publish your first pieces
+of content.
 
-When you manage web content from the Site Administration page, you can select
-the location where the content resides. For instance, you can add content that's
-available to a specific site or globally across the portal. If you're on the
-site you wish to add content to, simply navigate to the *Admin* tab on the
-Dockbar and select *Site Administration*. Conversely, if you need to switch
-sites or would like to add content globally, navigate to the Control Panel and
-select *Sites*. From this window, you can change the scope of where you'd like
-to view, edit, or create content.
+<!-- TODO: Review below paragraph for 7.0. Things are still unstable in UI, but
+I attempted to document. -Cody -->
 
-![Figure 2.14: You can choose where to create content by navigating to the Control Panel and selecting *Sites*.](../../images/sites-selector.png)
+When you manage web content from the Site Administration menu, you can select
+the location where the content resides. When selecting the Site Administration
+dropdown menu from the Product Menu, you are presented with two scopes: site
+scope and page scope. The site scope can be managed by clicking the Compass icon
+(![Compass](../../images/icon-compass.png)) located on the Site Administration
+dropdown menu, which is characterized by the name of the site. From there you
+can select the site for which you want your content scoped. For instance, you
+can add content that's available to a specific site or globally across your
+Liferay instance. By default, the page scope must be configured before you can
+access it. For instance, if you add a Web Content Display app to a site page
+called *Lunar Rover*, you can navigate to the app's *Options* icon
+(![Options](../../images/icon-options.png)) and select *Configuration* &rarr;
+*Scope*. From the scope dropdown, you can select the current page you're on,
+which will be characterized as *New* in parenthesis. Click *Save* and return to
+the Site Administration &rarr; *Content* menu. You'll now observe the *Default
+Scope* option. Select the *Gear* icon
+(![Gear](../../images/icon-control-menu-gear.png)) and choose the page you
+configured. Now the content created in this app is scoped to the *Lunar Rover*
+page only.
 
-Once you have the Lunar Resort site selected, click on the *Web Content* link in
-Site Administration under Content. You'll see a folder structure containing all
-of the web content articles that exist in the currently selected scope (the
-Lunar Resort site). You can click *Add* &rarr; *Folder* to create a new folder.
-For sites with lots of content and web content articles, it can be very useful
-to use folders to group certain kinds of web content articles together. Click
-*Add* &rarr; *Basic Web Content* to create a new web content article.
+![Figure 1: You can choose where to create content by navigating to the Site Administration menu and selecting your site and page scope.](../../images/site-page-scopes.png)
 
-![Figure 2.15: Click *Add* &rarr; *Basic Web Content* to create a new simple web content article. To create a new web content article based on an existing web content structure, click *Add* and then click on the name of the structure you'd like to use.](../../images/web-content-add-menu.png)
+Once you have the Lunar Resort site selected, click on the *Web Content* link
+under Content. You'll see a folder structure containing all of the web content
+articles that exist in the currently selected scope (the Lunar Resort site). You
+can click the *Add* icon (![Add Web Content](../../images/icon-add.png)) &rarr;
+*Folder* to create a new folder. For sites with lots of content and web content
+articles, it can be very useful to use folders to group certain kinds of web
+content articles together. Click *Add* &rarr; *Basic Web Content* to create a
+new web content article.
+
+![Figure 2: Click *Add* &rarr; *Basic Web Content* to create a new simple web content article. To create a new web content article based on an existing web content structure, click *Add* and then click on the name of the structure you'd like to use.](../../images/web-content-add-menu.png)
 
 Existing web content structures also appear in the *Add* menu. This provides
 users with shortcuts for creating specific kinds of web content articles. For
@@ -57,72 +70,99 @@ example, if a web content structure called *FAQ* has been created for Frequently
 Asked Questions articles in your currently selected scope, you can create a new
 FAQ article by clicking *Add* &rarr; *FAQ*.
 
-Click *Manage* &rarr; *Structures* to view a list of web content structures that
-have already been created in your chosen scope. You can add new web content
-structures here. Web Content templates are always associated with a particular
-web content structure, so you can click *Actions* &rarr; *Manage Templates* to
-view the web content templates associated with a structure or add a new
-template to a structure. In the next chapter, we'll cover advanced features such
-as structures, templates, and content scheduling in detail. 
+You have the ability to provide a structure and template to your web content
+articles. You'll learn more about the power of web content structures and
+templates later. For now, you'll cover the basics of creating a piece of web
+content by first exploring the editor.
 
 ### Using the WYSIWYG Editor
 
 Once you've clicked *Add* &rarr; *Basic Web Content*, you'll find a highly
-customizable form that by default has two fields: a title and a powerful WYSIWYG
-editor. We could customize this form to contain whatever fields our content
-needs but we'll keep things simple for now. If web content structures have
-already been created in your currently selected scope, you can select one for
-your new web content article by clicking *Select* next to the *Structure*
-heading. We discuss web content structures and templates in detail in the next
-chapter.
+customizable form that, by default, has three fields: title, summary, and a
+powerful WYSIWYG editor. You could customize this form to contain whatever
+fields our content needs but you'll keep things simple for now. If web content
+structures have already been created in your currently selected scope, you can
+select one for your new web content article by clicking the *Structure and
+Template* dropdown. You'll discuss web content structures and templates in
+detail in the next chapter.
 
-Type the words *Welcome to the Lunar Resort* in the *Name* field. In the content
-field, add a short sentence announcing the web site is up and running. The
+Getting a new web site up and running is an exciting step for anyone, whether it
+is a large corporation or a small non-profit charity. To celebrate this
+momentous achievement at the Lunar Resort, you'll give our announcement some of
+the pomp and circumstance it deserves!
+
+Type the words *Welcome to the Lunar Resort* in the *Title* field. In the
+*Summary* field, give a short description of the Lunar Resort's facilities. In
+the content field, you'll add the body of your web content article.
+
+The kneejerk reaction to the simplistic looking WYSIWYG editor is "Where are the
+editor's controls?" Don't let the simplistic look of the editor fool you; the
+editor gives you a seamless writing experience, displaying controls when you
+need them and hiding them from view when they're unnecessary. This keeps the
+editor space uncluttered so you can focus on your main objective: writing. As
+you create content, the context-specific controls appear.
+
+First, add some text that will serve as the heading in your article. If you
+highlight the text, controls appear. These controls let you style the text,
+provide a link, or share the article on Twitter. For your heading text, select
+the *Styles* dropdown and give your heading a *Heading 1* style.
+
+Whenever you place your cursor in the content area, the *Add* icon (`+`)
+appears. If you click on it, controls for inserting an image, table, or
+horizontal line (![Controls](../../images/icon-content-insert-controls.png))
+appear. To insert an image, select the icon the depicts a mountain silhouette.
+The image file selector screen appears, allowing you to choose an existing image
+to upload. After adding a photo to the web content article, clicking it brings
+up controls for justifying it to the left or right side of the article. Go ahead
+an add an image to the Lunar Resort article, to spice it up a bit. Note that
+when adding an image via the web content editor, you can either select the file
+from the Documents and Media app or provide it via URL.
+
+You can also insert a table with as many rows and columns as you see fit. When
+clicking inside the table, table editing controls appear. They let you designate
+the first row and/or column as table headers, and also enable you to add rows,
+columns, and cells. You also have the option to insert a horizontal line, which
+is a good seperator between sub-articles or an article and its title. Now you're
+familiar with the editor's regular mode.
+
+For those content creators that would rather write in HTML code, the editor also
+caters to those individuals. To switch the editor to source view, select the
+*Source* icon (`</>`). Note that the regular mode icon
+(![Regular Mode](../../images/icon-paint-roller.png)) appears, which you can
+select to return to regular mode. You also have the option to switch between a
+dark and light theme by choosing the moon and sun icons. The built-in syntax
+coloring helps you identify HTML elements, regardless of the mode you're using.
+
+You can even work in a dual pane view that shows your HTML code on the left and
+a preview pane on the right. To open this view, click on the *Enlarge* icon
+(![Enlarge](../../images/icon-enlarge.png)). You can arrange the HTML and
+preview panes horizonally or vertically. You can also hide the preview pane, if
+preferred.
+
+![Figure 3: You can view how your HTML would render by using the preview pane.](../../images/web-content-editor-html.png)
+
+Every 25 seconds, the entry you're creating is automatically saved as a draft.
+Because of this, you never have to worry about losing your work if something
+unforeseen happens in your browser or on your computer. You can exit the
+enlarged editor by clicking the *Done* button at the bottom of the screen.
+
+Add a few short sentences announcing the grand opening of the Lunar Resort. The
 content can be localized in whatever language you want. You'll learn more about
 localizing your content later on, which can be done after you publish your web
 content.
 
-Getting a new web site up and running is an exciting step for anyone, whether it
-is a large corporation or a small non-profit charity. To celebrate this
-momentous achievement at the Lunar Resort, let's give our announcement some of
-the pomp and circumstance we think it deserves!
-
-Using the editor, select all the text and then change the style to *Heading 1*
-and the color to *Navy*. You could insert an image here or even more text with a
-different style, as demonstrated in the screenshot below. You can also add
-bullets, numbering, links to another site or custom images. You can even add an
-emoticon. Go ahead and add a smiley face to the end of your announcement.
-
-![Figure 2.16: View your content changes directly in the editor.](../../images/04-web-content-example2.png)
-
-The WYSIWYG editor is a flexible tool that gives you the ability to add text,
-images, tables, links and more. Additionally, you can modify the display to
-match the purpose of the content. Plus it's integrated with the rest of Liferay
-Portal: for example, when you upload an image to be added to a page, that image
-can be viewed and manipulated in the Documents and Media portlet.
-
-If you're HTML savvy, Liferay WCM doesn't leave you out in the cold. You can
-switch from the WYSIWYG view by clicking the *Source* button. From the Source
-view, you can view the HTML content of your web content. If you wish, can edit
-the HTML directly.
-
-![Figure 2.17: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Services* section of the Control Panel, you can add audio and video to your web content!](../../images/web-content-video.png)
-
-The WYSIWYG editor also offers an accessibility help menu with a set of 
-navigation instructions and keyboard shortcuts, so you can easily navigate
-and use the editor with ease. Press *option+0* on the keyboard to bring
-up the accessibility menu.
-
-![Figure 2.18: The accessibility help menu provides a set of instructions to help navigate and use the editor.](../images/accessibility-menu.png)
-
 You can integrate Liferay with external services to enable additional
 functionality. For example, if you navigate to the Control Panel, click on
-*Server Administration* and then on *External Services*, you can install and
-enable Xuggler. Enabling Xuggler allows you to embed audio and video files in
-web content. Installing and enabling Xuggler is easy; you can do it right from
-the Control Panel. Please refer to [Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
+*Configuration* &rarr; *Server Administration* &rarr; *External Services*. From
+this menu, you can install and enable Xuggler. Enabling Xuggler allows you to
+embed audio and video files in web content. Installing and enabling Xuggler is
+easy; you can do it right from the Control Panel. Please refer to the
+[Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
 article of this guide for more details.
 
+<!-- TODO: Replace link above with 7.0 link, when available. -Cody -->
+
+<!--
 Once Xuggler has been installed and enabled, embedding audio or video files in a
 web content is easy. From the Dockbar, navigate to *Site Content* &rarr; *Web
 Content* and click *Add* &rarr; *Basic Web Content*. Look for the buttons on the
@@ -135,6 +175,18 @@ Select the file and then check that the audio or video component appears in the
 web content. Excellent! When your web content is published, users can view or
 listen the embedded multimedia!
 
+-----
+In portal-ext.properties, adding:
+
+    editor.wysiwyg.portal-impl.portlet.ddm.text_html.ftl=ckeditor
+
+configures the CKEditor, from which users can add video. No way to do it using
+AlloyEditor.
+-----
+
+-->
+
+<!--
 You can also download the web content article in XML format by clicking the
 *Download* button. This button is available on the Edit Web Content screen,
 after you've created your web content article.
@@ -157,32 +209,37 @@ can be downloaded from [Liferay Marketplace](https://www.liferay.com/marketplace
 
 $$$
 
-The right side of the New Web Content form provides options for customizing your
-web content.
+------
+In 6.2, there had to be a WC structure, WC template, and the Resources Importer
+portlet had to be installed for the *Download* button to be visible. This is not
+currently the case in Liferay 7.0.
+-------
 
-![Figure 2.19: New web content can be customized in various ways using the menu on the right.](../../images/wcm-menu.png)
+-->
 
-**Abstract:** lets you to create a brief summary of the web content. You can
-also pair the text with a small image.
+The bottom menu of the New Web Content form provides options for customizing
+your web content.
 
-**Categorization:** specifies the content type from a list of options. They are
-*Announcements*, *Blogs*, *General*, *News*, *Press Release*, and *Test*. You
-can also create tags to make the content easier to find in a search. Note that
-these categories are defined by a property in the properties file; see the
-`journal.article.types` property in the
-[Properties Document](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Journal%20Portlet)
-for further information. 
+![Figure 4: New web content can be customized in various ways using the menu located below the WYSIWYG editor.](../../images/wcm-menu.png)
 
-+$$$
+**Structure and Template:** lets you customize the web content article's
+structure and template. To learn more about web content structures and
+templates, visit the [Designing Uniform Content](/discover/portal/-/knowledge_base/7-0/designing-unifrom-content)
+section.
 
-**Note:** The Web Content Type portlet, located within the Categorization menu,
-is deprecated for Liferay 6.2 and will be removed in Liferay 7.0. The portlet
-will be migrated to a vocabulary with categories. 
+**Small Image:** sets the image that is used for the web content article's
+previews. For example, when viewing an article in the Web Content library, the
+small image is displayed as the article's icon.
 
-$$$
+**Metadata:** let you set the organizational hierarchy of the web content
+article by selecting tags, categories, and priority. To learn more about tags
+and categories, visit the [Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+section.
 
 **Schedule:** customizes the date and time your content publishes and/or
-expires.
+expires. To learn more about scheduling content, visit the
+[Scheduling Web Content Publication](/discover/portal/-/knowledge_base/7-0/scheduling-web-content-publication)
+section.
 
 **Display Page:** lets you determine where the web contents are displayed when
 linked from other pages. The Canonical URL can be used here. The Canonical URL
@@ -192,29 +249,48 @@ display page.
 Imagine you have a newspaper with a sports section and a technology section. You
 add a Sports page and a Tech page to your site, each one with a specific banner
 and look and feel. You want the articles to appear in the appropriate pages, but
-you know in Liferay articles are not related to pages. You can add an article as
-often as you like in different web content display portlets or in configured
+you know in Liferay, articles are not related to pages. You can add an article
+as often as you like in different web content display apps or in configured
 Asset Publishers. But if you have a *View in context* link, where will you show
 your article? This is where you'd use a default display page. Articles that have
-a default display page defined are shown with other related articles in
-the same display page.
+a default display page defined are shown with other related articles in the same
+display page.
 
-Imagine you have 100 sports articles and 100 tech articles. In previous versions
-of Liferay you'd need to create a page for each article to show it. Now with
-only one sports page and one tech page, you can show all articles in one place
-in a consistent fashion.
+Imagine you have 100 sports articles and 100 tech articles. Instead of needing
+to create a page for each article to show it, you can have only one sports page
+and one tech page, and can show all articles in one place in a consistent
+fashion. You'll work through an example of creating a display page in the
+[Creating a Display Page](/discover/portal/-/knowledge_base/7-0/publishing-basic-web-content#creating-a-display-page)
+sub-section.
+
+**Related Assets:** lets you determine content relationships between the web
+content article and other assets in your Liferay instance, even if they don't
+share any tags and aren't in the same category. You can connect your content to
+a Blogs Entry, Message Boards Message, Web Content, Calendar Event, Bookmarks
+Entry, Documents and Media Document, Wiki Page, etc. To learn more about
+defining content relationships and publishing links to those related assets,
+visit the [Defining Content Relationships](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)
+section.
+
+![Figure 5: This blog entry has links to three Related Assets: one web content and two message board entries.](../../images/related-assets-link.png)
+
+**Permissions:** customizes who has access to the content. By default, content
+is viewable by Anyone (Guest Role). You can limit viewable permissions by
+selecting any Role from the drop-down or in the list. Additionally, Liferay
+provides the ability to customize permissions in more detail. Select the *More
+Options* link below the drop down button and you'll find the different
+activities you can grant or deny to your web content article.
 
 Before you display your web content, you'll learn how to localize it to cater to
 different language speaking users.
 
+<!-- Left off here. -->
+
 ### Localizing Web Content
 
-When you create a new piece of Web Content, you have the ability to choose a
+When you create a new piece of web content, you have the ability to choose a
 default language. If you click *Change*, you can select your default language
-from a large number of languages Liferay supports. Before you can create a
-translation, you must finish creating the content in your default language and
-save it. Once you've done that, editing the content provides you with the option
-to *Add Translation*.
+from a large number of languages Liferay supports.
 
 ![Figure 3.17: You have many translation languages to choose from for your web content.](../../images/04-web-content-translation.png)
 
@@ -301,42 +377,12 @@ search results, in related assets and in Asset Publishers. For more information
 on Liferay's Display Pages, see the [Content Display Pages](/discover/portal/-/knowledge_base/6-2/using-the-asset-publisher#content-display-pages)
 article.
 
-**Related Assets:** enables you to connect any number of assets within a site or
-across the portal, even if they don't share any tags and aren't in the same
-category. You can connect your content to a Blogs Entry, Message Boards Message,
-Web Content, Calendar Event, Bookmarks Entry, Documents and Media Document, and
-a Wiki Page.
-
-![Figure 2.20: This blog entry has links to three Related Assets: one web content and two message board entries.](../../images/related-assets-link.png)
-
-You'll learn how to publish links to related assets using the Related Assets
-portlet in the
-[Defining Content Relationships](/discover/portal/-/knowledge_base/6-2/defining-content-relationships)
-section.
-
-**Permissions:** customize who has access to the content. By default, content is
-viewable by Anyone (Guest Role). You can limit viewable permissions by selecting
-any Role from the drop-down or in the list. Additionally, Liferay Portal
-provides the ability to customize permissions in more detail. Select the *More
-Options* link next to the drop down button and you'll find the different
-activities you can grant or deny to your web content.
-
-**Custom fields:** customize metadata about the web content. The fields can
-represent anything you like, such as the web content's author or creation date.
-If custom fields have been defined for web content (which can be done from the
-*Custom Fields* page of the Control Panel), they appear here.
-
-For more information on Custom Fields see the
-[Custom Fields](/discover/portal/-/knowledge_base/6-2/custom-fields) section.
-
 For this piece of web content, we don't need to change anything. After you're
 finished with permissions, click *Save as Draft*. This saves the content in
 draft form. Once you're satisfied with your changes, select *Publish*. This
 makes the content available for display, but we still have some work to do to
 enable users to see it. In Liferay WCM, all content resides in a container,
-which is one of two portlets: Web Content Display or Web Content List. By far
-the most frequently used is the *Web Content Display* portlet. Let's look at how
-it works.
+which is the Web Content Display app. You'll look at how it works next.
 
 ## Displaying Web Content
 
