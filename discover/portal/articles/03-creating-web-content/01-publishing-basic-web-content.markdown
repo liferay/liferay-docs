@@ -210,6 +210,8 @@ to the embedded multimedia!
 
 -->
 
+![Figure 4: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../images/web-content-audio-video.png)
+
 <!--
 You can also download the web content article in XML format by clicking the
 *Download* button. This button is available on the Edit Web Content screen,
@@ -234,9 +236,9 @@ can be downloaded from [Liferay Marketplace](https://www.liferay.com/marketplace
 $$$
 
 ------
-In 6.2, there had to be a WC structure, WC template, and the Resources Importer
-portlet had to be installed for the *Download* button to be visible. This is not
-currently the case in Liferay 7.0.
+TODO: In 6.2, there had to be a WC structure, WC template, and the Resources
+Importer portlet had to be installed for the *Download* button to be visible.
+This is not currently the case in Liferay 7.0. -Cody
 -------
 
 -->
@@ -308,24 +310,24 @@ activities you can grant or deny to your web content article.
 Before you display your web content, you'll learn how to localize it to cater to
 different language speaking users.
 
-<!-- Left off here. -->
-
 ### Localizing Web Content
 
 When you create a new piece of web content, you have the ability to choose a
-default language. If you click *Change*, you can select your default language
-from a large number of languages Liferay supports.
+default language. At the top of the New Web Content screen, you'll see options
+to change the default language and add a translation. If you click *Change*, you
+can select your default language from a large number of languages Liferay
+supports.
 
-![Figure 3.17: You have many translation languages to choose from for your web content.](../../images/04-web-content-translation.png)
+![Figure 6: You have many translation languages to choose from for your web content.](../../images/web-content-default-language.png)
 
 After you click *Add Translation*, you can select a language by scrolling
-through the list or by entering the language you want to use in the search box.
-When you select a language, a new window opens within your browser enabling you
-to translate the original web content into the selected language. Once you are
-done with the translation, click *Save* and the translation is added to the list
-of *Available Translations*.
+through the list. When you select a language, an *Available Translations* list
+is rendered and the language you selected is highlighted. The new web content
+form enables you to translate the original web content into the selected
+language. Once you are done with the translation, click *Publish* and the
+translation is added to the list of *Available Translations*.
 
-![Figure 3.18: After typing your translated text, you can summarize the translation in the *Abstract* section.](../../images/04-web-content-translation-2.png)
+![Figure 7: The Available Translations list lets you easily survey the current translations for the article.](../../images/web-content-translation.png)
 
 You can modify the language translation list by inserting `locales.enabled=`
 followed by your preferred languages in your `portal-ext.properties` file. For
@@ -339,14 +341,14 @@ URL), but do not have the necessary translations for localizable fields, your
 site's language values will be used from the old default language. Therefore,
 you should change the default language of your site *only* when you have
 translated values for all localizable entities. Otherwise, you may not be in
-control of what language is displayed in the portal.
+control of what language is displayed in your Liferay instance.
 
 $$$
 
-The ability to completely delete a translation in one step has also been added.
-Instead of simply disabling a translation or having to go through a multistep
-process to remove it, you can now simply open the translation you don't want and
-click *Remove Translation*.
+The ability to completely delete a translation in one step is also available.
+Instead of disabling a translation or having to go through a multistep
+process to remove it, you can select the Delete button (`X`) next to the
+translation to delete it.
 
 When you create a new web content structure, each field you create has a
 *Localizable* checkbox displayed next to it. This enables you to control what
@@ -355,15 +357,6 @@ want images or content titles to be changed when the content is translated, you
 can make sure those fields aren't listed as localizable. When you follow the
 steps above to localize content, only fields within the structure that had the
 *Localizable* box checked appear within the translation window.
-
-+$$$
-
-**Note:** The Localizable checkbox was removed for 6.2 CE GA1 and GA2, and 6.2
-EE GA1, SP1, and SP2. However, the Localizable checkbox is now available for
-Liferay following these versions for web content structure fields. You can view
-[LPS-33161](https://issues.liferay.com/browse/LPS-33161) for more details.
-
-$$$
 
 Next, you'll begin creating a display page to show your web content.
 
@@ -381,12 +374,12 @@ page. Set this up by clicking *Configuration* on your Asset Publisher. Under the
 *Setup* tab, navigate to *Display Settings* and check the checkbox labeled *Set
 as the Default Asset Publisher for This Page*.
 
-Once you've given an article its default display page, links to the article 
+Once you've given an article its default display page, links to the article
 redirect the user to its default display page. To see how this works, add an
 Asset Publisher to another page, like the Home page of the newspaper, and
-configure it to *View in a Specific Portlet*. This setting is found in the
-*Asset Link Behavior* menu under Display Settings. If you click on the link,
-you'll be redirected to the Default Display Page of the article.
+configure it to *View in Context*. This setting is found in the *Asset Link
+Behavior* menu under Display Settings. If you click on the link, you'll be
+redirected to the Default Display Page of the article.
 
 You now see that the link looks something like this:
 
@@ -395,48 +388,68 @@ You now see that the link looks something like this:
 This is an example of a canonical URL, and it's a nice enhancement for Search
 Engine Optimization (SEO) because the article's URL becomes the page URL. To a
 search engine that's crawling your site, this means that the location of your
-article never changes. And if you decide to use the content on another page in
+article never changes. Also, if you decide to use the content on another page in
 the future, the article is still available at this URL. This feature is used in
-search results, in related assets and in Asset Publishers. For more information
+search results, in related assets, and in Asset Publishers. For more information
 on Liferay's Display Pages, see the [Content Display Pages](/discover/portal/-/knowledge_base/6-2/using-the-asset-publisher#content-display-pages)
 article.
 
-For this piece of web content, we don't need to change anything. After you're
+<!-- TODO: Update Content Display Pages link above for 7.0. -Cody -->
+
+For this piece of web content, you don't need to change anything. After you're
 finished with permissions, click *Save as Draft*. This saves the content in
 draft form. Once you're satisfied with your changes, select *Publish*. This
-makes the content available for display, but we still have some work to do to
+makes the content available for display, but you still have some work to do to
 enable users to see it. In Liferay WCM, all content resides in a container,
 which is the Web Content Display app. You'll look at how it works next.
 
 ## Displaying Web Content
 
-Now that we've created and published our first piece of web content for
+Now that you've created and published your first piece of web content for
 the Lunar Resort, it's time to display it. First, add the *Web Content Display*
-portlet to our Welcome page by selecting the *Add* button from the left palette
-and selecting the *Applications* tab.
+application to your Welcome page by selecting the *Add* button
+(![Add](../../images/icon-control-menu-add.png)) from the top Control Menu and
+selecting the *Applications* tab. In the search field, type *Web Content
+Display*.
 
-![Figure 2.21: Adding the Web Content Display Portlet](../../images/add-web-content-display.png)
+![Figure 8: Add the Web Content Display app to a page to begin displaying your new web content article.](../../images/add-web-content-display.png)
 
-Once the portlet appears, drag it to the position on the page where you want
-your content to appear. You can have as many Web Content Display portlets on a
-page as you need, which gives you the power to lay out your content exactly the
-way you want it. 
+Once the application appears, drag it to the position on the page where you want
+your content to appear. You can have as many Web Content Display apps on a page
+as you need, which gives you the power to lay out your content exactly the way
+you want it. 
 
 To add existing web content, click the *Select Web Content* button on the lower
-left of the portlet. You will see the message *Please select a web content from
-the list below*. You have several options here.
+left of the app. Click the *Select* button from the menu to choose the article
+you'd like to display. You have several options here.
 
 Naturally, if your content appears in the list, you can simply select it. If
 there is lots of published content available, you could search for the content
-by name, ID, type, version, content and site (click the *Advanced* gear to see
-all the options). You can also show the available locales for your content. If
-you're working on the page for a particular language, you can select the
-translation of your content that goes with your locale. To learn more about
-translating your content, visit the
-[Localization](/discover/portal/-/knowledge_base/6-2/localization) section.
+by title, description, user name, or site (click the dropdown arrow to see all
+the options).
 
-![Figure 2.22: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
+Once you've selected the web content article, you're able to choose the User
+Tools and Content Metadata to be published in the Web Content Display app. These
+two entities have the following options to choose from, by default:
 
+- User Tools
+    - Translations
+    - Print
+- Content Metadata
+    - Related Assets
+    - Ratings
+    - Comments
+    - Comment Ratings
+
+One of the many options is *Translations*, which shows the available locales for
+your content. If you're working on the page for a particular language, you can
+select the translation of your content that goes with your locale. To learn more
+about translating your content, visit the [Localizing Web Content](/discover/portal/-/knowledge_base/7-0/publishing-basic-web-content#localizing-web-content)
+sub-section.
+
+![Figure 9: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/web-content-choosing-web-content.png)
+
+<!--
 If you have enabled OpenOffice.org integration with your portal, you can also
 enable document conversion for your content. This gives your users the ability
 to download your content in their format of choice. This is especially handy if
@@ -444,79 +457,79 @@ you are running a research or academically oriented site; users can very quickly
 download PDFs of your content for their research projects.
 
 Note that you also have other options, such as enabling a Print button, enabling
-ratings so users can rate the content, enabling comments and enabling ratings on
-comments.
+ratings so users can rate the content, enabling comments, and enabling ratings
+on comments.
+-->
 
 The Print button pops the content up in a separate browser window that contains
 just the content, without any of the web site navigation. This is handy for
 printing the content. Enabling ratings shows one of two ratings interfaces
 Liferay has: five stars or thumbs up and thumbs down. This can be set globally
 in the `portal-ext.properties` file. See the
-[Properties Document](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Ratings%20Tag%20Library) for further information
+[Properties Document](https://docs.liferay.com/portal/7.0-b1/propertiesdoc/portal.properties.html#Ratings%20Tag%20Library)
 for more details about this.
 
 Enabling comments creates a discussion forum attached to your content which
 users can use to discuss your content. Enabling ratings on comments gives your
-users the ability to rate the comments. You may decide you want one, some or
-none of these features, which is why they're all implemented as simple check
-boxes to be enabled or disabled at need.
+users the ability to rate the comments. You may decide you want one, some, or
+none of these features, which is why they're all implemented as simple selector
+buttons to be enabled or disabled at need.
 
+<!--
 If you click the *Supported Clients* tab, you'll see you can choose the type of
 client to which you want to expose content. This lets you target the large
 screens of users' computers for expansive graphics and lots of special effects
 or target the small screens of mobile devices with pertinent information and a
 lightweight page. For now, leave both checked and click the *Save* button. You
 can now close the configuration window.
+-->
 
-To publish new content, select the *Add* button on the lower left of the
-portlet. This launches the same full-featured editor you've already seen in the
-Control Panel, which lets you add and edit content in place as you are working
-on your page.
+To publish new content, select the *Add* button on the lower left of the app.
+This launches the same full-featured editor you've already seen in the Product
+Menu, which lets you add and edit content in place as you are working on your
+page.
 
-This is another example of the flexibility that Liferay Portal offers. At times,
-you may want to add content directly into the Web Content Display portlet of the
-page you're managing, especially if you are in the process of building the page.
-At other times, you may want to navigate to Site Administration to create
-content, because at that moment you're more concerned with the creation of the
-content and not where the content will later be displayed. Liferay WCM supports
-both processes. 
+This is another example of the flexibility that Liferay offers. At times, you
+may want to add content directly into the Web Content Display app of the page
+you're managing, especially if you are in the process of building the page. At
+other times, you may want to navigate to Site Administration to create content,
+because at that moment you're more concerned with the creation of the content
+and not where the content will later be displayed. Liferay WCM supports both
+processes. 
 
 Editing content that's already been published is just as easy as creating new
 content is. Once the content is displayed--whether you've selected content or
-created it in the Web Content Display portlet--you can edit the content directly
-from the Web Content Display portlet or from the Control Panel. To edit it from
-the Web Content Display portlet, select the *Edit* button to the lower left of
-the portlet. This launches the WYSIWYG editor and from there you can make any
-necessary changes.
+created it in the Web Content Display app--you can edit the content directly
+from the Web Content Display app or from Site Administration. To edit it from
+the Web Content Display app, select the *Edit* button to the lower left of the
+app. This launches the WYSIWYG editor and from there you can make any necessary
+changes.
 
-![Figure 2.23: The *Edit*, *Select Web Content*, and *Add* buttons appear when hovering over their icons.](../../images/web-content-display-icons.png)
+![Figure 10: The *Edit*, *Edit Template*, *Select Web Content*, and *Add* buttons appear at the bottom of the Web Content Display app.](../../images/web-content-display-icons.png)
 
-When you publish updates to a web content that's already being displayed
-somewhere on your portal (e.g., in a Web Content Display portlet or an Asset
-Publisher portlet), the content is immediately updated (unless, of course, you
+When you publish updates to a web content article that's already being displayed
+somewhere on in your Liferay instance (e.g., in a Web Content Display app or an
+Asset Publisher app), the content is immediately updated (unless, of course, you
 have a workflow enabled, which is discussed in greater detail in the
 [Using Workflow]()
 section). It makes no difference whether you edit it from a Web Content Display
-portlet, from the Asset Publisher, or from the Site Administration interface.
+app, from the Asset Publisher, or from the Site Administration interface.
 
 <!-- TODO: Update link above for 7.0. -Cody -->
 
 +$$$ 
 
 **Note:** If you want to view your page the way your users will see it (i.e.,
-without all those portlet controls and icons), go up to the left palette and
-select the *Edit Controls* icon. This makes all those extra controls you see as
-a portal administrator disappear. You'll also notice the green "eye" transforms
-into an orange "eye". If you need to use those controls again, just select *Edit
-Controls* to return to the original format.
+without all the app controls and icons), go up to the top Control Menu and
+select the *Edit Controls* icon (![Edit Controls](../../images/icon-edit-controls.png)).
+This makes all those extra controls you see as a portal administrator disappear.
+You'll also notice the icon is crossed out when the Edit Controls are disabled.
+If you need to use the controls again, just select the icon again to return to
+the original format.
 
 $$$
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
-Liferay's WCM, you'll want to use structures and templates found in the
-[Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
-chapter. Next, let's see how you can manage your content with an approval
-process called workflow.
-
-<!-- TODO: Update link above for 7.0. -Cody -->
+Liferay's WCM, you'll want to use structures and templates. You'll cover these
+topics next.
