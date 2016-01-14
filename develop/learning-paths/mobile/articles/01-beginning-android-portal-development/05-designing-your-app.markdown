@@ -28,6 +28,14 @@ are many ways to do this, but using a navigation drawer that slides out from the
 left side of the screen is a good choice. A navigation drawer is easily hidden
 and is a common Android UI element. 
 
+To display the guestbooks and entries, you'll create your own Screenlets: the 
+Get Guestbooks Screenlet and the Get Entries Screenlet. The Get Guestbooks 
+Screenlet retrieves guestbooks from the portlet and displays them in a simple 
+list. Once written, using this Screenlet is a simple matter of inserting it in 
+the navigation drawer. The Get Entries Screenlet retrieves and displays a 
+guestbook's entries in a similar list. You'll display the entries by inserting 
+Get Entries Screenlet in the UI element you want them to appear in. 
+
 Awesome! You now have a basic UI design. But where should you create it? The app 
 only contains one empty activity: `MainActivity`. You'll use this activity for 
 authentication, using Login Screenlet. To implement the rest of the UI, you'll 
@@ -35,18 +43,18 @@ need to create an additional activity and a fragment: `GuestbooksActivity` and
 `EntriesFragment`. You'll create the activity in a moment. 
 
 The following diagram shows the app's three different screens. Each activity and
-fragment is labeled, along with Login Screenlet and the navigation drawer. 
+fragment is labeled, along with the Screenlets and the navigation drawer. 
 
-![Figure 2: The Liferay Guestbook app's design uses two activities and a fragment.](../../images/android-app-design.png)
+![Figure 2: The Liferay Guestbook app's design uses two activities and a fragment.](../../images/android-app-design-screenlets.png)
 
 After sign in, the user transitions to `GuestbooksActivity`. This activity uses 
-`EntriesFragment` to display the selected guestbook's entries (the first 
-guestbook is selected by default). Pressing the hamburger at the top-left of
-this screen opens the navigation drawer, where the user can select a
-different guestbook. Selecting a guestbook closes the drawer to reveal that
-guestbook's entries. Note that you only need one activity, `GuestbooksActivity`,
-to display guestbooks and entries. The navigation drawer and `EntriesFragment`
-are part of this activity. 
+Get Entries Screenlet in `EntriesFragment` to display the selected guestbook's 
+entries (the first guestbook is selected by default). Pressing the hamburger 
+button at the top-left of this screen opens the navigation drawer, where Get 
+Guestbooks Screenlet displays the list of guestbooks. Selecting a guestbook 
+closes the drawer to reveal that guestbook's entries. Note that you only need 
+one activity, `GuestbooksActivity`, to display guestbooks and entries. The 
+navigation drawer and `EntriesFragment` are part of this activity. 
 
 Now you're ready to create `GuestbooksActivity`. Fortunately, Android Studio has 
 a template for creating an activity that already contains a navigation drawer. 
