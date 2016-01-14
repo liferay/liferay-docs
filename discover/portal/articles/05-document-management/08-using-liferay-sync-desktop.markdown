@@ -1,4 +1,4 @@
-# Using Liferay Sync on Your Desktop
+# Using Liferay Sync on Your Desktop [](id=using-liferay-sync-on-your-desktop)
 
 Liferay Sync synchronizes files between your Liferay sites and desktop devices.
 It lets you work with your files without using a browser. The client also
@@ -22,7 +22,7 @@ ensure that Sync is enabled for your sites. You then need to install the Sync
 client on your desktop device. The next section walks you through installing the
 client. 
 
-## Installing the Desktop Liferay Sync Client
+## Installing the Desktop Liferay Sync Client [](id=installing-the-desktop-liferay-sync-client)
 
 You can download the desktop client from the
 [Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync).
@@ -88,7 +88,7 @@ synchronization may take a significant amount of time, depending on the amount
 of data being transferred. You can safely close the window as syncing continues
 in the background. To view the local Sync folder, click *Open Folder*. 
 
-## Viewing Your Sync Status
+## Viewing Your Sync Status [](id=viewing-your-sync-status)
 
 When Sync is running its icon appears in your task bar (Windows) or menu bar
 (Mac). Clicking this icon opens a menu lists the portals you sync with and
@@ -111,7 +111,7 @@ the repositories you can access.
 
 Next, you'll learn how to use Sync's preferences to control Sync's behavior.
 
-## Using Sync Preferences
+## Using Sync Preferences [](id=using-sync-preferences)
 
 You can use Sync's preferences to add/remove portals to sync with, edit portal
 connection settings, and control Sync's basic behavior. Open Sync's preferences
@@ -150,7 +150,7 @@ button.
 Now that you have a handle on configuring Sync, it's time to see how it works 
 with the files in your Sync folder.
 
-## Using Your Local Sync Folder
+## Using Your Local Sync Folder [](id=using-your-local-sync-folder)
 
 Once you configure and run Sync, Sync automatically uploads to your portal any
 files you add or modify in your Sync folder. Sync also downloads to your Sync
