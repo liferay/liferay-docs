@@ -217,7 +217,7 @@ You can also download the web content article in XML format by clicking the
 *Download* button. This button is available on the Edit Web Content screen,
 after you've created your web content article.
 
-![Figure 2.18: The *Download* button is only available for an article that has a structure and template.](../../images/web-content-download.png)
+[Figure 2.18: The *Download* button is only available for an article that has a structure and template.](../../images/web-content-download.png)
 
 An XML version of an article is essential when creating content for themes using
 the [Resources Importer](/participate/liferaypedia/-/wiki/Main/Resources+Importer).
@@ -449,17 +449,25 @@ sub-section.
 
 ![Figure 9: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/web-content-choosing-web-content.png)
 
-<!--
-If you have enabled OpenOffice.org integration with your portal, you can also
-enable document conversion for your content. This gives your users the ability
-to download your content in their format of choice. This is especially handy if
-you are running a research or academically oriented site; users can very quickly
-download PDFs of your content for their research projects.
+If you have enabled OpenOffice.org integration with your Liferay instance, you
+can also enable document conversion for your content. This gives your users the
+ability to download your content in their format of choice. This is especially
+handy if you are running a research or academically oriented site; users can
+very quickly download PDFs of your content for their research projects. These
+conversion options will be available under the *User Tools* list.
+
++$$$
+
+**Note:** To enable OpenOffice integration in your Liferay instance, navigate to
+the Control Panel &rarr; *Configuration* &rarr; *Server Administration* &rarr;
+*External Services* and select the *Enabled* checkbox for enabling OpenOffice
+integration.
+
+$$$
 
 Note that you also have other options, such as enabling a Print button, enabling
 ratings so users can rate the content, enabling comments, and enabling ratings
 on comments.
--->
 
 The Print button pops the content up in a separate browser window that contains
 just the content, without any of the web site navigation. This is handy for
@@ -473,16 +481,9 @@ Enabling comments creates a discussion forum attached to your content which
 users can use to discuss your content. Enabling ratings on comments gives your
 users the ability to rate the comments. You may decide you want one, some, or
 none of these features, which is why they're all implemented as simple selector
-buttons to be enabled or disabled at need.
-
-<!--
-If you click the *Supported Clients* tab, you'll see you can choose the type of
-client to which you want to expose content. This lets you target the large
-screens of users' computers for expansive graphics and lots of special effects
-or target the small screens of mobile devices with pertinent information and a
-lightweight page. For now, leave both checked and click the *Save* button. You
+buttons to be enabled or disabled at need. Once you've selected the features you
+want to include in your Web Content Display spp, click the *Save* button. You
 can now close the configuration window.
--->
 
 To publish new content, select the *Add* button on the lower left of the app.
 This launches the same full-featured editor you've already seen in the Product
