@@ -4,10 +4,11 @@ If you want a fresh installation of Liferay on Tomcat 7, simply download a
 Liferay Tomcat bundle from
 [https://www.liferay.com/downloads/liferay-portal/available-releases](https://www.liferay.com/downloads/liferay-portal/available-releases).
 Even if you want to manually install Liferay on an existing Tomcat 7
-application server, you should still download a Liferay Tomcat bundle. The
+application server, it can be helpful to download a Liferay Tomcat bundle. The
 bundle contains many required dependencies and configuration files. Before
 proceeding, you should also download the latest Liferay WAR file from
-[https://www.liferay.com/downloads/liferay-portal/available-releases#additional-versions](https://www.liferay.com/downloads/liferay-portal/available-releases#additional-versions).
+[https://www.liferay.com/downloads/liferay-portal/available-releases#additional-versions](https://www.liferay.com/downloads/liferay-portal/available-releases#additional-versions)
+as well as the dependencies ZIP file and OSGi JARs ZIP file.
 
 Installing Liferay manually requires these basic steps:
 
@@ -17,59 +18,65 @@ Installing Liferay manually requires these basic steps:
 
 You'll see the term *Liferay Home* used in this installation guide. *Liferay
 Home* refers to the folder containing your Tomcat server folder. When Liferay
-is installed on Tomcat, the Liferay Home folder typically contains the Tomcat
-server folder as well as `data`, `deploy`, `license`, and `osgi` folders.
-You'll also see the term `$TOMCAT_HOME` used in this guide. `TOMCAT_HOME`
-refers to your Tomcat server folder. This folder is usually named
-`tomcat-[version]` or `apache-tomcat-[version]`.
+is installed on Tomcat, the Liferay Home folder contains the Tomcat server
+folder as well as `data`, `deploy`, `license`, and `osgi` folders. You'll also
+see the term `$TOMCAT_HOME` used in this guide. `TOMCAT_HOME` refers to your
+Tomcat server folder. This folder is usually named `tomcat-[version]` or
+`apache-tomcat-[version]`.
 
 ## Installing Liferay Dependencies
 
 Liferay depends on many JARs that are included in the Liferay Tomcat bundle.
-Some JARs in the bundle are not strictly required but can still be useful.
+Some JARs in the bundle are not strictly required but can still be useful. If
+you don't have a Liferay Tomcat bundle, you can download the required JARs from
+third-parties, as described below.
 
-1. Extract the Liferay bundle that you downloaded to a temporary location of
-   your choosing. You'll copy a number of resources from this bundle to your
-   Tomcat server as you manually install Liferay on your Tomcat server.
+1. If you downloaded a Liferay Tomcat bundle, extract the bundle to a temporary
+   location of your choosing. You'll copy a number of resources from this
+   bundle to your Tomcat server as you manually install Liferay.
 
-2. First, copy all the JARs from your bundle's `TOMCAT_HOME/lib/ext` folder to
-   your application server's `TOMCAT_HOME/lib/ext` folder. If the
-   `TOMCAT_HOME/lib/ext` folder doesn't exist on your application server,
-   create it.
+2. If you have Liferay Tomcat bundle, copy all the JARs from your bundle's
+   `TOMCAT_HOME/lib/ext` folder to your application server's
+   `TOMCAT_HOME/lib/ext` folder. If the `TOMCAT_HOME/lib/ext` folder doesn't
+   exist on your application server, create it. If you don't have a Liferay
+   Tomcat bundle, you'll have to individually download the JARs listed below.
 
     Here's a list of the JARs you should copy:
 
-    - `activation.jar`
-    - `ccpp.jar`
+    - `activation.jar` - [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
+    - `ccpp.jar` - [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
     - `com.liferay.osgi.service.tracker.collections.jar`
-    - `com.liferay.registry.api.jar`
-    - `hsql.jar`
-    - `jms.jar`
-    - `jta.jar`
-    - `jutf7.jar`
-    - `mail.jar`
-    - `mysql.jar`
-    - `persistence.jar`
-    - `portal-service.jar`
-    - `portlet.jar`
-    - `postgresql.jar`
-    - `support-tomcat.jar`
+    - `com.liferay.registry.api.jar` - [https://repository.liferay.com/nexus/content/groups/liferay-ce/com/liferay/com.liferay.registry.api](https://repository.liferay.com/nexus/content/groups/liferay-ce/com/liferay/com.liferay.registry.api)
+    - `hsql.jar` - [http://hsqldb.org/doc/src/org/hsqldb/jdbc/JDBCDriver.html](http://hsqldb.org/doc/src/org/hsqldb/jdbc/JDBCDriver.html)
+    - `jms.jar`- [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
+    - `jta.jar`- [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
+    - `jutf7.jar` - [http://sourceforge.net/projects/jutf7](http://sourceforge.net/projects/jutf7)
+    - `mail.jar` - [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
+    - `mysql.jar` - [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j)
+    - `persistence.jar`- [http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
+    - `portal-service.jar` - [http://mvnrepository.com/artifact/com.liferay.portal/portal-service](http://mvnrepository.com/artifact/com.liferay.portal/portal-service)
+    - `portlet.jar` - [http://mvnrepository.com/artifact/javax.portlet/portlet-api](http://mvnrepository.com/artifact/javax.portlet/portlet-api)
+    - `postgresql.jar` - [https://jdbc.postgresql.org/download.html](https://jdbc.postgresql.org/download.html)
+    - `support-tomcat.jar` - [http://repo1.maven.org/maven2/com/liferay/portal/support-tomcat](http://repo1.maven.org/maven2/com/liferay/portal/support-tomcat)
 
 3. Make sure that Tomcat can access the JDBC driver for your database. The list
    of JARs above includes `mysql.jar` and `postgresql.jar`. If you're using a
    database whose JDBC driver is not included in the list above, download the
    driver and copy it to your `TOMCAT_HOME/lib/ext` folder.
 
-4. Liferay includes an OSGi runtime. Copy the `osgi` folder from your Liferay
-   bundle to your Liferay Home folder. This folder contains many required JAR
-   files and a few configuration files.
+4. Liferay includes an OSGi runtime. Extract the OSGi ZIP file that you
+   downloaded and copy the `osgi` folder to your Liferay Home folder. The
+   `osgi` folder contains many required JAR files and a few configuration
+   files. If you're working with a bundle, you can simply copy the `osgi`
+   folder from your bundle to your Liferay Home folder.
 
 ## Tomcat Configuration
 
 Next, you need to configure Tomcat for running Liferay.
 
-1. Copy the `setenv.bat` and `setenv.sh` files from your bundle to your
-   `TOMCAT_HOME/bin` folder. `setenv.bat` looks like this:
+1. If you're working with a bundle, copy the `setenv.bat` and `setenv.sh` files
+   from your bundle to your `TOMCAT_HOME/bin` folder. If not, create these
+   files. `setenv.bat` looks like this:
 
         if exist "%CATALINA_HOME%/jre1.6.0_20/win" (
             if not "%JAVA_HOME%" == "" (
@@ -88,10 +95,11 @@ Next, you need to configure Tomcat for running Liferay.
 These files set a number of JVM options for Catalina. Catalina is Tomcat's
 servlet container.
 
-2. Copy the `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml` file from your
-   bundle to the corresponding location in your application server. This
-   `ROOT.xml` file creates a web application context for Liferay. `ROOT.xml`
-   looks like this:
+2. If you're working with a bundle, copy the
+   `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml` file from your bundle to the
+   corresponding location in your application server. If not, create this file.
+   The `ROOT.xml` file creates a web application context for Liferay.
+   `ROOT.xml` looks like this:
 
         <Context path="" crossContext="true">
 
@@ -124,15 +132,10 @@ servlet container.
     disabling sessions entirely.
 
 3. Next, you should make sure that the libraries you copied to
-   `$TOMCAT_HOME/lib/ext` are loaded when you start your server. Copy the
-   `$TOMCAT_HOME/conf/catalina.properties` from your bundle to your server.
-
-    Alternatively, if you have already customized your `catalina.properties`
-    file, you can simply replace one line. This allows you to preserve any
-    customizations that were made to your `catalina.properties` file.
-    
-    To take this approach, open `$TOMCAT_HOME/conf/catalina.properties` and
-    replace the line:
+   `$TOMCAT_HOME/lib/ext` are loaded when you start your server. If you're
+   working with a bundle, copy the `$TOMCAT_HOME/conf/catalina.properties` file
+   from your bundle to your server. If not, open
+   `$TOMCAT_HOME/conf/catalina.properties` and replace the line
 
         common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
 
@@ -143,26 +146,26 @@ servlet container.
     This allows Catalina to access the JARs that you copied to
     `$TOMCAT_HOME/lib/ext`.
 
-4. Copy the `$TOMCAT_HOME/conf/catalina.policy` file from your bundle to your
-   server. Alternatively, just replace the contents of the
-   `$TOMCAT_HOME/conf/catalina.policy` file with this:
+4. If you're working with a bundle, copy the
+   `$TOMCAT_HOME/conf/catalina.policy` file from your bundle to your server. If
+   not, just replace the contents of the `$TOMCAT_HOME/conf/catalina.policy`
+   file with this:
 
         grant {
             permission java.security.AllPermission;
         };
 
-    If you enable PACL for Liferay, you'll enable Tomcat's security manager and
-    instruct Catalina to use the `$TOMCAT_HOME/conf/catalina.policy` file. See
-    the Enabling PACL section for more information.
+    If you want to enable PACL for Liferay, you have to enable Tomcat's
+    security manager and instruct Catalina to use the
+    `$TOMCAT_HOME/conf/catalina.policy` file. See the Enabling PACL section for
+    more information.
 
-5. Next, you should make sure that UTF-8 URI encoding is used consistently.
-   Copy the `$TOMCAT_HOME/conf/server.xml` file to your server.
-
-    Alternatively, if you have already customized your `server.xml` file, you
-    can make a few simple edits instead. Edit your
-    `$TOMCAT_HOME/conf/server.xml` file and add the attribute
-    `URIEncoding="UTF-8"` whereever you see `redirectPort=8443`, in the
-    definition of your connectors (HTTP and AJP). For example:
+5. Next, you should make sure that UTF-8 URI encoding is used consistently. If
+   you're working with a bundle, copy the `$TOMCAT_HOME/conf/server.xml` file
+   to your server. If not, you can simply make a few edits to `server.xml`.
+   Edit your `$TOMCAT_HOME/conf/server.xml` file and add the attribute
+   `URIEncoding="UTF-8"` whereever you see `redirectPort=8443`, in the
+   definition of your connectors (HTTP and AJP). For example:
 
         <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
 
@@ -187,7 +190,7 @@ servlet container.
 
         chmod a+x *.sh
 
-    This command makes the shell scripts in this folder executable.
+    This command makes the shell scripts in Tomcat's `bin` folder executable.
 
 ## Tomcat Database Configuration
 
@@ -224,7 +227,8 @@ Note that the above resource definition assumes your database name is
 are both *root*. You'll have to update these values with your own database name
 and credentials.
 
-Your Tomcat managed data source is now configured. Next is your mail session.
+Your Tomcat managed data source is now configured. Next, let's consider your
+mail session.
 
 ## Tomcat Mail Configuration
 
@@ -295,9 +299,9 @@ Portal Access Control Language (PACL) with Liferay on Tomcat.
 
 ## Enabling PACL
 
-To enable PACL, you need to enable Tomcat's security manager. You already added
-the required permissions to the Tomcat policy configuration file,
-`catalina.policy`.
+To enable PACL, you need to enable Tomcat's security manager. In the Tomcat
+Configuration section above, you already added the required permissions to the
+Tomcat policy configuration file, `catalina.policy`.
 
 - Edit your `$TOMCAT_HOME/bin/setenv.sh` (if on Linux, Unix, or Mac OS) or
   `setenv.bat` (if on Windows) and enable the security manager by inserting the
@@ -315,8 +319,8 @@ the required permissions to the Tomcat policy configuration file,
         };
 
 To enable the security manager on Tomcat, the server must be started with the
-`-security` command line option. Shut down your Tomcat instance and restart it
-with the following command:
+`-security` command line option. Shut down your Tomcat instance and then
+restart it with the following command:
 
     ./startup.sh -security
 
