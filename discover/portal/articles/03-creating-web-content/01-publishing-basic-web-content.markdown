@@ -148,8 +148,7 @@ enlarged editor by clicking the *Done* button at the bottom of the screen.
 
 Add a few short sentences announcing the grand opening of the Lunar Resort. The
 content can be localized in whatever language you want. You'll learn more about
-localizing your content later on, which can be done after you publish your web
-content.
+localizing your content later on.
 
 You can integrate Liferay with external services to enable additional
 functionality. For example, if you navigate to the Control Panel, click on
@@ -162,27 +161,52 @@ article of this guide for more details.
 
 <!-- TODO: Replace link above with 7.0 link, when available. -Cody -->
 
-<!--
-Once Xuggler has been installed and enabled, embedding audio or video files in a
-web content is easy. From the Dockbar, navigate to *Site Content* &rarr; *Web
-Content* and click *Add* &rarr; *Basic Web Content*. Look for the buttons on the
-CKEditor toolbar with audio and video icons. Click on either the audio or video
-button and then click *Browse Server* to browse to the audio or video file's
-location on your portal's documents and media repository. When you find the
-appropriate file, click *Choose*. If you haven't already uploaded the audio or
-video file to the portal, you can do so by clicking on the *Upload* button.
-Select the file and then check that the audio or video component appears in the
-web content. Excellent! When your web content is published, users can view or
-listen the embedded multimedia!
+<!-- TODO: The below two pagagraphs assume the AlloyEditor was configured with
+audio/video button. This feature was supposed to go into the final released
+version of 7.0, but was not guaranteed (time restraints). If the feature was
+never finished, use the commented out section below, which provides the
+alternative way of configuring the CKEditor, since the AlloyEditor was never
+configured to support multimedia. -Cody -->
 
------
-In portal-ext.properties, adding:
+Once Xuggler has been installed and enabled, embedding audio or video files in a
+web content article is easy. Place your cursor in the editor and select the
+audio/video button and then choose the file you'd like to insert. If you haven't
+already uploaded the audio or video file to your Liferay instance, you'll need
+to navigate to *Documents and Media* in the Content section and upload the file
+to Liferay. Select the file and then check that the audio or video component
+appears in the web content. Excellent! When your web content is published, users
+can view or listen to the embedded multimedia!
+
+Are there other things you'd like to accomplish with your WYSIWYG editor that
+are not provided by default? Visit the [Editor Configurations](/develop/tutorials/-/knowledge_base/7-0/editor-configurations)
+tutorials to learn about extending the default editor to provide advanced
+functionality that will suit your needs.
+
+<!-- ALTERNATIVE METHOD FOR PROVIDING MULTIMEDIA: CKEDITOR CONFIGURATION
+
+Once Xuggler has been installed and enabled, embedding audio or video files in a
+web content article is easy. By default the current WYSIWYG editor (AlloyEditor)
+does not support the use of audio/video files. You can extend the default
+AlloyEditor by adding an audio/video button. You can learn about doing this in
+the [Editor Configurations](/develop/tutorials/-/knowledge_base/7-0/editor-configurations)
+tutorials section. Another option you have is changing the WYSIWYG editor to one
+that supports embedding audio/video files in web content. The CKEditor, for
+example, is an editor that supports this functionality. To use the CKEditor,
+create a `portal-ext.properties` file in your Liferay root folder and add the
+following property:
 
     editor.wysiwyg.portal-impl.portlet.ddm.text_html.ftl=ckeditor
 
-configures the CKEditor, from which users can add video. No way to do it using
-AlloyEditor.
------
+Once you restart your Liferay instance, the AlloyEditor is replaced with the
+CKEditor and you have the ability to add audio/video files!
+
+Place your cursor in the editor and select the audio/video button and then
+choose the file you'd like to insert. If you haven't already uploaded the audio
+or video file to your Liferay instance, you'll need to navigate to *Documents
+and Media* in the Content section and upload the file to Liferay. Select the
+file and then check that the audio or video component appears in the web
+content. Excellent! When your web content is published, users can view or listen
+to the embedded multimedia!
 
 -->
 
