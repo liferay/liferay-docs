@@ -1,4 +1,4 @@
-# Using Liferay Sync on Your Mobile Device
+# Using Liferay Sync on Your Mobile Device [](id=using-liferay-sync-on-your-mobile-device)
 
 Liferay Sync for Android and iOS contains most of the
 [desktop Sync client](/discover/portal/-/knowledge_base/6-2/using-liferay-sync-on-your-desktop)'s
@@ -18,7 +18,7 @@ the
 Once you've installed the Sync app on your device, follow the instructions below 
 to learn how to use it. 
 
-## Connecting to Your Portal
+## Connecting to Your Portal [](id=connecting-to-your-portal)
 
 When Liferay Sync first starts on your mobile device, press the *Get Started*
 button to begin setup. The setup screen asks for your login credentials and your
@@ -53,7 +53,7 @@ and a link to send app feedback to Liferay.
 Great! Now that you know how to connect to your portal and find your sites, you 
 can get started managing the sites' files and folders. 
 
-## Managing Files and Folders
+## Managing Files and Folders [](id=managing-files-and-folders)
 
 Whether you're working in My Documents or My Sites, you manage files and folders
 the same way. Pressing a site or folder shows you a list of its files and
