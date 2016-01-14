@@ -20,7 +20,7 @@ If you'd like to clone the repository and build Blade Tools from source, skip to
 the next section.
 
 1.  After you have installed JPM, download the `blade.jar` file:
-    [https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/distributions/executable/blade.jar](https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/distributions/executable/blade.jar).
+    [https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/com.liferay.blade.cli.jar](https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/com.liferay.blade.cli.jar).
 
     Blade Tools is still under development. Two tools are currently available:
     the CLI and the migration tool. The Blade CLI tool is included in the
