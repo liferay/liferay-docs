@@ -599,16 +599,17 @@ threaded view so that replies are attached to the proper parent message. This
 makes it easy to follow along with conversations. Icons
 (![Thread Views](../../images/message-boards-thread-view-icons.png)) at the top
 of the thread allow users to view threads in Combination View, Flat View, or
-Tree View. The Combination View shows the threads at the top as subjects only,
-with the Flat View underneath. A Flat View shows all of the messages in the
-order in which they are posted. A Tree View shows all of the messages in a
-threaded view, so that replies are next to the messages they are replying to. 
+Tree View. A Flat View shows all of the messages in the order in which they are
+posted. A Tree View indents indents reply messages with respect to the message
+they're replying to. The Combination View shows a textual tree representation of
+the thread messages using subjects only at the top, with the messages shown flat
+underneath.
 
 Message Boards is also highly integrated with Liferay's user management
 features. Posts on a message board show a user's profile picture as well as the
 date the user joined the site. 
 
-![Figure 5: You'll find it easy and fun following threads in message boards.](../../images/message-boards-participate-in-threads.png)
+![Figure 5: Combination View shows a textual representation of the thread tree above the messages, which are displayed flat.](../../images/message-boards-participate-in-threads.png)
 
 Subscribing to a thread causes Liferay to send the user an email whenever a new
 message is posted to the thread. If you have enabled the mailing list feature
