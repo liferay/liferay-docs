@@ -483,11 +483,19 @@ for more details about this.
 
 Enabling comments creates a discussion forum attached to your content which
 users can use to discuss your content. Enabling ratings on comments gives your
-users the ability to rate the comments. You may decide you want one, some, or
-none of these features, which is why they're all implemented as simple selector
-buttons to be enabled or disabled at need. Once you've selected the features you
-want to include in your Web Content Display spp, click the *Save* button. You
-can now close the configuration window.
+users the ability to rate the comments. By default, guests are not allowed to
+leave comments on web content. If you'd like to allow guests to comment on your
+web content article, navigate to the Control Panel &rarr; *Users* &rarr; *Roles*
+and select *Guest* &rarr; *Define Permissions*. From the left menu, select *Site
+Administration* &rarr; *Content* &rarr; *Web Content*. The navigate down to the
+Web Content Article heading and select the *Add Discussion* checkbox. Guests are
+now able to post comments on your web content article!
+
+You may decide you want one, some, or none of these features, which is why
+they're all implemented as simple selector buttons to be enabled or disabled at
+need. Once you've selected the features you want to include in your Web Content
+Display spp, click the *Save* button. You can now close the configuration
+window.
 
 To publish new content, select the *Add* button on the lower left of the app.
 This launches the same full-featured editor you've already seen in the Product
