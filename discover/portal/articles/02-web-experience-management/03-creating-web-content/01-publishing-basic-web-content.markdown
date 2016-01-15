@@ -522,15 +522,16 @@ changes.
 
 There are instances where you've edited your web content article many times, and
 you'd be interested in viewing the article's evolution. To view an article's
-histroy, navigate to *Web Content* from the Product Menu. Then select the
+history, navigate to *Web Content* from the Product Menu. Then select the
 article's *Actions* icon (![Actions](../../images/icon-actions.png)) and select
 *View History*. From this menu, you can view all the article's versions and
-modified/display dates. Another cool feature if the web content Diff tool, which
+modified/display dates. Another cool feature is the web content Diff tool, which
 lets you compare versions of the article and highlight the differences between
 the two. Of course, you must have more than two versions of the article for this
-to be possible. Click the *Actions* icon again next to a version of the article
-you'd like to compare and select *Compare to...*. Then select the other article
-you want to compare.
+feature to be available. Click the *Actions* icon again next to a version of the
+article you'd like to compare and select *Compare to...*. Then select the other
+article you want to compare. The tool provides color coded highlighting to
+emphasize additions and deletions between the two articles.
 
 ![Figure 11: Comparing web content articles is a great feature to use during the Workflow process.](../../images/web-content-diff-feature.png)
 
@@ -555,6 +556,22 @@ If you need to use the controls again, just select the icon again to return to
 the original format.
 
 $$$
+
+As an administrator, you may want to monitor what changes are being made to your
+site's web content without implementing a workflow process. To keep tabs on
+what's going on with your site's web content, you can subscribe to
+articles and folders. To do this, select the checkbox next to the web content
+entities you'd like to monitor. Then click the *Information* icon
+(![Information](../../images/icon-information.png)) and select the *Subscribe*
+icon (![Subscribe](../../images/icon-star.png)). Now whenever a web content
+article or folder is modified, you'll receive an email to your account's
+configured email address notifiying you of a change. To learn more about
+configuring your email in Liferay, visit the [Using the Control Panel]()
+section. You can navigate to your Web Content menu's *Options* icon
+(![Options](../../images/icon-options.png)) and select *Configuration* to modify
+your Web Content email notification settings.
+
+![Figure 12: Click the Subscribe icon in the web content entity's *Information* menu to begin receiving web content notifications.](../../images/web-content-subscribe.png)
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
