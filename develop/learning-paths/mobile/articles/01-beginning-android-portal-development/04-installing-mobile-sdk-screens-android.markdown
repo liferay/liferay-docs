@@ -122,4 +122,4 @@ the site you put the Guestbook portlet on. Then select
 The site ID is listed on the *Site Settings* tab. Copy and paste this value 
 from your portal to the `liferay_group_id` value in `server_context.xml`.
 
-Awesome! Now you're ready to implement portal authentication in your app. 
+Awesome! Next, you'll learn the app's basic design. 
