@@ -19,18 +19,124 @@ and reopen the *java* folder in project view.
 
 ![Figure 1: The new package for the Get Guestbooks Screenlet is highlighted.](../../images/android-guestbooks-screenlet-package.png)
 
-Now you're ready to get started on the Screenlet itself.
+Next, you'll create the model class the Screenlet needs. 
 
 ## Creating the Model Class for Guestbooks [](id=creating-the-model-class-for-guestbooks)
 
-Although you'll use the Screenlet to retrieve guestbooks, the Screenlet must 
-use the same Guestbook Mobile SDK you built earlier to call the Guestbook 
-portlet. Thus, the Screenlet needs a model class that can transform the JSON 
-containing the guestbooks into proper guestbook model objects. Fortunately, you 
-can reuse the existing `GuestbookModel` class. In Android Studio's project view, 
-copy `GuestbookModel` and paste it in the `getguestbooksscreenlet` package. In 
-the *Copy Class* dialogue that appears, accept the defaults and click *OK*. If 
-you need a review of how `GuestbookModel` works, see 
-[this Learning Path article](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieving-guestbooks#creating-the-model-class-for-guestbooks).
+The Guestbook Mobile SDK returns guestbooks from the portlet in a `JSONArray` 
+that contains each guestbook in a `JSONObject`. To work efficiently with these 
+guestbooks, you need a way of transforming them into proper guestbook objects.
+You'll do this via a model class. 
 
-Next, you need to create the Screenlet's UI.
+You'll create this model class in a separate package outside of the 
+`getguestbooksscreenlet` package. It makes sense to organize your code this way 
+because additional Screenlets you create may also use the model class. For 
+example, if you created a Screenlet for editing a guestbook, it would also need 
+to use guestbook model objects. Putting the model class in a separate package 
+makes it clear that this class doesn't belong exclusively to a single Screenlet. 
+
+First, create a new package called `model` inside the 
+`com.liferay.docs.liferayguestbook` package. Inside this new `model` package, 
+create a new class called `GuestbookModel`. Replace the `GuestbookModel` class's 
+contents with the following code: 
+
+    package com.liferay.docs.liferayguestbook.model;
+
+    import org.json.JSONException;
+    import org.json.JSONObject;
+
+    import java.io.Serializable;
+    import java.util.Date;
+
+    public class GuestbookModel implements Serializable {
+
+        private long _guestbookId;
+        private long _groupId;
+        private long _companyId;
+        private long _userId;
+        private String _userName;
+        private long _createDate;
+        private long _modifiedDate;
+        private String _name;
+
+        public GuestbookModel(JSONObject json) throws JSONException {
+            _guestbookId = json.getLong("guestbookId");
+            _groupId = json.getLong("groupId");
+            _companyId = json.getLong("companyId");
+            _userId = json.getLong("userId");
+            _userName = json.getString("userName");
+            _createDate = json.getLong("createDate");
+            _modifiedDate = json.getLong("modifiedDate");
+            _name = json.getString("name");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (!(obj instanceof GuestbookModel)) {
+                return false;
+            }
+
+            GuestbookModel guestbook = (GuestbookModel) obj;
+
+            return (_guestbookId == guestbook.getGuestbookId());
+        }
+
+        @Override
+        public String toString() {
+            return _name;
+        }
+
+        public long getGuestbookId() {
+            return _guestbookId;
+        }
+
+        public long getGroupId() {
+            return _groupId;
+        }
+
+        public long getCompanyId() {
+            return _companyId;
+        }
+
+        public long getUserId() {
+            return _userId;
+        }
+
+        public String getUserName() {
+            return _userName;
+        }
+
+        public Date getCreateDate() {
+            Date createDate = new Date(_createDate);
+            return createDate;
+        }
+
+        public Date getModifiedDate() {
+            Date modifiedDate = new Date(_modifiedDate);
+            return modifiedDate;
+        }
+
+        public String getName() {
+            return _name;
+        }
+    }
+
+This class creates `GuestbookModel` objects that effectively represent 
+`Guestbook` objects in the portlet. It does so by retrieving `Guestbook` 
+parameters from the `JSONObject` returned by the Mobile SDK's remote service 
+calls. The constructor does this by using the `getLong` and `getString` methods. 
+To see how the `Guestbook` parameters are defined in the portlet, see the 
+[Liferay MVC Learning Path article on Service Builder](/develop/learning-paths/mvc/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
+For now, the only parameters you really need in this class are `guestbookId` and 
+`name`. Because you might need the rest later, however, it's best to add 
+support for all of them now. 
+
+You should also note the `toString` method in this class. It's very simple; it
+only returns a guestbook's name. It's very important, though. Android calls
+`toString` to render objects in the Screenlet. If `toString` isn't defined for 
+an object, the Screenlet shows strings with the object's full package path and 
+internal ID. In other words, the Screenlet displays illegible text if you don't 
+define `toString` here. By defining `toString` to return each `GuestbookModel`'s 
+name, you're telling the Screenlet to show each guestbook's name. 
+
+Next, you need to create the Screenlet's UI. 

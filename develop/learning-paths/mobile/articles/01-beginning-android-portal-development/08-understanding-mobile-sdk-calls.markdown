@@ -53,4 +53,4 @@ This diagram is broken down into four basic steps:
    rest of the Screenlet for display in your app. 
 
 Great! Now you know the basics of making service calls with the Guestbook Mobile 
-SDK. Next, you'll get started creating the Get Guestbook Screenlet. 
+SDK. Next, you'll get started creating the Get Guestbooks Screenlet. 
