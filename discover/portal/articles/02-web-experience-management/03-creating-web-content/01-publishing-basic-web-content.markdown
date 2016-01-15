@@ -79,12 +79,12 @@ content by first exploring the editor.
 
 Once you've clicked *Add* &rarr; *Basic Web Content*, you'll find a highly
 customizable form that, by default, has three fields: title, summary, and a
-powerful WYSIWYG editor. You could customize this form to contain whatever
-fields our content needs but you'll keep things simple for now. If web content
-structures have already been created in your currently selected scope, you can
-select one for your new web content article by clicking the *Structure and
-Template* dropdown. You'll discuss web content structures and templates in
-detail in the next chapter.
+powerful WYSIWYG editor. You're also provided a boolean *Searchable* switch. You
+could customize this form to contain whatever fields your content needs but
+you'll keep things simple for now. If web content structures have already been
+created in your currently selected scope, you can select one for your new web
+content article by clicking the *Structure and Template* dropdown. You'll
+discuss web content structures and templates in detail in the next chapter.
 
 Getting a new web site up and running is an exciting step for anyone, whether it
 is a large corporation or a small non-profit charity. To celebrate this
@@ -93,7 +93,11 @@ the pomp and circumstance it deserves!
 
 Type the words *Welcome to the Lunar Resort* in the *Title* field. In the
 *Summary* field, give a short description of the Lunar Resort's facilities. In
-the content field, you'll add the body of your web content article.
+the *Content* field, you'll add the body of your web content article, which
+you'll dive into next. Lastly, leave the *Searchable* switch enabled. Note that
+if you disable the searchability of your article, it only prevents end users
+from finding the article via search. Administrators still have the ability to
+search for the article from the Web Content section in the Product Menu.
 
 The kneejerk reaction to the simplistic looking WYSIWYG editor is "Where are the
 editor's controls?" Don't let the simplistic look of the editor fool you; the
