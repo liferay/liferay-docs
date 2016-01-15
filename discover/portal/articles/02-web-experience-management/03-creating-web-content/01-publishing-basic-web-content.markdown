@@ -520,8 +520,22 @@ changes.
 
 ![Figure 10: The *Edit*, *Edit Template*, *Select Web Content*, and *Add* buttons appear at the bottom of the Web Content Display app.](../../images/web-content-display-icons.png)
 
+There are instances where you've edited your web content article many times, and
+you'd be interested in viewing the article's evolution. To view an article's
+histroy, navigate to *Web Content* from the Product Menu. Then select the
+article's *Actions* icon (![Actions](../../images/icon-actions.png)) and select
+*View History*. From this menu, you can view all the article's versions and
+modified/display dates. Another cool feature if the web content Diff tool, which
+lets you compare versions of the article and highlight the differences between
+the two. Of course, you must have more than two versions of the article for this
+to be possible. Click the *Actions* icon again next to a version of the article
+you'd like to compare and select *Compare to...*. Then select the other article
+you want to compare.
+
+![Figure 11: Comparing web content articles is a great feature to use during the Workflow process.](../../images/web-content-diff-feature.png)
+
 When you publish updates to a web content article that's already being displayed
-somewhere on in your Liferay instance (e.g., in a Web Content Display app or an
+somewhere in your Liferay instance (e.g., in a Web Content Display app or an
 Asset Publisher app), the content is immediately updated (unless, of course, you
 have a workflow enabled, which is discussed in greater detail in the
 [Using Workflow]()
