@@ -26,36 +26,24 @@ how to use Liferay's faceted search.
 Liferay provides several applications that let users and administrators search
 for content. First, there's the Search application, which can be placed on a
 page to let users search for web content instances. The Search application only
-searches for web content. However, the Blogs, Wiki, Message Boards, and
-Documents and Media applications all provide search bars that let users search
-among the specific types of assets with which these applications allow users to
-interact. Note that all of these applications are accessible from Site
-Administration in the Product Menu. They can also be placed on portal pages for
-end-users to use. The Web Content application in the Product Menu's Site
-Administration section also has a built-in search bar, which allows for web
-content search. Because this application is only designed for administrative
-use (and is not available to add to a page), the Search application is available
-to allow non-adminstrative users to search for web content.
-
-<!-- At current time, Wiki did not have search bar in Site Admin. This is most
-likely due to it not being "Lexiconified" yet, but double check this before
-final publishing. -Cody -->
+searches for web content. However, apps like Blogs, Wiki, Message Boards, and
+Documents and Media all provide search bars that let users search among the
+specific types of assets with which these applications allow users to interact.
+Note that all of these applications are accessible from Site Administration in
+the Product Menu. They can also be placed on portal pages for end-users to use.
+The Web Content application in the Product Menu's Site Administration section
+also has a built-in search bar, which allows for web content search. Because
+this application is only designed for administrative use (and is not available
+to add to a page), the Search application is available to allow
+non-adminstrative users to search for web content.
 
 +$$$
 
-**Note:** The Web Content Search portlet is deprecated in Liferay 6.2 and will
-be removed in Liferay 7.0. The Web Content Search portlet will be migrated to
-the Search portlet, which will be configured to only search for web content. 
+**Note:** The Web Content Search application is deprecated in Liferay 7.0 and
+will be removed in Liferay 7.1. The Web Content Search app's functionality has
+been replaced by the Search app, which is configured to search for web content. 
 
 $$$
-
-<!-- The Web Content Search portlet is still available in current builds of
-Liferay 7.0. I've contacted Julio to find out why it's still there and if it's
-still planned for removal. He indicated they did not have time to remove it, but
-are planning to have it disabled by default. The plan will be to completely
-remove it for version 7.1. Once plan is finalized, this section will need to be
-updated. A ticket (LRDOCS-2094) has been filed to edit this content, when
-finalized. -Cody -->
 
 In order for content to be searchable, it must first be indexed. Liferay uses
 Lucene for indexing and searching for content. Please refer to the Lucene
