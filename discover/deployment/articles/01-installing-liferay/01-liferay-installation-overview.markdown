@@ -46,13 +46,13 @@ maintain your Liferay solution. It includes
 
 Next, let's learn about some differences between Liferay releases.
 
-<!-- This section must be updated for 7.0. -->
+<!-- This section must be updated for 7.0. CE vs. EE terminology will need to
+change. -->
 ## Understanding Liferay's Releases
 
 Which version of Liferay should you install? That's an easy question to answer:
 if this is a new installation, we recommend you install the latest version
 available. If you want to understand how Liferay releases work, read on.
-Otherwise, you can skip this section for now and read it later.
 
 Liferay's release process follows a prescribed structure that is consistent
 from one release to the next. Each release has a specific number sequence
@@ -81,7 +81,7 @@ leverage the upgrade tools and documentation.
 A change in the third digit of the version scheme (e.g, 6.2.1 to 6.2.2) is a
 maintenance release. This means that each maintenance release provides an
 improved level of security and reliability. Customizations are generally safe,
-but we recommend doing a review. No new features are included. 
+but we recommend doing a review. No new features are included.
 
 These rules are relaxed when a minor or major release is still in beta quality.
 
@@ -119,9 +119,9 @@ and administration UIs. Here is a description of each surname and what it means:
 Armed with this information, here's our advice for how to manage your Liferay
 installation.
 
-- When starting a new project, always use the latest stable version available;
-  that is, the latest available GA. At the time of writing, the most recent
-  version is Liferay CE 6.2 GA1 (6.2.0) or Liferay EE 6.1 GA2 (6.2.00). 
+- When starting a new project, always use the latest stable version available.
+  (This means the latest available GA.) At the time of writing, the most recent
+  version is Liferay CE 6.2 GA1 (6.2.0) or Liferay EE 6.1 GA2 (6.2.00).
 
 - Always update to the latest maintenance release available for the functional
   version (major or minor) that you are using. For example, if you started your
@@ -132,14 +132,14 @@ installation.
 
 - You are always welcome to use any preview, beta or release candidate. In
   fact, that's why they exist--so as many people as possible start using it and
-  provide us their feedback. Please note, we do not recommend using pre-releases
-  (milestones, betas, or release candidates) in production. You may not want to
-  use these releases even during development if you have tight deadlines, since
-  you may hit some unexpected bugs.
+  provide us their feedback. Please note, we do not recommend using
+  pre-releases (milestones, betas, or release candidates) in production. You
+  might not even want to use these releases during development if you have
+  tight deadlines, since you may hit some unexpected bugs.
 
 - Plugins that work in any GA or fix pack version will work in any later
-  maintenance release. That is, a plugin developed for Liferay 6.2 GA1 will also
-  work in Liferay 6.2 GA2 or a GA2 fix pack.
+  maintenance release. That is, a plugin developed for Liferay 6.2 GA1 will
+  also work in Liferay 6.2 GA2 or a GA2 fix pack.
 
 For more details on updating Liferay Portal, see the
 [Upgrading Liferay](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
@@ -196,8 +196,7 @@ install Liferay Portal.
 Before you begin installing Liferay, You should review these basic installation
 steps:
 
-1. Choose a database to use with Liferay and create a new database in your
-   database server.
+1. Choose a database server to use with Liferay and create a new database.
 
 2. Determine whether you want Liferay to manage your database connection or
    your application server to manage your database connection. We recommend
