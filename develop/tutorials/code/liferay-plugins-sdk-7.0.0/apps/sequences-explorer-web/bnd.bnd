@@ -1,6 +1,0 @@
-Bundle-Name: Sequences Explorer Web
-Bundle-SymbolicName: com.liferay.sequences.explorer.web
-Bundle-Version: 1.0.0
-Include-Resource:\
-	bower.json,\
-	classes

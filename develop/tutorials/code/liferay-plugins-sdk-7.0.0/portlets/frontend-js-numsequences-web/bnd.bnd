@@ -1,6 +1,0 @@
-Bundle-Name: ES6 Numeric Sequences
-Bundle-SymbolicName: com.liferay.frontend.js.numsequences.web
-Bundle-Version: 1.0.0
-Include-Resource:\
-	bower.json,\
-	classes

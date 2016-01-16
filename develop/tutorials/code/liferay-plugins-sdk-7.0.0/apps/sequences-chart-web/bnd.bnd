@@ -1,6 +1,0 @@
-Bundle-Name: Sequences Chart Web
-Bundle-SymbolicName: com.liferay.sequences.chart.web
-Bundle-Version: 1.0.0
-Include-Resource:\
-	bower.json,\
-	classes
