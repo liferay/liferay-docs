@@ -30,12 +30,12 @@ bookmark's URL and title from the UI. The Screenlet's View class then implements
 those methods. You need to define an analogous View Model interface for the Get 
 Guestbooks Screenlet. 
 
-So what methods should be defined by the Get Guestbooks Screenlet's View Model 
-interface? The Get Guestbooks Screenlet's UI doesn't need *any* control 
-elements, such as sliders, text boxes, buttons, or the like. It only needs to 
-display a guestbook list. Its view model interface therefore only needs to 
-define a single method for this purpose. You'll handle list item selections 
-separately, by implementing `AdapterView.OnItemClickListener` in the view class. 
+So what methods should the Get Guestbooks Screenlet's View Model interface 
+define? The Get Guestbooks Screenlet's UI doesn't need *any* control elements, 
+such as sliders, text boxes, buttons, or the like. It only needs to display a 
+guestbook list. Its view model interface therefore only needs to define a single 
+method for this purpose. You'll handle list item selections separately, by 
+implementing `AdapterView.OnItemClickListener` in the view class. 
 
 Create the `GetGuestbooksViewModel` interface in the `view` package. When the 
 interface opens in the editor, change its declaration to extend 
@@ -59,29 +59,22 @@ represented by `userAction`, occurs. You might now be thinking, "Hold up! You
 just told me that this Screenlet's UI only displays a guestbook list, and that 
 I'll handle list item selections separately. What other actions are there for 
 the user to take?" This is an astute observation. The only other action a user 
-can take, and the one you're accounting for here, is loading the Screenlet. 
+can take, and the one you account for here, is loading the Screenlet. 
 
 The `showFinishOperation` method requires that you add the following imports to 
 the interface. If you haven't added them already, do so now:
 
-    import com.liferay.docs.getguestbooksscreenlet.GuestbookModel;
+    import com.liferay.docs.liferayguestbook.model.GuestbookModel;
     import java.util.List;
 
-+$$$
-
-**Note:** Make sure you import `GuestbookModel` from `getguestbooksscreenlet`, 
-and not `liferayguestbook.model`.
-
-$$$
-
-Awesome! Now you're ready to create the View's layout XML.
+Awesome! Now you're ready to create the View's layout XML. 
 
 ## Creating the View's Layout XML [](id=creating-the-views-layout-xml)
 
 Before creating the View class, you should create the View's layout XML. This 
 defines the Screenlet's UI. Create the file `guestbooks_default.xml` in the 
-`res/layout` directory. When the layout file opens, switch to text view and 
-replace the file's contents with the following code: 
+`res/layout` directory. When this layout file opens, switch to text view and 
+replace its contents with the following code: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <com.liferay.docs.getguestbooksscreenlet.view.GetGuestbooksView
@@ -99,23 +92,21 @@ layout's content in the View class.
 
 ## Creating the View Class [](id=creating-the-view-class)
 
-The View class is the heart of any Screenlet's UI. It renders the UI, handles 
-user interactions, and communicates with the Screenlet class. This Screenlet's 
-View class must extend `ListView` to get an implicit `ListView` object to serve 
-as content for the layout XML you just created. This is why you didn't need to 
-put any other content in the layout. You'll use the `ListView` in the View class 
-to display the guestbooks programmatically. Note that this is similar to what 
-you did in 
-[`EntriesFragment` in this Learning Path's previous section](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieving-guestbook-entries#creating-a-fragment-for-the-entries): 
-by extending `ListFragment`, you gained an implicit `ListView` that you used to 
-display entries programmatically in a list.
+The View class is the heart and mind of any Screenlet's UI. It renders the UI, 
+handles user interactions, and communicates with the Screenlet class. Since you 
+want to display guestbooks in a list, the Get Guestbooks Screenlet's View class 
+should extend [`ListView`](http://developer.android.com/reference/android/widget/ListView.html). 
+This gives the View class an implicit `ListView` object to serve as content for 
+the layout XML you just created. This is why you didn't need to put any other 
+content in the layout. You'll use the View class's `ListView` to display the 
+guestbooks programmatically in a list. 
 
 The Get Guestbooks Screenlet's View class must also implement 
 `GetGuestbooksViewModel` and `AdapterView.OnItemClickListener`. Implementing 
 these interfaces lets the View class handle user interactions. Implementing the 
 View Model lets the View class refresh the list of guestbooks displayed by the 
 Screenlet. Implementing the item click listener lets the View class handle user 
-selections of individual guestbooks in the list.
+selections of individual guestbooks in the list. 
 
 Now it's time to get down to business! Create the `GetGuestbooksView` class 
 inside the `view` package. Change the class declaration to extend Android's 
@@ -131,24 +122,26 @@ done so, add them now:
     import android.widget.ListView;
     import android.widget.AdapterView;
 
-Before implementing the interfaces, you need to declare a variable to hold the 
+Before implementing the interfaces, you need to declare a variable for the 
 guestbooks retrieved from the Guestbook portlet. Since the Screenlet converts 
-each guestbook from a `JSONObject` to a `GuestbookModel` object, define the 
-variable as a list of `GuestbookModel` objects: 
+each guestbook from `JSONObject` to `GuestbookModel`, define the variable as a 
+`GuestbookModel` list: 
 
     private List<GuestbookModel> _guestbooks = new ArrayList<>();
 
 You must also add the following imports:
 
-    import com.liferay.docs.getguestbooksscreenlet.GuestbookModel;
+    import com.liferay.docs.liferayguestbook.model.GuestbookModel;
     import java.util.ArrayList;
     import java.util.List;
 
 Now you need to create the `GetGuestbooksView` class's constructors. You can 
 leverage `ListView`'s constructors for this. In the constructor 
 [that takes a `Context`, `AttributeSet`, and `defaultStyle` parameter](http://developer.android.com/reference/android/widget/ListView.html#ListView(android.content.Context, android.util.AttributeSet, int)), 
-you must create and set an adapter for the `ListView`, and then set the item 
-click listener. Add the following constructors to the `GetGuestbooksView` class: 
+you must create and set the `ListView`'s 
+[adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews) 
+and then set the item click listener. Add the following constructors to the 
+`GetGuestbooksView` class: 
 
     public GetGuestbooksView(Context context) {
         this(context, null);
@@ -171,11 +164,12 @@ click listener. Add the following constructors to the `GetGuestbooksView` class:
         setOnItemClickListener(this);
     }
 
-The adapter in the last constructor should look familiar: 
-[it's effectively the same one you used earlier](/develop/learning-paths/mobile/-/knowledge_base/6-2/displaying-guestbooks). 
-It displays a single line of text for each list item by using the built-in 
-Android layout `simple_list_item_activated_1`. After setting the adapter to the 
-implicit `ListView`, the constructor finishes by using the `AdapterView` class's 
+The adapter is an [`ArrayAdapter`](http://developer.android.com/reference/android/widget/ArrayAdapter.html) 
+that displays a single line of text for each list item by using the built-in 
+Android layout `simple_list_item_activated_1`. Note that `_guestbooks` is the 
+last argument to the adapter's constructor. This sets the `GuestbookModel` list 
+as the adapter's data source. The `setAdapter` method then sets the adapter to 
+the `ListView`. The constructor finishes by using the `AdapterView` class's 
 `setOnItemClickListener` method to set `GetGuestbooksView` as the `ListView`'s 
 click listener. 
 
@@ -186,11 +180,11 @@ haven't already done so, add them now:
     import android.util.AttributeSet;
     import android.widget.ArrayAdapter;
 
-You must now implement the methods defined in the interfaces  
+Next, you must implement the methods defined in the interfaces 
 [`BaseViewModel`](https://github.com/liferay/liferay-screens/blob/1.2.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/view/BaseViewModel.java) 
 and `GetGuestbooksViewModel`. Screens's `BaseViewModel` interface defines the 
-following three methods. These methods exist so you can provide the 
-functionality listed here: 
+following three methods. These methods exist so you can provide the listed 
+functionality: 
 
 - `public void showStartOperation(String actionName)`: Called by the Screenlet 
   when the server operation begins.
@@ -201,22 +195,12 @@ functionality listed here:
 - `public void showFailedOperation(String actionName, Exception e)`: Called by 
   the Screenlet if the server operation fails.
 
-In many cases, however, you don't need to put anything in these methods when you 
+In many cases, you don't need to put anything in these methods when you 
 implement them. For example, in the Get Guestbooks Screenlet you're only 
 interested in what happens when the operation finishes with a list of 
-guestbooks, or finishes with an error. You can therefore leave 
+guestbooks or an error. You can therefore leave 
 `showStartOperation(String actionName)` and 
-`showFinishOperation(String actionName)` blank. You defined the 
-`showFinishOperation` method you need, the one that takes a list of guestbooks 
-as a parameter, in the `GetGuestbooksViewModel` interface. In this method's 
-implementation, you must refresh the list of guestbooks in `_guestbooks` and 
-notify the `ListView`'s adapter of the change. You'll do this the same way you 
-did in the `reloadGuestbooks` method when you 
-[used the Mobile SDK to retrieve guestbooks](/develop/learning-paths/mobile/-/knowledge_base/6-2/retrieving-guestbooks). 
-If the operation to retrieve guestbooks fails, you should use the 
-`showFailedOperation` method to log and display the error to the user. You 
-can do this with Screens's `LiferayLogger` and `LiferayCrouton` helper classes. 
-Add these method implementations to `GetGuestbooksView` as follows: 
+`showFinishOperation(String actionName)` blank. Add these methods now:
 
     @Override
     public void showStartOperation(String actionName) {
@@ -225,6 +209,16 @@ Add these method implementations to `GetGuestbooksView` as follows:
     @Override
     public void showFinishOperation(String actionName) {
     }
+
+You defined the `showFinishOperation` method you need, the one that takes a 
+`GuestbookModel` list as a parameter, in the `GetGuestbooksViewModel` interface. 
+In this method's implementation, you must refresh the guestbooks in 
+`_guestbooks` and notify the `ListView`'s adapter of the change. To refresh the 
+guestbooks, you'll clear `_guestbooks` of any content and then populate it with 
+the most recent guestbooks from the server. To notify the adapter of this 
+change, you'll retrieve it by using `getAdapter()` and then call its 
+`notifyDataSetChanged()` method. Add this `showFinishOperation` method 
+implementation now:
 
     @Override
     public void showFinishOperation(final String userAction, final List<GuestbookModel> guestbooks) {
@@ -235,6 +229,11 @@ Add these method implementations to `GetGuestbooksView` as follows:
 
         ((ArrayAdapter) getAdapter()).notifyDataSetChanged();
     }
+
+Next, you should implement the `showFailedOperation` method to log and display 
+the error to the user if the operation to retrieve guestbooks fails. You can do 
+this with Screens's `LiferayLogger` and `LiferayCrouton` helper classes. Add 
+this method implementation now: 
 
     @Override
     public void showFailedOperation(String actionName, Exception e) {
