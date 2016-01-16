@@ -25,12 +25,11 @@ to see what's polyfilled.
 
 Once you've completed writing your module, you can expose it by creating a
 `bower.json` file that specifies your bundle's name and version. Make sure to
-create this in your module's root folder. The
-[frontend-js-numsequences-web]( https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/liferay-plugins-sdk-7.0.0/portlets/frontend-js-numsequences-web)
+create this in your module's root folder. The [js-logger]( https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/js-logger)
 module, for example, specifies the following values in its `bower.json` file: 
 
     {
-        "name": "js-numsequences",
+        "name": "js-logger",
         "version": "1.0.0"
     }
 
@@ -41,7 +40,5 @@ latest JavaScript standard features and publish it.
 **Related Topics**
 
 [Using ES2015 Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-0/using-es2015-modules-in-your-portlet)
-
-[Using Third Party Libraries in Your JavaScript](/develop/tutorials/-/knowledge_base/7-0/using-third-party-libraries-in-your-javascript)
 
 [Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
