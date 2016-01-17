@@ -117,7 +117,7 @@
 	</target>
 
 	<target name="check-images-site" description="Verifies all images referenced in a single Markdown article or a document's Markdown articles.">
-		<checkimgssite docdir="${doc.dir}" chapter="${article}">
+		<checkimgssite docdir="${doc.dir}">
 		</checkimgssite>
 	</target>
 
