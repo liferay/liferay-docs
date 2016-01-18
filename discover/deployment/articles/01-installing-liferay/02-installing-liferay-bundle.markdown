@@ -71,18 +71,13 @@ Liferay's Basic Configuration page. If for some reason your browser doesn't
 load the Basic Configuration page, launch your web browser and navigate to
 [http://localhost:8080](http://localhost:8080).
 
-The Basic Configuration includes a checkbox labeled *Add Sample Data*. If you
-check this box, sample data is added to Liferay's database including users,
-sites, and organizations. The sample data allows many Liferay features to be
-showcased.
+For information on the Basic Configuration page and Liferay's setup wizard,
+please see the [Using Liferay's Setup Wizard]() documentation.
+<!-- Update link above. -->
 
-If you're installing Liferay on your own machine to explore its features, the
-sample data will probably be useful. If, however, you're installing Liferay on
-a real server, you should start with a clean system.
-
-Bundles are the easiest way to get started with Liferay. They come
-preconfigured with a Liferay instance that can be used immediately to explore
-many Liferay features. Bundles are the fastest way to create full
+Bundles are the easiest way to get started with Liferay. They come with a
+pre-installed and preconfigured Liferay instance that can be used immediately
+to explore many Liferay features. Bundles are the fastest way to create full
 production-ready Liferay installations.
 
 Of course, it's not always possible to use a bundle. You may already have an

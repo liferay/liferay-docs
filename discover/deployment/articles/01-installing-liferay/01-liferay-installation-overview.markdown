@@ -533,11 +533,21 @@ database, the server it's running on, and the database user credentials.
 
 ![Figure x: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *lunar_resort* to hold our Liferay data.](../../images/setup-wizard-2.png)
 
+The Basic Configuration page also includes a checkbox labeled *Add Sample
+Data*. If you check this box, sample data is added to Liferay's database. This
+data includes users, sites, and organizations. The sample data allows many
+Liferay features to be showcased. If you're installing Liferay on your own
+machine to explore its features, the sample data will probably be useful. If,
+however, you're installing Liferay on a real server, you should start with a
+clean system.
+
 Once you've filled out the form, click *Finish Configuration*. You'll see a
 message stating that Liferay is being installed as it creates the tables and
 data it needs in its database. When it's finished, it tells you the location of
 the configuration file (`portal-setup-wizard.properties`) where it saved all
 your settings. From here, you can go to your home page.
+
++$$$
 
 **Tip:** The wizard is an extremely helpful tool,
 especially if you're setting up Liferay for the first time or creating a
