@@ -10,7 +10,7 @@ Screens.
 
 This tutorial explains how to create your own Screenlets. As an example, it
 references code from the sample
-[Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/tree/1.1.0/android/samples/addbookmarkscreenlet), 
+[Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/tree/master/android/samples/addbookmarkscreenlet), 
 that saves bookmarks to Liferay's Bookmarks portlet. 
 
 To understand the components that comprise a Screenlet, you might want to 
@@ -41,7 +41,7 @@ The first items to create for a Screenlet's UI are its View Model interface and
 layout. The following steps explain how: 
 
 1.  Create a new View Model interface that extends
-    [`BaseViewModel`](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/view/BaseViewModel.java).
+    [`BaseViewModel`](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/base/view/BaseViewModel.java).
     In it, specify getters and setters for the attributes you want to use. Any
     View classes you write for your Screenlet must implement this interface. 
 
@@ -117,9 +117,9 @@ do this, follow these steps:
     reference your UI's components. Implement the View Model interface getter
     methods to return the inner value of each component and setter methods to
     set their inner values. For example, here's
-    [`AddBookmarkView`](https://github.com/liferay/liferay-screens/blob/1.1.0/android/samples/addbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/bookmark/view/AddBookmarkView.java)'s
+    [`AddBookmarkView`](https://github.com/liferay/liferay-screens/blob/master/android/samples/addbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/bookmark/view/AddBookmarkView.java)'s
     implementation of View Model interface
-    [`AddBookmarkViewModel`](https://github.com/liferay/liferay-screens/blob/1.1.0/android/samples/addbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/bookmark/view/AddBookmarkViewModel.java):
+    [`AddBookmarkViewModel`](https://github.com/liferay/liferay-screens/blob/master/android/samples/addbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/bookmark/view/AddBookmarkViewModel.java):
 
         public String getURL() {
             return _urlText.getText().toString();
@@ -170,13 +170,13 @@ do this, follow these steps:
 		}
 
 4.  Override
-    [`BaseViewModel`](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/view/BaseViewModel.java)'s
+    [`BaseViewModel`](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/base/view/BaseViewModel.java)'s
     methods `showStartOperation`, `showFinishOperation`, and
    `showFailedOperation`. In these methods, you can log what's happening in your
     Screenlet. 
 
 As an example View class, here's the Add Bookmark Screenlet's
-[`AddBookmarkView`](https://github.com/liferay/liferay-screens/blob/1.1.0/android/samples/addbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/bookmark/view/AddBookmarkView.java)
+[`AddBookmarkView`](https://github.com/liferay/liferay-screens/blob/master/android/samples/addbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/bookmark/view/AddBookmarkView.java)
 class:
 
 	package com.liferay.mobile.screens.bookmark.view;
@@ -286,7 +286,7 @@ implementation:
         }
 
 2.  Create an Interactor implementation class that extends
-    [`BaseRemoteInteractor<YourInternalListener>`](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/BaseRemoteInteractor.java)
+    [`BaseRemoteInteractor<YourInternalListener>`](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/BaseRemoteInteractor.java)
     and implements the Interactor interface you just created. In your Interactor
     methods, validate input and invoke the Liferay Mobile SDK to call the remote
     services. Also, when the service request ends, make sure to post an event
@@ -373,7 +373,7 @@ developers to use the Screenlet.
 
 Create the Screenlet class so that it implements your Interactor's internal
 listener class and extends
-[`BaseScreenlet`](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/BaseScreenlet.java).
+[`BaseScreenlet`](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/base/BaseScreenlet.java).
 Specify your View Model interface and Interactor class as type parameters for
 `BaseScreenlet`. Since the Screenlet is notified by its Interactor when an
 asynchronous operation ends, the Screenlet class must implement the listener
@@ -445,7 +445,7 @@ The third and final abstract `BaseScreenlet` method to implement is
 the operation by using the data and the supplied Interactor.
 
 Here's the
-[`AddBookmarkScreenlet`](https://github.com/liferay/liferay-screens/blob/1.1.0/android/samples/addbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/bookmark/AddBookmarkScreenlet.java)
+[`AddBookmarkScreenlet`](https://github.com/liferay/liferay-screens/blob/master/android/samples/addbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/bookmark/AddBookmarkScreenlet.java)
 class from the Add Bookmark Screenlet:
 
     package com.liferay.mobile.screens.bookmark;

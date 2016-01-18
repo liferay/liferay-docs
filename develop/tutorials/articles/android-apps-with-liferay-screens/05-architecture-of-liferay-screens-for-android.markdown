@@ -57,7 +57,7 @@ API.
 
 Here are the core's main components:
 
-[**Interactor:**](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/Interactor.java)
+[**Interactor:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/Interactor.java)
 the base class for all Liferay Portal interactions and use cases that a
 Screenlet supports. Interactors call services through the Liferay Mobile SDK and
 receive responses asynchronously through the
@@ -66,7 +66,7 @@ state. Their actions can vary in complexity, from performing simple algorithms
 to requesting data asynchronously from a server or database. A Screenlet can
 have multiple Interactors, each dedicated to supporting a specific operation.
 
-[**BaseScreenlet:**](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/BaseScreenlet.java)
+[**BaseScreenlet:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/base/BaseScreenlet.java)
 the base class for all Screenlet classes. It receives user events from a
 screenlet's View, instantiates and calls the Interactors, and then updates the
 View with operation results. Classes that extend it can override its
@@ -81,9 +81,11 @@ View with operation results. Classes that extend it can override its
 
 **Screenlet View:** implements the Screenlet's UI. It's instantiated by the
 Screenlet's `createScreenletView` method. It renders a specific UI using
-standard layout files and updates the UI with data changes.
+standard layout files and updates the UI with data changes. When developing your 
+own Views that extend a parent View, you can read the parent Screenlet's 
+properties or call its methods from this class. 
 
-[**InteractorAsyncTaskCallback:**](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/InteractorAsyncTaskCallback.java)
+[**InteractorAsyncTaskCallback:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/InteractorAsyncTaskCallback.java)
 receives asynchronous responses from the Liferay Mobile SDK's `AsyncTask` class.
 
 [**EventBus:**](https://github.com/greenrobot/EventBus) notifies the Interactor
@@ -94,18 +96,19 @@ with `AsyncTask` instances.
 [**Liferay Mobile SDK:**](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)
 calls a Liferay instance's remote services in a type-safe and transparent way.
 
-[**SessionContext:**](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/context/SessionContext.java)
+[**SessionContext:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/context/SessionContext.java)
 a singleton class that holds the logged in user's session. Apps can use an
 implicit login, invisible to the user, or a login that relies on explicit user
 input to create the session. User logins can be implemented with the
-[Login Screenlet](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android).
+[Login Screenlet](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android). 
+This is explained in detail [here](/develop/tutorials/-/knowledge_base/6-2/accessing-the-liferay-session-in-android).
 
-[**LiferayServerContext:**](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/context/LiferayServerContext.java)
+[**LiferayServerContext:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/context/LiferayServerContext.java)
 a singleton object that holds server configuration parameters. It's loaded from
 the `server_context.xml` file, or from any other XML file that overrides the
 keys defined in the `server_context.xml`.
 
-[**LiferayScreensContext:**](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/context/LiferayScreensContext.java)
+[**LiferayScreensContext:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/context/LiferayScreensContext.java)
 a singleton object that holds a reference to the application context. It's used
 internally where necessary. 
 
@@ -126,7 +129,7 @@ Screenlets are comprised of several Java classes and an XML descriptor file:
 **MyScreenletViewModel:** an interface that defines the attributes shown in the
 UI. It typically accounts for all the input and output values presented to the
 user. For instance,
-[`LoginViewModel`](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login/view/LoginViewModel.java)
+[`LoginViewModel`](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login/view/LoginViewModel.java)
 includes attributes like the user name and password. The Screenlet can read the
 attribute values, invoke Interactor operations, and change these values based
 on operation results.
@@ -156,10 +159,10 @@ server. On completing an interaction, the Interactor must notify its listeners,
 one of which is typically the Screenlet class instance. The number of
 Interactors a Screenlet requires depends on the number of server use cases it
 supports. For example, the
-[Login Screenlet](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login/LoginScreenlet.java)
+[Login Screenlet](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login/LoginScreenlet.java)
 class only supports one use case (log in the user), so it has only one
 Interactor. The
-[DDL Forms Screenlet](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/ddl/form/DDLFormScreenlet.java)
+[DDL Forms Screenlet](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/ddl/form/DDLFormScreenlet.java)
 class, however, supports several use cases (load the form, load a record, submit
 the form, etc.), so it uses a different Interactor class for each use case.
 
@@ -227,26 +230,26 @@ for calling a different Liferay Portal instance. Default Views are Full Views.
 Liferay Screens Views are organized into *View sets* that contain Views for
 several Screenlets. Liferay's available View sets are listed here: 
 
-- [*Default:*](https://github.com/liferay/liferay-screens/tree/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/viewsets/defaultviews)
+- [*Default:*](https://github.com/liferay/liferay-screens/tree/master/android/library/core/src/main/java/com/liferay/mobile/screens/viewsets/defaultviews)
   a mandatory View Set supplied by Liferay. It's used by a Screenlet if no
   layout ID is specified or if no View is found with the layout ID. The Default
   View Set uses a neutral, flat white and blue design with standard UI
   components. In the
-  [Login Screenlet](https://github.com/liferay/liferay-screens/tree/1.1.0/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login),
+  [Login Screenlet](https://github.com/liferay/liferay-screens/tree/master/android/library/core/src/main/java/com/liferay/mobile/screens/auth/login),
   for example, the Default View uses standard text boxes for the user name and
   password, but the text boxes are styled with the Default View's flat white and
   blue design. You can customize this View Set's properties, such as its
   components' colors, positions, and sizes. See the Default View Set's
-  [`styles.xml`](https://github.com/liferay/liferay-screens/blob/1.1.0/android/library/core/src/main/res/values/styles.xml)
+  [`styles.xml`](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/res/values/styles.xml)
   file for specific values. Since the Default View Set contains Full Views, you
   can use them to create your own custom Child and Extended Views.
 
-- [*Material:*](https://github.com/liferay/liferay-screens/tree/1.1.0/android/viewsets/material)
+- [*Material:*](https://github.com/liferay/liferay-screens/tree/master/android/viewsets/material)
   the View Set containing Views that conform to Android's [Material design guidelines](https://developer.android.com/design/material/index.html).
 
-- [*Westeros:*](https://github.com/liferay/liferay-screens/tree/1.1.0/android/viewsets/westeros) 
+- [*Westeros:*](https://github.com/liferay/liferay-screens/tree/master/android/viewsets/westeros) 
   the View Set containing Views for the 
-  [Bank of Westeros](https://github.com/liferay/liferay-screens/tree/1.1.0/android/samples/bankofwesteros) 
+  [Bank of Westeros](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
   sample app.
 
 For information on creating Views, see the tutorial 
