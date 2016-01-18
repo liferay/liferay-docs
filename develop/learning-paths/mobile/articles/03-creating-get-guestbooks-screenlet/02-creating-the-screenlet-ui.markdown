@@ -230,8 +230,8 @@ implementation now:
         ((ArrayAdapter) getAdapter()).notifyDataSetChanged();
     }
 
-Next, you should implement the `showFailedOperation` method to log and display 
-the error to the user if the operation to retrieve guestbooks fails. You can do 
+Next, you should implement the `showFailedOperation` method to log the error and 
+display it to the user if the operation to retrieve guestbooks fails. You can do 
 this with Screens's `LiferayLogger` and `LiferayCrouton` helper classes. Add 
 this method implementation now: 
 
@@ -247,19 +247,19 @@ You must also add the following imports for `LiferayLogger` and
     import com.liferay.mobile.screens.util.LiferayLogger;
     import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 
-Next, you must handle list item selections by implementing the `onItemClick` 
-method from `AdapterView.OnItemClickListener`. When you used the Mobile SDK 
-directly, you set the navigation drawer containing the guestbooks to close when 
-a guestbook is selected, revealing that guestbook's entries. You'll do the same 
-thing here, but not in the Screenlet. You should create Screenlets so they can 
-be used in a wide variety of UIs. Unless you have a very good reason for doing 
-so, you shouldn't force developers to use your Screenlet with a specific UI like 
-a navigation drawer. So instead of implementing a navigation drawer and its 
-behavior as part of the Get Guestbooks Screenlet, you'll respond to list item 
-selections by passing the selected guestbook to the activity or fragment the 
-Screenlet is used from. This lets the app developer respond to a guestbook 
-selection as they wish. You'll do this by calling the Screenlet class's 
-`onItemClicked` method. Currently, however, there's a major problem with this 
+Now you must handle list item selections by implementing the `onItemClick` 
+method from `AdapterView.OnItemClickListener`. In your app's UI, you want the 
+navigation drawer containing the guestbooks to close when a guestbook is 
+selected in the list, revealing tha guestbook's entries. You shouldn't however, 
+implement this behavior in the Screenlet's UI. You should create Screenlets so 
+they can be used in a wide variety of UIs. Unless you have a very good reason 
+for doing so, you shouldn't force developers to use your Screenlet with a 
+specific UI like a navigation drawer. So instead of implementing a navigation 
+drawer and its behavior as part of the Get Guestbooks Screenlet, you'll respond 
+to list item selections by passing the selected guestbook to the activity or 
+fragment the Screenlet is used from. This lets the app developer respond to a 
+guestbook selection as they wish. You'll do this by calling the Screenlet 
+class's `onItemClicked` method. Currently, however, there's a problem with this 
 approach: the Screenlet class doesn't exist yet. You can ignore this for now; 
 you'll create it later. Implement `AdapterView.OnItemClickListener` now by 
 adding the following `onItemClick` method to the `GetGuestbooksView` class: 
