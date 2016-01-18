@@ -68,13 +68,20 @@ public class CheckImagesTaskDevSite extends Task {
 
 				System.out.println("inside " + article.getPath());
 
+				int dirsUp = 0;
+				File tmpFile = article.getParentFile();
+				while (!_docdir.equals(tmpFile.getName())) {
+					tmpFile = tmpFile.getParentFile();
+					dirsUp++;
+				}
+
 				LineNumberReader in =
 					new LineNumberReader(new FileReader(article));
 				String line;
 				try {
 					while ((line = in.readLine()) != null) {
-						List<String> newErrors = _checkImgSrc(
-								line, article.getName(), in.getLineNumber());
+						List<String> newErrors = CheckImageUtil.checkImgSrc(
+							line, article.getPath(), in.getLineNumber(), dirsUp);
 
 						if (!newErrors.isEmpty()) {
 							errors.addAll(newErrors);
