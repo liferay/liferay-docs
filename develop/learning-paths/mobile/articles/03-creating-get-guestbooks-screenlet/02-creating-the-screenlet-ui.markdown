@@ -250,7 +250,7 @@ You must also add the following imports for `LiferayLogger` and
 Now you must handle list item selections by implementing the `onItemClick` 
 method from `AdapterView.OnItemClickListener`. In your app's UI, you want the 
 navigation drawer containing the guestbooks to close when a guestbook is 
-selected in the list, revealing tha guestbook's entries. You shouldn't however, 
+selected in the list, revealing that guestbook's entries. You shouldn't however, 
 implement this behavior in the Screenlet's UI. You should create Screenlets so 
 they can be used in a wide variety of UIs. Unless you have a very good reason 
 for doing so, you shouldn't force developers to use your Screenlet with a 
