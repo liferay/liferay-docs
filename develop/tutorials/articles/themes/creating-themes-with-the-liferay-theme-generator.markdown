@@ -64,13 +64,35 @@ Follow these steps to install the generator and its dependencies:
     As part of your Node.js installation, you installed npm as well. NPM is a
     package manager that you will use to install the generator and its
     dependencies.
+    
+    +$$$
+
+    **Note:** If you run into permissions issues with npm, you may need to
+    configure a `.npmrc` file in your user's root directory.
+    
+    To do this first create the `.npmrc` file in the user root directory and 
+    add the following line to it:
+    
+        prefix=/Users/[username]/.npm-packages
+        
+    This sets where globally installed npm packages will be installed.
+    
+    Next, add the corresponding node environment variables to your system:
+    
+        NPM_PACKAGES=/Users/[username]/.npm-packages/(same as prefix value)
+        PATH=${PATH}:${NPM_PACKAGES}bin
+        NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}lib/node_modules
+        
+    You should no longer run into node related permissions issues now.
+    
+    $$$
 
 2. Run `npm install -g yo gulp` to install the [Yeoman](http://yeoman.io/) 
-   and [gulp](https://www.npmjs.com/package/gulp) global dependencies.    
-
+   and [gulp](https://www.npmjs.com/package/gulp) global dependencies. 
+   
     Once the dependencies finish installing, you can install the generator 
     next.
-   
+
 3. Still inside the terminal, run the following command to install 
    the generator:
    
@@ -80,11 +102,11 @@ Now that the generator and dependencies are installed, you can learn how to use
 the generator next.
 
 ## Running the Theme Generator
-
+<!--
 When you installed the Liferay Theme Generator, you also installed two
 sub-generators with it: a themelet creator, and a theme importer. For the
 purposes of this tutorial, the focus will be on the default theme generator. 
-<!--To learn how to use the generator to create themelets and import themes, you 
+To learn how to use the generator to create themelets and import themes, you 
 can read the Extending your Theme Using Themelets tutorial and the Importing and 
 Upgrading Themes tutorials.
 
@@ -98,6 +120,9 @@ Follow the steps below to create a 7.0 theme using the default theme generator:
 2. Run the following command to start the default theme generator:
 
         yo liferay-theme
+        
+    If you run into permissions issues, make sure you have read/write access to
+    all folders on your system.  
 
 3. Enter a name and themeId for your theme, choose *7.0* for the version, and 
    choose a template language.
@@ -110,24 +135,14 @@ Follow the steps below to create a 7.0 theme using the default theme generator:
     version of Sass** at the beginning of this tutorial, your theme **will 
     require Compass support**.
     
-5. Finally, enter the path to your app server's directory. The information you
+5. Enter the path to your app server's directory. The information you
    provide is added to the `liferay-theme.json` in your theme's root directory.
    you can change the path in that file if your app server changes.
+   
+6. Finally, enter your app server's URL, or press *enter* to accept the default
+   `localhost:8080`.
 
-<!-- In the note at the beginning of this tutorial (for Windows usage), the
-following was stated:
-
-    "When the generator asks you if you need Compass support, type "Y". This
-    will bypass node-gyp completely, and use the Ruby versions of Sass and
-    Compass."
-
-Step 3 says that we should say "No" because we're basing our theme off the
-styled theme. What if we want to use Compass support? 
-
-For the record, indicating both "Y" and "N" worked for me (on Windows). I
-configured both ways (node-gyp and Compass) -Cody -->
-
-The generator will create a new theme in your current directory that inherits 
+The generator creates a new theme in your current directory that inherits 
 styles from [liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled) 
 theme. Note that the base theme you wish to use can be changed after the theme
 has been created using the `gulp extend` command.
@@ -154,17 +169,17 @@ your theme.
 ## Gulp Theme Tasks
 
 When your theme was generated, a `gulpfile.js` file was included that gives you
-access to multiple gulp tasks. Note that you will have to navigate to your
-theme's root directory in order to run the gulp tasks covered below.
+access to multiple gulp tasks. To run the gulp tasks covered below, navigate to 
+your theme's root directory.
 
 Here's a list of gulp tasks available for the theme generator:
 
 **build:** generates the base theme files, compiles sass into css, and zips all 
-theme files into a `.war` file, ready to be deployed to a Liferay server. Run
-using `gulp build` in your theme's root directory.
+theme files into a `.war` file, ready to be deployed to a Liferay server. 
+Invoked with `gulp build` in your theme's root directory.
 
-**Deploy:** initally runs the `build` task, and once the `.war` file has been
-created, it deploys to the specified local app server. Invoke this using 
+**deploy:** initally runs the `build` task, and once the `.war` file has been
+created, it deploys to the specified local app server. Invoked with 
 `gulp deploy` in your theme's root directory.
 
 If you want to deploy to a live site, use the `--live` flag to deploy to a
@@ -185,7 +200,7 @@ You may also specify your login credentials using the `-u`/`--username` and
 
 `gulp deploy --live -u test@liferay.com -p test`
 
-**Extend:** allows you to specify what base theme to extend from. By default,
+**extend:** allows you to specify what base theme to extend from. By default,
 themes created with the [theme generator](https://github.com/liferay/generator-liferay-theme) 
 are based off the [styled theme](https://www.npmjs.com/package/liferay-theme-styled).
 
@@ -199,13 +214,17 @@ Once it gives you the options and you make your selection, it will add any
 selected modules to your `package.json` under dependencies and run `npm
 install`.
 
-**Init:** Prompts user for local and remote appserver information used for
+Invoked with `gulp extend` in your theme's root directory.
+
+**init:** prompts user for local and remote appserver information used for
 deployment purposes.
 
-**Status:** Displays what base theme/themelets your theme is extending. Invoked
+Invoked with `gulp init` in your theme's root directory.
+
+**status:** displays what base theme/themelets your theme is extending. Invoked
 with `gulp status` in your theme's root directory.
 
-**Watch:** allows you to see the changes you make to your theme without a 
+**watch:** allows you to see the changes you make to your theme without a 
 full redeploy. Invoked with `gulp watch` in your theme's root directory.
 
 After invoking the `watch` task, every time you save any changes to a file in
