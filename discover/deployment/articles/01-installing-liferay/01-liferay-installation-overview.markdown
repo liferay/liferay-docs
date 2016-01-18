@@ -17,32 +17,31 @@ installing Liferay.
 section once terminology has been finalized. -->
 ## Editions of Liferay
 
-Liferay ships in two editions:
-one for the community and one for enterprise subscribers. The community edition
-is the same Liferay Portal that has been available for years: frequently
-updated and bursting with the latest features, the Community Edition of Liferay
-Portal is offered for free under the Lesser GNU public license, a free software
-license with one important exception. This license gives you the flexibility to
-link Liferay with your own code in your Liferay plugins, no matter what license
-you use for your code. If, however, you modify Liferay directly, those
-modifications must be released as free software under the terms of the license.
-Of course, the best way to do this is to contribute your code back to the
-Liferay community. This is really the best of both worlds: you have the freedom
-use any license (or no license) if you write plugins, but if you modify Liferay
-directly, the community receives the benefits of any enhancements that you've
-made.
+Liferay ships in two editions: Liferay Community Edition (CE) and Liferay
+Digital Experience Platform (DXP). Frequently updated and bursting with
+features, Liferay CE is offered for free under the Lesser GNU public license, a
+free software license with one important exception. This license gives you the
+flexibility to link Liferay with your own code in your Liferay plugins, no
+matter what license you use for your code. If, however, you modify Liferay
+directly, those modifications must be released as free software under the terms
+of the license. Of course, the best way to do this is to contribute your code
+back to the Liferay community. This is really the best of both worlds: you have
+the freedom use any license (or no license) if you write plugins, but if you
+modify Liferay directly, the community receives the benefits of any
+enhancements that you've made.
 
-Liferay for enterprise subscribers is a supported version of Liferay Portal for
-the enterprise. The subscription and support package allows organizations to
-build their portals on a stable version of the product that is offered over an
-extended period of time. It's the best way for you to develop, deploy, and
-maintain your Liferay solution. It includes
+Liferay DXP is a supported version of Liferay Portal for the enterprise.
+Liferay DXP includes additional features, such as clustering, that are not
+available in Liferay CE. Liferay DXP's subscription and support package allows
+organizations to build their portals on a stable version of the product that is
+offered over an extended period of time. It's the best way for you to develop,
+deploy, and maintain your Liferay solution. Liferay DXP includes:
 
 - Liferay support
+- Additional features
 - Updates
 - Fix Packs
 - Cloud Services
-- Liferay Portal Enterprise Edition
 
 Next, let's learn about some differences between Liferay releases.
 
@@ -575,6 +574,6 @@ section above.
 
 Now that you've reviewed the basic Liferay installation process, it's time to
 actually install Liferay! To learn how to install Liferay from a bundle, please
-see the [Installing a Liferay Bundle]() article. If you want to install Liferay
-manually on one of its supported application servers, please see the
+see the [Installing a Liferay Bundle]() article. If you want to manually
+install Liferay on one of its supported application servers, please see the
 appropriate article.

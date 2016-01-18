@@ -1,12 +1,13 @@
 #  Installation and Setup
 
 Liferay Portal is one of the most flexible applications on the market today
-with respect to application server environments. It supports a wide variety of
-application servers, freeing you to use the Java application server you think
-is best. Liferay also scales very well: you can install Liferay Portal on a
-shared hosting account, on a multi-node cluster running a commercial
-application server, or on anything in between. In fact, Liferay is used
-successfully in all of these scenarios every day.
+with respect to database and application server support. Liferay supports a
+wide variety of databases and application servers, freeing you to use the ones
+you think are best. Liferay also scales very well. You can install Liferay
+Portal on a shared hosting account, on a multi-node cluster running a
+commercial application server, or on anything in between. In fact, Liferay is
+used successfully in all of these scenarios every day. Some features, such as
+clustering, are only available with Liferay's Digital Experience Platform.
 
 You'll find that because Liferay is extremely flexible in its deployment
 options, it is also easy to install. If you already have an application server,
