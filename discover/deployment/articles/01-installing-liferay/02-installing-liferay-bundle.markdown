@@ -2,41 +2,9 @@
 
 Liferay bundles contain the same directory structure regardless of application
 server. The top-level folder is named for the release of Liferay. This folder
-is called *Liferay Home*.
-
-Inside of the Liferay Home folder, there are folders for various purposes:
-
-    - [Liferay Home]
-        - `data`
-        - `logs`
-        - `osgi`
-        - [Application Server]
-
-`data`: This folder is used to store an embedded HSQL database, Liferay's
-Jackrabbit JSR-170 file repository, and Liferay's search indexes. Liferay is
-initially configured to use the embedded HSQL database but the HSQL database is
-primarily intended for demonstration and trial purposes. Liferay's database
-connection can be configured on the Basic Configuration page that appears on
-Liferay's initial startup.
-
-`logs`: This folder contains Liferay's log files. The information in Liferay's
-log files can be quite valuable for system administrators, especially when
-trying to diagnose a problem.
-
-`osgi`: All of the JAR files and a few configuration files for Liferay's OSGi
-runtime belong in this folder. To deploy Liferay plugins, copy them to the
-`osgi/modules` folder.
-
-**[Application Server]:** The name of this folder is different depending on
-the bundle you've downloaded. This folder contains the application server in
-which Liferay has been installed.
-
-In addition to Liferay Portal itself, bundles are shipped with a number of
-plugins already installed. The exact list of plugins depends on your Liferay
-portal edition and version. Visit the *App Manager* in Liferay's Control Panel
-to see all of the installed Liferay plugins. Click on *Store* to access Liferay
-Marketplace and browse Liferay plugins and click on *Purchased* to view plugins
-that you've already purchased that are ready to be installed.
+is called *Liferay Home*. For more information on Liferay Home, please see the
+[Liferay Home]() documentation.
+<!-- Update link above. -->
 
 Getting a Liferay bundle up and running is as easy as uncompressing the
 archive, copying a JDBC driver, and then starting the application server. Let's
@@ -69,11 +37,17 @@ see the Tomcat console by issuing the following command:
 Once Tomcat has started, it automatically launches a web browser that displays
 Liferay's Basic Configuration page. If for some reason your browser doesn't
 load the Basic Configuration page, launch your web browser and navigate to
-[http://localhost:8080](http://localhost:8080).
-
-For information on the Basic Configuration page and Liferay's setup wizard,
-please see the [Using Liferay's Setup Wizard]() documentation.
+[http://localhost:8080](http://localhost:8080). For information on the Basic
+Configuration page and Liferay's setup wizard, please see the
+[Using Liferay's Setup Wizard]() documentation.
 <!-- Update link above. -->
+
+In addition to Liferay Portal itself, bundles include a number of pre-installed
+Liferay plugins. The exact list of plugins depends on your Liferay Portal
+edition and version. Visit the *App Manager* in Liferay's Control Panel to see
+all of the installed Liferay plugins. Click on *Store* to access Liferay
+Marketplace and browse Liferay plugins and click on *Purchased* to view plugins
+that you've already purchased that are ready to be installed.
 
 Bundles are the easiest way to get started with Liferay. They come with a
 pre-installed and preconfigured Liferay instance that can be used immediately

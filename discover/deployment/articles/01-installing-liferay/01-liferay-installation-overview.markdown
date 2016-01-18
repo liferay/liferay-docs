@@ -441,44 +441,46 @@ Next, let's learn about the folder structure of a Liferay installation.
 
 Liferay Portal uses a special folder called *Liferay Home* to store resources.
 This folder is usually the parent folder of the application server's folder.
-This is why the bundles place the application server inside of the bundle's
+This is why Liferay bundles place the application server inside of the bundle's
 root folder.
 
-If Liferay is unable to create the resources it needs in this folder or if it
-finds itself running on certain application servers, it creates a folder called
-`liferay` in the home folder of the user that is running Liferay. In this case,
-the `liferay` folder becomes Liferay Home.
+Inside of the Liferay Home folder, there are folders for various purposes:
 
-The Liferay Home folder is important to the operation of Liferay. The `data`,
-`logs`, and `osgi` folders belong  there, as well as Liferay's properties
-configuration files.
+    - [Liferay Home]
+        - `data`
+        - `deploy`
+        - `logs`
+        - `osgi`
+        - [Application Server]
 
-We recommend that you use the setup wizard to configure your database
-connection when you first configure Liferay. When you use the setup wizard, a
-`portal-setup-wizard.properties` file is created which stores the settings that
-you entered. When you begin customizing your portal's configuration, we
-recommend you create a separate properties file for that, called
-`portal-ext.properties`. This allows you to keep your server configuration
-properties separate from core properties like your database and mail server
-configurations. All the possible properties that can be placed in this file are
-documented in
-[our reference documentation](http://docs.liferay.com/portal/7.0/propertiesdoc).
+`data`: This folder is used to store an embedded HSQL database, Liferay's
+Jackrabbit JSR-170 file repository, and Liferay's search indexes. Liferay is
+initially configured to use the embedded HSQL database but the HSQL database is
+primarily intended for demonstration and trial purposes. Liferay's database
+connection can be configured on the Basic Configuration page that appears on
+Liferay's initial startup.
 
-+$$$
+`deploy`: To deploy Liferay plugins, copy them to this folder. Legacy style
+`.war` files, Liferay 7 style `.jar` files, and `.lpkg` files from Liferay
+Marketplace are supported.
 
-**Note:** To avoid using the setup wizard so you can configure everything
-manually from a `portal-ext.properties` file, you must disable the setup wizard
-by specifying `setup.wizard.enabled=false` in your `portal-ext.properties`
-file. Also, note that property values in `portal-setup-wizard.properties` (the
-file created in Liferay Home by the Setup Wizard) override property values in
-`portal-ext.properties`.
+`logs`: This folder contains Liferay's log files. The information in Liferay's
+log files can be quite valuable for system administrators, especially when
+trying to diagnose a problem.
 
-$$$
+`osgi`: All of the JAR files and a few configuration files for Liferay's OSGi
+runtime belong in this folder.
 
-Now that you understand all the prerequisites for installing Liferay Portal,
-let's go ahead and do it! First, we'll explain how to install Liferay from a
-bundle. After that, we'll provide instructions for installing Liferay manually
-on all of its supported application servers.
+**[Application Server]:** The name of this folder is different depending on
+the bundle you've downloaded. This folder contains the application server in
+which Liferay has been installed.
+
+If Liferay is unable to create the resources it needs in the Liferay Home
+folder or if it finds itself running on certain application servers, it creates
+a folder called `liferay` in the home folder of the operating system user that
+is running Liferay. In this case, the `liferay` folder becomes Liferay Home.
+For example, if the operating system user's name was jbloggs, the Liferay Home
+folder could be `/home/bloggs/liferay` or `C:\Users\jbloggs\liferay`.
 
 # Using Liferay's Setup Wizard
 
@@ -543,22 +545,36 @@ clean system.
 
 Once you've filled out the form, click *Finish Configuration*. You'll see a
 message stating that Liferay is being installed as it creates the tables and
-data it needs in its database. When it's finished, it tells you the location of
-the configuration file (`portal-setup-wizard.properties`) where it saved all
-your settings. From here, you can go to your home page.
+data it needs in its database. The setup wizard creates a
+`portal-setup-wizard.properties` file which stores the settings that you
+entered. When you begin customizing your portal's configuration, we recommend
+you create a separate properties file for that, called `portal-ext.properties`.
+This allows you to keep your server configuration properties separate from core
+properties like your database and mail server configurations. All the possible
+properties that can be placed in this file are documented in [our reference
+documentation](http://docs.liferay.com/portal/7.0/propertiesdoc).
 
 +$$$
 
-**Tip:** The wizard is an extremely helpful tool,
-especially if you're setting up Liferay for the first time or creating a
-completely fresh portal instance. If you're a Liferay veteran and you already
-have your database information and various properties set up, you can skip the
-wizard by adding this line to your *portal-ext.properties* file:
-
-    setup.wizard.enabled=false
+**Tip:** The wizard is an extremely helpful tool, especially if you're setting
+up Liferay for the first time. If you're a Liferay veteran and you already have
+your database information and various properties set up, you can disable the
+setup wizard. If you disable the setup wizard, you must manually configure
+everything manually from a `portal-ext.properties` file. To disable the setup
+wizard, enter `setup.wizard.enabled=false` in your `portal-ext.properties`
+file. Note that property values in `portal-setup-wizard.properties` (the file
+created in Liferay Home by the setup wizard) override property values in
+`portal-ext.properties`.
 
 $$$
 
-Congratulations! You've just installed Liferay Portal! The next thing you need
-to do is set up your mail configuration. For more information, see the Using
-Mail Sessions section above.
+After you've entered the information requested by the Basic Configuration page,
+you'll be prompted to restart Liferay. After restarting Liferay, you should set
+up your mail configuration. For more information, see the Using Mail Sessions
+section above.
+
+Now that you've reviewed the basic Liferay installation process, it's time to
+actually install Liferay! To learn how to install Liferay from a bundle, please
+see the [Installing a Liferay Bundle]() article. If you want to install Liferay
+manually on one of its supported application servers, please see the
+appropriate article.
