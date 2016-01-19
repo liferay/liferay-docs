@@ -2,15 +2,16 @@
 
 Once you have the model class for entries, you can create the Screenlet's UI. 
 Recall that in Liferay Screens for Android, you create a Screenlet's UI by 
-implementing a View. A View Model interface, layout XML, and View class comprise 
-a View. In this article, you'll create Get Entries Screenlet's View by using the 
-same set of steps you used to create Get Guestbooks Screenlet's View:
+implementing a View. A View consists of a View Model interface, a layout XML, 
+and a View class. In this article, you'll create Get Entries Screenlet's View by 
+using the same sequence of steps you used to create Get Guestbooks Screenlet's 
+View: 
 
-1. Create the View Model interface.
+1. Create the View Model interface. 
 
-2. Create the View's layout XML.
+2. Create the View's layout XML. 
 
-3. Create the View class.
+3. Create the View class. 
 
 As you create these components, you'll notice that they share a great deal of 
 code with the corresponding components in Get Guestbooks Screenlet's View. The 
@@ -32,7 +33,7 @@ following code:
 
     package com.liferay.docs.getentriesscreenlet.view;
 
-    import com.liferay.docs.getentriesscreenlet.EntryModel;
+    import com.liferay.docs.liferayguestbook.model.EntryModel;
     import com.liferay.mobile.screens.base.view.BaseViewModel;
 
     import java.util.List;
@@ -43,10 +44,10 @@ following code:
     }
 
 Compare this interface to `GetGuestbooksViewModel`. It's almost identical! You 
-could've created it by pasting in `GetGuestbooksViewModel`, and then running a 
-find and replace for `Guestbook`, `Guestbooks`, and `guestbooks`. Keep this in 
-mind when developing your own Screenlets. Don't be afraid to reuse existing code 
-and then make some modifications. 
+could've created it by pasting in `GetGuestbooksViewModel`, and then replacing 
+`Guestbook`, `Guestbooks`, and `guestbooks` with `Entry`, `Entries`, and 
+`entries`, respectively. Keep this in mind when developing your own Screenlets. 
+Don't be afraid to reuse existing code and then make some modifications. 
 
 Now you're ready to create the View's layout XML. 
 
@@ -54,7 +55,7 @@ Now you're ready to create the View's layout XML.
 
 Every View in Screens for Android requires a layout XML. In your app's 
 `res/layout` directory, create the layout file `entries_default.xml`. Replace 
-its contents with the following code:
+its contents with the following code: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <com.liferay.docs.getentriesscreenlet.view.GetEntriesView
@@ -85,7 +86,7 @@ Replace the class's contents with the following code:
     import android.widget.ArrayAdapter;
     import android.widget.ListView;
 
-    import com.liferay.docs.getentriesscreenlet.EntryModel;
+    import com.liferay.docs.liferayguestbook.model.EntryModel;
     import com.liferay.mobile.screens.util.LiferayLogger;
     import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 
@@ -165,13 +166,23 @@ Replace the class's contents with the following code:
         }
     }
 
-This view class works almost exactly like 
+This View class works almost exactly like 
 [Get Guestbook Screenlet's View class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-guestbook-screenlets-ui#creating-the-view-class). 
 Besides using `EntryModel` instead of `GuestbookModel`, the `ListView` adapter 
-is the only difference. The adapter in `GetEntriesView` displays the entry and 
-the name of the person who left the entry. It's the same adapter you used to 
-display entries when you used the Guestbook Mobile SDK directly in 
-`EntriesFragment`. 
+is the only difference. The adapter in `GetEntriesView` has significantly more 
+code than the guestbooks adapter. This is because the entries adapter uses the 
+default layout `simple_list_item_2`. Recall that the guestbooks adapter uses the 
+default layout `simple_list_item_1`. This layout is sufficient for showing 
+guestbook names because it displays only a single string for each list item. 
+Each entry, however, should display two strings: the entry's message and the 
+name of the person who left it. The `simple_list_item_2` layout lets you display 
+these strings, because it can show two strings for each list item. You need to 
+tell it what two strings to display, though. This is why you override the 
+`getView` method. After using `findViewById` to retrieve the 
+`simple_list_item_2` layout's two strings, you use `setText` to set the strings' 
+content to an entry's message and name. You then use the `setTypeface` and 
+`setTextSize` methods, respectively, to format the entry's message in bold and 
+shrink the name. 
 
-Great! You've successfully created the Get Entries Screenlet's View class. Next, 
-you'll create the server calls the Screenlet needs to retrieve the entries. 
+Great! You successfully created the Get Entries Screenlet's View class. Next, 
+you'll create the Screenlet's Interactor. 
