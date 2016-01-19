@@ -70,8 +70,8 @@ Follow these steps to install the generator and its dependencies:
     **Note:** If you run into permissions issues with npm, you may need to
     configure a `.npmrc` file in your user's root directory.
     
-    To do this first create the `.npmrc` file in the user root directory and 
-    add the following line to it:
+    To configure npm, first create the `.npmrc` file in the user root directory, 
+    and add the following line to it:
     
         prefix=/Users/[username]/.npm-packages
         
@@ -145,7 +145,7 @@ Follow the steps below to create a 7.0 theme using the default theme generator:
 The generator creates a new theme in your current directory that inherits 
 styles from [liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled) 
 theme. Note that the base theme you wish to use can be changed after the theme
-has been created using the `gulp extend` command.
+has been created, using the `gulp extend` command.
 
 There you have it! You now have a working theme. At the moment the theme is a 
 bit bare bones, but you have everything you need to get started. The generated 
