@@ -315,18 +315,18 @@ By default, the following configuration categories are defined:
 
 You can use any other category and it will be injected in alphabetical order
 after Platform. Other will always be shown last. In order to specify a
-category, you must use the `@ConfigurationAdmin` annotation as in the following
-example:
+category, you must use the `@ExtendedObjectClassDefinition` annotation as in
+the following example:
 
-    @ConfigurationAdmin(category = "platform")
+    @ExtendedObjectClassDefinition(category = "platform")
     @Meta.OCD(
         factory = true,
         id = "com.liferay.portal.ldap.configuration.SystemLDAPConfiguration",
         localization = "content/Language"
     )
 
-The fully qualified class name of the `@ConfigAdmin` class is
-`com.liferay.configuration.admin.ConfigurationAdmin`.
+The fully qualified class name of the `@ExtendedObjectClassDefinition` class is
+`com.liferay.portal.metatype.annotations.ExtendedObjectClassDefinition`.
 
 ## Supporting Different Configurations per Scope
 
