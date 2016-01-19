@@ -1,12 +1,12 @@
-# Creating the Get Entries Screenlet's Server Calls [](id=creating-the-get-entries-screenlets-server-calls)
+# Creating the Get Entries Screenlet's Server Call
 
-To retrieve a guestbook's entries from the Guestbooks portlet, you need to call 
-the portlet's remote service that returns the entries. As with Get Guestbooks 
-Screenlet, you'll do this in Get Entries Screenlet by creating an interactor. 
-Recall that the following components make up an interactor: an event, a 
-callback, the interactor interface and its implementation, and a listener. This 
-article shows you how to create each for the Get Entries Screenlet. You'll 
-create the interactor by using the following steps: 
+To retrieve a guestbook's entries from the Guestbooks portlet, you must call the 
+portlet's remote service that returns the entries. As with Get Guestbooks 
+Screenlet, you'll do this in Get Entries Screenlet by creating an Interactor. 
+Recall that the following components make up an Interactor: an event, a 
+callback, a listener, and the Interactor interface and its implementation. This 
+article shows you how to create each for the Get Entries Screenlet. You'll use 
+the following steps to create the Interactor: 
 
 1. Create the event class.
 
@@ -14,10 +14,10 @@ create the interactor by using the following steps:
 
 3. Create the listener.
 
-4. Create and implement the interactor interface.
+4. Create and implement the Interactor interface.
 
 This sequence of steps is identical to the one you followed when you created the 
-Get Guestbooks Screenlet's interactor. Likewise, the components you create here 
+Get Guestbooks Screenlet's Interactor. Likewise, the components you create here 
 are almost identical to the analogous components you created for Get Guestbooks 
 Screenlet. Therefore, this article only explains the parts unique to Get Entries 
 Screenlet. For a detailed explanation of each component, see 
@@ -37,7 +37,7 @@ the class's contents with the following code:
 
     package com.liferay.docs.getentriesscreenlet.event;
 
-    import com.liferay.docs.getentriesscreenlet.EntryModel;
+    import com.liferay.docs.liferayguestbook.model.EntryModel;
     import com.liferay.mobile.screens.base.interactor.BasicEvent;
 
     import java.util.List;
@@ -61,19 +61,25 @@ the class's contents with the following code:
         }
     }
 
-Next, you'll create the callback class. 
+Besides working with entries instead of guestbooks, this class is identical to 
+`GetGuestbooksEvent`. Next, you'll create the callback class. 
 
 ## Creating the Callback Class [](id=creating-the-callback-class)
 
-Recall that you need to make server calls via a callback class because Android 
-doesn't allow network requests on the main UI thread. First, create a new 
-package called `interactor` in the `getentriesscreenlet` package. Then create a 
-new class called `GetEntriesCallback` in the `interactor` package. Replace the 
-class's contents with the following code: 
+Recall that you must make server calls via a callback class because Android 
+doesn't allow network requests on the main UI thread. The callback class must 
+also transform the JSON it receives from the server call into `EntryModel` 
+objects, and communicate the server call's results in a `GetEntriesEvent` 
+object. You'll create this callback class now. 
+
+First, create a new package called `interactor` in the 
+`getentriesscreenlet` package. Then create a new class called 
+`GetEntriesCallback` in the `interactor` package. Replace the class's contents 
+with the following code: 
 
     package com.liferay.docs.getentriesscreenlet.interactor;
 
-    import com.liferay.docs.getentriesscreenlet.EntryModel;
+    import com.liferay.docs.liferayguestbook.model.EntryModel;
     import com.liferay.docs.getentriesscreenlet.event.GetEntriesEvent;
     import com.liferay.mobile.screens.base.interactor.BasicEvent;
     import com.liferay.mobile.screens.base.interactor.InteractorAsyncTaskCallback;
@@ -116,14 +122,20 @@ class's contents with the following code:
         }
     }
 
-Now you need to create the interactor's listener interface.
+Besides working with entries instead of guestbooks, this class is identical to 
+`GetGuestbooksCallback`. Now you need to create the Interactor's listener 
+interface. 
 
 ## Creating the Listener [](id=creating-the-listener)
 
-Listeners communicate the Screenlet's behavior to the app. The listener 
-interface therefore needs to define the methods that do this. Create the 
-interface `GetEntriesListener` in the `getentriesscreenlet` package. Replace the 
-interface's contents with the following code: 
+Recall that the listener interface defines the methods needed to control or 
+respond to the Screenlet's behavior. Like the Get Guestbooks Screenlet's 
+listener interface, the Get Entries Screenlet's listener interface must define 
+the methods that respond to the server call's results. The listener interface 
+must also define the method that responds to a list item click. 
+
+Create the interface `GetEntriesListener` in the `getentriesscreenlet` package. 
+Replace the interface's contents with the following code: 
 
     package com.liferay.docs.getentriesscreenlet;
 
@@ -138,7 +150,9 @@ interface's contents with the following code:
         void onItemClicked(EntryModel entry);
     }
 
-Next, you need to create and implement the interactor interface.
+Besides working with entries instead of guestbooks, this interface is identical 
+to `GetGuestbooksListener`. Next, you'll create and implement the Interactor 
+interface. 
 
 ## Creating and Implementing the Interactor Interface [](id=creating-and-implementing-the-interactor-interface)
 

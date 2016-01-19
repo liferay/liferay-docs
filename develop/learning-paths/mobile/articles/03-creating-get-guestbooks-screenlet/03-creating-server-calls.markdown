@@ -166,16 +166,16 @@ Screenlet's listener interface.
 
 ## Creating the Listener [](id=creating-the-listener)
 
-The listener interface defines the methods that the app developer needs to 
-respond to the Screenlet's behavior. The Screenlet class (since it controls the 
-Screenlet's behavior), and the activity or fragment the app developer uses the 
-Screenlet in, must implement the listener interface. You've already seen one 
-example of how this works when you used Login Screenlet. You implemented its 
-listener (`LoginListener`) in `MainActivity`. This provided you with the 
-listener methods `onLoginSuccess` and `onLoginFailure`, where you responded to 
-login success or failure, respectively. You must create a similar listener 
-interface for the Get Guestbooks Screenlet. In addition to responding to success 
-and failure, however, you must also respond to list item selections.
+The listener interface defines the methods needed to control or respond to the 
+Screenlet's behavior. The Screenlet class (since it controls the Screenlet's 
+behavior), and the activity or fragment the app developer uses the Screenlet in, 
+must implement the listener interface. You've already seen one example of how 
+this works when you used Login Screenlet. You implemented its listener interface 
+(`LoginListener`) in `MainActivity`. This provided you with the listener methods 
+`onLoginSuccess` and `onLoginFailure`, where you responded to login success or 
+failure, respectively. You must create a similar listener interface for the Get 
+Guestbooks Screenlet. In addition to responding to success and failure, however, 
+you must also respond to list item selections. 
 
 Create the `GetGuestbooksListener` interface in the `getguestbooksscreenlet` 
 package. Replace the interface's contents with the following code: 
