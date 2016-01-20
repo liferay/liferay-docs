@@ -1,5 +1,4 @@
-
-# Adding and Managing Users
+# Adding and Managing Users [](id=adding-and-managing-users)
 
 Users are a fundamental entity in Liferay. If your portal requires people (even
 just a set of site administrators) to have an account that they sign into to do
@@ -13,7 +12,7 @@ Whether or not you've ever used Liferay before, you're probably not surprised to
 hear that Users are managed in the Control Panel's *User* section. If it were
 any different, it'd be weird. 
 
-![Figure 2: Manage your portal's Users from the Control Panel.](../../images/usrmgmt-control-panel.png)
+![Figure 1: Manage your portal's Users from the Control Panel.](../../images/usrmgmt-control-panel.png)
 
 For the Lunar Resort example portal that we're developing, consider what you'd
 do if 
@@ -31,7 +30,7 @@ internal website.
 The user tasks listed above are all resolved in the Users and Organizations
 section of the Control Panel.
 
-## What are Users?
+## What are Users? [](id=what-are-users)
 
 In case there's any confusion over the term, a User in Liferay is an entity that
 can sign into the portal and do something. Generally a User has more
@@ -51,7 +50,7 @@ collections, such as sites or roles. User groups may also be used to customize
 personal site templates for members.
 
 -->
-## Adding Users
+## Adding Users [](id=adding-users)
 
 As the Lunar Resort Administrative user, you can add Users to the portal. 
 
@@ -94,7 +93,7 @@ If you have not set up a mail server, you can click the Password link to access
 the Password section of the Add User form to manually set a password for your
 new user. Enter the new password twice.
 
-![Figure 3: Enter the password twice to manually set the password for a user. If
+![Figure 4: Enter the password twice to manually set the password for a user. If
 the Password Policy you're using is configured to allow it, select whether to
 require the user to reset their password the first time they sign in to the
 portal.](../../images/usrmgmt-require-password-reset.png)
@@ -119,7 +118,7 @@ password for your user account to something you can remember. Clicking on the
 *Password* link in the navigation pane on the right opens the Password section
 of the Add User form. Enter the new password twice and click *Save*. 
 
-### Adding an Administrative User
+### Adding an Administrative User [](id=adding-an-administrative-user)
 
 What if you are just setting up the Lunar Resort portal for the first time, and
 you're using the default administrator account, the account of one of those
@@ -162,7 +161,7 @@ $$$
 
 Next, let's look at some other aspects of user management. 
 
-## Editing Users
+## Editing Users [](id=editing-users)
 
 If you click on *Users and Organizations* in the Control Panel, you'll see your
 own user's account in the list of users, along with any others. If you want to
@@ -195,9 +194,7 @@ deactivated users, you'll have the option to view active portal users or
 inactive portal users. If all the users are active, this filtering option will
 not appear.
 
-    ![Figure 3: You can choose whether to view active or inactive (deactivated)
-portal users in the users list found at *Product Menu* &rarr; *Control Panel*
-&rarr; *Users* &rarr; *Users and Organizations*.](../../images/usrmgmt-active.png)
+    ![Figure 5: You can choose whether to view active or inactive (deactivated) portal users in the users list found at *Product Menu* &rarr; *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*.](../../images/usrmgmt-active.png)
 
 Note that most users can't perform most of the above actions. In fact, most
 users won't have access to the Control Panel at all. You can perform all of the
