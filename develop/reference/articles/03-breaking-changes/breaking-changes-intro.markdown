@@ -2936,79 +2936,79 @@ time to focus on other areas of the product that add more value.
 
 ---------------------------------------
 
-### Removed the liferay-ui:asset-categories-navigation Tag and Replaced with liferay-asset:asset-categories-navigation
+### Removed the liferay-ui:asset-categories-navigation Tag and Replaced with liferay-asset:asset-categories-navigation [](id=removed-the-liferay-uiasset-categories-navigation-tag-and-replaced-with-lif)
 - **Date:** 2015-Nov-25
 - **JIRA Ticket:** LPS-60753
 
-#### What changed?
+#### What changed? [](id=what-changed-77a)
 
 The `liferay-ui:asset-categories-navigation` tag has been removed and replaced
 with the `liferay-asset:asset-categories-navigation` tag.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-77a)
 
 Plugins or templates that are using the `liferay-ui:asset-categories-navigation`
 tag need to update their usage of the tag.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-77a)
 
 You should import the `liferay-asset` tag library (if necessary) and update the
 tag namespace from `liferay-ui:asset-categories-navigation` to
 `liferay-asset:asset-categories-navigation`.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-77a)
 
 This change was made as a part of the ongoing strategy to modularize Liferay
 Portal by means of an OSGi container.
 
 ---------------------------------------
 
-### Removed the liferay-ui:trash-empty Tag and Replaced with liferay-trash:empty
+### Removed the liferay-ui:trash-empty Tag and Replaced with liferay-trash:empty [](id=removed-the-liferay-uitrash-empty-tag-and-replaced-with-liferay-trashempty)
 - **Date:** 2015-Nov-30
 - **JIRA Ticket:** LPS-60779
 
-#### What changed?
+#### What changed? [](id=what-changed-78a)
 
 The `liferay-ui:trash-empty` tag has been removed and replaced with the
 `liferay-trash:empty` tag.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-78a)
 
 Plugins and templates that are using the `liferay-ui:trash-empty` tag need to
 update their usage of the tag.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-78a)
 
 You should import the `liferay-trash` tag library (if necessary) and update the
 tag namespace from `liferay-ui:trash-empty` to `liferay-trash:empty`.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-78a)
 
 This change was made as a part of the ongoing strategy to modularize Liferay
 Portal by means of an OSGi container.
 
 ---------------------------------------
 
-### Removed the liferay-ui:trash-undo Tag and Replaced with liferay-trash:undo
+### Removed the liferay-ui:trash-undo Tag and Replaced with liferay-trash:undo [](id=removed-the-liferay-uitrash-undo-tag-and-replaced-with-liferay-trashundo)
 - **Date:** 2015-Nov-30
 - **JIRA Ticket:** LPS-60779
 
-#### What changed?
+#### What changed? [](id=what-changed-79a)
 
 The `liferay-ui:trash-undo` taglib has been removed and replaced with the
 `liferay-trash:undo` tag.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-79a)
 
 Plugins and templates that are using the `liferay-ui:trash-undo` tag need to
 update their usage of the tag.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-79a)
 
 You should import the `liferay-trash` tag library (if necessary) and update the
 tag namespace from `liferay-ui:trash-undo` to `liferay-trash:undo`.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-79a)
 
 This change was made as a part of the ongoing strategy to modularize Liferay
 Portal by means of an OSGi container.
@@ -3148,48 +3148,48 @@ services from `DLAppService` was the only sensible solution to this circularity.
 
 ---------------------------------------
 
-### Removed the liferay-ui:diff Tag and Replaced with liferay-frontend:diff
+### Removed the liferay-ui:diff Tag and Replaced with liferay-frontend:diff [](id=removed-the-liferay-uidiff-tag-and-replaced-with-liferay-frontenddiff)
 - **Date:** 2015-Dec-14
 - **JIRA Ticket:** LPS-61326
 
-#### What changed?
+#### What changed? [](id=what-changed-80)
 
 The `liferay-ui:diff` tag has been removed and replaced with the
 `liferay-frontend:diff` tag.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-80)
 
 Plugins and templates that are using the `liferay-ui:diff` tag need to update
 their usage of the tag.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-80)
 
 You should import the `liferay-frontend` tag library (if necessary) and update
 the tag namespace from `liferay-ui:diff` to `liferay-frontend:diff`.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-80)
 
 This change was made as a part of the ongoing strategy to modularize Liferay
 Portal by means of an OSGi container.
 
 ---------------------------------------
 
-### Taglibs Are No Longer Accessible via the theme Variable in FreeMarker
+### Taglibs Are No Longer Accessible via the theme Variable in FreeMarker [](id=taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
 - **Date:** 2016-Jan-06
 - **JIRA Ticket:** LPS-61683
 
-#### What changed?
+#### What changed? [](id=what-changed-81)
 
 The `${theme}` variable previously injected in the FreeMarker context providing
 access to various tags and utilities no longer provides them. Only the
 `${theme.include}` method is preserved for performance reasons.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-81)
 
 This affects FreeMarker templates that are using the `${theme}` variable to
 access tags.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-81)
 
 All the tags and utility methods formerly accessed via the `${theme}` variable
 should now be accessed directly via tags.
@@ -3240,7 +3240,7 @@ can be replaced by:
 
     <@liferay_theme["layout-icon"] layout=${nav_item.getLayout()} />
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-81)
 
 Previously, the `{$theme}` variable was being injected with the
 `VelocityTaglibImpl` class. This created coupling between template engines and
@@ -3253,11 +3253,11 @@ functionality.
 
 ---------------------------------------
 
-### Portlet Configuration Options May Not Always Be Displayed
+### Portlet Configuration Options May Not Always Be Displayed [](id=portlet-configuration-options-may-not-always-be-displayed)
 - **Date:** 2016-Jan-07
 - **JIRA Ticket:** LPS-54620 and LPS-61820
 
-#### What changed?
+#### What changed? [](id=what-changed-82)
 
 The portlet configuration options (e.g., configuration, export/import, look and
 feel, etc.) were always displayed in every view of the portlet and couldn't be
@@ -3266,12 +3266,12 @@ customized.
 With Lexicon, the configuration options displayed are based on the portlet's
 context, so not all options will always be displayed.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-82)
 
 This affects portlets that should always display all configuration options no
 matter which view of the portlet is rendered.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-82)
 
 If you don't apply any change to your source code, you will experience the
 following behaviors based on the portlet type:
@@ -3295,7 +3295,7 @@ In order to keep the old behavior of adding the configuration options in every
 view, you need to add the init parameter
 `always-display-default-configuration-icons` with the value `true`.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-82)
 
 Lexicon patterns require the ability to specify different configuration options
 depending on the view of the portlet by adding or removing options. This can be
@@ -3304,27 +3304,27 @@ easily achieved by using the `PortletConfigurationIcon` and
 
 ---------------------------------------
 
-### The getURLView Method of AssetRenderer Returns String Instead of PortletURL
+### The getURLView Method of AssetRenderer Returns String Instead of PortletURL [](id=the-geturlview-method-of-assetrenderer-returns-string-instead-of-portleturl)
 - **Date:** 2016-Jan-08
 - **JIRA Ticket:** LPS-61853
 
-#### What changed?
+#### What changed? [](id=what-changed-83)
 
 The `AssetRenderer` interface's `getURLView` method has changed and now returns
 `String` instead of `PortletURL`.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-83)
 
 This affects all custom assets that implement the `AssetRenderer` interface.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-83)
 
 You should update the method signature to reflect that it returns a `String` and
 you should adapt your implementation accordingly.
 
 In general, it should be as easy as returning `portletURL.toString()`.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-83)
 
 The API was forcing implementations to return a `PortletURL`, making it
 difficult to return another type of link. For example, in the case of Bookmarks,
@@ -3332,20 +3332,20 @@ developers wanted to automatically redirect to other potential URLs.
 
 ---------------------------------------
 
-### Removed the icon Method from NavItem
+### Removed the icon Method from NavItem [](id=removed-the-icon-method-from-navitem)
 - **Date:** 2016-Jan-11
 - **JIRA Ticket:** LPS-61900
 
-#### What changed?
+#### What changed? [](id=what-changed-84)
 
 The `NavItem` interface has changed and the method `icon` that would render the
 nav item icon has been removed.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-84)
 
 This affects all themes using the `nav_item.icon()` method.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-84)
 
 You should update your code to call the method `nav_item.iconURL` to return the
 image's URL and then use it as you prefer.
@@ -3362,7 +3362,7 @@ To keep the previous behavior in FreeMarker:
 
     <@liferay_theme["layout-icon"] layout=nav_item_layout />
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-84)
 
 The API was forcing developers to have a dependency on a taglib, which didn't
 allow for much flexibility.
