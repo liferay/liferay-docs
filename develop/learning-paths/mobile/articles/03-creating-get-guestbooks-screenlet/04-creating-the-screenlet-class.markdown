@@ -268,15 +268,24 @@ contain the following *TODO*:
 
     // TODO: Call GetGuestbooksScreenlet's onItemClicked method
 
-Recall that the `onItemClicked` method in `GetGuestbooksScreenlet` sends the 
-guestbook selected in the UI to the listener. Replace the *TODO* with the 
+Recall that the `onItemClicked` method in `GetGuestbooksScreenlet` must send 
+the guestbook selected in the UI to the listener. Replace the *TODO* with the 
 following code: 
 
     ((GetGuestbooksScreenlet) getParent()).onItemClicked(_guestbooks.get(position));
 
 This uses `_guestbooks.get(position)` to retrieve the guestbook at the selected 
 position. The `onItemClicked` call then passes this guestbook to the listener 
-via the `GetGuestbooksScreenlet` instance retrieved with `getParent()`. 
+via the `GetGuestbooksScreenlet` instance retrieved with `getParent()`. The 
+`onItemClicked` method should now look like this:
+
+    @Override
+    public void onItemClick(final AdapterView<?> parent, final View view, final int position, 
+        final long id) {
+        setItemChecked(position, true);
+
+        ((GetGuestbooksScreenlet) getParent()).onItemClicked(_guestbooks.get(position));
+    }
 
 Fantastic work! You finished the Get Guestbooks Screenlet! It only gets and 
 displays guestbooks, though. To have a feature-rich app that also gets and 
