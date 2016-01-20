@@ -13,10 +13,10 @@ AntiSamy sanitizer and any existing configured sanitizers to scrub user input
 to blogs entries, calendar events, message boards posts, wiki pages, and web
 content articles.
 
-Liferay's AntiSamy module uses OWASP AntiSamy 1.4.4 and is enabled by default.
-To configure the AntiSamy module, navigate to Liferay's *Control Panel*, go to
-*System Settings*, open the *Platform* category and click on *AntiSamy
-Sanitizer*.
+At the time of this writing, Liferay's AntiSamy module uses OWASP AntiSamy
+1.5.3. It's enabled by default. To configure the AntiSamy module, navigate to
+Liferay's *Control Panel*, go to *System Settings*, open the *Platform*
+category and click on *AntiSamy Sanitizer*.
 
 ![Figure x: Liferay's AntiSamy configuration options allow you to specify both a blacklist and a whitelist.](../../images/antisamy.png)
 
