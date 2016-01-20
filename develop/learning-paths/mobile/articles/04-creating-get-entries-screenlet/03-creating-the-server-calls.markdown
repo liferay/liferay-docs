@@ -139,6 +139,7 @@ Replace the interface's contents with the following code:
 
     package com.liferay.docs.getentriesscreenlet;
 
+    import com.liferay.docs.liferayguestbook.model.EntryModel;
     import java.util.List;
 
     public interface GetEntriesListener {
@@ -156,10 +157,15 @@ interface.
 
 ## Creating and Implementing the Interactor Interface [](id=creating-and-implementing-the-interactor-interface)
 
-The interactor interface and its implementation define and implement the methods 
-used to make the server call. In the `interactor` package, create an interface 
-called `GetEntriesInteractor`. Replace the interface's contents with the 
-following code:
+Recall that the Interactor interface and its implementation define and implement 
+the methods used to make the server call. Like the Get Guestbooks Screenlet, the 
+Get Entries Screenlet's Interactor interface only needs to define a single 
+method for making the server call. Also like the Get Guestbooks Screenlet, when 
+you implement this interface you'll create an additional method that sends event 
+objects to the listener. 
+
+In the `interactor` package, create an interface called `GetEntriesInteractor`. 
+Replace the interface's contents with the following code: 
 
     package com.liferay.docs.getentriesscreenlet.interactor;
 
@@ -195,6 +201,19 @@ Replace its contents with the following code:
             super(targetScreenletId);
         }
 
+        public void onEvent(GetEntriesEvent event) {
+            if (!isValidEvent(event)) {
+                return;
+            }
+
+            if (event.isFailed()) {
+                getListener().onGetEntriesFailure(event.getException());
+            }
+            else {
+                getListener().onGetEntriesSuccess(event.getEntries());
+            }
+        }
+
         public void getEntries(long groupId, long guestbookId) {
 
             Session session = SessionContext.createSessionFromCurrentSession();
@@ -208,23 +227,12 @@ Replace its contents with the following code:
             }
         }
 
-        public void onEvent(GetEntriesEvent event) {
-            if (!isValidEvent(event)) {
-                return;
-            }
-
-            if (event.isFailed()) {
-                getListener().onGetEntriesFailure(event.getException());
-            }
-            else {
-                getListener().onGetEntriesSuccess(event.getEntries());
-            }
-        }
     }
 
 This implementation retrieves the entries by passing `groupId` and `guestbookId` 
-to the remote service's `getEntries` method. Otherwise, 
-`GetEntriesInteractorImpl` is almost identical to `GetGuestbooksInteractorImpl`. 
+to the remote service's `getEntries` method. Otherwise, besides using entries 
+instead of guestbooks, `GetEntriesInteractorImpl` is identical to 
+`GetGuestbooksInteractorImpl`. 
 
-Nicely done! Now that Get Entries Screenlet has an interactor, you need to 
-create the Screenlet class. The next article shows you how to do this. 
+Nicely done! Now that Get Entries Screenlet has an Interactor, you must create 
+the Screenlet class. The next article shows you how to do this. 
