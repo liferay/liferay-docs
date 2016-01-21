@@ -70,6 +70,19 @@ example, if a web content structure called *FAQ* has been created for Frequently
 Asked Questions articles in your currently selected scope, you can create a new
 FAQ article by clicking *Add* &rarr; *FAQ*.
 
++$$$
+
+**Note:** In previous versions of Liferay, you could specify web content types
+via `portal.properties`. In Liferay 7.0, web content types are no longer used
+and have been replaced by vocabularies. Vocabularies allow users to filter their
+web content articles by category instead, which lets you filter your content
+using the Asset Publisher and faceted search. To learn more about vocabularies
+and how to use them with web content articles, see the 
+[Defining Categories for Content](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories#defining-categories-for-content)
+section.
+
+$$$
+
 You have the ability to provide a structure and template to your web content
 articles. You'll learn more about the power of web content structures and
 templates later. For now, you'll cover the basics of creating a piece of web
