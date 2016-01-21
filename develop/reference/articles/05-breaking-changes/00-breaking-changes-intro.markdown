@@ -71,7 +71,7 @@ in ascending chronological order.
 
 ## Breaking Changes List [](id=breaking-changes-list)
 
-### Utility Methods Have Been Moved from ImageLocalServiceUtil
+### Utility Methods Have Been Moved from ImageLocalServiceUtil [](id=utility-methods-have-been-moved-from-imagelocalserviceutil)
 - **Date:** 2013-Jan-13
 - **JIRA Ticket:** LPS-31888
 
