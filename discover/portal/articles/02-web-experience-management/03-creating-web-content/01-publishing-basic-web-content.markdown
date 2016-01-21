@@ -35,34 +35,34 @@ When you manage web content from the Site Administration menu, you can select
 the location where the content resides. When selecting the Site Administration
 dropdown menu from the Product Menu, you are presented with two scopes: site
 scope and page scope. The site scope can be managed by clicking the Compass icon
-(![Compass](../../images/icon-compass.png)) located on the Site Administration
+(![Compass](../../../images/icon-compass.png)) located on the Site Administration
 dropdown menu, which is characterized by the name of the site. From there you
 can select the site for which you want your content scoped. For instance, you
 can add content that's available to a specific site or globally across your
 Liferay instance. By default, the page scope must be configured before you can
 access it. For instance, if you add a Web Content Display app to a site page
 called *Lunar Rover*, you can navigate to the app's *Options* icon
-(![Options](../../images/icon-options.png)) and select *Configuration* &rarr;
+(![Options](../../../images/icon-options.png)) and select *Configuration* &rarr;
 *Scope*. From the scope dropdown, you can select the current page you're on,
 which will be characterized as *New* in parenthesis. Click *Save* and return to
 the Site Administration &rarr; *Content* menu. You'll now observe the *Default
 Scope* option. Select the *Gear* icon
-(![Gear](../../images/icon-control-menu-gear.png)) and choose the page you
+(![Gear](../../../images/icon-control-menu-gear.png)) and choose the page you
 configured. Now the content created in this app is scoped to the *Lunar Rover*
 page only.
 
-![Figure 1: You can choose where to create content by navigating to the Site Administration menu and selecting your site and page scope.](../../images/site-page-scopes.png)
+![Figure 1: You can choose where to create content by navigating to the Site Administration menu and selecting your site and page scope.](../../../images/site-page-scopes.png)
 
 Once you have the Lunar Resort site selected, click on the *Web Content* link
 under Content. You'll see a folder structure containing all of the web content
 articles that exist in the currently selected scope (the Lunar Resort site). You
-can click the *Add* icon (![Add Web Content](../../images/icon-add.png)) &rarr;
+can click the *Add* icon (![Add Web Content](../../../images/icon-add.png)) &rarr;
 *Folder* to create a new folder. For sites with lots of content and web content
 articles, it can be very useful to use folders to group certain kinds of web
 content articles together. Click *Add* &rarr; *Basic Web Content* to create a
 new web content article.
 
-![Figure 2: Click *Add* &rarr; *Basic Web Content* to create a new simple web content article. To create a new web content article based on an existing web content structure, click *Add* and then click on the name of the structure you'd like to use.](../../images/web-content-add-menu.png)
+![Figure 2: Click *Add* &rarr; *Basic Web Content* to create a new simple web content article. To create a new web content article based on an existing web content structure, click *Add* and then click on the name of the structure you'd like to use.](../../../images/web-content-add-menu.png)
 
 Existing web content structures also appear in the *Add* menu. This provides
 users with shortcuts for creating specific kinds of web content articles. For
@@ -113,7 +113,7 @@ the *Styles* dropdown and give your heading a *Heading 1* style.
 
 Whenever you place your cursor in the content area, the *Add* icon (`+`)
 appears. If you click on it, controls for inserting an image, table, or
-horizontal line (![Controls](../../images/icon-content-insert-controls.png))
+horizontal line (![Controls](../../../images/icon-content-insert-controls.png))
 appear. To insert an image, select the icon the depicts a mountain silhouette.
 The image file selector screen appears, allowing you to choose an existing image
 to upload. After adding a photo to the web content article, clicking it brings
@@ -132,18 +132,18 @@ familiar with the editor's regular mode.
 For those content creators that would rather write in HTML code, the editor also
 caters to those individuals. To switch the editor to source view, select the
 *Source* icon (`</>`). Note that the regular mode icon
-(![Regular Mode](../../images/icon-paint-roller.png)) appears, which you can
+(![Regular Mode](../../../images/icon-paint-roller.png)) appears, which you can
 select to return to regular mode. You also have the option to switch between a
 dark and light theme by choosing the moon and sun icons. The built-in syntax
 coloring helps you identify HTML elements, regardless of the mode you're using.
 
 You can even work in a dual pane view that shows your HTML code on the left and
 a preview pane on the right. To open this view, click on the *Enlarge* icon
-(![Enlarge](../../images/icon-enlarge.png)). You can arrange the HTML and
+(![Enlarge](../../../images/icon-enlarge.png)). You can arrange the HTML and
 preview panes horizonally or vertically. You can also hide the preview pane, if
 preferred.
 
-![Figure 3: You can view how your HTML would render by using the preview pane.](../../images/web-content-editor-html.png)
+![Figure 3: You can view how your HTML would render by using the preview pane.](../../../images/web-content-editor-html.png)
 
 Every 25 seconds, the entry you're creating is automatically saved as a draft.
 Because of this, you never have to worry about losing your work if something
@@ -214,14 +214,14 @@ to the embedded multimedia!
 
 -->
 
-![Figure 4: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../images/web-content-audio-video.png)
+![Figure 4: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../../images/web-content-audio-video.png)
 
 <!--
 You can also download the web content article in XML format by clicking the
 *Download* button. This button is available on the Edit Web Content screen,
 after you've created your web content article.
 
-[Figure 2.18: The *Download* button is only available for an article that has a structure and template.](../../images/web-content-download.png)
+[Figure 2.18: The *Download* button is only available for an article that has a structure and template.](../../../images/web-content-download.png)
 
 An XML version of an article is essential when creating content for themes using
 the [Resources Importer](/participate/liferaypedia/-/wiki/Main/Resources+Importer).
@@ -250,7 +250,7 @@ This is not currently the case in Liferay 7.0. -Cody
 The bottom menu of the New Web Content form provides options for customizing
 your web content.
 
-![Figure 4: New web content can be customized in various ways using the menu located below the WYSIWYG editor.](../../images/wcm-menu.png)
+![Figure 4: New web content can be customized in various ways using the menu located below the WYSIWYG editor.](../../../images/wcm-menu.png)
 
 **Structure and Template:** lets you customize the web content article's
 structure and template. To learn more about web content structures and
@@ -302,7 +302,7 @@ defining content relationships and publishing links to those related assets,
 visit the [Defining Content Relationships](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)
 section.
 
-![Figure 5: This blog entry has links to three Related Assets: one web content and two message board entries.](../../images/related-assets-link.png)
+![Figure 5: This blog entry has links to three Related Assets: one web content and two message board entries.](../../../images/related-assets-link.png)
 
 **Permissions:** customizes who has access to the content. By default, content
 is viewable by Anyone (Guest Role). You can limit viewable permissions by
@@ -322,7 +322,7 @@ to change the default language and add a translation. If you click *Change*, you
 can select your default language from a large number of languages Liferay
 supports.
 
-![Figure 6: You have many translation languages to choose from for your web content.](../../images/web-content-default-language.png)
+![Figure 6: You have many translation languages to choose from for your web content.](../../../images/web-content-default-language.png)
 
 After you click *Add Translation*, you can select a language by scrolling
 through the list. When you select a language, an *Available Translations* list
@@ -331,7 +331,7 @@ form enables you to translate the original web content into the selected
 language. Once you are done with the translation, click *Publish* and the
 translation is added to the list of *Available Translations*.
 
-![Figure 7: The Available Translations list lets you easily survey the current translations for the article.](../../images/web-content-translation.png)
+![Figure 7: The Available Translations list lets you easily survey the current translations for the article.](../../../images/web-content-translation.png)
 
 You can modify the language translation list by inserting `locales.enabled=`
 followed by your preferred languages in your `portal-ext.properties` file. For
@@ -412,11 +412,11 @@ which is the Web Content Display app. You'll look at how it works next.
 Now that you've created and published your first piece of web content for
 the Lunar Resort, it's time to display it. First, add the *Web Content Display*
 application to your Welcome page by selecting the *Add* button
-(![Add](../../images/icon-control-menu-add.png)) from the top Control Menu and
+(![Add](../../../images/icon-control-menu-add.png)) from the top Control Menu and
 selecting the *Applications* tab. In the search field, type *Web Content
 Display*.
 
-![Figure 8: Add the Web Content Display app to a page to begin displaying your new web content article.](../../images/add-web-content-display.png)
+![Figure 8: Add the Web Content Display app to a page to begin displaying your new web content article.](../../../images/add-web-content-display.png)
 
 Once the application appears, drag it to the position on the page where you want
 your content to appear. You can have as many Web Content Display apps on a page
@@ -436,14 +436,14 @@ Once you've selected the web content article, you're able to choose the User
 Tools and Content Metadata to be published in the Web Content Display app. These
 two entities have the following options to choose from, by default:
 
-- User Tools
-    - Translations
-    - Print
-- Content Metadata
-    - Related Assets
-    - Ratings
-    - Comments
-    - Comment Ratings
+- **User Tools**
+    - *Translations*
+    - *Print*
+- **Content Metadata**
+    - *Related Assets*
+    - *Ratings*
+    - *Comments*
+    - *Comment Ratings*
 
 One of the many options is *Translations*, which shows the available locales for
 your content. If you're working on the page for a particular language, you can
@@ -451,7 +451,7 @@ select the translation of your content that goes with your locale. To learn more
 about translating your content, visit the [Localizing Web Content](/discover/portal/-/knowledge_base/7-0/publishing-basic-web-content#localizing-web-content)
 sub-section.
 
-![Figure 9: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/web-content-choosing-web-content.png)
+![Figure 9: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../../images/web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your Liferay instance, you
 can also enable document conversion for your content. This gives your users the
@@ -518,12 +518,12 @@ the Web Content Display app, select the *Edit* button to the lower left of the
 app. This launches the WYSIWYG editor and from there you can make any necessary
 changes.
 
-![Figure 10: The *Edit*, *Edit Template*, *Select Web Content*, and *Add* buttons appear at the bottom of the Web Content Display app.](../../images/web-content-display-icons.png)
+![Figure 10: The *Edit*, *Edit Template*, and *Select Web Content* buttons appear at the bottom of the Web Content Display app.](../../../images/web-content-display-icons.png)
 
 There are instances where you've edited your web content article many times, and
 you'd be interested in viewing the article's evolution. To view an article's
 history, navigate to *Web Content* from the Product Menu. Then select the
-article's *Actions* icon (![Actions](../../images/icon-actions.png)) and select
+article's *Actions* icon (![Actions](../../../images/icon-actions.png)) and select
 *View History*. From this menu, you can view all the article's versions and
 modified/display dates. Another cool feature is the web content Diff tool, which
 lets you compare versions of the article and highlight the differences between
@@ -533,7 +533,7 @@ article you'd like to compare and select *Compare to...*. Then select the other
 article you want to compare. The tool provides color coded highlighting to
 emphasize additions and deletions between the two articles.
 
-![Figure 11: Comparing web content articles is a great feature to use during the Workflow process.](../../images/web-content-diff-feature.png)
+![Figure 11: Comparing web content articles is a great feature to use during the Workflow process.](../../../images/web-content-diff-feature.png)
 
 When you publish updates to a web content article that's already being displayed
 somewhere in your Liferay instance (e.g., in a Web Content Display app or an
@@ -549,7 +549,7 @@ app, from the Asset Publisher, or from the Site Administration interface.
 
 **Note:** If you want to view your page the way your users will see it (i.e.,
 without all the app controls and icons), go up to the top Control Menu and
-select the *Edit Controls* icon (![Edit Controls](../../images/icon-edit-controls.png)).
+select the *Edit Controls* icon (![Edit Controls](../../../images/icon-edit-controls.png)).
 This makes all those extra controls you see as a portal administrator disappear.
 You'll also notice the icon is crossed out when the Edit Controls are disabled.
 If you need to use the controls again, just select the icon again to return to
@@ -562,16 +562,16 @@ site's web content without implementing a workflow process. To keep tabs on
 what's going on with your site's web content, you can subscribe to
 articles and folders. To do this, select the checkbox next to the web content
 entities you'd like to monitor. Then click the *Information* icon
-(![Information](../../images/icon-information.png)) and select the *Subscribe*
-icon (![Subscribe](../../images/icon-star.png)). Now whenever a web content
+(![Information](../../../images/icon-information.png)) and select the *Subscribe*
+icon (![Subscribe](../../../images/icon-star.png)). Now whenever a web content
 article or folder is modified, you'll receive an email to your account's
 configured email address notifiying you of a change. To learn more about
 configuring your email in Liferay, visit the [Using the Control Panel]()
 section. You can navigate to your Web Content menu's *Options* icon
-(![Options](../../images/icon-options.png)) and select *Configuration* to modify
+(![Options](../../../images/icon-options.png)) and select *Configuration* to modify
 your Web Content email notification settings.
 
-![Figure 12: Click the Subscribe icon in the web content entity's *Information* menu to begin receiving web content notifications.](../../images/web-content-subscribe.png)
+![Figure 12: Click the Subscribe icon in the web content entity's *Information* menu to begin receiving web content notifications.](../../../images/web-content-subscribe.png)
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of

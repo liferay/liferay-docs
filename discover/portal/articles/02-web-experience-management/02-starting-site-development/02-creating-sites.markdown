@@ -16,15 +16,17 @@ collaboration and social scenarios is a must. Liferay's sites provide three
 membership types:
 
 - **Open:** Users can become members of the site at any time. Users can join
-sites from the *My Sites* application.
+sites from the Site Administration navigation menu
+(![Compass](../../../images/icon-compass.png)).
 
 - **Restricted:** Users can request site membership but site administrators must
 approve requests in order for users to become members. Requests can be made from
-the *My Sites* application.
+the Site Administration navigation menu.
 
 - **Private:** Users are not allowed to join the site or request site
-membership. Private sites don't appear in the *My Sites* application. Site
-administrators can still manually select users and assign them as site members.
+membership. Private sites don't appear in the Site Administration navigation
+menu. Site administrators can still manually select users and assign them as
+site members.
 
 In addition to these memberships, when a site is associated with an
 organization, all the users of that organization are automatically considered
@@ -41,7 +43,7 @@ in the Sites menu. From this menu, you can select the specific site to work on.
 The Site Administration panel is available for your site, which includes Pages,
 Content, Users, Configuration, and Publishing Tools.
 
-![Figure 1: Your site's content resides in the Site Administration menu.](../../images/web-content-site-content.png)
+![Figure 1: Your site's content resides in the Site Administration menu.](../../../images/web-content-site-content.png)
 
 For details about Liferay's social collaboration suite, see the
 [Social Collaboration](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
@@ -62,7 +64,7 @@ to let every site administrator share content across sites they manage. Some
 examples of content you can share across site include web content structures and
 templates, categories, application display templates, etc.
 
-Please refer to the [Sites Admin Portlet](https://docs.liferay.com/portal/7.0-a5/propertiesdoc/portal.properties.html#Sites%20Admin%20Portlet)
+Please refer to the [Sites Admin Portlet](https://docs.liferay.com/portal/7.0-b1/propertiesdoc/portal.properties.html#Sites%20Admin%20Portlet)
 section of Liferay's `portal.properties` file for a list of relevant
 configurable properties. For example, the
 `sites.content.sharing.with.children.enabled` property allows you to disable
@@ -83,13 +85,17 @@ administrator can select a root page and a display depth. Just as sites can be
 organized hierarchically, so can the pages within a site. The display depth of
 the Site Map application determines how many levels of nested pages to display.
 
-![Figure 2: The Sites Directory application lets users navigate between sites organized hierarchically. The Site Map application lets users navigate among pages of a site organized hierarchically.](../../images/site-directory-site-map.png)
+![Figure 2: The Sites Directory application lets users navigate between sites organized hierarchically. The Site Map application lets users navigate among pages of a site organized hierarchically.](../../../images/site-directory-site-map.png)
 
-Another useful administrative portlet is the Site Members application. This
+Another useful administrative application is the Site Members application. This
 enables administrators to survey all the users, organizations, and user groups
 that reside in the site. Similarly, Liferay provides the Portal Directory
 application, which functions the same as the Site Members app, but globally
-scoped for all sites in the portal.
+scoped for all sites in the instance.
+
+<!-- TODO: Portal Directoy app still has "portal" name, although most other
+entities in Liferay have changes to "instance". Check back with this name before
+release of Liferay 7. -Cody -->
 
 Liferay's sites have two categories of pages called page sets. There are two
 kinds of page sets: public pages and private pages. A site can have only public
@@ -107,14 +113,14 @@ about the corporate health and fitness center? That's something everybody in the
 company, regardless of organization, may want to join. This makes it a good
 candidate for an open and independent site. Similarly, the home page for a
 corporate intranet should probably be placed in an open independent site so any
-member of the portal can access it.
+member of the instance can access it.
 
 +$$$
 
 **Tip:** Prior to Liferay 6.1, there were two ways of creating sites:
 organizations and communities. This has been simplified to provide more ease of
 use and allow for more flexibility. The main role of organizations is still to
-organize the users of the portal in a hierarchy but they can also have
+organize the users of the instance in a hierarchy but they can also have
 associated sites. Communities can still be created through independent sites but
 the new name reflects the fact that sites can be used for many different
 purposes besides communities.
@@ -129,23 +135,23 @@ join a Landscapes site and those who enjoy taking pictures of sunsets could join
 a Sunsets site.
 
 Liferay always provides one default site, which is also known as the main site
-of the portal. This site does not have its own name but rather takes the name of
-the portal. By default the portal name is *Liferay* but this value can be
-changed through the simple configuration of the setup wizard. The portal name
-can also be changed at any time through the Control Panel within *Portal
-Settings*.
+of the instance. This site does not have its own name but rather takes the name
+of the instance. By default the instance name is *Liferay* but this value can be
+changed through the simple configuration of the setup wizard. The instance name
+can also be changed at any time through the Control Panel within *Configuration
+&rarr; *Instance Settings*.
 
 ## Adding Sites
 
 Sites can be created through the Control Panel by a portal administrator.
 Liferay's Control Panel provides an administrative interface for managing your
-portal. There are four main sections of the Liferay's Control Panel: Sites,
-Users, Apps, and Configuration. In this section, you'll learn how to use the
-Control Panel to manage sites. In a later section, you'll learn about using the
-Control Panel to manage site templates. Site templates allow portal
+Liferay instance. There are four main sections of the Liferay's Control Panel:
+Sites, Users, Apps, and Configuration. In this section, you'll learn how to use
+the Control Panel to manage sites. In a later section, you'll learn about using
+the Control Panel to manage site templates. Site templates allow portal
 administrators to create multiple sites with the same default set of pages and
 content. For information about the Apps, Users, and Configuration sections of
-the Control Panel, see the 
+the Control Panel, see the
 [Leveraging the Liferay Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace),
 [User Management](/discover/portal/-/knowledge_base/6-2/user-management), and
 [Using the Control Panel](/discover/portal/-/knowledge_base/6-2/using-the-control-panel)
@@ -156,36 +162,36 @@ sections, respectively.
 +$$$
 
 **Tip:** If you're signed in as an administrator, you can access all sites by
-navigating to the Sites menu from the Control Panel. To manage a single site,
-navigate to the site by going to the Product Menu and clicking the Compass icon
-(![Compass](../../images/icon-compass.png)) from the sites dropdown menu and
-selecting the appropriate site name you'd like to manage. Once finished, the
-site administration options (i.e., Pages, Content, Users, etc.) for that site
-are available.
+navigating to the Site Administration menu from the Control Panel. To manage a
+single site, navigate to the site by going to the Product Menu and clicking the
+Compass icon (![Compass](../../../images/icon-compass.png)) from the sites
+dropdown menu and selecting the appropriate site name you'd like to manage. Once
+finished, the site administration options (i.e., Pages, Content, Users, etc.)
+for that site are available.
 
 $$$
 
-To add a site for the Lunar Resort portal, navigate to the Control Panel and
-select *Sites* &rarr; *Sites*. Then click the Add icon (![Add Site](../../images/icon-add.png))
+To add a site for the Lunar Resort instance, navigate to the Control Panel and
+select *Sites* &rarr; *Sites*. Then click the Add icon (![Add Site](../../../images/icon-add.png))
 at the bottom right of the page. If there is at least one site template
 available, a dropdown menu appears. Site templates provide a preconfigured set
-of pages, portlet applications, and content that can be used as the basis of a
-site's public or private page set. To create a site from scratch, select *Blank
-Site*. Otherwise, select the name of the site template you'd like to use. If you
-opt to create a site from a site template, you have to choose whether to copy
-the site template's pages as your new site's public or private page set. If
-other site templates are created, they will appear in the Add menu as they
-become available. The following figure shows the form that needs to be filled
-when creating a *Blank Site*.
+of pages, applications, and content that can be used as the basis of a site's
+public or private page set. To create a site from scratch, select *Blank Site*.
+Otherwise, select the name of the site template you'd like to use. If you opt to
+create a site from a site template, you have to choose whether to copy the site
+template's pages as your new site's public or private page set. If other site
+templates are created, they will appear in the Add menu as they become
+available. The following figure shows the form that needs to be filled when
+creating a *Blank Site*.
 
-![Figure 3: The New Site window aids in your new site development.](../../images/add-site-screen.png)
+![Figure 3: The New Site window aids in your new site development.](../../../images/add-site-screen.png)
 
 **Name:** names the site you wish to create. You also have the option to
 translate the name for many different languages. This can be done by selecting
 the language flag under the Name field, and inserting the name in the selected
 language. Liferay saves the name translation for each language and displays the
-translated site name when that specific language is selected for the portal. If
-a name translation is not provided, the default portal language's name is
+translated site name when that specific language is selected for the instance.
+If a name translation is not provided, the default instance language's name is
 displayed.
 
 **Description:** describes the site's intended function. The description can
@@ -244,12 +250,21 @@ viewable from the Sites dropdown (compass icon in Site Administration). This is
 because sites without a page are impossible to view. Therfore, before you can
 view your site, you must first create a page for it. To add a page for your
 temporarily invisible site, navigate to the Control Panel &rarr; *Sites* &rarr;
-*Sites* and select the *Actions* icon (![Actions](../../images/icon-actions.png))
+*Sites* and select the *Actions* icon (![Actions](../../../images/icon-actions.png))
 and then *Site Administration*. Now your site is selected in the Sites dropdown
 menu, and you can proceed with adding your site's first page. For more
 information about adding pages, see the
 [Creating and Managing Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages)
 section.
+
+You also have the option to categorize your site template using tags and
+categories by selecting the *Categorization* menu from the bottom of the page.
+To learn more about using tags and categories in Liferay, see the 
+[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+section. Lastly, you'll notice at the top of the page an additional tab named
+*Social*. This tab lets you manage whether users of your site can mention other
+users. You'll learn about mentioning users later in the Social Collaboration
+sections.
 
 When creating a site from a site template, the initial form provides a new
 option that lets you decide if you want to copy the pages from the template as
@@ -268,12 +283,13 @@ Miscellaneous. You'll learn more about your site's settings in the next section.
 You can access Site Settings by navigating to the Site Administation dropdown
 menu and selecting *Configuration* &rarr; *Site Settings*.
 
-![Figure 4: The Site Settings window offers a plethora of options for your site.](../../images/site-settings-overview.png)
+![Figure 4: The Site Settings window offers a plethora of options for your site.](../../../images/site-settings-overview.png)
 
 You'll find options to organize site content, manage site users, and improve
 your site's overall intelligence. You'll explore the Site Settings categories
-available, and simulate configuring those settings for your sample Lunar Resort
-site.
+available, which are available from the *Basic Information*, *Advanced*,
+*Social*, and *Advanced* tabs, and simulate configuring those settings for your
+sample Lunar Resort site.
 
 ### Organizing Site Content
 
@@ -284,32 +300,29 @@ your organizational goals.
 #### Categorization
 
 You can explore ways to tag and categorize your site by clicking the
-*Categorization* tab. These tools help administrators organize the site and
-allows for users to easily find your site and its content through search and
-navigation. To take full advantage of tags and categories, you'll need to add
-pages with content to your site. For more information on using tags and
-categories, visit the
-[Organizing Content with Tags and Categories](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+*Categorization* tab under Basic Information. These tools help administrators
+organize the site and allows for users to easily find your site and its content
+through search and navigation. To take full advantage of tags and categories,
+you'll need to add pages with content to your site. For more information on
+using tags and categories, visit the
+[Organizing Content with Tags and Categories](discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 section.
-
-<!-- TODO: replace link above. -Cody -->
 
 #### Site Template
 
 The last tab listed under the Basic Information category is *Site Template*. If
-you created your Lunar Resort site as a Blank Site, you can safely ignore this
-section. If you did, however, create your site using a site template, this
-section displays information about the link between the site template and the
-site. Specifically, you can see which site template was used and whether or not
-it allows modifications to the pages inherited from it by site administrators.
-To learn more about site templates and how to create your own, see the 
-[Building Sites from Templates]() section.
-
-<!-- TODO: replace link above. -Cody -->
+you created your Lunar Resort site as a Blank Site, this option is not available
+in Site Settings. If you did, however, create your site using a site template,
+this section displays information about the link between the site template and
+the site. Specifically, you can see which site template was used and whether or
+not it allows modifications to the pages inherited from it by site
+administrators. To learn more about site templates and how to create your own,
+see the [Building Sites from Templates](discover/portal/-/knowledge_base/7-0/building-sites-from-templates)
+section.
 
 #### Content Sharing
 
-If you select the *Content Sharing* tab from the Advanced sub-menu, you can
+If you select the *Content Sharing* tab from the Advanced tab, you can
 configure whether sub-sites can display content from this site. Administrators
 of this site's sub-sites can use all structures, templates, categories,
 application display templates, etc. from this parent site. Even if you
@@ -319,10 +332,10 @@ all sub-sites.
 
 #### Recycle Bin
 
-The *Recycle Bin* provides the option to enable/disable the Recycle Bin for your
-site. You can also regulate the age (in minutes) for which content is able to be
-stored in the Recycle Bin until it is permanently deleted. For a full
-explanation of the Recycle Bin, see the
+The *Recycle Bin* option under the Advanced tab provides the option to
+enable/disable the Recycle Bin for your site. You can also regulate the age (in
+minutes) for which content is able to be stored in the Recycle Bin until it is
+permanently deleted. For a full explanation of the Recycle Bin, see the
 [Recyling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
 section.
 
@@ -341,12 +354,12 @@ section.
 
 #### Documents and Media
 
-The last tab that relates to organizing your site's content is *Documents and
-Media*. This lets you enable/disable Directory Indexing, which allows site
-administrators to browse your site's documents and media files and folders. For
-example, a site administrator of a site called *Lunar Resort* can browse
-documents at http://localhost:8080/documents/lunar-resort if this option is
-enabled.
+The last option that relates to organizing your site's content is *Documents and
+Media*, which is found under Basic Information. This lets you enable/disable
+Directory Indexing, which allows site administrators to browse your site's
+documents and media files and folders. For example, a site administrator of a
+site called *Lunar Resort* can browse documents at
+http://localhost:8080/documents/lunar-resort if this option is enabled.
 
 Now that you can organize your site's content using Site Settings, move on to
 the next section to learn how to manage site users.
@@ -359,15 +372,15 @@ management.
 
 #### Details
 
-If you select the *Details* tab, you're provided the same menu you filled out
-when first creating your Lunar Resort site. This allows an administrator to
-change the description and membership type of a site. The membership type can be
-set as open, restricted, or private based on the privacy needs of the site.
-Users can join and leave an open site at will. To join a restricted site, a user
-has to be added by the site administrator. A user can also request to be added
-through the Sites section of the Control Panel. A private site is like a
-restricted site but doesn't appear in the Sites section of the Control Panel for
-users who aren't members.
+*Details* is the leading option under the Basic Information tab, which provides
+the same menu you filled out when first creating your Lunar Resort site. This
+allows an administrator to change the description and membership type of a site.
+The membership type can be set as open, restricted, or private based on the
+privacy needs of the site. Users can join and leave an open site at will. To
+join a restricted site, a user has to be added by the site administrator. A user
+can also request to be added through the Sites section of the Control Panel. A
+private site is like a restricted site but doesn't appear in the Sites section
+of the Control Panel for users who aren't members.
 
 You also have the ability to organize sites into hierarchies. At the bottom of
 the Details sub-section is the Parent Site section. This feature allows you to
@@ -378,9 +391,10 @@ parent site.
 #### Default User Associations
 
 Once you have the basic details of your site saved, you can begin assigning your
-users to roles and teams. *Default User Associations* lets you configure site
-roles and teams that newly assigned site members will have by default. If you'd
-like to learn more about creating roles and/or teams, visit the
+users to roles and teams. *Default User Associations*, the leading option when
+opening the Advanced tab, lets you configure site roles and teams that newly
+assigned site members will have by default. If you'd like to learn more about
+creating roles and/or teams, visit the
 [Roles and Permissions](/discover/portal/-/knowledge_base/6-2/roles-and-permissions)
 and
 [Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management)
@@ -393,7 +407,7 @@ sections, respectively.
 To allow your site's users to rate content in your site, you can use the
 *Ratings* option to select what ratings type to use for applications like
 Documents and Media, Web Content, Comments, etc. Ratings types include Stars,
-Likes, and Thumbs.
+Likes, and Thumbs. This is the leading option when opening the Social tab.
 
 <!-- TODO Is there a link we can point to for this? Coordinate with Jim. -Cody
 -->
@@ -401,10 +415,10 @@ Likes, and Thumbs.
 #### Mentions
 
 The last configuration option in Site Settings related to managing users is
-*Mentions*. This option allows you to enable/disable the Mentioning
-functionality, which is used to *mention* (notify and/or draw attention to)
-friends and colleagues by entering the "@" character followed by their user
-name.
+*Mentions*. *Mentions* is found under the Social tab. This option allows you to
+enable/disable the Mentioning functionality, which is used to *mention* (notify
+and/or draw attention to) friends and colleagues by entering the "@" character
+followed by their user name.
 
 <!-- TODO Jim: Post official link, when available. Coordinate with Jim. -Cody
 https://github.com/jhinkey/liferay-docs/blob/9b2b0bb9cab477cf6d740bad558aed1e49c88ece/discover/portal/articles/liferay-utility-applications/mentioning-users.markdown
@@ -427,28 +441,28 @@ URLs. Long obscure site URLs are a hassle for users to deal with, and can
 negatively affect your site's probability of being featured by search engines.
 Having a human-readable friendly URL assists indexing bots and is critical to
 good search engine optimization. For the Lunar Resort site, you can select the
-*Site URL* tab to set a friendly URL and/or a virtual host. The
-*Friendly URL* option lets you manage the path to your site in the portal's URL.
-Friendly URLs are used for both public and private pages. For public pages, the
-friendly URL is appended to http://localhost:8080/web. For private pages, the
-friendly URL is appended to http://localhost:8080/group. Each friendly URL needs
-to be a unique name, of course.
+*Site URL* tab to set a friendly URL and/or a virtual host. The *Friendly URL*
+option lets you manage the path to your site in the instance's URL. Friendly
+URLs are used for both public and private pages. For public pages, the friendly
+URL is appended to http://localhost:8080/web. For private pages, the friendly
+URL is appended to http://localhost:8080/group. Each friendly URL needs to be a
+unique name, of course.
 
 For example, suppose you want to set a friendly URL for your Lunar Resort site.
-If you set the friendly URL of your portal's default site to /lunar-resort, the
-URL of your default site's public home page would change to
-http://localhost:8080/web/lunar-resort/home. If your portal's default site had
+If you set the friendly URL of your instance's default site to /lunar-resort,
+the URL of your default site's public home page would change to
+http://localhost:8080/web/lunar-resort/home. If your instance's default site had
 private pages, the URL of the default private home page would change to
 http://localhost:8080/group/lunar-resort/home.
 
-Note that if you're adding a friendly URL for your portal's home page, you
-should update your portal's Home URL field so that page requests to
+Note that if you're adding a friendly URL for your instance's home page, you
+should update your instance's Home URL field so that page requests to
 http://localhost:8080 redirect properly. To do this, navigate to the
-*Configuration* &rarr; *Portal Settings* page of the Control Panel and find the
+*Configuration* &rarr; *Instance Settings* page of the Control Panel and find the
 Home URL field in the Navigation section. For the Lunar Resort example, you
 would enter */web/lunar-resort/home* into the Home URL field. Once you've
 entered this setting, page requests to localhost:8080 will redirect to the
-friendly URL of your portal's new homepage:
+friendly URL of your Liferay instance's new homepage:
 http://localhost:8080/web/lunar-resort/home.
 
 The other setting you can configure under the Site URL tab is *Virtual Hosts*,
@@ -460,13 +474,14 @@ server.
 
 For instance, if you set this up for the Lunar Resort's development network,
 users in that site could use *developers.lunar-resort.com* to get to their site,
-provided that the Lunar Resort portal's network administrators created the
+provided that the Lunar Resort instance's network administrators created the
 domain name and pointed it to the Liferay server.
 
 To set this up, the DNS name *developers.lunar-resort.com* should point to your
-portal's IP address first. Then enter *http://developers.lunar-resort.com* in
+instance's IP address first. Then enter *http://developers.lunar-resort.com* in
 the Virtual Host tab for the Developers site. This helps users quickly access
-their site without having to recall an extended URL.
+their site without having to recall an extended URL. The *Site URL* option is
+listed under the Basic Information tab.
 
 #### Analytics
 
@@ -495,7 +510,7 @@ Analytics site here:
 To enable Google Analytics support, navigate to the *Analytics* tab in Site
 Settings, which loads a very simple form, pictured below.
 
-![Figure 5: Setting up Google Analytics for your site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.](../../images/maintaining-google-analytics.png)
+![Figure 5: Setting up Google Analytics for your site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.](../../../images/maintaining-google-analytics.png)
 
 Enter your Google Analytics ID (which should have been provided to you when you
 signed up for the service) in the field and click *Save*. All the pages in the
@@ -504,7 +519,7 @@ tracked.
 
 This is a fairly simple procedure, and it gives you the ability to take
 advantage of some great tools to help you visualize who's coming to your site
-and from where. 
+and from where. The *Analytics* option is listed under the Advanced tab.
 
 #### Maps
 
@@ -517,8 +532,8 @@ https://www.liferay.com/web/juan.fernandez/blog/-/blogs/adding-geolocation-suppo
 #### Display Settings
 
 The *Display Settings* option lets you configure the language options for your
-site. You have options to use the default language options or define a new
-default language.
+site. This is the leading option when opening the Miscellaneous tab. You have
+options to use the default language options or define a new default language.
 
 Now that you know how to configure sites, you'll learn how to customize your
 personal sites.
@@ -533,11 +548,11 @@ applications that they'd like to make accessible to anyone, including guests.
 User blogs are often placed on public personal site pages. Content and
 applications that users would like to reserve for personal use are often placed
 on the private pages of personal sites. For example, each user can add a
-Documents and Media portlet to his or her private pages and use it as an online
-private file repository.
+Documents and Media application to his or her private pages and use it as an
+online private file repository.
 
-If you'd like to disable personal sites for your portal, just add the following
-properties to your `portal-ext.properties` file:
+If you'd like to disable personal sites for your Liferay instance, just add the
+following properties to your `portal-ext.properties` file:
 
     layout.user.public.layouts.enabled=false
     layout.user.private.layouts.enabled=false
@@ -549,9 +564,9 @@ separately. You can leave one page set enabled while disabling the other.
 
 $$$
 
-What if you initially had user personal sites enabled for your portal but then
-disabled them? Each existing user's personal site remains on your portal until
-the next time they log in, at which point it's removed.
+What if you initially had user personal sites enabled for your instance but then
+disabled them? Each existing user's personal site remains on your Liferay
+instance until the next time they log in, at which point it's removed.
 
 You can allow users to create personal sites but not have them automatically
 created for new users. To do this, first make sure that
@@ -572,9 +587,9 @@ properties you can use to customize the automatically created pages. You can
 customize the names of the default pages, the applications that appear on the pages,
 the themes and layout templates of the default pages, and more. Please refer to
 the
-[Default User Public Layouts](https://docs.liferay.com/portal/7.0-a5/propertiesdoc/portal.properties.html#Default%20User%20Public%20Layouts)
+[Default User Public Layouts](https://docs.liferay.com/portal/7.0-b1/propertiesdoc/portal.properties.html#Default%20User%20Public%20Layouts)
 and
-[Default User Private Layouts](https://docs.liferay.com/portal/7.0-a5/propertiesdoc/portal.properties.html#Default%20User%20Private%20Layouts)
+[Default User Private Layouts](https://docs.liferay.com/portal/7.0-b1/propertiesdoc/portal.properties.html#Default%20User%20Private%20Layouts)
 sections of the `portal.properties` file for details.
 
 +$$$
@@ -596,7 +611,7 @@ to receive personal sites, add the following properties to your
     layout.user.private.layouts.power.user.required=true
 
 Personal sites are a dynamic feature of Liferay. They allow users to manage and
-customize their own pages and content on your portal.
+customize their own pages and content on your Liferay instance.
 
 You've officially been introduced to Liferay's concept of sites. Using a point
 and click interface, you can create multiple web sites and define how users can
