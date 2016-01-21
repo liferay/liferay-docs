@@ -1,23 +1,35 @@
 # Using Document Types and Metadata Sets
 
-If you're only concerned about a file's content and are happy with the file's
-built-in metadata, then the Document Library's Basic Document type is fine. What
-do you do, however, if you want to ascribe more characteristics to a file? For
-example, you might have a document that you want users to apply copyrights and
-license information. Or you might want to add searchable attributes to a
-document. Is there a way to do these things in the Document Library? Yes! You
-can create your own Document Types and add Metadata Sets to wrap documents and
-ascribe unique characteristics to them.
+If you're concerned only with a file's content and are happy with its basic
+built-in metadata, then add the file to Documents and Media as a Basic Document.
+What do you do, however, if you want to ascribe more characteristics to a file?
+For example, you might have documents to which you want users to apply
+copyrights and license information. Or you might want to add searchable
+attributes to documents. Is there a way to do these things in Documents and
+Media? Yes! Liferay enables you to define metadata for describing files. Liferay
+provides tools to create and aggregate metadata into Metadata Sets that you can
+apply to Document Library files. You leverage the Metadata Sets through Document
+Types. These Document Types wrap the Documents and Media files so users can
+completely describe them. 
 
-A Document Type is a classification you use to represent a file in the Document
-Library. A Document Type's metadata fields are its most popular feature. The
-metadata fields are for users to populate as the create documents. They describe
-the document. You use metadata fields to capture textual, boolean, date,
-numerical, location, and descriptive characteristics about a document. To apply
-metadata fields to a Document Type you must add them to a Document Type's Main
-Metadata Fields  or add them to Metadata Set to apply to the Document Type. 
+Documents and Media uses a Document Type to classify every Document Library
+file. A Document Type wraps each file with a type name and metadata. The
+metadata fields let authors describe the document. As a Documents and Media
+administrator you create metadata fields, add them to Metadata Sets, and apply
+the sets to various Document Types.
 
-Liferay supports the following kinds of metadata fields:
+Typically you'll want to specify document metadata fields in a Metadata Set and
+then apply it to a Document Type. So let's start creating a metadata set.
+
+## Creating Metadata Sets
+
+Metadata Sets aggregate metadata fields so you can apply them to Document Types.
+Liferay provides Metadata fields to capture textual, boolean, date, numerical, location,
+and descriptive characteristics about documents. When users create or edit
+a document of a document type that has a metadata set, they specify metadata
+field values to describe the document.
+
+Liferay supports the following metadata fields:
 
 **Boolean**: is a check box.
 
@@ -53,15 +65,6 @@ have to be accessed from a drop-down menu.
 **Text Box**: is just like the text field except you can enter multiple lines of
 text or separate paragraphs. 
 
-Not only do Document Types allow you to suggest, and even demand, metadata for
-users to apply to the documents, but they also help you integrate files with
-more of Liferay's features. Liferay's Search picks up on Documents and Media
-file metadata, so users can find files faster. You can apply workflows to
-specific Document Types. And you can more cleanly organize document libraries by
-designating folders to hold exclusively particular Document Types. In these
-ways, Liferay Document Types improve file integration with your site and allow
-you to leverage more Liferay features with your files. 
-
 The easiest way to create metadata fields is by creating them in Metadata Sets.
 In Documents and Media in Site Administration, select *Options
 (![Options](../../images/icon-options.png)) &rarr; Metadata Sets* to open the
@@ -89,7 +92,7 @@ or configure permissions for the metadata set.
 
 **Delete**: Move the set from Documents and Media to the Recycle Bin.
 
-You can create metadata sets independently of any document types. You can apply
+You create metadata sets independently of any document types, but you can apply
 them to any number of document types.
 
 As an example, let's create a metadata set called *Syllabus Fields* for a
@@ -132,7 +135,7 @@ wrench shows the field's settings table opposite the canvas. Clicking the *+*
 icon creates a duplicate of the current field and adds it below the current
 field. Clicking the trash can deletes the field. 
 
-![Figure 2: The metadata fields editor for Main Metadata Fields and Metadata Sets helps you define custom document types.](../../images/dm-metadata-set-settings.png)
+![Figure 2: The metadata fields editor for Metadata Sets and a Document Type's Main Metadata Fields helps you define custom document types.](../../images/dm-metadata-set-settings.png)
 
 To configure a field's settings, just click on the field in the canvas. This
 automatically selects the Settings tab to show the settings table opposite the
@@ -147,9 +150,21 @@ If a field's *Repeatable* setting is set to *Yes*, users can add multiple
 consecutive instances of the field to the document's metadata.
 
 Click *Save* when you're done specifying your new metadata set. Now you can
-apply the metadata set to a new document type.
+apply the metadata set to a new Document Type.
 
-In Documents and Media in Site Administration, select *Options
+## Creating Document Types
+
+When apply to Document Types enrich your document library files with information
+and integrate them further with Liferay's features. Not only do Document Types
+allow you to encourage, and even demand, that users specify important docuemnt
+metadata, but they also help you integrate the document with more of Liferay's
+features, such as Search and Workflow. Liferay's Search picks up on Documents
+and Media file metadata, so users can find files faster. You can apply workflows
+to specific document types. And you can more cleanly organize document libraries
+by designating folders to exclusively hold particular document types. 
+
+Let's open up the Document Types manager to start creatinng a document type. In
+Documents and Media in Site Administration, select *Options
 (![Options](../../images/icon-options.png)) &rarr; Document Types* to open the
 *Document Types* window. It lists all of the current custom document types. From
 Search you can enter keywords to find matching document types. Selecting the
