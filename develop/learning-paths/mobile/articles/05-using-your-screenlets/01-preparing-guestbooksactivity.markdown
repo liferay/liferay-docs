@@ -154,6 +154,26 @@ following code at the end of the `onCreate` method:
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
 
+The `onCreate` method should now look like this:
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_guestbooks);
+
+        initActionBar();
+        initDrawer();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+    }
+
 Next, delete the `onNavigationItemSelected` method, along with its `@Override` 
 and `@SuppressWarnings("StatementWithEmptyBody")` statements. Lastly, remove the 
 `NavigationView` import from `GuestbooksActivity`:
