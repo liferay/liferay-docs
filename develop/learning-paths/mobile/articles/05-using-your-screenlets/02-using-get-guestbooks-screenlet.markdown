@@ -127,5 +127,6 @@ This code first uses the ID `getguestbooks_screenlet` to get a reference to
 `GetGuestbooksScreenlet`. It then sets the current `GuestbooksActivity` instance 
 as the Screenlet's listener. 
 
-Great! That's it! Now you're ready to use Get Entries Screenlet. The next 
-article shows you how to do this. 
+Great! That's it! Your app's `GuestbooksActivity` now contains Get Guestbooks 
+Screenlet. Before you can use Get Entries Screenlet, however, you must create a 
+fragment to put it in. You'll do this next. 
