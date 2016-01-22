@@ -16,12 +16,11 @@ see how to create RSS feeds in Liferay next.
 
 To manage a Liferay site's RSS feeds, navigate to the Site Administration &rarr;
 Content page of your site and click *Web Content*. Site administrators can use
-this Web Content administration portlet to manage their site's web content,
-including web content structures and templates, which we examined above. Site
-administrators can also use the Web Content administration portlet to manage
-their site's RSS feeds. Click the *Options* icon
-(![Options](../../../images/icon-options.png)) at the top right of your screen and
-then *Feeds* if you'd like to add, edit, or delete RSS feeds.
+this Web Content menu option to manage their site's web content, including web
+content structures and templates, which we examined above. Site administrators
+can also use this option to manage their site's RSS feeds. Click the *Options*
+icon (![Options](../../../images/icon-options.png)) at the top right of your
+screen and then *Feeds* if you'd like to add, edit, or delete RSS feeds.
 
 ![Figure 1: Clicking *Options* &rarr; *Feeds* from the Site Administration's Web Content option opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../../images/web-content-manage-feeds.png)
 
@@ -42,9 +41,9 @@ page serves two purposes:
    articles that have been configured to be displayed in specific Web Content
    Display applications. For articles that have been configured to be displayed in a
    specific application, the RSS feeds' links point to the Liferay page of that
-   portlet. For orphaned articles, the RSS feeds' links point to the feed's
-   target page. When users click on such links for orphaned articles, the full
-   content of the orphaned article is displayed on the target page.
+   app. For orphaned articles, the RSS feeds' links point to the feed's target
+   page. When users click on such links for orphaned articles, the full content
+   of the orphaned article is displayed on the target page.
 
 ![Figure 2: To create a new RSS feed, you only need to specify a name, target page, and web content structure. Of course, you can also configure other features of the feed such as its permissions, web content constraints, and presentation settings.](../../../images/web-content-new-feed.png)
 
@@ -96,7 +95,7 @@ when you edit an existing feed, the URL field is populated. Copy this URL into a
 new browser tab or window to test your feed. From the Feeds popup window, you
 can also customize the permissions of feeds or delete feeds.
 
-It's possible to completely disable RSS feeds at the portal level. You can do
+It's possible to completely disable RSS feeds at the instance level. You can do
 this by setting the `rss.feeds.enabled` property to `false`. By default, it's
 set to `true`. If you keep the default, RSS enabled, you can make several other
 RSS property customizations. Please refer to the RSS section of your

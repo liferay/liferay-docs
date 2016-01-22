@@ -12,18 +12,17 @@ times. The asset framework has been greatly extended since then and it now
 supports tags, categories, vocabularies, comments, ratings, and asset
 relationships.
 
-The Asset Publisher portlet is designed to display multiple assets. It has quite
-a few configuration options which you'll cover in this chapter. By default,
-abstracts (previews) of recently published assets are displayed by the Asset
-Publisher portlet and links to their full views are provided. You can configure
-the Asset Publisher portlet to display a table of assets, a list of asset
+The Asset Publisher application is designed to display multiple assets. It has
+quite a few configuration options which you'll cover in this chapter. By
+default, abstracts (previews) of recently published assets are displayed by the
+Asset Publisher app and links to their full views are provided. You can
+configure the Asset Publisher app to display a table of assets, a list of asset
 titles, or the full content of assets. You can also configure the Asset
 Publisher to display only certain kinds of assets and you choose how many items
-to display in a list. The Asset Publisher portlet is very useful for displaying
+to display in a list. The Asset Publisher app is very useful for displaying
 chosen types of content, for displaying recent content, and for allowing users
 to browse content by tags and categories. The Asset Publisher is designed to
-integrate with the Tags Navigation and Categories Navigation portlets to allow
-this
+integrate with the Tags Navigation and Categories Navigation apps to allow this.
 
 This chapter covers the following topics:
 
@@ -31,7 +30,6 @@ This chapter covers the following topics:
 - Using targeted, single value, and multi-value vocabularies
 - Using faceted search
 - Using the Asset Publisher
-- Setting up display pages
 - Adding relationships between assets
 - Publishing RSS feeds
 

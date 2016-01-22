@@ -15,19 +15,18 @@ Related Assets application next.
 By default, the Related Assests application is configured to display any related
 asset of the asset selected in the Asset Publisher. You can configure what
 content relationships to display, if you prefer not to show every related asset
-for the selected asset. To do this, go to
-the Related Assets portlet and select the *Options* icon
-(![Options](../../../images/icon-options.png)) in the upper right corner of the
-portlet and click *Configuration*. Under the *Setup* &rarr; *Asset Selection*
-tab, set the type of asset(s) to display using the *Asset Type* menu. The
-default value is set to *Any*. You can narrow the scope of the portlet to
-display any single category of asset type or select multiple assets from the
-menu.
+for the selected asset. To do this, go to the Related Assets app and select the
+*Options* icon (![Options](../../../images/icon-options.png)) in the upper right
+corner of the application and click *Configuration*. Under the *Setup* &rarr;
+*Asset Selection* tab, set the type of asset(s) to display using the *Asset
+Type* menu. The default value is set to *Any*. You can narrow the scope of the
+app to display any single category of asset type or select multiple assets from
+the menu.
 
 Filter options let you set minimum requirements for displaying assets by their
 categories, tags, and custom fields. Ordering and Grouping allows you to
 organize assets using the same criteria. Display settings allow you to customize
-how assets are shown in the portlet. They can be listed by title, in a table,
+how assets are shown in the app. They can be listed by title, in a table,
 by abstract, or full content. You can convert assets to different document types
 like ODT, PDF, and RTF. You can choose to show various metadata fields such as
 author, modification date, tags, and view count. You can even enable RSS
@@ -58,22 +57,22 @@ photo to your web content article. Navigate to your article in Site
 Administration &rarr; *Content* &rarr; *Web Content*.
 
 You've now defined relationship with your three assets. Click the *Add* icon
-(![Add](../../../images/icon-control-menu-add.png)) at the top of your page in the
-Control Menu and select *Applications* and add the Related Assets and Asset
+(![Add](../../../images/icon-control-menu-add.png)) at the top of your page in
+the Control Menu and select *Applications* and add the Related Assets and Asset
 Publisher applications to the page. Wait a minute; there aren't any assets
 displayed in the related assets application. Why? You cannot see any related
 assets until you select an asset in the Asset Publisher.
 
-![Figure 1: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets application. In the screenshot, we renamed the three Related Assets portlets on the left and updated their configurations.](../../../images/related-assets-app-1.png)
+![Figure 1: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets application. In the screenshot, we renamed the three Related Assets apps on the left and updated their configurations.](../../../images/related-assets-app-1.png)
 
 Once you select an asset, its related assets are displayed in the Related Assets
-portlet, as in the image above. If you want to get even more detailed with how
-your related assets are displayed, you can place two Related Assets applications
-on the page and name one *Related Blogs* and the other *Related Photos*. To
-change the name of an application's title, click the application's *Options*
-icon and select *Look and Feel*. Select the *Use Custom Title* checkbox and
-provide the custom title.
+app, as in the image above. If you want to get even more detailed with how your
+related assets are displayed, you can place two Related Assets applications on
+the page and name one *Related Blogs* and the other *Related Photos*. To change
+the name of an application's title, click the application's *Options* icon and
+select *Look and Feel*. Select the *Use Custom Title* checkbox and provide the
+custom title.
 
-![Figure 2: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets application. In the screenshot, we renamed the three Related Assets portlets on the left and updated their configurations.](../../../images/related-assets-app-2.png)
+![Figure 2: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets application. In the screenshot, we renamed the three Related Assets apps on the left and updated their configurations.](../../../images/related-assets-app-2.png)
 
 Next, you'll learn about Liferay's Search application.

@@ -4,12 +4,12 @@ Tags and categories are two important tools you can use to help organize
 information in Liferay. These tools help users to easily find the content
 they're looking for through search or navigation. Tagging and categorizing
 assets is easy. You can tag or categorize an asset at creation time or when
-editing an existing asset. If you click on the *Categorization* section of the
+editing an existing asset. If you click on the *Metadata* section of the
 form when creating or editing an asset, you'll find an interface for adding tags
 and categories. If no categories are available to be added to the asset (e.g.,
-if no categories have been created), the Categories heading won't appear.
+if no categories have been created), the *Select* option won't appear.
 
-![Figure 1: Here, the Web Content application's form for categorizing a new web content instance includes a Categories heading since categories exist.](../../../images/web-content-categorization.png)
+![Figure 1: Here, the Web Content application's form for categorizing a new web content instance includes a Categories *Select* option since categories exist.](../../../images/web-content-categorization.png)
 
 +$$$
 
@@ -24,11 +24,10 @@ $$$
 
 The Product Menu (![Product Menu](../../../images/icon-menu.png)) contains
 interfaces for managing tags and categories for each site in Liferay. Navigate
-to *Sites* &rarr; *[Site Name]* &rarr; *Content* in the Product Menu, and you'll
-find the *Tags* and *Categories* options. These options can be used to manage
-all your site's tags and categories. It is important that you both tag and
-categorize your content when you enter it. You'll take a closer look at tags and
-categories next.
+to the Site Administration menu &rarr; *Content*, and you'll find the *Tags* and
+*Categories* options. These options can be used to manage all your site's tags
+and categories. It is important that you both tag and categorize your content
+when you enter it. You'll take a closer look at tags and categories next.
 
 ## Tagging Content [](id=tagging-content)
 
@@ -62,8 +61,8 @@ example, to create tags for a new web content article, navigate to the
 content will be associated with those tag words when they are searched or
 referenced anywhere in Liferay.
 
-Tags are not the only portal-wide mechanism for describing content: you can also
-use categories.
+Tags are not the only instance-wide mechanism for describing content: you can
+also use categories.
 
 ## Defining Categories for Content [](id=defining-categories-for-content)
 
@@ -162,7 +161,7 @@ color of a firework, just in case you forget.
 
 There are a few other cool features for vocabularies and categories. A few of
 them were mentioned already when the *Allow Multiple Categories* and *Required*
-checkboxes for vocabularies and categories were discussed. The three new
+selectors for vocabularies and categories were discussed. The three new
 features are targeted vocabularies, single/multi-valued vocabularies, and
 separated widgets for every vocabulary.
 
@@ -174,7 +173,7 @@ configure these settings, go to the Categories application in Site
 Administration and mouse over the vocabulary in the list until you see the edit
 icon to the right. Select the icon to reveal a dialog box like the one below.
 
-![Figure 4: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../../images/targeted-vocabularies.png)
+![Figure 4: You can target vocabularies by checking the *Allow Multiple Categories* selector and then selecting the Asset Types.](../../../images/targeted-vocabularies.png)
 
 The default value for *Associated Asset Types* is *All Asset Types*. You can
 fine tune your choices by using the *+* and *-* buttons, which narrows the scope
@@ -193,7 +192,7 @@ vocabulary to apply to an asset.
 
 You can configure the single-valued or multi-valued status of a vocabulary
 through the Categories application. Edit a vocabulary and deselect the *Allow
-Multiple Categories* checkbox to create a single-valued vocabulary. Use the
+Multiple Categories* selector to create a single-valued vocabulary. Use the
 default option to create a multi-valued vocabulary.
 
 ### Separated Widgets [](id=separated-widgets)

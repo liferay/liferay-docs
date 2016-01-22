@@ -30,7 +30,7 @@ searches for web content. However, apps like Blogs, Wiki, Message Boards, and
 Documents and Media all provide search bars that let users search among the
 specific types of assets with which these applications allow users to interact.
 Note that all of these applications are accessible from Site Administration in
-the Product Menu. They can also be placed on portal pages for end-users to use.
+the Product Menu. They can also be placed on site pages for end-users to use.
 The Web Content application in the Product Menu's Site Administration section
 also has a built-in search bar, which allows for web content search. Because
 this application is only designed for administrative use (and is not available
@@ -54,7 +54,7 @@ content instances. If a Documents and Media file is a text file, the file's
 content is indexed as well. Comments on blog posts, wiki articles, and Documents
 and Media files and text file attachments to wiki articles and message board
 posts are also indexed. Liferay automatically indexes content as it's added to
-the portal.
+the instance.
 
 If you'd like to search among assets of a specific type and you'd like to
 include comments and attachments in your search, use the search bar of the
@@ -70,19 +70,18 @@ whether an individual search result is a wiki article, a comment, or an
 attachment. In the next section, you'll see how the Search application can be
 used to search through web content on Liferay. Its faceted search
 feature is a powerful tool that allows users to include or not include specific
-types of assets in a search. However, the Search portlet does not return
+types of assets in a search. However, the Search application does not return
 comments or attachments as search results.
 
 ## Searching for Localized Web Content [](id=searching-for-localized-web-content)
 
-Liferay Portal supports localizing web content as well as searching for
-localized web content. Recall that to add a translation of a web content
-article, you need to edit the article, choose a language, and then add the
-translation and click *Save*. Here's how searching for localized content works
-in Liferay:
+Liferay supports localizing web content as well as searching for localized web
+content. Recall that to add a translation of a web content article, you need to
+edit the article, choose a language, and then add the translation and click
+*Save*. Here's how searching for localized content works in Liferay:
 
-- Web content articles whose default language matches the portal's default
-  language are searched.
+- Web content articles whose default language matches the Liferay instance's
+  default language are searched.
 - Web content articles whose default language is `en_US` (American English) are
   searched, regardless of Liferay's default language.
 - If the language of a translation of an article matches Liferay's default
@@ -182,15 +181,14 @@ If this is the case, you might want to tweak the `frequencyThreshold` and the
 `maxTerms` settings to increase the number of asset types displayed past the
 default of 10. This is covered in the section below on search options.
 
-Note that although users can be appear as search results in the Search portlet,
-they behave differently than other assets. For example, you cannot select a user
-as a related asset. Also, users cannot be displayed by the Asset Publisher
-portlet. Usually, when you click on an asset from a list of results in the
-Search portlet, the selected asset is displayed in an Asset Publisher portlet.
-If you click on a user, however, you're taken to the user's profile page. If
-public personal pages have been disabled, clicking on a user from list of search
-results does nothing. To disable public personal pages, you can set the
-following portal properties:
+Note that although users can be appear as search results in the Search app, they
+behave differently than other assets. For example, you cannot select a user as a
+related asset. Also, users cannot be displayed by the Asset Publisher app.
+Usually, when you click on an asset from a list of results in the Search app,
+the selected asset is displayed in an Asset Publisher app. If you click on a
+user, however, you're taken to the user's profile page. If public personal pages
+have been disabled, clicking on a user from list of search results does nothing.
+To disable public personal pages, you can set the following portal properties:
 
     layout.user.public.layouts.enabled=false
     layout.user.public.layouts.auto.create=false
@@ -365,24 +363,23 @@ format. Part of a developer's job when writing search indexers is to convert
 Documents (the objects that get indexed) to the actual object and back again.
 This option allows developers to see how their objects are being indexed. 
 
-**View in Context:** When an asset is clicked, show it in the portlet to which
-it belongs. 
+**View in Context:** When an asset is clicked, show it in the app to which it
+belongs.
 
-**Display Main Query:** Show the exact search query that the portlet generated
-to the search engine. Again, never use this in production; this is for
-development purposes only. 
+**Display Main Query:** Show the exact search query that the app generated to
+the search engine. Again, never use this in production; this is for development
+purposes only. 
 
 **Display Open Search Results:** Shows results from third party Open Search
 plugins, if they are installed. This is for backward compatibility only:
 developers are encouraged to re-design their search code, and then custom assets
-are aggregated with native portal assets seamlessly. 
+are aggregated with native Liferay assets seamlessly. 
 
 +$$$
 
-**Note:** You can identify available indexed fields by enabling the Search
-portlet's *Display Results in Document Form* configuration setting and then
-expanding individual results by clicking the *+* symbol to the left of their
-titles. 
+**Note:** You can identify available indexed fields by enabling the Search app's
+*Display Results in Document Form* configuration setting and then expanding
+individual results by clicking the *+* symbol to the left of their titles.
 
 $$$
 
@@ -392,19 +389,19 @@ this information was no longer relevant. The removed information may be useful
 for the faceted-search-and-customized-search-filtering tutorial. For reference,
 the JSON info in this section was removed as part of LRDOCS-2108. -Cody -->
 
-Search is a powerful component of Liferay Portal's asset framework. The
-proclivity of assets means that there is an extensible, robust, and configurable
-search mechanism throughout the portal that allows administrators to optimize
-the search experience of their users. Users also get an easy to use search
-interface that makes use of the tags and categories that they themselves apply
-to various pieces of content, regardless of the type of content. This makes
-Liferay's search truly "for the people."
+Search is a powerful component of Liferay's asset framework. The proclivity of
+assets means that there is an extensible, robust, and configurable search
+mechanism throughout the portal that allows administrators to optimize the
+search experience of their users. Users also get an easy to use search interface
+that makes use of the tags and categories that they themselves apply to various
+pieces of content, regardless of the type of content. This makes Liferay's
+search truly "for the people."
 
 Power users can learn an extended search syntax that lets them craft very
 specific searches. These searches can be used on large installations with lots
 of data to find the proverbial needle in the proverbial haystack. Administrators
-can tune the configuration of search portlets so that they are optimized for the
+can tune the configuration of search apps so that they are optimized for the
 contents of their communities. 
 
-Next, you'll look at how the Asset Publisher portlet makes even more extensive
-use of Liferay's asset framework to bring relevant content to users.
+Next, you'll look at how the Asset Publisher app makes even more extensive use
+of Liferay's asset framework to bring relevant content to users.

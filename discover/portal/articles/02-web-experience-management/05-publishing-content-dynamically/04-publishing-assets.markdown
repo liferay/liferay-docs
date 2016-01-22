@@ -35,8 +35,8 @@ explicitly selected by an administrator.
 
 The Asset Publisher supports a scope that restricts both dynamic and manual
 asset selection. The Asset Publisher can only display assets from its configured
-scope. By default, the Asset Publisher portlet is scoped to the site of the page
-to which it was added. You can, however, customize the scope from the Asset
+scope. By default, the Asset Publisher app is scoped to the site of the page to
+which it was added. You can, however, customize the scope from the Asset
 Selection section of the Asset Publisher configuration window. To extend your
 Asset Publisher's scope, click *Select* under Scope and choose either *Global*
 to add the global scope, *Pages...* to add the scope to specific pages, or
@@ -192,7 +192,7 @@ you want your content to appear. Many of these, such as printing, flags,
 ratings, comments, comment ratings, and social bookmarks work the same way they
 do in the Web Content Display application.
 
-**Show Add Content Button**: When checked, this checkbox adds an *Add New*
+**Show Add Content Button**: When selected, this selector adds an *Add New*
 button that lets users add new assets directly from the Asset Publisher
 application. This is checked by default.
 
@@ -265,14 +265,14 @@ published assets.
 different versions of it based on locale. Enabling this option shows the locales
 available, enabling users to view the content in their language of choice. 
 
-**Set as the Default Asset Publisher for This Page**: The Asset Publisher
-portlet is an instanceable portlet; multiple Asset Publishers can be added to a
-page and each has an independent configuration. The default Asset Publisher for
-a page is the one used to display any web content associated with the page.
+**Set as the Default Asset Publisher for This Page**: The Asset Publisher app is
+an instanceable app; multiple Asset Publishers can be added to a page and each
+has an independent configuration. The default Asset Publisher for a page is the
+one used to display any web content associated with the page.
 
-**Enable Conversion To:** If you have enabled Liferay Portal's
-OpenOffice/LibreOffice integration, you can allow your users to convert the
-content to one of several formats:
+**Enable Conversion To:** If you have enabled Liferay's OpenOffice/LibreOffice
+integration, you can allow your users to convert the content to one of several
+formats:
 
 - DOC
 - ODT
@@ -329,7 +329,7 @@ The Display Settings section of the Asset Publisher has numerous options to help
 you configure how your content selections are displayed to your users. Even
 though there are many choices, it's easy to go through the options and quickly
 adjust the ones that apply to your situation. You'll want to use the Asset
-Publisher to query for different kinds of assets in the portal that contain
+Publisher to query for different kinds of assets in Liferay that contain
 relevant information for your users.
 
 ## Configuring Asset Publisher Subscriptions [](id=configuring-asset-publisher-subscriptions)
@@ -395,12 +395,12 @@ editing web content, you can select a display page, but only pages with
 a configured asset publisher are available for selection.
 
 To create a display page, you can create a page yourself, add an Asset Publisher
-portlet and configure it yourself. Alternatively, you can use the *Content
-Display Page* page template included with Liferay. If you're creating a Display
-Page manually, once you've added an Asset Publisher application to the page,
-open its configuration window. Then check the *Set as the Default Asset
-Publisher for This Page* box. Also, for its display settings, set the Display
-Style to *Abstracts* and the Asset Link Behavior to *View in Context*.
+app and configure it yourself. Alternatively, you can use the *Content Display
+Page* page template included with Liferay. If you're creating a Display Page
+manually, once you've added an Asset Publisher application to the page, open its
+configuration window. Then check the *Set as the Default Asset Publisher for
+This Page* box. Also, for its display settings, set the Display Style to
+*Abstracts* and the Asset Link Behavior to *View in Context*.
 
 +$$$
 
@@ -417,10 +417,10 @@ its own URL, and that this is somehow related to pages where we display a whole
 bunch of content on the same page?" That's right. Just watch--create a display
 page called *My Web Content Display Page* somewhere in Liferay using the
 *Content Display Page* template. Make sure the *Automatically apply changes done
-to the page template...* checkbox is unchecked. Now, on a different page, add a
-Web Content Display application. Click the *Add* button, enter a
-title and some content, click on *Display Page* at the right, and select the
-Display Page you just created. Then click *Publish*.
+to the page template...* selector is not selected. Now, on a different page, add
+a Web Content Display application. Click the *Add* button, enter a title and
+some content, click on *Display Page* at the right, and select the Display Page
+you just created. Then click *Publish*.
 
 ![Figure 5: You can select a display page for a web content instance when creating or editing one.](../../../images/web-content-display-page.png)
 
