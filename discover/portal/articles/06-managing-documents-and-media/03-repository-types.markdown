@@ -20,7 +20,7 @@ Liferay:
 - S3Store (Amazon Simple Storage)
 
 For example, you can store documents and media files in your Liferay instance's
-database using DBStore. To enable DStore, add the following line to your
+database using DBStore. To enable DBStore, add the following line to your
 `portal-ext.properties` file:
 
     dl.store.impl=com.liferay.portlet.documentlibrary.store.DBStore
