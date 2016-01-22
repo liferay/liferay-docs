@@ -20,10 +20,10 @@ this Web Content administration portlet to manage their site's web content,
 including web content structures and templates, which we examined above. Site
 administrators can also use the Web Content administration portlet to manage
 their site's RSS feeds. Click the *Options* icon
-(![Options](../../images/icon-options.png)) at the top right of your screen and
+(![Options](../../../images/icon-options.png)) at the top right of your screen and
 then *Feeds* if you'd like to add, edit, or delete RSS feeds.
 
-![Figure 1: Clicking *Options* &rarr; *Feeds* from the Site Administration's Web Content option opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../images/web-content-manage-feeds.png)
+![Figure 1: Clicking *Options* &rarr; *Feeds* from the Site Administration's Web Content option opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../../images/web-content-manage-feeds.png)
 
 Click the *Add Feed* button to add a new feed. You need to enter a name, select
 a target page, and select a web content structure for the feed. A feed's target
@@ -46,7 +46,7 @@ page serves two purposes:
    target page. When users click on such links for orphaned articles, the full
    content of the orphaned article is displayed on the target page.
 
-![Figure 2: To create a new RSS feed, you only need to specify a name, target page, and web content structure. Of course, you can also configure other features of the feed such as its permissions, web content constraints, and presentation settings.](../../images/web-content-new-feed.png)
+![Figure 2: To create a new RSS feed, you only need to specify a name, target page, and web content structure. Of course, you can also configure other features of the feed such as its permissions, web content constraints, and presentation settings.](../../../images/web-content-new-feed.png)
 
 To specify a target page, you need to enter the target page's friendly URL. Note
 that friendly URLs do not include the host name. For example, the friendly URL
@@ -116,10 +116,10 @@ RSS application and select feeds to be displayed.
 
 Once you've added the RSS application to a page, open the application's
 Configuration menu by clicking on the *Options* icon
-(![Options](../../images/icon-options.png)) at the top right corner of the
+(![Options](../../../images/icon-options.png)) at the top right corner of the
 application and selecting *Configuration*.
 
-![Figure 3: The RSS application's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../images/rss-application-config.png)
+![Figure 3: The RSS application's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../../images/rss-application-config.png)
 
 By default, the RSS application displays one feed. In the Feeds section, click
 on the plus sign to add a new feed or on the minus sign to remove a
@@ -148,7 +148,7 @@ in the RSS application either above all of the feeds or below all of the feeds.
 You can use these to provide an introduction, description, or footnotes about
 the feeds that you've selected to be displayed.
 
-![Figure 4: By default, the RSS application is configured to display feeds from the Financial Time. This image displays what the Financial Times feed looks like in the RSS application.](../../images/rss-application-default-view.png)
+![Figure 4: By default, the RSS application is configured to display feeds from the Financial Time. This image displays what the Financial Times feed looks like in the RSS application.](../../../images/rss-application-default-view.png)
 
 You've learned how to create, manage, and use RSS feeds. Great job!
 

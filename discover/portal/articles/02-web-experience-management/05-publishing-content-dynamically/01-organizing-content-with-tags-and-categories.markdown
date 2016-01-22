@@ -9,7 +9,7 @@ form when creating or editing an asset, you'll find an interface for adding tags
 and categories. If no categories are available to be added to the asset (e.g.,
 if no categories have been created), the Categories heading won't appear.
 
-![Figure 1: Here, the Web Content application's form for categorizing a new web content instance includes a Categories heading since categories exist.](../../images/web-content-categorization.png)
+![Figure 1: Here, the Web Content application's form for categorizing a new web content instance includes a Categories heading since categories exist.](../../../images/web-content-categorization.png)
 
 +$$$
 
@@ -22,7 +22,7 @@ section.
 
 $$$
 
-The Product Menu (![Product Menu](../../images/icon-menu.png)) contains
+The Product Menu (![Product Menu](../../../images/icon-menu.png)) contains
 interfaces for managing tags and categories for each site in Liferay. Navigate
 to *Sites* &rarr; *[Site Name]* &rarr; *Content* in the Product Menu, and you'll
 find the *Tags* and *Categories* options. These options can be used to manage
@@ -50,10 +50,10 @@ area of the Product Menu. Here, site administrators can create new tags and edit
 any existing site tags. To create tags in Site Administration, visit the site
 for which you want to create tags and then click *Content *&rarr; *Tags*. From
 this screen, you can view existing tags and create new ones. To create a new
-tag, click the *Add Tag* icon (![Add Tag](../../images/icon-add.png)) and enter
+tag, click the *Add Tag* icon (![Add Tag](../../../images/icon-add.png)) and enter
 a name for the tag.
 
-![Figure 2: The Add Tag interface is very simple, only requiring the name of your tag.](../../images/new-tag-interface.png)
+![Figure 2: The Add Tag interface is very simple, only requiring the name of your tag.](../../../images/new-tag-interface.png)
 
 The process for adding tags during content creation is very similar. For
 example, to create tags for a new web content article, navigate to the
@@ -90,11 +90,11 @@ Adding vocabularies and categories is similar to adding tags. Visit the site for
 which you want to create categories and then click *Content* &rarr; *Categories*
 to view the Categories application.
 
-![Figure 3: After adding new vocabularies, you'll notice your vocabularies indicate the amount of categories existing beneath them.](../../images/vocabulary-list.png)
+![Figure 3: After adding new vocabularies, you'll notice your vocabularies indicate the amount of categories existing beneath them.](../../../images/vocabulary-list.png)
 
 Clicking on a vocabulary displays any categories that have been created under
 that vocabulary. To create a new vocabulary, click on the *Add Vocabulary*
-button (![Add Vocabulary](../../images/icon-add.png)). Enter a name and,
+button (![Add Vocabulary](../../../images/icon-add.png)). Enter a name and,
 optionally, a description. By default, the *Allow Multiple Categories* option is
 enabled. This allows multiple categories from the vocabulary to be applied to an
 asset. If the box is disabled, only one category from the vocabulary can be
@@ -111,9 +111,9 @@ Creating new categories is similar to creating new tags except that categories
 must be added to an existing vocabulary and they can only be created by site
 administrators. Once created, however, regular users can apply categories to any
 assets they have permission to create or edit. To create a new category, click
-the *Add Category* icon (![Add Category](../../images/icon-add.png)) if you're
+the *Add Category* icon (![Add Category](../../../images/icon-add.png)) if you're
 already viewing a vocabulary, or you can select the *Actions* button
-(![Actions](../../images/icon-actions.png)) next to an existing vocabulary and
+(![Actions](../../../images/icon-actions.png)) next to an existing vocabulary and
 select *Add Category*. Enter a name for the new category and, optionally, a
 description. Just as with tags, you can configure the permissions
 of the category, choosing which roles (guest, site member, owner) can view the
@@ -174,7 +174,7 @@ configure these settings, go to the Categories application in Site
 Administration and mouse over the vocabulary in the list until you see the edit
 icon to the right. Select the icon to reveal a dialog box like the one below.
 
-![Figure 4: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../images/targeted-vocabularies.png)
+![Figure 4: You can target vocabularies by checking the *Allow Multiple Categories* checkbox and then selecting the Asset Types.](../../../images/targeted-vocabularies.png)
 
 The default value for *Associated Asset Types* is *All Asset Types*. You can
 fine tune your choices by using the *+* and *-* buttons, which narrows the scope
@@ -189,7 +189,7 @@ vocabulary to apply to an asset. If a vocabulary is single-valued you can only
 choose one. If it allows more, you can choose several categories from the
 vocabulary to apply to an asset.
 
-![Figure 5: Multi-valued vocabularies allow multiple categories from the vocabulary to be applied to an asset. Single-valued vocabularies only allow one category from the vocabulary to be applied. Here, the *Dining* and *Nightlife* categories are selected to be applied but the *Scenic Adventures* category is not.](../../images/multi-valued-vocabularies.png)
+![Figure 5: Multi-valued vocabularies allow multiple categories from the vocabulary to be applied to an asset. Single-valued vocabularies only allow one category from the vocabulary to be applied. Here, the *Dining* and *Nightlife* categories are selected to be applied but the *Scenic Adventures* category is not.](../../../images/multi-valued-vocabularies.png)
 
 You can configure the single-valued or multi-valued status of a vocabulary
 through the Categories application. Edit a vocabulary and deselect the *Allow
@@ -203,7 +203,7 @@ own separated widget. These widgets appear in the Categorization section of the
 form for editing an asset and they allow users to easily select appropriate
 categories for that asset.
 
-![Figure 6: Vocabularies have their own widgets, making it easy to select available categories.](../../images/separated-widgets.png)
+![Figure 6: Vocabularies have their own widgets, making it easy to select available categories.](../../../images/separated-widgets.png)
 
 It's important to use tags and categories with all your content, so that content
 is easier for users to find. Now that your content is categorized and tagged,

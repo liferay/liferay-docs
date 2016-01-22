@@ -62,7 +62,7 @@ appropriate application. For example, if you'd like to search for the term
 *Lunar Resort* among wiki articles, enter the term *Lunar Resort* into the Wiki
 application's search bar. 
 
-![Figure 1: When using the Wiki application's search bar to search for *Lunar Resort*, wiki articles, comments, and attachments containing the words *Lunar* or *Resort* are returned.](../../images/wiki-search.png)
+![Figure 1: When using the Wiki application's search bar to search for *Lunar Resort*, wiki articles, comments, and attachments containing the words *Lunar* or *Resort* are returned.](../../../images/wiki-search.png)
 
 Wiki articles, comments, and text file attachments containing the word *Lunar*
 or *Resort* are returned as search results. The search results clearly show
@@ -108,7 +108,7 @@ To get started using faceted search, drop the Search application on a page and
 search for something. You'll see a page with results on the right and a
 collection of *facets* on the left. 
 
-![Figure 2: The first set of facets is content types. You can drill down to specific types of content that contain the search terms you entered.](../../images/faceted-search.png)
+![Figure 2: The first set of facets is content types. You can drill down to specific types of content that contain the search terms you entered.](../../../images/faceted-search.png)
 
 Facets allow users of the Search application to select criteria with which to
 filter search results. A facet is a combination of the information about a
@@ -136,7 +136,7 @@ however, your memory is more foggy than that, or you're searching for something
 you're not sure is actually there, then the asset tags or asset categories
 facets may be more helpful to you.
 
-![Figure 3: Asset tag facets let you see how many assets contain the terms for which you searched *and* contain certain tags. Click on a specific tag to narrow down the list of search results to those to which the tag has been applied.](../../images/faceted-search-tags.png)
+![Figure 3: Asset tag facets let you see how many assets contain the terms for which you searched *and* contain certain tags. Click on a specific tag to narrow down the list of search results to those to which the tag has been applied.](../../../images/faceted-search-tags.png)
 
 For example, if you searched for a wireless phone, you might be more interested
 in content that has your search terms in it *and* has also been tagged by users.
@@ -149,7 +149,7 @@ search results.
 To drill down into the search, click on a facet to add it to the filter list.
 The results to the right are refined by the selected facets. 
 
-![Figure 4: Drilling down creates a list of what you selected at the top of the screen.](../../images/faceted-search-drill-down-1.png)
+![Figure 4: Drilling down creates a list of what you selected at the top of the screen.](../../../images/faceted-search-drill-down-1.png)
 
 In the figure above, the search is refined to only show wiki pages. The
 *Liferay* site is also selected, to refine the search. The facets that are
@@ -159,7 +159,7 @@ refile your search. Suppose that the two facets selected weren't enough to
 filter the search into a small enough list to sort through. In this case, you
 could further refine the search by selecting another facet, as below. 
 
-![Figure 5: Selecting another facet further refines the search.](../../images/faceted-search-drill-down-2.png)
+![Figure 5: Selecting another facet further refines the search.](../../../images/faceted-search-drill-down-2.png)
 
 Now the *bear* category is also selected, which reduces the list of search
 hits on the right. In this way, you can interactively tweak the search results
@@ -289,7 +289,7 @@ Next, you'll look at how the Search application can be configured.
 As with Liferay's other applications, you can configure the Search application
 via the configuration screen, which looks like the below illustration. 
 
-![Figure 6: You have three separate tabs for choosing your search configuration: *Display Settings*, *Spell Check Settings*, and *Other Settings*.](../../images/faceted-search-configuration.png)
+![Figure 6: You have three separate tabs for choosing your search configuration: *Display Settings*, *Spell Check Settings*, and *Other Settings*.](../../../images/faceted-search-configuration.png)
 
 Your Search configuration displays the Display Settings first, by default.
 You're able to control the scope of your search and the multiple facets of that

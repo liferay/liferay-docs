@@ -17,7 +17,7 @@ how content is displayed from one location, the Asset Publisher helps you to
 "bubble up" the most relevant content to your users.
 
 To get to all the application's options, click the *Options* icon
-(![Options](../../images/icon-options.png)) in the application's menu. If you
+(![Options](../../../images/icon-options.png)) in the application's menu. If you
 click the *Configuration* option and then *Setup* (if necessary), you can
 configure the Asset Publisher's settings from the following three areas:
 
@@ -59,7 +59,7 @@ telling the Asset Publisher that you want to select content manually. You can
 configure multiple scopes, including the global scope, from which to select
 assets.
 
-![Figure 1: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display application except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that are available to be displayed in the Asset Publisher.](../../images/web-content-asset-publisher-manual.png)
+![Figure 1: Selecting assets in the Asset Publisher manually is similar to selecting assets in the Web Content Display application except that you can select assets of any type, not just web content. You can also add scopes to expand the list of assets that are available to be displayed in the Asset Publisher.](../../../images/web-content-asset-publisher-manual.png)
 
 When selecting assets manually, you'll see a list of configured scopes under the
 Scope heading. Click the "X" button at the right to remove a scope from the
@@ -126,7 +126,7 @@ of multiple types.
 choose whether the content must contain or must not contain any or all of the
 tags or categories that you enter.
 
-![Figure 2: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../images/web-content-asset-publisher-filter.png)
+![Figure 2: You can filter by tags and categories, and you can set up as many filter rules as you need.](../../../images/web-content-asset-publisher-filter.png)
 
 Once you've set up your filter rules for dynamically selecting content, you can
 decide how the content will be displayed.
@@ -323,7 +323,7 @@ your configuration, the Asset Publisher displays tags and categories for each
 displayed asset. Then users can click on the tags and categories to manually
 filter the displayed assets.
 
-![Figure 3: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../images/available-metadata-fields.png)
+![Figure 3: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../../images/available-metadata-fields.png)
 
 The Display Settings section of the Asset Publisher has numerous options to help
 you configure how your content selections are displayed to your users. Even
@@ -344,7 +344,7 @@ Enabling RSS Subscription creates an RSS feed containing links to all of the
 assets that the Asset Publisher is configured to display. A link to this RSS
 feed appears at the bottom of the Asset Publisher application.
 
-![Figure 4: When RSS subscriptions have been enabled for an Asset Publisher application, a link to the Asset Publisher's RSS feed appears. Users can subscribe to the Asset Publisher's RSS feed using their preferred RSS reader.](../../images/asset-publisher-rss.png)
+![Figure 4: When RSS subscriptions have been enabled for an Asset Publisher application, a link to the Asset Publisher's RSS feed appears. Users can subscribe to the Asset Publisher's RSS feed using their preferred RSS reader.](../../../images/asset-publisher-rss.png)
 
 Enabling Email Subscription adds a *Subscribe* link to the Asset Publisher.
 Users wishing to be notified of newly published assets can click on this link to
@@ -422,7 +422,7 @@ Web Content Display application. Click the *Add* button, enter a
 title and some content, click on *Display Page* at the right, and select the
 Display Page you just created. Then click *Publish*.
 
-![Figure 5: You can select a display page for a web content instance when creating or editing one.](../../images/web-content-display-page.png)
+![Figure 5: You can select a display page for a web content instance when creating or editing one.](../../../images/web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, click the *Read
 More* link to display the full content. Notice that the canonical URL for
@@ -434,6 +434,6 @@ only features a configured Asset Publisher application but also a Tags
 Navigation, a Categories Navigation, and a Search application. These tools help
 users to quickly identify relevant content.
 
-![Figure 6: A canonical URL for a *Lunar Resort Information* page would look similar to this screenshot.](../../images/web-content-canonical-url.png)
+![Figure 6: A canonical URL for a *Lunar Resort Information* page would look similar to this screenshot.](../../../images/web-content-canonical-url.png)
 
 Next, you'll learn about publishing RSS feeds.
