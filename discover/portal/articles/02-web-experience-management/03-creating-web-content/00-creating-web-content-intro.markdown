@@ -82,5 +82,5 @@ project. The Lunar Resort project specializes in facilitating lunar vacations.
 It provides space shuttle transportation from the Earth to the Moon and back,
 offers the use of a state-of-the-art recreational facility enclosed by a large,
 transparent habitat dome, and even rents out lunar rovers. Once you're familiar
-with Liferay WCM, you'll wonder how the Lunar resort's portal could ever manage
+with Liferay WCM, you'll wonder how the Lunar Resort instance could ever manage
 without it! 
