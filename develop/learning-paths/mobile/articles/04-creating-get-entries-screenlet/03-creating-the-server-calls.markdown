@@ -1,4 +1,4 @@
-# Creating the Get Entries Screenlet's Server Call
+# Creating the Get Entries Screenlet's Server Call [](id=creating-the-get-entries-screenlets-server-call)
 
 To retrieve a guestbook's entries from the Guestbooks portlet, you must call the 
 portlet's remote service that returns the entries. As with Get Guestbooks 

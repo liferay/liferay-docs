@@ -1,4 +1,4 @@
-# Building the Guestbook Mobile SDK
+# Building the Guestbook Mobile SDK [](id=building-the-guestbook-mobile-sdk)
 
 Once you've deployed the Guestbook portlet to your Liferay instance, you're 
 ready to build the Guestbook Mobile SDK. You might be asking yourself, "Why do I 

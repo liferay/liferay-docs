@@ -1,4 +1,4 @@
-# Preparing GuestbooksActivity for Get Guestbooks Screenlet
+# Preparing GuestbooksActivity for Get Guestbooks Screenlet [](id=preparing-guestbooksactivity-for-get-guestbooks-screenlet)
 
 Recall that you want `GuestbooksActivity` to handle the display of both Get 
 Guestbooks Screenlet and Get Entries Screenlet. Before using these Screenlets, 
@@ -20,7 +20,7 @@ here just to fit this particular app's design.
 
 First, you'll refactor the Action Bar's code. 
 
-## Refactoring the Action Bar
+## Refactoring the Action Bar [](id=refactoring-the-action-bar)
 
 By default, the Action Bar displays the activity's name. When you use the Get 
 Guestbooks Screenlet, you want the Action Bar to display the selected 
@@ -71,7 +71,7 @@ should now look like this:
 
 Next, you'll modify the code that controls the navigation drawer. 
 
-## Refactoring the Navigation Drawer
+## Refactoring the Navigation Drawer [](id=refactoring-the-navigation-drawer)
 
 Currently, the navigation drawer initialization code is in the `onCreate` 
 method. Android Studio created this code for you when you used the Navigation 
@@ -138,7 +138,7 @@ class, delete the line of code that creates a new `DrawerLayout` in the
 Next, you'll delete the `NavigationView.OnNavigationItemSelectedListener` 
 implementation. 
 
-## Deleting the NavigationView.OnNavigationItemSelectedListener Implementation
+## Deleting the NavigationView.OnNavigationItemSelectedListener Implementation [](id=deleting-the-navigationview-onnavigationitemselectedlistener-implementation)
 
 Since you'll handle navigation drawer item selections with the Get Guestbooks 
 Screenlet, you don't need `GuestbooksActivity` to implement 
