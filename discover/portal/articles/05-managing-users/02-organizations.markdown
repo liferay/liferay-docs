@@ -1,7 +1,7 @@
->!-- Contains 6.2 links for now. Needs more links, and needs screen shots, when
->applicable. -->
+# Adding and Managing Organizations [](id=adding-and-managing-organizations)
 
-# Adding and Managing Organizations
+<!-- Contains 6.2 links for now. Needs more links, and needs screen shots, when
+applicable. -->
 
 For some enterprises, particularly those that are organized in a hierarchical
 structure, using organizations as a user management tool can make a lot of
@@ -20,7 +20,7 @@ in your portal, read this next section to help you wrap your head around it.
 
 <!-- If at all possible, this next section should be made more brief.  -->
 
-## What are Organizations?
+## What are Organizations? [](id=what-are-organizations)
 
 An Organization is a way to group Liferay Users hierarchically. For example,
 your company's departments (Human Resources, for example) could be an
@@ -209,7 +209,7 @@ distributed user administration.
 That's a lot of information on organizations. Next, learn how to create and
 manage organizations. 
 
-## Adding Organizations
+## Adding Organizations [](id=adding-organizations)
 
 <!-- Yikes, these steps are buried in the above paragraphs -->
 
@@ -255,7 +255,7 @@ the memberships of other Organization Administrators or Owners.
 
 $$$
 
-## Editing Organizations
+## Editing Organizations [](id=editing-organizations)
 
 To edit an organization go to the Users and Organizations section of the Control
 Panel. You should see any active portal users and organizations listed.  Click
