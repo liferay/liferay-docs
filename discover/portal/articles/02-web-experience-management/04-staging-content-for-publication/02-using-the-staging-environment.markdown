@@ -271,8 +271,5 @@ the base Site Pages Variation).
 * Merging does not affect content nor will overwrite anything in the base
 Variation, it will just add more versions, pages and page variations as needed.
 
-You can enable staging on an individual site basis, depending on your needs.
-This makes it easy to put strict controls in place for your public web site,
-while opening things up for individual sites that don't need such strict
-controls. Liferay's staging environment is extremely easy to use and makes
-maintaining a content-rich web site a snap.
+Liferay's staging environment is extremely easy to use and makes maintaining a
+content-rich web site a snap. You'll learn about scheduling web content next.
