@@ -1,4 +1,4 @@
-## OpenID Single Sign On Authentication
+# OpenID Single Sign On Authentication
 
 OpenID is a single sign-on standard which is implemented by multiple vendors.
 The idea is that multiple vendors implement the standard. Users can register
