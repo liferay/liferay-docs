@@ -45,7 +45,7 @@ Here's the template to use for each breaking change (note how it ends with a
 horizontal rule):
 
 ```
-### [Title] [](id=title) [](id=title-idtitle) [](id=title-idtitle-idtitle-idtitle) [](id=title-idtitle-idtitle-idtitle-idtitle-idtitle-idtitle-idtitle)
+### Title [](id=title)
 - **Date:**
 - **JIRA Ticket:**
 
@@ -71,7 +71,7 @@ in ascending chronological order.
 
 ## Breaking Changes List [](id=breaking-changes-list)
 
-### Utility Methods Have Been Moved from [ImageLocalServiceUtil](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ImageLocalServiceUtil.html) to [ImageTool](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/image/ImageTool.html) [](id=utility-methods-have-been-moved-from-imagelocalserviceutilhttps-docs-lifer) [](id=utility-methods-have-been-moved-from-imagelocalserviceutilhttps-docs-lifer) [](id=utility-methods-have-been-moved-from-imagelocalserviceutilhttps-docs-lifer) [](id=utility-methods-have-been-moved-from-imagelocalserviceutilhttps-docs-lifer)
+### Utility Methods Have Been Moved from ImageLocalServiceUtil [](id=utility-methods-have-been-moved-from-imagelocalserviceutil)
 - **Date:** 2013-Jan-13
 - **JIRA Ticket:** LPS-31888
 
