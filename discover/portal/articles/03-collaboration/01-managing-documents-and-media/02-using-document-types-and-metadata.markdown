@@ -67,15 +67,15 @@ text or separate paragraphs.
 
 The easiest way to create metadata fields is by creating them in Metadata Sets.
 In Documents and Media in Site Administration, select *Options
-(![Options](../../images/icon-options.png)) &rarr; Metadata Sets* to open the
+(![Options](../../../images/icon-options.png)) &rarr; Metadata Sets* to open the
 Metadata Sets window.
 
-![Figure 1: The Metadata Sets management window lets you view existing sets and create new ones for applying to document types.](../../images/dm-metadata-sets-list.png)
+![Figure 1: The Metadata Sets management window lets you view existing sets and create new ones for applying to document types.](../../../images/dm-metadata-sets-list.png)
 
 You can view, edit, or add metadata sets from the Metadata Sets window. If you
 select the check box next to the *Order by* heading all the sets are selected.
 If you select one or more sets, the Recycle Bin icon (![Recycle
-Bin](../../images/icon-trash.png)) appears. To move selected metadata sets to
+Bin](../../../images/icon-trash.png)) appears. To move selected metadata sets to
 the Recycle Bin, click the Recycle Bin icon. The *Order by* selector lets you
 order the sets by *Modified Date* or *ID*. The up and down arrows let you
 arrange the sets in ascending or descending order, respectively. You can also
@@ -104,7 +104,7 @@ authors must specify values for these fields. This ensures that a syllabus shows
 up in the Search app when keywords match its metadata field values.
 
 To start creating the Metadata Set, click the *Add* icon
-(![Add](../../images/icon-add.png)). The *New Metadata Set* window appears. Name
+(![Add](../../../images/icon-add.png)). The *New Metadata Set* window appears. Name
 the metadata set *Syllabus Fields*.
 
 Note that you can translate each of a metadata set's field values to any of the
@@ -130,12 +130,12 @@ Note, by dragging a field onto a field that's already on the canvas, you can
 nest the new field in the existing field.
 
 When you move your mouse over a field on the canvas, the field action icons
-(![Icons](../../images/icon-dm-metadata-actions.png)) appear. Clicking the
+(![Icons](../../../images/icon-dm-metadata-actions.png)) appear. Clicking the
 wrench shows the field's settings table opposite the canvas. Clicking the *+*
 icon creates a duplicate of the current field and adds it below the current
 field. Clicking the trash can deletes the field. 
 
-![Figure 2: The metadata fields editor for Metadata Sets and a Document Type's Main Metadata Fields helps you define custom document types.](../../images/dm-metadata-set-settings.png)
+![Figure 2: The metadata fields editor for Metadata Sets and a Document Type's Main Metadata Fields helps you define custom document types.](../../../images/dm-metadata-set-settings.png)
 
 To configure a field's settings, just click on the field in the canvas. This
 automatically selects the Settings tab to show the settings table opposite the
@@ -165,12 +165,12 @@ by designating folders to exclusively hold particular document types.
 
 Let's open up the Document Types manager to start creatinng a document type. In
 Documents and Media in Site Administration, select *Options
-(![Options](../../images/icon-options.png)) &rarr; Document Types* to open the
+(![Options](../../../images/icon-options.png)) &rarr; Document Types* to open the
 *Document Types* window. It lists all of the current custom document types. From
 Search you can enter keywords to find matching document types. Selecting the
 check box next to *Order by* selects all of the document types. When one or more
 are selected the *Recycle Bin* icon (![Recycle
-Bin](../../images/icon-trash.png)) appears. You can click the *Recycle Bin* icon
+Bin](../../../images/icon-trash.png)) appears. You can click the *Recycle Bin* icon
 to move the selected document types from Documents and Media to the Recycle Bin.
 
 The following actions are available for each document type.

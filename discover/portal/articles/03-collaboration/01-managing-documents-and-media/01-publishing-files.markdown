@@ -52,12 +52,12 @@ roles, permissions, and folders in Documents and Media.
 Since the Lunar Resort's *Souvenir and Memorabilia* staff members must be able
 to upload and organize guest media, let's enable a role for those purposes. Sign
 in as the Liferay admin and open the the *Product Menu* (![Product
-Menu](../../images/icon-menu.png)). Then navigate to *Control Panel &rarr; Users
+Menu](../../../images/icon-menu.png)). Then navigate to *Control Panel &rarr; Users
 &rarr; Roles*. If the staff group is a part of an Organization, and that
 organization has a site, create an Organization Role. Otherwise, create it as a
 Site Role. Name the role *Resort Guest Media Manager*. Once you've created it,
 click the role's Actions icon
-(![Actions](../../images/icon-actions.png)) and select *Define
+(![Actions](../../../images/icon-actions.png)) and select *Define
 Permissions*. The *Roles* screen appears, showing the *Define Permissions* tab.
 In that tab, navigate to *Site Administration &rarr; Content &rarr; Documents
 and Media*, select *Access in Site Administration* from the *General
@@ -85,9 +85,9 @@ Open the Product Menu, click on your site's name, and navigate to *Content
 appears and displays the Documents and Media library's *Home* (the library's
 root folder). As you add files and folders to the library, they're listed here.
 
-![Figure 1: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload all kinds of documents to the library.](../../images/dm-admin-add-menu.png)
+![Figure 1: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload all kinds of documents to the library.](../../../images/dm-admin-add-menu.png)
 
-Click the Add icon (![Add](../../images/icon-add.png)) to show what you can add
+Click the Add icon (![Add](../../../images/icon-add.png)) to show what you can add
 to the Document Library. You can add documents, folders, and shortcuts the same as you do
 on your local file system. You can even configure access to an entirely different
 repository. Here are the Add menu's options:
@@ -150,7 +150,7 @@ screen, after the folder's been created.
 
 
 
-![Figure 2: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../images/dm-doc-type-restrictions-and-workflow.png)
+![Figure 2: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../../images/dm-doc-type-restrictions-and-workflow.png)
 
 Document types are a powerful way to enforce rules for documents. For our
 example, we'll keep the default supported document types and workflow settings.
@@ -158,7 +158,7 @@ example, we'll keep the default supported document types and workflow settings.
 You've created a folder named *Resort Guest Media*. You can now specify its
 permissions. Since we only want the *Resort Guest Media Manager* role to manage
 files in the folder, we must fine tune the folder's permissions. Click on the
-folder's *Actions* icon (![Actions](../../images/icon-actions.png)) and select
+folder's *Actions* icon (![Actions](../../../images/icon-actions.png)) and select
 the *Permissions* action. The Permissions window appears.
 
 The folder permissions enable a role to perform the following actions:
@@ -191,7 +191,7 @@ the folder.
 
 You've created the *Resort Guest Media* folder and set appropriate permissions
 for it. While you're signed in as the admin user, click on Documents and Media's
-Options icon (![Options](../../images/icon-app-options.png)) and select
+Options icon (![Options](../../../images/icon-app-options.png)) and select
 *Configuration*. From here you can specify the email sender and email templates
 for email sent to Document Library folder subscribers. If you want to keep the
 defaults, close the *Configuration* window.
@@ -236,10 +236,10 @@ permissions by clicking the *More Options* link and deselecting all the
 permissions. When you're ready to upload the files, click *Publish*. The Add
 Multiple Documents screen stays active, ready for you to add more files. When
 you're done adding files, click the Back icon
-(![Back](../../images/icon-back.png)) at the top of the screen. You're taken
+(![Back](../../../images/icon-back.png)) at the top of the screen. You're taken
 back to the folder you're adding files to. 
 
-![Figure 3: Documents and Media's lists files using several display styles: icon (as shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../images/dm-images-in-admin.png)
+![Figure 3: Documents and Media's lists files using several display styles: icon (as shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../../images/dm-images-in-admin.png)
 
 Documents and Media lists your current folder's subfolders and file entries. A
 file entry is the Document Library's representation of a file. It wraps the file
@@ -247,7 +247,7 @@ to better leverage it within Liferay and to associate additional information and
 metadata with the file. File entries are displayed using icons, by default. You
 can select either icon, descriptive, or list display style; they're shown here
 from left to right: ![Display
-Styles](../../images/list-view-display-styles.png). The icon display style shows
+Styles](../../../images/list-view-display-styles.png). The icon display style shows
 a file as a cover image. If the file is an image type file, the image is used as
 the file entry's cover image. If the file isn't an image, Documents and Media
 displays a generic image for that file type. Also displayed with each file icon
@@ -258,9 +258,9 @@ file entry's view, which we'll explore soon. The descriptive and list display
 styles provide the same functionality, but display the file entries in rows.
 
 To see the current folder's details click the *Information* icon
-(![**i**](../../images/icon-information.png)). An area with the folder's name
+(![**i**](../../../images/icon-information.png)). An area with the folder's name
 appears. It shows the number of items in the folder. It also shows a *Subscribe*
-icon ![Subscribe](../../images/icon-subscribe.png) you can select to get
+icon ![Subscribe](../../../images/icon-subscribe.png) you can select to get
 notifications about files added to or modified in the folder. Lastly, the
 Actions icon lists actions you can perform on the current folder. Above the
 Information icon and Display Styles is a *Search* that enables you to find files
@@ -283,7 +283,7 @@ arrows let you arrange them in ascending or descending order.
 
 From the list view, Documents and Media lets you act on one or more files at
 once. When you select a checkbox for one or more files, the following action
-icons appear: ![Action Icons](../../images/dm-action-icons.png). Describing them
+icons appear: ![Action Icons](../../../images/dm-action-icons.png). Describing them
 from left to right, the X is for cancelling file checkout, the secured lock is
 for file check-in, the unsecured lock is for file check-out, the arrows are for
 moving the files, and the trash can is for moving files to the Recycle Bin. You
@@ -291,7 +291,7 @@ can also move selected files to a subfolder via drag and drop. File check-out
 and check-in is explained later in [Collaborating on
 Files](/discover/portal/-/knowledge_base/7-0/publishing-files#collaborating-on-files).
 
-![Figure 4: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../images/dm-file-entry-details.png)
+![Figure 4: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../../images/dm-file-entry-details.png)
 
 You've added several files to the *Spacey Party* folder. In the Document Library,
 each file has a file entry view. To open its file entry view, click the file's
@@ -338,7 +338,7 @@ you can view a multimedia document (audio or video) and play it online. If the
 browser supports HTML5, it uses the browser's native player. Otherwise it falls
 back to a Flash player.
 
-![Figure 5: By leveraging services like Xuggler and ImageMagick, you can watch a video clip or even view a slideshow inside Liferay's Documents and Media app.](../../images/dm-file-entry-video-preview.png)
+![Figure 5: By leveraging services like Xuggler and ImageMagick, you can watch a video clip or even view a slideshow inside Liferay's Documents and Media app.](../../../images/dm-file-entry-video-preview.png)
 
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for.
@@ -501,7 +501,7 @@ Library.
 In your Document Library, you can create file entries that link to Google
 documents, such as files stored in Google Drive or photos saved to Google. To
 link to a Google doc in Documents and Media, click the Add icon
-(![Add](../../images/icon-add.png)) and select *Google Docs*. The *New Google
+(![Add](../../../images/icon-add.png)) and select *Google Docs*. The *New Google
 Docs* screen appears. 
 
 The Google docs edit screen is similar to the edit screen for basic documents,
@@ -510,7 +510,7 @@ Docs brings up Google's file picker. It lets you select files from your Google
 Drive or your photos. Select the Google file you want to link to and click
 *Publish*. 
 
-![Figure 6: You can select files from Google Drive or your photos.](../../images/dm-google-select-a-file.png)
+![Figure 6: You can select files from Google Drive or your photos.](../../../images/dm-google-select-a-file.png)
 
 A new file entry appears for the Google document you linked to. You can view the
 file entry as you would any file entry. Contents of the Google doc shows in the
@@ -520,7 +520,7 @@ permission to access it, a new browser tab opens to the document in the Google
 application. A window appears otherwise, that lets you request permission to
 access the document. 
 
-![Figure 7: The Google doc file entry view comes with an action to edit the doc and displays file entry information.](../../images/dm-google-doc-file-entry.png)
+![Figure 7: The Google doc file entry view comes with an action to edit the doc and displays file entry information.](../../../images/dm-google-doc-file-entry.png)
 
 You now know how to access Google docs from your document libraries. Next, let's
 pick up with our Lunar Resort guest photos example as we consider how to display
@@ -560,7 +560,7 @@ folder's files by default. The app lets you browse, add, and act on files just
 as you do in Site Administration. Since we want to focus on the Spacey's files,
 let's configure the app to show files from the *Spacey Party* Document Library
 folder. Click the Documents and Media app's Options icon
-(![Options](../../images/icon-app-options.png)) and select *Configuration*. The
+(![Options](../../../images/icon-app-options.png)) and select *Configuration*. The
 Configuration window appears and shows the *Setup* tab's sub-tab *Display
 Settings*.
 
@@ -641,9 +641,9 @@ currently shown. And the slideshow continues until you either click pause or
 view the folder's last image. The slideshow feature provides a nice way to show
 off images. Click the X to close the slideshow window and return to the page. 
 
-![Figure 8: The Media Gallery's slideshow provides a nice way to view images.](../../images/dm-media-gallery-slideshow.png)
+![Figure 8: The Media Gallery's slideshow provides a nice way to view images.](../../../images/dm-media-gallery-slideshow.png)
 
-Clicking the folder's Actions icon (![Actions](../../images/icon-actions.png))
+Clicking the folder's Actions icon (![Actions](../../../images/icon-actions.png))
 lists actions you can perform with respect to the folder. For the Lunar Resort
 media team, the *Download* action is very useful. The action creates an archive
 of the folder's files and dowloads them to your machine. The resort media staff
@@ -811,12 +811,12 @@ and select your local file, and click *Save and Check In*. This time, leave the
 major version selection unchecked and click *Save*. The file is checked in and
 it's minor version number is incremented. 
 
-![Figure 9: No file is "written in stone". Version history actions let you inspect, delete, and reinstate file versions.](../../images/dm-file-version-actions.png)
+![Figure 9: No file is "written in stone". Version history actions let you inspect, delete, and reinstate file versions.](../../../images/dm-file-version-actions.png)
 
 In the file entry's screen, the *Version History* table lists the versions of
 the file. The department director created version 1.0, Tenzing created major
 version 2.0, and Tenzing also created minor version 2.1. Each file version has
-an Actions icon ([Actions](../../images/icon-dm-file-version-actions.png). You
+an Actions icon ([Actions](../../../images/icon-dm-file-version-actions.png). You
 can perform the following actions on each file version that's been checked in
 and approved (if no workflow is associated with a folder, the file's approved on
 checkin):
@@ -860,10 +860,10 @@ your file browser, you need to use log in credentials for the Liferay instance
 and the WebDAV URL of the folder you'd like to access.
 
 Navigate to the Documents and Media app hosting the folder you'd like to access.
-Click on the folder's Actions icon ![Actions](../../images/icon-actions.png) and
+Click on the folder's Actions icon ![Actions](../../../images/icon-actions.png) and
 select *Access from Desktop*.
 
-![Figure 10: Select *Access from Desktop* to get the the folder's WebDAV URL.](../../images/dm-access-from-desktop-action.png)
+![Figure 10: Select *Access from Desktop* to get the the folder's WebDAV URL.](../../../images/dm-access-from-desktop-action.png)
 
 Copy the WebDAV URL. On Windows, map a network drive drive to the WebDAV URL.
 Enter your Liferay credentials when you're prompted for them. The document
