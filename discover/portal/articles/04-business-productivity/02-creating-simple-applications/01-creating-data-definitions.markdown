@@ -1,6 +1,6 @@
-<!-- Renumber figures, numbers and captions. -->
+# Creating Data Definitions [](id=creating-data-definitions)
 
-# Creating Data Definitions
+<!-- Renumber figures, numbers and captions. -->
 
 Imagine this: The Lunar Resort is becoming a popular destination. The Recreation
 Department's offerings (hiking, lunar golf, rover races, and more) are very
@@ -50,7 +50,7 @@ in building a list app. An exhaustive discussion of the field types available
 and their configuration options is found at the end of this article. Next, get
 started creating data definitions.
 
-## Creating Data Definitions
+## Creating Data Definitions [](id=creating-data-definitions)
 
 The Lunar Resort List creators can't post and manage lists unless you give them
 some useful definitions. You can, of course, delegate the data definition
@@ -181,7 +181,7 @@ learn more about WebDAV or if you'd like to see WebDAV in action, see
 the article on [WebDAV access](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
 <!--Make link to 7-0 when ready-->.
 
-### Using a Parent Definition
+### Using a Parent Definition [](id=using-a-parent-definition)
 
 Though it wasn't necessary for the use case presented above, data definitions
 also have the capability of inheriting characteristics from other definitions.
@@ -217,7 +217,7 @@ Your definition now lives with all the pre-configured ones. There are
 several things you can do with these existing definitions, including deleting
 them, editing them, and copying them.
 
-## Managing Data Definitions
+## Managing Data Definitions [](id=managing-data-definitions)
 
 From a site's Dynamic Data Lists application (accessed through the Product Menu),
 you can either add a new dynamic data list from an existing data type or you can
@@ -239,7 +239,7 @@ instance.
 ![Figure 16: You can copy an existing data definition, manage its templates, and
 more.](../../../images/ddl-edit-definition-warning.png)
 
-### Copying Data Definitions 
+### Copying Data Definitions [](id=copying-data-definitions)
 
 Liferay 6.2 introduced the ability to *Copy* the DDM structures and templates
 associated with an existing data definition. You can access the Copy button by
@@ -260,7 +260,7 @@ templates.](../../../images/ddl-copy-definition.png)
 
 From the actions menu for a data definition, you can also configure its permissions.
 
-### Data Definition Permissions
+### Data Definition Permissions [](id=data-definition-permissions)
 
 From a data definition's Actions menu, you can select Permissions to configure
 the permissions for a particular data definition. Note that these permissions
@@ -278,7 +278,7 @@ templates.](../../../images/ddl-definition-permissions.png)
 
 You can manage a data definition's templates as well.
 
-### Managing a Data Definition's Templates
+### Managing a Data Definition's Templates [](id=managing-a-data-definitions-templates)
 
 Manage a data definition's templates by clicking Manage Templates from a data
 definition's actions menu (click the ![Configuration
@@ -294,7 +294,7 @@ the actions button for a template. For more information see the article on
 [Creating Custom
 Displays](/discover/portal/-/knowledge_base/7-0/creating-custom-displays).
 
-## Configuring Data Definition Fields
+## Configuring Data Definition Fields [](id=configuring-data-definition-fields)
 
 You already know how to create data definitions, and if you created the example
 definition, you've added and configured some of the field types that can be used

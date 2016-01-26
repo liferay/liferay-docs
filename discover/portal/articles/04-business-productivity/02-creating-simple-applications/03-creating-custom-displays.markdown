@@ -1,5 +1,4 @@
-
-# Using Templates to Display Forms and Lists
+# Using Templates to Display Forms and Lists [](id=using-templates-to-display-forms-and-lists)
 
 After creating data definitions and lists, you can control how the form appears
 to your users, and how the resulting list of records is displayed. You do this
@@ -36,7 +35,7 @@ interested in:
 
 -->
 
-## Managing Display Templates and Form Templates
+## Managing Display Templates and Form Templates [](id=managing-display-templates-and-form-templates)
 
 <!-- Add more detail on embedding templates within templates, copying existing
 templates, deleting templates? -->
@@ -72,7 +71,7 @@ If no templates have been created for a definition, you can create new ones. See
 the next sections on Creating Form Templates and Creating Display Templates for
 more details.
 
-## Creating Form Templates
+## Creating Form Templates [](id=creating-form-templates)
 
 The default data entry form is the entire data model from a data definition,
 including all required and optional fields. List creators who create new lists
@@ -123,7 +122,7 @@ information you might need, then quickly produce form templates that make it
 look like you have several data definitions and lists. How will you display all
 the records, though? However you want, of course.
 
-## Creating Display Templates
+## Creating Display Templates [](id=creating-display-templates)
 
 <!-- Too much text before getting to the steps. Move some to the intro of the
 article? -->
@@ -215,7 +214,7 @@ backing structure, see the article on web content templates. <!--LINK-->
 
 $$$
 
-### Creating a Simple Display Template
+### Creating a Simple Display Template [](id=creating-a-simple-display-template)
 
 There's a lot you can do with your templates. Maybe there's a Lunar Luau dinner
 scheduled at the Lunar Resort, and the kitchen staff wants a count of the

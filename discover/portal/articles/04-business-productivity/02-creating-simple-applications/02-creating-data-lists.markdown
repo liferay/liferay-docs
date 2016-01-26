@@ -1,6 +1,6 @@
-<!-- Update Screen shots to Lunar Resort example -->
+# Creating Data Lists [](id=creating-data-lists)
 
-# Creating Data Lists
+<!-- Update Screen shots to Lunar Resort example -->
 
 To create list applications, it's not enough to just create data definitions, as
 you read about in the last article. Although the definitions are the central
@@ -77,7 +77,7 @@ But how will the list of entries appear on a page? Whether its the awesome, new 
 Rover Race Sign-Up sheet or that boring Jobs Listing, the display side of the
 equation is very important. 
 
-## Using Default Displays
+## Using Default Displays [](id=using-default-displays)
 
 Lists are published in the portal through the Dynamic Data List Display portlet.
 If list creators don't customize the display, their lists use the default display
