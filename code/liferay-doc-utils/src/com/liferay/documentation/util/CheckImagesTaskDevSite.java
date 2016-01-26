@@ -38,79 +38,50 @@ public class CheckImagesTaskDevSite extends Task {
 		}
 		
 		File articleDir = new File(dir.getAbsolutePath() + "/articles");
-		File[] articles = articleDir.listFiles();
-		List<File> chFiles = new ArrayList<File>();
+		File[] fileArray = articleDir.listFiles();
+		List<File> articles = new ArrayList<File>();
 
 		if ((!articleDir.exists() || !articleDir.isDirectory())) {
 			throw new BuildException("Missing articles directory " +
 					articleDir.getAbsolutePath());
 		}
 		
-		// If there is an article limit, convert the limit from the article's
-		// directory structure to the exact article name.
-
-		if (_chapter != null) {
-			
-			if (!_chapter.contains("articles") ||
-					!_chapter.contains(".markdown")) {
-				throw new BuildException("Did not specify article directory "
-						+ "structure correctly: " + _chapter);
-			}
-			
-			if (_chapter.contains("\\")) {
-				int firstBackslash = _chapter.indexOf("\\");
-				int secondBackslash = _chapter.indexOf("\\", firstBackslash + 1);
-				int dot = _chapter.indexOf(".");
-
-				_chapter = _chapter.substring(secondBackslash + 1, dot);
-			}
-			
-			else if (_chapter.contains("/")) {
-				int firstSlash = _chapter.indexOf("/");
-				int secondSlash = _chapter.indexOf("/", firstSlash + 1);
-				int dot = _chapter.indexOf(".");
-
-				_chapter = _chapter.substring(secondSlash + 1, dot);
-			}
-		}
-		
 		try {
-			for (File article : articles) {
+			for (File file : fileArray) {
 
-				if (article.getName().contains(".")) {
+				if (file.getName().contains(".")) {
 					continue;
 				}
 
-				File[] allFiles = article.listFiles();
+				File[] allFiles = file.listFiles();
 
-				for (File file : allFiles) {
-					chFiles.add(file);
+				for (File article : allFiles) {
+					articles.add(article);
 				}
 
 			}
-			boolean foundChapterFile = false;
 
-			for (File chFile : chFiles) {
-				if (!chFile.getName().endsWith("markdown")) {
+			for (File article : articles) {
+				if (!article.getName().endsWith("markdown")) {
 					continue;
 				}
 
-				if (_chapter != null &&
-					!chFile.getName().startsWith(_chapter)) {
-					continue;
+				System.out.println("inside " + article.getPath());
+
+				int dirsUp = 0;
+				File tmpFile = article.getParentFile();
+				while (!_docdir.equals(tmpFile.getName())) {
+					tmpFile = tmpFile.getParentFile();
+					dirsUp++;
 				}
-
-				foundChapterFile = true;
-
-				System.out.println("inside " + chFile.getPath());
 
 				LineNumberReader in =
-					new LineNumberReader(new FileReader(chFile));
+					new LineNumberReader(new FileReader(article));
 				String line;
 				try {
 					while ((line = in.readLine()) != null) {
-						List<String> newErrors = _checkImgSrc(
-								line, chFile.getName(), in.getLineNumber());
+						List<String> newErrors = CheckImageUtil.checkImgSrc(
+							line, article.getPath(), in.getLineNumber(), dirsUp);
 
 						if (!newErrors.isEmpty()) {
 							errors.addAll(newErrors);
@@ -119,11 +90,6 @@ public class CheckImagesTaskDevSite extends Task {
 				} catch (IOException e) {
 					throw new BuildException(e.getLocalizedMessage());
 				}
-			}
-
-			if (_chapter != null && !foundChapterFile) {
-				throw new BuildException("ERROR - Missing chapter: " +
-					_chapter);
 			}
 
 		} catch (FileNotFoundException e) {
@@ -145,12 +111,6 @@ public class CheckImagesTaskDevSite extends Task {
 		}
 
 		System.out.println("Finished checking image sources.");
-	}
-
-	public void setChapter(String chapter) {
-		if (!chapter.startsWith("$")) {
-			_chapter = chapter;
-		}
 	}
 
 	public void setDocdir(String docdir) {
@@ -197,6 +157,5 @@ public class CheckImagesTaskDevSite extends Task {
 		return warnings;
 	}
 
-	private String _chapter;
 	private String _docdir;
 }
