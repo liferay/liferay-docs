@@ -484,6 +484,25 @@ same way as regular, structure-based templates. The only setting that differs is
 the *Structure* option, which you'll need to leave blank to create a generic
 template.
 
+You can also embed applications in web content templates. This is a convenient
+way to ensure that specified apps are always located inside your web content
+article. Core apps and custom apps, whether instanceable or non-instanceable can
+be embedded in web content templates. Below are examples of embedding the
+Currency Converter app in FreeMarker and Velocity:
+
+**FreeMarker:**
+
+    <#assign liferay_portlet = PortalJspTagLibs["/WEB-INF/tld/liferay-portlet-ext.tld"] />
+    <@liferay_portlet["runtime"] portletName="com_liferay_currency_converter_web_portlet_CurrencyConverterPortlet" />
+
+**Velocity:**
+
+    $theme.runtime("com_liferay_currency_converter_web_portlet_CurrencyConverterPortlet");
+
+You probably noticed in the FreeMarker example that a taglib is used. Taglibs
+are accessible to web content administrators, providing many additional
+oppurtunities for template development.
+
 For cases where you're creating your template within Liferay, you can use the
 template editor. On the left side of the template editor, you'll notice a
 palette of common variables used for making web content templates. This is a
