@@ -37,27 +37,28 @@ To add a new page template, click the *Add* icon
 (![Add Page Template](../../../images/icon-add.png)). Then enter a name and
 description for your template. Leave the *Active* button enabled. Click *Save*
 and then identify your page template in the list. Use the Actions icon
-(![Actions](../../../images/icon-actions.png)) to edit the page template. Clicking
-the page template's name opens a new browser window which you can use to
-configure your new page. Any changes you make are automatically saved so you can
-close the new browser window once you're done.
+(![Actions](../../../images/icon-actions.png)) to edit the page template.
+Clicking the page template's name opens a new browser window which you can use
+to configure your new page. Any changes you make are automatically saved so you
+can close the new browser window once you're done.
 
-Note that after a new page template has been created, the default permissions are
-to only allow the creator to use the page template. To give other users access
-to it, use the actions menu in the list of templates and choose *Permissions*.
-Once you see the matrix of roles and permissions, check the *View* permission
-for the role or roles needed to see the page template in the list of available
-page templates when creating a new page. If you want any user who can create a
-page to be able to use the page template, just check the *View* permission for
-the *User* role.
+Note that after a new page template has been created, the default permissions
+are to only allow the creator to use the page template. To give other users
+access to it, use the Actions menu in the list of templates and choose
+*Permissions*. Once you see the matrix of roles and permissions, check the
+*View* permission for the role or roles needed to see the page template in the
+list of available page templates when creating a new page. If you want any user
+who can create a page to be able to use the page template, just check the *View*
+permission for the *User* role.
 
 ![Figure 2: When creating a new site page, you're given options for the page template and page type.](../../../images/selecting-page-template.png)
 
 To use your template to create a new page, just navigate to your site's Site
 Administration dropdown menu and select the *Pages* dropdown option. Make sure
 to click the page or page set (e.g., Public Pages or Private Pages) you want to
-add a page to and then click *Add Page*. You'll be able to select a page
-template and type a name for the new page.
+add a page to and then click the *Add Page* button
+(![Add Page](../../../images/icon-control-menu-add.png)). You'll be able to
+select a page template and type a name for the new page.
 
 ![Figure 3: You can choose whether or not to automatically apply page template changes to live pages.](../../../images/automatic-application-page-template-changes.png)
 
@@ -66,10 +67,9 @@ template, any future changes to the template are automatically propagated to
 those pages. Site administrators can disable this behavior by unchecking the
 *Automatically apply changes done to the page template* box. Occasionally,
 propagation for page templates fails due to unintended errors. To learn how to
-manage a failed page template propagation, visit the [Propagating Changes from
-Site Templates to Sites]() section of this chapter.
-
-<!-- Add link for section above when available. -Cody -->
+manage a failed page template propagation, visit the
+[Propagating Changes from Site Templates to Sites](/discover/portal/-/knowledge_base/7-0/building-sites-from-templates#propagating-changes-from-site-templates-to-sites)
+section of this chapter.
 
 If staging has been enabled, changes to the page template are automatically
 propagated to the staged page. These changes still need to be approved before
@@ -89,13 +89,14 @@ exported and imported manually in advance or the import will fail.
 
 To export a page using a page template, use the following process:
 
-1. Go to *Control Panel* &rarr; *Sites* &rarr; *Page Templates*.
-2. Next to the page template you would like to export, click *Actions* &rarr;
-   *Export*. This produces a LAR file you can import later.
-3. On the target environment, go to *Control Panel* &rarr; *Sites* &rarr; *Page
-   Templates* and create a new page template.
-4. Next to the new template, click *Actions* &rarr; *Import*.
-5. Upload the LAR file containing the exported page template from step 3.
+1.  Go to *Control Panel* &rarr; *Sites* &rarr; *Page Templates*.
+2.  Next to the page template you would like to export, click *Actions* &rarr;
+    *Export*. This produces a LAR file you can import later.
+3.  On the target environment, go to *Control Panel* &rarr; *Sites* &rarr; *Page
+    Templates* and create a new page template.
+4.  Next to the new template, click *Actions*
+    (![Add Page](../../../images/icon-actions.png)) &rarr; *Import*.
+5.  Upload the LAR file containing the exported page template from step 3.
 
 The page template can now be imported normally to your new environment.
 

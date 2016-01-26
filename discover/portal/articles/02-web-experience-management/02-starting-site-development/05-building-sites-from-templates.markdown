@@ -22,23 +22,23 @@ templates and sites in more detail in the section on site template use cases
 below.
 
 To manage the pages of a site template, click on *Site Templates* in the Control
-Panel and select the *Actions* icon (![Actions](../../../images/icon-actions.png))
-and then *Manage*. You're provided a left menu which contains the *Pages*,
-*Content*, and *Configuration* sections for each site. By default, the Manage
-Interface begins with the template's *Pages*. From here, you can add or remove
-pages from a site template or select themes and layout templates to apply to the
-site template. Click on a specific page's gear icon
-(![Page Gear](../../../images/icon-page-gear.png)) from the left menu if you'd like
-to select a different theme or layout template for that page, or manage any of
-the page's extensive settings. To edit the pages themselves, click the page link
-from the left menu. You can add specific applications to each page of a site
-template and configure the preferences of each app. Each page can have any
-theme, any layout template, and any number of applications, just like a page of
-a regular site. As with site pages, you can organize the pages of a site
-template into hierarchies. When you create a site using a site template, the
-configuration of pages and apps is copied from the template to the site. By
-default, all changes made to the site template are automatically copied to sites
-based on that template.
+Panel and select the *Actions* icon
+(![Actions](../../../images/icon-actions.png)) and then *Manage*. You're
+provided a left menu which contains the *Pages*, *Content*, and *Configuration*
+sections for each site. By default, the Manage Interface begins with the
+template's *Pages*. From here, you can add or remove pages from a site template
+or select themes and layout templates to apply to the site template. Click on a
+specific page's gear icon (![Page Gear](../../../images/icon-page-gear.png))
+from the left menu if you'd like to select a different theme or layout template
+for that page, or manage any of the page's extensive settings. To edit the pages
+themselves, click the page link from the left menu. You can add specific
+applications to each page of a site template and configure the preferences of
+each app. Each page can have any theme, any layout template, and any number of
+applications, just like a page of a regular site. As with site pages, you can
+organize the pages of a site template into hierarchies. When you create a site
+using a site template, the configuration of pages and apps is copied from the
+template to the site. By default, all changes made to the site template are
+automatically copied to sites based on that template.
 
 +$$$
 
@@ -114,16 +114,16 @@ template introduces to their sites--if you want the templates to be completely
 static, you should uncheck this. Click *Save* to create your site template.
 
 From the left menu, select the *Pages* section and click *Site Pages*. Then
-click on the *Pages* button to begin adding pages and apps and
-configuring the layouts. When you click this button, the site template opens in
-so you can view it while you're editing it. For this example, you want your site
-template to include four pages. First, create a *Home* page with the
-Activities, Announcements, and Calendar apps. Next, create a *Documents
-and Media* page with the Documents and Media app. Finally, create a
-*Wiki* page with the Wiki and Tag Cloud apps and a *Message Boards* page with the
-Message Boards and Tag Cloud apps. The changes you made to your site template
-above are completed in real time, so there's no need to navigate back to the
-Site Templates page of the Control Panel and select *Save*.
+click on the *Pages* button to begin adding pages and apps and configuring the
+layouts. When you click this button, the site template opens in so you can view
+it while you're editing it. For this example, you want your site template to
+include four pages. First, create a *Home* page with the Activities,
+Announcements, and Calendar apps. Next, create a *Documents and Media* page with
+the Documents and Media app. Finally, create a *Wiki* page with the Wiki and Tag
+Cloud apps and a *Message Boards* page with the Message Boards and Tag Cloud
+apps. The changes you made to your site template above are completed in real
+time, so there's no need to navigate back to the Site Templates page of the
+Control Panel and select *Save*.
 
 ![Figure 2: You can see the name of the site template you're currently editing.](../../../images/editing-site-template.png)
 
@@ -132,7 +132,7 @@ Legal sites. Go to the Control Panel and click on *Sites* &rarr; *Sites*. Then
 click the *Add* icon (![Add Site](../../../images/icon-add.png)) &rarr;
 *Department*. Enter *Engineering* for the site name and set the Membership Type
 to *Private*. Recall that private sites don't appear in the My Sites application
-so that regular portal users won't even know that the Engineering site exists.
+so that regular users won't even know that the Engineering site exists.
 Also, the only way users can be added to a private site is via an invitation
 from a site administrator. Leave the *Active* box checked so that your site can
 be used immediately. Select the *Copy as Private Pages* option since the

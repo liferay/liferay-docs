@@ -11,7 +11,7 @@ designed to facilitate collaboration among team members, Liferay's framework
 provides all the tools you need.
 
 You'll begin your journey with a tour of Liferay's user interface. Next, you'll
-create a custom Lunar Resort Example portal and explore ways to create sites
+create a custom Lunar Resort Example instance and explore ways to create sites
 and pages for that Liferay instance. There are many different ways to manage
 your sites and pages, which is also covered. To begin site development with
 Liferay, continue on to the next section.
