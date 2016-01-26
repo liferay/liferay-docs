@@ -31,13 +31,13 @@ add new page templates. By default, three sample page templates are provided:.
   It also has two columns, the main left column with the Wiki application and
   two right side appss to allow navigating through pages by tags and categories.
 
-![Figure 1: The Blog page template is already available for use along with the Content Display Page and Wiki page templates.](../../images/default-page-templates.png)
+![Figure 1: The Blog page template is already available for use along with the Content Display Page and Wiki page templates.](../../../images/default-page-templates.png)
 
 To add a new page template, click the *Add* icon
-(![Add Page Template](../../images/icon-add.png)). Then enter a name and
+(![Add Page Template](../../../images/icon-add.png)). Then enter a name and
 description for your template. Leave the *Active* button enabled. Click *Save*
 and then identify your page template in the list. Use the Actions icon
-(![Actions](../../images/icon-actions.png)) to edit the page template. Clicking
+(![Actions](../../../images/icon-actions.png)) to edit the page template. Clicking
 the page template's name opens a new browser window which you can use to
 configure your new page. Any changes you make are automatically saved so you can
 close the new browser window once you're done.
@@ -51,7 +51,7 @@ page templates when creating a new page. If you want any user who can create a
 page to be able to use the page template, just check the *View* permission for
 the *User* role.
 
-![Figure 2: When creating a new site page, you're given options for the page template and page type.](../../images/selecting-page-template.png)
+![Figure 2: When creating a new site page, you're given options for the page template and page type.](../../../images/selecting-page-template.png)
 
 To use your template to create a new page, just navigate to your site's Site
 Administration dropdown menu and select the *Pages* dropdown option. Make sure
@@ -59,7 +59,7 @@ to click the page or page set (e.g., Public Pages or Private Pages) you want to
 add a page to and then click *Add Page*. You'll be able to select a page
 template and type a name for the new page.
 
-![Figure 3: You can choose whether or not to automatically apply page template changes to live pages.](../../images/automatic-application-page-template-changes.png)
+![Figure 3: You can choose whether or not to automatically apply page template changes to live pages.](../../../images/automatic-application-page-template-changes.png)
 
 Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to

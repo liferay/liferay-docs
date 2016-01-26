@@ -22,13 +22,13 @@ templates and sites in more detail in the section on site template use cases
 below.
 
 To manage the pages of a site template, click on *Site Templates* in the Control
-Panel and select the *Actions* icon (![Actions](../../images/icon-actions.png))
+Panel and select the *Actions* icon (![Actions](../../../images/icon-actions.png))
 and then *Manage*. You're provided a left menu which contains the *Pages*,
 *Content*, and *Configuration* sections for each site. By default, the Manage
 Interface begins with the template's *Pages*. From here, you can add or remove
 pages from a site template or select themes and layout templates to apply to the
 site template. Click on a specific page's gear icon
-(![Page Gear](../../images/icon-page-gear.png)) from the left menu if you'd like
+(![Page Gear](../../../images/icon-page-gear.png)) from the left menu if you'd like
 to select a different theme or layout template for that page, or manage any of
 the page's extensive settings. To edit the pages themselves, click the page link
 from the left menu. You can add specific applications to each page of a site
@@ -65,7 +65,7 @@ associated with your template.
 The following figure displays the form shown when editing the *Community Site*
 template's settings:
 
-![Figure 1: Site templates have several configurable options including the option to allow site administrators to modify pages accociated with the site template.](../../images/site-template-settings.png)
+![Figure 1: Site templates have several configurable options including the option to allow site administrators to modify pages accociated with the site template.](../../../images/site-template-settings.png)
 
 By default, the following site templates are provided:
 
@@ -102,7 +102,7 @@ design each site separately but you can save yourself some work if you create a
 site template to use instead.
 
 To create a site template, navigate to the Control Panel and click *Sites*
-&rarr; *Site Templates*. Then click the *Add* icon (![Add Site Template](../../images/icon-add.png))
+&rarr; *Site Templates*. Then click the *Add* icon (![Add Site Template](../../../images/icon-add.png))
 and enter a name for your template: you'll use *Department* for this example.
 Leave the *Active* and *Allow site administrators to modify pages associated
 with this site template...* boxes checked. The *Active* box must be checked for
@@ -125,11 +125,11 @@ Message Boards and Tag Cloud apps. The changes you made to your site template
 above are completed in real time, so there's no need to navigate back to the
 Site Templates page of the Control Panel and select *Save*.
 
-![Figure 2: You can see the name of the site template you're currently editing.](../../images/editing-site-template.png)
+![Figure 2: You can see the name of the site template you're currently editing.](../../../images/editing-site-template.png)
 
 Next, you'll use your site template to create the Engineering, Marketing and
 Legal sites. Go to the Control Panel and click on *Sites* &rarr; *Sites*. Then
-click the *Add* icon (![Add Site](../../images/icon-add.png)) &rarr;
+click the *Add* icon (![Add Site](../../../images/icon-add.png)) &rarr;
 *Department*. Enter *Engineering* for the site name and set the Membership Type
 to *Private*. Recall that private sites don't appear in the My Sites application
 so that regular portal users won't even know that the Engineering site exists.
@@ -165,7 +165,7 @@ page sets are linked to the site template. Such a link is created when you
 create a site based on a site template and leave the *Enable propagation of
 changes from the site template* box checked. To disable or re-enable this link
 for a site, select the site from the Sites dropdown in the Product Menu by
-selecting the compass icon (![Compass](../../images/icon-compass.png)). Navigate
+selecting the compass icon (![Compass](../../../images/icon-compass.png)). Navigate
 to the *Configuration* &rarr; *Site Settings* page and uncheck or recheck the
 *Enable propagation of changes from the site template* checkbox. In this
 section, you'll learn about the propagation of changes from site templates to
@@ -184,14 +184,14 @@ site pages as long as they're all positioned after the site template pages. Site
 template administrators cannot add, remove, or reorder custom site pages.
 
 If a site administrator changes a page that was imported from a site template
-and refreshes the page, the following Information icon (![Information](../../images/icon-control-menu-information.png))
+and refreshes the page, the following Information icon (![Information](../../../images/icon-control-menu-information.png))
 appears in the Control Menu with the following message:
 
     This page has been changed since the last update from the site template. No
     further updates from the site template will be applied. Click *Reset* to
     overwrite the changes and receive updates from the site template.
 
-![Figure 3: You can click the Information icon to view important information about your site template.](../../images/site-template-update-message.png)
+![Figure 3: You can click the Information icon to view important information about your site template.](../../../images/site-template-update-message.png)
 
 If the site administrator clicks the *Reset Changes* button, changes are
 propagated from the site template page to the corresponding site page that was
@@ -224,7 +224,7 @@ away your conflict, navigate to your site's *Site Administration* &rarr;
 *Configuration* &rarr; *Site Settings* and click the *Reset and Propagate*
 button.
 
-![Figure 4: This type of warning is given when there are friendly URL conflicts with site template pages.](../../images/friendly-url-propagation-failure.png)
+![Figure 4: This type of warning is given when there are friendly URL conflicts with site template pages.](../../../images/friendly-url-propagation-failure.png)
 
 The *Reset and Propagate* button resets the merge fail count and attempts to
 propagate your site changes again. This process gives the portal administrator
@@ -274,7 +274,7 @@ To export a Site using a Site Template, use the following process:
 
 1. Go to the *Control Panel* &rarr; *Sites* &rarr; *Site Templates* menu.
 
-2. Click the *Actions* icon (![Actions](../../images/icon-actions.png)) and then
+2. Click the *Actions* icon (![Actions](../../../images/icon-actions.png)) and then
    *Export* for the site template your site is using. You'll use the *Export*
    screen to obtain a LAR file with the content of the site template. Be sure to
    choose the applications and data you want exported.

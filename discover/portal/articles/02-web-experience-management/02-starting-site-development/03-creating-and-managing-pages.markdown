@@ -14,7 +14,7 @@ arrow next to your current site name in the Product Menu and select your desired
 site. Once you've selected your site, select *Site Pages* under the Pages tab
 from the left panel.
 
-![Figure 2.5: The *Site Pages* interface allows you to edit your site pages as a whole.](../../images/04-managing-site-pages.png)
+![Figure 2.5: The *Site Pages* interface allows you to edit your site pages as a whole.](../../../images/04-managing-site-pages.png)
 
 To add new pages to your site, click the *Add* icon from the bottom menu and
 select the *Page* tab. This is the *Page* interface, which offers a plethora of
@@ -24,7 +24,7 @@ To manage the specific page of the site you've navigated to, click the *Edit*
 icon from the bottom menu (gear). This will only edit the specific page you're
 currently on.
 
-![Figure 2.6: The *Edit Page* interface allows you to edit the current page you're on.](../../images/web-content-managing-single-page.png)
+![Figure 2.6: The *Edit Page* interface allows you to edit the current page you're on.](../../../images/web-content-managing-single-page.png)
 
 *Site Pages* is an interface to view existing pages, create new pages, and view
 pages. Note that you can switch between managing a set of pages and managing a
@@ -57,7 +57,7 @@ and drop them in the list to put them in whatever order you want. Let's go ahead
 and add another top level page and name it *Community*. We'll use this page for
 the Recent Bloggers and Wiki portlets.
 
-![Figure 2.7: You can add a page to your site by giving it a name, page template, and page type.](../../images/04-web-content-add-page.png)
+![Figure 2.7: You can add a page to your site by giving it a name, page template, and page type.](../../../images/04-web-content-add-page.png)
 
 When you create a new page, you can create either a blank page or a page
 prepopulated with portlets from a page template. When you're entering the name
@@ -184,7 +184,7 @@ of the portal. They are created by developers and are easily installed using the
 Liferay Marketplace. Since we don't have any themes beyond the default one
 installed yet, we'll use the default theme for our pages.
 
-![Figure 2.8: The Look and Feel interface allows you to choose a theme for the current site.](../../images/04-look-and-feel.png)
+![Figure 2.8: The Look and Feel interface allows you to choose a theme for the current site.](../../../images/04-look-and-feel.png)
 
 Many themes include more than one color scheme. This allows you to keep the
 existing look and feel while giving your site a different flavor. Change the
@@ -351,7 +351,7 @@ Collaboration portlets to the Lunar Resort site.
 See how easy it is to add applications to your pages? You've added the Wiki
 portlet and Blogs Aggregator portlet to the Community page. 
 
-![Figure 2.12: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../images/04-web-content-portlet-layout.png)
+![Figure 2.12: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../../images/04-web-content-portlet-layout.png)
 
 It's easy to make your pages look exactly the way you want them to. If the
 default layout options provided aren't enough, you can even develop your own.
@@ -562,7 +562,7 @@ the *Show Customizable Sections* button.
 
 <!-- Not available at the current moment in 7.0. -Cody -->
 
-![Figure 8.1: To enable page customizations, click on the *Edit* button at the left side of the page, expand the *Customization Settings* area, and click on the *Show Customizable Sections* button.](../../images/page-customizations.png)
+![Figure 8.1: To enable page customizations, click on the *Edit* button at the left side of the page, expand the *Customization Settings* area, and click on the *Show Customizable Sections* button.](../../../images/page-customizations.png)
 
 Once you've clicked the *Show Customizable Sections* button, you'll see one or
 more red regions, depending on the layout template of your page. Check one or
@@ -570,7 +570,7 @@ more of the *Customizable* boxes to allow site members to customize certain
 sections of the page. Regions that you've designated as customizable are colored
 green.
 
-![Figure 8.2: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../images/customizable-regions.png)
+![Figure 8.2: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../../images/customizable-regions.png)
 
 When site members visit your customizable page, they'll see a notification
 saying, "You can customize this page." Site members can toggle between viewing
@@ -588,7 +588,7 @@ to the sections of the page that they're allowed to customize. If they click
 *View Default Page*, the Add menu will disappear from the Dockbar since they're
 not allowed to modify the default page.
 
-![Figure 8.3: Non-administrator site members can customize their own versions of customizable pages but can't modify the default page.](../../images/default-customizable-page.png)
+![Figure 8.3: Non-administrator site members can customize their own versions of customizable pages but can't modify the default page.](../../../images/default-customizable-page.png)
 
 Administrators of customizable pages have the same two views as site members:
 the *default page* view and the *customized page* view. Changes made to the
@@ -631,7 +631,7 @@ their language in the Language portlet to view a translation of the portal into
 their native language. After closing the Configuration dialog box of the
 Language portlet, the customized Welcome page looks like this:
 
-![Figure 8.4: In this example, the user removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../images/customized-portal-homepage.png)
+![Figure 8.4: In this example, the user removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../../images/customized-portal-homepage.png)
 
 <!-- This section needed updating for 6.2. The following two paragraphs'
 statements about the required permissions and roles seem to be obsolete. -->
@@ -672,7 +672,7 @@ this with the following procedure:
    role.
 7. Click the *Save* button.
 
-![Figure 2.13: The Permissions offer a plethora of options for each role.](../../images/04-web-content-page-permissions.png)
+![Figure 2.13: The Permissions offer a plethora of options for each role.](../../../images/04-web-content-page-permissions.png)
 
 Congratulations! You've changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.

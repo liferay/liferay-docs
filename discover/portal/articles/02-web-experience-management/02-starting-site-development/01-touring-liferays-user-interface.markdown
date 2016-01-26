@@ -34,7 +34,7 @@ Product Menu &rarr; Control Panel and select *Portal Settings* under the
 Configuration heading. You could set up the configuration for the Lunar Resort
 as follows.
 
-![Figure 2.2: You can change the portal settings by navigating to the Control Panel and selecting *Portal Settings*.](../../images/04-web-content-changing-settings.png)
+![Figure 2.2: You can change the portal settings by navigating to the Control Panel and selecting *Portal Settings*.](../../../images/04-web-content-changing-settings.png)
 
 <!-- Replace above image with 7.0 UI. -Cody -->
 

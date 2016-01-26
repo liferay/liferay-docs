@@ -388,7 +388,7 @@ systematically to go along with the format you've defined for your content.
     *Add* &rarr; *Basic Web Content*.
 2.  Select *Structure and Template* from the bottom menu and click *Select*
     under the Structures heading to access the Manage Structures interface.
-3.  Click on the *Add* button ((![Add Template](../../../images/icon-add.png))).
+3.  Click on the *Add* button (![Add Template](../../../images/icon-add.png)).
 4.  Name the structure *News Article* and add the following fields:
 
 	| Field Type | &nbsp;Field Label | &nbsp;Name |
@@ -447,7 +447,7 @@ the abstract and the link created above, which sets the `read_more` parameter.
 
 When this template is rendered, it looks something like this:
 
-![Figure 5: The initial and expanded views for the Lunar Resort News Article. After Clicking *Read More*, you're able to read the full text body.](../../../images/web-content-structures-templates-completed.png)
+![Figure 5: The initial and expanded views for the Lunar Resort News Article. After clicking *Read More*, you're able to read the full text body.](../../../images/web-content-structures-templates-completed.png)
 
 +$$$
 

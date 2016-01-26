@@ -28,9 +28,6 @@ and publish content on your Liferay instance. You'll learn about the Web Content
 section in Site Administration so you can create and publish your first pieces
 of content.
 
-<!-- TODO: Review below paragraph for 7.0. Things are still unstable in UI, but
-I attempted to document. -Cody -->
-
 When you manage web content from the Site Administration menu, you can select
 the location where the content resides. When selecting the Site Administration
 dropdown menu from the Product Menu, you are presented with two scopes: site
@@ -178,37 +175,14 @@ article of this guide for more details.
 
 <!-- TODO: Replace link above with 7.0 link, when available. -Cody -->
 
-<!-- TODO: The below two pagagraphs assume the AlloyEditor was configured with
-audio/video button. This feature was supposed to go into the final released
-version of 7.0, but was not guaranteed (time restraints). If the feature was
-never finished, use the commented out section below, which provides the
-alternative way of configuring the CKEditor, since the AlloyEditor was never
-configured to support multimedia. -Cody -->
-
-Once Xuggler has been installed and enabled, embedding audio or video files in a
-web content article is easy. Place your cursor in the editor and select the
-audio/video button and then choose the file you'd like to insert. If you haven't
-already uploaded the audio or video file to your Liferay instance, you'll need
-to navigate to *Documents and Media* in the Content section and upload the file
-to Liferay. Select the file and then check that the audio or video component
-appears in the web content. Excellent! When your web content is published, users
-can view or listen to the embedded multimedia!
-
-Are there other things you'd like to accomplish with your WYSIWYG editor that
-are not provided by default? Visit the [Editor Configurations](/develop/tutorials/-/knowledge_base/7-0/editor-configurations)
-tutorials to learn about extending the default editor to provide advanced
-functionality that will suit your needs.
-
-<!-- ALTERNATIVE METHOD FOR PROVIDING MULTIMEDIA: CKEDITOR CONFIGURATION
-
 Once Xuggler has been installed and enabled, embedding audio or video files in a
 web content article is easy. By default the current WYSIWYG editor (AlloyEditor)
-does not support the use of audio/video files. You can extend the default
+does not provide audio/video files. You can extend the default
 AlloyEditor by adding an audio/video button. You can learn about doing this in
 the [Editor Configurations](/develop/tutorials/-/knowledge_base/7-0/editor-configurations)
 tutorials section. Another option you have is changing the WYSIWYG editor to one
 that supports embedding audio/video files in web content. The CKEditor, for
-example, is an editor that supports this functionality. To use the CKEditor,
+example, is an editor that provides this functionality. To use the CKEditor,
 create a `portal-ext.properties` file in your Liferay root folder and add the
 following property:
 
@@ -224,8 +198,6 @@ and Media* in the Content section and upload the file to Liferay. Select the
 file and then check that the audio or video component appears in the web
 content. Excellent! When your web content is published, users can view or listen
 to the embedded multimedia!
-
--->
 
 ![Figure 4: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../../images/web-content-audio-video.png)
 

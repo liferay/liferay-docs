@@ -13,7 +13,7 @@ staging. If you're following along with the Lunar Resort example, navigate back
 to the News and Events page and click on *Staging* to get your page editing
 capabilities back.
 
-![Figure 3.22: You can see the new staging options added to the top of your screen.](../../images/04-web-content-staging-live-page.png)
+![Figure 3.22: You can see the new staging options added to the top of your screen.](../../../images/04-web-content-staging-live-page.png)
 
 Add the Bookmarks portlet and then click on *Live* from the Dockbar. Notice that
 the Bookmarks portlet isn't there. That's because you've staged a change to the
@@ -127,7 +127,7 @@ published. If you disable this option, only the last **approved** version of
 each web content article is published to Live. This can significantly speed up
 the publication process.
 
-![Figure 3.23: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../images/web-content-version-history-box.png)
+![Figure 3.23: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../../images/web-content-version-history-box.png)
 
 You can set this option globally. There is a portal property,
 `journal.publish.version.history.by.default`, that sets the default behavior.
@@ -155,7 +155,7 @@ it to the live site. If workflow is enabled for any new resource, the resource
 needs to go through the workflow process before it can be published to the live
 site.
 
-![Figure 3.24: Ready to publish to the live site.](../../images/04-web-content-staging-publish.png)
+![Figure 3.24: Ready to publish to the live site.](../../../images/04-web-content-staging-publish.png)
 
 One of the most powerful features of staging is page variations. Let's see how
 to use them to create multiple different variations of your site's pages for
@@ -252,7 +252,7 @@ For example, we could create a page variation called Thanksgiving for the News
 and Events page inside of the Christmas variation and another one called
 Christmas Day to display different content on those particular days.
 
-![Figure 3.25: This is an example of a Thanksgiving Page Variation.](../../images/04-web-content-branch-thanksgiving.png)
+![Figure 3.25: This is an example of a Thanksgiving Page Variation.](../../../images/04-web-content-branch-thanksgiving.png)
 
 Another powerful feature is the possibility of *merging* Site Pages Variations.
 To merge two Site Pages Variations, you need to go to the Manage Site Pages

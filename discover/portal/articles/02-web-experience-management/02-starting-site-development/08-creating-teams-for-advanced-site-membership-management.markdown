@@ -37,16 +37,16 @@ and *User Groups* can be done in the *Site Memberships* app, which is also
 located in the Users tab. You can visit the 
 [User Management](/discover/portal/-/knowledge_base/6-2/user-management)
 chapter for more information on how these site memberships work. Finally, click
-the *Add Team* icon (![Add Team](../../images/icon-add.png)).
+the *Add Team* icon (![Add Team](../../../images/icon-add.png)).
 
-![Figure 1: Creating teams within your site can foster teamwork and collaboration, as team permissions enable team members to access the same resources and perform the same types of tasks.](../../images/creating-a-team.png)
+![Figure 1: Creating teams within your site can foster teamwork and collaboration, as team permissions enable team members to access the same resources and perform the same types of tasks.](../../../images/creating-a-team.png)
 
 After you've clicked the *Add Team* button and entered a name and a description,
 click *Save*. Your new team shows in the list. To add members, click on the
 team name link and then select *Add Team Members*.
 
 To manage a team's permissions, click on the *Actions* icon
-(![Actions](../../images/icon-actions.png)) and select *Permissions* for that
+(![Actions](../../../images/icon-actions.png)) and select *Permissions* for that
 team. Setting permissions for the team assigns all of the team's members those
 permissions. Only administrators with the ability to edit/manage the team have
 the ability to manage team permissions.
@@ -55,10 +55,10 @@ If you created a team whose task is to moderate the Message Boards, for example,
 you'd want to give the team all the permissions they'd need. To do this, 
 navigate to *Site Administration* &rarr; *Content* &rarr; *Message Boards*
 and select *Permissions* from the *Options* icon
-(![Options](../../images/icon-options.png)) in the top right of the screen. Find
+(![Options](../../../images/icon-options.png)) in the top right of the screen. Find
 the team in the Role column, and select the appropriate permissions.
 
-![Figure 2: The Lunar Resort Message Board Moderators Site Team has unlimited permissions on the Message Boards application.](../../images/site-team-permissions-message-boards.png)
+![Figure 2: The Lunar Resort Message Board Moderators Site Team has unlimited permissions on the Message Boards application.](../../../images/site-team-permissions-message-boards.png)
 
 That's it! It's easy to give groups of site users appropriate permissions to
 perform their tasks. This chapter has provided an introduction to Liferay site

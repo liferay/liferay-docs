@@ -112,7 +112,7 @@ as you'd like in your exported LAR file. The *Export Templates* tab allows you
 to create a template that saves the custom options you can select to export.
 This streamlines the process of exporting pages.
 
-![Figure 1: You can configure your export options manually, or via an export template.](../../images/export-page-templates.png)
+![Figure 1: You can configure your export options manually, or via an export template.](../../../images/export-page-templates.png)
 
 If you export pages frequently and usually select the same options to export,
 the task of selecting options repeatedly can become tedious. With export

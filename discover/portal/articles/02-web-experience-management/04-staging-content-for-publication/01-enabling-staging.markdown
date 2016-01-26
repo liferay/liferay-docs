@@ -162,7 +162,7 @@ a site administrator. Then navigate to the *Site Administration* &rarr;
 menu and then on *Staging* listed under the Advanced tab. Select *Remote Live*
 under Staging Type and additional options appear.
 
-![Figure 3.20: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../images/remote-live-staging-settings.png)
+![Figure 3.20: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../../images/remote-live-staging-settings.png)
 
 First, enter your remote Liferay server's IP address into the Remote Host/IP
 field. If the remote Liferay server is a cluster, you can set the Remote Host/IP
@@ -253,7 +253,7 @@ it's important to quickly publish a fix. If you're following the Lunar Resort
 example, check *Enabled On Public Pages* to enable page versioning for the
 Lunar Resort site and then click *Save*.
 
-![Figure 3.21: You can decide to use versioning and choose what content should be staged.](../../images/04-web-content-staging.png)
+![Figure 3.21: You can decide to use versioning and choose what content should be staged.](../../../images/04-web-content-staging.png)
 
 Choosing content to be staged may sound self-explanatory, but content must have
 specific attributes in Liferay Portal to use it in a staged environment. Content
@@ -283,7 +283,7 @@ explain more about the other supported portlets, as well. -Cody
 - Web Content
     - *Referenced content:* web content can reference different other entities in
     the Liferay portal. Structures, templates for the most obvious examples, but
-    it can reference images too from the portal’s document library. Staging can
+    it can reference images too from the portalï¿½s document library. Staging can
     exclude some of these content during publication or export to speed up the
     process. These references although will be validated during the publish
     process or an import so the images has to be published or imported first.
@@ -318,7 +318,7 @@ explain more about the other supported portlets, as well. -Cody
     cache hits, eventually making the process faster.
     - *Ratings:* For this option the same behavior applies as for the comments
     - *Deletions:* Staging is gathering deletions (including trashed entities) in
-    a site. These deletions can be published to clean up the live site. If it’s
+    a site. These deletions can be published to clean up the live site. If itï¿½s
     not a problem to have lingering data on the live, or it is going to be
     processed later, this can be turned off as well to save execution time
     during the process.
