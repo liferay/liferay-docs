@@ -521,6 +521,15 @@ feature for the template editor is the autocomplete feature. It can be invoked
 by typing *${* which opens a drop-down menu of available variables. By clicking
 one of the variables, the editor inserts the variable into the template editor.
 
++$$$
+
+**Note:** The `utilLocator`, `objectUtil`, and `staticUtil` variables for
+FreeMarker and the `utilLocator` variable for Velocity are disabled by default.
+These variables are vulnerable to remote code execution and privilege
+escalation, and should be used with caution, if enabled.
+
+$$$
+
 After you've saved your template, Liferay provides a WebDAV URL and static URL.
 These values access the XML source of your structure. You can find these URLs by
 returning to your template after it's been saved and expanding the *Details*
