@@ -27,7 +27,7 @@ using an algorithm. That algorithm attempts to use a server closest to the user.
 The figure below shows a visual representation of using geographical proximity
 to improve latency. 
 
-![Figure 5.8: The red lines on the map represent the required distances traveled by requests from a server to the user. Using CDN allows a user to request static resources from a much closer local server, improving download times.](../../images/cdn-map.png)
+![Figure 5.7: The red lines on the map represent the required distances traveled by requests from a server to the user. Using CDN allows a user to request static resources from a much closer local server, improving download times.](../../images/cdn-map.png)
 
 Because of the reduced wait time for requests and reduced load on your
 application server, a CDN is a great option to improve your portal's
@@ -89,7 +89,7 @@ to CDNs:
 - *CDN Host HTTPS* 
 - *CDN Dynamic Resources Enabled*
 
-![Figure 5.9: The Control Panel lets you configure your portal's CDN.](../../images/cdn-control-panel.png)
+![Figure 5.8: The Control Panel lets you configure your portal's CDN.](../../images/cdn-control-panel.png)
 
 These properties are exactly the same as the ones you can specify in your
 `portal-ext.properties`. Make sure to visit the CDN section of the Properties
