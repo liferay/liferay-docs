@@ -44,8 +44,8 @@ structures, you can provide a form for your users which spells out exactly what
 is required and can be formatted automatically using a template.
 
 You create a structure by adding form controls such as text fields, text boxes,
-text areas (HTML), check boxes, select boxes and multi-selection lists. Also, you
-can add specialized, Liferay-specific application fields such as an Image
+text areas (HTML), check boxes, select boxes and multi-selection lists. Also,
+you can add specialized, Liferay-specific application fields such as an Image
 Uploader and Documents and Media right onto the structure. Furthermore, you can
 move the elements around by dragging them where you want them. This makes it
 easy for you to prototype different orders for your input fields. Additionally,
@@ -89,9 +89,13 @@ web content article menu. Click *Add* &rarr; *Basic Web Content* from the Web
 Content page to add another piece of content to your Liferay instance. Instead
 of going right for the content, this time you'll first create a structure. To
 access the Manage Structures interface, simply click on *Structure and Template*
-in the bottom dropdown menu and click *Select* for the *Structure* heading. To
-create a new structure in your chosen scope, simply click on the *Add* button
-(![Add Structure](../../../images/icon-add.png)) in the Manage Structures popup.
+in the bottom dropdown menu and click *Select* for the *Structure* heading.
+You'll notice there is a *Basic Web Content* structure and template available by
+default. This structure and template are used automatically if a custom
+structure and template are not added. You have the option of editing the default
+sturcture and template, if desired. To create a new structure in your chosen
+scope, simply click on the *Add* button (![Add Structure](../../../images/icon-add.png))
+in the Manage Structures popup.
 
 It's very easy to create and edit structures: all you have to do is drag
 elements into the structure and then give them names. For instance, select the
@@ -111,6 +115,18 @@ addition to a regular Lunar Resort sports article, you can simply inherit the
 characteristics of the regular article and only add additional fields to the
 more in-depth article. When the in-depth article is configured, it will display
 its parent's fields in addition to its own fields.
+
++$$$
+
+**Note:** In some instances, there can be more than one structure with the same
+`structureKey`. For example, this can happen when exporting a global structure
+and then importing it back into a site. This scenario would have global and site
+scoped structures with identical `structureKey`s. If this happens, you can no
+longer use the global structure. This is because Liferay is configured to follow
+a specific hierarchy when choosing structures with the same `structureKey`:
+*current site > parent site > global scope*.
+
+$$$
 
 For Liferay 6.2, the WebDAV URL feature was introduced for web content
 structures and templates so users could upload and organize resources from both
@@ -174,7 +190,10 @@ concrete place.
 
 **HTML:** An area that uses a WYSIWYG editor to enhance the content.
 
-**Image:** Adds the browse image application into your structure.
+**Image:** Adds the browse image application into your structure. You have the
+option of selecting an image from the Documents and Media library or to upload
+an image from your computer's storage. If uploading an image from your personal
+computer to the web content article, it is only available for that article.
 
 **Integer:** Similar to *Number*, except that it constrains user input to
 non-fractional numbers.
@@ -432,9 +451,9 @@ When this template is rendered, it looks something like this:
 
 +$$$
 
-**Note:** During the creation of a web content article, Liferay provides a *Basic
-Preview* button that gives you the option to preview your article as a final
-product before publishing. In some instances, the preview does not give an
+**Note:** During the creation of a web content article, Liferay provides a
+*Basic Preview* button that gives you the option to preview your article as a
+final product before publishing. In some instances, the preview does not give an
 accurate depiction of the web content article. For example, fields provided by
 the `request` variable are not available because the `request` is not populated
 until the web content is rendered on a portal page. Therefore, the preview of
