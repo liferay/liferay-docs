@@ -279,5 +279,6 @@ creating the Screenlet class. Also, make sure you add the following import:
     import android.view.View;
 
 Great! With the exception of the *TODO* in `onItemClick`, you're done with the 
-Get Guestbooks Screenlet's View. Next, you need to write the classes that issue 
-and process the server calls. 
+Get Guestbooks Screenlet's View. You're almost ready to write the Screenlet's 
+server call. Because Screenlets use the Mobile SDK to make server calls, 
+however, you must first learn how Mobile SDK calls work. This is shown next. 

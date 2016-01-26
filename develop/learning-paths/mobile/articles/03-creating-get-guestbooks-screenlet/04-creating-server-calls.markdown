@@ -1,10 +1,11 @@
 # Creating the Get Guestbook Screenlet's Server Call [](id=creating-the-get-guestbook-screenlets-server-call)
 
-Recall that Screenlets use a Mobile SDK to make server calls via Interactors. 
-Since you must call the Guestbook portlet's remote services, you'll use the 
-Guestbook Mobile SDK in the Get Guestbook Screenlet's Interactor. An Interactor 
-consists of an event, a callback, the Interactor interface and its 
-implementation, and a listener. This article shows you how to create each. 
+In the previous article, you learned that Screenlets use a Mobile SDK to make 
+server calls via Interactors. Since you must call the Guestbook portlet's remote 
+services, you'll use the Guestbook Mobile SDK in the Get Guestbook Screenlet's 
+Interactor. An Interactor consists of an event, a callback, the Interactor 
+interface and its implementation, and a listener. This article shows you how to 
+create each. 
 
 You'll create the Interactor by using the following steps:
 
@@ -318,5 +319,5 @@ with the group ID (site ID) of the site you want to retrieve guestbooks from.
 You get the group ID from the `LiferayServerContext` class--another Screens 
 class--that lets you retrieve the values you set in `server_context.xml`. 
 
-Nice work! You now have the classes required to call the Guestbook portlet. 
+Nice work! You now have the Interactor required to call the Guestbook portlet. 
 Next, you'll create the Screenlet class. 

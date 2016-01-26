@@ -147,7 +147,5 @@ log in when prompted. When login succeeds, the `GuestbooksActivity` opens.
 
 Nice work! You've successfully implemented portal authentication in the Android 
 app. It didn't take you that long, either. You only have signing in working so
-far, though; it doesn't display any portal content. You'll add this shortly.
-First, however, you need to understand the components that comprise
-`GuestbooksActivity`. The next article walks you through this activity's
-structure. 
+far, though; it doesn't display any portal content. Next, you'll develop Get 
+Guestbooks Screenlet. 

@@ -18,7 +18,7 @@ When you finish, you'll be ready to use Get Guestbooks Screenlet. Note that you
 won't always have to take steps like these before using Screenlets. You do so 
 here just to fit this particular app's design. 
 
-First, you'll refactor the Action Bar's code.
+First, you'll refactor the Action Bar's code. 
 
 ## Refactoring the Action Bar
 
@@ -180,5 +180,5 @@ and `@SuppressWarnings("StatementWithEmptyBody")` statements. Lastly, remove the
 
     import android.support.design.widget.NavigationView;
 
-Great job! Now you're ready to insert the Get Guestbooks Screenlet in 
+Great job! Now you're ready to insert Get Guestbooks Screenlet in 
 `GuestbooksActivity`. 

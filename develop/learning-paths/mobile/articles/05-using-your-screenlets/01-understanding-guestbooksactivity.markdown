@@ -4,13 +4,13 @@ You used Android Studio's Navigation Drawer Activity template to create
 `GuestbooksActivity`. Any activity created by this template contains a 
 navigation drawer and all the components the activity needs. This includes 
 the layout files that display content. Currently, these files contain simple 
-placeholder content that you'll later replace with dynamic portal content. 
+placeholder content that you'll replace with dynamic portal content shortly. 
 Before doing so, you should know where the placeholder content exists in the 
 project's structure and how the app displays it. 
 
 The app's UI is defined by three layout files: `activity_guestbooks.xml`, 
 `app_bar_guestbooks.xml`, `content_guestbooks.xml`. These layouts combine to
-display the app's content.
+display the app's content. 
 
 ## Understanding the Activity's Layout File [](id=understanding-the-activitys-layout-file)
 
@@ -155,5 +155,4 @@ each points to its rendering on the right.
 
 Awesome! Now you know which layout files in the project define 
 `GuestbookActivity`'s UI. You also know the exact UI components defined in these 
-files. Next, you'll learn how to retrieve and display data from the Guestbook 
-portlet. You'll do this by using the Guestbook Mobile SDK you built earlier. 
+files. Next, you'll prepare `GuestbookActivity` for Get Guestbooks Screenlet. 

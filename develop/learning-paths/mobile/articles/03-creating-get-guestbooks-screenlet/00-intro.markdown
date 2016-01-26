@@ -23,10 +23,14 @@ steps:
 
 2. Creating the Screenlet's UI (its View). 
 
-3. Creating the Screenlet's server call. Screenlets use Interactors to make 
-   server calls. 
+3. Understanding Mobile SDK calls. Recall that Screenlets use the Mobile SDK to 
+   make server calls. Before writing Get Guestbooks Screenlet's server call, you 
+   must understand how Mobile SDK calls work. 
 
-4. Creating the Screenlet class. The Screenlet class governs the Screenlet's 
+4. Creating the Screenlet's server call. Screenlets use components called 
+   *Interactors* to make server calls. 
+
+5. Creating the Screenlet class. The Screenlet class governs the Screenlet's 
    behavior. 
 
 Before beginning, you should read the tutorial 
