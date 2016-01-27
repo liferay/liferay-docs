@@ -20,6 +20,11 @@ import org.apache.tools.ant.Task;
 
 public class CheckImagesTaskDevSite extends Task {
 
+	/**
+	 * Checks for missing images, extra images, or faulty file paths in the document directory.
+	 * 
+	 * Any of these problems results in a build failure.
+	 */
 	@Override
 	public void execute() throws BuildException {
 		System.out.println("Start checking image sources ...");
@@ -105,6 +110,19 @@ public class CheckImagesTaskDevSite extends Task {
 		_docdir = docdir;
 	}
 	
+	/**
+	 * Compares the actual images in the document directory to the images
+	 * reference by the Markdown files in the document directory.
+	 * 
+	 * Missing images, extra images, or faulty file paths result in a build
+	 * failure.
+	 * 
+	 * @param images
+	 *            the actual images in the document directory
+	 * @param imagePathsMap
+	 *            a map from each Markdown file in the document directory to a
+	 *            list of the image references in the Markdown file
+	 */
 	private static void checkImages(List<File> images, Map<File, List<String>> imagePathsMap) {
 		List<String> imagePaths = new ArrayList<String>();
 		
@@ -186,6 +204,15 @@ public class CheckImagesTaskDevSite extends Task {
 		return fileName;
 	}
 	
+	/**
+	 * Returns a list of the relative paths of the images referenced in a
+	 * Markdown file.
+	 * 
+	 * @param article
+	 *            the Markdown file
+	 * @return a list of the relative paths of the images referenced in a
+	 *         Markdown file (may be empty)
+	 */
 	private static List<String> getImagePaths(File article) {
 		List<String> imagePaths = new ArrayList<String>();
 		
