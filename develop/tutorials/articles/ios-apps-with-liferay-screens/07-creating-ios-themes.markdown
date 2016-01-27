@@ -50,7 +50,7 @@ For example, the Child Theme in Figure 1 presents the same UI components as the
 [Login Screenlet's](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Core/Auth/LoginScreenlet)
 Default Theme, but enlarges them for viewing on devices with larger screens.
 
-![Figure 1: The UI components are enlarged in the the example Child Theme's XIB file.](../../images/screens-ios-xcode-child-theme.png)
+![Figure 1: The UI components are enlarged in the example Child Theme's XIB file.](../../images/screens-ios-xcode-child-theme.png)
 
 You can follow these steps to create a Child Theme: 
 

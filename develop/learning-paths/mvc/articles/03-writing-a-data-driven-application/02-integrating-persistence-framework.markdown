@@ -71,7 +71,7 @@ Now you're ready to create a method that adds `Guestbook`s to the database.
     Most of this makes sense at the moment: you know that you want the ID of the
     user who is adding the guestbook, along with its name. But what's this
     `ServiceContext` thing? [We're glad you asked](/participate/liferaypedia/-/wiki/Main/Service+Context).
-    Building on the the Liferaypedia entry, `ServiceContext` is needed in order to pass
+    Building on the Liferaypedia entry, `ServiceContext` is needed in order to pass
     information about the browsing session that triggered your method that adds a
     guestbook. Liferay uses the `ServiceContext` as a convenient container for
     relevant data like the current site, the current page, and more. 

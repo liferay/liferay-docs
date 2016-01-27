@@ -69,7 +69,7 @@ Here's how to do it:
     **Note:** When extending an original JSP in a global hook, you must end the
     JSP file's name with the suffix `.portal.jsp` within the
     `<liferay-util:include>` tag. However, when using an application adapter
-    hook, you specify the the JSP normally and set the `useCustomPage` attribute
+    hook, you specify the JSP normally and set the `useCustomPage` attribute
     to `false`. 
 
     $$$
