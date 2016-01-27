@@ -1,4 +1,4 @@
-<?xml version="1.0"?> 
+<?xml version="1.0"?>
 
 <project name="Dev Site Documentation Management" basedir=".">
 	<property name="project.dir" value="../.." />
@@ -81,14 +81,14 @@
 			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
 		</classpath>
 	</taskdef>
-	
+
 	<taskdef name="concatmarkdown" classname="com.liferay.documentation.util.ConcatMarkdown">
 	  <classpath>
 	    <fileset dir="${project.dir}/lib" includes="*.jar" />
-	    
+
 	    <fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
 	  </classpath>
-	  
+
 	</taskdef>
 
 
@@ -117,7 +117,7 @@
 			<arg value="${doc.dir}"/>
 		</java>
 	</target>
-	
+
 	<target name="concat-markdown" description="Concatenates the Markdown files in a specific folder for preparation to convert to other formats.">
 	  <concatmarkdown docdir="${doc.dir}">
 	  </concatmarkdown>
@@ -132,7 +132,7 @@
 		</checkarticleimgssite>
 	</target>
 
-	<target name="check-images-site" description="Verifies all images referenced in a a document's Markdown articles.">
+	<target name="check-images-site" description="Verifies all images referenced in a document's Markdown articles.">
 		<checkimgssite docdir="${doc.dir}">
 		</checkimgssite>
 	</target>
@@ -175,7 +175,7 @@
 		<!-- Use base.filepath property to distinguish between tutorials and learning-paths directories. The build.xml file
 		in the learning-paths directory overwrites this value with "learning-paths/${doc.dir}" -->
 		<property name="base.filepath" value="${doc.dir}" />
-		
+
 		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${base.filepath}/${metadata.filename}"/>
 		<delete file="${metadata.file}" failonerror="false"/>
 		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
@@ -224,7 +224,7 @@
 		<!-- Use base.filepath property to distinguish between tutorials and learning-paths directories. The build.xml file
 		in the learning-paths directory overwrites this value with "learning-paths/${doc.dir}" -->
 		<property name="base.filepath" value="${doc.dir}" />
-		
+
 		<echo message="... creating build directory"/>
 		<mkdir dir="${project.dir}/${purpose.dir}/${base.filepath}/${build.dir}"/>
 		<touch file="${project.dir}/${purpose.dir}/${base.filepath}/${build.dir}/${article}.html" mkdirs="true"/>
