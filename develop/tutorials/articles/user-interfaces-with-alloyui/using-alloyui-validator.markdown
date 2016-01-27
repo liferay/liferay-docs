@@ -117,13 +117,13 @@ is the same as `max`.
 
 **number**: Allows only numerical values.
 
-**range**: Allows only a number between the specified range. For example,
+**range**: Allows only an integer value between the specified range. For example,
 a range between 1.23 and 10 is specified here `<aui:validator
 name="range">[1.23,10]</aui:validator>`
 
-**rangeLength**: Allows field length between the specified range. For example,
-a range between 3 and 8 is specified here `<aui:validator
-name="rangeLength">[3,8]</aui:validator>`
+**rangeLength**: Allows a field length between the specified range. For example,
+a range between 3 and 8 characters long is specified here 
+`<aui:validator name="rangeLength">[3,8]</aui:validator>`
 
 **required**: Prevents a blank field.
 
