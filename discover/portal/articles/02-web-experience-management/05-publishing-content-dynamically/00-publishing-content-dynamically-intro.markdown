@@ -1,7 +1,7 @@
 # Publishing Content Dynamically [](id=publishing-content-dynamically)
 
 Any type of content in Liferay is considered an asset. In the 
-[Creating Web Content(/discover/portal/-/knowledge_base/7-0/creating-web-content)
+[Creating Web Content](/discover/portal/-/knowledge_base/7-0/creating-web-content)
 chapter, you examined Liferay's most common type of asset: web content. Other
 types of assets include blog posts, wiki articles, message board posts,
 bookmarks, and documents. It's possible for developers to define custom asset
