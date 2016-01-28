@@ -5,9 +5,9 @@ tutorial, you'll learn how. If you haven't yet installed Blade
 Tools, please refer to the [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools) tutorial.
 Blade Tools provides project templates for creating certain types of Liferay
 modules. At the time of this writing, the available templates include portlets,
-JSP portlets, services, and service wrappers. When creating a new module
-project, Blade Tools allows for a build type to be chosen. At the time of this
-writing, the supported build types are Gradle and Maven.
+JSP portlets, services, activators, JSP hooks, service builders and service wrappers.
+When creating a new module project, Blade Tools allows for a build type to be chosen.
+At the time of this writing, the supported build types are Gradle and Maven.
 
 When you use Blade Tools to create a project, your project's folder structure,
 build script (`build.gradle` or `pom.xml`), Java classes, and other resources
@@ -21,24 +21,23 @@ finish developing your project, you can use Gradle or Maven to build your
 project's JAR file and use Blade Tools to deploy your module to Liferay's module
 framework.
 
-In this tutorial, you'll learn how to create a JSP portlet application as a
+In this tutorial, you'll learn how to create a Liferay MVC portlet application as a
 Liferay module.
 
-To create a JSP portlet application as a module, use a command like the
+To create a Liferay MVC portlet application as a module, use a command like the
 following:
 
-    blade create jspportlet com.liferay.docs.jspportlet
+    blade create -t mvcportlet com.liferay.docs.jspportlet
 
 The command above creates a JSP portlet project in the current directory.
-`com.liferay.jspportlet` is used both as the project name and as the name of the
+`com.liferay.docs.jspportlet` is used both as the project name and as the name of the
 package in which your portlet component class is created. Notice that when
-creating a JSP portlet, the string 'Portlet' is appended to the project name.
-Thus, the name of the generated class was `Com.liferay.docs.jspportletPortlet`,
-and not `Com.liferay.docs.jspportlet`. Since neither of these class names is
-suitable, you should rename the generated class. E.g., you could rename it to
-`MyJspPortlet.java`. Note that in that class, you're creating a service of type
-`Portlet`. Here, 'service' means an OSGi service, not a Liferay API. Another way
-to say 'service type' is to say 'component type'.
+creating a MVC portlet, the string 'Portlet' is appended to the project name.
+Thus, the name of the generated class was `ComLiferayDocsJspportletPortlet`.
+Since this class name is not suitable, you should rename the generated class.
+E.g., you could rename it to `MyJspPortlet.java`. Note that in that class, you're 
+creating a service of type `Portlet`. Here, 'service' means an OSGi service, not a 
+Liferay API. Another way to say 'service type' is to say 'component type'.
 
 After running the command above and renaming the generated class, your project's
 directory structure looks like this:

@@ -2878,28 +2878,55 @@ the preference is no longer used.
 
 ---------------------------------------
 
-### Removed Software Catalog Portlet and Services
+### Removed the liferay-ui:navigation Tag and Replaced with liferay-site-navigation:navigation Tag [](id=removed-the-liferay-uinavigation-tag-and-replaced-with-liferay-site-navigat)
+- **Date:** 2015-Nov-20
+- **JIRA Ticket:** LPS-60328
+
+#### What changed? [](id=what-changed-75)
+
+The `liferay-ui:navigation` tag has been removed and replaced with the
+`liferay-site-navigation:navigation` tag.
+
+#### Who is affected? [](id=who-is-affected-75)
+
+Plugins or templates that are using the `liferay-ui:navigation` tag need to
+update their usage of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-75)
+
+You should import the `liferay-site-navigation` tag library (if necessary) and
+update the tag namespace from `liferay-ui:navigation` to
+`liferay-site-navigation:navigation`.
+
+#### Why was this change made? [](id=why-was-this-change-made-75)
+
+This change was made as a part of the ongoing strategy to modularize Liferay
+Portal by means of an OSGi container.
+
+---------------------------------------
+
+### Removed Software Catalog Portlet and Services [](id=removed-software-catalog-portlet-and-services)
 - **Date:** 2015-Nov-21
 - **JIRA Ticket:** LPS-60705
 
-#### What changed?
+#### What changed? [](id=what-changed-76)
 
-The Software Catalog portlet and its associated services are no longer part
-of Liferay's source code or binaries.
+The Software Catalog portlet and its associated services are no longer part of
+Liferay's source code or binaries.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-76)
 
 This affects portals which were making use of the Software Catalog portlet to
 manage a catalog of their software. Developers who were making use of the
 software catalog services from their custom code are also affected.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-76)
 
 There is no direct replacement for invocations to the Software Catalog services.
 In cases where it is really needed, it is possible to obtain the code from a
 previous release and include it in the custom product (subject to licensing).
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-76)
 
 The Software Catalog was developed to implement the very first versions of what
 later become Liferay's Marketplace. It was later replaced and has not been used
@@ -2909,45 +2936,124 @@ time to focus on other areas of the product that add more value.
 
 ---------------------------------------
 
-### Removed the getPageOrderByComparator Method from WikiUtil
+### Removed the liferay-ui:asset-categories-navigation Tag and Replaced with liferay-asset:asset-categories-navigation [](id=removed-the-liferay-uiasset-categories-navigation-tag-and-replaced-with-lif)
+- **Date:** 2015-Nov-25
+- **JIRA Ticket:** LPS-60753
+
+#### What changed? [](id=what-changed-77a)
+
+The `liferay-ui:asset-categories-navigation` tag has been removed and replaced
+with the `liferay-asset:asset-categories-navigation` tag.
+
+#### Who is affected? [](id=who-is-affected-77a)
+
+Plugins or templates that are using the `liferay-ui:asset-categories-navigation`
+tag need to update their usage of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-77a)
+
+You should import the `liferay-asset` tag library (if necessary) and update the
+tag namespace from `liferay-ui:asset-categories-navigation` to
+`liferay-asset:asset-categories-navigation`.
+
+#### Why was this change made? [](id=why-was-this-change-made-77a)
+
+This change was made as a part of the ongoing strategy to modularize Liferay
+Portal by means of an OSGi container.
+
+---------------------------------------
+
+### Removed the liferay-ui:trash-empty Tag and Replaced with liferay-trash:empty [](id=removed-the-liferay-uitrash-empty-tag-and-replaced-with-liferay-trashempty)
+- **Date:** 2015-Nov-30
+- **JIRA Ticket:** LPS-60779
+
+#### What changed? [](id=what-changed-78a)
+
+The `liferay-ui:trash-empty` tag has been removed and replaced with the
+`liferay-trash:empty` tag.
+
+#### Who is affected? [](id=who-is-affected-78a)
+
+Plugins and templates that are using the `liferay-ui:trash-empty` tag need to
+update their usage of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-78a)
+
+You should import the `liferay-trash` tag library (if necessary) and update the
+tag namespace from `liferay-ui:trash-empty` to `liferay-trash:empty`.
+
+#### Why was this change made? [](id=why-was-this-change-made-78a)
+
+This change was made as a part of the ongoing strategy to modularize Liferay
+Portal by means of an OSGi container.
+
+---------------------------------------
+
+### Removed the liferay-ui:trash-undo Tag and Replaced with liferay-trash:undo [](id=removed-the-liferay-uitrash-undo-tag-and-replaced-with-liferay-trashundo)
+- **Date:** 2015-Nov-30
+- **JIRA Ticket:** LPS-60779
+
+#### What changed? [](id=what-changed-79a)
+
+The `liferay-ui:trash-undo` taglib has been removed and replaced with the
+`liferay-trash:undo` tag.
+
+#### Who is affected? [](id=who-is-affected-79a)
+
+Plugins and templates that are using the `liferay-ui:trash-undo` tag need to
+update their usage of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-79a)
+
+You should import the `liferay-trash` tag library (if necessary) and update the
+tag namespace from `liferay-ui:trash-undo` to `liferay-trash:undo`.
+
+#### Why was this change made? [](id=why-was-this-change-made-79a)
+
+This change was made as a part of the ongoing strategy to modularize Liferay
+Portal by means of an OSGi container.
+
+---------------------------------------
+
+### Removed the getPageOrderByComparator Method from WikiUtil [](id=removed-the-getpageorderbycomparator-method-from-wikiutil)
 - **Date:** 2015-Dec-01
 - **JIRA Ticket:** LPS-60843
 
-#### What changed?
+#### What changed? [](id=what-changed-77)
 
 The `getPageOrderByComparator` method has been removed from `WikiUtil`.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-77)
 
 This affects developers that use this method in their code.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-77)
 
 You should update your code to invoke
 `WikiPortletUtil.getPageOrderByComparator(String, String)`.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-77)
 
 As part of the modularization efforts it has been considered that that this
 logic belongs to wiki-web module.
 
 ---------------------------------------
 
-### Custom AUI Validators Are No Longer Implicitly Required
+### Custom AUI Validators Are No Longer Implicitly Required [](id=custom-aui-validators-are-no-longer-implicitly-required)
 - **Date:** 2015-Dec-02
 - **JIRA Ticket:** LPS-60995
 
-#### What changed?
+#### What changed? [](id=what-changed-78)
 
 The AUI Validator tag no longer forces custom validators (e.g., `name="custom"`)
 to be required, and are now optional by default.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-78)
 
 This affects developers using custom validators, especially ones who relied on
 the field being implicitly required via the custom validator.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-78)
 
 There are several cases where you should update your code to compensate for this
 change. First, blank value checking is no longer necessary, so places where
@@ -2995,7 +3101,7 @@ is an example of how to explicity pass the `required` validator:
         <aui:validator name="required" />
     </aui:input>
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-78)
 
 A custom validator caused the field to be implicitly required. This meant that
 all validators for the field would be evaluated. This created a condition where
@@ -3013,29 +3119,252 @@ flexibility for all developers.
 
 ---------------------------------------
 
-### Moved Recycle Bin logic into a new `DLTrashService` interface
+### Moved Recycle Bin Logic Into a New DLTrashService Interface [](id=moved-recycle-bin-logic-into-a-new-dltrashservice-interface)
 - **Date:** 2015-Dec-02
 - **JIRA Ticket:** LPS-60810
 
-#### What changed?
+#### What changed? [](id=what-changed-79)
 
 All Recycle Bin logic in Documents and Media services was moved from
 `DLAppService` into the new `DLTrashService` service interface. All moved
 methods have the same name and signatures.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-79)
 
 This affects any local or remote caller of `DLAppService`.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-79)
 
 As all methods have been simply moved into the new service, calling the
 equivalent method on `DLTrashService` suffices.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-79)
 
 Documents and Media services have complex interdependencies that result in
 circular dependencies. Until now, `DLAppService` was responsible for exposing
 the Recycle Bin logic, delegating it to other components. The problem was, the
 components depended on `DLAppService` to implement their logic. Extracting the
 services from `DLAppService` was the only sensible solution to this circularity.
+
+---------------------------------------
+
+### Removed the liferay-ui:diff Tag and Replaced with liferay-frontend:diff [](id=removed-the-liferay-uidiff-tag-and-replaced-with-liferay-frontenddiff)
+- **Date:** 2015-Dec-14
+- **JIRA Ticket:** LPS-61326
+
+#### What changed? [](id=what-changed-80)
+
+The `liferay-ui:diff` tag has been removed and replaced with the
+`liferay-frontend:diff` tag.
+
+#### Who is affected? [](id=who-is-affected-80)
+
+Plugins and templates that are using the `liferay-ui:diff` tag need to update
+their usage of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-80)
+
+You should import the `liferay-frontend` tag library (if necessary) and update
+the tag namespace from `liferay-ui:diff` to `liferay-frontend:diff`.
+
+#### Why was this change made? [](id=why-was-this-change-made-80)
+
+This change was made as a part of the ongoing strategy to modularize Liferay
+Portal by means of an OSGi container.
+
+---------------------------------------
+
+### Taglibs Are No Longer Accessible via the theme Variable in FreeMarker [](id=taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
+- **Date:** 2016-Jan-06
+- **JIRA Ticket:** LPS-61683
+
+#### What changed? [](id=what-changed-81)
+
+The `${theme}` variable previously injected in the FreeMarker context providing
+access to various tags and utilities no longer provides them. Only the
+`${theme.include}` method is preserved for performance reasons.
+
+#### Who is affected? [](id=who-is-affected-81)
+
+This affects FreeMarker templates that are using the `${theme}` variable to
+access tags.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-81)
+
+All the tags and utility methods formerly accessed via the `${theme}` variable
+should now be accessed directly via tags.
+
+**Example 1**
+
+    ${theme.runtime("com.liferay.portal.kernel.servlet.taglib.ui.BreadcrumbEntry", portletProviderAction.VIEW, "", default_preferences)}
+
+can be replaced by:
+
+    <@liferay_portlet["runtime"]
+        defaultPreferences=default_preferences
+        portletProviderAction=portletProviderAction.VIEW
+        portletProviderClassName="com.liferay.portal.kernel.servlet.taglib.ui.BreadcrumbEntry"
+    />
+
+**Example 2**
+
+    ${theme.include(content_include)}
+
+can be replaced by:
+
+    <@liferay_util["include"] page=content_include />
+
+**Example 3**
+
+    ${theme.wrapPortlet("portlet.ftl", content_include)}
+
+can be replaced by:
+
+    <@liferay_theme["wrap-portlet"] page="portlet.ftl">
+        <@liferay_util["include"] page=content_include />
+    </@>
+
+**Example 4**
+
+    ${theme.iconHelp(portlet_description)}
+
+can be replaced by:
+
+    <@liferay_ui["icon-help"] message=portlet_description />
+
+**Example 5**
+
+    ${nav_item.icon()}
+
+can be replaced by:
+
+    <@liferay_theme["layout-icon"] layout=${nav_item.getLayout()} />
+
+#### Why was this change made? [](id=why-was-this-change-made-81)
+
+Previously, the `{$theme}` variable was being injected with the
+`VelocityTaglibImpl` class. This created coupling between template engines and
+coupling between specific tags and template engines at the same time.
+
+FreeMarker already offers native support for tags which cover all the
+functionality originally provided by the `{$theme}` variable. Removing this
+coupling helps future development while still keeping all the existing
+functionality.
+
+---------------------------------------
+
+### Portlet Configuration Options May Not Always Be Displayed [](id=portlet-configuration-options-may-not-always-be-displayed)
+- **Date:** 2016-Jan-07
+- **JIRA Ticket:** LPS-54620 and LPS-61820
+
+#### What changed? [](id=what-changed-82)
+
+The portlet configuration options (e.g., configuration, export/import, look and
+feel, etc.) were always displayed in every view of the portlet and couldn't be
+customized.
+
+With Lexicon, the configuration options displayed are based on the portlet's
+context, so not all options will always be displayed.
+
+#### Who is affected? [](id=who-is-affected-82)
+
+This affects portlets that should always display all configuration options no
+matter which view of the portlet is rendered.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-82)
+
+If you don't apply any change to your source code, you will experience the
+following behaviors based on the portlet type:
+
+- **Struts Portlet:** If you've defined a `view-action` init parameter, the
+configuration options are only displayed for that particular view when invoking
+a URL with a parameter `struts_action` with the value indicated in the
+`view-action` init parameter and also in the default view of the portlet (when
+there is no `struts_action` parameter in the request).
+
+- **Liferay MVC Portlet:** If you've defined a `view-template` init parameter,
+the configuration options are only displayed when that template is rendered by
+invoking a URL with a parameter `mvcPath` with the value indicated in the
+`view-template` init parameter. and also in the default view of the portlet
+(when there is no `mvcPath` parameter in the request).
+
+- If it's a portlet using any other framework, the configuration options are
+always displayed.
+
+In order to keep the old behavior of adding the configuration options in every
+view, you need to add the init parameter
+`always-display-default-configuration-icons` with the value `true`.
+
+#### Why was this change made? [](id=why-was-this-change-made-82)
+
+Lexicon patterns require the ability to specify different configuration options
+depending on the view of the portlet by adding or removing options. This can be
+easily achieved by using the `PortletConfigurationIcon` and
+`PortletConfigurationIconFactory` classes.
+
+---------------------------------------
+
+### The getURLView Method of AssetRenderer Returns String Instead of PortletURL [](id=the-geturlview-method-of-assetrenderer-returns-string-instead-of-portleturl)
+- **Date:** 2016-Jan-08
+- **JIRA Ticket:** LPS-61853
+
+#### What changed? [](id=what-changed-83)
+
+The `AssetRenderer` interface's `getURLView` method has changed and now returns
+`String` instead of `PortletURL`.
+
+#### Who is affected? [](id=who-is-affected-83)
+
+This affects all custom assets that implement the `AssetRenderer` interface.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-83)
+
+You should update the method signature to reflect that it returns a `String` and
+you should adapt your implementation accordingly.
+
+In general, it should be as easy as returning `portletURL.toString()`.
+
+#### Why was this change made? [](id=why-was-this-change-made-83)
+
+The API was forcing implementations to return a `PortletURL`, making it
+difficult to return another type of link. For example, in the case of Bookmarks,
+developers wanted to automatically redirect to other potential URLs.
+
+---------------------------------------
+
+### Removed the icon Method from NavItem [](id=removed-the-icon-method-from-navitem)
+- **Date:** 2016-Jan-11
+- **JIRA Ticket:** LPS-61900
+
+#### What changed? [](id=what-changed-84)
+
+The `NavItem` interface has changed and the method `icon` that would render the
+nav item icon has been removed.
+
+#### Who is affected? [](id=who-is-affected-84)
+
+This affects all themes using the `nav_item.icon()` method.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-84)
+
+You should update your code to call the method `nav_item.iconURL` to return the
+image's URL and then use it as you prefer.
+
+**Example:**
+
+    <img alt="Page Icon" class="layout-logo" src="<%= nav_item.iconURL()" />
+
+To keep the previous behavior in Velocity:
+
+    $theme.layoutIcon($nav_item.getLayout())
+
+To keep the previous behavior in FreeMarker:
+
+    <@liferay_theme["layout-icon"] layout=nav_item_layout />
+
+#### Why was this change made? [](id=why-was-this-change-made-84)
+
+The API was forcing developers to have a dependency on a taglib, which didn't
+allow for much flexibility.
+
+---------------------------------------
