@@ -27,6 +27,17 @@
 
 	<!-- taskdefs -->
 
+	<taskdef name="checkarticleimgssite" classname="com.liferay.documentation.util.CheckArticleImagesTaskDevSite">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="checkimgssite" classname="com.liferay.documentation.util.CheckImagesTaskDevSite">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -83,7 +94,7 @@
 
 	<!-- targets -->
 
-	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
+	<target name="article-to-html" depends="prepare, check-article-images" description="Converts a single Markdown article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
 		<java
 			classname="com.liferay.documentation.util.MarkdownToHtmlMain"
@@ -116,8 +127,13 @@
         </copy>
 	</target>
 
-	<target name="check-images-site" description="Verifies all images referenced in a single Markdown article or a document's Markdown articles.">
-		<checkimgssite docdir="${doc.dir}" chapter="${article}">
+	<target name="check-article-images" description="Verifies all images referenced in a single Markdown article.">
+		<checkarticleimgssite docdir="${doc.dir}" article="${article}">
+		</checkarticleimgssite>
+	</target>
+
+	<target name="check-images-site" description="Verifies all images referenced in a a document's Markdown articles.">
+		<checkimgssite docdir="${doc.dir}">
 		</checkimgssite>
 	</target>
 

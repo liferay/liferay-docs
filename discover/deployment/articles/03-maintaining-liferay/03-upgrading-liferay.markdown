@@ -19,21 +19,20 @@ Control Panel.
 
 All Liferay servers must be shut down before performing an upgrade.
 
-Liferay's upgrade tool is located in Liferay's source code in the
-`liferay-portal/tools/db-upgrade` folder.
+Download the Liferay Upgrade helper script. This script invokes the new Liferay 
+upgrade process. 
+
+If you're on Linux or OS X, [download run.sh](https://raw.githubusercontent.com/liferay/liferay-portal/master/tools/db-upgrade/run.sh) 
+and save it to your bundle directory 
+If you're on Windows, [download build.xml](https://raw.githubusercontent.com/liferay/liferay-portal/master/tools/db-upgrade/build.xml)
+and save it to your bundle directory. 
+You may need to right-click and select "Save as..." to save the contents of the (relatively short) files to disk.
 
 Modify your `portal-ext.properties` file with your custom settings so that the
 upgrade tool can connect to your database. Also, set your `liferay.home`
 property in your `portal-ext.properties` file.
 
-You can set your classpath in UNIX like this:
-
-    export LIFERAY_CLASSPATH=$TOMCAT_DIR/lib/ext/*.jar:$TOMCAT_DIR/webapps/ROOT/WEB-INF/lib/*.jar:osgi/**/*.jar
-
-In Windows, you can set your classpath as follows.
-
-Assuming you have Liferay 7's source code, replace the following section in
-`build.xml`
+On Windows, replace the following section in `build.xml`
 
     <path id="lib.classpath">
         <fileset dir="lib" includes="*.jar" />
@@ -42,23 +41,25 @@ Assuming you have Liferay 7's source code, replace the following section in
 with
 
     <path id="lib.classpath">
-        <fileset dir="$TOMCAT_DIR/lib/ext" includes="*.jar" />
-        <fileset dir="$TOMCAT_DIR/webapps/ROOT/WEB-INF/lib" includes="*.jar" />
-        <fileset dir="osgi" includes="**/*.jar" />
+       <fileset dir="$TOMCAT_DIR/lib" includes="*.jar" />
+       <fileset dir="$TOMCAT_DIR/lib/ext" includes="*.jar" />
+       <fileset dir="$TOMCAT_DIR/webapps/ROOT/WEB-INF/lib" includes="*.jar" />
     </path>
-
-To run the upgrade tool in a UNIX environment, execute `run.sh`.
 
 To run the upgrade tool in a Windows environment, use Ant and execute the
 command `ant upgrade`. Please refer to the [Ant](http://ant.apache.org/)
 documentation to learn how to set up Ant for your environment.
+
+To run the upgrade tool in a UNIX environment, execute `run.sh`:
+
+    ./run.sh --classpath $TOMCAT_DIR/lib,$TOMCAT_DIR/lib/ext,$TOMCAT_DIR/webapps/ROOT/WEB-INF/lib --liferay_home .
 
 Running the command above executes the upgrades and verifiers of Liferay's
 core. It also runs the upgrades for each of the installed modules if they are
 in automatic mode. If the modules are not in automatic mode, they can be
 upgraded individually as explained below.
 
-## Upgrading Modules Individually [](id=upgrading-modules-individually)
+## Optional: Upgrading Modules Individually [](id=upgrading-modules-individually)
 
 You can specify that the portal should just upgrade the core and not the
 modules by adding a file called
@@ -97,6 +98,19 @@ take into account that if there is an error during the process, you will be
 able to restart the process from the last step executed successfully. This
 means that you don't have to execute the entire process again. You can check
 the status of your upgrade by executing `upgrade:list {module_name}`.
+
+For example entering `upgrade:list com.liferay.iframe.web` will result in the following output:
+
+    Registered upgrade processes for com.liferay.iframe.web 0.0.1
+	   {fromSchemaVersionString=0.0.1, toSchemaVersionString=1.0.0, upgradeStep=com.liferay.iframe.web.upgrade.IFrameWebUpgrade$1@1537752d}
+       
+Note the version at the end of the first line "0.0.1".
+
+Entering `upgrade:execute com.liferay.iframe.web` followed by `upgrade:list com.liferay.iframe.web` again will result in the following output
+with the version now being 1.0.0:
+
+    Registered upgrade processes for com.liferay.iframe.web 1.0.0
+	   {fromSchemaVersionString=0.0.1, toSchemaVersionString=1.0.0, upgradeStep=com.liferay.iframe.web.upgrade.IFrameWebUpgrade$1@1537752d}
 
 Also, you can run a verify process from command line by entering `verify:list`
 to check all available verify processes and `verify:execute
