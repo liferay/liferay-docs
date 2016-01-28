@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -150,10 +151,31 @@ public class CheckImagesTaskDevSite extends Task {
 		
 		List<String> errors = new ArrayList<String>();
 
+		Set<File> articles = imagePathsMap.keySet();
+
 		// Report missing images
-		for (String referencedImageName : referencedImageNames) {
-			if (!imageNames.contains(referencedImageName)) {
-				errors.add("Missing image: " + referencedImageName);
+
+		Set<String> missingImages = new HashSet<String>();
+
+		for (File article : articles) {
+
+			List<String> imagePathsList = imagePathsMap.get(article);
+
+			for (String imagePath : imagePathsList) {
+
+				String imageFileName = getFileName(imagePath);
+
+				if (!imageNames.contains(imageFileName)) {
+
+					StringBuilder sb = new StringBuilder();
+					sb.append(article.getName());
+					sb.append(": References missing image: ");
+					sb.append(imageFileName);
+
+					errors.add(sb.toString());
+
+					missingImages.add(imagePath);
+				}
 			}
 		}
 		
@@ -165,7 +187,6 @@ public class CheckImagesTaskDevSite extends Task {
 		}
 		
 		// Report faulty image paths 
-		Set<File> articles = imagePathsMap.keySet();
 		
 		for (File article : articles) {
 			String parentPath = article.getParent();
@@ -173,10 +194,24 @@ public class CheckImagesTaskDevSite extends Task {
 			List<String> imagePathsList = imagePathsMap.get(article);
 			
 			for (String imagePath : imagePathsList) {
+
+				if (missingImages.contains(imagePath)) {
+
+					// Already reported as missing
+
+					continue;
+				}
+
 				File image = new File(parentPath + "/" + imagePath);
 				
 				if (!image.exists() || image.isDirectory()) {
-					errors.add("Faulty image path: " + imagePath);
+
+					StringBuilder sb = new StringBuilder();
+					sb.append(article.getName());
+					sb.append(": Faulty image path: ");
+					sb.append(imagePath);
+
+					errors.add(sb.toString());
 				}
 			}
 		}
