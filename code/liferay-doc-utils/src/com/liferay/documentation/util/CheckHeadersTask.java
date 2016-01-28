@@ -6,7 +6,10 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 import java.util.regex.Pattern;
 
 public class CheckHeadersTask {
@@ -29,10 +32,24 @@ public class CheckHeadersTask {
 		}
 
 		List<File> docSetDirFolders = new ArrayList<File>();
+		Queue<File> q = new LinkedList<File>();
+
 		File articlesDirContents[] = articlesDir.listFiles();
-		for (int i = 0; i < articlesDirContents.length; i++) {
-			if (articlesDirContents[i].isDirectory()) {
-				docSetDirFolders.add(articlesDirContents[i]);
+		for (File f : articlesDirContents) {
+			if (f.isDirectory()) {
+				q.add(f);
+			}
+		}
+
+		while (!q.isEmpty()) {
+			File f = q.remove();
+			docSetDirFolders.add(f);
+			File[] files = f.listFiles();
+
+			for (File file : files) {
+				if (file.isDirectory()) {
+					q.add(file);
+				}
 			}
 		}
 
@@ -80,21 +97,28 @@ public class CheckHeadersTask {
 				String line = in.readLine();
 				if (line != null) {
 
-					// Check if markdown files start with the proper single #
-					// header
-					// if not, throw an exception identifying the file
-					
-					// Enhancement: check first to see if we've put some HTML at the top
-					
-					if (line.startsWith("<")) {
-						
-						continue;
-						
-					}
-					
+					// Check whether the markdown file starts with the proper single #
+					// header. 
+					// If it doesn't, throw an exception identifying the file
+
 					if (!line.startsWith("# ")) {
-						String message =
-							filename + " does not start with single # header";
+
+						String message = "FAILURE - " + filename +
+							":Line 1 does not start with a single # for a header";
+
+						if (line.startsWith("<!--")) {
+
+							in.close();
+
+							throw new Exception(message);
+						}
+						else if (line.startsWith("<")) {
+
+							// Allow non-comment tags
+
+							continue;
+	
+						}
 
 						in.close();
 
