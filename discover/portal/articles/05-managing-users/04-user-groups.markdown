@@ -1,4 +1,4 @@
-# User Groups
+# User Groups [](id=user-groups)
 
 A User Group is a group of users. Were you hoping for a more
 complicated, or enterpris-ey, definition? Try this: A user group is a box.
@@ -65,7 +65,7 @@ You don't want Wilbert to be a List Creator, right?
 ![Figure 1: The List Creators group is needed to manage the sign-up lists on
 the Activities Sign-Up page of The Lunar Resort.](../../images/user-groups-activities-page.png)
 
-## Creating a User Group
+## Creating a User Group [](id=creating-a-user-group)
 
 User Groups are administered in the Control Panel, under *Users* &rarr; *User
 Groups*. Start by creating a user group called *List Creators*. Later, you'll
@@ -91,7 +91,7 @@ Right now, the user group is just an empty box. The user group has no sites or
 roles to give it any functionality. No users are assigned to the user group, so
 it isn't collecting users yet. That comes next.
 
-## Assigning Members to a User Group
+## Assigning Members to a User Group [](id=assigning-members-to-a-user-group)
 
 To add existing users to a user group:
 
@@ -118,7 +118,7 @@ personal page management. These scenarios are all covered in this article.
 
 Next, add the users in the List Creators group to the Lunar Resort site. 
 
-## User Groups and Site Membership
+## User Groups and Site Membership [](id=user-groups-and-site-membership)
 
 After a user group is created, you can add all its users at once as members of a
 site in one step from the *Site Memberships* UI. In this example you'll see how
@@ -149,7 +149,7 @@ site.
 Managing site membership with user groups is easy. User groups can also have
 their own sites. 
 
-## User Group Sites
+## User Group Sites [](id=user-group-sites)
 
 Each Liferay user has a personal site, consisting of public (Profile) and
 private (Dashboard) pages. A user group site determines the base pages of the
@@ -245,7 +245,7 @@ personal site without having to modify it directly. When a user is assigned to a
 user group, they'll immediately have access to the user group's site pages from
 their personal site.
 
-### Legacy User Group Sites Behavior
+### Legacy User Group Sites Behavior [](id=legacy-user-group-sites-behavior)
 
 Since the inheritance of user group site pages is now dynamic, even if there are
 hundreds of thousands of users, even millions, there won't be an exponential
@@ -282,7 +282,7 @@ Just like user groups simplify site membership, they can also be used to assign
 a role to all the users of a user group at once. Where you do it depends on the
 scope of the role. 
 
-## Configuring User Group Permissions
+## Configuring User Group Permissions [](id=configuring-user-group-permissions)
 
 The List Creators user group needs the ability to manage Dynamic Data List
 Display portlets on The Lunar Resort's Activities Sign-Up public page. This will
@@ -331,7 +331,7 @@ with.
 If you want to know more about User Groups, and how to edit them, keep reading
 here.
 
-## Editing User Groups
+## Editing User Groups [](id=editing-user-groups)
 
 To edit the basic properties a user group, just click on its name or description
 (both are hyperlinks). Alternatively, click the *Edit* link from the Actions
