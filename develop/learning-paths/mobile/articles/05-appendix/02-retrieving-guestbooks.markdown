@@ -1,13 +1,12 @@
 # Retrieving Guestbooks [](id=retrieving-guestbooks)
 
-Now that you know this app's basic structure and the basics of making calls with
-the Guestbooks Mobile SDK, you're ready to retrieve guestbooks from the server.
-To retrieve guestbooks in the app, you'll follow these steps:
+Now you're ready to use the Guestbooks Mobile SDK to retrieve guestbooks from 
+the server. To retrieve guestbooks in the app, you'll follow these steps:
 
 1. Create the model class for the guestbooks. You need this class so you can 
    transform the JSON received from the portlet into guestbook model objects 
    that you can work with in the app. 
- 
+
 2. Prepare the `GuestbooksActivity` class to receive guestbook model objects.
 
 3. Create a callback class that makes the service call asynchronously in a 
@@ -20,10 +19,11 @@ You'll get started with the first step, creating the model class for guestbooks.
 
 ## Creating the Model Class for Guestbooks [](id=creating-the-model-class-for-guestbooks)
 
-The Guestbook Mobile SDK returns guestbooks from the portlet in a `JSONArray` 
-that contains each guestbook in a `JSONObject`. To work efficiently with these 
-guestbooks, you need a way of transforming them into proper guestbook objects.
-You'll do this via a model class. First, create a new package called `model`
+Recall that the Guestbook Mobile SDK returns guestbooks from the portlet in a 
+`JSONArray` that contains each guestbook in a `JSONObject`. Just as you did when 
+creating Get Guestbooks Screenlet, you must create a model class that turns each 
+`JSONObject` into a proper guestbook object. You'll do this the exact same way 
+you did in Get Guestbooks Screenlet. First, create a new package called `model`
 inside the `com.liferay.docs.liferayguestbook` package. Inside this new `model`
 package, create a new class called `GuestbookModel`. Replace the
 `GuestbookModel` class's contents with the following code: 
@@ -109,33 +109,16 @@ package, create a new class called `GuestbookModel`. Replace the
         }
     }
 
-This class creates `GuestbookModel` objects that effectively represent 
-`Guestbook` objects in the portlet. It does so by retrieving `Guestbook` 
-parameters from the `JSONObject` returned by the Mobile SDK's remote service 
-calls. The constructor does this by using the `getLong` and `getString` methods. 
-To see how the `Guestbook` parameters are defined in the portlet, see the 
-[Liferay MVC Learning Path article on Service Builder](/develop/learning-paths/mvc/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
-For now, the only parameters you really need in this class are `guestbookId` and 
-`name`. Because you might need the rest later, however, it's best to add 
-support for all of them now. 
-
-You should also note the `toString` method in this class. It's very simple; it
-only returns a guestbook's name. It's very important, though. Android calls
-`toString` to render objects in the navigation drawer. If `toString` isn't
-defined for an object, the drawer shows strings with the object's full package
-path and internal ID. In other words, Android displays illegible text if you
-don't define `toString` here. By defining `toString` to return each
-`GuestbookModel`'s name, you're telling Android to show each guestbook's name in
-the drawer. 
-
+This is the exact same 
+[`GuestbookModel` class you created for Get Guestbooks Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-the-get-guestbooks-screenlet#creating-the-model-class-for-guestbooks). 
 Next, you'll prepare `GuestbooksActivity` to recieve `GuestbookModel` objects. 
 
 ## Preparing GuestbooksActivity for Guestbooks [](id=preparing-guestbooksactivity-for-guestbooks)
 
-Before making the server call, you need to prepare the `GuestbooksActivity` 
-class to handle `GuestbookModel` objects. Specifically, you need to give the 
-callback class you'll create in a moment a way to pass `GuestbookModel` objects 
-to `GuestbooksActivity`. 
+Before making the server call, you must prepare the `GuestbooksActivity` class 
+to handle `GuestbookModel` objects. Specifically, you need to give the callback 
+class you'll create in a moment a way to pass `GuestbookModel` objects to 
+`GuestbooksActivity`. 
 
 First, add a `_guestbooks` variable for these objects: 
 
@@ -165,11 +148,10 @@ Since Android doesn't allow network requests from its main UI thread, you must
 make them from another thread by creating a callback class that extends the 
 Mobile SDK's 
 [`GenericCallback`](https://github.com/liferay/liferay-mobile-sdk/blob/master/android/src/main/java/com/liferay/mobile/android/callback/typed/GenericCallback.java) 
-class. See 
+class. The `GenericCallback` class abstracts away much of the complexity 
+involved with making calls from a background thread. See 
 [Android's documentation](http://developer.android.com/guide/components/processes-and-threads.html#Threads) 
-for more information on threading. At this point, you might be saying, "Oh no, 
-threading in mobile apps? That sounds complicated!" Fear not! The Mobile SDK's 
-`GenericCallback` class hides much of the added complexity. 
+for more information on threading. 
 
 To create the callback class for retrieving guestbooks, first create a new 
 package called `callback` in `com.liferay.docs.liferayguestbook`. Then create a 
@@ -226,21 +208,20 @@ code in the class with this code:
         }
     }
 
-This class is small, but it does a great deal. First, you should note that this 
-class has a `GuestbooksActivity` instance as its only variable. This is so it 
-can refer results back to `GuestbooksActivity`, which runs in Android's main UI 
-thread. The `GetGuestbooksCallback`'s constructor thus does only one thing: it 
-sets this variable. Next, the `onFailure` and `onSuccess` methods are 
-overridden. As you probably guessed, `onFailure` is called when the request 
-fails, while `onSuccess` is called when it succeeds. In this example, 
-`onFailure` displays a toast message with the error. The `onSuccess` method 
-sends the guestbooks to `GuestbooksActivity` by calling the activity's 
-`reloadGuestbooks` method. Last but not least is the overridden `transform` 
-method. Because guestbooks initially come back from the portlet as JSON, you 
-need this `transform` method to convert them into a `List` of `GuestbookModel` 
-objects. It's this `List` that's fed to the `onSuccess` method. You're probably 
-starting to see that `reloadGuestbooks` is an important method. It receives 
-guestbooks for processing in the app's main UI thread. 
+This class is similar to 
+[the callback class you created for Get Guestbooks Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-guestbook-screenlets-server-call#creating-the-callback-class).
+The `transform` methods in both classes are identical. Recall that this method 
+transforms each `JSONObject` into `GuestbookModel` a object. The callback class 
+here also contains the code required to pass its results to the class that 
+issued the call. First, you should note that this class has a 
+`GuestbooksActivity` instance as its only variable. This is so it can refer 
+results back to `GuestbooksActivity`, which runs in Android's main UI thread. 
+The `GetGuestbooksCallback`'s constructor thus does only one thing: it sets this 
+variable. Next, the `onFailure` and `onSuccess` methods are overridden. As you 
+probably guessed, `onFailure` is called when the request fails, while 
+`onSuccess` is called when it succeeds. In this example, `onFailure` displays a 
+toast message with the error. The `onSuccess` method sends the guestbooks to 
+`GuestbooksActivity` by calling the activity's `reloadGuestbooks` method. 
 
 Now that you have everything you need to retrieve guestbooks from the Guestbook 
 portlet, you're ready to make the server call. 
