@@ -1,38 +1,34 @@
 # Creating and Managing Pages
 
-You've successfully created a site for your portal, but you may need to add new
-pages or edit existing pages. You have a few options for accessing and
-configuring your site's page editing interface. There are three interfaces to be
-aware of: *Site Pages*, *Page*, and *Edit Page*. These interfaces all deal with
-your site's pages, however, each interface is configurable in a different place
-and completes different objectives. 
+You've successfully created a site for your Liferay instance, but you may need
+to add new pages or edit existing pages. From the Site Administration &rarr;
+*Pages* section of the Product Menu, your site pages can be accessed and
+configured. If you're not currently on the site you'd like to edit, click the
+*Compass* icon (![Compass](../../../images/icon-compass.png)) next to your
+current site name in the Product Menu and select your desired site. The edits
+you make to your pages are only made to the scope you've selected in the Product
+Menu.
 
-From the Sites section of the Product Menu, your site pages can be accessed and
-configured. Navigate to the Product Menu &rarr; *Sites*. Locate the current
-site's name. If you're not currently on the site you'd like to edit, click the
-arrow next to your current site name in the Product Menu and select your desired
-site. Once you've selected your site, select *Site Pages* under the Pages tab
-from the left panel.
+![Figure 1: The Pages menu allows you to edit your site pages as a whole.](../../../images/managing-site-pages.png)
 
-![Figure 2.5: The *Site Pages* interface allows you to edit your site pages as a whole.](../../../images/04-managing-site-pages.png)
+To add new pages to your site, click the *Add Page* icon (![Add
+Page](../../../images/icon-control-menu-add.png)) for the page or page set you'd
+like to add a page to. You can manage a plethora of options from the Pages menu
+including page name, site layout, and site template.
 
-To add new pages to your site, click the *Add* icon from the bottom menu and
-select the *Page* tab. This is the *Page* interface, which offers a plethora of
-options for your new page including name, site layout, and site template.
+There are two ways to edit a page: you can select the *Edit Page* option
+(![Edit Page](../../../images/icon-control-menu-gear.png)) for any page in your
+site from the Pages menu or you can edit the specific page you're currently
+viewing by selecting the *Edit Page* option
+(![Edit Page](../../../images/icon-control-menu-gear.png)) from the top menu.
+The latter option will only edit the specific page you're currently viewing.
 
-To manage the specific page of the site you've navigated to, click the *Edit*
-icon from the bottom menu (gear). This will only edit the specific page you're
-currently on.
+![Figure 2: The *Edit Page* interface allows you to edit the current page you're viewing.](../../../images/web-content-managing-single-page.png)
 
-![Figure 2.6: The *Edit Page* interface allows you to edit the current page you're on.](../../../images/web-content-managing-single-page.png)
-
-*Site Pages* is an interface to view existing pages, create new pages, and view
-pages. Note that you can switch between managing a set of pages and managing a
-single page using the left-hand side navigation menu. Click on *Public Pages* or
-*Private Pages* to manage the group or click on an individual page to manage
-just that one. Switching views like this changes the list of available tabs to
-the right. By default, liferay.com, which we renamed to lunar-resort.com,
-contains a single public page called *Welcome*.
+In summary, the Pages menu is used to navigate to pages, create new pages, and
+edit existing pages. Note that you can also switch to managing a set of pages in
+the Pages menu. Click on *Public Pages* or *Private Pages* to manage that page
+group.
 
 Liferay's page groups are always associated with sites. Even users' personal
 pages are part of their personal sites. All pages belong to one of two types of
@@ -47,44 +43,54 @@ interface to manage them. You'll look at this interface more closely next.
 
 ## Creating Pages
 
-From the Site Pages interface in the Sites menu, you can add a page to the
-site by clicking the *Add Page* button. Because *Public Pages* is selected on
-the left, clicking *Add Page* here adds a top level page next to the Welcome
-page. You can, however, nest pages as deeply as you like. To create a sub-page
-under the Welcome page, select the *Welcome* page first and then create your
-page. If you later decide you don't like the order of your pages, you can drag
-and drop them in the list to put them in whatever order you want. Let's go ahead
-and add another top level page and name it *Community*. We'll use this page for
-the Recent Bloggers and Wiki portlets.
+From the Pages menu in the Product Menu, you can add a page or child page to any
+existing page or page set by clicking the *Add Page* button. Because *Public
+Pages* is selected on the left, clicking *Add Page* here adds a top level page
+making it a sibling page of the Welcome page. You can, however, nest pages as
+deeply as you like. To create a sub-page under the Welcome page, select the *Add
+Child Page* button next to *Welcome*.
 
-![Figure 2.7: You can add a page to your site by giving it a name, page template, and page type.](../../../images/04-web-content-add-page.png)
+The *Add Child Page* lets you create child pages underneath the page you've
+selected. You can nest pages as deep as you like but for every page below the
+top level hierarchy you must provide navigation to it via a Navigation or
+Breadcrumb portlet, at least with most themes (including the default).
+Developers can create themes which have cascading menu bars which show the full
+hierarchy. Some examples of that are in Liferay's plugin repositories.
+
+Once you've selected the *Add Page* or *Add Child Page* button, you're directed
+to an *Add New Page* interface that lets you configure the page to your liking.
+If you later decide you don't like the order of your pages, you can drag and
+drop them in the list to put them in whatever order you want. Go ahead and add
+another top level page and name it *Community*. You'll use this page for the
+Recent Bloggers and Wiki applications.
+
+![Figure 3: You can add a page to your site by giving it a name, page template, and page type.](../../../images/web-content-add-page.png)
 
 When you create a new page, you can create either a blank page or a page
-prepopulated with portlets from a page template. When you're entering the name
+prepopulated with apps from a page template. When you're entering the name
 of the page, you can select from a list of page templates that are currently
 available. You can learn more about Page Templates and how to use them in the
-[Creating Pages from Templates]() 
-section. To view the pages once you add them, click the *View Pages* button.
-This is how you'd populate your pages with content and applications. This is
-covered in succeeding chapters. By default, all pages are created as an empty
-page but in some situations, you might want to use one of the other options. You
-can take a look at all the page options you have below, along with their
-respective descriptions.
+[Creating Pages from Templates](/discover/portal/-/knowledge_base/7-0/creating-pages-from-templates) 
+section. To view the page you've added, click the page name from the left panel.
+By default, all pages are created as an empty page but in some situations, you
+might want to use one of the other options. You can take a look at all the page
+options you have below, along with their respective descriptions.
 
-<!-- TODO: Replace page template link above. -Cody -->
-
-**Layout (Empty Page):** the default pages that are used. They have a layout which you
+**Empty Page:** the default pages that are used. They have a layout which you
 can drag and drop portlets into. This page type creates an empty page with
 configurable column sizes.
-
-**Blog:** display content related to blogs. This is a specialized page dedicated
-to creating, editing, and view blogs.
 
 **Content Display Page:** are used to search available content, explore related
 content with tags, and browse content catagories. This is a specialized page
 dedicated to managing web content from a page.
 
-**Node:** exists as a container that holds child pages. These pages are not
+**Wiki:** display content related to wikis. This is a specialized page
+dedicated to creating, managing, and viewing wiki articles from a page.
+
+**Blog:** display content related to blogs. This is a specialized page dedicated
+to creating, editing, and viewing blogs.
+
+**Page Set:** exists as a container that holds child pages. These pages are not
 intended to hold content. Because the page holds no content and has no purpose
 but to hold other child pages, there is no friendly URL for this page. It also
 cannot serve as a landing page for a site.
@@ -94,95 +100,60 @@ administrator, but only one will be displayed at a time. Users select which
 portlet they want to use from a menu on the left side of the page and the
 selected portlet takes up the entire page. 
 
-**Link to URL:** are redirects to any URL specified by an administrator.
-You can use URL pages to create links to pages belonging to other sites of your
-portal or to pages of an external site. Use URL pages cautiously since blind
+**Link to URL:** are redirects to any URL specified by an administrator. You can
+use URL pages to create links to pages belonging to other sites of your Liferay
+instance or to pages of an external site. Use URL pages cautiously since blind
 redirects create a poor user experience.
 
-**Embedded:** display content from another website inside of your portal.
+**Embedded:** display content from another website inside of your instance.
 An administrator can set a URL from in the page management interface and that
 page will appear in the context and within the navigation of your Liferay
-portal.
+instance.
 
 **Full Page Application:** creates a page with one column that displays a single
 full page application.
 
-**Link to a Page of This Site:** creates a portal page which functions as an
-immediate redirect to another page within the same site. You can select which
-page to link to from a dropdown in the page management interface. You could use
-a *Link to a Page of This Site* to place a deeply nested page in the primary
-navigation menu of your site, for example.
+**Link to a Page of This Site:** creates a page which functions as an immediate
+redirect to another page within the same site. You can select which page to link
+to from a dropdown in the page management interface. You could use a *Link to a
+Page of This Site* to place a deeply nested page in the primary navigation menu
+of your site, for example.
 
 **Copy of a Page of This Site:** displays a copy of a pre-existing page in your
-portal.
-
-If you ever need to modify the page you've created for your site, you can
-revisit *Site Pages* and select the page to edit. You can also use the *Edit
-Page* interface. It's not possible to add a new page from the Edit Page
-interface. This is because you're only managing the current page. To use the
-Edit Page interface to modify an existing page, navigate to the bottom menu and
-select the *Edit* icon. When configuring a specific page, you're given more
-options than if you're configuring a group of pages like Public Pages or Private
-Pages. These extended options for configuring specific pages are covered in the
-[Customizing Pages]()
-section. 
-
-<!-- TODO: Add link above, when available. -Cody -->
+Liferay instance.
 
 Now that you know the basics of adding site pages, you can start working on the
 Lunar Resort site. If you're not currently on the site you're interested in
-adding pages to, navigate to *Sites* in the Product Menu, select the left arrow
-button next to the current site name, and select the site you wish to edit.
+adding pages to, navigate to Site Administration in the Product Menu, select the
+compass icon next to the current site name, and select the site you wish to
+edit.
 
-You'll use the *Community* page you created earlier in the section. Navigate to
-the *Add* button from the bottom menu and then
-select the *Page* tab. Once you select *New Page*, you're redirected to the
-Site Pages interface. Since you plan on editing the *Community* page, go ahead
-and select it from the navigation tree.
+As stated previously, if you ever need to modify the page you've created for
+your site, select the *Edit* icon
+(![Edit Page](../../../images/icon-control-menu-gear.png)) either from the Pages
+menu in the Product Menu or the top Control Menu on the currently viewed page.
+When configuring a specific page, you're given more options than when you were
+creating a new page. These extended options for configuring specific pages are
+covered in more detail later in this section.
 
-<!-- Confirm adding pages are done by redirecting to Site Pages, instead of
-being able to add page from *Add* -> *Page* -> *New Page*. (Above and below)
--Cody -->
+There are also configuration options that are only available for either
+indiviual pages or page groups only. You'll learn about options available for
+both instances.
 
-This screen's options should look familiar to you, but a brief list of options
-the Page interface allows you to complete are listed below:
-
-- Give the name of the page
-- Hide the page from the theme navigation
-- Choose the page template
-- Link to another website
-- Link to another page in the current site
-- Copy an existing page
-
-When you select *Add Page* at the bottom of the menu, your new page will
-appear on the navigation menu of your site. You can drag the page names to their
-correct order as you see fit.
-
-You can also create new pages from the Site Pages interface. Navigate to Site
-Administration &rarr; *Site Pages*. If you navigate to *Public Pages* or
-*Private Pages* on your site hierarchy, you'll notice the *Add Page* button,
-which we discussed earlier in the chapter. If you navigate to a specific page,
-you'll notice the *Add Child Page* button.
-
-The *Add Child Page* lets you create child pages underneath the page you've
-selected. You can nest pages as deep as you like but for every page below the
-top level hierarchy you must provide navigation to it via a Navigation or
-Breadcrumb portlet, at least with most themes (including the default).
-Developers can create themes which have cascading menu bars which show the full
-hierarchy. Some examples of that are in Liferay's plugin repositories.
-
-You should be able to define and manage pages in Liferay at this point so next,
-you'll look at the options you have available for configuring your public or
-private pages as a whole.
+Navigate to the Pages menu and select the gear icon to edit the Public Pages
+group. You should be able to define and manage pages in Liferay at this point so
+next, you'll look at the options you have available for configuring your public
+or private pages as a whole, and the individual pages residing within those
+groups.
 
 ### Customizing the Look and Feel of Site Pages
 
-When you open *Site Pages* from within Site Administration, it defaults to the
-Look and Feel tab. On this tab, you're presented with an interface that allows
-you to choose a theme for the current site. Themes can transform the entire look
-of the portal. They are created by developers and are easily installed using the
-Liferay Marketplace. Since we don't have any themes beyond the default one
-installed yet, we'll use the default theme for our pages.
+When you select *Edit Public Pages*, it defaults to the Look and Feel tab. On
+this tab, you're presented with an interface that allows you to choose a theme
+for the current site. Themes can transform the entire look of the portal. They
+are created by developers and are easily installed using the Liferay
+Marketplace. Since we don't have any themes beyond the default one installed
+yet, we'll use the default theme for our pages.
 
 ![Figure 2.8: The Look and Feel interface allows you to choose a theme for the current site.](../../../images/04-look-and-feel.png)
 
@@ -195,15 +166,18 @@ with a darker hue.
 
 If you apply a color scheme to a set of public or private pages, it is, by
 default, applied to each page in the set. If, however, you click the *Edit Page*
-button from the left palette of a specific page, you can select *Define a
-specific look and feel for this page* from the *Look and Feel* tab to make the
-color scheme apply to this page only. You can use this feature to choose a
-different color scheme for a particular page than the one defined for the set of
-public or private pages to which it belongs.
+button for a specific page, you can select *Define a specific look and feel for
+this page* from the *Look and Feel* tab to make the color scheme apply to this
+page only. You can use this feature to choose a different color scheme for a
+particular page than the one defined for the set of public or private pages to
+which it belongs.
+
+<!-- TODO: Check with Julio to see if color scheme setting is still available.
+-Cody -->
 
 There are a few more configurable settings for your theme. You can switch the
 bullet style between dots and arrows and you can choose whether or not to show
-portlet borders by default.
+application borders by default.
 
 <!-- the ability to modify themes for regular browsers and mobile devices
 can now only be accomplished using Mobile Device Rules, which can be found in
@@ -219,73 +193,37 @@ The next option configures the logo that appears for your site.
 
 By default, the Liferay logo is used for your site pages' logo. If you want to
 use your own logo for a specific site, use the *Logo* tab. Adding a custom logo
-is easy: select the Logo tab from the Site Pages interface and browse to the
+is easy: select the *Logo* tab from the *Edit Public Pages* interface and browse to the
 location of your logo. Make sure your logo fits the space in the top left corner
 of the theme you're using for your web site. If you don't, you could wind up
 with a site that's difficult to navigate, as other page elements are pushed
 aside to make way for the logo.
 
 In the logo tab, you can also choose whether or not to display the site name on
-the site. If you check the box labeled *Show Site Name* the site name will
+the site. If you check the box labeled *Show Site Name*, the site name will
 appear next to the logo. This option is enabled by default and cannot be
 disabled if the *Allow Site Administrators to set their own logo* option is
-disabled in *Portal Settings*. Removing the site name is not available for the
+disabled in *Instance Settings*. Removing the site name is not available for the
 default site -- only newly created sites and user pages have the option to have
 the name display. 
 
 ### Executing JavaScript in Site Pages
 
-If you click on *JavaScript* from the Site Pages interface for a page set
-(either Public Pages or Private Pages), you'll find a window where you can enter
-JavaScript code that will be executed at the bottom of every page in the site.
-If your site's theme uses JavaScript (as is usually the case), it's best to add
-custom JavaScript code to the theme and *not* in this window. This way, all of
-your site's JavaScript code remains in one place.
+If you click on *JavaScript* for a page set (either Public Pages or Private
+Pages), you'll find a window where you can enter JavaScript code that will be
+executed at the bottom of every page in the site. If your site's theme uses
+JavaScript (as is usually the case), it's best to add custom JavaScript code to
+the theme and *not* in this window. This way, all of your site's JavaScript code
+remains in one place.
 
-Using the JavaScript window of your site's Site Pages interface may be useful if
-your site's theme does *not* use JavaScript. In this case, the JavaScript window
-of your site's Site Pages interface will contain *all* of your site's JavaScript
-and you can add some dynamic features to your site's pages. 
+Using the JavaScript window may be useful if your site's theme does *not* use
+JavaScript. In this case, the JavaScript window will contain *all* of your
+site's JavaScript and you can add some dynamic features to your site's pages.
 
-Next, let's look at an advanced feature of the Site Pages interface: merging the
-current site's pages with the pages of the default site.
+Next, you'll look at an advanced feature of the *Edit Page* interface: merging
+the current site's pages with the pages of the default site.
 
-### Rendering Pages for Mobile Devices
-
-You can configure your page set for mobile devices by selecting the *Mobile
-Device Rules* option. The set up for this option is explained in the
-[Displaying Site Pages to Mobile Devices]()
-section.
-
-<!-- Replace link above with 7.0 link. -Cody -->
-
-### Configuring Rules for Virtual Hosting
-
-If you're using virtual hosting for this site, you can configure `robots.txt`
-rules for the domain by selecting the *Robots* option. The Robots page gives you
-the option to configure your `robots.txt` for both public and private pages on a
-site. If you don't have Virtual Hosting set up, this tab is rather boring. 
-
-### Notifying Search Engines of Site Pages
-
-If you select the *Sitemap* option from the Site Pages interface for a page set,
-you can send a sitemap to some search engines so they can crawl your site. It
-uses the sitemap protocol, which is an industry standard. You can publish your
-site to Yahoo or Google and their web crawlers will use the sitemap to index
-your site. Liferay Portal makes this very simple for administrators by
-generating the sitemap XML for all public web sites.
-
-By selecting one of the search engine links, the sitemap will be sent to them.
-It's only necessary to do this once per site. The search engine crawler will
-periodically crawl the sitemap once you've made the initial request.
-
-If you're interested in seeing what is being sent to the search engines, select
-the *Preview* link to see the generated XML.
-
-<!-- The below is commented out because the "Advanced" option is no longer
-available from the Site Pages interface. I'll keep this commented out until UI
-is stable and we can safely remove this text. -Cody
-
+<!-- Left off here. -->
 
 ### Advanced
 
@@ -324,7 +262,37 @@ site B, no additional pages appear in site B's navigation bar because site B
 does not have the *Merge default site's public pages* option enabled. And if the
 user navigates back to the default site, site B becomes the previous site, and,
 again, since site B does not have the *Merge default site's public pages* option
-enabled, no additional pages are added to the default site's navigation menu.-->
+enabled, no additional pages are added to the default site's navigation menu.
+
+### Rendering Pages for Mobile Devices
+
+You can configure your page set for mobile devices by selecting the *Mobile
+Device Rules* option. The set up for this option is explained in the
+[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-0/displaying-site-pages-to-mobile-devices)
+section.
+
+### Configuring Rules for Virtual Hosting
+
+If you're using virtual hosting for this site, you can configure `robots.txt`
+rules for the domain by selecting the *Robots* option. The Robots page gives you
+the option to configure your `robots.txt` for both public and private pages on a
+site. If you don't have Virtual Hosting set up, this tab is rather boring. 
+
+### Notifying Search Engines of Site Pages
+
+If you select the *Sitemap* option from the Site Pages interface for a page set,
+you can send a sitemap to some search engines so they can crawl your site. It
+uses the sitemap protocol, which is an industry standard. You can publish your
+site to Yahoo or Google and their web crawlers will use the sitemap to index
+your site. Liferay Portal makes this very simple for administrators by
+generating the sitemap XML for all public web sites.
+
+By selecting one of the search engine links, the sitemap will be sent to them.
+It's only necessary to do this once per site. The search engine crawler will
+periodically crawl the sitemap once you've made the initial request.
+
+If you're interested in seeing what is being sent to the search engines, select
+the *Preview* link to see the generated XML.
 
 Next, you'll learn how to add portlets to your site pages.
 

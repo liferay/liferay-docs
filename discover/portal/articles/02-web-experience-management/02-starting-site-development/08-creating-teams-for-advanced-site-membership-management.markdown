@@ -6,7 +6,8 @@ these teams permissions for various site-specific functions. Site Teams are the
 preferred method for collecting permissions within a single site. Some common
 functions to assign a Site Team include:
 
-- Moderating site Wiki content, Message Boards threads, etc.
+- Moderating site Wiki content
+- Managing Message Boards threads
 - Writing blogs
 - Editing a specific page in the site
 
@@ -23,10 +24,10 @@ concentrate on defining and applying permissions to their sites' teams.
 +$$$
 
 **Note:** To create and apply permissions for a group of users to use across
-multiple sites or organizations in your portal, consider aggregating the users
-into a [User Group](/discover/portal/-/knowledge_base/6-2/user-groups) and
-assigning the User Group permissions via
-[Roles](/discover/portal/-/knowledge_base/6-2/roles-and-permissions). 
+multiple sites or organizations in your Liferay instance, consider aggregating
+the users into a [User Group](/discover/portal/-/knowledge_base/6-2/user-groups)
+and assigning the User Group permissions via
+[Roles](/discover/portal/-/knowledge_base/6-2/roles-and-permissions).
 
 $$$
 
@@ -63,6 +64,6 @@ the team in the Role column, and select the appropriate permissions.
 That's it! It's easy to give groups of site users appropriate permissions to
 perform their tasks. This chapter has provided an introduction to Liferay site
 management. You’ve learned how to use Liferay to create multiple sites with
-different membership types. You’ve also seen how easy it is to create and manage
+different membership types. You've also seen how easy it is to create and manage
 sites and to create and manage pages within a site in Liferay. Next, you'll
 begin working with web content.

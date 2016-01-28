@@ -17,7 +17,7 @@ membership types:
 
 - **Open:** Users can become members of the site at any time. Users can join
 sites from the Site Administration navigation menu
-(![Compass](../../../../images/icon-compass.png)).
+(![Compass](../../../images/icon-compass.png)).
 
 - **Restricted:** Users can request site membership but site administrators must
 approve requests in order for users to become members. Requests can be made from
@@ -43,7 +43,7 @@ in the Sites menu. From this menu, you can select the specific site to work on.
 The Site Administration panel is available for your site, which includes Pages,
 Content, Users, Configuration, and Publishing Tools.
 
-![Figure 1: Your site's content resides in the Site Administration menu.](../../../../images/web-content-site-content.png)
+![Figure 1: Your site's content resides in the Site Administration menu.](../../../images/web-content-site-content.png)
 
 For details about Liferay's social collaboration suite, see the
 [Social Collaboration](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
@@ -85,7 +85,7 @@ administrator can select a root page and a display depth. Just as sites can be
 organized hierarchically, so can the pages within a site. The display depth of
 the Site Map application determines how many levels of nested pages to display.
 
-![Figure 2: The Sites Directory application lets users navigate between sites organized hierarchically. The Site Map application lets users navigate among pages of a site organized hierarchically.](../../../../images/site-directory-site-map.png)
+![Figure 2: The Sites Directory application lets users navigate between sites organized hierarchically. The Site Map application lets users navigate among pages of a site organized hierarchically.](../../../images/site-directory-site-map.png)
 
 Another useful administrative application is the Site Members application. This
 enables administrators to survey all the users, organizations, and user groups
@@ -164,7 +164,7 @@ sections, respectively.
 **Tip:** If you're signed in as an administrator, you can access all sites by
 navigating to the Site Administration menu from the Control Panel. To manage a
 single site, navigate to the site by going to the Product Menu and clicking the
-Compass icon (![Compass](../../../../images/icon-compass.png)) from the sites
+Compass icon (![Compass](../../../images/icon-compass.png)) from the sites
 dropdown menu and selecting the appropriate site name you'd like to manage. Once
 finished, the site administration options (i.e., Pages, Content, Users, etc.)
 for that site are available.
@@ -172,7 +172,7 @@ for that site are available.
 $$$
 
 To add a site for the Lunar Resort instance, navigate to the Control Panel and
-select *Sites* &rarr; *Sites*. Then click the Add icon (![Add Site](../../../../images/icon-add.png))
+select *Sites* &rarr; *Sites*. Then click the Add icon (![Add Site](../../../images/icon-add.png))
 at the bottom right of the page. If there is at least one site template
 available, a dropdown menu appears. Site templates provide a preconfigured set
 of pages, applications, and content that can be used as the basis of a site's
@@ -184,7 +184,7 @@ templates are created, they will appear in the Add menu as they become
 available. The following figure shows the form that needs to be filled when
 creating a *Blank Site*.
 
-![Figure 3: The New Site window aids in your new site development.](../../../../images/add-site-screen.png)
+![Figure 3: The New Site window aids in your new site development.](../../../images/add-site-screen.png)
 
 **Name:** names the site you wish to create. You also have the option to
 translate the name for many different languages. This can be done by selecting
@@ -250,7 +250,7 @@ viewable from the Sites dropdown (compass icon in Site Administration). This is
 because sites without a page are impossible to view. Therfore, before you can
 view your site, you must first create a page for it. To add a page for your
 temporarily invisible site, navigate to the Control Panel &rarr; *Sites* &rarr;
-*Sites* and select the *Actions* icon (![Actions](../../../../images/icon-actions.png))
+*Sites* and select the *Actions* icon (![Actions](../../../images/icon-actions.png))
 and then *Site Administration*. Now your site is selected in the Sites dropdown
 menu, and you can proceed with adding your site's first page. For more
 information about adding pages, see the
@@ -283,7 +283,7 @@ Miscellaneous. You'll learn more about your site's settings in the next section.
 You can access Site Settings by navigating to the Site Administation dropdown
 menu and selecting *Configuration* &rarr; *Site Settings*.
 
-![Figure 4: The Site Settings window offers a plethora of options for your site.](../../../../images/site-settings-overview.png)
+![Figure 4: The Site Settings window offers a plethora of options for your site.](../../../images/site-settings-overview.png)
 
 You'll find options to organize site content, manage site users, and improve
 your site's overall intelligence. You'll explore the Site Settings categories
@@ -510,7 +510,7 @@ Analytics site here:
 To enable Google Analytics support, navigate to the *Analytics* tab in Site
 Settings, which loads a very simple form, pictured below.
 
-![Figure 5: Setting up Google Analytics for your site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.](../../../../images/maintaining-google-analytics.png)
+![Figure 5: Setting up Google Analytics for your site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.](../../../images/maintaining-google-analytics.png)
 
 Enter your Google Analytics ID (which should have been provided to you when you
 signed up for the service) in the field and click *Save*. All the pages in the
