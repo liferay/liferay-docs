@@ -238,16 +238,18 @@ public class CheckImagesTaskDevSite extends Task {
 			return imagePaths;
 		}
 		
-		// Match lines of the form ![...](...)
-		String regex = "!\\[.*\\]\\(.*\\)";
+		// Match lines containing expressions of the form ![...](...)
+		String regex = ".*!\\[.*\\]\\(.*\\).*";
 
 		for (String line : lines) {
 			line = line.trim();
 			
 			if (line.matches(regex)) {
-				int index = line.lastIndexOf("(");
-				
-				line = line.substring(index);
+				int begin = line.lastIndexOf("(");
+				line = line.substring(begin);
+
+				int end = line.indexOf(")");
+				line = line.substring(0, end);
 				
 				line = line.replace("(", "");
 				line = line.replace(")", "");
