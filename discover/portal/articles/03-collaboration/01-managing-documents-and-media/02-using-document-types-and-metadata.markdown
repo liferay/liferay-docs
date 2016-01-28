@@ -1,4 +1,4 @@
-# Using Document Types and Metadata Sets
+# Using Document Types and Metadata Sets [](id=using-document-types-and-metadata-sets)
 
 If you're concerned only with a file's content and are happy with its basic
 built-in metadata, then add the file to Documents and Media as a Basic Document.
@@ -21,7 +21,7 @@ the sets to various Document Types.
 Typically you'll want to specify document metadata fields in a Metadata Set and
 then apply it to a Document Type. So let's start creating a metadata set.
 
-## Creating Metadata Sets
+## Creating Metadata Sets [](id=creating-metadata-sets)
 
 Metadata Sets aggregate metadata fields so you can apply them to Document Types.
 Liferay provides Metadata fields to capture textual, boolean, date, numerical, location,
@@ -152,7 +152,7 @@ consecutive instances of the field to the document's metadata.
 Click *Save* when you're done specifying your new metadata set. Now you can
 apply the metadata set to a new Document Type.
 
-## Creating Document Types
+## Creating Document Types [](id=creating-document-types)
 
 When apply to Document Types enrich your document library files with information
 and integrate them further with Liferay's features. Not only do Document Types

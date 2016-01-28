@@ -1,4 +1,4 @@
-# Publishing Files
+# Publishing Files [](id=publishing-files)
 
 As you create sites, you'll probably want to share files on them. Liferay's
 Documents and Media library (Document Library) let's you upload and publish all
@@ -16,7 +16,7 @@ environments, including your browser, local desktop, and mobile device. We've
 pulled out all the stops to make online file management as easy as possible.
 Let's get the ball rolling by adding files to a Document Libary.
 
-## Adding Files
+## Adding Files [](id=adding-files)
 
 There are several reasons why you might want to upload files to your site. You
 might want to share photos and video files or embed them in web content. Or you
@@ -414,7 +414,7 @@ Party* and added files to it. And just now, you viewed individual file entry
 information and actions. Next, let's explore how you can access Google documents
 from your document libraries.
 
-## Accessing Google Docs
+## Accessing Google Docs [](id=accessing-google-docs)
 
 The Document Library not only lets you upload files but also allows you to
 access files stored in Google applications, such as Google Drive and Google
@@ -437,7 +437,7 @@ key and client ID. The three basic steps are as follows:
 
 Let's start by enabling the Google API Picker in a Google developer project. 
 
-### Step 1: Enable the Google API Picker
+### Step 1: Enable the Google API Picker [](id=step-1-enable-the-google-api-picker)
 
 Liferay uses the *Google API Picker* to access files in Google. 
 
@@ -455,7 +455,7 @@ Liferay uses the API to access Google documents.
 
 Next we'll create credentials to use with the Google API. 
 
-### Step 2: Create Credentials
+### Step 2: Create Credentials [](id=step-2-create-credentials)
 
 1. In the API Manager navigation, click on *Credentials*. 
 
@@ -475,7 +475,7 @@ reference these values as you specify them in Liferay. All that's left is to
 enter the API key and client ID into your Liferay instance's Google Apps
 configuration. 
 
-### Step 3: Configure Liferay's Google Apps Settings
+### Step 3: Configure Liferay's Google Apps Settings [](id=step-3-configure-liferays-google-apps-settings)
 
 To call Google's APIs, you must configure your Liferay instance with your Google
 project's OAuth client ID and public API access key. 
@@ -496,7 +496,7 @@ key as the *Google Apps API Key* value.
 Your Liferay instance is ready to access Google documents from the Document
 Library. 
 
-### Linking to Google Docs
+### Linking to Google Docs [](id=linking-to-google-docs)
 
 In your Document Library, you can create file entries that link to Google
 documents, such as files stored in Google Drive or photos saved to Google. To
@@ -526,7 +526,7 @@ You now know how to access Google docs from your document libraries. Next, let's
 pick up with our Lunar Resort guest photos example as we consider how to display
 files on site pages. 
 
-## Displaying Files
+## Displaying Files [](id=displaying-files)
 
 Once you've uploaded image files and videos to your Document Library, you'll
 probably want to display them in your site. Here are some ways of you can
@@ -690,7 +690,7 @@ clothing and accessories to make a handsome commision.
 Next, we'll step out of the Lunar Resort's Souvenir and Memorabilia group and
 Document Library file collaboration.
 
-## Collaborating on Files
+## Collaborating on Files [](id=collaborating-on-files)
 
 Not only does Liferay's Documents and Media enable you to publish files easily,
 but it also provides a terrific environment for collaborating on documents.
@@ -742,7 +742,7 @@ to check documents out from within the web interface and download them to his
 computer to work on them. Let's follow Tenzing as he produces multiple versions
 of the newsletter. 
 
-### Creating New File Versions
+### Creating New File Versions [](id=creating-new-file-versions)
 
 To prevent other users from accicentally overwriting changes you're making to a
 document, the Document Library allows you to *checkout* the document. The user
@@ -844,7 +844,7 @@ document library to a network drive on her workstation. This lets her edit
 documents without having to meddle with the Lunar Resort site. It's worth
 explaining how they integrated her file manager with the document library. 
 
-### Desktop Access to Documents and Media
+### Desktop Access to Documents and Media [](id=desktop-access-to-documents-and-media)
 
 You can access the Document Library from your computer's file manager via
 WebDAV. WebDAV stands for Web-based Distributed Authoring and Versioning. It's a
@@ -896,7 +896,7 @@ Following Wilma Carwin's demonstration, you've learned how to map your local fil
 manager to a Document Library folder and collaborate on files from your desktop
 environment. 
 
-## Summary
+## Summary [](id=summary)
 
 You've learned the fundamentals of uploading, managing, and collaborating on
 files in your sites. The Document Library integrates each file into Liferay,
