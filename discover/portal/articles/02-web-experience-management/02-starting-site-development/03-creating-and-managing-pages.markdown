@@ -128,6 +128,14 @@ adding pages to, navigate to Site Administration in the Product Menu, select the
 compass icon next to the current site name, and select the site you wish to
 edit.
 
+If you're creating a site with many pages and sub-pages, the side panel view may
+seem constricted. In the Pages menu, you have the option to expand the Pages
+view to allow for more room to work. Select the *Expand* icon
+(![Expand](../../../images/icon-expand.png)) to see a full view of your page
+hierarchy.
+
+![Figure 4: Expanding your page view gives you much more room to visualize your page hierarchy.](../../../images/expand-page-hierarchy.png)
+
 As stated previously, if you ever need to modify the page you've created for
 your site, select the *Edit* icon
 (![Edit Page](../../../images/icon-control-menu-gear.png)) either from the Pages
@@ -155,14 +163,19 @@ are created by developers and are easily installed using the Liferay
 Marketplace. Since we don't have any themes beyond the default one installed
 yet, we'll use the default theme for our pages.
 
-![Figure 2.8: The Look and Feel interface allows you to choose a theme for the current site.](../../../images/04-look-and-feel.png)
+<!-- TODO: Add image of Look and Feel section here when more stable for 7.0:
+[Figure 2.8: The Look and Feel interface allows you to choose a theme for the current site.](../../../images/04-look-and-feel.png)
+-->
 
 Many themes include more than one color scheme. This allows you to keep the
 existing look and feel while giving your site a different flavor. Change the
 color scheme from blue to green by selecting *Dark* under *Color Schemes*. If
-you now go back to the site (by clicking the left arrow in the top left
-corner of the Dockbar), you'll see some parts of the page are now tinged
-with a darker hue. 
+you now go back to the site (by clicking the *Go to Site* button located under
+the Site Administration dropdown menu), you'll see some parts of the page are
+now tinged with a darker hue.
+
+<!-- TODO: Color change may differ for 7.0. Check when Color Schemes are
+reintroduced. -Cody -->
 
 If you apply a color scheme to a set of public or private pages, it is, by
 default, applied to each page in the set. If, however, you click the *Edit Page*
@@ -172,20 +185,18 @@ page only. You can use this feature to choose a different color scheme for a
 particular page than the one defined for the set of public or private pages to
 which it belongs.
 
-<!-- TODO: Check with Julio to see if color scheme setting is still available.
--Cody -->
+<!-- TODO: The Color Schemes option is not currently available for the default
+theme. Checked with Julio and he said color schemes are still available, but not
+for the current default theme. He's requesting different color schemes be added
+before the 7.0 release so the options are available by default (instead of only
+with custom themes. Therefore, I'm leaving the docs here assuming this gets
+finished. Need to confirm -Cody -->
 
 There are a few more configurable settings for your theme. You can switch the
 bullet style between dots and arrows and you can choose whether or not to show
-application borders by default.
-
-<!-- the ability to modify themes for regular browsers and mobile devices
-can now only be accomplished using Mobile Device Rules, which can be found in
-the right menu. -->
-
-The *CSS* section allows you to enter custom CSS that will also be served up by
-your theme. In this way, you can tweak a theme in real time by adding new styles
-or overriding existing ones. 
+application borders by default. The *CSS* section allows you to enter custom CSS
+that will also be served up by your theme. In this way, you can tweak a theme in
+real time by adding new styles or overriding existing ones.
 
 The next option configures the logo that appears for your site. 
 
@@ -193,10 +204,10 @@ The next option configures the logo that appears for your site.
 
 By default, the Liferay logo is used for your site pages' logo. If you want to
 use your own logo for a specific site, use the *Logo* tab. Adding a custom logo
-is easy: select the *Logo* tab from the *Edit Public Pages* interface and browse to the
-location of your logo. Make sure your logo fits the space in the top left corner
-of the theme you're using for your web site. If you don't, you could wind up
-with a site that's difficult to navigate, as other page elements are pushed
+is easy: select the *Logo* tab from the *Edit Public Pages* interface and browse
+to the location of your logo. Make sure your logo fits the space in the top left
+corner of the theme you're using for your web site. If you don't, you could wind
+up with a site that's difficult to navigate, as other page elements are pushed
 aside to make way for the logo.
 
 In the logo tab, you can also choose whether or not to display the site name on
@@ -223,34 +234,32 @@ site's JavaScript and you can add some dynamic features to your site's pages.
 Next, you'll look at an advanced feature of the *Edit Page* interface: merging
 the current site's pages with the pages of the default site.
 
-<!-- Left off here. -->
+### Merging Pages From Other Sites
 
-### Advanced
-
-If you click on *Advanced* from the Site Pages interface for a public page set,
-you'll find an option to merge the public pages of your portal's default site
-with the public pages of the current site. If you enable this option, the pages
-of the default site appear in the current site's navigation bar, along with the
-current site's pages. Also, the pages of the current site appear in the
-navigation bar of the default site, along with the default site's pages. This
-"merging" of pages only affects the list of pages in the default site's and the
-current site's *navigation bars*. This allows users to more easily navigate
-from the current site to the default site, and vice versa. This option can be
-enabled for the public pages of both personal sites and regular sites.
+If you click on *Advanced* from the Edit Public Pages interface, you'll find an
+option to merge the public pages of your instance's default site with the public
+pages of the current site. If you enable this option, the pages of the default
+site appear in the current site's navigation bar, along with the current site's
+pages. Also, the pages of the current site appear in the navigation bar of the
+default site, along with the default site's pages. This "merging" of pages only
+affects the list of pages in the default site's and the current site's
+*navigation bars*. This allows users to more easily navigate from the current
+site to the default site, and vice versa. This option can be enabled for the
+public pages of both personal sites and regular sites.
 
 Note that this "merging" of pages is not a "hard merge". For example, suppose
-that the site administrators of twenty different sites on your portal all
-enabled the *Merge default site's public pages* option. Would the pages of all
-these different sites be merged into each site's navigation bar? No, that would
-make a mess! Instead, the portal keeps track of the current `scopeGroupId` (the
-ID of the current site) and the previous `scopeGroupId` (the ID of the
+that the site administrators of twenty different sites on your Liferay instance
+all enabled the *Merge default site's public pages* option. Would the pages of
+all these different sites be merged into each site's navigation bar? No, that
+would make a mess! Instead, Liferay keeps track of the current `scopeGroupId`
+(the ID of the current site) and the previous `scopeGroupId` (the ID of the
 previously visited site). If the *Merge default site's public pages* option is
 enabled for either the current site or the previous site, the pages of the
 default site are merged in the pages of the other site.
 
-For example, suppose that your portal has three sites: the default site, site A,
+For example, suppose that your Liferay instance has three sites: the default site, site A,
 and site B. All three sites have some public pages. Site A has the *Merge
-default site's public pages* option enabled, site B does not. When a user first
+default site's public pages* option enabled; site B does not. When a user first
 logs in, he's directed to the default site. The `scopeGroupId` is that of the
 default site and there is no previous `scopeGroupId`, so no additional pages
 appear in the default site's navigation bar. Then suppose the user navigates to
@@ -267,9 +276,17 @@ enabled, no additional pages are added to the default site's navigation menu.
 ### Rendering Pages for Mobile Devices
 
 You can configure your page set for mobile devices by selecting the *Mobile
-Device Rules* option. The set up for this option is explained in the
+Device Rules* option. The ability to modify themes for regular browsers and
+mobile devices can only be accomplished by using this option. Mobile device
+rules are inherited from your Public Pages, but you can define specific rules
+per page. With the ability to define different rules per page, you can edit the
+Look and Feel of specific pages for mobile devices, including the theme.
+
+<!-- Add following sentence when this section is available (DXP only app) -Cody:
+The set up for this option is explained in the
 [Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-0/displaying-site-pages-to-mobile-devices)
 section.
+-->
 
 ### Configuring Rules for Virtual Hosting
 
@@ -284,7 +301,7 @@ If you select the *Sitemap* option from the Site Pages interface for a page set,
 you can send a sitemap to some search engines so they can crawl your site. It
 uses the sitemap protocol, which is an industry standard. You can publish your
 site to Yahoo or Google and their web crawlers will use the sitemap to index
-your site. Liferay Portal makes this very simple for administrators by
+your site. Liferay makes this very simple for administrators by
 generating the sitemap XML for all public web sites.
 
 By selecting one of the search engine links, the sitemap will be sent to them.
@@ -292,44 +309,21 @@ It's only necessary to do this once per site. The search engine crawler will
 periodically crawl the sitemap once you've made the initial request.
 
 If you're interested in seeing what is being sent to the search engines, select
-the *Preview* link to see the generated XML.
+the *preview* link to see the generated XML.
 
-Next, you'll learn how to add portlets to your site pages.
+<!--
+When configuring indiviual pages, you have several other options available. You
+can categorize pages using tags and categories, which groups the page with other
+similar assets such as web content, blogs, wikis, etc. This helps the page be
+returned in search results. You also have the ability to include meta tags for
+pages, which describes the contents of a page. You can also manage the embedded
+applications on your page, according to the page template the page was built
+from. Lastly, you have customization settings which let you set whether areas on
+your page should be customizable by users with the appropriate permissions to do
+so.
+-->
 
-## Adding Portlets to a Page
-
-As we discussed earlier, Liferay Portal pages are composed of portlets. All of
-your site's functionality, from blogs to shopping, is composed of portlets. Even
-static web content can be displayed through Web Content Display portlets. To add
-a portlet to a page, just click the *Add* button from the bottom menu and
-select the *Applications* tab. You can either browse through the categories of
-available portlets until you find the one you're looking for or you can search
-for portlets by name. Once you've found a portlet, click the *Add* button to add
-it the current page. Once it's been added to the page, you can drag it to a new
-position. Alternatively, you can drag the portlet directly from the Applications
-menu to a specific location on the page. Follow the steps below to add some
-Collaboration portlets to the Lunar Resort site.
-
-1. From the bottom menu, select *Add* &rarr; *Applications*.
-2. In the menu that appears, expand the *Collaboration* category.
-3. Drag the *Blogs Aggregator* portlet off the Add Application window onto the
-   right column of our page.
-4. Next, drag the *Wiki* portlet to the *left column*.
-
-See how easy it is to add applications to your pages? You've added the Wiki
-portlet and Blogs Aggregator portlet to the Community page. 
-
-![Figure 2.12: Yeah, we're showoffs. But as you can see, your page layout options are virtually limitless.](../../../images/04-web-content-portlet-layout.png)
-
-It's easy to make your pages look exactly the way you want them to. If the
-default layout options provided aren't enough, you can even develop your own.
-To find more information about developing custom layout templates, please refer
-to the [Creating a Layout Template Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-layout-template-project-in-the-plugins-sdk)
-tutorial. 
-
-<!-- TODO: Replace link above. -Cody -->
-
-Next, you'll examine how to customize individual pages.
+Next, you'll learn how to customize individual site pages.
 
 ## Customizing Pages
 
@@ -354,20 +348,19 @@ You can explore ways to tag and categorize your page by clicking the
 *Categorization* tab. These tools help administrators organize the page and
 allows for users to easily find your page and its content through search and
 navigation. For more information on using tags and categories, visit the
-[Tagging and Categorizing Content](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/tagging-and-categorizing-content)
+[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 section.
-
-<!-- TODO: replace link above. -Cody -->
 
 #### Custom Fields
 
 *Custom Fields* lets you edit the custom fields you already have configured for
-the *Page* resource. If you don't have any custom fields configured for the Page
-resource, you can navigate to the Control Panel &rarr; *Custom Fields* located
-under the *Configuration* tab. These are metadata about the page and can be
-anything you like, such as author or creation date. For more information on
-Custom Fields, see the
-[Custom Fields](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/custom-fields)
+the *Page* resource. If you don't have any custom fields configured in your
+site, this option is not available. If you don't have any custom fields
+configured for the Page resource, you can navigate to the Control Panel &rarr;
+*Custom Fields* located under the *Configuration* tab. These are metadata about
+the page and can be anything you like, such as author or creation date. For more
+information on Custom Fields, see the
+[Custom Fields](/discover/portal/-/knowledge_base/6-2/custom-fields)
 section.
 
 <!-- TODO: replace link above. -Cody -->
@@ -384,7 +377,7 @@ The first option you're given (and the default option selected when customizing
 an indiviual page) is *Details*. This option lets you name the page for any
 localizations you need, set whether the page is hidden on the navigation menu,
 set an easy to remember, friendly URL for the page, and select the page type.
-Plus you can specify how portlets are arranged on a page. Choose from the
+Plus you can specify how apps are arranged on a page. Choose from the
 available installed templates to modify the layout. It's very easy for
 developers to define custom layouts and add them to the list. This is covered
 more thoroughly in the
@@ -398,10 +391,8 @@ tutorial.
 The *Look and Feel* option lets you set a page-specific theme. You can inherit
 what you already have configured for your page sets' theme, or you can uniquely
 define them per page. You can see the Page Set's
-[Customizing the Look and Feel of Site Pages]()
+[Customizing the Look and Feel of Site Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages)
 section for more details.
-
-<!-- TODO: replace link above. -Cody -->
 
 #### Mobile Device Rules
 
@@ -417,36 +408,14 @@ section.
 #### Embedded Portlets
 
 This option only appears if you have embedded one or more portlets on
-the page. To embed a portlet on a page, first look up its portlet name in
-Liferay's `WEB-INF/portlet-custom.xml` file. Portlet names in
-`portlet-custom.xml` are sometimes referred to as portlet IDs. What we usually
-mean by "portlet names," `portlet-custom.xml` refers to as "display names".
-Next, add a web content display content to the page, create a new web content
-article, switch to source, and paste in the following:
+the page. Previous to Liferay 7.0, you were able to embed portlets on a page by
+acquring their portlet ID and using a `runtime-portlet` tag in the Web Content
+Display app to embed a portlet on a page. This is no longer possible.
 
-	<runtime-portlet name="" />
-
-Then add the portlet name (ID) inside of the quotation marks, publish the web
-content article, and select the article in the web content display portlet. Once
-you've selected the new web content article, the embedded portlet appears on the
-page.
-
-+$$$
-
-**Note:** Usually, you don't want the web content display portlet that you're
-using to embed a portlet to be visible. To make the web content display portlet
-invisible, click on the gear icon of the web content display portlet, select
-*Look and Feel*, set *Show Borders* to *No*, and click *Save*. Once you've
-refreshed the page, only the embedded portlet will be visible.
-
-$$$
-
-<!-- TODO: This is the way to do it for 6.2. I'm fairly certain this needs to be
-changed for 7.0. I'm in the process of contacting the WEM team for details on
-how this should be updated. -Cody -->
-
-Liferay provides an alternative way to embed portlet on a page layout or theme
-programatically. If you're interested in learning more about this, visit the
+Applications can now be embedded on a page via web content template. To learn
+more about this, see the [Adding Templates](/discover/portal/-/knowledge_base/7-0/designing-uniform-content#adding-templates)
+section. Also, you can embed a portlet on a page layout or theme programtically.
+If you're interested in learning more about this, visit the
 [Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
 tutorial.
 
@@ -497,10 +466,8 @@ your site's JavaScript code remains in one place.
 
 This configuration option is also available for page sets like Public Pages and
 Private Pages. Visit the
-[Executing JavaScript in Site Pages]()
+[Executing JavaScript in Site Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#executing-javascript-in-site-pages)
 section for more information on doing this for page sets.
-
-<!-- TODO: replace link above. -Cody -->
 
 #### Advanced
 
@@ -510,6 +477,42 @@ templates, which you'll see in the next chapter. You can set a target for the
 page so that it either pops up in a particularly named window or appears in a
 frameset. And you can set an icon for the page that appears in the navigation
 menu.
+
+Next, you'll practice personalizing pages using page customizations!
+
+## Adding Portlets to a Page
+
+As we discussed earlier, Liferay pages are composed of applications. All of your
+site's functionality, from blogs to shopping, is composed of apps. Even static
+web content can be displayed through Web Content Display apps. To add an app to
+a page, just click the *Add* button
+(![Add](../../../images/icon-control-menu-add.png)) from the top menu and select
+the *Applications* tab. You can either browse through the categories of
+available apps until you find the one you're looking for or you can search for
+apps by name. Once you've found an app, click the *Add* button to add it to the
+current page. Once it's been added to the page, you can drag it to a new
+position. Alternatively, you can drag the app directly from the Applications
+menu to a specific location on the page. Follow the steps below to add some
+Collaboration apps to the Lunar Resort site.
+
+1. From the top menu, select *Add* &rarr; *Applications*.
+2. In the menu that appears, expand the *Collaboration* category.
+3. Drag the *Blogs Aggregator* app from the Add Application window to the right
+   column of your page.
+4. Next, drag the *Wiki* app to the left column.
+
+See how easy it is to add applications to your pages? You've added the Wiki
+app and Blogs Aggregator app to a page. 
+
+![Figure 6: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../images/app-layout-design.png)
+
+It's easy to make your pages look exactly the way you want them to. If the
+default layout options provided aren't enough, you can even develop your own.
+To find more information about developing custom layout templates, please refer
+to the [Creating a Layout Template Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-layout-template-project-in-the-plugins-sdk)
+tutorial. 
+
+<!-- TODO: Replace link above. -Cody -->
 
 Next, you'll practice personalizing pages using page customizations!
 
