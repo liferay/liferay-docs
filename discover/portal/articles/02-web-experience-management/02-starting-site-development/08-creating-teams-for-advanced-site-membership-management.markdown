@@ -2,7 +2,7 @@
 
 If you have an ad hoc group of users who perform the same set of tasks in a
 site, you can organize them into Site Teams. Site administrators can assign
-these teams permissions for various site-specific functions. Site Teams are the
+these team's permissions for various site-specific functions. Site Teams are the
 preferred method for collecting permissions within a single site. Some common
 functions to assign a Site Team include:
 
@@ -28,6 +28,8 @@ multiple sites or organizations in your Liferay instance, consider aggregating
 the users into a [User Group](/discover/portal/-/knowledge_base/6-2/user-groups)
 and assigning the User Group permissions via
 [Roles](/discover/portal/-/knowledge_base/6-2/roles-and-permissions).
+
+<!-- Update links above to 7.0, when available. -Cody -->
 
 $$$
 

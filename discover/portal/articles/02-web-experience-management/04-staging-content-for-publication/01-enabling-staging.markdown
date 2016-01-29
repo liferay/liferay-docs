@@ -14,7 +14,7 @@ environment.
 When Remote Live staging is enabled for a site, a connection is established
 between the current site and another site on a remote Liferay server. The remote
 site becomes the live environment and the current site becomes the staging
-environment--an instance of Liferay Portal used solely for staging. Content
+environment--an instance of Liferay used solely for staging. Content
 creators can use the staging server to make their changes while the live server
 handles the incoming user traffic. When changes to the site are ready to be
 published, they are pushed over the network to the remote live server. Whether
@@ -25,63 +25,65 @@ So when should you use Local Live staging and when should you use Remote Live
 Staging? Local Live staging allows you to publish site changes very quickly,
 since the staged and live environments are on the same server. It's also easier
 to switch between the staged and live environments using Local Live staging.
-However, since the staged content is stored in the same database as the
+Since the staged content, however, is stored in the same database as the
 production content, the content isn't as well protected or backed up as with
-Remote Live staging. Also, you can't install new versions of portlets for
-testing purposes in a Local Live staging environment since only one version of a
-portlet can be installed at any given time on a single Liferay server.
+Remote Live staging. Also, you can't install new versions of apps for testing
+purposes in a Local Live staging environment, since only one version of an app
+can be installed at any given time on a single Liferay server.
 
 With Remote Live staging, your staging and live environments are hosted on
-separate servers. This allows you to deploy new versions of portlets and
-content to your staging environment without worrying about interfering with your
-live environment. With Remote Live staging, you can also use one Liferay
-instance as the staging server for multiple production servers. However,
-publishing is slower with Remote Live than with Local Live since data needs to
-be transferred over a network. And, of course, you need more hardware to run a
-separate staging server.
+separate servers. This lets you deploy new versions of apps and content to your
+staging environment without worrying about interfering with your live
+environment. With Remote Live staging, you can also use one Liferay instance as
+the staging server for multiple production servers. However, publishing is
+slower with Remote Live than with Local Live since data needs to be transferred
+over a network. And, of course, you need more hardware to run a separate staging
+server.
 
 ## Enabling Local Live Staging
 
-Site administrators can enable Staging for a site via the Site Settings UI. To
-reach this interface, navigate to the *Site Administration* &rarr;
-*Configuration* page of your site, make sure *Site Settings* is highlighted in
-the left menu, and click on *Staging* listed under the Advanced tab. Under
-Staging Type, select either *Local Live* or *Remote Live* and additional options
-appear. Staging allows changes to be made in a staging environment so that work
-can be reviewed, possibly using a workflow, before it's published to a live
-site. Enabling Local Live staging is easy. Just select *Local Live* and decide
-whether you'd like to enable page versioning. You can enable page versioning on
-a site's public pages, private pages, both, or neither. Page versioning allows
-you to work in parallel on different versions of pages and maintains a history
-of all page modifications. You'll learn about page versioning in more detail
-below.
+Site administrators can enable Staging for a site by navigating to the *Site
+Administration* &rarr; *Publishing Tools* menu and selecting *Staging*. A new
+page loads where you can select the staging type, either *Local Live* or *Remote
+Live*, after which additional options appear. Staging allows changes to be made
+in a staging environment so that work can be reviewed, possibly using a
+workflow, before it's published to a live site. Enabling Local Live staging is
+easy. Just select *Local Live* and decide whether you'd like to enable page
+versioning and what app data will be included on the staging site. 
+
+You can enable page versioning on a site's public pages, private pages, both, or
+neither. Page versioning allows you to work in parallel on different versions of
+pages and maintains a history of all page modifications. You'll learn about page
+versioning in more detail below.
 
 To get some hands-on experience with enabling Local Live staging, you can
 complete a brief example which creates a Local Live staging environment for the
-Lunar Resort home page. Before beginning, you'll need to add a new page. Click
-*Add &rarr; Page* from the left side menu in the default site and name the new
-page *News and Events*. Next, click *News and Events* to view the page. Then add
-the Alerts and Announcements portlets to the News and Events page.
+Lunar Resort home page. Before beginning, you'll want to add a new page.
+Navigate to the Pages menu in the Lunar Resort's Site Administration menu and
+add a new page named *News and Events*. Next, click *News and Events* to view
+the page. Then add the Alerts and Announcements apps to the News and Events
+page. Navigate to the Staging menu under Publishing Tools, select *Local Live*,
+and click *Save*. You've officially begun the staging process.
 
 When you activate staging Local Live staging, Liferay creates a clone of your
-site. This clone became the staging environment. Because of this, we recommend
-only activating staging on new, clean sites. Having a few pages and some
-portlets (like those of the example site we've created) is no big deal. However,
-if you have already created a large amount of content you might not be able to
+site. This clone became the staging environment. Because of this, it is
+recommended to only activate staging on new, clean sites. Having a few pages and
+some apps (like those of the example site you created) is no big deal. However,
+if you have already created a large amount of content, you might not be able to
 enable staging on that site. Also, if you intend to use page versioning to track
-the history of updates to your site, we recommend that you enable it as early as
-possible, *before* your site has many pages and lots of content. Your site's
-update history won't be saved until you enable page versioning. Page versioning
-requires staging (either Local Live or Remote Live) to be enabled.
+the history of updates to your site, it's recommended that you enable it as
+early as possible, *before* your site has many pages and lots of content. Your
+site's update history won't be saved until you enable page versioning. Page
+versioning requires staging (either Local Live or Remote Live) to be enabled.
 
-Now you're ready to activate staging for this site. Go to *Admin* &rarr; *Site
-Administration* &rarr; *Configuration* &rarr; *Site Settings* and select 
-*Staging* from under the *Advanced* heading. We'll assume you don't have a 
-separate staging server, so select the *Local Live* staging type. If you do have
-a separate server to use for staging, follow the instructions in the previous
-section for configuring it and your local server for remote staging. Either
-way, once you make a selection (either *Local Live* or *Remote Live*), more
-options become available for page versioning and staged portlets.
+If you ever need to turn off the staging environment, return back to *Staging*
+from the Publishing Tools dropdown. The processes you've created are displayed
+by default. Navigate to the *Options* icon
+(![Options](../../../images/icon-options.png)) from the upper right corner of
+the page and select *Staging Configuration*. Select the *None* radio button to
+turn Local Live staging off.
+
+Next you'll learn about enabling Remote Live staging.
 
 ## Enabling Remote Live Staging
 
@@ -156,13 +158,12 @@ Once you've chosen a key, make sure that value of your current server matches
 the value of your remote server.
 
 Remember to restart both Liferay servers after making these portal properties
-updates. After restarting, log back in to your local Liferay portal instance as
-a site administrator. Then navigate to the *Site Administration* &rarr;
-*Configuration* page for your site. Next, click on *Site Settings* in the left
-menu and then on *Staging* listed under the Advanced tab. Select *Remote Live*
-under Staging Type and additional options appear.
+updates. After restarting, log back in to your local Liferay instance as
+a site administrator. Then navigate to the *Publishing Tools* option in Site
+Administration and select *Staging*. Select *Remote Live* and additional options
+appear.
 
-![Figure 3.20: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../../images/remote-live-staging-settings.png)
+![Figure 1: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../../images/remote-live-staging-settings.png)
 
 First, enter your remote Liferay server's IP address into the Remote Host/IP
 field. If the remote Liferay server is a cluster, you can set the Remote Host/IP
@@ -175,11 +176,11 @@ Liferay server that will be used for the Live environment. If a site hasn't
 already been prepared for you on the remote Liferay server, you can log in to
 the remote Liferay server and create a new blank site. After the site has been
 created, note the site ID so you can enter it into the Remote Site ID field on
-your local Liferay server. You can find any site's ID by selecting *Actions
-&rarr; Edit* next to the site's name on the Sites page of the Control Panel.
-Finally, it's best to check the *Use a Secure Network Connection* field to use
-HTTPS for the publication of pages from your local (staging) Liferay server to
-your remote (live) Liferay server.
+your local Liferay server. You can find any site's ID by selecting the site's
+name on the Sites page of the Control Panel. Finally, it's best to check the
+*Use a Secure Network Connection* field to use HTTPS for the publication of
+pages from your local (staging) Liferay server to your remote (live) Liferay
+server.
 
 +$$$
 
@@ -192,8 +193,8 @@ remote staging server:
 You can check this issue to see if it's been resolved and to find out which
 versions of Liferay it affects.
 
-<!-- Check into this issue, and find out if there is still a 2G limit for data
-publishing. -Cody -->
+<!-- TODO: Check into this issue, and find out if there is still a 2G limit for
+data publishing. -Cody -->
 
 $$$
 
@@ -215,32 +216,29 @@ that match a selected few on the local server. However, the more user accounts
 that you have to create, the more tedious this job becomes and the more likely
 you are to make a mistake. And you not only have to create identical user
 accounts, you also have to ensure that these users have identical permissions.
-For this reason, we recommend that you use LDAP to copy selected user accounts
-from your local (staging) Liferay server to your remote (live) Liferay server.
-Liferay's Virtual LDAP Server application (EE-only), available on Liferay
-Marketplace, makes this easy.
-
-Next, you'll learn how to configure your portal to use IPv6 addresses for
-Remote Live Staging. 
+For this reason, it's recommended that you use LDAP to copy selected user
+accounts from your local (staging) Liferay server to your remote (live) Liferay
+server. Liferay's Virtual LDAP Server application (EE-only), available on
+Liferay Marketplace, makes this easy.
 
 +$$$
 
-**Important:** If your portal is set up to validate IPv6 addresses, you'll need
-to configure your Remote Live Connection Settings. Restart your Liferay instance
-and navigate back to the Staging page. Select the *Remote Live* radio selector
-and specify the fields for your remote site. The *Remote Host/IP* field should
-match the host you specified as your `tunnel.servlet.hosts.allowed` property in
-the `portal-ext.properties` file (e.g., *[0:0:0:0:0:0:0:1]*). Make sure to
-include the brackets. Fill in the rest of the information relevant to your site
-and click *Save*. 
+**Important:** If your instance is set up to validate IPv6 addresses, you'll
+need to configure your Remote Live Connection Settings. Restart your Liferay
+instance and navigate back to the Staging page. Select the *Remote Live* radio
+selector and specify the fields for your remote site. The *Remote Host/IP* field
+should match the host you specified as your `tunnel.servlet.hosts.allowed`
+property in the `portal-ext.properties` file (e.g., *[0:0:0:0:0:0:0:1]*). Make
+sure to include the brackets. Fill in the rest of the information relevant to
+your site and click *Save*.
 
-To check if the remote site is running on an IPv6 address, add a new portlet to
-the staged site, and then select *Staging* &rarr; *Publish to Remote Live* from
-the Dockbar. The changes are published to your remote staged site. 
+To check if the remote site is running on an IPv6 address, add a new application
+to the staged site, and then select *Staging* &rarr; *Publish to Live* from the
+top Control Menu. The changes are published to your remote staged site.
 
 $$$
 
-Next, you'll learn how to enable page versioning and staged portlets.
+Next, you'll learn how to enable page versioning and staged apps.
 
 ## Enabling Page Versioning and Staged Content
 
@@ -253,13 +251,13 @@ it's important to quickly publish a fix. If you're following the Lunar Resort
 example, check *Enabled On Public Pages* to enable page versioning for the
 Lunar Resort site and then click *Save*.
 
-![Figure 3.21: You can decide to use versioning and choose what content should be staged.](../../../images/04-web-content-staging.png)
+![Figure 2: You can decide to use versioning and choose what content should be staged.](../../../images/staging-page-versioning-staged-content.png)
 
 Choosing content to be staged may sound self-explanatory, but content must have
-specific attributes in Liferay Portal to use it in a staged environment. Content
-or an entity should be site-scoped, so they are always part of a site;
-otherwise, they are not eligible for staging. Liferay Portal supports the
-following content groups for staging, by default:
+specific attributes in Liferay to use it in a staged environment. Content or an
+entity should be site-scoped, so they are always part of a site; otherwise, they
+are not eligible for staging. Liferay supports the following content groups for
+staging, by default:
 
 - Application Display Templates
 - Blogs
@@ -274,40 +272,40 @@ following content groups for staging, by default:
 - Web Content
 - Wiki
 
-<!-- Below content is additional info that we can add for each supported
-portlet. These will need to be incorporated into the list above, once we can
-explain more about the other supported portlets, as well. -Cody
+<!-- Below content is additional info that we can add for each supported app.
+These will need to be incorporated into the list above, once we can explain more
+about the other supported apps, as well. -Cody
 
 - Blogs
     - *Referenced content:* see web content for details
 - Web Content
-    - *Referenced content:* web content can reference different other entities in
-    the Liferay portal. Structures, templates for the most obvious examples, but
-    it can reference images too from the portal�s document library. Staging can
-    exclude some of these content during publication or export to speed up the
-    process. These references although will be validated during the publish
-    process or an import so the images has to be published or imported first.
-    - *Version history:* The portal keeps a version history of the web content
+    - *Referenced content:* web content can reference different other entities
+    in the Liferay. Structures and templates for the most obvious examples, but
+    it can reference images too from the portal's document library. Staging can
+    exclude some of this content during publication or export to speed up the
+    process. These references will be validated during the publish process or an
+    import so the images has to be published or imported first.
+    - *Version history:* The instance keeps a version history of the web content
     articles. In some cases these versions are needed if the latest version gets
-    expired, and for example the latest version is not visible to the end users
-    yet. But if the version history is not utilized it can be turned off for
-    publishing thus making the process faster.
+    expired (e.g., the latest version is not visible to the end users yet). If
+    the version history is not utilized, it can be turned off for publishing,
+    thus making the process faster.
 - Documents and Media
     - *Previews and Thumbnails:* previews and thumbnails are automatically
-    generated on the portal instance. Although they can be published to the live
-    site as well, we should be careful about this option. Imagine a scenario
-    where a site has approximately 4000 images or documents. If the previews and
-    thumbnails are turned on this could end up in 28000 physical files on the
-    disk. If staging is set up to publish the previews and thumbnails this would
-    mean that instead of taking care of the 4000 images it will process 7 times
-    more files! If we still want to use the previews on our live environment we
-    can set up that Liferay instance to generate them automatically. It depends
-    on our environment if we can use the publishing of the previews and
-    thumbnails. Publishing them is an IO heavy operation, and also we have to
-    transfer the LAR file over the network if we use remote staging. If we
-    decide to generate them on the live site we have to take into consideration
-    that this will take some time on the live server and this is also a CPU
-    intense operation as well.
+    generated on the Liferay instance. Although they can be published to the
+    live site as well, you should be careful about this option. Imagine a
+    scenario where a site has approximately 4000 images or documents. If the
+    previews and thumbnails are turned on, this could end up in 28000 physical
+    files on the disk. If staging is set up to publish the previews and
+    thumbnails, this would mean that instead of taking care of the 4000 images,
+    it will process 7 times more files! If you still want to use the previews on
+    your live environment, you can set up that Liferay instance to generate them
+    automatically. It depends on your environment for whether you can use the
+    publishing of the previews and thumbnails. Publishing them is an IO heavy
+    operation, and also you have to transfer the LAR file over the network if
+    you use remote staging. If you decide to generate them on the live site, you
+    have to take into consideration that this will take some time on the live
+    server, and is also a CPU intense operation.
 - Generic options
     - *Comments:* The portal has the ability to provide a commenting framework
     for several entities such as Web Content Articles, or Blog entries. These
@@ -318,7 +316,7 @@ explain more about the other supported portlets, as well. -Cody
     cache hits, eventually making the process faster.
     - *Ratings:* For this option the same behavior applies as for the comments
     - *Deletions:* Staging is gathering deletions (including trashed entities) in
-    a site. These deletions can be published to clean up the live site. If it�s
+    a site. These deletions can be published to clean up the live site. If it's
     not a problem to have lingering data on the live, or it is going to be
     processed later, this can be turned off as well to save execution time
     during the process.
@@ -326,11 +324,11 @@ explain more about the other supported portlets, as well. -Cody
 
 Before you activate staging, you can choose which of these applications' data
 you'd like to copy to staging. You'll learn about many of the collaboration
-portlets listed under the Staged Portlets heading when we come to the
+apps listed under the Staged Portlets heading when you read the
 [Collaboration Suite](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
 chapter. For now, you just need to be aware that you can enable or disable
 staging for any of these applications. Why might you want to enable staging for
-some application types but not others? In the case of collaborative portlets,
+some application types but not others? In the case of collaborative apps,
 you probably *don't* want to enable staging since such applications are designed
 for user interaction. If their content were staged, you'd have to manually
 publish your site whenever somebody posted a message on the message boards to
@@ -339,11 +337,14 @@ be staged because end users aren't creating that kind of content--web content is
 the stuff you publish to your site. But applications like the Message Boards or
 Wiki would likely benefit from *not* being staged. Notice which applications are
 marked for staging by default: if you enable staging and accept the defaults,
-staging is *not* enabled for the collaborative portlets.
+staging is *not* enabled for the collaborative apps.
 
-The listed applications, or content groups, contain one or more specific
-entities. For example, selecting the Web Content application does not mean
-you're only selecting web content itself, but also web content folders.
+<!-- TODO: Update Collaboration Suite chapter to 7.0 equivalent, when available.
+-Cody -->
+
+The listed applications, or content groups, contain one or more specific entity.
+For example, selecting the Web Content application does not mean you're only
+selecting web content itself, but also web content folders.
 
 Certain content types can be linked together and can reference each other on
 different levels. One of the responsibilities of staging is to discover and
@@ -351,18 +352,16 @@ maintain these references when publishing. Site administrators and content
 creators have control over the process on different levels: staging can be
 enabled for a content group and a content group can be selected for publication.
 
-Besides managing the portlet-specific content, the portal also operates with
-several special content types such as pages or users. For instance, pages are a
-part of the site and can reference other content types, but in a special
-way. The page references portlets, which means publishing a page also implies
-publishing its portlets.
-
+Besides managing the app-specific content, Liferay also operates with several
+special content types such as pages or users. For instance, pages are a part of
+the site and can reference other content types, but in a special way. The page
+references apps, which means publishing a page also implies publishing its apps.
 The content gives the backbone of the site; however, content alone is useless.
-To display content to the end user, you'll need portlets as the building blocks
-for your site.
+To display content to the end user, you'll need apps as the building blocks for
+your site.
 
 Before you begin exploring the Staging UI, it's important to understand the
-publishing process for Staging, and making informed decisions so you use the
+publishing process for staging, and making informed decisions so you use the
 staging environment efficiently and effectively.
 
 ## Publishing Staged Content Efficiently
@@ -375,7 +374,7 @@ decisions about how you want to publish your site's content.
 ### Understanding the Publication Process
 
 In simple terms, publication is the process where all content, referenced
-content, portlets and their preferences, pages, users, etc. is transferred from
+content, apps and their preferences, pages, users, etc. are transferred from
 the staging scope to the live site. If you've enabled remote staging, this
 process involves network communication with another remote site. From a low
 level perspective, staging is an equivalence relation where entities are being
@@ -384,11 +383,11 @@ of the staging publication process in three phases: export, validation, and
 import. These parts are executed sequentially.
 
 During the export phase, the publication configuration is processed, which
-defines the site's contents and portlets. This phase also gathers the obligatory
+defines the site's contents and apps. This phase also gathers the obligatory
 referenced entities that will be required on the live site. Then everything
-according to the publication parameters has been processed into the portal's own
-file format, and that file has been stored locally or transferred to the remote
-live portal instance.
+according to the publication parameters has been processed into the instance's
+own file format, and that file has been stored locally or transferred to the
+remote live Liferay instance.
 
 Next, the validation phase determines if it's possible to start the import
 process. This phase verifies the file's version and its integrity, checks for
@@ -396,9 +395,8 @@ additional system information like language settings, and validates there is no
 missing content.
 
 Lastly, the import phase makes any necessary updates or additions to the site's
-content, layouts, and portlets according to the publishing parameters. If
-everything is verified and correct, the staged content is published to your live
-site.
+content, layouts, and apps according to the publishing parameters. If everything
+is verified and correct, the staged content is published to your live site.
 
 A crucial factor for successfully publishing staged content is data integrity.
 If anything is not successfully verified during the publication process, all
@@ -412,37 +410,36 @@ a seamless staging experience.
 
 ### Planning Ahead for Staging
 
-Staging is a complex subsystem of Liferay Portal that is designed to be flexible
-and scalable. Before advanced users and administators begin using it for their
-site, it's important to plan ahead and remember a few tips for a seamless
-process. There are several factors to evaluate.
+Staging is a complex subsystem of Liferay that is designed to be flexible and
+scalable. Before advanced users and administators begin using it for their site,
+it's important to plan ahead and remember a few tips for a seamless process.
+There are several factors to evaluate.
 
 The most obvious factor is the content itself, including its amount, type, and
 structure. Depending on the content you'd like to use in your site, you can turn
 on staging for only the necessary content types, and leave others turned off to
 avoid unnecessary work. Publication can also be configured to publish only
-certail types of content.
+certain types of content.
 
 The next factor to consider is the hardware environment. You should plan your
-enviornment according to the content types you're using. If you site operates on
-large images and video files, you should contemplate whether to use a shared
+environment according to the content types you're using. If your site operates
+on large images and video files, you should contemplate whether to use a shared
 network drive. For example, storing many large images in the Document Library
-usually requires for a faster network or local storage. If you're dealing with
-web content, however, these are usually smaller and take up very little disk
-space.
+usually requires a faster network or local storage. If you're dealing with web
+content, however, these are usually smaller and take up very little disk space.
 
-Lastly, the third major factor is possible customizations and custom logic for
-your staging environment. Your organization's business logic is most likely
-implemented in a portlet, and if you want to support staging for that portlet,
-you'll need to write some code to accomplish this. You can also consider
-changing default UI settings by writing new JSP code, if you want your staging
+The third major factor is possible customizations and custom logic for your
+staging environment. Your organization's business logic is most likely
+implemented in an app, and if you want to support staging for that app, you'll
+need to write some code to accomplish this. You can also consider changing
+default UI settings by writing new JSP code, if you want your staging
 environment's look and feel to change.
 
 Once you've finished planning for your site, it is advised to turn on staging at
 the very beginning of the site creation process. This allows the site creator to
 avoid waiting for huge publications that can take long periods to execute.
 Taking smaller steps throughout the publication process forms an iterative
-creative process as the site is built from the groud up, where content creators
+creative process as the site is built from the ground up, where content creators
 can publish their changes immediately with no long wait times.
 
 A few prerequisites to follow for staging are listed below:
