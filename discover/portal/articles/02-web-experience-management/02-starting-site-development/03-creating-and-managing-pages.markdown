@@ -14,14 +14,15 @@ Menu.
 To add new pages to your site, click the *Add Page* icon (![Add
 Page](../../../images/icon-control-menu-add.png)) for the page or page set you'd
 like to add a page to. You can manage a plethora of options from the Pages menu
-including page name, site layout, and site template.
+including page name, page layout, and page template.
 
-There are two ways to edit a page: you can select the *Edit Page* option
-(![Edit Page](../../../images/icon-control-menu-gear.png)) for any page in your
-site from the Pages menu or you can edit the specific page you're currently
-viewing by selecting the *Edit Page* option
+You can also edit pages from the Pages menu. You can select the *Edit Page*
+option (![Edit Page](../../../images/icon-control-menu-gear.png)) for any page
+in your site from the Pages menu, which allows you to edit the page's basic
+information and configuration options. You can also edit the specific page
+you're currently viewing by selecting the *Edit Page* option
 (![Edit Page](../../../images/icon-control-menu-gear.png)) from the top menu.
-The latter option will only edit the specific page you're currently viewing.
+Note that this only edits the specific page you're currently viewing.
 
 ![Figure 2: The *Edit Page* interface allows you to edit the current page you're viewing.](../../../images/web-content-managing-single-page.png)
 
@@ -50,19 +51,18 @@ making it a sibling page of the Welcome page. You can, however, nest pages as
 deeply as you like. To create a sub-page under the Welcome page, select the *Add
 Child Page* button next to *Welcome*.
 
-The *Add Child Page* lets you create child pages underneath the page you've
-selected. You can nest pages as deep as you like but for every page below the
-top level hierarchy you must provide navigation to it via a Navigation or
-Breadcrumb portlet, at least with most themes (including the default).
-Developers can create themes which have cascading menu bars which show the full
-hierarchy. Some examples of that are in Liferay's plugin repositories.
+The *Add Child Page* button lets you create child pages underneath the page
+you've selected. You can nest pages as deep as you like but for every page below
+the top level hierarchy you must provide navigation to it via a Navigation or
+Breadcrumb app, at least with most themes (including the default). Developers
+can create themes which have cascading menu bars which show the full hierarchy.
+Some examples of that are in Liferay's plugin repositories.
 
 Once you've selected the *Add Page* or *Add Child Page* button, you're directed
 to an *Add New Page* interface that lets you configure the page to your liking.
 If you later decide you don't like the order of your pages, you can drag and
 drop them in the list to put them in whatever order you want. Go ahead and add
-another top level page and name it *Community*. You'll use this page for the
-Recent Bloggers and Wiki applications.
+another top level page and name it *Community*.
 
 ![Figure 3: You can add a page to your site by giving it a name, page template, and page type.](../../../images/web-content-add-page.png)
 
@@ -311,18 +311,6 @@ periodically crawl the sitemap once you've made the initial request.
 If you're interested in seeing what is being sent to the search engines, select
 the *preview* link to see the generated XML.
 
-<!--
-When configuring indiviual pages, you have several other options available. You
-can categorize pages using tags and categories, which groups the page with other
-similar assets such as web content, blogs, wikis, etc. This helps the page be
-returned in search results. You also have the ability to include meta tags for
-pages, which describes the contents of a page. You can also manage the embedded
-applications on your page, according to the page template the page was built
-from. Lastly, you have customization settings which let you set whether areas on
-your page should be customizable by users with the appropriate permissions to do
-so.
--->
-
 Next, you'll learn how to customize individual site pages.
 
 ## Customizing Pages
@@ -398,12 +386,15 @@ section for more details.
 
 This option allows you to apply rules for how this page should be rendered for
 various mobile devices. You can set these up in the *Mobile Device Rules*
-section in the Product Menu &rarr; *Sites* &rarr; *Configuration*. For more
-information about Mobile Device Rules and how to use them, see the
+section in the Product Menu &rarr; *Sites* &rarr; *Configuration*. 
 [Displaying Site Pages to Mobile Devices]()
 section.
 
-<!-- TODO: replace link above. -Cody -->
+<!-- Add following sentence when this section is available (DXP only app) -Cody:
+For more information about Mobile Device Rules and how to use them, see the
+[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-0/displaying-site-pages-to-mobile-devices)
+section.
+-->
 
 #### Embedded Portlets
 
@@ -423,10 +414,8 @@ tutorial.
 
 This configuration option lets you mark specific sections of the page you want
 users to be able to customize. You can learn more about page customizations in
-the [Personalizing Pages]()
+the [Personalizing Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#personalizing-pages)
 section.
-
-<!-- TODO: replace link above. -Cody -->
 
 ### Enhancing Page Intelligence
 
@@ -454,7 +443,7 @@ page had different entries in the index. In Liferay 7.0, each asset (web
 content article, blog entry, etc.) has a unique URL. From the search engine's
 point of view, this will make your pages rank higher since any references to
 variations of a specific URL will all be considered references to the same
-page.] 
+page.
 
 #### JavaScript
 
@@ -478,9 +467,9 @@ page so that it either pops up in a particularly named window or appears in a
 frameset. And you can set an icon for the page that appears in the navigation
 menu.
 
-Next, you'll practice personalizing pages using page customizations!
+Next you'll learn how to add applications to a site page.
 
-## Adding Portlets to a Page
+## Adding Applications to a Page
 
 As we discussed earlier, Liferay pages are composed of applications. All of your
 site's functionality, from blogs to shopping, is composed of apps. Even static
@@ -518,6 +507,10 @@ Next, you'll practice personalizing pages using page customizations!
 
 ## Personalizing Pages
 
+<!-- Review this section once more information is found. Contacted Julio, and
+waiting for a response to several questions on the changes to page
+customization. -Cody -->
+
 Administrators can designate public pages or sections of public pages to be
 customizable. When a user visits such a page, a notification appears stating
 that the user can customize the page. Users can make customizations only in the
@@ -527,11 +520,9 @@ user who made the customizations. By default, site members can make page
 customizations but non-site members and guests can't.
 
 To enable page customizations as an administrator, first navigate to the page
-you'd like to let site members modify. Then click on the *Edit* button at the
-left side of the page, expand the *Customization Settings* area, and click on
-the *Show Customizable Sections* button. 
-
-<!-- Not available at the current moment in 7.0. -Cody -->
+you'd like to let site members modify. Then click on the *Edit Page* button at
+the top of the page, expand the *Customization Settings* area, and click on the
+*Show Customizable Sections* button. 
 
 ![Figure 8.1: To enable page customizations, click on the *Edit* button at the left side of the page, expand the *Customization Settings* area, and click on the *Show Customizable Sections* button.](../../../images/page-customizations.png)
 
@@ -544,20 +535,21 @@ green.
 ![Figure 8.2: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../../images/customizable-regions.png)
 
 When site members visit your customizable page, they'll see a notification
-saying, "You can customize this page." Site members can toggle between viewing
+saying, *You can customize this page*. Site members can toggle between viewing
 their customized page and viewing the default page by clicking the *View Default
-Page* or *View My Customized Page* links just below the Dockbar. There's also a
-*Reset My Customizations* link that restores a user's customized page to the
-match the default page. This allows users to discard one set of customizations
-and start a new set without having to manually undo each customization that
-they'd previously made.
+Page* or *View My Customized Page* links from the *Information* icon
+(![Information](../../../images/icon-control-menu-information.png)) in the top
+Control Menu. There's also a *Reset My Customizations* link that restores a
+user's customized page to the match the default page. This allows users to
+discard one set of customizations and start a new set without having to manually
+undo each customization that they'd previously made.
 
 Note that non-administrator site members can access the Add menu from the left
 side of the screen when viewing their customizable page even if they don't
-ordinarily have permission to view this menu. This allows them to add portlets
-to the sections of the page that they're allowed to customize. If they click
-*View Default Page*, the Add menu will disappear from the Dockbar since they're
-not allowed to modify the default page.
+ordinarily have permission to view this menu. This allows them to add apps to
+the sections of the page that they're allowed to customize. If they click *View
+Default Page*, the Add menu will disappear from the Dockbar since they're not
+allowed to modify the default page.
 
 ![Figure 8.3: Non-administrator site members can customize their own versions of customizable pages but can't modify the default page.](../../../images/default-customizable-page.png)
 
@@ -570,42 +562,39 @@ immediately applied for all users. However, changes made by administrators to
 customizable sections do *not* overwrite users' customizations.
 
 Users can make two kinds of customizations to customizable regions. First, they
-can configure portlet applications within the customizable regions. Second, they
-can add portlets to or remove portlets from the customizable regions.
+can configure applications within the customizable regions. Second, they can add
+apps to or remove apps from the customizable regions.
 
-The portal doesn't allow users to change a non-instanceable portlet's
-configuration inside a customizable region since those kinds of portlets are
-tied to the site to which they've been added. If this were allowed, the
-customization would affect all users, not just the one who customized the
-region. Therefore, changes to the portlet configuration in a customizable region
-are only possible for instanceable portlets, whose portlet configuration only
-affects that one user.
+Liferay doesn't allow users to change a non-instanceable app's configuration
+inside a customizable region since those kinds of apps are tied to the site to
+which they've been added. If this were allowed, the customization would affect
+all users, not just the one who customized the region. Therefore, changes to the
+app configuration in a customizable region are only possible for instanceable
+apps, whose app configuration only affects that one user.
 
 For example, suppose that you, as an administrator, selected the right column of
 the Welcome page of the Lunar Resort site to be customizable. A member of the
 Lunar Resort site could take the following steps to make a personal
 customization of the Welcome page:
 
-1. Navigate to the Welcome homepage by clicking *Go To* &rarr; *Lunar Resort*
-   from the Dockbar.
-2. Remove the Hello World portlet from the right column of the page.
-3. Add the Language portlet to the right column of the page by clicking *Add*,
-   clicking on *Applications*, searching for *Language*, and clicking *Add* next
-   to its name.
-4. Configure the Language portlet by clicking on the gear icon and selecting
-   *Configuration* and then opening the *Display Style* dropdown menu and
-   choosing *Select Box*.
+1. Navigate to the Welcome homepage by navigating to the Site Administration
+   *Compass* (![Compass](../../../images/icon-compass.png)) and selecting the
+   Lunar Resort site.
+2. Add the Language Selector app to the right column of the page by clicking the
+   *Add* icon, clicking on *Applications*, searching for *Language Selector*,
+   and clicking *Add* next to its name.
+3. Configure the Language Selector app by clicking the Options icon
+   (![Options](../../../images/icon-options.png)) and selecting *Configuration*
+   and then opening the *Display Template* dropdown menu and choosing *Select
+   Box*.
 
-The Language portlet is useful to have on your portal's homepage if you expect
-users who speak different languages to access your portal. Users can select
-their language in the Language portlet to view a translation of the portal into
-their native language. After closing the Configuration dialog box of the
-Language portlet, the customized Welcome page looks like this:
+The Language Selector application is useful to have on your homepage if you
+expect users who speak different languages to access your instance. Users can
+select their language in the Language Selector app to view a translation of your
+site into their native language. After closing the Configuration dialog box of
+the Language app, the customized Welcome page looks like this:
 
-![Figure 8.4: In this example, the user removed the Hello World portlet, added the Language portlet, and changed the display style from icons to a select box.](../../../images/customized-portal-homepage.png)
-
-<!-- This section needed updating for 6.2. The following two paragraphs'
-statements about the required permissions and roles seem to be obsolete. -->
+![Figure 8.4: In this example, the user added the Language app, and changed the display style from icons to a select box.](../../../images/customized-portal-homepage.png)
 
 To allow users to customize a page, administrators must grant users permission
 to *Customize* pages under the Site section. This can be achieved by assigning
@@ -616,10 +605,10 @@ site members to be able to customize the customizable pages of their sites, we
 would accept the default setting. By default, the *Customize* permission is
 assigned to the role *Site Member*.
 
-In addition to granting the ability to customize portlet configurations, the
-*Customize* permission allows users to customize the look and feel of portlets
-and to import or export portlet settings. Next, let's look at how to use
-application display templates.
+In addition to granting the ability to customize app configurations, the
+*Customize* permission allows users to customize the look and feel of apps
+and to import or export app settings. Next, you'll look at how to change page
+permissions.
 
 ## Changing Page Permissions
 
@@ -633,17 +622,20 @@ users can view them.
 Suppose you want to create a page only for administrators to see. You can do
 this with the following procedure:
 
-1. Go to the Dockbar and select *Admin* &rarr; *Site Administration*.
-2. Click the *Site Pages* link (if necessary).
-3. Click the *Private Pages* tab to switch to the Private Pages. Remember,
-   these pages by default are viewable only by members of the site.
-4. Create a page called *Admin Tips*.
-5. Click on the page in the tree on the left and then click *Permissions*.
-6. Uncheck the *View* and *Add Discussion* permissions next to the Site Member
+1. Go to your site's Site Administration dropdown and select *Pages* &rarr;
+   *Private Pages*. Remember, these pages by default are viewable only by
+   members of the site.
+2. Create a page called *Admin Tips*.
+3. Click the *Edit* icon (![Edit](../../../images/icon-control-menu-gear.png))
+   for the page in the left menu.
+4. Select *Permissions* from the *Options* icon
+   (![Options](../../../images/icon-options.png)) in the top right corner of the
+   screen.
+4. Uncheck the *View* and *Add Discussion* permissions next to the Site Member
    role.
-7. Click the *Save* button.
+5. Click the *Save* button.
 
-![Figure 2.13: The Permissions offer a plethora of options for each role.](../../../images/04-web-content-page-permissions.png)
+![Figure 10: The Permissions offer a plethora of options for each role.](../../../images/web-content-page-permissions.png)
 
 Congratulations! You've changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.
@@ -652,23 +644,8 @@ Other users, even members of this site, won't have permission to see it.
 Pages in Liferay are as flexible as pages you'd create manually without a
 portal. Using a point and click interface, you can define your site any way you
 want. You can create and remove pages, export and import them, set their
-layouts, define how they are indexed by search engines and more.
+layouts, define how they are indexed by search engines, and more.
 
-You now understand how to manage pages in Liferay Portal. It's time to move on
-to adding content to those pages. Liferay's Web Content Management (WCM) is a
-highly powerful, yet flexible, set of tools that enables you to successfully
-manage your web site.
-
-You'll soon discover that Liferay's WCM is easy to learn and highly
-configurable. If you already have experience with WCM, you'll see some new
-features and improvements to old ones. If you're new to Liferay's WCM, then
-you'll be surprised at how fast you will be adding, editing and scheduling
-content on your site. Once you're familiar with portlets such as Web Content
-Display and Asset Publisher, your ability to manage an immense site with a large
-amount of content will simply amaze you.
-
-You'll be using Liferay's Web Content Management system to publish simple pieces
-of content, develop templates to define how content is to be displayed, set up a
-workflow for content to be approved, schedule when content is to be published
-and much, much more. You'll learn about many of these features in the next
-section.
+You now understand how to manage pages in Liferay. It's time to move on
+to further customizing those pages for mobile devices and building standardized
+pages using custom templates.
