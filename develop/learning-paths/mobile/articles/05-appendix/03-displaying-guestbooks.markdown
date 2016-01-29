@@ -4,9 +4,14 @@ Recall that the `GuestbooksActivity` you created earlier contains a navigation
 drawer that slides out from the left side of the screen. Now that you've made 
 the server call, you're ready to display the guestbooks in the navigation 
 drawer. Currently, the drawer contains some simple placeholder content. The 
-following screenshot shows this.
+following screenshot shows this. 
 
 ![Figure 1: The placeholders currently in the navigation drawer.](../../images/android-guestbook-initial-drawer.png)
+
+When you used Get Guestbooks Screenlet, you replaced this content by inserting 
+the Screenlet in the drawer. This was possible because Screenlets have their own 
+UIs. Now, though, you're making the Mobile SDK call by itself. You must 
+therefore create the UI that displays the results in the drawer.
 
 You'll replace this content with the list of guestbooks your app retrieves from 
 the portal. You'll also make sure that the drawer closes when a guestbook is 
