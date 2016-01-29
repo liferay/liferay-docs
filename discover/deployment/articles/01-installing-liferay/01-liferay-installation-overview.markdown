@@ -43,6 +43,40 @@ deploy, and maintain your Liferay solution. Liferay DXP includes:
 - Fix Packs
 - Cloud Services
 
+Liferay DXP can be installed on proprietary application servers and can use
+proprietary databases. Here are lists of the application servers and databases
+supported by Liferay CE and Liferay DXP:
+
+**Liferay CE-supported Application Servers:**
+
+- Apache Tomcat
+- Wildfly
+- Caucho Resin
+
+**Liferay CE-supported Databases:**
+
+- HSQLDB (only for demonstration, development, and testing)
+- MySQL
+- MariaDB
+- PostgreSQL
+
+**Liferay DXP-supported Application Servers:**
+
+- All of the CE-supported application servers
+- IBM Websphere
+- JBoss EAP
+- Mulesoft Tcat
+- Oracle Weblogic Server
+- Caucho Resin Pro
+- tcServer
+
+**Liferay DXP-supported Databases:**
+
+- All of the CE-supported databases
+- Oracle Database
+- Microsoft SQL Server
+- Sybase ASE
+
 Next, let's learn about some differences between Liferay releases.
 
 <!-- This section must be updated for 7.0. CE vs. EE terminology will need to
@@ -275,7 +309,7 @@ configuration described in the previous section.
    permissions for creating and dropping tables from the Liferay database user.
 
 There are some caveats to running Liferay like this. Many Liferay plugins
-create new tables when they're deployed. Additonally, Liferay has an automatic
+create new tables when they're deployed. Additionally, Liferay has an automatic
 database upgrade function that runs when Liferay is upgraded. If the Liferay
 database user doesn't have enough rights to create/modify/drop tables in the
 database, you must grant those rights to the ID before you deploy one of these
@@ -494,7 +528,7 @@ make an initial Liferay configuration.
 There are three sections of the wizard: the portal, the administrator and the
 database. For the portal, you need to supply the following information:
 
-**Portal Name:** the name of the portatl you're powering with Liferay.
+**Portal Name:** the name of the portal you're powering with Liferay.
 
 **Default Language:** choose the default locale of your portal.
 
@@ -507,15 +541,6 @@ For the administrator, you need to supply the following information:
 **Email:** the email address of the default administrator user
 
 ![Figure x: Supply the information for your site and your site's default administrator user in the setup wizard.](../../images/setup-wizard-1.png)
-
-Liferay supports just about all the leading databases today:
-
-- DB2
-- MySQL
-- Oracle
-- PostgreSQL
-- SQL Server
-- Sybase
 
 In addition to these, Liferay also supports a few embedded databases that are
 designed for development. We haven't listed these here because you're setting up
