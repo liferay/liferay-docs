@@ -117,7 +117,7 @@ is the same as `max`.
 
 **number**: Allows only numerical values.
 
-**range**: Allows only an integer value between the specified range. For example,
+**range**: Allows only a number between the specified range. For example,
 a range between 1.23 and 10 is specified here `<aui:validator
 name="range">[1.23,10]</aui:validator>`
 
