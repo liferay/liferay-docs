@@ -49,33 +49,33 @@ supported by Liferay CE and Liferay DXP:
 
 **Liferay CE-supported Application Servers:**
 
-- Apache Tomcat
-- Wildfly
-- Caucho Resin
+- Apache Tomcat 8.0.x
+- Wildfly 10.0
+- Caucho Resin 4.0
 
 **Liferay CE-supported Databases:**
 
-- HSQLDB (only for demonstration, development, and testing)
-- MySQL
-- MariaDB
-- PostgreSQL
+- HSQLDB 2 (only for demonstration, development, and testing)
+- MySQL 5.6
+- MariaDB 10
+- PostgreSQL 9.3
 
 **Liferay DXP-supported Application Servers:**
 
 - All of the CE-supported application servers
-- IBM Websphere
-- JBoss EAP
-- Mulesoft Tcat
-- Oracle Weblogic Server
-- Caucho Resin Pro
-- tcServer
+- IBM Websphere 8.5
+- JBoss EAP 6.4
+- Mulesoft Tcat 7.1
+- Oracle Weblogic Server 12c (12.1.x)
+- Caucho Resin Pro 4.0
+- tcServer 2.9
 
 **Liferay DXP-supported Databases:**
 
 - All of the CE-supported databases
-- Oracle Database
-- Microsoft SQL Server
-- Sybase ASE
+- Oracle Database 12c Release 1
+- Microsoft SQL Server 2012
+- Sybase ASE 16
 
 Next, let's learn about some differences between Liferay releases.
 

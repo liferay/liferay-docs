@@ -1,9 +1,9 @@
-# Installing Liferay on Tomcat 7
+# Installing Liferay on Tomcat 8
 
-If you want a fresh installation of Liferay on Tomcat 7, simply download a
+If you want a fresh installation of Liferay on Tomcat 8, simply download a
 Liferay Tomcat bundle from
 [https://www.liferay.com/downloads/liferay-portal/available-releases](https://www.liferay.com/downloads/liferay-portal/available-releases).
-Even if you want to manually install Liferay on an existing Tomcat 7
+Even if you want to manually install Liferay on an existing Tomcat 8
 application server, it can be helpful to download a Liferay Tomcat bundle. The
 bundle contains many required dependencies and configuration files. Before
 proceeding, you should also download the latest Liferay WAR file from
