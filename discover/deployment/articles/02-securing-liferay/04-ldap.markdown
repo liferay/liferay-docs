@@ -1,4 +1,4 @@
-# LDAP
+# LDAP [](id=ldap)
 
 Liferay can connect to external LDAP servers. Users can be imported into
 Liferay from LDAP or exported to LDAP from Liferay. If your organization
@@ -13,7 +13,7 @@ import settings, export settings, and related LDAP configuration settings.
 <!-- For a technical overview of Liferay's LDAP authentication module, please
 see the (not yet written) tutorial. -->
 
-## Configuring Liferay's LDAP Settings
+## Configuring Liferay's LDAP Settings [](id=configuring-liferays-ldap-settings)
 
 To access Liferay's LDAP configuration settings, navigate to the Control Panel
 and click on *Configuration* &rarr; *Portal Settings*. Then click on
@@ -91,7 +91,7 @@ how to do this.
 Once you've finished configuring LDAP, click the *Save* button. Next, let's look
 at how to add LDAP servers.
 
-### Adding LDAP Servers
+### Adding LDAP Servers [](id=adding-ldap-servers)
 
 Click on the *Add* button beneath the LDAP Servers heading to add an LDAP
 server connection. If you have more than one LDAP server, you can arrange the
@@ -215,7 +215,7 @@ You can also add your own mappings if you wish.
   click the *Test LDAP Users* button and Liferay will attempt to pull LDAP users
   and match them with their mappings as a preview.
 
-![Figure x: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
+![Figure 1: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay
 user groups.
@@ -258,13 +258,13 @@ user groups.
   classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and
   view the Object Class attributes stored in LDAP for that group.
 
-![Figure x: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
+![Figure 2: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you've set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
 to all of your LDAP server connections.
 
-### LDAP Options Not Available in the GUI
+### LDAP Options Not Available in the GUI [](id=ldap-options-not-available-in-the-gui)
 
 Although most of the LDAP configuration can be done from the Control Panel,
 there are several configuration parameters that are only available by adding to
@@ -324,7 +324,7 @@ Great! Now you know how to an LDAP server connection to Liferay and how to
 configure user import behavior, export behavior, and other LDAP settings.
 
 <!--
-## Related Topics
+## Related Topics [](id=related-topics)
 
 - Liferay Security Overview
 - Logging into Liferay

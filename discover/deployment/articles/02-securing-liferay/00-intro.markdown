@@ -1,4 +1,4 @@
-# Liferay Portal Security
+# Liferay Portal Security [](id=liferay-portal-security)
 
 Liferay takes security very seriously. Liferay has established several
 procedures to make sure that Liferay Portal is as secure as possible. First of

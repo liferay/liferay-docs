@@ -1,13 +1,13 @@
-# Liferay SAML in Pictures
+# Liferay SAML in Pictures [](id=liferay-saml-in-pictures)
 
 This article provides diagrams of the SAML actions supported by Liferay along
 with descriptions of each step. For information about configuring Liferay as a
 SAML Identity Provider or Service Provider, please see the [not yet written]()
 article.
 
-## Identity Provider Initiated SSO
+## Identity Provider Initiated SSO [](id=identity-provider-initiated-sso)
 
-![Figure x: Identity Provider Initiated SSO](../../images/idp-initiated-sso.png)
+![Figure 1: Identity Provider Initiated SSO](../../images/idp-initiated-sso.png)
 
 1. A IdP initiated SSO request is a SSO request sent directly to the IdP by the
    user's browser. For situations where Liferay is configured to serve as the
@@ -55,9 +55,9 @@ article.
 6. The User is redirected either to the `RelayState` (if specified) or home
    page of the SP (if no `RelayState` is provided).
 
-## Identity Provider Initiated SLO
+## Identity Provider Initiated SLO [](id=identity-provider-initiated-slo)
 
-![Figure x: Identity Provider Initiated SLO](../../images/idp-initiated-slo.png)
+![Figure 2: Identity Provider Initiated SLO](../../images/idp-initiated-slo.png)
 
 1. An IdP initiated SLO request is a SLO request sent directly to the IdP by
    the user's browser. For situations where Liferay is configured to serve as
@@ -94,9 +94,9 @@ article.
    is configured as the IdP, Liferay logs the user out after the last SP has
    delivered its `LogoutResponse` or has timed out.
 
-## Service Provider Initiated SSO
+## Service Provider Initiated SSO [](id=service-provider-initiated-sso)
 
-![Figure x: Service Provider Initiated SSO](../../images/sp-initiated-sso.png)
+![Figure 3: Service Provider Initiated SSO](../../images/sp-initiated-sso.png)
 
 1. When the users' browser requests a protected resource or sign on URL on the
    SP, the SP initiated SSO process is triggered. With Liferay is configured as
@@ -148,7 +148,7 @@ article.
    the `RelayState` parameter (e.g., the last page the user accessed before
    initiating SSO).
 
-![Figure x: Service Provider Initiated SLO](../../images/idp-initiated-slo.png)
+![Figure 4: Service Provider Initiated SLO](../../images/idp-initiated-slo.png)
 
 1. A SP initiated SLO is sent directly by the user's browser. When Liferay is
    configured as the SP, the SLO is initiated by requesting the logout URL
@@ -184,6 +184,6 @@ article.
 
 7. The SP terminates its SAML session and proceeds to log out.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 - [Configuring Liferay as an IdP or SP (not yet written)]()

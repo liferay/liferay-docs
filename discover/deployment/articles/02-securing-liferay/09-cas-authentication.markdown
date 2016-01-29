@@ -1,4 +1,4 @@
-# CAS (Central Authentication Service) Single Sign On Authentication
+# CAS (Central Authentication Service) Single Sign On Authentication [](id=cas-central-authentication-service-single-sign-on-authentication)
 
 CAS is an authentication system originally created at Yale University. It is a
 widely used open source single sign-on solution and was the first SSO product
@@ -87,7 +87,7 @@ To override system defaults for a particular portal instance, navigate to the
 Control Panel, click on *Configuration* &rarr; *Portal Settings*, click on
 *Authentication* on the right and then on *CAS* at the top.
 
-## Summary
+## Summary [](id=summary)
 
 System administrators sometimes think it's sufficient to link multiple webapps
 to a single user directory such as LDAP. This certainly goes a long way towards

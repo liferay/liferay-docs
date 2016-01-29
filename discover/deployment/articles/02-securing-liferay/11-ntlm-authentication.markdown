@@ -1,4 +1,4 @@
-#  NTLM Single Sign On Authentication
+#  NTLM Single Sign On Authentication [](id=ntlm-single-sign-on-authentication)
 
 NTLM is a Microsoft protocol that can be used for authentication through
 Microsoft Internet Explorer. Though Microsoft has adopted Kerberos in modern
@@ -31,7 +31,7 @@ To override system defaults for a particular portal instance, navigate to the
 Control Panel, click on *Configuration* &rarr; *Portal Settings*, click on
 *Authentication* on the right and then on *NTLM* at the top.
 
-## Summary
+## Summary [](id=summary)
 
 NTLM authentication is often highly desirable in intranet scenarios where the
 IT department has control over what software is running on client devices and

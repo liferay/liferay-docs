@@ -1,4 +1,4 @@
-# OpenID Single Sign On Authentication
+# OpenID Single Sign On Authentication [](id=openid-single-sign-on-authentication)
 
 OpenID is a single sign-on standard which is implemented by multiple vendors.
 The idea is that multiple vendors implement the standard. Users can register
@@ -41,7 +41,7 @@ instance scope. Check the *Enabled* box to enable OpenID for the current portal
 instance, uncheck it to disable it for the current portal instance.
 
 <!--
-## Related Topics
+## Related Topics [](id=related-topics)
 
 - Liferay Security Overview
 - Signing in to Liferay

@@ -1,4 +1,4 @@
-## AntiSamy
+# AntiSamy [](id=antisamy)
 
 Liferay includes an AntiSamy module that protects against malicious code that
 users might create. When creating content, users can include malicious code
@@ -18,7 +18,7 @@ At the time of this writing, Liferay's AntiSamy module uses OWASP AntiSamy
 Liferay's *Control Panel*, go to *System Settings*, open the *Platform*
 category and click on *AntiSamy Sanitizer*.
 
-![Figure x: Liferay's AntiSamy configuration options allow you to specify both a blacklist and a whitelist.](../../images/antisamy.png)
+![Figure 1: Liferay's AntiSamy configuration options allow you to specify both a blacklist and a whitelist.](../../images/antisamy.png)
 
 Using both a blacklist and a whitelist allows you to easily define subsets of
 entities that should be sanitized or not sanitized. By default, everything is

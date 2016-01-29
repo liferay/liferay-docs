@@ -1,4 +1,4 @@
-# SAML
+# SAML [](id=saml)
 
 ![EE-only](../../images/ee-feature-web.png)
 
@@ -17,7 +17,7 @@ provider or as a service provider. First, we'll look at how to set Liferay up as
 an Identity Provider and then we'll look at how to set it up as a Service
 Provider.
 
-## Setting up Liferay as a SAML Identity Provider
+## Setting up Liferay as a SAML Identity Provider [](id=setting-up-liferay-as-a-saml-identity-provider)
 
 To set Liferay up to act as a SAML Identity Provider, follow these steps:
 
@@ -25,7 +25,7 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
    Marketplace interface or manually. To confirm that the plugin was
    successfully deployed, look for the *SAML Admin* entry in the Control Panel.
 
-    ![Figure x: The SAML Admin entry appears as a sub-section of the Configuration section of the Control Panel.](../../images/saml-admin.png)
+    ![Figure 1: The SAML Admin entry appears as a sub-section of the Configuration section of the Control Panel.](../../images/saml-admin.png)
 
     To access the SAML Admin interface, click on *Admin* &rarr; *Control Panel*
     and then on *SAML Admin*.
@@ -33,7 +33,7 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
 2. To begin configuring Liferay to use SAML, you need to select a SAML role
    for Liferay and you need to choose an entity ID.
 
-    ![Figure x: Select a SAML role for Liferay and enter an entity ID.](../../images/saml-initial-config.png)
+    ![Figure 2: Select a SAML role for Liferay and enter an entity ID.](../../images/saml-initial-config.png)
 
     The SAML role can be set to Identity Provider or Service Provider.
     Select the *Identity Provider* SAML role. A single Liferay instance can
@@ -89,7 +89,7 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
    you'd like to change any of the information saved in your keystore, including
    the password.
 
-    ![Figure x: The General tab of the SAML Admin portlet displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](../../images/saml-keystore-info.png)
+    ![Figure 3: The General tab of the SAML Admin portlet displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](../../images/saml-keystore-info.png)
 
     Also, notice that additional options appear in the SAML Admin Control Panel
     portlet. There are three tabs:
@@ -209,7 +209,7 @@ to this Liferay instance and add the Service Provider: *Control Panel* &rarr;
 *SAML Admin* &rarr; *Service Provider Connections* &rarr; *Add Service
 Provider*.
 
-## Setting up Liferay as a SAML Service Provider
+## Setting up Liferay as a SAML Service Provider [](id=setting-up-liferay-as-a-saml-service-provider)
 
 Many of these steps are similar to the ones for setting Liferay up to act
 as a SAML Identity Provider. A single Liferay instance can be configured as a
@@ -402,7 +402,7 @@ binding can be added in this form:
 
 $$$
 
-## Important SAML URLs
+## Important SAML URLs [](id=important-saml-urls)
 
 For reference, here are a few important SAML URLs.
 
@@ -424,7 +424,7 @@ the Service Provider.
 
     [host]:[port]/c/portal/saml/sso?entityId=[SP entity id]&RelayState=[landing page on SP]
 
-## Setting Up Liferay as a SAML Service Provider in a Clustered Environment
+## Setting Up Liferay as a SAML Service Provider in a Clustered Environment [](id=setting-up-liferay-as-a-saml-service-provider-in-a-clustered-environment)
 
 If you want to use Liferay's SAML 2.0 Provider EE plugin as a SSO solution for a
 clustered Liferay environment, follow the steps in this section. Before

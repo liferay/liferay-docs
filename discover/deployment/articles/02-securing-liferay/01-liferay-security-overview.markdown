@@ -1,4 +1,4 @@
-# Liferay Portal Security Overview
+# Liferay Portal Security Overview [](id=liferay-portal-security-overview)
 
 Liferay follows the OWASP Top 10 (2013) and CWE/SANS Top 25 lists to ensure
 that Liferay is as secure as possible. Following these recommendations protects
@@ -20,7 +20,7 @@ store passwords. Liferay also contains mitigation for Quadratic Blowup XXE
 attack, Rosetta Flash vulnerability, Reflected File Download, and other kinds
 of attacks.
 
-## Authentication Overview
+## Authentication Overview [](id=authentication-overview)
 
 Liferay user authentication can take place using any of a variety of prepared
 solutions:
@@ -44,7 +44,7 @@ in Liferay. Developers can create custom Login portlets and plugins, extend the
 default Login portlet `auth.pipeline`, create `AutoLogin` extensions for SSO,
 or create custom `AuthVerifier` implementations.
 
-## Authorization and Permission Checking
+## Authorization and Permission Checking [](id=authorization-and-permission-checking)
 
 There are several adjustable authorization layers in place to prevent
 unauthorized or unsecured access to data:
@@ -59,7 +59,7 @@ unauthorized or unsecured access to data:
 - Remote IP check for portal remote API authentication methods
 - Service Access Policies to control access to portal remote API
 
-## Additional Security Features
+## Additional Security Features [](id=additional-security-features)
 
 Liferay supports other features, too. Liferay users can be assigned to sites,
 teams, user groups, or organizations. Custom roles can be created, permissions
@@ -84,7 +84,7 @@ these kinds of configuration actions:
 - Configure the files types allowed to be uploaded and downloaded
 - Many other options
 
-## Secure Development Recommendations
+## Secure Development Recommendations [](id=secure-development-recommendations)
 
 Liferay also provides tools to fight vulnerabilities in code.
 
@@ -118,7 +118,7 @@ Here's short list of Liferay security APIs:
   hashes, configured to use PBKDF2 by default
 - `DigesterUtil` - SHA-1 hashes, nowadays usable at most for file checksums
 
-## Secure Configuration and Run Recommendations
+## Secure Configuration and Run Recommendations [](id=secure-configuration-and-run-recommendations)
 
 Liferay Portal is built using the "secure by default" concept in mind. Thus,
 Liferay's default configuration is already very secure. It's not recommended to

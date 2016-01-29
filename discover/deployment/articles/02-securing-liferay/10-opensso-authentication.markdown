@@ -1,4 +1,4 @@
-# OpenSSO Single Sign On Authentication
+# OpenSSO Single Sign On Authentication [](id=opensso-single-sign-on-authentication)
 
 OpenSSO is an open source single sign-on solution that comes from the code base
 of Sun's System Access Manager product. Liferay integrates with OpenSSO,
@@ -53,7 +53,7 @@ to Liferay's Control Panel, click on *Configuration* &rarr; *Portal Settings*,
 and then click on *Authentication* at the right and then on *OpenSSO* at the
 top.
 
-## Summary
+## Summary [](id=summary)
 
 OpenSSO is useful when all the applications that require SSO are within the
 same web domain. Thus, OpenSSO it is often used for intranets. OpenSSO can be
