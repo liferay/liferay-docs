@@ -63,7 +63,7 @@ Sync Admin's UI lets you enable or disable Sync across the portal or for
 specific sites. You can also configure default file permissions on a per-site
 basis. Sync Admin is accessible in the Control Panel's Configuration section. 
 
-![Figure 1: The Control Panel's Configuration section contains the Sync Admin portlet.](../../images/sync-admin-01.png)
+![Figure 1: The Control Panel's Configuration section contains the Sync Admin portlet.](../../../images/sync-admin-01.png)
 
 Sync Admin has two tabs: *Settings* and *Sites*. The Settings tab has *General*
 and *Advanced* settings that apply globally to Sync. In General settings, you
@@ -90,7 +90,7 @@ Poll Interval is five.
 
 Next up is the Sites tab, which lets you can control Sync on a per-site basis. 
 
-![Figure 2: Sync Admin's Sites tab lets you manage Sync on a per-site basis.](../../images/sync-admin-02.png)
+![Figure 2: Sync Admin's Sites tab lets you manage Sync on a per-site basis.](../../../images/sync-admin-02.png)
 
 For each site in the portal, the Sites tab lists each site's default file
 permissions (more on this in a moment) and whether Sync is enabled for that
@@ -129,7 +129,7 @@ single site, click its drop-down arrow and select *Default File Permissions*.
 This opens a window that lets you select the default file permissions for that
 site. Click *Choose* for the permissions you want to use. 
 
-![Figure 3: Click *Choose* to select the default file permissions for a site in Sync.](../../images/sync-admin-03.png)
+![Figure 3: Click *Choose* to select the default file permissions for a site in Sync.](../../../images/sync-admin-03.png)
 
 To set the default file permissions for several sites, select the checkboxes for
 the sites, click the *Default File Permissions* link that appears above the
@@ -225,7 +225,7 @@ permissions are View Only. After attempting the sync, a red *x* appears next to
 the file in the local Sync folder. Right click the file to see the error. It
 confirms the user doesn't have the required permissions. 
 
-![Figure 4: The upload error occurs because the user only has permission to view files.](../../images/sync-file-permissions-error.png)
+![Figure 4: The upload error occurs because the user only has permission to view files.](../../../images/sync-file-permissions-error.png)
 
 To confirm that the error didn't propagate through Sync, open the file in the 
 secretagent user's local Sync folder. It still contains the original text. 

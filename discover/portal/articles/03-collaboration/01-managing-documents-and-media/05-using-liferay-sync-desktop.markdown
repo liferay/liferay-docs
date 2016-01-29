@@ -54,7 +54,7 @@ running Mac OS X 10.9 or lower, you're prompted for your machine's administrator
 credentials to install the Finder icon/context menu tool. This prompt only
 appears when installing or upgrading the tool. 
 
-![Figure 1: Drag the Liferay Sync icon to the Applications folder.](../../images/sync-mac-install.png)
+![Figure 1: Drag the Liferay Sync icon to the Applications folder.](../../../images/sync-mac-install.png)
 
 Now that you've installed sync, you're ready to configure it! The configuration 
 steps for Sync on Windows and Mac are identical. First, enter your portal's
@@ -74,13 +74,13 @@ folder named *localhost* in the user's documents folder. You can, of course,
 specify any unique name and location you like for Sync to use for the Sync
 folder it creates. Click *Start Syncing* to begin syncing files. 
 
-![Figure 2: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../images/sync-setup-01.png)
+![Figure 2: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../../images/sync-setup-01.png)
 
-![Figure 3: Select the sites you want to sync with and then click *Proceed*.](../../images/sync-setup-02.png)
+![Figure 3: Select the sites you want to sync with and then click *Proceed*.](../../../images/sync-setup-02.png)
 
-![Figure 4: Specify your local Sync folder's name and location.](../../images/sync-setup-03.png)
+![Figure 4: Specify your local Sync folder's name and location.](../../../images/sync-setup-03.png)
 
-![Figure 5: Congratulations, you've successfully set up Liferay Sync!](../../images/sync-setup-04.png)
+![Figure 5: Congratulations, you've successfully set up Liferay Sync!](../../../images/sync-setup-04.png)
 
 Sync congratulates you on setting it up and begins to sync files from the sites
 you selected to your local Sync folder. Note, completing the initial
@@ -96,9 +96,9 @@ displays options for preferences, help, and quitting Sync. Mousing over a
 portal's name extends the menu to show additional options for that portal. The
 following screenshots show this menu in Windows. 
 
-![Figure 6: The Sync desktop menu options are always available from the task bar.](../../images/sync-taskbar-01.png)
+![Figure 6: The Sync desktop menu options are always available from the task bar.](../../../images/sync-taskbar-01.png)
 
-![Figure 7: Each portal also has its own set of options in the task bar menu.](../../images/sync-taskbar-02.png)
+![Figure 7: Each portal also has its own set of options in the task bar menu.](../../../images/sync-taskbar-02.png)
 
 The menu for each portal first shows the sync status. The sync status shows
 *Synced* if you're completely synchronized with the portal. Mousing over *Open
@@ -118,7 +118,7 @@ connection settings, and control Sync's basic behavior. Open Sync's preferences
 by clicking the Sync icon in the task bar (Windows) or menu bar (Mac OS) and
 selecting *Preferences*. A preference screen for your portal accounts displays. 
 
-![Figure 8: The Preferences menu's *Accounts* tab lets you manage syncing with sites per account.](../../images/sync-preferences-accounts-01.png)
+![Figure 8: The Preferences menu's *Accounts* tab lets you manage syncing with sites per account.](../../../images/sync-preferences-accounts-01.png)
 
 The accounts and portals that you sync with are listed on the left. The plus,
 minus, and pencil icons at the bottom of the account list can be used to
@@ -145,7 +145,7 @@ for new client versions, check the checkbox next to *Automatically check for
 updates*. You can also check for updates manually by clicking the *Check Now*
 button. 
 
-![Figure 9: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../images/sync-preferences-general-01.png)
+![Figure 9: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../../images/sync-preferences-general-01.png)
 
 Now that you have a handle on configuring Sync, it's time to see how it works 
 with the files in your Sync folder.
@@ -187,7 +187,7 @@ Media portlet. Click on the *README.txt* file's name, look at the file
 information displayed, and check that the file's version number has been 
 incremented. 
 
-![Figure 10: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../images/sync-file-edit-01.png)
+![Figure 10: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../../images/sync-file-edit-01.png)
 
 If you download and open the `README.txt` file again, it now says `second test`.
 Your edit was uploaded to the site! You can be confident that this edit was also
