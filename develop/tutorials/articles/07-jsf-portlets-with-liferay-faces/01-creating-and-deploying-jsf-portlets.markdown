@@ -147,12 +147,12 @@ It's just that easy to create and deploy JSF portlet plugins!
 
 ## Related Topics [](id=related-topics)
 
-[Developing Liferay Faces Portlets with Maven](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/developing-liferay-faces-portlets-with-maven)
+[Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-portlets-with-maven)
 
-[Using Portlet Preferences with JSF](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/using-portlet-preferences-with-jsf)
+[Using Portlet Preferences with JSF](/develop/tutorials/-/knowledge_base/6-2/using-portlet-preferences-with-jsf)
 
-[Liferay Faces Alloy UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
