@@ -6,21 +6,23 @@ the server call, you're ready to display the guestbooks in the navigation
 drawer. Currently, the drawer contains some simple placeholder content. The 
 following screenshot shows this. 
 
-![Figure 1: The placeholders currently in the navigation drawer.](../../images/android-guestbook-initial-drawer.png)
+![Figure 1: The navigation drawer currently contains placeholder content that Android Studio generated for you when you created the activity.](../../images/android-guestbook-initial-drawer.png)
 
-When you used Get Guestbooks Screenlet, you replaced this content by inserting 
-the Screenlet in the drawer. This was possible because Screenlets have their own 
-UIs. Now, though, you're making the Mobile SDK call by itself. You must 
-therefore create the UI that displays the results in the drawer.
+When you used Get Guestbooks Screenlet, you replaced this content with the 
+Screenlet. This was possible because Screenlets have their own UIs. Now, though, 
+you're making the Mobile SDK call by itself. You must therefore create the UI 
+independent of any Screenlet. You'll do this in `GuestbooksActivity` and its 
+layout file `activity_guestbooks.xml`.
 
-You'll replace this content with the list of guestbooks your app retrieves from 
-the portal. You'll also make sure that the drawer closes when a guestbook is 
-selected in it, and that the activity's Action Bar displays that guestbook's 
-name. Also, the first guestbook should be selected automatically when the 
-activity first launches. You'll implement this functionality by using the 
-following steps:
+You'll replace the drawer's placeholder content with the list of guestbooks your 
+app retrieves from the portal. You'll also make sure that the drawer closes when 
+a guestbook is selected in it, and that the activity's Action Bar displays that 
+guestbook's name. Also, the first guestbook should be selected automatically 
+when the activity first launches. You'll implement this functionality by using 
+the following steps:
 
-1. Initialize the Action Bar.
+1. Refactor the Action Bar. This step is identical to when you 
+   [refactored the Action Bar before using Get Guestbooks Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/preparing-guestbooksactivity-for-get-guestbooks-screenlet#refactoring-the-action-bar).
 
 2. Put guestbooks in the navigation drawer.
 
@@ -28,68 +30,18 @@ following steps:
 
 4. Customize the navigation drawer.
 
-This is conceptually simple, but a bit more complex in practice. Not to worry! 
-You'll be guided though each step in the process. 
-
-You'll begin by initializing the Action Bar. 
-
-## Initializing the Action Bar [](id=initializing-the-action-bar)
-
-By default, the Action Bar displays the activity's name. You'll change it to 
-display the selected guestbook's name by modifying the code that creates the 
-activity's Action Bar. Android Studio created this code for you in the 
-`GuestbooksActivity` class's `onCreate` method: 
-
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-    setSupportActionBar(toolbar);
-
-First, remove these two lines. You need the `ActionBar` and `Toolbar` to be
-instance variables that you can refer to anywhere in the activity. Add these
-variables to the `GuestbooksActivity` class now: 
-
-    private ActionBar actionBar;
-    private Toolbar toolbar;
-
-Although you can modify the Action Bar initialization code in `onCreate`, you'll 
-write it here in a separate method. Add the following `initActionBar()` method 
-to `GuestbooksActivity`: 
-
-    private void initActionBar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        actionBar = getSupportActionBar();
-        actionBar.setTitle("");
-    }
-
-Like the code in `onCreate`, this method also creates a `Toolbar` and sets it as 
-the Action Bar. This code also sets the Action Bar's title to an empty string. 
-This prevents the activity's title from showing in the Action Bar before the app
-can retrieve guestbooks from the portal. 
-
-Now you need to call `initActionBar()` in `onCreate`. Place the call immediately
-above the `getGuestbooks()` call. The first few lines of the `onCreate` method
-should now look like this: 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guestbooks);
-        
-        initActionBar();
-        getGuestbooks();
-
-        ...
-    }
-
-Now you're ready to write the code that puts the guestbooks in the navigation 
-drawer.
+Once you've refactored the Action Bar according to the instructions linked to in 
+the first step, return here to complete the remaining steps. 
 
 ## Putting Guestbooks in the Navigation Drawer [](id=putting-guestbooks-in-the-navigation-drawer)
 
-To put the guestbooks in the navigation drawer, you must first put a 
-[`ListView`](http://developer.android.com/guide/topics/ui/layout/listview.html) 
-in the drawer's layout. You'll use this `ListView` to display the guestbooks. In 
-`activity_guestbooks.xml`, replace the existing 
+Recall that when you created Get Guestbooks Screenlet's UI, 
+[you created its View class to extend `ListView`](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-guestbook-screenlets-ui#creating-the-view-class). 
+This gave the View class an implicit 
+[`ListView`](http://developer.android.com/reference/android/widget/ListView.html) 
+object that you used to display the guestbooks in a list. Since you're now using 
+the Mobile SDK by itself, you must manually insert a `ListView` in the 
+navigation drawer. In `activity_guestbooks.xml`, replace the existing 
 [`NavigationView`](https://developer.android.com/reference/android/support/design/widget/NavigationView.html) 
 with this one: 
 
@@ -113,11 +65,21 @@ When compared to the `NavigationView` it replaced, this new `NavigationView`
 contains the `ListView`, and lacks the `app:menu` attribute. This attribute 
 points to the menu resource file used to create the drawer's items. Since you'll 
 instead use the `ListView` to display the drawer's items (the guestbooks), you 
-don't need to use `app:menu`. 
+don't need to use `app:menu`. Delete the now unused menu resource file 
+`res/menu/activity_guestbooks_drawer.xml`. 
 
-Now that you've defined the drawer's layout, you need to write the code that 
-controls the drawer. You'll do this in `GuestbooksActivity`. First, add the 
-following variables to this class: 
+Now that you've defined the drawer's layout, you must write the code that 
+controls the drawer. You'll do this in `GuestbooksActivity`. As you'll see, the 
+code you'll write here is similar to 
+[the navigation drawer code you refactored](/develop/learning-paths/mobile/-/knowledge_base/6-2/preparing-guestbooksactivity-for-get-guestbooks-screenlet#refactoring-the-navigation-drawer) 
+when you prepared `GuestbooksActivity` for Get Guestbooks Screenlet. You still 
+need an instance variable for the `DrawerLayout`, but you also need instance 
+variables for the `ListView` and its 
+[adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews). 
+This is because the activity must handle the `ListView` in the absence of a 
+Screenlet that does the same. 
+
+First, add the following variables to `GuestbooksActivity`: 
 
     private DrawerLayout drawer;
     private ListView drawerListView;
@@ -148,11 +110,10 @@ this method now:
 The `initDrawer` method's first few lines match the drawer initialization code 
 in `onCreate`. You should therefore delete this code in `onCreate`. You don't 
 need it there since you call it in `initDrawer` instead. The last part of 
-`initDrawer` initializes the drawer's `ListView` and creates an 
-[adapter](http://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews) 
-for it. Note that `_guestbooks` is the last argument to the adapter's 
-constructor. This sets the list of guestbooks as the adapter's data source. The 
-`setAdapter` method then sets the adapter to the `ListView`. 
+`initDrawer` initializes the drawer's `ListView` and creates an adapter for it. 
+Note that `_guestbooks` is the last argument to the adapter's constructor. This 
+sets the list of guestbooks as the adapter's data source. The `setAdapter` 
+method then sets the adapter to the `ListView`. 
 
 In the `onCreate` method, place the call to `initDrawer()` immediately below the 
 `initActionBar` call. The first few lines of the `onCreate` method should now 
@@ -188,10 +149,19 @@ set what happens when a guestbook is selected in the drawer.
 
 ## Enabling Guestbook Selection in the Navigation Drawer [](id=enabling-guestbook-selection-in-the-navigation-drawer)
 
-To enable guestbook selection in the drawer, first change the 
-`GuestbooksActivity` class to implement `AdapterView.OnItemClickListener` 
-instead of `NavigationView.OnNavigationItemSelectedListener`. The class 
-declaration should now look like this: 
+To enable guestbook selection in the drawer, `GuestbooksActivity` must implement 
+`AdapterView.OnItemClickListener`. Recall that Get Guestbooks Screenlet handled 
+guestbook selection the same way, 
+[but did so in its View class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-guestbook-screenlets-ui#creating-the-view-class). 
+Currently, `GuestbooksActivity` implements 
+`NavigationView.OnNavigationItemSelectedListener`. You must first remove this 
+implementation. Recall that you also removed this implementation when 
+[preparing `GuestbooksActivity` for Get Guestbooks Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/preparing-guestbooksactivity-for-get-guestbooks-screenlet#deleting-the-navigationview-onnavigationitemselectedlistener-implementation). 
+
+First, change the `GuestbooksActivity` class to implement 
+`AdapterView.OnItemClickListener` instead of 
+`NavigationView.OnNavigationItemSelectedListener`. The class declaration should 
+now look like this: 
 
     public class GuestbooksActivity extends AppCompatActivity
         implements AdapterView.OnItemClickListener {...
@@ -224,16 +194,12 @@ item clicks. Do this now by adding the following code to the end of the
     drawerListView.setOnItemClickListener(this);
 
 Great! Your app can now respond appropriately when a guestbook is selected in 
-the drawer. When `GuestbooksActivity` first loads, however, the drawer is closed 
-until the user opens it. Recall that in `initActionBar()` you set the Action Bar 
-to display an empty string by default. The activity therefore opens with no 
-content and an empty Action Bar. This isn't very user friendly. You'll change 
-this so that the activity selects the first guestbook by default. Recall that 
-the callback class calls `reloadGuestbooks` when the service call succeeds. The 
-existing code in this method replaces the current guestbook list with those
-retrieved from the portal. You can also use `reloadGuestbooks` to select the
-first guestbook in the list automatically. Add the following code to the end of
-the `reloadGuestbooks` method: 
+the drawer. Now you'll set the activity to select the first guestbook by 
+default. Recall that the callback class calls `reloadGuestbooks` when the 
+service call succeeds. The existing code in this method replaces the current 
+guestbook list with those retrieved from the portal. You can also use 
+`reloadGuestbooks` to select the first guestbook in the list automatically. Add 
+the following code to the end of the `reloadGuestbooks` method: 
 
     _adapter.notifyDataSetChanged();
     drawerListView.performItemClick(drawerListView, 0, drawerListView.getItemIdAtPosition(0));
@@ -367,18 +333,13 @@ navigation drawer's UI.
 
 ## Customizing the Navigation Drawer [](id=customizing-the-navigation-drawer)
 
-Before basking in the glory of your accomplishment, you need to do some cleanup 
-and customize the navigation drawer's appearance. Because you're no longer using 
-the menu resource file that defined the drawer's placeholder items, you can 
-delete it. Delete the file `res/menu/activity_guestbooks_drawer.xml`. 
-
-There's one more thing you need to take care of before launching the app. Open 
-the layout file `nav_header_guestbooks.xml`. The parent `LinearLayout`'s height 
-is `160dp`. This value corresponds to `@dimen/nav_header_height`. To prevent the 
-drawer's header from overlapping with the guestbook list, you must pad the top 
-of the drawer's `ListView` by this value. Add the following code to the 
-`ListView` in `activity_guestbooks.xml`, below the `android:layout_height` 
-setting:
+Before basking in the glory of your accomplishment, you need to customize the 
+navigation drawer's appearance. Open the layout file 
+`nav_header_guestbooks.xml`. The parent `LinearLayout`'s height is `160dp`. This 
+value corresponds to `@dimen/nav_header_height`. To prevent the drawer's header 
+from overlapping with the guestbook list, you must pad the top of the drawer's 
+`ListView` by this value. Add the following code to the `ListView` in 
+`activity_guestbooks.xml`, below the `android:layout_height` setting:
 
     android:paddingTop="@dimen/nav_header_height"
 
