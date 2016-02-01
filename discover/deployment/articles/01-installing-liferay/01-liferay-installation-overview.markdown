@@ -49,7 +49,7 @@ supported by Liferay CE and Liferay DXP:
 
 **Liferay CE-supported Application Servers:**
 
-- Apache Tomcat 8.0.x
+- Apache Tomcat 8.0.30
 - Wildfly 10.0
 - Caucho Resin 4.0
 
