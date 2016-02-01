@@ -7,7 +7,7 @@ conferencing services to let you schedule and conduct meetings from your Liferay
 instance. We'll cover both apps here. You're only a few clicks away from your 
 fellow users! 
 
-## Using Chat
+## Using Chat [](id=using-chat)
 
 Liferay's Chat portlet provides a convenient way of allowing users to send each
 other instant messages when they are logged into your web site. It appears as a
@@ -187,7 +187,7 @@ Alternatively, since Openfire integrates with LDAP, if you are using Openfire
 and your portal is also using LDAP for authentication, you can disable the
 `jabber.import.user.enabled` property.
 
-## Using Meetings
+## Using Meetings [](id=using-meetings)
 
 The Meetings app, available in the Liferay Marketplace, integrates with the 
 BigBlueButton and Zoom web conferencing services. It lets you schedule, manage, 
@@ -208,7 +208,7 @@ and secret in the corresponding fields. If you select BigBlueButton, then you
 must enter your BigBlueButton API URL and secret. The following screenshot shows 
 the *New Server* form. 
 
-![Figure x: Create a new meeting server by filling out the *New Server* form.](../../images/meetings-add-server.png)
+![Figure 9.35: Create a new meeting server by filling out the *New Server* form.](../../images/meetings-add-server.png)
 
 When you finish entering your server's information, click *Save*. Meetings Admin 
 then lists your server in a table. You can edit or delete this server by 
@@ -235,9 +235,9 @@ meeting's date and time, and a link and instructions for joining the meeting.
 The following screenshots show the *New Meeting* form, and the Meetings portlet 
 with a currently scheduled meeting. 
 
-![Figure x: Create a new meeting by filling out the *New Meeting* form.](../../images/meetings-new-meeting.png)
+![Figure 9.36: Create a new meeting by filling out the *New Meeting* form.](../../images/meetings-new-meeting.png)
 
-![Figure x: The Meetings portlet lists any currently scheduled meetings in its *Current* tab.](../../images/meetings-current.png)
+![Figure 9.37: The Meetings portlet lists any currently scheduled meetings in its *Current* tab.](../../images/meetings-current.png)
 
 To view a meeting's details, simply click it in the Meetings portlet's table. If 
 you have the correct permissions, this also presents you with the options to 
