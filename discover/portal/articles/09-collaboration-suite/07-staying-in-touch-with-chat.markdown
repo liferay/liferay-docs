@@ -4,8 +4,8 @@ Liferay's Chat and Meetings apps let you stay in contact and collaborate with
 other users. The Chat portlet lets you send instant messages to other logged-in 
 users. The Meetings app integrates with the BigBlueButton and Zoom web 
 conferencing services to let you schedule and conduct meetings from your Liferay 
-instance. We'll cover both apps here, so you're only a few clicks away from your 
-fellow users. 
+instance. We'll cover both apps here. You're only a few clicks away from your 
+fellow users! 
 
 ## Using Chat
 
@@ -189,67 +189,70 @@ and your portal is also using LDAP for authentication, you can disable the
 
 ## Using Meetings
 
-The Meetings app integrates with the BigBlueButton and Zoom web conferencing 
-services, letting you schedule, manage, and conduct meetings from within 
-Liferay. This app includes two portlets: Meetings, and Meetings Admin. The 
-Meetings portlet lets you schedule, manage, and conduct meetings. The Meetings 
-Admin portlet lets you add and configure BigBlueButton and Zoom servers to 
-conduct meetings with. You must have a server configured in Meetings Admin 
-before you can create a meeting in the Meetings portlet. 
+The Meetings app, available in the Liferay Marketplace, integrates with the 
+BigBlueButton and Zoom web conferencing services. It lets you schedule, manage, 
+and launch meetings from within Liferay. This app includes two portlets: 
+Meetings, and Meetings Admin. The Meetings portlet lets you schedule, manage, 
+and launch meetings. The Meetings Admin portlet lets you add and configure 
+BigBlueButton and Zoom servers to conduct meetings with. You must have a server 
+configured in Meetings Admin before you can create a meeting in the Meetings 
+portlet. 
 
-You can find Meetings Admin in Control Panel's *Configuration* section. When you 
-first access Meetings Admin, you're presented with an *Add Server* button and a 
-message telling you there are no servers. To add a server, click *Add Server*. 
-In the *New Server* form that appears, give your server a name and select *Zoom* 
-or *BigBlueButton* in the *Provider Type* menu. If you select Zoom, then you 
-must enter your Zoom API key and secret in the corresponding fields. If you 
-select BigBlueButton, then you must enter your BigBlueButton API URL and secret. 
-The following screenshot shows this form for a Zoom server.
+Once you deploy the Meetings app, you can find Meetings Admin in the Control 
+Panel's *Configuration* section. When you first access Meetings Admin, it 
+presents you with an *Add Server* button and a message telling you there are no 
+servers. To add a server, click *Add Server*. In the *New Server* form that 
+appears, give your server a name and select *Zoom* or *BigBlueButton* in the 
+*Provider Type* menu. If you select Zoom, then you must enter your Zoom API key 
+and secret in the corresponding fields. If you select BigBlueButton, then you 
+must enter your BigBlueButton API URL and secret. The following screenshot shows 
+the *New Server* form. 
 
 ![Figure x: Create a new meeting server by filling out the *New Server* form.](../../images/meetings-add-server.png)
 
-When you're done entering your server's information, click *Save*. Your server 
-then appears in a table in the Meetings Admin portlet. You can edit or delete 
-this server by clicking the *Actions* button and selecting *Edit* or *Delete*. 
-Now that you have a server, you're ready to create a meeting!
+When you finish entering your server's information, click *Save*. Meetings Admin 
+then lists your server in a table. You can edit or delete this server by 
+clicking its *Actions* button and selecting *Edit* or *Delete*. Once you have a 
+server, you can create a meeting in the Meetings portlet. 
 
-Add the Meetings portlet to a page you want to create meetings from. You can add 
-this portlet from the Application menu's Social category. This portlet lists any 
+The Meetings portlet is in the Application menu's Social category. You can add 
+it to any page you want to create meetings from. This portlet lists any 
 scheduled meetings in the *Current* tab. The *Completed* tab lists any finished 
 meetings. Click the *Add Meeting* button to schedule a meeting. In the *New 
 Meeting* form that appears, enter your meeting's information. First, give your 
-meeting a name and enter its time, date, and description. Select the server to 
-use from the *Provider* selector. Note that in this field, *Preferred Solution* 
+meeting a name and enter its time, date, and description. In the *Provider* 
+field, select the server to use. Note that in this field *Preferred Solution* 
 represents a Zoom server, and *Private Solution* represents a BigBlueButton 
-server. To require attendees to join the meeting with a password, check the 
+server. To require attendees to use a password to join the meeting, check the 
 *Require Password* checkbox and then create this password by typing it into the 
 text field below the checkbox. To set the meeting to automatically begin the 
 video conference when attendees join, check the *Automatically Start Video* 
-checkbox. Lastly, add the participants that you want to join your meeting and 
-click *Save*. Your meeting then appears in a table in the portlet's *Current* 
-tab. Scheduling a meeting notifies the participants via the Notifications 
-portlet and email. The email contains the organizer's name, the meeting's date 
-and time, and a link and instructions for joining the meeting. The following 
-screenshots show the *New Meeting* form, and the Meetings portlet with a 
-currently scheduled meeting. 
+checkbox. Lastly, add the participants that you want to join your meeting, and 
+click *Save*. The Meetings portlet then lists your meeting in a table in the 
+*Current* tab. Scheduling a meeting notifies the participants via the 
+Notifications portlet and email. The email contains the organizer's name, the 
+meeting's date and time, and a link and instructions for joining the meeting. 
+The following screenshots show the *New Meeting* form, and the Meetings portlet 
+with a currently scheduled meeting. 
 
 ![Figure x: Create a new meeting by filling out the *New Meeting* form.](../../images/meetings-new-meeting.png)
 
 ![Figure x: The Meetings portlet lists any currently scheduled meetings in its *Current* tab.](../../images/meetings-current.png)
 
-To view a meeting's details, simply click it in the Meetings portlet's table. 
-If you have the correct permissions, this also presents you with the options to 
+To view a meeting's details, simply click it in the Meetings portlet's table. If 
+you have the correct permissions, this also presents you with the options to 
 edit, delete, start, or export the meeting. You can also view the meeting's 
-invitation email from here. Note that you don't have to go into the meeting's 
-details to perform any of these actions. You can also do so from each meeting's 
-*Actions* button in the table. When a meeting is in progress, *Start Meeting* 
-becomes *End Meeting*, and the *Join Meeting* action is also listed. 
+invitation email template from here. Note that you don't have to go into the 
+meeting's details to perform these actions. You can also do so from each 
+meeting's *Actions* button in the table. Note that when a meeting is in 
+progress, *Start Meeting* becomes *End Meeting*, and *Join Meeting* appears. 
 
 It's important to note that your meeting doesn't actually run *inside* Liferay. 
 When you start or join a meeting, the Meetings portlet hands you off to the 
-meeting's webconferencing service (BigBlueButton or Zoom) via the server you 
-specified in the Meetings Admin portlet. To join the meeting, you must therefore 
-have the necessary BigBlueButton or Zoom software installed on your machine.
+meeting's web conferencing service (BigBlueButton or Zoom) via the server you 
+specified in the Meetings Admin portlet. To start or join a meeting, you must 
+therefore have any required BigBlueButton or Zoom software installed on your 
+machine. 
 
 Next, let's look at how you can integrate your email addresses with Liferay's
 Mail portlet.
