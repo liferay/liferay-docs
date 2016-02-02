@@ -16,11 +16,12 @@ in *Configuration* &rarr; *System Settings*.
 
 ![Figure 1: System Settings are accessed through the Control Panel.](../../images/system-settings-product-menu.png)
 
-In The Lunar Resort, there's a forum site for excited guests to discuss their
-visits and offer guidance and tips to new guests. Sometimes they get a little
-rowdy, and need to be temporarily banned from the site's forum (Liferay's forum
-app is the Message Boards portlet). The default ban interval is ten days. If that
-seems a little extreme to you, The Lunar Resort's administrator, then change it. 
+Perhaps an example will help. In The Lunar Resort, there's a forum site for
+excited guests to discuss their visits and offer guidance and tips to new
+guests. Sometimes they get a little rowdy, and need to be temporarily banned
+from the site's forum (Liferay's forum app is the Message Boards portlet). The
+default ban interval is ten days. If that seems a little extreme to you, The
+Lunar Resort's administrator, then change it in System Settings. 
 
 ## Editing The Default Configuration
 

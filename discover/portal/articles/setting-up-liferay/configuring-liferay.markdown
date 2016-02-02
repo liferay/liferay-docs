@@ -42,7 +42,7 @@ the scope you want to affect with the settings you choose.
 <!--...which at that point act as the defaults is confusing -->
 
 At what level do you want to configure Liferay and its apps? Find out about
-configuration scope next?
+configuration scope next.
 
 ## Configuration Scope
 
