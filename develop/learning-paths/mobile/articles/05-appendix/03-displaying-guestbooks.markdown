@@ -333,8 +333,8 @@ navigation drawer's UI.
 
 ## Customizing the Navigation Drawer [](id=customizing-the-navigation-drawer)
 
-Before basking in the glory of your accomplishment, you need to customize the 
-navigation drawer's appearance. Open the layout file 
+Before running the app, you must change the navigation drawer's appearance to 
+account for the guestbook list's presence. Open the layout file 
 `nav_header_guestbooks.xml`. The parent `LinearLayout`'s height is `160dp`. This 
 value corresponds to `@dimen/nav_header_height`. To prevent the drawer's header 
 from overlapping with the guestbook list, you must pad the top of the drawer's 
@@ -343,30 +343,19 @@ from overlapping with the guestbook list, you must pad the top of the drawer's
 
     android:paddingTop="@dimen/nav_header_height"
 
+Recall that when you used the Screenlets, you changed the drawer's header text 
+to reflect the app's contents. You'll do the same thing here, using the exact 
+same steps. You can find these steps at the end of 
+[the article on using Get Entries Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/using-get-entries-screenlet). 
+
 That's it! Run the app. After you log in, the app retrieves the guestbooks from 
-the portal and displays the first guestbook's name in the Action Bar.
+the portal and displays the first guestbook's name in the Action Bar. Open the 
+drawer to reveal the guestbook list. Select a different guestbook from the 
+drawer. The drawer then closes and the Action Bar displays the selected 
+guestbook's name. Awesome! It works! 
 
 ![Figure 2: The app now displays the first guestbook's name in the Action Bar.](../../images/android-first-guestbook.png)
 
-Open the drawer to reveal the list of guestbooks. Select a different guestbook 
-from the drawer. The drawer then closes and the Action Bar displays the selected 
-guestbook's name. Awesome! It works! There's one small issue, however, with the 
-drawer (besides being hideous). Its header displays the text *Android Studio* 
-and *android.studio@android.com*. You obviously don't want your users to see 
-this. 
-
-![Figure 3: The header displays generic text by default.](../../images/android-guestbook-drawer-01.png)
-
-The two `TextView` elements in `nav_header_guestbooks.xml` use the 
-`android:text` attribute to hardcode this text. To remove the text completely, 
-you could delete the `TextView` elements. It's better though to show text that's 
-relevant to your app. In the `TextView` elements, replace `"Android Studio"` 
-with `"Liferay Guestbook"`, and `"android.studio@android.com"` with 
-`"Welcome!"`.
-
-Run the app again, and open the drawer after signing in. Although the drawer is 
-still ugly, it's at least polite now. 
-
-![Figure 4: The navigation drawer now contains the app's name and a greeting.](../../images/android-guestbook-drawer-02.png)
+![Figure 3: The navigation drawer now contains the guestbook list. The header contains the app's name and a greeting.](../../images/android-guestbook-drawer-02.png)
 
 Great! Now you're ready to retrieve guestbook entries. 
