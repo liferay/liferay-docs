@@ -1,7 +1,7 @@
 # Enabling Workflow
 
 The workflow functionality bundled with the Business Productivity Suite comes
-with one pre-installed worfklow called the Single Approver Workflow. This
+with one pre-installed workflow called the Single Approver Workflow. This
 workflow requires one approval before an asset can be published. One of the
 conveniences of using Liferay's workflow engine is that any roles specified in
 the workflow definition are created automatically when the definition is
