@@ -182,21 +182,17 @@ name on the Sites page of the Control Panel. Finally, it's best to check the
 pages from your local (staging) Liferay server to your remote (live) Liferay
 server.
 
-+$$$
+Similar to Local Live staging, it is generally a good idea to turn remote
+staging on at the beginning of your site's development for good performance.
+When you're using Remote Live staging, there is an initial publication which
+transfers data. If you've created a large amount of content, your initial
+publication could be slow and cause a large amount of network traffic. Liferay's
+system is very fast for the amount of data being transferred. This is because
+the data transfer is completed piecemeal, instead of one large data dump. You
+can control the size of data transactions by setting the following portal
+property in your `portal-ext.properties` file:
 
-**Tip:** In general, remote staging should be enabled for a site as early as
-possible. It's generally *not* a good idea to add gigabytes of data into
-Liferay's CMS and then decide to turn on remote staging. There's an existing
-issue that limits Liferay to less than 2G of data for publishing data to a
-remote staging server:
-[http://issues.liferay.com/browse/LPS-35317](http://issues.liferay.com/browse/LPS-35317).
-You can check this issue to see if it's been resolved and to find out which
-versions of Liferay it affects.
-
-<!-- TODO: Check into this issue, and find out if there is still a 2G limit for
-data publishing. -Cody -->
-
-$$$
+    staging.remote.transfer.buffer.size
 
 That's all you need to do to enable Remote Live Staging! Note that if you fail
 to set the tunneling servlet shared secret or the values of these properties on
