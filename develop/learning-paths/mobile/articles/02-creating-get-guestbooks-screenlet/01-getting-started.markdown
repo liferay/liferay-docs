@@ -35,12 +35,12 @@ example, if you created a Screenlet for editing a guestbook, it would also need
 to use guestbook model objects. Putting the model class in a separate package 
 makes it clear that this class doesn't belong exclusively to a single Screenlet. 
 
-First, create a new package called `model` inside the 
-`com.liferay.docs.liferayguestbook` package. Inside this new `model` package, 
-create a new class called `GuestbookModel`. Replace the `GuestbookModel` class's 
-contents with the following code: 
+First, create a new package called `model` inside the `com.liferay.docs` 
+package. Inside this new `model` package, create a new class called 
+`GuestbookModel`. Replace the `GuestbookModel` class's contents with the 
+following code: 
 
-    package com.liferay.docs.liferayguestbook.model;
+    package com.liferay.docs.model;
 
     import org.json.JSONException;
     import org.json.JSONObject;
