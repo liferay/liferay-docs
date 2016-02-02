@@ -81,9 +81,10 @@ following imports at the top of the file:
     import com.liferay.mobile.android.v62.guestbook.GuestbookService;
     import com.liferay.mobile.screens.auth.login.LoginScreenlet;
 
-If Android Studio recognizes these imports, then you're good to go! Next, 
-there's one final small but important detail to complete: pointing your app at
-the correct Liferay installation. 
+If Android Studio recognizes these imports, then you're good to go! Remove them 
+once you've verified that they're recognized. Next, there's one final small but 
+important detail to complete: pointing your app atthe correct Liferay 
+installation. 
 
 ## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
 

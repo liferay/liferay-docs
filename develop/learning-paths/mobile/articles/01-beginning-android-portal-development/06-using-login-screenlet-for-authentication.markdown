@@ -64,6 +64,9 @@ class declaration should now appear as follows:
 
     public class MainActivity extends AppCompatActivity implements LoginListener {...
 
+You must also add the `com.liferay.mobile.screens.auth.login.LoginListener` 
+import. 
+
 Implementing `LoginListener` requires you to implement two methods: 
 `onLoginSuccess` and `onLoginFailure`. Add them to the class as follows:
 
@@ -78,8 +81,7 @@ Implementing `LoginListener` requires you to implement two methods:
     }
 
 When you paste in these methods, you'll need to add the imports
-`com.liferay.mobile.screens.auth.login.LoginListener` and
-`com.liferay.mobile.screens.context.User`. 
+`android.widget.Toast;` and`com.liferay.mobile.screens.context.User`. 
 
 These are listener methods called, respectively, when login succeeds or fails. 
 Using them lets your app respond to events that occur in the Screenlet. For the 
@@ -95,25 +97,19 @@ class as its listener. To do so, add the following code to the end of the
     LoginScreenlet loginScreenlet = (LoginScreenlet) findViewById(R.id.login_screenlet);
     loginScreenlet.setListener(this);
 
+This also requires you to import 
+`com.liferay.mobile.screens.auth.login.LoginScreenlet;`. 
+
 The `findViewById` method uses the Screenlet's ID from the layout to create the 
 reference. The `setListener` method then sets the `MainActivity` class as the 
 Login Screenlet's listener. 
 
-If you added the imports as prompted by Android Studio when you added the above 
-code, you should now have the following additional imports in your 
-`MainActivity` class. If you don't, add them now to resolve any errors: 
-
-    import com.liferay.mobile.screens.auth.login.LoginListener;
-    import com.liferay.mobile.screens.auth.login.LoginScreenlet;
-    import com.liferay.mobile.screens.context.User;
-    import android.widget.Toast;
-
-You should also remove any unused imports. Now run the app by clicking the green 
-*play* button in the toolbar, or by selecting *Run 'app'* from the *Run* menu. 
-If you've never run an emulator, you'll have to go through the process of
-choosing and installing one. Unlock the emulator once it launches. Your app then
-automatically opens to the Login Screenlet. Enter your credentials and click
-*SIGN IN*. The toast message then pops up saying that the login succeeded. 
+Now run the app by clicking the green *play* button in the toolbar, or by 
+selecting *Run 'app'* from the *Run* menu. If you've never run an emulator, 
+you'll have to go through the process of choosing and installing one. Unlock the 
+emulator once it launches. Your app then automatically opens to the Login 
+Screenlet. Enter your credentials and click *SIGN IN*. The toast message then 
+pops up saying that the login succeeded. 
 
 ![Figure 1: Login Screenlet successfully authenticated you with the portal.](../../images/android-login-screenlet-success.png)
 
@@ -135,10 +131,8 @@ To launch `GuestbooksActivity` when login succeeds, replace the contents of
     startActivity(intent);
 
 When login succeeds, this code creates an `Intent` and uses it to start 
-`GuestbooksActivity`. If you haven't already, make sure you add the following 
-import to `MainActivity`:
-
-    import android.content.Intent;
+`GuestbooksActivity`. If you haven't already, make sure you import 
+`android.content.Intent` in `MainActivity`. 
 
 Now you're ready to see the intent in action! Run the app in the emulator and 
 log in when prompted. When login succeeds, the `GuestbooksActivity` opens. 
