@@ -1,8 +1,8 @@
 # Using the Staging Environment
 
 After enabling staging (either Local Live or Remote Live) for a site, you'll
-notice a colored bar with some new menus on the Dockbar when you navigate to
-the site. If you haven't enabled staging for your site, see the
+notice additional options provided on the top Control Menu and also in the
+Product Menu to the left. If you haven't enabled staging for your site, see the
 [Enabling Staging](/discover/portal/-/knowledge_base/7-0/enabling-staging)
 section for instructions. These new menus help you manage staged pages. You'll
 also notice that most of your page management options have been removed, because
@@ -13,28 +13,28 @@ staging. If you're following along with the Lunar Resort example, navigate back
 to the News and Events page and click on *Staging* to get your page editing
 capabilities back.
 
-![Figure 3.22: You can see the new staging options added to the top of your screen.](../../../images/04-web-content-staging-live-page.png)
+![Figure 1: You can see the new staging options added to the top and left of your screen.](../../../images/staging-live-page.png)
 
-Add the Bookmarks portlet and then click on *Live* from the Dockbar. Notice that
-the Bookmarks portlet isn't there. That's because you've staged a change to the
+Add the Bookmarks application and then click on *Live* from the top menu. Notice
+that the Bookmarks app isn't there. That's because you've staged a change to the
 page but haven't published that change yet to the live site. Go back to the
-staged page and click on the *Staging* drop-down menu to look at the options you
-have available. From here you have many options to choose from to help in your
+staged page and observe the options you have to choose from to help in your
 staging conquest.
 
 **Manage Site Pages Variations:** allows you to work in parallel on multiple
-versions of a staged site page. We'll explain this later.
+versions of a staged site page. You'll learn more about this later.
 
 **Manage Page Variations:** allows you to work in parallel on multiple versions
-of a staged page. We'll explain this later.
+of a staged page. You'll learn more about this later.
 
 **Undo/Redo:** allows you to step back/forward through recent changes to a page,
-which can save you the time of manually adding or removing portlets if you make
-a mistake.
+which can save you the time of manually adding or removing apps if you make a
+mistake.
 
 **History:** shows you the list of revisions of the page, based on publication
 dates. You can go to any change in the revision history and see how the pages
-looked at that point.
+looked at that point. To access *History*, select the *Options* icon
+(![Options](../../../images/icon-options.png)) in the Staging bar.
 
 **Mark as Ready for Publication:** After you're done making changes to the
 staged page, click this button. The status of the page changes from *Draft* to
@@ -42,14 +42,28 @@ staged page, click this button. The status of the page changes from *Draft* to
 Site. When you publish a page to live, only the version which was *Marked as
 Ready for Publication* is published.
 
-The *Publish to Live* button gives you the option to publish to Live *Now* or
-*Schedule* a publication to Live.
+When clicking the *Publish to Live* button, a popup window appears with come
+configuration options for your publication. You can give your publication a name
+and view the changes since last publication. If everything looks good, you can
+click the *Publish to Live* button to publish your staged results to the live
+site.
+
+If you'd like to further configure your publication, you can select the *Switch
+to Advanced Publication* button. Opening the Advanced Publication menu would be
+useful if you'd like to schedule a time to publish your content, edit the
+pages/content that will be included in the publication, managing permissions,
+etc. You're presented a custom publication menu, where you can perform advanced
+editing to your publication process.
+
+You have two initial options to choose from for the Date category:
 
 **Now:** immediately pushes any changes to the Live Site.
 
 **Schedule:** lets you set a specific date to publish or to set up recurring
 publishing. You could use this, for example, to publish all changes made during
 the week every Monday morning without any further intervention.
+
+<!-- Left off here. -->
 
 The *Publish to Live* button also gives you options to select pages,
 applications, content, and permissions. Furthermore, you're given the *Current
