@@ -90,11 +90,30 @@ the `onCreateView` method with the following updated version:
         return view;
     }
 
-Awesome! You're finished! Run the app in the emulator and log in with your 
-credentials. Your app now uses the Get Guestbooks and Get Entries Screenlets to 
-show the same guestbooks and entries as the Guestbook portlet. 
+Awesome! Run the app in the emulator and log in with your credentials. The app 
+presents you with the first guestbook's entries. Open the navigation drawer by 
+pressing the hamburger button, and then select a different guestbook. The drawer 
+then closes to show the selected guestbook's entries. Nice work! Your app now 
+uses the Get Guestbooks and Get Entries Screenlets to show the same guestbooks 
+and entries as the Guestbook portlet. The following screenshots show both 
+Screenlets in action. 
 
 ![Figure 1: Get Entries Screenlet displays guestbook entries in your app.](../../images/android-guestbooks-entries-screenlets.png)
+
+![Figure 2: Get Guestbooks Screenlet displays guestbooks in the navigation drawer.](../../images/android-guestbook-screenlet-drawer-01.png)
+
+Although your Screenlets work, you may have noticed something odd about the 
+navigation drawer: its header displays the text *Android Studio* and 
+*android.studio@android.com*. You obviously don't want your users to see this. 
+The two `TextView` elements in `nav_header_guestbooks.xml` use the 
+`android:text` attribute to hardcode this text. To remove the text completely, 
+you could delete the `TextView` elements. It's better though to show text that's 
+relevant to your app. In the `TextView` elements, replace `"Android Studio"` 
+with `"Liferay Guestbook"`, and `"android.studio@android.com"` with 
+`"Welcome!"`. Run the app again, and open the drawer after signing in. The 
+drawer header now shows your greeting. 
+
+![Figure 3: The drawer header now displays your greeting.](../../images/android-guestbook-screenlet-drawer-02.png)
 
 Congratulations! Now you know how to use Liferay Screens and create your own 
 Screenlets. This opens up a world of possibilities for developing your own apps. 
