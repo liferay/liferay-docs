@@ -209,6 +209,9 @@ This would produce the following wiki page:
 ![Figure x: The source editor and syntax guide, help you format wiki page headings and text.](../../../images/wiki-page.png)
 
 This adds a simple heading, a paragraph of text, and several links to the page.
+
+<!-- Demonstrate adding an image. Jim-->
+
 Since the pages behind these links have not been created yet, clicking one of
 those links takes you to an editing screen to create the page. This editing
 screen looks just like the one you used previously when you wrote the front
@@ -346,6 +349,8 @@ approved.
 **Search**: allows you to a search for pages matching a term. If no matches
 are found for the term, a link will be 
 displayed which allows you to create a new wiki page named after that term.
+
+![Figure x: If a wiki doesn't have a page matching the topic you're looking for, it gives you the option to create a page named for the topic.](../../../images/wiki-search.png)
 
 The Wiki portlet is another full-featured Liferay application with all of the
 features you expect from a state of the art wiki. 
