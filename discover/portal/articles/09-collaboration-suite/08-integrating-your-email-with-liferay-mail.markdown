@@ -14,7 +14,7 @@ Marketplace by navigating the Control Panel and clicking *Store* under the
 *Apps* heading. You can learn more about Marketplace and how to
 purchase/download an app in the *Liferay Marketplace* chapter.
 
-![Figure 9.35: Read, reply, and create messages using Liferay's Mail Portlet.](../../images/05-mail-portlet.png)
+![Figure 9.38: Read, reply, and create messages using Liferay's Mail Portlet.](../../images/05-mail-portlet.png)
 
 To connect the Mail portlet with an email account, click the *Add Mail Account*
 link. From there, you are given a choice between a Custom email Account or a
