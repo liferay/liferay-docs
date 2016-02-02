@@ -366,6 +366,12 @@ recommended: you'll get up to speed the fastest.
 logic with HTML. This is similar to other scripting languages, such as PHP,
 though Velocity is much simpler.
 
++$$$
+
+**Note:** The Velocity template language is deprecated for Liferay 7.0.
+
+$$$
+
 **XSL** (Extensible Style Sheet Language): XSL is used in Liferay templates to
 transform the underlying XML of a structure into markup suitable for the
 browser. While it may not be as clean and compact as Velocity or FreeMarker,
@@ -488,16 +494,26 @@ Currency Converter app in FreeMarker and Velocity:
 
 **FreeMarker:**
 
-    <#assign liferay_portlet = PortalJspTagLibs["/WEB-INF/tld/liferay-portlet-ext.tld"] />
-    <@liferay_portlet["runtime"] portletName="com_liferay_currency_converter_web_portlet_CurrencyConverterPortlet" />
+    <@liferay_portlet_ext["runtime"] portletName="com_liferay_currency_converter_web_portlet_CurrencyConverterPortlet" />
 
 **Velocity:**
 
     $theme.runtime("com_liferay_currency_converter_web_portlet_CurrencyConverterPortlet");
 
-You probably noticed in the FreeMarker example that a taglib is used. Taglibs
-are accessible to web content administrators, providing many additional
-oppurtunities for template development.
+Liferay's taglibs are also accessible to web content administrators developing
+in FreeMarker. There is no need to instantiate these taglibs within your
+FreeMarker template; they're already provided for you automatically. You can
+access these taglibs by indicating the TLD's file name with underscores. For
+instance, the above FreeMarker example accessed a tag in the
+`liferay-portlet-ext.tld` file by specifying `@liferay_portlet_ext`. This is not
+available for Velocity users, since Velocity is deprecated for Liferay 7.0.
+
+<!-- There is more information about how users can make their custom taglibs
+accessible by using the FreeMarker Contributor. This would be a great tutorial
+to link here.
+
+https://github.com/liferay/liferay-portal/tree/master/modules/frontend/frontend-taglib-freemarker-contributor
+-Cody -->
 
 For cases where you're creating your template within Liferay, you can use the
 template editor. On the left side of the template editor, you'll notice a
