@@ -1,4 +1,4 @@
-# Enabling Workflow
+# Enabling Workflow [](id=enabling-workflow)
 
 The workflow functionality bundled with the Business Productivity Suite comes
 with one pre-installed workflow called the Single Approver Workflow. This
@@ -10,8 +10,7 @@ engines cannot match. The Single Approver Workflow contains three roles, each
 with different scopes. You can deduce the scope of each role by its name: Site
 Content Reviewer, Organization Content Reviewer and Portal Content Reviewer.
 
-<!-- Diagram of single approver. -->
-![Figure x: blah.](../../../images/single-approver-diagram.png)
+![Figure x: The Single Approver Definition comes included with Liferay's Business Productivity workflow functionality.](../../../images/single-approver.png)
 
 In addition to the Single Approver definition, there are some workflow
 definitions that ship with Liferay but are not pre-installed, since they're
@@ -27,7 +26,7 @@ Liferay. Check out the article on uploading definitions to do that <!--LINK-->.
 Alternatively, you can look at the pre-existing definitions to get ideas while
 designing and building your own definition. 
 
-## Workflow Design Tools
+## Workflow Design Tools [](id=workflow-design-tools)
 
 Now a word about designing workflows. If you are a CE <!--Change if necessary-->
 customer, you'll have to get comfortable working with XML to create workflow
