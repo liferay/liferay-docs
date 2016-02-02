@@ -1,16 +1,16 @@
 # Retrieving Guestbook Entries [](id=retrieving-guestbook-entries)
 
-So far, you have an Android app that retrieves and displays guestbooks from
-the [MVC Learning Path's](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development) 
+So far, you have an Android app that uses the Guestbook Mobile SDK to retrieve 
+and display guestbooks from the [MVC Learning Path's](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development) 
 Guestbook portlet. But that's all your app does. Tapping a guestbook in the 
 navigation drawer doesn't do anything besides close the drawer to show the 
 Action Bar and an empty screen. 
 
 ![Figure 1: Guestbook entries aren't showing yet in the app.](../../images/android-first-guestbook.png)
 
-Next, you'll learn the steps required to retrieve guestbook entries from the
-Guestbook portlet. These steps are almost the same as those you used to retrieve
-guestbooks. The only real difference, besides getting entries instead of
+Next, you'll use the Guestbook Mobile SDK to retrieve guestbook entries from the 
+Guestbook portlet. These steps are almost the same as those you used to retrieve 
+guestbooks. The only real difference, besides getting entries instead of 
 guestbooks, is that you'll use a fragment instead of an activity. 
 
 The steps you'll follow to retrieve entries are listed here: 
@@ -34,121 +34,24 @@ creating a model class for the JSON returned from the portlet.
 ## Creating the Model Class for Entries [](id=creating-the-model-class-for-entries)
 
 As with guestbooks, the Guestbook Mobile SDK returns entries from the portlet in 
-a `JSONArray` that contains each entry in a `JSONObject`. You need to convert 
-these entries into proper entry model objects so you can work with them 
-efficiently in your app. Create the `EntryModel` class in your app's `model` 
-package. Replace its contents with the following code: 
-
-    package com.liferay.docs.liferayguestbook.model;
-
-    import org.json.JSONException;
-    import org.json.JSONObject;
-
-    import java.io.Serializable;
-    import java.util.Date;
-
-
-    public class EntryModel implements Serializable {
-
-        private long _entryId;
-        private long _groupId;
-        private long _companyId;
-        private long _userId;
-        private String _userName;
-        private long _createDate;
-        private long _modifiedDate;
-        private String _name;
-        private String _email;
-        private String _message;
-        private long _guestbookId;
-
-        public EntryModel(JSONObject json) throws JSONException {
-
-            _entryId = json.getLong("entryId");
-            _groupId = json.getLong("groupId");
-            _companyId = json.getLong("companyId");
-            _userId = json.getLong("userId");
-            _userName = json.getString("userName");
-            _createDate = json.getLong("createDate");
-            _modifiedDate = json.getLong("modifiedDate");
-            _name = json.getString("name");
-            _email = json.getString("email");
-            _message = json.getString("message");
-            _guestbookId = json.getLong("guestbookId");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (!(obj instanceof EntryModel)) {
-                return false;
-            }
-
-            EntryModel entry = (EntryModel) obj;
-
-            return (_entryId == entry.getEntryId());
-        }
-
-        @Override
-        public String toString() {
-            return _message;
-        }
-
-        public long getEntryId() {
-            return _entryId;
-        }
-
-        public long getGroupId() {
-            return _groupId;
-        }
-
-        public long getCompanyId() {
-            return _companyId;
-        }
-
-        public long getUserId() {
-            return _userId;
-        }
-
-        public String getUserName() {
-            return _userName;
-        }
-
-        public Date getCreateDate() {
-            Date createDate = new Date(_createDate);
-            return createDate;
-        }
-
-        public Date getModifiedDate() {
-            Date modifiedDate = new Date(_modifiedDate);
-            return modifiedDate;
-        }
-
-        public String getName() {
-            return _name;
-        }
-
-        public String getEmail() {
-            return _email;
-        }
-
-        public String getMessage() {
-            return _message;
-        }
-
-        public long getGuestbookId() {
-            return _guestbookId;
-        }
-    }
-
-Besides working with entries instead of guestbooks, this class works the same as 
-`GuestbookModel`. Now that your `EntryModel` class exists, you can create the 
-fragment you'll use to retrieve and display the entries. 
+a `JSONArray` that contains each entry in a `JSONObject`. Just as you did when 
+creating Get Entries Screenlet, you must create a model class that turns each 
+`JSONObject` into a proper entry model object. You'll do this the exact same way 
+you did in Get Entries Screenlet. To create this model class, follow 
+[these instructions](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-get-entries-screenlet#creating-the-model-class-for-entries) 
+from the article on getting started with the Get Entries Screenlet. When you 
+finish, you'll have an identical `EntryModel` class inside the package 
+`com.liferay.docs.liferayguestbook.model`. Once this class exists, you can 
+create the fragment you'll use to retrieve and display the entries. 
 
 ## Creating a Fragment for the Entries [](id=creating-a-fragment-for-the-entries)
 
-Using a fragment for the entries lets you swap out part of `GuestbookActivity`'s 
-contents without recreating the entire activity from scratch each time a 
-guestbook is selected. Now you'll create this fragment. Right click the 
+When you used the Screenlets, 
+[you used a fragment for Get Entries Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-a-fragment-for-get-entries-screenlet). 
+This let you swap out part of `GuestbookActivity`'s contents without recreating 
+the entire activity from scratch each time a guestbook was selected. You'll do 
+the same thing here, except you'll make the Guestbook Mobile SDK call from the 
+fragment. Now you'll create this fragment. Right click the 
 `com.liferay.docs.liferayguestbook` package and select 
 *New* &rarr; *Fragment* &rarr; *Fragment (Blank)*. In the wizard, uncheck all 
 the checkboxes, name the fragment `EntriesFragment`, and then click *Finish*. 
@@ -290,8 +193,8 @@ Besides using entries instead of guestbooks and `EntriesFragment` instead of
 for details on how this class works. 
 
 Great! Your app now contains the basic infrastructure it needs to retrieve 
-guestbook entries. You're ready to make the server call. You'll do this in 
-`EntriesFragment`.
+guestbook entries. You're ready to make the server call. You'll do this next, in 
+`EntriesFragment`. 
 
 ## Making the Server Call [](id=making-the-server-call)
 

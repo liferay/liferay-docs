@@ -23,94 +23,12 @@ Recall that the Guestbook Mobile SDK returns guestbooks from the portlet in a
 `JSONArray` that contains each guestbook in a `JSONObject`. Just as you did when 
 creating Get Guestbooks Screenlet, you must create a model class that turns each 
 `JSONObject` into a proper guestbook object. You'll do this the exact same way 
-you did in Get Guestbooks Screenlet. First, create a new package called `model`
-inside the `com.liferay.docs.liferayguestbook` package. Inside this new `model`
-package, create a new class called `GuestbookModel`. Replace the
-`GuestbookModel` class's contents with the following code: 
+you did in Get Guestbooks Screenlet. To create this model class, follow 
+[these instructions](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-the-get-guestbooks-screenlet#creating-the-model-class-for-guestbooks). 
+from the article on getting started with the Get Guestbooks Screenlet. When you 
+finish, you'll have an identical `GuestbookModel` class inside the new package 
+`com.liferay.docs.liferayguestbook`. 
 
-    package com.liferay.docs.liferayguestbook.model;
-
-    import org.json.JSONException;
-    import org.json.JSONObject;
-
-    import java.io.Serializable;
-    import java.util.Date;
-
-    public class GuestbookModel implements Serializable {
-
-        private long _guestbookId;
-        private long _groupId;
-        private long _companyId;
-        private long _userId;
-        private String _userName;
-        private long _createDate;
-        private long _modifiedDate;
-        private String _name;
-
-        public GuestbookModel(JSONObject json) throws JSONException {
-            _guestbookId = json.getLong("guestbookId");
-            _groupId = json.getLong("groupId");
-            _companyId = json.getLong("companyId");
-            _userId = json.getLong("userId");
-            _userName = json.getString("userName");
-            _createDate = json.getLong("createDate");
-            _modifiedDate = json.getLong("modifiedDate");
-            _name = json.getString("name");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (!(obj instanceof GuestbookModel)) {
-                return false;
-            }
-
-            GuestbookModel guestbook = (GuestbookModel) obj;
-
-            return (_guestbookId == guestbook.getGuestbookId());
-        }
-
-        @Override
-        public String toString() {
-            return _name;
-        }
-
-        public long getGuestbookId() {
-            return _guestbookId;
-        }
-
-        public long getGroupId() {
-            return _groupId;
-        }
-
-        public long getCompanyId() {
-            return _companyId;
-        }
-
-        public long getUserId() {
-            return _userId;
-        }
-
-        public String getUserName() {
-            return _userName;
-        }
-
-        public Date getCreateDate() {
-            Date createDate = new Date(_createDate);
-            return createDate;
-        }
-
-        public Date getModifiedDate() {
-            Date modifiedDate = new Date(_modifiedDate);
-            return modifiedDate;
-        }
-
-        public String getName() {
-            return _name;
-        }
-    }
-
-This is the exact same 
-[`GuestbookModel` class you created for Get Guestbooks Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-the-get-guestbooks-screenlet#creating-the-model-class-for-guestbooks). 
 Next, you'll prepare `GuestbooksActivity` to recieve `GuestbookModel` objects. 
 
 ## Preparing GuestbooksActivity for Guestbooks [](id=preparing-guestbooksactivity-for-guestbooks)

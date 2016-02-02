@@ -177,8 +177,8 @@ adding the following `onItemClick` method:
         final int position, final long id) {
         
         drawerListView.setItemChecked(position, true);
-        GuestbookModel selectedGuestbook = _guestbooks.get(position);
-        actionBar.setTitle(selectedGuestbook.getName());
+        GuestbookModel guestbook = _guestbooks.get(position);
+        actionBar.setTitle(guestbook.getName());
         drawer.closeDrawers();
     }
 
@@ -322,8 +322,8 @@ like:
         @Override
         public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
             drawerListView.setItemChecked(position, true);
-            GuestbookModel selectedGuestbook = _guestbooks.get(position);
-            actionBar.setTitle(selectedGuestbook.getName());
+            GuestbookModel guestbook = _guestbooks.get(position);
+            actionBar.setTitle(guestbook.getName());
             drawer.closeDrawers();
         }
     }
