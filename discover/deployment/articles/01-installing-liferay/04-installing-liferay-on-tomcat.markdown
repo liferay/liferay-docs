@@ -20,7 +20,7 @@ You'll see the term *Liferay Home* used in this installation guide. *Liferay
 Home* refers to the folder containing your Tomcat server folder. When Liferay
 is installed on Tomcat, the Liferay Home folder contains the Tomcat server
 folder as well as `data`, `deploy`, `license`, and `osgi` folders. You'll also
-see the term `$TOMCAT_HOME` used in this guide. `TOMCAT_HOME` refers to your
+see the term `$TOMCAT_HOME` used in this guide. `$TOMCAT_HOME` refers to your
 Tomcat server folder. This folder is usually named `tomcat-[version]` or
 `apache-tomcat-[version]`.
 
@@ -35,13 +35,14 @@ third-parties, as described below.
    location of your choosing. You'll copy a number of resources from this
    bundle to your Tomcat server as you manually install Liferay.
 
-2. If you have Liferay Tomcat bundle, copy all the JARs from your bundle's
-   `TOMCAT_HOME/lib/ext` folder to your application server's
-   `TOMCAT_HOME/lib/ext` folder. If the `TOMCAT_HOME/lib/ext` folder doesn't
+2. If you have a Liferay Tomcat bundle, copy all the JARs from your bundle's
+   `$TOMCAT_HOME/lib/ext` folder to your application server's
+   `$TOMCAT_HOME/lib/ext` folder. If the `$TOMCAT_HOME/lib/ext` folder doesn't
    exist on your application server, create it. If you don't have a Liferay
    Tomcat bundle, you'll have to individually download the JARs listed below.
 
-    Here's a list of the JARs you should copy:
+    Here's a list of the JARs that you need to copy or download to your
+    `$TOMCAT_HOME/lib/ext` folder:
 
     - `activation.jar` - [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
     - `ccpp.jar` - [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
@@ -62,7 +63,7 @@ third-parties, as described below.
 3. Make sure that Tomcat can access the JDBC driver for your database. The list
    of JARs above includes `mysql.jar` and `postgresql.jar`. If you're using a
    database whose JDBC driver is not included in the list above, download the
-   driver and copy it to your `TOMCAT_HOME/lib/ext` folder.
+   driver and copy it to your `$TOMCAT_HOME/lib/ext` folder.
 
 4. Liferay includes an OSGi runtime. Extract the OSGi ZIP file that you
    downloaded and copy the `osgi` folder to your Liferay Home folder. The
@@ -75,7 +76,7 @@ third-parties, as described below.
 Next, you need to configure Tomcat for running Liferay.
 
 1. If you're working with a bundle, copy the `setenv.bat` and `setenv.sh` files
-   from your bundle to your `TOMCAT_HOME/bin` folder. If not, create these
+   from your bundle to your `$TOMCAT_HOME/bin` folder. If not, create these
    files. `setenv.bat` looks like this:
 
         if exist "%CATALINA_HOME%/jre1.6.0_20/win" (
@@ -164,7 +165,7 @@ servlet container.
    you're working with a bundle, copy the `$TOMCAT_HOME/conf/server.xml` file
    to your server. If not, you can simply make a few edits to `server.xml`.
    Edit your `$TOMCAT_HOME/conf/server.xml` file and add the attribute
-   `URIEncoding="UTF-8"` whereever you see `redirectPort=8443`, in the
+   `URIEncoding="UTF-8"` wherever you see `redirectPort=8443`, in the
    definition of your connectors (HTTP and AJP). For example:
 
         <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
@@ -475,7 +476,7 @@ Now you're ready to deploy Liferay using your Liferay WAR file.
 
     Now it's time to launch Liferay Portal on Tomcat!
 
-3. Start Tomcat by navigating to `TOMCAT_HOME/bin` and executing `./startup.sh`
+3. Start Tomcat by navigating to `$TOMCAT_HOME/bin` and executing `./startup.sh`
    or `startup.bat`. Alternatively, you can use `./catalina.sh run` or
    `catalina.bat run`. Using one of the latter commands makes your terminal or
    command prompt tail Liferay's log file. This can be useful if you want to
