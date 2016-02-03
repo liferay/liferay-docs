@@ -14,7 +14,7 @@ a portal instance. To configure the CAS SSO module at the system scope,
 navigate to the Control Panel, click on *System* &rarr; *System Settings, click
 on the *Platform* category, and find the CAS module. The values configured
 there provide the default values for all portal instances. Enter values in the
-same format as you would when initiliazing a Java primitive type with a literal
+same format as you would when initializing a Java primitive type with a literal
 value.
 
 Property Label | Property Key | Description | Type
