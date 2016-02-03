@@ -51,8 +51,8 @@ site.
 If you'd like to further configure your publication, you can select the *Switch
 to Advanced Publication* button. Opening the Advanced Publication menu would be
 useful if you'd like to schedule a time to publish your content, edit the
-pages/content that will be included in the publication, managing permissions,
-etc. You're presented a custom publication menu, where you can perform advanced
+pages/content that will be included in the publication, manage permissions, etc.
+You're presented a custom publication menu, where you can perform advanced
 editing to your publication process.
 
 You have two initial options to choose from for the Date category:
@@ -63,29 +63,22 @@ You have two initial options to choose from for the Date category:
 publishing. You could use this, for example, to publish all changes made during
 the week every Monday morning without any further intervention.
 
-<!-- Left off here. -->
+The *Publish to Live* button also gives you options to select pages, content,
+deletions, and permissions to publish.
 
-The *Publish to Live* button also gives you options to select pages,
-applications, content, and permissions. Furthermore, you're given the *Current
-and Previous* and *Scheduled* tabs. The *Current and Previous* tab lets you view
-past publications along with their authors and create/completion dates. The
-*Scheduled* tab lets you view what publication processes are scheduled for
-publishing.
+<!--Furthermore, you're given the *Current and Previous* and *Scheduled* tabs.
+The *Current and Previous* tab lets you view past publications along with their
+authors and create/completion dates. The *Scheduled* tab lets you view what
+publication processes are scheduled for publishing.-->
 
 **Pages** gives you the option to choose which pages to include when you
 publish. You can see the default settings in the gray text below the header.
-Click the *Change* button to configure these options to suite your needs.
+Click the *Change* button to configure these options to suit your needs.
 
-**Application Configuration** allows you to select which applications you want
-to publish. Select the *Choose Applications* radio button to configure
-the applications and settings to be published.
-
-**Content** allows you to configure the content to be published. Clicking the 
-*select* option under All Content allows you to delete the portlet metadata
-before publishing. Clicking the *Choose Content* option lets you filter the
-content to be published, based mainly on the date range and content type. There
-are other filtering sub-options for certain content types. Next, you'll
-look at these content filtering options.
+**Content** allows you to configure the content to be published. Clicking the
+*Choose Content* option lets you filter the content to be published, based
+mainly on the date range and content type. There are other filtering sub-options
+for certain content types. Next, you'll look at these content filtering options.
 
 The *Date Range* feature provides you with another way to select specific
 content to publish. Specifying a date range allows you to choose content to
@@ -110,11 +103,11 @@ Under the *Date Range* section, you have a section that shows the different
 types of content that can be published. This list is populated based on the
 provided date range. For example, if at least one article has been created or
 modified in the given date range, a Web Content section appears in the list,
-and the number of articles is shown next to the Web Content label.
-Otherwise, the Web Content section is absent.
+and the number of articles is shown next to the Web Content label. Otherwise,
+the Web Content section is absent.
 
-*Categories* and *OpenSocial Gadget Publisher* content types are not dependent
-on the date range, and are always shown in the list.
+*Categories* and *Page Ratings* content types are not dependent on the date
+range, and are always shown in the list.
 
 Unchecking the checkbox next to a certain content type excludes it from the
 current publication to Live.
@@ -141,39 +134,89 @@ published. If you disable this option, only the last **approved** version of
 each web content article is published to Live. This can significantly speed up
 the publication process.
 
-![Figure 3.23: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../../images/web-content-version-history-box.png)
+![Figure 2: Click the *Change* button and uncheck the version history box to only publish the latest approved version of web content articles that have multiple versions.](../../../images/web-content-version-history-box.png)
 
-You can set this option globally. There is a portal property,
-`journal.publish.version.history.by.default`, that sets the default behavior.
-The default value is `true`, so site administrators must manually uncheck the
-*Version History* box to publish only the latest approved version of web content
-articles. To change the default behavior, change the property to `false` in your
-`portal-ext.properties` file. 
+You can set this option globally. If you navigate to the Control Panel &rarr;
+*Configuration* &rarr; *System Settings* &rarr; *Web Content Administration*,
+you can toggle the *Publish version history by default* checkbox. This sets the
+default behavior. When publishing content, it is selected by default, so site
+administrators must manually uncheck the *Version History* box to publish only
+the latest approved version of web content articles. To change the default
+behavior, enable the checkbox in System Settings.
 
 When the *Documents and Media* section is present (because at least one document
 has been created or modified in the provided date range), you can disable the
 transfer to live of the previews and thumbnails associated with the documents to
 be published. This can also speed up publication time.
 
+**Deletions** lets you delete portlet metadata before publishing and delete
+operations performed for content types. If the *Replicate Individual
+Deletetions* selector is enabled, operations performed for content in the
+staging environment are replicated to the target site.
+
 **Permissions** allows you to include permissions for the pages and portlets
 when the changes are published.
 
 Now that you have an idea of the available staging options, click *Mark as Ready
 for Publication*, and then click *Publish to Live* &rarr; *Now*. Select
-*Publish* to publish your Bookmarks portlet to the live site.
+*Publish* to publish your Bookmarks application to the live site.
 
-Content publication can be also controlled using staging. Bookmarks are staged
-by default (this can be changed in Staging Configuration). If you create a
-bookmark in the staged site, it isn't visible in the live site until you publish
-it to the live site. If workflow is enabled for any new resource, the resource
-needs to go through the workflow process before it can be published to the live
-site.
+If you create a bookmark in the staged site, it isn't visible in the live site
+until you publish it to the live site. If workflow is enabled for any new
+resource, the resource needs to go through the workflow process before it can be
+published to the live site.
 
-![Figure 3.24: Ready to publish to the live site.](../../../images/04-web-content-staging-publish.png)
+![Figure 3: The staging toolbar indicates whether you're able to publish to the live site.](../../../images/staging-publish-bar.png)
 
-One of the most powerful features of staging is page variations. Let's see how
-to use them to create multiple different variations of your site's pages for
-different purposes.
+You can also manage your staging processes. Once staging is enabled, you can
+navigate back to the *Staging* option located in the Product Menu's Publishing
+Tools tab. From here you'll see a list of staging processes that have been
+completed. If you click the *Scheduled* tab from above, you'll find staging
+processes that you've scheduled for future publication dates.
+
+If you find yourself repeatedly creating staging processes that are very similar
+to each other, you should think about using Publish Templates. Up to this point,
+you've looked at how to create custom publication processes.
+
+
+Instead of manually having to customize a publication process every time you're
+looking to publish pages/content, you can use a publish template. Using publish
+templates provides you the convenience of storing publication process settings so
+they can be reused. If you publish content frequently and usually select the same
+options to publish, the task of selecting options repeatedly can become tedious.
+With publish templates, you can select a custom template and immediately publish
+with the options you configured.
+
+To create a publish template, select the *Options* icon
+(![Options](../../../images/icon-options.png)) from the top right corner of the
+Staging screen and select *Publish Templates*. Click the *Add* button (![Add
+Publish Template](../../../images/icon-add.png)) and assign the template a name
+and description, and then fill out the configuration options as you would during
+a custom publication process. Once you've saved your publish template, it is
+available to use from the *Publish Templates* tab in the *Publish to Live* menu.
+To use the template, click the *Actions* button
+(![Options](../../../images/icon-actions.png)) next to the template and select
+*Publish to Live*. This automatically fills the fields and options for
+publishing pages and their content. All you have to do is give the publication
+process a custom name. Once you confirm the configuration settings, your staging
+settings are published.
+
++$$$
+
+**Note:** When staging is enabled, the options available from your *Publishing
+Tools* tab are modified. When in the Live environment, you're only able to
+access the *Export* feature. When in the Staging environment, you're only able
+to access the *Import* and *Staging* features. The features that are not
+available for each environment don't make sense in that context. For example,
+you shouldn't be able to import content when in the live environment; it must be
+imported into the staged environment and then published before it is available
+in the live site.
+
+$$$
+
+One of the most powerful features of staging is page variations. Next, you'll
+see how to use them to create multiple different variations of your site's pages
+for different purposes.
 
 ## Using Site Pages Variations
 
