@@ -41,6 +41,8 @@ can refer to anywhere in the activity. Add these variables to the
     private ActionBar actionBar;
     private Toolbar toolbar;
 
+This requires that you import `android.support.v7.app.ActionBar`.
+
 Now add the following `initActionBar()` method to `GuestbooksActivity`: 
 
     private void initActionBar() {
@@ -88,7 +90,7 @@ Instead, you'll initialize the navigation drawer in a separate method that
 you'll then call in `onCreate`. You'll also change the `drawer` variable to be 
 an instance variable that you can refer to throughout the class. This lets you 
 use this variable to close the drawer when a guestbook is selected in Get 
-Guestbooks Screenlet. First, add the this variable to `GuestbooksActivity`: 
+Guestbooks Screenlet. First, add this variable to `GuestbooksActivity`: 
 
     private DrawerLayout drawer;
 
@@ -117,7 +119,7 @@ look like this:
         setContentView(R.layout.activity_guestbooks);
         
         initActionBar();
-        initDrawer()
+        initDrawer();
 
         ...
     }
@@ -176,9 +178,7 @@ The `onCreate` method should now look like this:
 
 Next, delete the `onNavigationItemSelected` method, along with its `@Override` 
 and `@SuppressWarnings("StatementWithEmptyBody")` statements. Lastly, remove the 
-`NavigationView` import from `GuestbooksActivity`:
-
-    import android.support.design.widget.NavigationView;
+`android.support.design.widget.NavigationView` import from `GuestbooksActivity`.
 
 Great job! Now you're ready to insert Get Guestbooks Screenlet in 
 `GuestbooksActivity`. 

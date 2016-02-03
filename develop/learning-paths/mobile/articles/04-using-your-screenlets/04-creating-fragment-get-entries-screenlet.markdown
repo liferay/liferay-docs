@@ -83,8 +83,8 @@ first thought might be to put the fragment container directly in
 `activity_guestbooks.xml`. Don't do this. Recall that the Navigation Drawer 
 Activity template in Android Studio created the layout `content_guestbooks.xml` 
 to hold the activity's main body content. Open `content_guestbooks.xml` and 
-replace the `TextView` inside the `RelativeLayout` with the following fragment 
-container: 
+place the following fragment container inside the `RelativeLayout`. This 
+fragment container should be the only other element inside the `RelativeLayout`:
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -114,10 +114,12 @@ transaction. Replace `onItemClicked` with the following updated version:
         drawer.closeDrawers();
     }
 
-The `actionBar.setTitle` and `drawer.closeDrawers` calls are the same as before. 
-Only the fragment code is new. You use `newInstance` to create a new 
-`EntriesFragment` instance that contains the selected guestbook's ID. A fragment 
-transaction then adds this fragment to the fragment container. 
+This code also requires you to import 
+`android.support.v4.app.FragmentTransaction`. The `actionBar.setTitle` and 
+`drawer.closeDrawers` calls are the same as before. Only the fragment code is 
+new. You use `newInstance` to create a new `EntriesFragment` instance that 
+contains the selected guestbook's ID. A fragment transaction then adds this 
+fragment to the fragment container. 
 
 Fantastic! Now you have a fragment to put Get Entries Screenlet in, and the code 
 that displays this fragment in `GuestbooksActivity`. Next, you'll put Get 

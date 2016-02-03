@@ -36,8 +36,12 @@ look like this:
 
     public class EntriesFragment extends Fragment implements GetEntriesListener {...
 
-Android Studio marks this as an error because you haven't implemented the 
-listener's methods yet. Do so now by adding the following methods to the class: 
+You must also import `com.liferay.docs.getentriesscreenlet.GetEntriesListener`. 
+Android Studio marks the class declaration as an error because you haven't 
+implemented the listener's methods yet. Recall that `GetEntriesListener` defines 
+the methods `onGetEntriesSuccess`, `onGetEntriesFailure`, and `onItemClicked`. 
+As with Get Guestbooks Screenlet's listener, you need these methods to respond 
+to the Screenlets actions. Implement these methods now: 
 
     @Override
     public void onGetEntriesSuccess(List<EntryModel> entries) {
@@ -52,17 +56,24 @@ listener's methods yet. Do so now by adding the following methods to the class:
     public void onItemClicked(final EntryModel entry) {
     }
 
-Note the `onGetEntriesSuccess` and `onItemClicked` methods are empty. You don't 
-need to do anything in `onGetEntriesSuccess` because the Screenlet's View 
-already displays the entries without any other action required from the app 
-developer. You could put a Toast or log message in this method to indicate 
-success, but it isn't required. The `onItemClicked` implementation exists to let 
-the app respond when the user selects an entry in the UI. For example, you may 
-want to navigate to an activity or fragment that displays additional detail 
-about the selected entry. The app doesn't yet, however, contain such an activity 
-or fragment. For now, leave `onItemClicked` empty. The `onGetEntriesFailure` 
-method is the only listener implementation that does something: it displays the 
-error message to the user when the Screenlet fails to retrieve entries. 
+This requires that you add the following imports:
+
+    import com.liferay.docs.model.EntryModel;
+    import android.widget.Toast;
+    import java.util.List;
+
+In the listener method implementations, note that the `onGetEntriesSuccess` and 
+`onItemClicked` methods are empty. You don't need to do anything in 
+`onGetEntriesSuccess` because the Screenlet's View already displays the entries 
+without any other action required from the app developer. You could put a Toast 
+or log message in this method to indicate success, but it isn't required. The 
+`onItemClicked` implementation exists to let the app respond when the user 
+selects an entry in the UI. For example, you may want to navigate to an activity 
+or fragment that displays additional detail about the selected entry. The app 
+doesn't yet, however, contain such an activity or fragment. For now, leave 
+`onItemClicked` empty. The `onGetEntriesFailure` method is the only listener 
+implementation that does something: it displays the error message to the user 
+when the Screenlet fails to retrieve entries. 
 
 Now you're ready to register `EntriesFragment` as the Screenlet's listener. 
 You'll do this the same way you registered `GuestbooksActivity` as the Get 
@@ -89,6 +100,9 @@ the `onCreateView` method with the following updated version:
 
         return view;
     }
+
+This requires you to import 
+`com.liferay.docs.getentriesscreenlet.GetEntriesScreenlet`. 
 
 Awesome! Run the app in the emulator and log in with your credentials. The app 
 presents you with the first guestbook's entries. Open the navigation drawer by 
