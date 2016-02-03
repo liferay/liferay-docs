@@ -1,4 +1,4 @@
-# Making Your Applications Configurable
+# Making Your Applications Configurable [](id=making-your-applications-configurable)
 
 This tutorial explains how to make your applications configurable. It starts
 with basic configuration and then covers some advanced use cases.
@@ -8,7 +8,7 @@ applications configurable using any other mechanism that you're already
 familiar with. We have found, however, that the method described below provides
 the greatest benefit with the least amount of effort.
 
-## Fundamentals
+## Fundamentals [](id=fundamentals)
 
 While you don't need to know much to make your applications configurable,
 understanding a few key concepts helps you achieve a higher degree of
@@ -51,7 +51,7 @@ had a portlet or service that was configurable using the traditional mechanisms
 of Liferay 6.2 and before, you might also want to read the
 [How to change your portlets and services to use the new Configuration API (not yet written)]() tutorial.
 
-## Making Your Application Configurable
+## Making Your Application Configurable [](id=making-your-application-configurable)
 
 Now you'll see the minimum amount of code you need to write to make your
 application configurable the Liferay 7 way. First, you'll learn how to create a
@@ -107,7 +107,7 @@ configuration file. With this information, Liferay already knows a lot about
 your application's configuration options. In fact, it knows enough to generate
 a user interface automatically. Cool, isn't it?
 
-![Figure x: Navigate to the Control Panel and then click on *System* &rarr; *System Settings*. Then click on *Other*, find the *Example configuration* link, and click on it.](../../images/example-configuration-system-settings.png)
+![Figure 1: Navigate to the Control Panel and then click on *System* &rarr; *System Settings*. Then click on *Other*, find the *Example configuration* link, and click on it.](../../images/example-configuration-system-settings.png)
 
 At this point you might be wondering, "While this is pretty cool, how can I
 read the configuration from my application code?"" It's actually quite easy.
@@ -149,7 +149,7 @@ That's it. As you can see with very few lines of code, you have a configurable
 application that dynamically changes its configuration, has an auto-generated
 UI, and uses a simple API to access the configuration.
 
-## Accessing Your Configuration in a JSP Portlet Application
+## Accessing Your Configuration in a JSP Portlet Application [](id=accessing-your-configuration-in-a-jsp-portlet-application)
 
 In Liferay, it's very common to read a configuration from a portlet class. If
 the portlet is a JSP portlet, the configuration object can be added to the
@@ -275,7 +275,7 @@ example `view.jsp` file that does this:
 
     <p>Favorite color: <span style="color: <%= favoriteColor %>;"><%= favoriteColor %></span></p
 
-![Figure x: Here, the Example Configuration portlet's `view.jsp` is rendered. This JSP reads the value of the `favoriteColor` configuration and displays it.](../../images/example-configuration-portlet.png)
+![Figure 2: Here, the Example Configuration portlet's `view.jsp` is rendered. This JSP reads the value of the `favoriteColor` configuration and displays it.](../../images/example-configuration-portlet.png)
 
 <!-- Update the link below when the example has been completed and the name
 finalized. -->
@@ -291,7 +291,7 @@ click on the *Example configuration* link, you can find the `Favorite color`
 setting and change its value. Your application's JSP will reflect this update
 when you refresh the page.
 
-## Categorizing the Configuration
+## Categorizing the Configuration [](id=categorizing-the-configuration)
 
 Since it's now very easy to make any application or service configurable, there
 are already lots of configuration options in Liferay by default. If you've
@@ -303,7 +303,7 @@ Settings UI in the Control Panel.
 
 Here's how the System Settings UI looks:
 
-![Figure x: Navigate to the Control Panel, click on *System* and then *System Settings*. You'll find five categories of configurations, including Other. Click on any configuration to access a form through which the configuration values can be updated.](../../images/system-settings-ui.png)
+![Figure 3: Navigate to the Control Panel, click on *System* and then *System Settings*. You'll find five categories of configurations, including Other. Click on any configuration to access a form through which the configuration values can be updated.](../../images/system-settings-ui.png)
 
 By default, the following configuration categories are defined:
 
@@ -328,7 +328,7 @@ the following example:
 The fully qualified class name of the `@ExtendedObjectClassDefinition` class is
 `com.liferay.portal.metatype.annotations.ExtendedObjectClassDefinition`.
 
-## Supporting Different Configurations per Scope
+## Supporting Different Configurations per Scope [](id=supporting-different-configurations-per-scope)
 
 When an application is deployed to Liferay, it's common to need different
 configurations depending on the scope. That means having different
@@ -394,7 +394,7 @@ In order to use the Module Configuration API, you need to
     Remember not to confuse an OSGi service with Liferay service. A Liferay
     service is also known as a Liferay API.
 
-### Accessing the Portlet Instance Configuration Through the PortletDisplay
+### Accessing the Portlet Instance Configuration Through the PortletDisplay [](id=accessing-the-portlet-instance-configuration-through-the-portletdisplay)
 
 Often it's necessary to access a portlet's settings from its JSPs or from Java
 classes that are not OSGi components. To make it easier to read the settings in
@@ -408,7 +408,7 @@ request object). Here is an example of how to use it:
 As you can see, it knows how to find the values and returns a typed bean
 containing them just by passing the configuration class.
 
-### Reusing the Same Configuration Class for Different Purposes
+### Reusing the Same Configuration Class for Different Purposes [](id=reusing-the-same-configuration-class-for-different-purposes)
 
 The configuration service also allows a single class to be reused for different
 configuration needs. In order to support this, you must create a class that
@@ -433,7 +433,7 @@ example:
 The class above allows the `RSSPortletInstanceConfiguration` class to be used
 in different scenarios.
 
-## Summary
+## Summary [](id=summary)
 
 Excellent! In this tutorial, you've learned how to make your applications
 configurable. Creating a simple configuration interface allows Liferay to

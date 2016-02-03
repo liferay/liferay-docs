@@ -1,4 +1,4 @@
-# Implementing Configuration Actions
+# Implementing Configuration Actions [](id=implementing-configuration-actions)
 
 When developing a Liferay application, it's important to think about the
 different configuration options that your application should support. It's also
@@ -30,7 +30,7 @@ configuration action, follow these steps:
 
 Let's get started.
 
-## Creating a Configuration Interface
+## Creating a Configuration Interface [](id=creating-a-configuration-interface)
 
 As explained in the [Making Your Applications Configurable]() tutorial, if you
 want to make your application configurable, you should create a Java interface
@@ -70,7 +70,7 @@ learn how to facilitate this.
 
 This sample configuration contains a single string field called `favoriteColor`.
 
-## Referencing Your Configuration From Your Application Class
+## Referencing Your Configuration From Your Application Class [](id=referencing-your-configuration-from-your-application-class)
 
 As was also explained in the [Making Your Applications Configurable]() tutorial,
 if you want a reference to the configuration in your application class, you need
@@ -148,7 +148,7 @@ However, it's useful since adding the configuration to the request object before
 calling `super.doView` makes the configuration able to be read from the request
 by the application's JSPs.
 
-## Implementing a Configuration Action
+## Implementing a Configuration Action [](id=implementing-a-configuration-action)
 
 To implement a configuration action, you should create a class that extends
 Liferay's `DefaultConfigurationAction` class. Then you need to add a reference
@@ -254,7 +254,7 @@ Now that your configuration action class has been created, you're ready to
 create a user interface for selecting configuration options and submitting the
 selections.
 
-## Implementing the User Interface For Configuring Your Application
+## Implementing the User Interface For Configuring Your Application [](id=implementing-the-user-interface-for-configuring-your-application)
 
 When creating a JSP-based user interface, it's convenient to create an
 `init.jsp` page for your application. The `init.jsp` page should contain all of
