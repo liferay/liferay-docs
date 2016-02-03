@@ -25,7 +25,7 @@ This diagram is broken down into four basic steps:
 
 1. In the Interactor class, create an instance of the Guestbook Mobile SDK 
    service that you need to call the Guestbook portlet's remote services. For 
-   example, to get guestbooks from the portlet you need to create a 
+   example, to get guestbooks from the portlet you must create a 
    `GuestbookService` instance. The service instance contains the methods needed 
    to call the Guestbook portlet's remote services. How you create the service 
    instance is also important. You must create it with an authenticated session 
@@ -43,8 +43,8 @@ This diagram is broken down into four basic steps:
 3. In the Interactor's callback, receive and process the JSON that results from 
    a successful server call. To efficiently work with these results in your app, 
    you need to transform the JSON into model objects that represent guestbooks 
-   or entries. You do this by leveraging model classes you'll create for 
-   guestbooks and entries. 
+   or entries. You do this by using model classes, like the `GuestbookModel` 
+   class you created earlier. 
 
 4. Return the model objects from the callback to the Interactor class that 
    issued the service call. You can then send the model objects to the rest of 

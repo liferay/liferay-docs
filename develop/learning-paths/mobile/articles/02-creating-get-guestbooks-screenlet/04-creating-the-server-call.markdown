@@ -10,14 +10,15 @@ create each.
 You'll create the Interactor by using the following steps:
 
 1. Create the event class. This class handles communication between the 
-   Screenlet's components.
+   Screenlet's components via event objects. Event objects contain the server 
+   call's results. 
 
 2. Create the callback class. Because Android doesn't allow network requests on 
    its main UI thread, the callback class is required to route the server call 
-   asynchronously through a background thread.
+   asynchronously through a background thread. 
 
 3. Create the listener. This interface defines the methods the app developer 
-   needs to respond to the Screenlet's behavior.
+   needs to respond to the Screenlet's behavior. 
 
 4. Create and implement the Interactor interface. This defines and implements 
    the method that makes the server call. The implementation must also process 
@@ -31,14 +32,14 @@ First, you'll create the event.
 Screens uses the 
 [EventBus](https://greenrobot.github.io/EventBus/) 
 library to handle communication within Screenlets. Your Screenlet's components 
-must therefore use *event classes* to communicate with each other. Screens comes 
+must therefore use event classes to communicate with each other. Screens comes 
 with 
-[`JSONObjectEvent`](https://github.com/liferay/liferay-screens/blob/1.2.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/JSONObjectEvent.java) 
+[`JSONObjectEvent`](https://github.com/liferay/liferay-screens/blob/1.3.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/JSONObjectEvent.java) 
 and 
-[`JSONArrayEvent`](https://github.com/liferay/liferay-screens/blob/1.2.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/JSONArrayEvent.java) 
+[`JSONArrayEvent`](https://github.com/liferay/liferay-screens/blob/1.3.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/JSONArrayEvent.java) 
 for communicating `JSONObject` and `JSONArray` results, respectively, within 
 Screenlets. These classes extend the abstract class 
-[`BasicEvent`](https://github.com/liferay/liferay-screens/blob/1.2.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/BasicEvent.java).
+[`BasicEvent`](https://github.com/liferay/liferay-screens/blob/1.3.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/interactor/BasicEvent.java).
 Likewise, you can create your own event classes by extending `BasicEvent`. You 
 should create your own event classes when you must communicate objects other 
 than `JSONObject` or `JSONArray`. Because the Get Guestbooks Screenlet must 
@@ -51,7 +52,7 @@ called `GetGuestbooksEvent`. Replace the class's code with the following:
 
     package com.liferay.docs.getguestbooksscreenlet.event;
 
-    import com.liferay.docs.liferayguestbook.model.GuestbookModel;
+    import com.liferay.docs.model.GuestbookModel;
     import com.liferay.mobile.screens.base.interactor.BasicEvent;
 
     import java.util.List;
@@ -84,8 +85,8 @@ fails, and
 `GetGuestbooksEvent(int targetScreenletId, List<GuestbookModel> guestbooks)` 
 when the server call succeeds. In either case, the resulting 
 `GetGuestbooksEvent` object communicates success or failure when used elsewhere 
-in the Screenlet. The event class's `getGuestbooks` method lets you retrieve the 
-guestbooks, if any, from the event object. 
+in the Screenlet. The event class's `getGuestbooks` method lets you retrieve any 
+guestbooks in an event object. 
 
 Next, you'll create a callback class that uses this event class. 
 
@@ -109,7 +110,7 @@ package. Then create a new class called `GetGuestbooksCallback` inside the
 
     package com.liferay.docs.getguestbooksscreenlet.interactor;
 
-    import com.liferay.docs.liferayguestbook.model.GuestbookModel;
+    import com.liferay.docs.model.GuestbookModel;
     import com.liferay.docs.getguestbooksscreenlet.event.GetGuestbooksEvent;
     import com.liferay.mobile.screens.base.interactor.BasicEvent;
     import com.liferay.mobile.screens.base.interactor.InteractorAsyncTaskCallback;
@@ -174,16 +175,16 @@ must implement the listener interface. You've already seen one example of how
 this works when you used Login Screenlet. You implemented its listener interface 
 (`LoginListener`) in `MainActivity`. This provided you with the listener methods 
 `onLoginSuccess` and `onLoginFailure`, where you responded to login success or 
-failure, respectively. You must create a similar listener interface for the Get 
-Guestbooks Screenlet. In addition to responding to success and failure, however, 
-you must also respond to list item selections. 
+failure, respectively. You must create a similar listener interface for Get 
+Guestbooks Screenlet. In addition to responding to success and failure, you must 
+also respond to list item selections. 
 
 Create the `GetGuestbooksListener` interface in the `getguestbooksscreenlet` 
 package. Replace the interface's contents with the following code: 
 
     package com.liferay.docs.getguestbooksscreenlet;
 
-    import com.liferay.docs.liferayguestbook.model.GuestbookModel;
+    import com.liferay.docs.model.GuestbookModel;
     import java.util.List;
 
     public interface GetGuestbooksListener {
@@ -294,10 +295,10 @@ processing the event in the `onEvent` method. The `onEvent` method first uses an
 `if` statement with `!isValidEvent(event)` to check for the presence of a 
 listener. If a listener exists, `onEvent` proceeds to the next `if` statement. 
 This `if` statement uses `event.isFailed()` to check the server call's results 
-contained in the event. If the server call failed, then `onGetGuestbooksFailure` 
-passes the exception, retrieved by `getException()`, to the listener. If the 
-server call succeeded, then `onGetGuestbooksSuccess` passes the `GuestbookModel` 
-list, retrieved by `getGuestbooks()`, to the listener. This lets any class that 
+in the event. If the server call failed, then `onGetGuestbooksFailure` passes 
+the exception, retrieved by `getException()`, to the listener. If the server 
+call succeeded, then `onGetGuestbooksSuccess` passes the `GuestbookModel` list, 
+retrieved by `getGuestbooks()`, to the listener. This lets any class that 
 implements the listener interface, like the Screenlet class or the class the app 
 developer uses the Screenlet in, receive the server call's results. 
 
@@ -309,15 +310,15 @@ pre-existing session in the app. You might now be thinking, "Whoa there! I
 haven't created a session yet!" But actually, you have; you just didn't know it. 
 Successful authentication with Login Screenlet creates a session that you can 
 access with Screens's `SessionContext` class. Because you're counting on that 
-session, however, you *must* use the Login Screenlet. 
+session, however, you *must* use Login Screenlet. 
 
 You then create a new `GetGuestbooksCallback` instance and set it as the 
 session's callback. This ensures that any service calls made with the session go 
 through the callback. Next, you use the session to create a `GuestbookService` 
 instance. In the `try` block, you then call the service's `getGuestbooks` method 
-with the group ID (site ID) of the site you want to retrieve guestbooks from. 
-You get the group ID from the `LiferayServerContext` class--another Screens 
-class--that lets you retrieve the values you set in `server_context.xml`. 
+with the group ID (site ID) of the site to retrieve guestbooks from. You get the 
+group ID from the `LiferayServerContext` class--another Screens class--that lets 
+you retrieve the values you set in `server_context.xml`. 
 
-Nice work! You now have the Interactor required to call the Guestbook portlet. 
-Next, you'll create the Screenlet class. 
+Nice work! You now have the Interactor required to get guestbooks from the 
+Guestbook portlet. Next, you'll create the Screenlet class. 
