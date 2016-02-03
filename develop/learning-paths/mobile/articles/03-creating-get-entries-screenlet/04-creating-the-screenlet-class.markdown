@@ -58,7 +58,7 @@ package. Replace this class's contents with the following code:
     import com.liferay.docs.getentriesscreenlet.interactor.GetEntriesInteractor;
     import com.liferay.docs.getentriesscreenlet.interactor.GetEntriesInteractorImpl;
     import com.liferay.docs.getentriesscreenlet.view.GetEntriesViewModel;
-    import com.liferay.docs.liferayguestbook.model.EntryModel;
+    import com.liferay.docs.model.EntryModel;
     import com.liferay.docs.liferayguestbook.R;
     import com.liferay.mobile.screens.base.BaseScreenlet;
     import com.liferay.mobile.screens.context.LiferayServerContext;
@@ -202,8 +202,11 @@ as follows:
         ((GetEntriesScreenlet) getParent()).onItemClicked(_entries.get(position));
     }
 
-This method is analogous to the `onItemClick` method in `GetGuestbooksView`, 
-retrieving the selected entry instead of the selected guestbook. 
+This also requires that you import 
+`com.liferay.docs.getentriesscreenlet.GetEntriesScreenlet` in `GetEntriesView`.
+
+By retrieving the selected entry, this `onItemClick` method is analagous to the 
+one that retrieves the selected guestbook in `GetGuestbooksView`. 
 
 That's it! Now you're ready to use the Get Entries Screenlet alongside the Get 
 Guestbooks Screenlet. The following section of this Learning Path concludes with 

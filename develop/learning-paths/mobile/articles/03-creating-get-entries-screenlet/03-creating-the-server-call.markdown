@@ -37,7 +37,7 @@ the class's contents with the following code:
 
     package com.liferay.docs.getentriesscreenlet.event;
 
-    import com.liferay.docs.liferayguestbook.model.EntryModel;
+    import com.liferay.docs.model.EntryModel;
     import com.liferay.mobile.screens.base.interactor.BasicEvent;
 
     import java.util.List;
@@ -79,7 +79,7 @@ with the following code:
 
     package com.liferay.docs.getentriesscreenlet.interactor;
 
-    import com.liferay.docs.liferayguestbook.model.EntryModel;
+    import com.liferay.docs.model.EntryModel;
     import com.liferay.docs.getentriesscreenlet.event.GetEntriesEvent;
     import com.liferay.mobile.screens.base.interactor.BasicEvent;
     import com.liferay.mobile.screens.base.interactor.InteractorAsyncTaskCallback;
@@ -139,7 +139,7 @@ Replace the interface's contents with the following code:
 
     package com.liferay.docs.getentriesscreenlet;
 
-    import com.liferay.docs.liferayguestbook.model.EntryModel;
+    import com.liferay.docs.model.EntryModel;
     import java.util.List;
 
     public interface GetEntriesListener {

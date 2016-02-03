@@ -33,7 +33,7 @@ following code:
 
     package com.liferay.docs.getentriesscreenlet.view;
 
-    import com.liferay.docs.liferayguestbook.model.EntryModel;
+    import com.liferay.docs.model.EntryModel;
     import com.liferay.mobile.screens.base.view.BaseViewModel;
 
     import java.util.List;
@@ -80,13 +80,18 @@ Replace the class's contents with the following code:
     package com.liferay.docs.getentriesscreenlet.view;
 
     import android.content.Context;
+    import android.graphics.Typeface;
     import android.util.AttributeSet;
+    import android.util.TypedValue;
     import android.view.View;
+    import android.view.ViewGroup;
     import android.widget.AdapterView;
     import android.widget.ArrayAdapter;
     import android.widget.ListView;
+    import android.widget.TextView;
 
-    import com.liferay.docs.liferayguestbook.model.EntryModel;
+    import com.liferay.docs.model.EntryModel;
+    import com.liferay.mobile.screens.base.BaseScreenlet;
     import com.liferay.mobile.screens.util.LiferayLogger;
     import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 
@@ -97,6 +102,7 @@ Replace the class's contents with the following code:
         AdapterView.OnItemClickListener {
 
         private List<EntryModel> _entries = new ArrayList<>();
+        private BaseScreenlet _screenlet;
 
         public GetEntriesView(Context context) {
             this(context, null);
@@ -155,6 +161,16 @@ Replace the class's contents with the following code:
         public void showFailedOperation(String actionName, Exception e) {
             LiferayLogger.e("Could not get Entries", e);
             LiferayCrouton.error(getContext(), "Could not get Entries", e);
+        }
+        
+        @Override
+        public BaseScreenlet getScreenlet() {
+            return _screenlet;
+        }
+
+        @Override
+        public void setScreenlet(BaseScreenlet screenlet) {
+            _screenlet = screenlet;
         }
 
         @Override

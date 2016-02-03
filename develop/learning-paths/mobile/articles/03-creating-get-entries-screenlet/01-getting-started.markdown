@@ -14,10 +14,9 @@ for guestbooks, this Mobile SDK returns entries from the portlet in a
 `JSONArray` that contains each entry in a `JSONObject`. You must therefore 
 create a model class that can transform each `JSONObject` into a proper entry 
 model object that is easier to work with in your app. To do this, create the 
-following `EntryModel` class in the `com.liferay.docs.liferayguestbook.model` 
-package:
+following `EntryModel` class in the `com.liferay.docs.model` package:
 
-    package com.liferay.docs.liferayguestbook.model;
+    package com.liferay.docs.model;
 
     import org.json.JSONException;
     import org.json.JSONObject;
