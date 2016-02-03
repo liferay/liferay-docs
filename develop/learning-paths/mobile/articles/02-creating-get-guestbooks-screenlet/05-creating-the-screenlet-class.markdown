@@ -75,7 +75,7 @@ ready to write the Screenlet class.
 ## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 Your Screenlet class must extend Screens's 
-[`BaseScreenlet`](https://github.com/liferay/liferay-screens/blob/1.2.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/BaseScreenlet.java), 
+[`BaseScreenlet`](https://github.com/liferay/liferay-screens/blob/1.3.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/BaseScreenlet.java), 
 with your View Model and Interactor classes as type parameters. For the 
 Screenlet to notify the app developer of its results, your Screenlet class must 
 also implement the listener interface you created in this Learning Path's 
@@ -89,6 +89,12 @@ class's declaration should now look like this:
 
     public class GetGuestbooksScreenlet extends BaseScreenlet<GetGuestbooksViewModel, 
         GetGuestbooksInteractor> implements GetGuestbooksListener {...
+
+This also requires that you add the following imports:
+
+    import com.liferay.docs.getguestbooksscreenlet.interactor.GetGuestbooksInteractor;
+    import com.liferay.docs.getguestbooksscreenlet.view.GetGuestbooksViewModel;
+    import com.liferay.mobile.screens.base.BaseScreenlet;
 
 Now you need to add a few variables and constructors the Screenlet requires. One 
 variable is for the `GetGuestbooksListener` instance, and the other two are for 
@@ -111,10 +117,13 @@ superclass constructors. Add the following code now:
         super(context, attributes, defaultStyle);
     }
 
+This requires you to import `android.content.Context` and 
+`android.util.AttributeSet`. 
+
 Next, you need to implement the `GetGuestbooksListener` interface. To do this, 
 you'll implement the listener's `onGetGuestbooksSuccess`, 
 `onGetGuestbooksFailure`, and `onItemClicked` methods. Each of these methods 
-communicate an action that occurs in the Screenlet. Add their implementations 
+communicates an action that occurs in the Screenlet. Add their implementations 
 now: 
 
     public void onGetGuestbooksSuccess(List<GuestbookModel> guestbooks) {
@@ -140,10 +149,11 @@ now:
         }
     }
 
-When the Screenlet successfully retrieves guestbooks, the 
-`onGetGuestbooksSuccess` implementation sends them to the Screenlet's View and 
-listener. This method first uses `getViewModel()` to obtain a 
-`GetGuestbooksViewModel` instance. It then calls the View Model's 
+This requires you to import `java.util.List` and 
+`com.liferay.docs.model.GuestbookModel`. When the Screenlet successfully 
+retrieves guestbooks, the `onGetGuestbooksSuccess` implementation sends them to 
+the Screenlet's View and listener. This method first uses `getViewModel()` to 
+obtain a `GetGuestbooksViewModel` instance. It then calls the View Model's 
 `showFinishOperation` method to send the guestbooks to the View. The 
 `onGetGuestbooksSuccess` implementation finishes by using the listener's 
 `onGetGuestbooksSuccess` method to send the guestbooks to the listener. The 
@@ -201,6 +211,15 @@ Next, you must implement `BaseScreenlet`'s abstract methods. Implement
         return view;
     }
 
+This method requires you to add the following imports:
+
+    import android.view.LayoutInflater;
+    import android.view.View;
+    import android.content.res.TypedArray;
+    import com.liferay.docs.liferayguestbook.R;
+    import com.liferay.mobile.screens.context.LiferayServerContext;
+    import com.liferay.mobile.screens.util.LiferayLogger;
+
 In this method, you first obtain a 
 [`TypedArray`](http://developer.android.com/reference/android/content/res/TypedArray.html) 
 containing the attributes defined in `guestbooks_attrs.xml`. You then use the 
@@ -224,6 +243,9 @@ method returns this ID. Add the following `createInteractor` method:
     protected GetGuestbooksInteractor createInteractor(String actionName) {
         return new GetGuestbooksInteractorImpl(getScreenletId());
     }
+
+This requires you to import 
+`com.liferay.docs.getguestbooksscreenlet.interactor.GetGuestbooksInteractorImpl`.
 
 Next, implement `BaseScreenlet`'s `onUserAction` method. This method uses the 
 Interactor's `getGuestbooks` method to retrieve guestbooks from the server. It 
@@ -274,10 +296,14 @@ following code:
 
     ((GetGuestbooksScreenlet) getParent()).onItemClicked(_guestbooks.get(position));
 
-This uses `_guestbooks.get(position)` to retrieve the guestbook at the selected 
-position. The `onItemClicked` call then passes this guestbook to the listener 
-via the `GetGuestbooksScreenlet` instance retrieved with `getParent()`. The 
-`onItemClicked` method should now look like this:
+You must also import 
+`com.liferay.docs.getguestbooksscreenlet.GetGuestbooksScreenlet` in 
+`GetGuestbooksView`. 
+
+This code uses `_guestbooks.get(position)` to retrieve the guestbook at the 
+selected position. The `onItemClicked` call then passes this guestbook to the 
+listener via the `GetGuestbooksScreenlet` instance retrieved with `getParent()`. 
+The `onItemClicked` method should now look like this:
 
     @Override
     public void onItemClick(final AdapterView<?> parent, final View view, final int position, 
@@ -288,6 +314,6 @@ via the `GetGuestbooksScreenlet` instance retrieved with `getParent()`. The
     }
 
 Fantastic work! You finished the Get Guestbooks Screenlet! It only gets and 
-displays guestbooks, though. To have a feature-rich app that also gets and 
-displays entries, you need to create the Get Entries Screenlet. This Learning 
-Path's next section shows you how to do this. 
+displays guestbooks, though. To have an app that also gets and displays entries, 
+you need to create the Get Entries Screenlet. This Learning Path's next section 
+shows you how to do this. 
