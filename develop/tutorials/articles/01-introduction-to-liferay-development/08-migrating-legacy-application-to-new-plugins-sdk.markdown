@@ -13,14 +13,10 @@ migrating your application to Liferay 7, you can divide the task into two steps:
 1.  Convert your 6.2 WAR-style plugin to a 7.0 WAR-style plugin and consume the
     API from the new Liferay modules. 
 
-2.  Convert your legacy applications to OSGi modules.
-
-<!-- To transform your legacy applications to OSGi modules, you can follow the
-[tutorial link]() tutorial. This is the recommended way for long-term stability.
-
-
-Use the text above, when we have a tutorial that shows how to convert legacy
-apps to OSGi modules. This will be covered in LRDOCS-1859 -Cody -->
+2.  Convert your legacy applications to OSGi modules. To transform your legacy
+    applications to OSGi modules, you can follow the
+    [Converting Legacy Applications to Modules](/develop/tutorials/-/knowledge_base/7-0/converting-legacy-applications-to-modules)
+    tutorial. This is the recommended way for long-term stability.
 
 This tutorial shows you the first step: how to get your 6.2 WAR-style plugin
 working on Liferay 7.0. Later, you can convert your application to OSGi modules.
