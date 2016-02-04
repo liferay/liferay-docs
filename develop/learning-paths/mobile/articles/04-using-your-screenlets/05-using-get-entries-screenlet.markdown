@@ -138,7 +138,7 @@ covered in
 [the tutorials on Android apps with Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/android-apps-with-liferay-screens). 
 
 Even though creating your own Screenlets is best practice for developing Android 
-apps that work with Liferay, it's not mandatory. You could instead call the 
-Mobile SDK directly in your app's activity or fragment code, and skip writing 
-all the Screenlet components. The appendix that follows shows you how to do 
-this. 
+apps that work with your custom portlets, it's not mandatory. You could instead 
+call the Mobile SDK directly in your app's activity or fragment code, and skip 
+writing all the Screenlet components. The appendix that follows shows you how to 
+do this. 
