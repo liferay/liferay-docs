@@ -58,6 +58,15 @@ Breadcrumb app, at least with most themes (including the default). Developers
 can create themes which have cascading menu bars which show the full hierarchy.
 Some examples of that are in Liferay's plugin repositories.
 
++$$$
+
+**Note:** The Navigation Menu app lets you configure a root page. This allows
+building navigation menus based on the page hierarchy under a specific page.
+You're given options in the Navigation Menu app's *Configuration* menu to
+specify the root page, root page level, and included pages.
+
+$$$
+
 Once you've selected the *Add Page* or *Add Child Page* button, you're directed
 to an *Add New Page* interface that lets you configure the page to your liking.
 If you later decide you don't like the order of your pages, you can drag and
