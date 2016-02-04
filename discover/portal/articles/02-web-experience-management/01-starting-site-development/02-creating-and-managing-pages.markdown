@@ -53,7 +53,7 @@ Child Page* button next to *Welcome*.
 
 The *Add Child Page* button lets you create child pages underneath the page
 you've selected. You can nest pages as deep as you like but for every page below
-the top level hierarchy you must provide navigation to it via a Navigation or
+the top level hierarchy you should provide navigation to it via a Navigation or
 Breadcrumb app, at least with most themes (including the default). Developers
 can create themes which have cascading menu bars which show the full hierarchy.
 Some examples of that are in Liferay's plugin repositories.
@@ -220,7 +220,7 @@ the name display.
 
 ### Executing JavaScript in Site Pages
 
-If you click on *JavaScript* for a page set (either Public Pages or Private
+If you click on *Advanced* for a page set (either Public Pages or Private
 Pages), you'll find a window where you can enter JavaScript code that will be
 executed at the bottom of every page in the site. If your site's theme uses
 JavaScript (as is usually the case), it's best to add custom JavaScript code to
@@ -236,16 +236,17 @@ the current site's pages with the pages of the default site.
 
 ### Merging Pages From Other Sites
 
-If you click on *Advanced* from the Edit Public Pages interface, you'll find an
-option to merge the public pages of your instance's default site with the public
-pages of the current site. If you enable this option, the pages of the default
-site appear in the current site's navigation bar, along with the current site's
-pages. Also, the pages of the current site appear in the navigation bar of the
-default site, along with the default site's pages. This "merging" of pages only
-affects the list of pages in the default site's and the current site's
-*navigation bars*. This allows users to more easily navigate from the current
-site to the default site, and vice versa. This option can be enabled for the
-public pages of both personal sites and regular sites.
+If you click on *Advanced* &rarr; *Advanced* from the Edit Public Pages
+interface, you'll find an option to merge the public pages of your instance's
+default site with the public pages of the current site. If you enable this
+option, the pages of the default site appear in the current site's navigation
+bar, along with the current site's pages. Also, the pages of the current site
+appear in the navigation bar of the default site, along with the default site's
+pages. This "merging" of pages only affects the list of pages in the default
+site's and the current site's *navigation bars*. This allows users to more
+easily navigate from the current site to the default site, and vice versa. This
+option can be enabled for the public pages of both personal sites and regular
+sites.
 
 Note that this "merging" of pages is not a "hard merge". For example, suppose
 that the site administrators of twenty different sites on your Liferay instance
@@ -257,11 +258,11 @@ previously visited site). If the *Merge default site's public pages* option is
 enabled for either the current site or the previous site, the pages of the
 default site are merged in the pages of the other site.
 
-For example, suppose that your Liferay instance has three sites: the default site, site A,
-and site B. All three sites have some public pages. Site A has the *Merge
-default site's public pages* option enabled; site B does not. When a user first
-logs in, he's directed to the default site. The `scopeGroupId` is that of the
-default site and there is no previous `scopeGroupId`, so no additional pages
+For example, suppose that your Liferay instance has three sites: the default
+site, site A, and site B. All three sites have some public pages. Site A has the
+*Merge default site's public pages* option enabled; site B does not. When a user
+first logs in, he's directed to the default site. The `scopeGroupId` is that of
+the default site and there is no previous `scopeGroupId`, so no additional pages
 appear in the default site's navigation bar. Then suppose the user navigates to
 site A. Site A has the *Merge default site's public pages* option enabled, so
 the default site's pages are added to site A's navigation bar. Now if the user
@@ -275,12 +276,13 @@ enabled, no additional pages are added to the default site's navigation menu.
 
 ### Rendering Pages for Mobile Devices
 
-You can configure your page set for mobile devices by selecting the *Mobile
-Device Rules* option. The ability to modify themes for regular browsers and
-mobile devices can only be accomplished by using this option. Mobile device
-rules are inherited from your Public Pages, but you can define specific rules
-per page. With the ability to define different rules per page, you can edit the
-Look and Feel of specific pages for mobile devices, including the theme.
+You can configure your page set for mobile devices by selecting the *Advanced*
+tab and selecting *Mobile Device Rules* option. The ability to modify themes for
+regular browsers and mobile devices can only be accomplished by using this
+option. Mobile device rules are inherited from your Public Pages, but you can
+define specific rules per page. With the ability to define different rules per
+page, you can edit the Look and Feel of specific pages for mobile devices,
+including the theme.
 
 <!-- Add following sentence when this section is available (DXP only app) -Cody:
 The set up for this option is explained in the
@@ -291,18 +293,19 @@ section.
 ### Configuring Rules for Virtual Hosting
 
 If you're using virtual hosting for this site, you can configure `robots.txt`
-rules for the domain by selecting the *Robots* option. The Robots page gives you
-the option to configure your `robots.txt` for both public and private pages on a
-site. If you don't have Virtual Hosting set up, this tab is rather boring. 
+rules for the domain by selecting the *Robots* option from the *Advanced* tab.
+The Robots page gives you the option to configure your `robots.txt` for both
+public and private pages on a site. If you don't have Virtual Hosting set up,
+this tab is rather boring.
 
 ### Notifying Search Engines of Site Pages
 
-If you select the *Sitemap* option from the Site Pages interface for a page set,
-you can send a sitemap to some search engines so they can crawl your site. It
-uses the sitemap protocol, which is an industry standard. You can publish your
-site to Yahoo or Google and their web crawlers will use the sitemap to index
-your site. Liferay makes this very simple for administrators by
-generating the sitemap XML for all public web sites.
+If you select the *Sitemap* option from the *Advanced* tab for a page set, you
+can send a sitemap to some search engines so they can crawl your site. It uses
+the sitemap protocol, which is an industry standard. You can publish your site
+to Yahoo or Google and their web crawlers will use the sitemap to index your
+site. Liferay makes this very simple for administrators by generating the
+sitemap XML for all public web sites.
 
 By selecting one of the search engine links, the sitemap will be sent to them.
 It's only necessary to do this once per site. The search engine crawler will
@@ -332,22 +335,24 @@ to organize page content for your Lunar Resort site.
 
 #### Categorization
 
-You can explore ways to tag and categorize your page by clicking the
-*Categorization* tab. These tools help administrators organize the page and
-allows for users to easily find your page and its content through search and
-navigation. For more information on using tags and categories, visit the
+You can explore ways to tag and categorize your page by clicking the *SEO* tab,
+which shows how the categorization options by default. These tools help
+administrators organize the page and allows for users to easily find your page
+and its content through search and navigation. For more information on using
+tags and categories, visit the
 [Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 section.
 
 #### Custom Fields
 
 *Custom Fields* lets you edit the custom fields you already have configured for
-the *Page* resource. If you don't have any custom fields configured in your
-site, this option is not available. If you don't have any custom fields
-configured for the Page resource, you can navigate to the Control Panel &rarr;
-*Custom Fields* located under the *Configuration* tab. These are metadata about
-the page and can be anything you like, such as author or creation date. For more
-information on Custom Fields, see the
+the *Page* resource, which is accessible from the *Advanced* tab. If you don't
+have any custom fields configured in your site, this option is not available. If
+you don't have any custom fields configured for the Page resource, you can
+navigate to the Control Panel &rarr; *Custom Fields* located under the
+*Configuration* tab. These are metadata about the page and can be anything you
+like, such as author or creation date. For more information on Custom Fields,
+see the
 [Custom Fields](/discover/portal/-/knowledge_base/6-2/custom-fields)
 section.
 
@@ -385,8 +390,8 @@ section for more details.
 #### Mobile Device Rules
 
 This option allows you to apply rules for how this page should be rendered for
-various mobile devices. You can set these up in the *Mobile Device Rules*
-section in the Product Menu &rarr; *Sites* &rarr; *Configuration*. 
+various mobile devices. You can set these up in the *Advanced* &rarr; *Mobile
+Device Rules* section in the Product Menu &rarr; *Sites* &rarr; *Configuration*.
 [Displaying Site Pages to Mobile Devices]()
 section.
 
@@ -412,9 +417,10 @@ tutorial.
 
 #### Customization Settings
 
-This configuration option lets you mark specific sections of the page you want
-users to be able to customize. You can learn more about page customizations in
-the [Personalizing Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#personalizing-pages)
+This configuration option located in the *Advanced* tab lets you mark specific
+sections of the page you want users to be able to customize. You can learn more
+about page customizations in the
+[Personalizing Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#personalizing-pages)
 section.
 
 ### Enhancing Page Intelligence
@@ -426,13 +432,14 @@ intelligence, configure the options described below.
 #### SEO
 
 *SEO* provides several means of optimizing the data the page provides to an
-indexer that's crawling the page. You can set the various meta tags for
-description, keywords and robots. There's also a separate Robots section that
-lets you tell indexing robots how frequently the page is updated and how it
-should be prioritized. If the page is localized, you can select a box to make
-Liferay generate canonical links by language. If you want to set some of these
-settings for the entire site, you can specify them from the Sitemaps and Robots
-tabs of the Manage Site Settings dialog box (see below).
+indexer that's crawling the page, which is accessible from the *SEO* tab. You
+can set the various meta tags for description, keywords and robots. There's also
+a separate Robots section that lets you tell indexing robots how frequently the
+page is updated and how it should be prioritized. If the page is localized, you
+can select a box to make Liferay generate canonical links by language. If you
+want to set some of these settings for the entire site, you can specify them
+from the Sitemaps and Robots tabs of the Manage Site Settings dialog box (see
+below).
 
 In previous versions of Liferay, it was possible that a single page
 could be indexed multiple times. In Liferay 6.1, all URLs that direct to the
@@ -447,9 +454,9 @@ page.
 
 #### JavaScript
 
-If you click on *JavaScript*, you'll find a window where you can enter
-JavaScript code that will be executed at the bottom of your page.
-If your site's theme uses JavaScript (as is usually the case), it's best to add
+If you click on *Advanced* &rarr; *JavaScript*, you'll find a window where you
+can enter JavaScript code that will be executed at the bottom of your page. If
+your site's theme uses JavaScript (as is usually the case), it's best to add
 custom JavaScript code to the theme and *not* in this window. This way, all of
 your site's JavaScript code remains in one place.
 
@@ -503,15 +510,16 @@ tutorial.
 
 <!-- TODO: Replace link above. -Cody -->
 
-Next, you'll practice personalizing pages using page customizations!
+<!--Next, you'll practice personalizing pages using page customizations!
 
-## Personalizing Pages
+Personalizing Pages (Add two number signs to "Personalizing Pages", when content
+has been updated)-->
 
 <!-- Review this section once more information is found. Contacted Julio, and
 waiting for a response to several questions on the changes to page
 customization. -Cody -->
 
-Administrators can designate public pages or sections of public pages to be
+<!--Administrators can designate public pages or sections of public pages to be
 customizable. When a user visits such a page, a notification appears stating
 that the user can customize the page. Users can make customizations only in the
 sections of pages designated by administrators. Customizations are based on the
@@ -608,7 +616,7 @@ assigned to the role *Site Member*.
 In addition to granting the ability to customize app configurations, the
 *Customize* permission allows users to customize the look and feel of apps
 and to import or export app settings. Next, you'll look at how to change page
-permissions.
+permissions.-->
 
 ## Changing Page Permissions
 
