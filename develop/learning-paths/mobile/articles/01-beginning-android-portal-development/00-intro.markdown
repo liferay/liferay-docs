@@ -18,7 +18,7 @@ follows:
 3.  Creating the Android project
 4.  Installing the Guestbook Mobile SDK and Liferay Screens in the Android 
     project
-5.  Understanding the App's Design
+5.  Designing Your App
 6.  Using Login Screenlet for Authentication
 
 When you finish, you'll be ready to start developing your first Screenlet.

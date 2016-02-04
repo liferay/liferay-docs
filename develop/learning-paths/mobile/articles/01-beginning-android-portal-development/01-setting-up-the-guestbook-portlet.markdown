@@ -23,7 +23,7 @@ a Liferay bundle. To follow Liferay best practices, you should create a
 `bundles` directory and unzip it there. The bundle's root directory is
 referred to as *Liferay Home* and is named according to the version, edition,
 and specific Liferay release. For example, if you downloaded Liferay Portal 6.2
-CE GA3 and unzipped it to a `bundles` directory on your machine, the path of
+CE GA4 and unzipped it to a `bundles` directory on your machine, the path of
 that bundle's Liferay Home directory is:
 
     bundles/liferay-portal-6.2-ce-ga4

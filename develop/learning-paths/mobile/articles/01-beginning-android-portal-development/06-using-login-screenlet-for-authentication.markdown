@@ -74,14 +74,14 @@ Implementing `LoginListener` requires you to implement two methods:
     public void onLoginSuccess(User user) {
         Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
     }
-    
+
     @Override
     public void onLoginFailure(Exception e) {
         Toast.makeText(this, "Couldn't log in " + e.getMessage(), Toast.LENGTH_LONG).show();
     }
 
-When you paste in these methods, you'll need to add the imports
-`android.widget.Toast;` and`com.liferay.mobile.screens.context.User`. 
+When you paste in these methods, you'll need to add the imports 
+`android.widget.Toast` and`com.liferay.mobile.screens.context.User`. 
 
 These are listener methods called, respectively, when login succeeds or fails. 
 Using them lets your app respond to events that occur in the Screenlet. For the 
@@ -98,7 +98,7 @@ class as its listener. To do so, add the following code to the end of the
     loginScreenlet.setListener(this);
 
 This also requires you to import 
-`com.liferay.mobile.screens.auth.login.LoginScreenlet;`. 
+`com.liferay.mobile.screens.auth.login.LoginScreenlet`. 
 
 The `findViewById` method uses the Screenlet's ID from the layout to create the 
 reference. The `setListener` method then sets the `MainActivity` class as the 

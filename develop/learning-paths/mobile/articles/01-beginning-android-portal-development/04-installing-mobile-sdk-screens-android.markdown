@@ -83,7 +83,7 @@ following imports at the top of the file:
 
 If Android Studio recognizes these imports, then you're good to go! Remove them 
 once you've verified that they're recognized. Next, there's one final small but 
-important detail to complete: pointing your app atthe correct Liferay 
+important detail to complete: pointing your app at the correct Liferay 
 installation. 
 
 ## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
@@ -105,15 +105,15 @@ to it:
 
     </resources>
 
-As the comment indicates, change the values to match those of your portal 
+As the comment indicates, change the values to match those of your Liferay 
 installation. The server address `http://10.0.2.2:8080` is suitable for testing 
 with Android Studio's emulator, because it corresponds to `localhost:8080` 
 through the emulator. The portal you set up earlier should be running on 
 `localhost:8080`.
 
-The `liferay_company_id` value is your portal instance's ID. You can find it in 
+The `liferay_company_id` value is your Liferay instance's ID. You can find it in 
 the *Control Panel* &rarr; *Configuration* &rarr; *Portal Instances* menu. Your 
-portal's instance ID is in the *Instance ID* column. Copy and paste this value 
+Liferay instance's ID is in the *Instance ID* column. Copy and paste this value 
 from your portal to the `liferay_company_id` value in `server_context.xml`.
 
 The `liferay_group_id` value is the ID of the site your app needs to communicate 
