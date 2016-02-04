@@ -53,7 +53,7 @@ Next, add the following code on the first level (on the same level as the
 
 Finally, add the following line of code inside the `dependencies` element: 
 
-    compile 'com.liferay.mobile:liferay-screens:1.2.4'
+    compile 'com.liferay.mobile:liferay-screens:1.3.0'
 
 If you're unsure of where to add the above lines, please see the figure below. 
 
