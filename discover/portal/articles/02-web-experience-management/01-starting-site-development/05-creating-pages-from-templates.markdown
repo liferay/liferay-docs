@@ -1,4 +1,4 @@
-# Creating Pages from Templates
+# Creating Pages from Templates [](id=creating-pages-from-templates)
 
 Page templates function similarly to site templates but at the page level. Each
 page template provides a pre-configured page to reuse. Within a page template,
@@ -81,7 +81,7 @@ appear.
 You'll learn about staging later in the User's Guide. For now you'll look at
 importing and exporting templates.
 
-## Sharing Page Templates
+## Sharing Page Templates [](id=sharing-page-templates)
 
 If you want to export a page that uses a page template to a different
 environment (through a LAR file or remote publication), the template must be

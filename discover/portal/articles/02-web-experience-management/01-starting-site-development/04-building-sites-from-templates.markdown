@@ -1,4 +1,4 @@
-# Building Sites from Templates
+# Building Sites from Templates [](id=building-sites-from-templates)
 
 Site Templates can be administered from the Control Panel. They let portal
 administrators create multiple sites with the same default set of pages and
@@ -93,7 +93,7 @@ bare-bones intrantet site in the commented out section above. -Cody -->
 Now that you know the basics for creating and managing your site templates,
 you'll put your knowledge to the test by completing an example next.
 
-## Site Templates Example
+## Site Templates Example [](id=site-templates-example)
 
 Suppose you need to create the following three sites for the Lunar Resort's
 internal use: Engineering, Marketing, and Legal. These should be private sites
@@ -157,7 +157,7 @@ department's site from the others.
 <!-- Check if site template provides calendar, d&m, wiki, and message boards
 applications. -Cody -->
 
-## Propagating Changes from Site Templates to Sites
+## Propagating Changes from Site Templates to Sites [](id=propagating-changes-from-site-templates-to-sites)
 
 It's possible for site template administrators to add, update, or delete site
 template pages. Changes made to a site template can be propagated to sites whose
@@ -264,7 +264,7 @@ administrator adds, removes, or deletes some categories, however, such changes
 Now that you've learned how site templates work, you'll discuss how to share
 site templates. 
 
-## Sharing Site Templates
+## Sharing Site Templates [](id=sharing-site-templates)
 
 If you want to export a site that uses site or page templates to a different
 environment (through a LAR file or remote publication), the templates must be

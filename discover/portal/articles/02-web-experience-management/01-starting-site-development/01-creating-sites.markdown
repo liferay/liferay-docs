@@ -1,4 +1,4 @@
-# Creating Sites
+# Creating Sites [](id=creating-sites)
 
 A site contains a set of pages that can be used to publish content or
 applications. By default, Liferay starts with a single site that has a
@@ -8,7 +8,7 @@ associated with an organization to serve as the website for that organization.
 Liferay's framework provides all the site-building tools you need to manage a
 successful site.
 
-## Understanding Site Management
+## Understanding Site Management [](id=understanding-site-management)
 
 Whether you're building a large corporate website or a small site designed to
 facilitate collaboration among team members, supporting different kinds of
@@ -141,7 +141,7 @@ changed through the simple configuration of the setup wizard. The instance name
 can also be changed at any time through the Control Panel within *Configuration
 &rarr; *Instance Settings*.
 
-## Adding Sites
+## Adding Sites [](id=adding-sites)
 
 Sites can be created through the Control Panel by a portal administrator.
 Liferay's Control Panel provides an administrative interface for managing your
@@ -278,7 +278,7 @@ Once the site has been created, you can click the site to specify more site
 settings using three categories: Basic Information, Advanced, Social, and
 Miscellaneous. You'll learn more about your site's settings in the next section.
 
-## Configuring Site Settings
+## Configuring Site Settings [](id=configuring-site-settings)
 
 You can access Site Settings by navigating to the Site Administation dropdown
 menu and selecting *Configuration* &rarr; *Site Settings*.
@@ -291,13 +291,13 @@ available, which are available from the *Basic Information*, *Advanced*,
 *Social*, and *Advanced* tabs, and simulate configuring those settings for your
 sample Lunar Resort site.
 
-### Organizing Site Content
+### Organizing Site Content [](id=organizing-site-content)
 
 Organizing your site's content drastically improves the usability of your site
 for users. The Site Settings menu offers some configuration options that aid in
 your organizational goals.
 
-#### Categorization
+#### Categorization [](id=categorization)
 
 You can explore ways to tag and categorize your site by clicking the
 *Categorization* tab under Basic Information. These tools help administrators
@@ -308,7 +308,7 @@ using tags and categories, visit the
 [Organizing Content with Tags and Categories](discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 section.
 
-#### Site Template
+#### Site Template [](id=site-template)
 
 The last tab listed under the Basic Information category is *Site Template*. If
 you created your Lunar Resort site as a Blank Site, this option is not available
@@ -320,7 +320,7 @@ administrators. To learn more about site templates and how to create your own,
 see the [Building Sites from Templates](discover/portal/-/knowledge_base/7-0/building-sites-from-templates)
 section.
 
-#### Content Sharing
+#### Content Sharing [](id=content-sharing)
 
 If you select the *Content Sharing* tab from the Advanced tab, you can
 configure whether sub-sites can display content from this site. Administrators
@@ -330,7 +330,7 @@ initially allowed content sharing between the parent site and its sub-sites,
 you're able to disable this option and immediately revoke content sharing from
 all sub-sites.
 
-#### Recycle Bin
+#### Recycle Bin [](id=recycle-bin)
 
 The *Recycle Bin* option under the Advanced tab provides the option to
 enable/disable the Recycle Bin for your site. You can also regulate the age (in
@@ -341,7 +341,7 @@ section.
 
 <!-- TODO: replace link above. -Cody -->
 
-#### Custom Fields
+#### Custom Fields [](id=custom-fields)
 
 *Custom Fields* lets you edit the custom fields you already have configured
 for the *Site* resource. If you don't have any custom fields configured for the
@@ -352,7 +352,7 @@ section.
 
 <!-- TODO: replace link above. -Cody -->
 
-#### Documents and Media
+#### Documents and Media [](id=documents-and-media)
 
 The last option that relates to organizing your site's content is *Documents and
 Media*, which is found under Basic Information. This lets you enable/disable
@@ -364,13 +364,13 @@ http://localhost:8080/documents/lunar-resort if this option is enabled.
 Now that you can organize your site's content using Site Settings, move on to
 the next section to learn how to manage site users.
 
-### Managing Site Users
+### Managing Site Users [](id=managing-site-users)
 
 An always important job for site administrators is managing site users. There
 are configuration options in Site Settings that allow for easier user
 management.
 
-#### Details
+#### Details [](id=details)
 
 *Details* is the leading option under the Basic Information tab, which provides
 the same menu you filled out when first creating your Lunar Resort site. This
@@ -388,7 +388,7 @@ select the parent site for the site you're currently on. After selecting a
 parent site, you have a checkbox option to limit membership to members of the
 parent site.
 
-#### Default User Associations
+#### Default User Associations [](id=default-user-associations)
 
 Once you have the basic details of your site saved, you can begin assigning your
 users to roles and teams. *Default User Associations*, the leading option when
@@ -402,7 +402,7 @@ sections, respectively.
 
 <!-- TODO: replace links above. -Cody -->
 
-#### Ratings
+#### Ratings [](id=ratings)
 
 To allow your site's users to rate content in your site, you can use the
 *Ratings* option to select what ratings type to use for applications like
@@ -412,7 +412,7 @@ Likes, and Thumbs. This is the leading option when opening the Social tab.
 <!-- TODO Is there a link we can point to for this? Coordinate with Jim. -Cody
 -->
 
-#### Mentions
+#### Mentions [](id=mentions)
 
 The last configuration option in Site Settings related to managing users is
 *Mentions*. *Mentions* is found under the Social tab. This option allows you to
@@ -428,13 +428,13 @@ Now that you're aware of your Site Settings abilities to improve User and
 Content management, you'll learn how to improve your site's overall intelligence
 using Site Settings.
 
-### Improving Site Intelligence
+### Improving Site Intelligence [](id=improving-site-intelligence)
 
 Site Settings offers several miscellaneous configuration options that improve
 your site's usability, overall display, and data tracking. To make your Lunar
 Resort site smarter, explore and configure the options below.
 
-#### Site URL
+#### Site URL [](id=site-url)
 
 One of the most important aspects of your site is the simplicity of your site
 URLs. Long obscure site URLs are a hassle for users to deal with, and can
@@ -483,7 +483,7 @@ the Virtual Host tab for the Developers site. This helps users quickly access
 their site without having to recall an extended URL. The *Site URL* option is
 listed under the Basic Information tab.
 
-#### Analytics
+#### Analytics [](id=analytics)
 
 Analyzing site traffic is another huge advantage for site administrators that
 want to monitor what content is most popular. Liferay includes built-in support
@@ -521,7 +521,7 @@ This is a fairly simple procedure, and it gives you the ability to take
 advantage of some great tools to help you visualize who's coming to your site
 and from where. The *Analytics* option is listed under the Advanced tab.
 
-#### Maps
+#### Maps [](id=maps)
 
 *Under Contruction*
 
@@ -529,7 +529,7 @@ and from where. The *Analytics* option is listed under the Advanced tab.
 https://www.liferay.com/web/juan.fernandez/blog/-/blogs/adding-geolocation-support-to-liferay-7-0
 -Cody -->
 
-#### Display Settings
+#### Display Settings [](id=display-settings)
 
 The *Display Settings* option lets you configure the language options for your
 site. This is the leading option when opening the Miscellaneous tab. You have
@@ -538,7 +538,7 @@ options to use the default language options or define a new default language.
 Now that you know how to configure sites, you'll learn how to customize your
 personal sites.
 
-## Customizing Personal Sites
+## Customizing Personal Sites [](id=customizing-personal-sites)
 
 By default, newly created users in Liferay are each granted a personal site.
 Each user functions as the site administrator of his or her personal site.

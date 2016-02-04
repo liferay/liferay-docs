@@ -1,4 +1,4 @@
-# Importing/Exporting Pages and Content
+# Importing/Exporting Pages and Content [](id=importing-exporting-pages-and-content)
 
 Liferay's Export/Import feature gives you the power to backup and restore your
 site and app data. The export feature grants users the flexibility of
@@ -28,7 +28,7 @@ section was sent to Jim an a PR. -Cody
 https://github.com/jhinkey/liferay-docs/pull/284
 -->
 
-## Backing Up and Restoring Pages and Their Content
+## Backing Up and Restoring Pages and Their Content [](id=backing-up-and-restoring-pages-and-their-content)
 
 In the Site Administration dropdown of the Product Menu, there is an option
 called *Publishing Tools*, which is where the *Export* and *Import* features

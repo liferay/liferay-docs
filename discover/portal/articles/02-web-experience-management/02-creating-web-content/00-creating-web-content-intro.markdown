@@ -1,4 +1,4 @@
-# Creating Web Content
+# Creating Web Content [](id=creating-web-content)
 
 Liferay's Web Content Management (WCM) system allows non-technical users to
 publish content to the web without having advanced knowledge of web technology

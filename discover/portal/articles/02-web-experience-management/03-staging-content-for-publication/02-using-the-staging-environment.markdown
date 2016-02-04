@@ -1,4 +1,4 @@
-# Using the Staging Environment
+# Using the Staging Environment [](id=using-the-staging-environment)
 
 After enabling staging (either Local Live or Remote Live) for a site, you'll
 notice additional options provided on the top Control Menu and also in the
@@ -219,7 +219,7 @@ see how to use them to create multiple different variations of your site's pages
 for different purposes.
 
 
-## Using Site Pages Variations
+## Using Site Pages Variations [](id=using-site-pages-variations)
 
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you

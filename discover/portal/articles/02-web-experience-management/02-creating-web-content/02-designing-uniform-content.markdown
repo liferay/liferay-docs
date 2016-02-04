@@ -1,4 +1,4 @@
-# Designing Uniform Content
+# Designing Uniform Content [](id=designing-uniform-content)
 
 If you've ever launched a web site, you know that as it grows, you can
 experience growing pains. This is the case especially if you've given lots of
@@ -22,7 +22,7 @@ from a simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
 
-## Creating Structured Web Content
+## Creating Structured Web Content [](id=creating-structured-web-content)
 
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only
@@ -57,7 +57,7 @@ content which scrolls with the user, and more.
 Next you'll take a look at how you can create and edit structures through the
 Manage Structures interface.
 
-### Editing Structures
+### Editing Structures [](id=editing-structures)
 
 Go to your site's Site Administration menu and select *Web Content* from the
 Content section. The first way to access the Manage Structures interface is by
@@ -218,7 +218,7 @@ everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fire that imagination, you'll look more
 closely at field settings.
 
-### Editing Field Settings
+### Editing Field Settings [](id=editing-field-settings)
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
@@ -286,7 +286,7 @@ know what to put into the Body element (example: *This is an HTML text area for
 the body of your content*). Now, when users hover over the Help icon near your
 title, your tip is displayed.
 
-#### Structure Default Values
+#### Structure Default Values [](id=structure-default-values)
 
 Structure Default Values let you create one structure that uses common data from
 multiple articles.
@@ -312,7 +312,7 @@ This form allows you to manage the structure settings.
 Every new web content you create with this structure is preloaded with the
 data you inserted. Next, you'll learn about assigning permissions.
 
-### Assigning Permissions
+### Assigning Permissions [](id=assigning-permissions)
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -330,7 +330,7 @@ to handle permissions for structures.
 Now that you understand what structures are used for, you need to understand the
 other half of Liferay's web content management system: templates.
 
-## Designing Web Content with Templates
+## Designing Web Content with Templates [](id=designing-web-content-with-templates)
 
 Developers create templates to display the elements of the structure in the
 markup they want. Content can then be styled properly using CSS, because markup
@@ -347,7 +347,7 @@ has been created using a custom structure.
 
 You'll look more closely at the types of templates Liferay supports next.
 
-### Template Types (FTL, VM, and XSL)
+### Template Types (FTL, VM, and XSL) [](id=template-types-ftl-vm-and-xsl)
 
 Liferay supports templates written in three different templating languages, to
 support the skill sets of the largest number of developers. This increases the
@@ -378,7 +378,7 @@ browser. While it may not be as clean and compact as Velocity or FreeMarker,
 it's widely used for transforming XML into other formats and it's very likely
 your developers have already been exposed to it.
 
-### Adding Templates
+### Adding Templates [](id=adding-templates)
 
 Liferay WCM makes it easy to create structures, templates, and content from the
 same interface. You'll go through the entire flow of how you'd create a
@@ -555,7 +555,7 @@ Now that you've created a handsome template and know how to use the template
 editor, it's time to decide who the lucky people are that get to use your new
 template.
 
-## Assigning Template Permissions
+## Assigning Template Permissions [](id=assigning-template-permissions)
 
 Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.

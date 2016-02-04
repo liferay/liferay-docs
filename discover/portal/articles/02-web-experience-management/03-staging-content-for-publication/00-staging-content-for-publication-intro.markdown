@@ -1,4 +1,4 @@
-# Staging Content for Publication
+# Staging Content for Publication [](id=staging-content-for-publication)
 
 Today's enterprises are generating an enormous amount of content for their
 users. Many of articles and images are created daily in order to provide

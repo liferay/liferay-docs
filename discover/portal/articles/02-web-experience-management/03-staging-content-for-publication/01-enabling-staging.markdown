@@ -1,4 +1,4 @@
-# Enabling Staging
+# Enabling Staging [](id=enabling-staging)
 
 Liferay provides site administrators with two different ways to set up staging:
 Local Live and Remote Live. With Local Live staging, both your staging
@@ -40,7 +40,7 @@ slower with Remote Live than with Local Live since data needs to be transferred
 over a network. And, of course, you need more hardware to run a separate staging
 server.
 
-## Enabling Local Live Staging
+## Enabling Local Live Staging [](id=enabling-local-live-staging)
 
 Site administrators can enable Staging for a site by navigating to the *Site
 Administration* &rarr; *Publishing Tools* menu and selecting *Staging*. A new
@@ -85,7 +85,7 @@ turn Local Live staging off.
 
 Next you'll learn about enabling Remote Live staging.
 
-## Enabling Remote Live Staging
+## Enabling Remote Live Staging [](id=enabling-remote-live-staging)
 
 When you enable Remote Live staging, the remote site becomes the live
 environment and the current site becomes the staging environment. The remote
@@ -236,7 +236,7 @@ $$$
 
 Next, you'll learn how to enable page versioning and staged apps.
 
-## Enabling Page Versioning and Staged Content
+## Enabling Page Versioning and Staged Content [](id=enabling-page-versioning-and-staged-content)
 
 Enabling page versioning for a site allows site administrators to work in
 parallel on multiple versions of the site's pages. Page versioning also
@@ -360,14 +360,14 @@ Before you begin exploring the Staging UI, it's important to understand the
 publishing process for staging, and making informed decisions so you use the
 staging environment efficiently and effectively.
 
-## Publishing Staged Content Efficiently
+## Publishing Staged Content Efficiently [](id=publishing-staged-content-efficiently)
 
 Now that you have a firm grasp on how staging works, you'll dive deeper into the
 publication process and some prerequisites you should follow before publishing.
 By understanding how the process works, you can make smart and informed
 decisions about how you want to publish your site's content.
 
-### Understanding the Publication Process
+### Understanding the Publication Process [](id=understanding-the-publication-process)
 
 In simple terms, publication is the process where all content, referenced
 content, apps and their preferences, pages, users, etc. are transferred from
@@ -404,7 +404,7 @@ live site.
 Next, you'll learn about staging best practices and prerequisites to follow for
 a seamless staging experience.
 
-### Planning Ahead for Staging
+### Planning Ahead for Staging [](id=planning-ahead-for-staging)
 
 Staging is a complex subsystem of Liferay that is designed to be flexible and
 scalable. Before advanced users and administators begin using it for their site,
