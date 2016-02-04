@@ -23,7 +23,7 @@ date.
 
 Liferay Portal can act as an OpenID consumer, allowing users to automatically
 register and sign in with their OpenID accounts. Internally, the product uses
-[OpenID4Java](http://code.google.com/p/openid4java/) to implement the feature.
+[OpenID4Java](https://github.com/jbufu/openid4java) to implement the feature.
 
 OpenID is enabled by default in Liferay but can be disabled or enabled at
 either the system scope or portal instance scope. To configure the OpenID SSO
