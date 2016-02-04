@@ -41,8 +41,8 @@ you did in Get Entries Screenlet. To create this model class, follow
 [these instructions](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-get-entries-screenlet#creating-the-model-class-for-entries) 
 from the article on getting started with the Get Entries Screenlet. When you 
 finish, you'll have an identical `EntryModel` class inside the package 
-`com.liferay.docs.liferayguestbook.model`. Once this class exists, you can 
-create the fragment you'll use to retrieve and display the entries. 
+`com.liferay.docs.model`. Once this class exists, you can create the fragment 
+you'll use to retrieve and display the entries. 
 
 ## Creating a Fragment for the Entries [](id=creating-a-fragment-for-the-entries)
 
@@ -57,7 +57,7 @@ fragment. Now you'll create this fragment. Right click the
 the checkboxes, name the fragment `EntriesFragment`, and then click *Finish*. 
 The following screenshot illustrates this: 
 
-![Figure 2: Create a new blank fragment for the entries.](../../images/android-create-fragment.png)
+![Figure 2: Create a new blank fragment for the entries.](../../images/android-create-fragment-02.png)
 
 Replace the fragment's contents with the following code: 
 
@@ -66,7 +66,7 @@ Replace the fragment's contents with the following code:
     import android.os.Bundle;
     import android.support.v4.app.ListFragment;
 
-    import com.liferay.docs.liferayguestbook.model.EntryModel;
+    import com.liferay.docs.model.EntryModel;
 
     import java.util.ArrayList;
     import java.util.List;
@@ -137,12 +137,12 @@ and then passed them to `GuestbooksActivity`. You need an analogous callback
 class for retrieving entries. In the `callback` package, create the 
 `GetEntriesCallback` class. Replace its contents with the following code: 
 
-    package com.liferay.docs.liferayguestbook.callback;
+    package com.liferay.docs.callback;
 
     import android.widget.Toast;
 
     import com.liferay.docs.liferayguestbook.EntriesFragment;
-    import com.liferay.docs.liferayguestbook.model.EntryModel;
+    import com.liferay.docs.model.EntryModel;
     import com.liferay.mobile.android.callback.typed.GenericCallback;
 
     import org.json.JSONArray;
@@ -218,6 +218,15 @@ method to the `EntriesFragment` class:
             Toast.makeText(this.getActivity(), message, Toast.LENGTH_LONG).show();
         }
     }
+
+This requires you to add the following imports:
+
+    import com.liferay.mobile.android.service.Session;
+    import com.liferay.mobile.android.v62.entry.EntryService;
+    import com.liferay.mobile.screens.context.LiferayServerContext;
+    import com.liferay.mobile.screens.context.SessionContext;
+    import com.liferay.docs.callback.GetEntriesCallback;
+    import android.widget.Toast;
 
 Like the `getGuestbooks` method, `getEntries` gets the current session, sets the 
 session's callback, creates a service object, and then makes the server call. 

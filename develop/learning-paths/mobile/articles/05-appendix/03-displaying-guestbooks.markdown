@@ -85,6 +85,9 @@ First, add the following variables to `GuestbooksActivity`:
     private ListView drawerListView;
     private ArrayAdapter _adapter;
 
+These variables require you to import `android.widget.ListView` and 
+`android.widget.ArrayAdapter`. 
+
 As with the Action Bar, you'll initialize the drawer in its own method. Add 
 this method now: 
 
@@ -166,8 +169,10 @@ now look like this:
     public class GuestbooksActivity extends AppCompatActivity
         implements AdapterView.OnItemClickListener {...
 
-Now you need to delete the `NavigationView.OnNavigationItemSelectedListener` 
-code in `GuestbooksActivity`'s body. To do this, delete the 
+This requires that you import `android.widget.AdapterView`.
+
+Now you must delete the `NavigationView.OnNavigationItemSelectedListener` code 
+in `GuestbooksActivity`'s body. To do this, delete the 
 `onNavigationItemSelected` method, and the `NavigationView` code at the end of 
 the `onCreate` method. Next, implement `AdapterView.OnItemClickListener` by 
 adding the following `onItemClick` method: 

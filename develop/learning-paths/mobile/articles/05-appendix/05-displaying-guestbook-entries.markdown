@@ -19,6 +19,8 @@ as follows:
 
     private ArrayAdapter _adapter;
 
+This requires you to import `android.widget.ArrayAdapter`.
+
 Now you need to create the adapter. Do so now by placing the following code in 
 the `onActivityCreated` method, above the `getEntries` call:
 
@@ -45,6 +47,14 @@ the `onActivityCreated` method, above the `getEntries` call:
         };
  
     setListAdapter(_adapter);
+
+This requires you to add the following imports:
+
+    import android.util.TypedValue;
+    import android.view.View;
+    import android.view.ViewGroup;
+    import android.graphics.Typeface;
+    import android.widget.TextView;
 
 This adapter is identical to 
 [the one you used when creating Get Entries Screenlet's View class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-entries-screenlets-ui#creating-the-view-class). 
@@ -152,7 +162,8 @@ to add the fragment to `GuestbooksActivity` here. The only difference is that
 `GuestbooksActivity` now uses the `onItemClick` method instead of the Screenlet 
 listener method `onItemClicked`. You should therefore perform the fragment 
 transaction in `onItemClick`, immediately above `drawer.closeDrawers()`. When 
-you finish, your `onItemClick` method should look like this: 
+you finish, your `onItemClick` method in `GuestbooksActivity` should look like 
+this: 
 
     @Override
     public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
@@ -167,6 +178,9 @@ you finish, your `onItemClick` method should look like this:
 
         drawer.closeDrawers();
     }
+
+This requires you to import `android.support.v4.app.FragmentTransaction` in 
+`GuestbooksActivity`. 
 
 That's it! Make sure your portal is running and then run the app. The app now 
 displays the selected guestbook's entries. 

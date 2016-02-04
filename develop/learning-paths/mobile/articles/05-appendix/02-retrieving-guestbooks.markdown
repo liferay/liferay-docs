@@ -24,10 +24,10 @@ Recall that the Guestbook Mobile SDK returns guestbooks from the portlet in a
 creating Get Guestbooks Screenlet, you must create a model class that turns each 
 `JSONObject` into a proper guestbook object. You'll do this the exact same way 
 you did in Get Guestbooks Screenlet. To create this model class, follow 
-[these instructions](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-the-get-guestbooks-screenlet#creating-the-model-class-for-guestbooks). 
+[these instructions](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-the-get-guestbooks-screenlet#creating-the-model-class-for-guestbooks) 
 from the article on getting started with the Get Guestbooks Screenlet. When you 
 finish, you'll have an identical `GuestbookModel` class inside the new package 
-`com.liferay.docs.liferayguestbook`. 
+`com.liferay.docs.model`. 
 
 Next, you'll prepare `GuestbooksActivity` to recieve `GuestbookModel` objects. 
 
@@ -38,17 +38,17 @@ to handle `GuestbookModel` objects. Specifically, you need to give the callback
 class you'll create in a moment a way to pass `GuestbookModel` objects to 
 `GuestbooksActivity`. 
 
-First, add a `_guestbooks` variable for these objects: 
+First, add a `_guestbooks` variable to `GuestbooksActivity`: 
 
     private List<GuestbookModel> _guestbooks = new ArrayList<GuestbookModel>();
 
 After adding this variable, add the following imports:
 
-    import com.liferay.docs.liferayguestbook.model.GuestbookModel;
+    import com.liferay.docs.model.GuestbookModel;
     import java.util.ArrayList;
     import java.util.List;
 
-Next, add the following `reloadGuestbooks` method:
+Next, add the following `reloadGuestbooks` method to `GuestbooksActivity`: 
 
     public void reloadGuestbooks(List<GuestbookModel> guestbooks) {
         _guestbooks.clear();
@@ -73,16 +73,16 @@ involved with making calls from a background thread. See
 for more information on threading. 
 
 To create the callback class for retrieving guestbooks, first create a new 
-package called `callback` in `com.liferay.docs.liferayguestbook`. Then create a 
-new class in the `callback` package called `GetGuestbooksCallback`. Replace the 
-code in the class with this code: 
+package called `callback` in `com.liferay.docs`. Then create a new class in the 
+`callback` package called `GetGuestbooksCallback`. Replace this class's code 
+with the following: 
 
-    package com.liferay.docs.liferayguestbook.callback;
+    package com.liferay.docs.callback;
 
     import android.widget.Toast;
 
     import com.liferay.docs.liferayguestbook.GuestbooksActivity;
-    import com.liferay.docs.liferayguestbook.model.GuestbookModel;
+    import com.liferay.docs.model.GuestbookModel;
     import com.liferay.mobile.android.callback.typed.GenericCallback;
 
     import org.json.JSONArray;
@@ -176,6 +176,15 @@ a service instance, and then calling the service method. Add the following
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
     }
+
+This requires you to add the following imports:
+
+    import com.liferay.mobile.android.service.Session;
+    import com.liferay.mobile.android.v62.guestbook.GuestbookService;
+    import com.liferay.mobile.screens.context.LiferayServerContext;
+    import com.liferay.mobile.screens.context.SessionContext;
+    import com.liferay.docs.callback.GetGuestbooksCallback;
+    import android.widget.Toast;
 
 Now you can call this method. Place the `getGuestbooks()` call in the `onCreate` 
 method of `GuestbooksActivity`, following the call to 
