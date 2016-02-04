@@ -4,7 +4,7 @@ In this Learning Path's previous section, you created an Android app that
 contains the Guestbook Mobile SDK and Liferay Screens. You also used Login 
 Screenlet to implement authentication with your Liferay instance. That's all 
 your app does though. It doesn't display any content from the Guestbook portlet. 
-You'll change that in this section of the Learning Path by creating the Get 
+You'll change that in this section of the Learning Path by creating Get 
 Guestbooks Screenlet. You'll create this Screenlet to retrieve and display the 
 portlet's guestbooks in your app's navigation drawer. 
 
@@ -16,7 +16,7 @@ This lets you quickly change a Screenlet's appearance without affecting its
 functionality. In summary, Screenlets are pretty much the greatest thing since 
 sliced bread. Now it's time to make a sandwich. 
 
-Next, you'll learn how to create the Get Guestbooks Screenlet by following these
+Next, you'll learn how to create Get Guestbooks Screenlet by following these 
 steps: 
 
 1. Getting started: creating the Screenlet's package and model class. 
@@ -39,7 +39,7 @@ It explains the components that constitute a Screenlet, and how they relate to
 one another. You should also read the tutorial 
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets). 
 This section of the Learning Path follows the same basic steps as this tutorial, 
-plus a few additional steps specific to the Get Guestbooks Screenlet. If you get 
+plus a few additional steps specific to Get Guestbooks Screenlet. If you get 
 confused or stuck while creating the Screenlet, refer to the finished app that 
 contains the Screenlet code 
-[here in GitHub](https://github.com/liferay/liferay-docs/develop/learning-paths/mobile/code/06-using-your-screenlets/LiferayGuestbook). 
+[here in GitHub](https://github.com/liferay/liferay-docs/develop/learning-paths/mobile/code/screenlets-app/LiferayGuestbook). 

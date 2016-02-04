@@ -11,11 +11,11 @@ the Screenlet in a new package inside the app's project.
 
 Right click the *java* folder in Android Studio's project view and select 
 *New* &rarr; *Package*. Select *.../app/src/main/java* as the destination 
-directory, and click *OK*. Then enter *com.liferay.docs.getguestbooksscreenlet* 
+directory, and click *OK*. Then enter `com.liferay.docs.getguestbooksscreenlet` 
 as the package's name and click *OK*. Android Studio now lists the new package 
 alongside the package containing the app's activity and fragment 
 (`liferayguestbook`). If it doesn't appear at first, you may need to collapse 
-and reopen the *java* folder in project view.
+and reopen the *java* folder in project view. 
 
 ![Figure 1: The new package for the Get Guestbooks Screenlet is highlighted.](../../images/android-guestbooks-screenlet-package.png)
 
@@ -26,14 +26,15 @@ Next, you'll create the model class the Screenlet needs.
 The Guestbook Mobile SDK returns guestbooks from the portlet in a `JSONArray` 
 that contains each guestbook in a `JSONObject`. To work efficiently with these 
 guestbooks, you need a way of transforming them into proper guestbook objects.
-You'll do this via a model class. 
+You'll do this via a model class that creates `GuestbookModel` objects. 
 
 You'll create this model class in a separate package outside of the 
-`getguestbooksscreenlet` package. It makes sense to organize your code this way 
-because additional Screenlets you create may also use the model class. For 
-example, if you created a Screenlet for editing a guestbook, it would also need 
-to use guestbook model objects. Putting the model class in a separate package 
-makes it clear that this class doesn't belong exclusively to a single Screenlet. 
+`getguestbooksscreenlet` package. In this case, it makes sense to organize your 
+code this way because additional Screenlets you create may also use the model 
+class. For example, if you created a Screenlet for editing a guestbook, it would 
+also need to use `GuestbookModel` objects. Putting the model class in a separate 
+package makes it clear that this class doesn't belong exclusively to a single 
+Screenlet. 
 
 First, create a new package called `model` inside the `com.liferay.docs` 
 package. Inside this new `model` package, create a new class called 
