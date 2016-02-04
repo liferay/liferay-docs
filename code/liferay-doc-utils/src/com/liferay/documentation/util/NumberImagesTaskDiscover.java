@@ -2,7 +2,11 @@ package com.liferay.documentation.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
@@ -12,46 +16,54 @@ public class NumberImagesTaskDiscover extends Task {
 	@Override
 	public void execute() throws BuildException {
 
-		File articlesDir = new File("articles");
+		File articleDir = new File("articles");
 		System.out.println("Numbering images for files in "
-				+ articlesDir.getPath() + " ...");
+				+ articleDir.getPath() + " ...");
 
-		if (!articlesDir.exists() || !articlesDir.isDirectory()) {
-			throw new BuildException("FAILURE - bad chapters directory " + articlesDir);
+		if (!articleDir.exists() || !articleDir.isDirectory()) {
+			throw new BuildException("FAILURE - bad chapters directory " + articleDir);
 		}
 		
-		File[] articlesDirContents = articlesDir.listFiles();
+		File[] articleDirFiles = articleDir.listFiles();
+		List<File> articles = new ArrayList<File>();
 		
-		for (File subDir : articlesDirContents) {
-			// Get listing of markdown files
-			if (subDir.isDirectory()) {
-				String[] files = subDir.list();
+		Queue<File> q = new LinkedList<File>();
+		for (File f : articleDirFiles) {
+			q.add(f);
+		}
+
+		while (!q.isEmpty()) {
+			File f = q.remove(); 
+			
+			if (f.isDirectory()) {
+				File[] files = f.listFiles();
 				
-				Arrays.sort(files);
-		
-				if (files == null || files.length == 0) {
-					throw new BuildException("FAILURE - no markdown files found in " + subDir.getAbsolutePath());
-				}
-				
-				// Process each file
-				for (int i = 0; i < files.length; i++) {
-					String filename = files[i];
-					
-					if (!filename.endsWith(".markdown")) {
-						continue;
-					}
-					
-					String filepath = subDir.getAbsolutePath() + "/" + filename;
-					
-					try {
-						ResetImagesDiscover.resetImages(filepath);
-						NumberImagesDiscover.numberImages(filepath);
-					} catch (IOException e) {
-						throw new BuildException(e.getLocalizedMessage());
-					}
+				for (File file : files) {
+					q.add(file);
 				}
 			}
+			else {
+				if (f.getName().endsWith(".markdown")) {
+					articles.add(f);
+				}
+			}
+		}
+
 		
+		if (articles.isEmpty()) {
+			throw new BuildException("FAILURE - no markdown files found in " + articleDir.getAbsolutePath());
+		}
+		
+		for (File article : articles) {
+			String articlePath = article.getAbsolutePath();
+			
+			try {
+				ResetImagesDiscover.resetImages(articlePath);
+				NumberImagesDiscover.numberImages(articlePath);
+			}
+			catch (IOException ie) {
+				throw new BuildException(ie.getLocalizedMessage());
+			}
 		}
 	}
 
