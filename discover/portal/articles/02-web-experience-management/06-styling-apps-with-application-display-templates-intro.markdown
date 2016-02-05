@@ -1,4 +1,4 @@
-# Styling Apps with Application Display Templates
+# Styling Apps with Application Display Templates [](id=styling-apps-with-application-display-templates)
 
 The application display template (ADT) framework allows portal administrators to
 override the default display templates, removing limitations to the way your
