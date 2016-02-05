@@ -1,4 +1,4 @@
-# Authentication Verifiers
+# Authentication Verifiers [](id=authentication-verifiers)
 
 Liferay includes a centralized and extensible authentication layer called the
 authentication verification layer. This layer is mainly used for authenticating
@@ -34,7 +34,7 @@ requests providing username and password credentials. Thus, the authentication
 verification layer stands on the border between authentication and
 authorization.
 
-## Authentication Verification Process Overview
+## Authentication Verification Process Overview [](id=authentication-verification-process-overview)
 
 This layer and surrounding processes are provided by the `AuthVerifierFilter`
 class that implements the `javax.servlet.Filter` interface.
@@ -65,6 +65,6 @@ credentials.
 For more detailed technical information, please see the [AuthVerifiers (not yet
 written)]() tutorial.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 (Coming Soon)

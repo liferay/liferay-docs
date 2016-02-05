@@ -1,4 +1,4 @@
-# Facebook Connect Single Sign On Authentication
+# Facebook Connect Single Sign On Authentication [](id=facebook-connect-single-sign-on-authentication)
 
 Facebook Connect SSO authentication is an integration with Facebook's Graph
 API. It works by retrieving the user's Facebook profile information and then
@@ -27,7 +27,7 @@ secret which are be used in OAuth messages sent between Liferay and Facebook.
 One benefit of this is that a Facebook user can revoke Liferay's access at any
 time.
 
-## Managing Facebook Connect SSO Authentication
+## Managing Facebook Connect SSO Authentication [](id=managing-facebook-connect-sso-authentication)
 
 Facebook Connect SSO configuration can be applied either at the system scope or
 at the scope of a portal instance. To configure the Facebook Connect SSO module
@@ -71,6 +71,6 @@ order for Liferay to make successful calls to the Facebook Graph API. You
 should only need to change this URL if requests to your Liferay instance need
 to go via a fronting webserver such as Apache that does URL rewriting.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 (Coming Soon)
