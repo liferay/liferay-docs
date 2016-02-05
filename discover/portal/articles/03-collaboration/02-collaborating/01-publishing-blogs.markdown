@@ -100,9 +100,11 @@ onto this field any image you like. As an alternative to dragging and dropping
 an image, you can click the *Select File* button to use the image selector to
 choose an existing image in the blog, an image file from Documents and Media, or
 an image outside the Liferay instance. You can browse to an image file and
-upload it. After you set the entry's cover image, you can add a caption to it.
-And if you want to select a different image, you can click the *Change* icon
-(![Change](../../../images/icon-change.png)) to bring up the image selector again.
+upload it. After you've uploaded the image, it displays in the image pane. To
+center image content, click on the image and drag it into place with your mouse.
+You can even add a caption. And if you want to select a different image, you can
+click the *Change* icon (![Change](../../../images/icon-change.png)) to upload a
+different image.
 
 Clicking the *Configuration* icon (![Gear](../../../images/icon-gear.png)) at the
 top of the entry editor lets you configure the blog entry. You can set a
