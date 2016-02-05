@@ -15,15 +15,15 @@ facilitate collaboration among team members, supporting different kinds of
 collaboration and social scenarios is a must. Liferay's sites provide three
 membership types:
 
-- **Open:** Users can become members of the site at any time. Users can join
+**Open:** Users can become members of the site at any time. Users can join
 sites from the Site Administration navigation menu
 (![Compass](../../../images/icon-compass.png)).
 
-- **Restricted:** Users can request site membership but site administrators must
+**Restricted:** Users can request site membership but site administrators must
 approve requests in order for users to become members. Requests can be made from
 the Site Administration navigation menu.
 
-- **Private:** Users are not allowed to join the site or request site
+**Private:** Users are not allowed to join the site or request site
 membership. Private sites don't appear in the Site Administration navigation
 menu. Site administrators can still manually select users and assign them as
 site members.
