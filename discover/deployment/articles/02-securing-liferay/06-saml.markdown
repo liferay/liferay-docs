@@ -317,7 +317,7 @@ to expire very quickly.
 
 **LDAP Import Enabled:** When this box is checked, user information is imported
 from the configured LDAP connection based on the resolved NameID. LDAP
-connections can be configured from Portal Settings.
+connections can be configured from Instance Settings.
 
 **Sign Authn Requests:** When this box is checked, the AuthnRequest is signed
 even if the Identity Provider metadata indicates that it's not required.

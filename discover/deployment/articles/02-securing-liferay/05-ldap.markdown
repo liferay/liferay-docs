@@ -16,7 +16,7 @@ see the (not yet written) tutorial. -->
 ## Configuring Liferay's LDAP Settings [](id=configuring-liferays-ldap-settings)
 
 To access Liferay's LDAP configuration settings, navigate to the Control Panel
-and click on *Configuration* &rarr; *Portal Settings*. Then click on
+and click on *Configuration* &rarr; *Instance Settings*. Then click on
 *Authentication* on the right and then on the *LDAP* tab at the top. You can
 use this page to connect Liferay to an LDAP directory. There are two places for
 you to configure the LDAP settings: here in the Control Panel or in your

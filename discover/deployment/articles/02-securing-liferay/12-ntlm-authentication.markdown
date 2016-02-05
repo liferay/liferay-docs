@@ -28,7 +28,7 @@ Property Label | Property Key | Description | Type
 **Negotiate Flags** | `negotiateFlags` | Only available at system level. Set according to the client's requested capabilities and the server's ServerCapabilities. See the following link: [http://msdn.microsoft.com/en-us/library/cc717152%28v=PROT.10%29.aspx](http://msdn.microsoft.com/en-us/library/cc717152%28v=PROT.10%29.aspx) | `String`
 
 To override system defaults for a particular portal instance, navigate to the
-Control Panel, click on *Configuration* &rarr; *Portal Settings*, click on
+Control Panel, click on *Configuration* &rarr; *Instance Settings*, click on
 *Authentication* on the right and then on *NTLM* at the top.
 
 ## Summary [](id=summary)
