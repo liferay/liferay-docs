@@ -1,8 +1,8 @@
 # Creating the Get Guestbook Screenlet's UI [](id=creating-the-get-guestbook-screenlets-ui)
 
 In Liferay Screens for Android, Screenlet UIs are called Views. Every Screenlet 
-must have a View. In this article, you'll create the Get Guestbook Screenlet's 
-View by following these steps:
+must have at least one View. In this article, you'll create the Get Guestbook 
+Screenlet's default View by following these steps:
 
 1. Create the View Model interface. This interface defines the methods the View 
    class needs to control the UI.
@@ -25,15 +25,14 @@ control the UI. For example, the View Model interface created in the tutorial
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets) 
 contains getter and setter methods for the Add Bookmark Screenlet's `url` and 
 `title` attributes. Since that Screenlet needs to add a bookmark to Liferay's 
-Bookmarks portlet, its View needs those methods so it can get and set the 
-bookmark's URL and title from the UI. The Screenlet's View class then implements 
-those methods. You need to define an analogous View Model interface for the Get 
-Guestbooks Screenlet. 
+Bookmarks portlet, its View class needs those methods so it can get and set the 
+bookmark's URL and title in the UI. You'll define an analogous View Model 
+interface for Get Guestbooks Screenlet. 
 
 So what methods should the Get Guestbooks Screenlet's View Model interface 
 define? The Get Guestbooks Screenlet's UI doesn't need *any* control elements, 
 such as sliders, text boxes, buttons, or the like. It only needs to display a 
-guestbook list. Its view model interface therefore only needs to define a single 
+guestbook list. Its View Model interface therefore only needs to define a single 
 method for this purpose. You'll handle list item selections separately, by 
 implementing `AdapterView.OnItemClickListener` in the view class. 
 
@@ -52,7 +51,7 @@ Now add the following method signature:
     void showFinishOperation(String userAction, List<GuestbookModel> guestbooks);
 
 This method requires that you import `com.liferay.docs.model.GuestbookModel` and 
-`java.util.List`. You'll use `showFinishOperation` in the view class to refresh 
+`java.util.List`. You'll use `showFinishOperation` in the View class to refresh 
 the list of guestbooks displayed by the Screenlet. The Screenlet calls this 
 method with the list of guestbooks retrieved from the server when the given user 
 action, represented by `userAction`, occurs. You might now be thinking, "Hold 
@@ -83,25 +82,25 @@ replace its contents with the following code:
 The View class, `GetGuestbooksView`, doesn't exist yet. Don't worry; you'll 
 create it next. You might also be wondering why the layout is otherwise empty. 
 There's no need to worry about this either; you'll create and handle the 
-layout's content in the View class. 
+layout's content dynamically in the View class. 
 
 ## Creating the View Class [](id=creating-the-view-class)
 
-The View class is the heart and mind of any Screenlet's UI. It renders the UI, 
+The View class is the central hub of any Screenlet's UI. It renders the UI, 
 handles user interactions, and communicates with the Screenlet class. Since you 
-want to display guestbooks in a list, the Get Guestbooks Screenlet's View class 
+want to display guestbooks in a list, Get Guestbooks Screenlet's View class 
 should extend [`ListView`](http://developer.android.com/reference/android/widget/ListView.html). 
 This gives the View class an implicit `ListView` object to serve as content for 
-the layout XML you just created. This is why you didn't need to put any other 
+the layout XML you just created. This is why you didn't need to define any other 
 content in the layout. You'll use the View class's `ListView` to display the 
 guestbooks programmatically in a list. 
 
-The Get Guestbooks Screenlet's View class must also implement 
+Get Guestbooks Screenlet's View class must also implement 
 `GetGuestbooksViewModel` and `AdapterView.OnItemClickListener`. Implementing 
 these interfaces lets the View class handle user interactions. Implementing the 
-View Model lets the View class refresh the list of guestbooks displayed by the 
-Screenlet. Implementing the item click listener lets the View class handle user 
-selections of individual guestbooks in the list. 
+View Model lets the View class load and refresh the list of guestbooks the 
+Screenlet displays. Implementing the item click listener lets the View class 
+handle selections of individual guestbooks in the list. 
 
 Now it's time to get down to business! Create the `GetGuestbooksView` class 
 inside the `view` package. Change the class declaration to extend Android's 
@@ -172,9 +171,9 @@ that uses the built-in Android layout `simple_list_item_activated_1` to display
 a single line of text for each list item. Note that `_guestbooks` is the 
 last argument to the adapter's constructor. This sets the `GuestbookModel` list 
 as the adapter's data source. The `setAdapter` method then sets the adapter to 
-the `ListView`. The constructor finishes by using the `AdapterView` class's 
-`setOnItemClickListener` method to set `GetGuestbooksView` as the `ListView`'s 
-click listener. 
+the implicit `ListView`. The constructor finishes by using the `AdapterView` 
+class's `setOnItemClickListener` method to set `GetGuestbooksView` as the 
+`ListView`'s click listener. 
 
 Next, you must implement the methods defined in the 
 [`BaseViewModel`](https://github.com/liferay/liferay-screens/blob/1.3.0/android/library/core/src/main/java/com/liferay/mobile/screens/base/view/BaseViewModel.java) 
@@ -189,7 +188,7 @@ interface. This interface defines the following methods:
 - `public void showFailedOperation(String actionName, Exception e)`: Called by 
   the Screenlet if the server operation fails. 
 
-- `BaseScreenlet getScreenlet()`: Gets the Screenlet reference from the View.
+- `BaseScreenlet getScreenlet()`: Gets the View's Screenlet reference. 
 
 - `void setScreenlet(BaseScreenlet screenlet)`: Sets the View's Screenlet 
   reference. 
@@ -237,16 +236,16 @@ You must also add the `LiferayLogger` and `LiferayCrouton` imports:
     import com.liferay.mobile.screens.util.LiferayLogger;
     import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 
-Now you must implement `GetGuestbooksViewModel`'s method. Recall that this 
-interface defines only a single method: the `showFinishOperation` method that 
-takes a user action and `GuestbookModel` list as parameters. The Screenlet calls 
-this method when the server call finishes successfully. In this method's 
-implementation, you must refresh the guestbooks in `_guestbooks` and notify the 
-`ListView`'s adapter of the change. To refresh the guestbooks, you'll clear 
-`_guestbooks` of any content and then populate it with the most recent 
-guestbooks from the server. To notify the adapter of this change, you'll 
-retrieve it by using `getAdapter()` and then call its `notifyDataSetChanged()` 
-method. Add this `showFinishOperation` method implementation now:
+Now you must implement `GetGuestbooksViewModel`. Recall that this interface 
+defines only a single method: the `showFinishOperation` method that takes a user 
+action and `GuestbookModel` list as parameters. The Screenlet calls this method 
+when the server call finishes successfully. In this method's implementation, you 
+must refresh the guestbooks in `_guestbooks` and notify the `ListView`'s adapter 
+of this change. To refresh the guestbooks, you'll clear `_guestbooks` of any 
+content and then populate it with the most recent guestbooks from the server. To 
+notify the adapter of this change, you'll use `getAdapter()` to retrieve the 
+adapter, and then call `notifyDataSetChanged()`. Add this `showFinishOperation` 
+method implementation now: 
 
     @Override
     public void showFinishOperation(final String userAction, final List<GuestbookModel> guestbooks) {
@@ -266,7 +265,7 @@ shouldn't, however, implement this behavior in the Screenlet's UI. You should
 create Screenlets so they can be used in a wide variety of UIs. Unless you have 
 a very good reason for doing so, you shouldn't force developers to use your 
 Screenlet with a specific UI like a navigation drawer. So instead of 
-implementing a navigation drawer and its behavior as part of the Get Guestbooks 
+implementing a navigation drawer and its behavior as part of Get Guestbooks 
 Screenlet, you'll respond to list item selections by passing the selected 
 guestbook to the activity or fragment the Screenlet is used from. This lets the 
 app developer respond to a guestbook selection as they wish. You'll do this by 
@@ -289,7 +288,7 @@ first use `setItemChecked` to highlight the selected item in the `ListView`. The
 *TODO* serves as a nice reminder to come back here after creating the Screenlet 
 class. 
 
-Great! With the exception of the *TODO* in `onItemClick`, you're done with the 
-Get Guestbooks Screenlet's View. You're almost ready to write the Screenlet's 
-server call. Because Screenlets use the Mobile SDK to make server calls, 
-however, you must first learn how Mobile SDK calls work. This is shown next. 
+Great! With the exception of the *TODO* in `onItemClick`, you're done with Get 
+Guestbooks Screenlet's View. You're almost ready to write the Screenlet's server 
+call. Because Screenlets use the Mobile SDK to make server calls, you must first 
+learn how Mobile SDK calls work. This is shown next. 

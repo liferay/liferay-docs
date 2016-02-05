@@ -16,8 +16,8 @@ thread. You'll learn these components in detail, and the others that comprise an
 Interactor, when you create Get Guestbooks Screenlet's Interactor. For now, 
 though, you should focus on Mobile SDK calls. 
 
-The following diagram illustrates how you'll make and process calls with the 
-Guestbook Mobile SDK. 
+The following diagram illustrates how you'll make and process Guestbook Mobile 
+SDK calls. 
 
 ![Figure 1: A call made with the Guestbook Mobile SDK requires that you create a Mobile SDK service instance, use it to call the Liferay service, transform the resulting JSON into model objects, and pass those model objects back to the Screenlet Interactor class that issued the call.](../../images/android-mobile-sdk.png)
 
@@ -31,8 +31,7 @@ This diagram is broken down into four basic steps:
    instance is also important. You must create it with an authenticated session 
    that contains a callback instance. The callback is required to route the 
    remote service call asynchronously through a background thread, since Android 
-   doesn't allow network requests on its main UI thread. You also use the 
-   callback class to process the service call's results. 
+   doesn't allow network requests on its main UI thread. 
 
 2. In the same Interactor class, use the Guestbook Mobile SDK service instance 
    to call the Guestbook portlet's remote services. For example, to get 

@@ -1,12 +1,12 @@
 # Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 When using a Screenlet, app developers primarily interact with its Screenlet 
-class. The Screenlet class can contain attributes for configuring the 
-Screenlet's behavior, a reference to the Screenlet's View, methods for invoking 
-Interactor operations, and more. To app developers, the Screenlet class is like 
-the driver's seat of a fine luxury automobile. All the controls are in just the 
+class. The Screenlet class contains attributes for configuring the Screenlet's 
+behavior, a reference to the Screenlet's View, methods for invoking Interactor 
+operations, and more. To app developers, the Screenlet class is like the 
+driver's seat of a fine luxury automobile. All the controls are in just the 
 right place, do exactly what they should, and make you feel like royalty on the 
-road. Now it's your turn to craft this for the Get Guestbooks Screenlet. Don't 
+road. Now it's your turn to craft this for Get Guestbooks Screenlet. Don't 
 worry, we promise you won't get a speeding ticket. 
 
 You'll create the Screenlet class by using the following steps:
@@ -19,7 +19,7 @@ You'll create the Screenlet class by using the following steps:
    functionality defined in the View, listener, and Interactor. It also reads 
    the attribute values and configures the Screenlet accordingly. 
 
-First, you'll define the Get Guestbooks Screenlet's attributes. 
+First, you'll define Get Guestbooks Screenlet's attributes. 
 
 ## Defining Screenlet Attributes [](id=defining-screenlet-attributes)
 
@@ -38,8 +38,8 @@ Screenlet:
         />
 
 The app developer can set the `liferay` attributes `basicAuthMethod` and 
-`layoutId`, respectively, to set Login Screenlet's authentication method and 
-View. The Screenlet class reads these settings to enable the appropriate 
+`layoutId` to set Login Screenlet's authentication method and View, 
+respectively. The Screenlet class reads these settings to enable the appropriate 
 functionality. 
 
 When creating a Screenlet, you can define the attributes you want to make 
@@ -67,7 +67,8 @@ as the `layoutId` attribute in Liferay's existing Screenlets.
 doesn't want to use the `groupId` setting in `server_context.xml`. 
 
 - `autoLoad`: A boolean value that sets whether the Screenlet automatically 
-retrieves guestbooks from the server, or waits for a user action to do so. 
+retrieves guestbooks from the server, or waits for a specific user action to do 
+so. 
 
 Now that you've defined these attributes and know what they need to do, you're 
 ready to write the Screenlet class. 
@@ -122,9 +123,8 @@ This requires you to import `android.content.Context` and
 
 Next, you need to implement the `GetGuestbooksListener` interface. To do this, 
 you'll implement the listener's `onGetGuestbooksSuccess`, 
-`onGetGuestbooksFailure`, and `onItemClicked` methods. Each of these methods 
-communicates an action that occurs in the Screenlet. Add their implementations 
-now: 
+`onGetGuestbooksFailure`, and `onItemClicked` methods. Each communicates an 
+action that occurs in the Screenlet. Add their implementations now: 
 
     public void onGetGuestbooksSuccess(List<GuestbookModel> guestbooks) {
         getViewModel().showFinishOperation(null, guestbooks);
@@ -165,7 +165,7 @@ to the listener.
 
 You should also provide public getters and setters for the `_listener` and 
 `_groupId` variables. Having these for the listener lets classes, like the 
-activity or fragment an app developer uses the Screenlet in, register as 
+activity or fragment class an app developer uses the Screenlet in, register as 
 listeners and send events. Likewise, a public getter and setter for `_groupId` 
 lets app developers retrieve and change the site ID (group ID) as needed. Add 
 these methods as follows: 
@@ -187,8 +187,9 @@ these methods as follows:
     }
 
 Next, you must implement `BaseScreenlet`'s abstract methods. Implement 
-`createScreenletView` first. This method sets the attributes you defined in 
-`guestbooks_attrs.xml`, then inflates and returns the view. Add this method now: 
+`createScreenletView` first. This method retrieves any app developer settings 
+for the attributes you defined in `guestbooks_attrs.xml`, then inflates and 
+returns the view. Add this method now: 
 
     @Override
     protected View createScreenletView(Context context, AttributeSet attributes) {
@@ -222,21 +223,22 @@ This method requires you to add the following imports:
 
 In this method, you first obtain a 
 [`TypedArray`](http://developer.android.com/reference/android/content/res/TypedArray.html) 
-containing the attributes defined in `guestbooks_attrs.xml`. You then use the 
-`TypedArray` method `getResourceId` to retrieve the app developer's `layoutId` 
-setting. If the app developer hasn't set `layoutId`, `getDefaultLayoutId()` is 
-used as `getResourceId`'s second argument to return the Screenlet's default 
-`layoutId`. You also use the `TypedArray` methods `getBoolean` and `getInt` to 
-set the `_autoLoad` and `_groupId` attributes, respectively. As with 
-`getResourceId`, the second argument to these `TypedArray` methods specifies a 
-default setting. Note that `(int) LiferayServerContext.getGroupId()`, the second 
-argument to `getInt`, retrieves the `groupId` set in `server_context.xml`. This 
-`groupId` serves as a reasonable default when the app developer hasn't specified 
-the `groupId` in the Screenlet's XML. You finish the `createScreenletView` 
-method by inflating the layout specified in `layoutId` and returning its view. 
+containing any app developer settings for the attributes defined in 
+`guestbooks_attrs.xml`. You then use the `TypedArray` method `getResourceId` to 
+retrieve the app developer's `layoutId` setting. If the app developer hasn't set 
+`layoutId`, `getDefaultLayoutId()` is used as `getResourceId`'s second argument 
+to return the Screenlet's default `layoutId`. You also use the `TypedArray` 
+methods `getBoolean` and `getInt` to set the `_autoLoad` and `_groupId` 
+attribute variables, respectively. As with `getResourceId`, the second argument 
+to these `TypedArray` methods specifies a default setting. Note that 
+`(int) LiferayServerContext.getGroupId()`, the second argument to `getInt`, 
+retrieves the `groupId` set in `server_context.xml`. This `groupId` serves as a 
+reasonable default when the app developer hasn't specified the `groupId` in the 
+Screenlet's XML. You finish the `createScreenletView` method by inflating the 
+layout specified in `layoutId` and returning its view. 
 
 Now you must implement `BaseScreenlet`'s `createInteractor` method. This factory 
-method takes the Screenlet's ID to create the Interactor. The `getScreenletId()` 
+method creates the Interactor with the Screenlet's ID. The `getScreenletId()` 
 method returns this ID. Add the following `createInteractor` method:
 
     @Override
@@ -285,13 +287,13 @@ Letting developers customize a Screenlet's UI is one of Screens's key strengths.
 
 Awesome! You finished the `GetGuestbooksScreenlet` class. Now that it exists, 
 you can return to the `GetGuestbooksView` class to complete the `onItemClick` 
-method. Open `GetGuestbooksView` and locate its `onItemClick` method. It should 
-contain the following *TODO*: 
+method. Open `GetGuestbooksView` and locate its `onItemClick` method. It 
+contains the following *TODO*: 
 
     // TODO: Call GetGuestbooksScreenlet's onItemClicked method
 
-Recall that the `onItemClicked` method in `GetGuestbooksScreenlet` must send 
-the guestbook selected in the UI to the listener. Replace the *TODO* with the 
+Recall that the `onItemClicked` method in `GetGuestbooksScreenlet` sends the 
+guestbook selected in the UI to the listener. Replace the *TODO* with the 
 following code: 
 
     ((GetGuestbooksScreenlet) getParent()).onItemClicked(_guestbooks.get(position));
@@ -313,7 +315,7 @@ The `onItemClicked` method should now look like this:
         ((GetGuestbooksScreenlet) getParent()).onItemClicked(_guestbooks.get(position));
     }
 
-Fantastic work! You finished the Get Guestbooks Screenlet! It only gets and 
-displays guestbooks, though. To have an app that also gets and displays entries, 
-you need to create the Get Entries Screenlet. This Learning Path's next section 
-shows you how to do this. 
+Fantastic work! You finished Get Guestbooks Screenlet! It only gets and displays 
+guestbooks, though. To have an app that also gets and displays entries, you need 
+to create Get Entries Screenlet. This Learning Path's next section shows you how 
+to do this. 
