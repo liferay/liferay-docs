@@ -3367,24 +3367,24 @@ allow for much flexibility.
 
 ---------------------------------------
 
-### Renamed Packages to Fix the Split Packages Problem
+### Renamed Packages to Fix the Split Packages Problem [](id=renamed-packages-to-fix-the-split-packages-problem)
 - **Date:** 2016-Jan-19
 - **JIRA Ticket:** LPS-61952
 
-#### What changed?
+#### What changed? [](id=what-changed-85)
 
 Split packages are caused when two or more bundles export the same package name
 and version. When the classloader loads a package, exactly one exporter of that
 package is chosen; so if a package is split across multiple bundles, then an
 importer only sees a subset of the package.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-85)
 
 The `portal-service` and `portal-impl` folders have many packages with the same
 name. Therefore, all of these packages are affected by the split package
 problem.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-85)
 
 You should rename duplicated package names if they currently exist somewhere
 else.
@@ -3511,59 +3511,59 @@ else.
 
 - `com.liferay.portlet.ratings.transformer` &rarr; `com.liferay.ratings.kernel.transformer`
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-85)
 
 This change was necessary to solve the current split package problems and
 prevent future ones.
 
 ---------------------------------------
 
-### Removed the aui:column Tag and Replaced with aui:col
+### Removed the aui:column Tag and Replaced with aui:col [](id=removed-the-auicolumn-tag-and-replaced-with-auicol)
 - **Date:** 2016-Jan-19
 - **JIRA Ticket:** LPS-62208
 
-#### What changed?
+#### What changed? [](id=what-changed-86)
 
 The `aui:column` tag has been removed and replaced with the `aui:col` tag.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-86)
 
 Plugins or templates that are using the `aui:column` tag must update their usage
 of the tag.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-86)
 
 You should import the `aui` tag library (if necessary) and update the tag
 namespace from `aui:column` to `aui:col`.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-86)
 
 This change was made as a part of the ongoing strategy to modularize Liferay
 Portal by means of an OSGi container.
 
 ---------------------------------------
 
-### The title Field of FileEntry Models is Now Mandatory
+### The title Field of FileEntry Models is Now Mandatory [](id=the-title-field-of-fileentry-models-is-now-mandatory)
 - **Date:** 2016-Jan-25
 - **JIRA Ticket:** LPS-62251
 
-#### What changed?
+#### What changed? [](id=what-changed-87)
 
 The `title` field of file entries was optional as long as a source file name was
 provided. To avoid confusion, the title is now required by the API and is filled
 automatically by the UI when a source file name is present.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-87)
 
 This affects any user of the local or remote API. Users of the Web UI are
 unaffected.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-87)
 
 You should pass a non-null, non-empty string for the `title` parameter of the
 `addFileEntry` and `updateFileEntry` methods.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-87)
 
 The `title` field was marked as mandatory, but it was possible to create a
 document without filling it, as the backend would infer a value from the source
@@ -3571,11 +3571,11 @@ file name automatically. This was considered confusing from a UX perspective.
 
 ---------------------------------------
 
-### DLUtil.getImagePreviewURL and DLUtil.getThumbnailSrc Can Return Empty Strings
+### DLUtil.getImagePreviewURL and DLUtil.getThumbnailSrc Can Return Empty Strings [](id=dlutil-getimagepreviewurl-and-dlutil-getthumbnailsrc-can-return-empty-strin)
 - **Date:** 2016-Jan-28
 - **JIRA Ticket:** LPS-62643
 
-#### What changed?
+#### What changed? [](id=what-changed-88)
 
 The `DLUtil.getImagePreviewURL` and `DLUtil.getThumbnailSrc` methods return an
 empty string if there are no previews or thumbnails for the specific image,
@@ -3584,18 +3584,18 @@ video, or document.
 Previously, if there were no previews or thumbnails, these methods would return
 a URL to an image based on the document.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-88)
 
 This affects any developer invoking `DLUtil.getImagePreviewURL` or
 `DLUtil.getThumbnailSrc`.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-88)
 
 You should be aware that the method could return an empty string and act
 accordingly. For example, you could display the `documents-and-media` Lexicon
 icon instead.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-88)
 
 In order to display the `documents-and-media` Lexicon icon in Documents and
 Media, this change was necessary.
