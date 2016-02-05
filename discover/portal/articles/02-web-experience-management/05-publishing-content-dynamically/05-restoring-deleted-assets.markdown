@@ -1,4 +1,4 @@
-# Restoring Deleted Assets
+# Restoring Deleted Assets [](id=restoring-deleted-assets)
 
 Have you ever had that life-altering experience where you deleted an important
 file and immediately regretted deleting it? The deed is usually followed by a
@@ -10,7 +10,7 @@ be restored back to its original state. Recycled items can expire after a
 certain period of time, resulting in their permanent deletion. Before diving
 into how the Recycle Bin works, you'll look at how to configure it.
 
-## Configuring the Recycle Bin
+## Configuring the Recycle Bin [](id=configuring-the-recycle-bin)
 
 The Recycle Bin supports instance-wide scope or site-specific scope. The
 instance-wide scope of the Recycle Bin is set by adding the `trash.enabled`
@@ -74,7 +74,7 @@ recycled can restore the document.
 Now that you've successfully configured the Recycle Bin, you'll look at how to
 use it.
 
-## Using the Recycle Bin
+## Using the Recycle Bin [](id=using-the-recycle-bin)
 
 The Recycle Bin is temporary storage configured for multiple asset types across
 you Liferay instance. Instead of offering a specific Recycle Bin for each asset
@@ -161,7 +161,7 @@ Recycle Bin* option accessible from the
 Bin screen. This permanently deletes all the files from the Recycle Bin. Next,
 you'll learn how to use the drag and drop feature.
 
-### Drag and Drop
+### Drag and Drop [](id=drag-and-drop)
 
 A quick and easy way to dispose of your unwanted assets is to drag and drop them
 into the Recycle Bin. While you're in the Control Panel, you can simply select
@@ -177,7 +177,7 @@ original location and transferred to the Recycle Bin.
 Next, you'll explore the Recycle Bin's intelligence and behind the scenes
 support that aids in a seamless recycling experience.
 
-### Recycle Bin intelligence and support
+### Recycle Bin intelligence and support [](id=recycle-bin-intelligence-and-support)
 
 Have you ever wondered if it's possible to check the IQ of a software feature?
 Unfortunately, there is no tangible way to do this; however, if there were, the
