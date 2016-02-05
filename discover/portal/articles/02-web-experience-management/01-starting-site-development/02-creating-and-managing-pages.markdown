@@ -509,7 +509,7 @@ Collaboration apps to the Lunar Resort site.
 See how easy it is to add applications to your pages? You've added the Wiki
 app and Blogs Aggregator app to a page. 
 
-![Figure 6: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../images/app-layout-design.png)
+![Figure 5: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../images/app-layout-design.png)
 
 It's easy to make your pages look exactly the way you want them to. If the
 default layout options provided aren't enough, you can even develop your own.
@@ -652,7 +652,7 @@ this with the following procedure:
    role.
 5. Click the *Save* button.
 
-![Figure 10: The Permissions offer a plethora of options for each role.](../../../images/web-content-page-permissions.png)
+![Figure 6: The Permissions offer a plethora of options for each role.](../../../images/web-content-page-permissions.png)
 
 Congratulations! You've changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.
