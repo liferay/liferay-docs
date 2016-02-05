@@ -5,53 +5,51 @@ override the default display templates, removing limitations to the way your
 site's content is displayed. With ADTs, you can define custom display templates
 used to render asset-centric applications. For example, you may want to show
 blog entries horizontally instead of vertically, or list your assets in the
-asset publisher portlet in different sizes.
+asset publisher application in different sizes.
 
-Let's go through a simple use case to illustrate how creating a custom ADT can
+You'll go through a simple use case to illustrate how creating a custom ADT can
 improve your site. Suppose you're customizing the Lunar Resort site and want to
 allow users to communicate with other interested travelers. Specifically, you
-want to configure the Wiki portlet for collaboration with Facebook or Twitter.
-With ADTs, you can launch a template editor, create a custom template, and
-configure your portlet host that template. Custom templates let you re-skin your
-portlet and give you ultimate control over its appearance and functionality in
-your portal.
+want to configure the Wiki app for collaboration with Facebook or Twitter. With
+ADTs, you can launch a template editor, create a custom template, and configure
+your app host that template. Custom templates let you re-skin your application
+and give you ultimate control over its appearance and functionality in your
+Liferay instance.
 
 Before attempting to change the ADT for your application, you'll need to select
 a site for your custom template to reside in. Choosing the *Global* context
 makes your template available across all sites. To choose a site to house your
-ADT, navigate to the Control Panel &rarr; *Sites* and click on a site from the
-list. If you select the Global context, the *Application Display Templates* page
-of the Control Panel's Configuration Menu shows you a list of sample templates
-available for your portlets. These sample templates differ from the default
-templates already configured in the portlets. If you choose a site to host your
-template, you must create a custom template for that site's portlets.
+ADT, navigate to the Site Administration dropdown list by selecting the
+*Compass* icon (![Compass](../../images/icon-compass.png)). If you select the
+Global context, the *Application Display Templates* page of Site
+Administration's Configuration Menu shows you a list of sample templates
+available for your apps. These sample templates differ from the default
+templates already configured in the apps. If you choose a site to host your
+template, you must create a custom template for that site's apps.
 
-![Figure 8.5: In the Control Panel, you can choose the context in which your application display template resides.](../../images/context-selector.png)
+![Figure 1: The Site Administration dropdown menu lets you choose the context in which your application display template resides.](../../images/context-selector.png)
 
-If you'd like to add an ADT, select the portlet you'd like to customize. The
-list below specifies the portlets that can be customized using ADTs. It also
-provides sample template descriptions:
+If you'd like to add an existing ADT, select the template from the list. The
+list below specifies the apps that can be customized using ADTs.
 
-- *Asset Publisher*: displays abstracts, icons, related assets, and print/edit
-  actions for assets. Optionally includes asset bookmarks and ratings.
-- *Blogs*: displays titles, authors, and abstracts compactly for blog entries.
-- *Categories Navigation*: displays a column for each vocabulary. Each column
-  includes the name of a vocabulary with the vocabulary's top level categories
-  listed underneath.
-- *Media Gallery*: displays images in a carousel.
-- *Site Map*: displays a column for each top level page. Each column includes
-  the name of a top level page with the page's immediate children listed
-  underneath.
-- *Tags Navigation*: displays asset tags colored by popularity: red (high),
-  yellow (medium), and green (low).
-- *Wiki*: displays social bookmarks and ratings for wiki pages and their child
-  pages.
+- *Asset Publisher*
+- *Blogs*
+- *Breadcrumb*
+- *Categories Navigation*
+- *Documents and Media*
+- *Language Selector*
+- *Media Gallery*
+- *Navigation Menu*
+- *RSS Publisher*
+- *Site Map*
+- *Tags Navigation*
+- *Wiki*
 
 To create a new ADT, click *Add* and select the template you'd like to create,
-based on portlet type. Then enter the name and, optionally, a description and a
+based on application type. Then enter the name and, optionally, a description and a
 small image to use. You can select the language type for your template (FTL or
 VM). Lastly, the *Script* option lets you browse your file system for a template
-on your file system, or you can launch the editor and create one directly. On
+on your file system, or you can use the editor and create one directly. On
 the left side of the template editor, you'll notice a palette of common
 variables used for making templates. This is a great reference when creating
 your template. To place one of the variables into the template editor, simply
@@ -64,7 +62,7 @@ kinds of ADTs, there are also different variables for each ADT. Thus, each
 template has a different set of variables only applicable for that specific
 template. 
 
-![Figure 8.6: Liferay offers a versatile script editor to customize your ADT.](../../images/adt-script-editor.png)
+![Figure 2: Liferay offers a versatile script editor to customize your ADT.](../../images/adt-script-editor.png)
 
 You can also use the autocomplete feature to add variables to your template. It
 can be invoked by typing *${* which opens a drop-down menu of available
@@ -81,19 +79,15 @@ create a custom template, visit the
 [Implementing Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/implementing-application-display-templates)
 tutorial.
 
-Another cool feature is the *Export/Import* functionality. You can take
-advantage of this feature by clicking the gear icon at the top right of the
-screen and selecting *Export/Import*. For more information on using this
-feature, visit the
-[Export/Import](/discover/portal/-/knowledge_base/6-2/export-import)
-section of this guide.
+<!--TODO: Update tutorial link above for 7.0, when available. -Cody -->
 
 After you've completed the initial set up and saved your ADT, you can manage
-your ADT through its *Actions* button. This provides several options:
+your ADT through its *Actions* (![Actions](../../images/icon-actions.png))
+button. This provides several options:
 
 - *Edit*: lets you modify the ADT's setup properties.
-- *Permissions*: lets you manage the permissions *Delete*, *Permissions*,
-  *Update*, and *View* for the ADT.
+- *Permissions*: lets you manage the permissions *Update*, *Permissions*,
+  *Delete*, and *View* for the ADT.
 - *Copy*: creates a copy of the ADT.
 - *Delete*: deletes the ADT.
 
@@ -105,58 +99,60 @@ remote server. If you'd like to learn more about what the WebDAV URL can do,
 visit the *Document Management* chapter's [WebDAV access](discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
 section.
 
+<!--TODO: Update WebDAV link above for 7.0, when available. -Cody -->
+
 +$$$
 
-**Note:** Embedding portlets into ADTs, although possible, is not recommended
-because this could cause conflicts with other portlets or unexpected behavior
-(e.g., embedding a portlet that aggregates data to the breadcrumb). If embedding
-a portlet into an ADT is your only option, make sure it does not interfere with
-other portlets.
+**Note:** Embedding appss into ADTs, although possible, is not recommended
+because this could cause conflicts with other apps or unexpected behavior (e.g.,
+embedding an app that aggregates data to the breadcrumb). If embedding an app
+into an ADT is your only option, make sure it does not interfere with other
+apps.
 
 $$$
 
-To enable your ADT for a portlet, navigate to the portlet you want to modify and
-open its *Configuration* menu. In the *Display Settings* sub-tab located within
-the *Setup* tab, select your ADT from the *Display Template* drop-down menu.
-You'll notice they're separated by context type. Also, you can manage
-site-specific display templates for your portlet: do this by clicking the
-*Manage Display Templates for [SPECIFIC_SITE]* link next to the *Display
+To enable your ADT for an application, navigate to the app you want to modify
+and open its *Configuration* menu. In the *Templates* sub-tab located within the
+*Setup* tab, select your ADT from the *Display Template* drop-down menu. Also,
+you can manage site-specific display templates for your app: do this by clicking
+the *Manage Display Templates for [SPECIFIC_SITE]* link next to the *Display
 Template* drop-down menu. A window will display with a list of your configured
 templates only available for your site with options to add new templates or edit
 existing templates.
 
-![Figure 8.7: In the *Configuration* menu of a portlet, you can edit and manage available ADTs.](../../images/adt-configuration.png)
+![Figure 3: In the *Configuration* menu of an app, you can edit and manage available ADTs.](../../images/adt-configuration.png)
 
-Now that you know the general functions of ADTs, let's create our own. This
+Now that you know the general functions of ADTs, you'll create your own. This
 brief demonstration will show you just how easy, yet powerful, ADTs can be for
-your portal.
+your Liferay instance.
 
-1. Add the Media Gallery portlet to a page by navigating to *Add* &rarr;
-   *Content and Applications* &rarr; *Applications* &rarr; *Content Management*
-   &rarr; *Media Gallery*.
+1. Add the Media Gallery application to a page by navigating to *Add*
+   (![Add](../../images/icon-control-menu-add.png)) &rarr; *Applications*
+   &rarr; *Content Management* &rarr; *Media Gallery*.
 
-2. Select the *Options* gear from the top right corner, then click
-   *Configuration*.
+2. Select the *Options* button (![Options](../../images/icon-app-options.png))
+   from the top right corner of the app and click *Configuration*.
 
 3. Enable the *Show Actions* and *Show Folder Menu* display settings. Then click
    *Save* and close the popup.
 
-4. Click the *Multiple Media* link and select two custom photos to display. Then
-   click *Save*, and navigate back to the main portlet screen.
+4. Click the app's *Actions* button (![Actions](../../images/icon-actions.png))
+   &rarr; *Multiple Media* and select two custom photos to display. Then click
+   *Save*, and navigate back to the main application screen.
 
 5. Notice the default format of the pictures. To change the display template for
-   this portlet, navigate back to the *Options* gear and click *Configuration*.
+   this app, navigate back to *Options* &rarr; *Configuration*.
 
 6. From the *Display Template* drop-down menu, select *Carousel*. Then click
    *Save*.
 
-	![Figure 8.8: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../images/adt-carousel.png)
+	![Figure 4: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../images/adt-carousel.png)
 
-	The Media Gallery portlet is transformed into a carousel slideshow. At this
-	time, it's perfectly natural to be experiencing "I can conquer the world"
-	feelings, just as Liferay's mascot, Ray, exudes in the image above. ADTs
-	have that kind of power to transform your site into an enjoyable and
+	The Media Gallery application is transformed into a carousel slideshow. At
+	this time, it's perfectly natural to be experiencing "I can conquer the
+	world" feelings, just as Liferay's mascot, Ray, exudes in the image above.
+	ADTs have that kind of power to transform your site into an enjoyable and
 	convenient home for users.
 
-Customizing the user interface of Liferay's bundled portlets provides the
-ultimate customization experience for Liferay users.
+Customizing the user interface of Liferay's bundled apps provides the ultimate
+customization experience for Liferay users.
