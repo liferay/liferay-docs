@@ -1,4 +1,4 @@
-# Getting Started with the Get Guestbooks Screenlet [](id=getting-started-with-the-get-guestbooks-screenlet)
+# Getting Started with Get Guestbooks Screenlet [](id=getting-started-with-get-guestbooks-screenlet)
 
 Before creating a Screenlet, you need to know where you'll use it. If you only 
 plan to use it in one app, then you can create it in that app's project. If you 

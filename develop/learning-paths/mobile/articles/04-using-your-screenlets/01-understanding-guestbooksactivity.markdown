@@ -3,10 +3,10 @@
 You used Android Studio's Navigation Drawer Activity template to create 
 `GuestbooksActivity`. Any activity created by this template contains a 
 navigation drawer and all the components the activity needs. This includes 
-the layout files that display content. Currently, these files contain simple 
-placeholder content that you'll replace with dynamic portal content shortly. 
-Before doing so, you should know where the placeholder content exists in the 
-project's structure and how the app displays it. 
+layout files that display content. Currently, these files contain simple 
+placeholder content. You'll replace this content shortly with dynamic portal 
+content. Before doing so, you should know where the placeholder content exists 
+in the project's structure and how the app displays it. 
 
 The app's UI is defined by three layout files: `activity_guestbooks.xml`, 
 `app_bar_guestbooks.xml`, `content_guestbooks.xml`. These layouts combine to
@@ -107,8 +107,9 @@ The `AppBarLayout` and `Toolbar` elements define the Toolbar that appears at the
 top of the activity. Following the Toolbar definition, the `include` statement 
 adds the layout `content_guestbooks.xml` to the `app_bar_guestbooks` layout. The 
 `content_guestbooks` layout defines the content displayed in the activity's body 
-(below the Toolbar). Right now, it only displays the text "Hello World!" Now 
-open `content_guestbooks.xml`. Its contents should look like this: 
+(below the Toolbar). Right now, this layout only contains an empty 
+`RelativeLayout` element. Now open `content_guestbooks.xml`. Its contents should 
+look like this: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <RelativeLayout 
@@ -124,18 +125,12 @@ open `content_guestbooks.xml`. Its contents should look like this:
         app:layout_behavior="@string/appbar_scrolling_view_behavior" 
         tools:showIn="@layout/app_bar_guestbooks"
         tools:context="com.liferay.docs.liferayguestbook.GuestbooksActivity">
-
-        <TextView 
-            android:text="Hello World!" 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
             
     </RelativeLayout>
 
-You can see that the `TextView` defines the "Hello World!" text. Anything you 
-define in this layout becomes the activity's main body content. Later, you'll 
-return to `content_guestbooks.xml` to display the guestbook entries retrieved 
-from the Guestbook portlet. 
+Anything you define in this layout becomes the activity's main body content. 
+Later, you'll return to `content_guestbooks.xml` to display the guestbook 
+entries retrieved from the Guestbook portlet. 
 
 Now return to `app_bar_guestbooks.xml`. This layout concludes by using 
 `FloatingActionButton` to define the floating action button. Pressing this 

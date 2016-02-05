@@ -19,11 +19,10 @@ You'll follow these steps when adding your Screenlets to the app:
    `GuestbooksActivity` to display this fragment when a guestbook is selected in 
    Get Guestbooks Screenlet. 
 
-5. Use the Get Entries Screenlet by inserting it in `EntriesFragment`. 
+5. Use Get Entries Screenlet by inserting it in `EntriesFragment`. 
 
 If you get confused or stuck at any point in this section of the Learning Path, 
 refer to the finished app's code 
-[here in GitHub](https://github.com/ngaskill/liferay-docs/tree/LRDOCS-1816-android-lp/develop/learning-paths/mobile/code/06-using-your-screenlets/LiferayGuestbook). 
-<!-- Change this link once the app gets merged in to 6.2.x -->
+[here in GitHub](https://github.com/liferay/liferay-docs/develop/learning-paths/mobile/code/screenlets-app/LiferayGuestbook). 
 
 First, you'll see how `GuestbooksActivity`'s UI works. 

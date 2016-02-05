@@ -1,10 +1,10 @@
 # Creating Get Entries Screenlet [](id=creating-get-entries-screenlet)
 
-In this Learning Path's previous section, you created the Get Guestbooks 
-Screenlet. You still need a way to retrieve and display each guestbook's 
-entries, though. You'll do this by creating another Screenlet: the Get Entries 
-Screenlet. This section in the Learning Path walks you through the steps 
-required to create this Screenlet. 
+In this Learning Path's previous section, you created Get Guestbooks Screenlet. 
+You still need a way to retrieve and display each guestbook's entries, though. 
+You'll do this by creating another Screenlet: Get Entries Screenlet. This 
+section in the Learning Path walks you through the steps required to create this 
+Screenlet. 
 
 Because you use a consistent development model to create Screenlets, similar 
 Screenlets have similar code. As with guestbooks, it makes sense to display 
@@ -27,5 +27,4 @@ discusses the code unique to Get Entries Screenlet. You can refer back to the
 previous section for detailed explanations of the code shared with Get 
 Guestbooks Screenlet. If you get confused or stuck, refer to the finished app 
 that contains the Screenlet code 
-[here in GitHub](https://github.com/ngaskill/liferay-docs/tree/LRDOCS-1816-android-lp/develop/learning-paths/mobile/code/06-using-your-screenlets/LiferayGuestbook). 
-<!-- Change this link once the app gets merged in to 6.2.x -->
+[here in GitHub](https://github.com/liferay/liferay-docs/develop/learning-paths/mobile/code/screenlets-app/LiferayGuestbook). 

@@ -1,4 +1,4 @@
-# Using the Mobile SDK Instead of Screenlets
+# Using the Mobile SDK Instead of Screenlets [](id=using-the-mobile-sdk-instead-of-screenlets)
 
 In this Learning Path's previous sections, you developed an app that retrieved 
 and displayed guestbooks and entries from the Guestbooks portlet developed in 

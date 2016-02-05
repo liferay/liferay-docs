@@ -3,10 +3,9 @@
 Recall that app developers primarily interact with the Screenlet class when 
 using a Screenlet in their app. You must therefore make sure the Screenlet class 
 contains all the attributes and methods the app developer needs. The Screenlet 
-class the Get Entries Screenlet requires, `GetEntriesScreenlet`, is almost 
-identical to `GetGuestbooksScreenlet`. You can therefore create 
-`GetEntriesScreenlet` with the same sequence of steps you used to create 
-`GetGuestbooksScreenlet`: 
+class Get Entries Screenlet requires, `GetEntriesScreenlet`, is almost identical 
+to `GetGuestbooksScreenlet`. You can therefore create `GetEntriesScreenlet` with 
+the same sequence of steps you used to create `GetGuestbooksScreenlet`: 
 
 1. Define the Screenlet's attributes. These are the XML attributes the app 
    developer can set when inserting the Screenlet's XML in an activity or 
@@ -17,9 +16,10 @@ identical to `GetGuestbooksScreenlet`. You can therefore create
    functionality as defined in the View, listener, and Interactor. It also reads 
    the attribute values and configures the Screenlet accordingly. 
 
-Due to this similarity, this article doesn't explain `GetEntriesScreenlet` in 
-detail. Focus is instead placed on the code unique to `GetEntriesScreenlet`. For 
-a detailed explanation of the rest of the class, see 
+Due to the similarity with `GetGuestbooksScreenlet`, this article doesn't 
+explain `GetEntriesScreenlet` in detail. Focus is instead placed on the code 
+unique to `GetEntriesScreenlet`. For a detailed explanation of the rest of the 
+class, see 
 [the article on creating `GetGuestbooksScreenlet`](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-screenlet-class). 
 
 You'll get started here by defining the attributes `GetEntriesScreenlet` needs. 
@@ -182,8 +182,8 @@ package. Replace this class's contents with the following code:
 This is the `GetGuestbooksScreenlet` code, adapted for entries. The only other 
 difference is the `_guestbookId` variable and the code that uses it. This 
 variable is required to define the guestbook the Screenlet retrieves entries 
-from. The public methods `getGuestbookId` and `setGuestbookId`, respectively, 
-get and set `_guestbookId`. An app developer can call these methods in the 
+from. The public methods `getGuestbookId` and `setGuestbookId` get and set 
+`_guestbookId`, respectively. An app developer can call these methods in the 
 activity or fragment class they use the Screenlet in. The `GetEntriesScreenlet` 
 class's `onUserAction` method calls the Interactor's `getEntries` method with 
 `_groupId` and `_guestbookId`. 
@@ -205,9 +205,9 @@ as follows:
 This also requires that you import 
 `com.liferay.docs.getentriesscreenlet.GetEntriesScreenlet` in `GetEntriesView`.
 
-By retrieving the selected entry, this `onItemClick` method is analagous to the 
+By retrieving the selected entry, this `onItemClick` method is analogous to the 
 one that retrieves the selected guestbook in `GetGuestbooksView`. 
 
-That's it! Now you're ready to use the Get Entries Screenlet alongside the Get 
+That's it! Now you're ready to use Get Entries Screenlet alongside Get 
 Guestbooks Screenlet. The following section of this Learning Path concludes with 
 both Screenlets working together in harmony. 

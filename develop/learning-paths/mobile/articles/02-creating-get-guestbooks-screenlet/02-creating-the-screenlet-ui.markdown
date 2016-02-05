@@ -1,4 +1,4 @@
-# Creating the Get Guestbook Screenlet's UI [](id=creating-the-get-guestbook-screenlets-ui)
+# Creating Get Guestbook Screenlet's UI [](id=creating-get-guestbook-screenlets-ui)
 
 In Liferay Screens for Android, Screenlet UIs are called Views. Every Screenlet 
 must have at least one View. In this article, you'll create the Get Guestbook 

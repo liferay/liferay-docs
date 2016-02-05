@@ -1,4 +1,4 @@
-# Getting Started with the Mobile SDK
+# Getting Started with the Mobile SDK [](id=getting-started-with-the-mobile-sdk)
 
 The app you'll create here with the Mobile SDK requires the same preparation as 
 the one you created earlier. You've already set up the Guestbook portlet in a 

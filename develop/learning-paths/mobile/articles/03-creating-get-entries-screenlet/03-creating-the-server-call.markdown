@@ -1,4 +1,4 @@
-# Creating the Get Entries Screenlet's Server Call [](id=creating-the-get-entries-screenlets-server-call)
+# Creating Get Entries Screenlet's Server Call [](id=creating-get-entries-screenlets-server-call)
 
 To retrieve a guestbook's entries from the Guestbooks portlet, you must call the 
 portlet's remote service that returns the entries. As with Get Guestbooks 
@@ -16,12 +16,12 @@ the following steps to create the Interactor:
 
 4. Create and implement the Interactor interface.
 
-This sequence of steps is identical to the one you followed when you created the 
-Get Guestbooks Screenlet's Interactor. Likewise, the components you create here 
-are almost identical to the analogous components you created for Get Guestbooks 
-Screenlet. Therefore, this article only explains the parts unique to Get Entries 
-Screenlet. For a detailed explanation of each component, see 
-[the article on creating the Get Guestbooks Screenlet's server calls](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-guestbook-screenlets-server-calls).
+This sequence of steps is identical to the one you followed when you created Get 
+Guestbooks Screenlet's Interactor. Likewise, the components you create here are 
+almost identical to the analogous components in Get Guestbooks Screenlet. 
+Therefore, this article only explains the parts unique to Get Entries Screenlet. 
+For a detailed explanation of each component, see 
+[the article on creating Get Guestbooks Screenlet's server calls](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-get-guestbook-screenlets-server-call). 
 
 First, you'll create the event class. 
 
@@ -30,7 +30,7 @@ First, you'll create the event class.
 Recall that Screens uses 
 [EventBus](https://github.com/greenrobot/EventBus) 
 to handle communication within Screenlets. Since the Screenlet needs to handle 
-`EntryModel` objects, you need to create an event class that can as well. Create 
+`EntryModel` objects, you must create an event class that can as well. Create 
 a new package called `event` inside the `getentriesscreenlet` package. Then 
 create a new class called `GetEntriesEvent` inside the `event` package. Replace 
 the class's contents with the following code: 
@@ -158,10 +158,10 @@ interface.
 ## Creating and Implementing the Interactor Interface [](id=creating-and-implementing-the-interactor-interface)
 
 Recall that the Interactor interface and its implementation define and implement 
-the methods used to make the server call. Like the Get Guestbooks Screenlet, the 
-Get Entries Screenlet's Interactor interface only needs to define a single 
-method for making the server call. Also like the Get Guestbooks Screenlet, when 
-you implement this interface you'll create an additional method that sends event 
+the methods used to make the server call. Like Get Guestbooks Screenlet, Get 
+Entries Screenlet's Interactor interface only needs to define a single method 
+for making the server call. Also like Get Guestbooks Screenlet, when you 
+implement this interface you'll create an additional method that sends event 
 objects to the listener. 
 
 In the `interactor` package, create an interface called `GetEntriesInteractor`. 
