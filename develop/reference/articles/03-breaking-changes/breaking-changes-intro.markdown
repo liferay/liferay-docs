@@ -3399,6 +3399,8 @@ else.
 
 - `com.liferay.mail.util` &rarr; `com.liferay.mail.kernel.util`
 
+- `com.liferay.portal.exception` &rarr; `com.liferay.portal.kernel.exception`
+
 - `com.liferay.portal.jdbc.pool.metrics` &rarr; `com.liferay.portal.kernel.jdbc.pool.metrics`
 
 - `com.liferay.portal.kernel.mail` &rarr; `com.liferay.mail.kernel.model`
@@ -3406,6 +3408,14 @@ else.
 - `com.liferay.portal.layoutconfiguration.util` &rarr; `com.liferay.portal.kernel.layoutconfiguration.util`
 
 - `com.liferay.portal.layoutconfiguration.util.xml` &rarr; `com.liferay.portal.kernel.layoutconfiguration.util.xml`
+
+- `com.liferay.portal.mail` &rarr; `com.liferay.portal.kernel.mail`
+
+- `com.liferay.portal.model` &rarr; `com.liferay.portal.kernel.model`
+
+- `com.liferay.portal.model.adapter` &rarr; `com.liferay.portal.kernel.model.adapter`
+
+- `com.liferay.portal.model.impl` &rarr; `com.liferay.portal.kernel.model.impl`
 
 - `com.liferay.portal.portletfilerepository` &rarr; `com.liferay.portal.kernel.portletfilerepository`
 
@@ -3427,7 +3437,17 @@ else.
 
 - `com.liferay.portal.security.xml` &rarr; `com.liferay.portal.kernel.security.xml`
 
+- `com.liferay.portal.service.configuration` &rarr; `com.liferay.portal.kernel.service.configuration`
+
+- `com.liferay.portal.service.http` &rarr; `com.liferay.portal.kernel.service.http`
+
+- `com.liferay.portal.service.permission` &rarr; `com.liferay.portal.kernel.service.permission`
+
+- `com.liferay.portal.service.persistence.impl` &rarr; `com.liferay.portal.kernel.service.persistence.impl`
+
 - `com.liferay.portal.theme` &rarr; `com.liferay.portal.kernel.theme`
+
+- `com.liferay.portal.util` &rarr; `com.liferay.portal.kernel.util`
 
 - `com.liferay.portal.util.comparator` &rarr; `com.liferay.portal.kernel.util.comparator`
 
@@ -3435,9 +3455,13 @@ else.
 
 - `com.liferay.portal.webserver` &rarr; `com.liferay.portal.kernel.webserver`
 
+- `com.liferay.portlet` &rarr; `com.liferay.kernel.portlet`
+
 - `com.liferay.portlet.admin.util` &rarr; `com.liferay.admin.kernel.util`
 
 - `com.liferay.portlet.announcements` &rarr; `com.liferay.announcements.kernel`
+
+- `com.liferay.portlet.asset` &rarr; `com.liferay.asset.kernel`
 
 - `com.liferay.portlet.backgroundtask.util.comparator` &rarr; `com.liferay.background.task.kernel.util.comparator`
 
@@ -3452,6 +3476,8 @@ else.
 - `com.liferay.portlet.blogs.service.persistence` &rarr; `com.liferay.blogs.service.persistence`
 
 - `com.liferay.portlet.blogs.util.comparator` &rarr; `com.liferay.blogs.kernel.util.comparator`
+
+- `com.liferay.portlet.documentlibrary` &rarr; `com.liferay.document.library.kernel`
 
 - `com.liferay.portlet.dynamicdatamapping` &rarr; `com.liferay.dynamic.data.mapping.kernel`
 
