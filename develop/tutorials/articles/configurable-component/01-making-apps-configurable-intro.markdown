@@ -40,7 +40,7 @@ can have:
 
 1.  **System:** configuration that is unique for the complete installation of
     the application.
-2.  **Portal Instance:** configuration that can vary per portal instance.
+2.  **Virtual Instance:** configuration that can vary per virtual instance.
 3.  **Site:** configuration that can vary per Liferay site.
 4.  **Portlet Instance:** applicable for applications that are placed on a page
     (i.e., portlets). Each placement (instance) of the application on the page
@@ -95,9 +95,17 @@ the configuration. Here is what they do:
     property to specify a default value.
 
 The fully-qualified class name of the `Meta` class referred to above is
-`aQute.bnd.annotation.metatype.Meta`. For more information about this and
-related annotations, please refer to this bnd documentation:
+`aQute.bnd.annotation.metatype.Meta`. For more information about this class and
+the `Meta.OCD`, `Meta.AD`, and related annotations, please refer to this bnd
+documentation:
 [http://bnd.bndtools.org/chapters/210-metatype.html](http://bnd.bndtools.org/chapters/210-metatype.html).
+The annotations `@Meta.OCD` and `@Meta.AD` have also been included as part of
+the OSGi standard version R6 with the names `@ObjectClassDefinition` and
+`@AttributeDefinition`. However, Liferay still uses the bnd annotations since
+the standard annotations are not available at runtime, which is necessary for
+some of the Liferay specific features described below. For the basic usage (the
+one described in this section) the standard annotations can be used safely.
+
 Add the following line to your project's `bnd.bnd` file:
 
     -metatype: *
