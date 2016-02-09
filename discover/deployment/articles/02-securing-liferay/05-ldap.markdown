@@ -55,9 +55,11 @@ using the following options:
 
 - *Import Enabled:* Checking this box instructs Liferay to do a mass import
   from your LDAP directories. If you want Liferay to only synchronize users
-  when they log in, leave this box unchecked. Definitely leave this unchecked
-  if you are working in a clustered environment. Otherwise, all of your nodes
-  would try to do a mass import when each of them starts up.
+  when they log in, leave this box unchecked. <!-- (Check if the following two
+  sentences can be removed due to the fixes for LPS-58816 and LPP-19372.)
+  Definitely leave this unchecked if you are working in a clustered
+  environment. Otherwise, all of your nodes would try to do a mass import when
+  each of them starts up. -->
 
 - *Import on Startup Enabled:* Checking this box instructs Liferay to run the
   LDAP user import when it starts up. Note: This box only appears if you check
