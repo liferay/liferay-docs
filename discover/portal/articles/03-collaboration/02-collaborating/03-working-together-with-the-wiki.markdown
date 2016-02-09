@@ -1,11 +1,11 @@
 # Working Together with the Wiki
 
 Liferay's Wiki, like the [Message Boards](/discover/portal/-/knowledge_base/7-0/creating-forums-with-message-boards),
-is a full-featured
-wiki application which has all of the features you would expect in a state of
-the art wiki. Again, though, it has the benefit of being able to take advantage
-of all of the features of the Liferay platform. As such, it is completely
-integrated with Liferay's [user management](/discover/portal/-/knowledge_base/7-0/user-management),
+is a full-featured [wiki](/participate/liferaypedia/-/wiki/Main/Wiki)
+application which has all of the features you would expect in a state of the art
+wiki. Again, though, it has the benefit of being able to take advantage of all
+of the features of the Liferay platform. As such, it is completely integrated
+with Liferay's [user management](/discover/portal/-/knowledge_base/7-0/user-management),
 [tagging](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories),
 and [security features](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security).
 
@@ -15,7 +15,7 @@ implementations of this idea, the most famous of which is Wikipedia. Wikipedia
 is a full online encyclopedia developed collaboratively by users from all over
 the world, using a wiki. Another example would be
 [TripAdvisor](http://www.tripadvisor.com/), which tourists use to rate travel
-destinations and accomodations, and help other tourists plan fantastic trips.
+destinations and accommodations, and help other tourists plan fantastic trips.
 
 A wiki application allows users to create and edit online documents and link them to
 each other. To accomplish this, a special form of markup is used which is
@@ -28,74 +28,60 @@ attempt to define a standard wiki markup that all wikis can support.
 
 Rather than define another wikitext syntax, Liferay's Wiki app supports
 WikiCreole as its syntax. This syntax is a best-of-breed wiki syntax and should
-be familiar to users of other wikis. The app provides a handy cheat sheet
-for the syntax on the page editing form, with a link to the full documentation
-if you wish to use some of WikiCreole's advanced features.
+be familiar to users of other wikis. The app provides a handy cheat sheet for
+the syntax on the page editing form, with a link to the full documentation if
+you wish to use some of WikiCreole's advanced features. 
 
-## Getting Started with the Liferay Wiki
+An instance of the Wiki application can be created for each scope: the entire
+Liferay virtual instance (global scope), a site, or a page. A page-scoped Wiki
+application instance must be created from the page, via a Wiki application or
+Wiki Display application's configuration screen--we'll cover this later. For
+now, let's get started using your site's Wiki application instance. 
 
-The Wiki application works just like the other Liferay apps. Open the Add menu
-by clicking the *Add* icon (![Add](../../../images/icon-control-menu-add.png)).
-In the menu, navigate to *Applications &rarr; Wiki* and then click on *Wiki
-Add*. To configuration the Wiki app, click on its *Options* icon
-(![Options](../../../images/icon-app-options.png)) and select *Configuration*.
-It displays options you're likely to be familiar with such as the tab for sharing
-the application with websites, Facebook, Google Gadgets, etc. You will also
-notice that the communication tab has some additional options not seen in the
-other portlets.
+## Getting Started with Wikis
 
-Figure x: For each of the public parameters in this app, it is possible to ignore the values coming from other portlets or to read the value from another parameter.
-
-The communication tab of the configuration window allows you to configure
-communication across portlets, using predefined public render parameters. From
-here you can modify six public render parameters: categoryId, nodeId, nodeName,
-resetCur, tag, and title. For each parameter you can:
-
--   Ignore the values for this parameter that come from other portlets. For
-    example, the wiki app can be used along with the tags navigation
-app. When a user clicks on a tag in the tags navigation app, the wiki
-shows a list of pages with that tag. In some cases an administrator may want
-the wiki app to always show the front page independently of any tag
-navigation done through other portlets. This can be achieved by checking the
-Ignore check box so that the values of the parameter coming from those other
-portlets are ignored.
-
--   Read the value of a parameter from another app. This is an advanced but
-    very powerful option that allows portlets to communicate without
-configuring it beforehand. For example, imagine that the wiki app is used
-to publish information about certain countries. Imagine further that a custom
-app that allows browsing countries for administrative reasons was written
-and placed on the same page. We could associate to this second app a public
-render parameter called *country* to designate the name of the country. Using
-this procedure, we can cause the wiki to show the information from the country
-being browsed through in the other app. You can do this here for the wiki
-by setting the value for the title parameter to be read from the country
-parameter of the other app.
-
-Once you set the options the way you want them, click *Save*.
-
-## Managing Wikis
-
-The Wiki app can contain many wikis. By default, it contains only one, called
-*Main*. You can manage wikis from Site Administration. To open a wiki's
-management screen, click on the *Product Menu* icon
-(![Menu](../../../images/icon-menu.png)) and navigate the *Content* section for
-your site, page, or global scope, and then click on *Wiki*. The Wiki
+Site Administration is the best place to get started working with your wikis. To
+start working with wikis for your site, page, or global scope, click on the
+*Product Menu* icon (![Menu](../../../images/icon-menu.png)), navigate to the
+*Content* section for your site, page, or global scope via the scope menu
+(![Scope](../../../images/icon-compass.png)), and click on *Wiki*. The Wiki
 administration screen appears. This screen allows you to add, modify, and delete
-wikis. The Main wiki has already been added for you.
+wikis. A Wiki application instance (wiki instance) can contain many wikis (wiki
+nodes). By default, it contains one node, called *Main*.
 
-To open the Wiki's permissions screen, click on the *Options* icon
-(![Options](../../../images/icon-options.png)) and select *Permissions*. The
+![Figure x: The Wiki application instance has a wiki node named *Main* with a single front page. You can build on the Main node or create a new node.](../../../images/wiki-admin-empty.png)
+
+Before we start adding to our site's wiki instance, let's configure it the way
+we want it. The instance's permissions, export and import interface, and its
+configuration screen are accessible from the Options menu. To view the menu,
+click on the *Options* icon (![Options](../../../images/icon-options.png)).
+
+Then select *Permissions*, as we want to consider them first. The
 Permissions screen allows you to specify which roles can create wiki nodes
 (wikis) and which roles can access the Permissions screen. If you've created a
-specific role for creating wiki nodes, you can click the box in the *Add Node*
+specific role for creating wiki nodes, you can select the check box in the *Add Node*
 column and then click *Save*, and that role will be able to create new wiki
-nodes in this Wiki instance.
+nodes in this wiki instance. 
+
+The *Export/Import* wiki instance screen enables you to import existing wiki content into your
+wiki instance and export wiki content to a file. We don't have anything to
+import or export. 
+
+The *Configuration* wiki instance screen has tabs for configuring email
+notifications and a tab for configuring RSS feeds. The *Email From*, *Page Added Email*, and *Page Updated Email* tabs are similar
+to the ones for notification email settings for other apps, allowing you to
+customize who wiki emails come from and the format and text of the email that
+is sent when a page is added or updated. The *RSS* tab allows you to configure
+RSS feeds, as you can do for other Liferay applications. 
+
+![Figure x: You can configure email messages and RSS feeds for users to stay informed with your wiki instance.](../../../images/wiki-admin-configure-email.png)
 
 Clicking the *Add* icon (![Add](../../../images/icon-add.png)) prompts you to
 enter a name and description for the new wiki node. You can also set up some
 default permissions. When you create a new wiki node, it appears in a list at
 the top of the main page of the Wiki app.
+
+<!-- Decide where to mention the wiki options listed below -->
 
 Next to each wiki in the list of wikis is an *Options* icon [Options](../../../images/icon-app-options.png).
 Here are the wiki node options:
@@ -256,6 +242,47 @@ brings up the edit screen. Clicking the Print icon brings up the browser's page
 printing window. Between these two options is the Details option, which we'll
 explore next.
 
+## Using the Wiki Applications on Site Pages
+
+The Wiki application works just like the other Liferay apps. Open the Add menu
+by clicking the *Add* icon (![Add](../../../images/icon-control-menu-add.png)).
+In the menu, navigate to *Applications &rarr; Wiki* and then click on *Wiki
+Add*. To configuration the Wiki app, click on its *Options* icon
+(![Options](../../../images/icon-app-options.png)) and select *Configuration*.
+It displays options you're likely to be familiar with such as the tab for sharing
+the application with websites, Facebook, Google Gadgets, etc. You will also
+notice that the communication tab has some additional options not seen in the
+other portlets.
+
+Figure x: For each of the public parameters in this app, it is possible to ignore the values coming from other portlets or to read the value from another parameter.
+
+The communication tab of the configuration window allows you to configure
+communication across portlets, using predefined public render parameters. From
+here you can modify six public render parameters: categoryId, nodeId, nodeName,
+resetCur, tag, and title. For each parameter you can:
+
+-   Ignore the values for this parameter that come from other portlets. For
+    example, the wiki app can be used along with the tags navigation
+app. When a user clicks on a tag in the tags navigation app, the wiki
+shows a list of pages with that tag. In some cases an administrator may want
+the wiki app to always show the front page independently of any tag
+navigation done through other portlets. This can be achieved by checking the
+Ignore check box so that the values of the parameter coming from those other
+portlets are ignored.
+
+-   Read the value of a parameter from another app. This is an advanced but
+    very powerful option that allows portlets to communicate without
+configuring it beforehand. For example, imagine that the wiki app is used
+to publish information about certain countries. Imagine further that a custom
+app that allows browsing countries for administrative reasons was written
+and placed on the same page. We could associate to this second app a public
+render parameter called *country* to designate the name of the country. Using
+this procedure, we can cause the wiki to show the information from the country
+being browsed through in the other app. You can do this here for the wiki
+by setting the value for the title parameter to be read from the country
+parameter of the other app.
+
+Once you set the options the way you want them, click *Save*.
 
 ## Page Details
 
@@ -355,8 +382,10 @@ displayed which allows you to create a new wiki page named after that term.
 The Wiki portlet is another full-featured Liferay application with all of the
 features you expect from a state of the art wiki. 
 
+
 <!--
 Wiki Display is for displaying a single wiki (wiki node). 
 
 Tree Menu displays a wiki's hierarchy of pages as a tree. It lets you navigate
 all of a wiki's pages. 
+-->
