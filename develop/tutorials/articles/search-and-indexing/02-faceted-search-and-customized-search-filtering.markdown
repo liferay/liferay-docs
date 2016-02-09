@@ -30,7 +30,7 @@ Before proceeding, make sure you're familiar with the following terminology:
 
 - Some facets have a property called *frequency threshold*. This value indicates
   the minimum frequency required for terms to appear in the term result list.
-  For example, if the frequency threshold of of a facet is set to `3`, a term
+  For example, if the frequency threshold of a facet is set to `3`, a term
   appearing only twice won't appear in the term result list.
 
 - Some facets have a property called *max terms*. This value indicates the

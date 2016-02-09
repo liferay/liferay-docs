@@ -32,8 +32,8 @@ Screens apps on iOS 7 and above--Screens doesn't use iOS 8 APIs.
 
 Liferay Screens for iOS requires the following software: 
 
-- Xcode 6.4.x
-- iOS 8 SDK
+- Xcode 7.2
+- iOS 9 SDK
 - [CocoaPods](http://cocoapods.org) 0.36 or newer
 - [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
 - Liferay Screens Compatibility Plugin (
@@ -63,7 +63,7 @@ Your final `Podfile` should look like this:
     
     # the rest of your Podfile
 
-You can also use [this `Podfile`](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Samples/Showcase-swift/Podfile) 
+You can also use [this `Podfile`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Showcase-swift/Podfile) 
 as a template.
 
 Next, in your terminal, install Liferay Screens by executing `pod install` from
@@ -105,8 +105,8 @@ yet exist):
     pod 'SMXMLDocument', '1.1'
     pod 'ODRefreshControl', '1.2'
     pod 'YapDatabase', '2.6.5'
-    pod 'KeychainAccess', '1.2.1'
-    pod 'CryptoSwift', '0.0.13'
+    pod 'KeychainAccess', '2.3.1'
+    pod 'CryptoSwift', '0.1.1'
     pod 'DTPickerPresenter', '0.2.0'
     pod 'TNRadioButtonGroup', '0.4'
     pod 'MDRadialProgress', '1.3.2'
@@ -136,8 +136,8 @@ XCTest). Here's a `Podfile` with a placeholder for a test target:
         pod 'SMXMLDocument', '1.1'
         pod 'ODRefreshControl', '1.2'
         pod 'YapDatabase', '2.6.5'
-        pod 'KeychainAccess', '1.2.1'
-        pod 'CryptoSwift', '0.0.13'
+        pod 'KeychainAccess', '2.3.1'
+        pod 'CryptoSwift', '0.1.1'
         pod 'DTPickerPresenter', '0.2.0'
         pod 'TNRadioButtonGroup', '0.4'
         pod 'MDRadialProgress', '1.3.2'
@@ -193,7 +193,7 @@ Screens uses a property list (`.plist`) file to access your Liferay instance.
 It must include the server's URL, the portal's company ID, and the site's group
 ID. Create a `liferay-server-context.plist` file and specify values required for 
 communicating with your Liferay instance. As an example, refer to
-[`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Framework/Core/Resources/liferay-server-context-sample.plist). 
+[`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Resources/liferay-server-context-sample.plist). 
 
 ![Figure 8: Here's a property list file, called `liferay-context.plist`.](../../images/screens-ios-liferay-context.png)
 

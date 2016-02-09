@@ -96,10 +96,11 @@ connection.
 |-----------|-----------|-------------| 
 | `layoutId` | `@layout` | The layout to use to show the View.|
 | `autoLoad` | `boolean` | Whether the list should be loaded when it's presented on the screen. The default value is `true`. |
-|  `firstPageSize` | `number` | The number of items to retrieve from the server for display on the list's first page. The default value is `50`. |
+| `firstPageSize` | `number` | The number of items to retrieve from the server for display on the list's first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
 | `groupId` | `number` | The asset's group (site) ID. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0 `. |
-| `classNameId` | `number` | The asset class name's ID. Use values from the `AssetClassNameId` enumeration or the `classname_` database table. |
+| `classNameId` | `number` | The asset class name's ID. Use values from the portal's `classname_` database table. |
+| `customEntryQuery` | `Hashmap` | The set of keys (string) and values (string or number) to be used in the [AssetEntryQuery object](/portal/6.2/javadocs/com/liferay/portlet/asset/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the portal.|
 
 ## Methods [](id=methods)
 
@@ -113,13 +114,12 @@ The `AssetListScreenlet` delegates some events to an object that implements the
 `AssetListListener` interface. This interface extends from `BaseListListener` 
 and lets you implement the following methods:
 
-- `onListPageReceived(BaseListScreenlet source, int page, 
-  List<AssetEntry> entries, int rowCount)`: Called when a page of assets is 
-  received. Note that this method may be called more than once; once for each 
-  page received.
+- `onListPageReceived(BaseListScreenlet source, int page, List<AssetEntry> entries, int rowCount)`: 
+  Called when a page of assets is received. Note that this method may be called 
+  more than once; once for each page received. 
 
 - `onListPageFailed(BaseListScreenlet source, int page, Exception e)`: Called 
-  when an error occurs in the process.
+  when an error occurs in the process. 
 
 - `onListItemSelected(BaseListScreenlet source, AssetEntry entry)`: Called when 
-  an item in the list is selected.
+  an item in the list is selected. 

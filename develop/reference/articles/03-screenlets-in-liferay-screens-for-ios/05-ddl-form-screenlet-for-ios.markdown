@@ -4,8 +4,8 @@
 
 ## Requirements [](id=requirements)
 
-- XCode 6.4.x
-- iOS 8 SDK
+- Xcode 7.2
+- iOS 9 SDK
 - Liferay Portal 6.2 CE or EE
 - Liferay Screens Compatibility Plugin (
   [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
@@ -128,7 +128,7 @@ policies:
 |--------|-----------|---------------|
 | `remote-only` | The Screenlet sends the record to the portal. If a connection issue occurs, the Screenlet uses the delegate to notify the developer about the error, but it also discards the record. | Use this policy to make sure the portal always has the most recent version of the record. |
 | `cache-only` | The Screenlet stores the record in the local cache. | Use this policy when you need to save the data locally, but don't want to update the data in the portal (update or add record). |
-| `remote-first` | The Screenlet sends the record to the portal. If this succeeds, it also stores the record in the local cache for later usage. If a connection issue occurs, then Screenlet stores the record in the local cache with the *dirty flag* enabled. This causes the the synchronization process to send the record to the portal when it runs. | Use this policy when you need to make sure the Screenlet sends the record to the portal as soon as the connection is restored. |
+| `remote-first` | The Screenlet sends the record to the portal. If this succeeds, it also stores the record in the local cache for later usage. If a connection issue occurs, then Screenlet stores the record in the local cache with the *dirty flag* enabled. This causes the synchronization process to send the record to the portal when it runs. | Use this policy when you need to make sure the Screenlet sends the record to the portal as soon as the connection is restored. |
 | `cache-first` | The Screenlet stores the record in the local cache and then sends it to the remote portal. If a connection issue occurs, then Screenlet stores the record in the local cache with the *dirty flag* enabled. This causes the the synchronization process to send the record to the portal when it runs. | Use this policy when you need to make sure the Screenlet sends the record to the portal as soon as the connection is restored. Compared to `remote-first`, this policy always stores the record in the cache. The `remote-first` policy only stores the record in the event of a network error. |
 
 ## Attributes [](id=attributes)
@@ -183,9 +183,9 @@ following methods:
 - `- screenlet:onDocumentFieldUploadStarted:`: Called when the upload of a 
   Documents and Media field begins.
 
-- `- screenlet:onDocumentField:uploadedBytes:sentBytes:totalBytes:`: Called when 
-  a block of bytes in a Documents and Media field is uploaded. This method is 
-  intended to track progress of the uploads.
+- `- screenlet:onDocumentField:uploadedBytes:totalBytes:`: Called when a block 
+  of bytes in a Documents and Media field is uploaded. This method is intended 
+  to track progress of the uploads.
 
 - `- screenlet:onDocumentField:uploadResult:`: Called when a Documents and Media 
   field upload is completed.

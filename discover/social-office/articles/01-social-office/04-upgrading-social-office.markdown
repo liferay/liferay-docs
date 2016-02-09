@@ -7,7 +7,7 @@ from Social Office 2.x to 3.x, and from Social Office 3.0.0 to 3.0.1.
 ## Upgrading From Social Office 2.x to 3.x [](id=upgrading-from-social-office-2-x-to-3-x)
 
 Social Office 3.x only runs on Liferay Portal 6.2.x. If you'd like to upgrade
-from Social Office 2.x to to 3.x, you first need to upgrade your portal from
+from Social Office 2.x to 3.x, you first need to upgrade your portal from
 Liferay 6.1 to Liferay 6.2. For information on upgrading Liferay, please refer
 to [Upgrading Liferay](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay).
 Remember to undeploy your Social Office 2.x plugins before upgrading your portal

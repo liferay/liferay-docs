@@ -167,7 +167,7 @@ example properties listed below, `liferay_recordset_id` and
 `liferay_recordset_fields`, enable DDL Form Screenlet and DDL List Screenlet to
 interact with a portal's DDLs. You can see an additional example
 `server_context.xml` file
-[here](https://github.com/liferay/liferay-screens/blob/1.1.0/android/samples/bankofwesteros/src/main/res/values/server_context.xml).
+[here](https://github.com/liferay/liferay-screens/blob/master/android/samples/bankofwesteros/src/main/res/values/server_context.xml).
 
     <!-- Change these values for your Liferay Portal installation -->
     
@@ -181,9 +181,9 @@ Super! Your Android project's ready for Liferay Screens.
 As you use Screens to develop your apps, you may want to refer to some example 
 apps that also use it. There are two demo applications available:
 
-- [test-app](https://github.com/liferay/liferay-screens/tree/1.1.0/android/samples/test-app): 
+- [test-app](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app): 
   A showcase app containing all the currently available Screenlets.
-- [Westeros Bank](https://github.com/liferay/liferay-screens/tree/1.1.0/android/samples/bankofwesteros): 
+- [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros): 
   An example app that uses Screenlets to manage technical issues for the 
   *Westeros Bank*. It's also available in [Google Play](https://play.google.com/store/apps/details?id=com.liferay.mobile.screens.bankofwesteros).
 

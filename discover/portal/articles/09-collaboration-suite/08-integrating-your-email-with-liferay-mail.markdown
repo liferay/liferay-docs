@@ -10,11 +10,11 @@ The Mail portlet is distributed with the Liferay bundles, but is not included
 as part of the `.war` distribution, as it is a separate plugin. If you
 installed the Liferay `.war` manually on your application server, you can
 install the Mail portlet by accessing Liferay Marketplace. You can go to
-Marketplace by navigating the the Control Panel and clicking *Store* under the
+Marketplace by navigating the Control Panel and clicking *Store* under the
 *Apps* heading. You can learn more about Marketplace and how to
 purchase/download an app in the *Liferay Marketplace* chapter.
 
-![Figure 9.35: Read, reply, and create messages using Liferay's Mail Portlet.](../../images/05-mail-portlet.png)
+![Figure 9.38: Read, reply, and create messages using Liferay's Mail Portlet.](../../images/05-mail-portlet.png)
 
 To connect the Mail portlet with an email account, click the *Add Mail Account*
 link. From there, you are given a choice between a Custom email Account or a

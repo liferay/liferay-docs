@@ -10,10 +10,11 @@ within your Liferay instance.
 
 To use LCS, you must have an account at
 [Liferay.com](http://www.liferay.com/). When you first log in to 
-[LCS](https://lcs.liferay.com), the Welcome screen prompts you to download the 
-client. Choose your portal version and edition on the Welcome screen and then 
-click *Download*. The following screenshot shows this screen with Liferay Portal 
-6.2 EE selected. 
+[LCS](https://lcs.liferay.com), the Welcome screen prompts you to select your 
+portal's version and edition. After doing so, the LCS client's version is listed 
+next to a *Download* button. Click this button to download the client. The 
+following screenshot shows the Welcome screen with Liferay Portal 6.2 EE 
+selected. 
 
 ![Figure 4.1: When you first log in to LCS, you can download the LCS client from the Welcome screen.](../../images/lcs-welcome-client-download.png)
 

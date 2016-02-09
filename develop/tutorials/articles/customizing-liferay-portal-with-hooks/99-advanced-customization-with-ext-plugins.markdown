@@ -244,7 +244,7 @@ development processes described below:
 - How to *configure* your Plugins SDK environment to develop Ext plugins for
   Liferay Portal on your application server. 
 - How to *deploy* and *publish* your Ext plugins for the first time. 
-- How to to *redeploy* normally or use a *clean redeployment*
+- How to *redeploy* normally or use a *clean redeployment*
   process after making changes to your Ext plugins.
 - How to package your Ext plugins for distribution. 
 - Examples of Liferay Portal customizations that require advanced customization

@@ -58,9 +58,12 @@ connection.
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
 | `layoutId` | `@layout` | The layout used to show the View. |
-| `groupId` | `number` | The ID of the site (group) where the asset is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
-| `articleId` | `string` | The ID of the web content to display. You can find this ID by clicking *Edit* on the web content in the portal. |
-| `javascriptEnabled` | `boolean` | Enables support for JavaScript. Disabled by default. |
+| `groupId` | `number` | The site (group) identifier where the asset is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
+| `articleId` | `string` | The identifier of the web content to display. You can find the identifier by clicking *Edit* on the web content in the portal. |
+| `classPK` | `number` | The corresponding asset's class primary key. If the web content is an asset (from Asset List Screenlet, for example), this is the asset's identifier. This attribute is used only if `articleId` is empty. |
+| `templateId` | `number` | The identifier of the template used to render the web content. This only applies to [structured web content](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates). |
+| `autoLoad` | `boolean` | Whether the content should be retrieved from the portal as soon as the screenlet appears. Default value is `true`. |
+| `javascriptEnabled` | `boolean` | Enables support for JavaScript. This is disabled by default. |
 
 ## Methods [](id=methods)
 

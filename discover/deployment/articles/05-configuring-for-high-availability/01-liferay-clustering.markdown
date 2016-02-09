@@ -69,9 +69,8 @@ HSQL database that is shipped with the bundles (but you already knew that,
 right?). And, of course, it goes without saying that the database server is a
 separate physical box from the server which is running Liferay. 
 
-Beyond a database cluster, there are two more advanced options you can use to
-optimize your database configuration: a read-writer database configuration, and
-sharding. 
+You can also use a read-writer database configuration to optimize your database
+configuration. 
 
 ### Read-Writer Database Configuration [](id=read-writer-database-configuration)
 
@@ -129,122 +128,6 @@ The next time you restart Liferay, it will now use the two data sources you have
 defined. Be sure you have correctly set up your two databases for replication
 before starting Liferay.
 
-Next, we'll look at database sharding. 
-
-### Database Sharding [](id=database-sharding)
-
-Liferay, starting with version 5.2.3, supports database sharding for different
-portal instances. Sharding is a term used to describe an extremely high
-scalability configuration for systems with massive amounts of users. In
-diagrams, a database is normally pictured as a cylinder. Instead, picture it as
-a glass bottle full of data. Now take that bottle and smash it onto a concrete
-sidewalk. There will be shards of glass everywhere. If that bottle were a
-database, each shard now is a database, with a subset of the data in each shard.
-
-This allows you to split up your database by various types of data that might be
-in it. For example, some implementations of sharding a database split up the
-users: those with last names beginning with A to D go in one database; E to I go
-in another; etc. When users log in, they are directed to the instance of the
-application that is connected to the database that corresponds to their last
-names. In this manner, processing is split up evenly, and the amount of data the
-application needs to sort through is reduced.
-
-By default, Liferay allows you to support sharding through different portal
-instances, using the *round robin shard selector*. This is a class which serves
-as the default algorithm for sharding in Liferay. Using this algorithm, Liferay
-selects from several different portal instances and evenly distributes the data
-across them. Alternatively, you can use the manual shard selector. In this case,
-you'd need to use the UI provided in the Control Panel to configure your shards. 
-
-Of course, if you wish to have your developers implement your own sharding
-algorithm, you can do that. This is a great use of the Ext plugin. You can
-select which algorithm is active via the `portal-ext.properties` file:
-
-    shard.selector=com.liferay.portal.dao.shard.RoundRobinShardSelector
-    #shard.selector=com.liferay.portal.dao.shard.ManualShardSelector
-    #shard.selector=[your implementation here]
-
-Enabling sharding is easy. You'll need to make sure you are using Liferay's data
-source implementation instead of your application server's. Set your various
-database shards in your `portal-ext.properties` file this way:
-
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver
-    jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.default.username=
-    jdbc.default.password=
-    jdbc.one.driverClassName=com.mysql.jdbc.Driver
-    jdbc.one.url=jdbc:mysql://localhost/lportal1?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.one.username=
-    jdbc.one.password=
-    jdbc.two.driverClassName=com.mysql.jdbc.Driver
-    jdbc.two.url=jdbc:mysql://localhost/lportal2?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.two.username=
-    jdbc.two.password=
-    shard.available.names=default,one,two
-
-Once you do this, you can set up your DNS so several domain names point to your
-Liferay installation (e.g., abc1.com, abc2.com, abc3.com). Next, go to the
-Control Panel and click on *Portal Instances* under the Configuration heading.
-Create two to three instances bound to the DNS names you have configured.
-
-If you're using the RoundRobinShardSelector class, Liferay automatically enters
-data into each instance one by one. If you're using the `ManualShardSelector`
-class, you'll have to specify a shard for each instance using the UI.
-
-![Figure 5.2: When creating a shard using the manual shard selector, specify the shard you want to use for that instance.](../../images/enterprise-sharding-portal-instance.png)
-
-The last thing you need to do is modify the `spring.configs` section of your
-`portal-ext.properties` file to enable the sharding configuration, which by
-default is commented out. To do this, your `spring.configs` should look like
-this (modified section is in bold):
-
-    spring.configs=\
-        META-INF/base-spring.xml,\
-        \
-        META-INF/hibernate-spring.xml,\
-        META-INF/infrastructure-spring.xml,\
-        META-INF/management-spring.xml,\
-        \
-        META-INF/util-spring.xml,\
-        \
-        META-INF/jpa-spring.xml,\
-        \
-        META-INF/executor-spring.xml,\
-        \
-        META-INF/audit-spring.xml,\
-        META-INF/cluster-spring.xml,\
-        META-INF/editor-spring.xml,\
-        META-INF/jcr-spring.xml,\
-        META-INF/ldap-spring.xml,\
-        META-INF/messaging-core-spring.xml,\
-        META-INF/messaging-misc-spring.xml,\
-        META-INF/mobile-device-spring.xml,\
-        META-INF/notifications-spring.xml,\
-        META-INF/poller-spring.xml,\
-        META-INF/rules-spring.xml,\
-        META-INF/scheduler-spring.xml,\
-        META-INF/scripting-spring.xml,\
-        META-INF/search-spring.xml,\
-        META-INF/workflow-spring.xml,\
-        \
-        META-INF/counter-spring.xml,\
-        META-INF/mail-spring.xml,\
-        META-INF/portal-spring.xml,\
-        META-INF/portlet-container-spring.xml,\
-        META-INF/staging-spring.xml,\
-        META-INF/virtual-layouts-spring.xml,\
-        \
-        #META-INF/dynamic-data-source-spring.xml,\
-        *META-INF/shard-data-source-spring.xml,\*
-        #META-INF/memcached-spring.xml,\
-        #META-INF/monitoring-spring.xml,\
-        \
-        classpath*:META-INF/ext-spring.xml
-
-That's all there is to it. Your system is now set up for sharding. Now that
-you've got your database set up and optimized for a large installation, let's
-turn to clustering the Documents and Media Library. 
-
 ## Documents and Media Library Clustering [](id=documents-and-media-library-clustering)
 
 Beginning with Liferay 6.1, Liferay's Documents and Media Library is capable of
@@ -287,7 +170,7 @@ database. If, for example, you upload a presentation with the file name
 `workflow.odp` into a folder called *stuff*, the file system store creates a
 folder structure which looks like the figure below. 
 
-![Figure 5.3: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../images/enterprise-file-system-store.png)
+![Figure 5.2: Liferay's file system store creates a folder structure based on primary keys in Liferay's database.](../../images/enterprise-file-system-store.png)
 
 The actual folder path that is used by Liferay for storing documents is this:
 
@@ -328,7 +211,7 @@ store. Like that store, it saves files to the local file system--which, of
 course, could be a remote file system mount. It uses a slightly different folder
 structure to store files, which is pictured below. 
 
-![Figure 5.4: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
+![Figure 5.3: The advanced file system store creates a more nested folder structure than the file system store.](../../images/enterprise-adv-file-system-store.png)
 
 So what makes the advanced file system store *advanced*? Several operating
 systems have limitations on the number of files which can be stored in a
@@ -721,7 +604,7 @@ threads. Threads are expensive, because they take resources (memory and CPU
 power). Most of the time, these threads are sleeping, because they only need to
 work when a cached entity has to talk to remote peers. 
 
-![Figure 5.5: The default algorithm requires each node to create massive amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
+![Figure 5.4: The default algorithm requires each node to create massive amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
 
 Putting heap memory aside (because the amount of memory on the heap depends on
 the application(s) running), consider the stack memory footprint of those 100+
@@ -736,7 +619,7 @@ algorithm for handling cache replication that can can fix both the `1` to `N -
 1` network communication bottleneck, as well as the massive threads bottleneck.
 The default implementation uses JGroups' UDP multicast to communicate. 
 
-![Figure 5.6: Liferay's algorithm uses a single UDP multicast channel, so that nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
+![Figure 5.5: Liferay's algorithm uses a single UDP multicast channel, so that nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
 
 To reduce the number of replication threads, we provide a small pool of
 dispatching threads. These deliver cache cluster events to remote peers. Since

@@ -49,7 +49,7 @@ Here are some View Sets that Liferay created for Android Screenlets:
   guidelines. Refer to the [View creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-views) 
   for instructions on creating your own Views.
 - *Westeros*: Customizes the behavior and appearance of the
-  [Westeros Bank](https://github.com/liferay/liferay-screens/tree/1.1.0/android/samples/bankofwesteros) 
+  [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
   demo app. 
 
 To use a View Set in your Screenlet, specify its name as the `liferay:layoutId`

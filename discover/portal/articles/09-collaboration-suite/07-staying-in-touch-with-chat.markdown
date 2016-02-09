@@ -1,4 +1,13 @@
-# Staying in touch with the Chat [](id=staying-in-touch-with-the-chat)
+# Staying in touch with Chat and Meetings [](id=staying-in-touch-with-the-chat)
+
+Liferay's Chat and Meetings apps let you stay in contact and collaborate with 
+other users. The Chat portlet lets you send instant messages to other logged-in 
+users. The Meetings app integrates with the BigBlueButton and Zoom web 
+conferencing services to let you schedule and conduct meetings from your Liferay 
+instance. We'll cover both apps here. You're only a few clicks away from your 
+fellow users! 
+
+## Using Chat [](id=using-chat)
 
 Liferay's Chat portlet provides a convenient way of allowing users to send each
 other instant messages when they are logged into your web site. It appears as a
@@ -25,7 +34,7 @@ The Chat portlet displays the number of your friends who are online. Click the
 You can have multiple chats open at a time, and can have one or more of them
 minimized.
 
-## Filtering Available Users [](id=filtering-available-users)
+### Filtering Available Users [](id=filtering-available-users)
 
 By default, all online portal users appear in the Chat portlet. If you want to
 filter who appears in your contact list you can, but the configuration must be
@@ -94,7 +103,7 @@ the "Friend" social relationship type. Similarly, Liferay Social Office uses the
 "Connection" social relationship type. Developers can make use of any of the 
 social relationship types available in the API.
 
-## Jabber Server Integration [](id=jabber-server-integration)
+### Jabber Server Integration [](id=jabber-server-integration)
 
 Liferay 6.1 introduced Jabber server integration to Liferay's Chat portlet.
 Jabber is the original name of the XMPP (Extensible Messaging and Presence
@@ -111,7 +120,7 @@ override some properties of your Chat portlet's `portlet.properties` file. You
 could modify your Chat portlet's `portlet.properties` file directly, but it's a
 best practice to override it instead.
 
-### Installation Steps [](id=installation-steps)
+#### Installation Steps [](id=installation-steps)
 
 You can use any chat server that supports Jabber. The Chat portlet's Jabber
 server integration feature was tested with versions 3.7.0 and 3.7.1 of
@@ -156,7 +165,7 @@ chat server on a remote machine or chose to not use the default port, change
 3. Deploy your Chat portlet. Remember that this portlet must be of version 6.1
 or higher.
 
-### Single Sign On [](id=single-sign-on)
+#### Single Sign On [](id=single-sign-on)
 
 If the property `jabber.import.user.enabled` is set to `true`, the Chat portlet
 will import the user automatically to Jabber after he logs in to the portal.
@@ -177,6 +186,73 @@ the Chat portlet won't be able to connect to their Jabber account.
 Alternatively, since Openfire integrates with LDAP, if you are using Openfire
 and your portal is also using LDAP for authentication, you can disable the
 `jabber.import.user.enabled` property.
+
+## Using Meetings [](id=using-meetings)
+
+The Meetings app, available in the Liferay Marketplace, integrates with the 
+BigBlueButton and Zoom web conferencing services. It lets you schedule, manage, 
+and launch meetings from within Liferay. This app includes two portlets: 
+Meetings, and Meetings Admin. The Meetings portlet lets you schedule, manage, 
+and launch meetings. The Meetings Admin portlet lets you add and configure 
+BigBlueButton and Zoom servers to conduct meetings with. You must have a server 
+configured in Meetings Admin before you can create a meeting in the Meetings 
+portlet. 
+
+Once you deploy the Meetings app, you can find Meetings Admin in the Control 
+Panel's *Configuration* section. When you first access Meetings Admin, it 
+presents you with an *Add Server* button and a message telling you there are no 
+servers. To add a server, click *Add Server*. In the *New Server* form that 
+appears, give your server a name and select *Zoom* or *BigBlueButton* in the 
+*Provider Type* menu. If you select Zoom, then you must enter your Zoom API key 
+and secret in the corresponding fields. If you select BigBlueButton, then you 
+must enter your BigBlueButton API URL and secret. The following screenshot shows 
+the *New Server* form. 
+
+![Figure 9.35: Create a new meeting server by filling out the *New Server* form.](../../images/meetings-add-server.png)
+
+When you finish entering your server's information, click *Save*. Meetings Admin 
+then lists your server in a table. You can edit or delete this server by 
+clicking its *Actions* button and selecting *Edit* or *Delete*. Once you have a 
+server, you can create a meeting in the Meetings portlet. 
+
+The Meetings portlet is in the Application menu's Social category. You can add 
+it to any page you want to create meetings from. This portlet lists any 
+scheduled meetings in the *Current* tab. The *Completed* tab lists any finished 
+meetings. Click the *Add Meeting* button to schedule a meeting. In the *New 
+Meeting* form that appears, enter your meeting's information. First, give your 
+meeting a name and enter its time, date, and description. In the *Provider* 
+field, select the server to use. Note that in this field *Preferred Solution* 
+represents a Zoom server, and *Private Solution* represents a BigBlueButton 
+server. To require attendees to use a password to join the meeting, check the 
+*Require Password* checkbox and then create this password by typing it into the 
+text field below the checkbox. To set the meeting to automatically begin the 
+video conference when attendees join, check the *Automatically Start Video* 
+checkbox. Lastly, add the participants that you want to join your meeting, and 
+click *Save*. The Meetings portlet then lists your meeting in a table in the 
+*Current* tab. Scheduling a meeting notifies the participants via the 
+Notifications portlet and email. The email contains the organizer's name, the 
+meeting's date and time, and a link and instructions for joining the meeting. 
+The following screenshots show the *New Meeting* form, and the Meetings portlet 
+with a currently scheduled meeting. 
+
+![Figure 9.36: Create a new meeting by filling out the *New Meeting* form.](../../images/meetings-new-meeting.png)
+
+![Figure 9.37: The Meetings portlet lists any currently scheduled meetings in its *Current* tab.](../../images/meetings-current.png)
+
+To view a meeting's details, simply click it in the Meetings portlet's table. If 
+you have the correct permissions, this also presents you with the options to 
+edit, delete, start, or export the meeting. You can also view the meeting's 
+invitation email template from here. Note that you don't have to go into the 
+meeting's details to perform these actions. You can also do so from each 
+meeting's *Actions* button in the table. Note that when a meeting is in 
+progress, *Start Meeting* becomes *End Meeting*, and *Join Meeting* appears. 
+
+It's important to note that your meeting doesn't actually run *inside* Liferay. 
+When you start or join a meeting, the Meetings portlet hands you off to the 
+meeting's web conferencing service (BigBlueButton or Zoom) via the server you 
+specified in the Meetings Admin portlet. To start or join a meeting, you must 
+therefore have any required BigBlueButton or Zoom software installed on your 
+machine. 
 
 Next, let's look at how you can integrate your email addresses with Liferay's
 Mail portlet.

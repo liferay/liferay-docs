@@ -74,7 +74,7 @@ the correct LCS roles.
 
 Each environment and server in LCS is part of an LCS project. LCS provides a 
 simple UI for managing these projects. To access this UI, log in to LCS and then 
-select *Manage Projects* from your user menu in the dockbar. The following 
+select *Manage Projects* from your user menu in the Dockbar. The following 
 screenshot illustrates this.
 
 ![Figure 4.9: To manage your LCS projects, select *Manage Projects* from the user menu in LCS.](../../images/lcs-user-menu-manage-projects.png)
@@ -196,14 +196,17 @@ the upper left-hand corner of your LCS site. The project is listed to the right
 of this tab, with a drop-down arrow that lets you switch between projects if you 
 have more than one. You can also switch between projects from the user menu at 
 the top right of the Dockbar. The project view provides you with an overview of 
-your LCS project, including fix packs, alerts, environments, and servers. Fix 
-packs are displayed prominently in a table. Note that the status, environment, 
-server, and location are listed for each fix pack. If the fix pack is available, 
-you can download it by clicking the *Download* icon to its right. You can 
-download several fix packs at once by checking the checkbox to the left of each 
-and then clicking the *Download* button above the Fix Packs table. Once a fix 
-pack download completes, an alert appears in the Alerts table. This alert tells 
-you the download is finished and to restart your server. Restarting your server 
+your LCS project, including available fix packs, alerts, environments, and 
+servers. Fix packs, if available for your servers, are displayed prominently in 
+the Fix Packs table. Note that this table doesn't appear at all if your servers 
+have no available fix packs. The Fix Packs table lists the status, environment, 
+server, and location for each fix pack. If a server with an available fix pack 
+is running, a *Download* column also appears in the table. You can download the 
+fix pack by clicking its *Download* icon in that column. You can download 
+several fix packs at once by checking the checkbox to the left of each and then 
+clicking the *Download* button above the Fix Packs table. Once a fix pack 
+download completes, an alert appears in the Alerts table. This alert tells you 
+the download is finished and to restart your server. Restarting your server 
 installs any downloaded fix packs. Note that you must start your server with the 
 privileges required to write to the disk location where patches are stored and 
 processed (the `patching-tool` folder). 
@@ -282,14 +285,25 @@ Alerts tables. Server view is segmented into five parts:
 You can switch between these by clicking their buttons across the top of the UI. 
 Page Analytics is the first thing you see when you enter server view. Page 
 Analytics shows page views and load times for the selected time period. You can 
-select a different time period in the *Period* and *Ending At* fields. By 
-default, load times and page views for all pages are plotted against time in 
+select a different time period in the *Period* and *Ending At* fields. The 
+arrows next to the *Ending At* field move the selected time period up or down, 
+respectively, by one period. For example, if you select *One Hour* in the 
+*Period* field, then pressing the right arrow next to *Ending At* moves the 
+selected time period up by one hour. Note that at the beginning of the current 
+time period, it can take up to 15 minutes for data to become available. 
+
+By default, load times and page views for all pages are plotted against time in 
 separate graphs. Below these graphs, a table displays summary statistics of 
 these data over the same time period, for each page. If you click a page in the 
 table, the graphs change to plot the data for just that page. If you can't 
 find the page you're looking for, you can search for it in the *Search* box at 
 the top of the table. To plot data for all pages again, click the *All Pages* 
-link next to the *Search* box.
+row at the bottom of the table. 
+
+Load times are also color coded to indicate speed. The *Load Times* graph's 
+background is red for values above 3,000 ms, orange for values from 2,000 to 
+3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
+all load times greater than 3,000 ms in red text. 
 
 ![Figure 4.17: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics.png)
 

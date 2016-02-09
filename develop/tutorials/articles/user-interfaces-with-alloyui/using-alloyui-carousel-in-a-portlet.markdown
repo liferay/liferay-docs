@@ -57,8 +57,8 @@ and each of the nested `<div>` elements.
 4.  To create a [Carousel](http://alloyui.com/api/classes/A.Carousel.html) in
 which to display your images, you first add `<aui:script>...</aui:script>` tags
 at the bottom of your JSP. Within those tags, add code that instantiates the
-Carousel, passing a reference to the the outer `<div>` as the value for
-Carousel's `contentBox` element. 
+Carousel, passing a reference to the outer `<div>` as the value for Carousel's
+`contentBox` element. 
 
     For example, the following code creates a Carousel for a `<div>` named
     *myCarousel*: 

@@ -228,9 +228,9 @@ $$$
 
 **Number of Items to Display**: Here, you can select the maximum number of
 assets that can be displayed by the Asset Publisher. However, if pagination is
-enabled, there's no limit to the number of of assets that the Asset Publisher
-can display. So with pagination enabled, this number represents the maximum
-number of assets that can be displayed per page.
+enabled, there's no limit to the number of assets that the Asset Publisher can
+display. So with pagination enabled, this number represents the maximum number
+of assets that can be displayed per page.
 
 **Pagination Type**: This can be set to *None*, *Simple*, or *Regular*. With
 pagination set to *None*, the Asset Publisher displays at most the number of

@@ -220,7 +220,7 @@ Next, we'll provide some recommendations for using ADTs in Liferay Portal.
 
 You've harnessed a lot of power by learning to leverage the ADT API. Be
 careful, for with great power, comes great responsibility! To that end, let's
-talk about some practices you can use to to optimize your portlet's performance
+talk about some practices you can use to optimize your portlet's performance
 and security. 
  
 First let's talk about security. You may want to hide some classes or packages

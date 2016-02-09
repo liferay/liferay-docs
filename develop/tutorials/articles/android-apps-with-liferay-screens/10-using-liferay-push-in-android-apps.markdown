@@ -94,7 +94,7 @@ That's it! You can attach a listener to store the registration ID or to process
 the notification sent to the activity (using `onPushNotification()`). You can
 also register a receiver and service to process the notification. You can refer
 to the
-[`PushNotifications`](https://github.com/liferay/liferay-screens/tree/1.1.0/android/samples)
+[`PushNotifications`](https://github.com/liferay/liferay-screens/tree/master/android/samples)
 project (especially its `PushActivity` class) as an example push notifications
 implementation. 
 

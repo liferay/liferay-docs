@@ -688,7 +688,11 @@ The Identity Provider tab includes these options:
 produced is signed.
 
 **SSL Required:** When this box is checked, any SAML messages that are *not*
-sent over SSL are rejected. This does not affect how URLs are generated.
+sent over SSL are rejected. This does not affect how URLs are generated. Note
+that when `web.server.protocol` is set to `https`, the portal forces SAML SPs
+and IdPs to use HTTPS regardless of whether *SSL Required* has been checked.
+Thus, the value of *SSL Required* should be chosen so that SAML uses the same
+protocol as the web server protocol.
 
 **Authn Request Signature Required:** When this box is checked, each Authn
 Request must be signed by the sending Service Provider. In most cases, this
@@ -894,7 +898,11 @@ even if the Identity Provider metadata indicates that it's not required.
 **Sign Metadata:** When this box is checked, the metadata XML file is signed.
 
 **SSL Required:** When this box is checked, any SAML messages that are not sent
-over HTTPS are rejected. This does not affect how URLs are generated.
+over HTTPS are rejected. This does not affect how URLs are generated. Note that
+when `web.server.protocol` is set to `https`, the portal forces SAML SPs and
+IdPs to use HTTPS regardless of whether *SSL Required* has been checked. Thus,
+the value of *SSL Required* should be chosen so that SAML uses the same
+protocol as the web server protocol.
 
 The Identity Provider page includes these options:
 

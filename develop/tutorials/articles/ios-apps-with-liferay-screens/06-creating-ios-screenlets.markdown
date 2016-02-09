@@ -9,7 +9,7 @@ create your own. Extensibility is a key strength of Liferay Screens.
 
 This tutorial explains how to create your own Screenlets. As an example, it
 references code from the sample
-[Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/tree/1.1.0/ios/Samples/AddBookmark-screenlet), 
+[Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/AddBookmark-screenlet), 
 that saves bookmarks to Liferay's Bookmarks portlet.
 
 To understand the components that comprise a Screenlet, you might want to first
@@ -38,10 +38,15 @@ Follow these steps to create your Screenlet:
 
 1.  In Xcode, create a new XIB file and construct your Screenlet's UI with
     Interface Builder. Make sure to use a `restorationIdentifier` property to
-    assign a unique restoration ID to each UI component that triggers an action.
-
+    assign a unique restoration ID to each UI component that triggers an action. 
+    If the action only needs to change the UI's state (that is, change the 
+    component's properties), then you can associate that component's event to an 
+    `IBAction` method as usual. Actions using `restorationIdentifier` are 
+    intended for use by actions that need an Interactor (such as actions that 
+    make server requests or retrieve data from a database). 
+    
     For example, the Add Bookmark Screenlet's XIB file
-    [`AddBookmarkView_default.xib`](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Samples/AddBookmark-screenlet/LiferayScreensAddBookmarkScreenletSample/AddBookmarkScreenlet/AddBookmarkView_default.xib)
+    [`AddBookmarkView_default.xib`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/AddBookmark-screenlet/LiferayScreensAddBookmarkScreenletSample/AddBookmarkScreenlet/AddBookmarkView_default.xib)
     specifies text box fields for a bookmark's URL and title, a button (with
     `restorationIdentifier="get-title"`) to retrieve the bookmark's title, and a
     button (with `restorationIdentifier="add-bookmark"`) to save the bookmark. 
@@ -50,7 +55,7 @@ Follow these steps to create your Screenlet:
 
 2.  Create a new interface protocol that specifies your Screenlet's attributes.
     The Add Bookmark Screenlet's interface protocol
-    [`AddBookmarkViewModel`](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Samples/AddBookmark-screenlet/LiferayScreensAddBookmarkScreenletSample/AddBookmarkScreenlet/AddBookmarkViewModel.swift)
+    [`AddBookmarkViewModel`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/AddBookmark-screenlet/LiferayScreensAddBookmarkScreenletSample/AddBookmarkScreenlet/AddBookmarkViewModel.swift)
     has the associated attributes `URL` and `title`: 
 
         import UIKit
@@ -65,14 +70,14 @@ Follow these steps to create your Screenlet:
 
 3.  Create a new View class with a name that matches the prefix of your XIB
     file's name. The class must extend
-    [`BaseScreenletView`](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Framework/Core/Base/BaseScreenletView.swift)
+    [`BaseScreenletView`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift)
     and conform to the interface protocol you created. Use standard `@IBOutlet`s
     and `@IBAction`s to wire in all the UI components and events from the XIB.
     Implement getters and setters to get and set values from the UI components.
     Also make sure to implement any required animations or front-end logic. 
 
     For example, the sample Screenlet's
-    [`AddBookmarkView_default`](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Samples/AddBookmark-screenlet/LiferayScreensAddBookmarkScreenletSample/AddBookmarkScreenlet/AddBookmarkView_default.swift)
+    [`AddBookmarkView_default`](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/AddBookmark-screenlet/LiferayScreensAddBookmarkScreenletSample/AddBookmarkScreenlet/AddBookmarkView_default.swift)
     class conforms to the `AddBookmarkViewModel` interface protocol. It keeps
     references to the UI components and implements getters and setters for them.
 
@@ -118,7 +123,7 @@ Follow these steps to create your Screenlet:
 
 5.  Create an Interactor class for each Liferay service your Screenlet uses.
     Each Interactor class must extend the Liferay Screens
-    [`Interactor`](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Framework/Core/Base/Interactor.swift)
+    [`Interactor`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/Interactor.swift)
     class. As a best practice, start your Interactor class name with the
     service's name and end it with *Interactor*. If your Interactor modifies
     Liferay, append *Liferay* to the service name. 
@@ -149,7 +154,7 @@ Follow these steps to create your Screenlet:
             private var session: NSURLSession?
 
             override public func start() -> Bool {
-                let viewModel = self.screenlet.screenletView as! AddBookmarkViewModel
+                let viewModel = self.screenlet!.screenletView as! AddBookmarkViewModel
 
                 if let URL = NSURL(string: viewModel.URL!) {
 
@@ -208,7 +213,7 @@ Follow these steps to create your Screenlet:
             public var resultBookmarkInfo: [String:AnyObject]?
 
             override public func start() -> Bool {
-                let viewModel = self.screenlet.screenletView as! AddBookmarkViewModel
+                let viewModel = self.screenlet!.screenletView as! AddBookmarkViewModel
 
                 if let URL = viewModel.URL {
                     let session = SessionContext.createSessionFromCurrentSession()
@@ -217,17 +222,19 @@ Follow these steps to create your Screenlet:
                     // Use MobileSDK's services to send the bookmark to the portal
                     let service = LRBookmarksEntryService_v62(session: session)
 
-                    var error: NSError? = nil
+                    do {
+                        try service.addEntryWithGroupId(LiferayServerContext.groupId,
+                        folderId: 0,
+                        name: viewModel.title,
+                        url: URL,
+                        description: "Added from Liferay Screens",
+                        serviceContext: nil)
 
-                    service.addEntryWithGroupId(LiferayServerContext.groupId,
-                            folderId: 0,
-                            name: viewModel.title,
-                            url: viewModel.URL,
-                            description: "Added from Liferay Screens",
-                            serviceContext: nil,
-                            error: &error)
-
-                    return (error == nil)
+                        return true
+                    }
+                    catch {
+                        return false
+                    }
                 }
 
                 return false
@@ -247,7 +254,7 @@ Follow these steps to create your Screenlet:
         }
 
 6.  Create a Screenlet class that extends
-    [`BaseScreenlet`](https://github.com/liferay/liferay-screens/blob/1.1.0/ios/Framework/Core/Base/BaseScreenlet.swift)
+    [`BaseScreenlet`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenlet.swift)
     and includes, optionally, any `@IBInspectable` properties you need. The
     Screenlet class leverages your interface protocol, custom View class, and
     Interactor classes to control your Screenlet's behavior.
@@ -280,7 +287,7 @@ Follow these steps to create your Screenlet:
 
         class AddBookmarkScreenlet: BaseScreenlet {
 
-            override public func createInteractor(#name: String?, sender: AnyObject?) -> Interactor? {
+            override public func createInteractor(name name: String?, sender: AnyObject?) -> Interactor? {
                 switch name! {
                 case "get-title":
                     return createGetTitleInteractor()
@@ -297,7 +304,9 @@ Follow these steps to create your Screenlet:
                 let interactor = GetSiteTitleInteractor(screenlet: self)
 
                 // This shows the standard activity indicator in the screen...
-                self.showHUDWithMessage("Getting site title...", details: nil)
+                self.showHUDWithMessage("Getting site title...", 
+                    closeMode: .Autoclose,
+                    spinnerMode: .IndeterminateSpinner)
 
                 interactor.onSuccess = {
                     self.hideHUD()
@@ -308,8 +317,7 @@ Follow these steps to create your Screenlet:
 
                 interactor.onFailure = { err in
                     self.showHUDWithMessage("An error occurred retrieving the title",
-                        details: nil,
-                        closeMode: .ManualClose(true),
+                        closeMode: .ManualClose_TouchClosable,
                         spinnerMode: .NoSpinner)
                 }
 
@@ -319,16 +327,19 @@ Follow these steps to create your Screenlet:
             private func createAddBookmarkInteractor() -> LiferayAddBookmarkInteractor {
                 let interactor = LiferayAddBookmarkInteractor(screenlet: self)
 
-                self.showHUDWithMessage("Saving bookmark...", details: nil)
+                self.showHUDWithMessage("Saving bookmark...",
+                    closeMode: .Autoclose,
+                    spinnerMode: .IndeterminateSpinner)
 
                 interactor.onSuccess = {
-                    self.hideHUDWithMessage("Bookmark saved!")
+                    self.hideHUDWithMessage("Bookmark saved!"
+                        closeMode: .Autoclose_TouchClosable,
+                        spinnerMode: .NoSpinner)
                 }
 
                 interactor.onFailure = { e in
                     self.showHUDWithMessage("An error occurred saving the bookmark",
-                        details: nil,
-                        closeMode: .ManualClose(true),
+                        closeMode: .ManualClose_TouchClosable,
                         spinnerMode: .NoSpinner)
                 }
 
@@ -338,7 +349,7 @@ Follow these steps to create your Screenlet:
         }
 
     For reference, the sample Add Bookmark Screenlet's final code is on
-    [GitHub](https://github.com/liferay/liferay-screens/tree/1.1.0/ios/Samples/AddBookmark-screenlet). 
+    [GitHub](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/AddBookmark-screenlet). 
 
 You're done! Your Screenlet is a ready-to-use component that you can add to your
 storyboard. You can even

@@ -187,7 +187,7 @@ Use the following steps to create the Guestbook Admin portlet's user interface:
     var="editURL">` tag with two parameters: `guestbookId` and `mvcPath`. The
     `guestbookId` parameter specifies the guestbook to edit (it's the one from
     the selected search container result row), and the `mvcPath` parameter
-    specifies the path the the Edit Guestbook form.
+    specifies the path the Edit Guestbook form.
 
     The Permissions menu item displays the Permissions icon and the default
     message *Permissions*:
