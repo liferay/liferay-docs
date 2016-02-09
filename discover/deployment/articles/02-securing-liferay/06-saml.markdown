@@ -1,5 +1,10 @@
 # SAML [](id=saml)
 
+(Coming soon)
+
+<!-- Uncomment when a version of the SAML plugin is available that's compatible
+with Liferay 7.
+
 ![EE-only](../../images/ee-feature-web.png)
 
 SAML is an XML-based open standard data format for exchanging authentication and
@@ -486,3 +491,5 @@ If your situation fits the scenario described above, follow these steps:
 Great! Now you know how to configure Liferay either as a SAML identity provider
 or a service provider. You also know how to configure the Liferay SAML in a
 clustered environment.
+
+-->
