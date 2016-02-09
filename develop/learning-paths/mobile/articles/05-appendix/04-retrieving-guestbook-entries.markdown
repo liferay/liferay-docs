@@ -39,8 +39,8 @@ creating Get Entries Screenlet, you must create a model class that turns each
 `JSONObject` into a proper entry model object. You'll do this the exact same way 
 you did in Get Entries Screenlet. To create this model class, follow 
 [these instructions](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-get-entries-screenlet#creating-the-model-class-for-entries) 
-from the article on getting started with the Get Entries Screenlet. When you 
-finish, you'll have an identical `EntryModel` class inside the package 
+from the article on getting started with Get Entries Screenlet. When you finish, 
+you'll have an identical `EntryModel` class inside the package 
 `com.liferay.docs.model`. Once this class exists, you can create the fragment 
 you'll use to retrieve and display the entries. 
 
@@ -104,12 +104,12 @@ Replace the fragment's contents with the following code:
     }
 
 By extending `ListFragment`, the `EntriesFragment` class contains an implicit 
-`ListView` that you'll use to display the entries. This means that you don't 
-have to define a `ListView` in a layout file, as you did when displaying 
-guestbooks in the drawer. For its variables, the `EntriesFragment` class 
-requires the `_guestbookId` variable so it can retrieve the corresponding 
-guestbook's entries. The class also requires the `entries` variable so it can 
-hold those entries. 
+`ListView` that you'll use to display the entries. This means you don't have to 
+define a `ListView` in a layout file, as you did when displaying guestbooks in 
+the drawer. For its instance variables, `EntriesFragment` requires the 
+`_guestbookId` variable so it can retrieve the corresponding guestbook's 
+entries. The class also requires the `entries` variable so it can hold those 
+entries. 
 
 If you have experience with Android fragments, then you're probably familiar 
 with the empty constructor and `newInstance` method. When the screen orientation 
@@ -122,8 +122,8 @@ See
 for more information on using a `newInstance` method to manage fragments. 
 
 The final method in `EntriesFragment` is `reloadEntries`. Recall that when 
-getting guestbooks, `GetGuestbooksCallback` calls the `reloadGuestbooks` method 
-of `GuestbooksActivity`. This is how the callback sends the guestbooks to the 
+getting guestbooks, `GetGuestbooksCallback` calls the `GuestbooksActivity` 
+method `reloadGuestbooks`. This is how the callback sends the guestbooks to the 
 activity. The `reloadEntries` method in `EntriesFragment` serves the analogous 
 purpose for entries: the callback needs it to send the entries to the fragment. 
 Next, you'll create this callback. 
@@ -202,7 +202,7 @@ In your `EntriesFragment` class, you need a method for making the call to
 retrieve the portlet's entries. Recall that you retrieved guestbooks with the 
 `getGuestbooks` method in `GuestbooksActivity`. You'll retrieve entries 
 similarly by creating a `getEntries` method in `EntriesFragment`. Add this 
-method to the `EntriesFragment` class: 
+method to `EntriesFragment`: 
 
     protected void getEntries(long guestbookId) {
         Session session = SessionContext.createSessionFromCurrentSession();

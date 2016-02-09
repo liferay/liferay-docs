@@ -1,4 +1,4 @@
-# Creating Get Guestbook Screenlet's Server Call [](id=creating-get-guestbook-screenlets-server-call)
+# Creating Get Guestbooks Screenlet's Server Call [](id=creating-get-guestbook-screenlets-server-call)
 
 In the previous article, you learned that Screenlets use a Mobile SDK to make 
 server calls via Interactors. Since you must call the Guestbook portlet's remote 

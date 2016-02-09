@@ -14,8 +14,8 @@ You'll get started by creating the adapter.
 
 ## Creating the Adapter [](id=creating-the-adapter)
 
-First, you must create a variable for the adapter. Add it to `EntriesFragment` 
-as follows: 
+First, you must create an instance variable for the adapter. Add it to 
+`EntriesFragment`: 
 
     private ArrayAdapter _adapter;
 
@@ -57,7 +57,7 @@ This requires you to add the following imports:
     import android.widget.TextView;
 
 This adapter is identical to 
-[the one you used when creating Get Entries Screenlet's View class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-entries-screenlets-ui#creating-the-view-class). 
+[the one you used when creating Get Entries Screenlet's View class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-get-entries-screenlets-ui#creating-the-view-class). 
 Recall that it displays two lines of text: one for the entry, and one for the 
 name of the person who left it. The only difference is that you set the adapter 
 here with `setListAdapter` instead of `setAdapter`. Using `setListAdapter` is 
@@ -156,9 +156,12 @@ Next, you'll display the entries by adding `EntriesFragment` to
 
 Now that `EntriesFragment` can put entries in its `ListView`, you're ready to 
 add the fragment to `GuestbooksActivity`. When you used the Screenlets, you did 
-this prior to using Get Entries Screenlet. Use 
-[the same steps](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-a-fragment-for-get-entries-screenlet#adding-the-fragment-to-guestbooksactivity) 
-to add the fragment to `GuestbooksActivity` here. The only difference is that 
+this prior to using Get Entries Screenlet. You'll use the same steps to add the 
+fragment to `GuestbooksActivity`: 
+
+- [Adding the Fragment to `GuestbooksActivity`](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-a-fragment-for-get-entries-screenlet#adding-the-fragment-to-guestbooksactivity)
+
+The only difference is that 
 `GuestbooksActivity` now uses the `onItemClick` method instead of the Screenlet 
 listener method `onItemClicked`. You should therefore perform the fragment 
 transaction in `onItemClick`, immediately above `drawer.closeDrawers()`. When 

@@ -11,9 +11,9 @@ the server. To retrieve guestbooks in the app, you'll follow these steps:
 
 3. Create a callback class that makes the service call asynchronously in a 
    background thread, transforms the JSON results into guestbook model objects, 
-   and then sends those objects back to `GuestbooksActivity`.
+   and then sends those objects to `GuestbooksActivity`.
 
-4. Using the callback class, make the service call from `GuestbooksActivity`. 
+4. Use the callback class to make the service call from `GuestbooksActivity`. 
 
 You'll get started with the first step, creating the model class for guestbooks.
 
@@ -24,18 +24,18 @@ Recall that the Guestbook Mobile SDK returns guestbooks from the portlet in a
 creating Get Guestbooks Screenlet, you must create a model class that turns each 
 `JSONObject` into a proper guestbook object. You'll do this the exact same way 
 you did in Get Guestbooks Screenlet. To create this model class, follow 
-[these instructions](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-the-get-guestbooks-screenlet#creating-the-model-class-for-guestbooks) 
-from the article on getting started with the Get Guestbooks Screenlet. When you 
+[these instructions](/develop/learning-paths/mobile/-/knowledge_base/6-2/getting-started-with-get-guestbooks-screenlet#creating-the-model-class-for-guestbooks) 
+from the article on getting started with Get Guestbooks Screenlet. When you 
 finish, you'll have an identical `GuestbookModel` class inside the new package 
 `com.liferay.docs.model`. 
 
-Next, you'll prepare `GuestbooksActivity` to recieve `GuestbookModel` objects. 
+Next, you'll prepare `GuestbooksActivity` to receive `GuestbookModel` objects. 
 
 ## Preparing GuestbooksActivity for Guestbooks [](id=preparing-guestbooksactivity-for-guestbooks)
 
-Before making the server call, you must prepare the `GuestbooksActivity` class 
-to handle `GuestbookModel` objects. Specifically, you need to give the callback 
-class you'll create in a moment a way to pass `GuestbookModel` objects to 
+Before making the server call, you must prepare `GuestbooksActivity` to handle 
+`GuestbookModel` objects. Specifically, you need to give the callback class 
+you'll create in a moment a way to pass `GuestbookModel` objects to 
 `GuestbooksActivity`. 
 
 First, add a `_guestbooks` variable to `GuestbooksActivity`: 
@@ -68,7 +68,7 @@ callback class. You'll do the same thing here by creating a callback class that
 extends the Mobile SDK's 
 [`GenericCallback`](https://github.com/liferay/liferay-mobile-sdk/blob/master/android/src/main/java/com/liferay/mobile/android/callback/typed/GenericCallback.java) 
 class. The `GenericCallback` class abstracts away much of the complexity 
-involved with making calls from a background thread. See 
+involved in threading. See 
 [Android's documentation](http://developer.android.com/guide/components/processes-and-threads.html#Threads) 
 for more information on threading. 
 
@@ -128,19 +128,19 @@ with the following:
     }
 
 This class is similar to 
-[the callback class you created for Get Guestbooks Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-guestbook-screenlets-server-call#creating-the-callback-class).
+[the callback class you created for Get Guestbooks Screenlet](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-get-guestbook-screenlets-server-call#creating-the-callback-class).
 The `transform` methods in both classes are identical. Recall that this method 
 transforms each `JSONObject` into a `GuestbookModel` object. The callback class 
 here also contains the code required to pass these results to the class that 
-issued the call. First, you should note that this class has a 
-`GuestbooksActivity` instance as its only variable. This is so it can refer its 
-results back to `GuestbooksActivity`, which runs in Android's main UI thread. 
-The `GetGuestbooksCallback`'s constructor thus does only one thing: it sets this 
-variable. Next, the `onFailure` and `onSuccess` methods are overridden. As you 
-probably guessed, `onFailure` is called when the request fails, while 
-`onSuccess` is called when it succeeds. In this example, `onFailure` displays a 
-toast message with the error. The `onSuccess` method sends the guestbooks to 
-`GuestbooksActivity` by calling the activity's `reloadGuestbooks` method. 
+issued the call. First, note that this class has a `GuestbooksActivity` instance 
+as its only variable. This is so it can send results back to 
+`GuestbooksActivity`, which runs in Android's main UI thread. The callback 
+class's constructor thus does only one thing: it sets this variable. Next, the 
+`onFailure` and `onSuccess` methods are overridden. As you probably guessed, 
+`onFailure` is called when the request fails, and `onSuccess` is called when it 
+succeeds. The `onFailure` method displays a toast message with the error. The 
+`onSuccess` method sends the guestbooks to `GuestbooksActivity` by calling the 
+activity's `reloadGuestbooks` method. 
 
 Now that you have everything you need to retrieve guestbooks from the Guestbook 
 portlet, you're ready to make the server call. 
@@ -148,14 +148,12 @@ portlet, you're ready to make the server call.
 ## Making the Server Call [](id=making-the-server-call)
 
 The Guestbook Mobile SDK call to retrieve guestbooks is almost identical to 
-[the one in Get Guestbooks Screenlet's `GetGuestbooksInteractorImpl` class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-the-get-guestbook-screenlets-server-call#creating-and-implementing-the-interactor-interface).
+[the one in Get Guestbooks Screenlet's `GetGuestbooksInteractorImpl` class](/develop/learning-paths/mobile/-/knowledge_base/6-2/creating-get-guestbook-screenlets-server-call#creating-and-implementing-the-interactor-interface).
 The only difference is the `getGuestbooks` method you'll create here doesn't 
 take a group ID as a parameter. The Screenlet's `getGuestbooks` method requires 
-this parameter to account for any changes to the group ID that the app developer 
-sets when inserting the Screenlet's XML. You'll instead set the group ID by 
-retrieving the one you set earlier in your Android project's 
-`server_context.xml`. You'll use `LiferayServerContext`, a Screens helper class, 
-to do this. 
+this parameter to account for group ID changes made by the app developer. You'll 
+instead use `LiferayServerContext`, a Screens helper class, to get the group ID 
+set in `server_context.xml`. 
 
 Besides this, the server call itself is exactly the same. You make it by 
 creating an authenticated session, setting a callback to the session, creating 
