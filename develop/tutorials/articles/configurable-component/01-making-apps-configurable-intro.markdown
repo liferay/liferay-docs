@@ -96,7 +96,7 @@ the configuration. Here is what they do:
 
 The fully-qualified class name of the `Meta` class referred to above is
 `aQute.bnd.annotation.metatype.Meta`. For more information about this class and
-the `Meta.OCD`, `Meta.AD`, and related annotations, please refer to this bnd
+the `Meta.OCD` and `Meta.AD` annotations, please refer to this bnd
 documentation:
 [http://bnd.bndtools.org/chapters/210-metatype.html](http://bnd.bndtools.org/chapters/210-metatype.html).
 The annotations `@Meta.OCD` and `@Meta.AD` have also been included as part of
@@ -361,46 +361,58 @@ In order to use the Module Configuration API, you need to
 
         }
 
-2.  Obtain the configuration using one of the these two methods:
-
-        <!--
-        Maybe we should mention that we have two configuration APIs, the old
-        one and the new one. In this case, we are using import
-        com.liferay.portal.kernel.module.configuration.ConfigurationFactory
-        -Juergen
-        -->
+2.  Obtain the configuration like this:
 
         RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
-            _configurationFactory.getConfiguration(
+            _configurationProvider.getConfiguration(
                 RSSPortletInstanceConfiguration.class,
                 new PortletInstanceSettingsLocator(
-                    themeDisplay.getLayout(), portletDisplay.getId()));
-
-        RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
-            _settingsFactory.getConfiguration(
-                RSSPortletInstanceConfiguration.class,
-                themeDisplay.getLayout(), portletDisplay.getId());
-
-    The first method above is preferred. This method uses
-    `com.liferay.portal.kernel.module.configuration.ConfigurationFactory`. The
-    other method is older.
+                    themeDisplay.getLayout(),
+                    "com.liferay.rss.web.configuration.RSSPortletInstanceConfiguration"));
 
 3.  In order to get the `ConfigurationFactory`, your class must have a setter
     method with the `@Reference` annotation. Use a setter method like this for
     components:
 
         @Reference
-        protected void setConfigurationFactory(ConfigurationFactory configurationFactory) {
-            _configurationFactory = _configurationFactory;
+        protected void setConfigurationProvider(ConfigurationProvider configurationProvider) {
+            _configurationProvider = _configurationProvider;
         }
 
     Use a setter method like this for OSGi services:
 
-        @ServiceReference(type = ConfigurationFactory.class)
-        protected ConfigurationFactory configurationFactory;
+        @ServiceReference(type = ConfigurationProvider)
+        protected ConfigurationProvider configurationProvider;
 
     Remember not to confuse an OSGi service with Liferay service. A Liferay
     service is also known as a Liferay API.
+
+## Specifying the Scope of the Configuration
+
+The `ExtendedObjectClassDefinition` annotation allows you to specify the scope
+of the configuration. This should match how the configuration object is
+retrieved through the provider (your choice). The valid options are:
+
+- Group: for site scope
+- Company: For virtual instance scope
+- System: for system scope
+
+Here is an example:
+
+    @ExtendedObjectClassDefinition(
+        category = "productivity", scope = ExtendedObjectClassDefinition.Scope.GROUP
+    )
+    @Meta.OCD(
+        id = "com.liferay.dynamic.data.lists.form.web.configuration.DDLFormWebConfiguration",
+        localization = "content/Language", name = "%ddl.form.web.configuration.name"
+    )
+    public interface DDLFormWebConfiguration {
+    ...
+    }
+
+In Liferay 7.0, the scope property is not being used for anything other than
+making it appear in System Settings so that an administrator change change its
+value. In future versions of Liferay, it will probably have more purposes.
 
 ### Accessing the Portlet Instance Configuration Through the PortletDisplay [](id=accessing-the-portlet-instance-configuration-through-the-portletdisplay)
 
