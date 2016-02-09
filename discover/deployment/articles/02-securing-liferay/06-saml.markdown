@@ -12,10 +12,11 @@ Committee. See
 [https://www.oasis-open.org/committees/security/](https://www.oasis-open.org/committees/security/)
 for more information. Liferay 6.1 EE and later versions support SAML 2.0
 integration via the SAML 2.0 Provider EE plugin. This plugin is provided as an
-app from Liferay Marketplace that allows Liferay to act as a SAML 2.0 identity
+app from Liferay Marketplace that allows Liferay to act as a SAML 2.0 Identity
 provider or as a service provider. First, we'll look at how to set Liferay up as
 an Identity Provider and then we'll look at how to set it up as a Service
-Provider.
+Provider. The SAML 2.0 Provider EE plugin supports any Identity provider that
+supports the SAML 2.0 standard.
 
 ## Setting up Liferay as a SAML Identity Provider [](id=setting-up-liferay-as-a-saml-identity-provider)
 
