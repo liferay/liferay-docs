@@ -1,4 +1,4 @@
-# Creating a Liferay Workspace
+# Creating a Liferay Workspace [](id=creating-a-liferay-workspace)
 
 A *Liferay Workspace* is a generated environment that is built to hold and
 manage your Liferay projects. This workspace is intended to aid in the
@@ -22,7 +22,7 @@ make sure you've installed Blade, which is covered in the previous section
 
 Buckle up! You're about to create your own Liferay 7.0 Workspace!
 
-## Using Blade to Create Your Workspace
+## Using Blade to Create Your Workspace [](id=using-blade-to-create-your-workspace)
 
 The Blade tool you installed in the previous section provides many different
 commands to help build and customize Liferay projects. The first thing you
@@ -64,7 +64,7 @@ value.
 Next you'll learn about generating and using a Liferay instance from within your
 workspace.
 
-### Running a Liferay Instance from Your Workspace
+### Running a Liferay Instance from Your Workspace [](id=running-a-liferay-instance-from-your-workspace)
 
 Liferay Workspaces have the capability of generating and holding a Liferay
 Server. This lets you build/test your plugins against a running Liferay
@@ -93,7 +93,7 @@ Awesome! You have a built-in Liferay server in your workspace and can start the
 server using Blade tools. Next you'll learn how to use your legacy Plugins SDK
 from your workspace.
 
-### Using a Plugins SDK from Your Workspace
+### Using a Plugins SDK from Your Workspace [](id=using-a-plugins-sdk-from-your-workspace)
 
 With Liferay 7.0 transitioning to a module-based framework, the current
 structure of a Liferay Workspace is centered around module development. There
@@ -125,7 +125,7 @@ workspace. It's as simple as that!
 
 Next you'll learn about using Liferay Workspaces in Liferay IDE.
 
-## Using Liferay IDE to Create Your Workspace
+## Using Liferay IDE to Create Your Workspace [](id=using-liferay-ide-to-create-your-workspace)
 
 Using Blade Tools from the command prompt is certainly servicable, and caters to
 those who enjoy using the command prompt to develop project. There are, however,
@@ -173,7 +173,7 @@ Congratulations! You've successfully created a Liferay Workspace using the
 command prompt and Liferay IDE. Now that your workspace is created, you can
 begin creating Liferay plugins.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 
