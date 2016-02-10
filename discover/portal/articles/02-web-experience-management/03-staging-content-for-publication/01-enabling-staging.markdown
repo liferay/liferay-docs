@@ -101,13 +101,14 @@ Liferay server's list of allowed servers. You also need to specify an
 authentication key to be shared by your current and your remote server and
 enable each Liferay server's tunneling servlet authentication verifier. You can
 make all of these configurations in your Liferay servers'
-`portal-ext.properties` files.  Your first step should be to add the following
+`portal-ext.properties` files. Your first step should be to add the following
 lines to your current Liferay server's `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Remote server IP address]
     axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Remote server IP address]
     tunneling.servlet.shared.secret=[secret]
     auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
+    auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
 
 Then add the following lines to your remote Liferay server's
 `portal-ext.properties` file:
@@ -116,6 +117,10 @@ Then add the following lines to your remote Liferay server's
     axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Local server IP address]
     tunneling.servlet.shared.secret=[secret]
     auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
+    auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
+
+<!-- TODO: Asked Mate if `axis.servlet.hosts.allowed` is still necessary. This
+may be an optional parameter no longer needed. -Cody -->
 
 Liferay's use of a pre-shared key between your staging and production
 environments helps secure the remote publication process. It also removes the
@@ -156,6 +161,12 @@ two strategies:
 
 Once you've chosen a key, make sure that value of your current server matches
 the value of your remote server.
+
+One last thing you'll need to do is update the *TunnelAuthVerfierConfiguration*
+of your Liferay instance. To do this, navigate to the Control Panel &rarr;
+*Configuration* &rarr; *System Settings* &rarr; *Platform* &rarr; *Tunnel Auth
+Verifier*. Click */api/liferay/do* and insert the additional IP addresses you're
+using in the *Hosts allowed* field. Then select *Update*.
 
 Remember to restart both Liferay servers after making these portal properties
 updates. After restarting, log back in to your local Liferay instance as
