@@ -81,7 +81,7 @@ these kinds of configuration actions:
 - Configure Liferay's HTTPS web server address
 - Configure the list of allowed servers to which users can be redirected
 - Configure the list of portlets that can be accessed from any page
-- Configure the files types allowed to be uploaded and downloaded
+- Configure the file types allowed to be uploaded and downloaded
 - Many other options
 
 ## Secure Development Recommendations [](id=secure-development-recommendations)

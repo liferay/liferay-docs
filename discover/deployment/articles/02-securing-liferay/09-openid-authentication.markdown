@@ -34,7 +34,7 @@ setting. Check the *Enabled* box to enable OpenID at the system scope (for all
 portal instances), uncheck it to disable it at the system scope.
 
 To configure the OpenID SSO module at the portal instance scope, navigate to
-the Control Panel and click on *Configuration* &rarr; *Portal Settings*. Then
+the Control Panel and click on *Configuration* &rarr; *Instance Settings*. Then
 click on *Authentication* at the right and then on *OpenID* at the top. As for
 the system scope, there's only a single configuration settings for the portal
 instance scope. Check the *Enabled* box to enable OpenID for the current portal

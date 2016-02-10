@@ -84,7 +84,7 @@ Property Label | Property Key | Description | Type
 **No Such User Redirect URL** | `noSuchUserRedirectURL` | Set the URL to which to redirect the user if the user can authenticate with CAS but cannot be found in Liferay. If import from LDAP is enabled, the user is redirected if the user could not be found or could not be imported from LDAP. | `String`
 
 To override system defaults for a particular portal instance, navigate to the
-Control Panel, click on *Configuration* &rarr; *Portal Settings*, click on
+Control Panel, click on *Configuration* &rarr; *Instance Settings*, click on
 *Authentication* on the right and then on *CAS* at the top.
 
 ## Summary [](id=summary)
