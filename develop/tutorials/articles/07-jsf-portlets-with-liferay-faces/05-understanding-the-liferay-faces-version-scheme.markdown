@@ -168,7 +168,7 @@ in action.
 
 ## Example Configurations [](id=example-configurations)
 
-### Liferay Portal 7.0: AlloyUI 3.0 / CrystalUI 1.0 / Portlet 2.0 / JSF 2.2 [](id=liferay-portal-7-0-alloyui-3-0--crystalui-1-0--portlet-2-0--jsf-2-2)
+### Liferay Portal 7.0: AlloyUI 3.0 / Metal 1.0 / Portlet 2.0 / JSF 2.2 [](id=liferay-portal-7-0-alloyui-3-0--crystalui-1-0--portlet-2-0--jsf-2-2)
 
 	<dependencies>
 		<dependency>
@@ -184,17 +184,17 @@ in action.
 		<dependency>
 			<groupId>com.liferay.faces.bridge</groupId>
 			<artifactId>liferay-faces-bridge-ext</artifactId>
-			<version>2.0.0</version>
+			<version>5.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.liferay.faces.crystal</groupId>
-			<artifactId>liferay-faces-crystal</artifactId>
+			<groupId>com.liferay.faces.metal</groupId>
+			<artifactId>liferay-faces-metal</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.liferay.faces.portal</groupId>
 			<artifactId>liferay-faces-portal</artifactId>
-			<version>2.0.0</version>
+			<version>3.0.0</version>
 		</dependency>
 	</dependencies>
 
@@ -214,12 +214,12 @@ in action.
 		<dependency>
 			<groupId>com.liferay.faces.bridge</groupId>
 			<artifactId>liferay-faces-bridge-ext</artifactId>
-			<version>1.0.0</version>
+			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.liferay.faces.portal</groupId>
 			<artifactId>liferay-faces-portal</artifactId>
-			<version>1.0.0</version>
+			<version>2.0.0</version>
 		</dependency>
 	</dependencies>
 
@@ -239,12 +239,12 @@ in action.
 		<dependency>
 			<groupId>com.liferay.faces.bridge</groupId>
 			<artifactId>liferay-faces-bridge-ext</artifactId>
-			<version>1.0.0</version>
+			<version>2.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.liferay.faces.portal</groupId>
 			<artifactId>liferay-faces-portal</artifactId>
-			<version>1.0.0</version>
+			<version>2.0.0</version>
 		</dependency>
 	</dependencies>
 
