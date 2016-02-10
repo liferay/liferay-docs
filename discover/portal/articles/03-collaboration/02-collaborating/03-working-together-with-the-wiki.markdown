@@ -52,33 +52,53 @@ nodes). By default, it contains one node, called *Main*.
 ![Figure x: The Wiki application instance has a wiki node named *Main* with a single front page. You can build on the Main node or create a new node.](../../../images/wiki-admin-empty.png)
 
 Before we start adding to our site's wiki instance, let's configure it the way
-we want it. The instance's permissions, export and import interface, and its
-configuration screen are accessible from the Options menu. To view the menu,
-click on the *Options* icon (![Options](../../../images/icon-options.png)).
+we want it. The instance's interfaces for permissions, export and import,
+configuration, and application templates are accessible from the Options menu.
+To view the menu, click on the *Options* icon
+(![Options](../../../images/icon-options.png)).
 
-Then select *Permissions*, as we want to consider them first. The
-Permissions screen allows you to specify which roles can create wiki nodes
-(wikis) and which roles can access the Permissions screen. If you've created a
-specific role for creating wiki nodes, you can select the check box in the *Add Node*
-column and then click *Save*, and that role will be able to create new wiki
-nodes in this wiki instance. 
+Here are the options screens accessible for a Wiki application instance:
 
-The *Export/Import* wiki instance screen enables you to import existing wiki content into your
-wiki instance and export wiki content to a file. We don't have anything to
-import or export. 
+**Permissions**: Allows you to specify which roles can create wiki nodes (wikis)
+and which roles can access the Permissions screen. 
 
-The *Configuration* wiki instance screen has tabs for configuring email
-notifications and a tab for configuring RSS feeds. The *Email From*, *Page Added Email*, and *Page Updated Email* tabs are similar
-to the ones for notification email settings for other apps, allowing you to
-customize who wiki emails come from and the format and text of the email that
-is sent when a page is added or updated. The *RSS* tab allows you to configure
-RSS feeds, as you can do for other Liferay applications. 
+**Export / Import**: Enables you to import existing wiki content into your wiki
+instance and export wiki content to a file.
+
+**Configuration**: This screen has tabs for configuring email notifications and
+a tab for configuring RSS feeds. The *Email From*, *Page Added Email*, and *Page
+Updated Email* tabs are similar to the ones for notification email settings for
+other apps, allowing you to customize who wiki emails come from and the format
+and text of the email that is sent when a page is added or updated. The *RSS*
+tab allows you to configure RSS feeds, as you can do for other Liferay
+applications. 
+
+**App Templates**: Lets you store your current application setup or apply an
+existing archived setup. This is especially helpful when you have configurations
+you like to use multiple application instances.
+
+From the *Options* menu, select *Permissions*. If you've created a specific role
+for creating wiki nodes, you can select the check box in the *Add Node* column
+and then click *Save*, and that role will be able to create new wiki nodes in
+this wiki instance. 
 
 ![Figure x: You can configure email messages and RSS feeds for users to stay informed with your wiki instance.](../../../images/wiki-admin-configure-email.png)
 
-Clicking the *Add* icon (![Add](../../../images/icon-add.png)) prompts you to
-enter a name and description for the new wiki node. You can also set up some
-default permissions. When you create a new wiki node, it appears in a list at
+Now that we're done configuring our site's Wiki app instance, it's time to start
+working with a wiki node (or wiki). Let's create a wiki node called *Space Wiki*
+in which everyone at the Lunar Resort can participate in building an
+encyclopedia of sorts on everything they know about space. 
+
+Click the *Add* icon (![Add](../../../images/icon-add.png)) to start creating
+the new wiki node. The New Wiki Node screen appears and
+prompts you to enter a name and description for the new wiki node. You can also set up some
+default permissions. Click *Save* when you're done specifying your new wiki
+node. 
+
+![Figure x: The New Wiki Node screen lets you describe your new node and set view permissions and permissions for Guest and Site Member roles.](../../../images/wiki-new-wiki-node.png)
+
+
+When you create a new wiki node, it appears in a list at
 the top of the main page of the Wiki app.
 
 <!-- Decide where to mention the wiki options listed below -->
@@ -113,14 +133,22 @@ the wiki node.
 
 **Move to the Recycle Bin**: moves the wiki node to the [Recycle Bin](/discover/portal/-/knowledge_base/7-0/restoring-deleted-assets).
 
-You can configure the Wiki instance's settings from its Configuration window,
-which you can open by clicking on the *Options* icon
-(![Options](../../../images/icon-options.png)) and selecting *Configuration*. The
-Configuration window appears.
+![Figure x: The Wiki application lists all of its wiki nodes. Each node's options icon menu lists node configuration options and actions you can perform. ](../../../images/wiki-admin-wikis-and-wiki-options.png)
 
-Let's navigate back Wiki app you added to your page and explore its
-configuration options. Then select *Options &rarr; Configuration*. The Wiki
-app's Configuration screen appears. 
+Before you open up wiki nodes to contributors, you should consider whether to
+associate a workflow with them. For example, you could create a workflow that
+requires a wiki page modification (add, update, or delete) be approved by an
+administrator before it's published. You can access your site's default *Wiki
+Page* workflow from within the Product Menu, by navigating to *Configuration
+&rarr; Workflow Configuration* for your site. To learn how to use workflow,
+refer to [Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow).
+
+Next, let's create our wiki node's front page. 
+
+<!--
+
+To view the Wiki application's configuration options, select *Options &rarr;
+Configuration*. The Wiki app's Configuration screen appears. 
 
 The *Email From*, *Page Added Email*, and *Page Updated Email* tabs are similar
 to the ones for notification email settings for other apps, allowing you to
@@ -140,22 +168,32 @@ template for the app. Below this, you can set which wikis (wiki nodes) are
 visible in the Wiki and which are hidden. You might host two wikis on a given
 site, exposing one to the public and keeping the other private for site members.
 
+-->
+
 ## Adding and Editing Wiki Pages [](id=adding-and-editing-wiki-pages)
 
-By default, there is one page added to your wiki, called *FrontPage*. The
-default message on the page is a link that states that the page is empty. Click
-the message text to start editing the page. You can alternatively click the
-*Edit* button. 
+When you initially create a wiki node, it has no pages. It's not until you
+navigate into that node that a default page called *FrontPage* is created
+automatically. To view the page, click on its name. The page shows a default
+message explaining that it's empty and that you need to edit to to add content.
+Click on the message text (which is a link) to start editing the page.
 
-![Figure x: To edit a new page, click on the page's default message or click *Edit*.](../../../images/wiki-app-empty.png)
+![Figure x: Each empty wiki page presents a default message link you can click to edit the page.](../../../images/wiki-empty-frontpage.png)
 
 Wiki uses a WYSIWYG editor, similar to the editor used in the Blogs and Web
-Content applications. Click your mouse inside the Content section, enter some text, and highlight that text.
-Formatting options appear. They let you markup the text as bold or
-italics. You can add ordered or unordered lists and even link the text to a URL.
-You're working in the editor's regular mode. Source mode, on the other hand,
-lets you enter text in Creole format. You can switch to source mode by clicking
-the *Source* icon (`</>`) or switch back to regular mode by clicking the *Roller* icon
+Content applications. You'll write your wiki page text in the content section under
+the wiki page title. The content section entices you with its default message
+*Write your content here...*. Click there and enter some text.
+
+Next, highlight your content text. Formatting options appear. They let you
+markup the text as bold or italics. You can add ordered or unordered lists and
+even link the text to a URL. You're working in the editor's regular mode. Source
+mode, on the other hand, lets you enter text in Creole format. 
+
+![Figure x: When you highlight text in the wiki page editor, a toolbar of formatting options appears. You can apply common markups to the text, make it a list item or a link, or remove existing markup.](../../../images/wiki-page-highlight-content-text.png)
+
+You can switch to source mode by clicking the *Source* icon (`</>`) or switch
+back to regular mode by clicking the *Roller* icon
 (![Roller](../../../images/icon-roller.png))--the editor always displays the
 other mode's icon so you can switch between modes. Click on the *Source* icon to
 switch to source mode.
@@ -163,59 +201,30 @@ switch to source mode.
 Notice that there's a convenient *Show Syntax Help >>* link which can help with
 the wiki syntax. You can use this syntax to format your wiki pages.
 
-Consider, for example, the following
-wiki document:
+Consider, for example, the following wiki document written in Creole format:
 
-    == Welcome to Our Wiki! ==
+    Space--it's our //final frontier//! But we've learned so much about it, from our perspective at the Lunar Resort. 
 
-    This is our new wiki, which should allow us to collaborate on documentation. Feel free to add pages showing people
-    how to do stuff. Below are links to some sections that have already been added.
+    Let's share what we know about galaxies, solar systems, planets, moons, suns, and more!
 
-    [[Introduction]]
+    [[Galaxies]]
 
-    [[Getting Started]]
+    [[Solar Systems]]
 
-    [[Configuration]]
+    [[Planets]]
 
-    [[Development]]
+    [[Moons]]
 
-    [[Support]]
-
-    [[Community]]
+    [[All kinds of stuff]]
 
 Enter it as content. Now, click on the *Enlarge* icon
 (![Enlarge](../../../images/icon-enlarge.png)) to edit the source in an enlarged
 dual screen editor. As you enter Creole format text in one pane the preview pane
 renders it. The editor lets you hide the preview pane, use a dark and
 light color scheme in the source pane, and arrange the panes horizontally or
-vertically.
+vertically. 
 
-This would produce the following wiki page:
-
-![Figure x: The source editor and syntax guide, help you format wiki page headings and text.](../../../images/wiki-page.png)
-
-This adds a simple heading, a paragraph of text, and several links to the page.
-
-<!-- Demonstrate adding an image. Jim-->
-
-Since the pages behind these links have not been created yet, clicking one of
-those links takes you to an editing screen to create the page. This editing
-screen looks just like the one you used previously when you wrote the front
-page. Liferay displays a notice at the top of the page stating that the page
-does not exist yet, and that you are creating it right now. As you can see, it
-is very easy to create wiki pages. All you have to do is create a link from an
-existing page. 
-
-+$$$
-
-**Note**: when you create a page by clicking on a link to a page that does not
-yet exist, the new page is **not** a child of the current page. The page is
-created at the front page level of the wiki node. From Wiki in Site
-Administration, you can use the page's Move action to assign it a new parent
-page. Clicking on the *Move* action brings up a window that lets you select a
-new parent page. 
-
-$$$
+![Figure x: The wiki page source editor has a dual page mode for rendering content as you edit its source text.](../../../images/wiki-dual-pane-editor.png)
 
 At the bottom of the page editing screen, you can select *Categorization* to add
 tags. The tags link your wiki to categories. You can create categories from the
@@ -233,9 +242,66 @@ editor, you can select other assets to associate with the wiki page. And from
 the *Permissions* section, you can set general permissions for accessing and
 acting on the page.
 
-*Publish* your page when you're done editing it. Once you've created a page, the
-edit screen provides you with an *Attachments* section for attaching files to
-the page, via drag and drop or file upload.
+*Publish* your page when you're done editing it. The next time you edit the
+page, the edit screen provides you with an *Attachments* section for attaching
+files to the page, via drag and drop or file upload.
+
+When you're done editing in source view, click *Done*. When you're done editing
+the page, click *Publish*.
+
+We've produced the wiki page shown in the figure below.
+
+![Figure x: The source editor and syntax guide, help you format wiki page headings and text.](../../../images/wiki-page.png)
+
+Did you notice that we added links for pages named *Galaxies*, *Solar Systems*,
+etc, that we haven't yet created? This is a common practice in building
+wikis--you add a link so that someone (maybe you) will then create a page for
+it. The terrific thing is that you can create that new page for the link by
+clicking it. When you click a link to a non-existent page, the new wiki page
+screen appears for you to create the page. This editing screen looks just like
+the one you used previously when you wrote the front page. Liferay displays a
+notice at the top of the page stating that the page does not exist yet, and that
+you are creating it right now. As you can see, it is very easy to create wiki
+pages. All you have to do is create a link from an existing page.
+
++$$$
+
+**Note**: when you create a page by clicking on a link to a page that does not
+yet exist, the new page is **not** a child of the current page. The page is
+created at the front page level of the wiki node. From Wiki in Site
+Administration, you can use the page's Move action to assign it a new parent
+page. Clicking on the *Move* action brings up a window that lets you select a
+new parent page. 
+
+$$$
+
+On exiting the wiki page editor, your brought back to the node's view. It shows
+all of the node's top-level pages. In our case, *FrontPage* is our only
+top-level page. If you navigate to a page that has child pages, its child pages
+are listed. In these page listings, each wiki page's Options icon (![Options](../../../images/icon-actions.png)
+lists the following options.
+
+**Edit**: Opens the wiki page in the wiki page editor.
+
+**Permissions**: Allows you to determine which roles can view, update, delete,
+subscribe to, or set permissions on the page, and add, update, or delete page
+discussions (comments).
+
+**Copy**: Brings up a wiki page editor window with all the content from the
+source wiki page. You're prompted to specify a new title for it.
+
+**Move**: Opens a dialog that enables you to assign the wiki page a new parent
+within the wiki node.
+
+**Subscribe (or Unsubscribe)**: Subscribes to (or unsubscribes from)
+notifications of modifications to the wiki page.
+
+**Move to the Recycle Bin**: Deletes the wiki page from the wiki and moves it to
+the Recycle Bin.
+
+<!-- This is enough on Wiki in site admin. Time to go on site pages. -->
+
+<!-- These should go in application section? -->
 
 The Edit, Details, and Print icons show above each page's content. Clicking the Edit icon
 brings up the edit screen. Clicking the Print icon brings up the browser's page
