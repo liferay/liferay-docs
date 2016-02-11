@@ -1,4 +1,4 @@
-#  Installation and Setup
+#  Installation and Setup [](id=installation-and-setup)
 
 Liferay Portal is one of the most flexible applications on the market today
 with respect to database and application server support. Liferay supports a

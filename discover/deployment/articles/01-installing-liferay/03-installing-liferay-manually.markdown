@@ -1,4 +1,4 @@
-# Installing Liferay Manually
+# Installing Liferay Manually [](id=installing-liferay-manually)
 
 The easiest way to install Liferay is to use a Liferay bundle. However, this is
 not always possible. Some organizations have an existing infrastructure into
@@ -9,7 +9,7 @@ Liferay on an existing application server, the procedure is straightforward.
 Before you get started, note that there are two distinct approaches to managing
 Liferay's data source and mail session. Let's review these options.
 
-## Using Data Sources
+## Using Data Sources [](id=using-data-sources)
 
 Liferay provides two ways to configure your data source:
 
@@ -39,7 +39,7 @@ Manual Configuration section below.
 Since mail sessions are configured similarly to data sources, we'll look at
 them next.
 
-## Using Mail Sessions
+## Using Mail Sessions [](id=using-mail-sessions)
 
 As with databases, you have two ways to configure your mail server:
 
@@ -76,7 +76,7 @@ Liferay Installation documentation for each specific application server also
 includes instructions for configuring your application server to manage
 Liferay's database connection and mail server.
 
-# Manual Configuration
+# Manual Configuration [](id=manual-configuration)
 
 If you want your application server to manage either your database connection
 or mail server (or both), you'll need to manually create this configuration.
@@ -138,7 +138,7 @@ All the instructions above assumed that you wanted to install Liferay Portal at
 the root context of your server. But what if that isn't the case? Next, you'll
 see how to use a different context for Liferay Portal.
 
-# Making Liferay Coexist with Other Java EE Applications
+# Making Liferay Coexist with Other Java EE Applications [](id=making-liferay-coexist-with-other-java-ee-applications)
 
 By default, Liferay Portal is configured to sit at the root (i.e., `/`) of your
 application server. Dedicating your application server to running only Liferay

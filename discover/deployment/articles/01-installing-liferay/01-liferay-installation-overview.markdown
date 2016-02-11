@@ -1,4 +1,4 @@
-# Liferay Installation Overview
+# Liferay Installation Overview [](id=liferay-installation-overview)
 
 Installing Liferay is easy. But before you begin, you should answer a few
 questions.
@@ -15,7 +15,7 @@ installing Liferay.
 
 <!-- Liferay CE vs. EE terminology is changing for Liferay 7. Must update this
 section once terminology has been finalized. -->
-## Editions of Liferay
+## Editions of Liferay [](id=editions-of-liferay)
 
 Liferay ships in two editions: Liferay Community Edition (CE) and Liferay
 Digital Experience Platform (DXP). Frequently updated and bursting with
@@ -81,7 +81,7 @@ Next, let's learn about some differences between Liferay releases.
 
 <!-- This section must be updated for 7.0. CE vs. EE terminology will need to
 change. -->
-## Understanding Liferay's Releases
+## Understanding Liferay's Releases [](id=understanding-liferays-releases)
 
 Which version of Liferay should you install? That's an easy question to answer:
 if this is a new installation, we recommend you install the latest version
@@ -120,7 +120,7 @@ These rules are relaxed when a minor or major release is still in beta quality.
 
 Now let's delve into the evolution of versions.
 
-### Release Process
+### Release Process [](id=release-process)
 
 Each release of Liferay has a surname that specifies its expected quality.  This
 is needed because pre-releases of Liferay look very much like maintenance
@@ -147,7 +147,7 @@ and administration UIs. Here is a description of each surname and what it means:
   testers. These releases are stable and are made available via Liferay's
   Downloads page for CE and on the Customer Portal for EE.
 
-### Liferay Installation Advice
+### Liferay Installation Advice [](id=liferay-installation-advice)
 
 Armed with this information, here's our advice for how to manage your Liferay
 installation.
@@ -185,7 +185,7 @@ The strength of the Liferay community helps detect potential issues early that
 are then reported through the forums and are later fixed in a series of
 maintenance releases.
 
-## Obtaining Liferay Portal
+## Obtaining Liferay Portal [](id=obtaining-liferay-portal)
 
 Anyone can download Liferay Portal from
 [https://www.liferay.com](https://www.liferay.com). Click the *Developers*
@@ -224,7 +224,7 @@ can install Liferay either by using a bundle or by installing it manually on
 your existing application server. Next, we'll go over the steps it takes to
 install Liferay Portal.
 
-## Liferay Installation Steps
+## Liferay Installation Steps [](id=liferay-installation-steps)
 
 Before you begin installing Liferay, You should review these basic installation
 steps:
@@ -251,7 +251,7 @@ steps:
 We'll go through the steps in order, so first we'll look at the Liferay
 database.
 
-## Setting Up Liferay's Database with the Recommended Permissions
+## Setting Up Liferay's Database with the Recommended Permissions [](id=setting-up-liferays-database-with-the-recommended-permissions)
 
 The recommended way of setting up your Liferay database is also the simplest.
 Liferay Portal takes care of just about everything. You only need to take two simple steps:
@@ -278,7 +278,7 @@ database.
 If you will set up Liferay's database with the recommended permissions
 described in this section, you can skip the next section.
 
-## Setting Up Liferay's Database with Restrictive Permissions
+## Setting Up Liferay's Database with Restrictive Permissions [](id=setting-up-liferays-database-with-restrictive-permissions)
 
 **Warning:** The instructions in this section are not ideal for Liferay
 installations. This procedure is documented here so that enterprises with more
@@ -324,7 +324,7 @@ database before you attempt to install them.
 Once you have your database ready, you can install Liferay on your server.
 
 <!-- Check the status of Liferay Marketplace for Liferay 7. Will it still be required? -->
-## Liferay Marketplace
+## Liferay Marketplace [](id=liferay-marketplace)
 
 The Liferay Marketplace is an integral part of the Liferay Portal experience.
 The Marketplace plugin is required to be installed on Liferay Portal. The
@@ -349,7 +349,7 @@ WebSphere) do not support hot deploy. So you may need to deploy the Marketplace
 plugin manually. Depending on your environment's restrictions, you may need to
 follow one or more of the steps below to install the Marketplace plugin.
 
-### Server is Firewalled without Access to the Internet
+### Server is Firewalled without Access to the Internet [](id=server-is-firewalled-without-access-to-the-internet)
 
 Your server might be behind a firewall that prevents access to the Internet. Or
 your security policy might not allow direct download and installation from the
@@ -368,7 +368,7 @@ deploy folder. -->
 <!-- Need to update this link for Liferay 7. -->
 Detailed instructions can be found under [Installing Plugins Manually](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/plugin-management-liferay-portal-6-2-user-guide-14-en).
 
-### Application Server Does Not Support Hot Deploy
+### Application Server Does Not Support Hot Deploy [](id=application-server-does-not-support-hot-deploy)
 
 If your application server does not support hot deploy, you can't leverage
 Liferay's auto deploy feature. You can, however, manually deploy the plugin in
@@ -384,7 +384,7 @@ the plugins right before they are actually deployed to the application server.
 Detailed instructions can be found under
 [Deploy Issues for Specific Containers](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/plugin-management-liferay-portal-6-2-user-guide-14-en).
 
-### Limited Database Access
+### Limited Database Access [](id=limited-database-access)
 
 Some production environments do not have the necessary database permissions for
 Liferay and its plugins to maintain their tables. In these cases:
@@ -402,7 +402,7 @@ the Marketplace plugin--require new tables when deployed. If your environment
 restricts database access, you may need to repeat the above steps whenever you
 deploy a new app to the Liferay Portal.
 
-## Configuring Liferay Portal Security
+## Configuring Liferay Portal Security [](id=configuring-liferay-portal-security)
 
 Liferay Marketplace is an online store for obtaining applications that run on
 the Liferay Portal platform. These applications are provided not only by
@@ -448,7 +448,7 @@ to check PACL-enabled Marketplace apps against their declared permissions.
 
 Next, you'll make sure Liferay is configured properly for your network.
 
-## Choosing IPv4 or IPv6
+## Choosing IPv4 or IPv6 [](id=choosing-ipv4-or-ipv6)
 
 Liferay Portal supports both the IPv4 and IPv6 address formats. By default,
 Liferay uses IPv4 addresses. If you're on an IPv6 network, you'll need to
@@ -470,7 +470,7 @@ simple steps:
 
 Next, let's learn about the folder structure of a Liferay installation.
 
-## Liferay Home
+## Liferay Home [](id=liferay-home)
 
 Liferay Portal uses a special folder called *Liferay Home* to store resources.
 This folder is usually the parent folder of the application server's folder.
@@ -515,7 +515,7 @@ is running Liferay. In this case, the `liferay` folder becomes Liferay Home.
 For example, if the operating system user's name was jbloggs, the Liferay Home
 folder could be `/home/bloggs/liferay` or `C:\Users\jbloggs\liferay`.
 
-# Using Liferay's Setup Wizard
+# Using Liferay's Setup Wizard [](id=using-liferays-setup-wizard)
 
 Liferay's Setup Wizard runs when you start Liferay for the first time. If
 you're installing a Liferay bundle or manually installing Liferay on an
@@ -541,7 +541,7 @@ For the administrator, you need to supply the following information:
 
 **Email:** the email address of the default administrator user
 
-![Figure x: Supply the information for your portal and your portal's default administrator user on the Basic Configuration page.](../../images/basic-configuration1.png)
+![Figure 1: Supply the information for your portal and your portal's default administrator user on the Basic Configuration page.](../../images/basic-configuration1.png)
 
 In addition to these, Liferay also supports a few embedded databases that are
 designed for development. We haven't listed these here because you're setting up
@@ -558,7 +558,7 @@ database, the driver class, and the user credentials (see below). Most of this
 is filled out already; all you should need to do is supply the name of your
 database, the server it's running on, and the database user credentials.
 
-![Figure x: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *lportal* to hold our Liferay data.](../../images/basic-configuration2.png)
+![Figure 2: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *lportal* to hold our Liferay data.](../../images/basic-configuration2.png)
 
 The Basic Configuration page also includes a checkbox labeled *Add Sample
 Data*. If you check this box, sample data is added to Liferay's database. This

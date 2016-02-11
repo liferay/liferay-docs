@@ -1,4 +1,4 @@
-# Installing Liferay on Tomcat 8
+# Installing Liferay on Tomcat 8 [](id=installing-liferay-on-tomcat-8)
 
 If you want a fresh installation of Liferay on Tomcat 8, simply download a
 Liferay Tomcat bundle from
@@ -24,7 +24,7 @@ see the term `$TOMCAT_HOME` used in this guide. `$TOMCAT_HOME` refers to your
 Tomcat server folder. This folder is usually named `tomcat-[version]` or
 `apache-tomcat-[version]`.
 
-## Installing Liferay Dependencies
+## Installing Liferay Dependencies [](id=installing-liferay-dependencies)
 
 Liferay depends on many JARs that are included in the Liferay Tomcat bundle.
 Some JARs in the bundle are not strictly required but can still be useful. If
@@ -71,7 +71,7 @@ third-parties, as described below.
    files. If you're working with a bundle, you can simply copy the `osgi`
    folder from your bundle to your Liferay Home folder.
 
-## Tomcat Configuration
+## Tomcat Configuration [](id=tomcat-configuration)
 
 Next, you need to configure Tomcat for running Liferay.
 
@@ -193,7 +193,7 @@ servlet container.
 
     This command makes the shell scripts in Tomcat's `bin` folder executable.
 
-## Tomcat Database Configuration
+## Tomcat Database Configuration [](id=tomcat-database-configuration)
 
 The easiest way to handle your database configuration is to let Liferay manage
 your data source. If you want to use Liferay's built-in data source, you can
@@ -231,7 +231,7 @@ and credentials.
 Your Tomcat managed data source is now configured. Next, let's consider your
 mail session.
 
-## Tomcat Mail Configuration
+## Tomcat Mail Configuration [](id=tomcat-mail-configuration)
 
 As with database configuration, the easiest way to handle mail configuration is
 to let Liferay handle your mail session. If you want to use Liferay's built-in
@@ -268,7 +268,7 @@ sure to replace the example mail session values with your own.
 Your mail session is configured. Next, you'll make sure Liferay can 
 access your mail session and database.
 
-## Configuring Tomcat-managed Database and Mail Sessions
+## Configuring Tomcat-managed Database and Mail Sessions [](id=configuring-tomcat-managed-database-and-mail-sessions)
 
 In this section, you'll specify appropriate properties for connecting to your
 database and mail session.
@@ -298,7 +298,7 @@ database and mail session.
 It's just that easy! Before you deploy Liferay Portal, you should configure
 Portal Access Control Language (PACL) with Liferay on Tomcat.
 
-## Enabling PACL
+## Enabling PACL [](id=enabling-pacl)
 
 To enable PACL, you need to enable Tomcat's security manager. In the Tomcat
 Configuration section above, you already added the required permissions to the
@@ -329,7 +329,7 @@ Tomcat reports the message `Using Security Manager` to your terminal.
 
 Now you have PACL enabled and configured for your portal.
 
-## Adding Mojarra
+## Adding Mojarra [](id=adding-mojarra)
 
 If you'd like to use JSF applications in your Tomcat application server, you'll
 need to add Mojarra. If you do not plan on using JSF applications in your
@@ -464,7 +464,7 @@ Tomcat, visit the
 [Configuring JSF Portlets to Use CDI](/develop/tutorials/-/knowledge_base/6-2/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
 section.
 
-## Deploying Liferay
+## Deploying Liferay [](id=deploying-liferay)
 
 Now you're ready to deploy Liferay using your Liferay WAR file.
 
