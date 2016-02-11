@@ -49,7 +49,7 @@ administration screen appears. This screen allows you to add, modify, and delete
 wikis. A Wiki application instance (wiki instance) can contain many wikis (wiki
 nodes). By default, it contains one node, called *Main*.
 
-![Figure x: The Wiki application instance has a wiki node named *Main* with a single front page. You can build on the Main node or create a new node.](../../../images/wiki-admin-empty.png)
+![Figure x: The Wiki application instance has a wiki node named *Main* with a single front page. You can build on the Main node or click the Add icon to start creating a new node.](../../../images/wiki-admin-empty.png)
 
 Before we start adding to our site's wiki instance, let's configure it the way
 we want it. The instance's interfaces for permissions, export and import,
@@ -81,8 +81,6 @@ From the *Options* menu, select *Permissions*. If you've created a specific role
 for creating wiki nodes, you can select the check box in the *Add Node* column
 and then click *Save*, and that role will be able to create new wiki nodes in
 this wiki instance. 
-
-![Figure x: You can configure email messages and RSS feeds for users to stay informed with your wiki instance.](../../../images/wiki-admin-configure-email.png)
 
 Now that we're done configuring our site's Wiki app instance, it's time to start
 working with a wiki node (or wiki). Let's create a wiki node called *Space Wiki*
@@ -223,7 +221,7 @@ the page, click *Publish*.
 
 We've produced the wiki page shown in the figure below.
 
-![Figure x: The source editor and syntax guide, help you format wiki page headings and text.](../../../images/wiki-page.png)
+![Figure x: The Wiki's WYSIWYG editor helps you create attractive wiki pages.](../../../images/wiki-page.png)
 
 Did you notice that we added links for pages named *Galaxies*, *Solar Systems*,
 etc, that we haven't yet created? This is a common practice in building
@@ -307,6 +305,8 @@ The Wiki application works just like the other Liferay apps. Open the Add menu
 by clicking the *Add* icon (![Add](../../../images/icon-control-menu-add.png)).
 In the menu, navigate to *Applications &rarr; Wiki* and then click on *Wiki
 Add*.
+
+![Figure x: Users can interact with your Wiki nodes when you add the Wiki application to a page.](../../../images/wiki-page-full.png)
 
 To view the Wiki application's configuration options, select *Options &rarr;
 Configuration*. The Wiki app's Configuration screen appears and has several
