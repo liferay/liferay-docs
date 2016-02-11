@@ -171,93 +171,109 @@ do this, follow these steps:
 
 4.  Override
     [`BaseViewModel`](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/base/view/BaseViewModel.java)'s
-    methods `showStartOperation`, `showFinishOperation`, and
-   `showFailedOperation`. In these methods, you can log what's happening in your
-    Screenlet. 
+    methods `showStartOperation`, `showFinishOperation`, `showFailedOperation`, 
+    `getScreenlet`, and `setScreenlet`. In the `show*Operation` methods, you can 
+    log what happens in your Screenlet when the server operation starts, 
+    finishes successfully, or fails, respectively. In the `getScreenlet` and 
+    `setScreenlet` methods, you must get and set the `BaseScreenlet` variable 
+    `_screenlet`, respectively. This ensures that the View always has a 
+    Screenlet reference. 
 
 As an example View class, here's the Add Bookmark Screenlet's
 [`AddBookmarkView`](https://github.com/liferay/liferay-screens/blob/master/android/samples/addbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/bookmark/view/AddBookmarkView.java)
 class:
 
-	package com.liferay.mobile.screens.bookmark.view;
+    package com.liferay.mobile.screens.bookmark.view;
 
-	import android.content.Context;
-	import android.util.AttributeSet;
-	import android.view.View;
-	import android.widget.Button;
-	import android.widget.EditText;
-	import android.widget.LinearLayout;
+    import android.content.Context;
+    import android.util.AttributeSet;
+    import android.view.View;
+    import android.widget.Button;
+    import android.widget.EditText;
+    import android.widget.LinearLayout;
 
-	import com.liferay.mobile.screens.bookmark.AddBookmarkScreenlet;
-	import com.liferay.mobile.screens.bookmark.R;
-	import com.liferay.mobile.screens.util.LiferayLogger;
-	import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
+    import com.liferay.mobile.screens.base.BaseScreenlet;
+    import com.liferay.mobile.screens.bookmark.AddBookmarkScreenlet;
+    import com.liferay.mobile.screens.bookmark.R;
+    import com.liferay.mobile.screens.util.LiferayLogger;
+    import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 
-	public class AddBookmarkView extends LinearLayout implements AddBookmarkViewModel, View.OnClickListener {
+    public class AddBookmarkView extends LinearLayout implements AddBookmarkViewModel, View.OnClickListener {
 
-		public AddBookmarkView(Context context) {
-			super(context);
-		}
+        public AddBookmarkView(Context context) {
+            super(context);
+        }
 
-		public AddBookmarkView(Context context, AttributeSet attributes) {
-			super(context, attributes);
-		}
+        public AddBookmarkView(Context context, AttributeSet attributes) {
+            super(context, attributes);
+        }
 
-		public AddBookmarkView(Context context, AttributeSet attributes, int defaultStyle) {
-			super(context, attributes, defaultStyle);
-		}
+        public AddBookmarkView(Context context, AttributeSet attributes, int defaultStyle) {
+            super(context, attributes, defaultStyle);
+        }
 
-		@Override
-		public void showStartOperation(String actionName) {
-	
-		}
+        @Override
+        public void showStartOperation(String actionName) {
 
-		@Override
-		public void showFinishOperation(String actionName) {
-			LiferayLogger.i("Add bookmark successful");
-		}
+        }
 
-		@Override
-		public void showFailedOperation(String actionName, Exception e) {
-			LiferayLogger.e("Could not add bookmark", e);
-			LiferayCrouton.error(getContext(), "Could not add bookmark", e);
-		}
+        @Override
+        public void showFinishOperation(String actionName) {
+            LiferayLogger.i("Add bookmark successful");
+        }
 
-		public void onClick(View v) {
-			AddBookmarkScreenlet screenlet = (AddBookmarkScreenlet) getParent();
+        @Override
+        public void showFailedOperation(String actionName, Exception e) {
+            LiferayLogger.e("Could not add bookmark", e);
+            LiferayCrouton.error(getContext(), "Could not add bookmark", e);
+        }
+        
+        @Override
+        public BaseScreenlet getScreenlet() {
+            return _screenlet;
+        }
 
-			screenlet.performUserAction();
-		}
+        @Override
+        public void setScreenlet(BaseScreenlet screenlet) {
+            _screenlet = screenlet;
+        }
 
-		public String getURL() {
-			return _urlText.getText().toString();
-		}
+        public void onClick(View v) {
+            AddBookmarkScreenlet screenlet = (AddBookmarkScreenlet) getParent();
 
-		public void setURL(String value) {
-			_urlText.setText(value);
-		}
+            screenlet.performUserAction();
+        }
 
-		public String getTitle() {
-			return _titleText.getText().toString();
-		}
+        public String getURL() {
+            return _urlText.getText().toString();
+        }
 
-		public void setTitle(String value) {
-			_titleText.setText(value);
-		}
+        public void setURL(String value) {
+            _urlText.setText(value);
+        }
 
-		protected void onFinishInflate() {
-			super.onFinishInflate();
+        public String getTitle() {
+            return _titleText.getText().toString();
+        }
 
-			_urlText = (EditText) findViewById(R.id.url);
-			_titleText = (EditText) findViewById(R.id.title_bookmark);
+        public void setTitle(String value) {
+            _titleText.setText(value);
+        }
 
-			Button addButton = (Button) findViewById(R.id.add_button);
-			addButton.setOnClickListener(this);
-		}
+        protected void onFinishInflate() {
+            super.onFinishInflate();
+
+            _urlText = (EditText) findViewById(R.id.url);
+            _titleText = (EditText) findViewById(R.id.title_bookmark);
+
+            Button addButton = (Button) findViewById(R.id.add_button);
+            addButton.setOnClickListener(this);
+        }
 
         private EditText _urlText;
         private EditText _titleText;
-	}
+        private BaseScreenlet _screenlet;
+    }
 
 Now you're ready to create your Screenlet's Interactor class.
 
