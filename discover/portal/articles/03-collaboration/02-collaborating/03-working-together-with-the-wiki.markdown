@@ -299,21 +299,44 @@ notifications of modifications to the wiki page.
 **Move to the Recycle Bin**: Deletes the wiki page from the wiki and moves it to
 the Recycle Bin.
 
-<!-- This is enough on Wiki in site admin. Time to go on site pages. -->
+Each of the pages has a check box you can select. When you select a page's check
+box, an Info icon (![Info](../../../images/icon-information.png)) and Recycle
+Bin icon (![Recycle Bin](../../../images/icon-trash.png) appear in the top
+corner above the page list. To move the selected page to the Recycle Bin, click
+the Recycle Bin icon. To get additional information about the page, click the
+Info icon. The information menu provides a Star icon that you can select to
+subscribe to the page's modifications. The menu's Details section displays the
+page's Create Date and Last Modified date. 
 
-<!-- These should go in application section? -->
+When you select multiple pages by selecting individual page check boxes or the Select All
+check box in the tool bar, the Info icon and Recycle Bin icon appear. They give
+you the node's page count and let you move multiple pages to the Recycle Bin.
 
-The Edit, Details, and Print icons show above each page's content. Clicking the Edit icon
-brings up the edit screen. Clicking the Print icon brings up the browser's page
-printing window. Between these two options is the Details option, which we'll
-explore next.
+There are several more features in the node view toolbar. The *Order by:...*
+menu allows you to order the pages by title or modification date. Next to that,
+the arrows let you arrange the pages in ascending or descending order. 
+
+The display style options are next to the Info icon. To list the pages using a
+descriptive display style, click the *Descriptive* icon
+(![Descriptive](../../../images/icon-descriptive-style.png)). To list the pages
+using a list display style, click the *List* icon
+(![List](../../../images/icon-list-style.png)). 
+
+![Figure x: The Wiki Pages view in site administration has features that help you access and learn information about a wiki node's pages.](../../../images/wiki-node-view-in-admin.png)
+
+As far as the other aspects of the Wiki application interface, we'll cover them
+as we use the Wiki application on a site page. Let's go to your site by clicking
+*Go to Site* and then close the product menu by clicking its icon
+(![Menu](../../../images/icon-menu.png)). 
 
 ## Using the Wiki Applications on Site Pages
 
 The Wiki application works just like the other Liferay apps. Open the Add menu
 by clicking the *Add* icon (![Add](../../../images/icon-control-menu-add.png)).
 In the menu, navigate to *Applications &rarr; Wiki* and then click on *Wiki
-Add*. To configuration the Wiki app, click on its *Options* icon
+Add*. 
+
+To configure the Wiki app, click on its *Options* icon
 (![Options](../../../images/icon-app-options.png)) and select *Configuration*.
 It displays options you're likely to be familiar with such as the tab for sharing
 the application with websites, Facebook, Google Gadgets, etc. You will also
@@ -350,13 +373,20 @@ parameter of the other app.
 
 Once you set the options the way you want them, click *Save*.
 
-## Page Details
+<!-- Add more stuff here? -->
+
+The Edit, Details, and Print icons show above each page's content. Clicking the Edit icon
+brings up the edit screen. Clicking the Print icon brings up the browser's page
+printing window. Between these two options is the Details option, which we'll
+explore next.
+
+###  Page Details
 
 When viewing a page, you can view its details by clicking the *Details* icon
 above the page content. Several tabs appear, to give you access to several
 categories of information about the page. 
 
-### Details
+#### Details
 
 The Details tab shows various statistics about the page, and also allows you to
 perform some actions on the page.
@@ -386,7 +416,7 @@ unsubscribe from modifications notifications for the page and the entire wiki no
 the page, make a copy of the page, move (rename) the page, or move the page to
 the recycle bin.
 
-### History
+#### History
 
 The History tab lets you access the page's activities and versions. Its
 *Activities* tab lists actions performed on the page. Each activity has shows an
@@ -402,13 +432,13 @@ created. You can revert a page back to a previous state by clicking the *Revert*
 compare the differences between versions by selecting two versions and then
 clicking the *Compare Versions* button.
 
-### Incoming/Outgoing Links
+#### Incoming/Outgoing Links
 
 The next two tabs are list incoming and outgoing links. These are wiki links to
 and from the page. You can use this tab to examine how this page links to other
 pages and how other pages link back to this page.
 
-### Attachments
+#### Attachments
 
 The *Attachments* tab lists the name and size of each file attached to the page.
 You can attach any file to the wiki. Image files are the most common type of
