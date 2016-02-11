@@ -387,7 +387,7 @@ In order to use the Module Configuration API, you need to
     Remember not to confuse an OSGi service with Liferay service. A Liferay
     service is also known as a Liferay API.
 
-## Specifying the Scope of the Configuration
+## Specifying the Scope of the Configuration [](id=specifying-the-scope-of-the-configuration)
 
 The `ExtendedObjectClassDefinition` annotation allows you to specify the scope
 of the configuration. This should match how the configuration object is
