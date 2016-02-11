@@ -97,11 +97,8 @@ node.
 
 ![Figure x: The New Wiki Node screen lets you describe your new node and set view permissions and permissions for Guest and Site Member roles.](../../../images/wiki-new-wiki-node.png)
 
-
-When you create a new wiki node, it appears in a list at
-the top of the main page of the Wiki app.
-
-<!-- Decide where to mention the wiki options listed below -->
+You're brought back to the Wiki instance view. Your new wiki node accompanies
+the Main node in the list of this wiki instance's nodes. 
 
 Next to each wiki in the list of wikis is an *Options* icon [Options](../../../images/icon-app-options.png).
 Here are the wiki node options:
@@ -144,31 +141,6 @@ Page* workflow from within the Product Menu, by navigating to *Configuration
 refer to [Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow).
 
 Next, let's create our wiki node's front page. 
-
-<!--
-
-To view the Wiki application's configuration options, select *Options &rarr;
-Configuration*. The Wiki app's Configuration screen appears. 
-
-The *Email From*, *Page Added Email*, and *Page Updated Email* tabs are similar
-to the ones for notification email settings for other apps, allowing you to
-customize who wiki emails come from and the format and text of the email that
-is sent when a page is added or updated.
-
-Finally, the Wiki portlet also supports RSS feeds as the other collaboration
-apps do, and you can configure its options in the *RSS* tab.
-
-The *Setup* tab lets you choose wikis to display and gives you several options
-for displaying them. The *Enable Related Assets*, *Enable Page Ratings*, *Enable
-Comments*, and *Enable Comment Ratings* check boxes let you enable or disable
-those features for the Wiki app. They give you the ability to set how you want
-users to interact with wiki documents: a little, a lot, or not at all. The
-*Display Template* drop-down option lets you choose the application display
-template for the app. Below this, you can set which wikis (wiki nodes) are
-visible in the Wiki and which are hidden. You might host two wikis on a given
-site, exposing one to the public and keeping the other private for site members.
-
--->
 
 ## Adding and Editing Wiki Pages [](id=adding-and-editing-wiki-pages)
 
@@ -334,21 +306,31 @@ as we use the Wiki application on a site page. Let's go to your site by clicking
 The Wiki application works just like the other Liferay apps. Open the Add menu
 by clicking the *Add* icon (![Add](../../../images/icon-control-menu-add.png)).
 In the menu, navigate to *Applications &rarr; Wiki* and then click on *Wiki
-Add*. 
+Add*.
 
-To configure the Wiki app, click on its *Options* icon
-(![Options](../../../images/icon-app-options.png)) and select *Configuration*.
-It displays options you're likely to be familiar with such as the tab for sharing
-the application with websites, Facebook, Google Gadgets, etc. You will also
-notice that the communication tab has some additional options not seen in the
-other portlets.
+To view the Wiki application's configuration options, select *Options &rarr;
+Configuration*. The Wiki app's Configuration screen appears and has several
+tabs.
 
-Figure x: For each of the public parameters in this app, it is possible to ignore the values coming from other portlets or to read the value from another parameter.
+**Setup**: Lets you choose wikis to display and gives you several options for
+displaying them. The *Enable Related Assets*, *Enable Page Ratings*, *Enable
+Comments*, and *Enable Comment Ratings* check boxes let you enable or disable
+those features for the Wiki app. They give you the ability to set how you want
+users to interact with wiki documents: a little, a lot, or not at all. The
+*Display Template* drop-down option lets you choose the application display
+template for the app. Below this, you can set which wikis (wiki nodes) are
+visible in the Wiki and which are hidden. You might host two wikis on a given
+site, exposing one to the public and keeping the other private for site members.
 
-The communication tab of the configuration window allows you to configure
-communication across portlets, using predefined public render parameters. From
-here you can modify six public render parameters: categoryId, nodeId, nodeName,
-resetCur, tag, and title. For each parameter you can:
+**Permissions**: Enables you to grant or revoke privileges for roles to edit the
+Wiki application's preferences, configure it, access its permissions, view the
+Wiki application's contents, add display templates for it, or add the
+application to a page.
+
+**Communication**: Allows you to configure communication across portlets, using
+predefined public render parameters. From here you can modify six public render
+parameters: categoryId, nodeId, nodeName, resetCur, tag, and title. For each
+parameter you can:
 
 -   Ignore the values for this parameter that come from other portlets. For
     example, the wiki app can be used along with the tags navigation
@@ -371,30 +353,78 @@ being browsed through in the other app. You can do this here for the wiki
 by setting the value for the title parameter to be read from the country
 parameter of the other app.
 
-Once you set the options the way you want them, click *Save*.
+**Sharing**: Displays options you're likely to be familiar with such as the tab
+for sharing the application with websites, Facebook, and NetVibes.
 
-<!-- Add more stuff here? -->
+**Scope**: Allows you to select the Wiki application of a particular scope to
+display. You can select the site scoped or global scoped instance, or select or
+create an instance for the page. If the page doesn't already have an instance
+scoped to it, you can click on the *[page name] (Create New)* menu option to
+create a page scoped instance.
 
-The Edit, Details, and Print icons show above each page's content. Clicking the Edit icon
-brings up the edit screen. Clicking the Print icon brings up the browser's page
-printing window. Between these two options is the Details option, which we'll
-explore next.
+![Figure x: Here the user has selected to create a new Wiki application instance scoped to the current page named *My Wiki*](../../../images/wiki-app-configuration-scope.png)
 
-###  Page Details
+Once you set the application's configuration options the way you want them,
+click *Save*.
+
+Along with the Configuration option, the Wiki application's options menu lists
+all of the standard application options that enable you to specify the app's
+look and feel, export the app's setup, import an existing setup for the app,
+minimize or maximize the app in the browser, and remove the app from the page.
+
+The Wiki application displays links to all of the Wiki application instance's
+wiki nodes and provides links which allow you to navigate around the wiki.
+Simply click on a wiki node's name to begin browsing that wiki. Listed after
+links to the wiki nodes are several navigation links:
+
+**Recent Changes**: takes you to a page which shows all of the recently updated
+pages.
+
+**All Pages**: takes you to a flat, alphabetical list of all pages currently
+stored in the wiki.
+
+**Orphan Pages**: takes you to a list of pages that have no links to them. This
+can happen if you take a page link out of a wiki page in an edit without
+realizing it's the only link to that page. This area allows you to review wiki
+pages that are orphaned in this way so that you can re-link to them or delete
+them from the wiki if they are no longer relevant.
+
+**Draft Pages**: takes you to a list of pages which have not yet been published.
+Users can edit pages and save their changes as drafts. They can come back later
+to finish their page changes and publish them once they've been approved.
+
+**Search**: allows you to a search for pages matching a term. If no matches are
+found for the term, a link will be displayed which allows you to create a new
+wiki page named after that term.
+
+![Figure x: If a wiki doesn't have a page matching the topic you're looking for, it gives you the option to create a page named for the topic.](../../../images/wiki-search.png)
+
+The current wiki page's content shows in the application's main viewing area.
+Several features display below the wiki page content, depending on which
+features are enabled for the application. The *+ Add Child Page* link let's you
+add a wiki page as a child of the current page. A view counter displays the view
+count. Ratings and Comments controls display if they're enabled.
+
+The Edit, Details, and Print icons show above each page's content. Clicking the
+Edit icon brings up the edit screen. Clicking the Print icon brings up the
+browser's page printing window. Between these two options is the Details option,
+which we'll explore next.
+
+## Page Details
 
 When viewing a page, you can view its details by clicking the *Details* icon
 above the page content. Several tabs appear, to give you access to several
-categories of information about the page. 
+categories of information about the page.
 
-#### Details
+### Details
 
 The Details tab shows various statistics about the page, and also allows you to
 perform some actions on the page.
 
 **Title**: displays the page title.
 
-**Format**: displays the format for the page -- either Creole, HTML, 
-MediaWiki, or plain text.
+**Format**: displays the format for the page -- either Creole, HTML, MediaWiki,
+or plain text.
 
 **Latest Version**: displays the latest version of the page. The wiki portlet
 automatically keeps track of page versions whenever a page has been edited.
@@ -405,40 +435,42 @@ automatically keeps track of page versions whenever a page has been edited.
 
 **Attachments**: displays the number of attachments to the page.
 
-**RSS Subscription**: displays an icon that opens a new page where you can subscribe to an RSS feed using Live
-Bookmarks, Yahoo, Microsoft Outlook, or an application you can choose from your
-machine.
+**RSS Subscription**: displays an icon that opens a new page where you can
+subscribe to an RSS feed using Live Bookmarks, Yahoo, Microsoft Outlook, or an
+application you can choose from your machine.
 
 **Email Subscription**: contains links allowing you to subscribe to or
-unsubscribe from modifications notifications for the page and the entire wiki node. 
+unsubscribe from modifications notifications for the page and the entire wiki
+node.
 
 **Advanced Actions**: displays icons allowing you to modify the permissions on
 the page, make a copy of the page, move (rename) the page, or move the page to
 the recycle bin.
 
-#### History
+### History
 
 The History tab lets you access the page's activities and versions. Its
 *Activities* tab lists actions performed on the page. Each activity has shows an
 icon that represents the type of action, the name of the user, the actions
 description, date, and an options icon to revert the action. For example, if
-user Jane Doe attached file `sunset.jpg` to the page, 
-then the activity would show an Attachment icon (![Attachment](../../../images/icon-paper-clip.png)), this text
-*Jane Doe added the attachment `sunset.jpg`.*, the action date, and an options
-icon to remove the attachment. 
+user Jane Doe attached file `sunset.jpg` to the page, then the activity would
+show an Attachment icon (![Attachment](../../../images/icon-paper-clip.png)),
+this text *Jane Doe added the attachment `sunset.jpg`.*, the action date, and an
+options icon to remove the attachment. 
 
 The *Versions* tab lists all of the versions of the wiki page since it was
-created. You can revert a page back to a previous state by clicking the *Revert* icon (![Revert](../../../images/icon-revert.png)). You can also
-compare the differences between versions by selecting two versions and then
-clicking the *Compare Versions* button.
+created. You can revert a page back to a previous state by clicking the *Revert*
+icon (![Revert](../../../images/icon-revert.png)). You can also compare the
+differences between versions by selecting two versions and then clicking the
+*Compare Versions* button.
 
-#### Incoming/Outgoing Links
+### Incoming/Outgoing Links
 
 The next two tabs are list incoming and outgoing links. These are wiki links to
 and from the page. You can use this tab to examine how this page links to other
 pages and how other pages link back to this page.
 
-#### Attachments
+### Attachments
 
 The *Attachments* tab lists the name and size of each file attached to the page.
 You can attach any file to the wiki. Image files are the most common type of
@@ -446,42 +478,70 @@ file attached to a page. Referencing them using the proper WikiCreole syntax
 renders the image inline, which is a nice way to include illustrations in your
 wiki documents.
 
-## Navigating in the Wiki
+As you've seen, Liferay's Wiki application is chock-full of features that help
+you create, maintain, and consume wiki pages. In addition to the Wiki
+application there are several other applications that supplement it. You'll
+learn about them next.
 
-Above the wiki's content are links which allow you to navigate around
-the wiki. Simply click on the wiki's name to begin browsing that wiki. After
-this is a set of navigation links:
+## Supplemental Wiki Applications
 
-**Recent Changes**: takes you to a page which shows all of the recently updated
-pages.
+The applications that accompany the Wiki application help you display particular
+wiki nodes and navigate them. To use them on a page, click the *Add* icon
+(![Add](../../../images/icon-control-menu-add.png)), navigate to *Applications
+&rarr; Wiki*, and either click *Add* next to the application you want or drag it
+onto the page. 
 
-**All Pages**: takes you to a flat, alphabetical list of all pages currently
-stored in the wiki.
+We'll explore the Wiki Display first. 
 
-**Orphan Pages**: takes you to a list of pages that have no links to them. This
-can happen if you take a page link out of a wiki page in an edit without realizing
-it's the only link to that page. This area allows you to review wiki pages
-that are orphaned in this way so that you can re-link to them or delete them
-from the wiki if they are no longer relevant.
+### Wiki Display
 
-**Draft Pages**: takes you to a list of pages which have not yet been
-published. Users can edit pages and save their changes as drafts. They can come
-back later to finish their page changes and publish them once they've been
-approved.
+The Wiki Display application enables you to focus user attention to one wiki
+node. From the *Setup* tab its *Configuration* page (access by clicking the
+app's Options icon ![Options](../../../images/icon-app-options.png) and
+selecting *Configuration*), set the *Node* you want to display and click *Save*;
+then select a *Page* in that node that you want to display. This page provides
+the gateway into the wiki node. 
 
-**Search**: allows you to a search for pages matching a term. If no matches
-are found for the term, a link will be 
-displayed which allows you to create a new wiki page named after that term.
+![Figure x: The Wike Display lets users explore a wiki node, starting from one of its pages--the front page, typically.](../../../images/wiki-display-configuration-setup.png)
 
-![Figure x: If a wiki doesn't have a page matching the topic you're looking for, it gives you the option to create a page named for the topic.](../../../images/wiki-search.png)
+The configuration options and user interface for the Wiki Display is almost
+identical to that of the Wiki application. 
 
-The Wiki portlet is another full-featured Liferay application with all of the
-features you expect from a state of the art wiki. 
+To help users navigate the wikis in a page's Wiki Display or Wiki applications,
+you can use the Tree Menu app. 
 
+### Tree Menu
 
-<!--
-Wiki Display is for displaying a single wiki (wiki node). 
+The Tree Menu application displays a wiki's hierarchy of pages as a tree. It
+lets you navigate all of a wiki's pages. Much like Wiki Display setup, you
+configure it to a wiki node. In addition, you can configure how deep in the page
+hierarchy to go. You can set the *Depth* to a value from 1 to 5, or select *All*
+to allow navigation to all of the wiki node's pages. 
 
-Tree Menu displays a wiki's hierarchy of pages as a tree. It lets you navigate
-all of a wiki's pages. 
--->
+In the Tree Menu, folder icons represent parent wiki pages and document icons
+represent child wiki pages at the end of the nodes. When you clickn on a parent
+wiki page or child wiki page icon, the respective wiki page is shown in the Wiki
+application or Wiki Display on the same page. 
+
+![Figure x: When you select a element in the Tree Menu application, the respective page shows in your page's Wiki application or Wiki Display.](../../../images/wiki-tree-menu.png)
+
+There's even a Page Menu application that presents a wiki page's outgoing links. 
+
+### Page Menu
+
+The Page Menu lets you display a wiki page's outgoing links. It answers the
+question, "What wiki pages can I access from [some page]?" As with the Tree Menu
+and Wiki Display applications, you specify a wiki node and wiki page on which
+the Page Menu application operates. 
+
+![Figure x: The Page Menu application displays all of a wiki page's outgoing links to other wiki pages.](../../../images/wiki-page-menu.png)
+
+When you click on a page menu link, the page's Wiki or Wiki Display application
+displays the wiki page associated with the link. 
+
+## Summary
+
+<!-- Add more to this summary and add transition. Jim -->
+
+Liferay's Wiki application is another full-featured Liferay application with all of the
+features and sub-applications you expect from a state of the art wiki. 
