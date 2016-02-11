@@ -154,19 +154,15 @@ public class CheckImagesTaskDevSite extends Task {
 		Set<File> articles = imagePathsMap.keySet();
 
 		// Report missing images
-
 		Set<String> missingImages = new HashSet<String>();
 
 		for (File article : articles) {
-
 			List<String> imagePathsList = imagePathsMap.get(article);
 
 			for (String imagePath : imagePathsList) {
-
 				String imageFileName = getFileName(imagePath);
 
 				if (!imageNames.contains(imageFileName)) {
-
 					StringBuilder sb = new StringBuilder();
 					sb.append(article.getName());
 					sb.append(": References missing image: ");
@@ -187,25 +183,20 @@ public class CheckImagesTaskDevSite extends Task {
 		}
 		
 		// Report faulty image paths 
-		
 		for (File article : articles) {
 			String parentPath = article.getParent();
 			
 			List<String> imagePathsList = imagePathsMap.get(article);
 			
 			for (String imagePath : imagePathsList) {
-
 				if (missingImages.contains(imagePath)) {
-
 					// Already reported as missing
-
 					continue;
 				}
 
 				File image = new File(parentPath + "/" + imagePath);
 				
 				if (!image.exists() || image.isDirectory()) {
-
 					StringBuilder sb = new StringBuilder();
 					sb.append(article.getName());
 					sb.append(": Faulty image path: ");
