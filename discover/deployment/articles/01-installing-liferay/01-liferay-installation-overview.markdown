@@ -522,8 +522,9 @@ you're installing a Liferay bundle or manually installing Liferay on an
 existing application server, please refer to the appropriate documentation and
 then come back here. Once you've started Liferay, come back here. To make it
 easy to configure Liferay, the first thing you see when browsing to your newly
-installed Liferay bundle is a setup wizard. This gives you a convenient way to
-make an initial Liferay configuration.
+installed Liferay bundle is a setup wizard. The title of the setup wizard page
+is Basic Configuration. This page provides a convenient way to make an initial
+Liferay configuration.
 
 There are three sections of the wizard: the portal, the administrator and the
 database. For the portal, you need to supply the following information:
@@ -540,7 +541,7 @@ For the administrator, you need to supply the following information:
 
 **Email:** the email address of the default administrator user
 
-![Figure x: Supply the information for your site and your site's default administrator user in the setup wizard.](../../images/setup-wizard-1.png)
+![Figure x: Supply the information for your portal and your portal's default administrator user on the Basic Configuration page.](../../images/basic-configuration1.png)
 
 In addition to these, Liferay also supports a few embedded databases that are
 designed for development. We haven't listed these here because you're setting up
@@ -557,7 +558,7 @@ database, the driver class, and the user credentials (see below). Most of this
 is filled out already; all you should need to do is supply the name of your
 database, the server it's running on, and the database user credentials.
 
-![Figure x: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *lunar_resort* to hold our Liferay data.](../../images/setup-wizard-2.png)
+![Figure x: Fill out the information for your database. We've chosen MySQL in this example and have created a database called *lportal* to hold our Liferay data.](../../images/basic-configuration2.png)
 
 The Basic Configuration page also includes a checkbox labeled *Add Sample
 Data*. If you check this box, sample data is added to Liferay's database. This
