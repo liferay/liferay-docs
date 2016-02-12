@@ -45,12 +45,12 @@ facelet file `/preferences.xhtml` as the view, by mapping it to the
 Terrific! You're now familiar with specifying and using portlet preferences in
 your JSF portlet. 
 
-**Related Topics**
+## Related Topics [](id=related-topics)
 
-[Localizing JSF Portlets](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/localizing-jsf-portlets)
+[Localizing JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/localizing-jsf-portlets)
 
-[Liferay Faces Alloy UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)

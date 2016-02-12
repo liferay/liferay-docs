@@ -231,6 +231,6 @@ Congratulations!
 
 ## Related Topics [](id=related-topics)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
 
-[Specifying the portlet.xml file for Your JSF Portlet](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/specifying-the-portlet-xml-file-for-your-jsf-portlet)
+[Specifying the portlet.xml file for Your JSF Portlet](/develop/tutorials/-/knowledge_base/6-2/specifying-the-portlet-xml-file-for-your-jsf-portlet)
