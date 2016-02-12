@@ -8,7 +8,7 @@ Portal pages. Here are the places in which you can add a portlet:
   of a theme with `$theme.runtime()` 
 - Inside a [layout template](http://www.liferay.com/community/wiki/-/wiki/Main/Add+runtime+portlets+to+a+layout)
   with `$processor.processPortlet()` 
-- Inside a  with `<liferay-portlet:runtime />` 
+- Inside a JSP with `<liferay-portlet:runtime />` 
 
 Unfortunately, as described in
 [FACES-244](http://issues.liferay.com/browse/FACES-244), dynamically adding JSF
