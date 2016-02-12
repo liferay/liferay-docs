@@ -40,18 +40,16 @@ now, let's start using your site's Wiki application instance.
 ## Getting Started with Wikis [](id=getting-started-with-wikis)
 
 The product menu provides the best place to start working with your wikis. To
-start working with wikis for your site, page, or global scope, click on the
-*Product Menu* icon (![Menu](../../../images/icon-menu.png)), then navigate to
-your site, or global the global scope via the scope menu
-(![Scope](../../../images/icon-compass.png)), and select the *Content* section.
-If you are updating and existing page-scoped wiki application instance you can
-select that page scope from the scope menu that the Gear icon
-(![Gear](../../../images/icon-control-menu-gear.png)) makes available. The
-site's wiki application instance is available in the Default Scope. Once you're
-in the proper content scope click on *Wiki*. The Wiki administration screen
-appears. This screen allows you to add, modify, and delete wiki nodes. A Wiki
-application instance can contain many wiki nodes. By default, it contains one
-node, called *Main*.
+start working with wikis for your site, click on the *Product Menu* icon
+(![Menu](../../../images/icon-menu.png)), navigate to your site, and select
+the *Content* section. If you are updating and existing page-scoped wiki
+application instance you can select that page scope from the scope menu that the
+Gear icon (![Gear](../../../images/icon-control-menu-gear.png)) makes available.
+The site's wiki application instance is available in the Default Scope. Once
+you're in the proper content scope click on *Wiki*. The Wiki administration
+screen appears. This screen allows you to add, modify, and delete wiki nodes. A
+Wiki application instance can contain many wiki nodes. By default, it contains
+one node, called *Main*.
 
 ![Figure 1: The Wiki application instance has a wiki node named *Main* with a single front page. You can build on the Main node or click the Add icon to create a new node.](../../../images/wiki-admin-empty.png)
 
