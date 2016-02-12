@@ -15,8 +15,8 @@ starting point for your own project.
 Follow these simple steps to create a project based on a BLADE project example.
 
 1.  Clone the BLADE repository to gain access to latest example projects.
-2.  Choose a BLADE project to serve as a starting point for your project and copy
-    your chosen BLADE project from the BLADE repository.
+2.  Choose a BLADE project to serve as a starting point for your project and
+    copy your chosen BLADE project from the BLADE repository.
 3.  Reconfigure the build file of the copied project.
 4.  Refactor the copied project's name, package names, and class names.
 5.  Customize the copied project's code to meet your needs.
