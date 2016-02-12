@@ -21,7 +21,7 @@ this user.
 
 In the same browser window, log in to Liferay as the same user, using the email
 address *test@liferay.com*. Go to the Control Panel and click on
-*Configuration* &rarr; *Portal Settings* and then click on *Authentication* at
+*Configuration* &rarr; *Instance Settings* and then click on *Authentication* at
 the right and then on *OpenSSO* at the top. Modify the three URL fields (Login
 URL, Logout URL, and Service URL) so they point to your OpenSSO server (i.e.,
 only modify the host name portion of the URLs). Then check the *Enabled* box
@@ -49,7 +49,7 @@ Property Label | Property Key | Description | Type
 **Last Name Attribute** | `lastNameAttr` | The name of the attribute on the OpenSSO representing the user's last name | `String`
 
 To override these default settings for a particular portal instance, navigate
-to Liferay's Control Panel, click on *Configuration* &rarr; *Portal Settings*,
+to Liferay's Control Panel, click on *Configuration* &rarr; *Instance Settings*,
 and then click on *Authentication* at the right and then on *OpenSSO* at the
 top.
 

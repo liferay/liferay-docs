@@ -5,18 +5,18 @@ Liferay from LDAP or exported to LDAP from Liferay. If your organization
 already stores user information on an LDAP server, it can be very convenient
 for both users and administrators to simply have the LDAP user information
 imported into Liferay. Importing LDAP user information to Liferay means that
-users don't have to have to remember an extra set of credentials for Liferay.
-Importing LDAP user information to Liferay also means that administrators don't
-have to create a whole new set of user accounts for Liferay. In this article,
-you'll learn how to connect Liferay to an LDAP server and how to configure
-import settings, export settings, and related LDAP configuration settings.
-<!-- For a technical overview of Liferay's LDAP authentication module, please
-see the (not yet written) tutorial. -->
+users don't have to remember an extra set of credentials for Liferay. Importing
+LDAP user information to Liferay also means that administrators don't have to
+create a whole new set of user accounts for Liferay. In this article, you'll
+learn how to connect Liferay to an LDAP server and how to configure import
+settings, export settings, and related LDAP configuration settings. <!-- For a
+technical overview of Liferay's LDAP authentication module, please see the (not
+yet written) tutorial. -->
 
 ## Configuring Liferay's LDAP Settings [](id=configuring-liferays-ldap-settings)
 
 To access Liferay's LDAP configuration settings, navigate to the Control Panel
-and click on *Configuration* &rarr; *Portal Settings*. Then click on
+and click on *Configuration* &rarr; *Instance Settings*. Then click on
 *Authentication* on the right and then on the *LDAP* tab at the top. You can
 use this page to connect Liferay to an LDAP directory. There are two places for
 you to configure the LDAP settings: here in the Control Panel or in your
@@ -55,9 +55,11 @@ using the following options:
 
 - *Import Enabled:* Checking this box instructs Liferay to do a mass import
   from your LDAP directories. If you want Liferay to only synchronize users
-  when they log in, leave this box unchecked. Definitely leave this unchecked
-  if you are working in a clustered environment. Otherwise, all of your nodes
-  would try to do a mass import when each of them starts up.
+  when they log in, leave this box unchecked. <!-- (Check if the following two
+  sentences can be removed due to the fixes for LPS-58816 and LPP-19372.)
+  Definitely leave this unchecked if you are working in a clustered
+  environment. Otherwise, all of your nodes would try to do a mass import when
+  each of them starts up. -->
 
 - *Import on Startup Enabled:* Checking this box instructs Liferay to run the
   LDAP user import when it starts up. Note: This box only appears if you check
@@ -282,24 +284,24 @@ precedence over the properties file.
     ldap.auth.method=bind
     #ldap.auth.method=password-compare
 
-Set either `bind` or `password-compare` for the LDAP authentication method.
-Bind is preferred by most vendors so you don't have to worry about encryption
-strategies. Password compare does exactly what it sounds like: it reads the
-user's password out of LDAP, decrypts it and compares it with the user's
-password in Liferay, syncing the two.
+For the property above, set either `bind` or `password-compare` for the LDAP
+authentication method. Bind is preferred by most vendors so you don't have to
+worry about encryption strategies. Password compare does exactly what it sounds
+like: it reads the user's password out of LDAP, decrypts it and compares it
+with the user's password in Liferay, syncing the two.
 
     ldap.auth.password.encryption.algorithm=
     ldap.auth.password.encryption.algorithm.types=MD5,SHA
 
-Set the password encryption to used to compare passwords if the property
-`ldap.auth.method` is set to `password-compare`.
+For the property above, set the password encryption to be used to compare
+passwords if the property `ldap.auth.method` is set to `password-compare`.
 
     ldap.import.method=[user,group]
 
-If you set this to `user`, Liferay will import all users from the specified
-portion of the LDAP tree. If you set this to `group`, Liferay will search all
-the groups and import the users in each group. If you have users who do not
-belong to any groups, they will not be imported.
+If you set the property above to `user`, Liferay will import all users from the
+specified portion of the LDAP tree. If you set this to `group`, Liferay will
+search all the groups and import the users in each group. If you have users who
+do not belong to any groups, they will not be imported.
 
     ldap.error.password.age=age
     ldap.error.password.expired=expired
@@ -309,16 +311,17 @@ belong to any groups, they will not be imported.
     ldap.error.password.trivial=trivial
     ldap.error.user.lockout=retry limit
 
-These properties are a list of phrases from error messages which can possibly be
-returned by the LDAP server. When a user binds to LDAP, the server can return
-*controls* with its response of success or failure. These controls contain a
-message describing the error or the information that is coming back with the
-response. Though the controls are the same across LDAP servers, the messages can
-be different. The properties described here contain snippets of words from those
-messages and will work with Red Hat's Fedora Directory Server. If you are not
-using that server, the word snippets may not work with your LDAP server. If they
-don't, you can replace the values of these properties with phrases from your
-server's error messages. This will enable Liferay to recognize them.
+These properties above are a list of phrases from error messages which can
+possibly be returned by the LDAP server. When a user binds to LDAP, the server
+can return *controls* with its response of success or failure. These controls
+contain a message describing the error or the information that is coming back
+with the response. Though the controls are the same across LDAP servers, the
+messages can be different. The properties described here contain snippets of
+words from those messages and will work with Red Hat's Fedora Directory Server.
+If you are not using that server, the word snippets may not work with your LDAP
+server. If they don't, you can replace the values of these properties with
+phrases from your server's error messages. This will enable Liferay to
+recognize them.
 
 Great! Now you know how to an LDAP server connection to Liferay and how to
 configure user import behavior, export behavior, and other LDAP settings.
