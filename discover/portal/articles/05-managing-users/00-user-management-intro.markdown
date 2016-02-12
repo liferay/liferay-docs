@@ -1,8 +1,8 @@
 # User Management [](id=user-management)
 
-You know how all these retailers advertise themselves as a “one stop shop” for
+You know how all these retailers advertise themselves as a "one stop shop" for
 anything you want? The idea is they have so much stuff that whatever you're
-looking for is probably there. Liferay’s Control Panel is something like
+looking for is probably there. Liferay's Control Panel is something like
 this. If you want to create users, organizations, sites, configure permissions
 and plugins and pretty much anything else, you can do it from the Control
 Panel. When signed in to Liferay as an administrator, you can access the
@@ -19,23 +19,23 @@ your users from this area of the Control Panel. If the Audit plugins have been
 installed from Liferay Marketplace, the Audit section also appears.
 
 The Users section of the Control Panel is used for most administrative tasks
-involving user management. There, you’ll find an interface for the creation and
+involving user management. There, you'll find an interface for the creation and
 maintenance of the following portal entities: users, organizations, user groups,
 and roles. 
 
 Managing sites, teams, site templates, and page templates is covered in detail
-elsewhere. Remember that it’s possible and sometimes simpler to use sites, site
+elsewhere. Remember that it's possible and sometimes simpler to use sites, site
 memberships, and teams to organize users and manage permissions than it is to
 use organizations, user groups, and custom roles.
 
-As a portal administrator, you’ll use the Users section of the Control Panel to
+As a portal administrator, you'll use the Users section of the Control Panel to
 create users, organizations, and user groups, implement security via roles and
 permissions, and administer your users. Only users with the administrator role,
 which is a portal scoped role, have permission to view the Control Panel. You
 can, however, grant permissions to view the Control Panel to existing or custom
 roles.
 
-In this set of articles you’ll learn about managing users. While you could
+In this set of articles you'll learn about managing users. While you could
 probably get started learning about managing users in Liferay just by perusing
 the Control Panel, there's so much User Management functionality in Liferay that
 it's tough to wrap your head around it all. Maybe a limerick can help:
@@ -53,7 +53,7 @@ You be the judge. -->
 portal that doesn't have the EE Audit plugin
 installed.](../../images/usrmgmt-users.png)
 
-Begin exploring Liferay’s User Management functionality by reading about
+Begin exploring Liferay's User Management functionality by reading about
 adding and editing users. 
 
 <!-- Perhaps make a table showing similarities and differences between the
