@@ -61,11 +61,13 @@ open the menu.
 
 Here are the wiki application instance options screens:
 
-**Permissions**: allows you to specify which roles can create wiki nodes and
-which roles can access the Permissions screen.
+**Permissions**: allows you to specify which [roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions)
+can create wiki nodes and which roles can access the Permissions screen.
 
 **Export / Import**: enables you to import existing wiki content into your wiki
-application instance or export wiki content to a file.
+application instance or export wiki content to a file. Refer to
+[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
+for details.
 
 **Configuration**: has tabs for configuring email notifications and a tab for
 configuring RSS feeds. The *Email From*, *Page Added Email*, and *Page Updated
@@ -323,8 +325,8 @@ displaying them. The *Enable Related Assets*, *Enable Page Ratings*, *Enable
 Comments*, and *Enable Comment Ratings* check boxes let you enable or disable
 those features for the Wiki app. They give you the ability to set how you want
 users to interact with wiki documents: a little, a lot, or not at all. The
-*Display Template* drop-down option lets you choose the application display
-template for the app. Below this, you can set which wikis (wiki nodes) are
+*Display Template* drop-down option lets you choose the [Application Display Template](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
+for the app. Below this, you can set which wikis (wiki nodes) are
 visible in the Wiki and which are hidden. You might host two wikis on a given
 site, exposing one to the public and keeping the other private for site members.
 
