@@ -1,5 +1,11 @@
 # Liferay SAML in Pictures [](id=liferay-saml-in-pictures)
 
+(Coming soon)
+
+<!-- This EE-only article needs to be tested and updated for 7.0. -->
+
+![EE-only](../../images/ee-feature-web.png)
+
 This article provides diagrams of the SAML actions supported by Liferay along
 with descriptions of each step. For information about configuring Liferay as a
 SAML Identity Provider or Service Provider, please see the [not yet written]()
