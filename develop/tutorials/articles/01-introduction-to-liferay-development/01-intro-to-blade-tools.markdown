@@ -126,6 +126,16 @@ You can also check the version of your Blade instance by running `blade
 version`. If your version is outdated, you can run `blade update` to
 automatically download and install the latest version of Blade Tools.
 
++$$$
+
+**Note:** For Windows users, the `blade update` command does not work. This is
+because Windows cannot update a file that is currently in use. To bypass this
+issue, you can use JPM to update your version of Blade:
+
+    jpm install -f https://liferay-test-01.ci.cloudbees.com/job/blade.tools/lastSuccessfulBuild/artifact/com.liferay.blade.cli/generated/com.liferay.blade.cli.jar
+
+$$$
+
 Now that you have Blade Tools installed, you should learn about its two most
 commonly used commands: `blade create` and `blade deploy`.
 
@@ -188,7 +198,7 @@ See the tutorials mentioned above for more information about creating module
 projects. Once you've built a module, use the following command to deploy it to
 Liferay:
 
-    blade deploy [path to JAR file]
+    blade deploy
 
 Blade Tools knows how to detect a locally running Liferay instance and
 automatically deploy your module to Liferay. You can also specify a custom port

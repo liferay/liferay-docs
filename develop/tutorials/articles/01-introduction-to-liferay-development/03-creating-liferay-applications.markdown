@@ -156,22 +156,23 @@ generated `build.gradle` file specifies all dependencies.
 To build your project, navigate to your project's root directory and run `gradle
 build`. The JAR file representing your portlet module is produced in your
 project's `build/libs` directory. If you followed the example in this tutorial,
-it should be called `com.liferay.docs.mvcportlet-1.0.jar`.
+it should be called `com.liferay.docs.mvcportlet-1.0.0.jar`.
 
 Blade Tools makes it extremely easy to deploy your project. From your project's
 root directory, run this command:
 
-    blade deploy build/libs/com.liferay.docs.mvcportlet-1.0.jar
+    blade deploy
 
 Blade Tools detects your locally running Liferay instance and deploys the
-specified module to Liferay's module framework. After running the `blade deploy
-[path to JAR]` command, you should see a message like this:
+specified module to Liferay's module framework. This command requires the remote
+agent be installed for Blate tools. To install this, run `blade agent install`.
+After running the `blade deploy` command, you should see a message like this:
 
     Installed or updated bundle 333
 
-Use the Gogo shell to confirm your module was installed: Open a terminal and
-enter `telnet localhost 11311`. Then enter `lb` at the prompt. If your module
-was installed, you'll see an entry like this:
+Use the Gogo shell via Blade to confirm your module was installed: Open a
+terminal and Enter `blade sh lb` at the prompt. If your module was installed,
+you'll see an entry like this:
 
     333|Active     |    1|com.liferay.docs.mvcportlet (1.0.0.201602111940)
 
