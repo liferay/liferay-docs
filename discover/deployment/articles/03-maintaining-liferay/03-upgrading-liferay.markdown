@@ -98,14 +98,24 @@ Here's an example: if you execute `upgrade:list com.liferay.bookmarks.service`
             {fromSchemaVersionString=1.0.0-step-2, toSchemaVersionString=1.0.0-step-1, upgradeStep=com.liferay.bookmarks.upgrade.v1_0_0.UpgradeLastPublishDate@3e05b7c8}
             {fromSchemaVersionString=1.0.0-step-3, toSchemaVersionString=1.0.0-step-2, upgradeStep=com.liferay.bookmarks.upgrade.v1_0_0.UpgradeClassNames@6964cb47}
 
+The step from `0.0.0` to `1.0.0` is for the case where you're coming from an
+empty database. If you're coming from an existing database where the Bookmarks
+tables had already been created (e.g., if you're coming from a 6.2 database),
+the upgrade steps would execute in this order:
+
+- `0.0.1` to `1.0.0-step-3`
+- `0.0.1-step-3` to `1.0.0-step-2`
+- `0.0.1-step-2` to `1.0.0-step-1`
+- `0.0.1-step-1` to `1.0.0`
+
 This means that there is an available process to upgrade Bookmarks from version
-`0.0.0` to version `1.0.0`. To complete this process, you would need to execute
-five steps. The first step is the one which starts on the initial version and
-finishes on the first step of the target version. (The first step of the target
-version is the highest step number, `step-3` in this example),
-`UpgradePortletId` in this case. To latest step is the one which starts on the
-latest step of the target version (the lowest step number, step-1) and finishes
-on the target version (`1.0.0`), `UpgradePortletSettings` in this case.
+`0.0.1` to version `1.0.0`. To complete this process, you would need to execute
+four steps. The first step is the one which starts on the initial version and
+finishes on the first step of the target version. The first step of the target
+version is the highest step number (`step-3`). In this example, the first step
+is `UpgradePortletId`. The last step is the one which starts on the last step
+of the target version (`step-1`) and finishes on the target version (`1.0.0`).
+In this example, the last step is `UpgradePortletSettings`.
 
 Entering `upgrade:execute {module_name}` upgrades a module. It is important to
 take into account that if there is an error during the process, you will be
