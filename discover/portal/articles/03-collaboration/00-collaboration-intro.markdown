@@ -22,10 +22,10 @@ are key components to successful collaboration.
 
 Liferay's collaboration suite resonates with apps and features that foster
 excellent communication.  Its [Message
-Boards](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/creating-forums-with-message-boards)
+Boards](/discover/portal/-/knowledge_base/7-0/creating-forums-with-message-boards)
 app gives your team a platform for discussions, questions and answers, and
 comments. Chat lets you text teammates in real time.
-[Blogs](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/publishing-blogs)
+[Blogs](/discover/portal/-/knowledge_base/7-0/publishing-blogs)
 publish your ideas using rich content, so readers can understand them
 clearly and respond to them. Collaboration is enhanced in all these applications
 through *mentioning* other users--tagging them by name to get their attention or
@@ -34,12 +34,12 @@ give them kudos.
 As you produce digital assets--documents, videos, audio--you can store and share
 them using the suite's [Documents and Media
 Library](/participate/liferaypedia/-/wiki/Main/Documents+and+Media).
-It both provides its own repository and connects to external CMIS repositories and [Google Docs](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/publishing-files#accessing-google-docs). 
+It both provides its own repository and connects to external CMIS repositories and [Google Docs](/discover/portal/-/knowledge_base/7-0/publishing-files#accessing-google-docs). 
 
 Finally, you can collaborate on and publish content in a number of different
 ways.  You and your colleagues can build a wealth of information using
-[Wikis](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/working-together-with-the-wiki)
-and create hierarchies of official documentation in a [Knowledge Base](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base).
+[Wikis](/discover/portal/-/knowledge_base/7-0/working-together-with-the-wiki)
+and create hierarchies of official documentation in a [Knowledge Base](/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base).
 
 These are just some of the ways the Collaboration Suite helps you communicate,
 produce, and present. In short, it empowers you to labor together with others in
