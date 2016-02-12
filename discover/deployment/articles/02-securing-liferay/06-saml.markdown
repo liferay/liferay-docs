@@ -1,5 +1,10 @@
 # SAML [](id=saml)
 
+(Coming soon)
+
+<!-- Uncomment when a version of the SAML plugin is available that's compatible
+with Liferay 7.
+
 ![EE-only](../../images/ee-feature-web.png)
 
 SAML is an XML-based open standard data format for exchanging authentication and
@@ -12,10 +17,11 @@ Committee. See
 [https://www.oasis-open.org/committees/security/](https://www.oasis-open.org/committees/security/)
 for more information. Liferay 6.1 EE and later versions support SAML 2.0
 integration via the SAML 2.0 Provider EE plugin. This plugin is provided as an
-app from Liferay Marketplace that allows Liferay to act as a SAML 2.0 identity
+app from Liferay Marketplace that allows Liferay to act as a SAML 2.0 Identity
 provider or as a service provider. First, we'll look at how to set Liferay up as
 an Identity Provider and then we'll look at how to set it up as a Service
-Provider.
+Provider. The SAML 2.0 Provider EE plugin supports any Identity provider that
+supports the SAML 2.0 standard.
 
 ## Setting up Liferay as a SAML Identity Provider [](id=setting-up-liferay-as-a-saml-identity-provider)
 
@@ -317,7 +323,7 @@ to expire very quickly.
 
 **LDAP Import Enabled:** When this box is checked, user information is imported
 from the configured LDAP connection based on the resolved NameID. LDAP
-connections can be configured from Portal Settings.
+connections can be configured from Instance Settings.
 
 **Sign Authn Requests:** When this box is checked, the AuthnRequest is signed
 even if the Identity Provider metadata indicates that it's not required.
@@ -485,3 +491,5 @@ If your situation fits the scenario described above, follow these steps:
 Great! Now you know how to configure Liferay either as a SAML identity provider
 or a service provider. You also know how to configure the Liferay SAML in a
 clustered environment.
+
+-->

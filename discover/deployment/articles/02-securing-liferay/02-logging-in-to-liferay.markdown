@@ -31,9 +31,9 @@ Note that the portal's configured authentication type determines the type of
 credentials that the user needs to enter in order to log in. Liferay supports
 three authentication types: authentication by email address, screen name, or
 user ID. To choose an authentication type, navigate to the Control Panel, click
-on *Configuration* &rarr; *Portal Settings* &rarr; *Authentication* and use the
-*How do users authenticate?* dropdown to make a selection. Alternatively, add
-the following lines to your `portal-ext.properties` file, uncomment the
+on *Configuration* &rarr; *Instance Settings* &rarr; *Authentication* and use
+the *How do users authenticate?* dropdown to make a selection. Alternatively,
+add the following lines to your `portal-ext.properties` file, uncomment the
 appropriate line, comment out the others, and restart your Liferay server.
 
     company.security.auth.type=emailAddress
@@ -66,11 +66,11 @@ The security requirements of some web portals require that all user accounts be
 created by administrators. Liferay supports this use case by allowing the
 *Create Account* to be removed. To prevent guest users from creating new user
 accounts, navigate to the Control Panel, click on *Configuration* &rarr;
-*Portal Settings* &rarr; *Authentication* and uncheck the *Allow strangers to
+*Instance Settings* &rarr; *Authentication* and uncheck the *Allow strangers to
 create accounts?* box. You can also disallow users from requesting forgotten
 passwords or from requesting password reset links by unchecking the appropriate
-boxes. <!-- For further information about Liferay's authentication options, please
-see this [documentation]() (not yet written). -->
+boxes. <!-- For further information about Liferay's authentication options,
+please see this [documentation]() (not yet written). -->
 
 ![Figure 2: Here's a view of the Sign In portlet with the *Create Account* and *Forgot Password* options removed.](../../images/sign-in-portlet2.png)
 

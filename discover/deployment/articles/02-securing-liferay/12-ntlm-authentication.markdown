@@ -10,9 +10,9 @@ Note that in order to use NTLM SSO, Liferay's portal instance authentication
 type must be set to screen name.
 
 NTLM configuration can be applied either at the system scope or at the scope of
-a portal instance. To configure the CAS SSO module at the system scope,
+a portal instance. To configure the NTLM SSO module at the system scope,
 navigate to the Control Panel, click on *System* &rarr; *System Settings, click
-on the *Platform* category, and find the CAS module. The values configured
+on the *Platform* category, and find the NTLM module. The values configured
 there provide the default values for all portal instances. Enter values in the
 same format as you would when initializing a Java primitive type with a literal
 value.
@@ -28,7 +28,7 @@ Property Label | Property Key | Description | Type
 **Negotiate Flags** | `negotiateFlags` | Only available at system level. Set according to the client's requested capabilities and the server's ServerCapabilities. See the following link: [http://msdn.microsoft.com/en-us/library/cc717152%28v=PROT.10%29.aspx](http://msdn.microsoft.com/en-us/library/cc717152%28v=PROT.10%29.aspx) | `String`
 
 To override system defaults for a particular portal instance, navigate to the
-Control Panel, click on *Configuration* &rarr; *Portal Settings*, click on
+Control Panel, click on *Configuration* &rarr; *Instance Settings*, click on
 *Authentication* on the right and then on *NTLM* at the top.
 
 ## Summary [](id=summary)
