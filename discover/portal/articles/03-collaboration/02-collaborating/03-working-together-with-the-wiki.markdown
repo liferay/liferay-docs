@@ -1,4 +1,4 @@
-# Working Together with the Wiki
+# Working Together with the Wiki [](id=working-together-with-the-wiki)
 
 Liferay's Wiki is a full-featured [wiki](/participate/liferaypedia/-/wiki/Main/Wiki)
 application which has all of the features you would expect in a state of the art
@@ -37,7 +37,7 @@ application instance must be created from the page, via a Wiki application or
 Wiki Display application's configuration screen--we'll cover this later. For
 now, let's start using your site's Wiki application instance. 
 
-## Getting Started with Wikis
+## Getting Started with Wikis [](id=getting-started-with-wikis)
 
 The product menu provides the best place to start working with your wikis. To
 start working with wikis for your site, page, or global scope, click on the
@@ -53,7 +53,7 @@ appears. This screen allows you to add, modify, and delete wiki nodes. A Wiki
 application instance can contain many wiki nodes. By default, it contains one
 node, called *Main*.
 
-![Figure x: The Wiki application instance has a wiki node named *Main* with a single front page. You can build on the Main node or click the Add icon to create a new node.](../../../images/wiki-admin-empty.png)
+![Figure 1: The Wiki application instance has a wiki node named *Main* with a single front page. You can build on the Main node or click the Add icon to create a new node.](../../../images/wiki-admin-empty.png)
 
 Before we start adding to our site's wiki instance, let's configure it the way
 we want it. The instance's interfaces for permissions, export and import,
@@ -95,7 +95,7 @@ the new wiki node. The New Wiki Node screen appears and prompts you to name and
 describe the wiki node. From this screen, you can also set up some default
 permissions. Click *Save* when you're done creating the wiki node. 
 
-![Figure x: The New Wiki Node screen lets you describe your new node, set view permissions, and set permissions for Guest and Site Member roles.](../../../images/wiki-new-wiki-node.png)
+![Figure 2: The New Wiki Node screen lets you describe your new node, set view permissions, and set permissions for Guest and Site Member roles.](../../../images/wiki-new-wiki-node.png)
 
 On creating the new wiki node, you're brought back to the Wiki instance view.
 Your new wiki node accompanies the Main node in the list of this wiki instance's
@@ -133,7 +133,7 @@ the wiki node.
 
 The figure below shows the wiki node options menu.
 
-![Figure x: The Wiki application lists all of its wiki nodes. Each node's options icon menu lists node configuration screens and node actions you can perform. ](../../../images/wiki-admin-wikis-and-wiki-options.png)
+![Figure 3: The Wiki application lists all of its wiki nodes. Each node's options icon menu lists node configuration screens and node actions you can perform. ](../../../images/wiki-admin-wikis-and-wiki-options.png)
 
 Before you open up wiki nodes to contributors, you should consider whether to
 associate a workflow with them. For example, you could create a workflow that
@@ -152,7 +152,7 @@ view the page, click on the wiki node's name. The FrontPage appears and shows a
 default message that explains the page is empty and needs you to add content.
 The message is a link; cick on it to start editing the page.
 
-![Figure x: Each empty wiki page presents a default message link you can click to edit the page.](../../../images/wiki-empty-frontpage.png)
+![Figure 4: Each empty wiki page presents a default message link you can click to edit the page.](../../../images/wiki-empty-frontpage.png)
 
 Wiki uses a WYSIWYG editor, similar to the one used in [Blogs](/discover/portal/-/knowledge_base/7-0/publishing-blogs).
 The content section's default message *Write your content here...* entices you
@@ -166,7 +166,7 @@ image, table, or horizontal line, you can click the `+` icon to bring up the
 insert content menu
 (![Insert](../../../images/icon-content-insert-controls.png)).
 
-![Figure x: When you highlight text in the wiki page editor, a formatting toolbar appears. You can apply common markups to the text, make it a list item or a link, or remove existing markup.](../../../images/wiki-page-highlight-content-text.png)
+![Figure 5: When you highlight text in the wiki page editor, a formatting toolbar appears. You can apply common markups to the text, make it a list item or a link, or remove existing markup.](../../../images/wiki-page-highlight-content-text.png)
 
 You're working in the editor's regular mode. Source mode, on the other hand,
 lets you enter text in Creole format. You can switch to source mode by clicking
@@ -201,7 +201,7 @@ dual screen editor. As you enter Creole format text in one pane the preview pane
 renders it. The editor lets you hide the preview pane, use a dark or light color
 source pane schem, and arrange the panes horizontally or vertically. 
 
-![Figure x: The wiki page source editor has a dual page mode for rendering content as you edit the source text.](../../../images/wiki-dual-pane-editor.png)
+![Figure 6: The wiki page source editor has a dual page mode for rendering content as you edit the source text.](../../../images/wiki-dual-pane-editor.png)
 
 At the bottom of the page editing screen, you can select *Categorization* to add
 tags. The tags link your wiki to categories. You can create categories from the
@@ -226,7 +226,7 @@ files to the page, via drag and drop or file upload.
 When you're done editing in source view, click *Done*. When you're done editing
 the page, click *Publish*. The figure below shows the updated wiki page.
 
-![Figure x: The Wiki's WYSIWYG editor helps you create attractive wiki pages.](../../../images/wiki-page.png)
+![Figure 7: The Wiki's WYSIWYG editor helps you create attractive wiki pages.](../../../images/wiki-page.png)
 
 Did you notice that we added links for pages named *Galaxies*, *Solar Systems*,
 etc, that we haven't yet created? This is a common practice in building
@@ -295,7 +295,7 @@ using a descriptive display style, click the *Descriptive* icon
 using a list display style, click the *List* icon
 (![List](../../../images/icon-list-style.png)). 
 
-![Figure x: The wiki node's view in site administration has features that help you access and learn information about a wiki node's pages.](../../../images/wiki-node-view-in-admin.png)
+![Figure 8: The wiki node's view in site administration has features that help you access and learn information about a wiki node's pages.](../../../images/wiki-node-view-in-admin.png)
 
 As far as the other aspects of the Wiki application interface, we'll cover them
 as we use the Wiki application on site pages. Let's go to your site by clicking
@@ -303,7 +303,7 @@ as we use the Wiki application on site pages. Let's go to your site by clicking
 (![Menu](../../../images/icon-menu.png)). We're ready to add Wiki applications
 to the site's pages. 
 
-## Using the Wiki Applications on Site Pages
+## Using the Wiki Applications on Site Pages [](id=using-the-wiki-applications-on-site-pages)
 
 The Wiki application works just like the other Liferay applications. Open the
 Add menu by clicking the *Add* icon
@@ -313,7 +313,7 @@ Add menu by clicking the *Add* icon
 Your site's wiki nodes display in the application. Click on the *Space Wiki* tab
 to view it in the app. 
 
-![Figure x: Users can interact with your Wiki nodes when you add the Wiki application to a page.](../../../images/wiki-page-full.png)
+![Figure 9: Users can interact with your Wiki nodes when you add the Wiki application to a page.](../../../images/wiki-page-full.png)
 
 To view the Wiki application's configuration options, click on its *Options*
 icon (![Options](../../../images/icon-app-options.png)) and select
@@ -370,7 +370,7 @@ create an instance for the page. If the page doesn't already have an instance
 scoped to it, you can click on the *[page name] (Create New)* menu option to
 create a page-scoped Wiki application instance.
 
-![Figure x: Here the user has selected to create a new Wiki application instance scoped to the current page named *My Wiki*](../../../images/wiki-app-configuration-scope.png)
+![Figure 10: Here the user has selected to create a new Wiki application instance scoped to the current page named *My Wiki*](../../../images/wiki-app-configuration-scope.png)
 
 Once you set the application's configuration options the way you want them,
 click *Save*.
@@ -405,7 +405,7 @@ to finish their page changes and publish them once they've been approved.
 found for the term, a link displays to enable you to create a new wiki page
 named after that term.
 
-![Figure x: If the wiki node doesn't have a wiki page matching the topic you're looking for, it gives you the option to create a wiki page named for the topic.](../../../images/wiki-search.png)
+![Figure 11: If the wiki node doesn't have a wiki page matching the topic you're looking for, it gives you the option to create a wiki page named for the topic.](../../../images/wiki-search.png)
 
 The current wiki page's content shows in the application's main viewing area.
 Several features display below the wiki page content, depending on which
@@ -419,13 +419,13 @@ Edit icon brings up the edit screen. Clicking the Print icon brings up the
 browser's page printing window. Between these two options is the *Details* option,
 which we'll explore next. 
 
-## Page Details
+## Page Details [](id=page-details)
 
 When viewing a page, you can view its details by clicking the *Details* icon
 above the page content. Several tabs appear, to give you access to several
 categories of information about the page.
 
-### Details
+### Details [](id=details)
 
 The Details tab shows various statistics about the page, and also allows you to
 perform some actions on the page.
@@ -456,7 +456,7 @@ node.
 the page, make a copy of the page, move (rename) the page, or move the page to
 the recycle bin.
 
-### History
+### History [](id=history)
 
 The History tab lets you access the page's activities and versions. Its
 *Activities* tab lists actions performed on the page. Each activity has shows an
@@ -473,13 +473,13 @@ icon (![Revert](../../../images/icon-revert.png)). You can also compare the
 differences between versions by selecting two versions and then clicking the
 *Compare Versions* button.
 
-### Incoming/Outgoing Links
+### Incoming/Outgoing Links [](id=incoming-outgoing-links)
 
 The next two tabs are list incoming and outgoing links. These are wiki links to
 and from the page. You can use this tab to examine how this page links to other
 pages and how other pages link back to this page.
 
-### Attachments
+### Attachments [](id=attachments)
 
 The *Attachments* tab lists the name and size of each file attached to the page.
 You can attach any file to the wiki. Image files are the most common type of
@@ -492,7 +492,7 @@ you create, maintain, and consume wiki pages. In addition to the Wiki
 application there are several other applications that supplement it. You'll
 learn about them next.
 
-## Supplemental Wiki Applications
+## Supplemental Wiki Applications [](id=supplemental-wiki-applications)
 
 The applications that accompany the Wiki application help you display particular
 wiki nodes and navigate them. To use them on a page, click the *Add* icon
@@ -502,7 +502,7 @@ onto the page.
 
 Let's first explore the Wiki Display.
 
-### Wiki Display
+### Wiki Display [](id=wiki-display)
 
 The Wiki Display application enables you to focus user attention on one wiki
 node. Click on the app's Options icon
@@ -511,7 +511,7 @@ the Configuration screen, select the *Setup* tab. Set the *Node* you want to
 display and click *Save*; then select a *Page* in that node that you want to
 display. This page provides the gateway into the wiki node. 
 
-![Figure x: The Wike Display lets users explore a wiki node, starting from one of its pages--the front page, typically.](../../../images/wiki-display-configuration-setup.png)
+![Figure 12: The Wike Display lets users explore a wiki node, starting from one of its pages--the front page, typically.](../../../images/wiki-display-configuration-setup.png)
 
 The configuration options and user interface for the Wiki Display are almost
 identical to that of the Wiki application. 
@@ -519,7 +519,7 @@ identical to that of the Wiki application.
 To help users navigate the wikis in a site page's Wiki Display or Wiki
 applications, you can use the Tree Menu app. 
 
-### Tree Menu
+### Tree Menu [](id=tree-menu)
 
 The Tree Menu application displays a wiki's page hierarchy as a tree. It lets
 you navigate all of a wiki's pages. Much like Wiki Display setup, you configure
@@ -533,23 +533,23 @@ represent child wiki pages at the end of the nodes. When you click on on a
 parent wiki page or child wiki page icon, tthe Wiki application or Wiki Display
 on the site page displays the respective wiki page.
 
-![Figure x: When you select a element in the Tree Menu application, the respective wiki page shows in your site page's Wiki application or Wiki Display.](../../../images/wiki-tree-menu.png)
+![Figure 13: When you select a element in the Tree Menu application, the respective wiki page shows in your site page's Wiki application or Wiki Display.](../../../images/wiki-tree-menu.png)
 
 There's even a Page Menu application that presents a wiki page's outgoing links. 
 
-### Page Menu
+### Page Menu [](id=page-menu)
 
 The Page Menu app lets you display a wiki page's outgoing links. It answers the
 question, "What wiki pages can I access from this page?" As with the Tree Menu
 and Wiki Display applications, you specify a wiki node and wiki page on which
 the Page Menu application operates. 
 
-![Figure x: The Page Menu application displays all of a wiki page's outgoing links to other wiki pages.](../../../images/wiki-page-menu.png)
+![Figure 14: The Page Menu application displays all of a wiki page's outgoing links to other wiki pages.](../../../images/wiki-page-menu.png)
 
 When you click on a Page Menu link, the site page's Wiki or Wiki Display application
 displays the wiki page associated with the link. 
 
-## Summary
+## Summary [](id=summary)
 
 Liferay's Wiki application is another full-featured Liferay application with all of the
 features and sub-applications you expect from a state of the art wiki. It allows
