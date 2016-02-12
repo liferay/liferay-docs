@@ -42,7 +42,7 @@ now, let's start using your site's Wiki application instance.
 The product menu provides the best place to start working with your wikis. To
 start working with wikis for your site, click on the *Product Menu* icon
 (![Menu](../../../images/icon-menu.png)), navigate to your site, and select
-the *Content* section. If you are updating and existing page-scoped wiki
+the *Content* section. If you are updating an existing page-scoped wiki
 application instance you can select that page scope from the scope menu that the
 Gear icon (![Gear](../../../images/icon-control-menu-gear.png)) makes available.
 The site's wiki application instance is available in the Default Scope. Once
@@ -197,7 +197,7 @@ Enter it as your page content. Then click on the *Enlarge* icon
 (![Enlarge](../../../images/icon-enlarge.png)) to edit the source in an enlarged
 dual screen editor. As you enter Creole format text in one pane the preview pane
 renders it. The editor lets you hide the preview pane, use a dark or light color
-source pane schem, and arrange the panes horizontally or vertically. 
+source pane scheme, and arrange the panes horizontally or vertically. 
 
 ![Figure 6: The wiki page source editor has a dual page mode for rendering content as you edit the source text.](../../../images/wiki-dual-pane-editor.png)
 
@@ -407,7 +407,7 @@ named after that term.
 
 The current wiki page's content shows in the application's main viewing area.
 Several features display below the wiki page content, depending on which
-features are enabled for the application. The *+ Add Child Page* link let's you
+features are enabled for the application. The *+ Add Child Page* link lets you
 add a wiki page as a child of the current wiki page. A view counter displays the
 wiki page's view count. Ratings and Comments controls display if they're
 enabled.
@@ -457,7 +457,7 @@ the recycle bin.
 ### History [](id=history)
 
 The History tab lets you access the page's activities and versions. Its
-*Activities* tab lists actions performed on the page. Each activity has shows an
+*Activities* tab lists actions performed on the page. Each activity has an
 icon that represents the type of action, the name of the user, the actions
 description, date, and an options icon to revert the action. For example, if
 user Jane Doe attached file `sunset.jpg` to the page, then the activity would
@@ -509,7 +509,7 @@ the Configuration screen, select the *Setup* tab. Set the *Node* you want to
 display and click *Save*; then select a *Page* in that node that you want to
 display. This page provides the gateway into the wiki node. 
 
-![Figure 12: The Wike Display lets users explore a wiki node, starting from one of its pages--the front page, typically.](../../../images/wiki-display-configuration-setup.png)
+![Figure 12: The Wiki Display lets users explore a wiki node, starting from one of its pages--the front page, typically.](../../../images/wiki-display-configuration-setup.png)
 
 The configuration options and user interface for the Wiki Display are almost
 identical to that of the Wiki application. 
@@ -527,8 +527,8 @@ to a value from 1 to 5, or select *All* to allow navigation to all of the wiki
 node's pages.
 
 In the Tree Menu, folder icons represent parent wiki pages and document icons
-represent child wiki pages at the end of the nodes. When you click on on a
-parent wiki page or child wiki page icon, tthe Wiki application or Wiki Display
+represent child wiki pages at the end of the nodes. When you click on a
+parent wiki page or child wiki page icon, the Wiki application or Wiki Display
 on the site page displays the respective wiki page.
 
 ![Figure 13: When you select a element in the Tree Menu application, the respective wiki page shows in your site page's Wiki application or Wiki Display.](../../../images/wiki-tree-menu.png)
