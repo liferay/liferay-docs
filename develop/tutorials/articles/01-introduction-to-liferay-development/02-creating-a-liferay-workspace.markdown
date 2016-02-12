@@ -1,3 +1,0 @@
-# Creating a Liferay Workspace
-
-
