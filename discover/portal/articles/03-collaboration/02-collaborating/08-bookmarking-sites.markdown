@@ -19,7 +19,7 @@ Navigate to your Liferay instance and add the Bookmarks app to a page by
 selecting *Add* &rarr; *Applications* &rarr; Community, and then dragging 
 *Bookmarks* onto the page. By default, the app looks like this:
 
-![Figure 1: Initially, no bookmarks appear in the Bookmarks app.](../../images/bookmarks-app-empty.png)
+![Figure 1: Initially, no bookmarks appear in the Bookmarks app.](../../../images/bookmarks-app-empty.png)
 
 The Bookmarks app is empty when you first add it to a page. The app greets you 
 with a smiley face and a message that says there are no bookmarks in the current 
@@ -45,9 +45,9 @@ the add button, this brings up the *Add Folder* form. This form is very similar
 to the Add Bookmark form. Fill in the *Name* and *Description* fields, assign 
 any permissions you want to use, and click *Save* to create the folder. 
 
-![Figure 2: The Add Bookmark form lets you create a bookmark.](../../images/bookmarks-add-bookmark.png)
+![Figure 2: The Add Bookmark form lets you create a bookmark.](../../../images/bookmarks-add-bookmark.png)
 
-![Figure 3: The Add Folder form lets you create a folder to use for organizing bookmarks.](../../images/bookmarks-add-folder.png)
+![Figure 3: The Add Folder form lets you create a folder to use for organizing bookmarks.](../../../images/bookmarks-add-folder.png)
 
 When you create folders and bookmarks, they're added to the current folder. 
 Folders can have any number of subfolders. Next, you'll learn how to manage 
@@ -79,7 +79,7 @@ subscribe to the folder by clicking the star icon. Click the actions menu
 permissions to, or deleting the folder. Note that you can't edit, move, or 
 delete the Home folder. 
 
-![Figure 4: A folder's info panel shows more information about the folder, and lets you take additional actions.](../../images/bookmarks-info-panel.png)
+![Figure 4: A folder's info panel shows more information about the folder, and lets you take additional actions.](../../../images/bookmarks-info-panel.png)
 
 The management bar's Descriptive and List buttons determine how the app displays 
 folders and bookmarks. Click the management bar's Descriptive button to show 
@@ -106,7 +106,7 @@ instead the *Add Folder* button. The window closes once you choose a folder,
 returning you to the Move Entries form. Click *Move* to move the item to the 
 selected folder. 
 
-![Figure 5: Choose the folder to move the item to.](../../images/bookmarks-move-folder.png)
+![Figure 5: Choose the folder to move the item to.](../../../images/bookmarks-move-folder.png)
 
 # Summary
 
