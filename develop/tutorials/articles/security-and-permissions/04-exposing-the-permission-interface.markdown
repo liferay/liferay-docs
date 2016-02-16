@@ -69,8 +69,14 @@ is assigned. The variable is then passed to the `<liferay-ui:icon>` tag
 so the permission icon has the proper URL link.
 
 There's an optional attribute called `redirect` that's available if you want to
-override the default behavior of the upper right arrow link. That's it; now your
-users can configure the permission settings for model resources!
+override the default behavior of the upper right arrow link.
+
+You can filter the displayed roles by types (like regular roles, site roles) with the
+optional `roleTypes` parameter. It needs an `int[]` value, so you can use the `RoleConstants.TYPES_*`
+values or do not forget to create an int array from your discrete role type.
+For example: `roleTypes="<%= RoleConstants.TYPES_REGULAR %>"`
+
+That's it; now your users can configure the permission settings for model resources!
 
 ## Related Topics [](id=related-topics)
 
