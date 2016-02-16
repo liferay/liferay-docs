@@ -1,0 +1,5 @@
+-dsannotations: *
+Bundle-Name: Script Util Impl
+Bundle-SymbolicName: com.liferay.docs.scriptutil.impl
+Bundle-Version: 1.0.0.${tstamp}
+Private-Package: com.liferay.docs.scriptutil.impl

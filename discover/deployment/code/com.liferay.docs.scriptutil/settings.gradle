@@ -1,0 +1,1 @@
+include 'com.liferay.docs.scriptutil.api', 'com.liferay.docs.scriptutil.impl'
