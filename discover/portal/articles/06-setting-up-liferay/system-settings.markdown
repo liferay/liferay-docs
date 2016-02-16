@@ -1,4 +1,4 @@
-# System Settings
+# System Settings [](id=system-settings)
 
 You might be tired of hearing about it by now, but it's worth repeating: Liferay
 is modular. It's composed of many applications, which are divided into even
@@ -18,15 +18,15 @@ configuration changes at the system scope in Liferay 7, and you don't need to go
 messing around in a properties file to do it. These settings can now be made in
 the Control Panel, in *Configuration* &rarr; *System Settings*. 
 
-![Figure x: System Settings are accessed through the Control Panel.](../../images/system-settings-product-menu.png)
+![Figure 1: System Settings are accessed through the Control Panel.](../../images/system-settings-product-menu.png)
 
-## Editing the Default Configuration
+## Editing the Default Configuration [](id=editing-the-default-configuration)
 
 Once you navigate to System Settings, you'll see that the configuration options
 are categorized into logical groupings based on their functionality, and that
 there's a Search box to make finding the app you want to configure easier.
 
-![Figure x: System Settings are organized by component.](../../images/system-settings-nav-search.png)
+![Figure 2: System Settings are organized by component.](../../images/system-settings-nav-search.png)
 
 Changing an app's default configuration options in System Settings isn't
 difficult. Once you find what you're looking for, simply click the name of the
@@ -35,14 +35,14 @@ component you want to configure, or click the actions button
 you'd like, then click *Save*. Now your configuration changes are saved and take
 place throughout the entire system.
 
-![Figure X: Each System Settings entry will have a configuration Scope.](../../images/system-settings-actions.png)
+![Figure 3: Each System Settings entry will have a configuration Scope.](../../images/system-settings-actions.png)
 
 If you make some regrettable configuration decisions and can't recall exactly
 what you did, start over by clicking the actions button
 (![Actions](../../images/icon-actions.png)), then clicking *Reset Default
 Values*.
 
-## Configuration Scope
+## Configuration Scope [](id=configuration-scope)
 
 While browsing the categories of System Settings, you'll notice that each entry
 has a *Name* and a *Scope*. This scope is different than the overall
@@ -56,30 +56,30 @@ overridden. There are four values that you'll see under Scope:
   value for the application in a system wide fashion. It affects the whole
 system and cannot be overridden anywhere else.
 
-    ![Figure X: Some System Settings entries have a System scope.](../../images/system-settings-system-scope.png)
+    ![Figure 4: Some System Settings entries have a System scope.](../../images/system-settings-system-scope.png)
 
 - *Default Configuration for Application:* Making configuration changes at this
   level affects the application in a system-wide fashion as well. However, while
 these become the system wide defaults for the application, they can be
 overridden from each application instance.
 
-    ![Figure X: Some System Settings entries have a Default Configuration for Application scope.](../../images/system-settings-application-scope.png)
+    ![Figure 5: Some System Settings entries have a Default Configuration for Application scope.](../../images/system-settings-application-scope.png)
 
 - *Default Configuration for All Sites:* Configuration at this scope can be
   overridden in each site.
 
-    ![Figure X: Some System Settings entries have a Default Configuration for All Sites scope.](../../images/system-settings-site-scope.png)
+    ![Figure 6: Some System Settings entries have a Default Configuration for All Sites scope.](../../images/system-settings-site-scope.png)
 
 - *Default Settings for All Instances:* Configuration at this scope can be
   overridden in each instance (usually via Instance Settings).
 
-    ![Figure X: Some System Settings entries have a Default Configuration for All Instances scope.](../../images/system-settings-instance-scope.png)
+    ![Figure 7: Some System Settings entries have a Default Configuration for All Instances scope.](../../images/system-settings-instance-scope.png)
 
 <!-- Perhaps show a proof-of-concept example here? -->
 
 <!-- Need a Lunar Resort example? -->
 
-## Exporting and Importing Configurations
+## Exporting and Importing Configurations [](id=exporting-and-importing-configurations)
 
 What if you change a lot of default configurations in System Settings, and then you
 need to make the same configurations in another Liferay installation <!--Another
