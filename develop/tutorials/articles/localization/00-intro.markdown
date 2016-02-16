@@ -19,6 +19,6 @@ same resource bundle so that you can leverage Liferay's language building
 capabilities from Liferay IDE and the Plugins SDK. You'll learn how to
 localize your portlets in all of these scenarios.
 
-**Related Topics**
+## Related Topics [](id=related-topics)
 
-[Localizing JSF Portlets](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/localizing-jsf-portlets)
+[Localizing JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/tutorials/localizing-jsf-portlets)

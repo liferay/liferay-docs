@@ -244,16 +244,16 @@ You've explored some common basic JSF portlet development topics dealing with
 IPC. These techniques should help launch you into development of your own JSF
 portlet development using IPC! 
 
-**Related Topics**
+## Related Topics [](id=related-topics)
 
-[Contexts and Dependency Injection for JSF Portlets](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/contexts-and-dependency-injection-for-jsf-portlets)
+[Contexts and Dependency Injection for JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/contexts-and-dependency-injection-for-jsf-portlets)
 
-[Liferay Faces Alloy UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
 
-[Understanding Liferay Faces Portal](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
 
-[Understanding Liferay Faces Alloy](/develop/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
