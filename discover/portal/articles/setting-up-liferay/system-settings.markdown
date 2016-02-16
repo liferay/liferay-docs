@@ -14,7 +14,7 @@ system scope in Liferay 7, and you don't need to go messing around in a
 properties file to do it. These settings can now be made in the Control Panel,
 in *Configuration* &rarr; *System Settings*. 
 
-![Figure 1: System Settings are accessed through the Control Panel.](../../images/system-settings-product-menu.png)
+![Figure x: System Settings are accessed through the Control Panel.](../../images/system-settings-product-menu.png)
 
 Perhaps an example will help. In The Lunar Resort, there's a forum site for
 excited guests to discuss their visits and offer guidance and tips to new
@@ -26,17 +26,16 @@ Lunar Resort's administrator, then change it in System Settings.
 ## Editing The Default Configuration
 
 Once you navigate to System Settings, you'll see that the configuration options
-are categorized into logical groupings. 
+are categorized into logical groupings, and that there's a Search box to make
+finding the app you want to configure easier.. 
 
-![Figure 2: System Settings are organized by component.](../../images/system-settings-components.png)
+![Figure x: System Settings are organized by component.](../../images/system-settings-nav-search.png)
 
 If you know that you want to change the default configuration of the Message
 Boards application, you can probably deduce that its configuration entries will
 be in the Collaboration section. Once you click on that heading, you'll only see
 the configuration entries for that category, listed in alphabetical order (so
 Blogs and the related Blogs Service entries are right at the top of the list).
-If you don't see the configuration entry you need, check in the Other category.
-Browse the remaining categories as a last resort.
 
 Once you find the entry you're looking for, click its Actions button
 (![Actions](../../images/icon-actions.png)), then click *Edit*.
@@ -44,29 +43,46 @@ Once you find the entry you're looking for, click its Actions button
 You're taken to a simple interface for changing whatever default configuration
 options you want.
 
-<!--Mention search? Or a link to the application categories? They're not the same
-categories as exist in the Add Applications menu-->
-
-
-
-
 ## Configuration Scope
 
 While browsing the categories of System Settings, you'll notice that each entry
-has a Name and a Scope. The Name is pretty self-explanatory, but the Scope is
-worth discussing. There are at least four values that you'll see under Scope:
+has a *Name* and a *Scope*. Note that this scope is different than the overall
+application configuration scope discussed in the introduction to this section.
+This is the System Settings application after all, so all of the configuration
+done here affects the System scope. So what is the Scope field here referring
+to? It's the scope at which this default, system-wide configuration can be
+overridden. There are four values that you'll see under Scope:
 
-System
+- *System:* Any configuration made at the system scope here becomes the final
+  value for the application in a system wide fashion. It affects the whole
+system and cannot be overridden anywhere else.
 
-Default Configuration for Application
+    ![Figure X: Each System Settings entry will have a configuration
+Scope.](../../images/system-settings-system-scope.png)
 
-Default Configuration for All Sites
+- *Default Configuration for Application:* Making configuration changes at this
+  level affects the application in a system-wide fashion as well. However, while
+these become the system wide defaults for the application, they can be
+overridden from each application instance.
 
-![Figure X: Each System Settings entry will have a configuration Scope.](../../images/system-settings-scope.png)
+    ![Figure X: Each System Settings entry will have a configuration
+Scope.](../../images/system-settings-application-scope.png)
+
+- *Default Configuration for All Sites:* Configuration at this scope can be
+  overridden in each site.
+
+    ![Figure X: Each System Settings entry will have a configuration
+Scope.](../../images/system-settings-site-scope.png)
+
+- *Default Settings for All Instances:* Configuration at this scope can be
+  overridden in each instance (usually via Instance Settings).
+
+    ![Figure X: Each System Settings entry will have a configuration
+Scope.](../../images/system-settings-instance-scope.png)
+
+<!-- Perhaps show a proof-of-concept example here? -->
 
 <!-- Need a Lunar Resort example -->
-
-<!-- Configuration Scopes diagram should go here, too -->
 
 <!-- Make sure to note that more granular configurations override system-wide
 ones, and that UI configurations override those set in properties files. -->
