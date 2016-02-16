@@ -52,9 +52,7 @@ For the `<liferay-security:permissionsURL />` tag, specify these attributes:
 
 `modelResource`: The fully qualified class name of the entity class. This
 class name gets translated into a more readable name as specified in
-`Language.properties`. 
-
-`Language.properties`: The entity class in the example above is the guestbook
+`Language.properties`. The `Entry.class` in the example above is the guestbook
 entry class for which the fully qualified class name is
 `com.liferay.docs.guestbook.model.Entry`.
 
