@@ -130,14 +130,14 @@ permissible.
     Navigate to your parent directory (e.g., `tasks`) and run the following
     Blade Tools command to generate a generic web client module structure:
 
-        blade create jspportlet [APPLICATION_NAME]-web
+        blade create -t mvcportlet [APPLICATION_NAME]-web
 
     If your application uses Liferay Service Builder, you'll need to run the
     following Blade Tools command instead. This command generates the service
     implementation and service API modules along with the aforementioned web
     client module:
 
-        blade create -p [ROOT_PACKAGE] servicebuilder [APPLICATION_NAME]
+        blade create -t servicebuilder -p [ROOT_PACKAGE] [APPLICATION_NAME]
 
     If you used the `blade create servicebuilder` command to generate
     implementation and API modules, ignore the `*svc` and `*api` folders for
@@ -446,7 +446,7 @@ directory.
 +$$$
 
 **Note:** At the time of this writing, there are some compile errors you'll
-receive when running `gradle build`. These compilation errors are caused from
+receive when running `gradlew build`. These compilation errors are caused from
 the `portal-service-7.0.0-SNAPSHOT` JAR being out-of-date. To work around this
 issue, build [liferay-portal](https://github.com/liferay/liferay-portal) from
 source (i.e., run `ant all` in the `liferay-portal` root directory) and then
@@ -469,9 +469,8 @@ $$$
 
 Once your project successfully builds, check all of your modules' `/build/libs`
 directories. There should be a newly generated JAR file in each, which is the
-file you'll need to deploy to Liferay. You can deploy each JAR by running:
-
-    blade deploy path/to/JAR/file
+file you'll need to deploy to Liferay. You can deploy each JAR by running `blade
+deploy` from each module's root directory.
 
 +$$$
 
