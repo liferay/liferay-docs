@@ -1,52 +1,51 @@
 # System Settings
 
 You might be tired of hearing about it by now, but it's worth repeating: Liferay
-is modular. It's composed of many applications. Those applications are
-configurable at several scopes. If you need to make configuration changes to an
-application that take effect in a system-wide fashion, where do you do it?
-Readers who have been around a while will be raising their hands hoping to be
-called on, sure that the correct answer is "why, system-wide application
-configuration takes place in a properties file, most commonly the
-`portal-ext.properties` file". They then expect to get a sticker of [Ray](https://www.liferay.com/ray) on their mobile device for their attentiveness. However, that's an
-incomplete answer, so they need to just sit back down and listen like the rest
-of the class. There's a brand new way to make configuration changes at the
-system scope in Liferay 7, and you don't need to go messing around in a
-properties file to do it. These settings can now be made in the Control Panel,
-in *Configuration* &rarr; *System Settings*. 
+is modular. It's composed of many applications, which are divided into even
+smaller "chunks" of functionality. The applications, and sometimes even code
+chunks, are configurable at several scopes, as discussed in the introductory
+article for this section. 
+
+If you need to make configuration changes to an application that take effect in
+a system-wide fashion, where do you do it?  Readers who have been around a while
+will be raising their hands hoping to be called on, sure that the correct answer
+is "why, system-wide application configuration takes place in a properties file,
+most commonly the `portal-ext.properties` file". They then expect to get a
+sticker of [Ray](https://www.liferay.com/ray) on their mobile device for their
+attentiveness. However, that's an incomplete answer, so they need to just sit
+back down and listen like the rest of the class. There's a brand new way to make
+configuration changes at the system scope in Liferay 7, and you don't need to go
+messing around in a properties file to do it. These settings can now be made in
+the Control Panel, in *Configuration* &rarr; *System Settings*. 
 
 ![Figure x: System Settings are accessed through the Control Panel.](../../images/system-settings-product-menu.png)
 
-Perhaps an example will help. In The Lunar Resort, there's a forum site for
-excited guests to discuss their visits and offer guidance and tips to new
-guests. Sometimes they get a little rowdy, and need to be temporarily banned
-from the site's forum (Liferay's forum app is the Message Boards portlet). The
-default ban interval is ten days. If that seems a little extreme to you, The
-Lunar Resort's administrator, then change it in System Settings. 
-
-## Editing The Default Configuration
+## Editing the Default Configuration
 
 Once you navigate to System Settings, you'll see that the configuration options
-are categorized into logical groupings, and that there's a Search box to make
-finding the app you want to configure easier.. 
+are categorized into logical groupings based on their functionality, and that
+there's a Search box to make finding the app you want to configure easier.
 
 ![Figure x: System Settings are organized by component.](../../images/system-settings-nav-search.png)
 
-If you know that you want to change the default configuration of the Message
-Boards application, you can probably deduce that its configuration entries will
-be in the Collaboration section. Once you click on that heading, you'll only see
-the configuration entries for that category, listed in alphabetical order (so
-Blogs and the related Blogs Service entries are right at the top of the list).
+Changing an app's default configuration options in System Settings isn't
+difficult. Once you find what you're looking for, simply click the name of the
+component you want to configure, or click the actions button
+(![Actions](../../images/icon-actions.png)), then click *Edit*. Make any changes
+you'd like, then click *Save*. Now your configuration changes are saved and take
+place throughout the entire system.
 
-Once you find the entry you're looking for, click its Actions button
-(![Actions](../../images/icon-actions.png)), then click *Edit*.
+![Figure X: Each System Settings entry will have a configuration Scope.](../../images/system-settings-actions.png)
 
-You're taken to a simple interface for changing whatever default configuration
-options you want.
+If you make some regrettable configuration decisions and can't recall exactly
+what you did, start over by clicking the actions button
+(![Actions](../../images/icon-actions.png)), then clicking *Reset Default
+Values*.
 
 ## Configuration Scope
 
 While browsing the categories of System Settings, you'll notice that each entry
-has a *Name* and a *Scope*. Note that this scope is different than the overall
+has a *Name* and a *Scope*. This scope is different than the overall
 application configuration scope discussed in the introduction to this section.
 This is the System Settings application after all, so all of the configuration
 done here affects the System scope. So what is the Scope field here referring
@@ -57,74 +56,54 @@ overridden. There are four values that you'll see under Scope:
   value for the application in a system wide fashion. It affects the whole
 system and cannot be overridden anywhere else.
 
-    ![Figure X: Each System Settings entry will have a configuration
-Scope.](../../images/system-settings-system-scope.png)
+    ![Figure X: Some System Settings entries have a System scope.](../../images/system-settings-system-scope.png)
 
 - *Default Configuration for Application:* Making configuration changes at this
   level affects the application in a system-wide fashion as well. However, while
 these become the system wide defaults for the application, they can be
 overridden from each application instance.
 
-    ![Figure X: Each System Settings entry will have a configuration
-Scope.](../../images/system-settings-application-scope.png)
+    ![Figure X: Some System Settings entries have a Default Configuration for Application scope.](../../images/system-settings-application-scope.png)
 
 - *Default Configuration for All Sites:* Configuration at this scope can be
   overridden in each site.
 
-    ![Figure X: Each System Settings entry will have a configuration
-Scope.](../../images/system-settings-site-scope.png)
+    ![Figure X: Some System Settings entries have a Default Configuration for All Sites scope.](../../images/system-settings-site-scope.png)
 
 - *Default Settings for All Instances:* Configuration at this scope can be
   overridden in each instance (usually via Instance Settings).
 
-    ![Figure X: Each System Settings entry will have a configuration
-Scope.](../../images/system-settings-instance-scope.png)
+    ![Figure X: Some System Settings entries have a Default Configuration for All Instances scope.](../../images/system-settings-instance-scope.png)
 
 <!-- Perhaps show a proof-of-concept example here? -->
 
-<!-- Need a Lunar Resort example -->
+<!-- Need a Lunar Resort example? -->
 
-<!-- Make sure to note that more granular configurations override system-wide
-ones, and that UI configurations override those set in properties files. -->
+## Exporting and Importing Configurations
 
-<!-- Cover Reset Default Values option -->
+What if you change a lot of default configurations in System Settings, and then you
+need to make the same configurations in another Liferay installation <!--Another
+cluster?-->? Don't worry, you won't need to remember every choice you make, then
+manually duplicate all the configurations. The System Settings application lets
+you export individual configurations (for example, just the configurations made
+to the Dynamic Data Lists entry), or export all of the settings you've made in
+the System Settings interface. Then you can just deploy them in the target
+Liferay installation.
 
+In the case of a single entry, just click the actions button
+(![Actions](../../images/icon-actions.png)), then click *Export*. A `.cfg` file
+will be downloaded, containing any configuration changes you've saved. 
 
+To export all of the configuration changes you've made in System Settings, click
+the System Settings options button (![Options](../../images/icon-options.png)),
+then click *Export All Settings*. You'll get a zip file with `.cfg` files
+corresponding to all of the entries that you edited.
 
+To make these configurations active in the destination Liferay system, simply
+unzip and place the `.cfg` files in the `[Liferay_Home]/osgi/modules` folder.
 
+Now you know what System Settings is and how to use it. All that's left is
+exploring the entries to see what configuration options you can make. If you
+aren't sure what something does, check the documentation for the feature you're
+interested in, as specific configurations will be covered there.
 
-
-
-
-
-
-![Figure 4: System Settings are accessed through the Control Panel.](../../images/system-settings-product-menu.png)
-
-
-
-
-
-Default Settings for All Sites
-
-- Appears to be overridden from Site Admin. For example, see the Blogs Service
-configuration entry, which has the scope of *Default Settings For All Sites*. So
-when you change something here, it affects the default configuration options in
-Content &rarr; Blogs &rarr; Configuration.
-
-<!--![Figure X: IMAGE OF SIDE_BY_SIDE CONFIGURATION IN SITE ADMIN AND CONFIG
-ADMIN]()-->
-
-System
-
-Override system-wide stuff, like FreeMarker engine configuration, CMIS Store,
-Elasticsearch, and more.
-
-Default Configuration for application
-
-- Override in the portlet instance, once deployed on a page. Click the options
-![Options](../../images/icon-options.png) menu then Configuration to override
-these settings 
-
-Default Configuration For All Instances
-
-See LDAP configuration entries in Platform
