@@ -7,51 +7,59 @@ us collect them. Anyone that uses a browser likely has an extensive URL
 collection in the form of bookmarks. With Liferay's Bookmarks app, your Liferay 
 instance can provide its users with bookmarks that benefit the entire community. 
 
-The Bookmarks app lets users and administrators collect and manage URLs in your 
-Liferay instance. They can add, edit, delete, export and import bookmarks. Users 
-can use links to access regularly visited web sites. Administrators can publish 
-links tailored to specific groups of users. Both internal pages as well as 
-external sites can be bookmarked. 
+The Bookmarks app lets users and administrators add, edit, delete, export, and 
+import URLs in your Liferay instance. Through the Bookmarks app, users can 
+access web sites and administrators can publish links tailored to specific user 
+segments. Both internal pages as well as external sites can be bookmarked. Next, 
+you'll learn how to create bookmarks and folders in the Bookmarks app.
 
 ## Creating Bookmarks and Folders
 
-Navigate to your Liferay instance and add the Bookmarks app to a page by 
-selecting *Add* &rarr; *Applications* &rarr; Community, and then dragging 
-*Bookmarks* onto the page. By default, the app looks like this:
+To use the Bookmarks app, you must first add it to a page in your Liferay 
+instance. Navigate to such a page and select *Add* &rarr; *Applications* &rarr; 
+Community, and then drag *Bookmarks* onto the page. By default, the app looks 
+like this:
 
 ![Figure 1: Initially, no bookmarks appear in the Bookmarks app.](../../../images/bookmarks-app-empty.png)
 
 The Bookmarks app is empty when you first add it to a page. The app greets you 
-with a smiley face and a message that says there are no bookmarks in the current 
-folder, the *Home* folder. The current folder's name is displayed to the 
-top-left of the area with the smiley face and message. The app displays the 
-*management bar* immediately above the current folder's name. The management bar 
-lets you choose which bookmarks and folders to display, how to display them, and 
-more. The search bar, located to the top-right of the selector bar, lets you 
-search for folders and bookmarks in the app. 
+with a smiley face and a message that says there are no bookmarks in the app's 
+current bookmarks folder, the *Home* folder. The current folder's name is 
+displayed to the top-left of the area with the smiley face and message. The app 
+displays the *management bar* immediately above the current folder's name. The 
+management bar lets you choose which bookmarks and folders to display, how to 
+display them, and more. The search bar, located to the top-right of the 
+management bar, lets you search for folders and bookmarks in the app. 
 
 To see all this functionality in action, you must first add some bookmarks and 
 folders. When you mouse-over the app, another bar appears across the top that 
-shows the app's name, an add button, and an options button. When you click the 
-add button, a small menu pops up that lets you select *Folder* or *Bookmark*. 
-Selecting *Bookmark* brings up the *Add Bookmark* form. This form lets you 
-create a bookmark by filling in the *Name*, *URL*, and *Description* fields. 
-Below these fields, there are additional options for Categorization, Related 
-Assets, and Permissions, just like in other Liferay apps. See the 
+shows the app's name, an Add button 
+(![Add](../../../images/icon-portlet-add-control.png)), and an Options button 
+(![Options](../../../images/icon-app-options.png)). When 
+you click the Add button, a small menu pops up that lets you select *Folder* or 
+*Bookmark*. Selecting *Bookmark* brings up the *Add Bookmark* form. This form 
+lets you add a bookmark by filling in the *Name*, *URL*, and *Description* 
+fields. Below these fields, there are additional options for Categorization, 
+Related Assets, and Permissions, just like in other Liferay apps. See the 
 [Publishing Content Dynamically](/discover/portal/-/knowledge_base/7-0/publishing-content-dynamically) 
-section for more information on this. When you're finished filling out the Add 
+section for more information on this. When you're finished filling in the Add 
 Bookmark form, click *Save* to create the bookmark. If you select *Folder* from 
 the add button, this brings up the *Add Folder* form. This form is very similar 
-to the Add Bookmark form. Fill in the *Name* and *Description* fields, assign 
-any permissions you want to use, and click *Save* to create the folder. 
+to the Add Bookmark form. Fill in its *Name* and *Description* fields, assign 
+any permissions you want to use, and click *Save* to create the folder. When you 
+create folders and bookmarks, they're added to the current folder. Folders can 
+have any number of subfolders. 
 
 ![Figure 2: The Add Bookmark form lets you create a bookmark.](../../../images/bookmarks-add-bookmark.png)
 
-![Figure 3: The Add Folder form lets you create a folder to use for organizing bookmarks.](../../../images/bookmarks-add-folder.png)
+![Figure 3: The Bookmarks app displays your folders and bookmarks.](../../../images/bookmarks-all.png)
 
-When you create folders and bookmarks, they're added to the current folder. 
-Folders can have any number of subfolders. Next, you'll learn how to manage 
-bookmarks and folders. 
+To import or export bookmarks, mouse-over the app, click the *Options* button 
+next to the Add button at the top of the app, and select *Export/Import*. In the 
+window that appears, you can start a new export or import process. For details, 
+[see the article on importing and exporting pages and content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content). 
+
+Next, you'll learn how to manage bookmarks and folders. 
 
 ## Managing Bookmarks and Folders
 
@@ -59,10 +67,12 @@ The Bookmarks app provides several ways to manage your bookmarks and folders.
 One is the management bar. Checking the checkbox on the left-hand side of the 
 management bar selects all the folders and bookmarks currently displayed in the 
 app. When you do this, the management bar changes to show the number of selected 
-items, and replaces the buttons on its right with an info button and a delete 
-button. Pressing the *Delete* button deletes the selected items. Uncheck the 
-checkbox to return the management bar to its initial state. In this state, the 
-selector menu to the right of the checkbox lets you filter the items to display: 
+items, and replaces the buttons on its right with an Info button 
+(![Info](../../../images/icon-information.png)) and a Recycle Bin button 
+(![Recycle Bin](../../../images/icon-trash.png)). Pressing the Recycle Bin 
+button moves the selected items to the Recycle Bin. Uncheck the checkbox to 
+return the management bar to its initial state. In this state, the selector menu 
+to the right of the checkbox lets you filter the items to display: 
 
 - **All:** Display all folders and bookmarks. 
 
@@ -70,24 +80,27 @@ selector menu to the right of the checkbox lets you filter the items to display:
 
 - **Mine:** Display only the bookmarks you created. 
 
-The *Info*, *Descriptive*, and *List* buttons are on the management bar's right 
-side. Clicking the Info button slides in an info panel that displays more 
-information about the current folder, and gives you additional management 
+The *Info*, *Descriptive* 
+(![Descriptive](../../../images/icon-descriptive-style.png)), and *List* 
+(![List](../../../images/icon-list-style.png)) buttons are on the management 
+bar's right side. Clicking the Info button slides in an info panel that displays 
+more information about the current folder and gives you additional management 
 options. To receive notifications when a user adds a bookmark to the folder, 
-subscribe to the folder by clicking the star icon. Click the actions menu 
-(the three vertical dots) to reveal options for editing, moving, assigning 
-permissions to, or deleting the folder. Note that you can't edit, move, or 
-delete the Home folder. 
+subscribe to the folder by clicking the *Star* icon 
+(![Star](../../../images/icon-star.png)). Click the *Actions* menu 
+(![Actions](../../../images/icon-actions.png)) to reveal options for editing, 
+moving, assigning permissions to, or deleting the folder. Note that you can't 
+edit, move, or delete the Home folder. 
 
 ![Figure 4: A folder's info panel shows more information about the folder, and lets you take additional actions.](../../../images/bookmarks-info-panel.png)
 
 The management bar's Descriptive and List buttons determine how the app displays 
-folders and bookmarks. Click the management bar's Descriptive button to show 
-each item's name, description, number of subfolders and bookmarks (folders), and 
-number of visits (bookmarks). The app displays items this way by default. To 
-instead show items in a simple list, click the List button. 
+folders and bookmarks. Click the Descriptive button to show each item's name, 
+description, number of subfolders and bookmarks (folders), and number of visits 
+(bookmarks). The app displays items this way by default. To instead show items 
+in a simple list, click the List button. 
 
-You can also manage each item from its *actions* menu. You can use this menu to 
+You can also manage each item from its *Actions* menu. You can use this menu to 
 edit, move, assign permissions to, or delete each item. If the item is a 
 bookmark, you can also subscribe to it in its actions menu. Subscribing to a 
 bookmark means that you receive a notification when the bookmark changes. 
