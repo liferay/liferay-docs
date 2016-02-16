@@ -1,63 +1,57 @@
 # Working Together with the Wiki [](id=working-together-with-the-wiki)
 
 Liferay's Wiki is a full-featured [wiki](/participate/liferaypedia/-/wiki/Main/Wiki)
-application which has all of the features you would expect in a state of the art
+application which has all the features you would expect in a state of the art
 wiki. Again, though, it has the benefit of being able to take advantage of all
-of the features of the Liferay platform. As such, it is completely integrated
+the features of the Liferay platform. As such, it is completely integrated
 with Liferay's [user management](/discover/portal/-/knowledge_base/7-0/user-management),
 [tagging](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories),
 and [security features](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security).
 
-So, what is a wiki? Basically, a wiki is an application which allows users to
+So what is a wiki? A wiki is an application that allows users to
 collaboratively build a repository of information. There are, of course, many
 implementations of this idea, the most famous of which is Wikipedia. Wikipedia
 is a full online encyclopedia developed collaboratively by users from all over
-the world, using a wiki. Another example would be
-[TripAdvisor](http://www.tripadvisor.com/), which tourists use to rate travel
-destinations and accommodations, and help other tourists plan fantastic trips.
+the world, using a wiki. 
 
-A wiki application allows users to create and edit online documents and link
-them to each other. To accomplish this, a special form of markup is used which
-is sometimes called wikitext. Unfortunately, the proliferation of many different
-wiki applications resulted in slightly different syntax for wikitext in the
-various products, as each new wiki tried to focus on new features that other
-wikis did not have. For that reason, a project called [WikiCreole](http://www.wikicreole.org/)
-was started. This project resulted in the release of WikiCreole 1.0 in 2007,
-which is an attempt to define a standard wiki markup that all wikis can support.
+A wiki application allows users to create documents and link them to each other.
+To accomplish this, a special form of markup called wikitext is used.
+Unfortunately, the proliferation of many different wiki applications resulted in
+slightly different syntax for wikitext, as each new wiki tried to focus on new
+features that other wikis did not have. For that reason, a project called
+[WikiCreole](http://www.wikicreole.org/) was started, which is an attempt to
+define a standard wiki markup that all wikis can support.
 
 Rather than define another wikitext syntax, Liferay's Wiki app supports
 WikiCreole as its syntax. This syntax is a best-of-breed wiki syntax and should
 be familiar to users of other wikis. The app provides a handy cheat sheet for
-the syntax on the page editing form, with a link to the full documentation if
+the syntax on the page editing form with a link to the full documentation if
 you wish to use some of WikiCreole's advanced features.
 
 An instance of the Wiki application can be created for each scope: the entire
-Liferay virtual instance (global scope), a site, or a page. A page-scoped Wiki
-application instance must be created from the page, via a Wiki application or
-Wiki Display application's configuration screen--we'll cover this later. For
-now, let's start using your site's Wiki application instance. 
+Liferay virtual instance (global scope), a site, or a page. It's time to see how
+to use your site's Wiki application instance. 
 
 ## Getting Started with Wikis [](id=getting-started-with-wikis)
 
-The product menu provides the best place to start working with your wikis. To
-start working with wikis for your site, click on the *Product Menu* icon
-(![Menu](../../../images/icon-menu.png)), navigate to your site, and select
-the *Content* section. If you are updating an existing page-scoped wiki
-application instance you can select that page scope from the scope menu that the
-Gear icon (![Gear](../../../images/icon-control-menu-gear.png)) makes available.
-The site's wiki application instance is available in the Default Scope. Once
-you're in the proper content scope click on *Wiki*. The Wiki administration
-screen appears. This screen allows you to add, modify, and delete wiki nodes. A
-Wiki application instance can contain many wiki nodes. By default, it contains
-one node, called *Main*.
+The menu provides the best place to start working with your wikis. To start
+working with wikis for your site, click on the *Menu* icon
+(![Menu](../../../images/icon-menu.png)), navigate to your site, and select the
+*Content* section. If you are updating an existing page-scoped wiki application
+instance you can select that page scope from the scope menu that the Gear icon
+(![Gear](../../../images/icon-control-menu-gear.png)) makes available. The
+site's wiki application instance is available in the Default Scope. Once you're
+in the proper content scope click on *Wiki*. The Wiki administration screen
+appears. This screen allows you to add, modify, and delete wiki nodes. A Wiki
+application instance can contain many wiki nodes. By default, it contains one
+node, called *Main*.
 
 ![Figure 1: The Wiki application instance has a wiki node named *Main* with a single front page. You can build on the Main node or click the Add icon to create a new node.](../../../images/wiki-admin-empty.png)
 
-Before we start adding to our site's wiki instance, let's configure it the way
-we want it. The instance's interfaces for permissions, export and import,
-configuration, and application templates are accessible from the Options menu.
-Click on the *Options* icon (![Options](../../../images/icon-options.png)) to
-open the menu.
+Before you start adding to your wiki instance, you should configure it. The
+instance's interfaces for permissions, export and import, configuration, and
+application templates are accessible from the Options menu. Click the
+*Options* icon (![Options](../../../images/icon-options.png)) to open the menu.
 
 Here are the wiki application instance options screens:
 
