@@ -613,6 +613,11 @@ When you're done editing and configuring your message, you can preview it, and
 save it as a draft or publish it. Once it's published, it's listed along with
 the other threads in the category. 
 
+Message Boards is also highly integrated with Liferay's user management
+features. When you click on a thread or thread reply's subject link, the
+author's profile picture, name, rank, number of posts, the date the user joined
+the site, and a link to the user's recent posts. 
+
 ### Participating in Message Board Threads [](id=participating-in-message-board-threads)
 
 To find message board threads that interest you, browse a message board's
@@ -622,22 +627,12 @@ RSS feed and/or emails that inform you about thread activities in that category.
 Similar to a category's screen, Recent Posts lists threads too, except they're the
 latest threads across all the categories. 
 
-To view a message thread, click on it. Messages are shown by default in a
-threaded view so that replies are attached to the proper parent message. This
-makes it easy to follow along with conversations. Icons
-(![Thread Views](../../../images/message-boards-thread-view-icons.png)) at the top
-of the thread allow users to view threads in Combination View, Flat View, or
-Tree View. A Flat View shows all of the messages in the order in which they are
-posted. A Tree View indents indents reply messages with respect to the message
-they're replying to. The Combination View shows a textual tree representation of
-the thread messages using subjects only at the top, with the messages shown flat
-underneath.
+To view a message thread, click on it. Messages are shown in a threaded view so
+that replies are aligned under their proper parent thread. This makes it easy to
+follow along with conversations. Thread replies are indented under their parent
+thread. 
 
-Message Boards is also highly integrated with Liferay's user management
-features. Posts on a message board show a user's profile picture as well as the
-date the user joined the site. 
-
-![Figure 5: Combination View shows a textual representation of the thread tree above the messages, which are displayed flat.](../../../images/message-boards-participate-in-threads.png)
+![Figure 5: A thread's view displays author information and thread content, for the thread and all replies to the thread.](../../../images/message-boards-participate-in-threads.png)
 
 Subscribing to a thread causes Liferay to send the user an email whenever a new
 message is posted to the thread. If you have enabled the mailing list feature
