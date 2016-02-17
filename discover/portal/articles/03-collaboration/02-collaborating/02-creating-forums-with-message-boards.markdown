@@ -168,6 +168,15 @@ Announcement. To define a thread priority, enter its name, a URL to the image
 icon that represents it, and a priority number. Threads with a higher priority
 are posted above threads with a lower priority. 
 
+**Thread Icons**
+
+  &nbsp;**Icon** | **Definition** | 
+:-------------------: | :---------------- |
+   ![Urgent](../../../images/message-boards-urgent-icon.png) |  Urgent |
+   ![Announcement](../../../images/message-boards-announcement-icon.png) |  Announcement |
+   ![Sticky](../../../images/message-boards-sticky-icon.png) |  Sticky |
+   ![Question](../../../images/message-boards-question-icon.png) |  Question |
+
 The localized language field lets you name the priorities in each locale. You
 can select the locale, update the priority names for it, and save your updates. 
 
