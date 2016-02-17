@@ -38,9 +38,10 @@ the page. Then click the app's *Options* icon
 message board is now scoped to the page and available to work with in Site
 Administration. 
 
-To administer a message board, open the *Product Menu* (![Product
-Menu](../../../images/icon-menu.png)) and navigate the *Content* section for your
-site, page, or global scope. The Message Boards administration screen appears. 
+To administer a message board, open the *Menu*
+(![Menu](../../../images/icon-menu.png)) and navigate to the *Content* section
+for your site, page, or global scope. The Message Boards administration screen
+appears. 
 
 +$$$
 
@@ -179,7 +180,7 @@ applied for anyone who is a part of any of the Message Boards Administrator
 groups: the site role, the organization, the organization role, the regular
 role, or the user group. Of course, you probably wouldn't want to create a role,
 organization, organization role, site role, and user group all with the same
-name in your portal, but you get the idea. 
+name in your Virtual Instance, but you get the idea. 
 
     Moderator=organization:Message Boards Administrator
 
@@ -395,9 +396,9 @@ portal properties:
     pop.server.subdomain=events
 
 This property creates a special MX (mail exchange) subdomain to receive all
-portal-related email (e.g., events.liferay.com). If you don't want to use the
-subdomain approach, you can unset this value to tell Liferay to use the *Email
-From* address, specified in the Message Board's configuration, to receive
+virtual instance related email (e.g., events.liferay.com). If you don't want to
+use the subdomain approach, you can unset this value to tell Liferay to use the
+*Email From* address, specified in the Message Board's configuration, to receive
 message board notification email replies. For example, the *Email From* address
 could be set to *replies\@liferay.com*. 
 
@@ -525,9 +526,9 @@ explore posting messages to them and interacting with other user's threads.
 ## Using the Message Boards [](id=using-the-message-boards)
 
 You can add the Message Boards application to a page from the *Add*
-(![Add](../../../images/icon-control-menu-add.png) menu's *Collaboration* section.
-Users will immediately recognize that the interface is similar to many other
-implementations they've seen before. Message boards are nothing new to the
+(![Add](../../../images/icon-control-menu-add.png)) menu's *Collaboration*
+section. Users will immediately recognize that the interface is similar to many
+other implementations they've seen before. Message boards are nothing new to the
 Internet, and many people have been using them for quite a long time. In any
 case, it can't hurt to explore how to use Liferay Message Boards and discover
 all of its features. 
@@ -572,7 +573,10 @@ Boards application makes it very easy to use.
 Message Boards uses a rich-text editor. It supports bold, italicized,
 underlined, and crossed-out text, links, images, colors, lists, tables,
 alignments, quotation blocks, code blocks, different fonts and font sizes, and
-more. There are even a bunch of smiley faces that you can use. 
+more. The editor has keyboard shortcuts Ctrl+b for bold, Ctrl+i for italics, and
+Ctrl+u for underline. You can [mention](/discover/portal/-/knowledge_base/7-0/creating-forums-with-message-boards#mentioning-other-users)
+another other user by entering the "@" character followed by the user's user
+name. There are even a bunch of smiley faces that you can use. 
 
 After entering the message's *Subject*, enter your message *Body*. Below the
 Body are sections that let you attach files (e.g., images) to your message,
@@ -748,7 +752,92 @@ be used, for example, to allow some privileged users to post on a certain
 thread, while others are only allowed to view it. Other combinations of the
 above permissions are also possible. 
 
-That wraps up message board management basics. 
+That wraps up message board management basics. Next, let's learn how users can
+*mention* other users in their content and in comments and thread replies. 
+
+## Mentioning Other Users
+
+Have you ever wanted to include another user in a discussion on the Message
+Boards? Have you ever wanted to give kudos to a colleague in content you're
+writing? With the Mentions feature, you can [*mention*](/participate/liferaypedia/-/wiki/Main/Mentions)
+(notify and/or draw attention to) other users, by entering the "@" character in
+front of each user's user name. 
+
+When you mention a user, the user receives a site notification next to the
+user's profile icon and an email, alerting the user with a link to the content.
+You can mention users in a blog entry, a message boards thread or thread reply,
+or comments in any app that supports comments. What's more, a mention in app
+content links to the user's home page, so readers can find out more about the
+mentioned user. 
+
+![Figure x: As you enter a user name after an "@" character, Mentions displays links to users that match the text you enter. Select the user you want to mention and publish your content.](../../../images/mentions-at-mention-menu.png)
+                                                                     
+The Mentions feature works as you'd expect. While editing comments or content,
+enter an "@" character followed by the *user name* of the user you're mentioning
+(e.g., *@joe.bloggs*). A selector appears, listing users that match the name
+you're entering. In the selector, each user is represented by his/her profile
+picture, name, and user name. Click on the user you want to mention and finish
+editing your content.
+
++$$$
+
+**Known Limitation**: In comments, homepage hyperlinks aren't displayed for
+mentioned users. Refer to issue
+[LPS-56020](https://issues.liferay.com/browse/LPS-56020) for details. 
+
+$$$
+
+On publishing the content, mentioned users receive a
+notification next to their profile picture and an email, informing them that
+they've been mentioned. The notification and email indicate the author's name
+and content type, and it links to the content. 
+
+![Figure x: Liferay's Notifications feature alerts users with the number of notifications (including mentions) waiting for them to read.](../../../images/mentions-count-near-profile-image.png)
+
+![Figure x: When you click on the notifications number next to your profile picture, your Notifications List appears.](../../../images/mentions-notification-list.png)
+
+Here's an example notification email message:
+
+	Dear Joe Bloggs,
+
+	Neil Armstrong mentioned you in the following comment:
+
+	----------
+	I bet @joe would like visiting the moon.
+	----------
+
+	View comment.(link)
+
+	Sincerely,
+	Kim Admin
+	kim.admin@lunarresort.com 
+
+The Mentions app is bundled with Liferay CE and is part of the Collaboration
+Suite available on the [Marketplace](https://www.liferay.com/marketplace).
+Mentions is enabled globally by default, but you can enable/disable it globally
+or per site. For a site to use Mentions, it must be enabled for the site's
+Virtual Instance. To access the global Mentions settings for your
+Virtual Instance, open the *Menu* (![Menu](../../../images/icon-menu.png)), then
+navigate to *Control Panel &rarr; Configuration &rarr; Instance Settings*, click
+on the *Social* tab, and expand the *Mentions* section. 
+
+![Figure x: From Instance Settings in the Control Panel, you can enable or disable the Mentions feature for all of the Virtual Instance's sites.](../../../images/mentions-global-instance-setting.png)
+
+All users are allowed to mention fellow site members and friends, by default. To
+fine tune these options, select the *Define Mentions Capability for Users*
+option and specify the settings you want. 
+
+Mentions must be enabled for a site's Virtual Instance in order for Mentions to
+be available for the site. As a site administrator, you can enable or disable
+Mentions for your site. A site's Mentions app configuration is accessible from
+within the *Menu* (![Menu](../../../images/icon-menu.png)). Once in the menu,
+navigate to *Site Name &rarr; Configuration &rarr; Site Settings*, click on the
+*Social* tab, and expand the *Mentions* section. This section lets you enable or
+disable Mentions for the site. 
+
+As we've demonstrated, you can mention users to get their attention, praise them
+with kudos, and link to their home pages. It helps you welcome specific users to
+collaborate with you. Have fun collaborating and socializing with Mentions! 
 
 ## Summary [](id=summary)
 
