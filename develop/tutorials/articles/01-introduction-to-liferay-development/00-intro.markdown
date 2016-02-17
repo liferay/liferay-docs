@@ -115,12 +115,13 @@ compatible with Liferay's module framework. Liferay hasn't abandoned its own
 tooling, though: Liferay's Eclipse-based IDEs (Liferay IDE and Liferay Developer
 Studio) can still be used. But now you have options. 
 
-[Blade Tools](https://github.com/gamerson/blade.tools) is a new Liferay tool
-that provides templates for creating a variety of types of modules. It's the
-recommended (but not required) way to get started with Liferay 7 application
+[Blade Tools](https://github.com/gamerson/liferay-blade-tools) is a new Liferay
+tool that provides templates for creating a variety of types of modules. It's
+the recommended (but not required) way to get started with Liferay 7 application
 development. Since it's a command-line tool,
-[Blade Tools](https://github.com/gamerson/blade.tools) can be invoked directly
-or from other applications like Liferay IDE or Liferay Developer Studio.
+[Blade Tools](https://github.com/gamerson/liferay-blade-tools) can be invoked
+directly or from other applications like Liferay IDE or Liferay Developer
+Studio.
 
 Although it's no longer required, the Liferay Plugins SDK can still be used to
 create Liferay 7 modules. It has been updated for the Liferay 7 release to

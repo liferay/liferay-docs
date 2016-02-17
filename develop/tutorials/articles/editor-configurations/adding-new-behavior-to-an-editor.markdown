@@ -27,10 +27,10 @@ extension point, you should follow these steps:
     immediately following editor initialization.
 
     Some examples of JS files that are injected into the CKEditor are
-    [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/ckeditor_diffs/extension/creole_dialog_definition.js),
-    [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/ckeditor_diffs/extension/creole_dialog_show.js),
+    [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_definition.js),
+    [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_show.js),
     and
-    [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/META-INF/resources/ckeditor_diffs/extension/dialog_definition.js).
+    [https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/dialog_definition.js).
     These JS files are used by Liferay to redefine which fields show in
     different dialogs, depending on what the selected language (HTML, BBCode,
     Creole) supports. For example, Creole doesn't support background color in
@@ -39,8 +39,8 @@ extension point, you should follow these steps:
 
 2.  Now you'll need to create a module that can register your new JS file and
     inject it into your editor instance. Create a generic OSGi module using your
-    favorite third party tool, or use the
-    [Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle).
+    favorite third party tool, or use
+    [Blade Tools](/develop/tutorials/-/knowledge_base/7-0/using-blade-to-create-modules).
 
 3.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. To follow naming conventions, your class name
@@ -81,7 +81,7 @@ extension point, you should follow these steps:
     suggested previously dealing with Creole's deficiency with displaying
     background colors in table cells. You can look at how this could be
     done by looking at the `include(...)` method in the
-    [CKEditorCreoleOnEditorCreateDynamicInclude](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editors-web/src/com/liferay/frontend/editors/web/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java)
+    [CKEditorCreoleOnEditorCreateDynamicInclude](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/java/com/liferay/frontend/editor/ckeditor/web/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java)
     class.
 
 7.  Make sure you've instantiated your bundle's context so you
