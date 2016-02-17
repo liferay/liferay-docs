@@ -1,4 +1,4 @@
-# Using Liferay's Script Engine
+# Using Liferay's Script Engine [](id=using-liferays-script-engine)
 
 Liferay provides a robust script engine that can be used to execute scripts in a
 variety of languages. Liferay's script engine was originally developed to allow

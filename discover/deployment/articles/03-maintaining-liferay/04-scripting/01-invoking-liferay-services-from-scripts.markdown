@@ -1,4 +1,4 @@
-# Invoking Liferay Services From Scripts
+# Invoking Liferay Services From Scripts [](id=invoking-liferay-services-from-scripts)
 
 In many cases, you'll want to invoke one or more of Liferay's many services.
 This is possible from each of the supported scripting languages. Of course, the
@@ -40,7 +40,7 @@ These modules are all freely available on
 First, let's see how this would work in Beanshell, which is very similar to
 Java.
  
-## Beanshell
+## Beanshell [](id=beanshell)
 
 Beanshell is a Java scripting language that's designed to run Java code with
 little or no changes. In this example, we only have one small change to make
@@ -60,7 +60,7 @@ because Beanshell doesn't support the use of Java Generics:
 Next, we'll show the same thing in Groovy, another scripting language designed
 to be similar to Java. 
 
-## Groovy
+## Groovy [](id=groovy)
 
 Groovy is also based on Java. It's even easier than Beanshell because any code
 written in Java also runs in Groovy. This means we can execute the exact same
@@ -92,7 +92,7 @@ Liferay's script engine supports more than just Java-like languages. Despite the
 name, you should be aware that JavaScript bears little resemblance to Java, but
 you can still use it in Liferay's script engine. 
 
-## JavaScript
+## JavaScript [](id=javascript)
 
 Liferay uses the Rhino JavaScript Engine to provide JavaScript support in the
 script engine. The following code provides a JavaScript version of our original
@@ -109,7 +109,7 @@ Java program:
  
 You can see that the JavaScript example is compact. Ruby is even more compact. 
 
-## Ruby
+## Ruby [](id=ruby)
 
 Ruby is supported through the use of JRuby. Our example could be implemented in
 Ruby as follows: 
@@ -120,7 +120,7 @@ Ruby as follows:
  
 Python users aren't left out either. 
 
-## Python
+## Python [](id=python)
 
 Liferay provides Python support based on Jython. Our example could be
 implemented with the following code:
@@ -138,7 +138,7 @@ As you can see, Liferay's services can be accessed from any of these languages.
 Next, let's look at some practical examples of how you can use Liferay's script
 engine.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Running Scripts From the Script Console](/discover/deployment/-/knowledge_base/7-0/running-scripts-from-the-script-console)
 
