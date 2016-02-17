@@ -52,6 +52,11 @@ Boards* from under the *Content* heading.
 
 $$$
 
+To administer a message board, open the *Product Menu* (![Product
+Menu](../../../images/icon-menu.png)) and navigate the *Content* section for your
+site, page, or global scope. Click on *Message Boards* and the Message Boards
+administration screen appears. 
+
 ![Figure 1: A Message Board instance starts empty, ready for you to configure for your purposes.](../../../images/message-boards-administration.png)
 
 Initially, a message board has no categories or threads; and that's good,
