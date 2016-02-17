@@ -153,7 +153,7 @@ administrators to create multiple sites with the same default set of pages and
 content. For information about the Apps, Users, and Configuration sections of
 the Control Panel, see the
 [Leveraging the Liferay Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace),
-[User Management](/discover/portal/-/knowledge_base/6-2/user-management), and
+[User Management](/discover/portal/-/knowledge_base/7-0/user-management), and
 [Using the Control Panel](/discover/portal/-/knowledge_base/6-2/using-the-control-panel)
 sections, respectively.
 
@@ -336,10 +336,8 @@ The *Recycle Bin* option under the Advanced tab provides the option to
 enable/disable the Recycle Bin for your site. You can also regulate the age (in
 minutes) for which content is able to be stored in the Recycle Bin until it is
 permanently deleted. For a full explanation of the Recycle Bin, see the
-[Recyling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
+[Restoring Deleted Assets](/discover/portal/-/knowledge_base/7-0/restoring-deleted-assets)
 section.
-
-<!-- TODO: replace link above. -Cody -->
 
 #### Custom Fields [](id=custom-fields)
 
@@ -397,10 +395,10 @@ assigned site members will have by default. If you'd like to learn more about
 creating roles and/or teams, visit the
 [Roles and Permissions](/discover/portal/-/knowledge_base/6-2/roles-and-permissions)
 and
-[Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management)
+[Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/7-0/creating-teams-for-advanced-site-membership-management)
 sections, respectively. 
 
-<!-- TODO: replace links above. -Cody -->
+<!-- TODO: replace link above. -Cody -->
 
 #### Ratings [](id=ratings)
 
@@ -523,9 +521,13 @@ and from where. The *Analytics* option is listed under the Advanced tab.
 
 #### Maps [](id=maps)
 
-*Under Contruction*
+The *Maps* options lets you configure the maps API provider used by your Liferay
+instance when displaying geolocalized assets. Geolocalized assets can be
+displayed for documents, web content articles, DDL records, etc.
 
-<!-- TODO Jim: Jim's area. Good blog on this:
+<!-- TODO: Provide link to where Maps feature is documented once it's available.
+
+This is Jim's area. Good blog on this:
 https://www.liferay.com/web/juan.fernandez/blog/-/blogs/adding-geolocation-support-to-liferay-7-0
 -Cody -->
 

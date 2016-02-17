@@ -172,19 +172,17 @@ are created by developers and are easily installed using the Liferay
 Marketplace. Since we don't have any themes beyond the default one installed
 yet, we'll use the default theme for our pages.
 
-<!-- TODO: Add image of Look and Feel section here when more stable for 7.0:
-[Figure 2.8: The Look and Feel interface allows you to choose a theme for the current site.](../../../images/04-look-and-feel.png)
--->
+![Figure 5: The Look and Feel interface allows you to choose a theme for the current site.](../../../images/look-and-feel-pages.png)
 
 Many themes include more than one color scheme. This allows you to keep the
-existing look and feel while giving your site a different flavor. Change the
-color scheme from blue to green by selecting *Dark* under *Color Schemes*. If
-you now go back to the site (by clicking the *Go to Site* button located under
-the Site Administration dropdown menu), you'll see some parts of the page are
-now tinged with a darker hue.
+existing look and feel while giving your site a different flavor. The *Color
+Schemes* option is not available for the default theme.
 
-<!-- TODO: Color change may differ for 7.0. Check when Color Schemes are
-reintroduced. -Cody -->
+<!--
+Change the color scheme from blue to green by selecting *Dark* under *Color
+Schemes*. If you now go back to the site (by clicking the *Go to Site* button
+located under the Site Administration dropdown menu), you'll see some parts of
+the page are now tinged with a darker hue.
 
 If you apply a color scheme to a set of public or private pages, it is, by
 default, applied to each page in the set. If, however, you click the *Edit Page*
@@ -194,7 +192,9 @@ page only. You can use this feature to choose a different color scheme for a
 particular page than the one defined for the set of public or private pages to
 which it belongs.
 
-<!-- TODO: The Color Schemes option is not currently available for the default
+------------
+
+TODO: The Color Schemes option is not currently available for the default
 theme. Checked with Julio and he said color schemes are still available, but not
 for the current default theme. He's requesting different color schemes be added
 before the 7.0 release so the options are available by default (instead of only
@@ -399,16 +399,13 @@ section for more details.
 #### Mobile Device Rules [](id=mobile-device-rules)
 
 This option allows you to apply rules for how this page should be rendered for
-various mobile devices. You can set these up in the *Advanced* &rarr; *Mobile
-Device Rules* section in the Product Menu &rarr; *Sites* &rarr; *Configuration*.
-[Displaying Site Pages to Mobile Devices]()
-section.
+various mobile devices. You can set these up by navigating to your Site
+Administration dropdown menu and selecting *Configuration* &rarr; *Mobile Device
+Families*.
 
-<!-- Add following sentence when this section is available (DXP only app) -Cody:
-For more information about Mobile Device Rules and how to use them, see the
-[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-0/displaying-site-pages-to-mobile-devices)
-section.
--->
+<!-- TODO: Device Recognition app is no longer provided on Marketplace. Need to
+figure out how this is changing Mobile Device Rules (section still available in
+Page Settings. -Cody -->
 
 #### Embedded Portlets [](id=embedded-portlets)
 
@@ -525,8 +522,7 @@ Personalizing Pages (Add two number signs to "Personalizing Pages", when content
 has been updated)-->
 
 <!-- Review this section once more information is found. Contacted Julio, and
-waiting for a response to several questions on the changes to page
-customization. -Cody -->
+Page Customization option is being implemented in LPS-63037. -Cody -->
 
 <!--Administrators can designate public pages or sections of public pages to be
 customizable. When a user visits such a page, a notification appears stating
