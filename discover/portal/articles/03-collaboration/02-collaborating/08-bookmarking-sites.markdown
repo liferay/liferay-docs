@@ -1,11 +1,11 @@
 # Bookmarking Sites
 
-Many of us enjoy collecting things we value. This could include stamps, comic 
-books, sea shells, shoes, or even vintage musical instruments. The list goes on 
-and on. You've probably never thought about collecting URLs, even though most of 
-us collect them. Anyone that uses a browser likely has an extensive URL 
-collection in the form of bookmarks. With Liferay's Bookmarks app, your Liferay 
-instance can provide its users with bookmarks that benefit the entire community. 
+Many of us enjoy collecting things we value: stamps, comic books, sea shells,
+shoes, or even vintage musical instruments. You've probably never thought about
+collecting URLs, even though most of us collect them. Anyone that uses a browser
+likely has an extensive URL collection in the form of bookmarks. With Liferay's
+Bookmarks app, your Liferay instance can provide its users with bookmarks that
+benefit the entire community. 
 
 The Bookmarks app lets users and administrators add, edit, delete, export, and 
 import URLs in your Liferay instance. Through the Bookmarks app, users can 
@@ -15,21 +15,20 @@ you'll learn how to create bookmarks and folders in the Bookmarks app.
 
 ## Creating Bookmarks and Folders
 
-To use the Bookmarks app, you must first add it to a page in your Liferay 
-instance. Navigate to such a page and select *Add* &rarr; *Applications* &rarr; 
-Community, and then drag *Bookmarks* onto the page. By default, the app looks 
-like this:
+To use the Bookmarks app, you must first add it to a page. Select *Add* &rarr;
+*Applications* &rarr; Community, and then drag *Bookmarks* onto the page. By
+default, the app looks like this:
 
 ![Figure 1: Initially, no bookmarks appear in the Bookmarks app.](../../../images/bookmarks-app-empty.png)
 
-The Bookmarks app is empty when you first add it to a page. The app greets you 
-with a smiley face and a message that says there are no bookmarks in the app's 
-current bookmarks folder, the *Home* folder. The current folder's name is 
-displayed to the top-left of the area with the smiley face and message. The app 
-displays the *management bar* immediately above the current folder's name. The 
-management bar lets you choose which bookmarks and folders to display, how to 
-display them, and more. The search bar, located to the top-right of the 
-management bar, lets you search for folders and bookmarks in the app. 
+The Bookmarks app is empty at first. The app greets you with a smiley face and a
+message that says there are no bookmarks in the app's current bookmarks folder,
+the *Home* folder. The current folder's name is displayed to the top-left of the
+area with the smiley face and message. The app displays the *management bar*
+immediately above the current folder's name. The management bar lets you choose
+which bookmarks and folders to display, how to display them, and more. The
+search bar, located to the top-right of the management bar, lets you search for
+folders and bookmarks in the app. 
 
 To see all this functionality in action, you must first add some bookmarks and 
 folders. When you mouse-over the app, another bar appears across the top that 
