@@ -76,9 +76,11 @@ similarities too. Common Liferay configuration steps include:
 - Adding the repository.
 
 Keep in mind your third-party repository may require installation and deployment
-of an appropriate Liferay plugin. Plugins for SharePoint and Documentum are
+of an appropriate Liferay plugin. 
+<!-- Plugins for SharePoint and Documentum are
 available through Liferay's Marketplace (please note that they don't use CMIS,
 but proprietary APIs).
+-->
 
 Now, let's go through the common configuration steps, starting with setting our
 portal properties.
@@ -188,6 +190,7 @@ following information:
 Click *Save* and the left navigation panel of your Documents and Media
 application will list your new repository.
 
+<!--
 #### Repository Setup for Sharepoint [](id=repository-setup-for-sharepoint)
 
 The following versions of Sharepoint are currently supported:
@@ -309,7 +312,9 @@ following information:
 
 Click *Save* and the left navigation panel of your Documents and Media
 application will list your new repository. 
+-->
 
+<!--
 #### Repository Setup for Documentum [](id=example-repository-setup-documentum)
 
 The following versions of Documentum are currently supported:
@@ -393,3 +398,4 @@ you haven't done so already. Then, in the Documents and Media application click
 
 Click *Save* and the left navigation panel of your Documents and Media
 application will list your new repository.
+-->
