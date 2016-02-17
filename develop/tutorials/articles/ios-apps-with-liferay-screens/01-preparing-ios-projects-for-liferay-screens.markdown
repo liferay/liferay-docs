@@ -35,7 +35,7 @@ Liferay Screens for iOS requires the following software:
 - Xcode 7.2
 - iOS 9 SDK
 - [CocoaPods](http://cocoapods.org) 0.36 or newer
-- [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
+- [Liferay Portal 6.2 or 7.0 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
 - Liferay Screens Compatibility Plugin (
   [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 

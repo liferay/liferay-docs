@@ -3,7 +3,7 @@
 ## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 CE or EE
+- Liferay Portal 6.2 or 7.0 CE or EE
 - [OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 
   (only when using OAuth for authentication)
 
