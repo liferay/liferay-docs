@@ -1,4 +1,4 @@
-# Bookmarking Sites
+# Bookmarking Sites [](id=bookmarking-sites)
 
 Many of us enjoy collecting things we value: stamps, comic books, sea shells,
 shoes, or even vintage musical instruments. You've probably never thought about
@@ -13,7 +13,7 @@ access web sites and administrators can publish links tailored to specific user
 segments. Both internal pages as well as external sites can be bookmarked. Next, 
 you'll learn how to create bookmarks and folders in the Bookmarks app.
 
-## Creating Bookmarks and Folders
+## Creating Bookmarks and Folders [](id=creating-bookmarks-and-folders)
 
 To use the Bookmarks app, you must first add it to a page. Select *Add* &rarr;
 *Applications* &rarr; Community, and then drag *Bookmarks* onto the page. By
@@ -60,7 +60,7 @@ window that appears, you can start a new export or import process. For details,
 
 Next, you'll learn how to manage bookmarks and folders. 
 
-## Managing Bookmarks and Folders
+## Managing Bookmarks and Folders [](id=managing-bookmarks-and-folders)
 
 The Bookmarks app provides several ways to manage your bookmarks and folders. 
 One is the management bar. Checking the checkbox on the left-hand side of the 
@@ -120,7 +120,7 @@ selected folder.
 
 ![Figure 5: Choose the folder to move the item to.](../../../images/bookmarks-move-folder.png)
 
-# Summary
+# Summary [](id=summary)
 
 Liferay's Bookmarks app gives users and administrators a straightforward way to 
 add and manage bookmarks in your Liferay instance. This lets everyone share and 
