@@ -258,14 +258,14 @@ posts.
 
 Configure the roles with the permissions you want and *Save* your changes. 
 
-### Export / Import
+### Export / Import [](id=export--import)
 
 You can also import existing wiki content into your wiki application instance or
 export wiki content to a file. To access this interface, click on *Options
 &rarr; Export / Import*. Refer to [Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
 for details. 
 
-### App Templates
+### App Templates [](id=app-templates)
 
 The Message Boards application lets you store your current application setup or
 apply an existing archived setup to this application instance. App templates are
@@ -760,7 +760,7 @@ above permissions are also possible.
 That wraps up message board management basics. Next, let's learn how users can
 *mention* other users in their content and in comments and thread replies. 
 
-## Mentioning Other Users
+## Mentioning Other Users [](id=mentioning-other-users)
 
 Have you ever wanted to include another user in a discussion on the Message
 Boards? Have you ever wanted to give kudos to a colleague in content you're
@@ -775,7 +775,7 @@ or comments in any app that supports comments. What's more, a mention in app
 content links to the user's home page, so readers can find out more about the
 mentioned user. 
 
-![Figure x: As you enter a user name after an "@" character, Mentions displays links to users that match the text you enter. Select the user you want to mention and publish your content.](../../../images/mentions-at-mention-menu.png)
+![Figure 6: As you enter a user name after an "@" character, Mentions displays links to users that match the text you enter. Select the user you want to mention and publish your content.](../../../images/mentions-at-mention-menu.png)
                                                                      
 The Mentions feature works as you'd expect. While editing comments or content,
 enter an "@" character followed by the *user name* of the user you're mentioning
@@ -797,9 +797,9 @@ notification next to their profile picture and an email, informing them that
 they've been mentioned. The notification and email indicate the author's name
 and content type, and it links to the content. 
 
-![Figure x: Liferay's Notifications feature alerts users with the number of notifications (including mentions) waiting for them to read.](../../../images/mentions-count-near-profile-image.png)
+![Figure 7: Liferay's Notifications feature alerts users with the number of notifications (including mentions) waiting for them to read.](../../../images/mentions-count-near-profile-image.png)
 
-![Figure x: When you click on the notifications number next to your profile picture, your Notifications List appears.](../../../images/mentions-notification-list.png)
+![Figure 8: When you click on the notifications number next to your profile picture, your Notifications List appears.](../../../images/mentions-notification-list.png)
 
 Here's an example notification email message:
 
@@ -826,7 +826,7 @@ Virtual Instance, open the *Menu* (![Menu](../../../images/icon-menu.png)), then
 navigate to *Control Panel &rarr; Configuration &rarr; Instance Settings*, click
 on the *Social* tab, and expand the *Mentions* section. 
 
-![Figure x: From Instance Settings in the Control Panel, you can enable or disable the Mentions feature for all of the Virtual Instance's sites.](../../../images/mentions-global-instance-setting.png)
+![Figure 9: From Instance Settings in the Control Panel, you can enable or disable the Mentions feature for all of the Virtual Instance's sites.](../../../images/mentions-global-instance-setting.png)
 
 All users are allowed to mention fellow site members and friends, by default. To
 fine tune these options, select the *Define Mentions Capability for Users*
