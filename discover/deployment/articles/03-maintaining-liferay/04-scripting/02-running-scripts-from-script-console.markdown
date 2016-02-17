@@ -158,7 +158,7 @@ does not catch script syntax errors. Here's an example:
             e.printStackTrace(out)
     }
 
-![Figure x: Here's an example of a Groovy script that catches exceptions and prints exception information to the script console.](../../../images/groovy-script-current-user-info.png)
+![Figure x: Here's an example of a Groovy script that catches exceptions and prints exception information to the script console.](../../../images/groovy-script-show-exception.png)
 
 ## Tip 4: Implement a Preview Mode
 
