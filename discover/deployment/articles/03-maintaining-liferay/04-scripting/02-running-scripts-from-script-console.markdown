@@ -33,7 +33,7 @@ to Groovy. Then execute the following code to check the status of the
 
     for (user in users) { println("User Name: " + user.getFullName() + " -- " +
     user.getAgreedToTermsOfUse()) }
- 
+
 The code above just prints the value of the `agreedToTermsOfUse` attribute for
 each user. Next, you'll actually update each user in the system to set his or
 her `agreedToTermsOfUse` attribute to `false`. Your script will make sure to
@@ -115,7 +115,7 @@ demonstrates:
             k, v -> out.println("${k}:${v}") 
     }
 
-![Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the current user.](../../images/groovy-script-current-user-info.png)
+![Figure x: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the current user.](../../../images/groovy-script-current-user-info.png)
 
 ## Tip 2: Embed HTML Markup in Script Outputs
 
@@ -133,7 +133,7 @@ example:
                     </div>
             """);
 
-![Here's an example of invoking a Groovy script that embeds HTML markup in the output of the script.](../../images/groovy-script-embed-html-markup.png)
+![Figure x: Here's an example of invoking a Groovy script that embeds HTML markup in the output of the script.](../../../images/groovy-script-embed-html-markup.png)
 
 ## Tip 3: Show Exceptions in the Script Console
 
@@ -158,7 +158,7 @@ does not catch script syntax errors. Here's an example:
             e.printStackTrace(out)
     }
 
-![Here's an example of a Groovy script that catches exceptions and prints exception information to the script console.](../../images/groovy-script-current-user-info.png)
+![Figure x: Here's an example of a Groovy script that catches exceptions and prints exception information to the script console.](../../../images/groovy-script-current-user-info.png)
 
 ## Tip 4: Implement a Preview Mode
 
