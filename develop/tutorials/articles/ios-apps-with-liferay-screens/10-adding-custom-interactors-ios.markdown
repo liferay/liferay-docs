@@ -22,15 +22,15 @@ Screenlet to always log in the same user, without a password.
 ## Implementing a Custom Interactor [](id=implementing-a-custom-interactor)
 
 1. Implement your custom interactor. You must inherit 
-   `ServerOperationInteractor`, as shown here:
+   `ServerConnectorInteractor`, as shown here:
 
-        class LoginCustomInteractor: ServerOperationInteractor {
+        class LoginCustomInteractor: ServerConnectorInteractor {
 
-            override func createOperation() -> GetUserBaseOperation {
+            override func createConnector() -> ServerConnector? {
 
                 ...
 
-                return operation!
+                return connector
             }
 
         }
@@ -38,12 +38,11 @@ Screenlet to always log in the same user, without a password.
 2. Implement the optional protocol that receives a `customInteractorForAction`, 
    and return your own interactor:
 
-        func screenlet(screenlet: BaseScreenlet, customInteractorForAction: String, 
-            withSender: AnyObject?) -> Interactor? {
+        func screenlet(screenlet: BaseScreenlet, 
+                customInteractorForAction: String, 
+                withSender: AnyObject?) -> Interactor? {
 
-            let interactor = LoginCustomInteractor()
-
-            return interactor
+            return LoginCustomInteractor()
         }
 
 Great! Now you know how to implement custom interactors for iOS Screenlets.
