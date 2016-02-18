@@ -1,4 +1,4 @@
-# Setting Up a Liferay Instance
+# Setting Up a Liferay Instance [](id=setting-up-a-liferay-instance)
 
 Once you have a Liferay installation, you're going to want to configure it.
 Whether that means adding a virtual instance, setting up the initial instance to

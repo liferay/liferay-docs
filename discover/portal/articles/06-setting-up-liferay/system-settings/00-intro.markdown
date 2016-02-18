@@ -1,4 +1,4 @@
-# System Wide Settings
+# System Wide Settings [](id=system-wide-settings)
 
 Liferay is so configurable it can be hard to keep track of where all the
 configuration interfaces reside. Fortunately, the Control Panel is most often

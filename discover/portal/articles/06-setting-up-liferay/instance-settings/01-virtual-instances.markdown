@@ -1,4 +1,4 @@
-# Virtual Instances
+# Virtual Instances [](id=virtual-instances)
 
 Here's a quick scenario: you already have a server hosting a site created with
 Liferay. That means you already have a hosted Liferay database. Let's say you
@@ -24,7 +24,7 @@ proper instance based on this domain name. So before you configure an
 instance, configure its domain name in your network first. When you're ready to
 add an instance, click the *Add* (![Add](../../../images/icon-add.png)) button here.
 
-![Figure x: Add and manage virtual instances of Liferay in the Control Panel's *Configuration* &rarr; *Virtual Instances* section.](../../../images/virtual-instances.png)
+![Figure 1: Add and manage virtual instances of Liferay in the Control Panel's *Configuration* &rarr; *Virtual Instances* section.](../../../images/virtual-instances.png)
 
 You'll be prompted for four fields and a check box:
 

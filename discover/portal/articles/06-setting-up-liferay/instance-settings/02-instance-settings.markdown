@@ -1,4 +1,4 @@
-# Instance Settings
+# Instance Settings [](id=instance-settings)
 
 Most global instance settings can be configured from the Instance Settings section
 of the Control Panel. 
@@ -6,18 +6,18 @@ of the Control Panel.
 Instance Settings is divided into *Configuration*, *Identification*, *Social*,
 and *Miscellaneous*.
 
-![Figure x: The configuration options in Instance Settings are divided into four categories.](../../../images/instance-settings-navigation.png)
+![Figure 1: The configuration options in Instance Settings are divided into four categories.](../../../images/instance-settings-navigation.png)
 
 The Configuration section is much larger than the others, so it's presented last.
 
-## Identification
+## Identification [](id=identification)
 
 The Identification section has several links for addresses, phone numbers and
 other information you can configure in your instance. This allows you to set up
 contact information for the organization that owns the instance. Developers can
 query for this information in their applications.
 
-## Social
+## Social [](id=social)
 
 The Social section lets you configure Ratings <!--LINK--> and Mentions
 <!--LINK--> throughout the instance. For each of Liferay's core portlets that
@@ -26,9 +26,9 @@ or *Stars* for rating the content. You can also choose whether to allow users to
 mention (*@username*) other users, and if so, whether all users have the
 capability or whether you want to further refine the mentions configuration.
 
-![Figure x: You can configure the Mentions capability throughout a Liferay instance.](../../../images/instance-settings-mentions.png)
+![Figure 2: You can configure the Mentions capability throughout a Liferay instance.](../../../images/instance-settings-mentions.png)
 
-## Miscellaneous: Display Settings
+## Miscellaneous: Display Settings [](id=miscellaneous-display-settings)
 
 This section allows you to set the default instance language and the time zone.
 You can also set up an instance-wide logo which appears in the top left corners of
@@ -40,7 +40,7 @@ an image file that fits the space. If you pick something too big, it might
 overlap with the navigation. 
 
 <!-- Should we provide a range of recommended parameters for custom logos?  -->
-## Configuration
+## Configuration [](id=configuration)
 
 Since there's a lot under this heading, here's a brief list, with a
 longer description of each following:
@@ -83,7 +83,7 @@ their parent sites.
 
 Let's discuss these settings in more detail.
 
-### General
+### General [](id=general)
 
 The General link takes you to a screen with three headings: Main Configuration,
 Navigation, and Additional Information. Under the Main Configuration heading,
@@ -111,14 +111,14 @@ company type, SIC code, ticker symbol, industry and industry type.
 
 <!-- Information like the above is not really useful. Remove? -->
 
-### Authentication
+### Authentication [](id=authentication)
 
 The Authentication section has several tabs: General, OpenSSO, LDAP, OpenID,
 CAS, Google, NTLM, and Facebook. You can use any of these authentication methods
 to configure how users will authenticate to Liferay. Since Liferay supports
 quite a few authentication methods, there are different settings for each.
 
-![Figure x: After clicking on *Instance Settings* in Liferay's Control Panel, you
+![Figure 3: After clicking on *Instance Settings* in Liferay's Control Panel, you
 can configure any of the areas shown in this figure.](../../../images/instance-settings-auth-general.png)
 
 The settings on the General tab of the Authentication page affect only Liferay
@@ -171,7 +171,7 @@ email address is an important default for the following reasons:
     user. So it is important to keep the email address at the forefront of a
     user's mind when he or she logs in to help the user keep it up to date. 
 
-### Users
+### Users [](id=users)
 
 If you click on *Users* from the Instance Settings screen, you'll find three tabs:
 Fields, Reserved Credentials and Default User Associations.
@@ -202,19 +202,19 @@ a certain page set, defined by a site template. If you've done that and want all
 users you add to immediately be added to the user group and inherit those pages,
 add the user group here.
 
-### Terms of Use
+### Terms of Use [](id=terms-of-use)
 
 Do you want to disable the requirement for all users to read the terms of use?
 You can do that, or even specify the Group ID and Article ID for a Web Content
 Article that you'd like to use as your own custom Terms of Use.
 
-### Mail Host Names
+### Mail Host Names [](id=mail-host-names)
 
 You can enter other mail host names (one per line) besides the one you
 configured on the General tab. This lets the instance know which mail host names
 are owned by your organization.
 
-### Email Notifications
+### Email Notifications [](id=email-notifications)
 
 There are five tabs under the Email Notifications page of Instance Settings. The
 Sender tab allows you to set the instance's administrative name and email address.
@@ -222,20 +222,20 @@ By default, these are `Joe Bloggs` and `test@liferay.com`. You can change them
 to whatever you want. This name and email address will appear in the *From* field
 in all email messages sent by the Liferay instance.
 
-![Figure x: You can customize the email template for the email messages sent to users who have just created their accounts.](../../../images/instance-settings-account-created-notification.png)
+![Figure 4: You can customize the email template for the email messages sent to users who have just created their accounts.](../../../images/instance-settings-account-created-notification.png)
 
 The other four tabs are Account Created Notification, Email Verification
 Notification, Password Changed Notification and Password Reset Notification.
 These tabs allow you to customize the email messages that are sent to users each
 time any of those four events occur.
 
-![Figure x: There are some handy variables available for use in email templates.](../../../images/instance-settings-definition-of-terms.png)
+![Figure 5: There are some handy variables available for use in email templates.](../../../images/instance-settings-definition-of-terms.png)
 
 A list of tokens, entitled "Definition of Terms," is provided so you can insert
 certain values (such as the portal URL or the user ID) when you are setting up
 the custom email messages.
 
-### Content Sharing
+### Content Sharing [](id=content-sharing)
 
 The Content Sharing section of the Instance Settings area of the Control Panel
 allows you to choose whether or or not site administrators can display content
