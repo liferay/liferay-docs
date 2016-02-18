@@ -196,6 +196,13 @@ communicating with your Liferay instance. As an example, refer to
 
 ![Figure 8: Here's a property list file, called `liferay-context.plist`.](../../images/screens-ios-liferay-context.png)
 
+The values you need to specify are:
+
+   - `server`: the URL to access your Liferay instance.
+   - `version`: the version of that Liferay installation. Supported values are `62` for Liferay 6.2 and `70` for Liferay 7.0
+   - `companyId`: the instance identifier. You can find this value in the Control Panel > Portal Instances > Instance ID
+   - `groupId`: the default site to be used. You can find thid values in Site Administration > Configuration > Site Settings > Site ID.
+
 Great! Your iOS project is ready for Liferay Screens. 
 
 ## Related Topics [](id=related-topics)
