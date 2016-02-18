@@ -17,7 +17,7 @@ taco Tuesdays, but what if they don't fit in with my app's UI? What if they
 don't behave exactly how I want them to? What if there's no Screenlet for what I
 want to do?" Fret not! You can customize Screenlets to fit your needs by
 changing or extending their UI and behavior. You can even write your own
-Screenlets! What's more, Screens seamlessly integrates with iOS projects. 
+Screenlets! What's more, Screens seamlessly integrates with your already existing iOS projects. 
 
 ![Figure 1: Here's an app that uses a Liferay Screens Sign Up Screenlet.](../../images/screens-ios-intro.png)
 
