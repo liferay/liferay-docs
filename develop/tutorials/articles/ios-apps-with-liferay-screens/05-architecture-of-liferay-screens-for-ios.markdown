@@ -1,7 +1,7 @@
 # Architecture of Liferay Screens for iOS [](id=architecture-of-liferay-screens-for-ios)
 
 Liferay Screens separates its presentation and business-logic code using ideas
-from
+taken from
 [Model View Presenter](http://en.wikipedia.org/wiki/Model-view-presenter),
 [Model View ViewModel](http://en.wikipedia.org/wiki/Model_View_ViewModel),
 and
@@ -19,7 +19,7 @@ building blocks, you'll be ready to create some amazing Screenlets and Themes!
 ## High Level Architecture of Liferay Screens for iOS [](id=high-level-architecture-of-liferay-screens-for-ios)
 
 Liferay Screens for iOS is composed of a Core, a Screenlet layer, a View layer,
-and Server operations. Server operations are technically part of the Core, but
+and Server Connectors. Server Connectors are technically part of the Core, but
 are worth describing separately. They facilitate interaction with local and
 remote data sources and communication between the Screenlet layer and the
 [Liferay Mobile SDK](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/mobile). 
@@ -30,29 +30,29 @@ Each component is described below.
 
 **Core:** includes all the base classes for developing other Screens components.
 It's a micro-framework that lets developers write their own Screenlets, views,
-and Server operation classes.
+and connectors classes.
 
 **Screenlets:** Swift classes for inserting into any `UIView`. They render a
 selected Theme in the runtime and in Interface Builder. They also react to user
-interface events to start Server operations. Screenlets also define a set of
+interface events to start server requests (through Server Connectors). Screenlets also define a set of
 `@IBInspectable` properties that can be configured from Interface Builder. The
 Screenlets bundled with Liferay Screens are known as the [Screenlet library](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
 
-**Interactors**: implement specific use cases that involve communicating with
-servers. They can use local and remote data sources by using *Server Operations*
+**Interactors:** implement specific use cases that involve communicating with
+servers (or any other data store). They can use local and remote data sources by using *Server Connectors*
 or custom classes. If a user action or use case needs to execute more than one
 query on a local or remote store, the sequence is done in the corresponding
 Interactor. If a screenlet supports more than one user action or use case, an
 Interactor needs to be created for each. 
 
-**Server Operations:** a collection of `NSOperation` classes that can interact
+**Server Connectors:** a collection of classes that can interact
 with local and remote data sources and Liferay instances. Liferay's own set of
-operations, Liferay Operations, use the
+connectors, Liferay Connector, use the
 [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app).
-All Server operations can be run concurrently since they use the 
+All Server connectors can be run concurrently since they use the 
 [`NSOperation` framework](https://developer.apple.com/library/mac/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/OperationObjects.html#//apple_ref/doc/uid/TP40008091-CH101-SW1). 
 It's very easy to define priorities and dependencies between operations, so you
-can build your own graph of operations that can be resolved by the framework.
+can build your own graph of connectors (aka operations) that can be resolved by the framework.
 
 **Themes:** a set of XIB files and accompanying `UIView` classes that present 
 Screenlets to the user.
@@ -68,30 +68,29 @@ API.
 
 ![Figure 2: Here's the core layer of Liferay Screens for iOS.](../../images/screens-ios-architecture-02.png)
 
-[**ServerOperation**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/ServerOperation.swift):
-the base class for all Liferay Portal interactions and use cases that a
-Screenlet supports. Operations retrieve data asynchronously from local or remote
-data sources. The Screenlet classes instantiate operation classes, invoke their
-operations, and receive operation responses that change the state of the
-Screenlet's View classes. 
-
-[**BaseScreenlet**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenlet.swift):
-the base class for all Screenlet classes. Screenlet classes receive user events
-from the UI, begin Server operations, and update any view data from the result.
-`BaseScreenlet` contains a set of
-[template methods](http://www.oodesign.com/template-method-pattern.html) 
-that child classes should overwrite.
+From right to left, these are the main components:
 
 [**BaseScreenletView**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift):
 the base class for all Screenlet View classes. Its child classes belong to the
 Theme layer. View classes use standard XIB files to render a UI and then update
 it when the data changes. `BaseScreenletView` contains template methods that
-child classes should overwrite. When developing your own Theme from a parent 
+child classes may overwrite. When developing your own Theme from a parent 
 Theme, you can read the Screenlet's properties or call its methods from this 
-class. 
+class. Any user action done in the user interaface is received in this class in the first instance. Then the action is redirected to the screenlet class.
+
+[**BaseScreenlet**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenlet.swift):
+the base class for all Screenlet classes. Screenlet classes receive user events done in the UI through the ScreenletView class. Then instantiate Insteractors in order to process and respond to that UI event. When the result of the Interactor is received, the ScreenletView (the UI) is updated accordingly.
+`BaseScreenlet` contains a set of [template methods](http://www.oodesign.com/template-method-pattern.html)  that child classes may overwrite.
+
+[**Interactor**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/Interactor.swift):
+the base class for all interactors that a Screenlet supports. The interactor class contains the code to implement an specific user case supported by the screenlet. If the screenlet supports several user cases, it will need different interactors. If the interactor needs to retrieve remote data, it will use a server connector for that. When the server connectors notifies with the result of the operation, the interactor will return that result to the screenlet, which will change the ScreenletView status.
+
+[**ServerConnector**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseConnectors/ServerConnector.swift):
+the base class for all Liferay Portal connectors that a Screenlet supports. Connectors retrieve data asynchronously from local or remote
+data sources. The Interactor classes instantiate and start these operation classes.
 
 [**SessionContext**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Context/SessionContext.swift):
-a singleton object that holds the logged in user's session. Apps can use an
+an object (typically a singleton) that holds the logged in user's session. Apps can use an
 implicit login, invisible to the user, or a login that relies on explicit user
 input to create the session. User logins can be implemented with the
 [Login Screenlet](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-ios). 
@@ -109,18 +108,18 @@ layer's details.
 
 The Screenlet layer contains the available Screenlets in Liferay Screens for
 iOS. The following diagram shows the Screenlet layer in relation to the Core,
-Theme, and Server Operation layers. The Screenlet classes in the diagram are 
+Interactor, Theme, and Connectors layers. The Screenlet classes in the diagram are 
 explained in this section. 
 
 ![Figure 3: This diagram illustrates the iOS Screenlet Layer's relationship to other Screens components.](../../images/screens-ios-architecture-03.png)
 
 Screenlets are comprised of several Swift classes and an XIB file:
 
-**MyScreenletData:** an interface that defines the attributes shown in the UI.
+**MyScreenletViewModel:** a protocol that defines the attributes shown in the UI.
 It typically accounts for all the input and output values presented to the user.
 For instance,
 [`LoginViewModel`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Auth/LoginScreenlet/LoginViewModel.swift)
-includes attributes like the user name and password. An operation can be
+includes attributes like the user name and password. A connector can be
 configured by reading and validating these values. Also, the Screenlet can
 change these values based on any default values and operation results. 
 
@@ -130,30 +129,34 @@ developer interacts with. It includes the following things:
 - Inspectable parameters for configuring the Screenlet's behavior. The
   initial state can be set in the Screenlet's data. 
 - A reference to the Screenlet's View, based on the selected Theme. To meet
-  the Screenlet's requirements, all Themes must implement the `Data`
-  interface. 
-- Any number of methods for invoking Server operations. You can optionally
-  make them public for app developers to call. They can also handle UI
-  events received in the `onUserAction` method. 
+  the Screenlet's requirements, all Themes must implement the `ViewModel`
+  protocol. 
+- Any number of methods for invoking connectors. You can optionally
+  make them public for app developers to call.  
 - An optional (but recommended)
   [delegate object](https://developer.apple.com/library/ios/documentation/general/conceptual/DevPedia-CocoaCore/Delegation.html)
   the Screenlet can call on for particular events. 
 
-**MyScreenletOperation:** This is related to the Screenlet, but has one or
-more Server Operations and is in the Server Operations Layer. If the Server
-Operation is a back-end call, then there's typically only a single request. Each
-Server Operation is responsible for retrieving a set of related values. The
-results are stored in a `result` object that can be read by the Screenlet when
-it's notified. The number of Server Operation classes a Screenlet requires
-depends on the number of server use cases it supports. 
+**MyUserCaseInteractor:**  Each
+Interactor is responsible for running the necessary operations to implement the user case. These operations can be local operations, remote operations or a combination of them. They can also be executed sequentially, or even in parallel way.
+The final results are stored in a `result` object that can be read by the Screenlet when
+it's notified. The number of Interactor classes a Screenlet requires
+depends on the number of use cases it supports. 
+
+**MyOperationConnector:** This is related to the Interactor, but has one or
+more connectors. If the Server Connector is a back-end call, then there's typically only a single request. Each
+Server Connector is responsible for retrieving a set of related values. The
+results are stored in a `result` object that can be read by the Interactor when
+it's notified. The number of Server Connector classes a Interactor requires
+depends on the number of endpoints you need to query, or even the number of different servers you need to support.
 
 **MyScreenletView_themeX:** A class that belongs to one specific Theme. In the
 diagram, this Theme is *ThemeX*. The class renders the Screenlet's UI by using
 its related XIB file. The View object and XIB file communicate using standard
 mechanisms like `@IBOutlet` and `@IBAction`. When a user action occurs in the
 XIB file, it's received by `BaseScreenletView` and then passed to the Screenlet
-class via the `onUserAction` method. To identify different events, the
-component's `restorationIdentifier` property is passed to the `onUserAction`
+class via the `performAction` method. To identify different events, the
+component's `restorationIdentifier` property is passed to the `performAction`
 method.
 
 **MyScreenletView_themeX.xib:** an XIB file that specifies how to render the
@@ -178,31 +181,30 @@ varying levels of control over a Screenlet's  UI design and behavior.
 
 There are several different Theme types:
 
-**Child:** Presents the same UI components and behavior as the parent Theme, but
+**Default Theme:** It's the standard theme provided by Liferay. It can be used as a template to create other themes or as the parent theme to extend from. Each screenlet, needs a View class in each theme. In this case, this is named `MyScreenletView_default`. This class is quite similar to the standard ViewController in iOS: is received and handles the events produced in the UI (using standard `@IBAction` and `@IBOutlet`). The View class usually uses a XIB file to build the UI components. This XIB file is binded to the class.
+
+**Child Theme:** Presents the same UI components as the parent Theme, but
 can change the UI components' appearance and position. A Child Theme specifies
-visual changes in its own XIB file; it inherits the parent's view class and
-Screenlet class. It can't add or remove any UI components. The Child Theme's
-parent must be a Full Theme. In the diagram, the Child Theme inherits from the
+visual changes in its own XIB file; It can't add or remove any UI components. In the diagram, the Child Theme inherits from the
 Default Theme. Creating a Child Theme is ideal when you only need to make visual
 changes to an existing Theme. For example, you can create a Child Theme that
 sets new positions and sizes for the standard text boxes in Login Screenlet's
-Default Theme.
-
-**Extended:** Inherits the parent Theme's behavior and appearance, but lets you
-change and add to both. You can do so by creating a custom view class that
-extends the parent Theme's view class and a new XIB file. An Extended Theme's
-parent must be a Full Theme. In the diagram, the Extended Theme inherits the
-Full Theme and extends its Screenlet's view class. Refer to the
-[Flat7 Theme](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Themes/Flat7)
-for an example of an Extended Theme.
+Default Theme, but without adding or overwriting existing code.
 
 **Full:** Provides a complete standalone theme. It has no parent Theme and
 implements unique behavior and appearance for a Screenlet. Its view class must
 extend Screens's `BaseScreenletView` class and conform to the Screenlet's view
-model protocol. It must also specify a new UI in an XIB file. Full Themes can
-also serve as parents for Child and Extended Themes. Refer to the
+model protocol. It must also specify a new UI in an XIB file. Refer to the
 [Default Theme](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Themes/Default)
 for an example of a Full Theme.
+
+**Extended:** Inherits the parent Theme's behavior and appearance, but lets you
+change and add code to both. You can do so by creating a custom view class that
+extends the parent Theme's view class and a new XIB file. In the diagram, the Extended Theme inherits the
+Full Theme and extends its Screenlet's view class. Refer to the
+[Flat7 Theme](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Themes/Flat7)
+for an example of an Extended Theme.
+
 
 Themes in Liferay Screens are organized into sets that contain Themes for 
 several Screenlets. Liferay's available Theme sets are listed here: 
