@@ -6,11 +6,11 @@ of the Control Panel.
 Instance Settings is divided into *Configuration*, *Identification*, *Social*,
 and *Miscellaneous*.
 
-![Figure x: The configuration options in Instance Settings is divided into four categories.](../../../images/instance-settings-navigation.png)
+![Figure x: The configuration options in Instance Settings are divided into four categories.](../../../images/instance-settings-navigation.png)
 
-The Configuration section is much larger than the others, and is presented last.
+The Configuration section is much larger than the others, so it's presented last.
 
-## Identification [](id=identification)
+## Identification
 
 The Identification section has several links for addresses, phone numbers and
 other information you can configure in your instance. This allows you to set up
@@ -28,7 +28,7 @@ capability or whether you want to further refine the mentions configuration.
 
 ![Figure x: You can configure the Mentions capability throughout a Liferay instance.](../../../images/instance-settings-mentions.png)
 
-## Miscellaneous: Display Settings [](id=miscellaneous-display-settings)
+## Miscellaneous: Display Settings
 
 This section allows you to set the default instance language and the time zone.
 You can also set up an instance-wide logo which appears in the top left corners of
@@ -83,7 +83,7 @@ their parent sites.
 
 Let's discuss these settings in more detail.
 
-### General [](id=general)
+### General
 
 The General link takes you to a screen with three headings: Main Configuration,
 Navigation, and Additional Information. Under the Main Configuration heading,
@@ -111,7 +111,7 @@ company type, SIC code, ticker symbol, industry and industry type.
 
 <!-- Information like the above is not really useful. Remove? -->
 
-### Authentication [](id=authentication)
+### Authentication
 
 The Authentication section has several tabs: General, OpenSSO, LDAP, OpenID,
 CAS, Google, NTLM, and Facebook. You can use any of these authentication methods
@@ -171,7 +171,7 @@ email address is an important default for the following reasons:
     user. So it is important to keep the email address at the forefront of a
     user's mind when he or she logs in to help the user keep it up to date. 
 
-### Users [](id=users)
+### Users
 
 If you click on *Users* from the Instance Settings screen, you'll find three tabs:
 Fields, Reserved Credentials and Default User Associations.
@@ -208,13 +208,13 @@ Do you want to disable the requirement for all users to read the terms of use?
 You can do that, or even specify the Group ID and Article ID for a Web Content
 Article that you'd like to use as your own custom Terms of Use.
 
-### Mail Host Names [](id=mail-host-names)
+### Mail Host Names
 
 You can enter other mail host names (one per line) besides the one you
 configured on the General tab. This lets the instance know which mail host names
 are owned by your organization.
 
-### Email Notifications [](id=email-notifications)
+### Email Notifications
 
 There are five tabs under the Email Notifications page of Instance Settings. The
 Sender tab allows you to set the instance's administrative name and email address.
@@ -235,7 +235,7 @@ A list of tokens, entitled "Definition of Terms," is provided so you can insert
 certain values (such as the portal URL or the user ID) when you are setting up
 the custom email messages.
 
-### Content Sharing [](id=content-sharing)
+### Content Sharing
 
 The Content Sharing section of the Instance Settings area of the Control Panel
 allows you to choose whether or or not site administrators can display content
