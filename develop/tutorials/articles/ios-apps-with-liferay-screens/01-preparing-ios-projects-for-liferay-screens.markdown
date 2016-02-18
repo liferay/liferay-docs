@@ -95,25 +95,24 @@ and include it in your project. Follow these steps:
 Add the following dependencies to your `Podfile` (create this file if it doesn't
 yet exist): 
 
-    source 'https://github.com/CocoaPods/Specs.git'
+	source 'https://github.com/CocoaPods/Specs.git'
 
-    platform :ios, '7.0'
+	platform :ios, '7.0'
 
-    pod 'Liferay-iOS-SDK', '6.2.0.17'
-    pod 'Liferay-OAuth', '0.1.0'
-    pod 'MBProgressHUD', '0.9.1'
-    pod 'SMXMLDocument', '1.1'
-    pod 'ODRefreshControl', '1.2'
-    pod 'YapDatabase', '2.6.5'
-    pod 'KeychainAccess', '2.3.1'
-    pod 'CryptoSwift', '0.1.1'
-    pod 'DTPickerPresenter', '0.2.0'
-    pod 'TNRadioButtonGroup', '0.4'
-    pod 'MDRadialProgress', '1.3.2'
+	pod 'Liferay-iOS-SDK', '6.2.0.22'
+	pod 'Liferay-OAuth', '0.1.1'
+	pod 'MBProgressHUD', '0.9.1'
+	pod 'SMXMLDocument', '1.1'
+	pod 'ODRefreshControl', '1.2'
+	pod 'YapDatabase/SQLCipher', '2.8.2'
+	pod 'KeychainAccess', '2.3.1'
+	pod 'CryptoSwift', '0.1.1'
+	pod 'DTPickerPresenter', '0.2.0'
+	pod 'TNRadioButtonGroup', '0.4'
+	pod 'MDRadialProgress', '1.3.2'
 
-In a terminal, navigate to your project's directory and execute 
-`pod install`. Once this completes, quit Xcode (if you have it open). To
-open your project, use the `*.xcworkspace` file in your project's directory. 
+Quit Xcode (if you have it open) and in a terminal, navigate to your project's directory and execute 
+`pod install`. To open your project, use the `*.xcworkspace` file in your project's directory. 
 
 The
 [CocoaPods for Xcode plugin](https://github.com/kattrali/cocoapods-xcode-plugin) 
@@ -130,17 +129,17 @@ XCTest). Here's a `Podfile` with a placeholder for a test target:
     platform :ios, '7.0'
 
     def import_pods
-        pod 'Liferay-iOS-SDK', '6.2.0.17'
-        pod 'Liferay-OAuth', '0.1.0'
-        pod 'MBProgressHUD', '0.9.1'
-        pod 'SMXMLDocument', '1.1'
-        pod 'ODRefreshControl', '1.2'
-        pod 'YapDatabase', '2.6.5'
-        pod 'KeychainAccess', '2.3.1'
-        pod 'CryptoSwift', '0.1.1'
-        pod 'DTPickerPresenter', '0.2.0'
-        pod 'TNRadioButtonGroup', '0.4'
-        pod 'MDRadialProgress', '1.3.2'
+		pod 'Liferay-iOS-SDK', '6.2.0.22'
+		pod 'Liferay-OAuth', '0.1.1'
+		pod 'MBProgressHUD', '0.9.1'
+		pod 'SMXMLDocument', '1.1'
+		pod 'ODRefreshControl', '1.2'
+		pod 'YapDatabase/SQLCipher', '2.8.2'
+		pod 'KeychainAccess', '2.3.1'
+		pod 'CryptoSwift', '0.1.1'
+		pod 'DTPickerPresenter', '0.2.0'
+		pod 'TNRadioButtonGroup', '0.4'
+		pod 'MDRadialProgress', '1.3.2'
     end
 
     import_pods
