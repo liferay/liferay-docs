@@ -18,7 +18,7 @@ configuration changes at the system scope in Liferay 7, and you don't need to go
 messing around in a properties file to do it. These settings can now be made in
 the Control Panel, in *Configuration* &rarr; *System Settings*. 
 
-![Figure 1: System Settings are accessed through the Control Panel.](../../images/system-settings-product-menu.png)
+![Figure 1: System Settings are accessed through the Control Panel.](../../../images/system-settings-product-menu.png)
 
 ## Editing the Default Configuration [](id=editing-the-default-configuration)
 
@@ -26,20 +26,20 @@ Once you navigate to System Settings, you'll see that the configuration options
 are categorized into logical groupings based on their functionality, and that
 there's a Search box to make finding the app you want to configure easier.
 
-![Figure 2: System Settings are organized by component.](../../images/system-settings-nav-search.png)
+![Figure 2: System Settings are organized by component.](../../../images/system-settings-nav-search.png)
 
 Changing an app's default configuration options in System Settings isn't
 difficult. Once you find what you're looking for, simply click the name of the
 component you want to configure, or click the actions button
-(![Actions](../../images/icon-actions.png)), then click *Edit*. Make any changes
+(![Actions](../../../images/icon-actions.png)), then click *Edit*. Make any changes
 you'd like, then click *Save*. Now your configuration changes are saved and take
 place throughout the entire system.
 
-![Figure 3: Each System Settings entry will have a configuration Scope.](../../images/system-settings-actions.png)
+![Figure 3: Each System Settings entry will have a configuration Scope.](../../../images/system-settings-actions.png)
 
 If you make some regrettable configuration decisions and can't recall exactly
 what you did, start over by clicking the actions button
-(![Actions](../../images/icon-actions.png)), then clicking *Reset Default
+(![Actions](../../../images/icon-actions.png)), then clicking *Reset Default
 Values*.
 
 ## Configuration Scope [](id=configuration-scope)
@@ -56,24 +56,24 @@ overridden. There are four values that you'll see under Scope:
   value for the application in a system wide fashion. It affects the whole
 system and cannot be overridden anywhere else.
 
-    ![Figure 4: Some System Settings entries have a System scope.](../../images/system-settings-system-scope.png)
+    ![Figure 4: Some System Settings entries have a System scope.](../../../images/system-settings-system-scope.png)
 
 - *Default Configuration for Application:* Making configuration changes at this
   level affects the application in a system-wide fashion as well. However, while
 these become the system wide defaults for the application, they can be
 overridden from each application instance.
 
-    ![Figure 5: Some System Settings entries have a Default Configuration for Application scope.](../../images/system-settings-application-scope.png)
+    ![Figure 5: Some System Settings entries have a Default Configuration for Application scope.](../../../images/system-settings-application-scope.png)
 
 - *Default Configuration for All Sites:* Configuration at this scope can be
   overridden in each site.
 
-    ![Figure 6: Some System Settings entries have a Default Configuration for All Sites scope.](../../images/system-settings-site-scope.png)
+    ![Figure 6: Some System Settings entries have a Default Configuration for All Sites scope.](../../../images/system-settings-site-scope.png)
 
 - *Default Settings for All Instances:* Configuration at this scope can be
   overridden in each instance (usually via Instance Settings).
 
-    ![Figure 7: Some System Settings entries have a Default Configuration for All Instances scope.](../../images/system-settings-instance-scope.png)
+    ![Figure 7: Some System Settings entries have a Default Configuration for All Instances scope.](../../../images/system-settings-instance-scope.png)
 
 <!-- Perhaps show a proof-of-concept example here? -->
 
@@ -91,11 +91,11 @@ the System Settings interface. Then you can just deploy them in the target
 Liferay installation.
 
 In the case of a single entry, just click the actions button
-(![Actions](../../images/icon-actions.png)), then click *Export*. A `.cfg` file
+(![Actions](../../../images/icon-actions.png)), then click *Export*. A `.cfg` file
 will be downloaded, containing any configuration changes you've saved. 
 
 To export all of the configuration changes you've made in System Settings, click
-the System Settings options button (![Options](../../images/icon-options.png)),
+the System Settings options button (![Options](../../../images/icon-options.png)),
 then click *Export All Settings*. You'll get a zip file with `.cfg` files
 corresponding to all of the entries that you edited.
 
