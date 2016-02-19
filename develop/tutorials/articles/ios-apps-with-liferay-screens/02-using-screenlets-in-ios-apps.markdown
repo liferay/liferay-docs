@@ -34,7 +34,7 @@ This is indicated by the comments in the code here:
     class ViewController: UIViewController, LoginScreenletDelegate {
 
         ...
-        
+
        func screenlet(screenlet: BaseScreenlet,
                onLoginResponseUserAttributes attributes: [String:AnyObject]) {
            // handle succeeded login using passed user attributes
