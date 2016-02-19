@@ -4,7 +4,7 @@
 
 - Xcode 7.2
 - iOS 9 SDK
-- Liferay Portal 6.2 or 7.0 CE or EE
+- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
 - [OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 
   (only for OAuth based authentication)
 
@@ -108,11 +108,12 @@ following methods:
   `NSStrings`) and values (`AnyObject` or `NSObject`). The supported keys are 
   the same as the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2233).
 
-- `- screenlet:onLoginError:`: Called when an error occurs during login. The `NSError` object describes the error.
+- `- screenlet:onLoginError:`: Called when an error occurs during login. The 
+  `NSError` object describes the error.
 
-- `- screenlet:onCredentialsSavedUserAttributes:`: Called when the user credentials are stored 
-  after a successful login.
+- `- screenlet:onCredentialsSavedUserAttributes:`: Called when the user 
+  credentials are stored after a successful login.
 
-- `- screenlet:onCredentialsLoadedUserAttributes:`: Called when the user credentials are 
-  retrieved. Note that this only occurs when the Screenlet is used and stored 
-  credentials are available.
+- `- screenlet:onCredentialsLoadedUserAttributes:`: Called when the user 
+  credentials are retrieved. Note that this only occurs when the Screenlet is 
+  used and stored credentials are available. 
