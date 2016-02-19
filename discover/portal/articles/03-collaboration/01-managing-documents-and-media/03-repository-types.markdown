@@ -82,10 +82,14 @@ available through Liferay's Marketplace (please note that they don't use CMIS,
 but proprietary APIs).
 -->
 
-Now, let's go through the common configuration steps, starting with setting our
-portal properties.
+Now, let's go through the common configuration steps.
 
-### Adjusting portal properties [](id=adjusting-portal-properties)
+### Common Configuration
+
+There are several steps common to setting up any external repository type. Let's
+start with setting the necessary portal properties.
+
+#### Adjusting portal properties [](id=adjusting-portal-properties)
 
 The admin must ensure that the same credentials and authentication are being
 used in Liferay and in the external repository. This is normally synchronized
@@ -105,15 +109,13 @@ names, so in `portal-ext.properties` add the following:
 Alternatively, configure these properties in the Control Panel under *Portal
 Settings* &rarr; *Authentication*.
 
-### Adding required repository users [](id=adding-required-repository-users)
+#### Adding required repository users [](id=adding-required-repository-users)
 
 Once these properties are set, you must create a user in Liferay with a
 screen name and password matching the administrative user of your external
 repository. Be sure to assign appropriate roles (e.g. Administrator) to that
 user. Sign out of Liferay and sign in again as that new user. See sections of
 the *Management* chapter on adding and managing users.
-
-### Adding the repository [](id=adding-the-repository)
 
 You can add new repositories from the UI by clicking the *Add* button from the
 Home folder. Repositories can only be mounted in the Home folder.
@@ -123,75 +125,111 @@ Figure x: You can add a new repository by navigating to *Add* &rarr; *Repository
 The fields in this form change depending on the selected *Repository Type*. In
 the following sections, you will see how to configure different repositories.
 
-#### Repository Setup for Alfresco [](id=repository-setup-for-alfresco)
+### Accessing a CMIS Repository Using AtomPub
 
-The following versions of Alfresco are currently supported:
+After completing the [Common Configuration](/discover/portal/-/knowledge_base/7-0/repository-types#common-configuration)
+steps, you can add Documents and Media Repository that communicats with your
+CMIS repository via AtomPub. 
 
-- **Alfresco 4.2**: officially supported.
+These instructions were written based on using Alfresco Community 5.1 and Nuxeo
+Platform 7.10.
 
-Setting up Alfresco as a Liferay Documents and Media repository is fairly easy.
-Just follow these steps:
+Follow these steps to add your repository:
 
-1.  Install Alfresco.
+1.  In Documents and Media *Home*, click the *Add* button and select
+*Repository*. The *New Repository* screen appears.
 
-2.  As mentioned in the common steps for adding an external repository, be sure
-    to adjust the portal properties and add any user accounts required by the
-repository.
+2.  Enter an arbitrary *Name* for the repository and optionally enter a
+*Description*.
 
-3.  In the Documents and Media application click *Add Repository* and enter the
-    following information:
+3.  Click on the *Repository Configuration* section to access its form
 
-	- **Name:** Enter an arbitrary name for the repository.
+4.  For **Repository Type:**, select *CMIS Repository (AtomPub)*.
 
-	- **Description:** Describe the repository.
+5.  Leave **Repository ID** blank, as Liferay generates the ID
+    automatically. 
 
-	- **Repository Type:** Select *CMIS Repository (AtomPub)*.
+6.  For **AtomPub URL**, enter the AtomPub URL for CMIS 1.0 per the CMIS
+    repository's documentation. Below are some example URLs. Make sure to
+    replace the `IP_ADDRESS` and `PORT` values with those of your CMIS
+    repository server. 
+    -   Alfresco 5.1: `http://IP_ADDRESS:PORT/alfresco/cmisatom`
+    -   Nuxeo Platform 7.10: `http://IP_ADDRESS:PORT/nuxeo/atom/cmis`
 
-	- **AtomPub URL:** Enter the AtomPub URL for CMIS 1.0 as stated in
-	    Alfresco's documentation (for example:
-	    *http://alfresco:8080/alfresco/cmisatom*). 
+7.  Click *Save*
 
-	- **Repository ID:** Leave this fill blank. It will be automatically filled
-	    by Liferay. 
-
-Click *Save* and the left navigation panel of your Documents and Media
-application will list your new repository.
-
-#### Repository Setup for Nuxeo [](id=repository-setup-for-nuxeo)
-
-The following versions of Nuxeo are currently supported:
-
-- **Nuxeo 5.8**: officially supported.
-
-Setting up Nuxeo as a Liferay Documents and Media repository is fairly easy.
-Just follow these steps:
-
-1. Install Nuxeo.
-
-2. As mentioned in the common steps for adding an external repository, be sure
-to adjust the portal properties and add any user accounts required by the
-repository.
-
-3. In the Documents and Media application click *Add Repository* and enter the
-following information:
-
-	- **Name:** Enter an arbitrary name for the repository.
-
-	- **Description:** Describe the repository.
-
-	- **Repository Type:** Select *CMIS Repository (AtomPub)*.
-
-	- **AtomPub URL:** Enter the AtomPub URL for CMIS as stated in Nuxeo's
-	    documentation (for example: *http://nuxeo:9080/nuxeo/atom/cmis*). 
-
-	- **Repository ID:** Leave this fill blank. It will be automatically filled
-	    by Liferay. 
-
-Click *Save* and the left navigation panel of your Documents and Media
-application will list your new repository.
+Your repository appears in Documents and Media. You can navigate into the
+repository and work with files as you do other files in Documents and Media.
 
 <!--
-#### Repository Setup for Sharepoint [](id=repository-setup-for-sharepoint)
+Note - As of writing this article, only a Liferay user matching the Nuxeo
+administrator user (default is Administrator / Administrator) can connect with
+Nuxeo.
+
+I created another user on Nuxeo that matches a Liferay user's crendentials, but
+the Liferay user gets this error when trying to browse the Nuxeo repo in
+Liferay:
+
+com.liferay.document.library.kernel.exception.NoSuchFolderException: No CMIS folder with {folderId=21578}
+org.apache.chemistry.opencmis.commons.exceptions.CmisObjectNotFoundException: 1bf60c6e-7890-4c2a-9abf-7ff08ee44b22
+...
+
+-->
+
+<!--
+### Accessing a CMIS Repository Using Web Services
+
+
+After completing the [Common Configuration](/discover/portal/-/knowledge_base/7-0/repository-types#common-configuration)
+steps, you can add Documents and Media Repository that communicates with your
+CMIS repository via web services. 
+
+Follow these steps to add your repository:
+
+1.  In Documents and Media *Home*, click the *Add* button and select
+*Repository*. The *New Repository* screen appears.
+
+2.  Enter an arbitrary *Name* for the repository and optionally enter a
+*Description*.
+
+3.  Click on the *Repository Configuration* section to access its form
+
+4.  For **Repository Type:**, select *CMIS Repository (Web Services)*.
+
+5.  Enter the web service URLs (WSDL URLs) per your CMIS repository's
+documentation. Example URLs are listed after these steps. Make sure to enter
+URLs for the following services: 
+
+    - Web Services ACL Service
+    - Web Services Discovery Service
+    - Web Services Multifiling Service
+    - Web Services Navigation Service
+    - Web Services Object Service
+    - Web Services Policy Service
+    - Web Services Relationship Service
+    - Web Services Repository Service
+    - Web Services Versioning Service
+
+6.  Leave *Repository ID* blank, as Liferay generates the ID
+     automatically. 
+
+7.  Click *Save*
+
+Your repository appears in Documents and Media. You can navigate into the
+repository and work with files as you do other files in Documents and Media.
+-->
+
+<!--
+Possible formats ...
+
+http://IP_ADDRESS:PORT/alfresco/cmis/RepositoryService?wsdl
+
+http://IP_ADDRESS:PORT/nuxeo/webservices/cmis/RepositoryService?wsdl
+-->
+
+
+<!--
+### Adding a Sharepoint Repository
 
 The following versions of Sharepoint are currently supported:
 
@@ -315,7 +353,7 @@ application will list your new repository.
 -->
 
 <!--
-#### Repository Setup for Documentum [](id=example-repository-setup-documentum)
+### Adding a Documentum Repository
 
 The following versions of Documentum are currently supported:
 
