@@ -4,17 +4,17 @@ As you create sites, you'll probably want to share files on them. Liferay's
 Documents and Media library (Document Library) let's you upload and publish all
 kinds of files on your sites. Pictures, videos, spreadsheets, slide
 presentations and more can be stored in and shared from the Document Library.
-Library instances can be scoped to a Liferay instance, site, or page, so you can
-work with files where their relevant.
+Document Library instances can be scoped to a Liferay instance, site, or page,
+so you can work with files where their relevant.
 
 In this chapter, you'll learn how to add files, display them, and collaborate on
-them. You can upload all kinds of files to the Document Library it even allows
-for custom file types. Users can browse and view files from the Documents and
-Media app or from the Media Gallery. You'll learn how to use both apps. And
-lastly, you'll learn how to collaborate on files from within several
-environments, including your browser, local desktop, and mobile device. We've
-pulled out all the stops to make online file management as easy as possible.
-Let's get the ball rolling by adding files to a Document Libary.
+them. You can upload all kinds of files, including custom file types, to the
+Document Library. Users can then browse and view files from the Media Gallery or
+Documents and Media apps. You'll learn how to use both apps. And lastly, you'll
+learn how to collaborate on files from within several environments, including
+your browser, local desktop, and mobile device. We've pulled out all the stops
+to simplify online file management. Let's get the ball rolling by adding files
+to a Document Libary.
 
 ## Adding Files [](id=adding-files)
 
@@ -23,71 +23,71 @@ might want to share photos and video files or embed them in web content. Or you
 might simply want to back them up from your device to your site. You may have
 important documents that you want to share with other users. And you might want
 to collaborate on documents with other users. All of these examples include
-first uploading a file to your site.
+first uploading a files to your site.
 
-To demonstrate adding files to a Document Library, we'll use the Lunar Resort.
-Resort photographers take lots of photos and video footage of resort guests
-having the time of their lives. As a courtesy to the guests the staff stores
-each party's photos and videos on the resrot site and shares them with the
-parties. At first, you might think "How does a resort sharing of pictures and
-videos relate to me and my site?" Well, even if your company isn't in the
-tourism business, it probably has similar requirements for managing and
-publishing files. One common need is the ability to enable specific groups of
-users to store, organize, and share files. And no matter what kinds of files you
-work with, the fundamentals of granting file operation permissions is the same.
-Let's explore how to do this for the Lunar Resort.
+To demonstrate adding files to a Document Library, we'll implement a use case
+for the Lunar Resort. Resort photographers take lots of photos and video footage
+of resort guests having the time of their lives. As a courtesy to the guests the
+staff stores each party's photos and videos on the resort site and shares them
+with the parties. At first, you might think "How does a resort's sharing of
+pictures and videos relate to me and my site?" Well, even if your company isn't
+in the tourism business, it probably has similar requirements for managing and
+publishing files. One common requirement is the ability to enable specific
+groups of users to store, organize, and share files. And no matter what kinds of
+files you work with, the fundamentals of granting file operation permissions is
+the same. Let's explore how to do this for the Lunar Resort.
 
 The Lunar Resort needs to manage carefully who can add, view, and update groups
 of files. The resort stores in their Documents and Media libraries all kinds of
 files for various purposes. The libraries not only contain guest media but also
-departmental documents and media. Most of the documents are meant to be only
-disseminated within the departments. Using the Liferay platform we can implement
-the resort's use cases. You see, Liferay's [Roles and
+departmental documents and media. Most of the documents are meant to be
+disseminated within the departments only. Using the Liferay platform, we can
+implement the resort's use cases. You see, Liferay's [Roles and
 Permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) let
-you precisely specify access to documents and media files. In addition,
-Documents and Media's folder permissions help you organize media. Let's get
-started on the right foot with the Lunar Resorts guest media files by leveraging
-roles, permissions, and folders in Documents and Media.
+you precisely specify access to documents and media files. In addition, the
+Document Library's folder permissions help you organize media. Let's get started
+on the right foot with the Lunar Resorts guest media files by leveraging roles,
+permissions, and folders in Documents and Media.
 
 Since the Lunar Resort's *Souvenir and Memorabilia* staff members must be able
-to upload and organize guest media, let's enable a role for those purposes. Sign
-in as the Liferay admin and open the the *Product Menu* (![Product
+to upload and organize guest media, let's enable a role for these purposes. Sign
+in as the Liferay admin and open the the *Menu* (![Product
 Menu](../../../images/icon-menu.png)). Then navigate to *Control Panel &rarr; Users
 &rarr; Roles*. If the staff group is a part of an Organization, and that
 organization has a site, create an Organization Role. Otherwise, create it as a
 Site Role. Name the role *Resort Guest Media Manager*. Once you've created it,
 click the role's Actions icon
 (![Actions](../../../images/icon-actions.png)) and select *Define
-Permissions*. The *Roles* screen appears, showing the *Define Permissions* tab.
-In that tab, navigate to *Site Administration &rarr; Content &rarr; Documents
-and Media*, select *Access in Site Administration* from the *General
-Permissions* section, and click *Save*. This role will manage your special set
-of media files. Once you've created the role, assign it to the users who manage
-the media. Snappy Fingers (username: *snappy*) is the Lunar Resort's
-trigger-happy photographer. We assigned her to the *Resort Guest Media Manager*
-role.
+Permissions*. A screen appears for you to define the role's permissions.
+
+In the role's permission definition screen, navigate to *Site Administration
+&rarr; Content &rarr; Documents and Media*. In the *General Permissions*
+section, select *Access in Site Administration* and click *Save*. This role will
+manage your special set of media files. Once you've created the role, assign it
+to the users who manage the media. Snappy Fingers (username: *snappy*) is the
+Lunar Resort's trigger-happy photographer. We assigned her to the *Resort Guest
+Media Manager* role.
 
 +$$$
 
-To learn how to create a role and define permissions for it, refer to [Roles and
-Permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions).
+To learn how to create a role and define a role's permissions, refer to [Roles
+and Permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions).
 
 $$$
 
 You've created your specialized role and assigned users to it. In the Documents
 and Media library, you need a place for that role to manage Lunar Resort guest
-media. A Documents and Media folder fits the bill. In the folder we'll create the
-role will add, organize, and share the files. Let's navigate into your site's
-Documents and Media library. 
+media. A Documents and Media folder fits the bill. In the folder we'll create,
+the role will add, organize, and share the guest media files. 
 
-Open the Product Menu, click on your site's name, and navigate to *Content
-&rarr; Documents and Media* in for your site. The Documents and Media screen
-appears and displays the Documents and Media library's *Home* (the library's
-root folder). As you add files and folders to the library, they're listed here.
+Open the Menu, click on your site's name, and navigate to *Content &rarr;
+Documents and Media* for your site. The Documents and Media screen appears and
+displays the Documents and Media library's *Home* (its root folder). As you add
+files and folders to the document library, they're listed here.
 
-![Figure 1: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload all kinds of documents to the library.](../../../images/dm-admin-add-menu.png)
+![Figure 1: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload and add all kinds of documents to the library.](../../../images/dm-admin-add-menu.png)
 
-Click the Add icon (![Add](../../../images/icon-add.png)) to show what you can add
+Click the *Add* icon (![Add](../../../images/icon-add.png)) to show what you can add
 to the Document Library. You can add documents, folders, and shortcuts the same as you do
 on your local file system. You can even configure access to an entirely different
 repository. Here are the Add menu's options:
@@ -98,10 +98,9 @@ repository. Here are the Add menu's options:
 You can set permissions on the shortcut to specify who can access the original
 document through the shortcut.
 
-**Repository**: allows you to add an entirely new repository to your Document
-Library. Refer to the [Repostory
-Types](/discover/portal/-/knowledge_base/7-0/repository-types) section to learn
-how to add a repository. 
+**Repository**: allows you to add access to an external repository. Refer to
+[Repostory Types](/discover/portal/-/knowledge_base/7-0/repository-types) to
+learn how to add access to them. 
 
 **Multiple Documents**: allows you to upload several documents at once.
 
@@ -110,13 +109,15 @@ default document type, "Basic Document," to apply to. By default, basic
 documents are not described by any metadata sets.
 
 **Google Docs**: lets you create a file entry that links to a Google document.
-The section *Accessing Google Docs* explains how to use this feature.
+The section [Accessing Google Docs](/discover/portal/-/knowledge_base/7-0/publishing-files#accessing-google-docs)
+explains how to use this feature.
 
-The remaining items in the Add menu are default document types that are each
-described by a unique metadata set. When you add a document belonging to a
-specific document type, you're presented with a form to not only specify the
-file to upload but also to fill out the fields defined by the document type's
-metadata set. We describe the "Contract" document type by way of example.
+The remaining items in the Add menu are default [document types](/participate/liferaypedia/-/wiki/Main/document+types)
+that are each described by a unique [metadata set](/participate/liferaypedia/-/wiki/Main/Metadata+Set).
+When you add a document belonging to a specific document type, you're presented
+with a form to not only specify the file to upload but also to fill out the
+fields defined by the document type's metadata set. We describe the "Contract"
+document type by way of example.
 
 **Contract**: lets you upload a file that you would like the "Contract" document
 type to apply to. This document type is intended to be used to describe legal
@@ -126,40 +127,40 @@ fields.
 
 Any custom documents types that have been defined also appear in the Add menu.
 If a document type has been created that matches the document you would like to
-upload, you can select that document type from the Add menu. This associates the
-metadata fields associated with the document type to your document. On selecting
-a document type, you're prompted to fill out the fields associated with it.
+upload, you can select that document type from the Add menu. The Document
+Library applys the metadata fields associated with the document type to your
+document. On selecting a document type, you're prompted to fill in the fields
+associated with it. 
 
 Let's continue with our example and create folders to organize the Lunar Resort
 guest photos and videos that we'll upload. From the document library's Add menu,
 select *Folder*. The new folder form appears. Since the folder is for storing
 Lunar Resort guest media, name the folder *Resort Guest Media*. You can
-optionally describe the folder. Initially anyone can view the folder, but we'll
+optionally describe the folder. Initially, anyone can view the folder, but we'll
 change that after we create it. Expand the *Permissions* section. By default,
 site members are able to add files, subfolders, and shortcuts and subscribe to
 changes to the folder's files. Click the *More Options* link and deselect all of
 these checkboxes, as we only want resort media managers to modify the folder's
 files. Click *Save* to finish creating the folder. 
 
-Document type restrictions and workflow definitions can be associated with each
-folder. Child folders inherit their parent folder's document type restrictions,
-by default. If workflow is enabled for the Document Library, you can specify
-workflow definitions per folder and document type. You can specify a folder's
-document type restrictions and workflow definitions from the folder's edit
-screen, after the folder's been created.
-
-
+Note that, document type restrictions and workflow definitions can be associated
+with each folder. Child folders inherit their parent folder's document type
+restrictions, by default. If workflow is enabled for the Document Library, you
+can specify workflow definitions per folder and document type. You can specify a
+folder's document type restrictions and workflow definitions from the folder's
+edit screen, after the folder's been created.
 
 ![Figure 2: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../../images/dm-doc-type-restrictions-and-workflow.png)
 
 Document types are a powerful way to enforce rules for documents. For our
-example, we'll keep the default supported document types and workflow settings.
+example's folder, however, we'll keep the default supported document types and
+workflow settings.
 
 You've created a folder named *Resort Guest Media*. You can now specify its
 permissions. Since we only want the *Resort Guest Media Manager* role to manage
-files in the folder, we must fine tune the folder's permissions. Click on the
-folder's *Actions* icon (![Actions](../../../images/icon-actions.png)) and select
-the *Permissions* action. The Permissions window appears.
+files in it, we must fine tune the folder's permissions. Click on the folder's
+*Actions* icon (![Actions](../../../images/icon-actions.png)) and select the
+*Permissions* action. The Permissions window appears.
 
 The folder permissions enable a role to perform the following actions:
 
@@ -186,33 +187,33 @@ the folder.
 
 Grant all the permissions to the *Resort Guest Media Manager* role, revoke all
 permissions from all the other roles, and click *Save*. Users assigned to the
-role are now the only non-admin users who can upload and manage media files in
-the folder.
+*Resort Guest Media Manager* role are now the only non-admin users who can
+upload and manage media files in the *Resort Guest Media* folder.
 
 You've created the *Resort Guest Media* folder and set appropriate permissions
 for it. While you're signed in as the admin user, click on Documents and Media's
-Options icon (![Options](../../../images/icon-app-options.png)) and select
+*Options* icon (![Options](../../../images/icon-app-options.png)) and select
 *Configuration*. From here you can specify the email sender and email templates
-for email sent to Document Library folder subscribers. If you want to keep the
-defaults, close the *Configuration* window.
+for email sent to Document Library folder subscribers. 
 
 Now, sign in as a *Resort Guest Media Manager* role user. Since Snappy, the
-Lunar Resort's photographer, belongs to this role, we'll sign in as her. To open
-the folder, go to *Documents and Media* in Site Administration, navigate to the
-*Resort Guest Media* folder, and click the folder's name. The folder provides a
-workspace for role members to manage files and subfolders.
+Lunar Resort's photographer, belongs to this role, you can sign in as her. Then
+go to *Documents and Media* in Site Administration, navigate to the *Resort
+Guest Media* folder, and click the folder's name. The folder provides a
+workspace for members of the *Resort Guest Media Manager* role to manage files
+and subfolders.
 
 Snappy has plenty of pictures of guests Mr. and Mrs. Spacey on her local file
-system. To separate the Spacey's files from those of other guests, we'll create a
-subfolder named *Spacey Party*. To create it, click the Add icon, and select the
-*Subfolder* action. In the *New Folder* form that appears, name the folder
-*Spacey Party* and describe the folder's purpose (e.g., "The Spacey's photos from
-their visit to the Lunar Resort on some-date"). Click the *More Options* link
-and deselect all the permissions within it, as we only want media managers to be
-able to edit the folder. *Save* the new subfolder. You're returned to the folder
-*Resort Guest Media*, which now lists your new subfolder *Spacey Party*. Navigate
-into the subfolder. The Document and Media library's navigation breadcrumbs
-shows your folder's path: *Home &rarr; Resort Guest Media &rarr;Spacey Party*.
+system. To separate the Spacey's files from those of other guests, we'll create
+a subfolder named *Spacey Party*. To create it, click the Add icon, and select
+the *Subfolder* action. In the *New Folder* form that appears, name the folder
+*Spacey Party* and describe the folder's purpose (e.g., "The Spacey's photos
+from their visit to the Lunar Resort"). Click the *More Options* link and
+deselect all the permissions within it, as we only want media managers to be
+able to edit the folder. *Save* the new subfolder. You return to the folder
+*Resort Guest Media*, which now lists your new subfolder *Spacey Party*.
+Navigate into it. The Document and Media library's navigation breadcrumbs show
+your folder's path: *Home &rarr; Resort Guest Media &rarr;Spacey Party*.
 
 In your Document Library's *Resort Guest Media* folder, you've created a
 subfolder named *Spacey Party*. Next, let's add the Spacey's photos to the
@@ -242,53 +243,56 @@ back to the folder you're adding files to.
 ![Figure 3: Documents and Media's lists files using several display styles: icon (as shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../../images/dm-images-in-admin.png)
 
 Documents and Media lists your current folder's subfolders and file entries. A
-file entry is the Document Library's representation of a file. It wraps the file
-to better leverage it within Liferay and to associate additional information and
-metadata with the file. File entries are displayed using icons, by default. You
-can select either icon, descriptive, or list display style; they're shown here
-from left to right: ![Display
-Styles](../../../images/list-view-display-styles.png). The icon display style shows
-a file as a cover image. If the file is an image type file, the image is used as
-the file entry's cover image. If the file isn't an image, Documents and Media
-displays a generic image for that file type. Also displayed with each file icon
-is the file's suffix (e.g., *JPG* for a file ending in `.jpg`), last
-modification timestamp, name, and status (e.g., *Approved*, *Draft*, etc.). And
-each file has an Actions menu. The actions are also available from within the
-file entry's view, which we'll explore soon. The descriptive and list display
-styles provide the same functionality, but display the file entries in rows.
+*file entry* is the Document Library's representation of a file. It wraps the
+file to better leverage it within Liferay and to associate additional
+information and metadata with the file. File entries are displayed using icons,
+by default. You can select either icon
+(![Icon](../../../images/icon-icon-style.png)), descriptive
+(![Descriptive](../../../images/icon-descriptive-style.png)), or list
+(![List](../../../images/icon-list-style.png)) display style. The icon display
+style shows a file as a cover image. If the file is an image type file, the
+image is used as the file entry's cover image. If the file isn't an image,
+Documents and Media displays a generic image for that file type. Also displayed
+with each file icon is the file's suffix (e.g., *JPG* for a file ending in
+`.jpg`), last modification timestamp, name, and status (e.g., *Approved*,
+*Draft*, etc.). And each file has an Actions menu. The actions are also
+available from within the file entry's view, which we'll explore soon. The
+descriptive and list display styles provide the same functionality, but display
+the file entries in rows.
 
 To see the current folder's details click the *Information* icon
 (![**i**](../../../images/icon-information.png)). An area with the folder's name
 appears. It shows the number of items in the folder. It also shows a *Subscribe*
-icon ![Subscribe](../../../images/icon-subscribe.png) you can select to get
+icon ![Subscribe](../../../images/icon-star.png) you can select to get
 notifications about files added to or modified in the folder. Lastly, the
 Actions icon lists actions you can perform on the current folder. Above the
 Information icon and Display Styles is a *Search* that enables you to find files
 by keywords.
 
-On the other side of the *Folders* tab also in the top area are several icons
-for filtering on folders and files. The *All* option (default) shows all of the
-current folder's immediate subfolders and files. The *Recent* filter shows the
-most recently modified files, *Mine* lists all the current user's files (no
-matter their folder), and *Document Types* filters on files of the selected
-document type. If a Document Library contains more documents than it can display
-at once, you can use the navigation tool at the bottom of the app's window to
-either switch your view to another page or configure the page to display more
-documents per page.
+On the other side of the screen also in the top area is a filtering selector.
+It's default option is *All*. Click it to see the other filter options. The
+*All* option (default) shows all of the current folder's immediate subfolders
+and files. The *Recent* filter shows the most recently modified files, *Mine*
+lists all the current user's files (no matter their folder), and *Document
+Types* filters on files of the selected document type. If a Document Library
+contains more documents than it can display at once, you can use the navigation
+tool at the bottom of the app's window to either switch your view to another
+page or configure the page to display more documents per page.
 
-Just above the file list, the *Order by* selector lets you select criteria for
-ordering the files and folders. You can order them by creation date, title,
+Next to the filtering selector, the *Order by* selector lets you select criteria
+for ordering the files and folders. You can order them by creation date, title,
 number of downloads, modification date (default), or size. The up and down
-arrows let you arrange them in ascending or descending order.
+arrows next to the *Order by* selector, let you arrange them in ascending or
+descending order.
 
 From the list view, Documents and Media lets you act on one or more files at
 once. When you select a checkbox for one or more files, the following action
-icons appear: ![Action Icons](../../../images/dm-action-icons.png). Describing them
-from left to right, the X is for cancelling file checkout, the secured lock is
-for file check-in, the unsecured lock is for file check-out, the arrows are for
-moving the files, and the trash can is for moving files to the Recycle Bin. You
-can also move selected files to a subfolder via drag and drop. File check-out
-and check-in is explained later in [Collaborating on
+icons appear: ![Action Icons](../../../images/dm-action-icons.png). Describing
+them from left to right, the X is for cancelling file checkout, the secured lock
+is for file check-in, the unsecured lock is for file check-out, the arrows are
+for moving the files, and the trash can is for moving files to the Recycle Bin.
+You can also move selected files to a subfolder via drag and drop. File
+check-out and check-in is explained later in [Collaborating on
 Files](/discover/portal/-/knowledge_base/7-0/publishing-files#collaborating-on-files).
 
 ![Figure 4: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../../images/dm-file-entry-details.png)
@@ -348,8 +352,9 @@ author, upload timestamp, and rating. You can rate the file too. The comments
 area below the file viewing area lets you comment on the file, subscribe to
 comments, and reply to comments.
 
-A file's actions are listed at the top of the file entry screen. Here are the
-file actions:
+A file's options are accessible from the *Options* icon
+(![Options](../../../images/icon-options.png)) at the top of the screen. Here
+are the file options:
 
 **Download**: Downloads the file to your device.
 
