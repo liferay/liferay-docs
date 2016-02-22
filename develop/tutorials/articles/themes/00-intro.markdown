@@ -1,4 +1,4 @@
-# Themes
+# Themes [](id=themes)
 
 Do you want to transform the look and feel of your Liferay Portal? Create your 
 own Liferay Theme! Themes are hot deployable modules unique to a site. With 
