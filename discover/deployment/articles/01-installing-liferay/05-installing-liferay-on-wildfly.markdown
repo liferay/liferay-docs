@@ -1,4 +1,4 @@
-# Installing Liferay on Wildfly 10.0
+# Installing Liferay on Wildfly 10
 
 If you want a fresh installation of Liferay on Wildfly 10, simply download a
 Liferay Wildfly bundle from
@@ -8,7 +8,8 @@ application server, it can be helpful to download a Liferay Wildfly bundle. The
 bundle contains many required dependencies and configuration files. Before
 proceeding, you should also download the latest Liferay WAR file from
 [https://www.liferay.com/downloads/liferay-portal/available-releases#additional-versions](https://www.liferay.com/downloads/liferay-portal/available-releases#additional-versions)
-as well as the dependencies ZIP file and OSGi JARs ZIP file.
+as well as the dependencies ZIP file and OSGi JARs ZIP file. This installation
+guide assumes you're running Java 8.
 
 Installing Liferay manually requires these basic steps:
 
@@ -69,14 +70,17 @@ third-parties, as described below.
         </module>
 
     Make sure to replace `[version]` with the correct version of the MySQL JDBC
-    driver. If you are using a different database, replace the MySQL jar with 
+    driver. If you are using a different database, replace the MySQL `.jar` with 
     the driver JAR for your database (e.g., HSQL, PostgreSQL, etc.).
 
-<!-- 5. If you downloaded a Liferay Wildfly bundle, extract the bundle to a
-temporary location of your choosing. You'll copy a number of resources from this
-bundle to your Wildfly server as you manually install Liferay. -->
+5. Liferay includes an OSGi runtime. Extract the OSGi ZIP file that you
+   downloaded and copy the `osgi` folder to your Liferay Home folder. The
+   `osgi` folder contains many required JAR files and a few configuration
+   files. If you're working with a bundle, you can simply copy the `osgi`
+   folder from your bundle to your Liferay Home folder.
 
-<!-- May need to specify additional OSGi JARs as well. Keep this in mind. -->
+<!-- Above step should be replaced by downloading only OSGi JAR ZIP, when
+available -->
 
 Great! You have your `.jar` files ready. 
 
@@ -188,13 +192,13 @@ the following line:
 Then add the following `JAVA_OPTS` assignment one line above the
 `:JAVA_OPTS_SET` line found at end of the file:
 
-        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy=$WILDFLY_HOME/bin/server.policy -Dwildfly.home.dir=$WILDFLY_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m -XX:MetaspaceSize=200m"
+        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$WILDFLY_HOME/bin/server.policy -Dwildfly.home.dir=$WILDFLY_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m -XX:MetaspaceSize=200m"
 
 On Unix, merge the following values into your settings for `JAVA_OPTS`, 
 replacing any matching attributes with the ones found in the assignment
 below:
 
-        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.security.manager -Djava.security.policy=$WILDFLY_HOME/bin/server.policy -Dwildfly.home.dir=$WILDFLY_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m -XX:MetaspaceSize=200m
+        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$WILDFLY_HOME/bin/server.policy -Dwildfly.home.dir=$WILDFLY_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m -XX:MetaspaceSize=200m
 
 Make sure you replace the `$WILDFLY_HOME` references with the appropriate
 directory. You'll notice some Java security options. You'll finish configuring
@@ -387,6 +391,7 @@ tutorial to learn how to configure Liferay plugin access to resources.
    On startup, Wildfly detects the presence of this file and deploys it as a web
    application.
 
-4.  Start the Wildfly application server.
- 
+4. Start the Wildfly application server by navigating to `$WILDFLY_HOME/bin`
+   and running `standalone.bat` or `standalone.sh`.
+
 You're now an expert when it comes to deploying Liferay on Wildfly!
