@@ -19,11 +19,9 @@ Installing Liferay manually requires these basic steps:
 **Liferay Home** is one folder above Wildfly's install location. *Liferay
 Home* refers to the folder containing your Wildfly server folder. When Liferay
 is installed on Wildfly, the Liferay Home folder contains the Wildfly server
-folder as well as `data`, `deploy`, and `osgi` folders. You'll also
+folder as well as `data`, `deploy`, `logs`, and `osgi` folders. You'll also
 see the term `$WILDFLY_HOME` used in this guide. `$WILDFLY_HOME` refers to your
 Wildfly server folder. This folder is usually named `wildfly-[version]`.
-
-<!-- Check if "license" folder appears when Liferay is deployed via WAR. -->
 
 ## Installing Liferay Dependencies
 
@@ -231,18 +229,164 @@ installation on Wildfly. Next you'll configure mail and the database.
 
 ## Database Configuration
 
-<!-- Remaining from build-dist: -->
+If you want Wildfly to manage your data source, follow the instructions in this
+section. If you want to use the built-in Liferay data source, you can skip this
+section.
 
+Modify `standalone.xml` and add your data source and driver in the
+`<datasources>` element of your data sources subsystem.
 
-6. Create the `$WILDFLY_HOME/bin/server.policy` file and insert the following:
+1. First, add your data source inside the `<datasources>` element.
 
-        grant {
-            permission java.security.AllPermission;
-        };
+        <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+            <connection-url>jdbc:mysql://localhost/lportal</connection-url>
+            <driver>mysql</driver>
+            <security>
+                <user-name>root</user-name>
+                <password>root</password>
+            </security>
+        </datasource>
 
+    Be sure to replace the database name (i.e. `lportal`), user name, and
+    password with the appropriate values. 
 
+    +$$$
 
+    **Note:** If you'd like to change your datasource `jndi-name` to something
+    different, you'll need to also edit the `datasource` element in the
+    `<default-bindings>` tag.
 
+    $$$
 
+2. Add your driver to the `<drivers>` element also found within the
+   `<datasources>` element.
 
+        <drivers>
+            <driver name="mysql" module="com.liferay.portal"/>
+        </drivers>
 
+Your final data sources subsystem should look like this:
+
+        <subsystem xmlns="urn:jboss:domain:datasources:1.0">
+            <datasources>
+                <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+                    <connection-url>jdbc:mysql://localhost/lportal</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>root</user-name>
+                        <password>root</password>
+                    </security>
+                </datasource>
+                <drivers>
+                    <driver name="mysql" module="com.liferay.portal"/>
+                </drivers>
+            </datasources>
+        </subsystem>
+
+Now that you've configured your data source, the mail session is next. 
+
+## Mail Configuration
+
+If you want Wildfly to manage your mail session, use the following instructions.
+If you want to use the built-in Liferay mail session, you can skip this section.
+
+Specify your mail subsystem in `standalone.xml` as in the following example:
+
+    <subsystem xmlns="urn:jboss:domain:mail:2.0">
+        <mail-session jndi-name="java:jboss/mail/MailSession" >
+            <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp" username="USERNAME" password="PASSWORD"/>
+       </mail-session>
+    </subsystem>
+    ...
+    <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+    ...
+    <outbound-socket-binding name="mail-smtp">
+            <remote-destination host="smtp.gmail.com" port="465"/>
+        </outbound-socket-binding>
+    </socket-binding-group>
+ 
+You've got mail! Next, you'll make sure Liferay can connect using your new mail
+session and database.
+
+## Configuring data sources and mail sessions
+
+Now that your data source and mail session are set up, you need to ensure
+Liferay Portal can access them.
+
+1.  First, navigate to the Liferay Home folder, which is one folder above
+    Wildfly's install location (i.e. `$WILDFLY_HOME/..`).
+
+2.  If you're using *Wildfly* to manage your data source, add the following
+    configuration to your `portal-ext.properties` file in your *Liferay Home* to
+    refer to your data source:
+
+        jdbc.default.jndi.name=java:jboss/datasources/ExampleDS
+
+    If you're using *Liferay Portal* to manage your data source, follow the
+    instructions for using the setup wizard.
+
+3.  If you're using *Liferay Portal* to manage your mail session, this
+    configuration is done in Liferay Portal. That is, after starting your
+    portal as described in the *Deploy Liferay* section, go to *Control Panel
+    &rarr; Server Administration &rarr; Mail* and enter the settings for your
+    mail session.
+
+    If you're using Wildfly to manage your mail session, add the following
+    configuration to your `portal-ext.properties` file to reference that mail
+    session:
+
+        mail.session.jndi.name=java:jboss/mail/MailSession
+
+Before you deploy Liferay Portal on your Wildfly app server, you should enable
+and configure Java security so you can use Liferay's plugin security manager
+with your downloaded Liferay applications.
+
+## Security Configuration
+
+When you're ready to begin using other people's apps from Marketplace, you'll
+want to protect your Liferay instance and your Wildfly server from security
+threats. To do so, you can enable Java Security on your Wildfly server and
+specify a security policy to grant your Liferay instance access to your server.
+
+Remember, you set the `-Dsecmgr` and `-Djava.security.policy` Java options in
+the `standalone.conf.bat` file earlier in the *Configuring Wildfly* section. The
+`-Dsecmgr` Java option enables security on Wildfly. Likewise, the
+`-Djava.security.policy` Java option lists the permissions for your server's
+Java security policy. If you have not set these options, you'll need to do so
+before using Java security.
+
+This configuration opens up all permissions. You can tune the permissions in
+your policy later. Create the `$WILDFLY_HOME/bin/server.policy` file and add the
+following contents:
+
+    grant {
+        permission java.security.AllPermission;
+    };
+
+For extensive information on Java SE Security Architecture, see its
+specification documents at
+[http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
+Also, see the
+[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+tutorial to learn how to configure Liferay plugin access to resources.
+
+<!-- JSF configuration sections go here, when they've been tested for Liferay 7
++ Wildfly 10 bundles. -Cody -->
+
+## Deploy Liferay
+
+1. If the folder `$WILDFLY_HOME/standalone/deployments/ROOT.war` already exists
+   in your Wildfly installation, delete all of its subfolders and files.
+   Otherwise, create a new folder
+   `$WILDFLY_HOME/standalone/deployments/ROOT.war`.
+
+2. Unzip the Liferay `.war` file into the `ROOT.war` folder.
+
+3. To trigger deployment of `ROOT.war`, create an empty file named
+   `ROOT.war.dodeploy` in  your `$WILDFLY_HOME/standalone/deployments/` folder.
+   On startup, Wildfly detects the presence of this file and deploys it as a web
+   application.
+
+4.  Start the Wildfly application server.
+ 
+You're now an expert when it comes to deploying Liferay on Wildfly!
