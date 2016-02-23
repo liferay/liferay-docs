@@ -13,6 +13,7 @@ Here's the code as specified in the plugin's `liferay-look-and-feel.xml` file:
 
     <theme id="deep-blue" name="Deep Blue">
         <color-scheme id="01" name="Default">
+            <default-cs>true</default-cs>
             <css-class>default</css-class>
         <color-scheme-images-path>${images-path}/color_schemes/${css-class}
         </color-scheme-images-path>
@@ -32,7 +33,12 @@ is used.
 
 In addition to the `Day` and `Night` color schemes, you'll notice that the 
 `Default` color scheme is defined as well. This allows you to return to the 
-default look and feel for your theme.
+default look and feel for your theme. Note that color schemes are sorted
+alphabetically by `name` rather than `id`. In the example above, `Day` would be
+selected by default when you choose the `Deep Blue` theme, if the `<default-cs>`
+element was not added. The `<default-cs>` element overrides the alphabetical 
+sorting and sets the color scheme that is selected by default, when the theme is 
+chosen.
 
 To make the color schemes of the `.css` files available, import them into your
 `docroot/css/custom.css` file. The example's `day.css` and `night.css` files
