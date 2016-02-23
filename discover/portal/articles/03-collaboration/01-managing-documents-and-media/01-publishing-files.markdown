@@ -60,6 +60,8 @@ click the role's Actions icon
 (![Actions](../../../images/icon-actions.png)) and select *Define
 Permissions*. A screen appears for you to define the role's permissions.
 
+![Figure 1: It's often helpful to define a role for specific users to access Documents and Media from Site Administration.](../../../images/dm-define-role-permissions.png)
+
 In the role's permission definition screen, navigate to *Site Administration
 &rarr; Content &rarr; Documents and Media*. In the *General Permissions*
 section, select *Access in Site Administration* and click *Save*. This role will
@@ -85,7 +87,7 @@ Documents and Media* for your site. The Documents and Media screen appears and
 displays the Documents and Media library's *Home* (its root folder). As you add
 files and folders to the document library, they're listed here.
 
-![Figure 1: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload and add all kinds of documents to the library.](../../../images/dm-admin-add-menu.png)
+![Figure 2: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload and add all kinds of documents to the library.](../../../images/dm-admin-add-menu.png)
 
 Click the *Add* icon (![Add](../../../images/icon-add.png)) to show what you can add
 to the Document Library. You can add documents, folders, and shortcuts the same as you do
@@ -150,7 +152,7 @@ can specify workflow definitions per folder and document type. You can specify a
 folder's document type restrictions and workflow definitions from the folder's
 edit screen, after the folder's been created.
 
-![Figure 2: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../../images/dm-doc-type-restrictions-and-workflow.png)
+![Figure 3: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../../images/dm-doc-type-restrictions-and-workflow.png)
 
 Document types are a powerful way to enforce rules for documents. For our
 example's folder, however, we'll keep the default supported document types and
@@ -240,7 +242,7 @@ you're done adding files, click the Back icon
 (![Back](../../../images/icon-back.png)) at the top of the screen. You're taken
 back to the folder you're adding files to. 
 
-![Figure 3: Documents and Media's lists files using several display styles: icon (as shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../../images/dm-images-in-admin.png)
+![Figure 4: Documents and Media conveniently lets you add multiple files at once.](../../../images/dm-add-multiple-files.png)
 
 Documents and Media lists your current folder's subfolders and file entries. A
 *file entry* is the Document Library's representation of a file. It wraps the
@@ -259,6 +261,8 @@ with each file icon is the file's suffix (e.g., *JPG* for a file ending in
 available from within the file entry's view, which we'll explore soon. The
 descriptive and list display styles provide the same functionality, but display
 the file entries in rows.
+
+![Figure 5: Documents and Media's lists files using several display styles: icon (as shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../../images/dm-images-in-admin.png)
 
 To see the current folder's details click the *Information* icon
 (![**i**](../../../images/icon-information.png)). An area with the folder's name
@@ -295,7 +299,7 @@ You can also move selected files to a subfolder via drag and drop. File
 check-out and check-in is explained later in [Collaborating on
 Files](/discover/portal/-/knowledge_base/7-0/publishing-files#collaborating-on-files).
 
-![Figure 4: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../../images/dm-file-entry-details.png)
+![Figure 6: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../../images/dm-file-entry-details.png)
 
 You've added several files to the *Spacey Party* folder. In the Document Library,
 each file has a file entry view. To open its file entry view, click the file's
@@ -342,7 +346,7 @@ you can view a multimedia document (audio or video) and play it online. If the
 browser supports HTML5, it uses the browser's native player. Otherwise it falls
 back to a Flash player.
 
-![Figure 5: By leveraging services like Xuggler and ImageMagick, you can watch a video clip or even view a slideshow inside Liferay's Documents and Media app.](../../../images/dm-file-entry-video-preview.png)
+![Figure 7: By leveraging services like Xuggler and ImageMagick, you can watch a video clip or even view a slideshow inside Liferay's Documents and Media app.](../../../images/dm-file-entry-video-preview.png)
 
 Document previews are powerful and help users browse media more successfully to
 find what they're looking for.
@@ -466,9 +470,9 @@ Next we'll create credentials to use with the Google API.
 
 2. Create a new OAuth client ID for a *Web application*. Specify the following appributes:
     -   **Name**: `Google Docs Hook`
-    -   **Authorized JavaScript origins**: `<liferay-instance-URL>` (for
+    -   **Authorized JavaScript origins**: `[liferay-instance-URL]` (for
         example, `http://localhost:8080` for development machines) 
-    -   **Authorized redirect URIs**: `<liferay-instance-URL>/oath2callback`
+    -   **Authorized redirect URIs**: `[liferay-instance-URL]/oath2callback`
 
 3. Create a new API key of type *Browser key*. Specify your Liferay instance's
 URL in the field listing sites from which your Google project should accept
@@ -491,10 +495,9 @@ Instance Settings*.
 2. Click on the *Miscellaneous* tab and expand the *Google Apps*
 section.
 
-3. In the Google Apps section, enter your Google project's public API access API
-key as the *Google Apps API Key* value.
+3. For *Google Apps API Key*, enter your Google project's API key.
 
-4. Enter the Google project's OAuth client ID as the *Google Client ID* value. 
+4. For *Google Client ID*, enter your Google project's OAuth client ID. 
 
 5. *Save* your changes. 
 
@@ -515,17 +518,16 @@ Docs brings up Google's file picker. It lets you select files from your Google
 Drive or your photos. Select the Google file you want to link to and click
 *Publish*. 
 
-![Figure 6: You can select files from Google Drive or your photos.](../../../images/dm-google-select-a-file.png)
+![Figure 8: You can select files from Google Drive or your photos.](../../../images/dm-google-select-a-file.png)
 
 A new file entry appears for the Google document you linked to. You can view the
-file entry as you would any file entry. Contents of the Google doc shows in the
-file entry preview pane. To edit the doc, click on the button *Edit
-in Google Docs*. If you own the Google doc, or if you've already been granted
-permission to access it, a new browser tab opens to the document in the Google
-application. A window appears otherwise, that lets you request permission to
-access the document. 
+file entry as you would any file entry. Contents of the Google doc show in the
+file entry preview pane. As with any file entry, Documents and Media's *Options*
+icon (![Options](../../../images/icon-options.png)) gives you access to the
+Download, Edit, Move, Permissions, Move to Recycle Bin, and
+Checkin/Checkout/Cancel Checkout options. 
 
-![Figure 7: The Google doc file entry view comes with an action to edit the doc and displays file entry information.](../../../images/dm-google-doc-file-entry.png)
+![Figure 9: The Google doc file entry view displays the file's information and provides a preview of it.](../../../images/dm-google-doc-file-entry.png)
 
 You now know how to access Google docs from your document libraries. Next, let's
 pick up with our Lunar Resort guest photos example as we consider how to display
@@ -535,63 +537,64 @@ files on site pages.
 
 Once you've uploaded image files and videos to your Document Library, you'll
 probably want to display them in your site. Here are some ways of you can
-display your image files:
+display your media files:
 
-- Insert them in an asset, like a Web Content article or Blogs Entry
-- Use the Asset Publisher
-- Display them in a Media Gallery
 - Show them in a Documents and Media app
+- Display them in a Media Gallery
+- Use the Asset Publisher
+- Insert them in an asset, like a Web Content article or Blogs Entry
 
 Continuing with the Lunar Resort example, the media team sits down with each
 guest party to show them a page filled with photos and videos of their vacation
 experience. The team likes to show guests a slideshow to get some oohs and ahh's
 from them and determine their favorites. Then they offer to print and frame the
-photos and plaster the photos on all kinds of fun items like keychains, coffee
-mugs, and tee-shirts. They even burn the media onto a DVD. Let's explore how the
-media team shows off the guest's pics and videos.
+photos and plaster the photos on all kinds of fun items such as keychains,
+coffee mugs, and tee-shirts. They even offer to burn media files onto DVDs.
+Let's explore how the media team shows off the guest's pics and videos on a
+site.
 
 The media team creates a page for each guest party. Team members can customize
-each page to focus on and show off the party's media. Each guest's media page
-starts with a Documents and Media app and has a Media Gallery app below it. The
-Documents and Media app shows thumbnail images of all the files and makes them
-accessible for download. The Media Gallery comes with slideshow capabilities and
-enables the staff member to download an archive of the folder's files. Let's
-create a media page for the Spaceys and add these apps to it.
+each page to focus on each party's media. Each party's media page will have a
+Media Gallery app. The Media Gallery shows a large thumbnail of each media file,
+lets the user download individual files, and comes with slideshow capabilities.
+Let's create a media page for the Spacey guest party and add the Media Gallery.
 
-Add a page with a one column layout and name it *Spacey Party*. Then, add the
-*Documents and Media* application to the page. It's in the *Content Management*
-section of the *Applications* menu. The Documents and Media app shows your Home
-folder's files by default. The app lets you browse, add, and act on files just
-as you do in Site Administration. Since we want to focus on the Spacey's files,
-let's configure the app to show files from the *Spacey Party* Document Library
-folder. Click the Documents and Media app's Options icon
-(![Options](../../../images/icon-app-options.png)) and select *Configuration*. The
-Configuration window appears and shows the *Setup* tab's sub-tab *Display
-Settings*.
+[Add a page](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages)
+named *Spacey Party*. Next, click the *Add* icon
+(![Add](../../../images/icon-add-app.png)), then navigate to *Applications
+&rarr; Content Management*, and select *Add* next to *Media Gallery*. The app
+appears on the page and shows your Home folder's files by default. Since we want
+to focus on the Spacey party's files, let's configure the app to show files from
+the *Spacey Party* folder. Click the app's Options icon
+(![Options](../../../images/icon-app-options.png)) and select *Configuration*.
+The Configuration window appears and shows the *Setup* tab.
 
-The Display Settings tab has these sections: Display Settings, Folders Listing,
-Entries Listing for List Display Style, and Ratings. The Display Settings
-section provides checkboxes to enable showing each file's actions, file search,
-and the file filters. File search is enabled by default. The settings also let
-you set the maximum number of file entries to display per page. And lastly, you
-can select display styles (e.g., Icon, Descriptive, and List) to make available
-to the app's users. The Icon display style is selected by default.
+The Setup tab's Display Settings section provides checkboxes to enable showing each file's
+actions, gallery navigation links (for paging through media files), and a search
+field. File search is enabled by default. The Media Type selector lets you
+filter on media file types; all supported types are filtered on by default. And
+the Media Gallery uses a [Display Template](/participate/liferaypedia/-/wiki/Main/Application+Display+Templates).
+You can create your own Display Templates for the Media Gallery or select an
+existing display template, like the *Carousel* display template. **Important**:
+To access the Carousel display template in Media Gallery, your role must have
+*View* access for that template. Since the Carousel template is in the Global
+scope, a Global scope administrator must grant the role permission to view the
+template.
 
 The Folders Listing section lets you select a Document Library folder to serve
 as the root folder from which to display files. The root folder is the
 highest-level folder that's accessible from the Documents and Media app. For
 example, suppose you created a folder called *My Documents* in Documents and
 Media's default Home folder. If you set the My Documents folder to be your app's
-new root folder, the app no longer accesses the Home folder.
+new root folder, the app accesses the My Documents folder and no longer accesses
+the Home folder.
 
-The last two Display Settings tab's sections are the Entries Listing for List
-Display Style section and Ratings section. The former section allows you to
-select fields to show for each file, if app users select the List display style.
-The Ratings section lets you enable users to rate files and comment on them.
+![Figure 10: The Documents and Media app can be configured to use any folder as a root folder to display.](../../../images/dm-select-root-folder.png)
 
-Here are descriptions for the Documents and Media app's other configuration tabs:
+Lastly, the Ratings section of the Display Settings lets you enable users to
+rate files and comment on them. 
 
-**Permissions**: shows Liferay's permissions dialog for the application.
+Here are descriptions for the Media Gallery app's other configuration tabs:
 
 **Communication**: lists public render parameters the application publishes to
 other applications on the page. Other applications can read these and take
@@ -609,84 +612,29 @@ option *+ \[Page Name\] \(Create New\)* to create a page-scoped instance for the
 application to display. 
 
 While we're in the Configuration window there are a couple things we should do.
-First select the *Display Settings* tab. To enable the media team role member to
-act on the files, select the *Show Actions* checkbox. Since we only want to show
-the Spacey's files, click *Select* to browse and select the *Spacey Party* folder.
-To save your settings, click *Save*. The Documents and Media app now shows all
-of the Spacey's files. This app enables the Lunar Resort media team to act on
-individual files. If Mrs. Spacey likes particular files, the staff member can
-download them locally and add notes in each file entry's comments.
+To enable the media team role member to act on the files, select the *Show
+Actions* checkbox. Since we only want to show the Spacey's files, expand the
+*Folders Listing* section, then click the *Select* button to browse and select
+the *Spacey Party* folder. Then click *Save*.
 
-The Documents and Media app is great for working with files individually, but
-the Media Gallery has slideshow features built in. Plus, it lets you download a
-folder's files as an archive. The Media Gallery app is also in the *Add &rarr;
-Applications* menu's *Content Management* section. Add the Media Gallery below
-the Documents and Media app on your page. By default, it displays the Documents
-and Media library's home folder's files. Bring up the Media Gallery's
-Configuration window, to set up the Media Gallery. The Media Gallery's settings
-are very similar to the Documents and Media app's settings, but there are a
-couple differences. The Media Gallery focuses only on image and video file
-types, and it uses a [Display
-Template](/participate/liferaypedia/-/wiki/Main/Application+Display+Templates).
-You can create your own Display Templates for the Media Gallery or select an
-existing display template, like the *Carousel* display template. **Important**:
-To access the Carousel display template in Media Gallery, your role must have
-*View* access for that template. Since the Carousel template is in the Global
-scope, a Global scope administrator must grant the role permission to view the
-template. The Media Gallery also has configuration tabs for communication,
-permissions, preferences, and scope. In the app's Display Settings, select
-checkboxes *Show Actions* and *Show Folder Menu*. In the *Folder Settings*
-section, select the *Spacey Party* folder as the app's root folder and click
-*Save*.
+The Media
+Gallery now shows all of the Spacey party's files. This app enables the Lunar
+Resort media team to act on individual files. If Mrs. Spacey likes particular
+files, the staff member can download them locally and add notes in each file
+entry's comments.
 
-The Spacey Party image file thumbnails display in the Media Gallery. When you
+![Figure 11: The Media Gallery renders large thumbnail images of media files. It gives users quick access to download files that interest them.](../../../images/dm-media-gallery.png)
+
+The Spacey Party's large image thumbnails display in the Media Gallery. When you
 click on a file's thumbnail, a slideshow appears showing the selected image. The
 window lists thumbnails of the folder's other images below the image that's
 currently shown. And the slideshow continues until you either click pause or
 view the folder's last image. The slideshow feature provides a nice way to show
 off images. Click the X to close the slideshow window and return to the page. 
 
-![Figure 8: The Media Gallery's slideshow provides a nice way to view images.](../../../images/dm-media-gallery-slideshow.png)
+![Figure 12: The Media Gallery's slideshow provides a nice way to view images.](../../../images/dm-media-gallery-slideshow.png) 
 
-Clicking the folder's Actions icon (![Actions](../../../images/icon-actions.png))
-lists actions you can perform with respect to the folder. For the Lunar Resort
-media team, the *Download* action is very useful. The action creates an archive
-of the folder's files and dowloads them to your machine. The resort media staff
-burns a copy of the downloaded files onto a disk and sells them to the guests
-for a fair price. 
-
-Here are the folder actions available in the Media Gallery:
-
-**Download**: Downloads an archive of the files to your device.
-
-**Edit**: Lets you modify the folder's name, description, document type, and
-workflow restrictions
-
-**Move**: Relocates the folder to a different parent folder. 
-
-**Permissions**: Lets you specify which actions each role can perform on the
-folder. 
-
-**Add Subfolder**: Creates a folder within this folder.
-
-**Add File Entry**: Lets you upload a file to the folder as a new file entry.
-
-**Multiple Media**: Allows you to upload several files at once.
-
-**View Slide Show**: Opens a window that shows the files in actual size in a
-slide show on your device. 
-
-**Add Shortcut**: Enables you to create a shortcut (link) to any Documents and
-Media file the user is authorized to view. You can set permissions on the
-shortcut to specify who can access the original document through the shortcut.
-
-**Access from Desktop**: Makes the folder available to work with from a
-desktop environment.
-
-**Move to the Recycle Bin**: Removes the file from the Documents and Media
-library to the Recycle Bin. 
-
-The Documents and Media app and Media Gallery are at your service to show
+The Media Gallery and Documents and Media apps are at your service to show
 off your Document Library files. The Lunar Resort's Souvenir and Memorabilia
 group enjoys patron reactions to the great pics and videos that Snappy takes of
 them. And the salespeople are more than happy to plaster the pictures onto
@@ -770,8 +718,8 @@ or a local drive mapped to the file's WebDAV (explained in the next section)
 URL, you'll typically follow the basic workflow below to edit a Document Library
 file from your machine:
 
-1. **Checkout** the file.
-2. **Download** the file and edit it locally.
+1. Checkout the file.
+2. Download the file and edit it locally.
 3. Edit the file locally.
 4. From the file's Edit screen in Documents and Media, browse to and select the
 local file. Save and Checkin
@@ -816,7 +764,7 @@ and select your local file, and click *Save and Check In*. This time, leave the
 major version selection unchecked and click *Save*. The file is checked in and
 it's minor version number is incremented. 
 
-![Figure 9: No file is "written in stone". Version history actions let you inspect, delete, and reinstate file versions.](../../../images/dm-file-version-actions.png)
+![Figure 13: No file is "written in stone". Version history actions let you inspect, delete, and reinstate file versions.](../../../images/dm-file-version-actions.png)
 
 In the file entry's screen, the *Version History* table lists the versions of
 the file. The department director created version 1.0, Tenzing created major
@@ -868,7 +816,7 @@ Navigate to the Documents and Media app hosting the folder you'd like to access.
 Click on the folder's Actions icon ![Actions](../../../images/icon-actions.png) and
 select *Access from Desktop*.
 
-![Figure 10: Select *Access from Desktop* to get the the folder's WebDAV URL.](../../../images/dm-access-from-desktop-action.png)
+![Figure 14: Select *Access from Desktop* to get the the folder's WebDAV URL.](../../../images/dm-access-from-desktop-action.png)
 
 Copy the WebDAV URL. On Windows, map a network drive drive to the WebDAV URL.
 Enter your Liferay credentials when you're prompted for them. The document
