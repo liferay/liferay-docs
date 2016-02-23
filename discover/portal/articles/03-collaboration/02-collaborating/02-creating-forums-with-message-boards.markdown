@@ -32,31 +32,32 @@ application on that page.
 
 To scope a message board to a page, first add the Message Boards application to
 the page. Then click the app's *Options* icon
-(![Options](../../images/icon-app-options.png)), select *Configuration*, and select the
+(![Options](../../../images/icon-app-options.png)), select *Configuration*, and select the
 *Scope* tab, to list the available scopes. Select the scope with page's name, or
 *PageName (Create New)*, if the scope hasn't been created already. Your
 message board is now scoped to the page and available to work with in Site
 Administration. 
 
-To administer a message board, open the *Product Menu* (![Product
-Menu](../../images/icon-menu.png)) and navigate the *Content* section for your
-site, page, or global scope. The Message Boards administration screen appears. 
-
 +$$$
 
 **Note**: To administer a message board for a particular page scope, click the
-*Compass* icon (![Compass](../../images/icon-compass.png)) to list the available
+*Compass* icon (![Compass](../../../images/icon-compass.png)) to list the available
 scopes, and select the scope with the page's name. Finally, select *Message
 Boards* from under the *Content* heading.
 
 $$$
 
-![Figure 1: A Message Board instance starts empty, ready for you to configure for your purposes.](../../images/message-boards-administration.png)
+To administer a message board, open the *Product Menu* (![Product
+Menu](../../../images/icon-menu.png)) and navigate the *Content* section for your
+site, page, or global scope. Click on *Message Boards* and the Message Boards
+administration screen appears. 
+
+![Figure 1: A Message Board instance starts empty, ready for you to configure for your purposes.](../../../images/message-boards-administration.png)
 
 Initially, a message board has no categories or threads; and that's good,
 because you need to configure it for your purposes. To open the message board's
 configuration screen, click the message board's *Options* icon
-(![Options](../../images/icon-options.png)) and select *Configuration*. From the
+(![Options](../../../images/icon-options.png)) and select *Configuration*. From the
 Configuration tabs, you can configure the message board for the behavior you
 want. 
 
@@ -255,7 +256,7 @@ focus on adding categories for message board threads.
 ## Adding Categories [](id=adding-categories)
 
 You are now ready to add categories to your message boards. Click the *Add* icon
-(![Add](../../images/icon-add.png)) and select *Category* button. Enter a name for the
+(![Add](../../../images/icon-add.png)) and select *Category* button. Enter a name for the
 category and a description of the category. 
 
 Categories can have different display styles. The available categories must be
@@ -269,7 +270,7 @@ predefined display styles, although many more can be easily added:
 
 **Question:** designed for discussions in a format of questions and answers. 
 
-![Figure 2: You have several options to create a message board category for your needs.](../../images/message-boards-add-category.png)
+![Figure 2: You have several options to create a message board category for your needs.](../../../images/message-boards-add-category.png)
 
 The Permissions section provides a selector for quickly choosing who can view
 the category and a link to a table that presents the category's other permission
@@ -306,7 +307,7 @@ posts.
 
 After you've created a category, you can revisit its permission options by
 clicking the category's *Actions* icon
-(![Actions](../../images/icon-actions.png)) and selecting *Permissions*. 
+(![Actions](../../../images/icon-actions.png)) and selecting *Permissions*. 
 
 The form also lets you enable the mailing list function. If don't want to add a
 mailing list to the category you're creating, you can save your changes now. You
@@ -337,7 +338,7 @@ configuration. Of course, you can change the display style or mailing list
 configuration of a subcategory just as with any category. The *Add Subcategory*
 form and the *Add Category* form are the same. 
 
-![Figure 3: Categories help you organize threads so users can find topical threads that interest them.](../../images/message-boards-home.png)
+![Figure 3: Categories help you organize threads so users can find topical threads that interest them.](../../../images/message-boards-home.png)
 
 Liferay's Message Boards supports two different mechanisms for sending email
 notifications: user subscriptions and mailing lists. Let's discuss user
@@ -506,14 +507,14 @@ explore posting messages to them and interacting with other user's threads.
 ## Using the Message Boards [](id=using-the-message-boards)
 
 You can add the Message Boards application to a page from the *Add*
-(![Add](../../images/icon-control-menu-add.png) menu's *Collaboration* section.
+(![Add](../../../images/icon-control-menu-add.png) menu's *Collaboration* section.
 Users will immediately recognize that the interface is similar to many other
 implementations they've seen before. Message boards are nothing new to the
 Internet, and many people have been using them for quite a long time. In any
 case, it can't hurt to explore how to use Liferay Message Boards and discover
 all of its features. 
 
-![Figure 4: The Message Boards application lets you explore its categories, interact with message threads, and post new messages.](../../images/message-boards-category-threads.png)
+![Figure 4: The Message Boards application lets you explore its categories, interact with message threads, and post new messages.](../../../images/message-boards-category-threads.png)
 
 Threads can be viewed in many ways. At the top of the application is a set of
 tabs: *Message Boards Home*, *Recent posts*, *My Posts*, *My Subscriptions*, and
@@ -534,8 +535,8 @@ all of the users who have been banned from posting on the message boards.
 ### Posting New Threads [](id=posting-new-threads)
 
 To post a new thread click the Add icon
-(![Add](../../images/icon-portlet-add-control.png) in the app or
-![Add](../../images/icon-add.png) in Site Administration) and select *Thread*. A
+(![Add](../../../images/icon-portlet-add-control.png) in the app or
+![Add](../../../images/icon-add.png) in Site Administration) and select *Thread*. A
 message editing form 
 appears. The body field on this form is different from that of the other Liferay
 applications. The reason for this is to support *BBCode*, which is a standard
@@ -597,18 +598,19 @@ latest threads across all the categories.
 To view a message thread, click on it. Messages are shown by default in a
 threaded view so that replies are attached to the proper parent message. This
 makes it easy to follow along with conversations. Icons
-(![Thread Views](../../images/message-boards-thread-view-icons.png)) at the top
+(![Thread Views](../../../images/message-boards-thread-view-icons.png)) at the top
 of the thread allow users to view threads in Combination View, Flat View, or
-Tree View. The Combination View shows the threads at the top as subjects only,
-with the Flat View underneath. A Flat View shows all of the messages in the
-order in which they are posted. A Tree View shows all of the messages in a
-threaded view, so that replies are next to the messages they are replying to. 
+Tree View. A Flat View shows all of the messages in the order in which they are
+posted. A Tree View indents indents reply messages with respect to the message
+they're replying to. The Combination View shows a textual tree representation of
+the thread messages using subjects only at the top, with the messages shown flat
+underneath.
 
 Message Boards is also highly integrated with Liferay's user management
 features. Posts on a message board show a user's profile picture as well as the
 date the user joined the site. 
 
-![Figure 5: You'll find it easy and fun following threads in message boards.](../../images/message-boards-participate-in-threads.png)
+![Figure 5: Combination View shows a textual representation of the thread tree above the messages, which are displayed flat.](../../../images/message-boards-participate-in-threads.png)
 
 Subscribing to a thread causes Liferay to send the user an email whenever a new
 message is posted to the thread. If you have enabled the mailing list feature
@@ -664,7 +666,7 @@ can halt activity on a thread by clicking *Lock Thread*.
 Many times a user will post a thread in the wrong category. Administrators may
 in this case want to move a thread to the proper category. This is very easy to
 do. You can select the *Actions* menu
-(![Actions](../../images/icon-actions.png)) to the right of the thread and
+(![Actions](../../../images/icon-actions.png)) to the right of the thread and
 choose *Move*. Or, if you are already viewing the thread and you have
 administrative access, there is a link at the top of the thread labeled *Move
 Thread*. Click this link. You will be presented with a simple form which allows

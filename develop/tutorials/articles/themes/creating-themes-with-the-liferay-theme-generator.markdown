@@ -1,4 +1,4 @@
-# Creating Themes with the Liferay Theme Generator
+# Creating Themes with the Liferay Theme Generator [](id=creating-themes-with-the-liferay-theme-generator)
 
 The Liferay Theme Generator is an easy-to-use command-line wizard that
 streamlines the theme creation process. It is independent of the plugins SDK, 
@@ -20,27 +20,23 @@ Studio to be installed. You can read more at the following link:
 
 [node-gyp Installation](https://github.com/nodejs/node-gyp#installation)
 
-<!-- The *Visual Studio Setup* link is for setting up VS 2010. The instructions
-for installing node-gyp appear to require either VS 2013 or VS 2015. Should we
-update the VS setup instruction to be compatible with what is required for
-node-gyp? -Cody -->
-
 Alternatively you can use the Ruby based version of Sass. In order to use that 
 version of Sass, you'll need to install Ruby with the [Ruby Installer](http://rubyinstaller.org/), 
 and install the Sass and Compass gems from the command line using the following 
 command: 
 
     gem install sass compass
-
-When the generator asks if you need Compass support, type *Y*. This bypasses
-node-gyp completely, and uses the Ruby versions of Sass and Compass.
+    
+These are the initial steps you will need to run for Windows. Once the theme is
+generated you will have to make a few more changes to the configuration files,
+which is covered below.
 
 $$$
 
 Now that you know a little bit about the generator, follow the steps below to
 install it and its dependencies so you can start building themes.
 
-## Installing the Generator and Dependencies
+## Installing the Generator and Dependencies [](id=installing-the-generator-and-dependencies)
 
 Follow these steps to install the generator and its dependencies:
 
@@ -93,12 +89,6 @@ Follow these steps to install the generator and its dependencies:
     Once the dependencies finish installing, you can install the generator 
     next.
 
-    <!--├── UNMET PEER DEPENDENCY gulp@>=3.5.0
-└── UNMET PEER DEPENDENCY yo@>=1.0.0
-
-npm WARN generator-liferay-theme@7.0.20 requires a peer of gulp@>=3.5.0 but none was installed.
-npm WARN generator-liferay-theme@7.0.20 requires a peer of yo@>=1.0.0 but none was installed.-->
-
 3. Still inside the terminal, run the following command to install 
    the generator:
    
@@ -107,8 +97,7 @@ npm WARN generator-liferay-theme@7.0.20 requires a peer of yo@>=1.0.0 but none w
 Now that the generator and dependencies are installed, you can learn how to use
 the generator next.
 
-## Running the Theme Generator
-
+## Running the Theme Generator [](id=running-the-theme-generator)
 <!--
 When you installed the Liferay Theme Generator, you also installed two
 sub-generators with it: a themelet creator, and a theme importer. For the
@@ -133,47 +122,58 @@ Follow the steps below to create a 7.0 theme using the default theme generator:
 
 3. Enter a name and themeId for your theme, choose *7.0* for the version, and 
    choose a template language.
-   
-4. Enter *No* to decline Compass support, or *Yes* if you installed the Ruby 
-   based version of Sass on Windows.
 
-    Note that your theme is based off of the styled theme by default, and uses 
-    lib-sass/bourbon instead of Compass. If, however, you installed the **Ruby
-    version of Sass** at the beginning of this tutorial, your theme **will 
-    require Compass support**.
-    
-5. Enter the path to your app server's directory. The information you
+4. Enter the path to your app server's directory. The information you
    provide is added to the `liferay-theme.json` in your theme's root directory.
    you can change the path in that file if your app server changes.
    
-6. Finally, enter your app server's URL, or press *enter* to accept the default
+5. Finally, enter your app server's URL, or press *enter* to accept the default
    `localhost:8080`.
 
-The generator creates a new theme in your current directory that inherits 
-styles from [liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled) 
-theme. Note that the base theme you wish to use can be changed after the theme
-has been created, using the `gulp extend` command.
+    The generator creates a new theme in your current directory that inherits 
+    styles from [liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled) 
+    theme. Note that you can change the base theme after the theme has been 
+    created, using the `gulp extend` command.
+
+    Note that your theme is based off of the styled theme by default, and uses 
+    lib-sass/bourbon instead of Compass. If, however, you are on Windows and 
+    installed the Ruby version of Sass at the beginning of this tutorial, your 
+    theme will require Compass support. Follow the added steps below to 
+    configure Compass support.
+
+6. Open the `package.json` file found in the root folder of your theme, and
+   locate the `supportCompass` property and change it from `false` to `true`.
+   
+    Now that your theme is set to support Compass, you will need to install the
+    Ruby Sass middleware and save it as a dependency for your theme.
+    
+7. Run the following command to install the Ruby Sass middleware:
+
+        npm i --save gulp-ruby-sass
+        
+    The `--save` flag adds Ruby Sass to the list of dependencies in your theme's
+    `package.json`. Now your theme is ready to go.
 
 There you have it! You now have a working theme. At the moment the theme is a 
 bit bare bones, but you have everything you need to get started. The generated 
 theme's structure differs a bit from a traditional SDK developed theme. You 
 can read more about the differences next.
 
-### Theme Anatomy
+### Theme Anatomy [](id=theme-anatomy)
 
 The theme anatomy is a bit different for themes that have been generated with 
-the theme generator. In a traditional SDK developed theme, your changes are 
-placed in a `_diffs` directory. Your changes, however, are placed in the `src` 
-directory for generated themes. The other noticeable change is that all CSS 
-files have been converted to Sass SCSS files. SCSS is the new main syntax known 
-as Sassy CSS, which allows you to use the latest CSS3 styles and Sass syntax 
-advantages, such as nesting and variables.
+the theme generator, but not by much. In a traditional SDK developed theme, your 
+changes are placed in a `_diffs` directory. Your changes, however, are placed in 
+the `src` directory for generated themes. The other noticeable change is that 
+all CSS files have been converted to Sass SCSS files. SCSS is the new main 
+syntax known as Sassy CSS, which allows you to use the latest CSS3 styles and 
+Sass syntax advantages, such as nesting and variables.
 
 Now that your theme is created, and you understand your theme's anatomy more, 
 you can take advantage of the gulp tasks that are available to you, to extend
 your theme.
 
-## Gulp Theme Tasks
+## Gulp Theme Tasks [](id=gulp-theme-tasks)
 
 When your theme was generated, a `gulpfile.js` file was included that gives you
 access to multiple gulp tasks. To run the gulp tasks covered below, navigate to 
@@ -247,10 +247,7 @@ $$$
 
 There you have it! Now go make some great designs.
 
-<!--Readd links once tutorials are submitted
-## Related Topics
 
-[Extending Your Theme with Themelets](/develop/tutorials/-/knowledge_base/7-0/extending-your-theme-with-themelets)
- 
-[Importing and Upgrading Themes with the Theme Generator](/develop/tutorials/-/knowledge_base/7-0/importing-and-upgrading-themes-with-the-generator)
--->
+## Related Topics [](id=related-topics)
+
+[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-your-themes)

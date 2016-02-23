@@ -1,4 +1,4 @@
-# Service Access Policies
+# Service Access Policies [](id=service-access-policies)
 
 *Service access policies* are a new feature in Liferay 7. They are an
 additional layer of web service security defining services or service methods
@@ -41,7 +41,7 @@ Your portal administrators can use service access policies to ensure that these
 devices can only invoke remote services from approved lists that can be modified
 at runtime.
 
-## Managing Service Access Policies
+## Managing Service Access Policies [](id=managing-service-access-policies)
 
 To manage service access policies, navigate to Liferay's Control Panel and click
 on *Service Access Policy* under the Configuration heading. Here, you can see
@@ -74,29 +74,50 @@ editing service access policies, keep these points in mind:
     allows any method from the `UserService` class to be invoked and any method
     from the `DLAppService` whose name starts with `get` to be invoked.
 
-Liferay contains two default service access policies: `DEFAULT_USER`, and
-`DEFAULT_APP`. The `DEFAULT_USER` policy grants access to any service. You can
-change this by editing the `DEFAULT_USER` policy and changing the `*` in the
-Allowed Service Signatures text area to something more restrictive. The
-`DEFAULT_USER` policy is applied whenever
-`AuthVerifierResult.isPasswordBasedAuthentication` is `true`: i.e., whenever
-authentication took place using a password.
+Liferay contains four service access policies that are enabled by default:
 
-The `DEFAULT_APP` policy doesn't grant access to any services. You can change
-this by editing the `DEFAULT_APP` policy and adding some classes or methods in
-the Allowed Service Signatures text area. The `DEFAULT_APP` policy is applied
-whenever `AuthVerifierResult.isPasswordBasedAuthentication` is `false`, i.e.,
-whenever authentication took place without using a password. For example, if
-authentication took place with a token instead of a password, the `DEFAULT_APP`
-policy is applied.
+- SYNC_DEFAULT
+- SYNC_TOKEN
+- SYSTEM_DEFAULT
+- SYSTEM_USER_PASSWORD
 
-By default, Liferay's tunneling servlet uses the `DEFAULT_USER` service access
-policy. You can, however, create your own policy for the tunneling servlet and
-use the property `service.access.policy.name` for the
+The `SYSTEM_DEFAULT` policy applies to every request, including unauthenticated
+requests. Thus, its list of allowed method signatures is empty, meaning that no
+Liferay API can be invoked. The `SYSTEM_USER_PASSWORD` policy applies to
+requests for which `AuthVerifierResult.isPasswordBasedAuthentication` is
+`true`: i.e., whenever user authentication took place using a password. Its
+list of allowed method signatures is `*`, meaning that any Liferay API can be
+invoked. Of course, since Liferay API functions include permission checks, the
+success of an invocation depends on whether the user has the required
+permission. If you want to completely disallow certain Liferay API functions
+from being invoked, you can change the `SYSTEM_USER_PASSWORD` policy to
+something more restrictive than `*`.
+
+The `SYNC_DEFAULT` policy applies to every Liferay Sync request, including
+unauthenticated Sync requests. Its list of allowed method signatures includes
+only the `com.liferay.sync.service.SyncDLObjectService.getSyncContext` method.
+The `SYNC_TOKEN` policy applies to Sync requests which are accompanied by an
+authentication token. Its list of allowed signatures includes
+`com.liferay.sync.service.*`, meaning that any Liferay API function that's a
+method of a class in this package can be invoked.
+
+`SYNC_DEFAULT` and `SYSTEM_DEFAULT`, as their names suggest, are default
+service access policies. Default service access policies are applied to all
+incoming requests, including unauthenticated requests. Administrators can
+create new default service access policies. To add, edit, or delete a service
+access policy, navigate to the *Configuration* &rarr; *Service Access Policy*
+section of the Control Panel. Each Liferay plugin can declare own default
+policy. (The `SYNC_DEFAULT` policy is a good example.) This policy can then be
+changed or disabled by portal administrator. In this case, the plugin can still
+verify that the policy exists so there is no need to redefine or update it.
+
+By default, Liferay's tunneling servlet uses the `SYSTEM_USER_PASSWORD` service
+access policy. You can, however, create your own policy for the tunneling
+servlet and use the property `service.access.policy.name` for the
 `TunnelingServletAuthVerifier` to specify that your policy should be used
 instead.
 
-## Service Access Policy Module
+## Service Access Policy Module [](id=service-access-policy-module)
 
 Liferay's service access policy functionality is provided by the Service Access
 Policy module. This module includes the following important classes:
@@ -122,10 +143,11 @@ from the Control Panel. They also provide the interface and default
 implementation for `ServiceAccessPolicy`.
 
 To configure the Service Access Policy module, navigate to Liferay's Control
-Panel, click on *Configuration Admin*, and find the *SAPConfiguration* module.
-Click on its name to edit it. Here, you can edit the default service access
-policy configuration. You can also force a default policy to be applied even
-when no policies are applied by the `AuthVerifier`.
+Panel, click on *System Settings*, and find the *Service Access Policies*
+module in the Platform section. Click on its name to edit it. Here, you can
+edit the default service access policy configuration. You can also force a
+default policy to be applied even when no policies are applied by the
+`AuthVerifier`.
 
 Liferay also contains an `AuthenticatedAccessControlPolicy`. This policy doesn't
 do anything if a `ServiceAccessPolicyManager` implementation is present.
@@ -133,7 +155,7 @@ If the service access policy module is disabled, however, the
 `AuthenticatedAccessControlPolicy` provides a fallback that still requires
 authenticated access for web services.
 
-## Summary
+## Summary [](id=summary)
 
 Great! Now you know service access policies can restrict access to Liferay's web
 services. Custom service access policies can be created by portal
@@ -144,6 +166,6 @@ access policy could be created that defines all of the services that the Sync
 application needs to invoke. Then this service access policy could be attached
 to the Sync application on OAuth.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 (Coming Soon)

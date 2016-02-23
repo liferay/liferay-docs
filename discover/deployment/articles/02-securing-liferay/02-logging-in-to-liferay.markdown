@@ -1,4 +1,4 @@
-# Logging in to Liferay
+# Logging in to Liferay [](id=logging-in-to-liferay)
 
 One of the primary functions of a web portal is to restrict access to different
 pages, content, and web applications. These kinds of portal resources should
@@ -19,7 +19,7 @@ installation contains a Sign In portlet. You can access this page at
 [http://localhost:8080/web/guest/home](http://localhost:8080/web/guest/home) if
 you're running Liferay locally.
 
-![Figure x: By default, the Sign In portlet allows users to log in, create a new account, or request a password reset.](../../images/sign-in-portlet.png)
+![Figure 1: By default, the Sign In portlet allows users to log in, create a new account, or request a password reset.](../../images/sign-in-portlet.png)
 
 Even if the Sign In portlet has not been added to any Liferay page that's
 accessible to a guest user, users can still access it by navigating to this
@@ -31,9 +31,9 @@ Note that the portal's configured authentication type determines the type of
 credentials that the user needs to enter in order to log in. Liferay supports
 three authentication types: authentication by email address, screen name, or
 user ID. To choose an authentication type, navigate to the Control Panel, click
-on *Configuration* &rarr; *Portal Settings* &rarr; *Authentication* and use the
-*How do users authenticate?* dropdown to make a selection. Alternatively, add
-the following lines to your `portal-ext.properties` file, uncomment the
+on *Configuration* &rarr; *Instance Settings* &rarr; *Authentication* and use
+the *How do users authenticate?* dropdown to make a selection. Alternatively,
+add the following lines to your `portal-ext.properties` file, uncomment the
 appropriate line, comment out the others, and restart your Liferay server.
 
     company.security.auth.type=emailAddress
@@ -66,13 +66,13 @@ The security requirements of some web portals require that all user accounts be
 created by administrators. Liferay supports this use case by allowing the
 *Create Account* to be removed. To prevent guest users from creating new user
 accounts, navigate to the Control Panel, click on *Configuration* &rarr;
-*Portal Settings* &rarr; *Authentication* and uncheck the *Allow strangers to
+*Instance Settings* &rarr; *Authentication* and uncheck the *Allow strangers to
 create accounts?* box. You can also disallow users from requesting forgotten
 passwords or from requesting password reset links by unchecking the appropriate
-boxes. <!-- For further information about Liferay's authentication options, please
-see this [documentation]() (not yet written). -->
+boxes. <!-- For further information about Liferay's authentication options,
+please see this [documentation]() (not yet written). -->
 
-![Figure x: Here's a view of the Sign In portlet with the *Create Account* and *Forgot Password* options removed.](../../images/sign-in-portlet2.png)
+![Figure 2: Here's a view of the Sign In portlet with the *Create Account* and *Forgot Password* options removed.](../../images/sign-in-portlet2.png)
 
 Remember that using the Sign In portlet provides the most basic way for users
 to log in to Liferay but it's not the only way. Liferay allows user accounts to
