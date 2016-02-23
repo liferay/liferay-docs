@@ -1,4 +1,4 @@
-# Installing Liferay on Wildfly 10
+# Installing Liferay on Wildfly 10 [](id=installing-liferay-on-wildfly-10)
 
 If you want a fresh installation of Liferay on Wildfly 10, simply download a
 Liferay Wildfly bundle from
@@ -24,7 +24,7 @@ folder as well as `data`, `deploy`, `logs`, and `osgi` folders. You'll also
 see the term `$WILDFLY_HOME` used in this guide. `$WILDFLY_HOME` refers to your
 Wildfly server folder. This folder is usually named `wildfly-[version]`.
 
-## Installing Liferay Dependencies
+## Installing Liferay Dependencies [](id=installing-liferay-dependencies)
 
 Liferay depends on many JARs that are included in the Liferay Wildfly bundle.
 Some JARs in the bundle are not strictly required but can still be useful. If
@@ -84,7 +84,7 @@ available -->
 
 Great! You have your `.jar` files ready. 
 
-## Running Liferay on Wildfly 10.0 in Standalone Mode vs. Domain Mode
+## Running Liferay on Wildfly 10.0 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-wildfly-10-0-in-standalone-mode-vs-domain-mode)
 
 Wildfly 10.0 can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
@@ -120,7 +120,7 @@ $$$
 
 <!-- Replace link in note above, when available. -Cody -->
 
-## Configuring Wildfly
+## Configuring Wildfly [](id=configuring-wildfly)
 
 Now you'll make some adjustments in your configuration to support using Liferay.
 
@@ -231,7 +231,7 @@ $$$
 The prescribed script modifications are now complete for your Liferay
 installation on Wildfly. Next you'll configure mail and the database. 
 
-## Database Configuration
+## Database Configuration [](id=database-configuration)
 
 If you want Wildfly to manage your data source, follow the instructions in this
 section. If you want to use the built-in Liferay data source, you can skip this
@@ -289,7 +289,7 @@ Your final data sources subsystem should look like this:
 
 Now that you've configured your data source, the mail session is next. 
 
-## Mail Configuration
+## Mail Configuration [](id=mail-configuration)
 
 If you want Wildfly to manage your mail session, use the following instructions.
 If you want to use the built-in Liferay mail session, you can skip this section.
@@ -312,7 +312,7 @@ Specify your mail subsystem in `standalone.xml` as in the following example:
 You've got mail! Next, you'll make sure Liferay can connect using your new mail
 session and database.
 
-## Configuring data sources and mail sessions
+## Configuring data sources and mail sessions [](id=configuring-data-sources-and-mail-sessions)
 
 Now that your data source and mail session are set up, you need to ensure
 Liferay Portal can access them.
@@ -345,7 +345,7 @@ Before you deploy Liferay Portal on your Wildfly app server, you should enable
 and configure Java security so you can use Liferay's plugin security manager
 with your downloaded Liferay applications.
 
-## Security Configuration
+## Security Configuration [](id=security-configuration)
 
 When you're ready to begin using other people's apps from Marketplace, you'll
 want to protect your Liferay instance and your Wildfly server from security
@@ -377,7 +377,7 @@ tutorial to learn how to configure Liferay plugin access to resources.
 <!-- JSF configuration sections go here, when they've been tested for Liferay 7
 + Wildfly 10 bundles. -Cody -->
 
-## Deploy Liferay
+## Deploy Liferay [](id=deploy-liferay)
 
 1. If the folder `$WILDFLY_HOME/standalone/deployments/ROOT.war` already exists
    in your Wildfly installation, delete all of its subfolders and files.
