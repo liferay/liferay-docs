@@ -93,6 +93,12 @@ Follow these steps to install the generator and its dependencies:
     Once the dependencies finish installing, you can install the generator 
     next.
 
+    <!--├── UNMET PEER DEPENDENCY gulp@>=3.5.0
+└── UNMET PEER DEPENDENCY yo@>=1.0.0
+
+npm WARN generator-liferay-theme@7.0.20 requires a peer of gulp@>=3.5.0 but none was installed.
+npm WARN generator-liferay-theme@7.0.20 requires a peer of yo@>=1.0.0 but none was installed.-->
+
 3. Still inside the terminal, run the following command to install 
    the generator:
    
@@ -102,6 +108,7 @@ Now that the generator and dependencies are installed, you can learn how to use
 the generator next.
 
 ## Running the Theme Generator
+
 <!--
 When you installed the Liferay Theme Generator, you also installed two
 sub-generators with it: a themelet creator, and a theme importer. For the
