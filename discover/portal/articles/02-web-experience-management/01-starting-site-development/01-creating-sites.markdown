@@ -163,11 +163,11 @@ sections, respectively.
 
 **Tip:** If you're signed in as an administrator, you can access all sites by
 navigating to the Site Administration menu from the Control Panel. To manage a
-single site, navigate to the site by going to the Product Menu and clicking the
-Compass icon (![Compass](../../../images/icon-compass.png)) from the sites
-dropdown menu and selecting the appropriate site name you'd like to manage. Once
-finished, the site administration options (i.e., Pages, Content, Users, etc.)
-for that site are available.
+single site, navigate to the site by going to the Menu and clicking the Compass
+icon (![Compass](../../../images/icon-compass.png)) from the sites dropdown menu
+and selecting the appropriate site name you'd like to manage. Once finished, the
+site administration options (i.e., Pages, Content, Users, etc.) for that site
+are available.
 
 $$$
 

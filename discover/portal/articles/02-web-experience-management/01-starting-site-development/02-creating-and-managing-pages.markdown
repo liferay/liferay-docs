@@ -2,12 +2,11 @@
 
 You've successfully created a site for your Liferay instance, but you may need
 to add new pages or edit existing pages. From the Site Administration &rarr;
-*Pages* section of the Product Menu, your site pages can be accessed and
-configured. If you're not currently on the site you'd like to edit, click the
-*Compass* icon (![Compass](../../../images/icon-compass.png)) next to your
-current site name in the Product Menu and select your desired site. The edits
-you make to your pages are only made to the scope you've selected in the Product
-Menu.
+*Pages* section of the Menu, your site pages can be accessed and configured. If
+you're not currently on the site you'd like to edit, click the *Compass* icon
+(![Compass](../../../images/icon-compass.png)) next to your current site name in
+the Menu and select your desired site. The edits you make to your pages are only
+made to the scope you've selected in the Menu.
 
 ![Figure 1: The Pages menu allows you to edit your site pages as a whole.](../../../images/managing-site-pages.png)
 
@@ -44,8 +43,8 @@ interface to manage them. You'll look at this interface more closely next.
 
 ## Creating Pages [](id=creating-pages)
 
-From the Pages menu in the Product Menu, you can add a page or child page to any
-existing page or page set by clicking the *Add Page* button. Because *Public
+From the Pages sub-menu in the main Menu, you can add a page or child page to
+any existing page or page set by clicking the *Add Page* button. Because *Public
 Pages* is selected on the left, clicking *Add Page* here adds a top level page
 making it a sibling page of the Welcome page. You can, however, nest pages as
 deeply as you like. To create a sub-page under the Welcome page, select the *Add
@@ -133,9 +132,8 @@ Liferay instance.
 
 Now that you know the basics of adding site pages, you can start working on the
 Lunar Resort site. If you're not currently on the site you're interested in
-adding pages to, navigate to Site Administration in the Product Menu, select the
-compass icon next to the current site name, and select the site you wish to
-edit.
+adding pages to, navigate to Site Administration in the Menu, select the compass
+icon next to the current site name, and select the site you wish to edit.
 
 If you're creating a site with many pages and sub-pages, the side panel view may
 seem constricted. In the Pages menu, you have the option to expand the Pages
@@ -148,8 +146,8 @@ hierarchy.
 As stated previously, if you ever need to modify the page you've created for
 your site, select the *Edit* icon
 (![Edit Page](../../../images/icon-control-menu-gear.png)) either from the Pages
-menu in the Product Menu or the top Control Menu on the currently viewed page.
-When configuring a specific page, you're given more options than when you were
+menu in the main Menu or the top Control Menu on the currently viewed page. When
+configuring a specific page, you're given more options than when you were
 creating a new page. These extended options for configuring specific pages are
 covered in more detail later in this section.
 
@@ -331,8 +329,8 @@ When you decide to customize a single page, some different options that were not
 available when initially creating a page appear. Customizing a specific page can
 be done two ways; you can navigate to the site page and select the *Edit* button
 from the bottom menu, or you can navigate the the Site Pages interface from the
-Product Menu &rarr; *Sites* and select the specific page you'd like to edit from
-the navigation tree. There are three groups that the options for customizing a
+Menu &rarr; *Sites* and select the specific page you'd like to edit from the
+navigation tree. There are three groups that the options for customizing a
 specific page can be defined under. You'll learn what each group offers for your
 site pages.
 

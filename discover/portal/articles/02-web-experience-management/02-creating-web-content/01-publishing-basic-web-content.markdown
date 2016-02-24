@@ -30,15 +30,15 @@ of content.
 
 When you manage web content from the Site Administration menu, you can select
 the location where the content resides. When selecting the Site Administration
-dropdown menu from the Product Menu, you are presented with two scopes: site
-scope and page scope. The site scope can be managed by clicking the Compass icon
-(![Compass](../../../images/icon-compass.png)) located on the Site Administration
-dropdown menu, which is characterized by the name of the site. From there you
-can select the site for which you want your content scoped. For instance, you
-can add content that's available to a specific site or globally across your
-Liferay instance. By default, the page scope must be configured before you can
-access it. For instance, if you add a Web Content Display app to a site page
-called *Lunar Rover*, you can navigate to the app's *Options* icon
+dropdown from the Menu, you are presented with two scopes: site scope and page
+scope. The site scope can be managed by clicking the Compass icon
+(![Compass](../../../images/icon-compass.png)) located on the Site
+Administration dropdown menu, which is characterized by the name of the site.
+From there you can select the site for which you want your content scoped. For
+instance, you can add content that's available to a specific site or globally
+across your Liferay instance. By default, the page scope must be configured
+before you can access it. For instance, if you add a Web Content Display app to
+a site page called *Lunar Rover*, you can navigate to the app's *Options* icon
 (![Options](../../../images/icon-options.png)) and select *Configuration* &rarr;
 *Scope*. From the scope dropdown, you can select the current page you're on,
 which will be characterized as *New* in parenthesis. Click *Save* and return to
@@ -107,7 +107,7 @@ the *Content* field, you'll add the body of your web content article, which
 you'll dive into next. Lastly, leave the *Searchable* switch enabled. Note that
 if you disable the searchability of your article, it only prevents end users
 from finding the article via search. Administrators still have the ability to
-search for the article from the Web Content section in the Product Menu.
+search for the article from the Web Content section in the Menu.
 
 The kneejerk reaction to the simplistic looking WYSIWYG editor is "Where are the
 editor's controls?" Don't let the simplistic look of the editor fool you; the
@@ -507,9 +507,9 @@ changes.
 
 There are instances where you've edited your web content article many times, and
 you'd be interested in viewing the article's evolution. To view an article's
-history, navigate to *Web Content* from the Product Menu. Then select the
-article's *Actions* icon (![Actions](../../../images/icon-actions.png)) and select
-*View History*. From this menu, you can view all the article's versions and
+history, navigate to *Web Content* from the Menu. Then select the article's
+*Actions* icon (![Actions](../../../images/icon-actions.png)) and select *View
+History*. From this menu, you can view all the article's versions and
 modified/display dates. Another cool feature is the web content Diff tool, which
 lets you compare versions of the article and highlight the differences between
 the two. Of course, you must have more than two versions of the article for this

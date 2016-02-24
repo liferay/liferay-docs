@@ -164,13 +164,12 @@ template pages. Changes made to a site template can be propagated to sites whose
 page sets are linked to the site template. Such a link is created when you
 create a site based on a site template and leave the *Enable propagation of
 changes from the site template* box checked. To disable or re-enable this link
-for a site, select the site from the Sites dropdown in the Product Menu by
-selecting the compass icon (![Compass](../../../images/icon-compass.png)). Navigate
-to the *Configuration* &rarr; *Site Settings* page and uncheck or recheck the
-*Enable propagation of changes from the site template* checkbox. In this
-section, you'll learn about the propagation of changes from site templates to
-sites and discuss the options available to site administrators and site template
-administrators.
+for a site, select the site from the Sites dropdown in the Menu by selecting the
+compass icon (![Compass](../../../images/icon-compass.png)). Navigate to the
+*Configuration* &rarr; *Site Settings* page and uncheck or recheck the *Enable
+propagation of changes from the site template* checkbox. In this section, you'll
+learn about the propagation of changes from site templates to sites and discuss
+the options available to site administrators and site template administrators.
 
 If a site's page set has been created from a site template and the propagation
 of changes from the site template is enabled, site administrators can add new
