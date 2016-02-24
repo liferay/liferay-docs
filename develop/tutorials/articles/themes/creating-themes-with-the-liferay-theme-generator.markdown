@@ -1,28 +1,34 @@
 # Creating Themes with the Liferay Theme Generator [](id=creating-themes-with-the-liferay-theme-generator)
 
 The Liferay Theme Generator is an easy-to-use command-line wizard that
-streamlines the theme creation process. It is independent of the plugins SDK, 
-and works for Liferay versions 6.2 and up. This tutorial, however, focuses 
+streamlines the theme creation process. It is independent of the Liferay Plugins SDK, 
+and works for Liferay versions 6.2 and up. This tutorial focuses 
 on creating themes for Liferay 7.0. In just a few steps, you'll have a
-working theme for Liferay.
+working Liferay theme. The first step is to install the theme generator. 
 
 +$$$
 
-**Note:** The Liferay theme generator is still in development and is not 
-guaranteed to work on all platforms/environments.
+**Note:** The Liferay Theme Generator is still in development and is not 
+guaranteed to work on all platforms and environments.
 
-**Usage on Windows**
+$$$
 
-Unfortunately, there can be some minor headaches when using the generator on
-Windows. The main reason is because, by default, the generator uses node-sass,
-which requires node-gyp to run. Furthermore, node-gyp requires Python and Visual
-Studio to be installed. You can read more at the following link:
+## Installing the Theme Generator
 
-[node-gyp Installation](https://github.com/nodejs/node-gyp#installation)
+The theme generator has several dependencies. You'll learn how to install these
+dependencies and then install the theme generator. 
+
++$$$
+
+**Prerequisites on Windows**
+
+By default, the generator uses node-sass which requires node-gyp. Furthermore, node-gyp requires Python and Visual
+Studio. The [node-gyp Installation](https://github.com/nodejs/node-gyp#installation) instructions
+explain how you can set this up.
 
 Alternatively you can use the Ruby based version of Sass. In order to use that 
-version of Sass, you'll need to install Ruby with the [Ruby Installer](http://rubyinstaller.org/), 
-and install the Sass and Compass gems from the command line using the following 
+version of Sass, you must install Ruby with the [Ruby Installer](http://rubyinstaller.org/), 
+and then install the Sass and Compass gems using the following 
 command: 
 
     gem install sass compass
@@ -32,11 +38,6 @@ generated you will have to make a few more changes to the configuration files,
 which is covered below.
 
 $$$
-
-Now that you know a little bit about the generator, follow the steps below to
-install it and its dependencies so you can start building themes.
-
-## Installing the Generator and Dependencies [](id=installing-the-generator-and-dependencies)
 
 Follow these steps to install the generator and its dependencies:
 
@@ -75,9 +76,13 @@ Follow these steps to install the generator and its dependencies:
     
     Next, add the corresponding node environment variables to your system:
     
-        NPM_PACKAGES=/Users/[username]/.npm-packages/(same as prefix value)
-        PATH=${PATH}:${NPM_PACKAGES}bin
-        NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}lib/node_modules
+        NPM_PACKAGES=/Users/[username]/.npm-packages (same as prefix value)
+        PATH=${PATH}:${NPM_PACKAGES}/bin
+        NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
+
+    NPM installs `yo` and `gulp` executables to `${NPM_PACKAGES}/bin` on UNIX
+    and to `%NPM_PACKAGES%` on Windows. Make sure to add the appropriate
+    directory to your system path.
         
     You should no longer run into node related permissions issues now.
     
@@ -122,6 +127,7 @@ Follow the steps below to create a 7.0 theme using the default theme generator:
 
 3. Enter a name and themeId for your theme, choose *7.0* for the version, and 
    choose a template language.
+   <!-- mention that installations take place at this point -->
 
 4. Enter the path to your app server's directory. The information you
    provide is added to the `liferay-theme.json` in your theme's root directory.
@@ -140,6 +146,7 @@ Follow the steps below to create a 7.0 theme using the default theme generator:
     installed the Ruby version of Sass at the beginning of this tutorial, your 
     theme will require Compass support. Follow the added steps below to 
     configure Compass support.
+    <!-- The compass related steps should be their own series of steps -->
 
 6. Open the `package.json` file found in the root folder of your theme, and
    locate the `supportCompass` property and change it from `false` to `true`.
@@ -153,6 +160,7 @@ Follow the steps below to create a 7.0 theme using the default theme generator:
         
     The `--save` flag adds Ruby Sass to the list of dependencies in your theme's
     `package.json`. Now your theme is ready to go.
+    <!-- npm -i --save-dev versus --save-dev? -->
 
 There you have it! You now have a working theme. At the moment the theme is a 
 bit bare bones, but you have everything you need to get started. The generated 
@@ -243,6 +251,7 @@ server.
 **Note:** In order for the `watch` task to work, you must have [Developer Mode](/develop/tutorials/-/knowledge_base/6-2/using-developer-mode-with-themes) 
 enabled.
 <!--Update link to 7.0 URL once it's updated-->
+
 $$$
 
 There you have it! Now go make some great designs.
