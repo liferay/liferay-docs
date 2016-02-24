@@ -506,7 +506,7 @@ Collaboration apps to the Lunar Resort site.
 See how easy it is to add applications to your pages? You've added the Wiki
 app and Blogs Aggregator app to a page. 
 
-![Figure 5: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../images/app-layout-design.png)
+![Figure 6: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../images/app-layout-design.png)
 
 It's easy to make your pages look exactly the way you want them to. If the
 default layout options provided aren't enough, you can even develop your own.
@@ -516,15 +516,11 @@ tutorial.
 
 <!-- TODO: Replace link above. -Cody -->
 
-<!--Next, you'll practice personalizing pages using page customizations!
+Next, you'll practice personalizing pages using page customizations!
 
-Personalizing Pages (Add two number signs to "Personalizing Pages", when content
-has been updated)-->
+## Personalizing Pages [](id=personalizing-pages)
 
-<!-- Review this section once more information is found. Contacted Julio, and
-Page Customization option is being implemented in LPS-63037. -Cody -->
-
-<!--Administrators can designate public pages or sections of public pages to be
+Administrators can designate public pages or sections of public pages to be
 customizable. When a user visits such a page, a notification appears stating
 that the user can customize the page. Users can make customizations only in the
 sections of pages designated by administrators. Customizations are based on the
@@ -532,51 +528,53 @@ rows and columns of a page layout. Page customizations are only visible to the
 user who made the customizations. By default, site members can make page
 customizations but non-site members and guests can't.
 
-To enable page customizations as an administrator, first navigate to the page
-you'd like to let site members modify. Then click on the *Edit Page* button at
-the top of the page, expand the *Customization Settings* area, and click on the
-*Show Customizable Sections* button. 
+To enable page customizations as an administrator, first click the *Edit* icon
+(![Edit Page](../../../images/icon-page-gear.png)) next to the Page you'd like
+to let site members modify. Then select the *Advanced* tab at the top of the
+page, expand the *Customization Settings* area, and click on the *Customizable*
+selector button. 
 
-[Figure 8.1: To enable page customizations, click on the *Edit* button at the left side of the page, expand the *Customization Settings* area, and click on the *Show Customizable Sections* button.](../../../images/page-customizations.png)
+![Figure 7: To enable page customizations, click on the *Edit* button next to the page, expand the *Customization Settings* area, and click on the *Customizable* button.](../../../images/page-customizations.png)
 
-Once you've clicked the *Show Customizable Sections* button, you'll see one or
-more red regions, depending on the layout template of your page. Check one or
-more of the *Customizable* boxes to allow site members to customize certain
-sections of the page. Regions that you've designated as customizable are colored
-green.
+Once you've clicked the *Customizable* button, you can select the sections of
+the page you'd like to enable customization for, depending on the layout
+template of your page. Check one or more of the *Customizable* boxes to allow
+site members to customize certain sections of the page. Regions that you've
+designated as customizable are colored blue.
 
-[Figure 8.2: Check one or more of the *Customizable* boxes to allow site members to customize certain sections of the page.](../../../images/customizable-regions.png)
+When site members visit your customizable page, they'll see the *Edit Pencil*
+icon (![Edit Pencil](../../../images/icon-edit-pencil.png)) with a notification
+saying *You can customize this page*. Site members can toggle whether to view or
+hide the customizable regions. Site members can also choose between viewing
+their customized page and viewing the default page by selecting the *Options*
+button (![Options](../../../images/icon-options.png)) from the Control Menu and
+clicking the *View Page without my customizations* or *View My Customized Page*.
 
-When site members visit your customizable page, they'll see a notification
-saying, *You can customize this page*. Site members can toggle between viewing
-their customized page and viewing the default page by clicking the *View Default
-Page* or *View My Customized Page* links from the *Information* icon
-(![Information](../../../images/icon-control-menu-information.png)) in the top
-Control Menu. There's also a *Reset My Customizations* link that restores a
-user's customized page to the match the default page. This allows users to
-discard one set of customizations and start a new set without having to manually
-undo each customization that they'd previously made.
+There's also a *Reset My Customizations* option available from the *Options*
+button that restores a user's customized page to the match the default page.
+This allows users to discard one set of customizations and start a new set
+without having to manually undo each customization that they'd previously made.
 
-Note that non-administrator site members can access the Add menu from the left
-side of the screen when viewing their customizable page even if they don't
+Note that non-administrator site members can access the Add menu from the top
+right side of the screen when viewing their customizable page even if they don't
 ordinarily have permission to view this menu. This allows them to add apps to
 the sections of the page that they're allowed to customize. If they click *View
-Default Page*, the Add menu will disappear from the Dockbar since they're not
+Default Page*, the Add menu will disappear from the menu since they're not
 allowed to modify the default page.
-
-[Figure 8.3: Non-administrator site members can customize their own versions of customizable pages but can't modify the default page.](../../../images/default-customizable-page.png)
 
 Administrators of customizable pages have the same two views as site members:
 the *default page* view and the *customized page* view. Changes made to the
 *default page* affect all users, whereas changes made to the *customized page*
 affect only the administrator who made the changes. Changes made by
 administrators to non-customizable sections in the *default view* are
-immediately applied for all users. However, changes made by administrators to
-customizable sections do *not* overwrite users' customizations.
+immediately applied for all users. Changes made by administrators to
+customizable sections, however, do *not* overwrite users' customizations.
 
 Users can make two kinds of customizations to customizable regions. First, they
 can configure applications within the customizable regions. Second, they can add
 apps to or remove apps from the customizable regions.
+
+![Figure 8: Customizable areas are highlighted green when organizing apps on the page.](../../../images/customizable-regions.png)
 
 Liferay doesn't allow users to change a non-instanceable app's configuration
 inside a customizable region since those kinds of apps are tied to the site to
@@ -596,10 +594,6 @@ customization of the Welcome page:
 2. Add the Language Selector app to the right column of the page by clicking the
    *Add* icon, clicking on *Applications*, searching for *Language Selector*,
    and clicking *Add* next to its name.
-3. Configure the Language Selector app by clicking the Options icon
-   (![Options](../../../images/icon-options.png)) and selecting *Configuration*
-   and then opening the *Display Template* dropdown menu and choosing *Select
-   Box*.
 
 The Language Selector application is useful to have on your homepage if you
 expect users who speak different languages to access your instance. Users can
@@ -607,21 +601,21 @@ select their language in the Language Selector app to view a translation of your
 site into their native language. After closing the Configuration dialog box of
 the Language app, the customized Welcome page looks like this:
 
-[Figure 8.4: In this example, the user added the Language app, and changed the display style from icons to a select box.](../../../images/customized-portal-homepage.png)
+![Figure 9: In this example, the user added the Language app, and changed the display style from icons to a select box.](../../../images/customized-portal-homepage.png)
 
 To allow users to customize a page, administrators must grant users permission
 to *Customize* pages under the Site section. This can be achieved by assigning
 permission to a role, then assigning this role to the appropriate users. For
-example, if we want any logged user to be able to customize our customizable
-pages, we could assign the *Customize* permission to the role *User*. If we want
-site members to be able to customize the customizable pages of their sites, we
-would accept the default setting. By default, the *Customize* permission is
+example, if you want any logged user to be able to customize your customizable
+pages, you could assign the *Customize* permission to the role *User*. If you
+want site members to be able to customize the customizable pages of their sites,
+you would accept the default setting. By default, the *Customize* permission is
 assigned to the role *Site Member*.
 
 In addition to granting the ability to customize app configurations, the
 *Customize* permission allows users to customize the look and feel of apps
 and to import or export app settings. Next, you'll look at how to change page
-permissions.-->
+permissions.
 
 ## Changing Page Permissions [](id=changing-page-permissions)
 
@@ -648,7 +642,7 @@ this with the following procedure:
    role.
 5. Click the *Save* button.
 
-![Figure 6: The Permissions offer a plethora of options for each role.](../../../images/web-content-page-permissions.png)
+![Figure 10: The Permissions offer a plethora of options for each role.](../../../images/web-content-page-permissions.png)
 
 Congratulations! You've changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.
