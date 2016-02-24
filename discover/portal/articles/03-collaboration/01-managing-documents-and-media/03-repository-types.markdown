@@ -4,9 +4,9 @@
 
 By default, Liferay stores documents and media files on the file system of the
 server on which it's running. You can choose a specific location for the
-document library store's root directory by adding the following property to your
-`portal-ext.properties` file and replacing the default path with your custom
-path:
+document library store's root directory by adding the following property to a 
+`portal-ext.properties` file in your [Liferay home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home)
+and replacing the default path with your custom path:
 
     dl.store.file.system.root.dir=${liferay.home}/data/document_library
 
@@ -29,10 +29,11 @@ database using DBStore. To enable DBStore, add the following line to your
 
 Remember to restart your Liferay server after updating your
 `portal-ext.properties` file in order for your customizations to take effect.
-Please refer to the Document Library Portlet section of your `portal.properties`
-file to find a complete list of supported customizations. You can customize
-features such as the maximum allowed size of documents and media files, the list
-of allowed file extensions, which types of files should be indexed, etc.
+Please refer to the [Document Library section](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Portlet)
+of `portal.properties` file to find a complete list of supported customizations.
+You can customize features such as the maximum allowed size of documents and
+media files, the list of allowed file extensions, which types of files should be
+indexed, etc.
 
 ## Using External Repositories [](id=using-external-repositories)
 
@@ -45,76 +46,70 @@ include:
 - Downloading documents
 - Moving folders and documents within the repository
 - Getting revision history
-- Reverting to revision
+- Reverting to a revision
 
-A generic integration for CMIS 1.0 (Content Management Interoperability
-Services) repositories is included by default. It is tested with Alfresco and
-Nuxeo but should support all repositories implementing CMIS 1.0 with AtomPub or
-Web Services protocols.
+Liferay's Documents and Media includes a generic integration for CMIS 1.0
+(Content Management Interoperability Services) repositories. It's been tested
+with Alfresco and Nuxeo but should support all repositories implementing CMIS
+1.0 with AtomPub or Web Services protocols.
 
-Nevertheless, support for different versions of each repository type is detailed
-in the following repository setup sections. Versions are classified in three
-support levels:
-
-- **Officially supported** versions are the ones we develop against in our
-development-QA cycle.
-
-- **Experimental support** versions should work but may not be as stable as
-those officially supported. They have been tested in development but are not
-certified by QA.
-
-- **Unsupported** versions (those not listed in this document) may or may not
-work at all, depending entirely on how the third party vendor implements
-backwards compatibility. These are versions we haven't even tested.
+![Figure x: External repositories look similar to folders and you can perform some of the same operations on them. Here's a repository named *My Alfresco* next to a folder named *Folder 1*.](../../../images/dm-repo-types-actions.png)
 
 There are some subtle differences in setting up the different kinds of
-third-party repositories for use in Documents and Media. But there are plenty of
+third-party repositories for use in Documents and Media, but there are plenty of
 similarities too. Common Liferay configuration steps include:
 
-- Adjusting the portal properties.
+- Adjusting portal properties.
 - Adding any user accounts required by the repository.
 - Adding the repository.
 
+<!-- 
 Keep in mind your third-party repository may require installation and deployment
-of an appropriate Liferay plugin. 
-<!-- Plugins for SharePoint and Documentum are
+of an appropriate Liferay plugin. Plugins for SharePoint and Documentum are
 available through Liferay's Marketplace (please note that they don't use CMIS,
 but proprietary APIs).
 -->
 
 Now, let's go through the common configuration steps.
 
-### Common Configuration
+### Common Repository Integration Steps
 
 There are several steps common to setting up any external repository type. Let's
 start with setting the necessary portal properties.
 
-#### Adjusting portal properties [](id=adjusting-portal-properties)
+#### Adjusting Portal Properties [](id=adjusting-portal-properties)
 
-The admin must ensure that the same credentials and authentication are being
-used in Liferay and in the external repository. This is normally synchronized
-using a mechanism like LDAP. If you don't have LDAP, you need to ensure manually
-that the credentials and authentication are the same. In order to authenticate
-with the third-party repository, you need to store passwords for the user
-sessions. Set the following portal property in your `portal-ext.properties`:
+The Liferay system administrator must ensure that the same credentials and
+authentication are being used in Liferay and in the external repository. This is
+normally synchronized using a mechanism like LDAP. If you don't have LDAP, you
+need to ensure manually that the credentials and authentication are the same.
+
+In order to authenticate with the third-party repository, you need to store
+passwords for the user sessions. In your [Liferay home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home),
+set the following portal property in a file named 
+`portal-ext.properties`:
 
     session.store.password=true
 
-Next, we need to make sure the login and password for Liferay are the same as
-the external repository. This is easily accomplished by using identical screen
-names, so in `portal-ext.properties` add the following: 
+Next, make sure to authenticate the same way on both Liferay and
+the external repository. You can do so by authenticating based on screen
+name. So, add the following property to your `portal-ext.properties` file: 
 
     company.security.auth.type=screenName
 
-Alternatively, configure these properties in the Control Panel under *Portal
-Settings* &rarr; *Authentication*.
+Alternatively, you can configure both of these properties in the Control Panel
+under *Instance Settings &rarr; Authentication*.
+                                          
+#### Adding Required Repository Users [](id=adding-required-repository-users)
 
-#### Adding required repository users [](id=adding-required-repository-users)
+Once these properties are set, you must create a user in Liferay that uses the
+same screen name and password as the user in your external repository. Make sure
+to sign in as this user whenever you're accessing the external repository from
+Liferay. 
 
-Once these properties are set, you must create a user in Liferay with a
-screen name and password matching the administrative user of your external
-repository. Be sure to assign appropriate roles (e.g. Administrator) to that
-user. Sign out of Liferay and sign in again as that new user. See sections of
+You're now ready to add access to your external repository. 
+
+Sign out of Liferay and sign in again as that new user. See sections of
 the *Management* chapter on adding and managing users.
 
 You can add new repositories from the UI by clicking the *Add* button from the
@@ -125,41 +120,44 @@ Figure x: You can add a new repository by navigating to *Add* &rarr; *Repository
 The fields in this form change depending on the selected *Repository Type*. In
 the following sections, you will see how to configure different repositories.
 
-### Accessing a CMIS Repository Using AtomPub
+### Adding Access to a CMIS Repository Using AtomPub
 
-After completing the [Common Configuration](/discover/portal/-/knowledge_base/7-0/repository-types#common-configuration)
-steps, you can add Documents and Media Repository that communicats with your
-CMIS repository via AtomPub. 
+Liferay can access external repositories that support the CMIS 1.0 standard
+using the Atom Publishing Protocol (AtomPub). It's the easiest protocol to
+specify for communicating repositories that are CMIS 1.0 compliant. 
 
-These instructions were written based on using Alfresco Community 5.1 and Nuxeo
-Platform 7.10.
+These instructions were written based on accessing Alfresco Community 5.1 and
+Nuxeo Platform 7.10 repositories.
 
-Follow these steps to add your repository:
+Follow these steps to add access to such as repository:
 
-1.  In Documents and Media *Home*, click the *Add* button and select
-*Repository*. The *New Repository* screen appears.
+1.  Sign in to Liferay as a user that also exists in the external repository.
 
-2.  Enter an arbitrary *Name* for the repository and optionally enter a
+2.  In Documents and Media *Home*, click the *Add* icon
+(![Add](../../../images/icon-add.png)) and select *Repository*. The *New
+Repository* screen appears. 
+
+    ![Figure x: Here's the form for adding access to a CMIS repository using AtomPub.](../../../images/dm-repo-types-new-repo-config.png)
+
+3.  Enter an arbitrary *Name* for the repository and optionally enter a
 *Description*.
 
-3.  Click on the *Repository Configuration* section to access its form
-
-4.  For **Repository Type:**, select *CMIS Repository (AtomPub)*.
-
-5.  Leave **Repository ID** blank, as Liferay generates the ID
-    automatically. 
-
-6.  For **AtomPub URL**, enter the AtomPub URL for CMIS 1.0 per the CMIS
-    repository's documentation. Below are some example URLs. Make sure to
-    replace the `IP_ADDRESS` and `PORT` values with those of your CMIS
+4.  Click on the *Repository Configuration* section to access its form. Specify
+the following values.
+    - **Repository Type**: *CMIS Repository (AtomPub)*
+    - **Repository ID**: Leave this blank, as Liferay generates the ID
+    automatically)
+    - **AtomPub URL**: Enter the AtomPub URL for CMIS 1.0 per the
+    repository's documentation. Example URLs are listed below. Make sure to
+    replace the `IP_ADDRESS` and `PORT` values with those of your external
     repository server. 
-    -   Alfresco 5.1: `http://IP_ADDRESS:PORT/alfresco/cmisatom`
-    -   Nuxeo Platform 7.10: `http://IP_ADDRESS:PORT/nuxeo/atom/cmis`
+        -   Alfresco 5.1: `http://IP_ADDRESS:PORT/alfresco/cmisatom`
+        -   Nuxeo Platform 7.10: `http://IP_ADDRESS:PORT/nuxeo/atom/cmis`
 
-7.  Click *Save*
+5.  Click *Save*
 
-Your repository appears in Documents and Media. You can navigate into the
-repository and work with files as you do other files in Documents and Media.
+The external repository appears in Documents and Media. You can navigate into
+the repository and work with files as you do other files in Documents and Media.
 
 <!--
 Note - As of writing this article, only a Liferay user matching the Nuxeo
