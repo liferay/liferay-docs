@@ -13,7 +13,7 @@ guaranteed to work on all platforms and environments.
 
 $$$
 
-## Installing the Theme Generator
+## Installing the Theme Generator [](id=installing-the-theme-generator)
 
 The theme generator has several dependencies. You'll learn how to install these
 dependencies and then install the theme generator.
@@ -181,7 +181,7 @@ advantages, such as nesting and variables.
 Now that your theme is created, and you understand your theme's anatomy, you can
 take use the theme project's gulp tasks to extend and deploy your theme.
 
-## Gulp Theme Tasks [](id=gulp-theme-tasks)
+## Theme Gulp Tasks [](id=theme-gulp-tasks)
 
 Your theme's `gulpfile.js` file has several tasks you can execute in your
 theme project's root folder. 
