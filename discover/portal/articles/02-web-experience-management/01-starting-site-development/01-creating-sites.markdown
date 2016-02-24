@@ -41,7 +41,7 @@ site. These concepts will be discussed later in the chapter.
 Liferay separates site-scoped information from the Control Panel by placing it
 in the Sites menu. From this menu, you can select the specific site to work on.
 The Site Administration panel is available for your site, which includes Pages,
-Content, Users, Configuration, and Publishing Tools.
+Content, Members, Configuration, and Publishing.
 
 ![Figure 1: Your site's content resides in the Site Administration menu.](../../../images/web-content-site-content.png)
 
@@ -146,7 +146,7 @@ can also be changed at any time through the Control Panel within *Configuration
 Sites can be created through the Control Panel by a portal administrator.
 Liferay's Control Panel provides an administrative interface for managing your
 Liferay instance. There are four main sections of the Liferay's Control Panel:
-Sites, Users, Apps, and Configuration. In this section, you'll learn how to use
+Users, Sites, Apps, and Configuration. In this section, you'll learn how to use
 the Control Panel to manage sites. In a later section, you'll learn about using
 the Control Panel to manage site templates. Site templates allow portal
 administrators to create multiple sites with the same default set of pages and

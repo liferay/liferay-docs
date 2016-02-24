@@ -169,11 +169,11 @@ published to the live site.
 ![Figure 3: The staging toolbar indicates whether you're able to publish to the live site.](../../../images/staging-publish-bar.png)
 
 You can also manage your staging processes. Once staging is enabled, you can
-navigate back to the *Staging* option located in the Menu's Publishing Tools
-tab. From here you'll see a list of staging processes that have been completed.
-You can relaunch or clear any of these publications by clicking the *Actions*
-button (![Options](../../../images/icon-actions.png)) next to a process. If you
-click the *Scheduled* tab from above, you'll find staging processes that you've
+navigate back to the *Staging* option located in the Menu's Publishing tab. From
+here you'll see a list of staging processes that have been completed. You can
+relaunch or clear any of these publications by clicking the *Actions* button
+(![Options](../../../images/icon-actions.png)) next to a process. If you click
+the *Scheduled* tab from above, you'll find staging processes that you've
 scheduled for future publication dates.
 
 If you find yourself repeatedly creating staging processes that are very similar

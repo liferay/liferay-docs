@@ -43,8 +43,8 @@ server.
 ## Enabling Local Live Staging [](id=enabling-local-live-staging)
 
 Site administrators can enable Staging for a site by navigating to the *Site
-Administration* &rarr; *Publishing Tools* menu and selecting *Staging*. A new
-page loads where you can select the staging type, either *Local Live* or *Remote
+Administration* &rarr; *Publishing* menu and selecting *Staging*. A new page
+loads where you can select the staging type, either *Local Live* or *Remote
 Live*, after which additional options appear. Staging allows changes to be made
 in a staging environment so that work can be reviewed, possibly using a
 workflow, before it's published to a live site. Enabling Local Live staging is
@@ -62,8 +62,8 @@ Lunar Resort home page. Before beginning, you'll want to add a new page.
 Navigate to the Pages menu in the Lunar Resort's Site Administration menu and
 add a new page named *News and Events*. Next, click *News and Events* to view
 the page. Then add the Alerts and Announcements apps to the News and Events
-page. Navigate to the Staging menu under Publishing Tools, select *Local Live*,
-and click *Save*. You've officially begun the staging process.
+page. Navigate to the Staging menu under Publishing, select *Local Live*, and
+click *Save*. You've officially begun the staging process.
 
 When you activate staging Local Live staging, Liferay creates a clone of your
 site. This clone became the staging environment. Because of this, it is
@@ -77,8 +77,8 @@ site's update history won't be saved until you enable page versioning. Page
 versioning requires staging (either Local Live or Remote Live) to be enabled.
 
 If you ever need to turn off the staging environment, return back to *Staging*
-from the Publishing Tools dropdown. The processes you've created are displayed
-by default. Navigate to the *Options* icon
+from the Publishing dropdown. The processes you've created are displayed by
+default. Navigate to the *Options* icon
 (![Options](../../../images/icon-options.png)) from the upper right corner of
 the page and select *Staging Configuration*. Select the *None* radio button to
 turn Local Live staging off.
@@ -170,7 +170,7 @@ using in the *Hosts allowed* field. Then select *Update*.
 
 Remember to restart both Liferay servers after making these portal properties
 updates. After restarting, log back in to your local Liferay instance as
-a site administrator. Then navigate to the *Publishing Tools* option in Site
+a site administrator. Then navigate to the *Publishing* option in Site
 Administration and select *Staging*. Select *Remote Live* and additional options
 appear.
 

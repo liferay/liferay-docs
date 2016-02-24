@@ -34,10 +34,10 @@ and assigning the User Group permissions via
 $$$
 
 To create a team within a site, first navigate to the Site Administration page
-of your site and select *Users* &rarr; *Site Teams*. It's important to note that
+of your site and select *Members* &rarr; *Site Teams*. It's important to note that
 configuring other site membership groupings, such as *Users*, *Organizations*,
 and *User Groups* can be done in the *Site Memberships* app, which is also
-located in the Users tab. You can visit the 
+located in the Members tab. You can visit the 
 [User Management](/discover/portal/-/knowledge_base/6-2/user-management)
 chapter for more information on how these site memberships work. Finally, click
 the *Add Team* icon (![Add Team](../../../images/icon-add.png)).
