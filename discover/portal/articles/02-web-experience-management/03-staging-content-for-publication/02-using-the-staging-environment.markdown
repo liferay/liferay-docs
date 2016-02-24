@@ -171,13 +171,14 @@ published to the live site.
 You can also manage your staging processes. Once staging is enabled, you can
 navigate back to the *Staging* option located in the Product Menu's Publishing
 Tools tab. From here you'll see a list of staging processes that have been
-completed. If you click the *Scheduled* tab from above, you'll find staging
+completed. You can relaunch or clear any of these publications by clicking the
+*Actions* button (![Options](../../../images/icon-actions.png)) next to a
+process. If you click the *Scheduled* tab from above, you'll find staging
 processes that you've scheduled for future publication dates.
 
 If you find yourself repeatedly creating staging processes that are very similar
 to each other, you should think about using Publish Templates. Up to this point,
 you've looked at how to create custom publication processes.
-
 
 Instead of manually having to customize a publication process every time you're
 looking to publish pages/content, you can use a publish template. Using publish
@@ -217,7 +218,6 @@ $$$
 One of the most powerful features of staging is page variations. Next, you'll
 see how to use them to create multiple different variations of your site's pages
 for different purposes.
-
 
 ## Using Site Pages Variations [](id=using-site-pages-variations)
 
