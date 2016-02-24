@@ -1,3 +1,4 @@
 export default function(msg) {
-	console.log(msg);
+
+	document.getElementById("context").innerHTML += msg + ' ';
 }
