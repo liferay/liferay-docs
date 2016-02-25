@@ -29,43 +29,45 @@ started.
 
 Each site comes with a built-in blog instance, so let's explore adding an entry
 to your site's blog. In Site Administration, the Blogs app provides the best
-place to draft blogs. Click the Product Menu icon
-(![Product Menu](../../../images/icon-menu.png)) to open the Product Menu. Then
+place to draft blogs. Click the Menu icon
+(![Menu](../../../images/icon-menu.png)) to open the product menu. Then
 navigate to *Sites* &rarr; *\[Site Name\]* &rarr; *Content* &rarr; *Blogs*. The
 *Entries* screen appears, listing the site's blog entries. 
 
-Click the *Add* icon (![Add](../../../images/icon-add.png)) to bring up the blog
-entry screen. 
+Click the *Add* icon (![Add](../../../images/icon-add.png)) to create a new blog
+entry. 
 
 ![Figure 1: This screenshot highlights the blog entry editor's controls for formatting text, justifying images, and editing tables.](../../../images/blogs-blogs-entry-mars.png)
 
 The screen presents fields to set a cover image, title, and subtitle, and an
-area for creating the entry's content. You may be asking yourself, "Where are
+area for entering content. You may be asking yourself, "Where are
 the content editor's controls?" The editor gives you a seamless writing experience,
 displaying controls when you need them and hiding them from view when you don't
 need them. This keeps your canvas uncluttered, so you can focus on writing. As
 you create content, context-specific controls appear. 
 
 Go ahead and enter text in the *Content* area. If you highlight text, controls
-appear. These controls let you style the text or convert it to a link or a
-tweet to share your blog post on Twitter. You can also use keyboard shortcuts
-Ctrl+b for bold, Ctrl+i for italics, and Ctrl+u for underline. You can even
+appear (In Figure 1, notice the controls above the highlighted word *hiking*).
+These controls let you style the text or convert it to a link or a tweet to
+share your blog post on Twitter. You can also use keyboard shortcuts Ctrl+b for
+bold, Ctrl+i for italics, and Ctrl+u for underline. You can even
 [mention](/discover/portal/-/knowledge_base/7-0/creating-forums-with-message-boards#mentioning-other-users)
-other users by entering the "@" character followed by the user's name. 
+other users by entering the "@" character followed by the user's name.
 
 Whenever you park your cursor in the content area, the *Add* icon (`+`) appears.
 If you click on it, it shows controls for inserting an image, table, or
-horizontal line (![Controls](../../../images/icon-content-insert-controls.png)). To
-insert an image, click the icon that depicts the mountain silhouette. The image
-file selector screen appears. It lets you choose an existing image upload a new
-one. You can also drag-and-drop image files into the content area. After you've
-added the image to the blog entry, clicking it brings up controls for justifying
-it to the right or left side of the article. 
+horizontal line (![Controls](../../../images/icon-content-insert-controls.png)).
+To insert an image, click the icon that depicts the mountain silhouette. The
+image file selector screen appears. It lets you choose an existing image or
+upload a new one. You can also drag-and-drop image files into the content area.
+After you add an image to the blog entry, clicking the image brings up controls
+for justifying it to the right or left side of the article. In Figure 1, notice
+the image justification controls above the moon image. 
 
 You can also insert a table with as many rows and columns as you like. If you
-click inside the table, table editing controls appear. They let you designate
-the first row and/or column as table headers. The controls also enable you to
-add rows, columns, and cells. 
+click inside the table, table editing controls appear (see the table in Figure 1). They let
+you designate the first row and/or column as table headers. The controls also
+enable you to add rows, columns, and cells. 
 
 Now you're familiar with the editor's regular mode. If you'd rather work with
 the content's HTML code, you can. To switch the editor to source view, select
@@ -73,8 +75,6 @@ the *Source* icon (`</>`). Note that a *Roller* icon
 (![Roller](../../../images/icon-roller.png)) for regular mode appears, giving you
 the option to switch back to regular view. To satisfy your eyes, source view's
 moon icon and sun icon let you switch between a dark theme and a light theme.
-The built-in syntax coloring helps you identify HTML elements, regardless of the
-mode you're using. 
 
 You can even work in a dual pane view that shows your HTML code on the left and
 a preview pane on the right. To open this view, click the *Enlarge* icon
@@ -90,8 +90,9 @@ Every 25 seconds, the entry you're editing is automatically saved as a draft, so
 a browser crash or network interruption won't cause you to lose your entry. You
 can exit the enlarged editor by clicking *Done* (which saves your content) or
 clicking *Cancel* to abandon any changes since the last auto-save. From the
-normal-sized source view, you can click the *abc* icon to switch back to the
-WYSIWYG editor. 
+normal-sized source view, you can click the *Roller* icon
+(![Roller](../../../images/icon-roller.png)) to switch back to the WYSIWYG
+editor. 
 
 You've learned all the ins and outs of the content editor. Next, you'll learn
 how to specify your blog entry's other characteristics. 
@@ -101,13 +102,14 @@ cover image (optional) for your entry. This might be an image that represents
 your entry's purpose and is designed to attract readers. You can drag and drop
 onto this field any image you like. As an alternative to dragging and dropping
 an image, you can click the *Select File* button to use the image selector to
-choose an existing image in the blog, an image file from Documents and Media, or
-an image outside the Liferay instance. You can browse to an image file and
-upload it. After you've uploaded the image, it displays in the image pane. To
-center image content, click on the image and drag it into place with your mouse.
-You can even add a caption. And if you want to select a different image, you can
-click the *Change* icon (![Change](../../../images/icon-change.png)) to upload a
-different image.
+choose an existing image attached to the blog, an image file from Documents and
+Media, or an image outside the Liferay instance. You can browse to an image file
+and upload it. After you've uploaded the image, it displays in the image pane.
+To center image content, click on the image and drag it into place with your
+mouse. Then click on the checkmark icon to save the image placement. You can
+even add a caption. And if you want to select a different image, you can click
+the *Change* icon (![Change](../../../images/icon-change.png)) to use a
+different image. Lastly, the 
 
 Clicking the *Configuration* icon (![Gear](../../../images/icon-gear.png)) at the
 top of the entry editor lets you configure the blog entry. You can set a
@@ -116,17 +118,17 @@ or a custom abstract containing a thumbnail image and a manually written
 description. You can also send emails on entry updates. 
 
 The Categorization heading is next in the entry configuration screen. Its
-options allow you to attribute tags and/or categories to your blog entry. Doing
-this improves search results for blog entries, and you get more navigation
-options for your users. For example, you can add the Tags Navigation application
-to another column on your blogs page, which lets users browse blog entries by
-tag. 
+options allow you to attribute [tags and/or categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+to your blog entry. Doing this improves search results for blog entries, and you
+get more navigation options for your users. For example, you can add the Tags
+Navigation application to another column on your blogs page, which lets users
+browse blog entries by tag. 
 
-Below this is the Related Assets heading. If there's some other content in the
-Liferay instance that's related to your entry, you can choose it here. For
-example, you might want to write a blog entry talking about a discussion that
-happened on the forums. To link those two assets together, select the forum
-thread under Related Assets. 
+Below this is the [Related Assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)
+heading. If there's some other content in the Liferay instance that's related to
+your entry, you can choose it here. For example, you might want to write a blog
+entry talking about a discussion that happened on the forums. To link those two
+assets together, select the forum thread under Related Assets. 
 
 Blog entries also support *pingbacks*. Pingbacks are XML-RPC requests that are
 automatically sent when you link to another site. If you link to another site in
