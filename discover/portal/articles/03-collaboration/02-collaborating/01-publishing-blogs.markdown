@@ -49,7 +49,9 @@ you create content, context-specific controls appear.
 Go ahead and enter text in the *Content* area. If you highlight text, controls
 appear. These controls let you style the text or convert it to a link or a
 tweet to share your blog post on Twitter. You can also use keyboard shortcuts
-Ctrl+b for bold, Ctrl+i for italics, and Ctrl+u for underline.
+Ctrl+b for bold, Ctrl+i for italics, and Ctrl+u for underline. You can even
+[mention](/discover/portal/-/knowledge_base/7-0/creating-forums-with-message-boards#mentioning-other-users)
+other users by entering the "@" character followed by the user's name. 
 
 Whenever you park your cursor in the content area, the *Add* icon (`+`) appears.
 If you click on it, it shows controls for inserting an image, table, or
