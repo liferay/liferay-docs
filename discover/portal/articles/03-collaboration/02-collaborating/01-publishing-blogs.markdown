@@ -149,18 +149,23 @@ pages, you may want to learn how to manage blog entries.
 The Blogs application in Site Adminstration helps bloggers and blog
 administrators manage blog entries. *Search* finds entries that match the
 keywords you enter. The *Order by* selector enables you to organize entries by
-*Title* or *Display Date*, in ascending or descending order. And the icons above
-the listing of entries allow you to display the entries in different ways:
-showing large cover images, listing single cell rows that show the author's image
-and entry information, or displaying the entries in a table. Working with
-existing blog entries has never been easier! 
+*Title* or *Display Date*, in ascending or descending order. Blog entries are
+displayed using icons, by default. You can select either icon
+(![Icon](../../../images/icon-icon-style.png)), descriptive
+(![Descriptive](../../../images/icon-descriptive-style.png)), or list
+(![List](../../../images/icon-list-style.png)) display style. The icon style
+shows large cover images, descriptive style displays single cell rows that show
+the author's image and entry information, and list style displays the entries
+using several columns for each entry. Working with existing blog entries has
+never been easier!
 
 You can manage entries individually or in a batch. Each entry has an *Actions*
 icon (![Actions](../../../images/icon-actions.png)) to edit the entry, configure
-its permissions, or move it to the Recycle Bin. You can select the *All*
-checkbox to select all entries or select an entry's individual check box, and
-click the trash icon to move them into the Recycle Bin. Under the *Images* tab
-you can view individual images and delete them individually or in a batch. 
+its permissions, or move it to the [Recycle Bin](/discover/portal/-/knowledge_base/7-0/restoring-deleted-assets#using-the-recycle-bin).
+You can select the *All* checkbox to select all entries or select an entry's
+individual check box, and click the trash icon to move them into the Recycle
+Bin. Under the *Images* tab you can view individual images and delete them
+individually or in a batch. 
 
 The *Options* icon (![Options](../../../images/icon-options.png)) at the top of
 Blogs lets you configure permissions and notifications, or import/export the
@@ -175,7 +180,8 @@ a new blog entry has been added.
 **Entry Updated Email:** defines a subject and body for the emails sent 
 when a new blog entry has been updated.
 
-**RSS:** choose how blogs are displayed to RSS readers. 
+**RSS:** lets you enable RSS subscription and choose how blogs are displayed to
+RSS readers.  
 
 - **Maximum Items to Display:** choose the total number of RSS feeds entries to
 display on the initial page. You can choose up to one hundred to be displayed.
@@ -191,20 +197,19 @@ blog security. For example, who is allowed to view the different blog instances
 and who is allowed to add blog entries?
 
 If you have a personal blog, the default permissions should work well for you.
-If you have a shared blog, you may want to modify the permissions on the blog.
-The default settings make it so only the owner of the site where the application
-was added can add entries. This, of course, is great if the Blogs app has been
-added to a user's personal pages, but doesn't work so well for a shared
-multi-author blog. But don't worry: it's easy to grant blogging permissions to
-users. 
+If you have a shared blog, you may want to adjust its permissions. The default
+settings make it so only the owner of the site where the application was added
+can add entries. This, of course, is great if the Blogs app has been added to a
+user's personal pages, but doesn't work so well for a shared multi-author blog.
+But don't worry: it's easy to grant blogging permissions to users. 
 
 First, create a
 [role](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) for your
 bloggers and add them to the role. Next, in Blogs, click *Options* &rarr;
-*Permissions*. A list of both instance and site roles is displayed, and
+*Entries Permissions*. A list of both instance and site roles is displayed, and
 currently only the owner is checked for the *Add Entry* permission. Mark any
 other role or team that should be able to add blog entries and then click
-*Save*. Once this is done, users in the roles or teams that you selected are
+*Save*. Once you've done this, users in the roles or teams that you selected are
 able to post to the shared blog. You can also grant roles and teams the ability
 to subscribe to blog updates. 
 
@@ -322,7 +327,7 @@ You can set up a whole web site devoted just to blogging if you wish. The Blogs
 Aggregator lets you publish entries from multiple bloggers on one page, giving
 further visibility to blog entries. You can add it to a page from the
 *Collaboration* category in the *Add*
-(![Add](../../../images/icon-control-menu-add.png)) *&rarr; Applications* menu. 
+(![Add](../../../images/icon-add-app.png)) *&rarr; Applications* menu. 
 
 If you click *Configuration* from the options button in the app's title bar, the
 Blogs Aggregator's configuration page appears. From here, you can set its
