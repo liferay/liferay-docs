@@ -48,7 +48,8 @@ you create content, context-specific controls appear.
 
 Go ahead and enter text in the *Content* area. If you highlight text, controls
 appear. These controls let you style the text or convert it to a link or a
-tweet to share your blog post on Twitter. 
+tweet to share your blog post on Twitter. You can also use keyboard shortcuts
+Ctrl+b for bold, Ctrl+i for italics, and Ctrl+u for underline.
 
 Whenever you park your cursor in the content area, the *Add* icon (`+`) appears.
 If you click on it, it shows controls for inserting an image, table, or
