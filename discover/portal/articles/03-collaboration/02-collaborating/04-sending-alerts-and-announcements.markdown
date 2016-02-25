@@ -73,16 +73,16 @@ Distribution Scope, you can provide the following information:
 full title always appears in bold. If you enter a URL in the URL field, the 
 title serves as a link to the specified site. 
 
-**URL:** The URL is optional. If entered, it must be a valid URL, starting with
+**URL:** The URL is optional. If entered, it must be valid and begin with 
 *http://* or *https://*. For example, an announcement about a news story could 
-include a link to the news article.
+include a link to the news article. 
 
 **Content:** The announcement's body text. You can use the familiar CK editor to
 write this. Use the *Source* button to switch between the editor and HTML views.
 
 **Type:** The announcement's type. This can be *General*, *News*, or *Test*. As 
 mentioned earlier, each user can specify a different delivery mechanism for each 
-type of announcement. For example, a user can choose to receive General 
+type of announcement. For example, a user could choose to receive General 
 announcements via email and text,  News announcements via email only, and no 
 special delivery mechanism for Test announcements. Each user can customize their 
 delivery options by navigating to *[User Name]* &rarr; *My Account* &rarr; 
@@ -107,7 +107,7 @@ Clicking the Expiration Date field opens the date-picker widget.
 The Alerts app works the same way as the Announcements app. Alerts is a separate 
 app because it's designed to be used only for high priority messages or those 
 that require users to take some action. The Alerts app only displays alerts, and 
-the Announcements app only displays announcements. To draw attention to the 
-alerts, the Alerts app displays a red *Important* tag next to each alert. To 
-separate important alerts from more mundane announcements, site administrators 
-can place the Alerts and Announcement apps on different pages. 
+the Announcements app only displays announcements. To draw attention to its 
+alerts, the Alerts app displays a red *Important* tag next to each. To separate 
+important alerts from more mundane announcements, site administrators can place 
+the Alerts and Announcements apps on different pages. 
