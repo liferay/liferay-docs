@@ -331,7 +331,8 @@ further visibility to blog entries. You can add it to a page from the
 *Collaboration* category in the *Add*
 (![Add](../../../images/icon-add-app.png)) *&rarr; Applications* menu. 
 
-If you click *Configuration* from the options button in the app's title bar, the
+If you click *Configuration* from the *Options* icon
+(![Options](../../../images/icon-app-options.png)) in the app's title bar, the
 Blogs Aggregator's configuration page appears. From here, you can set its
 options. 
 
@@ -396,6 +397,52 @@ box. You'll notice the Blogs Aggregator looks very much like the Blogs
 application, except that it shows entries from multiple blogs. 
 
 ![Figure 6: The Blogs Aggregator lets you display blog entries authored by multiple authors from different sites.](../../../images/blogs-blog-aggregator.png)
+
+Last up is showing your Liferay instance's recent bloggers.
+
+## Highlighting Recent Bloggers [](id=highlighting-recent-bloggers)
+
+A great way to applaud bloggers is to display their names using the Recent
+Bloggers app. It lists the names of users who've most recently posted blog
+entries. It shows their name, profile picture, and number of posts. It's a great
+way to show off who's who on your site. You can add the Recent Bloggers app to a
+page from the *Collaboration* category in the *Add*
+(![Add](../../../images/icon-add-app.png)) *&rarr; Applications* menu. 
+
+If you click *Configuration* from the *Options* icon
+(![Options](../../../images/icon-app-options.png)) in the app's title bar, the
+Recent Blogger's configuration page appears. From here, you can set its options. 
+
+**Selection Method:** select Users or Scope here. If you select Users, the
+Recent Bloggers aggregates all the users on your system. If you want to refine
+the aggregation, you can select an organization by which to filter the users. If
+you select Scope, the app will show only users who are in the current scope.
+This limits the users shown to the site where the resides resides.
+
+**Organization:** select which organization's users you want to show.
+
+**Display Style:** select from several different styles for displaying users:
+*User Name and Image* and *User*.
+
+**Maximum Items to Display:** select the maximum number of users the app
+displays.
+
+**Sharing:** lets you embed the application instance as a widget on on any
+website, Facebook, or Netvibes, or as an OpenSocial Gadget.
+
+**Scope:** lets you specify the blog instance the application displays: the
+current site's blog (default), global blog, or the page's. If the page doesn't
+already have a blog instance, you can select scope option *\[Page Name\]
+\(Create New\)* to create a page-scoped blog instance and set the Blogs app to
+display it.
+
+When you're finished setting the options, click *Save*. Then close the dialog
+box. 
+
+![Figure 7: You can show off your site or organization's most recent bloggers from the Recent Bloggers app.](../../../images/blogs-recent-bloggers.png)
+
+Add the Recent Bloggers app to a page on your site to draw attention to the
+users who are contributing helpful blogs on your site. 
 
 ## Summary [](id=summary)
 
