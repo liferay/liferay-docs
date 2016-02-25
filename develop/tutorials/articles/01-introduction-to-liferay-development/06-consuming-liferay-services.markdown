@@ -29,8 +29,8 @@ To invoke a service from your application, follow these steps:
 
 5.  (Optional) Display the result of your service invocation. If you're
     developing a portlet application, an easy way to display a result is to add
-    it to the `PortletRequest` object as an attribute which can be retrieved by a
-    JSP.
+    it to the `PortletRequest` object as an attribute which can be retrieved by
+    a JSP.
 
 Suppose you need to invoke two Liferay services, `UserLocalService` and
 `BookmarksFolderLocalService`. `UserLocalService` is a core Liferay service
@@ -41,8 +41,8 @@ services as examples and follow the steps specified above.
 
 `UserLocalService` is provided by Liferay's `portal-service.jar` file, so make
 sure that it's declared as a dependency in your project's build file. If you
-used Blade Tools to create a JSP portlet, Liferay's `portal-service.jar` file is
-already declared as a dependency:
+used Blade Tools to create an MVC portlet, Liferay's `portal-service.jar` file
+is already declared as a dependency:
 
     compile 'com.liferay.portal:portal-service:7.0.0-SNAPSHOT'
 

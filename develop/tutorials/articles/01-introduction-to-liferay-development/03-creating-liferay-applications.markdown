@@ -2,52 +2,52 @@
 
 Blade Tools allows you to very easily create Liferay applications. In this
 tutorial, you'll learn how. If you haven't yet installed Blade
-Tools, please refer to the [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools) tutorial.
-Blade Tools provides project templates for creating certain types of Liferay
-modules. At the time of this writing, the available templates include portlets,
-JSP portlets, services, activators, JSP hooks, service builders and service wrappers.
-When creating a new module project, Blade Tools allows for a build type to be chosen.
-At the time of this writing, the supported build types are Gradle and Maven.
+Tools, please refer to the
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+tutorial. Blade Tools provides project templates for creating certain types of
+Liferay modules. At the time of this writing, the available templates include
+activators, JSP hooks, MVC portlets, portlets, services, service builders, and
+service wrappers. When creating a new module project, Blade Tools uses Gradle.
 
 When you use Blade Tools to create a project, your project's folder structure,
-build script (`build.gradle` or `pom.xml`), Java classes, and other resources
-(such as JSPs) are created based on the chosen template. Once you've created a
-project, you can import your project into your favorite IDE and proceed with
-development. All three of the major Java IDEs (Eclipse, IntelliJ, and Netbeans)
-provide Maven and Gradle support. Liferay's Eclipse-based IDEs (Liferay
-IDE and Liferay Developer Studio) provide wizards that allow you to create new
-Liferay module projects. These wizards use Blade Tools under the hood. Once you
-finish developing your project, you can use Gradle or Maven to build your
-project's JAR file and use Blade Tools to deploy your module to Liferay's module
-framework.
+build script (`build.gradle`), Java classes, and other resources (such as JSPs)
+are created based on the chosen template. Once you've created a project, you can
+import your project into your favorite IDE and proceed with development. All
+three of the major Java IDEs (Eclipse, IntelliJ, and Netbeans) provide Gradle
+support. Liferay's Eclipse-based IDEs (Liferay IDE and Liferay Developer Studio)
+provide wizards that allow you to create new Liferay module projects. These
+wizards use Blade Tools under the hood. Once you finish developing your project,
+you can use Gradle to build your project's JAR file and use Blade Tools to
+deploy your module to Liferay's module framework.
 
-In this tutorial, you'll learn how to create a Liferay MVC portlet application as a
-Liferay module.
+In this tutorial, you'll learn how to create a Liferay MVC portlet application
+as a Liferay module. Before creating your application, make sure you've created
+a Liferay Workspace and navigated to the workspace's `modules` directory. If
+you'd like to learn more about Liferay Workspaces and how to create/use them,
+see the [Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+tutorial.
 
 To create a Liferay MVC portlet application as a module, use a command like the
 following:
 
-    blade create -t mvcportlet com.liferay.docs.jspportlet
+    blade create -t mvcportlet -p com.liferay.docs.mvcportlet -c MyMvcPortlet my-mvc-portlet-project
 
-The command above creates a JSP portlet project in the current directory.
-`com.liferay.docs.jspportlet` is used both as the project name and as the name of the
-package in which your portlet component class is created. Notice that when
-creating a MVC portlet, the string 'Portlet' is appended to the project name.
-Thus, the name of the generated class was `ComLiferayDocsJspportletPortlet`.
-Since this class name is not suitable, you should rename the generated class.
-E.g., you could rename it to `MyJspPortlet.java`. Note that in that class, you're 
-creating a service of type `Portlet`. Here, 'service' means an OSGi service, not a 
-Liferay API. Another way to say 'service type' is to say 'component type'.
+The command above creates an MVC portlet project named `my-mvc-portlet-project`
+in the current directory. You set the package name to
+`com.liferay.docs.mvcportlet` and your portlet component class name to
+`MyMvcPortlet`. Note that in that class, you're creating a service of type
+`Portlet`. Here, *service* means an OSGi service, not a Liferay API. Another way
+to say *service type* is to say *component type*.
 
-After running the command above and renaming the generated class, your project's
-directory structure looks like this:
+After running the command above, your project's directory structure looks like
+this:
 
-- `com.liferay.docs.jspportlet`
+- `my-mvc-portlet-project`
     - `src`
         - `main`
             - `java`
-                - `com/liferay/docs/jspportlet`
-                    - `MyJspPortlet.java`
+                - `com/liferay/docs/mvcportlet`
+                    - `MyMvcPortlet.java`
             - `resources`
                 - `content`
                     - `Language.properties`
@@ -58,9 +58,9 @@ directory structure looks like this:
     - `bnd.bnd`
     - `build.gradle`
 
-Here's the generated Java class, after renaming:
+Here's the generated Java class:
 
-    package com.liferay.docs.jspportlet;
+    package com.liferay.docs.mvcportlet;
 
     import javax.portlet.Portlet;
 
@@ -80,7 +80,7 @@ Here's the generated Java class, after renaming:
         },
         service = Portlet.class
     )
-    public class MyJspPortlet extends MVCPortlet {
+    public class MyMvcPortlet extends MVCPortlet {
 
     }
 
@@ -102,9 +102,9 @@ it as a dependency). This can be appropriate for some components, but not
 portlet components. 
 
 Finally, notice that all the required imports are declared. All the dependencies
-required by a JSP portlet are declared in your project's `build.gradle` file.
+required by an MVC portlet are declared in your project's `build.gradle` file.
 
-Since you created a JSP portlet, your project includes a few JSP files that
+Since you created an MVC portlet, your project includes a few JSP files that
 constitute your application's view layer: `init.jsp` and `view.jsp`. By
 convention, `init.jsp` contains all the imports required by any of the other
 JSPs that make up your application's view layer. All the other JSPs import
@@ -125,10 +125,10 @@ Here's the contents of the generated `init.jsp`:
 
     <liferay-theme:defineObjects />
 
-`init.jsp` includes some tag library declarations. After the declarations, it
-uses two specific tags: `<portlet:defineObjects />` and
+The `init.jsp` includes some tag library declarations. After the declarations,
+it uses two specific tags: `<portlet:defineObjects />` and
 `<liferay-theme:defineObjects />`. These tags make a variety of portlet-specific
-and Liferay-specific variables available to the JSP. 
+and Liferay-specific variables available to the JSP.
 
 Here are the contents of the generated `view.jsp`:
 
@@ -156,24 +156,25 @@ generated `build.gradle` file specifies all dependencies.
 To build your project, navigate to your project's root directory and run `gradle
 build`. The JAR file representing your portlet module is produced in your
 project's `build/libs` directory. If you followed the example in this tutorial,
-it should be called `com.liferay.docs.jspportlet-1.0.jar`.
+it should be called `com.liferay.docs.mvcportlet-1.0.0.jar`.
 
 Blade Tools makes it extremely easy to deploy your project. From your project's
 root directory, run this command:
 
-    blade deploy build/libs/com.liferay.docs.jspportlet-1.0.jar
+    blade deploy
 
 Blade Tools detects your locally running Liferay instance and deploys the
-specified module to Liferay's module framework. After running the `blade deploy
-[path to JAR]` command, you should see a message like this:
+specified module to Liferay's module framework. This command requires the remote
+agent be installed for Blate tools. To install this, run `blade agent install`.
+After running the `blade deploy` command, you should see a message like this:
 
     Installed or updated bundle 333
 
-Use the Gogo shell to confirm your module was installed: Open a terminal and
-enter `telnet localhost 11311`. Then enter `lb` at the prompt. If your module
-was installed, you'll see an entry like this:
+Use the Gogo shell via Blade to confirm your module was installed: Open a
+terminal and Enter `blade sh lb` at the prompt. If your module was installed,
+you'll see an entry like this:
 
-    333|Active     |    1|com.liferay.docs.jspportlet (1.0.0.201510171940)
+    333|Active     |    1|com.liferay.docs.mvcportlet (1.0.0.201602111940)
 
 Finally, log into your portal. Add your portlet to a page and confirm that it
 works correctly. Congratulations! You've created and deployed a Liferay 7 style

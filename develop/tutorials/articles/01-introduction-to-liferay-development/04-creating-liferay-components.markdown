@@ -1,7 +1,7 @@
 # Creating Liferay Components [](id=creating-liferay-components)
 
 As explained in the
-[Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development)
+[Understanding Liferay's Module Framework](/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
 tutorial, you need to understand two concepts in order to succeed as a Liferay 7
 developer: *modules* and *components*. A module is the one and only type of
 Liferay 7 plugin. A component is a Java class that's decorated with the
@@ -9,8 +9,8 @@ Liferay 7 plugin. A component is a Java class that's decorated with the
 registered in Liferay's module framework. For example, the
 [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 tutorial explains how to create a portlet application as a module. To do so, you
-create a module project and create a component class that
-implements the `Portlet` interface in that module.
+create a module project and create a component class that implements the
+`Portlet` interface in that module.
 
 Liferay components are typically created as
 [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
@@ -25,7 +25,8 @@ two or three modules. For example, the Liferay Polls application consists of the
 In this tutorial, you'll learn how to create an API module, an implementation
 module (a.k.a. service module), and a client module. The client takes the form
 of a command that can be invoked from Liferay's Felix Gogo shell. You can find
-the code referenced by this tutorial in complete projects on Github here: [https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules).
+the code referenced by this tutorial in complete projects on Github here:
+[https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules).
 The specific projects referenced by this tutorial are
 `com.liferay.docs.greetingapi`, `com.liferay.docs.greetingimpl`, and
 `com.liferay.docs.greetingimpl`.
@@ -38,18 +39,18 @@ module template to create an API module.
 
 To create a module, run a command like this one:
 
-    blade create service -c Greeting com.liferay.docs.greetingapi java.lang.Object
+    blade create -t service -s java.lang.Object -p com.liferay.docs.greetingapi -c Greeting greeting-api
 
-Note that the last argument is required. This argument specifies the interface
-implemented by your component class. Since you're creating an API module, you're
-not creating a component class at all. Thus, the value of the argument,
-`java.lang.Object`, doesn't matter. You'll delete the `@Component` annotation in
-which this argument is used.
+Note that the `-s java.lang.Object` argument is required. This argument
+specifies the interface implemented by your component class. Since you're
+creating an API module, you're not creating a component class at all. Thus, the
+value of the argument, `java.lang.Object`, doesn't matter. You'll delete the
+`@Component` annotation in which this argument is used.
 
 Running the command above creates a project with the following directory
 structure:
 
-- `com.liferay.docs.greetingapi`
+- `greeting-api`
     - `src`
         - `main`
             - `java`
@@ -79,41 +80,48 @@ Next, edit your `com.liferay.docs.greetingapi` module's `bnd.bnd` file so that
 it looks like this:
 
     Bundle-Name: Greeting API
-    Bundle-SymbolicName: com.liferay.docs.greetingapi
+    Bundle-SymbolicName: greeting.api
     Bundle-Version: 1.0.0.${tstamp}
     Export-Package: com.liferay.docs.greetingapi
 
-You don't need the `dsannotations: *` line since you're not creating a component
-in your module; you're only creating an interface. You also don't need the
-following lines since you're not invoking any Liferay services:
+<!--You don't need the `dsannotations: *` line since you're not creating a
+component in your module; you're only creating an interface.-->
+
+You don't need the following lines since you're not invoking any Liferay
+services:
 
     Import-Package: \
-        com.liferay.portal.model;version='[7.0,7.1)',\
-        com.liferay.portal.service;version='[7.0,7.1)',\
+        com.liferay.portal.service;version="7.0.0",\
+        org.osgi.framework;version="[1.7,2)",\
         *
 
 You need the `Export-Package: com.liferay.docs.greetingapi` line since the
 package with the `Greeting` interface must be made available to other modules.
 
-To build your project, run `gradle build` from your project's root directory. To
-deploy it, run `blade deploy build/libs/com.liferay.docs.greetingapi-1.0.jar`.
+To build your project, run `../../gradlew build` from your module's root
+directory. Before deploying your module, you'll need to run `blade agent
+install` to install a remote agent that facilitates the deploy action. Also,
+make sure your Liferay server within your workspace is running. You can run
+`blade server start` to run the server defined in your workspace. Once the
+remote agent is installed and server is running, run `blade deploy` from your
+module's root directory.
 
 Since you've only published an interface, there's not much to test at this
 point. Next, you'll implement the `Greeting` interface in a separate module.
 
 ## Creating an Implementation Module [](id=creating-an-implementation-module)
 
-Now that you've created an API module, it's time to create a implementation
+Now that you've created an API module, it's time to create an implementation
 module. This module will contain a component class that implements the interface
 provided by your API module. Implementation modules are sometimes called service
 modules since they provide implementations of OSGi services. To create an
 implementation module, run a command like this one:
 
-    blade create service -c GreetingImpl com.liferay.docs.greetingimpl com.liferay.docs.greetingapi.Greeting
-
+    blade create -t service -s com.liferay.docs.greetingapi.Greeting -p com.liferay.docs.greetingimpl -c GreetingImpl greeting-impl
+    
 Running this command creates a project with the following directory structure:
 
-- `com.liferay.docs.greetingimpl`
+- `greeting-impl`
     - `src`
         - `main`
             - `java`
@@ -126,29 +134,13 @@ Since you're creating an implementation module (a.k.a. a service module) instead
 of an API module, the contents of the generated class is much closer to what you
 actually need.
 
-First, you need to modify the generated `GreetingImpl.java` file so that it
-implements the `Greeting` interface. Edit your `GreetingImpl.java` file so that
-it looks like this:
+Your `GreetingImpl.java` file is configured and ready to go. The only thing you
+should add is the `greet(...)` method you specified in your `Greeting` class.
+Add the following method in the body of your `GreetingImpl` class:
 
-    package com.liferay.docs.greetingimpl;
-
-    import com.liferay.docs.greetingapi.Greeting;
-
-    import org.osgi.service.component.annotations.Component;
-
-    @Component(
-        immediate = true,
-        property = {
-        },
-        service = Greeting.class
-    )
-    public class GreetingImpl implements Greeting {
-
-        @Override
-        public void greet(String name) {
-            System.out.println("Hello " + name + "!");
-        }
-
+    @Override
+    public void greet(String name) {
+        System.out.println("Hello " + name + "!");
     }
 
 The `@Component` annotation indicates that your class defines a
@@ -168,10 +160,11 @@ Your implementation module needs access to your API module in order to compile.
 Open your implementation module's `build.gradle` file. Add the following
 line to the top of the `dependencies {...}` block:
 
-    compile project (':com.liferay.docs.greetingapi')
+    compile project (':modules:greeting-api')
 
-To build your project, run `gradle build` from your project's root directory. To
-deploy it, run `blade deploy build/libs/com.liferay.docs.greetingimpl-1.0.jar`.
+The declaration above assumes your `greeting-api` module is in the root of your
+`modules` folder in your workspace. To build your project, run `../../gradlew
+build` from your project's root directory. To deploy it, run `blade deploy`.
 
 Now you've published an implementation of your `Greeting` interface. To finish,
 you must still provide a way for your implementation to be invoked. Next, you'll
@@ -185,11 +178,11 @@ that you created in the previous section.
 
 To create a client module, run a command like this one:
 
-    blade create service -c GreetingCommand com.liferay.docs.greetingcommand java.lang.Object
+    blade create -t service -s java.lang.Object -p com.liferay.docs.greetingcommand -c GreetingCommand greeting-web
 
 Running this command creates a project with this directory structure:
 
-- `com.liferay.docs.greetingcommand`
+- `greeting-web`
     - `src`
         - `main`
             - `java`
@@ -291,8 +284,8 @@ tutorial.
 Next, edit the generated `bnd.bnd` file so that it looks like this:
 
     -dsannotations: *
-    Bundle-Name: Greeting Command
-    Bundle-SymbolicName: com.liferay.docs.greetingcommand
+    Bundle-Name: Greeting Web
+    Bundle-SymbolicName: greeting.web
     Bundle-Version: 1.0.0.${tstamp}
     Private-Package: com.liferay.docs.greetingcommand
 
@@ -300,40 +293,41 @@ Your client module also needs access to your API module in order to compile.
 Open your implementation module's `build.gradle` file. Add the following
 line to the top of the `dependencies {...}` block:
 
-    compile project (':com.liferay.docs.greetingapi')
+    compile project (':modules:greeting-api')
 
-To build your project, run `gradle build` from your project's root directory. To
-deploy it, run `blade deploy
-build/libs/com.liferay.docs.greetingcommand-1.0.jar`.
+To build your project, run `../../gradlew build` from your project's root
+directory. To deploy it, run `blade deploy`.
 
-Once your service command module has been deployed, open a new terminal and
-access Liferay's Felix Gogo command shell by running `telnet localhost 11311`.
-Enter the `help` command and check that your command is available. You should
-see an entry in the list like this:
+Once your service command module has been deployed, you can check that your
+modules are deployed to your Liferay instance by accessing your Liferay's Felix
+Gogo command shell. Run `blade sh lb` and verify that your modules are deployed
+to Liferay. Then enter the `help` command and check that your command is
+available. You should see an entry in the list like this:
 
     greet:greet
 
-Try out the `greet` command by entering `greet` (or `greet:greet` if you want
-use the full name of the command). You should see a result like this:
+Try out the `greet` command by entering `blade sh greet` (or `greet:greet` if
+you want use the full name of the command). You should see a result like this:
 
-    g! greet
-    gogo: IllegalArgumentException: Cannot coerce greet() to any of [(String)]
+    >blade sh greet
+    ...
+    Caused by: java.lang.IllegalArgumentException: Cannot coerce greet() to any of [(String)]
 
 Uh oh. What went wrong? That's right, your greet command needs a string
 argument. Try invoking your `greet` command with a string argument. For example,
 enter `greet Bob` or `greet "Joe Bloggs"`. You should see a result like this:
 
-    g! greet Bob
+    >blade sh greet Bob
     Hello Bob!
 
 or
 
-    g! greet "Joe Bloggs"
+    >blade sh greet "Joe Bloggs"
     Hello Joe Bloggs!
 
 Great! You've learned how to create API, implementation, and client modules.
 You've also learned how to create a specific kind of client module: the kind
-that be invoked from Liferay's Felix Gogo shell.
+that be invoked from Liferay's Felix Gogo shell using Blade.
 
 ## Related Topics [](id=related-topics)
 
