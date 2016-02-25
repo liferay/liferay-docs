@@ -1,10 +1,14 @@
 package com.liferay.docs.samplecontent.portlet;
 
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
 import javax.portlet.Portlet;
 
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.portal.service.UserLocalService;
 
 @Component(
 	immediate = true,
@@ -20,5 +24,22 @@ import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 	service = Portlet.class
 )
 public class SampleContentPortlet extends MVCPortlet {
+	
+	public void addUsers(ActionRequest request, ActionResponse response) {
+		int userCount = getUserLocalService().getUsersCount();
+		
+		System.out.println("Liferay has " + userCount + " users.");
+	}	
+
+	public UserLocalService getUserLocalService() {
+		return _userLocalService;
+	}
+
+	@Reference
+	public void setUserLocalService(UserLocalService userLocalService) {
+	    _userLocalService = userLocalService;
+	}
+
+	private UserLocalService _userLocalService;
 
 }

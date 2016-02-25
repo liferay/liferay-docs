@@ -1,5 +1,5 @@
+Bundle-Name: Sample Content Portlet
 Bundle-SymbolicName: com.liferay.docs.samplecontent
-
 Bundle-Version: 1.0.0.${tstamp}
 
 Import-Package: \

@@ -1,5 +1,9 @@
-<%@ include file="/init.jsp" %>
+<%@ include file="init.jsp" %>
 
-<p>
-	<b><liferay-ui:message key="com_liferay_docs_samplecontent_SampleContentPortlet.caption"/></b>
-</p>
+<portlet:actionURL name="addUsers" var="addUsersURL"></portlet:actionURL>
+
+<aui:form action="<%= addUsersURL %>" name="<portlet:namespace />addUsersForm">
+	<aui:button-row>
+		<aui:button type="submit"></aui:button>
+	</aui:button-row>
+</aui:form>
