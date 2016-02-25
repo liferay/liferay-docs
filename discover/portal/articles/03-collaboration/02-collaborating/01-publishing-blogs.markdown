@@ -99,17 +99,19 @@ how to specify your blog entry's other characteristics.
 
 The edit screen's first input field--*Drag \& Drop to Upload*--lets you add a
 cover image (optional) for your entry. This might be an image that represents
-your entry's purpose and is designed to attract readers. You can drag and drop
-onto this field any image you like. As an alternative to dragging and dropping
-an image, you can click the *Select File* button to use the image selector to
-choose an existing image attached to the blog, an image file from Documents and
-Media, or an image outside the Liferay instance. You can browse to an image file
-and upload it. After you've uploaded the image, it displays in the image pane.
-To center image content, click on the image and drag it into place with your
-mouse. Then click on the checkmark icon to save the image placement. You can
-even add a caption. And if you want to select a different image, you can click
-the *Change* icon (![Change](../../../images/icon-change.png)) to use a
-different image. Lastly, the 
+your entry's purpose and is designed to attract readers. An [Asset Publisher](/discover/portal/-/knowledge_base/7-0/publishing-assets)
+shows a blog entry's cover image, by default, as part of the blog entry's
+abstract. You can drag and drop onto this field any image you like. As an
+alternative to dragging and dropping an image, you can click the *Select File*
+button to use the image selector to choose an existing image attached to the
+blog, an image file from Documents and Media, or an image outside the Liferay
+instance. You can browse to an image file and upload it. After you've uploaded
+the image, it displays in the image pane. To center image content, click on the
+image and drag it into place with your mouse. Then click on the checkmark icon
+to save the image placement. You can even add a caption. And if you want to
+select a different image, you can click the *Change* icon
+(![Change](../../../images/icon-change.png)) to use a different image. Lastly,
+clicking the trash can icon removes the image from the blog entry.
 
 Clicking the *Configuration* icon (![Gear](../../../images/icon-gear.png)) at the
 top of the entry editor lets you configure the blog entry. You can set a
