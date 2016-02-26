@@ -21,6 +21,17 @@ Liferay:
 - JCRStore (Java Content Repository)
 - S3Store (Amazon Simple Storage)
 
++$$$
+
+**Warning:** If a database transaction rollback occurs in a Document Library
+that uses a file system based store, file system changes that have occurred
+since the start of the transaction won't be reversed. Inconsistencies between
+Document Library files and those in the file system store can occur and may
+require manual synchronization. All stores except DBStore are vulnerable to this
+limitation.
+
+$$$
+
 For example, you can store documents and media files in your Liferay instance's
 database using DBStore. To enable DBStore, add the following line to your
 `portal-ext.properties` file:
