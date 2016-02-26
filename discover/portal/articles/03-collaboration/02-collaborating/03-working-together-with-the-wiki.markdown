@@ -160,11 +160,12 @@ to write. Click there and start entering text.
 
 Next, highlight your pare of your text. Text formatting options appear. They let
 you markup the text as bold or italics, add it to an ordered or unordered list,
-or make it a link. To remove all formatting, click the *Remove Format* icon
-(![Remove Format](../../../images/icon-remove-formatting.png)). To insert an
-image, table, or horizontal line, you can click the `+` icon to bring up the
-insert content menu
-(![Insert](../../../images/icon-content-insert-controls.png)).
+or make it a link. You can also use keyboard shortcuts Ctrl+b for bold, Ctrl+i
+for italics, and Ctrl+u for underline. To remove all formatting, click the
+*Remove Format* icon (![Remove 
+Format](../../../images/icon-remove-formatting.png)). To insert an image, table,
+or horizontal line, you can click the `+` icon to bring up the insert content
+menu (![Insert](../../../images/icon-content-insert-controls.png)).
 
 ![Figure 5: When you highlight text in the wiki page editor, a formatting toolbar appears. You can apply common markups to the text, make it a list item or a link, or remove existing markup.](../../../images/wiki-page-highlight-content-text.png)
 
