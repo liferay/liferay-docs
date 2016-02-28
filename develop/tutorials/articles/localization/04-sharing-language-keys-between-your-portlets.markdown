@@ -76,14 +76,14 @@ in the same project.
         <portlet>
             <portlet-name>yourportlet1</portlet-name>
             ...
-            <resource-bundle>content.Language</resource-bundle>
+            <resource-bundle>content/Language</resource-bundle>
             <portlet-info>
             ...
         </portlet>
         <portlet>
             <portlet-name>yourportlet2</portlet-name>
             ...
-            <resource-bundle>content.Language</resource-bundle>
+            <resource-bundle>content/Language</resource-bundle>
             <portlet-info>
             ...
         </portlet>
