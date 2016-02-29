@@ -1,0 +1,18 @@
+{"Users": [
+	{
+	"Screen Name": "jbloggs1",
+	"First Name": "Joe",
+	"Last Name": "Bloggs",
+	"Male": true,
+	"Job Title": "Tester",
+	"Email Address": "jbloggs1@lunarresort.com"
+	},
+	{
+	"Screen Name": "jbloggs2",
+	"First Name": "Joe",
+	"Last Name": "Bloggs",
+	"Male": true,
+	"Job Title": "Tester",
+	"Email Address": "jbloggs2@lunarresort.com"
+	}
+]}

@@ -1,5 +1,9 @@
 package com.liferay.docs.samplecontent.portlet;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.Calendar;
 import java.util.List;
 
@@ -7,10 +11,14 @@ import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.Portlet;
 
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.json.JSONFactoryUtil;
+import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.util.LocaleUtil;
 import com.liferay.portal.kernel.util.StringPool;
@@ -46,6 +54,36 @@ public class SampleContentPortlet extends MVCPortlet {
 		
 		_userLocalService.addUser(adminUserId, companyId, false, "liferay", "liferay", false, "jjeffries", "jjeffries@lunarresort.com", 0L, StringPool.BLANK, LocaleUtil.getDefault(), "James", StringPool.BLANK, "Jeffries", 0L, 0L, true, Calendar.JANUARY, 1, 1970, "Lunar Associate", new long[0], new long[0], new long[0], new long[0], false, null);
 		_userLocalService.addUser(adminUserId, companyId, false, "liferay", "liferay", false, "msmart", "msmart@lunarresort.com", 0L, StringPool.BLANK, LocaleUtil.getDefault(), "Marvin", StringPool.BLANK, "Smart", 0L, 0L, true, Calendar.JANUARY, 1, 1970, "Lunar Associate", new long[0], new long[0], new long[0], new long[0], false, null);
+	}	
+	
+	public void addUsersFromJSON(ActionRequest request, ActionResponse response) throws PortalException, IOException {
+		long companyId = PortalUtil.getDefaultCompanyId();
+		Role adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		List<User> adminUsers = _userLocalService.getRoleUsers(adminRole.getRoleId());
+		long adminUserId = adminUsers.get(0).getUserId();
+		
+		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
+		URL jsonURL = bundle.getResource("users.json");
+		StringBuilder out = new StringBuilder();
+		BufferedReader br = new BufferedReader(new InputStreamReader(jsonURL.openConnection().getInputStream()));
+		while (br.ready()){
+			out.append(br.readLine());
+		}
+		br.close();	
+		String jsonString = out.toString();
+		
+		JSONObject jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		int numUsers = jsonObject.getJSONArray("Users").length();
+		for (int i = 0; i < numUsers; i++) {
+			String screenName = jsonObject.getJSONArray("Users").getJSONObject(i).getString("Screen Name");
+			String firstName = jsonObject.getJSONArray("Users").getJSONObject(i).getString("First Name");
+			String lastName = jsonObject.getJSONArray("Users").getJSONObject(i).getString("Last Name");
+			boolean male = jsonObject.getJSONArray("Users").getJSONObject(i).getBoolean("Male");
+			String jobTitle = jsonObject.getJSONArray("Users").getJSONObject(i).getString("Job Title");
+			String emailAddress = jsonObject.getJSONArray("Users").getJSONObject(i).getString("Email Address");
+
+			_userLocalService.addUser(adminUserId, companyId, false, "liferay", "liferay", false, screenName, emailAddress, 0L, StringPool.BLANK, LocaleUtil.getDefault(), firstName, StringPool.BLANK, lastName, 0L, 0L, male, Calendar.JANUARY, 1, 1970, jobTitle, new long[0], new long[0], new long[0], new long[0], false, null);
+		}
 	}	
 
 	public void addOrganizations(ActionRequest request, ActionResponse response) throws PortalException {

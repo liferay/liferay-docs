@@ -1,6 +1,7 @@
 <%@ include file="init.jsp" %>
 
 <portlet:actionURL name="addUsers" var="addUsersURL"></portlet:actionURL>
+<portlet:actionURL name="addUsersFromJSON" var="addUsersFromJSONURL"></portlet:actionURL>
 <portlet:actionURL name="addOrganizations" var="addOrganizationsURL"></portlet:actionURL>
 <portlet:actionURL name="addUserGroups" var="addUserGroupsURL"></portlet:actionURL>
 <portlet:actionURL name="addSites" var="addSitesURL"></portlet:actionURL>
@@ -8,6 +9,12 @@
 <aui:form action="<%= addUsersURL %>" name="<portlet:namespace />addUsersForm">
 	<aui:button-row>
 		<aui:button type="submit" value="Add Users"></aui:button>
+	</aui:button-row>
+</aui:form>
+
+<aui:form action="<%= addUsersFromJSONURL %>" name="<portlet:namespace />addUsersFromJSONForm">
+	<aui:button-row>
+		<aui:button type="submit" value="Add Users From JSON"></aui:button>
 	</aui:button-row>
 </aui:form>
 

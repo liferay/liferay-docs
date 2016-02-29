@@ -2,6 +2,7 @@ dependencies {
 	compile 'com.liferay.portal:portal-service:7.0.0-b6'
 	compile 'javax.portlet:portlet-api:2.0'
 	compile 'javax.servlet:servlet-api:2.5'
+	compile 'org.osgi:org.osgi.core:6.0.0'
 	compile 'org.osgi:org.osgi.compendium:5.0.0'
 }
 
