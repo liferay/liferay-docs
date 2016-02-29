@@ -66,15 +66,17 @@ checkbox *Allow users to sync their personal sites?*. Sync is enabled by default
 on all these sites. 
 
 The Advanced section in Settings lets you tune the portal's data exchange with
-Sync clients. The *Max Connections* value specifies the maximum number of
-simultaneous connections each client is allowed per account. For example, if Max
-Connections is three, a client can simultaneously upload or download up to three
-files for each account. Note, this setting operates on a per client basis. If
-the Max Connections is set to three and a user has two clients connected to an
-account (which is possible if Sync is installed on two different machines), then
-the user is effectively allowed six simultaneous connections. While increasing
-Max Connections can speed up file transfers it also places a heavier load on the
-server. *Max Connections* is set to one by default. 
+Sync clients. To enable OAuth, and therefore SSO, check the checkbox *OAuth 
+Enabled*. Note that you must be running Liferay EE to enable OAuth. Next, the 
+*Max Connections* value specifies the maximum number of simultaneous connections 
+each client is allowed per account. For example, if Max Connections is three, a 
+client can simultaneously upload or download up to three files for each account. 
+Note, this setting operates on a per client basis. If the Max Connections is set 
+to three and a user has two clients connected to an account (which is possible 
+if Sync is installed on two different machines), then the user is effectively 
+allowed six simultaneous connections. While increasing Max Connections can speed 
+up file transfers it also places a heavier load on the server. *Max Connections* 
+is set to one by default. 
 
 *Poll Interval* is the next Advanced setting. It's the frequency in seconds that
 clients automatically check the portal for updates. For example, if set to ten,
