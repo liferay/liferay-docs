@@ -51,7 +51,7 @@ appear (In Figure 1, notice the controls above the highlighted word *hiking*).
 These controls let you style the text or convert it to a link or a tweet to
 share your blog post on Twitter. You can also use keyboard shortcuts Ctrl+b for
 bold, Ctrl+i for italics, and Ctrl+u for underline. You can even
-[mention](/discover/portal/-/knowledge_base/7-0/creating-forums-with-message-boards#mentioning-other-users)
+[mention](/discover/portal/-/knowledge_base/7-0/mentioning-users)
 other users by entering the "@" character followed by the user's name.
 
 Whenever you park your cursor in the content area, the *Add* icon (`+`) appears.
