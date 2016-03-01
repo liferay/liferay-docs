@@ -1,18 +1,18 @@
 {"Users": [
 	{
-	"Screen Name": "jbloggs1",
-	"First Name": "Joe",
-	"Last Name": "Bloggs",
+	"Screen Name": "jjeffries",
+	"First Name": "James",
+	"Last Name": "Jeffries",
 	"Male": true,
-	"Job Title": "Tester",
-	"Email Address": "jbloggs1@lunarresort.com"
+	"Job Title": "Lunar Associate",
+	"Email Address": "jjeffries@lunarresort.com"
 	},
 	{
-	"Screen Name": "jbloggs2",
-	"First Name": "Joe",
-	"Last Name": "Bloggs",
+	"Screen Name": "msmart",
+	"First Name": "Marvin",
+	"Last Name": "Smart",
 	"Male": true,
-	"Job Title": "Tester",
-	"Email Address": "jbloggs2@lunarresort.com"
+	"Job Title": "Lunar Associate",
+	"Email Address": "msmart@lunarresort.com"
 	}
 ]}
