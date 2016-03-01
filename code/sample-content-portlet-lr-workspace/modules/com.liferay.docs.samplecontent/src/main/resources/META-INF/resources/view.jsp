@@ -3,6 +3,7 @@
 <portlet:actionURL name="addUsers" var="addUsersURL"></portlet:actionURL>
 <portlet:actionURL name="addUsersFromJSON" var="addUsersFromJSONURL"></portlet:actionURL>
 <portlet:actionURL name="addOrganizations" var="addOrganizationsURL"></portlet:actionURL>
+<portlet:actionURL name="addOrganizationsFromJSON" var="addOrganizationsFromJSONURL"></portlet:actionURL>
 <portlet:actionURL name="addUserGroups" var="addUserGroupsURL"></portlet:actionURL>
 <portlet:actionURL name="addSites" var="addSitesURL"></portlet:actionURL>
 
@@ -21,6 +22,12 @@
 <aui:form action="<%= addOrganizationsURL %>" name="<portlet:namespace />addOrganizationsForm">
 	<aui:button-row>
 		<aui:button type="submit" value="Add Organizations"></aui:button>
+	</aui:button-row>
+</aui:form>
+
+<aui:form action="<%= addOrganizationsFromJSONURL %>" name="<portlet:namespace />addOrganizationsFromJSONForm">
+	<aui:button-row>
+		<aui:button type="submit" value="Add Organizations From JSON"></aui:button>
 	</aui:button-row>
 </aui:form>
 

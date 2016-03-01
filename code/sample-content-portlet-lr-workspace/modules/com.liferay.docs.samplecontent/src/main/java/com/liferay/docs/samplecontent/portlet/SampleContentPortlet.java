@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Calendar;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -17,6 +19,7 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.json.JSONArray;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -115,6 +118,58 @@ public class SampleContentPortlet extends MVCPortlet {
 		_organizationLocalService.addOrganization(adminUserId, salesOrgId, "Retail Group", true);
 	}	
 
+	public void addOrganizationsFromJSON(ActionRequest request, ActionResponse response) throws PortalException, IOException {
+		long companyId = PortalUtil.getDefaultCompanyId();
+		Role adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		List<User> adminUsers = _userLocalService.getRoleUsers(adminRole.getRoleId());
+		long adminUserId = adminUsers.get(0).getUserId();
+		
+		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
+		URL jsonURL = bundle.getResource("organizations.json");
+		StringBuilder out = new StringBuilder();
+		BufferedReader br = new BufferedReader(new InputStreamReader(jsonURL.openConnection().getInputStream()));
+		while (br.ready()){
+			out.append(br.readLine());
+		}
+		br.close();	
+		String jsonString = out.toString();
+		
+		JSONObject jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		JSONArray orgs = jsonObject.getJSONArray("Organizations");
+		
+		Queue<JSONOrgWrapper> queue = new LinkedList<JSONOrgWrapper>();
+		
+		for (int i = 0; i < orgs.length(); i++) {
+			JSONOrgWrapper jsonOrgWrapper = new JSONOrgWrapper(orgs.getJSONObject(i), StringPool.BLANK);
+
+			queue.add(jsonOrgWrapper);
+		}
+		
+		while (!queue.isEmpty()) {
+			JSONOrgWrapper jsonOrgWrapper = queue.remove();
+			String orgName = jsonOrgWrapper.getJSONObject().getString("Name");
+			JSONArray subOrgs = jsonOrgWrapper.getJSONObject().getJSONArray("Organizations");
+			
+			String parentOrgName = jsonOrgWrapper.getParentOrgName();
+			if (StringPool.BLANK.equals(parentOrgName)) {
+				_organizationLocalService.addOrganization(adminUserId, 0L, orgName, true);
+			}
+			else {
+				long parentOrgId = _organizationLocalService.getOrganizationId(companyId, parentOrgName);
+				_organizationLocalService.addOrganization(adminUserId, parentOrgId, orgName, true);
+			}
+
+			if (subOrgs == null) {
+				continue;
+			}
+			
+			for (int i = 0; i < subOrgs.length(); i++) {
+				JSONOrgWrapper jsonSubOrgWrapper = new JSONOrgWrapper(subOrgs.getJSONObject(i), orgName);
+				queue.add(jsonSubOrgWrapper);
+			}
+		}
+	}	
+
 	public void addUserGroups(ActionRequest request, ActionResponse response) throws PortalException {
 		long companyId = PortalUtil.getDefaultCompanyId();
 		Role adminRole = _roleLocalService.getRole(companyId, "Administrator");
@@ -184,5 +239,33 @@ public class SampleContentPortlet extends MVCPortlet {
 	private UserGroupLocalService _userGroupLocalService;
 	private GroupLocalService _groupLocalService;
 	private RoleLocalService _roleLocalService;
+	
+	private class JSONOrgWrapper {
+		
+		public JSONOrgWrapper(JSONObject jsonObject, String parentOrgName) {
+			_jsonObject = jsonObject;
+			_parentOrgName = parentOrgName;
+		}
+		
+		public JSONObject getJSONObject() {
+			return _jsonObject;
+		}
+		
+		public String getParentOrgName() {
+			return _parentOrgName;
+		}
+		
+		public void setJSONObject(JSONObject jsonObject) {
+			_jsonObject = jsonObject;
+		}
+		
+		public void setJSONObject(String parentOrgName) {
+			_parentOrgName = parentOrgName;
+		}
+		
+		private JSONObject _jsonObject;
+		private String _parentOrgName;
+		
+	}
 
 }
