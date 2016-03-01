@@ -207,6 +207,7 @@ The values you need to specify in your `liferay-server-context.plist` are:
 - `groupId`: The site identifier of the default site you want Screens to 
   communicate with. You can find this value in the Site ID field of the site's 
   *Site Administration* &rarr; *Configuration* &rarr; *Site Settings* menu. 
+- `connectorFactoryClassName`: Optionally, you can specify here the class name of your connector's factory class. If you don't include this value, the `version` value will be used to determine which factory is the most suitable for that version of Liferay Portal.
 
 Great! Your iOS project is ready for Liferay Screens. 
 
