@@ -1,0 +1,10 @@
+{"User Groups": [
+	{
+	"Name": "List Creators",
+	"Description": "The List Creators user group can manage dynamic data lists in the Lunar Resort."
+	},
+	{
+	"Name": "Message Board Administrators",
+	"Description": "The Message Board Administrators user group can manage message boards in the Lunar Resort."
+	}
+]}

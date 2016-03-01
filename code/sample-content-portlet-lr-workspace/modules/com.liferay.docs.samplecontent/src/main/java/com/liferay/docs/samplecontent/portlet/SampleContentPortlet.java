@@ -76,14 +76,14 @@ public class SampleContentPortlet extends MVCPortlet {
 		String jsonString = out.toString();
 		
 		JSONObject jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
-		int numUsers = jsonObject.getJSONArray("Users").length();
-		for (int i = 0; i < numUsers; i++) {
-			String screenName = jsonObject.getJSONArray("Users").getJSONObject(i).getString("Screen Name");
-			String firstName = jsonObject.getJSONArray("Users").getJSONObject(i).getString("First Name");
-			String lastName = jsonObject.getJSONArray("Users").getJSONObject(i).getString("Last Name");
-			boolean male = jsonObject.getJSONArray("Users").getJSONObject(i).getBoolean("Male");
-			String jobTitle = jsonObject.getJSONArray("Users").getJSONObject(i).getString("Job Title");
-			String emailAddress = jsonObject.getJSONArray("Users").getJSONObject(i).getString("Email Address");
+		JSONArray users = jsonObject.getJSONArray("Users");
+		for (int i = 0; i < users.length(); i++) {
+			String screenName = users.getJSONObject(i).getString("Screen Name");
+			String firstName = users.getJSONObject(i).getString("First Name");
+			String lastName = users.getJSONObject(i).getString("Last Name");
+			boolean male = users.getJSONObject(i).getBoolean("Male");
+			String jobTitle = users.getJSONObject(i).getString("Job Title");
+			String emailAddress = users.getJSONObject(i).getString("Email Address");
 
 			_userLocalService.addUser(adminUserId, companyId, false, "liferay", "liferay", false, screenName, emailAddress, 0L, StringPool.BLANK, LocaleUtil.getDefault(), firstName, StringPool.BLANK, lastName, 0L, 0L, male, Calendar.JANUARY, 1, 1970, jobTitle, new long[0], new long[0], new long[0], new long[0], false, null);
 		}
@@ -183,6 +183,32 @@ public class SampleContentPortlet extends MVCPortlet {
 		_userGroupLocalService.addUserGroup(
 				adminUserId, companyId, "Message Board Administrators",
 				"The Message Board Administrators user group can manage message boards in the Lunar Resort.", null);
+	}	
+
+	public void addUserGroupsFromJSON(ActionRequest request, ActionResponse response) throws PortalException, IOException {
+		long companyId = PortalUtil.getDefaultCompanyId();
+		Role adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		List<User> adminUsers = _userLocalService.getRoleUsers(adminRole.getRoleId());
+		long adminUserId = adminUsers.get(0).getUserId();
+
+		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
+		URL jsonURL = bundle.getResource("user-groups.json");
+		StringBuilder out = new StringBuilder();
+		BufferedReader br = new BufferedReader(new InputStreamReader(jsonURL.openConnection().getInputStream()));
+		while (br.ready()){
+			out.append(br.readLine());
+		}
+		br.close();	
+		String jsonString = out.toString();
+		
+		JSONObject jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		JSONArray userGroups = jsonObject.getJSONArray("User Groups");
+		for (int i = 0; i < userGroups.length(); i++) {
+			String name = userGroups.getJSONObject(i).getString("Name");
+			String description = userGroups.getJSONObject(i).getString("Description");
+
+			_userGroupLocalService.addUserGroup(adminUserId, companyId, name, description, null);
+		}
 	}	
 
 	public void addSites(ActionRequest request, ActionResponse response) {
