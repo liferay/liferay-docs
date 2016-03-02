@@ -56,10 +56,11 @@ appears when installing or upgrading the tool.
 
 ![Figure 5.16: Drag the Liferay Sync icon to the Applications folder.](../../images/sync-mac-install.png)
 
-Now that you've installed sync, you're ready to configure it! The configuration 
+Now that you've installed Sync, you're ready to configure it! The configuration 
 steps for Sync on Windows and Mac are identical. First, enter your portal's
-address along with your account credentials. Click *Sign In* when you're
-finished. 
+address. If your portal authenticates with SSO (single sign-on), Sync signs you 
+in via your portal's sign-in page. Otherwise, enter your account credentials and 
+click *Sign In*. 
 
 Sync offers you a warm greeting and lists the sites in your portal that you can
 sync with. If there's a long list of sites that you don't want to scroll through
