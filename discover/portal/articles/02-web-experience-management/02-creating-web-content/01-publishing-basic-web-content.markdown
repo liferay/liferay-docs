@@ -46,7 +46,9 @@ the Site Administration &rarr; *Content* menu. You'll now observe the *Default
 Scope* option. Select the *Gear* icon
 (![Gear](../../../images/icon-control-menu-gear.png)) and choose the page you
 configured. Now the content created in this app is scoped to the *Lunar Rover*
-page only.
+page only. For more information on scoping content in an application, visit the
+[Application Scope](/discover/portal/-/knowledge_base/7-0/application-scope)
+section.
 
 ![Figure 1: You can choose where to create content by navigating to the Site Administration menu and selecting your site and page scope.](../../../images/site-page-scopes.png)
 
