@@ -38,7 +38,7 @@ import com.liferay.portal.util.PortalUtil;
 	property = {
 		"com.liferay.portlet.display-category=category.sample",
 		"com.liferay.portlet.instanceable=true",
-		"javax.portlet.display-name=com.liferay.docs.samplecontent Portlet",
+		"javax.portlet.display-name=Sample Content Portlet",
 		"javax.portlet.security-role-ref=power-user,user",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
