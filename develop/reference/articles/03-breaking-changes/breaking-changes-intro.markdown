@@ -3788,3 +3788,143 @@ There is no direct replacement. You should remove all usages of the
 This change was made as a part of the ongoing strategy to deprecate unused tags.
 
 ---------------------------------------
+
+### Removed the Ability to Specify Class Loaders in Scripting
+- **Date:** 2016-Feb-17
+- **JIRA Ticket:** LPS-63180
+
+#### What changed?
+
+- `com.liferay.portal.kernel.scripting.ScriptingExecutor` no longer uses the
+provided class loaders in the eval methods.
+- `com.liferay.portal.kernel.scripting.Scripting` no longer uses the provided
+class loaders and servlet context names in eval and exec methods.
+
+#### Who is affected?
+
+- All implementations of `com.liferay.portal.kernel.scripting.ScriptingExecutor`
+are affected.
+- All classes that call `com.liferay.portal.kernel.scripting.Scripting` are
+affected.
+
+#### How should I update my code?
+
+You should remove class loader and servlect context parameters from calls to the
+modified methods.
+
+#### Why was this change made?
+
+This change was made since custom class loader management is no longer necessary
+in the OSGi container.
+
+---------------------------------------
+
+### User Operation and Importer/Exporter Classes and Utilities Have Been Moved or Removed From portal-kernel
+- **Date:** 2016-Feb-17
+- **JIRA Ticket:** LPS-63205
+
+#### What changed?
+
+- `com.liferay.portal.kernel.security.exportimport.UserImporter`,
+`com.liferay.portal.kernel.security.exportimport.UserExporter`,
+and `com.liferay.portal.kernel.security.exportimport.UserOperation`  have been
+moved from portal-kernel to the portal-security-export-import-api module.
+
+- `com.liferay.portal.kernel.security.exportimport.UserImporterUtil` and
+`com.liferay.portal.kernel.security.exportimport.UserExporterUtil` have been
+removed with no replacement.
+
+#### Who is affected?
+
+- All implementations of
+`com.liferay.portal.kernel.security.exportimport.UserImporter` or
+`com.liferay.portal.kernel.security.exportimport.UserExporter`
+are affected.
+
+- All code that uses
+`com.liferay.portal.kernel.security.exportimport.UserImporterUtil`,
+`com.liferay.portal.kernel.security.exportimport.UserExporterUtil`,
+`com.liferay.portal.kernel.security.exportimport.UserImporter`, or
+`com.liferay.portal.kernel.security.exportimport.UserExporter`
+is affected.
+
+#### How should I update my code?
+
+If you are in an OSGi module, you can simply inject the UserImporter or
+UserExporter references
+
+    @Reference
+    private UserExporter_userExporter;
+
+    @Reference
+    private UserImporter _userImporter;
+
+If you are in a legacy WAR or WAB, you will need a snippet like:
+
+    Bundle bundle = FrameworkUtil.getBundle(getClass());
+
+    BundleContext bundleContext = bundle.getBundleContext();
+
+    ServiceReference<UserImporter> serviceReference =
+        bundleContext.getServiceReference(UserImporter.class);
+
+    UserImporter userImporter = bundleContext.getService(serviceReference);
+
+#### Why was this change made?
+
+The change was made to improve modularity of the user import/export subsystem in
+the product.
+
+---------------------------------------
+
+### Deprecated Category Entry for Users
+- **Date:** 2016-Feb-22
+- **JIRA Ticket:** LPS-63466
+
+#### What changed?
+
+The category entry for Site Administration &rarr; Users has been deprecated in
+favor of Site Administration &rarr; Members.
+
+#### Who is affected?
+
+All developers who specified a `control-panel-entry-category` to be visible in
+Site Administration &rarr; Users are affected.
+
+#### How should I update my code?
+
+You should change the entry from `site_administration.users` to
+`site_administration.members` to make it visible in the category.
+
+#### Why was this change made?
+
+This change standardizes naming conventions and separates concepts between Users
+in the Control Panel and Site Members.
+
+---------------------------------------
+
+### Deprecated Category Entry for Pages
+- **Date:** 2016-Feb-25
+- **JIRA Ticket:** LPS-63667
+
+#### What changed?
+
+The category entry for Site Administration &rarr; Pages has been deprecated in
+favor of Site Administration &rarr; Navigation.
+
+#### Who is affected?
+
+All developers who specified a `control-panel-entry-category` to be visible in
+Site Administration &rarr; Pages are affected.
+
+#### How should I update my code?
+
+You should change the entry from `site_administration.pages` to
+`site_administration.navigation` to make it visible in the category.
+
+#### Why was this change made?
+
+This change standardizes naming conventions and separates concepts in Product
+Menu
+
+---------------------------------------
