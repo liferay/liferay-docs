@@ -43,12 +43,29 @@ site-by-site basis. Sync Connector installs the same as any other Liferay
 plugin. Once you've installed Sync, it's enabled by default for all the portal's
 sites, so you can start using it. 
 
-If you want to use Sync Admin's default settings and are fine with Sync being
-enabled for all the portal's sites, you can skip the next section. Before
-directing your users to install and configure the Sync desktop and mobile
-clients, however, **Make sure to read** this guide's sections on preventing
-accidental file deletion, and ensuring Sync security and **warn your users**
-about the potential for accidental data loss.
+If you want to use Sync Admin's default settings, are fine with Sync being 
+enabled for all the portal's sites, and aren't using SSO (single sign-on), you 
+can skip the next two sections. Before directing your users to install and 
+configure the Sync desktop and mobile clients, however, **Make sure to read** 
+this guide's sections on preventing accidental file deletion and ensuring Sync 
+security, and **warn your users** about the potential for accidental data loss. 
+
+## Configuring Sync to Use SSO
+
+If your portal uses a SSO (single sign-on) server, there are some steps you must 
+take to ensure that Sync can work properly. First, you must be running Liferay 
+EE to use Sync with SSO. You must also ensure that Sync can access the following 
+URLs without being redirected to your SSO server. Sync can't work without direct 
+access to these URLs. You must therefore whitelist these URLs in your server: 
+
+    http(s)://<portal-address>/c/portal/oauth/*
+    http(s)://<portal-address>/api/jsonws/sync-web.*
+    http(s)://<portal-address>/sync-web/*
+
+Sync accesses these URLs to obtain and use an OAuth token for signing requests. 
+Your Liferay instance must therefore use the 
+[OAuth Provider app from Liferay Marketplace](https://www.liferay.com/marketplace/-/mp/application/45261909). 
+You must also enable OAuth in the Sync Admin app. Sync Admin is discussed next. 
 
 ## Using Sync Admin to Configure Liferay Sync [](id=using-sync-admin-to-configure-liferay-sync)
 
@@ -65,18 +82,19 @@ Sync?*. You can also disable user personal sites from syncing by unchecking the
 checkbox *Allow users to sync their personal sites?*. Sync is enabled by default
 on all these sites. 
 
-The Advanced section in Settings lets you tune the portal's data exchange with
-Sync clients. To enable OAuth, and therefore SSO, check the checkbox *OAuth 
-Enabled*. Note that you must be running Liferay EE to enable OAuth. Next, the 
-*Max Connections* value specifies the maximum number of simultaneous connections 
-each client is allowed per account. For example, if Max Connections is three, a 
-client can simultaneously upload or download up to three files for each account. 
-Note, this setting operates on a per client basis. If the Max Connections is set 
-to three and a user has two clients connected to an account (which is possible 
-if Sync is installed on two different machines), then the user is effectively 
-allowed six simultaneous connections. While increasing Max Connections can speed 
-up file transfers it also places a heavier load on the server. *Max Connections* 
-is set to one by default. 
+The Advanced section in Settings lets you tune the portal's data exchange with 
+Sync clients. To enable OAuth, and therefore SSO, check *OAuth Enabled*. Note 
+that to enable OAuth here, you must be running Liferay EE and the 
+[OAuth Provider app from Liferay Marketplace](https://www.liferay.com/marketplace/-/mp/application/45261909). 
+Next, the *Max Connections* value specifies the maximum number of simultaneous 
+connections each client is allowed per account. For example, if Max Connections 
+is three, a client can simultaneously upload or download up to three files for 
+each account. Note, this setting operates on a per client basis. If the Max 
+Connections is set to three and a user has two clients connected to an account 
+(which is possible if Sync is installed on two different machines), then the 
+user is effectively allowed six simultaneous connections. While increasing Max 
+Connections can speed up file transfers it also places a heavier load on the 
+server. *Max Connections* is set to one by default. 
 
 *Poll Interval* is the next Advanced setting. It's the frequency in seconds that
 clients automatically check the portal for updates. For example, if set to ten,
