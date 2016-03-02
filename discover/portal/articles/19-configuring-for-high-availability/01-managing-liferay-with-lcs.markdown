@@ -236,13 +236,27 @@ section of the *Control Panel*.
 
 ![Figure 19.3: LCS appears in your Control Panel as Liferay Connected Services, in the Apps section.](../../images/lcs-post-install-01.png)
 
-After clicking *Authorize Access* on the screen that appears, you are then taken 
-to the LCS website. Log in with your credentials and then click *Grant Access*.
+The LCS client first asks you to choose the LCS services you want to enable for 
+this portal instance. The *Enable All Services* checkbox is selected by default. 
+This enables portal analytics, fix pack management (for EE portals), and portal 
+property analysis. Unchecking this checkbox presents you with additional 
+checkboxes for enabling each of those services. Note that the *Fix Packs 
+Management* option is unavailable for Liferay CE. Also note that although 
+[LCS doesn't access security sensitive properties](/discover/portal/-/knowledge_base/6-1/managing-liferay-with-liferay-connected-services#what-lcs-stores-about-your-liferay-servers), 
+you may have additional properties you want to prevent LCS from analyzing. If 
+you select *Portal Properties Analysis*, a text box appears for you to enter any 
+properties you don't want LCS to analyze. Click *Next* when you finish enabling 
+the LCS services you want to use. 
 
-![Figure 19.4: The LCS client requires access to your LCS account.](../../images/lcs-auth-access.png)
+![Figure 19.4: Select the LCS services that you want to enable for your portal.](../../images/lcs-enable-services.png)
 
-Next, you need to register your server with LCS by filling out the following 
-fields:
+Next, LCS asks you to authorize access to your LCS account. After clicking 
+*Authorize Access*, LCS takes you to the LCS website. Log in with your 
+credentials and then click *Grant Access*. 
+
+![Figure 19.5: The LCS client requires access to your LCS account.](../../images/lcs-auth-access.png)
+
+Now you must register your server with LCS by filling out the following fields:
 
 1. Connected Services Project: Choose an existing LCS project from the menu. If 
    you don't yet have an LCS project, you can use the default *My LCS Project* 
@@ -257,7 +271,7 @@ fields:
    asks you to enter the new environment's *Name*, *Location*, and 
    *Description*. 
 
-    ![Figure 19.5: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
+    ![Figure 19.6: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
 
 3. Server Name: Give your server a name that you can use to distinguish it in 
    your LCS account.
@@ -269,7 +283,7 @@ fields:
    server. You can use this field to help differentiate the servers you are 
    managing using LCS.
 
-![Figure 19.6: The server registration screen.](../../images/lcs-register-server.png)
+![Figure 19.7: The server registration screen.](../../images/lcs-register-server.png)
 
 Upon clicking *Register*, your LCS client shows your connection status. Note 
 that it can take up to 10 or 20 seconds to perform the initial handshake and 
@@ -277,8 +291,6 @@ send the first batch of information to LCS. If you don't see any change in
 status after 20 seconds, try refreshing the page. If you see a red symbol 
 indicating no data is being transmitted, please contact the Liferay team for 
 support. 
-
-![Figure 19.7: The server is connecting to LCS.](../../images/lcs-server-connecting.png)
 
 Once a successful connection is established, some statistics and links are
 displayed. Here's a description of what's displayed:
@@ -301,12 +313,10 @@ displayed. Here's a description of what's displayed:
   The project home in LCS is also called the *dashboard*.
 - **Environment:** This link takes you to this server's registered environment.
 - **Server Dashboard:** This link takes you to the server on LCS.
+- **Configure Services:** This link lets you change which LCS services are 
+  enabled for your portal. Doing so triggers reconnection with the new settings. 
 - **Disconnect:** Disconnects this Liferay instance from LCS.
-- **Reset Credentials:** Removes the authorizing account from registration with 
-  LCS. It's important to note that your credentials are not human readable in 
-  the portal instance. This is because OAuth, which uses tokens, is used for 
-  authentication.
- 
+
 ![Figure 19.8: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
 Awesome! Now that you've registered your server with your LCS account, you can 
@@ -388,7 +398,7 @@ the correct LCS roles.
 
 Each environment and server in LCS is part of an LCS project. LCS provides a 
 simple UI for managing these projects. To access this UI, log in to LCS and then 
-select *Manage Projects* from your user menu in the dockbar. The following 
+select *Manage Projects* from your user menu in the Dockbar. The following 
 screenshot illustrates this.
 
 ![Figure 19.9: To manage your LCS projects, select *Manage Projects* from the user menu in LCS.](../../images/lcs-user-menu-manage-projects.png)
@@ -659,11 +669,9 @@ differently. Fix packs are broken down into those that are available for
 installation and those that are already installed. You can access these through 
 the Available and Installed tabs at the top of the fix packs table. The Server 
 table lists your server's name, description, and location. You can edit these 
-values by clicking the pencil icon next to each. You can also move the server to 
-a different environment by selecting the environment from the *Move to 
-Environment* selector. If you no longer want the server in LCS, click the 
-*Unregister* button to remove it. Note that this doesn't alter your actual 
-server; it just removes it from your LCS project.
+values by clicking the pencil icon next to each. If you no longer want the 
+server in LCS, click the *Unregister* button to remove it. Note that this 
+doesn't alter your actual server; it just removes it from your LCS project. 
 
 ![Figure 19.21: The LCS server Overview lets you view and edit the basic information of a server registered with LCS.](../../images/lcs-server-overview.png)
 
@@ -678,14 +686,26 @@ useful to the Liferay support team in the event that you need their assistance.
 LCS also lets you view your portal's property values. To do so, click the 
 *Portal Properties* button near the top of the page. Your portal's properties 
 and their values are shown in a searchable table. This gives you a convenient 
-display for seeing exactly what your portal properties are set to. By checking 
-only the *Show Default Values* checkbox, the table shows only the portal's 
-default property values. By checking only the *Show Custom Values* checkbox, the 
-table shows only the portal property values that differ from default. For 
-example, if you change a property setting via a `portal-ext.properties` file, 
-that setting then appears in the Portal Properties table when the *Show Custom 
-Values* checkbox is checked. To show both default and custom property values, 
-check both checkboxes.
+display for seeing exactly what your portal properties are set to. The 
+properties in this table are organized into the following categories:
+
+- **Default Values:** The default values for your portal's properties. 
+
+- **Custom Values:** Any custom values you've set for your portal's properties. 
+  This includes any property values you change via a `portal-ext.properties` 
+  file.
+
+- **Dynamic Properties:** Any property values set at runtime. For example, the 
+  [Liferay Home](/discover/portal/-/knowledge_base/6-1/app-servers#liferay-home) 
+  folder's location depends on your configuration. To always specify this folder 
+  when setting any properties that require it, you can use `${liferay.home}` 
+  instead of an absolute directory path. 
+
+You can display any combination of these categories by selecting the 
+corresponding checkboxes at the top of the table. For example, by checking the 
+*Show Default Values* and *Show Custom Values* checkboxes, the table shows your 
+portal's default and custom property values. To show only the custom values, 
+check only the checkbox for *Show Custom Values*. 
 
 ![Figure 19.23: With only the *Show Custom Values* checkbox checked, this table shows only the portal property values that differ from default.](../../images/lcs-server-portal-properties.png)
 
@@ -711,16 +731,13 @@ by default. Click *Add Rule* to define one.
 
 First specify the project, environment, and server for the notification. Note
 that you have the option of selecting all environments and servers in a
-project. Then check the checkbox for each event that you want to trigger an
-email notification. For example, the notification rule in the illustration
-above tells LCS to send you an email whenever any server in any of the
-project's environments unexpectedly goes offline. You should note that this
-differs from normal shutdown events, which don't trigger email notifications.
-During normal server shutdown, the server communicates this status to LCS. An
-email notification is only generated when the connection with the server is 
-abruptly terminated. Click *Save* when you're done defining the notification 
-rule. It then appears in a table along with any other existing rules. Each has 
-an Actions button that lets you edit or delete it. 
+project. Then check the checkbox for each event that you want to trigger an 
+email notification. For example, if you create a notification rule with *The 
+server unexpectedly shuts down* selected for all servers and environments in 
+your project, then LCS sends you an email when any server in your project goes 
+offline without a normal shut down event. Click *Save* when you're done defining 
+the notification rule. It then appears in a table along with any other existing 
+rules. Each has an Actions button that lets you edit or delete it. 
 
 Great! Now you know how to set notification rules in LCS. The next section shows 
 you how to use environment tokens to automatically register Liferay instances 
@@ -810,17 +827,12 @@ credentials are used when they create a token file.
 
 What if your Liferay instance has already been manually registered with LCS,
 but you want to switch to using an environment token? No problem! Follow these
-steps:  
+steps: 
 
-1. Use the LCS client portlet to disconnect and reset the credentials in the 
-   Liferay instance. Then press the *Back* button to the left of the Control 
-   Panel text in the Dockbar. Pressing *Back* deletes the current OAuth 
-   credentials. 
-
-2. Shut down your Liferay instance and place the token file in the portal's 
+1. Shut down your Liferay instance and place the token file in the portal's 
    `data` folder. 
 
-3. Restart your Liferay instance. The LCS client portlet uses the token file to 
+2. Restart your Liferay instance. The LCS client portlet uses the token file to 
    connect to LCS automatically. 
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
