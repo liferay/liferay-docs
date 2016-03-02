@@ -54,18 +54,34 @@ security, and **warn your users** about the potential for accidental data loss.
 
 If your portal uses a SSO (single sign-on) server, there are some steps you must 
 take to ensure that Sync can work properly. First, you must be running Liferay 
-EE to use Sync with SSO. You must also ensure that Sync can access the following 
-URLs without being redirected to your SSO server. Sync can't work without direct 
-access to these URLs. You must therefore whitelist these URLs in your server: 
+EE. To work with SSO, Sync requires Liferay's 
+[EE-only OAuth Provider app](https://www.liferay.com/marketplace/-/mp/application/45261909). 
+This app is included with the 
+[Sync Connector EE app](https://www.liferay.com/marketplace/-/mp/application/31709100). 
+Make sure that you don't undeploy OAuth Provider if you plan to use Sync with 
+SSO. You must also enable OAuth in the Sync Admin app. The next section 
+discusses Sync Admin. 
+
+You must also ensure that Sync can access the following URLs without being 
+redirected to your SSO server. Sync can't work without direct access to these 
+URLs. You must therefore whitelist these URLs in your web server: 
 
     http(s)://<portal-address>/c/portal/oauth/*
     http(s)://<portal-address>/api/jsonws/sync-web.*
     http(s)://<portal-address>/sync-web/*
 
-Sync accesses these URLs to obtain and use an OAuth token for signing requests. 
-Your Liferay instance must therefore use the 
-[OAuth Provider app from Liferay Marketplace](https://www.liferay.com/marketplace/-/mp/application/45261909). 
-You must also enable OAuth in the Sync Admin app. Sync Admin is discussed next. 
+For example, if your portal's address is `https://www.joesblog.com`, then you 
+must whitelist the following URLs in your web server: 
+
+    https://www.joesblog.com/c/portal/oauth/*
+    https://www.joesblog.com/api/jsonws/sync-web.*
+    https://www.joesblog.com/sync-web/*
+
+Sync uses the paths specified by the first URL for communication via OAuth, and 
+the paths specified in the remaining URLs for normal communication with your 
+portal. 
+
+Next, you'll learn how to use Sync Admin to configure Sync. 
 
 ## Using Sync Admin to Configure Liferay Sync [](id=using-sync-admin-to-configure-liferay-sync)
 
@@ -85,7 +101,7 @@ on all these sites.
 The Advanced section in Settings lets you tune the portal's data exchange with 
 Sync clients. To enable OAuth, and therefore SSO, check *OAuth Enabled*. Note 
 that to enable OAuth here, you must be running Liferay EE and the 
-[OAuth Provider app from Liferay Marketplace](https://www.liferay.com/marketplace/-/mp/application/45261909). 
+[OAuth Provider app](https://www.liferay.com/marketplace/-/mp/application/45261909). 
 Next, the *Max Connections* value specifies the maximum number of simultaneous 
 connections each client is allowed per account. For example, if Max Connections 
 is three, a client can simultaneously upload or download up to three files for 
