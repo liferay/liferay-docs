@@ -9,8 +9,9 @@ Let's start with Document Library store options.
 ## Document Library Store Options [](id=document-library-store-options)
 
 By default, Liferay stores documents and media files on the file system of the
-server it's running on. You can choose a specific location for the
-document library store's root directory by adding the following property to a 
+server it's running on. You can specify a location for the
+document library store's root directory by adding a
+`dl.store.file.system.root.dir` portal property to a
 `portal-ext.properties` file in your [Liferay home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home)
 and replacing the default path value with your custom path:
 
@@ -39,8 +40,8 @@ limitation.
 $$$
 
 For example, you can store documents and media files in your Liferay instance's
-database using DBStore. To enable DBStore, add the following line to your
-`portal-ext.properties` file:
+database using DBStore. To enable DBStore, add the following [`dl.store.impl`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
+portal property to a `portal-ext.properties` file in your [Liferay home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home):
 
     dl.store.impl=com.liferay.portlet.documentlibrary.store.DBStore
 
@@ -104,13 +105,15 @@ the same.
 
 In order to authenticate with the third-party repository, you need to store
 passwords for the user sessions. In your [Liferay home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home),
-set the following portal property in a `portal-ext.properties` file:
+set a [`session.store.password`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Session)
+portal property to `true` in a `portal-ext.properties` file:
 
     session.store.password=true
 
 Next, make sure to authenticate the same way on both Liferay and
 the external repository. You can do so by authenticating based on screen
-name. So, add the following property to your `portal-ext.properties` file: 
+name. So, add the following [`company.security.auth.type`]( https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Company)
+portal property to your `portal-ext.properties` file: 
 
     company.security.auth.type=screenName
 
