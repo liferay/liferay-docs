@@ -50,7 +50,7 @@ configure the Sync desktop and mobile clients, however, **Make sure to read**
 this guide's sections on preventing accidental file deletion and ensuring Sync 
 security, and **warn your users** about the potential for accidental data loss. 
 
-## Configuring Sync to Use SSO
+## Configuring Sync to Use SSO [](id=configuring-sync-to-use-sso)
 
 If your portal uses a SSO (single sign-on) server, there are some steps you must 
 take to ensure that Sync can work properly. First, you must be running Liferay 
@@ -60,7 +60,7 @@ This app is included with the
 [Sync Connector EE app](https://www.liferay.com/marketplace/-/mp/application/31709100). 
 Make sure that you don't undeploy OAuth Provider if you plan to use Sync with 
 SSO. You must also enable OAuth in the Sync Admin app. The next section 
-discusses Sync Admin. 
+discusses this. 
 
 You must also ensure that Sync can access the following URLs without being 
 redirected to your SSO server. Sync can't work without direct access to these 
@@ -77,7 +77,7 @@ must whitelist the following URLs in your web server:
     https://www.joesblog.com/api/jsonws/sync-web.*
     https://www.joesblog.com/sync-web/*
 
-Sync uses the paths specified by the first URL for communication via OAuth, and 
+Sync uses the paths specified in the first URL for communication via OAuth, and 
 the paths specified in the remaining URLs for normal communication with your 
 portal. 
 
