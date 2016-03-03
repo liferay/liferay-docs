@@ -7,7 +7,7 @@
 - Liferay Screens Compatibility Plugin (
   [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-  depending on your portal edition). 
+  depending on your portal edition). Only needed in 6.2. 
 
 ## Compatibility [](id=compatibility)
 
