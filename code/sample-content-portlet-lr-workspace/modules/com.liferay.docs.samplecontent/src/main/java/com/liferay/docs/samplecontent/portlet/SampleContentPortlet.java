@@ -25,8 +25,10 @@ import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.util.LocaleUtil;
 import com.liferay.portal.kernel.util.StringPool;
+import com.liferay.portal.model.Organization;
 import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
+import com.liferay.portal.model.UserGroup;
 import com.liferay.portal.service.OrganizationLocalService;
 import com.liferay.portal.service.RoleLocalService;
 import com.liferay.portal.service.UserGroupLocalService;
@@ -74,7 +76,27 @@ public class SampleContentPortlet extends MVCPortlet {
 			String jobTitle = users.getJSONObject(i).getString("Job Title");
 			String emailAddress = users.getJSONObject(i).getString("Email Address");
 
-			_userLocalService.addUser(adminUserId, companyId, false, "liferay", "liferay", false, screenName, emailAddress, 0L, StringPool.BLANK, LocaleUtil.getDefault(), firstName, StringPool.BLANK, lastName, 0L, 0L, male, Calendar.JANUARY, 1, 1970, jobTitle, new long[0], new long[0], new long[0], new long[0], false, null);
+			JSONArray userGroups = users.getJSONObject(i).getJSONArray("User Groups");
+			int userGroupsLength = userGroups.length();
+			long[] userGroupIds = new long[userGroupsLength];
+			for (int j = 0; j < userGroupsLength; j++) {
+				String userGroupName = userGroups.getString(j);
+				UserGroup userGroup = _userGroupLocalService.getUserGroup(companyId, userGroupName);
+				long userGroupId = userGroup.getUserGroupId();
+				userGroupIds[j] = userGroupId;
+			}
+
+			JSONArray organizations = users.getJSONObject(i).getJSONArray("Organizations");
+			int organizationsLength = organizations.length();
+			long[] organizationIds = new long[organizationsLength];
+			for (int j = 0; j < organizationsLength; j++) {
+				String organizationName = organizations.getString(j);
+				Organization organization = _organizationLocalService.getOrganization(companyId, organizationName);
+				long organizationId = organization.getOrganizationId();
+				organizationIds[j] = organizationId;
+			}
+
+			_userLocalService.addUser(adminUserId, companyId, false, "liferay", "liferay", false, screenName, emailAddress, 0L, StringPool.BLANK, LocaleUtil.getDefault(), firstName, StringPool.BLANK, lastName, 0L, 0L, male, Calendar.JANUARY, 1, 1970, jobTitle, new long[0], organizationIds, new long[0], userGroupIds, false, null);
 		}
 	}	
 
