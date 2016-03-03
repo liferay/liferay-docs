@@ -58,6 +58,8 @@ screenshot:
 
 ![Figure 1: You can set a Screenlet's layout via its `liferay:layoutId` attribute.](../../images/screens-android-layoutid-xml.png)
 
+You can also set a theme by setting the style attribute `themeName` in your application theme.
+
 That's all there is to it! Great! Now you know how to use Views to spruce up 
 your Android Screenlets. This opens up a world of possibilities, like 
 [writing your own Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views). 

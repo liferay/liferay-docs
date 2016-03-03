@@ -200,6 +200,8 @@ Screenlet's UI design and behavior.
 
 There are several different View types:
 
+**Themed:** presents the same structure as the current view but alters the theme colors and tints the resources used on the view. All existing views can be themed with different styles, the colors will reflect the current value of the android [color palette](http://developer.android.com/intl/es/training/material/theme.html#ColorPalette) and each theme has aliases that can be overridden (to use Westeros viewset structure with Material colors, for example).
+
 **Child:** presents the same behavior and UI components as its parent, but can
 change the UI components' appearance and position. A Child View specifies visual
 changes in its own layout XML file; it inherits the parent's view class and
