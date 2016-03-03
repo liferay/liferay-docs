@@ -1,4 +1,4 @@
-# Application Permissions
+# Application Permissions [](id=application-permissions)
 
 All of Liferay's apps support Liferay's robust, fine-grained permissions
 system. Some higher level permissions can be configured in the permissions tab

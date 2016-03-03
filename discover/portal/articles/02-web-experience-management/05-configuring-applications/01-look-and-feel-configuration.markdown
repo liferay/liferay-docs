@@ -1,4 +1,4 @@
-# Look and Feel Configuration
+# Look and Feel Configuration [](id=look-and-feel-configuration)
 
 An administrator can access the look and feel configuration menu of any Liferay
 application by clicking on the *Options* icon

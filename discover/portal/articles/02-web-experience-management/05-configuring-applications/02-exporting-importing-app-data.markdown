@@ -1,4 +1,4 @@
-# Exporting/Importing App Data
+# Exporting/Importing App Data [](id=exporting-importing-app-data)
 
 There are times when you want to export/import specific content created from an
 application, and not deal with site data at all. Many Liferay apps allow you to

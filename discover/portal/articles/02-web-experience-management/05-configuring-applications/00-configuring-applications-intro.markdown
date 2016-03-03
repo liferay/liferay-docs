@@ -1,4 +1,4 @@
-# Configuring Applications
+# Configuring Applications [](id=configuring-applications)
 
 Just like siblings have common features inherited from their parents,
 applications that ship with Liferay also share common features. These include

@@ -1,4 +1,4 @@
-# Configuration Templates
+# Configuration Templates [](id=configuration-templates)
 
 Once you've configured an application, Configuration Templates enable you to
 save those settings in a reusable template. If someone goes in and changes the
