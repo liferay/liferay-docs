@@ -9,8 +9,8 @@ Since Liferay 7.0, the
 [Form Navigator](/participate/liferaypedia/-/wiki/Main/Form+Navigator) framework
 enables you to add new sections and section categories dynamically to existing
 form navigation. The framework includes a well-described API and a powerful
-[`liferay-ui`](http://docs.liferay.com/portal/7.0-a1/taglibs/liferay-ui)
-tag called  [`form-navigator`](http://docs.liferay.com/portal/7.0-a1/taglibs/liferay-ui/form-navigator.html).
+[`liferay-ui`](http://docs.liferay.com/portal/7.0/taglibs/liferay-ui)
+tag called  [`form-navigator`](http://docs.liferay.com/portal/7.0/taglibs/liferay-ui/form-navigator.html).
 It's easy to use and facilitates organizing large forms into sections of input
 and categories. 
 
@@ -48,7 +48,7 @@ Form Navigator implementations contain the following parts:
 
 Liferay's Form Navigator implementations meet all these requirements. They're
 implemented similarly and their IDs are published in the Javadoc for the class
-[`FormNavigatorConstants`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html).
+[`FormNavigatorConstants`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html).
 
 +$$$
 
@@ -77,13 +77,11 @@ Let's set up a component portlet project to support form navigation.
 
 First, your component portlet must be implemented as an OSGi bundle. You
 can develop it in any environment that supports creating a bundle. Please refer
-to the Liferay 7 tutorial
-[Introduction](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/introduction)
-section to learn about development environments. The Form Nav Extension portlet
-was created with BLADE based on the `blade.portlet.jsp` template. The tutorials
-in the section
-[Creating Liferay Plugins\/Bundles in the BLADE Environment](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-plugins-bundles-in-the-blade-environment)
-show you how.   
+to the Liferay 7 tutorial section
+[Understanding Liferay's Module Framework](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/understanding-liferays-module-framework)
+to learn about development environments. The Form Nav Extension portlet
+was created with BLADE based on the `blade.portlet.jsp` template. This is also
+covered in the tutorial section linked above.
 
 A Form Navigator extension bundle's metadata must do the following things:
 
@@ -177,7 +175,7 @@ extensions.
 ### Step 3: Identify the form navigator and category you're extending [](id=step-3-identify-the-form-navigator-and-category-youre-extending)
 
 Liferay's class
-[`FormNavigatorConstants`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
+[`FormNavigatorConstants`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
 specifies constant values for all the portlet Form Navigators and categories.
 The identifiers follow the naming conventions below, where you substitue *FOO*
 for the navigator's or category's name: 
@@ -191,7 +189,7 @@ you're extending--you'll refer to them in your Java classes in the next steps.
 ### Step 4: Create new categories [](id=step-4-create-new-categories)
 
 To add a new category, create a class that implements the
-[`FormNavigatorCategory`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorCategory.html)
+[`FormNavigatorCategory`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorCategory.html)
 interface. The class needs a `@Component` annotation to register it as a
 service in Liferay's module framework. Here are the things your category class's
 component annotation should do: 
@@ -214,14 +212,14 @@ Here's an example component annotation for a category:
     )
 
 Next, you implement the
-[`FormNavigatorCategory`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorCategory.html)
+[`FormNavigatorCategory`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorCategory.html)
 methods:
 
 -   `getFormNavigatorId`: Return the Form Navigator's constant you noted
     previously from
-    [`FormNavigatorConstants`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
+    [`FormNavigatorConstants`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
 -   `getKey`: Return an identifier for your category. You can optionally
-    create a public class like [`FormNavigatorConstants`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html),
+    create a public class like [`FormNavigatorConstants`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html),
     to publish your project's identifiers. 
 -   `getLabel(Locale)`: Return the localized category label. You can create a
     `Language.properties` file in your project's `src/main/resources/content` 
@@ -277,9 +275,9 @@ Form Navigator sections.
 
 To add a new section (entry) that uses a JSP, create a class that extends
 the abstract base class
-[`BaseJSPFormNavigatorEntry`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/BaseJSPFormNavigatorEntry.html)
+[`BaseJSPFormNavigatorEntry`](https://docs.liferay.com/portal/7.0/javadocs/portal-service/com/liferay/portal/kernel/servlet/taglib/ui/BaseJSPFormNavigatorEntry.html)
 and implements the
-[`FormNavigatorEntry`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorEntry.html)
+[`FormNavigatorEntry`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorEntry.html)
 interface. The `BaseJSPFormNavigatorEntry` base class integrates the section's
 JSP with the Form Navigator. In both these parts of your class declaration, you must
 specify the Form Navigator's model bean class as the generic type on which they
@@ -291,13 +289,13 @@ decarlation would be like this:
 
 There are a couple different ways to determine the model bean class.
 If you can access the Form Navigator's JSP source code, inspect the
-[`form-navigator`](http://docs.liferay.com/portal/7.0-a1/taglibs/liferay-ui/form-navigator.html)
+[`form-navigator`](http://docs.liferay.com/portal/7.0/taglibs/liferay-ui/form-navigator.html)
 element's `formModelBean` attribute value. The model bean class is the class
 type of the object passed in as the `form-navigator`'s `formModelBean`
 attribute. 
 
 You can also deduce the model bean class from the name of the ID's constant in
-[`FormNavigatorConstants`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html).
+[`FormNavigatorConstants`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html).
 The word(s) right after `FORM_NAVIGATOR_ID_` in the constant's name hints at
 the class type. For example, if the navigator's ID is
 `FORM_NAVIGATOR_ID_USERS_SETTINGS`, then `User` is the model bean class; if the
@@ -345,19 +343,19 @@ annotation should look similar to the previous example's annotation. Next,
 you'll implement the entry class's methods.
 
 The
-[`FormNavigatorEntry`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorEntry.html)
+[`FormNavigatorEntry`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorEntry.html)
 implementation must implement the following methods: 
 
 -   `getFormNavigatorId`: Return the Form Navigator's constant you noted
     previously from
-    [`FormNavigatorConstants`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
+    [`FormNavigatorConstants`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
 
 -   `getCategoryKey`: Return the Form Navigator category constant you noted
     previously from
-    [`FormNavigatorConstants`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
+    [`FormNavigatorConstants`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
 
 -   `getKey`: Return an identifier for your entry. You can optionally create a
-    public class like [`FormNavigatorConstants`](http://docs.liferay.com/portal/7.0-a1/javadocs/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html),
+    public class like [`FormNavigatorConstants`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html),
     to publish your project's identifiers. 
 
 -   `getLabel(Locale)`: Return the entry's localized label. You can create a
@@ -575,6 +573,6 @@ You did it all! You now know what it takes to extend Liferay Form Navigators.
 <!-- TODO Add a link to the tutorial on implementing form navigation in a
 custom portlet -->
 
-[Creating a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/creating-a-portlet-application)
+[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 
-[Using JSPs in a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/using-jsps-in-a-portlet-application)
+[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
