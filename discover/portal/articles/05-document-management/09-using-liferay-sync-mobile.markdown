@@ -21,17 +21,18 @@ to learn how to use it.
 ## Connecting to Your Portal [](id=connecting-to-your-portal)
 
 When Liferay Sync first starts on your mobile device, press the *Get Started*
-button to begin setup. The setup screen asks for your login credentials and your
-portal's address. Once you enter them, press *Sign In*. After signing in, the
-app takes you to a panel that shows your name, a gear icon for accessing the
-app's settings, and navigation options *My Sites* and *My Documents*. My Sites and
-My Documents encompass the portal sites you can sync with. My Documents is your
-personal user site, while My Sites shows the other sites with which you can
-sync. No matter how deep you are in the folder hierarchy of a site, swiping to
-the right returns you to this panel. If you're in the first level of My Sites or
-My Documents, pressing the location bar at the top slides the screen slightly to
-the right to reveal a compact view of the panel. The following screenshots show
-both views of the panel. 
+button to begin setup. First, enter your portal's address. If your portal 
+authenticates with SSO (single sign-on), Sync signs you in via your portal's 
+sign-in page. Otherwise, enter your account credentials and press *Sign In*. 
+After signing in, the app takes you to a panel that shows your name, a gear icon 
+for accessing the app's settings, and navigation options *My Sites* and *My 
+Documents*. My Sites and My Documents encompass the portal sites you can sync 
+with. My Documents is your personal user site, while My Sites shows the other 
+sites with which you can sync. No matter how deep you are in the folder 
+hierarchy of a site, swiping to the right returns you to this panel. If you're 
+in the first level of My Sites or My Documents, pressing the location bar at the 
+top slides the screen slightly to the right to reveal a compact view of the 
+panel. The following screenshots show both views of the panel. 
 
 ![Figure 5.26: This panel lets you access the app's settings, as well as your sites and documents.](../../images/sync-mobile-panel.png)
 
