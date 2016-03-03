@@ -196,7 +196,6 @@ class:
     import com.liferay.mobile.screens.bookmark.AddBookmarkScreenlet;
     import com.liferay.mobile.screens.bookmark.R;
     import com.liferay.mobile.screens.util.LiferayLogger;
-    import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 
     public class AddBookmarkView extends LinearLayout implements AddBookmarkViewModel, View.OnClickListener {
 
@@ -225,7 +224,6 @@ class:
         @Override
         public void showFailedOperation(String actionName, Exception e) {
             LiferayLogger.e("Could not add bookmark", e);
-            LiferayCrouton.error(getContext(), "Could not add bookmark", e);
         }
         
         @Override
