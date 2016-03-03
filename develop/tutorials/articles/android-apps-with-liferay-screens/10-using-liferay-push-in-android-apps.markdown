@@ -61,7 +61,7 @@ Liferay Push Client for Android:
 
 		...
 
-		compile 'com.liferay.mobile:liferay-push:1.0.2'
+		compile 'com.liferay.mobile:liferay-push:1.0.7'
 	}
 
 Make sure your app's `liferay-plugin-package.properties` file specifies the Push
