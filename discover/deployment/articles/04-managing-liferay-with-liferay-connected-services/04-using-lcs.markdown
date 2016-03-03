@@ -24,6 +24,12 @@ available in LCS:
   applying fix packs, monitoring server status, viewing server metrics, and 
   more. 
 
+- [**Managing Liferay EE Subscriptions:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-liferay-ee-subscriptions)
+  Learn how to view and manage your Liferay EE subscriptions for the servers in 
+  your LCS project. This includes elastic subscriptions for auto-scaling 
+  environments. Note that to use these features, your Liferay instances must be 
+  running Liferay 6.2 EE Service Pack 15 or higher. 
+
 - [**Configuring LCS Notifications:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#configuring-lcs-notifications)
   Learn how to configure LCS to send you notification emails when specific 
   events occur in your LCS projects.
@@ -254,12 +260,13 @@ and alerts. As with the project view, fix packs and alerts are displayed in
 tables. These tables behave exactly the same here as they do in the project 
 view. The only difference is that they show fix packs and alerts for the 
 environment instead of the whole project. The Environment table displays details 
-about the environment, such as its name, description, and location. You can edit 
-these fields by clicking the blue pencil icon next to each. You can also delete 
-the environment by clicking the Delete button below the Environment table. 
-Clicking the Automatic Registration button lets you generate and view 
-*environment tokens* that allow automatic configuration of LCS clients. See the 
-section below for more information on environment tokens. 
+about the environment, such as its name, description, location, type, and 
+Liferay EE subscription type. Fields with a blue pencil icon can be edited by 
+clicking the icon. You can also delete the environment by clicking the Delete 
+button below the Environment table. Clicking the Automatic Registration button 
+lets you generate and view *environment tokens* that allow automatic 
+configuration of LCS clients. See the section below for more information on 
+environment tokens. 
 
 ![Figure 4.16: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
@@ -387,7 +394,70 @@ check only the checkbox for *Show Custom Values*.
 
 As you can see, the LCS Dashboard is a powerful tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 
-are running. Next, you'll learn how to configure notifications in LCS.
+are running. Next, you'll learn how to use LCS to manage your Liferay EE 
+subscriptions. 
+
+## Managing Liferay EE Subscriptions [](id=managing-liferay-ee-subscriptions)
+
+LCS also lets you view and manage your Liferay EE subscriptions. You can view 
+your project's subscriptions, see how they're being used, assign an environment 
+to a subscription type, and more. You can access these features from the 
+*Subscriptions* tab on the upper-left of the LCS site. Note that to use these 
+features, your Liferay instances must be running Liferay 6.2 EE Service Pack 15 
+or higher. 
+
+![Figure 4.24: The *Subscriptions* tab in LCS lets you view and manage your Liferay EE subscriptions.](../../images/lcs-subscriptions.png)
+
+LCS presents subscription information in the *Details* and *Elastic 
+Subscriptions* tabs. When you select *Subscriptions*, the *Details* tab is shown 
+first. This tab shows you basic information on your subscriptions and lets you 
+assign subscription types to your LCS environments. In *Details*, the 
+*Subscriptions* table shows you a list of Liferay EE subscriptions available for 
+your LCS project. For each subscription, the table shows the following 
+information:
+
+- Start Date
+- Expiration Date
+- Support End Date
+- Platform
+- Product
+- Processor Cores Allowed
+- Servers Allowed
+- Servers Used
+
+Below this table is the *Subscriptions Usage* table. The *Subscriptions Usage* 
+table shows you how you're currently utilizing your subscriptions. For each 
+subscription type, this table shows the servers allowed, servers used, and 
+servers available. The *Project Environments* table, below the *Subscriptions 
+Usage* table, shows the subscription type you've assigned to each environment. 
+You can also use this table to assign a subscription type to an environment. 
+Note that all the servers in an environment must be shut down to assign a 
+subscription type. These assignments are also reflected in the *Project Servers* 
+table. This table shows the environment and subscription type for each server in 
+your LCS project. 
+
+The *Elastic Subscriptions* tab displays information about the elastic 
+subscriptions in your project. For this tab to appear, you must have at least 
+one environment in your project set to the elastic subscription type. Elastic 
+subscriptions let you register an unlimited number of Liferay servers, unlike 
+other subscriptions that limit you to a certain number of servers. This is 
+invaluable in auto-scaling environments, where servers are automatically created 
+and destroyed in response to server load. The following screenshot shows the 
+*Elastic Subscriptions* tab. 
+
+![Figure 4.25: The *Elastic Subscriptions* tab displays details about your servers registered under the elastic subscription type.](../../images/lcs-elastic-subscriptions.png)
+
+This tab displays the number of online elastic servers and the uptime details 
+for each. The number of online elastic servers per day is shown in a graph. 
+Uptime statistics are displayed in a table that lists each elastic server's 
+start time, end time, and duration. Below the table, the total duration for all 
+elastic servers is also shown. Above the table, you can click the *Download 
+Report* button to download a report of these data. Also, you can use the 
+*Environment* and *Month* selectors above the graph to select the environment 
+and month to show data from, respectively. The data in both the graph and the 
+table reflect your selections here. 
+
+Next, you'll learn how to configure notifications in LCS. 
 
 ## Configuring LCS Notifications [](id=configuring-lcs-notifications)
 
@@ -403,7 +473,7 @@ from the user menu in the upper-right corner of LCS. You're presented with the
 *Add Rule* button and a table that lists any existing rules. There are no rules 
 by default. Click *Add Rule* to define one. 
 
-![Figure 4.24: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
+![Figure 4.26: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
 
 First specify the project, environment, and server for the notification. Note
 that you have the option of selecting all environments and servers in a
@@ -461,7 +531,7 @@ one: the environment view. Navigate to an environment in LCS and click the
 *Automatic Registration* button. From here you can manage the environment's 
 token. 
 
-![Figure 4.25: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../images/lcs-environment-token.png)
+![Figure 4.27: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../images/lcs-environment-token.png)
 
 By default, there's no existing token. A table appears that contains only a 
 *Generate* button. Click it to generate a token for the environment. The new 
@@ -475,7 +545,7 @@ Registration* button. The table shows the tokens for all the environments in
 your project. This provides a central location to manage all your environment 
 tokens. Otherwise, the UI for managing them is exactly the same. 
 
-![Figure 4.26: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images/lcs-environment-token-02.png)
+![Figure 4.28: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images/lcs-environment-token-02.png)
 
 Once you have an environment token, use the following steps to register a
 previously unregistered Liferay instance with LCS:
@@ -499,7 +569,7 @@ their LCS account's *My Account* &rarr; *OAuth Authorizations* menu. If they
 have previously registered portal instances with LCS, their existing
 credentials are used when they create a token file. 
 
-![Figure 4.27: The OAuth authorization entry in the portal instance using an environment token to connect to LCS.](../../images/lcs-token-oauth-entry.png)
+![Figure 4.29: The OAuth authorization entry in the portal instance using an environment token to connect to LCS.](../../images/lcs-token-oauth-entry.png)
 
 What if your Liferay instance has already been manually registered with LCS,
 but you want to switch to using an environment token? No problem! Follow these
