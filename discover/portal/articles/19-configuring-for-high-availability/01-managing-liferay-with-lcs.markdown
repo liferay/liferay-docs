@@ -331,6 +331,14 @@ instance. If you're not already there, log in with your account on
 view server metrics, manage environments, invite external users to your project, 
 and more. 
 
++$$$
+
+**Note:** To use LCS's Liferay EE subscriptions management feature, you must be 
+running Liferay 6.2 EE Service Pack 15 or higher. The subscriptions management 
+feature doesn't work with Liferay 6.1 CE or EE. 
+
+$$$
+
 This article's following sections each detail one or more of the features 
 available in LCS: 
 
