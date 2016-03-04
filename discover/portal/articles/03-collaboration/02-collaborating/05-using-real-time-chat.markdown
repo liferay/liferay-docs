@@ -12,6 +12,15 @@ navigating to Control Panel &rarr; *Apps* &rarr; *Store*. You can learn more
 about Marketplace and how to purchase/download an app in 
 [the article on using Marketplace](/discover/portal/-/knowledge_base/7-0/leveraging-the-liferay-marketplace). 
 
++$$$
+
+**Note:** There is currently an issue where the Chat app only works 
+intermittently. See 
+[the ticket LPS-63827](https://issues.liferay.com/browse/LPS-63827) 
+for more details, and to follow progress on the fix. 
+
+$$$
+
 The Chat app is very simple to use. To change its settings, click its *Settings* 
 button at the lower-right corner next to *Online Friends*. Here you can set your 
 status and choose whether to show that you're online. You can also choose 
