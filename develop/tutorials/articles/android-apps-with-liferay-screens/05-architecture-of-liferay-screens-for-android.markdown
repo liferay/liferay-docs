@@ -13,10 +13,11 @@ examining Screens's building blocks!
 ## High-Level Architecture [](id=high-level-architecture)
 
 Liferay Screens for Android is composed of a Core, a Screenlet layer, a View
-layer, Interactors and Server Connectors. Interactors are technically part of the core, but are 
-worth covering separately. They facilitate interaction with both local and
-remote data sources, as well as communication between the Screenlet layer and
-the [Liferay Mobile SDK](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/mobile). 
+layer, Interactors, and Server Connectors. Interactors are technically part of 
+the core, but are worth covering separately. They facilitate interaction with 
+both local and remote data sources, as well as communication between the 
+Screenlet layer and the 
+[Liferay Mobile SDK](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/mobile). 
 
 ![Figure 1: Here are the high-level components of Liferay Screens for Android. The dashed arrow connectors represent a "uses" relationship, in which a component uses the component its pointing to.](../../images/screens-android-architecture-01.png)
 
@@ -26,22 +27,29 @@ Each component is described below.
 It's a micro-framework that lets developers write their own Screenlets, Views,
 and Interactors.
 
-**Screenlets:** Java view classes for inserting into any activity or fragment view
-hierarchy. They render a selected layout in the runtime and in Android Studio's
-visual editor and react to UI events, sending any necessary server requests.
-You can set a screentlet's properties from its layout XML file and Java classes.
-The Screenlets bundled with Liferay Screens are known collectively as the
+**Screenlets:** Java view classes for inserting into any activity or fragment 
+view hierarchy. They render a selected layout in the runtime and in Android 
+Studio's visual editor and react to UI events, sending any necessary server 
+requests. You can set a screentlet's properties from its layout XML file and 
+Java classes. The Screenlets bundled with Liferay Screens are known collectively 
+as the 
 [Screenlet Library](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
 
-**Server Connectors**: a collection of classes that can interact with different Liferay portal versions. They abstract the concepts of managing the liferay portal version, allowing the developer to call to the API methods without having to worry about the specific version of Liferay (currently 62 or 7). Call the right interactor accordingly.
+**Server Connectors:** a collection of classes that interact with different 
+Liferay versions. These classes abstract away the complexity of communicating 
+with different Liferay versions. This allows the developer to call API methods 
+and the correct Interactor without worrying about the specific Liferay version 
+(currently 6.2 or 7). 
 
 **Interactors:** implement specific use cases for communicating with servers.
 They can use local and remote data sources. Most Interactors use the
 [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile) 
 to exchange data with a Liferay instance. If a user action or use case needs to 
 execute more than one query on a local or remote store, the sequence is done 
-in the corresponding Interactor. If a screenlet supports more than one user 
-action or use case, an Interactor needs to be created for each. Usually they are bound to one specific version of Liferay Portal (and instanciated by a Server Connector).
+in the corresponding Interactor. If a Screenlet supports more than one user 
+action or use case, an Interactor must be created for each. Interactors are 
+typically bound to one specific Liferay version, and instantiated by a Server 
+Connector. 
 
 **Views:** a set of layouts and accompanying custom view classes that present 
 Screenlets to the user.
@@ -110,16 +118,26 @@ a singleton object that holds server configuration parameters. It's loaded from
 the `server_context.xml` file, or from any other XML file that overrides the
 keys defined in the `server_context.xml`.
 
-[**server_context.xml:**](https://github.com/liferay/liferay-screens/blob/develop/android/library/core/src/main/res/values/server_context.xml) specifies the default server, company and groupId. It's also the place to configure the current version of Liferay Portal (with the attribute *liferay_portal_version* or an alternative *ServiceVersionFactory* to access custom backends).
+[**server_context.xml:**](https://github.com/liferay/liferay-screens/blob/develop/android/library/core/src/main/res/values/server_context.xml) 
+specifies the default server, `companyId` (Liferay instance ID) and `groupId` 
+(site ID). You can also configure other Screens parameters in this file, such as 
+the current Liferay version (with the attribute `liferay_portal_version`) or an 
+alternative `ServiceVersionFactory` to access custom backends. 
 
 [**LiferayScreensContext:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/context/LiferayScreensContext.java)
 a singleton object that holds a reference to the application context. It's used
 internally where necessary. 
 
-[**ServiceVersionFactory:**](https://github.com/liferay/liferay-screens/blob/develop/android/library/core/src/main/java/com/liferay/mobile/screens/util/ServiceVersionFactory.java) an interface that defines all the server operations supported in Liferay Screens. It's created and accessed through a [ServiceProvider](https://github.com/liferay/liferay-screens/blob/develop/android/library/core/src/main/java/com/liferay/mobile/screens/util/ServiceProvider.java) that created the server connectors depending on the Liferay portal version. It's an implementation of an [Abstract Factory pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern).
+[**ServiceVersionFactory:**](https://github.com/liferay/liferay-screens/blob/develop/android/library/core/src/main/java/com/liferay/mobile/screens/util/ServiceVersionFactory.java) 
+an interface that defines all the server operations supported in Liferay 
+Screens. This is created and accessed through a 
+[`ServiceProvider`](https://github.com/liferay/liferay-screens/blob/develop/android/library/core/src/main/java/com/liferay/mobile/screens/util/ServiceProvider.java) 
+that creates the Server Connectors needed to interact with a specific Liferay 
+version. The `ServiceVersionFactory` is an implementation of an 
+[Abstract Factory pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern). 
 
-Now that you know what the core layer comprises, you're ready to learn the 
-Screenlet layer's details.
+Now that you know what makes up the core layer, you're ready to learn the 
+Screenlet layer's details. 
 
 ## Screenlet Layer [](id=screenlet-layer)
 
@@ -172,7 +190,10 @@ Interactor. The
 class, however, supports several use cases (load the form, load a record, submit
 the form, etc.), so it uses a different Interactor class for each use case.
 
-**MyScreenletConnector62** and **MyScreenletConnector70**: the classes responsible of creating the right interactors depending on the Liferay Portal version. The **ServiceProvider** creates a singleton **ServiceVersionFactory** that returns the right connector.
+**MyScreenletConnector62** and **MyScreenletConnector70**: the classes that 
+create the Interactors required to communicate with a specific Liferay version. 
+The `ServiceProvider` creates a singleton `ServiceVersionFactory` that returns 
+the right Connector. 
 
 **MyScreenletDefaultView:** a class that renders the Screenlet's UI with the
 default layout. The class in Figure 3, for example, belongs to the Default View
@@ -208,7 +229,13 @@ Screenlet's UI design and behavior.
 
 There are several different View types:
 
-**Themed:** presents the same structure as the current view but alters the theme colors and tints the resources used on the view. All existing views can be themed with different styles, the colors will reflect the current value of the android [color palette](http://developer.android.com/intl/es/training/material/theme.html#ColorPalette) and each theme has aliases that can be overridden (to use Westeros viewset structure with Material colors, for example).
+**Themed:** presents the same structure as the current View, but alters the 
+theme colors and tints of the View's resources. All existing Views can be themed 
+with different styles. The View's colors reflect the current value of the 
+Android 
+[color palette](https://www.google.com/design/spec/style/color.html#color-color-palette). 
+Each theme also has aliases that can be overridden. For example, you can use the 
+Westeros View Set's structure with the Material View Set's colors. 
 
 **Child:** presents the same behavior and UI components as its parent, but can
 change the UI components' appearance and position. A Child View specifies visual

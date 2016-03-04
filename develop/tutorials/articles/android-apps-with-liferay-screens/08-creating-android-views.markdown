@@ -8,7 +8,13 @@ file for specifying the UI. The four Liferay Screens View types support
 different levels of customization and parent View inheritance. Here's what each
 View type offers: 
 
-**Themed:** presents the same structure as the current view but alters the theme colors and tints the resources used on the view. All existing views can be themed with different styles, the colors will reflect the current value of the android [color palette](http://developer.android.com/intl/es/training/material/theme.html#ColorPalette) and each theme has aliases that can be overridden (to use Westeros viewset structure with Material colors, for example).
+**Themed View:** presents the same structure as the current View, but alters the 
+theme colors and tints of the View's resources. All existing Views can be themed 
+with different styles. The View's colors reflect the current value of the 
+Android 
+[color palette](https://www.google.com/design/spec/style/color.html#color-color-palette). 
+Each theme also has aliases that can be overridden. For example, you can use the 
+Westeros View Set's structure with the Material View Set's colors. 
 
 **Child View:** presents the same UI components as its parent View, but lets 
 you change their appearance and position.
@@ -39,14 +45,20 @@ application module; the tutorial
 [Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-android-screenlets)
 explains how. When your View's project is in place, you can start creating it. 
 
-First, you'll learn how to create a Child View.
+First, you'll learn how to create a Themed View. 
 
-## Themed View [](id=themed-view)
+## Themed View
 
-If you specify a viewset in your application theme by using the attribute `themeName` you'll be able to customize your current viewset in several ways:
+If you use the `themeName` attribute to specify a View Set in your app's theme, 
+then you can customize your current View Set in several ways: 
 
-* Each screenlet that receives a different layout (new or from another viewset) will inherit the general style and colors from the viewset and the structure of the layout.
-* If you specify/override the values of the android palette (primaryColor, secondaryColor...) you'll reuse the general structure of the viewset but be able to use the new colors (also with tinted resources).
+- Each Screenlet that receives a different layout (new or from another View Set) 
+inherits the general style and colors from the View Set, and the layout's 
+structure. 
+
+- If you specify or override the Android color palette's values (for example, 
+`primaryColor`, `secondaryColor`, etc...) you'll reuse the View Set's general 
+structure, but be able to use the new colors (also with tinted resources). 
 
 ## Child View [](id=child-view)
 
