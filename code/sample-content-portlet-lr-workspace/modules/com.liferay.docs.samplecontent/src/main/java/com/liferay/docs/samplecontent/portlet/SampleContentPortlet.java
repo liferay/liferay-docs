@@ -95,8 +95,14 @@ public class SampleContentPortlet extends MVCPortlet {
 				long organizationId = organization.getOrganizationId();
 				organizationIds[j] = organizationId;
 			}
-
-			_userLocalService.addUser(adminUserId, companyId, false, "liferay", "liferay", false, screenName, emailAddress, 0L, StringPool.BLANK, LocaleUtil.getDefault(), firstName, StringPool.BLANK, lastName, 0L, 0L, male, Calendar.JANUARY, 1, 1970, jobTitle, new long[0], organizationIds, new long[0], userGroupIds, false, null);
+			
+			try {
+				_userLocalService.addUser(adminUserId, companyId, false, "liferay", "liferay", false, screenName, emailAddress, 0L, StringPool.BLANK, LocaleUtil.getDefault(), firstName, StringPool.BLANK, lastName, 0L, 0L, male, Calendar.JANUARY, 1, 1970, jobTitle, new long[0], organizationIds, new long[0], userGroupIds, false, null);
+			}
+			catch (PortalException pe) {
+				// TODO
+				pe.printStackTrace();
+			}
 		}
 	}	
 
@@ -134,11 +140,23 @@ public class SampleContentPortlet extends MVCPortlet {
 			
 			String parentOrgName = jsonOrgWrapper.getParentOrgName();
 			if (StringPool.BLANK.equals(parentOrgName)) {
-				_organizationLocalService.addOrganization(adminUserId, 0L, orgName, true);
+				try {
+					_organizationLocalService.addOrganization(adminUserId, 0L, orgName, true);
+				}
+				catch (PortalException pe) {
+					// TODO
+					pe.printStackTrace();
+				}
 			}
 			else {
 				long parentOrgId = _organizationLocalService.getOrganizationId(companyId, parentOrgName);
-				_organizationLocalService.addOrganization(adminUserId, parentOrgId, orgName, true);
+				try {
+					_organizationLocalService.addOrganization(adminUserId, parentOrgId, orgName, true);
+				}
+				catch (PortalException pe) {
+					// TODO
+					pe.printStackTrace();
+				}
 			}
 
 			if (subOrgs == null) {
@@ -174,7 +192,13 @@ public class SampleContentPortlet extends MVCPortlet {
 			String name = userGroups.getJSONObject(i).getString("Name");
 			String description = userGroups.getJSONObject(i).getString("Description");
 
-			_userGroupLocalService.addUserGroup(adminUserId, companyId, name, description, null);
+			try {
+				_userGroupLocalService.addUserGroup(adminUserId, companyId, name, description, null);
+			}
+			catch (PortalException pe) {
+				// TODO
+				pe.printStackTrace();
+			}
 		}
 	}	
 
