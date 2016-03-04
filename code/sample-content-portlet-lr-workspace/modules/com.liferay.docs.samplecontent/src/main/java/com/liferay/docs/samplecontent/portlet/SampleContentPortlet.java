@@ -22,6 +22,8 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.json.JSONArray;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.util.LocaleUtil;
 import com.liferay.portal.kernel.util.StringPool;
@@ -100,8 +102,7 @@ public class SampleContentPortlet extends MVCPortlet {
 				_userLocalService.addUser(adminUserId, companyId, false, "liferay", "liferay", false, screenName, emailAddress, 0L, StringPool.BLANK, LocaleUtil.getDefault(), firstName, StringPool.BLANK, lastName, 0L, 0L, male, Calendar.JANUARY, 1, 1970, jobTitle, new long[0], organizationIds, new long[0], userGroupIds, false, null);
 			}
 			catch (PortalException pe) {
-				// TODO
-				pe.printStackTrace();
+				_log.error(pe);
 			}
 		}
 	}	
@@ -144,8 +145,7 @@ public class SampleContentPortlet extends MVCPortlet {
 					_organizationLocalService.addOrganization(adminUserId, 0L, orgName, true);
 				}
 				catch (PortalException pe) {
-					// TODO
-					pe.printStackTrace();
+					_log.error(pe);
 				}
 			}
 			else {
@@ -154,8 +154,7 @@ public class SampleContentPortlet extends MVCPortlet {
 					_organizationLocalService.addOrganization(adminUserId, parentOrgId, orgName, true);
 				}
 				catch (PortalException pe) {
-					// TODO
-					pe.printStackTrace();
+					_log.error(pe);
 				}
 			}
 
@@ -196,8 +195,7 @@ public class SampleContentPortlet extends MVCPortlet {
 				_userGroupLocalService.addUserGroup(adminUserId, companyId, name, description, null);
 			}
 			catch (PortalException pe) {
-				// TODO
-				pe.printStackTrace();
+				_log.error(pe);
 			}
 		}
 	}	
@@ -238,11 +236,13 @@ public class SampleContentPortlet extends MVCPortlet {
 	    _roleLocalService = roleLocalService;
 	}
 	
+	private static final Log _log = LogFactoryUtil.getLog(SampleContentPortlet.class);
+	
 	private UserLocalService _userLocalService;
 	private OrganizationLocalService _organizationLocalService;
 	private UserGroupLocalService _userGroupLocalService;
 	private RoleLocalService _roleLocalService;
-	
+
 	private class JSONOrgWrapper {
 		
 		public JSONOrgWrapper(JSONObject jsonObject, String parentOrgName) {
