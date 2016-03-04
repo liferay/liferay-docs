@@ -95,13 +95,11 @@ relationship types are listed here along with those of Friend and Connection:
 		TYPE_BI_SIBLING = 4
 
 These are bidirectional social relationships as defined in Liferay's social API. 
-It's important to note that these aren't available out-of-the-box. You must 
-install apps that implement them before you can leverage them in your Liferay 
-instance. For example, Liferay's Social Networking app in 
-[Liferay Marketplace](http://www.liferay.com/marketplace) 
-implements the Friend social relationship. Similarly, Liferay Social Office uses 
-the Connection social relationship type. Developers can make use of any of the 
-social relationship types available in the API. 
+It's important to note that only the Friend social relationship type is 
+available out-of-the-box. To use the other social relationship types, you must 
+deploy other apps that leverage them. You can find such apps on 
+[Liferay Marketplace](https://www.liferay.com/marketplace). Developers can make 
+use of any of the social relationship types available in the API. 
 
 ### Jabber Server Integration [](id=jabber-server-integration)
 
