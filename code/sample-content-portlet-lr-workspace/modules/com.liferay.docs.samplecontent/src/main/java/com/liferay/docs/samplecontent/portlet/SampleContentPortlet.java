@@ -20,6 +20,7 @@ import org.osgi.service.component.annotations.Reference;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.json.JSONArray;
+import com.liferay.portal.kernel.json.JSONException;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.log.Log;
@@ -52,9 +53,17 @@ import com.liferay.portal.util.PortalUtil;
 )
 public class SampleContentPortlet extends MVCPortlet {
 	
-	public void addUsers(ActionRequest request, ActionResponse response) throws PortalException, IOException {
+	public void addUsers(ActionRequest request, ActionResponse response) throws IOException {
 		long companyId = PortalUtil.getDefaultCompanyId();
-		Role adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		Role adminRole = null;
+		try {
+			adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		}
+		catch (PortalException pe) {
+			_log.error(pe);
+			
+			return;
+		}
 		List<User> adminUsers = _userLocalService.getRoleUsers(adminRole.getRoleId());
 		long adminUserId = adminUsers.get(0).getUserId();
 		
@@ -68,7 +77,16 @@ public class SampleContentPortlet extends MVCPortlet {
 		br.close();	
 		String jsonString = out.toString();
 		
-		JSONObject jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		JSONObject jsonObject = null;
+		try {
+			jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		}
+		catch (JSONException je) {
+			_log.error(je);
+			
+			return;
+		}
+		
 		JSONArray users = jsonObject.getJSONArray("Users");
 		for (int i = 0; i < users.length(); i++) {
 			String screenName = users.getJSONObject(i).getString("Screen Name");
@@ -83,7 +101,15 @@ public class SampleContentPortlet extends MVCPortlet {
 			long[] userGroupIds = new long[userGroupsLength];
 			for (int j = 0; j < userGroupsLength; j++) {
 				String userGroupName = userGroups.getString(j);
-				UserGroup userGroup = _userGroupLocalService.getUserGroup(companyId, userGroupName);
+				UserGroup userGroup = null;
+				try {
+					userGroup = _userGroupLocalService.getUserGroup(companyId, userGroupName);
+				}
+				catch (PortalException pe) {
+					_log.error(pe);
+					
+					return;
+				}
 				long userGroupId = userGroup.getUserGroupId();
 				userGroupIds[j] = userGroupId;
 			}
@@ -93,7 +119,15 @@ public class SampleContentPortlet extends MVCPortlet {
 			long[] organizationIds = new long[organizationsLength];
 			for (int j = 0; j < organizationsLength; j++) {
 				String organizationName = organizations.getString(j);
-				Organization organization = _organizationLocalService.getOrganization(companyId, organizationName);
+				Organization organization = null;
+				try {
+					organization = _organizationLocalService.getOrganization(companyId, organizationName);
+				}
+				catch (PortalException pe) {
+					_log.error(pe);
+					
+					return;
+				}
 				long organizationId = organization.getOrganizationId();
 				organizationIds[j] = organizationId;
 			}
@@ -103,13 +137,23 @@ public class SampleContentPortlet extends MVCPortlet {
 			}
 			catch (PortalException pe) {
 				_log.error(pe);
+				
+				return;
 			}
 		}
 	}	
 
-	public void addOrganizations(ActionRequest request, ActionResponse response) throws PortalException, IOException {
+	public void addOrganizations(ActionRequest request, ActionResponse response) throws IOException {
 		long companyId = PortalUtil.getDefaultCompanyId();
-		Role adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		Role adminRole = null;
+		try {
+			adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		}
+		catch (PortalException pe) {
+			_log.error(pe);
+			
+			return;
+		}
 		List<User> adminUsers = _userLocalService.getRoleUsers(adminRole.getRoleId());
 		long adminUserId = adminUsers.get(0).getUserId();
 		
@@ -123,11 +167,18 @@ public class SampleContentPortlet extends MVCPortlet {
 		br.close();	
 		String jsonString = out.toString();
 		
-		JSONObject jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		JSONObject jsonObject = null;
+		try {
+			jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		}
+		catch (JSONException je) {
+			_log.error(je);
+			
+			return;
+		}
 		JSONArray orgs = jsonObject.getJSONArray("Organizations");
 		
 		Queue<JSONOrgWrapper> queue = new LinkedList<JSONOrgWrapper>();
-		
 		for (int i = 0; i < orgs.length(); i++) {
 			JSONOrgWrapper jsonOrgWrapper = new JSONOrgWrapper(orgs.getJSONObject(i), StringPool.BLANK);
 
@@ -146,6 +197,8 @@ public class SampleContentPortlet extends MVCPortlet {
 				}
 				catch (PortalException pe) {
 					_log.error(pe);
+					
+					return;
 				}
 			}
 			else {
@@ -155,6 +208,8 @@ public class SampleContentPortlet extends MVCPortlet {
 				}
 				catch (PortalException pe) {
 					_log.error(pe);
+					
+					return;
 				}
 			}
 
@@ -169,9 +224,17 @@ public class SampleContentPortlet extends MVCPortlet {
 		}
 	}	
 
-	public void addUserGroups(ActionRequest request, ActionResponse response) throws PortalException, IOException {
+	public void addUserGroups(ActionRequest request, ActionResponse response) throws IOException {
 		long companyId = PortalUtil.getDefaultCompanyId();
-		Role adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		Role adminRole = null;
+		try {
+			adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		}
+		catch (PortalException pe) {
+			_log.error(pe);
+			
+			return;
+		}
 		List<User> adminUsers = _userLocalService.getRoleUsers(adminRole.getRoleId());
 		long adminUserId = adminUsers.get(0).getUserId();
 
@@ -185,7 +248,15 @@ public class SampleContentPortlet extends MVCPortlet {
 		br.close();	
 		String jsonString = out.toString();
 		
-		JSONObject jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		JSONObject jsonObject = null;
+		try {
+			jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		}
+		catch (JSONException je) {
+			_log.error(je);
+			
+			return;
+		}
 		JSONArray userGroups = jsonObject.getJSONArray("User Groups");
 		for (int i = 0; i < userGroups.length(); i++) {
 			String name = userGroups.getJSONObject(i).getString("Name");
@@ -196,6 +267,8 @@ public class SampleContentPortlet extends MVCPortlet {
 			}
 			catch (PortalException pe) {
 				_log.error(pe);
+				
+				return;
 			}
 		}
 	}	
