@@ -1,6 +1,9 @@
 package com.liferay.docs.samplecontent.portlet;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -26,6 +29,7 @@ import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.portal.kernel.upload.UploadPortletRequest;
 import com.liferay.portal.kernel.util.LocaleUtil;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.model.Organization;
@@ -176,6 +180,7 @@ public class SampleContentPortlet extends MVCPortlet {
 			
 			return;
 		}
+
 		JSONArray orgs = jsonObject.getJSONArray("Organizations");
 		
 		Queue<JSONOrgWrapper> queue = new LinkedList<JSONOrgWrapper>();
@@ -257,6 +262,7 @@ public class SampleContentPortlet extends MVCPortlet {
 			
 			return;
 		}
+
 		JSONArray userGroups = jsonObject.getJSONArray("User Groups");
 		for (int i = 0; i < userGroups.length(); i++) {
 			String name = userGroups.getJSONObject(i).getString("Name");
@@ -272,6 +278,160 @@ public class SampleContentPortlet extends MVCPortlet {
 			}
 		}
 	}	
+
+	public void addOrganizationsFromFile(ActionRequest request, ActionResponse response) {
+		long companyId = PortalUtil.getDefaultCompanyId();
+		Role adminRole = null;
+		try {
+			adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		}
+		catch (PortalException pe) {
+			_log.error(pe);
+			
+			return;
+		}
+		List<User> adminUsers = _userLocalService.getRoleUsers(adminRole.getRoleId());
+		long adminUserId = adminUsers.get(0).getUserId();
+
+		UploadPortletRequest uploadRequest = PortalUtil.getUploadPortletRequest(request);	
+		
+		String fileName = "organizationsFile";
+		File file = uploadRequest.getFile(fileName);	
+		
+		StringBuilder out = new StringBuilder();
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(file));
+			while (br.ready()){
+				out.append(br.readLine());
+			}
+			br.close();	
+		}
+		catch (IOException fnfe) {
+			_log.error(fnfe);
+			
+			return;
+		}
+		String jsonString = out.toString();
+		
+		JSONObject jsonObject = null;
+		try {
+			jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		}
+		catch (JSONException je) {
+			_log.error(je);
+			
+			return;
+		}
+
+		JSONArray orgs = jsonObject.getJSONArray("Organizations");
+
+		Queue<JSONOrgWrapper> queue = new LinkedList<JSONOrgWrapper>();
+		for (int i = 0; i < orgs.length(); i++) {
+			JSONOrgWrapper jsonOrgWrapper = new JSONOrgWrapper(orgs.getJSONObject(i), StringPool.BLANK);
+
+			queue.add(jsonOrgWrapper);
+		}
+		
+		while (!queue.isEmpty()) {
+			JSONOrgWrapper jsonOrgWrapper = queue.remove();
+			String orgName = jsonOrgWrapper.getJSONObject().getString("Name");
+			JSONArray subOrgs = jsonOrgWrapper.getJSONObject().getJSONArray("Organizations");
+			
+			String parentOrgName = jsonOrgWrapper.getParentOrgName();
+			if (StringPool.BLANK.equals(parentOrgName)) {
+				try {
+					_organizationLocalService.addOrganization(adminUserId, 0L, orgName, true);
+				}
+				catch (PortalException pe) {
+					_log.error(pe);
+					
+					return;
+				}
+			}
+			else {
+				long parentOrgId = _organizationLocalService.getOrganizationId(companyId, parentOrgName);
+				try {
+					_organizationLocalService.addOrganization(adminUserId, parentOrgId, orgName, true);
+				}
+				catch (PortalException pe) {
+					_log.error(pe);
+					
+					return;
+				}
+			}
+
+			if (subOrgs == null) {
+				continue;
+			}
+			
+			for (int i = 0; i < subOrgs.length(); i++) {
+				JSONOrgWrapper jsonSubOrgWrapper = new JSONOrgWrapper(subOrgs.getJSONObject(i), orgName);
+				queue.add(jsonSubOrgWrapper);
+			}
+		}
+	}
+
+	public void addUserGroupsFromFile(ActionRequest request, ActionResponse response) {
+		long companyId = PortalUtil.getDefaultCompanyId();
+		Role adminRole = null;
+		try {
+			adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		}
+		catch (PortalException pe) {
+			_log.error(pe);
+			
+			return;
+		}
+		List<User> adminUsers = _userLocalService.getRoleUsers(adminRole.getRoleId());
+		long adminUserId = adminUsers.get(0).getUserId();
+
+		UploadPortletRequest uploadRequest = PortalUtil.getUploadPortletRequest(request);	
+		
+		String fileName = "userGroupsFile";
+		File file = uploadRequest.getFile(fileName);	
+		
+		StringBuilder out = new StringBuilder();
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(file));
+			while (br.ready()){
+				out.append(br.readLine());
+			}
+			br.close();	
+		}
+		catch (IOException fnfe) {
+			_log.error(fnfe);
+			
+			return;
+		}
+		String jsonString = out.toString();
+		
+		JSONObject jsonObject = null;
+		try {
+			jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		}
+		catch (JSONException je) {
+			_log.error(je);
+			
+			return;
+		}
+
+		JSONArray userGroups = jsonObject.getJSONArray("User Groups");
+		for (int i = 0; i < userGroups.length(); i++) {
+			String name = userGroups.getJSONObject(i).getString("Name");
+			String description = userGroups.getJSONObject(i).getString("Description");
+
+			try {
+				_userGroupLocalService.addUserGroup(adminUserId, companyId, name, description, null);
+			}
+			catch (PortalException pe) {
+				_log.error(pe);
+				
+				return;
+			}
+		}
+	}
 
 	public UserLocalService getUserLocalService() {
 		return _userLocalService;
