@@ -199,15 +199,17 @@ communicating with your Liferay instance. As an example, refer to
 
 The values you need to specify in your `liferay-server-context.plist` are: 
 
-- `server`: Your Liferay instance's URL.
+- `server`: Your Liferay instance's URL. 
 - `version`: Your Liferay instance's version. Supported values are `62` for 
-  Liferay 6.2, and `70` for Liferay 7.0.
+  Liferay 6.2, and `70` for Liferay 7.0. 
 - `companyId`: Your Liferay instance's identifier. You can find this value in 
-  the *Instance ID* column of *Control Panel* &rarr; *Portal Instances*.
+  the *Instance ID* column of *Control Panel* &rarr; *Portal Instances*. 
 - `groupId`: The site identifier of the default site you want Screens to 
   communicate with. You can find this value in the Site ID field of the site's 
   *Site Administration* &rarr; *Configuration* &rarr; *Site Settings* menu. 
-- `connectorFactoryClassName`: Optionally, you can specify here the class name of your connector's factory class. If you don't include this value, the `version` value will be used to determine which factory is the most suitable for that version of Liferay Portal.
+- `connectorFactoryClassName`: The class name of your Connector's factory class. 
+  This is optional. If you don't include it, the `version` value is used to 
+  determine which factory is the most suitable for that version of Liferay. 
 
 Great! Your iOS project is ready for Liferay Screens. 
 

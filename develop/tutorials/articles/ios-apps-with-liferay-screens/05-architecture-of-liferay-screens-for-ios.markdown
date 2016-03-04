@@ -45,16 +45,17 @@ execute more than one query on a local or remote store, the sequence is done in
 the corresponding Interactor. If a Screenlet supports more than one user action 
 or use case, an Interactor must be created for each. 
 
-**Connectors** (or ServerConnectors): a collection of classes that can interact with local and 
-remote data sources and Liferay instances. Liferay's own set of Connectors, 
-Liferay Connector, use the
+**Connectors** (or Server Connectors): a collection of classes that can interact 
+with local and remote data sources and Liferay instances. Liferay's own set of 
+Connectors, Liferay Connector, use the
 [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app).
 All Server Connectors can be run concurrently since they use the 
 [`NSOperation` framework](https://developer.apple.com/library/mac/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/OperationObjects.html#//apple_ref/doc/uid/TP40008091-CH101-SW1). 
 It's very easy to define priorities and dependencies between Connectors, so you
 can build your own graph of Connectors (aka operations) that can be resolved by 
-the framework.
-Connectors are always created using a [factory class](https://en.wikipedia.org/wiki/Abstract_factory_pattern) so they can be injected by the app developer.
+the framework. Connectors are always created using a 
+[factory class](https://en.wikipedia.org/wiki/Abstract_factory_pattern) 
+so they can be injected by the app developer. 
 
 **Themes:** a set of XIB files and accompanying `UIView` classes that present 
 Screenlets to the user.
@@ -165,8 +166,13 @@ only a single request. Each Server Connector is responsible for retrieving a set
 of related values. The results are stored in a `result` object that can be read 
 by the Interactor when notified. The number of Server Connector classes an 
 Interactor requires depends on the number of endpoints you need to query, or 
-even the number of different servers you need to support. 
-Connectors are always created using a [factory class](https://en.wikipedia.org/wiki/Abstract_factory_pattern), in such a way you can take advantage of [Inversion of Control principle](https://en.wikipedia.org/wiki/Inversion_of_control). This way, you as app developer, will be able to implement your own factory class which eventually will be used to create your own Connector objects. You can specify your own factory class in the `liferay-server-context.plist` file as described [here](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens#configuring-communication-with-liferay).
+even the number of different servers you need to support. Connectors are always 
+created using a [factory class](https://en.wikipedia.org/wiki/Abstract_factory_pattern). 
+You can therefore take advantage of [Inversion of Control](https://en.wikipedia.org/wiki/Inversion_of_control). 
+This way, you can implement your own factory class to use to create your own 
+Connector objects. To tell Screens to use your factory class, specify it in the 
+`liferay-server-context.plist` file as described 
+[in the tutorial on preparing your iOS project for Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens#configuring-communication-with-liferay). 
 
 **MyScreenletView_themeX:** A class that belongs to one specific Theme. In the
 diagram, this Theme is *ThemeX*. The class renders the Screenlet's UI by using
