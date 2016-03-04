@@ -258,14 +258,6 @@ public class SampleContentPortlet extends MVCPortlet {
 			return _parentOrgName;
 		}
 		
-		public void setJSONObject(JSONObject jsonObject) {
-			_jsonObject = jsonObject;
-		}
-		
-		public void setJSONObject(String parentOrgName) {
-			_parentOrgName = parentOrgName;
-		}
-		
 		private JSONObject _jsonObject;
 		private String _parentOrgName;
 		
