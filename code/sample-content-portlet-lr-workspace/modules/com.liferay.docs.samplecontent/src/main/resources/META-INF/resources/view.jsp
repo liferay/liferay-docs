@@ -3,6 +3,7 @@
 <portlet:actionURL name="addUsers" var="addUsersURL"></portlet:actionURL>
 <portlet:actionURL name="addOrganizations" var="addOrganizationsURL"></portlet:actionURL>
 <portlet:actionURL name="addUserGroups" var="addUserGroupsURL"></portlet:actionURL>
+<portlet:actionURL name="addUsersFromFile" var="addUsersFromFileURL"></portlet:actionURL>
 <portlet:actionURL name="addOrganizationsFromFile" var="addOrganizationsFromFileURL"></portlet:actionURL>
 <portlet:actionURL name="addUserGroupsFromFile" var="addUserGroupsFromFileURL"></portlet:actionURL>
 
@@ -22,6 +23,12 @@
 	<aui:button-row>
 		<aui:button type="submit" value="Add User Groups"></aui:button>
 	</aui:button-row>
+</aui:form>
+
+<aui:form action="<%= addUsersFromFileURL %>" name="<portlet:namespace />addUsersFromFileForm" enctype="multipart/form-data" method="post">
+	<aui:input name="usersFile" label="Select Users JSON File" type="file" />
+	
+	<aui:button name="addUsers" value="Add Users" type="submit" />
 </aui:form>
 
 <aui:form action="<%= addOrganizationsFromFileURL %>" name="<portlet:namespace />addOrganizationsFromFileForm" enctype="multipart/form-data" method="post">

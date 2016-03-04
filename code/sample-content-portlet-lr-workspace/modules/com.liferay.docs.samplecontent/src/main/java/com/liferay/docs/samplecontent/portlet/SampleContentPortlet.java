@@ -279,6 +279,107 @@ public class SampleContentPortlet extends MVCPortlet {
 		}
 	}	
 
+	public void addUsersFromFile(ActionRequest request, ActionResponse response) {
+		long companyId = PortalUtil.getDefaultCompanyId();
+		Role adminRole = null;
+		try {
+			adminRole = _roleLocalService.getRole(companyId, "Administrator");
+		}
+		catch (PortalException pe) {
+			_log.error(pe);
+			
+			return;
+		}
+		List<User> adminUsers = _userLocalService.getRoleUsers(adminRole.getRoleId());
+		long adminUserId = adminUsers.get(0).getUserId();
+
+		UploadPortletRequest uploadRequest = PortalUtil.getUploadPortletRequest(request);	
+		
+		String fileName = "usersFile";
+		File file = uploadRequest.getFile(fileName);	
+		
+		StringBuilder out = new StringBuilder();
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(file));
+			while (br.ready()){
+				out.append(br.readLine());
+			}
+			br.close();	
+		}
+		catch (IOException fnfe) {
+			_log.error(fnfe);
+			
+			return;
+		}
+		String jsonString = out.toString();
+		
+		JSONObject jsonObject = null;
+		try {
+			jsonObject = JSONFactoryUtil.createJSONObject(jsonString);
+		}
+		catch (JSONException je) {
+			_log.error(je);
+			
+			return;
+		}
+
+		JSONArray users = jsonObject.getJSONArray("Users");
+		for (int i = 0; i < users.length(); i++) {
+			String screenName = users.getJSONObject(i).getString("Screen Name");
+			String firstName = users.getJSONObject(i).getString("First Name");
+			String lastName = users.getJSONObject(i).getString("Last Name");
+			boolean male = users.getJSONObject(i).getBoolean("Male");
+			String jobTitle = users.getJSONObject(i).getString("Job Title");
+			String emailAddress = users.getJSONObject(i).getString("Email Address");
+
+			JSONArray userGroups = users.getJSONObject(i).getJSONArray("User Groups");
+			int userGroupsLength = userGroups.length();
+			long[] userGroupIds = new long[userGroupsLength];
+			for (int j = 0; j < userGroupsLength; j++) {
+				String userGroupName = userGroups.getString(j);
+				UserGroup userGroup = null;
+				try {
+					userGroup = _userGroupLocalService.getUserGroup(companyId, userGroupName);
+				}
+				catch (PortalException pe) {
+					_log.error(pe);
+					
+					return;
+				}
+				long userGroupId = userGroup.getUserGroupId();
+				userGroupIds[j] = userGroupId;
+			}
+
+			JSONArray organizations = users.getJSONObject(i).getJSONArray("Organizations");
+			int organizationsLength = organizations.length();
+			long[] organizationIds = new long[organizationsLength];
+			for (int j = 0; j < organizationsLength; j++) {
+				String organizationName = organizations.getString(j);
+				Organization organization = null;
+				try {
+					organization = _organizationLocalService.getOrganization(companyId, organizationName);
+				}
+				catch (PortalException pe) {
+					_log.error(pe);
+					
+					return;
+				}
+				long organizationId = organization.getOrganizationId();
+				organizationIds[j] = organizationId;
+			}
+			
+			try {
+				_userLocalService.addUser(adminUserId, companyId, false, "liferay", "liferay", false, screenName, emailAddress, 0L, StringPool.BLANK, LocaleUtil.getDefault(), firstName, StringPool.BLANK, lastName, 0L, 0L, male, Calendar.JANUARY, 1, 1970, jobTitle, new long[0], organizationIds, new long[0], userGroupIds, false, null);
+			}
+			catch (PortalException pe) {
+				_log.error(pe);
+				
+				return;
+			}
+		}
+	}
+
 	public void addOrganizationsFromFile(ActionRequest request, ActionResponse response) {
 		long companyId = PortalUtil.getDefaultCompanyId();
 		Role adminRole = null;
