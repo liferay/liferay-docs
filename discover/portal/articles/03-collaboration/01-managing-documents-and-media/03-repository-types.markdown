@@ -8,20 +8,24 @@ Let's start with Document Library store options.
 
 ## Document Library Store Options [](id=document-library-store-options)
 
-By default, Liferay stores documents and media files on the file system of the
-server it's running on. You can specify a location for the
-document library store's root directory by adding a
-`dl.store.file.system.root.dir` portal property to a
-`portal-ext.properties` file in your [Liferay home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home)
-and replacing the default path value with your custom path:
-
-    dl.store.file.system.root.dir=${liferay.home}/data/document_library
+By default, Liferay uses a document library store option called Simple File
+Store to store documents and media files on the file system (local or mounted)
+of the server Liferay's running on. The store's default root directory is
+`[Liferay Home]/data/document_library`. You can specify a different root
+directory from within [System Settings](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/system-settings).
+To access System Settings, open the *Menu*
+(![Menu](../../../images/icon-menu.png)) and navigate to *Control Panel &rarr;
+Configuration &rarr; System Settings*. From System Settings, navigate to
+*Platform* and then search for and select the entry *Simple File System Store*.
+For the store's *Root dir* value, specify a path relative to the [Liferay Home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home)
+or an absolute path; then click the *Update* button. The document library store
+switches immediately to the new root dir. 
 
 You can also use an entirely different method for storing documents and media
 files. You can use any of the following documents and media library stores with
 Liferay:
 
-- Advanced File System Store
+- Advanced File System Store 
 - CMIS Store (Content Management Interoperability Services)
 - DBStore (Database Storage)
 - File System Store
@@ -41,7 +45,7 @@ $$$
 
 For example, you can store documents and media files in your Liferay instance's
 database using DBStore. To enable DBStore, add the following [`dl.store.impl`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
-portal property to a `portal-ext.properties` file in your [Liferay home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home):
+portal property to a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home):
 
     dl.store.impl=com.liferay.portlet.documentlibrary.store.DBStore
 
@@ -104,7 +108,7 @@ you need to ensure manually that the credentials and authentication methods are
 the same.
 
 In order to authenticate with the third-party repository, you need to store
-passwords for the user sessions. In your [Liferay home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home),
+passwords for the user sessions. In your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home),
 set a [`session.store.password`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Session)
 portal property to `true` in a `portal-ext.properties` file:
 
