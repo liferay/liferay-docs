@@ -25,12 +25,33 @@ You can also use an entirely different method for storing documents and media
 files. You can use any of the following documents and media library stores with
 Liferay:
 
-- Advanced File System Store 
-- CMIS Store (Content Management Interoperability Services)
-- DBStore (Database Storage)
-- File System Store
-- JCRStore (Java Content Repository)
-- S3Store (Amazon Simple Storage)
+**Simple File System Store**: uses the file system (local or a mounted share) to
+store files.
+
+**Advanced File System Store**: in addition to using the file system (local or a
+mounted share) to store files, Advanced File System Store nests the files into
+more directories by version, for faster performance and to store more files.
+
+**CMIS Store (Content Management Interoperability Services)**: uses a system
+separate from Liferay to store files. 
+
+**DBStore (Database Storage)**: stores files in the Liferay database.
+
+**JCRStore (Java Content Repository)**: stores files to a JSR-170 compliant
+document repository. You can use any JCR client to access the files. The files
+are stored to the server's file system by default. You can optionally configure
+JCRStore to store files in a database. 
+
+**S3Store (Amazon Simple Storage)**: uses Amazon's cloud-based storage solution.
+
+For example, you can store documents and media files in your Liferay instance's
+database using DBStore. To enable DBStore, add the following [`dl.store.impl`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
+portal property to a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home):
+
+    dl.store.impl=com.liferay.portlet.documentlibrary.store.DBStore
+
+Remember to restart your Liferay server after updating your
+`portal-ext.properties` file in order for your customizations to take effect.
 
 +$$$
 
@@ -43,14 +64,6 @@ limitation.
 
 $$$
 
-For example, you can store documents and media files in your Liferay instance's
-database using DBStore. To enable DBStore, add the following [`dl.store.impl`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
-portal property to a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview#liferay-home):
-
-    dl.store.impl=com.liferay.portlet.documentlibrary.store.DBStore
-
-Remember to restart your Liferay server after updating your
-`portal-ext.properties` file in order for your customizations to take effect.
 Please refer to the [Document Library property reference](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Portlet)
 for a complete list of supported customizations. You can customize features such
 as the maximum allowed size of documents and media files, the list of allowed
