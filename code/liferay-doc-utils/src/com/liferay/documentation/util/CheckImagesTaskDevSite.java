@@ -145,7 +145,11 @@ public class CheckImagesTaskDevSite extends Task {
 		
 		for (File image : images) {
 			String imageName = image.getName();
-			
+
+			if (imageName.startsWith(".")) {
+				continue;
+			}
+
 			imageNames.add(imageName);
 		}
 		
