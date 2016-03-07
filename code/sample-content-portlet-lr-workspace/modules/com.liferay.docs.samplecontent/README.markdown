@@ -15,7 +15,9 @@ files:
 		"Last Name": "Jeffries",
 		"Male": true,
 		"Job Title": "Lunar Associate",
-		"Email Address": "jjeffries@lunarresort.com"
+		"Email Address": "jjeffries@lunarresort.com",
+		"User Groups": ["List Creators", "Message Board Administrators"],
+		"Organizations": ["Recreation Department", "Lunar Golf Instructors"]
 		},
 		{
 		"Screen Name": "msmart",
@@ -23,7 +25,9 @@ files:
 		"Last Name": "Smart",
 		"Male": true,
 		"Job Title": "Lunar Associate",
-		"Email Address": "msmart@lunarresort.com"
+		"Email Address": "msmart@lunarresort.com",
+		"User Groups": ["List Creators", "Message Board Administrators"],
+		"Organizations": ["Physical Plant Department", "Grounds Crew"]
 		}
 	]}
 
