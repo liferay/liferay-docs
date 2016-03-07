@@ -26,18 +26,16 @@ Liferay. Check out the article on uploading definitions to do that <!--LINK-->.
 Alternatively, you can look at the pre-existing definitions to get ideas while
 designing and building your own definition. 
 
-## Workflow Design Tools [](id=workflow-design-tools)
-
-Now a word about designing workflows. If you are a CE <!--Change if necessary-->
+A word about designing workflows. If you are a CE <!--Change if necessary-->
 customer, you'll have to get comfortable working with XML to create workflow
 definitions. There's a tutorial in the documentation for developers that will
 help you learn how to do that<!--LINK-->. 
 
-If you're a DXP customer <!--LINK-->, you have access to the Kaleo Designer
+<!-- If you're a DXP customer, you have access to the Kaleo Designer
 workflow builder, which gives you a nice user interface where you drag and drop
 workflow nodes onto a canvas to create your workflow definitions. If you want to
 start with one of the definitions mentioned above, editing it to suit your needs
-would be a simple task with the Kaleo Designer.
+would be a simple task with the Kaleo Designer. -->
 
 <!--Picture of Workflow Designer-->
 
