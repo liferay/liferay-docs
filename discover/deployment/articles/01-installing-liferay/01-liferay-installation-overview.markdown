@@ -15,6 +15,7 @@ installing Liferay.
 
 <!-- Liferay CE vs. EE terminology is changing for Liferay 7. Must update this
 section once terminology has been finalized. -->
+<!--
 ## Editions of Liferay [](id=editions-of-liferay)
 
 Liferay ships in two editions: Liferay Community Edition (CE) and Liferay
@@ -78,6 +79,7 @@ supported by Liferay CE and Liferay DXP:
 - Sybase ASE 16
 
 Next, let's learn about some differences between Liferay releases.
+-->
 
 <!-- This section must be updated for 7.0. CE vs. EE terminology will need to
 change. -->
