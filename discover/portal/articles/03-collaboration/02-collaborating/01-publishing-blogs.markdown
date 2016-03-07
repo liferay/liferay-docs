@@ -113,30 +113,54 @@ select a different image, you can click the *Change* icon
 (![Change](../../../images/icon-change.png)) to use a different image. Lastly,
 clicking the trash can icon removes the image from the blog entry.
 
-Clicking the *Configuration* icon (![Gear](../../../images/icon-gear.png)) at the
-top of the entry editor lets you configure the blog entry. You can set a
-particular Display Date for the entry, choose a 400 character text-only abstract
-or a custom abstract containing a thumbnail image and a manually written
-description. You can also send emails on entry updates. 
+Below the Content area are several panels for configuring your blog entry. 
 
-The Categorization heading is next in the entry configuration screen. Its
-options allow you to attribute [tags and/or categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+The Categorization panel's options allow you to associate [tags and/or
+categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 to your blog entry. Doing this improves search results for blog entries, and you
 get more navigation options for your users. For example, you can add the Tags
 Navigation application to another column on your blogs page, which lets users
 browse blog entries by tag. 
 
 Below this is the [Related Assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)
-heading. If there's some other content in the Liferay instance that's related to
+panel. If there's some other content in the Liferay instance that's related to
 your entry, you can choose it here. For example, you might want to write a blog
 entry talking about a discussion that happened on the forums. To link those two
 assets together, select the forum thread under Related Assets. 
 
-Blog entries also support *pingbacks*. Pingbacks are XML-RPC requests that are
-automatically sent when you link to another site. If you link to another site in
-your blog entry, Liferay sends a pingback to the other site to notify that site
-that you linked to it. Similarly, if someone links to your blog entry, Liferay
-can receive a pingback from that person's site and record the link. 
+The Configuration panel is next. You can specify an abstract for the blog entry.
+Choose a 400 character text-only abstract or a custom abstract containing a
+thumbnail image and a manually written description. Below the abstract section,
+you can set a particular Display Date for the entry.
+
+Lastly for your blog entry's configuration, you can allow *pingbacks*. Pingbacks
+are XML-RPC requests that are automatically sent when you link to another site.
+If you link to another site in your blog entry, Liferay sends a pingback to the
+other site to notify that site that you linked to it. Similarly, if someone
+links to your blog entry, Liferay can receive a pingback from that person's site
+and record the link.
+
+The Permissions panel is last. It lets you restrict viewing the blog entry to
+the owner only or site members (default), or open viewing to site guests.
+Clicking on the *More Options* link, brings up a permissions table to grant
+permissions to or revoke permissions from site guests and site members, with
+regards to the blog entry. 
+
+The blog entry permissions enable a role to perform the following actions:
+
+**Update**: Edit and modify the blog entry.
+
+**Permissions**: View and modify the blog entry's permissions.
+
+**Delete**: Move the blog entry to the [Recycle Bin](/discover/portal/-/knowledge_base/7-0/restoring-deleted-assets#using-the-recycle-bin).
+
+**View**: View the blog entry.
+
+**Update Discussion**: Edit another user's comment on the blog entry.
+
+**Delete Discussion**: Delete any comments on the blog entry.
+
+**Add Discussion**: Comment on the blog entry.
 
 Once you've finished your blog entry, click *Publish*. Your blog entry appears
 with the site's other blog entries.
