@@ -3,7 +3,7 @@
 Installing Liferay is easy. But before you begin, you should answer a few
 questions.
 
-- Which edition and version of Liferay will you install?
+- Which version of Liferay will you install?
 - On which application server will you install Liferay?
 - Can you install a Liferay bundle or do you need to install Liferay on an
   existing application server?
@@ -13,76 +13,6 @@ questions.
 This article helps you answer these questions and describes the basic steps for
 installing Liferay.
 
-<!-- Liferay CE vs. EE terminology is changing for Liferay 7. Must update this
-section once terminology has been finalized. -->
-<!--
-## Editions of Liferay [](id=editions-of-liferay)
-
-Liferay ships in two editions: Liferay Community Edition (CE) and Liferay
-Digital Experience Platform (DXP). Frequently updated and bursting with
-features, Liferay CE is offered for free under the Lesser GNU public license, a
-free software license with one important exception. This license gives you the
-flexibility to link Liferay with your own code in your Liferay plugins, no
-matter what license you use for your code. If, however, you modify Liferay
-directly, those modifications must be released as free software under the terms
-of the license. Of course, the best way to do this is to contribute your code
-back to the Liferay community. This is really the best of both worlds: you have
-the freedom use any license (or no license) if you write plugins, but if you
-modify Liferay directly, the community receives the benefits of any
-enhancements that you've made.
-
-Liferay DXP is a supported version of Liferay Portal for the enterprise.
-Liferay DXP includes additional features, such as clustering, that are not
-available in Liferay CE. Liferay DXP's subscription and support package allows
-organizations to build their portals on a stable version of the product that is
-offered over an extended period of time. It's the best way for you to develop,
-deploy, and maintain your Liferay solution. Liferay DXP includes:
-
-- Liferay support
-- Additional features
-- Updates
-- Fix Packs
-- Cloud Services
-
-Liferay DXP can be installed on proprietary application servers and can use
-proprietary databases. Here are lists of the application servers and databases
-supported by Liferay CE and Liferay DXP:
-
-**Liferay CE-supported Application Servers:**
-
-- Apache Tomcat 8.0.30
-- Wildfly 10.0
-- Caucho Resin 4.0
-
-**Liferay CE-supported Databases:**
-
-- HSQLDB 2 (only for demonstration, development, and testing)
-- MySQL 5.6
-- MariaDB 10
-- PostgreSQL 9.3
-
-**Liferay DXP-supported Application Servers:**
-
-- All of the CE-supported application servers
-- IBM Websphere 8.5
-- JBoss EAP 6.4
-- Mulesoft Tcat 7.1
-- Oracle Weblogic Server 12c (12.1.x)
-- Caucho Resin Pro 4.0
-- tcServer 2.9
-
-**Liferay DXP-supported Databases:**
-
-- All of the CE-supported databases
-- Oracle Database 12c Release 1
-- Microsoft SQL Server 2012
-- Sybase ASE 16
-
-Next, let's learn about some differences between Liferay releases.
--->
-
-<!-- This section must be updated for 7.0. CE vs. EE terminology will need to
-change. -->
 ## Understanding Liferay's Releases [](id=understanding-liferays-releases)
 
 Which version of Liferay should you install? That's an easy question to answer:
