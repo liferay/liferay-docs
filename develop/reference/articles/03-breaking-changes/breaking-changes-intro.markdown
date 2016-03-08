@@ -3148,6 +3148,32 @@ services from `DLAppService` was the only sensible solution to this circularity.
 
 ---------------------------------------
 
+### Deprecated the liferay-ui:flags Tag and Replaced with liferay-flags:flags [](id=deprecated-the-liferay-uiflags-tag-and-replaced-with-liferay-flagsflags)
+- **Date:** 2015-Dec-02
+- **JIRA Ticket:** LPS-60967
+
+#### What changed? [](id=what-changed-80a)
+
+The `liferay-ui:flags` tag has been deprecated and replaced with the
+`liferay-flags:flags` tag.
+
+#### Who is affected? [](id=who-is-affected-80a)
+
+Plugins or templates that are using the `liferay-ui:flags` tag need to update
+their usage of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-80a)
+
+You should import the `liferay-flags` tag library (if necessary) and update the
+tag namespace from `liferay-ui:flags` to `liferay-flags:flags`.
+
+#### Why was this change made? [](id=why-was-this-change-made-80a)
+
+This change was made as a part of the ongoing strategy to modularize Liferay
+Portal by means of an OSGi container.
+
+---------------------------------------
+
 ### Removed the liferay-ui:diff Tag and Replaced with liferay-frontend:diff [](id=removed-the-liferay-uidiff-tag-and-replaced-with-liferay-frontenddiff)
 - **Date:** 2015-Dec-14
 - **JIRA Ticket:** LPS-61326
@@ -3399,6 +3425,8 @@ else.
 
 - `com.liferay.mail.util` &rarr; `com.liferay.mail.kernel.util`
 
+- `com.liferay.portal.exception` &rarr; `com.liferay.portal.kernel.exception`
+
 - `com.liferay.portal.jdbc.pool.metrics` &rarr; `com.liferay.portal.kernel.jdbc.pool.metrics`
 
 - `com.liferay.portal.kernel.mail` &rarr; `com.liferay.mail.kernel.model`
@@ -3406,6 +3434,14 @@ else.
 - `com.liferay.portal.layoutconfiguration.util` &rarr; `com.liferay.portal.kernel.layoutconfiguration.util`
 
 - `com.liferay.portal.layoutconfiguration.util.xml` &rarr; `com.liferay.portal.kernel.layoutconfiguration.util.xml`
+
+- `com.liferay.portal.mail` &rarr; `com.liferay.portal.kernel.mail`
+
+- `com.liferay.portal.model` &rarr; `com.liferay.portal.kernel.model`
+
+- `com.liferay.portal.model.adapter` &rarr; `com.liferay.portal.kernel.model.adapter`
+
+- `com.liferay.portal.model.impl` &rarr; `com.liferay.portal.kernel.model.impl`
 
 - `com.liferay.portal.portletfilerepository` &rarr; `com.liferay.portal.kernel.portletfilerepository`
 
@@ -3427,7 +3463,17 @@ else.
 
 - `com.liferay.portal.security.xml` &rarr; `com.liferay.portal.kernel.security.xml`
 
+- `com.liferay.portal.service.configuration` &rarr; `com.liferay.portal.kernel.service.configuration`
+
+- `com.liferay.portal.service.http` &rarr; `com.liferay.portal.kernel.service.http`
+
+- `com.liferay.portal.service.permission` &rarr; `com.liferay.portal.kernel.service.permission`
+
+- `com.liferay.portal.service.persistence.impl` &rarr; `com.liferay.portal.kernel.service.persistence.impl`
+
 - `com.liferay.portal.theme` &rarr; `com.liferay.portal.kernel.theme`
+
+- `com.liferay.portal.util` &rarr; `com.liferay.portal.kernel.util`
 
 - `com.liferay.portal.util.comparator` &rarr; `com.liferay.portal.kernel.util.comparator`
 
@@ -3435,9 +3481,13 @@ else.
 
 - `com.liferay.portal.webserver` &rarr; `com.liferay.portal.kernel.webserver`
 
+- `com.liferay.portlet` &rarr; `com.liferay.kernel.portlet`
+
 - `com.liferay.portlet.admin.util` &rarr; `com.liferay.admin.kernel.util`
 
 - `com.liferay.portlet.announcements` &rarr; `com.liferay.announcements.kernel`
+
+- `com.liferay.portlet.asset` &rarr; `com.liferay.asset.kernel`
 
 - `com.liferay.portlet.backgroundtask.util.comparator` &rarr; `com.liferay.background.task.kernel.util.comparator`
 
@@ -3452,6 +3502,8 @@ else.
 - `com.liferay.portlet.blogs.service.persistence` &rarr; `com.liferay.blogs.service.persistence`
 
 - `com.liferay.portlet.blogs.util.comparator` &rarr; `com.liferay.blogs.kernel.util.comparator`
+
+- `com.liferay.portlet.documentlibrary` &rarr; `com.liferay.document.library.kernel`
 
 - `com.liferay.portlet.dynamicdatamapping` &rarr; `com.liferay.dynamic.data.mapping.kernel`
 
@@ -3599,3 +3651,141 @@ icon instead.
 
 In order to display the `documents-and-media` Lexicon icon in Documents and
 Media, this change was necessary.
+
+---------------------------------------
+
+### Removed the aui:button-item Tag and Replaced with aui:button [](id=removed-the-auibutton-item-tag-and-replaced-with-auibutton)
+- **Date:** 2016-Feb-04
+- **JIRA Ticket:** LPS-62922
+
+#### What changed? [](id=what-changed-89)
+
+The `aui:button-item` tag has been removed and replaced with the `aui:button`
+tag.
+
+#### Who is affected? [](id=who-is-affected-89)
+
+Plugins or templates that are using the `aui:button-item` tag must update their
+usage of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-89)
+
+You should import the `aui` tag library (if necessary) and update the tag
+namespace from `aui:button-item` to `aui:button`.
+
+#### Why was this change made? [](id=why-was-this-change-made-89)
+
+This change was made as a part of the ongoing strategy to remove deprecated
+code.
+
+---------------------------------------
+
+### Removed the WAP Functionality [](id=removed-the-wap-functionality)
+- **Date:** 2016-Feb-05
+- **JIRA Ticket:** LPS-62920
+
+#### What changed? [](id=what-changed-90)
+
+The WAP functionality has been removed.
+
+#### Who is affected? [](id=who-is-affected-90)
+
+This affects developers that use the WAP functionality.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-90)
+
+If you are using any of the following methods, you need to remove the parameters
+in those methods related to WAP.
+
+- `LayoutLocalServiceUtil.updateLookAndFeel`
+- `LayoutRevisionLocalServiceUtil.addLayoutRevision`
+- `LayoutRevisionLocalServiceUtil.updateLayoutRevision`
+- `LayoutRevisionServiceUtil.addLayoutRevision`
+- `LayoutServiceUtil.updateLookAndFeel`
+- `LayoutSetLocalServiceUtil.updateLookAndFeel`
+- `LayoutSetServiceUtil.updateLookAndFeel`
+- `ThemeLocalServiceUtil.getColorScheme`
+- `ThemeLocalServiceUtil.getControlPanelThemes`
+- `ThemeLocalServiceUtil.getPageThemes`
+- `ThemeLocalServiceUtil.getTheme`
+
+#### Why was this change made? [](id=why-was-this-change-made-90)
+
+This change was made because WAP is an obsolete functionality.
+
+---------------------------------------
+
+### Removed the aui:layout Tag with No Direct Replacement [](id=removed-the-auilayout-tag-with-no-direct-replacement)
+- **Date:** 2016-Feb-08
+- **JIRA Ticket:** LPS-62935
+
+#### What changed? [](id=what-changed-91)
+
+The `aui:layout` tag has been removed with no direct replacement.
+
+#### Who is affected? [](id=who-is-affected-91)
+
+Plugins or templates that are using the `aui:layout` tag must remove their usage
+of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-91)
+
+There is no direct replacement. You should remove all usages of the `aui:layout`
+tag.
+
+#### Why was this change made? [](id=why-was-this-change-made-91)
+
+This change was made as a part of the ongoing strategy to remove deprecated
+tags.
+
+---------------------------------------
+
+### Deprecated the liferay-portlet:icon-back Tag with No Direct Replacement [](id=deprecated-the-liferay-portleticon-back-tag-with-no-direct-replacement)
+- **Date:** 2016-Feb-10
+- **JIRA Ticket:** LPS-63101
+
+#### What changed? [](id=what-changed-92)
+
+The `liferay-portlet:icon-back` tag has been deprecated with no direct
+replacement.
+
+#### Who is affected? [](id=who-is-affected-92)
+
+Plugins or templates that are using the `liferay-portlet:icon-back` tag must
+remove their usage of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-92)
+
+There is no direct replacement. You should remove all usages of the
+`liferay-portlet:icon-back` tag.
+
+#### Why was this change made? [](id=why-was-this-change-made-92)
+
+This change was made as a part of the ongoing strategy to deprecate unused tags.
+
+---------------------------------------
+
+### Deprecated the liferay-security:encrypt Tag with No Direct Replacement [](id=deprecated-the-liferay-securityencrypt-tag-with-no-direct-replacement)
+- **Date:** 2016-Feb-10
+- **JIRA Ticket:** LPS-63106
+
+#### What changed? [](id=what-changed-93)
+
+The `liferay-security:encrypt` tag has been deprecated with no direct
+replacement.
+
+#### Who is affected? [](id=who-is-affected-93)
+
+Plugins or templates that are using the `liferay-security:encrypt` tag must
+remove their usage of the tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-93)
+
+There is no direct replacement. You should remove all usages of the
+`liferay-security:encrypt` tag.
+
+#### Why was this change made? [](id=why-was-this-change-made-93)
+
+This change was made as a part of the ongoing strategy to deprecate unused tags.
+
+---------------------------------------
