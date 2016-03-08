@@ -29,11 +29,11 @@ out a form to create a form?" Yes, we did.
 - We need two simple fields, so click the (large) button at the bottom aptly
   labeled *Add Field*.
 
-![Figure 1: You can choose from six field types when creating forms.](../../../images/forms-field-types.png)
+    ![Figure 1: You can choose from six field types when creating forms.](../../../images/forms-field-types.png)
 
 - Choose a *Select* field.
 
-![Figure 2: Fill out a select field with as many options as you need.](../../../images/forms-select-field.png)
+    ![Figure 2: Fill out a select field with as many options as you need.](../../../images/forms-select-field.png)
 
 - Here's how to configure your select field:
     - **Label:** *Rate your visit to The Lunar Resort.*
@@ -64,14 +64,14 @@ If you want to see additional options, click *Show More Options*.
     - **Required Field:** Leave this unselected. Only require guests to fill out
       the select field and leave this one as optional.
 
-![Figure 3: Add a text field for guests to provide a longer comment.](../../../images/forms-text-field.png)
+    ![Figure 3: Add a text field for guests to provide a longer comment.](../../../images/forms-text-field.png)
 
 - Click *Save* when you're finished configuring the text field.
 
 - Back on the form builder page, you can see the way the fields will be laid
   out. This view shows the first (and only in this case) page of the form.
 
-![Figure 4: The form builder page lets you preview your form layout, add a page to the form, or add some more fields.](../../../images/forms-form-builder.png)
+    ![Figure 4: The form builder page lets you preview your form layout, add a page to the form, or add some more fields.](../../../images/forms-form-builder.png)
 
 - This form is finished, so click *Save*.
 
@@ -85,18 +85,18 @@ The form is developed. Now you just need to display it in The Lunar Resort site.
 - Create a new page in The Lunar Resort site called *Guest Survey Page*. Hide it
   from the navigation, and give it a *1 Column* layout.
 
-![Figure 5: Add a page for guests to view and fill out your new form.](../../../images/forms-guest-survey-page.png)
+    ![Figure 5: Add a page for guests to view and fill out your new form.](../../../images/forms-guest-survey-page.png)
 
 - Navigate to the Guest Survey Page and add a Form application to the page.
 
 - Click *Select Form*. When the configuration window opens, click your *Guest
   Survey* form and then *Save*.
 
-![Figure 6: Select the form you want to display.](../../../images/forms-select-form.png)
+    ![Figure 6: Select the form you want to display.](../../../images/forms-select-form.png)
 
 - Your form is now added to the page.
 
-![Figure 7: Lunar Resort Guests can access a simple form to record their feelings about the resort.](../../../images/forms-guest-survey.png)
+    ![Figure 7: Lunar Resort Guests can access a simple form to record their feelings about the resort.](../../../images/forms-guest-survey.png)
 
 Next learn how to view the form entries. Since there aren't any yet, fill out and
 submit the form a few times. 
@@ -112,14 +112,14 @@ going to want to see it at some point.
 - Click the *Actions* (![Actions](../../../images/icon-actions.png)) button and
   select *View Entries*.
 
-![Figure 8: You can view the entries right in the Forms application. ](../../../images/forms-view-entries.png)
+    ![Figure 8: You can view the entries right in the Forms application. ](../../../images/forms-view-entries.png)
 
 - What if you  have a lot of form fields and you can't see all of the data for
   each entry in the search container? Just click the *Actions*
 (![Actions](../../../images/icon-actions.png)) button for the entry and select
 *View*. You'll be able to see all the specifics for that form entry.
 
-![Figure 9: You can view a single entry right in the Forms application.](../../../images/forms-view-entry.png)
+    ![Figure 9: You can view a single entry right in the Forms application.](../../../images/forms-view-entry.png)
 
 Viewing entries is great, but this is serious data we're talking about. You
 might need to get all the entries into a spreadsheet so you can work with them,
