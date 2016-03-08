@@ -105,8 +105,8 @@ make all of these configurations in your Liferay servers'
 lines to your current Liferay server's `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Remote server IP address]
-    axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Remote server IP address]
     tunneling.servlet.shared.secret=[secret]
+    tunneling.servlet.shared.secret.hex=true
     auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
     auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
 
@@ -114,13 +114,10 @@ Then add the following lines to your remote Liferay server's
 `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Local server IP address]
-    axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Local server IP address]
     tunneling.servlet.shared.secret=[secret]
+    tunneling.servlet.shared.secret.hex=true
     auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
     auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
-
-<!-- TODO: Asked Mate if `axis.servlet.hosts.allowed` is still necessary. This
-may be an optional parameter no longer needed. -Cody -->
 
 Liferay's use of a pre-shared key between your staging and production
 environments helps secure the remote publication process. It also removes the
@@ -332,7 +329,7 @@ about the other supported apps, as well. -Cody
 Before you activate staging, you can choose which of these applications' data
 you'd like to copy to staging. You'll learn about many of the collaboration
 apps listed under the Staged Portlets heading when you read the
-[Collaboration Suite](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
+[Collaboration Suite](/discover/portal/-/knowledge_base/7-0/collaboration)
 chapter. For now, you just need to be aware that you can enable or disable
 staging for any of these applications. Why might you want to enable staging for
 some application types but not others? In the case of collaborative apps,
@@ -345,9 +342,6 @@ the stuff you publish to your site. But applications like the Message Boards or
 Wiki would likely benefit from *not* being staged. Notice which applications are
 marked for staging by default: if you enable staging and accept the defaults,
 staging is *not* enabled for the collaborative apps.
-
-<!-- TODO: Update Collaboration Suite chapter to 7.0 equivalent, when available.
--Cody -->
 
 The listed applications, or content groups, contain one or more specific entity.
 For example, selecting the Web Content application does not mean you're only

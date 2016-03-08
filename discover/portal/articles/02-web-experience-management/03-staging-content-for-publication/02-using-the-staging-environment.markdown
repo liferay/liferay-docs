@@ -21,11 +21,11 @@ page but haven't published that change yet to the live site. Go back to the
 staged page and observe the options you have to choose from to help in your
 staging conquest.
 
-**Manage Site Pages Variations:** allows you to work in parallel on multiple
-versions of a staged site page. You'll learn more about this later.
+**Site Pages Variations:** allows you to work in parallel on multiple versions
+of a staged site page. You'll learn more about this later.
 
-**Manage Page Variations:** allows you to work in parallel on multiple versions
-of a staged page. You'll learn more about this later.
+**Page Variations:** allows you to work in parallel on multiple versions of a
+staged page. You'll learn more about this later.
 
 **Undo/Redo:** allows you to step back/forward through recent changes to a page,
 which can save you the time of manually adding or removing apps if you make a
@@ -36,11 +36,11 @@ dates. You can go to any change in the revision history and see how the pages
 looked at that point. To access *History*, select the *Options* icon
 (![Options](../../../images/icon-options.png)) in the Staging bar.
 
-**Mark as Ready for Publication:** After you're done making changes to the
-staged page, click this button. The status of the page changes from *Draft* to
-*Ready for Publication* and any changes you've made can be published to the Live
-Site. When you publish a page to live, only the version which was *Marked as
-Ready for Publication* is published.
+**Ready for Publication:** After you're done making changes to the staged page,
+click this button. The status of the page changes from *Draft* to *Ready for
+Publication* and any changes you've made can be published to the Live Site. When
+you publish a page to live, only the version which was *Marked as Ready for
+Publication* is published.
 
 When clicking the *Publish to Live* button, a popup window appears with come
 configuration options for your publication. You can give your publication a name
@@ -65,11 +65,6 @@ the week every Monday morning without any further intervention.
 
 The *Publish to Live* button also gives you options to select pages, content,
 deletions, and permissions to publish.
-
-<!--Furthermore, you're given the *Current and Previous* and *Scheduled* tabs.
-The *Current and Previous* tab lets you view past publications along with their
-authors and create/completion dates. The *Scheduled* tab lets you view what
-publication processes are scheduled for publishing.-->
 
 **Pages** gives you the option to choose which pages to include when you
 publish. You can see the default settings in the gray text below the header.
@@ -227,13 +222,20 @@ need to be working on multiple versions of the site at the same time to ensure
 everything has been properly reviewed before it goes live. With staging, you can
 do this using *Page Variations*.
 
-For example, you can create several page variations, enabling the marketing team
-to give your site a completely different look and feel for Christmas. At the
-same time, the product management team can work on a different version that will
-be published the day after Christmas for the launching of a new product.
-Additionally, the product management team is considering two different ideas for
-the home page of the site, so they can create several page variations of the
-home page inside their product launch site.
+Notice that there are two page variation options available from the Staging bar:
+*Site Pages Variation* and *Page Variations*. Site Pages Variation is used to
+create different variations for the set of site pages. For instance, you could
+use this if you had three separate pages and wanted to modify these pages while
+keeping them together as a set. The Page Variations option only works with a
+single page.
+
+For example, you can create several site pages variations, enabling the
+marketing team to give your site a completely different look and feel for
+Christmas. At the same time, the product management team can work on a different
+version that will be published the day after Christmas for the launching of a
+new product. Additionally, the product management team is considering two
+different ideas for the home page of the site, so they can create several page
+variations of the home page inside their product launch site.
 
 Variations only affect pages and not the content, which means all the existing
 content in your staging site is shared by all your variations. In different site
@@ -246,10 +248,12 @@ You must enable page versioning when turning on Local or Remote Live staging.
 You can enable page versioning for public and private pages. When you turn
 staging on with page versioning enabled, the page variation options are
 available in the staging menu bar. By default, you only have one site page
-variation which is called *Main Variation*. To create a new one, select the
-*Site Pages Variation* link from the staging toolbar. This brings you to a list
-of the existing site page variations for your site. Click *Add Site Pages
-Variation* to create a new one.
+variation and page variation which are both called *Main Variation*. To create a
+new one, select the *Options* icon
+(![Options](../../../images/icon-options.png)) in the Staging bar and select the
+variation option. For example, select the *Site Pages Variation* option. This
+brings you to a list of the existing site page variations for your site. Click
+*Add Site Pages Variation* to create a new one.
 
 ![Figure 4: When selecting the *Site Pages Variation* link from the staging toolbar, you're able to add and manage your site pages variations.](../../../images/staging-page-variations.png)
 
@@ -293,7 +297,7 @@ options from the Site Pages screen by clicking the *Staging* drop-down menu
 located above the pages tree.
 ----
 Above paragraph feature did not work. Check if text is accurate or if feature
-changed. -Cody -->
+changed. This feature, however, does working when adding a page. -Cody -->
 
 To publish a variation to the live site, click on *Publish to Live* in the
 staging menu and then select *Publish to Live*. Publications can also be
