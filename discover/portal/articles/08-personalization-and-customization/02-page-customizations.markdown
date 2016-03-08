@@ -1,11 +1,11 @@
 # Page Customizations [](id=page-customizations)
 
 Liferay 6.1 introduced the concept of page customizations. Administrators can
-designate public pages or sections of public pages to be customizable. When a
-user visits such a page, a notification appears stating that the user can
-customize the page. Users can make customizations only in the sections of pages
-designated by administrators. Customizations are based on the rows and columns
-of a page layout. Page customizations are only visible to the user who made the
+designate pages or sections of pages to be customizable. When a user visits such
+a page, a notification appears stating that the user can customize the page.
+Users can make customizations only in the sections of pages designated by
+administrators. Customizations are based on the rows and columns of a page
+layout. Page customizations are only visible to the user who made the
 customizations. By default, site members can make page customizations but
 non-site members and guests can't.
 
