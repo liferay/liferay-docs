@@ -1,4 +1,4 @@
-# Collecting Information from Users
+# Collecting Information from Users [](id=collecting-information-from-users)
 
 Collecting information from your site's Users is important, whether you're
 asking them to submit a brief survey or apply for a mortgage. In either case,

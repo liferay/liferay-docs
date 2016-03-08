@@ -1,4 +1,4 @@
-# Basic Forms
+# Basic Forms [](id=basic-forms)
 
 It's really easy to create simple forms with the Forms Application. 
 
@@ -10,7 +10,7 @@ they'd like in an optional field.
 
 You can develop a form like this before lunch time, even if that's in 5 minutes.
 
-## Building a Form
+## Building a Form [](id=building-a-form)
 
 Whether you're creating a simple or complex form, it all starts in the same
 place: the Forms Application in your site's *Content* section. You access this
@@ -18,7 +18,7 @@ in the Menu by using the site selector to choose the site you want to work in
 (The Lunar Resort in this case) and clicking *Content &rarr; Forms*. 
 
 - Once you're in the Forms App, click the Add button
-(![Add](../../../images/icon-add.png)). You're taken to a form (of course) that you'll
+(![Add](../../../images/icon-add.png)). You're taken to a form that you'll
 fill out to create a form. If you're thinking, "Wait, did they just tell me to fill
 out a form to create a form?" Yes, we did. 
 
@@ -29,11 +29,11 @@ out a form to create a form?" Yes, we did.
 - We need two simple fields, so click the (large) button at the bottom aptly
   labeled *Add Field*.
 
-![Figure x: You can choose from six field types when creating forms.](../../../images/forms-field-types.png)
+![Figure 1: You can choose from six field types when creating forms.](../../../images/forms-field-types.png)
 
 - Choose a *Select* field.
 
-![Figure x: Fill out a select field with as many options as you need.](../../../images/forms-select-field.png)
+![Figure 2: Fill out a select field with as many options as you need.](../../../images/forms-select-field.png)
 
 - Here's how to configure your select field:
     - **Label:** *Rate your visit to The Lunar Resort.*
@@ -64,44 +64,44 @@ If you want to see additional options, click *Show More Options*.
     - **Required Field:** Leave this unselected. Only require guests to fill out
       the select field and leave this one as optional.
 
-![Figure x: Add a text field for guests to provide a longer comment.](../../../images/forms-text-field.png)
+![Figure 3: Add a text field for guests to provide a longer comment.](../../../images/forms-text-field.png)
 
 - Click *Save* when you're finished configuring the text field.
 
 - Back on the form builder page, you can see the way the fields will be laid
   out. This view shows the first (and only in this case) page of the form.
 
-![Figure x: The form builder page lets you preview your form layout, add a page to the form, or add some more fields.](../../../images/forms-form-builder.png)
+![Figure 4: The form builder page lets you preview your form layout, add a page to the form, or add some more fields.](../../../images/forms-form-builder.png)
 
 - This form is finished, so click *Save*.
 
 Now your form can be added to a page, and Lunar Resort guests can be emailed and
 provided with a link to the page where the form is displayed.
 
-## Displaying Forms
+## Displaying Forms [](id=displaying-forms)
 
 The form is developed. Now you just need to display it in The Lunar Resort site. 
 
 - Create a new page in The Lunar Resort site called *Guest Survey Page*. Hide it
   from the navigation, and give it a *1 Column* layout.
 
-![Figure x: Add a page for guests to view and fill out your new form.](../../../images/forms-guest-survey-page.png)
+![Figure 5: Add a page for guests to view and fill out your new form.](../../../images/forms-guest-survey-page.png)
 
 - Navigate to the Guest Survey Page and add a Form application to the page.
 
 - Click *Select Form*. When the configuration window opens, click your *Guest
   Survey* form and then *Save*.
 
-![Figure x: Select the form you want to display.](../../../images/forms-select-form.png)
+![Figure 6: Select the form you want to display.](../../../images/forms-select-form.png)
 
 - Your form is now added to the page.
 
-![Figure x: Lunar Resort Guests can access a simple form to record their feelings about the resort.](../../../images/forms-guest-survey.png)
+![Figure 7: Lunar Resort Guests can access a simple form to record their feelings about the resort.](../../../images/forms-guest-survey.png)
 
 Next learn how to view the form entries. Since there aren't any yet, fill out and
 submit the form a few times. 
 
-## Viewing Form Entries
+## Viewing Form Entries [](id=viewing-form-entries)
 
 When users fill out your forms, they're generating data. If you're collecting data, you're
 going to want to see it at some point. 
@@ -112,20 +112,20 @@ going to want to see it at some point.
 - Click the *Actions* (![Actions](../../../images/icon-actions.png)) button and
   select *View Entries*.
 
-![Figure x: You can view the entries right in the Forms application. ](../../../images/forms-view-entries.png)
+![Figure 8: You can view the entries right in the Forms application. ](../../../images/forms-view-entries.png)
 
 - What if you  have a lot of form fields and you can't see all of the data for
   each entry in the search container? Just click the *Actions*
 (![Actions](../../../images/icon-actions.png)) button for the entry and select
 *View*. You'll be able to see all the specifics for that form entry.
 
-![Figure x: You can view a single entry right in the Forms application.](../../../images/forms-view-entry.png)
+![Figure 9: You can view a single entry right in the Forms application.](../../../images/forms-view-entry.png)
 
 Viewing entries is great, but this is serious data we're talking about. You
 might need to get all the entries into a spreadsheet so you can work with them,
 for example.
 
-## Exporting Form Entries
+## Exporting Form Entries [](id=exporting-form-entries)
 
 So, you need to put your form entries in a spreadsheet to do spreadhseet things
 with them? No problem.
@@ -142,7 +142,7 @@ with them? No problem.
   spreadsheet program and confirm that your form entries are entered into a
 spreadsheet for you.
 
-![Figure x: You can export entries as CSV or XML files.](../../../images/forms-export-csv.png)
+![Figure 10: You can export entries as CSV or XML files.](../../../images/forms-export-csv.png)
 
 +$$$
 
@@ -154,14 +154,14 @@ file format for this type of import and export is a LAR file. For more
 information, see the article on
 [exporting and importing application content.](discover/portal/-/knowledge_base/7-0/exporting-importing-portlet-content).
 
-![Figure x: As with other Liferay Apps, you can import or export forms and their entries with a LAR file.](../../../images/forms-import-export-lar.png)
+![Figure 11: As with other Liferay Apps, you can import or export forms and their entries with a LAR file.](../../../images/forms-import-export-lar.png)
 
 $$$
 
 Once you export a batch of form entries, it can make sense to delete them from
 the database.
 
-## Deleting Form Entries
+## Deleting Form Entries [](id=deleting-form-entries)
 
 What if you export a form's entries and now you want them to be removed from the
 Liferay database? It's easy to delete all of a form's entries at once.
@@ -173,7 +173,7 @@ entries by checking the box next to *All*. A trash can icon
 (![Trash](../../../images/icon-trash.png)) appears in the top right corner of
 the Form Entries screen. Click it.
 
-![Figure x: Delete all form entries in one fell swoop.](../../../images/forms-delete-entries.png)
+![Figure 12: Delete all form entries in one fell swoop.](../../../images/forms-delete-entries.png)
 
 If you just wanted to delete a single entry, you'd just select that entry by checking
 its box, then click the trash can.
