@@ -3789,41 +3789,41 @@ This change was made as a part of the ongoing strategy to deprecate unused tags.
 
 ---------------------------------------
 
-### Removed the Ability to Specify Class Loaders in Scripting
+### Removed the Ability to Specify Class Loaders in Scripting [](id=removed-the-ability-to-specify-class-loaders-in-scripting)
 - **Date:** 2016-Feb-17
 - **JIRA Ticket:** LPS-63180
 
-#### What changed?
+#### What changed? [](id=what-changed-94)
 
 - `com.liferay.portal.kernel.scripting.ScriptingExecutor` no longer uses the
 provided class loaders in the eval methods.
 - `com.liferay.portal.kernel.scripting.Scripting` no longer uses the provided
 class loaders and servlet context names in eval and exec methods.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-94)
 
 - All implementations of `com.liferay.portal.kernel.scripting.ScriptingExecutor`
 are affected.
 - All classes that call `com.liferay.portal.kernel.scripting.Scripting` are
 affected.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-94)
 
 You should remove class loader and servlect context parameters from calls to the
 modified methods.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-94)
 
 This change was made since custom class loader management is no longer necessary
 in the OSGi container.
 
 ---------------------------------------
 
-### User Operation and Importer/Exporter Classes and Utilities Have Been Moved or Removed From portal-kernel
+### User Operation and Importer/Exporter Classes and Utilities Have Been Moved or Removed From portal-kernel [](id=user-operation-and-importer-exporter-classes-and-utilities-have-been-moved-)
 - **Date:** 2016-Feb-17
 - **JIRA Ticket:** LPS-63205
 
-#### What changed?
+#### What changed? [](id=what-changed-95)
 
 - `com.liferay.portal.kernel.security.exportimport.UserImporter`,
 `com.liferay.portal.kernel.security.exportimport.UserExporter`,
@@ -3834,7 +3834,7 @@ moved from portal-kernel to the portal-security-export-import-api module.
 `com.liferay.portal.kernel.security.exportimport.UserExporterUtil` have been
 removed with no replacement.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-95)
 
 - All implementations of
 `com.liferay.portal.kernel.security.exportimport.UserImporter` or
@@ -3848,7 +3848,7 @@ are affected.
 `com.liferay.portal.kernel.security.exportimport.UserExporter`
 is affected.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-95)
 
 If you are in an OSGi module, you can simply inject the UserImporter or
 UserExporter references
@@ -3870,61 +3870,86 @@ If you are in a legacy WAR or WAB, you will need a snippet like:
 
     UserImporter userImporter = bundleContext.getService(serviceReference);
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-95)
 
 The change was made to improve modularity of the user import/export subsystem in
 the product.
 
 ---------------------------------------
 
-### Deprecated Category Entry for Users
+### Deprecated Category Entry for Users [](id=deprecated-category-entry-for-users)
 - **Date:** 2016-Feb-22
 - **JIRA Ticket:** LPS-63466
 
-#### What changed?
+#### What changed? [](id=what-changed-96)
 
 The category entry for Site Administration &rarr; Users has been deprecated in
 favor of Site Administration &rarr; Members.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-96)
 
 All developers who specified a `control-panel-entry-category` to be visible in
 Site Administration &rarr; Users are affected.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-96)
 
 You should change the entry from `site_administration.users` to
 `site_administration.members` to make it visible in the category.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-96)
 
 This change standardizes naming conventions and separates concepts between Users
 in the Control Panel and Site Members.
 
 ---------------------------------------
 
-### Deprecated Category Entry for Pages
+### Deprecated Category Entry for Pages [](id=deprecated-category-entry-for-pages)
 - **Date:** 2016-Feb-25
 - **JIRA Ticket:** LPS-63667
 
-#### What changed?
+#### What changed? [](id=what-changed-97)
 
 The category entry for Site Administration &rarr; Pages has been deprecated in
 favor of Site Administration &rarr; Navigation.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-97)
 
 All developers who specified a `control-panel-entry-category` to be visible in
 Site Administration &rarr; Pages are affected.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-97)
 
 You should change the entry from `site_administration.pages` to
 `site_administration.navigation` to make it visible in the category.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-97)
 
 This change standardizes naming conventions and separates concepts in Product
 Menu
+
+---------------------------------------
+
+### FlagsEntryService.addEntry Method Throws PortalException [](id=flagsentryservice-addentry-method-throws-portalexception)
+- **Date:** 2016-Mar-04
+- **JIRA Ticket:** LPS-63109
+
+#### What changed? [](id=what-changed-98)
+
+The method `FlagsEntryService.addEntry` now throws a `PortalException` if the
+`reporterEmailAddress` is not a valid email address.
+
+#### Who is affected? [](id=who-is-affected-98)
+
+Any caller of the method `FlagsEntryService.addEntry` is affected.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-98)
+
+You should consider checking for the `PortalException` in try-catch blocks and
+adapt your code accordingly.
+
+#### Why was this change made? [](id=why-was-this-change-made-98)
+
+This change prevents providing an incorrect email address when adding flag
+entries.
 
 ---------------------------------------
