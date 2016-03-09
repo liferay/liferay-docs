@@ -3,7 +3,9 @@
 Once you've configured an application, Configuration Templates enable you to
 save those settings in a reusable template. If someone goes in and changes the
 settings of a particular app, it then becomes easy to revert those changes back
-to the original configuration template.
+to the original configuration template. Configuration templates are only
+available for apps placed on a page. Applications available from the Menu do not
+provide configuration templates.
 
 To create a configuration template, click the *Options* icon
 (![Options](../../../images/icon-options.png)) from the menu in the app's title
