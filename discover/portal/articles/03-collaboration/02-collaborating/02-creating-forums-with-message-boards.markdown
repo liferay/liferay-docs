@@ -413,6 +413,17 @@ whatever you like:
 
     pop.server.notifications.interval=1
 
++$$$
+
+**Note**: Depending on your mail provider, if you're using multiple devices to
+access email through POP, you might need to configure in your POP settings
+something like Gmail's *recent mode*. In Gmail, recent mode assures that emails
+go to all your devices instead of only the the first client that receives the
+email. To enable recent mode in Gmail, for example, prefix the value of your POP
+client's Username or Email field with `recent:`.
+
+$$$
+
 The second mechanism Liferay uses for sending email notifications is mailing
 lists. Any category in a Liferay message board can have its own mailing list.
 Liferay's mailing list mechanism, unlike its user subscription mechanism,
