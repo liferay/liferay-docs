@@ -86,17 +86,20 @@ from adding or modifying additional pages.
 
 $$$
 
-Once you've created the template, click the *Go to Other Site* button. Now you
-want to change the name of the page from the default to *My Profile* and add
-some portlets to the page. Back in the Control Panel, select *User Groups* from
-the *Users* section. Once there, click *Add* and name the group *Social Users*.
-When creating a user group, you have the option to set a user group site; use
-this option and select the Social Layout template for your Public Pages.
+Once you've created the template, click the *Go to Other Site* button. Click the
+link for the Social Layout site. Now you want to change the name of the page
+from the default to *My Profile* and add some applications to the page. Under
+Navigation &rarr; Pages, edit the default page (labeled *Home*) and change its
+name to *My Profile*. Click *Save*. Back in the Control Panel, select *User
+Groups* from the *Users* section. Once there, click *Add* and name the group
+*Social Users*. When creating a user group, you have the option to set a user
+group site; use this option and select the Social Layout template for My
+Profile.
 
-Now go to *Portal Settings* and select *Users* from the submenu. From the Users
-page, go to the *Default User Associations* tab and enter *Social Users* in the
-User Groups section. Now all users on the portal get a Social Profile page. Now
-the question is, how do we encourage users to visit each others fancy new
+Now go to *Configuration* &rarr; *Instance Settings* and select the *Users*
+section. Go to the *Default User Associations* tab and enter *Social Users* in
+the User Groups section. Now all users on the portal get a Social Profile page.
+Now the question is, how do we encourage users to visit each others' fancy new
 profile pages?
 
 ### Connecting Users Through Collaboration [](id=connecting-users-through-collaboration)
@@ -105,45 +108,42 @@ There are many ways that social networks connect users. These generally involve
 some kind of mutual interest or experience. On a site like Facebook, you can
 connect with people from school, from work or from other personal connections.
 On a music based networking site like Last.fm, you can connect with people who
-have similar tastes to yours. With Liferay's social networking collaboration is
+have similar tastes to yours. With Liferay's social networking, collaboration is
 the key to connection. 
 
-Using our example site of lunar-resort.com, we can take a closer look at ways
-users can be connected through hierarchies and ways they can connect to each
-other. We'll look at a handful of portlets, both those designed specifically for
+There are a handful of applications, both those designed specifically for
 connecting users and those that can create connections as a side-effect of just
 getting work done.
 
-The Site Members Directory portlet can provide a simple way for users to
-connect. If we have a site dedicated to Lunar Resort astronauts, we can place a
-Site Members Directory portlet on that site, listing all the users that have
-joined that site. Users can connect by sending requests to other users on that
-list. This isn't the worst way to get users connected but it probably won't be
-very effective. Why not? Well, other than sharing some very basic common
-interests, we haven't really had any interactions.
+The Site Members Directory can provide a simple way for users to connect. If you
+have a site dedicated to Lunar Resort astronauts, you can place a Site Members
+Directory on that site. Because it lists all the users that have joined that
+site, users can connect by sending requests to other users on that list. This
+isn't the worst way to get users connected but it probably won't be very
+effective. Why not? Well, other than sharing some very basic common interests,
+users don't interact this way.
 
-The Activities portlet provides a similar but more effective means of
-connection. Because it shows a list of what other users are doing, this portlet
-helps users discover who is among the most active across the site or the portal,
-and thus who might be a good connection. 
+The Activities application provides a similar but more effective means of
+connection. Because it shows a list of what other users are doing, this
+application helps users discover who is among the most active across the site or
+the instanc3, and thus who might be a good connection. 
 
 Probably the most effective way users can connect is by interacting with other
-users. Every portlet in the Collaboration category provides information on who
-is contributing, regardless of how. You can see who is creating a thread in a
-message board, editing a wiki article, blogging or creating a calendar event.
+users. Every application in the Collaboration category provides information on
+who is contributing, regardless of how. You can see who is creating a thread in
+a message board, editing a wiki article, blogging or creating a calendar event.
 Users can use these to connect based on content--if I find your blog
 interesting, or if you answer my question on the message board, we can use that
 as a point to connect as friends to further our interactions. This way, instead
-of our connection being forced or arbitrary, we've connected based on the fact
-that we've directly interacted and share a common interest--just like people did
-before they had the internet.
+of our connection being forced or arbitrary, we've connected based on our direct
+interaction and share a common interest--just like people did before they had
+the Internet.
 
 "Friend" is only the default social relationship as implemented by Liferay's
 social portlets. You can design things so that users are automatically connected
 through Site and Organization membership. And there are many other relationship
 types beyond Friend: your developers can take advantage of these by using
-Liferay's social API. This is covered in *[Liferay in
-Action](http://www.manning.com/sezov)* and the *Liferay Developer's Guide*. Now
-that you've got all these social applications running on your system, you might
-wonder: how can I measure social interaction? How do I identify the best
-contributors to my site? Liferay has an answer: social activity measurements.
+Liferay's social API. Now that you've got all these social applications running
+on your system, you might wonder: how can I measure social interaction? How do I
+identify the best contributors to my site? Liferay has an answer: social
+activity measurements.
