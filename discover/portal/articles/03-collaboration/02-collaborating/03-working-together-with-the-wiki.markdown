@@ -61,8 +61,8 @@ open the menu.
 
 Here are the wiki application instance options screens:
 
-**Permissions**: allows you to specify which [roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions)
-can create wiki nodes and which roles can access the Permissions screen.
+**Wikis Permissions**: allows you to specify which roles [roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions)
+can create wiki nodes and which roles can access the Wikis Permissions screen.
 
 **Export / Import**: enables you to import existing wiki content into your wiki
 application instance or export wiki content to a file. Refer to
@@ -76,11 +76,11 @@ let you customize who wiki emails come from and the format and text of the email
 sent when a page is added or updated. The *RSS* tab allows you to configure RSS
 feeds.
 
-**App Templates**: lets you store your current application setup or apply an
-existing archived setup to this application instance. App templates are
-especially useful for applying to multiple application instances. 
+**Permissions**: allows you to specify which roles can view the wiki application
+instance's options menu, access the menu's Configuration and Permissions
+options, and access any custom preference options added to the wiki application.
 
-Select the *Permissions* option to open the Permissions screen. If you've
+Select the *Wikis Permissions* option to open the Permissions screen. If you've
 created a specific role for creating wiki nodes and want to enable that role to
 create new wiki nodes in this wiki application instance, select the role's check
 box in the *Add Node* column and then click *Save*. 
@@ -377,9 +377,12 @@ Once you set the application's configuration options the way you want them,
 click *Save*.
 
 Along with the Configuration option, the Wiki application's options menu lists
-all of the standard application options that enable you to specify the app's
-look and feel, export the app's setup, import an existing setup for the app,
-minimize or maximize the app in the browser, and remove the app from the page.
+all of the standard application options. The options enable you to specify the
+app's [look and feel](/discover/deployment/-/knowledge_base/7-0/look-and-feel-configuration),
+[export or import app data](/discover/deployment/-/knowledge_base/7-0/exporting-importing-app-data),
+minimize or maximize the app in the browser, use [Configuration Templates](/discover/deployment/-/knowledge_base/7-0/configuration-templates)
+to store your current application setup or apply an existing archived setup to
+this application instance, or remove the app from the page.
 
 The Wiki application displays links to all of the Wiki application instance's
 wiki nodes and provides links for navigating around the wiki. Simply click on a
