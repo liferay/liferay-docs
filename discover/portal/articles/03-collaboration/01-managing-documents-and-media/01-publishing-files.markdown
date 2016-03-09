@@ -14,7 +14,7 @@ Documents and Media apps. You'll learn how to use both apps. And lastly, you'll
 learn how to collaborate on files from within several environments, including
 your browser, local desktop, and mobile device. We've pulled out all the stops
 to simplify online file management. Let's get the ball rolling by adding files
-to a Document Libary.
+to a Document Library.
 
 ## Adding Files [](id=adding-files)
 
@@ -51,7 +51,7 @@ permissions, and folders in Documents and Media.
 
 Since the Lunar Resort's *Souvenir and Memorabilia* staff members must be able
 to upload and organize guest media, let's enable a role for these purposes. Sign
-in as the Liferay admin and open the the *Menu* (![Product
+in as the Liferay admin and open the *Menu* (![Product
 Menu](../../../images/icon-menu.png)). Then navigate to *Control Panel &rarr; Users
 &rarr; Roles*. If the staff group is a part of an Organization, and that
 organization has a site, create an Organization Role. Otherwise, create it as a
@@ -130,7 +130,7 @@ fields.
 Any custom documents types that have been defined also appear in the Add menu.
 If a document type has been created that matches the document you would like to
 upload, you can select that document type from the Add menu. The Document
-Library applys the metadata fields associated with the document type to your
+Library applies the metadata fields associated with the document type to your
 document. On selecting a document type, you're prompted to fill in the fields
 associated with it. 
 
@@ -194,7 +194,7 @@ upload and manage media files in the *Resort Guest Media* folder.
 
 You've created the *Resort Guest Media* folder and set appropriate permissions
 for it. While you're signed in as the admin user, click on Documents and Media's
-*Options* icon (![Options](../../../images/icon-app-options.png)) and select
+*Options* icon (![Options](../../../images/icon-options.png)) and select
 *Configuration*. From here you can specify the email sender and email templates
 for email sent to Document Library folder subscribers. 
 
@@ -292,7 +292,7 @@ descending order.
 From the list view, Documents and Media lets you act on one or more files at
 once. When you select a checkbox for one or more files, the following action
 icons appear: ![Action Icons](../../../images/dm-action-icons.png). Describing
-them from left to right, the X is for cancelling file checkout, the secured lock
+them from left to right, the X is for canceling file checkout, the secured lock
 is for file check-in, the unsecured lock is for file check-out, the arrows are
 for moving the files, and the trash can is for moving files to the Recycle Bin.
 You can also move selected files to a subfolder via drag and drop. File
@@ -379,7 +379,7 @@ file. You can granted a role permission to perform the following actions.
 
 - **Update**: Edit, checkout, and checkin the file.
 
-- **Override Checkout**: Checkout the file, revoking the file's currrent
+- **Override Checkout**: Checkout the file, revoking the file's current
 checkout if it is checked out.
 
 - **Permissions**: View and configure this file's permissions.
@@ -468,7 +468,7 @@ Next we'll create credentials to use with the Google API.
 
 1. In the API Manager navigation, click on *Credentials*. 
 
-2. Create a new OAuth client ID for a *Web application*. Specify the following appributes:
+2. Create a new OAuth client ID for a *Web application*. Specify the following attributes:
     -   **Name**: `Google Docs Hook`
     -   **Authorized JavaScript origins**: `[liferay-instance-URL]` (for
         example, `http://localhost:8080` for development machines) 
@@ -638,7 +638,7 @@ The Media Gallery and Documents and Media apps are at your service to show
 off your Document Library files. The Lunar Resort's Souvenir and Memorabilia
 group enjoys patron reactions to the great pics and videos that Snappy takes of
 them. And the salespeople are more than happy to plaster the pictures onto
-clothing and accessories to make a handsome commision. 
+clothing and accessories to make a handsome commission. 
 
 Next, we'll step out of the Lunar Resort's Souvenir and Memorabilia group and
 Document Library file collaboration.
@@ -655,16 +655,16 @@ an environment that helps manage document changes. Liferay's Documents and Media
 provides these capabilities. 
 
 Liferay's document management apps support accessing apps on different kinds of
-devices and and environments. Not only can you access documents from your site
+devices and environments. Not only can you access documents from your site
 via your browser, but you can also access them from your native file browser and
 use Liferay Sync to access them from your tablet or mobile device. And Liferay
 Sync makes sure you're you can access the latest document versions. 
 
 To demonstrate using these features, we'll join the Lunar Resort
 Recreation Department members collaboration on an important document: the Lunar
-Resort's upcoming activiters newsletter. Resort representatives from each activity
+Resort's upcoming activities newsletter. Resort representatives from each activity
 group must contribute content to entice resort guests to sign up for activities.
-Staff members involved include Chip Shot (golf insructor), Wilma Carwin (lunar
+Staff members involved include Chip Shot (golf instructor), Wilma Carwin (lunar
 rover race instructor), and Tenzing Nepal (lunar sherpa). Each of them use
 different devices and bring their own style and attitude to the collaboration.
 So perhaps you'll be able to relate to their effort.
@@ -697,7 +697,7 @@ of the newsletter.
 
 ### Creating New File Versions [](id=creating-new-file-versions)
 
-To prevent other users from accicentally overwriting changes you're making to a
+To prevent other users from accidentally overwriting changes you're making to a
 document, the Document Library allows you to *checkout* the document. The user
 who checks out a file is the only user who can checkin changes to the file.
 Checking in a file produces a new file version. 
@@ -816,7 +816,7 @@ Navigate to the Documents and Media app hosting the folder you'd like to access.
 Click on the folder's Actions icon ![Actions](../../../images/icon-actions.png) and
 select *Access from Desktop*.
 
-![Figure 14: Select *Access from Desktop* to get the the folder's WebDAV URL.](../../../images/dm-access-from-desktop-action.png)
+![Figure 14: Select *Access from Desktop* to get the folder's WebDAV URL.](../../../images/dm-access-from-desktop-action.png)
 
 Copy the WebDAV URL. On Windows, map a network drive drive to the WebDAV URL.
 Enter your Liferay credentials when you're prompted for them. The document
@@ -858,8 +858,8 @@ a version control system for managing document progress. You displayed image
 files on pages using the Media Gallery and Documents and Media apps. And you've
 mastered checking out and checking in new file versions using the basic
 download/upload technique and by mapping your local file manager to the Document
-Library, for seemless file editing. Congratulations on your document management
-accomplishements!
+Library, for seamless file editing. Congratulations on your document management
+accomplishments!
 
 Now that we know the basic functionality of the Documents and Media portlet,
 let's explore using document types and metadata.
