@@ -219,8 +219,8 @@ dedicated [tutorial](/develop/tutorials/-/knowledge_base/6-2/importing-resources
 Liferay 6.2 versions CE 6.2 GA4 and EE 6.2 SP10 and later. Prior Liferay 6.2
 versions require the [Resources Importer CE](https://www.liferay.com/marketplace/-/mp/application/15502239)
 or [EE](https://www.liferay.com/marketplace/-/mp/application/15502140) app
-installed, depending on your Liferay Portal edition. The Resources Importer app
-can be downloaded from [Liferay Marketplace](https://www.liferay.com/marketplace).
+installed, depending on your Liferay edition. The Resources Importer app can be
+downloaded from [Liferay Marketplace](https://www.liferay.com/marketplace).
 
 $$$
 
@@ -535,10 +535,10 @@ app, from the Asset Publisher, or from the Site Administration interface.
 **Note:** If you want to view your page the way your users will see it (i.e.,
 without all the app controls and icons), go up to the top Control Menu and
 select the *Edit Controls* icon (![Edit Controls](../../../images/icon-edit-controls.png)).
-This makes all those extra controls you see as a portal administrator disappear.
-You'll also notice the icon is crossed out when the Edit Controls are disabled.
-If you need to use the controls again, just select the icon again to return to
-the original format.
+This makes all those extra controls you see as a Liferay administrator
+disappear. You'll also notice the icon is crossed out when the Edit Controls are
+disabled. If you need to use the controls again, just select the icon again to
+return to the original format.
 
 $$$
 

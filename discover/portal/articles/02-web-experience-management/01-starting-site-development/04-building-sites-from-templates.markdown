@@ -1,6 +1,6 @@
 # Building Sites from Templates [](id=building-sites-from-templates)
 
-Site Templates can be administered from the Control Panel. They let portal
+Site Templates can be administered from the Control Panel. They let Liferay
 administrators create multiple sites with the same default set of pages and
 content. Site templates can contain multiple pages, each with its own theme,
 layout template, applications, and app configurations. Site templates can also
@@ -203,7 +203,7 @@ and you'd like to re-apply the site template pages to them, you'll need to click
 the *Reset Changes* button for each page.
 
 Site template administrators can set preferences for apps on site template
-pages. When a portal administrator creates a site from a site template, the app
+pages. When a Liferay administrator creates a site from a site template, the app
 preferences are copied from the site template's apps, overriding any default app
 preferences. When merging site template and site changes (e.g., when resetting),
 app preferences are copied from site template apps to site apps. Only global app
@@ -226,14 +226,14 @@ button.
 ![Figure 4: This type of warning is given when there are friendly URL conflicts with site template pages.](../../../images/friendly-url-propagation-failure.png)
 
 The *Reset and Propagate* button resets the merge fail count and attempts to
-propagate your site changes again. This process gives the portal administrator
+propagate your site changes again. This process gives the Liferay administrator
 the opportunity to detect and fix a merge fail, when problems arise. This
 helpful process can also be done with page template merges, which follows
 similar steps.
 
 Site administrators can also add data to site template applications. For
 example, site template administrators can add the Wiki app to a site template
-page and use the Wiki to create lots of articles. When a portal administrator
+page and use the Wiki to create lots of articles. When a Liferay administrator
 creates a site from a site template, data is copied from the site template's
 apps to the site's apps. The preferences of the site's apps are updated with the
 IDs of the copied data. For example, if a site is created from a site template

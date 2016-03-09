@@ -143,12 +143,12 @@ can also be changed at any time through the Control Panel within *Configuration
 
 ## Adding Sites [](id=adding-sites)
 
-Sites can be created through the Control Panel by a portal administrator.
+Sites can be created through the Control Panel by a Liferay administrator.
 Liferay's Control Panel provides an administrative interface for managing your
 Liferay instance. There are four main sections of the Liferay's Control Panel:
 Users, Sites, Apps, and Configuration. In this section, you'll learn how to use
 the Control Panel to manage sites. In a later section, you'll learn about using
-the Control Panel to manage site templates. Site templates allow portal
+the Control Panel to manage site templates. Site templates allow Liferay
 administrators to create multiple sites with the same default set of pages and
 content. For information about the Apps, Users, and Configuration sections of
 the Control Panel, see the

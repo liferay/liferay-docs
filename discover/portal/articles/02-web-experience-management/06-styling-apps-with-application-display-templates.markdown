@@ -1,7 +1,7 @@
 # Styling Apps with Application Display Templates [](id=styling-apps-with-application-display-templates)
 
-The application display template (ADT) framework allows portal administrators to
-override the default display templates, removing limitations to the way your
+The application display template (ADT) framework allows Liferay administrators
+to override the default display templates, removing limitations to the way your
 site's content is displayed. With ADTs, you can define custom display templates
 used to render asset-centric applications. For example, you may want to show
 blog entries horizontally instead of vertically, or list your assets in the
