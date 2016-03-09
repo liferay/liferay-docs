@@ -194,7 +194,7 @@ upload and manage media files in the *Resort Guest Media* folder.
 
 You've created the *Resort Guest Media* folder and set appropriate permissions
 for it. While you're signed in as the admin user, click on Documents and Media's
-*Options* icon (![Options](../../../images/icon-app-options.png)) and select
+*Options* icon (![Options](../../../images/icon-options.png)) and select
 *Configuration*. From here you can specify the email sender and email templates
 for email sent to Document Library folder subscribers. 
 
