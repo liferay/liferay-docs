@@ -64,7 +64,7 @@ to let every site administrator share content across sites they manage. Some
 examples of content you can share across site include web content structures and
 templates, categories, application display templates, etc.
 
-Please refer to the [Sites Admin Portlet](https://docs.liferay.com/portal/7.0-b1/propertiesdoc/portal.properties.html#Sites%20Admin%20Portlet)
+Please refer to the [Sites Admin Portlet](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Sites%20Admin%20Portlet)
 section of Liferay's `portal.properties` file for a list of relevant
 configurable properties. For example, the
 `sites.content.sharing.with.children.enabled` property allows you to disable
@@ -166,23 +166,23 @@ navigating to the Site Administration menu from the Control Panel. To manage a
 single site, navigate to the site by going to the Menu and clicking the Compass
 icon (![Compass](../../../images/icon-compass.png)) from the sites dropdown menu
 and selecting the appropriate site name you'd like to manage. Once finished, the
-site administration options (i.e., Pages, Content, Users, etc.) for that site
-are available.
+site administration options (i.e., Navigation, Content, Members, etc.) for that
+site are available.
 
 $$$
 
 To add a site for the Lunar Resort instance, navigate to the Control Panel and
-select *Sites* &rarr; *Sites*. Then click the Add icon (![Add Site](../../../images/icon-add.png))
-at the bottom right of the page. If there is at least one site template
-available, a dropdown menu appears. Site templates provide a preconfigured set
-of pages, applications, and content that can be used as the basis of a site's
-public or private page set. To create a site from scratch, select *Blank Site*.
-Otherwise, select the name of the site template you'd like to use. If you opt to
-create a site from a site template, you have to choose whether to copy the site
-template's pages as your new site's public or private page set. If other site
-templates are created, they will appear in the Add menu as they become
-available. The following figure shows the form that needs to be filled when
-creating a *Blank Site*.
+select *Sites* &rarr; *Sites*. Then click the Add icon
+(![Add Site](../../../images/icon-add.png)) at the bottom right of the page. If
+there is at least one site template available, a dropdown menu appears. Site
+templates provide a preconfigured set of pages, applications, and content that
+can be used as the basis of a site's public or private page set. To create a
+site from scratch, select *Blank Site*. Otherwise, select the name of the site
+template you'd like to use. If you opt to create a site from a site template,
+you have to choose whether to copy the site template's pages as your new site's
+public or private page set. If other site templates are created, they will
+appear in the Add menu as they become available. The following figure shows the
+form that needs to be filled when creating a *Blank Site*.
 
 ![Figure 3: The New Site window aids in your new site development.](../../../images/add-site-screen.png)
 
@@ -230,8 +230,8 @@ organizations, and user groups. Using this information, the site membership
 policy can automatically assign members to the site. If your site will implement
 a membership policy, your site administrators can disallow manual membership
 management for their site. When the Allow Manual Membership Management option is
-disabled, the *Users* section of *Sites* (Site Memberships and Site Teams) is
-hidden, even from administrators.
+disabled, the *Members* section of Site Administration (Site Memberships and
+Site Teams) is hidden, even from administrators.
 
 $$$
 
@@ -246,14 +246,12 @@ assign members to the current site if they're already members of the parent
 site.
 
 When creating a blank site or organization site, the site is not immediately
-viewable from the Sites dropdown (compass icon in Site Administration). This is
-because sites without a page are impossible to view. Therfore, before you can
-view your site, you must first create a page for it. To add a page for your
-temporarily invisible site, navigate to the Control Panel &rarr; *Sites* &rarr;
-*Sites* and select the *Actions* icon (![Actions](../../../images/icon-actions.png))
-and then *Site Administration*. Now your site is selected in the Sites dropdown
-menu, and you can proceed with adding your site's first page. For more
-information about adding pages, see the
+viewable. This is because sites without a
+page are impossible to view. Therefore, before you can view your site, you must
+first create a page for it. To add a page for your temporarily invisible site,
+navigate to the *Navigation* option from Site Administration. Then add a public
+page. After adding your site's first page, it renders and your site is viewable.
+For more information about adding pages, see the
 [Creating and Managing Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages)
 section.
 
@@ -273,10 +271,10 @@ template and changes to the site template propagate to any site based on it. A
 checkbox appears that lets users unlink the site template if the user has
 permission to do so.
 
-Once you've created a site, it appears in the Sites page of the Control Panel.
-Once the site has been created, you can click the site to specify more site
-settings using three categories: Basic Information, Advanced, Social, and
-Miscellaneous. You'll learn more about your site's settings in the next section.
+Once the site has been created, you'll want to configure its settings to fit
+your needs. A site's settings are broken into four categories: General, Social,
+Languages, and Advanced. You'll learn more about your site's settings in the
+next section.
 
 ## Configuring Site Settings [](id=configuring-site-settings)
 
@@ -287,9 +285,9 @@ menu and selecting *Configuration* &rarr; *Site Settings*.
 
 You'll find options to organize site content, manage site users, and improve
 your site's overall intelligence. You'll explore the Site Settings categories
-available, which are available from the *Basic Information*, *Advanced*,
-*Social*, and *Advanced* tabs, and simulate configuring those settings for your
-sample Lunar Resort site.
+available, which are available from the *General*, *Social*, *Languages*, and
+*Advanced* tabs, and simulate configuring those settings for your sample Lunar
+Resort site.
 
 ### Organizing Site Content [](id=organizing-site-content)
 
@@ -300,11 +298,11 @@ your organizational goals.
 #### Categorization [](id=categorization)
 
 You can explore ways to tag and categorize your site by clicking the
-*Categorization* tab under Basic Information. These tools help administrators
-organize the site and allows for users to easily find your site and its content
-through search and navigation. To take full advantage of tags and categories,
-you'll need to add pages with content to your site. For more information on
-using tags and categories, visit the
+*Categorization* tab under General. These tools help administrators organize the
+site and allows for users to easily find your site and its content through
+search and navigation. To take full advantage of tags and categories, you'll
+need to add pages with content to your site. For more information on using tags
+and categories, visit the
 [Organizing Content with Tags and Categories](discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 section.
 
@@ -342,10 +340,12 @@ section.
 #### Custom Fields [](id=custom-fields)
 
 *Custom Fields* lets you edit the custom fields you already have configured
-for the *Site* resource. If you don't have any custom fields configured for the
+for the Site resource. If you don't have any custom fields configured for the
 Site resource, you can navigate to the Control Panel &rarr; *Custom Fields*
-located under the *Configuration* tab. For more information on Custom Fields,
-see the [Custom Fields](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/custom-fields)
+located under the *Configuration* tab. The Custom Fields tab does not display in
+Site Settings unless you have existing custom fields. For more information on
+Custom Fields, see the
+[Custom Fields](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/custom-fields)
 section.
 
 <!-- TODO: replace link above. -Cody -->
@@ -353,10 +353,10 @@ section.
 #### Documents and Media [](id=documents-and-media)
 
 The last option that relates to organizing your site's content is *Documents and
-Media*, which is found under Basic Information. This lets you enable/disable
-Directory Indexing, which allows site administrators to browse your site's
-documents and media files and folders. For example, a site administrator of a
-site called *Lunar Resort* can browse documents at
+Media*, which is found under General. This lets you enable/disable Directory
+Indexing, which allows site administrators to browse your site's documents and
+media files and folders. For example, a site administrator of a site called
+*Lunar Resort* can browse documents at
 http://localhost:8080/documents/lunar-resort if this option is enabled.
 
 Now that you can organize your site's content using Site Settings, move on to
@@ -370,7 +370,7 @@ management.
 
 #### Details [](id=details)
 
-*Details* is the leading option under the Basic Information tab, which provides
+*Details* is the leading option under the General tab, which provides
 the same menu you filled out when first creating your Lunar Resort site. This
 allows an administrator to change the description and membership type of a site.
 The membership type can be set as open, restricted, or private based on the
@@ -396,9 +396,7 @@ creating roles and/or teams, visit the
 [Roles and Permissions](/discover/portal/-/knowledge_base/6-2/roles-and-permissions)
 and
 [Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/7-0/creating-teams-for-advanced-site-membership-management)
-sections, respectively. 
-
-<!-- TODO: replace link above. -Cody -->
+sections, respectively.
 
 #### Ratings [](id=ratings)
 
@@ -416,11 +414,10 @@ The last configuration option in Site Settings related to managing users is
 *Mentions*. *Mentions* is found under the Social tab. This option allows you to
 enable/disable the Mentioning functionality, which is used to *mention* (notify
 and/or draw attention to) friends and colleagues by entering the "@" character
-followed by their user name.
-
-<!-- TODO Jim: Post official link, when available. Coordinate with Jim. -Cody
-https://github.com/jhinkey/liferay-docs/blob/9b2b0bb9cab477cf6d740bad558aed1e49c88ece/discover/portal/articles/liferay-utility-applications/mentioning-users.markdown
--->
+followed by their user name. You can learn more about the mentioning feature by
+visiting the
+[Mentioning Users](/discover/portal/-/knowledge_base/7-0/mentioning-users)
+article.
 
 Now that you're aware of your Site Settings abilities to improve User and
 Content management, you'll learn how to improve your site's overall intelligence
@@ -479,7 +476,7 @@ To set this up, the DNS name *developers.lunar-resort.com* should point to your
 instance's IP address first. Then enter *http://developers.lunar-resort.com* in
 the Virtual Host tab for the Developers site. This helps users quickly access
 their site without having to recall an extended URL. The *Site URL* option is
-listed under the Basic Information tab.
+listed under the General tab.
 
 #### Analytics [](id=analytics)
 
@@ -523,7 +520,8 @@ and from where. The *Analytics* option is listed under the Advanced tab.
 
 The *Maps* options lets you configure the maps API provider used by your Liferay
 instance when displaying geolocalized assets. Geolocalized assets can be
-displayed for documents, web content articles, DDL records, etc.
+displayed for documents, web content articles, DDL records, etc. Maps is
+available under the Advanced tab.
 
 <!-- TODO: Provide link to where Maps feature is documented once it's available.
 
@@ -531,11 +529,11 @@ This is Jim's area. Good blog on this:
 https://www.liferay.com/web/juan.fernandez/blog/-/blogs/adding-geolocation-support-to-liferay-7-0
 -Cody -->
 
-#### Display Settings [](id=display-settings)
+#### Languages [](id=languages)
 
-The *Display Settings* option lets you configure the language options for your
-site. This is the leading option when opening the Miscellaneous tab. You have
-options to use the default language options or define a new default language.
+The *Languages* option lets you configure the language options for your
+site. This is the leading option when opening the Languages tab. You have
+options to use the default language options or define a custom default language.
 
 Now that you know how to configure sites, you'll learn how to customize your
 personal sites.
@@ -589,9 +587,9 @@ properties you can use to customize the automatically created pages. You can
 customize the names of the default pages, the applications that appear on the pages,
 the themes and layout templates of the default pages, and more. Please refer to
 the
-[Default User Public Layouts](https://docs.liferay.com/portal/7.0-b1/propertiesdoc/portal.properties.html#Default%20User%20Public%20Layouts)
+[Default User Public Layouts](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Default%20User%20Public%20Layouts)
 and
-[Default User Private Layouts](https://docs.liferay.com/portal/7.0-b1/propertiesdoc/portal.properties.html#Default%20User%20Private%20Layouts)
+[Default User Private Layouts](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Default%20User%20Private%20Layouts)
 sections of the `portal.properties` file for details.
 
 +$$$
