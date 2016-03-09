@@ -47,10 +47,9 @@ Boards* from under the *Content* heading.
 
 $$$
 
-To administer a message board, open the *Product Menu* (![Product
-Menu](../../../images/icon-menu.png)) and navigate the *Content* section for your
-site, page, or global scope. Click on *Message Boards* and the Message Boards
-administration screen appears. 
+To administer a message board, open the *Menu* (![Menu](../../../images/icon-menu.png))
+and navigate the *Content* section for your site, page, or global scope. Click
+on *Message Boards* and the Message Boards administration screen appears. 
 
 ![Figure 1: A Message Board instance starts empty, ready for you to configure for your purposes.](../../../images/message-boards-administration.png)
 
@@ -218,9 +217,10 @@ board's permissions.
 
 ### Message Board Permissions [](id=permissions)
 
-To edit message board permissions, click the *Permissions* button. The
-permissions screen allows you to grant and revoke a role's ability to access
-parts of the application and perform particular actions. 
+To edit message board permissions, click on the *Options* icon (![Options](../../../images/icon-options.png))
+and select the *Home Category Permissions* option. This permissions screen
+allows you to grant and revoke a role's ability to access parts of the
+application and perform particular actions. 
 
 The permissions enable a role to perform the following actions. 
 
@@ -249,6 +249,13 @@ posts.
 **Move Thread:** Move a thread to a different category or subcategory. 
 
 Configure the roles with the permissions you want and *Save* your changes. 
+
+In addition to the *Home Category Permissions* option, there the *Permissions*
+option. It's for specifying the application instance's general permissions. It
+lets you control access to the application instance's options menu and to that
+menu's Configuration and Permissions options. There's also Preferences
+permission that allows you to control access to the application instance's
+preference options, if the app has any custom preferences.
 
 Now that you've configured your message board and set its permissions, you can
 focus on adding categories for message board threads. 
