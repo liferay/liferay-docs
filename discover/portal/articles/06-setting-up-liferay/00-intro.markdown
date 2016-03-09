@@ -51,8 +51,10 @@ with more or less granularity. At one end of the spectrum, you can affect the
 scope of the whole *System*. Configurations made at the System scope affect all
 portal instances, sites, and portlet instances. At the opposite end of the
 spectrum, configurations made at the *Portlet Instance* level provide
-configuration settings only for that particular instance of the portlet. Here's
-an overview of the available configuration scopes:
+configuration settings only for that particular instance of the portlet. For
+details on configuring a scope for a particular application instance, visit the
+[Application Scope](/discover/portal/-/knowledge_base/7-0/application-scope)
+article. Here's an overview of the available configuration scopes:
 
 *System:* configuring Liferay and its applications through System Settings
 provides default settings for all portal instances, sites, or portlet instances.
