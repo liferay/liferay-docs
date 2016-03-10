@@ -3,7 +3,7 @@
 By creating your own Views, you can customize your mobile app's layout, style,
 and functionality. You can create them from scratch or use an existing View as a
 foundation. Views include a View class for implementing Screenlet behavior, a
-Screenlet class for notifying listeners and invoking Interactors, and an xml
+Screenlet class for notifying listeners and invoking Interactors, and an XML 
 file for specifying the UI. The four Liferay Screens View types support
 different levels of customization and parent View inheritance. Here's what each
 View type offers: 
@@ -13,8 +13,9 @@ theme colors and tints of the View's resources. All existing Views can be themed
 with different styles. The View's colors reflect the current value of the 
 Android 
 [color palette](https://www.google.com/design/spec/style/color.html#color-color-palette). 
-Each theme also has aliases that can be overridden. For example, you can use the 
-Westeros View Set's structure with the Material View Set's colors. 
+If you want to use one View Set with another View Set's colors, you can use 
+those colors in your app's theme (e.g. `colorPrimary_default`, 
+`colorPrimary_material`, `colorPrimary_westeros`). 
 
 **Child View:** presents the same UI components as its parent View, but lets 
 you change their appearance and position.
@@ -49,58 +50,72 @@ First, you'll learn how to create a Themed View.
 
 ## Themed View
 
-We provide several existing viewsets that you can reuse. If you specify or override the Android color palette's values (for example, `primaryColor`, `secondaryColor`, etc...) you'll reuse the View Set's general 
-structure, but be able to use the new colors (also with tinted resources). 
+Screens provides several existing View Sets that you can reuse to create a 
+Themed View. If you use or override the Android color palette's values (for 
+example, `primaryColor`, `secondaryColor`, etc...), you'll reuse the View Set's 
+general structure, but be able to use the new colors (also with tinted 
+resources). 
 
-Each viewset has an Android theme associated, with the following names: *default_theme*, *material_theme* and *westeros_theme*, corresponding with the default, material and westeros viewset respectively.
+Each View Set has its own Android theme. These are listed here: 
 
-You can easily style **all** your screenlets inheriting in your app or activity theme from one of those android themes.
+- **Default View Set:** `default_theme`
+- **Material View Set:** `material_theme`
+- **Westeros View Set:** `westeros_theme`
 
-For example you could reuse the styles (and layouts) from the material_theme with this lines of code:
+You can easily style all your Screenlets by setting your app or activity theme 
+to inherit a View Set's Android theme. For example, you can use the following 
+code to reuse the styles (and layouts) from `material_theme` in your own theme: 
 
-```xml
-<style name="AppTheme.NoActionBar" parent="material_theme">
-	<item name="colorPrimary">#B91D6D</item>
-	<item name="colorPrimaryDark">#670E3B</item>
-	<item name="colorAccent">#BBBBBB</item>
-</style>
+    <style name="AppTheme.NoActionBar" parent="material_theme">
+        <item name="colorPrimary">#B91D6D</item>
+        <item name="colorPrimaryDark">#670E3B</item>
+        <item name="colorAccent">#BBBBBB</item>
+    </style>
 
-<application android:theme="@style/AppTheme.NoActionBar"
-	...
-	>
-```
+    <application android:theme="@style/AppTheme.NoActionBar"
+        ...
+    >
 
-We are overriding the theme colors with our own colors. The screenlets will use the new colors and tint the used images and resources accordingly. Liferay Screens is using the default Android color palette names (from the support library).
+Note that this code overrides the `AppTheme.NoActionBar` theme's colors with 
+your own color settings for `colorPrimary`, `colorPrimaryDark`, and 
+`colorAccent`. Screenlets will also use these new colors, and tint images and 
+other resources accordingly. Liferay Screens uses the default Android color 
+palette names from the Support Library. 
 
-If we wanted to override just the colors for that theme we could use more specific names, like this example:
+You can also override only the parent View Set's theme colors. This way you can 
+set a default color palette and override only the View Set colors you want. The 
+color names for each View Set are the default Android names, followed by an 
+underscore and the View Set's lowercase name (`_default`, `_material`, and 
+`_westeros`). For example, the following code overrides `colorPrimary`, 
+`colorPrimaryDark`, and `colorAccent` for only the `material_theme`: 
 
-```xml
-<resources>
-    <color name="colorPrimary_material">#B91D6D</color>
-    <color name="colorPrimaryDark_material">#670E3B</color>
-    <color name="colorAccent_material">#BBBBBB</color>
-</resources>
-```
+    <resources>
+        <color name="colorPrimary_material">#B91D6D</color>
+        <color name="colorPrimaryDark_material">#670E3B</color>
+        <color name="colorAccent_material">#BBBBBB</color>
+    </resources>
 
-This way you can set a default color palette and override just the viewsets you want. The color names for each viewset are the default android names followed by the short name for the viewset (default, material and westeros).
+Liferay Screens also lets you use one View Set's layout with a Screenlet, and 
+use another View Set's general style and colors. To do this, pass a `layoutId` 
+attribute to a Screenlet that is already styled with another View Set's theme. 
+The Screenlet uses the layout structure specified in `layoutId`, but inherits 
+the general style and colors from the View Set's theme. For example, this code 
+tells Login Screenlet to use the Default View Set's layout structure, but use 
+the styles and colors defined earlier in `AppTheme.NoActionBar`:
 
-Liferay Screens also supports using a different layout in **the same screenlet**. If you pass a `layoutId` attribute to a Screenlet that already is styled with a default theme, it will inherit the general style and colors from the View Set, and use the layout's structure. 
-
-```xml
-<com.liferay.mobile.screens.auth.login.LoginScreenlet
+    <com.liferay.mobile.screens.auth.login.LoginScreenlet
         android:id="@+id/login_screenlet"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:basicAuthMethod="email"
         app:layoutId="@layout/login_default"
         app:credentialsStorage="shared_preferences" />
-        
-<application android:theme="@style/AppTheme.NoActionBar"
-	...
-	>
-```
 
-This code is using the styles and colors from the material viewset (we defined the style earlier) and the structure (images and position) of the default viewset.
+    <application android:theme="@style/AppTheme.NoActionBar"
+        ...
+    >
+
+Next, you'll learn how to create a Child View. 
 
 ## Child View [](id=child-view)
 
