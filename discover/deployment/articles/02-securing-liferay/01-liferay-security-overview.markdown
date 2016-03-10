@@ -27,10 +27,16 @@ solutions:
 
 - Form authentication using the Sign In Portlet with extensible adapters for
   checking and storing credentials (portal database, LDAP)
-- SSO solutions - NTLM, CAS, SiteMinder, OpenSSO, OpenID, Facebook
+- Single-Sign-On (SSO) solutions - NTLM, CAS, SiteMinder, OpenSSO, OpenID,
+  Facebook
 - SAML plugin
   ([https://www.liferay.com/marketplace/-/mp/application/15188711](https://www.liferay.com/marketplace/-/mp/application/15188711))
 - JAAS integration with application server
+
+Note: Although Liferay's SSO solutions are incompatible with WebDAV, they can
+be used in conjunction with Liferay Sync. See the
+[Publishing Files](/discover/portal/-/knowledge_base/7-0/publishing-files) 
+article for more information on WebDAV and Liferay Sync.
 
 Remote application authentication and authorization can be done using the
 `AuthVerifier` layer:
