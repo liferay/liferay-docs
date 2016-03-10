@@ -82,13 +82,19 @@ This section contains articles on configuring Liferay at the System and Instance
 scopes:
 
 System wide configuration:
+
 - System Settings
+
 - Server Administration
+
 - Custom Fields
 
 Setting up a portal instance:
+
 - Virtual Instances
+
 - Instance Settings
+
 - Integrating Existing Users
 
 All of these are accomplished through the Control Panel. Start by learning to
