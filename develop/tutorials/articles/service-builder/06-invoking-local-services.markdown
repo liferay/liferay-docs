@@ -242,7 +242,7 @@ Service Builder in your project's `*Portlet` classes. To learn how to call
 Liferay services, please see the
 [Understanding Liferay's Service Security Model](/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model)
 and
-[Invoking Liferay Services from Your Application](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-from-your-application)
+[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/6-2/finding-and-invoking-liferay-services)
 tutorials.
 
 ## Related Topics [](id=related-topics)
