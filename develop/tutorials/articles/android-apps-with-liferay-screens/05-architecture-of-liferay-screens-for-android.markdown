@@ -227,15 +227,16 @@ behavior. By inheriting one or more of these View layer components from another
 View, the different View *types* allow varying levels of control over a
 Screenlet's UI design and behavior.
 
-There are several different View types:
+There are several different View types: 
 
 **Themed:** presents the same structure as the current View, but alters the 
 theme colors and tints of the View's resources. All existing Views can be themed 
 with different styles. The View's colors reflect the current value of the 
 Android 
 [color palette](https://www.google.com/design/spec/style/color.html#color-color-palette). 
-Each theme also has aliases that can be overridden. For example, you can use the 
-Westeros View Set's structure with the Material View Set's colors. 
+If you want to use one View Set with another View Set's colors, you can use 
+those colors in your app's theme (e.g. `colorPrimary_default`, 
+`colorPrimary_material`, `colorPrimary_westeros`). 
 
 **Child:** presents the same behavior and UI components as its parent, but can
 change the UI components' appearance and position. A Child View specifies visual

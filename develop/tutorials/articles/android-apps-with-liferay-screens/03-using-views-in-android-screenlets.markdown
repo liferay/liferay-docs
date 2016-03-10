@@ -58,8 +58,22 @@ screenshot:
 
 ![Figure 1: You can set a Screenlet's layout via its `liferay:layoutId` attribute.](../../images/screens-android-layoutid-xml.png)
 
-You can also set a theme by setting the style attribute `themeName` in your 
-application theme. 
+You can also use a View Set by having your app's theme inherit the View Set. For 
+example, the following code in an app's `res/values/styles.xml` tells 
+`AppTheme.NoActionBar` to use the Material View Set as its parent theme: 
+
+    <resources>
+
+        <style name="AppTheme.NoActionBar" parent="material_theme">
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+            <item name="colorAccent">@color/colorAccent</item>
+
+            <item name="windowActionBar">false</item>
+            <item name="windowNoTitle">true</item>
+        </style>
+        ...
+    </resources>
 
 That's all there is to it! Great! Now you know how to use Views to spruce up 
 your Android Screenlets. This opens up a world of possibilities, like 
