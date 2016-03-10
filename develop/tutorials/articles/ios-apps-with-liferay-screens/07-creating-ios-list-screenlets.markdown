@@ -357,13 +357,20 @@ can respond to events in your Screenlet.
 
 ## Creating the Delegate
 
-You must notify the app's developer when an relevant event occurrs inside the 
-screenlet. And as you already know, in iOS world this is done using the delegate 
-pattern.
+For the app developer to respond to events in your Screenlet, you must create a 
+delegate protocol. This protocol must define the methods required to respond to 
+the Screenlet's events. You'll define the following three methods:
 
-You first need to define a protocol, which will be the contract (aka the set of 
-methods) that any delegate class will conform. You can do it in the 
-`BookmarkListScreenlet.swift` file.
+- `screenlet(_:onBookmarkListResponse:)`: Returns the `Bookmark` results when 
+  the server call succeeds. 
+
+- `screenlet(_:onBookmarkListError:)`: Returns the `NSError` object when the 
+  server call fails. 
+
+- `screenlet(_:onBookmarkSelected:)`: Returns the `Bookmark` when a user selects 
+  it in the list. 
+
+Create this protocol now:
 
     @objc public protocol BookmarkListScreenletDelegate : BaseScreenletDelegate {
 
@@ -376,19 +383,26 @@ methods) that any delegate class will conform. You can do it in the
         optional func screenlet(screenlet: BookmarkListScreenlet,
             onBookmarkSelected bookmark: Bookmark)
     }
-	
-Notice some methods are marked as optional, which means that the delegate class 
-may or may not implement them.
+
+Note that these methods are optional. This means that the delegate class doesn't 
+have to implement them. Also note that in this Screenlet's example code in 
+GitHub, this protocol is defined in the same file 
+(`BookmarkListScreenlet.swift`) as the Screenlet class. You don't have to create 
+the protocol there--you can create it anywhere you like. 
+
+Next, you'll create the Screenlet class. 
 
 ## Creating the Screenlet Class
 
-Once the view is prepared, we're going to create the Screenlet class. You just 
-need to create a class extending from `BaseListScreenlet`. In this class you 
-will add the configuration parameters of the screenlet, as `IBInspectable` 
-properties. In our case, we need to configure the `groupId` and the `folderId`. 
-You'll support offline mode by adding an `offlinePolicy` property. This lets the 
-app developer configure the offline policy she wants for this specific 
-screenlet. Remember to annotate your class as `IBDesignable`. 
+Now that your Screenlet's other components exist, you can create the Screenlet 
+class. A list Screenlet's Screenlet class must extend `BaseListScreenlet`. You 
+should also annotate the Screenlet class as `IBDesignable`. Your Screenlet class 
+must also define the configuration properties required for the Screenlet to 
+work. You should define these as `IBInspectable` properties. 
+
+Bookmark List Screenlet's Screenlet class requires properties for the `groupId` 
+and `folderId`. If you want to support offline mode, you should also add an 
+`offlinePolicy` property. Create the `BookmarkListScreenlet` class as follows: 
 
     @IBDesignable public class BookmarkListScreenlet: BaseListScreenlet {
 
@@ -396,11 +410,15 @@ screenlet. Remember to annotate your class as `IBDesignable`.
         @IBInspectable public var folderId: Int64 = 0
 
         @IBInspectable public var offlinePolicy: String? = CacheStrategyType.RemoteFirst.rawValue
+        
     }
 
-Now override the method that creates the interactor for one specific page. This 
-method will be called when the screenlet needs to load one new page. You should 
-also pass the value of the `offlinePolicy` property to the interactor.
+Next, override the method that creates the Interactor for a specific page. In 
+Bookmark List Screenlet, this is the `createPageLoadInteractor` method. The 
+Screenlet calls this method when it needs to load a page. If your Screenlet 
+supports offline mode, you should also pass the value of the `offlinePolicy` 
+property to the interactor. Add this method to Bookmark List Screenlet's 
+Screenlet class as follows:
 
     override public func createPageLoadInteractor(
         page page: Int, 
@@ -419,14 +437,21 @@ also pass the value of the `offlinePolicy` property to the interactor.
     }
 
 Next, you must conform your delegate's protocol. This is required to invoke the 
-delegate when any relevant events occur. The class `BaseScreenlet` (our direct 
-ancestor) already defines the property `delegate` to store the delegate object, 
-so any screenlet (ours aswell) will have that property and any app develop will 
-be able to assign an object to that property. In this case, you must invoke the 
-delegate for three events: 
+delegate when any relevant events occur. The class `BaseScreenlet`, which 
+`BaseListScreenlet` extends, already defines the `delegate` property to store 
+the delegate object. Any list Screenlet therefore has this property, and any app 
+developer using the Screenlet can assign an object to the property. First, add a 
+computed property for your delegate: 
 
-1. When the screenlet loads a page successfully: override this method to invoke 
-   the delegate. 
+    public var bookmarkListDelegate: BookmarkListScreenletDelegate? {
+        return delegate as? BookmarkListScreenletDelegate
+    }
+
+In Bookmark List Screenlet, you must invoke the delegate for three events. These 
+events correspond to the events in the delegate protocol: 
+
+1. When the Screenlet loads a page successfully, override the `onLoadPageResult` 
+   method to invoke the delegate: 
 
         override public func onLoadPageResult(page page: Int, rows: [AnyObject], rowCount: Int) {
             super.onLoadPageResult(page: page, rows: rows, rowCount: rowCount)
@@ -438,8 +463,8 @@ delegate for three events:
             delegate.screenlet?(self, onBookmarkListResponse: self.rows as! [Bookmark])
         }
 
-2. When the screenlet fails trying to load a page: override this method to 
-   invoke the delegate.
+2. When the Screenlet fails to load a page, override the `onLoadPageError` 
+   method to invoke the delegate: 
 
         override public func onLoadPageError(page page: Int, error: NSError) {
             super.onLoadPageError(page: page, error: error)
@@ -451,8 +476,8 @@ delegate for three events:
             delegate.screenlet?(self, onBookmarkListError: error)
         }
 
-3. When the user selects an item in the list: override this method to invoke the 
-   delegate.
+3. When the user selects an item in the list, override the `onSelectedRow` 
+   method to invoke the delegate: 
 
         override public func onSelectedRow(row: AnyObject) {
             guard let delegate = self.delegate as? BookmarkListScreenletDelegate else {
@@ -462,31 +487,10 @@ delegate for three events:
             delegate.screenlet?(self, onBookmarkSelected: row as! Bookmark)
         }
 
-## Connecting the Dots
-
-And one final detail: in your view class (`BookmarkListView_default`), you have 
-to complete the overriden methods:
-	    
-    override public func doFillLoadedCell(row row: Int, cell: UITableViewCell, object: AnyObject) {
-        let bookmarkCell = cell as! BookmarkCell_default
-        let bookmark = object as! Bookmark
-
-        bookmarkCell.nameLabel.text = bookmark.name
-        bookmarkCell.urlLabel.text = bookmark.url
-    }
-
-    override public func doFillInProgressCell(row row: Int, cell: UITableViewCell) {
-        let bookmarkCell = cell as! BookmarkCell_default
-
-        bookmarkCell.nameLabel.text = "Loading..."
-    }
-
-Now you're ready to add your brand-new screenlet to your app and test it. 
-
-You're done! Your Screenlet is a ready-to-use component that you can add to your 
-storyboard. You can even
-[package](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes#publish-your-themes-using-cocoapods)
-it to contribute to the Screens project or distribute with CocoaPods. 
+Awesome! You're done! Your list Screenlet, like any other Screenlet, is a 
+ready-to-use component that you can add to your storyboard. You can even
+[package it](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes#publish-your-themes-using-cocoapods)
+to contribute to the Liferay Screens project, or distribute it with CocoaPods. 
 
 ## Related Topics
 
