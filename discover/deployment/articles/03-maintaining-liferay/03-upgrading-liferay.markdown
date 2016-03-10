@@ -28,7 +28,7 @@ property in your `portal-ext.properties` file.
 
 On Unix, you can set your classpath like this:
 
-    export LIFERAY_CLASSPATH=$TOMCAT_DIR/lib/ext/*.jar:$TOMCAT_DIR/webapps/ROOT/WEB-INF/lib/*.jar:osgi/**/*.jar
+    export LIFERAY_CLASSPATH=$TOMCAT_DIR/lib,$TOMCAT_DIR/lib/ext,$TOMCAT_DIR/webapps/ROOT/WEB-INF/lib
 
 On Windows, replace the following section in `build.xml`
 
