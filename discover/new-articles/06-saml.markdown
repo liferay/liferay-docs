@@ -2,8 +2,7 @@
 
 (Coming soon)
 
-<!-- Uncomment when a version of the SAML plugin is available that's compatible
-with Liferay 7.
+<!-- This EE-only article needs to be tested and updated for 7.0. -->
 
 ![EE-only](../../images/ee-feature-web.png)
 
