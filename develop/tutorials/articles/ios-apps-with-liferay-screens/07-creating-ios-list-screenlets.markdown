@@ -183,13 +183,12 @@ method to Bookmark List Screenlet's View class:
 
 Note that there may be cases where you need to use several custom table cells. 
 This is common if your data can exist in multiple states. In this case, you must 
-override the preview method to register all the necessary XIB files using your 
-own cell identifiers. Then override the `doDequeueReusableCell` method to 
-dequeue the cell for the supplied identifier. For example, in Bookmark List 
-Screenlet you may want to use a different cell style to display a bookmark that 
-has an invalid URL. The following `doDequeueReusableCell` method is an example 
-of cells with the IDs `firstCellRow` or `regularCell` being dequeued: 
-<!-- What preview method? -->
+override the `doRegisterCellNib` method to register all the necessary XIB files 
+using your own cell identifiers. Then override the `doDequeueReusableCell` 
+method to dequeue the cell for the supplied identifier. For example, in Bookmark 
+List Screenlet you may want to use a different cell style to display a bookmark 
+that has an invalid URL. The following `doDequeueReusableCell` method is an 
+example of cells with the IDs `firstCellRow` or `regularCell` being dequeued: 
 
     public func doDequeueReusableCell(row row: Int) -> UITableViewCell {
         let cellId = (row == 1) ? "firstCellRow" : "regularCell"
@@ -436,56 +435,51 @@ Screenlet class as follows:
         return interactor
     }
 
-Next, you must conform your delegate's protocol. This is required to invoke the 
-delegate when any relevant events occur. The class `BaseScreenlet`, which 
+Next, you must call your delegate's methods to handle the Screenlet's events. 
+You first need a reference to the delegate. The class `BaseScreenlet`, which 
 `BaseListScreenlet` extends, already defines the `delegate` property to store 
 the delegate object. Any list Screenlet therefore has this property, and any app 
-developer using the Screenlet can assign an object to the property. First, add a 
-computed property for your delegate: 
+developer using the Screenlet can assign an object to the property. To avoid 
+casting this `delegate` property to `BookmarkListScreenletDelegate` every time 
+you use it, you can add a computed property that does this just once: 
 
     public var bookmarkListDelegate: BookmarkListScreenletDelegate? {
         return delegate as? BookmarkListScreenletDelegate
     }
 
-In Bookmark List Screenlet, you must invoke the delegate for three events. These 
-events correspond to the events in the delegate protocol: 
+Now you must override the `BaseListScreenlet` methods that the Screenlet calls 
+to handle events. Because these events correspond to the events your delegate 
+methods handle, you'll call your delegate methods in these `BaseListScreenlet` 
+methods: 
 
-1. When the Screenlet loads a page successfully, override the `onLoadPageResult` 
-   method to invoke the delegate: 
+- `onLoadPageResult`: Called when the Screenlet loads a page successfully. 
+  Override this method to call your delegate's 
+  `screenlet(_:onBookmarkListResponse:)` method. 
 
-        override public func onLoadPageResult(page page: Int, rows: [AnyObject], rowCount: Int) {
-            super.onLoadPageResult(page: page, rows: rows, rowCount: rowCount)
+- `onLoadPageError`: Called when the Screenlet fails to load a page. Override 
+  this method to call your delegate's `screenlet(_:onBookmarkListError:)` 
+  method. 
 
-            guard let delegate = self.delegate as? BookmarkListScreenletDelegate else {
-                return
-            }
+- `onSelectedRow`: Called when the user selects an item in the list. Override 
+  this method to call your delegate's `screenlet(_:onBookmarkSelected:)` method. 
 
-            delegate.screenlet?(self, onBookmarkListResponse: self.rows as! [Bookmark])
-        }
+Override these methods now: 
 
-2. When the Screenlet fails to load a page, override the `onLoadPageError` 
-   method to invoke the delegate: 
+    override public func onLoadPageResult(page page: Int, rows: [AnyObject], rowCount: Int) {
+        super.onLoadPageResult(page: page, rows: rows, rowCount: rowCount)
 
-        override public func onLoadPageError(page page: Int, error: NSError) {
-            super.onLoadPageError(page: page, error: error)
+        bookmarkListDelegate?.screenlet?(self, onBookmarkListResponse: rows as! [Bookmark])
+    }
 
-            guard let delegate = self.delegate as? BookmarkListScreenletDelegate else {
-                return
-            }
+    override public func onLoadPageError(page page: Int, error: NSError) {
+        super.onLoadPageError(page: page, error: error)
 
-            delegate.screenlet?(self, onBookmarkListError: error)
-        }
+        bookmarkListDelegate?.screenlet?(self, onBookmarkListError: error)
+    }
 
-3. When the user selects an item in the list, override the `onSelectedRow` 
-   method to invoke the delegate: 
-
-        override public func onSelectedRow(row: AnyObject) {
-            guard let delegate = self.delegate as? BookmarkListScreenletDelegate else {
-                return
-            }
-
-            delegate.screenlet?(self, onBookmarkSelected: row as! Bookmark)
-        }
+    override public func onSelectedRow(row: AnyObject) {
+        bookmarkListDelegate?.screenlet?(self, onBookmarkSelected: row as! Bookmark)
+    }
 
 Awesome! You're done! Your list Screenlet, like any other Screenlet, is a 
 ready-to-use component that you can add to your storyboard. You can even

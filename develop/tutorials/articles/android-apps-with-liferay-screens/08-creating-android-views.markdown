@@ -50,11 +50,12 @@ First, you'll learn how to create a Themed View.
 
 ## Themed View
 
-Screens provides several existing View Sets that you can reuse to create a 
-Themed View. If you use or override the Android color palette's values (for 
-example, `primaryColor`, `secondaryColor`, etc...), you'll reuse the View Set's 
-general structure, but be able to use the new colors (also with tinted 
-resources). 
+Screens provides several existing View Sets that you can reuse and customize in 
+your app to create a Themed View. If you use or override the Android color 
+palette's values (for example, `primaryColor`, `secondaryColor`, etc...), you'll 
+reuse the View Set's general structure, but be able to use the new colors (also 
+with tinted resources). Note that you must create Themed Views inside your app. 
+This is because Themed Views depend on the app or activity theme. 
 
 Each View Set has its own Android theme. These are listed here: 
 
