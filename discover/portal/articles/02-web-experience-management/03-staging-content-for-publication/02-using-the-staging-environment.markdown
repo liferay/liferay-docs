@@ -213,7 +213,7 @@ $$$
 Now that you know how to use the staging environment, you'll learn about the
 permissions involved to help manage this environment.
 
-## Managing Permissions
+## Managing Permissions [](id=managing-permissions)
 
 With the staging environment, there are many different options to use for
 building and managing a site and its pages. Sometimes limiting the access to
