@@ -372,9 +372,9 @@ click *Save*.
 
 Along with the Configuration option, the Wiki application's options menu lists
 all of the standard application options. The options enable you to specify the
-app's [look and feel](/discover/deployment/-/knowledge_base/7-0/look-and-feel-configuration),
-[export or import app data](/discover/deployment/-/knowledge_base/7-0/exporting-importing-app-data),
-minimize or maximize the app in the browser, use [Configuration Templates](/discover/deployment/-/knowledge_base/7-0/configuration-templates)
+app's [look and feel](/discover/portal/-/knowledge_base/7-0/look-and-feel-configuration),
+[export or import app data](/discover/portal/-/knowledge_base/7-0/exporting-importing-app-data),
+minimize or maximize the app in the browser, use [Configuration Templates](/discover/portal/-/knowledge_base/7-0/configuration-templates)
 to store your current application setup or apply an existing archived setup to
 this application instance, or remove the app from the page.
 

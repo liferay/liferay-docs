@@ -1,4 +1,4 @@
-# Using Worklfow [](id=using-worklfow)
+# Using Workflow [](id=using-workflow)
 
 The ancient Greeks were pretty important, so we decided to name Liferay's
 workflow engine *Kaleo*. In Greek, Kaleo means "called ones," which is
