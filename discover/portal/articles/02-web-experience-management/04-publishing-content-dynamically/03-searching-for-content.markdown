@@ -30,12 +30,12 @@ searches for web content. However, apps like Blogs, Wiki, Message Boards, and
 Documents and Media all provide search bars that let users search among the
 specific types of assets with which these applications allow users to interact.
 Note that all of these applications are accessible from Site Administration in
-the Product Menu. They can also be placed on site pages for end-users to use.
-The Web Content application in the Product Menu's Site Administration section
-also has a built-in search bar, which allows for web content search. Because
-this application is only designed for administrative use (and is not available
-to add to a page), the Search application is available to allow
-non-adminstrative users to search for web content.
+the Menu. They can also be placed on site pages for end-users to use. The Web
+Content application in the Menu's Site Administration section also has a
+built-in search bar, which allows for web content search. Because this
+application is only designed for administrative use (and is not available to add
+to a page), the Search application is available to allow non-adminstrative users
+to search for web content.
 
 +$$$
 

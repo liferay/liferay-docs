@@ -43,8 +43,8 @@ server.
 ## Enabling Local Live Staging [](id=enabling-local-live-staging)
 
 Site administrators can enable Staging for a site by navigating to the *Site
-Administration* &rarr; *Publishing Tools* menu and selecting *Staging*. A new
-page loads where you can select the staging type, either *Local Live* or *Remote
+Administration* &rarr; *Publishing* menu and selecting *Staging*. A new page
+loads where you can select the staging type, either *Local Live* or *Remote
 Live*, after which additional options appear. Staging allows changes to be made
 in a staging environment so that work can be reviewed, possibly using a
 workflow, before it's published to a live site. Enabling Local Live staging is
@@ -62,8 +62,8 @@ Lunar Resort home page. Before beginning, you'll want to add a new page.
 Navigate to the Pages menu in the Lunar Resort's Site Administration menu and
 add a new page named *News and Events*. Next, click *News and Events* to view
 the page. Then add the Alerts and Announcements apps to the News and Events
-page. Navigate to the Staging menu under Publishing Tools, select *Local Live*,
-and click *Save*. You've officially begun the staging process.
+page. Navigate to the Staging menu under Publishing, select *Local Live*, and
+click *Save*. You've officially begun the staging process.
 
 When you activate staging Local Live staging, Liferay creates a clone of your
 site. This clone became the staging environment. Because of this, it is
@@ -77,8 +77,8 @@ site's update history won't be saved until you enable page versioning. Page
 versioning requires staging (either Local Live or Remote Live) to be enabled.
 
 If you ever need to turn off the staging environment, return back to *Staging*
-from the Publishing Tools dropdown. The processes you've created are displayed
-by default. Navigate to the *Options* icon
+from the Publishing dropdown. The processes you've created are displayed by
+default. Navigate to the *Options* icon
 (![Options](../../../images/icon-options.png)) from the upper right corner of
 the page and select *Staging Configuration*. Select the *None* radio button to
 turn Local Live staging off.
@@ -101,21 +101,23 @@ Liferay server's list of allowed servers. You also need to specify an
 authentication key to be shared by your current and your remote server and
 enable each Liferay server's tunneling servlet authentication verifier. You can
 make all of these configurations in your Liferay servers'
-`portal-ext.properties` files.  Your first step should be to add the following
+`portal-ext.properties` files. Your first step should be to add the following
 lines to your current Liferay server's `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Remote server IP address]
-    axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Remote server IP address]
     tunneling.servlet.shared.secret=[secret]
+    tunneling.servlet.shared.secret.hex=true
     auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
+    auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
 
 Then add the following lines to your remote Liferay server's
 `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Local server IP address]
-    axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Local server IP address]
     tunneling.servlet.shared.secret=[secret]
+    tunneling.servlet.shared.secret.hex=true
     auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
+    auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
 
 Liferay's use of a pre-shared key between your staging and production
 environments helps secure the remote publication process. It also removes the
@@ -157,9 +159,15 @@ two strategies:
 Once you've chosen a key, make sure that value of your current server matches
 the value of your remote server.
 
+One last thing you'll need to do is update the *TunnelAuthVerfierConfiguration*
+of your Liferay instance. To do this, navigate to the Control Panel &rarr;
+*Configuration* &rarr; *System Settings* &rarr; *Platform* &rarr; *Tunnel Auth
+Verifier*. Click */api/liferay/do* and insert the additional IP addresses you're
+using in the *Hosts allowed* field. Then select *Update*.
+
 Remember to restart both Liferay servers after making these portal properties
 updates. After restarting, log back in to your local Liferay instance as
-a site administrator. Then navigate to the *Publishing Tools* option in Site
+a site administrator. Then navigate to the *Publishing* option in Site
 Administration and select *Staging*. Select *Remote Live* and additional options
 appear.
 
@@ -321,7 +329,7 @@ about the other supported apps, as well. -Cody
 Before you activate staging, you can choose which of these applications' data
 you'd like to copy to staging. You'll learn about many of the collaboration
 apps listed under the Staged Portlets heading when you read the
-[Collaboration Suite](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
+[Collaboration Suite](/discover/portal/-/knowledge_base/7-0/collaboration)
 chapter. For now, you just need to be aware that you can enable or disable
 staging for any of these applications. Why might you want to enable staging for
 some application types but not others? In the case of collaborative apps,
@@ -334,9 +342,6 @@ the stuff you publish to your site. But applications like the Message Boards or
 Wiki would likely benefit from *not* being staged. Notice which applications are
 marked for staging by default: if you enable staging and accept the defaults,
 staging is *not* enabled for the collaborative apps.
-
-<!-- TODO: Update Collaboration Suite chapter to 7.0 equivalent, when available.
--Cody -->
 
 The listed applications, or content groups, contain one or more specific entity.
 For example, selecting the Web Content application does not mean you're only

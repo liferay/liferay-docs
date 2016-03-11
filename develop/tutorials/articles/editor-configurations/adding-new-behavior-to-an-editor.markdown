@@ -27,10 +27,10 @@ extension point, you should follow these steps:
     immediately following editor initialization.
 
     Some examples of JS files that are injected into the CKEditor are
-    [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_definition.js),
-    [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_show.js),
+    [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/apps/platform/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_definition.js),
+    [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/master/modules/apps/platform/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_show.js),
     and
-    [https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/dialog_definition.js).
+    [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/apps/platform/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/dialog_definition.js).
     These JS files are used by Liferay to redefine which fields show in
     different dialogs, depending on what the selected language (HTML, BBCode,
     Creole) supports. For example, Creole doesn't support background color in
@@ -40,7 +40,7 @@ extension point, you should follow these steps:
 2.  Now you'll need to create a module that can register your new JS file and
     inject it into your editor instance. Create a generic OSGi module using your
     favorite third party tool, or use
-    [Blade Tools](/develop/tutorials/-/knowledge_base/7-0/using-blade-to-create-modules).
+    [Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools).
 
 3.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. To follow naming conventions, your class name
@@ -48,7 +48,7 @@ extension point, you should follow these steps:
     and ending with *DynamicInclude* (e.g.,
     `CKEditorCreoleOnEditorCreateDynamicInclude.java`). Your Java class should
     implement the
-   [DynamicInclude](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/servlet/taglib/DynamicInclude.java)
+   [DynamicInclude](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/servlet/taglib/DynamicInclude.java)
    interface.
 
 4.  Directly above the class's declaration, insert the following code:
@@ -81,7 +81,7 @@ extension point, you should follow these steps:
     suggested previously dealing with Creole's deficiency with displaying
     background colors in table cells. You can look at how this could be
     done by looking at the `include(...)` method in the
-    [CKEditorCreoleOnEditorCreateDynamicInclude](https://github.com/liferay/liferay-portal/blob/master/modules/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/java/com/liferay/frontend/editor/ckeditor/web/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java)
+    [CKEditorCreoleOnEditorCreateDynamicInclude](https://github.com/liferay/liferay-portal/blob/master/modules/apps/platform/frontend/frontend-editor/frontend-editor-ckeditor-web/src/main/java/com/liferay/frontend/editor/ckeditor/web/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java)
     class.
 
 7.  Make sure you've instantiated your bundle's context so you
@@ -114,7 +114,7 @@ extension point, you should follow these steps:
     Just as you can configure individual JSP pages to use a specific
     implementation of the available WYSIWYG editors, you can use those same
     implementation options for the registration process. Visit the
-    [Editors](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Editors)
+    [Editors](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Editors)
     section of `portal.properties` for more details. For example, to configure
     the Creole implementation of the CKEditor, you could use the following
     key:
@@ -131,4 +131,4 @@ Liferay supported WYSIWYG editor!
 
 [Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
 
-[Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
+[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
