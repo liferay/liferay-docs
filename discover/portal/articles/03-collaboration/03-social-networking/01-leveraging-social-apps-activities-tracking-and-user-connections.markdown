@@ -15,27 +15,6 @@ Unless otherwise noted, these apps have minimal configuration options. Some of
 them provide additional options for customizing feed lengths or display styles.
 Additional styling changes can be made through custom CSS.
 
-## Using the Core Liferay Social Apps 
-
-Out-of-the box, Liferay provides seven social apps:
-
-- Activities
-- Group Statistics
-- Meetups 
-- Requests
-- Summary
-- User Statistics
-- Wall
-
-These apps provide a default implementation of Liferay's social API. You may use
-them out of the box, but they really only scratch the surface of the platform's
-capability. It's also possible to develop your own implementation of Liferay's
-social API to use different social relationships. Please refer to the [Liferay
-Developer Tutorials](https://dev.liferay.com/develop/tutorials/7-0) or
-the
-[Javadocs](http://http://docs.liferay.com/portal/7.0/javadocs/portal-service/com/liferay/social/kernel/service/package-summary.html)
-for information about Liferay's social API. 
-
 ## Liferay's Social Tools in Action [](id=liferays-social-tools-in-action)
 
 To get started with Liferay's social features, you first want to add social apps
@@ -73,7 +52,7 @@ Private Layouts* and *Default User Public Layouts* in the [properties documentat
 Because it's the recommended method, you want to use the user group method to
 create the layouts. As an administrator, go to the Control Panel and select
 *Site Templates* from under the *Sites* section. Click *Add* (![Add](../../../images/icon-add.png)) 
-and fill out the form. Call your new site template *Social Layout*. Click *Save*.
+and fill out the form. Call your new site template *Social Layout Public*. Click *Save*.
 
 ![Figure x: You can give your site template a custom name and description and also specify several configuration settings..](../../../images/social-networking-site-template.png)
 
@@ -86,21 +65,46 @@ from adding or modifying additional pages.
 
 $$$
 
-Once you've created the template, click the *Go to Other Site* button. Click the
-link for the Social Layout site. Now you want to change the name of the page
-from the default to *My Profile* and add some applications to the page. Under
-Navigation &rarr; Pages, edit the default page (labeled *Home*) and change its
-name to *My Profile*. Click *Save*. Back in the Control Panel, select *User
-Groups* from the *Users* section. Once there, click *Add* and name the group
-*Social Users*. When creating a user group, you have the option to set a user
-group site; use this option and select the Social Layout template for My
-Profile.
+Now repeat the process and create a site template called *Social Layout
+Private*. 
 
-Now go to *Configuration* &rarr; *Instance Settings* and select the *Users*
-section. Go to the *Default User Associations* tab and enter *Social Users* in
-the User Groups section. Now all users on the portal get a Social Profile page.
-Now the question is, how do we encourage users to visit each others' fancy new
-profile pages?
+You need to give your users a way to request connections and also to respond to
+connection requests. To do that, you'll use the Requests application and the
+Summary application. Requests goes on users' dashboard pages, as they are
+private pages just for that user. Summary goes on users' profile pages, which
+are public. This way, users can visit the profile and request a connection. 
+
+Once you've created the templates, click the *Go to Other Site* button. Click
+the link for the Social Layout Public site. Now you want to change the name of
+the page from the default to *Welcome*. Under Navigation &rarr; Pages, edit
+the default page (labeled *Home*) and change its name to *Welcome*. Click
+*Save*.  Now you'll add an application to the page. Click the *Go to Site* link
+in the menu and then click the *Add* button. Under *Applications* &rarr;
+*Social*, drag the *Summary* application to the column on the left. 
+
+Awesome! You've now set up a site template that contains the Summary
+application for users' public profiles. Now you need to do the same thing for
+the Requests application and users' private dashboards. Click the *Go to Other
+Site* button, but this time click the link for the Social Layout Private site.
+As you did before, change the name of the default page from *home* to *Welcome*.
+Then click the *Go to Site* link, click the *Add* button, and under
+*Applications* &rarr; *Social*, drag the Requests application and drop it into
+the leftmost column. 
+
+You're almost there. Click *Control Panel* and select *User Groups* from the
+*Users* section. Once there, click *Add* and name the group *Social Users*. When
+creating a user group, you can select site templates to apply to those users'
+profiles and dashboards. For *My Profile*, select *Social Layout Public*. For
+*My Dashboard*, select *Social Layout Private*. Click *Save*. 
+
+Now go to *Control Panel* &rarr; *Configuration* &rarr; *Instance Settings* and
+select the *Users* section. Go to the *Default User Associations* tab and enter
+*Social Users* in the User Groups section. Now all users on the portal get a
+Social Profile page. 
+
+Awesome! You've now enabled your users to make social connections. Now the
+question is, how do we encourage users to visit each others' fancy new profile
+pages?
 
 ### Connecting Users Through Collaboration [](id=connecting-users-through-collaboration)
 
@@ -138,6 +142,70 @@ as a point to connect as friends to further our interactions. This way, instead
 of our connection being forced or arbitrary, we've connected based on our direct
 interaction and share a common interest--just like people did before they had
 the Internet.
+
+
+## Using the Core Liferay Social Apps 
+
+Out-of-the box, Liferay provides seven social apps:
+
+- Activities
+- Group Statistics
+- Meetups 
+- Requests
+- Summary
+- User Statistics
+- Wall
+
+These apps provide a default implementation of Liferay's social API. You may use
+them out of the box, but they really only scratch the surface of the platform's
+capability. It's also possible to develop your own implementation of Liferay's
+social API to use different social relationships. Please refer to the [Liferay
+Developer Tutorials](https://dev.liferay.com/develop/tutorials/7-0) or
+the
+[Javadocs](http://http://docs.liferay.com/portal/7.0/javadocs/portal-service/com/liferay/social/kernel/service/package-summary.html)
+for information about Liferay's social API. 
+
+Probably the core Social app is the Activities app. It displays information
+about user activity on the site where you added the app. User activities tracked
+include updates to the Documents and Media library, blog posts, message boards
+posts, wiki pages, and bookmarks.  Liferay also tracks information about web
+content but only displays this information if the logged-in user is a site
+administrator. This application provides a summary of recent site activity. You
+can use it on a site's public or private pages to show what site members have
+been up to or you can use it on the public or private pages of a user's personal
+site. When added to a personal site, the Activities portlet just shows the
+activities of a single user.
+
+![Figure x: The Activities app shows information about asset-related user activity in the current site. It only displays information about web content if the current user is a site administrator.](../../images/social-activities.png)
+
+Note that the app provides links to the assets listed in the feed.  The links to
+the assets won't work, however, unless there's a way to display the assets on
+the page. For example, suppose that the user Joe Bloggs uploaded a document
+called *Lunar Resort happenings for August* to a site. An Activites app on that
+site would show a link to the *Lunar Resort happenings for August* document.
+But the link won't work unless there's a Documents and Media app or a
+Documents and Media Display app in which to show the document. Remember to add
+the appropriate apps to the page where you've placed the Activities app to make
+the links work.
+
+In addition to the Activities application, there are several other social
+applications you can use. 
+
+![Figure x: Meetups allow users to schedule meetings and hangouts.](../../images/social-meetups.png)
+
+The Meetups application is a tool for creating casual meetings for users of your
+site. Anyone can create a "meetup" and give it a title, description,
+date/time, maximum number of attendees, price, and provide an image. Any meetups
+that are created are displayed in the application for anyone to view. Users can
+register for the meetup, which lets the organizer keep track of who's coming. 
+
+The options for creating a meetup are essentially the same as those for creating
+a calendar event.
+
+The Wall application provides a place for users to leave messages on other users'
+profiles. The messages can only be plain text as no formatting or HTML is
+supported. Once a post is added to a user's wall, that user can delete it
+or respond to it with a quick link to post on the original poster's wall.
 
 "Friend" is only the default social relationship as implemented by Liferay's
 social portlets. You can design things so that users are automatically connected
