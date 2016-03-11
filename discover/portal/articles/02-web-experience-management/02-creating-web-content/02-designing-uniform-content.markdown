@@ -500,6 +500,16 @@ Currency Converter app in FreeMarker and Velocity:
 
     $theme.runtime("com_liferay_currency_converter_web_portlet_CurrencyConverterPortlet");
 
++$$$
+
+**Warning:** The `theme` variable is no longer injected into the FreeMarker
+context. For more information about why the theme variable was removed for
+Liferay 7.0 and suggestions for updating your code, visit the
+[Taglibs Are No Longer Accessible via the theme Variable in FreeMarker](/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
+breaking change entry.
+
+$$$
+
 Liferay's taglibs are also accessible to web content administrators developing
 in FreeMarker. There is no need to instantiate these taglibs within your
 FreeMarker template; they're already provided for you automatically. You can

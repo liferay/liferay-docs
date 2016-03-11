@@ -22,13 +22,13 @@ any applications added by your enterprise's developers.
 
 ## Where Configuration Happens [](id=where-configuration-happens)
 
-Liferay’s configuration takes place in the following places: 
+Liferay's configuration takes place in the following places: 
 
 Properties files: properties files  that set default behavior may be included in
 the platform or the modules. Keep in mind that these settings can always be
 overwritten by a system administrator in the UI. 
 
-Database: configuration through Liferay’s UI is stored in a database.  The
+Database: configuration through Liferay's UI is stored in a database.  The
 values in the database always override the default configurations set through
 properties files.
 
@@ -51,8 +51,10 @@ with more or less granularity. At one end of the spectrum, you can affect the
 scope of the whole *System*. Configurations made at the System scope affect all
 portal instances, sites, and portlet instances. At the opposite end of the
 spectrum, configurations made at the *Portlet Instance* level provide
-configuration settings only for that particular instance of the portlet. Here's
-an overview of the available configuration scopes:
+configuration settings only for that particular instance of the portlet. For
+details on configuring a scope for a particular application instance, visit the
+[Application Scope](/discover/portal/-/knowledge_base/7-0/application-scope)
+article. Here's an overview of the available configuration scopes:
 
 *System:* configuring Liferay and its applications through System Settings
 provides default settings for all portal instances, sites, or portlet instances.
@@ -82,13 +84,19 @@ This section contains articles on configuring Liferay at the System and Instance
 scopes:
 
 System wide configuration:
+
 - System Settings
+
 - Server Administration
+
 - Custom Fields
 
 Setting up a portal instance:
+
 - Virtual Instances
+
 - Instance Settings
+
 - Integrating Existing Users
 
 All of these are accomplished through the Control Panel. Start by learning to
@@ -127,14 +135,14 @@ configuration.
 
 
 
-Liferay’s configuration can leave in the following places: Properties files:
+Liferay's configuration can leave in the following places: Properties files:
 these properties files may be included in the platform or the modules, although
 they can always be overwritten by a system administrator.  Database: the
-configuration that can be modified through Liferay’s UI is stored in a database.
+configuration that can be modified through Liferay's UI is stored in a database.
 The values in the database always override those set through properties files,
 which at that point act as the defaults.
 
-Another important concept to understand Liferay’s configuration is scopes.
+Another important concept to understand Liferay's configuration is scopes.
 Scopes allow having different configurations depending on the context. Here are
 the existing scopes:
 
@@ -154,7 +162,7 @@ https://docs.google.com/document/d/1oLYzZfLQwCeGY_i4zFfk34tlzAjnx15z2fMao71CFII/
 
 Best Practices
 Prior to 7.0
-Prior to 7.0, Liferay’s configuration management was in the form of:
+Prior to 7.0, Liferay's configuration management was in the form of:
 portal.properties
 portlet.properties
 
@@ -200,7 +208,7 @@ Site scope:
 
 Use Site settings in the site administration menu.
 Portlet instance scope:
-Choose the “Configuration” option in the portlet menu accessed by clicking the three elipsis in the upper right corner.
+Choose the "Configuration" option in the portlet menu accessed by clicking the three elipsis in the upper right corner.
 
 -->
 

@@ -29,40 +29,45 @@ started.
 
 Each site comes with a built-in blog instance, so let's explore adding an entry
 to your site's blog. In Site Administration, the Blogs app provides the best
-place to draft blogs. Click the Product Menu icon
-(![Product Menu](../../../images/icon-menu.png)) to open the Product Menu. Then
+place to draft blogs. Click the Menu icon
+(![Menu](../../../images/icon-menu.png)) to open the product menu. Then
 navigate to *Sites* &rarr; *\[Site Name\]* &rarr; *Content* &rarr; *Blogs*. The
 *Entries* screen appears, listing the site's blog entries. 
 
-Click the *Add* icon (![Add](../../../images/icon-add.png)) to bring up the blog
-entry screen. 
+Click the *Add* icon (![Add](../../../images/icon-add.png)) to create a new blog
+entry. 
 
 ![Figure 1: This screenshot highlights the blog entry editor's controls for formatting text, justifying images, and editing tables.](../../../images/blogs-blogs-entry-mars.png)
 
 The screen presents fields to set a cover image, title, and subtitle, and an
-area for creating the entry's content. You may be asking yourself, "Where are
+area for entering content. You may be asking yourself, "Where are
 the content editor's controls?" The editor gives you a seamless writing experience,
 displaying controls when you need them and hiding them from view when you don't
 need them. This keeps your canvas uncluttered, so you can focus on writing. As
 you create content, context-specific controls appear. 
 
 Go ahead and enter text in the *Content* area. If you highlight text, controls
-appear. These controls let you style the text or convert it to a link or a
-tweet to share your blog post on Twitter. 
+appear (In Figure 1, notice the controls above the highlighted word *hiking*).
+These controls let you style the text or convert it to a link or a tweet to
+share your blog post on Twitter. You can also use keyboard shortcuts Ctrl+b for
+bold, Ctrl+i for italics, and Ctrl+u for underline. You can even
+[mention](/discover/portal/-/knowledge_base/7-0/mentioning-users)
+other users by entering the "@" character followed by the user's name.
 
 Whenever you park your cursor in the content area, the *Add* icon (`+`) appears.
 If you click on it, it shows controls for inserting an image, table, or
-horizontal line (![Controls](../../../images/icon-content-insert-controls.png)). To
-insert an image, click the icon that depicts the mountain silhouette. The image
-file selector screen appears. It lets you choose an existing image upload a new
-one. You can also drag-and-drop image files into the content area. After you've
-added the image to the blog entry, clicking it brings up controls for justifying
-it to the right or left side of the article. 
+horizontal line (![Controls](../../../images/icon-content-insert-controls.png)).
+To insert an image, click the icon that depicts the mountain silhouette. The
+image file selector screen appears. It lets you choose an existing image or
+upload a new one. You can also drag-and-drop image files into the content area.
+After you add an image to the blog entry, clicking the image brings up controls
+for justifying it to the right or left side of the article. In Figure 1, notice
+the image justification controls above the moon image. 
 
 You can also insert a table with as many rows and columns as you like. If you
-click inside the table, table editing controls appear. They let you designate
-the first row and/or column as table headers. The controls also enable you to
-add rows, columns, and cells. 
+click inside the table, table editing controls appear (see the table in Figure 1). They let
+you designate the first row and/or column as table headers. The controls also
+enable you to add rows, columns, and cells. 
 
 Now you're familiar with the editor's regular mode. If you'd rather work with
 the content's HTML code, you can. To switch the editor to source view, select
@@ -70,8 +75,6 @@ the *Source* icon (`</>`). Note that a *Roller* icon
 (![Roller](../../../images/icon-roller.png)) for regular mode appears, giving you
 the option to switch back to regular view. To satisfy your eyes, source view's
 moon icon and sun icon let you switch between a dark theme and a light theme.
-The built-in syntax coloring helps you identify HTML elements, regardless of the
-mode you're using. 
 
 You can even work in a dual pane view that shows your HTML code on the left and
 a preview pane on the right. To open this view, click the *Enlarge* icon
@@ -87,47 +90,77 @@ Every 25 seconds, the entry you're editing is automatically saved as a draft, so
 a browser crash or network interruption won't cause you to lose your entry. You
 can exit the enlarged editor by clicking *Done* (which saves your content) or
 clicking *Cancel* to abandon any changes since the last auto-save. From the
-normal-sized source view, you can click the *abc* icon to switch back to the
-WYSIWYG editor. 
+normal-sized source view, you can click the *Roller* icon
+(![Roller](../../../images/icon-roller.png)) to switch back to the WYSIWYG
+editor. 
 
 You've learned all the ins and outs of the content editor. Next, you'll learn
 how to specify your blog entry's other characteristics. 
 
 The edit screen's first input field--*Drag \& Drop to Upload*--lets you add a
 cover image (optional) for your entry. This might be an image that represents
-your entry's purpose and is designed to attract readers. You can drag and drop
-onto this field any image you like. As an alternative to dragging and dropping
-an image, you can click the *Select File* button to use the image selector to
-choose an existing image in the blog, an image file from Documents and Media, or
-an image outside the Liferay instance. You can browse to an image file and
-upload it. After you set the entry's cover image, you can add a caption to it.
-And if you want to select a different image, you can click the *Change* icon
-(![Change](../../../images/icon-change.png)) to bring up the image selector again.
+your entry's purpose and is designed to attract readers. An [Asset Publisher](/discover/portal/-/knowledge_base/7-0/publishing-assets)
+shows a blog entry's cover image, by default, as part of the blog entry's
+abstract. You can drag and drop onto this field any image you like. As an
+alternative to dragging and dropping an image, you can click the *Select File*
+button to use the image selector to choose an existing image attached to the
+blog, an image file from Documents and Media, or an image outside the Liferay
+instance. You can browse to an image file and upload it. After you've uploaded
+the image, it displays in the image pane. To center image content, click on the
+image and drag it into place with your mouse. Then click on the checkmark icon
+to save the image placement. You can even add a caption. And if you want to
+select a different image, you can click the *Change* icon
+(![Change](../../../images/icon-change.png)) to use a different image. Lastly,
+clicking the trash can icon removes the image from the blog entry.
 
-Clicking the *Configuration* icon (![Gear](../../../images/icon-gear.png)) at the
-top of the entry editor lets you configure the blog entry. You can set a
-particular Display Date for the entry, choose a 400 character text-only abstract
-or a custom abstract containing a thumbnail image and a manually written
-description. You can also send emails on entry updates. 
+Below the Content area are several panels for configuring your blog entry. 
 
-The Categorization heading is next in the entry configuration screen. Its
-options allow you to attribute tags and/or categories to your blog entry. Doing
-this improves search results for blog entries, and you get more navigation
-options for your users. For example, you can add the Tags Navigation application
-to another column on your blogs page, which lets users browse blog entries by
-tag. 
+The Categorization panel's options allow you to associate [tags and/or
+categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+to your blog entry. Doing this improves search results for blog entries, and you
+get more navigation options for your users. For example, you can add the Tags
+Navigation application to another column on your blogs page, which lets users
+browse blog entries by tag. 
 
-Below this is the Related Assets heading. If there's some other content in the
-Liferay instance that's related to your entry, you can choose it here. For
-example, you might want to write a blog entry talking about a discussion that
-happened on the forums. To link those two assets together, select the forum
-thread under Related Assets. 
+Below this is the [Related Assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)
+panel. If there's some other content in the Liferay instance that's related to
+your entry, you can choose it here. For example, you might want to write a blog
+entry talking about a discussion that happened on the forums. To link those two
+assets together, select the forum thread under Related Assets. 
 
-Blog entries also support *pingbacks*. Pingbacks are XML-RPC requests that are
-automatically sent when you link to another site. If you link to another site in
-your blog entry, Liferay sends a pingback to the other site to notify that site
-that you linked to it. Similarly, if someone links to your blog entry, Liferay
-can receive a pingback from that person's site and record the link. 
+The Configuration panel is next. You can specify an abstract for the blog entry.
+Choose a 400 character text-only abstract or a custom abstract containing a
+thumbnail image and a manually written description. Below the abstract section,
+you can set a particular Display Date for the entry.
+
+Lastly for your blog entry's configuration, you can allow *pingbacks*. Pingbacks
+are XML-RPC requests that are automatically sent when you link to another site.
+If you link to another site in your blog entry, Liferay sends a pingback to the
+other site to notify that site that you linked to it. Similarly, if someone
+links to your blog entry, Liferay can receive a pingback from that person's site
+and record the link.
+
+The Permissions panel is last. It lets you restrict viewing the blog entry to
+the owner only or site members (default), or open viewing to site guests.
+Clicking on the *More Options* link, brings up a permissions table to grant
+permissions to or revoke permissions from site guests and site members, with
+regards to the blog entry. 
+
+The blog entry permissions enable a role to perform the following actions:
+
+**Update**: Edit and modify the blog entry.
+
+**Permissions**: View and modify the blog entry's permissions.
+
+**Delete**: Move the blog entry to the [Recycle Bin](/discover/portal/-/knowledge_base/7-0/restoring-deleted-assets#using-the-recycle-bin).
+
+**View**: View the blog entry.
+
+**Update Discussion**: Edit another user's comment on the blog entry.
+
+**Delete Discussion**: Delete any comments on the blog entry.
+
+**Add Discussion**: Comment on the blog entry.
 
 Once you've finished your blog entry, click *Publish*. Your blog entry appears
 with the site's other blog entries.
@@ -142,18 +175,23 @@ pages, you may want to learn how to manage blog entries.
 The Blogs application in Site Adminstration helps bloggers and blog
 administrators manage blog entries. *Search* finds entries that match the
 keywords you enter. The *Order by* selector enables you to organize entries by
-*Title* or *Display Date*, in ascending or descending order. And the icons above
-the listing of entries allow you to display the entries in different ways:
-showing large cover images, listing single cell rows that show the author's image
-and entry information, or displaying the entries in a table. Working with
-existing blog entries has never been easier! 
+*Title* or *Display Date*, in ascending or descending order. Blog entries are
+displayed using icons, by default. You can select either icon
+(![Icon](../../../images/icon-icon-style.png)), descriptive
+(![Descriptive](../../../images/icon-descriptive-style.png)), or list
+(![List](../../../images/icon-list-style.png)) display style. The icon style
+shows large cover images, descriptive style displays single cell rows that show
+the author's image and entry information, and list style displays the entries
+using several columns for each entry. Working with existing blog entries has
+never been easier!
 
 You can manage entries individually or in a batch. Each entry has an *Actions*
 icon (![Actions](../../../images/icon-actions.png)) to edit the entry, configure
-its permissions, or move it to the Recycle Bin. You can select the *All*
-checkbox to select all entries or select an entry's individual check box, and
-click the trash icon to move them into the Recycle Bin. Under the *Images* tab
-you can view individual images and delete them individually or in a batch. 
+its permissions, or move it to the [Recycle Bin](/discover/portal/-/knowledge_base/7-0/restoring-deleted-assets#using-the-recycle-bin).
+You can select the *All* checkbox to select all entries or select an entry's
+individual check box, and click the trash icon to move them into the Recycle
+Bin. Under the *Images* tab you can view individual images and delete them
+individually or in a batch. 
 
 The *Options* icon (![Options](../../../images/icon-options.png)) at the top of
 Blogs lets you configure permissions and notifications, or import/export the
@@ -168,7 +206,8 @@ a new blog entry has been added.
 **Entry Updated Email:** defines a subject and body for the emails sent 
 when a new blog entry has been updated.
 
-**RSS:** choose how blogs are displayed to RSS readers. 
+**RSS:** lets you enable RSS subscription and choose how blogs are displayed to
+RSS readers.  
 
 - **Maximum Items to Display:** choose the total number of RSS feeds entries to
 display on the initial page. You can choose up to one hundred to be displayed.
@@ -184,20 +223,19 @@ blog security. For example, who is allowed to view the different blog instances
 and who is allowed to add blog entries?
 
 If you have a personal blog, the default permissions should work well for you.
-If you have a shared blog, you may want to modify the permissions on the blog.
-The default settings make it so only the owner of the site where the application
-was added can add entries. This, of course, is great if the Blogs app has been
-added to a user's personal pages, but doesn't work so well for a shared
-multi-author blog. But don't worry: it's easy to grant blogging permissions to
-users. 
+If you have a shared blog, you may want to adjust its permissions. The default
+settings make it so only the owner of the site where the application was added
+can add entries. This, of course, is great if the Blogs app has been added to a
+user's personal pages, but doesn't work so well for a shared multi-author blog.
+But don't worry: it's easy to grant blogging permissions to users. 
 
 First, create a
 [role](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) for your
 bloggers and add them to the role. Next, in Blogs, click *Options* &rarr;
-*Permissions*. A list of both instance and site roles is displayed, and
+*Entries Permissions*. A list of both instance and site roles is displayed, and
 currently only the owner is checked for the *Add Entry* permission. Mark any
 other role or team that should be able to add blog entries and then click
-*Save*. Once this is done, users in the roles or teams that you selected are
+*Save*. Once you've done this, users in the roles or teams that you selected are
 able to post to the shared blog. You can also grant roles and teams the ability
 to subscribe to blog updates. 
 
@@ -315,9 +353,10 @@ You can set up a whole web site devoted just to blogging if you wish. The Blogs
 Aggregator lets you publish entries from multiple bloggers on one page, giving
 further visibility to blog entries. You can add it to a page from the
 *Collaboration* category in the *Add*
-(![Add](../../../images/icon-control-menu-add.png)) *&rarr; Applications* menu. 
+(![Add](../../../images/icon-add-app.png)) *&rarr; Applications* menu. 
 
-If you click *Configuration* from the options button in the app's title bar, the
+If you click *Configuration* from the *Options* icon
+(![Options](../../../images/icon-app-options.png)) in the app's title bar, the
 Blogs Aggregator's configuration page appears. From here, you can set its
 options. 
 
@@ -382,6 +421,52 @@ box. You'll notice the Blogs Aggregator looks very much like the Blogs
 application, except that it shows entries from multiple blogs. 
 
 ![Figure 6: The Blogs Aggregator lets you display blog entries authored by multiple authors from different sites.](../../../images/blogs-blog-aggregator.png)
+
+Last up is showing your Liferay instance's recent bloggers.
+
+## Highlighting Recent Bloggers [](id=highlighting-recent-bloggers)
+
+A great way to applaud bloggers is to display their names using the Recent
+Bloggers app. It lists the names of users who've most recently posted blog
+entries. It shows their name, profile picture, and number of posts. It's a great
+way to show off who's who on your site. You can add the Recent Bloggers app to a
+page from the *Collaboration* category in the *Add*
+(![Add](../../../images/icon-add-app.png)) *&rarr; Applications* menu. 
+
+If you click *Configuration* from the *Options* icon
+(![Options](../../../images/icon-app-options.png)) in the app's title bar, the
+Recent Blogger's configuration page appears. From here, you can set its options. 
+
+**Selection Method:** select Users or Scope here. If you select Users, the
+Recent Bloggers aggregates all the users on your system. If you want to refine
+the aggregation, you can select an organization by which to filter the users. If
+you select Scope, the app will show only users who are in the current scope.
+This limits the users shown to the site where the resides resides.
+
+**Organization:** select which organization's users you want to show.
+
+**Display Style:** select from several different styles for displaying users:
+*User Name and Image* and *User*.
+
+**Maximum Items to Display:** select the maximum number of users the app
+displays.
+
+**Sharing:** lets you embed the application instance as a widget on on any
+website, Facebook, or Netvibes, or as an OpenSocial Gadget.
+
+**Scope:** lets you specify the blog instance the application displays: the
+current site's blog (default), global blog, or the page's. If the page doesn't
+already have a blog instance, you can select scope option *\[Page Name\]
+\(Create New\)* to create a page-scoped blog instance and set the Blogs app to
+display it.
+
+When you're finished setting the options, click *Save*. Then close the dialog
+box. 
+
+![Figure 7: You can show off your site or organization's most recent bloggers from the Recent Bloggers app.](../../../images/blogs-recent-bloggers.png)
+
+Add the Recent Bloggers app to a page on your site to draw attention to the
+users who are contributing helpful blogs on your site. 
 
 ## Summary [](id=summary)
 

@@ -156,14 +156,14 @@ apply the metadata set to a new Document Type.
 
 When apply to Document Types enrich your document library files with information
 and integrate them further with Liferay's features. Not only do Document Types
-allow you to encourage, and even demand, that users specify important docuemnt
+allow you to encourage, and even demand, that users specify important document
 metadata, but they also help you integrate the document with more of Liferay's
 features, such as Search and Workflow. Liferay's Search picks up on Documents
 and Media file metadata, so users can find files faster. You can apply workflows
 to specific document types. And you can more cleanly organize document libraries
 by designating folders to exclusively hold particular document types. 
 
-Let's open up the Document Types manager to start creatinng a document type. In
+Let's open up the Document Types manager to start creating a document type. In
 Documents and Media in Site Administration, select *Options
 (![Options](../../../images/icon-options.png)) &rarr; Document Types* to open the
 *Document Types* window. It lists all of the current custom document types. From
@@ -185,7 +185,7 @@ and view the document type, and configure its permissions.
 A document type must be associated with one or more metadata sets. When creating
 a new document type, you can define *Main Metadata Fields* or select *Additional
 Metadata Fields*. Main metadata fields are directly tied to their document type.
-Main medata fields can only be created within a document type's editor window
+Main metadata fields can only be created within a document type's editor window
 and they cannot be used with other document types. You can apply existing
 metadata sets to a document type in the document type's *Additional Metadata
 Fields* section. You can differentiate the document types that implement the

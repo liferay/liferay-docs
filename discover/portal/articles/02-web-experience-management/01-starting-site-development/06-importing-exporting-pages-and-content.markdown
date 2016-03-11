@@ -30,13 +30,13 @@ https://github.com/jhinkey/liferay-docs/pull/284
 
 ## Backing Up and Restoring Pages and Their Content [](id=backing-up-and-restoring-pages-and-their-content)
 
-In the Site Administration dropdown of the Product Menu, there is an option
-called *Publishing Tools*, which is where the *Export* and *Import* features
-reside for pages. If you click on *Export*, you are presented a simple interface
-which can be used for exporting your public or private pages. The Export feature
-allows you to export your site's data as a single LAR file. Similarly, if you
-click *Import*, you're provided a similar interface which can be used for
-importing public or private pages as a LAR file.
+In the Site Administration dropdown of the Menu, there is an option called
+*Publishing Tools*, which is where the *Export* and *Import* features reside for
+pages. If you click on *Export*, you are presented a simple interface which can
+be used for exporting your public or private pages. The Export feature allows
+you to export your site's data as a single LAR file. Similarly, if you click
+*Import*, you're provided a similar interface which can be used for importing
+public or private pages as a LAR file.
 
 When importing data into a site, it's best to use a newly created site to avoid
 potential conflicts between the existing site data and the data about to be
