@@ -540,8 +540,6 @@ customizable vs. non-customizable sections of the page.
 
 ![Figure 8: Customizable regions are colored green and non-customizable regions are colored red.](../../../images/color-coded-customizable-regions.png)
 
-<!-- Update snapshot above with "No Customizable" correction. -Cody -->
-
 Site members can also choose between viewing their customized page and viewing
 the default page by selecting the *Options* button
 (![Options](../../../images/icon-options.png)) from the Control Menu and
