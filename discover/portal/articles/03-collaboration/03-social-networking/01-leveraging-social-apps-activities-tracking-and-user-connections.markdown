@@ -175,7 +175,7 @@ been up to or you can use it on the public or private pages of a user's personal
 site. When added to a personal site, the Activities portlet just shows the
 activities of a single user.
 
-![Figure x: The Activities app shows information about asset-related user activity in the current site. It only displays information about web content if the current user is a site administrator.](../../images/social-activities.png)
+![Figure x: The Activities app shows information about asset-related user activity in the current site. It only displays information about web content if the current user is a site administrator.](../../../images/social-activities.png)
 
 Note that the app provides links to the assets listed in the feed.  The links to
 the assets won't work, however, unless there's a way to display the assets on
@@ -186,7 +186,7 @@ site would show a link to the *Lunar Resort happenings for August* document.
 In addition to the Activities application, there are several other social
 applications you can use. 
 
-![Figure x: Meetups allow users to schedule meetings and hangouts.](../../images/social-meetups.png)
+![Figure x: Meetups allow users to schedule meetings and hangouts.](../../../images/social-meetups.png)
 
 The Meetups application is a tool for creating casual meetings for users of your
 site. Anyone can create a "meetup" and give it a title, description,
