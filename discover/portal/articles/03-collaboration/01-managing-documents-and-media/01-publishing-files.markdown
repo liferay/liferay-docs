@@ -363,8 +363,7 @@ are the file options:
 **Download**: Downloads the file to your device.
 
 **Edit**: Lets you modify the file's name, description, document type,
-categorization, and [related
-assets](/discover/portal/-/knowledge_base/7-0/publishing-content-dyanmically).
+categorization, and [related assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships).
 You can even upload a new file to replace it. Note, modifying the file
 increments its version.
 
@@ -769,7 +768,7 @@ it's minor version number is incremented.
 In the file entry's screen, the *Version History* table lists the versions of
 the file. The department director created version 1.0, Tenzing created major
 version 2.0, and Tenzing also created minor version 2.1. Each file version has
-an Actions icon ([Actions](../../../images/icon-dm-file-version-actions.png). You
+an Actions icon (![Actions](../../../images/icon-actions.png)). You
 can perform the following actions on each file version that's been checked in
 and approved (if no workflow is associated with a folder, the file's approved on
 checkin):
