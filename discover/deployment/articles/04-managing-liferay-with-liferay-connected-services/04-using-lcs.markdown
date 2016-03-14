@@ -30,9 +30,10 @@ available in LCS:
   environments. Note that to use these features, your Liferay instances must be 
   running Liferay 6.2 EE Service Pack 15 or higher. 
 
-- [**Managing Your LCS Account:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#configuring-lcs-notifications)
-  Learn how to configure LCS to send you notification emails when specific 
-  events occur in your LCS projects.
+- [**Managing Your LCS Account:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-your-lcs-account)
+  Learn how to manage your LCS account. This includes configuring LCS to send 
+  you notification emails when specific events occur in your LCS projects, 
+  setting general account preferences, and managing your LCS messages. 
 
 - [**Using Environment Tokens:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens)
   Learn how to use environment tokens to automatically register your Liferay 
@@ -461,7 +462,7 @@ table reflect your selections here.
 
 Next, you'll learn how to configure notifications in LCS. 
 
-## Managing Your LCS Account
+## Managing Your LCS Account [](id=managing-your-lcs-account)
 
 To manage your LCS account, select *My Account* from the user menu in the 
 Dockbar. This takes you to a UI that contains the *Email Notifications* and 
@@ -488,17 +489,17 @@ near the top of the UI. This tab lets you change your account's language, time
 zone, and default LCS project. Your default LCS project is the one shown each 
 time you log in to LCS. 
 
-![Figure 4.x: You can change your LCS account's language, time zone, and default LCS project.](../../images/lcs-account-preferences.png)
+![Figure 4.27: You can change your LCS account's language, time zone, and default LCS project.](../../images/lcs-account-preferences.png)
 
 LCS also generates messages that you can view by clicking the bell icon next to 
-the user menu in the Dockbar. A red badge icon on the bell icon shows the number 
-of unread messages you have. LCS sends messages when a new project is available 
-for use with your Liferay EE subscription, or when your Liferay EE subscription 
-is being processed. Each message shows its sender and contents. You can also 
-delete individual messages, or all messages. After deleting a message, *Undo* 
-appears. Click *Undo* to restore the deleted message.
+the user menu in the Dockbar. A red badge on the bell icon shows your unread 
+message count. LCS sends messages when a new project is available for use with 
+your Liferay EE subscription, or when your Liferay EE subscription is being 
+processed. Each message shows its sender and contents. You can also delete 
+individual messages, or all messages. After deleting a message, *Undo* appears. 
+Click *Undo* to restore the deleted message. 
 
-![Figure 4.x: LCS sends you messages that you can view by clicking the bell icon next to the user menu in the Dockbar.](../../images/lcs-user-messages.png)
+![Figure 4.28: LCS sends you messages that you can view by clicking the bell icon next to the user menu in the Dockbar.](../../images/lcs-user-messages.png)
 
 Great! Now you know how to manage your LCS account. The next section shows you 
 how to use environment tokens to automatically register Liferay instances with 
@@ -546,7 +547,7 @@ one: the environment view. Navigate to an environment in LCS and click the
 *Automatic Registration* button. From here you can manage the environment's 
 token. 
 
-![Figure 4.27: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../images/lcs-environment-token.png)
+![Figure 4.29: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../images/lcs-environment-token.png)
 
 By default, there's no existing token. A table appears that contains only a 
 *Generate* button. Click it to generate a token for the environment. The new 
@@ -560,7 +561,7 @@ Registration* button. The table shows the tokens for all the environments in
 your project. This provides a central location to manage all your environment 
 tokens. Otherwise, the UI for managing them is exactly the same. 
 
-![Figure 4.28: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images/lcs-environment-token-02.png)
+![Figure 4.30: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images/lcs-environment-token-02.png)
 
 Once you have an environment token, use the following steps to register a
 previously unregistered Liferay instance with LCS:
@@ -584,7 +585,7 @@ their LCS account's *My Account* &rarr; *OAuth Authorizations* menu. If they
 have previously registered portal instances with LCS, their existing
 credentials are used when they create a token file. 
 
-![Figure 4.29: The OAuth authorization entry in the portal instance using an environment token to connect to LCS.](../../images/lcs-token-oauth-entry.png)
+![Figure 4.31: The OAuth authorization entry in the portal instance using an environment token to connect to LCS.](../../images/lcs-token-oauth-entry.png)
 
 What if your Liferay instance has already been manually registered with LCS,
 but you want to switch to using an environment token? No problem! Follow these
