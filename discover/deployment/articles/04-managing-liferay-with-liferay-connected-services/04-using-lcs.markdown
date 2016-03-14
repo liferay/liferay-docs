@@ -30,7 +30,7 @@ available in LCS:
   environments. Note that to use these features, your Liferay instances must be 
   running Liferay 6.2 EE Service Pack 15 or higher. 
 
-- [**Configuring LCS Notifications:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#configuring-lcs-notifications)
+- [**Managing Your LCS Account:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#configuring-lcs-notifications)
   Learn how to configure LCS to send you notification emails when specific 
   events occur in your LCS projects.
 
@@ -390,9 +390,9 @@ Liferay support team in the event that you need their assistance.
 ![Figure 4.23: Clicking the Details button shows information about your Liferay installation's software and hardware.](../../images/lcs-server-details.png)
 
 Lastly, click the *Server Settings* tab near the top of the screen to view and 
-edit your server's name, location, and description. You can also unregister your 
-server from LCS. Note that this doesn't change your actual Liferay server; it 
-just removes it from LCS.
+edit your server's name, location, and description. You can also use the Server 
+Settings UI unregister your server from LCS. Note that unregistering your server 
+doesn't change your actual Liferay server; it just removes it from LCS. 
 
 As you can see, the LCS Dashboard is a powerful tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 
@@ -461,23 +461,19 @@ table reflect your selections here.
 
 Next, you'll learn how to configure notifications in LCS. 
 
-## Configuring LCS Notifications [](id=configuring-lcs-notifications)
+## Managing Your LCS Account
 
-LCS can be configured to send you notification emails when specific events occur 
-in your projects. So how do notifications differ from alerts? Fantastic 
-question! LCS notifications are sent via email. Thus, they're an active form of 
-notification. Alerts are passive, only appearing in the Alerts table of a 
-project, environment, or server. Also, notifications are disabled by default. 
-
-LCS notifications are configured by adding *rules*. The rules define what events 
-trigger a notification. To access notification settings, click *Notifications* 
-from the user menu in the upper-right corner of LCS. You're presented with the 
-*Add Rule* button and a table that lists any existing rules. There are no rules 
-by default. Click *Add Rule* to define one. 
+To manage your LCS account, select *My Account* from the user menu in the 
+Dockbar. This takes you to a UI that contains the *Email Notifications* and 
+*Preferences* tabs. The Email Notifications tab is selected by default. You can 
+use this tab to configure LCS to send you notification emails when specific 
+events occur in your projects. LCS notifications are configured by adding 
+*rules*. The rules define what events trigger a notification. There are no 
+notification rules by default. Click the *Add Rule* button to define one. 
 
 ![Figure 4.26: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
 
-First specify the project, environment, and server for the notification. Note
+First specify the project, environment, and server for the notification. Note 
 that you have the option of selecting all environments and servers in a
 project. Then check the checkbox for each event that you want to trigger an 
 email notification. For example, if you create a notification rule with *The 
@@ -487,9 +483,26 @@ offline without a normal shut down event. Click *Save* when you're done defining
 the notification rule. It then appears in a table along with any other existing 
 rules. Each has an Actions button that lets you edit or delete it. 
 
-Great! Now you know how to set notification rules in LCS. The next section shows 
-you how to use environment tokens to automatically register Liferay instances 
-with LCS. 
+To manage your LCS account's general preferences, click the *Preferences* tab 
+near the top of the UI. This tab lets you change your account's language, time 
+zone, and default LCS project. Your default LCS project is the one shown each 
+time you log in to LCS. 
+
+![Figure 4.x: You can change your LCS account's language, time zone, and default LCS project.](../../images/lcs-account-preferences.png)
+
+LCS also generates messages that you can view by clicking the bell icon next to 
+the user menu in the Dockbar. A red badge icon on the bell icon shows the number 
+of unread messages you have. LCS sends messages when a new project is available 
+for use with your Liferay EE subscription, or when your Liferay EE subscription 
+is being processed. Each message shows its sender and contents. You can also 
+delete individual messages, or all messages. After deleting a message, *Undo* 
+appears. Click *Undo* to restore the deleted message.
+
+![Figure 4.x: LCS sends you messages that you can view by clicking the bell icon next to the user menu in the Dockbar.](../../images/lcs-user-messages.png)
+
+Great! Now you know how to manage your LCS account. The next section shows you 
+how to use environment tokens to automatically register Liferay instances with 
+LCS. 
 
 ## Using Environment Tokens [](id=using-environment-tokens)
 
