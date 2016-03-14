@@ -21,7 +21,7 @@ some modifications to put values in these fields.
 ## Setting the Workflow Fields in EntryLocalServiceImpl [](id=setting-the-workflow-fields-in-entrylocalserviceimpl)
 
 Open `EntryLocalServiceImpl` and add the following line in the
-`addGuestbookEntry` method, immediately following the current setter methods
+`updateEntry` method, immediately following the current setter methods
 (e.g., `entry.setMessage(message)`):
 
     entry.setStatus(WorkflowConstants.STATUS_DRAFT);
@@ -30,7 +30,7 @@ This manually sets the status of the workflow as a draft; in the `GB_Entry`
 database table, you'll now see the `status` field of an added `Entry` with the
 value `2`. But you still haven't set the rest of the values.
 
-Still in the `addGuestbookEntry` method, place the following code right before
+Still in the `updateEntry` method, place the following code right before
 the `return` statement:
 
     WorkflowHandlerRegistryUtil.startWorkflowInstance(entry.getCompanyId(), 
@@ -98,7 +98,7 @@ Open `GuestbookLocalServiceImpl` and add the following line in the
 
     guestbook.setStatus(WorkflowConstants.STATUS_DRAFT);
 
-Still in the `addGuestbookEntry` method, place the following code right before
+Still in the `updateEntry` method, place the following code right before
 the `return` statement:
 
     WorkflowHandlerRegistryUtil.startWorkflowInstance(guestbook.getCompanyId(), 
