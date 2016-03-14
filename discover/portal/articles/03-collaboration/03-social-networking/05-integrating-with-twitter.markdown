@@ -1,10 +1,10 @@
 # Integrating with Twitter [](id=integrating-with-twitter)
 
-Liferay Portal also provides integration with Twitter via the Twitter app on 
-[Liferay Marketplace](http://liferay.com/marketplace). Once you register your 
-Twitter username with the app, your tweets are shown in your Activities portlet 
-along with your activity feed. Make sure that you get the appropriate version of 
-the app for your Liferay instance. 
+Liferay also provides integration with Twitter via the Twitter app on [Liferay
+Marketplace](http://liferay.com/marketplace). Once you register your 
+Twitter username with the app, your tweets are shown in your Activities
+application along with your activity feed. Make sure that you get the
+appropriate version of the app for your Liferay instance. 
 
 There are two ways to register your Twitter username with the app after you 
 install it. The first is through the Twitter portlet after you add it to a page. 

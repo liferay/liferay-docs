@@ -20,7 +20,8 @@ Additional styling changes can be made through custom CSS.
 To get started with Liferay's social features, you first want to add social apps
 to your users' public personal pages. You can set things up any way you want,
 but for simplicity's sake, this example shows something that's fairly similar to
-the original Facebook layout.
+the original Facebook layout. You'll give your users a way to send and receive
+connection request using their Profile and Dashboard pages. 
 
 ### Setting up Users' Personal Pages [](id=setting-up-users-personal-pages)
 
@@ -32,25 +33,24 @@ this in two ways:
 The pages and apps defined by the user group site are copied to members'
 personal sites. This lets you control whether users can modify pages, and you can
 push changes out to users in the future. Once the site template is assigned to a
-user group, you can set the *Default User Associations* to have all users be 
-members of a particular group in *Configuration* &rarr; *Instance Settings* in
-the Control Panel. The advantage of this is that it can be managed entirely
-through the GUI and it's easy to configure. If you base your user group's site
-on a template, you can use the *Enable propagation of changes from the site
-template* option to manage all user pages simply by changing the template. This
-is the recommended way to manage personal pages across the portal. 
+user group, you can make it so all users are members of this group. The
+advantage of this is that it can be managed entirely through the interface, and
+it's easy to configure. If you base your user group's site on a template, you
+can use the *Enable propagation of changes from the site template* option to
+manage all user pages by changing the template. This is the recommended way to
+manage personal pages across the portal. 
 
 **Portal Properties Configuration:** The legacy way to do this is with the
-configuration file. You can specify a default layout and portlets for personal
-pages in your `portal-ext.properties` file. Note that this method applies
-changes to all users' personal sites. However, it does not provide as much
-maintainability or as many customization options as does using user group sites.
-User group sites allow you to choose what's modifiable by the user.  For more
-information on the `portal-ext.properties` method, search for *Default User
+configuration file. You can specify a default layout and applications for
+personal pages in your `portal-ext.properties` file. Note that this method
+applies changes to all users' personal sites. It does not, however, provide as
+much maintainability or as many customization options as user group sites does.
+User group sites allow you to choose what's modifiable by the user.  For
+more information on the `portal-ext.properties` method, search for *Default User
 Private Layouts* and *Default User Public Layouts* in the [properties documentation](http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html).
 
-Because it's the recommended method, you want to use the user group method to
-create the layouts. As an administrator, go to the Control Panel and select
+Because it's the recommended method, use the user group method to create the
+layouts. As an administrator, go to the Control Panel and select
 *Site Templates* from under the *Sites* section. Click *Add* (![Add](../../../images/icon-add.png)) 
 and fill out the form. Call your new site template *Social Layout Public*. Click *Save*.
 
@@ -70,16 +70,18 @@ Private*.
 
 You need to give your users a way to request connections and also to respond to
 connection requests. To do that, you'll use the Requests application and the
-Summary application. Requests goes on users' dashboard pages, as they are
-private pages just for that user. Summary goes on users' profile pages, which
-are public. This way, users can visit the profile and request a connection. 
+Summary application. The Requests application goes on users' dashboard pages, as
+they are private pages just for that user. The Summary application goes on
+users' profile pages which are public. This way, users can visit the profile
+and request a connection. 
 
 Once you've created the templates, click the *Go to Other Site* button. Click
 the link for the Social Layout Public site. Now you want to change the name of
 the page from the default to *Welcome*. Under Navigation &rarr; Pages, edit
 the default page (labeled *Home*) and change its name to *Welcome*. Click
 *Save*.  Now you'll add an application to the page. Click the *Go to Site* link
-in the menu and then click the *Add* button. Under *Applications* &rarr;
+in the menu and then click the *Add*
+button (![Add](../../../images/icon-add-app.png)). Under *Applications* &rarr;
 *Social*, drag the *Summary* application to the column on the left. 
 
 Awesome! You've now set up a site template that contains the Summary
@@ -115,10 +117,6 @@ On a music based networking site like Last.fm, you can connect with people who
 have similar tastes to yours. With Liferay's social networking, collaboration is
 the key to connection. 
 
-There are a handful of applications, both those designed specifically for
-connecting users and those that can create connections as a side-effect of just
-getting work done.
-
 The Site Members Directory can provide a simple way for users to connect. If you
 have a site dedicated to Lunar Resort astronauts, you can place a Site Members
 Directory on that site. Because it lists all the users that have joined that
@@ -130,7 +128,8 @@ users don't interact this way.
 The Activities application provides a similar but more effective means of
 connection. Because it shows a list of what other users are doing, this
 application helps users discover who is among the most active across the site or
-the instanc3, and thus who might be a good connection. 
+the instance, and thus who might be a good connection. This application is
+covered below.
 
 Probably the most effective way users can connect is by interacting with other
 users. Every application in the Collaboration category provides information on
@@ -165,7 +164,7 @@ the
 [Javadocs](http://http://docs.liferay.com/portal/7.0/javadocs/portal-service/com/liferay/social/kernel/service/package-summary.html)
 for information about Liferay's social API. 
 
-Probably the core Social app is the Activities app. It displays information
+Probably the core Social application is Activities. It displays information
 about user activity on the site where you added the app. User activities tracked
 include updates to the Documents and Media library, blog posts, message boards
 posts, wiki pages, and bookmarks.  Liferay also tracks information about web
@@ -183,10 +182,6 @@ the assets won't work, however, unless there's a way to display the assets on
 the page. For example, suppose that the user Joe Bloggs uploaded a document
 called *Lunar Resort happenings for August* to a site. An Activites app on that
 site would show a link to the *Lunar Resort happenings for August* document.
-But the link won't work unless there's a Documents and Media app or a
-Documents and Media Display app in which to show the document. Remember to add
-the appropriate apps to the page where you've placed the Activities app to make
-the links work.
 
 In addition to the Activities application, there are several other social
 applications you can use. 
@@ -195,9 +190,9 @@ applications you can use.
 
 The Meetups application is a tool for creating casual meetings for users of your
 site. Anyone can create a "meetup" and give it a title, description,
-date/time, maximum number of attendees, price, and provide an image. Any meetups
-that are created are displayed in the application for anyone to view. Users can
-register for the meetup, which lets the organizer keep track of who's coming. 
+date/time, maximum number of attendees, price, and provide an image. Meetups are
+displayed in the application for anyone to view. Users can register for the
+meetup, which lets the organizer keep track of who's coming. 
 
 The options for creating a meetup are essentially the same as those for creating
 a calendar event.
@@ -211,7 +206,8 @@ or respond to it with a quick link to post on the original poster's wall.
 social portlets. You can design things so that users are automatically connected
 through Site and Organization membership. And there are many other relationship
 types beyond Friend: your developers can take advantage of these by using
-Liferay's social API. Now that you've got all these social applications running
-on your system, you might wonder: how can I measure social interaction? How do I
-identify the best contributors to my site? Liferay has an answer: social
-activity measurements.
+Liferay's social API. 
+
+Now that you've got all these social applications running on your system, you
+might wonder: how can I measure social interaction? How do I identify the best
+contributors to my site? Liferay has an answer: social activity measurements.

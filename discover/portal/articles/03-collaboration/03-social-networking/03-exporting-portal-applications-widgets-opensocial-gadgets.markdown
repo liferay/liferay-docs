@@ -1,19 +1,20 @@
 # Exporting Liferay Applications To Other Websites [](id=exporting-portal-applications-as-widgets-and-opensocia)
 
 Liferay can publish its applications to other websites in a variety of formats.
-These range from simple widgets to standards like OpenSocial. What this lets you
-do is provide your application or content in the context of another website,
-easily. Read on to find out how this is done. 
+These range from simple widgets to standards like OpenSocial. This lets you
+provide your application or content in the context of another website, easily.
+Read on to find out how this is done. 
 
 ## Sharing OpenSocial Gadgets [](id=sharing-opensocial-gadgets)
 
 OpenSocial consists of a set of APIs for social networking. It may be beneficial
 for you to share applications from your Liferay server with other sites, such as
-ighome.com or igoogleportal.com. These sites let users customize their own pages
-and add gadgets to their pages. Your Liferay Portal users can share their
-applications on any OpenSocial-compatible site. Let's try this now.
+[ighome.com](http://ighome.com) or
+[igoogleportal.com](http://igoogleportal.com). These sites let users customize
+their own pages with gadgets. Liferay Portal users can share their applications
+on any OpenSocial-compatible site. Let's try this now.
 
-For our example, we'll share Liferay's *Loan Calculator* on iGoogle.
+For our example, we'll share Liferay's *Loan Calculator*.
 
 1. Add the *Loan Calculator* application onto your Liferay page
 

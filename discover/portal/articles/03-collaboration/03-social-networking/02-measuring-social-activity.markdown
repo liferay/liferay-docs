@@ -30,7 +30,7 @@ both participation and contribution points, but on new content creation, you can
 only set limits on participation points.
 
 It might not be immediately obvious, but for all actions that do not involve the
-creation of a new asset, all of the contribution points go to the original asset
+creation of a new asset, all the contribution points go to the original asset
 creator and all popularity points go to the original asset. That means if *Votes
 on a Blog* is set to have 1 *Participation* point and 5 *Contribution* points
 (and therefore 5 *Popularity* points), the user who votes on the asset will
@@ -61,7 +61,7 @@ used as a factor in calculating their ranks.
 name.
 
 **Display Additional Activity Counters**: You can toggle the display of any
-number of other pieces of information next to the users name in the statistics,
+number of other pieces of information next to the user's name in the statistics,
 ranging from the number of comments on assets a user has created to the number
 of wiki articles that the user has created. If you want to display multiple data
 points, you can click the *plus* button to add one and the *minus* button to
@@ -83,9 +83,9 @@ for. Users can receive credit for everything from subscribing to a blog to
 writing wiki articles. You can easily tweak the numbers in the Control Panel if
 it becomes clear that certain activities are weighted too high or too low.
 
-Social Activity can be an invaluable tool for websites that are heavily driven by
-community-created content. It allows you to easily recognize users who are major
-contributors and it indicates to new users whose advice will be most
+Social Activity can be a valuable tool for websites that are heavily driven by
+community-created content. It allows you easily to recognize users who are major
+contributors, and it indicates to new users whose advice may be most
 trustworthy. Social Activity is easy to set up and can be configured differently
-for each site, increasing the flexibility of your portal.
+for each site, increasing the flexibility of your website.
 
