@@ -154,6 +154,7 @@ public class CheckImagesTaskDevSite extends Task {
 		}
 		
 		List<String> errors = new ArrayList<String>();
+		List<String> warnings = new ArrayList<String>();
 
 		Set<File> articles = imagePathsMap.keySet();
 
@@ -182,7 +183,7 @@ public class CheckImagesTaskDevSite extends Task {
 		// Report extra images
 		for (String imageName : imageNames) {
 			if (!referencedImageNames.contains(imageName)) {
-				errors.add("Extra image: " + imageName);
+				warnings.add("Extra image: " + imageName);
 			}
 		}
 		
@@ -217,6 +218,13 @@ public class CheckImagesTaskDevSite extends Task {
 			}
 			
 			throw new BuildException("Missing images, extra images, or faulty image paths");
+		}
+		
+		if (!warnings.isEmpty()) {
+			for (String warning : warnings) {
+				System.err.println("WARNING - " + warning);
+			}
+			
 		}
 	}
 	
