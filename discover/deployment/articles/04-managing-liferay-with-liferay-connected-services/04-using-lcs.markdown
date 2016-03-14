@@ -252,45 +252,46 @@ it. This takes you to the environment view.
 
 Clicking an environment on the left-hand side of the project view takes you to 
 the environment view. The environment view lets you manage an environment in 
-your LCS project. The UI is segmented into two parts: Overview, and Automatic 
-Registration. You can switch between them by clicking their buttons at the top 
-of the UI. When you enter environment view, Overview is selected by default. The 
-Overview displays basic information about the environment, along with fix packs 
-and alerts. As with the project view, fix packs and alerts are displayed in 
-tables. These tables behave exactly the same here as they do in the project 
-view. The only difference is that they show fix packs and alerts for the 
-environment instead of the whole project. The Environment table displays details 
-about the environment, such as its name, description, location, type, and 
-Liferay EE subscription type. Fields with a blue pencil icon can be edited by 
-clicking the icon. You can also delete the environment by clicking the Delete 
-button below the Environment table. Clicking the Automatic Registration button 
-lets you generate and view *environment tokens* that allow automatic 
+your LCS project. The UI is segmented into three tabs: Fix Packs, and Automatic 
+Registration, and Environment Settings. When you enter environment view, the Fix 
+Packs tab is selected by default. This tab displays the environment's fix packs 
+and alerts in the Fix Packs and Alerts tables, respectively. Note that these 
+tables behave exactly the same here as they do in project view, although their 
+contents apply only to the environment. Next is the Automatic Registration tab. 
+This tab lets you generate and view *environment tokens* that allow automatic 
 configuration of LCS clients. See the section below for more information on 
-environment tokens. 
+environment tokens. The Environment Settings tab is last. You can use this tab 
+to change the environment's name, location, and description. You can also see if 
+your environment is part of a cluster. Your environment's subscription type, if 
+any, is also displayed in the Environment Settings tab. For more information on 
+subscriptions, see the below section on 
+[managing Liferay EE subscriptions](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-liferay-ee-subscriptions). 
+Click the *Save* button to save any changes you make in the Environment Settings 
+tab. You can also delete the environment by clicking *Delete Environment*, next 
+to the Save button. 
 
 ![Figure 4.16: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
-On the left side of the screen, in either Overview or Automatic Registration, 
-environment view displays a list of the environment's servers. Clicking on a 
-server takes you to its server view. 
+Regardless of the tab you're in, the left side of the screen displays a list of 
+the environment's servers. Clicking on a server takes you to its server view. 
 
 ### Using the Server View [](id=using-the-server-view)
 
 The server view provides detailed information about a server, including 
 statistics and performance metrics. You can get to the server view by clicking a
 server in the environment view or by clicking a server in the Fix Packs or 
-Alerts tables. Server view is segmented into five parts: 
+Alerts tables. Server view is segmented into five tabs: 
 
 - **Page Analytics:** Displays metrics on page views and load times.
 - **Snapshot Metrics:** Displays application, JVM, and server metrics.
-- **Overview:** Displays basic server information, available fix packs, and 
-  alerts.
+- **Fix Packs:** Displays the server's fix packs and alerts.
+- **Portal Properties:** Displays your portal's properties and their settings.
 - **Details:** Displays general information about your Liferay installation, 
   Java version, and hardware.
-- **Portal Properties:** Displays your portal's properties and their settings.
+- **Server Settings:** View or change your server's name, location, and 
+  description. You can also unregister the server from LCS.
 
-You can switch between these by clicking their buttons across the top of the UI. 
-Page Analytics is the first thing you see when you enter server view. Page 
+Page Analytics is displayed by default when you enter server view. Page 
 Analytics shows page views and load times for the selected time period. You can 
 select a different time period in the *Period* and *Ending At* fields. The 
 arrows next to the *Ending At* field move the selected time period up or down, 
@@ -315,9 +316,9 @@ all load times greater than 3,000 ms in red text.
 ![Figure 4.17: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics.png)
 
 To view other metrics and statistics of your server's performance, click the 
-*Snapshot Metrics* button near the top of the page. These metrics are broken 
-down into three main categories: *Application*, *JVM*, and *Server*. Application 
-is selected by default when you click the Snapshot Metrics button. 
+*Snapshot Metrics* tab near the top of the page. These metrics are broken down 
+into three main categories: *Application*, *JVM*, and *Server*. Application is 
+selected by default when you click the Snapshot Metrics button. 
 
 The Application category also has three other categories: *Pages*, *Portlets*, 
 and *Cache*. Pages lists the frequency that specific pages load, along with 
@@ -345,32 +346,20 @@ pools.
 
 ![Figure 4.20: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
-To view fix packs, alerts, and your server's basic information, click the 
-*Overview* button near the top of the page. Although the Alerts table functions 
-the same as it does in the other views, the Fix Packs table behaves a bit 
-differently. Fix packs are broken down into those that are available for 
-installation and those that are already installed. You can access these through 
-the Available and Installed tabs at the top of the fix packs table. The Server 
-table lists your server's name, description, and location. You can edit these 
-values by clicking the pencil icon next to each. If you no longer want the 
-server in LCS, click the *Unregister* button to remove it. Note that this 
-doesn't alter your actual server; it just removes it from your LCS project. 
+To view your server's fix packs and alerts, click the Fix Packs tab near the top 
+of the page. Although the Alerts table functions the same as it does in the 
+other views, the Fix Packs table behaves a bit differently. Fix packs here are 
+broken down into those that are available for installation and those that are 
+already installed. You can access these through the Available and Installed tabs 
+at the top of the Fix Packs table. 
 
-![Figure 4.21: The LCS server Overview lets you view and edit the basic information of a server registered with LCS.](../../images/lcs-server-overview.png)
-
-To view general information about your Liferay installation, click the *Details* 
-button near the top of the screen. There are three tabs under Details: 
-*Software*, *Java*, and *Hardware*. Each shows information, respectively, about 
-your Liferay installation, Java installation, and hardware. This information is 
-useful to the Liferay support team in the event that you need their assistance. 
-
-![Figure 4.22: Clicking the Details button shows information about your Liferay installation's software and hardware.](../../images/lcs-server-details.png)
+![Figure 4.21: The Fix Packs tab displays your server's fix packs and alerts.](../../images/lcs-server-fix-packs.png)
 
 LCS also lets you view your portal's property values. To do so, click the 
-*Portal Properties* button near the top of the page. Your portal's properties 
-and their values are shown in a searchable table. This gives you a convenient 
+*Portal Properties* tab near the top of the page. Your portal's properties and 
+their values are shown in a searchable table. This gives you a convenient 
 display for seeing exactly what your portal properties are set to. The 
-properties in this table are organized into the following categories:
+properties in this table are organized into the following categories: 
 
 - **Default Values:** The default values for your portal's properties. 
 
@@ -390,7 +379,20 @@ corresponding checkboxes at the top of the table. For example, by checking the
 portal's default and custom property values. To show only the custom values, 
 check only the checkbox for *Show Custom Values*. 
 
-![Figure 4.23: With only the *Show Custom Values* checkbox checked, this table shows only the portal property values that differ from default.](../../images/lcs-server-portal-properties.png)
+![Figure 4.22: With only the *Show Custom Values* checkbox checked, this table shows only the portal property values that differ from default.](../../images/lcs-server-portal-properties.png)
+
+To view general information about your Liferay installation, click the *Details* 
+tab near the top of the screen. There are three tabs under Details: *Software*, 
+*Java*, and *Hardware*. Each shows information, respectively, about your Liferay 
+installation, Java installation, and hardware. This information is useful to the 
+Liferay support team in the event that you need their assistance. 
+
+![Figure 4.23: Clicking the Details button shows information about your Liferay installation's software and hardware.](../../images/lcs-server-details.png)
+
+Lastly, click the *Server Settings* tab near the top of the screen to view and 
+edit your server's name, location, and description. You can also unregister your 
+server from LCS. Note that this doesn't change your actual Liferay server; it 
+just removes it from LCS.
 
 As you can see, the LCS Dashboard is a powerful tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 
