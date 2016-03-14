@@ -19,14 +19,9 @@ make some minor tweaks, and publish it with little effort.
 
 There are two primary places Export/Import is used: sites and apps. You can
 learn more about exporting/importing app data in the
-[Exporting/Importing Portlet Content](/discover/portal/-/knowledge_base/7-0/exporting-importing-portlet-content)
+[Exporting/Importing App Content](/discover/portal/-/knowledge_base/7-0/exporting-importing-app-data)
 section. In this section, you'll learn how to export and import content for
 sites.
-
-<!-- Check above link/title for exporting/importing portlet content. This
-section was sent to Jim an a PR. -Cody
-https://github.com/jhinkey/liferay-docs/pull/284
--->
 
 ## Backing Up and Restoring Pages and Their Content [](id=backing-up-and-restoring-pages-and-their-content)
 
@@ -89,15 +84,13 @@ category name collision, Liferay renames the imported categories.
 exported from one version of Liferay into a Liferay server that's running a
 different version of Liferay. Also, note that periodically exporting LARs is
 *not* a complete backup solution; please refer to the
-[Backing up a Liferay Installation](/discover/deployment/-/knowledge_base/6-2/backing-up-a-liferay-installation)
+[Backing up a Liferay Installation](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
 section for information on backing up Liferay.
-
-<!-- Update above link to 7.0, when available. -Cody -->
 
 $$$
 
 Next, you'll simulate being a good administrator and exporting a LAR file for
-backup purposes. Click on the *Export* button from the *Publishing Tools* menu
+backup purposes. Click on the *Export* button from the *Publishing* menu
 and click the *Add* button (![Add Export Process](../../../images/icon-add.png)). 
 A *New Export* page loads, allowing you to configure what pages and content
 you'd like to export from your site. 
@@ -117,14 +110,15 @@ permissions for your exported pages and content are included.
 ![Figure 1: You can configure your export options manually by selecting pages, content, and permissions.](../../../images/export-page-templates.png)
 
 Once you click *Export*, the menu automatically switches to the *Processes* tab,
-where you'll see the status of your exported LAR file. You can select the link
-under *Download* to download the export to your local machine. Once you have the
-file, you can copy it to a backup location for safekeeping or import it into
-another installation of Liferay. If you must rebuild or wish to revert
-back to this version of your site, you can import this file by clicking the
-*Import* button from the Publishing Tools menu, browsing to it, and selecting
-it. You also have the option of dragging a LAR file inside the dotted area,
-which also executes the import process.
+where you'll see the status of your exported LAR file. You can select the
+*Download* icon (![Download](../../../images/icon-download.png)) to download the
+export to your local machine. Once you have the file, you can copy it to a
+backup location for safekeeping or import it into another installation of
+Liferay. If you must rebuild or wish to revert back to this version of your
+site, you can import this file by clicking the *Import* button from the
+Publishing menu, browsing to it, and selecting it. You also have the option of
+dragging a LAR file inside the dotted area, which also executes the import
+process.
 
 Another useful option to use when exporting content is the *Export Templates*
 feature. The exercise you completed previously created a custom export process.
@@ -143,7 +137,7 @@ Template](../../../images/icon-add.png)) and assign the template a name and
 description, and then fill out the configuration options as you would during a
 custom export process. Once you've saved your export template, it is available
 to use from the *Export Templates* menu. To use the template, click the
-*Actions* button (![Options](../../../images/icon-actions.png)) next to the
+*Actions* button (![Actions](../../../images/icon-actions.png)) next to the
 template and select *Export*. This automatically fills the fields and options
 for exporting pages and their content. All you have to do is give the export
 process a custom name. Once you click *Export* to confirm the configuration
