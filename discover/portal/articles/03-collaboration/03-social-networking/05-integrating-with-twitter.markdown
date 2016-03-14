@@ -11,7 +11,7 @@ install it. The first is through the Twitter portlet after you add it to a page.
 Click the link in the portlet and then enter your Twitter username in the 
 Twitter field. 
 
-![Figure x: Register your Twitter account.](../../../images/social-network-accounts.png)
+![Figure 1: Register your Twitter account.](../../../images/social-network-accounts.png)
 
 It's important to note that your tweets are displayed *only* in an Activities 
 application. If you want your tweets to show up on a page, there must be an 

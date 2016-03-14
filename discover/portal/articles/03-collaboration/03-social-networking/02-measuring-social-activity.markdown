@@ -7,7 +7,7 @@ information. Some of this information is good and helpful and some of it can be
 rather unhelpful. Using Liferay's Social Activity feature helps show which
 users are making real, valuable contributions.
 
-![Figure x: The Social Activity page of the Control Panel allows you to enable social activity for assets and specify points for participation and contributions.](../../../images/social-activity.png)
+![Figure 1: The Social Activity page of the Control Panel allows you to enable social activity for assets and specify points for participation and contributions.](../../../images/social-activity.png)
 
 To activate Social Activity, you'll first need to determine the collaboration
 applications you want to use Social Activity to track. There are currently three
@@ -68,7 +68,7 @@ points, you can click the *plus* button to add one and the *minus* button to
 remove one. You can have as many data points displayed as you want, but
 displaying too many might make the display a little unwieldy.
 
-![Figure x: The User Statistics portlet gives rankings to promote user contributions and participation.](../../../images/social-statistics.png)
+![Figure 2: The User Statistics portlet gives rankings to promote user contributions and participation.](../../../images/social-statistics.png)
 
 The *Group Statistics* portlet provides some more advanced data analytics. If
 you add it to a page and go to its configuration dialog, you can select the

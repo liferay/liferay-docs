@@ -1,4 +1,4 @@
-# Leveraging Social Applications, Activities Tracking, and User Connections 
+# Leveraging Social Applications, Activities Tracking, and User Connections [](id=leveraging-social-applications-activities-tracking-and-user-connections)
 
 Liferay has many apps available for social interaction and collaboration.
 Some of these apps are designed to help you work together as a team, while
@@ -54,7 +54,7 @@ layouts. As an administrator, go to the Control Panel and select
 *Site Templates* from under the *Sites* section. Click *Add* (![Add](../../../images/icon-add.png)) 
 and fill out the form. Call your new site template *Social Layout Public*. Click *Save*.
 
-![Figure x: You can give your site template a custom name and description and also specify several configuration settings..](../../../images/social-networking-site-template.png)
+![Figure 1: You can give your site template a custom name and description and also specify several configuration settings..](../../../images/social-networking-site-template.png)
 
 +$$$
 
@@ -143,7 +143,7 @@ interaction and share a common interest--just like people did before they had
 the Internet.
 
 
-## Using the Core Liferay Social Apps 
+## Using the Core Liferay Social Apps [](id=using-the-core-liferay-social-apps)
 
 Out-of-the box, Liferay provides seven social apps:
 
@@ -175,7 +175,7 @@ been up to or you can use it on the public or private pages of a user's personal
 site. When added to a personal site, the Activities portlet just shows the
 activities of a single user.
 
-![Figure x: The Activities app shows information about asset-related user activity in the current site. It only displays information about web content if the current user is a site administrator.](../../../images/social-activities.png)
+![Figure 2: The Activities app shows information about asset-related user activity in the current site. It only displays information about web content if the current user is a site administrator.](../../../images/social-activities.png)
 
 Note that the app provides links to the assets listed in the feed.  The links to
 the assets won't work, however, unless there's a way to display the assets on
@@ -186,7 +186,7 @@ site would show a link to the *Lunar Resort happenings for August* document.
 In addition to the Activities application, there are several other social
 applications you can use. 
 
-![Figure x: Meetups allow users to schedule meetings and hangouts.](../../../images/social-meetups.png)
+![Figure 3: Meetups allow users to schedule meetings and hangouts.](../../../images/social-meetups.png)
 
 The Meetups application is a tool for creating casual meetings for users of your
 site. Anyone can create a "meetup" and give it a title, description,

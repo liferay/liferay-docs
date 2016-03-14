@@ -144,7 +144,7 @@ familiar with the editor's regular mode.
 
 For those content creators that would rather write in HTML code, the editor also
 caters to those individuals. To switch the editor to source view, select the
-*Source* icon (![WYSIWYG Source](../../../icon-wysiwyg-source.png)). Note that
+*Source* icon (![WYSIWYG Source](../../../images/icon-wysiwyg-source.png)). Note that
 the regular mode icon (![Regular Mode](../../../images/icon-paint-roller.png))
 appears, which you can select to return to regular mode. You also have the
 option to switch between a dark and light theme by choosing the moon and sun
