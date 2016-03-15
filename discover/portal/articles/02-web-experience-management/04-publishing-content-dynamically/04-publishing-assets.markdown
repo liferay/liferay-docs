@@ -50,7 +50,7 @@ explore the available configurations for the Asset Selection, Display Settings,
 and Subscriptions sections of the Asset Publisher's configuration window. You'll
 start by learning how select content manually. You'll see that it's very similar
 to using the Web Content Display application except that you can select assets
-of any type, not just web content instances.
+of any type, not just web content articles.
 
 ### Selecting Assets Manually [](id=selecting-assets-manually)
 
@@ -226,19 +226,19 @@ in a Context* is selected, clicking on an asset causes that asset to be
 displayed in the application to which the asset belongs. For example, a blog
 entry would be displayed in the Blogs application where it was created.
 Likewise, a forum post would be displayed in the Message Boards application
-where it was created. Similarly, a generic web content instance would be
+where it was created. Similarly, a generic web content article would be
 displayed in the Asset Publisher of its configured display page. See the section
 below on display pages for more information.
 
 +$$$
 
-**Tip:** When the Asset Publisher displays web content instances that have an
-associated small image, the small image becomes a link to the full instance. To
-use this feature, add or edit a web content instance that the Asset Publisher
+**Tip:** When the Asset Publisher displays web content articles that have an
+associated small image, the small image becomes a link to the full article. To
+use this feature, add or edit a web content article that the Asset Publisher
 should display. Before clicking *Publish*, click on *Abstracts*, flag *Small
 Image*, and upload an image. Then click *Publish*. Once your web content
-instance appears in the Asset Publisher's list, clicking the small image takes
-you to the full instance.
+article appears in the Asset Publisher's list, clicking the small image takes
+you to the full article.
 
 $$$
 

@@ -9,7 +9,7 @@ form when creating or editing an asset, you'll find an interface for adding tags
 and categories. If no categories are available to be added to the asset (e.g.,
 if no categories have been created), the *Select* option won't appear.
 
-![Figure 1: Here, the Web Content application's form for categorizing a new web content instance includes a Categories *Select* option since categories exist.](../../../images/web-content-categorization.png)
+![Figure 1: Here, the Web Content application's form for categorizing a new web content article includes a Categories *Select* option since categories exist.](../../../images/web-content-categorization.png)
 
 +$$$
 
