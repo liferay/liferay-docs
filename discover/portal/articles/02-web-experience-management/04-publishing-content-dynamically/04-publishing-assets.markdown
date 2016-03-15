@@ -422,7 +422,7 @@ a Web Content Display application. Click the *Add* button, enter a title and
 some content, click on *Display Page* at the right, and select the Display Page
 you just created. Then click *Publish*.
 
-![Figure 5: You can select a display page for a web content instance when creating or editing one.](../../../images/web-content-display-page.png)
+![Figure 5: You can select a display page for a web content article when creating or editing one.](../../../images/web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, click the *Read
 More* link to display the full content. Notice that the canonical URL for
