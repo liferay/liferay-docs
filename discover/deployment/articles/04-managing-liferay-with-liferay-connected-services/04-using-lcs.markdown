@@ -460,7 +460,7 @@ Report* button to download a report of these data. Also, you can use the
 and month to show data from, respectively. The data in both the graph and the 
 table reflect your selections here. 
 
-Next, you'll learn how to configure notifications in LCS. 
+Next, you'll learn how to manage your LCS account. 
 
 ## Managing Your LCS Account [](id=managing-your-lcs-account)
 
@@ -559,9 +559,9 @@ token.
 
 You can also access environment tokens from the Connection tab on the left side 
 of LCS. Click the *Connection* tab here, and then click the *Automatic 
-Registration* button. The table shows the tokens for all the environments in 
-your project. This provides a central location to manage all your environment 
-tokens. Otherwise, the UI for managing them is exactly the same. 
+Registration* tab. The table shows the tokens for all the environments in your 
+project. This provides a central location to manage all your environment tokens. 
+Otherwise, the UI for managing them is exactly the same. 
 
 ![Figure 4.30: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images/lcs-environment-token-02.png)
 
