@@ -87,7 +87,7 @@ will need to use a profiler to monitor garbage collection during a load test to
 tune the numbers properly for your server hardware, operating system, and
 application server.
 
-![Figure 19.34: Java Memory](../../images/portal-admin-ch7_html_518957a7.png)
+![Figure 19.36: Java Memory](../../images/portal-admin-ch7_html_518957a7.png)
 
 The Java heap is divided into sections for the young generation, the old
 generation, and the permanent generation. The young generation is further
