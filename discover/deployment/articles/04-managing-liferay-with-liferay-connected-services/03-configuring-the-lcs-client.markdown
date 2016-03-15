@@ -137,8 +137,10 @@ Now you must register your server with LCS by filling out the following fields:
 
     ![Figure 4.6: The Add New Environment pop-up.](../../images/lcs-new-environment.png)
 
-3. Server Name: Give your server a name that you can use to distinguish it in 
-   your LCS account.
+3. Server Name: Give your server a name that you can use to distinguish it LCS. 
+   Note that server names in LCS aren't case sensitive. Also, you can't have 
+   duplicate server names in an environment. For example, you can't have servers 
+   named *server01* and *SERVER01* in the same environment. 
 
 4. Server Location: This can be a city, location in an office building, or 
    anywhere else that lets you know where the server is physically located.
