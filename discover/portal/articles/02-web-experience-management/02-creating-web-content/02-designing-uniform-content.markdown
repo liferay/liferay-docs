@@ -136,10 +136,8 @@ and deleting structures and templates on a remote server. After you complete
 your structure, you can access the WebDAV URL by re-opening the structure or
 template and clicking the *Details* section. If you'd like the see WebDAV in
 action, visit the
-[WebDAV Access](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
+[WebDAV Access](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/publishing-files#desktop-access-to-documents-and-media)
 section.
-
-<!-- TODO: Replace link for 7.0, when ready. -Cody -->
 
 +$$$
 
