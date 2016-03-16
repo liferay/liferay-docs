@@ -65,9 +65,9 @@ select a page template and type a name for the new page.
 Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to
 those pages. Site administrators can disable this behavior by unchecking the
-*Automatically apply changes done to the page template* box. Occasionally,
-propagation for page templates fails due to unintended errors. To learn how to
-manage a failed page template propagation, visit the
+*Inherit Changes* box. Occasionally, propagation for page templates fails due to
+unintended errors. To learn how to manage a failed page template propagation,
+visit the
 [Propagating Changes from Site Templates to Sites](/discover/portal/-/knowledge_base/7-0/building-sites-from-templates#propagating-changes-from-site-templates-to-sites)
 section of this chapter.
 
@@ -75,8 +75,7 @@ If staging has been enabled, changes to the page template are automatically
 propagated to the staged page. These changes still need to be approved before
 the page is published to live. For this reason, the automatic propagation of
 page template changes to the staged page cannot be turned off and the
-*Automatically apply changes done to the page template* checkbox does not
-appear.
+*Inherit Changes* selector does not appear.
 
 You'll learn about staging later in the User's Guide. For now you'll look at
 importing and exporting templates.
