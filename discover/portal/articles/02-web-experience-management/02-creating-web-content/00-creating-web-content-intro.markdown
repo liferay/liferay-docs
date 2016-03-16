@@ -57,16 +57,14 @@ your site's web content.
 
 - **Workflow Integration:** Run your content through an approval or review
   process. This feature is covered in more detail in the
-  [](/discover/portal/-/knowledge_base/7-0/) section.
+  [Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow)
+  section.
 
 - **Staging:** Use a separate staging server or stage your content locally so
   you can keep your changes separate from the live site. This feature is covered
   in more detail in the
   [Using the Staging Environment](/discover/portal/-/knowledge_base/7-0/using-the-staging-environment)
   section.
-
-<!-- TODO: Replace Workflow Integration link above for 7.0, when available.
--Cody -->
 
 With Liferay's WCM, you have the ability to create, edit, stage, approve, and
 publish content with easy-to-learn yet powerful tools. Liferay's WCM streamlines

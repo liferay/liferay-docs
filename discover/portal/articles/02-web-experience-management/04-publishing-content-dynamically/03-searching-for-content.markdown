@@ -25,7 +25,7 @@ how to use Liferay's faceted search.
 
 Liferay provides several applications that let users and administrators search
 for content. First, there's the Search application, which can be placed on a
-page to let users search for web content instances. The Search application only
+page to let users search for web content articles. The Search application only
 searches for web content. However, apps like Blogs, Wiki, Message Boards, and
 Documents and Media all provide search bars that let users search among the
 specific types of assets with which these applications allow users to interact.
@@ -50,7 +50,7 @@ Lucene for indexing and searching for content. Please refer to the Lucene
 section of the portal properties file if you'd like to customize Liferay's
 indexing and search behavior. By default, Liferay indexes blog posts, wiki
 articles, message board posts, Documents and Media files' descriptions, and web
-content instances. If a Documents and Media file is a text file, the file's
+content articles. If a Documents and Media file is a text file, the file's
 content is indexed as well. Comments on blog posts, wiki articles, and Documents
 and Media files and text file attachments to wiki articles and message board
 posts are also indexed. Liferay automatically indexes content as it's added to

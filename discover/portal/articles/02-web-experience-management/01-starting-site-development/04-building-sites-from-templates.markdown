@@ -23,22 +23,25 @@ below.
 
 To manage the pages of a site template, click on *Site Templates* in the Control
 Panel and select the *Actions* icon
-(![Actions](../../../images/icon-actions.png)) and then *Manage*. You're
-provided a left menu which contains the *Pages*, *Content*, and *Configuration*
-sections for each site. By default, the Manage Interface begins with the
-template's *Pages*. From here, you can add or remove pages from a site template
-or select themes and layout templates to apply to the site template. Click on a
-specific page's gear icon (![Page Gear](../../../images/icon-page-gear.png))
-from the left menu if you'd like to select a different theme or layout template
-for that page, or manage any of the page's extensive settings. To edit the pages
-themselves, click the page link from the left menu. You can add specific
-applications to each page of a site template and configure the preferences of
-each app. Each page can have any theme, any layout template, and any number of
-applications, just like a page of a regular site. As with site pages, you can
-organize the pages of a site template into hierarchies. When you create a site
-using a site template, the configuration of pages and apps is copied from the
-template to the site. By default, all changes made to the site template are
-automatically copied to sites based on that template.
+(![Actions](../../../images/icon-actions.png)) and then *Manage* for an existing
+template. If you open the main Menu on the left side of your screen (if
+necessary), the site template is selected in the Site Administration dropdown
+menu. You're provided some similar options as a regular site which include
+*Navigation*, *Content*, *Configuration*, and *Publishing*. By default, the
+Manage Interface begins with the template's *Navigation*. From here, you can add
+or remove pages from a site template or select themes and layout templates to
+apply to the site template. Click on a specific page's *Options* icon
+(![Options](../../../images/icon-options.png)) &rarr; *Edit* from the left menu
+if you'd like to select a different theme or layout template for that page, or
+manage any of the page's extensive settings. To edit the pages themselves, click
+the page link from the left menu. You can add specific applications to each page
+of a site template and configure the preferences of each app. Each page can have
+any theme, any layout template, and any number of applications, just like a page
+of a regular site. As with site pages, you can organize the pages of a site
+template into hierarchies. When you create a site using a site template, the
+configuration of pages and apps is copied from the template to the site. By
+default, all changes made to the site template are automatically copied to sites
+based on that template.
 
 +$$$
 
@@ -55,7 +58,7 @@ section, you can create a poll question that is only available for that specific
 site template. Assets created within your template's Content section can
 only be accessed by sites using the template.
 
-Lastly, the Configuration section includes Application Display Templates and
+The Configuration section includes Application Display Templates and
 Mobile Device configuration options for your site template. Also, nested in the
 Configuration section is the *Site Template Settings*. This option allows you to
 edit the template's name and description while also offering boolean options for
@@ -69,26 +72,16 @@ template's settings:
 
 By default, the following site templates are provided:
 
+- **Intranet Site:** Provides a preconfigured site for an intranet. The Home
+  page displays the activities of the members of the site, search, a language
+  selector, and a list of the recent content created in the intranet. It also
+  provides two additional pages for Documents and Media and external News
+  obtained through public feeds.
+
 - **Community Site:** Provides a preconfigured site for building online
   communities. The Home page of a *community site* provides message boards,
   search, a display of a poll and statistics of the activity of community
   members. The site will also be created with a page for a wiki.
-
-- **Intranet Site:** Provides a preconfigured site for an intranet. The Home
-  page displays the activities of the members of the site, search, a language
-  chooser and a list of the recent content created in the intranet. It also
-  provides 3 additional pages for *Documents and Media*, *Calendar* and external
-  *News* obtained through public feeds.
-
-<!--
-- **Intranet Site:** Provides a preconfigured site for an intranet. The Home
-page is a blank page. This site template also offers an additional *Documents
-and Media* page, which holds the Documents and Media app.
--->
-
-<!-- Check the community and intranet site descriptions once Liferay 7.0 is
-about to release. The site templates seemed more bare-bones. I've documented the
-bare-bones intrantet site in the commented out section above. -Cody -->
 
 Now that you know the basics for creating and managing your site templates,
 you'll put your knowledge to the test by completing an example next.
@@ -102,28 +95,27 @@ design each site separately but you can save yourself some work if you create a
 site template to use instead.
 
 To create a site template, navigate to the Control Panel and click *Sites*
-&rarr; *Site Templates*. Then click the *Add* icon (![Add Site Template](../../../images/icon-add.png))
-and enter a name for your template: you'll use *Department* for this example.
-Leave the *Active* and *Allow site administrators to modify pages associated
-with this site template...* boxes checked. The *Active* box must be checked for
-your template to be usable. If your template is still a work in progress, you
-can uncheck it to ensure that no one uses it until it's ready. Checking *Allow
-site administrators to modify pages associated with this site template...*
-allows site administrators to modify or remove the pages and apps that the
-template introduces to their sites--if you want the templates to be completely
-static, you should uncheck this. Click *Save* to create your site template.
+&rarr; *Site Templates*. Then click the *Add* icon
+(![Add Site Template](../../../images/icon-add.png)) and enter a name for your
+template: you'll use *Department* for this example. Leave the *Active* and
+*Allow site administrators to modify pages associated with this site
+template...\* boxes checked. The *Active* box must be checked for your template
+to be usable. If your template is still a work in progress, you can uncheck it
+to ensure that no one uses it until it's ready. Checking *Allow site
+administrators to modify pages associated with this site template...\* allows
+site administrators to modify or remove the pages and apps that the template
+introduces to their sites--if you want the templates to be completely static,
+you should uncheck this. Click *Save* to create your site template.
 
-From the left menu, select the *Pages* section and click *Site Pages*. Then
-click on the *Pages* button to begin adding pages and apps and configuring the
-layouts. When you click this button, the site template opens in so you can view
-it while you're editing it. For this example, you want your site template to
-include four pages. First, create a *Home* page with the Activities,
-Announcements, and Calendar apps. Next, create a *Documents and Media* page with
-the Documents and Media app. Finally, create a *Wiki* page with the Wiki and Tag
-Cloud apps and a *Message Boards* page with the Message Boards and Tag Cloud
-apps. The changes you made to your site template above are completed in real
-time, so there's no need to navigate back to the Site Templates page of the
-Control Panel and select *Save*.
+From the left menu, notice that your site template is now selected from the Site
+Administration dropdown. You can now begin editing your site template. For this
+example, you want your site template to include four pages. First, create a
+*Home* page with the Activities, Announcements, and Calendar apps. Next, create
+a *Documents and Media* page with the Documents and Media app. Finally, create a
+*Wiki* page with the Wiki and Tag Cloud apps and a *Message Boards* page with
+the Message Boards and Tag Cloud apps. The changes you made to your site
+template above are completed in real time, so there's no need to navigate back
+to the Site Templates page of the Control Panel and select *Save*.
 
 ![Figure 2: You can see the name of the site template you're currently editing.](../../../images/editing-site-template.png)
 
@@ -132,12 +124,12 @@ Legal sites. Go to the Control Panel and click on *Sites* &rarr; *Sites*. Then
 click the *Add* icon (![Add Site](../../../images/icon-add.png)) &rarr;
 *Department*. Enter *Engineering* for the site name and set the Membership Type
 to *Private*. Recall that private sites don't appear in the My Sites application
-so that regular users won't even know that the Engineering site exists.
-Also, the only way users can be added to a private site is via an invitation
-from a site administrator. Leave the *Active* box checked so that your site can
-be used immediately. Select the *Copy as Private Pages* option since the
+so that regular users won't even know that the Engineering site exists. Also,
+the only way users can be added to a private site is via an invitation from a
+site administrator. Leave the *Active* selector enabled so that your site can be
+used immediately. Select the *Copy as Private Pages* option since the
 Engineering site is intended for internal use only. Leave the *Enable
-propagation of changes from the site template* box checked so that the
+propagation of changes from the site template* box enabled so that the
 Engineering site receives updates if the Department site template is modified.
 Finally, click *Save* to create your Engineering site.
 
@@ -153,9 +145,6 @@ same, each site will quickly be filled with department-specific information as
 users add and share content within the sites. Also, site administrators can add
 new pages, apps, and content to their sites, further differentiating each
 department's site from the others.
-
-<!-- Check if site template provides calendar, d&m, wiki, and message boards
-applications. -Cody -->
 
 ## Propagating Changes from Site Templates to Sites [](id=propagating-changes-from-site-templates-to-sites)
 
@@ -183,12 +172,12 @@ site pages as long as they're all positioned after the site template pages. Site
 template administrators cannot add, remove, or reorder custom site pages.
 
 If a site administrator changes a page that was imported from a site template
-and refreshes the page, the following Information icon (![Information](../../../images/icon-control-menu-information.png))
-appears in the Control Menu with the following message:
+and refreshes the page, the following Information icon
+(![Information](../../../images/icon-control-menu-information.png)) appears in
+the Control Menu with the following message:
 
     This page has been changed since the last update from the site template. No
-    further updates from the site template will be applied. Click *Reset* to
-    overwrite the changes and receive updates from the site template.
+    further updates from the site template will be applied.
 
 ![Figure 3: You can click the Information icon to view important information about your site template.](../../../images/site-template-update-message.png)
 
@@ -253,15 +242,15 @@ Propagate* features.
 $$$
 
 For example, consider a site template administrator who includes a Message
-Boards app as part of a site template. She even creates Message Board
+Boards app as part of a site template. They even create Message Board
 categories and configures permissions over the actions of the categories. The
 first time a site is created based on the site template, the categories (app
 data) and related permissions are copied to the site. If the site template
 administrator adds, removes, or deletes some categories, however, such changes
 *aren't* propagated to the site. 
 
-Now that you've learned how site templates work, you'll discuss how to share
-site templates. 
+Now that you've learned how site templates work, you'll learn how to share site
+templates. 
 
 ## Sharing Site Templates [](id=sharing-site-templates)
 
@@ -273,10 +262,10 @@ To export a Site using a Site Template, use the following process:
 
 1. Go to the *Control Panel* &rarr; *Sites* &rarr; *Site Templates* menu.
 
-2. Click the *Actions* icon (![Actions](../../../images/icon-actions.png)) and then
-   *Export* for the site template your site is using. You'll use the *Export*
-   screen to obtain a LAR file with the content of the site template. Be sure to
-   choose the applications and data you want exported.
+2. Click the *Actions* icon (![Actions](../../../images/icon-actions.png))
+   and then *Export* for the site template your site is using. You'll use the
+   *Export* screen to obtain a LAR file with the content of the site template.
+   Be sure to choose the applications and data you want exported.
 
 3. In your target environment, go to *Control Panel* &rarr; *Sites* &rarr; *Site
    Templates* and create a new site template.
@@ -284,6 +273,9 @@ To export a Site using a Site Template, use the following process:
 4. Click *Actions* &rarr; *Import* for that site template and upload the LAR
    file containing your site template's content.
 
-Now the site can be exported and imported normally to this new environment.
+Now the site can be exported and imported normally to this new environment. For
+more information on exporting/importing content, visit the
+[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
+article.
 
 In the next section, you'll learn about page templates.

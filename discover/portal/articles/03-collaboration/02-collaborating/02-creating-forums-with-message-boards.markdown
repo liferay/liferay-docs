@@ -52,11 +52,6 @@ Boards* from under the *Content* heading.
 
 $$$
 
-To administer a message board, open the *Product Menu* (![Product
-Menu](../../../images/icon-menu.png)) and navigate the *Content* section for your
-site, page, or global scope. Click on *Message Boards* and the Message Boards
-administration screen appears. 
-
 ![Figure 1: A Message Board instance starts empty, ready for you to configure for your purposes.](../../../images/message-boards-administration.png)
 
 Initially, a message board has no categories or threads; and that's good,
@@ -235,9 +230,10 @@ board's permissions.
 
 ### Message Board Permissions [](id=permissions)
 
-To edit message board permissions, click the *Permissions* button. The
-permissions screen allows you to grant and revoke a role's ability to access
-parts of the application and perform particular actions. 
+To edit message board permissions, click on the *Options* icon (![Options](../../../images/icon-options.png))
+and select the *Home Category Permissions* option. This permissions screen
+allows you to grant and revoke a role's ability to access parts of the
+application and perform particular actions. 
 
 The permissions enable a role to perform the following actions. 
 
@@ -267,23 +263,15 @@ posts.
 
 Configure the roles with the permissions you want and *Save* your changes. 
 
-### Export / Import [](id=export--import)
+In addition to the *Home Category Permissions* option, there the *Permissions*
+option. It's for specifying the application instance's general permissions. It
+lets you control access to the application instance's options menu and to that
+menu's Configuration and Permissions options. There's also Preferences
+permission that allows you to control access to the application instance's
+preference options, if the app has any custom preferences.
 
-You can also import existing wiki content into your wiki application instance or
-export wiki content to a file. To access this interface, click on *Options
-&rarr; Export / Import*. Refer to [Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
-for details. 
-
-### App Templates [](id=app-templates)
-
-The Message Boards application lets you store your current application setup or
-apply an existing archived setup to this application instance. App templates are
-especially useful for applying to multiple application instances. The
-application templates interface is available by clicking on *Options &rarr; App
-Templates.*
-
-Now that you've configured your message board, you can focus on adding
-categories for message board threads. 
+Now that you've configured your message board and set its permissions, you can
+focus on adding categories for message board threads. 
 
 ## Adding Categories [](id=adding-categories)
 
@@ -437,6 +425,17 @@ default setting is to check for new mail every minute, but you can set it to
 whatever you like: 
 
     pop.server.notifications.interval=1
+
++$$$
+
+**Note**: Depending on your mail provider, if you're using multiple devices to
+access email through POP, you might need to configure in your POP settings
+something like Gmail's *recent mode*. In Gmail, recent mode assures that emails
+go to all your devices instead of only the the first client that receives the
+email. To enable recent mode in Gmail, for example, prefix the value of your POP
+client's Username or Email field with `recent:`.
+
+$$$
 
 The second mechanism Liferay uses for sending email notifications is mailing
 lists. Any category in a Liferay message board can have its own mailing list.

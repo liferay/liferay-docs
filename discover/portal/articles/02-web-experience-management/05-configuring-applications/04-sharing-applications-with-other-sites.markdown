@@ -53,26 +53,31 @@ platform upon which to build applications for Facebook.
 OpenSocial comprises a container and a set of APIs for social networking and
 other web applications. iGoogle is a service provided by Google that lets users
 create a customizable page and add *Gadgets* to that page. Liferay can serve up
-applications to be used as Open Social Gadgets on iGoogle or other
-OpenSocial-compatible pages.
+applications to be used as OpenSocial Gadgets on any OpenSocial-compatible
+pages.
 
-To serve a Liferay app on iGoogle, check the box labeled *Allow users to
-add [application-name] to iGoogle*. Then copy and paste the URL provided into
-Google's *Add a feed or gadget* feature on the iGoogle configuration page. Your
-Liferay instance will serve that app directly onto your iGoogle
-page. The URL provided is unique to the specific instance of the app, so
-you could serve multiple instances of the same app as different Google
-Gadgets.
+To serve a Liferay app on an OpenSocial platform, copy and paste the provided
+gadget URL and add it to the appropriate configuration page of the OpenSocial
+platform you're using. Your Liferay instance will serve that app directly onto
+that platform's page. The URL provided is unique to the specific instance of the
+app, so you could serve multiple instances of the same app as different
+OpenSocial Gadgets.
 
 You could use this feature to allow users to view what's happening on your
 Liferay instance at a glance, using Asset Publishers or custom RSS feeds. You
 could also use Liferay's API to build your own app and provide the URL for users
-to place on their iGoogle pages.
+to place on their OpenSocial pages.
 
-<!-- Check back about providing access to iGoogle. This site was closed down by
-Google in Nov 2013, and probably shouldn't be referenced anymore. -Cody -->
+From the Sharing tab in the Configuration menu, you can also enable the selector
+*Allow users to add [application-name] to an OpenSocial platform*. Click *Save*
+and revisit the *Options* button of your application in Liferay. You'll notice a
+new button named *Add to an OpenSocial Platform*. When selecting this new
+button, the URL is provided to you for sharing the application to an OpenSocial
+platform. This option provides a shortcut for obtaining the URL and also gives a
+way for users to copy the URL that wouldn't have permission to access the app's
+Configuration menu.
 
-### Netvibes [](id=netvibes)
+## Netvibes [](id=netvibes)
 
 Netvibes offers a similar service to iGoogle--users can log in, create their own
 personal portal, called a *dashboard*, and add customizable widgets to the
