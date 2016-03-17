@@ -3953,3 +3953,27 @@ This change prevents providing an incorrect email address when adding flag
 entries.
 
 ---------------------------------------
+
+### Removed PHP Portlet Support [](id=removed-php-portlet-support)
+- **Date:** 2016-Mar-10
+- **JIRA Ticket:** LPS-64052
+
+#### What changed? [](id=what-changed-99)
+
+PHP portlets are no longer supported.
+
+#### Who is affected? [](id=who-is-affected-99)
+
+This affects any portlet using the class
+`com.liferay.util.bridges.php.PHPPortlet`.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-99)
+
+You should port your PHP portlet to a different technology.
+
+#### Why was this change made? [](id=why-was-this-change-made-99)
+
+This change simplifies future maintenance of the portal. This support could be
+added back in the future as an independent module.
+
+---------------------------------------
