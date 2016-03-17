@@ -1,0 +1,49 @@
+{"Organizations": [
+	{
+	"Name": "Lunar Resort",
+	"Organizations": [
+		{
+		"Name": "Physical Plant Department",
+		"Organizations": [
+			{
+			"Name": "Grounds Crew"
+			},
+			{
+			"Name": "Janitorial Crew"
+			},
+			{
+			"Name": "Mechanical Crew"
+			}
+		]
+		},
+		{
+		"Name": "Recreation Department",
+		"Organizations": [
+			{
+			"Name": "Lunar Golf Instructors"
+			},
+			{
+			"Name": "Lunar Rover Instructors"
+			},
+			{
+			"Name": "Lunar Sherpas"
+			}
+		]
+		},
+		{
+		"Name": "Sales Department",
+		"Organizations": [
+			{
+			"Name": "Up-sale Group"
+			},
+			{
+			"Name": "Souvenir and Memorabilia Group"
+			},
+			{
+			"Name": "Retail Group"
+			}
+		]
+		}
+	]
+	}
+]}

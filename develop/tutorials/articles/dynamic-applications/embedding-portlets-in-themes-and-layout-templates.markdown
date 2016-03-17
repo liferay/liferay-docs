@@ -39,18 +39,18 @@ configured to handle this request. You must create a module that can
 find the portlet that fits the theme's request.
 
 1. Create a generic OSGi module using your favorite third party tool, or use
-[Blade Tools](/develop/tutorials/-/knowledge_base/7-0/using-blade-to-create-modules). 
+[Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools). 
 
 2. Create a unique package name in the module's `src` directory, and create a
    new Java class in that package. To follow naming conventions, name the class
    based on the entity type and action type, followed by *PortletProvider*
    (e.g., `SiteNavigationLanguageEntryViewPortletProvider`). The class should
    extend the
-   [`BasePortletProvider`](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/portlet/BasePortletProvider.java)
+   [`BasePortletProvider`](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/portlet/BasePortletProvider.java)
    class and implement the appropriate portlet provider interface based on the
    action you chose in your theme (e.g.,
-   [ViewPortletProvider](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/portlet/ViewPortletProvider.java),
-   [BrowsePortletProvider](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portal/kernel/portlet/BrowsePortletProvider.java),
+   [ViewPortletProvider](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/portlet/ViewPortletProvider.java),
+   [BrowsePortletProvider](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/portlet/BrowsePortletProvider.java),
    etc.).
 
 3. Directly above the class's declaration, insert the following annotation:
@@ -67,7 +67,7 @@ find the portlet that fits the theme's request.
     `service` element should match the interface you're implementing (e.g.,
     `ViewPortletProvider.class`). You can view an example of a similar
     `@Component` annotation in the
-    [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/portlet/RolesSelectorEditPortletProvider.java)
+    [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/platform/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/portlet/RolesSelectorEditPortletProvider.java)
     class.
 
 4. Specify the methods you want to implement. Make sure to retrieve the
@@ -76,11 +76,11 @@ find the portlet that fits the theme's request.
 
     A common use case is to implement the `getPortletId()` and
     `getPlid(ThemeDisplay)` methods. You can view the
-    [SiteNavigationLanguageViewPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/site-navigation/site-navigation-language-web/src/main/java/com/liferay/site/navigation/language/web/portlet/SiteNavigationLanguageViewPortletProvider.java)
+    [SiteNavigationLanguageViewPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience-management/site-navigation/site-navigation-language-web/src/main/java/com/liferay/site/navigation/language/web/portlet/SiteNavigationLanguageViewPortletProvider.java)
     for an example of how these methods can be implemented to provide a portlet
     for embedding in a theme. This example module returns the portlet ID of the
     Language portlet specified in
-    [SiteNavigationLanguagePortletKeys](https://github.com/liferay/liferay-portal/blob/master/modules/apps/site-navigation/site-navigation-language-web/src/main/java/com/liferay/site/navigation/language/web/constants/SiteNavigationLanguagePortletKeys.java).
+    [SiteNavigationLanguagePortletKeys](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience-management/site-navigation/site-navigation-language-web/src/main/java/com/liferay/site/navigation/language/web/constants/SiteNavigationLanguagePortletKeys.java).
     Furthermore, it returns the PLID, which is the ID that uniquely identifies a
     page used by your theme. By retrieving these, your theme will know which
     portlet to use, and which page to use it on.
@@ -144,6 +144,6 @@ is embedded on the page.
 
 [Providing Portlets to Manage Requests](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
 
-[Creating a Simple Bundle](/develop/tutorials/-/knowledge_base/7-0/creating-a-simple-bundle)
+[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 
-[Creating a Portlet Application](/develop/tutorials/-/knowledge_base/7-0/creating-a-portlet-application)
+[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)

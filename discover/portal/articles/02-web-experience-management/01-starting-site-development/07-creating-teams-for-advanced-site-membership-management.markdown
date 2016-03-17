@@ -25,20 +25,20 @@ concentrate on defining and applying permissions to their sites' teams.
 
 **Note:** To create and apply permissions for a group of users to use across
 multiple sites or organizations in your Liferay instance, consider aggregating
-the users into a [User Group](/discover/portal/-/knowledge_base/6-2/user-groups)
+the users into a [User Group](/discover/portal/-/knowledge_base/7-0/user-groups)
 and assigning the User Group permissions via
-[Roles](/discover/portal/-/knowledge_base/6-2/roles-and-permissions).
+[Roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions).
 
-<!-- Update links above to 7.0, when available. -Cody -->
+<!-- Verify link above to 7.0, when available. -Cody -->
 
 $$$
 
 To create a team within a site, first navigate to the Site Administration page
-of your site and select *Users* &rarr; *Site Teams*. It's important to note that
+of your site and select *Members* &rarr; *Site Teams*. It's important to note that
 configuring other site membership groupings, such as *Users*, *Organizations*,
 and *User Groups* can be done in the *Site Memberships* app, which is also
-located in the Users tab. You can visit the 
-[User Management](/discover/portal/-/knowledge_base/6-2/user-management)
+located in the Members tab. You can visit the 
+[User Management](/discover/portal/-/knowledge_base/7-0/user-management)
 chapter for more information on how these site memberships work. Finally, click
 the *Add Team* icon (![Add Team](../../../images/icon-add.png)).
 

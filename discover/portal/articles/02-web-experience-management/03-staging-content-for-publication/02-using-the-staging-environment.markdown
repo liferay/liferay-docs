@@ -2,7 +2,7 @@
 
 After enabling staging (either Local Live or Remote Live) for a site, you'll
 notice additional options provided on the top Control Menu and also in the
-Product Menu to the left. If you haven't enabled staging for your site, see the
+Menu to the left. If you haven't enabled staging for your site, see the
 [Enabling Staging](/discover/portal/-/knowledge_base/7-0/enabling-staging)
 section for instructions. These new menus help you manage staged pages. You'll
 also notice that most of your page management options have been removed, because
@@ -21,11 +21,11 @@ page but haven't published that change yet to the live site. Go back to the
 staged page and observe the options you have to choose from to help in your
 staging conquest.
 
-**Manage Site Pages Variations:** allows you to work in parallel on multiple
-versions of a staged site page. You'll learn more about this later.
+**Site Pages Variations:** allows you to work in parallel on multiple versions
+of a staged site page. You'll learn more about this later.
 
-**Manage Page Variations:** allows you to work in parallel on multiple versions
-of a staged page. You'll learn more about this later.
+**Page Variations:** allows you to work in parallel on multiple versions of a
+staged page. You'll learn more about this later.
 
 **Undo/Redo:** allows you to step back/forward through recent changes to a page,
 which can save you the time of manually adding or removing apps if you make a
@@ -36,11 +36,11 @@ dates. You can go to any change in the revision history and see how the pages
 looked at that point. To access *History*, select the *Options* icon
 (![Options](../../../images/icon-options.png)) in the Staging bar.
 
-**Mark as Ready for Publication:** After you're done making changes to the
-staged page, click this button. The status of the page changes from *Draft* to
-*Ready for Publication* and any changes you've made can be published to the Live
-Site. When you publish a page to live, only the version which was *Marked as
-Ready for Publication* is published.
+**Ready for Publication:** After you're done making changes to the staged page,
+click this button. The status of the page changes from *Draft* to *Ready for
+Publication* and any changes you've made can be published to the Live Site. When
+you publish a page to live, only the version which was *Marked as Ready for
+Publication* is published.
 
 When clicking the *Publish to Live* button, a popup window appears with come
 configuration options for your publication. You can give your publication a name
@@ -65,11 +65,6 @@ the week every Monday morning without any further intervention.
 
 The *Publish to Live* button also gives you options to select pages, content,
 deletions, and permissions to publish.
-
-<!--Furthermore, you're given the *Current and Previous* and *Scheduled* tabs.
-The *Current and Previous* tab lets you view past publications along with their
-authors and create/completion dates. The *Scheduled* tab lets you view what
-publication processes are scheduled for publishing.-->
 
 **Pages** gives you the option to choose which pages to include when you
 publish. You can see the default settings in the gray text below the header.
@@ -169,15 +164,16 @@ published to the live site.
 ![Figure 3: The staging toolbar indicates whether you're able to publish to the live site.](../../../images/staging-publish-bar.png)
 
 You can also manage your staging processes. Once staging is enabled, you can
-navigate back to the *Staging* option located in the Product Menu's Publishing
-Tools tab. From here you'll see a list of staging processes that have been
-completed. If you click the *Scheduled* tab from above, you'll find staging
-processes that you've scheduled for future publication dates.
+navigate back to the *Staging* option located in the Menu's Publishing tab. From
+here you'll see a list of staging processes that have been completed. You can
+relaunch or clear any of these publications by clicking the *Actions* button
+(![Options](../../../images/icon-actions.png)) next to a process. If you click
+the *Scheduled* tab from above, you'll find staging processes that you've
+scheduled for future publication dates.
 
 If you find yourself repeatedly creating staging processes that are very similar
 to each other, you should think about using Publish Templates. Up to this point,
 you've looked at how to create custom publication processes.
-
 
 Instead of manually having to customize a publication process every time you're
 looking to publish pages/content, you can use a publish template. Using publish
@@ -214,10 +210,60 @@ in the live site.
 
 $$$
 
+Now that you know how to use the staging environment, you'll learn about the
+permissions involved to help manage this environment.
+
+## Managing Permissions [](id=managing-permissions)
+
+With the staging environment, there are many different options to use for
+building and managing a site and its pages. Sometimes limiting the access to
+a subset of the powerful features of staging is desired by some administrators.
+You can manage access to the staging environment by creating or modifying a role
+to possess certain permissions. To create/modify a role, navigate to the
+*Control Panel* &rarr; *Users* &rarr; *Roles*. You can create a new role by
+selecting the *Add* button (![Add](../../../images/icon-add.png)) and completing
+the New Role menu. Once you have a new role created, or you've decided on the
+role you'd like to modify, select the role's *Actions* icon
+(![Actions](../../../images/icon-actions.png)) and select *Define Permissions*.
+
+The most obvious permissions for staging are the general permissions that look
+similar to the permissions for most Liferay apps. These permissions can be found
+in the *Site Administration* &rarr; *Publishing* &rarr; *Staging* section of the
+Define Permissions menu. This includes *Access in Control Panel*,
+*Configuration*, *Permissions*, *Preferences*, and *View*. Also, there are some
+site resource permissions that deal directly with staging. These permissions are
+located in the *Control Panel* &rarr; *Sites* &rarr; *Sites* section in the
+Define Permissions menu. The relevant site resource permissions related to
+staging are listed below:
+
+- Add Page Variation: hides/shows the *Add* button on the Staging bar &rarr;
+  Manage Page Variations screen.
+- Add Site Pages Variation: hides/shows the *Add* button on the Staging bar &rarr;
+  Manage Site Page Variations screen.
+- Export/Import Application Info: if the Publish Staging permission is not
+  granted, hides/shows the application level Export/Import menu. The
+  Configuration permission for the Export/Import app is also required
+- Export/Import Pages: if the Publish Staging permission is not granted,
+  hides/shows the Export/Import app in the Site Administration menu.
+- Manage Staging: hides/shows the the staging configuration menu in the Staging
+  app in the Site Administration menu.
+<!-- Publish Application Info: Coming soon (LPS-63958) -Cody -->
+- Publish Staging: hides/shows the *Publish to Live* button on the Staging bar
+  and hides/shows the *Add* button in the Staging app in the Site Administration
+  menu.
+- View Staging: If Publish Staging, Manage Pages, Manage Staging, or Update
+  permissions are not granted, hides/shows the Staging app in the Site
+  Administration menu.
+
+Notice that some of the permissions listed above are related to the
+export/import functionality. Since these permissions are directly affected by
+the Publish Staging permission, they are important to note. Visit the
+[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
+section for more details on importing/exporting site and page content.
+
 One of the most powerful features of staging is page variations. Next, you'll
 see how to use them to create multiple different variations of your site's pages
 for different purposes.
-
 
 ## Using Site Pages Variations [](id=using-site-pages-variations)
 
@@ -227,13 +273,20 @@ need to be working on multiple versions of the site at the same time to ensure
 everything has been properly reviewed before it goes live. With staging, you can
 do this using *Page Variations*.
 
-For example, you can create several page variations, enabling the marketing team
-to give your site a completely different look and feel for Christmas. At the
-same time, the product management team can work on a different version that will
-be published the day after Christmas for the launching of a new product.
-Additionally, the product management team is considering two different ideas for
-the home page of the site, so they can create several page variations of the
-home page inside their product launch site.
+Notice that there are two page variation options available from the Staging bar:
+*Site Pages Variation* and *Page Variations*. Site Pages Variation is used to
+create different variations for the set of site pages. For instance, you could
+use this if you had three separate pages and wanted to modify these pages while
+keeping them together as a set. The Page Variations option only works with a
+single page.
+
+For example, you can create several site pages variations, enabling the
+marketing team to give your site a completely different look and feel for
+Christmas. At the same time, the product management team can work on a different
+version that will be published the day after Christmas for the launching of a
+new product. Additionally, the product management team is considering two
+different ideas for the home page of the site, so they can create several page
+variations of the home page inside their product launch site.
 
 Variations only affect pages and not the content, which means all the existing
 content in your staging site is shared by all your variations. In different site
@@ -246,10 +299,12 @@ You must enable page versioning when turning on Local or Remote Live staging.
 You can enable page versioning for public and private pages. When you turn
 staging on with page versioning enabled, the page variation options are
 available in the staging menu bar. By default, you only have one site page
-variation which is called *Main Variation*. To create a new one, select the
-*Site Pages Variation* link from the staging toolbar. This brings you to a list
-of the existing site page variations for your site. Click *Add Site Pages
-Variation* to create a new one.
+variation and page variation which are both called *Main Variation*. To create a
+new one, select the *Options* icon
+(![Options](../../../images/icon-options.png)) in the Staging bar and select the
+variation option. For example, select the *Site Pages Variation* option. This
+brings you to a list of the existing site page variations for your site. Click
+*Add Site Pages Variation* to create a new one.
 
 ![Figure 4: When selecting the *Site Pages Variation* link from the staging toolbar, you're able to add and manage your site pages variations.](../../../images/staging-page-variations.png)
 
@@ -293,7 +348,7 @@ options from the Site Pages screen by clicking the *Staging* drop-down menu
 located above the pages tree.
 ----
 Above paragraph feature did not work. Check if text is accurate or if feature
-changed. -Cody -->
+changed. This feature, however, does working when adding a page. -Cody -->
 
 To publish a variation to the live site, click on *Publish to Live* in the
 staging menu and then select *Publish to Live*. Publications can also be
