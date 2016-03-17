@@ -162,10 +162,12 @@ for testing with Android Studio's emulator, because it corresponds to
 `localhost:8080` through the emulator. If you're using the Genymotion emulator,
 you should, however, use address `192.168.56.1` instead of `localhost`. 
 
-If you are going to use Liferay 7 there is an additional parameter to enable the Liferay Screens support, *liferay_portal_version*. The supported values are 62 for Liferay 6.2 and 70 for Liferay 7.0
+If you're using Liferay 7, you must also set the `liferay_portal_version` 
+attribute in your `server_context.xml`. The supported values are `62` for 
+Liferay 6.2, and `70` for Liferay 7.0. 
 
-In your `server_context.xml` file, you can configure Screenlet properties. The
-example properties listed below, `liferay_recordset_id` and
+You can also configure Screenlet properties in your `server_context.xml` file. 
+The example properties listed below, `liferay_recordset_id` and
 `liferay_recordset_fields`, enable DDL Form Screenlet and DDL List Screenlet to
 interact with a portal's DDLs. You can see an additional example
 `server_context.xml` file
