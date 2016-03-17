@@ -56,15 +56,16 @@ Entities come back from Liferay in JSON. To work with these results efficiently
 in your app, you must convert them to model objects that represent the entity in 
 Liferay. Although Screens's 
 [`BaseListCallback`](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListCallback.java) 
-transforms the JSON entities into generic entity objects for you, you still must 
+transforms the JSON entities into `Map` objects for you, you still must 
 convert these into proper entity objects for use in your app. You'll do this via 
 a model class. 
 
 For example, Bookmark List Screenlet needs `Bookmark` objects. Create the 
-following `Bookmark` class that you'll use to create these objects. Note that 
-this class creates `Bookmark` objects that contain the bookmark's URL and other 
-values: 
-<!-- what data is in the _values variable? -->
+following `Bookmark` class that you'll use to create these objects. This class 
+creates `Bookmark` objects that contain the bookmark's URL and other data. Since 
+you always need quick access to the bookmark's URL, it's extracted from the 
+`Map` and stored in the `_url` variable. The entire `Map` is stored in the 
+`_values` variable so you can extract any other data you need from it later: 
 
     import android.os.Parcel;
     import android.os.Parcelable;
@@ -338,23 +339,21 @@ respectively. You can therefore define the enumeration as follows:
         BOOKMARK, BOOKMARK_COUNT
     }
 
-Next, add a constructor that accounts for offline mode. Note that 
-`offlinePolicy` is the second argument to this constructor: 
-<!-- Is there a different constructor that can be used if they don't need offline mode? -->
+Next, add the constructor. This constructor calls the superclass constructor and 
+accounts for the app developer's offline mode setting via the `offlinePolicy` 
+argument. If you don't need to support offline mode, you can use `null` or 
+`OfflinePolicy.REMOTE_ONLY` in place of `offlinePolicy` in the superclass 
+constructor: 
 
     public BookmarkListInteractorImpl(int targetScreenletId, OfflinePolicy offlinePolicy) {
         super(targetScreenletId, offlinePolicy);
     }
 
 You must also add a `loadRows` method that can handle offline mode. This method 
-should set any variables you need to make the service calls, and support offline 
-mode by calling `processWithCache`. Add this method now to 
-`BookmarkListInteractorImpl`: 
-<!-- 
-What does loadRows look like if we don't need offline mode? You mention that we 
-have to replace the loadRows call with processWithCache to support offline mode, 
-but wouldn't this be recursive then?
--->
+should also set any variables you need to make the service calls. You can 
+support offline mode in `loadRows` by calling `processWithCache`. For example, 
+the `loadRows` method in `BookmarkListInteractorImpl` sets the `_groupId` and 
+`_folderId` variables, and calls `processWithCache`: 
 
     public void loadRows(int startRow, int endRow, Locale locale, long groupId, long folderId) 
         throws Exception {
@@ -365,16 +364,22 @@ but wouldn't this be recursive then?
             processWithCache(startRow, endRow, locale);
     }
 
-Now you must implement the `getElement` and `getContent` methods. These methods 
-convert from cache to our element and back. The implementations are trivial if 
-you take advantage of JSON serialization. Add these implementations now for 
-Bookmark List Screenlet: 
-<!-- 
-I don't understand what these methods do, or why they are necessary. What do you 
-mean by "convert from cache to our element and back"? Is cache data stored as 
-JSON? If so, why? I looked through other tutorials and didn't see this mentioned 
-anywhere.
--->
+Note that if you don't need to support offline mode, you should replace the 
+`processWithCache` call with a `super.loadRows` call that uses the same 
+arguments as `processWithCache`. For example, if Bookmark List Screenlet didn't 
+support offline mode, the above `processWithCache` call could be replaced with 
+`super.loadRows(startRow, endRow, locale)`. 
+
+To support offline mode, you must also implement the `getContent` and 
+`getElement` methods. Because Screens stores offline mode data as JSON, you must 
+implement these methods to convert your data to and from JSON. The `getContent` 
+method takes your model object as its only argument. You can then create a 
+`JSONObject` from your model object. The `getElement` method takes a Screens 
+[`TableCache`](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/cache/tablecache/TableCache.java) 
+object that contains the data retrieved from storage. You can then create a new 
+`JSONObject` from this data, convert it to a `Map`, and create a new model 
+object from the `Map`. For example, here are the `getContent` and `getElement` 
+methods for `BookmarkListInteractorImpl`: 
 
     @Override
     protected String getContent(Bookmark object) {
@@ -388,9 +393,8 @@ anywhere.
 
 Lastly, implement the `storeToCache` and `cached` methods to store and recover 
 data from the cache, respectively. Note that these methods make use of the 
-enumeration you created earlier: 
-<!-- These methods need more explanation. Besides the fact that they store and 
-recover cache data, I'm not sure how they work. --> 
+enumeration you created earlier. For example, here are the `storeToCache` and 
+`cached` methods for `BookmarkListInteractorImpl`: 
 
     @Override
     protected void storeToCache(BaseListEvent event, Object... args) {
@@ -495,15 +499,15 @@ leverage the superclass constructors. For example, here is the first part of
         public BookmarkListScreenlet(Context context, AttributeSet attributes, int defaultStyle) {
             super(context, attributes, defaultStyle);
         }
-        
+
         ...
 
-Next, you should implement the methods required to support offline mode in your 
-Screenlet: `loadingFromCache`, `retrievingOnline`, and `storingToCache`. Each 
-method retrieves a listener instance and then calls the listener method it 
-shares a name with. For example, here are the methods for Bookmark List 
-Screenlet: 
-<!-- What do these methods do? -->
+Next, you should implement the listener methods required to support offline mode 
+in your Screenlet: `loadingFromCache`, `retrievingOnline`, and `storingToCache`. 
+These methods notify the listener when the data is loaded from the cache, 
+retrieved online, or stored to the cache, respectively. Each method retrieves a 
+listener instance and then calls the listener method it shares a name with. For 
+example, here are the methods for Bookmark List Screenlet: 
 
     @Override
     public void loadingFromCache(boolean success) {

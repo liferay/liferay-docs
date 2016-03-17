@@ -163,8 +163,9 @@ for testing with Android Studio's emulator, because it corresponds to
 you should, however, use address `192.168.56.1` instead of `localhost`. 
 
 If you're using Liferay 7, you must also set the `liferay_portal_version` 
-attribute in your `server_context.xml`. The supported values are `62` for 
-Liferay 6.2, and `70` for Liferay 7.0. 
+attribute in your `server_context.xml` to `70`. Supported values for this 
+attribute are `62` for Liferay 6.2, and `70` for Liferay 7.0. If you don't set 
+this attribute, it defaults to `62`. 
 
 You can also configure Screenlet properties in your `server_context.xml` file. 
 The example properties listed below, `liferay_recordset_id` and
