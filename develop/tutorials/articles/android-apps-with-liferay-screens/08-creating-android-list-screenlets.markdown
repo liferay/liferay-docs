@@ -37,7 +37,7 @@ You'll create the list Screenlet by following these steps:
 
 First though, you should understand how pagination works with list Screenlets. 
 
-## Pagination
+## Pagination [](id=pagination)
 
 To ensure that users can scroll smoothly through large lists of items, list 
 Screenlets should support fluent pagination. In cases where you only have a 
@@ -50,7 +50,7 @@ also use this approach.
 
 Now you're ready to start creating your list Screenlet! 
 
-## Creating the Model Class
+## Creating the Model Class [](id=creating-the-model-class)
 
 Entities come back from Liferay in JSON. To work with these results efficiently 
 in your app, you must convert them to model objects that represent the entity in 
@@ -124,7 +124,7 @@ you always need quick access to the bookmark's URL, it's extracted from the
 
 Now that you have your model class, you can create your Screenlet's View.
 
-## Creating the Screenlet's View
+## Creating the Screenlet's View [](id=creating-the-screenlets-view)
 
 Recall that a View defines a Screenlet's UI. Since you're creating a list 
 Screenlet, you'll first define the layout to use for each row in the list. For 
@@ -276,7 +276,7 @@ follows:
 
 Nice work! Now you can create your list Screenlet's Interactor. 
 
-## Creating the Screenlet's Interactor
+## Creating the Screenlet's Interactor [](id=creating-the-screenlets-interactor)
 
 Recall that Screenlets use Interactors to retrieve entities from Liferay. Your 
 list Screenlet's Interactor should extend `BaseListInteractor`, parameterized 
@@ -415,7 +415,7 @@ enumeration you created earlier. For example, here are the `storeToCache` and
 Great! Your Interactor is finished. Next, you'll create a listener for your list 
 Screenlet. 
 
-## Creating the Screenlet's Listener
+## Creating the Screenlet's Listener [](id=creating-the-screenlets-listener)
 
 Recall that listeners let the app developer respond to events that occur in your 
 Screenlet. For example, an app developer using Login Screenlet in an activity 
@@ -454,7 +454,7 @@ notifies the app developer when the Interactor is called:
 
 Next, you'll create the Screenlet class. 
 
-## Creating the Screenlet Class
+## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 Now you're ready to create your Screenlet class. Recall that the Screenlet class 
 serves as your Screenlet's focal point. It governs the Screenlet's behavior and 

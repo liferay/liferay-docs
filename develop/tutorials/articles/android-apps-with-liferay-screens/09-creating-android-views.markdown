@@ -48,7 +48,7 @@ explains how. When your View's project is in place, you can start creating it.
 
 First, you'll learn how to create a Themed View. 
 
-## Themed View
+## Themed View [](id=themed-view)
 
 Screens provides several existing View Sets that you can reuse and customize in 
 your app to create a Themed View. If you use or override the Android color 

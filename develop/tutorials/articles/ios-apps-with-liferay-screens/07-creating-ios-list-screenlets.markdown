@@ -1,4 +1,4 @@
-# Creating iOS List Screenlets
+# Creating iOS List Screenlets [](id=creating-ios-list-screenlets)
 
 It's very common for mobile apps to display lists of entities. Liferay Screens 
 lets you display asset lists and DDL lists in your iOS app by using 
@@ -39,7 +39,7 @@ You'll create the list Screenlet by following these steps:
 
 First though, you should understand how pagination works with list Screenlets. 
 
-## Pagination
+## Pagination [](id=pagination)
 
 To ensure that users can scroll smoothly through large lists of items, list 
 Screenlets should support 
@@ -54,7 +54,7 @@ DDL List Screenlet use this approach.
 
 Now you're ready to start creating your list Screenlet! 
 
-## Creating the Model Class
+## Creating the Model Class [](id=creating-the-model-class)
 
 Each entity retrieved from Liferay typically returns from the server as 
 `[String:AnyObject]`, where `String` is the matching Liferay entity's attribute, 
@@ -94,7 +94,7 @@ don't have to create the model class there--you can create it anywhere you like.
 
 Next, you'll create your Screenlet's View. 
 
-## Creating the View
+## Creating the View [](id=creating-the-view)
 
 Recall that each Screenlet requires a View to serve as its UI. In Xcode, first 
 create a new XIB file called `BookmarkListView_default.xib`. Use Interface 
@@ -104,7 +104,7 @@ show a list of items, you should add `UITableView` to this XIB. For example,
 uses a simple `UITableView` to show the list of bookmarks. 
 
 Now create a new View class with a name that matches that of the XIB file's 
-prefix. Since the the XIB uses `UITableView`, your View class must extend 
+prefix. Since the XIB uses `UITableView`, your View class must extend 
 `BaseListTableView`. For example, this is Bookmark List Screenlet's View class 
 declaration: 
 
@@ -199,7 +199,7 @@ example of cells with the IDs `firstCellRow` or `regularCell` being dequeued:
 
 Now that your View is finished, you can create the Connector. 
 
-## Creating the Connector
+## Creating the Connector [](id=creating-the-connector)
 
 Recall that a Screenlet's Connector makes the call that retrieves data from the 
 server. To make a Connector that supports fluent pagination, your Connector 
@@ -270,7 +270,7 @@ In Bookmark List Screenlet, add these methods to the Connector class as follows:
 Now that you have your Connector class, you're ready to create the Screenlet's 
 Interactor. 
 
-## Creating the Interactor
+## Creating the Interactor [](id=creating-the-interactor)
 
 Recall that Screenlet Interactors respond to user actions. In list Screenlets, 
 loading entities is usually the only action a user can take. The app developer 
@@ -330,7 +330,7 @@ method to the `BookmarkListPageLoadInteractor`:
             folderId: folderId)
     }
 
-Simlarly, you'll override the `convertResult` method in the Interactor class to 
+Similarly, you'll override the `convertResult` method in the Interactor class to 
 convert each result into a model object. The Screenlet calls this method once 
 for each entity retrieved from the server, with an entity as the method's only 
 argument. For Bookmark List Screenlet, you can therefore override this method to 
@@ -354,7 +354,7 @@ include these values. Override this method now:
 Nice work! Next, you'll create your Screenlet's delegate so that app developers 
 can respond to events in your Screenlet. 
 
-## Creating the Delegate
+## Creating the Delegate [](id=creating-the-delegate)
 
 For the app developer to respond to events in your Screenlet, you must create a 
 delegate protocol. This protocol must define the methods required to respond to 
@@ -391,7 +391,7 @@ the protocol there--you can create it anywhere you like.
 
 Next, you'll create the Screenlet class. 
 
-## Creating the Screenlet Class
+## Creating the Screenlet Class [](id=creating-the-screenlet-class)
 
 Now that your Screenlet's other components exist, you can create the Screenlet 
 class. A list Screenlet's Screenlet class must extend `BaseListScreenlet`. You 
@@ -486,7 +486,7 @@ ready-to-use component that you can add to your storyboard. You can even
 [package it](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes#publish-your-themes-using-cocoapods)
 to contribute to the Liferay Screens project, or distribute it with CocoaPods. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
 

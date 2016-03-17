@@ -78,7 +78,7 @@ have multiple Interactors, each dedicated to supporting a specific operation.
 
 [**BaseScreenlet:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/base/BaseScreenlet.java)
 the base class for all Screenlet classes. It receives user events from a
-screenlet's View, instantiates and calls the Interactors, and then updates the
+Screenlet's View, instantiates and calls the Interactors, and then updates the
 View with operation results. Classes that extend it can override its
 [template methods](http://www.oodesign.com/template-method-pattern.html):
 

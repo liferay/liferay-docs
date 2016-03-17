@@ -1,10 +1,10 @@
-# Migrating to Liferay Screens 1.4
+# Migrating to Liferay Screens 1.4 [](id=migrating-to-liferay-screens-1-4)
 
 There are a few things you should be aware of when migrating your apps to 
 Screens 1.4 from previous versions of Screens. This document provides a list of 
 these items. 
 
-## Android SDK
+## Android SDK [](id=android-sdk)
 
 We recommend using 23 as your app's `compileSdkVersion` and `targetSdkVersion`. 
 This means you should use 23.1.1 or later for any Android support libraries you 
@@ -14,9 +14,9 @@ AppCompat 23 to your app:
 
     compile 'com.android.support:appcompat-v7:23.+'
 
-## Liferay Screens API Changes
+## Liferay Screens API Changes [](id=liferay-screens-api-changes)
 
-### Renamed Methods
+### Renamed Methods [](id=renamed-methods)
 
 - The `onScreenletAttachted` method has been renamed `onScreenletAttached`, 
   fixing the previous typo.
@@ -29,7 +29,7 @@ AppCompat 23 to your app:
 - The `credentialsStore` attribute in Login Screenlet has been renamed 
   `credentialsStorage`. 
 
-### Feature Changes
+### Feature Changes [](id=feature-changes)
 
 - The classes `DefaultTheme` and `LiferayCrouton` have been deleted. Both have 
   been replaced by a better theming system, based on the default color names in 
