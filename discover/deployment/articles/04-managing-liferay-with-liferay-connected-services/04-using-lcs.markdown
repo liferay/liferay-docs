@@ -345,11 +345,9 @@ differently. Fix packs are broken down into those that are available for
 installation and those that are already installed. You can access these through 
 the Available and Installed tabs at the top of the fix packs table. The Server 
 table lists your server's name, description, and location. You can edit these 
-values by clicking the pencil icon next to each. You can also move the server to 
-a different environment by selecting the environment from the *Move to 
-Environment* selector. If you no longer want the server in LCS, click the 
-*Unregister* button to remove it. Note that this doesn't alter your actual 
-server; it just removes it from your LCS project.
+values by clicking the pencil icon next to each. If you no longer want the 
+server in LCS, click the *Unregister* button to remove it. Note that this 
+doesn't alter your actual server; it just removes it from your LCS project. 
 
 ![Figure 4.21: The LCS server Overview lets you view and edit the basic information of a server registered with LCS.](../../images/lcs-server-overview.png)
 
@@ -364,14 +362,26 @@ useful to the Liferay support team in the event that you need their assistance.
 LCS also lets you view your portal's property values. To do so, click the 
 *Portal Properties* button near the top of the page. Your portal's properties 
 and their values are shown in a searchable table. This gives you a convenient 
-display for seeing exactly what your portal properties are set to. By checking 
-only the *Show Default Values* checkbox, the table shows only the portal's 
-default property values. By checking only the *Show Custom Values* checkbox, the 
-table shows only the portal property values that differ from default. For 
-example, if you change a property setting via a `portal-ext.properties` file, 
-that setting then appears in the Portal Properties table when the *Show Custom 
-Values* checkbox is checked. To show both default and custom property values, 
-check both checkboxes.
+display for seeing exactly what your portal properties are set to. The 
+properties in this table are organized into the following categories:
+
+- **Default Values:** The default values for your portal's properties. 
+
+- **Custom Values:** Any custom values you've set for your portal's properties. 
+  This includes any property values you change via a `portal-ext.properties` 
+  file.
+
+- **Dynamic Properties:** Any property values set at runtime. For example, the 
+  [Liferay Home](/discover/deployment/-/knowledge_base/6-2/liferay-home) 
+  folder's location depends on your configuration. To always specify this folder 
+  when setting any properties that require it, you can use `${liferay.home}` 
+  instead of an absolute directory path. 
+
+You can display any combination of these categories by selecting the 
+corresponding checkboxes at the top of the table. For example, by checking the 
+*Show Default Values* and *Show Custom Values* checkboxes, the table shows your 
+portal's default and custom property values. To show only the custom values, 
+check only the checkbox for *Show Custom Values*. 
 
 ![Figure 4.23: With only the *Show Custom Values* checkbox checked, this table shows only the portal property values that differ from default.](../../images/lcs-server-portal-properties.png)
 
@@ -397,16 +407,13 @@ by default. Click *Add Rule* to define one.
 
 First specify the project, environment, and server for the notification. Note
 that you have the option of selecting all environments and servers in a
-project. Then check the checkbox for each event that you want to trigger an
-email notification. For example, the notification rule in the illustration
-above tells LCS to send you an email whenever any server in any of the
-project's environments unexpectedly goes offline. You should note that this
-differs from normal shutdown events, which don't trigger email notifications.
-During normal server shutdown, the server communicates this status to LCS. An
-email notification is only generated when the connection with the server is 
-abruptly terminated. Click *Save* when you're done defining the notification 
-rule. It then appears in a table along with any other existing rules. Each has 
-an Actions button that lets you edit or delete it. 
+project. Then check the checkbox for each event that you want to trigger an 
+email notification. For example, if you create a notification rule with *The 
+server unexpectedly shuts down* selected for all servers and environments in 
+your project, then LCS sends you an email when any server in your project goes 
+offline without a normal shut down event. Click *Save* when you're done defining 
+the notification rule. It then appears in a table along with any other existing 
+rules. Each has an Actions button that lets you edit or delete it. 
 
 Great! Now you know how to set notification rules in LCS. The next section shows 
 you how to use environment tokens to automatically register Liferay instances 
@@ -498,15 +505,10 @@ What if your Liferay instance has already been manually registered with LCS,
 but you want to switch to using an environment token? No problem! Follow these
 steps:  
 
-1. Use the LCS client portlet to disconnect and reset the credentials in the 
-   Liferay instance. Then press the *Back* button to the left of the Control 
-   Panel text in the Dockbar. Pressing *Back* deletes the current OAuth 
-   credentials. 
-
-2. Shut down your Liferay instance and place the token file in the portal's 
+1. Shut down your Liferay instance and place the token file in the portal's 
    `data` folder. 
 
-3. Restart your Liferay instance. The LCS client portlet uses the token file to 
+2. Restart your Liferay instance. The LCS client portlet uses the token file to 
    connect to LCS automatically. 
 
 As you've now seen, LCS is a powerful tool that simplifies the management of 
