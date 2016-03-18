@@ -377,7 +377,7 @@ way to achieve this with little effort through a new framework called the
 Configuration API that is based on the standard OSGi Configuration Admin API
 that we just showed in the previous section.
 
-### Using the Configuration Provider
+### Using the Configuration Provider [](id=using-the-configuration-provider)
 
 When using the Configuration Provider, instead of receiving the configuration
 directly, the class that wants to access it will need to receive a
