@@ -58,8 +58,18 @@ To build a Mobile SDK for your custom portlet's services, you need to have the
 on your local machine. If you haven't done so already, download the Mobile SDK 
 project using Git.
 
-	git clone git@github.com:liferay/liferay-mobile-sdk.git
+    git clone git@github.com:liferay/liferay-mobile-sdk.git
 
+Since the SDK Builder changes frequently, it's safer to checkout the latest 
+stable release. Stable SDK Builder releases correspond to tags with the 
+`builder-` prefix in GitHub. For example, you can use the following command to 
+check out the `builder-6.2.0.17` tag in a new branch of the same name: 
+
+    git checkout tags/builder-6.2.0.17 -b builder-6.2.0.17
+
+Check for the latest stable SDK Builder version 
+[here in GitHub](https://github.com/liferay/liferay-mobile-sdk/tags). 
+ 
 Alternatively, you can use the SDK Builder as a standalone library. Its `jar` is 
 available on the JCenter and Maven Central repositories. 
 
