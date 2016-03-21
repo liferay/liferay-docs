@@ -28,7 +28,7 @@ module.
 <h3><span style="font-size: 22px;">Java APIs</span></h3>
 
 <p style="margin-left: 40px;">
-A module's Javadoc describes its Java API. You can download a module's Javadoc
+A module's Javadoc describes its Java API. You can download a newly migrated module's Javadoc
 JAR file from <a
 href="https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/"
 target="_blank">Liferay Nexus repository<span
@@ -38,7 +38,7 @@ to exploring the module's Java API.
 </p>
 
 <p style="margin-left: 40px;">
-Here are the Java packages common to API modules:
+Here are the Java packages common to newly migrated API modules:
 <ul style="margin-left: 60px;">
 <li>
 <code>com.liferay.[component].constants</code> - Classes that specify module
@@ -58,6 +58,36 @@ specific constant values, such as web keys
 </li>
 <li>
 <code>com.liferay.[component].util</code> - Utility classes
+</li>
+</ul>
+</p>
+
+<p style="margin-left: 40px;">
+Not all components have been migrated from the portal-service API. Their API
+modules have proxies to classes in portal-service and have Javadoc available 
+<a
+href="https://docs.liferay.com/portal/7.0/javadocs/portal-service/"  
+target="_blank">https://docs.liferay.com/portal/<span
+class="opens-new-window-accessible"> (Opens New Window)</span></a>. Their
+package structure is as follows:
+<ul style="margin-left: 60px;">
+<li>
+<code>com.liferay.[component].kernel.constants</code> - Classes that specify module specific constant values, such as web keys
+</li>
+<li>
+<code>com.liferay.[component].kernel.exception</code> - Module specific exception classes
+</li>
+<li>
+<code>com.liferay.[component].kernel.model</code> - Model entity interfaces, entity wrapper classes, and SOAP classes
+</li>
+<li>
+<code>com.liferay.[component].kernel.service</code> - Local and remote service interfaces
+</li>
+<li>
+<code>com.liferay.[component].kernel.service.persistence</code> - Entity persistence interfaces, entity finder interfaces, and static utilities
+</li>
+<li>
+<code>com.liferay.[component].kernel.util</code> - Utility classes
 </li>
 </ul>
 </p>
