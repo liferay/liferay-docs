@@ -1,4 +1,4 @@
-# Calling Migrated Services from Legacy Plugins [](id=calling-migrated-services-from-legacy-plugins)
+# Finding Liferay API Modules [](id=finding-liferay-api-modules)
 
 Some classes that were exposed as Liferay Portal API in 6.2 have migrated from
 portal-service into separate OSGi modules. These classes are now services and
