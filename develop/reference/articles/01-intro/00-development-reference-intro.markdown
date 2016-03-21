@@ -1,8 +1,8 @@
 # Development Reference [](id=development-reference)
 
 <p style="margin-left: 40px;">
-Here you'll find Liferay's reference documentation for Java, JavaScript
-(including AlloyUI), tag libraries, deployment descriptors. 
+Here you'll find Liferay's reference documentation for Java, tag libraries,
+JavaScript and CSS, and deployment descriptors.
 </p>
 
 <p style="margin-left: 40px;">
@@ -16,13 +16,12 @@ class="opens-new-window-accessible"> (Opens New Window)</span></a>.
 </p>
 
 <p style="margin-left: 40px;">
-Liferay provides reference documentation JAR files with each module's class
-artifacts in the <a
+Liferay Portal CE module reference documentation JAR files accompany each
+module's class artifacts in the <a
 href="https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/"
 target="_blank">Liferay Nexus repository<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a>. Reference
-documentation JAR files for Javadoc and Tag Libraries (Taglibs) accompany each
-module. 
+class="opens-new-window-accessible"> (Opens New Window)</span></a>. The reference
+documentation includes Javadoc and tag library (taglib) docs.
 </p>
 
 <h3><span style="font-size: 22px;">Java APIs</span></h3>
@@ -64,12 +63,12 @@ specific constant values, such as web keys
 
 <p style="margin-left: 40px;">
 Not all components have been migrated from the portal-service API. Their API
-modules have proxies to classes in portal-service and have Javadoc available 
-<a
-href="https://docs.liferay.com/portal/7.0/javadocs/portal-service/"  
+modules have proxies to classes in portal-service and have Javadoc available at
+<a href="https://docs.liferay.com/portal/7.0/javadocs/portal-service/"  
 target="_blank">https://docs.liferay.com/portal/<span
 class="opens-new-window-accessible"> (Opens New Window)</span></a>. Their
-package structure is as follows:
+package structure includes <code>kernel</code> after the component name. The
+common structure looks like this:
 <ul style="margin-left: 60px;">
 <li>
 <code>com.liferay.[component].kernel.constants</code> - Classes that specify module specific constant values, such as web keys
@@ -90,6 +89,11 @@ package structure is as follows:
 <code>com.liferay.[component].kernel.util</code> - Utility classes
 </li>
 </ul>
+</p>
+
+<p style="margin-left: 40px;">
+Liferay's Java API paired up with its taglibs facilitates showing off data
+models and creating powerful UI components in your presentation layer.
 </p>
 
 <p style="margin-left: 40px;">&nbsp;</p>
