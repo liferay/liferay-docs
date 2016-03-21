@@ -39,7 +39,7 @@ to exploring the module's Java API.
 
 <p style="margin-left: 40px;">
 Here are the Java packages common to API modules:
-<ul style="margin-left: 40px;">
+<ul style="margin-left: 60px;">
 <li>
 <code>com.liferay.[component].constants</code> - Classes that specify module
 specific constant values, such as web keys
