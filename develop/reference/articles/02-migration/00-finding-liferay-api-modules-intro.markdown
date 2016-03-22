@@ -18,11 +18,12 @@ The table below provides the Liferay module group values to specify.
 
 ## Module Group Table [](id=module-group-table)
 
-| **Project Dependency Type** | **Variable** | **Value**     |
+| &nbsp;**Project Dependency Type** | &nbsp;**Variable** | &nbsp;**Value**     |
 |-------------------------------------|-----------------|-----------------|
 | Ivy                                      | `org`           | `com.liferay` |
 | Gradle                                 | `group`        | `com.liferay` |
 | Maven                                 | `groupId`     | `com.liferay` |
+
 
 Specify group value `com.liferay` in all your Liferay module dependencies.
 
@@ -32,7 +33,7 @@ Next, let's look up the names of API module to specify them in dependencies.
 
 This table maps Liferay components to their commonly used classes and module names.
 
-| Component          | Classes          | Module<br>(Ivy `name` /<br>Gradle `name` /<br>Maven `artifactId`) |
+| &nbsp;Component | &nbsp;Classes | &nbsp;Module<br>(Ivy `name` /<br>Gradle `name` /<br>Maven `artifactId`) |
 | :-------------------- | :---------------- | :----------------------------------------------------------------------------------- |
 | Application List    | `PanelApp`                                | `com.liferay.application.list.api` |
 |                          | `PanelCategory`                         |                                                    |
@@ -151,6 +152,8 @@ This table maps Liferay components to their commonly used classes and module nam
 |                      | `KaleoTimerInstanceToken[Local]ServiceUtil` |                                           |
 |                      | `KaleoTransistion[Local]ServiceUtil`             |                                           |
 | XStream Configurator | `XStreamConfigurator`          | `com.liferay.xstream.configurator.api` |
+
+## Module Version [](id=module-version)
 
 The last item to specify in a module dependency is the module version. One way
 to find an module's available versions is to navigate to that module in
