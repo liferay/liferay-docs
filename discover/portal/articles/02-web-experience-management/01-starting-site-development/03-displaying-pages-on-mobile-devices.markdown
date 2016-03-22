@@ -1,4 +1,4 @@
-# Displaying Pages on Mobile Devices
+# Displaying Pages on Mobile Devices [](id=displaying-pages-on-mobile-devices)
 
 Mobile device families allow you to configure sets of rules to alter the
 behavior of the instance based on the device being used to access Liferay. The
