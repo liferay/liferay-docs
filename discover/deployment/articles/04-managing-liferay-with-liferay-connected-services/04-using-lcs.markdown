@@ -33,7 +33,7 @@ available in LCS:
 - [**Managing Your LCS Account:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#managing-your-lcs-account)
   Learn how to manage your LCS account. This includes configuring LCS to send 
   you notification emails when specific events occur in your LCS projects, 
-  setting general account preferences, and managing your LCS messages. 
+  setting general account preferences, and managing your LCS web notifications. 
 
 - [**Using Environment Tokens:**](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens)
   Learn how to use environment tokens to automatically register your Liferay 
