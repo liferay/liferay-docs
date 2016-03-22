@@ -26,7 +26,7 @@ Follow the instructions below to begin the migration process:
     You can download a new 7.0 Plugins SDK from
     [SourceForge](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/).
 
-2.  Use this [reference document](/develop/reference/-/knowledge_base/7-0/calling-migrated-services-from-legacy-plugins)
+2.  Use this [reference document](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules)
     to find classes that were exposed as Liferay Portal API in 6.2, but have
     been moved into separate modules for Liferay Portal 7.0. Make a note of any
     APIs that your legacy plugin is consuming from this list. If your legacy

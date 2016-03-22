@@ -27,7 +27,15 @@ documentation includes Javadoc and tag library (taglib) docs.
 <h3><span style="font-size: 22px;">Java APIs</span></h3>
 
 <p style="margin-left: 40px;">
-A module's Javadoc describes its Java API. You can download a newly migrated module's Javadoc
+A module's Javadoc describes its Java API. To find specific API modules, you can
+refer to <a
+href="/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules">
+Finding Liferay API Modules</a>.
+</p>
+
+
+<p style="margin-left: 40px;">
+You can download a newly migrated module's Javadoc
 JAR file from <a
 href="https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/"
 target="_blank">Liferay Nexus repository<span
@@ -62,13 +70,19 @@ specific constant values, such as web keys
 </p>
 
 <p style="margin-left: 40px;">
-Not all components have been migrated from the portal-service API. Their API
-modules have proxies to classes in portal-service and have Javadoc available at
+Not all components have been migrated from the <a
+href="https://docs.liferay.com/portal/7.0/javadocs/portal-service/" 
+target="_blank">portal-service API<span
+class="opens-new-window-accessible"> (Opens New Window)</span></a>. Their API
+modules have proxies to classes in portal-service. Their Javadoc is available at
 <a href="https://docs.liferay.com/portal/7.0/javadocs/portal-service/"  
 target="_blank">https://docs.liferay.com/portal/<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a>. Their
-package structure includes <code>kernel</code> after the component name. The
-common structure looks like this:
+class="opens-new-window-accessible"> (Opens New Window)</span></a>.
+</p>
+
+<p style="margin-left: 40px;">
+Component APIs in portal-service have a <code>kernel</code> package after the
+component package name. Their common package structure looks like this:
 <ul style="margin-left: 60px;">
 <li>
 <code>com.liferay.[component].kernel.constants</code> - Classes that specify module specific constant values, such as web keys
@@ -92,8 +106,8 @@ common structure looks like this:
 </p>
 
 <p style="margin-left: 40px;">
-Liferay's Java API paired up with its taglibs facilitates showing off data
-models and creating powerful UI components in your presentation layer.
+Liferay's Java API paired up with its taglibs enables you to show off data
+models and create powerful UI components in your presentation layer.
 </p>
 
 <p style="margin-left: 40px;">&nbsp;</p>
