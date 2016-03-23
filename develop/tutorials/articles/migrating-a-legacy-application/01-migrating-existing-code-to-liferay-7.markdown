@@ -17,8 +17,8 @@ What does all this mean to you with regards to your existing portlets, hooks,
 EXT plugins, and themes? That's what you'll learn in these tutorials. Here's an
 overview of each legacy plugin's migration path:
 
-- *Portlets* - Convert to a module or adapt to Liferay 7's API, as a WAR-style
-plugin
+- *Portlets* - Convert to a module, by first adapting a WAR-style plugin to
+Liferay 7's API and then formally modularizing it
 
 - *Hooks* - Convert to a module, or in some cases, convert to an OSGi Fragment
 
