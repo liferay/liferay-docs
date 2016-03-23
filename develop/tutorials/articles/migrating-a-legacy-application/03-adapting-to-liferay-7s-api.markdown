@@ -1,4 +1,4 @@
-# Migrating Legacy Applications to New Plugins SDK [](id=migrating-legacy-applications-to-new-plugins-sdk)
+# Adapting to Liferay 7's API [](id=adapting-to-liferay-7s-api)
 
 If you have legacy applications for Liferay Portal 6.2 or earlier, you'll be
 happy to know there's a clearly defined path for migrating those applications to

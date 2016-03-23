@@ -18,7 +18,7 @@ in one place.
 
 The options you have for upgrading your application to Liferay 7.0 are
 discussed briefly in the
-[Migrating Legacy Applications to New Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/migrating-legacy-applications-to-new-plugins-sdk)
+[Adapting to Liferay 7's API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)
 tutorial. Because Liferay 7.0 maintains backwards compatibility, you have two
 options:
 
