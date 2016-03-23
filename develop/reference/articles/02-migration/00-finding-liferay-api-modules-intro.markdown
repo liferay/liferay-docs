@@ -135,22 +135,6 @@ This table maps Liferay components to their commonly used classes and module nam
 |                      | `JournalFeed[Local]ServiceUtil`            |                                      |
 | Wiki               | `WikiNode[Local]ServiceUtil`                   | `com.liferay.wiki.api`     |
 |                      | `WikiPage[Local]ServiceUtil`                     |                                      |
-| Workflow Kaleo  | `KaleoAction[Local]ServiceUtil`  | `com.liferay.portal.workflow.kaleo.api` |
-|                      | `KaleoCondition[Local]ServiceUtil` | `com.liferay.portal.workflow.kaleo.definition.api` |
-|                      | `KaleoDefinition[Local]ServiceUtil`  | `com.liferay.portal.workflow.kaleo.runtime.api` |
-|                      | `KaleoInstance[Local]ServiceUtil`      |                                                              |
-|                      | `KaleoInstanceToken[Local]ServiceUtil` |                                                         |
-|                      | `KaleoLog[Local]ServiceUtil`                    |                                                   |
-|                      | `KaleoNode[Local]ServiceUtil`                       |                                            |
-|                      | `KaleoNotification[Local]ServiceUtil`              |                                           |
-|                      | `KaleoNotificationRecipient[Local]ServiceUtil`  |                                         |
-|                      | `KaleoTask[Local]ServiceUtil`                        |                                         |
-|                      | `KaleoTaskAssignment[Local]ServiceUtil`           |                                      |
-|                      | `KaleoTaskAssignmentInstance[Local]ServiceUtil`  |                                   |
-|                      | `KaleoTaskInstanceToken[Local]ServiceUtil`       |                                      |
-|                      | `KaleoTimer[Local]ServiceUtil`                     |                                           |
-|                      | `KaleoTimerInstanceToken[Local]ServiceUtil` |                                           |
-|                      | `KaleoTransistion[Local]ServiceUtil`             |                                           |
 | XStream Configurator | `XStreamConfigurator`          | `com.liferay.xstream.configurator.api` |
 
 ## Module Version [](id=module-version)
