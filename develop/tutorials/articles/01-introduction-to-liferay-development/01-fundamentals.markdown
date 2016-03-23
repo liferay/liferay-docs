@@ -33,11 +33,11 @@ easy to store and share files. Search is built into the system as well, and
 developers can integrate it with their applications very easily. Almost any
 framework you might think of using or developing is already there; you just need
 to take advantage of it: a Social Networking API, user-generated forms with data
-lists, a message bus, an audit system. 
+lists, a message bus, an audit system, and much more. 
 
-The same is true for customization. Almost anything in Liferay can be customized
-the way you want it. Application interfaces can be redesigned, the whole user
-interface can be themed, and menu items can be added or removed. 
+The same is true for customization. Almost anything in Liferay can be
+customized. Application interfaces can be redesigned, the whole user interface
+can be themed, and menu items can be added or removed. 
 
 Much of this is accomplished through modularity. 
 
@@ -79,7 +79,7 @@ industry we have today.
 
 This is an example of modularity. You can plug any number of available devices
 into a computer and they work because they are designed to integrate with the
-system in a standard way. It doesn’t matter who manufactured the computer,
+system in a standard way. It doesn't matter who manufactured the computer,
 because they are all made up of inter-operating modules that individually
 implement specific functionality, but when put together comprise an entire
 working system. 
@@ -89,5 +89,29 @@ And now Liferay has made a bold move and re-engineered its product to take
 advantage of modularity. 
 
 ### Modules and Components 
+
+Liferay is customized or applications are built using OSGi modules, which are
+also sometimes called bundles. Though this sounds like something new, it really
+isn't: these are just .jar files, something with which Java developers are
+extremely familiar. 
+
+The core construct inside a module is a *component*. In simple terms, a
+component is a Java class with the `@Component` annotation. In software
+engineering terms, a component is the smallest building block of a larger
+application, and that application is itself made up of many small components.
+This makes it easier to develop an application because you only have to deal
+with small, well-defined, bite-sized chunks of code at a time. 
+
+Components are managed by a component container, which keeps track of which
+components are installed and active. Many components offer services, and it's
+the container's job to manage the available services by providing components the
+services they need. It does this through a robust dependency management system
+that's handled automatically at runtime. 
+
+As you can see, many components running inside the system forms something of an
+ecosystem of complimentary services. Liferay ships with many components that are
+ready to use out of the box, and of course you can develop your own. You can
+write components to provide new services or to override existing services with
+your own implementation, and the container manages it all. 
 
 
