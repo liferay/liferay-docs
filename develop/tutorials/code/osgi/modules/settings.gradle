@@ -1,0 +1,1 @@
+include 'com.liferay.docs.greetingapi','com.liferay.docs.greetingcommand','com.liferay.docs.greetingimpl'
