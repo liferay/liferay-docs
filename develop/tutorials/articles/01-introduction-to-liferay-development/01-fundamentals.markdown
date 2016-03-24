@@ -114,4 +114,33 @@ ready to use out of the box, and of course you can develop your own. You can
 write components to provide new services or to override existing services with
 your own implementation, and the container manages it all. 
 
+### Benefits of OSGi for Liferay
 
+At Liferay, many teams work on the product at the same time. Before modularity,
+teams would step on each other: a bug fix in one place might introduce a bug in
+another place due to an implementation change or a break in an API contract. To
+support its vision of extensibility, Liferay also contained a lot of code that
+enabled developers to modify its core in a way that avoided patching the source
+itself and was easy to use. While this worked well, points of customization had
+to be defined ahead of time, and identifying what users would want to customize
+was hit and miss. 
+
+Modularity, and OSGi specifically, solves all that. OSGi is the most mature
+modular platform in existence, and offers fantastic technologies for building
+modular applications. Because it is so mature, it has defined patterns of its
+own, such as the whiteboard and extender patterns, that Liferay uses to build
+its extensible framework. Additionally, OSGi lives in the open source world: it
+has several implementations, which means Liferay didn't have to build its
+framework from scratch. Instead, Liferay was able to *eliminate* a lot of code
+for extending itself, because now the platform by design supports that natively. 
+
+Finally, one of the most important benefits of OSGi for Liferay is *semantic
+versioning*. This is a way of defining exactly which version of which service is
+supported by which other service. This is an extraordinary help to developers
+and system administrators alike, because it avoids what they call "dependency
+hell." If one component of the system needs version 1.0 of a service and another
+component needs version 1.1, you can have both installed, and the framework
+makes the version each component needs available to it. 
+
+OSGi was an excellent choice for Liferay, and Liferay is excited to bring our
+new technology to you. 
