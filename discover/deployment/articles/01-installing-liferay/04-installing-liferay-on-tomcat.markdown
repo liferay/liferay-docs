@@ -46,7 +46,7 @@ third-parties, as described below.
 
     - `activation.jar` - [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
     - `ccpp.jar` - [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
-    - `com.liferay.osgi.service.tracker.collections.jar`
+    - `com.liferay.osgi.service.tracker.collections.jar` - [http://central.maven.org/maven2/com/liferay/com.liferay.osgi.service.tracker.collections/2.0.0/com.liferay.osgi.service.tracker.collections-2.0.0.jar]
     - `com.liferay.registry.api.jar` - [https://repository.liferay.com/nexus/content/groups/liferay-ce/com/liferay/com.liferay.registry.api](https://repository.liferay.com/nexus/content/groups/liferay-ce/com/liferay/com.liferay.registry.api)
     - `hsql.jar` - [http://hsqldb.org/doc/src/org/hsqldb/jdbc/JDBCDriver.html](http://hsqldb.org/doc/src/org/hsqldb/jdbc/JDBCDriver.html)
     - `jms.jar`- [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
