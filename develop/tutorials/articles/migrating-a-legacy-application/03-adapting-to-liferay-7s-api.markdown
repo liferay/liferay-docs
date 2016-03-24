@@ -1,145 +1,171 @@
 # Adapting to Liferay 7's API [](id=adapting-to-liferay-7s-api)
 
 If you have legacy applications for Liferay Portal 6.2 or earlier, you'll be
-happy to know there's a clearly defined path for migrating those applications to
-Liferay 7. As you know by now, many of Liferay's applications have migrated to
-OSGi modules, but Liferay is still a JSR-286, standards compliant portal. For
-this reason, it remains backwards compatible for WAR-style applications that are
-created using the Plugins SDK. This means two things: you can write both module
-and WAR-style applications, and you can easily upgrade your old 6.2 applications
-to new 7.0 APIs without converting them to modules first. When considering
-migrating your application to Liferay 7, you can divide the task into two steps: 
+happy to know there's a clearly defined path for migrating them to Liferay 7. As
+you know by now, many of Liferay's applications have migrated to OSGi modules,
+but Liferay is still a JSR-286, standards compliant portal. For this reason, it
+remains backwards compatible for WAR-style applications. This means two things:
+you can write both module and WAR-style applications, and you can easily upgrade
+your old 6.2 applications to new 7.0 APIs without converting them to modules
+first. When considering migrating your application to Liferay 7, you can divide
+the task into two general steps: 
 
-1.  Convert your 6.2 WAR-style plugin to a 7.0 WAR-style plugin and consume the
-    API from the new Liferay modules. 
+**Step 1:  Convert your 6.2 WAR-style plugin to a 7.0 WAR-style plugin**
 
-2.  Convert your legacy applications to OSGi modules. To transform your legacy
-    applications to OSGi modules, you can follow the
-    [Converting Legacy Applications to Modules](/develop/tutorials/-/knowledge_base/7-0/converting-legacy-applications-to-modules)
-    tutorial. This is the recommended way for long-term stability.
+- Involves adapting the plugin to Liferay 7's APIs
+- Allows you to use the plugin in Liferay 7.0
+- Facilitates converting the plugin to a module
 
-This tutorial shows you the first step: how to get your 6.2 WAR-style plugin
-working on Liferay 7.0. Later, you can convert your application to OSGi modules.
-Follow the instructions below to begin the migration process:
+**Step 2:  Convert your WAR-style plugin to an OSGi module.**
 
-1.  Copy your application from your old Plugins SDK to a new 7.0 Plugins SDK.
-    You can download a new 7.0 Plugins SDK from
-    [SourceForge](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/).
+- Allows you to leverage the most control over the plugin
+- Makes the plugin more maintainable
 
-2.  Use this [reference document](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules)
-    to find classes that were exposed as Liferay Portal API in 6.2, but have
-    been moved into separate modules for Liferay Portal 7.0. Make a note of any
-    APIs that your legacy plugin is consuming from this list. If your legacy
-    plugin does not use any of the services listed in the reference document,
-    you can skip to step 6.
+This tutorial shows you **Step 1**: how to get your 6.2 WAR-style plugin
+working on Liferay 7.0. Later, you can convert your plugin to an OSGi module,
+following the tutorial [Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins).
 
-    To check if your legacy application needs updates, run `ant compile` from
-    your plugin's root folder. The compilation process will throw errors if any
-    dependencies/imports are incorrect.
+Follow these instructions adapt your plugin to Liferay 7:
 
-3.  Resolve your application's dependencies on other modules by adding the
-    required libraries to your application's `ivy.xml` file. Within the
-    `<dependencies>` tag, you'll need to define the module `<dependency>` that
-    your application relies on. For example, suppose your application is using a
-    Wiki service. You would add this dependency to the `ivy.xml` file by
-    inserting the following `<dependency>` tag within `<dependencies>`:
+1.  Copy your plugin into a development environment (e.g.,
+    [Liferay 7.0 Plugins SDK](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/),
+    [Liferay IDE](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/),
+    etc.) configured to use Liferay 7. 
 
-        <dependencies defaultconf="default">
-            <dependency name="com.liferay.wiki.api" org="com.liferay" rev="1.0.0-SNAPSHOT" />
-        </dependencies>
+2.  Resolve your plugin's dependencies on other modules by either manually
+    copying the libraries into your plugin's `WEB-INF/lib` folder or specifying
+    the libraries in a descriptor for the management dependency framework you're
+    using, such as Ivy, Gradle, or Maven. Here's an example `ivy.xml` file
+    snippet that specifies a dependency on Liferay's Journal API module:
 
-    If your legacy application does not have an `ivy.xml` file, you can create
-    one and place it in your applicatin's root folder. You can view the
-    [`ivy.xml`](https://github.com/liferay/liferay-plugins/blob/master/portlets/knowledge-base-portlet/ivy.xml)
-    file of the Knowledge Base portlet for an example.
+        <ivy-module>
+            ...
+          <dependencies defaultconf="default">
+             <dependency name="com.liferay.journal.api" org="com.liferay" rev="1.0.0" />
+          </dependencies>
+            ...
+        </ivy-module>
 
-4.  Run `ant clean` from your application's root folder. This command triggers
-    the download process for the dependencies that your application can
-    reference in the `WEB-INF/lib` folder. If you were already using an
-    `ivy.xml` file, `ant clean` may not download the necessary JARs you defined
-    automatically. To fix this, delete the `ivy.xml.MD5` file from your root
-    folder and retry `ant clean`.
+    Refer to [Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules)
+    to learn how to locate and specify dependencies on Liferay modules.
 
-5.  Refactor your imports so they match the new package names in the modules.
-    For example, if one of your application's classes imports the
-    `WikiPage` class, you would need to update the import from
+    +$$$
 
-        import com.liferay.portlet.wiki.model.WikiPage;
+    Note: If you're using the Plugins SDK, running `ant clean` downloads the
+    dependency JARs to your plugin's `WEB-INF/lib` folder. If you're already
+    using Ivy and the JARs don't download, you might need to delete the
+    `ivy.xml.MD5` file from your plugin's root folder and retry `ant clean`.
 
-    to
+    $$$
 
-        import com.liferay.wiki.model.WikiPage;
+3.  Refactor your imports so they match the new package names of the module's
+    classes. For example, if one of your plugin's classes imports the
+    `JournalArticleLocalServiceUtil` class, update the import.
+
+    *Old way (6.2):*
+
+        import com.liferay.portlet.journal.service.JournalArticleLocalServiceUtil;
+
+    *New way (7.0):*
+
+        import com.liferay.journal.service.JournalArticleLocalServiceUtil;
 
     Make sure to check other files--such as JSP files--for imports and
     references.
 
-6.  Open your application's `liferay-plugin-package.properties` file and update
-    the `liferay-versions` property to include Liferay 7.0.
+    Some services might require resolution from the OSGi registry. Here's an
+    example of resolving a service for the `UserImporter` class.
 
-7.  Once you think you've satisfied your plugin's dependencies/imports, run `ant
-    compile`. If your plugin compiles successfully, you've addressed the
-    necessary updates. There are
-    [breaking changes](/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0)
-    that could cause your application to fail during compilation. If you have
-    compilation errors that are unrelated to the migrated services in modules,
-    search the breaking changes document for potential causes. There is a
-    migration tool that will be able to check your application for breaking
-    changes automatically, but this tool is still in development and not
-    available at this time.
+        Bundle bundle = FrameworkUtil.getBundle(getClass());
+        BundleContext bundleContext = bundle.getBundleContext();
+        ServiceReference<UserImporter> serviceReference =
+            sbundleContext.getServiceReference(UserImporter.class);
+        
+        UserImporter userImporter =
+            bundleContext.getService(serviceReference);
 
-    <!-- The above statement will need to be removed about breaking changes when
-    the migration tool is ready to document. -Cody -->
+4.  Open your `liferay-plugin-package.properties` file to make the following
+    updates.
 
-8.  Run `ant war` to generate your application's deployable WAR file. The WAR
-    file is available in the Plugins SDK's `/dist` folder.
+    Update the Liferay version:
 
-9.  Before deploying your WAR file to a Liferay Portal 7.0 instance, remove the
-    JARs that were generated in your WAR's `/lib` folder. Recall that you added
-    dependencies in your `ivy.xml` file. These downloaded JAR files were
-    necessary for your application to compile. Now that your application has
-    compiled and is a WAR, they must be removed, because they already exist in
-    Liferay's module framework. 
+        liferay-versions=7.0.0+
 
-    There are two types of dependencies--build-time (i.e., compilation) and
-    runtime. If your application consumes Wiki services, for instance, you must
-    declare them as build time dependencies via the `ivy.xml` file. This ensures
-    that the JARs are downloaded and copied to the `/lib` folder and the
-    application compiles. This was necessary to generate your legacy
-    application's WAR file.
+    Exclude all OSGi framework JARs (e.g., `osgi.core.jar`) and module JARs (e.g.,
+    `com.liferay.journal.api.jar`). For example:
 
-    In Liferay 7.0, the Wiki portlet is, in most cases, already installed. If
-    so, your portal's runtime already has the Wiki JARs available. Therefore,
-    your application's Wiki-related JARs cannot be included in its WAR file
-    because they would conflict with the JARs already installed in Portal. If
-    they are not removed, identical JARs would exist in two different
-    classloaders, which would throw class cast exceptions.
+        deploy-excludes=\
+            **/WEB-INF/lib/com.liferay.portal.journal.api.jar,\
+            **/WEB-INF/lib/org.osgi.core.jar
 
-10. Copy your application's WAR file into your portal instance's
-    `/osgi/modules` directory. Your application is now available from the OSGi
-    console. To check if your application was deployed and installed
-    successfully, open a terminal, run `telnet localhost 11311`, and
-    then run `lb`. Your application should be listed like this: 
+    
+    Specify properties such as `Export-Package`, `Provide-Capability`,
+    `Require-Capability` and more, to use as [OSGi bundle
+    headers](https://www.osgi.org/bundle-headers-reference/). The Module
+    Framework's compatibility layer propagates them to a manifest it creates for
+    the plugin. One such property is `Export-Package`, to which you can assign
+    the packages your plugin exposes. Here's an example an `Export-Package`
+    property that exposes specific packages from a plugin:
+
+        Export-Package=\
+            com.liferay.portal.sample,\
+            com.liferay.portal.sample.package2
+
+5.  Compile your plugin. If compilation fails, search the
+    [Breaking Changes](/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0)
+    document for potential causes and resolutions.
+
+6.  Build your plugin's WAR file (e.g., execute `ant war`). In the Plugins SDK,
+    WAR files are generated to `/dist` folder.
+
+    Inspect the WAR file to make sure its `lib/` folder doesn't contain any OSGi
+    framework JARs or Liferay module JARs (e.g., `com.liferay.journal.api.jar`).
+    If the plugin is deployed with such JARs they'll conflict with the JARs
+    already installed in Liferay's Module Framework--identical JARs will exist
+    in two different classloaders and cause class cast exceptions. 
+
+    The easiest way to exclude such JARs is to list them in a `deploy-excludes`
+    property in the `liferay-plugin-package.properties`, as explained in step 4.
+    You must otherwise remove the JARs manually from the plugin WAR file.
+
+7.  Deploy your plugin's WAR file (e.g., execute `ant deploy`). 
+
+    Liferay's Module Framework converts the plugin WAR to a Web Application
+    Bundle (WAB). The generated WAB essentially consists of the WAR file's
+    contents and an OSGi bundle manifest. The generated manifest includes any
+    headers the plugin's `liferay-plugin-package.properties` specified, support
+    for JSPs, tag library definitions, and more.
+
+    The Module Framework's web extender module detects and deploys the generated
+    WAB to the `[liferay-home]/osgi/` folder.
+
+8.  Verify your plugin's deployment. You can check the console for the plugin's
+    deployment confirmation and/or verify the plugin in portal's UI.
+
+    You can even check for your plugin module's deployment in the OSGi console.
+    Open a terminal, run `telnet localhost 11311`, and then run `lb`. Your
+    application should be in a listing like this:
 
         310|Active     |    1|Liferay Layout Type Controller Node (1.0.0)
         311|Active     |    1|Liferay Portlet Configuration Icon Edit Guest (1.0.0)
         316|Active     |    1|resources-importer-web-7-0.0.1 (7.0.0)
 
-<!--
+    +$$$
 
-For new modules, it's enough to copy them to the deploy folder, since they are
-automatically recognized as OSGi modules. At the current time, the legacy way of
-deploying WARs is handled by the old plugin deployment mechanism, which causes
-the plugin not to work (i.e. services were not properly resolved). The only way
-for the legacy WAR to work is to copy the WAR into the `/osgi/modules` folder.
-Check and see if/when deploy folder will support 7.0 WARs. -Cody -->
+    **Tip**: If at first you don't see your plugin module listed, pipe the
+    results through the grep command:
 
-Awesome! You've converted your legacy application to a 7.0 WAR-style
-application!
+        lb | grep resources-importer-web
+
+    $$$
+
+Awesome! You've converted your legacy plugin to a 7.0 WAR-style
+plugin that runs on Liferay 7!
 
 ## Related Topics [](id=related-topics)
 
-[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+[ConvertingLegacy Applications to Modules](/develop/tutorials/-/knowledge_base/7-0/converting-legacy-applications-to-modules)
 
-[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
+[Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules)
 
-[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services)
+[Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
