@@ -138,9 +138,8 @@ Finally, one of the most important benefits of OSGi for Liferay is *semantic
 versioning*. This is a way of defining exactly which version of which service is
 supported by which other service. This is an extraordinary help to developers
 and system administrators alike, because it avoids what they call "dependency
-hell." If one component of the system needs version 1.0 of a service and another
-component needs version 1.1, you can have both installed, and the framework
-makes the version each component needs available to it. 
+hell." It allows the programmatic detection of version compatibility at runtime,
+resulting in far fewer runtime errors and more long term stability. 
 
 OSGi was an excellent choice for Liferay, and Liferay is excited to bring our
 new technology to you. 
