@@ -223,8 +223,7 @@ Menu's *Content* section) you might want to display all the entities, with their
 current workflow status (for example, include workflow status as a column in the
 search container). To do so, use the `<aui:worklfow-status>` tag.
 
-        <aui:workflow-status markupView="lexicon" showIcon="<%= false %>"
-showLabel="<%= false %>" status="<%= fooEntity.getStatus() %>" />
+        <aui:workflow-status markupView="lexicon" showIcon="<%= false %>" showLabel="<%= false %>" status="<%= fooEntity.getStatus() %>" />
 
 ![Figure x: You can display the workflow status of your entities. This is useful in administrative applications.](../../images/workflow-status-list-view.png)
 
