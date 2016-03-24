@@ -18,9 +18,9 @@
 
 ## Features [](id=features)
 
-The `DDLFormScreenlet` can be used to show a collection of fields so that a user 
-can fill in their values. Initial or existing values may be shown in the fields. 
-Fields of the following data types are supported:
+DDL Form Screenlet can be used to show a collection of fields so that a user can 
+fill in their values. Initial or existing values may be shown in the fields. 
+Fields of the following data types are supported: 
 
 - *Boolean*: A two state value typically shown using a checkbox.
 - *Date*: A formatted date value. The format depends on the device's locale.
@@ -33,7 +33,7 @@ Fields of the following data types are supported:
 - *Text*: A single line of text.
 - *Text Box*: Supports multiple lines of text.
 
-The `DDLFormScreenlet` also supports the following features:
+DDL Form Screenlet also supports the following features: 
 
 - Stored records can support a specific workflow.
 - A Submit button can be shown at the end of the form.
@@ -41,8 +41,8 @@ The `DDLFormScreenlet` also supports the following features:
 - Users can traverse the form fields from the keyboard.
 - Supports i18n in record values and labels.
 
-There are also a few limitations you should be aware of when using 
-`DDLFormScreenlet`. They are listed here:
+There are also a few limitations you should be aware of when using DDL Form 
+Screenlet. They are listed here:
 
 - Nested fields in the data definition aren't supported.
 - Selection of multiple items in the Radio and Select data types isn't supported 
@@ -58,13 +58,13 @@ The Default Theme uses a standard `UITableView` to show a scrollable list of
 fields. Other Themes may use a different component, such as `UICollectionView` 
 or others, to show the fields.
 
-![The `DDLForm` Screenlet using the Default (`default`) Theme.](../../images/screens-ios-ddlform.png)
+![Figure 1: DDL Form Screenlet using the Default (`default`) Theme.](../../images/screens-ios-ddlform.png)
 
 ### Custom Cells [](id=custom-cells)
 
 A Theme needs to define a cell view for each field type. For instance, the `xib` 
 file `DDLFieldDateTableCell_default` is used to render `Date` fields in the 
-`Default` Theme. 
+Default Theme. 
 
 If you want a specific field to have a unique appearance, you can customize your
 field's display by using the following filename pattern, where `XXX` is your
@@ -77,34 +77,34 @@ careful to keep the same components and `IBOutlet` defined in the custom file.
 
 ## Portal Configuration [](id=portal-configuration)
 
-Dynamic Data Lists and Data Types should be configured properly in the portal. 
-Refer to the [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
+Before using DDL Form Screenlet, you should make sure that Dynamic Data Lists 
+and Data Types are configured properly in the portal. Refer to the 
+[Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
 and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists) 
-sections of the User Guide for more details. If Workflow is required, it also 
-must be configured. Please see the [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow) 
-section of the User Guide for details.
+sections of the User Guide for more details. If Workflow is required, it must 
+also be configured. See the [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow) 
+section of the User Guide for details. 
 
 ### Permissions [](id=permissions)
 
-To add new records using this Screenlet, you must grant the Add Record 
-permission in the Dynamic Data List:
+To use DDL Form Screenlet to add new records, you must grant the Add Record 
+permission in the Dynamic Data List in the portal. If you want to use DDL Form 
+Screenlet to view or edit record values, you must also grant the View and Update 
+permissions, respectively. The Add Record, View, and Update permissions are 
+highlighted by the red boxes in the following screenshot:
 
-![The Add Record permission.](../../images/screens-portal-permission-record-add.png)
+![Figure 2: The permissions for adding, viewing, and editing DDL records.](../../images/screens-portal-permission-ddl.png)
 
-If you want to view or edit record values, you must also grant the View and 
-Update permissions, respectively:
-
-![The permissions for viewing and editing records.](../../images/screens-portal-permission-record-edit.png)
-
-Also, if your form includes the Documents and Media field, you must grant 
-permissions in the target repository and folder. For more details, see the 
+Also, if your form includes at least one Documents and Media field, you must 
+grant permissions in the target repository and folder. For more details, see the 
 `repositoryId` and `folderId` attributes below.
 
-![The permission for adding a folder.](../../images/screens-portal-permission-folder-add.png)
+![Figure 3: The permission for adding a document to a Documents and Media folder.](../../images/screens-portal-permission-folder-add.png)
 
-For more details, please see the User Guide sections [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-), 
-[Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists), 
-and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow).
+For more details, please see the User Guide sections 
+[Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-), 
+[Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists), and 
+[Using Workflow](/portal/-/knowledge_base/6-2/using-workflow). 
 
 ## Offline [](id=offline)
 
@@ -157,9 +157,9 @@ policies:
 
 ## Delegate [](id=delegate)
 
-The `DDLFormScreenlet` delegates some events to an object that conforms with the 
+DDL Form Screenlet delegates some events to an object that conforms with the 
 `DDLFormScreenletDelegate` protocol. This protocol lets you implement the 
-following methods:
+following methods: 
 
 - `- screenlet:onFormLoaded:`: Called when the form is loaded. The second 
   parameter (`record`) contains only field definitions.
