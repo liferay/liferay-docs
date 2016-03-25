@@ -27,7 +27,7 @@ listed here, but you only need to have one in your app:
     }
 
     dependencies {
-      compile group: 'com.liferay.mobile', name: 'liferay-android-sdk', version: '6.2.0.+'
+      compile group: 'com.liferay.mobile', name: 'liferay-android-sdk', version: '7.0.+'
     }
 
 If you get errors such as `Duplicate files copied in APK META-INF/NOTICE` when 

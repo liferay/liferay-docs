@@ -66,11 +66,11 @@ prebuilt Mobile SDK manually if you don't want to use CocoaPods.
 3. Within Xcode, right-click on your project and click 
    *Add Files to 'Project Name'*. 
    
-4. Add the `core` and `v62` folders. Note the `v62` folder's name can change for 
-   each Liferay version. In this example, the SDK is built for Liferay 6.2. 
+4. Add the `core` and `v7` folders. Note the `v7` folder's name can change for 
+   each Liferay version. In this example, the SDK is built for Liferay 7.0. 
    
 5. If you're manually installing Liferay's prebuilt Mobile SDK, it also requires 
-   [AFNetworking 2.5.3](https://github.com/AFNetworking/AFNetworking/releases/tag/2.5.3).
+   [AFNetworking 2.6.3](https://github.com/AFNetworking/AFNetworking/releases/tag/2.6.3).
    Add its source code to your project.
    
 6. Start using it!
@@ -80,22 +80,18 @@ Great! Now you know how to manually install a Mobile SDK in your iOS apps.
 ## Understanding Liferay and iOS Compatibility [](id=understanding-liferay-and-ios-compatibility)
 
 Each Liferay Mobile SDK is designed to work with a specific Liferay Portal 
-version. Therefore, the Liferay Mobile SDK version scheme reflects the 
-compatible Liferay version. For example, the Liferay Mobile SDK 6.2.0.1 is built 
-to work with Liferay Portal 6.2.0. Similarly, a hypothetical Liferay Mobile SDK 
-7.0.0.1 would work with Liferay Portal 7.0.0.
+version. The Liferay Mobile SDK version number reflects this. The first two 
+digits of each Mobile SDK's version number correspond to the compatible Liferay 
+version. For example, a Mobile SDK version `6.2.*` is compatible with Liferay 
+6.2, while a Mobile SDK version `7.0.*` is compatible with Liferay 7.0. Any 
+digits after the first two correspond to the internal Liferay Mobile SDK build. 
 
-The fourth integer in the Mobile SDK version (6.2.0.x) corresponds to internal 
-Liferay Mobile SDK versions. For example, if a bug is found in the Liferay 
-Mobile SDK 6.2.0.1, Liferay will release a version called 6.2.0.2 with the bug 
-fix. 
-
-The service class names in the Mobile SDK are suffixed with the Mobile SDK's 
+The Mobile SDK's service class names are also suffixed with the Mobile SDK's 
 version number. This lets your app support several Liferay versions. For 
-example, you can add Mobile SDK versions 6.2.0.1 and 7.0.0.1 to the same 
-project. The Mobile SDK service classes supporting Liferay Portal versions 6.2.x 
-and 7.0.x end in `_v62.m` and `_v7.m`, respectively. To find out the Liferay 
-Portal versions your app connects to, use the 
+example, you can add Mobile SDK versions `6.2.0.22` and `7.0.3` to the same 
+project. The Mobile SDK service classes supporting Liferay Portal versions 6.2 
+and 7.0 end in `_v62.m` and `_v7.m`, respectively. To find out the Liferay 
+versions your app connects to, use the 
 `[LRPortalVersionUtil getPortalVersion:...]` method. 
 
 The Liferay iOS Mobile SDK is compatible with iOS versions 7.0 and up. Older iOS 

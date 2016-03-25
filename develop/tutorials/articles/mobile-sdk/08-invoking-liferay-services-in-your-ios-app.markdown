@@ -141,9 +141,10 @@ example, if you're building a blogs app, you can import `LRBlogsEntryService`:
 Note that the Liferay version (`_v62`) is used in the service class's name. This 
 corresponds to the Liferay version it's compatible with. In this example, `_v62` 
 is used, which means this Mobile SDK class is compatible with Liferay 6.2. 
-Because service class names contain the Liferay version they're compatible with, 
-you can use several Mobile SDKs simultaneously to support different Liferay 
-versions in the same app. 
+Mobile SDK classes compatible with Liferay 7.0 use `_v7` instead. Because 
+service class names contain the Liferay version they're compatible with, you can 
+use several Mobile SDKs simultaneously to support different Liferay versions in 
+the same app. 
 
 ## Step 3: Calling the Service [](id=step-3-calling-the-service)
 
@@ -209,7 +210,7 @@ If the service you're calling accepts `null` for a comparator argument, pass
 You may want to set the ascending property for a comparator. Unfortunately, as 
 of Liferay 6.2, most Liferay `OrderByComparator` implementations don't have a 
 setter for this property and it isn't possible to set from the Mobile SDK. 
-Future portal versions will address this. However, you may have a custom 
+Future portal versions may address this. However, you may have a custom 
 `OrderByComparator` that has a setter for ascending. In this case, you can use 
 the following code: 
 

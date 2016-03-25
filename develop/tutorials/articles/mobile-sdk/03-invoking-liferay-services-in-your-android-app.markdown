@@ -124,8 +124,9 @@ Note that the Liferay version (`.v62`) is used in the package namespace. Since
 the Mobile SDK is built for a specific Liferay version, service classes for 
 different Liferay versions are separated by their package names. In this 
 example, the Mobile SDK classes use the `.v62` package, which means this Mobile 
-SDK is compatible with Liferay 6.2. This namespacing lets your app support 
-multiple Liferay versions. 
+SDK is compatible with Liferay 6.2. Mobile SDK classes compatible with Liferay 
+7.0 use the `v7` package. This namespacing lets your app support multiple 
+Liferay versions. 
 
 ## Step 3: Create a Service Object and Call its Service Methods [](id=step-3-create-a-service-object-and-call-its-service-methods)
 
@@ -197,7 +198,7 @@ If the service you're calling accepts `null` for a comparator argument, pass
 You may want to set the ascending property for a comparator. Unfortunately, as 
 of Liferay 6.2, most Liferay `OrderByComparator` implementations don't have a 
 setter for this property and it isn't possible to set from the Mobile SDK. 
-Future portal versions will address this. However, you may have a custom 
+Future portal versions may address this. However, you may have a custom 
 `OrderByComparator` that has a setter for ascending. In this case, you can use 
 the following code: 
 
