@@ -143,3 +143,35 @@ resulting in far fewer runtime errors and more long term stability.
 
 OSGi was an excellent choice for Liferay, and Liferay is excited to bring our
 new technology to you. 
+
+### Semantic Versioning 
+
+In any complex system there are a ton of supporting libraries. Developers find a
+library that performs a specific function which they can call to provide
+supporting infrastructure for what they are developing. Of course, since this is
+a third-party piece of software, its author upgrades and enhances it according
+to his or her timeline. If you use version 2.2.1 of this library and its author
+a month later releases 2.3.0 and changes a call you made, you cannot upgrade to
+the new version unless you first make a change to your software. This is called
+"version lock." Similarly, if your software requires version 2.3.0 and another
+supporting library requires 2.2.1, you may use one version in one classloader
+and another version in a different classloader. This is called "version
+promiscuity." 
+
+Either of these situations makes your software more complex. You have to manage
+upgrades manually and make sure all necessary versions are accounted for. This
+prevents you from safely and easily evolving your project to the next level. 
+
+[Semantic Versioning](http://semver.org) changes that with a system for managing
+library versions using a MAJOR.MINOR.PATCH numbering system. This is used in
+OSGi to define dependencies for modules. When packages are imported are
+exported, the required version is also specified, and this allows the system to
+provide the proper versions to the proper packages, if those versions are
+installed. 
+
+In this way, dependencies are managed in a much more straightforward way by the
+system, freeing you to move forward with your project much more easily. 
+
+### ProviderType vs. ConsumerType
+
+
