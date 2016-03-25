@@ -1,15 +1,17 @@
-# Creating a Layout Template [](id=creating-a-layout-template)
+# Layout Templates [](id=layout-templates)
 
 In this tutorial, you'll learn how a layout template is constructed so you can
 create your own custom templates.
 
-Once you've created the initial layout template project, for example, execute 
-`./create.sh hello-world "Hello World"` from the `layouttpl` folder of the 
-Plugins SDK, follow these steps to create a custom layout template:
+This tutorial assumes you've already created your layout template project. For 
+example, execute `./create.sh hello-world "Hello World"` from the `layouttpl` 
+folder of the Plugins SDK.
 
-1.  Create the columns and rows for your layout.
+This tutorial demonstrates the following:
 
-2.  Add the Velocity template directive to each column.
+**How to Create a Layout Template**
+
+**How to create a Thumbnail for a Layout Template**
 
 Before you get started, take a look at what Liferay's *1-2-1 Columns Layout CE* 
 page layout looks like, populated with some of Liferay's portlets. 
@@ -50,7 +52,7 @@ that you just saw:
 In the steps below, you'll dive deeper into the different parts of a layout
 template and learn how to create your own custom layout.
 
-## Step 1: Create the Columns and Rows for your layout [](id=step-1-create-the-columns-and-rows-for-your-layout)
+## Create the Columns and Rows for Your Layout [](id=create-the-columns-and-rows-for-your-layout)
 
 Layout templates are constructed using HTML. To create your rows and columns 
 follow these steps:
@@ -151,7 +153,7 @@ add two column `<div>`s, and so on.
 That's all you have to do to specify the rows and columns for your layout
 template. Jump into the last step next.
 
-## Step 2: Add the Velocity Template Directive to Each Column. [](id=step-2-add-the-velocity-template-directive-to-each-column-)
+## Add the Velocity Template Directive to Each Column [](id=add-the-velocity-template-directive-to-each-column)
 
 Now that your columns and rows are good to go, you'll need to add the Velocity
 directive next.
@@ -204,7 +206,7 @@ fit your needs.
 Since you're now a master at designing layout templates, go out there and
 generate some positive Feng Shui with your eye-pleasing layout templates!
 
-**Related Topics**
+## Related Topics [](id=related-topics)
 
 [Embedding Portlets and Themes in Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
 

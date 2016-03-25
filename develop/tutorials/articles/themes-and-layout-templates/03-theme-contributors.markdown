@@ -16,6 +16,12 @@ the styles of these standard UI. Instead, they can be handled independently.
 You can therefore style these UI components to match the look and feel of your
 desire, and they will remain the same, regardless of what theme you choose.
 
+This tutorial demonstrates the following:
+
+**How to Identify a Theme Contributor Module**
+
+**How to Style a Theme Contributor UI Component**
+
 Now that you know what theme contributors are, you can learn how to identify
 them next.
 
@@ -79,7 +85,7 @@ style a theme contributor UI component follow these steps:
    
 Your standard UI menus are now updated!
 
-# Related Topics [](id=related-topics)
+## Related Topics [](id=related-topics)
 
 [Creating Themes with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-themes-with-the-liferay-theme-generator)
 

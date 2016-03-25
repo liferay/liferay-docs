@@ -1,10 +1,10 @@
-# Creating Themes with the Liferay Theme Generator [](id=creating-themes-with-the-liferay-theme-generator)
+# Themes Generator [](id=themes-generator)
 
 The Liferay Theme Generator is an easy-to-use command-line wizard that
 streamlines the theme creation process. It is independent of the Liferay Plugins
 SDK, and works for Liferay versions 6.2 and up. This tutorial focuses on
 creating themes for Liferay 7.0. In just a few steps, you'll have a working
-Liferay theme. The first step is to install the theme generator.
+Liferay theme.
 
 +$$$
 
@@ -12,6 +12,16 @@ Liferay theme. The first step is to install the theme generator.
 guaranteed to work on all platforms and environments.
 
 $$$
+
+This tutorial demonstrates the following:
+
+**How to Install the Liferay Theme Generator**
+
+**How to Run the Liferay Theme Generator**
+
+**The Theme Gulp Tasks**
+
+The first step is to install the theme generator.
 
 ## Installing the Theme Generator [](id=installing-the-theme-generator)
 

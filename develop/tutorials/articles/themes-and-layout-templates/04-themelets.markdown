@@ -1,4 +1,4 @@
-# Extending your Theme with Themelets [](id=extending-your-theme-with-themelets)
+# Themelets [](id=themelets)
 
 Themelets are small, extendable, and reusable pieces of code. Whereas themes
 require multiple components, a themelet only requires the files you wish to
@@ -20,8 +20,13 @@ This themelet simply alters the animation for Liferay's Product Menu.
 If there is something you find yourself coding over and over again for themes,
 it's a good candidate for a themelet.
 
-This tutorial demonstrates how to create a themelet to extend your theme. In
-order to create a themelet, you need the Node.js build tools installed. The
+This tutorial demonstrates the following:
+
+**How to create a themelet to extend your theme**
+
+**How to install a Themelet**
+
+In order to create a themelet, you need the Node.js build tools installed. The
 tutorial [Creating Themes with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-themes-with-the-liferay-theme-generator) 
 explains how to install these tools and how to create a theme.
 
@@ -55,7 +60,7 @@ That's all you need to do to prepare your themelet to use in theme development.
 Now you can develop your theme, making sure to add the files/directories to the
 `src` directory of the themelet.
 
-## Installing your Themelet [](id=installing-your-themelet)
+## Installing a Themelet [](id=installing-a-themelet)
 
 After you've developed your themelet, follow the steps below to install it into
 your theme.
