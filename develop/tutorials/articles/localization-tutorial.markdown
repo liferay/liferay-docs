@@ -60,12 +60,13 @@ properties file (`Language.properties`):
 
 You'll get the same output in your application with either method above, but you
 have the flexibility to add additional language properties files that provide
-translations for your application's keys if you use a key in your UI code, then
-provide the value (or translation) in your language properties file. You just
-need to make sure there's a locale that corresponds to your translation.
+translations for your application's keys if you use the language properties
+approach. Use a key in your UI code, then provide the value (or translation) in
+your language properties file. You just need to make sure there's a locale that
+corresponds to your translation.
 
-The values from your `Language.properties` file will appear if no locale is
-specified. If a locale is specified, Liferay will try to find a file that
+The values from your default `Language.properties` file will appear if no locale
+is specified. If a locale is specified, Liferay will try to find a file that
 corresponds to the locale. For example, if a Spanish translation is sought, a
 `Language_es.properties` file must be present to provide the proper values. If
 it isn't, the default language properties (from the `Language.properties` file)
@@ -115,11 +116,15 @@ module.
 ## Creating a Language Module
 
 If you're crazy about modularity (and you should be), you might have an
-application with multiple modules that provide the view layer.
+application with multiple modules that provide the view layer. These modules are
+often called Web modules.
 
-    `my-application-web`
-    `my-admin-application-web`
-    `my-application-content-web`
+    my-application/
+        my-application-web/
+        my-admin-application-web/
+        my-application-content-web/
+        my-application-api/
+        my-application-service/
 
 Each of these modules can have language keys and translations to maintain, and
 there will probably be duplicate keys. You don't want to end up with different
@@ -133,7 +138,7 @@ modules), create a new `my-application-lang` module.
 Inside the module, you need a `bnd.bnd` file, a `build.gradle` file, and a
 `src/main/resource/content` directory with language properties files.
 
-    my-application-lang
+    my-application-lang/
         bnd.bnd
         build.gradle
         src/
@@ -170,8 +175,7 @@ file name. A `Language_es.properties` file might look like this:
     add-entity=Añadir Entity
 
 Once you've done that, you're done in the language module. Now when you use the
-language key, it will automatically be translated depending on which locale the
-application's user has.
+language key, it will automatically be translated depending on the user's locale.
 
 ## Put the Language Module in a JAR
 
@@ -188,8 +192,9 @@ property:
     "javax.portlet.resource-bundle=content.Language"
 
 Additionally, at compile time (and JAR building time) your Web module needs to
-be able to find the language module. If you're using Gradle, add this to your
-Web module's `build.gradle` in the dependencies section:
+be able to find the language module. The specifics of this will vary depending
+on how you're building your project. For a Liferay Workspace project, your web
+module's should have this in their `build.gradle` files:
 
     compile project(':modules:myapplication:my-application-lang')
 
