@@ -16,5 +16,6 @@ ones.
 What does all this mean to you with regards to your existing applications?
 That's what you'll learn in these tutorials.
 
-We'll start by showing you how to adapt a WAR-style legacy application to
-Liferay 7's API. 
+We'll start by explaining what's involved with migrating a legacy application, so you
+can make an informed decision on how to structure your application for Liferay 7
+and upgrade it for deployment on Liferay 7. 

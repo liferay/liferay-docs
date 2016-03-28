@@ -1,31 +1,15 @@
 # Adapting to Liferay 7's API [](id=adapting-to-liferay-7s-api)
 
 If you have legacy applications for Liferay Portal 6.2 or earlier, you'll be
-happy to know there's a clearly defined path for migrating them to Liferay 7. As
-you know by now, most of Liferay's applications have migrated to OSGi modules,
-but Liferay is still a JSR-286, standards compliant portal. For this reason, it
-remains backwards compatible for WAR-style applications. This means two things:
-you can write both module and WAR-style applications, and you can easily upgrade
-your old 6.2 applications to new 7.0 APIs without converting them to modules
-first. When considering migrating your application to Liferay 7, you can divide
-the task into two general steps: 
+happy to know there's a clearly defined path for migrating them to Liferay 7.
+Liferay is still a JSR-286, standards compliant portal. For this reason, it
+remains backwards compatible for WAR-style applications. This tutorial shows you
+how to convert your application's 6.2 WAR-style plugins to 7.0 WAR-style
+plugins. Whether you decide to eventually completely modularize the plugins or
+stick with WAR-style plugins, this tutorial show's you how to adapt your
+application for deployment on Liferay 7.
 
-**Step 1:  Convert your 6.2 WAR-style plugins to a 7.0 WAR-style plugins**
-
-- Involves adapting the plugins to Liferay 7's APIs
-- Allows you to use your application in Liferay 7.0
-- Facilitates converting the application's plugins to modules
-
-**Step 2:  Convert your WAR-style plugins to OSGi modules.**
-
-- Allows you to leverage the most control over the plugins
-- Makes your application more maintainable
-
-This tutorial shows you **Step 1**: how to convert your application's 6.2
-WAR-style plugins to 7.0 WAR-style plugins. Later, you can convert the plugins
-to OSGi modules, following the tutorial [Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins).
-
-Follow these instructions adapt your legacy application's plugins to Liferay 7:
+Follow these instructions to adapt your legacy application's plugins to Liferay 7:
 
 1.  Copy your plugin into a development environment (e.g.,
     [Liferay 7.0 Plugins SDK](http://sourceforge.net/projects/lportal/files/Liferay%20Portal/),
@@ -160,9 +144,10 @@ Follow these instructions adapt your legacy application's plugins to Liferay 7:
     $$$
 
 Awesome! You've converted your legacy application's plugins to 7.0 WAR-style
-plugins that run on Liferay 7!
+plugins that run on Liferay 7! Later, you can optionally decide whether to
+convert the plugins to OSGi modules, following the tutorial [Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins).
 
-## Related Topics [](id=related-topics)
+**Related Topics**
 
 [ConvertingLegacy Applications to Modules](/develop/tutorials/-/knowledge_base/7-0/converting-legacy-applications-to-modules)
 
