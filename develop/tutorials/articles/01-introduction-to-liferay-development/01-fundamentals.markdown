@@ -174,4 +174,41 @@ system, freeing you to move forward with your project much more easily.
 
 ### ProviderType vs. ConsumerType
 
+In a modular, semantically versioned world, then, code is broken up into modules
+that have various inter-dependencies. These are managed by the container at
+runtime. For the container to be able to manage these dependencies
+appropriately, modules that implement an API need to be marked as such. This
+allows the container to use semantic versioning to import the proper version of
+the package. 
 
+Required versions or version ranges are declared in a module's `bnd.bnd` file,
+and this is what the container uses to create the proper configuration. To mark
+an implementation as a provider, all a developer needs to do is add the
+`@ProviderType` annotation to the interface. Once this is done, the container
+can match APIs and implementers by their versions. 
+
+If you don't provide this annotation, the module you're writing is assumed to be
+a `@ConsumerType`. This is a module that *consumes* or uses the service. This is
+a complex concept that is better explained when you get to the code, so for now
+just keep it in the back of your mind, as you'll encounter it later. 
+
+## Extensibility 
+
+As you might imagine, the system described above contains all the tools
+necessary to make a well designed system that allows developers not only to
+create applications based on modules, but also to extend the existing
+functionality of the system. Liferay can benefit from this now because the
+platform on which it rests is designed for both application development and
+customization. 
+
+Components in the OSGi runtime have what's called a *service ranking*. This can
+be used by developers to extend or override modules that are already running in
+the system. Extending or overriding existing functionality then becomes as easy
+as providing your own implementation and then deploying your module with a
+ranking higher than the default ranking. This is a simple and natural way to
+extend the system, and it's incorporated into the design of the platform from
+the ground up. 
+
+## Developing Mobile and Web Applications and Services
+
+[actually not sure what to write here]
