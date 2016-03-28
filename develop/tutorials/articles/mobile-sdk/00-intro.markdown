@@ -31,9 +31,9 @@ install it in your app alongside Liferay's prebuilt Mobile SDK to leverage your
 custom portlet's remote services. 
 
 Note that Liferay also provides 
-[Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/mobile-apps-with-liferay-screens) 
+[Liferay Screens](https://www.liferay.com/products/liferay-screens) 
 for constructing mobile apps that connect to Liferay. Screens uses components 
-called *screenlets* to leverage and abstract the Mobile SDK's low-level service 
+called *Screenlets* to leverage and abstract the Mobile SDK's low-level service 
 calls. However, if there's not a screenlet for your use case, or you need more 
 control over the service call, then you may want to use the Mobile SDK directly. 
 You should read the Screens tutorials in addition to the Mobile SDK tutorials 
@@ -49,13 +49,15 @@ in-depth tutorials on each:
 In addition, the following tutorial covers building Mobile SDKs to support your 
 custom portlet services: 
 
-- [Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
+- [Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
 
 Fasten your seatbelt--it's time to go mobile with Liferay's Mobile SDK! 
 
 **Related Topics:**
 
-[Mobile Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/mobile-apps-with-liferay-screens)
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+
+[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
 [Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/6-2/displaying-site-pages-to-mobile-devices)
 

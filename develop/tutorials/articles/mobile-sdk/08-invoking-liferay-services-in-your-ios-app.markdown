@@ -307,4 +307,4 @@ For more examples of this, see the test case
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
 
-[Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)

@@ -139,6 +139,6 @@ app.
 
 [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
-[Liferay Mobile SDK Builder](/develop/tutorials/-/knowledge_base/6-2/liferay-mobile-sdk-builder)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)

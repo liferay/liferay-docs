@@ -125,6 +125,6 @@ your iOS apps.
 
 [Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
 
-[Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
 
 [Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
