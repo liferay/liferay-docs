@@ -45,6 +45,8 @@ authentication, as long as the OAuth Provider portlet is deployed to your
 Liferay instance. To learn how to use OAuth authentication with the Mobile SDK, 
 see the
 [OAuth sample app](https://github.com/brunofarache/liferay-ios-sdk-oauth). 
+Also, note that the OAuth Provider portlet is only available to customers with 
+an active Liferay subscription. 
 
 +$$$
 

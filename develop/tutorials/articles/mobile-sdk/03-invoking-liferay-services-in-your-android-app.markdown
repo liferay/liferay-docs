@@ -52,6 +52,8 @@ The Mobile SDK also supports OAuth authentication, as long as the OAuth Provider
 portlet is deployed to your Liferay instance. To learn how to use OAuth 
 authentication with the Mobile SDK, see the
 [OAuth sample app](https://github.com/brunofarache/liferay-android-sdk-oauth). 
+Also, note that the OAuth Provider portlet is only available to customers with 
+an active Liferay subscription. 
 
 If you're building a sign in view for your app, you can use the `SignIn` utility
 class to check if the credentials given by the user are valid.
