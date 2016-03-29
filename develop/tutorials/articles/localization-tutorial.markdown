@@ -218,3 +218,8 @@ These keys are available at runtime, so just use any of Liferay's default keys
 in your user interface code, and they'll be automagically swapped out for the
 appropriately translated value. Using Liferay's keys where possible saves you
 time and ensures that your application follows Liferay's UI conventions.
+
+If you want to automatically generate language files for each locale Liferay
+supports, or even configure your application to generate translations
+automatically using the Microsoft Translator API, check out the article on that
+(in progress).
