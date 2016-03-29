@@ -1,9 +1,13 @@
 # Blade Tools
 
-Blade Tools is a command line tool bootstrapped with Gradle that is used to
-build Liferay 7.0 modules. This tool set provides a host of sub-commands that
-help Liferay developers create and deploy modules to a Liferay instance. The
-following sub-commands are callable in the Blade Tools environment:
+The [Blade Tools](https://github.com/gamerson/liferay-blade-tools) are the
+easiest way for Liferay developers to create new Liferay modules. Although the
+Plugins SDK is also supported, Blade Tools let you create projects that can be
+used with any IDE or development environment. Blade Tools is a command line tool
+bootstrapped with Gradle that is used to build Liferay 7.0 modules. This tool
+set provides a host of sub-commands that help Liferay developers create and
+deploy modules to a Liferay instance. The following sub-commands are callable in
+the Blade Tools environment:
 
 - *create*: Creates a new Liferay module project from available templates.
 - *deploy*: Builds and deploys bundles to the Liferay module framework.
