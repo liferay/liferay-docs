@@ -1,7 +1,7 @@
 # Creating Android List Screenlets [](id=creating-android-list-screenlets)
 
 It's very common for mobile apps to display lists of entities. Liferay Screens 
-lets you display asset lists and DDL lists in your iOS app by using 
+lets you display asset lists and DDL lists in your Android app by using 
 [Asset List Screenlet](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-android) 
 and 
 [DDL List Screenlet](/develop/reference/-/knowledge_base/6-2/ddllistscreenlet-for-android), 
