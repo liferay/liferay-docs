@@ -83,7 +83,7 @@ command:
 If you are on Windows, you must do additional setup for generated themes to use
 Sass. 
 
-### Installing Sass on Windows
+### Installing Sass on Windows [](id=installing-sass-on-windows)
 
 On Windows, you must use either Sass from node-sass or Sass from Ruby. By
 default, the generator creates theme projects to use node-sass; but you can
@@ -92,7 +92,7 @@ requires Visual Studio, developers who are not already using Visual Studio may
 opt to use Ruby based Sass and Compass instead of node-sass. This section
 explains both Sass installations. 
 
-#### Installing Sass from node-sass
+#### Installing Sass from node-sass [](id=installing-sass-from-node-sass)
 
 By default, the generator uses Sass from node-sass. node-sass requires node-gyp,
 which in turn requires Python and Visual Studio. The [node-gyp installation instructions](https://github.com/nodejs/node-gyp#installation)
@@ -100,7 +100,7 @@ explain how to set up node-gyp, Python, and Visual Studio. Since
 Visual Studio is a particularly large dependency, if you aren't already using
 Visual Studio you might want to consider using Ruby Sass instead of node-sass. 
 
-#### Installing Ruby Sass and Compass
+#### Installing Ruby Sass and Compass [](id=installing-ruby-sass-and-compass)
 
 As an alternative to using Sass from node-sass, you can use Sass from Ruby.
 Liferay themes require using Compass along with Ruby based Sass. In order to
@@ -115,7 +115,7 @@ configure a project to use Ruby based Sass and Compass.
 Now that you've installed the Themes Generator and theme dependencies, you can
 generate a theme.
 
-## Running the Themes Generator
+## Running the Themes Generator [](id=running-the-themes-generator)
 
 When you installed the Liferay Theme Generator, you also installed two
 sub-generators with it: a themelet creator, and a theme importer. For the

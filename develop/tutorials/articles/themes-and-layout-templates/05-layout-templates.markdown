@@ -7,11 +7,11 @@ This tutorial assumes you've already created your layout template project. For
 example, execute `./create.sh hello-world "Hello World"` from the `layouttpl` 
 folder of the Plugins SDK.
 
-This tutorial demonstrates the following:
+This tutorial demonstrates how to:
 
-**How to Create a Layout Template**
+- Create a Layout Template
 
-**How to create a Thumbnail for a Layout Template**
+- Create a Thumbnail for a Layout Template
 
 Before you get started, take a look at what Liferay's *1-2-1 Columns Layout CE* 
 page layout looks like, populated with some of Liferay's portlets. 
@@ -206,7 +206,9 @@ fit your needs.
 Since you're now a master at designing layout templates, go out there and
 generate some positive Feng Shui with your eye-pleasing layout templates!
 
-## Related Topics [](id=related-topics)
+<!--
+Related Topics
 
 [Embedding Portlets and Themes in Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
+-->
 

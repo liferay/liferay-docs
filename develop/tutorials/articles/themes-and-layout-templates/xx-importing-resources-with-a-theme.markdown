@@ -1,4 +1,4 @@
-# Importing Resources with Your Themes [](id=importing-resources-with-your-themes)
+# Importing Resources with a Theme [](id=importing-resources-with-a-theme)
 
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
