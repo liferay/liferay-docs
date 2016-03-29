@@ -149,7 +149,7 @@ convert the plugins to OSGi modules, following the tutorial [Modularizing Legacy
 
 **Related Topics**
 
-[ConvertingLegacy Applications to Modules](/develop/tutorials/-/knowledge_base/7-0/converting-legacy-applications-to-modules)
+[Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)
 
 [Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules)
 

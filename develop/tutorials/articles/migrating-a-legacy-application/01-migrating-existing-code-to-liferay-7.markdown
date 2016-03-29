@@ -89,3 +89,9 @@ stop after converting your application's plugins to WAR-style Liferay 7 plugins,
 or to continue on with modularizing the Liferay 7 WAR-style plugins. The next
 tutorial takes you through the first step of adapting legacy WAR-style plugins
 to Liferay 7's APIs.
+
+**Related Topics**
+
+[Adapting to Liferay 7's API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api)
+
+[Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)
