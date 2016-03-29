@@ -1,8 +1,7 @@
 # Automatically Generating Language Files
 
-If you already have a default `Language.properties` file that holds [language
-keys for your user interface messages](LINK), or even a language module that
-holds these keys, you're in the right place.
+If you already have a default `Language.properties` file that holds [language keys for your user interface messages](/develop/tutorials/-/knowledge_base/7-0/localization-tutorial), or
+even a language module that holds these keys, you're in the right place.
 
 -  Instead of manually creating a language properties file for each locale
    that's supported by Liferay, you can get them all automatically generated for
@@ -21,7 +20,7 @@ you only have to do a little work in the build file of your application.
 [plugin](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-lang-builder),
 by putting the plugin in build script classpath.
 
-2. Make sure you have the default `Language.properties` file in
+2. Make sure you have a default `Language.properties` file in
    `src/main/content`. 
 
 3. Run the `gradle buildLang` task from your project's root directory to generate
@@ -96,7 +95,7 @@ application's build script.
         } 
 
     Instead, pass the credentials to a property that's stored in your [local build environment](https://docs.gradle.org/current/userguide/build_environment.html),
-and pass the property into your application's build script:
+and pass the property into your application's build script.
 
          buildLang {
            translateClientId = langTranslateClientId
