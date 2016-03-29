@@ -2,51 +2,31 @@
 
 The Liferay Theme Generator is an easy-to-use command-line wizard that
 streamlines the theme creation process. It is independent of the Liferay Plugins
-SDK, and works for Liferay versions 6.2 and up. This tutorial focuses on
-creating themes for Liferay 7.0. In just a few steps, you'll have a working
-Liferay theme.
+SDK, and works for Liferay versions 6.2 and up. This tutorial focuses on using
+the Themes Generator to create and develop themes. In just a few steps, you'll
+have a working Liferay theme.
 
 +$$$
 
-**Note:** The Liferay Theme Generator is still in development and is not
+**Note:** The Liferay Themes Generator is still in development and is not
 guaranteed to work on all platforms and environments.
 
 $$$
 
-This tutorial demonstrates the following:
+This tutorial demonstrates how to:
 
-**How to Install the Liferay Theme Generator**
+**Install the Themes Generator**
 
-**How to Run the Liferay Theme Generator**
+**Run the Themes Generator**
 
-**The Theme Gulp Tasks**
+**Use Theme Gulp Tasks**
 
-The first step is to install the theme generator.
+The first step is to install the Themes Generator.
 
 ## Installing the Theme Generator [](id=installing-the-theme-generator)
 
-The theme generator has several dependencies. You'll learn how to install these
-dependencies and then install the theme generator.
-
-+$$$
-
-**Windows Prerequisites**
-
-By default, the generator uses node-sass which requires node-gyp. Furthermore,
-node-gyp requires Python and Visual Studio. The [node-gyp Installation](https://github.com/nodejs/node-gyp#installation)
-instructions explain how you can set this up.
-
-Alternatively you can use the Ruby based version of Sass. In order to use that 
-version of Sass, you must install Ruby with the [Ruby Installer](http://rubyinstaller.org/), 
-and then install the Sass and Compass gems using the following command: 
-
-    gem install sass compass
-    
-These are the initial steps you will need to run for Windows. Once the theme is
-generated you will have to make a few more changes to the configuration files,
-which is covered below.
-
-$$$
+The Themes Generator has several dependencies. You'll learn how to install these
+dependencies and then install the Themes Generator.
 
 Follow these steps to install the generator's dependencies:
 
@@ -96,20 +76,50 @@ Follow these steps to install the generator's dependencies:
 
         npm install -g yo gulp
 
-Now you're ready to install the theme generator. Install it by executing this
+Now you're ready to install the Themes Generator. Install it by executing this
 command:
 
     npm install -g generator-liferay-theme
 
-Now that the theme generator and its dependencies are installed, you can
-generate a theme. 
+If you are running on Windows, you must do additional setup for Sass.
 
-## Running the Theme Generator [](id=running-the-theme-generator)
+### Installing Sass on Windows
+
+On Windows, you must use either Sass from node-sass or Sass from Ruby. By default,
+the generator creates theme projects to use node-sass; but you can reconfigure
+them to use Ruby based Sass and Compass. Since node-sass indirectly requires
+Visual Studio, developers who are not already using Visual Studio may opt to use
+Ruby based Sass and Compass. This section explains both Sass installations. 
+
+#### Installing Sass from node-sass
+
+By default, the generator uses Sass from node-sass. node-sass requires node-gyp,
+which in turn requires Python and Visual Studio. The [node-gyp Installation](https://github.com/nodejs/node-gyp#installation)
+instructions explain how to set up node-gyp, Python, and Visual Studio. Since
+Visual Studio is a particularly large dependency, developers who aren't already
+using Visual Studio might consider using Ruby Sass instead of node-sass. 
+
+#### Installing Ruby Sass and Compass
+
+As an alternative to using Sass from node-sass, you can use Sass from Ruby.
+Liferay themes require using Compass along with Ruby based Sass. In order to
+install and use Sass and Compass, you must install Ruby using the [Ruby Installer](http://rubyinstaller.org/).
+The following command installs the Sass and Compass gems.
+
+    gem install sass compass
+
+After creating a theme project in the next section, you'll learn how to
+reconfiguration the project to use Ruby based Sass and Compass.
+
+Now that you've installed the Themes Generator and Liferay theme dependencies,
+you can generate a theme. 
+
+## Running the Themes Generator
 
 <!--
 When you installed the Liferay Theme Generator, you also installed two
 sub-generators with it: a themelet creator, and a theme importer. For the
-purposes of this tutorial, the focus will be on the default theme generator. 
+purposes of this tutorial, the focus will be on the default Themes Generator. 
 To learn how to use the generator to create themelets and import themes, you 
 can read the Extending your Theme Using Themelets tutorial and the Importing and 
 Upgrading Themes tutorials.
@@ -128,7 +138,7 @@ have read/write access to all folders on your system.
 
 $$$
 
-The theme generator prompts you for the following things:
+The Themes Generator prompts you for the following things:
 
 1. Enter a name for your theme.
 
@@ -152,9 +162,7 @@ The generator creates a new theme project in your current directory. The theme
 inherits styles from the [liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled)
 theme. Note that you can change the base theme using the `gulp extend` command.
 
-+$$$
-
-**Note**: By default, your theme is based off of the styled theme and uses 
+**Important**: By default, your theme is based off of the styled theme and uses 
 lib-sass/bourbon, instead of Compass. If, however, you are on Windows and 
 are using the Ruby version of Sass, you must configure the theme to support
 Compass. 
@@ -171,8 +179,6 @@ Compass.
         
     The `--save` flag adds Ruby Sass to the list of dependencies in your theme's
     `package.json` file. Your theme is ready to use.
- 
-$$$
 
 There you have it! You now have a working theme. At the moment, the theme is a
 bit bare bones, but you have everything you need to get started. The generated
