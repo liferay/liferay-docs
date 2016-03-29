@@ -5,7 +5,7 @@ happy to know there's a clearly defined path for migrating them to Liferay 7.
 Liferay is still a JSR-286, standards compliant portal. For this reason, it
 remains backwards compatible for WAR-style applications. This tutorial shows you
 how to convert your application's 6.2 WAR-style plugins to 7.0 WAR-style
-plugins. Whether you decide to eventually completely modularize the plugins or
+plugins. Whether you decide eventually to completely modularize the plugins or
 stick with WAR-style plugins, this tutorial show's you how to adapt your
 application for deployment on Liferay 7.
 
@@ -88,7 +88,7 @@ Follow these instructions to adapt your legacy application's plugins to Liferay 
     headers](https://www.osgi.org/bundle-headers-reference/). The Module
     Framework's compatibility layer propagates them to a manifest it creates for
     the plugin. One such property is `Export-Package`, to which you can assign
-    the packages your plugin exposes. Here's an example an `Export-Package`
+    the packages your plugin exposes. Here's an example `Export-Package`
     property that exposes specific packages from a plugin:
 
         Export-Package=\
@@ -100,11 +100,11 @@ Follow these instructions to adapt your legacy application's plugins to Liferay 
     document for potential causes and resolutions.
 
 6.  Build your plugin's WAR file (e.g., execute `ant war`). In the Plugins SDK,
-    WAR files are generated to `/dist` folder.
+    WAR files are generated to the Plugins SDK's `/dist` folder.
 
     Inspect the WAR file to make sure its `lib/` folder doesn't contain any OSGi
     framework JARs or Liferay module JARs (e.g., `com.liferay.journal.api.jar`).
-    If the plugin is deployed with such JARs they'll conflict with the JARs
+    If the plugin is deployed with such JARs, they'll conflict with the JARs
     already installed in Liferay's Module Framework--identical JARs will exist
     in two different classloaders and cause class cast exceptions. 
 
@@ -124,7 +124,7 @@ Follow these instructions to adapt your legacy application's plugins to Liferay 
     WAB to the `[liferay-home]/osgi/` folder.
 
 8.  Verify your plugin's deployment. You can check the console for the plugin's
-    deployment confirmation and/or verify the plugin in portal's UI.
+    deployment confirmation and/or verify the plugin in Portal's UI.
 
     You can even check for your plugin module's deployment in the OSGi console.
     Open a terminal, run `telnet localhost 11311`, and then run `lb`. Your
@@ -137,7 +137,7 @@ Follow these instructions to adapt your legacy application's plugins to Liferay 
     +$$$
 
     **Tip**: If at first you don't see your plugin module listed, pipe the
-    results through the grep command:
+    results through the grep command that includes the module's name:
 
         lb | grep resources-importer-web
 

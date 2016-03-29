@@ -3,7 +3,7 @@
 Liferay 7's one and only plugin type is a [*module*](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module). 
 It's an OSGi-based module that Liferay's module framework hands off to OSGi for
 deployment. It has some similarities to Liferay 6.x WAR-style applications,
-but has some differences that you must address in them. 
+but has some key differences you must address. 
 
 As an overview, a module contains Java classes, frontend source files such as
 JSPs, and module resources. In addition, a module must specify modules it
