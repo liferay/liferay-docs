@@ -8,9 +8,14 @@ for your site.
 Liferay has its own set of base themes, called [styled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-styled) 
 and [unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-unstyled), 
 that create the default look and feel that you're first greeted with when you 
-start the server. These same base themes are used to create a custom theme. 
-Using a base theme as your foundation, you can then make your customizations to 
-the theme files.
+start the server. The *styled* theme inherits from the *unstyled* theme, and 
+simply adds some additional styling on top. These same base themes are used to 
+create a custom theme. See the [User Horizontal Theme](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-user-horizontal)
+for example, which uses the *styled* theme as its base. Using a base theme as 
+your foundation, you can then make your customizations to the theme files. To
+modify the theme, simply mirror the directory structure of the files
+you wish to change and copy them into the `src` directory of your theme. Build
+the theme to apply the changes.
 
 Liferay provides an easy-to-use tool called the [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
 that helps automate the theme development process, but you can use other tools 
@@ -31,7 +36,7 @@ rewriting the code each time, you can simply use the same themelet in each theme
 Once your theme is developed it is packaged as a WAR(Web application ARchive)
 file and can be deployed to the server, either manually or using build tools.
 
-If you would like a theme, but don't have the time to develop or wish to develop 
-your own theme, you can check out the [Liferay Marketplace](https://www.liferay.com/marketplace/-/mp/category/11232563).
+Once your theme is deployed, apply it to your pages through the [Look and Feel
+menu](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages).
 
 The only limitation is your imagination.
