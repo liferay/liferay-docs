@@ -10,8 +10,10 @@ The command above creates an MVC portlet project named `my-mvc-portlet-project`
 in the current directory. You set the package name to
 `com.liferay.docs.mvcportlet` and your portlet component class name to
 `MyMvcPortlet`. Note that in that class, you're creating a service of type
-`Portlet`. Here, *service* means an OSGi service, not a Liferay API. Another way
-to say *service type* is to say *component type*.
+`javax.portlet.Portlet` and extending the
+`com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet` class. Here,
+*service* means an OSGi service, not a Liferay API. Another way to say *service
+type* is to say *component type*.
 
 After running the command above, your project's directory structure looks like
 this:
