@@ -579,17 +579,14 @@ previously unregistered Liferay instance with LCS:
    to LCS. You should see this in your LCS project's environment view.
    
 When using an environment token, minimal information (server name, location, 
-etc...) is used to register a portal instance with LCS. You can change this 
+etc...) is used to register a Liferay instance with LCS. You can change this 
 information from the server view in LCS at any time. Also, since environment 
 tokens connect using OAuth, it's important to note that using an environment 
 token overrides the OAuth authorization cycle. If an LCS Administrator or 
-Environment Manager has never registered portal instances with LCS, the first 
-time they do so an OAuth authorization entry is created. This is visible in 
-their LCS account's *My Account* &rarr; *OAuth Authorizations* menu. If they 
-have previously registered portal instances with LCS, their existing
-credentials are used when they create a token file. 
-
-![Figure 4.31: The OAuth authorization entry in the portal instance using an environment token to connect to LCS.](../../images/lcs-token-oauth-entry.png)
+Environment Manager has never registered Liferay instances with LCS, the first 
+time they do so an OAuth authorization entry is created in LCS. If they've 
+previously registered Liferay instances with LCS, their existing credentials are 
+used when they create a token file. 
 
 What if your Liferay instance has already been manually registered with LCS,
 but you want to switch to using an environment token? No problem! Follow these
