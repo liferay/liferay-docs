@@ -1,4 +1,4 @@
-# Using the Activator Template
+# Using the Service Template
 
 In this tutorial, you'll learn how to create a Liferay service as a Liferay
 module. To create a Liferay service as a module, use a command like the
