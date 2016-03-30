@@ -17,7 +17,6 @@ the Blade Tools environment:
 - *install*: Installs a bundle into Liferay's module framework.
 - *migrateTheme*: Migrates a Plugins SDK theme to a new workspace theme project.
 - *open*: Opens or imports a file or project in Liferay IDE.
-- *outputs*:
 - *samples*: Generates a sample project.
 - *server*: Starts or stops server defined by your Liferay project.
 - *sh*: Connects to Liferay and executes Gogo command and returns output.

@@ -57,7 +57,13 @@ class `GuestbookPortlet`. The project name is `my-guestbook-project`. Since the
 directory was not specified, it is created in the folder you executed the
 command.
 
+Before creating your application, make sure you've created a Liferay Workspace
+and navigated to the workspace's `modules` directory. If you'd like to learn
+more about Liferay Workspaces and how to create/use them, see the
+[Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+tutorial.
+
 Now that you know the basics on creating Liferay module projects using `blade
 create`, you can visit some of the tutorials in this section on specific
-`create` The templates will be discussed further so you know exactly what each
-one has to offer.
+`create` templates. The templates will be discussed further so you know exactly
+what each one has to offer.
