@@ -6,9 +6,9 @@ use a command like the following:
 
     blade create -t portlet -p com.liferay.docs.portlet -c MyPortlet my-portlet-project
 
-The command above creates an MVC portlet project named `my-portlet-project` in
-the current directory. You set the package name to `com.liferay.docs.portlet`
-and your portlet component class name to `MyPortlet`. Note that in that class,
+The command above creates a portlet project named `my-portlet-project` in the
+current directory. You set the package name to `com.liferay.docs.portlet` and
+your portlet component class name to `MyPortlet`. Note that in that class,
 you're creating a service of type `javax.portlet.Portlet` and extending the
 `javax.portlet.GenericPortlet` class. Here, *service* means an OSGi service, not
 a Liferay API. Another way to say *service type* is to say *component type*.
