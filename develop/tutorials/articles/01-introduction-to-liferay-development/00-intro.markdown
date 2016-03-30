@@ -2,11 +2,11 @@
 
 How many times have you had to start over from scratch? Probably almost as many
 times as you've started a new project, because each time you have to write not
-only the code for the project, but also the underlying code that supports the
-project. It's never a good feeling to have to write the same kind of code over
-and over again. But each new project that you do after a while can feel like
-that: you're writing a new set of tables, a new API, a new set of CSS classes
-and HTML, a new set of JavaScript functions. 
+only the code to build the project, but also the underlying code that supports
+the project. It's never a good feeling to have to write the same kind of code
+over and over again. But each new project that you do after a while can feel
+like that: you're writing a new set of database tables, a new API, a new set of
+CSS classes and HTML, a new set of JavaScript functions. 
 
 Wouldn't it be great if there were a platform that provided a baseline set of
 features that gave you a head start on all that repetitive code? Something that

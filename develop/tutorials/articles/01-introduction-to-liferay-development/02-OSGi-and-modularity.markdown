@@ -45,35 +45,32 @@ Modularity is a powerful paradigm for designing any complex system like Liferay.
 And now Liferay has made a bold move and re-engineered its product to take
 advantage of modularity. 
 
-## Benefits of OSGi for Liferay
+## The Benefits of Modularity
 
-At Liferay, many teams work on the product at the same time. Before modularity,
-teams would step on each other: a bug fix in one place might introduce a bug in
-another place due to an implementation change or a break in an API contract. To
-support its vision of extensibility, Liferay also contained a lot of code that
-enabled developers to modify its core in a way that avoided patching the source
-itself and was easy to use. While this worked well, points of customization had
-to be defined ahead of time, and identifying what users would want to customize
-was hit and miss. 
+Modularity makes writing software, especially as a team, fun! Here are some
+benefits: 
 
-Modularity, and OSGi specifically, solves all that. OSGi is the most mature
-modular platform in existence, and offers fantastic technologies for building
-modular applications. Because it is so mature, it has defined patterns of its
-own, such as the whiteboard and extender patterns, that Liferay uses to build
-its extensible framework. Additionally, OSGi lives in the open source world: it
-has several implementations, which means Liferay didn't have to build its
-framework from scratch. Instead, Liferay was able to *eliminate* a lot of code
-for extending itself, because now the platform by design supports that natively. 
+- The framework is lightweight, fast, and secure. 
+- The framework uses the OSGi standard. If you have experience using this with
+    another project, you can apply your existing knowledge to Liferay. 
+- Modules publish services to and consume services from a service registry.
+    Service contracts are loosely coupled from service providers and consumers. 
+- Modules export code at the package level for use by other modules, enabling
+    the registry to manage dependencies automatically. 
+- The container manages module lifecycles dynamically. Modules can be installed,
+    started, updated, stopped, and uninstalled while Liferay is running, making
+    deployment a snap. 
+- Modules hide their internals from other modules, giving developers free reign
+    to change the internals whenever needed. 
+- Modules are semantically versioned and declare dependencies on specific
+    versions of other modules. This allows two applications that depend on
+    different versions of the same library to each depend on their own versions
+    of the library. 
+- You can use your existing developer tools and environment to develop modules. 
 
-Finally, one of the most important benefits of OSGi for Liferay is *semantic
-versioning*. This is a way of defining exactly which version of which service is
-supported by which other service. This is an extraordinary help to developers
-and system administrators alike, because it avoids what they call "dependency
-hell." It allows the programmatic detection of version compatibility at runtime,
-resulting in far fewer runtime errors and more long term stability. 
-
-OSGi was an excellent choice for Liferay, and Liferay is excited to bring our
-new technology to you. 
+There are many benefits to modular software development, and we can only scratch
+the surface here. Once you start, you may find it hard to go back to doing
+things any other way. 
 
 ## Semantic Versioning 
 
