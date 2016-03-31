@@ -120,7 +120,7 @@ permissible.
 2.  Create the directory structure skeleton for your web client module. You can
     do this automatically by using Blade Tools. You can learn how to install
     Blade Tools by visiting the
-    [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+    [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
     tutorial and you can view examples of
     [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
     and
