@@ -1,4 +1,4 @@
-# Installing Blade CLI
+# Installing Blade CLI [](id=installing-blade-cli)
 
 The best way to obtain Blade CLI is to download its JAR file and install it
 using the [Java Package Manager](http://jpm4j.org) (JPM). Blade CLI is
@@ -7,7 +7,7 @@ since it's the best way to download, install, and update your Blade Tools
 environment. The exact JPM installation and update syntax depends on your
 operating system, and will be covered in greater detail next.
 
-## Installing Blade CLI Using JPM
+## Installing Blade CLI Using JPM [](id=installing-blade-cli-using-jpm)
 
 Follow the steps outlined below to install Blade CLI to your local machine.
 
@@ -21,7 +21,7 @@ Follow the steps outlined below to install Blade CLI to your local machine.
 Now that Blade CLI is installed on your machine, you'll learn how to verify and
 update your installation.
 
-## Verifying Your Blade CLI Installation
+## Verifying Your Blade CLI Installation [](id=verifying-your-blade-cli-installation)
 
 To check that Blade CLI is installed, make sure that the `blade` executable is
 available on your system path. Test its usage by entering `blade version` into a

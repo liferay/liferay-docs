@@ -1,4 +1,4 @@
-# Using the MVC Portlet Template
+# Using the MVC Portlet Template [](id=using-the-mvc-portlet-template)
 
 In this tutorial, you'll learn how to create a Liferay MVC portlet application
 as a Liferay module. To create a Liferay MVC portlet application as a module,

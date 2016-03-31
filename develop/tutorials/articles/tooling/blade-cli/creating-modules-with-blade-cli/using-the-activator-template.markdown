@@ -1,4 +1,4 @@
-# Using the Activator Template
+# Using the Activator Template [](id=using-the-activator-template)
 
 In this tutorial, you'll learn how to create a Liferay activator as a Liferay
 module. To create a Liferay activator as a module, use a command like the

@@ -1,4 +1,4 @@
-# Creating Modules with Blade CLI
+# Creating Modules with Blade CLI [](id=creating-modules-with-blade-cli)
 
 When you use Blade CLI to create a project, your project's folder structure,
 build script (`build.gradle`), Java classes, and other resources (such as JSPs)

@@ -1,4 +1,4 @@
-# Tooling
+# Tooling [](id=tooling)
 
 Liferay is very flexible when it comes to supporting different development
 tooling. Instead of being pigeonholed into using a specific tool, Liferay allows

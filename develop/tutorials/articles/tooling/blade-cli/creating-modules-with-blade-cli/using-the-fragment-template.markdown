@@ -1,4 +1,4 @@
-# Using the Fragment Template
+# Using the Fragment Template [](id=using-the-fragment-template)
 
 In this tutorial, you'll learn how to create a Liferay fragment as a Liferay
 module. To create a Liferay fragment as a module, use a command like the
