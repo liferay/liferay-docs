@@ -18,8 +18,7 @@ Blade tools behind the scenes. Liferay IDE gives you a graphical interface
 instead of the command prompt, which can streamline your workflow. Before
 attempting to create a Liferay Workspace via Blade tools in the command prompt,
 make sure you've installed Blade, which is covered in the previous section
-[Introduction to Blade
-Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli).
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli).
 
 Buckle up! You're about to create your own Liferay 7.0 Workspace!
 
@@ -84,7 +83,7 @@ build/test your plugins against a running Liferay instance. Before generating a
 Liferay instance, open the `gradle.properties` file located in your workspace's
 root folder. There are several configurable properties for your workspace's
 Liferay instance. For instance, you can set the version of Liferay you'd like to
-generate and install (e.g., `7.0-ce-b2`).
+generate and install (e.g., `7.0-ce-rc1`).
 
 Once you've finalized your Gradle properties, navigate to your workspace's root
 folder and run
@@ -99,7 +98,7 @@ folder. To start your Liferay instance, run
     blade server start -b
 
 This command starts your Liferay server in a separate window. You also have the
-option to run your server in debug mode (-d).
+option to run your server in debug mode (`-d`).
 
 Awesome! You have a built-in Liferay server in your workspace and can start the
 server using Blade tools. Next you'll learn how to use a legacy Plugins SDK
@@ -148,14 +147,13 @@ and with little overhead. There are, however, developers who prefer using an IDE
 with a nice GUI. If you're one of those developers, Liferay provides the same
 workspace functionality through Liferay IDE. If you're curious about the
 directory structure and configuration files in a Liferay Workspace, visit the
-[Using Blade to Create Your
-Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace#using-blade-to-create-your-workspace)
+[Using Blade to Create Your Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace#using-blade-to-create-your-workspace)
 section.
 
 To create a Liferay Workspace in IDE, select *File* &rarr; *New* &rarr; *Liferay
 Workspace*.
 
-![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your Liferay projects.](../../images/selecting-liferay-workspace.png)
+![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your Liferay projects.](../../../images/selecting-liferay-workspace.png)
 
 A *New Liferay Workspace* popup window appears, presenting several configuration
 options. Follow the instructions below to create your workspace.
@@ -178,7 +176,7 @@ information on working sets, visit
 
 5. Click *Finish* to create your Liferay Workspace.
 
-![Figure 2: Liferay IDE provides an easy-to-follow menu to create your Liferay Workspace.](../../images/new-workspace-menu.png)
+![Figure 2: Liferay IDE provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/new-workspace-menu.png)
 
 You'll find your new workspace in the Project Explorer and your Liferay server
 (if you created it) in the Servers menu. It's important to note that an Eclipse
