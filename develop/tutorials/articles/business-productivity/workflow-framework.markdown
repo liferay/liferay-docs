@@ -196,9 +196,8 @@ This often involves the following steps:
 If you're using Service Builder, define your finder in your application's
 `service.xml` and let Service Builder generate it for you. 
 
-    <finder name="G_F_S" return-type="Collection">
+    <finder name="G_S" return-type="Collection">
         <finder-column name="groupId"></finder-column>
-        <finder-column name="fooEntityId"></finder-column>
         <finder-column name="status"></finder-column>
     </finder>
 
