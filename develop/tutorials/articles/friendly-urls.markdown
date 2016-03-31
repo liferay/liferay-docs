@@ -11,7 +11,8 @@ confused by him.
 The other was just, well, friendly. You knew only the important things about
 her, because she was less concerned about looking smart, and more concerned
 about those she interacted with. She didn't need to look fancy and complicated.
-She aspired to be simple and kind.
+She aspired to be simple and kind to all the users and SEO services she
+encountered.
 
     http://localhost:8080/web/guest/home/-/blogs/lunar-scavenger-hunt
 
@@ -100,13 +101,12 @@ specifies a `FriendlyURLMapper` service, with two properties:
             service = FriendlyURLMapper.class
         )
 
-After that, implement the `FriendlyURLMapper`. For your convenience,
-`DefaultFriendlyURLMapper` provides a default implementation of the
-`FriendlyURLMapper` service. If you extend `DefaultFriendlyURLMapper` you only
-need to override one method, `getMapping()`. In this method you just need to
-return a String that defines the first part of your Friendly URLs. It's smart to
-name it after your application. Here's what it looks like for Liferay's Blogs
-application:
+After that, implement the `FriendlyURLMapper` service. For your convenience,
+`DefaultFriendlyURLMapper` provides a default implementation. If you extend
+`DefaultFriendlyURLMapper` you only need to override one method,
+`getMapping()`. In this method you just need to return a String that defines
+the first part of your Friendly URLs. It's smart to name it after your
+application. Here's what it looks like for Liferay's Blogs application:
 
     public class BlogsFriendlyURLMapper extends DefaultFriendlyURLMapper {
 
