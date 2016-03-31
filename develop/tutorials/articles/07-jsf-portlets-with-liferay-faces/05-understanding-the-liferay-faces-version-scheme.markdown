@@ -124,7 +124,7 @@ versioning scheme mastered, you can view several example configurations.
 |-----------------|------------------------------------|:--------------:|:----------:|:-----------:|:-------:|
 |*6.0.x (planned)*|*liferay-faces-bridge-ext-6.0.0.jar*|*7.1.x*         |*5.0.x*     |*3.0*        |*2.2*    |
 |[master (5.0.x)](https://github.com/liferay/liferay-faces-bridge-ext/tree/master)|liferay-faces-bridge-ext-5.0.0.jar|7.0.x|4.0.x|2.0|2.2|
-|[4.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/4.0.x)|liferay-faces-bridge-ext-4.0.0.jar|7.0.x|3.0.x|2.0|2.1|
+|[4.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/4.0.x)|RESERVED|N/A|N/A|N/A|N/A|
 |[3.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/3.0.x)|liferay-faces-bridge-ext-3.0.0.jar|6.2.x|4.0.x|2.0|2.2|
 |[2.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/2.0.x)|liferay-faces-bridge-ext-2.0.0.jar|6.2.x|3.0.x|2.0|2.1|
 |[1.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/1.0.x)|liferay-faces-bridge-ext-1.0.0.jar|6.2.x|2.0.x|2.0|1.2|
