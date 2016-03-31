@@ -19,7 +19,7 @@ instead of the command prompt, which can streamline your workflow. Before
 attempting to create a Liferay Workspace via Blade tools in the command prompt,
 make sure you've installed Blade, which is covered in the previous section
 [Introduction to Blade
-Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools).
+Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli).
 
 Buckle up! You're about to create your own Liferay 7.0 Workspace!
 
@@ -169,11 +169,3 @@ workspace can only have one Liferay Workspace project.
 Congratulations! You've learned how to create a Liferay Workspace using the
 command line and Liferay IDE. Now that your workspace is created, you can
 begin creating Liferay plugins.
-
-## Related Topics [](id=related-topics)
-
-[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
-
-[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
-
-[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
