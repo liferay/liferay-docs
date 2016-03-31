@@ -1,0 +1,11 @@
+Bundle-Name: Sample Content Portlet
+Bundle-SymbolicName: com.liferay.docs.samplecontent
+Bundle-Version: 1.0.0.${tstamp}
+
+Import-Package: \
+	javax.portlet;version='[2.0,3)',\
+	javax.servlet;version='[2.5,4)',\
+	*
+
+Private-Package: \
+	com.liferay.docs.samplecontent.portlet

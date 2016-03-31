@@ -238,7 +238,7 @@ Follow these steps to create a Liferay portlet project using Maven.
         </aui:form>
 
 4.  Next, create a `bnd.bnd` file for deployment. Your tests will use
-    [Bnd](http://aqute.biz/Code/bnd) to create the artifact to be deployed, so
+    [Bnd](http://aqute.biz/Bnd/Bnd) to create the artifact to be deployed, so
     add this Maven dependency to your project's `pom.xml` file:
 
         ...

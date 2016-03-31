@@ -57,11 +57,11 @@ initiate your custom export/import or staging process.
                     exportLayoutSettingsMap);
 
     This example uses the
-    [ExportImportConfigurationSettingsMapFactory](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portlet/exportimport/configuration/ExportImportConfigurationSettingsMapFactory.java)
+    [ExportImportConfigurationSettingsMapFactory](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationSettingsMapFactory.java)
     to create a layout export settings map. Then this map is used as a parameter
     to create an `ExportImportConfiguration` by calling an *add* method in the
     entity's local service interface. The
-    [ExportImportConfigurationLocalService](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portlet/exportimport/service/ExportImportConfigurationLocalService.java)
+    [ExportImportConfigurationLocalService](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/service/ExportImportConfigurationLocalService.java)
     provides several useful methods to create and modify your custom
     `ExportImportConfiguration`.
 
@@ -75,19 +75,19 @@ initiate your custom export/import or staging process.
     There are two other important factories provided by this framework that are
     useful during the creation of `ExportImportConfiguration` objects:
 
-    - [ExportImportConfigurationFactory](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portlet/exportimport/configuration/ExportImportConfigurationFactory.java):
+    - [ExportImportConfigurationFactory](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationFactory.java):
       This factory is used to build `ExportImportConfiguration` objects used
       for default local/remote publishing.
-    - [ExportImportConfigurationParameterMapFactory](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portlet/exportimport/configuration/ExportImportConfigurationParameterMapFactory.java):
+    - [ExportImportConfigurationParameterMapFactory](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationParameterMapFactory.java):
       This factory is used to build parameter maps, which are required during
       export/import and publishing.
 
 2.  Call the appropriate service to initiate the export/import or staging
     process. There are two important service interfaces that you can use in the
     cases of exporting, importing, and staging:
-    [ExportImportLocalService](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portlet/exportimport/service/ExportImportLocalService.java)
+    [ExportImportLocalService](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/service/ExportImportLocalService.java)
     and
-    [StagingLocalService](https://github.com/liferay/liferay-portal/blob/master/portal-service/src/com/liferay/portlet/exportimport/service/StagingLocalService.java).
+    [StagingLocalService](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/exportimport/kernel/service/StagingLocalService.java).
     In the previous step's example code snippet, you created an
     `ExportImportConfiguration` object intended for exporting layouts. Here's
     how to initiate that process: 

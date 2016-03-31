@@ -15,10 +15,11 @@ content. These can be coupled with *Templates* that define how to display that
 content. Content won't get stale, because you can take advantage of the
 [Scheduling](/discover/portal/-/knowledge_base/7-0/scheduling-web-content-publication)
 feature to determine when content is displayed and when it's
-removed. Additionally, you can configure Liferay's built-in *Workflow* system to
-set up a review and publishing process so only what you want winds up on the
-live site. Liferay gives you the management tools you need to run everything
-from a simple, one-page web site to an enormous, content-rich site.
+removed. Additionally, you can configure Liferay's built-in
+[Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow) system to set
+up a review and publishing process so only what you want winds up on the live
+site. Liferay gives you the management tools you need to run everything from a
+simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
 
@@ -93,9 +94,9 @@ in the bottom dropdown menu and click *Select* for the *Structure* heading.
 You'll notice there is a *Basic Web Content* structure and template available by
 default. This structure and template are used automatically if a custom
 structure and template are not added. You have the option of editing the default
-sturcture and template, if desired. To create a new structure in your chosen
-scope, simply click on the *Add* button (![Add Structure](../../../images/icon-add.png))
-in the Manage Structures popup.
+structure and template, if desired. To create a new structure in your chosen
+scope, simply click on the *Add* button
+(![Add Structure](../../../images/icon-add.png)) in the Manage Structures popup.
 
 It's very easy to create and edit structures: all you have to do is drag
 elements into the structure and then give them names. For instance, select the
@@ -104,7 +105,8 @@ the elements. To remove it from the structure, simply select the *Delete* icon
 (![Delete](../../../images/icon-trash.png)) in the upper right corner of the
 element. You also have the ability to duplicate the element, which can be done
 by selecting the *Duplicate* button (![Add](../../../images/icon-add-2.png)).
-You'll learn about the *Configuration* button later.
+You'll learn about the *Configuration*
+(![Configuration](../../../images/icon-wrench.png)) button later.
 
 Web content structures also have the capability of inheriting characteristics
 from other structures. When a parent structure is configured, the child
@@ -128,29 +130,26 @@ a specific hierarchy when choosing structures with the same `structureKey`:
 
 $$$
 
-For Liferay 6.2, the WebDAV URL feature was introduced for web content
-structures and templates so users could upload and organize resources from both
-a web interface and the file explorer of their desktop operating system. With
-the WebDAV URL, site administrators are capable of adding, browsing, editing,
-and deleting structures and templates on a remote server. After you complete
-your structure, you can access the WebDAV URL by re-opening the structure or
-template and clicking the *Details* section. If you'd like the see WebDAV in
-action, visit the
-[WebDAV Access](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
+The WebDAV URL feature is available for web content structures and templates so
+users could upload and organize resources from both a web interface and the file
+explorer of their desktop operating system. With the WebDAV URL, site
+administrators are capable of adding, browsing, editing, and deleting structures
+and templates on a remote server. After you complete your structure, you can
+access the WebDAV URL by re-opening the structure or template and clicking the
+*Details* section. If you'd like the see WebDAV in action, visit the
+[WebDAV Access](/discover/portal/-/knowledge_base/7-0/publishing-files#desktop-access-to-documents-and-media)
 section.
-
-<!-- TODO: Replace link for 7.0, when ready. -Cody -->
 
 +$$$
 
 **Note:** Some operating systems require a WebDAV server to be class level 2
-before (i.e., to support file locking) before allowing files to be read or
-written. The Documents and Media library uses a class level 2 WebDAV server but
-Web Content structures and templates do not. This means that Liferay's Document
-and Media library supports WebDAV file locking but Web Content structures and
-templates do not. However, on operating systems which require WebDAV servers to
-be class level 2, it's possible to avoid the restriction by using third-party
-WebDAV clients (e.g., [Cyberduck](http://cyberduck.ch)).
+(i.e., to support file locking) before allowing files to be read or written. The
+Documents and Media library uses a class level 2 WebDAV server but Web Content
+structures and templates do not. This means that Liferay's Document and Media
+library supports WebDAV file locking but Web Content structures and templates do
+not. However, on operating systems which require WebDAV servers to be class
+level 2, it's possible to avoid the restriction by using third-party WebDAV
+clients (e.g., [Cyberduck](http://cyberduck.ch)).
 
 $$$
 
@@ -215,7 +214,7 @@ purposes.
 These fields provide all you need to model any information type you would
 want to use as web content. Liferay customers have used structures to model
 everything from articles, to video metadata, to databases of wildlife. You're
-limited only by your imagination. To fire that imagination, you'll look more
+limited only by your imagination. To fuel that imagination, you'll look more
 closely at field settings.
 
 ### Editing Field Settings [](id=editing-field-settings)
@@ -233,8 +232,9 @@ Author when they're all named randomly?
 To solve this problem, all you need to do is set a variable name for each field
 as you add it to your structure. Go ahead and do this now. In your structure,
 add an element *HTML*. To change its field label and variable name, you'll need
-to access the field's settings. Hover over the field and select the wrench icon
-that appears in the upper right corner. Change the *Field Label* value to
+to access the field's settings. Hover over the field and select the
+*Configuration* icon (![Configuration](../../../images/icon-wrench.png)) that
+appears in the upper right corner. Change the *Field Label* value to
 *Instructions* and the *Name* value (variable name) to `Steps`. Now your
 template writer has a variable by which he or she can refer to this field.
 
@@ -281,10 +281,10 @@ remove options as well as edit each individual option's display name and value
 
 **Style:** Changes the line separtor's style (only available for Separator).
 
-For the Lunar Resort structure, type something in the *Tip* field that helps users
-know what to put into the Body element (example: *This is an HTML text area for
-the body of your content*). Now, when users hover over the Help icon near your
-title, your tip is displayed.
+For the Lunar Resort structure, type something in the *Tip* field that helps
+users know what to put into the Body element (example: *This is an HTML text
+area for the body of your content*). Now, when users hover over the Help icon
+near your title, your tip is displayed.
 
 #### Structure Default Values [](id=structure-default-values)
 
@@ -453,38 +453,28 @@ When this template is rendered, it looks something like this:
 
 +$$$
 
-**Note:** During the creation of a web content article, Liferay provides a
-*Basic Preview* button that gives you the option to preview your article as a
-final product before publishing. In some instances, the preview does not give an
-accurate depiction of the web content article. For example, fields provided by
-the `request` variable are not available because the `request` is not populated
-until the web content is rendered on a portal page. Therefore, the preview of
-the article would display errors. Use the *Basic Preview* functionality with
-caution.
+**Note:** During the creation of a web content article, Liferay provides an
+*Options* &rarr; *Preview* button that gives you the option to preview your
+article as a final product before publishing. In some instances, the preview
+does not give an accurate depiction of the web content article. For example,
+fields provided by the `request` variable are not available because the
+`request` is not populated until the web content is rendered on a Liferay page.
+Therefore, the preview of the article would display errors. Use the *Preview*
+functionality with caution.
 
 $$$
-
-<!-- Eduardo expressed that the *Basic Preview* functionality may change for
-7.0, giving the user a 100% accurate depiction of their web content article.
--Cody -->
 
 Liferay also provides the ability to create generic templates that aren't
 connected to a specific structure. In previous versions of Liferay, each
 template had to be associated with a structure. Now, you have options for
 whether to permanently assign a template to a structure or create a generic
-template and reuse its code for any structure. In other words, generic templates
-can be embedded in other templates, which allows for reusable code, JS library
-imports, or macros which will be imported by Velocity or FreeMarker templates in
-the system.
+template and reuse its code for any structure.
 
 Suppose you have three different Lunar Resort web content articles and
 structures with similar aesthetics. Instead of creating three different
 templates from scratch, you can use the same generic template for all three and
 build off of it. This creates a smarter and more efficient process when creating
-a multitude of similar web content articles. Generic templates are created the
-same way as regular, structure-based templates. The only setting that differs is
-the *Structure* option, which you'll need to leave blank to create a generic
-template.
+a multitude of similar web content articles.
 
 You can also embed applications in web content templates. This is a convenient
 way to ensure that specified apps are always located inside your web content
@@ -499,6 +489,16 @@ Currency Converter app in FreeMarker and Velocity:
 **Velocity:**
 
     $theme.runtime("com_liferay_currency_converter_web_portlet_CurrencyConverterPortlet");
+
++$$$
+
+**Warning:** The `theme` variable is no longer injected into the FreeMarker
+context. For more information about why the theme variable was removed for
+Liferay 7.0 and suggestions for updating your code, visit the
+[Taglibs Are No Longer Accessible via the theme Variable in FreeMarker](/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
+breaking change entry.
+
+$$$
 
 Liferay's taglibs are also accessible to web content administrators developing
 in FreeMarker. There is no need to instantiate these taglibs within your
@@ -526,12 +526,13 @@ pointer over it for a more detailed description.
 
 ![Figure 6: You can hover your pointer over a variable for a more detailed description.](../../../images/web-content-templates-create.png)
 
-The interactive template editor is available for the FreeMarker and Velocity
-languages. Depending on which language you select, the variable content changes
-so you're always adding content in the language you've chosen. Another cool
-feature for the template editor is the autocomplete feature. It can be invoked
-by typing *${* which opens a drop-down menu of available variables. By clicking
-one of the variables, the editor inserts the variable into the template editor.
+The interactive template editor is available for the FreeMarker, Velocity, and
+XSL languages. Depending on which language you select, the variable content
+changes so you're always adding content in the language you've chosen. Another
+cool feature for the template editor is the autocomplete feature. It can be
+invoked by typing *${* which opens a drop-down menu of available variables. By
+clicking one of the variables, the editor inserts the variable into the template
+editor.
 
 +$$$
 
@@ -546,10 +547,8 @@ After you've saved your template, Liferay provides a WebDAV URL and static URL.
 These values access the XML source of your structure. You can find these URLs by
 returning to your template after it's been saved and expanding the *Details*
 section. For more information on WebDAV and the uses of the WebDAV URL,
-reference the [WebDAV Access](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
+reference the [WebDAV Access](/discover/portal/-/knowledge_base/7-0/publishing-files#desktop-access-to-documents-and-media)
 section.
-
-<!-- TODO: Update link above for 7.0, when available. -Cody -->
 
 Now that you've created a handsome template and know how to use the template
 editor, it's time to decide who the lucky people are that get to use your new

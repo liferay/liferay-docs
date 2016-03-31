@@ -1,4 +1,4 @@
-# Using Worklfow [](id=using-worklfow)
+# Using Workflow [](id=using-workflow)
 
 The ancient Greeks were pretty important, so we decided to name Liferay's
 workflow engine *Kaleo*. In Greek, Kaleo means "called ones," which is
@@ -12,7 +12,7 @@ you have to do is create one XML document.
 <!--And if you're a Liferay EE customer,
 you get a graphical workflow designer which gives you a point and click
 interface to create workflows. 
-DXP customer? Just commenting out for now.
+Just commenting out for now.
 -->
 
 There are several aspects to workflow that you need to understand: 

@@ -16,13 +16,14 @@ configurability with little effort.
 
 The first important concept is that the method described here uses *typed*
 configuration. This means that the application configuration isn't just a list
-of key-value pairs. The values can be types, like `Integer`, a list of
-`Strings`, a URL, etc. We believe that using typed configurations prevents many
-programmatic errors. Moreover, we believe that typed configurations are easier
-to use than untyped configurations. Related to this, the configuration options
-should be programmatically explicit, so that developers can use autocomplete in
-modern IDEs to find out all of the configuration options of a given application
-or one of its components.
+of key-value pairs. The values can have types, like `Integer`, a list of
+`Strings`, a URL, etc. It's even possible to use your own custom types,
+although that's beyond the scope of this tutorial. We believe that using typed
+configurations prevents many programmatic errors. Moreover, we believe that
+typed configurations are easier to use than untyped configurations. Related to
+this, the configuration options should be programmatically explicit, so that
+developers can use autocomplete in modern IDEs to find out all of the
+configuration options of a given application or one of its components.
 
 A second concept that you should know about is *modularity*. With Liferay 7,
 applications are modular and are built as a collection of lightweight
@@ -49,7 +50,7 @@ can have:
 That's it for now. You are ready to get started with some code. If you already
 had a portlet or service that was configurable using the traditional mechanisms
 of Liferay 6.2 and before, you might also want to read the
-[How to change your portlets and services to use the new Configuration API (not yet written)]() tutorial.
+[How to change your portlets and services to use the new Configuration API (not yet written)]() (not yet written) tutorial.
 
 ## Making Your Application Configurable [](id=making-your-application-configurable)
 
@@ -99,12 +100,19 @@ The fully-qualified class name of the `Meta` class referred to above is
 the `Meta.OCD` and `Meta.AD` annotations, please refer to this bnd
 documentation:
 [http://bnd.bndtools.org/chapters/210-metatype.html](http://bnd.bndtools.org/chapters/210-metatype.html).
-The annotations `@Meta.OCD` and `@Meta.AD` have also been included as part of
-the OSGi standard version R6 with the names `@ObjectClassDefinition` and
-`@AttributeDefinition`. However, Liferay still uses the bnd annotations since
-the standard annotations are not available at runtime, which is necessary for
-some of the Liferay specific features described below. For the basic usage (the
-one described in this section) the standard annotations can be used safely.
+In order to use the `Meta.OCD` and `Meta.AD` annotations in your modules, you must specify a dependency on the bnd library. We recommend using bnd version 3. Here's an example of how to include this dependency in a Gradle project:
+
+    dependencies {
+        compile group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.1.0"
+    }
+
+Note: The annotations `@Meta.OCD` and `@Meta.AD` are part of the bnd library
+but have also been included as part of the OSGi standard version R6 with the
+names `@ObjectClassDefinition` and `@AttributeDefinition`. However, Liferay
+still uses the bnd annotations since the standard annotations are not available
+at runtime, which is necessary for some of the Liferay specific features
+described below. For the basic usage (the one described in this section) the
+standard annotations can be used safely.
 
 Add the following line to your project's `bnd.bnd` file:
 
@@ -139,7 +147,7 @@ Here's a simple example:
 
     }
 
-Here are the most relevant aspects of this example one by one:
+Here are the most relevant aspects of this example:
 
 1.  This class is a component, specified with the `@Component` annotation.
 2.  This component uses the configuration with the ID
@@ -152,6 +160,11 @@ Here are the most relevant aspects of this example one by one:
     which is easier to handle.
 4.  The configuration is stored in a `volatile` field. Don't forget to make it
     `volatile` or you'll run into weird problems.
+
+Note: The bnd library also provides a class called `Configurable` with a
+`createConfigurable()` method. You can use that instead of Liferay's
+`ConfigurableUtil` without any problems. Liferay created the `ConfigurableUtil`
+class to improve the performance of bnd's implementation.
 
 That's it. As you can see with very few lines of code, you have a configurable
 application that dynamically changes its configuration, has an auto-generated
@@ -336,56 +349,132 @@ the following example:
 The fully qualified class name of the `@ExtendedObjectClassDefinition` class is
 `com.liferay.portal.metatype.annotations.ExtendedObjectClassDefinition`.
 
-## Supporting Different Configurations per Scope [](id=supporting-different-configurations-per-scope)
+Note: Currently, the infrastructure used by System Settings relies on the
+`configurationPid` being the same as the class name of the interface. If they
+don't match, it will not be able to provide any information provided through
+`ExtendedObjectClassConfiguration`. This annotation is distributed through a
+module called `portal-configuration-metatype` so you must include a dependency
+on it in order to use it.
+
+Note: At the time of writing this, no public JAR of this library is available.
+In order to declare this dependency, you must create and publish your own JAR
+or refer to the project directly:
+
+    dependencies {
+        compile project(":portal-configuration:portal-configuration-metatype")
+    }
+
+By the time 7.0 is released, a public JAR will be available.
+
+## Supporting Different Configurations per Virtual Instance, Site, or Portlet Instance [](id=supporting-different-configurations-per-scope)
 
 When an application is deployed to Liferay, it's common to need different
 configurations depending on the scope. That means having different
-configurations for a given application per portal instance or per site. It's
-also very common to need different configurations for each portlet instance.
-Liferay 7 provides an easy way to achieve this with little effort through a new
-framework called the Module Configuration API.
+configurations for a given application per virtual instance (a.k.a. company),
+site (a.k.a. group), or portlet instance. It's also very common to need
+different configurations for each portlet instance. Liferay 7 provides an easy
+way to achieve this with little effort through a new framework called the
+Configuration API that is based on the standard OSGi Configuration Admin API
+that we just showed in the previous section.
 
-In order to use the Module Configuration API, you need to
+### Using the Configuration Provider [](id=using-the-configuration-provider)
 
-1.  Declare the configuration interface by creating a
-    `ConfigurationBeanDeclaration` class:
+When using the Configuration Provider, instead of receiving the configuration
+directly, the class that wants to access it will need to receive a
+`ConfigurationProvider` from which to obtain the configuration. Additionally,
+you need to "register" your class.
 
-        @Component
-        public class RSSPortletInstanceConfigurationBeanDeclaration
-            implements ConfigurationBeanDeclaration {
+Note: `ConfigurationProvider` is part of Liferay's kernel API so you don't need
+to add a new dependency to use it. However, its implementation is distributed
+as a module called `portal-configuration-module-configuration`, so you will need
+to make sure it is installed in order to use it.
 
-            @Override
-            public Class getConfigurationBeanClass() {
-                return RSSPortletInstanceConfiguration.class;
-            }
+Before using the `ConfigurationProvider`, it is necessary to register the
+configuration class by writing a class that implements
+`ConfigurationBeanDeclaration`. This class only has one method which returns
+the class of the interface you created in the previous section. By doing this,
+the system is able to keep track of any configuration changes as they happen.
+This makes requests for the configuration very fast. Here is an example:
 
+Declare the configuration interface by creating a
+`ConfigurationBeanDeclaration` class:
+
+    @Component
+    public class RSSPortletInstanceConfigurationBeanDeclaration
+        implements ConfigurationBeanDeclaration {
+
+        @Override
+        public Class getConfigurationBeanClass() {
+            return RSSPortletInstanceConfiguration.class;
         }
 
-2.  Obtain the configuration like this:
+    }
 
-        RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
-            _configurationProvider.getConfiguration(
-                RSSPortletInstanceConfiguration.class,
-                new PortletInstanceSettingsLocator(
-                    themeDisplay.getLayout(),
-                    "com.liferay.rss.web.configuration.RSSPortletInstanceConfiguration"));
+Once you have created your `ConfigurationBeanDeclaration`, you can use a
+`ConfigurationProvider`. Here's how you can obtain a reference to it:
 
-3.  In order to get the `ConfigurationFactory`, your class must have a setter
-    method with the `@Reference` annotation. Use a setter method like this for
-    components:
+- For components:
 
         @Reference
         protected void setConfigurationProvider(ConfigurationProvider configurationProvider) {
-            _configurationProvider = _configurationProvider;
+            _configurationProvider = configurationProvider;
         }
 
-    Use a setter method like this for OSGi services:
+- For Service Builder services:
 
-        @ServiceReference(type = ConfigurationProvider)
+        @ServiceReference(type = ConfigurationProvider.class)
         protected ConfigurationProvider configurationProvider;
 
-    Remember not to confuse an OSGi service with Liferay service. A Liferay
-    service is also known as a Liferay API.
+- For Spring beans: It is possible to use the same mechanism as for Service
+  Builder services (`@ServiceReference`). Check the documentation on how to
+  integrate Spring beans with OSGi services for more details.
+
+Later, the configuration can be obtained using one of the following methods of
+the provider:
+
+- `getCompanyConfiguration()`: Should be used when you want to support
+  different configurations per virtual instance. In this case, the
+  configuration is usually entered by an admin through Control Panel &rarr;
+  Configuration &rarr; Instance Settings. Since this UI is not automatically
+  generated (yet) you will need to extend the UI with your own form.
+
+- `getGroupConfiguration()`: Should be used when you want to support different
+  configurations per site (or, if desired, per page scope). Usually this
+  configuration is specified by an admin through the Configuration menu option
+  in an app accessing through the site administration menu. That UI is
+  developed as a portlet configuration view.
+
+- `getPortletInstanceConfiguration()`: Should be used to obtain the
+  configuration for an specific portlet instance. Most often you should not be
+  using this directly and use the convenience method in PortletDisplay instead
+  as shown below.
+
+Here are a few real world examples from Liferay’s source code:
+
+    JournalGroupServiceConfiguration configuration =
+        configurationProvider.getGroupConfiguration(
+            JournalGroupServiceConfiguration.class, groupId);
+
+    MentionsGroupServiceConfiguration configuration =
+      _configurationProvider.getCompanyConfiguration(
+         MentionsGroupServiceConfiguration.class, entry.getCompanyId());
+
+Next, you'll learn how to access a portlet's configuration from outside of an
+OSGi component.
+
+### Accessing the Portlet Instance Configuration Through the PortletDisplay [](id=accessing-the-portlet-instance-configuration-through-the-portletdisplay)
+
+Often it's necessary to access a portlet's settings from its JSPs or from Java
+classes that are not OSGi components. To make it easier to read the settings in
+these cases, a new method has been added to `PortletDisplay` (available as a
+request object). Here is an example of how to use it:
+
+    RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
+        portletDisplay.getPortletInstanceConfiguration(
+            RSSPortletInstanceConfiguration.class);
+
+As you can see, it knows how to find the values and returns a typed bean
+containing them just by passing the configuration class.
 
 ## Specifying the Scope of the Configuration [](id=specifying-the-scope-of-the-configuration)
 
@@ -393,9 +482,9 @@ The `ExtendedObjectClassDefinition` annotation allows you to specify the scope
 of the configuration. This should match how the configuration object is
 retrieved through the provider (your choice). The valid options are:
 
-- Group: for site scope
-- Company: For virtual instance scope
-- System: for system scope
+- Scope.GROUP: for site scope
+- Scope.COMPANY: For virtual instance scope
+- Scope.SYSTEM: for system scope
 
 Here is an example:
 
@@ -413,45 +502,6 @@ Here is an example:
 In Liferay 7.0, the scope property is not being used for anything other than
 making it appear in System Settings so that an administrator change change its
 value. In future versions of Liferay, it will probably have more purposes.
-
-### Accessing the Portlet Instance Configuration Through the PortletDisplay [](id=accessing-the-portlet-instance-configuration-through-the-portletdisplay)
-
-Often it's necessary to access a portlet's settings from its JSPs or from Java
-classes that are not OSGi components. To make it easier to read the settings in
-these cases, a new method has been added to `PortletDisplay` (available as a
-request object). Here is an example of how to use it:
-
-    RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
-        portletDisplay.getPortletInstanceConfiguration(
-            RSSPortletInstanceConfiguration.class);
-
-As you can see, it knows how to find the values and returns a typed bean
-containing them just by passing the configuration class.
-
-### Reusing the Same Configuration Class for Different Purposes [](id=reusing-the-same-configuration-class-for-different-purposes)
-
-The configuration service also allows a single class to be reused for different
-configuration needs. In order to support this, you must create a class that
-maps the different scenarios to the class that will be used. Here is an
-example:
-
-    @Component
-    public class RSSPortletInstanceConfigurationPidMapping implements ConfigurationPidMapping {
-
-        @Override
-        public Class<?> getConfigurationBeanClass() {
-            return RSSPortletInstanceConfiguration.class;
-        }
-
-        @Override
-        public String getConfigurationPid() {
-            return RSSPortletKeys.RSS;
-        }
-
-    }
-
-The class above allows the `RSSPortletInstanceConfiguration` class to be used
-in different scenarios.
 
 ## Summary [](id=summary)
 
