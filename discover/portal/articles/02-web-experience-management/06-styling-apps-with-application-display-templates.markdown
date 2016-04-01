@@ -38,7 +38,6 @@ list below specifies the apps that can be customized using ADTs.
 - *Categories Navigation*
 - *Documents and Media*
 - *Language Selector*
-- *Media Gallery*
 - *Navigation Menu*
 - *RSS Publisher*
 - *Site Map*
@@ -46,11 +45,11 @@ list below specifies the apps that can be customized using ADTs.
 - *Wiki*
 
 To create a new ADT, click *Add* and select the template you'd like to create,
-based on application type. Then enter the name and, optionally, a description and a
-small image to use. You can select the language type for your template (FTL or
-VM). Lastly, the *Script* option lets you browse your file system for a template
-on your file system, or you can use the editor and create one directly. On
-the left side of the template editor, you'll notice a palette of common
+based on application type. Then enter the name and, optionally, a description
+and a small image to use. You can select the language type for your template
+(FTL or VM). Lastly, the *Script* option lets you browse your file system for a
+template on your file system, or you can use the editor and create one directly.
+On the left side of the template editor, you'll notice a palette of common
 variables used for making templates. This is a great reference when creating
 your template. To place one of the variables into the template editor, simply
 position your cursor where you want it placed, and click the variable name.
@@ -96,14 +95,12 @@ access the XML source of your template. You can find these URLs by clicking the
 ADT from the menu and expanding the *Details* section. With the WebDAV URL, site
 administrators are capable of adding, browsing, editing, and deleting ADTs on a
 remote server. If you'd like to learn more about what the WebDAV URL can do,
-visit the *Document Management* chapter's [WebDAV access](discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
-section.
-
-<!--TODO: Update WebDAV link above for 7.0, when available. -Cody -->
+visit the section on
+[WebDAV access](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/publishing-files#desktop-access-to-documents-and-media).
 
 +$$$
 
-**Note:** Embedding appss into ADTs, although possible, is not recommended
+**Note:** Embedding apps into ADTs, although possible, is not recommended
 because this could cause conflicts with other apps or unexpected behavior (e.g.,
 embedding an app that aggregates data to the breadcrumb). If embedding an app
 into an ADT is your only option, make sure it does not interfere with other
@@ -112,13 +109,12 @@ apps.
 $$$
 
 To enable your ADT for an application, navigate to the app you want to modify
-and open its *Configuration* menu. In the *Templates* sub-tab located within the
-*Setup* tab, select your ADT from the *Display Template* drop-down menu. Also,
-you can manage site-specific display templates for your app: do this by clicking
-the *Manage Display Templates for [SPECIFIC_SITE]* link next to the *Display
-Template* drop-down menu. A window will display with a list of your configured
-templates only available for your site with options to add new templates or edit
-existing templates.
+and open its *Configuration* menu. In the *Setup* tab, select your ADT from the
+*Display Template* drop-down menu. Also, you can manage site-specific display
+templates for your app: do this by clicking the *Manage Display Templates for
+[SPECIFIC_SITE]* link next to the *Display Template* drop-down menu. A window
+will display with a list of your configured templates only available for your
+site with options to add new templates or edit existing templates.
 
 ![Figure 3: In the *Configuration* menu of an app, you can edit and manage available ADTs.](../../images/adt-configuration.png)
 
@@ -130,20 +126,15 @@ your Liferay instance.
    (![Add](../../images/icon-control-menu-add.png)) &rarr; *Applications*
    &rarr; *Content Management* &rarr; *Media Gallery*.
 
-2. Select the *Options* button (![Options](../../images/icon-app-options.png))
-   from the top right corner of the app and click *Configuration*.
-
-3. Enable the *Show Actions* and *Show Folder Menu* display settings. Then click
-   *Save* and close the popup.
-
-4. Click the app's *Actions* button (![Actions](../../images/icon-actions.png))
+2. Click the app's *Add* button (![Actions](../../images/icon-app-add.png))
    &rarr; *Multiple Media* and select two custom photos to display. Then click
    *Save*, and navigate back to the main application screen.
 
-5. Notice the default format of the pictures. To change the display template for
-   this app, navigate back to *Options* &rarr; *Configuration*.
+3. Notice the default format of the pictures. To change the display template for
+   this app, navigate to *Options*
+   (![Options](../../images/icon-app-options.png)) &rarr; *Configuration*.
 
-6. From the *Display Template* drop-down menu, select *Carousel*. Then click
+4. From the *Display Template* drop-down menu, select *Carousel*. Then click
    *Save*.
 
 	![Figure 4: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../images/adt-carousel.png)
