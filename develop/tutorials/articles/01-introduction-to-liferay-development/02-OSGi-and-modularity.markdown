@@ -445,4 +445,10 @@ for you to learn more.
 
 ## Related Topics [](id=related-topics)
 
+[BLADE CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
 
+[Creating A Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+
+[Migrating A Legacy Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-legacy-application)
+
+[
