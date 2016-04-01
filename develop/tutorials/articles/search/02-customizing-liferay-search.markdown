@@ -1,9 +1,9 @@
-# Customizing Liferay Search
+# Customizing Liferay Search [](id=customizing-liferay-search)
 
 There are several extension points available for users to customize.  The most
 obvious is the ability to add a new search engine adapter.
 
-## Adding a new Search Engine Adapter
+## Adding a new Search Engine Adapter [](id=adding-a-new-search-engine-adapter)
 
 To add a new search engine adapter, developers must create the following
 components and publish them to Liferay's OSGi registry:
@@ -35,7 +35,7 @@ components and publish them to Liferay's OSGi registry:
     - Should be published to Liferay's OSGi registry along with the property
       `search.engine.id=[searchEngineId]`.
 
-## Customizing IndexerRequestBufferOverflowHandler
+## Customizing IndexerRequestBufferOverflowHandler [](id=customizing-indexerrequestbufferoverflowhandler)
 
 `IndexerRequestBufferOverflowHandler` controls how the search infrastructure
 handles situations where buffered indexer requests has exceeded the configured
@@ -44,7 +44,7 @@ maximum buffer size.
 To customize, implement an `IndexerRequestBufferOverflowHandler` and publish it
 to Liferay's OSGi registry.
 
-## Customizing HitsProcessors
+## Customizing HitsProcessors [](id=customizing-hitsprocessors)
 
 `com.liferay.portal.kernel.hits.HitsProcessor` objects are held in a
 `com.liferay.portal.kernel.hits.HitsProcessorRegistry`. To add a new

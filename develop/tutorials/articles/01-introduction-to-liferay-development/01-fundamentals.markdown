@@ -1,4 +1,4 @@
-# Fundamentals 
+# Fundamentals [](id=fundamentals)
 
 Liferay is based on the Java platform and can be extended by adding new
 applications, customizing existing applications, modifying its behavior, or
@@ -64,7 +64,7 @@ The same is true for customization. Almost anything in Liferay can be
 customized. Application interfaces can be redesigned, the whole user interface
 can be themed, and menu items can be added or removed. 
 
-## Modules and Components 
+## Modules and Components [](id=modules-and-components)
 
 All applications, extensions, and customizations built on Liferay are
 distributed and deployed as *modules*. A module is just a typical JAR file,

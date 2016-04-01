@@ -1,4 +1,4 @@
-# Introduction to Themes
+# Introduction to Themes [](id=introduction-to-themes)
 
 A Liferay Theme is the overall look and feel for a site. Themes are a 
 combination of CSS, JavaScript, HTML, and FreeMarker templates. Although the

@@ -1,4 +1,4 @@
-# OSGi and Modularity
+# OSGi and Modularity [](id=osgi-and-modularity)
 
 In the 1970s, personal computers were in their nascent stage of development, and
 they were expensive. The core component of a personal computer, the
@@ -45,7 +45,7 @@ Modularity is a powerful paradigm for designing any complex system like Liferay.
 And now Liferay has made a bold move and re-engineered its product to take
 advantage of modularity. 
 
-## The Benefits of Modularity
+## The Benefits of Modularity [](id=the-benefits-of-modularity)
 
 Modularity makes writing software, especially as a team, fun! Here are some
 benefits: 
@@ -72,7 +72,7 @@ There are many benefits to modular software development, and we can only scratch
 the surface here. Once you start, you may find it hard to go back to doing
 things any other way. 
 
-## Semantic Versioning 
+## Semantic Versioning [](id=semantic-versioning)
 
 In any complex system there are a ton of supporting libraries. Developers find a
 library that performs a specific function which they can call to provide
@@ -100,7 +100,7 @@ installed.
 In this way, dependencies are managed in a much more straightforward way by the
 system, freeing you to move forward with your project much more easily. 
 
-### ProviderType vs. ConsumerType
+### ProviderType vs. ConsumerType [](id=providertype-vs-consumertype)
 
 In a modular, semantically versioned world, then, code is broken up into modules
 that have various inter-dependencies. These are managed by the container at
@@ -120,7 +120,7 @@ a `@ConsumerType`. This is a module that *consumes* or uses the service. This is
 a complex concept that is better explained when you get to the code, so for now
 just keep it in the back of your mind, as you'll encounter it later. 
 
-## Extensibility 
+## Extensibility [](id=extensibility)
 
 As you might imagine, the system described above contains all the tools
 necessary to make a well designed system that allows developers not only to
@@ -137,7 +137,7 @@ ranking higher than the default ranking. This is a simple and natural way to
 extend the system, and it's incorporated into the design of the platform from
 the ground up. 
 
-## Modules
+## Modules [](id=modules)
 
 Now that you have all the background information you need, it's time to show you
 what a project looks like and how all of these concepts work themselves out in
@@ -148,7 +148,7 @@ out the [tooling](/develop/tutorials/7-0/tooling) tutorials.
 This project is very simple: all it does is print out a string to the console.
 This string is called a greeting. 
 
-### API
+### API [](id=api)
 
 Your first module is the API module. This module defines the contract that the
 provider implements and the consumer uses. Its structure looks like this: 
@@ -201,7 +201,7 @@ declare one method that asks for a `String` and doesn't return anything.
 That's it! As you can see, creating modules is not very different from creating
 other Java projects. 
 
-### Provider
+### Provider [](id=provider)
 
 An interface only defines an API; in order to make it do anything, it must be
 implemented. This what the provider module is for. Here's what a provider module
@@ -294,7 +294,7 @@ block:
 
 That's all there is to a provider module. 
 
-### Consumer
+### Consumer [](id=consumer)
 
 The consumer uses the API defined by the API module and implemented by the
 provider module. You can have many different kinds of consumer modules in
@@ -415,7 +415,7 @@ is easy and straightforward. Because of the API-Provider-Consumer contract and
 Semantic Versioning, you have a powerful toolset for dependency resolution and
 API consistency. This makes your software easy to manage, enhance, and support. 
 
-## A Typical Liferay Application
+## A Typical Liferay Application [](id=a-typical-liferay-application)
 
 Liferay applications follow this model closely. If you look at a typical
 application from Liferay's source, you'll generally find at least four modules: 
@@ -443,6 +443,6 @@ wiki.
 Are you excited yet? Are you ready to start developing? Here are some resources
 for you to learn more. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 

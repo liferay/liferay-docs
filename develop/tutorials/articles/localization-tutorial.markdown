@@ -35,7 +35,7 @@ used in Liferay. If you have Liferay running locally, append the URL with a
 supported locale to see how Liferay's language keys are translated (for example,
 enter `localhost:8080/es`).
 
-![Figure x: Append the locale to your running Liferay's URL and see Liferay's translation power in action.](../images/locale-message-spain.png)
+![Figure 1: Append the locale to your running Liferay's URL and see Liferay's translation power in action.](../images/locale-message-spain.png)
 
 Language keys are just keys you'll use in place of a hard coded, fully
 translated String value in your user interface code. For example, you can use a
@@ -182,7 +182,7 @@ language key, it will automatically be translated depending on the user's locale
 How do you get the language module's language properties files into the jar
 containing your portlet components and views? 
 
-![Figure x: You need to include the language properties files in the JAR of the module that contains your portlet components and your JSPs.](../images/web-jar-localized.png)
+![Figure 2: You need to include the language properties files in the JAR of the module that contains your portlet components and your JSPs.](../images/web-jar-localized.png)
 <!-- I worked with this open clip art:
 https://openclipart.org/detail/177364/empty-glass-jar -->
 
