@@ -3,7 +3,7 @@
 Blade Tools allows you to very easily create Liferay applications. In this
 tutorial, you'll learn how. If you haven't yet installed Blade
 Tools, please refer to the
-[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
 tutorial. Blade Tools provides project templates for creating certain types of
 Liferay modules. At the time of this writing, the available templates include
 activators, JSP hooks, MVC portlets, portlets, services, service builders, and
@@ -182,7 +182,7 @@ application!
 
 ## Related Topics [](id=related-topics)
 
-[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
 
 [Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
 
