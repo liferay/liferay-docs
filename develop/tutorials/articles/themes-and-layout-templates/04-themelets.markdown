@@ -20,15 +20,15 @@ This themelet simply alters the animation for Liferay's Product Menu.
 If there is something you find yourself coding over and over again for themes,
 it's a good candidate for a themelet.
 
-This tutorial demonstrates the following:
+This tutorial demonstrates how to:
 
-**How to create a themelet to extend your theme**
+- Create a themelet to extend your theme
 
-**How to install a Themelet**
+- Install a Themelet
 
 In order to create a themelet, you need the Node.js build tools installed. The
-tutorial [Creating Themes with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-themes-with-the-liferay-theme-generator) 
-explains how to install these tools and how to create a theme.
+[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+tutorial explains how to install these tools and how to create a theme.
 
 ## Creating a Themelet [](id=creating-a-themelet)
 
@@ -86,6 +86,6 @@ your theme development bag o' tricks.
 
 ## Related Topics [](id=related-topics)
 
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-your-themes)
+[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
 
-[Creating Themes with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-themes-with-the-liferay-theme-generator)
+[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
