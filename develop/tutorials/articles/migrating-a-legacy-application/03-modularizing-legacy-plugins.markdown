@@ -36,6 +36,24 @@ modules for your service implementation and service API classes. This tutorial
 assumes the Maven project model, although any build tools or directory setup is
 permissible.
 
++$$$
+
+**Note:** It's recommended that you use the build plugin versions that support
+the latest OSGi features. The following Gradle or Maven build plugin versions
+should be used in their respective build frameworks:
+
+**Gradle**
+- biz.aQute.bnd:biz.aQute.bnd.gradle:3.1.0 **or**
+- org.dm.gradle:gradle-bundle-plugin:0.8.1
+
+**Maven**
+- biz.aQute.bnd:bnd-maven-plugin:3.1.0 **or**
+- org.apache.felix:maven-bundle-plugin:3.0.1
+
+<!-- These versions support the R6 OSGi released features. -Cody -->
+
+$$$
+
 1.  Create the parent directory for your application. This parent directory is
     home for your application's independent modules and configuration files. For
     example, if your application's name is *Tasks*, then your parent directory
