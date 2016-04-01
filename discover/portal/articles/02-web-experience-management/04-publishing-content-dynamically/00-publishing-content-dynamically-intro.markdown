@@ -28,9 +28,10 @@ This chapter covers the following topics:
 
 - Tagging and categorizing content
 - Using targeted, single value, and multi-value vocabularies
-- Using faceted search
-- Using the Asset Publisher
 - Adding relationships between assets
+- Using faceted search
+- Publishing assets
 - Publishing RSS feeds
+- Restoring deleted assets
 
 The first thing you'll learn about is tagging and categorizing content.
