@@ -114,7 +114,7 @@ When configuring your SDK in a workspace, you can take advantage of all the new
 functionality workspaces provide and also use the SDK environment that you're
 used to. To learn more about how to convert legacy applications to 7.0 modules
 and what you should consider before making the jump, visit the
-[Converting Legacy Applications to Modules](/develop/tutorials/-/knowledge_base/7-0/converting-legacy-applications-to-modules)
+[Modularizing Legacy Applications](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)
 tutorial.
 
 If you used the `blade init -f` command to generate your workspace, your Plugins
