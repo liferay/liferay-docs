@@ -159,7 +159,7 @@ The Themes Generator prompts you for the following things:
 The generator creates a new theme project in your current directory. The theme
 inherits styles from the [liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled)
 theme. Note that you can switch to using a different base theme by executing the
-[`gulp extend`](/develop/reference/-/knowledge_base/7-0/themes-gulp-tasks)
+[`gulp extend`](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
 command. 
 
 **Important**: By default, your theme is based off of the styled theme and uses
@@ -209,14 +209,14 @@ To deploy your theme to your configured Liferay instance, execute this command:
     gulp deploy
 
 Now that you've created a theme and deployed it, you can use the theme project's
-gulp tasks to further develop and manage your theme. Refer to the [Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/themes-gulp-tasks)
+gulp tasks to further develop and manage your theme. Refer to the [Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
 reference document to learn the Gulp tasks available to you.
 
 There you have it! You're ready to design a terrific theme!
 
 ## Related Topics [](id=related-topics)
 
-[Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/themes-gulp-tasks)
+[Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
 
 [Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors)
 

@@ -21,7 +21,7 @@ Liferay provides an easy-to-use tool called the [Themes Generator](/develop/tuto
 that helps automate the theme development process, but you can use other tools 
 and environments, such as `ant`, to create themes.
 
-Themes created with the Themes Generator give you access to [theme gulp tasks](/develop/reference/-/knowledge_base/7-0/themes-gulp-tasks) 
+Themes created with the Themes Generator give you access to [theme gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks) 
 that offer basic functions, such as `build` and `deploy`, as well as 
 more complex interactions, such as auto deploying when a change is made and 
 setting the base theme.
