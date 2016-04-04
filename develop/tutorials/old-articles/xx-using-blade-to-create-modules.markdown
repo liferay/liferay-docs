@@ -2,7 +2,7 @@
 
 [Blade Tools](https://github.com/gamerson/blade.tools) is Liferay's recommended
 tool for developing Liferay modules. See the
-[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
 tutorial and the other tutorials in this section to learn how to use Blade
 Tools. At the time of this writing, Blade Tools contains only a few project
 templates. Eventually, many more project templates will be added to
@@ -268,7 +268,7 @@ tutorial and the other tutorials in this section for more information.
 
 ## Related Topics [](id=related-topics)
 
-[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
 
 [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 

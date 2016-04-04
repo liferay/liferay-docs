@@ -26,6 +26,8 @@ version = '1.0'
 
 dependencies {
 	compile 'com.liferay.portal:portal-service:7.0.0-SNAPSHOT'
-	compile 'org.osgi:org.osgi.compendium:5.0.0'
+	compile 'biz.aQute.bnd:biz.aQute.bndlib:3.1.0'
+	compile  'org.osgi:org.osgi.core:6.0.0'
+
 	compile files('lib/com.liferay.docs.greetingapi-1.0.jar')
 }

@@ -70,8 +70,8 @@ app, as in the image above. If you want to get even more detailed with how your
 related assets are displayed, you can place two Related Assets applications on
 the page and name one *Related Blogs* and the other *Related Photos*. To change
 the name of an application's title, click the application's *Options* icon and
-select *Look and Feel*. Select the *Use Custom Title* checkbox and provide the
-custom title.
+select *Look and Feel Configuration*. Select the *Use Custom Title* checkbox and
+provide the custom title.
 
 ![Figure 2: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets application. In the screenshot, we renamed the three Related Assets apps on the left and updated their configurations.](../../../images/related-assets-app-2.png)
 

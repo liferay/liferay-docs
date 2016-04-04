@@ -1,101 +1,25 @@
-# Converting Legacy Applications to Modules [](id=converting-legacy-applications-to-modules)
+# Modularizing Legacy Plugins [](id=modularizing-legacy-plugins)
 
-You've probably heard the term *modularity* discussed frequently in relation to
-Liferay 7.0. With Liferay 7.0 transforming into a modular platform, Liferay
-applications will be composed of one or more
-[modules](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module).
+An application with properly modularized plugins offers several benefits. You
+can release individually its plugins without releasing the entire application.
+External clients can consume services from particular plugins, without having to
+depend on an entire application. And by splitting up large amounts of code into
+concise modules, teams can more easily focus on particular areas of the
+application. These are just a few reasons to modularize application plugins. 
 
-A module doesn't use the traditional Liferay application structure from previous
-versions. Liferay is following a different structure for modules that you'll
-learn about in this tutorial. You, however, are not required to follow
-Liferay's standard application structure; you have the freedom to structure your
-application's modules however you wish.
-
-A module in Liferay is very similar to a standard Java application with some
-additional metadata and annotations. The annotations replace the need for XML
-file descriptors in the application and are easier to manage since everything is
-in one place.
-
-The options you have for upgrading your application to Liferay 7.0 are
-discussed briefly in the
-[Migrating Legacy Applications to New Plugins SDK](/develop/tutorials/-/knowledge_base/7-0/migrating-legacy-applications-to-new-plugins-sdk)
-tutorial. Because Liferay 7.0 maintains backwards compatibility, you have two
-options:
-
-1. You can keep your legacy application as a WAR-style application.
-2. You can convert your application into modules. Before you begin following
-   the steps in this tutorial to convert your application into modules,
-   consider the recommendations regarding if and when to convert your legacy
-   application.
-
-Before you begin converting your legacy application into modules, we recommend
-that you first migrate your legacy plugin to a Liferay 7.0 compatible WAR-style
-application. It is much easier to convert a legacy application to modules when
-the API and breaking changes have already been updated. If you jump from a
-legacy 6.2 application to 7.0 modules, it will be much more difficult to debug
-and figure out which issues are related to API changes and which are related to
-the migration process.
-
-Converting your legacy application to modules might not always be the best
-choice. In some scenarios, it could make sense to stick with your traditional
-WAR model. Below, you'll learn some important tips to guide your decision on
-whether to convert your legacy application to modules.
-
-**When to convert?**
-
-- If you have a very large application with many lines of code. For example, if
-  there are many developers that are collaborating on an application
-  concurrently and making changes frequently, separating the code into modules
-  will increase productivity and provide the agility to release more
-  frequently.
-- If your plugin has reusable parts that you'd like to consume from elsewhere.
-  For instance, suppose you have business logic that you're reusing in multiple
-  different projects. Instead of copying that code into several different WARs
-  and deploying those WARs to different customers, you can convert your
-  application to modules and consume the services provided by those modules
-  from other modules.
-
-**When not to convert?**
-
-- You have a portlet that's JSR-168/286 compatible and you still want to be
-  able to deploy it into another portlet container. If you want to retain that
-  compatibility, it is recommended to stay with the traditional WAR model.
-- You're using a complex legacy web framework that is heavily tied to the Java
-  EE programming model, and the amount of work necessary to make that work with
-  OSGi is more than you feel is necessary or warranted.
-- If your plugin interacts with the app server. Module-based applications are
-  not as portable when they directly interact with the app server.
-- If your legacy application's original intent is to have a limited-lifetime.
-
-Your decision to convert to modules ultimately comes down to benefits vs.
-costs. Obviously, the time to convert your legacy application is a cost.
-Likewise, there are many benefits to managing your legacy application as
-modules.
-
-A large application can be split into many small independent, easy to manage
-modules. These small modules also allow for incremental release cycles. In
-multi-module projects, this also means that a certain module can be updated
-independently. For instance, if a JSP is changed due to a security issue, the
-web (client) module can be updated while the persistence modules can remain
-unchanged. This could mean applications that usually had to wait for new
-Liferay releases could see independent releases between Liferay versions.
-
-Module dependencies are explicitly listed within a module. A module will refuse
-to run unless all dependencies are met, thus eliminating obscure run time
-errors. Another common deployment issue for legacy applications was multiple
-versions of the same library in an environment. The class loader would merge
-classes from multiple versions of a library, leading to very hard to
-troubleshoot and obscure problems. Module versions can be stated explicitly in
-the dependency, eliminating these types of issues.
-
-Now that you have some ammunition to make an informed decision on what's best
-for your particular situation, you'll learn how to convert your legacy WAR
+In this tutorial, you'll learn how to convert your legacy WAR
 application into modules. Before getting started, it's important to reiterate
 that the module structure shown in this tutorial is just one of many ways for
 structuring your application's modules. It's also important to remember that
 applications come in all different shapes and sizes. There may be special
-actions that some applications require. This tutorial will provide the general
+actions that some applications require. This tutorial provides the general
 process for converting to modules using Liferay's module structure.
+
+Here's what's involved:
+
+- Converting portlet classes and the UI
+- Converting Service Builder interfaces and implementations
+- Building and deploying modules
 
 The first thing you'll do is create your application's web (client) module.
 
@@ -105,12 +29,30 @@ The first thing you'll do is create your application's parent directory and the
 directory structure for your application's *web* client module. This module
 holds your application's portlet classes and is responsible for its UI. Before
 you start creating a skeleton structure for your application's modules, you
-should determine which modules which will comprise the 7.0 version of your
+should determine which modules will comprise the 7.0 version of your
 application. If your application provides service and API classes (which is the
 case for all Liferay Service Builder applications), you should create separate
-modules for your service implementation and service API modules. This tutorial
+modules for your service implementation and service API classes. This tutorial
 assumes the Maven project model, although any build tools or directory setup is
 permissible.
+
++$$$
+
+**Note:** It's recommended that you use the build plugin versions that support
+the latest OSGi features. The following Gradle or Maven build plugin versions
+should be used in their respective build frameworks:
+
+**Gradle**
+- biz.aQute.bnd:biz.aQute.bnd.gradle:3.1.0 **or**
+- org.dm.gradle:gradle-bundle-plugin:0.8.1
+
+**Maven**
+- biz.aQute.bnd:bnd-maven-plugin:3.1.0 **or**
+- org.apache.felix:maven-bundle-plugin:3.0.1
+
+<!-- These versions support the R6 OSGi released features. -Cody -->
+
+$$$
 
 1.  Create the parent directory for your application. This parent directory is
     home for your application's independent modules and configuration files. For
@@ -120,7 +62,7 @@ permissible.
 2.  Create the directory structure skeleton for your web client module. You can
     do this automatically by using Blade Tools. You can learn how to install
     Blade Tools by visiting the
-    [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+    [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
     tutorial and you can view examples of
     [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
     and
@@ -140,40 +82,19 @@ permissible.
         blade create -t servicebuilder -p [ROOT_PACKAGE] [APPLICATION_NAME]
 
     If you used the `blade create servicebuilder` command to generate
-    implementation and API modules, ignore the `*svc` and `*api` folders for
-    now; you'll learn about them later in this tutorial.
+    implementation and API modules, ignore the `*-service` and `*-api` folders
+    for now; you'll learn about them later in this tutorial.
 
-    At the time of this writing, there are a few modifications you'll need to
-    make to your generated projects. Follow steps 2a or 2b if you'd like to
-    start with generic modules that follow the Liferay directory structure for
-    your generated projects.
-
-    2a. **Project with client module only:** Replace the
-    `/src/main/java/[APPLICATION_NAME]-web` folder with your root package. For
-    instance, if your application's root package name is
+3.  Replace the `/src/main/java/[APPLICATION_NAME]-web` folder with your root
+    package. For instance, if your application's root package name is
     `com.liferay.tasks.web`, your class's directory should be
     `/src/main/java/com/liferay/tasks/web`. Also, remove the `init.jsp` and
     `view.jsp` files located in the `src/main/resources/META-INF/resources`
     folder. You'll insert your legacy application's Java code and JSPs, so the
     generated default code is not necessary.
 
-    2b. **Project with client, implementation, and API modules:** To follow the
-    naming conventions of official Liferay modules found in Liferay's apps
-    [repository](https://github.com/liferay/liferay-portal/tree/master/modules/apps),
-    the titles of your three modules, which resemble your root package, should
-    be replaced by hyphenated names that include your application name. For
-    instance, if you're converting the *tasks* application, your three modules
-    should be named `tasks-web`, `tasks-service`, and `tasks-api`, instead of
-    `[ROOT_PACKAGE].web`, `[ROOT_PACKAGE].svc`, and `[ROOT_PACKAGE].api`. In
-    those modules' `bnd.bnd` and `build.gradle` files and in your project's
-    `settings.gradle` file, replace the old module names with the new ones.
-    Lastly, remove the portlet class generated in your client module's
-    `/src/main/java/[ROOT_PACKAGE]` directory, and the `init.jsp` and `view.jsp`
-    files located in the `src/main/resources/META-INF/resources` folder. You'll
-    insert your legacy application's Java code and JSPs, so the generated
-    default code is not necessary.
 
-3.  Verify that your current directory structure for your application's `*-web`
+4.  Verify that your current directory structure for your application's `*-web`
     module matches the structure listed below:
 
     - `tasks`
@@ -193,7 +114,7 @@ permissible.
     The instructions in the rest of this sub-section only affect your
     application's web client module.
 
-4.  Open the `bnd.bnd` file. This is used to generate your module's
+5.  Open the `bnd.bnd` file. This is used to generate your module's
     `MANIFEST.MF` file that is generated when you build your project. Edit your
     module's `bnd.bnd` file to fit your application. For more information about
     `bnd.bnd`, visit
@@ -204,27 +125,30 @@ permissible.
     [`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/journal/journal-web/bnd.bnd)
     for a more advanced example.
 
-5.  Open the `build.gradle` file. This is used to specify all your module's
+6.  Open the `build.gradle` file. This is used to specify all your module's
     dependencies. The `build.gradle` file that was generated for you is
     pre-populated with content and default dependencies related to OSGi and
     Liferay Portal. In the `dependencies {...}` block, you need to add the web
-    client module's dependencies. When deploying your module into the OSGi
-    container, OSGi checks if the dependencies are available in the container.
-    If the dependencies are not available in the container, your module will be
-    unavailable. Therefore, your dependencies are not bundled with your module.
-    Instead, they're available from Liferay's OSGi container.
+    client module's dependencies. To learn how to find and specify dependencies
+    on Liferay API modules, refer to the reference document 
+    [Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
+    When deploying your module into the OSGi container, OSGi checks if the
+    dependencies are available in the container. If the dependencies are not
+    available in the container, your module will be unavailable. Therefore, your
+    dependencies are not bundled with your module. Instead, they're available
+    from Liferay's OSGi container.
 
-6.  Copy your legacy application's JSP files into the
+7.  Copy your legacy application's JSP files into the
     `/src/main/resources/META-INF/resources` directory. In most cases, all of
     your application's JSP files should reside in the web client module.
 
-7.  Your next task is to add your portlet classes, non-service classes, and
+8.  Your next task is to add your portlet classes, non-service classes, and
     non-implementation classes into your client module. Copy your portlet
     classes into their respective directories and ensure their package names
     within the class are specified correctly. Your client module can hold one
     class or many classes, depending on how large your application is. It's a
     good practice to organize your classes into sub-packages of the main
-    package, to easily manage your Java classes. You can view the
+    package, to more easily manage them. You can view the
     [journal-web](https://github.com/liferay/liferay-portal/tree/master/modules/apps/journal/journal-web/src/main/java/com/liferay/journal/web)
     module for an example of a client module holding many different Java
     classes.
@@ -237,7 +161,7 @@ permissible.
 
     $$$
 
-8.  Now that you have the necessary classes in your client module, you need to
+9.  Now that you have the necessary classes in your client module, you need to
     edit these classes to be compliant with OSGi. First, you need to choose a
     component framework to work with. Using a component framework lets you
     easily harness the power of OSGi. Liferay uses the
@@ -273,11 +197,11 @@ permissible.
         )
         public class TasksPortlet extends MVCPortlet {
 
-9.  Convert all references of the `portletId` (e.g., `58_INSTANCE_4gtH`) to the
+10.  Convert all references of the `portletId` (e.g., `58_INSTANCE_4gtH`) to the
     class name of the portlet, replacing all periods with underscores (e.g.,
     `com_liferay_web_proxy_portlet_WebProxyPortlet`).
 
-10.  If your legacy application has resource actions, you'll need to migrate
+11.  If your legacy application has resource actions, you'll need to migrate
     those into your client module. Create the
     `/src/main/resources/resource-actions/default.xml` file, and copy your
     resource actions there. Make sure to create the `src/portlet.properties`
@@ -289,7 +213,7 @@ permissible.
     [`default.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/directory/directory-web/src/main/resources/resource-actions/default.xml)
     file.
 
-11.  Add any language keys that your application uses to the
+12.  Add any language keys that your application uses to the
     `src/main/resources/content/Language.properties` file. You should only
     include the language keys that are unique to your application. Your
     application will use the default language keys in Liferay when it is

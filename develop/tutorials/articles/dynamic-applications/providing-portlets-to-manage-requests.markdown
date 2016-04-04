@@ -42,7 +42,7 @@ to handle this request. You'll need to create a module that can find the correct
 portlet to handle the request.
 
 1. Create a generic OSGi module using your favorite third party tool, or use
-[Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools). 
+[Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli). 
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package. To follow naming conventions, name the class
