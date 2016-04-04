@@ -1,12 +1,12 @@
 # Customizing the Product Menu
 
-Liferay's Product Menu comes with three major panel categories, by default: the
-Control Panel, User Settings, and Site Administration. Panel categories are the
-term used to differentiate between sections of the menu. For instance, the
-Control Panel is a single panel category, and when clicking on it, you're
-presented with four other child panel categories: *Users*, *Sites*, *Apps*, and
-*Configuration*. It you click on one of these child panel categories, you're
-presented with panel apps.
+Liferay's Product Menu comes with three major options to choose from, by
+default: the Control Panel, User Settings, and Site Administration. These
+options are called panel categories, which is the term used to differentiate
+between sections of the menu. For instance, the Control Panel is a single panel
+category, and when clicking on it, you're presented with four other child panel
+categories: *Users*, *Sites*, *Apps*, and *Configuration*. It you click on one
+of these child panel categories, you're presented with panel apps.
 
 +$$$
 
@@ -22,10 +22,11 @@ $$$
 -Cody -->
 
 This construction of the Product Menu was designed to be intuitive and easy to
-use. In many scenarios, however, you may want to add other panel categories with
-custom panel apps, for example. Also, you may desire to change the order of your
-panel categories and/or apps. In this tutorial, you'll learn how to provide your
-own custom panel categories and panel apps for the Product Menu.
+use. For your instance of Liferay, however, you may want to add other panel
+categories with custom panel apps. Also, you may desire to change the order of
+your panel categories and/or apps. In this tutorial, you'll learn how to provide
+your own custom or modify existing panel categories and panel apps for the
+Product Menu.
 
 ## Adding Custom Panel Categories
 
@@ -38,7 +39,8 @@ how to add a panel category.
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package. To follow naming conventions, give your
-   category a unique name followed by *Category* (e.g., `ControlPanelCategory`).
+   class a unique name followed by *PanelCategory* (e.g.,
+   `ControlPanelCategory`).
 
 3. Directly above the class's declaration, insert the following annotation:
 
@@ -55,7 +57,7 @@ how to add a panel category.
     your category. The `panel.category.key` specifies the parent category for
     your custom category. You can find popular parent categories to assign in
     the [PanelCategoryKeys](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/constants/PanelCategoryKeys.java)
-    class. For instance, if you wanted to create a category in the Control
+    class. For instance, if you wanted to create a child category in the Control
     Panel, you could assign `PanelCategoryKeys.CONTROL_PANEL`. Likewise, if you
     wanted to create a root category, like the Control Panel or Site
     Administration, you could assign `PanelCategoryKeys.ROOT`.
@@ -78,7 +80,7 @@ how to add a panel category.
    categories (e.g., the Control Panel category) that only display the category
    name or other simple functionality. If you'd like to provide more complex
    functionality, like a logo or buttons, the `BaseJSPPanelCategory` should be
-   extended. This will be elaborated on my extensively later.
+   extended. This will be elaborated on more extensively later.
 
     +$$$
 
@@ -115,12 +117,12 @@ how to add a panel category.
     display the panel category name.
 
     If you'd like to provide functionality that is more involved, you can use
-    other technologies like JSPs to render the panel category. You can easily do
-    this by extending `BaseJSPPanelCategory`. For example, the
+    JSPs or any other similar technology to render the panel category. You can
+    easily do this by extending `BaseJSPPanelCategory`. For example, the
     [SiteAdministrationPanelCategory](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-site-administration/src/main/java/com/liferay/product/navigation/site/administration/application/list/SiteAdministrationPanelCategory.java)
     specifies the `getHeaderJspPath` and `getJspPath` methods. You could create
     a JSP with the UI you'd like to render and specify its path in methods like
-    these.
+    these:
 
         @Override
         public String getHeaderJspPath() {
@@ -146,7 +148,7 @@ access. You'll learn about how to add a panel app to a panel category next.
 
 ## Adding Custom Panel Apps
 
-Just as adding panel categories was straight-forward and dynamic, so too is the
+Just as adding panel categories iss straight-forward and dynamic, so too is the
 process for adding panel apps. Panel apps are links provided in a panel category
 that allow you to access an application. For instance, if you navigate to the
 Site Administration &rarr; *Content* panel category, you can select the *Web
@@ -158,8 +160,8 @@ Menu.
    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
 
 2. Create a unique package name in the module's `src` directory and create a
-   new Java class in that package. To follow naming conventions, give your
-   panel app a unique name followed by *App* (e.g., `App`).
+   new Java class in that package. To follow naming conventions, give your class
+   a unique name followed by *PanelApp* (e.g., `JournalPanelApp`).
 
 3. Directly above the class's declaration, insert the following annotation:
 
@@ -183,7 +185,7 @@ Menu.
 
     Visit the
     [PanelCategoryKeys](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/constants/PanelCategoryKeys.java)
-    class for keys you can use to specify panel categories in Liferay.
+    class for keys you can use to specify default panel categories in Liferay.
 
     Lastly, be sure to set the `service` attribute to `PanelApp.class`. You can
     view an example of a similar `@Component` annotation in the
@@ -214,17 +216,20 @@ Menu.
    set the Blogs portlet as a panel app.
 
     Liferay provides full flexibility to make panel apps much more complicated.
+    As you learned before, the `BaseJSPPanelApp` abstract class can be extended
+    to provide further functionality with JSPs.
     For instance, the Navigation category in Site Administration offers a
-    dynamic Pages panel app that provides much more than a link to access the
-    portlet. As you learned before, the `BaseJSPPanelApp` abstract class is
-    extended for this case to provide further functionality with JSPs. The
+    dynamic Pages panel app that provides much more than a simple link to access a
+    portlet. This is accomplished by extending `BaseJSPPanelApp` in the
     [GroupPagesPanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/layout/layout-admin-web/src/main/java/com/liferay/layout/admin/web/application/list/GroupPagesPanelApp.java)
-    provides this functionality in the Product Menu.
+    class, which provides this functionality in the Product Menu.
 
-    Notice that the portlet ID is still returned similarly to the previous
-    `BlogsPanelApp` example, but a `getJspPath` method is also called, which
-    gives the panel app much more functionality provided by the
-    [layouts_tree.jsp`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/layout/layout-admin-web/src/main/resources/META-INF/resources/panel/app/layouts_tree.jsp):
+    In `GroupPagesPanelApp`,notice that the portlet ID is still returned
+    similarly to the previous `BlogsPanelApp` example, but a `getJspPath` method
+    is also called, which gives the panel app much more functionality provided
+    by the
+    [layouts_tree`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/layout/layout-admin-web/src/main/resources/META-INF/resources/panel/app/layouts_tree.jsp):
+    JSP file:
 
         @Override
         public String getJspPath() {
