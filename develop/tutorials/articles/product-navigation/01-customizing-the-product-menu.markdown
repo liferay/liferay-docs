@@ -21,12 +21,11 @@ $$$
 <!-- Check link for above tutorial. Was not published yet when this was written.
 -Cody -->
 
-This construction of the Product Menu was designed to
-be intuitive and easy to use. In many scenarios, however, developers want to add
-another panel category with custom panel apps, for example. Also, maybe you'd
-like to change the order of your panel categories and/or apps. In this tutorial,
-you'll learn how to provide your own custom panel categories and panel apps for
-the Product Menu.
+This construction of the Product Menu was designed to be intuitive and easy to
+use. In many scenarios, however, you may want to add other panel categories with
+custom panel apps, for example. Also, you may desire to change the order of your
+panel categories and/or apps. In this tutorial, you'll learn how to provide your
+own custom panel categories and panel apps for the Product Menu.
 
 ## Adding Custom Panel Categories
 
@@ -40,7 +39,6 @@ how to add a panel category.
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package. To follow naming conventions, give your
    category a unique name followed by *Category* (e.g., `ControlPanelCategory`).
-   The class should extend
 
 3. Directly above the class's declaration, insert the following annotation:
 
@@ -94,7 +92,8 @@ how to add a panel category.
 
 5. Since you're implementing the
    [PanelCategory](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/PanelCategory.java)
-   interface, you'll need to implement its methods:
+   interface, you'll need to implement its methods if you're not extending a
+   base class:
 
     - `getNotificationCount`: returns the number of notifications to be shown in
     the panel category.
@@ -148,16 +147,91 @@ access. You'll learn about how to add a panel app to a panel category next.
 ## Adding Custom Panel Apps
 
 Just as adding panel categories was straight-forward and dynamic, so too is the
-process for adding panel apps.
+process for adding panel apps. Panel apps are links provided in a panel category
+that allow you to access an application. For instance, if you navigate to the
+Site Administration &rarr; *Content* panel category, you can select the *Web
+Content* option, which is a panel app that allows you to access web content.
+Follow the steps below to add a panel app to your Liferay instance's Product
+Menu.
 
-1. 
+1. Create a generic OSGi module using your favorite third party tool, or use
+   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
 
+2. Create a unique package name in the module's `src` directory and create a
+   new Java class in that package. To follow naming conventions, give your
+   panel app a unique name followed by *App* (e.g., `App`).
 
+3. Directly above the class's declaration, insert the following annotation:
 
+        @Component(
+            immediate = true,
+            property = {
+                "panel.app.order:Integer=INTEGER"
+                "panel.category.key=" + PANEL_CATEGORY_KEY,
+            },
+            service = PanelApp.class
+        )
 
+    These properties and attributes are very similar to the ones discussed for
+    panel categories. The `panel.app.order:Integer` property specifies the order
+    your panel app is listed among other panel apps in the same category. The
+    `panel.category.key` specifies the panel category your panel app will reside
+    in. For example, if you want to add a panel app to Site Administration
+    &rarr; *Content*, you would add the following property:
 
+        "panel.category.key=" + PanelCategoryKeys.SITE_ADMINISTRATION_CONTENT
 
+    Visit the
+    [PanelCategoryKeys](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/constants/PanelCategoryKeys.java)
+    class for keys you can use to specify panel categories in Liferay.
 
+    Lastly, be sure to set the `service` attribute to `PanelApp.class`. You can
+    view an example of a similar `@Component` annotation in the
+    [JournalPanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-web/src/main/java/com/liferay/journal/web/application/list/JournalPanelApp.java)
+    class.
 
+4. Implement the `PanelApp` interface. A popular way to do this is by
+   extending the
+   [BasePanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/BasePanelApp.java)
+   abstract class. Just as you learned in the previous sub-section on panel
+   categories, an additional abstract class extends `BasePanelApp` called
+   [BaseJSPPanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/BaseJSPPanelApp.java).
+   This provides additional methods you can use to incorporate JSP functionality
+   into your panel apps listed in the Product Menu.
 
+    JSPs are not the only way to provide frontend functionality to your panel
+    apps. You can create your own abstract class implementing `PanelCategory`
+    and provide ways to use other technologies, such as FreeMarker.
 
+5. Since you're implementing the
+   [PanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/PanelApp.java)
+   interface, you'll need to implement its methods if you're not extending a
+   base class. For a simple example of how to specify your portlet as a panel
+   app, see
+   [BlogsPanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/application/list/BlogsPanelApp.java).
+   In this class, the `BasePanelApp` is extended, and the `getPortletId` and
+   `setPortlet` methods are overridden. These methods are used to specify and
+   set the Blogs portlet as a panel app.
+
+    Liferay provides full flexibility to make panel apps much more complicated.
+    For instance, the Navigation category in Site Administration offers a
+    dynamic Pages panel app that provides much more than a link to access the
+    portlet. As you learned before, the `BaseJSPPanelApp` abstract class is
+    extended for this case to provide further functionality with JSPs. The
+    [GroupPagesPanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/layout/layout-admin-web/src/main/java/com/liferay/layout/admin/web/application/list/GroupPagesPanelApp.java)
+    provides this functionality in the Product Menu.
+
+    Notice that the portlet ID is still returned similarly to the previous
+    `BlogsPanelApp` example, but a `getJspPath` method is also called, which
+    gives the panel app much more functionality provided by the
+    [layouts_tree.jsp`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/layout/layout-admin-web/src/main/resources/META-INF/resources/panel/app/layouts_tree.jsp):
+
+        @Override
+        public String getJspPath() {
+            return "/panel/app/layouts_tree.jsp";
+        }
+
+Now you know how to add or modify a panel app in the Product Menu. Not only does
+Liferay provide a simple solution to add new panel categories and apps, it also
+gives you the flexibility to add complex functionality to the Product Menu using
+any technology.
