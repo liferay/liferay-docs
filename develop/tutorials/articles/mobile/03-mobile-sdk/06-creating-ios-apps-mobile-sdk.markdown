@@ -14,7 +14,7 @@ project
 gives you access to the SDK releases, provides the latest SDK news, and has
 forums for you to engage in mobile app development discussions.
 
-![Figure 1: Liferay's Mobile SDK enables your native app to communicate with Liferay.](../../images/mobile-sdk-diagram.png)
+![Figure 1: Liferay's Mobile SDK enables your native app to communicate with Liferay.](../../../images/mobile-sdk-diagram.png)
 
 The Liferay iOS SDK bridges your native app with Liferay services. Once you've 
 installed and configured the Liferay iOS SDK, you can invoke Liferay services 

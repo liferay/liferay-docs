@@ -16,7 +16,7 @@ forums for you to engage in mobile app development discussions. The Liferay
 Mobile SDK is available as separate downloads for Android and iOS, and is 
 compatible with Liferay Portal 6.2 and later. 
 
-![Figure 1: Liferay's Mobile SDK enables your native app to communicate with Liferay.](../../images/mobile-sdk-diagram.png)
+![Figure 1: Liferay's Mobile SDK enables your native app to communicate with Liferay.](../../../images/mobile-sdk-diagram.png)
 
 There are two different types of Mobile SDKs that you need to add to your app's 
 project, depending on the remote services you need to call. Liferay's prebuilt 

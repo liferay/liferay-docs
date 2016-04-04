@@ -16,7 +16,7 @@ forums for you to engage in mobile app development discussions. Once you
 configure the Mobile SDK in your app, you can invoke Liferay services in it. The 
 Liferay Android SDK bridges your native app with Liferay services. 
 
-![Figure 1: Liferay's Mobile SDK enables your native app to communicate with Liferay.](../../images/mobile-sdk-diagram.png)
+![Figure 1: Liferay's Mobile SDK enables your native app to communicate with Liferay.](../../../images/mobile-sdk-diagram.png)
 
 The Android app development tutorials include the following topics: 
 

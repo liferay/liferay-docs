@@ -1,4 +1,4 @@
-# Mobile
+# Mobile [](id=mobile)
 
 Liferay provides two ways to create native Android and iOS apps that work with 
 your Liferay instances: Liferay Screens and the Liferay Mobile SDK. Liferay 

@@ -26,29 +26,32 @@ portlets you have. Go ahead and get started!
 ## Configuring Your Portlet's Remote Services [](id=configuring-your-portlets-remote-services)
 
 For the SDK Builder to discover a portlet's remote services, the services must 
-be available and accompanied by a Web Service Deployment Descriptor (WSDD). 
+be available and accompanied by a Web Service Deployment Descriptor (WSDD). For 
+instructions on creating a portlet's remote services and building its WSDD, see 
+[this tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services).
 
-If you're in the process of developing the portlet, see
-[this learning path section](https://www.liferay.com/) 
-for in-depth instructions on implementing remote services. 
+For convenience, the following steps show how to implement remote services for 
+your portlet and and make them available for the SDK Builder to discover.
 
-<!-- Replace with Liferay 7 Service Builder steps -->
-<!--
-For convenience, the following steps outline how to implement remote services 
-for your portlet and make them available for the SDK Builder to discover. 
+1. Install Liferay's WSDD Builder Gradle plugin. To do this, add 
+   `com.liferay.gradle.plugins.wsdd.builder` as a dependency in your `*-service` 
+   project's `build.gradle` file, and apply the plugin 
+   `com.liferay.portal.tools.wsdd.builder` in the same file. 
 
-1. Set `remote-service="true"` in your portlet's `service.xml` file and run 
-   `ant build-service`.
+2. Set `remote-service="true"` in your `*-service` project's `service.xml` file 
+   and run `gradle buildService`. 
 
-2. Implement your remote services in the generated `[YourEntity]ServiceImpl.java` 
-   source files and run `ant build-service` again. 
+3. Implement your remote services in the generated `[YourEntity]ServiceImpl.java` 
+   source files and run `gradle buildService` again. 
 
-3. Run `ant build-wsdd` to build your WSDD. The Mobile SDK Builder relies on the 
-   WSDD to discover your portlet's remote services, so make sure to build the 
-   WSDD before deploying your portlet. 
+4. Run `gradle buildWSDD` to build your WSDD. The Mobile SDK Builder relies on 
+   the WSDD to discover your portlet's remote services, so make sure to build 
+   the WSDD before deploying your portlet's modules. In your `*-service` 
+   project's `build/libs` folder, the `buildWSDD` task generates a 
+   `*-service-wsdd-[version].jar` file that contains your WSDD. 
 
-4. Deploy your portlet with its WSDD.
--->
+5. Deploy your portlet's modules, including the `*-service-wsdd-[version].jar` 
+   file. 
 
 Now you're ready to use the SDK Builder to generate a custom portlet SDK for 
 your mobile app! 
@@ -107,7 +110,7 @@ these properties, run the same command with the `all` argument:
 The wizard should look similar to this screenshot. Note that default values are 
 in square brackets with blue text:
 
-![Figure 1: The Mobile SDK Builder's wizard lets you specify property values for building your module.](../../images/mobile-sdk-create-module.png)
+![Figure 1: The Mobile SDK Builder's wizard lets you specify property values for building your module.](../../../images/mobile-sdk-create-module.png)
 
 So what properties are available, and what do they do? Fantastic question! 
 They're described here. These properties can be set while running 
