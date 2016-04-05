@@ -1,7 +1,7 @@
 # Modifying Liferay's Language Keys
 
-Using language files with keys allows you the ultimate flexibility in
-translating your application's user interface messages. But you can also modify
+Using language files with keys gives you the ultimate flexibility in
+[translating your application's user interface messages](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application). But you can also modify
 the language keys used by Liferay's core itself. This lets you change not only
 your own application, but any messages in Liferay.
 
