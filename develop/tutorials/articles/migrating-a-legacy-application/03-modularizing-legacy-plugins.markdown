@@ -36,6 +36,24 @@ modules for your service implementation and service API classes. This tutorial
 assumes the Maven project model, although any build tools or directory setup is
 permissible.
 
++$$$
+
+**Note:** It's recommended that you use the build plugin versions that support
+the latest OSGi features. The following Gradle or Maven build plugin versions
+should be used in their respective build frameworks:
+
+**Gradle**
+- biz.aQute.bnd:biz.aQute.bnd.gradle:3.1.0 **or**
+- org.dm.gradle:gradle-bundle-plugin:0.8.1
+
+**Maven**
+- biz.aQute.bnd:bnd-maven-plugin:3.1.0 **or**
+- org.apache.felix:maven-bundle-plugin:3.0.1
+
+<!-- These versions support the R6 OSGi released features. -Cody -->
+
+$$$
+
 1.  Create the parent directory for your application. This parent directory is
     home for your application's independent modules and configuration files. For
     example, if your application's name is *Tasks*, then your parent directory
@@ -44,7 +62,7 @@ permissible.
 2.  Create the directory structure skeleton for your web client module. You can
     do this automatically by using Blade Tools. You can learn how to install
     Blade Tools by visiting the
-    [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+    [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
     tutorial and you can view examples of
     [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
     and
@@ -64,40 +82,19 @@ permissible.
         blade create -t servicebuilder -p [ROOT_PACKAGE] [APPLICATION_NAME]
 
     If you used the `blade create servicebuilder` command to generate
-    implementation and API modules, ignore the `*svc` and `*api` folders for
-    now; you'll learn about them later in this tutorial.
+    implementation and API modules, ignore the `*-service` and `*-api` folders
+    for now; you'll learn about them later in this tutorial.
 
-    At the time of this writing, there are a few modifications you'll need to
-    make to your generated projects. Follow steps 2a or 2b if you'd like to
-    start with generic modules that follow the Liferay directory structure for
-    your generated projects.
-
-    2a. **Project with client module only:** Replace the
-    `/src/main/java/[APPLICATION_NAME]-web` folder with your root package. For
-    instance, if your application's root package name is
+3.  Replace the `/src/main/java/[APPLICATION_NAME]-web` folder with your root
+    package. For instance, if your application's root package name is
     `com.liferay.tasks.web`, your class's directory should be
     `/src/main/java/com/liferay/tasks/web`. Also, remove the `init.jsp` and
     `view.jsp` files located in the `src/main/resources/META-INF/resources`
     folder. You'll insert your legacy application's Java code and JSPs, so the
     generated default code is not necessary.
 
-    2b. **Project with client, implementation, and API modules:** To follow the
-    naming conventions of official Liferay modules found in Liferay's apps
-    [repository](https://github.com/liferay/liferay-portal/tree/master/modules/apps),
-    the titles of your three modules, which resemble your root package, should
-    be replaced by hyphenated names that include your application name. For
-    instance, if you're converting the *tasks* application, your three modules
-    should be named `tasks-web`, `tasks-service`, and `tasks-api`, instead of
-    `[ROOT_PACKAGE].web`, `[ROOT_PACKAGE].svc`, and `[ROOT_PACKAGE].api`. In
-    those modules' `bnd.bnd` and `build.gradle` files and in your project's
-    `settings.gradle` file, replace the old module names with the new ones.
-    Lastly, remove the portlet class generated in your client module's
-    `/src/main/java/[ROOT_PACKAGE]` directory, and the `init.jsp` and `view.jsp`
-    files located in the `src/main/resources/META-INF/resources` folder. You'll
-    insert your legacy application's Java code and JSPs, so the generated
-    default code is not necessary.
 
-3.  Verify that your current directory structure for your application's `*-web`
+4.  Verify that your current directory structure for your application's `*-web`
     module matches the structure listed below:
 
     - `tasks`
@@ -117,7 +114,7 @@ permissible.
     The instructions in the rest of this sub-section only affect your
     application's web client module.
 
-4.  Open the `bnd.bnd` file. This is used to generate your module's
+5.  Open the `bnd.bnd` file. This is used to generate your module's
     `MANIFEST.MF` file that is generated when you build your project. Edit your
     module's `bnd.bnd` file to fit your application. For more information about
     `bnd.bnd`, visit
@@ -128,7 +125,7 @@ permissible.
     [`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/journal/journal-web/bnd.bnd)
     for a more advanced example.
 
-5.  Open the `build.gradle` file. This is used to specify all your module's
+6.  Open the `build.gradle` file. This is used to specify all your module's
     dependencies. The `build.gradle` file that was generated for you is
     pre-populated with content and default dependencies related to OSGi and
     Liferay Portal. In the `dependencies {...}` block, you need to add the web
@@ -141,11 +138,11 @@ permissible.
     dependencies are not bundled with your module. Instead, they're available
     from Liferay's OSGi container.
 
-6.  Copy your legacy application's JSP files into the
+7.  Copy your legacy application's JSP files into the
     `/src/main/resources/META-INF/resources` directory. In most cases, all of
     your application's JSP files should reside in the web client module.
 
-7.  Your next task is to add your portlet classes, non-service classes, and
+8.  Your next task is to add your portlet classes, non-service classes, and
     non-implementation classes into your client module. Copy your portlet
     classes into their respective directories and ensure their package names
     within the class are specified correctly. Your client module can hold one
@@ -164,7 +161,7 @@ permissible.
 
     $$$
 
-8.  Now that you have the necessary classes in your client module, you need to
+9.  Now that you have the necessary classes in your client module, you need to
     edit these classes to be compliant with OSGi. First, you need to choose a
     component framework to work with. Using a component framework lets you
     easily harness the power of OSGi. Liferay uses the
@@ -200,11 +197,11 @@ permissible.
         )
         public class TasksPortlet extends MVCPortlet {
 
-9.  Convert all references of the `portletId` (e.g., `58_INSTANCE_4gtH`) to the
+10.  Convert all references of the `portletId` (e.g., `58_INSTANCE_4gtH`) to the
     class name of the portlet, replacing all periods with underscores (e.g.,
     `com_liferay_web_proxy_portlet_WebProxyPortlet`).
 
-10.  If your legacy application has resource actions, you'll need to migrate
+11.  If your legacy application has resource actions, you'll need to migrate
     those into your client module. Create the
     `/src/main/resources/resource-actions/default.xml` file, and copy your
     resource actions there. Make sure to create the `src/portlet.properties`
@@ -216,7 +213,7 @@ permissible.
     [`default.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/directory/directory-web/src/main/resources/resource-actions/default.xml)
     file.
 
-11.  Add any language keys that your application uses to the
+12.  Add any language keys that your application uses to the
     `src/main/resources/content/Language.properties` file. You should only
     include the language keys that are unique to your application. Your
     application will use the default language keys in Liferay when it is
