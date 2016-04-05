@@ -7,7 +7,7 @@ your own application, but any messages in Liferay.
 
     publish=Publish
 
-![Figure 1: Messages displayed in Liferay's User Interface can be customized.](../images/standard-publish.png)
+![Figure 1: Messages displayed in Liferay's User Interface can be customized.](../../images/standard-publish.png)
 
 +$$$
 
@@ -108,7 +108,7 @@ Next just provide a `Language.properties` file. Put it in your module's
 
     publish=Publish Override
 
-![Figure 2: To override core language keys, a simple module with a component and a properties file is created for each locale.](../images/localized-publish.png)
+![Figure 2: To override core language keys, a simple module with a component and a properties file is created for each locale.](../../images/localized-publish.png)
 
 That's all there is to overriding Liferay's core language keys.
 
