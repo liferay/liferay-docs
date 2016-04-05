@@ -218,7 +218,7 @@ There you have it! You're ready to design a terrific theme!
 
 [Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
 
-[Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors)
+<!-- [Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors) -->
 
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
 
