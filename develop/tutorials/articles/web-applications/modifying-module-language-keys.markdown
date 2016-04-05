@@ -1,4 +1,4 @@
-# Overriding a Module's Language Keys
+# Overriding a Module's Language Keys [](id=overriding-a-modules-language-keys)
 
 What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? The process
@@ -6,7 +6,7 @@ for overriding a module's language keys is different from [the process of overri
 
     add-blog-entry=Add Blog Entry
 
-![Figure x: You can override the language keys of a module deployed to Liferay's OSGi runtime.](../../images/standard-add-blogs-entry.png)
+![Figure 1: You can override the language keys of a module deployed to Liferay's OSGi runtime.](../../images/standard-add-blogs-entry.png)
 
 You can find the language keys for one of Liferay's applications in the source
 code or in the JAR file that's part of your Liferay bundle installation.
@@ -24,7 +24,7 @@ In your bundle, the `Language_xx.properties` files will be located in the
 You can override the language properties of any module by creating a module with
 a language file and one Java class.
 
-## Implementing a Resource Bundle Loader
+## Implementing a Resource Bundle Loader [](id=implementing-a-resource-bundle-loader)
 
 Create an implementation of
 [`com.liferay.portal.kernel.util.ResourceBundleLoader`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html) and override its
@@ -65,7 +65,7 @@ the classloader for your resource bundle loader, and the resource bundle loader
 from the method's parameter to instantiate the
 `ClassResourceBundleLoader` class.
 
-## Registering the Service
+## Registering the Service [](id=registering-the-service)
 
 Register the resource bundle loader in the OSGi runtime with three properties:
 
@@ -124,7 +124,7 @@ servlet context name property (`blogs-web`).
 
 The only thing you're missing now is the language keys you want to override.
 
-## Providing Language Keys
+## Providing Language Keys [](id=providing-language-keys)
 
 Create properly named [language properties files](develop/tutorials/-/knowledge_base/7-0/localizing-your-application#what-are-language-keys) for each locale whose keys
 you want to override. These should go in `src/content`, and are the resource
@@ -135,7 +135,7 @@ language keys.
 
     add-blog-entry=Add a blog entry.
 
-![Figure x: The language keys in your resource bundle loader module will replace those of the target module.](../../images/localized-add-blog-entry.png)
+![Figure 2: The language keys in your resource bundle loader module will replace those of the target module.](../../images/localized-add-blog-entry.png)
 
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
