@@ -40,7 +40,7 @@ extension point, you should follow these steps:
 2.  Now you'll need to create a module that can register your new JS file and
     inject it into your editor instance. Create a generic OSGi module using your
     favorite third party tool, or use
-    [Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools).
+    [Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli).
 
 3.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. To follow naming conventions, your class name

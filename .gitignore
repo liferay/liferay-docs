@@ -27,3 +27,6 @@ dist/
 .DS_Store/
 *#
 /develop/tutorials/code/osgi/modules/form-nav-extension-portlet/.nb-gradle/
+/develop/tutorials/code/osgi/modules/com.liferay.docs.greetingimpl/.nb-gradle/
+/develop/tutorials/code/osgi/modules/com.liferay.docs.greetingapi/.nb-gradle/
+/develop/tutorials/code/osgi/modules/com.liferay.docs.greetingcommand/.nb-gradle/

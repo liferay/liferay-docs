@@ -222,7 +222,7 @@ model makes invoking services in Liferay.
 
 ## Related Topics [](id=related-topics)
 
-[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/introduction-to-blade-tools)
+[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
 
 [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
 

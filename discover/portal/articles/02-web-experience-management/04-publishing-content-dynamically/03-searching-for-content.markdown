@@ -148,22 +148,22 @@ search results.
 To drill down into the search, click on a facet to add it to the filter list.
 The results to the right are refined by the selected facets. 
 
-![Figure 4: Drilling down creates a list of what you selected at the top of the screen.](../../../images/faceted-search-drill-down-1.png)
+![Figure 4: Selecting specific options from the left menu narrows down the asset results.](../../../images/faceted-search-drill-down-1.png)
 
-In the figure above, the search is refined to only show wiki pages. The
-*Liferay* site is also selected, to refine the search. The facets that are
-selected, *Liferay* and *Wiki Page*, appear in a list at the top, and there's a
-blue "X" next to them that lets you remove it from the filter as you work to
-refile your search. Suppose that the two facets selected weren't enough to
-filter the search into a small enough list to sort through. In this case, you
-could further refine the search by selecting another facet, as below. 
+In the figure above, the search is refined to only show assets tagged with
+*bear*. The *Lunar Resort* site is also selected, to refine the search. The facets
+that are selected, *Lunar Resort* and *bear*, are highlighted in the left menu.
+You can remove the highlighted facet by clicking another facet, or the *Any*
+facet. Suppose that the two facets selected weren't enough
+to filter the search into a small enough list to sort through. In this case, you
+could further refine the search by selecting another facet, as below.
 
 ![Figure 5: Selecting another facet further refines the search.](../../../images/faceted-search-drill-down-2.png)
 
-Now the *bear* category is also selected, which reduces the list of search
-hits on the right. In this way, you can interactively tweak the search results
-to narrow them down, making it easier to find that proverbial needle within the
-haystack. 
+Now the *Web Content Article* asset entry is also selected, which reduces the
+list of search hits on the right. In this way, you can interactively tweak the
+search results to narrow them down, making it easier to find that proverbial
+needle within the haystack.
 
 ### Asset Types [](id=asset-types)
 
@@ -177,8 +177,8 @@ described in the
 [Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
 tutorials. For this reason, you can have additional asset
 types defined in Liferay beyond the ones that Liferay ships with by default.
-If this is the case, you might want to tweak the `frequencyThreshold` and the
-`maxTerms` settings to increase the number of asset types displayed past the
+If this is the case, you might want to tweak the *Frequency Threshold* and the
+*Max Terms* settings to increase the number of asset types displayed past the
 default of 10. This is covered in the section below on search options.
 
 Note that although users can be appear as search results in the Search app, they
