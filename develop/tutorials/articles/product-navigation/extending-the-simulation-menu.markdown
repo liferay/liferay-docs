@@ -1,7 +1,7 @@
 # Extending the Simulation Menu
 
 When testing how Liferay pages and apps will appear for users, it's critical to
-simulate their views on as many devices as possible. By default, Liferay
+simulate their views on as many useful ways as possible. By default, Liferay
 provides the Simulation Menu on the right-side of the main page. What if,
 however, you'd like to simulate something in Liferay that is not provided by the
 Simulation Menu? You'll need to extend the Simulation Menu, of course! Luckily,
@@ -23,21 +23,23 @@ class, which is a hidden category needed to hold the
 [DevicePreviewPanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-simulation-device/src/main/java/com/liferay/product/navigation/simulation/device/application/list/DevicePreviewPanelApp.java).
 This is the app and functionality you see in the Simulation Menu by default.
 
-![Figure 1: The Simulation Menu offers a device preview application.](../../../images/simulation-menu-preview.png)
+![Figure 1: The Simulation Menu offers a device preview application.](../../images/simulation-menu-preview.png)
 
 To provide your own functionality in the Simulation Menu, you'll need to create
-a panel app in the `SimulationPanelCategory`. Moreover, if you're looking to add
-extensive functionality, you can create panel categories in the menu to divide
-up your panel apps. This tutorial will cover the simpler case of creating a
-panel app for the already present hidden category.
+a panel app in the `SimulationPanelCategory`. If you're looking to add extensive
+functionality, you can even create additional panel categories in the menu to
+divide up your panel apps. This tutorial will cover the simpler case of creating
+a panel app for the already present hidden category.
 
 1. Follow the steps documented in the
    [Adding Custom Panel Apps](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
-   section for creating custom panel apps.
+   section for creating custom panel apps. Once you've created the foundation of
+   your panel app, move on to learn how to tweak it so it customizes the
+   Simulation Menu.
 
 2. Since this tutorial assumes you're providing more functionality to the
-   existing simulation category, set it in the `panel.category.key` of the
-   `@Component` annotation:
+   existing simulation category, set the simulation category in the
+   `panel.category.key` of the `@Component` annotation:
 
         "panel.category.key=" + SimulationPanelCategory.SIMULATION
 
@@ -51,16 +53,17 @@ panel app for the already present hidden category.
    abstract class. This class implements the
    [PanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/PanelApp.java)
    interface and also provides additional methods necessary for specifying JSPs
-   to render your panel app's UI. Remember that you can create your own
-   extension class and use any frontend technology you want (e.g., FreeMarker).
+   to render your panel app's UI. Remember that you can also create your own
+   extension class and use any frontend technology you want, if you'd like to
+   use a technology other than JSP (e.g., FreeMarker).
 
 4. Define your simulation view. For instance, in
    [DevicePreviewPanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-simulation-device/src/main/java/com/liferay/product/navigation/simulation/device/application/list/DevicePreviewPanelApp.java),
    the `getJspPath` method points to the
    [simulation-device.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-simulation-device/src/main/resources/META-INF/resources/simulation_device.jsp)
    file in the `resources/META-INF/resources` folder, where the device
-   simulation interface is defined. Optionally, you can add your own language
-   keys, CSS, or JS resources in your simulation module.
+   simulation interface is defined. Optionally, you can also add your own
+   language keys, CSS, or JS resources in your simulation module.
 
     Audience Targeting also provides a good example of how to extend the
     Simulation Menu. When the
@@ -69,7 +72,7 @@ panel app for the already present hidden category.
     extended to offer more functionality, in particular, for Audience Targeting
     User Segments and Campaigns. You can simulate particular scenarios for
     campaigns and users directly from the Simulation Menu. Its panel app class
-    ([ContentTargetingSimulatorPanelApp](https://github.com/liferay/liferay-apps-content-targeting/blob/develop/content-targeting-simulation-web/src/main/java/com/liferay/content/targeting/simulation/web/application/list/ContentTargetingSimulatorPanelApp.java)
+    ([ContentTargetingSimulatorPanelApp](https://github.com/liferay/liferay-apps-content-targeting/blob/develop/content-targeting-simulation-web/src/main/java/com/liferay/content/targeting/simulation/web/application/list/ContentTargetingSimulatorPanelApp.java))
     is very similar to `DevicePreviewPanelApp`, except it points to a different
     portlet and JSP
     ([view.jsp](https://github.com/liferay/liferay-apps-content-targeting/blob/develop/content-targeting-simulation-web/src/main/resources/META-INF/resources/view.jsp)).
@@ -77,8 +80,19 @@ panel app for the already present hidden category.
     [Targeting Content to Your Audience](/discover/portal/-/knowledge_base/6-2/targeting-content-to-your-audience)
     section.
 
-    ![Figure 2: The Audience Targeting app extends the Simulation Menu to help simulate different users and campaign views.](../../../images/simulation-menu-at.png)
+    ![Figure 2: The Audience Targeting app extends the Simulation Menu to help simulate different users and campaign views.](../../images/simulation-menu-at.png)
+
+5. You can combine your simulation options with the device simulation options by
+   interacting with the device preview iFrame. To retrieve the device preview
+   frame in an `aui:script` block of your custom simulation view's JavaScript,
+   you can use the following:
+
+        var iframe = A.one('#simulationDeviceIframe');
+
+    Then you can modify the device preview frame URL like this:
+
+        iframe.setAttribute('src', newUrlWithCustomParameters);
 
 Now that you know how to extend the necessary panel categories and panel apps to
 modify the Simulation Menu, go ahead and create a module of your own and
-customize the Simulation Menu so its the most helpful for your needs.
+customize the Simulation Menu so it's most helpful for your needs.
