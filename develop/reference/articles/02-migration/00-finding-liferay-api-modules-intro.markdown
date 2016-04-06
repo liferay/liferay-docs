@@ -199,11 +199,18 @@ classes, and SOAP classes
 entity finder interfaces, and static utilities 
 - `com.liferay.[component].util` - Utility classes
 
-Not all components have been migrated from the [portal-service API](https://docs.liferay.com/portal/7.0/javadocs/portal-service/).
-Their API modules have proxies to classes in portal-service. Their Javadoc is
-available at [https://docs.liferay.com/portal/](https://docs.liferay.com/portal/7.0/javadocs/portal-service/).
++$$$
 
-Component APIs in portal-service have a kernel package after the component
+**Important**: The *portal-service* API has been renamed *portal-kernel*. 
+
+$$$
+
+Not all components have been migrated from the
+[portal-kernel API](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/) (formerly named portal-service). 
+Their API modules have proxies to classes in portal-kernel. Their Javadoc is
+available at [https://docs.liferay.com/portal/](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/).
+
+Component APIs in portal-kernel have a kernel package after the component
 package name. Their common package structure looks like this:
 
 - `com.liferay.[component].kernel.constants` - Classes that specify module
