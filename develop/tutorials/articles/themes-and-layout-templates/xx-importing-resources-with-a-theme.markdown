@@ -4,28 +4,29 @@ A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
 However, staging the house with some furniture and decorations helps prospective
 buyers imagine what the house might look like with their belongings. Liferay's
-[resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) module is a tool that allows a theme developer to have
-files and web content automatically imported into the platform when a theme is
-deployed. Usually, the resources are imported into a site template but they can
-also be imported directly into a site. Liferay Administrators can use the site 
-or site template created by the resources importer to showcase the theme. This 
-is a great way for theme developers to provide a sample context that optimizes 
-the design of their theme. In fact, all standalone themes that are uploaded to
-Liferay Marketplace must use the resources importer. This ensures a uniform
-experience for Marketplace users: a user can download a theme from Marketplace,
-install it on their platform, go to Sites or Site Templates in the Control Panel
-and immediately see their new theme in action. In this tutorial, we explain how
-to include resources with your theme.
+[resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) 
+module is a tool that allows a theme developer to have files and web content 
+automatically imported into the platform when a theme is deployed. Usually, the 
+resources are imported into a site template but they can also be imported 
+directly into a site. Liferay Administrators can use the site or site template 
+created by the resources importer to showcase the theme. This is a great way for 
+theme developers to provide a sample context that optimizes the design of their 
+theme. In fact, all standalone themes that are uploaded to Liferay Marketplace 
+must use the resources importer. This ensures a uniform experience for 
+Marketplace users: a user can download a theme from Marketplace, install it on 
+their platform, go to Sites or Site Templates in the Control Panel and 
+immediately see their new theme in action. In this tutorial, we explain how to 
+include resources with your theme.
 
 +$$$
 
 **Note:** The resources importer has undergone some changes that affect the
-properties and class names that were referred to in versions prior to Liferay 
-7.0.0. Please read through the steps below to see the updates. In previous 
-versions of Liferay, you had to deploy the resources importer if you declared it
-as a dependency in your theme's `liferay-plugin-package.properties` file. In 
-Liferay 7.0.0 and up, this is no longer a requirement. The resources importer is 
-now an OSGI module, and is deployed to your instance by default.
+properties, class names, and structures that were referred to in versions prior 
+to Liferay 7.0.0. Please read through the steps below to see the updates. In 
+previous versions of Liferay, you had to deploy the resources importer if you 
+declared it as a dependency in your theme's `liferay-plugin-package.properties` 
+file. In Liferay 7.0.0 and up, this is no longer a requirement. The resources 
+importer is now an OSGI module, and is deployed to your instance by default.
 
 $$$
 
@@ -455,8 +456,7 @@ $$$
 - **structure:** Edit the structure by clicking the link under 
   *Structure and Template*, and copy and paste its contents into a new JSON file 
   for the structure in the `resources-importer/journal/structures/` folder. The 
-  structure JSON sets a wireframe, or blueprint, for an article's data. Note XML 
-  structures are also accepted for backward compatibility.
+  structure JSON sets a wireframe, or blueprint, for an article's data.
 
 - **template:** Create a folder for the template under 
   `resources-importer/journal/templates/`. Edit the template by clicking 
