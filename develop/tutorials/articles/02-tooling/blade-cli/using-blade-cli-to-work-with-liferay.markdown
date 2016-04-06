@@ -24,7 +24,7 @@ This parameter automatically redeploys the module when changes are detected.
 
 **Note:** The `blade deploy` command requires a gradle wrapper to successfully
 execute. To ensure the availability of the Gradle wrapper, be sure to work in a
-Liferay Workspace. For more information of Liferay Workspaces, see the
+Liferay Workspace. For more information on Liferay Workspaces, see the
 [Creating a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
 tutorial.
 

@@ -3,7 +3,7 @@
 The best way to obtain Blade CLI is to download its JAR file and install it
 using the [Java Package Manager](http://jpm4j.org) (JPM). Blade CLI is
 packaged using [JPM](http://jpm4j.org/#!/md/install). Make sure to install JPM,
-since it's the best way to download, install, and update your Blade Tools
+since it's the best way to download, install, and update your Blade CLI
 environment. The exact JPM installation and update syntax depends on your
 operating system, and will be covered in greater detail next.
 

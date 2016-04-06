@@ -20,8 +20,8 @@ sub-commands are callable in the Blade CLI environment:
 - *samples*: Generates a sample project.
 - *server*: Starts or stops server defined by your Liferay project.
 - *sh*: Connects to Liferay and executes Gogo command and returns output.
-- *update*: Updates Blade Tools to latest version.
-- *version*: Displays version information about Blade Tools.
+- *update*: Updates Blade CLI to latest version.
+- *version*: Displays version information about Blade CLI.
 
 In this set of tutorials, you'll learn how to use these commands and what
 templates are provided for you to create Liferay modules.

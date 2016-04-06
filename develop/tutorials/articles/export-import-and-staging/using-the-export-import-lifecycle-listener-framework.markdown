@@ -46,7 +46,8 @@ lifecycles.
 To begin creating your lifecycle listener, you must create a module.
 Follow the steps below:
 
-1.  [Create a generic OSGi module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components) using your favorite tool. 
+1.  Create a generic OSGi module using your favorite third party tool, or use
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
 
 2.  Create a unique package name in the module's `src` directory and create a
     new Java class in that package. To follow naming conventions, begin the class
@@ -88,7 +89,7 @@ registry, your lifecycle listener is ready for use in your Portal instance.
 
 If you're still thirsting for more information on this framework, you're in
 luck! Here's an example, using the
-[LoggerExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience-management/export-import/export-import-service/src/main/java/com/liferay/exportimport/lifecycle/LoggerExportImportLifecycleListener.java).
+[LoggerExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/export-import/export-import-service/src/main/java/com/liferay/exportimport/lifecycle/LoggerExportImportLifecycleListener.java).
 This listener extends the `BaseExportImportLifecycleListener`, so you should
 immediately know that it deals with lifecycle events.
 
@@ -105,12 +106,12 @@ directly related to that event is printed. In summary, the
 `LoggerExportImportLifecycleListener` uses the lifecycle listener framework to
 print messages to the log when an export/import event occurs. Other good
 examples of event lifecycle listeners are
-[CacheExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience-management/export-import/export-import-service/src/main/java/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.java)
-and [JournalCacheExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience-management/journal/journal-service/src/main/java/com/liferay/journal/exportimport/lifecycle/JournalCacheExportImportLifecycleListener.java).
+[CacheExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/export-import/export-import-service/src/main/java/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.java)
+and [JournalCacheExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/exportimport/lifecycle/JournalCacheExportImportLifecycleListener.java).
 
 For an example of a lifecycle listener extending the
 `BaseProcessExportImportLifecycleListener` class, inspect the
-[ExportImportProcessCallbackLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience-management/export-import/export-import-service/src/main/java/com/liferay/exportimport/lifecycle/ExportImportProcessCallbackLifecycleListener.java)
+[ExportImportProcessCallbackLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/export-import/export-import-service/src/main/java/com/liferay/exportimport/lifecycle/ExportImportProcessCallbackLifecycleListener.java)
 class. Instead of listening for lifecycle events, this class only listens for
 process actions.
 
