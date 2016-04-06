@@ -1,0 +1,98 @@
+                                       CAS-SSO IN LIFERAY
+SSO introduction:-
+
+I.	SSO is Single Sign On service means if we have multiple applications we need not to provide user credentials in each application instead of that we will authenticate the user with CAS and we will use CAS tickets to login into other application here user don’t need enter credentials for each application login.
+II.	CAS is best solution for Single Sign On and Single Sign Out.
+
+Why CAS is used :-
+I.	CAS is service which provides Central Authentication. We can authenticate users who are belongs to many application from CAS. We deploy CAS in application server we can use this CAS server for all our applications to do authentication.CAS is best solution for Single Sign On and Single Sign Out.
+II.	If we have multiple web applications then we need not provides authentication in each application instead of that we use CAS to authenticate users and user may belongs to any application.
+III.	To do so we need to create multiple data sources for CAS so that CAS can authenticate against configured data sources.
+IV.	We can configure different kind of data sources to CAS like JDBC data source which connect to relational data bases and LDAP data sources which can connect to LDAP servers. Apart from LDAP and JDBC CAS can support many.
+V.	We already know CAS is service and we will have client to consume or use service. So that CAS is providing different types of clients to support cross platform application.CAS providing many clients to support in many applications.
+
+How CAS is working:-
+I.	CAS is ticket based service. Which is working based on tickets and its validation. Initially when user send his/her credentials to CAS for authentication it will provide TGT (Ticket Granting Ticket) when user find in data source or we can say after successful authentication by CAS.
+II.	 Once we get TGT we will pass TGD and Service URL to CAS then it will give Service Ticket and redirecting to URL which we provided as service URL and service ticket stored in Cookies.
+III.	When we redirecting to Service URL/Client Application then client will obtain the service and it will send service ticket and client application URL to CAS to validate on behalf of application URL.
+IV.	If the validation successful then it will return user principles (username/password) then client application create session for user in applications.
+V.	In the application we will use CAS client library for obtain service tickets and validate the tickets on behalf of client application URL/service URL
+
+How does liferay support CAS:-
+•	Liferay already have CAS client inbuilt so that we need pass CAS service information so that we can enable CAS service in liferay. These are just administration configuration in liferay once we ready with CAS server.
+
+The further steps how we can do this:
+1- Install CAS
+I downloaded the CAS server distribution. All the (recent) downloads are available here : http://www.jasig.org/cas/download
+2- Exploding that tar.gz, I grabbed the cas-server-3.4.5/modules/cas-server-webapp-3.4.5.war, 
+3- Rename the file to cas-web.war.
+4- Copy the war file and paste it to the Tomcat webapps directory.
+5- I didn't stop Tomcat before, so with Tomcat still running, I hit http://localhost:8080/cas-web/ in a browser and was helpfully redirected to http://localhost:8080/ cas-web/login . Default demo CAS webapp authenticates where username equals password, so I tried logging in as "test@liferay.com" with "test@liferay.com"
+6- CAS helpfully told me I was logged in, though of course not logged in to anything useful, since I didn't try to log in to any particular application
+
+Configured Liferay to use CAS for authentication:-
+7- Create an account in liferay with test@liferay.com and password test@liferay.com, which is same as CAS account.
+8- To download the Yale CAS Client 2.0.11 go to http://downloads.jasig.org/cas-clients/
+9- Create a folder and extract the cas.client zip file into this folder.
+10- Open the folder and navigate to the casclient jar file (cas-client-2.0.11\java\lib).
+11- Copy the file.
+12- Go to the lib file in Tomcat (webapps\ROOT\WEB_INF\lib) and paste the casclient jar file to replace the existing one.
+13- In the command prompt go to the ROOT directory. ( /liferay-portal-6.1.10-ee-ga1/tomcat-7.0.25/webapps/ROOT )
+14- Enter the following:
+keytool -genkey -alias tomcat -keypass changeit -keyalg RSA
+
+15- Enter changeit for the password.
+16- Answer the list of questions. Note that the first and last name must be the host name of your server and cannot be an IP address. This is very important because an IP address will fail client hostname verification even if it is correct.
+Enter keystore password: changeit
+What is your first and last name?
+: localhost (*Mandatory)
+What is the name of your organizational unit?
+:  (We can take anything )
+What is the name of your organization?
+: (We can take anything like --)
+What is the name of your City or Locality?
+: (We can take anything like )
+What is the name of your State or Province?
+: (We can take anything like )
+What is the two-letter country code for this unit?
+: (We can take anything like (91)
+
+Is CN=localhost, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
+: yes
+
+17- Enter the following command to export the cert you generated from your personal keystore:
+keytool -export -alias tomcat -keypass changeit -file server.cert 
+
+18- Enter changeit for the password.
+19- Import the cert into Java's keystore with this command:
+keytool -import -alias tomcat -file %FILE_NAME% -keypass changeit -keystore %JAVA_HOME%/jre/lib/security/cacerts
+( Make sure in place of %FILE_NAME% type server.cert )
+20- Enter changeit for the password.
+21- Enter yes.
+22- To set up Liferay Portal, navigate to the classes file in Tomcat (webapps\ROOT\WEB_INF\classes).
+23- Create portal-ext.properties if it does not exist yet, somewhere in the server classpath:
+
+24- Open portal-ext.properties and enter:
+
+cas.auth.enabled=true
+cas.import.from.ldap=true
+cas.login.url=http://localhost:8080/cas-web/login
+cas.logout.url=http://localhost:8080/cas-web/logout
+cas.server.url=http://localhost:8080/cas-web
+cas.validate.url=http://localhost:8080/cas-web/proxyValidate
+25- Save.
+
+26- Start Tomcat and go to Liferay Portal --> Login to Liferay through the username and password login box at left -- if users will exclusively login with CAS. ( Rather then clicking the Sign In link at the upper right. )
+
+27- Go to Control Pannel -> Portal Settings -> Authentication -> CAS 
+(a)- Check on Enabled
+(b)- Make sure type all URL same as mentioned in portal-ext.properties file 
+28- Save it.
+29- Then Sign out from Liferay.
+30- Again Sign In into Liferay by clicking the Sign In link at the upper right.
+31- If everything is set up correctly you will be redirected to the CAS server’s login screen.
+32- logging in as "test@liferay.com" with "test@liferay.com" as password.
+33- CAS sends you back to Liferay with a valid Service Ticket, Liferay validates the Service ticket, and you are logged in Liferay as that test@liferay.com test user.
+
+34- Then Click on Sign Out
+35- Since Liferay is now configured to use CAS, it will send you to the CAS logout URL.
