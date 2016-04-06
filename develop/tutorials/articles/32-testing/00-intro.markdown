@@ -1,4 +1,4 @@
-# Arquillian Extension for Liferay [](id=arquillian-extension-for-liferay)
+# Testing
 
 [Arquillian](http://arquillian.org) is an extensible Java testing platform that's
 designed to make integration testing easy. Arquillian manages the lifecycle of
