@@ -77,7 +77,7 @@ as OSGi. OSGi defines, among other things, how modules can depend on each other,
 communicate, replace their implementations, and be deployed in real time without
 taking the server down. 
 
-+$$$ 
++$$$
 
 Note: In the OSGi nomenclature, modules are sometimes called OSGi bundles, but
 we will avoid that terminology to avoid confusing the concept of a Liferay
