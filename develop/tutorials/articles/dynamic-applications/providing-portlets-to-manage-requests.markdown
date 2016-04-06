@@ -42,7 +42,7 @@ to handle this request. You'll need to create a module that can find the correct
 portlet to handle the request.
 
 1. Create a generic OSGi module using your favorite third party tool, or use
-[Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli). 
+   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package. To follow naming conventions, name the class
@@ -69,7 +69,7 @@ portlet to handle the request.
     `service` element should match the interface you're implementing (e.g.,
     `ViewPortletProvider.class`). You can view an example of a similar
     `@Component` annotation in the
-    [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/platform/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/portlet/RolesSelectorEditPortletProvider.java)
+    [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/portlet/RolesSelectorEditPortletProvider.java)
     class.
 
     +$$$
@@ -81,7 +81,7 @@ portlet to handle the request.
 
     This means that the portlet can provide the specified action on any entity
     in Portal. You can view an example of this in the
-    [AssetBrowserBrowsePortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience-management/asset/asset-browser-web/src/main/java/com/liferay/asset/browser/web/portlet/AssetBrowserBrowsePortletProvider.java)
+    [AssetBrowserBrowsePortletProvider](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/asset/asset-browser-web/src/main/java/com/liferay/asset/browser/web/portlet/AssetBrowserBrowsePortletProvider.java)
     class.
 
     $$$
