@@ -68,7 +68,7 @@ the previous section, you could run:
 Your output lists a long list of modules that are active/installed in your
 server's OSGi container.
 
-![Figure 1: Blade CLI accesses the Gogo shell script to run the `lb` command.](../../../images/blade-sh.png)
+![Figure 1: Blade CLI accesses the Gogo shell script to run the `lb` command.](../../../../images/blade-sh.png)
 
 You can run any Gogo command using `blade sh`. See the
 [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
