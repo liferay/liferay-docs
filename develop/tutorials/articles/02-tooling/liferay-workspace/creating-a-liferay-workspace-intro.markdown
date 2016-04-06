@@ -154,7 +154,7 @@ section.
 To create a Liferay Workspace in IDE, select *File* &rarr; *New* &rarr; *Liferay
 Workspace*.
 
-![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your Liferay projects.](../../images/selecting-liferay-workspace.png)
+![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your Liferay projects.](../../../images/selecting-liferay-workspace.png)
 
 A *New Liferay Workspace* popup window appears, presenting several configuration
 options. Follow the instructions below to create your workspace.
@@ -177,7 +177,7 @@ information on working sets, visit
 
 5. Click *Finish* to create your Liferay Workspace.
 
-![Figure 2: Liferay IDE provides an easy-to-follow menu to create your Liferay Workspace.](../../images/new-workspace-menu.png)
+![Figure 2: Liferay IDE provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/new-workspace-menu.png)
 
 You'll find your new workspace in the Project Explorer and your Liferay server
 (if you created it) in the Servers menu. It's important to note that an Eclipse
