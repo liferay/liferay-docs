@@ -60,22 +60,22 @@ $$$
     could be *tasks*.
 
 2.  Create the directory structure skeleton for your web client module. You can
-    do this automatically by using Blade Tools. You can learn how to install
-    Blade Tools by visiting the
-    [Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
-    tutorial and you can view examples of
+    do this automatically by using Blade CLI. You can learn how to install
+    Blade CLI by visiting the
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
+    tutorial section and you can view examples of
     [Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
     and
     [Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
     by visiting the respective tutorials.
 
     Navigate to your parent directory (e.g., `tasks`) and run the following
-    Blade Tools command to generate a generic web client module structure:
+    Blade CLI command to generate a generic web client module structure:
 
         blade create -t mvcportlet [APPLICATION_NAME]-web
 
     If your application uses Liferay Service Builder, you'll need to run the
-    following Blade Tools command instead. This command generates the service
+    following Blade CLI command instead. This command generates the service
     implementation and service API modules along with the aforementioned web
     client module:
 
@@ -278,7 +278,7 @@ implementation code.
     and the `wiki-service` module's
     [`bnd.bnd`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/wiki/wiki-service/bnd.bnd).
 
-3.  Blade Tools also generated your service implementation module's
+3.  Blade CLI also generated your service implementation module's
     `build.gradle` file. In this file, Service Builder is already configured to
     generate code both in this module and in your service API module. When you
     run Service Builder, Java classes, interfaces, and related files will be
@@ -287,7 +287,7 @@ implementation code.
     configuration.
 
     As you've learned already, you don't have to accept the generated build
-    files' defaults. Blade Tools simply generated some standard OSGi and
+    files' defaults. Blade CLI simply generated some standard OSGi and
     Liferay configurations. Notice that Service Builder is already available
     for you by default. The Service Builder dependency was added as follows:
 
@@ -359,6 +359,7 @@ modules from scratch, visit the
 and
 [Creating an API Module](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components#creating-an-api-module),
 respectively.
+
 <!-- The links above refer to instructions on creating generic OSGi implementation and API modules. Once the Creating a Service Builder application tutorial has been written, the links above should be replaced to the sections in the Creating a Service Builder application tutorial on creating service implementation and service API modules. -Jesse -->
 
 ## Building Your Module JARs for Deployment [](id=building-your-module-jars-for-deployment)

@@ -16,7 +16,7 @@ that modifies the editors you'd like to change. A simple example of this is
 provided below.
 
 1.  Create a generic OSGi module using your favorite third party tool, or use the
-    [Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli).
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
 
 2.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. The class should extend the
