@@ -1,4 +1,4 @@
-# Using Liferay's Language Settings
+# Using Liferay's Language Settings [](id=using-liferays-language-settings)
 
 For a given locale, you can [override Liferay's core UI messages](/develop/tutorials/-/knowledge_base/7-0/modifying-core-language-keys).
 Modifying Language key values in Liferay provides a lot of localization
@@ -6,14 +6,14 @@ flexibility in itself, but we're always looking for new ways to give you more
 control. There are language settings in Liferay's `Language_xx.properties` files
 that give you even more localization options.
 
--  Configure the name fields that are displayed (maybe you don't want a middle name
-   field), and the field values available (like prefix values) in the add and
-edit user forms.
+-  In the add and edit user forms, configure the name fields that are displayed
+   and the field values available in select fields. For example, leave out the
+middle name field if you want, or alter the prefix selections.
 
--  Control the directionality of content and messages in Liferay (left-to-right or
-   right-to-left).
+-  Control the directionality of content and messages in Liferay (left to right or
+   right to left).
 
-To see how these are configured, open Liferay's core `Language.properties` file
+To see how these settings are configured, open Liferay's core `Language.properties` file
 in one of two ways:
 
 1. From Liferay's source code, navigate to 
@@ -44,7 +44,7 @@ settings`.
 +$$$
 
 **Note:** To use the language settings mentioned here, you need a module, which is
-like a magic carpet on which your code (and resources) ride triumphantly into
+like a magic carpet on which your code and resources ride triumphantly into
 Liferay's OSGi runtime. Refer to the tutorial on [modifying Liferay's core language keys](/develop/tutorials/-/knowledge_base/7-0/modifying-core-language-keys) to set up a module with the following characteristics:
 
 -  Contains an implementation of `ResourceBundle` that is registered in the
@@ -55,14 +55,14 @@ Liferay's OSGi runtime. Refer to the tutorial on [modifying Liferay's core langu
 
 $$$
 
-The user name properties are used to customize some fields on the add and edit
+The user name properties are used to customize certain fields of the add and edit
 user forms based on a user's locale.
 
-## Localizing User Names
+## Localizing User Names [](id=localizing-user-names)
 
 Since Liferay's employees come from all over the world, we know that
 naming conventions are different between locales. Liferay's engineers have made
-several of these user name fields configurable in the portal where user name
+several of the user name fields configurable in Liferay where user name
 information is entered or edited. For instance, you might not want a middle name
 field at all, or you might want to customize the prefix menu values
 for a certain translation. 
@@ -71,8 +71,7 @@ The properties for changing user name settings are those that begin with
 `lang.user.name` in the language settings section of a locale's language
 properties file.
 
-For most of the [locales enabled by default](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Languages and Time Zones) the user name properties are specifically tailored to that
-location.
+For most of the [locales enabled by default](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Languages and Time Zones) the user name properties are specifically tailored to that location.
 
     locales.enabled=ca_ES,zh_CN,nl_NL,en_US,fi_FI,fr_FR,de_DE,iw_IL,hu_HU,ja_JP,pt_BR,es_ES
 
@@ -84,7 +83,7 @@ setting user name fields:
     lang.user.name.required.field.names=last-name
     lang.user.name.suffix.values=II,III,IV,Jr,Phd,Sr
 
-![Figure x: The user name settings impact the way user information and forms appear in Liferay.](../../images/english-user-name-fields.png)
+![Figure 1: The user name settings impact the way user information and forms appear in Liferay.](../../images/english-user-name-fields.png)
 
 Compare those to the Spanish (`Language_es.properties`) settings:
 
@@ -92,7 +91,7 @@ Compare those to the Spanish (`Language_es.properties`) settings:
     lang.user.name.prefix.values=Sr,Sra,Sta,Dr,Dra
     lang.user.name.required.field.names=last-name
 
-![Figure x: The Spanish user name settings omit the suffix and middle name fields entirely.](../../images/spanish-user-name-fields.png)
+![Figure 2: The Spanish user name settings omit the suffix and middle name fields entirely.](../../images/spanish-user-name-fields.png)
 
 The biggest difference between the English and Spanish form fields in the images
 above is that the middle name and suffix fields are omitted in the Spanish
@@ -104,9 +103,9 @@ of these user name properties to customize the data you're collecting for users.
 There are couple of important things to note when considering these
 customizations.
 
-## User Name Localization Constraints
+## User Name Localization Constraints [](id=user-name-localization-constraints)
 
-There are two important limits to your newfound powers.
+There are two important limits to your newfound localization powers.
 
 1. You cannot remove the `first-name` field from the field names list. 
 
@@ -138,7 +137,7 @@ There are two important limits to your newfound powers.
 accomplished using the same method by which Liferay's UI messages are localized:
 by overriding one of Liferay's `Lanuguage_xx.properties` files.
 
-## Right to Left or Left to Right?
+## Right to Left or Left to Right? [](id=right-to-left-or-left-to-right)
 
 The first three properties in the language settings section are used for
 changing the direction in which the language's characters are displayed. Most
@@ -148,12 +147,12 @@ changed for languages that have been traditionally displayed left to right (like
 English) as a funny practical joke. Just don't tell anyone that you got the
 idea here.
 
-Here's what the relevant language properties file look like for a language that
+Here's what the relevant language properties look like for a language that
 should be displayed from right to left:
 
     lang.dir=rtl
     lang.line.begin=right
     lang.line.end=left
 
-These customizations can help transform Liferay's UI into a user-friendly
+With these customizations yo can transform Liferay's UI into a user-friendly
 environment no matter where your users are from.
