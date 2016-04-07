@@ -28,7 +28,7 @@ scenes to provide device recognition access automatically. -->
 
 +$$$
 
-**Important:** At the time of this writing, Liferay 7.0 Beta 8 is not connected
+**Important:** At the time of this writing, Liferay 7.0 CE GA1 is not connected
 to a device database by default. Currently, the only way to create Mobile Device
 Families and Rules effectively is to integrate with other device databases using
 Liferay APIs. Once you have access to a device database, you can proceed with
