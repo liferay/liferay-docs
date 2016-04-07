@@ -15,12 +15,14 @@ see how to create RSS feeds in Liferay next.
 ## Configuring RSS Feeds [](id=configuring-rss-feeds)
 
 To manage a Liferay site's RSS feeds, navigate to the Site Administration &rarr;
-Content page of your site and click *Web Content*. Site administrators can use
+*Content* page of your site and click *Web Content*. Site administrators can use
 this Web Content menu option to manage their site's web content, including web
-content structures and templates, which we examined above. Site administrators
-can also use this option to manage their site's RSS feeds. Click the *Options*
-icon (![Options](../../../images/icon-options.png)) at the top right of your
-screen and then *Feeds* if you'd like to add, edit, or delete RSS feeds.
+content structures and templates, which you learned in the 
+[Creating Web Content](/discover/portal/-/knowledge_base/7-0/creating-web-content)
+section. Site administrators can also use this option to manage their site's RSS
+feeds. Click the *Options* icon (![Options](../../../images/icon-options.png))
+at the top right of your screen and then *Feeds* if you'd like to add, edit, or
+delete RSS feeds.
 
 ![Figure 1: Clicking *Options* &rarr; *Feeds* from the Site Administration's Web Content option opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../../images/web-content-manage-feeds.png)
 
@@ -60,13 +62,10 @@ the feed by clicking *Save*.
 The final two sections of the *Add Feed* form allow you customize which web
 content articles appear in your feed.
 
-1. The Web Content Constraints section allows you to select a web content type
-   and a structure with which to filter the articles that appear in your feed.
-   You can select a particular type of web content such as *Announcements*,
-   *News*, or *Press Release*. Only articles of the type you select will appear
-   in your feed. You must also choose for only web content articles that have a
-   particular structure to appear in your feed. This is useful since customized
-   kinds of web content articles are often created using web content structures.
+1. The Web Content Constraints section allows you to select a web content
+   structure with which to filter the articles that appear in your feed.
+   This is useful since all web content articles are created using web content
+   structures.
 
 2. The Presentation Settings section allows you to customize additional details
    about your feed and how articles are displayed in your feed. Leave the Feed
@@ -96,29 +95,31 @@ new browser tab or window to test your feed. From the Feeds popup window, you
 can also customize the permissions of feeds or delete feeds.
 
 It's possible to completely disable RSS feeds at the instance level. You can do
-this by setting the `rss.feeds.enabled` property to `false`. By default, it's
-set to `true`. If you keep the default, RSS enabled, you can make several other
-RSS property customizations. Please refer to the RSS section of your
-`portal.properties` file for details.
+this by setting the `rss.feeds.enabled` property to `false` in your
+`portal-ext.properties` file. By default, it's set to `true`. If you keep the
+default, RSS enabled, you can make several other RSS property customizations.
+Please refer to the
+[RSS section](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#RSS)
+of your `portal.properties` file for details.
 
-## Using the RSS Feeds Application [](id=using-the-rss-feeds-application)
+## Using the RSS Publisher Application [](id=using-the-rss-feeds-application)
 
-The RSS application lets you display any number of RSS feeds and configure how
-they are displayed. If you're looking for a web-based RSS reader, look no
-further: just add the RSS application to one your personal site's private pages,
-and voila! You have your own personal RSS reader. Open the application's
-Configuration menu to select the feeds to be displayed and customize the
-display. The RSS application can also be placed on sites' public or private
-pages to make feeds available to guests or site members, respectively. In these
-cases, make sure that only site administrators have permission to customize the
-RSS application and select feeds to be displayed.
+The RSS Publisher application lets you display any number of RSS feeds and
+configure how they are displayed. If you're looking for a web-based RSS reader,
+look no further: just add the RSS Publisher app to one your personal site's
+private pages, and voila! You have your own personal RSS reader. Open the
+application's Configuration menu to select the feeds to be displayed and
+customize the display. The RSS Publisher app can also be placed on sites' public
+or private pages to make feeds available to guests or site members,
+respectively. In these cases, make sure that only site administrators have
+permission to customize the RSS application and select feeds to be displayed.
 
-Once you've added the RSS application to a page, open the application's
+Once you've added the RSS Publisher app to a page, open the application's
 Configuration menu by clicking on the *Options* icon
 (![Options](../../../images/icon-options.png)) at the top right corner of the
 application and selecting *Configuration*.
 
-![Figure 3: The RSS application's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../../images/rss-application-config.png)
+![Figure 3: The RSS Publisher app's configuration window lets you choose feeds to be displayed and allows you to customize the display settings.](../../../images/rss-application-config.png)
 
 By default, the RSS application displays one feed. In the Feeds section, click
 on the plus sign to add a new feed or on the minus sign to remove a
@@ -127,27 +128,23 @@ the Title field blank, the feed's title appears in the RSS application. If you
 enter a custom title into the Title field, the custom title appears instead of
 the feed's title.
 
-In the Display Settings section, use the following checkboxes to select the feed
+In the top section, use the following selector buttons to select the feed
 details that should be displayed:
 
 - Show Feed Title
-- Show Feed Feed Published Date
-- Show Feed Feed Description
-- Show Feed Feed Image
+- Show Feed Published Date
+- Show Feed Description
+- Show Feed Image
 - Show Feed Item Author
 
 You can also select the number of entries and expanded entries that should be
 displayed per feed. Expanded entries show more of an article's actual content
-than regular entries. By default, each feed shows eight entries per feed but
-only one expanded entry per feed. You can set the feed image alignment to
+than regular entries. By default, each feed shows four entries per feed and
+eight expanded entries per feed. You can set the feed image alignment to
 control whether feed images appear to the right or left of the text. By default,
-the feed image alignment is set to *Right*. Finally, you can select a header web
-content and/or a footer web content. These are web content articles that appear
-in the RSS application either above all of the feeds or below all of the feeds.
-You can use these to provide an introduction, description, or footnotes about
-the feeds that you've selected to be displayed.
+the feed image alignment is set to *Right*.
 
-![Figure 4: By default, the RSS application is configured to display feeds from the Financial Time. This image displays what the Financial Times feed looks like in the RSS application.](../../../images/rss-application-default-view.png)
+![Figure 4: By default, the RSS Publisher app is configured to display feeds from the Financial Time. This image displays what the Financial Times feed looks like in the RSS Publisher app.](../../../images/rss-application-default-view.png)
 
 You've learned how to create, manage, and use RSS feeds. Great job!
 

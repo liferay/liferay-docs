@@ -10,6 +10,7 @@ import org.osgi.service.component.annotations.Component;
 	},
 	service = Greeting.class
 )
+
 public class GreetingImpl implements Greeting {
 
 	@Override

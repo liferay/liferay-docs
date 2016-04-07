@@ -55,14 +55,17 @@ searches in the Recycle Bin (default is 500).
 trash handler runs to delete trash entries that have been in the Recycle Bin
 longer than the maximum age (default is 60).
 
-Also, as was mentioned earlier, there is a property to enable the Recycle bin
-instance-wide.
+Also, as was mentioned earlier, there are properties to enable the Recycle bin
+instance-wide and set trash entries' maximum age.
 
 `trash.enabled=true`: set this property to *false* to disable the Recycle Bin
 for all sites in the portal (default is *true*).
 
+`trash.entries.max.age=43200`: set the number of minutes trash entries should be
+held before being permanently deleted.
+
 Visit the
-[portal.properties](https://docs.liferay.com/portal/7.0-b1/propertiesdoc/portal.properties.html#Trash)
+[portal.properties](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Trash)
 file to view all of the configurable properties for the Recycle Bin.
 
 Next, you should make sure permissions are set properly for users who can
@@ -104,9 +107,9 @@ wiki attachment to the Recycle Bin, it can only be restored from the Wiki app's
 
 $$$
 
-For a quick example to show how easy the Recycle Bin is to use, you'll practice sending a web
-content article to the Recycle Bin and then restoring it. You'll run through two
-different methods of restoring the file.
+For a quick example to show how easy the Recycle Bin is to use, you'll practice
+sending a web content article to the Recycle Bin and then restoring it. You'll
+run through two different methods of restoring the file.
 
 1. Navigate to Site Administration and select *Content* &rarr; *Web Content*.
 
@@ -130,7 +133,7 @@ stored in its original place.
 6. Select the *Move to the Recycle Bin* button again.
 
 7. Navigate back to Site Administration and click the Recycle Bin button from
-the Content dropdown.
+   the Content dropdown.
 
 8. Find your sample web content and click its *Actions* button.
 
@@ -177,7 +180,7 @@ original location and transferred to the Recycle Bin.
 Next, you'll explore the Recycle Bin's intelligence and behind the scenes
 support that aids in a seamless recycling experience.
 
-### Recycle Bin intelligence and support [](id=recycle-bin-intelligence-and-support)
+### Recycle Bin Intelligence and Support [](id=recycle-bin-intelligence-and-support)
 
 Have you ever wondered if it's possible to check the IQ of a software feature?
 Unfortunately, there is no tangible way to do this; however, if there were, the
@@ -205,7 +208,7 @@ document library. If you try to restore the `file1` document, the Recycle Bin
 recognizes duplicate names and prompts you to overwrite the existing document
 in the document library or rename the document you're trying to restore.
 
-![Figure 5: The Recycle Bin always scans your site/portal for duplicate file names during the restoration process.](../../../images/recycle-bin-duplicate-name.png)
+![Figure 5: The Recycle Bin always scans your site/instance for duplicate file names during the restoration process.](../../../images/recycle-bin-duplicate-name.png)
 
 Although the Recycle Bin prohibits the restoration of files that match
 pre-existing file names in your site/instance, it will store files with matching
@@ -232,8 +235,8 @@ Staging Recycle Bin content is transferred to the Live Recycle Bin.
 +$$$
 
 **Note:** The Staging Recycle Bin saves its contents until the staged material
-has been published to live. This means that you can turn the staging mode on and
-off without losing your recycled material.
+has been published to the live site. This means that you can turn the staging
+mode on and off without losing your recycled material.
 
 $$$
 
