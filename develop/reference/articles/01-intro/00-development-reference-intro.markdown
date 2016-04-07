@@ -71,17 +71,17 @@ specific constant values, such as web keys
 
 <p style="margin-left: 40px;">
 Not all components have been migrated from the <a
-href="https://docs.liferay.com/portal/7.0/javadocs/portal-service/" 
-target="_blank">portal-service API<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a>. Their API
-modules have proxies to classes in portal-service. Their Javadoc is available at
-<a href="https://docs.liferay.com/portal/7.0/javadocs/portal-service/"  
+href="https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/" 
+target="_blank">portal-kernel API<span
+class="opens-new-window-accessible"> (Opens New Window)</span></a> (formerly named portal-service). Their API
+modules have proxies to classes in portal-kernel. Their Javadoc is available at
+<a href="https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/"  
 target="_blank">https://docs.liferay.com/portal/<span
 class="opens-new-window-accessible"> (Opens New Window)</span></a>.
 </p>
 
 <p style="margin-left: 40px;">
-Component APIs in portal-service have a <code>kernel</code> package after the
+Component APIs in portal-kernel have a <code>kernel</code> package after the
 component package name. Their common package structure looks like this:
 <ul style="margin-left: 60px;">
 <li>
