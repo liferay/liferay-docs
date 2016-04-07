@@ -361,13 +361,13 @@ properly even when JavaScript is disabled.
 
 ---------------------------------------
 
-### Using util-taglib No Longer Binds You to Using portal-service's javax.servlet.jsp Implementation [](id=using-util-taglib-no-longer-binds-you-to-using-portal-services-javax-servle)
+### Using util-taglib No Longer Binds You to Using portal-kernel's javax.servlet.jsp Implementation [](id=using-util-taglib-no-longer-binds-you-to-using-portal-services-javax-servle)
 - **Date:** 2014-Jun-19
 - **JIRA Ticket:** LPS-47682
 
 #### What changed? [](id=what-changed-7)
 
-Several APIs in `portal-service.jar` contained references to the
+Several APIs in `portal-kernel.jar` contained references to the
 `javax.servlet.jsp` package. This forced `util-taglib`, which depended on many
 of the package's features, to be bound to the same JSP implementation.
 
@@ -396,7 +396,7 @@ parameter.
 
 #### Why was this change made? [](id=why-was-this-change-made-7)
 
-As stated previously, the use of the `javax.servlet.jsp` API in `portal-service`
+As stated previously, the use of the `javax.servlet.jsp` API in `portal-kernel`
 prevented the use of any other JSP impl within plugins (OSGi or otherwise). This
 limited what Liferay could change with respect to providing its own JSP
 implementation within OSGi.
@@ -541,15 +541,15 @@ minor benefit.
 
 ---------------------------------------
 
-### Moved MVCPortlet, ActionCommand and ActionCommandCache from util-bridges.jar to portal-service.jar [](id=moved-mvcportlet-actioncommand-and-actioncommandcache-from-util-bridges-jar)
+### Moved MVCPortlet, ActionCommand and ActionCommandCache from util-bridges.jar to portal-kernel.jar [](id=moved-mvcportlet-actioncommand-and-actioncommandcache-from-util-bridges-jar)
 - **Date:** 2014-Sep-26
 - **JIRA Ticket:** LPS-50156
 
 #### What changed? [](id=what-changed-12)
 
 The classes from package `com.liferay.util.bridges.mvc` in `util-bridges.jar`
-were moved to a new package `com.liferay.portal.kernel.portlet.bridges.mvc`
-in `portal-service.jar`.
+were moved to a new package `com.liferay.portal.kernel.portlet.bridges.mvc` in
+`portal-kernel.jar`.
 
 Old classes:
 
@@ -934,8 +934,8 @@ IDs.
 
 #### What changed? [](id=what-changed-24)
 
-The class `AssetPublisherUtil` from the `portal-service` module has been moved
-to the module `AssetPublisher` and it is no longer a part of the public API.
+The class `AssetPublisherUtil` from the `portal-kernel` module has been moved to
+the module `AssetPublisher` and it is no longer a part of the public API.
 
 #### Who is affected? [](id=who-is-affected-24)
 
@@ -3323,8 +3323,7 @@ view, you need to add the init parameter
 
 Lexicon patterns require the ability to specify different configuration options
 depending on the view of the portlet by adding or removing options. This can be
-easily achieved by using the `PortletConfigurationIcon` and
-`PortletConfigurationIconFactory` classes.
+easily achieved by using the `PortletConfigurationIcon` classes.
 
 ---------------------------------------
 
@@ -3406,7 +3405,7 @@ importer only sees a subset of the package.
 
 #### Who is affected? [](id=who-is-affected-85)
 
-The `portal-service` and `portal-impl` folders have many packages with the same
+The `portal-kernel` and `portal-impl` folders have many packages with the same
 name. Therefore, all of these packages are affected by the split package
 problem.
 
@@ -3787,5 +3786,296 @@ There is no direct replacement. You should remove all usages of the
 #### Why was this change made? [](id=why-was-this-change-made-93)
 
 This change was made as a part of the ongoing strategy to deprecate unused tags.
+
+---------------------------------------
+
+### Removed the Ability to Specify Class Loaders in Scripting [](id=removed-the-ability-to-specify-class-loaders-in-scripting)
+- **Date:** 2016-Feb-17
+- **JIRA Ticket:** LPS-63180
+
+#### What changed? [](id=what-changed-94)
+
+- `com.liferay.portal.kernel.scripting.ScriptingExecutor` no longer uses the
+provided class loaders in the eval methods.
+- `com.liferay.portal.kernel.scripting.Scripting` no longer uses the provided
+class loaders and servlet context names in eval and exec methods.
+
+#### Who is affected? [](id=who-is-affected-94)
+
+- All implementations of `com.liferay.portal.kernel.scripting.ScriptingExecutor`
+are affected.
+- All classes that call `com.liferay.portal.kernel.scripting.Scripting` are
+affected.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-94)
+
+You should remove class loader and servlect context parameters from calls to the
+modified methods.
+
+#### Why was this change made? [](id=why-was-this-change-made-94)
+
+This change was made since custom class loader management is no longer necessary
+in the OSGi container.
+
+---------------------------------------
+
+### User Operation and Importer/Exporter Classes and Utilities Have Been Moved or Removed From portal-kernel [](id=user-operation-and-importer-exporter-classes-and-utilities-have-been-moved-)
+- **Date:** 2016-Feb-17
+- **JIRA Ticket:** LPS-63205
+
+#### What changed? [](id=what-changed-95)
+
+- `com.liferay.portal.kernel.security.exportimport.UserImporter`,
+`com.liferay.portal.kernel.security.exportimport.UserExporter`,
+and `com.liferay.portal.kernel.security.exportimport.UserOperation`  have been
+moved from portal-kernel to the portal-security-export-import-api module.
+
+- `com.liferay.portal.kernel.security.exportimport.UserImporterUtil` and
+`com.liferay.portal.kernel.security.exportimport.UserExporterUtil` have been
+removed with no replacement.
+
+#### Who is affected? [](id=who-is-affected-95)
+
+- All implementations of
+`com.liferay.portal.kernel.security.exportimport.UserImporter` or
+`com.liferay.portal.kernel.security.exportimport.UserExporter`
+are affected.
+
+- All code that uses
+`com.liferay.portal.kernel.security.exportimport.UserImporterUtil`,
+`com.liferay.portal.kernel.security.exportimport.UserExporterUtil`,
+`com.liferay.portal.kernel.security.exportimport.UserImporter`, or
+`com.liferay.portal.kernel.security.exportimport.UserExporter`
+is affected.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-95)
+
+If you are in an OSGi module, you can simply inject the UserImporter or
+UserExporter references
+
+    @Reference
+    private UserExporter_userExporter;
+
+    @Reference
+    private UserImporter _userImporter;
+
+If you are in a legacy WAR or WAB, you will need a snippet like:
+
+    Bundle bundle = FrameworkUtil.getBundle(getClass());
+
+    BundleContext bundleContext = bundle.getBundleContext();
+
+    ServiceReference<UserImporter> serviceReference =
+        bundleContext.getServiceReference(UserImporter.class);
+
+    UserImporter userImporter = bundleContext.getService(serviceReference);
+
+#### Why was this change made? [](id=why-was-this-change-made-95)
+
+The change was made to improve modularity of the user import/export subsystem in
+the product.
+
+---------------------------------------
+
+### Deprecated Category Entry for Users [](id=deprecated-category-entry-for-users)
+- **Date:** 2016-Feb-22
+- **JIRA Ticket:** LPS-63466
+
+#### What changed? [](id=what-changed-96)
+
+The category entry for Site Administration &rarr; Users has been deprecated in
+favor of Site Administration &rarr; Members.
+
+#### Who is affected? [](id=who-is-affected-96)
+
+All developers who specified a `control-panel-entry-category` to be visible in
+Site Administration &rarr; Users are affected.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-96)
+
+You should change the entry from `site_administration.users` to
+`site_administration.members` to make it visible in the category.
+
+#### Why was this change made? [](id=why-was-this-change-made-96)
+
+This change standardizes naming conventions and separates concepts between Users
+in the Control Panel and Site Members.
+
+---------------------------------------
+
+### Deprecated Category Entry for Pages [](id=deprecated-category-entry-for-pages)
+- **Date:** 2016-Feb-25
+- **JIRA Ticket:** LPS-63667
+
+#### What changed? [](id=what-changed-97)
+
+The category entry for Site Administration &rarr; Pages has been deprecated in
+favor of Site Administration &rarr; Navigation.
+
+#### Who is affected? [](id=who-is-affected-97)
+
+All developers who specified a `control-panel-entry-category` to be visible in
+Site Administration &rarr; Pages are affected.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-97)
+
+You should change the entry from `site_administration.pages` to
+`site_administration.navigation` to make it visible in the category.
+
+#### Why was this change made? [](id=why-was-this-change-made-97)
+
+This change standardizes naming conventions and separates concepts in Product
+Menu
+
+---------------------------------------
+
+### Removed the com.liferay.dynamic.data.mapping.util.DDMXMLUtil Class [](id=removed-the-com-liferay-dynamic-data-mapping-util-ddmxmlutil-class)
+- **Date:** 2016-Mar-03
+- **JIRA Ticket:** LPS-63928
+
+#### What changed? [](id=what-changed-98a)
+
+The class `com.liferay.dynamic.data.mapping.util.DDMXMLUtil` has been removed
+with no replacement.
+
+#### Who is affected? [](id=who-is-affected-98a)
+
+All code that uses `com.liferay.dynamic.data.mapping.util.DDMXMLUtil` is
+affected.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-98a)
+
+In an OSGi module, simply inject the DDMXML reference:
+
+    @Reference
+    private DDMXML _ddmXML;
+
+In a legacy WAR or WAB, you need to get a DDMXML service reference from the
+bundle context:
+
+    Bundle bundle = FrameworkUtil.getBundle(getClass());
+
+    BundleContext bundleContext = bundle.getBundleContext();
+
+    ServiceReference<UserImporter> serviceReference =
+        bundleContext.getServiceReference(DDMXML.class);
+
+    DDMXML ddmXML = bundleContext.getService(serviceReference);
+
+#### Why was this change made? [](id=why-was-this-change-made-98a)
+
+This change was made to improve modularity of the dynamic data mapping
+subsystem.
+
+---------------------------------------
+
+### FlagsEntryService.addEntry Method Throws PortalException [](id=flagsentryservice-addentry-method-throws-portalexception)
+- **Date:** 2016-Mar-04
+- **JIRA Ticket:** LPS-63109
+
+#### What changed? [](id=what-changed-98)
+
+The method `FlagsEntryService.addEntry` now throws a `PortalException` if the
+`reporterEmailAddress` is not a valid email address.
+
+#### Who is affected? [](id=who-is-affected-98)
+
+Any caller of the method `FlagsEntryService.addEntry` is affected.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-98)
+
+You should consider checking for the `PortalException` in try-catch blocks and
+adapt your code accordingly.
+
+#### Why was this change made? [](id=why-was-this-change-made-98)
+
+This change prevents providing an incorrect email address when adding flag
+entries.
+
+---------------------------------------
+
+### Removed PHP Portlet Support [](id=removed-php-portlet-support)
+- **Date:** 2016-Mar-10
+- **JIRA Ticket:** LPS-64052
+
+#### What changed? [](id=what-changed-99)
+
+PHP portlets are no longer supported.
+
+#### Who is affected? [](id=who-is-affected-99)
+
+This affects any portlet using the class
+`com.liferay.util.bridges.php.PHPPortlet`.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-99)
+
+You should port your PHP portlet to a different technology.
+
+#### Why was this change made? [](id=why-was-this-change-made-99)
+
+This change simplifies future maintenance of the portal. This support could be
+added back in the future as an independent module.
+
+---------------------------------------
+
+### Removed Liferay Frontend Editor BBCode Web, Previously Known as Liferay BBCode Editor [](id=removed-liferay-frontend-editor-bbcode-web-previously-known-as-liferay-bbco)
+- **Date:** 2016-Mar-16
+- **JIRA Ticket:** LPS-48334
+
+#### What changed? [](id=what-changed-100)
+
+The following things have been changed:
+
+- Removed the `com.liferay.frontend.editor.bbcode.web` OSGi bundle
+- Removed all hardcoded references/logic for the editor
+- Added a log warning and logic to upgrade the editor property to
+`ckeditor_bbcode` if the old `bbcode` is being used. This log warning and logic
+will be removed in the future, along with
+[LPS-64099](https://issues.liferay.com/browse/LPS-64099).
+
+#### Who is affected? [](id=who-is-affected-100)
+
+This affects anyone who has the property
+`editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp`
+set to `bbcode` in portal properties (e.g., `portal-ext.properties`).
+
+#### How should I update my code? [](id=how-should-i-update-my-code-100)
+
+You should modify your `portal-ext.properties` file to remove the property
+`editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.bb_code.jsp`.
+
+#### Why was this change made? [](id=why-was-this-change-made-100)
+
+Since Liferay Frontend Editor BBCode Web has been deprecated since 6.1, it was
+time to remove it completely. This frees up development and support resources to
+focus on supported features.
+
+---------------------------------------
+
+### Removed the asset.entry.validator Property [](id=removed-the-asset-entry-validator-property)
+- **Date:** 2016-Mar-17
+- **JIRA Ticket:** LPS-64370
+
+#### What changed? [](id=what-changed-101)
+
+The property `asset.entry.validator` has been removed from `portal.properties`.
+
+#### Who is affected? [](id=who-is-affected-101)
+
+This affects any installation with a customized asset validator.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-101)
+
+You should create a new OSGi component that implements `AssetEntryValidator` and
+define for which models it will be applicable by using the `model.class.name`
+OSGi property, or an asterisk if it applies to any model.
+
+If you were using the `MinimalAssetEntryValidator`, this functionality can still
+be added by deploying the module `asset-tags-validator`.
+
+#### Why was this change made? [](id=why-was-this-change-made-101)
+
+This change has been made as part of the modularization efforts to decouple
+different parts of the portal.
 
 ---------------------------------------
