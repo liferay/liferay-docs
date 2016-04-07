@@ -28,7 +28,7 @@ property in your `portal-ext.properties` file.
 
 On Unix, you can set your classpath like this:
 
-    export LIFERAY_CLASSPATH=$TOMCAT_DIR/lib,$TOMCAT_DIR/lib/ext,$TOMCAT_DIR/webapps/ROOT/WEB-INF/lib
+    export LIFERAY_CLASSPATH=$TOMCAT_DIR/lib,$TOMCAT_DIR/lib/ext,$TOMCAT_DIR/bin,$TOMCAT_DIR/webapps/ROOT/WEB-INF/lib
 
 On Windows, replace the following section in `build.xml`
 
@@ -41,6 +41,7 @@ with
     <path id="lib.classpath">
        <fileset dir="$TOMCAT_DIR/lib" includes="*.jar" />
        <fileset dir="$TOMCAT_DIR/lib/ext" includes="*.jar" />
+       <fileset dir="$TOMCAT_DIR/bin" includes="*.jar" />
        <fileset dir="$TOMCAT_DIR/webapps/ROOT/WEB-INF/lib" includes="*.jar" />
     </path>
 
