@@ -5,7 +5,7 @@ web sites. Out of the box, it's configured optimally for a single server
 environment. If one server isn't sufficient to serve the high traffic needs of
 your site, Liferay scales to the size you need. 
 
-![Figure 19.29: Liferay is designed to scale to as large an installation as you
+![Figure 19.28: Liferay is designed to scale to as large an installation as you
 need.](../../images/enterprise-configuration.png) 
 
 Liferay works well in clusters of multiple machines (horizontal cluster) or in
@@ -186,7 +186,7 @@ If you're using the RoundRobinShardSelector class, Liferay automatically enters
 data into each instance one by one. If you're using the `ManualShardSelector`
 class, you'll have to specify a shard for each instance using the UI.
 
-![Figure 19.30: When creating a shard using the manual shard selector, specify
+![Figure 19.29: When creating a shard using the manual shard selector, specify
 the shard you want to use for that
 instance.](../../images/enterprise-sharding-portal-instance.png)
 
@@ -284,7 +284,7 @@ database. If, for example, you upload a presentation with the file name
 `workflow.odp` into a folder called *stuff*, the file system store creates a
 folder structure which looks like figure 19.3. 
 
-![Figure 19.31: Liferay's file system store creates a folder structure based on
+![Figure 19.30: Liferay's file system store creates a folder structure based on
 primary keys in Liferay's database.
 ](../../images/enterprise-file-system-store.png)
 
@@ -310,7 +310,7 @@ store. Like that store, it saves files to the local file system--which, of
 course, could be a remote file system mount. It uses a slightly different folder
 structure to store files, which is pictured below. 
 
-![Figure 19.32: The advanced file system store creates a more nested folder
+![Figure 19.31: The advanced file system store creates a more nested folder
 structure than the file system store.
 ](../../images/enterprise-adv-file-system-store.png)
 
@@ -704,7 +704,7 @@ threads. Threads are expensive, because they take resources (memory and CPU
 power). Most of the time, these threads are sleeping, because they only need to
 work when a cached entity has to talk to remote peers. 
 
-![Figure 19.33: The default algorithm requires each node to create massive
+![Figure 19.32: The default algorithm requires each node to create massive
 amounts of dispatch threads to update the cache for each node in the cluster.](../../images/19-ehcache-inefficient-algorithm.png)
 
 Putting heap memory aside (because the amount of memory on the heap depends on
@@ -720,7 +720,7 @@ algorithm for handling cache replication that can can fix both the `1` to `N -
 1` network communication bottleneck, as well as the massive threads bottleneck.
 The default implementation uses JGroups' UDP multicast to communicate. 
 
-![Figure 19.34: Liferay's algorithm uses a single UDP multicast channel, so that
+![Figure 19.33: Liferay's algorithm uses a single UDP multicast channel, so that
 nodes don't have to create a thread for each other node in the cluster.](../../images/19-ehcache-efficient-algorithm.png)
 
 To reduce the number of replication threads, we provide a small pool of
