@@ -1,4 +1,4 @@
-# Extending Form Navigators with New Sections and Categories [](id=extending-form-navigators-with-new-sections-and-categories)
+# Form Navigator
 
 Some data-centric applications require the creation of large data-entry forms.
 Examples abound in healthcare, transportation, pharmaceutical, or any other
