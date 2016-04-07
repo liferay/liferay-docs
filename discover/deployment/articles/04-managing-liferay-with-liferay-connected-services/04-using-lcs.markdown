@@ -399,7 +399,7 @@ events occur in your projects. LCS notifications are configured by adding
 *rules*. The rules define what events trigger a notification. There are no 
 notification rules by default. Click the *Add Rule* button to define one. 
 
-![Figure 4.26: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
+![Figure 4.24: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
 
 First specify the project, environment, and server for the notification. Note 
 that you have the option of selecting all environments and servers in a
@@ -416,7 +416,7 @@ near the top of the UI. This tab lets you change your account's language, time
 zone, and default LCS project. Your default LCS project is the one shown each 
 time you log in to LCS. 
 
-![Figure 4.27: You can change your LCS account's language, time zone, and default LCS project.](../../images/lcs-account-preferences.png)
+![Figure 4.25: You can change your LCS account's language, time zone, and default LCS project.](../../images/lcs-account-preferences.png)
 
 Great! Now you know how to manage your LCS account. The next section shows you 
 how to use environment tokens to automatically register Liferay instances with 
@@ -464,7 +464,7 @@ one: the environment view. Navigate to an environment in LCS and click the
 *Automatic Registration* button. From here you can manage the environment's 
 token. 
 
-![Figure 4.29: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../images/lcs-environment-token.png)
+![Figure 4.26: Clicking the Automatic Registration button in the environment view shows the token for only that environment.](../../images/lcs-environment-token.png)
 
 By default, there's no existing token. A table appears that contains only a 
 *Generate* button. Click it to generate a token for the environment. The new 
@@ -478,7 +478,7 @@ Registration* tab. The table shows the tokens for all the environments in your
 project. This provides a central location to manage all your environment tokens. 
 Otherwise, the UI for managing them is exactly the same. 
 
-![Figure 4.30: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images/lcs-environment-token-02.png)
+![Figure 4.27: The Connection tab on the left lets you manage the environment tokens for your entire project.](../../images/lcs-environment-token-02.png)
 
 Once you have an environment token, use the following steps to register a
 previously unregistered Liferay instance with LCS:
