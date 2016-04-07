@@ -224,7 +224,7 @@ search container). To do so, use the `<aui:worklfow-status>` tag.
 
         <aui:workflow-status markupView="lexicon" showIcon="<%= false %>" showLabel="<%= false %>" status="<%= fooEntity.getStatus() %>" />
 
-![Figure 1: You can display the workflow status of your entities. This is useful in administrative applications.](../../images/workflow-status-list-view.png)
+![Figure 1: You can display the workflow status of your entities. This is useful in administrative applications.](../../../images/workflow-status-list-view.png)
 
 You only needed one new class, one new method in the service layer, and some
 updates to your view, and workflow is fully implemented and ready to use in your
