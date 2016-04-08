@@ -12,14 +12,11 @@ of these child panel categories, you're presented with panel apps.
 
 **Note:** The Product Menu cannot be changed by applying a new theme. To change
 the layout/style of the Product Menu, you must create and deploy a theme
-contributor. See the
+contributor. <!--See the
 [Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors)
-tutorial for more details.
+tutorial for more details.-->
 
 $$$
-
-<!-- Check link for above tutorial. Was not published yet when this was written.
--Cody -->
 
 This construction of the Product Menu was designed to be intuitive and easy to
 use. For your instance of Liferay, however, you may want to add other panel
