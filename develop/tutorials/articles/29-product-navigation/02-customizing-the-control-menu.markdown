@@ -1,10 +1,10 @@
 # Customizing the Control Menu
 
-The Control Menu is the most visible and accessible menu in Liferay. It follows
-the user around, always displaying helpful text or options at the top of the
-page. For example, on your home page, the Control Menu offers default options
-for accessing the Product Menu, Simulation Menu, and Add Menu. You can think of
-this menu as the gateway to configuring options in Liferay.
+The Control Menu is the most visible and accessible menu in Liferay. It is
+visible to the user in most places, always displaying helpful text or options
+at the top of the page. For example, on your home page, the Control Menu offers
+default options for accessing the Product Menu, Simulation Menu, and Add Menu.
+You can think of this menu as the gateway to configuring options in Liferay.
 
 ![Figure 1: The Control Menu has three configurable areas: left, right, and middle.](../../images/control-menu-home.png)
 
@@ -90,8 +90,8 @@ Menu.
    extends the `BaseProductNavigationControlMenuEntry` class and is used when
    Liferay is indexing. For this process, the indexing entry is displayed in the
    *Tools* (middle) area of the Control menu with a *Refresh* icon and text
-   stating *The Portal is currently indexing*. This is done by the following
-   methods:
+   stating *The Portal is currently indexing*. This is done by the calling the
+   following methods:
 
         @Override
         public String getIconCssClass(HttpServletRequest request) {
@@ -109,12 +109,11 @@ Menu.
 
     For a more advanced example, you can inspect the
     [ProductMenuProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/java/com/liferay/product/navigation/product/menu/web/product/navigation/control/menu/ProductMenuProductNavigationControlMenuEntry.java).
-    This entry displays in the *Sites* (left)
-    (![Menu Closed](../../images/icon-menu.png) &rarr; ![Menu Open](../../images/icon-menu-open.png))
-    area of the Control Menu , but unlike the previous example, the
-    `BaseJSPProductNavigationControlMenuEntry` class is extended. This provides
-    several more methods that allows you to use JSPs to define your entry's UI.
-    There are two methods to pay special attention to:
+    This entry displays in the *Sites* (left) area of the Control Menu , but
+    unlike the previous example, the `BaseJSPProductNavigationControlMenuEntry`
+    class is extended. This provides several more methods that allows you to use
+    JSPs to define your entry's UI. There are two methods to pay special
+    attention to:
  
         @Override
         public String getBodyJspPath() {
@@ -126,12 +125,13 @@ Menu.
             return "/portlet/control_menu/product_menu_control_menu_entry_icon.jsp";
         }
 
-    The `getIconJspPath()` method provides the Product Menu icon and the
-    `getBodyJspPath()` method adds the UI body for the entry outside of the
-    Control Menu. The latter method must be used when providing a UI outside the
-    Control Menu. You can easily test this when you open and close the Product
-    Menu on the home page. For best practices on how to construct a body and
-    icon JSP for your entry, visit the
+    The `getIconJspPath()` method provides the Product Menu icon
+    (![Menu Closed](../../images/icon-menu.png) &rarr; ![Menu Open](../../images/icon-menu-open.png))
+    and the `getBodyJspPath()` method adds the UI body for the entry outside of
+    the Control Menu. The latter method must be used when providing a UI outside
+    the Control Menu. You can easily test this when you open and close the
+    Product Menu on the home page. For best practices on how to construct a body
+    and icon JSP for your entry, visit the
     [product_menu_control_menu_entry_body.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/resources/META-INF/resources/portlet/control_menu/product_menu_control_menu_entry_body.jsp)
     and
     [product_menu_control_menu_entry_icon.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/resources/META-INF/resources/portlet/control_menu/product_menu_control_menu_entry_icon.jsp),
@@ -150,6 +150,50 @@ Menu.
     In particular, the
     [entry.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/staging/staging-bar-web/src/main/resources/META-INF/resources/control_menu/entry.jsp)
     is returned, which embeds the Staging Bar portlet into the Control Menu.
+
+6. Define when to display your new entry in the Control Menu. As you've learned
+   already, the Control Panel displays different entries depending on the page
+   you've navigated to. You can specify when your entry should display using the
+   `isShow(HttpServletRequest)` method.
+
+    For example, the `IndexingProductNavigationControlMenuEntry` class queries
+    the number of indexing jobs when calling `isShow`. If the query count is
+    *0*, then the indexing entry is not displayed in the Control Menu:
+
+        @Override
+        public boolean isShow(HttpServletRequest request) throws PortalException {
+            int count = _indexWriterHelper.getReindexTaskCount(
+                CompanyConstants.SYSTEM, false);
+
+            if (count == 0) {
+                return false;
+            }
+
+            return super.isShow(request);
+        }
+
+    The `StagingProductNavigationControlMenuEntry` class is selective over which
+    pages to display for. The staging entry is configured to never display if
+    the page is an administration page (e.g., *Site Administration*, *My
+    Account*, etc.):
+
+        @Override
+        public boolean isShow(HttpServletRequest request) throws PortalException {
+            ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
+                WebKeys.THEME_DISPLAY);
+
+            Layout layout = themeDisplay.getLayout();
+
+            if (layout.isTypeControlPanel()) {
+                return false;
+            }
+
+            if (!themeDisplay.isShowStagingIcon()) {
+                return false;
+            }
+
+            return true;
+        }
 
 Excellent! You've created your entry in one of the three default panel
 categories in the Control Menu. You learned a basic way and an advanced way of
