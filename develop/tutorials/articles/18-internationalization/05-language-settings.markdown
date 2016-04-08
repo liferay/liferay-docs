@@ -26,8 +26,8 @@ in one of two ways:
 
     Just open the `content` folder in the Jar to find the language files.
 
-The first section in the `Language.properties` file is labeled `Language
-settings`. 
+The first section in the `Language.properties` file is labeled *Language
+settings*: 
 
     ##
     ## Language settings
@@ -60,12 +60,49 @@ user forms based on a user's locale.
 
 ## Localizing User Names [](id=localizing-user-names)
 
-Since Liferay's employees come from all over the world, we know that
-naming conventions are different between locales. Liferay's engineers have made
-several of the user name fields configurable in Liferay where user name
-information is entered or edited. For instance, you might not want a middle name
-field at all, or you might want to customize the prefix menu values
-for a certain translation. 
+Liferay's customers come from all over the world, and we recognize that naming
+conventions are different between locales. Liferay's engineers have made several
+of the user name fields configurable in Liferay where user name information is
+entered or edited.
+
+-  Remove certain name fields and make others appear more than once. Some
+   locale's need more than one last name, for example.
+
+        lang.user.name.field.names=prefix,first-name,middle-name,last-name,suffix
+
+-  Change the prefix and suffix values for a locale.
+
+        lang.user.name.prefix.values=Dr,Mr,Ms,Mrs
+        lang.user.name.suffix.values=II,III,IV,Jr,Phd,Sr
+
+-  Specify which fields are required.
+
+        lang.user.name.required.field.names=last-name
+
++$$$
+
+**Note:** A user's first name is mandatory in Liferay. Because of this, take
+these two points into consideration when configuring a locale's user name
+settings:
+
+1. The `first-name` field can't be removed from the field names list. 
+
+        lang.user.name.field.names=prefix,first-name,middle-name,last-name,suffix
+
+2. Because first name is required, it's always implicitly included in the
+*required field names* property:
+
+        lang.user.name.required.field.names=last-name
+
+    Therefore, any fields you enter here are *in addition to* the first name
+    field. Last name is required by default, but you can disable it by deleting its
+    value from the property:
+
+        lang.user.name.required.field.names=
+
+    In that case, only first name would be required.
+
+$$$
 
 The properties for changing user name settings are those that begin with
 `lang.user.name` in the language settings section of a locale's language
@@ -96,42 +133,6 @@ Compare those to the Spanish (`Language_es.properties`) settings:
 The biggest difference between the English and Spanish form fields in the images
 above is that the middle name and suffix fields are omitted in the Spanish
 configuration. Other differences include the specific prefix values.
-
-By overriding the language properties file for a given locale you can modify any
-of these user name properties to customize the data you're collecting for users.
-
-There are couple of important things to note when considering these
-customizations.
-
-## User Name Localization Constraints [](id=user-name-localization-constraints)
-
-There are two important limits to your newfound localization powers.
-
-1. You cannot remove the `first-name` field from the field names list. 
-
-        lang.user.name.field.names=prefix,first-name,middle-name,last-name,suffix
-
-    Why not?  Because it's required by Liferay, as you'll see if you look in
-    Liferay's `portal-model-hints.xml` file.
-
-        <field name="firstName" type="String">
-            <validator name="required" />
-        </field>
-
-    Because first name is a required field in Liferay, you can't remove it from
-    the field names list of any locale.
-
-2. Because first name is required, it's not configurable in the property
-
-        lang.user.name.required.field.names
-
-    Instead it's implicitly included in this list. Therefore, any fields you enter
-    here are *in addition to* the first name field. Last name is included by
-    default, but you can disable it by deleting its value from the property:
-
-        lang.user.name.required.field.names=
-
-    In that case, only first name would be required.
 
 ¡Muy excelente! Localizing the forms for adding and editing users is
 accomplished using the same method by which Liferay's UI messages are localized:
