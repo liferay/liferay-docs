@@ -20,6 +20,21 @@ middle, and right portions of the menu. You can create navigation entries for
 each category, which can provide options or further navigation for the
 particular screen you're on.
 
++$$$
+
+**Note:** You can add the Control Menu to a custom theme by adding the following
+snippet into your `portal_normal.ftl`:
+
+    <@liferay.control_menu />
+
+The other product navigation menus (e.g., Product Menu, Simulation Menu) are
+included in this tag, so specifying the above snippet will embed all three menus
+into your theme. Embedding the User Personal Bar is slightly different. Visit
+the [Providing the User Peronsal Bar](/develop/tutorials/-/knowledge_base/7-0/providing-the-user-personal-bar)
+tutorial for more information.
+
+$$$
+
 In this tutorial, you'll learn how to create your own entries to customize the
 Control Menu. Make sure to read the
 [Adding Custom Panel Categories](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-categories
@@ -90,7 +105,7 @@ Menu.
    extends the `BaseProductNavigationControlMenuEntry` class and is used when
    Liferay is indexing. For this process, the indexing entry is displayed in the
    *Tools* (middle) area of the Control menu with a *Refresh* icon and text
-   stating *The Portal is currently indexing*. This is done by the calling the
+   stating *The Portal is currently indexing*. This is done by calling the
    following methods:
 
         @Override
@@ -134,8 +149,8 @@ Menu.
     and icon JSP for your entry, visit the
     [product_menu_control_menu_entry_body.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/resources/META-INF/resources/portlet/control_menu/product_menu_control_menu_entry_body.jsp)
     and
-    [product_menu_control_menu_entry_icon.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/resources/META-INF/resources/portlet/control_menu/product_menu_control_menu_entry_icon.jsp),
-    files respectively.
+    [product_menu_control_menu_entry_icon.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/resources/META-INF/resources/portlet/control_menu/product_menu_control_menu_entry_icon.jsp)
+    files, respectively.
 
     Lastly, if you're planning on providing functionality that will stay
     exclusively inside the Control Menu, you can inspect how the
