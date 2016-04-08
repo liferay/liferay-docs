@@ -157,7 +157,7 @@ copy.
 When you build an app's WSDD, make sure to use `gradlew` in `liferay-portal` 
 instead of the `gradle` on your machine. After building, you can find the WSDD 
 JAR in the `tools/sdk/dist` folder of your local `liferay-portal` copy. 
-Otherwise, building an app's WSDD is the same as in the preceeding section. 
+Otherwise, building an app's WSDD is the same as in the preceding section. 
 
 For example, to build the WSDD for the Bookmarks app, first navigate to the 
 `liferay-portal/modules/apps/collaboration/bookmarks/bookmarks-service` folder 

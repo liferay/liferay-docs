@@ -311,7 +311,7 @@ Next, you'll learn how to implement a web service client in PHP.
 ## SOAP PHP Client [](id=soap-php-client)
 
 You can write your client in any language that supports web services invocation. 
-The following example code ivokes the same operations as before, but uses PHP 
+The following example code invokes the same operations as before, but uses PHP 
 and a PHP SOAP client instead of Java: 
 
     <?php
