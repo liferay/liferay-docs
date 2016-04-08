@@ -1,16 +1,18 @@
-# Invoking JSON Web Services
+# Invoking JSON Web Services [](id=invoking-json-web-services)
 
 You can invoke Liferay's JSON web service API in languages other than Java, such
 as Beanshell, Groovy, JavaScript, Python, and Ruby. You can also invoke it via 
-URL or [cURL](http://curl.haxx.se/). Additionally, Liferay provides a handy JSON
-web services page that allows you to browse and invoke service methods. 
+URL or 
+[cURL](http://curl.haxx.se/). 
+Additionally, Liferay provides a handy JSON web services page that allows you to 
+browse and invoke service methods. 
 
 If you're running Liferay locally on port 8080, you can find the JSON web 
 services page at 
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws). 
 You can use this page to generate example code for invoking web services. When 
 you invoke a service on this page as described in the tutorial 
-[Invoking Remote Services](https://www.liferay.com/),
+[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services),
 the JSON result of your service invocation appears. Click on the *JavaScript
 Example*, *curl Example*, or *URL Example* tabs to see different ways of 
 invoking the web service. 
@@ -20,7 +22,7 @@ invoking the web service.
 This tutorial explains general techniques for working with JSON web services
 and includes details about invoking them via URL. For examples of invoking 
 Liferay's JSON web services via JavaScript, URL, and cURL, see the
-[JSON Web Services Invocation Examples](https://www.liferay.com/) 
+[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invocation-examples) 
 tutorial. 
 
 There are multiple ways to invoke a JSON web service since there are different
@@ -38,8 +40,8 @@ parameters doesn't matter either.
 +$$$
 
 **Note:** An authentication related token (`p_auth`) must accompany each
-Liferay web service invocation. For details, see the
-[Liferay Web Services Security Layers](https://www.liferay.com/) 
+Liferay web service invocation. For details, see the 
+[Service Security Layers](/develop/tutorials/-/knowledge_base/7-0/service-security-layers) 
 tutorial. Also, see the note in the following section to learn how to find the 
 `p_auth` token value that corresponds to your Liferay session. 
 
@@ -49,7 +51,7 @@ Exceptions abound in life, and there's an exception to the rule that *all*
 parameters are required. When using numeric *hints* to match methods, not all of 
 the parameters are required. You'll learn to use hints next. 
 
-## Using Hints When Invoking a Service via URL
+## Using Hints When Invoking a Service via URL [](id=using-hints-when-invoking-a-service-via-url)
 
 Adding numeric hints lets you specify how many method arguments a service has.
 If you don't specify an argument for a parameter, it's automatically passed in 
@@ -112,7 +114,7 @@ you want to invoke services from your browser!
 
 Next, you'll learn how to pass parameters as part of the URL path. 
 
-## Passing Parameters as Part of a URL Path
+## Passing Parameters as Part of a URL Path [](id=passing-parameters-as-part-of-a-url-path)
 
 To pass method parameters as part of the URL path, specify them in name-value 
 pairs after the service URL. Parameter names must be formed from method argument 
@@ -131,7 +133,7 @@ contains the least number of undefined arguments is chosen and invoked for you.
 You can also pass parameters in a URL query. The next section shows you how to 
 do this. 
 
-## Passing Parameters as a URL Query
+## Passing Parameters as a URL Query [](id=passing-parameters-as-a-url-query)
 
 To pass in parameters as request parameters, specify them as-is (camel case) and 
 set them equal to their argument value. For example: 
@@ -181,7 +183,7 @@ service parameters for a `List<Locale>` Java method argument type:
 
 Next, you'll learn how to specify an argument as `null`. 
 
-## Sending Null Values
+## Sending Null Values [](id=sending-null-values)
 
 To pass a `null` value for an argument, prefix the parameter name with a dash. 
 Here's an example: 
@@ -208,7 +210,7 @@ explicitly, even without a prefix. Here's an example:
 
 Next, you'll learn about encoding parameters. 
 
-## Encoding Parameters
+## Encoding Parameters [](id=encoding-parameters)
 
 There's a difference between URL encoding and query (i.e., request parameters)
 encoding. The difference lies in how the space character is encoded. When the
@@ -234,7 +236,7 @@ an array of 10 bytes (URL decoded), and then converted to a UTF-8 string of the
 
 Next, you'll learn how to send files as arguments.
 
-## Sending Files as Arguments
+## Sending Files as Arguments [](id=sending-files-as-arguments)
 
 Files can be uploaded using multi-part forms and requests. Here's an example:
 
@@ -256,13 +258,14 @@ This is a common upload form that invokes the `DLAppService` class's
 
 Now you'll learn how to invoke JSON web services using JSON-RPC.
 
-## JSON-RPC
+## JSON-RPC [](id=json-rpc)
 
-You can invoke JSON Web Service using [JSON-RPC](http://json-rpc.org). Most of
-the JSON-RPC 2.0 specification is supported in Liferay JSON web services. One
-important limitation is that parameters must be passed in as *named* parameters.
-Positional parameters aren't supported, as there are too many overloaded methods 
-for convenient use of positional parameters. 
+You can invoke JSON Web Service using 
+[JSON-RPC](http://json-rpc.org). Most of the JSON-RPC 2.0 specification is 
+supported in Liferay JSON web services. One important limitation is that 
+parameters must be passed in as *named* parameters. Positional parameters aren't 
+supported, as there are too many overloaded methods for convenient use of 
+positional parameters. 
 
 Here's an example of invoking a JSON web service using JSON-RPC:
 
@@ -277,7 +280,7 @@ Here's an example of invoking a JSON web service using JSON-RPC:
 Next, you'll learn about parameters that are made available to secure JSON web
 services by default. 
 
-## Default Parameters
+## Default Parameters [](id=default-parameters)
 
 When accessing secure JSON web services (i.e., services for which the user must 
 be authenticated), some parameters are made available to the web services
@@ -286,7 +289,6 @@ secured by default. Unless you want to change the available parameters' values
 to something other than their defaults, you don't have to specify them
 explicitly.
 
-<!-- Check to see if these are default parameters are still available in 7.0. -->
 Here are the available default parameters:
 
 - `userId`: The primary key of the authenticated user
@@ -296,7 +298,7 @@ Here are the available default parameters:
 
 Next, you'll learn about object parameters. 
 
-## Object Parameters
+## Object Parameters [](id=object-parameters)
 
 Most services accept simple parameters like numbers and strings. However,
 sometimes you might need to provide an object (a non-simple type) as a service
@@ -348,7 +350,7 @@ service method parameter.
 Once you pass in an object parameter, you might want to populate the object. 
 Find out how next. 
 
-## Inner Parameters
+## Inner Parameters [](id=inner-parameters)
 
 <!-- Link to ServiceContext tutorial once it exists -->
 When you pass in an object parameter, you'll often need to populate its inner
@@ -377,7 +379,7 @@ $$$
 
 Next, let's see what values are returned when a JSON web service is invoked.
 
-## Returned Values
+## Returned Values [](id=returned-values)
 
 No matter how a JSON web service is invoked, it returns a JSON string that
 represents the service method result. Returned objects are *loosely* serialized
@@ -433,7 +435,7 @@ to serialize objects (convert a Liferay object such as a user to JSON string
 format), deserialize JSON strings, and convert between JSON and XML. It also 
 allows developers to create new JSONObjects and add manipulate them. -->
 
-## Common JSON Web Service Errors
+## Common JSON Web Service Errors [](id=common-json-web-service-errors)
 
 While working with JSON web services, you may encounter errors. Some common 
 errors are listed here: 
@@ -474,3 +476,13 @@ errors are listed here:
 
     This error appears when you try to instantiate a method argument using an
     incompatible argument type. 
+
+## Related Topics [](id=related-topics)
+
+[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker)
+
+[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invocation-examples)
+
+[Service Security Layers](/develop/tutorials/-/knowledge_base/7-0/service-security-layers)
+
+[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services)

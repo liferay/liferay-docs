@@ -1,4 +1,4 @@
-# Invoking Remote Services
+# Invoking Remote Services [](id=invoking-remote-services)
 
 You can invoke the remote services of any installed Liferay application the same
 way that you invoke your local services. Doing so could be described as
@@ -49,10 +49,10 @@ app's remote services.
 
 Service Builder can also make your project's web services available via SOAP
 using Apache Axis. After you've built your `*-service` project's WSDD (web 
-service deployment descriptor) and deployed your project's modules, its 
-services are available on your Liferay server. You can view your portal's and 
-app's SOAP services in a browser as described in 
-[the tutorial on creating remote services](https://www.liferay.com/). 
+service deployment descriptor) and deployed your project's modules, its services 
+are available on your Liferay server. You can view your portal's and app's SOAP 
+services in a browser as described in the tutorial 
+[Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services). 
 
 When viewing your SOAP services in a browser, Liferay lists the services 
 available for all your entities and provides links to their WSDL documents. For 
@@ -63,5 +63,17 @@ following URL:
 
 This WSDL document lists the entity's SOAP web services. Once the web service's 
 WSDL is available, any SOAP web service client can access it. To see examples of 
-SOAP web service client implementations, see 
-[the tutorial on SOAP web services](https://www.liferay.com/). 
+SOAP web service client implementations, see the tutorial 
+[SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services). 
+
+**Related Topics**
+
+[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/invoking-json-web-services)
+
+[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker)
+
+[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invocation-examples)
+
+[SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services)
+
+[Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services)

@@ -1,4 +1,4 @@
-# Creating Remote Services
+# Creating Remote Services [](id=creating-remote-services)
 
 Many default Liferay services are available as web services. Liferay exposes its
 web services via JSON and SOAP web services. If you're running Liferay locally
@@ -22,17 +22,11 @@ that are exposed remotely. In this tutorial, you'll learn how to generate remote
 services for your application. When you're done, your application's remote
 service methods can be called remotely via JSON and SOAP web services. 
 
-## Using Service Builder to Generate Remote Services
+## Using Service Builder to Generate Remote Services [](id=using-service-builder-to-generate-remote-services)
 
 Remember that you should implement your application's local service methods in 
 `*LocalServiceImpl`. You should implement your application's remote service 
 methods in `*ServiceImpl`. 
-
-<!--
-This best practice appears in both 05-creating-local-service.markdown and
-in 07-creating-remote-services.markdown. If you edit it, please update both
-locations.
--->
 
 +$$$
 
@@ -94,10 +88,10 @@ Nice work! You've successfully used Service Builder to generate your app's
 remote services. To make these services available via SOAP, however, you must 
 build and deploy your app's Web Service Deployment Descriptor (WSDD). The next 
 section shows you how to do this. If you don't need to generate SOAP web 
-services, you can move on to the 
-[tutorial on invoking remote services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services). 
+services, you can move on to the tutorial
+[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services). 
 
-## Generating Your App's WSDD
+## Generating Your App's WSDD [](id=generating-your-apps-wsdd)
 
 Liferay uses Apache Axis to make SOAP web services available. Since Axis 
 requires a WSDD to make a plugin's remote services available via SOAP, you must 
@@ -145,10 +139,10 @@ fragments and can't be activated. They still work as intended, though.
 
 Next, you'll learn how to build the WSDD module for Liferay's built-in apps that 
 don't include a WSDD by default. If you don't need to do this, you can move on 
-to the 
-[tutorial on invoking remote services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services). 
+to the tutorial 
+[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services). 
 
-## Building the WSDD for Built-in Liferay Apps
+## Building the WSDD for Built-in Liferay Apps [](id=building-the-wsdd-for-built-in-liferay-apps)
 
 Liferay 7 doesn't provide WSDD modules for built-in apps that exist outside of 
 the portal context. This means that by default you can't access SOAP web 
@@ -179,5 +173,17 @@ services at
 [http://localhost:8080/o/com.liferay.bookmarks.service/api/axis](http://localhost:8080/o/com.liferay.bookmarks.service/api/axis). 
 
 Fantastic! Once you've created remote web services, you'll want to know how to 
-invoke them. To learn how, please see the tutorial 
+invoke them. To learn how, see the tutorial 
 [Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services). 
+
+## Related Topics [](id=related-topics)
+
+[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services)
+
+[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/invoking-json-web-services)
+
+[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker)
+
+[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invocation-examples)
+
+[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)

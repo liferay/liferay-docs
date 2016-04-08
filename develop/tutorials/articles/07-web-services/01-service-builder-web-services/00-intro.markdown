@@ -1,4 +1,4 @@
-# Service Builder Web Services
+# Service Builder Web Services [](id=service-builder-web-services)
 
 Liferay's Service Builder can generate local and remote services for your 
 Liferay apps. 
@@ -13,35 +13,35 @@ Liferay's own developers use Service Builder to generate JSON and SOAP web
 services, knowing how to invoke these services is especially important. This 
 section includes the following tutorials:
 
-- [Creating Remote Services](): 
+- [Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services): 
   Use Service Builder to generate your app's JSON and SOAP web services.
 
-- [Invoking Remote Services](): 
+- [Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services): 
   Learn the basics of invoking JSON and SOAP web services in Liferay.
 
-- [Service Security Layers]():
+- [Service Security Layers](/develop/tutorials/-/knowledge_base/7-0/service-security-layers):
   Learn how Liferay secures web services, and how to invoke them with proper 
   authentication.
 
-- [Registering JSON Web Services]():
+- [Registering JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/registering-json-web-services):
   Learn some of the details behind how Service Builder generates JSON web 
   services, and how you can tailor this process to your needs. 
 
-- [Invoking JSON Web Services]():
+- [Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/invoking-json-web-services):
   Learn how to invoke Liferay's JSON web services API via URL. This includes 
   information on passing URL parameters, troubleshooting, and more. 
 
-- [JSON Web Services Invoker](): 
+- [JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker): 
   Learn how to use Liferay's JSON Web Services Invoker to optimize your JSON web 
   service calls.
 
-- [JSON Web Services Invocation Examples]():
+- [JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invocation-examples):
   See examples of how to invoke Liferay's JSON web services via JavaScript, URL, 
   and cURL. 
 
-- [Portal Configuration of JSON Web Services]():
+- [Portal Configuration of JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services):
   Learn which portal properties you can use to control how JSON web services 
   behave in your Liferay instance. 
 
-- [SOAP Web Services]():
+- [SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services):
   Learn how SOAP web services work in Liferay. 
