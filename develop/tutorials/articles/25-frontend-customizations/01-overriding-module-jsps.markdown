@@ -1,4 +1,4 @@
-# Overriding JSPs from a Liferay Module
+# Overriding JSPs from a Module
 
 Liferay applications (both native and third party) often contain JSPs.
 Sometimes you might need to override one of them. If you need to override the
