@@ -1,4 +1,4 @@
-# What are the Breaking Changes for Liferay 7.0? [](id=what-are-the-breaking-changes-for-liferay-7-0)
+# Breaking Changes [](id=breaking-changes)
 
 This document presents a chronological list of changes that break existing
 functionality, APIs, or contracts with third party Liferay developers or users.
