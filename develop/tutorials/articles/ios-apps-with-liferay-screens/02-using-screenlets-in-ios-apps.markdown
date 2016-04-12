@@ -35,11 +35,13 @@ This is indicated by the comments in the code here:
 
         ...
 
-        func onLoginResponse(attributes: [String:AnyObject]) {
-            // handle succeeded login using passed user attributes
+       func screenlet(screenlet: BaseScreenlet,
+               onLoginResponseUserAttributes attributes: [String:AnyObject]) {
+           // handle succeeded login using passed user attributes
         }
 
-        func onLoginError(error: NSError) {
+        func screenlet(screenlet: BaseScreenlet,
+                onLoginError error: NSError) {
             // handle failed login using passed error
         }
 

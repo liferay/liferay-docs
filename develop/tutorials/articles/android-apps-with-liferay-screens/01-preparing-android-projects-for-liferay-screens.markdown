@@ -16,12 +16,12 @@ Let the preparations begin!
 Liferay Screens for Android includes the Component Library (the Screenlets) and 
 a sample project. It requires the following software:
 
-- Android Studio 1.0.2 or above.
+- Android Studio 2.0 or above.
 - Android SDK 4.0 (API Level 15) or above. Its [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
   (v7:23.0.1) implements the
   [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
   and offers older devices a material look and feel.
-- [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases).
+- [Liferay Portal 6.2 CE/EE, or 7.0 CE](http://www.liferay.com/downloads/liferay-portal/available-releases).
 - Liferay Screens Compatibility Plugin (
   [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
@@ -162,8 +162,13 @@ for testing with Android Studio's emulator, because it corresponds to
 `localhost:8080` through the emulator. If you're using the Genymotion emulator,
 you should, however, use address `192.168.56.1` instead of `localhost`. 
 
-In your `server_context.xml` file, you can configure Screenlet properties. The
-example properties listed below, `liferay_recordset_id` and
+If you're using Liferay 7, you must also set the `liferay_portal_version` 
+attribute in your `server_context.xml` to `70`. Supported values for this 
+attribute are `62` for Liferay 6.2, and `70` for Liferay 7.0. If you don't set 
+this attribute, it defaults to `62`. 
+
+You can also configure Screenlet properties in your `server_context.xml` file. 
+The example properties listed below, `liferay_recordset_id` and
 `liferay_recordset_fields`, enable DDL Form Screenlet and DDL List Screenlet to
 interact with a portal's DDLs. You can see an additional example
 `server_context.xml` file

@@ -1,7 +1,9 @@
 # SyncManagerDelegate [](id=syncmanagerdelegate)
 
-The `SyncManagerDelegate` class receives the events produced in the 
-synchronization process. This document describes the class's methods.
+The `SyncManagerDelegate` class is required to 
+[use Screenlets with offline mode](/develop/tutorials/-/knowledge_base/6-2/using-offline-mode-in-ios).
+This class receives the events produced in the synchronization process. This 
+document describes the class's methods. 
 
 ## Methods [](id=methods)
 

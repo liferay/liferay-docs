@@ -18,9 +18,11 @@ these platforms differs.
 
 If you want to enable the offline mode in any of your screenlets, you must
 configure the attribute `offlinePolicy`. This attribute can take four possible
-values. For a description of these values, see the section [Using Policies with Offline Mode](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens#using-policies-with-offline-mode)
+values. For a description of these values, see the section 
+[Using Policies with Offline Mode](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens#using-policies-with-offline-mode)
 in the offline mode architecture tutorial. Note that each Screenlet behaves a
-bit differently with offline mode. For specific details, see the [Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios). 
+bit differently with offline mode. For specific details, see the 
+[Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios). 
 
 ## Handling Synchronization [](id=handling-synchronization)
 

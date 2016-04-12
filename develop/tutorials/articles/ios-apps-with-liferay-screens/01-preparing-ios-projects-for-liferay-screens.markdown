@@ -35,7 +35,7 @@ Liferay Screens for iOS requires the following software:
 - Xcode 7.2
 - iOS 9 SDK
 - [CocoaPods](http://cocoapods.org) 0.36 or newer
-- [Liferay Portal 6.2 CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
+- [Liferay Portal 6.2 CE/EE, or 7.0 CE](http://www.liferay.com/downloads/liferay-portal/available-releases)
 - Liferay Screens Compatibility Plugin (
   [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
@@ -99,21 +99,21 @@ yet exist):
 
     platform :ios, '7.0'
 
-    pod 'Liferay-iOS-SDK', '6.2.0.17'
-    pod 'Liferay-OAuth', '0.1.0'
+    pod 'Liferay-iOS-SDK', '6.2.0.22'
+    pod 'Liferay-OAuth', '0.1.1'
     pod 'MBProgressHUD', '0.9.1'
     pod 'SMXMLDocument', '1.1'
     pod 'ODRefreshControl', '1.2'
-    pod 'YapDatabase', '2.6.5'
+    pod 'YapDatabase/SQLCipher', '2.8.2'
     pod 'KeychainAccess', '2.3.1'
     pod 'CryptoSwift', '0.1.1'
     pod 'DTPickerPresenter', '0.2.0'
     pod 'TNRadioButtonGroup', '0.4'
     pod 'MDRadialProgress', '1.3.2'
 
-In a terminal, navigate to your project's directory and execute 
-`pod install`. Once this completes, quit Xcode (if you have it open). To
-open your project, use the `*.xcworkspace` file in your project's directory. 
+Quit Xcode if you have it open. In a terminal, navigate to your project's 
+directory and execute `pod install`. To open your project, use the 
+`*.xcworkspace` file in your project's directory. 
 
 The
 [CocoaPods for Xcode plugin](https://github.com/kattrali/cocoapods-xcode-plugin) 
@@ -130,12 +130,12 @@ XCTest). Here's a `Podfile` with a placeholder for a test target:
     platform :ios, '7.0'
 
     def import_pods
-        pod 'Liferay-iOS-SDK', '6.2.0.17'
-        pod 'Liferay-OAuth', '0.1.0'
+        pod 'Liferay-iOS-SDK', '6.2.0.22'
+        pod 'Liferay-OAuth', '0.1.1'
         pod 'MBProgressHUD', '0.9.1'
         pod 'SMXMLDocument', '1.1'
         pod 'ODRefreshControl', '1.2'
-        pod 'YapDatabase', '2.6.5'
+        pod 'YapDatabase/SQLCipher', '2.8.2'
         pod 'KeychainAccess', '2.3.1'
         pod 'CryptoSwift', '0.1.1'
         pod 'DTPickerPresenter', '0.2.0'
@@ -196,6 +196,20 @@ communicating with your Liferay instance. As an example, refer to
 [`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Resources/liferay-server-context-sample.plist). 
 
 ![Figure 8: Here's a property list file, called `liferay-context.plist`.](../../images/screens-ios-liferay-context.png)
+
+The values you need to specify in your `liferay-server-context.plist` are: 
+
+- `server`: Your Liferay instance's URL. 
+- `version`: Your Liferay instance's version. Supported values are `62` for 
+  Liferay 6.2, and `70` for Liferay 7.0. 
+- `companyId`: Your Liferay instance's identifier. You can find this value in 
+  the *Instance ID* column of *Control Panel* &rarr; *Portal Instances*. 
+- `groupId`: The site identifier of the default site you want Screens to 
+  communicate with. You can find this value in the Site ID field of the site's 
+  *Site Administration* &rarr; *Configuration* &rarr; *Site Settings* menu. 
+- `connectorFactoryClassName`: The class name of your Connector's factory class. 
+  This is optional. If you don't include it, the `version` value is used to 
+  determine which factory is the most suitable for that version of Liferay. 
 
 Great! Your iOS project is ready for Liferay Screens. 
 

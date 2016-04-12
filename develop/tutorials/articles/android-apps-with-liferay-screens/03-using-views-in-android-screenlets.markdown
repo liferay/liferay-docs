@@ -52,11 +52,28 @@ Here are some View Sets that Liferay created for Android Screenlets:
   [Westeros Bank](https://github.com/liferay/liferay-screens/tree/master/android/samples/bankofwesteros) 
   demo app. 
 
-To use a View Set in your Screenlet, specify its name as the `liferay:layoutId`
-property value in your app's layout XML. This is shown in the following
+To use a View in your Screenlet, specify its name as the `liferay:layoutId` 
+property value in your app's layout XML. This is shown in the following 
 screenshot: 
 
 ![Figure 1: You can set a Screenlet's layout via its `liferay:layoutId` attribute.](../../images/screens-android-layoutid-xml.png)
+
+You can also use a View Set by having your app's theme inherit the View Set. For 
+example, the following code in an app's `res/values/styles.xml` tells 
+`AppTheme.NoActionBar` to use the Material View Set as its parent theme: 
+
+    <resources>
+
+        <style name="AppTheme.NoActionBar" parent="material_theme">
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+            <item name="colorAccent">@color/colorAccent</item>
+
+            <item name="windowActionBar">false</item>
+            <item name="windowNoTitle">true</item>
+        </style>
+        ...
+    </resources>
 
 That's all there is to it! Great! Now you know how to use Views to spruce up 
 your Android Screenlets. This opens up a world of possibilities, like 

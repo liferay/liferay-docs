@@ -5,7 +5,7 @@
 ## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 CE or EE
+- Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
 - Liferay Screens Compatibility Plugin (
   [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
@@ -17,7 +17,7 @@
 
 ## Features [](id=features)
 
-The `DDLFormScreenlet` shows a set of fields that can be filled in by the user. 
+DDL Form Screenlet shows a set of fields that can be filled in by the user. 
 Initial or existing values can be shown in the fields. Fields of the following 
 data types are supported:
 
@@ -33,7 +33,7 @@ data types are supported:
 - *Text*: A single line of text.
 - *Text Area*: Multiple lines of text.
 
-The `DDLFormScreenlet` also supports the following features:
+The DDL Form Screenlet also supports the following features:
 
 - Stored records can support a specific workflow.
 - A Submit button can be shown at the end of the form.
@@ -41,12 +41,12 @@ The `DDLFormScreenlet` also supports the following features:
 - Users can traverse the form fields from the keyboard.
 - Supports i18n in record values and labels.
 
-There are also a few limitations that you should be aware of when using 
-`DDLFormScreenlet`. They are listed here:
+There are also a few limitations that you should be aware of when using DDL Form 
+Screenlet. They are listed here:
 
 - Nested fields in the data definition aren't supported.
 - Selection of multiple items in the Radio and Select data types isn't 
-supported.
+  supported.
 
 ## Module [](id=module)
 
@@ -59,7 +59,7 @@ of fields. Other Views may use different components, such as `ViewPager` or
 others, to show the fields. You can find a sample of this implementation in the 
 `DDLFormScreenletPagerView` class.
 
-![The `DDLFormScreenlet` Default and Material Viewsets.](../../images/screens-android-ddlform.png)
+![Figure 1: DDL Form Screenlet's Default and Material Viewsets.](../../images/screens-android-ddlform.png)
 
 ### Editor Types [](id=editor-types)
 
@@ -74,12 +74,13 @@ using the following attributes:
 - `selectFieldLayoutId`: The layout to use for Select fields.
 - `textFieldLayoutId`: The layout to use for Text fields.
 - `textAreaFieldLayoutId`: The layout to use for Text Box fields.
-- `textDocumentFieldLayoutId`: The layout to use for Documents &amp; Media fields.
+- `textDocumentFieldLayoutId`: The layout to use for Documents &amp; Media 
+  fields.
 
-If you don't define the editor type's layout in the attributes of 
-`DDLFormScreenlet`, the default layout `ddlfield_xxx_default` is used, where 
-`xxx` is the name of the editor type. It's important to note that you can change 
-the layout used with any editor type at any point. 
+If you don't define the editor type's layout in DDL Form Screenlet's attributes, 
+the default layout `ddlfield_xxx_default` is used, where `xxx` is the name of 
+the editor type. It's important to note that you can change the layout used with 
+any editor type at any point. 
 
 ### Custom Editors [](id=custom-editors)
 
@@ -92,7 +93,7 @@ files `ddlfield_custom_rating_number.xml` and `CustomRatingNumberView.java`.
 
 ## Activity Configuration [](id=activity-configuration)
 
-The `DDLForm Screenlet` needs the following user permissions:
+DDL Form Screenlet needs the following user permissions:
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -111,35 +112,34 @@ picture/video information. Here's an example implementation:
 
 ## Portal Configuration [](id=portal-configuration)
 
-Before using `DDLFormScreenlet`, you should make sure that Dynamic Data Lists 
+Before using DDL Form Screenlet, you should make sure that Dynamic Data Lists 
 and Data Types are configured properly in the portal. Refer to the 
 [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
 and [Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists) 
 sections of the User Guide for more details. If Workflow is required, it must 
 also be configured. See the [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow) 
-section of the User Guide for details.
+section of the User Guide for details. 
 
 ### Permissions [](id=permissions)
 
-To use `DDLFormScreenlet` to add new records, you must grant the Add Record 
-permission in the Dynamic Data List:
+To use DDL Form Screenlet to add new records, you must grant the Add Record 
+permission in the Dynamic Data List in the portal. If you want to use DDL Form 
+Screenlet to view or edit record values, you must also grant the View and Update 
+permissions, respectively. The Add Record, View, and Update permissions are 
+highlighted by the red boxes in the following screenshot:
 
-![The Add Record permission.](../../images/screens-portal-permission-record-add.png)
-
-If you want to use `DDLFormScreenlet` to view or edit record values, you must 
-also grant the View and Update permissions, respectively:
-
-![The permissions for viewing and editing records.](../../images/screens-portal-permission-record-edit.png)
+![Figure 2: The permissions for adding, viewing, and editing DDL records.](../../images/screens-portal-permission-ddl.png)
 
 Also, if your form includes at least one Documents and Media field, you must 
 grant permissions in the target repository and folder. For more details, see the 
 `repositoryId` and `folderId` attributes below.
 
-![The permission for adding a folder.](../../images/screens-portal-permission-folder-add.png)
+![Figure 3: The permission for adding a document to a Documents and Media folder.](../../images/screens-portal-permission-folder-add.png)
 
-For more details, see the User Guide sections [Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-), 
-[Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists), 
-and [Using Workflow](/portal/-/knowledge_base/6-2/using-workflow). 
+For more details, see the User Guide sections 
+[Defining Data Types](/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-), 
+[Creating Data Lists](/portal/-/knowledge_base/6-2/creating-data-lists), and 
+[Using Workflow](/portal/-/knowledge_base/6-2/using-workflow). 
 
 ## Offline [](id=offline)
 
@@ -207,7 +207,7 @@ policies:
 
 ## Listener [](id=listener)
 
-The `DDLFormScreenlet` delegates some events to an object that implements to the 
+DDL Form Screenlet delegates some events to an object that implements to the 
 `DDLFormScreenletListener` interface. This interface lets you implement the 
 following methods:
 
