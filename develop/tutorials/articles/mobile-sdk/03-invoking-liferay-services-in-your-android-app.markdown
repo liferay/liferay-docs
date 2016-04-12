@@ -209,7 +209,7 @@ the following code:
     JSONObjectWrapper orderByComparator = new JSONObjectWrapper(className, jsonObject);
 
 For more examples, see the test case 
-[`OrderByComparatorTest.java`](src/test/java/com/liferay/mobile/sdk/test/portal/OrderByComparatorTest.java).
+[`OrderByComparatorTest.java`](https://github.com/liferay/liferay-mobile-sdk/blob/master/android/src/test/java/com/liferay/mobile/android/OrderByComparatorTest.java).
 
 ### ServiceContext [](id=servicecontext)
 
@@ -228,7 +228,7 @@ to a new `JSONObject` and then passing it as the `ServiceContext` argument:
     JSONObjectWrapper serviceContext = new JSONObjectWrapper(jsonObject);
 
 For more examples, see the test case 
-[`ServiceContextTest.java`](src/test/java/com/liferay/mobile/sdk/test/portal/ServiceContextTest.java).
+[`ServiceContextTest.java`](https://github.com/liferay/liferay-mobile-sdk/blob/master/android/src/test/java/com/liferay/mobile/android/ServiceContextTest.java). 
 
 ### Binaries [](id=binaries)
 
@@ -281,15 +281,11 @@ far. For example:
         }
     );
 
-For more examples on this subject, see these test cases: 
-
-- The `aadFileEntry*` methods in 
-  [`DLAppServiceTest.java`](src/test/java/com/liferay/mobile/sdk/test/portal/DLAppServiceTest.java)
-  
-- [`UploadFileUtil.java`](https://github.com/brunofarache/liferay-android-sdk-sample/blob/master/src/com/liferay/mobile/sample/util/UploadFileUtil.java)
+For more examples on this subject, see the `aadFileEntry*` methods in 
+[`DLAppServiceTest.java`](https://github.com/liferay/liferay-mobile-sdk/blob/master/android/src/test/java/com/liferay/mobile/android/DLAppServiceTest.java). 
 
 As you can see, the Mobile SDK does a great deal of work for you even when 
-special service method arguments are required.
+special service method arguments are required. 
 
 ## Related Topics [](id=related-topics)
 

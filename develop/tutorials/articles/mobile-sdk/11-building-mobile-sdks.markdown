@@ -220,7 +220,7 @@ mobile app rock star!
 
 ## Related Topics [](id=related-topics)
 
-[Creating Android Apps that Use Liferay](/develop/tutorials/-/creating-android-apps-that-use-liferay)
+[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
 
 [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
 
