@@ -8,25 +8,35 @@ located in the `portal-web/docroot/html` directory.
 Before you begin crafting a module to override core JSPs, make sure the benefits
 are going to outweigh the costs:
 
-1. Liferay is still being modularized. If you modify a core JSP, it might be
+1. Unlike other modifications you can make in Liferay, there's no way to
+override core JSPs in a way that will gracefully fail. Instead, if your core JSP
+is buggy (because of your code or because of a change in Liferay), you're
+most likely to find out at runtime, where functionality breaks and nasty
+log errors greet you.
+
+    As a related counterexample, modifying a module's JSPs is done using a
+    fragment module. The fragment module declares the exact version of the host
+    module whose JSPs it is overriding. If the host module's developer changes the
+    JSPs in the module and changes the module version, the fragment module can no
+    longer be attached to the version of the host module it was designed to work
+    with. In this scenario, the original JSPs are still available and the
+    application will be functional (but lacking your JSP enhancements).
+
+2. Liferay is still being modularized. If you modify a core JSP, it might be
 moved out of the core and into a module, and then you'll have to re-implement
 your override, since overriding a module's JSPs is [done differently](develop/tutorials/-/knowledge_base/7-0/overriding-module-jsps).
 
-2. There's no clean, API-centered way to override Liferay's JSPs. Because of
-that, compatibility cannot be guaranteed.
+If it's *really* necessary to modify a core JSP, you need a module that satisfies these criteria: 
 
-If it's *really* necessary, modifying a core JSP requires a few things of you: 
+-  Includes a class that implements `CustomJspBag`.
 
--  Include a class that implements `CustomJspBag`.
+-  Registers the service in the OSGi runtime.
 
--  Register the service in the OSGi runtime.
+-  Provides the JSP you're extending.
 
--  Provide the JSP you're extending.
-
-Of course you need to provide transportation for this code into Liferay's OSGi
-runtime, and that transportation will be a module. When configuring it, make
-sure you point to the root directory of JSPs in your bundle. In a `bnd.bnd` file
-specify 
+The module provides transportation for this code into Liferay's OSGi runtime.
+When configuring it to build a proper JAR, make sure the JSPs go in the
+JAR's `META-INF/jsps` directory. In a `bnd.bnd` file you can specify 
 
     -includeresource: META-INF/jsps=src/META-INF/jsps
 
@@ -44,17 +54,14 @@ this folder of your module:
 
 ## Implement a Custom JSP Bag
 
-Create a class that implements `CustomJspBag`. 
+Create a class that implements `CustomJspBag`. The overall goal is to make sure
+that Liferay (specifically `CustomJspBagregistryUtil`) loads the JSPs from your
+module when it's activated.
 
     public class MyCustomJspBag implements CustomJspBag {
 
-The overall goal in this implementation is to 
-
-Override the `activate` method, adding all the custom JSPs to an `ArrayList` by
-their directory path inside the directory you have them in.
-
-<!--Ask Ray: Why is overriding the activate method necessary? And check
-description of what it's doing.-->
+When the module is activated, you need to add the URL path for all your custom
+core JSPs (by directory path) to an `ArrayList`.
 
         @Activate
         protected void activate(BundleContext bundleContext) {
@@ -76,18 +83,17 @@ description of what it's doing.-->
 
         private List<String> _customJsps;
 
-
         private Bundle bundle;
 
-Override the `getCustomJspDir` method, specifying the directory in your module
-where your JSPs live.
+Override the `getCustomJspDir` method, specifying the directory path in your
+module's JAR where the JSPs are placed.
 
         @Override
         public String getCustomJspDir() {
             return "META-INF/jsps/";
         }
 
-Next override the `getCustomJsps` method returning the custom jsps loaded in the
+Next override the `getCustomJsps` method returning the custom JSPs loaded in the
 activate method.
 
         @Override
@@ -99,7 +105,7 @@ Override `getURLContainer`, returning a new
 `com.liferay.portal.kernel.url.URLContainer`. Instantiate the URL container and
 override its `getResources` and `getResource` methods. The `getResources`
 method is for looking up all of the paths to resources in the container by a
-given path. It should return a `HashSet` of `Strings` for any matching
+given path. It should return a `HashSet` of `Strings` for the matching
 custom JSP paths. The `getResource` method returns one specific resource by its
 name (the path included).
 
@@ -133,7 +139,7 @@ name (the path included).
 
         };
 
-Override `isCustomJspGlobal` by simply returning true.
+Override `isCustomJspGlobal` by simply returning `true`.
 
         @Override
         public boolean isCustomJspGlobal() {
@@ -164,20 +170,20 @@ you're out of luck. Theirs will take precedence. Logically then, you should use
 
 ## Extend a JSP
 
-Now to the good part. Take a core JSP and extend it! If you want to add
-something to a core JSP, see if it has an empty `-ext.jsp` and override that
-instead of the whole JSP.  It'll keep things simpler and more stable, since the
-full JSP might change significantly, breaking your customization in the process.
-By overriding the `-ext.jsp`, you're only relying on the original JSP including
-the `-ext.jsp`. As an example, open
+If you want to add something to a core JSP, see if it has an empty `-ext.jsp`
+and override that instead of the whole JSP. It'll keep things simpler and more
+stable, since the full JSP might change significantly, breaking your
+customization in the process. By overriding the `-ext.jsp`, you're only relying
+on the original JSP including the `-ext.jsp`. For an example, open
 `portal-web/docroot/html/common/themes/bottom.jsp`, and scroll to the end.
 You'll see this:
 
     <liferay-util:include page="/html/common/themes/bottom-ext.jsp" />
 
-If you need to add something to this JSP, override the `bottom-ext.jsp`. 
+If you need to add something to `bottom.jsp`, override `bottom-ext.jsp`. 
 
 Remember, this type of customization should be seen as a last resort. There's a
-risk that your override will break due to the nature of this implementation.
-Proceed at your own risk.
+risk that your override will break due to the nature of this implementation, and
+core functionality in Liferay can go down with it. If the JSP you want to
+override is in another module, refer to the article on [overriding JSPs from a module](develop/tutorials/-/knowledge_base/7-0/overriding-module-jsps).
 

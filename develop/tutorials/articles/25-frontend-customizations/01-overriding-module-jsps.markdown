@@ -14,7 +14,7 @@ things:
 
 There are two players in this game: the fragment and the host. The fragment is a
 parasitic module that attaches itself to a host. That sounds harsh, so let's
-compare the fragment-host relations to that of the relationship between a pilot
+compare the fragment-host relationship to the relationship between a pilot
 fish and a huge, scary shark. It's symbiotic, really. Your fragment module
 benefits by not doing much work (like the pilot fish who benefits from the
 shark's hunting prowess). In return, the host module gets whatever benefits
@@ -28,7 +28,7 @@ module:
 
     This is the module containing the original JSP.
 
-2. The exact version of the hot module to which the fragment belongs.
+2. The exact version of the host module to which the fragment belongs.
 
 Both are declared using the OSGi header `Fragment-Host`.
 
