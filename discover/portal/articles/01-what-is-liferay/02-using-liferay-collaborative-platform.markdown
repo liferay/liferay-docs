@@ -47,4 +47,4 @@ of articles, a polling system you can use to have users vote on certain
 questions, and personal productivity applications like a calendar.
 
 Liferay Portal includes every application you'll need to enable users to
-collaborate. Next, you'll see how to use Liferay Portal as a social platform. 
+collaborate. Next, you'll see how Liferay can host multiple web sites.
