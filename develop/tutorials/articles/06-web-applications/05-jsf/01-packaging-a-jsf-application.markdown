@@ -26,22 +26,22 @@ container.
 To get an idea of how a JSF WAB is organized, an example JSF WAB portlet anatomy
 structure is outlined below:
 
-- META-INF
-    - context.xml
-    - MANIFEST.MF
-- OSGI-INF
-    - com.liferay.faces.demos.portlet.JSFPortlet
-- WEB-INF
-    - classes
+- `META-INF`
+    - `context.xml`
+    - `MANIFEST.MF`
+- `OSGI-INF`
+    - `com.liferay.faces.demos.portlet.JSFPortlet`
+- `WEB-INF`
+    - `classes`
         - Class files and related properties
-    - lib
+    - `lib`
         - JAR dependencies
-    - resources
+    - `resources`
         - CSS, XHTML, PNG or other frontend files
-    - views
+    - `views`
         - XHTML views
-    - faces-config.xml
-    - web.xml
+    - `faces-config.xml`
+    - `web.xml`
 
 To ensure your WAR is recognized by the Liferay's WAB extender, you'll need to
 make sure you're including the `META-INF/MANIFEST.MF` file. You can either
@@ -95,11 +95,11 @@ why to include/not include this directive.
   `WEB-INF/liferay-portlet.xml` descriptors.
 
 Both approaches can use custom-built OSGi services, since both result in the
-deployment of a WABs (true OSGi modules). Also, both approaches can be used to
-look up OSGi services, although including the `Bundle-SymbolicName` OSGi
+deployment of a WAB (true OSGi modules). Also, both approaches can be used to
+lookup OSGi services, although including the `Bundle-SymbolicName` OSGi
 directive allows you to take advantage of OSGi Declarative Services via the
 `@Reference` annotation. A JSF-friendly lookup of an OSGi service for both
-approaches can be done by using the JSF Expression Language:
+approaches can be done by using the JSF Expression Language (EL):
 
     @ManagedProperty(value = "#{userLocalService}")
     private UserLocalService userLocalService;
@@ -131,7 +131,7 @@ your `.war` file to your Liferay instance's `/deploy` folder.
 Liferay copies the WAR artifacts directly to the `/osgi/war`, so you can skip
 this system step by copying the `.war` directly to its final destination.
 
-$$$ 
+$$$
 
 When including the `Bundle-SymbolicName` OSGi directive, the auto-deploy process
 is bypassed, so you must manually add the appropriate `<servlet>`, `<listener>`,
@@ -143,12 +143,12 @@ When excluding the `Bundle-SymbolicName` OSGi directive, you can override the
 following properties to see the results of the WAB Generator:
 
     module.framework.web.generator.generated.wabs.store=false
-    module.framework.web.generator.generated.wabs.store.dir=${module.framework.base.­dir}/wabs
+    module.framework.web.generator.generated.wabs.store.dir=${module.framework.base.dir}/wabs
 
 You can learn more about these properties in the
-[Module Framework Web Application Bundles](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Module Framework Web Application Bundles)
+[Module Framework Web Application Bundles](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Module%20Framework%20Web%20Application%20Bundles)
 properties section.
 
-Excellent now you know how to package your JSF application as a WAB, are
+Excellent! Now you know how to package your JSF application as a WAB, are
 informed about whether you'd like to include the `Bundle-SymbolicName` OSGi
 directive in your project, and can successfully deploy your application.
