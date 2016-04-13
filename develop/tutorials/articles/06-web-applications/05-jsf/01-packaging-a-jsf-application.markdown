@@ -27,10 +27,9 @@ To get an idea of how a JSF WAB is organized, an example JSF WAB portlet anatomy
 structure is outlined below:
 
 - `META-INF`
-    - `context.xml`
-    - `MANIFEST.MF`
+    - `MANIFEST.MF` (OSGi-ready)
 - `OSGI-INF`
-    - `com.liferay.faces.demos.portlet.JSFPortlet`
+    - Declarative Services descriptors (prepared by `bndlib`)
 - `WEB-INF`
     - `classes`
         - Class files and related properties
