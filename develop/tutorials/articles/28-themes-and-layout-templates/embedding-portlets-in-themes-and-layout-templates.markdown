@@ -21,13 +21,19 @@ declare an embedded portlet. For example, the `portal_normal.ftl` template file
 is a popular place to declare embedded portlets. Insert the following
 declaration wherever you want to embed the portlet:
 
-    ${theme.runtime("CLASS_NAME", ACTION)}
+    <@liferay-portlet["runtime"]
+        portletProviderAction=ACTION
+        portletProviderClassName="CLASS_NAME"
+    />
 
-This declaration expects two parameters: the class name of the entity type the
-portlet should handle and the type of action. Here's an example of an embedded
+This declaration expects two parameters: the type of action and the class name
+of the entity type the portlet should handle. Here's an example of an embedded
 portlet declaration: 
 
-    $theme.runtime("com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry", $portletProviderAction.VIEW)
+    <@liferay-portlet["runtime"]
+        portletProviderAction=portletProviderAction.VIEW
+        portletProviderClassName="com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry"
+    />
 
 This declares that the theme is requesting to view language entries. There are
 four different kinds of actions supported by the Portlet Providers framework:
