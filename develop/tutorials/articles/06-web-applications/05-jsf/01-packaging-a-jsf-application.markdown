@@ -151,3 +151,11 @@ properties section.
 Excellent! Now you know how to package your JSF application as a WAB, are
 informed about whether you'd like to include the `Bundle-SymbolicName` OSGi
 directive in your project, and can successfully deploy your application.
+
+## Related Topics [](id=related-topics)
+
+[OSGi and Modularity](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity)
+
+[Creating A Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace)
+
+[Migrating A Legacy Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-legacy-application)
