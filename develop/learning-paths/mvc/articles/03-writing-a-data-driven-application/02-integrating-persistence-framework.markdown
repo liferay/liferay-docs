@@ -90,7 +90,7 @@ Now you're ready to create a method that adds `Guestbook`s to the database.
 		
 		Guestbook guestbook = guestbookPersistence.create(guestbookId);
 		
-		guestbook.setUuid(serviceContext.getUuid());
+		guestbook.setUserUuid(serviceContext.getUuid());
 		guestbook.setUserId(userId);
 		guestbook.setGroupId(groupId);
 		guestbook.setCompanyId(user.getCompanyId());
