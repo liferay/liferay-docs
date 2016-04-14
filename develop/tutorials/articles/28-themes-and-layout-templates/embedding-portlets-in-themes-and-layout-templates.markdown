@@ -31,8 +31,8 @@ portlet declaration:
 
 This declares that the theme is requesting to view language entries. There are
 four different kinds of actions supported by the Portlet Providers framework:
-`ADD`, `BROWSE`, `EDIT`, and `VIEW`. Specify the entity type and action in your
-theme's runtime declaration.
+`ADD`, `BROWSE`, `EDIT`, `PREVIEW`, and `VIEW`. Specify the entity type and
+action in your theme's runtime declaration.
 
 Great! Your theme declaration is complete. However, the Portal is not yet
 configured to handle this request. You must create a module that can
