@@ -1,4 +1,4 @@
-# Building a site with Liferay Web Experience 
+# Building a site with Liferay Web Experience [](id=building-a-site-with-liferay-web-experience)
 
 When you log into Liferay and look at its default screen, one thing to notice is
 that it's built for all clients that access the web, not just desktop browsers. 
