@@ -93,7 +93,7 @@ module's JAR where the JSPs are placed.
             return "META-INF/jsps/";
         }
 
-Next override the `getCustomJsps` method returning the custom JSPs loaded in the
+Next override the `getCustomJsps` method, returning the custom JSPs loaded in the
 activate method.
 
         @Override
