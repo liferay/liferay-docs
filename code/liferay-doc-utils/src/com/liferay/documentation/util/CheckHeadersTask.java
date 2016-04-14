@@ -53,6 +53,7 @@ public class CheckHeadersTask {
 			}
 		}
 
+		docSetDirFolders.add(articlesDir);
 		docSetDirFolders.add(docSetDir);
 
 		File docSetDirFoldersArray[] = docSetDirFolders.toArray(
