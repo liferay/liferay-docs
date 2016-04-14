@@ -152,7 +152,13 @@ suppose you chose to order assets by title and there are multiple assets with
 the same title. Then the second ordering would take effect. For example, you
 could order all the assets that had the same title by their publication dates.
 
-When ordering assets, it's important to keep in mind that assets include different kind of entities (journal articles, bookmarks, documents, ..., in fact you can create your own assets), this is important, because if you are displaying an entity which doesn't make use of a field (for example publish date) and you set this field as the ordering field, you are going to suffer weird ordering behaviors.
+When ordering assets, it's important to keep in mind that assets include
+different kind of entities (web content articles, bookmarks, documents, custom
+entities, etc.). If you're displaying an entity which doesn't make use of a
+field (e.g., publish date) and you set this field as the ordering field, your
+asset ordering will be incorrect.
+
+<!-- This inconsistency was logged as a bug in LPS-65023. -Cody -->
 
 You can establish grouping rules as well as ordering rules. You can group assets
 by type or by vocabulary. For example, suppose there's a vocabulary called
