@@ -47,40 +47,45 @@ and ready to go.
 
 6. Check the *Local service* check box. 
 
-7. Open the Guestbook entity on the left to reveal its attributes. Click the
+7. Select the Guestbook entity on the left and check the *Uuid* attribute from
+   the list of optional attributes. 
+
+8. Expand the Guestbook entity on the left to reveal its attributes. Click the
    *Columns* attribute. 
 
-8. Click the *Add Default Columns* link at the bottom. This adds the primary key
+9. Click the *Add Default Columns* link at the bottom. This adds the primary key
    for this table/entity and some other columns that Liferay uses by default,
    such as the ID of the user who created this entity, the create date, the
    modified date, and more. 
 
-9. Click the *+* button to the right of the list of columns. This lets you add a
+10. Click the *+* button to the right of the list of columns. This lets you add a
    new column. 
 
-10. Give your new column the name *name* and make it a `String` type. 
+11. Give your new column the name *name* and make it a `String` type. 
 
-11. Click the *Entities* link on the left again. You'll see that your Guestbook
+12. Click the *Entities* link on the left again. You'll see that your Guestbook
     entity is already in the list. 
 
-12. Click the *+* button to the right of the list of entities. This lets you add
+13. Click the *+* button to the right of the list of entities. This lets you add
     a new entity. 
 
-13. Name your new entity *Entry*, and make sure both Local Service and Remote
+14. Name your new entity *Entry*, and make sure both Local Service and Remote
     Service are checked. 
 
-14. The Entry entity now appears in the list on the left. Expand it and click
+15. Select the Entry entity on the left and check the *Uuid* attribute. 
+
+16. The Entry entity now appears in the list on the left. Expand it and click
     the *Columns* attribute. 
 
-15. As you did before, click *Add Default Columns*. 
+17. As you did before, click *Add Default Columns*. 
 
-16. Click the *+* button to the right of the list of columns. 
+18. Click the *+* button to the right of the list of columns. 
 
-17. Name your new column *name* and make it a `String`. 
+19. Name your new column *name* and make it a `String`. 
 
-18. Use the + button to add two more `String` columns: *email* and *message*. 
+20. Use the + button to add two more `String` columns: *email* and *message*. 
 
-19. Use the + button to add a column of type *long* to hold the foreign key to
+21. Use the + button to add a column of type *long* to hold the foreign key to
     the Guestbook entity. Call this column *guestbookId*. 
 
 ![Figure 1: When your entities have been defined, you should have a configuration like this one.](../../images/lds-sb-1.png)
