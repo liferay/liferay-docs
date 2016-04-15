@@ -73,6 +73,59 @@ why to include/not include this directive.
   `<servlet>` and `<servlet-mapping>` for Liferay's `PortletServlet` and a
   `<listener>` for Liferay's `PluginContextListener`.
 
+Here's an example `web.xml` descriptor you could use that is ready for
+deployment:
+
+    <?xml version="1.0"?>
+
+    <web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+        <display-name>/jsf.applicant-4.0.0-SNAPSHOT</display-name>
+        <!-- Sets the resources directory inside the WEB-INF folder, which means your resources are secure from non-JSF calls.  -->
+        <context-param>
+            <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
+            <param-value>/WEB-INF/resources</param-value>
+        </context-param>
+        <!-- Instruct Mojarra to namespace parameters according to NamingContainer rules. -->
+        <context-param>
+            <param-name>com.sun.faces.namespaceParameters</param-name>
+            <param-value>true</param-value>
+        </context-param>
+        <!-- Listens for PluginContext lifecycle changes. -->
+        <listener>
+            <listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
+        </listener>
+        <!-- Although the FacesServlet will not be invoked by any portlet requests, it is required to initialize JSF. -->
+        <servlet>
+            <servlet-name>FacesServlet</servlet-name>
+            <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+            <load-on-startup>1</load-on-startup>
+        </servlet>
+        <!-- MyFaces will not initialize unless a servlet-mapping to the Faces Servlet is present. -->
+        <servlet-mapping>
+            <servlet-name>Faces Servlet</servlet-name>
+            <url-pattern>*.xhtml</url-pattern>
+        </servlet-mapping>
+        <!--  -->
+        <servlet>
+            <servlet-name>Portlet Servlet</servlet-name>
+            <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+            <load-on-startup>1</load-on-startup>
+        </servlet>
+        <!--  -->
+        <servlet-mapping>
+            <servlet-name>Portlet Servlet</servlet-name>
+            <url-pattern>/portlet-servlet/*</url-pattern>
+        </servlet-mapping>
+        <!-- Prevent direct access to Facelet XHTML -->
+        <security-constraint>
+            <web-resource-collection>
+                <web-resource-name>Facelet XHTML</web-resource-name>
+                <url-pattern>*.xhtml</url-pattern>
+            </web-resource-collection>
+            <auth-constraint/>
+        </security-constraint>
+    </web-app>
+
 ## Excluding the Bundle-SymbolicName OSGi Directive in Your WAB
 
 **Benefits:**
@@ -100,11 +153,11 @@ directive allows you to take advantage of OSGi Declarative Services via the
 `@Reference` annotation. A JSF-friendly lookup of an OSGi service for both
 approaches can be done by using the JSF Expression Language (EL):
 
-    @ManagedProperty(value = "#{userLocalService}")
-    private UserLocalService userLocalService;
+    @ManagedProperty(value = "#{userService}")
+    private UserService userService;
 
-    public void setUserLocalService(UserLocalService userLocalService) {
-        this.userLocalService = userLocalService;
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 
 Then you can write an
@@ -112,13 +165,15 @@ Then you can write an
 does the following:
 
     BundleContext bundleContext = FrameworkUtil.getBundle(getClass()).getBundleContext();
-    ServiceReference<?>[] refs = ctx.getServiceReferences(UserLocalService.class.getName(), null);
-    userLocalService = (UserLocalService) bundleContext.getService(refs[0]);
+    ServiceReference<?>[] refs = ctx.getServiceReferences(UserService.class.getName(), null);
+    userService = (UserService) bundleContext.getService(refs[0]);
 
 The drawback of this technique is that you don't enjoy the full OSGi lifecycle.
 
 Lastly, you can still call the traditional Liferay static utility methods (e.g.,
-`UserServiceUtil.get*`) in order to call Liferay services in your WABs.
+`UserServiceUtil.get*`) in order to call Liferay services in your WABs. Calling
+Liferay's static utility methods, however, also means that you won't enjoy the
+full OSGi lifecycle.
 
 Once you've packaged your JSF WAB and are ready to deploy, simply copy and paste
 your `.war` file to your Liferay instance's `/deploy` folder.
