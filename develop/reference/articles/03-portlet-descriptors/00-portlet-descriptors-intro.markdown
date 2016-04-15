@@ -1,4 +1,4 @@
-# Mapping Portlet Descriptors to OSGi Service Properties [](id=mapping-portlet-descriptors-to-osgi-service-properties)
+# Portlet Descriptor to OSGi Service Property Map [](id=portlet-descriptor-to-osgi-service-property-map)
 
 This section describes the mapping of portlet XML descriptor values to OSGi
 service properties that can be used when publishing OSGi Portlets. 

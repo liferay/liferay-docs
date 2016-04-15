@@ -1,4 +1,4 @@
-# Using the Felix Gogo Shell [](id=using-the-felix-gogo-shell)
+# Felix Gogo Shell [](id=using-the-felix-gogo-shell)
 
 To interact with Liferay's module framework, you can use the Felix Gogo shell.
 To access it, use a telnet client to connect to port `11311` of your Liferay
