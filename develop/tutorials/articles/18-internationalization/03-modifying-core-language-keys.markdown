@@ -1,4 +1,4 @@
-# Modifying Liferay's Language Keys
+# Modifying Liferay's Language Keys [](id=modifying-liferays-language-keys)
 
 Using language files with keys gives you the ultimate flexibility in
 [translating your application's user interface messages](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application). But you can also modify
@@ -58,7 +58,7 @@ You'll also see simple keys you can override to update messages in Liferay.
 As with most development tasks in Liferay, you'll deploy a module into Liferay's
 OSGi runtime to override the keys you want.
 
-## Creating a Resource Bundle
+## Creating a Resource Bundle [](id=creating-a-resource-bundle)
 
 In your module, create a class that extends `java.util.ResourceBundle` and
 register it as an OSGi service with the property `language.id` set to the
@@ -101,7 +101,7 @@ syntax identical to Liferay's syntax, import Liferay's
 `com.liferay.portal.kernel.language.UTF8Control` and set the parameter to
 `UTF8Control.INSTANCE`.
 
-## Creating a Language Properties File
+## Creating a Language Properties File [](id=creating-a-language-properties-file)
 
 Next just provide a `Language.properties` file. Put it in your module's
 `src/content` folder, and override any keys and values you'd like.

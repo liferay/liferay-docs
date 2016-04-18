@@ -1,6 +1,6 @@
-# Customizing Liferay Services [](id=customizing-liferay-services)
+# Customizing Liferay Services (Service Wrappers)
 
-Blade Tools provides templates for creating modules for customizing Liferay
+Blade CLI provides templates for creating modules for customizing Liferay
 services. Service wrappers make it easy to customize Liferay services. In
 this tutorial, you'll learn how to create service wrapper modules. If you
 haven't yet installed Blade Tools, please refer to the
@@ -134,12 +134,6 @@ wrapper module!
 
 ## Related Topics [](id=related-topics)
 
-[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
+[Introduction to Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
 
-[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
-
-[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)
-
-[Consuming Liferay Services](/develop/tutorials/-/knowledge_base/7-0/consuming-liferay-services)
-
-[Using BLADE to Create Modules](/develop/tutorials/-/knowledge_base/7-0/using-blade-to-create-modules)
+[Creating Modules with BLADE CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)

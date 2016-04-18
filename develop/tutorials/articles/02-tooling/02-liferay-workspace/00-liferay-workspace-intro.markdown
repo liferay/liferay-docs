@@ -1,4 +1,4 @@
-# Liferay Workspace
+# Liferay Workspace [](id=liferay-workspace)
 
 A *Liferay Workspace* is a generated environment that is built to hold and
 manage your Liferay projects. This workspace is intended to aid in the
