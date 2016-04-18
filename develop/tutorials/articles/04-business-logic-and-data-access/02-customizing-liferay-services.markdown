@@ -1,4 +1,4 @@
-# Customizing Liferay Services (Service Wrappers)
+# Customizing Liferay Services (Service Wrappers) [](id=customizing-liferay-services-service-wrappers)
 
 Blade CLI provides templates for creating modules for customizing Liferay
 services. Service wrappers make it easy to customize Liferay services. In
