@@ -49,7 +49,7 @@ In a `package.json` file:
     {
         "name": "lfr-product-menu-animation-themelet",
         "liferayTheme": {
-            themeContributorTypeâ€?: product-navigation-control-menu
+            themeContributorType?: product-navigation-control-menu
             "themelet": true,
             "version": "7.0"
         }
@@ -89,4 +89,4 @@ Your standard UI menus are now updated!
 
 [Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
 
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-your-themes)
+[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
