@@ -93,10 +93,11 @@ Menu.
    abstract classes. Typically, the `BaseProductNavigationControlMenuEntry` is
    extended for basic entries (e.g.,
    [IndexingProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/portal-search/portal-search-web/src/main/java/com/liferay/portal/search/web/product/navigation/control/menu/IndexingProductNavigationControlMenuEntry.java))
-   that only display text or a simple icon. If you'd like to provide more
-   complex functionality, like buttons or a sub-menu, the
-   `BaseJSPProductNavigationControlMenuEntry` should be extended. This will be
-   elaborated on more extensively in the next step.
+   that only display a link with text or a simple icon. If you'd like to provide
+   a more complex UI, like buttons or a sub-menu you can do so overriding the 
+   include and includeBody methods. If you are going to use JSPs for generating
+   the UI, you can extend `BaseJSPProductNavigationControlMenuEntry` to save 
+   time. This will be elaborated on more extensively in the next step.
 
 5. Define your Control Menu entry. You'll explore two examples to discover some
    options you have available for defining your entry. First, let's take a look
@@ -112,6 +113,8 @@ Menu.
         public String getIconCssClass(HttpServletRequest request) {
             return "icon-refresh";
         }
+        
+    More icons can be found at [FontAwesome 4.6.1 docs](https://fortawesome.github.io/Font-Awesome/icons/)
 
         @Override
         public String getLabel(Locale locale) {
@@ -124,7 +127,7 @@ Menu.
 
     For a more advanced example, you can inspect the
     [ProductMenuProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/java/com/liferay/product/navigation/product/menu/web/product/navigation/control/menu/ProductMenuProductNavigationControlMenuEntry.java).
-    This entry displays in the *Sites* (left) area of the Control Menu , but
+    This entry displays in the *Sites* (left) area of the Control Menu, but
     unlike the previous example, the `BaseJSPProductNavigationControlMenuEntry`
     class is extended. This provides several more methods that allows you to use
     JSPs to define your entry's UI. There are two methods to pay special
@@ -165,6 +168,27 @@ Menu.
     In particular, the
     [entry.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/staging/staging-bar-web/src/main/resources/META-INF/resources/control_menu/entry.jsp)
     is returned, which embeds the Staging Bar portlet into the Control Menu.
+    
+    You will also need to specify the servlet context from where you are loading
+	the JSP files. If this is inside an osgi module, just make sure your bnd.bnd
+	file has defined a web context path:
+	
+		Bundle-SymbolicName: com.sample.my.module.web
+		Web-ContextPath: /my-module-web
+
+	
+	And then reference the Servlet context using the symbolic name of your
+	module like this:
+	
+		@Override
+		@Reference(
+			target = "(osgi.web.symbolicname=com.sample.my.module.web)",
+			unbind = "-"
+		)
+		public void setServletContext(ServletContext servletContext) {
+			super.setServletContext(servletContext);
+		}
+
 
 6. Define when to display your new entry in the Control Menu. As you've learned
    already, the Control Panel displays different entries depending on the page
@@ -199,10 +223,14 @@ Menu.
 
             Layout layout = themeDisplay.getLayout();
 
+            // This controls if the page is an Administration Page
+            
             if (layout.isTypeControlPanel()) {
                 return false;
             }
 
+            // This controls if Staging is enabled
+            
             if (!themeDisplay.isShowStagingIcon()) {
                 return false;
             }

@@ -15,6 +15,11 @@ common Liferay framework for providing functionality:
 [Portlet Providers](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests).
 Be sure to visit the linked tutorial to learn about how the Portlet Providers
 framework works in Liferay.
+The User Personal Bar can be seen as a placeholder in every Liferay theme. By
+default, Liferay provides one sample "User Personal Bar" portlet that fills that
+placeholder, but the portlet Liferay provides can be easily replaced by other
+portlet.
+
 
 +$$$
 

@@ -43,19 +43,21 @@ a panel app for the already present hidden category.
 
         "panel.category.key=" + SimulationPanelCategory.SIMULATION
 
+    In order to use this constant, you will need to add a dependency on 
+    [com.liferay.product.navigation.simulation](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/com.liferay.product.navigation.simulation/).
     Be sure to also specify the order you'd like to display your new panel app,
     which was explained in the 
     [Adding Custom Panel Apps](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
     section.
 
-3. Extend the
-   [BaseJSPPanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/BaseJSPPanelApp.java)
+3. In this tutorial, we will use JSPs for creating a complex UI. Therefore, we
+   are going to extend the [BaseJSPPanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/BaseJSPPanelApp.java)
    abstract class. This class implements the
    [PanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/PanelApp.java)
    interface and also provides additional methods necessary for specifying JSPs
-   to render your panel app's UI. Remember that you can also create your own
-   extension class and use any frontend technology you want, if you'd like to
-   use a technology other than JSP (e.g., FreeMarker).
+   to render your panel app's UI. Remember that you can also implement your own
+   include method to use any frontend technology you want, if you'd like to use
+   a technology other than JSP (e.g., FreeMarker).
 
 4. Define your simulation view. For instance, in
    [DevicePreviewPanelApp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/product-navigation/product-navigation-simulation-device/src/main/java/com/liferay/product/navigation/simulation/device/application/list/DevicePreviewPanelApp.java),
@@ -64,8 +66,41 @@ a panel app for the already present hidden category.
    file in the `resources/META-INF/resources` folder, where the device
    simulation interface is defined. Optionally, you can also add your own
    language keys, CSS, or JS resources in your simulation module.
-
-    Audience Targeting also provides a good example of how to extend the
+   
+   The right servlet context is also provided implementing this method:
+   
+		 @Override
+		 @Reference(
+		 	target = "(osgi.web.symbolicname=com.liferay.product.navigation.simulation.device)",
+		 	unbind = "-"
+		 )
+		 public void setServletContext(ServletContext servletContext) {
+		 	super.setServletContext(servletContext);
+		 }
+		
+   As explained in [Customizing The Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu),
+   a panel app should be associated to a portlet. This will make the panel app 
+   only visible by default when the user has permission to view the portlet.
+   This panel app is associated to the Simulation Device portlet using these
+    methods:
+   
+	    @Override
+		public String getPortletId() {
+			return ProductNavigationSimulationPortletKeys.
+				PRODUCT_NAVIGATION_SIMULATION;
+		}
+	    
+	    @Override
+		@Reference(
+			target = "(javax.portlet.name=" + ProductNavigationSimulationPortletKeys.PRODUCT_NAVIGATION_SIMULATION + ")",
+			unbind = "-"
+		)
+		public void setPortlet(Portlet portlet) {
+			super.setPortlet(portlet);
+		}
+ 
+   
+   Audience Targeting also provides a good example of how to extend the
     Simulation Menu. When the
     [content-targeting-simulation-web](https://github.com/liferay/liferay-apps-content-targeting/tree/develop/content-targeting-simulation-web)
     module is deployed for the Audience Targeting app, the Simulation Menu is
