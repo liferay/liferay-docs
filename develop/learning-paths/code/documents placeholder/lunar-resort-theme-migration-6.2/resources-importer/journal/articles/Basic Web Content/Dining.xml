@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element name="content" type="text_area" index-type="keyword" index="0">
+		<dynamic-content language-id="en_US">
+			<![CDATA[
+				<p>The Lunar Resort spares no expense, offering the top-of-the-line dining experience. Fresh gourmet bread is made daily by our on staff pastry chef. Sit back in your seat and enjoy the show as your food is made right before your very eyes. Each dining area is centered around a kitchen area, so you know your food is made fresh and on demand. We have gathered all the finest ingredients from around the World, as well as the top chefs to ensure that your experience is the very best. And remember the Resort is all inclusive, so no need to worry about gratuity or the costs of the meal. Just sit back and relax and let your taste buds take a journey.</p>
+<p><br />
+<img alt="" src="[$FILE=fine-dining.jpg$]" /></p>
+			]]>
+		</dynamic-content>
+	</dynamic-element>
+</root>
