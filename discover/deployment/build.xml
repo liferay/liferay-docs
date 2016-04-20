@@ -30,9 +30,4 @@
 		</numberimgsdiscover>
 	</target>
 
-	<target name="prepare-dist" depends="check-images-site, check-intros, clean-dist, number-headers, number-images-discover, check-headers, create-metadata-file" description="Prepares the document for distribution.">
-		<echo message="... creating ${dist.dir} directory"/>
-		<mkdir dir="${dist.dir}"/>
-	</target>
-
 </project>

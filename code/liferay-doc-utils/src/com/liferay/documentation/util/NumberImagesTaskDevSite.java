@@ -15,7 +15,9 @@ public class NumberImagesTaskDevSite extends Task {
 	@Override
 	public void execute() throws BuildException {
 
-		File articleDir = new File("articles");
+		File docDir = new File("../" + _docDir);
+		File articleDir = new File(docDir.getAbsolutePath() + "/articles");
+		//File articleDir = new File("articles");
 		System.out.println("Numbering images for files in "
 				+ articleDir.getPath() + " ...");
 
@@ -67,9 +69,9 @@ public class NumberImagesTaskDevSite extends Task {
 	}
 
 	public void setDocDir(String docDir) {
-		this.docDir = docDir;
+		_docDir = docDir;
 	}
 
-	private String docDir;
+	private String _docDir;
 
 }

@@ -12,58 +12,71 @@ public class CleanImagesSiteMain {
 		System.out.println("Start checking for unused images ...");
 
 		String docDir = args[0];
+		
+		String[] dirTypes = {"", "-dxp"};
+		
+		for (String dirType : dirTypes) {
 
-		File articleDir = new File("../" + docDir + "/articles");
+			File articleDir = new File("../" + docDir + "/articles" + dirType);
 
-		File[] articleDirs = articleDir.listFiles();
+			File[] articleDirs = articleDir.listFiles();
 
-		ArrayList<String> imageNames = new ArrayList<String>();
+			ArrayList<String> imageNames = new ArrayList<String>();
 
-		for (File topicDir : articleDirs) {
-			if (topicDir.isDirectory()) {
+			for (File topicDir : articleDirs) {
+				if (topicDir.isDirectory()) {
 
-				File[] topicDirs = topicDir.listFiles();
+					File[] topicDirs = topicDir.listFiles();
 
-				System.out.println("checking " + topicDir.getPath());
+					System.out.println("checking " + topicDir.getPath());
 
-				for (File mkdFile : topicDirs) {
+					for (File mkdFile : topicDirs) {
 
-					if (!mkdFile.getName().endsWith(".markdown")) {
-						continue;
-					}
-
-					System.out.println(" " + mkdFile.getName());
-
-					LineNumberReader in = new LineNumberReader(new FileReader(
-							mkdFile));
-					String line = null;
-
-					while ((line = in.readLine()) != null) {
-						if (line.contains("(../../images/")) {
-							imageNames.add(extractImageName(line));
+						if (!mkdFile.getName().endsWith(".markdown")) {
+							continue;
 						}
+
+						System.out.println(" " + mkdFile.getName());
+
+						LineNumberReader in = new LineNumberReader(new FileReader(
+								mkdFile));
+						String line = null;
+
+						while ((line = in.readLine()) != null) {
+							if (line.contains("(../../images")) {
+								imageNames.add(extractImageName(line, dirType));
+							}
+						}
+						in.close();
 					}
-					in.close();
 				}
 			}
-		}
 
-		File imagesDir = new File("../" + docDir + "/images");
-		File[] imageFiles = imagesDir.listFiles();
+			File imagesDir = new File("../" + docDir + "/images" + dirType);
+			File[] imageFiles = imagesDir.listFiles();
 
-		for (File imageFile : imageFiles) {
-			if (!imageNames.contains(imageFile.getName())) {
-				System.out.println("Deleting unused image: "
-						+ imageFile.getName());
-				imageFile.delete();
+			for (File imageFile : imageFiles) {
+				if (!imageNames.contains(imageFile.getName())) {
+					System.out.println("Deleting unused image: "
+							+ imageFile.getName());
+					imageFile.delete();
+				}
 			}
 		}
 	}
 
-	private static String extractImageName(String line) {
+	private static String extractImageName(String line, String dirType) {
+
+		int imageBegIndex;
+		if (dirType.equals("")) {
+			imageBegIndex = 14;
+		}
+		else {
+			imageBegIndex = 18;
+		}
 
 		String imageName = line.substring(
-				line.lastIndexOf("(../../images/") + 14, line.lastIndexOf(")"));
+				line.lastIndexOf("(../../images") + imageBegIndex, line.lastIndexOf(")"));
 		return imageName;
 	}
 }
