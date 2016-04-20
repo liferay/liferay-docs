@@ -218,9 +218,9 @@ space character is part of the URL path, it's encoded as `%20`; when it's part
 of the query it's encoded as a plus sign (`+`).
 
 All these encoding rules apply to ASCII and international (non-ASCII)
-characters. Since Liferay Portal works in UTF-8 mode, parameter values must be
-encoded as UTF-8 values. Liferay Portal doesn't decode request URLs and request
-parameter values to UTF-8 itself; it relies on the web server layer. When
+characters. Since Liferay works in UTF-8 mode, parameter values must be encoded 
+as UTF-8 values. Liferay doesn't decode request URLs and request parameter 
+values to UTF-8 itself; it relies on the web server layer. When
 accessing services through JSON-RPC, encoding parameters to UTF-8 isn't
 enough--you need to send the encoding type in a Content-Type header (e.g.
 `Content-Type : "text/plain; charset=utf-8"`).
@@ -284,10 +284,9 @@ services by default.
 
 When accessing secure JSON web services (i.e., services for which the user must 
 be authenticated), some parameters are made available to the web services
-by default. Note that as of Liferay 6.2, all of Liferay's web services are
-secured by default. Unless you want to change the available parameters' values
-to something other than their defaults, you don't have to specify them
-explicitly.
+by default. All of Liferay's web services are secured by default. Unless you 
+want to change the available parameters' values to something other than their 
+defaults, you don't have to specify them explicitly.
 
 Here are the available default parameters:
 
