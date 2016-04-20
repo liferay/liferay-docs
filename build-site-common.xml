@@ -116,6 +116,7 @@
 			failonerror="true"
 		>
 			<arg value="${doc.dir}"/>
+			<arg value="ce"/>
 		</java>
 	</target>
 
@@ -130,6 +131,18 @@
 		</java>
 	</target>
 
+	<target name="check-headers-dxp" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
+		<java
+			classname="com.liferay.documentation.util.CheckHeadersTask"
+			classpathref="project.classpath"
+			fork="true"
+			failonerror="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="dxp"/>
+		</java>
+	</target>
+
 	<target name="concat-markdown" description="Concatenates the Markdown files in a specific folder for preparation to convert to other formats.">
 	  <concatmarkdown docdir="${doc.dir}">
 	  </concatmarkdown>
@@ -139,18 +152,31 @@
         </copy>
 	</target>
 
+	<target name="check" depends="check-images-site, check-intros, number-headers, number-images-site, check-headers" description="Checks for necessary requirements before distribution.">
+
+	</target>
+
+	<target name="check-dxp" depends="check-images-site-dxp, check-intros, number-headers-dxp, number-images-site-dxp, check-headers-dxp" description="Checks for necessary requirements before distribution.">
+
+	</target>
+
 	<target name="check-article-images" description="Verifies all images referenced in a single Markdown article.">
 		<checkarticleimgssite docdir="${doc.dir}" article="${article}">
 		</checkarticleimgssite>
 	</target>
 
 	<target name="check-images-site" description="Verifies all images referenced in a project's Markdown articles found in ${doc.dir}/articles.">
-		<checkimgssite docdir="${doc.dir}">
+		<checkimgssite docdir="${doc.dir}" producttype="ce">
 		</checkimgssite>
 	</target>
 
 	<target name="check-images-site-dist" description="Verifies all images referenced in a project's Markdown articles.">
 		<checkimgssite docdir="${doc.dir}/${temp.dir}">
+		</checkimgssite>
+	</target>
+
+	<target name="check-images-site-dxp" description="Verifies all images referenced in a project's Markdown articles found in ${doc.dir}/articles.">
+		<checkimgssite docdir="${doc.dir}" producttype="dxp">
 		</checkimgssite>
 	</target>
 
@@ -300,6 +326,7 @@
 			fork="true"
 		>
 			<arg value="${doc.dir}"/>
+			<arg value="ce"/>
 		</java>
 	</target>
 
@@ -315,13 +342,31 @@
 		</java>
 	</target>
 
+	<target name="number-headers-dxp" description="Numbers the headers of Markdown articles.">
+		<property file="${project.dir}/release-site.properties" />
+		<java
+			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="dxp"/>
+		</java>
+	</target>
+
 	<target name="number-images-site" description="numbers the images in a markdown chapter file">
-		<numberimgssite docdir="${doc.dir}">
+		<numberimgssite docdir="${doc.dir}" producttype="ce">
 		</numberimgssite>
 	</target>
 
 	<target name="number-images-site-dist" description="Numbers the images of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp.">
 		<numberimgssite docdir="${doc.dir}/${temp.dir}">
+		</numberimgssite>
+	</target>
+
+	<target name="number-images-site-dxp" description="Numbers the images of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp.">
+		<numberimgssite docdir="${doc.dir}" producttype="dxp">
 		</numberimgssite>
 	</target>
 

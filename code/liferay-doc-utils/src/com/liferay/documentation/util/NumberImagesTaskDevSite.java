@@ -14,56 +14,67 @@ public class NumberImagesTaskDevSite extends Task {
 	
 	@Override
 	public void execute() throws BuildException {
-
-		File docDir = new File("../" + _docDir);
-		File articleDir = new File(docDir.getAbsolutePath() + "/articles");
-		//File articleDir = new File("articles");
-		System.out.println("Numbering images for files in "
-				+ articleDir.getPath() + " ...");
-
-		if (!articleDir.exists() || !articleDir.isDirectory()) {
-			throw new BuildException("FAILURE - bad chapters directory " + articleDir);
-		}
 		
-		File[] articleDirFiles = articleDir.listFiles();
-		List<File> articles = new ArrayList<File>();
-		
-		Queue<File> q = new LinkedList<File>();
-		for (File f : articleDirFiles) {
-			q.add(f);
+String productType = _productType;
+
+		List<String> dirTypes = new ArrayList<String>();
+		dirTypes.add("");
+
+		if (productType.equals("dxp")) {
+			dirTypes.add("-dxp");
 		}
 
-		while (!q.isEmpty()) {
-			File f = q.remove(); 
-			
-			if (f.isDirectory()) {
-				File[] files = f.listFiles();
-				
-				for (File file : files) {
-					q.add(file);
+		for (String dirType : dirTypes) {
+
+			File docDir = new File("../" + _docDir);
+			File articleDir = new File(docDir.getAbsolutePath() + "/articles" + dirType);
+			System.out.println("Numbering images for files in "
+					+ articleDir.getPath() + " ...");
+
+			if (!articleDir.exists() || !articleDir.isDirectory()) {
+				throw new BuildException("FAILURE - bad chapters directory " + articleDir);
+			}
+
+			File[] articleDirFiles = articleDir.listFiles();
+			List<File> articles = new ArrayList<File>();
+
+			Queue<File> q = new LinkedList<File>();
+			for (File f : articleDirFiles) {
+				q.add(f);
+			}
+
+			while (!q.isEmpty()) {
+				File f = q.remove(); 
+
+				if (f.isDirectory()) {
+					File[] files = f.listFiles();
+
+					for (File file : files) {
+						q.add(file);
+					}
+				}
+				else {
+					if (f.getName().endsWith(".markdown")) {
+						articles.add(f);
+					}
 				}
 			}
-			else {
-				if (f.getName().endsWith(".markdown")) {
-					articles.add(f);
-				}
-			}
-		}
 
-		
-		if (articles.isEmpty()) {
-			throw new BuildException("FAILURE - no markdown files found in " + articleDir.getAbsolutePath());
-		}
-		
-		for (File article : articles) {
-			String articlePath = article.getAbsolutePath();
-			
-			try {
-				ResetImagesDiscover.resetImages(articlePath);
-				NumberImagesDiscover.numberImages(articlePath);
+
+			if (articles.isEmpty()) {
+				throw new BuildException("FAILURE - no markdown files found in " + articleDir.getAbsolutePath());
 			}
-			catch (IOException ie) {
-				throw new BuildException(ie.getLocalizedMessage());
+
+			for (File article : articles) {
+				String articlePath = article.getAbsolutePath();
+
+				try {
+					ResetImagesDiscover.resetImages(articlePath);
+					NumberImagesDiscover.numberImages(articlePath);
+				}
+				catch (IOException ie) {
+					throw new BuildException(ie.getLocalizedMessage());
+				}
 			}
 		}
 	}
@@ -72,6 +83,10 @@ public class NumberImagesTaskDevSite extends Task {
 		_docDir = docDir;
 	}
 
-	private String _docDir;
+	public void setProductType(String productType) {
+		_productType = productType;
+	}
 
+	private String _docDir;
+	private String _productType;
 }
