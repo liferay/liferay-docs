@@ -79,19 +79,19 @@ Great! Now you know how to manually install a Mobile SDK in your iOS apps.
 
 ## Understanding Liferay and iOS Compatibility [](id=understanding-liferay-and-ios-compatibility)
 
-Each Liferay Mobile SDK is designed to work with a specific Liferay Portal 
-version. The Liferay Mobile SDK version number reflects this. The first two 
-digits of each Mobile SDK's version number correspond to the compatible Liferay 
-version. For example, a Mobile SDK version `6.2.*` is compatible with Liferay 
-6.2, while a Mobile SDK version `7.0.*` is compatible with Liferay 7.0. Any 
-digits after the first two correspond to the internal Liferay Mobile SDK build. 
+Each Liferay Mobile SDK is designed to work with a specific Liferay version. The 
+Liferay Mobile SDK version number reflects this. The first two digits of each 
+Mobile SDK's version number correspond to the compatible Liferay version. For 
+example, a Mobile SDK version `6.2.*` is compatible with Liferay 6.2, while a 
+Mobile SDK version `7.0.*` is compatible with Liferay 7.0. Any digits after the 
+first two correspond to the internal Liferay Mobile SDK build. 
 
 The Mobile SDK's service class names are also suffixed with the Mobile SDK's 
 version number. This lets your app support several Liferay versions. For 
 example, you can add Mobile SDK versions `6.2.0.22` and `7.0.3` to the same 
-project. The Mobile SDK service classes supporting Liferay Portal versions 6.2 
-and 7.0 end in `_v62.m` and `_v7.m`, respectively. To find out the Liferay 
-versions your app connects to, use the 
+project. The Mobile SDK service classes supporting Liferay versions 6.2 and 7.0 
+end in `_v62.m` and `_v7.m`, respectively. To find out the Liferay versions your 
+app connects to, use the 
 `[LRPortalVersionUtil getPortalVersion:...]` method. 
 
 The Liferay iOS Mobile SDK is compatible with iOS versions 7.0 and up. Older iOS 

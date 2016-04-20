@@ -149,13 +149,13 @@ entities are made available to your Mobile SDK.
 JAR and ZIP files. This is discussed further in the following sections.
 
 * `Package Name (packageName)` - On Android, this is the package your Mobile 
-SDK's classes are written to (iOS doesn't use packages). Note that the Liferay
-Portal version is appended to the end of the package name. For example, if 
-you're using Liferay 6.2 and specify `com.liferay.mobile.android` as your 
-package name, the Mobile SDK Builder appends `v62` to it, yielding 
+SDK's classes are written to (iOS doesn't use packages). Note that the Liferay 
+version is appended to the end of the package name. For example, if you're using 
+Liferay 6.2 and specify `com.liferay.mobile.android` as your package name, the 
+Mobile SDK Builder appends `v62` to it, yielding 
 `com.liferay.mobile.android.v62`. This prevents collisions between classes with 
 the same names, allowing Mobile SDKs for several Liferay versions to be used in 
-the same app. The portal version can be changed with the `Portal Version` 
+the same app. The Liferay version can be changed with the `Portal Version` 
 property.
 
 * `POM Description (description)` - The description for your POM file. This is 
