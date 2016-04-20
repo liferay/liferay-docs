@@ -153,11 +153,11 @@
         </copy>
 	</target>
 
-	<target name="check" depends="check-images-site, check-intros, number-headers, number-images-site, check-headers" description="Checks for necessary requirements before distribution.">
+	<target name="check" depends="check-images-site, check-intros, number-headers, number-images-site, check-headers" description="Checks for necessary requirements before CE distribution.">
 
 	</target>
 
-	<target name="check-dxp" depends="check-images-site-dxp, check-intros, number-headers-dxp, number-images-site-dxp, check-headers-dxp" description="Checks for necessary requirements before distribution.">
+	<target name="check-dxp" depends="check-images-site-dxp, check-intros-dxp, number-headers-dxp, number-images-site-dxp, check-headers-dxp" description="Checks for necessary requirements before DXP distribution.">
 
 	</target>
 
@@ -189,6 +189,23 @@
 	<target name="check-intros-dist" description="Verifies all Learning Path article folders are accompanied with an introduction Markdown article.">
 		<checkintros docdir="${doc.dir}/${temp.dir}">
 		</checkintros>
+	</target>
+
+	<target name="check-intros-dxp" description="Verifies all Learning Path article folders are accompanied with an introduction Markdown article.">
+		<property name="base.filepath" value="${doc.dir}" />
+		<mkdir dir="${temp.dir}"/>
+		<copy todir="${temp.dir}">
+			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+				<include name="articles/**/*.markdown"/>
+				<include name="articles-dxp/**/*.markdown"/>
+			</fileset>
+		</copy>
+		<move todir="${temp.dir}/articles" failonerror="false">
+			<fileset dir="${temp.dir}/articles-dxp"/>
+		</move>
+		<checkintros docdir="${doc.dir}/${temp.dir}">
+		</checkintros>
+		<delete dir="${temp.dir}"/>
 	</target>
 
     <target name="clean-dist" description="Deletes dist directory">
