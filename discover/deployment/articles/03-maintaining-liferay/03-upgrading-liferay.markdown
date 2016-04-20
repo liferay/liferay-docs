@@ -70,6 +70,11 @@ in the `/osgi/configs` folder with the following content:
 
 To run the upgrades for the modules, you can use the Gogo shell.
 
+## Gogo shell commands for module upgrades [](id=gogo-shell-commands-for-module-upgrades)
+
+To run the upgrades for the modules, check them or execute verify processes,
+you can use the Gogo shell.
+
 1. Connect to the Gogo shell by executing `telnet localhost 11311` from a
    terminal.
 2. Use the available commands in the `upgrade` namespace. For example:
@@ -79,13 +84,16 @@ To run the upgrades for the modules, you can use the Gogo shell.
         verify:list
         verify:execute
 
+### Listing module upgrade processes [](id=listing-module-upgrade-processes)
+
 Entering `upgrade:list` at the Gogo shell shows you the modules that have all
 of their upgrade dependencies satisfied. These are the modules that you can
 upgrade.
 
-If you do not see a module, that means you need to upgrade its dependencies.
-You could enter the command `scr:info {upgrade_qualified_class_name}` to find
-the names of the unsatisfied dependencies. Here's an example:
+If a module is active but you do not see it in the list, that means you need to
+upgrade its dependencies first. You could enter the command
+`scr:info {upgrade_qualified_class_name}` to find the names of the unsatisfied
+dependencies. Here's an example:
 
     scr:info com.liferay.journal.upgrade.JournalServiceUpgrade
 
@@ -121,6 +129,8 @@ is `UpgradePortletId`. The last step is the one which starts on the last step
 of the target version (`step-1`) and finishes on the target version (`1.0.0`).
 In this example, the last step is `UpgradePortletSettings`.
 
+### Executing module upgrades [](id=executing-module-upgrades)
+
 Entering `upgrade:execute {module_name}` upgrades a module. It is important to
 take into account that if there is an error during the process, you will be
 able to restart the process from the last step executed successfully. This
@@ -142,6 +152,13 @@ now being `1.0.0`:
     Registered upgrade processes for com.liferay.iframe.web 1.0.0
 	   {fromSchemaVersionString=0.0.1, toSchemaVersionString=1.0.0, upgradeStep=com.liferay.iframe.web.upgrade.IFrameWebUpgrade$1@1537752d}
 
-Also, you can run a verify process from command line by entering `verify:list`
-to check all available verify processes and `verify:execute
-{verify_qualified_name}` to run it.
+### Executing verify processes [](id=executing-verify-processes)
+
+We still keep verify processes in the core that are automatically executed after
+upgrading your portal. You can also execute them configuring the portal
+properties `verify.*` properly and restarting your server.
+
+Also, there are other verify processes included in some modules. You can run a
+verify process from command line by entering `verify:list` to check all
+available verify processes and `verify:execute {verify_qualified_name}` to run
+it. Restart your server is not needed to execute this kind of verifiers.
