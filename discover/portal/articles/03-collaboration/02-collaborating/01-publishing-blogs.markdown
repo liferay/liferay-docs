@@ -4,7 +4,7 @@ Since blogs are a mainstay on the web, bloggers and blog administrators expect
 feature-rich environments for publishing blogs. They want both a powerful
 editor and a pleasurable authoring experience. Blog admins demand an intuitive
 environment that facilitates configuring blog instances and managing blog
-entries efficiently. Liferay's Blogs meets these demands. 
+entries efficiently. @product_name@'s Blogs meets these demands. 
 
 Its editor delivers features you'd expect in an elegant in-context manner. It
 has a complete set of WYSIWYG controls that appear where and when you need them.
@@ -14,8 +14,8 @@ background or dark text on a light background. To cap things off, you can open
 the dual screen HTML editor to see your code rendered in real time. You'll have
 a satisfying experience creating awesome blog posts. 
 
-Lastly, Liferay Blogs empowers you to show off your blogs using powerful display
-apps. You can leverage Liferay's built-in display templates or create your own,
+Lastly, Blogs empowers you to show off your blogs using powerful display
+apps. You can leverage @product_name@'s built-in display templates or create your own,
 to present blogs the way you like them. And you can now add a beautiful cover
 image to each of your blog entries, like album covers for your posts. Let's face
 it--you might not be able to judge a book by its cover, but you're more likely
@@ -104,12 +104,12 @@ shows a blog entry's cover image, by default, as part of the blog entry's
 abstract. You can drag and drop onto this field any image you like. As an
 alternative to dragging and dropping an image, you can click the *Select File*
 button to use the image selector to choose an existing image attached to the
-blog, an image file from Documents and Media, or an image outside the Liferay
-instance. You can browse to an image file and upload it. After you've uploaded
-the image, it displays in the image pane. To center image content, click on the
-image and drag it into place with your mouse. Then click on the checkmark icon
-to save the image placement. You can even add a caption. And if you want to
-select a different image, you can click the *Change* icon
+blog, an image file from Documents and Media, or an image outside the
+@product_name@ instance. You can browse to an image file and upload it. After
+you've uploaded the image, it displays in the image pane. To center image
+content, click on the image and drag it into place with your mouse. Then click
+on the checkmark icon to save the image placement. You can even add a caption.
+And if you want to select a different image, you can click the *Change* icon
 (![Change](../../../images/icon-change.png)) to use a different image. Lastly,
 clicking the trash can icon removes the image from the blog entry.
 
@@ -123,10 +123,10 @@ Navigation application to another column on your blogs page, which lets users
 browse blog entries by tag. 
 
 Below this is the [Related Assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)
-panel. If there's some other content in the Liferay instance that's related to
-your entry, you can choose it here. For example, you might want to write a blog
-entry talking about a discussion that happened on the forums. To link those two
-assets together, select the forum thread under Related Assets. 
+panel. If there's some other content in the @product_name@ instance that's
+related to your entry, you can choose it here. For example, you might want to
+write a blog entry talking about a discussion that happened on the forums. To
+link those two assets together, select the forum thread under Related Assets. 
 
 The Configuration panel is next. You can specify an abstract for the blog entry.
 Choose a 400 character text-only abstract or a custom abstract containing a
@@ -135,10 +135,10 @@ you can set a particular Display Date for the entry.
 
 Lastly for your blog entry's configuration, you can allow *pingbacks*. Pingbacks
 are XML-RPC requests that are automatically sent when you link to another site.
-If you link to another site in your blog entry, Liferay sends a pingback to the
-other site to notify that site that you linked to it. Similarly, if someone
-links to your blog entry, Liferay can receive a pingback from that person's site
-and record the link.
+If you link to another site in your blog entry, @product_name@ sends a pingback
+to the other site to notify that site that you linked to it. Similarly, if
+someone links to your blog entry, Liferay can receive a pingback from that
+person's site and record the link.
 
 The Permissions panel is last. It lets you restrict viewing the blog entry to
 the owner only or site members (default), or open viewing to site guests.
@@ -325,7 +325,8 @@ includes Twitter, Facebook, and Google+.
 
 Here are descriptions for the other Blogs Configuration tabs:
 
-**Permissions:** shows Liferay's permissions dialog for the Blogs application.
+**Permissions:** shows @product_name@'s permissions dialog for the Blogs
+application. 
 
 **Communication:** lists public render parameters the application publishes to
 other applications on the page. Other applications can read these and take
@@ -342,10 +343,10 @@ already have a blog instance, you can select scope option *\[Page Name\]
 \(Create New\)* to create a page-scoped blog instance for the Blogs application
 to display. 
 
-Liferay's Blogs application excels at aggregating information from multiple
-places. The Blogs Aggregator application lets you "bubble up" blog entries from
-multiple users and highlight them on your site. Let's look next at how that
-works. 
+@product_name@'s Blogs application excels at aggregating information from
+multiple places. The Blogs Aggregator application lets you "bubble up" blog
+entries from multiple users and highlight them on your site. Let's look next at
+how that works. 
 
 ## Aggregating Blogs [](id=aggregating-blogs)
 
@@ -397,7 +398,7 @@ multiple configurations you like to use in Blogs Aggregator instances.
 
 Here are descriptions for the other Blogs Aggregator's Configuration screens:
 
-**Permissions:** shows Liferay's permissions dialog. 
+**Permissions:** shows @product_name@'s permissions dialog. 
 
 <!-- TODO - Revisit the permission Access in Control Panel. It's currently grayed out. - Jim --> 
 
@@ -422,7 +423,7 @@ application, except that it shows entries from multiple blogs.
 
 ![Figure 6: The Blogs Aggregator lets you display blog entries authored by multiple authors from different sites.](../../../images/blogs-blog-aggregator.png)
 
-Last up is showing your Liferay instance's recent bloggers.
+Last up is showing your @product_name@ instance's recent bloggers.
 
 ## Highlighting Recent Bloggers [](id=highlighting-recent-bloggers)
 

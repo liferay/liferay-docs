@@ -35,7 +35,7 @@ notification next to their profile picture and an email, informing them that
 they've been mentioned. The notification and email indicate the author's name
 and content type, and it links to the content. 
 
-![Figure 2: Liferay's Notifications feature alerts users with the number of notifications (including mentions) waiting for them to read.](../../../images/mentions-count-near-profile-image.png)
+![Figure 2: @product_name@'s Notifications feature alerts users with the number of notifications (including mentions) waiting for them to read.](../../../images/mentions-count-near-profile-image.png)
 
 ![Figure 3: When you click on the notifications number next to your profile picture, your Notifications List appears.](../../../images/mentions-notification-list.png)
 
@@ -55,14 +55,13 @@ Here's an example notification email message:
 	Kim Admin
 	kim.admin@lunarresort.com 
 
-The Mentions app is bundled with Liferay CE and is part of the Collaboration
-Suite available on the [Marketplace](https://www.liferay.com/marketplace).
-Mentions is enabled globally by default, but you can enable/disable it globally
-or per site. For a site to use Mentions, it must be enabled for the site's
-Virtual Instance. To access the global Mentions settings for your
-Virtual Instance, open the *Menu* (![Menu](../../../images/icon-menu.png)), then
-navigate to *Control Panel &rarr; Configuration &rarr; Instance Settings*, click
-on the *Social* tab, and expand the *Mentions* section. 
+The Mentions app is a part of the Collaboration Suite. Mentions is enabled
+globally by default, but you can enable/disable it globally or per site. For a
+site to use Mentions, it must be enabled for the site's Virtual Instance. To
+access the global Mentions settings for your Virtual Instance, open the *Menu*
+(![Menu](../../../images/icon-menu.png)), then navigate to *Control Panel &rarr;
+Configuration &rarr; Instance Settings*, click on the *Social* tab, and expand
+the *Mentions* section. 
 
 ![Figure 4: From Instance Settings in the Control Panel, you can enable or disable the Mentions feature for all of the Virtual Instance's sites.](../../../images/mentions-global-instance-setting.png)
 
@@ -84,5 +83,5 @@ collaborate with you. Have fun collaborating and socializing with Mentions!
 
 Now as your site's community gathers more information on topics or procedures
 relevant to users, you'll want to provide a means for them to collaborate on
-that information. Liferay's Wiki is a terrific application for users to jointly
-produce hierarchies of information.
+that information. @product_name@'s Wiki is a terrific application for users to
+jointly produce hierarchies of information.
