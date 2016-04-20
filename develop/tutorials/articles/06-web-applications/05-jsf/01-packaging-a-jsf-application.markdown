@@ -90,7 +90,7 @@ deployment:
             <param-name>com.sun.faces.namespaceParameters</param-name>
             <param-value>true</param-value>
         </context-param>
-        <!-- Listens for PluginContext lifecycle changes. -->
+        <!-- Listens for PluginContext portal lifecycle changes. -->
         <listener>
             <listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
         </listener>
@@ -105,13 +105,12 @@ deployment:
             <servlet-name>Faces Servlet</servlet-name>
             <url-pattern>*.xhtml</url-pattern>
         </servlet-mapping>
-        <!--  -->
+        <!-- This servlet is required to serve the portlet. -->
         <servlet>
             <servlet-name>Portlet Servlet</servlet-name>
             <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
             <load-on-startup>1</load-on-startup>
         </servlet>
-        <!--  -->
         <servlet-mapping>
             <servlet-name>Portlet Servlet</servlet-name>
             <url-pattern>/portlet-servlet/*</url-pattern>
