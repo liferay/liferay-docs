@@ -54,6 +54,13 @@ public class CheckImagesTaskDevSite extends Task {
 		if (productType.equals("dxp")) {
 			dirTypes.add("-dxp");
 		}
+		if (productType.equals("dist")) {
+			try {
+				ReplaceImagesPath.replaceImagePaths(docDir);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		for (String dirType : dirTypes) {
 

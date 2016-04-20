@@ -128,6 +128,7 @@
 			failonerror="true"
 		>
 			<arg value="${doc.dir}/${temp.dir}"/>
+			<arg value="dist"/>
 		</java>
 	</target>
 
@@ -171,7 +172,7 @@
 	</target>
 
 	<target name="check-images-site-dist" description="Verifies all images referenced in a project's Markdown articles.">
-		<checkimgssite docdir="${doc.dir}/${temp.dir}">
+		<checkimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist">
 		</checkimgssite>
 	</target>
 
@@ -339,6 +340,7 @@
 			fork="true"
 		>
 			<arg value="${doc.dir}/${temp.dir}"/>
+			<arg value="dist"/>
 		</java>
 	</target>
 
@@ -361,7 +363,7 @@
 	</target>
 
 	<target name="number-images-site-dist" description="Numbers the images of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp.">
-		<numberimgssite docdir="${doc.dir}/${temp.dir}">
+		<numberimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist">
 		</numberimgssite>
 	</target>
 
