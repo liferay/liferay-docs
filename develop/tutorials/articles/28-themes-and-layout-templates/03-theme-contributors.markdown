@@ -7,7 +7,7 @@ If instead you would like to include separate UI resources on the page that are
 attached to a theme, you should look into [themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
 
 A theme contributor is a [module](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module)
-that contains UI resources to use in @product_name@. The module is scanned for 
+that contains UI resources to use in @product@. The module is scanned for 
 all valid CSS and JS files, and then includes the resources on the page.
 
 You can therefore style these UI components as you like, and the styles will be
