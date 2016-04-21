@@ -159,7 +159,7 @@ write the following in a `2 column description.xml` file:
 
 You may have also noticed that the `<div>` classes have been changed. The 
 `2 column description.xml` article shown above illustrates the updated Bootstrap 
-grid system for  Bootstrap 3. Instead of using the `span-[number]` class to 
+grid system for  Bootstrap 3. Instead of using the `span[number]` class to 
 designate a column width, the `col-md-[number]` class is now used to designate 
 column width. The total amount for the column widths must still add up to 12.
 
@@ -172,15 +172,15 @@ you downloaded at the beginning.
 There is one last update you'll need to make to one of the web content articles
 which you can read about more next.
 
-### Updating Bootstrap to Lexicon
+### Updating the Reservation Form's Bootstrap
 
 Liferay 7's UI is built with a design language, known as [Lexicon](http://liferay.github.io/lexicon/).
 When building UI, it is recommended that you use Lexicon to follow the design
 patterns that Liferay has created.
 
-The reservation form for the lunar resort theme used Bootstrap's design language
-for the 6.2 themes Learning path. Although Lexicon is an extension of Bootstrap, 
-it uses its own design patterns and classes that you shoudl be aware of. To 
+The reservation form for the lunar resort theme used Bootstrap 2's design 
+language for the 6.2 themes Learning path. Lexicon is an extension of Bootstrap 
+3, and uses updated patterns and classes that you should be aware of. To 
 follow best practices for Liferay 7, this form should be updated to follow 
 Lexicon's design language.
 
@@ -249,10 +249,10 @@ updated.
 Follow these steps to migrate the 6.2 carousel structure and template to 
 Liferay 7:
 
-Liferay 6.2 used AlloyUI 2.5.x, Liferay 7 uses Alloy UI 3.0. There has been a
+Liferay 6.2 used AlloyUI 2.0.x, Liferay 7 uses Alloy UI 3.0.x. There has been a
 slight syntax change to the AlloyUI carousel between the two versions. Note that
 support of HTML markup within the carousel images has been removed, causing the 
-links to no longer work. Make the changes below to update the carousel:
+image links to no longer work. Make the changes below to update the carousel:
 
 1.  Open the `carousel.vm` template in the `templates/carousel/` directory and
     replace all instances of `aui-carousel-item` with `image-viewer-base-image`

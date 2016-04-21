@@ -8,21 +8,7 @@ In this section you'll finish updating the lunar resort theme's CSS.
 
 ## Preliminary Setup
 
-Currently, the lunar resort theme has all of the original files in the `src`
-directory. This will cause the base files to be overwritten, which you don't
-want to happen. The only files that should be in the `src` directory are the
-files that have modifications. Follow the preliminary steps below to clean up
-your directories.
-
-1.  Open the `src/css` directory and remove all the files except for 
-    `_aui_variables.scss` and `_custom.scss`.
-    
-2.  Open the `src/templates` directory and remove the following templates:
-    `portal_pop_up.ftl` and `portlet.ftl`.
-    
-    the directories are now condensed down to the nescessities.
-
-3.  Navigate to the lunar resort theme's root directory and run the following
+1.  Navigate to the lunar resort theme's root directory and run the following
     command:
     
         gulp build
@@ -37,8 +23,6 @@ Now that your directories are set, you can continue the upgrade.
 
 At the end of the `gulp upgrade` task a list of changes, removals, and 
 suggestions were printed in the command line, for the Bootstrap upgrade.
-Removing the extra files from the `src` directory took care of most of the
-updates needed.
 
 Follow these steps to make the remaining updates to the lunar resort's CSS files.
 

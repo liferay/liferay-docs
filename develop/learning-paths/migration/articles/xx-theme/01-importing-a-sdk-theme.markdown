@@ -24,7 +24,7 @@ Follow the steps below to import the lunar resort theme.
     **Note:** The themes generator does not support relative paths.
 $$$
 
-    The importer creates some configuration files and migrates all of the core
+    The importer creates some configuration files and migrates the modified
     theme files over to a new `src` directory. Similar to the `_diffs` directory 
     in Plugins SDK developed themes, the `src` directory is where all of your
     theme modifications go.
@@ -95,30 +95,16 @@ import:
     - `package.json`
     - `src/`
         - `css/`
-            - `_aui_custom.scss`
             - `_aui_variables.scss`
-            - `_liferay_custom.scss`
-            - `application.css`
-            - `aui.css`
-            - `base.css`
             - `custom.css`
-            - `dockbar.css`
-            - `extras.css`
-            - `layout.css`
-            - `main.css`
-            - `navigation.css`
-            - `portlet.css`
         - `images/`
             -   (many directories)
         - `js/`
             - `main.js`
         - `templates/`
-            - `footer_navigation.ftl`
             - `init_custom.ftl`
             - `navigation.ftl`
             - `portal_normal.ftl`
-            - `portal_pop_up.ftl`
-            - `portlet.ftl`
         - `WEB-INF/`
                 - `lib/`
             - `liferay-look-and-feel.xml`
@@ -152,9 +138,9 @@ Follow these steps to upgrade the lunar resort theme to Liferay 7.
     extension. All sass files now have the `.scss` extension and all sass 
     partials have an underscore at the start of their name, i.e. `_custom.scss`.
     
-    Once the renames are complete, the upgrade task upgrades the themes
-    Bootstrap from 2 to 3, taking care of some of the migration from
-    for you, and prints suggestions for further updates.
+    Once the renames are complete, the upgrade task upgrades the themes 
+    Bootstrap from 2 to 3, taking care of some of the migration for you, and 
+    prints suggestions for further updates.
     
 Your directory structure should reflect the one below after you run the 
 `gulp upgrade` task:
@@ -167,30 +153,16 @@ Your directory structure should reflect the one below after you run the
     - `package.json`
     - `src/`
         - `css/`
-            - `_application.scss`
-            - `_aui_custom.scss`
             - `_aui_variables.scss`
-            - `_base.scss`
             - `_custom.scss`
-            - `_dockbar.scss`
-            - `_extras.scss`
-            - `_layout.scss`
-            - `_liferay_custom.scss`
-            - `_navigation.scss`
-            - `_portlet.scss`
-            - `aui.scss`
-            - `main.scss`
         - `images/`
             -   (many directories)
         - `js/`
             - `main.js`
         - `templates/`
-            - `footer_navigation.ftl`
             - `init_custom.ftl`
             - `navigation.ftl`
             - `portal_normal.ftl`
-            - `portal_pop_up.ftl`
-            - `portlet.ftl`
         - `WEB-INF/`
                 - `lib/`
             - `liferay-look-and-feel.xml`
