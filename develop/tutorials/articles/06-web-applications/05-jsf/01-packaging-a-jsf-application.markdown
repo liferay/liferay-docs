@@ -1,4 +1,4 @@
-# Packaging a JSF Application
+# Packaging a JSF Application [](id=packaging-a-jsf-application)
 
 Developers creating portlets for Liferay 7.0 typically have the choice of
 packaging their portlets as Java EE style Web Application ARchive (WAR)
@@ -40,7 +40,7 @@ example anatomy structure is outlined below:
     - `faces-config.xml`
     - `web.xml`
 
-## Pre-Configured WAB
+## Pre-Configured WAB [](id=pre-configured-wab)
 
 The source of a pre-configured JSF Portlet WAB follows the standard directory
 layout for WAR projects and includes a `bnd.bnd` file along with a Java class
@@ -121,7 +121,7 @@ deployment:
         </security-constraint>
     </web-app>
 
-## Auto-Generated WAB
+## Auto-Generated WAB [](id=auto-generated-wab)
 
 The source of an auto-generated JSF Portlet WAB also follows the standard
 directory layout for WAR projects. However, it does *NOT* include a `bnd.bnd`
@@ -172,7 +172,7 @@ properties section.
 
 $$$
 
-## Utilizing OSGi Services
+## Utilizing OSGi Services [](id=utilizing-osgi-services)
 
 Both approaches can use custom-built OSGi services, since both result in the
 deployment of a WAB (true OSGi modules). Also, both approaches can be used to
