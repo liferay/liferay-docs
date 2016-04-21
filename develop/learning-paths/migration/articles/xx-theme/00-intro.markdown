@@ -12,7 +12,8 @@ is not updated AFAIK. Once it has been updated, it can be added to this section
 as part of the Learning Path, if desired.-->
 
 To get started, create a folder called *resources* and 
-[download the 6.2 lunar resort theme and resources](/documents/10184/581742/lunar-resort-theme-migration-6.2.zip) 
+[download the 6.2 lunar resort theme and
+resources]<!--URL needs updated and theme files in temp documents placeholder folder need to be zipped(/documents/10184/581742/lunar-resort-theme-migration-6.2.zip)-->
 into it. Note that the example lunar resort theme has been slightly modfied for 
 this Learning Path. Follow the [themes generator tutorial](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
 to install the tools you'll need for this portion of the Learning Path.

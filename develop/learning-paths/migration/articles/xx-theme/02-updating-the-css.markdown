@@ -6,20 +6,7 @@ developer to finish the upgrade.
 
 In this section you'll finish updating the lunar resort theme's CSS.
 
-## Preliminary Setup
-
-1.  Navigate to the lunar resort theme's root directory and run the following
-    command:
-    
-        gulp build
-
-The `gulp build` task builds the base files for the lunar resort theme. You can 
-use the base files in the `build` directory as a starting point, when making 
-theme modifications.
-
-Now that your directories are set, you can continue the upgrade.
-
-## Updating the CSS Files
+## Updating the CSS Rules and Imports
 
 At the end of the `gulp upgrade` task a list of changes, removals, and 
 suggestions were printed in the command line, for the Bootstrap upgrade.

@@ -18,16 +18,9 @@ If you take a look at the upgrade output, you'll see these lines:
             <@liferay.control_menu />
             Warning: ${theme} variable is no longer available in Freemarker 
             templates, see https://goo.gl/9fXzYt for more information.
-            ...
             
 This points out some of the changes to themes that have taken place in Liferay 
-7 for theme templates. Now that the templates in the `src` directory have been 
-condensed into just the templates that are modifed, the only template left to
-update is `portal_normal.ftl`. When the `gulp build` task was run in the
-previous section, the other templates were updated to match the Liferay 7 base
-theme, so no further changes are needed.
-
-Follow these steps to make the theme template updates:
+7 for theme templates. Follow these steps to make the theme template updates:
 
 1.  Open `portal_normal.ftl` in your `src/templates` directory and replace the
     `<@liferay.dockbar />` directive with `<@liferay.control_menu />`.
