@@ -1,6 +1,6 @@
-# Setting Up a @product_name@ Instance [](id=setting-up-a-liferay-instance)
+# Setting Up a @product@ Instance [](id=setting-up-a-liferay-instance)
 
-Once you have a @product_name@ installation, you're going to want to configure it.
+Once you have a @product@ installation, you're going to want to configure it.
 Whether that means adding a virtual instance, setting up the initial instance to
 suit your needs, or integrating existing users into the installation. Recall
 that configuration happens at different scopes. Here were thinking about the

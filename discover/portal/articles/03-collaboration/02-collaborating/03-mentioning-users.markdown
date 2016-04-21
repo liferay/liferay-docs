@@ -35,7 +35,7 @@ notification next to their profile picture and an email, informing them that
 they've been mentioned. The notification and email indicate the author's name
 and content type, and it links to the content. 
 
-![Figure 2: @product_name@'s Notifications feature alerts users with the number of notifications (including mentions) waiting for them to read.](../../../images/mentions-count-near-profile-image.png)
+![Figure 2: @product@'s Notifications feature alerts users with the number of notifications (including mentions) waiting for them to read.](../../../images/mentions-count-near-profile-image.png)
 
 ![Figure 3: When you click on the notifications number next to your profile picture, your Notifications List appears.](../../../images/mentions-notification-list.png)
 
@@ -83,5 +83,5 @@ collaborate with you. Have fun collaborating and socializing with Mentions!
 
 Now as your site's community gathers more information on topics or procedures
 relevant to users, you'll want to provide a means for them to collaborate on
-that information. @product_name@'s Wiki is a terrific application for users to
+that information. @product@'s Wiki is a terrific application for users to
 jointly produce hierarchies of information.

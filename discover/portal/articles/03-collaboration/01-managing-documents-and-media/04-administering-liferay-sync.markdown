@@ -1,6 +1,6 @@
 # Administering Liferay Sync [](id=administering-liferay-sync)
 
-Liferay Sync is an add-on product for @product_name@ that synchronizes files 
+Liferay Sync is an add-on product for @product@ that synchronizes files 
 between your Liferay server and users' desktop and mobile environments. With 
 Liferay Sync, users can publish and access shared documents and files from their 
 native environments without using a browser. Clients for Windows and Mac OS 

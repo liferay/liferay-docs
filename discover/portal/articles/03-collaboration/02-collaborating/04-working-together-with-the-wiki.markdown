@@ -1,10 +1,10 @@
 # Working Together with the Wiki [](id=working-together-with-the-wiki)
 
-@product_name@'s Wiki is a full-featured [wiki](/participate/liferaypedia/-/wiki/Main/Wiki)
+@product@'s Wiki is a full-featured [wiki](/participate/liferaypedia/-/wiki/Main/Wiki)
 application which has all the features you would expect in a state of the art
 wiki. Again, though, it has the benefit of being able to take advantage of all
-the features of @product_name@. As such, it is completely integrated
-with @product_name@'s [user management](/discover/portal/-/knowledge_base/7-0/user-management),
+the features of @product@. As such, it is completely integrated
+with @product@'s [user management](/discover/portal/-/knowledge_base/7-0/user-management),
 [tagging](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories),
 and [security features](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security).
 
@@ -29,7 +29,7 @@ the syntax on the page editing form with a link to the full documentation if
 you wish to use some of WikiCreole's advanced features.
 
 An instance of the Wiki application can be created for each scope: the entire
-@product_name@ virtual instance (global scope), a site, or a page. It's time to see how
+@product@ virtual instance (global scope), a site, or a page. It's time to see how
 to use your site's Wiki application instance. 
 
 ## Getting Started with Wikis [](id=getting-started-with-wikis)
@@ -106,9 +106,9 @@ subscribe to modifications, update existing pages, and view the wiki node.
 
 **Import Pages**: allows you to import data from other wikis. This lets you
 migrate off of another wiki application which you may be using and use the
-@product_name@ wiki instead. You might wish to do this if you are migrating your
+@product@ wiki instead. You might wish to do this if you are migrating your
 site from a set of disparate applications (i.e., a separate forum, a separate
-wiki, a separate content management system) to @product_name@, which provides
+wiki, a separate content management system) to @product@, which provides
 all of these features. Currently, MediaWiki is the only wiki that is supported,
 but others are likely to be supported in the future.
 
@@ -117,7 +117,7 @@ Bookmarks, Yahoo, Microsoft Outlook, or an application you can choose from your
 machine.
 
 **Subscribe**: allows you to subscribe to a wiki node; any time a wiki page is
-added or updated, your @product_name@ instance sends you an email informing you
+added or updated, your @product@ instance sends you an email informing you
 what happened. 
 
 **View Removed Attachments**: displays attachments that have been removed from
@@ -209,7 +209,7 @@ Creole wiki format, MediaWiki format, HTML, or plain text. We recommend
 that you stick with the Creole format, as it allows for a much cleaner
 separation of content and code. 
 
-Similar to other @product_name@ applications, in the *Related Assets* section of
+Similar to other @product@ applications, in the *Related Assets* section of
 the editor, you can select other assets to associate with the wiki page. And
 from the *Permissions* section, you can set general permissions for accessing
 and acting on the page.
@@ -228,7 +228,7 @@ etc, that we haven't yet created? This is a common practice in building
 wikis--you add a link so that someone (maybe you) will create a page for it. The
 terrific thing is that you can create that new page for the link by clicking it.
 When you click a link to a non-existent page, the new wiki page screen appears
-for you to create the page. @product_name@ displays a notice at the top of the
+for you to create the page. @product@ displays a notice at the top of the
 page stating that the page does not exist yet, and that you are creating it
 right now. As you can see, it is very easy to create wiki pages. All you have to
 do is create a link, click on the link, and create the wiki page.
@@ -549,7 +549,7 @@ displays the wiki page associated with the link.
 
 ## Summary [](id=summary)
 
-@product_name@'s Wiki application is another full-featured Liferay application
+@product@'s Wiki application is another full-featured Liferay application
 with all of the features and sub-applications you expect from a state of the art
 wiki. It allows you to create pages of information quickly and collaboratively.
 The Wiki gives administrators flexibility to reposition wiki pages to their

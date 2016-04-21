@@ -1,16 +1,16 @@
 # Repository Types [](id=repository-types)
 
-@product_name@'s Documents and Media lets you store files in a number of
+@product@'s Documents and Media lets you store files in a number of
 different ways and lets you access external repositories in addition to the
 built in document repository. We'll explain how to set options for storing the
 Document Library's files and how to connect with external repository types that
-@product_name@ supports. Let's start with Document Library store options.
+@product@ supports. Let's start with Document Library store options.
 
 ## Document Library Store Options [](id=document-library-store-options)
 
-By default, @product_name@ uses a document library store option called Simple File
+By default, @product@ uses a document library store option called Simple File
 Store to store documents and media files on the file system (local or mounted)
-of the server @product_name@'s running on. The store's default root directory is
+of the server @product@'s running on. The store's default root directory is
 `[Liferay Home]/data/document_library`. You can specify a different root
 directory from within [System Settings](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/system-settings).
 To access System Settings, open the *Menu*
@@ -23,7 +23,7 @@ switches immediately to the new root dir.
 
 You can also use an entirely different method for storing documents and media
 files. You can use any of the following documents and media library stores with
-@product_name@:
+@product@:
 
 **Simple File System Store**: uses the file system (local or a mounted share) to
 store files.
@@ -35,7 +35,7 @@ more directories by version, for faster performance and to store more files.
 **CMIS Store (Content Management Interoperability Services)**: uses a system
 separate from Liferay to store files. 
 
-**DBStore (Database Storage)**: stores files in the @product_name@ database.
+**DBStore (Database Storage)**: stores files in the @product@ database.
 
 **JCRStore (Java Content Repository)**: stores files to a JSR-170 compliant
 document repository. You can use any JCR client to access the files. The files
@@ -50,7 +50,7 @@ portal property to a `portal-ext.properties` file in your [Liferay Home](/discov
 
     dl.store.impl=com.liferay.portlet.documentlibrary.store.DBStore
 
-Remember to restart your @product_name@ server after updating your
+Remember to restart your @product@ server after updating your
 `portal-ext.properties` file in order for your customizations to take effect.
 
 +$$$
@@ -82,11 +82,11 @@ include:
 - Getting revision history
 - Reverting to a revision
 
-@product_name@'s Documents and Media includes a generic integration for CMIS 1.0
+@product@'s Documents and Media includes a generic integration for CMIS 1.0
 repositories. CMIS stands for Content Management Interoperability Services,
 which defines a model for interacting with a repository's files. It's been
 tested with Alfresco and Nuxeo but supports the CMIS 1.0 standard with respect
-to all repositories, where they implement CMIS 1.0. @product_name@ can access
+to all repositories, where they implement CMIS 1.0. @product@ can access
 CMIS repositories using AtomPub and Web Services protocols.
 
 ![Figure 1: In Documents and Media, external repositories look similar to folders. You can perform supported operations on their files. This figure shows a CMIS 1.0 repository named *My Alfresco*.](../../../images/dm-repo-types-actions.png)
@@ -115,7 +115,7 @@ Let's start with the required portal property settings.
 #### Adjusting Portal Properties [](id=adjusting-portal-properties)
 
 As a Liferay system administrator, you must ensure that the same credentials and
-authentication are being used in @product_name@ and in the external repository.
+authentication are being used in @product@ and in the external repository.
 [LDAP](/discover/deployment/-/knowledge_base/7-0/ldap) is a typical mechanism
 you can use to synchronize them. If you don't have LDAP, you need to ensure
 manually that the credentials and authentication methods are the same.
@@ -127,7 +127,7 @@ portal property to `true` in a `portal-ext.properties` file:
 
     session.store.password=true
 
-Next, make sure to authenticate the same way on both @product_name@ and
+Next, make sure to authenticate the same way on both @product@ and
 the external repository. You can do so by authenticating based on screen
 name. So, add the following [`company.security.auth.type`]( https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Company)
 portal property to your `portal-ext.properties` file: 
@@ -139,17 +139,17 @@ under *Instance Settings &rarr; Authentication*.
                                           
 #### Synchronizing Repository Users [](id=synchronizing-repository-users)
 
-External repository integration requires you to have a @product_name@ user that
+External repository integration requires you to have a @product@ user that
 uses the same screen name and password an external repository user. For details
 on adding and managing users, refer to [User Mangement](/discover/portal/-/knowledge_base/7-0/user-management).
-Make sure to sign in to @product_name@ as this user whenever you're accessing
+Make sure to sign in to @product@ as this user whenever you're accessing
 the external repository from it.
 
 Next, we'll explain how to access a CMIS Repository using the AtomPub protocol. 
 
 ### Using a CMIS Repository with AtomPub [](id=using-a-cmis-repository-with-atompub)
 
-@product_name@ can access external repositories that support the CMIS 1.0
+@product@ can access external repositories that support the CMIS 1.0
 standard using the Atom Publishing Protocol (AtomPub). It's the easiest protocol
 to specify for communicating with CMIS repositories. 
 
@@ -158,7 +158,7 @@ Nuxeo Platform 7.10 repositories.
 
 Follow these steps to add access to such as repository:
 
-1.  Sign in to @product_name@ as a user that also exists in the external
+1.  Sign in to @product@ as a user that also exists in the external
 repository and can access files you want to use in that repository. 
 
 2.  In Documents and Media *Home*, click the *Add* icon
@@ -173,7 +173,7 @@ Repository* screen appears.
 4.  Click on the *Repository Configuration* section to access its form. Specify
 the following values.
     - **Repository Type**: *CMIS Repository (AtomPub)*
-    - **Repository ID**: Leave this blank, as @product_name@ generates the ID
+    - **Repository ID**: Leave this blank, as @product@ generates the ID
     automatically
     - **AtomPub URL**: Enter the AtomPub URL for CMIS 1.0 per the
     repository's documentation. Example URLs are listed below. If you copy them,
@@ -189,7 +189,7 @@ the repository and manage files in it.
 
 ![Figure 3: Documents and Media lets you perform CMIS 1.0 supported actions on external repository files that support those actions](../../../images/dm-repo-types-alfresco-site-doclib-file.png)
 
-@product_name@'s CMIS repository integration gives you flexibility to access external
+@product@'s CMIS repository integration gives you flexibility to access external
 repository files in addition to your existing Documents and Media files. 
 
 <!--
@@ -241,7 +241,7 @@ URLs for the following services:
     - Web Services Repository Service
     - Web Services Versioning Service
 
-6.  Leave *Repository ID* blank, as @product_name@ generates the ID
+6.  Leave *Repository ID* blank, as @product@ generates the ID
      automatically. 
 
 7.  Click *Save*
@@ -292,12 +292,12 @@ repository. For that, we'll do the following:
 2. Enable Versioning Support on the SharePoint library.
 3. Add SharePoint as a Liferay Documents and Media repository.
 
-Note that this section is geared towards @product_name@ system administrators and
+Note that this section is geared towards @product@ system administrators and
 SharePoint system administrators.
 
-Before you can use SharePoint as an external repository with @product_name@, you
+Before you can use SharePoint as an external repository with @product@, you
 must verify that SharePoint is properly configured. Several services must be set
-up on the SharePoint server before synchronizing with @product_name@.
+up on the SharePoint server before synchronizing with @product@.
 
 **Enable Basic Authentication on the SharePoint host**
 
@@ -325,7 +325,7 @@ Now you have to enable versioning support in your Sharepoint library.
 
 **Enable Versioning Support on the SharePoint library**
 
-You must enable versioning in Sharepoint library for @product_name@'s
+You must enable versioning in Sharepoint library for @product@'s
 check-in/out features to work. To do it follow the next steps: 
 
 1. Open the URL of your Sharepoint's library in a browser.
@@ -341,12 +341,12 @@ You are now prepared to mount SharePoint as an external repository.
 **Add SharePoint as a Liferay Documents and Media repository**
 
 With the SharePoint server configured, we now turn our attention to
-@product_name@. As
+@product@. As
 mentioned in the common steps for adding an external repository, be sure to
 adjust the portal properties and add any user accounts required by the
 repository.
 
-Here are the steps specific to configuring @product_name@ to use SharePoint:
+Here are the steps specific to configuring @product@ to use SharePoint:
 
 1. Download and install the [SharePoint Connector
 EE](https://www.liferay.com/marketplace/-/mp/application/15188537) from
@@ -399,7 +399,7 @@ following:
 3. Configure the keys and restart the server.
 4. Add a *Documentum Repository* in *Documents and Media* application.
 
-Before you can use Documentum as an external repository with @product_name@, you must
+Before you can use Documentum as an external repository with @product@, you must
 verify that Documentum is properly configured.
 
 **Deploy the Documentum Connector EE plugin**
@@ -447,7 +447,7 @@ machine.
 3. Set *dfc.globalregistry.username* to Documentum's Registry user (by default
 *dm_bof_registry*). 
 
-Save the *dfc.properties* file and restart @product_name@.
+Save the *dfc.properties* file and restart @product@.
 
 **Add a Documentum Repository in Documents and Media**
 

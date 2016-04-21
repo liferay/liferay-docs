@@ -1,9 +1,9 @@
 #  Creating Forums with Message Boards [](id=creating-forums-with-message-boards)
 
-@product_name@'s Message Boards app is a state of the art forum application
+@product@'s Message Boards app is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of
 course, is that Liferay's message boards can inherit the abilities of
-@product_name@ to provide an integrated experience that others cannot match. 
+@product@ to provide an integrated experience that others cannot match. 
 
 There are countless web sites out there where it is clearly evident that there
 is no link whatsoever between the main site and the message boards. In some
@@ -12,7 +12,7 @@ once for the message boards. Sometimes it is three times: for the site, for the
 message boards, and for the shopping cart. By providing a message boards
 application along with all of the other applications, Liferay provides a unique,
 integrated approach to building sites. You can concentrate on building your site
-while @product_name@ does the integration work for you. 
+while @product@ does the integration work for you. 
 
 Message Boards offers many configuration options. They are straightforward to
 use and are the reason why it's a full-featured forum application for your site.
@@ -20,12 +20,12 @@ Let's create a message board.
 
 ## Creating Message Boards [](id=creating-message-boards)
 
-You can create a message board instance for a @product_name@ instance, a site,
+You can create a message board instance for a @product@ instance, a site,
 or page. An instance's message board can be used on any of its pages. A message
 board can be scoped to a site, including a regular site, an organization's site,
 or a user's profile site or dashboard site. Message Boards in Site
 Administration lets you administer all of a message board's options. Each
-@product_name@ instance and site has a message board instance built-in. If you
+@product@ instance and site has a message board instance built-in. If you
 want to work with a message board scoped to a page, you must create the page
 scope from a Message Boards application on that page. 
 
@@ -78,7 +78,7 @@ posting off by unchecking this box.
 
 Enabling the *Subscribe by Default* option automatically subscribes users to
 threads they participate in. Whenever a message in a thread is added or updated,
-@product_name@ sends a notification email to all users subscribed to the thread. 
+@product@ sends a notification email to all users subscribed to the thread. 
 
 You can set the *Message Format* to either BBCode or HTML. This determines the
 markup language of users' actual message board posts. The type of WYSIWYG editor
@@ -97,7 +97,7 @@ Using flags is also a good practice even if you're not allowing anonymous
 posting. 
 
 Enabling *Enable Ratings* allows users to score posts. The scores are used by
-@product_name@'s social activity system to rank site members by how helpful
+@product@'s social activity system to rank site members by how helpful
 their contributions are. You can read more about social activity in the
 [Measuring Social Activity](/discover/portal/-/knowledge_base/7-0/measuring-social-activity)
 article. 
@@ -182,7 +182,7 @@ going from zero messages all the way up to one thousand.
 
 In addition to ranks, you can also choose labels for certain users to have
 displayed in their profiles as shown by the Message Boards application. The
-labels correspond to memberships the users have in @product_name@. Below are
+labels correspond to memberships the users have in @product@. Below are
 examples of using the label *Moderator*. The Moderator label in this
 configuration is applied for anyone who is a part of any of the Message Boards
 Administrator groups: the site role, the organization, the organization role,
@@ -359,20 +359,20 @@ form and the *Add Category* form are the same.
 
 ![Figure 3: Categories help you organize threads so users can find topical threads that interest them.](../../../images/message-boards-home.png)
 
-@product_name@'s Message Boards supports two different mechanisms for sending
+@product@'s Message Boards supports two different mechanisms for sending
 email notifications: user subscriptions and mailing lists. Let's discuss user
 subscriptions first and then mailing lists. 
 
 ## User Subscriptions and Mailing Lists [](id=user-subscriptions-and-mailing-lists)
 
-The first mechanism @product_name@ uses for sending email notifications is user
+The first mechanism @product@ uses for sending email notifications is user
 subscriptions. Users can subscribe to particular categories and threads. Liferay
 uses the message board's configured *Email From* address to send email
 notifications to subscribed users, whenever a new post is created or an existing
 post is updated. Liferay can import email replies to message board notifications
 directly into the message board. This is a very useful feature since it allows
 users to interact on the message board via email, without needing to log in to
-@product_name@ and view the message board page directly. This feature is, however,
+@product@ and view the message board page directly. This feature is, however,
 disabled by default. To enable it, add the following line to your
 `portal-ext.properties` file: 
 
@@ -380,12 +380,12 @@ disabled by default. To enable it, add the following line to your
 
 As this property suggests, Message Board's user subscription mechanism uses the
 POP mail protocol. When an email reply to a message board notification is read
-by @product_name@, the reply is posted to the message board and then deleted
+by @product@, the reply is posted to the message board and then deleted
 from the mail server. Deleting the message from the mail server is the POP
-protocol's default behavior and @product_name@ assumes that your POP mail server
+protocol's default behavior and @product@ assumes that your POP mail server
 behaves this way. Most POP clients offer an option to leave mail on the mail
 server after it's been downloaded, but you shouldn't exercise this option. If
-you configure mail to be left on the mail server, @product_name@ will repeatedly
+you configure mail to be left on the mail server, @product@ will repeatedly
 send copies of each retained message along with each new email notification
 that's sent to subscribed users. 
 
@@ -408,11 +408,11 @@ If you don't want to use a mail server subdomain, add the following line to your
 
     pop.server.subdomain=
 
-If you're not using a mail subdomain, @product_name@ parses the message headers
+If you're not using a mail subdomain, @product@ parses the message headers
 of emails from the *Email From* address to determine the message board category
 and message ID. If you keep the `pop.server.subdomain=events` default, the email
 notification address takes the following form:
-*mb.[category_id][message_id]@events.liferay.com*. In this case, @product_name@
+*mb.[category_id][message_id]@events.liferay.com*. In this case, @product@
 parses the email address to find the category and message ID. Parsing the email
 address is safer than parsing message headers, since different email clients
 treat message headers differently. This is why the `events` subdomain is enabled
@@ -436,9 +436,9 @@ client's Username or Email field with `recent:`.
 
 $$$
 
-The second mechanism @product_name@ uses for sending email notifications is
-mailing lists. Any category in a @product_name@ message board can have its own
-mailing list. @product_name@'s mailing list mechanism, unlike its user
+The second mechanism @product@ uses for sending email notifications is
+mailing lists. Any category in a @product@ message board can have its own
+mailing list. @product@'s mailing list mechanism, unlike its user
 subscription mechanism, supports both the POP and the IMAP protocols. POP is the
 default protocol, but each message board's mailing list is configured
 independently. If you choose the IMAP protocol for a category's mailing list,
@@ -447,17 +447,17 @@ the email client that sends messages to the users on the mailing list.
 Otherwise, each email message that's retained on the server will be sent to the
 mailing list each time there's a new post or an update in the category. 
 
-When a mailing list is enabled for a message board category, @product_name@
+When a mailing list is enabled for a message board category, @product@
 listens to the specific email inbox that's configured for the mailing list.
 Enabling the mailing list function allows users on the mailing list to simply
-reply to the notification messages in their email clients. @product_name@ pulls
+reply to the notification messages in their email clients. @product@ pulls
 the messages from the email inbox it's configured to listen to and automatically
 copies those replies to the appropriate message board thread. 
 
 With both user subscriptions and mailing lists, users can reply to message board
-notification emails and @product_name@ imports their replies to the message
+notification emails and @product@ imports their replies to the message
 board. However, with mailing lists, users reply to the mailing list and
-@product_name@ listens to the specific inbox configured for the mailing list and
+@product@ listens to the specific inbox configured for the mailing list and
 copies messages to the appropriate message board category. With user
 subscriptions, by default, email replies to message board notifications are not
 imported to the message boards. This feature has to be enabled in your
@@ -472,13 +472,13 @@ user subscriptions or a mailing list with your message board.
 To enable the mailing list functionality for a category, you need a dedicated
 email address for the category. Then, click on your category's *Edit* option.
 Once you select the *Active* check box, a number of other options appear. When a
-mailing list is activated, @product_name@ imports messages it receives from the
-mailing list to the message board. @product_name@ looks for a Liferay user with
+mailing list is activated, @product@ imports messages it receives from the
+mailing list to the message board. @product@ looks for a Liferay user with
 the sender's email address. If the sender isn't a Liferay user and the *Allow
 Anonymous Emails* box is unchecked, the message is thrown away and not posted to
 the message board. If the *Allow Anonymous Emails* box is checked, anyone can
 send email to the message board category's dedicated email account and
-@product_name@ copies the messages to the message board. 
+@product@ copies the messages to the message board. 
 
 **Email Address:** lets you enter the email address of the account that will
 receive the messages. 
@@ -501,7 +501,7 @@ your server supports it.
 
 **Password:** lets you enter the password for the account on the server. 
 
-**Read Interval (Minutes):** allows you to specify how often @product_name@
+**Read Interval (Minutes):** allows you to specify how often @product@
 polls the server looking for new messages to post to the message board. 
 
 The Outgoing section has the following options: 
@@ -512,7 +512,7 @@ categories using email, this should be the same address configured on the
 *Incoming* section. 
 
 **Use Custom Outgoing Server:** allows you to use a different mail server than
-the one that is configured for the @product_name@ instance. If you check this
+the one that is configured for the @product@ instance. If you check this
 box, more options appear: 
 
 -   **Server Name:** lets you enter the host name of the SMTP mail server you are
@@ -568,7 +568,7 @@ all of the users who have been banned from posting on the message boards.
 To post a new thread click the *Post New Thread* button in the app or
 ![Add](../../../images/icon-add.png) in Message Boards in Site Administration)
 and select *Thread*. A message editing form appears. The body field on this form
-is different from that of the other @product_name@ applications. The reason for
+is different from that of the other @product@ applications. The reason for
 this is to support *BBCode*, which is a standard form of markup used in many
 message board products. Before BBCode was invented, many message board products
 would allow users to enter HTML to format their messages. This, however, enabled
@@ -620,7 +620,7 @@ When you're done editing and configuring your message, you can preview it, and
 save it as a draft or publish it. Once it's published, it's listed along with
 the other threads in the category. 
 
-Message Boards is also highly integrated with @product_name@'s user management
+Message Boards is also highly integrated with @product@'s user management
 features. When you click on a thread or thread reply's subject link, the
 author's profile picture, name, rank, number of posts, the date the user joined
 the site, and a link to the user's recent posts. 
@@ -641,7 +641,7 @@ thread.
 
 ![Figure 5: A thread's view displays author information and thread content, for the thread and all replies to the thread.](../../../images/message-boards-participate-in-threads.png)
 
-Subscribing to a thread causes @product_name@ to send the user an email whenever
+Subscribing to a thread causes @product@ to send the user an email whenever
 a new message is posted to the thread. If you have enabled the mailing list
 feature for the category in which the thread resides, users can simply reply to
 these messages in order to post back to the thread, without having to visit your
@@ -671,7 +671,7 @@ on other areas of your site. To do this, you can, for example, create a role
 called *Message Board Administrator*. This role can be scoped to the Liferay
 instance, an organization, or a site. If you create an instance-scoped role,
 members of this role will be able to administer Message Boards throughout
-@product_name@. If it is an organization or site-scoped role, members of this
+@product@. If it is an organization or site-scoped role, members of this
 role will be able to administer a Message Boards application in only that
 organization or site. 
 
