@@ -81,6 +81,7 @@ you can use the Gogo shell.
 
         upgrade:list
         upgrade:execute
+        upgrade:dryRun (available from 7.0 CE GA2 onwards)
         verify:list
         verify:execute
 
@@ -151,6 +152,40 @@ now being `1.0.0`:
 
     Registered upgrade processes for com.liferay.iframe.web 1.0.0
 	   {fromSchemaVersionString=0.0.1, toSchemaVersionString=1.0.0, upgradeStep=com.liferay.iframe.web.upgrade.IFrameWebUpgrade$1@1537752d}
+
+### Checking the upgrade status [](id=checking-the-upgrade-status)
+
+The `release_` table in the database contains the information to check the
+upgrade status:
+
+- There is one row for the core recognizable by the value `portal` at
+`servletContextName` field. If the `schemaVersion` field matches your new
+Liferay version (`7.0.1` in case of Liferay 7 CE GA2) and `verified` field
+values 1 (true) would mean that the upgrade for the core has been completed
+successfully. Anyway the upgrade will stop if there is relevant error during
+this process.
+
+- There is one row per OSGi module and the value for `schemaVersion` has to
+be equal or higher than 1.0.0 (1.0.0 is the initial version in Liferay 7 for
+most of the modules except for those that were plugins in earlier versions of
+Liferay Portal). You can check the final expected status for a module by typing
+`upgrade:list {module_name}`
+
+Additionaly typing `upgrade:dryRun` at the Gogo shell shows you the modules that
+have not reached its final version. Thus you will have a way to know the modules
+whose upgrade has failed at the end of the process.
+
+To show how this command works, please, take a look at this example: picture
+that the upgrade for module `com.liferay.dynamic.data.mapping.service` fails in
+the step `1.0.0-step-2`, if you execute the command `upgrade:dryRun` at this
+momment you will get:
+
+    Would upgrade com.liferay.dynamic.data.mapping.service from 1.0.0-step-2 to 1.0.0 and its dependent modules
+
+That means that you will need to fix the issue and execute the upgrade for that
+module again. Notice that dependent modules for
+`com.liferay.dynamic.data.mapping.service` need to be upgraded once the first
+one is upgrade properly.
 
 ### Executing verify processes [](id=executing-verify-processes)
 
