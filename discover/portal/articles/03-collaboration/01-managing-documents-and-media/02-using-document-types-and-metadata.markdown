@@ -6,11 +6,11 @@ What do you do, however, if you want to ascribe more characteristics to a file?
 For example, you might have documents to which you want users to apply
 copyrights and license information. Or you might want to add searchable
 attributes to documents. Is there a way to do these things in Documents and
-Media? Yes! Liferay enables you to define metadata for describing files. Liferay
-provides tools to create and aggregate metadata into Metadata Sets that you can
-apply to Document Library files. You leverage the Metadata Sets through Document
-Types. These Document Types wrap the Documents and Media files so users can
-completely describe them. 
+Media? Yes! @product_name@ enables you to define metadata for describing files.
+Liferay provides tools to create and aggregate metadata into Metadata Sets that
+you can apply to Document Library files. You leverage the Metadata Sets through
+Document Types. These Document Types wrap the Documents and Media files so users
+can completely describe them. 
 
 Documents and Media uses a Document Type to classify every Document Library
 file. A Document Type wraps each file with a type name and metadata. The
@@ -29,7 +29,7 @@ and descriptive characteristics about documents. When users create or edit
 a document of a document type that has a metadata set, they specify metadata
 field values to describe the document.
 
-Liferay supports the following metadata fields:
+@product_name@ supports the following metadata fields:
 
 **Boolean**: is a check box.
 
@@ -40,7 +40,7 @@ field a mini-calendar pops up which you can use to select a date.
 **Decimal**: lets you enter a decimal number. The value is persisted as a
 double.
 
-**Documents and Media**: lets you select a file from one of the Liferay
+**Documents and Media**: lets you select a file from one of the @product_name@
 instance's Documents and Media libraries.
 
 **Geolocation**: lets you specify a location to associate with the document.
@@ -155,13 +155,14 @@ apply the metadata set to a new Document Type.
 ## Creating Document Types [](id=creating-document-types)
 
 When apply to Document Types enrich your document library files with information
-and integrate them further with Liferay's features. Not only do Document Types
-allow you to encourage, and even demand, that users specify important document
-metadata, but they also help you integrate the document with more of Liferay's
-features, such as Search and Workflow. Liferay's Search picks up on Documents
-and Media file metadata, so users can find files faster. You can apply workflows
-to specific document types. And you can more cleanly organize document libraries
-by designating folders to exclusively hold particular document types. 
+and integrate them further with @product_name@'s features. Not only do Document
+Types allow you to encourage, and even demand, that users specify important
+document metadata, but they also help you integrate the document with more of
+@product_name@'s features, such as Search and Workflow. Liferay's Search picks
+up on Documents and Media file metadata, so users can find files faster. You can
+apply workflows to specific document types. And you can more cleanly organize
+document libraries by designating folders to exclusively hold particular
+document types. 
 
 Let's open up the Document Types manager to start creating a document type. In
 Documents and Media in Site Administration, select *Options
@@ -223,6 +224,6 @@ editor canvas.
 
 Document Types and their Metadata Sets let users ascribe important information
 to documents. The metadata is available for users to inspect in the document's
-file entry view. The metadata is also searchable using Liferay's Search app. As
-you've witnessed, Document Types and Metadata Sets make documents rich with
-information and integrate them more with Liferay's features. 
+file entry view. The metadata is also searchable using @product_name@'s Search
+app. As you've witnessed, Document Types and Metadata Sets make documents rich
+with information and integrate them more with @product_name@'s features. 
