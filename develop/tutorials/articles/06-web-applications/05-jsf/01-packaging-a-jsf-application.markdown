@@ -12,15 +12,14 @@ and cons behind both.
 
 Liferay 7.0 supports the OSGi WAB standard for deployment of Java EE style WARs.
 Simply put, a WAB is an archive that that has a WAR layout and contains a
-META-INF/MANIFEST.MF file with the `Bundle-SymbolicName` OSGi directive.
+`META-INF/MANIFEST.MF` file with the `Bundle-SymbolicName` OSGi directive.
 
 Enabling WABs to run as OSGi modules at runtime is made possible by the Liferay
-[WAB
-Extender](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-extender).
-You can either setup the build system of your WAR project to create
-pre-configured WAB, or or let the Liferay WAB Generator convert your WAR
-artifact to a WAB at deployment time. In both cases, the source of the project
-has WAR layout and the artifact filename ends with the usual `.war` extension.
+[WAB Extender](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-extender).
+You can either setup the build system of your WAR project to create a
+pre-configured WAB, or let the Liferay WAB Generator convert your WAR artifact
+to a WAB at deployment time. In both cases, the source of the project has a WAR
+layout and the artifact filename ends with the usual `.war` extension.
 
 To get an idea of how a JSF WAR artifact is packaged for use as a WAB, an
 example anatomy structure is outlined below:
@@ -44,26 +43,26 @@ example anatomy structure is outlined below:
 ## Pre-Configured WAB
 
 The source of a pre-configured JSF Portlet WAB follows the standard directory
-layout for WAR projects and includes a bnd.bnd file along with a Java class that
-extends
+layout for WAR projects and includes a `bnd.bnd` file along with a Java class
+that extends
 [GenericFacesPortlet](http://myfaces.apache.org/portlet-bridge/2.0/api/apidocs/javax/portlet/faces/GenericFacesPortlet.html):
 
 - `bnd.bnd`
 - `src/`
-	- `main/`
-	 	- `java/`
-	 		- `MyPortlet.java`
-	 	- `webapp/`
-	 		- `WEB-INF/`
-	 			- `faces-config.xml`
-	 			- `web.xml`
+    - `main/`
+        - `java/`
+            - `MyPortlet.java`
+        - `webapp/`
+            - `WEB-INF/`
+                - `faces-config.xml`
+                - `web.xml`
 
 **Benefits:**
 
 - The `bnd.bnd` file can be processed by a build-time plugin (e.g.,
   [bnd-maven-plugin](http://njbartlett.name/2015/03/27/announcing-bnd-maven-plugin.html))
   to affect the content of an OSGi-ready `META-INF/MANIFEST.MF`.
-- Can take advantage of OSGi Declarative Services (DS)
+- Can take advantage of OSGi Declarative Services (DS).
 - Provides a class that extends
   [GenericFacesPortlet](http://myfaces.apache.org/portlet-bridge/2.0/api/apidocs/javax/portlet/faces/GenericFacesPortlet.html)
   and specifies portlet attributes via the `@Component` annotation, rather than
@@ -113,7 +112,6 @@ deployment:
             <servlet-name>Portlet Servlet</servlet-name>
             <url-pattern>/portlet-servlet/*</url-pattern>
         </servlet-mapping>
-        <!-- Prevent direct access to Facelet XHTML -->
         <security-constraint>
             <web-resource-collection>
                 <web-resource-name>Facelet XHTML</web-resource-name>
@@ -126,26 +124,27 @@ deployment:
 ## Auto-Generated WAB
 
 The source of an auto-generated JSF Portlet WAB also follows the standard
-directory layout for WAR projects. However, it does *NOT* include a bnd.bnd
-file and also does *NOT* include a Java class annotated with @Component:
+directory layout for WAR projects. However, it does *NOT* include a `bnd.bnd`
+file and also does *NOT* include a Java class annotated with `@Component`:
 
 - `src/`
-	- `main/`
-	 	- `java/`
-	 	- `webapp/`
-	 		- `WEB-INF/`
-	 			- `faces-config.xml`
-	 			- `liferay-display.xml`
-	 			- `liferay-plugin-package.properties`
-	 			- `liferay-portlet.xml`
-	 			- `portlet.xml`
-	 			- `web.xml`
+    - `main/`
+        - `java/`
+        - `webapp/`
+            - `WEB-INF/`
+                - `faces-config.xml`
+                - `liferay-display.xml`
+                - `liferay-plugin-package.properties`
+                - `liferay-portlet.xml`
+                - `portlet.xml`
+                - `web.xml`
 	 			
 **Benefits:**
 
 - Processed by the Liferay auto-deploy process, which adds the aforementioned
-  `PortletServlet` and `PluginContextListener` to the `WEB-INF/web.xml` descriptor.
-- Processed by the Liferay
+  `PortletServlet` and `PluginContextListener` to the `WEB-INF/web.xml`
+  descriptor.
+- Processed by the Liferay.
   [WAB Generator](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-osgi-web/portal-osgi-web-wab-generator),
   which automatically creates an OSGi-ready `META-INF/MANIFEST.MF`.
 - Can affect the content of `META-INF/MANIFEST.MF` by putting BND directives and
@@ -155,11 +154,13 @@ file and also does *NOT* include a Java class annotated with @Component:
 
 - Can't supply the `bnd.bnd` and can't utilize a build-time plugin such as the
   [bnd-maven-plugin](http://njbartlett.name/2015/03/27/announcing-bnd-maven-plugin.html).
-- Can't take advantage of OSGi Declarative Services (DS)
+- Can't take advantage of OSGi Declarative Services (DS).
 - Developer must specify the `WEB-INF/portlet.xml` and
   `WEB-INF/liferay-portlet.xml` descriptors.
 
-Note: To see the output of the Liferay WAB Generator, you can override the
++$$$
+
+**Note:** To see the output of the Liferay WAB Generator, you can override the
 following properties:
 
     module.framework.web.generator.generated.wabs.store=false
@@ -168,6 +169,8 @@ following properties:
 You can learn more about these properties in the
 [Module Framework Web Application Bundles](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Module%20Framework%20Web%20Application%20Bundles)
 properties section.
+
+$$$
 
 ## Utilizing OSGi Services
 
@@ -216,8 +219,9 @@ this system step by copying the `.war` directly to its final destination.
 $$$
 
 
-Excellent! You've learned how to pre-configure your JSF application as a WAB. But
-if you would rather let the Liferay WAB Generator do it for you, that's fine too.
+Excellent! You've learned how to pre-configure your JSF application as a WAB.
+But if you would rather let the Liferay WAB Generator do it for you, that's fine
+too.
 
 ## Related Topics [](id=related-topics)
 
