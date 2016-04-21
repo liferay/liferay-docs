@@ -267,7 +267,7 @@
 			</fileset>
 			<filterchain>
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
-					<param type="token" name="product_name" value="Liferay Portal"/>
+					<param type="token" name="${product.token}" value="${product.name}"/>
 				</filterreader>
 			</filterchain>
 		</copy>
@@ -301,7 +301,7 @@
 			</fileset>
 			<filterchain>
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
-					<param type="token" name="product_name" value="Liferay DXP"/>
+					<param type="token" name="${product.token}" value="${product.name.enterprise}"/>
 				</filterreader>
 			</filterchain>
 		</copy>
