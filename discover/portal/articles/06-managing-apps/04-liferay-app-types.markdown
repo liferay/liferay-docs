@@ -14,7 +14,7 @@ Read on to learn about these app types.
 
 ## OSGi Modules [](id=osgi-modules)
 
-Since Liferay 7 runs on OSGi, apps can be implemented as OSGi modules. An OSGi 
+Since Liferay runs on OSGi, apps can be implemented as OSGi modules. An OSGi 
 module is a JAR file adapted to run on OSGi. Although it's possible for a single 
 module to implement a single app, an app typically consists of multiple modules 
 that are packaged together. Also, note that apps in OSGi modules aren't required 
@@ -84,4 +84,4 @@ app is distributed in an LPKG package. The LPKG package contains Marketplace
 metadata and the files the app needs to run. Note that it's possible for an LPKG 
 package to contain multiple apps. For example, a single LPKG package can contain 
 several portlets. This is common in cases where an app requires a Control Panel 
-portlet for administrators, and another portlet intended for end users. 
+portlet for administrators, and another portlet for end users. 
