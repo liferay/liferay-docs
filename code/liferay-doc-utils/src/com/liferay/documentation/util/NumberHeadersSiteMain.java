@@ -27,6 +27,7 @@ public class NumberHeadersSiteMain extends Task {
 
 		String docDir = args[0];
 		String productType = args[1];
+		String token = args[2];
 
 		boolean foundDuplicateIds = false;
 		
@@ -117,7 +118,9 @@ public class NumberHeadersSiteMain extends Task {
 					String line;
 					while ((line = in.readLine()) != null) {
 
-						if (line.startsWith("#")) {
+						token = "@" + token + "@";
+
+						if (line.startsWith("#") && !line.contains(token)) {
 						
 							line = line.trim();
 

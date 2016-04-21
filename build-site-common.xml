@@ -345,6 +345,7 @@
 		>
 			<arg value="${doc.dir}"/>
 			<arg value="ce"/>
+			<arg value="${product.token}"/>
 		</java>
 	</target>
 
@@ -358,6 +359,7 @@
 		>
 			<arg value="${doc.dir}/${temp.dir}"/>
 			<arg value="dist"/>
+			<arg value="${product.token}"/>
 		</java>
 	</target>
 
@@ -371,6 +373,7 @@
 		>
 			<arg value="${doc.dir}"/>
 			<arg value="dxp"/>
+			<arg value="${product.token}"/>
 		</java>
 	</target>
 
