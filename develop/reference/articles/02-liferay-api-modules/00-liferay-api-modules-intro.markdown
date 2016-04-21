@@ -1,4 +1,4 @@
-# Finding Liferay API Modules [](id=finding-liferay-api-modules)
+# Liferay API Modules [](id=finding-liferay-api-modules)
 
 We want to make it easy for you to find Liferay API modules and specify them in
 your project's dependencies. The following tables provide module information you

@@ -60,7 +60,8 @@ public class NumberHeadersSiteMain extends Task {
 				}
 			}
 		}
-		
+
+		docSetDirFolders.add(articlesDir);
 		docSetDirFolders.add(docSetDir);
 		
 		File docSetDirFoldersArray[] = docSetDirFolders.toArray(new File[docSetDirFolders.size()]);
