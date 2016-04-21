@@ -9,7 +9,7 @@ support. Liferay's Eclipse-based IDEs (Liferay IDE and Liferay Developer Studio)
 provide wizards that allow you to create new Liferay module projects. These
 wizards use Blade CLI under the hood. Once you finish developing your project,
 you can use Gradle to build your project's JAR file and use Blade CLI to deploy
-your module to Liferay's module framework.
+your module to @product@'s module framework.
 
 To create a new Liferay module project, you can run the Blade `create` command,
 which offers many available templates. There are, however, many other options

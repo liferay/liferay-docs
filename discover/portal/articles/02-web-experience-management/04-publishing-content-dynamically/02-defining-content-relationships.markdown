@@ -75,4 +75,4 @@ provide the custom title.
 
 ![Figure 2: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets application. In the screenshot, we renamed the three Related Assets apps on the left and updated their configurations.](../../../images/related-assets-app-2.png)
 
-Next, you'll learn about Liferay's Search application.
+Next, you'll learn about @product@'s Search application.

@@ -9,8 +9,8 @@ the basis of propagating a token via one of the following mechanisms:
 - HTTP cookie
 - Session attribute
 
-The authentication token contains either the Liferay Portal user's screen name
-or email address, whichever Liferay Portal has been configured to use for the
+The authentication token contains either the @product@ user's screen name
+or email address, whichever @product@ has been configured to use for the
 particular company (portal instance). Recall that Liferay supports three authentication methods:
 
 - By email address
@@ -25,10 +25,10 @@ warning:
     Incompatible setting for: company.security.auth.type
 
 Please note that the above sources are fully trusted. Consequently, a security
-mechanism external to Liferay Portal must be used. For example, you could use a
+mechanism external to @product@ must be used. For example, you could use a
 fronting web server like Apache. The chosen fronting solution must prevent
-malicious Liferay Portal user impersonation that otherwise might be possible by
-sending HTTP requests directly to Liferay Portal from the client's web browser.
+malicious @product@ user impersonation that otherwise might be possible by
+sending HTTP requests directly to @product@ from the client's web browser.
 
 Token based authentication is disabled by default. To manage token based SSO
 authentication, navigate to Liferay's Control Panel, click on *System
@@ -43,7 +43,7 @@ after logout.
 **Import from LDAP:** Check this box to automatically import users from LDAP if
 they do not exist in the portal.
 
-**Logout redirect URL:** When user logs out of Liferay Portal, the user is
+**Logout redirect URL:** When user logs out of @product@, the user is
 redirected to this URL.
 
 **Token location:** Set this to the location of the user token. As mentioned
@@ -57,6 +57,6 @@ earlier, the options are:
 **User token name:** Set equal to the name of the token. This will be retrieved
 from the specified location.
 
-Liferay Portal's token-based SSO authentication mechanism is highly flexible
+@product@'s token-based SSO authentication mechanism is highly flexible
 and compatible with any SSO solution which can provide it with a valid Liferay
 user's screen name or email address. These include Shibboleth and SiteMinder.

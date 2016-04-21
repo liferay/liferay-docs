@@ -1,6 +1,6 @@
 # Liferay Installation Overview [](id=liferay-installation-overview)
 
-Installing Liferay is easy. But before you begin, you should answer a few
+Installing @product@ is easy. But before you begin, you should answer a few
 questions.
 
 - Which version of Liferay will you install?
@@ -15,7 +15,7 @@ installing Liferay.
 
 ## Understanding Liferay's Releases [](id=understanding-liferays-releases)
 
-Which version of Liferay should you install? That's an easy question to answer:
+Which version of @product@ should you install? That's an easy question to answer:
 if this is a new installation, we recommend you install the latest version
 available. If you want to understand how Liferay releases work, read on.
 
@@ -106,11 +106,11 @@ installation.
   maintenance release. That is, a plugin developed for Liferay 6.2 GA1 will
   also work in Liferay 6.2 GA2 or a GA2 fix pack.
 
-For more details on updating Liferay Portal, see the
+For more details on updating @product@, see the
 [Upgrading Liferay](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
 article.
 
-Liferay Portal is a very flexible application that runs well on several
+@product@ is a very flexible application that runs well on several
 different server environments. It's simple to install and follows a systematic
 versioning system that makes it easy to keep current with the latest updates.
 The strength of the Liferay community helps detect potential issues early that
@@ -145,20 +145,20 @@ Liferay Portal.
 
 Please note that Liferay is not able to provide application server bundles for
 proprietary application servers such as WebLogic or WebSphere, because the
-licenses for these servers don't allow for redistribution. Liferay Portal,
+licenses for these servers don't allow for redistribution. @product@,
 however, runs just as well on these application servers as it does on the
 others. You'll need to follow our manual installation procedure using a `.war`
 file to install Liferay on proprietary application servers.
 
 Once you have Liferay, you can plan out your installation. First, determine if
-you need Liferay Portal Security turned on. Second, install Liferay Portal. You
+you need @product@ Security turned on. Second, install @product@. You
 can install Liferay either by using a bundle or by installing it manually on
 your existing application server. Next, we'll go over the steps it takes to
-install Liferay Portal.
+install @product@.
 
 ## Liferay Installation Steps [](id=liferay-installation-steps)
 
-Before you begin installing Liferay, You should review these basic installation
+Before you begin installing @product@, You should review these basic installation
 steps:
 
 1. Choose a database server to use with Liferay and create a new database.
@@ -169,11 +169,11 @@ steps:
 
 3. Gather mail credentials for sending email notifications to users. Determine
    whether you want Liferay to manage your mail session or your application
-   server to manage your mail session. Liferay provides a built-in mail session
+   server to manage your mail session. @product@ provides a built-in mail session
    but also supports a JNDI mail session. We recommend that you let Liferay
    manage your mail session.
 
-4. Install either a Liferay bundle or install Liferay on an existing
+4. Install either a @product@ bundle or install @product@ on an existing
    application server (further instructions below).
 
 5. Determine whether you'll use Liferay Marketplace or other third party
@@ -186,9 +186,9 @@ database.
 ## Setting Up Liferay's Database with the Recommended Permissions [](id=setting-up-liferays-database-with-the-recommended-permissions)
 
 The recommended way of setting up your Liferay database is also the simplest.
-Liferay Portal takes care of just about everything. You only need to take two simple steps:
+@product@ takes care of just about everything. You only need to take two simple steps:
 
-1. Create a blank database encoded with the character set UTF-8. Liferay is a
+1. Create a blank database encoded with the character set UTF-8. @product@ is a
    multilingual application and needs UTF-8 encoding to display all of its
    supported character sets.
 
@@ -196,12 +196,12 @@ Liferay Portal takes care of just about everything. You only need to take two si
    all rights, including the rights to create and drop tables, to the blank
    Liferay database.
 
-Liferay will use this database user's credentials to connect to the Liferay
+@product@ will use this database user's credentials to connect to the Liferay
 database either directly or through its application server. During its initial
 startup, Liferay creates the tables it needs in the database you just created.
 It does this automatically, complete with indexes.
 
-This is the recommended way to set up Liferay. This method allows you to take
+This is the recommended way to set up @product@. This method allows you to take
 advantage of Liferay's ability to automatically maintain its database during
 upgrades or when various Liferay plugins are installed that create database
 tables of their own. This method is by far the best way to set up your Liferay
@@ -212,16 +212,16 @@ described in this section, you can skip the next section.
 
 ## Setting Up Liferay's Database with Restrictive Permissions [](id=setting-up-liferays-database-with-restrictive-permissions)
 
-**Warning:** The instructions in this section are not ideal for Liferay
+**Warning:** The instructions in this section are not ideal for @product@
 installations. This procedure is documented here so that enterprises with more
 restrictive standards can install Liferay with stricter (but sub-optimal)
 database settings. If it's at all possible, we recommend that you use the
 method described in the previous section instead of the procedure outlined
 here.
 
-Even though Liferay can create its database automatically, some enterprises
+Even though @product@ can create its database automatically, some enterprises
 prefer *not* to allow the database user configured in an application server to
-have the database permissions necessary for Liferay and its plugins to maintain
+have the database permissions necessary for @product@ and its plugins to maintain
 their tables. For these organizations, Select, Insert, Update and Delete are
 the only allowed permissions. Thus, in this section we explain how to set up
 the database manually. If your organization *is* willing to grant the Liferay
@@ -229,19 +229,19 @@ database user the permissions to create and drop tables in the database--and
 this is the recommended configuration--by all means, use the recommended
 configuration described in the previous section.
 
-1. Create a new, blank, database for Liferay.
+1. Create a new, blank, database for @product@.
 
 2. Grant full rights to do anything to the Liferay database to the Liferay
    database user.
 
-3. Install Liferay and start it so that it automatically populates its
+3. Install @product@ and start it so that it automatically populates its
    database.
 
 4. Once the database has been populated with the Liferay tables, remove the
    permissions for creating and dropping tables from the Liferay database user.
 
-There are some caveats to running Liferay like this. Many Liferay plugins
-create new tables when they're deployed. Additionally, Liferay has an automatic
+There are some caveats to running @product@ like this. Many Liferay plugins
+create new tables when they're deployed. Additionally, @product@ has an automatic
 database upgrade function that runs when Liferay is upgraded. If the Liferay
 database user doesn't have enough rights to create/modify/drop tables in the
 database, you must grant those rights to the ID before you deploy one of these
@@ -253,26 +253,25 @@ they cannot be installed if Liferay can't create database tables. If you wish
 to install these plugins, you will need to grant rights to create tables in the
 database before you attempt to install them.
 
-Once you have your database ready, you can install Liferay on your server.
+Once you have your database ready, you can install @product@ on your server.
 
 <!-- Check the status of Liferay Marketplace for Liferay 7. Will it still be required? -->
 ## Liferay Marketplace [](id=liferay-marketplace)
 
-The Liferay Marketplace is an integral part of the Liferay Portal experience.
-The Marketplace plugin is required to be installed on Liferay Portal. The
+The Liferay Marketplace is an integral part of the @product@ experience.
+The Marketplace plugin is required to be installed on @product@. The
 Marketplace plugin enables a host of features that extend beyond just access to
 the online Liferay Marketplace. Some of the key features the Marketplace plugin
 enables are:
 
 - Liferay Marketplace: direct access to our online Marketplace
 - App Manager: ability to install, uninstall, and update apps
-- Bundled Apps: easily manage apps that may come bundled with your Liferay
-  Portal
+- Bundled Apps: easily manage apps that may come bundled with your @product@
 - Developer Apps: ability to manage apps that you're developing
-- License Manager: streamlined license management for your Liferay Portal and
+- License Manager: streamlined license management for your @product@ and
   apps
 
-The portal installation process attempts to automatically deploy and register
+The @product@ installation process attempts to automatically deploy and register
 the Marketplace plugin. If your environment supports hot deploy and allows full
 database rights, the automatic deploy process takes care of itself. However,
 many companies (especially in production environments), limit automated
@@ -291,7 +290,7 @@ Internet. In these cases, you have 2 options:
 deploy folder. -->
 1. From an Internet-enabled computer, download the Marketplace plugin from
    [https://www.liferay.com/marketplace/download](https://www.liferay.com/marketplace/download).
-   Then allow Liferay to auto deploy it by dropping the downloaded `.lpkg` file
+   Then allow @product@ to auto deploy it by dropping the downloaded `.lpkg` file
    into the Liferay deploy folder.
 
 2. From an Internet-enabled computer, download the Marketplace plugin. Then use
@@ -303,15 +302,15 @@ Detailed instructions can be found under [Installing Plugins Manually](https://w
 ### Application Server Does Not Support Hot Deploy [](id=application-server-does-not-support-hot-deploy)
 
 If your application server does not support hot deploy, you can't leverage
-Liferay's auto deploy feature. You can, however, manually deploy the plugin in
+@product@'s auto deploy feature. You can, however, manually deploy the plugin in
 two steps:
 
-1. Use Liferay's tools to pre-deploy the file.
+1. Use @product@'s tools to pre-deploy the file.
 
 2. Then use your app server's tools to do the actual deployment.
 
 <!-- Need to update this link for Liferay 7. -->
-These steps are necessary since Liferay makes deployment-time modifications to
+These steps are necessary since @product@ makes deployment-time modifications to
 the plugins right before they are actually deployed to the application server.
 Detailed instructions can be found under
 [Deploy Issues for Specific Containers](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/plugin-management-liferay-portal-6-2-user-guide-14-en).
@@ -319,11 +318,11 @@ Detailed instructions can be found under
 ### Limited Database Access [](id=limited-database-access)
 
 Some production environments do not have the necessary database permissions for
-Liferay and its plugins to maintain their tables. In these cases:
+@product@ and its plugins to maintain their tables. In these cases:
 
 1. Grant the Liferay database user temporary full rights to the database.
 
-2. Install Liferay and start it so that it populates its database.
+2. Install @product@ and start it so that it populates its database.
 
 3. Once the database is created, remove the permissions for creating tables and
    dropping tables from the Liferay database user.
@@ -332,12 +331,12 @@ See the Setting Up Liferay's Database with Restrictive Permissions section
 above for more information. Note that many sophisticated Liferay apps--not just
 the Marketplace plugin--require new tables when deployed. If your environment
 restricts database access, you may need to repeat the above steps whenever you
-deploy a new app to the Liferay Portal.
+deploy a new app to the @product@.
 
-## Configuring Liferay Portal Security [](id=configuring-liferay-portal-security)
+## Configuring @product@ Security [](id=configuring-liferay-portal-security)
 
 Liferay Marketplace is an online store for obtaining applications that run on
-the Liferay Portal platform. These applications are provided not only by
+@product@. These applications are provided not only by
 Liferay, but also by partners and independent developers who want you to
 install and use their applications on your server. Many of these applications
 are excellent and we recommend that you try them out for yourself.
@@ -347,7 +346,7 @@ Liferay, a question arises: how do you know these applications are doing what
 they're advertised to do? There is a vetting process that they go through
 before they're allowed on Marketplace, but if the source code is not provided,
 there's no way for even Liferay to know if an app has been properly
-represented. For this reason, Liferay Portal implements a security feature
+represented. For this reason, @product@ implements a security feature
 known as the Portal Access Control List, or PACL.
 
 PACL forces an application to declare up front the functions from Liferay's
@@ -367,7 +366,7 @@ by default. This way, your portal performs as fast as possible.
 
 The bottom is line that if you intend to use Marketplace apps, you should
 enable PACL. We provide manually installation documentation for all the app
-servers supported by Liferay. Each of those sections has a subsection that
+servers supported by @product@. Each of those sections has a subsection that
 explains how to enable Java security for that app server, which is a
 prerequisite for enabling PACL. Once you have Java security enabled, PACL can
 be enabled by adding one line to your `portal-ext.properties` or
@@ -375,15 +374,15 @@ be enabled by adding one line to your `portal-ext.properties` or
 
     portal.security.manager.strategy=liferay
 
-Save the file. If Liferay is running, restart it. Your portal is now configured
+Save the file. If @product@ is running, restart it. Your portal is now configured
 to check PACL-enabled Marketplace apps against their declared permissions.
 
-Next, you'll make sure Liferay is configured properly for your network.
+Next, you'll make sure @product@ is configured properly for your network.
 
 ## Choosing IPv4 or IPv6 [](id=choosing-ipv4-or-ipv6)
 
-Liferay Portal supports both the IPv4 and IPv6 address formats. By default,
-Liferay uses IPv4 addresses. If you're on an IPv6 network, you'll need to
+@product@ supports both the IPv4 and IPv6 address formats. By default,
+@product@ uses IPv4 addresses. If you're on an IPv6 network, you'll need to
 change the configuration. If you'd like more information on the basics of these
 protocols, you can check out the [reason](http://www.google.com/intl/en/ipv6/)
 for using IPv6 addresses, and its [technical
@@ -404,7 +403,7 @@ Next, let's learn about the folder structure of a Liferay installation.
 
 ## Liferay Home [](id=liferay-home)
 
-Liferay Portal uses a special folder called *Liferay Home* to store resources.
+@product@ uses a special folder called *Liferay Home* to store resources.
 This folder is usually the parent folder of the application server's folder.
 This is why Liferay bundles place the application server inside of the bundle's
 root folder.
@@ -419,7 +418,7 @@ Inside of the Liferay Home folder, there are folders for various purposes:
         - [Application Server]
 
 `data`: This folder is used to store an embedded HSQL database, Liferay's
-Jackrabbit JSR-170 file repository, and Liferay's search indexes. Liferay is
+Jackrabbit JSR-170 file repository, and Liferay's search indexes. @product@ is
 initially configured to use the embedded HSQL database but the HSQL database is
 primarily intended for demonstration and trial purposes. Liferay's database
 connection can be configured on the Basic Configuration page that appears on
@@ -438,9 +437,9 @@ runtime belong in this folder.
 
 **[Application Server]:** The name of this folder is different depending on
 the bundle you've downloaded. This folder contains the application server in
-which Liferay has been installed.
+which @product@ has been installed.
 
-If Liferay is unable to create the resources it needs in the Liferay Home
+If @product@ is unable to create the resources it needs in the Liferay Home
 folder or if it finds itself running on certain application servers, it creates
 a folder called `liferay` in the home folder of the operating system user that
 is running Liferay. In this case, the `liferay` folder becomes Liferay Home.
@@ -449,12 +448,12 @@ folder could be `/home/bloggs/liferay` or `C:\Users\jbloggs\liferay`.
 
 # Using Liferay's Setup Wizard [](id=using-liferays-setup-wizard)
 
-Liferay's Setup Wizard runs when you start Liferay for the first time. If
-you're installing a Liferay bundle or manually installing Liferay on an
+Liferay's Setup Wizard runs when you start @product@ for the first time. If
+you're installing a @product@ bundle or manually installing @product@ on an
 existing application server, please refer to the appropriate documentation and
-then come back here. Once you've started Liferay, come back here. To make it
-easy to configure Liferay, the first thing you see when browsing to your newly
-installed Liferay bundle is a setup wizard. The title of the setup wizard page
+then come back here. Once you've started @product@, come back here. To make it
+easy to configure @product@, the first thing you see when browsing to your newly
+installed @product@ bundle is a setup wizard. The title of the setup wizard page
 is Basic Configuration. This page provides a convenient way to make an initial
 Liferay configuration.
 
@@ -475,13 +474,13 @@ For the administrator, you need to supply the following information:
 
 ![Figure 1: Supply the information for your portal and your portal's default administrator user on the Basic Configuration page.](../../images/basic-configuration1.png)
 
-In addition to these, Liferay also supports a few embedded databases that are
+In addition to these, @product@ also supports a few embedded databases that are
 designed for development. We haven't listed these here because you're setting up
 a production Liferay server, and you shouldn't use an embedded database with a
 production box.
 
 Before you fill out the database section of Liferay's setup wizard, you should
-already have created a database for Liferay to use. If you haven't, create a
+already have created a database for @product@ to use. If you haven't, create a
 new UTF-8 encoded database for Liferay.
 
 Open the Database section of the wizard. From the select box, choose your
@@ -495,13 +494,13 @@ database, the server it's running on, and the database user credentials.
 The Basic Configuration page also includes a checkbox labeled *Add Sample
 Data*. If you check this box, sample data is added to Liferay's database. This
 data includes users, sites, and organizations. The sample data allows many
-Liferay features to be showcased. If you're installing Liferay on your own
+Liferay features to be showcased. If you're installing @product@ on your own
 machine to explore its features, the sample data will probably be useful. If,
-however, you're installing Liferay on a real server, you should start with a
+however, you're installing @product@ on a real server, you should start with a
 clean system.
 
 Once you've filled out the form, click *Finish Configuration*. You'll see a
-message stating that Liferay is being installed as it creates the tables and
+message stating that @product@ is being installed as it creates the tables and
 data it needs in its database. The setup wizard creates a
 `portal-setup-wizard.properties` file which stores the settings that you
 entered. When you begin customizing your portal's configuration, we recommend
@@ -514,7 +513,7 @@ documentation](http://docs.liferay.com/portal/7.0/propertiesdoc).
 +$$$
 
 **Tip:** The wizard is an extremely helpful tool, especially if you're setting
-up Liferay for the first time. If you're a Liferay veteran and you already have
+up @product@ for the first time. If you're a Liferay veteran and you already have
 your database information and various properties set up, you can disable the
 setup wizard. If you disable the setup wizard, you must manually configure
 everything manually from a `portal-ext.properties` file. To disable the setup
@@ -526,12 +525,12 @@ created in Liferay Home by the setup wizard) override property values in
 $$$
 
 After you've entered the information requested by the Basic Configuration page,
-you'll be prompted to restart Liferay. After restarting Liferay, you should set
+you'll be prompted to restart @product@. After restarting Liferay, you should set
 up your mail configuration. For more information, see the Using Mail Sessions
 section above.
 
-Now that you've reviewed the basic Liferay installation process, it's time to
-actually install Liferay! To learn how to install Liferay from a bundle, please
+Now that you've reviewed the basic @product@ installation process, it's time to
+actually install @product@! To learn how to install Liferay from a bundle, please
 see the [Installing a Liferay Bundle]() article. If you want to manually
-install Liferay on one of its supported application servers, please see the
+install @product@ on one of its supported application servers, please see the
 appropriate article.

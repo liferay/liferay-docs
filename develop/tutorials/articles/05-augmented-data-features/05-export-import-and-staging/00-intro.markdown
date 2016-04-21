@@ -1,6 +1,6 @@
 # Export/Import and Staging [](id=export-import-and-staging)
 
-Liferay's Export/Import and Staging features give users the power to plan page
+@product@'s Export/Import and Staging features give users the power to plan page
 publication and manage content. The Export/Import feature lets users export
 content from the Portal and import external content into the Portal. Providing
 the export feature in your application allows users the flexibility of exporting
@@ -8,8 +8,8 @@ content they've created in your application to other places, such as another
 portal instance, or to save the content for a later use. Import does the
 opposite: it brings the data from a LAR file into your portal.
 
-For instance, suppose you're managing an online education course using Liferay
-Portal. Because of the nature of an online course, the site's data (grades,
+For instance, suppose you're managing an online education course using @product@.
+Because of the nature of an online course, the site's data (grades,
 assignments, etc.) is purged every semester to make way for new incoming
 students. In a scenario like this, there is a need frequently to store
 a complete record of all data given during a course. The institution offering

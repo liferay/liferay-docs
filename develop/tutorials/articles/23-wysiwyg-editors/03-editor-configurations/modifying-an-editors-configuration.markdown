@@ -1,6 +1,6 @@
 # Modifying an Editor's Configuration [](id=modifying-an-editors-configuration)
 
-Liferay supports many different kinds of WYSIWYG editors that can be used in
+@product@ supports many different kinds of WYSIWYG editors that can be used in
 portlets to edit content. Depending on the content you're editing, you may want
 to modify the editor to provide a better configuration for your needs. In this
 tutorial, you'll learn how to extend your Liferay supported WYSIWYG editor to
@@ -116,7 +116,7 @@ JAR file and copy it to your Portal's `osgi/modules` directory. Once the module
 is installed and activated in your Portal's service registry, your new editor
 configuration is available for use.
 
-Liferay supports several different types of WYSIWYG editors, which include
+@product@ supports several different types of WYSIWYG editors, which include
 (among others):
 
 - [AlloyEditor](http://alloyeditor.com/api/)

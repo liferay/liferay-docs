@@ -24,7 +24,7 @@ initially implement the example in Java pseudo-code:
 
     ...
 
-Remember that Liferay's script engine only supports Groovy by default. If you
+Remember that @product@'s script engine only supports Groovy by default. If you
 want to try out the non-Groovy examples below, you need to install the
 appropriate modules:
 
@@ -94,7 +94,7 @@ you can still use it in Liferay's script engine.
 
 ## JavaScript [](id=javascript)
 
-Liferay uses the Rhino JavaScript Engine to provide JavaScript support in the
+@product@ uses the Rhino JavaScript Engine to provide JavaScript support in the
 script engine. The following code provides a JavaScript version of our original
 Java program:
 
@@ -122,7 +122,7 @@ Python users aren't left out either.
 
 ## Python [](id=python)
 
-Liferay provides Python support based on Jython. Our example could be
+@product@ provides Python support based on Jython. Our example could be
 implemented with the following code:
 
     from com.liferay.portal.service import UserLocalServiceUtil

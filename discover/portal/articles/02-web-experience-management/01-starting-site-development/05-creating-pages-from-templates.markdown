@@ -101,4 +101,4 @@ information on exporting/importing content, visit the
 [Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
 article.
 
-Next, you'll examine the tools Liferay provides for exporting/importing content.
+Next, you'll examine the tools @product@ provides for exporting/importing content.

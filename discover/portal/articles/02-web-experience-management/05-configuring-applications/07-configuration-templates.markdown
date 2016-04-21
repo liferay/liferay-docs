@@ -22,7 +22,7 @@ the app to these archived settings, you can click *Actions*
 (![Actions](../../../images/icon-actions.png)) &rarr; *Apply* next to the
 configuration template you want to apply.
 
-Unless otherwise noted, all of the apps in Liferay support this feature. This is
+Unless otherwise noted, all of the apps in @product@ support this feature. This is
 particularly useful for apps that have a lot of configuration options, such as
 the Message Boards application. 
 
@@ -31,5 +31,5 @@ applications. You learned how to customize your applications, export/import app
 data, communicate between apps, take advantage of different scopes, and save
 your app's configuration settings. You also examined the different uses of
 social applications like Facebook and Netvibes for your Liferay applications. In
-all, Liferay gives you an abundance of options to leverage the full capability
+all, @product@ gives you an abundance of options to leverage the full capability
 of your applications.

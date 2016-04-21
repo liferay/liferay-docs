@@ -1,12 +1,12 @@
 # Using Liferay's Script Engine [](id=using-liferays-script-engine)
 
-Liferay provides a robust script engine that can be used to execute scripts in a
-variety of languages. Liferay's script engine was originally developed to allow
+@product@ provides a robust script engine that can be used to execute scripts in a
+variety of languages. @product@'s script engine was originally developed to allow
 developers to write portlets in languages other than Java such as PHP, Groovy,
 Ruby, and Python. Since then, the script engine has been extended to do much
-more. For example, when Liferay's workflow framework was introduced, the script
+more. For example, when @product@'s workflow framework was introduced, the script
 engine was leveraged to support the execution of scripts from within a workflow
-module. Liferay now provides a script console in the Server Administration area
+module. @product@ now provides a script console in the Server Administration area
 of the Control Panel. The script console provides an easy way for system
 administrators to execute scripts to perform repetitive user maintenance
 operations, bulk invocations of Liferay's API, or even system level operations.

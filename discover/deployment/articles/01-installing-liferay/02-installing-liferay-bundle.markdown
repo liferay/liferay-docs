@@ -1,6 +1,6 @@
 # Installing a Liferay Bundle [](id=installing-a-liferay-bundle)
 
-Liferay bundles contain the same directory structure regardless of application
+@product@ bundles contain the same directory structure regardless of application
 server. The top-level folder is named for the release of Liferay. This folder
 is called *Liferay Home*. For more information on Liferay Home, please see the
 [Liferay Home]() documentation.
@@ -42,18 +42,18 @@ Configuration page and Liferay's setup wizard, please see the
 [Using Liferay's Setup Wizard]() documentation.
 <!-- Update link above. -->
 
-In addition to Liferay Portal itself, bundles include a number of pre-installed
-Liferay plugins. The exact list of plugins depends on your Liferay Portal
+In addition to @product@ itself, bundles include a number of pre-installed
+Liferay plugins. The exact list of plugins depends on your @product@
 edition and version. Visit the *App Manager* in Liferay's Control Panel to see
 all of the installed Liferay plugins. Click on *Store* to access Liferay
 Marketplace and browse Liferay plugins and click on *Purchased* to view plugins
 that you've already purchased that are ready to be installed.
 
-Bundles are the easiest way to get started with Liferay. They come with a
+Bundles are the easiest way to get started with @product@. They come with a
 pre-installed and preconfigured Liferay instance that can be used immediately
 to explore many Liferay features. Bundles are the fastest way to create full
-production-ready Liferay installations.
+production-ready @product@ installations.
 
 Of course, it's not always possible to use a bundle. You may already have an
-application server on which Liferay should be installed. In this case, please
-refer to our documentation on installing Liferay on your specific app server.
+application server on which @product@ should be installed. In this case, please
+refer to our documentation on installing @product@ on your specific app server.
