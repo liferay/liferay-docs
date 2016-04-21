@@ -250,7 +250,7 @@
 	<target name="dist-ce" depends="dist-ce-temp, prepare-dist" description="Zips up the folder's CE articles and images for importing.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
-			<fileset dir="./" includes="images/" />
+			<fileset dir="${temp.dir}" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
 		</zip>
 

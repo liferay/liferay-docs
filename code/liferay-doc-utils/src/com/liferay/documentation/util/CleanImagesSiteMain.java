@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class CleanImagesSiteMain {
 
@@ -12,44 +15,58 @@ public class CleanImagesSiteMain {
 		System.out.println("Start checking for unused images ...");
 
 		String docDir = args[0];
-		
+
 		String[] dirTypes = {"", "-dxp"};
-		
+
 		for (String dirType : dirTypes) {
 
 			File articleDir = new File("../" + docDir + "/articles" + dirType);
 
-			File[] articleDirs = articleDir.listFiles();
-
 			ArrayList<String> imageNames = new ArrayList<String>();
 
-			for (File topicDir : articleDirs) {
-				if (topicDir.isDirectory()) {
+			File[] articleDirFiles = articleDir.listFiles();
+			List<File> articles = new ArrayList<File>();
 
-					File[] topicDirs = topicDir.listFiles();
+			Queue<File> q = new LinkedList<File>();
+			for (File f : articleDirFiles) {
+				q.add(f);
+			}
 
-					System.out.println("checking " + topicDir.getPath());
+			while (!q.isEmpty()) {
+				File f = q.remove(); 
 
-					for (File mkdFile : topicDirs) {
+				if (f.isDirectory()) {
+					File[] files = f.listFiles();
 
-						if (!mkdFile.getName().endsWith(".markdown")) {
-							continue;
-						}
-
-						System.out.println(" " + mkdFile.getName());
-
-						LineNumberReader in = new LineNumberReader(new FileReader(
-								mkdFile));
-						String line = null;
-
-						while ((line = in.readLine()) != null) {
-							if (line.contains("(../../images")) {
-								imageNames.add(extractImageName(line, dirType));
-							}
-						}
-						in.close();
+					for (File file : files) {
+						q.add(file);
 					}
 				}
+				else {
+					if (f.getName().endsWith(".markdown")) {
+						articles.add(f);
+					}
+				}
+			}
+
+			for (File mkdFile : articles) {
+
+				if (!mkdFile.getName().endsWith(".markdown")) {
+					continue;
+				}
+
+				System.out.println(" " + mkdFile.getName());
+
+				LineNumberReader in = new LineNumberReader(new FileReader(
+						mkdFile));
+				String line = null;
+
+				while ((line = in.readLine()) != null) {
+					if (line.contains("../../images")) {
+						imageNames.add(extractImageName(line, dirType));
+					}
+				}
+				in.close();
 			}
 
 			File imagesDir = new File("../" + docDir + "/images" + dirType);
@@ -69,14 +86,14 @@ public class CleanImagesSiteMain {
 
 		int imageBegIndex;
 		if (dirType.equals("")) {
-			imageBegIndex = 14;
+			imageBegIndex = 13;
 		}
 		else {
-			imageBegIndex = 18;
+			imageBegIndex = 17;
 		}
 
 		String imageName = line.substring(
-				line.lastIndexOf("(../../images") + imageBegIndex, line.lastIndexOf(")"));
+				line.lastIndexOf("../../images") + imageBegIndex, line.lastIndexOf(")"));
 		return imageName;
 	}
 }
