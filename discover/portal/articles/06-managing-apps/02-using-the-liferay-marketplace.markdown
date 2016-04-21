@@ -112,5 +112,4 @@ There are two places to manage your purchased apps:
     ![Figure 4: You can also manage your purchased apps from within a running Liferay instance.](../../images/marketplace-purchased.png)
 
 Great! Now you know how to use Liferay Marketplace to discover, install, and 
-manage apps. Next, you'll learn the difference between the types of apps 
-available in Marketplace. 
+manage apps. 

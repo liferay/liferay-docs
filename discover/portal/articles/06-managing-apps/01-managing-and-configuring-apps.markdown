@@ -75,3 +75,6 @@ takes you to *Control Panel* &rarr; *Users* &rarr; *Roles*, where you can change
 the component's permissions for the selected role. 
 
 ![Figure 3: You can also activate or deactivate a component, and change its permissions.](../../images/components-configuration.png)
+
+Awesome! Now you know how to manage the apps installed in your Liferay 
+instances. 
