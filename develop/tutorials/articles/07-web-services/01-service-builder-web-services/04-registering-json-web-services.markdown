@@ -36,7 +36,7 @@ $$$
 
 Next, you'll see how you can register your application's remote services as JSON 
 web services. Keep in mind that Liferay uses this same mechanism. This is why 
-Liferay Portal's remote service are exposed as JSON web services out-of-the-box. 
+Liferay's remote services are exposed as JSON web services out-of-the-box. 
 
 ## Registering an App's JSON Web Services [](id=registering-an-apps-json-web-services)
 
@@ -44,14 +44,15 @@ As an example, say you have an app named `SupraSurf` that has some services, and
 you decide to expose them as remote services. After enabling the 
 `remote-service` attribute on its `SurfBoard` entity, you rebuild the services. 
 Service Builder regenerates the `SurfBoardService` interface, adding the
-`@JSONWebService` annotation to it. This annotation tells the portal that the
+`@JSONWebService` annotation to it. This annotation tells Liferay that the 
 interface's public methods are to be exposed as JSON web services, making them
 a part of the app's JSON API. Start up your Liferay instance if it isn't 
 running, and then deploy your app to Liferay. 
 
-To get some feedback from the portal on registering your application's services,
-configure the portal to log the application's informational messages (i.e., its
-`INFO ...` messages). See the tutorials on Liferay's logging system for details. 
+To get some feedback from your Liferay instance on registering your 
+application's services, configure the instance to log the application's 
+informational messages (i.e., its `INFO ...` messages). See the tutorials on 
+Liferay's logging system for details. 
 <!-- Link to logging system tutorials once they exist -->
 
 To test Liferay's JSON web service registration process, add a simple method to
@@ -67,8 +68,8 @@ service method via JSON. For instructions on doing this, see the JSON invocation
 tutorials listed in 
 [this section of tutorials](/develop/tutorials/-/knowledge_base/7-0/service-builder-web-services). 
 
-This same mechanism registers Liferay Portal's own services. They're 
-conveniently enabled by default, so you don't have to configure them. 
+This same mechanism registers Liferay's own services. They're conveniently 
+enabled by default, so you don't have to configure them. 
 
 Next, you'll learn how to form a mapped URL for the remote service so you can 
 access it. 
@@ -106,14 +107,14 @@ For the custom service method, the URL looks like:
 
     http://localhost:8080/api/jsonws/suprasurf.surfboard/hello-world
 
-Note the context name part of the URL. For the portal, it's similar. Here's a
-portal service method:
+Note the context name part of the URL. For Liferay, it's similar. Here's a 
+Liferay service method:
 
     @JSONWebService
     public interface UserService {
         public com.liferay.portal.model.User getUserById(long userId) {...}
 
-Here's that portal service method's URL:
+Here's that Liferay service method's URL:
 
     http://localhost:8080/api/jsonws/user/get-user-by-id
 
@@ -128,7 +129,7 @@ When you select a method on this page, the part of its HTTP method URL that
 follows `http://[server]:[port]/api/jsonws` is listed at the top of the screen. 
 
 Conveniently, remote service requests can leverage the authentication 
-credentials associated with the user's current portal session. Next, you'll 
+credentials associated with the user's current Liferay session. Next, you'll 
 learn how to prevent a method from being exposed as a service. 
 
 ## Ignoring a Method [](id=ignoring-a-method)

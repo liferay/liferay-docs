@@ -7,10 +7,9 @@ of authentication, makes HTTP requests (synchronously or asynchronously), parses
 JSON results, and handles server-side exceptions so you can concentrate on
 *using* the services in your app. 
 
-The Liferay Mobile SDK is compatible with Liferay Portal 6.2 and later. It comes
-with the Liferay iOS SDK and is ready for you to download and use. The official
-project
-[page](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)
+The Liferay Mobile SDK comes with the Liferay iOS SDK and is ready for you to 
+download and use. The official 
+[project page](https://www.liferay.com/community/liferay-projects/liferay-mobile-sdk/overview)
 gives you access to the SDK releases, provides the latest SDK news, and has
 forums for you to engage in mobile app development discussions.
 

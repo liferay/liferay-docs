@@ -6,8 +6,8 @@ ensures that the files are updated with the latest changes made by other users.
 To use Liferay Sync in your desktop environment, you must install the Sync
 desktop client. It's currently available for Windows and Mac OS. The Sync client
 stores files locally so that they're always available, even when you're offline.
-Files are automatically synchronized upon your client's reconnection with
-Liferay Portal. 
+Files are automatically synchronized upon your client's reconnection with your 
+Liferay instance. 
 
 On your desktop devices, Liferay Sync creates a new folder structure in which to
 synchronize files. You can treat the files the same as you do any ordinary file.
@@ -17,10 +17,10 @@ doing. The native menu and task bar integration keep Sync controls within easy
 reach. 
 
 This guide walks you through setting up and using the Liferay Sync client on
-your desktop. Before proceeding, check with your portal or site administrator to
-ensure that Sync is enabled for your sites. You then need to install the Sync
-client on your desktop device. The next section walks you through installing the
-client. 
+your desktop. Before proceeding, check with your Liferay instance or site 
+administrator to ensure that Sync is enabled for your sites. You then need to 
+install the Sync client on your desktop device. The next section walks you 
+through installing the client. 
 
 ## Installing the Desktop Liferay Sync Client [](id=installing-the-desktop-liferay-sync-client)
 
@@ -32,8 +32,8 @@ To install the Liferay Sync client on Windows, you must have administrator
 privileges. Upon launching the Windows application installer, you're prompted
 to choose an install location. Select an appropriate location and click
 *Install*. Sync automatically starts after the installation finishes. The first
-time Sync runs, you need to configure it to connect and sync with your
-portal. The configuration steps are shown below, after the Mac installation
+time Sync runs, you need to configure it to connect and sync with your Liferay 
+instance. The configuration steps are shown below, after the Mac installation
 instructions. 
 
 +$$$
@@ -57,22 +57,23 @@ appears when installing or upgrading the tool.
 ![Figure 1: Drag the Liferay Sync icon to the Applications folder.](../../../images/sync-mac-install.png)
 
 Now that you've installed sync, you're ready to configure it! The configuration 
-steps for Sync on Windows and Mac are identical. First, enter your portal's
-address along with your account credentials. Click *Sign In* when you're
-finished. 
+steps for Sync on Windows and Mac are identical. First, enter your Liferay 
+instance's address along with your account credentials. Click *Sign In* when 
+you're finished. 
 
-Sync offers you a warm greeting and lists the sites in your portal that you can
-sync with. You can search for a site in the *Search* bar above the site list. 
-Check the checkbox for each site you want to sync with and then click *Proceed*. 
+Sync offers you a warm greeting and lists the sites in your Liferay instance 
+that you can sync with. You can search for a site in the *Search* bar above the 
+site list. Check the checkbox for each site you want to sync with and then click 
+*Proceed*. 
 
-You must now specify a Sync folder with which your portal will sync. Sync 
-creates this folder and it must not conflict with any existing local folder. The
-Sync folder's default name is the portal's host name and its default location is
-the user's documents folder. For example, since the portal in the screenshots
-below runs locally at the address `http://localhost:8080/`, Sync creates a Sync
-folder named *localhost* in the user's documents folder. You can, of course,
-specify any unique name and location you like for Sync to use for the Sync
-folder it creates. Click *Start Syncing* to begin syncing files. 
+You must now specify a Sync folder with which your Liferay instance will sync. 
+Sync creates this folder and it must not conflict with any existing local 
+folder. The Sync folder's default name is the instance's host name and its 
+default location is the user's documents folder. For example, since the instance 
+in the screenshots below runs locally at the address `http://localhost:8080/`, 
+Sync creates a Sync folder named *localhost* in the user's documents folder. You 
+can, of course, specify any unique name and location you like for Sync to use 
+for the Sync folder it creates. Click *Start Syncing* to begin syncing files. 
 
 ![Figure 2: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../../images/sync-setup-01.png)
 
@@ -91,17 +92,17 @@ in the background. To view the local Sync folder, click *Open Folder*.
 ## Viewing Your Sync Status [](id=viewing-your-sync-status)
 
 When Sync is running its icon appears in your task bar (Windows) or menu bar
-(Mac). Clicking this icon opens a menu lists the portals you sync with and
-displays options for preferences, help, and quitting Sync. Mousing over a
-portal's name extends the menu to show additional options for that portal. The
-following screenshots show this menu in Windows. 
+(Mac). Clicking this icon opens a menu lists the Liferay instances you sync with 
+and displays options for preferences, help, and quitting Sync. Mousing over an
+instance's name extends the menu to show additional options for that instance. 
+The following screenshots show this menu in Windows. 
 
 ![Figure 6: The Sync desktop menu options are always available from the task bar.](../../../images/sync-taskbar-01.png)
 
-![Figure 7: Each portal also has its own set of options in the task bar menu.](../../../images/sync-taskbar-02.png)
+![Figure 7: Each Liferay instance also has its own set of options in the task bar menu.](../../../images/sync-taskbar-02.png)
 
-The menu for each portal first shows the sync status. The sync status shows
-*Synced* if you're completely synchronized with the portal. Mousing over *Open
+The menu for each instance first shows the sync status. The sync status shows
+*Synced* if you're completely synchronized with the instance. Mousing over *Open
 Sync Folder* shows a list of sites that you sync with. Clicking on a site opens
 your local Liferay Sync folder for that site in your native file manager.
 Similarly, mousing over *View Website* provides a list of links to the site
@@ -113,14 +114,15 @@ Next, you'll learn how to use Sync's preferences to control Sync's behavior.
 
 ## Using Sync Preferences [](id=using-sync-preferences)
 
-You can use Sync's preferences to add/remove portals to sync with, edit portal
-connection settings, and control Sync's basic behavior. Open Sync's preferences
-by clicking the Sync icon in the task bar (Windows) or menu bar (Mac OS) and
-selecting *Preferences*. A preference screen for your portal accounts displays. 
+You can use Sync's preferences to add/remove Liferay instances to sync with, 
+edit instance connection settings, and control Sync's basic behavior. Open 
+Sync's preferences by clicking the Sync icon in the task bar (Windows) or menu 
+bar (Mac OS) and selecting *Preferences*. A preference screen for your instance 
+accounts displays. 
 
 ![Figure 8: The Preferences menu's *Accounts* tab lets you manage syncing with sites per account.](../../../images/sync-preferences-accounts-01.png)
 
-The accounts and portals that you sync with are listed on the left. The plus,
+The accounts and instances that you sync with are listed on the left. The plus,
 minus, and pencil icons at the bottom of the account list can be used to
 respectively add, delete, or edit an account. You should use caution when
 deleting an account from your Sync client, as doing so also deletes any local
@@ -152,23 +154,23 @@ with the files in your Sync folder.
 
 ## Using Your Local Sync Folder [](id=using-your-local-sync-folder)
 
-Once you configure and run Sync, Sync automatically uploads to your portal any
-files you add or modify in your Sync folder. Sync also downloads to your Sync
-folder any file changes by other users. If you delete a file in your Sync
-folder, Sync also deletes it from the portal and other clients. You should
-therefore use **extreme caution** when deleting files in your Sync folder. If
-you accidentally delete a file though, not all is lost! The file can still be
-recovered from the portal's Recycle Bin, which is enabled by default. Note, if
-the portal or site administrator has disabled the Recycle Bin, recovering
-deleted files is impossible. 
+Once you configure and run Sync, Sync automatically uploads to your Liferay 
+instance any files you add or modify in your Sync folder. Sync also downloads to 
+your Sync folder any file changes by other users. If you delete a file in your 
+Sync folder, Sync also deletes it from the instance and other clients. You 
+should therefore use **extreme caution** when deleting files in your Sync 
+folder. If you accidentally delete a file though, not all is lost! The file can 
+still be recovered from the instance's Recycle Bin, which is enabled by default. 
+Note, if the instance or site administrator has disabled the Recycle Bin, 
+recovering deleted files is impossible. 
 
 +$$$
 
-**Warning:** Deleting a file in your Sync folder also deletes it in the portal
-and in other clients. If you accidentally delete a file, it can be recovered
-from the portal's Recycle Bin. The Recycle Bin is enabled by default. File
-recovery is, however, impossible if the portal or site administrator has
-disabled the Recycle Bin. 
+**Warning:** Deleting a file in your Sync folder also deletes it in the Liferay 
+instance and in other clients. If you accidentally delete a file, it can be 
+recovered from the instance's Recycle Bin. The Recycle Bin is enabled by 
+default. File recovery is, however, impossible if the instance or site 
+administrator has disabled the Recycle Bin. 
 
 $$$
 
