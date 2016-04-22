@@ -1,56 +1,73 @@
-# Rendering JournalArticles in Liferay Screens [](id=rendering-journal-articles)
+# Rendering Web Content in Your Android App
 
-Liferay Screens provides several options to render `JournalArticles` in an easy 
-and powerful way.
+Liferay represents 
+[web content](/discover/portal/-/knowledge_base/6-2/web-content-management) 
+articles as `JournalArticle` entities. Liferay Screens provides several ways to 
+render these entities in your apps. 
 
-One of simplest way of displaying html is using the 
-`WebContentDisplayScreenlet`. This screenlet is very powerful and allows several 
-complex use cases to fit your needs. We are going to describe in detail some of 
-the most interesting interactions that the screenlet supports.
+The simplest way to display a `JournalArticle`'s HTML in your app is to use 
+[Web Content Display Screenlet](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android). 
+This screenlet is very powerful and allows several complex use cases to fit your 
+needs. This tutorial illustrates some of this Screenlet's most common use cases. 
 
-## Retrieving a basic web content
+## Retrieving Basic Web Content
 
-The most simple use case is retrieving the html of a `JournalArticle` to render 
-it in a `WebView`. We just have to provide the `articleId` of the JournalArticle 
-and the screenlet will take care of the rest, including decorating our screenlet 
-with the needed css to render it in a small display.
-
-The following example shows this:
+Web Content Display Screenlet's simplest use case is to render a 
+`JournalArticle`'s HTML in an 
+[Android `WebView`](http://developer.android.com/guide/webapps/webview.html). 
+Simply provide the `JournalArticle`'s `articleId` in the Screenlet XML, and the 
+Screenlet takes care of the rest (including decorating itself with the CSS 
+needed to render it in a small display). The following Screenlet XML shows this: 
 
     <com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:articleId="YOUR_ARTICLE_ID" />
 
-You have to take into account that the returned html is not aware of the global 
-CSS of the portal. If you want to render the content exactly the same as the 
-mobile version of your webpage you will have to provide the css inline or use a 
-specific template.
+To render the content *exactly* as it appears on your mobile site, however, you 
+must provide the CSS inline or use a template. The HTML returned isn't aware of 
+a Liferay instance's global CSS. 
 
-You can also modify the rendered html with a listener, as explained in the 
+You can also use a listener to modify the HTML, as explained in the 
 [screenlet reference](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android).
 
-By the default security policy, in Android, a WebView does not execute the 
-javascript of a page. You can enable the execution by setting the 
-`javascriptEnabled` property through XML or with the apropiate setter in java 
-code.
+In the default security policy, an Android `WebView` doesn't execute a page's 
+JavaScript. You can enable such JavaScript execution by setting the 
+`javascriptEnabled` property via XML:
 
-A common mistake when rendering `JournalArticles` is using the default `groupId` 
-of the site when the JournalArticles belong to a specific site. If you want to 
-keep using a default groupId in your application but render the html of another 
-site you can pass a different groupId to your screenlet with an xml attribute or 
-setting the value with java code.
+    <com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:articleId="YOUR_ARTICLE_ID"
+        app:javascriptEnabled="true" />
 
-## Using templates
+Alternatively, you can set this property in your app's fragment or activity 
+class that contains the Screenlet: 
 
-A common use case when building a native mobile application with Liferay is 
-showing a `JournalArticle` with a custom template (maybe designed specifically 
-for the mobile use case). 
+    ...
+    screenlet.setJavascriptEnabled(true);
+    ...
 
-The `WebContentDisplayScreenlet` accepts a property `templateId` to indicate 
-which template to render.
+You can also use the `isJavascriptEnabled()` method to check this property's 
+setting. 
 
-The following example illustrates this use case:
+As you can see, this is all straightforward. What could go wrong? Famous last 
+words. A common mistake is to use the default `groupId` instead of the one for 
+the site that contains your `JournalArticle` entities. 
+
+If you need to use a default `groupId` in the rest of your app, but render 
+another site's HTML, you can set the Web Content Display screenlet's `groupId` 
+with the `app:groupId` attribute. You can alternatively use the `setGroupId` 
+method in the activity or fragment code that uses the Screenlet. 
+
+## Using Templates
+
+Web Content Display Screenlet can also use 
+[templates](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates) 
+to render `JournalArticle` entities. For example, your Liferay instance may have 
+a custom template specifically designed to display content on mobile devices. 
+
+To use a template, specify its ID in the Screenlet XML's `templateId` property:
 
     <com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet
         android:layout_width="match_parent"
@@ -58,18 +75,18 @@ The following example illustrates this use case:
         app:articleId="YOUR_ARTICLE_ID"
         app:templateId="YOUR_TEMPLATE_ID" />
 
-Remember that a `JournalArticle` can have an infinite number of templates, 
-adapted to different use cases. A content designed for displaying in a computer 
-screen (or even in a mobile phone) could not be easily translated to work in the 
-context of a native application. You could implement a different template for 
-that specific use case. 
-
-## Rendering a structure
+## Using Structures
 <!-- 
 The code in this section is in the following test-app layout file:
 
 https://github.com/liferay/liferay-screens/blob/develop/android/samples/test-app/src/main/res/layout/web_content_display_structured.xml
 * change link to master branch instead of develop for publication
+-->
+
+<!-- 
+question: What's the purpose of using a structure in Web Content Display 
+Screenlet? Structures are for creating web content, not displaying it. Web 
+Content Display Screenlet only displays web content. 
 -->
 
     <com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet
@@ -123,4 +140,4 @@ https://github.com/liferay/liferay-screens/blob/develop/android/samples/test-app
 
 ## Related Topics [](id=related-topics)
 
-[WebContentDisplayScreenlet reference](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android)
+[Web Content Display Screenlet for Android](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android)
