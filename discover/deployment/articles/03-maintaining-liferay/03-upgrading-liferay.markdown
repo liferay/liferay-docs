@@ -18,46 +18,69 @@ the possibility of faulty indexing and you save time during the upgrade
 process. Once you have upgraded your @product@ instance, remove this property or set it to
 `false` so that you can index all objects from Liferay's Control Panel.
 
-## Running an Upgrade Manually [](id=running-an-upgrade-manually)
+## Running the Upgrade [](id=running-the-upgrade)
 
-The upgrade tool is located in Liferay's source code in the
-`liferay-portal/tools/db-upgrade` folder.
+Starting up the server to upgrade the portal is no longer supported. The
+following exception is thrown if you try to do that:
 
-All Liferay servers must be shut down before performing an upgrade.
+    [MainServlet:237] java.lang.RuntimeException: You must first upgrade to Liferay Portal 7000
 
-Add your custom settings to your `portal-ext.properties` file so that the
-upgrade tool can connect to your database. Also, set your `liferay.home`
-property in your `portal-ext.properties` file.
+The proper way to run the upgrade is using the new Java standalone tool that,
+as the portal, **needs to run using Java 8**:
 
-On Unix, you can set your classpath like this:
+    java -jar com.liferay.portal.tools.db.upgrade.client.jar
 
-    export LIFERAY_CLASSPATH=$TOMCAT_DIR/lib,$TOMCAT_DIR/lib/ext,$TOMCAT_DIR/bin,$TOMCAT_DIR/webapps/ROOT/WEB-INF/lib
+By default, the tool is executed with the following Java parameters:
+    
+    -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
 
-On Windows, replace the following section in `build.xml`
+If you need to modify these parameters you can use the option `-jvmOpts`, for
+example, for increasing the Java memory in the upgrade process to 4GB:
 
-    <path id="lib.classpath">
-        <fileset dir="lib" includes="*.jar" />
-    </path>
+    java -jar com.liferay.portal.tools.db.upgrade.client.jar -jvmOpts="-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx4096m"
 
-with
+You can also set the log file where you need that the tool prints the output. By
+default it prints it in `upgrade.log` file but you can change it in this way:
 
-    <path id="lib.classpath">
-       <fileset dir="$TOMCAT_DIR/lib" includes="*.jar" />
-       <fileset dir="$TOMCAT_DIR/lib/ext" includes="*.jar" />
-       <fileset dir="$TOMCAT_DIR/bin" includes="*.jar" />
-       <fileset dir="$TOMCAT_DIR/webapps/ROOT/WEB-INF/lib" includes="*.jar" />
-    </path>
+    java -jar com.liferay.portal.tools.db.upgrade.client.jar -logFile="output.log"
 
-To run the upgrade tool in a UNIX environment, execute `run.sh`.
+The upgrade requires three files to be configured before it can run:
+- `app-server.properties`: it should contain the properties to tell the tool where
+the server and libs are.
+- `portal-upgrade-datasource.properties`: it should contain the properties to
+connect to the database which is going to be upgraded.
+- `portal-upgrade-ext.properties`: it should contain the rest of the Liferay
+properties you need to perform the upgrade.
 
-To run the upgrade tool in a Windows environment, use Ant and execute the
-command `ant upgrade`. Please refer to the [Ant](http://ant.apache.org/)
-documentation to learn how to set up Ant for your environment.
+However, if you do not create those files the tool will ask you to get the
+information needed to run the upgrade at first time.
+
+Here we are some examples for the content of those files so that you can fill
+them properly in your installation:
+-`app-server.properties`:
+
+    dir=/home/user/servers/liferay7/tomcat-8.0.32
+    portal.dir=webapps/ROOT
+    global.dir.lib=lib
+
+-`portal-upgrade-datasource.properties`:
+
+    jdbc.default.url=jdbc:mysql://lportal62?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+    jdbc.default.driverClassName=com.mysql.jdbc.Driver
+    jdbc.default.username=root
+    jdbc.default.password=
+
+-`portal-upgrade-ext.properties`:
+
+    liferay.home=/home/user/servers/liferay7
+    module.framework.base.dir=/home/user/servers/liferay7/osgi
 
 Running the appropriate command above executes the upgrades and verifiers of
 @product@'s core. It also runs the upgrades for each of the installed modules if
 they are in automatic mode. If the modules are not in automatic mode, they can
 be upgraded individually as explained below.
+
+After performing the upgrade a Gogo shell is automatically opened.
 
 ## Optional: Upgrading Modules Individually [](id=upgrading-modules-individually)
 
