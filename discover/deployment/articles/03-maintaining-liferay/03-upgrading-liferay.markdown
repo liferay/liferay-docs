@@ -2,7 +2,38 @@
 
 In this article, you'll learn how to upgrade to @product@ 7. Please see the
 [Upgrading to Liferay 6.2](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
-article for information on upgrading to Liferay 6.2.
+article for information on upgrading to Liferay 6.2. Take into account that
+information too if you come from prior versions than 6.2 and want to upgrade
+your portal to Liferay 7.
+
+## Preparing an upgrade to Liferay 7 [](id=upgrading-to-liferay-7)
+
+As any upgrade you should have a syncronized backup of your database and
+file system for your document library.
+
+You should need to check legacy properties (`portal-legacy-6.2.properties`) in
+case you want to keep previous behaviour for certain funcionalities:
+    
+    users.image.check.token=false
+    layout.set.prototype.propagate.logo=true
+    editor.wysiwyg.portal-web.docroot.html.taglib.ui.discussion.jsp=simple
+    web.server.servlet.check.image.gallery=true
+    blogs.trackback.enabled=true
+    discussion.comments.format=bbcode
+    discussion.max.comments=0
+    dl.file.entry.thumbnail.max.height=128
+    dl.file.entry.thumbnail.max.width=128
+
+You should also set the document library location if you do not store the files
+in the default path (`[Liferay Home]/data/document_library`). For achiving that
+you need to create a file called
+`com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`
+in your `[Liferay Home]/osgi/configs` folder with this contents:
+
+    root.dir={document_library_path}
+
+Call that file `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`
+if you use this method to persist the document library files.
 
 The instructions covered in this article apply to both the commercial and open 
 source versions of Liferay.
@@ -45,8 +76,8 @@ default it prints it in `upgrade.log` file but you can change it in this way:
     java -jar com.liferay.portal.tools.db.upgrade.client.jar -logFile="output.log"
 
 The upgrade requires three files to be configured before it can run:
-- `app-server.properties`: it should contain the properties to tell the tool where
-the server and libs are.
+- `app-server.properties`: it should contain the properties to tell the tool
+where the server and libs are.
 - `portal-upgrade-datasource.properties`: it should contain the properties to
 connect to the database which is going to be upgraded.
 - `portal-upgrade-ext.properties`: it should contain the rest of the Liferay
