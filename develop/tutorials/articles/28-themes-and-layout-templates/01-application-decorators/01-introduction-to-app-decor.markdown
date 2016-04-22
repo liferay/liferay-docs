@@ -1,11 +1,5 @@
 # Introduction to Application Decorators [](id=introduction-to-application-decorators)
 
-In previous versions of Liferay, administrators could display or hide the
-application borders through the *Show Borders* option of the look and feel
-configuration menu. In Liferay 7.0 this option has been replaced with 
-Application Decorators, a more powerful mechanism to customize the style of the 
-application wrapper.
-
 If you inspect the markup of your Liferay application when it's on a page you'll 
 observe that it is wrapped by two layers. Among other things, these layers 
 provide some common basic features like the drag and drop and the application 

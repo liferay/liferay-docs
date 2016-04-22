@@ -1,9 +1,7 @@
 # Application Decorators [](id=application-decorators)
 
-Would you like to customize your application's look and feel? Create Application
-Decorators! Application Decorators allow you to create unique styles for your
-application's wrapper. Once your Application Decorators are created, an admin 
-can choose a decorator for each application.
-
-In this section of tutorials, you'll learn how to develop Application Decorators 
-for your theme, affect your theme markup with them, and more.
+In previous versions of Liferay, administrators could display or hide the
+application borders through the *Show Borders* option of the look and feel
+configuration menu. In Liferay 7.0 this option has been replaced with 
+Application Decorators, a more powerful mechanism to customize the style of the 
+application wrapper.
