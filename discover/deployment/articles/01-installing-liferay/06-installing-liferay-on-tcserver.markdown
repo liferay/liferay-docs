@@ -289,4 +289,4 @@ Windows you can use the `.bat` version of the startup script only if you
 installed the tc Server instance as a Windows service. Alternatively,
 you can use `./catalina.sh run` or `catalina.bat run`.
 
-Now you're up and running with Liferay on tc Server.
+After you set up your account you can start [using Liferay](/discover/portal).
