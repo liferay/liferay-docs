@@ -5,7 +5,7 @@ policy that ships with Liferay (modified or as is), or you can create your own
 policies. Policies can be assigned to users or organizations, or can be set as
 the default password used throughout the @product@ instance. 
 
-## Adding and Configuring Password Policies
+## Adding and Configuring Password Policies [](id=adding-and-configuring-password-policies)
 
 To add a new password policy, navigate to the *Control Panel* &rarr; *Users*
 &rarr; *Password Policies*. You'll see that there's already a default password
@@ -17,7 +17,7 @@ policy, just click the *Add* (![Add](../../images/icon-add.png)) button.
 You're taken to a page where you provide the *Name* (required), *Description*,
 and specific configuration options for your new password policy.
 
-![Figure x: You can create new password policies to suit your needs.](../../images/password-policy-add.png)
+![Figure 1: You can create new password policies to suit your needs.](../../images/password-policy-add.png)
 
 There are several configuration categories for password policies.
 
@@ -45,14 +45,14 @@ this disabled.
 Once you configure the policy to your liking, click *Save* and it will be added
 to the list of password policies and ready to use.
 
-## Assigning Members to a Password Policy
+## Assigning Members to a Password Policy [](id=assigning-members-to-a-password-policy)
 
 To use the default password policy that ships with Liferay, you don't have to do
 anything: like its name suggests, it's the default. However, if you create a new
 password policy, you'll need to assign users to it. To do this click *Actions*
 (![Actions](../../images/icon-actions.png)) &rarr; *Assign Members*.
 
-![Figure x: Assign members to new password policies to make them take
+![Figure 2: Assign members to new password policies to make them take
 effect.](../../images/password-policy-assign-members.png)
 
 Choose whether you want to assign users directly or to assign organizations to
@@ -62,7 +62,7 @@ Once you save your assignments, your password policy is in effect. Did you know
 you can change the default password policy and configure it using Liferay's
 `portal.properties` file?
 
-## Default Policy Properties
+## Default Policy Properties [](id=default-policy-properties)
 
 The Default Password Policy is set as the default and configured in Liferay's
 [portal.properties](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Passwords)
