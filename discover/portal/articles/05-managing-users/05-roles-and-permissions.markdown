@@ -1,4 +1,4 @@
-# Roles and Permissions
+# Roles and Permissions [](id=roles-and-permissions)
 
 If a *role* were to win a Grammy, or an Oscar, or some other ego-feeding
 popularity contest, it better remember to thank all its *permissions* groupies
@@ -17,14 +17,14 @@ the umbrella of the role.
 
 Roles are managed through the Control Panel.
 
-## Managing Roles in Liferay
+## Managing Roles in Liferay [](id=managing-roles-in-liferay)
 
 Manage Liferay's roles in the Control Panel (*Control Panel* &rarr; *Users*
 &rarr; *Roles*).  There you'll find an application for creating roles, granting
 them permissions, and assigning users to them. Roles can be scoped by portal,
 site, or organization.
 
-![Figure x: The Roles application lets you add and manage roles for the global (*Regular*), *Site*, or *Organization* scope.](../../images/roles-app.png)
+![Figure 1: The Roles application lets you add and manage roles for the global (*Regular*), *Site*, or *Organization* scope.](../../images/roles-app.png)
 
 To create a role, click the scope you want a role for and then click the *Add*
 (![Add](../../images/icon-add.png)) button. Enter a name, title, and description
@@ -81,12 +81,12 @@ role.-->
 Once you have a role you want to configure, the first step is often to define
 its permissions.
 
-## Defining Role Permissions
+## Defining Role Permissions [](id=defining-role-permissions)
 
 Roles collect permissions, so when a user is given a role, they receive all the
 permissions defined by the role. 
 
-![Figure x: When defining permissions on a role, the Summary view provides a
+![Figure 2: When defining permissions on a role, the Summary view provides a
 list of permissions that have already been defined for the role. The area on the
 left side of the screen lets you drill down through various categories of portal
 permissions.](../../images/roles-define-permissions.png)
@@ -144,7 +144,7 @@ role. From the Summary view, you can add more permissions or go back to the Role
 Application default view by clicking on the *Back*
 (![Back](../../images/icon-back.png)) icon.
 
-![Figure x: You can fine-tune which actions are defined for a role within a specific application like the Message Boards.](../../images/message-board-content-permissions.png)
+![Figure 3: You can fine-tune which actions are defined for a role within a specific application like the Message Boards.](../../images/message-board-content-permissions.png)
 
 Sometimes you might find that a certain permission grants more or less access
 than what you expected--always test your permissions configurations! 
@@ -167,7 +167,7 @@ you can take the following steps:
    permissions under the *Resource Permissions* &rarr; *User Group* heading.
 7. Click *Save*.
 
-![Figure x: Make sure to test the permissions you grant to custom roles.](../../images/user-group-manager-role.png)
+![Figure 4: Make sure to test the permissions you grant to custom roles.](../../images/user-group-manager-role.png)
 
 You might expect that the role has all the permissions necessary for adding
 users to user groups. After all, user group managers can view user groups,
@@ -180,7 +180,7 @@ If you create a role with permission to access something in the Control Panel,
 keep in mind that the *View Control Panel Menu* permission will be automatically
 granted. Consider why this is necessary with an example.
 
-![Figure x: Users assigned to the User Group Manager role can't find any users to add!](../../images/no-users-found.png)
+![Figure 5: Users assigned to the User Group Manager role can't find any users to add!](../../images/no-users-found.png)
 
 To fix this, define the missing permission on the role by drilling down to the
 *Control Panel* &rarr; *Users* &rarr; *Users and Organizations* category and
@@ -193,7 +193,7 @@ Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
-## Permission for Delegating Social Activities Configuration
+## Permission for Delegating Social Activities Configuration [](id=permission-for-delegating-social-activities-configuration)
 
 There's a permission that allows site administrators to delegate responsibility
 for configuring social activities to other users. To dd this permission to a
@@ -210,7 +210,7 @@ permissions category. Flag all of the permissions and then click *Save*:
 Once these permissions are assigned, assignees can manage the site's Social
 Activities.
 
-## Deleting Asset Containers
+## Deleting Asset Containers [](id=deleting-asset-containers)
 
 A Web Content Folder contains Web Content articles. The Web Content Folder is
 an asset container, and the Web Content Article is an asset. It's possible to
@@ -225,7 +225,7 @@ Folders, Message Boards Categories, Wiki Nodes, and Documents and Media Folders.
 You might not need to create a role for a certain functionality. Liferay
 provides many pre-configured roles for your convenience.
 
-## Default Liferay Roles
+## Default Liferay Roles [](id=default-liferay-roles)
 
 In the Roles Application, you'll see a list of all the roles in Liferay, by
 scope. These are some of the pre-configured roles:
@@ -288,7 +288,7 @@ your ability to configure @product@ to suit your organizational needs.
 
 
 <!--
-## Note About the Power Users Role
+## Note About the Power Users Role [](id=note-about-the-power-users-role)
 
 Prior to Liferay 6.0, the default configurations of many Liferay portlets
 allowed power users, but not regular users, to access them. Liferay 6.0 and
