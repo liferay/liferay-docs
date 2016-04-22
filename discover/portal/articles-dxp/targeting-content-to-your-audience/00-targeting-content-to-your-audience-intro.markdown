@@ -1,6 +1,6 @@
 # Targeting Content To Your Audience [](id=targeting-content-to-your-audience)
 
-Liferay's Audience Targeting app allows you to divide your audience into user
+@product@'s Audience Targeting app allows you to divide your audience into user
 segments, target specific content to different user segments, and create
 campaigns for different user segments. It also allows you to quickly measure the
 effectiveness of your campaigns. User segments allow you to configure your
@@ -22,23 +22,23 @@ allows you to create multiple user segments which are defined by multiple rules
 based on session attributes, profile attributes, behavior, and information from
 social networks. Developers can easily create additional rules and rule types
 with minimal coding efforts. The Audience Targeting App also allows you to
-create campaigns that target a specific user segment. Campaigns last for fixed
+create campaigns that target specific user segments. Campaigns last for fixed
 periods of time and each campaign has a priority. If you are running several
 campaigns on your website at the same time, the priority field determines which
 campaign takes precedence. Campaigns allow you to configure different assets to
 be displayed at different periods of time to the targeted user segment.
  
 The Audience Targeting App adds an *Audience Targeting* section to the
-Configuration section of the Site Administration area of the Control Panel and
-an Audience Targeting Simulator to the Dockbar. The following three applications
-are also included with the Audience Targeting app:
+Configuration section of the Site Administration area of the Menu and a User
+Segments Simulator to the Simulation Menu. The following three applications are
+also included with the Audience Targeting app:
 
+- Campaign Content Display
 - User Segment Content Display
 - User Segment Content List
-- Campaign Content Display
 
-You can add these applications to any portal page. In the next sections, we'll
-explain how to use the *Audience Targeting* section of the Configuration section
-of the Site Administration area of the Control Panel to manage user segments and
-campaigns. Then we'll explain how to use each of Audience Targeting
-applications and the Audience Targeting Simulator.
+You can add these applications to any @product@ page. In the next sections,
+you'll lean how to use the *Audience Targeting* section of the Site
+Administration area to manage user segments and campaigns. Then you'll learn how
+to use each of the Audience Targeting applications and the Audience Targeting
+Simulator.
