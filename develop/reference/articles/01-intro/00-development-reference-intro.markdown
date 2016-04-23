@@ -8,106 +8,42 @@ JavaScript and CSS, and deployment descriptors.
 <p style="margin-left: 40px;">
 Liferay Portal 7 Community Edition's Portal Core reference documentation is
 available online  at <a href="https://docs.liferay.com/portal/7.0"
-target="_blank">https://docs.liferay.com/portal/<span
+target="_blank">https://docs.liferay.com/portal/7.0<span
 class="opens-new-window-accessible"> (Opens New Window)</span></a>
-and available for download as a ZIP file from Liferay's Downloads
+and available for download from 
 <a href="https://www.liferay.com/downloads" target="_blank">Liferay's Downloads<span
 class="opens-new-window-accessible"> (Opens New Window)</span></a>. 
 </p>
 
 <p style="margin-left: 40px;">
 Liferay Portal CE module reference documentation JAR files accompany each
-module's class artifacts in the <a
-href="https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/"
-target="_blank">Liferay Nexus repository<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a>. The reference
-documentation includes Javadoc and tag library (taglib) docs.
+module's artifacts in the 
+<a href="https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/" target="_blank">
+Liferay CE artifact repository<span class="opens-new-window-accessible"> (Opens New Window)</span></a>.
+The reference documentation includes Javadoc and tag library (taglib) docs.
 </p>
 
 <h3><span style="font-size: 22px;">Java APIs</span></h3>
 
 <p style="margin-left: 40px;">
-A module's Javadoc describes its Java API. To find specific API modules, you can
-refer to <a
-href="/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules">
-Finding Liferay API Modules</a>.
-</p>
-
-
-<p style="margin-left: 40px;">
-You can download a newly migrated module's Javadoc
-JAR file from <a
-href="https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/"
-target="_blank">Liferay Nexus repository<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a> and extract
-it to a local folder. The extracted <code>index.html</code> file is the gateway
-to exploring the module's Java API.
-</p>
-
-<p style="margin-left: 40px;">
-Here are the Java packages common to newly migrated API modules:
-<ul style="margin-left: 60px;">
-<li>
-<code>com.liferay.[component].constants</code> - Classes that specify module
-specific constant values, such as web keys
-</li>
-<li>
-<code>com.liferay.[component].exception</code> - Module specific exception classes
-</li>
-<li>
-<code>com.liferay.[component].model</code> - Model entity interfaces, entity wrapper classes, and SOAP classes
-</li>
-<li>
-<code>com.liferay.[component].service</code> - Local and remote service interfaces
-</li>
-<li>
-<code>com.liferay.[component].service.persistence</code> - Entity persistence interfaces, entity finder interfaces, and static utilities
-</li>
-<li>
-<code>com.liferay.[component].util</code> - Utility classes
-</li>
-</ul>
-</p>
-
-<p style="margin-left: 40px;">
-Not all components have been migrated from the <a
-href="https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/" 
-target="_blank">portal-kernel API<span
-class="opens-new-window-accessible"> (Opens New Window)</span></a> (formerly named portal-service). Their API
-modules have proxies to classes in portal-kernel. Their Javadoc is available at
-<a href="https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/"  
-target="_blank">https://docs.liferay.com/portal/<span
+Javadoc for the modules in the latest GA release of Liferay Portal 7.0 CE are available online at
+<a href="https://docs.liferay.com/portal/7.0/javadocs/" target="_blank">
+https://docs.liferay.com/portal/7.0/javadocs/<span class="opens-new-window-accessible"> (Opens New Window)</span></a>
+and for download from 
+<a href="https://www.liferay.com/downloads" target="_blank">Liferay's Downloads<span
 class="opens-new-window-accessible"> (Opens New Window)</span></a>.
 </p>
 
 <p style="margin-left: 40px;">
-Component APIs in portal-kernel have a <code>kernel</code> package after the
-component package name. Their common package structure looks like this:
-<ul style="margin-left: 60px;">
-<li>
-<code>com.liferay.[component].kernel.constants</code> - Classes that specify module specific constant values, such as web keys
-</li>
-<li>
-<code>com.liferay.[component].kernel.exception</code> - Module specific exception classes
-</li>
-<li>
-<code>com.liferay.[component].kernel.model</code> - Model entity interfaces, entity wrapper classes, and SOAP classes
-</li>
-<li>
-<code>com.liferay.[component].kernel.service</code> - Local and remote service interfaces
-</li>
-<li>
-<code>com.liferay.[component].kernel.service.persistence</code> - Entity persistence interfaces, entity finder interfaces, and static utilities
-</li>
-<li>
-<code>com.liferay.[component].kernel.util</code> - Utility classes
-</li>
-</ul>
+Reference docs for <em>all</em> versions of CE modules are available for download from the
+<a href="https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/" target="_blank">
+Liferay CE artifact repository<span class="opens-new-window-accessible"> (Opens New Window)</span></a>.
 </p>
 
 <p style="margin-left: 40px;">
-Liferay's Java API paired up with its taglibs enables you to show off data
-models and create powerful UI components in your presentation layer.
+For help finding specific Liferay API modules refer to <a
+href="/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules">
+Liferay API Modules</a>.
 </p>
 
 <p style="margin-left: 40px;">&nbsp;</p>
@@ -115,11 +51,18 @@ models and create powerful UI components in your presentation layer.
 <h3><span style="font-size: 22px;">Taglibs</span></h3>
 
 <p style="margin-left: 40px;">
-<span style="font-size:18px;">
-<a href="http://docs.liferay.com/portal/7.0/taglibs/" target="_blank">
-Portal Taglibs <span class="opens-new-window-accessible">(Opens New Window)</span>
-</a>
-</span>
+Tag library docs for taglibs in the latest GA release of Liferay Portal 7.0 CE are available online at
+<a href="https://docs.liferay.com/portal/7.0/taglibs/" target="_blank">
+https://docs.liferay.com/portal/7.0/taglibs/<span class="opens-new-window-accessible"> (Opens New Window)</span></a>
+and for download from 
+<a href="https://www.liferay.com/downloads" target="_blank">Liferay's Downloads<span
+class="opens-new-window-accessible"> (Opens New Window)</span></a>.
+</p>
+
+<p style="margin-left: 40px;">
+Reference docs for <em>all</em> versions of CE modules are available for download from the
+<a href="https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/" target="_blank">
+Liferay CE artifact repository<span class="opens-new-window-accessible"> (Opens New Window)</span></a>.
 </p>
 
 <p style="margin-left: 40px;">
