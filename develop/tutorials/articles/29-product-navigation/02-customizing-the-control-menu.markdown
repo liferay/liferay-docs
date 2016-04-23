@@ -1,4 +1,4 @@
-# Customizing the Control Menu
+# Customizing the Control Menu [](id=customizing-the-control-menu)
 
 The Control Menu is the most visible and accessible menu in Liferay. It is
 visible to the user in most places, always displaying helpful text or options

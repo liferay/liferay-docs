@@ -1,4 +1,4 @@
-# Customizing the Product Menu
+# Customizing the Product Menu [](id=customizing-the-product-menu)
 
 Liferay's Product Menu comes with three major sections to choose from, by
 default: the Control Panel, User Settings, and Site Administration. These
@@ -25,7 +25,7 @@ your panel categories and/or apps. In this tutorial, you'll learn how to provide
 your own custom or modify existing panel categories and panel apps for the
 Product Menu.
 
-## Adding Custom Panel Categories
+## Adding Custom Panel Categories [](id=adding-custom-panel-categories)
 
 Liferay provides an easy way to extend the Product Menu and customize it to
 display what is most helpful in your particular situation. First, you'll learn
@@ -169,7 +169,7 @@ Excellent! You've successfully created a custom panel category to display in the
 Product Menu. In many cases, a panel category holds panel apps for users to
 access. You'll learn about how to add a panel app to a panel category next.
 
-## Adding Custom Panel Apps
+## Adding Custom Panel Apps [](id=adding-custom-panel-apps)
 
 Just as adding panel categories is straight-forward and dynamic, so too is the
 process for adding panel apps. Panel apps are, by default, links provided in a

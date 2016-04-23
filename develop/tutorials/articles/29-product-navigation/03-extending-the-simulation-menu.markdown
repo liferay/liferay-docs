@@ -1,4 +1,4 @@
-# Extending the Simulation Menu
+# Extending the Simulation Menu [](id=extending-the-simulation-menu)
 
 When testing how Liferay pages and apps will appear for users, it's critical to
 simulate their views on as many useful ways as possible. By default, Liferay

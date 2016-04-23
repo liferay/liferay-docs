@@ -1,4 +1,4 @@
-# Providing the User Personal Bar
+# Providing the User Personal Bar [](id=providing-the-user-personal-bar)
 
 Liferay offers a touch of personability with the User Personal Bar. This
 navigation menu is used to display options that are unique to the current logged
