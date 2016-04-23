@@ -1,6 +1,6 @@
 # Roles and Permissions [](id=roles-and-permissions)
 
-If a *role* were to win a Grammy, or an Oscar, or some other ego-feeding
+If a *role* were to win a Grammy or an Oscar or some other ego-feeding
 popularity contest, it better remember to thank all its *permissions* groupies
 during the acceptance speech, because they're the ones doing the real work. The
 role is just the pretty face, so to speak.
