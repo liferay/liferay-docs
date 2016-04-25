@@ -89,12 +89,15 @@ Screenlet? Structures are for creating web content, not displaying it. Web
 Content Display Screenlet only displays web content. 
 -->
 
-    <com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        liferay:articleId="YOUR_ARTICLE_ID"
-        liferay:layoutId="YOUR_LAYOUT_ID"
-        liferay:structureId="YOUR_STRUCTURE_ID" />
+Mobile phones have limited screen space and to offer a great experience to your 
+users you will have to limit the information displayed. The 
+`WebContentDisplayScreenlet` shines when rendering specific fields of a 
+`DDMStructure` behind your `JournalArticle`.
+
+The easiest way of displaying a specific field of a DDMStructure is to pass the 
+`structureId` of the content and a list of fields to render, separated by 
+commas, in the `labelFields` attribute. The following example illustrates that 
+concept: 
 
     <com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet
         android:layout_width="match_parent"
@@ -104,6 +107,24 @@ Content Display Screenlet only displays web content.
         liferay:layoutId="@layout/webcontentdisplay_structured_default"
         liferay:structureId="YOUR_STRUCTURE_ID" />
 
+But the most powerful way of using the `WebContentDisplayScreenlet` is to supply 
+your own layout and render the `DDMStructure` and the values with the appearance 
+you want. To do that, you just have to supply a layout that inherits from 
+`WebContentDisplayView` and reads the information parsed and stored in the 
+`webContent` entity. The following xml shows this concept:
+
+    <com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        liferay:articleId="YOUR_ARTICLE_ID"
+        liferay:layoutId="YOUR_LAYOUT_ID"
+        liferay:structureId="YOUR_STRUCTURE_ID" />
+
+In the 
+[test application](https://github.com/liferay/liferay-screens/tree/develop/android/samples/test-app) 
+there is a full example, displaying two fields of the structure with a custom 
+format. The xml code to use the screenlet:
+
     <com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -111,6 +132,45 @@ Content Display Screenlet only displays web content.
         liferay:labelFields="@string/liferay_article_structured_label_fields_first_field"
         liferay:layoutId="@layout/webcontentdisplaystructured_example"
         liferay:structureId="YOUR_STRUCTURE_ID" />
+
+And the following xml and java code defines the customisation of the layout:
+
+    public class WebContentDisplayView extends WebContentStructuredDisplayView {
+
+	...
+
+	@Override
+	public void showFinishOperation(WebContent webContent) {
+		super.showFinishOperation(webContent);
+
+		DDMStructure ddmStructure = webContent.getDDMStructure();
+
+		TextView firstField = (TextView) findViewById(R.id.first_field);
+		firstField.setText(String.valueOf(ddmStructure.getField(0).getCurrentValue()));
+
+		TextView secondField = (TextView) findViewById(R.id.second_field);
+		secondField.setText(String.valueOf(ddmStructure.getField(1).getCurrentValue()));
+	}
+    }
+
+    <com.liferay.mobile.screens.testapp.webviewstructured.WebContentDisplayView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/web_content_first_field"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@android:color/holo_red_light" />
+
+	<TextView
+		android:id="@+id/web_content_second_field"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@android:color/holo_green_light" />
+
+    </com.liferay.mobile.screens.testapp.webviewstructured.WebContentDisplayView>
 
 ## Displaying a list
 
@@ -121,22 +181,35 @@ https://github.com/liferay/liferay-screens/blob/develop/android/samples/test-app
 * change link to master branch instead of develop for publication
 -->
 
-    <com.liferay.mobile.screens.webcontent.list.WebContentListScreenlet
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:folderId="YOUR_FOLDER_ID"
-        app:labelFields="YOUR_LABELS" />
+If you want to display the contents of a `JournalArticle` folder, Liferay 
+Screens has got you covered!
 
-<!-- question: are examples/text coming for the below items? -->
-*WebContentDisplayList*
+The `WebContentListScreenlet` can retrieve the contents of a folder and display 
+only the labels you want. It's also aware of the `DDMStructure` behind the 
+content, so you can create a custom view (passing a new layout with 
+app:layoutId) and render each row with the customization you like.
 
-*structure*
+The following example illustrates how to render a folder, only showing the value 
+of the *text* field in each row.
 
-*localized fields*
+	<com.liferay.mobile.screens.webcontent.list.WebContentListScreenlet
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:folderId="YOUR_FOLDER_ID"
+		app:labelFields="Text" />
 
-## Displaying assets 
+The `WebContent` class has several methods to help you render content from 
+different locales. For example `getLocalized(name)` receives the name of a field 
+and returns the value in the mobile current locale. Those methods will help you 
+render a custom view without worrying of the underline structure, xml parsing or 
+http calls.
 
-*assetlistscreenlet*
+## Displaying assets
+
+If you want to render different assets, including `JournalArticles`, the 
+`AssetListScreenlet` is aware of the nature of the underlining asset. You can 
+customize the layout to render each type of asset in a different way or access 
+the `DDMStructure` of the `WebContent`.
 
 ## Related Topics [](id=related-topics)
 

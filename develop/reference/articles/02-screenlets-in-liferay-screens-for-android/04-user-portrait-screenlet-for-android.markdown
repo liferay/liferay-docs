@@ -80,7 +80,7 @@ policies:
 
 ## Required Attributes [](id=required-attributes)
 
-- `layoutId`
+- None
 
 ## Attributes [](id=attributes)
 

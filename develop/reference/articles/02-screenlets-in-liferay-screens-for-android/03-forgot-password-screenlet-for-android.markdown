@@ -74,7 +74,6 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 
 ## Required Attributes [](id=required-attributes)
 
-- `layoutId`
 - `anonymousApiUserName`
 - `anonymousApiPassword`
 
