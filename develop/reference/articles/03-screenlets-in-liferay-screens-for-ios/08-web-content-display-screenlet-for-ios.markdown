@@ -24,7 +24,7 @@ rendering contents differently depending on the device's current locale.
 
 ## Module [](id=module)
 
-- None
+- WebContent
 
 ## Themes [](id=themes)
 

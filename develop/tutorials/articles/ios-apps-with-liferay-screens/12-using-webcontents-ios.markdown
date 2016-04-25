@@ -74,7 +74,6 @@ This screenlet is quite similar to [AssetListScreenlet](/develop/reference/-/kno
 
 - Insert a `WebContentListScreenlet` in your View Controller. 
 - Configure the `groupId` and `folderId` properties. Use zero `folderId` for root folder.
-- You can also programatically use `customEntryQuery` to filter the results.
 - You can conform `WebContentListScreenletDelegate` to receive events related to the list. In those event's you'll get `WebContent` objects.
 
 For more information, read the [WebContentListScreenlet reference](/develop/reference/-/knowledge_base/6-2/webcontentlistscreenlet-for-ios) documentation.
