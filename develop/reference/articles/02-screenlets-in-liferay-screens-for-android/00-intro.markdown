@@ -36,4 +36,7 @@ reference documents:
 - [`WebContentDisplayScreenlet`](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android): 
   Shows the web content's HTML. This Screenlet uses the features available in 
   [Web Content Management](/discover/portal/-/knowledge_base/6-2/web-content-management). 
-
+  
+    
+- [`WebContentListScreenlet`](/develop/reference/-/knowledge_base/6-2/webcontentlistcreenlet-for-android): 
+  Shows a list of web contents from a folder, usually based on a pre-existing DDMStructure.
