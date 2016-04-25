@@ -63,7 +63,7 @@ Since Web Content is an Asset, you can use `AssetListScreenlet` for Web Contents
 
 Consider the following when you use an `AssetListScreenlet` with Web Contents:
 
-  - In the delegate, `screenlet:onAssetListResponseEntries` you'll get an array of `Asset` objects. These objects will be `WebContent`, given that `WebContent` is a child of `Asset`. In the `WebContent` type, you have the `html`, `structure` or `structuredRecord` properties.
+  - In the delegate, `screenlet:onAssetListResponse` you'll get an array of `Asset` objects. These objects will be `WebContent`, given that `WebContent` is a child of `Asset`. In the `WebContent` type, you have the `html`, `structure` or `structuredRecord` properties.
   - If you want to render an `AssetListScreenlet` with `WebContent` objects, you need to create your own theme, then create a class in your theme extending from `AssetListView_default` and finally override `doFillLoadedCell` method. In this method, cast `object` parameter as `WebContent` and then retrieve fields' values from the web content's `structuredRecord` property. If you also want custom cells, you can override also `doRegisterCellNibs` and `doCreateCell` methods. Read [AssetListScreenlet reference](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-ios) for more details about how to customize your asset list.
 
 ### Use WebContentListScreenlet

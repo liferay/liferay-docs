@@ -100,7 +100,7 @@ The `AssetListScreenlet` delegates some events to an object that conforms to the
 `AssetListScreenletDelegate` protocol. This protocol lets you implement the 
 following methods: 
 
-- `- screenlet:onAssetListResponseEntries:`: Called when a page of assets is 
+- `- screenlet:onAssetListResponse:`: Called when a page of assets is 
   received. Note that this method may be called more than once; one call for 
   each page received.
 
