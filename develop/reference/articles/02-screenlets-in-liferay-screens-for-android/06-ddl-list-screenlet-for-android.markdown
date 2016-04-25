@@ -61,7 +61,6 @@ connection.
 
 ## Required Attributes [](id=required-attributes)
 
-- `layoutId`
 - `recordSetId`
 - `labelFields`
 

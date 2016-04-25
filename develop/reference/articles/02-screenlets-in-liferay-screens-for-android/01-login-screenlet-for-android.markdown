@@ -84,7 +84,7 @@ connection, you can use the `credentialsStorage` attribute together with the
 
 ## Required Attributes [](id=required-attributes)
 
-- `layoutId`
+- None
 
 ## Attributes [](id=attributes)
 

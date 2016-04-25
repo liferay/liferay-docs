@@ -50,7 +50,6 @@ connection.
 
 ## Required Attributes [](id=required-attributes)
 
-- `layoutId`
 - `articleId`
 
 ## Attributes [](id=attributes)

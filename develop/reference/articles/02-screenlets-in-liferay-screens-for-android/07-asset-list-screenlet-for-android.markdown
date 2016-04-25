@@ -87,7 +87,6 @@ connection.
 
 ## Required Attributes [](id=required-attributes)
 
-- `layoutId`
 - `classNameId`
 
 ## Attributes [](id=attributes)
