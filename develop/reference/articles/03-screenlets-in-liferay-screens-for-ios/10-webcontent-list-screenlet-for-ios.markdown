@@ -1,6 +1,6 @@
-# Web Content List Screenlet for iOS
+# Web Content List Screenlet for iOS [](id=web-content-list-screenlet-for-ios)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - XCode 7.2
 - iOS 9 SDK
@@ -10,11 +10,11 @@
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
   depending on your portal edition). 
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - iOS 7 and above
 
-## Features
+## Features [](id=features)
 
 Web Content List Screenlet can show lists of 
 [web content](/discover/portal/-/knowledge_base/6-2/web-content-management) 
@@ -24,11 +24,11 @@ The Screenlet also implements
 [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
 with configurable page size, and supports i18n in asset values. 
 
-## Module
+## Module [](id=module)
 
 - WebContent
 
-## Themes
+## Themes [](id=themes)
 
 The Default Theme uses a standard `UITableView` to show the scrollable list. 
 Other Themes may use a different component, such as `UICollectionView` or 
@@ -36,7 +36,7 @@ others, to show the contents.
 
 ![Figure 1: Web Content List Screenlet using the Default (`default`) Theme.](../../images/screens-ios-webcontent-list.png)
 
-## Offline
+## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. 
@@ -48,7 +48,7 @@ connection.
 | `remote-first` | The Screenlet loads the list from the Liferay instance. If this succeeds, the Screenlet shows the list to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the list from the local cache. If the list doesn't exist there, the Screenlet uses the delegate to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show a possibly outdated version when there's no connection. |
 | `cache-first` | The Screenlet loads the list from the local cache. If the list isn't there, the Screenlet requests it from the Liferay instance and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but possibly outdated) data. |
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -59,13 +59,13 @@ connection.
 | `groupId` | `number` | The ID of the site (group) where the web content exists. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
 | `folderId` | `number` | The ID of the web content folder. If set to `0`, the root folder is used. The default value is `0`. |
 
-## Methods
+## Methods [](id=methods)
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `loadList()` | `boolean` | Starts the request to load the web content list. This list is shown when the response is received. Returns `true` if the request is sent successfully. |
 
-## Delegate
+## Delegate [](id=delegate)
 
 Web Content List Screenlet delegates some events to an object that conforms to 
 the `WebContentListScreenletDelegate` protocol. This protocol lets you implement 
