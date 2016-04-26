@@ -1,15 +1,15 @@
-# Web Content List Screenlet for Android
+# Web Content List Screenlet for Android [](id=web-content-list-screenlet-for-android)
 
-## Requirements
+## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 CE or EE
 
-## Compatibility
+## Compatibility [](id=compatibility)
 
 - Android SDK 4.0 (API Level 15) and above
 
-## Features
+## Features [](id=features)
 
 Web Content List Screenlet has the following features:
 
@@ -21,11 +21,11 @@ Web Content List Screenlet has the following features:
   with configurable page size. 
 - Supports i18n in web content values. 
 
-## Module
+## Module [](id=module)
 
 - None
 
-## Views
+## Views [](id=views)
 
 - The Default View uses a standard `RecyclerView` to show the scrollable list. 
   Other Views may use a different component, such as `ViewPager` or others, to 
@@ -33,7 +33,7 @@ Web Content List Screenlet has the following features:
 
 ![Figure 1: The Web Content List Screenlet using the Default View Set.](../../images/screens-android-webcontentlist.png)
 
-## Offline
+## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. 
@@ -45,12 +45,12 @@ connection.
 | `REMOTE_FIRST` | The Screenlet loads the list from the Liferay instance. If this succeeds, the Screenlet shows the list to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the list from the local cache. If the list doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show a possibly outdated version when there's no connection. |
 | `CACHE_FIRST` | The Screenlet loads the list from the local cache. If the list isn't there, the Screenlet requests it from the Liferay instance and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but possibly outdated) data. |
 
-## Required Attributes
+## Required Attributes [](id=required-attributes)
 
 - `folderId`
 - `labelFields`
 
-## Attributes
+## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -61,13 +61,13 @@ connection.
 | `folderId` | `number` | The ID of the folder to render. |
 | `labelFields` | `string` | The comma-separated names of the DDM fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
 
-## Methods
+## Methods [](id=methods)
 
 | Method | Return | Explanation |
 |--------|--------|-------------| 
 | `loadPage(pageNumber)` | `void` | Starts the request to load the specified page of records. The page is shown when the response is received. |
 
-## Listener
+## Listener [](id=listener)
 
 Web Content List Screenlet delegates some events to an object that implements 
 the `WebContentListListener` interface. This interface extends from 
