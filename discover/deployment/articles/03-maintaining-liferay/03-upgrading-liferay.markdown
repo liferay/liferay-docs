@@ -35,14 +35,11 @@ in your `[Liferay Home]/osgi/configs` folder with this contents:
 Call that file `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`
 if you use this method to persist the document library files.
 
-The instructions covered in this article apply to both the commercial and open 
-source versions of Liferay.
-
-To upgrade your instance to Liferay 7, you should create a file called
-`com.liferay.portal.search.configuration.IndexWriterHelperConfiguration.cfg` in
+To upgrade your portal to Liferay 7, you should create a file called
+`com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg` in
 your `[Liferay Home]/osgi/configs` folder with this contents:
 
-    index.read.only=true
+    indexReadOnly=true
 
 Setting the property above disables indexing. By disabling indexing, you avoid
 the possibility of faulty indexing and you save time during the upgrade
