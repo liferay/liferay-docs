@@ -85,6 +85,18 @@ a typical implementation of this:
         // send user to login screen with the login screenlet
     }
 
+Notice this auto-login feature doesn't imply the stored user is still valid in the server, because no request is made at this point. If you want to make sure the user is still valid (password doesn't changed or user invalidated), then you need to use the `SessionContext` method `relogin`. This method will perform an actual request to make sure the stored user is still valid, and update the stored attributes with the received data.
+The following Swift code shows a typical implementation of this (notice the trailing closure because the operation is asynchronous): 
+
+    SessionContext.currentContext?.relogin { userAttributes in
+        if userAttributes == nil {
+            // couldn't retrieve the user attributes: user invalidated or password changed?
+        }
+        else {
+            // full re-login made. Everything is updated
+        }
+    }
+
 Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
 You've also seen how handy `SessionContext` can be. It can do even more! The 
 next section lists some additional `SessionContext` methods. 
