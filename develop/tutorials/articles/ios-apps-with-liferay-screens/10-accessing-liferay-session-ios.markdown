@@ -106,6 +106,7 @@ next section lists some additional `SessionContext` methods.
 | Method | Return Type | Explanation |
 |--------|-------------|-------------| 
 | `logout()` | `void` | Clears the stored user attributes and session. |
+| `relogin(closure)` | `void` | Refresh user data from the server. It recreates the `currentContext` if success and call `logout()` if fails. When the server data is recevied, the closure is called (with received user's attributes). If an error occurrs, the closure is called with nil.|
 | `loginWithBasic(username, password, userAttributes)` | `LRSession` | Creates a Liferay Session using the default server, and the supplied username, password, and user information. |
 | `loginWithOAuth(authentication, userAttributes)` | `LRSession` | Creates a Liferay Session using the default server and the supplied OAuth tokens. This is intended to be used together with the [Liferay iOS OAuth library](https://github.com/brunofarache/liferay-ios-sdk-oauth). |
 | `createRequestSession()` | `LRSession` | Creates a Liferay Session based on the current session's server and user credentials. This Liferay Session is intended to be used for only a single request (don't reuse it). |
