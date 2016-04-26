@@ -425,6 +425,12 @@ the *Control Panel* &rarr; *Server Administration* and click on *Reindex all
 search indexes*. This invokes each of your portal's indexer classes, ensuring
 that your search indexes contain the updated data that 6.2 indexes. 
 
+If guest users can't see images after upgrading your portal to Liferay 6.2 or
+higher from Liferay 6.1 and below, please, check that the Guest role has view
+permissions for the root folder in your document libraries. This permission was
+not needed in previous Liferay versions. This issue affects all images if the
+property _permissions.view.dynamic.inheritance_ is set to true (default value).
+
 Do you have some troublesome required portlets running in your portal? Wouldn't
 it be great if you could isolate them so they wouldn't affect the overall health
 of your portal? We'll show you how to use Liferay's Sandboxing feature to pen up
