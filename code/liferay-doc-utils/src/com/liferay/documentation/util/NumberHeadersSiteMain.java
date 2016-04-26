@@ -26,123 +26,137 @@ public class NumberHeadersSiteMain extends Task {
 		}
 
 		String docDir = args[0];
+		String productType = args[1];
+		String token = args[2];
 
 		boolean foundDuplicateIds = false;
-
-		File articlesDir = new File("../" + docDir + "/articles");
-		File docSetDir = new File("../" + docDir);
-		System.out.println(
-			"Numbering headers for files in " + articlesDir.getPath() + " ...");
-
-		if (!articlesDir.exists() || !articlesDir.isDirectory()) {
-			throw new Exception(
-				"FAILURE - bad articles directory " + articlesDir);
-		}
-
-		List<File> docSetDirFolders = new ArrayList<File>();
-		Queue<File> q = new LinkedList<File>();
-
-		File articlesDirContents[] = articlesDir.listFiles();
-		for (File f : articlesDirContents) {
-			if (f.isDirectory()) {
-				q.add(f);
-			}
-		}
 		
-		while (!q.isEmpty()) {
-			File f = q.remove();
-			docSetDirFolders.add(f);
-			File[] files = f.listFiles();
-			
-			for (File file : files) {
-				if (file.isDirectory()) {
-					q.add(file);
+		List<String> dirTypes = new ArrayList<String>();
+		dirTypes.add("");
+
+		if (productType.equals("dxp")) {
+			dirTypes.add("-dxp");
+		}
+
+		for (String dirType : dirTypes) {
+
+			File articlesDir = new File("../" + docDir + "/articles" + dirType);
+			File docSetDir = new File("../" + docDir);
+			System.out.println(
+					"Numbering headers for files in " + articlesDir.getPath() + " ...");
+
+			if (!articlesDir.exists() || !articlesDir.isDirectory()) {
+				throw new Exception(
+						"FAILURE - bad articles directory " + articlesDir);
+			}
+
+			List<File> docSetDirFolders = new ArrayList<File>();
+			Queue<File> q = new LinkedList<File>();
+
+			File articlesDirContents[] = articlesDir.listFiles();
+			for (File f : articlesDirContents) {
+				if (f.isDirectory()) {
+					q.add(f);
 				}
 			}
-		}
-
-		docSetDirFolders.add(articlesDir);
-		docSetDirFolders.add(docSetDir);
 		
-		File docSetDirFoldersArray[] = docSetDirFolders.toArray(new File[docSetDirFolders.size()]);
-		
-		List<String> fileList = new ArrayList<String>();
-
-		for (int i = 0; i < docSetDirFoldersArray.length; i++) {
-			File files[] = docSetDirFoldersArray[i].listFiles(new FilenameFilter() {
-				String filePatternArg =
-					"([^\\\\\\[\\]\\|:;%<>]+).markdown";
-				Pattern fileNamePattern = Pattern.compile(filePatternArg);
-
-				public boolean accept(File file, String name) {
-					return (fileNamePattern.matcher(name).matches());
-				}
-			});
+			while (!q.isEmpty()) {
+				File f = q.remove();
+				docSetDirFolders.add(f);
+				File[] files = f.listFiles();
 			
-			for (int j = 0; j < files.length; j++) {
-				fileList.add(files[j].getPath());
-			}
-			
-		}
-
-		if (fileList.isEmpty()) {
-			throw new Exception(
-				"FAILURE - no markdown files found in " + articlesDir);
-		}
-
-		for (int i = 0; i < fileList.size(); i++) {
-			String filename = fileList.get(i);
-			File inFile = new File(filename);
-			File outFile = new File(filename);
-			String outFileTmp = outFile + ".tmp";
-
-			Map<String, Integer> secondaryIds = new HashMap<String, Integer>();
-
-			try {
-				LineNumberReader in =
-					new LineNumberReader(new FileReader(inFile));
-				BufferedWriter out =
-					new BufferedWriter(new FileWriter(outFileTmp));
-
-				String line;
-				while ((line = in.readLine()) != null) {
-
-					if (line.startsWith("#")) {
-						
-						line = line.trim();
-
-						String newHeadingLine = handleHeaderLine(line,
-								filename, in.getLineNumber(), secondaryIds);
-						if (newHeadingLine != null) {
-							line = newHeadingLine;
-						}
-						else {
-							foundDuplicateIds = true;
-						}
+				for (File file : files) {
+					if (file.isDirectory()) {
+						q.add(file);
 					}
-
-					out.append(line);
-					out.append("\n");
 				}
-				in.close();
-				
-				out.flush();
-				out.close();
-
-				// Replace original file with modified temp file
-
-				FileUtils.copyFile(
-					new File(outFileTmp),
-					new File(filename));
-
-				FileUtils.forceDelete(new File(outFileTmp));
-			} catch (IOException e) {
-				throw new Exception(e.getLocalizedMessage());
 			}
-		}
 
-		if (foundDuplicateIds) {
-			throw new Exception("FAILURE - Duplicate header IDs exist");
+			docSetDirFolders.add(articlesDir);
+			docSetDirFolders.add(docSetDir);
+		
+			File docSetDirFoldersArray[] = docSetDirFolders.toArray(new File[docSetDirFolders.size()]);
+		
+			List<String> fileList = new ArrayList<String>();
+
+			for (int i = 0; i < docSetDirFoldersArray.length; i++) {
+				File files[] = docSetDirFoldersArray[i].listFiles(new FilenameFilter() {
+					String filePatternArg =
+							"([^\\\\\\[\\]\\|:;%<>]+).markdown";
+					Pattern fileNamePattern = Pattern.compile(filePatternArg);
+
+					public boolean accept(File file, String name) {
+						return (fileNamePattern.matcher(name).matches());
+					}
+				});
+			
+				for (int j = 0; j < files.length; j++) {
+					fileList.add(files[j].getPath());
+				}
+			
+			}
+
+			if (fileList.isEmpty()) {
+				throw new Exception(
+						"FAILURE - no markdown files found in " + articlesDir);
+			}
+
+			for (int i = 0; i < fileList.size(); i++) {
+				String filename = fileList.get(i);
+				File inFile = new File(filename);
+				File outFile = new File(filename);
+				String outFileTmp = outFile + ".tmp";
+
+				Map<String, Integer> secondaryIds = new HashMap<String, Integer>();
+
+				try {
+					LineNumberReader in =
+							new LineNumberReader(new FileReader(inFile));
+					BufferedWriter out =
+							new BufferedWriter(new FileWriter(outFileTmp));
+
+					String line;
+					while ((line = in.readLine()) != null) {
+
+						token = "@" + token + "@";
+
+						if (line.startsWith("#") && !line.contains(token)) {
+						
+							line = line.trim();
+
+							String newHeadingLine = handleHeaderLine(line,
+									filename, in.getLineNumber(), secondaryIds);
+							if (newHeadingLine != null) {
+								line = newHeadingLine;
+							}
+							else {
+								foundDuplicateIds = true;
+							}
+						}
+
+						out.append(line);
+						out.append("\n");
+					}
+					in.close();
+				
+					out.flush();
+					out.close();
+
+					// Replace original file with modified temp file
+
+					FileUtils.copyFile(
+							new File(outFileTmp),
+							new File(filename));
+
+					FileUtils.forceDelete(new File(outFileTmp));
+				} catch (IOException e) {
+					throw new Exception(e.getLocalizedMessage());
+				}
+			}
+
+			if (foundDuplicateIds) {
+				throw new Exception("FAILURE - Duplicate header IDs exist");
+			}
 		}
 	}
 

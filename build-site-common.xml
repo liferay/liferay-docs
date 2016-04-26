@@ -24,6 +24,7 @@
 	<property name="build.dir" value="./build"/>
 	<property name="dist.dir" value="./dist"/>
 	<property name="metadata.filename" value=".METADATA"/>
+	<property name="temp.dir" value="temp"/>
 
 	<!-- taskdefs -->
 
@@ -115,6 +116,31 @@
 			failonerror="true"
 		>
 			<arg value="${doc.dir}"/>
+			<arg value="ce"/>
+		</java>
+	</target>
+
+	<target name="check-headers-dist" description="Check the headers of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp">
+		<java
+			classname="com.liferay.documentation.util.CheckHeadersTask"
+			classpathref="project.classpath"
+			fork="true"
+			failonerror="true"
+		>
+			<arg value="${doc.dir}/${temp.dir}"/>
+			<arg value="dist"/>
+		</java>
+	</target>
+
+	<target name="check-headers-dxp" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
+		<java
+			classname="com.liferay.documentation.util.CheckHeadersTask"
+			classpathref="project.classpath"
+			fork="true"
+			failonerror="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="dxp"/>
 		</java>
 	</target>
 
@@ -127,13 +153,31 @@
         </copy>
 	</target>
 
+	<target name="check" depends="check-images-site, check-intros, number-headers, number-images-site, check-headers" description="Checks for necessary requirements before CE distribution.">
+
+	</target>
+
+	<target name="check-dxp" depends="check-images-site-dxp, check-intros-dxp, number-headers-dxp, number-images-site-dxp, check-headers-dxp" description="Checks for necessary requirements before DXP distribution.">
+
+	</target>
+
 	<target name="check-article-images" description="Verifies all images referenced in a single Markdown article.">
 		<checkarticleimgssite docdir="${doc.dir}" article="${article}">
 		</checkarticleimgssite>
 	</target>
 
-	<target name="check-images-site" description="Verifies all images referenced in a document's Markdown articles.">
-		<checkimgssite docdir="${doc.dir}">
+	<target name="check-images-site" description="Verifies all images referenced in a project's Markdown articles found in ${doc.dir}/articles.">
+		<checkimgssite docdir="${doc.dir}" producttype="ce">
+		</checkimgssite>
+	</target>
+
+	<target name="check-images-site-dist" description="Verifies all images referenced in a project's Markdown articles.">
+		<checkimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		</checkimgssite>
+	</target>
+
+	<target name="check-images-site-dxp" description="Verifies all images referenced in a project's Markdown articles found in ${doc.dir}/articles.">
+		<checkimgssite docdir="${doc.dir}" producttype="dxp">
 		</checkimgssite>
 	</target>
 
@@ -142,12 +186,34 @@
 		</checkintros>
 	</target>
 
+	<target name="check-intros-dist" description="Verifies all Learning Path article folders are accompanied with an introduction Markdown article.">
+		<checkintros docdir="${doc.dir}/${temp.dir}">
+		</checkintros>
+	</target>
+
+	<target name="check-intros-dxp" description="Verifies all Learning Path article folders are accompanied with an introduction Markdown article.">
+		<property name="base.filepath" value="${doc.dir}" />
+		<mkdir dir="${temp.dir}"/>
+		<copy todir="${temp.dir}">
+			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+				<include name="articles/**/*.markdown"/>
+				<include name="articles-dxp/**/*.markdown"/>
+			</fileset>
+		</copy>
+		<move todir="${temp.dir}/articles" failonerror="false">
+			<fileset dir="${temp.dir}/articles-dxp"/>
+		</move>
+		<checkintros docdir="${doc.dir}/${temp.dir}">
+		</checkintros>
+		<delete dir="${temp.dir}"/>
+	</target>
+
     <target name="clean-dist" description="Deletes dist directory">
         <echo message="... deleting dist directory"/>
         <delete dir="${dist.dir}"/>
     </target>
 
-    <target name="clean-images" description="Deletes images from ${doc.dir}/images that are not referenced in any of the markdown files in any subdirectory of ${doc.dir}/articles">
+    <target name="clean-images" description="Deletes images from ${doc.dir}/images and ${doc.dir}/images-dxp that are not referenced in any of the markdown files in any subdirectory of ${doc.dir}/articles and ${doc.dir}/articles-dxp">
 			<java
 				classname="com.liferay.documentation.util.CleanImagesSiteMain"
 				classpathref="project.classpath"
@@ -181,14 +247,80 @@
 		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
 	</target>
 
-	<target name="dist" depends="prepare-dist" description="Zips up the document's articles and images for importing.">
-		<property file="${project.dir}/release-site.properties" />
-		<zip destfile="${dist.dir}/${product.abbrev}-${product.version}-${purpose.dir}-${doc.dir}.zip">
-			<fileset dir="./" includes="articles/" />
-			<fileset dir="./" includes="images/" />
-			<fileset dir="./" includes="home.markdown" />
+	<target name="dist-ce" depends="dist-ce-temp, prepare-dist" description="Zips up the folder's CE articles and images for importing.">
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+			<fileset dir="${temp.dir}" includes="articles/" />
+			<fileset dir="${temp.dir}" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
 		</zip>
+
+		<delete dir="${temp.dir}"/>
+	</target>
+
+	<target name="dist-ce-temp" description="Zips up the folder's CE articles and images for importing.">
+		<property file="${project.dir}/release-site.properties" />
+		<property name="base.filepath" value="${doc.dir}" />
+		<mkdir dir="${temp.dir}"/>
+		<copy todir="${temp.dir}">
+			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+				<include name="articles/**/*.markdown"/>
+			</fileset>
+			<filterchain>
+				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
+					<param type="token" name="${product.token}" value="${product.name}"/>
+				</filterreader>
+			</filterchain>
+		</copy>
+		<copy todir="${temp.dir}">
+			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+				<include name="images/**/*.png"/>
+				<include name="images/**/*.jpg"/>
+			</fileset>
+		</copy>
+	
+	</target>
+
+	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist" description="Zips up the folder's CE and DXP articles and images for importing.">
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+			<fileset dir="${temp.dir}" includes="articles/" />
+			<fileset dir="${temp.dir}" includes="images/" />
+			<fileset dir="./" includes="${metadata.filename}" />
+		</zip>
+
+		<delete dir="${temp.dir}"/>
+	</target>
+
+	<target name="dist-dxp-temp" description="Zips up the folder's CE and DXP articles and images for importing.">
+		<property file="${project.dir}/release-site.properties" />
+		<property name="base.filepath" value="${doc.dir}" />
+		<mkdir dir="${temp.dir}"/>
+		<copy todir="${temp.dir}">
+			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+				<include name="articles/**/*.markdown"/>
+				<include name="articles-dxp/**/*.markdown"/>
+			</fileset>
+			<filterchain>
+				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
+					<param type="token" name="${product.token}" value="${product.name.enterprise}"/>
+				</filterreader>
+			</filterchain>
+		</copy>
+		<!-- Cannot use filtering for images (due to corruption), so must copy separately -->
+		<copy todir="${temp.dir}">
+			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+				<include name="images/**/*.png"/>
+				<include name="images-dxp/**/*.png"/>
+				<include name="images/**/*.jpg"/>
+				<include name="images-dxp/**/*.jpg"/>
+			</fileset>
+		</copy>
+
+		<move todir="${temp.dir}/articles" failonerror="false">
+			<fileset dir="${temp.dir}/articles-dxp"/>
+		</move>
+		<move todir="${temp.dir}/images" failonerror="false">
+			<fileset dir="${temp.dir}/images-dxp"/>
+		</move>
 	</target>
 
 	<target name="dist-diffs" depends="prepare-dist" description="Zips up the document's articles and images that are new or modified, as specified in the git-modified-list.txt file.">
@@ -212,11 +344,51 @@
 			fork="true"
 		>
 			<arg value="${doc.dir}"/>
+			<arg value="ce"/>
+			<arg value="${product.token}"/>
+		</java>
+	</target>
+
+	<target name="number-headers-dist" description="Numbers the headers of Markdown articles.">
+		<property file="${project.dir}/release-site.properties" />
+		<java
+			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}/${temp.dir}"/>
+			<arg value="dist"/>
+			<arg value="${product.token}"/>
+		</java>
+	</target>
+
+	<target name="number-headers-dxp" description="Numbers the headers of Markdown articles.">
+		<property file="${project.dir}/release-site.properties" />
+		<java
+			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="dxp"/>
+			<arg value="${product.token}"/>
 		</java>
 	</target>
 
 	<target name="number-images-site" description="numbers the images in a markdown chapter file">
-		<numberimgssite docdir="${doc.dir}">
+		<numberimgssite docdir="${doc.dir}" producttype="ce">
+		</numberimgssite>
+	</target>
+
+	<target name="number-images-site-dist" description="Numbers the images of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp.">
+		<numberimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		</numberimgssite>
+	</target>
+
+	<target name="number-images-site-dxp" description="Numbers the images of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp.">
+		<numberimgssite docdir="${doc.dir}" producttype="dxp">
 		</numberimgssite>
 	</target>
 
@@ -234,7 +406,7 @@
 		</copy>
 	</target>
 
-	<target name="prepare-dist" depends="check-images-site, check-intros, clean-dist, number-headers, number-images-site, check-headers, create-metadata-file" description="Prepares the document for distribution.">
+	<target name="prepare-dist" depends="check-images-site-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-site-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>

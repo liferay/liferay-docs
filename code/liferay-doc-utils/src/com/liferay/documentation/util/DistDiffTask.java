@@ -16,6 +16,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
@@ -251,7 +252,8 @@ public class DistDiffTask extends Task {
 	private static void findMarkdownFiles(File dir, Set<File> chFiles) {
 
 		File articleDir = new File(dir.getAbsolutePath() + "/articles");
-		File[] articles = articleDir.listFiles();
+		File articleDxpDir = new File(dir.getAbsolutePath() + "/articles-dxp");
+		File[] articles = (File[])ArrayUtils.addAll(articleDir.listFiles(), articleDxpDir.listFiles());
 
 		for (File article : articles) {
 
