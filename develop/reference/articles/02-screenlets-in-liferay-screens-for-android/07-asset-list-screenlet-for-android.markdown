@@ -4,8 +4,8 @@
 
 - Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
-- Liferay Screens Compatibility Plugin (
-  [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+- Liferay Screens Compatibility Plugin
+  ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
   depending on your portal edition). 
 
@@ -99,7 +99,7 @@ connection.
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
 | `groupId` | `number` | The asset's group (site) ID. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0 `. |
 | `classNameId` | `number` | The asset class name's ID. Use values from the portal's `classname_` database table. |
-| `customEntryQuery` | `HashMap` | The set of keys (string) and values (string or number) to be used in the [AssetEntryQuery object](/portal/6.2/javadocs/com/liferay/portlet/asset/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the portal. |
+| `customEntryQuery` | `HashMap` | The set of keys (string) and values (string or number) to be used in the [AssetEntryQuery object](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/asset/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the portal. |
 
 ## Methods [](id=methods)
 
