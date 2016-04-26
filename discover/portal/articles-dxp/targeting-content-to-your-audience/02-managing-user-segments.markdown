@@ -1,32 +1,34 @@
 # Managing User Segments [](id=managing-user-segments)
 
 The *Audience Targeting* section of the Configuration section of the Site
-Administration area of the Control Panel allows you to manage user segments and
+Administration area of the Menu allows you to manage user segments and
 campaigns.
 
-![Figure 7.1: Click on *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* to manage user segments and campaigns for a site.](../../images/07-audience-targeting-admin.png)
+![Figure 1: Click on *Configuration* &rarr; *Audience Targeting* in Site Administration to manage user segments and campaigns for a site.](../../images/audience-targeting-admin.png)
 
 A user segment represents a subset of the total group of portal users (logged in
 or not). A user segment is defined by one or more rules that users have to match
-in order to belong to that user segment. Click on *Site Administration* &rarr;
-*Configuration* &rarr; *Audience Targeting* &rarr; *Add User Segment* to add a
-new user segment. All the rules that have been deployed appear under the Rules
-heading. Drag a rule to the right to apply the rule to the user segment. Once a
-rule has been applied, you can adjust the rule's parameters. For example, once
-the Gender rule has been applied, you can select *Male* or *Female*. Once the
-Age rule has been applied, you can select an *Older than* value and a *Younger
-than* value. For example, you could define a *Women over 30* user segment by
-applying the Gender rule and selecting *Female*, and applying the Age rule and
-setting the *Older than* attribute to *30*. Once you've customized the rules for
-the new user segment, entered a name and, optionally, a description, click
-*Save* to actually create the user segment.
+in order to belong to that user segment. Open the Site Administration menu and
+click *Configuration* &rarr; *Audience Targeting* &rarr; *Add User Segment*
+(![Add User Segment](../../images-dxp/icon-add.png)) to add a new user segment.
+All the rules that have been deployed appear under the Rules heading. Drag a
+rule to the right to apply the rule to the user segment. Once a rule has been
+applied, you can adjust the rule's parameters. For example, once the Gender rule
+has been applied, you can select *Male* or *Female*. Once the Age rule has been
+applied, you can select an *Older than* value and a *Younger than* value. For
+example, you could define a *Women over 30* user segment by applying the Gender
+rule and selecting *Female*, and applying the Age rule and setting the *Older
+than* attribute to *30*. Once you've customized the rules for the new user
+segment, entered a name and, optionally, a description, click *Save* to actually
+create the user segment.
 
-![Figure 7.2: Drag a rule to the right to create a user segment.](../../images/07-audience-targeting-rules.png)
+![Figure 2: After applying the rule, click the rule to expland/collapse it.](../../images/audience-targeting-rules.png)
 
 To configure permissions for creating, editing, and deleting user segments,
-visit the Roles section of the Control Panel. Then click on the *Actions* &rarr;
-*Define Permissions* button corresponding to the role you'd like to configure
-permissions for, and search for *Audience Targeting Resources*.
+visit the *Users* &rarr; *Roles* section of the Control Panel. Then click on the
+*Actions* &rarr; *Define Permissions* button corresponding to the role you'd
+like to configure permissions for, and search for *Audience Targeting
+Resources*.
 
 Both user segments and campaigns are inherited in your site hierarchy.
 Therefore, user segments and campaigns defined in the Global scope will be
