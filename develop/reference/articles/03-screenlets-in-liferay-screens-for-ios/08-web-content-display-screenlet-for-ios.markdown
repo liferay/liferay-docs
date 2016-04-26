@@ -4,7 +4,7 @@
 
 ## Requirements [](id=requirements)
 
-- Xcode 7.2
+- Xcode 7.3
 - iOS 9 SDK
 - Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
 - Liferay Screens Compatibility Plugin (
@@ -24,7 +24,7 @@ rendering contents differently depending on the device's current locale.
 
 ## Module [](id=module)
 
-- None
+- WebContent
 
 ## Themes [](id=themes)
 
@@ -58,7 +58,6 @@ connection.
 |-----------|-----------|-------------| 
 | `groupId` | `number` | The site (group) identifier where the asset is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
 | `articleId` | `string` | The identifier of the web content to display. You can find the identifier by clicking *Edit* on the web content in the portal. |
-| `classPK` | `number` | The corresponding asset's class primary key. If the web content is an asset (from an Asset List Screenlet, for example), this is the asset's identifier. This attribute is used only if `articleId` is empty. |
 | `templateId` | `number` | The identifier of the template used to render the web content. This is applicable only with [structured web content](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates). |
 | `autoLoad` | `boolean` | Whether the content should be retrieved from the portal as soon as the Screenlet appears. The default value is `true`. |
 

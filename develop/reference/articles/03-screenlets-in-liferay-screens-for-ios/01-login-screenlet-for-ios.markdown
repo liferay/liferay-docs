@@ -2,7 +2,7 @@
 
 ## Requirements [](id=requirements)
 
-- Xcode 7.2
+- Xcode 7.3
 - iOS 9 SDK
 - Liferay Portal 6.2 (CE or EE), 7.0 (CE) 
 - [OAuth Provider EE plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 

@@ -1,4 +1,4 @@
-# Asset List Screenlet for iOS [](id=assetlistscreenlet-for-ios)
+# Web Content List Screenlet for iOS [](id=webcontentlistscreenlet-for-ios)
 
 ## Requirements [](id=requirements)
 
@@ -16,53 +16,22 @@
 
 ## Features [](id=features)
 
-The `AssetListScreenlet` can be used to show lists of [assets](/tutorials/-/knowledge_base/6-2/asset-framework) 
-from a Liferay instance. For example, you can use the Screenlet to show a 
-scrollable collection of assets. It also implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
-with configurable page size. The `AssetListScreenlet` can show assets of the 
-following classes: 
-
-- `Group`
-- `Layout`
-- `Organization`
-- `User`
-- `UserGroup`
-- `BlogsEntry`
-- `BookmarksEntry`
-- `BookmarksFolder`
-- `CalendarEvent`
-- `DLFileEntry`
-- `DLFileEntryMetadata`
-- `DLFileEntryType`
-- `DLFileRank`
-- `DLFileShortcut`
-- `DLFileVersion`
-- `DDLRecord`
-- `DDLRecordSet`
-- `JournalArticle` (Web Content)
-- `JournalFolder`
-- `MBMessage`
-- `MBThread`
-- `MBCategory`
-- `MBDiscussion`
-- `MBMailingList`
-- `WikiPage`
-- `WikiPageResource`
-- `WikiNode`
-
-The `AssetListScreenlet` also supports i18n in asset values.
+The `WebContentListScreenlet` can be used to show lists of [WebContent](/discover/portal/-/knowledge_base/6-2/web-content-management) 
+from a Liferay instance. It also implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
+with configurable page size. It can show both Basic Web Contents (HTML based) of structured Web Contents (HTML or with native UI).
+The `WebContentListScreenlet` also supports i18n in asset values.
 
 ## Module [](id=module)
 
-- None
+- WebContent
 
 ## Themes [](id=themes)
 
 The Default Theme uses a standard `UITableView` to show the scrollable list. 
 Other Themes may use a different component, such as `UICollectionView` or 
-others, to show the items.
+others, to show the contents.
 
-![`AssetListScreenlet` using the Default (`default`) Theme.](../../images/screens-ios-assetlist.png)
+![WebContentListScreenlet using the Default (`default`) Theme.](../../images/screens-ios-webcontent-list.png)
 
 ## Offline [](id=offline)
 
@@ -84,9 +53,8 @@ connection.
 | `refreshControl` | `boolean` | Defines whether a standard [UIRefreshControl](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) is shown when the user does the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items retrieved from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items retrieved from the server for display on the second and subsequent pages. The default value is `25`. |
-| `groupId` | `number` | The ID of the site (group) where the asset is stored. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
-| `classNameId` | `number` | The ID of the asset's class name. Use values from the `AssetClassNameId` class or the portal's `classname_` database table. |
-| `customEntryQuery` | `Dictionary` | The set of keys (string) and values (string or number) to be used in the [`AssetEntryQuery` object](/portal/6.2/javadocs/com/liferay/portlet/asset/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the portal. |
+| `groupId` | `number` | The ID of the site (group) where the web content is stored. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
+| `folderId` | `number` | The ID of the container folder. Use values from the If set to `0`, the root folder will be used. The default value is `0`.|
 
 ## Methods [](id=methods)
 
@@ -96,16 +64,11 @@ connection.
 
 ## Delegate [](id=delegate)
 
-The `AssetListScreenlet` delegates some events to an object that conforms to the 
-`AssetListScreenletDelegate` protocol. This protocol lets you implement the 
-following methods: 
+The `WebContentListScreenlet` delegates some events to an object that conforms to the `WebContentListScreenletDelegate` protocol. This protocol lets you implement the following methods: 
 
-- `- screenlet:onAssetListResponse:`: Called when a page of assets is 
-  received. Note that this method may be called more than once; one call for 
-  each page received.
+- `- screenlet:onWebContentListResponse:`: Called when a page of contents is received. Note that this method may be called more than once; one call for each page received.
 
-- `- screenlet:onAssetListError:`: Called when an error occurs in the process. 
-  The `NSError` object describes the error.
+- `- screenlet:onWebContentListError:`: Called when an error occurs in the process. The `NSError` object describes the error.
 
-- `- screenlet:onAssetSelectedEntry:`: Called when an item in the list is 
+- `- screenlet:onWebContentSelected:`: Called when an item in the list is 
   selected.

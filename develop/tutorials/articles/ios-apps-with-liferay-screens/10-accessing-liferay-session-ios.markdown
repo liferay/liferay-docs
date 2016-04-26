@@ -85,6 +85,18 @@ a typical implementation of this:
         // send user to login screen with the login screenlet
     }
 
+Notice this auto-login feature doesn't imply the stored user is still valid in the server, because no request is made at this point. If you want to make sure the user is still valid (password doesn't changed or user invalidated), then you need to use the `SessionContext` method `relogin`. This method will perform an actual request to make sure the stored user is still valid, and update the stored attributes with the received data.
+The following Swift code shows a typical implementation of this (notice the trailing closure because the operation is asynchronous): 
+
+    SessionContext.currentContext?.relogin { userAttributes in
+        if userAttributes == nil {
+            // couldn't retrieve the user attributes: user invalidated or password changed?
+        }
+        else {
+            // full re-login made. Everything is updated
+        }
+    }
+
 Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
 You've also seen how handy `SessionContext` can be. It can do even more! The 
 next section lists some additional `SessionContext` methods. 
@@ -94,6 +106,7 @@ next section lists some additional `SessionContext` methods.
 | Method | Return Type | Explanation |
 |--------|-------------|-------------| 
 | `logout()` | `void` | Clears the stored user attributes and session. |
+| `relogin(closure)` | `void` | Refresh user data from the server. It recreates the `currentContext` if success and call `logout()` if fails. When the server data is recevied, the closure is called (with received user's attributes). If an error occurrs, the closure is called with nil.|
 | `loginWithBasic(username, password, userAttributes)` | `LRSession` | Creates a Liferay Session using the default server, and the supplied username, password, and user information. |
 | `loginWithOAuth(authentication, userAttributes)` | `LRSession` | Creates a Liferay Session using the default server and the supplied OAuth tokens. This is intended to be used together with the [Liferay iOS OAuth library](https://github.com/brunofarache/liferay-ios-sdk-oauth). |
 | `createRequestSession()` | `LRSession` | Creates a Liferay Session based on the current session's server and user credentials. This Liferay Session is intended to be used for only a single request (don't reuse it). |
