@@ -62,7 +62,7 @@ The Default Theme uses a standard `UITableView` to show the scrollable list.
 Other Themes may use a different component, such as `UICollectionView` or 
 others, to show the items.
 
-![`AssetListScreenlet` using the Default (`default`) Theme.](../../images/screens-ios-assetlist.png)
+![Figure 1: Asset List Screenlet using the Default (`default`) Theme.](../../images/screens-ios-assetlist.png)
 
 ## Offline [](id=offline)
 
