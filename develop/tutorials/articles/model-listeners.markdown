@@ -3,14 +3,14 @@
 Model Listeners implement the
 [`ModelListener`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/model/ModelListener.html)
 interface. They are used to listen for persistence events on models and do
-something in response.
+something in response (either bfore or after the event).
 
 Model listeners were designed to perform lightweight actions in response to a
 `create`, `remove`, or `update` attempt on an entity's database table or a
 mapping table (for example, `users_roles`). Here are some supported use cases:
 
 -  Audit Listener: In a separate database, record information about updates to
-   an entity's database table (an audit listener).
+   an entity's database table.
 -  Cache Clearing Listener: Clear caches that you've added to improve the performance of custom code.
 -  Validation Listener: Perform additional validation on a model's attribute
    values before they are persisted to the database.
@@ -27,16 +27,16 @@ attributes are set, consider using a [service wrapper](/develop/tutorials/-/know
 instead.
 -  Wrapping a model. Model listeners are not called when fetching records from
    the database.
--  Creating worker threads to do parallel processing, querying the data you
-   updated. Model listeners are called *before* the database transaction is
-complete (even the `onAfter...` methods), so the queries could be executed
-before the database transaction is completed.
+-  Creating worker threads to do parallel processing and querying data you
+   updated via your listener. Model listeners are called *before* the database
+transaction is complete (even the `onAfter...` methods), so the queries could be
+executed before the database transaction is completed.
 
 If there is no existing listener on the model, your model listener is the only
 one that runs. However, there can be multiple listeners on a single model, and
 the order in which the listeners run cannot be controlled. 
 
-You can create a model listener with a module that does two simple things:
+You can create a model listener in a module by doing two simple things:
 
 -  Implement `ModelListener` 
 -  Register the service in Liferay's OSGi runtime
@@ -71,7 +71,7 @@ model listeners.
 ## Register the Model Listener Service
 
 Register the service with Liferay's OSGi runtime, setting `service=
-ModelListener.class` and `immediate=true` in the Component..
+ModelListener.class` and `immediate=true` in the Component.
 
     @Component(
         immediate = true,
@@ -114,3 +114,8 @@ table.
 Look in Liferay's `BasePersistenceImpl`, particularly the `remove` and `update` methods,
 and you'll see how model listeners are accounted for before (for the `onBefore...` case)
 and after (for the `onAfter...` case) the model persistence event.
+
+Now that you know how to create model listeners, keep in mind that they're
+useful as standalone projects or inside of your application. What if your
+application needs to do something (like add a custom entity) every time a User
+is added in Liferay? You can include the model listener inside your application.
