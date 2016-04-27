@@ -7,14 +7,11 @@ render these entities in your apps.
 
 The simplest way to display a `JournalArticle`'s HTML in your app is to use 
 [Web Content Display Screenlet](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android). 
-This screenlet is very powerful and allows several complex use cases to fit your 
-needs. You can also use 
-[Web Content List Screenlet](https://www.liferay.com/) 
+This Screenlet is very powerful and supports several complex use cases to fit 
+your needs. You can also use 
+[Web Content List Screenlet](/develop/reference/-/knowledge_base/6-2/web-content-list-screenlet-for-android) 
 to display lists of web content articles. This tutorial shows you how to use 
 both Screenlets to display web content in your apps. 
-<!-- 
-* for publication, change the code links to the master branch instead of develop
--->
 
 ## Retrieving Basic Web Content [](id=retrieving-basic-web-content)
 
@@ -35,7 +32,7 @@ must provide the CSS inline or use a template. The HTML returned isn't aware of
 a Liferay instance's global CSS. 
 
 You can also use a listener to modify the HTML, as explained in the 
-[screenlet reference](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android).
+[Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android).
 
 In the default security policy, an Android `WebView` doesn't execute a page's 
 JavaScript. You can enable such JavaScript execution by setting the 
@@ -62,7 +59,7 @@ words. A common mistake is to use the default `groupId` instead of the one for
 the site that contains your `JournalArticle` entities. 
 
 If you need to use a default `groupId` in the rest of your app, but render 
-another site's HTML, you can set the Web Content Display screenlet's `groupId` 
+another site's HTML, you can set the Web Content Display Screenlet's `groupId` 
 with the `app:groupId` attribute. You can alternatively use the `setGroupId` 
 method in the activity or fragment code that uses the Screenlet. 
 
@@ -100,17 +97,16 @@ example illustrates this:
         liferay:layoutId="@layout/webcontentdisplay_structured_default"
         liferay:structureId="YOUR_STRUCTURE_ID" />
 
-<!-- Changed WebContentDisplayView to WebContentStructuredDisplayView in 2nd sentence -->
 You can also use your own layout to render the structure fields exactly how you 
 want. To do this, your layout should inherit from 
 `WebContentStructuredDisplayView` and read the information parsed and stored in 
 the `webContent` entity. By displaying two structure fields with such a custom 
 layout, the 
-[test app](https://github.com/liferay/liferay-screens/tree/develop/android/samples/test-app) 
+[test app](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app) 
 contains a complete example of this:
 
 1. The 
-   [layout file `webcontentdisplaystructured_example.xml`](https://github.com/liferay/liferay-screens/blob/develop/android/samples/test-app/src/main/res/layout/webcontentdisplaystructured_example.xml) 
+   [layout file `webcontentdisplaystructured_example.xml`](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/res/layout/webcontentdisplaystructured_example.xml) 
    defines the custom layout: 
 
         <com.liferay.mobile.screens.testapp.webviewstructured.WebContentDisplayView 
@@ -133,7 +129,7 @@ contains a complete example of this:
         </com.liferay.mobile.screens.testapp.webviewstructured.WebContentDisplayView>
 
 2. The 
-   [`WebContentDisplayView` class](https://github.com/liferay/liferay-screens/blob/develop/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/webviewstructured/WebContentDisplayView.java) 
+   [`WebContentDisplayView` class](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/webviewstructured/WebContentDisplayView.java) 
    sets the custom layout's functionality: 
 
         public class WebContentDisplayView extends WebContentStructuredDisplayView {
@@ -155,7 +151,7 @@ contains a complete example of this:
         }
 
 3. The 
-   [Screenlet XML's](https://github.com/liferay/liferay-screens/blob/develop/android/samples/test-app/src/main/res/layout/web_content_display_structured.xml) 
+   [Screenlet XML's](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/res/layout/web_content_display_structured.xml) 
    `layoutId` attribute specifies the custom layout to use: 
 
         <com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet
@@ -195,10 +191,10 @@ Screenlet XML's `labelFields` attribute. For example:
 		app:labelFields="Text" />
 
 You can also see an example of this in the test app's 
-[`web_content_display_list.xml` layout file](https://github.com/liferay/liferay-screens/blob/develop/android/samples/test-app/src/main/res/layout/web_content_display_list.xml). 
+[`web_content_display_list.xml` layout file](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/res/layout/web_content_display_list.xml). 
 
 Also note that several methods in 
-[Screens's `WebContent` class](https://github.com/liferay/liferay-screens/blob/develop/android/library/src/main/java/com/liferay/mobile/screens/webcontent/WebContent.java) 
+[Screens's `WebContent` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/webcontent/WebContent.java) 
 help you render content from different locales. For example, 
 `getLocalized(name)` receives a field's name and returns the value in the mobile 
 device's current locale. Such methods help you render a custom view without 
@@ -221,6 +217,6 @@ to render each asset type. For more information, see the
 
 [Web Content Display Screenlet for Android](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android)
 
-[Web Content List Screenlet for Android](https://www.liferay.com/)
+[Web Content List Screenlet for Android](/develop/reference/-/knowledge_base/6-2/web-content-list-screenlet-for-android)
 
 [Asset List Screenlet for Android](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-android)
