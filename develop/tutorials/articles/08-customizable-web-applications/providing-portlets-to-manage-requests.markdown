@@ -24,9 +24,9 @@ example, visit the
 method.
 
 There are four different kinds of actions supported by the Portlet Providers
-framework: `ADD`, `BROWSE`, `EDIT`, and `VIEW`. Find the portlet ID or portlet
-URL (depending on your needs), and specify the entity type and action you want
-the portlet to handle.
+framework: `ADD`, `BROWSE`, `EDIT`, `PREVIEW`, and `VIEW`. Find the portlet ID
+or portlet URL (depending on your needs), and specify the entity type and action
+you want the portlet to handle.
 
 +$$$
 

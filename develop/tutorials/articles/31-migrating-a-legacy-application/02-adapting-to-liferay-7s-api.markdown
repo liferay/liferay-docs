@@ -96,7 +96,7 @@ Follow these instructions to adapt your legacy application's plugins to Liferay 
             com.liferay.portal.sample.package2
 
 5.  Compile your plugin. If compilation fails, search the
-    [Breaking Changes](/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0)
+    [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
     document for potential causes and resolutions.
 
 6.  Build your plugin's WAR file (e.g., execute `ant war`). In the Plugins SDK,

@@ -1,5 +1,7 @@
 # OSGi and Modularity [](id=osgi-and-modularity)
 
+<!-- Don't put this here. -->
+
 In the 1970s, personal computers were in their nascent stage of development, and
 they were expensive. The core component of a personal computer, the
 microprocessor, was perhaps the most complicated and expensive piece of hardware
@@ -55,12 +57,14 @@ benefits:
     another project, you can apply your existing knowledge to Liferay. 
 - Modules publish services to and consume services from a service registry.
     Service contracts are loosely coupled from service providers and consumers. 
+    <!-- Emphasize the registry. -->
 - Modules export code at the package level for use by other modules, enabling
-    the registry to manage dependencies automatically. 
+    the registry to manage dependencies automatically. <!-- Automatic management
+    of dependencies. --> 
 - The container manages module lifecycles dynamically. Modules can be installed,
     started, updated, stopped, and uninstalled while Liferay is running, making
     deployment a snap. 
-- Modules hide their internals from other modules, giving developers free reign
+- <!-- OSGi provides a way to hide internal classes so they cannot be seen. --> Modules hide their internals from other modules, giving developers free reign
     to change the internals whenever needed. 
 - Modules are semantically versioned and declare dependencies on specific
     versions of other modules. This allows two applications that depend on
@@ -100,7 +104,13 @@ installed.
 In this way, dependencies are managed in a much more straightforward way by the
 system, freeing you to move forward with your project much more easily. 
 
+<!-- Dependencies are based on versions, and these are rules for maintaining
+compatibility. Dependencies are declared on packages, not modules. Add a section
+on dependencies. A module exports and imports things. -->
+
 ### ProviderType vs. ConsumerType [](id=providertype-vs-consumertype)
+
+<!-- Remove --> 
 
 In a modular, semantically versioned world, then, code is broken up into modules
 that have various inter-dependencies. These are managed by the container at
@@ -121,6 +131,8 @@ a complex concept that is better explained when you get to the code, so for now
 just keep it in the back of your mind, as you'll encounter it later. 
 
 ## Extensibility [](id=extensibility)
+
+<!-- Move to after services and components. -->
 
 As you might imagine, the system described above contains all the tools
 necessary to make a well designed system that allows developers not only to
@@ -451,4 +463,4 @@ for you to learn more.
 
 [Migrating A Legacy Application](/develop/tutorials/-/knowledge_base/7-0/migrating-a-legacy-application)
 
-[
+

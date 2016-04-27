@@ -495,7 +495,7 @@ Currency Converter app in FreeMarker and Velocity:
 **Warning:** The `theme` variable is no longer injected into the FreeMarker
 context. For more information about why the theme variable was removed for
 Liferay 7.0 and suggestions for updating your code, visit the
-[Taglibs Are No Longer Accessible via the theme Variable in FreeMarker](/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
+[Taglibs Are No Longer Accessible via the theme Variable in FreeMarker](/develop/reference/-/knowledge_base/7-0/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
 breaking change entry.
 
 $$$

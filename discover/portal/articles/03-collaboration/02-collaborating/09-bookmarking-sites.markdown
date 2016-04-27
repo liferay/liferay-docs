@@ -120,7 +120,7 @@ selected folder.
 
 ![Figure 5: Choose the folder to move the item to.](../../../images/bookmarks-move-folder.png)
 
-# Summary [](id=summary)
+# Summary [](id=summary-0)
 
 Liferay's Bookmarks app gives users and administrators a straightforward way to 
 add and manage bookmarks in your Liferay instance. This lets everyone share and 

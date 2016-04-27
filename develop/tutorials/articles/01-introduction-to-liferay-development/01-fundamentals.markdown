@@ -37,17 +37,17 @@ make writing portlets easy, but developers are free to use any other framework,
 such as Spring MVC, to create portlets. 
 
 Liferay includes a utility called *Service Builder* that makes it easy to create
-back-end database tables and an object-relational map in Java for accessing
-them. It can also generate JSON or SOAP web services, giving developers a full
-stack for storing and retrieving data using web or mobile clients.
+back-end database tables, an object-relational map in Java for accessing
+them, and a place to put your business logic. It can also generate JSON or SOAP
+web services, giving developers a full stack for storing and retrieving data
+using web or mobile clients.
 
-Applications can be created very quickly by leveraging Liferay's many building
-blocks, called *assets*, that are commonly needed by today's applications. For
-example, a commenting system allows developers to attach comments to any asset
-that they define, whether they be assets they develop or assets that ship with
-the system. Assets are shared by the system and are used to represent many
-common elements, such as Users, Organizations, Sites, User Groups, blog entries,
-and even folders and files. 
+Applications can be created by leveraging Liferay's many building blocks that
+are commonly needed by today's applications. For example, a commenting system
+allows developers to attach comments to any asset that they define, whether they
+be assets they develop or assets that ship with the system.  Assets are shared
+by the system and are used to represent many common elements, such as Users,
+Organizations, Sites, User Groups, blog entries, and even folders and files. 
 
 Liferay also includes many frameworks for operating on assets. A workflow system
 makes it easy to create applications that require an approval process for users
@@ -66,6 +66,8 @@ can be themed, and menu items can be added or removed.
 
 ## Modules and Components [](id=modules-and-components)
 
+<!-- Separate Modules and Components. -->
+
 All applications, extensions, and customizations built on Liferay are
 distributed and deployed as *modules*. A module is just a typical JAR file,
 familiar to Java developers as a ZIP file containing compiled code, templates,
@@ -80,8 +82,8 @@ taking the server down.
 +$$$
 
 Note: In the OSGi nomenclature, modules are sometimes called OSGi bundles, but
-we will avoid that terminology to avoid confusing the concept of a Liferay
-bundle, which is a distribution of Liferay bundled with an app server. 
+we will avoid that terminology to avoid confusing it with the concept of a
+Liferay bundle, which is a distribution of Liferay bundled with an app server. 
 
 $$$
 
@@ -92,11 +94,17 @@ application, and that application is itself made up of many small components.
 This makes it easier to develop an application because you only have to deal
 with small, well-defined, bite-sized chunks of code at a time. 
 
+<!-- Why should I have components? What do I need them for? 
+Components can also be extension points. A dynamic extension points module. -->
+
 Components are managed by a component container, which keeps track of the
-components that are installed and active. Many components offer services, and
+components that are installed and active. Components offer services, and
 it's the container's job to manage the available services by providing
 components the services they need. It does this through a robust dependency
 management system that's handled automatically at runtime. 
+
+<!-- Mention dependency injection and the fact that it's better than Spring
+because it's dynamic. -->
 
 As you can see, many components running inside the system form something of an
 ecosystem of complementary services. Liferay ships with many components that are
@@ -105,3 +113,5 @@ write components to provide new services or to override existing services with
 your own implementation, and the container manages it all. Liferay is an
 exciting platform that empowers developers to be more productive. 
 
+<!-- Flesh the above out. Much of Liferay's functionality is in components;
+developers are in the same ecosystem with the same extension points. -->

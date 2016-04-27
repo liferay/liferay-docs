@@ -22,7 +22,7 @@ easily upgrade your old 6.2 applications to new 7.0 APIs without converting them
 to modules first. In fact before you begin converting your legacy application
 into modules, we recommend that you first migrate it to a Liferay 7.0 compatible
 WAR-style application. It is much easier to convert a legacy application to
-modules after adapting to the new API and resolving [breaking changes](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/what-are-the-breaking-changes-for-liferay-7-0).
+modules after adapting to the new API and resolving [breaking changes](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/breaking-changes).
 Jumping from a legacy 6.2 application to 7.0 modules can complicate debugging
 and figuring out which issues are related to API changes and which are related
 to the migration process.
