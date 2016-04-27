@@ -1,9 +1,8 @@
 # Overriding JSPs from a Module
 
-Liferay applications (both native and third party) often contain JSPs.
-Sometimes you might need to override one of them. If you need to override the
-JSPs from a module deployed to the OSGi runtime, you need a module that does two
-things:
+Liferay applications often contain JSPs. Sometimes you might need to override
+one of them. If you need to override the JSPs from a module deployed to the OSGi
+runtime, you need a module that does two things:
 
 -  Specifies a host module's symbolic name and version in the OSGi header `Fragment-Host` declaration.
 
@@ -12,13 +11,14 @@ things:
 
 ## Declaring a Fragment Host
 
-There are two players in this game: the fragment and the host. The fragment is a
+There are two players in this game: the
+fragment and the host. The fragment is a
 parasitic module that attaches itself to a host. That sounds harsh, so let's
-compare the fragment-host relationship to the relationship between a pilot
-fish and a huge, scary shark. It's symbiotic, really. Your fragment module
-benefits by not doing much work (like the pilot fish who benefits from the
-shark's hunting prowess). In return, the host module gets whatever benefits
-you've conjured up in your fragment's JSPs (for the shark, it gets free dental
+compare the fragment-host relationship to the relationship between a pilot fish
+and a huge, scary shark. It's symbiotic, really. Your fragment module benefits
+by not doing much work (like the pilot fish who benefits from the shark's
+hunting prowess). In return, the host module gets whatever benefits you've
+conjured up in your fragment's JSPs (for the shark, it gets free dental
 cleanings!). To the OSGi runtime, your fragment is part of the host module.
 
 Your fragment must declare two things to the OSGi runtime regarding the host
@@ -53,8 +53,7 @@ application's `login.jsp` for example, you'd put your own `login.jsp` in
 
 Now you can easily modify the JSPs of any application in Liferay.
 
-![Figure x: Liferay's applications are swimming in the OSGi runtime, waiting for
-your fragment modules to clean their teeth, so to speak.](../../images/sharks.jpg)
+![Figure x: Liferay's applications are swimming in the OSGi runtime, waiting for your fragment modules to clean their teeth, so to speak.](../../images/sharks.jpg)
 <!--https://commons.wikimedia.org/wiki/File:Carcharhinus_perezi_bahamas_feeding.jpg-->
 
 To see a sample JSP-modifying fragment in action, look at the BLADE project

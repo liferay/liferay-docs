@@ -1,7 +1,7 @@
 # Overriding Core JSPs
 
 Not to beat a dead horse, but Liferay is modularized to a great extent, so most
-of the JSPs you might want to override are not in Liferay's core. However, there
+of the JSPs you might want to override are no longer in Liferay's core. However, there
 are still some that you might want to modify, and it can be done. These JSPs are
 located in the `portal-web/docroot/html` directory.
 
@@ -10,7 +10,7 @@ are going to outweigh the costs:
 
 1. Unlike other modifications you can make in Liferay, there's no way to
 override core JSPs in a way that will gracefully fail. Instead, if your core JSP
-is buggy (because of your code or because of a change in Liferay), you're
+is buggy (because of your code or because of a change in Liferay), you are
 most likely to find out at runtime, where functionality breaks and nasty
 log errors greet you.
 
@@ -35,10 +35,14 @@ If it's *really* necessary to modify a core JSP, you need a module that satisfie
 -  Provides the JSP you're extending.
 
 The module provides transportation for this code into Liferay's OSGi runtime.
-When configuring it to build a proper JAR, make sure the JSPs go in the
-JAR's `META-INF/jsps` directory. In a `bnd.bnd` file you can specify 
+When configuring it to build a proper JAR, map the path of the JSPs in the JAR
+to their path in your module. In a `bnd.bnd` file you could specify 
 
-    -includeresource: META-INF/jsps=src/META-INF/jsps
+    -includeresource: META-INF/jsps=src/META-INF/custom_jsps
+
+If you're using the Maven [Standard Directory Layout](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html)
+and placing your JSPs under `src/main/resources`, you can ignore the
+`-includeresource` directive.
 
 Any core JSPs you're customizing should be put into this folder, and the rest of
 their path and their name must match exactly the path and name of the JSP
@@ -50,17 +54,17 @@ overriding
 and you used the `includeresource` directive above, put the overridden JSP in
 this folder of your module:
 
-    my-module/src/META-INF/jsps/html/common/themes/bottom-ext.jsp
+    my-module/src/META-INF/custom_jsps/html/common/themes/bottom-ext.jsp
 
 ## Implement a Custom JSP Bag
 
 Create a class that implements `CustomJspBag`. The overall goal is to make sure
-that Liferay (specifically `CustomJspBagregistryUtil`) loads the JSPs from your
+that Liferay (specifically `CustomJspBagRegistryUtil`) loads the JSPs from your
 module when it's activated.
 
     public class MyCustomJspBag implements CustomJspBag {
 
-When the module is activated, you need to add the URL path for all your custom
+When the Component is activated, you need to add the URL path for all your custom
 core JSPs (by directory path) to an `ArrayList`.
 
         @Activate
@@ -85,71 +89,25 @@ core JSPs (by directory path) to an `ArrayList`.
 
         private Bundle bundle;
 
-Override the `getCustomJspDir` method, specifying the directory path in your
-module's JAR where the JSPs are placed.
+In the custom JSP bag you'll need to override the following methods:
 
-        @Override
-        public String getCustomJspDir() {
-            return "META-INF/jsps/";
-        }
+-  **`getCustomJspDir`:** Return the directory path in your
+module's JAR where the JSPs are placed (for example, `META-INF/jsps`).
 
-Next override the `getCustomJsps` method, returning the custom JSPs loaded in the
-activate method.
+-  **`getCustomJsps`:** Return a List of the custom JSP URL paths.
 
-        @Override
-        public List<String> getCustomJsps() {
-            return _customJsps;
-        }
-
-Override `getURLContainer`, returning a new
-`com.liferay.portal.kernel.url.URLContainer`. Instantiate the URL container and
-override its `getResources` and `getResource` methods. The `getResources`
+-  **`getURLContainer`:** Return a new
+   `com.liferay.portal.kernel.url.URLContainer`. Instantiate the URL container
+and override its `getResources` and `getResource` methods. The `getResources`
 method is for looking up all of the paths to resources in the container by a
-given path. It should return a `HashSet` of `Strings` for the matching
-custom JSP paths. The `getResource` method returns one specific resource by its
-name (the path included).
+given path. It should return a `HashSet` of `Strings` for the matching custom
+JSP paths. The `getResource` method returns one specific resource by its name
+(the path included).
 
-
-        @Override
-        public URLContainer getURLContainer() {
-            return _urlContainer;
-        }
-
-        ...
-
-        private final URLContainer _urlContainer = new URLContainer() {
-
-            @Override
-            public Set<String> getResources(String path) {
-                Set<String> paths = new HashSet<>();
-
-                for (String entry : _customJsps) {
-                    if (entry.startsWith(path)) {
-                        paths.add(entry);
-                    }
-                }
-
-                return paths;
-            }
-
-            @Override
-            public URL getResource(String name) {
-                return bundle.getEntry(name);
-            }
-
-        };
-
-Override `isCustomJspGlobal` by simply returning `true`.
-
-        @Override
-        public boolean isCustomJspGlobal() {
-            return true;
-        }
-
-    }
+-  **`isCustomJspGlobal`:** Return `true`.
 
 For an example of a full class that provides a working implementation of a
-custom JSP bag, refer to the [blade.corejsphook BLADE project](https://github.com/rotty3000/blade/tree/blade.corejsphook/bndtools/blade.corejsphook).
+custom JSP bag, refer to the [blade.corejsphook BLADE project](https://github.com/liferay/liferay-blade-samples/blob/master/liferay-gradle/blade.corejsphook/src/main/java/com/liferay/blade/samples/corejsphook/BladeCustomJspBag.java).
 
 ## Register the Custom JSP Bag
 
@@ -186,4 +144,17 @@ Remember, this type of customization should be seen as a last resort. There's a
 risk that your override will break due to the nature of this implementation, and
 core functionality in Liferay can go down with it. If the JSP you want to
 override is in another module, refer to the article on [overriding JSPs from a module](develop/tutorials/-/knowledge_base/7-0/overriding-module-jsps).
+
+## Site Scoped JSP Customization
+
+In Liferay 6.2, you could use [Application Adapters](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters) to scope your core JSP
+customizations to a specific site. Since the majority of JSPs were moved into
+modules for Liferay 7.0, the use case for this has shrunk considerably. If you
+need to scope a core JSP customization to a site, prepare an application adapter
+[as you would have for Liferay 6.2](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters), and deploy it to Liferay 7.0. It will still
+work. However, note that this approach is deprecated in Liferay 7.0 and won't be
+supported at all in Liferay 8.0.
+
+If you're interested in scoping a module's JSP customization to a site, that's
+another story. See the documentation on using Dynamic Include (not yet written).
 
