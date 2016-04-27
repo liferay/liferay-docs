@@ -2,18 +2,19 @@
 
 Liferay applications often contain JSPs. Sometimes you might need to override
 one of them. If you need to override the JSPs from a module deployed to the OSGi
-runtime, you need a module that does two things:
+runtime, you need a fragment module that does two things:
 
 -  Specifies a host module's symbolic name and version in the OSGi header `Fragment-Host` declaration.
 
 -  Provides a complete copy of the original JSP with any modifications you need
    to make.
 
+For more information about fragment modules, you can refer to section 3.14 of the [OSGi Alliance's core specification document](https://osgi.org/download/r6/osgi.core-6.0.0.pdf).
+
 ## Declaring a Fragment Host [](id=declaring-a-fragment-host)
 
-There are two players in this game: the
-fragment and the host. The fragment is a
-parasitic module that attaches itself to a host. That sounds harsh, so let's
+There are two players in this game: the fragment and the host. The fragment is
+a parasitic module that attaches itself to a host. That sounds harsh, so let's
 compare the fragment-host relationship to the relationship between a pilot fish
 and a huge, scary shark. It's symbiotic, really. Your fragment module benefits
 by not doing much work (like the pilot fish who benefits from the shark's
