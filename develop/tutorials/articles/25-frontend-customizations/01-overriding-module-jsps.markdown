@@ -9,7 +9,7 @@ runtime, you need a fragment module that does two things:
 -  Provides a complete copy of the original JSP with any modifications you need
    to make.
 
-For more information about fragment modules, you can refer to section 3.14 of the [OSGi Alliance's core specification document](https://osgi.org/download/r6/osgi.core-6.0.0.pdf).
+For more information about fragment modules, you can refer to section 3.14 of the [OSGi Alliance's core specification document](https://www.osgi.org/developer/downloads/release-6/).
 
 ## Declaring a Fragment Host [](id=declaring-a-fragment-host)
 

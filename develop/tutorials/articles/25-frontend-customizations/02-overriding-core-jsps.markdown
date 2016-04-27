@@ -60,12 +60,12 @@ this folder of your module:
 
 Create a class that implements `CustomJspBag`. The overall goal is to make sure
 that Liferay (specifically `CustomJspBagRegistryUtil`) loads the JSPs from your
-module when it's activated.
+module upon activation.
 
     public class MyCustomJspBag implements CustomJspBag {
 
 When the Component is activated, you need to add the URL path for all your custom
-core JSPs (by directory path) to an `ArrayList`.
+core JSPs (by directory path) to a `List`.
 
         @Activate
         protected void activate(BundleContext bundleContext) {
