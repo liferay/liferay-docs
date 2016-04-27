@@ -579,7 +579,7 @@ app. You can even
 and contribute it to the Screens project, or distribute it in Maven Central or 
 jCenter. 
 
-## Using the Screenlet
+## Using the Screenlet [](id=using-the-screenlet)
 
 You can now use the new Screenlet 
 [the same way you use any other Screenlet](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps): 
