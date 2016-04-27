@@ -3,8 +3,8 @@
 Blade CLI provides templates for creating modules for customizing Liferay
 services. Service wrappers make it easy to customize Liferay services. In
 this tutorial, you'll learn how to create service wrapper modules. If you
-haven't yet installed Blade Tools, please refer to the
-[Introduction to Blade Tools](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
+haven't yet installed Blade CLI, please refer to the
+[Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
 tutorial.
 
 Why might you need to customize Liferay services? Perhaps you've added a custom
@@ -115,7 +115,7 @@ To deploy your project, run this command from your project's root directory:
 
     blade deploy
 
-Blade Tools detects your locally running Liferay instance and deploys the
+Blade CLI detects your locally running Liferay instance and deploys the
 specified module to Liferay's module framework. After running the `blade deploy`
 command, you should see a message like this:
 
@@ -134,6 +134,6 @@ wrapper module!
 
 ## Related Topics [](id=related-topics)
 
-[Introduction to Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
+[Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
 
-[Creating Modules with BLADE CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
+[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
