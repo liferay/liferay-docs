@@ -1,4 +1,4 @@
-# Rendering Web Content in Your Android App
+# Rendering Web Content in Your Android App [](id=rendering-web-content-in-your-android-app)
 
 Liferay represents 
 [web content](/discover/portal/-/knowledge_base/6-2/web-content-management) 
@@ -16,7 +16,7 @@ both Screenlets to display web content in your apps.
 * for publication, change the code links to the master branch instead of develop
 -->
 
-## Retrieving Basic Web Content
+## Retrieving Basic Web Content [](id=retrieving-basic-web-content)
 
 Web Content Display Screenlet's simplest use case is to render a 
 `JournalArticle`'s HTML in an 
@@ -66,7 +66,7 @@ another site's HTML, you can set the Web Content Display screenlet's `groupId`
 with the `app:groupId` attribute. You can alternatively use the `setGroupId` 
 method in the activity or fragment code that uses the Screenlet. 
 
-## Using Templates
+## Using Templates [](id=using-templates)
 
 Web Content Display Screenlet can also use 
 [templates](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates) 
@@ -81,7 +81,7 @@ To use a template, specify its ID in the Screenlet XML's `templateId` property:
         app:articleId="YOUR_ARTICLE_ID"
         app:templateId="YOUR_TEMPLATE_ID" />
 
-## Using Structures
+## Using Structures [](id=using-structures)
 
 Since mobile devices have limited screen space, you must often display only the 
 most important parts of a web content article. If your web content is 
@@ -171,7 +171,7 @@ Great! Now you know how to use structured web content with Web Content Display
 Screenlet. Next, you'll learn how to display a list of web content articles in 
 your app. 
 
-## Displaying a List of Web Content Articles
+## Displaying a List of Web Content Articles [](id=displaying-a-list-of-web-content-articles)
 
 The preceding examples show you how to use Web Content Display Screenlet to 
 display a single web content article's contents in your app. But what if you 
@@ -204,7 +204,7 @@ help you render content from different locales. For example,
 device's current locale. Such methods help you render a custom view without 
 worrying about the underlying structure, XML parsing, or HTTP calls. 
 
-## Displaying a List of Assets
+## Displaying a List of Assets [](id=displaying-a-list-of-assets)
 
 To render a list of different assets in your app, including web content 
 articles, you can use Asset List Screenlet. Asset List Screenlet can display a 
