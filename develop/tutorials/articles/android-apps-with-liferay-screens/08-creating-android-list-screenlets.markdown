@@ -579,6 +579,18 @@ app. You can even
 and contribute it to the Screens project, or distribute it in Maven Central or 
 jCenter. 
 
+## How to use the screenlet
+
+You can now use the new screenlet and embed it in your layouts, like the following example code: 
+
+	<com.liferay.mobile.screens.listbookmark.BookmarkListScreenlet
+			android:id="@+id/bookmarklist_screenlet"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:folderId="YOUR_FOLDER_ID"
+			app:groupId="YOUR_GROUP_ID"
+			app:layoutId="@layout/list_bookmarks"/>
+
 ## Related Topics [](id=related-topics)
 
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
