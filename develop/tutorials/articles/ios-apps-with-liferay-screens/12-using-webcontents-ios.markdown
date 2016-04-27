@@ -55,17 +55,21 @@ steps:
 - [Create a theme](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
   to render your Web Content. If you've already created your own theme, you can 
   skip this step. 
+
 - In your theme, create a new class called `WebContentDisplayView_themeName`, 
   extending from `BaseScreenletView`. This class will hold the `IBOutlets` and 
   `IBActions` associated to the Web Content's UI. 
+
 - Create the UI in the `WebContentDisplayView_themeName.xib` file. In that file 
   you'll have an `UIView`, in inside that, you'll have whatever components you 
   need to render the Web Content's fields. For instance, if your structured Web 
   Content contains `latitude` and `longitude` fields, you can use an `MKMapView` 
   component to render the map point. 
+
 - Once you have your components ready, change the root view's class to 
   `WebContentDisplayView_themeName` class (the one you already created) and 
   create all `IBOutlets` and `IBActions` you need to manage your UI components.
+
 - Finally, in the `WebContentDisplayView_themeName` class, you need to conform 
   `WebContentDisplayViewModel` protocol. This protocol will force you to add two 
   properties: `htmlContents` and `recordContent`. The former is intended to be 
@@ -73,21 +77,21 @@ steps:
   Contents. Get the field's value from the record and set corresponding outlet's 
   value.
 
-    public var htmlContent: String? {
-        get {
-            return nil
+        public var htmlContent: String? {
+            get {
+                return nil
+            }
+            set {
+                // not used for structured Web Contents
+            }
         }
-        set {
-            // not used for structured Web Contents
-        }
-    }
 
-    public var recordContent: DDLRecord? {
-        didSet {
-            // set the outlets with record's values
-            set.myOutlet.myProperty = recordContent?["my_field_name"]?.currentValueAsLabel
+        public var recordContent: DDLRecord? {
+            didSet {
+                // set the outlets with record's values
+                set.myOutlet.myProperty = recordContent?["my_field_name"]?.currentValueAsLabel
+            }
         }
-    }
 
 ## Displaying a List of Web Content Articles
 
@@ -106,9 +110,11 @@ Web Content List Screenlet lets you retrieve and display a list of web content
 articles from a web content folder. Follow these steps to use the Screenlet:
 
 - Insert Web Content List Screenlet in your View Controller. 
+
 - Configure the *Group Id* and *Folder Id* properties in Interface Builder. The 
   folder ID is the ID of the web content folder you want to display articles 
   from. To use the root folder, use `0` for the Folder Id. 
+
 - To receive events related to the list, conform 
   `WebContentListScreenletDelegate`. The events contain the `WebContent` 
   objects. 
@@ -130,6 +136,7 @@ doing this:
   of `Asset`, you can cast the `Asset` objects to `WebContent`. Each 
   `WebContent` object has the `html`, `structure`, or `structuredRecord` 
   properties. 
+
 - To render Asset List Screenlet with `WebContent` objects, you must create your 
   own theme. Create a class in your theme that extends `AssetListView_default`, 
   and override the `doFillLoadedCell` method. In this method, cast the `object` 
