@@ -1,4 +1,4 @@
-# Overriding Core JSPs
+# Overriding Core JSPs [](id=overriding-core-jsps)
 
 Not to beat a dead horse, but Liferay is modularized to a great extent, so most
 of the JSPs you might want to override are no longer in Liferay's core. However, there
@@ -56,7 +56,7 @@ this folder of your module:
 
     my-module/src/META-INF/custom_jsps/html/common/themes/bottom-ext.jsp
 
-## Implement a Custom JSP Bag
+## Implement a Custom JSP Bag [](id=implement-a-custom-jsp-bag)
 
 Create a class that implements `CustomJspBag`. The overall goal is to make sure
 that Liferay (specifically `CustomJspBagRegistryUtil`) loads the JSPs from your
@@ -109,7 +109,7 @@ JSP paths. The `getResource` method returns one specific resource by its name
 For an example of a full class that provides a working implementation of a
 custom JSP bag, refer to the [blade.corejsphook BLADE project](https://github.com/liferay/liferay-blade-samples/blob/master/liferay-gradle/blade.corejsphook/src/main/java/com/liferay/blade/samples/corejsphook/BladeCustomJspBag.java).
 
-## Register the Custom JSP Bag
+## Register the Custom JSP Bag [](id=register-the-custom-jsp-bag)
 
 Register the custom JSP bag implementation from your module in the OSGi runtime
 with three properties:
@@ -126,7 +126,7 @@ a separate custom JSP bag implementation and gives theirs a ranking of `101`,
 you're out of luck. Theirs will take precedence. Logically then, you should use
 `102`.
 
-## Extend a JSP
+## Extend a JSP [](id=extend-a-jsp)
 
 If you want to add something to a core JSP, see if it has an empty `-ext.jsp`
 and override that instead of the whole JSP. It'll keep things simpler and more
@@ -145,7 +145,7 @@ risk that your override will break due to the nature of this implementation, and
 core functionality in Liferay can go down with it. If the JSP you want to
 override is in another module, refer to the article on [overriding JSPs from a module](develop/tutorials/-/knowledge_base/7-0/overriding-module-jsps).
 
-## Site Scoped JSP Customization
+## Site Scoped JSP Customization [](id=site-scoped-jsp-customization)
 
 In Liferay 6.2, you could use [Application Adapters](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters) to scope your core JSP
 customizations to a specific site. Since the majority of JSPs were moved into

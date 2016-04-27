@@ -1,4 +1,4 @@
-# Overriding JSPs from a Module
+# Overriding JSPs from a Module [](id=overriding-jsps-from-a-module)
 
 Liferay applications often contain JSPs. Sometimes you might need to override
 one of them. If you need to override the JSPs from a module deployed to the OSGi
@@ -9,7 +9,7 @@ runtime, you need a module that does two things:
 -  Provides a complete copy of the original JSP with any modifications you need
    to make.
 
-## Declaring a Fragment Host
+## Declaring a Fragment Host [](id=declaring-a-fragment-host)
 
 There are two players in this game: the
 fragment and the host. The fragment is a
@@ -42,7 +42,7 @@ break the functionality of the host. It's better to detach your fragment
 and leave it lonely in the OSGi runtime than it is to break the functionality of
 an entire application.
 
-## Provide the Overridden JSP
+## Provide the Overridden JSP [](id=provide-the-overridden-jsp)
 
 After declaring the host, copy the original JSP into your module. After that,
 make your modifications. Just make sure you mimic the directory structure of the
@@ -53,7 +53,7 @@ application's `login.jsp` for example, you'd put your own `login.jsp` in
 
 Now you can easily modify the JSPs of any application in Liferay.
 
-![Figure x: Liferay's applications are swimming in the OSGi runtime, waiting for your fragment modules to clean their teeth, so to speak.](../../images/sharks.jpg)
+![Figure 1: Liferay's applications are swimming in the OSGi runtime, waiting for your fragment modules to clean their teeth, so to speak.](../../images/sharks.jpg)
 <!--https://commons.wikimedia.org/wiki/File:Carcharhinus_perezi_bahamas_feeding.jpg-->
 
 To see a sample JSP-modifying fragment in action, look at the BLADE project
