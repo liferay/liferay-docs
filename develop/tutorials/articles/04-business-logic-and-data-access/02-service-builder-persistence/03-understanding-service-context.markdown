@@ -9,14 +9,14 @@ categorization, and more.
 
 In this section, you'll examine the Service Context fields, learn how to create
 and populate a Service Context, and learn to access Service Context data. First,
-let's look at the fields of the `ServiceContext` class.
+you'll look at the fields of the `ServiceContext` class.
 
 ## Service Context Fields
 
 The `ServiceContext` class has many fields. The best field descriptions are
 found in the Javadoc: 
 
-[http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ServiceContext.html](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/ServiceContext.html).
+[https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html).
 
 Here, you can review a categorical listing of the fields: 
 
@@ -29,6 +29,8 @@ Here, you can review a categorical listing of the fields:
 - Classification: 
     - `_assetCategoryIds`
     - `_assetTagNames`
+- Exception
+    - `_failOnPortalException`
 - IDs and Scope:
     - `_companyId`
     - `_portletPreferencesIds`
@@ -45,26 +47,33 @@ Here, you can review a categorical listing of the fields:
     - `_addGroupPermissions`
     - `_addGuestPermissions`
     - `_deriveDefaultPermissions`
-    - `_groupPermissions`
-    - `_guestPermissions`
+    - `_modelPermissions`
+- Request
+    - `_request`
 - Resources:
     - `_assetEntryVisible`
     - `_assetLinkEntryIds`
+    - `_assetPriority`
     - `_createDate`
+    - `_formDate`
     - `_indexingEnabled`
     - `_modifiedDate`
+    - `_timeZone`
 - URLs, paths and addresses:
     - `_currentURL`
     - `_layoutFullURL`
     - `_layoutURL`
     - `_pathMain`
+    - `_pathFriendlyURLPrivateGroup`
+    - `_pathFriendlyURLPrivateUser`
+    - `_pathFriendlyURLPublic`
     - `_portalURL`
     - `_remoteAddr`
     - `_remoteHost`
     - `_userDisplayURL`
 
-Are you wondering how the `ServiceContext` fields get populated? Good! We'll
-show you that next. 
+Are you wondering how the `ServiceContext` fields get populated? Good! You'll
+learn about that next. 
 
 ## Creating and Populating a Service Context
 
@@ -89,7 +98,7 @@ if you invoke the service from a servlet:
 
     ServiceContext serviceContext =
         ServiceContextFactory.getInstance(BlogsEntry.class.getName(), portletRequest);
-    
+
     ...
 
     BlogsEntryServiceUtil.addEntry(..., serviceContext);
@@ -128,7 +137,7 @@ object, it helps to see a simple JSON web service example in JavaScript:
         }
     );
 
-If you run this code, the test@liferay.com user (JSON object) is logged to the
+If you run this code, the *test@liferay.com* user (JSON object) is logged to the
 JavaScript console.
 
 The `Liferay.Service(...)` function takes three arguments:
@@ -149,12 +158,13 @@ services: click on *JavaScript Example* to see how to invoke the web service via
 JavaScript, click on *curl Example* to see how to invoke the web service via
 curl, or click on *URL example* to see how to invoke the web service via a URL.
 
-![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../images/jsonws-simple-example.png)
+![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../../images/jsonws-simple-example.png)
 
-To learn more about Liferay's JSON web services, please see the
-[JSON Web Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/json-web-services)
+To learn more about Liferay's JSON web services, see the
+[JSON Web Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/registering-json-web-services)
 tutorial.
 
+<!--
 For an example of how to create and populate a `ServiceContext` object in
 JavaScript and how to pass it as a parameter to a Liferay JSON web service
 invocation, please see the
@@ -213,7 +223,7 @@ add it to a page, and click on the *Create User* button. Then navigate to the
 Control Panel, click on *Users and Organizations*, edit the newly created user,
 click on *Categorization*, and confirm that the specified tag has been applied.
 
-![Figure 2: To test invoking a Liferay JSON web service, deploy the Sample JSONWS Portlet, add it to a page, click on *Create User*, and confirm that the tag *test* has been applied to the newly created user.](../../images/jsonws-simple-example.png)
+[Figure 2: To test invoking a Liferay JSON web service, deploy the Sample JSONWS Portlet, add it to a page, click on *Create User*, and confirm that the tag *test* has been applied to the newly created user.](../../images/jsonws-simple-example.png)
 
 **Important:** To invoke Liferay web services via JavaScript, your JavaScript
 context must include AlloyUI. In the Sample JSONWS Portlet, the JavaScript code
@@ -231,6 +241,9 @@ you can create an Alloy context manually. For example,
     AUI().use('aui-base', function(A){
         // Liferay service invocation here
     });
+
+-->
+<!-- No JSON Sample portlet available currently. -Cody -->
 
 Next, you'll learn how to access information from a `ServiceContext` object. 
 
@@ -343,8 +356,6 @@ Liferay application development.
 
 ## Related Topics
 
-[Creating Local Service Classes](/develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
+[Creating Local Services](/develop/tutorials/-/knowledge_base/7-0/creating-local-services)
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
-
-[Security and Permissions](/develop/tutorials/-/knowledge_base/6-2/security-and-permissions)
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
