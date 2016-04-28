@@ -1,171 +1,138 @@
-# Defining an Object-Relational Map with Service Builder [](id=defining-an-object-relational-map-with-service-builder)
+# Defining an Object-Relational Map with Service Builder
 
 In this tutorial, you'll learn how to define an object relational map for your
-application so that it can persist data. The example code in this tutorial, as
-well as the example code in the other Service Builder and Services tutorials,
-comes from the Event Listing project, which you can find on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/event-listing-portlet).
+application so that it can persist data. As an example, you'll examine an
+existing Liferay application that uses Service Builder.
 
-The Event Listing project is an example portlet project that an organization can
-use to schedule social events. The event-listing-portlet project allows
-administrators to manage and list these events. The project defines two
-entities, or model types, to represent an organization's events and the
-locations at which the events can take place. These entities are called *events*
-and *locations*. The event entity represents a social event that can be
-scheduled, while the location entity represents a location at which a social
-event can take place. Since an event must have a location, the event entity
-references a location entity as one of its attributes. 
+The Bookmarks application is an example portlet project that an organization can
+use to bookmark assets in Liferay. The application defines two entities, or
+model types, to represent an organization's bookmarks and their folders. These
+entities are called *bookmark entries* and *bookmark folders*. Since a bookmark
+must have a folder (even if it's a root folder), the entry entity references a
+folder entity as one of its attributes. 
 
-If you want to display entity data in a Liferay application, you're free to
-create any kind of user interface that you can imagine. The following image
-shows a simple example. To learn how to create simple user interfaces for
-Liferay Service Builder applications, please see the
-[Implementing a UI with Liferay Taglibs](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
-learning path.
-
-![Figure 1: The Event Listing and Location Listing portlets let you add and modify social events and locations. The portlets rely on the event and location entities and the service infrastructure that Liferay Service Builder builds around them.](../../images/service-builder-view-events.png)
-
-+$$$
-
-**Note:** If you're looking for a fully-functional portlet application that can
-manage events, please use Liferay's Calendar portlet instead. The example
-described in this section is only intended to demonstrate how to use Service
-Builder. The Calendar portlet provides many more features than the simple
-example application described here. For information about the Calendar portlet,
-please refer to the
-[Managing Events and Calendar Resources with Liferay's Calendar Portlet](discover/portal/-/knowledge_base/6-2/managing-events-and-calendar-resources-with-liferays-c) section.
-
-$$$
-
-As with any portlet project, the event-listing-portlet project's Java sources
-reside in the `docroot/WEB-INF/src` folder. Notice the
+<!-- As with any portlet project, the event-listing-portlet project's Java
+sources reside in the `docroot/WEB-INF/src` folder. Notice the
 `EventListingPortlet.java` and `LocationListingPortlet.java` files in the
-`com.liferay.docs.eventlisting` package. These portlet classes extend
-Liferay's `MVCPortlet` class. They act as the controllers in the MVC pattern.
-These classes contain the business logic that invokes the Service Builder
-generated event and location services that you'll learn how to create in this
-section. The application's view layer is implemented in the JSPs in the
-`docroot/html` folder.
+`com.liferay.docs.eventlisting` package. These portlet classes extend Liferay's
+`MVCPortlet` class. They act as the controllers in the MVC pattern. These
+classes contain the business logic that invokes the Service Builder generated
+event and location services that you'll learn how to create in this section. The
+application's view layer is implemented in the JSPs in the `docroot/html`
+folder. -->
 
 The first step in using Service Builder is to define your model classes and
-their attributes in a `service.xml` file in your project's `docroot/WEB-INF`
-folder. In Service Builder terminology, your model classes (events and
-locations) are called entities. The requirements for the event and location
-entities are fairly simple. Events should have the following attributes: 
+their attributes in a `service.xml` file. This file's location typically resides
+in the root folder of the `*-service` module. In Service Builder terminology,
+your model classes are called entities. For example, the Bookmarks application
+has two entities: `BookmarksEntry` and `BookmarksFolder`. The requirements for
+each of these entities are defined in the `bookmarks-service` module's
+[service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
+listed in the `<column />` elements. You can learn how to generate a modular
+application using service builder in the
+[Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)
+tutorial. This tutorial assumes you've assembled your application's modules
+similarly to the linked tutorial above.
 
-**Event Attributes** (Example)
-
-Attribute | Attribute Type | Attribute Description
-:------------: | :------------: | :-------------------
-`name` | String | The name of the event
-`description` | String | A description of the event
-`date` | Date | The date and time the event takes place
-`locationId` | long | An event takes place at a location and this location ID specifies the event's location
-
-Locations should have the following attributes: 
-
-**Location Attributes** (Example)
-
-Attribute | Attribute Type | Attribute Description
-:------------: | :------------: | :-------------------
-`name` | String | The name of the location
-`description` | String | A description of the location
-`streetAddress` | String | The street address of the location
-`city` | String | The city of the location
-`stateOrProvince` | String | The state or province of the location
-`country` | String | The country of the location
-
-Service Builder reads a single file called `service.xml` that's used for
-defining entities. Once you create the file, you can then define your entities.
+Once Service Builder reads the `service.xml` file, you can define your entities.
 Liferay IDE makes it very easy to define entities in your application's
-`service.xml` file. To define a custom entity, follow these steps: 
+`service.xml` file. To define a custom entity, follow these steps:
 
-1.  Create the `service.xml` file in your project's `docroot/WEB-INF` folder, if
-    one does not already exist there. 
+1. Create the `service.xml` file in your project's `*-service` module. It
+   resides in the root folder of that module, if one does not already exist
+   there.
 
-2.  Define global information for the service.
+2. Define global information for the service.
 
-3.  Define service entities. 
+3. Define service entities. 
 
-4.  Define the columns (attributes) for each service entity.
+4. Define the columns (attributes) for each service entity.
 
-5.  Define relationships between entities.
+5. Define relationships between entities.
 
-6.  Define a default order for the entity instances to be retrieved from the
-    database. 
+6. Define a default order for the entity instances to be retrieved from the
+   database. 
 
-7.  Define finder methods that retrieve objects from the database based on
-    specified parameters.
+7. Define finder methods that retrieve objects from the database based on
+   specified parameters.
 
-Let's examine these steps in detail, starting with creating a `service.xml`
-file.
+You'll examine these steps in detail next, starting with creating a
+`service.xml` file.
 
-## Creating the `service.xml` File [](id=creating-the-service-xml-file)
+## Step 1: Creating the service.xml File
 
 To define a service for your portlet project, you must create a `service.xml`
 file. The DTD (Document Type Declaration) file
-[http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd](http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd)
+[http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd](http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd)
 specifies the format and requirements of the XML to use. You can create your
 `service.xml` file manually, following the DTD, or you can use Liferay IDE.
 Liferay IDE helps you build the `service.xml` file piece-by-piece, taking the
 guesswork out of creating XML that adheres to the DTD.
 
-If a default `service.xml` file already exists in your `docroot/WEB-INF/src`
-folder, check to see if it has an `<entity />` element named "Foo". If it has
+If a default `service.xml` file already exists in your `*-service` module
+folder, check to see if it has an `<entity />` element named *Foo*. If it has
 the Foo entity, remove the entire `<entity name="Foo" ...> ... </entity>`
 element. The Liferay IDE project wizard creates the Foo entity as an example. It
 has no practical use for you. 
 
+<!-- 
 If you don't already have a `service.xml` file, it's easy to create one using
 Liferay IDE. Simply select your `event-listing-portlet` project in the Package
 Explorer and then select *File* &rarr; *New* &rarr; *Liferay Service Builder*.
 Liferay IDE creates a `service.xml` file in your `docroot/WEB-INF/src` folder
-and displays the file in *Overview* mode.
+and displays the file in *Overview* mode. -->
 
-Liferay IDE also provides a Diagram mode and a Source mode to give you
-different perspectives of the service information in your `service.xml` file.
-Diagram mode is helpful for creating and visualizing relationships between
-service entities. Source mode brings up the `service.xml` file's raw XML content
-in the editor. You can switch between these modes as you wish.
+<!-- The above paragraph is not accurate at this time because IDE does not
+currently support the Liferay Service Builder functionality. This tutorial will
+use the working parts of IDE's Service Builder feature, and will do other parts
+a different way. Full support for the Service Builder functionality in IDE is
+expected for IDE 3.1. -Cody --> 
+
+If you don't already have a `service.xml` file, create one in your `*-service`
+module. Once it's created, open it. Liferay IDE provides a Diagram mode and a
+Source mode to give you different perspectives of the service information in
+your `service.xml` file. Diagram mode is helpful for creating and visualizing
+relationships between service entities. Source mode brings up the `service.xml`
+file's raw XML content in the editor. You can switch between these modes as you
+wish.
 
 Next, you can start filling out the global information for your service. 
 
-## Defining Global Service Information [](id=defining-global-service-information)
+## Step 2: Defining Global Service Information
 
 A service's global information applies to all of its entities, so it's a good
 place to start. In Liferay IDE, select the *Service Builder* node in the upper
 left corner of the Overview mode of your `service.xml` file. The main section of
 the view now shows the Service Builder form in which you can enter your
 service's global information. The fields include the service's package path,
-author, and namespace options. Here are the values used for the event-listing
-project's service:
+author, and namespace options.
 
-- **Package path:** *com.liferay.docs.eventlisting*
-- **Auto namespace tables:** *no*
-- **Author:** [your name]
-- **Namespace:** *Event*
+![Figure 1: This is the Service Builder form from a fictitious Event Listing application's `service.xml`.](../../../images/service-builder-main-form.png)
 
-The *package path* specifies the package in which the service and persistence
-classes are generated. The package path defined above ensures that the
-service classes are generated in the `com.liferay.docs.eventlisting`
-package under the `docroot/WEB-INF/service` folder. The persistence classes are
-generated in a package of that name under the `docroot/WEB-INF/src` folder. The
-complete file paths for the service and persistence classes are 
-`docroot/WEB-INF/service/com/liferay/docs/eventlisting` and
-`docroot/WEB-INF/src/com/liferay/docs/eventlisting`, respectively. Please
-refer to the
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+The package path specifies the package in which the service and persistence
+classes are generated. The package path defined above ensures that the service
+classes are generated in the `com.liferay.docs.eventlisting` package in the
+`*-api` module. The persistence classes are generated in a package of the same
+name in the `*-service` module. For examples, you can look in the Bookmarks
+application's
+[bookmarks-api](https://github.com/liferay/liferay-portal/tree/master/modules/apps/collaboration/bookmarks/bookmarks-api)
+and
+[bookmarks-service](https://github.com/liferay/liferay-portal/tree/master/modules/apps/collaboration/bookmarks/bookmarks-service)
+modules to see an example of how these are automatically generated for you.
+Refer to the
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
 tutorial for a description of the contents of these packages. 
 
-Service Builder uses the service *namespace* in naming the database tables it
-generates for the service. Enter *Event* as the namespace for your example
-service. Service Builder uses the namespace in the following SQL scripts it
-generates in your `docroot/WEB-INF/sql` folder: 
+Service Builder uses the service namespace in naming the database tables it
+generates for the service. For example, *Event* could serve as the namespace for
+an Event Listing portlet service. Service Builder uses the namespace in the
+following SQL scripts it generates in your `src/main/resources/sql` folder:
 
 - `indexes.sql`
 - `sequences.sql`
 - `tables.sql`
 
-Liferay Portal uses these scripts to create database tables for all the entities
+@product@ uses these scripts to create database tables for all the entities
 defined in the `service.xml` file. Service Builder prepends the namespace
 to the database table names. Since the namespace value above is `Event`, the
 names of the database tables created for the entities start with `Event_` as
@@ -180,57 +147,56 @@ with the specified name to all of the generated Java classes and interfaces.
 Save your `service.xml` file to preserve the information you added. Next, you'll
 add entities for your service's events and locations. 
 
-## Defining Service Entities [](id=defining-service-entities)
+## Step 3:  Defining Service Entities
 
 Entities are the heart and soul of a service. Entities represent the map between
 the model objects in Java and the fields and tables in your database. Once your
 entities are defined, Service Builder handles the mapping automatically, giving
-you a facility for taking Java objects and persisting them. For the Event
-Listing example, two entities were created--one for events and one for
-locations. 
+you a facility for taking Java objects and persisting them. For the Bookmarks
+application, two entities are created according to its
+[service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
+--one for bookmark entries and one for bookmark folders.
 
-Here's a summary of the information that was used for the Event entity:
+Here's a summary of the information used for the BookmarksEntry entity:
 
-- **Name:** *Event*
+- **Name:** *BookmarksEntry*
 - **Local service:** *yes*
 - **Remote service:** *yes* 
 
-And here's what was used for the Location entity:
+And here's what was used for the BookmarksFolder entity:
 
-- **Name:** *Location*
+- **Name:** *BookmarksFolder*
 - **Local service:** *yes*
 - **Remote service:** *yes* 
 
 To create your entities using Liferay IDE, select the *Entities* node under the
 Service Builder node in the outline on the left side of the `service.xml` editor
 in Overview mode. In the main part of the view, notice that the Entities table
-is empty. Create an entity by clicking on the *Add Entity* icon (a green plus
-sign) to the right of the table. Enter *Event* for your entity's name and select
-both the *Local Service* and the *Remote Service* options. Create a second
-entity named *Location* and select the *Local Service* and the *Remote Service*
-options for it too. 
+is empty. Create an entity by clicking on the *Add Entity* icon
+(![Add](../../../images/icon-add-ide.png)) to the right of the table. Enter your
+entity's name and if you'd like to generate local and remote services for that
+entity. Add as many entities as you need.
 
 ![Figure 2: Adding service entities is easy with Liferay IDE's *Overview* mode of your `service.xml` file.](../../images/service-add-entity.png)
 
 An entity's name is used to name the database table for persisting instances
 of the entity. The actual name of the database table is prefixed with the
-namespace; the Event Listing example creates one database table named
-`Event_Event` and another named `Event_Location`. 
+namespace; the Bookmarks example creates one database table named
+`Bookmarks_BookmarksEntry` and another named `Bookmarks_BookmarksFolder`. 
 
 Setting the *local service* attribute to `true` instructs Service Builder to
 generate local interfaces for the entity's services. The default value for local
 service is `false`. Local services can only be invoked from the Liferay server
-on which they're deployed. The Event Listing portlet will be deployed to your
-Liferay server. So the service will be local from your Liferay server's point of
-view.
+on which they're deployed. Therefore, if your application will be deployed to
+Liferay, the service will be local from your Liferay server's point of view.
 
 Setting the *remote service* attribute to `true` instructs Service Builder to
 generate remote interfaces for the service. The default value for remote service
-is `true`. You could build a fully-functional event listing application without
-generating remote services. In that case, you could set local service to `true`
-and remote service to `false` for both of your entities. If, however, you want
-to enable remote access to your application's services, you should set both
-local service and remote service to `true`.
+is `true`. You could build a fully-functional application without generating
+remote services. In that case, you could set local service to `true` and remote
+service to `false` for your entities. If, however, you want to enable remote
+access to your application's services, you should set both local service and
+remote service to `true`.
 
 +$$$
 
@@ -244,18 +210,18 @@ used feature of Liferay.
 
 $$$
 
-Now that you've seen how to create the Event and Location entities, you'll learn
+Now that you've seen how to create your application's entities, you'll learn
 how to describe their attributes using entity *columns*. 
 
-## Defining the Columns (Attributes) for Each Service Entity [](id=defining-the-columns-attributes-for-each-service-entity)
+## Step 4: Defining the Columns (Attributes) for Each Service Entity
 
 Each entity is described by its columns, which represent an entity's attributes.
 These attributes map on the one side to fields in a table and on the other side
-to attributes of a Java object. To add attributes for the Event entity, you
-need to drill down to its columns in the Overview mode outline of the
-`service.xml` file. From the outline, expand the *Entities* node and expand the
-new *Event* entity node. Then select the *Columns* node. Liferay IDE displays a
-table of the Event entity's columns. 
+to attributes of a Java object. To add attributes for your entity, you need to
+drill down to its columns in the Overview mode outline of the `service.xml`
+file. From the outline, expand the *Entities* node and expand an entity node.
+Then select the *Columns* node. Liferay IDE displays a table of the entity's
+columns. 
 
 Service Builder creates a database field for each column you add to the
 `service.xml` file. It maps a database field type appropriate to the Java type
@@ -275,36 +241,12 @@ key for an entity. In this case, the combination of columns makes up a compound
 primary key for the entity.
 
 Similar to the way you used the form table for adding entities, add attribute
-columns for each of your entities. Here are the attributes used for the event
-and location example entities:
-
-**Event attribute columns** (Example)
-
-  Name        | Type   | Primary
-:-----------: | :----: | :------:
-`eventId`     | long   | yes
-`name`        | String | no
-`description` | String | no
-`date`        | Date   | no
-
-**Location attribute columns** (Example)
-
-  Name            | Type   | Primary
-:---------------: | :----: | :------:
-`locationId`      | long   | yes
-`name`            | String | no
-`description`     | String | no
-`streetAddress  ` | String | no
-`city`            | String | no
-`stateOrProvince` | String | no
-`country`         | String | no
-
-Create each attribute by clicking on the *add* icon. Then fill in the name of
-the attribute, select its type, and specify whether it is a primary key for the
+columns for each of your entities. Create each attribute by clicking on the Add
+icon (![Add](../../../images/icon-add-ide.png)). Then fill in the name of the
+attribute, select its type, and specify whether it is a primary key for the
 entity. While your cursor is in a column's *Type* field, an option icon appears.
 Click this icon to select the appropriate type for the column. Create a column
-for each attribute of your Event entity. Repeat the steps to create columns for
-each attribute of your Location entity. 
+for each attribute of your entity or entities.
 
 In addition to columns for your entity's primary key and attributes, it's
 recommended to add columns for portal instance ID and site ID. They allow your
@@ -312,7 +254,7 @@ portlet to support the multi-tenancy features of Liferay, so that each portal
 instance and each site in a portal instance can have independent sets of portlet
 data. To hold the site's ID, add a column called `groupId` of type `long`. To
 hold the portal instance's ID, add a column called `companyId` of type `long`.
-Add both of these columns to your Event and Location entities.
+If you'd like to add these columns to your entities, follow the table below.
 
 **Portal and site scope columns**
 
@@ -330,10 +272,10 @@ add a column called `userId` of type `long`.
 :------: | :----: | :------:
 `userId` | long   | no
 
-Lastly, add columns to help audit your entities. Add a column named `createDate`
-of type `Date` to note the date an entity instance was created. And add a column
-named `modifiedDate` of type `Date` to track the last time an entity instance
-was modified.
+Lastly, you can add columns to help audit your entities. For example, you could
+create a column named `createDate` of type `Date` to note the date an entity
+instance was created. And add a column named `modifiedDate` of type `Date` to
+track the last time an entity instance was modified.
 
 **Audit columns**
 
@@ -345,63 +287,63 @@ was modified.
 
 Great! Your entities are set with the columns that not only represent their
 attributes, but also support multi-tenancy and entity auditing. Next, you'll
-specify the relationship between the Event entity and the Location entity. 
+learn how to specify the relationship service entities. 
 
-## Defining Relationships Between Service Entities [](id=defining-relationships-between-service-entities)
+## Step 5: Defining Relationships Between Service Entities
 
 Often you'll want to reference one type of entity in the context of another
-entity. That is, you'll want to *relate* the entities. The Event Listing project
-demonstrates entity relationships.
+entity. That is, you'll want to *relate* the entities. Liferay's Bookmarks
+application defines a relationship between an entry and its folder.
 
-As mentioned earlier, each event must have a location. Therefore, each Event
-entity must relate to a Location entity. Liferay IDE's Diagram mode for
-`service.xml` makes relating entities easy. First, select Diagram mode for the
-`service.xml` file. Then select the *Relationship* option under *Connections* in
-the palette on the right side of the view. This relationship tool helps you draw
-relationships between entities in the diagram. Click the *Event* entity and move
-your cursor over the Location entity. Liferay IDE draws a dashed line from the
-Event entity to the cursor. Click the *Location* entity to complete drawing the
-relationship. Liferay IDE turns the dashed line into a solid line, with an arrow
-pointing to the Location entity. Save the `service.xml` file. 
+As mentioned earlier, each bookmark must have a folder. Therefore, each
+`BookmarksEntry` entity must relate to a `BookmarksFolder` entity. Liferay IDE's
+Diagram mode for `service.xml` makes relating entities easy. First, select
+Diagram mode for the `service.xml` file. Then select the *Relationship* option
+under *Connections* in the palette on the right side of the view. This
+relationship tool helps you draw relationships between entities in the diagram.
+Click your first entity and move your cursor over to the entity you'd like to
+relate it with. Liferay IDE draws a dashed line from your selected entity to the
+cursor. Click the second entity to complete drawing the relationship. Liferay
+IDE turns the dashed line into a solid line, with an arrow pointing to the
+second entity. Save the `service.xml` file. 
 
 Congratulations! You've related two entities. Their relationship should show in
 Diagram mode and look similar to that of the figure below. 
 
-![Figure 3: Relating entities is a snap in Liferay IDE's *Diagram* mode for `service.xml`.](../../images/service-builder-relate-entities.png)
+![Figure 3: Relating entities is a snap in Liferay IDE's *Diagram* mode for `service.xml`.](../../../images/service-builder-relate-entities.png)
 
 Switch to *Source* mode in the editor for your `service.xml` file and note that
-Liferay IDE created a column element in the Event entity to hold the ID of the
-Location entity instance reference:
+Liferay IDE created a column element in the first selected entity to hold the ID
+of the corresponding entity instance reference. For example:
 
-     <column name="locationId" type="long"></column>
+    <column name="folderId" type="long" />
 
 Now that your entity columns are in place, you can specify the default order in
 which the entity instances are retrieved from the database. 
 
-## Defining Ordering of Service Entity Instances [](id=defining-ordering-of-service-entity-instances)
+## Step 6: Defining Ordering of Service Entity Instances
 
 Often, you want to retrieve multiple instances of a given entity and list them
 in a particular order. Liferay lets you specify the default order of the
 entities in your `service.xml` file. 
 
-Suppose you want to return Event entities in order by date, earliest to latest,
-and you want to return Location entities alphabetically by name. It's easy to
-specify these default orderings using Liferay IDE. Switch back to *Overview*
-mode in the editor for your `service.xml` file. Then select the *Order* node
-under the Event entity node in the outline on the left side of the view. The IDE
-displays a form for ordering the Event entity. Check the *Specify ordering*
-checkbox to show the form for specifying the ordering. Create an order column by
-clicking the *add icon* (a green plus sign) to the right of the table. Enter
-*date* for the column name to use in ordering the Event entity. Click the
-*Browse icon* to the right of the *By* field and choose the *asc* option. This
-orders the Event entity by ascending date. To specify ordering for Location
-entity instances, follow similar steps but specify *name* as the column and
-*asc* as the *select by* value. 
+Suppose you want to return `BookmarksEntry` entities alphabetically by name.
+It's easy to specify these default orderings using Liferay IDE. Switch back to
+*Overview* mode in the editor for your `service.xml` file. Then select the
+*Order* node under the entity node in the outline on the left side of the
+view. The IDE displays a form for ordering the chosen entity. Check the *Specify
+ordering* checkbox to show the form for specifying the ordering. Create an order
+column by clicking the *Add* icon (![Add](../../../images/icon-add-ide.png)) to
+the right of the table. Enter the column name (e.g., *name*, *date*, etc.) to
+use in ordering the entity. Click the *Browse icon*
+(![Browse](../../../images/icon-browse-ide.png)) to the right of the *By* field
+and choose the *asc* or *desc* option. This orders the entity in ascending or
+descending order. 
 
-The last thing to do is to define the finder methods for retrieving entity
-instances from the database. 
+Now that you know how to order your service entities, the last thing to do is to
+define the finder methods for retrieving entity instances from the database. 
 
-## Defining Service Entity Finder Methods [](id=defining-service-entity-finder-methods)
+## Step 7: Defining Service Entity Finder Methods
 
 Finder methods retrieve entity objects from the database based on specified
 parameters. You'll probably want to create at least one finder method for each
@@ -409,23 +351,25 @@ entity you create in your services. Service Builder generates several methods
 based on each finder you create for an entity. It creates methods to fetch,
 find, remove, and count entity instances based on the finder's parameters. 
 
-For the Event Listing project, it's important to be able to find Event and
-Location entities per site. You can specify these finders using Liferay IDE's
-Overview mode of `service.xml`. Select the *Finders* node under the Event entity
-node in the outline on the left side of the screen. The IDE displays an empty
-*Finders* table in the main part of the view. Create a new finder by clicking
-the *add icon* (a green plus sign) to the right of the table. Name the finder
-*GroupId* and enter *Collection* as its return type. Use the Java camel-case
-naming convention when naming finders since the finder's name is used to name
-the methods that Service Builder creates. The IDE creates a new *GroupId* node
-under the *Finders* node in the outline. Next, you'll learn how to specify the
-finder column for this group ID node. 
+For many applications, it's important to be able to find its entities per site.
+You can specify these finders using Liferay IDE's Overview mode of
+`service.xml`. Select the *Finders* node under the entity node in the Outline on
+the left side of the screen. The IDE displays an empty *Finders* table in the
+main part of the view. Create a new finder by clicking the *Add* icon
+(![Add](../../../images/icon-add-ide.png)) to the right of the table. Give your
+finder a name and return type. Use the Java
+camel-case naming convention when naming finders since the finder's name is used
+to name the methods that Service Builder creates. The IDE creates a new
+finder sub-node under the *Finders* node in the outline. Next, you'll learn how
+to specify the finder column for this node. 
 
-Under the new *GroupId* node, the IDE created a *Finder Columns* node. Select
-the *Finder Columns* node to specify the columns for your finder's parameters.
-Create a new finder column by clicking the *add icon* (a green plus sign) and
-specifying *groupId* as the column's name. Keep in mind that you can specify
-multiple parameters (columns) for a finder.
+Under the new finder node, the IDE created a *Finder Columns* node. Select the
+*Finder Columns* node to specify the columns for your finder's parameters.
+Create a new finder column by clicking the *Add* icon and specifying the
+column's name. Keep in mind that you can specify multiple parameters (columns)
+for a finder.
+
+![Figure 4: Creating Finder entities is easy with Liferay IDE.](../../../images/service-builder-finders.png)
 
 If you're creating site-scoped entities (entities whose data should be unique to
 each site), you should follow the steps described above to create finders by
@@ -433,119 +377,29 @@ each site), you should follow the steps described above to create finders by
 after editing it to preserve the finders you define. 
 
 When you run Service Builder, it generates finder-related methods
-(`fetchByGroupId`, `findByGroupId`, `removeByGroupId`, `countByGroupId`) for the
+(e.g., `fetchByGroupId`, `findByGroupId`, `removeByGroupId`, `countByGroupId`) for the
 your entities in the `*Persistence` and `*PersistenceImpl` classes.
 The first of these classes is the interface; the second is its implementation.
-The Event and Location entity's finder methods are generated in the
-`-Persistence` classes in the
-`/docroot/WEB-INF/service/com/liferay/docs/eventlisting/service/persistence`
+For example, Liferay's Bookmarks application generates its entity finder methods
+in the
+`-Persistence` classes found in the
+`/bookmarks-api/src/main/java/com/liferay/bookmarks/service/persistence`
 folder and the `-PersistenceImpl` classes in the
-`/docroot/WEB-INF/src/com/liferay/docs/eventlisting/service/persistence`
+`/bookmarks-service/src/main/java/com/liferay/bookmarks/service/persistence/impl`
 folder.
 
 Now you know to configure Service Builder to create finder methods for your
-entity. Terrific! For your convenience, you can view the complete `service.xml`
-content of the Event Listing project below. We've added some comments to
-highlight the service's various elements. You can refer to the Event Listing
-project's `service.xml` file's when you're creating your own: 
+entity. Terrific!
 
-        <?xml version="1.0" encoding="UTF-8"?>
-        <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
-        "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
-        <service-builder package-path="com.liferay/docs.eventlisting">
-            <author>Joe Bloggs</author>
-            <namespace>Event</namespace>
-
-            <entity name="Event" local-service="true" remote-service="true">
-
-                <!-- PK fields -->
-
-                <column name="eventId" type="long" primary="true" />
-
-                <!-- Audit fields -->
-
-                <column name="companyId" type="long" />
-                <column name="groupId" type="long" />
-                <column name="userId" type="long" />
-                <column name="createDate" type="Date" />
-                <column name="modifiedDate" type="Date" />
-
-                <!-- Other fields -->
-
-                <column name="name" type="String" />
-                <column name="description" type="String" />
-                <column name="date" type="Date" />
-                <column name="locationId" type="long" />
-
-                <!-- Order -->
-
-                <order by="asc">
-                        <order-column name="date" />
-                </order>
-
-                <!-- Finder methods -->
-
-                <finder name="GroupId" return-type="Collection">
-                        <finder-column name="groupId" />
-                </finder>
-            </entity>
-
-            <entity name="Location" local-service="true" remote-service="true">
-
-                <!-- PK fields -->
-
-                <column name="locationId" type="long" primary="true" />
-
-                <!-- Audit fields -->
-
-                <column name="companyId" type="long" />
-                <column name="groupId" type="long" />
-                <column name="userId" type="long" />
-                <column name="createDate" type="Date" />
-                <column name="modifiedDate" type="Date" />
-
-                <!-- Other fields -->
-
-                <column name="name" type="String" />
-                <column name="description" type="String" />
-                <column name="streetAddress" type="String" />
-                <column name="city" type="String" />
-                <column name="stateOrProvince" type="String" />
-                <column name="country" type="String" />
-                
-                <!-- Order -->
-
-                <order by="asc">
-                        <order-column name="name" />
-                </order>
-
-                <!-- Finder methods -->
-
-                <finder name="GroupId" return-type="Collection">
-                        <finder-column name="groupId" />
-                </finder>
-            </entity>
-        </service-builder>
-
-<!--
-We should include the entity element's uuid attribute here and in the SDK
-project. See that the sample-service-builder-portlet-master project includes it.
-Also, we should describe the uuid and the other audit fields - Jim
--->
-
-Remember that you can view the complete Event Listing portlet project on Github
-here: [https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/event-listing-portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/event-listing-portlet).
-
-Now that you've specified the service for the Event Listing example project,
-you're ready to *build* the service by running Service Builder. To learn how to
-run Service Builder and to learn about the code that Service Builder generates,
-please refer to the
-=======
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+Now that you've specified the service for your project, you're ready to *build*
+the service by running Service Builder. To learn how to run Service Builder and
+to learn about the code that Service Builder generates, please refer to the
+[Running Service Builder and Understanding the Generated
+Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
 tutorial. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)

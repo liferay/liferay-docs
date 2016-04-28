@@ -1,4 +1,4 @@
-# Understanding ServiceContext [](id=servicecontext)
+# Understanding ServiceContext
 
 The `ServiceContext` class is a parameter class used for passing contextual
 information for a service. Using a parameter class lets you consolidate many
@@ -11,7 +11,7 @@ In this section, you'll examine the Service Context fields, learn how to create
 and populate a Service Context, and learn to access Service Context data. First,
 let's look at the fields of the `ServiceContext` class.
 
-## Service Context Fields [](id=service-context-fields)
+## Service Context Fields
 
 The `ServiceContext` class has many fields. The best field descriptions are
 found in the Javadoc: 
@@ -66,7 +66,7 @@ Here, you can review a categorical listing of the fields:
 Are you wondering how the `ServiceContext` fields get populated? Good! We'll
 show you that next. 
 
-## Creating and Populating a Service Context [](id=creating-and-populating-a-service-context)
+## Creating and Populating a Service Context
 
 Although all the `ServiceContext` class fields are optional, services that store
 any kind of scopeable data need to at least specify the scope group ID. Here's a
@@ -105,7 +105,7 @@ portletRequest)`, you can assure that your Expando bridge attributes are set on
 the `ServiceContext`. Expandos are the back-end implementation of custom fields
 for entities in Liferay.
 
-## Creating and Populating a Service Context in JavaScript [](id=creating-and-populating-a-service-context-in-javascript)
+## Creating and Populating a Service Context in JavaScript
 
 Liferay's API can be invoked in languages other than Java, such as Beanshell,
 Groovy, JavaScript, Python, and Ruby. Some methods of Liferay's API require or
@@ -234,7 +234,7 @@ you can create an Alloy context manually. For example,
 
 Next, you'll learn how to access information from a `ServiceContext` object. 
 
-## Accessing Service Context Data [](id=accessing-service-context-data)
+## Accessing Service Context Data
 
 In this section, you'll find code snippets from
 `BlogsEntryLocalServiceImpl.addEntry(..., ServiceContext)`. This code
@@ -341,7 +341,7 @@ information for your services. Understanding how `ServiceContext` is used in
 Liferay helps you determine when and how to use `ServiceContext` in your own
 Liferay application development.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Creating Local Service Classes](/develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
 
