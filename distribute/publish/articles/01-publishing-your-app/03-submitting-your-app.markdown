@@ -124,20 +124,12 @@ for uploading your app's files.
 
 ## Upload Your App's Plugin Files [](id=upload-your-apps-plugin-files)
 
+![Figure 3: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.gif)
+
 On this screen, you must specify the version of your app and upload its plugin
-files. The article
-[Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution)
-guided you in planning your app's versioning scheme. And article
-[Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app)
-helped you determine your app's plugin files to upload.  
+files in context to the uploader box's Liferay Version. The article [Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution) guided you in planning your app's versioning scheme. And article [Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app) helped you determine your app's plugin files to upload.  
 
-Upload the different sets of plugin files (variations) to support the different
-Liferay versions you're targeting. You must upload at least one plugin file
-before advancing beyond this screen, so click the *Browse* button and select the
-plugins that comprise your app. Each time you add plugins to the list, they
-begin uploading automatically and their compatibility information is scanned. 
-
-![Figure 3: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
+Click on the *Browse* button and select the plugins that comprise your app to start uploading. Each time you add plugins to the list, they begin uploading automatically and their compatibility information is scanned. You must upload at least one plugin file before advancing beyond this screen
 
 As a more complicated example, consider an app that consists of a hook and a
 portlet. The portlet works across all Liferay releases, but the hook is built

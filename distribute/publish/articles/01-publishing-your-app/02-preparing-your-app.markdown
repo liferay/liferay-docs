@@ -26,7 +26,7 @@ At this point in preparing to publish your app, you've developed your app and,
 if you're preparing a paid app, you've specified a portal access control list [\(PACL\)](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl),
 so that your app can be deployed on Liferay instances that have their [Plugin Security Manager](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl#enabling-the-security-manager)
 running. But before you start the formal publishing process, you must prepare
-your app's files and app metadata. 
+your app's files and app metadata.
 
 ## Marketplace App Metadata Guidelines [](id=marketplace-app-metadata-guidelines)
 
@@ -112,7 +112,7 @@ metadata requirements and produce an appealing advertisement for your app.
 						Management Console," or "Liferay UI Kit" would not be
 						permissible without explicit approval). Please refer to
 						our <a href="https://www.liferay.com/trademark">
-						trademark policy</a> for details.  
+						trademark policy</a> for details.
 					</li>
 					<li>
 					    Please try to conform the app name, as closely as
@@ -134,7 +134,7 @@ metadata requirements and produce an appealing advertisement for your app.
 				    unchecking "Offer Support" during the app submission
 				    process), we require that you provide support contact
 				    information so that buyers can reach you with general
-				    questions about your app. 
+				    questions about your app.
 			</td>
 		</tr>
 		<tr>
@@ -151,7 +151,7 @@ metadata requirements and produce an appealing advertisement for your app.
 				check out our description of the
 				<a href="https://www.liferay.com/marketplace/-/mp/application/18535553">Social Office</a>
 				app on the
-				<a href="https://www.liferay.com/marketplace">Markeplace</a>. 
+				<a href="https://www.liferay.com/marketplace">Markeplace</a>.
 				<p>
 					It's important that you specify any plugin dependencies
 					(eg., plugins that must be installed prior to running your
@@ -169,7 +169,7 @@ metadata requirements and produce an appealing advertisement for your app.
 				what's new, in English, you can provide other translations of
 				the text. This field is shown on updating an app that you've
 				already submitted, regardless of whether the app has been
-				published. 
+				published.
 			</td>
 		</tr>
 		<tr>
@@ -238,14 +238,14 @@ metadata requirements and produce an appealing advertisement for your app.
 </div>
 
 Make sure your icons, images, descriptions, and tags are free of profanity or
-other offensive material. 
+other offensive material.
 
 During the publication process, you upload your app's individual plugins (`.war`
 files) along with its metadata (name, description, version, icon,
-etc.). 
+etc.).
 
 **Additional Requirements for Themes/Site Templates**
- 
+
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
 However, staging the house with some furniture and decorations helps prospective
@@ -279,13 +279,14 @@ keep in mind:
   a version of Java via the property `ant.build.javac.target` in the
   Plugins SDK's `build.properties` file; so don't override
   this setting. Your app will be rejected if its bytecode is not compatible
-  with the Java JRE for the intended version of Liferay. 
-- *WAR (`.war`) files*:
+  with the Java JRE for the intended version of Liferay.
+
+- **WAR (`.war`) files*:
     - WAR files must contain a `WEB-INF/liferay-plugin-package.properties` file.
     - WAR files must not contain any `WEB-INF/liferay-plugin-package.xml` file.
     - WAR file names must not contain any commas.
     - WAR file names must conform to the following naming convention:
-    
+
       *context_name*`-`*plugin_type*`-A.B.C.D.war`
 
       Where:
@@ -312,13 +313,22 @@ keep in mind:
       Security Manager. If you're enabling the security manager, you'll also
       need to define your Portal Access Control List (PACL) in this file.  Read
       [Plugins Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
-      for information on developing secure apps. 
+      for information on developing secure apps.
 - *Deployment contexts*:
     - Liferay reserves the right to deny an application if any of its plugin
       deployment contexts is the same as a context of another plugin in the
-      Marketplace. 
+      Marketplace.
     - Liferay reserves the right to replace app plugin WAR files that have
       the same deployment context as plugins built by Liferay.
+
+<b>For Liferay 7 uploads</b>
+
+- **JAR (`.jar`) and WAB (`.wab`) files*:
+    - Please see [OSGI and Modularity - Modules](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#modules) for further information.
+    - The manifest file must at minimal contain the following manifest headers:
+        - `Bundle-SymbolicName` - A unique name for the module.
+        - `Bundle-Version` - The module's version.
+        - `Web-ContextPath` - The servlet context path.
 
 +$$$
 
@@ -327,14 +337,14 @@ keep in mind:
  see the tutorial
  [Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl),
  for details. Give yourself adequate time to develop your app's PACL and time to
- test your app thoroughly with the security manager enabled. 
+ test your app thoroughly with the security manager enabled.
 
 $$$
 
 Apps usually consist of multiple components (e.g., multiple
 `.war` file plugins) that are spread across multiple plugin types. In addition,
 you may want to consider how to package your app for running on different
-versions of Liferay. 
+versions of Liferay.
 
 ## Considering Package Variations to Target Different Versions of Liferay [](id=considering-package-variations-to-target-different-versions-of-liferay)
 
@@ -350,7 +360,7 @@ packages to support your app on different versions of Liferay. With regards to
 Liferay apps, packages are sometimes referred to as files that make up your app.
 
 Next, you'll drill down into the app packaging directives for each of your app's
-plugin projects. 
+plugin projects.
 
 ## Specifying Packaging Directives [](id=specifying-packaging-directives)
 
@@ -367,10 +377,10 @@ is compatible. In order to specify which release of Liferay your app is
 compatible with (and therefore which packages should be created for eventual
 download on the Marketplace), you first need to understand how Liferay releases
 are named and how they relate to the underlying Liferay release version. Details
-can be found in 
-[Understanding Liferay's Releases](/discover/portal/-/knowledge_base/6-2/understanding-liferays-releases). 
+can be found in
+[Understanding Liferay's Releases](/discover/portal/-/knowledge_base/6-2/understanding-liferays-releases).
 Accordingly, Liferay 6.2 CE GA1 is designated as version `6.2.0`. CE GA2 is then
-`6.2.1`, and so on. Liferay 6.2 EE GA1 is designated as `6.2.10`. EE versions 
+`6.2.1`, and so on. Liferay 6.2 EE GA1 is designated as `6.2.10`. EE versions
 follow a slightly different policy given the presence of fix packs and service
 packs; so 6.2 EE GA2 is `6.2.20`.
 
@@ -393,7 +403,7 @@ CE, then your app will not be compatible with (and will fail to deploy to) any
 EE release.
 
 $$$
- 
+
 For example, to specify that a particular plugin in your app is compatible with
 Liferay 6.1 CE GA3 (and later), and 6.1 EE GA3 (and later), add this line to
 your `liferay-plugin-packages.properties` file:
@@ -426,13 +436,13 @@ Here are some additional examples:
     # works with Liferay 6.1 CE GA2, GA3, and GA5 (but not GA4), and EE GA2
     # and later
     liferay-versions=6.1.1,6.1.2,6.1.4+,6.1.20+
-    
+
     # works with Liferay 6.1 EE GA3 and later (NOT compatible with CE)
     liferay-versions=6.1.30+
 
 You may find it advantageous to implement one of your app's plugins in multiple
 ways, customizing that plugin for different Liferay releases. The section below
-contains an example that demonstrates doing this. 
+contains an example that demonstrates doing this.
 
 +$$$
 
@@ -443,7 +453,7 @@ standard API calls that work on all Liferay 6.1 releases. Your hook, on the
 other hand, needs to interact with EE GA3 differently than it does with CE GA3,
 because you want the hook to take advantage of an exclusive EE feature. For your
 app, how do you provide one version of your hook plugin for EE and another
-version of it for CE, while applying your portlet plugin to both EE and CE? 
+version of it for CE, while applying your portlet plugin to both EE and CE?
 
 It's easy. In this case, you'd specify versions
 `liferay-versions=6.1.2+,6.1.30+` for your portlet plugin, indicating that it is
@@ -461,4 +471,4 @@ specified for each plugin. We'll talk about that next.
 $$$
 
 Now that you've prepared your app's files and specified its metadata, it's
-time to get it to submit it to Liferay for publishing on the Marketplace! 
+time to get it to submit it to Liferay for publishing on the Marketplace!
