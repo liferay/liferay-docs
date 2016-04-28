@@ -1,25 +1,27 @@
 # Configuring service.properties
 
-Service Builder generates a `service.properties` file in your project's
-`docroot/WEB-INF/src` folder. @product@ uses the properties in this file to
-alter your service's database schema and load Spring configuration files to
-support deployment of your service. You should not modify this file, but rather
-make any necessary overrides in a `service-ext.properties` file in that same
-folder.
+In this tutorial, you'll learn how to use and edit the `service.properties`
+file. You'll also learn about the properties included in this file and how to
+set them to fit your needs.
+
+Service Builder generates a `service.properties` file in your `*-service`
+module's `src/main/resources` folder. @product@ uses the properties in this file
+to alter your service's database schema. You should not modify this file, but
+rather make any necessary overrides in a `service-ext.properties` file in that
+same folder.
 
 Here are some of the properties included in the `service.properties` file:
 
 - `build.auto.upgrade`: This is `true` by default. This property determines
   whether or not Liferay should automatically apply changes to the database
   model when a new version of the plugin is deployed.
-- `build.namespace`: This is the namespace you defined in
-  `docroot/WEB-INF/service.xml`. Liferay distinguishes different plugins from
-  each other using their namespaces.
+- `build.namespace`: This is the namespace you defined in your `service.xml`.
+  Liferay distinguishes different plugins from each other using their
+  namespaces.
 - `build.number`: Liferay distinguishes different builds of your plugin. Each
   time a distinct build of your plugin is deployed to Liferay, Liferay
   increments this number.
 - `build.date`: This is the time of the latest build of your plugin.
-- `spring.configs`: This is a comma-delimited list of Spring configurations.
 - `include-and-override`: The default value of this property defines
   `service-ext.properties` as an override file for `service.properties`.
 
@@ -33,7 +35,6 @@ modified manually after generation by Service Builder.
 
 ## Related Topics
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 
-[Creating Local Services](/develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
-
+[Creating Local Services](/develop/tutorials/-/knowledge_base/7-0/creating-local-services)
