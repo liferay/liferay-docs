@@ -10,8 +10,8 @@ questions.
 - Which database will you use with Liferay?
 - Will you enable Liferay's PACL security feature?
 
-This article helps you answer these questions and describes the basic steps for
-installing Liferay.
+Next, you'll answer these questions and learn the basic steps for installing
+Liferay.
 
 ## Understanding Liferay's Releases [](id=understanding-liferays-releases)
 
@@ -119,13 +119,14 @@ maintenance releases.
 
 ## Obtaining Liferay Portal [](id=obtaining-liferay-portal)
 
-Anyone can download Liferay Portal from
-[https://www.liferay.com](https://www.liferay.com). Click the *Developers*
-&rarr; *Downloads* link at the top of the page, and you'll see multiple options
-for downloading a copy of Liferay. These include our convenient bundles as well
-as `.war` files for installing Liferay on your application server of choice.
+Anyone can download Liferay Portal from [https://www.liferay.com](https://www.liferay.com).
+Click Platform &rarr; *Downloads*, and you'll be able to download either the
+open source version of Liferay or a trial of the commercial version in several
+different formats. These include our convenient bundles as well as `.war` files
+for installing Liferay on your application server of choice.
 
-Liferay enterprise subscribers can download Liferay from the Customer Portal at
+Liferay enterprise subscribers can download Liferay Digital Experience from the
+Customer Portal at
 [https://www.liferay.com/group/customer](https://www.liferay.com/group/customer).
 You have a choice of the same open source app server bundles as community
 members, plus a few commercial alternatives, in addition to the `.war` files
@@ -138,23 +139,22 @@ to do is choose the one that best fits your needs. If you don't currently have
 an application server preference, consider starting with the Tomcat bundle.
 Tomcat is one of the most lightweight and straightforward bundles to configure.
 If you have an open source application server preference, choose the server you
-prefer from the available Liferay Portal bundles. All the bundles ship with a
-Java Runtime Environment for Windows; if you are using a different operating
-system, you must have a JDK (Java Development Kit) installed prior to launching
-Liferay Portal.
+prefer from the available Liferay Portal bundles. You must have a JDK (Java
+Development Kit) installed prior to launching Liferay Portal.
 
 Please note that Liferay is not able to provide application server bundles for
 proprietary application servers such as WebLogic or WebSphere, because the
-licenses for these servers don't allow for redistribution. Liferay Portal,
-however, runs just as well on these application servers as it does on the
-others. You'll need to follow our manual installation procedure using a `.war`
-file to install Liferay on proprietary application servers.
+licenses for these servers don't allow for redistribution. Liferay's commercial
+offering, however, runs just as well on these application servers as it does on
+the others. You'll need to follow our manual installation procedure using a
+`.war` file to install Liferay on proprietary application servers.
 
 Once you have Liferay, you can plan out your installation. First, determine if
-you need Liferay Portal Security turned on. Second, install Liferay Portal. You
-can install Liferay either by using a bundle or by installing it manually on
-your existing application server. Next, we'll go over the steps it takes to
-install Liferay Portal.
+you need Liferay Portal Security turned on. Second, prepare your database.
+Third, install Liferay Portal. Fourth, configure search. You can install Liferay
+either by using a bundle or by installing it manually on your existing
+application server. Next, we'll go over the steps it takes to install Liferay
+Portal.
 
 ## Liferay Installation Steps [](id=liferay-installation-steps)
 
@@ -167,16 +167,20 @@ steps:
    your application server to manage your database connection. We recommend
    that you let Liferay manage your database connection.
 
-3. Gather mail credentials for sending email notifications to users. Determine
+3. Determine how you'll configure Elastic Search. Liferay's default embedded
+   configuration is not supported for production use, so you'll have to install
+   Elastic separately, either on the same infrastructure or on its own. 
+
+4. Gather mail credentials for sending email notifications to users. Determine
    whether you want Liferay to manage your mail session or your application
    server to manage your mail session. Liferay provides a built-in mail session
    but also supports a JNDI mail session. We recommend that you let Liferay
    manage your mail session.
 
-4. Install either a Liferay bundle or install Liferay on an existing
+5. Install either a Liferay bundle or install Liferay on an existing
    application server (further instructions below).
 
-5. Determine whether you'll use Liferay Marketplace or other third party
+6. Determine whether you'll use Liferay Marketplace or other third party
    applications. If you will, you should enable Liferay's Plugin Access Control
    List (PACL) security feature.
 
@@ -186,7 +190,8 @@ database.
 ## Setting Up Liferay's Database with the Recommended Permissions [](id=setting-up-liferays-database-with-the-recommended-permissions)
 
 The recommended way of setting up your Liferay database is also the simplest.
-Liferay Portal takes care of just about everything. You only need to take two simple steps:
+@product@ takes care of just about everything. You only need to take two
+simple steps:
 
 1. Create a blank database encoded with the character set UTF-8. Liferay is a
    multilingual application and needs UTF-8 encoding to display all of its
@@ -201,11 +206,10 @@ database either directly or through its application server. During its initial
 startup, Liferay creates the tables it needs in the database you just created.
 It does this automatically, complete with indexes.
 
-This is the recommended way to set up Liferay. This method allows you to take
-advantage of Liferay's ability to automatically maintain its database during
-upgrades or when various Liferay plugins are installed that create database
-tables of their own. This method is by far the best way to set up your Liferay
-database.
+This is the recommended way to set up Liferay. It enables Liferay to maintain
+its database automatically during upgrades or when various Liferay plugins that
+create database tables of their own are installed. This method is by far the
+best way to set up your Liferay database.
 
 If you will set up Liferay's database with the recommended permissions
 described in this section, you can skip the next section.
