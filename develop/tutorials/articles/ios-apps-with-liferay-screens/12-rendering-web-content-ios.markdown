@@ -45,7 +45,6 @@ create your own template if there's not one suitable for displaying web content
 in your app. 
 
 ## Rendering Structured Web Content [](id=rendering-structured-web-content)
-<!-- You have to create a separate theme to display fields from structured web content? -->
 
 Despite of most of your Web Contents can be rendered using a template, you're 
 not making the most of a native app. If you want to use native components 
@@ -123,7 +122,6 @@ For more information on the Screenlet and its supported functionality, see the
 [Web Content List Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/webcontentlistscreenlet-for-ios). 
 
 ### Using Asset List Screenlet [](id=using-asset-list-screenlet)
-<!-- You have to create a separate theme to display a list of web content in Asset List Screenlet? -->
 
 Asset List Screenlet is similar to Web Content Display Screenlet in that it can 
 display a list of items from a Liferay instance. Asset List Screenlet, however, 
