@@ -53,10 +53,10 @@ capable of doing so. Also, you must create a custom theme for each structure you
 want to display in your app. In this case, you may find it convenient to create 
 each theme inside a single parent theme and use compound naming to indicate this 
 relationship. For example, if you have structures in your Liferay instance 
-called *book*, *employee*, and *meeting*, you must create a custom Web Content 
-Display Screenlet theme for each. If you create these themes as children of 
-another custom theme called *mytheme*, you could name them *mytheme.book*, 
-*mytheme.employee*, and *mytheme.meeting*. 
+called *book*, *employee*, and *meeting*, you must create a custom theme for 
+each. If you create these themes as children of another custom theme called 
+*mytheme*, you could name them *mytheme.book*, *mytheme.employee*, and 
+*mytheme.meeting*. 
 
 Regardless of where you create your themes or what you name them, use the 
 following steps to create them: 
