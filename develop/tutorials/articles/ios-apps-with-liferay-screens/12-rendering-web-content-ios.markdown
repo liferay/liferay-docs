@@ -46,35 +46,46 @@ in your app.
 
 ## Rendering Structured Web Content [](id=rendering-structured-web-content)
 
-Despite of most of your Web Contents can be rendered using a template, you're 
-not making the most of a native app. If you want to use native components 
-instead of a Web View, you'll need to create your own theme. Follow the next 
-steps: 
+To render 
+[structured](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates) 
+web content in Web Content Display Screenlet, you must create a custom theme 
+capable of doing so. Also, you must create a custom theme for each structure you 
+want to display in your app. In this case, you may find it convenient to create 
+each theme inside of a single parent theme and use compound naming to indicate 
+this relationship. For example, if you have structures in your Liferay instance 
+called *book*, *employee*, and *meeting*, then you must create a custom Web 
+Content Display Screenlet theme for each. If you create these themes as children 
+of another custom theme called *mytheme*, then you can name them *mytheme.book*, 
+*mytheme.employee*, and *mytheme.meeting*. 
 
-- [Create a theme](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
-  to render your Web Content. If you've already created your own theme, you can 
-  skip this step. 
+Regardless of where you create your themes or what you name them, use the 
+following steps to create them: 
 
-- In your theme, create a new class called `WebContentDisplayView_themeName`, 
-  extending from `BaseScreenletView`. This class will hold the `IBOutlets` and 
-  `IBActions` associated to the Web Content's UI. 
+1. [Create a theme](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
+   to render your web content. If you've already created your own theme, you can 
+   skip this step. 
 
-- Create the UI in the `WebContentDisplayView_themeName.xib` file. In that file 
-  you'll have an `UIView`, in inside that, you'll have whatever components you 
-  need to render the Web Content's fields. For instance, if your structured Web 
-  Content contains `latitude` and `longitude` fields, you can use an `MKMapView` 
-  component to render the map point. 
+2. In your theme, create a new class called `WebContentDisplayView_themeName`, 
+   extending from `BaseScreenletView`. This class will hold the outlets and 
+   actions associated with the web content's UI. 
 
-- Once you have your components ready, change the root view's class to 
-  `WebContentDisplayView_themeName` class (the one you already created) and 
-  create all `IBOutlets` and `IBActions` you need to manage your UI components.
+3. Create the UI in the `WebContentDisplayView_themeName.xib` file. This file 
+   should have a `UIView` that contains the components you need to render the 
+   web content's structure fields. For example, if your structured web content 
+   contains `latitude` and `longitude` fields, you can use a `MKMapView` 
+   component to render the map point. 
 
-- Finally, in the `WebContentDisplayView_themeName` class, you need to conform 
-  `WebContentDisplayViewModel` protocol. This protocol will force you to add two 
-  properties: `htmlContents` and `recordContent`. The former is intended to be 
-  used for HTML Web Contents (not our case), and the latter for structured Web 
-  Contents. Get the field's value from the record and set corresponding outlet's 
-  value.
+4. Once your components are ready, change the root view's class to 
+   `WebContentDisplayView_themeName` (the class you created in the first step), 
+   and create the outlets and actions you need to manage your UI components. 
+
+5. Conform the `WebContentDisplayViewModel` protocol in the 
+   `WebContentDisplayView_themeName` class. This protocol requires you to add 
+   the `htmlContent` and `recordContent` properties. The `htmlContent` property 
+   is intended for HTML web content; this isn't your theme's use case. Your 
+   theme must display structured web content; use the `recordContent` property 
+   for this content. In this property, set the structure field's value as the 
+   corresponding outlet's value. For example: 
 
         public var htmlContent: String? {
             get {
@@ -91,6 +102,8 @@ steps:
                 set.myOutlet.myProperty = recordContent?["my_field_name"]?.currentValueAsLabel
             }
         }
+
+Next, you'll learn how to display a list of web content articles in your app. 
 
 ## Displaying a List of Web Content Articles [](id=displaying-a-list-of-web-content-articles)
 
