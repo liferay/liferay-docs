@@ -46,28 +46,21 @@ You can create a model listener in a module by doing two simple things:
 
 Create a `-ModelListener` class that extends `BaseModelListener`. 
 
-    package com.liferay.docs.modellistener;
+    package ...;
 
-    import com.liferay.portal.ModelListenerException;
-    import com.liferay.portal.model.BaseModelListener;
-    import com.liferay.portal.model.User;
+    import ...;
 
-    public class MyUserListener extends BaseModelListener<User> {
+    public class CustomEntityListener extends BaseModelListener<Entity> {
+
+        /* Override one or more methods from the ModelListener 
+            interface.
+        */
         
-        @Override
-        public void onAfterCreate(User user) throws ModelListenerException {
-            System.out.println(user.getFullName());
-        }
-        
-        public void onAfterUpdate(User user) throws ModelListenerException {
-            System.out.println(user.getFullName());
-        }
     }
 
-You'll probably want to do something more interesting than print the user's
-full name in your console after the user is added or updated, but this gives you
-the idea. You can respond to actions occurring on portal entities by creating
-model listeners.
+In the body of the class override any methods from the `ModelListener`
+interface. The available methods are listed and described at the end of this
+article.
 
 ## Register the Model Listener Service
 
@@ -117,6 +110,6 @@ and you'll see how model listeners are accounted for before (for the `onBefore..
 and after (for the `onAfter...` case) the model persistence event.
 
 Now that you know how to create model listeners, keep in mind that they're
-useful as standalone projects or inside of your application. What if your
-application needs to do something (like add a custom entity) every time a User
-is added in Liferay? You can include the model listener inside your application.
+useful as standalone projects or inside of your application. If your application
+needs to do something (like add a custom entity) every time a User is added in
+Liferay, you can include the model listener inside your application.
