@@ -43,7 +43,7 @@ your `[Liferay Home]/osgi/configs` folder with this contents:
 
 Setting the property above disables indexing. By disabling indexing, you avoid
 the possibility of faulty indexing and you save time during the upgrade
-process. Once you have upgraded your @product@ instance, remove this property or set it to
+process. Once you have upgraded your portal, make sure to set this property to
 `false` so that you can index all objects from Liferay's Control Panel.
 
 ## Running the Upgrade [](id=running-the-upgrade)
