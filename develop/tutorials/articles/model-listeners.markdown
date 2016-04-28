@@ -3,7 +3,7 @@
 Model Listeners implement the
 [`ModelListener`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/model/ModelListener.html)
 interface. They are used to listen for persistence events on models and do
-something in response (either bfore or after the event).
+something in response (either before or after the event).
 
 Model listeners were designed to perform lightweight actions in response to a
 `create`, `remove`, or `update` attempt on an entity's database table or a
@@ -11,7 +11,8 @@ mapping table (for example, `users_roles`). Here are some supported use cases:
 
 -  Audit Listener: In a separate database, record information about updates to
    an entity's database table.
--  Cache Clearing Listener: Clear caches that you've added to improve the performance of custom code.
+-  Cache Clearing Listener: Clear caches that you've added to improve the
+   performance of custom code.
 -  Validation Listener: Perform additional validation on a model's attribute
    values before they are persisted to the database.
 -  Entity Update Listener: Do some additional processing when an entity table is
@@ -22,7 +23,7 @@ unpredictably and give you headaches:
 
 -  Setting a model's attributes in an `onBeforeUpdate` call. If some other
    database table has already been updated with the values before your model
-listener is invoked, your data will get out of sync. To change how an entity's
+listener is invoked, your database will get out of sync. To change how an entity's
 attributes are set, consider using a [service wrapper](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
 instead.
 -  Wrapping a model. Model listeners are not called when fetching records from
