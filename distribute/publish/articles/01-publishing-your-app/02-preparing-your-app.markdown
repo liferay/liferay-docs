@@ -273,15 +273,15 @@ and creating
 In addition to those requirements, there are some Marketplace-specific ones to
 keep in mind:
 
-- *Target the Appropriate Java JRE*: Your app's bytecode must be compatible with
-  the target Java JRE for your version of Liferay. For example, Liferay 6.2
+- **Target the Appropriate Java JRE**: Your app's bytecode must be compatible 
+  with the target Java JRE for your version of Liferay. For example, Liferay 6.2
   targets Java 1.7. The Liferay Plugins SDK for each version of Liferay targets
   a version of Java via the property `ant.build.javac.target` in the
   Plugins SDK's `build.properties` file; so don't override
   this setting. Your app will be rejected if its bytecode is not compatible
   with the Java JRE for the intended version of Liferay.
 
-- **WAR (`.war`) files*:
+- **WAR (`.war`) files**:
     - WAR files must contain a `WEB-INF/liferay-plugin-package.properties` file.
     - WAR files must not contain any `WEB-INF/liferay-plugin-package.xml` file.
     - WAR file names must not contain any commas.
@@ -304,47 +304,46 @@ keep in mind:
 
       Example: `myapp-portlet-1.0.0.0.war`
 
-- `WEB-INF/`[`liferay-plugin-package.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
-  file:
+- **`WEB-INF/`[`liferay-plugin-package.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
+  file:**
     - Property `recommended.deployment.context` must not be set.
     - Setting property `security-manager-enabled` to `true` is mandatory for all
       paid apps on 6.1 CE GA3, 6.1 EE GA3, and later; the setting is optional
       for free apps. Setting this property to `true` enables Liferay's Plugin
       Security Manager. If you're enabling the security manager, you'll also
-      need to define your Portal Access Control List (PACL) in this file.  Read
+      need to define your Portal Access Control List (PACL) in this file. Read
       [Plugins Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
       for information on developing secure apps.
-- *Deployment contexts*:
+- **Deployment contexts**:
     - Liferay reserves the right to deny an application if any of its plugin
       deployment contexts is the same as a context of another plugin in the
       Marketplace.
     - Liferay reserves the right to replace app plugin WAR files that have
       the same deployment context as plugins built by Liferay.
 
-<b>For Liferay 7 uploads</b>
+There are some additional requirements for uploading Liferay 7 apps:
 
-- **JAR (`.jar`) and WAB (`.wab`) files*:
-    - Please see [OSGI and Modularity - Modules](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#modules) for further information.
-    - The manifest file must at minimal contain the following manifest headers:
-        - `Bundle-SymbolicName` - A unique name for the module.
-        - `Bundle-Version` - The module's version.
-        - `Web-ContextPath` - The servlet context path.
+- **JAR (`.jar`) and WAB (`.wab`) files**:
+    - For more information, see 
+      [OSGI and Modularity - Modules](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#modules). 
+    - The manifest file must at minimum contain the following manifest headers:
+        - `Bundle-SymbolicName`: a unique name for the module
+        - `Bundle-Version`: the module's version
+        - `Web-ContextPath`: the servlet context path
 
 +$$$
 
-**Important:** If you're developing a
- paid app or want your free app to satisfy Liferay's Plugin Security Manager,
- see the tutorial
- [Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl),
- for details. Give yourself adequate time to develop your app's PACL and time to
- test your app thoroughly with the security manager enabled.
+**Important:** If you're developing a paid app or want your free app to satisfy 
+Liferay's Plugin Security Manager, see the tutorial 
+[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl) 
+for details. Give yourself adequate time to develop your app's PACL and time to 
+test your app thoroughly with the security manager enabled. 
 
 $$$
 
-Apps usually consist of multiple components (e.g., multiple
-`.war` file plugins) that are spread across multiple plugin types. In addition,
-you may want to consider how to package your app for running on different
-versions of Liferay.
+Apps usually consist of multiple components (e.g., multiple WAR files) that are 
+spread across multiple plugin types. In addition, you may want to consider how 
+to package your app for running on different versions of Liferay. 
 
 ## Considering Package Variations to Target Different Versions of Liferay [](id=considering-package-variations-to-target-different-versions-of-liferay)
 

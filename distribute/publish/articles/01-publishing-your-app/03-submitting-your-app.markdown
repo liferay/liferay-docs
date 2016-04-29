@@ -3,12 +3,13 @@
 Now that you have everything in order for publishing your app, you can start the
 Marketplace app submission process. 
 
-Go to your *User Profile* on [liferay.com](http://www.liferay.com). In the left
-side navigation panel of your profile page, there are links to pages related to
-using apps and developing apps. Links to *Apps* and *App Metrics* are listed in
-the *Development* section of the navigation panel. You'll use these links
-heavily during development, so you may want to bookmark this page too. Click
-*Apps* from the *Development* section to access your app development page.
+Go to your *User Profile* on 
+[liferay.com](http://www.liferay.com). 
+In the left side navigation panel of your profile page, there are links to pages 
+related to using apps and developing apps. Links to *Apps* and *App Metrics* are 
+listed in the *Development* section of the navigation panel. You'll use these 
+links heavily during development, so you may want to bookmark this page too. 
+Click *Apps* from the *Development* section to access your app development page. 
 
 ![Figure 1: Your app development page lists the apps you've developed and enables you to add new apps for publishing to the Marketplace.](../../images/marketplace-my-app-manager.png) 
 
@@ -124,12 +125,19 @@ for uploading your app's files.
 
 ## Upload Your App's Plugin Files [](id=upload-your-apps-plugin-files)
 
+On this screen, you must specify your app's version and upload your app's files. 
+Note that the article 
+[Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution) 
+helps you plan your app's versioning scheme. Likewise, the article 
+[Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app) 
+helps you determine which files to upload. 
+
+To start uploading, click *Browse* and select the files that make up your app. 
+Each time you add a file, it automatically begins to upload and its 
+compatibility information is scanned. You must upload at least one file before 
+advancing beyond this screen. 
+
 ![Figure 3: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.gif)
-
-On this screen, you must specify the version of your app and upload its plugin
-files in context to the uploader box's Liferay Version. The article [Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution) guided you in planning your app's versioning scheme. And article [Preparing Your App](/distribute/publish/-/knowledge_base/publish/preparing-your-app) helped you determine your app's plugin files to upload.  
-
-Click on the *Browse* button and select the plugins that comprise your app to start uploading. Each time you add plugins to the list, they begin uploading automatically and their compatibility information is scanned. You must upload at least one plugin file before advancing beyond this screen
 
 As a more complicated example, consider an app that consists of a hook and a
 portlet. The portlet works across all Liferay releases, but the hook is built
