@@ -1,4 +1,4 @@
-# Invoking Local Services [](id=invoking-local-services)
+# Invoking Local Services
 
 Once Service Builder has generated your portlet project's services, you can call
 them from anywhere in your application. For example, you can invoke services
@@ -245,7 +245,7 @@ and
 [Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/6-2/finding-and-invoking-liferay-services)
 tutorials.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Creating Local Services](/develop/tutorials/-/knowledge_base/6-2/writing-local-services)
 
