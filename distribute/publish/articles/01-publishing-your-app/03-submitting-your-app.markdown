@@ -137,7 +137,7 @@ Each time you add a file, it automatically begins to upload and its
 compatibility information is scanned. You must upload at least one file before 
 advancing beyond this screen. 
 
-![Figure 3: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.gif)
+![Figure 3: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
 
 As a more complicated example, consider an app that consists of a hook and a
 portlet. The portlet works across all Liferay releases, but the hook is built
@@ -234,4 +234,4 @@ Once you are satisfied, click *Submit for Review*.
 At this point, the Liferay Marketplace staff starts to review your app and test
 it. If you need to make changes to your app during its review or if you're
 curious about the rigors of the review process, make sure to read the next
-section of this guide. 
+section of this guide.
