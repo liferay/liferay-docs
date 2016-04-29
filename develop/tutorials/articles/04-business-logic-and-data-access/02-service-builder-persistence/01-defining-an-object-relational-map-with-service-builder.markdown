@@ -11,15 +11,22 @@ entities are called *bookmark entries* and *bookmark folders*. Since a bookmark
 must have a folder (even if it's a root folder), the entry entity references a
 folder entity as one of its attributes. 
 
-<!-- As with any portlet project, the event-listing-portlet project's Java
-sources reside in the `docroot/WEB-INF/src` folder. Notice the
-`EventListingPortlet.java` and `LocationListingPortlet.java` files in the
-`com.liferay.docs.eventlisting` package. These portlet classes extend Liferay's
-`MVCPortlet` class. They act as the controllers in the MVC pattern. These
-classes contain the business logic that invokes the Service Builder generated
-event and location services that you'll learn how to create in this section. The
-application's view layer is implemented in the JSPs in the `docroot/html`
-folder. -->
+You can design your application's modules anyway you like, but for the Bookmarks
+application, its Java sources reside in the `bookmarks-api`,
+`bookmarks-service`, and `bookmarks-web` modules. Notice the
+`BookmarksAdminPortlet.java` and `BookmarksPortlet.java` files in the
+`com.liferay.bookmarks.web.portlet` package in the `bookmarks-web` module. These
+portlet classes extend Liferay's `MVCPortlet` class. They act as the controllers
+in the MVC pattern. These classes contain the business logic that invokes the
+Service Builder generated bookmarks services that you'll learn how to create in
+this section. The application's view layer is implemented in the JSPs in the
+`bookmarks-web/src/main/resources/META-INF/resources` folder.
+
+You can learn how to generate a generic modular application from scratch that
+includes the `*api`, `*service`, and `*web` modules by default in the
+[Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)
+tutorial. This tutorial assumes you've assembled your application's modules
+similarly to the linked tutorial above.
 
 The first step in using Service Builder is to define your model classes and
 their attributes in a `service.xml` file. This file's location typically resides
@@ -28,11 +35,7 @@ your model classes are called entities. For example, the Bookmarks application
 has two entities: `BookmarksEntry` and `BookmarksFolder`. The requirements for
 each of these entities are defined in the `bookmarks-service` module's
 [service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
-listed in the `<column />` elements. You can learn how to generate a modular
-application using service builder in the
-[Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)
-tutorial. This tutorial assumes you've assembled your application's modules
-similarly to the linked tutorial above.
+listed in the `<column />` elements. 
 
 Once Service Builder reads the `service.xml` file, you can define your entities.
 Liferay IDE makes it very easy to define entities in your application's
