@@ -16,9 +16,9 @@ Open the guestbook-portlet project's `docroot/html/guestbook/view.jsp` file and
 add the following code near the top of the file, just after the scriptlet that
 grabs the `guestbookId` from the request:
 
-    <liferay-portlet:renderURL varImpl="searchURL">
+    <portlet:renderURL var="searchURL">
             <portlet:param name="mvcPath" value="/html/guestbook/view_search.jsp" />
-    </liferay-portlet:renderURL>
+    </portlet:renderURL>
 
     <aui:form action="<%= searchURL %>" method="get" name="fm">
         <liferay-portlet:renderURLParams varImpl="searchURL" />
