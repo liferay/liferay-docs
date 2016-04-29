@@ -65,14 +65,14 @@ It's time to start your asset framework training!
 
 **Related Topics**
 
-[Writing a Data-Driven Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/develop/learning-paths/mvc/-/knowledge_base/7-0/writing-a-data-driven-application)
 
-[Setting Permissions](/develop/learning-paths/mvc/-/knowledge_base/6-2/setting-permissions)
+[Setting Permissions](/develop/learning-paths/mvc/-/knowledge_base/7-0/setting-permissions)
 
-[Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/7-0/enabling-search-and-indexing)
 
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/7-0/asset-enabling-custom-entities)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/7-0/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/7-0/alloyui)

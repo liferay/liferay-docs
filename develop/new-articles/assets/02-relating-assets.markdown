@@ -224,10 +224,10 @@ information on this, see the learning path [Checking Permissions in the UI](/dev
 
 ## Related Topics [](id=related-topics)
 
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/7-0/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/7-0/implementing-asset-renderers)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/7-0/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/7-0/alloyui)

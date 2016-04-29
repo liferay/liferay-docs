@@ -20,12 +20,12 @@ associates an `AssetEntry` with the entity so Liferay can keep track of
 the entity as an asset. When it's time to update the entity, you update the
 asset at the same time. To see how to asset-enable entities in a working example
 portlet, visit the Learning
-Path [Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities).
+Path [Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/7-0/asset-enabling-custom-entities).
 
 To leverage assets, you must also implement indexers for your portlet's
 entities. Liferay's asset framework uses indexers to manage assets. For
 instructions on
-creating an indexer in a working example portlet, see the learning path [Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing).
+creating an indexer in a working example portlet, see the learning path [Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/7-0/enabling-search-and-indexing).
 
 This tutorial shows you how to enable assets for your custom entities and
 implement indexes for them. It's time to get started! 
@@ -51,16 +51,16 @@ Your `-LocalServiceImpl` Java class inherits from its parent base class an
 as a Liferay asset, you must invoke the `assetEntryLocalService`'s
 `updateEntry` method. 
 
-Here's what the [`updateEntry`](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html)
+Here's what the [`updateEntry`](http://docs.liferay.com/portal/7.0/javadocs-all/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html)
 method's signature looks like:
 
     AssetEntry updateEntry(
 		long userId, long groupId, Date createDate, Date modifiedDate,
 		String className, long classPK, String classUuid, long classTypeId,
-		long[] categoryIds, String[] tagNames, boolean visible,
-		Date startDate, Date endDate, Date expirationDate, String mimeType,
-		String title, String description, String summary, String url,
-		String layoutUuid, int height, int width, Integer priority,
+		long[] categoryIds, String[] tagNames, boolean listable, boolean visible,
+		Date startDate, Date endDate, Date publishDate, Date expirationDate,
+		String mimeType, String title, String description, String summary,
+		String url, String layoutUuid, int height, int width, Integer priority,
 		boolean sync)
 	throws PortalException, SystemException
 
@@ -88,11 +88,14 @@ Here are descriptions of each of the `updateEntry` method's parameters:
     The asset framework stores them for you. 
 -   `assetTagNames`: represent the tags selected for the entity.
     The asset framework stores them for you.
+-   `listable`: specifies whether the entity can be shown in dynamic lists of 
+     content (such as asset publisher configured dynamically). 
 -   `visible`: specifies whether the entity is approved. 
 -   `startDate`: the entity's publish date. You can use it to specify when an
      Asset Publisher should show the entity's content.
 -   `endDate`: the date the entity is taken down. You can use it to specify
      when an Asset Publisher should stop showing the entity's content.
+-   `publishDate`: the date the entity will start to be shown. 
 -   `expirationDate`: the date the entity will no longer be shown. 
 -   `mimetype`: the Multi-Purpose Internet Mail Extensions type, such as [ContentTypes.TEXT_HTML](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portal/kernel/util/ContentTypes.html#TEXT_HTML),
     used for the content.
@@ -116,9 +119,11 @@ calling the `super.update-` method. To help show the values assigned to some of
 the parameters, they're declared in local variables before the invocation.
 
     long classTypeId = 0;
+    boolean listable = true;
     boolean visible = true;
     Date startDate = null;
     Date endDate = null;
+    Date publishDate = insult.getCreateDate();
     Date expirationDate = null;
     String mimeType = ContentTypes.TEXT_HTML;
     String title = insult.getInsultString();
@@ -136,8 +141,8 @@ the parameters, they're declared in local variables before the invocation.
         insult.getModifiedDate(), Insult.class.getName(),
         insult.getInsultId(), insult.getUuid(), classTypeId,
         serviceContext.getAssetCategoryIds(),
-        serviceContext.getAssetTagNames(), visible, startDate, endDate,
-        expirationDate, mimeType, title, description, summary, url,
+        serviceContext.getAssetTagNames(), listable, visible, startDate, endDate,
+        publishDate, expirationDate, mimeType, title, description, summary, url,
         layoutUuid, height, width, priority, sync);
 
     Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(Insult.class);
@@ -200,10 +205,10 @@ Great! Now you know how to add, update, and delete assets in your portlets!
 
 ## Related Topics [](id=related-topics)
 
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/7-0/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/7-0/implementing-asset-renderers)
 
-[Relating Assets](/develop/tutorials/-/knowledge_base/6-2/relating-assets)
+[Relating Assets](/develop/tutorials/-/knowledge_base/7-0/relating-assets)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/develop/tutorials/-/knowledge_base/7-0/service-builder)
