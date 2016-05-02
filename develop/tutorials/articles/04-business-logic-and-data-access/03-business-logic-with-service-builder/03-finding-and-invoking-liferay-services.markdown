@@ -8,26 +8,60 @@ First, you'll learn how to find a portal service using Liferay's Javadocs.
 
 ## Finding Liferay Portal Services
 
+Searching for Liferay Portal services is easy and intuitive. The first two
+options, `portal-impl` and `portal-kernel`, are the most popular options when
+searching for Liferay's Javadocs. In summary, the `portal-kernel` directory
+provides interfaces and utils, and the `portal-impl` directory provides
+service implementations that implement those interfaces. The remaining options
+are miscellaneous util and test classes that are used in @product@.
+
 Liferay's Javadocs are easy to browse and well-organized. Here's how to find the
-*Organization* services: 
+*Organization* services, for example: 
 
 1. In your browser, open up the Javadocs:
    [http://docs.liferay.com/portal/7.0/javadocs/](http://docs.liferay.com/portal/7.0/javadocs/) 
+   You're offered several options, which were discussed earlier. Select
+   *portal-kernel*.
 
-    You're offered several options
-
-2. Under *Portal Services*, click on the link for the
-   `com.liferay.portal.service` package, since the services for the Organization
-   entity belong to the *Portal* scope. 
+2. Under *Portal Kernel*, click on the link for the
+   `com.liferay.portal.kernel.service` package, since the services for the
+   Organization entity belong to the *Portal* scope. 
 
 3. Find and click on the `*ServiceUtil` class (in this case,
    `OrganizationLocalServiceUtil`) in the *Class Summary* table or the
    *Classes* list at the bottom of the page. 
 
-That was easy! What if you want to find portlet services? 
+That was easy! What if you want to find module services? 
 
-## Finding Liferay Plugin Services
+## Finding Liferay Module Services
 
+Searching for Liferay module services is also easy. The Javadocs for modules are
+hosted on Liferay's Nexus repository, and can be viewed by downloading and
+extracting the module's `*javadoc.jar` file. You can learn move about how a
+module's Java API is organized by reading the
+[Java API](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules#java-api)
+section.
+
+Here's an example of how to find services for a bookmarks entry:
+
+1. Navigate to Liferay's
+[Nexus repository](https://repository.liferay.com/nexus/content/repositories/liferay-releases-ce/com/liferay/)
+and select `com.liferay.bookmarks.api`. Then select the appropriate version.
+
+2. Select the `com.liferay.bookmarks.api-[VERSION]-javadoc.jar` link, which
+   downloads that JAR file. Extract the JAR file, once downloaded.
+
+3. Open the extracted contents and select the `index.html` file.
+
+4. Select the `com.liferay.bookmarks.service` package from the main view, and
+   then select the `BookmarksEntryLocalServiceUtil` class in the *Class Summary*
+   table or the *Classes* list.
+
+Awesome! You've successfully located the bookmark entry's services.
+
+Now you're ready to invoke Liferay services. 
+
+<!--
 Searching for one of Liferay's built-in plugin services is also easy. Instead of
 clicking the link for the service package of the *portal*, click the link for
 the service package of the *portlet*. The portlet service packages use the
@@ -52,6 +86,10 @@ remotely, your Liferay instance must be configured to allow remote web service
 access. Please see the
 [Understanding Liferay's Service Security Model](/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model) 
 tutorial for details.
+-->
+<!-- The above text does not yet apply, since module Javadoc is only hosted in a
+JAR on Nexus. Update this when module Javadoc is hosted on docs.liferay.com.
+-Cody -->
 
 ## Invoking Liferay Services Locally
 

@@ -46,6 +46,15 @@ JSON web services via a direct URL. For example, the URL for the Web Content
 app's JSON web services is
 [http://localhost:8080/api/jsonws?contextName=journal](http://localhost:8080/api/jsonws?contextName=journal).
 
++$$$
+
+**Important:** To invoke Liferay services remotely, your Liferay instance must
+be configured to allow remote web service access. Please see the
+[Understanding Liferay's Service Security Model](/develop/tutorials/-/knowledge_base/7-0/service-security-layers) 
+tutorial for details.
+
+$$$
+
 Each entity's available service methods are listed in the left column of the
 JSON web services page. To view details about a service method, click it. The
 full package path to the service's `*Impl` class is displayed along with the
