@@ -17,6 +17,9 @@ implementations. Also, you should name your `*MVCActionCommand` class after the
 action it performs. For example, if your action edits some kind of entry, you 
 should name its class `EditEntryMVCActionCommand`. 
 
+<!-- Do we need to show the portlet class? -->
+
+<!--
 If you're using Liferay's MVC framework, it's as simple as creating a portlet
 class with your Component:
 
@@ -36,6 +39,27 @@ class with your Component:
     public class GreeterPortlet extends FreeMarkerPortlet {
         ...
     }
+-->
+
+Your `*MVCActionCommand` class must also have a `@Component` annotation like the 
+following one. Set the property `javax.portlet.name` to your portlet's internal 
+ID, and the property `mvc.command.name` to the matching `actionURL` in your JSP. 
+You must also set the `service` property to `MVCActionCommand.class`: 
+
+    @Component(
+        immediate = true,
+        property = {
+            "javax.portlet.name=your_portlet_name_YourPortlet",
+            "mvc.command.name=/your/jsp/action/url"
+        },
+        service = MVCActionCommand.class
+    )
+    public class YourMVCActionCommand extends BaseMVCActionCommand {
+        ...
+    }
+
+For example, the following `@Component` annotation for a hypothetical Greeter 
+Portlet sets these properties accordingly:
 
     @Component(
         immediate = true,
@@ -45,6 +69,8 @@ class with your Component:
         },
         service = MVCActionCommand.class
     )
-    public class GreeterActionCommand extends BaseMVCActionCommand {
+    public class GreeterMVCActionCommand extends BaseMVCActionCommand {
         ...
     }
+
+
