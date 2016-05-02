@@ -124,29 +124,29 @@ available in (but not limited to) the
 [BookmarksFolderLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksFolderLocalServiceImpl.java)
 class in the Bookmarks application:
 
-    - `addFolder`
-    - `deleteFolder`
-    - `deleteFolders`
-    - `getCompanyFolders`
-    - `getCompanyFoldersCount`
-    - `getFolder`
-    - `getFolders`
-    - `getFoldersAndEntries`
-    - `getFoldersAndEntriesCount`
-    - `getFoldersCount`
-    - `getNoAssetFolders`
-    - `getSubfolderIds`
-    - `mergeFolders`
-    - `moveFolder`
-    - `moveFolderFromTrash`
-    - `moveFolderToTrash`
-    - `rebuildTree`
-    - `restoreFolderFromTrash`
-    - `subscribeFolder`
-    - `unsubscribeFolder`
-    - `updateAsset`
-    - `updateFolder`
-    - `updateStatus`
+- `addFolder`
+- `deleteFolder`
+- `deleteFolders`
+- `getCompanyFolders`
+- `getCompanyFoldersCount`
+- `getFolder`
+- `getFolders`
+- `getFoldersAndEntries`
+- `getFoldersAndEntriesCount`
+- `getFoldersCount`
+- `getNoAssetFolders`
+- `getSubfolderIds`
+- `mergeFolders`
+- `moveFolder`
+- `moveFolderFromTrash`
+- `moveFolderToTrash`
+- `rebuildTree`
+- `restoreFolderFromTrash`
+- `subscribeFolder`
+- `unsubscribeFolder`
+- `updateAsset`
+- `updateFolder`
+- `updateStatus`
 
 Before you can use any custom methods that you added to your `*LocalServiceImpl`
 class, you must run Service Builder again. Running Service Builder again adds

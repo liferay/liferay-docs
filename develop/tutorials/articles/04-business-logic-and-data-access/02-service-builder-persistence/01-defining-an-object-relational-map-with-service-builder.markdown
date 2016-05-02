@@ -1,8 +1,8 @@
 # Defining an Object-Relational Map with Service Builder
 
 In this tutorial, you'll learn how to define an object relational map for your
-application so that it can persist data. As an example, you'll examine an
-existing Liferay application that uses Service Builder.
+application so that it can persist data. As an example, you'll examine the
+existing Liferay Bookmarks application that uses Service Builder.
 
 The Bookmarks application is an example portlet project that an organization can
 use to bookmark assets in Liferay. The application defines two entities, or
@@ -26,7 +26,9 @@ You can learn how to generate a generic modular application from scratch that
 includes the `*api`, `*service`, and `*web` modules by default in the
 [Modularizing Legacy Plugins](/develop/tutorials/-/knowledge_base/7-0/modularizing-legacy-plugins)
 tutorial. This tutorial assumes you've assembled your application's modules
-similarly to the linked tutorial above.
+similarly to the linked tutorial above. Be sure to also visit the
+[OSGi and Modularity](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity)
+tutorial for additional info on the `*api`, `*service`, and `*web` modules.
 
 The first step in using Service Builder is to define your model classes and
 their attributes in a `service.xml` file. This file's location typically resides
@@ -180,7 +182,7 @@ is empty. Create an entity by clicking on the *Add Entity* icon
 entity's name and if you'd like to generate local and remote services for that
 entity. Add as many entities as you need.
 
-![Figure 2: Adding service entities is easy with Liferay IDE's *Overview* mode of your `service.xml` file.](../../images/service-add-entity.png)
+![Figure 2: Adding service entities is easy with Liferay IDE's *Overview* mode of your `service.xml` file.](../../../images/service-add-entity.png)
 
 An entity's name is used to name the database table for persisting instances
 of the entity. The actual name of the database table is prefixed with the

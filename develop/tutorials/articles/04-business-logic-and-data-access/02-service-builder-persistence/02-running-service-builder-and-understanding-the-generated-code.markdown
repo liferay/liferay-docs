@@ -99,14 +99,14 @@ The `bookmarks-api` module contains utility classes and interfaces for the
 Bookmarks project. All the classes and interfaces in the `*-api` module are
 packaged in a `.jar` file called `PROJECT_NAME-api.jar` in the module's
 `build/libs` folder. This `.jar` file is generated whenever you compile and
-deploy your module. When deploying this JAR to Liferay, the services are
-provided in the OSGi container.
+deploy your module. When deploying this JAR to Liferay, the necessary interfaces
+to *define* the service API are available.
 
-The `/bookmarks-service/src/main/java/com/liferay/bookmarks` package contains
-the implementation of the interfaces defined in the `bookmarks-api` module. It
-belongs to the Bookmarks application's classpath, but is not available outside
-the application. Service Builder generates classes and interfaces belonging to
-the persistence layer, service layer, and model layer in the
+The `bookmarks-service` module contains the implementation of the interfaces
+defined in the `bookmarks-api` module. It belongs to the Bookmarks application's
+classpath, but is not available outside the application. Service Builder
+generates classes and interfaces belonging to the persistence layer, service
+layer, and model layer in the
 `/bookmarks-api/src/main/java/com/liferay/bookmarks` and
 `/bookmarks-service/src/main/java/com/liferay/bookmarks` packages.
 
@@ -128,7 +128,7 @@ than three classes for each entity. These customizable classes are
       layer; in your portlet classes, use `[ENTITY_NAME]LocalServiceUtil` or
       `[ENTITY_NAME]ServiceUtil` instead. 
 
-    ![Figure 2: Service Builder generates these persistence classes and interfaces. You shouldn't (and you won't need to) customize any of these classes or interfaces.](../../../images/service-builder-persistence-diagram.png)
+    ![Figure 1: Service Builder generates these persistence classes and interfaces. You shouldn't (and you won't need to) customize any of these classes or interfaces.](../../../images/service-builder-persistence-diagram.png)
 
 - Local Service (generated for an entity only if an entity's `local-service`
   attribute is set to `true` in `service.xml`)
@@ -148,7 +148,7 @@ than three classes for each entity. These customizable classes are
       `[ENTITY_NAME]LocalService`. This class is designed to be extended and it
       allows developers to customize the entity's local services.
 
-    ![Figure 3: Service Builder generates these service classes and interfaces. Only EventLocalServiceImpl allows custom methods to be added to the service layer.](../../../images/service-builder-service-diagram.png)
+    ![Figure 2: Service Builder generates these service classes and interfaces. Only EventLocalServiceImpl allows custom methods to be added to the service layer.](../../../images/service-builder-service-diagram.png)
 
 - Remote Service (generated for an entity only if an entity's `remote-service`
   attribute is *not* set to `false` in `service.xml`)
@@ -189,7 +189,7 @@ than three classes for each entity. These customizable classes are
       methods to the `[ENTITY_NAME]` interface the next time you run it.
     - `[ENTITY_NAME]Wrapper`: Wrapper, wraps `[ENTITY_NAME]`. 
 
-    ![Figure 4: Service Builder generates these model classes and interfaces. Only `EventImpl` allows custom methods to be added to the service layer.](../../images/service-builder-model-diagram.png)
+    ![Figure 3: Service Builder generates these model classes and interfaces. Only `EventImpl` allows custom methods to be added to the service layer.](../../images/service-builder-model-diagram.png)
 
 Each file that Service Builder generates is assembled from an associated
 FreeMarker template. You can find Service Builder's FreeMarker templates in the
