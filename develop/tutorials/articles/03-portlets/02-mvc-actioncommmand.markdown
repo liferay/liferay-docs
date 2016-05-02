@@ -1,12 +1,19 @@
 # MVC Action Command 
-<!--Liferay's MVCActionCommand-->
 
 Liferay's MVC framework lets you split your portlet's action methods into 
 separate classes. This can be very helpful in portlets that have many actions. 
-Each Action URL in your portlet's JSPs then calls the appropriate action class 
+Each action URL in your portlet's JSPs then calls the appropriate action class 
 when necessary. 
 
-You can implement each action by creating a class that implements the 
+First, use the `<portlet:actionURL>` tag to create the action URL in your JSP. 
+For example, the edit blog entry action in Liferay's Blogs app is defined in the 
+[`edit_entry.jsp` file](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp) 
+as follows: 
+
+    <portlet:actionURL name="/blogs/edit_entry" var="editEntryURL" />
+
+When the action URL is triggered, the matching action class processes the 
+action. Implement the action by creating a class that implements the 
 [`MVCActionCommand` interface](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html) 
 and is suffixed with `MVCActionCommand`. To avoid writing oodles of boilerplate 
 code, your `*MVCActionCommand` class should extend the 
@@ -42,9 +49,11 @@ class with your Component:
 -->
 
 Your `*MVCActionCommand` class must also have a `@Component` annotation like the 
-following one. Set the property `javax.portlet.name` to your portlet's internal 
-ID, and the property `mvc.command.name` to the matching `actionURL` in your JSP. 
-You must also set the `service` property to `MVCActionCommand.class`: 
+following. Set the property `javax.portlet.name` to your portlet's internal 
+ID, and the property `mvc.command.name` to the value of the `name` property in 
+your JSP's matching `actionURL`. To register the component in the OSGi container 
+as using the `MVCActionCommand` class, you must set the `service` property to 
+`MVCActionCommand.class`: 
 
     @Component(
         immediate = true,
@@ -55,22 +64,42 @@ You must also set the `service` property to `MVCActionCommand.class`:
         service = MVCActionCommand.class
     )
     public class YourMVCActionCommand extends BaseMVCActionCommand {
-        ...
+        // implement your action
     }
 
-For example, the following `@Component` annotation for a hypothetical Greeter 
-Portlet sets these properties accordingly:
+For example, this is the `@Component` annotation for the Blogs app's 
+[`EditEntryMVCActionCommand` class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/portlet/action/EditEntryMVCActionCommand.java):
 
     @Component(
         immediate = true,
         property = {
-            "javax.portlet.name=blade_portlet_GreeterPortlet",
-            "mvc.command.name=greet"
+            "javax.portlet.name=" + BlogsPortletKeys.BLOGS,
+            "javax.portlet.name=" + BlogsPortletKeys.BLOGS_ADMIN,
+            "javax.portlet.name=" + BlogsPortletKeys.BLOGS_AGGREGATOR,
+            "mvc.command.name=/blogs/edit_entry"
         },
         service = MVCActionCommand.class
     )
-    public class GreeterMVCActionCommand extends BaseMVCActionCommand {
-        ...
+    public class EditEntryMVCActionCommand extends BaseMVCActionCommand {
+        // the app's edit blog entry action implementation
     }
 
+Note that you can use multiple `javax.portlet.name` values to indicate the 
+component works with multiple portlets. 
 
+In your `*MVCActionCommand` class, process the action by overriding the 
+`BaseMVCActionCommand` class's 
+[`doProcessAction` method](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html#doProcessAction(javax.portlet.ActionRequest, javax.portlet.ActionResponse)). 
+This method takes `ActionRequest` and `ActionResponse` parameters that you can 
+use to process your action. Your `*MVCActionCommand` class should also contain 
+any other code required to implement your action. For a real-world example of a 
+`*MVCActionCommand` class, see the Blogs app's `EditEntryMVCActionCommand` 
+class. 
+
+**Related Topics**
+
+[MVC Render Command](https://www.liferay.com/)
+
+[MVC Resource Command](https://www.liferay.com/)
+
+[MVC Command Overrides](https://www.liferay.com/)
