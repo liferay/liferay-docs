@@ -7,12 +7,12 @@ actually another implementation of Model View Controller. Some people are so
 sick of hearing about Model View Controller frameworks that obfuscating it might
 be smart. In this article you'll need to stay focused, because there will be
 several attempts to make you think we're talking about *Something New*, when
-we're instead talking about another implementation of MVC. So, back to the
-*Medial Vein Constriction* pattern we were discussing.
+we're instead talking about another MVC framework. So, back to the *Medial Vein
+Constriction* pattern we were discussing.
 
 If there are so many implementations of MVC frameworks in Java, why did Liferay
-create yet another one? Stay with us and you'll see that Liferay MVC provides these
-benefits:
+create yet another one? Stay with us and you'll see that Liferay MVC provides
+these benefits:
 
 -  It's lightweight, as opposed to many other Java MVC frameworks.
 -  There are no special configuration files that need to be kept in sync with
@@ -21,6 +21,9 @@ benefits:
 -  You avoid writing a bunch of boilerplate code, since Liferay's MVC framework
    simply looks for some pre-defined parameters when the `init()` method is
 called. 
+-  The controller can be broken down into MVC command classes, each of which
+   handles the controller code for a particular portlet phase (render, action,
+and resource serving phases).
 -  Liferay's portlets use it. That means there are plenty of robust
    implementations to reference when you need to design or troubleshoot your
 Liferay applications.
@@ -63,16 +66,69 @@ development work.
 
 In a larger application, your `-Portlet` class can become monstrous and unwieldy
 if it holds all of the controller logic. Earlier versions of Liferay allowed you
-to use the `ActionCommand`
+to use the `ActionCommand`.
 
-Liferay provides `MVCCommand` classes to break up your controller functionality.
+Now, Liferay provides MVC command classes to break up your controller
+functionality.
 
 -  **`MVCActionCommand`:** Use `-ActionCommand` classes to hold each of your
-   portlet actions.
+   portlet actions, which are invoked by action URLs.
 -  **`MVCRenderCommand`:** Use `-RenderCommand` classes to hold a `render`
-   method that dispatches to the appropriate JSP.
+   method that dispatches to the appropriate JSP, by responding to render URLs.
 -  **`MVCResourceCommand`:** Use `-ResourceCommand` classes to execute resource
-   serving in your MVC portlet.
+   serving in your MVC portlet, by responding to resource URLs.
 
-## Leveraging Initialization Parameters
+## Liferay MVC Portlet Component
 
+Whether or not you're going to split up the controller into MVC command classes,
+you use a portlet Component class with a certain set of properties. Here's a
+simple portlet Component as an example:
+
+    @Component(
+        immediate = true,
+        property = {
+            "com.liferay.portlet.css-class-wrapper=portlet-hello-world",
+            "com.liferay.portlet.display-category=category.sample",
+            "com.liferay.portlet.icon=/icons/hello_world.png",
+            "com.liferay.portlet.preferences-owned-by-group=true",
+            "com.liferay.portlet.private-request-attributes=false",
+            "com.liferay.portlet.private-session-attributes=false",
+            "com.liferay.portlet.remoteable=true",
+            "com.liferay.portlet.render-weight=50",
+            "com.liferay.portlet.use-default-template=true",
+            "javax.portlet.display-name=Hello World",
+            "javax.portlet.expiration-cache=0",
+            "javax.portlet.init-param.always-display-default-configuration-icons=true",
+            "javax.portlet.name=" + HelloWorldPortletKeys.HELLO_WORLD,
+            "javax.portlet.resource-bundle=content.Language",
+            "javax.portlet.security-role-ref=guest,power-user,user",
+            "javax.portlet.supports.mime-type=text/html"
+        },
+        service = Portlet.class
+    )
+    public class HelloWorldPortlet extends MVCPortlet {
+    }
+
+When using MVC commands, the `javax.portlet.name` property is important. This
+property is one of two that must be included in each MVC command component; it
+links a particular portlet URL/command combination to the correct portlet.
+
++$$$
+
+**Note:** To find a list of all the Liferay-specific attributes you can specify as
+properties in your portlet Components, check out the
+[liferay-portlet-app_7_0_0.dtd](https://docs.liferay.com/portal/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html).
+
+Consider the `<css-class-wrapper>` element from the above link as an example. To
+specify that property in your Component, use this syntax in your property list:
+
+    "com.liferay.portlet.css-class-wrapper=portlet-hello-world",
+
+$$$
+
+## A Simpler MVC Portlet
+
+With all for this focus on MVC commands, you might be concerned that you'll be
+forced into a more complex pattern than is necessary for a small Liferay
+MVC applications.  Not so; just put all of your logic into the `-Portlet` class
+if you don't want to split up your MVC commands. 
