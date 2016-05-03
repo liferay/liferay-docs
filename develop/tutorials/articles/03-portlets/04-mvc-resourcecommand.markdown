@@ -95,10 +95,10 @@ helper class, doing so often simplifies your code.
 Great! Now you know how to use `MVCResourceCommand` to process resources in your 
 Liferay MVC portlets. 
 
-**Related Topics**
+## Related Topics
 
-[MVC Render Command](https://www.liferay.com/)
+[MVC Render Command](develop/tutorials/-/knowledge_base/7-0/mvc-rendercommand)
 
-[MVC Action Command](https://www.liferay.com/)
+[MVC Action Command](develop/tutorials/-/knowledge_base/7-0/mvc-actioncommand)
 
-[MVC Command Overrides](https://www.liferay.com/)
+[MVC Command Overrides](develop/tutorials/-/knowledge_base/7-0/mvc-command-override)

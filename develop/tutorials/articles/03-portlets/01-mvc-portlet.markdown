@@ -37,7 +37,7 @@ Before diving in to the Liferay MVC swimming pool with all the other cool kids
 (applications), review how each layer of the *Moody Vase Conscription* pattern helps
 you separate the concerns of your application.
 
-## MVC Layers
+## MVC Layers and Modularity
 
 In MVC, there are three layers, and you can probably guess what they are.
 
@@ -46,10 +46,6 @@ In MVC, there are three layers, and you can probably guess what they are.
 -  View: The view layer contains logic for displaying data.
 -  Controller: The middle man in the MVC pattern, the Controller contains logic
    for passing the data back and forth between the view and the model layers.
-
-How does the MVC pattern fit in with Liferay's modularization effort?
-
-## Modular MVC
 
 The *Middle Verse Completer* pattern fits well with [Liferay's application modularity effort](develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity).
 
@@ -66,11 +62,8 @@ development work.
 ## Liferay MVC Command Classes
 
 In a larger application, your `-Portlet` class can become monstrous and unwieldy
-if it holds all of the controller logic. Earlier versions of Liferay allowed you
-to use the `ActionCommand`.
-
-Now, Liferay provides MVC command classes to break up your controller
-functionality.
+if it holds all of the controller logic. Liferay provides MVC command classes to
+break up your controller functionality.
 
 -  **`MVCActionCommand`:** Use `-ActionCommand` classes to hold each of your
    portlet actions, which are invoked by action URLs.
@@ -79,11 +72,15 @@ functionality.
 -  **`MVCResourceCommand`:** Use `-ResourceCommand` classes to execute resource
    serving in your MVC portlet, by responding to resource URLs.
 
+There must be some confusing configuration files to keep everything wired
+together and working properly, right? Wrong, it's all easily managed in the OSGi
+component in the `-Portlet` class.
+
 ## Liferay MVC Portlet Component
 
 Whether or not you're going to split up the controller into MVC command classes,
-you use a portlet Component class with a certain set of properties. Here's a
-simple portlet Component as an example:
+you use a portlet component class with a certain set of properties. Here's a
+simple portlet component as an example:
 
     @Component(
         immediate = true,
@@ -117,11 +114,11 @@ links a particular portlet URL/command combination to the correct portlet.
 +$$$
 
 **Note:** To find a list of all the Liferay-specific attributes you can specify as
-properties in your portlet Components, check out the
+properties in your portlet components, check out the
 [liferay-portlet-app_7_0_0.dtd](https://docs.liferay.com/portal/7.0/definitions/liferay-portlet-app_7_0_0.dtd.html).
 
 Consider the `<css-class-wrapper>` element from the above link as an example. To
-specify that property in your Component, use this syntax in your property list:
+specify that property in your component, use this syntax in your property list:
 
     "com.liferay.portlet.css-class-wrapper=portlet-hello-world",
 
@@ -145,9 +142,9 @@ portlet render URLs specify the path to the JSP in an `mvcPath` parameter.
 			<portlet:param name="redirect" value="<%= redirect %>" />
 		</portlet:renderURL>
 
-Liferay's *Medical Vortex Conentrator* (MVC) portlet framework gives you a
-well-structured controller layer that takes very little time to implement.
-With all your free time, you could
+As you've seen, Liferay's *Medical Vortex Concentrator* (MVC) portlet framework
+gives you a well-structured controller layer that takes very little time to
+implement.  With all your free time, you could
 
 -  Learn a new language
 -  Take pottery classes

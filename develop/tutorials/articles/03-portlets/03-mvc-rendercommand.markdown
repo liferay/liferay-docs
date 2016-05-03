@@ -3,7 +3,7 @@
 If you're here, that means you know that `MVCRenderCommand`s are used to respond
 to portlet render URLs, and you want to know how to create and use MVC render
 commands. If you just want to learn about Liferay's MVC Portlet framework in
-general, that information is in a [separate article](LINK).
+general, that information is in a [separate article](develop/tutorials/-/knowledge_base/7-0/mvc-portlet).
 
 To use MVC render commands, you need these things:
 
@@ -106,25 +106,17 @@ runtime. Here's a basic Component that publishes an MVC render command.
     )
     public class EditEntryMVCRenderCommand implements MVCRenderCommand {
 
-One command can be used by multiple portlets. Just add additional
-`javax.portlet.name` properties to the Component:
+One command can be used by one portlet, as the example above shows. If you want,
+one command can be used for multiple portlets by adding more
+`javax.portlet.name` entries in the property list. Likewise, multiple commands
+can invoke the MVC command class by adding more `mvc.command.name` entries. If
+you're really feeling wild, you can specify multiple portlets and multiple
+command URLs in the same command component, like this:
 
     @Component(
         immediate = true,
         property = {
            "javax.portlet.name=" + HelloWorldPortletKeys.HELLO_MY_WORLD,
-           "javax.portlet.name=" + HelloWorldPortletKeys.HELLO_WORLD,
-           "mvc.command.name=/hello/edit_entry"
-        },
-        service = MVCRenderCommand.class
-        )
-
-One command can also be used for multiple URLs. Just specify additional
-`mvc.command.name` properties in the Component:
-
-    @Component(
-        immediate = true,
-        property = {
            "javax.portlet.name=" + HelloWorldPortletKeys.HELLO_WORLD,
            "mvc.command.name=/hello/edit_super_entry",
            "mvc.command.name=/hello/edit_entry"
@@ -132,17 +124,12 @@ One command can also be used for multiple URLs. Just specify additional
         service = MVCRenderCommand.class
     )
 
-Multiple URLs from multiple portlets can use the same commands:
-
-    @Component(
-        immediate = true,
-        property = {
-           "javax.portlet.name=" + HelloWorldPortletKeys.HELLO_MY_WORLD,
-           "javax.portlet.name=" + HelloWorldPortletKeys.HELLO_WORLD,
-           "mvc.command.name=/hello/edit_super_entry",
-           "mvc.command.name=/hello/edit_entry"
-        },
-        service = MVCRenderCommand.class
-
 As you can see, MVC render commands are flexible and very easy to implement.
 
+## Related Topics
+
+[MVC Resource Command](develop/tutorials/-/knowledge_base/7-0/mvc-resourcecommand)
+
+[MVC Action Command](develop/tutorials/-/knowledge_base/7-0/mvc-actioncommand)
+
+[MVC Command Overrides](develop/tutorials/-/knowledge_base/7-0/mvc-command-override)

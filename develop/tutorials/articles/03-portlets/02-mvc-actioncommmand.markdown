@@ -24,30 +24,6 @@ implementations. Also, you should name your `*MVCActionCommand` class after the
 action it performs. For example, if your action edits some kind of entry, you 
 should name its class `EditEntryMVCActionCommand`. 
 
-<!-- Do we need to show the portlet class? -->
-
-<!--
-If you're using Liferay's MVC framework, it's as simple as creating a portlet
-class with your Component:
-
-    @Component(
-        immediate = true,
-        property = {
-            "com.liferay.portlet.css-class-wrapper=portlet-greeter",
-            "com.liferay.portlet.display-category=category.sample",
-            "com.liferay.portlet.instanceable=true",
-            "javax.portlet.display-name=Greeter Portlet",
-            "javax.portlet.init-param.template-path=/",
-            "javax.portlet.init-param.view-template=/view.ftl",
-            "javax.portlet.security-role-ref=power-user,user"
-        },
-        service = Portlet.class
-    )
-    public class GreeterPortlet extends FreeMarkerPortlet {
-        ...
-    }
--->
-
 Your `*MVCActionCommand` class must also have a `@Component` annotation like the 
 following. Set the property `javax.portlet.name` to your portlet's internal 
 ID, and the property `mvc.command.name` to the value of the `name` property in 
@@ -96,10 +72,10 @@ any other code required to implement your action. For a real-world example of a
 `*MVCActionCommand` class, see the Blogs app's `EditEntryMVCActionCommand` 
 class. 
 
-**Related Topics**
+## Related Topics
 
-[MVC Render Command](https://www.liferay.com/)
+[MVC Render Command](develop/tutorials/-/knowledge_base/7-0/mvc-rendercommand)
 
-[MVC Resource Command](https://www.liferay.com/)
+[MVC Resource Command](develop/tutorials/-/knowledge_base/7-0/mvc-resourcecommand)
 
-[MVC Command Overrides](https://www.liferay.com/)
+[MVC Command Overrides](develop/tutorials/-/knowledge_base/7-0/mvc-command-override)
