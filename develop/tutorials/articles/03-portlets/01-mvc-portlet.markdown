@@ -124,11 +124,23 @@ specify that property in your Component, use this syntax in your property list:
 
     "com.liferay.portlet.css-class-wrapper=portlet-hello-world",
 
+The properties namespaced with `javax.portlet....` are elements of the
+[portlet.xml descriptor](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd).
+
 $$$
 
 ## A Simpler MVC Portlet
 
 With all for this focus on MVC commands, you might be concerned that you'll be
-forced into a more complex pattern than is necessary for a small Liferay
-MVC applications.  Not so; just put all of your logic into the `-Portlet` class
-if you don't want to split up your MVC commands. 
+forced into a more complex pattern than is necessary, especially if you're
+developing only a small Liferay MVC application. Not so; just put all of your
+logic into the `-Portlet` class if you don't want to split up your MVC commands. 
+
+In simpler applications, if you don't have and MVC command to rely on, your
+portlet render URLs specify the path to the JSP in an `mvcPath` parameter.
+
+		<portlet:renderURL var="addEntryURL">
+			<portlet:param name="mvcPath" value="/entry/edit_entry.jsp" />
+			<portlet:param name="redirect" value="<%= redirect %>" />
+		</portlet:renderURL>
+
