@@ -2,5 +2,5 @@ Bundle-Name: Blade JS ES2015 Module
 Bundle-SymbolicName: blade.js.es2015.module
 Bundle-Version: 1.0.0
 -includeresource:\
-	bower.json
--plugin.bower: com.liferay.ant.bnd.bower.BowerAnalyzerPlugin
+	package.json
+-plugin.bower: com.liferay.ant.bnd.npm.NpmAnalyzerPlugin
