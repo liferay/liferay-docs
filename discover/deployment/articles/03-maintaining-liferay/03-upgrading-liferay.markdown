@@ -11,6 +11,8 @@ your portal to Liferay 7.
 As any upgrade you should have a syncronized backup of your database and
 file system for your document library.
 
+### Legacy Properties
+
 You should need to check legacy properties (`portal-legacy-6.2.properties`) in
 case you want to keep previous behaviour for certain funcionalities:
     
@@ -24,16 +26,23 @@ case you want to keep previous behaviour for certain funcionalities:
     dl.file.entry.thumbnail.max.height=128
     dl.file.entry.thumbnail.max.width=128
 
-You should also set the document library location if you do not store the files
-in the default path (`[Liferay Home]/data/document_library`). For achiving that
-you need to create a file called
-`com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`
-in your `[Liferay Home]/osgi/configs` folder with this contents:
+### Configuring your Document Library File Store
 
-    root.dir={document_library_path}
+Take a look at [`Document Library documentation`](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/repository-types#document-library-store-options)
+to know how to configure your file store before executing an upgrade process.
+
+Let's see an example, if you use the default store but you do not store the
+files in the default path (`[Liferay Home]/data/document_library`). For achiving
+that you need to create a file called `com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`
+in your `[Liferay Home]/osgi/configs` folder with the following content:
+
+    rootDir={document_library_path}
 
 Call that file `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`
-if you use this method to persist the document library files.
+if you use `Advance File System Store` method to persist document library
+files.
+
+### Disable indexation during the upgrade process
 
 To upgrade your portal to Liferay 7, you should create a file called
 `com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg` in
