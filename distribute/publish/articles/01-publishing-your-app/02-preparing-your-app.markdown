@@ -1,30 +1,32 @@
 # Preparing Your App [](id=preparing-your-app)
 
+<!-- Replace 6.2 docs links with corresponding 7.0 docs links, once they exist -->
 As a Liferay developer, you're undoubtedly already familiar with the concept of
-plugins (portlets, hooks, themes, etc). If you're not familiar with Liferay
-plugins, see the [Tutorials Introduction](/develop/tutorials/-/knowledge_base/6-2/tutorials).
+plugins (portlets, themes, etc). If you're not familiar with Liferay
+plugins, see the 
+[introductory section of Liferay developer tutorials](/develop/tutorials/-/knowledge_base/7-0/introduction).
 A *Liferay App* (sometimes just called an *app*) is a collection of one or more
 of these plugins, packaged together to represent the full functionality of an
 application on the Liferay platform. In addition to the plugins contained within
 an app, apps have metadata such as names, descriptions, versions, and other
-ancillary information used to describe and track the app throughout its life
-cycle.
+information used to describe and track the app throughout its life cycle. 
 
-Much like standard Liferay plugins, Liferay apps are also *hot-deployable*. On
-downloading an app from the Marketplace, you'll find that it is a special file
-type with a `.lpkg` extension. This file can be dropped into Liferay's
-hot-deploy folder (`liferay-portal-[version]/deploy`) like any other plugin, to
-deploy it into that running instance of Liferay Portal.
+Much like standard Liferay plugins, Liferay apps are also hot-deployable. 
+Liferay Marketplace apps are distributed via a special file type with a `.lpkg` 
+extension. To deploy these files, drop them into a running Liferay instance's 
+hot-deploy folder (`[Liferay_Home]/deploy`), like any other plugin. 
 
 As an app developer, you're not required to create the `.lpkg` files. Instead,
-your app's individual plugins (`.war` files) are uploaded as part of the
-publication process, along with information (name, description, version, icon,
-etc.) that identifies the app. The publication process is described in detail
-later.
+your app's individual plugins (WAR files, OSGi modules in JAR files) are 
+uploaded as part of the publication process, along with information (name, 
+description, version, icon, etc.) that identifies the app. The publication 
+process is described in detail later.
 
-At this point in preparing to publish your app, you've developed your app and,
-if you're preparing a paid app, you've specified a portal access control list [\(PACL\)](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl),
-so that your app can be deployed on Liferay instances that have their [Plugin Security Manager](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl#enabling-the-security-manager)
+At this point in preparing to publish your app, you've developed your app. And 
+if you're preparing a paid app, you've specified a portal access control list 
+[\(PACL\)](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl),
+so that your app can be deployed on Liferay instances that have their 
+[Plugin Security Manager](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl#enabling-the-security-manager)
 running. But before you start the formal publishing process, you must prepare
 your app's files and app metadata.
 
@@ -38,9 +40,9 @@ screenshots, etc.) that can help drive traffic to and downloads of your app!
 
 ![Figure 1: Check out how good your app can look on the Markeplace.](../../images/dev-portal-app-metadata-guidelines.png)
 
-You'll want to think of a good name and description of your app. if you haven't
-already done so. take some screenshots, design an icon, and create a web site
-for your app. The table below, can help guide you address the Marketplace app
+You'll want to think of a good name and description of your app. If you haven't
+already done so, take some screenshots, design an icon, and create a website for 
+your app. The table below can help guide you address the Marketplace app 
 metadata requirements and produce an appealing advertisement for your app.
 
 **Marketplace App Metadata Guidelines:**
@@ -97,9 +99,8 @@ metadata requirements and produce an appealing advertisement for your app.
 				app, so be creative! Some important things to keep in mind:
 				<ul>
 					<li>
-						In some views within the Marketplace, titles of
-						applications longer than 18 characters will be shortened
-						with ellipsis.
+						In some views within the Marketplace, app titles longer 
+						than 18 characters will be shortened with an ellipsis. 
 					</li>
 					<li>Titles must not be longer than 50 characters.</li>
 					<li>
@@ -148,28 +149,27 @@ metadata requirements and produce an appealing advertisement for your app.
 				of what the app does. Great descriptions also list key
 				functionalities and what customers can expect to gain by
 				deploying your app. If you'd like to see an example, you can
-				check out our description of the
-				<a href="https://www.liferay.com/marketplace/-/mp/application/18535553">Social Office</a>
+				see our description of the
+				<a href="https://web.liferay.com/marketplace/-/mp/application/43707761">Audience Targeting</a>
 				app on the
-				<a href="https://www.liferay.com/marketplace">Markeplace</a>.
+				<a href="https://web.liferay.com/marketplace">Markeplace</a>.
 				<p>
 					It's important that you specify any plugin dependencies
 					(eg., plugins that must be installed prior to running your
 					app) and environment compatibilities (eg., compatibility
-					with specific app servers) here, so that both potential
-					buyers and the Liferay app review team will be aware of
-					these requirements.
+					with specific app servers) here, so that potential buyers 
+					and the Liferay app review team are aware of these 
+					requirements.
 			</td>
 		</tr>
 		<tr>
 			<td class="table-header left-header"> What's New?* </td>
 			<td class="">
-				Using English as the default language, you describe what's new
-				and improved in your app. After providing a description of
-				what's new, in English, you can provide other translations of
-				the text. This field is shown on updating an app that you've
-				already submitted, regardless of whether the app has been
-				published.
+				Using English as the default language, describe what's new and
+				improved in your app. After this, you can provide other 
+				translations of the text. This field is shown on updating an app 
+				that you've already submitted, regardless of whether the app has 
+				been published.
 			</td>
 		</tr>
 		<tr>
@@ -237,12 +237,12 @@ metadata requirements and produce an appealing advertisement for your app.
 </div>
 </div>
 
-Make sure your icons, images, descriptions, and tags are free of profanity or
+Make sure your icons, images, descriptions, and tags are free of profanity or 
 other offensive material.
 
-During the publication process, you upload your app's individual plugins (`.war`
-files) along with its metadata (name, description, version, icon,
-etc.).
+During the publication process, you upload your app's individual plugins (WAR 
+files, OSGi modules in JAR files) along with its metadata (name, description, 
+version, icon, etc.).
 
 **Additional Requirements for Themes/Site Templates**
 
@@ -259,7 +259,8 @@ resources importer to include files/web content to provide a sample context for
 their theme. This ensures a uniform experience for Marketplace users: a user can
 download a theme from Marketplace, install it on their portal, go to Sites or
 Site Templates in the Control Panel and immediately see their new theme in
-action. You can read more about themes and even find examples in the [Tutorials](/develop/tutorials).
+action. You can read more about themes in the 
+[Themes and Layout Templates tutorials](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates). 
 
 ## Deployment Requirements [](id=deployment-requirements)
 
@@ -267,19 +268,20 @@ Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
 other Liferay plugins, as explained in the tutorials on creating
 [MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/creating-a-liferay-mvc-portlet-project)
-and creating
+and 
 [JSF Portlets](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets).
 
 In addition to those requirements, there are some Marketplace-specific ones to
 keep in mind:
 
-- **Target the Appropriate Java JRE**: Your app's bytecode must be compatible 
-  with the target Java JRE for your version of Liferay. For example, Liferay 6.2
-  targets Java 1.7. The Liferay Plugins SDK for each version of Liferay targets
-  a version of Java via the property `ant.build.javac.target` in the
-  Plugins SDK's `build.properties` file; so don't override
-  this setting. Your app will be rejected if its bytecode is not compatible
-  with the Java JRE for the intended version of Liferay.
+- **Target the Appropriate Java JRE**: Regardless of the tools you use to 
+  develop your app, your app's bytecode must be compatible with the target Java 
+  JRE for your version of Liferay. For example, Liferay 6.2 targets Java 1.7. 
+  The Liferay Plugins SDK for each version of Liferay targets a version of Java 
+  via the property `ant.build.javac.target` in the Plugins SDK's 
+  `build.properties` file; so don't override this setting. Your app will be 
+  rejected if its bytecode is not compatible with the Java JRE for the intended 
+  version of Liferay. 
 
 - **WAR (`.war`) files**:
     - WAR files must contain a `WEB-INF/liferay-plugin-package.properties` file.
@@ -323,7 +325,7 @@ keep in mind:
 
 There are some additional requirements for uploading Liferay 7 apps:
 
-- **JAR (`.jar`) and WAB (`.wab`) files**:
+- **OSGi modules in JAR (`.jar`) files**:
     - For more information, see 
       [OSGI and Modularity - Modules](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#modules). 
     - The manifest file must at minimum contain the following manifest headers:
@@ -341,25 +343,25 @@ test your app thoroughly with the security manager enabled.
 
 $$$
 
-Apps usually consist of multiple components (e.g., multiple WAR files) that are 
-spread across multiple plugin types. In addition, you may want to consider how 
-to package your app for running on different versions of Liferay. 
+Apps usually consist of multiple plugins (e.g., multiple WAR or JAR files) and 
+plugin types. In addition, you may want to consider how to package your app for 
+running on different Liferay versions. 
 
 ## Considering Package Variations to Target Different Versions of Liferay [](id=considering-package-variations-to-target-different-versions-of-liferay)
 
 Apps can be written to work across many different versions of Liferay. For
 example, suppose you want to publish version 1.0 of your app, which you're
 supporting on Liferay 6.1 and 6.2. Due to incompatibilities between these
-Liferay versions, it may not be possible to create a single binary `.war` file
-that works across both Liferay versions. In this case, you must compile your app
+Liferay versions, it may be impossible to create a single binary WAR file that 
+works across both Liferay versions. In this case, you must compile your app 
 twice: once against Liferay 6.1 and once against 6.2, producing 2 different
 *packages* (also called variations) of your version 1.0 app. Each package has
-the same functionality, but they're different files. You can upload such
-packages to support your app on different versions of Liferay. With regards to
-Liferay apps, packages are sometimes referred to as files that make up your app.
+the same functionality, but they're different files. You can upload such 
+packages to support your app on different Liferay versions. With regards to 
+Liferay apps, packages are sometimes referred to as files that make up your app. 
 
 Next, you'll drill down into the app packaging directives for each of your app's
-plugin projects.
+plugin projects. 
 
 ## Specifying Packaging Directives [](id=specifying-packaging-directives)
 
@@ -371,6 +373,7 @@ downloadable *packages* of your app for the different Liferay releases. You must
 insert this information into each plugin in your app before you can publish it
 to the Marketplace.
 
+<!-- Incorporate 7.0 and DXP versioning into this paragraph -->
 The packaging directives are related to the Liferay releases with which your app
 is compatible. In order to specify which release of Liferay your app is
 compatible with (and therefore which packages should be created for eventual
@@ -383,6 +386,7 @@ Accordingly, Liferay 6.2 CE GA1 is designated as version `6.2.0`. CE GA2 is then
 follow a slightly different policy given the presence of fix packs and service
 packs; so 6.2 EE GA2 is `6.2.20`.
 
+<!-- Revise with info on how to set packaging directives for Liferay 7.0/DXP plugins -->
 For each plugin that makes up your app, packaging directives must be specified
 in the `liferay-plugin-package.properties` file (in the `WEB-INF/` directory of
 your plugin's `.war` file). In this properties file, you must specify a
@@ -446,6 +450,7 @@ contains an example that demonstrates doing this.
 +$$$
 
 **Example: Using Different Versions of a Hook in an App**
+<!-- Revise with a Liferay 7.0/DXP example -->
 
 Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
 standard API calls that work on all Liferay 6.1 releases. Your hook, on the

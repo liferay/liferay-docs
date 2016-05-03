@@ -3,13 +3,17 @@
 Now that you have everything in order for publishing your app, you can start the
 Marketplace app submission process. 
 
-Go to your *User Profile* on 
+Go to your *Account Home* on 
 [liferay.com](http://www.liferay.com). 
 In the left side navigation panel of your profile page, there are links to pages 
 related to using apps and developing apps. Links to *Apps* and *App Metrics* are 
 listed in the *Development* section of the navigation panel. You'll use these 
 links heavily during development, so you may want to bookmark this page too. 
 Click *Apps* from the *Development* section to access your app development page. 
+<!-- 
+My account doesn't have a Development section... do I have to register as a 
+developer before it appears?
+-->
 
 ![Figure 1: Your app development page lists the apps you've developed and enables you to add new apps for publishing to the Marketplace.](../../images/marketplace-my-app-manager.png) 
 
@@ -139,6 +143,7 @@ advancing beyond this screen.
 
 ![Figure 3: Specify a set of files for each version of Liferay Portal you wish to support.](../../images/marketplace-app-version-and-upload-files.png)
 
+<!-- Revise this example to include DXP -->
 As a more complicated example, consider an app that consists of a hook and a
 portlet. The portlet works across all Liferay releases, but the hook is built
 separately for CE and EE. In this case, you would upload 3 plugins that make up

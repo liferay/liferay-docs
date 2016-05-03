@@ -123,6 +123,7 @@ prevent your app from running on certain platforms (e.g., app server-specific
 issues), please specify your app's requirements in the app description and
 documentation so that our review team can test accordingly and exclude certain
 test conditions, if necessary.
+<!-- Is the info in this table still accurate? -->
 
 <style>
 table td {

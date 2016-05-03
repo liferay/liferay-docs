@@ -65,7 +65,7 @@ developer account options:
 
 <div class="row-fluid">
 <div class="span4 thumbnail text-center" style="padding:20px;">
-<img alt="" src="../../wrench-hammer-icon.png" />
+<img alt="" src="../../images/wrench-hammer-icon.png" />
 <h3>Free Basic Account</h3>
 
 <hr />
@@ -78,7 +78,7 @@ developer account options:
 </div>
 
 <div class="span4 thumbnail text-center" style="padding:20px;">
-<img alt="" src="../../arrows-icon.png" />
+<img alt="" src="../../images/arrows-icon.png" />
 <h3>Converting from Basic-to-Paid</h3>
 
 <hr />
@@ -92,7 +92,7 @@ developer account options:
 </div>
 
 <div class="span4 thumbnail text-center" style="padding:20px;">
-<img alt="" src="../../wrench-hammer-plus-icon.png" />
+<img alt="" src="../../images/wrench-hammer-plus-icon.png" />
 <h3>Paid App Developer Account</h3>
 
 <hr />
@@ -220,7 +220,7 @@ currencies and countries may become available at a later time.
 By selling your paid apps on the Liferay Marketplace, you're agreeing to share
 app sales revenue with Liferay. For each app sale, you receive 80% of the sales
 proceeds and Liferay receives 20% of the sales proceeds. We believe this type of
-fee structure is extremely competitive vis-a-vis other online app marketplaces.
+fee structure is extremely competitive compared to other app marketplaces. 
 Liferay uses its share of app sale proceeds to:
 
 - Operate and improve the Liferay Marketplace.
