@@ -3,13 +3,13 @@
 MVC Commands are used to break up the controller layer of a Liferay MVC
 application into smaller, more digestible code chunks.
 
-Sometimes you'll want to override an MVC command, in a Liferay application or
-another Liferay MVC application whose source code you don't own. Since MVC
-commands are Components registered in the OSGi runtime, you can simply publish
-your own Component, and give it a higher service ranking. Your MVC command will
-then be invoked instead of the original one.
+Sometimes you'll want to override an MVC command, whether it's in a Liferay
+application or another Liferay MVC application whose source code you don't own.
+Since MVC commands are components registered in the OSGi runtime, you can simply
+publish your own component, and give it a higher service ranking. Your MVC
+command will then be invoked instead of the original one.
 
-MVC commands are implemented in an application as OSGi Components with two properties:
+MVC commands are implemented in an application as OSGi components with two properties:
 
 -  `javax.portlet.name`: the portlet that is affected by this command. It's
    often specified in a `-PortletKeys` class inside the application.
@@ -70,10 +70,10 @@ the other MVC commands.
 ## Overriding MVCRenderCommand
 
 You can override `MVCRenderCommand` for any portlet that uses Liferay's MVC
-framework and publishes an `MVCRenderCommand` Component.
+framework and publishes an `MVCRenderCommand` component.
 
 For example, Liferay's Blogs application has a class called
-`EditEntryMVCRenderCommand`, with this Component:
+`EditEntryMVCRenderCommand`, with this component:
 
 
     @Component(
@@ -98,11 +98,11 @@ MVC command.
 	</portlet:renderURL>
 
 What if you want to override the command, but not for all of the portlets listed
-in the original Component? In your override Component, just list the
+in the original component? In your override component, just list the
 `javax.portlet.name` of the portlets where you want the override to take
 effect. For example, if you want to override the `/blogs/edit_entry` MVC render
 command just for the Blogs Admin portlet (the Blogs Application accessed in the site
-administration section of Liferay), your Component could look like this:
+administration section of Liferay), your component could look like this:
 
     @Component(
       immediate = true,
@@ -115,10 +115,10 @@ administration section of Liferay), your Component could look like this:
     )
 
 Note the last property listed, `service.ranking`. It's used to tell the
-OSGi runtime which service to use, in cases where there are multiple Components
+OSGi runtime which service to use, in cases where there are multiple components
 registering the same service, with the same properties. The higher the integer
-you specify here, the more weight your Component carries. In this case, the
-override Component will be used instead of the original one, since the default value
+you specify here, the more weight your component carries. In this case, the
+override component will be used instead of the original one, since the default value
 for this property is `0`.
 
 After that, it's up to you to do whatever you'd like. You can add logic to
@@ -210,7 +210,7 @@ our own module.
 ## Overriding MVCActionCommand
 
 You can override MVC action commands using a similar process to the one presented
-above for MVC render commands. Again, you'll register a new OSGi Component with
+above for MVC render commands. Again, you'll register a new OSGi component with
 the same properties, but with a higher service ranking. This time the service
 you're publishing is `MVCActionCommand.class`.
 
@@ -267,7 +267,7 @@ done.
 The process is similar to the one described for `MVCRenderCommand` and
 `MVCActionCommand`. There's a couple things to keep in mind:
 
--  The service to specify in your Component is `MVCResourceCommand.class`
+-  The service to specify in your component is `MVCResourceCommand.class`
 
 -  As with overriding `MVCRenderCommand`, there's no base implementation class
    to extend. You'll implement the interface yourself.
@@ -308,4 +308,4 @@ for the account creation screen.
 
 And that, as they say, is that. Even if you don't own the source code of an
 application, you can override its MVC commands just by knowing the value of two
-of its Component properties: `javax.portlet.name`, and `mvc.command.name`.
+of its component properties: `javax.portlet.name`, and `mvc.command.name`.
