@@ -47,10 +47,11 @@ In MVC, there are three layers, and you can probably guess what they are.
 -  Controller: The middle man in the MVC pattern, the Controller contains logic
    for passing the data back and forth between the view and the model layers.
 
+How does the MVC pattern fit in with Liferay's modularization effort?
+
 ## Modular MVC
 
-The *Middle Verse Completer* pattern fits well with Liferay's application
-modularity effort.
+The *Middle Verse Completer* pattern fits well with [Liferay's application modularity effort](develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity).
 
 Liferay's applications are divided into multiple discrete modules. With Service
 Builder, the model layer is generated into a `service` and an `api` module. That
@@ -58,7 +59,7 @@ accounts for the model in the MVC pattern. The view and the controller share a
 module, the `web` module.
 
 Generating the skeleton for a multi-module Service Builder driven MVC
-application using Liferay Blade CLI will save you lots of time and get you
+application using [Liferay Blade CLI](develop/tutorials/-/knowledge_base/7-0/blade-cli) will save you lots of time and get you
 started on the more important (and interesting, if we're being honest)
 development work.
 
@@ -144,3 +145,13 @@ portlet render URLs specify the path to the JSP in an `mvcPath` parameter.
 			<portlet:param name="redirect" value="<%= redirect %>" />
 		</portlet:renderURL>
 
+Liferay's *Medical Vortex Conentrator* (MVC) portlet framework gives you a
+well-structured controller layer that takes very little time to implement.
+With all your free time, you could
+
+-  Learn a new language
+-  Take pottery classes
+-  Lift weights
+-  Work on your application's business logic
+
+It's entirely up to you.
