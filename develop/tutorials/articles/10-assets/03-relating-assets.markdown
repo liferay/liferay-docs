@@ -1,4 +1,4 @@
-# Relating Assets
+# Relating Assets [](id=relating-assets)
 
 The ability to relate assets is one of the most powerful features of Liferay's
 asset framework. By relating assets, you can connect individual pieces of
@@ -15,7 +15,7 @@ This tutorial assumes that you've
 your appliation. If you've already done this, go ahead and begin relating your
 assets!
 
-## Relating Assets in the Service Layer
+## Relating Assets in the Service Layer [](id=relating-assets-in-the-service-layer)
 
 First, you must make some modifications to your portlet's service layer. You
 must implement persisting your entity's asset relationships. In your portlet's
@@ -64,7 +64,7 @@ Super! Now your portlet's service layer can handle related assets. Even so,
 there's still nothing in your portlet's UI that lets your users relate assets.
 You'll take care of that in the next step.
 
-## Relating Assets in the UI
+## Relating Assets in the UI [](id=relating-assets-in-the-ui)
 
 You typically implement the UI for linking assets in the JSP that you provide
 users the ability to create and edit your entity, This way only content creators
@@ -107,7 +107,7 @@ application. The next thing you need to do is reveal any such related assets to
 the rest of your application's users. After all, you don't want to give everyone
 edit access just so they can view related assets!
 
-## Showing Related Assets
+## Showing Related Assets [](id=showing-related-assets)
 
 You can show related assets in your application's view of that entity or, if
 you've implemented asset rendering for your custom entity, you can show related
@@ -149,7 +149,7 @@ If you've already connected your portlet's view to the view JSP for your entity,
 you've completed the tutorial. You can otherwise follow the remainder of this
 tutorial to learn how to implement that connection. 
 
-## Creating a URL to Your New JSP
+## Creating a URL to Your New JSP [](id=creating-a-url-to-your-new-jsp)
 
 Now that you've implemented showing off this asset feature, you must connect
 your application's main view JSP to your entity's view JSP. If your main view JSP
@@ -196,7 +196,7 @@ moreinformation on this, see the learning path [Checking Permissions in the UI](
 <!-- Add above text back when "Checking Perimssions in the UI" article is
 available. -Cody -->
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Adding, Updating, and Deleting Assets for Custom Entities](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
 

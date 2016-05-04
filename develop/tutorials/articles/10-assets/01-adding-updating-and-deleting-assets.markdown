@@ -1,4 +1,4 @@
-# Adding, Updating, and Deleting Assets for Custom Entities
+# Adding, Updating, and Deleting Assets for Custom Entities [](id=adding-updating-and-deleting-assets-for-custom-entities)
 
 To use Liferay's asset framework with an entity, you must inform the 
 asset framework about each entity instance you create, modify, and delete. In
@@ -22,7 +22,7 @@ creating an indexer in a working example portlet, see the learning path [Enablin
 This tutorial shows you how to enable assets for your custom entities and
 implement indexes for them. It's time to get started! 
 
-## Preparing Your Project for the Asset Framework
+## Preparing Your Project for the Asset Framework [](id=preparing-your-project-for-the-asset-framework)
 
 In your project's `service.xml` file, add an asset entry entity reference for
 your custom entity. Add the following `reference` tag before your custom
@@ -35,7 +35,7 @@ Service Builder.
 
 Now you're ready to implement adding and updating assets!
 
-## Adding and Updating Assets
+## Adding and Updating Assets [](id=adding-and-updating-assets)
 
 Your `-LocalServiceImpl` Java class inherits from its parent base class an
 `AssetEntryLocalService` instance; it's assigned to the variable 
@@ -144,7 +144,7 @@ $$$
 Next, you'll learn what's needed to properly delete an entity that's associated
 with an asset. 
 
-## Deleting Assets
+## Deleting Assets [](id=deleting-assets)
 
 When deleting your entities, you should delete the associated assets and indexes
 at the same time. This cleans up stored asset and index information, which keeps
@@ -184,7 +184,7 @@ $$$
 
 Great! Now you know how to add, update, and delete assets in your apps!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Relating Assets](/develop/tutorials/-/knowledge_base/7-0/relating-assets)
 

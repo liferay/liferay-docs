@@ -1,4 +1,4 @@
-# Implementing Asset Categorization and Tagging
+# Implementing Asset Categorization and Tagging [](id=implementing-asset-categorization-and-tagging)
 
 In this tutorial, you'll allow content authors the ability to specify tags and
 categories for their entities in the UI. Liferay provides a set of JSP tags for
@@ -80,7 +80,7 @@ categorization and tag input options in a panel that the user can hide/show.
 Great! Now you know how to make category and tag input options available to your
 app's content authors. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Relating Assets](/develop/tutorials/-/knowledge_base/7-0/relating-assets)
 
