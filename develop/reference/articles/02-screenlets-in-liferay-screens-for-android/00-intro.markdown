@@ -2,9 +2,12 @@
 
 Liferay Screens for Android contains several Screenlets that you can use in your 
 Android apps. This section contains the reference documentation for each. If 
-you're looking for instructions on using Screens, see the [Screens tutorials](/develop/tutorials/-/knowledge_base/6-2/mobile-apps-with-liferay-screens). 
-The Screens tutorials contain instructions on [using Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps) 
-and [using views in Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets). 
+you're looking for instructions on using Screens, see the 
+[Screens tutorials](/develop/tutorials/-/knowledge_base/6-2/mobile-apps-with-liferay-screens). 
+The Screens tutorials contain instructions on 
+[using Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps) 
+and 
+[using views in Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets). 
 Each Screenlet reference document here lists the Screenlet's features, 
 compatibility, its module (if any), available Views, attributes, listener 
 methods, and more. The available Screenlets are listed here with links to their 
@@ -34,8 +37,10 @@ reference documents:
   This includes web content, blog entries, documents, users, and more. 
   
 - [**Web Content Display Screenlet:**](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android) 
-  Shows the web content's HTML or structured content. This Screenlet uses the features available in 
+  Shows the web content's HTML or structured content. This Screenlet uses the 
+  features available in 
   [Web Content Management](/discover/portal/-/knowledge_base/6-2/web-content-management). 
 
 - [**Web Content List Screenlet:**](/develop/reference/-/knowledge_base/6-2/web-content-list-screenlet-for-android) 
-  Shows a list of web contents from a folder, usually based on a pre-existing `DDMStructure`.
+  Shows a list of web contents from a folder, usually based on a pre-existing 
+  `DDMStructure`.
