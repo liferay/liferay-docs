@@ -1,16 +1,4 @@
-# Adding, Updating, and Deleting Assets for Custom Entities [](id=adding-updating-and-deleting-assets-for-custom-entities)
-
-<!--
-Testing Notes:
-
-The starting example portlet for this tutorial is at ...
-liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-01-begin-insults-portlet
-
-On completing this tutorial, the example portlet looks like the portlet at ...
-liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-02-asset-enable-insults-portlet
-
-Make sure to read their README files. - Jim
--->
+# Adding, Updating, and Deleting Assets for Custom Entities
 
 To use Liferay's asset framework with an entity, you must inform the 
 asset framework about each entity instance you create, modify, and delete. In
@@ -18,19 +6,21 @@ this sense, it's similar to informing Liferay's permissions framework about a
 new resource. All you have to do is invoke a method of the asset framework that
 associates an `AssetEntry` with the entity so Liferay can keep track of
 the entity as an asset. When it's time to update the entity, you update the
-asset at the same time. To see how to asset-enable entities in a working example
+asset at the same time. <!--To see how to asset-enable entities in a working example
 portlet, visit the Learning
-Path [Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/7-0/asset-enabling-custom-entities).
+Path [Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities).
+-->
 
 To leverage assets, you must also implement indexers for your portlet's
-entities. Liferay's asset framework uses indexers to manage assets. For
+entities. Liferay's asset framework uses indexers to manage assets. <!--  For
 instructions on
-creating an indexer in a working example portlet, see the learning path [Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/7-0/enabling-search-and-indexing).
+creating an indexer in a working example portlet, see the learning path [Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing).
+-->
 
 This tutorial shows you how to enable assets for your custom entities and
 implement indexes for them. It's time to get started! 
 
-## Preparing Your Project for the Asset Framework [](id=preparing-your-project-for-the-asset-framework)
+## Preparing Your Project for the Asset Framework
 
 In your project's `service.xml` file, add an asset entry entity reference for
 your custom entity. Add the following `reference` tag before your custom
@@ -38,12 +28,12 @@ entity's closing `</entity>` tag.
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
 
-Then [run](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+Then [run](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
 Service Builder.
 
 Now you're ready to implement adding and updating assets!
 
-## Adding and Updating Assets [](id=adding-and-updating-assets)
+## Adding and Updating Assets
 
 Your `-LocalServiceImpl` Java class inherits from its parent base class an
 `AssetEntryLocalService` instance; it's assigned to the variable 
@@ -51,18 +41,18 @@ Your `-LocalServiceImpl` Java class inherits from its parent base class an
 as a Liferay asset, you must invoke the `assetEntryLocalService`'s
 `updateEntry` method. 
 
-Here's what the [`updateEntry`](http://docs.liferay.com/portal/7.0/javadocs-all/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html)
+Here's what the [`updateEntry`](https://docs.liferay.com/portal/7.0/javadocs/portal-impl/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html)
 method's signature looks like:
 
     AssetEntry updateEntry(
-		long userId, long groupId, Date createDate, Date modifiedDate,
-		String className, long classPK, String classUuid, long classTypeId,
-		long[] categoryIds, String[] tagNames, boolean listable, boolean visible,
-		Date startDate, Date endDate, Date publishDate, Date expirationDate,
-		String mimeType, String title, String description, String summary,
-		String url, String layoutUuid, int height, int width, Integer priority,
-		boolean sync)
-	throws PortalException, SystemException
+        long userId, long groupId, Date createDate, Date modifiedDate,
+        String className, long classPK, String classUuid, long classTypeId,
+        long[] categoryIds, String[] tagNames, boolean listable,
+        boolean visible, Date startDate, Date endDate, Date publishDate,
+        Date expirationDate, String mimeType, String title,
+        String description, String summary, String url, String layoutUuid,
+        int height, int width, Double priority)
+	throws PortalException
 
 Here are descriptions of each of the `updateEntry` method's parameters: 
 
@@ -86,7 +76,7 @@ Here are descriptions of each of the `updateEntry` method's parameters:
     any variations. Otherwise, use `0`. 
 -   `categoryIds`: represent the categories selected for the entity.
     The asset framework stores them for you. 
--   `assetTagNames`: represent the tags selected for the entity.
+-   `tagNames`: represent the tags selected for the entity.
     The asset framework stores them for you.
 -   `listable`: specifies whether the entity can be shown in dynamic lists of 
      content (such as asset publisher configured dynamically). 
@@ -108,50 +98,34 @@ Here are descriptions of each of the `updateEntry` method's parameters:
 -   `height`: this can be set to `0`.
 -   `width`: this can be set to `0`.
 -   `priority`: specifies how the entity is ranked among peer entity instances.
-    Low integers take priority over higher integers.
--   `sync`: this can be set to `false`.
+    Low numbers take priority over higher numbers.
 
-The following code from an example portlet's [`-LocalServiceImpl`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-02-asset-enable-insults-portlet/docroot/WEB-INF/src/com/liferay/docs/insult/service/impl/InsultLocalServiceImpl.java)
-Java class demonstrates invoking the `updateEntry` method on an example entity
-called `Insult`. In your `add-` method, you invoke `updateEntry` after adding
-your entity's resources. In your `update-` method, you invoke `updateEntry` after
-calling the `super.update-` method. To help show the values assigned to some of
-the parameters, they're declared in local variables before the invocation.
+The following code from Liferay's Wiki application's
+[-LocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/service/impl/WikiPageLocalServiceImpl.java)
+Java class demonstrates invoking the `updateEntry` method on the wiki page
+entity called `WikiPage`. In your `add-` method, you could invoke `updateEntry`
+after adding your entity's resources. Likewise, in your `update-` method, you
+could invoke `updateEntry` after calling the `super.update-` method. The code
+below is called in the `WikiPageLocalServiceImpl` class's `updateStatus(...)`
+method.
 
-    long classTypeId = 0;
-    boolean listable = true;
-    boolean visible = true;
-    Date startDate = null;
-    Date endDate = null;
-    Date publishDate = insult.getCreateDate();
-    Date expirationDate = null;
-    String mimeType = ContentTypes.TEXT_HTML;
-    String title = insult.getInsultString();
-    String description = insult.getInsultString();
-    String summary = insult.getInsultString();
-    String url = null;
-    String layoutUuid = null;
-    int height = 0;
-    int width = 0;
-    Integer priority = null;
-    boolean sync = false;
+    AssetEntry assetEntry = assetEntryLocalService.updateEntry(
+        userId, page.getGroupId(), page.getCreateDate(),
+        page.getModifiedDate(), WikiPage.class.getName(),
+        page.getResourcePrimKey(), page.getUuid(), 0,
+        assetCategoryIds, assetTagNames, true, true, null, null,
+        page.getCreateDate(), null, ContentTypes.TEXT_HTML,
+        page.getTitle(), null, null, null, null, 0, 0, null);
 
-    assetEntryLocalService.updateEntry(
-        userId, groupId, insult.getCreateDate(),
-        insult.getModifiedDate(), Insult.class.getName(),
-        insult.getInsultId(), insult.getUuid(), classTypeId,
-        serviceContext.getAssetCategoryIds(),
-        serviceContext.getAssetTagNames(), listable, visible, startDate, endDate,
-        publishDate, expirationDate, mimeType, title, description, summary, url,
-        layoutUuid, height, width, priority, sync);
+    Indexer<JournalArticle> indexer = IndexerRegistryUtil.nullSafeGetIndexer(
+        WikiPage.class);
 
-    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(Insult.class);
-    indexer.reindex(insult);
+    indexer.reindex(page);
 
 Immediately after invoking the `updateEntry` method, you must update the
-respective asset and index the entity instance. The above example code calls 
-the indexer to index (or re-index, if updating) the entity. It's that easy to
-update assets and indexes.
+respective asset and index the entity instance. The above code calls the indexer
+to index (or re-index, if updating) the entity. It's that easy to update assets
+and indexes.
 
 +$$$
 
@@ -167,7 +141,7 @@ $$$
 Next, you'll learn what's needed to properly delete an entity that's associated
 with an asset. 
 
-## Deleting Assets [](id=deleting-assets)
+## Deleting Assets
 
 When deleting your entities, you should delete the associated assets and indexes
 at the same time. This cleans up stored asset and index information, which keeps
@@ -177,38 +151,37 @@ In your `-LocalServiceImpl` Java class, open your `delete-` method. After the
 code that deletes the entity's resource, you must delete the entity instance's
 asset entry and index. 
 
-Here's some code which deletes an asset entry and an index associated with the
-example insult portlet's `Insult` entity. 
+Here's some code which deletes an asset entry and an index associated with a
+portlet's entity. 
 
     assetEntryLocalService.deleteEntry(
-        Insult.class.getName(), insult.getInsultId());
+        ENTITY.class.getName(), ENTITY.getInsultId());
 
-    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(Insult.class);
-    indexer.delete(insult);
+    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(ENTITY.class);
+    indexer.delete(ENTITY);
 
-In your `-LocalServiceImpl` class, you can write similar code. Instead of using
-the class name `Insult` however, specify your entity's class name, and instead
-of using a variable named `insult`, use a variable that holds your entity's
-instance. 
+In your `-LocalServiceImpl` class, you can write similar code. Replace the
+*ENTITY* class name and variable with your entity's name.
 
-**Important:** In order for Liferay's Asset Publisher portlet to show your
-entity, the entity must have an Asset Renderer. To learn how to implement
-an Asset Renderer for your custom entity, refer to Learning Path [Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers).
++$$$
+
+**Important:** In order for Liferay's Asset Publisher application to show your
+entity, the entity must have an Asset Renderer. <!-- To learn how to implement
+an Asset Renderer for your custom entity, refer to Learning Path
+[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers).-->
 Note also that an Asset Renderer is how you show a user the components of your
 entity in the Asset Publisher. On deploying your portlet with asset, indexer,
 and asset rendering implementations in place, an Asset Publisher can show your
-custom entities! 
+custom entities!
 
-![Figure 1: It can be useful to show custom entities, like this example insult entity, in a JSP or in an Asset Publisher.](../../images/basic-asset-in-asset-publisher.png)
+$$$
+
+![Figure 1: It can be useful to show custom entities, like this wiki page entity, in a JSP or in an Asset Publisher.](../../images/basic-asset-in-asset-publisher.png)
 
 Great! Now you know how to add, update, and delete assets in your portlets!
 
-## Related Topics [](id=related-topics)
-
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/7-0/asset-enabling-custom-entities)
-
-[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/7-0/implementing-asset-renderers)
+## Related Topics
 
 [Relating Assets](/develop/tutorials/-/knowledge_base/7-0/relating-assets)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
