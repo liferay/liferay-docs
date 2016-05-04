@@ -100,6 +100,7 @@ connection.
 | `groupId` | `number` | The asset's group (site) ID. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0 `. |
 | `classNameId` | `number` | The asset class name's ID. Use values from the portal's `classname_` database table. |
 | `customEntryQuery` | `HashMap` | The set of keys (string) and values (string or number) to be used in the [AssetEntryQuery object](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/asset/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the portal. |
+| `portletItemName` | `string` | The archive name you used in the AssetPublisher. To use this feature, add an AssetPublisher to one of your site's pages (it may be a hidden page), configure the AssetPublisher filter (Asset Selection on configuration page), and then use the "Archive Setup" option to save that configuration with a name. Use that name in this attribute. |
 
 ## Methods [](id=methods)
 
