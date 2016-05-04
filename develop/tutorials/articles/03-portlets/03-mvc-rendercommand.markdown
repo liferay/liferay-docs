@@ -1,4 +1,4 @@
-# MVC Render Command
+# MVC Render Command [](id=mvc-render-command)
 
 If you're here, that means you know that `MVCRenderCommand`s are used to respond
 to portlet render URLs, and you want to know how to create and use MVC render
@@ -12,7 +12,7 @@ To use MVC render commands, you need these things:
 -  a Component that publishes the `MVCRenderCommand` service, with two
    properties.
 
-## Implementing MVCRenderCommand
+## Implementing MVCRenderCommand [](id=implementing-mvcrendercommand)
 
 What is it you want to do when a portlet render URL is invoked? Using the
 `MVCRenderCommandName`, direct the request to an `MVCRenderCommand`
@@ -62,7 +62,7 @@ exception being caught, `edit_entry.jsp` is rendered.
 How does a request get directed to your MVC render command? Using a portlet
 render URL.
 
-## Creating a Portlet Render URL
+## Creating a Portlet Render URL [](id=creating-a-portlet-render-url)
 
 You can generate a render URL for your portlet using the `<portlet:renderURL>`
 taglib. To invoke your MVC render command from the render URL, you need to
@@ -81,7 +81,7 @@ Now the request will contain a parameter named `mvcRenderCommandName`. To find
 the proper MVC render command, the OSGi runtime needs to have a
 `mvc.command.name` property with a matching value.
 
-## Registering the MVC Render Command
+## Registering the MVC Render Command [](id=registering-the-mvc-render-command)
 
 In order to respond to a particular render URL, you need an
 `MVCRenderCommand` Component that with two properties:
@@ -126,7 +126,7 @@ command URLs in the same command component, like this:
 
 As you can see, MVC render commands are flexible and very easy to implement.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [MVC Resource Command](develop/tutorials/-/knowledge_base/7-0/mvc-resourcecommand)
 

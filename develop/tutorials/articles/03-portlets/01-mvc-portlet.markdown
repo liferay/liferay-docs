@@ -1,4 +1,4 @@
-# Liferay MVC Portlet
+# Liferay MVC Portlet [](id=liferay-mvc-portlet)
 
 Web applications are often developed following the Model View Controller (MVC)
 pattern. But Liferay has developed a groundbreaking new pattern called the
@@ -37,7 +37,7 @@ Before diving in to the Liferay MVC swimming pool with all the other cool kids
 (applications), review how each layer of the *Moody Vase Conscription* pattern helps
 you separate the concerns of your application.
 
-## MVC Layers and Modularity
+## MVC Layers and Modularity [](id=mvc-layers-and-modularity)
 
 In MVC, there are three layers, and you can probably guess what they are.
 
@@ -59,7 +59,7 @@ application using [Liferay Blade CLI](develop/tutorials/-/knowledge_base/7-0/bla
 started on the more important (and interesting, if we're being honest)
 development work.
 
-## Liferay MVC Command Classes
+## Liferay MVC Command Classes [](id=liferay-mvc-command-classes)
 
 In a larger application, your `-Portlet` class can become monstrous and unwieldy
 if it holds all of the controller logic. Liferay provides MVC command classes to
@@ -76,7 +76,7 @@ There must be some confusing configuration files to keep everything wired
 together and working properly, right? Wrong, it's all easily managed in the OSGi
 component in the `-Portlet` class.
 
-## Liferay MVC Portlet Component
+## Liferay MVC Portlet Component [](id=liferay-mvc-portlet-component)
 
 Whether or not you're going to split up the controller into MVC command classes,
 you use a portlet component class with a certain set of properties. Here's a
@@ -132,7 +132,7 @@ The properties namespaced with `javax.portlet....` are elements of the
 
 $$$
 
-## A Simpler MVC Portlet
+## A Simpler MVC Portlet [](id=a-simpler-mvc-portlet)
 
 With all for this focus on MVC commands, you might be concerned that you'll be
 forced into a more complex pattern than is necessary, especially if you're

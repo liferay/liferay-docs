@@ -1,4 +1,4 @@
-# MVC Action Command 
+# MVC Action Command [](id=mvc-action-command)
 
 Liferay's MVC framework lets you split your portlet's action methods into 
 separate classes. This can be very helpful in portlets that have many actions. 
@@ -73,7 +73,7 @@ any other code required to implement your action. For a real-world example of a
 `*MVCActionCommand` class, see the Blogs app's `EditEntryMVCActionCommand` 
 class. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [MVC Render Command](develop/tutorials/-/knowledge_base/7-0/mvc-rendercommand)
 

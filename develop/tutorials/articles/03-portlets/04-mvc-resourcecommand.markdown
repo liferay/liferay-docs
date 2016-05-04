@@ -1,4 +1,4 @@
-# MVC Resource Command
+# MVC Resource Command [](id=mvc-resource-command)
 
 When using Liferay's MVC framework, you can create resource URLs in your JSPs to 
 retrieve images, XML, or any other kind of resource from a Liferay instance. The 
@@ -96,7 +96,7 @@ helper class, doing so often simplifies your code.
 Great! Now you know how to use `MVCResourceCommand` to process resources in your 
 Liferay MVC portlets. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [MVC Render Command](develop/tutorials/-/knowledge_base/7-0/mvc-rendercommand)
 
