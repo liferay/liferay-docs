@@ -1,40 +1,33 @@
-# Implementing Asset Categorization and Tagging [](id=implementing-asset-categorization-and-tagging)
+# Implementing Asset Categorization and Tagging
 
-<!--
-Testing Notes:
-
-The starting example portlet for this tutorial is at ...
-liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-02-asset-enable-insults-portlet
-
-On completing this tutorial, the example portlet looks like the portlet at ...
-liferay-docs/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet
-
-Make sure to read their README files.
--->
-
-At this point, you've [asset-enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities)
-your entities. In addition to that, you should make sure to [implement asset renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers)
-for them. Content authors, however, still can't specify the tags and categories
-for these entities in the UI. Don't fret! Liferay provides a set of JSP tags for
-showing category and tag inputs in your UI. 
+In this tutorial, you'll allow content authors the ability to specify tags and
+categories for their entities in the UI. Liferay provides a set of JSP tags for
+showing category and tag inputs in your UI. Before beginning, your entities
+should be
+[asset-enabled](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
+and you should have asset renderers enabled for them.
 
 ![Figure 1: Adding category and tag input options lets authors aggregate and label custom entities.](../../images/asset-fw-categories-and-tags-options.png)
 
-Go ahead and get started! 
+Now it's time to get started! 
 
 You can use the following tags in the JSPs you provide for adding/editing custom
-entities. Here's what the tags look like in a the [`edit_insult.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/edit_insult.jsp) 
-for a custom Insults portlet that's used as an example. 
+entities. Here's what the tags look like in the
+[edit_entry.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp) 
+for the Blogs portlet: 
 
     <liferay-ui:asset-categories-error />
     <liferay-ui:asset-tags-error />
-    <liferay-ui:panel defaultState="closed" extended="<%= false %>" id="insultsCategorizationPanel" persistState="<%= true %>" title="categorization">
-        <aui:fieldset>
+    ...
+    <aui:fieldset-group markupView="lexicon">
+        ...
+        <aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="categorization">
             <aui:input name="categories" type="assetCategories" />
 
             <aui:input name="tags" type="assetTags" />
-         </aui:fieldset>
-    </liferay-ui:panel>
+        </aui:fieldset>
+        ...
+    </aui:fieldset-group>
 
 These category and tag `aui:input` tags generate form controls that let users
 browse/select a categories for the entity, browse/select tags, and/or create new
@@ -42,40 +35,39 @@ tags to associate with the entity.
 
 The `liferay-ui:asset-categories-error` and `liferay-ui:asset-tags-error` tags
 show messages for errors occurring during the asset category or tag
-input process. The `liferay-ui:panel` tag uses a container that lets users hide
+input process. The `aui:fieldset` tag uses a container that lets users hide
 or show the category and tag input options.
 
-For styling purposes, give the `liferay-ui:panel` an arbitrary `id` value that
-relates to your custom entity. 
-
-<!--
-
-Until we implement this in a solution portlet, we'll leave it out. - Jim
-
-Actually, the whole point of tutorials is not to have solution portlets, but
-just snippets of code. Solution portlets are for Learning Paths. If we want to
-use solution portlets, that's fine, but we definitely shouldn't keep from
-documenting something in a tutorial just because we don't have it in a working
-portlet. -Rich
--->
+For styling purposes, the `aui:fieldset-group` tag is given the `lexicon`
+markdup view.
 
 Once the tags and categories have been entered, you'll want to show them along
 with the content of the asset. Here's how to display the tags and categories: 
- 
-    <label>Categories</label>
-    <liferay-ui:asset-categories-summary
-        className="<%= insult.getClass().getName() %>"
-        classPK="<%= insult.getPrimaryKey() %>"
-    />
 
-    <label>Tags</label>
-    <liferay-ui:asset-tags-summary
-        className="<%= insult.getClass().getName() %>"
-        classPK="<%= insult.getPrimaryKey() %>"
-    />
+    <p><liferay-ui:message key="categories" />:</p>
 
-You can also support navigation of tags and categories by specifying a
-`portletURL` parameter in the JSP tags. Each tag that uses this parameter
+    <div class="entry-categories">
+        <liferay-ui:asset-categories-summary
+            className="<%= BlogsEntry.class.getName() %>"
+            classPK="<%= entry.getEntryId() %>"
+            portletURL="<%= renderResponse.createRenderURL() %>"
+        />
+    </div>
+
+    ...
+
+    <div class="entry-tags">
+        <p><liferay-ui:message key="tags" />:</p>
+
+        <liferay-ui:asset-tags-summary
+            className="<%= BlogsEntry.class.getName() %>"
+            classPK="<%= entry.getEntryId() %>"
+            portletURL="<%= renderResponse.createRenderURL() %>"
+        />
+    </div>
+
+You'll notice the `portletURL` parameter is used for both tags and categories,
+which supports navigation amongst the two. Each tag that uses this parameter
 becomes a link containing the `portletURL` *and* `tag` or `categoryId` parameter
 value. To implement this, you need to implement the look-up functionality in
 your portlet code. Do this by reading the values of those two parameters and
@@ -88,12 +80,10 @@ categorization and tag input options in a panel that the user can hide/show.
 Great! Now you know how to make category and tag input options available to your
 portlet's content authors. 
 
-**Related Topics**
+## Related Topics
 
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/7-0/asset-enabling-custom-entities)
+[Relating Assets](/develop/tutorials/-/knowledge_base/7-0/relating-assets)
 
-[Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/7-0/implementing-asset-renderers)
+[Adding, Updating, and Deleting Assets for Custom Entities](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/7-0/liferay-ui-taglibs)
-
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/7-0/alloyui)
+[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
