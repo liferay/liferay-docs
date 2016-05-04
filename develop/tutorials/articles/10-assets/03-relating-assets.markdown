@@ -131,10 +131,11 @@ from the render request. Then you can create an entity object using your
     AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(Insult.class.getName(), ins.getInsultId());
     %>
 
-To show the entity's related assets you use the `liferay-ui:asset-links` tag.
-You use in your entity's class to get it's class name and the variable holding
-your instance object to return the its ID. The example code below uses the
-example entity class `Insult` and an instance object variable called `ins`:
+To show the entity's related assets, you can use the `liferay-ui:asset-links`
+tag. For this tag, you should retrieve the entity's class name and the variable
+holding your instance object, so you can return its ID. The example code below
+uses the example entity class `Insult` and an instance object variable called
+`ins`:
 
     <liferay-ui:asset-links
         assetEntryId="<%=(assetEntry != null) ? assetEntry.getEntryId() : 0%>"
@@ -186,7 +187,7 @@ that you made in the previous step of this tutorial.
 Related assets, if you've created any yet, should be visible near the bottom of
 the page.
 
-Excellent! Now you know how to implement related assets in your portlets.
+Excellent! Now you know how to implement related assets in your apps.
 
 <!-- Another thing you might want to do is investigate permissioning in the UI. For
 moreinformation on this, see the learning path [Checking Permissions in the UI](/develop/learning-paths/mvc/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).

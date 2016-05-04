@@ -6,13 +6,15 @@ this sense, it's similar to informing Liferay's permissions framework about a
 new resource. All you have to do is invoke a method of the asset framework that
 associates an `AssetEntry` with the entity so Liferay can keep track of
 the entity as an asset. When it's time to update the entity, you update the
-asset at the same time. <!--To see how to asset-enable entities in a working example
+asset at the same time. 
+<!--To see how to asset-enable entities in a working example
 portlet, visit the Learning
 Path [Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities).
 -->
 
 To leverage assets, you must also implement indexers for your portlet's
-entities. Liferay's asset framework uses indexers to manage assets. <!--  For
+entities. Liferay's asset framework uses indexers to manage assets. 
+<!--  For
 instructions on
 creating an indexer in a working example portlet, see the learning path [Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing).
 -->
@@ -87,7 +89,8 @@ Here are descriptions of each of the `updateEntry` method's parameters:
      when an Asset Publisher should stop showing the entity's content.
 -   `publishDate`: the date the entity will start to be shown. 
 -   `expirationDate`: the date the entity will no longer be shown. 
--   `mimetype`: the Multi-Purpose Internet Mail Extensions type, such as [ContentTypes.TEXT_HTML](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portal/kernel/util/ContentTypes.html#TEXT_HTML),
+-   `mimetype`: the Multi-Purpose Internet Mail Extensions type, such as
+    [ContentTypes.TEXT_HTML](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/ContentTypes.html#TEXT_HTML),
     used for the content.
 -   `title`: the entity's name.
 -   `description`: a `String`-based textual description of the entity.
@@ -101,7 +104,7 @@ Here are descriptions of each of the `updateEntry` method's parameters:
     Low numbers take priority over higher numbers.
 
 The following code from Liferay's Wiki application's
-[-LocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/service/impl/WikiPageLocalServiceImpl.java)
+[WikiPageLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/service/impl/WikiPageLocalServiceImpl.java)
 Java class demonstrates invoking the `updateEntry` method on the wiki page
 entity called `WikiPage`. In your `add-` method, you could invoke `updateEntry`
 after adding your entity's resources. Likewise, in your `update-` method, you
@@ -166,7 +169,8 @@ In your `-LocalServiceImpl` class, you can write similar code. Replace the
 +$$$
 
 **Important:** In order for Liferay's Asset Publisher application to show your
-entity, the entity must have an Asset Renderer. <!-- To learn how to implement
+entity, the entity must have an Asset Renderer. 
+<!-- To learn how to implement
 an Asset Renderer for your custom entity, refer to Learning Path
 [Implementing Asset Renderers](/develop/learning-paths/mvc/-/knowledge_base/6-2/implementing-asset-renderers).-->
 Note also that an Asset Renderer is how you show a user the components of your
@@ -178,7 +182,7 @@ $$$
 
 ![Figure 1: It can be useful to show custom entities, like this wiki page entity, in a JSP or in an Asset Publisher.](../../images/basic-asset-in-asset-publisher.png)
 
-Great! Now you know how to add, update, and delete assets in your portlets!
+Great! Now you know how to add, update, and delete assets in your apps!
 
 ## Related Topics
 

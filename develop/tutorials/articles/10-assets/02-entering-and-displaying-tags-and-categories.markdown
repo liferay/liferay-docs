@@ -78,7 +78,7 @@ Deploy your changes and add/edit a custom entity in your UI. Your form shows the
 categorization and tag input options in a panel that the user can hide/show. 
 
 Great! Now you know how to make category and tag input options available to your
-portlet's content authors. 
+app's content authors. 
 
 ## Related Topics
 
