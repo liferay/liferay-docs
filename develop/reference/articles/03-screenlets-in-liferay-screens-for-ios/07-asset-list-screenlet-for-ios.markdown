@@ -64,6 +64,117 @@ others, to show the items.
 
 ![Figure 1: Asset List Screenlet using the Default (`default`) Theme.](../../images/screens-ios-assetlist.png)
 
+### Custom cells [](id=custom-cells)
+
+Since Default theme for AssetListScreenlet uses `UITableView` as UI component, you probably may need to use a custom cell to show the content of your asset.
+For that, you'll need to do the following:
+
+- In your theme, create a child class extending from `DDLListView_default`. Call it `DDLListView_mytheme`.
+- Create the `xib` file for your cell. As usual, you need to create the xib file and the companion class and create as many `IBOutlets` and `IBActions` as you need. Also, you may want to create several xibs and classes, for example if you want to use a different layout for different rows.
+- In your `DDLListView_mytheme` class, override the following method to register your custom cell:
+
+```
+override public func doRegisterCellNibs() {
+	let customNib = UINib(nibName: "MyCellName", bundle: nil)
+
+	tableView?.registerNib(customNib, forCellReuseIdentifier: "myCellId")
+
+	// register other cells...
+}
+```
+
+- Again, override the following method to realize which identifier should be used for one specific row:
+
+```
+override public func doGetCellId(row row: Int, object: AnyObject?) -> String {
+	// Return the identifier for this row and object.
+	// "object" may be an instance of Asset or WebContent, depending the actual object retrieved
+	// If "object" is nil, this row is "in progress".
+
+	// sample implementation:
+	if object == nil {
+		return "wipCell"
+	}
+	
+	return (object is WebContent) ? "webcontentCell" : "assetCell"
+}
+```
+
+- Next, you need to override this other method, in order to create the cell when needed, depending on the cell type:
+
+```
+override public func doCreateCell(cellId: String) -> UITableViewCell {
+	// Create a new cell when needed.
+	
+	// sample implementation:
+	switch cellId {
+	case "webcontentCell":
+		return MyWebContentCell(style: .Default, reuseIdentifier: cellId)
+	case "wipCell":
+		return MyInProgressCell(style: .Default, reuseIdentifier: cellId)
+	}
+
+	// calling super will create a regular UITableViewCell
+	return super.doCreateCell(cellId)
+}
+```
+
+- And finally, you need to fill the cell with the row's data. This method will only be called for cells with data, not for "in progress" cells:
+
+```
+override public func doFillLoadedCell(row row: Int, cell: UITableViewCell, object: AnyObject) {
+	// Fill the cell from the object supplied.
+	
+	// sample implementation:
+	if let entry = object as? WebContent, cell as? MyWebContentCell {
+		cell.outlet = entry.property
+		cell.outlet = entry.property
+		cell.outlet = entry.property
+		cell.outlet = entry.property
+		...
+		cell.accessoryType = .None
+		cell.accessoryView = nil
+	}
+}
+```
+
+- If you want to show some specific UI for "in progress" cells, you need to override a different method. Remember this step is optional and if you don't do it, the Default theme's style will be used:
+
+```
+override public func doFillInProgressCell(row row: Int, cell: UITableViewCell) {
+	// Because we created a concrete cell type for "in progress" cells, we need to cast it here.
+	// Otherwise, a regular UITableViewCell will be received
+	let wipCell = cell as! MyInProgressCell
+
+	wipCell.textLabel?.text = "Loading..."
+	wipCell.accessoryType = .None
+	let myImage = ... 
+	wipCell.accessoryView = UIImageView(image: myImage)
+	wipCell.accessoryView?.frame = CGRectMake(0, 0, myImage.size.width, myImage.size.height)
+}
+```
+
+- Remember that you also have the typical `UITableViewDelegate` and `UITableViewDataSource` methods available for you, so you can override any of them if you need it (but check before if it's already overriden!). One typical case is when you need to use a different cell height for one row:
+
+```
+public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+
+	// sample implementation:
+
+	let cellId = doGetCellId(row: indexPath.row, object: rows[indexPath.row])
+
+	switch cellId {
+	case "webcontentCell":
+		return 50.0
+	case "wipCell":
+		return 40.0
+	}
+
+	return 75.0
+}
+```
+
+
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
