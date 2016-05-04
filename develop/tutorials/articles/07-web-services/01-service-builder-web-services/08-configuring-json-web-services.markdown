@@ -1,8 +1,7 @@
-# Portal Configuration of JSON Web Services [](id=portal-configuration-of-json-web-services)
+# Configuring JSON Web Services [](id=portal-configuration-of-json-web-services)
 
-JSON web services are enabled in Liferay Portal by default. If you need to
-disable them, specify this portal property setting in a `portal-ext.properties` 
-file: 
+JSON web services are enabled in Liferay by default. If you need to disable 
+them, specify this portal property setting in a `portal-ext.properties` file: 
 
     json.web.service.enabled=false
 

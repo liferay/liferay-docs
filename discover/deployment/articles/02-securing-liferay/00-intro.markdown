@@ -1,8 +1,8 @@
-# Liferay Portal Security [](id=liferay-portal-security)
+# @product@ Security [](id=liferay-portal-security)
 
 Liferay takes security very seriously. Liferay has established several
-procedures to make sure that Liferay Portal is as secure as possible. First of
-all, Liferay Portal is an open source product. As such, Liferay encourages
+procedures to make sure that @product@ is as secure as possible. First of
+all, @product@ is an open source product. As such, Liferay encourages
 security-minded community members to verify the product they're using. All
 Liferay users benefit when even a few don't blindly trust the provider! Please
 read Liferay security statement at
@@ -20,7 +20,7 @@ If you have time, please visit our community Hall of Fame for security
 reporters:
 [https://dev.liferay.com/web/community-security-team/hall-of-fame](https://dev.liferay.com/web/community-security-team/hall-of-fame).
 These community members helped us and invested their time to report security
-issues. With their help, we make Liferay Portal better for the community and
+issues. With their help, we make @product@ better for the community and
 customers.
 
 Although we act on community reports, we understands that community reports

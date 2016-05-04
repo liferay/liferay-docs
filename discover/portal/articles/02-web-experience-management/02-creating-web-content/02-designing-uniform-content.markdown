@@ -15,10 +15,10 @@ content. These can be coupled with *Templates* that define how to display that
 content. Content won't get stale, because you can take advantage of the
 [Scheduling](/discover/portal/-/knowledge_base/7-0/scheduling-web-content-publication)
 feature to determine when content is displayed and when it's
-removed. Additionally, you can configure Liferay's built-in
+removed. Additionally, you can configure @product@'s built-in
 [Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow) system to set
 up a review and publishing process so only what you want winds up on the live
-site. Liferay gives you the management tools you need to run everything from a
+site. @product@ gives you the management tools you need to run everything from a
 simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
@@ -33,7 +33,7 @@ users to quickly add content.
 For example, say you're managing an online news magazine. All your articles need
 to contain the same types of information: a title, a subtitle, an author and one
 or more pages of text and images that comprise the body of the article. If
-Liferay only supported simple content as has been described above, you'd have no
+@product@ only supported simple content as has been described above, you'd have no
 way to make sure your users entered a title, subtitle, and author. You might
 also get articles that don't match the look and feel of your site. If titles are
 supposed to be navy blue but they come in from your writers manually set to
@@ -71,7 +71,7 @@ and copy or delete structures.
 
 Copying web content structures can be useful if you'd like to create a new web
 content structure that's similar to an existing one, but you don't want to start
-from scratch. Liferay generates a unique portal ID for the copied structure, but
+from scratch. @product@ generates a unique portal ID for the copied structure, but
 every other attribute of the copied structure, including the name, is the same
 as that of the original. Once you've copied a web content structure, you should
 enter a new name for it to avoid confusing it with the original. When you copy a
@@ -124,7 +124,7 @@ its parent's fields in addition to its own fields.
 `structureKey`. For example, this can happen when exporting a global structure
 and then importing it back into a site. This scenario would have global and site
 scoped structures with identical `structureKey`s. If this happens, you can no
-longer use the global structure. This is because Liferay is configured to follow
+longer use the global structure. This is because @product@ is configured to follow
 a specific hierarchy when choosing structures with the same `structureKey`:
 *current site > parent site > global scope*.
 
@@ -145,7 +145,7 @@ section.
 **Note:** Some operating systems require a WebDAV server to be class level 2
 (i.e., to support file locking) before allowing files to be read or written. The
 Documents and Media library uses a class level 2 WebDAV server but Web Content
-structures and templates do not. This means that Liferay's Document and Media
+structures and templates do not. This means that @product@'s Document and Media
 library supports WebDAV file locking but Web Content structures and templates do
 not. However, on operating systems which require WebDAV servers to be class
 level 2, it's possible to avoid the restriction by using third-party WebDAV
@@ -162,7 +162,7 @@ Take a moment to add, delete, and rearrange different elements.
 
 ![Figure 2: The structure editor gives you many options to customize your Web Content.](../../../images/web-content-structure-editor.png)
 
-Liferay supports the following fields in structures:
+@product@ supports the following fields in structures:
 
 **Boolean:** Adds a checkbox onto your structure, which stores either `true`
 (checked) or `false` (unchecked). Template developers can use this as a display
@@ -221,7 +221,7 @@ closely at field settings.
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
-you don't set variable names, Liferay generates random variable names and these
+you don't set variable names, @product@ generates random variable names and these
 can be difficult for a template writer to follow. For example, consider a field
 called *Author*. You might create this field in your form but the underlying
 variable name in the structure might look something like `TextField4882`. The
@@ -328,28 +328,28 @@ You can grant or deny permissions based on Roles and this is the recommended way
 to handle permissions for structures.
 
 Now that you understand what structures are used for, you need to understand the
-other half of Liferay's web content management system: templates.
+other half of @product@'s web content management system: templates.
 
 ## Designing Web Content with Templates [](id=designing-web-content-with-templates)
 
 Developers create templates to display the elements of the structure in the
 markup they want. Content can then be styled properly using CSS, because markup
 is generated consistently by the template when structured content is displayed.
-In essence, templates are scripts that tell Liferay how to display content in
+In essence, templates are scripts that tell @product@ how to display content in
 the structure. Any changes to the structure require corresponding changes to the
 template, because new or deleted fields produce errors on the page. If users
 enter content into a structure, it *must* have a matching template. You have
 options, however, for whether you want your template to be permanently linked to
 your structure. Generic templates are templates that are not tied to a
 structure, which allows for reusable code that can be imported into other
-templates. Without a template, Liferay has no idea how to display content which
+templates. Without a template, @product@ has no idea how to display content which
 has been created using a custom structure.
 
-You'll look more closely at the types of templates Liferay supports next.
+You'll look more closely at the types of templates @product@ supports next.
 
 ### Template Types (FTL, VM, and XSL) [](id=template-types-ftl-vm-and-xsl)
 
-Liferay supports templates written in three different templating languages, to
+@product@ supports templates written in three different templating languages, to
 support the skill sets of the largest number of developers. This increases the
 chances you can jump right in and use whichever one you've already used before.
 If you haven't yet been exposed to any of them, your best bet is FreeMarker or
@@ -368,7 +368,7 @@ though Velocity is much simpler.
 
 +$$$
 
-**Note:** The Velocity template language is deprecated for Liferay 7.0.
+**Note:** The Velocity template language is deprecated for @product@ 7.0.
 
 $$$
 
@@ -453,7 +453,7 @@ When this template is rendered, it looks something like this:
 
 +$$$
 
-**Note:** During the creation of a web content article, Liferay provides an
+**Note:** During the creation of a web content article, @product@ provides an
 *Options* &rarr; *Preview* button that gives you the option to preview your
 article as a final product before publishing. In some instances, the preview
 does not give an accurate depiction of the web content article. For example,
@@ -464,7 +464,7 @@ functionality with caution.
 
 $$$
 
-Liferay also provides the ability to create generic templates that aren't
+@product@ also provides the ability to create generic templates that aren't
 connected to a specific structure. In previous versions of Liferay, each
 template had to be associated with a structure. Now, you have options for
 whether to permanently assign a template to a structure or create a generic
@@ -494,7 +494,7 @@ Currency Converter app in FreeMarker and Velocity:
 
 **Warning:** The `theme` variable is no longer injected into the FreeMarker
 context. For more information about why the theme variable was removed for
-Liferay 7.0 and suggestions for updating your code, visit the
+@product@ 7.0 and suggestions for updating your code, visit the
 [Taglibs Are No Longer Accessible via the theme Variable in FreeMarker](/develop/reference/-/knowledge_base/7-0/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
 breaking change entry.
 
@@ -506,7 +506,7 @@ FreeMarker template; they're already provided for you automatically. You can
 access these taglibs by indicating the TLD's file name with underscores. For
 instance, the above FreeMarker example accessed a tag in the
 `liferay-portlet-ext.tld` file by specifying `@liferay_portlet_ext`. This is not
-available for Velocity users, since Velocity is deprecated for Liferay 7.0.
+available for Velocity users, since Velocity is deprecated for @product@ 7.0.
 
 <!-- There is more information about how users can make their custom taglibs
 accessible by using the FreeMarker Contributor. This would be a great tutorial
@@ -515,7 +515,7 @@ to link here.
 https://github.com/liferay/liferay-portal/tree/master/modules/frontend/frontend-taglib-freemarker-contributor
 -Cody -->
 
-For cases where you're creating your template within Liferay, you can use the
+For cases where you're creating your template within @product@, you can use the
 template editor. On the left side of the template editor, you'll notice a
 palette of common variables used for making web content templates. This is a
 great reference when creating your template. To place one of the variables onto
@@ -543,7 +543,7 @@ escalation, and should be used with caution, if enabled.
 
 $$$
 
-After you've saved your template, Liferay provides a WebDAV URL and static URL.
+After you've saved your template, @product@ provides a WebDAV URL and static URL.
 These values access the XML source of your structure. You can find these URLs by
 returning to your template after it's been saved and expanding the *Details*
 section. For more information on WebDAV and the uses of the WebDAV URL,
@@ -567,12 +567,12 @@ at the top right and selecting *Templates*. Then select the *Action* button
 
 You can grant or deny permissions based on Roles. For instance, you may create a
 role with the ability to update the template and create a second role that can
-both update and delete. Liferay makes it possible to assign permissions based on
+both update and delete. @product@ makes it possible to assign permissions based on
 the roles and responsibilities within your organization.
 
 Whether your site is small and static or large and dynamic, Liferay’s WCM
 enables you to plan and manage it. With tools such as the WYSIWYG editor,
 structures and templates, you can quickly add and edit content. With the Web
 Content Display, you can rapidly select and configure what content to display.
-You'll find that managing your site becomes far easier when using Liferay’s Web
+You'll find that managing your site becomes far easier when using @product@’s Web
 Content Management system.

@@ -20,18 +20,18 @@ experience of seeing your favorite team play to trump the negative factors, you'
 attend. If you expect the experience will be bad or worse than the negative
 factors you expect to encounter, you'll stay home and watch the game on TV.
 
-Liferay takes the *experience* factor very seriously when it comes to web
+@product@ takes the *experience* factor very seriously when it comes to web
 management. Just like the sports fan that weighs the experience vs. the live
 game headaches, the user/administrator also weighs the experience of using a web
 platform with the resulting site created on it. With the apps and features
-provided with Liferay's Web Experience Management suite, the management of
+provided with @product@'s Web Experience Management suite, the management of
 sites, pages, and content is seamless.
 
-Managing sites and pages is a fundamental pillar of any web site, and Liferay
+Managing sites and pages is a fundamental pillar of any web site, and @product@
 provides easy-to-use features that make site/page creation quick and easy. Web
 Content is another building block upon which most sites rely. With Liferay's web
 content apps, you can easily create simple or complex content for your site's
-visitors. Once you've created content, Liferay also provides several innovative
+visitors. Once you've created content, @product@ also provides several innovative
 ways to publish that content, so users can find the right information as fast as
 possible.  Sometimes your site must adapt on the fly, whether it be for
 different holidays or events.  A testing environment where you can plan the look
@@ -40,4 +40,4 @@ have to trial and error site changes on a live page.
 
 Just as the die-hard fan knew he'd have a great experience when buying his
 tickets to the big game, you can expect a great and seamless web experience with
-Liferay.
+@product@.

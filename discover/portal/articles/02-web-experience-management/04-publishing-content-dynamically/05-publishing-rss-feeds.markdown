@@ -10,7 +10,7 @@ date. If one of your site's web content articles grabs their attention, then
 they can follow their RSS reader's link to the article's full content on your
 site. Many RSS readers are available today, including web-based readers, ones
 for the Windows, Mac, and Linux platforms, and ones for mobile devices. You'll
-see how to create RSS feeds in Liferay next.
+see how to create RSS feeds in @product@ next.
 
 ## Configuring RSS Feeds [](id=configuring-rss-feeds)
 
@@ -148,7 +148,7 @@ the feed image alignment is set to *Right*.
 
 You've learned how to create, manage, and use RSS feeds. Great job!
 
-In this chapter, you explored Liferay's asset framework. Any type of content in
+In this chapter, you explored @product@'s asset framework. Any type of content in
 Liferay is considered an asset and can utilize the features provided by the
 asset framework: tags, categories, comments, ratings, and relationships. You
 examined the Asset Publisher application and looked at the many configuration

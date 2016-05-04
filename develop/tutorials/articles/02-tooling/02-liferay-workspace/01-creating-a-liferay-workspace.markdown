@@ -1,7 +1,7 @@
 # Creating a Liferay Workspace [](id=creating-a-liferay-workspace)
 
 A *Liferay Workspace* is a generated environment that is built to hold and
-manage your Liferay projects. This workspace is intended to aid in the
+manage your @product@ projects. This workspace is intended to aid in the
 management of Liferay projects by providing various Gradle build scripts and
 configured properties. This is the official way to create Liferay 7.0 modules
 using Gradle. For those developers that still want to develop WAR-style plugins
@@ -74,7 +74,7 @@ the variable and set it to a custom value. For instance, if you want to store
 your modules in a folder other than `[ROOT]/modules`, uncomment the
 `liferay.workspace.modules.dir` variable and set it to a different value.
 
-Next you'll learn about generating and using a Liferay instance from within your
+Next you'll learn about generating and using a @product@ instance from within your
 workspace.
 
 ## Running a Liferay Instance from Your Workspace [](id=running-a-liferay-instance-from-your-workspace)
@@ -107,7 +107,7 @@ your workspace.
 
 ### Using a Plugins SDK from Your Workspace [](id=using-a-plugins-sdk-from-your-workspace)
 
-Because Liferay 7.0 uses a module-based framework, the current structure of a
+Because @product@ 7.0 uses a module-based framework, the current structure of a
 Liferay Workspace is centered around module development. There are still,
 however, many situations where you must create WAR-style plugins using the
 Plugins SDK. Because of this, your workspace can also work with the Plugins SDK.

@@ -1,4 +1,4 @@
-# Liferay Portal Security Overview [](id=liferay-portal-security-overview)
+# @product@ Security Overview [](id=liferay-portal-security-overview)
 
 Liferay follows the OWASP Top 10 (2013) and CWE/SANS Top 25 lists to ensure
 that Liferay is as secure as possible. Following these recommendations protects
@@ -126,13 +126,13 @@ Here's short list of Liferay security APIs:
 
 ## Secure Configuration and Run Recommendations [](id=secure-configuration-and-run-recommendations)
 
-Liferay Portal is built using the "secure by default" concept in mind. Thus,
+@product@ is built using the "secure by default" concept in mind. Thus,
 Liferay's default configuration is already very secure. It's not recommended to
 disable built-in protections or to allow all values in security white-lists.
 Such acts may lead to security misconfiguration and an insecure Liferay
 deployment.
 
-For more information about securing a Liferay Portal installation, please see
+For more information about securing a @product@ installation, please see
 [https://www.liferay.com/security](https://www.liferay.com/security) and
 [https://dev.liferay.com/web/community-security-team](https://dev.liferay.com/web/community-security-team)
 and the resources listed on those pages.

@@ -14,8 +14,8 @@ Liferay web pages use the AlloyUI JavaScript framework. Among the JavaScript
 objects created for each Liferay page is a `Liferay` object. This object
 includes a `Service` function that you can use to invoke Liferay's API. To 
 invoke Liferay web services via `Liferay.Service(...)`, your JavaScript context
-must include the AlloyUI JavaScript framework. Liferay 7.0 uses AlloyUI 3.0.
-If you're working in a JSP, you can load the AlloyUI taglib and wrap your
+must include the AlloyUI JavaScript framework. Liferay uses AlloyUI 3.0. If 
+you're working in a JSP, you can load the AlloyUI taglib and wrap your 
 JavaScript code in an `<aui:script>` tag. Here's the required import:
 
     <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
@@ -121,8 +121,8 @@ an object containing an array named `assetTagNames`, which contains the string
 
 ## Invoking JSON Web Services via JavaScript in a Application [](id=invoking-json-web-services-via-javascript-in-a-application)
 
-You can adapt the example from the previous section for use in a Liferay
-app. For example, the JSP page below creates a form that lets the user specify a 
+You can adapt the example from the previous section for use in a Liferay app. 
+For example, the JSP page below creates a form that lets the user specify a 
 first name, middle name, last name, screen name, and email address. When the 
 user clicks the *Add User* button, the app uses these values to create a new 
 user. 

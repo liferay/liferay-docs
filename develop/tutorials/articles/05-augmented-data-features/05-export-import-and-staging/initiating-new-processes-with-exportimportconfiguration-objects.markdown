@@ -1,6 +1,6 @@
 # Initiating New Processes with ExportImportConfiguration Objects [](id=initiating-new-processes-with-exportimportconfiguration-objects)
 
-Liferay's Staging and Export/Import features are the building blocks for
+@product@'s Staging and Export/Import features are the building blocks for
 creating, managing, and publishing a site. These features can be accessed in
 your Portal's *Publishing Tools* menu. You can also, however, start these
 processes programatically. This lets you provide new interfaces or mimic the
@@ -25,7 +25,7 @@ easy.
 
 When you want to implement, for example, export, you must call services offered
 by the `ExportImportService` interface. All the methods in this interface
-require an `ExportImportConfiguration` object. Liferay provides a way to
+require an `ExportImportConfiguration` object. @product@ provides a way to
 generate these configuration objects, so you can easily pass them in your
 service methods.
 
@@ -99,7 +99,7 @@ initiate your custom export/import or staging process.
     into a `java.io.File` array. Notice that your `ExportImportConfiguration`
     object is the only needed parameter in the method. Your configuration object
     holds all the required parameters and settings necessary to export your
-    layouts from Portal. Although this example code resides in Liferay Portal,
+    layouts from Portal. Although this example code resides in @product@,
     you could easily use this framework from your own plugin or module.
 
     +$$$

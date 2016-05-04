@@ -1,11 +1,11 @@
 # Publishing Files [](id=publishing-files)
 
-As you create sites, you'll probably want to share files on them. Liferay's
-Documents and Media library (Document Library) let's you upload and publish all
-kinds of files on your sites. Pictures, videos, spreadsheets, slide
-presentations and more can be stored in and shared from the Document Library.
-Document Library instances can be scoped to a Liferay instance, site, or page,
-so you can work with files where their relevant.
+As you create sites, you'll probably want to share files on them.
+@product@'s Documents and Media library (Document Library) let's you upload
+and publish all kinds of files on your sites. Pictures, videos, spreadsheets,
+slide presentations and more can be stored in and shared from the Document
+Library. Document Library instances can be scoped to a @product@ instance,
+site, or page, so you can work with files where their relevant.
 
 In this chapter, you'll learn how to add files, display them, and collaborate on
 them. You can upload all kinds of files, including custom file types, to the
@@ -41,8 +41,8 @@ The Lunar Resort needs to manage carefully who can add, view, and update groups
 of files. The resort stores in their Documents and Media libraries all kinds of
 files for various purposes. The libraries not only contain guest media but also
 departmental documents and media. Most of the documents are meant to be
-disseminated within the departments only. Using the Liferay platform, we can
-implement the resort's use cases. You see, Liferay's [Roles and
+disseminated within the departments only. Using @product@, we can
+implement the resort's use cases. You see, @product@'s [Roles and
 Permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) let
 you precisely specify access to documents and media files. In addition, the
 Document Library's folder permissions help you organize media. Let's get started
@@ -312,12 +312,12 @@ file's type. Let's take a moment and consider file preview plugins and some of
 the powerful features they offer. 
 
 Whenever possible, Liferay generates previews of documents added to the Document
-Library. Out of the box, Liferay only ships with Java-based APIs to generate
-previews for documents. The only tool available that is 100% Java and has a
-compatible license to be distributed with Liferay is PDFBox. If you upload a PDF
-file to Documents and Media, Liferay generates a preview for the PDF
-in a separate thread. This process may last only a few seconds for a small file.
-The larger the file, the longer it takes.
+Library. Out of the box, @product@ only ships with Java-based APIs to
+generate previews for documents. The only tool available that is 100% Java and
+has a compatible license to be distributed with Liferay is PDFBox. If you upload
+a PDF file to Documents and Media, Liferay generates a preview for the PDF in a
+separate thread. This process may last only a few seconds for a small file. The
+larger the file, the longer it takes.
 
 While a default implementation of image generation for document previews and
 thumbnails is provided via PDFBox, you must install and configure some
@@ -328,7 +328,7 @@ library. These tools include [*OpenOffice*](http://www.openoffice.org) or
 [*Ghostscript*](http://www.ghostscript.com), and
 [*Xuggler*](http://www.xuggle.com/xuggler). With these tools installed and
 configured, Documents and Media content is displayed using a customized viewer
-depending on the type of content. Configuring Liferay to use OpenOffice or
+depending on the type of content. Configuring @product@ to use OpenOffice or
 LibreOffice in server mode allows you to generate thumbnails and previews for
 supported file types (.pdf, .docx, .odt, .ppt, .odp, etc.), lets you view
 documents in your browser, and lets you convert documents. ImageMagick allows
@@ -406,7 +406,7 @@ The section *Automatically Extracted Metadata* lists any and all metadata that's
 been extracted automatically from the file. When adding new documents or viewing
 existing documents, a process is triggered automatically that extracts the
 file's metadata. The library used by this process is TIKA and it's already
-included in Liferay out of the box. Depending on your file's type and the
+included in @product@ out of the box. Depending on your file's type and the
 metadata written with the file, you can find out all kinds of details. In the
 case of audio or video files, their duration is displayed.
 
@@ -430,24 +430,24 @@ Photos. This integration with Google and other external repositories enables you
 to access all of your documents from your Liferay sites. 
 
 As a Liferay administrator, you must configure your Liferay instance's access to
-Google's API Picker. Liferay calls on it to access files stored in Google's
-apps. Your Liferay instance must use a unique API keys and client ID to invoke
-the Google API Picker. The API key is used for accessing public data and the
-client ID is for authenticating and authorizing user access to non-public data.
-You must use a Google developer project to access the API picker using an API
-key and client ID. The three basic steps are as follows:
+Google's API Picker. @product@ calls on it to access files stored in
+Google's apps. Your @product@ instance must use a unique API keys and
+client ID to invoke the Google API Picker. The API key is used for accessing
+public data and the client ID is for authenticating and authorizing user access
+to non-public data. You must use a Google developer project to access the API
+picker using an API key and client ID. The three basic steps are as follows:
 
 - **Step 1: Enable the Google API Picker**
 
 - **Step 2: Create Credentials**
 
-- **Step 3: Configure Liferay's Google Apps Settings**
+- **Step 3: Configure @product@'s Google Apps Settings**
 
 Let's start by enabling the Google API Picker in a Google developer project. 
 
 ### Step 1: Enable the Google API Picker [](id=step-1-enable-the-google-api-picker)
 
-Liferay uses the *Google API Picker* to access files in Google. 
+@product@ uses the *Google API Picker* to access files in Google. 
 
 1. Create a Google account (or use an existing one). 
 
@@ -467,28 +467,29 @@ Next we'll create credentials to use with the Google API.
 
 1. In the API Manager navigation, click on *Credentials*. 
 
-2. Create a new OAuth client ID for a *Web application*. Specify the following attributes:
+2. Create a new OAuth client ID for a *Web application*. Specify the following
+attributes: 
     -   **Name**: `Google Docs Hook`
     -   **Authorized JavaScript origins**: `[liferay-instance-URL]` (for
         example, `http://localhost:8080` for development machines) 
     -   **Authorized redirect URIs**: `[liferay-instance-URL]/oath2callback`
 
-3. Create a new API key of type *Browser key*. Specify your Liferay instance's
-URL in the field listing sites from which your Google project should accept
-requests.
+3. Create a new API key of type *Browser key*. Specify your @product@
+instance's URL in the field listing sites from which your Google project should
+accept requests.
 
 Your new OAuth client ID and public API access key are listed in your Google
 project's credentials. Keep the credentials screen open so you can easily
-reference these values as you specify them in Liferay. All that's left is to
-enter the API key and client ID into your Liferay instance's Google Apps
+reference these values as you specify them in @product@. All that's left is
+to enter the API key and client ID into your Liferay instance's Google Apps
 configuration. 
 
-### Step 3: Configure Liferay's Google Apps Settings [](id=step-3-configure-liferays-google-apps-settings)
+### Step 3: Configure @product@'s Google Apps Settings [](id=step-3-configure-liferays-google-apps-settings)
 
-To call Google's APIs, you must configure your Liferay instance with your Google
-project's OAuth client ID and public API access key. 
+To call Google's APIs, you must configure your @product@ instance with your
+Google project's OAuth client ID and public API access key.
 
-1. From Liferay's *Control Panel*, navigate to *Configuration &rarr;
+1. From @product@'s *Control Panel*, navigate to *Configuration &rarr;
 Instance Settings*.
 
 2. Click on the *Miscellaneous* tab and expand the *Google Apps*
@@ -644,20 +645,20 @@ Document Library file collaboration.
 
 ## Collaborating on Files [](id=collaborating-on-files)
 
-Not only does Liferay's Documents and Media enable you to publish files easily,
-but it also provides a terrific environment for collaborating on documents.
-There are many common collaboration scenarios. For example, you might have a
-spreadsheet that you and your peers need to populate, or a proposal that you and
-other stakeholders must produce. You might be asked to review and edit a
+Not only does @product@'s Documents and Media enable you to publish files
+easily, but it also provides a terrific environment for collaborating on
+documents. There are many common collaboration scenarios. For example, you might
+have a spreadsheet that you and your peers need to populate, or a proposal that
+you and other stakeholders must produce. You might be asked to review and edit a
 document. All these cases involve multiple users modifying documents and require
 an environment that helps manage document changes. Liferay's Documents and Media
 provides these capabilities. 
 
-Liferay's document management apps support accessing apps on different kinds of
-devices and environments. Not only can you access documents from your site
-via your browser, but you can also access them from your native file browser and
-use Liferay Sync to access them from your tablet or mobile device. And Liferay
-Sync makes sure you're you can access the latest document versions. 
+@product@'s document management apps support accessing apps on different
+kinds of devices and environments. Not only can you access documents from your
+site via your browser, but you can also access them from your native file
+browser and use Liferay Sync to access them from your tablet or mobile device.
+And Liferay Sync makes sure you're you can access the latest document versions. 
 
 To demonstrate using these features, we'll join the Lunar Resort
 Recreation Department members collaboration on an important document: the Lunar
@@ -808,8 +809,8 @@ Windows.
 At the Lunar Resort, Activity Department members use WebDAV to access their
 Document Library. WebDAV provides an alternative way to do this using a file
 manager instead of a web browser. To access the Document Library folder from
-your file browser, you need to use log in credentials for the Liferay instance
-and the WebDAV URL of the folder you'd like to access.
+your file browser, you need to use log in credentials for the @product@
+instance and the WebDAV URL of the folder you'd like to access.
 
 Navigate to the Documents and Media app hosting the folder you'd like to access.
 Click on the folder's Actions icon ![Actions](../../../images/icon-actions.png) and
@@ -818,23 +819,23 @@ select *Access from Desktop*.
 ![Figure 14: Select *Access from Desktop* to get the folder's WebDAV URL.](../../../images/dm-access-from-desktop-action.png)
 
 Copy the WebDAV URL. On Windows, map a network drive drive to the WebDAV URL.
-Enter your Liferay credentials when you're prompted for them. The document
+Enter your @product@ credentials when you're prompted for them. The document
 library folder appears in the network drive. From your file browser, you can now
 add, edit, move, or delete files in this folder.
 
 On Mac OS X, select *Go* &rarr; *Connect to Server* in Finder. Then enter the
 WebDAV URL of the folder you'd like to access in the Server Address field, click
-*Connect* and you should be prompted for your Liferay credentials.
+*Connect* and you should be prompted for your @product@ credentials.
 
 On Linux, you must slightly modify the WebDAV URL of your folder in your file
 manager. For KDE's Dolphin, change the URL's protocol so that it says
 `webdav://` instead of `http://`. For GNOME's Nautilus, change the URL's
 protocol so that it says `dav://` instead of `http://`. Then press *Enter* and
-you're prompted for your Liferay credentials.
+you're prompted for your @product@ credentials.
 
-Note that Liferay increments the version numbers of files edited and uploaded
-via WebDAV so you don't have to worry that using your file manager will bypass
-the functionality of Liferay's web interface. 
+Note that @product@ increments the version numbers of files edited and
+uploaded via WebDAV so you don't have to worry that using your file manager will
+bypass the functionality of @product@'s web interface. 
 
 Lunar rover race instructor Wilma Carwin doesn't mind editing her Documents and
 Media files from her computer's file manager, because it's convenient and
@@ -851,7 +852,7 @@ environment.
 ## Summary [](id=summary)
 
 You've learned the fundamentals of uploading, managing, and collaborating on
-files in your sites. The Document Library integrates each file into Liferay,
+files in your sites. The Document Library integrates each file into @product@,
 allowing you to apply permissions, workflows, and rich metadata. And it provides
 a version control system for managing document progress. You displayed image
 files on pages using the Media Gallery and Documents and Media apps. And you've

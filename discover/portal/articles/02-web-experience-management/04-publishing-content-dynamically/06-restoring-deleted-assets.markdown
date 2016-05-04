@@ -2,7 +2,7 @@
 
 Have you ever had that life-altering experience where you deleted an important
 file and immediately regretted deleting it? The deed is usually followed by a
-palm to the forehead or a sick feeling. Good news! Liferay is here to turn that
+palm to the forehead or a sick feeling. Good news! @product@ is here to turn that
 frown upside down with the *Recycle Bin* feature. With the Recycle Bin, the
 *Move to the Recycle Bin* action replaces *Delete* for certain asset types.
 Content is now temporarily stored in the Recycle Bin. This allows the content to
@@ -81,7 +81,7 @@ use it.
 
 The Recycle Bin is temporary storage configured for multiple asset types across
 you Liferay instance. Instead of offering a specific Recycle Bin for each asset
-type, Liferay provides a central master Recycle Bin where different asset types
+type, @product@ provides a central master Recycle Bin where different asset types
 can be stored. This provides an easy search and recovery process.
 
 ![Figure 2: The Recycle Bin provides a seamless administrative experience for deleting and removing content.](../../../images/recycle-bin-overview.png)
@@ -122,7 +122,7 @@ run through two different methods of restoring the file.
    (![Actions](../../../images/icon-actions.png)) and click *Move to the Recycle
    Bin*.
 
-	Note that the *Delete* button is not listed. Liferay avoids the risk of
+	Note that the *Delete* button is not listed. @product@ avoids the risk of
 	accidental deletion of your files by funneling the content through the
 	Recycle Bin.
 
@@ -148,7 +148,7 @@ Congratulations! You now know the two general processes of sending and restoring
 content to/from the Recycle Bin. For other asset types, the Recycle Bin works
 similarly.
 
-Some Liferay applications, such as Web Content and Documents and Media, support
+Some @product@ applications, such as Web Content and Documents and Media, support
 folders into which their content can be organized. You can also send folders and
 sub-folders to the Recycle Bin. Keep in mind that this sends the entire
 folder/sub-folder structure and all files to the Recycle Bin. Folders and
@@ -192,7 +192,7 @@ another file currently stored in your site/instance? The Recycle Bin already
 knows how to handle these types of issues for a seamless user experience.
 
 When documents with shortcuts are moved to the Recycle Bin, the shortcuts are
-invalidated. This ensures Liferay has active links and shortcuts at all times.
+invalidated. This ensures @product@ has active links and shortcuts at all times.
 This cuts down on maintenance time and backtracking after recycling an important
 asset.
 

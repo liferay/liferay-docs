@@ -1,6 +1,6 @@
 # Look and Feel Configuration [](id=look-and-feel-configuration)
 
-An administrator can access the look and feel configuration menu of any Liferay
+An administrator can access the look and feel configuration menu of any @product@
 application by clicking on the *Options* icon
 (![Options](../../../images/icon-options.png)) at the top right corner of the
 app and selecting *Look and Feel Configuration*. The location of the Options

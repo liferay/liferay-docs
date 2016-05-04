@@ -1,7 +1,7 @@
 # Displaying Pages on Mobile Devices [](id=displaying-pages-on-mobile-devices)
 
 Mobile device families allow you to configure sets of rules to alter the
-behavior of the instance based on the device being used to access Liferay. The
+behavior of the instance based on the device being used to access @product@. The
 proportion of mobile device users browsing the web has been steadily increasing,
 so it's important to be able to handle different kinds of devices appropriately.
 For instance, you can configure the look and feel of Liferay pages accessed by
@@ -20,7 +20,7 @@ characteristics of the device. While some of the characteristics are provided by
 the device, most are not. For this reason, there are databases that contain
 information about thousands of devices. These databases make it possible to
 learn every detail about a device from the device type, which is included in
-each request sent to Liferay. Liferay's Mobile Device Rules can connect to
+each request sent to Liferay. @product@'s Mobile Device Rules can connect to
 device databases so that you can use their device characteristics in your rules. 
 
 <!-- Liferay connects to the [DATABASE_NAME] database automatically behind the

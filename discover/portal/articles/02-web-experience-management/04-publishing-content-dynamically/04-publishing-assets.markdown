@@ -1,8 +1,8 @@
 # Publishing Assets [](id=publishing-assets)
 
-As you create web content, it's important to keep in mind that to Liferay, the
+As you create web content, it's important to keep in mind that to @product@, the
 pieces of content are assets, just like message board entries and blog posts.
-This allows you to publish different kinds of content using Liferay's Asset
+This allows you to publish different kinds of content using @product@'s Asset
 Publisher. You can use the Asset Publisher to publish a mixed group of various
 kinds of assets such as images, documents, blogs, and of course, web content.
 This helps in creating a more dynamic web site: you can place user-created wiki
@@ -109,7 +109,7 @@ The Asset Publisher's default behavior is to select assets dynamically according
 a set of customizable rules. These rules can be stacked on top of each other so
 that they compliment each other to create a nice, refined query for your
 content. You can define complicated rules for selecting assets for display and
-Liferay automatically takes permissions into account. Liferay's Asset Publisher
+@product@ automatically takes permissions into account. Liferay's Asset Publisher
 performs well in these situations since it queries by search index instead of
 querying the database directly. You have the following options for creating
 rules for selecting content:
@@ -196,7 +196,7 @@ button that lets users add new assets directly from the Asset Publisher
 application. This is checked by default.
 
 **Display Template**: This selector lets you choose an application display
-template to customize how the Asset Publisher displays assets. Liferay creates
+template to customize how the Asset Publisher displays assets. @product@ creates
 the following display templates for each newly created site, including the
 default site:
 
@@ -329,7 +329,7 @@ The Display Settings section of the Asset Publisher has numerous options to help
 you configure how your content selections are displayed to your users. Even
 though there are many choices, it's easy to go through the options and quickly
 adjust the ones that apply to your situation. You'll want to use the Asset
-Publisher to query for different kinds of assets in Liferay that contain
+Publisher to query for different kinds of assets in @product@ that contain
 relevant information for your users.
 
 ## Configuring Asset Publisher Subscriptions [](id=configuring-asset-publisher-subscriptions)
@@ -349,7 +349,7 @@ only available when the *Dynamic* Asset Selection is configured.
 
 Enabling Email Subscription adds a *Subscribe* link to the Asset Publisher.
 Users wishing to be notified of newly published assets can click on this link to
-be added to the subscription list. Liferay periodically checks for new assets
+be added to the subscription list. @product@ periodically checks for new assets
 and sends emails to subscribed users informing them about the new assets. By
 default, Liferay performs this check every twenty-four hours.
 
@@ -380,8 +380,8 @@ Next, you'll look at Display Pages.
 
 ## Content Display Pages [](id=content-display-pages)
 
-If you've been using Liferay for a while, you might have noticed something about
-how Liferay handles web content--content is never tied directly to a page. While
+If you've been using @product@ for a while, you might have noticed something about
+how @product@ handles web content--content is never tied directly to a page. While
 this can be useful (because it means that you don't have to recreate content if
 you want to display the same thing on multiple pages), it also means that you
 don't have a static URL for any web content, which is bad for search engine
@@ -397,7 +397,7 @@ a configured asset publisher are available for selection.
 
 To create a display page, you can create a page yourself, add an Asset Publisher
 app and configure it yourself. Alternatively, you can use the *Content Display
-Page* page template included with Liferay. If you're creating a Display Page
+Page* page template included with @product@. If you're creating a Display Page
 manually, once you've added an Asset Publisher application to the page, open its
 configuration window. Then navigate to the Display Settings tab and check the
 *Set as the Default Asset Publisher for This Page* box. Also, for its display

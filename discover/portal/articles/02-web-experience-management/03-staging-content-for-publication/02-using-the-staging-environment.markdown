@@ -122,7 +122,7 @@ that has a field of the *Documents and Media* type.
 
 Web content tends to be frequently updated, often more so than other kinds of
 content. Sometimes this can result in high numbers of versions, into the
-hundreds. This makes it take a long time to publish these articles. Liferay
+hundreds. This makes it take a long time to publish these articles. @product@
 addresses this issue by allowing you to choose whether or not to publish the
 *Version History*, or the past versions of the web content articles to be
 published. If you disable this option, only the last **approved** version of
@@ -395,5 +395,5 @@ the base Site Pages Variation).
 * Merging does not affect content nor will overwrite anything in the base
 Variation, it will just add more versions, pages and page variations as needed.
 
-Liferay's staging environment is extremely easy to use and makes maintaining a
+@product@'s staging environment is extremely easy to use and makes maintaining a
 content-rich web site a snap. You'll learn about scheduling web content next.

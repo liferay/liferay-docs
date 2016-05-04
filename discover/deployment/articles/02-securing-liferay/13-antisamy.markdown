@@ -1,6 +1,6 @@
 # AntiSamy [](id=antisamy)
 
-Liferay includes an AntiSamy module that protects against malicious code that
+@product@ includes an AntiSamy module that protects against malicious code that
 users might create. When creating content, users can include malicious code
 either intentionally or unintentionally. The AntiSamy module filters on
 specific HTML/CSS fragments and removes suspect JavaScript code from them. The
@@ -8,7 +8,7 @@ module leverages the powerful
 [OWASP AntiSamy library](https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project)
 to enforce a content policy that's been effective for the online auction site
 eBay. The AntiSamy module adds an OWASP AntiSamy implementation to your
-portal's list of existing sanitizer implementations. Liferay Portal uses the
+portal's list of existing sanitizer implementations. @product@ uses the
 AntiSamy sanitizer and any existing configured sanitizers to scrub user input
 to blogs entries, calendar events, message boards posts, wiki pages, and web
 content articles.

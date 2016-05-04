@@ -1,6 +1,6 @@
 # Liferay Installation Overview [](id=liferay-installation-overview)
 
-Installing Liferay is easy. But before you begin, you should answer a few
+Installing @product@ is easy. But before you begin, you should answer a few
 questions.
 
 - Which version of Liferay will you install?
@@ -15,11 +15,10 @@ Liferay.
 
 ## Understanding Liferay's Releases [](id=understanding-liferays-releases)
 
-Which version of Liferay should you install? That's an easy question to answer:
+Which version of @product@ should you install? That's an easy question to answer:
 if this is a new installation, we recommend you install the latest version
 available. If you want to understand how Liferay releases work, you can read
 [this article](/discover/deployment/-/knowledge_base/7-0/understanding-liferays-releases).
-
 
 ## Obtaining Liferay Portal [](id=obtaining-liferay-portal)
 
@@ -62,7 +61,7 @@ Portal.
 
 ## Liferay Installation Steps [](id=liferay-installation-steps)
 
-Before you begin installing Liferay, You should review these basic installation
+Before you begin installing @product@, You should review these basic installation
 steps:
 
 1. Choose a database server to use with Liferay and create a new database.
@@ -72,7 +71,7 @@ steps:
 
 2. Gather mail credentials for sending email notifications to users. Determine
    whether you want Liferay to manage your mail session or your application
-   server to manage your mail session. Liferay provides a built-in mail session
+   server to manage your mail session. @product@ provides a built-in mail session
    but also supports a JNDI mail session. We recommend that you let Liferay
    manage your mail session.
 
@@ -96,7 +95,7 @@ The recommended way of setting up your Liferay database is also the simplest.
 @product@ takes care of just about everything. You only need to take two
 simple steps:
 
-1. Create a blank database encoded with the character set UTF-8. Liferay is a
+1. Create a blank database encoded with the character set UTF-8. @product@ is a
    multilingual application and needs UTF-8 encoding to display all of its
    supported character sets.
 
@@ -104,7 +103,7 @@ simple steps:
    all rights, including the rights to create and drop tables, to the blank
    Liferay database.
 
-Liferay will use this database user's credentials to connect to the Liferay
+@product@ will use this database user's credentials to connect to the Liferay
 database either directly or through its application server. During its initial
 startup, Liferay creates the tables it needs in the database you just created.
 It does this automatically, complete with indexes.
@@ -130,7 +129,7 @@ $$$
 
 Even though Liferay can create its database automatically, some enterprises
 prefer *not* to allow the database user configured in an application server to
-have the database permissions necessary for Liferay and its plugins to maintain
+have the database permissions necessary for @product@ and its plugins to maintain
 their tables. For these organizations, Select, Insert, Update and Delete are
 the only allowed permissions. Thus, in this section we explain how to set up
 the database manually. If your organization *is* willing to grant the Liferay
@@ -138,19 +137,19 @@ database user the permissions to create and drop tables in the database--and
 this is the recommended configuration--by all means, use the recommended
 configuration described in the previous section.
 
-1. Create a new, blank, database for Liferay.
+1. Create a new, blank, database for @product@.
 
 2. Grant full rights to do anything to the Liferay database to the Liferay
    database user.
 
-3. Install Liferay and start it so that it automatically populates its
+3. Install @product@ and start it so that it automatically populates its
    database.
 
 4. Once the database has been populated with the Liferay tables, remove the
    permissions for creating and dropping tables from the Liferay database user.
 
-There are some caveats to running Liferay like this. Many Liferay plugins
-create new tables when they're deployed. Additionally, Liferay has an automatic
+There are some caveats to running @product@ like this. Many Liferay plugins
+create new tables when they're deployed. Additionally, @product@ has an automatic
 database upgrade function that runs when Liferay is upgraded. If the Liferay
 database user doesn't have enough rights to create/modify/drop tables in the
 database, you must grant those rights to the ID before you deploy one of these
@@ -162,7 +161,7 @@ they cannot be installed if Liferay can't create database tables. If you wish
 to install these plugins, you will need to grant rights to create tables in the
 database before you attempt to install them.
 
-Once you have your database ready, you can install Liferay on your server.
+Once you have your database ready, you can install @product@ on your server.
 
 ## Step Two: Gather Your Mail Credentials
 
@@ -180,7 +179,7 @@ your mail server. Specifically, you'll need to have the following information:
 
 Once you've gathered this information, you're ready to move on to the next step. 
 
-## Step three: Install
+## Step Three: Install
 
 The next step is to install @product@. You can do this in one of two ways: by
 installing a @product@ bundled with an application server, or by installing
@@ -202,18 +201,17 @@ is better to install it on a separate machine.
 
 ## Step Five: Liferay Marketplace and Portal Security
 
-The Liferay Marketplace is an integral part of the Liferay Portal experience.
-The Marketplace plugin is required to be installed on Liferay Portal. The
+The Liferay Marketplace is an integral part of the @product@ experience.
+The Marketplace plugin is required to be installed on @product@. The
 Marketplace plugin enables a host of features that extend beyond just access to
 the online Liferay Marketplace. Some of the key features the Marketplace plugin
 enables are
 
 - Liferay Marketplace: direct access to our online Marketplace
 - App Manager: ability to install, uninstall, and update apps
-- Bundled Apps: easily manage apps that may come bundled with your Liferay
-  Portal
+- Bundled Apps: easily manage apps that may come bundled with your @product@
 - Developer Apps: ability to manage apps that you're developing
-- License Manager: streamlined license management for your Liferay Portal and
+- License Manager: streamlined license management for your @product@ and
   apps
 
 You will want to make sure Portal Access Control Lists are enabled if you intend

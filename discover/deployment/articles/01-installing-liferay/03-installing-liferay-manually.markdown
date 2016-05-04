@@ -1,35 +1,35 @@
 # Installing Liferay Manually [](id=installing-liferay-manually)
 
-The easiest way to install Liferay is to use a Liferay bundle. However, this is
+The easiest way to install @product@ is to use a @product@ bundle. However, this is
 not always possible. Some organizations have an existing infrastructure into
-which Liferay must be installed. Other organizations have standardized on a
-particular application server. Liferay Portal has been designed to work well
+which @product@ must be installed. Other organizations have standardized on a
+particular application server. @product@ has been designed to work well
 with many leading application servers. Even if you have to manually install
-Liferay on an existing application server, the procedure is straightforward.
+@product@ on an existing application server, the procedure is straightforward.
 Before you get started, note that there are two distinct approaches to managing
 Liferay's data source and mail session. Let's review these options.
 
 ## Using Data Sources [](id=using-data-sources)
 
-Liferay provides two ways to configure your data source:
+@product@ provides two ways to configure your data source:
 
 - Use Liferay's built-in data source
 - Use your application's server's JNDI data source
 
-Liferay recommends that you use the built-in data source. Liferay's data source
+@product@ recommends that you use the built-in data source. Liferay's data source
 is configured by a number of properties that are set in a properties file. By
 default, you can enter database connection information on the Basic
-Configuration page that appears when Liferay starts for the first time. The
+Configuration page that appears when @product@ starts for the first time. The
 setup wizard stores the information you entered in a configuration file called
 `portal-setup-wizard.properties` in your Liferay Home folder. Liferay's
 built-in data source uses this information to connect to the database.
 
-Although Liferay recommends that you use the built-in data source, that's not
+Although @product@ recommends that you use the built-in data source, that's not
 the only option. Some organizations prefer to use the data source provided by
 their application server of choice. In this case, a JNDI lookup provides a
 handle to the data source and the application server manages the connection
-pools. So you can configure Liferay to use your application server's data
-source if that's desired.
+pools. So you can configure @product@ to use your application server's data
+source, if that's desired.
 
 To do this, you'll need to create your own configuration file and skip the
 setup wizard. Since you'd be creating this file *after* the wizard anyway, this
@@ -46,8 +46,8 @@ As with databases, you have two ways to configure your mail server:
 - Use Liferay's built-in mail session
 - Use your application server's mail session
 
-Liferay recommends using the built-in mail session. After you've started
-Liferay, you can configure a mail server through Liferay's Control Panel.
+@product@ recommends using the built-in mail session. After you've started
+@product@, you can configure a mail server through Liferay's Control Panel.
 Liferay's default configuration looks for a mail server on the same machine on
 which Liferay is running and it tries to send mail via SMTP to this server. If
 this is not your configuration, you'll need to modify Liferay's defaults. To do
@@ -57,14 +57,14 @@ this, you can use a `portal-ext.properties` file in your Liferay Home folder
 To use your application server's mail session, you must create it in your
 application server. It should point to your mail server. Once you've created a
 mail session in your application server, you're ready to point Liferay to it.
-You can do this through your `portal-ext.properties` file file or through
+You can do this through your `portal-ext.properties` file or through
 Liferay's Control Panel.
 
 You now have all the background information you need to decide whether to use
 Liferay's built-in data source or the one provided by your application server.
 Similarly, you can now decide whether to use Liferay's mail session or your
-application server's mail session. If you're planning to use Liferay to manage
-both your database connection and mail session, great! When you start Liferay,
+application server's mail session. If you're planning to use @product@ to manage
+both your database connection and mail session, great! When you start @product@,
 simply enter your database connection information on the Basic Configuration
 page and then enter your mail server information through the Control Panel.
 
@@ -81,7 +81,7 @@ Liferay's database connection and mail server.
 If you want your application server to manage either your database connection
 or mail server (or both), you'll need to manually create this configuration.
 Create a text file called `portal-ext.properties` in your Liferay Home folder.
-This file overrides default properties that come with Liferay. The first
+This file overrides default properties that come with @product@. The first
 setting you'll override is the default configuration that points Liferay to the
 embedded HSQL database.
 
@@ -97,13 +97,13 @@ If you want to use your application server's data source, you will have to
 create a connection pool in your application server that points to your
 database. The connection pool should be called `jdbc/LiferayPool`. You can find
 instructions for how to do this in the installation documentation for each
-application server that Liferay supports. To tell Liferay to use your
+application server that @product@ supports. To tell Liferay to use your
 `jdbc/LiferayPool` connection pool, add the following directive to your
 `portal-ext.properties` file:
 
     jdbc.default.jndi.name=jdbc/LiferayPool
 
-Next, install Liferay according to the instructions for your application
+Next, install @product@ according to the instructions for your application
 server. Once it's installed, you can set up the mail configuration.
 
 For mail, you should use Liferay's Control Panel to create the configuration.
@@ -134,15 +134,15 @@ in the `portal-ext.properties` file:
 
 When you've finished, save the file.
 
-All the instructions above assumed that you wanted to install Liferay Portal at
+All the instructions above assumed that you wanted to install @product@ at
 the root context of your server. But what if that isn't the case? Next, you'll
-see how to use a different context for Liferay Portal.
+see how to use a different context for @product@.
 
 # Making Liferay Coexist with Other Java EE Applications [](id=making-liferay-coexist-with-other-java-ee-applications)
 
-By default, Liferay Portal is configured to sit at the root (i.e., `/`) of your
-application server. Dedicating your application server to running only Liferay
-Portal is a good practice. This allows your portal environment to be separated
+By default, @product@ is configured to sit at the root (i.e., `/`) of your
+application server. Dedicating your application server to running only @product@
+is a good practice. This allows your portal environment to be separated
 from your web application environment. This is generally a best practice for
 portals which, by definition, are application development platforms in and of
 themselves. For this reason, your Liferay instance is likely to be hosting many
@@ -152,8 +152,8 @@ all the resources it needs to do this. Configuring it so it is the sole
 consumer of any other `.war` files that get deployed to the application server
 helps to make sure your system performs optimally.
 
-If, however, you want Liferay to share space on an application server with
+If, however, you want @product@ to share space on an application server with
 other applications, you can. In this instance, you might not want to make
-Liferay the default application in the root context of the server. If you want
-to install Liferay in a context other than the root context, follow the
+@product@ the default application in the root context of the server. If you want
+to install @product@ in a context other than the root context, follow the
 instructions from your app server vendor. No additional steps are necessary.

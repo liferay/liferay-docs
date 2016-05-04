@@ -1,8 +1,8 @@
 # OpenSSO Single Sign On Authentication [](id=opensso-single-sign-on-authentication)
 
 OpenSSO is an open source single sign-on solution that comes from the code base
-of Sun's System Access Manager product. Liferay integrates with OpenSSO,
-allowing you to use OpenSSO to integrate Liferay into an infrastructure that
+of Sun's System Access Manager product. @product@ integrates with OpenSSO,
+allowing you to use OpenSSO to integrate @product@ into an infrastructure that
 contains a multitude of different authentication schemes against different
 repositories of identities.
 
@@ -25,7 +25,7 @@ address *test@liferay.com*. Go to the Control Panel and click on
 the right and then on *OpenSSO* at the top. Modify the three URL fields (Login
 URL, Logout URL, and Service URL) so they point to your OpenSSO server (i.e.,
 only modify the host name portion of the URLs). Then check the *Enabled* box
-and click *Save*. Liferay then redirects users to OpenSSO when they request the
+and click *Save*. @product@ then redirects users to OpenSSO when they request the
 `/c/portal/login` URL, e.g., when they click on the *Sign In* link.
 
 Liferay's OpenSSO configuration can be applied at either the system scope or at
@@ -39,7 +39,7 @@ you would when initialising a Java primitive type with a literal value.
 Property Label | Property Key | Description | Type
 :----: | :----: | :----: | :----:
 **Enabled** | `enabled` | Check this box to enable OpenSSO authentication. Note that OpenSSO will work only if LDAP authentication is also enabled and Liferay's authentication type is set to screen name. | `boolean`
-**Import from LDAP** | `importFromLDAP` | If this is checked, users authenticated from OpenSSO  that do not exist in Liferay are imported from LDAP. LDAP must be enabled. | `boolean`
+**Import from LDAP** | `importFromLDAP` | If this is checked, users authenticated from OpenSSO that do not exist in Liferay are imported from LDAP. LDAP must be enabled. | `boolean`
 **Login URL** | `loginURL` | The URL to the login page of the OpenSSO server | `String`
 **Logout URL** | `logoutURL` | The URL to the logout page of the OpenSSO server | `String`
 **Service URL** | `serviceURL` | The URL by which OpenSSO can be accessed to use the authenticated web services. If you are using OpenSSO Express 8 or higher, you need to have the server running Java 6. | `String`
