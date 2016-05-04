@@ -34,7 +34,7 @@ reference documents:
   This includes web content, blog entries, documents, users, and more. 
   
 - [**Web Content Display Screenlet:**](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-android) 
-  Shows the web content's HTML. This Screenlet uses the features available in 
+  Shows the web content's HTML or structured content. This Screenlet uses the features available in 
   [Web Content Management](/discover/portal/-/knowledge_base/6-2/web-content-management). 
 
 - [**Web Content List Screenlet:**](/develop/reference/-/knowledge_base/6-2/web-content-list-screenlet-for-android) 
