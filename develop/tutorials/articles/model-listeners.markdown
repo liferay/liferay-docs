@@ -62,13 +62,15 @@ In the body of the class override any methods from the `ModelListener`
 interface. The available methods are listed and described at the end of this
 article.
 
-The ModelListener's parameterized type `CustomEntity` tells ModelListener 
-ServiceTrackerCustomizer to register the listener against a specific model class.
+In your model listener class, the parameterized type (for example,
+`CustomEntity` in the snippet above) is used to tell the listener's
+`ServiceTrackerCustomizer` which model class the listener should be registered
+against.
 
 ## Register the Model Listener Service
 
-If using declarative services to register the service with Liferay's OSGi runtime, setting `service=
-ModelListener.class` and `immediate=true` in the Component.
+Register the service with Liferay's OSGi runtime. If using Declarative Services,
+set `service= ModelListener.class` and `immediate=true` in the Component.
 
     @Component(
         immediate = true,
