@@ -1,4 +1,4 @@
-# Model Listeners
+# Model Listeners [](id=model-listeners)
 
 Model Listeners implement the
 [`ModelListener`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/model/ModelListener.html)
@@ -67,7 +67,7 @@ In your model listener class, the parameterized type (for example,
 `ServiceTrackerCustomizer` which model class the listener should be registered
 against.
 
-## Register the Model Listener Service
+## Register the Model Listener Service [](id=register-the-model-listener-service)
 
 Register the service with Liferay's OSGi runtime. If using Declarative Services,
 set `service= ModelListener.class` and `immediate=true` in the Component.
@@ -80,7 +80,7 @@ set `service= ModelListener.class` and `immediate=true` in the Component.
 That's all there is to preparing a model listener. Now learn what model events
 you can respond to.
 
-## Listening For Persistence Events
+## Listening For Persistence Events [](id=listening-for-persistence-events)
 
 The `ModelListener` interface provides lots of opportunity to listen for model
 events:
