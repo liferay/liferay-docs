@@ -12,17 +12,18 @@ as follows:
 
     <portlet:actionURL name="/blogs/edit_entry" var="editEntryURL" />
 
-When the action URL is triggered, the matching action class processes the 
-action. Implement the action by creating a class that implements the 
-[`MVCActionCommand` interface](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html) 
-and is suffixed with `MVCActionCommand`. To avoid writing oodles of boilerplate 
-code, your `*MVCActionCommand` class should extend the 
-[`BaseMVCActionCommand` class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html) 
-instead of implementing `MVCActionCommand` directly. The `BaseMVCActionCommand` 
-class already implements `MVCActionCommand` and provides many useful method 
-implementations. Also, you should name your `*MVCActionCommand` class after the 
-action it performs. For example, if your action edits some kind of entry, you 
-should name its class `EditEntryMVCActionCommand`. 
+When the action URL is triggered, the matching action class processes the
+action. Implement the action by creating a class that implements the
+[`MVCActionCommand`
+interface](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html).
+To avoid writing oodles of boilerplate code, your `*MVCActionCommand` class
+should extend the [`BaseMVCActionCommand`
+class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html)
+instead of implementing `MVCActionCommand` directly. The `BaseMVCActionCommand`
+class already implements `MVCActionCommand` and provides many useful method
+implementations. Naming your `*MVCActionCommand` class after the action it
+performs is a good convention. For example, if your action edits some kind of
+entry, you could name its class `EditEntryMVCActionCommand`. 
 
 Your `*MVCActionCommand` class must also have a `@Component` annotation like the 
 following. Set the property `javax.portlet.name` to your portlet's internal 

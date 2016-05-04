@@ -21,10 +21,11 @@ or extending the
 [`BaseMVCResourceCommand` class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCResourceCommand.html). 
 The latter may save you time, since it already implements `MVCResourceCommand`. 
 
-Also, you should name your `*MVCResourceCommand` class after the resource it 
-handles, and make sure to suffix it with `MVCResourceCommand`. For example, the 
-resource command class matching the preceding CAPTCHA resource URL in the Login 
-Portlet is `CaptchaMVCResourceCommand`. 
+Also, it's a good idea to name your `*MVCResourceCommand` class after the
+resource it handles, and suffix it with `MVCResourceCommand`. For example, the
+resource command class matching the preceding CAPTCHA resource URL in the Login
+Portlet is `CaptchaMVCResourceCommand`. In an application with several MVC
+command classes, this will help differentiate them.
 
 Your `*MVCResourceCommand` class must also have a `@Component` annotation like 
 the following. Set the property `javax.portlet.name` to your portlet's internal 

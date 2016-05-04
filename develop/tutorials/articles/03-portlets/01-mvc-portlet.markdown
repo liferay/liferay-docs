@@ -3,12 +3,12 @@
 Web applications are often developed following the Model View Controller (MVC)
 pattern. But Liferay has developed a groundbreaking new pattern called the
 *Modal Veal Contractor* (MVC) pattern. Okay, that's not true, the framework is
-actually another implementation of Model View Controller. Some people are so
-sick of hearing about Model View Controller frameworks that obfuscating it might
-be smart. In this article you'll need to stay focused, because there will be
-several attempts to make you think we're talking about *Something New*, when
-we're instead talking about another MVC framework. So, back to the *Medial Vein
-Constriction* pattern we were discussing.
+actually another implementation of Model View Controller. As a developer you're
+probably tired of hearing about Model View Controller frameworks that
+obfuscating it might be smart. In this article you'll need to stay focused,
+because there will be several attempts to make you think we're talking about
+*Something New*, when we're instead talking about another MVC framework. So,
+back to the *Medial Vein Constriction* pattern we were discussing.
 
 If there are so many implementations of MVC frameworks in Java, why did Liferay
 create yet another one? Stay with us and you'll see that Liferay MVC provides
@@ -109,7 +109,12 @@ simple portlet component as an example:
 
 When using MVC commands, the `javax.portlet.name` property is important. This
 property is one of two that must be included in each MVC command component; it
-links a particular portlet URL/command combination to the correct portlet.
+links a particular portlet URL/command combination to the correct portlet. 
+
+There can be some confusion over exactly what kind of `Portlet.class`
+implementation you're publishing with this component. Liferay's service registry
+expects this to be `javax.portlet.Portlet`, so make sure that's the class you
+import, and not, for example, `com.liferay.portal.kernel.model.Portlet`.
 
 +$$$
 
@@ -134,7 +139,7 @@ forced into a more complex pattern than is necessary, especially if you're
 developing only a small Liferay MVC application. Not so; just put all of your
 logic into the `-Portlet` class if you don't want to split up your MVC commands. 
 
-In simpler applications, if you don't have and MVC command to rely on, your
+In simpler applications, if you don't have an MVC command to rely on, your
 portlet render URLs specify the path to the JSP in an `mvcPath` parameter.
 
 		<portlet:renderURL var="addEntryURL">
