@@ -50,7 +50,7 @@ Create a `-ModelListener` class that extends `BaseModelListener`.
 
     import ...;
 
-    public class CustomEntityListener extends BaseModelListener<Entity> {
+    public class CustomEntityListener extends BaseModelListener<CustomEntity> {
 
         /* Override one or more methods from the ModelListener 
             interface.
@@ -62,9 +62,12 @@ In the body of the class override any methods from the `ModelListener`
 interface. The available methods are listed and described at the end of this
 article.
 
+The ModelListener's parameterized type `CustomEntity` tells ModelListener 
+ServiceTrackerCustomizer to register the listener against a specific model class.
+
 ## Register the Model Listener Service
 
-Register the service with Liferay's OSGi runtime, setting `service=
+If using declarative services to register the service with Liferay's OSGi runtime, setting `service=
 ModelListener.class` and `immediate=true` in the Component.
 
     @Component(
