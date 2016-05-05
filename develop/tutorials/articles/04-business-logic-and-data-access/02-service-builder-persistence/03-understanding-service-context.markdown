@@ -87,7 +87,7 @@ parameter to a Liferay service API using Java:
 
     ...
 
-    BlogsEntryServiceUtil.addEntry(..., serviceContext);
+    _blogsEntryService.addEntry(..., serviceContext);
 
 If you invoke the service from a servlet, a Struts action, or any other
 front-end end class which has access to the `PortletRequest`, use one of the
@@ -101,7 +101,7 @@ if you invoke the service from a servlet:
 
     ...
 
-    BlogsEntryServiceUtil.addEntry(..., serviceContext);
+    _blogsEntryService.addEntry(..., serviceContext);
 
 You can see an example of populating a `ServiceContext` with information from a
 request object in the code of the `ServiceContextFactory.getInstance(...)`
@@ -337,7 +337,7 @@ blogs entry? Must you ask?
         serviceContext.setAttribute("trackbacks", null);
     }
 
-    WorkflowHandlerRegistryUtil.startWorkflowInstance(
+    _workflowHandlerRegistry.startWorkflowInstance(
         user.getCompanyId(), groupId, userId, BlogsEntry.class.getName(),
         entry.getEntryId(), entry, serviceContext);
 
