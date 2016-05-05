@@ -62,8 +62,8 @@ following exception is thrown if you try to do that:
 
     [MainServlet:237] java.lang.RuntimeException: You must first upgrade to Liferay Portal 7000
 
-The proper way to run the upgrade is using the new Java standalone tool that,
-as the portal, **needs to run using Java 8**:
+The upgrade tool can be found [describe where it can be found]. Use the
+following command to start it: 
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar
 
@@ -76,12 +76,13 @@ example, for increasing the Java memory in the upgrade process to 4GB:
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar -jvmOpts="-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx4096m"
 
-You can also set the log file where you need that the tool prints the output. By
-default it prints it in `upgrade.log` file but you can change it in this way:
+You can also set the location of the log file prints the output. By default it
+prints it in `upgrade.log` file but you can change it in this way:
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar -logFile="output.log"
 
 The upgrade requires three files to be configured before it can run:
+
 - `app-server.properties`: it should contain the properties to tell the tool
 where the server and libs are.
 - `portal-upgrade-datasource.properties`: it should contain the properties to
