@@ -323,7 +323,7 @@ keep in mind:
     - Liferay reserves the right to replace app plugin WAR files that have
       the same deployment context as plugins built by Liferay.
 
-There are some additional requirements for uploading Liferay 7 apps:
+There are some additional requirements for uploading Liferay 7.0 apps:
 
 - **OSGi modules in JAR (`.jar`) files**:
     - For more information, see 
@@ -332,6 +332,17 @@ There are some additional requirements for uploading Liferay 7 apps:
         - `Bundle-SymbolicName`: a unique name for the module
         - `Bundle-Version`: the module's version
         - `Web-ContextPath`: the servlet context path
+
+- **WAR (`.war`) files**:
+    - WAR-based plugins must be adapted to run on Liferay 7.0. See 
+      [this tutorial](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api) 
+      for information on adapting WAR plugins that run on Liferay 6.2 and 
+      earlier to run on Liferay 7.0. 
+
+- **Apps containing multiple file types:**
+    - Liferay 7.0 apps can contain a mix of WAR-based plugins and OSGi JAR-based 
+      plugins. Regardless of file type, each plugin must be able to run on 
+      Liferay 7.0. 
 
 +$$$
 
@@ -352,8 +363,8 @@ running on different Liferay versions.
 Apps can be written to work across many different versions of Liferay. For
 example, suppose you want to publish version 1.0 of your app, which you're
 supporting on Liferay 6.1 and 6.2. Due to incompatibilities between these
-Liferay versions, it may be impossible to create a single binary WAR file that 
-works across both Liferay versions. In this case, you must compile your app 
+Liferay versions, it may be impossible to create a single binary WAR or JAR file 
+that works across both Liferay versions. In this case, you must compile your app 
 twice: once against Liferay 6.1 and once against 6.2, producing 2 different
 *packages* (also called variations) of your version 1.0 app. Each package has
 the same functionality, but they're different files. You can upload such 
