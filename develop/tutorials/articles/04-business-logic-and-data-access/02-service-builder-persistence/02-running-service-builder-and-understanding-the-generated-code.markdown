@@ -191,6 +191,13 @@ than three classes for each entity. These customizable classes are
 
     ![Figure 3: Service Builder generates these model classes and interfaces. Only `EventImpl` allows custom methods to be added to the service layer.](../../images/service-builder-model-diagram.png)
 
++$$$
+
+**Note:** `*Util` classes are generated for backwards compatibility purposes
+only. Your module applications should avoid calling the util classes.
+
+$$$
+
 Each file that Service Builder generates is assembled from an associated
 FreeMarker template. You can find Service Builder's FreeMarker templates in the
 [portal-tools-service-builder](https://github.com/codyhoag/liferay-portal/tree/master/modules/util/portal-tools-service-builder/src/main/resources/com/liferay/portal/tools/service/builder/dependencies)

@@ -12,9 +12,6 @@ same folder.
 
 Here are some of the properties included in the `service.properties` file:
 
-- `build.auto.upgrade`: This is `true` by default. This property determines
-  whether or not Liferay should automatically apply changes to the database
-  model when a new version of the plugin is deployed.
 - `build.namespace`: This is the namespace you defined in your `service.xml`.
   Liferay distinguishes different plugins from each other using their
   namespaces.
@@ -25,13 +22,26 @@ Here are some of the properties included in the `service.properties` file:
 - `include-and-override`: The default value of this property defines
   `service-ext.properties` as an override file for `service.properties`.
 
-It's sometimes useful to override the `build.auto.upgrade` property from
-`service.properties`. Setting `build.auto.upgrade=false` in your
++$$$
+
+**Note:** The `build.auto.upgrade` property is available for WAR-style Service
+Builder applications. This property determines whether or not Liferay should
+automatically apply changes to the database model when a new version of the
+plugin is deployed. This is `true` by default. This property is not necessary
+for module-style applications.
+
+It's sometimes useful to override the `build.auto.upgrade` property in legacy
+projects from `service.properties`. Setting `build.auto.upgrade=false` in your
 `service-ext.properties` file prevents Liferay from trying automatically to
 apply any changes to the database model when a new version of the plugin is
-deployed. This is needed in projects in which it is preferred to manually manage
-the changes to the database or in which the SQL schema has intentionally been
+deployed. This is needed in projects to manually manage the changes to the
+database (recommended) or in which the SQL schema has intentionally been
 modified manually after generation by Service Builder.
+
+$$$
+
+Awesome! You now have all the tools necessary to set up your own
+`service-ext.properties` file.
 
 ## Related Topics
 

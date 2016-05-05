@@ -12,7 +12,7 @@ custom service methods, however, you should review the initial service classes
 that Service Builder generated during its initial run. 
 
 <!--
-This best practice also appears in 07-creating-remote-services.markdown. If you
+This best practice also appears in creating-remote-services.markdown. If you
 edit it, please update that location, as well.
 -->
 
@@ -38,35 +38,13 @@ time you run Service Builder. All custom code should be placed in
 For example, the Bookmarks application's
 [BookmarksEntryLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 class demonstrates the kinds of service methods that applications commonly need
-for working with an entity model. This class includes some of (but not limited
-to) the following local service methods:
-
-- `addEntry`
-- `deleteEntries`
-- `deleteEntry`
-- `getEntries`
-- `getEntry`
-- `getFolderEntriesCount`
-- `getGroupEntriesCount`
-- `getGroupEntries`
-- `getNoAssetEntries`
-- `moveEntry`
-- `moveEntryToTrash`
-- `openEntry`
-- `rebuildTree`
-- `restoreEntryFromTrash`
-- `search`
-- `setTreePaths`
-- `subscribeEntry`
-- `unsubscribeEntry`
-- `updateAsset`
-- `updateEntry`
-- `updateStatus`
+for working with an entity model. Click on the class's link to view some of its
+local service methods.
 
 In order to add an entity to the database, you need an ID for the entity.
 Liferay provides a counter service which you call to obtain a unique ID for each
 new entity. It's possible to use the `increment` method of Liferay's
-`CounterLocalServiceUtil` class but Service Builder already makes a
+`CounterLocalService` class, but Service Builder already makes a
 `CounterLocalService` instance available to your app's `*LocalServiceBaseImpl`.
 The `CounterLocalService` instance is injected into a module as an OSGi service:
 
@@ -114,39 +92,16 @@ called to add the bookmark to the database. Lastly, the bookmark is added as a
 resource so that permissions can be applied to it later. To view the `addEntry`
 method in its entirety, see the
 [BookmarksEntryLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
-class. <!--For more information about adding resources, please see the
+class. 
+<!--For more information about adding resources, please see the
 [Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
 learning path. -->
 
 The Bookmarks application creates local services for BookmarksFolder entities as
-well as for BookmarksEntry entities. Here are the custom service methods
-available in (but not limited to) the
+well as for BookmarksEntry entities. Take a look at the custom service methods
+available in the
 [BookmarksFolderLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksFolderLocalServiceImpl.java)
-class in the Bookmarks application:
-
-- `addFolder`
-- `deleteFolder`
-- `deleteFolders`
-- `getCompanyFolders`
-- `getCompanyFoldersCount`
-- `getFolder`
-- `getFolders`
-- `getFoldersAndEntries`
-- `getFoldersAndEntriesCount`
-- `getFoldersCount`
-- `getNoAssetFolders`
-- `getSubfolderIds`
-- `mergeFolders`
-- `moveFolder`
-- `moveFolderFromTrash`
-- `moveFolderToTrash`
-- `rebuildTree`
-- `restoreFolderFromTrash`
-- `subscribeFolder`
-- `unsubscribeFolder`
-- `updateAsset`
-- `updateFolder`
-- `updateStatus`
+class for a better understanding of services available for bookmark folders.
 
 Before you can use any custom methods that you added to your `*LocalServiceImpl`
 class, you must run Service Builder again. Running Service Builder again adds
@@ -160,18 +115,15 @@ Service Builder looks through your `*LocalServiceImpl` class and automatically
 copies the signatures of each method into the corresponding `*LocalService`
 interface. After running Service Builder, you can test that your services are
 working as intended by invoking one of the methods that Service Builder added to
-your `*LocalServiceUtil` class. For example, if you were developing the
+your `*LocalService` class. For example, if you were developing the
 Bookmarks application, you could make the following service invocation to make
 sure that your service was working as intended:
 
-    BookmarksEntryLocalServiceUtil.addBookmarksEntry(bookmarksEntry);
+    BookmarksEntryLocalService.addBookmarksEntry(bookmarksEntry);
 
-Service Builder generates methods in your `*LocalServiceUtil` class that
-correspond to the methods you implemented in your `*LocalServiceImpl` class. The
-utility service methods invoke the implementation service methods that you
-wrote. In addition to all of the Java classes and interfaces, Service Builder
-also generates a `service.properties` file. To learn about the
-`service.properties` file and how to configure it, please refer to the
+In addition to all of the Java classes and interfaces, Service Builder also
+generates a `service.properties` file. To learn about the `service.properties`
+file and how to configure it, please refer to the
 [Configuring service.properties](/develop/tutorials/-/knowledge_base/7-0/configuring-service-properties)
 tutorial. To learn how to invoke local services, please refer to the
 [Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)

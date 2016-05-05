@@ -32,10 +32,12 @@ tutorial for additional info on the `*api`, `*service`, and `*web` modules.
 
 The first step in using Service Builder is to define your model classes and
 their attributes in a `service.xml` file. This file's location typically resides
-in the root folder of the `*-service` module. In Service Builder terminology,
-your model classes are called entities. For example, the Bookmarks application
-has two entities: `BookmarksEntry` and `BookmarksFolder`. The requirements for
-each of these entities are defined in the `bookmarks-service` module's
+in the root folder of the `*-service` module, although you can configure your
+build tool to recognize it from other directories. In Service Builder
+terminology, your model classes are called entities. For example, the Bookmarks
+application has two entities: `BookmarksEntry` and `BookmarksFolder`. The
+requirements for each of these entities are defined in the `bookmarks-service`
+module's
 [service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
 listed in the `<column />` elements. 
 
@@ -145,6 +147,13 @@ their prefix. The namespace for each Service Builder project must be unique.
 Separate plugins should use separate namespaces and should not use a namespace
 already used by Liferay (such as `Users` or `Groups`). Check the table names in
 Liferay's database if you're wondering which namespaces are already in use.
+
++$$$
+
+**Warning:** Use caution when assigning the namespace value. Some databases have
+strong restrictions on database table name lengths.
+
+$$$
 
 As the last piece of global information, enter your name as the service's
 *author* in your `service.xml` file. Service Builder adds `@author` annotations
