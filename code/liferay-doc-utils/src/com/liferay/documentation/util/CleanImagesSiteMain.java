@@ -98,8 +98,10 @@ public class CleanImagesSiteMain {
 			imageBegIndex = 17;
 		}
 
+		int imgClosingParen = line.indexOf(")", line.indexOf("../../images"));
+
 		String imageName = line.substring(
-				line.lastIndexOf("../../images") + imageBegIndex, line.lastIndexOf(")"));
+				line.lastIndexOf("../../images") + imageBegIndex, imgClosingParen);
 		return imageName;
 	}
 }
