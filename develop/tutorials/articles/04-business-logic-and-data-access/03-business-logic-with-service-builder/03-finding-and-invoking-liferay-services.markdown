@@ -180,7 +180,8 @@ The generated code for this entity would look like the following:
     @ServiceReference(type = com.liferay.portal.kernel.service.GroupLocalService.class)
     protected com.liferay.portal.kernel.service.GroupLocalService groupLocalService;
 
-
+Great! You know how to find Liferay's core and module services, and can invoke
+them from your application. You also learned about referencing OSGi services.
 
 ## Related Topics [](id=related-topics)
 
