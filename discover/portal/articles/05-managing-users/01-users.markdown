@@ -59,8 +59,7 @@ and Organizations*.
 
 1.  Click *Add* &rarr; *User*.
 
-    ![Figure 2: Add Users from the Users and Organizations section of the
-    Control Panel.](../../images/usrmgmt-add-user.png)
+    ![Figure 2: Add Users from the Users and Organizations section of the Control Panel.](../../images/usrmgmt-add-user.png)
     
     <!-- That screenshot is definitely going to be replaced. The add button here
     is not lexiconified -->
@@ -74,8 +73,7 @@ adding by clicking either Organizations or Personal Site.
 
 Once you save the form, the User is added to the portal.
 
-![Figure 3: At a minimum, enter a screen name, email address, and first name to
-create a new user account.](../../images/your-request-completed-successfully.png)
+![Figure 3: At a minimum, enter a screen name, email address, and first name to create a new user account.](../../images/your-request-completed-successfully.png)
 
 After you submit the form, the page reloads with a success message. An expanded
 form appears for editing the user's account (see all the new categories in the
@@ -93,10 +91,7 @@ If you have not set up a mail server, you can click the Password link to access
 the Password section of the Add User form to manually set a password for your
 new user. Enter the new password twice.
 
-![Figure 4: Enter the password twice to manually set the password for a user. If
-the Password Policy you're using is configured to allow it, select whether to
-require the user to reset their password the first time they sign in to the
-portal.](../../images/usrmgmt-require-password-reset.png)
+![Figure 4: Enter the password twice to manually set the password for a user. If the Password Policy you're using is configured to allow it, select whether to require the user to reset their password the first time they sign in to the portal.](../../images/usrmgmt-require-password-reset.png)
 
 +$$$
 
