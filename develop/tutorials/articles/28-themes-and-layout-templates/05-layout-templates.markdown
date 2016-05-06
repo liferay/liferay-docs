@@ -188,7 +188,7 @@ portlet.
 folder with your own custom thumbnail PNG.
 
 Believe it or not, you've just created a layout template! You can deploy it to 
-your platform and apply it to your pages. 
+your server and apply it to your pages.
 
 If you want to see more examples of layout templates, look at the
 source of Liferay's layout templates available in the

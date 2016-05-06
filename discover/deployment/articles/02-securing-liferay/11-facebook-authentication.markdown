@@ -9,7 +9,7 @@ same email address in Liferay's `User_` table. If a match is found, the user is
 automatically signed on (provided that the required permissions have been
 granted on the Facebook side).
 
-If there isn't a match, the user is prompted in Liferay to add a user from
+If there isn't a match, the user is prompted in @product@ to add a user from
 Facebook. When new Liferay users are added this way, they are created by
 retrieving the following four fields from Facebook:
 
@@ -18,10 +18,10 @@ retrieving the following four fields from Facebook:
 - Last name
 - Gender
 
-In order to integrate Liferay with Facebook, you must first create an
+In order to integrate @product@ with Facebook, you must first create an
 "application" on Facebook's website here:
 [https://developers.facebook.com](https://developers.facebook.com). This is
-necessary because Facebook Connect requires Liferay to authenticate using the
+necessary because Facebook Connect requires @product@ to authenticate using the
 OAuth 2.0 protocol. Facebook provides you with the necessary application ID and
 secret which are be used in OAuth messages sent between Liferay and Facebook.
 One benefit of this is that a Facebook user can revoke Liferay's access at any
@@ -61,13 +61,13 @@ will only need to change this if Facebook changes their OAuth authorization
 endpoint. This URL will be decorated with dynamic data and linked to from the
 Liferay Sign In portlet.
 
-**OAuth Token URL**: This is Facebook's OAuth access token URL. Liferay uses
+**OAuth Token URL**: This is Facebook's OAuth access token URL. @product@ uses
 this URL to exchange a request token for an access token.
 
 **OAuth Redirect URL**: This is the URL that the user will be directed to once
 an OAuth request token has been generated. The URL points to a Liferay service
 which exchanges the request token for the access token which is required in
-order for Liferay to make successful calls to the Facebook Graph API. You
+order for @product@ to make successful calls to the Facebook Graph API. You
 should only need to change this URL if requests to your Liferay instance need
 to go via a fronting webserver such as Apache that does URL rewriting.
 

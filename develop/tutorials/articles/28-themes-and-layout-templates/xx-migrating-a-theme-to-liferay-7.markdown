@@ -99,13 +99,13 @@ responsiveness.
 
     **Media Query Replacements**
 
-          6.2                                   |  &nbsp;7.0     |
-        ----------                              |:-------------- | 
-          `@include respond-to(phone)`          | `@include media-query(null, $screen-xs-max)`        |
-          `@include respond-to(tablet)`         | `@include media-query(sm, $screen-sm-max)`          |
-          `@include respond-to(phone, tablet)`  | `@include media-query(null, $breakpoint_tablet - 1)`|
-          `@include respond-to(desktop, tablet)`| `@include sm`                                       |
-          `@include respond-to(desktop)`        | `@include media-query($breakpoint_tablet, null)`    |
+      6.2                                   |  &nbsp;7.0     |
+    ----------                              |:-------------- | 
+    `@include respond-to(phone)`            | `@include media-query(null, $screen-xs-max)`        |
+    `@include respond-to(tablet)`           | `@include media-query(sm, $screen-sm-max)`          |
+    `@include respond-to(phone, tablet)`    | `@include media-query(null, $breakpoint_tablet - 1)`|
+    `@include respond-to(desktop, tablet)`  | `@include sm`                                       |
+    `@include respond-to(desktop)`          | `@include media-query($breakpoint_tablet, null)`    |
 
     Now that your responsiveness is updated, you can build your theme files.
 

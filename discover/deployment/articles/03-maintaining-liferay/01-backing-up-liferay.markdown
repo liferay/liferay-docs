@@ -1,15 +1,15 @@
 # Backing up a Liferay Installation [](id=backing-up-a-liferay-installation)
 
-Once you have an installation of Liferay Portal running, you should implement a
+Once you have an installation of @product@ running, you should implement a
 comprehensive backup plan. You'll be very thanking for your backup procedures
-in case some kind of catastrophic hardware failure occurs. Liferay isn't very
+in case some kind of catastrophic hardware failure occurs. @product@ isn't very
 different from any other Java web application that might be running on your
 application server. Nevertheless, there are some specific components you should
 include in your backup plan.
 
 ## Backing up Source Code [](id=backing-up-source-code)
 
-If you have extended Liferay or have written any plugins, they should be stored
+If you have extended @product@ or have written any plugins, they should be stored
 in a source code repository such as Git, Subversion, or CVS, unless you're
 Linus Torvalds, and then tarballs are okay too (that's a joke). Your source
 code repository should be backed up on a regular basis to preserve your ongoing
@@ -33,18 +33,18 @@ entire the contents of your Liferay Home folders.
 
 If you've followed the non-plugin procedure (see the [(not yet written)]()
 article) to modify your Ehcache configuration, you'll have cache configuration
-files in the deploy location of Liferay. You'll need to back up this location.
+files in the deploy location of @product@. You'll need to back up this location.
 If you're using the plugin procedure (i.e., the recommended procedure), your
 cache configuration settings are stored in your source code repository, which
 should be backed up separately.
 
-Liferay stores configuration files, search indexes, and cache information in a
+@product@ stores configuration files, search indexes, and cache information in a
 folder called `/data` in Liferay Home. If you're using the File System store or
 the Advanced File System store, the documents and media repository (a.k.a.,
 document library) is also stored here by default. It's always import to back up
 your `/data` folder.
 
-The files that comprise Liferay's OSGi runtime are stored in a folder called
+The files that comprise @product@'s OSGi runtime are stored in a folder called
 `/osgi` in Liferay Home. This folder contains the JAR files for all of the apps
 and modules that you've deployed to Liferay. The `/osgi` folder also contains
 other required JAR files, configuration files, and log files. It's also
@@ -65,7 +65,7 @@ to back up Liferay's database.
 
 ## Backing up Liferay's Database [](id=backing-up-liferays-database)
 
-Liferay's database is the central repository for all of the portal's
+@product@'s database is the central repository for all of the portal's
 information. It's the most important component that needs to be backed up. You
 can do this by backing up the database live (if your database allows this) or
 by exporting the database and then backing up the exported file. For example,

@@ -3,7 +3,7 @@
 To see a very simple example of the script console in action, log into the
 portal as an administrator and navigate to the *Control Panel* &rarr; *Server
 Administration* area of the Control Panel. Then click on *Script*. This is
-Liferay's script console. Change the script type to *Groovy* and replace the
+@product@'s script console. Change the script type to *Groovy* and replace the
 code in the script console with the following: 
 
     number = com.liferay.portal.service.UserLocalServiceUtil.getUsersCount(); 
@@ -18,7 +18,7 @@ database. Suppose that your company has updated the terms of use and wants each
 user to be presented with the updated terms of use whenever they next log in.
 When users agree to the terms of use, a boolean attribute called
 `agreedToTermsOfUse` is set in their user records. As long as the value of this
-variable is `true`, Liferay will not present the user with the terms of use.
+variable is `true`, @product@ will not present the user with the terms of use.
 However, if you set this flag to `false` for each user, each user must agree to
 the terms of use again before they can log in. 
 

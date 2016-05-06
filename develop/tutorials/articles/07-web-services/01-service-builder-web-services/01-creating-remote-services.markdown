@@ -144,8 +144,8 @@ to the tutorial
 
 ## Building the WSDD for Built-in Liferay Apps [](id=building-the-wsdd-for-built-in-liferay-apps)
 
-Liferay 7 doesn't provide WSDD modules for built-in apps that exist outside of 
-the portal context. This means that by default you can't access SOAP web 
+@product@ doesn't provide WSDD modules for built-in apps that exist outside 
+of the portal context. This means that by default you can't access SOAP web 
 services for apps like Bookmarks or Blogs. To make SOAP web services available 
 for such an app, you must build and deploy its WSDD from the 
 [`liferay-portal` GitHub repository](https://github.com/liferay/liferay-portal). 

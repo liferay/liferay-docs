@@ -3,7 +3,7 @@
 NTLM is a Microsoft protocol that can be used for authentication through
 Microsoft Internet Explorer. Though Microsoft has adopted Kerberos in modern
 versions of Windows server, NTLM is still used when authenticating to a
-workgroup. Liferay Portal now supports NTLM v2 authentication. NTLM v2 is more
+workgroup. @product@ now supports NTLM v2 authentication. NTLM v2 is more
 secure and has a stronger authentication process than NTLMv1.
 
 Note that in order to use NTLM SSO, Liferay's portal instance authentication
@@ -39,7 +39,7 @@ thus can ensure NTLM compatibility. In an Active Directory based network /
 domain, it is hard to beat the user experience that NTLM authentication can
 provide.
 
-Please note that in order to use NTLM SSO, your portal instance authentication
-type must be set to screen name. If this is not acceptable for your portal
+Please note that in order to use NTLM SSO, your @product@ instance authentication
+type must be set to screen name. If this is not acceptable for your @product@
 implementation, then another SSO solution (such as CAS) can be used as a broker
 between your portal and the NTLM authentication process.

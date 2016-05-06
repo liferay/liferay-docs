@@ -1,10 +1,10 @@
 # Upgrading to Liferay 7 [](id=upgrading-to-liferay-7)
 
-In this article, you'll learn how to upgrade to Liferay 7. Please see the
+In this article, you'll learn how to upgrade to @product@ 7. Please see the
 [Upgrading to Liferay 6.2](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
 article for information on upgrading to Liferay 6.2.
 
-To upgrade your portal to Liferay 7, you should create a file called
+To upgrade your instance to Liferay 7, you should create a file called
 `com.liferay.portal.search.configuration.IndexWriterHelperConfiguration.cfg` in
 your `[Liferay Home]/osgi/configs` folder with this contents:
 
@@ -12,7 +12,7 @@ your `[Liferay Home]/osgi/configs` folder with this contents:
 
 Setting the property above disables indexing. By disabling indexing, you avoid
 the possibility of faulty indexing and you save time during the upgrade
-process. Once you have upgraded your portal, remove this property or set it to
+process. Once you have upgraded your @product@ instance, remove this property or set it to
 `false` so that you can index all objects from Liferay's Control Panel.
 
 ## Running an Upgrade Manually [](id=running-an-upgrade-manually)
@@ -52,7 +52,7 @@ command `ant upgrade`. Please refer to the [Ant](http://ant.apache.org/)
 documentation to learn how to set up Ant for your environment.
 
 Running the appropriate command above executes the upgrades and verifiers of
-Liferay's core. It also runs the upgrades for each of the installed modules if
+@product@'s core. It also runs the upgrades for each of the installed modules if
 they are in automatic mode. If the modules are not in automatic mode, they can
 be upgraded individually as explained below.
 

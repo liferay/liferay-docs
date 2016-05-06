@@ -16,7 +16,7 @@ Liferay supported WYSIWYG editor.
 ## Injecting JavaScript into a WYSIWYG Editor [](id=injecting-javascript-into-a-wysiwyg-editor)
 
 The `liferay-util:dynamic-include` extension point is available in the JSP files
-of Liferay's configurable editors. This extension point serves as the gateway
+of @product@'s configurable editors. This extension point serves as the gateway
 for injecting JavaScript into your editor instance. To take advantage of this
 extension point, you should follow these steps:
 
@@ -31,7 +31,7 @@ extension point, you should follow these steps:
     [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_show.js),
     and
     [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/dialog_definition.js).
-    These JS files are used by Liferay to redefine which fields show in
+    These JS files are used by @product@ to redefine which fields show in
     different dialogs, depending on what the selected language (HTML, BBCode,
     Creole) supports. For example, Creole doesn't support background color in
     table cells, so the table cells are removed from the options displayed to

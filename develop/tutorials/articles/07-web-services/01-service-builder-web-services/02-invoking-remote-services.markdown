@@ -75,8 +75,8 @@ app's remote services.
 Service Builder can also make your project's web services available via SOAP
 using Apache Axis. After you've built your `*-service` project's WSDD (web 
 service deployment descriptor) and deployed your project's modules, its services 
-are available on your Liferay server. You can view your portal's and app's SOAP 
-services in a browser as described in the tutorial 
+are available on your Liferay server. You can view your Liferay instance's and 
+app's SOAP services in a browser as described in the tutorial 
 [Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services). 
 
 When viewing your SOAP services in a browser, Liferay lists the services 

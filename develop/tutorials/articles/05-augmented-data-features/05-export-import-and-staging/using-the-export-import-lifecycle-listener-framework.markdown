@@ -20,7 +20,7 @@ like a detailed log of when certain events occur during an import process. You
 could configure a listener to listen for certain import events you're interested
 in and print information about those events to your console when they occur.
 
-Liferay Portal uses this framework by default in several cases. For instance,
+@product@ uses this framework by default in several cases. For instance,
 Liferay clears the cache when a web content import process finishes. To
 accomplish this, the lifecycle listener framework listens for an event that
 specifies that a web content import process has completed. Once that event
