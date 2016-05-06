@@ -1,671 +1,291 @@
-Introduction^[[a]](#cmnt1)^^[[b]](#cmnt2)^^[[c]](#cmnt3)^^[[d]](#cmnt4)^^[[e]](#cmnt5)^^[[f]](#cmnt6)^^[[g]](#cmnt7)^^[[h]](#cmnt8)^^[[i]](#cmnt9)^ {#h.nuhvi6d0gjpl .c4 .c30}
-===================================================================================================================================================
+# Applying Lexicon Styles to your Application [](id=applying-lexicon-styles-to-your-application)
 
-The default themes (admin and classic) of Liferay 7 include an
-implementation of the Lexicon Experience Language, that means that you
-will be able to use components from Lexicon and they will look very good
-:)
+The applications that come packaged with Liferay use the [Lexicon](/participate/liferaypedia/-/wiki/Main/Lexicon)
+design language for their markup. When applying a new style of design it’s 
+important to have a consistent user experience across your applications. 
+Lexicon's markup is optimized to provide you with a consistent, user-friendly UI 
+for your applications in Liferay.
 
-General recommendations {#h.ee57zij0xy0t .c4 .c30}
-=======================
+The default themes, Admin and Classic, include an implementation of the Lexicon 
+Experience Language. Likewise, the Lexicon base styles are provided in the 
+`aui.scss` file of the `_styled` base theme. What this means for you as a 
+developer is that you will be able to use Lexicon markup and components in your 
+custom applications in @product@ 7.
+
+This tutorial demonstrates the following:
+
+- How to leverage Liferay's taglibs to create a consistent UI
+- How to improve your Application's forms with Lexicon
+- How to use Lexicon icons in your Application
 
-1.  Always start with mockups
-2.  Use available taglibs whenever possible
-3.  When doing markup manually, use Lexicon markup not Bootstrap markup
+Learn how to leverage Liferay's taglibs in your application next.
 
-1.  the Lexicon implementation in Liferay 7 is based on Bootstrap but it
-    doesn’t include all of its elements and extends others. By using
-    only the Lexicon markup you will ensure the best result in terms of
-    UX and visual look
+## Leveraging Liferay’s Frontend Taglibs to Create a Pleasant UI [](id=leveraging-liferays-frontend-taglibs-to-create-a-pleasant-ui)
 
-Strategy {#h.54jbnxaldwd3 .c4 .c30}
---------
+Liferay's `liferay-frontend` taglibs streamline the process of writing Lexicon 
+markup, allowing you to focus your efforts on creating a pleasant user 
+experience.
 
-When applying a new style of design it’s important to have consistency
-across applications that the end user or administrator will use
-together. For this reason we suggest a breadth first, depth second
-approach. The idea is that we first apply the most general patterns of
-lexicon-based designs to all portlets (or as many as possible) and we
-later go back one by one to dig deeper and improve its UX iteratively
-until it’s perfect. The first phase (called Breadth first) should
-contain enough improvements to present a good UI and UX to the user,
-consistent with other portlets.
+The Frontend taglibs give you access to several UI components that you can
+leverage in your application's design.
+
+The sections that follow outline some of the available components that you can
+use in your application's JSPs.
+
+### Applying the Add Button Pattern [](id=applying-the-add-button-pattern)
+
+If your application requires an actions menu, or perhaps a button to open a
+different view of your application, like an edit screen for adding new content 
+for example, you may wish to use the add button pattern.
+
+The add button pattern provides you with a clean, minimal, UI, that caters to 
+the needs of your application. It is intended for use in the main screen of your 
+application, or in any inside screen where it makes sense.
+
+The add button pattern consist of an `add-menu` and at least one `add-menu-item`.
+
+![figure x: The add button consists of a add-menu and at least one menu item.](../../images/add-button-diagram.png)
+
+If there is only one item, the plus icon will act as a button. If you add
+more than one menu-item, then the user will be presented with a menu of options
+to choose from.
+
+Follow the pattern below to create a add menu for your application:
+
+    <liferay-frontend:add-menu>
+        <liferay-frontend:add-menu-item title='<%= LanguageUtil.get(request, 
+        "titleName") %>' url="<%= nameURL.toString() %>" />
+    <liferay-frontend:add-menu>
+
+The [Message Boards Admin portlet](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/message-boards/message-boards-web/src/main/resources/META-INF/resources/message_boards_admin/add_button.jsp) 
+for example uses the following add button pattern:
+
+    <liferay-frontend:add-menu>
+        ...
+        <liferay-frontend:add-menu-item title='<%= LanguageUtil.get(request, 
+        "thread") %>' url="<%= addMessageURL.toString() %>" />
+        ...
+        <liferay-frontend:add-menu-item title='<%= LanguageUtil.get(request, 
+        (categoryId == MBCategoryConstants.DEFAULT_PARENT_CATEGORY_ID) ? 
+        "category[message-board]" : "subcategory[message-board]") %>' 
+        url="<%= addCategoryURL.toString() %>" />
+        ...
+    </liferay-frontend:add-menu>
+    
+There you have it. Your add button is ready to go. Learn how to update your 
+application's navigation bar next.
+
+### Applying Lexicon to the Navigation Bar [](id=applying-lexicon-to-the-navigation-bar)
+
+All administration applications in @product@ 7 have a navigation bar. If your 
+application is intended for administrative use, you may wish to follow the same 
+design pattern.
+
+Applying the Lexicon pattern to your existing navigation bar takes just one
+additional attribute.
+
+If your application already has a navigation bar implemented with the 
+`aui:nav-bar` taglib, you can reuse it by adding the attribute 
+`markupView=”lexicon”`.
+
++$$$
+
+**Note:** The `markupView="lexicon"` attribute ensures that the Lexicon markup
+is used for the UI components, rather than the standard markup. This attribute
+tells the application to use the lexicon folder for the taglib to render the 
+HTML rather than the default pages. For example using `
+<aui:fieldset markupView=“lexicon” />` will use 
+`/portal/portal-web/docroot/html/taglib/aui/fieldset/lexicon/` instead of the 
+`end.jsp` and `start.jsp` found at 
+`/portal/portal-web/docroot/html/taglib/aui/fieldset/`.
+
+$$$
+
+For example, the [trash application](https://github.com/liferay/liferay-portal/blob/2960360870ae69360861a720136e082a06c5548f/modules/apps/web-experience/trash/trash-web/src/main/resources/META-INF/resources/navigation.jsp) 
+uses the following pattern:
+    
+    <aui:nav-bar cssClass="collapse-basic-search" markupView="lexicon">
+    
+Your navigation bar is ready to go. You can learn about the User Management Bar
+next.
+
+### Adding the Management Bar [](id=adding-the-management-bar)
+ 
+The management bar contains actions for the end user to aid in managing the 
+application's content and can be customized to meet your needs. Take a look at 
+the Message Boards Admin portlet for example:
+
+![figure x: The management bar gives the user access to several tools to manage the application's content.](../../images/message-boards-management-bar.png)
+
+The management bar is divided into a few key sections.
+
+Each of these divisions are grouped and configured using different taglibs. Here
+is how the Trash application's management bar is configured:
+
+    <liferay-frontend:management-bar>
+            <liferay-frontend:management-bar-buttons>
+                    <liferay-frontend:management-bar-sidenav-toggler-button
+                            disabled="<%= false %>"
+                            href="javascript:;"
+                            icon="info-circle"
+                            label="info"
+                            sidenavId='<%= liferayPortletResponse.getNamespace() 
+                            + "infoPanelId" %>'
+                    />
+    
+                    <liferay-portlet:actionURL name="changeDisplayStyle" 
+                    varImpl="changeDisplayStyleURL">
+                            <portlet:param name="redirect" value="<%= 
+                            currentURL %>" />
+                    </liferay-portlet:actionURL>
+    
+                    <liferay-frontend:management-bar-display-buttons
+                            displayViews='<%= new String[] {"descriptive", 
+                            "icon", "list"} %>'
+                            portletURL="<%= changeDisplayStyleURL %>"
+                            selectedDisplayStyle="<%= 
+                            trashDisplayContext.getDisplayStyle() %>"
+                    />
+            </liferay-frontend:management-bar-buttons>
+    
+            <liferay-frontend:management-bar-filters>
+                    <liferay-frontend:management-bar-navigation
+                            navigationKeys='<%= new String[] {"all"} %>'
+                            portletURL="<%= trashDisplayContext.getPortletURL() 
+                            %>"
+                    />
+            </liferay-frontend:management-bar-filters>
+    </liferay-frontend:management-bar>
+
+Each taglib corresponds to a division of the management bar.
+
+The `<liferay-frontend:management-bar-buttons>...<.../>` tag wraps the
+management bar button elements:
+
+![figure x: The management bar buttons tag contains the main buttons for the management bar.](../../images/management-bar-buttons.png)
+
+The `<liferay-frontend:management-bar-sidenav-toggler-button.../>` tag renders
+a slide out navigation, for the info button in this case. The `info-circle` icon 
+is specified as the `icon` for the button. You can choose from a selection of 
+Lexicon icons for your application's button. More on this later.
+
+The `<liferay-frontend:management-bar-display-buttons.../>` tag renders the
+display style options for the application:
+
+![figure x: The management bar display buttons tag contains the display options for the content.](../../images/management-bar-display-buttons.png)
+
+Finally, the `<liferay-frontend:management-bar-filters>...<.../>` tag wraps the
+filter options for the application:
+
+![figure x: The management bar filters tag contains the filter options for the content.](../../images/management-bar-filters.png)
+
+When the application doesn't contain any content, all the buttons, except for 
+the info button, are disabled in the management bar.
+
+You can disable the management bar by adding the `disabled` attribute to the 
+`liferay-frontend:management-bar` tag:
+
+    <liferay-frontend:management-bar
+            disabled="<%= total == 0 %>"
+            includeCheckBox="<%= true %>"
+            searchContainerId="<%= searchContainerId %>"
+    >
+
+You can also disable individual buttons by adding the `disabled` attribute to 
+the tag:
+
+    <liferay-frontend:management-bar-display-buttons
+            disabled="<%= total == 0 %>"
+            displayViews='<%= new String[] {"descriptive", "icon", "list"} %>'
+            portletURL="<%= changeDisplayStyleURL %>"
+            selectedDisplayStyle="<%= trashDisplayContext.getDisplayStyle() %>"
+    />
+
+Now that your management bar is managed, you can learn how to apply the Lexicon 
+design pattern to your forms next.
+
+## Improving your Forms with Lexicon [](id=improving-your-forms-with-lexicon)
+
+To apply the Lexicon design patterns to your forms follow the steps below:
+
+1.  Encapsulate your fieldsets with the following taglib:
+
+        <aui:fieldset-group markupView="lexicon">
+        
+        </aui:fieldset-group>
+
+    The fieldset inside `fieldset-group` should be collapsible.
+    
+2.  Add the `collapsed` and `collapsible` attributes to your `aui:fieldset` 
+    taglib:
+
+        <aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" 
+        label="permissions">
+              ...
+        </aui:fieldset>
+
+3.  Add the `btn-lg` CSS class to your form's buttons:
+
+        <aui:button-row>
+        
+            <aui:button cssClass="btn-lg" type="submit" />
+            
+            <aui:button cssClass="btn-lg" href="<%= redirect %>"
+            type="cancel" />
+        
+        </aui:button-row>
+        
+Your forms are now configured for Lexicon.
+
+Earlier you saw how Lexicon's icons can be specified in the management bar. In 
+the next section, you can learn how to leverage Lexicon's icons in your 
+application.
+
+## Using Lexicon Icons in Your Application [](id=using-lexicon-icons-in-your-application)
+
+You may be updating your application to @product@ 7, or perhaps you are writing
+a new application for @product@ 7. In either case, you can follow the process 
+below to use Lexicon's icons in your application.
+
+The list of available Lexicon icons can be found on the [Lexicon](http://liferay.github.io/lexicon/content/icons-lexicon/) 
+site.
+
+Lexicon icons are defined with the `icon` attribute of the taglib.
+
+For example, you can define the icon in the management bar inside of the
+`liferay-frontend:management-bar-sidenav-toggler-button` taglib:
+
+    <liferay-frontend:management-bar-sidenav-toggler-button
+            disabled="<%= false %>"
+            href="javascript:;"
+            icon="info-circle"
+            label="info"
+            sidenavId='<%= liferayPortletResponse.getNamespace() + "infoPanelId" %>'
+    />
+
+For standard use of Lexicon icons, outside of the management bar, you can use
+the `liferay-ui:icon` taglib. Follow the pattern below to add the icon to your
+application:
+
+    <liferay-ui:icon
+    
+        icon="icon-name"
+        
+        markupView="lexicon"
+        
+        message="message-goes-here"
+    
+    />
+
+Note the addition of the `markupView="lexicon"` attribute, which ensures that 
+Lexicon markup is used to render the HTML.
+
+That's all you need to do to use Lexicon icons in your application.
+
+As you can see, the Lexicon design Experience language has a lot to offer. If
+you leverage Lexicon markup in your applications, you can ensure a consistent
+user experience that your users will be pleased with.
+
+## Related Topics [](id=related-topics)
 
-Considering this, each team needs to decide what they want to include in
-Phase 1 for each portlet based on what’s most important for that portlet
-and the cost of changing the design. The final plan is documented here:
 
-[https://docs.google.com/spreadsheets/d/1rvSp-ZMl8JryOh66WprPlV1BqemdFEPi1rvlcfJsjE8/edit\#gid=56848740](https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/1rvSp-ZMl8JryOh66WprPlV1BqemdFEPi1rvlcfJsjE8/edit%23gid%3D56848740&sa=D&ust=1461617444698000&usg=AFQjCNGChPXyF5bM_nX10TyE8bE6V1wybw)
-
-Implementing a Lexicon-based design leveraging Liferay’s taglibs {#h.p1o75hfpnazn .c4 .c30}
-================================================================
-
-These are general recommended steps, adapt them as you see fit for your
-case. In most cases it’s not mandatory that you follow this exact order,
-although it doesn’t hurt either and it will make it easier for you to
-know how far along you are in the task ;)
-
-Basic improvements {#h.ghoube9c728l .c4 .c30}
-------------------
-
-### 1) Move the title in the inner views and the associated back to the portlet titles {#h.heooyng7e8o .c4 .c30}
-
-1.  Use renderResponse.setTitle() in the action commands to set the
-    title
-2.  Next, use portletDisplay.setShowBackIcon(true);
-    portletDisplay.setURLBack(redirect); to set the back link
-
-### 2) Apply the new add button pattern (if the portlet needs one) {#h.d0jk1kdumk5d .c4 .c30}
-
-The new add button should be applied in the main screen of a portlet, or
-in any inside screen where it makes sense. However it should never be
-applied within pop-ups.
-
-This pattern places an “Add” button in the bottom right corner of the
-portlet instead of in the management bar where it used to be. The button
-may have one action or display a menu like this:
-
-![](images/image04.png)
-
-This button can be easily added using the add-menu taglib. Here is an
-example:
-
-\<liferay-frontend:add-menu\>
-
-  \<liferay-frontend:add-menu-item title='\<%= LanguageUtil.get(request,
-"add-category") %\>' url="\<%= addCategoryURL.toString() %\>" /\>
-
-\</liferay-frontend:add-menu\>
-
-If there is only one item the plus icon will act as a button. If you add
-more than one menu-item then the user will be presented with a menu to
-choose from.
-
-### 3) Apply the design to the navigation bar {#h.wgks0s8xvh9j .c4 .c30}
-
-Lexicon requires all administration applications to have a navigation
-bar.
-
-If your portlet already has a navigation bar implemented with the
-nav-bar taglib, you can reuse it by adding the attribute
-markupView=”lexicon” as shown in the next example.
-
-If the portlet didn’t have a nav-bar yet, you will need to add it with
-one item (tab):
-
-\<aui:nav-bar cssClass="collapse-basic-search" markupView="lexicon"\>
-
-  \<aui:nav cssClass="navbar-nav"\>
-
-        ...
-
-     \<aui:nav-item
-
-        href="\<%= viewArticlesHomeURL %\>"
-
-        label="folders"
-
-        selected="\<%= selected %\>"
-
-     /\>
-
-  \</aui:nav\>
-
-\</aui:nav-bar\>
-
-If you want the bar to have a search box, you can use the nav-bar-search
-inner taglib as follows:
-
-\<aui:nav-bar cssClass="collapse-basic-search" markupView="lexicon"\>
-
-  ...
-
-  \<aui:nav-bar-search\>
-
-    \<aui:form action="\<%= portletURL() %\>" name="searchFm"\>
-
-       \<liferay-ui:input-search autoFocus="\<%=
-windowState.equals(WindowState.MAXIMIZED) %\>" \
-                 markupView="lexicon" /\>
-
-    \</aui:form\>
-
-  \</aui:nav-bar-search\>
-
-\</aui:nav-bar\>
-
-### 4) Introduce the management bar {#h.zf7z0l962rt2 .c4 .c30}
-
-Use the management-bar taglib and its inner taglibs:
-
-![](images/image05.png)
-
-management-bar-buttons
-
-![](images/image00.png)
-
-management-bar-display-buttons
-
-![](images/image06.png)
-
-management-bar-action-buttons
-
-![](images/image03.png)
-
-management-bar-filters
-
-![](images/image01.png)
-
-management-bar-sort
-
-![](images/image02.png)
-
-Keep in mind that when there are no elements displayed all the elements
-from the management bar should be disabled except the information
-button. See an example about how to achieve this:
-
--   For the checkbox to select all entries see the attribute
-    ‘checkBoxDisabled’:
--   You can disable the management bar with attribute ‘disabled’:
-
-\<liferay-frontend:management-bar
-
-  disabled="\<%= total == 0 %\>"
-
-  includeCheckBox="\<%= true %\>"
-
-  searchContainerId="\<%= searchContainerId %\>"
-
-\>
-
--   Also you can disable individual buttons:
-
-\<liferay-frontend:management-bar-display-buttons
-
-  disabled="\<%= total == 0 %\>"
-
-  displayViews='\<%= new String[] {"descriptive", "list"} %\>'
-
-  portletURL="\<%= displayStyleURL %\>"
-
-  selectedDisplayStyle="\<%= displayStyle %\>"
-
-/\>
-
--   If you want to have actions buttons and you want to see how many
-    items do you have selected, you should add the searchContainerId it
-    should be the same that you have in your search container taglib
-
-### 5) Ensure the application body is fluid {#h.r9f3gilxbhxi .c4 .c30}
-
-A fluid application takes all the available screen real state, from left
-to right. To achieve this add “container-fluid-1280” class in a DIV (or
-equivalent) that contain all the content of the portlet (excluding the
-nav bar and management bar)
-
-If you already have a DIV element that contains the complete view (or
-views) of your application add this class to it. Otherwise add an
-uppermost div element for this purpose:
-
-\<div class="container-fluid-1280"\>
-
-...
-
-\</div\>
-
-Ensure you do this for all views of the portlet for all content under
-the nav and management bars.
-
-### 6) Apply the design to the search iterator {#h.g1r5eq4mm9s0 .c4 .c30}
-
-Specify markupView=”lexicon” to the search-iterator taglib invocation
-
-\<liferay-ui:search-iterator
-
-       displayStyle="\<%= displayStyle %\>" \
-       markupView="lexicon" \
-       searchContainer="\<%= searchContainer %\>" /\>
-
-If the results contain different set of entries (folders and documents,
-categories and threds, etc.) you will need to use a ResultRowSplitter to
-divide the results. The result row splitter is an attribute that is
-provided to the liferay-ui:search-iterator taglib as follows:
-
-\<liferay-ui:search-iterator
-
-       displayStyle="\<%= displayStyle %\>" \
-       markupView="lexicon"
-
-       markupView="\<%= new DLResultRowSplitter() %\>" \
-       searchContainer="\<%= searchContainer %\>" /\>
-
-You will need to create a java class that implements ResultRowSplitter
-interface. That class is responsible of dividing and categorizing the
-results based on the different entry types.
-
-The action menu style should be changed to use the vertical ellipsis
-icon (icon-ellipsis-vertical). The taglib should look like this:
-
-\<liferay-ui:icon-menu \
-       direction="left-side" \
-       icon="\<%= StringPool.BLANK %\>" \
-       markupView="lexicon" \
-       message="\<%= StringPool.BLANK %\>" \
-       showWhenSingleIcon="\<%= true %\>"\>
-
-### 7) Improve forms {#h.w2uxvixj43uv .c4 .c30}
-
-Encapsulate your fieldsets with the following taglib:
-
-\<aui:fieldset-group markupView="lexicon"\>
-
-…
-
-\</aui:fieldset-group\>
-
-The fieldset inside fieldset-group should be collapsible and you can
-specify that through the following taglib attributes:
-
-\<aui:fieldset collapsed="\<%= true %\>" collapsible="\<%= true %\>"
-label="permissions"\>
-
-      \<liferay-ui:input-permissions  modelName="\<%=
-WikiNode.class.getName() %\>"  /\>
-
-\</aui:fieldset\>
-
-The buttons should have the “btn-lg” css class:
-
-\<aui:button-row\>
-
-      \<aui:button cssClass="btn-lg" type="submit" /\>
-
-      \<aui:button cssClass="btn-lg" href="\<%= redirect %\>"
-type="cancel" /\>
-
-\</aui:button-row\>
-
-### 8) Replace icons where is needed {#h.kyjoydllw37o .c4 .c30}
-
-#### Actions button {#h.vp1lie6asgtb .c4 .c30}
-
-They should no longer have icons. Please remove them
-everywhere^[[j]](#cmnt10)^
-
-#### Other locations {#h.wqeektc2wlx4 .c4 .c30}
-
-To replace old icons for the new ones, find the right icon at
-[http://liferay.github.io/lexicon/content/icons-lexicon/](https://www.google.com/url?q=http://liferay.github.io/lexicon/content/icons-lexicon/&sa=D&ust=1461617444895000&usg=AFQjCNHFUkUv8DyelQwYtMPC-rQrgMHUTg),
-and use it the liferay-ui:icon taglib like this:
-
-+--------------------------------------+--------------------------------------+
-| Old Markup                           | New Markup                           |
-+--------------------------------------+--------------------------------------+
-| \<liferay-ui:icon                    | \<liferay-ui:icon                    |
-|                                      |                                      |
-|      iconCssClass="icon-remove"      |      icon="times"                    |
-|                                      |                                      |
-|      message="remove"                |      markupView="lexicon"            |
-|                                      |                                      |
-| /\>                                  |      message="remove"                |
-|                                      |                                      |
-|                                      | /\>                                  |
-+--------------------------------------+--------------------------------------+
-
-If the icon does not exist on the Lexicon page, you should contact Juan
-Hidalgo. The best way to do that is send a screenshot with the icon and
-a short description for this.
-
-### 9) Move actions of an entity or view to the upper right ellipsis icon {#h.n1f2mnigidmi .c4 .c30}
-
-In previous versions of Liferay it was common to have a series of
-buttons or menus with actions in certain view. With Liferay 7 the
-proposed pattern is to move all this actions to the upper right menu,
-leaving only the primary action (often an “Add” operation) visible.
-
-To add an action to the upper right menu you will need to create two
-classes. First, a Factory specifies the portlet where the action will be
-added and the screen in which it will be shown as well as the order (by
-specifying a weight). It also creates an instance of the second class.
-Here is an example:
-
-@Component(
-
-  immediate = true,
-
-  property = {
-
-     "javax.portlet.name=" +
-
-        ConfigurationAdminPortletKeys.SYSTEM\_SETTINGS
-
-  },
-
-  service = PortletConfigurationIconFactory.class
-
-)
-
-public class ExportAllConfigurationIconFactory
-
-  extends BasePortletConfigurationIconFactory {
-
-  @Override
-
-  public PortletConfigurationIcon create(PortletRequest portletRequest)
-{
-
-     return new ExportAllConfigurationIcon(portletRequest);
-
-  }
-
-  @Override
-
-  public double getWeight() {
-
-     return 1;
-
-  }
-
-}
-
-In this example, the action will be shown in the home page of the System
-Settings portlet. To make it appear in a secondary screen you can use
-the “path” property as in the following alternative example:
-
-@Component(
-
-  immediate = true,
-
-  property = {
-
-     "javax.portlet.name=" +
-
-        ConfigurationAdminPortletKeys.SYSTEM\_SETTINGS,
-
-     "path=/view\_factory\_instances"
-
-  },
-
-  service = PortletConfigurationIconFactory.class
-
-)
-
-public class ExportFactoryInstancesIconFactory
-
-  extends BasePortletConfigurationIconFactory {
-
-  @Override
-
-  public PortletConfigurationIcon create(PortletRequest portletRequest)
-{
-
-     return new ExportFactoryInstancesIcon(portletRequest);
-
-  }
-
-  @Override
-
-  public double getWeight() {
-
-     return 1;
-
-  }
-
-}
-
-The value of the “path” property will depend on the MVC framework being
-used to develop the portlet:
-
--   MVCPortlet: provide the path (often a JSP) that is used in the
-    mvcPath parameter.
--   MVCPortlet + MVCCommands: the path should contain the
-    mvcRenderCommandName where the actions should be displayed (such as
-    /document\_library/edit\_folder for example).
-
-The second class that is instanced from the factory specifies the label
-of the action, whether it should be invoked with a GET or POST method
-and the URL (or onClick JavaScript method) that should be invoked when
-the action is clicked. It can also implement some custom code to
-determine whether the action should be shown for the current request.
-Some examples of this could be to check for permissions of the current
-user. Here is an example of this class:
-
-public class ExportAllConfigurationIcon extends
-BasePortletConfigurationIcon {
-
-  public ExportAllConfigurationIcon(PortletRequest portletRequest) {
-
-     super(portletRequest);
-
-  }
-
-  @Override
-
-  public String getMessage() {
-
-     return "export-all-settings";
-
-  }
-
-  @Override
-
-  public String getMethod() {
-
-     return "GET";
-
-  }
-
-  @Override
-
-  public String getURL() {
-
-     LiferayPortletURL liferayPortletURL =
-
-        (LiferayPortletURL)PortalUtil.getControlPanelPortletURL(
-
-           portletRequest,
-ConfigurationAdminPortletKeys.SYSTEM\_SETTINGS,
-
-           PortletRequest.RESOURCE\_PHASE);
-
-     liferayPortletURL.setResourceID("export");
-
-     return liferayPortletURL.toString();
-
-  }
-
-  @Override
-
-  public boolean isShow() {
-
-     return true;
-
-  }
-
-}
-
-For portlets that can be added to a page if the desired behaviour is to
-always include the configuration options the following init-parameter
-should be added to the portlet:
-
-"javax.portlet.init-param.always-display-default-configuration-icons=true"
-
-Further improvements based on mockups {#h.kqtpkxy5kcwb .c4 .c30}
--------------------------------------
-
-Each app will require additional specific improvements which should be
-determined by a UX designer and documented in mockups.
-
-If there isn’t a designer in your team or he/she doesn’t have prior
-experience creating Lexicon based designs, contact Juan Hidalgo.
-
-### Review the mockup for the application {#h.8cwm04sp1was .c4 .c30}
-
-After applying the Basic Improvements developers should check the
-mockups to find additional necessary improvements.
-
-Whenever you have any doubt,
-
-### Selection / Assignment {#h.vqeoxpgix7a1 .c4 .c30}
-
-Lexicon provides several patterns for selection of items. This also
-include an specific a common selection case assignment of users/user
-groups/roles/etc.
-
-These patterns often replace existing current-available patterns.
-
-In order to determine what changes to make you should always refer to a
-mockup. Here are some examples:
-
-1.  Selection of user groups in a pop-up in Site Teams:
-
-site-teams/edit\_team\_assignments\_users\_group.jsp
-
-site-teams/select\_user\_groups.jsp
-
-How to implement different views
-
-On control panel portlets we have three different views by default:
-icon, descriptive and list.
-e.g. site-teams-web/user\_group\_columns.jspf 
-
--   Icon
-
-        
-
-        First of all, we should set the behaviour on different devices:
-
-        For vertical cards:
-
-        \<%
-
-row.setCssClass("col-md-2 col-sm-4 col-xs-6");
-
-%\>
-
-For horizontal cards:
-
-\<%
-
-row.setCssClass("col-md-3 col-sm-4 col-xs-12");
-
-%\>
-
-        
-
-        Then we should add a search container column text taglib:
-
-        \<liferay-ui:search-container-column-text\>
-
-                \<%-- include a vertical card or a horizontal card --%\>
-
-\</liferay-ui:search-container-column-text\>
-
-We have three different taglib for vertical cards
-
-\<liferay-frontend:vertical-card /\>
-
-\<liferay-frontend:user-vertical-card /\>                
-
-\<liferay-frontend:icon-vertical-card /\>
-
-        And another taglib for horizontal cards:
-
-\<liferay-frontend:horizontal-card /\>
-
--   Descriptive
-
-        We should have three columns:
-
-        The first one usually contains an icon or image or user portrait
-
-                Icon:
-
-\<liferay-ui:search-container-column-icon /\>
-
-        Image:
-
-\<liferay-ui:search-container-column-image /\>
-
-User:
-
-        \<liferay-ui:search-container-column-text\>
-
-\<liferay-ui:user-portrait /\>
-
-        \</liferay-ui:search-container-column-text\>
-
-The second one contains the information
-
-\<liferay-ui:search-container-column-text
-
- colspan="\<%= 2 %\>"
-
-\>
-
-  \<h5\>
-
-     \<aui:a href=""\>\<%= team.getName() %\>\</aui:a\>
-
-  \</h5\>
-
-  \<h6 class="text-default"\>
-
-     \<span\>\<%= team.getDescription() %\>\</span\>
-
-  \</h6\>
-
-\</liferay-ui:search-container-column-text\>
-
-And the third one usually contains the actions
-
-\<liferay-ui:search-container-column-jsp
-
-  path="/team\_action.jsp"
-
-/\>
-
--   List
-
-        It Is the view that we usually have in our portlets:
-
-\<liferay-ui:search-container-column-text
-
-  cssClass="text-strong"
-
-  href="\<%= rowURL %\>"
-
-  name="name"
-
-  property="name"
-
-/\>
-
-\<liferay-ui:search-container-column-text
-
-  href="\<%= rowURL %\>"
-
-  name="description"
-
-  property="description"
-
-/\>
-
-\<liferay-ui:search-container-column-jsp
-
-  cssClass="list-group-item-field"
-
-  path="/team\_action.jsp"
-
-/\>
-
-We should set to \<liferay-ui:search-iterator /\> the
-displayStyle attribute with the current display style and markupView
-attribute to lexicon.
-
-Known issues {#h.s4cen7gbr8bt .c4 .c30}
-------------
-
--   Lexicon Icons are now available to use in portal, we will change
-    them bit by bit:\
-    http://liferay.github.io/lexicon/content/icons-lexicon/
