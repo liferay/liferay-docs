@@ -1,4 +1,4 @@
-# Configuring service.properties
+# Configuring service.properties [](id=configuring-service-properties)
 
 In this tutorial, you'll learn how to use and edit the `service.properties`
 file. You'll also learn about the properties included in this file and how to
@@ -43,7 +43,7 @@ $$$
 Awesome! You now have all the tools necessary to set up your own
 `service-ext.properties` file.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 

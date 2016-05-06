@@ -1,4 +1,4 @@
-# Creating Local Services
+# Creating Local Services [](id=creating-local-services)
 
 The heart of your service is its `*LocalServiceImpl` class. This class is your
 entity's local service extension point. Local services can be invoked within
@@ -129,7 +129,7 @@ tutorial. To learn how to invoke local services, please refer to the
 [Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
 tutorial. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
 

@@ -1,4 +1,4 @@
-# Finding and Invoking Liferay Services
+# Finding and Invoking Liferay Services [](id=finding-and-invoking-liferay-services)
 
 In this tutorial, you'll learn how to search for portal services and portlet
 services. You can find Liferay's services by searching for them in the Javadocs:
@@ -6,7 +6,7 @@ services. You can find Liferay's services by searching for them in the Javadocs:
 
 First, you'll learn how to find a portal service using Liferay's Javadocs. 
 
-## Finding Liferay Portal Services
+## Finding Liferay Portal Services [](id=finding-liferay-portal-services)
 
 Searching for Liferay Portal services is easy and intuitive. The first two
 options, `portal-impl` and `portal-kernel`, are the most popular options when
@@ -33,7 +33,7 @@ Liferay's Javadocs are easy to browse and well-organized. Here's how to find the
 
 That was easy! What if you want to find module services? 
 
-## Finding Liferay Module Services
+## Finding Liferay Module Services [](id=finding-liferay-module-services)
 
 Searching for Liferay module services is also easy. The Javadocs for modules are
 hosted on Liferay's Nexus repository, and can be viewed by downloading and
@@ -97,7 +97,7 @@ tutorial for details.
 JAR on Nexus. Update this when module Javadoc is hosted on docs.liferay.com.
 -Cody -->
 
-## Invoking Liferay Services Locally
+## Invoking Liferay Services Locally [](id=invoking-liferay-services-locally)
 
 Every Liferay service provides a local interface to clients running in the same
 JVM as Liferay Portal. Many local services (e.g., `*LocalService` classes) are
@@ -137,7 +137,7 @@ following services are available:
 
 You'll learn more about referencing OSGi services next.
 
-## Referencing OSGi Services
+## Referencing OSGi Services [](id=referencing-osgi-services)
 
 All the services created within your Service Builder application are wired using
 an internal Spring Application Context. This uses AOP proxies to give your
@@ -182,7 +182,7 @@ The generated code for this entity would look like the following:
 
 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
 

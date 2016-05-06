@@ -1,4 +1,4 @@
-# Invoking Local Services
+# Invoking Local Services [](id=invoking-local-services)
 
 In this tutorial, you'll learn about the differences between local and remote
 services, and when you should invoke local services rather than their remote
@@ -59,7 +59,7 @@ and
 [Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services)
 tutorials.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Local Services](/develop/tutorials/-/knowledge_base/7-0/creating-local-services)
 

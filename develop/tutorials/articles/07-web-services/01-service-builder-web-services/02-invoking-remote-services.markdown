@@ -23,7 +23,7 @@ a JSON API and via SOAP. By default, running Service Builder with
 API for your project. You can access your project's JSON-based RESTful services
 via a convenient web interface. 
 
-## Invoking Liferay Services Remotely
+## Invoking Liferay Services Remotely [](id=invoking-liferay-services-remotely)
 
 Many default Liferay services are available as web services. Liferay exposes its
 web services via SOAP and JSON web services. If you're running Liferay locally
@@ -108,7 +108,7 @@ tutorial.
 For more information on Liferay services, see the Liferay Portal CE Javadocs at
 [http://docs.liferay.com/portal/7.0/javadocs/](http://docs.liferay.com/portal/7.0/javadocs/).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/invoking-json-web-services)
 

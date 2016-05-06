@@ -1,4 +1,4 @@
-# Defining an Object-Relational Map with Service Builder
+# Defining an Object-Relational Map with Service Builder [](id=defining-an-object-relational-map-with-service-builder)
 
 In this tutorial, you'll learn how to define an object relational map for your
 application so that it can persist data. As an example, you'll examine the
@@ -66,7 +66,7 @@ Liferay IDE makes it very easy to define entities in your application's
 You'll examine these steps in detail next, starting with creating a
 `service.xml` file.
 
-## Step 1: Creating the service.xml File
+## Step 1: Creating the service.xml File [](id=step-1-creating-the-service-xml-file)
 
 To define a service for your portlet project, you must create a `service.xml`
 file. The DTD (Document Type Declaration) file
@@ -105,7 +105,7 @@ wish.
 
 Next, you can start filling out the global information for your service. 
 
-## Step 2: Defining Global Service Information
+## Step 2: Defining Global Service Information [](id=step-2-defining-global-service-information)
 
 A service's global information applies to all of its entities, so it's a good
 place to start. In Liferay IDE, select the *Service Builder* node in the upper
@@ -172,7 +172,7 @@ with the specified name to all of the generated Java classes and interfaces.
 Save your `service.xml` file to preserve the information you added. Next, you'll
 add entities for your service's events and locations. 
 
-## Step 3:  Defining Service Entities
+## Step 3:  Defining Service Entities [](id=step-3-defining-service-entities)
 
 Entities are the heart and soul of a service. Entities represent the map between
 the model objects in Java and the fields and tables in your database. Once your
@@ -238,7 +238,7 @@ $$$
 Now that you've seen how to create your application's entities, you'll learn
 how to describe their attributes using entity *columns*. 
 
-## Step 4: Defining the Columns (Attributes) for Each Service Entity
+## Step 4: Defining the Columns (Attributes) for Each Service Entity [](id=step-4-defining-the-columns-attributes-for-each-service-entity)
 
 Each entity is described by its columns, which represent an entity's attributes.
 These attributes map on the one side to fields in a table and on the other side
@@ -314,7 +314,7 @@ Great! Your entities are set with the columns that not only represent their
 attributes, but also support multi-tenancy and entity auditing. Next, you'll
 learn how to specify the relationship service entities. 
 
-## Step 5: Defining Relationships Between Service Entities
+## Step 5: Defining Relationships Between Service Entities [](id=step-5-defining-relationships-between-service-entities)
 
 Often you'll want to reference one type of entity in the context of another
 entity. That is, you'll want to *relate* the entities. Liferay's Bookmarks
@@ -346,7 +346,7 @@ of the corresponding entity instance reference. For example:
 Now that your entity columns are in place, you can specify the default order in
 which the entity instances are retrieved from the database. 
 
-## Step 6: Defining Ordering of Service Entity Instances
+## Step 6: Defining Ordering of Service Entity Instances [](id=step-6-defining-ordering-of-service-entity-instances)
 
 Often, you want to retrieve multiple instances of a given entity and list them
 in a particular order. Liferay lets you specify the default order of the
@@ -368,7 +368,7 @@ descending order.
 Now that you know how to order your service entities, the last thing to do is to
 define the finder methods for retrieving entity instances from the database. 
 
-## Step 7: Defining Service Entity Finder Methods
+## Step 7: Defining Service Entity Finder Methods [](id=step-7-defining-service-entity-finder-methods)
 
 Finder methods retrieve entity objects from the database based on specified
 parameters. You'll probably want to create at least one finder method for each
@@ -423,7 +423,7 @@ to learn about the code that Service Builder generates, please refer to the
 Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
 tutorial. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 

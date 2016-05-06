@@ -225,7 +225,7 @@ want to include this in the solution. - Jim -->
 Congratulations on developing a custom SQL query and custom finder for your
 application!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
 
