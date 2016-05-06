@@ -73,6 +73,12 @@ public class CleanImagesSiteMain {
 			File[] imageFiles = imagesDir.listFiles();
 
 			for (File imageFile : imageFiles) {
+				
+				if (imageFile.getName().endsWith(".markdown") || 
+						imageFile.getName().endsWith(".txt")) {
+					continue;
+				}
+				
 				if (!imageNames.contains(imageFile.getName())) {
 					System.out.println("Deleting unused image: "
 							+ imageFile.getName());
