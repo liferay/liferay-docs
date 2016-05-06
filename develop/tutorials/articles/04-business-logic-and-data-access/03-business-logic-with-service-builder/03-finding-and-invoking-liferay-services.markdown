@@ -126,31 +126,8 @@ The `@Reference(unbind="-")` annotation retrieves a reference to a service of
 type `GroupLocalService`, and ignores how this service has been published and
 who published it.
 
-In addition to any services you create using Service Builder, your applications
-can access a variety of services built into Liferay. These include the following
-services:
-
-- `UserService`: for accessing, adding, authenticating, deleting, and updating
-  users. 
-- `OrganizationService`: for accessing, adding, deleting, and updating
-  organizations. 
-- `GroupService`: for accessing, adding, deleting, and updating groups.
-- `CompanyService`: for accessing, adding, checking, and updating companies.
-- `ImageService`: for accessing images.
-- `LayoutService`: for accessing, adding, deleting, exporting, importing, and
-  updating layouts. 
-- `PermissionService`: for checking permissions.
-- `UserGroupService`: for accessing, adding, deleting, and updating user
-  groups. 
-- `RoleService`: for accessing, adding, unassigning, checking, deleting, and
-  updating roles. 
-
-You can also invoke Liferay services remotely. To learn more about this, see the
-[Invoking Liferay Services Remotely](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-remotely)
-section.
-
-Besides the services Service Builder made available your application, you can
-also access any service published within the OSGi Registry. This means the
+Besides the services Service Builder made available for your application, you
+can also access any service published within the OSGi Registry. This means the
 following services are available:
 
 - Beans defined in Liferay's core
@@ -158,7 +135,52 @@ following services are available:
 - Services declared using Declarative Service
 - Services registered using the OSGi low level API
 
-<!-- Add additional info for @ServiceReference annotation. -Cody -->
+You'll learn more about referencing OSGi services next.
+
+## Referencing OSGi Services
+
+All the services created within your Service Builder application are wired using
+an internal Spring Application Context. This uses AOP proxies to give your
+services the ability to deal with transactions, indexing, and security.
+
+In many cases, however, you'll need to reference an external service (i.e.,
+something that is not defined within your Spring Application Context). Liferay
+has included the ability to reference OSGi services from your Spring beans using
+the `@ServiceReference` annotation.
+
+You'll step through a simple example next.
+
+Suppose you're building an application with a simple entity defined in your
+`service.xml` file. The application needs to send an SMS every time a new entity
+is created, and the `SMSService` is provided by a module installed in the
+system.
+
+How would you get a reference from the `-LocalServiceImpl` (Spring bean) to an
+*external* service? You can do this by using the `@ServiceReference` annotation:
+
+    @ServiceReference
+    private SMSService _smsService;
+
+Using this annotation lets you retrieve a reference to an OSGi service from a
+regular Spring bean. This provides some nice benefits. If the `SMSService` is
+not available, the whole Spring context is not created until the service is
+available. Likewise, if the `SMSService` suddenly disappears, the whole Spring
+Application Context is destroyed. This makes our Spring apps much more robust
+and versatile.
+
+Fortunately, Service Builder generates this kind of code every time you have a
+reference to an entity which is not defined in your `service.xml` file. For
+example, imagine that your entity has a reference provided in your `service.xml`
+file, to the Group entity:
+
+    <reference entity="Group" package-path="com.liferay.portal" />
+
+The generated code for this entity would look like the following:
+
+    @ServiceReference(type = com.liferay.portal.kernel.service.GroupLocalService.class)
+    protected com.liferay.portal.kernel.service.GroupLocalService groupLocalService;
+
+
 
 ## Related Topics
 

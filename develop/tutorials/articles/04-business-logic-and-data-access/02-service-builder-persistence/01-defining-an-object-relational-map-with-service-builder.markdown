@@ -139,6 +139,17 @@ following SQL scripts it generates in your `src/main/resources/sql` folder:
 - `sequences.sql`
 - `tables.sql`
 
++$$$
+
+**Note:** The folder location for holding your generated SQL scripts is
+configurable. For example, if you're using Gradle, you can define the `sqlDir`
+attribute in the app's `build.gradle` file. Likewise, those using Ant can
+configure an argument in their `build.xml` similar to the following:
+
+    <arg value="service.sql.dir=${basedir}/../sql"/>
+
+$$$
+
 @product@ uses these scripts to create database tables for all the entities
 defined in the `service.xml` file. Service Builder prepends the namespace
 to the database table names. Since the namespace value above is `Event`, the
