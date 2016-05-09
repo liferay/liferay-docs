@@ -28,7 +28,6 @@ leverage in your app's design. The sections that follow outline some of the
 available components that you can use in your app's JSPs. 
 
 ### Applying the Add Button Pattern [](id=applying-the-add-button-pattern)
-<!-- Should "add button pattern" be capitalized? -->
 
 If your app requires an Actions menu, or perhaps a button that opens a different 
 view (like an edit screen), you may wish to use the add button pattern. This 
@@ -36,7 +35,7 @@ pattern gives you a clean, minimal UI for such a button. You can use it in any
 of your app's screens. The add button pattern consists of an `add-menu` tag and 
 at least one `add-menu-item` tag. 
 
-![Figure x: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../images/add-button-diagram.png)
+![Figure 1: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../images/add-button-diagram.png)
 
 If there's only one item, the plus icon acts as a button that triggers the item. 
 If there's more than one item, clicking the plus icon displays a menu containing 
@@ -109,7 +108,7 @@ grid, or display only a specific type of content. You can also customize your
 app's Management Bar. The Management Bar in Liferay's Message Boards Admin 
 portlet is shown here: 
 
-![Figure x: The Management Bar lets the user customize how the app displays content.](../../images/message-boards-management-bar.png)
+![Figure 2: The Management Bar lets the user customize how the app displays content.](../../images/message-boards-management-bar.png)
 
 The Management Bar is divided into a few key sections. Each section is grouped 
 and configured using different taglibs. For example, here's the Management Bar 
@@ -153,7 +152,7 @@ configuration in Liferay's Trash app:
 The `<liferay-frontend:management-bar-buttons>` tag wraps the Management Bar's 
 button elements: 
 
-![Figure x: The `management-bar-buttons` tag contains the Management Bar's main buttons.](../../images/management-bar-buttons.png) 
+![Figure 3: The `management-bar-buttons` tag contains the Management Bar's main buttons.](../../images/management-bar-buttons.png) 
 
 The `<liferay-frontend:management-bar-sidenav-toggler-button>` tag implements 
 slide-out navigation (for the info button, in this case). The `info-circle` icon 
@@ -163,13 +162,13 @@ icons for your app's button (more on this later).
 The `<liferay-frontend:management-bar-display-buttons>` tag renders the app's 
 display style options: 
 
-![Figure x: The `management-bar-display-buttons` tag contains the content's display options.](../../images/management-bar-display-buttons.png)
+![Figure 4: The `management-bar-display-buttons` tag contains the content's display options.](../../images/management-bar-display-buttons.png)
 
 Finally, the `<liferay-frontend:management-bar-filters>` tag wraps the app's 
 filtering options. Filtering options can include sort criteria, sort ordering, 
 and more: 
 
-![Figure x: The `management-bar-filters` tag contains the content filtering options.](../../images/management-bar-filters.png)
+![Figure 5: The `management-bar-filters` tag contains the content filtering options.](../../images/management-bar-filters.png)
 
 When there's no content in the app, the management bar disables all the buttons 
 except the info button. 
