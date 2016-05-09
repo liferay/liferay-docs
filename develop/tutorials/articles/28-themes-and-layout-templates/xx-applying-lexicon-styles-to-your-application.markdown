@@ -9,7 +9,7 @@ Liferay apps.
 Liferay's default themes, Admin and Classic, include an implementation of the 
 Lexicon Experience Language. Also, Lexicon's base styles are provided in the 
 `aui.scss` file of the `_styled` base theme. This means that you can use Lexicon 
-markup and components in your custom apps in @product@ 7. 
+markup and components in your custom Liferay apps. 
 
 This tutorial shows you how to:
 
@@ -23,7 +23,7 @@ First, you'll learn how to leverage Liferay's taglibs in your app.
 
 Liferay's `liferay-frontend` taglibs streamline the process of writing Lexicon 
 markup, letting you focus your efforts on creating a pleasant user experience. 
-The Frontend taglibs give you access to several UI components that you can 
+The frontend taglibs give you access to several UI components that you can 
 leverage in your app's design. The sections that follow outline some of the 
 available components that you can use in your app's JSPs. 
 
@@ -112,7 +112,7 @@ portlet is shown here:
 ![Figure x: The Management Bar lets the user customize how the app displays content.](../../images/message-boards-management-bar.png)
 
 The Management Bar is divided into a few key sections. Each section is grouped 
-and configured using different taglibs. For example, here's the Mangement Bar 
+and configured using different taglibs. For example, here's the Management Bar 
 configuration in Liferay's Trash app: 
 
     <liferay-frontend:management-bar>
@@ -150,31 +150,32 @@ configuration in Liferay's Trash app:
             </liferay-frontend:management-bar-filters>
     </liferay-frontend:management-bar>
 
-The `<liferay-frontend:management-bar-buttons>...<.../>` tag wraps the 
-Management Bar button elements: 
+The `<liferay-frontend:management-bar-buttons>` tag wraps the Management Bar's 
+button elements: 
 
 ![Figure x: The `management-bar-buttons` tag contains the Management Bar's main buttons.](../../images/management-bar-buttons.png) 
 
-The `<liferay-frontend:management-bar-sidenav-toggler-button.../>` tag renders 
-a slide out navigation, for the info button in this case. The `info-circle` icon 
-is specified as the `icon` for the button. You can choose from a selection of 
-Lexicon icons for your app's button. More on this later.
+The `<liferay-frontend:management-bar-sidenav-toggler-button>` tag implements 
+slide-out navigation (for the info button, in this case). The `info-circle` icon 
+is specified as the button's `icon`. You can choose from a selection of Lexicon 
+icons for your app's button (more on this later). 
 
-The `<liferay-frontend:management-bar-display-buttons.../>` tag renders the
-display style options for the app:
+The `<liferay-frontend:management-bar-display-buttons>` tag renders the app's 
+display style options: 
 
-![figure x: The management bar display buttons tag contains the display options for the content.](../../images/management-bar-display-buttons.png)
+![Figure x: The `management-bar-display-buttons` tag contains the content's display options.](../../images/management-bar-display-buttons.png)
 
-Finally, the `<liferay-frontend:management-bar-filters>...<.../>` tag wraps the
-filter options for the app:
+Finally, the `<liferay-frontend:management-bar-filters>` tag wraps the app's 
+filtering options. Filtering options can include sort criteria, sort ordering, 
+and more: 
 
-![figure x: The management bar filters tag contains the filter options for the content.](../../images/management-bar-filters.png)
+![Figure x: The `management-bar-filters` tag contains the content filtering options.](../../images/management-bar-filters.png)
 
-When the app doesn't contain any content, all the buttons, except for 
-the info button, are disabled in the management bar.
+When there's no content in the app, the management bar disables all the buttons 
+except the info button. 
 
 You can disable the management bar by adding the `disabled` attribute to the 
-`liferay-frontend:management-bar` tag:
+`liferay-frontend:management-bar` tag: 
 
     <liferay-frontend:management-bar
             disabled="<%= total == 0 %>"
@@ -183,7 +184,7 @@ You can disable the management bar by adding the `disabled` attribute to the
     >
 
 You can also disable individual buttons by adding the `disabled` attribute to 
-the tag:
+the corresponding tag: 
 
     <liferay-frontend:management-bar-display-buttons
             disabled="<%= total == 0 %>"
@@ -192,59 +193,55 @@ the tag:
             selectedDisplayStyle="<%= trashDisplayContext.getDisplayStyle() %>"
     />
 
-Now that your management bar is managed, you can learn how to apply the Lexicon 
-design pattern to your forms next.
+Now that you've managed your app's management bar, you can learn how to apply 
+Lexicon to your forms. 
 
 ## Improving your Forms with Lexicon [](id=improving-your-forms-with-lexicon)
 
-To apply the Lexicon design patterns to your forms follow the steps below:
+Follow these steps to apply Lexicon to your forms: 
 
-1.  Encapsulate your fieldsets with the following taglib:
+1. Encapsulate your fieldsets with the following taglib:
 
         <aui:fieldset-group markupView="lexicon">
-        
+
         </aui:fieldset-group>
 
     The fieldset inside `fieldset-group` should be collapsible.
-    
-2.  Add the `collapsed` and `collapsible` attributes to your `aui:fieldset` 
-    taglib:
+
+2. Add the `collapsed` and `collapsible` attributes to your `aui:fieldset` 
+   taglib:
 
         <aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" 
         label="permissions">
               ...
         </aui:fieldset>
 
-3.  Add the `btn-lg` CSS class to your form's buttons:
+3. Add the `btn-lg` CSS class to your form's buttons:
 
         <aui:button-row>
-        
+
             <aui:button cssClass="btn-lg" type="submit" />
-            
+
             <aui:button cssClass="btn-lg" href="<%= redirect %>"
             type="cancel" />
-        
-        </aui:button-row>
-        
-Your forms are now configured for Lexicon.
 
-Earlier you saw how Lexicon's icons can be specified in the management bar. In 
-the next section, you can learn how to leverage Lexicon's icons in your 
-app.
+        </aui:button-row>
+
+Your forms are now configured for Lexicon! 
+
+Earlier you saw how to specify Lexicon's icons in the management bar. In the 
+next section, you'll learn to leverage Lexicon's icons throughout your app. 
 
 ## Using Lexicon Icons in Your App [](id=using-lexicon-icons-in-your-app)
 
-You may be updating your app to @product@ 7, or perhaps you are writing
-a new app for @product@ 7. In either case, you can follow the process 
-below to use Lexicon's icons in your app.
+Whether you're updating your app to @product@ 7, or writing a new @product@ 7 
+app, follow the process here to use Lexicon's icons in your app. You can find 
+the list of available Lexicon icons on the 
+[Lexicon site](http://liferay.github.io/lexicon/content/icons-lexicon/). 
 
-The list of available Lexicon icons can be found on the [Lexicon](http://liferay.github.io/lexicon/content/icons-lexicon/) 
-site.
-
-Lexicon icons are defined with the `icon` attribute of the taglib.
-
-For example, you can define the icon in the management bar inside of the
-`liferay-frontend:management-bar-sidenav-toggler-button` taglib:
+Lexicon icons are defined with the `icon` attribute. For example, you can use 
+this attribute to define the icon in the management bar, inside of the
+`liferay-frontend:management-bar-sidenav-toggler-button` taglib: 
 
     <liferay-frontend:management-bar-sidenav-toggler-button
             disabled="<%= false %>"
@@ -254,29 +251,28 @@ For example, you can define the icon in the management bar inside of the
             sidenavId='<%= liferayPortletResponse.getNamespace() + "infoPanelId" %>'
     />
 
-For standard use of Lexicon icons, outside of the management bar, you can use
-the `liferay-ui:icon` taglib. Follow the pattern below to add the icon to your
-app:
+To use Lexicon icons outside of the management bar, use the `liferay-ui:icon` 
+taglib. For example: 
 
     <liferay-ui:icon
-    
+
         icon="icon-name"
-        
+
         markupView="lexicon"
-        
+
         message="message-goes-here"
-    
+
     />
 
-Note the addition of the `markupView="lexicon"` attribute, which ensures that 
-Lexicon markup is used to render the HTML.
+Note the addition of the `markupView="lexicon"` attribute. This ensures that 
+Lexicon markup renders the HTML. 
 
-That's all you need to do to use Lexicon icons in your app.
-
-As you can see, the Lexicon design Experience language has a lot to offer. If
-you leverage Lexicon markup in your apps, you can ensure a consistent
-user experience that your users will be pleased with.
+That's it! As you can see, Lexicon offers a great deal. If you leverage Lexicon 
+in your apps, you can ensure a consistent user experience that your users will 
+be pleased with. 
 
 ## Related Topics [](id=related-topics)
 
+[Frontend Customizations](/develop/tutorials/-/knowledge_base/7-0/frontend-customizations)
 
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)
