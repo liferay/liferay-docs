@@ -55,6 +55,21 @@ the possibility of faulty indexing and you save time during the upgrade
 process. Once you have upgraded your portal, make sure to set this property to
 `false` so that you can index all objects from Liferay's Control Panel.
 
+## Optional: Upgrading Modules Individually [](id=upgrading-modules-individually)
+
+You can choose to upgrade the core and all the modules in one shot or upgrade
+just the core and do the modules manually. You'll make this choice depending on
+what you have installed on your system. 
+
+If you want to upgrade only the core, add a file called
+`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
+in the `/osgi/configs` folder with the following content:
+
+    autoUpgrade=false
+
+To run the upgrades for the modules, you'll use the [Gogo shell](develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). The upgrade tool
+opens a Gogo shell automatically after it finishes upgrading the core. 
+
 ## Running the Upgrade [](id=running-the-upgrade)
 
 Starting up the server to upgrade the portal is no longer supported. The
@@ -62,8 +77,8 @@ following exception is thrown if you try to do that:
 
     [MainServlet:237] java.lang.RuntimeException: You must first upgrade to Liferay Portal 7000
 
-The upgrade tool can be found [describe where it can be found]. Use the
-following command to start it: 
+The upgrade tool can be found in the `tools` folder, in a folder called
+`portal-tools-db-upgrade-client`. Use the following command to start it: 
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar
 
@@ -71,35 +86,60 @@ By default, the tool is executed with the following Java parameters:
     
     -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
 
-If you need to modify these parameters you can use the option `-jvmOpts`, for
-example, for increasing the Java memory in the upgrade process to 4GB:
+If you need to modify these parameters you can use the option `-jvmOpts`. For
+example, to increase the Java memory in the upgrade process to 4GB:
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar -jvmOpts="-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx4096m"
 
-You can also set the location of the log file prints the output. By default it
-prints it in `upgrade.log` file but you can change it in this way:
+You can also set the location of the log file that prints the output: 
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar -logFile="output.log"
 
-The upgrade requires three files to be configured before it can run:
+The upgrade requires configuration in three files before it can run:
 
-- `app-server.properties`: it should contain the properties to tell the tool
-where the server and libs are.
-- `portal-upgrade-datasource.properties`: it should contain the properties to
-connect to the database which is going to be upgraded.
-- `portal-upgrade-ext.properties`: it should contain the rest of the Liferay
+- `app-server.properties`: Contains properties that define for the tool the
+    server's location and libraries.
+- `portal-upgrade-datasource.properties`: Contains properties for connecting 
+to the database which will be upgraded.
+- `portal-upgrade-ext.properties`: Contains the rest of the Liferay
 properties you need to perform the upgrade.
 
-However, if you do not create those files the tool will ask you to get the
-information needed to run the upgrade at first time.
+Examples of what you'd put in these files are below, but don't worry: the tool
+will ask you for the information if you don't have the files, so it may be
+easier simply to run it. If you do this, the tool will ask you to supply the
+information at runtime like this: 
 
-Here we are some examples for the content of those files so that you can fill
-them properly in your installation:
+    Please enter your application server (tomcat): 
+    tomcat
+    Please enter your application server directory (../../tomcat-8.0.32): 
+
+    Please enter your extra library directories (../../tomcat-8.0.32/bin): 
+
+    Please enter your global library directory (../../tomcat-8.0.32/lib): 
+
+    Please enter your portal directory (../../tomcat-8.0.32/webapps/ROOT): 
+
+    [ db2 mariadb mysql oracle postgresql sqlserver sybase ]
+    Please enter your database (mysql): 
+    mariadb
+    Please enter your database host (localhost):
+
+    (etc)
+
+The nice thing about doing it this way is the tool creates the configuration
+files for you. If you want to set all of this up ahead of time, however, you'll
+want to put this information into the configuration files. Here's an example
+configuration that you can customize for your use:
+
 -`app-server.properties`:
 
     dir=/home/user/servers/liferay7/tomcat-8.0.32
     portal.dir=webapps/ROOT
     global.dir.lib=lib
+
+The `dir` setting is the folder where your app server is installed. The
+`portal.dir` setting is the folder where Liferay is installed in your app
+server. The `global.dir.lib` is the app server's library folder. 
 
 -`portal-upgrade-datasource.properties`:
 
@@ -113,23 +153,13 @@ them properly in your installation:
     liferay.home=/home/user/servers/liferay7
     module.framework.base.dir=/home/user/servers/liferay7/osgi
 
-Running the appropriate command above executes the upgrades and verifiers of
-@product@'s core. It also runs the upgrades for each of the installed modules if
-they are in automatic mode. If the modules are not in automatic mode, they can
-be upgraded individually as explained below.
+When you run the tool, it executes the upgrades and verifiers from @product@'s
+core. It also runs the upgrades for each of the installed modules if they are in
+automatic mode. If the modules are not in automatic mode, they can be upgraded
+individually as explained below.
 
-After performing the upgrade a Gogo shell is automatically opened.
-
-## Optional: Upgrading Modules Individually [](id=upgrading-modules-individually)
-
-You can specify that the portal should just upgrade the core and not the
-modules by adding a file called
-`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
-in the `/osgi/configs` folder with the following content:
-
-    autoUpgrade=false
-
-To run the upgrades for the modules, you can use the Gogo shell.
+After performing the upgrade a Gogo shell is automatically opened in case you
+need to upgrade some modules manually. Read on to learn how to do that. 
 
 ## Gogo shell commands for module upgrades [](id=gogo-shell-commands-for-module-upgrades)
 
