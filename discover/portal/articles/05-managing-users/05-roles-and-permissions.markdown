@@ -86,12 +86,7 @@ its permissions.
 Roles collect permissions, so when a user is given a role, they receive all the
 permissions defined by the role. 
 
-![Figure 2: When defining permissions on a role, the Summary view provides a
-list of permissions that have already been defined for the role. The area on the
-left side of the screen lets you drill down through various categories of portal
-permissions.](../../images/roles-define-permissions.png)
-
-<img src="../../images/roles-heirarchy.png" align="right">
+![Figure 2: When defining permissions on a role, the Summary view provides a list of permissions that have already been defined for the role. The area on the left side of the screen lets you drill down through various categories of portal permissions.](../../images/roles-define-permissions.png)
 
 To add permissions to a role, click on the *Actions*
 (![Actions](../../images/icon-actions.png)) button for a regular role and select
