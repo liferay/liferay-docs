@@ -159,6 +159,14 @@ to jump in and create a service API for guestbook entries.
             return entryPersistence.findByG_G(groupId, guestbookId, start, end);
         }
 
+2.1 Create a method for counting the entries in a guestbook
+
+	public int getEntriesCount(long groupId, long guestbookId, int status) throws SystemException {
+	
+	    return entryPersistence.countByG_G(groupId, guestbookId);
+	
+	}
+
 3.  Create a method for validating `Entry` objects. There are three required
     fields in an `Entry` object: name, email, and message. You can use Liferay's
     included `Validator` to validate these fields: 
